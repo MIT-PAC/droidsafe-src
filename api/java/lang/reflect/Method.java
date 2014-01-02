@@ -1,6 +1,8 @@
 package java.lang.reflect;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.lang.annotation.Annotation;
 import java.util.Comparator;
@@ -19,142 +21,6 @@ import org.apache.harmony.luni.lang.reflect.Types;
 import droidsafe.helpers.DSUtils;
 
 public final class Method extends AccessibleObject implements GenericDeclaration, Member {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.111 -0400", hash_original_field = "5E97994ED38A2B2F984F3B2B75012BF8", hash_generated_field = "6B06F56F1EB868ADA8CFFD63973A7E09")
-
-    private int slot;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.111 -0400", hash_original_field = "02CBE457FB1B22631E594CE79672D2F1", hash_generated_field = "EC96049C106D95C970CBF94E8CE21744")
-
-    @DSVAModeled
-    private Class<?> declaringClass;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.112 -0400", hash_original_field = "B068931CC450442B63F5B3D276EA4297", hash_generated_field = "531F96E2AEBFB44CD229EC4CB1F012B0")
-
-    @DSVAModeled
-    private String name;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.112 -0400", hash_original_field = "11427856321C6E9F5321CA879704C8FE", hash_generated_field = "2BEA8A3EFDFBD76D3A4CCA6C3AC7E53C")
-
-    @DSVAModeled
-    private Class<?>[] parameterTypes;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.112 -0400", hash_original_field = "2CD56E5B83C33F80B2D25820C51596A0", hash_generated_field = "2A0AC8F9632DF82B378D2F01BC74BDF4")
-
-    private Class<?>[] exceptionTypes;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.112 -0400", hash_original_field = "9CD6843F4536590CD86F933708C7371E", hash_generated_field = "052C26419A9A6CDFB48BC17097CACAE9")
-
-    @DSVAModeled
-    private Class<?> returnType;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.112 -0400", hash_original_field = "6BB2E1AD8EE7DCCA935DA6ACF3D7474E", hash_generated_field = "924C48D07F65387E616D3CE31DE5954D")
-
-    private ListOfTypes genericExceptionTypes;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.112 -0400", hash_original_field = "175F1F0CE81CA486282E77D84F1E1386", hash_generated_field = "4E98B7DC70F3037D11B527C2E4899BBD")
-
-    private ListOfTypes genericParameterTypes;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.112 -0400", hash_original_field = "40B35D47678E42F2607E0F522DC3BF6F", hash_generated_field = "32E37E22BB1C76784903951645BC45C1")
-
-    private Type genericReturnType;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.112 -0400", hash_original_field = "898BB6A86E0DA433332CBC4F55D3E967", hash_generated_field = "4338B9C9877379FEA81BE0E690FD4B47")
-
-    private TypeVariable<Method>[] formalTypeParameters;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.112 -0400", hash_original_field = "95A2153C74405BE971B467AB79B769A0", hash_generated_field = "89FDBAE6DE2AE55271071C78F774F101")
-
-    private volatile boolean genericTypesAreInitialized = false;
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.112 -0400", hash_original_method = "70F1F77231BFE73E3138A8A58A15C35C", hash_generated_method = "5EF4B9B8E33D0C3D9148CA2297534CC4")
-      Method(Method orig) {
-        this(orig.declaringClass, orig.parameterTypes, orig.exceptionTypes,
-                orig.returnType, orig.name, orig.slot);
-        addTaint(orig.getTaint());
-        if(orig.flag)        
-        {
-            this.flag = true;
-        } //End block
-        // ---------- Original Method ----------
-        //if (orig.flag) {
-            //this.flag = true;
-        //}
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.114 -0400", hash_original_method = "F4B9C750B34D03AFED72DBA84048C99D", hash_generated_method = "A3295A616BA9759E667254D439272654")
-    private  Method(Class<?> declaring, Class<?>[] paramTypes, Class<?>[] exceptTypes, Class<?> returnType, String name, int slot) {
-        this.declaringClass = declaring;
-        this.name = name;
-        this.slot = slot;
-        this.parameterTypes = paramTypes;
-        this.exceptionTypes = exceptTypes;
-        this.returnType = returnType;
-        // ---------- Original Method ----------
-        //this.declaringClass = declaring;
-        //this.name = name;
-        //this.slot = slot;
-        //this.parameterTypes = paramTypes;
-        //this.exceptionTypes = exceptTypes;
-        //this.returnType = returnType;
-    }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.114 -0400", hash_original_method = "0BE83C703D137B5A5A60EFAA17178485", hash_generated_method = "B061F471572EBB6A1BD1322A5027D98C")
-    private synchronized void initGenericTypes() {
-        if(!genericTypesAreInitialized)        
-        {
-            String signatureAttribute = getSignatureAttribute();
-            GenericSignatureParser parser = new GenericSignatureParser(
-                    declaringClass.getClassLoader());
-            parser.parseForMethod(this, signatureAttribute, exceptionTypes);
-            formalTypeParameters = parser.formalTypeParameters;
-            genericParameterTypes = parser.parameterTypes;
-            genericExceptionTypes = parser.exceptionTypes;
-            genericReturnType = parser.returnType;
-            genericTypesAreInitialized = true;
-        } //End block
-        // ---------- Original Method ----------
-        //if (!genericTypesAreInitialized) {
-            //String signatureAttribute = getSignatureAttribute();
-            //GenericSignatureParser parser = new GenericSignatureParser(
-                    //declaringClass.getClassLoader());
-            //parser.parseForMethod(this, signatureAttribute, exceptionTypes);
-            //formalTypeParameters = parser.formalTypeParameters;
-            //genericParameterTypes = parser.parameterTypes;
-            //genericExceptionTypes = parser.exceptionTypes;
-            //genericReturnType = parser.returnType;
-            //genericTypesAreInitialized = true;
-        //}
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.115 -0400", hash_original_method = "0F068F731FE610BBACFD836E6A61AACF", hash_generated_method = "A0F5615E32A5EC513455A34F9C1A7B3B")
-    public TypeVariable<Method>[] getTypeParameters() {
-        initGenericTypes();
-TypeVariable<Method>[] var530714F4AE8FC705F00A16C33AA9F354_761256114 =         formalTypeParameters.clone();
-        var530714F4AE8FC705F00A16C33AA9F354_761256114.addTaint(taint);
-        return var530714F4AE8FC705F00A16C33AA9F354_761256114;
-        // ---------- Original Method ----------
-        //initGenericTypes();
-        //return formalTypeParameters.clone();
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.115 -0400", hash_original_method = "1CDF5107AC443AA5F8C2E1DA9DF559A0", hash_generated_method = "A0D67ED9337C81F3DC4D86FA254770C3")
-    @Override
-     String getSignatureAttribute() {
-        Object[] annotation = getSignatureAnnotation(declaringClass, slot);
-        if(annotation == null)        
-        {
-String var540C13E9E156B687226421B24F2DF178_867243218 =             null;
-            var540C13E9E156B687226421B24F2DF178_867243218.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_867243218;
-        } //End block
-String var2F8E51633C4B934C6A6871930033C26B_192298750 =         StringUtils.combineStrings(annotation);
-        var2F8E51633C4B934C6A6871930033C26B_192298750.addTaint(taint);
-        return var2F8E51633C4B934C6A6871930033C26B_192298750;
-        // ---------- Original Method ----------
-        //Object[] annotation = getSignatureAnnotation(declaringClass, slot);
-        //if (annotation == null) {
-            //return null;
-        //}
-        //return StringUtils.combineStrings(annotation);
-    }
 
     
     @DSModeled(DSC.SAFE)
@@ -166,104 +32,6 @@ String var2F8E51633C4B934C6A6871930033C26B_192298750 =         StringUtils.combi
 	}
 
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.117 -0400", hash_original_method = "060018D8556E7858267AA04DC5F84FE8", hash_generated_method = "42BB2CFEB68D1EC7847543FD95859006")
-    public String toGenericString() {
-        StringBuilder sb = new StringBuilder(80);
-        initGenericTypes();
-        int modifier = getModifiers();
-        if(modifier != 0)        
-        {
-            sb.append(Modifier.toString(modifier & ~(Modifier.BRIDGE +
-                    Modifier.VARARGS))).append(' ');
-        } //End block
-        if(formalTypeParameters != null && formalTypeParameters.length > 0)        
-        {
-            sb.append('<');
-for(int i = 0;i < formalTypeParameters.length;i++)
-            {
-                appendGenericType(sb, formalTypeParameters[i]);
-                if(i < formalTypeParameters.length - 1)                
-                {
-                    sb.append(",");
-                } //End block
-            } //End block
-            sb.append("> ");
-        } //End block
-        appendGenericType(sb, Types.getType(genericReturnType));
-        sb.append(' ');
-        appendArrayType(sb, getDeclaringClass());
-        sb.append(".").append(getName());
-        sb.append('(');
-        appendArrayGenericType(sb,
-                Types.getClonedTypeArray(genericParameterTypes));
-        sb.append(')');
-        Type[] genericExceptionTypeArray = Types.getClonedTypeArray(
-                genericExceptionTypes);
-        if(genericExceptionTypeArray.length > 0)        
-        {
-            sb.append(" throws ");
-            appendArrayGenericType(sb, genericExceptionTypeArray);
-        } //End block
-String var2460B846747F8B22185AD8BE722266A5_853559711 =         sb.toString();
-        var2460B846747F8B22185AD8BE722266A5_853559711.addTaint(taint);
-        return var2460B846747F8B22185AD8BE722266A5_853559711;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.117 -0400", hash_original_method = "A9CCE739D5419EE3EB1324AC76C431BA", hash_generated_method = "764DD15D78CD7E1B5FA1F96C17C0AD3B")
-    public Type[] getGenericParameterTypes() {
-        initGenericTypes();
-Type[] var5CB4FE98CE4670BB8FD40D4DEBE96905_1540034169 =         Types.getClonedTypeArray(genericParameterTypes);
-        var5CB4FE98CE4670BB8FD40D4DEBE96905_1540034169.addTaint(taint);
-        return var5CB4FE98CE4670BB8FD40D4DEBE96905_1540034169;
-        // ---------- Original Method ----------
-        //initGenericTypes();
-        //return Types.getClonedTypeArray(genericParameterTypes);
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.117 -0400", hash_original_method = "D98F12BC8A74E89DDBE36E53E80FD275", hash_generated_method = "A428A35994942F6A97141F5E38FEE37F")
-    public Type[] getGenericExceptionTypes() {
-        initGenericTypes();
-Type[] var5B58D007921425E5297F5C75058387B8_134221316 =         Types.getClonedTypeArray(genericExceptionTypes);
-        var5B58D007921425E5297F5C75058387B8_134221316.addTaint(taint);
-        return var5B58D007921425E5297F5C75058387B8_134221316;
-        // ---------- Original Method ----------
-        //initGenericTypes();
-        //return Types.getClonedTypeArray(genericExceptionTypes);
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.118 -0400", hash_original_method = "83125796E1541F4C47F8F2176AE50053", hash_generated_method = "D9D20CADA77B07A43A1599A4BB0EA8F1")
-    public Type getGenericReturnType() {
-        initGenericTypes();
-Type varE9CB0FCB175642990439FADF1F4C9275_565282846 =         Types.getType(genericReturnType);
-        varE9CB0FCB175642990439FADF1F4C9275_565282846.addTaint(taint);
-        return varE9CB0FCB175642990439FADF1F4C9275_565282846;
-        // ---------- Original Method ----------
-        //initGenericTypes();
-        //return Types.getType(genericReturnType);
-    }
-
-    
-        @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.118 -0400", hash_original_method = "4122EC91CDDE6FFD9DA08F5ADAF8DB5D", hash_generated_method = "DCA9EC5412D94B35750422632F67E89D")
-    @Override
-    public Annotation[] getDeclaredAnnotations() {
-Annotation[] varD68AC863F3425367D397905DE25428DB_1341655915 =         getDeclaredAnnotations(declaringClass, slot);
-        varD68AC863F3425367D397905DE25428DB_1341655915.addTaint(taint);
-        return varD68AC863F3425367D397905DE25428DB_1341655915;
-        // ---------- Original Method ----------
-        //return getDeclaredAnnotations(declaringClass, slot);
-    }
-
-    
     @DSModeled(DSC.SAFE)
     static Annotation[] getDeclaredAnnotations(Class<?> declaringClass, int slot) {
 		Annotation[] ret = new Annotation[0];
@@ -271,6 +39,318 @@ Annotation[] varD68AC863F3425367D397905DE25428DB_1341655915 =         getDeclare
 		ret[0].addTaint(slot);
 		return ret;
 	}
+
+    
+    @DSModeled(DSC.SAFE)
+    static <A extends Annotation> A getAnnotation(Class<?> declaringClass, int slot, Class<A> annotationType) {
+		A ret = (A) new Object();
+		ret.addTaint(declaringClass.taint);
+		ret.addTaint(slot);
+		ret.addTaint(annotationType.taint);
+		return ret;
+	}
+
+    
+    @DSModeled(DSC.SAFE)
+    static boolean isAnnotationPresent(Class<?> declaringClass, int slot, Class<? extends Annotation> annotationType) {
+		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_770988985 = DSUtils.UNKNOWN_BOOLEAN;
+		return var84E2C64F38F78BA3EA5C905AB5A2DA27_770988985;
+	}
+
+    /**
+     * Creates an array of empty Annotation arrays.
+     */
+    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.528 -0500", hash_original_method = "A33FB39CB64C1B7C3BBB588CC3F72925", hash_generated_method = "8C7A6A57A598959B1606649CF15F688C")
+    
+static Annotation[][] noAnnotations(int size) {
+        Annotation[][] annotations = new Annotation[size][];
+        for (int i = 0; i < size; i++) {
+            annotations[i] = NO_ANNOTATIONS;
+        }
+        return annotations;
+    }
+
+    
+    @DSModeled(DSC.SAFE)
+    static Annotation[][] getParameterAnnotations(Class declaringClass, int slot) {
+		Annotation[][] ret = new Annotation[0][0];
+		ret[0][0].addTaint(declaringClass.taint);
+		ret[0][0].addTaint(slot);
+		return ret;
+	}
+
+    
+    @DSModeled(DSC.SAFE)
+    static int getMethodModifiers(Class<?> declaringClass, int slot) {
+		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1822823721 = DSUtils.UNKNOWN_INT;
+		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1822823721;
+	}
+
+    
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.128 -0400", hash_original_field = "6D5C49EE7CEF5783A42FC1C7653D6955", hash_generated_field = "3465881694FBE3BA7144100AF6865EE1")
+
+    public static final Comparator<Method> ORDER_BY_SIGNATURE = new Comparator<Method>() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.441 -0500", hash_original_method = "BE88CC170A38DCD3E91DA840E3F7F4E0", hash_generated_method = "718F91E2E34FEFE101F1370F38B5FFE9")
+        
+public int compare(Method a, Method b) {
+            int comparison = a.name.compareTo(b.name);
+            if (comparison != 0) {
+                return comparison;
+            }
+
+            Class<?>[] aParameters = a.parameterTypes;
+            Class<?>[] bParameters = b.parameterTypes;
+            int length = Math.min(aParameters.length, bParameters.length);
+            for (int i = 0; i < length; i++) {
+                comparison = aParameters[i].getName().compareTo(bParameters[i].getName());
+                if (comparison != 0) {
+                    return comparison;
+                }
+            }
+
+            if (aParameters.length != bParameters.length) {
+                return aParameters.length - bParameters.length;
+            }
+
+            // this is necessary for methods that have covariant return types.
+            return a.getReturnType().getName().compareTo(b.getReturnType().getName());
+        }
+    };
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.525 -0500", hash_original_field = "0C73BE0651CF116606278017BBAFA70A", hash_generated_field = "D584CD4D5524F6C731424F703C29B84F")
+
+
+    private static final Annotation[] NO_ANNOTATIONS = new Annotation[0];
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.447 -0500", hash_original_field = "09F7A5BA4BC6B04AB18035FB41A6CB6C", hash_generated_field = "6B06F56F1EB868ADA8CFFD63973A7E09")
+
+
+    private int slot;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.449 -0500", hash_original_field = "241D06F27490B4FC35F16806876AF0D3", hash_generated_field = "EC96049C106D95C970CBF94E8CE21744")
+
+
+    private Class<?> declaringClass;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.452 -0500", hash_original_field = "BF45F7481B8091DE3CBF80E94F7F940B", hash_generated_field = "531F96E2AEBFB44CD229EC4CB1F012B0")
+
+
+    private String name;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.454 -0500", hash_original_field = "6A17A418C19B2E2A1B1FDDDFEF7489B2", hash_generated_field = "2BEA8A3EFDFBD76D3A4CCA6C3AC7E53C")
+
+
+    private Class<?>[] parameterTypes;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.456 -0500", hash_original_field = "0166CFA676A3372FA7BAE30D743E0654", hash_generated_field = "2A0AC8F9632DF82B378D2F01BC74BDF4")
+
+
+    private Class<?>[] exceptionTypes;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.459 -0500", hash_original_field = "1E56956502169CC95540A786BAA638AD", hash_generated_field = "052C26419A9A6CDFB48BC17097CACAE9")
+
+
+    private Class<?> returnType;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.461 -0500", hash_original_field = "1086E50AEBD292B3AD2410822F2C4F08", hash_generated_field = "924C48D07F65387E616D3CE31DE5954D")
+
+
+    private ListOfTypes genericExceptionTypes;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.463 -0500", hash_original_field = "8AC26B514C4DE93BC9F36D116E4A4BC6", hash_generated_field = "4E98B7DC70F3037D11B527C2E4899BBD")
+
+    private ListOfTypes genericParameterTypes;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.466 -0500", hash_original_field = "37FAC880200D9C4671AC0282E4940755", hash_generated_field = "32E37E22BB1C76784903951645BC45C1")
+
+    private Type genericReturnType;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.469 -0500", hash_original_field = "D18E4A93B55623A68F32E4CADF845425", hash_generated_field = "4338B9C9877379FEA81BE0E690FD4B47")
+
+    private TypeVariable<Method>[] formalTypeParameters;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.471 -0500", hash_original_field = "882601A2CEBECCB3AC8128B79706E015", hash_generated_field = "89FDBAE6DE2AE55271071C78F774F101")
+
+    private volatile boolean genericTypesAreInitialized = false;
+
+    /**
+     * Construct a clone of the given instance.
+     *
+     * @param orig non-null; the original instance to clone
+     */
+    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.477 -0500", hash_original_method = "70F1F77231BFE73E3138A8A58A15C35C", hash_generated_method = "A1DA50C27B1D8906753DF79746239F15")
+    
+Method(Method orig) {
+        this(orig.declaringClass, orig.parameterTypes, orig.exceptionTypes,
+                orig.returnType, orig.name, orig.slot);
+
+        // Copy the accessible flag.
+        if (orig.flag) {
+            this.flag = true;
+        }
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.481 -0500", hash_original_method = "F4B9C750B34D03AFED72DBA84048C99D", hash_generated_method = "5EB83EDC925C7DA5615D4A150F17A05C")
+    
+private Method(Class<?> declaring, Class<?>[] paramTypes, Class<?>[] exceptTypes, Class<?> returnType, String name, int slot)
+    {
+        this.declaringClass = declaring;
+        this.name = name;
+        this.slot = slot;
+        this.parameterTypes = paramTypes;
+        this.exceptionTypes = exceptTypes;      // may be null
+        this.returnType = returnType;
+    }
+    // orphaned legacy method
+    @DSModeled(DSC.BAN)
+    public Method() {
+
+	}
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.474 -0500", hash_original_method = "0BE83C703D137B5A5A60EFAA17178485", hash_generated_method = "60615FB4B53F171169936FBF33069ED6")
+    
+private synchronized void initGenericTypes() {
+        if (!genericTypesAreInitialized) {
+            String signatureAttribute = getSignatureAttribute();
+            GenericSignatureParser parser = new GenericSignatureParser(
+                    declaringClass.getClassLoader());
+            parser.parseForMethod(this, signatureAttribute, exceptionTypes);
+            formalTypeParameters = parser.formalTypeParameters;
+            genericParameterTypes = parser.parameterTypes;
+            genericExceptionTypes = parser.exceptionTypes;
+            genericReturnType = parser.returnType;
+            genericTypesAreInitialized = true;
+        }
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.483 -0500", hash_original_method = "0F068F731FE610BBACFD836E6A61AACF", hash_generated_method = "7CE5B759EE56284BB83AD91C7E51B619")
+    
+public TypeVariable<Method>[] getTypeParameters() {
+        initGenericTypes();
+        return formalTypeParameters.clone();
+    }
+
+    /** {@inheritDoc} */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.486 -0500", hash_original_method = "1CDF5107AC443AA5F8C2E1DA9DF559A0", hash_generated_method = "5A7AC51370A528B541EFB40EFD81B606")
+    
+@Override /*package*/ String getSignatureAttribute() {
+        Object[] annotation = getSignatureAnnotation(declaringClass, slot);
+
+        if (annotation == null) {
+            return null;
+        }
+
+        return StringUtils.combineStrings(annotation);
+    }
+
+    /**
+     * Returns the string representation of the method's declaration, including
+     * the type parameters.
+     *
+     * @return the string representation of this method
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.493 -0500", hash_original_method = "060018D8556E7858267AA04DC5F84FE8", hash_generated_method = "9916908355C4748CA46EEB0C3F3491C9")
+    
+public String toGenericString() {
+        StringBuilder sb = new StringBuilder(80);
+
+        initGenericTypes();
+
+        // append modifiers if any
+        int modifier = getModifiers();
+        if (modifier != 0) {
+            sb.append(Modifier.toString(modifier & ~(Modifier.BRIDGE +
+                    Modifier.VARARGS))).append(' ');
+        }
+        // append type parameters
+        if (formalTypeParameters != null && formalTypeParameters.length > 0) {
+            sb.append('<');
+            for (int i = 0; i < formalTypeParameters.length; i++) {
+                appendGenericType(sb, formalTypeParameters[i]);
+                if (i < formalTypeParameters.length - 1) {
+                    sb.append(",");
+                }
+            }
+            sb.append("> ");
+        }
+        // append return type
+        appendGenericType(sb, Types.getType(genericReturnType));
+        sb.append(' ');
+        // append method name
+        appendArrayType(sb, getDeclaringClass());
+        sb.append(".").append(getName());
+        // append parameters
+        sb.append('(');
+        appendArrayGenericType(sb,
+                Types.getClonedTypeArray(genericParameterTypes));
+        sb.append(')');
+        // append exceptions if any
+        Type[] genericExceptionTypeArray = Types.getClonedTypeArray(
+                genericExceptionTypes);
+        if (genericExceptionTypeArray.length > 0) {
+            sb.append(" throws ");
+            appendArrayGenericType(sb, genericExceptionTypeArray);
+        }
+        return sb.toString();
+    }
+
+    /**
+     * Returns the parameter types as an array of {@code Type} instances, in
+     * declaration order. If this method has no parameters, an empty array is
+     * returned.
+     *
+     * @return the parameter types
+     *
+     * @throws GenericSignatureFormatError
+     *             if the generic method signature is invalid
+     * @throws TypeNotPresentException
+     *             if any parameter type points to a missing type
+     * @throws MalformedParameterizedTypeException
+     *             if any parameter type points to a type that cannot be
+     *             instantiated for some reason
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.496 -0500", hash_original_method = "A9CCE739D5419EE3EB1324AC76C431BA", hash_generated_method = "597DE9D598A5006361DA519667FA4A87")
+    
+public Type[] getGenericParameterTypes() {
+        initGenericTypes();
+        return Types.getClonedTypeArray(genericParameterTypes);
+    }
+
+    /**
+     * Returns the exception types as an array of {@code Type} instances. If
+     * this method has no declared exceptions, an empty array will be returned.
+     *
+     * @return an array of generic exception types
+     *
+     * @throws GenericSignatureFormatError
+     *             if the generic method signature is invalid
+     * @throws TypeNotPresentException
+     *             if any exception type points to a missing type
+     * @throws MalformedParameterizedTypeException
+     *             if any exception type points to a type that cannot be
+     *             instantiated for some reason
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.499 -0500", hash_original_method = "D98F12BC8A74E89DDBE36E53E80FD275", hash_generated_method = "789F7B04AD124F733C6FAD0CF66E18E1")
+    
+public Type[] getGenericExceptionTypes() {
+        initGenericTypes();
+        return Types.getClonedTypeArray(genericExceptionTypes);
+    }
+
+    /**
+     * Returns the return type of this method as a {@code Type} instance.
+     *
+     * @return the return type of this method
+     *
+     * @throws GenericSignatureFormatError
+     *             if the generic method signature is invalid
+     * @throws TypeNotPresentException
+     *             if the return type points to a missing type
+     * @throws MalformedParameterizedTypeException
+     *             if the return type points to a type that cannot be
+     *             instantiated for some reason
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.501 -0500", hash_original_method = "83125796E1541F4C47F8F2176AE50053", hash_generated_method = "C08643DE90FFCB58BAFBA77559D06E81")
+    
+public Type getGenericReturnType() {
+        initGenericTypes();
+        return Types.getType(genericReturnType);
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.504 -0500", hash_original_method = "4122EC91CDDE6FFD9DA08F5ADAF8DB5D", hash_generated_method = "29F60940673BD8877EB2DF97898FD3EA")
+    
+@Override
+    public Annotation[] getDeclaredAnnotations() {
+        return getDeclaredAnnotations(declaringClass, slot);
+    }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.118 -0400", hash_original_method = "C04F97610183E33B13FB9B4273375B6D", hash_generated_method = "1C787FA354E0C9F896C47EB81A5471B7")
@@ -293,133 +373,84 @@ A varD37D33C5EE02B81A7F8EF45A88B88039_629409244 =         getAnnotation(declarin
         //return getAnnotation(declaringClass, slot, annotationType);
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.517 -0500", hash_original_method = "D8B142EB73E138FF5927E6AE1DAD56D2", hash_generated_method = "426D294074F23AB43B6C5EEBDA3CD9A8")
     
-    @DSModeled(DSC.SAFE)
-    static <A extends Annotation> A getAnnotation(Class<?> declaringClass, int slot, Class<A> annotationType) {
-		A ret = (A) new Object();
-		ret.addTaint(declaringClass.taint);
-		ret.addTaint(slot);
-		ret.addTaint(annotationType.taint);
-		return ret;
-	}
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.119 -0400", hash_original_method = "D8B142EB73E138FF5927E6AE1DAD56D2", hash_generated_method = "DBF29A58AEAE77921988590CE976282E")
-    @Override
-    public boolean isAnnotationPresent(Class<? extends Annotation> annotationType) {
-        addTaint(annotationType.getTaint());
-        if(annotationType == null)        
-        {
-            NullPointerException varD3565833EFC12BC5822ABFE94D257EDE_1797046495 = new NullPointerException("annotationType == null");
-            varD3565833EFC12BC5822ABFE94D257EDE_1797046495.addTaint(taint);
-            throw varD3565833EFC12BC5822ABFE94D257EDE_1797046495;
-        } //End block
-        boolean var000A6E1BC96B3549B82B47E3D3F09F9E_107425709 = (isAnnotationPresent(declaringClass, slot, annotationType));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_864088786 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_864088786;
-        // ---------- Original Method ----------
-        //if (annotationType == null) {
-            //throw new NullPointerException("annotationType == null");
-        //}
-        //return isAnnotationPresent(declaringClass, slot, annotationType);
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    static boolean isAnnotationPresent(Class<?> declaringClass, int slot, Class<? extends Annotation> annotationType) {
-		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_770988985 = DSUtils.UNKNOWN_BOOLEAN;
-		return var84E2C64F38F78BA3EA5C905AB5A2DA27_770988985;
-	}
-
-    
-    @DSModeled(DSC.SAFE)
-    static Annotation[][] noAnnotations(int size) {
-        Annotation[][] annotations = new Annotation[size][];
-        for (int i = 0; i < size; i++) {
-            annotations[i] = NO_ANNOTATIONS;
+@Override public boolean isAnnotationPresent(Class<? extends Annotation> annotationType) {
+        if (annotationType == null) {
+            throw new NullPointerException("annotationType == null");
         }
-        return annotations;
+        return isAnnotationPresent(declaringClass, slot, annotationType);
     }
 
+    /**
+     * Returns an array of arrays that represent the annotations of the formal
+     * parameters of this method. If there are no parameters on this method,
+     * then an empty array is returned. If there are no annotations set, then
+     * and array of empty arrays is returned.
+     *
+     * @return an array of arrays of {@code Annotation} instances
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.530 -0500", hash_original_method = "72FC508AEB582DBA9794440813C3A8B1", hash_generated_method = "4F085A2B43CC3DCF944C4B690441A4C1")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.121 -0400", hash_original_method = "72FC508AEB582DBA9794440813C3A8B1", hash_generated_method = "100B060FF71A8EC82F8E4B4330232EF0")
-    public Annotation[][] getParameterAnnotations() {
-        Annotation[][] parameterAnnotations = getParameterAnnotations(declaringClass, slot);
-        if(parameterAnnotations.length == 0)        
-        {
-Annotation[][] var4E66BBCD00A041352E83320D93FA2694_1668668642 =             noAnnotations(parameterTypes.length);
-            var4E66BBCD00A041352E83320D93FA2694_1668668642.addTaint(taint);
-            return var4E66BBCD00A041352E83320D93FA2694_1668668642;
-        } //End block
-Annotation[][] varAD240742A5BFADFDA08547188EAD9960_1940681231 =         parameterAnnotations;
-        varAD240742A5BFADFDA08547188EAD9960_1940681231.addTaint(taint);
-        return varAD240742A5BFADFDA08547188EAD9960_1940681231;
-        // ---------- Original Method ----------
-        //Annotation[][] parameterAnnotations
-                //= getParameterAnnotations(declaringClass, slot);
-        //if (parameterAnnotations.length == 0) {
-            //return noAnnotations(parameterTypes.length);
-        //}
-        //return parameterAnnotations;
+public Annotation[][] getParameterAnnotations() {
+        Annotation[][] parameterAnnotations
+                = getParameterAnnotations(declaringClass, slot);
+        if (parameterAnnotations.length == 0) {
+            return noAnnotations(parameterTypes.length);
+        }
+        return parameterAnnotations;
     }
 
+    /**
+     * Indicates whether or not this method takes a variable number argument.
+     *
+     * @return {@code true} if a vararg is declared, {@code false} otherwise
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.537 -0500", hash_original_method = "47D8C519D80AD7FA8ACDBB9291AF9C1F", hash_generated_method = "98BBA26B4299357852C815497BEBBE80")
     
-    @DSModeled(DSC.SAFE)
-    static Annotation[][] getParameterAnnotations(Class declaringClass, int slot) {
-		Annotation[][] ret = new Annotation[0][0];
-		ret[0][0].addTaint(declaringClass.taint);
-		ret[0][0].addTaint(slot);
-		return ret;
-	}
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.122 -0400", hash_original_method = "47D8C519D80AD7FA8ACDBB9291AF9C1F", hash_generated_method = "B7578A5FC3F2FB86BC61616D527AAF37")
-    public boolean isVarArgs() {
+public boolean isVarArgs() {
         int modifiers = getMethodModifiers(declaringClass, slot);
-        boolean varDB8F7C613030E76ABDF57D1E095E0DA1_1234217711 = ((modifiers & Modifier.VARARGS) != 0);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1443343062 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1443343062;
-        // ---------- Original Method ----------
-        //int modifiers = getMethodModifiers(declaringClass, slot);
-        //return (modifiers & Modifier.VARARGS) != 0;
+        return (modifiers & Modifier.VARARGS) != 0;
     }
 
+    /**
+     * Indicates whether or not this method is a bridge.
+     *
+     * @return {@code true} if this method is a bridge, {@code false} otherwise
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.539 -0500", hash_original_method = "F604FBBB689DE54F8A9C0A1F2713AB23", hash_generated_method = "8F3E1B44078EF0F4429406371B786882")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.122 -0400", hash_original_method = "F604FBBB689DE54F8A9C0A1F2713AB23", hash_generated_method = "D32174E1B4C323BC805017AF58FC2FA0")
-    public boolean isBridge() {
+public boolean isBridge() {
         int modifiers = getMethodModifiers(declaringClass, slot);
-        boolean var7AC4E48F64EC97F3BA2DCC6913561E32_566270711 = ((modifiers & Modifier.BRIDGE) != 0);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_604128019 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_604128019;
-        // ---------- Original Method ----------
-        //int modifiers = getMethodModifiers(declaringClass, slot);
-        //return (modifiers & Modifier.BRIDGE) != 0;
+        return (modifiers & Modifier.BRIDGE) != 0;
     }
 
+    /**
+     * Indicates whether or not this method is synthetic.
+     *
+     * @return {@code true} if this method is synthetic, {@code false} otherwise
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.542 -0500", hash_original_method = "B698BCB06B0A737FF1A228493D2DEAD0", hash_generated_method = "740D269471105F6754C2E8C0B1DE05E7")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.123 -0400", hash_original_method = "B698BCB06B0A737FF1A228493D2DEAD0", hash_generated_method = "56F15025FA73FD20F7F1A3FA63828DF2")
-    public boolean isSynthetic() {
+public boolean isSynthetic() {
         int modifiers = getMethodModifiers(declaringClass, slot);
-        boolean var4121DACD6E958BDDE7E5586D934BDBC5_209544678 = ((modifiers & Modifier.SYNTHETIC) != 0);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_826974058 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_826974058;
-        // ---------- Original Method ----------
-        //int modifiers = getMethodModifiers(declaringClass, slot);
-        //return (modifiers & Modifier.SYNTHETIC) != 0;
+        return (modifiers & Modifier.SYNTHETIC) != 0;
     }
 
+    /**
+     * Returns the default value for the annotation member represented by this
+     * method.
+     *
+     * @return the default value, or {@code null} if none
+     *
+     * @throws TypeNotPresentException
+     *             if this annotation member is of type {@code Class} and no
+     *             definition can be found
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.544 -0500", hash_original_method = "3DF570DF2B22E4E433BE61FA4A3252FF", hash_generated_method = "C232B80D92ADA1B117D87BC36DA104DD")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.123 -0400", hash_original_method = "3DF570DF2B22E4E433BE61FA4A3252FF", hash_generated_method = "9C5F6862F769031FEB6E23674BB7BD38")
-    public Object getDefaultValue() {
-Object var2050B6E3550B605C703FF0CF43049C54_299126770 =         getDefaultValue(declaringClass, slot);
-        var2050B6E3550B605C703FF0CF43049C54_299126770.addTaint(taint);
-        return var2050B6E3550B605C703FF0CF43049C54_299126770;
-        // ---------- Original Method ----------
-        //return getDefaultValue(declaringClass, slot);
+public Object getDefaultValue() {
+        return getDefaultValue(declaringClass, slot);
     }
 
     
@@ -431,129 +462,168 @@ Object var2050B6E3550B605C703FF0CF43049C54_299126770 =         getDefaultValue(d
 		return new Object();
 	}
 
+    /**
+     * Indicates whether or not the specified {@code object} is equal to this
+     * method. To be equal, the specified object must be an instance
+     * of {@code Method} with the same declaring class and parameter types
+     * as this method.
+     *
+     * @param object
+     *            the object to compare
+     *
+     * @return {@code true} if the specified object is equal to this
+     *         method, {@code false} otherwise
+     *
+     * @see #hashCode
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.551 -0500", hash_original_method = "AF56E5F5402F800187126545ABE1F97F", hash_generated_method = "2388BFFA3F066B4085F7AD1338EBF7C1")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.123 -0400", hash_original_method = "AF56E5F5402F800187126545ABE1F97F", hash_generated_method = "C8BBA5340257B713151F45834E7D4D13")
-    @Override
+@Override
     public boolean equals(Object object) {
-        addTaint(object.getTaint());
-        boolean varD7F46FF16C07E332D27AC9D839CE4DA6_263811338 = (object instanceof Method && toString().equals(object.toString()));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_61259113 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_61259113;
-        // ---------- Original Method ----------
-        //return object instanceof Method && toString().equals(object.toString());
+        return object instanceof Method && toString().equals(object.toString());
     }
 
+    /**
+     * Returns the class that declares this method.
+     *
+     * @return the declaring class
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.553 -0500", hash_original_method = "747BEFE9985C4AF4EE3D5630B62185EA", hash_generated_method = "574997FEB7F01E0808800855819F513A")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.124 -0400", hash_original_method = "747BEFE9985C4AF4EE3D5630B62185EA", hash_generated_method = "52625AE21E0899BD90A3565112F86E50")
-    public Class<?> getDeclaringClass() {
-Class<?> var55840ACAE88F5536515BB8E6ADD923C6_1894096704 =         declaringClass;
-        var55840ACAE88F5536515BB8E6ADD923C6_1894096704.addTaint(taint);
-        return var55840ACAE88F5536515BB8E6ADD923C6_1894096704;
-        // ---------- Original Method ----------
-        //return declaringClass;
+public Class<?> getDeclaringClass() {
+        return declaringClass;
     }
 
+    /**
+     * Returns the exception types as an array of {@code Class} instances. If
+     * this method has no declared exceptions, an empty array is returned.
+     *
+     * @return the declared exception classes
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.556 -0500", hash_original_method = "0803D161ECCDE8E4916E8597C31C5EAF", hash_generated_method = "1AD8748424F084736A9DD63261A66A14")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.124 -0400", hash_original_method = "0803D161ECCDE8E4916E8597C31C5EAF", hash_generated_method = "3EB0C623764931E63BE52DC86BABFE8D")
-    public Class<?>[] getExceptionTypes() {
-        if(exceptionTypes == null)        
-        {
-Class<?>[] varE954D1DB65BB4FD70AD6204227C6F506_1919395676 =             EmptyArray.CLASS;
-            varE954D1DB65BB4FD70AD6204227C6F506_1919395676.addTaint(taint);
-            return varE954D1DB65BB4FD70AD6204227C6F506_1919395676;
-        } //End block
-Class<?>[] varDA0125CDA48071C4AD5C63141D7B3037_1127137059 =         exceptionTypes.clone();
-        varDA0125CDA48071C4AD5C63141D7B3037_1127137059.addTaint(taint);
-        return varDA0125CDA48071C4AD5C63141D7B3037_1127137059;
-        // ---------- Original Method ----------
-        //if (exceptionTypes == null) {
-            //return EmptyArray.CLASS;
-        //}
-        //return exceptionTypes.clone();
+public Class<?>[] getExceptionTypes() {
+        if (exceptionTypes == null) {
+            return EmptyArray.CLASS;
+        }
+        return exceptionTypes.clone();
     }
 
+    /**
+     * Returns the modifiers for this method. The {@link Modifier} class should
+     * be used to decode the result.
+     *
+     * @return the modifiers for this method
+     *
+     * @see Modifier
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.559 -0500", hash_original_method = "D61CFE217686483C8FB69E9FFDF592A9", hash_generated_method = "48830EE19AB9C2BBC366A2463FB5A641")
     
-        @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.124 -0400", hash_original_method = "D61CFE217686483C8FB69E9FFDF592A9", hash_generated_method = "6E478EB4153CFDF8C9EF30EC98244D94")
-    public int getModifiers() {
-        int var1DB99E362433041866339AAFD9E83F4E_1020416565 = (getMethodModifiers(declaringClass, slot));
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1407059598 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1407059598;
-        // ---------- Original Method ----------
-        //return getMethodModifiers(declaringClass, slot);
+public int getModifiers() {
+        return getMethodModifiers(declaringClass, slot);
     }
 
+    /**
+     * Returns the name of the method represented by this {@code Method}
+     * instance.
+     *
+     * @return the name of this method
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.566 -0500", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "50860709F8CC9FE19B604881E59FBA54")
     
-    @DSModeled(DSC.SAFE)
-    static int getMethodModifiers(Class<?> declaringClass, int slot) {
-		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1822823721 = DSUtils.UNKNOWN_INT;
-		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1822823721;
-	}
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.125 -0400", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "8A44B459E72EAF0468F83609D1EFF16C")
-    public String getName() {
-String varB017984728AC60AD1F0BF8734F33F15C_1445349259 =         name;
-        varB017984728AC60AD1F0BF8734F33F15C_1445349259.addTaint(taint);
-        return varB017984728AC60AD1F0BF8734F33F15C_1445349259;
-        // ---------- Original Method ----------
-        //return name;
+public String getName() {
+        return name;
     }
 
+    /**
+     * Returns an array of {@code Class} objects associated with the parameter
+     * types of this method. If the method was declared with no parameters, an
+     * empty array will be returned.
+     *
+     * @return the parameter types
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.568 -0500", hash_original_method = "860AC8CD4E2F5F390A65618A1941DEDE", hash_generated_method = "0845E4F05C4F8FB178489C01FC4EE8B5")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.125 -0400", hash_original_method = "860AC8CD4E2F5F390A65618A1941DEDE", hash_generated_method = "C4EC3CAA2AE33938D94FBF8AEF2AA291")
-    public Class<?>[] getParameterTypes() {
-Class<?>[] var5C3F1AD275E23F393681FEA8A66E0F80_95340465 =         parameterTypes.clone();
-        var5C3F1AD275E23F393681FEA8A66E0F80_95340465.addTaint(taint);
-        return var5C3F1AD275E23F393681FEA8A66E0F80_95340465;
-        // ---------- Original Method ----------
-        //return parameterTypes.clone();
+public Class<?>[] getParameterTypes() {
+        return parameterTypes.clone();
     }
 
+    /**
+     * Returns the {@code Class} associated with the return type of this
+     * method.
+     *
+     * @return the return type
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.571 -0500", hash_original_method = "952CC59854183D9751F85A9597A378CE", hash_generated_method = "F8F970361961EA482B13AE142C333181")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.125 -0400", hash_original_method = "952CC59854183D9751F85A9597A378CE", hash_generated_method = "8301BBBF10052441A735A0B37E30F76C")
-    public Class<?> getReturnType() {
-Class<?> varDC9AC92D1699491F328099759E5C37AE_2007676233 =         returnType;
-        varDC9AC92D1699491F328099759E5C37AE_2007676233.addTaint(taint);
-        return varDC9AC92D1699491F328099759E5C37AE_2007676233;
-        // ---------- Original Method ----------
-        //return returnType;
+public Class<?> getReturnType() {
+        return returnType;
     }
 
+    /**
+     * Returns an integer hash code for this method. Objects which are equal
+     * return the same value for this method. The hash code for this Method is
+     * the hash code of the name of this method.
+     *
+     * @return hash code for this method
+     *
+     * @see #equals
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.573 -0500", hash_original_method = "EF5D8B81A9E09E0C38DFC15BA422ECA1", hash_generated_method = "79AB96931D4D2744C8AC02B11E3A7517")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.126 -0400", hash_original_method = "EF5D8B81A9E09E0C38DFC15BA422ECA1", hash_generated_method = "7F89D5DB5582D921290FCC9031635F2D")
-    @Override
+@Override
     public int hashCode() {
-        int var5715838B66EDF423F24A871806972EB3_845793513 = (name.hashCode());
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_524382892 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_524382892;
-        // ---------- Original Method ----------
-        //return name.hashCode();
+        return name.hashCode();
     }
 
+    /**
+     * Returns the result of dynamically invoking this method. Equivalent to
+     * {@code receiver.methodName(arg1, arg2, ... , argN)}.
+     *
+     * <p>If the method is static, the receiver argument is ignored (and may be null).
+     *
+     * <p>If the method takes no arguments, you can pass {@code (Object[]) null} instead of
+     * allocating an empty array.
+     *
+     * <p>If you're calling a varargs method, you need to pass an {@code Object[]} for the
+     * varargs parameter: that conversion is usually done in {@code javac}, not the VM, and
+     * the reflection machinery does not do this for you. (It couldn't, because it would be
+     * ambiguous.)
+     *
+     * <p>Reflective method invocation follows the usual process for method lookup.
+     *
+     * <p>If an exception is thrown during the invocation it is caught and
+     * wrapped in an InvocationTargetException. This exception is then thrown.
+     *
+     * <p>If the invocation completes normally, the return value itself is
+     * returned. If the method is declared to return a primitive type, the
+     * return value is boxed. If the return type is void, null is returned.
+     *
+     * @param receiver
+     *            the object on which to call this method (or null for static methods)
+     * @param args
+     *            the arguments to the method
+     * @return the result
+     *
+     * @throws NullPointerException
+     *             if {@code receiver == null} for a non-static method
+     * @throws IllegalAccessException
+     *             if this method is not accessible (see {@link AccessibleObject})
+     * @throws IllegalArgumentException
+     *             if the number of arguments doesn't match the number of parameters, the receiver
+     *             is incompatible with the declaring class, or an argument could not be unboxed
+     *             or converted by a widening conversion to the corresponding parameter type
+     * @throws InvocationTargetException
+     *             if an exception was thrown by the invoked method
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.576 -0500", hash_original_method = "4A7D773CBB2CABEB3FBD24437D2F9CE8", hash_generated_method = "2FD521E61FBF204709DD6167E6F69FD0")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.126 -0400", hash_original_method = "4A7D773CBB2CABEB3FBD24437D2F9CE8", hash_generated_method = "3E88E9D7D2EE8FD41AF42323F36D233B")
-    public Object invoke(Object receiver, Object... args) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
-        addTaint(args[0].getTaint());
-        addTaint(receiver.getTaint());
-        if(args == null)        
-        {
+public Object invoke(Object receiver, Object... args)
+            throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+        if (args == null) {
             args = EmptyArray.OBJECT;
-        } //End block
-Object var928BD79CB12005B507BD2576AE0166BF_1517613077 =         invokeNative(receiver, args, declaringClass, parameterTypes, returnType, slot, flag);
-        var928BD79CB12005B507BD2576AE0166BF_1517613077.addTaint(taint);
-        return var928BD79CB12005B507BD2576AE0166BF_1517613077;
-        // ---------- Original Method ----------
-        //if (args == null) {
-            //args = EmptyArray.OBJECT;
-        //}
-        //return invokeNative(receiver, args, declaringClass, parameterTypes, returnType, slot, flag);
+        }
+        return invokeNative(receiver, args, declaringClass, parameterTypes, returnType, slot, flag);
     }
 
     
@@ -572,14 +642,35 @@ Object var928BD79CB12005B507BD2576AE0166BF_1517613077 =         invokeNative(rec
 		return ret;
 	}
 
+    /**
+     * Returns a string containing a concise, human-readable description of this
+     * method. The format of the string is:
+     *
+     * <ol>
+     *   <li>modifiers (if any)
+     *   <li>return type or 'void'
+     *   <li>declaring class name
+     *   <li>'('
+     *   <li>parameter types, separated by ',' (if any)
+     *   <li>')'
+     *   <li>'throws' plus exception types, separated by ',' (if any)
+     * </ol>
+     *
+     * For example: {@code public native Object
+     * java.lang.Method.invoke(Object,Object) throws
+     * IllegalAccessException,IllegalArgumentException
+     * ,InvocationTargetException}
+     *
+     * @return a printable representation for this method
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.583 -0500", hash_original_method = "20379CC138163D24505D982E1BF3267A", hash_generated_method = "A3209D87A40A94BDDEE3267FFAF5CF50")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.127 -0400", hash_original_method = "20379CC138163D24505D982E1BF3267A", hash_generated_method = "256C72828D8D9F5981AF7BC4A67CB206")
-    @Override
+@Override
     public String toString() {
         StringBuilder result = new StringBuilder(Modifier.toString(getModifiers()));
-        if(result.length() != 0)        
-        result.append(' ');
+
+        if (result.length() != 0)
+            result.append(' ');
         result.append(returnType.getName());
         result.append(' ');
         result.append(declaringClass.getName());
@@ -588,97 +679,36 @@ Object var928BD79CB12005B507BD2576AE0166BF_1517613077 =         invokeNative(rec
         result.append("(");
         result.append(toString(parameterTypes));
         result.append(")");
-        if(exceptionTypes != null && exceptionTypes.length != 0)        
-        {
+        if (exceptionTypes != null && exceptionTypes.length != 0) {
             result.append(" throws ");
             result.append(toString(exceptionTypes));
-        } //End block
-String varE65B3A02759122992CB82C0E651AD408_1656719205 =         result.toString();
-        varE65B3A02759122992CB82C0E651AD408_1656719205.addTaint(taint);
-        return varE65B3A02759122992CB82C0E651AD408_1656719205;
-        // ---------- Original Method ----------
-        //StringBuilder result = new StringBuilder(Modifier.toString(getModifiers()));
-        //if (result.length() != 0)
-            //result.append(' ');
-        //result.append(returnType.getName());
-        //result.append(' ');
-        //result.append(declaringClass.getName());
-        //result.append('.');
-        //result.append(name);
-        //result.append("(");
-        //result.append(toString(parameterTypes));
-        //result.append(")");
-        //if (exceptionTypes != null && exceptionTypes.length != 0) {
-            //result.append(" throws ");
-            //result.append(toString(exceptionTypes));
-        //}
-        //return result.toString();
+        }
+
+        return result.toString();
     }
 
+    /**
+     * Returns the constructor's signature in non-printable form. This is called
+     * (only) from IO native code and needed for deriving the serialVersionUID
+     * of the class
+     *
+     * @return The constructor's signature.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.586 -0500", hash_original_method = "C4F068AB884B2FBA426F9E4B4EB5335D", hash_generated_method = "209508FF00FA7C82E8EAE16DB1379871")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.127 -0400", hash_original_method = "C4F068AB884B2FBA426F9E4B4EB5335D", hash_generated_method = "712DE136F04A97734533B0B3794726A9")
-    @SuppressWarnings("unused")
+@SuppressWarnings("unused")
     private String getSignature() {
         StringBuilder result = new StringBuilder();
+
         result.append('(');
-for(int i = 0;i < parameterTypes.length;i++)
-        {
+        for (int i = 0; i < parameterTypes.length; i++) {
             result.append(getSignature(parameterTypes[i]));
-        } //End block
+        }
         result.append(')');
         result.append(getSignature(returnType));
-String varE65B3A02759122992CB82C0E651AD408_1455360506 =         result.toString();
-        varE65B3A02759122992CB82C0E651AD408_1455360506.addTaint(taint);
-        return varE65B3A02759122992CB82C0E651AD408_1455360506;
-        // ---------- Original Method ----------
-        //StringBuilder result = new StringBuilder();
-        //result.append('(');
-        //for (int i = 0; i < parameterTypes.length; i++) {
-            //result.append(getSignature(parameterTypes[i]));
-        //}
-        //result.append(')');
-        //result.append(getSignature(returnType));
-        //return result.toString();
+
+        return result.toString();
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.128 -0400", hash_original_field = "6D5C49EE7CEF5783A42FC1C7653D6955", hash_generated_field = "3465881694FBE3BA7144100AF6865EE1")
-
-    public static final Comparator<Method> ORDER_BY_SIGNATURE = new Comparator<Method>() {
-        @DSModeled(DSC.SAFE)
-        public int compare(Method a, Method b) {
-            int comparison = a.name.compareTo(b.name);
-            if (comparison != 0) {
-                return comparison;
-            }
-
-            Class<?>[] aParameters = a.parameterTypes;
-            Class<?>[] bParameters = b.parameterTypes;
-            int length = Math.min(aParameters.length, bParameters.length);
-            for (int i = 0; i < length; i++) {
-                comparison = aParameters[i].getName().compareTo(bParameters[i].getName());
-                if (comparison != 0) {
-                    return comparison;
-                }
-            }
-
-            if (aParameters.length != bParameters.length) {
-                return aParameters.length - bParameters.length;
-            }
-
-            
-            return a.getReturnType().getName().compareTo(b.getReturnType().getName());
-        }
-    };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.128 -0400", hash_original_field = "34D6D6954DE3EDD110F2D639DA598DA0", hash_generated_field = "D584CD4D5524F6C731424F703C29B84F")
-
-    private static final Annotation[] NO_ANNOTATIONS = new Annotation[0];
-    // orphaned legacy method
-    @DSModeled(DSC.BAN)
-    public Method() {
-
-	}
     
     // orphaned legacy method
     public int compare(Method a, Method b) {

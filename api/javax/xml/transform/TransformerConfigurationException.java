@@ -1,65 +1,93 @@
 package javax.xml.transform;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
 public class TransformerConfigurationException extends TransformerException {
+
+    /**
+     * Create a new <code>TransformerConfigurationException</code> with no
+     * detail message.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.578 -0500", hash_original_method = "BD9B4D3E21457DCFC8705065705F7747", hash_generated_method = "4D8300DC52435F7C51CE1BCC47D4B828")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.056 -0400", hash_original_method = "BD9B4D3E21457DCFC8705065705F7747", hash_generated_method = "A2C224685083B7346EB781B715051790")
-    public  TransformerConfigurationException() {
+public TransformerConfigurationException() {
         super("Configuration Error");
-        // ---------- Original Method ----------
     }
 
+    /**
+     * Create a new <code>TransformerConfigurationException</code> with
+     * the <code>String </code> specified as an error message.
+     *
+     * @param msg The error message for the exception.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.580 -0500", hash_original_method = "69DD6C44C48D0F6E1DFC35936EC71C54", hash_generated_method = "1DA52A124EF9A0857EAB5EB6F9595CB2")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.056 -0400", hash_original_method = "69DD6C44C48D0F6E1DFC35936EC71C54", hash_generated_method = "2C587EB6794FA44A96176FA58F93735B")
-    public  TransformerConfigurationException(String msg) {
+public TransformerConfigurationException(String msg) {
         super(msg);
-        addTaint(msg.getTaint());
-        // ---------- Original Method ----------
     }
 
+    /**
+     * Create a new <code>TransformerConfigurationException</code> with a
+     * given <code>Exception</code> base cause of the error.
+     *
+     * @param e The exception to be encapsulated in a
+     * TransformerConfigurationException.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.583 -0500", hash_original_method = "E488733BAF7BF3463DC8581AFFE97D88", hash_generated_method = "AAD3A6B5BCB22726BABE1F817C39C043")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.057 -0400", hash_original_method = "E488733BAF7BF3463DC8581AFFE97D88", hash_generated_method = "35315BAF79F925897FB1279B6C9C75EC")
-    public  TransformerConfigurationException(Throwable e) {
+public TransformerConfigurationException(Throwable e) {
         super(e);
-        addTaint(e.getTaint());
-        // ---------- Original Method ----------
     }
 
+    /**
+     * Create a new <code>TransformerConfigurationException</code> with the
+     * given <code>Exception</code> base cause and detail message.
+     *
+     * @param e The exception to be encapsulated in a
+     *      TransformerConfigurationException
+     * @param msg The detail message.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.585 -0500", hash_original_method = "BD51DDC4165DA92B6AA2ED19748DFB52", hash_generated_method = "2478274CC8587AAA739966AD0079D7D8")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.058 -0400", hash_original_method = "BD51DDC4165DA92B6AA2ED19748DFB52", hash_generated_method = "A27AAEC34B1FD03AE1D73009425312DA")
-    public  TransformerConfigurationException(String msg, Throwable e) {
+public TransformerConfigurationException(String msg, Throwable e) {
         super(msg, e);
-        addTaint(e.getTaint());
-        addTaint(msg.getTaint());
-        // ---------- Original Method ----------
     }
 
+    /**
+     * Create a new TransformerConfigurationException from a message and a Locator.
+     *
+     * <p>This constructor is especially useful when an application is
+     * creating its own exception from within a DocumentHandler
+     * callback.</p>
+     *
+     * @param message The error or warning message.
+     * @param locator The locator object for the error or warning.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.588 -0500", hash_original_method = "81D0C9E7195DBF524596695CB4BBF5D5", hash_generated_method = "84A0AEFB0C92E74564BF503C80907662")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.058 -0400", hash_original_method = "81D0C9E7195DBF524596695CB4BBF5D5", hash_generated_method = "3F558539687DDB6672E5D2F87DE8AC3C")
-    public  TransformerConfigurationException(String message,
+public TransformerConfigurationException(String message,
                                              SourceLocator locator) {
         super(message, locator);
-        addTaint(locator.getTaint());
-        addTaint(message.getTaint());
-        // ---------- Original Method ----------
     }
 
+    /**
+     * Wrap an existing exception in a TransformerConfigurationException.
+     *
+     * @param message The error or warning message, or null to
+     *                use the message from the embedded exception.
+     * @param locator The locator object for the error or warning.
+     * @param e Any exception.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.591 -0500", hash_original_method = "C1BB4F182A4DB12C2F5D6DBB3B298E48", hash_generated_method = "016C7D9E77FD36417D09AB3DDBDC580F")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.059 -0400", hash_original_method = "C1BB4F182A4DB12C2F5D6DBB3B298E48", hash_generated_method = "1E6895881AD831C0C703BB020DD55F0D")
-    public  TransformerConfigurationException(String message,
+public TransformerConfigurationException(String message,
                                              SourceLocator locator,
                                              Throwable e) {
         super(message, locator, e);
-        addTaint(e.getTaint());
-        addTaint(locator.getTaint());
-        addTaint(message.getTaint());
-        // ---------- Original Method ----------
     }
 
     

@@ -1,6 +1,9 @@
 package android.net.http;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
+import android.util.Log;
 import droidsafe.annotations.*;
 import java.io.IOException;
 import java.net.Socket;
@@ -15,96 +18,74 @@ import android.content.Context;
 
 
 class HttpConnection extends Connection {
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.413 -0500", hash_original_method = "8B0FF76444F6FD4A7628D73D943DE9DB", hash_generated_method = "8B0FF76444F6FD4A7628D73D943DE9DB")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.176 -0400", hash_original_method = "8B0FF76444F6FD4A7628D73D943DE9DB", hash_generated_method = "272759CD16D2D43385322A80BF1D6C19")
-      HttpConnection(Context context, HttpHost host,
+HttpConnection(Context context, HttpHost host,
                    RequestFeeder requestFeeder) {
         super(context, host, requestFeeder);
-        addTaint(requestFeeder.getTaint());
-        addTaint(host.getTaint());
-        addTaint(context.getTaint());
-        // ---------- Original Method ----------
     }
 
+    /**
+     * Opens the connection to a http server
+     *
+     * @return the opened low level connection
+     * @throws IOException if the connection fails for any reason.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.416 -0500", hash_original_method = "EFF3BAA5D0EF7633E7DF2DAA76502E87", hash_generated_method = "376BE25A6A8379FB0723D68DD552DF63")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.176 -0400", hash_original_method = "EFF3BAA5D0EF7633E7DF2DAA76502E87", hash_generated_method = "D68C580BC97181C456D932C616C1D051")
-    @Override
-     AndroidHttpClientConnection openConnection(Request req) throws IOException {
-        addTaint(req.getTaint());
+@Override
+    AndroidHttpClientConnection openConnection(Request req) throws IOException {
+
+        // Update the certificate info (connection not secure - set to null)
         EventHandler eventHandler = req.getEventHandler();
         mCertificate = null;
         eventHandler.certificate(mCertificate);
+
         AndroidHttpClientConnection conn = new AndroidHttpClientConnection();
         BasicHttpParams params = new BasicHttpParams();
         Socket sock = new Socket(mHost.getHostName(), mHost.getPort());
         params.setIntParameter(HttpConnectionParams.SOCKET_BUFFER_SIZE, 8192);
         conn.bind(sock, params);
-AndroidHttpClientConnection varE92EA799FE726EFFA481FDDF43ADE4CF_1893354635 =         conn;
-        varE92EA799FE726EFFA481FDDF43ADE4CF_1893354635.addTaint(taint);
-        return varE92EA799FE726EFFA481FDDF43ADE4CF_1893354635;
-        // ---------- Original Method ----------
-        //EventHandler eventHandler = req.getEventHandler();
-        //mCertificate = null;
-        //eventHandler.certificate(mCertificate);
-        //AndroidHttpClientConnection conn = new AndroidHttpClientConnection();
-        //BasicHttpParams params = new BasicHttpParams();
-        //Socket sock = new Socket(mHost.getHostName(), mHost.getPort());
-        //params.setIntParameter(HttpConnectionParams.SOCKET_BUFFER_SIZE, 8192);
-        //conn.bind(sock, params);
-        //return conn;
+        return conn;
     }
 
+    /**
+     * Closes the low level connection.
+     *
+     * If an exception is thrown then it is assumed that the
+     * connection will have been closed (to the extent possible)
+     * anyway and the caller does not need to take any further action.
+     *
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.418 -0500", hash_original_method = "28229552049A2A2DB18166A64CE88A0A", hash_generated_method = "28229552049A2A2DB18166A64CE88A0A")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.177 -0400", hash_original_method = "28229552049A2A2DB18166A64CE88A0A", hash_generated_method = "4B62D9E387E3411FA8910B36C93EF9E2")
-     void closeConnection() {
-        try 
-        {
-            if(mHttpClientConnection != null && mHttpClientConnection.isOpen())            
-            {
+void closeConnection() {
+        try {
+            if (mHttpClientConnection != null && mHttpClientConnection.isOpen()) {
                 mHttpClientConnection.close();
-            } //End block
-        } //End block
-        catch (IOException e)
-        {
-            if(HttpLog.LOGV)            
-            HttpLog.v(
+            }
+        } catch (IOException e) {
+            if (HttpLog.LOGV) HttpLog.v(
                     "closeConnection(): failed closing connection " +
                     mHost);
             e.printStackTrace();
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //if (mHttpClientConnection != null && mHttpClientConnection.isOpen()) {
-                //mHttpClientConnection.close();
-            //}
-        //} catch (IOException e) {
-            //if (HttpLog.LOGV) HttpLog.v(
-                    //"closeConnection(): failed closing connection " +
-                    //mHost);
-            //e.printStackTrace();
-        //}
+        }
     }
 
+    /**
+     * Restart a secure connection suspended waiting for user interaction.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.420 -0500", hash_original_method = "F65A3585D6DFE09EE931E3CB8D7B855F", hash_generated_method = "9E9C1487122124AAF78E9A685E07DF05")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.177 -0400", hash_original_method = "F65A3585D6DFE09EE931E3CB8D7B855F", hash_generated_method = "3D03B196C0054FDF260344F57DB44DDC")
-     void restartConnection(boolean abort) {
-        addTaint(abort);
-        // ---------- Original Method ----------
+void restartConnection(boolean abort) {
+        // not required for plain http connections
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.421 -0500", hash_original_method = "28A13316B46B35CCB565BDA96B57339B", hash_generated_method = "28A13316B46B35CCB565BDA96B57339B")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.177 -0400", hash_original_method = "28A13316B46B35CCB565BDA96B57339B", hash_generated_method = "3EE88FCC6CA54ABCE2924DC1C5217E0C")
-     String getScheme() {
-String var44B57466CD1C2BC7FBE96906897504B6_94487541 =         "http";
-        var44B57466CD1C2BC7FBE96906897504B6_94487541.addTaint(taint);
-        return var44B57466CD1C2BC7FBE96906897504B6_94487541;
-        // ---------- Original Method ----------
-        //return "http";
+String getScheme() {
+        return "http";
     }
 
     

@@ -1,6 +1,8 @@
 package android.view;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
@@ -8,16 +10,18 @@ import droidsafe.annotations.*;
 
 
 public class SoundEffectConstants {
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.019 -0400", hash_original_method = "A319F34C5C5FF8EBCB8ED9E8C1DFDB18", hash_generated_method = "16B79F2FF6A5D4209DC23CF0200A7932")
-    private  SoundEffectConstants() {
-        // ---------- Original Method ----------
-    }
 
+    /**
+     * Get the sonification constant for the focus directions.
+     * @param direction One of {@link View#FOCUS_UP}, {@link View#FOCUS_DOWN},
+     *     {@link View#FOCUS_LEFT}, {@link View#FOCUS_RIGHT}, {@link View#FOCUS_FORWARD}
+     *     or {@link View#FOCUS_BACKWARD}
+
+     * @return The appropriate sonification constant.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:29.109 -0500", hash_original_method = "975CB3430388B53E2334113DC7870A4A", hash_generated_method = "1809AE194BC69154A7C4FD122CC41E61")
     
-    @DSModeled(DSC.SAFE)
-    public static int getContantForFocusDirection(int direction) {
+public static int getContantForFocusDirection(int direction) {
         switch (direction) {
             case View.FOCUS_RIGHT:
                 return SoundEffectConstants.NAVIGATION_RIGHT;
@@ -33,22 +37,26 @@ public class SoundEffectConstants {
         throw new IllegalArgumentException("direction must be one of "
                 + "{FOCUS_UP, FOCUS_DOWN, FOCUS_LEFT, FOCUS_RIGHT, FOCUS_FORWARD, FOCUS_BACKWARD}.");
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:29.095 -0500", hash_original_field = "C16599C87D20CC8B2C34D6DC122791AA", hash_generated_field = "842011BA204767E970B6FF04330AC6F7")
 
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.020 -0400", hash_original_field = "2FC44226DF29F5F6CD72BA6227E74B5C", hash_generated_field = "842011BA204767E970B6FF04330AC6F7")
 
     public static final int CLICK = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.020 -0400", hash_original_field = "FAB801A719FE6C1AA03655B8A057C93C", hash_generated_field = "46B8495A67E10249C4EEB9EC55DBA5FB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:29.098 -0500", hash_original_field = "E020AF1279A153FF33B8371B47D5A756", hash_generated_field = "46B8495A67E10249C4EEB9EC55DBA5FB")
+
 
     public static final int NAVIGATION_LEFT = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.020 -0400", hash_original_field = "E2D7D8D2D5D6F01E487C9E20CEFA2CAF", hash_generated_field = "D84D0C65CA4D7F96B230BC929FB4712A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:29.100 -0500", hash_original_field = "5A92B619A037ABC84211CE0F778BC77C", hash_generated_field = "D84D0C65CA4D7F96B230BC929FB4712A")
 
     public static final int NAVIGATION_UP = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.020 -0400", hash_original_field = "279D181FD0B3A03687A77A7D28CEDC6A", hash_generated_field = "8EE0B662BC7D73676FD543978DA23BBE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:29.102 -0500", hash_original_field = "4EF2814DDD42A753117B765C6707DF20", hash_generated_field = "8EE0B662BC7D73676FD543978DA23BBE")
 
     public static final int NAVIGATION_RIGHT = 3;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.020 -0400", hash_original_field = "ABE2B681E345E485CC31F84CFD8E852B", hash_generated_field = "EE4649B90CD478CCF358B3C657EE8B88")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:29.105 -0500", hash_original_field = "DDA98BB1A0FBF4B30B4CDA70ED45E07F", hash_generated_field = "EE4649B90CD478CCF358B3C657EE8B88")
 
     public static final int NAVIGATION_DOWN = 4;
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:29.093 -0500", hash_original_method = "A319F34C5C5FF8EBCB8ED9E8C1DFDB18", hash_generated_method = "4129C50D0A507655FBF1F651D920A4AF")
+    
+private SoundEffectConstants() {}
 }
 

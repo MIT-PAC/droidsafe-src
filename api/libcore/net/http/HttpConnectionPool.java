@@ -1,6 +1,8 @@
 package libcore.net.http;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 import java.net.Socket;
@@ -14,128 +16,92 @@ import dalvik.system.SocketTagger;
 
 
 final class HttpConnectionPool {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.089 -0400", hash_original_field = "1ACBA9188A93F77D3F78F321F92C1912", hash_generated_field = "071E397744914F08240B3CDE573A9670")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:31.014 -0500", hash_original_field = "91F55BFC2249BA6B68F460ABB48ACE22", hash_generated_field = "590A253342226BF0F52B2AA46E36D139")
 
-    private int maxConnections;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.089 -0400", hash_original_field = "D749297B79826167AB9A50AC9DFA5C1B", hash_generated_field = "8E1D2C60713B625C54295C515F88EF48")
 
-    private final HashMap<HttpConnection.Address, List<HttpConnection>> connectionPool = new HashMap<HttpConnection.Address, List<HttpConnection>>();
+    public static final HttpConnectionPool INSTANCE = new HttpConnectionPool();
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:31.016 -0500", hash_original_field = "CF1F23AB5460D986D85752F07123AEA1", hash_generated_field = "071E397744914F08240B3CDE573A9670")
+
+
+    private  int maxConnections;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:31.019 -0500", hash_original_field = "2CFF140A7C85435FF25FDD386EB8AAD9", hash_generated_field = "8E1D2C60713B625C54295C515F88EF48")
+
+    private final HashMap<HttpConnection.Address, List<HttpConnection>> connectionPool
+            = new HashMap<HttpConnection.Address, List<HttpConnection>>();
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:31.021 -0500", hash_original_method = "40F2B2B572ACE3BCAAEC11C8662EC74A", hash_generated_method = "4EB758AD1843ADFC34E458BF79B2665A")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.089 -0400", hash_original_method = "40F2B2B572ACE3BCAAEC11C8662EC74A", hash_generated_method = "49065ACC2CF51AB84FE4EA2E33DE95CA")
-    private  HttpConnectionPool() {
+private HttpConnectionPool() {
         String keepAlive = System.getProperty("http.keepAlive");
-        if(keepAlive != null && !Boolean.parseBoolean(keepAlive))        
-        {
+        if (keepAlive != null && !Boolean.parseBoolean(keepAlive)) {
             maxConnections = 0;
             return;
-        } //End block
+        }
+
         String maxConnectionsString = System.getProperty("http.maxConnections");
         this.maxConnections = maxConnectionsString != null
                 ? Integer.parseInt(maxConnectionsString)
                 : 5;
-        // ---------- Original Method ----------
-        //String keepAlive = System.getProperty("http.keepAlive");
-        //if (keepAlive != null && !Boolean.parseBoolean(keepAlive)) {
-            //maxConnections = 0;
-            //return;
-        //}
-        //String maxConnectionsString = System.getProperty("http.maxConnections");
-        //this.maxConnections = maxConnectionsString != null
-                //? Integer.parseInt(maxConnectionsString)
-                //: 5;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:31.024 -0500", hash_original_method = "9723020948C88E298F74B7B4BEB4D8BB", hash_generated_method = "6BB8FBC7574704A8C30AEC60BA9E5D7F")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.103 -0400", hash_original_method = "9723020948C88E298F74B7B4BEB4D8BB", hash_generated_method = "0141DBD36C0084C32DD7F97904D1D374")
-    public HttpConnection get(HttpConnection.Address address, int connectTimeout) throws IOException {
-        addTaint(connectTimeout);
-        addTaint(address.getTaint());
-        synchronized
-(connectionPool)        {
+public HttpConnection get(HttpConnection.Address address, int connectTimeout)
+            throws IOException {
+        // First try to reuse an existing HTTP connection.
+        synchronized (connectionPool) {
             List<HttpConnection> connections = connectionPool.get(address);
-            if(connections != null)            
-            {
-                while
-(!connections.isEmpty())                
-                {
+            if (connections != null) {
+                while (!connections.isEmpty()) {
                     HttpConnection connection = connections.remove(connections.size() - 1);
-                    if(!connection.isStale())                    
-                    {
+                    if (!connection.isStale()) { // TODO: this op does I/O!
+                        // Since Socket is recycled, re-tag before using
                         final Socket socket = connection.getSocket();
                         SocketTagger.get().tag(socket);
-HttpConnection var9911BB1C5F1522C1630847C40E8BC67E_361873497 =                         connection;
-                        var9911BB1C5F1522C1630847C40E8BC67E_361873497.addTaint(taint);
-                        return var9911BB1C5F1522C1630847C40E8BC67E_361873497;
-                    } //End block
-                } //End block
+                        return connection;
+                    }
+                }
                 connectionPool.remove(address);
-            } //End block
-        } //End block
-HttpConnection varA3969E918D3E68DBEDAE3D4F56B1CEE1_1967748393 =         address.connect(connectTimeout);
-        varA3969E918D3E68DBEDAE3D4F56B1CEE1_1967748393.addTaint(taint);
-        return varA3969E918D3E68DBEDAE3D4F56B1CEE1_1967748393;
-        // ---------- Original Method ----------
-        //synchronized (connectionPool) {
-            //List<HttpConnection> connections = connectionPool.get(address);
-            //if (connections != null) {
-                //while (!connections.isEmpty()) {
-                    //HttpConnection connection = connections.remove(connections.size() - 1);
-                    //if (!connection.isStale()) { 
-                        //final Socket socket = connection.getSocket();
-                        //SocketTagger.get().tag(socket);
-                        //return connection;
-                    //}
-                //}
-                //connectionPool.remove(address);
-            //}
-        //}
-        //return address.connect(connectTimeout);
+            }
+        }
+
+        /*
+         * We couldn't find a reusable connection, so we need to create a new
+         * connection. We're careful not to do so while holding a lock!
+         */
+        return address.connect(connectTimeout);
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:31.028 -0500", hash_original_method = "96125B0E756F418D511DE46CCDC8F5C6", hash_generated_method = "0AAB80EAFE9742A63EC9D2FAA87FD167")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.103 -0400", hash_original_method = "96125B0E756F418D511DE46CCDC8F5C6", hash_generated_method = "D5408E1B37C340A2F33FB1721C216F88")
-    public void recycle(HttpConnection connection) {
-        addTaint(connection.getTaint());
+public void recycle(HttpConnection connection) {
         final Socket socket = connection.getSocket();
-        try 
-        {
+        try {
             SocketTagger.get().untag(socket);
-        } //End block
-        catch (SocketException e)
-        {
+        } catch (SocketException e) {
+            // When unable to remove tagging, skip recycling and close
             System.logW("Unable to untagSocket(): " + e);
             connection.closeSocketAndStreams();
             return;
-        } //End block
-        if(maxConnections > 0 && connection.isEligibleForRecycling())        
-        {
+        }
+
+        if (maxConnections > 0 && connection.isEligibleForRecycling()) {
             HttpConnection.Address address = connection.getAddress();
-            synchronized
-(connectionPool)            {
+            synchronized (connectionPool) {
                 List<HttpConnection> connections = connectionPool.get(address);
-                if(connections == null)                
-                {
+                if (connections == null) {
                     connections = new ArrayList<HttpConnection>();
                     connectionPool.put(address, connections);
-                } //End block
-                if(connections.size() < maxConnections)                
-                {
+                }
+                if (connections.size() < maxConnections) {
                     connections.add(connection);
-                    return;
-                } //End block
-            } //End block
-        } //End block
+                    return; // keep the connection open
+                }
+            }
+        }
+
+        // don't close streams while holding a lock!
         connection.closeSocketAndStreams();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.104 -0400", hash_original_field = "445126F9E7B6CECDACF5FF2D040CAA9E", hash_generated_field = "590A253342226BF0F52B2AA46E36D139")
-
-    public static final HttpConnectionPool INSTANCE = new HttpConnectionPool();
 }
 

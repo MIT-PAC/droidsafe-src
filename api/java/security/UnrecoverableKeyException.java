@@ -1,6 +1,8 @@
 package java.security;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
@@ -8,25 +10,30 @@ import droidsafe.annotations.*;
 
 
 public class UnrecoverableKeyException extends UnrecoverableEntryException {
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.584 -0400", hash_original_method = "E20357D553B788F278F646C0E3221E57", hash_generated_method = "39C1C493987B5B97D605567FC88B9169")
-    public  UnrecoverableKeyException(String msg) {
-        super(msg);
-        addTaint(msg.getTaint());
-        // ---------- Original Method ----------
-    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.823 -0500", hash_original_field = "7ED3E97A3B57750E79CA26EE09F3FDCB", hash_generated_field = "3ACA87301D5DF7DF8197CF313220208D")
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.584 -0400", hash_original_method = "03224602BAA5F9956174116E90B167DC", hash_generated_method = "457CE1EC41599347D74B5CD5A4C0D88F")
-    public  UnrecoverableKeyException() {
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.585 -0400", hash_original_field = "11328B0FEED491A9602A36ADED762421", hash_generated_field = "3ACA87301D5DF7DF8197CF313220208D")
 
     private static final long serialVersionUID = 7275063078190151277L;
+
+    /**
+     * Constructs a new instance of {@code UnrecoverableKeyException} with the
+     * given message.
+     *
+     * @param msg
+     *            the detail message for this exception
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.825 -0500", hash_original_method = "E20357D553B788F278F646C0E3221E57", hash_generated_method = "EDF34EBC402ECC16141ECD32A378559F")
+    
+public UnrecoverableKeyException(String msg) {
+        super(msg);
+    }
+
+    /**
+     * Constructs a new instance of {@code UnrecoverableKeyException}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.828 -0500", hash_original_method = "03224602BAA5F9956174116E90B167DC", hash_generated_method = "4DD50AD9E1C34B354899338FC47058F3")
+    
+public UnrecoverableKeyException() {
+    }
 }
 

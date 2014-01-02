@@ -1,6 +1,8 @@
 package org.apache.harmony.luni.lang.reflect;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.GenericDeclaration;
@@ -14,101 +16,25 @@ import java.lang.reflect.TypeVariable;
 
 
 public final class ImplForVariable<D extends GenericDeclaration> implements TypeVariable<D> {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.958 -0400", hash_original_field = "C21C5A7DA2DB0FAEF0BF3875ED1F55A6", hash_generated_field = "DF50F8CC44C9A6C55B93B98D6924A459")
 
-    private ImplForVariable<D> formalVar;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.958 -0400", hash_original_field = "C5C6A8265660B70AF03B3C3F750F960C", hash_generated_field = "7035CFC4FC43B968B950AEFCB822630E")
-
-    private GenericDeclaration declOfVarUser;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.958 -0400", hash_original_field = "B068931CC450442B63F5B3D276EA4297", hash_generated_field = "531F96E2AEBFB44CD229EC4CB1F012B0")
-
-    private String name;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.958 -0400", hash_original_field = "B12FF05E5FD699082DF3F643E50ECA52", hash_generated_field = "66EEA92F56A8153726A1268F7B72CD36")
-
-    private D genericDeclaration;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.959 -0400", hash_original_field = "EB49194CCCC646FC8E93A368301834EA", hash_generated_field = "E9827BD1F130318D20BAF26AD7BAAAFA")
-
-    private ListOfTypes bounds;
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.231 -0500", hash_original_method = "D221C8A1B569E1806838DFC95ACABA4D", hash_generated_method = "62BA4A52D51025362248E21AAD3D7B07")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.960 -0400", hash_original_method = "B3D8A7562CD7005AEC4EC7212BF5C48A", hash_generated_method = "E8631B1CAC0FA9A3276D2C091011B265")
-      ImplForVariable(D genericDecl, String name, ListOfTypes bounds) {
-        this.genericDeclaration = genericDecl;
-        this.name = name;
-        this.bounds = bounds;
-        this.formalVar = this;
-        this.declOfVarUser = null;
-        // ---------- Original Method ----------
-        //this.genericDeclaration = genericDecl;
-        //this.name = name;
-        //this.bounds = bounds;
-        //this.formalVar = this;
-        //this.declOfVarUser = null;
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.961 -0400", hash_original_method = "65407CBB14414F74E97F8F69661C31EA", hash_generated_method = "9DCD27E147432DCB3E884717AE64C2A4")
-      ImplForVariable(D genericDecl, String name) {
-        this.name = name;
-        this.declOfVarUser = genericDecl;
-        // ---------- Original Method ----------
-        //this.name = name;
-        //this.declOfVarUser = genericDecl;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.961 -0400", hash_original_method = "1E5AB95BB29F6C6E7982DF5E5FB9856A", hash_generated_method = "C00C0C061C00540F9B0F10960D3E2F6A")
-    @Override
-    public boolean equals(Object o) {
-        addTaint(o.getTaint());
-        if(!(o instanceof TypeVariable))        
-        {
-            boolean var68934A3E9455FA72420237EB05902327_1828513431 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_922350931 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_922350931;
-        } //End block
-        TypeVariable<?> that = (TypeVariable<?>) o;
-        boolean var28F60F048D2660E5E234209FE6F3558A_466278511 = (getName().equals(that.getName()) &&
-                getGenericDeclaration().equals(that.getGenericDeclaration()));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_555727483 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_555727483;
-        // ---------- Original Method ----------
-        //if(!(o instanceof TypeVariable)) {
-            //return false;
-        //}
-        //TypeVariable<?> that = (TypeVariable<?>) o;
-        //return getName().equals(that.getName()) &&
-                //getGenericDeclaration().equals(that.getGenericDeclaration());
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.962 -0400", hash_original_method = "7D0F85484BF18E8882B18922DC61C5E2", hash_generated_method = "32D972BC309EC0A0C2D2845E407FF648")
-    @Override
-    public int hashCode() {
-        int var612E142C52816878DF7B2206464ECBB2_1339351103 = (31 * getName().hashCode() + getGenericDeclaration().hashCode());
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1722188966 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1722188966;
-        // ---------- Original Method ----------
-        //return 31 * getName().hashCode() + getGenericDeclaration().hashCode();
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    static TypeVariable findFormalVar(GenericDeclaration layer, String name) {
+static TypeVariable findFormalVar(GenericDeclaration layer, String name) {
         TypeVariable[] formalVars = layer.getTypeParameters();
         for (TypeVariable var : formalVars) {
             if (name.equals(var.getName())) {
                 return var;
             }
         }
+        // resolve() looks up the next level only, if null is returned
         return null;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.234 -0500", hash_original_method = "39EFECC73CF5D127083D3BC71C87A926", hash_generated_method = "BDC29D66C62A40ED8D984E5D79ABFC24")
     
-    @DSModeled(DSC.BAN)
-    private static GenericDeclaration nextLayer(GenericDeclaration decl) {
+private static GenericDeclaration nextLayer(GenericDeclaration decl) {
         if (decl instanceof Class) {
+            // FIXME: Is the following hierarchy correct?:
             Class cl = (Class)decl;
             decl = cl.getEnclosingMethod();
             if (decl != null) {
@@ -127,93 +53,112 @@ public final class ImplForVariable<D extends GenericDeclaration> implements Type
             throw new AssertionError();
         }
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.209 -0500", hash_original_field = "9D17C71A4E0210EC938787CDBE83B4DB", hash_generated_field = "DF50F8CC44C9A6C55B93B98D6924A459")
 
+    private ImplForVariable<D> formalVar;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.212 -0500", hash_original_field = "C1C0677D5E0FAEC19F513414D0A08EF8", hash_generated_field = "7035CFC4FC43B968B950AEFCB822630E")
+
+    private  GenericDeclaration declOfVarUser;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.214 -0500", hash_original_field = "BF45F7481B8091DE3CBF80E94F7F940B", hash_generated_field = "531F96E2AEBFB44CD229EC4CB1F012B0")
+
+    private  String name;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.216 -0500", hash_original_field = "F436CDAF715318EF72CA135B8411491D", hash_generated_field = "66EEA92F56A8153726A1268F7B72CD36")
+
+    private D genericDeclaration;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.218 -0500", hash_original_field = "3855AA2BF5AD0164D799C809958B7ACE", hash_generated_field = "E9827BD1F130318D20BAF26AD7BAAAFA")
+
+    private ListOfTypes bounds;
+
+    /**
+     * @param genericDecl declaration where a type variable is declared
+     * @param name type variable name
+     * @param bounds class and interface bounds
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.226 -0500", hash_original_method = "B3D8A7562CD7005AEC4EC7212BF5C48A", hash_generated_method = "B3D8A7562CD7005AEC4EC7212BF5C48A")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.963 -0400", hash_original_method = "295DDC7EA34C93EE6582DD0CD1BD5CCA", hash_generated_method = "AD55FE157FB1707F9B45C967F0CAD860")
-     void resolve() {
-        if(formalVar != null)        
-        {
+ImplForVariable(D genericDecl, String name, ListOfTypes bounds) {
+        this.genericDeclaration = genericDecl;
+        this.name = name;
+        this.bounds = bounds;
+        this.formalVar = this;
+        this.declOfVarUser = null;
+    }
+
+    /**
+     * @param genericDecl declaration where a type variable is used
+     * @param name type variable name
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.229 -0500", hash_original_method = "65407CBB14414F74E97F8F69661C31EA", hash_generated_method = "65407CBB14414F74E97F8F69661C31EA")
+    
+ImplForVariable(D genericDecl, String name) {
+        this.name = name;
+        this.declOfVarUser = genericDecl;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.221 -0500", hash_original_method = "1E5AB95BB29F6C6E7982DF5E5FB9856A", hash_generated_method = "C53D1FC2244C3A4E92457E5A7811D82D")
+    
+@Override
+    public boolean equals(Object o) {
+        if(!(o instanceof TypeVariable)) {
+            return false;
+        }
+        TypeVariable<?> that = (TypeVariable<?>) o;
+        return getName().equals(that.getName()) &&
+                getGenericDeclaration().equals(that.getGenericDeclaration());
+    }
+
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.223 -0500", hash_original_method = "7D0F85484BF18E8882B18922DC61C5E2", hash_generated_method = "23EB5A1B17C6903E249FA43F8F4A367D")
+    
+@Override
+    public int hashCode() {
+        return 31 * getName().hashCode() + getGenericDeclaration().hashCode();
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.236 -0500", hash_original_method = "295DDC7EA34C93EE6582DD0CD1BD5CCA", hash_generated_method = "295DDC7EA34C93EE6582DD0CD1BD5CCA")
+    
+void resolve() {
+        if (formalVar != null) {
             return;
-        } //End block
+        }
         GenericDeclaration curLayer = declOfVarUser;
         TypeVariable var;
-        while
-((var = findFormalVar(curLayer, name)) == null)        
-        {
+        while ((var = findFormalVar(curLayer, name)) == null) {
             curLayer = nextLayer(curLayer);
-            if(curLayer == null)            
-            {
-                AssertionError var1927BC3C0E63186AB163EB47890FC60D_622855577 = new AssertionError("illegal type variable reference");
-                var1927BC3C0E63186AB163EB47890FC60D_622855577.addTaint(taint);
-                throw var1927BC3C0E63186AB163EB47890FC60D_622855577;
-            } //End block
-        } //End block
+            if (curLayer == null) {
+                throw new AssertionError("illegal type variable reference");
+            }
+        }
         formalVar = (ImplForVariable<D>) var;
         this.genericDeclaration = formalVar.genericDeclaration;
         this.bounds = formalVar.bounds;
-        // ---------- Original Method ----------
-        //if (formalVar != null) {
-            //return;
-        //}
-        //GenericDeclaration curLayer = declOfVarUser;
-        //TypeVariable var;
-        //while ((var = findFormalVar(curLayer, name)) == null) {
-            //curLayer = nextLayer(curLayer);
-            //if (curLayer == null) {
-                //throw new AssertionError("illegal type variable reference");
-            //}
-        //}
-        //formalVar = (ImplForVariable<D>) var;
-        //this.genericDeclaration = formalVar.genericDeclaration;
-        //this.bounds = formalVar.bounds;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.238 -0500", hash_original_method = "234813F4553928C427D0DF90A4217999", hash_generated_method = "C56F23EB4401D7687760D536E5D5C3A8")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.964 -0400", hash_original_method = "234813F4553928C427D0DF90A4217999", hash_generated_method = "59BA1E66549B9CF51280F753E097F08C")
-    public Type[] getBounds() {
+public Type[] getBounds() {
         resolve();
-Type[] varD218C9A70ACBE6735DB6C2DBDABF35B2_830268487 =         bounds.getResolvedTypes().clone();
-        varD218C9A70ACBE6735DB6C2DBDABF35B2_830268487.addTaint(taint);
-        return varD218C9A70ACBE6735DB6C2DBDABF35B2_830268487;
-        // ---------- Original Method ----------
-        //resolve();
-        //return bounds.getResolvedTypes().clone();
+        return bounds.getResolvedTypes().clone();
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.241 -0500", hash_original_method = "DFDCD7E6E682AFE4AA9958AFD14EDF45", hash_generated_method = "1AFC71142008203AC2E64A1DDC7843F6")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.964 -0400", hash_original_method = "DFDCD7E6E682AFE4AA9958AFD14EDF45", hash_generated_method = "9C0DC23BE9117B5D180392EDF31C68C3")
-    public D getGenericDeclaration() {
+public D getGenericDeclaration() {
         resolve();
-D var409EE86EA9754D59CEC235E861B25783_366482837 =         genericDeclaration;
-        var409EE86EA9754D59CEC235E861B25783_366482837.addTaint(taint);
-        return var409EE86EA9754D59CEC235E861B25783_366482837;
-        // ---------- Original Method ----------
-        //resolve();
-        //return genericDeclaration;
+        return genericDeclaration;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.243 -0500", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "50860709F8CC9FE19B604881E59FBA54")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.964 -0400", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "E4ECFD7123DE7F4BE4B58B0E1F67A8F3")
-    public String getName() {
-String varB017984728AC60AD1F0BF8734F33F15C_527192662 =         name;
-        varB017984728AC60AD1F0BF8734F33F15C_527192662.addTaint(taint);
-        return varB017984728AC60AD1F0BF8734F33F15C_527192662;
-        // ---------- Original Method ----------
-        //return name;
+public String getName() {
+        return name;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.245 -0500", hash_original_method = "0EB66BA5E965B83E191719250E0A82FF", hash_generated_method = "0D841C721535905DD0E9F7FAE6757EB9")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.964 -0400", hash_original_method = "0EB66BA5E965B83E191719250E0A82FF", hash_generated_method = "3FD17CAA89EAEABD6B76275047A53480")
-    @Override
+@Override
     public String toString() {
-String varB017984728AC60AD1F0BF8734F33F15C_30262248 =         name;
-        varB017984728AC60AD1F0BF8734F33F15C_30262248.addTaint(taint);
-        return varB017984728AC60AD1F0BF8734F33F15C_30262248;
-        // ---------- Original Method ----------
-        //return name;
+        return name;
     }
 
     

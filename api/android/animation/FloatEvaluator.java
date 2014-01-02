@@ -1,6 +1,8 @@
 package android.animation;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
@@ -15,20 +17,25 @@ public class FloatEvaluator implements TypeEvaluator<Number> {
         //Synthesized constructor
     }
 
-
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.528 -0400", hash_original_method = "F409EF3C8ADBC3E8580AA402C114DFFB", hash_generated_method = "F2B610F81131966C7180FF7ABF92DA01")
-    public Float evaluate(float fraction, Number startValue, Number endValue) {
-        addTaint(endValue.getTaint());
-        addTaint(startValue.getTaint());
-        addTaint(fraction);
+    /**
+     * This function returns the result of linearly interpolating the start and end values, with
+     * <code>fraction</code> representing the proportion between the start and end values. The
+     * calculation is a simple parametric calculation: <code>result = x0 + t * (v1 - v0)</code>,
+     * where <code>x0</code> is <code>startValue</code>, <code>x1</code> is <code>endValue</code>,
+     * and <code>t</code> is <code>fraction</code>.
+     *
+     * @param fraction   The fraction from the starting to the ending values
+     * @param startValue The start value; should be of type <code>float</code> or
+     *                   <code>Float</code>
+     * @param endValue   The end value; should be of type <code>float</code> or <code>Float</code>
+     * @return A linear interpolation between the start and end values, given the
+     *         <code>fraction</code> parameter.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:33.387 -0500", hash_original_method = "F409EF3C8ADBC3E8580AA402C114DFFB", hash_generated_method = "41F7EC398DC90091D42CE2C67E6D63FC")
+    
+public Float evaluate(float fraction, Number startValue, Number endValue) {
         float startFloat = startValue.floatValue();
-Float var656FC13B6262E391C84EE64663CF350D_951945748 =         startFloat + fraction * (endValue.floatValue() - startFloat);
-        var656FC13B6262E391C84EE64663CF350D_951945748.addTaint(taint);
-        return var656FC13B6262E391C84EE64663CF350D_951945748;
-        // ---------- Original Method ----------
-        //float startFloat = startValue.floatValue();
-        //return startFloat + fraction * (endValue.floatValue() - startFloat);
+        return startFloat + fraction * (endValue.floatValue() - startFloat);
     }
 
     

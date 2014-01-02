@@ -1,6 +1,8 @@
 package java.net;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 
@@ -16,38 +18,44 @@ public abstract class ContentHandler {
     {
         //Synthesized constructor
     }
-
-
-    @DSModeled(DSC.SAFE)
-    public abstract Object getContent(URLConnection uConn) throws IOException;
-
+    /**
+     * Returns the object pointed by the specified URL connection {@code uConn}.
+     *
+     * @param uConn
+     *            URL connection that points to the desired object.
+     * @return object referred by {@code uConn}.
+     * @throws IOException
+     *             if an IO error occurs during the retrieval of the object
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:15.861 -0500", hash_original_method = "0A0DE36248DED56E2DC9A3C213E73F00", hash_generated_method = "C085E82305BE92773C89ADB444EB7B2D")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.312 -0400", hash_original_method = "8659195BC6B56411F2DC6C9C918B5FC3", hash_generated_method = "6A257C485467202AD44E19FA7C9FC62D")
-    @SuppressWarnings("unchecked")
-    public Object getContent(URLConnection uConn, Class[] types) throws IOException {
-        addTaint(types[0].getTaint());
-        addTaint(uConn.getTaint());
+public abstract Object getContent(URLConnection uConn) throws IOException;
+
+    /**
+     * Returns the object pointed by the specified URL connection {@code uConn}.
+     *
+     * @param uConn
+     *            URL connection that points to the desired object.
+     * @param types
+     *            list of acceptable content types.
+     * @return resource object pointed by this URL or {@code null} if the
+     *         content doesn't match one of the specified content types.
+     * @throws IOException
+     *             if an error occurred while obtaining the content.
+     */
+    // Class arg not generified in the spec.
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:15.864 -0500", hash_original_method = "8659195BC6B56411F2DC6C9C918B5FC3", hash_generated_method = "1AD0408A977EABBE121234307AE2FBAD")
+    
+@SuppressWarnings("unchecked")
+    public Object getContent(URLConnection uConn, Class[] types)
+            throws IOException {
         Object content = getContent(uConn);
-for(int i = 0;i < types.length;i++)
-        {
-            if(types[i].isInstance(content))            
-            {
-Object varD442C91479410F76C84B872DA6AAE139_841645560 =                 content;
-                varD442C91479410F76C84B872DA6AAE139_841645560.addTaint(taint);
-                return varD442C91479410F76C84B872DA6AAE139_841645560;
-            } //End block
-        } //End block
-Object var540C13E9E156B687226421B24F2DF178_1057333194 =         null;
-        var540C13E9E156B687226421B24F2DF178_1057333194.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_1057333194;
-        // ---------- Original Method ----------
-        //Object content = getContent(uConn);
-        //for (int i = 0; i < types.length; i++) {
-            //if (types[i].isInstance(content)) {
-                //return content;
-            //}
-        //}
-        //return null;
+        for (int i = 0; i < types.length; i++) {
+            if (types[i].isInstance(content)) {
+                return content;
+            }
+        }
+        return null;
     }
 
     

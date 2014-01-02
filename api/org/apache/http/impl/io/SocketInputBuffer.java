@@ -1,6 +1,8 @@
 package org.apache.http.impl.io;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.InterruptedIOException;
@@ -13,134 +15,78 @@ import org.apache.http.params.HttpParams;
 
 
 public class SocketInputBuffer extends AbstractSessionInputBuffer {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.641 -0400", hash_original_field = "61F2529360AEC54F5DC9804B842CF3FA", hash_generated_field = "8626E3C3C4BFCB66E8863775B28E01CC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.146 -0500", hash_original_field = "5019B3EE05D6098E4ECE32F00F7F88CA", hash_generated_field = "8626E3C3C4BFCB66E8863775B28E01CC")
 
-    private Socket socket;
+
+    private  Socket socket;
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.149 -0500", hash_original_method = "7283DB9E346A36B4239C51041B32EE66", hash_generated_method = "589AA70F20F0C29C0CEDB39CA43959BC")
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.642 -0400", hash_original_method = "7283DB9E346A36B4239C51041B32EE66", hash_generated_method = "857010EDEC3B759C88CA59C08AE425E1")
-    public  SocketInputBuffer(
+public SocketInputBuffer(
             final Socket socket,
             int buffersize,
             final HttpParams params) throws IOException {
         super();
-        addTaint(params.getTaint());
-        addTaint(buffersize);
-        if(socket == null)        
-        {
-            IllegalArgumentException varCBABC6A96FAFFF53CCBEEA230A20A836_975045933 = new IllegalArgumentException("Socket may not be null");
-            varCBABC6A96FAFFF53CCBEEA230A20A836_975045933.addTaint(taint);
-            throw varCBABC6A96FAFFF53CCBEEA230A20A836_975045933;
-        } //End block
+        if (socket == null) {
+            throw new IllegalArgumentException("Socket may not be null");
+        }
         this.socket = socket;
+        // BEGIN android-changed
+        // Workaround for http://b/3514259. We take 'buffersize' as a hint in
+        // the weakest sense, and always use an 8KiB heap buffer and leave the
+        // kernel buffer size alone, trusting the system to have set a
+        // network-appropriate default.
         init(socket.getInputStream(), 8192, params);
-        // ---------- Original Method ----------
-        //if (socket == null) {
-            //throw new IllegalArgumentException("Socket may not be null");
-        //}
-        //this.socket = socket;
-        //init(socket.getInputStream(), 8192, params);
+        // END android-changed
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.151 -0500", hash_original_method = "311ACBA3C6B98FE9C535127054B24088", hash_generated_method = "A078C5AF499E827D5762FC0B5E1D7F31")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.643 -0400", hash_original_method = "311ACBA3C6B98FE9C535127054B24088", hash_generated_method = "8DF51BCA2A7D9C779715959BE9BBC17A")
-    public boolean isDataAvailable(int timeout) throws IOException {
-        addTaint(timeout);
+public boolean isDataAvailable(int timeout) throws IOException {
         boolean result = hasBufferedData();
-        if(!result)        
-        {
+        if (!result) {
             int oldtimeout = this.socket.getSoTimeout();
-            try 
-            {
+            try {
                 this.socket.setSoTimeout(timeout);
                 fillBuffer();
                 result = hasBufferedData();
-            } //End block
-            catch (InterruptedIOException e)
-            {
-                if(!(e instanceof SocketTimeoutException))                
-                {
-                    e.addTaint(taint);
+            } catch (InterruptedIOException e) {
+                if (!(e instanceof SocketTimeoutException)) {
                     throw e;
-                } //End block
-            } //End block
-            finally 
-            {
+                }
+            } finally {
                 socket.setSoTimeout(oldtimeout);
-            } //End block
-        } //End block
-        boolean varB4A88417B3D0170D754C647C30B7216A_1852277281 = (result);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_245068960 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_245068960;
-        // ---------- Original Method ----------
-        //boolean result = hasBufferedData();
-        //if (!result) {
-            //int oldtimeout = this.socket.getSoTimeout();
-            //try {
-                //this.socket.setSoTimeout(timeout);
-                //fillBuffer();
-                //result = hasBufferedData();
-            //} catch (InterruptedIOException e) {
-                //if (!(e instanceof SocketTimeoutException)) {
-                    //throw e;
-                //}
-            //} finally {
-                //socket.setSoTimeout(oldtimeout);
-            //}
-        //}
-        //return result;
-    }
-
+            }
+        }
+        return result;
+    }    
+        
+    // BEGIN android-added
+    /**
+     * Returns true if the connection is probably functional. It's insufficient
+     * to rely on isDataAvailable() returning normally; that approach cannot
+     * distinguish between an exhausted stream and a stream with zero bytes
+     * buffered.
+     *
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.154 -0500", hash_original_method = "60456E7A862D179906482739ACBD4572", hash_generated_method = "1FED05F39E3BB61C72DF3B048AB4D949")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.644 -0400", hash_original_method = "60456E7A862D179906482739ACBD4572", hash_generated_method = "B5EA4E6C795570B2DD4122094306122A")
-    public boolean isStale() throws IOException {
-        if(hasBufferedData())        
-        {
-            boolean var68934A3E9455FA72420237EB05902327_607704467 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1965421807 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1965421807;
-        } //End block
+public boolean isStale() throws IOException {
+        if (hasBufferedData()) {
+            return false;
+        }
         int oldTimeout = this.socket.getSoTimeout();
-        try 
-        {
+        try {
             this.socket.setSoTimeout(1);
-            boolean varA211DC4BE010635677D918CB42B101A9_266285022 = (fillBuffer() == -1);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_616861501 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_616861501;
-        } //End block
-        catch (SocketTimeoutException e)
-        {
-            boolean var68934A3E9455FA72420237EB05902327_137339826 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_176091045 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_176091045;
-        } //End block
-        catch (IOException e)
-        {
-            boolean varB326B5062B2F0E69046810717534CB09_1307540117 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2000318037 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_2000318037;
-        } //End block
-        finally 
-        {
+            return fillBuffer() == -1;
+        } catch (SocketTimeoutException e) {
+            return false; // the connection is not stale; hooray
+        } catch (IOException e) {
+            return true; // the connection is stale, the read or soTimeout failed.
+        } finally {
             this.socket.setSoTimeout(oldTimeout);
-        } //End block
-        // ---------- Original Method ----------
-        //if (hasBufferedData()) {
-            //return false;
-        //}
-        //int oldTimeout = this.socket.getSoTimeout();
-        //try {
-            //this.socket.setSoTimeout(1);
-            //return fillBuffer() == -1;
-        //} catch (SocketTimeoutException e) {
-            //return false; 
-        //} catch (IOException e) {
-            //return true; 
-        //} finally {
-            //this.socket.setSoTimeout(oldTimeout);
-        //}
+        }
     }
 
     

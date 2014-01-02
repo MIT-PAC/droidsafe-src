@@ -1,6 +1,8 @@
 package org.bouncycastle.asn1.x509;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 
@@ -22,63 +24,53 @@ public class X509DefaultEntryConverter extends X509NameEntryConverter {
     {
         //Synthesized constructor
     }
-
-
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.012 -0400", hash_original_method = "E0075DF75B4E99D6DCA984CA2F76B1C5", hash_generated_method = "BD3DB172304068B8CAA1271FB82D9A00")
-    public DERObject getConvertedValue(
+    /**
+     * Apply default coversion for the given value depending on the oid
+     * and the character range of the value.
+     * 
+     * @param oid the object identifier for the DN entry
+     * @param value the value associated with it
+     * @return the ASN.1 equivalent for the string value.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:24.190 -0500", hash_original_method = "E0075DF75B4E99D6DCA984CA2F76B1C5", hash_generated_method = "65C23488AA7B25DC20A14CAB8DE26F94")
+    
+public DERObject getConvertedValue(
         DERObjectIdentifier  oid,
-        String               value) {
-        addTaint(value.getTaint());
-        addTaint(oid.getTaint());
-        if(value.length() != 0 && value.charAt(0) == '#')        
+        String               value)
+    {
+        if (value.length() != 0 && value.charAt(0) == '#')
         {
-            try 
+            try
             {
-DERObject var46D3AF13FB3CC4643357578E8CC66E2F_651558964 =                 convertHexEncoded(value, 1);
-                var46D3AF13FB3CC4643357578E8CC66E2F_651558964.addTaint(taint);
-                return var46D3AF13FB3CC4643357578E8CC66E2F_651558964;
-            } //End block
+                return convertHexEncoded(value, 1);
+            }
             catch (IOException e)
             {
-                RuntimeException var6DFFBB33DC6D67FE3709FD741BFDC9CF_2032138082 = new RuntimeException("can't recode value for oid " + oid.getId());
-                var6DFFBB33DC6D67FE3709FD741BFDC9CF_2032138082.addTaint(taint);
-                throw var6DFFBB33DC6D67FE3709FD741BFDC9CF_2032138082;
-            } //End block
-        } //End block
+                throw new RuntimeException("can't recode value for oid " + oid.getId());
+            }
+        }
         else
         {
-            if(value.length() != 0 && value.charAt(0) == '\\')            
+            if (value.length() != 0 && value.charAt(0) == '\\')
             {
                 value = value.substring(1);
-            } //End block
-            if(oid.equals(X509Name.EmailAddress) || oid.equals(X509Name.DC))            
+            }
+            if (oid.equals(X509Name.EmailAddress) || oid.equals(X509Name.DC))
             {
-DERObject var33DE795DC3C6B2B339D412A48CEFF243_477280428 =                 new DERIA5String(value);
-                var33DE795DC3C6B2B339D412A48CEFF243_477280428.addTaint(taint);
-                return var33DE795DC3C6B2B339D412A48CEFF243_477280428;
-            } //End block
-            else
-            if(oid.equals(X509Name.DATE_OF_BIRTH))            
+                return new DERIA5String(value);
+            }
+            else if (oid.equals(X509Name.DATE_OF_BIRTH))  // accept time string as well as # (for compatibility)
             {
-DERObject varA0E9AA915FE5B2238A1C04164293600B_1338311814 =                 new DERGeneralizedTime(value);
-                varA0E9AA915FE5B2238A1C04164293600B_1338311814.addTaint(taint);
-                return varA0E9AA915FE5B2238A1C04164293600B_1338311814;
-            } //End block
-            else
-            if(oid.equals(X509Name.C) || oid.equals(X509Name.SN) || oid.equals(X509Name.DN_QUALIFIER)
-                || oid.equals(X509Name.TELEPHONE_NUMBER))            
+                return new DERGeneralizedTime(value);
+            }
+            else if (oid.equals(X509Name.C) || oid.equals(X509Name.SN) || oid.equals(X509Name.DN_QUALIFIER)
+                || oid.equals(X509Name.TELEPHONE_NUMBER))
             {
-DERObject varE4B9BE1D4E9D486AB677DC69399C8BDE_1342889091 =                 new DERPrintableString(value);
-                varE4B9BE1D4E9D486AB677DC69399C8BDE_1342889091.addTaint(taint);
-                return varE4B9BE1D4E9D486AB677DC69399C8BDE_1342889091;
-            } //End block
-        } //End block
-DERObject var2B1683A8AF4155B42EB4E966D550EB40_1425553594 =         new DERUTF8String(value);
-        var2B1683A8AF4155B42EB4E966D550EB40_1425553594.addTaint(taint);
-        return var2B1683A8AF4155B42EB4E966D550EB40_1425553594;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                 return new DERPrintableString(value);
+            }
+        }
+        
+        return new DERUTF8String(value);
     }
 
     

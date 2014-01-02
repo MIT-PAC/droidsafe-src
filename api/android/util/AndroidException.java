@@ -1,45 +1,35 @@
 package android.util;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
 
 
 public class AndroidException extends Exception {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:21.428 -0500", hash_original_method = "B114E564F5DD3A8162C6B705516D48E4", hash_generated_method = "2F56F4C683EAA0F88385B28E913DE98B")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.489 -0400", hash_original_method = "B114E564F5DD3A8162C6B705516D48E4", hash_generated_method = "8C3552774B1B809997CFE9A91843D730")
-    public  AndroidException() {
-        // ---------- Original Method ----------
+public AndroidException() {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:21.430 -0500", hash_original_method = "891590FF533F04EE265F2E23F15D3AEC", hash_generated_method = "26BFED3394D7D87E6F8342B2930FD0CE")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.489 -0400", hash_original_method = "891590FF533F04EE265F2E23F15D3AEC", hash_generated_method = "A200939A713C215F75B07C58BDF9E469")
-    public  AndroidException(String name) {
+public AndroidException(String name) {
         super(name);
-        addTaint(name.getTaint());
-        // ---------- Original Method ----------
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:21.433 -0500", hash_original_method = "B244007C3BAFD44F95BE0B614ABC1B32", hash_generated_method = "0C9FD68964CA7287C46A5D85CE1C03B7")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.489 -0400", hash_original_method = "B244007C3BAFD44F95BE0B614ABC1B32", hash_generated_method = "63860F47ED8BDB47B0F522340FC68ABA")
-    public  AndroidException(String name, Throwable cause) {
+public AndroidException(String name, Throwable cause) {
         super(name, cause);
-        addTaint(cause.getTaint());
-        addTaint(name.getTaint());
-        // ---------- Original Method ----------
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:21.436 -0500", hash_original_method = "C5375F3D80EA6460B68F9344F734F18D", hash_generated_method = "C9A0F0DF4F7C2C984BB141F0FBEAAF04")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.489 -0400", hash_original_method = "C5375F3D80EA6460B68F9344F734F18D", hash_generated_method = "D38AF2A40FB5D1B4AEF74798B8F510D4")
-    public  AndroidException(Exception cause) {
+public AndroidException(Exception cause) {
         super(cause);
-        addTaint(cause.getTaint());
-        // ---------- Original Method ----------
     }
 
     

@@ -1,6 +1,8 @@
 package android.inputmethodservice;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
@@ -18,12 +20,14 @@ import android.view.inputmethod.InputMethodSession;
 
 
 public abstract class AbstractInputMethodService extends Service implements KeyEvent.Callback {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.078 -0400", hash_original_field = "DBEE96406A00F429F32FF5AA58FA6E69", hash_generated_field = "9355B5F89B0311B79EB4664ED09CF53D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:38.400 -0500", hash_original_field = "A587945B3D1BEB37BF61FF14794CE66B", hash_generated_field = "9355B5F89B0311B79EB4664ED09CF53D")
 
     private InputMethod mInputMethod;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.078 -0400", hash_original_field = "F8D33D2022493F8E03ABC3EF1AA04F31", hash_generated_field = "98A76EB2F504968B591CF0A5D11D8253")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:38.418 -0500", hash_original_field = "072D100A7BFFF1A5663A0C0EDC099F15", hash_generated_field = "98A76EB2F504968B591CF0A5D11D8253")
 
-    final KeyEvent.DispatcherState mDispatcherState = new KeyEvent.DispatcherState();
+    
+    final KeyEvent.DispatcherState mDispatcherState
+            = new KeyEvent.DispatcherState();
     
     @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.078 -0400", hash_original_method = "BC18251CD7580FCA2AE30C6FE0852CCA", hash_generated_method = "BC18251CD7580FCA2AE30C6FE0852CCA")
@@ -31,69 +35,59 @@ public abstract class AbstractInputMethodService extends Service implements KeyE
     {
         //Synthesized constructor
     }
-
-
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.079 -0400", hash_original_method = "506AD561617E231B7466C0A7229483CE", hash_generated_method = "4A7CCAA046A2B9B6E8CD87372786839B")
-    public KeyEvent.DispatcherState getKeyDispatcherState() {
-KeyEvent.DispatcherState var020BED5B281694EFFFEB80FA04419B7B_903050134 =         mDispatcherState;
-        var020BED5B281694EFFFEB80FA04419B7B_903050134.addTaint(taint);
-        return var020BED5B281694EFFFEB80FA04419B7B_903050134;
-        // ---------- Original Method ----------
-        //return mDispatcherState;
+    
+    /**
+     * Return the global {@link KeyEvent.DispatcherState KeyEvent.DispatcherState}
+     * for used for processing events from the target application.
+     * Normally you will not need to use this directly, but
+     * just use the standard high-level event callbacks like {@link #onKeyDown}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:38.452 -0500", hash_original_method = "506AD561617E231B7466C0A7229483CE", hash_generated_method = "88E232FEDF387CBC9D73D871D0EB6C10")
+    
+public KeyEvent.DispatcherState getKeyDispatcherState() {
+        return mDispatcherState;
     }
-
     
-    @DSModeled(DSC.SAFE)
-    public abstract AbstractInputMethodImpl onCreateInputMethodInterface();
-
+    /**
+     * Called by the framework during initialization, when the InputMethod
+     * interface for this service needs to be created.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:38.455 -0500", hash_original_method = "4BE4777A648557039F5DCFF01BFDCA14", hash_generated_method = "3CC782B1A55FD585AA386E5AF58B5945")
     
-    @DSModeled(DSC.SAFE)
-    public abstract AbstractInputMethodSessionImpl onCreateInputMethodSessionInterface();
-
+public abstract AbstractInputMethodImpl onCreateInputMethodInterface();
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.080 -0400", hash_original_method = "8E1D6FEDF1AFEDBCDCF9E63EFF23CA00", hash_generated_method = "039AF2C6A10B612A151CDC15787A6BA8")
-    @Override
+    /**
+     * Called by the framework when a new InputMethodSession interface is
+     * needed for a new client of the input method.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:38.457 -0500", hash_original_method = "176F41CBAB830CDD89A7D794B52DF17B", hash_generated_method = "F25BC81094D4123421F1CEA42A680928")
+    
+public abstract AbstractInputMethodSessionImpl onCreateInputMethodSessionInterface();
+    
+    /**
+     * Implement this to handle {@link android.os.Binder#dump Binder.dump()}
+     * calls on your input method.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:38.459 -0500", hash_original_method = "8E1D6FEDF1AFEDBCDCF9E63EFF23CA00", hash_generated_method = "FED34E6D5793CA7ED70004622D90B9F6")
+    
+@Override
     protected void dump(FileDescriptor fd, PrintWriter fout, String[] args) {
-        addTaint(args[0].getTaint());
-        addTaint(fout.getTaint());
-        addTaint(fd.getTaint());
-        // ---------- Original Method ----------
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:38.462 -0500", hash_original_method = "A37FBA98B4D1A366D99013E441DCBD11", hash_generated_method = "F7AD61F668C1960A695777149B1A3953")
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.081 -0400", hash_original_method = "A37FBA98B4D1A366D99013E441DCBD11", hash_generated_method = "F27B9C1D6C362A44F766836EEAD91AFB")
-    @Override
+@Override
     final public IBinder onBind(Intent intent) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(intent.getTaint());
-        if(mInputMethod == null)        
-        {
+        if (mInputMethod == null) {
             mInputMethod = onCreateInputMethodInterface();
-        } //End block
-IBinder var45779E42651DAA27DB670C6A138CC6D4_1660152606 =         new IInputMethodWrapper(this, mInputMethod);
-        var45779E42651DAA27DB670C6A138CC6D4_1660152606.addTaint(taint);
-        return var45779E42651DAA27DB670C6A138CC6D4_1660152606;
-        // ---------- Original Method ----------
-        //if (mInputMethod == null) {
-            //mInputMethod = onCreateInputMethodInterface();
-        //}
-        //return new IInputMethodWrapper(this, mInputMethod);
+        }
+        return new IInputMethodWrapper(this, mInputMethod);
     }
-
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.082 -0400", hash_original_method = "4A983FDB3FF481E2165B7D8D641CDD48", hash_generated_method = "210954E7844E5A731866B2D687F3CCDD")
-    public boolean onTrackballEvent(MotionEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(event.getTaint());
-        boolean var68934A3E9455FA72420237EB05902327_954219423 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1596991767 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1596991767;
-        // ---------- Original Method ----------
-        //return false;
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:38.464 -0500", hash_original_method = "4A983FDB3FF481E2165B7D8D641CDD48", hash_generated_method = "3CA4089EBE14436E733AD365EF1361B8")
+    
+public boolean onTrackballEvent(MotionEvent event) {
+        return false;
     }
 
     
@@ -104,34 +98,37 @@ IBinder var45779E42651DAA27DB670C6A138CC6D4_1660152606 =         new IInputMetho
         {
             //Synthesized constructor
         }
-
-
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.083 -0400", hash_original_method = "084F24BCF671A12F38D7783BEA9F6E08", hash_generated_method = "07C81BF4E30629B04C5F1CD8F3836B71")
-        public void createSession(SessionCallback callback) {
-            addTaint(callback.getTaint());
+        /**
+         * Instantiate a new client session for the input method, by calling
+         * back to {@link AbstractInputMethodService#onCreateInputMethodSessionInterface()
+         * AbstractInputMethodService.onCreateInputMethodSessionInterface()}.
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:38.422 -0500", hash_original_method = "084F24BCF671A12F38D7783BEA9F6E08", hash_generated_method = "DD369A981C0E962648D9702BD49720E4")
+        
+public void createSession(SessionCallback callback) {
             callback.sessionCreated(onCreateInputMethodSessionInterface());
-            // ---------- Original Method ----------
-            //callback.sessionCreated(onCreateInputMethodSessionInterface());
         }
-
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.083 -0400", hash_original_method = "66C173BC408ADA3F5326213B71DD3797", hash_generated_method = "B49E7119905F074A51AF7F00DEDA0494")
-        public void setSessionEnabled(InputMethodSession session, boolean enabled) {
-            addTaint(enabled);
-            addTaint(session.getTaint());
+        /**
+         * Take care of enabling or disabling an existing session by calling its
+         * {@link AbstractInputMethodSessionImpl#revokeSelf()
+         * AbstractInputMethodSessionImpl.setEnabled()} method.
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:38.424 -0500", hash_original_method = "66C173BC408ADA3F5326213B71DD3797", hash_generated_method = "4F064CDBA32C8CDBC8255E95E41CB8B3")
+        
+public void setSessionEnabled(InputMethodSession session, boolean enabled) {
             ((AbstractInputMethodSessionImpl)session).setEnabled(enabled);
-            // ---------- Original Method ----------
-            //((AbstractInputMethodSessionImpl)session).setEnabled(enabled);
         }
-
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.084 -0400", hash_original_method = "79971C84DD1A2F851BEBA1D6EABE42F6", hash_generated_method = "7479F87AFCA01C6E1D2381D9D534649E")
-        public void revokeSession(InputMethodSession session) {
-            addTaint(session.getTaint());
+        /**
+         * Take care of killing an existing session by calling its
+         * {@link AbstractInputMethodSessionImpl#revokeSelf()
+         * AbstractInputMethodSessionImpl.revokeSelf()} method.
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:38.426 -0500", hash_original_method = "79971C84DD1A2F851BEBA1D6EABE42F6", hash_generated_method = "81F8C17832864D7E04850D040E7C414A")
+        
+public void revokeSession(InputMethodSession session) {
             ((AbstractInputMethodSessionImpl)session).revokeSelf();
-            // ---------- Original Method ----------
-            //((AbstractInputMethodSessionImpl)session).revokeSelf();
         }
 
         
@@ -140,10 +137,10 @@ IBinder var45779E42651DAA27DB670C6A138CC6D4_1660152606 =         new IInputMetho
 
     
     public abstract class AbstractInputMethodSessionImpl implements InputMethodSession {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.084 -0400", hash_original_field = "71AB1146E1CEE92AB74D832DEFFE135F", hash_generated_field = "35AD8B69CCAB99ED75EF706EA5E75D7E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:38.432 -0500", hash_original_field = "35AD8B69CCAB99ED75EF706EA5E75D7E", hash_generated_field = "35AD8B69CCAB99ED75EF706EA5E75D7E")
 
         boolean mEnabled = true;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.084 -0400", hash_original_field = "F1726E470958465011824E5F0EBDE84F", hash_generated_field = "5781D1C4F0DDC12DF2BB3E12406C7974")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:38.434 -0500", hash_original_field = "5781D1C4F0DDC12DF2BB3E12406C7974", hash_generated_field = "5781D1C4F0DDC12DF2BB3E12406C7974")
 
         boolean mRevoked;
         
@@ -152,92 +149,76 @@ IBinder var45779E42651DAA27DB670C6A138CC6D4_1660152606 =         new IInputMetho
         {
             //Synthesized constructor
         }
-
-
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.085 -0400", hash_original_method = "B599CE9BD5CE6C0947F95A74F4693444", hash_generated_method = "A69A17B52AE295D9EE9BB90A0E865332")
-        public boolean isEnabled() {
-            boolean var6F84A7F10C955D3C78F44E5278F6195B_590322386 = (mEnabled);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1926388330 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1926388330;
-            // ---------- Original Method ----------
-            //return mEnabled;
-        }
-
         
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.085 -0400", hash_original_method = "C0B4C5A0A5D7F00D5E6612F5DDAFF7B5", hash_generated_method = "3E29D7C9C53392F045835B92E5F16999")
-        public boolean isRevoked() {
-            boolean varF1726E470958465011824E5F0EBDE84F_559583503 = (mRevoked);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_321559844 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_321559844;
-            // ---------- Original Method ----------
-            //return mRevoked;
-        }
-
+        /**
+         * Check whether this session has been enabled by the system.  If not
+         * enabled, you should not execute any calls on to it.
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:38.436 -0500", hash_original_method = "B599CE9BD5CE6C0947F95A74F4693444", hash_generated_method = "FCD384DBC29E5B725DC0C96A27CA1EC9")
         
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.085 -0400", hash_original_method = "BA8B8E3B4141C528807EA03970F3ED77", hash_generated_method = "D04D9CD4679D7D7E2C9DAE267ACCB74E")
-        public void setEnabled(boolean enabled) {
-            if(!mRevoked)            
-            {
+public boolean isEnabled() {
+            return mEnabled;
+        }
+        
+        /**
+         * Check whether this session has been revoked by the system.  Revoked
+         * session is also always disabled, so there is generally no need to
+         * explicitly check for this.
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:38.438 -0500", hash_original_method = "C0B4C5A0A5D7F00D5E6612F5DDAFF7B5", hash_generated_method = "CF66BB9EA392ED21D7A133ABCE9B221E")
+        
+public boolean isRevoked() {
+            return mRevoked;
+        }
+        
+        /**
+         * Change the enabled state of the session.  This only works if the
+         * session has not been revoked.
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:38.441 -0500", hash_original_method = "BA8B8E3B4141C528807EA03970F3ED77", hash_generated_method = "939333BBC635D281310E883AA8388085")
+        
+public void setEnabled(boolean enabled) {
+            if (!mRevoked) {
                 mEnabled = enabled;
-            } //End block
-            // ---------- Original Method ----------
-            //if (!mRevoked) {
-                //mEnabled = enabled;
-            //}
+            }
         }
-
         
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.086 -0400", hash_original_method = "6150597809F85496BEE526162ACEB60F", hash_generated_method = "E60B36F04B14FB96FAC9E90F23CA5FB2")
-        public void revokeSelf() {
+        /**
+         * Revoke the session from the client.  This disabled the session, and
+         * prevents it from ever being enabled again.
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:38.443 -0500", hash_original_method = "6150597809F85496BEE526162ACEB60F", hash_generated_method = "C30AF228B79D846F04FA4DE4BA6AEFF6")
+        
+public void revokeSelf() {
             mRevoked = true;
             mEnabled = false;
-            // ---------- Original Method ----------
-            //mRevoked = true;
-            //mEnabled = false;
         }
-
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.086 -0400", hash_original_method = "352A951CCD835CDBB0D749381932ADC2", hash_generated_method = "01BD208C14DF5DA2CB65D3D01FFE5C47")
-        public void dispatchKeyEvent(int seq, KeyEvent event, EventCallback callback) {
-            addTaint(callback.getTaint());
-            addTaint(event.getTaint());
-            addTaint(seq);
+        /**
+         * Take care of dispatching incoming key events to the appropriate
+         * callbacks on the service, and tell the client when this is done.
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:38.446 -0500", hash_original_method = "352A951CCD835CDBB0D749381932ADC2", hash_generated_method = "8C668FCBB5986C4E6297EF7B2988C0E7")
+        
+public void dispatchKeyEvent(int seq, KeyEvent event, EventCallback callback) {
             boolean handled = event.dispatch(AbstractInputMethodService.this,
                     mDispatcherState, this);
-            if(callback != null)            
-            {
+            if (callback != null) {
                 callback.finishedEvent(seq, handled);
-            } //End block
-            // ---------- Original Method ----------
-            //boolean handled = event.dispatch(AbstractInputMethodService.this,
-                    //mDispatcherState, this);
-            //if (callback != null) {
-                //callback.finishedEvent(seq, handled);
-            //}
+            }
         }
 
+        /**
+         * Take care of dispatching incoming trackball events to the appropriate
+         * callbacks on the service, and tell the client when this is done.
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:38.448 -0500", hash_original_method = "D1FB978C0FC3E262298A1F84CE672B17", hash_generated_method = "3970D298A5313EBCA6209AB6EBDEEBC6")
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.087 -0400", hash_original_method = "D1FB978C0FC3E262298A1F84CE672B17", hash_generated_method = "0CB3207D059412BDC8273C31264D6C98")
-        public void dispatchTrackballEvent(int seq, MotionEvent event, EventCallback callback) {
-            addTaint(callback.getTaint());
-            addTaint(event.getTaint());
-            addTaint(seq);
+public void dispatchTrackballEvent(int seq, MotionEvent event, EventCallback callback) {
             boolean handled = onTrackballEvent(event);
-            if(callback != null)            
-            {
+            if (callback != null) {
                 callback.finishedEvent(seq, handled);
-            } //End block
-            // ---------- Original Method ----------
-            //boolean handled = onTrackballEvent(event);
-            //if (callback != null) {
-                //callback.finishedEvent(seq, handled);
-            //}
+            }
         }
 
         

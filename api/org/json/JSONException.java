@@ -1,16 +1,17 @@
 package org.json;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
 public class JSONException extends Exception {
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.409 -0500", hash_original_method = "D7D56E71DBC1CB75BB9A8A89BF06234E", hash_generated_method = "60A25235328C7DF9CB09A6CA38BE4E6A")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.329 -0400", hash_original_method = "D7D56E71DBC1CB75BB9A8A89BF06234E", hash_generated_method = "F5CC0B0C7C84C28DA2AB6A2CEC56BC3E")
-    public  JSONException(String s) {
+public JSONException(String s) {
         super(s);
-        addTaint(s.getTaint());
-        // ---------- Original Method ----------
     }
 
     

@@ -1,6 +1,8 @@
 package org.apache.harmony.xml.dom;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,71 +16,43 @@ import org.w3c.dom.NodeList;
 
 
 public class NodeListImpl implements NodeList {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.677 -0400", hash_original_field = "268184C12DF027F536154D099D497B31", hash_generated_field = "01219BC14411B8933603C8E4F4F1DCA8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:21.447 -0500", hash_original_field = "3571FDEDABBB67C544DB562B84A412E3", hash_generated_field = "01219BC14411B8933603C8E4F4F1DCA8")
+
 
     private List<NodeImpl> children;
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:21.450 -0500", hash_original_method = "90C695C7BB2C17E5AEDC35249C42B72B", hash_generated_method = "90C695C7BB2C17E5AEDC35249C42B72B")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.677 -0400", hash_original_method = "90C695C7BB2C17E5AEDC35249C42B72B", hash_generated_method = "0E4047B11F334542A784CB40C2591858")
-      NodeListImpl() {
+NodeListImpl() {
         children = new ArrayList<NodeImpl>();
-        // ---------- Original Method ----------
-        //children = new ArrayList<NodeImpl>();
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:21.452 -0500", hash_original_method = "769B9507B64DB92B25819A81313D951D", hash_generated_method = "769B9507B64DB92B25819A81313D951D")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.677 -0400", hash_original_method = "769B9507B64DB92B25819A81313D951D", hash_generated_method = "7C6AE4C06DED08E678C5A34AF3F9DA08")
-      NodeListImpl(List<NodeImpl> list) {
+NodeListImpl(List<NodeImpl> list) {
         children = list;
-        // ---------- Original Method ----------
-        //children = list;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:21.454 -0500", hash_original_method = "3686ABB43FF3696F10F1056AA01C2579", hash_generated_method = "3686ABB43FF3696F10F1056AA01C2579")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.678 -0400", hash_original_method = "3686ABB43FF3696F10F1056AA01C2579", hash_generated_method = "B91DD2A3E84E4AF0DB8F1F0CC69341AF")
-     void add(NodeImpl node) {
-        addTaint(node.getTaint());
+void add(NodeImpl node) {
         children.add(node);
-        // ---------- Original Method ----------
-        //children.add(node);
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:21.457 -0500", hash_original_method = "91DC5DE88E19C57D8C382EFD5B1079BB", hash_generated_method = "C2BBA1299B7523F687324429EBEEAFEA")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.678 -0400", hash_original_method = "91DC5DE88E19C57D8C382EFD5B1079BB", hash_generated_method = "250976DB0DD76236CFEA29D4C2DC384D")
-    public int getLength() {
-        int varCA7385CBF53925F741853B4A529FBE32_1828944255 = (children.size());
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1382106685 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1382106685;
-        // ---------- Original Method ----------
-        //return children.size();
+public int getLength() {
+        return children.size();
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:21.459 -0500", hash_original_method = "41D1F200C8CAC9D2F8301DE4F00B532B", hash_generated_method = "024D75DC0A1AEA09B314F39F63AC754A")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.678 -0400", hash_original_method = "41D1F200C8CAC9D2F8301DE4F00B532B", hash_generated_method = "9A1E6705C62F5E735D71E6394E5056DB")
-    public Node item(int index) {
-        addTaint(index);
-        if(index >= children.size())        
-        {
-Node var540C13E9E156B687226421B24F2DF178_50834768 =             null;
-            var540C13E9E156B687226421B24F2DF178_50834768.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_50834768;
-        } //End block
-        else
-        {
-Node var93C1CBEE247256B795FC4E611626C622_546684025 =             children.get(index);
-            var93C1CBEE247256B795FC4E611626C622_546684025.addTaint(taint);
-            return var93C1CBEE247256B795FC4E611626C622_546684025;
-        } //End block
-        // ---------- Original Method ----------
-        //if (index >= children.size()) {
-            //return null;
-        //} else {
-            //return children.get(index);
-        //}
+public Node item(int index) {
+        if (index >= children.size()) {
+            return null;
+        } else {
+            return children.get(index);
+        }
     }
 
     

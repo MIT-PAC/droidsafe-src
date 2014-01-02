@@ -1,19 +1,19 @@
 package org.bouncycastle.openssl;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 
 
 
 public class PasswordException extends IOException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:34.118 -0500", hash_original_method = "C6899838B1393DC816DA483F96511D69", hash_generated_method = "F8A973D8A49293EEEDF624237EDFE041")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.135 -0400", hash_original_method = "C6899838B1393DC816DA483F96511D69", hash_generated_method = "C013E4B6A962A13D202F4C30483D4CC7")
-    public  PasswordException(String msg) {
+public PasswordException(String msg)
+    {
         super(msg);
-        addTaint(msg.getTaint());
-        // ---------- Original Method ----------
     }
 
     

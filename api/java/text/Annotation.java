@@ -1,6 +1,8 @@
 package java.text;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
@@ -8,39 +10,44 @@ import droidsafe.annotations.*;
 
 
 public class Annotation {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.270 -0400", hash_original_field = "2063C1608D6E0BAF80249C42E2BE5804", hash_generated_field = "D3245881F91753AD0C508E1E9B72D31F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:10.203 -0500", hash_original_field = "01495BEB834F5098BB0B06183674C819", hash_generated_field = "D3245881F91753AD0C508E1E9B72D31F")
+
 
     private Object value;
+
+    /**
+     * Constructs a new {@code Annotation}.
+     *
+     * @param attribute the attribute attached to this annotation. This may be
+     *        {@code null}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:10.206 -0500", hash_original_method = "B1453DDFF141446D32AF844E0A6591E8", hash_generated_method = "EBD06A8BDEC772879149679DA40D14EC")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.271 -0400", hash_original_method = "B1453DDFF141446D32AF844E0A6591E8", hash_generated_method = "39B2C3DA0D326D411001D911DA4DDF90")
-    public  Annotation(Object attribute) {
+public Annotation(Object attribute) {
         value = attribute;
-        // ---------- Original Method ----------
-        //value = attribute;
     }
 
+    /**
+     * Returns the value of this annotation. The value may be {@code null}.
+     *
+     * @return the value of this annotation or {@code null}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:10.208 -0500", hash_original_method = "B4F085CF9776332A868AEA05C2B06886", hash_generated_method = "8F1C34090E292F1C2F621B605A6DF10D")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.271 -0400", hash_original_method = "B4F085CF9776332A868AEA05C2B06886", hash_generated_method = "1CEE207CC1C9BF4F2C2F219A31FB0F86")
-    public Object getValue() {
-Object varAF280DA2BC37D8BE783D8499160168DE_1375314323 =         value;
-        varAF280DA2BC37D8BE783D8499160168DE_1375314323.addTaint(taint);
-        return varAF280DA2BC37D8BE783D8499160168DE_1375314323;
-        // ---------- Original Method ----------
-        //return value;
+public Object getValue() {
+        return value;
     }
 
+    /**
+     * Returns this annotation in string representation.
+     *
+     * @return the string representation of this annotation.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:10.211 -0500", hash_original_method = "439CE19804D9002003DD6A4835AE4496", hash_generated_method = "629F14B051FCA1573294076D9E1BC448")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.271 -0400", hash_original_method = "439CE19804D9002003DD6A4835AE4496", hash_generated_method = "29622FD5DC7A4ED0DDF6C49813B423B7")
-    @Override
+@Override
     public String toString() {
-String var63C569056C3C83D0B971C160C125DCA8_1799429314 =         getClass().getName() + "[value=" + value + ']';
-        var63C569056C3C83D0B971C160C125DCA8_1799429314.addTaint(taint);
-        return var63C569056C3C83D0B971C160C125DCA8_1799429314;
-        // ---------- Original Method ----------
-        //return getClass().getName() + "[value=" + value + ']';
+        return getClass().getName() + "[value=" + value + ']';
     }
 
     

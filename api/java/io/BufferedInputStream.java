@@ -1,6 +1,8 @@
 package java.io;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Arrays;
 
@@ -10,429 +12,387 @@ import java.util.Arrays;
 
 
 public class BufferedInputStream extends FilterInputStream {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.226 -0400", hash_original_field = "CB7E52B21171FB9A53B498202607F0BD", hash_generated_field = "C53666C61D704ACE793D3D98401D06E0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.139 -0500", hash_original_field = "001DD3820C6A6A544AB42831C6F17A05", hash_generated_field = "C53666C61D704ACE793D3D98401D06E0")
 
     protected volatile byte[] buf;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.226 -0400", hash_original_field = "E2942A04780E223B215EB8B663CF5353", hash_generated_field = "CADFF8C1F208C99E14B28CFC1A04442F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.141 -0500", hash_original_field = "B83BF7ED7F5719DA923E1BC0AC69952B", hash_generated_field = "CADFF8C1F208C99E14B28CFC1A04442F")
 
     protected int count;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.226 -0400", hash_original_field = "7E1D45D2D0791CB14CAE674BF346C80C", hash_generated_field = "187237640B843AF018F2A924787F8CE1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.144 -0500", hash_original_field = "A7BDBB7BB14DDDE2FA2BAB4A41062BFB", hash_generated_field = "187237640B843AF018F2A924787F8CE1")
 
     protected int marklimit;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.226 -0400", hash_original_field = "492E5D488B8C3F3A5B37BE9C27216BA1", hash_generated_field = "584BEF84693439016482B6900153EC57")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.146 -0500", hash_original_field = "AA082170A07E47DD757AA0D276241BD9", hash_generated_field = "584BEF84693439016482B6900153EC57")
 
     protected int markpos = -1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.226 -0400", hash_original_field = "5E0BDCBDDCCCA4D66D74BA8C1CEE1A68", hash_generated_field = "3039C52FCC40405280C80DE756778CBF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.148 -0500", hash_original_field = "5780BC7BCF265A6425A5A90F1AD9B24E", hash_generated_field = "3039C52FCC40405280C80DE756778CBF")
 
     protected int pos;
+
+    /**
+     * Constructs a new {@code BufferedInputStream}, providing {@code in} with a buffer
+     * of 8192 bytes.
+     *
+     * <p><strong>Warning:</strong> passing a null source creates a closed
+     * {@code BufferedInputStream}. All read operations on such a stream will
+     * fail with an IOException.
+     *
+     * @param in the {@code InputStream} the buffer reads from.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.150 -0500", hash_original_method = "21B504722C790213175AE0F5E25EEBB8", hash_generated_method = "372D73774F2BD015B118B47B81AE2714")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.226 -0400", hash_original_method = "21B504722C790213175AE0F5E25EEBB8", hash_generated_method = "082827D8E12E6C89AE7674A5DA40B439")
-    public  BufferedInputStream(InputStream in) {
+public BufferedInputStream(InputStream in) {
         this(in, 8192);
-        addTaint(in.getTaint());
-        // ---------- Original Method ----------
     }
 
+    /**
+     * Constructs a new {@code BufferedInputStream}, providing {@code in} with {@code size} bytes
+     * of buffer.
+     *
+     * <p><strong>Warning:</strong> passing a null source creates a closed
+     * {@code BufferedInputStream}. All read operations on such a stream will
+     * fail with an IOException.
+     *
+     * @param in the {@code InputStream} the buffer reads from.
+     * @param size the size of buffer in bytes.
+     * @throws IllegalArgumentException if {@code size <= 0}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.153 -0500", hash_original_method = "4F467422085302825BDB985C2FDC72F9", hash_generated_method = "E76DA12E1EAECD7C410B08708D171821")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.227 -0400", hash_original_method = "4F467422085302825BDB985C2FDC72F9", hash_generated_method = "33F47EABF50AF381ECA2F52E40741515")
-    public  BufferedInputStream(InputStream in, int size) {
+public BufferedInputStream(InputStream in, int size) {
         super(in);
-        addTaint(in.getTaint());
-        if(size <= 0)        
-        {
-            IllegalArgumentException var5AFB46BA040E4CEE38200888DC74991F_400185253 = new IllegalArgumentException("size <= 0");
-            var5AFB46BA040E4CEE38200888DC74991F_400185253.addTaint(taint);
-            throw var5AFB46BA040E4CEE38200888DC74991F_400185253;
-        } //End block
+        if (size <= 0) {
+            throw new IllegalArgumentException("size <= 0");
+        }
         buf = new byte[size];
-        // ---------- Original Method ----------
-        //if (size <= 0) {
-            //throw new IllegalArgumentException("size <= 0");
-        //}
-        //buf = new byte[size];
     }
 
+    /**
+     * Returns an estimated number of bytes that can be read or skipped without blocking for more
+     * input. This method returns the number of bytes available in the buffer
+     * plus those available in the source stream, but see {@link InputStream#available} for
+     * important caveats.
+     *
+     * @return the estimated number of bytes available
+     * @throws IOException if this stream is closed or an error occurs
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.156 -0500", hash_original_method = "07FFB00D7B3DCD194F29893BBF5B52EB", hash_generated_method = "E702B54EC9B1A3179D95C3F8C922A986")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.240 -0400", hash_original_method = "07FFB00D7B3DCD194F29893BBF5B52EB", hash_generated_method = "B05545DDDCE9E193B3A1242967BEC7C2")
-    @Override
+@Override
     public synchronized int available() throws IOException {
-        InputStream localIn = in;
-        if(buf == null || localIn == null)        
-        {
-            java.io.IOException varA98E388EB7D58355C3D9798BF8FEED22_1732673131 = streamClosed();
-            varA98E388EB7D58355C3D9798BF8FEED22_1732673131.addTaint(taint);
-            throw varA98E388EB7D58355C3D9798BF8FEED22_1732673131;
-        } //End block
-        int varD532F72443E2D24D25126F962BF5192D_1529426523 = (count - pos + localIn.available());
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1521759512 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1521759512;
-        // ---------- Original Method ----------
-        //InputStream localIn = in;
-        //if (buf == null || localIn == null) {
-            //throw streamClosed();
-        //}
-        //return count - pos + localIn.available();
+        InputStream localIn = in; // 'in' could be invalidated by close()
+        if (buf == null || localIn == null) {
+            throw streamClosed();
+        }
+        return count - pos + localIn.available();
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.159 -0500", hash_original_method = "4D8013C45FC6B1A765F1F6C3AB84963B", hash_generated_method = "492C714F78E5F2332BAF645DCF0D7765")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.241 -0400", hash_original_method = "4D8013C45FC6B1A765F1F6C3AB84963B", hash_generated_method = "5AA9CFA9376539DB00F5A5D78696581C")
-    private IOException streamClosed() throws IOException {
-        IOException var89916D241EE2238C12187BD738C2B6DE_507137193 = new IOException("BufferedInputStream is closed");
-        var89916D241EE2238C12187BD738C2B6DE_507137193.addTaint(taint);
-        throw var89916D241EE2238C12187BD738C2B6DE_507137193;
-        // ---------- Original Method ----------
-        //throw new IOException("BufferedInputStream is closed");
+private IOException streamClosed() throws IOException {
+        throw new IOException("BufferedInputStream is closed");
     }
 
+    /**
+     * Closes this stream. The source stream is closed and any resources
+     * associated with it are released.
+     *
+     * @throws IOException
+     *             if an error occurs while closing this stream.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.162 -0500", hash_original_method = "9458B5514F81355F9A651152E456CAE7", hash_generated_method = "98FD5980451359CE86D0EDE2C1BE1722")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.241 -0400", hash_original_method = "9458B5514F81355F9A651152E456CAE7", hash_generated_method = "B0805CE5B8110FDCECC2334E181CC143")
-    @Override
+@Override
     public void close() throws IOException {
         buf = null;
         InputStream localIn = in;
         in = null;
-        if(localIn != null)        
-        {
+        if (localIn != null) {
             localIn.close();
-        } //End block
-        // ---------- Original Method ----------
-        //buf = null;
-        //InputStream localIn = in;
-        //in = null;
-        //if (localIn != null) {
-            //localIn.close();
-        //}
+        }
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.165 -0500", hash_original_method = "763578223906D5382275DB1FE1B265CB", hash_generated_method = "1E32DD52A6A22E317CE9B897937C2FA6")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.243 -0400", hash_original_method = "763578223906D5382275DB1FE1B265CB", hash_generated_method = "3680F9739C189BD077973F250B4FA91E")
-    private int fillbuf(InputStream localIn, byte[] localBuf) throws IOException {
-        addTaint(localBuf[0]);
-        addTaint(localIn.getTaint());
-        if(markpos == -1 || (pos - markpos >= marklimit))        
-        {
+private int fillbuf(InputStream localIn, byte[] localBuf)
+            throws IOException {
+        if (markpos == -1 || (pos - markpos >= marklimit)) {
+            /* Mark position not set or exceeded readlimit */
             int result = localIn.read(localBuf);
-            if(result > 0)            
-            {
+            if (result > 0) {
                 markpos = -1;
                 pos = 0;
                 count = result == -1 ? 0 : result;
-            } //End block
-            int varB4A88417B3D0170D754C647C30B7216A_1039366504 = (result);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_3975677 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_3975677;
-        } //End block
-        if(markpos == 0 && marklimit > localBuf.length)        
-        {
+            }
+            return result;
+        }
+        if (markpos == 0 && marklimit > localBuf.length) {
+            /* Increase buffer size to accommodate the readlimit */
             int newLength = localBuf.length * 2;
-            if(newLength > marklimit)            
-            {
+            if (newLength > marklimit) {
                 newLength = marklimit;
-            } //End block
+            }
             byte[] newbuf = new byte[newLength];
             System.arraycopy(localBuf, 0, newbuf, 0, localBuf.length);
+            // Reassign buf, which will invalidate any local references
+            // FIXME: what if buf was null?
             localBuf = buf = newbuf;
-        } //End block
-        else
-        if(markpos > 0)        
-        {
+        } else if (markpos > 0) {
             System.arraycopy(localBuf, markpos, localBuf, 0, localBuf.length
                     - markpos);
-        } //End block
+        }
+        /* Set the new position and mark position */
         pos -= markpos;
         count = markpos = 0;
         int bytesread = localIn.read(localBuf, pos, localBuf.length - pos);
         count = bytesread <= 0 ? pos : pos + bytesread;
-        int var01B28BAEB777B9C7327B9F35DB7A8609_1091875760 = (bytesread);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_877185649 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_877185649;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        return bytesread;
     }
 
+    /**
+     * Sets a mark position in this stream. The parameter {@code readlimit}
+     * indicates how many bytes can be read before a mark is invalidated.
+     * Calling {@code reset()} will reposition the stream back to the marked
+     * position if {@code readlimit} has not been surpassed. The underlying
+     * buffer may be increased in size to allow {@code readlimit} number of
+     * bytes to be supported.
+     *
+     * @param readlimit
+     *            the number of bytes that can be read before the mark is
+     *            invalidated.
+     * @see #reset()
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.168 -0500", hash_original_method = "DF417F804FB76ED4D7DE805338DD287E", hash_generated_method = "6C8AA12DBDC90F730C598DE59714D576")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.245 -0400", hash_original_method = "DF417F804FB76ED4D7DE805338DD287E", hash_generated_method = "E33C32E52CFE857EB9ED3111281AA940")
-    @Override
+@Override
     public synchronized void mark(int readlimit) {
         marklimit = readlimit;
         markpos = pos;
-        // ---------- Original Method ----------
-        //marklimit = readlimit;
-        //markpos = pos;
     }
 
+    /**
+     * Indicates whether {@code BufferedInputStream} supports the {@code mark()}
+     * and {@code reset()} methods.
+     *
+     * @return {@code true} for BufferedInputStreams.
+     * @see #mark(int)
+     * @see #reset()
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.170 -0500", hash_original_method = "3448BF342B33B519FE64A3FA0274077D", hash_generated_method = "8651EC098CD56FF2A595F29537142CD3")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.245 -0400", hash_original_method = "3448BF342B33B519FE64A3FA0274077D", hash_generated_method = "2D205BF0C7B6F1731DD6914EF730603B")
-    @Override
+@Override
     public boolean markSupported() {
-        boolean varB326B5062B2F0E69046810717534CB09_1530606018 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_254791470 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_254791470;
-        // ---------- Original Method ----------
-        //return true;
+        return true;
     }
 
+    /**
+     * Reads a single byte from this stream and returns it as an integer in the
+     * range from 0 to 255. Returns -1 if the end of the source string has been
+     * reached. If the internal buffer does not contain any available bytes then
+     * it is filled from the source stream and the first byte is returned.
+     *
+     * @return the byte read or -1 if the end of the source stream has been
+     *         reached.
+     * @throws IOException
+     *             if this stream is closed or another IOException occurs.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.173 -0500", hash_original_method = "44D2E1EC0EF3B53AC5594D464D2C83B9", hash_generated_method = "6A4474C98316806C704D1FF867C7D064")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.257 -0400", hash_original_method = "44D2E1EC0EF3B53AC5594D464D2C83B9", hash_generated_method = "46974C7D647CF9CEF2FCF1144E6FA7A2")
-    @Override
+@Override
     public synchronized int read() throws IOException {
+        // Use local refs since buf and in may be invalidated by an
+        // unsynchronized close()
         byte[] localBuf = buf;
         InputStream localIn = in;
-        if(localBuf == null || localIn == null)        
-        {
-            java.io.IOException varA98E388EB7D58355C3D9798BF8FEED22_384249906 = streamClosed();
-            varA98E388EB7D58355C3D9798BF8FEED22_384249906.addTaint(taint);
-            throw varA98E388EB7D58355C3D9798BF8FEED22_384249906;
-        } //End block
-        if(pos >= count && fillbuf(localIn, localBuf) == -1)        
-        {
-            int var6BB61E3B7BCE0931DA574D19D1D82C88_1029273064 = (-1);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_498166845 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_498166845;
-        } //End block
-        if(localBuf != buf)        
-        {
+        if (localBuf == null || localIn == null) {
+            throw streamClosed();
+        }
+
+        /* Are there buffered bytes available? */
+        if (pos >= count && fillbuf(localIn, localBuf) == -1) {
+            return -1; /* no, fill buffer */
+        }
+        // localBuf may have been invalidated by fillbuf
+        if (localBuf != buf) {
             localBuf = buf;
-            if(localBuf == null)            
-            {
-                java.io.IOException varA98E388EB7D58355C3D9798BF8FEED22_646643365 = streamClosed();
-                varA98E388EB7D58355C3D9798BF8FEED22_646643365.addTaint(taint);
-                throw varA98E388EB7D58355C3D9798BF8FEED22_646643365;
-            } //End block
-        } //End block
-        if(count - pos > 0)        
-        {
-            int varC8367146E0AB6551BC24E9A0C27B8A26_252534196 = (localBuf[pos++] & 0xFF);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_81375424 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_81375424;
-        } //End block
-        int var6BB61E3B7BCE0931DA574D19D1D82C88_226099147 = (-1);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_360131753 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_360131753;
-        // ---------- Original Method ----------
-        //byte[] localBuf = buf;
-        //InputStream localIn = in;
-        //if (localBuf == null || localIn == null) {
-            //throw streamClosed();
-        //}
-        //if (pos >= count && fillbuf(localIn, localBuf) == -1) {
-            //return -1; 
-        //}
-        //if (localBuf != buf) {
-            //localBuf = buf;
-            //if (localBuf == null) {
-                //throw streamClosed();
-            //}
-        //}
-        //if (count - pos > 0) {
-            //return localBuf[pos++] & 0xFF;
-        //}
-        //return -1;
+            if (localBuf == null) {
+                throw streamClosed();
+            }
+        }
+
+        /* Did filling the buffer fail with -1 (EOF)? */
+        if (count - pos > 0) {
+            return localBuf[pos++] & 0xFF;
+        }
+        return -1;
     }
 
+    /**
+     * Reads at most {@code byteCount} bytes from this stream and stores them in
+     * byte array {@code buffer} starting at offset {@code offset}. Returns the
+     * number of bytes actually read or -1 if no bytes were read and the end of
+     * the stream was encountered. If all the buffered bytes have been used, a
+     * mark has not been set and the requested number of bytes is larger than
+     * the receiver's buffer size, this implementation bypasses the buffer and
+     * simply places the results directly into {@code buffer}.
+     *
+     * @param buffer
+     *            the byte array in which to store the bytes read.
+     * @return the number of bytes actually read or -1 if end of stream.
+     * @throws IndexOutOfBoundsException
+     *             if {@code offset < 0} or {@code byteCount < 0}, or if
+     *             {@code offset + byteCount} is greater than the size of
+     *             {@code buffer}.
+     * @throws IOException
+     *             if the stream is already closed or another IOException
+     *             occurs.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.177 -0500", hash_original_method = "61DEF23C4EC5BF0BA1725AB1A56B4C17", hash_generated_method = "0D02395DDFF6896AF352C79259C47479")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.284 -0400", hash_original_method = "61DEF23C4EC5BF0BA1725AB1A56B4C17", hash_generated_method = "A797C94A79E0360AC2C69A8877F1ADFB")
-    @Override
+@Override
     public synchronized int read(byte[] buffer, int offset, int byteCount) throws IOException {
-        addTaint(byteCount);
-        addTaint(offset);
-        addTaint(buffer[0]);
+        // Use local ref since buf may be invalidated by an unsynchronized
+        // close()
         byte[] localBuf = buf;
-        if(localBuf == null)        
-        {
-            java.io.IOException varA98E388EB7D58355C3D9798BF8FEED22_1759255349 = streamClosed();
-            varA98E388EB7D58355C3D9798BF8FEED22_1759255349.addTaint(taint);
-            throw varA98E388EB7D58355C3D9798BF8FEED22_1759255349;
-        } //End block
+        if (localBuf == null) {
+            throw streamClosed();
+        }
         Arrays.checkOffsetAndCount(buffer.length, offset, byteCount);
-        if(byteCount == 0)        
-        {
-            int varCFCD208495D565EF66E7DFF9F98764DA_1607573965 = (0);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1876561240 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1876561240;
-        } //End block
+        if (byteCount == 0) {
+            return 0;
+        }
         InputStream localIn = in;
-        if(localIn == null)        
-        {
-            java.io.IOException varA98E388EB7D58355C3D9798BF8FEED22_852830118 = streamClosed();
-            varA98E388EB7D58355C3D9798BF8FEED22_852830118.addTaint(taint);
-            throw varA98E388EB7D58355C3D9798BF8FEED22_852830118;
-        } //End block
+        if (localIn == null) {
+            throw streamClosed();
+        }
+
         int required;
-        if(pos < count)        
-        {
+        if (pos < count) {
+            /* There are bytes available in the buffer. */
             int copylength = count - pos >= byteCount ? byteCount : count - pos;
             System.arraycopy(localBuf, pos, buffer, offset, copylength);
             pos += copylength;
-            if(copylength == byteCount || localIn.available() == 0)            
-            {
-                int var7628A5F96B2E1738AE4435B7AB59A209_1218510602 = (copylength);
-                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1409738655 = getTaintInt();
-                return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1409738655;
-            } //End block
+            if (copylength == byteCount || localIn.available() == 0) {
+                return copylength;
+            }
             offset += copylength;
             required = byteCount - copylength;
-        } //End block
-        else
-        {
+        } else {
             required = byteCount;
-        } //End block
-        while
-(true)        
-        {
+        }
+
+        while (true) {
             int read;
-            if(markpos == -1 && required >= localBuf.length)            
-            {
+            /*
+             * If we're not marked and the required size is greater than the
+             * buffer, simply read the bytes directly bypassing the buffer.
+             */
+            if (markpos == -1 && required >= localBuf.length) {
                 read = localIn.read(buffer, offset, required);
-                if(read == -1)                
-                {
-                    int varE9F7BEC0C88CD14A00890C7265F93994_318780106 = (required == byteCount ? -1 : byteCount - required);
-                                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_867354855 = getTaintInt();
-                    return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_867354855;
-                } //End block
-            } //End block
-            else
-            {
-                if(fillbuf(localIn, localBuf) == -1)                
-                {
-                    int varE9F7BEC0C88CD14A00890C7265F93994_1615711291 = (required == byteCount ? -1 : byteCount - required);
-                                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_745156374 = getTaintInt();
-                    return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_745156374;
-                } //End block
-                if(localBuf != buf)                
-                {
+                if (read == -1) {
+                    return required == byteCount ? -1 : byteCount - required;
+                }
+            } else {
+                if (fillbuf(localIn, localBuf) == -1) {
+                    return required == byteCount ? -1 : byteCount - required;
+                }
+                // localBuf may have been invalidated by fillbuf
+                if (localBuf != buf) {
                     localBuf = buf;
-                    if(localBuf == null)                    
-                    {
-                        java.io.IOException varA98E388EB7D58355C3D9798BF8FEED22_1789705881 = streamClosed();
-                        varA98E388EB7D58355C3D9798BF8FEED22_1789705881.addTaint(taint);
-                        throw varA98E388EB7D58355C3D9798BF8FEED22_1789705881;
-                    } //End block
-                } //End block
+                    if (localBuf == null) {
+                        throw streamClosed();
+                    }
+                }
+
                 read = count - pos >= required ? required : count - pos;
                 System.arraycopy(localBuf, pos, buffer, offset, read);
                 pos += read;
-            } //End block
+            }
             required -= read;
-            if(required == 0)            
-            {
-                int varA43EF6D60A83013EA1A61A23BDB16029_873687190 = (byteCount);
-                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1090108590 = getTaintInt();
-                return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1090108590;
-            } //End block
-            if(localIn.available() == 0)            
-            {
-                int var879D2AEAC98BC52A6AF483DC5AACBB4E_1131820907 = (byteCount - required);
-                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_498733294 = getTaintInt();
-                return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_498733294;
-            } //End block
+            if (required == 0) {
+                return byteCount;
+            }
+            if (localIn.available() == 0) {
+                return byteCount - required;
+            }
             offset += read;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        }
     }
 
+    /**
+     * Resets this stream to the last marked location.
+     *
+     * @throws IOException
+     *             if this stream is closed, no mark has been set or the mark is
+     *             no longer valid because more than {@code readlimit} bytes
+     *             have been read since setting the mark.
+     * @see #mark(int)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.180 -0500", hash_original_method = "0EB3739ECCD523AAEBB3A3F64D0A35BC", hash_generated_method = "CE8767DA2D459643F76527EFC21F6D25")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.285 -0400", hash_original_method = "0EB3739ECCD523AAEBB3A3F64D0A35BC", hash_generated_method = "DAB59114C74A955AA2A11F71E00A3278")
-    @Override
+@Override
     public synchronized void reset() throws IOException {
-        if(buf == null)        
-        {
-            IOException var4E3F8A3DA623CEFCDEFE68AFA0DAB154_1687404629 = new IOException("Stream is closed");
-            var4E3F8A3DA623CEFCDEFE68AFA0DAB154_1687404629.addTaint(taint);
-            throw var4E3F8A3DA623CEFCDEFE68AFA0DAB154_1687404629;
-        } //End block
-        if(-1 == markpos)        
-        {
-            IOException varD960D5D97FEA4B4006FCB806C802A79F_1064424916 = new IOException("Mark has been invalidated.");
-            varD960D5D97FEA4B4006FCB806C802A79F_1064424916.addTaint(taint);
-            throw varD960D5D97FEA4B4006FCB806C802A79F_1064424916;
-        } //End block
+        if (buf == null) {
+            throw new IOException("Stream is closed");
+        }
+        if (-1 == markpos) {
+            throw new IOException("Mark has been invalidated.");
+        }
         pos = markpos;
-        // ---------- Original Method ----------
-        //if (buf == null) {
-            //throw new IOException("Stream is closed");
-        //}
-        //if (-1 == markpos) {
-            //throw new IOException("Mark has been invalidated.");
-        //}
-        //pos = markpos;
     }
 
+    /**
+     * Skips {@code byteCount} bytes in this stream. Subsequent calls to
+     * {@code read} will not return these bytes unless {@code reset} is
+     * used.
+     *
+     * @param byteCount
+     *            the number of bytes to skip. {@code skip} does nothing and
+     *            returns 0 if {@code byteCount} is less than zero.
+     * @return the number of bytes actually skipped.
+     * @throws IOException
+     *             if this stream is closed or another IOException occurs.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.183 -0500", hash_original_method = "61D210443DD8F238003AAFD35E7B7777", hash_generated_method = "B07EB192285C854B260DCBADFA71F959")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.305 -0400", hash_original_method = "61D210443DD8F238003AAFD35E7B7777", hash_generated_method = "0B21355ADA4328DAAB8267621925C821")
-    @Override
+@Override
     public synchronized long skip(long byteCount) throws IOException {
+        // Use local refs since buf and in may be invalidated by an
+        // unsynchronized close()
         byte[] localBuf = buf;
         InputStream localIn = in;
-        if(localBuf == null)        
-        {
-            java.io.IOException varA98E388EB7D58355C3D9798BF8FEED22_816800908 = streamClosed();
-            varA98E388EB7D58355C3D9798BF8FEED22_816800908.addTaint(taint);
-            throw varA98E388EB7D58355C3D9798BF8FEED22_816800908;
-        } //End block
-        if(byteCount < 1)        
-        {
-            long varCFCD208495D565EF66E7DFF9F98764DA_714662884 = (0);
-                        long var0F5264038205EDFB1AC05FBB0E8C5E94_1182541251 = getTaintLong();
-            return var0F5264038205EDFB1AC05FBB0E8C5E94_1182541251;
-        } //End block
-        if(localIn == null)        
-        {
-            java.io.IOException varA98E388EB7D58355C3D9798BF8FEED22_2056356566 = streamClosed();
-            varA98E388EB7D58355C3D9798BF8FEED22_2056356566.addTaint(taint);
-            throw varA98E388EB7D58355C3D9798BF8FEED22_2056356566;
-        } //End block
-        if(count - pos >= byteCount)        
-        {
+        if (localBuf == null) {
+            throw streamClosed();
+        }
+        if (byteCount < 1) {
+            return 0;
+        }
+        if (localIn == null) {
+            throw streamClosed();
+        }
+
+        if (count - pos >= byteCount) {
             pos += byteCount;
-            long varA43EF6D60A83013EA1A61A23BDB16029_1709943237 = (byteCount);
-                        long var0F5264038205EDFB1AC05FBB0E8C5E94_702896712 = getTaintLong();
-            return var0F5264038205EDFB1AC05FBB0E8C5E94_702896712;
-        } //End block
+            return byteCount;
+        }
         long read = count - pos;
         pos = count;
-        if(markpos != -1)        
-        {
-            if(byteCount <= marklimit)            
-            {
-                if(fillbuf(localIn, localBuf) == -1)                
-                {
-                    long varECAE13117D6F0584C25A9DA6C8F8415E_1387929206 = (read);
-                                        long var0F5264038205EDFB1AC05FBB0E8C5E94_389635758 = getTaintLong();
-                    return var0F5264038205EDFB1AC05FBB0E8C5E94_389635758;
-                } //End block
-                if(count - pos >= byteCount - read)                
-                {
+
+        if (markpos != -1) {
+            if (byteCount <= marklimit) {
+                if (fillbuf(localIn, localBuf) == -1) {
+                    return read;
+                }
+                if (count - pos >= byteCount - read) {
                     pos += byteCount - read;
-                    long varA43EF6D60A83013EA1A61A23BDB16029_425324044 = (byteCount);
-                                        long var0F5264038205EDFB1AC05FBB0E8C5E94_145922265 = getTaintLong();
-                    return var0F5264038205EDFB1AC05FBB0E8C5E94_145922265;
-                } //End block
+                    return byteCount;
+                }
+                // Couldn't get all the bytes, skip what we read
                 read += (count - pos);
                 pos = count;
-                long varECAE13117D6F0584C25A9DA6C8F8415E_1816685605 = (read);
-                                long var0F5264038205EDFB1AC05FBB0E8C5E94_473695715 = getTaintLong();
-                return var0F5264038205EDFB1AC05FBB0E8C5E94_473695715;
-            } //End block
-        } //End block
-        long var7954D807A5D66A0A5F40953FB3C263B3_115465889 = (read + localIn.skip(byteCount - read));
-                long var0F5264038205EDFB1AC05FBB0E8C5E94_1000358687 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_1000358687;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                return read;
+            }
+        }
+        return read + localIn.skip(byteCount - read);
     }
 
     

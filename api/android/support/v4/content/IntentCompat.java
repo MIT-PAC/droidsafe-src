@@ -1,6 +1,8 @@
 package android.support.v4.content;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.content.ComponentName;
 import android.content.Intent;
@@ -9,31 +11,87 @@ import android.os.Build;
 
 
 public class IntentCompat {
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.828 -0400", hash_original_method = "83FA4EBC7BDF0C9600DF4B8A1228BD78", hash_generated_method = "16347C92B7A5F44FF250E58B89036E6B")
-    private  IntentCompat() {
-        // ---------- Original Method ----------
-    }
 
+    /**
+     * Create an intent to launch the main (root) activity of a task.  This
+     * is the Intent that is started when the application's is launched from
+     * Home.  For anything else that wants to launch an application in the
+     * same way, it is important that they use an Intent structured the same
+     * way, and can use this function to ensure this is the case.
+     *
+     * <p>The returned Intent has the given Activity component as its explicit
+     * component, {@link Intent#ACTION_MAIN ACTION_MAIN} as its action, and includes the
+     * category {@link Intent#CATEGORY_LAUNCHER CATEGORY_LAUNCHER}.  This does <em>not</em> have
+     * {@link Intent#FLAG_ACTIVITY_NEW_TASK FLAG_ACTIVITY_NEW_TASK} set,
+     * though typically you will want to do that through {@link Intent#addFlags(int) addFlags(int)}
+     * on the returned Intent.
+     *
+     * @param mainActivity The main activity component that this Intent will
+     * launch.
+     * @return Returns a newly created Intent that can be used to launch the
+     * activity as a main application entry.
+     *
+     * @see Intent#setClass
+     * @see Intent#setComponent
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:28.542 -0500", hash_original_method = "528748BF23D0899AD4CB079D5A067295", hash_generated_method = "31F798B67D7EBEBB8FE2A3413DF24E66")
     
-    @DSModeled(DSC.SPEC)
-    public static Intent makeMainActivity(ComponentName mainActivity) {
+public static Intent makeMainActivity(ComponentName mainActivity) {
         return IMPL.makeMainActivity(mainActivity);
     }
 
+
+    /**
+     * Make an Intent for the main activity of an application, without
+     * specifying a specific activity to run but giving a selector to find
+     * the activity.  This results in a final Intent that is structured
+     * the same as when the application is launched from
+     * Home.  For anything else that wants to launch an application in the
+     * same way, it is important that they use an Intent structured the same
+     * way, and can use this function to ensure this is the case.
+     *
+     * <p>The returned Intent has {@link Intent#ACTION_MAIN} as its action, and includes the
+     * category {@link Intent#CATEGORY_LAUNCHER}.  This does <em>not</em> have
+     * {@link Intent#FLAG_ACTIVITY_NEW_TASK} set, though typically you will want
+     * to do that through {@link Intent#addFlags(int)} on the returned Intent.
+     *
+     * @param selectorAction The action name of the Intent's selector.
+     * @param selectorCategory The name of a category to add to the Intent's
+     * selector.
+     * @return Returns a newly created Intent that can be used to launch the
+     * activity as a main application entry.
+     *
+     * @see #setSelector(Intent)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:28.545 -0500", hash_original_method = "CEEFEB0CB342545AEDF5ED8CC15598BE", hash_generated_method = "56492F04E904606AC59AE7540E5AC5C6")
     
-    @DSModeled(DSC.SPEC)
-    public static Intent makeMainSelectorActivity(String selectorAction,
+public static Intent makeMainSelectorActivity(String selectorAction,
             String selectorCategory) {
         return IMPL.makeMainSelectorActivity(selectorAction, selectorCategory);
     }
 
+    /**
+     * Make an Intent that can be used to re-launch an application's task
+     * in its base state.  This is like {@link #makeMainActivity(ComponentName)},
+     * but also sets the flags {@link Intent#FLAG_ACTIVITY_NEW_TASK} and
+     * {@link IntentCompat#FLAG_ACTIVITY_CLEAR_TASK}.
+     *
+     * @param mainActivity The activity component that is the root of the
+     * task; this is the activity that has been published in the application's
+     * manifest as the main launcher icon.
+     *
+     * @return Returns a newly created Intent that can be used to relaunch the
+     * activity's task in its root state.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:28.547 -0500", hash_original_method = "2A0A0C4A78FBAF5853F18397F930AD9E", hash_generated_method = "9350EFF4C8AA75AA106969D889D2D052")
     
-    @DSModeled(DSC.SPEC)
-    public static Intent makeRestartActivityTask(ComponentName mainActivity) {
+public static Intent makeRestartActivityTask(ComponentName mainActivity) {
         return IMPL.makeRestartActivityTask(mainActivity);
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:28.520 -0500", hash_original_field = "0E02DC6B9E12C5D7B4BB1726F7A60CD7", hash_generated_field = "983CC0C3417D6E0A1FAC8FCDBFFB9087")
+
+
+    private static  IntentCompatImpl IMPL;
 
     
     static class IntentCompatImplBase implements IntentCompatImpl {
@@ -44,62 +102,37 @@ public class IntentCompat {
         {
             //Synthesized constructor
         }
-
-
-        @DSModeled(DSC.SPEC)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.832 -0400", hash_original_method = "4B98301A7E59A155B150C46D4BE1C0A7", hash_generated_method = "3E4AAE1DCC0F1E141B1D68E8877D09EE")
-        @Override
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:28.497 -0500", hash_original_method = "4B98301A7E59A155B150C46D4BE1C0A7", hash_generated_method = "762E7B13AB746A9C1A635A5EFE32DA0F")
+        
+@Override
         public Intent makeMainActivity(ComponentName componentName) {
-            addTaint(componentName.getTaint());
             Intent intent = new Intent(Intent.ACTION_MAIN);
             intent.setComponent(componentName);
             intent.addCategory(Intent.CATEGORY_LAUNCHER);
-Intent var095937E5B36214360A2644916BF0E8DF_663335548 =             intent;
-            var095937E5B36214360A2644916BF0E8DF_663335548.addTaint(taint);
-            return var095937E5B36214360A2644916BF0E8DF_663335548;
-            // ---------- Original Method ----------
-            //Intent intent = new Intent(Intent.ACTION_MAIN);
-            //intent.setComponent(componentName);
-            //intent.addCategory(Intent.CATEGORY_LAUNCHER);
-            //return intent;
+            return intent;
         }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:28.500 -0500", hash_original_method = "C2ED66B58A361F10BA817EED5E34E61E", hash_generated_method = "EFCA63ED1212FDC11B765F42F7AE1B45")
         
-        @DSModeled(DSC.SPEC)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.832 -0400", hash_original_method = "C2ED66B58A361F10BA817EED5E34E61E", hash_generated_method = "3DEFD8E7A5360659D029D4D6FDD5EFE2")
-        @Override
+@Override
         public Intent makeMainSelectorActivity(String selectorAction,
                 String selectorCategory) {
-            addTaint(selectorCategory.getTaint());
-            addTaint(selectorAction.getTaint());
+            // Before api 15 you couldn't set a selector intent.
+            // Fall back and just return an intent with the requested action/category,
+            // even though it won't be a proper "main" intent.
             Intent intent = new Intent(selectorAction);
             intent.addCategory(selectorCategory);
-Intent var095937E5B36214360A2644916BF0E8DF_1555284856 =             intent;
-            var095937E5B36214360A2644916BF0E8DF_1555284856.addTaint(taint);
-            return var095937E5B36214360A2644916BF0E8DF_1555284856;
-            // ---------- Original Method ----------
-            //Intent intent = new Intent(selectorAction);
-            //intent.addCategory(selectorCategory);
-            //return intent;
+            return intent;
         }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:28.503 -0500", hash_original_method = "F82489D0D61AED6A92FA7B650E973F8B", hash_generated_method = "412868DEB2B7318C8CC4DB0D52893C25")
         
-        @DSModeled(DSC.SPEC)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.833 -0400", hash_original_method = "F82489D0D61AED6A92FA7B650E973F8B", hash_generated_method = "05D2280F3EC5909E406E2D6857AC0A4A")
-        @Override
+@Override
         public Intent makeRestartActivityTask(ComponentName mainActivity) {
-            addTaint(mainActivity.getTaint());
             Intent intent = makeMainActivity(mainActivity);
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK
                     | IntentCompat.FLAG_ACTIVITY_CLEAR_TASK);
-Intent var095937E5B36214360A2644916BF0E8DF_286079698 =             intent;
-            var095937E5B36214360A2644916BF0E8DF_286079698.addTaint(taint);
-            return var095937E5B36214360A2644916BF0E8DF_286079698;
-            // ---------- Original Method ----------
-            //Intent intent = makeMainActivity(mainActivity);
-            //intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK
-                    //| IntentCompat.FLAG_ACTIVITY_CLEAR_TASK);
-            //return intent;
+            return intent;
         }
 
         
@@ -115,31 +148,17 @@ Intent var095937E5B36214360A2644916BF0E8DF_286079698 =             intent;
         {
             //Synthesized constructor
         }
-
-
-        @DSModeled(DSC.SPEC)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.834 -0400", hash_original_method = "7AEF38C337C1A4B268D6BF228A89F2D2", hash_generated_method = "97B15510C5BE96712D577CD15A21FFE5")
-        @Override
-        public Intent makeMainActivity(ComponentName componentName) {
-            addTaint(componentName.getTaint());
-Intent var794116B7ABB37746D51F28497CB0A71E_91000539 =             IntentCompatHoneycomb.makeMainActivity(componentName);
-            var794116B7ABB37746D51F28497CB0A71E_91000539.addTaint(taint);
-            return var794116B7ABB37746D51F28497CB0A71E_91000539;
-            // ---------- Original Method ----------
-            //return IntentCompatHoneycomb.makeMainActivity(componentName);
-        }
-
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:28.507 -0500", hash_original_method = "7AEF38C337C1A4B268D6BF228A89F2D2", hash_generated_method = "BB3C58AA692CFC57291C1DAB6F1AD969")
         
-        @DSModeled(DSC.SPEC)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.834 -0400", hash_original_method = "9C5B324D72EEDCECCD1591039BA9002E", hash_generated_method = "A43CCFABCB29EDA07E5696521EF0E65D")
-        @Override
+@Override
+        public Intent makeMainActivity(ComponentName componentName) {
+            return IntentCompatHoneycomb.makeMainActivity(componentName);
+        }
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:28.510 -0500", hash_original_method = "9C5B324D72EEDCECCD1591039BA9002E", hash_generated_method = "0ADAEBBC0F683A3166F5FAB5C45B68FD")
+        
+@Override
         public Intent makeRestartActivityTask(ComponentName componentName) {
-            addTaint(componentName.getTaint());
-Intent var0DF19734A7165BB16E7A28B8E7E316CC_1804808759 =             IntentCompatHoneycomb.makeRestartActivityTask(componentName);
-            var0DF19734A7165BB16E7A28B8E7E316CC_1804808759.addTaint(taint);
-            return var0DF19734A7165BB16E7A28B8E7E316CC_1804808759;
-            // ---------- Original Method ----------
-            //return IntentCompatHoneycomb.makeRestartActivityTask(componentName);
+            return IntentCompatHoneycomb.makeRestartActivityTask(componentName);
         }
 
         
@@ -155,19 +174,11 @@ Intent var0DF19734A7165BB16E7A28B8E7E316CC_1804808759 =             IntentCompat
         {
             //Synthesized constructor
         }
-
-
-        @DSModeled(DSC.SPEC)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.835 -0400", hash_original_method = "273E6CE96758BF678EE6C7070C39071C", hash_generated_method = "33B00DCB8BA4E91AECB4139C769933CA")
-        @Override
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:28.515 -0500", hash_original_method = "273E6CE96758BF678EE6C7070C39071C", hash_generated_method = "EE1C3D1BCB81ABA4D9D7F211C02FC25D")
+        
+@Override
         public Intent makeMainSelectorActivity(String selectorAction, String selectorCategory) {
-            addTaint(selectorCategory.getTaint());
-            addTaint(selectorAction.getTaint());
-Intent var00B60DE45C0C785AE3844E3463BF8647_1719043814 =             IntentCompatIcsMr1.makeMainSelectorActivity(selectorAction, selectorCategory);
-            var00B60DE45C0C785AE3844E3463BF8647_1719043814.addTaint(taint);
-            return var00B60DE45C0C785AE3844E3463BF8647_1719043814;
-            // ---------- Original Method ----------
-            //return IntentCompatIcsMr1.makeMainSelectorActivity(selectorAction, selectorCategory);
+            return IntentCompatIcsMr1.makeMainSelectorActivity(selectorAction, selectorCategory);
         }
 
         
@@ -180,10 +191,10 @@ Intent var00B60DE45C0C785AE3844E3463BF8647_1719043814 =             IntentCompat
         Intent makeMainSelectorActivity(String selectorAction, String selectorCategory);
         Intent makeRestartActivityTask(ComponentName mainActivity);
     }
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.835 -0400", hash_original_field = "27A9F92549363F04EF46148FE9E87EEE", hash_generated_field = "983CC0C3417D6E0A1FAC8FCDBFFB9087")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:28.525 -0500", hash_original_field = "B79625E19F4E2F1BD5E45C4B3667954F", hash_generated_field = "9FA64A1EB1F4C37DEEE5D6D1F18DD57D")
 
-    private static IntentCompatImpl IMPL;
+    public static final String ACTION_EXTERNAL_APPLICATIONS_AVAILABLE =
+        "android.intent.action.EXTERNAL_APPLICATIONS_AVAILABLE";
     static {
         final int version = Build.VERSION.SDK_INT;
         if (version >= 15) {
@@ -194,31 +205,32 @@ Intent var00B60DE45C0C785AE3844E3463BF8647_1719043814 =             IntentCompat
             IMPL = new IntentCompatImplBase();
         }
     }
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.835 -0400", hash_original_field = "3FBD18E81715442BDEE658474C5629E5", hash_generated_field = "9FA64A1EB1F4C37DEEE5D6D1F18DD57D")
-
-    public static final String ACTION_EXTERNAL_APPLICATIONS_AVAILABLE =
-        "android.intent.action.EXTERNAL_APPLICATIONS_AVAILABLE";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.835 -0400", hash_original_field = "79BBB6392C89883A34F60A67157B8582", hash_generated_field = "3E7846193CBF25B93CF188C41A992203")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:28.527 -0500", hash_original_field = "D7D623359205B1CA800A25BACAE86819", hash_generated_field = "3E7846193CBF25B93CF188C41A992203")
 
     public static final String ACTION_EXTERNAL_APPLICATIONS_UNAVAILABLE =
         "android.intent.action.EXTERNAL_APPLICATIONS_UNAVAILABLE";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.835 -0400", hash_original_field = "FDA69BBD39712C3E27E462661D93CE75", hash_generated_field = "9F6BB52BB136081B0B5B704137151D62")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:28.530 -0500", hash_original_field = "094D2080F87F58C3A626EB3CF998E8F2", hash_generated_field = "9F6BB52BB136081B0B5B704137151D62")
 
     public static final String EXTRA_CHANGED_PACKAGE_LIST =
             "android.intent.extra.changed_package_list";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.835 -0400", hash_original_field = "5B90A66309396174E4747C13B353BAE4", hash_generated_field = "0A835C4E438F2FB3E3F07E556FA3173A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:28.532 -0500", hash_original_field = "12452D95F908A28143BE566A06E08C95", hash_generated_field = "0A835C4E438F2FB3E3F07E556FA3173A")
 
     public static final String EXTRA_CHANGED_UID_LIST =
             "android.intent.extra.changed_uid_list";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.835 -0400", hash_original_field = "EE24B2A5F107CF81BEAC6E72A1F6EBFB", hash_generated_field = "00DBF73919CCC616A45EAD8387F83366")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:28.534 -0500", hash_original_field = "41E48B982CAB9FB2A0F81D1106890277", hash_generated_field = "00DBF73919CCC616A45EAD8387F83366")
 
     public static final String EXTRA_HTML_TEXT = "android.intent.extra.HTML_TEXT";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.835 -0400", hash_original_field = "29E1F22C6F9260071914A0D5EFE7D56D", hash_generated_field = "7558FCD0B35D01D87929988F4317BDB9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:28.537 -0500", hash_original_field = "B1EB038D974B316E32B18AD21CC5EA00", hash_generated_field = "7558FCD0B35D01D87929988F4317BDB9")
 
     public static final int FLAG_ACTIVITY_TASK_ON_HOME = 0x00004000;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.835 -0400", hash_original_field = "7B9632362C9B3566CAC2B7239D8D438A", hash_generated_field = "B1F0B26869A519954A6704E71E1CB972")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:28.540 -0500", hash_original_field = "D6ECC68ECE65692CE732DD9FA6C1FF91", hash_generated_field = "B1F0B26869A519954A6704E71E1CB972")
 
     public static final int FLAG_ACTIVITY_CLEAR_TASK = 0x00008000;
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:28.523 -0500", hash_original_method = "83FA4EBC7BDF0C9600DF4B8A1228BD78", hash_generated_method = "88640CF7E61565B7DF98CA749CEE2E71")
+    
+private IntentCompat() {
+        /* Hide constructor */
+    }
 }
 

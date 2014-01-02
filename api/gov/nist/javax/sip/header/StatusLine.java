@@ -1,6 +1,8 @@
 package gov.nist.javax.sip.header;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import gov.nist.javax.sip.SIPConstants;
 
@@ -9,275 +11,191 @@ import gov.nist.javax.sip.SIPConstants;
 
 
 public final class StatusLine extends SIPObject implements SipStatusLine {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.514 -0400", hash_original_field = "14881828949DC3B28E62BC34877C141D", hash_generated_field = "B8EAB804E3725A6DD3531CF15A699005")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.872 -0500", hash_original_field = "79365C69CBC5A241E22A20696C1E9E79", hash_generated_field = "8EFFA514AA9B40DA5920D5D322D825C6")
+
+    private static final long serialVersionUID = -4738092215519950414L;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.874 -0500", hash_original_field = "4B44DB64F7D6DC216D1F0EB2F476593E", hash_generated_field = "B8EAB804E3725A6DD3531CF15A699005")
+
 
     protected boolean matchStatusClass;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.514 -0400", hash_original_field = "66D2C8863084D21925D8C4AD8BD49102", hash_generated_field = "0E22CDA9223E852519CAF5EA7723F865")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.878 -0500", hash_original_field = "CE1553CBFC9C6BF901CA3EFBFD71C841", hash_generated_field = "0E22CDA9223E852519CAF5EA7723F865")
 
     protected String sipVersion;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.514 -0400", hash_original_field = "F9A31C6B3670C772D11230C8D4D1F33F", hash_generated_field = "AF3A2B27F74478A1F178EA853CB720C4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.881 -0500", hash_original_field = "7D58E974091311E54CFA3738B5F585EF", hash_generated_field = "AF3A2B27F74478A1F178EA853CB720C4")
 
     protected int statusCode;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.514 -0400", hash_original_field = "6A273AF93AEB8DA54D90CBF3B44D79AC", hash_generated_field = "C24AAD4BC0C98CB74977788D19F4D718")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.884 -0500", hash_original_field = "3FAD2DC6D188281A1174ECE25C647B14", hash_generated_field = "C24AAD4BC0C98CB74977788D19F4D718")
 
     protected String reasonPhrase;
+
+    /** Default Constructor
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.894 -0500", hash_original_method = "952A7A04B56CA19CB087E879E7A74676", hash_generated_method = "33EA3B99AA5D0F3D658D8AD4573ED50C")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.514 -0400", hash_original_method = "952A7A04B56CA19CB087E879E7A74676", hash_generated_method = "264BF0CCCF59EFC8D77A76A8838AD81F")
-    public  StatusLine() {
+public StatusLine() {
         reasonPhrase = null;
         sipVersion = SIPConstants.SIP_VERSION_STRING;
-        // ---------- Original Method ----------
-        //reasonPhrase = null;
-        //sipVersion = SIPConstants.SIP_VERSION_STRING;
     }
 
+    /** Match with a template.
+     * Match only the response class if the last two digits of the
+     * match templates are 0's
+     */
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.887 -0500", hash_original_method = "F8EDA6D677CBC73EB8A3A71E43559895", hash_generated_method = "8CDC305BF4AC73ACFA7382B000A0CBD5")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.515 -0400", hash_original_method = "F8EDA6D677CBC73EB8A3A71E43559895", hash_generated_method = "D861137BD2FCFD1082C789BE8F42BB45")
-    public boolean match(Object matchObj) {
-        addTaint(matchObj.getTaint());
-        if(!(matchObj instanceof StatusLine))        
-        {
-        boolean var68934A3E9455FA72420237EB05902327_1289730555 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_170116136 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_170116136;
-        }
+public boolean match(Object matchObj) {
+        if (!(matchObj instanceof StatusLine))
+            return false;
         StatusLine sl = (StatusLine) matchObj;
-        if(sl.matchExpression != null)        
-        {
-        boolean var75B812DCF4D1F33FA2EECFA8F8868774_2099312160 = (sl.matchExpression.match(this.encode()));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_817587843 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_817587843;
-        }
-        if(sl.sipVersion != null && !sl.sipVersion.equals(sipVersion))        
-        {
-        boolean var68934A3E9455FA72420237EB05902327_316844528 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1962346543 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1962346543;
-        }
-        if(sl.statusCode != 0)        
-        {
-            if(matchStatusClass)            
-            {
+        // A pattern matcher has been registered.
+        if (sl.matchExpression != null)
+            return sl.matchExpression.match(this.encode());
+        // no patter matcher has been registered..
+        if (sl.sipVersion != null && !sl.sipVersion.equals(sipVersion))
+            return false;
+        if (sl.statusCode != 0) {
+            if (matchStatusClass) {
                 int hiscode = sl.statusCode;
                 String codeString = Integer.toString(sl.statusCode);
                 String mycode = Integer.toString(statusCode);
-                if(codeString.charAt(0) != mycode.charAt(0))                
-                {
-                boolean var68934A3E9455FA72420237EB05902327_1349489724 = (false);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1568644949 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1568644949;
-                }
-            } //End block
-            else
-            {
-                if(statusCode != sl.statusCode)                
-                {
-                boolean var68934A3E9455FA72420237EB05902327_35516955 = (false);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1451910510 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1451910510;
-                }
-            } //End block
-        } //End block
-        if(sl.reasonPhrase == null || reasonPhrase == sl.reasonPhrase)        
-        {
-        boolean varB326B5062B2F0E69046810717534CB09_143149822 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_883708022 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_883708022;
+                if (codeString.charAt(0) != mycode.charAt(0))
+                    return false;
+            } else {
+                if (statusCode != sl.statusCode)
+                    return false;
+            }
         }
-        boolean var543A6C3751FD2F24938A06D47715A160_368186939 = (reasonPhrase.equals(sl.reasonPhrase));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_783179860 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_783179860;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        if (sl.reasonPhrase == null || reasonPhrase == sl.reasonPhrase)
+            return true;
+        return reasonPhrase.equals(sl.reasonPhrase);
+
     }
 
+    /** set the flag on a match template.
+     *If this set to true, then the whole status code is matched (default
+     * behavior) else only the class of the response is matched.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.889 -0500", hash_original_method = "72B66E964D13ABBD6BD5B9A3B23AE94A", hash_generated_method = "A942BE3D1D9B1119AE8B959CD1FE58CB")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.515 -0400", hash_original_method = "72B66E964D13ABBD6BD5B9A3B23AE94A", hash_generated_method = "D651F6605A3DBCE632F06793020DB084")
-    public void setMatchStatusClass(boolean flag) {
+public void setMatchStatusClass(boolean flag) {
         matchStatusClass = flag;
-        // ---------- Original Method ----------
-        //matchStatusClass = flag;
     }
 
+    /**
+     * Encode into a canonical form.
+     * @return String
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.896 -0500", hash_original_method = "2D22A2D80C0943AA7141B4A0B4034D5B", hash_generated_method = "F9F2A0914D7FFA9C370363F5FF6BD17F")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.516 -0400", hash_original_method = "2D22A2D80C0943AA7141B4A0B4034D5B", hash_generated_method = "E6553E52BE185ED523ABD97B798BE94A")
-    public String encode() {
+public String encode() {
         String encoding = SIPConstants.SIP_VERSION_STRING + SP + statusCode;
-        if(reasonPhrase != null)        
-        encoding += SP + reasonPhrase;
+        if (reasonPhrase != null)
+            encoding += SP + reasonPhrase;
         encoding += NEWLINE;
-String varE424DD5E6E58EB63E1272B71B5A81966_1587400462 =         encoding;
-        varE424DD5E6E58EB63E1272B71B5A81966_1587400462.addTaint(taint);
-        return varE424DD5E6E58EB63E1272B71B5A81966_1587400462;
-        // ---------- Original Method ----------
-        //String encoding = SIPConstants.SIP_VERSION_STRING + SP + statusCode;
-        //if (reasonPhrase != null)
-            //encoding += SP + reasonPhrase;
-        //encoding += NEWLINE;
-        //return encoding;
+        return encoding;
     }
 
+    /* (non-Javadoc)
+     * @see gov.nist.javax.sip.header.SipStatusLine#getSipVersion()
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.899 -0500", hash_original_method = "756FD7B4E35B001597A1BAB462C97AFC", hash_generated_method = "7635A3ADA2875913277DA776A6504B01")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.516 -0400", hash_original_method = "756FD7B4E35B001597A1BAB462C97AFC", hash_generated_method = "5FF5DC28D51BD9A885C2D1282399E87B")
-    public String getSipVersion() {
-String var6122000D007F950F5F6ADABFD883424A_983698990 =         sipVersion;
-        var6122000D007F950F5F6ADABFD883424A_983698990.addTaint(taint);
-        return var6122000D007F950F5F6ADABFD883424A_983698990;
-        // ---------- Original Method ----------
-        //return sipVersion;
+public String getSipVersion() {
+        return sipVersion;
     }
 
+    /* (non-Javadoc)
+     * @see gov.nist.javax.sip.header.SipStatusLine#getStatusCode()
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.902 -0500", hash_original_method = "08273B061292A48923EC30EEEA581059", hash_generated_method = "0AA4D52406821AA7CD81148A6B2FA4E2")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.516 -0400", hash_original_method = "08273B061292A48923EC30EEEA581059", hash_generated_method = "B8279431F94FBDAF376C310E3A913646")
-    public int getStatusCode() {
-        int varF9A31C6B3670C772D11230C8D4D1F33F_699580972 = (statusCode);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1160121387 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1160121387;
-        // ---------- Original Method ----------
-        //return statusCode;
+public int getStatusCode() {
+        return statusCode;
     }
 
+    /* (non-Javadoc)
+     * @see gov.nist.javax.sip.header.SipStatusLine#getReasonPhrase()
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.905 -0500", hash_original_method = "CA4528A98316683C1F54E337727EA693", hash_generated_method = "7C91752073E4881A461B47118BAF05BE")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.517 -0400", hash_original_method = "CA4528A98316683C1F54E337727EA693", hash_generated_method = "2ACF486FD8572BCB207A2858D7743549")
-    public String getReasonPhrase() {
-String var78E6D063B709D1EA115EB9F821792EF2_968982111 =         reasonPhrase;
-        var78E6D063B709D1EA115EB9F821792EF2_968982111.addTaint(taint);
-        return var78E6D063B709D1EA115EB9F821792EF2_968982111;
-        // ---------- Original Method ----------
-        //return reasonPhrase;
+public String getReasonPhrase() {
+        return reasonPhrase;
     }
 
+    /* (non-Javadoc)
+     * @see gov.nist.javax.sip.header.SipStatusLine#setSipVersion(java.lang.String)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.907 -0500", hash_original_method = "B810A06FC4BF04031B4FF5A14EE77A78", hash_generated_method = "E60A433331DF27DFE3F711D9C0483A67")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.517 -0400", hash_original_method = "B810A06FC4BF04031B4FF5A14EE77A78", hash_generated_method = "53F9AC2766DE93825A466772D60BE565")
-    public void setSipVersion(String s) {
+public void setSipVersion(String s) {
         sipVersion = s;
-        // ---------- Original Method ----------
-        //sipVersion = s;
     }
 
+    /* (non-Javadoc)
+     * @see gov.nist.javax.sip.header.SipStatusLine#setStatusCode(int)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.910 -0500", hash_original_method = "C85C39756030BBC4F8AB42FF73F21E45", hash_generated_method = "A52AD7A54F1BCF29F979B24A52338C8F")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.517 -0400", hash_original_method = "C85C39756030BBC4F8AB42FF73F21E45", hash_generated_method = "6C0492B67AE3FB59C46B073C28241295")
-    public void setStatusCode(int statusCode) {
+public void setStatusCode(int statusCode) {
         this.statusCode = statusCode;
-        // ---------- Original Method ----------
-        //this.statusCode = statusCode;
     }
 
+    /* (non-Javadoc)
+     * @see gov.nist.javax.sip.header.SipStatusLine#setReasonPhrase(java.lang.String)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.913 -0500", hash_original_method = "6488565BF42DDD1E8B09A0AD1F358FD4", hash_generated_method = "7778C5A2A7D0B443D6302796B225ADED")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.518 -0400", hash_original_method = "6488565BF42DDD1E8B09A0AD1F358FD4", hash_generated_method = "743765ECFE339CAABC3918E02ABAA910")
-    public void setReasonPhrase(String reasonPhrase) {
+public void setReasonPhrase(String reasonPhrase) {
         this.reasonPhrase = reasonPhrase;
-        // ---------- Original Method ----------
-        //this.reasonPhrase = reasonPhrase;
     }
 
+    /* (non-Javadoc)
+     * @see gov.nist.javax.sip.header.SipStatusLine#getVersionMajor()
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.916 -0500", hash_original_method = "4A94C9174C4923F8D67F5FDBFAEBA922", hash_generated_method = "CEFDE4BE8BC2C1A5D1E79833698FCCE6")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.519 -0400", hash_original_method = "4A94C9174C4923F8D67F5FDBFAEBA922", hash_generated_method = "FBB307586C255DC98DE27807479376D4")
-    public String getVersionMajor() {
-        if(sipVersion == null)        
-        {
-String var540C13E9E156B687226421B24F2DF178_2030134746 =         null;
-        var540C13E9E156B687226421B24F2DF178_2030134746.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_2030134746;
-        }
+public String getVersionMajor() {
+        if (sipVersion == null)
+            return null;
         String major = null;
         boolean slash = false;
-for(int i = 0;i < sipVersion.length();i++)
-        {
-            if(sipVersion.charAt(i) == '.')            
-            slash = false;
-            if(slash)            
-            {
-                if(major == null)                
-                major = "" + sipVersion.charAt(i);
+        for (int i = 0; i < sipVersion.length(); i++) {
+            if (sipVersion.charAt(i) == '.')
+                slash = false;
+            if (slash) {
+                if (major == null)
+                    major = "" + sipVersion.charAt(i);
                 else
-                major += sipVersion.charAt(i);
-            } //End block
-            if(sipVersion.charAt(i) == '/')            
-            slash = true;
-        } //End block
-String var8E02483E9748102D17FB12AAE8E4AFEA_1884277266 =         major;
-        var8E02483E9748102D17FB12AAE8E4AFEA_1884277266.addTaint(taint);
-        return var8E02483E9748102D17FB12AAE8E4AFEA_1884277266;
-        // ---------- Original Method ----------
-        //if (sipVersion == null)
-            //return null;
-        //String major = null;
-        //boolean slash = false;
-        //for (int i = 0; i < sipVersion.length(); i++) {
-            //if (sipVersion.charAt(i) == '.')
-                //slash = false;
-            //if (slash) {
-                //if (major == null)
-                    //major = "" + sipVersion.charAt(i);
-                //else
-                    //major += sipVersion.charAt(i);
-            //}
-            //if (sipVersion.charAt(i) == '/')
-                //slash = true;
-        //}
-        //return major;
+                    major += sipVersion.charAt(i);
+            }
+            if (sipVersion.charAt(i) == '/')
+                slash = true;
+        }
+        return major;
     }
 
+    /* (non-Javadoc)
+     * @see gov.nist.javax.sip.header.SipStatusLine#getVersionMinor()
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.919 -0500", hash_original_method = "4EF04355E0E174C22FDE9BF5C4BD4B3D", hash_generated_method = "6EA6974F2F8CEB1964A391173266EFF2")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.520 -0400", hash_original_method = "4EF04355E0E174C22FDE9BF5C4BD4B3D", hash_generated_method = "CF84A0522C6DC07DF8F1CA00096313E9")
-    public String getVersionMinor() {
-        if(sipVersion == null)        
-        {
-String var540C13E9E156B687226421B24F2DF178_1457601993 =         null;
-        var540C13E9E156B687226421B24F2DF178_1457601993.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_1457601993;
-        }
+public String getVersionMinor() {
+        if (sipVersion == null)
+            return null;
         String minor = null;
         boolean dot = false;
-for(int i = 0;i < sipVersion.length();i++)
-        {
-            if(dot)            
-            {
-                if(minor == null)                
-                minor = "" + sipVersion.charAt(i);
+        for (int i = 0; i < sipVersion.length(); i++) {
+            if (dot) {
+                if (minor == null)
+                    minor = "" + sipVersion.charAt(i);
                 else
-                minor += sipVersion.charAt(i);
-            } //End block
-            if(sipVersion.charAt(i) == '.')            
-            dot = true;
-        } //End block
-String varEAA4AE06AD0186EF287EEA4C8E0F2076_1387308706 =         minor;
-        varEAA4AE06AD0186EF287EEA4C8E0F2076_1387308706.addTaint(taint);
-        return varEAA4AE06AD0186EF287EEA4C8E0F2076_1387308706;
-        // ---------- Original Method ----------
-        //if (sipVersion == null)
-            //return null;
-        //String minor = null;
-        //boolean dot = false;
-        //for (int i = 0; i < sipVersion.length(); i++) {
-            //if (dot) {
-                //if (minor == null)
-                    //minor = "" + sipVersion.charAt(i);
-                //else
-                    //minor += sipVersion.charAt(i);
-            //}
-            //if (sipVersion.charAt(i) == '.')
-                //dot = true;
-        //}
-        //return minor;
+                    minor += sipVersion.charAt(i);
+            }
+            if (sipVersion.charAt(i) == '.')
+                dot = true;
+        }
+        return minor;
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.521 -0400", hash_original_field = "4B6E80C7F602EB9377EDEB27867E9ED3", hash_generated_field = "8EFFA514AA9B40DA5920D5D322D825C6")
-
-    private static final long serialVersionUID = -4738092215519950414L;
 }
 

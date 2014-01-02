@@ -1,6 +1,8 @@
 package java.util;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
@@ -8,154 +10,147 @@ import droidsafe.annotations.*;
 
 
 public class Observable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.347 -0400", hash_original_field = "B36AF524E30B39AA028F12AED6D394A3", hash_generated_field = "41AF525BC2711909B8EC72BCD38DAB21")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:37.589 -0500", hash_original_field = "41AF525BC2711909B8EC72BCD38DAB21", hash_generated_field = "41AF525BC2711909B8EC72BCD38DAB21")
+
 
     List<Observer> observers = new ArrayList<Observer>();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.347 -0400", hash_original_field = "9887ADA90A8808856597B3D49B60BE81", hash_generated_field = "86D4CFFA7EBA3EB225296DE0D42F7D11")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:37.591 -0500", hash_original_field = "86D4CFFA7EBA3EB225296DE0D42F7D11", hash_generated_field = "86D4CFFA7EBA3EB225296DE0D42F7D11")
+
 
     boolean changed = false;
+
+    /**
+     * Constructs a new {@code Observable} object.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:37.594 -0500", hash_original_method = "88DD44E29F0E251AC2213FB1D624DCBA", hash_generated_method = "5E773864FBF02F62D708D93F9DBCDF62")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.348 -0400", hash_original_method = "88DD44E29F0E251AC2213FB1D624DCBA", hash_generated_method = "AF0C25D466E31090823089706BD42B3B")
-    public  Observable() {
-        // ---------- Original Method ----------
+public Observable() {
     }
 
+    /**
+     * Adds the specified observer to the list of observers. If it is already
+     * registered, it is not added a second time.
+     *
+     * @param observer
+     *            the Observer to add.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:37.597 -0500", hash_original_method = "7F4B810E9804FBBDFC86C2FF467D8B0D", hash_generated_method = "8B1F59C259D35D31F112C0FD4763D4E1")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.349 -0400", hash_original_method = "7F4B810E9804FBBDFC86C2FF467D8B0D", hash_generated_method = "7C12B0A3460F0824D2D9CEC9DE9399BD")
-    public void addObserver(Observer observer) {
-        addTaint(observer.getTaint());
-        if(observer == null)        
-        {
-            NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_1715433055 = new NullPointerException();
-            var7338BC9F48D81FE0BBD6183F4014DCC4_1715433055.addTaint(taint);
-            throw var7338BC9F48D81FE0BBD6183F4014DCC4_1715433055;
-        } //End block
-        synchronized
-(this)        {
-            if(!observers.contains(observer))            
-            observers.add(observer);
-        } //End block
-        // ---------- Original Method ----------
-        //if (observer == null) {
-            //throw new NullPointerException();
-        //}
-        //synchronized (this) {
-            //if (!observers.contains(observer))
-                //observers.add(observer);
-        //}
+public void addObserver(Observer observer) {
+        if (observer == null) {
+            throw new NullPointerException();
+        }
+        synchronized (this) {
+            if (!observers.contains(observer))
+                observers.add(observer);
+        }
     }
 
+    /**
+     * Clears the changed flag for this {@code Observable}. After calling
+     * {@code clearChanged()}, {@code hasChanged()} will return {@code false}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:37.600 -0500", hash_original_method = "410A33FBB0A048736175F5104AE7D39A", hash_generated_method = "F78F4C590DC7E1416A1121EC8F8C019C")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.350 -0400", hash_original_method = "410A33FBB0A048736175F5104AE7D39A", hash_generated_method = "B10215715AF0B76E324A81488D8CA311")
-    protected void clearChanged() {
+protected void clearChanged() {
         changed = false;
-        // ---------- Original Method ----------
-        //changed = false;
     }
 
+    /**
+     * Returns the number of observers registered to this {@code Observable}.
+     *
+     * @return the number of observers.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:37.603 -0500", hash_original_method = "CFCBAA05968B3A0ECDA4D23DDF121D1B", hash_generated_method = "0CD87132BA95204888843AC71A11DAE3")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.351 -0400", hash_original_method = "CFCBAA05968B3A0ECDA4D23DDF121D1B", hash_generated_method = "EA4ACFD3EB3B2B125C450C21B8DFEAF1")
-    public int countObservers() {
-        int var65C782175127BD147125F25E2BC6DF10_2002484263 = (observers.size());
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_656896166 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_656896166;
-        // ---------- Original Method ----------
-        //return observers.size();
+public int countObservers() {
+        return observers.size();
     }
 
+    /**
+     * Removes the specified observer from the list of observers. Passing null
+     * won't do anything.
+     *
+     * @param observer
+     *            the observer to remove.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:37.605 -0500", hash_original_method = "37D0CFFA6009C52C8BE86CC33940023B", hash_generated_method = "4E14BD5B4577205A399E1A6905E22394")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.351 -0400", hash_original_method = "37D0CFFA6009C52C8BE86CC33940023B", hash_generated_method = "4449638AC8FBD2E9568A442EE524D187")
-    public synchronized void deleteObserver(Observer observer) {
-        addTaint(observer.getTaint());
+public synchronized void deleteObserver(Observer observer) {
         observers.remove(observer);
-        // ---------- Original Method ----------
-        //observers.remove(observer);
     }
 
+    /**
+     * Removes all observers from the list of observers.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:37.608 -0500", hash_original_method = "FC084068D16B3C6E3AABFF0B17369D5A", hash_generated_method = "516AD3A9AF46A80686B3853FFB23ECAF")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.352 -0400", hash_original_method = "FC084068D16B3C6E3AABFF0B17369D5A", hash_generated_method = "69167659E83300D82C016F3E273A7E68")
-    public synchronized void deleteObservers() {
+public synchronized void deleteObservers() {
         observers.clear();
-        // ---------- Original Method ----------
-        //observers.clear();
     }
 
+    /**
+     * Returns the changed flag for this {@code Observable}.
+     *
+     * @return {@code true} when the changed flag for this {@code Observable} is
+     *         set, {@code false} otherwise.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:37.610 -0500", hash_original_method = "CA74254130B5D4534FA6EDAB1417F30F", hash_generated_method = "94F9BB4FA2505C9C6C0E2397225D1BE7")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.352 -0400", hash_original_method = "CA74254130B5D4534FA6EDAB1417F30F", hash_generated_method = "2171C1D530B7E76B01DF40BE074B4C18")
-    public boolean hasChanged() {
-        boolean var8977DFAC2F8E04CB96E66882235F5ABA_699890729 = (changed);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1255997177 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1255997177;
-        // ---------- Original Method ----------
-        //return changed;
+public boolean hasChanged() {
+        return changed;
     }
 
+    /**
+     * If {@code hasChanged()} returns {@code true}, calls the {@code update()}
+     * method for every observer in the list of observers using null as the
+     * argument. Afterwards, calls {@code clearChanged()}.
+     * <p>
+     * Equivalent to calling {@code notifyObservers(null)}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:37.613 -0500", hash_original_method = "5B2E81F3B40545D89DF9F8469B767022", hash_generated_method = "8460C65420F7AF281D5B0F32A151A40F")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.352 -0400", hash_original_method = "5B2E81F3B40545D89DF9F8469B767022", hash_generated_method = "0A960BC1DB3E27BB8563B524BAC6D2EE")
-    public void notifyObservers() {
+public void notifyObservers() {
         notifyObservers(null);
-        // ---------- Original Method ----------
-        //notifyObservers(null);
     }
 
+    /**
+     * If {@code hasChanged()} returns {@code true}, calls the {@code update()}
+     * method for every Observer in the list of observers using the specified
+     * argument. Afterwards calls {@code clearChanged()}.
+     *
+     * @param data
+     *            the argument passed to {@code update()}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:37.616 -0500", hash_original_method = "4CD1425B7C28EDF2D5ACE30F9808C0D0", hash_generated_method = "EC7C67FD5E895F7D590D66488785653C")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.353 -0400", hash_original_method = "4CD1425B7C28EDF2D5ACE30F9808C0D0", hash_generated_method = "CF64505524161DAC2602A106BBB464A6")
-    @SuppressWarnings("unchecked")
+@SuppressWarnings("unchecked")
     public void notifyObservers(Object data) {
-        addTaint(data.getTaint());
         int size = 0;
         Observer[] arrays = null;
-        synchronized
-(this)        {
-            if(hasChanged())            
-            {
+        synchronized (this) {
+            if (hasChanged()) {
                 clearChanged();
                 size = observers.size();
                 arrays = new Observer[size];
                 observers.toArray(arrays);
-            } //End block
-        } //End block
-        if(arrays != null)        
-        {
-for(Observer observer : arrays)
-            {
+            }
+        }
+        if (arrays != null) {
+            for (Observer observer : arrays) {
                 observer.update(this, data);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //int size = 0;
-        //Observer[] arrays = null;
-        //synchronized (this) {
-            //if (hasChanged()) {
-                //clearChanged();
-                //size = observers.size();
-                //arrays = new Observer[size];
-                //observers.toArray(arrays);
-            //}
-        //}
-        //if (arrays != null) {
-            //for (Observer observer : arrays) {
-                //observer.update(this, data);
-            //}
-        //}
+            }
+        }
     }
 
+    /**
+     * Sets the changed flag for this {@code Observable}. After calling
+     * {@code setChanged()}, {@code hasChanged()} will return {@code true}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:37.619 -0500", hash_original_method = "87048075CC64F75CF8DABD03B4BB9693", hash_generated_method = "3A50DCFBE1B72568E1E93A13984B5DAF")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.354 -0400", hash_original_method = "87048075CC64F75CF8DABD03B4BB9693", hash_generated_method = "0A81876964F964965F16A41F060E97BD")
-    protected void setChanged() {
+protected void setChanged() {
         changed = true;
-        // ---------- Original Method ----------
-        //changed = true;
     }
 
     

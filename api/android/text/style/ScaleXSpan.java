@@ -1,6 +1,8 @@
 package android.text.style;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.text.ParcelableSpan;
@@ -12,92 +14,60 @@ import android.text.TextUtils;
 
 
 public class ScaleXSpan extends MetricAffectingSpan implements ParcelableSpan {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.090 -0400", hash_original_field = "5B484EED7F441408FBB3DA9CD489795B", hash_generated_field = "F3DE0713F398F5B7918E6C35C0AAE054")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:10.167 -0500", hash_original_field = "859F89A95EA81D453D987D576B8DE2B6", hash_generated_field = "F3DE0713F398F5B7918E6C35C0AAE054")
 
-    private float mProportion;
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.091 -0400", hash_original_method = "5A8420DEA89D3BA24C51E3449203D410", hash_generated_method = "07EA7FB4A78397A0402CFA97CFD413F0")
-    public  ScaleXSpan(float proportion) {
-        mProportion = proportion;
-        // ---------- Original Method ----------
-        //mProportion = proportion;
-    }
 
+	private  float mProportion;
+
+	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:10.169 -0500", hash_original_method = "5A8420DEA89D3BA24C51E3449203D410", hash_generated_method = "1D0472D3B5866F27F68DFF001CC0FF53")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.092 -0400", hash_original_method = "84B8294F7669FCC40D337D5712D24934", hash_generated_method = "6A0BF93ECB06D20C8DD707C448ED318A")
-    public  ScaleXSpan(Parcel src) {
+public ScaleXSpan(float proportion) {
+		mProportion = proportion;
+	}
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:10.172 -0500", hash_original_method = "84B8294F7669FCC40D337D5712D24934", hash_generated_method = "606539CC8A5B28AED4AD71074AC1FC89")
+    
+public ScaleXSpan(Parcel src) {
         mProportion = src.readFloat();
-        // ---------- Original Method ----------
-        //mProportion = src.readFloat();
+    }
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:10.175 -0500", hash_original_method = "305A59DEF4DC94D07B224B5DAB862393", hash_generated_method = "454F15ABAB6AB97134EC46CE4EF196D1")
+    
+public int getSpanTypeId() {
+        return TextUtils.SCALE_X_SPAN;
+    }
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:10.177 -0500", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "D90463461B2A94FF94D13FDF69BB80C9")
+    
+public int describeContents() {
+        return 0;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:10.179 -0500", hash_original_method = "0FDF8A7C1083C0A4BBAF4047CBF27DA9", hash_generated_method = "6269EB970CDD3F9298E6DD0FFC02ACA2")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.092 -0400", hash_original_method = "305A59DEF4DC94D07B224B5DAB862393", hash_generated_method = "0120A9FC2CC2F815543CD80EBDB8ED91")
-    public int getSpanTypeId() {
-        int varFA9E0D050343C0B13D9082A9421123DE_1451378395 = (TextUtils.SCALE_X_SPAN);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_504591241 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_504591241;
-        // ---------- Original Method ----------
-        //return TextUtils.SCALE_X_SPAN;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.092 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "CB92767A8166923462DC4F05E29E4CDC")
-    public int describeContents() {
-        int varCFCD208495D565EF66E7DFF9F98764DA_700498716 = (0);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1002643623 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1002643623;
-        // ---------- Original Method ----------
-        //return 0;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.093 -0400", hash_original_method = "0FDF8A7C1083C0A4BBAF4047CBF27DA9", hash_generated_method = "1D9B7D8754722BA66324688F13492060")
-    public void writeToParcel(Parcel dest, int flags) {
-        addTaint(flags);
-        addTaint(dest.getTaint());
+public void writeToParcel(Parcel dest, int flags) {
         dest.writeFloat(mProportion);
-        // ---------- Original Method ----------
-        //dest.writeFloat(mProportion);
     }
 
+	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:10.182 -0500", hash_original_method = "EC544E0B7E0BD00BAC5AC8960BBAB7C7", hash_generated_method = "47DD6B3C3E4ECDD728FA56F864D8EE6B")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.093 -0400", hash_original_method = "EC544E0B7E0BD00BAC5AC8960BBAB7C7", hash_generated_method = "A2F87546CB12CACB01D4D117221F0794")
-    public float getScaleX() {
-        float var5B484EED7F441408FBB3DA9CD489795B_1199683605 = (mProportion);
-                float var546ADE640B6EDFBC8A086EF31347E768_1378171040 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_1378171040;
-        // ---------- Original Method ----------
-        //return mProportion;
-    }
+public float getScaleX() {
+		return mProportion;
+	}
 
+	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:10.184 -0500", hash_original_method = "E20B555A657035EC86C04FC249B48C55", hash_generated_method = "4409F4C61E772C443FD5780BFF0A344D")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.093 -0400", hash_original_method = "E20B555A657035EC86C04FC249B48C55", hash_generated_method = "4611C787D146151071AB38733242E0EA")
-    @Override
-    public void updateDrawState(TextPaint ds) {
-        addTaint(ds.getTaint());
-        ds.setTextScaleX(ds.getTextScaleX() * mProportion);
-        // ---------- Original Method ----------
-        //ds.setTextScaleX(ds.getTextScaleX() * mProportion);
-    }
+@Override
+	public void updateDrawState(TextPaint ds) {
+		ds.setTextScaleX(ds.getTextScaleX() * mProportion);
+	}
 
+	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:10.187 -0500", hash_original_method = "7988BDF035A46DF7E155ADF4B90D7F9B", hash_generated_method = "ED2BEC775AFAB29F71AA3FF7645CA9B4")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.093 -0400", hash_original_method = "7988BDF035A46DF7E155ADF4B90D7F9B", hash_generated_method = "BC74BFDF54E7B608B13B1CB023F1D465")
-    @Override
-    public void updateMeasureState(TextPaint ds) {
-        addTaint(ds.getTaint());
-        ds.setTextScaleX(ds.getTextScaleX() * mProportion);
-        // ---------- Original Method ----------
-        //ds.setTextScaleX(ds.getTextScaleX() * mProportion);
-    }
+@Override
+	public void updateMeasureState(TextPaint ds) {
+		ds.setTextScaleX(ds.getTextScaleX() * mProportion);
+	}
 
     
 }

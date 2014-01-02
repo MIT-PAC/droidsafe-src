@@ -1,6 +1,8 @@
 package android.os.storage;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
@@ -13,25 +15,24 @@ public abstract class StorageEventListener {
     {
         //Synthesized constructor
     }
-
-
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.025 -0400", hash_original_method = "08B6588D85EC619CC2E0611C0812F3DA", hash_generated_method = "F3FE4A7A33440C9CE86D85B6EE7F350A")
-    public void onUsbMassStorageConnectionChanged(boolean connected) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(connected);
-        // ---------- Original Method ----------
+    /**
+     * Called when the detection state of a USB Mass Storage host has changed.
+     * @param connected true if the USB mass storage is connected.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.620 -0500", hash_original_method = "08B6588D85EC619CC2E0611C0812F3DA", hash_generated_method = "C90550FE6E97011D369405A6A248602A")
+    
+public void onUsbMassStorageConnectionChanged(boolean connected) {
     }
 
+    /**
+     * Called when storage has changed state
+     * @param path the filesystem path for the storage
+     * @param oldState the old state as returned by {@link android.os.Environment#getExternalStorageState()}.
+     * @param newState the old state as returned by {@link android.os.Environment#getExternalStorageState()}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.622 -0500", hash_original_method = "B80645FD27258B59A3B650E166B00E17", hash_generated_method = "A5B61089733833334EA5476745C29883")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.026 -0400", hash_original_method = "B80645FD27258B59A3B650E166B00E17", hash_generated_method = "4B5492CC2FD10AE6ACD5C5AA60669277")
-    public void onStorageStateChanged(String path, String oldState, String newState) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(newState.getTaint());
-        addTaint(oldState.getTaint());
-        addTaint(path.getTaint());
-        // ---------- Original Method ----------
+public void onStorageStateChanged(String path, String oldState, String newState) {
     }
 
     

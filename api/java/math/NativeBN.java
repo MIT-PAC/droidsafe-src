@@ -1,6 +1,8 @@
 package java.math;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
@@ -8,12 +10,6 @@ import droidsafe.annotations.*;
 import droidsafe.helpers.DSUtils;
 
 final class NativeBN {
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.200 -0400", hash_original_method = "E90C9F7618B8847FE731998C9CEE159F", hash_generated_method = "E90C9F7618B8847FE731998C9CEE159F")
-    public NativeBN ()
-    {
-        //Synthesized constructor
-    }
 
 
     @DSModeled(DSC.SAFE)
@@ -293,6 +289,12 @@ final class NativeBN {
 		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2011020564 = DSUtils.UNKNOWN_BOOLEAN;
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_2011020564;
 	}
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.200 -0400", hash_original_method = "E90C9F7618B8847FE731998C9CEE159F", hash_generated_method = "E90C9F7618B8847FE731998C9CEE159F")
+    public NativeBN ()
+    {
+        //Synthesized constructor
+    }
 
     
 }

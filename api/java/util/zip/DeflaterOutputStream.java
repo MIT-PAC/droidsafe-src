@@ -1,6 +1,8 @@
 package java.util.zip;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.FilterOutputStream;
 import java.io.IOException;
@@ -14,240 +16,218 @@ import libcore.io.Streams;
 
 
 public class DeflaterOutputStream extends FilterOutputStream {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.567 -0400", hash_original_field = "CB7E52B21171FB9A53B498202607F0BD", hash_generated_field = "083037218D1B4F9535944A48D3FD1BCA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.790 -0500", hash_original_field = "86AF9D144AB13FC6B685B7332D58DC58", hash_generated_field = "A60956B00A99CF9DF92AF09280C120E9")
+
+    static final int BUF_SIZE = 512;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.792 -0500", hash_original_field = "001DD3820C6A6A544AB42831C6F17A05", hash_generated_field = "083037218D1B4F9535944A48D3FD1BCA")
 
     protected byte[] buf;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.567 -0400", hash_original_field = "4ED9407630EB1000C0F6B63842DEFA7D", hash_generated_field = "BB50A00575DEBF8BAC8ED22DB8D1D289")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.795 -0500", hash_original_field = "1BB4DFAD44B3741493C144A3265C33E5", hash_generated_field = "BB50A00575DEBF8BAC8ED22DB8D1D289")
 
     protected Deflater def;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.567 -0400", hash_original_field = "FDA23B4A7B8EA42DC9AD75FF5257DE8D", hash_generated_field = "B3F4B9FB7F6E266775B1E500C6C15A46")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.797 -0500", hash_original_field = "B3F4B9FB7F6E266775B1E500C6C15A46", hash_generated_field = "B3F4B9FB7F6E266775B1E500C6C15A46")
+
 
     boolean done = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.568 -0400", hash_original_field = "B3CB03682DEC49A2A9E73B0589312F2F", hash_generated_field = "2E2C89D90D8FD13D5246794A60DDA967")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.800 -0500", hash_original_field = "7A3702D094F8E8154BE6F2EF131F2AA3", hash_generated_field = "2E2C89D90D8FD13D5246794A60DDA967")
 
-    private boolean syncFlush;
+
+    private  boolean syncFlush;
+
+    /**
+     * This constructor lets you pass the {@code Deflater} specifying the
+     * compression algorithm.
+     *
+     * @param os
+     *            is the {@code OutputStream} where to write the compressed data
+     *            to.
+     * @param def
+     *            is the specific {@code Deflater} that is used to compress
+     *            data.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.803 -0500", hash_original_method = "139234A429000310B925F23DA1712488", hash_generated_method = "9DB9CE5ECB787BAA6F81F82698F6E2B6")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.568 -0400", hash_original_method = "139234A429000310B925F23DA1712488", hash_generated_method = "F8F8EA1C6A2C8CC5841D7C65FC620FED")
-    public  DeflaterOutputStream(OutputStream os, Deflater def) {
+public DeflaterOutputStream(OutputStream os, Deflater def) {
         this(os, def, BUF_SIZE, false);
-        addTaint(def.getTaint());
-        addTaint(os.getTaint());
-        // ---------- Original Method ----------
     }
 
+    /**
+     * This is the most basic constructor. You only need to pass the {@code
+     * OutputStream} to which the compressed data shall be written to. The
+     * default settings for the {@code Deflater} and internal buffer are used.
+     * In particular the {@code Deflater} produces a ZLIB header in the output
+     * stream.
+     *
+     * @param os
+     *            is the OutputStream where to write the compressed data to.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.806 -0500", hash_original_method = "D833AEB9A421148720E02F65A02537D6", hash_generated_method = "CB7727C149413E86090AB532C121E3D9")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.568 -0400", hash_original_method = "D833AEB9A421148720E02F65A02537D6", hash_generated_method = "EC508EC72F547AF9C14FAACCB17F551B")
-    public  DeflaterOutputStream(OutputStream os) {
+public DeflaterOutputStream(OutputStream os) {
         this(os, new Deflater(), BUF_SIZE, false);
-        addTaint(os.getTaint());
-        // ---------- Original Method ----------
     }
 
+    /**
+     * This constructor lets you specify both the compression algorithm as well
+     * as the internal buffer size to be used.
+     *
+     * @param os
+     *            is the {@code OutputStream} where to write the compressed data
+     *            to.
+     * @param def
+     *            is the specific {@code Deflater} that will be used to compress
+     *            data.
+     * @param bsize
+     *            is the size to be used for the internal buffer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.808 -0500", hash_original_method = "4BB74E5E227C5A90579EB5A36914BC95", hash_generated_method = "2122BDA5E53973131B23ACDA569C71A8")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.569 -0400", hash_original_method = "4BB74E5E227C5A90579EB5A36914BC95", hash_generated_method = "19669059882C7D68E35A3DF822C21142")
-    public  DeflaterOutputStream(OutputStream os, Deflater def, int bsize) {
+public DeflaterOutputStream(OutputStream os, Deflater def, int bsize) {
         this(os, def, bsize, false);
-        addTaint(bsize);
-        addTaint(def.getTaint());
-        addTaint(os.getTaint());
-        // ---------- Original Method ----------
     }
 
+    /**
+     * @hide
+     * @since 1.7
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.811 -0500", hash_original_method = "4AB400BD05A544E56EC5FA788A743E49", hash_generated_method = "46AB79C2EB302E4C22C6505D1A63B8A4")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.569 -0400", hash_original_method = "4AB400BD05A544E56EC5FA788A743E49", hash_generated_method = "FB66FD477913D2AD65F93BAB6FD83F97")
-    public  DeflaterOutputStream(OutputStream os, boolean syncFlush) {
+public DeflaterOutputStream(OutputStream os, boolean syncFlush) {
         this(os, new Deflater(), BUF_SIZE, syncFlush);
-        addTaint(syncFlush);
-        addTaint(os.getTaint());
-        // ---------- Original Method ----------
     }
 
+    /**
+     * @hide
+     * @since 1.7
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.814 -0500", hash_original_method = "030FC273048345BE6683513E5C823172", hash_generated_method = "58749372C11266470FDE08BF3B841730")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.569 -0400", hash_original_method = "030FC273048345BE6683513E5C823172", hash_generated_method = "E26A235F655019C7C5A57E31F5C59720")
-    public  DeflaterOutputStream(OutputStream os, Deflater def, boolean syncFlush) {
+public DeflaterOutputStream(OutputStream os, Deflater def, boolean syncFlush) {
         this(os, def, BUF_SIZE, syncFlush);
-        addTaint(syncFlush);
-        addTaint(def.getTaint());
-        addTaint(os.getTaint());
-        // ---------- Original Method ----------
     }
 
+    /**
+     * @hide
+     * @since 1.7
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.817 -0500", hash_original_method = "36641FCF7AB1B4FCCCA71F3379196A62", hash_generated_method = "68B7C36F10AA9DE24A222C4B08CAD7F9")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.571 -0400", hash_original_method = "36641FCF7AB1B4FCCCA71F3379196A62", hash_generated_method = "1F3D772F41EB97FCFC9F6F1D04AF2D69")
-    public  DeflaterOutputStream(OutputStream os, Deflater def, int bsize, boolean syncFlush) {
+public DeflaterOutputStream(OutputStream os, Deflater def, int bsize, boolean syncFlush) {
         super(os);
-        addTaint(os.getTaint());
-        if(os == null || def == null)        
-        {
-            NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_74824335 = new NullPointerException();
-            var7338BC9F48D81FE0BBD6183F4014DCC4_74824335.addTaint(taint);
-            throw var7338BC9F48D81FE0BBD6183F4014DCC4_74824335;
-        } //End block
-        if(bsize <= 0)        
-        {
-            IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_604058158 = new IllegalArgumentException();
-            var5783EF97022AA508B74A1E3EA38534AF_604058158.addTaint(taint);
-            throw var5783EF97022AA508B74A1E3EA38534AF_604058158;
-        } //End block
+        if (os == null || def == null) {
+            throw new NullPointerException();
+        }
+        if (bsize <= 0) {
+            throw new IllegalArgumentException();
+        }
         this.def = def;
         this.syncFlush = syncFlush;
         buf = new byte[bsize];
-        // ---------- Original Method ----------
-        //if (os == null || def == null) {
-            //throw new NullPointerException();
-        //}
-        //if (bsize <= 0) {
-            //throw new IllegalArgumentException();
-        //}
-        //this.def = def;
-        //this.syncFlush = syncFlush;
-        //buf = new byte[bsize];
     }
 
+    /**
+     * Compress the data in the input buffer and write it to the underlying
+     * stream.
+     *
+     * @throws IOException
+     *             If an error occurs during deflation.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.819 -0500", hash_original_method = "5BA084DE43D12B9C920D3018364BFA70", hash_generated_method = "6A078938F9D0B82BA0C58C5BBF2270CD")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.571 -0400", hash_original_method = "5BA084DE43D12B9C920D3018364BFA70", hash_generated_method = "CDAF36726627B7EF9181B20BF883146D")
-    protected void deflate() throws IOException {
+protected void deflate() throws IOException {
         int byteCount;
-        while
-((byteCount = def.deflate(buf)) != 0)        
-        {
+        while ((byteCount = def.deflate(buf)) != 0) {
             out.write(buf, 0, byteCount);
-        } //End block
-        // ---------- Original Method ----------
-        //int byteCount;
-        //while ((byteCount = def.deflate(buf)) != 0) {
-            //out.write(buf, 0, byteCount);
-        //}
+        }
     }
 
+    /**
+     * Writes any unwritten compressed data to the underlying stream, the closes
+     * all underlying streams. This stream can no longer be used after close()
+     * has been called.
+     *
+     * @throws IOException
+     *             If an error occurs while closing the data compression
+     *             process.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.822 -0500", hash_original_method = "9BCFE06D96770C193778FD581B5E01A8", hash_generated_method = "16BFD9FBD063C00124000FB057591644")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.572 -0400", hash_original_method = "9BCFE06D96770C193778FD581B5E01A8", hash_generated_method = "C7C0BAB9767EA3E619F87532FF8B1D11")
-    @Override
+@Override
     public void close() throws IOException {
-        if(!def.finished())        
-        {
+        // everything closed here should also be closed in ZipOutputStream.close()
+        if (!def.finished()) {
             finish();
-        } //End block
+        }
         def.end();
         out.close();
-        // ---------- Original Method ----------
-        //if (!def.finished()) {
-            //finish();
-        //}
-        //def.end();
-        //out.close();
     }
 
+    /**
+     * Writes any unwritten data to the underlying stream. Does not close the
+     * stream.
+     *
+     * @throws IOException
+     *             If an error occurs.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.824 -0500", hash_original_method = "1DDC7258E310FE2F6E87FB700766CEAD", hash_generated_method = "C8D2EBF41CF2C3F39FBBA801A5688D9A")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.572 -0400", hash_original_method = "1DDC7258E310FE2F6E87FB700766CEAD", hash_generated_method = "8E768FDE0B9120A7C030A75B5B792406")
-    public void finish() throws IOException {
-        if(done)        
-        {
+public void finish() throws IOException {
+        if (done) {
             return;
-        } //End block
+        }
         def.finish();
-        while
-(!def.finished())        
-        {
+        while (!def.finished()) {
             int byteCount = def.deflate(buf);
             out.write(buf, 0, byteCount);
-        } //End block
+        }
         done = true;
-        // ---------- Original Method ----------
-        //if (done) {
-            //return;
-        //}
-        //def.finish();
-        //while (!def.finished()) {
-            //int byteCount = def.deflate(buf);
-            //out.write(buf, 0, byteCount);
-        //}
-        //done = true;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.827 -0500", hash_original_method = "DD8DF91486AFD685531F1A8944310E80", hash_generated_method = "8F716C7D080C02AB7834C5B17E78CDC1")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.572 -0400", hash_original_method = "DD8DF91486AFD685531F1A8944310E80", hash_generated_method = "AB841CB7DA3E92DD3EDA031DF935C98A")
-    @Override
-    public void write(int i) throws IOException {
-        addTaint(i);
+@Override public void write(int i) throws IOException {
         Streams.writeSingleByte(this, i);
-        // ---------- Original Method ----------
-        //Streams.writeSingleByte(this, i);
     }
 
+    /**
+     * Compresses {@code byteCount} bytes of data from {@code buf} starting at
+     * {@code offset} and writes it to the underlying stream.
+     * @throws IOException
+     *             If an error occurs during writing.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.830 -0500", hash_original_method = "5BF353787DD4638B35D7C1FA14989FAE", hash_generated_method = "E2034B50C55354120883031999A50019")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.573 -0400", hash_original_method = "5BF353787DD4638B35D7C1FA14989FAE", hash_generated_method = "7F86503ABB4ED36D2469ECD47893557D")
-    @Override
-    public void write(byte[] buffer, int offset, int byteCount) throws IOException {
-        addTaint(byteCount);
-        addTaint(offset);
-        addTaint(buffer[0]);
-        if(done)        
-        {
-            IOException varF29E1D4708786ED420EF7756108AEC17_1432425422 = new IOException("attempt to write after finish");
-            varF29E1D4708786ED420EF7756108AEC17_1432425422.addTaint(taint);
-            throw varF29E1D4708786ED420EF7756108AEC17_1432425422;
-        } //End block
+@Override public void write(byte[] buffer, int offset, int byteCount) throws IOException {
+        if (done) {
+            throw new IOException("attempt to write after finish");
+        }
         Arrays.checkOffsetAndCount(buffer.length, offset, byteCount);
-        if(!def.needsInput())        
-        {
-            IOException var1508E3FDF27FD56D4E1051DB16DE1816_1565560553 = new IOException();
-            var1508E3FDF27FD56D4E1051DB16DE1816_1565560553.addTaint(taint);
-            throw var1508E3FDF27FD56D4E1051DB16DE1816_1565560553;
-        } //End block
+        if (!def.needsInput()) {
+            throw new IOException();
+        }
         def.setInput(buffer, offset, byteCount);
         deflate();
-        // ---------- Original Method ----------
-        //if (done) {
-            //throw new IOException("attempt to write after finish");
-        //}
-        //Arrays.checkOffsetAndCount(buffer.length, offset, byteCount);
-        //if (!def.needsInput()) {
-            //throw new IOException();
-        //}
-        //def.setInput(buffer, offset, byteCount);
-        //deflate();
     }
 
+    /**
+     * Flushes the underlying stream. This flushes only the bytes that can be
+     * compressed at the highest level.
+     *
+     * <p>For deflater output streams constructed with Java 7's
+     * {@code syncFlush} parameter set to true (not yet available on Android),
+     * this first flushes all outstanding data so that it may be immediately
+     * read by its recipient. Doing so may degrade compression.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.833 -0500", hash_original_method = "FB4F039ED9744680CB15453045EEE574", hash_generated_method = "609D00CE798BDC5D620E1BF70BEE2FD2")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.573 -0400", hash_original_method = "FB4F039ED9744680CB15453045EEE574", hash_generated_method = "05380BB10916E6ED4246D94CA8350379")
-    @Override
-    public void flush() throws IOException {
-        if(syncFlush)        
-        {
+@Override public void flush() throws IOException {
+        if (syncFlush) {
             int byteCount;
-            while
-((byteCount = def.deflate(buf, 0, buf.length, Deflater.SYNC_FLUSH)) != 0)            
-            {
+            while ((byteCount = def.deflate(buf, 0, buf.length, Deflater.SYNC_FLUSH)) != 0) {
                 out.write(buf, 0, byteCount);
-            } //End block
-        } //End block
+            }
+        }
         out.flush();
-        // ---------- Original Method ----------
-        //if (syncFlush) {
-            //int byteCount;
-            //while ((byteCount = def.deflate(buf, 0, buf.length, Deflater.SYNC_FLUSH)) != 0) {
-                //out.write(buf, 0, byteCount);
-            //}
-        //}
-        //out.flush();
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.573 -0400", hash_original_field = "D1C827DB9A3BDE870AF89553E76D4553", hash_generated_field = "A60956B00A99CF9DF92AF09280C120E9")
-
-    static final int BUF_SIZE = 512;
 }
 

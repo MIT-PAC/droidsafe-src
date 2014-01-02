@@ -1,6 +1,9 @@
 package android.app;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
+import android.util.Log;
 import droidsafe.annotations.*;
 import android.content.Context;
 import android.content.res.Configuration;
@@ -10,7 +13,43 @@ import android.os.ServiceManager;
 
 
 public class UiModeManager {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.316 -0400", hash_original_field = "D96EB21FC1A83B484FAE33A12B05D9CB", hash_generated_field = "AC5296BC9334BAEB9DDA5E503BF7ECAF")
+    
+    @DSModeled(DSC.BAN)
+    public static UiModeManager createInstance() {
+        return new UiModeManager();
+    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:14.293 -0500", hash_original_field = "1AB3DCE86D7AC083B86A8FE454EA6A07", hash_generated_field = "42AEB3165E3850F68716AA3C8DD21F5E")
+
+    private static final String TAG = "UiModeManager";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:14.296 -0500", hash_original_field = "158612309DBF3540F25E881CADC29F1D", hash_generated_field = "A618402524A4F62B1AEC90708DB85E4F")
+
+    public static String ACTION_ENTER_CAR_MODE = "android.app.action.ENTER_CAR_MODE";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:14.298 -0500", hash_original_field = "9296D1735B4392EB03C0000F0FCC7084", hash_generated_field = "D1C75F61989ABB3CDE4B02448AB2AD42")
+
+    public static String ACTION_EXIT_CAR_MODE = "android.app.action.EXIT_CAR_MODE";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:14.301 -0500", hash_original_field = "7497095F4E718ECFD71D149E18D3999B", hash_generated_field = "E3F23ADBC25ACC014B784BBB3ED89735")
+
+    public static String ACTION_ENTER_DESK_MODE = "android.app.action.ENTER_DESK_MODE";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:14.303 -0500", hash_original_field = "DFAF05980A85DCEA3EA468923DAC8C66", hash_generated_field = "E3165410905E198B86B1C6717699B49B")
+
+    public static String ACTION_EXIT_DESK_MODE = "android.app.action.EXIT_DESK_MODE";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:14.306 -0500", hash_original_field = "E6C020FD92124EB405C275148C5B0CF7", hash_generated_field = "A1D9AB7CECA1407C5BE4EB516D55B5EC")
+
+    public static final int MODE_NIGHT_AUTO = Configuration.UI_MODE_NIGHT_UNDEFINED >> 4;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:14.308 -0500", hash_original_field = "0780A494998054CF8E840FED96A47759", hash_generated_field = "B75E7784F32F2033B89925385DE5345B")
+
+    public static final int MODE_NIGHT_NO = Configuration.UI_MODE_NIGHT_NO >> 4;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:14.310 -0500", hash_original_field = "CCC988F697B1D081C96F88DABE894E91", hash_generated_field = "3931D8B47FB51C2F74C8DDC6A19D3575")
+
+    public static final int MODE_NIGHT_YES = Configuration.UI_MODE_NIGHT_YES >> 4;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:14.317 -0500", hash_original_field = "FC2534792F92DC445655F8075218C9C5", hash_generated_field = "21526DD4B745D2A0684339F4E92B6778")
+
+    public static final int ENABLE_CAR_MODE_GO_CAR_HOME = 0x0001;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:14.322 -0500", hash_original_field = "E125C7929B94AEA169DE223C125F80E3", hash_generated_field = "3102F0ECF4ACF19F31C99EDCA6C607E8")
+
+    public static final int DISABLE_CAR_MODE_GO_HOME = 0x0001;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:14.312 -0500", hash_original_field = "375F4CDB96C235DF550526331454121A", hash_generated_field = "AC5296BC9334BAEB9DDA5E503BF7ECAF")
+
 
     private IUiModeManager mService;
     
@@ -26,172 +65,103 @@ public class UiModeManager {
                 //ServiceManager.getService(Context.UI_MODE_SERVICE));
     }
     
-    @DSModeled(DSC.BAN)
-    public static UiModeManager createInstance() {
-        return new UiModeManager();
-    }
-
+    /**
+     * Force device into car mode, like it had been placed in the car dock.
+     * This will cause the device to switch to the car home UI as part of
+     * the mode switch.
+     * @param flags Must be 0.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:14.319 -0500", hash_original_method = "A4DA8672EE11B64C720877911E862CCA", hash_generated_method = "DD466E571F8813B6A90B31373C9D4E21")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.317 -0400", hash_original_method = "A4DA8672EE11B64C720877911E862CCA", hash_generated_method = "DF6E2F7CE23B29B7B3639E99B124472F")
-    public void enableCarMode(int flags) {
-        addTaint(flags);
-        if(mService != null)        
-        {
-            try 
-            {
+public void enableCarMode(int flags) {
+        if (mService != null) {
+            try {
                 mService.enableCarMode(flags);
-            } //End block
-            catch (RemoteException e)
-            {
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (mService != null) {
-            //try {
-                //mService.enableCarMode(flags);
-            //} catch (RemoteException e) {
-                //Log.e(TAG, "disableCarMode: RemoteException", e);
-            //}
-        //}
+            } catch (RemoteException e) {
+                Log.e(TAG, "disableCarMode: RemoteException", e);
+            }
+        }
     }
-
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.318 -0400", hash_original_method = "3F662D74C7F5FA5E21AD89C24E03313D", hash_generated_method = "97F837358B28E4909B7BE505CAAF5430")
-    public void disableCarMode(int flags) {
-        addTaint(flags);
-        if(mService != null)        
-        {
-            try 
-            {
+    /**
+     * Turn off special mode if currently in car mode.
+     * @param flags May be 0 or {@link #DISABLE_CAR_MODE_GO_HOME}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:14.324 -0500", hash_original_method = "3F662D74C7F5FA5E21AD89C24E03313D", hash_generated_method = "76B33845503C0C8B0DD07E34FE5BC6C0")
+    
+public void disableCarMode(int flags) {
+        if (mService != null) {
+            try {
                 mService.disableCarMode(flags);
-            } //End block
-            catch (RemoteException e)
-            {
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (mService != null) {
-            //try {
-                //mService.disableCarMode(flags);
-            //} catch (RemoteException e) {
-                //Log.e(TAG, "disableCarMode: RemoteException", e);
-            //}
-        //}
+            } catch (RemoteException e) {
+                Log.e(TAG, "disableCarMode: RemoteException", e);
+            }
+        }
     }
 
+    /**
+     * Return the current running mode type.  May be one of
+     * {@link Configuration#UI_MODE_TYPE_NORMAL Configuration.UI_MODE_TYPE_NORMAL},
+     * {@link Configuration#UI_MODE_TYPE_DESK Configuration.UI_MODE_TYPE_DESK}, or
+     * {@link Configuration#UI_MODE_TYPE_CAR Configuration.UI_MODE_TYPE_CAR}, or
+     * {@link Configuration#UI_MODE_TYPE_TELEVISION Configuration.UI_MODE_TYPE_TV}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:14.326 -0500", hash_original_method = "0CD456741A85C32EF5CC7E71365FBB20", hash_generated_method = "D4DE81443170D2B9821E2F6BCEEA8330")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.319 -0400", hash_original_method = "0CD456741A85C32EF5CC7E71365FBB20", hash_generated_method = "863F4A83F51E3F65CDC08FC7A056033F")
-    public int getCurrentModeType() {
-        if(mService != null)        
-        {
-            try 
-            {
-                int varE219EC66418E44F08D99AF6653852EED_686255948 = (mService.getCurrentModeType());
-                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1587809326 = getTaintInt();
-                return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1587809326;
-            } //End block
-            catch (RemoteException e)
-            {
-            } //End block
-        } //End block
-        int varB0B5851D8D0FE3A7BD00C32F6053A667_1223377461 = (Configuration.UI_MODE_TYPE_NORMAL);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2137654547 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2137654547;
-        // ---------- Original Method ----------
-        //if (mService != null) {
-            //try {
-                //return mService.getCurrentModeType();
-            //} catch (RemoteException e) {
-                //Log.e(TAG, "getCurrentModeType: RemoteException", e);
-            //}
-        //}
-        //return Configuration.UI_MODE_TYPE_NORMAL;
+public int getCurrentModeType() {
+        if (mService != null) {
+            try {
+                return mService.getCurrentModeType();
+            } catch (RemoteException e) {
+                Log.e(TAG, "getCurrentModeType: RemoteException", e);
+            }
+        }
+        return Configuration.UI_MODE_TYPE_NORMAL;
     }
 
+    /**
+     * Sets the night mode.  Changes to the night mode are only effective when
+     * the car or desk mode is enabled on a device.
+     *
+     * <p>The mode can be one of:
+     * <ul>
+     *   <li><em>{@link #MODE_NIGHT_NO}<em> - sets the device into notnight
+     *       mode.</li>
+     *   <li><em>{@link #MODE_NIGHT_YES}</em> - sets the device into night mode.
+     *   </li>
+     *   <li><em>{@link #MODE_NIGHT_AUTO}</em> - automatic night/notnight switching
+     *       depending on the location and certain other sensors.</li>
+     * </ul>
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:14.328 -0500", hash_original_method = "D2225F0EDD53710765C544C38EED4B1C", hash_generated_method = "42638A30BD8F188BC6646A1676028C8E")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.319 -0400", hash_original_method = "D2225F0EDD53710765C544C38EED4B1C", hash_generated_method = "C382CE2D1CFD940D2F313BEA1186E674")
-    public void setNightMode(int mode) {
-        addTaint(mode);
-        if(mService != null)        
-        {
-            try 
-            {
+public void setNightMode(int mode) {
+        if (mService != null) {
+            try {
                 mService.setNightMode(mode);
-            } //End block
-            catch (RemoteException e)
-            {
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (mService != null) {
-            //try {
-                //mService.setNightMode(mode);
-            //} catch (RemoteException e) {
-                //Log.e(TAG, "setNightMode: RemoteException", e);
-            //}
-        //}
+            } catch (RemoteException e) {
+                Log.e(TAG, "setNightMode: RemoteException", e);
+            }
+        }
     }
 
+    /**
+     * Returns the currently configured night mode.
+     *
+     * @return {@link #MODE_NIGHT_NO}, {@link #MODE_NIGHT_YES}, or
+     *  {@link #MODE_NIGHT_AUTO}.  When an error occurred -1 is returned.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:14.332 -0500", hash_original_method = "9AFE4882A5DD35A0B7234D31EDC0BDFC", hash_generated_method = "1959474A613E71E942C1471438107391")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.320 -0400", hash_original_method = "9AFE4882A5DD35A0B7234D31EDC0BDFC", hash_generated_method = "0621C930969FED0D3090FDF4E7B9CBE9")
-    public int getNightMode() {
-        if(mService != null)        
-        {
-            try 
-            {
-                int var89B2AB289C9BBE2E6DC5362B4B3C525C_1395173549 = (mService.getNightMode());
-                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1247833279 = getTaintInt();
-                return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1247833279;
-            } //End block
-            catch (RemoteException e)
-            {
-            } //End block
-        } //End block
-        int var6BB61E3B7BCE0931DA574D19D1D82C88_406346610 = (-1);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_904181196 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_904181196;
-        // ---------- Original Method ----------
-        //if (mService != null) {
-            //try {
-                //return mService.getNightMode();
-            //} catch (RemoteException e) {
-                //Log.e(TAG, "getNightMode: RemoteException", e);
-            //}
-        //}
-        //return -1;
+public int getNightMode() {
+        if (mService != null) {
+            try {
+                return mService.getNightMode();
+            } catch (RemoteException e) {
+                Log.e(TAG, "getNightMode: RemoteException", e);
+            }
+        }
+        return -1;
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.320 -0400", hash_original_field = "DF9ADE9656BBECC1AE55D2E833605EF5", hash_generated_field = "42AEB3165E3850F68716AA3C8DD21F5E")
-
-    private static final String TAG = "UiModeManager";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.320 -0400", hash_original_field = "47DAFC65C6B5A4E9E4DE5C92E6184028", hash_generated_field = "A618402524A4F62B1AEC90708DB85E4F")
-
-    public static String ACTION_ENTER_CAR_MODE = "android.app.action.ENTER_CAR_MODE";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.321 -0400", hash_original_field = "0D50F200031F7037930EF7B00C102DCD", hash_generated_field = "D1C75F61989ABB3CDE4B02448AB2AD42")
-
-    public static String ACTION_EXIT_CAR_MODE = "android.app.action.EXIT_CAR_MODE";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.321 -0400", hash_original_field = "37C77B8A742E1913197F1A3BCD0170CF", hash_generated_field = "E3F23ADBC25ACC014B784BBB3ED89735")
-
-    public static String ACTION_ENTER_DESK_MODE = "android.app.action.ENTER_DESK_MODE";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.321 -0400", hash_original_field = "4C5E384476032224FE4811314BCE583A", hash_generated_field = "E3165410905E198B86B1C6717699B49B")
-
-    public static String ACTION_EXIT_DESK_MODE = "android.app.action.EXIT_DESK_MODE";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.321 -0400", hash_original_field = "D1151118F91E4212473617024EED365F", hash_generated_field = "A1D9AB7CECA1407C5BE4EB516D55B5EC")
-
-    public static final int MODE_NIGHT_AUTO = Configuration.UI_MODE_NIGHT_UNDEFINED >> 4;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.321 -0400", hash_original_field = "CE64F002459C0BA3117D27CCBB9135BA", hash_generated_field = "B75E7784F32F2033B89925385DE5345B")
-
-    public static final int MODE_NIGHT_NO = Configuration.UI_MODE_NIGHT_NO >> 4;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.321 -0400", hash_original_field = "38792BEA1EDA8DE2684D70A2961FD27C", hash_generated_field = "3931D8B47FB51C2F74C8DDC6A19D3575")
-
-    public static final int MODE_NIGHT_YES = Configuration.UI_MODE_NIGHT_YES >> 4;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.321 -0400", hash_original_field = "EE4397CE577B711245AF6EE9C736247B", hash_generated_field = "21526DD4B745D2A0684339F4E92B6778")
-
-    public static final int ENABLE_CAR_MODE_GO_CAR_HOME = 0x0001;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.322 -0400", hash_original_field = "2B66F4DC9990FE7494EE3D7DA554FC54", hash_generated_field = "3102F0ECF4ACF19F31C99EDCA6C607E8")
-
-    public static final int DISABLE_CAR_MODE_GO_HOME = 0x0001;
 }
 

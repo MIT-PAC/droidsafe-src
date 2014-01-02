@@ -1,6 +1,8 @@
 package java.util;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
@@ -8,6 +10,10 @@ import droidsafe.annotations.*;
 
 
 public class LinkedHashMap<K, V> extends HashMap<K, V> {
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:55.812 -0500", hash_original_field = "03C2294E3359F1BC714385FB4CB7EADD", hash_generated_field = "58143BDD5D2BB4E9A1A5E401127BE552")
+
+
+    private static final long serialVersionUID = 3801124242820219131L;
         @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.728 -0400", hash_original_method = "BC14FA557BD7B0B9C577C3EA20F65BB1", hash_generated_method = "841BDE13C0D724F59D7372319DB3BC68")
     public  LinkedHashMap() {
@@ -80,10 +86,5 @@ public class LinkedHashMap<K, V> extends HashMap<K, V> {
         // ---------- Original Method ----------
         //return false;
     }
-    
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.740 -0400", hash_original_field = "F2C3C5ED4469A7ACAFC202E4DC767981", hash_generated_field = "58143BDD5D2BB4E9A1A5E401127BE552")
-
-    private static final long serialVersionUID = 3801124242820219131L;
 }
 

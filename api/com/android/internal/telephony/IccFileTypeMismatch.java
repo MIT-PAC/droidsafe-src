@@ -1,24 +1,22 @@
 package com.android.internal.telephony;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
 public class IccFileTypeMismatch extends IccException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.243 -0500", hash_original_method = "E2EFD4F60E6DEBBFF1ECC3AF52B7BF83", hash_generated_method = "95D459BF2FDC15F0A74B20906180A518")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.134 -0400", hash_original_method = "E2EFD4F60E6DEBBFF1ECC3AF52B7BF83", hash_generated_method = "9C6EF2B3C8162A26105E6F68484C49DB")
-    public  IccFileTypeMismatch() {
-        // ---------- Original Method ----------
+public IccFileTypeMismatch() {
+
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.246 -0500", hash_original_method = "50ADB5D3C7BA87D326791A13088BBBA9", hash_generated_method = "F5C2248B73974010526298AC1C978977")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.134 -0400", hash_original_method = "50ADB5D3C7BA87D326791A13088BBBA9", hash_generated_method = "6EE941989432FCE99455529F2F07D618")
-    public  IccFileTypeMismatch(String s) {
+public IccFileTypeMismatch(String s) {
         super(s);
-        addTaint(s.getTaint());
-        // ---------- Original Method ----------
     }
 
     

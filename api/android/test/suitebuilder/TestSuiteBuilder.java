@@ -1,6 +1,9 @@
 package android.test.suitebuilder;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
+import android.util.Log;
 import droidsafe.annotations.*;
 import static android.test.suitebuilder.TestGrouping.SORT_BY_FULLY_QUALIFIED_NAME;
 import static android.test.suitebuilder.TestPredicates.REJECT_SUPPRESSED;
@@ -27,362 +30,295 @@ import com.google.android.collect.Lists;
 
 
 public class TestSuiteBuilder {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.282 -0400", hash_original_field = "5C18EF72771564B7F43C497DC507AEAB", hash_generated_field = "FFC623C2EA984831A33BAADC181E897E")
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.936 -0500", hash_original_method = "B2C0E32F80832659BC02AF16125886AE", hash_generated_method = "FF2BD17ECCE48B8DC9A3BA61FC9C67CD")
+    
+private static String parsePackageNameFromClassName(String className) {
+        return className.substring(0, className.lastIndexOf('.'));
+    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.868 -0500", hash_original_field = "571FE4403DDA9BF54693EBF4F0D6639D", hash_generated_field = "FFC623C2EA984831A33BAADC181E897E")
+
 
     private Context context;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.282 -0400", hash_original_field = "EBA8B2366B183113C3E3A079C6EA4945", hash_generated_field = "56A9B7A488A7615FB6C4D1D2217E1503")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.870 -0500", hash_original_field = "12F87417C0E327D36555F80CB0C0E624", hash_generated_field = "56A9B7A488A7615FB6C4D1D2217E1503")
 
     private final TestGrouping testGrouping = new TestGrouping(SORT_BY_FULLY_QUALIFIED_NAME);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.282 -0400", hash_original_field = "9A66B7CC19E5B6D909445D4272BD5B00", hash_generated_field = "985B70CA3550B01608B83EE3F72168EC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.872 -0500", hash_original_field = "01466FEB43190F90CBD5981192C2D5FD", hash_generated_field = "985B70CA3550B01608B83EE3F72168EC")
 
     private final Set<Predicate<TestMethod>> predicates = new HashSet<Predicate<TestMethod>>();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.283 -0400", hash_original_field = "1DBDC8928979FF4D3751532297BA7FA7", hash_generated_field = "C089C26A0F05E75588049BAD1F2BEF5A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.874 -0500", hash_original_field = "EF8ADBE3BF4BD50A8F899E931010F398", hash_generated_field = "C089C26A0F05E75588049BAD1F2BEF5A")
 
     private List<TestCase> testCases;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.283 -0400", hash_original_field = "A22EF42B80DE6C2EB7A80EBD118C1DF1", hash_generated_field = "AC3A2B22FEC9C02F4245743F5AF59C1C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.877 -0500", hash_original_field = "85BA7BD1850E0EC035DA86205E979EC9", hash_generated_field = "AC3A2B22FEC9C02F4245743F5AF59C1C")
 
     private TestSuite rootSuite;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.283 -0400", hash_original_field = "2991DB2EC43F7222A298DB93DB6D1AFE", hash_generated_field = "D3496256C20E9CA164F594A66FCB0565")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.879 -0500", hash_original_field = "67C0FE9EAD28D6048031BC9218280C08", hash_generated_field = "D3496256C20E9CA164F594A66FCB0565")
 
     private TestSuite suiteForCurrentClass;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.283 -0400", hash_original_field = "67DE047F4D6E3DBE8A0B26D27CF90237", hash_generated_field = "0621208759121B23881D009E501432EE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.882 -0500", hash_original_field = "83E1FD7A9757FE516A3BAF3FEA736637", hash_generated_field = "0621208759121B23881D009E501432EE")
 
     private String currentClassname;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.283 -0400", hash_original_field = "B41A1AAAD669D8B2E46120A2242C98BC", hash_generated_field = "03428D590BDE6503C56EB614336478D2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.884 -0500", hash_original_field = "6211E8B6C90F8F9C0255A8DCFD71E056", hash_generated_field = "03428D590BDE6503C56EB614336478D2")
 
     private String suiteName;
+
+    /**
+     * The given name is automatically prefixed with the package containing the tests to be run.
+     * If more than one package is specified, the first is used.
+     *
+     * @param clazz Use the class from your .apk. Use the class name for the test suite name.
+     *              Use the class' classloader in order to load classes for testing.
+     *              This is needed when running in the emulator.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.886 -0500", hash_original_method = "8DFAA261B116CB95D8F3EE320976E821", hash_generated_method = "E2028131F1B07E853FD832F61317A006")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.283 -0400", hash_original_method = "8DFAA261B116CB95D8F3EE320976E821", hash_generated_method = "4305A767220FFB75ACB9397B534A91E6")
-    public  TestSuiteBuilder(Class clazz) {
+public TestSuiteBuilder(Class clazz) {
         this(clazz.getName(), clazz.getClassLoader());
-        addTaint(clazz.getTaint());
-        // ---------- Original Method ----------
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.889 -0500", hash_original_method = "9CA7BA6922F108D38C6201808A4CEB3C", hash_generated_method = "9A93B126671833E87F4612FCA36F33BD")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.284 -0400", hash_original_method = "9CA7BA6922F108D38C6201808A4CEB3C", hash_generated_method = "2B68C8CF1815DEC346D9B178539BCD51")
-    public  TestSuiteBuilder(String name, ClassLoader classLoader) {
-        addTaint(classLoader.getTaint());
+public TestSuiteBuilder(String name, ClassLoader classLoader) {
         this.suiteName = name;
         this.testGrouping.setClassLoader(classLoader);
         this.testCases = Lists.newArrayList();
         addRequirements(REJECT_SUPPRESSED);
-        // ---------- Original Method ----------
-        //this.suiteName = name;
-        //this.testGrouping.setClassLoader(classLoader);
-        //this.testCases = Lists.newArrayList();
-        //addRequirements(REJECT_SUPPRESSED);
     }
 
+    /** @hide pending API Council approval */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.891 -0500", hash_original_method = "48780D5C4E993D5976786FDA7072C865", hash_generated_method = "1AEA5C89FAFA827B2A85B4025429AA7B")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.285 -0400", hash_original_method = "48780D5C4E993D5976786FDA7072C865", hash_generated_method = "8E04F60329701C4249A67F36919693CF")
-    public TestSuiteBuilder addTestClassByName(String testClassName, String testMethodName,
+public TestSuiteBuilder addTestClassByName(String testClassName, String testMethodName,
             Context context) {
-        addTaint(context.getTaint());
-        addTaint(testMethodName.getTaint());
-        addTaint(testClassName.getTaint());
+
         AndroidTestRunner atr = new AndroidTestRunner();
         atr.setContext(context);
         atr.setTestClassName(testClassName, testMethodName);
+
         this.testCases.addAll(atr.getTestCases());
-TestSuiteBuilder var72A74007B2BE62B849F475C7BDA4658B_402860525 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_402860525.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_402860525;
-        // ---------- Original Method ----------
-        //AndroidTestRunner atr = new AndroidTestRunner();
-        //atr.setContext(context);
-        //atr.setTestClassName(testClassName, testMethodName);
-        //this.testCases.addAll(atr.getTestCases());
-        //return this;
+        return this;
     }
 
+    /** @hide pending API Council approval */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.894 -0500", hash_original_method = "EA702A9DA91338D58DCDCE903BD5BA53", hash_generated_method = "7ADEA3B00E1C29E9DAE688AAC26A2033")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.285 -0400", hash_original_method = "EA702A9DA91338D58DCDCE903BD5BA53", hash_generated_method = "A27280C4F638192973353CC96325ED10")
-    public TestSuiteBuilder addTestSuite(TestSuite testSuite) {
-        addTaint(testSuite.getTaint());
-for(TestCase testCase : (List<TestCase>) TestCaseUtil.getTests(testSuite, true))
-        {
+public TestSuiteBuilder addTestSuite(TestSuite testSuite) {
+        for (TestCase testCase : (List<TestCase>) TestCaseUtil.getTests(testSuite, true)) {
             this.testCases.add(testCase);
-        } //End block
-TestSuiteBuilder var72A74007B2BE62B849F475C7BDA4658B_1888327422 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_1888327422.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_1888327422;
-        // ---------- Original Method ----------
-        //for (TestCase testCase : (List<TestCase>) TestCaseUtil.getTests(testSuite, true)) {
-            //this.testCases.add(testCase);
-        //}
-        //return this;
+        }
+        return this;
     }
 
+    /**
+     * Include all tests that satisfy the requirements in the given packages and all sub-packages,
+     * unless otherwise specified.
+     *
+     * @param packageNames Names of packages to add.
+     * @return The builder for method chaining.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.896 -0500", hash_original_method = "F3D792B6EB8BC145BAF2830A3B203CAC", hash_generated_method = "09D3D4C78918C1EF2B20F0543EDEDAE8")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.286 -0400", hash_original_method = "F3D792B6EB8BC145BAF2830A3B203CAC", hash_generated_method = "70CCA3E689210F85C933C22486DE52D4")
-    public TestSuiteBuilder includePackages(String... packageNames) {
-        addTaint(packageNames[0].getTaint());
+public TestSuiteBuilder includePackages(String... packageNames) {
         testGrouping.addPackagesRecursive(packageNames);
-TestSuiteBuilder var72A74007B2BE62B849F475C7BDA4658B_1252574274 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_1252574274.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_1252574274;
-        // ---------- Original Method ----------
-        //testGrouping.addPackagesRecursive(packageNames);
-        //return this;
+        return this;
     }
 
+    /**
+     * Exclude all tests in the given packages and all sub-packages, unless otherwise specified.
+     *
+     * @param packageNames Names of packages to remove.
+     * @return The builder for method chaining.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.898 -0500", hash_original_method = "ECB1A1FF9D2C5C6048377E0BEB0296EB", hash_generated_method = "4646C61C07C34092FA61EEA7746DDB8D")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.286 -0400", hash_original_method = "ECB1A1FF9D2C5C6048377E0BEB0296EB", hash_generated_method = "F5F1BE46AD94D1CB01EA1842E39F6549")
-    public TestSuiteBuilder excludePackages(String... packageNames) {
-        addTaint(packageNames[0].getTaint());
+public TestSuiteBuilder excludePackages(String... packageNames) {
         testGrouping.removePackagesRecursive(packageNames);
-TestSuiteBuilder var72A74007B2BE62B849F475C7BDA4658B_1319628937 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_1319628937.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_1319628937;
-        // ---------- Original Method ----------
-        //testGrouping.removePackagesRecursive(packageNames);
-        //return this;
+        return this;
     }
 
+    /**
+     * Exclude tests that fail to satisfy all of the given predicates.
+     *
+     * @param predicates Predicates to add to the list of requirements.
+     * @return The builder for method chaining.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.900 -0500", hash_original_method = "30733A3232BFC83399FAC43965000DCC", hash_generated_method = "C7CE9C087A8F529EE5D96931DE516CD1")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.286 -0400", hash_original_method = "30733A3232BFC83399FAC43965000DCC", hash_generated_method = "49FCDAE0EC2FC503CB41B252A0BFDC04")
-    public TestSuiteBuilder addRequirements(List<Predicate<TestMethod>> predicates) {
-        addTaint(predicates.getTaint());
+public TestSuiteBuilder addRequirements(List<Predicate<TestMethod>> predicates) {
         this.predicates.addAll(predicates);
-TestSuiteBuilder var72A74007B2BE62B849F475C7BDA4658B_1899552971 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_1899552971.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_1899552971;
-        // ---------- Original Method ----------
-        //this.predicates.addAll(predicates);
-        //return this;
+        return this;
     }
 
+    /**
+     * Include all junit tests that satisfy the requirements in the calling class' package and all
+     * sub-packages.
+     *
+     * @return The builder for method chaining.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.903 -0500", hash_original_method = "58145D33150957DD46A1ADD9032FDB9F", hash_generated_method = "3CE421B65E2729738ED02C12C7AD40C1")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.287 -0400", hash_original_method = "58145D33150957DD46A1ADD9032FDB9F", hash_generated_method = "8DAA00F7FF3FDC820B71B3A05F2DAA36")
-    public final TestSuiteBuilder includeAllPackagesUnderHere() {
+public final TestSuiteBuilder includeAllPackagesUnderHere() {
         StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
+
         String callingClassName = null;
         String thisClassName = TestSuiteBuilder.class.getName();
-for(int i = 0;i < stackTraceElements.length;i++)
-        {
+
+        // We want to get the package of this method's calling class. This method's calling class
+        // should be one level below this class in the stack trace.
+        for (int i = 0; i < stackTraceElements.length; i++) {
             StackTraceElement element = stackTraceElements[i];
-            if(thisClassName.equals(element.getClassName())
-                    && "includeAllPackagesUnderHere".equals(element.getMethodName()))            
-            {
+            if (thisClassName.equals(element.getClassName())
+                    && "includeAllPackagesUnderHere".equals(element.getMethodName())) {
+                // We've found this class in the call stack. The calling class must be the
+                // next class in the stack.
                 callingClassName = stackTraceElements[i + 1].getClassName();
                 break;
-            } //End block
-        } //End block
+            }
+        }
+
         String packageName = parsePackageNameFromClassName(callingClassName);
-TestSuiteBuilder var4236819713B8F2A439526881855F7860_1267849364 =         includePackages(packageName);
-        var4236819713B8F2A439526881855F7860_1267849364.addTaint(taint);
-        return var4236819713B8F2A439526881855F7860_1267849364;
-        // ---------- Original Method ----------
-        //StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-        //String callingClassName = null;
-        //String thisClassName = TestSuiteBuilder.class.getName();
-        //for (int i = 0; i < stackTraceElements.length; i++) {
-            //StackTraceElement element = stackTraceElements[i];
-            //if (thisClassName.equals(element.getClassName())
-                    //&& "includeAllPackagesUnderHere".equals(element.getMethodName())) {
-                //callingClassName = stackTraceElements[i + 1].getClassName();
-                //break;
-            //}
-        //}
-        //String packageName = parsePackageNameFromClassName(callingClassName);
-        //return includePackages(packageName);
+        return includePackages(packageName);
     }
 
+    /**
+     * Override the default name for the suite being built. This should generally be called if you
+     * call {@link #addRequirements(com.android.internal.util.Predicate[])} to make it clear which
+     * tests will be included. The name you specify is automatically prefixed with the package
+     * containing the tests to be run. If more than one package is specified, the first is used.
+     *
+     * @param newSuiteName Prefix of name to give the suite being built.
+     * @return The builder for method chaining.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.905 -0500", hash_original_method = "DE0BA46F9EE52752A0C868D33280E318", hash_generated_method = "2111F995AE1D670464F9099EECD61985")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.287 -0400", hash_original_method = "DE0BA46F9EE52752A0C868D33280E318", hash_generated_method = "3BD4C70B249965EF43E391AFD99F54B3")
-    public TestSuiteBuilder named(String newSuiteName) {
+public TestSuiteBuilder named(String newSuiteName) {
         suiteName = newSuiteName;
-TestSuiteBuilder var72A74007B2BE62B849F475C7BDA4658B_546268489 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_546268489.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_546268489;
-        // ---------- Original Method ----------
-        //suiteName = newSuiteName;
-        //return this;
+        return this;
     }
 
+    /**
+     * Call this method once you've configured your builder as desired.
+     *
+     * @return The suite containing the requested tests.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.908 -0500", hash_original_method = "C585F9D3DE53AA6116980D3F6C4B8FC9", hash_generated_method = "83FEE9530342B72CBD7433E103FE771F")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.288 -0400", hash_original_method = "C585F9D3DE53AA6116980D3F6C4B8FC9", hash_generated_method = "819A75D519B7DFD5CE7634516E35112E")
-    public final TestSuite build() {
+public final TestSuite build() {
         rootSuite = new TestSuite(getSuiteName());
+
+        // Keep track of current class so we know when to create a new sub-suite.
         currentClassname = null;
-        try 
-        {
-for(TestMethod test : testGrouping.getTests())
-            {
-                if(satisfiesAllPredicates(test))                
-                {
+        try {
+            for (TestMethod test : testGrouping.getTests()) {
+                if (satisfiesAllPredicates(test)) {
                     addTest(test);
-                } //End block
-            } //End block
-            if(testCases.size() > 0)            
-            {
-for(TestCase testCase : testCases)
-                {
-                    if(satisfiesAllPredicates(new TestMethod(testCase)))                    
-                    {
+                }
+            }
+            if (testCases.size() > 0) {
+                for (TestCase testCase : testCases) {
+                    if (satisfiesAllPredicates(new TestMethod(testCase))) {
                         addTest(testCase);
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
-        catch (Exception exception)
-        {
+                    }
+                }
+            }
+        } catch (Exception exception) {
+            Log.i("TestSuiteBuilder", "Failed to create test.", exception);
             TestSuite suite = new TestSuite(getSuiteName());
             suite.addTest(new FailedToCreateTests(exception));
-TestSuite var43F2DCEC46C8EA8C7BBB5E25ABF048E6_1475659743 =             suite;
-            var43F2DCEC46C8EA8C7BBB5E25ABF048E6_1475659743.addTaint(taint);
-            return var43F2DCEC46C8EA8C7BBB5E25ABF048E6_1475659743;
-        } //End block
-TestSuite var68923D4623222795EBF2699ACF0F4B83_1681594889 =         rootSuite;
-        var68923D4623222795EBF2699ACF0F4B83_1681594889.addTaint(taint);
-        return var68923D4623222795EBF2699ACF0F4B83_1681594889;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            return suite;
+        }
+        return rootSuite;
     }
 
+    /**
+     * Subclasses use this method to determine the name of the suite.
+     *
+     * @return The package and suite name combined.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.910 -0500", hash_original_method = "FA6CF1B18274415B042FA89686DFBBA8", hash_generated_method = "328983B6D58F1C389CA9DA48F5FE1D63")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.288 -0400", hash_original_method = "FA6CF1B18274415B042FA89686DFBBA8", hash_generated_method = "FB109B5EC5EDFBE32CBAAA42FD7776B3")
-    protected String getSuiteName() {
-String varD8C9BC94A6E81F246F976FCCA661D48D_1078802815 =         suiteName;
-        varD8C9BC94A6E81F246F976FCCA661D48D_1078802815.addTaint(taint);
-        return varD8C9BC94A6E81F246F976FCCA661D48D_1078802815;
-        // ---------- Original Method ----------
-        //return suiteName;
+protected String getSuiteName() {
+        return suiteName;
     }
 
+    /**
+     * Exclude tests that fail to satisfy all of the given predicates. If you call this method, you
+     * probably also want to call {@link #named(String)} to override the default suite name.
+     *
+     * @param predicates Predicates to add to the list of requirements.
+     * @return The builder for method chaining.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.912 -0500", hash_original_method = "6FE9FBC06898098EA0A0DBF770A42526", hash_generated_method = "BC3E0ED84DC392C25AEE5CBD9CFCD084")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.289 -0400", hash_original_method = "6FE9FBC06898098EA0A0DBF770A42526", hash_generated_method = "03E5065A3B93405D8F546305F4812977")
-    public final TestSuiteBuilder addRequirements(Predicate<TestMethod>... predicates) {
-        addTaint(predicates[0].getTaint());
+public final TestSuiteBuilder addRequirements(Predicate<TestMethod>... predicates) {
         ArrayList<Predicate<TestMethod>> list = new ArrayList<Predicate<TestMethod>>();
         Collections.addAll(list, predicates);
-TestSuiteBuilder var69B049DE1E09C679D066531AD48DC89D_219125916 =         addRequirements(list);
-        var69B049DE1E09C679D066531AD48DC89D_219125916.addTaint(taint);
-        return var69B049DE1E09C679D066531AD48DC89D_219125916;
-        // ---------- Original Method ----------
-        //ArrayList<Predicate<TestMethod>> list = new ArrayList<Predicate<TestMethod>>();
-        //Collections.addAll(list, predicates);
-        //return addRequirements(list);
+        return addRequirements(list);
     }
 
+    /**
+     * @return the test package that represents the packages that were included for our test suite.
+     *
+     * {@hide} Not needed for 1.0 SDK.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.924 -0500", hash_original_method = "95C63968A7356AFE59EE1560EDC6AFD0", hash_generated_method = "F2EB4499BC1ECF50C137D666C059F849")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.289 -0400", hash_original_method = "95C63968A7356AFE59EE1560EDC6AFD0", hash_generated_method = "385C9FEB740E78FC11B673E862BC8B04")
-    protected TestGrouping getTestGrouping() {
-TestGrouping var668D3050613E8B26B179F6C37A7EABCF_1209170870 =         testGrouping;
-        var668D3050613E8B26B179F6C37A7EABCF_1209170870.addTaint(taint);
-        return var668D3050613E8B26B179F6C37A7EABCF_1209170870;
-        // ---------- Original Method ----------
-        //return testGrouping;
+protected TestGrouping getTestGrouping() {
+        return testGrouping;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.927 -0500", hash_original_method = "3B7E4DAFF4F4255560B2EF8BCF0CA264", hash_generated_method = "E7C8BAA1631DCB7A8D74C1F2A689DFB2")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.290 -0400", hash_original_method = "3B7E4DAFF4F4255560B2EF8BCF0CA264", hash_generated_method = "C1CE93CA6A984D24ACA867E83DA2121C")
-    private boolean satisfiesAllPredicates(TestMethod test) {
-        addTaint(test.getTaint());
-for(Predicate<TestMethod> predicate : predicates)
-        {
-            if(!predicate.apply(test))            
-            {
-                boolean var68934A3E9455FA72420237EB05902327_1880659385 = (false);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1736807668 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1736807668;
-            } //End block
-        } //End block
-        boolean varB326B5062B2F0E69046810717534CB09_574812185 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1356329520 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1356329520;
-        // ---------- Original Method ----------
-        //for (Predicate<TestMethod> predicate : predicates) {
-            //if (!predicate.apply(test)) {
-                //return false;
-            //}
-        //}
-        //return true;
+private boolean satisfiesAllPredicates(TestMethod test) {
+        for (Predicate<TestMethod> predicate : predicates) {
+            if (!predicate.apply(test)) {
+                return false;
+            }
+        }
+        return true;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.929 -0500", hash_original_method = "9609FD64CC859CF40862383CC61076E6", hash_generated_method = "D7827B892E65E750AEF759DC9E78AFBF")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.290 -0400", hash_original_method = "9609FD64CC859CF40862383CC61076E6", hash_generated_method = "5C3EB6598C6FD9DF34FFEEBC3127D30B")
-    private void addTest(TestMethod testMethod) throws Exception {
-        addTaint(testMethod.getTaint());
+private void addTest(TestMethod testMethod) throws Exception {
         addSuiteIfNecessary(testMethod.getEnclosingClassname());
         suiteForCurrentClass.addTest(testMethod.createTest());
-        // ---------- Original Method ----------
-        //addSuiteIfNecessary(testMethod.getEnclosingClassname());
-        //suiteForCurrentClass.addTest(testMethod.createTest());
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.931 -0500", hash_original_method = "7027D4F6836EC90288680E369B5B8F5A", hash_generated_method = "5A88B0ECD367E913FF656BB45D60AEAE")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.290 -0400", hash_original_method = "7027D4F6836EC90288680E369B5B8F5A", hash_generated_method = "E51E6875FA1D02406B31AFFEFAE290F0")
-    private void addTest(Test test) {
-        addTaint(test.getTaint());
+private void addTest(Test test) {
         addSuiteIfNecessary(test.getClass().getName());
         suiteForCurrentClass.addTest(test);
-        // ---------- Original Method ----------
-        //addSuiteIfNecessary(test.getClass().getName());
-        //suiteForCurrentClass.addTest(test);
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.933 -0500", hash_original_method = "92951B52D867188410A62009711C9261", hash_generated_method = "FCFABC12F2A064D1F2F2C9B825156477")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.291 -0400", hash_original_method = "92951B52D867188410A62009711C9261", hash_generated_method = "DE879BE7D1B7AC9DDB7CC38D0D915EBD")
-    private void addSuiteIfNecessary(String parentClassname) {
-        if(!parentClassname.equals(currentClassname))        
-        {
+private void addSuiteIfNecessary(String parentClassname) {
+        if (!parentClassname.equals(currentClassname)) {
             currentClassname = parentClassname;
             suiteForCurrentClass = new TestSuite(parentClassname);
             rootSuite.addTest(suiteForCurrentClass);
-        } //End block
-        // ---------- Original Method ----------
-        //if (!parentClassname.equals(currentClassname)) {
-            //currentClassname = parentClassname;
-            //suiteForCurrentClass = new TestSuite(parentClassname);
-            //rootSuite.addTest(suiteForCurrentClass);
-        //}
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    private static String parsePackageNameFromClassName(String className) {
-        return className.substring(0, className.lastIndexOf('.'));
+        }
     }
 
     
     public static class FailedToCreateTests extends TestCase {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.291 -0400", hash_original_field = "42552B1F133F9F8EB406D4F306EA9FD1", hash_generated_field = "70BD42A5533D521458BB067703B0D3E8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.916 -0500", hash_original_field = "2CBC6074DF6BD2C2AC2A7CA4BC170BEC", hash_generated_field = "70BD42A5533D521458BB067703B0D3E8")
 
-        private Exception exception;
+        private  Exception exception;
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.918 -0500", hash_original_method = "1C0BA3005E48DD2AA9883550E9E56685", hash_generated_method = "51BE11751FD69FE84CA5BBA1BEA6A8D9")
         
-        @DSModeled(DSC.BAN)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.292 -0400", hash_original_method = "1C0BA3005E48DD2AA9883550E9E56685", hash_generated_method = "56EC8CADC1DAE4B3EE1B39574DE80884")
-        public  FailedToCreateTests(Exception exception) {
+public FailedToCreateTests(Exception exception) {
             super("testSuiteConstructionFailed");
             this.exception = exception;
-            // ---------- Original Method ----------
-            //this.exception = exception;
         }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.921 -0500", hash_original_method = "1942A289EA540D79C743EE0933FD0258", hash_generated_method = "9742EBB8305877B58ABA3531EB4A181D")
         
-        @DSModeled(DSC.BAN)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.292 -0400", hash_original_method = "1942A289EA540D79C743EE0933FD0258", hash_generated_method = "5D7E1730FE085C4A903CF7CD8A279A06")
-        public void testSuiteConstructionFailed() {
-            RuntimeException varEA3606177B94E6C5368D72CDFEE8ED30_1269461454 = new RuntimeException("Exception during suite construction", exception);
-            varEA3606177B94E6C5368D72CDFEE8ED30_1269461454.addTaint(taint);
-            throw varEA3606177B94E6C5368D72CDFEE8ED30_1269461454;
-            // ---------- Original Method ----------
-            //throw new RuntimeException("Exception during suite construction", exception);
+public void testSuiteConstructionFailed() {
+            throw new RuntimeException("Exception during suite construction", exception);
         }
 
         

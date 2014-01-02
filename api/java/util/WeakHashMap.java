@@ -1,6 +1,8 @@
 package java.util;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.lang.ref.ReferenceQueue;
 import java.lang.ref.WeakReference;
@@ -11,102 +13,6 @@ import java.lang.ref.WeakReference;
 
 
 public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.112 -0400", hash_original_field = "4B551E83AB7D0C8C6FE6D2A3C3F57121", hash_generated_field = "DA4F581341DFFC093DAB2ED377CF1682")
-
-    private ReferenceQueue<K> referenceQueue;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.112 -0400", hash_original_field = "BC8C6DCF12CE09E50A98BB57ADFCADD9", hash_generated_field = "BF84735BCD9327FC2D1CC927ED35945D")
-
-    int elementCount;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.112 -0400", hash_original_field = "8D395F1876FF8AE01BE52A9C4C2ED552", hash_generated_field = "36C14C81A5F4E64B5630EF2ADDAD7469")
-
-    Entry<K, V>[] elementData;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.112 -0400", hash_original_field = "97C293EF8ABD832D29E88C21D8E562F5", hash_generated_field = "9875194AD635CA8D9949128549486276")
-
-    private int loadFactor;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.112 -0400", hash_original_field = "F0598264A691A8F62272ACA0E79AF374", hash_generated_field = "831F8FC1A32CF07BE696149BB6AEA9AA")
-
-    private int threshold;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.112 -0400", hash_original_field = "675B3022548A1029F9CE7A2C25B23BBF", hash_generated_field = "7980638400FDA73EFCEF2F9901C03D43")
-
-    volatile int modCount;
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.112 -0400", hash_original_method = "B976885DE3CF2C49EC1331AC2786A4B5", hash_generated_method = "947788F1D50A3898B6C48AAEC3B777CB")
-    public  WeakHashMap() {
-        this(DEFAULT_SIZE);
-        // ---------- Original Method ----------
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.112 -0400", hash_original_method = "76AE00E803F5BFDB4BDF43DC151D88D7", hash_generated_method = "DBF4021447A7F5384C27054A6107EA6C")
-    public  WeakHashMap(int capacity) {
-        if(capacity >= 0)        
-        {
-            elementCount = 0;
-            elementData = newEntryArray(capacity == 0 ? 1 : capacity);
-            loadFactor = 7500;
-            computeMaxSize();
-            referenceQueue = new ReferenceQueue<K>();
-        } //End block
-        else
-        {
-            IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_351168327 = new IllegalArgumentException();
-            var5783EF97022AA508B74A1E3EA38534AF_351168327.addTaint(taint);
-            throw var5783EF97022AA508B74A1E3EA38534AF_351168327;
-        } //End block
-        // ---------- Original Method ----------
-        //if (capacity >= 0) {
-            //elementCount = 0;
-            //elementData = newEntryArray(capacity == 0 ? 1 : capacity);
-            //loadFactor = 7500; 
-            //computeMaxSize();
-            //referenceQueue = new ReferenceQueue<K>();
-        //} else {
-            //throw new IllegalArgumentException();
-        //}
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.113 -0400", hash_original_method = "342F9B7CF63C1134C14E3979782FA4FA", hash_generated_method = "38FC7AB671E87B722EA276AD4AF78B08")
-    public  WeakHashMap(int capacity, float loadFactor) {
-        if(capacity >= 0 && loadFactor > 0)        
-        {
-            elementCount = 0;
-            elementData = newEntryArray(capacity == 0 ? 1 : capacity);
-            this.loadFactor = (int) (loadFactor * 10000);
-            computeMaxSize();
-            referenceQueue = new ReferenceQueue<K>();
-        } //End block
-        else
-        {
-            IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_950433622 = new IllegalArgumentException();
-            var5783EF97022AA508B74A1E3EA38534AF_950433622.addTaint(taint);
-            throw var5783EF97022AA508B74A1E3EA38534AF_950433622;
-        } //End block
-        // ---------- Original Method ----------
-        //if (capacity >= 0 && loadFactor > 0) {
-            //elementCount = 0;
-            //elementData = newEntryArray(capacity == 0 ? 1 : capacity);
-            //this.loadFactor = (int) (loadFactor * 10000);
-            //computeMaxSize();
-            //referenceQueue = new ReferenceQueue<K>();
-        //} else {
-            //throw new IllegalArgumentException();
-        //}
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.113 -0400", hash_original_method = "4D7BC16BC60EE786903D624E86CA0AFB", hash_generated_method = "95DEFF5A9EADB9D6B603F7B78FB45AE1")
-    public  WeakHashMap(Map<? extends K, ? extends V> map) {
-        this(map.size() < 6 ? 11 : map.size() * 2);
-        addTaint(map.getTaint());
-        putAllImpl(map);
-        // ---------- Original Method ----------
-        //putAllImpl(map);
-    }
 
     
     @DSModeled(DSC.SAFE)
@@ -114,52 +20,146 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
     private static <K, V> Entry<K, V>[] newEntryArray(int size) {
         return new Entry[size];
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.504 -0500", hash_original_field = "5F72F58EEBF24F573F6939A12F43F1DD", hash_generated_field = "7DB5CF06E1B6356201026C14CAD31DE8")
 
+
+    private static final int DEFAULT_SIZE = 16;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.507 -0500", hash_original_field = "DD92337EC0A949FCB6367CB914D87989", hash_generated_field = "DA4F581341DFFC093DAB2ED377CF1682")
+
+
+    private  ReferenceQueue<K> referenceQueue;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.509 -0500", hash_original_field = "BF84735BCD9327FC2D1CC927ED35945D", hash_generated_field = "BF84735BCD9327FC2D1CC927ED35945D")
+
+
+    int elementCount;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.512 -0500", hash_original_field = "36C14C81A5F4E64B5630EF2ADDAD7469", hash_generated_field = "36C14C81A5F4E64B5630EF2ADDAD7469")
+
+
+    Entry<K, V>[] elementData;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.515 -0500", hash_original_field = "09A32BD26ECAFE02311923153FC6AF4D", hash_generated_field = "9875194AD635CA8D9949128549486276")
+
+
+    private  int loadFactor;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.517 -0500", hash_original_field = "B212DD967AF5750AEF1DDA2E6D14352F", hash_generated_field = "831F8FC1A32CF07BE696149BB6AEA9AA")
+
+
+    private int threshold;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.520 -0500", hash_original_field = "52F3DED7388D6DA42BC9C902075440B5", hash_generated_field = "7980638400FDA73EFCEF2F9901C03D43")
+
+
+    volatile int modCount;
+
+    /**
+     * Constructs a new empty {@code WeakHashMap} instance.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.617 -0500", hash_original_method = "B976885DE3CF2C49EC1331AC2786A4B5", hash_generated_method = "16A7169736FF430365004AC4125002EC")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.113 -0400", hash_original_method = "C690E441FDF499DD7829AA3D638ADE28", hash_generated_method = "F3467E7C1779DDA17A7262C417055AFD")
-    @Override
+public WeakHashMap() {
+        this(DEFAULT_SIZE);
+    }
+
+    /**
+     * Constructs a new {@code WeakHashMap} instance with the specified
+     * capacity.
+     *
+     * @param capacity
+     *            the initial capacity of this map.
+     * @throws IllegalArgumentException
+     *                if the capacity is less than zero.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.623 -0500", hash_original_method = "76AE00E803F5BFDB4BDF43DC151D88D7", hash_generated_method = "E98B88877DFC7D328CA78DE2C40A64A3")
+    
+public WeakHashMap(int capacity) {
+        if (capacity >= 0) {
+            elementCount = 0;
+            elementData = newEntryArray(capacity == 0 ? 1 : capacity);
+            loadFactor = 7500; // Default load factor of 0.75
+            computeMaxSize();
+            referenceQueue = new ReferenceQueue<K>();
+        } else {
+            throw new IllegalArgumentException();
+        }
+    }
+
+    /**
+     * Constructs a new {@code WeakHashMap} instance with the specified capacity
+     * and load factor.
+     *
+     * @param capacity
+     *            the initial capacity of this map.
+     * @param loadFactor
+     *            the initial load factor.
+     * @throws IllegalArgumentException
+     *             if the capacity is less than zero or the load factor is less
+     *             or equal to zero.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.628 -0500", hash_original_method = "342F9B7CF63C1134C14E3979782FA4FA", hash_generated_method = "8A8F0D1C4AB228C0688F808ED15B8670")
+    
+public WeakHashMap(int capacity, float loadFactor) {
+        if (capacity >= 0 && loadFactor > 0) {
+            elementCount = 0;
+            elementData = newEntryArray(capacity == 0 ? 1 : capacity);
+            this.loadFactor = (int) (loadFactor * 10000);
+            computeMaxSize();
+            referenceQueue = new ReferenceQueue<K>();
+        } else {
+            throw new IllegalArgumentException();
+        }
+    }
+
+    /**
+     * Constructs a new {@code WeakHashMap} instance containing the mappings
+     * from the specified map.
+     *
+     * @param map
+     *            the mappings to add.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.633 -0500", hash_original_method = "4D7BC16BC60EE786903D624E86CA0AFB", hash_generated_method = "234CA68C4FDBFBFAC8497D2548488981")
+    
+public WeakHashMap(Map<? extends K, ? extends V> map) {
+        this(map.size() < 6 ? 11 : map.size() * 2);
+        putAllImpl(map);
+    }
+
+    /**
+     * Removes all mappings from this map, leaving it empty.
+     *
+     * @see #isEmpty()
+     * @see #size()
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.638 -0500", hash_original_method = "C690E441FDF499DD7829AA3D638ADE28", hash_generated_method = "87106446D54E5996CA5D5947A9A32982")
+    
+@Override
     public void clear() {
-        if(elementCount > 0)        
-        {
+        if (elementCount > 0) {
             elementCount = 0;
             Arrays.fill(elementData, null);
             modCount++;
-            while
-(referenceQueue.poll() != null)            
-            {
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (elementCount > 0) {
-            //elementCount = 0;
-            //Arrays.fill(elementData, null);
-            //modCount++;
-            //while (referenceQueue.poll() != null) {
-            //}
-        //}
+            while (referenceQueue.poll() != null) {
+                // do nothing
+            }
+        }
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.642 -0500", hash_original_method = "85D93BA99AF40F5CDC3F42570A89C9FC", hash_generated_method = "3DE3412ACE1BE890F1F96C0B01D802D7")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.113 -0400", hash_original_method = "85D93BA99AF40F5CDC3F42570A89C9FC", hash_generated_method = "BE619D13CAF85822181B65989DC845A9")
-    private void computeMaxSize() {
+private void computeMaxSize() {
         threshold = (int) ((long) elementData.length * loadFactor / 10000);
-        // ---------- Original Method ----------
-        //threshold = (int) ((long) elementData.length * loadFactor / 10000);
     }
 
+    /**
+     * Returns whether this map contains the specified key.
+     *
+     * @param key
+     *            the key to search for.
+     * @return {@code true} if this map contains the specified key,
+     *         {@code false} otherwise.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.657 -0500", hash_original_method = "7C0BA359573790AC71E46CA35F3B3C5D", hash_generated_method = "3A533A1E3B5EF2AF662A06C62B53947C")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.113 -0400", hash_original_method = "7C0BA359573790AC71E46CA35F3B3C5D", hash_generated_method = "E0406CE4B53850A1FACE98D257DE9799")
-    @Override
+@Override
     public boolean containsKey(Object key) {
-        addTaint(key.getTaint());
-        boolean var8932A54AAACB53164E5FA2BABB4C4C06_1628183061 = (getEntry(key) != null);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2017645652 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2017645652;
-        // ---------- Original Method ----------
-        //return getEntry(key) != null;
+        return getEntry(key) != null;
     }
 
     
@@ -168,101 +168,60 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
     @Override
     public Set<Map.Entry<K, V>> entrySet() {
         poll();
-Set<Map.Entry<K, V>> var952772A53018FA152689B94755082E8D_915180893 =         new AbstractSet<Map.Entry<K, V>>() {        
-        @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.244 -0400", hash_original_method = "997773928D6A4FA2A905BEE282A68997", hash_generated_method = "612EA033FD29F8F1B1B8EF6FC5A61837")
-        @Override
-        public int size() {
-            int varD3F415AC0DAFD84BD094635E9A38D203_251232469 = (WeakHashMap.this.size());
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1332954278 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1332954278;
-            // ---------- Original Method ----------
-            //return WeakHashMap.this.size();
-        }
-        @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.244 -0400", hash_original_method = "0820DD19F55EBD9E05BEDEF72AA76B85", hash_generated_method = "216199AA5B7C7589486AA111C1364167")
-        @Override
-        public void clear() {
-            WeakHashMap.this.clear();
-            // ---------- Original Method ----------
-            //WeakHashMap.this.clear();
-        }
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.245 -0400", hash_original_method = "1E7F94AC13E80E407E04FDAF276E4CCB", hash_generated_method = "80D4CA477C1A94672839765A4E14EF3A")
-        @Override
-        public boolean remove(Object object) {
-            addTaint(object.getTaint());
-    if(contains(object))            
-            {
-                WeakHashMap.this
+Set<Map.Entry<K, V>> var952772A53018FA152689B94755082E8D_915180893 =         new AbstractSet<Map.Entry<K, V>>() {
+                @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.752 -0500", hash_original_method = "997773928D6A4FA2A905BEE282A68997", hash_generated_method = "176D1A4C8F486CE93A2F004880186E5F")
+                
+@Override
+                public int size() {
+                    return WeakHashMap.this.size();
+                }
+
+                @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.757 -0500", hash_original_method = "0820DD19F55EBD9E05BEDEF72AA76B85", hash_generated_method = "BADC0F927F8612CA7ECB009ADC632E8E")
+                
+@Override
+                public void clear() {
+                    WeakHashMap.this.clear();
+                }
+
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.673 -0500", hash_original_method = "1E7F94AC13E80E407E04FDAF276E4CCB", hash_generated_method = "9BBDC7F5B49772432F3B85C33468DAD2")
+            
+@Override
+            public boolean remove(Object object) {
+                if (contains(object)) {
+                    WeakHashMap.this
                             .remove(((Map.Entry<?, ?>) object).getKey());
-                boolean varB326B5062B2F0E69046810717534CB09_354261417 = (true);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1199118272 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1199118272;
-            } //End block
-            boolean var68934A3E9455FA72420237EB05902327_304459482 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1122330981 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1122330981;
-            // ---------- Original Method ----------
-            //if (contains(object)) {
-                    //WeakHashMap.this
-                            //.remove(((Map.Entry<?, ?>) object).getKey());
-                    //return true;
-                //}
-            //return false;
-        }
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.245 -0400", hash_original_method = "A69D5126071923809AD406525E677E9C", hash_generated_method = "98AC8BF9D363C4CECEDD84BEECB5ED4B")
-        @Override
-        public boolean contains(Object object) {
-            addTaint(object.getTaint());
-    if(object instanceof Map.Entry)            
-            {
-                Entry<?, ?> entry = getEntry(((Map.Entry<?, ?>) object)
+                    return true;
+                }
+                return false;
+            }
+
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.679 -0500", hash_original_method = "A69D5126071923809AD406525E677E9C", hash_generated_method = "64CC9C389B6F3AD4B9D7E545E6F42AB1")
+            
+@Override
+            public boolean contains(Object object) {
+                if (object instanceof Map.Entry) {
+                    Entry<?, ?> entry = getEntry(((Map.Entry<?, ?>) object)
                             .getKey());
-    if(entry != null)                
-                {
-                    Object key = entry.get();
-    if(key != null || entry.isNull)                    
-                    {
-                        boolean var9F67B4CD93AA547D336CDA928388F243_106815488 = (object.equals(entry));
-                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_921548558 = getTaintBoolean();
-                        return var84E2C64F38F78BA3EA5C905AB5A2DA27_921548558;
-                    } //End block
-                } //End block
-            } //End block
-            boolean var68934A3E9455FA72420237EB05902327_1379519332 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_854323099 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_854323099;
-            // ---------- Original Method ----------
-            //if (object instanceof Map.Entry) {
-                    //Entry<?, ?> entry = getEntry(((Map.Entry<?, ?>) object)
-                            //.getKey());
-                    //if (entry != null) {
-                        //Object key = entry.get();
-                        //if (key != null || entry.isNull) {
-                            //return object.equals(entry);
-                        //}
-                    //}
-                //}
-            //return false;
-        }
+                    if (entry != null) {
+                        Object key = entry.get();
+                        if (key != null || entry.isNull) {
+                            return object.equals(entry);
+                        }
+                    }
+                }
+                return false;
+            }
         @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.246 -0400", hash_original_method = "6126AC883C019C19A724D0EDFC9A192D", hash_generated_method = "C5540A31518834C464989BAA9FF0BE80")
         @Override
         public Iterator<Map.Entry<K, V>> iterator() {
 Iterator<Map.Entry<K, V>> varFD445BCDDF9C631EA7BE770450B83225_839819223 =             new HashIterator<Map.Entry<K, V>>(
-                        new Entry.Type<Map.Entry<K, V>, K, V>() {            
-            @DSModeled(DSC.SAFE)
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.246 -0400", hash_original_method = "90738D101B25945A174A5A8A030091D2", hash_generated_method = "176D5AEBFE4C5F09ADA55C1830BB5393")
-            public Map.Entry<K, V> get(Map.Entry<K, V> entry) {
-                addTaint(entry.getTaint());
-Map.Entry<K, V> varF26DBE38545460D6F6AE1D948FF53869_1660048985 =                 entry;
-                varF26DBE38545460D6F6AE1D948FF53869_1660048985.addTaint(taint);
-                return varF26DBE38545460D6F6AE1D948FF53869_1660048985;
-                // ---------- Original Method ----------
-                //return entry;
-            }
+                        new Entry.Type<Map.Entry<K, V>, K, V>() {
+                            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.686 -0500", hash_original_method = "90738D101B25945A174A5A8A030091D2", hash_generated_method = "F0C59BE87F669D2723D76C7BAB9FB3DD")
+                    
+public Map.Entry<K, V> get(Map.Entry<K, V> entry) {
+                                return entry;
+                            }
 });
             varFD445BCDDF9C631EA7BE770450B83225_839819223.addTaint(taint);
             return varFD445BCDDF9C631EA7BE770450B83225_839819223;
@@ -281,517 +240,332 @@ Map.Entry<K, V> varF26DBE38545460D6F6AE1D948FF53869_1660048985 =                
         // Original Method Too Long, Refer to Original Implementation
     }
 
-   
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.787 -0500", hash_original_method = "545F7F0FB84E7EA33FCF99594092AF0D", hash_generated_method = "545F7F0FB84E7EA33FCF99594092AF0D")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.118 -0400", hash_original_method = "545F7F0FB84E7EA33FCF99594092AF0D", hash_generated_method = "B7AC0EA6E1B0E7CA341DCA528B75B8C3")
-     Entry<K, V> getEntry(Object key) {
-        addTaint(key.getTaint());
+Entry<K, V> getEntry(Object key) {
         poll();
-        if(key != null)        
-        {
+        if (key != null) {
             int index = (key.hashCode() & 0x7FFFFFFF) % elementData.length;
             Entry<K, V> entry = elementData[index];
-            while
-(entry != null)            
-            {
-                if(key.equals(entry.get()))                
-                {
-Entry<K, V> varF26DBE38545460D6F6AE1D948FF53869_573782410 =                     entry;
-                    varF26DBE38545460D6F6AE1D948FF53869_573782410.addTaint(taint);
-                    return varF26DBE38545460D6F6AE1D948FF53869_573782410;
-                } //End block
+            while (entry != null) {
+                if (key.equals(entry.get())) {
+                    return entry;
+                }
                 entry = entry.next;
-            } //End block
-Entry<K, V> var540C13E9E156B687226421B24F2DF178_1842415241 =             null;
-            var540C13E9E156B687226421B24F2DF178_1842415241.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_1842415241;
-        } //End block
+            }
+            return null;
+        }
         Entry<K, V> entry = elementData[0];
-        while
-(entry != null)        
-        {
-            if(entry.isNull)            
-            {
-Entry<K, V> varF26DBE38545460D6F6AE1D948FF53869_1263043168 =                 entry;
-                varF26DBE38545460D6F6AE1D948FF53869_1263043168.addTaint(taint);
-                return varF26DBE38545460D6F6AE1D948FF53869_1263043168;
-            } //End block
+        while (entry != null) {
+            if (entry.isNull) {
+                return entry;
+            }
             entry = entry.next;
-        } //End block
-Entry<K, V> var540C13E9E156B687226421B24F2DF178_424754665 =         null;
-        var540C13E9E156B687226421B24F2DF178_424754665.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_424754665;
-        // ---------- Original Method ----------
-        //poll();
-        //if (key != null) {
-            //int index = (key.hashCode() & 0x7FFFFFFF) % elementData.length;
-            //Entry<K, V> entry = elementData[index];
-            //while (entry != null) {
-                //if (key.equals(entry.get())) {
-                    //return entry;
-                //}
-                //entry = entry.next;
-            //}
-            //return null;
-        //}
-        //Entry<K, V> entry = elementData[0];
-        //while (entry != null) {
-            //if (entry.isNull) {
-                //return entry;
-            //}
-            //entry = entry.next;
-        //}
-        //return null;
+        }
+        return null;
     }
 
+    /**
+     * Returns whether this map contains the specified value.
+     *
+     * @param value
+     *            the value to search for.
+     * @return {@code true} if this map contains the specified value,
+     *         {@code false} otherwise.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.792 -0500", hash_original_method = "EBDA4BA5DE93153797BA511A1B84894F", hash_generated_method = "09DD43FF130EF5BE29CC5B0B3623FD1F")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.119 -0400", hash_original_method = "EBDA4BA5DE93153797BA511A1B84894F", hash_generated_method = "24FE1212727779518C83FC7B38BB4361")
-    @Override
+@Override
     public boolean containsValue(Object value) {
-        addTaint(value.getTaint());
         poll();
-        if(value != null)        
-        {
-for(int i = elementData.length;--i >= 0;)
-            {
+        if (value != null) {
+            for (int i = elementData.length; --i >= 0;) {
                 Entry<K, V> entry = elementData[i];
-                while
-(entry != null)                
-                {
+                while (entry != null) {
                     K key = entry.get();
-                    if((key != null || entry.isNull)
-                            && value.equals(entry.value))                    
-                    {
-                        boolean varB326B5062B2F0E69046810717534CB09_492398822 = (true);
-                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_689018918 = getTaintBoolean();
-                        return var84E2C64F38F78BA3EA5C905AB5A2DA27_689018918;
-                    } //End block
+                    if ((key != null || entry.isNull)
+                            && value.equals(entry.value)) {
+                        return true;
+                    }
                     entry = entry.next;
-                } //End block
-            } //End block
-        } //End block
-        else
-        {
-for(int i = elementData.length;--i >= 0;)
-            {
+                }
+            }
+        } else {
+            for (int i = elementData.length; --i >= 0;) {
                 Entry<K, V> entry = elementData[i];
-                while
-(entry != null)                
-                {
+                while (entry != null) {
                     K key = entry.get();
-                    if((key != null || entry.isNull) && entry.value == null)                    
-                    {
-                        boolean varB326B5062B2F0E69046810717534CB09_1568658736 = (true);
-                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_864471738 = getTaintBoolean();
-                        return var84E2C64F38F78BA3EA5C905AB5A2DA27_864471738;
-                    } //End block
+                    if ((key != null || entry.isNull) && entry.value == null) {
+                        return true;
+                    }
                     entry = entry.next;
-                } //End block
-            } //End block
-        } //End block
-        boolean var68934A3E9455FA72420237EB05902327_2110312722 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1394854689 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1394854689;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                }
+            }
+        }
+        return false;
     }
 
+    /**
+     * Returns the number of elements in this map.
+     *
+     * @return the number of elements in this map.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.796 -0500", hash_original_method = "296240B68F4A866C698190CF33710ED8", hash_generated_method = "DBCA9EC6E74705391235527F696D1557")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.119 -0400", hash_original_method = "296240B68F4A866C698190CF33710ED8", hash_generated_method = "E0C9571EEEE0C9B77F607BFC124B1F4C")
-    @Override
+@Override
     public boolean isEmpty() {
-        boolean var5BD3446419BAE72903C4742BF777F0E0_574048298 = (size() == 0);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_134469624 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_134469624;
-        // ---------- Original Method ----------
-        //return size() == 0;
+        return size() == 0;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.800 -0500", hash_original_method = "0A4BB2570FECEAC055174AF0C493CF3C", hash_generated_method = "7AB1FAF3EC17D4FD9BF031A89091E9CC")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.119 -0400", hash_original_method = "0A4BB2570FECEAC055174AF0C493CF3C", hash_generated_method = "8A010F18FB328BAC58AD9113684DC5C8")
-    @SuppressWarnings("unchecked")
-     void poll() {
+@SuppressWarnings("unchecked")
+    void poll() {
         Entry<K, V> toRemove;
-        while
-((toRemove = (Entry<K, V>) referenceQueue.poll()) != null)        
-        {
+        while ((toRemove = (Entry<K, V>) referenceQueue.poll()) != null) {
             removeEntry(toRemove);
-        } //End block
-        // ---------- Original Method ----------
-        //Entry<K, V> toRemove;
-        //while ((toRemove = (Entry<K, V>) referenceQueue.poll()) != null) {
-            //removeEntry(toRemove);
-        //}
+        }
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.804 -0500", hash_original_method = "950CA8B0FD25845E584DCFB2BE4D9F32", hash_generated_method = "E5803BAC86669FD0B5B57C66157EF76F")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.119 -0400", hash_original_method = "950CA8B0FD25845E584DCFB2BE4D9F32", hash_generated_method = "049A2798808BB6EE8039B91ECB5E0462")
-     void removeEntry(Entry<K, V> toRemove) {
-        addTaint(toRemove.getTaint());
-        Entry<K, V> entry;
-        Entry<K, V> last = null;
+void removeEntry(Entry<K, V> toRemove) {
+        Entry<K, V> entry, last = null;
         int index = (toRemove.hash & 0x7FFFFFFF) % elementData.length;
         entry = elementData[index];
-        while
-(entry != null)        
-        {
-            if(toRemove == entry)            
-            {
+        // Ignore queued entries which cannot be found, the user could
+        // have removed them before they were queued, i.e. using clear()
+        while (entry != null) {
+            if (toRemove == entry) {
                 modCount++;
-                if(last == null)                
-                {
+                if (last == null) {
                     elementData[index] = entry.next;
-                } //End block
-                else
-                {
+                } else {
                     last.next = entry.next;
-                } //End block
+                }
                 elementCount--;
                 break;
-            } //End block
+            }
             last = entry;
             entry = entry.next;
-        } //End block
-        // ---------- Original Method ----------
-        //Entry<K, V> entry, last = null;
-        //int index = (toRemove.hash & 0x7FFFFFFF) % elementData.length;
-        //entry = elementData[index];
-        //while (entry != null) {
-            //if (toRemove == entry) {
-                //modCount++;
-                //if (last == null) {
-                    //elementData[index] = entry.next;
-                //} else {
-                    //last.next = entry.next;
-                //}
-                //elementCount--;
-                //break;
-            //}
-            //last = entry;
-            //entry = entry.next;
-        //}
+        }
     }
 
+    /**
+     * Maps the specified key to the specified value.
+     *
+     * @param key
+     *            the key.
+     * @param value
+     *            the value.
+     * @return the value of any previous mapping with the specified key or
+     *         {@code null} if there was no mapping.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.808 -0500", hash_original_method = "E298E65486168CC370356B38BEF7AC1C", hash_generated_method = "F72FA88B2EDEA35C5229B35E73BA76C0")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.120 -0400", hash_original_method = "E298E65486168CC370356B38BEF7AC1C", hash_generated_method = "EBA98E0C43478CD8FDDF1C07E25AD71C")
-    @Override
+@Override
     public V put(K key, V value) {
-        addTaint(value.getTaint());
-        addTaint(key.getTaint());
         poll();
         int index = 0;
         Entry<K, V> entry;
-        if(key != null)        
-        {
+        if (key != null) {
             index = (key.hashCode() & 0x7FFFFFFF) % elementData.length;
             entry = elementData[index];
-            while
-(entry != null && !key.equals(entry.get()))            
-            {
+            while (entry != null && !key.equals(entry.get())) {
                 entry = entry.next;
-            } //End block
-        } //End block
-        else
-        {
+            }
+        } else {
             entry = elementData[0];
-            while
-(entry != null && !entry.isNull)            
-            {
+            while (entry != null && !entry.isNull) {
                 entry = entry.next;
-            } //End block
-        } //End block
-        if(entry == null)        
-        {
+            }
+        }
+        if (entry == null) {
             modCount++;
-            if(++elementCount > threshold)            
-            {
+            if (++elementCount > threshold) {
                 rehash();
                 index = key == null ? 0 : (key.hashCode() & 0x7FFFFFFF)
                         % elementData.length;
-            } //End block
+            }
             entry = new Entry<K, V>(key, value, referenceQueue);
             entry.next = elementData[index];
             elementData[index] = entry;
-V var540C13E9E156B687226421B24F2DF178_2045194149 =             null;
-            var540C13E9E156B687226421B24F2DF178_2045194149.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_2045194149;
-        } //End block
+            return null;
+        }
         V result = entry.value;
         entry.value = value;
-V varDC838461EE2FA0CA4C9BBB70A15456B0_1465915584 =         result;
-        varDC838461EE2FA0CA4C9BBB70A15456B0_1465915584.addTaint(taint);
-        return varDC838461EE2FA0CA4C9BBB70A15456B0_1465915584;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        return result;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.814 -0500", hash_original_method = "2B64F6E6AE3910B09507F9013DEACFFD", hash_generated_method = "0F02A7F0DE7C24AAC0BD4A926000772E")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.120 -0400", hash_original_method = "2B64F6E6AE3910B09507F9013DEACFFD", hash_generated_method = "43B89B9AE4AF91AB4CC60A9D77FCB8CD")
-    private void rehash() {
+private void rehash() {
         int length = elementData.length * 2;
-        if(length == 0)        
-        {
+        if (length == 0) {
             length = 1;
-        } //End block
+        }
         Entry<K, V>[] newData = newEntryArray(length);
-for(int i = 0;i < elementData.length;i++)
-        {
+        for (int i = 0; i < elementData.length; i++) {
             Entry<K, V> entry = elementData[i];
-            while
-(entry != null)            
-            {
+            while (entry != null) {
                 int index = entry.isNull ? 0 : (entry.hash & 0x7FFFFFFF)
                         % length;
                 Entry<K, V> next = entry.next;
                 entry.next = newData[index];
                 newData[index] = entry;
                 entry = next;
-            } //End block
-        } //End block
+            }
+        }
         elementData = newData;
         computeMaxSize();
-        // ---------- Original Method ----------
-        //int length = elementData.length * 2;
-        //if (length == 0) {
-            //length = 1;
-        //}
-        //Entry<K, V>[] newData = newEntryArray(length);
-        //for (int i = 0; i < elementData.length; i++) {
-            //Entry<K, V> entry = elementData[i];
-            //while (entry != null) {
-                //int index = entry.isNull ? 0 : (entry.hash & 0x7FFFFFFF)
-                        //% length;
-                //Entry<K, V> next = entry.next;
-                //entry.next = newData[index];
-                //newData[index] = entry;
-                //entry = next;
-            //}
-        //}
-        //elementData = newData;
-        //computeMaxSize();
     }
 
+    /**
+     * Copies all the mappings in the given map to this map. These mappings will
+     * replace all mappings that this map had for any of the keys currently in
+     * the given map.
+     *
+     * @param map
+     *            the map to copy mappings from.
+     * @throws NullPointerException
+     *             if {@code map} is {@code null}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.818 -0500", hash_original_method = "57B3987EA7E50826E0AAD0198F968E42", hash_generated_method = "180A9BE19E826613D60BF9D91B5A0A45")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.120 -0400", hash_original_method = "57B3987EA7E50826E0AAD0198F968E42", hash_generated_method = "70AD55C56E4025450542E2A5226752DF")
-    @Override
+@Override
     public void putAll(Map<? extends K, ? extends V> map) {
-        addTaint(map.getTaint());
         putAllImpl(map);
-        // ---------- Original Method ----------
-        //putAllImpl(map);
     }
 
+    /**
+     * Removes the mapping with the specified key from this map.
+     *
+     * @param key
+     *            the key of the mapping to remove.
+     * @return the value of the removed mapping or {@code null} if no mapping
+     *         for the specified key was found.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.822 -0500", hash_original_method = "FE1A1739C961B2012661CB8735C428AE", hash_generated_method = "96E059F7F14F6D116320374B370EFB07")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.121 -0400", hash_original_method = "FE1A1739C961B2012661CB8735C428AE", hash_generated_method = "4D656D0A72CC9899B6B1A389A3FA1A76")
-    @Override
+@Override
     public V remove(Object key) {
-        addTaint(key.getTaint());
         poll();
         int index = 0;
-        Entry<K, V> entry;
-        Entry<K, V> last = null;
-        if(key != null)        
-        {
+        Entry<K, V> entry, last = null;
+        if (key != null) {
             index = (key.hashCode() & 0x7FFFFFFF) % elementData.length;
             entry = elementData[index];
-            while
-(entry != null && !key.equals(entry.get()))            
-            {
+            while (entry != null && !key.equals(entry.get())) {
                 last = entry;
                 entry = entry.next;
-            } //End block
-        } //End block
-        else
-        {
+            }
+        } else {
             entry = elementData[0];
-            while
-(entry != null && !entry.isNull)            
-            {
+            while (entry != null && !entry.isNull) {
                 last = entry;
                 entry = entry.next;
-            } //End block
-        } //End block
-        if(entry != null)        
-        {
+            }
+        }
+        if (entry != null) {
             modCount++;
-            if(last == null)            
-            {
+            if (last == null) {
                 elementData[index] = entry.next;
-            } //End block
-            else
-            {
+            } else {
                 last.next = entry.next;
-            } //End block
+            }
             elementCount--;
-V varD2C0624DDD8A4F8F307477F36B405DFB_798862256 =             entry.value;
-            varD2C0624DDD8A4F8F307477F36B405DFB_798862256.addTaint(taint);
-            return varD2C0624DDD8A4F8F307477F36B405DFB_798862256;
-        } //End block
-V var540C13E9E156B687226421B24F2DF178_1886479484 =         null;
-        var540C13E9E156B687226421B24F2DF178_1886479484.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_1886479484;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            return entry.value;
+        }
+        return null;
     }
 
+    /**
+     * Returns the number of elements in this map.
+     *
+     * @return the number of elements in this map.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.826 -0500", hash_original_method = "B65BB7405B9BD112F0A817BA32556A99", hash_generated_method = "746B615BBFBDD47A19CCC643A3AE0A95")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.121 -0400", hash_original_method = "B65BB7405B9BD112F0A817BA32556A99", hash_generated_method = "ED4AEFEC347EE53B90A7B39E441C6F8D")
-    @Override
+@Override
     public int size() {
         poll();
-        int varBC8C6DCF12CE09E50A98BB57ADFCADD9_676506561 = (elementCount);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1732199251 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1732199251;
-        // ---------- Original Method ----------
-        //poll();
-        //return elementCount;
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.121 -0400", hash_original_method = "F23833AECC848C129604A1D671C10BB2", hash_generated_method = "271754B42238C56180B1CCD533B129AC")
-    private void putAllImpl(Map<? extends K, ? extends V> map) {
-        addTaint(map.getTaint());
-        if(map.entrySet() != null)        
-        {
-            super.putAll(map);
-        } //End block
-        // ---------- Original Method ----------
-        //if (map.entrySet() != null) {
-            //super.putAll(map);
-        //}
+        return elementCount;
     }
 
     
     private static final class Entry<K, V> extends WeakReference<K> implements Map.Entry<K, V> {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.121 -0400", hash_original_field = "0800FC577294C34E0B28AD2839435945", hash_generated_field = "5ED776CD81502BA181156D7F28EBC9C8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.525 -0500", hash_original_field = "5ED776CD81502BA181156D7F28EBC9C8", hash_generated_field = "5ED776CD81502BA181156D7F28EBC9C8")
 
         int hash;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.121 -0400", hash_original_field = "771318A7D90A3F8A1D88BE5DB9CE456C", hash_generated_field = "608BD3C529DBD92C1EC1FA5648B44B23")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.527 -0500", hash_original_field = "608BD3C529DBD92C1EC1FA5648B44B23", hash_generated_field = "608BD3C529DBD92C1EC1FA5648B44B23")
+
 
         boolean isNull;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.121 -0400", hash_original_field = "2063C1608D6E0BAF80249C42E2BE5804", hash_generated_field = "A7E8A049E4C72FD5713D3AFD6CBF7C08")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.530 -0500", hash_original_field = "A7E8A049E4C72FD5713D3AFD6CBF7C08", hash_generated_field = "A7E8A049E4C72FD5713D3AFD6CBF7C08")
+
 
         V value;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.121 -0400", hash_original_field = "D0CAB90D8D20D57E2F2B9BE52F7DD25D", hash_generated_field = "5EEEE64CD04E8528349A03DB7ACC9002")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.533 -0500", hash_original_field = "5EEEE64CD04E8528349A03DB7ACC9002", hash_generated_field = "5EEEE64CD04E8528349A03DB7ACC9002")
+
 
         Entry<K, V> next;
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.539 -0500", hash_original_method = "87D1D30974ED96CB990C400F03BCFAE4", hash_generated_method = "87D1D30974ED96CB990C400F03BCFAE4")
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.122 -0400", hash_original_method = "87D1D30974ED96CB990C400F03BCFAE4", hash_generated_method = "071DFD2C4C031BB3EFC02AD2516A22F8")
-          Entry(K key, V object, ReferenceQueue<K> queue) {
+Entry(K key, V object, ReferenceQueue<K> queue) {
             super(key, queue);
-            addTaint(queue.getTaint());
             isNull = key == null;
             hash = isNull ? 0 : key.hashCode();
             value = object;
-            // ---------- Original Method ----------
-            //isNull = key == null;
-            //hash = isNull ? 0 : key.hashCode();
-            //value = object;
         }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.541 -0500", hash_original_method = "1761F5110CA075C2A7975CB6F7D505A7", hash_generated_method = "85DF8CFEA3AA2CD64EE21E6586D0C720")
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.122 -0400", hash_original_method = "1761F5110CA075C2A7975CB6F7D505A7", hash_generated_method = "049E09C9EAE6BC1C8B0C48BC08E1C619")
-        public K getKey() {
-K varF46E0FEC371F89BDFA76383E23E6646E_1477930199 =             super.get();
-            varF46E0FEC371F89BDFA76383E23E6646E_1477930199.addTaint(taint);
-            return varF46E0FEC371F89BDFA76383E23E6646E_1477930199;
-            // ---------- Original Method ----------
-            //return super.get();
+public K getKey() {
+            return super.get();
         }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.544 -0500", hash_original_method = "A9984A6F88B588952649E3649EC43975", hash_generated_method = "95D4F56CA118DD7517C6CA2E4A00FE92")
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.122 -0400", hash_original_method = "A9984A6F88B588952649E3649EC43975", hash_generated_method = "750856B87B26366DE28AC0A002466815")
-        public V getValue() {
-V varAF280DA2BC37D8BE783D8499160168DE_871589787 =             value;
-            varAF280DA2BC37D8BE783D8499160168DE_871589787.addTaint(taint);
-            return varAF280DA2BC37D8BE783D8499160168DE_871589787;
-            // ---------- Original Method ----------
-            //return value;
+public V getValue() {
+            return value;
         }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.546 -0500", hash_original_method = "123DAF07FFBE76C8EE5BD5879EB92827", hash_generated_method = "F9467D3B60D7F9589C17103B5B4486CB")
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.122 -0400", hash_original_method = "123DAF07FFBE76C8EE5BD5879EB92827", hash_generated_method = "3A66BFD3D4865E8E7A3C3D9552B1F059")
-        public V setValue(V object) {
+public V setValue(V object) {
             V result = value;
             value = object;
-V varDC838461EE2FA0CA4C9BBB70A15456B0_1670626738 =             result;
-            varDC838461EE2FA0CA4C9BBB70A15456B0_1670626738.addTaint(taint);
-            return varDC838461EE2FA0CA4C9BBB70A15456B0_1670626738;
-            // ---------- Original Method ----------
-            //V result = value;
-            //value = object;
-            //return result;
+            return result;
         }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.549 -0500", hash_original_method = "3B6A8BF252F73FDC95A7717672A6DE75", hash_generated_method = "D5B9FFF76B2DD708B51243E4D7086BFA")
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.122 -0400", hash_original_method = "3B6A8BF252F73FDC95A7717672A6DE75", hash_generated_method = "0E431CF249BD90A155F24B862D743E17")
-        @Override
+@Override
         public boolean equals(Object other) {
-            addTaint(other.getTaint());
-            if(!(other instanceof Map.Entry))            
-            {
-                boolean var68934A3E9455FA72420237EB05902327_841640802 = (false);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1999377279 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1999377279;
-            } //End block
+            if (!(other instanceof Map.Entry)) {
+                return false;
+            }
             Map.Entry<?, ?> entry = (Map.Entry<?, ?>) other;
             Object key = super.get();
-            boolean varC9CB589920583BFE71950CDF3298A1A4_2100798112 = ((key == null ? key == entry.getKey() : key.equals(entry
+            return (key == null ? key == entry.getKey() : key.equals(entry
                     .getKey()))
                     && (value == null ? value == entry.getValue() : value
-                            .equals(entry.getValue())));
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_25416261 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_25416261;
-            // ---------- Original Method ----------
-            //if (!(other instanceof Map.Entry)) {
-                //return false;
-            //}
-            //Map.Entry<?, ?> entry = (Map.Entry<?, ?>) other;
-            //Object key = super.get();
-            //return (key == null ? key == entry.getKey() : key.equals(entry
-                    //.getKey()))
-                    //&& (value == null ? value == entry.getValue() : value
-                            //.equals(entry.getValue()));
+                            .equals(entry.getValue()));
         }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.552 -0500", hash_original_method = "D08C41096A06FEDF3165E76D8A8BDE22", hash_generated_method = "6D2A9EA430B7D6F412536172B7348C30")
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.122 -0400", hash_original_method = "D08C41096A06FEDF3165E76D8A8BDE22", hash_generated_method = "F777CD8315D9406C64CD8B97AFE781B4")
-        @Override
+@Override
         public int hashCode() {
-            int varF8D1F3F73B85EF59ABE7CBB7BE8BB7B9_1461641596 = (hash + (value == null ? 0 : value.hashCode()));
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_573247770 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_573247770;
-            // ---------- Original Method ----------
-            //return hash + (value == null ? 0 : value.hashCode());
+            return hash + (value == null ? 0 : value.hashCode());
         }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.555 -0500", hash_original_method = "1EE8DCD6F434B8EBFF147EFC16429262", hash_generated_method = "EB23E3252038C24E74060C0CC22CCEAE")
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.122 -0400", hash_original_method = "1EE8DCD6F434B8EBFF147EFC16429262", hash_generated_method = "E94F449D677831F166964270A4035F4B")
-        @Override
+@Override
         public String toString() {
-String varFC892D331EE15D32E10B8CA14F620EF3_837132313 =             super.get() + "=" + value;
-            varFC892D331EE15D32E10B8CA14F620EF3_837132313.addTaint(taint);
-            return varFC892D331EE15D32E10B8CA14F620EF3_837132313;
-            // ---------- Original Method ----------
-            //return super.get() + "=" + value;
+            return super.get() + "=" + value;
         }
 
         
@@ -816,168 +590,91 @@ String varFC892D331EE15D32E10B8CA14F620EF3_837132313 =             super.get() +
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.123 -0400", hash_original_field = "A456AF15DBCB1B656F162F16303E5E25", hash_generated_field = "147D6C1E63E472440226370714C1D130")
 
         private Entry<K, V> nextEntry;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.123 -0400", hash_original_field = "7372E4F82D6BA16EB4CD39C71388B39D", hash_generated_field = "989887495A4D0A589ACCCD9CE9664248")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.565 -0500", hash_original_field = "986FD776AF6F39F011FE4F157CCA073D", hash_generated_field = "989887495A4D0A589ACCCD9CE9664248")
+
 
         private K nextKey;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.123 -0400", hash_original_field = "599DCCE2998A6B40B1E38E8C6006CB0A", hash_generated_field = "01CE55F7E5B83A126B2D2C311EAC0383")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.567 -0500", hash_original_field = "01CE55F7E5B83A126B2D2C311EAC0383", hash_generated_field = "01CE55F7E5B83A126B2D2C311EAC0383")
 
-        Entry.Type<R, K, V> type;
+
+         Entry.Type<R, K, V> type;
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.570 -0500", hash_original_method = "257D5034B04AA7E9B1AFE5220E974305", hash_generated_method = "257D5034B04AA7E9B1AFE5220E974305")
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.123 -0400", hash_original_method = "257D5034B04AA7E9B1AFE5220E974305", hash_generated_method = "D8DF824834C45D429AB91D50D4AD1F75")
-          HashIterator(Entry.Type<R, K, V> type) {
+HashIterator(Entry.Type<R, K, V> type) {
             this.type = type;
             expectedModCount = modCount;
-            // ---------- Original Method ----------
-            //this.type = type;
-            //expectedModCount = modCount;
         }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.573 -0500", hash_original_method = "E96FCD52B0E07477D827A4DEB82A49B2", hash_generated_method = "270631B00E29F85530E17B5949D858AB")
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.123 -0400", hash_original_method = "E96FCD52B0E07477D827A4DEB82A49B2", hash_generated_method = "E1CE0244DDF26D4DBC72D8579CCEBB58")
-        public boolean hasNext() {
-            if(nextEntry != null && (nextKey != null || nextEntry.isNull))            
-            {
-                boolean varB326B5062B2F0E69046810717534CB09_500478334 = (true);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_146909569 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_146909569;
-            } //End block
-            while
-(true)            
-            {
-                if(nextEntry == null)                
-                {
-                    while
-(position < elementData.length)                    
-                    {
-                        if((nextEntry = elementData[position++]) != null)                        
-                        {
+public boolean hasNext() {
+            if (nextEntry != null && (nextKey != null || nextEntry.isNull)) {
+                return true;
+            }
+            while (true) {
+                if (nextEntry == null) {
+                    while (position < elementData.length) {
+                        if ((nextEntry = elementData[position++]) != null) {
                             break;
-                        } //End block
-                    } //End block
-                    if(nextEntry == null)                    
-                    {
-                        boolean var68934A3E9455FA72420237EB05902327_1910447622 = (false);
-                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1908748752 = getTaintBoolean();
-                        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1908748752;
-                    } //End block
-                } //End block
+                        }
+                    }
+                    if (nextEntry == null) {
+                        return false;
+                    }
+                }
+                // ensure key of next entry is not gc'ed
                 nextKey = nextEntry.get();
-                if(nextKey != null || nextEntry.isNull)                
-                {
-                    boolean varB326B5062B2F0E69046810717534CB09_642151984 = (true);
-                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1628211875 = getTaintBoolean();
-                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_1628211875;
-                } //End block
+                if (nextKey != null || nextEntry.isNull) {
+                    return true;
+                }
                 nextEntry = nextEntry.next;
-            } //End block
-            // ---------- Original Method ----------
-            //if (nextEntry != null && (nextKey != null || nextEntry.isNull)) {
-                //return true;
-            //}
-            //while (true) {
-                //if (nextEntry == null) {
-                    //while (position < elementData.length) {
-                        //if ((nextEntry = elementData[position++]) != null) {
-                            //break;
-                        //}
-                    //}
-                    //if (nextEntry == null) {
-                        //return false;
-                    //}
-                //}
-                //nextKey = nextEntry.get();
-                //if (nextKey != null || nextEntry.isNull) {
-                    //return true;
-                //}
-                //nextEntry = nextEntry.next;
-            //}
+            }
         }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.576 -0500", hash_original_method = "F6AE8405A941E9948A6F966D8D2D9924", hash_generated_method = "FE9B8EA14816052DAC5FF5E80806B11C")
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.123 -0400", hash_original_method = "F6AE8405A941E9948A6F966D8D2D9924", hash_generated_method = "AFA0057990778923FEFEC4CEAC4D42C1")
-        public R next() {
-            if(expectedModCount == modCount)            
-            {
-                if(hasNext())                
-                {
+public R next() {
+            if (expectedModCount == modCount) {
+                if (hasNext()) {
                     currentEntry = nextEntry;
                     nextEntry = currentEntry.next;
                     R result = type.get(currentEntry);
+                    // free the key
                     nextKey = null;
-R varDC838461EE2FA0CA4C9BBB70A15456B0_115509866 =                     result;
-                    varDC838461EE2FA0CA4C9BBB70A15456B0_115509866.addTaint(taint);
-                    return varDC838461EE2FA0CA4C9BBB70A15456B0_115509866;
-                } //End block
-                NoSuchElementException var28D00AB599969908D71F102AF992D49A_1980790504 = new NoSuchElementException();
-                var28D00AB599969908D71F102AF992D49A_1980790504.addTaint(taint);
-                throw var28D00AB599969908D71F102AF992D49A_1980790504;
-            } //End block
-            ConcurrentModificationException var779BA6969BD29E5F2D0448781C543B65_1108082402 = new ConcurrentModificationException();
-            var779BA6969BD29E5F2D0448781C543B65_1108082402.addTaint(taint);
-            throw var779BA6969BD29E5F2D0448781C543B65_1108082402;
-            // ---------- Original Method ----------
-            //if (expectedModCount == modCount) {
-                //if (hasNext()) {
-                    //currentEntry = nextEntry;
-                    //nextEntry = currentEntry.next;
-                    //R result = type.get(currentEntry);
-                    //nextKey = null;
-                    //return result;
-                //}
-                //throw new NoSuchElementException();
-            //}
-            //throw new ConcurrentModificationException();
+                    return result;
+                }
+                throw new NoSuchElementException();
+            }
+            throw new ConcurrentModificationException();
         }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.580 -0500", hash_original_method = "9519576E1338F396C5D4D192735A75A5", hash_generated_method = "87E03B7F421A15B6D8B56D333DD18131")
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.123 -0400", hash_original_method = "9519576E1338F396C5D4D192735A75A5", hash_generated_method = "30A60BA88C8B2F4B7E22D92A0A6CA140")
-        public void remove() {
-            if(expectedModCount == modCount)            
-            {
-                if(currentEntry != null)                
-                {
+public void remove() {
+            if (expectedModCount == modCount) {
+                if (currentEntry != null) {
                     removeEntry(currentEntry);
                     currentEntry = null;
                     expectedModCount++;
-                } //End block
-                else
-                {
-                    IllegalStateException varC311A989A119B96A6232C22ABFE87C25_1681220962 = new IllegalStateException();
-                    varC311A989A119B96A6232C22ABFE87C25_1681220962.addTaint(taint);
-                    throw varC311A989A119B96A6232C22ABFE87C25_1681220962;
-                } //End block
-            } //End block
-            else
-            {
-                ConcurrentModificationException var779BA6969BD29E5F2D0448781C543B65_927031688 = new ConcurrentModificationException();
-                var779BA6969BD29E5F2D0448781C543B65_927031688.addTaint(taint);
-                throw var779BA6969BD29E5F2D0448781C543B65_927031688;
-            } //End block
-            // ---------- Original Method ----------
-            //if (expectedModCount == modCount) {
-                //if (currentEntry != null) {
-                    //removeEntry(currentEntry);
-                    //currentEntry = null;
-                    //expectedModCount++;
-                //} else {
-                    //throw new IllegalStateException();
-                //}
-            //} else {
-                //throw new ConcurrentModificationException();
-            //}
+                    // cannot poll() as that would change the expectedModCount
+                } else {
+                    throw new IllegalStateException();
+                }
+            } else {
+                throw new ConcurrentModificationException();
+            }
         }
 
         
     }
 
-
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.830 -0500", hash_original_method = "F23833AECC848C129604A1D671C10BB2", hash_generated_method = "5CB6A83A562A7C5A0E5B6F087B960F67")
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.124 -0400", hash_original_field = "FE4F786FCADAEA637D52490E93F954CD", hash_generated_field = "7DB5CF06E1B6356201026C14CAD31DE8")
-
-    private static final int DEFAULT_SIZE = 16;
+private void putAllImpl(Map<? extends K, ? extends V> map) {
+        if (map.entrySet() != null) {
+            super.putAll(map);
+        }
+    }
 }
 

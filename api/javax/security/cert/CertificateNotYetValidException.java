@@ -1,29 +1,36 @@
 package javax.security.cert;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
 
 public class CertificateNotYetValidException extends CertificateException {
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.200 -0400", hash_original_method = "0159E0DC6739291193C204EC49D53AEB", hash_generated_method = "F79BE1E35B5E0BA4D62C0421534D9CBF")
-    public  CertificateNotYetValidException(String msg) {
-        super(msg);
-        addTaint(msg.getTaint());
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.201 -0400", hash_original_method = "66B27F39E6038EA6D4A95D3CE6990BEE", hash_generated_method = "8186B72CEA8C0FBC7D2AEF04F5039821")
-    public  CertificateNotYetValidException() {
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.201 -0400", hash_original_field = "4D48A8B121C3F9FB7BDFDEBAC2200000", hash_generated_field = "03DE77BA378D4546478F73AECB559735")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.055 -0500", hash_original_field = "B7A96208D7A40758A76944B6013FF6F2", hash_generated_field = "03DE77BA378D4546478F73AECB559735")
 
     private static final long serialVersionUID = -8976172474266822818L;
+
+    /**
+     * Creates a new {@code CertificateNotYetValidException} with the specified
+     * message.
+     *
+     * @param msg
+     *            the detail message for the exception.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.059 -0500", hash_original_method = "0159E0DC6739291193C204EC49D53AEB", hash_generated_method = "A8B28F7B42E411ED3535272D4D76A2DF")
+    
+public CertificateNotYetValidException(String msg) {
+        super(msg);
+    }
+
+    /**
+     * Creates a new {@code CertificateNotYetValidException}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.061 -0500", hash_original_method = "66B27F39E6038EA6D4A95D3CE6990BEE", hash_generated_method = "65B7F900F1A9D6173E490FEEF6D7A94C")
+    
+public CertificateNotYetValidException() {
+    }
 }
 

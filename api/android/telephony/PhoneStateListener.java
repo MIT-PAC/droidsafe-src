@@ -1,6 +1,9 @@
 package android.telephony;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
+import android.util.Log;
 import droidsafe.annotations.*;
 import android.os.Bundle;
 import android.os.Handler;
@@ -14,6 +17,40 @@ import com.android.internal.telephony.IPhoneStateListener;
 
 
 public class PhoneStateListener {
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:48.531 -0500", hash_original_field = "0A5B2BD023693D413E9F75E8C9DF4974", hash_generated_field = "2668A1FA15452EF095AB309D80143EE2")
+
+    public static final int LISTEN_NONE = 0;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:48.535 -0500", hash_original_field = "545A41CD8D79514D679CF51C880B507E", hash_generated_field = "EA9E1D843E5D2F2EE9DA84427F443A73")
+
+    public static final int LISTEN_SERVICE_STATE                            = 0x00000001;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:48.540 -0500", hash_original_field = "B1470D2A81F84D336EBC18EC8117755B", hash_generated_field = "9BC789C2DC17C2E7F01200D42FB2EB97")
+
+    @Deprecated
+    public static final int LISTEN_SIGNAL_STRENGTH                          = 0x00000002;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:48.546 -0500", hash_original_field = "DED8686712ED774AC38C2D21866004F3", hash_generated_field = "079948D5A4839C139ABA266A60E8C43C")
+
+    public static final int LISTEN_MESSAGE_WAITING_INDICATOR                = 0x00000004;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:48.550 -0500", hash_original_field = "00BAA4EB48F13F0F7D8481F78311CB5B", hash_generated_field = "2C407633607152A9A58FA3E2F3D251BB")
+
+    public static final int LISTEN_CALL_FORWARDING_INDICATOR                = 0x00000008;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:48.555 -0500", hash_original_field = "037DABF206A79C6758B9F9A43AA30764", hash_generated_field = "F17C79B6214A465ED14A618D91A65DF0")
+
+    public static final int LISTEN_CELL_LOCATION                            = 0x00000010;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:48.560 -0500", hash_original_field = "566B325860F5FE5C11F035A7297E8189", hash_generated_field = "D3BB80D3E20C59C05E5F09DD4A108121")
+
+    public static final int LISTEN_CALL_STATE                               = 0x00000020;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:48.565 -0500", hash_original_field = "20B371119F4B6E7A301374915C827B4B", hash_generated_field = "A053609FFB1B37F86F11B4AAF5456228")
+
+    public static final int LISTEN_DATA_CONNECTION_STATE                    = 0x00000040;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:48.569 -0500", hash_original_field = "BF5371B8760C7EA8492CDA00F31BDB2E", hash_generated_field = "BDF733827267C32D8D3126F1C48BBB7A")
+
+    public static final int LISTEN_DATA_ACTIVITY                            = 0x00000080;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:48.574 -0500", hash_original_field = "E1E165A361CD0396949D72C569DEF7EB", hash_generated_field = "02B62E9690B51D18532269564CEA0526")
+
+    public static final int LISTEN_SIGNAL_STRENGTHS                         = 0x00000100;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:48.578 -0500", hash_original_field = "56C5CACE6BB82AB388AB35E3EBA742A6", hash_generated_field = "89E2C5A9EA4D2DDF310DBED68B5CBDAB")
+
+    public static final int LISTEN_OTASP_CHANGED                            = 0x00000200;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.692 -0400", hash_original_field = "93DBE9FBF8EA760E573744A3CB51F49C", hash_generated_field = "240FC5CF3A1E5844CEA1A4686BC3A90E")
 
     IPhoneStateListener callback = new IPhoneStateListener.Stub() {        
@@ -182,149 +219,148 @@ public class PhoneStateListener {
 
         
 };
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:48.582 -0500", hash_original_method = "20EF8DCC516BA3C0FC2B58EA0CC3EA6E", hash_generated_method = "473E9BD4D0B5D3C1F663E2739D183347")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.378 -0400", hash_original_method = "20EF8DCC516BA3C0FC2B58EA0CC3EA6E", hash_generated_method = "D7C1BF839242BC9415BC61355D4D609D")
-    public  PhoneStateListener() {
-        // ---------- Original Method ----------
+public PhoneStateListener() {
     }
 
+    /**
+     * Callback invoked when device service state changes.
+     *
+     * @see ServiceState#STATE_EMERGENCY_ONLY
+     * @see ServiceState#STATE_IN_SERVICE
+     * @see ServiceState#STATE_OUT_OF_SERVICE
+     * @see ServiceState#STATE_POWER_OFF
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:48.586 -0500", hash_original_method = "71FF02CB37AAD9FA42E430343744C95D", hash_generated_method = "6A4D437F0A4E6015B235F63BCD713402")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.378 -0400", hash_original_method = "71FF02CB37AAD9FA42E430343744C95D", hash_generated_method = "2EDE1453352DA2CC85CC298DFB3AD551")
-    public void onServiceStateChanged(ServiceState serviceState) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(serviceState.getTaint());
-        // ---------- Original Method ----------
+public void onServiceStateChanged(ServiceState serviceState) {
+        // default implementation empty
     }
 
+    /**
+     * Callback invoked when network signal strength changes.
+     *
+     * @see ServiceState#STATE_EMERGENCY_ONLY
+     * @see ServiceState#STATE_IN_SERVICE
+     * @see ServiceState#STATE_OUT_OF_SERVICE
+     * @see ServiceState#STATE_POWER_OFF
+     * @deprecated Use {@link #onSignalStrengthsChanged(SignalStrength)}
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:48.591 -0500", hash_original_method = "BC041D78EED5B299AE554E075ADF39D8", hash_generated_method = "C4605B4B9EFC12A82E9A03E0D3B83614")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.378 -0400", hash_original_method = "BC041D78EED5B299AE554E075ADF39D8", hash_generated_method = "CAA24713F8D0C0D31C4734D103475E49")
-    @Deprecated
+@Deprecated
     public void onSignalStrengthChanged(int asu) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(asu);
-        // ---------- Original Method ----------
+        // default implementation empty
     }
 
+    /**
+     * Callback invoked when the message-waiting indicator changes.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:48.595 -0500", hash_original_method = "75359DDCF2D0B158439199FBAF05E06A", hash_generated_method = "AB13BA3AF446FA82A306C47744A3DBAF")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.378 -0400", hash_original_method = "75359DDCF2D0B158439199FBAF05E06A", hash_generated_method = "A0E000790569C0C318FE63F6F64EBC1C")
-    public void onMessageWaitingIndicatorChanged(boolean mwi) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(mwi);
-        // ---------- Original Method ----------
+public void onMessageWaitingIndicatorChanged(boolean mwi) {
+        // default implementation empty
     }
 
+    /**
+     * Callback invoked when the call-forwarding indicator changes.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:48.600 -0500", hash_original_method = "D5A60C39C845CE2458AA9D81FF0C97F9", hash_generated_method = "7809D56E1A90252DAF5A9AE579827AF4")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.378 -0400", hash_original_method = "D5A60C39C845CE2458AA9D81FF0C97F9", hash_generated_method = "EF33A9F2D8350F2C64273438D422888A")
-    public void onCallForwardingIndicatorChanged(boolean cfi) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(cfi);
-        // ---------- Original Method ----------
+public void onCallForwardingIndicatorChanged(boolean cfi) {
+        // default implementation empty
     }
 
+    /**
+     * Callback invoked when device cell location changes.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:48.603 -0500", hash_original_method = "DC558EBD989E1315B12793B36376A79E", hash_generated_method = "A454123B2928F5DAF408E04F1BFD9C75")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.378 -0400", hash_original_method = "DC558EBD989E1315B12793B36376A79E", hash_generated_method = "DD90CABC50B85CB7BBFA627CF56F9C7F")
-    public void onCellLocationChanged(CellLocation location) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(location.getTaint());
-        // ---------- Original Method ----------
+public void onCellLocationChanged(CellLocation location) {
+        // default implementation empty
     }
 
+    /**
+     * Callback invoked when device call state changes.
+     *
+     * @see TelephonyManager#CALL_STATE_IDLE
+     * @see TelephonyManager#CALL_STATE_RINGING
+     * @see TelephonyManager#CALL_STATE_OFFHOOK
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:48.607 -0500", hash_original_method = "B1A721EFB2ABF6430D11EDB26008EF34", hash_generated_method = "0F512FAE81769FBE457784B1828B9765")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.378 -0400", hash_original_method = "B1A721EFB2ABF6430D11EDB26008EF34", hash_generated_method = "E7F9E21E50E7DE2EAAC1DC911C01A5EA")
-    public void onCallStateChanged(int state, String incomingNumber) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(incomingNumber.getTaint());
-        addTaint(state);
-        // ---------- Original Method ----------
+public void onCallStateChanged(int state, String incomingNumber) {
+        // default implementation empty
     }
 
+    /**
+     * Callback invoked when connection state changes.
+     *
+     * @see TelephonyManager#DATA_DISCONNECTED
+     * @see TelephonyManager#DATA_CONNECTING
+     * @see TelephonyManager#DATA_CONNECTED
+     * @see TelephonyManager#DATA_SUSPENDED
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:48.611 -0500", hash_original_method = "1C4CEBBE82C84ACE1203815C2B422383", hash_generated_method = "0135B9E40705D7E3105DAB72CC525AB0")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.378 -0400", hash_original_method = "1C4CEBBE82C84ACE1203815C2B422383", hash_generated_method = "9619C47A3336B5F864DDE0F2FC04754E")
-    public void onDataConnectionStateChanged(int state) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(state);
-        // ---------- Original Method ----------
+public void onDataConnectionStateChanged(int state) {
+        // default implementation empty
     }
 
+    /**
+     * same as above, but with the network type.  Both called.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:48.615 -0500", hash_original_method = "BFD2027492A8CA27CCE6A852F5D0D4BF", hash_generated_method = "CFB27AB400DD88FBC877D4D8B3607B54")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.378 -0400", hash_original_method = "BFD2027492A8CA27CCE6A852F5D0D4BF", hash_generated_method = "EFB040C320234AEBFEE6F620E299C9B7")
-    public void onDataConnectionStateChanged(int state, int networkType) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(networkType);
-        addTaint(state);
-        // ---------- Original Method ----------
+public void onDataConnectionStateChanged(int state, int networkType) {
     }
 
+    /**
+     * Callback invoked when data activity state changes.
+     *
+     * @see TelephonyManager#DATA_ACTIVITY_NONE
+     * @see TelephonyManager#DATA_ACTIVITY_IN
+     * @see TelephonyManager#DATA_ACTIVITY_OUT
+     * @see TelephonyManager#DATA_ACTIVITY_INOUT
+     * @see TelephonyManager#DATA_ACTIVITY_DORMANT
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:48.619 -0500", hash_original_method = "F374B48EE0586B0F56A0A6BEC28E9201", hash_generated_method = "81C50F436205C428E7EDDB5CEAEA2CA5")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.378 -0400", hash_original_method = "F374B48EE0586B0F56A0A6BEC28E9201", hash_generated_method = "D3FF69ABDB90917CDA7D7150D27A23CC")
-    public void onDataActivity(int direction) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(direction);
-        // ---------- Original Method ----------
+public void onDataActivity(int direction) {
+        // default implementation empty
     }
 
+    /**
+     * Callback invoked when network signal strengths changes.
+     *
+     * @see ServiceState#STATE_EMERGENCY_ONLY
+     * @see ServiceState#STATE_IN_SERVICE
+     * @see ServiceState#STATE_OUT_OF_SERVICE
+     * @see ServiceState#STATE_POWER_OFF
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:48.623 -0500", hash_original_method = "A22E0BB42B0E543666A17B7B6AC4EDC6", hash_generated_method = "8B634D2C9D16E7C7160326010210C3DD")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.379 -0400", hash_original_method = "A22E0BB42B0E543666A17B7B6AC4EDC6", hash_generated_method = "4E58CB508883B0A99DFC47209005250D")
-    public void onSignalStrengthsChanged(SignalStrength signalStrength) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(signalStrength.getTaint());
-        // ---------- Original Method ----------
+public void onSignalStrengthsChanged(SignalStrength signalStrength) {
+        // default implementation empty
     }
 
+
+    /**
+     * The Over The Air Service Provisioning (OTASP) has changed. Requires
+     * the READ_PHONE_STATE permission.
+     * @param otaspMode is integer <code>OTASP_UNKNOWN=1<code>
+     *   means the value is currently unknown and the system should wait until
+     *   <code>OTASP_NEEDED=2<code> or <code>OTASP_NOT_NEEDED=3<code> is received before
+     *   making the decisision to perform OTASP or not.
+     *
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:48.627 -0500", hash_original_method = "AF1EBC6D8A2DA1E39265DEC2CD9D5FBB", hash_generated_method = "2DDFFB18789BDBA4467A3333F5000805")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.379 -0400", hash_original_method = "AF1EBC6D8A2DA1E39265DEC2CD9D5FBB", hash_generated_method = "D71E5EE2F05952023B3DADF0BC31A241")
-    public void onOtaspChanged(int otaspMode) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(otaspMode);
-        // ---------- Original Method ----------
+public void onOtaspChanged(int otaspMode) {
+        // default implementation empty
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.379 -0400", hash_original_field = "65513605A7876782BF214BA51D405DDF", hash_generated_field = "2668A1FA15452EF095AB309D80143EE2")
-
-    public static final int LISTEN_NONE = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.379 -0400", hash_original_field = "58866ACC120A420F53EBAEA0E548CED8", hash_generated_field = "EA9E1D843E5D2F2EE9DA84427F443A73")
-
-    public static final int LISTEN_SERVICE_STATE                            = 0x00000001;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.379 -0400", hash_original_field = "D1819298BAA9CA498662D79A3DBCF88D", hash_generated_field = "9BC789C2DC17C2E7F01200D42FB2EB97")
-
-    @Deprecated
-    public static final int LISTEN_SIGNAL_STRENGTH                          = 0x00000002;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.379 -0400", hash_original_field = "D0EE56F4A846615BA39FAF77ADF909E1", hash_generated_field = "079948D5A4839C139ABA266A60E8C43C")
-
-    public static final int LISTEN_MESSAGE_WAITING_INDICATOR                = 0x00000004;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.379 -0400", hash_original_field = "C967547E9CBAD5A6BDA8A51BA31AD031", hash_generated_field = "2C407633607152A9A58FA3E2F3D251BB")
-
-    public static final int LISTEN_CALL_FORWARDING_INDICATOR                = 0x00000008;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.379 -0400", hash_original_field = "BF369976C1837285709872EEEBCC54A8", hash_generated_field = "F17C79B6214A465ED14A618D91A65DF0")
-
-    public static final int LISTEN_CELL_LOCATION                            = 0x00000010;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.379 -0400", hash_original_field = "E0B2231B5C408A791B1C96A2A8B21075", hash_generated_field = "D3BB80D3E20C59C05E5F09DD4A108121")
-
-    public static final int LISTEN_CALL_STATE                               = 0x00000020;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.379 -0400", hash_original_field = "80C8E6D6B78C6EC46A655B02BC193121", hash_generated_field = "A053609FFB1B37F86F11B4AAF5456228")
-
-    public static final int LISTEN_DATA_CONNECTION_STATE                    = 0x00000040;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.379 -0400", hash_original_field = "2BE5F895AF9C950BF947248377CB3610", hash_generated_field = "BDF733827267C32D8D3126F1C48BBB7A")
-
-    public static final int LISTEN_DATA_ACTIVITY                            = 0x00000080;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.379 -0400", hash_original_field = "C70951CC015509B3952FBA56DF732394", hash_generated_field = "02B62E9690B51D18532269564CEA0526")
-
-    public static final int LISTEN_SIGNAL_STRENGTHS                         = 0x00000100;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.379 -0400", hash_original_field = "A12D6119D3C2262352EE09AB8810F7DB", hash_generated_field = "89E2C5A9EA4D2DDF310DBED68B5CBDAB")
-
-    public static final int LISTEN_OTASP_CHANGED                            = 0x00000200;
 }
 

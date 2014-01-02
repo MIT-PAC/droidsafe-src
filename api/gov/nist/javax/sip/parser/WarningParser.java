@@ -1,6 +1,8 @@
 package gov.nist.javax.sip.parser;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import gov.nist.core.Token;
 import gov.nist.javax.sip.header.SIPHeader;
@@ -17,136 +19,140 @@ import javax.sip.InvalidArgumentException;
 
 
 public class WarningParser extends HeaderParser {
+
+    /**
+     * Constructor
+     *
+     * @param warning -
+     *            Warning header to parse
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:47.505 -0500", hash_original_method = "38623B910ABA654EC8C258B1F2DD35A3", hash_generated_method = "ADAA2404AD9AFA3E4FCBF93E8A04CA7C")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.571 -0400", hash_original_method = "38623B910ABA654EC8C258B1F2DD35A3", hash_generated_method = "7571F0DA3DE7DAA09495023E92213CDE")
-    public  WarningParser(String warning) {
+public WarningParser(String warning) {
         super(warning);
-        addTaint(warning.getTaint());
-        // ---------- Original Method ----------
     }
 
+    /**
+     * Cosntructor
+     *
+     * @param lexer -
+     *            the lexer to use.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:47.508 -0500", hash_original_method = "AB9AC91F8631F4AA3239C3547D18BC09", hash_generated_method = "6BC4FFEC90365BF5E44CE071D60EC134")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.571 -0400", hash_original_method = "AB9AC91F8631F4AA3239C3547D18BC09", hash_generated_method = "558DDFFCB57EFAB6AF04A2FE9DBB1F70")
-    protected  WarningParser(Lexer lexer) {
+protected WarningParser(Lexer lexer) {
         super(lexer);
-        addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
     }
 
+    /**
+     * parse the String message
+     *
+     * @return SIPHeader (WarningList object)
+     * @throws SIPParseException
+     *             if the message does not respect the spec.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:47.513 -0500", hash_original_method = "5665BE3F4ECC43E3239D3F1D8B9B76A3", hash_generated_method = "426004DD56479AB68361A155302D98E9")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.690 -0400", hash_original_method = "5665BE3F4ECC43E3239D3F1D8B9B76A3", hash_generated_method = "D30DEB7A5B1F69C2FDBB0AF3D4726388")
-    public SIPHeader parse() throws ParseException {
+public SIPHeader parse() throws ParseException {
         WarningList warningList = new WarningList();
-        if(debug)        
-        dbg_enter("WarningParser.parse");
-        try 
-        {
+        if (debug)
+            dbg_enter("WarningParser.parse");
+
+        try {
             headerName(TokenTypes.WARNING);
-            while
-(lexer.lookAhead(0) != '\n')            
-            {
+
+            while (lexer.lookAhead(0) != '\n') {
                 Warning warning = new Warning();
                 warning.setHeaderName(SIPHeaderNames.WARNING);
+
+                // Parsing the 3digits code
                 this.lexer.match(TokenTypes.ID);
                 Token token = lexer.getNextToken();
-                try 
-                {
+                try {
                     int code = Integer.parseInt(token.getTokenValue());
                     warning.setCode(code);
-                } //End block
-                catch (NumberFormatException ex)
-                {
-                    java.text.ParseException varB8C80F72F95BF6A850D07F4EC5726C09_1666283884 = createParseException(ex.getMessage());
-                    varB8C80F72F95BF6A850D07F4EC5726C09_1666283884.addTaint(taint);
-                    throw varB8C80F72F95BF6A850D07F4EC5726C09_1666283884;
-                } //End block
-                catch (InvalidArgumentException ex)
-                {
-                    java.text.ParseException varB8C80F72F95BF6A850D07F4EC5726C09_53843300 = createParseException(ex.getMessage());
-                    varB8C80F72F95BF6A850D07F4EC5726C09_53843300.addTaint(taint);
-                    throw varB8C80F72F95BF6A850D07F4EC5726C09_53843300;
-                } //End block
+                } catch (NumberFormatException ex) {
+                    throw createParseException(ex.getMessage());
+                } catch (InvalidArgumentException ex) {
+                    throw createParseException(ex.getMessage());
+                }
                 this.lexer.SPorHT();
+
+                // Parsing the agent
                 this.lexer.match(TokenTypes.ID);
                 token = lexer.getNextToken();
-                if(lexer.lookAhead(0) == ':')                
-                {
+                // Bug reported by zvali@dev.java.net
+                if (lexer.lookAhead(0) == ':') {
                     this.lexer.match(':');
                     this.lexer.match(TokenTypes.ID);
                     Token token2 = lexer.getNextToken();
                     warning.setAgent(token.getTokenValue() + ":"
                             + token2.getTokenValue());
-                } //End block
-                else
-                {
+                } else {
                     warning.setAgent(token.getTokenValue());
-                } //End block
+                }
+
                 this.lexer.SPorHT();
+
+                // Parsing the text
                 String text = this.lexer.quotedString();
                 warning.setText(text);
                 this.lexer.SPorHT();
+
                 warningList.add(warning);
-                while
-(lexer.lookAhead(0) == ',')                
-                {
+
+                while (lexer.lookAhead(0) == ',') {
                     this.lexer.match(',');
                     this.lexer.SPorHT();
+
                     warning = new Warning();
+
+                    // Parsing the 3digits code
                     this.lexer.match(TokenTypes.ID);
                     Token tok = lexer.getNextToken();
-                    try 
-                    {
+                    try {
                         int code = Integer.parseInt(tok.getTokenValue());
                         warning.setCode(code);
-                    } //End block
-                    catch (NumberFormatException ex)
-                    {
-                        java.text.ParseException varB8C80F72F95BF6A850D07F4EC5726C09_1355492395 = createParseException(ex.getMessage());
-                        varB8C80F72F95BF6A850D07F4EC5726C09_1355492395.addTaint(taint);
-                        throw varB8C80F72F95BF6A850D07F4EC5726C09_1355492395;
-                    } //End block
-                    catch (InvalidArgumentException ex)
-                    {
-                        java.text.ParseException varB8C80F72F95BF6A850D07F4EC5726C09_677565147 = createParseException(ex.getMessage());
-                        varB8C80F72F95BF6A850D07F4EC5726C09_677565147.addTaint(taint);
-                        throw varB8C80F72F95BF6A850D07F4EC5726C09_677565147;
-                    } //End block
+                    } catch (NumberFormatException ex) {
+                        throw createParseException(ex.getMessage());
+                    } catch (InvalidArgumentException ex) {
+                        throw createParseException(ex.getMessage());
+                    }
                     this.lexer.SPorHT();
+
+                    // Parsing the agent
                     this.lexer.match(TokenTypes.ID);
                     tok = lexer.getNextToken();
-                    if(lexer.lookAhead(0) == ':')                    
-                    {
+
+                    // Bug reported by zvali@dev.java.net
+
+                    if (lexer.lookAhead(0) == ':') {
                         this.lexer.match(':');
                         this.lexer.match(TokenTypes.ID);
                         Token token2 = lexer.getNextToken();
                         warning.setAgent(tok.getTokenValue() + ":"
                                 + token2.getTokenValue());
-                    } //End block
-                    else
-                    {
+                    } else {
                         warning.setAgent(tok.getTokenValue());
-                    } //End block
+                    }
+
                     this.lexer.SPorHT();
+
+                    // Parsing the text
                     text = this.lexer.quotedString();
                     warning.setText(text);
                     this.lexer.SPorHT();
+
                     warningList.add(warning);
-                } //End block
-            } //End block
-        } //End block
-        finally 
-        {
-            if(debug)            
-            dbg_leave("WarningParser.parse");
-        } //End block
-SIPHeader var42F0E3ACF43E718FBD7FE1AF4BC220BA_1932564838 =         warningList;
-        var42F0E3ACF43E718FBD7FE1AF4BC220BA_1932564838.addTaint(taint);
-        return var42F0E3ACF43E718FBD7FE1AF4BC220BA_1932564838;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                }
+
+            }
+        } finally {
+            if (debug)
+                dbg_leave("WarningParser.parse");
+        }
+
+        return warningList;
     }
 
     

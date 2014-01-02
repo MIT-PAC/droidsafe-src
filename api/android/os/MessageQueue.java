@@ -1,6 +1,8 @@
 package android.os;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.ArrayList;
 
@@ -9,21 +11,34 @@ import android.util.Log;
 
 
 public class MessageQueue {
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:38.789 -0500", hash_original_field = "4CD2256F13C791768C1C46ADDB2DD4CF", hash_generated_field = "4CD2256F13C791768C1C46ADDB2DD4CF")
+
     Message mMessages;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:38.792 -0500", hash_original_field = "D54FEA86C2A57E013115BB80D80AFF83", hash_generated_field = "9FB9E39B5A909D64069FF435A199CC07")
+
     private final ArrayList<IdleHandler> mIdleHandlers = new ArrayList<IdleHandler>();
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:38.794 -0500", hash_original_field = "196EA8F4FD61AF8E040EF23C4EEF177F", hash_generated_field = "9ECE673ABB53E3B4A3FD3EACB7D57DE3")
+
     private IdleHandler[] mPendingIdleHandlers;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:38.796 -0500", hash_original_field = "AF7B740F1E4253B4C172BA0B0F8E8473", hash_generated_field = "8D159A051416488D8C3D9A0DE1446123")
+
     private boolean mQuiting;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:38.798 -0500", hash_original_field = "76FCB0C059FE9E4D676BDC9706D4EFC3", hash_generated_field = "76FCB0C059FE9E4D676BDC9706D4EFC3")
+
     boolean mQuitAllowed = true;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:38.800 -0500", hash_original_field = "14FC009A68B2C76B8D4B8EEE56CE7ECC", hash_generated_field = "E847C74EBFAB1303FF64CBEBF73D5F3A")
+
     private boolean mBlocked;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:38.802 -0500", hash_original_field = "42C21A18FB5976D4C67962413781C35D", hash_generated_field = "F6CBBCA427D08C52E84BEBFADDF6C4B3")
+
+
     @SuppressWarnings("unused")
     private int mPtr;
     
-    @DSModeled(DSC.SAFE)
-    MessageQueue(){
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:38.825 -0500", hash_original_method = "024946A17D31C4FE5B39BFCF4854F539", hash_generated_method = "024946A17D31C4FE5B39BFCF4854F539")
+    
+MessageQueue() {
         nativeInit();
-        /*
-        nativeInit();
-        */
     }
 
     

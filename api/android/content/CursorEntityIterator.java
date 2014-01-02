@@ -1,6 +1,8 @@
 package android.content;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.database.Cursor;
 import android.os.RemoteException;
@@ -10,138 +12,107 @@ import android.os.RemoteException;
 
 
 public abstract class CursorEntityIterator implements EntityIterator {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.492 -0400", hash_original_field = "F54BB255BEA99BFE91A331B490610EDF", hash_generated_field = "6E649D5858461199DBD67FE0A0D43789")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:42.270 -0500", hash_original_field = "4A85E902ED72E65A9AF8F6ED265E4F89", hash_generated_field = "6E649D5858461199DBD67FE0A0D43789")
 
-    private Cursor mCursor;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.492 -0400", hash_original_field = "42C51B2F76146A5EC92C9811D57ACF10", hash_generated_field = "A6BB6E42C38AE7C525A0832B55750D8F")
+    private  Cursor mCursor;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:42.272 -0500", hash_original_field = "71243BBA92A200CA5F2A2C2AF2750DFD", hash_generated_field = "A6BB6E42C38AE7C525A0832B55750D8F")
 
     private boolean mIsClosed;
+
+    /**
+     * Constructor that makes initializes the cursor such that the iterator points to the
+     * first Entity, if there are any.
+     * @param cursor the cursor that contains the rows that make up the entities
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:42.274 -0500", hash_original_method = "76B86F8C1E31679F8727B434E61B14CB", hash_generated_method = "787E12DE772D7E05097D2055C9409991")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.492 -0400", hash_original_method = "76B86F8C1E31679F8727B434E61B14CB", hash_generated_method = "B0CDFD30A5D8289392A197569989206F")
-    public  CursorEntityIterator(Cursor cursor) {
+public CursorEntityIterator(Cursor cursor) {
         mIsClosed = false;
         mCursor = cursor;
         mCursor.moveToFirst();
-        // ---------- Original Method ----------
-        //mIsClosed = false;
-        //mCursor = cursor;
-        //mCursor.moveToFirst();
     }
 
+    /**
+     * Returns the entity that the cursor is currently pointing to. This must take care to advance
+     * the cursor past this entity. This will never be called if the cursor is at the end.
+     * @param cursor the cursor that contains the entity rows
+     * @return the entity that the cursor is currently pointing to
+     * @throws RemoteException if a RemoteException is caught while attempting to build the Entity
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:42.276 -0500", hash_original_method = "8E9C8F1DC87A5B0FEC2F1314601A7972", hash_generated_method = "308DEBA12E5A4D5BEE7FAA2B9F418B93")
     
-    @DSModeled(DSC.SAFE)
-    public abstract Entity getEntityAndIncrementCursor(Cursor cursor) throws RemoteException;
+public abstract Entity getEntityAndIncrementCursor(Cursor cursor) throws RemoteException;
 
+    /**
+     * Returns whether there are more elements to iterate, i.e. whether the
+     * iterator is positioned in front of an element.
+     *
+     * @return {@code true} if there are more elements, {@code false} otherwise.
+     * @see EntityIterator#next()
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:42.279 -0500", hash_original_method = "EFC615883F392C5E7B7F6E9EF3393B85", hash_generated_method = "0924C60238EDA5C3606627270C16F625")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.492 -0400", hash_original_method = "EFC615883F392C5E7B7F6E9EF3393B85", hash_generated_method = "615271A9F440649387636AA3AD1F6FE7")
-    public final boolean hasNext() {
-        if(mIsClosed)        
-        {
-            IllegalStateException var994C5FDCB689CD476D720223C1A2E97C_1542407664 = new IllegalStateException("calling hasNext() when the iterator is closed");
-            var994C5FDCB689CD476D720223C1A2E97C_1542407664.addTaint(taint);
-            throw var994C5FDCB689CD476D720223C1A2E97C_1542407664;
-        } //End block
-        boolean varA900E63D2652380A0AE5EC5450C680D1_2026531991 = (!mCursor.isAfterLast());
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_736286325 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_736286325;
-        // ---------- Original Method ----------
-        //if (mIsClosed) {
-            //throw new IllegalStateException("calling hasNext() when the iterator is closed");
-        //}
-        //return !mCursor.isAfterLast();
+public final boolean hasNext() {
+        if (mIsClosed) {
+            throw new IllegalStateException("calling hasNext() when the iterator is closed");
+        }
+
+        return !mCursor.isAfterLast();
     }
 
+    /**
+     * Returns the next object in the iteration, i.e. returns the element in
+     * front of the iterator and advances the iterator by one position.
+     *
+     * @return the next object.
+     * @throws java.util.NoSuchElementException
+     *             if there are no more elements.
+     * @see EntityIterator#hasNext()
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:42.282 -0500", hash_original_method = "D761CE40C9BF5BACB311C894FE3131D0", hash_generated_method = "CEC4763A0AD1E76D825251378A952EB1")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.493 -0400", hash_original_method = "D761CE40C9BF5BACB311C894FE3131D0", hash_generated_method = "E69C7FE396FBF487669DC0A4275B461F")
-    public Entity next() {
-        if(mIsClosed)        
-        {
-            IllegalStateException var12E76C3A9A7CEE219DB8C76087FF564B_713154180 = new IllegalStateException("calling next() when the iterator is closed");
-            var12E76C3A9A7CEE219DB8C76087FF564B_713154180.addTaint(taint);
-            throw var12E76C3A9A7CEE219DB8C76087FF564B_713154180;
-        } //End block
-        if(!hasNext())        
-        {
-            IllegalStateException varE20C7FA15E48B005588D91906DC67B5F_832914009 = new IllegalStateException("you may only call next() if hasNext() is true");
-            varE20C7FA15E48B005588D91906DC67B5F_832914009.addTaint(taint);
-            throw varE20C7FA15E48B005588D91906DC67B5F_832914009;
-        } //End block
-        try 
-        {
-Entity var89A776ACF604CF5B8BF8FB402D39F0BE_656514421 =             getEntityAndIncrementCursor(mCursor);
-            var89A776ACF604CF5B8BF8FB402D39F0BE_656514421.addTaint(taint);
-            return var89A776ACF604CF5B8BF8FB402D39F0BE_656514421;
-        } //End block
-        catch (RemoteException e)
-        {
-            RuntimeException varA9C8EAB58C0973C3C3455840A2CBB98C_257334363 = new RuntimeException("caught a remote exception, this process will die soon", e);
-            varA9C8EAB58C0973C3C3455840A2CBB98C_257334363.addTaint(taint);
-            throw varA9C8EAB58C0973C3C3455840A2CBB98C_257334363;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mIsClosed) {
-            //throw new IllegalStateException("calling next() when the iterator is closed");
-        //}
-        //if (!hasNext()) {
-            //throw new IllegalStateException("you may only call next() if hasNext() is true");
-        //}
-        //try {
-            //return getEntityAndIncrementCursor(mCursor);
-        //} catch (RemoteException e) {
-            //throw new RuntimeException("caught a remote exception, this process will die soon", e);
-        //}
+public Entity next() {
+        if (mIsClosed) {
+            throw new IllegalStateException("calling next() when the iterator is closed");
+        }
+        if (!hasNext()) {
+            throw new IllegalStateException("you may only call next() if hasNext() is true");
+        }
+
+        try {
+            return getEntityAndIncrementCursor(mCursor);
+        } catch (RemoteException e) {
+            throw new RuntimeException("caught a remote exception, this process will die soon", e);
+        }
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:42.284 -0500", hash_original_method = "2158F00E167F00121D9D2190C01FAABB", hash_generated_method = "0FD01F63F245931D95A36B4109D5E661")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.493 -0400", hash_original_method = "2158F00E167F00121D9D2190C01FAABB", hash_generated_method = "079DFC141AAC73FA45B9C248EB02DE6E")
-    public void remove() {
-        UnsupportedOperationException var3507AD2E5185A524A543CF22C0250BAC_1298754522 = new UnsupportedOperationException("remove not supported by EntityIterators");
-        var3507AD2E5185A524A543CF22C0250BAC_1298754522.addTaint(taint);
-        throw var3507AD2E5185A524A543CF22C0250BAC_1298754522;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException("remove not supported by EntityIterators");
+public void remove() {
+        throw new UnsupportedOperationException("remove not supported by EntityIterators");
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:42.286 -0500", hash_original_method = "D0360F07FA873653A69218CB10B6D78C", hash_generated_method = "24177ED3C6F3FC195AB3AB3E0371400F")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.493 -0400", hash_original_method = "D0360F07FA873653A69218CB10B6D78C", hash_generated_method = "B230BABD808BEAE19CD0AE46FE64A3B0")
-    public final void reset() {
-        if(mIsClosed)        
-        {
-            IllegalStateException var47A5740EFD7F765F130EF9990EDEC229_1347989156 = new IllegalStateException("calling reset() when the iterator is closed");
-            var47A5740EFD7F765F130EF9990EDEC229_1347989156.addTaint(taint);
-            throw var47A5740EFD7F765F130EF9990EDEC229_1347989156;
-        } //End block
+public final void reset() {
+        if (mIsClosed) {
+            throw new IllegalStateException("calling reset() when the iterator is closed");
+        }
         mCursor.moveToFirst();
-        // ---------- Original Method ----------
-        //if (mIsClosed) {
-            //throw new IllegalStateException("calling reset() when the iterator is closed");
-        //}
-        //mCursor.moveToFirst();
     }
 
+    /**
+     * Indicates that this iterator is no longer needed and that any associated resources
+     * may be released (such as a SQLite cursor).
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:42.288 -0500", hash_original_method = "B24D9E2E069589E778F23FCBC29406BF", hash_generated_method = "48933D8E41E4523E6CE836F2AC747B30")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.493 -0400", hash_original_method = "B24D9E2E069589E778F23FCBC29406BF", hash_generated_method = "C3809F69E058058F0178670A46CC07E2")
-    public final void close() {
-        if(mIsClosed)        
-        {
-            IllegalStateException varC011F9740FCC2D0357D3F5533DD6D908_612880557 = new IllegalStateException("closing when already closed");
-            varC011F9740FCC2D0357D3F5533DD6D908_612880557.addTaint(taint);
-            throw varC011F9740FCC2D0357D3F5533DD6D908_612880557;
-        } //End block
+public final void close() {
+        if (mIsClosed) {
+            throw new IllegalStateException("closing when already closed");
+        }
         mIsClosed = true;
         mCursor.close();
-        // ---------- Original Method ----------
-        //if (mIsClosed) {
-            //throw new IllegalStateException("closing when already closed");
-        //}
-        //mIsClosed = true;
-        //mCursor.close();
     }
 
     

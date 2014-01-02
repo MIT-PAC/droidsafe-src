@@ -1,6 +1,8 @@
 package org.ccil.cowan.tagsoup;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
@@ -8,245 +10,228 @@ import droidsafe.annotations.*;
 
 
 public class Element {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.728 -0400", hash_original_field = "E8584B0E37179A7B82F4A85271799B93", hash_generated_field = "3F58E4656692FD6FEAD0053A32B05324")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.764 -0500", hash_original_field = "48FC5DA7D9A4C1BF369BCA91A9EC45AD", hash_generated_field = "3F58E4656692FD6FEAD0053A32B05324")
 
-    private ElementType theType;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.728 -0400", hash_original_field = "89E65547A8BBD28E301BA7733FD2E3AF", hash_generated_field = "B0A2FBEB8F242E836C1CA731A6AB041F")
 
-    private AttributesImpl theAtts;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.728 -0400", hash_original_field = "A42D0E0DE01D51B60927FDF6C1F0B526", hash_generated_field = "76A7ADBAEEEC2718891FF24B2F2B9374")
 
-    private Element theNext;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.728 -0400", hash_original_field = "D8AE31ABFACD39F1529F19591E594EAD", hash_generated_field = "0EC43875BA19E67350871B910584306F")
+	private ElementType theType;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.766 -0500", hash_original_field = "04C9AEBC1E4947AFBDB44B7BD1940B45", hash_generated_field = "B0A2FBEB8F242E836C1CA731A6AB041F")
 
-    private boolean preclosed;
+	private AttributesImpl theAtts;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.768 -0500", hash_original_field = "3BA245AB5C0EF9B9814A4513B5FCA2E5", hash_generated_field = "76A7ADBAEEEC2718891FF24B2F2B9374")
+
+	private Element theNext;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.771 -0500", hash_original_field = "8157089D2DE843FF2DCA1650A0353374", hash_generated_field = "0EC43875BA19E67350871B910584306F")
+
+	private boolean preclosed;		// this element has been preclosed
+
+	/**
+	Return an Element from a specified ElementType.
+	@param type The element type of the newly constructed element
+	@param defaultAttributes True if default attributes are wanted
+	*/
+
+	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.773 -0500", hash_original_method = "99F284A13C47F669710FCFDC8EC8F9ED", hash_generated_method = "F656DF0A2026E45460A68C892D839B4D")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.730 -0400", hash_original_method = "99F284A13C47F669710FCFDC8EC8F9ED", hash_generated_method = "B1C5F8B124607918F0FDE82A4ABD9D88")
-    public  Element(ElementType type, boolean defaultAttributes) {
-        addTaint(defaultAttributes);
-        theType = type;
-        if(defaultAttributes)        
-        theAtts = new AttributesImpl(type.atts());
-        else
-        theAtts = new AttributesImpl();
-        theNext = null;
-        preclosed = false;
-        // ---------- Original Method ----------
-        //theType = type;
-        //if (defaultAttributes) theAtts = new AttributesImpl(type.atts());
-		//else theAtts = new AttributesImpl();
-        //theNext = null;
-        //preclosed = false;
-    }
+public Element(ElementType type, boolean defaultAttributes) {
+		theType = type;
+		if (defaultAttributes) theAtts = new AttributesImpl(type.atts());
+		else theAtts = new AttributesImpl();
+		theNext = null;
+		preclosed = false;
+		}
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.730 -0400", hash_original_method = "BFA15C1190E0B500E7A321E762D22239", hash_generated_method = "600964534B1E4FADDBF41CF612F8A6D0")
-    public ElementType type() {
-ElementType varF51095CBFCCE381E73DD672B54BEF95F_938425503 =         theType;
-        varF51095CBFCCE381E73DD672B54BEF95F_938425503.addTaint(taint);
-        return varF51095CBFCCE381E73DD672B54BEF95F_938425503;
-        // ---------- Original Method ----------
-        //return theType;
-    }
+	/**
+	Return the element type.
+	@return The element type.
+	*/
 
+	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.776 -0500", hash_original_method = "BFA15C1190E0B500E7A321E762D22239", hash_generated_method = "2875FF332AF6CE4B8C63A2367206488B")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.731 -0400", hash_original_method = "5DFAF4737CD1323AC5BCD66ECC931C62", hash_generated_method = "133F61A0BE19C316BACACAA6C37157C7")
-    public AttributesImpl atts() {
-AttributesImpl varFB5CAB611E727D03F638BBA9F461FD53_362753756 =         theAtts;
-        varFB5CAB611E727D03F638BBA9F461FD53_362753756.addTaint(taint);
-        return varFB5CAB611E727D03F638BBA9F461FD53_362753756;
-        // ---------- Original Method ----------
-        //return theAtts;
-    }
+public ElementType type() { return theType; }
 
+	/**
+	Return the attributes as an AttributesImpl object.
+	Returning an AttributesImpl makes the attributes mutable.
+	@return The attributes
+	@see AttributesImpl
+	*/
+	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.778 -0500", hash_original_method = "5DFAF4737CD1323AC5BCD66ECC931C62", hash_generated_method = "A5059275FC8F144B7A8A5FD136ABE33B")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.731 -0400", hash_original_method = "9BD985D9D137F9E87CC0C75657FC57B8", hash_generated_method = "E554BCB6A95AA473CAE36810BB5D79DE")
-    public Element next() {
-Element varB89BFAC58CA29A6FFD18C2AE8DA88577_940414750 =         theNext;
-        varB89BFAC58CA29A6FFD18C2AE8DA88577_940414750.addTaint(taint);
-        return varB89BFAC58CA29A6FFD18C2AE8DA88577_940414750;
-        // ---------- Original Method ----------
-        //return theNext;
-    }
+public AttributesImpl atts() { return theAtts; }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.732 -0400", hash_original_method = "9784418C474A290336108D75EC2613BB", hash_generated_method = "B0D02388E7E125BF20397459054E2AB9")
-    public void setNext(Element next) {
-        theNext = next;
-        // ---------- Original Method ----------
-        //theNext = next;
-    }
+	/**
+	Return the next element in an element stack or queue.
+	@return The next element
+	*/
 
+	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.780 -0500", hash_original_method = "9BD985D9D137F9E87CC0C75657FC57B8", hash_generated_method = "32FF19C454094FA2C68CBFDFC4AA27D0")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.732 -0400", hash_original_method = "4B70092235E7A40F6E106A246C1B1B53", hash_generated_method = "6F2F6B925AE1C0DF5DA801AC24F653D2")
-    public String name() {
-String var005C4062513861A340896052683FF400_976220520 =         theType.name();
-        var005C4062513861A340896052683FF400_976220520.addTaint(taint);
-        return var005C4062513861A340896052683FF400_976220520;
-        // ---------- Original Method ----------
-        //return theType.name();
-    }
+public Element next() { return theNext; }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.732 -0400", hash_original_method = "80004BAEB2388ADEF62653D4EDD03DA4", hash_generated_method = "640112CFEBAF388FA93C0BBD4EF9E2FC")
-    public String namespace() {
-String var423C72382D1E2291404BC0912AFBCE6F_623377143 =         theType.namespace();
-        var423C72382D1E2291404BC0912AFBCE6F_623377143.addTaint(taint);
-        return var423C72382D1E2291404BC0912AFBCE6F_623377143;
-        // ---------- Original Method ----------
-        //return theType.namespace();
-    }
+	/**
+	Change the next element in an element stack or queue.
+	@param next The new next element
+	*/
 
+	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.782 -0500", hash_original_method = "9784418C474A290336108D75EC2613BB", hash_generated_method = "DF1C8B4C96BD5AB4F2458D45A009ADC3")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.732 -0400", hash_original_method = "013647E32C485C8E11074DEB96ED8B2D", hash_generated_method = "3C52B7C0A384F6CF3FB199541DFC8D40")
-    public String localName() {
-String varB3EF0FC926F2BDE57E879A05A0656297_1942043459 =         theType.localName();
-        varB3EF0FC926F2BDE57E879A05A0656297_1942043459.addTaint(taint);
-        return varB3EF0FC926F2BDE57E879A05A0656297_1942043459;
-        // ---------- Original Method ----------
-        //return theType.localName();
-    }
+public void setNext(Element next) { theNext = next; }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.733 -0400", hash_original_method = "3430000E3BB78B9B3224C2ADE055F8C5", hash_generated_method = "380A80C3228A0EA7865E08E06976279F")
-    public int model() {
-        int var736FB8E81AE145E9ACFCE37EE55156CB_649516623 = (theType.model());
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_367929277 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_367929277;
-        // ---------- Original Method ----------
-        //return theType.model();
-    }
+	/**
+	Return the name of the element's type.
+	Convenience method.
+	@return The element type name
+	*/
 
+	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.784 -0500", hash_original_method = "4B70092235E7A40F6E106A246C1B1B53", hash_generated_method = "D91682FC0B2A992D45586C42FA5F0135")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.733 -0400", hash_original_method = "1DD49D169AB38515FFA4793B4461E091", hash_generated_method = "B47781E2F50CF6026C71E3BD76CA06C1")
-    public int memberOf() {
-        int var86578D803F3E2C7995C52681C9AD2EB0_486051793 = (theType.memberOf());
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1139785238 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1139785238;
-        // ---------- Original Method ----------
-        //return theType.memberOf();
-    }
+public String name() { return theType.name(); }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.733 -0400", hash_original_method = "383432538F005F982D316492CCCB0325", hash_generated_method = "79FC18D289808827CFF7B41BC31A72D8")
-    public int flags() {
-        int var711B48DD659D94FE27F8ADFDD5622E4A_649514765 = (theType.flags());
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1261722626 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1261722626;
-        // ---------- Original Method ----------
-        //return theType.flags();
-    }
+	/**
+	Return the namespace name of the element's type.
+	Convenience method.
+	@return The element type namespace name
+	*/
 
+	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.787 -0500", hash_original_method = "80004BAEB2388ADEF62653D4EDD03DA4", hash_generated_method = "9277F78D069B6EE853C29B83B4097FBF")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.733 -0400", hash_original_method = "BCFB422D01A5282722899F511B11ECF6", hash_generated_method = "C578E295913BB8E47E0B12705098B67A")
-    public ElementType parent() {
-ElementType varBCFFE70A770DBF894E201FA2576E81A0_682853896 =         theType.parent();
-        varBCFFE70A770DBF894E201FA2576E81A0_682853896.addTaint(taint);
-        return varBCFFE70A770DBF894E201FA2576E81A0_682853896;
-        // ---------- Original Method ----------
-        //return theType.parent();
-    }
+public String namespace() { return theType.namespace(); }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.734 -0400", hash_original_method = "BC680BBCF0406870088BFC77978994BB", hash_generated_method = "95F2BBC88C9693D1EC79D2901824ED64")
-    public boolean canContain(Element other) {
-        addTaint(other.getTaint());
-        boolean var8885BCA2DBC3218C8B2A336EB9FA1B44_1824549433 = (theType.canContain(other.theType));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_62788045 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_62788045;
-        // ---------- Original Method ----------
-        //return theType.canContain(other.theType);
-    }
+	/**
+	Return the local name of the element's type.
+	Convenience method.
+	@return The element type local name
+	*/
 
+	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.789 -0500", hash_original_method = "013647E32C485C8E11074DEB96ED8B2D", hash_generated_method = "7E29A0B3CD01F381409D46FE78A1FB1B")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.734 -0400", hash_original_method = "D84E1EF02E49BC2153CE4E53757510D3", hash_generated_method = "4249155B1CC51900DBF381C89E01AC95")
-    public void setAttribute(String name, String type, String value) {
-        addTaint(value.getTaint());
-        addTaint(type.getTaint());
-        addTaint(name.getTaint());
-        theType.setAttribute(theAtts, name, type, value);
-        // ---------- Original Method ----------
-        //theType.setAttribute(theAtts, name, type, value);
-    }
+public String localName() { return theType.localName(); }
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.735 -0400", hash_original_method = "B1EC3E2E623AD0C28D4FB442F2195ED7", hash_generated_method = "4811898F9D444106B3C5C3D5A6BEC4D1")
-    public void anonymize() {
-for(int i = theAtts.getLength() - 1;i >= 0;i--)
-        {
-            if(theAtts.getType(i).equals("ID") ||
-			    theAtts.getQName(i).equals("name"))            
-            {
-                theAtts.removeAttribute(i);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //for (int i = theAtts.getLength() - 1; i >= 0; i--) {
-			//if (theAtts.getType(i).equals("ID") ||
-			    //theAtts.getQName(i).equals("name")) {
-				//theAtts.removeAttribute(i);
-				//}
-			//}
-    }
+	/**
+	Return the content model vector of the element's type.
+	Convenience method.
+	@return The content model vector
+	*/
 
+	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.791 -0500", hash_original_method = "3430000E3BB78B9B3224C2ADE055F8C5", hash_generated_method = "89985E528DD0E88B550D9AD8B3FD074E")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.735 -0400", hash_original_method = "D93155F43F41AF612E7774F463E1747A", hash_generated_method = "58ACB8CBF2A09804B1FD80B474F58E3E")
-    public void clean() {
-for(int i = theAtts.getLength() - 1;i >= 0;i--)
-        {
-            String name = theAtts.getLocalName(i);
-            if(theAtts.getValue(i) == null || name == null ||
-					name.length() == 0)            
-            {
-                theAtts.removeAttribute(i);
-                continue;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //for (int i = theAtts.getLength() - 1; i >= 0; i--) {
-			//String name = theAtts.getLocalName(i);
-			//if (theAtts.getValue(i) == null || name == null ||
-					//name.length() == 0) {
-				//theAtts.removeAttribute(i);
-				//continue;
-				//}
-			//}
-    }
+public int model() { return theType.model(); }
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.735 -0400", hash_original_method = "4B2B445A367BD9870FD7E6D0B377F667", hash_generated_method = "9487A721FE8CC0EDA322618ED3CDFEEE")
-    public void preclose() {
-        preclosed = true;
-        // ---------- Original Method ----------
-        //preclosed = true;
-    }
+	/**
+	Return the member-of vector of the element's type.
+	Convenience method.
+	@return The member-of vector
+	*/
 
+	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.793 -0500", hash_original_method = "1DD49D169AB38515FFA4793B4461E091", hash_generated_method = "7F429E698C9C5E544D1E6A71723F5085")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.736 -0400", hash_original_method = "D6339CFBAEA862E2360C9454B8ED0BC8", hash_generated_method = "C90906B1F1E3FF71E54B615A8D2BB084")
-    public boolean isPreclosed() {
-        boolean varD8AE31ABFACD39F1529F19591E594EAD_1545916132 = (preclosed);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_298220399 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_298220399;
-        // ---------- Original Method ----------
-        //return preclosed;
-    }
+public int memberOf() { return theType.memberOf(); }
+
+	/**
+	Return the flags vector of the element's type.
+	Convenience method.
+	@return The flags vector
+	*/
+
+	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.796 -0500", hash_original_method = "383432538F005F982D316492CCCB0325", hash_generated_method = "F9919C39AE93CC0FEAFC8BF6BBA4B875")
+    
+public int flags() { return theType.flags(); }
+
+	/**
+	Return the parent element type of the element's type.
+	Convenience method.
+	@return The parent element type
+	*/
+
+	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.798 -0500", hash_original_method = "BCFB422D01A5282722899F511B11ECF6", hash_generated_method = "14D7A8B5CD7268744EC7DA49036B42B1")
+    
+public ElementType parent() { return theType.parent(); }
+
+	/**
+	Return true if the type of this element can contain the type of
+	another element.
+	Convenience method.
+	@param other The other element
+	*/
+
+	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.800 -0500", hash_original_method = "BC680BBCF0406870088BFC77978994BB", hash_generated_method = "FFE885D5C9B076C775282870959EC876")
+    
+public boolean canContain(Element other) {
+		return theType.canContain(other.theType);
+		}
+
+
+	/**
+	Set an attribute and its value into this element.
+	@param name The attribute name (Qname)
+	@param type The attribute type
+	@param value The attribute value
+	*/
+
+	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.803 -0500", hash_original_method = "D84E1EF02E49BC2153CE4E53757510D3", hash_generated_method = "7B76AD311063C5CDD549D2B8CD04EBE0")
+    
+public void setAttribute(String name, String type, String value) {
+		theType.setAttribute(theAtts, name, type, value);
+		}
+
+	/**
+	Make this element anonymous.
+	Remove any <tt>id</tt> or <tt>name</tt> attribute present
+	in the element's attributes.
+	*/
+
+	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.805 -0500", hash_original_method = "B1EC3E2E623AD0C28D4FB442F2195ED7", hash_generated_method = "F36128AF3450EEB3C5ECD679FC6680CB")
+    
+public void anonymize() {
+		for (int i = theAtts.getLength() - 1; i >= 0; i--) {
+			if (theAtts.getType(i).equals("ID") ||
+			    theAtts.getQName(i).equals("name")) {
+				theAtts.removeAttribute(i);
+				}
+			}
+		}
+
+	/**
+	Clean the attributes of this element.
+	Attributes with null name (the name was ill-formed)
+	or null value (the attribute was present in the element type but
+	not in this actual element) are removed.
+	*/
+
+	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.808 -0500", hash_original_method = "D93155F43F41AF612E7774F463E1747A", hash_generated_method = "B0A07F09AFEBA201295BC1C071BF2828")
+    
+public void clean() {
+		for (int i = theAtts.getLength() - 1; i >= 0; i--) {
+			String name = theAtts.getLocalName(i);
+			if (theAtts.getValue(i) == null || name == null ||
+					name.length() == 0) {
+				theAtts.removeAttribute(i);
+				continue;
+				}
+			}
+		}
+
+	/**
+	Force this element to preclosed status, meaning that an end-tag has
+	been seen but the element cannot yet be closed for structural reasons.
+	*/
+
+	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.810 -0500", hash_original_method = "4B2B445A367BD9870FD7E6D0B377F667", hash_generated_method = "8E320527BB20B219C7F2ACCCB3287FEA")
+    
+public void preclose() {
+		preclosed = true;
+		}
+
+	/**
+	Return true if this element has been preclosed.
+	*/
+
+	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.812 -0500", hash_original_method = "D6339CFBAEA862E2360C9454B8ED0BC8", hash_generated_method = "75DBB3A9402117CEFF362A3890042B39")
+    
+public boolean isPreclosed() {
+		return preclosed;
+		}
 
     
 }

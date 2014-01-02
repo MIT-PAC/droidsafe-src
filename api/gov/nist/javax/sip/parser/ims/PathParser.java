@@ -1,6 +1,8 @@
 package gov.nist.javax.sip.parser.ims;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import gov.nist.javax.sip.header.SIPHeader;
 import gov.nist.javax.sip.header.ims.Path;
@@ -14,71 +16,67 @@ import java.text.ParseException;
 
 
 public class PathParser extends AddressParametersParser implements TokenTypes {
+
+    /**
+     * Constructor
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:44.156 -0500", hash_original_method = "7A079BF63C48031C1D75ACF959BDA24D", hash_generated_method = "E119292C8F5D62110AF1CE0ACF0B5286")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.045 -0400", hash_original_method = "7A079BF63C48031C1D75ACF959BDA24D", hash_generated_method = "8C9FF8410B31649835F48ABA0CD38AC9")
-    public  PathParser(String path) {
+public PathParser(String path) {
         super(path);
-        addTaint(path.getTaint());
-        // ---------- Original Method ----------
+
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:44.158 -0500", hash_original_method = "91CE1B5A663F1BD7DA26A8D59664C334", hash_generated_method = "CA70901F113022FD0A4D747653931086")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.046 -0400", hash_original_method = "91CE1B5A663F1BD7DA26A8D59664C334", hash_generated_method = "F9264225D532990B0A316E96E402C1BB")
-    protected  PathParser(Lexer lexer) {
+protected PathParser(Lexer lexer) {
         super(lexer);
-        addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+
     }
 
+
+
+
+    /**
+     * parse the String message and generate the RecordRoute List Object
+     * @return SIPHeader the RecordRoute List object
+     * @throws ParseException if errors occur during the parsing
+     */
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:44.161 -0500", hash_original_method = "F1314A453C93E830C24484946DC25942", hash_generated_method = "08FB4211899015991841F25F84138047")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.074 -0400", hash_original_method = "F1314A453C93E830C24484946DC25942", hash_generated_method = "5BFCDAA7F98690C138EBA5CDCC1165F4")
-    public SIPHeader parse() throws ParseException {
+public SIPHeader parse() throws ParseException {
+
         PathList pathList = new PathList();
-        if(debug)        
-        dbg_enter("PathParser.parse");
-        try 
-        {
+
+        if (debug)
+            dbg_enter("PathParser.parse");
+
+        try {
             this.lexer.match(TokenTypes.PATH);
             this.lexer.SPorHT();
             this.lexer.match(':');
             this.lexer.SPorHT();
-            while
-(true)            
-            {
+            while (true) {
                 Path path = new Path();
                 super.parse(path);
                 pathList.add(path);
                 this.lexer.SPorHT();
                 char la = lexer.lookAhead(0);
-                if(la == ',')                
-                {
+                if (la == ',') {
                     this.lexer.match(',');
                     this.lexer.SPorHT();
-                } //End block
+                } else if (la == '\n')
+                    break;
                 else
-                if(la == '\n')                
-                break;
-                else
-                {
-                java.text.ParseException var7805DD1445672D84C07E56FCC19D9765_949329519 = createParseException("unexpected char");
-                var7805DD1445672D84C07E56FCC19D9765_949329519.addTaint(taint);
-                throw var7805DD1445672D84C07E56FCC19D9765_949329519;
-                }
-            } //End block
-SIPHeader var024CEB90B19D0AC297D288C50E00741D_524665310 =             pathList;
-            var024CEB90B19D0AC297D288C50E00741D_524665310.addTaint(taint);
-            return var024CEB90B19D0AC297D288C50E00741D_524665310;
-        } //End block
-        finally 
-        {
-            if(debug)            
-            dbg_leave("PathParser.parse");
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                    throw createParseException("unexpected char");
+            }
+            return pathList;
+        } finally {
+            if (debug)
+                dbg_leave("PathParser.parse");
+        }
+
     }
 
     

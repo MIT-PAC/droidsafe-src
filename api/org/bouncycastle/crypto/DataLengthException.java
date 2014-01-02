@@ -1,24 +1,32 @@
 package org.bouncycastle.crypto;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
 public class DataLengthException extends RuntimeCryptoException {
+    /**
+     * base constructor.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:29.911 -0500", hash_original_method = "FC0834C19CF17037D683010F152D90BB", hash_generated_method = "640E14C6DAC5BD895111CCF1A35ADC2C")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.439 -0400", hash_original_method = "FC0834C19CF17037D683010F152D90BB", hash_generated_method = "A3B22023B871FEE196A5F978F598E189")
-    public  DataLengthException() {
-        // ---------- Original Method ----------
+public DataLengthException()
+    {
     }
 
+    /**
+     * create a DataLengthException with the given message.
+     *
+     * @param message the message to be carried with the exception.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:29.914 -0500", hash_original_method = "DC74BD7370354E956783B762D3A498AE", hash_generated_method = "9AFF01BF9F54091F29523BD38AD6C2B1")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.440 -0400", hash_original_method = "DC74BD7370354E956783B762D3A498AE", hash_generated_method = "8825DFBF11F788E13B04C37E19C59FC9")
-    public  DataLengthException(
-        String  message) {
+public DataLengthException(
+        String  message)
+    {
         super(message);
-        addTaint(message.getTaint());
-        // ---------- Original Method ----------
     }
 
     

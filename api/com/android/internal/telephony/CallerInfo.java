@@ -1,6 +1,8 @@
 package com.android.internal.telephony;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Locale;
 
@@ -29,83 +31,18 @@ import com.android.i18n.phonenumbers.geocoding.PhoneNumberOfflineGeocoder;
 
 
 public class CallerInfo {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.577 -0400", hash_original_field = "B068931CC450442B63F5B3D276EA4297", hash_generated_field = "D29EB809CD7E712070B86A449A5F2E82")
 
-    public String name;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.577 -0400", hash_original_field = "C9AA10B21BC611B05B1D8E0C01E5D397", hash_generated_field = "440AA77A6AFE31BB4A89DD3D69494FCC")
-
-    public String phoneNumber;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.577 -0400", hash_original_field = "C114141BFE3BC6FDD56AED00DC448ADE", hash_generated_field = "1FCAC956C55CA8FE65CE95314F7F25A5")
-
-    public String normalizedNumber;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.577 -0400", hash_original_field = "CDB8D222ACA67FF09D8089731C878093", hash_generated_field = "B0F47A76CE370376335E2E3B255A2766")
-
-    public String geoDescription;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.577 -0400", hash_original_field = "05B2F7F3A77F16B32088D3A5F859DA1D", hash_generated_field = "B239E8D02EB187DB23B68D6C87ACA90A")
-
-    public String cnapName;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.577 -0400", hash_original_field = "F00A6033EECCE0EBD17BDAAC2E6671A9", hash_generated_field = "6CB3D906347F781338EC2DA9AF9D3365")
-
-    public int numberPresentation;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.577 -0400", hash_original_field = "2EA6554455FD669EC0582028CFF50FED", hash_generated_field = "7E759DEFD9070D930A5C3E6F52204FE3")
-
-    public int namePresentation;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.577 -0400", hash_original_field = "575EAA188F5AFC5576C746A9B16FF554", hash_generated_field = "BA5FDC53005F54B6481D897E9773C1AD")
-
-    public boolean contactExists;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.577 -0400", hash_original_field = "A6E1333E7C7DF540FCBAC999B871D5D2", hash_generated_field = "B16EA2F1B36E8F31FFFDD25645C62D92")
-
-    public String phoneLabel;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.577 -0400", hash_original_field = "C96EC7AE450E302C973C98A94F4C4F8E", hash_generated_field = "CB2493E4DE6F750739F3F00C76D6A18B")
-
-    public int numberType;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.577 -0400", hash_original_field = "19789316F27DD72CAD6704F393DBCD98", hash_generated_field = "DC003E91EAF2F383F99FD982D8286299")
-
-    public String numberLabel;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.577 -0400", hash_original_field = "F552EBBF7088E9FBBC94484D8415B926", hash_generated_field = "7D7BB200679F8010347C035166402B92")
-
-    public int photoResource;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.577 -0400", hash_original_field = "A8452CA7C1312F959E1307FE2D017EB0", hash_generated_field = "FDDDE3BF3B641EAA1034B3C7122F3126")
-
-    public long person_id;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.577 -0400", hash_original_field = "16501DD19601E7EF2AA421BF34585F73", hash_generated_field = "17EB7188E1B1D845DEEC396DC31CC981")
-
-    public boolean needUpdate;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.577 -0400", hash_original_field = "6836761401024E3A571DCC238DC95557", hash_generated_field = "612D6F5E16D520A8FBC35209D3A929E0")
-
-    public Uri contactRefUri;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.577 -0400", hash_original_field = "D99CB9FD030B240963A5842DDBF476F4", hash_generated_field = "40E4CFFDC861CB7D8A3A28A79FE8B4E5")
-
-    public Uri contactRingtoneUri;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.577 -0400", hash_original_field = "EA6B3607E408CD3F2FD02E4E65968491", hash_generated_field = "B5047F13B9C79DABFA54CBD97E311123")
-
-    public boolean shouldSendToVoicemail;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.577 -0400", hash_original_field = "C409C4D7582ADF222CAF71808869B31F", hash_generated_field = "BD5B69D3766879CD2CBA19452914957C")
-
-    public Drawable cachedPhoto;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.577 -0400", hash_original_field = "A14B1CB28C7C251E6859B9F351B19B21", hash_generated_field = "BAFA7F448C3A70043BC325312AF1D8E9")
-
-    public boolean isCachedPhotoCurrent;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.577 -0400", hash_original_field = "7376A55F5290745246270E1790E042B5", hash_generated_field = "A071CE64713D0CEBE0F796AE77A242C0")
-
-    private boolean mIsEmergency;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.577 -0400", hash_original_field = "4452D8CFC3290241F7E75DF22D239FD7", hash_generated_field = "FDF7722A08FE4E08F4285E4AC4744B13")
-
-    private boolean mIsVoiceMail;
+    /**
+     * getCallerInfo given a Cursor.
+     * @param context the context used to retrieve string constants
+     * @param contactRef the URI to attach to this CallerInfo object
+     * @param cursor the first object in the cursor is used to build the CallerInfo object.
+     * @return the CallerInfo which contains the caller id for the given
+     * number. The returned CallerInfo is null if no number is supplied.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.400 -0500", hash_original_method = "5A41265338B441253D84C904D0572F1D", hash_generated_method = "D527D4D2440A499A7FDB9223A8D1728A")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.577 -0400", hash_original_method = "35A0AB919675AC2E6DFA09874C99CFA1", hash_generated_method = "7EF09FC36F6EA834DB6A5FF04EABDDBC")
-    public  CallerInfo() {
-        mIsEmergency = false;
-        mIsVoiceMail = false;
-        // ---------- Original Method ----------
-        //mIsEmergency = false;
-        //mIsVoiceMail = false;
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    public static CallerInfo getCallerInfo(Context context, Uri contactRef, Cursor cursor) {
+public static CallerInfo getCallerInfo(Context context, Uri contactRef, Cursor cursor) {
         CallerInfo info = new CallerInfo();
         info.photoResource = 0;
         info.phoneLabel = null;
@@ -114,22 +51,36 @@ public class CallerInfo {
         info.cachedPhoto = null;
         info.isCachedPhotoCurrent = false;
         info.contactExists = false;
+
         if (VDBG) Log.v(TAG, "getCallerInfo() based on cursor...");
+
         if (cursor != null) {
             if (cursor.moveToFirst()) {
+                // TODO: photo_id is always available but not taken
+                // care of here. Maybe we should store it in the
+                // CallerInfo object as well.
+
                 int columnIndex;
+
+                // Look for the name
                 columnIndex = cursor.getColumnIndex(PhoneLookup.DISPLAY_NAME);
                 if (columnIndex != -1) {
                     info.name = cursor.getString(columnIndex);
                 }
+
+                // Look for the number
                 columnIndex = cursor.getColumnIndex(PhoneLookup.NUMBER);
                 if (columnIndex != -1) {
                     info.phoneNumber = cursor.getString(columnIndex);
                 }
+
+                // Look for the normalized number
                 columnIndex = cursor.getColumnIndex(PhoneLookup.NORMALIZED_NUMBER);
                 if (columnIndex != -1) {
                     info.normalizedNumber = cursor.getString(columnIndex);
                 }
+
+                // Look for the label/type combo
                 columnIndex = cursor.getColumnIndex(PhoneLookup.LABEL);
                 if (columnIndex != -1) {
                     int typeColumnIndex = cursor.getColumnIndex(PhoneLookup.TYPE);
@@ -141,19 +92,31 @@ public class CallerInfo {
                                 .toString();
                     }
                 }
+
+                // Look for the person_id.
                 columnIndex = getColumnIndexForPersonId(contactRef, cursor);
                 if (columnIndex != -1) {
                     info.person_id = cursor.getLong(columnIndex);
                     if (VDBG) Log.v(TAG, "==> got info.person_id: " + info.person_id);
                 } else {
+                    // No valid columnIndex, so we can't look up person_id.
                     Log.w(TAG, "Couldn't find person_id column for " + contactRef);
+                    // Watch out: this means that anything that depends on
+                    // person_id will be broken (like contact photo lookups in
+                    // the in-call UI, for example.)
                 }
+
+                // look for the custom ringtone, create from the string stored
+                // in the database.
                 columnIndex = cursor.getColumnIndex(PhoneLookup.CUSTOM_RINGTONE);
                 if ((columnIndex != -1) && (cursor.getString(columnIndex) != null)) {
                     info.contactRingtoneUri = Uri.parse(cursor.getString(columnIndex));
                 } else {
                     info.contactRingtoneUri = null;
                 }
+
+                // look for the send to voicemail flag, set it to true only
+                // under certain circumstances.
                 columnIndex = cursor.getColumnIndex(PhoneLookup.SEND_TO_VOICEMAIL);
                 info.shouldSendToVoicemail = (columnIndex != -1) &&
                         ((cursor.getInt(columnIndex)) == 1);
@@ -161,43 +124,85 @@ public class CallerInfo {
             }
             cursor.close();
         }
+
         info.needUpdate = false;
         info.name = normalize(info.name);
         info.contactRefUri = contactRef;
+
         return info;
     }
 
+    /**
+     * getCallerInfo given a URI, look up in the call-log database
+     * for the uri unique key.
+     * @param context the context used to get the ContentResolver
+     * @param contactRef the URI used to lookup caller id
+     * @return the CallerInfo which contains the caller id for the given
+     * number. The returned CallerInfo is null if no number is supplied.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.403 -0500", hash_original_method = "C8DFF2D0C3894E1B9175858C5EE3D3BB", hash_generated_method = "237AEB559BC360557812F8BE65E7FC45")
     
-    @DSModeled(DSC.BAN)
-    public static CallerInfo getCallerInfo(Context context, Uri contactRef) {
+public static CallerInfo getCallerInfo(Context context, Uri contactRef) {
+
         return getCallerInfo(context, contactRef,
                 context.getContentResolver().query(contactRef, null, null, null, null));
     }
 
+    /**
+     * getCallerInfo given a phone number, look up in the call-log database
+     * for the matching caller id info.
+     * @param context the context used to get the ContentResolver
+     * @param number the phone number used to lookup caller id
+     * @return the CallerInfo which contains the caller id for the given
+     * number. The returned CallerInfo is null if no number is supplied. If
+     * a matching number is not found, then a generic caller info is returned,
+     * with all relevant fields empty or null.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.406 -0500", hash_original_method = "B6705B43DEEA0F2192B48F9F777B01B4", hash_generated_method = "FE8D81ECCCA8A8D5C94A6A43ADF78785")
     
-    @DSModeled(DSC.BAN)
-    public static CallerInfo getCallerInfo(Context context, String number) {
+public static CallerInfo getCallerInfo(Context context, String number) {
         if (VDBG) Log.v(TAG, "getCallerInfo() based on number...");
+
         if (TextUtils.isEmpty(number)) {
             return null;
         }
+
+        // Change the callerInfo number ONLY if it is an emergency number
+        // or if it is the voicemail number.  If it is either, take a
+        // shortcut and skip the query.
         if (PhoneNumberUtils.isLocalEmergencyNumber(number, context)) {
             return new CallerInfo().markAsEmergency(context);
         } else if (PhoneNumberUtils.isVoiceMailNumber(number)) {
             return new CallerInfo().markAsVoiceMail();
         }
+
         Uri contactUri = Uri.withAppendedPath(PhoneLookup.CONTENT_FILTER_URI, Uri.encode(number));
+
         CallerInfo info = getCallerInfo(context, contactUri);
         info = doSecondaryLookupIfNecessary(context, number, info);
+
+        // if no query results were returned with a viable number,
+        // fill in the original number value we used to query with.
         if (TextUtils.isEmpty(info.phoneNumber)) {
             info.phoneNumber = number;
         }
+
         return info;
     }
 
+    /**
+     * Performs another lookup if previous lookup fails and it's a SIP call
+     * and the peer's username is all numeric. Look up the username as it
+     * could be a PSTN number in the contact database.
+     *
+     * @param context the query context
+     * @param number the original phone number, could be a SIP URI
+     * @param previousResult the result of previous lookup
+     * @return previousResult if it's not the case
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.408 -0500", hash_original_method = "2C00C7AAB5402D365DFE9454D01A448E", hash_generated_method = "7E78560CD6C15B30DB0177E24FE61CB0")
     
-    @DSModeled(DSC.BAN)
-    static CallerInfo doSecondaryLookupIfNecessary(Context context,
+static CallerInfo doSecondaryLookupIfNecessary(Context context,
             String number, CallerInfo previousResult) {
         if (!previousResult.contactExists
                 && PhoneNumberUtils.isUriNumber(number)) {
@@ -211,93 +216,44 @@ public class CallerInfo {
         return previousResult;
     }
 
+    /**
+     * getCallerId: a convenience method to get the caller id for a given
+     * number.
+     *
+     * @param context the context used to get the ContentResolver.
+     * @param number a phone number.
+     * @return if the number belongs to a contact, the contact's name is
+     * returned; otherwise, the number itself is returned.
+     *
+     * TODO NOTE: This MAY need to refer to the Asynchronous Query API
+     * [startQuery()], instead of getCallerInfo, but since it looks like
+     * it is only being used by the provider calls in the messaging app:
+     *   1. android.provider.Telephony.Mms.getDisplayAddress()
+     *   2. android.provider.Telephony.Sms.getDisplayAddress()
+     * We may not need to make the change.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.411 -0500", hash_original_method = "AE0F6FD0A3800B899159B72DD57AA38C", hash_generated_method = "88815FCB5523578FB3BBEA604044CB5D")
     
-    @DSModeled(DSC.BAN)
-    public static String getCallerId(Context context, String number) {
+public static String getCallerId(Context context, String number) {
         CallerInfo info = getCallerInfo(context, number);
         String callerID = null;
+
         if (info != null) {
             String name = info.name;
+
             if (!TextUtils.isEmpty(name)) {
                 callerID = name;
             } else {
                 callerID = number;
             }
         }
+
         return callerID;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.423 -0500", hash_original_method = "71A6B1217E93364C7D01FED08EAA4DA2", hash_generated_method = "45B1D7824A9F151C89386B31B7CDCF36")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.578 -0400", hash_original_method = "949F12A508ED637C7BFB9FE80F3ED419", hash_generated_method = "37FA2DA01082417026523AF47BA0779F")
-    public boolean isEmergencyNumber() {
-        boolean var7376A55F5290745246270E1790E042B5_690769222 = (mIsEmergency);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_566582224 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_566582224;
-        // ---------- Original Method ----------
-        //return mIsEmergency;
-    }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.578 -0400", hash_original_method = "61436A0A05C2AD638DF9E2E803CA6155", hash_generated_method = "5D7D3D54D64F05799111E78C5175F45E")
-    public boolean isVoiceMailNumber() {
-        boolean var4452D8CFC3290241F7E75DF22D239FD7_623479805 = (mIsVoiceMail);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1966114545 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1966114545;
-        // ---------- Original Method ----------
-        //return mIsVoiceMail;
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.578 -0400", hash_original_method = "0EF2E0F94875209BDFD349217543907F", hash_generated_method = "680AF92753A12CD38D8F57C4697879D6")
-     CallerInfo markAsEmergency(Context context) {
-        phoneNumber = context.getString(
-            com.android.internal.R.string.emergency_call_dialog_number_for_display);
-        photoResource = com.android.internal.R.drawable.picture_emergency;
-        mIsEmergency = true;
-CallerInfo var72A74007B2BE62B849F475C7BDA4658B_1616552895 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_1616552895.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_1616552895;
-        // ---------- Original Method ----------
-        //phoneNumber = context.getString(
-            //com.android.internal.R.string.emergency_call_dialog_number_for_display);
-        //photoResource = com.android.internal.R.drawable.picture_emergency;
-        //mIsEmergency = true;
-        //return this;
-    }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.578 -0400", hash_original_method = "E50E44C9D86336E922CA2AE8F511D506", hash_generated_method = "4BD684E00DB08079E2E6C45704D4A3A8")
-     CallerInfo markAsVoiceMail() {
-        mIsVoiceMail = true;
-        try 
-        {
-            String voiceMailLabel = TelephonyManager.getDefault().getVoiceMailAlphaTag();
-            phoneNumber = voiceMailLabel;
-        } //End block
-        catch (SecurityException se)
-        {
-        } //End block
-CallerInfo var72A74007B2BE62B849F475C7BDA4658B_1258116002 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_1258116002.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_1258116002;
-        // ---------- Original Method ----------
-        //mIsVoiceMail = true;
-        //try {
-            //String voiceMailLabel = TelephonyManager.getDefault().getVoiceMailAlphaTag();
-            //phoneNumber = voiceMailLabel;
-        //} catch (SecurityException se) {
-            //Log.e(TAG, "Cannot access VoiceMail.", se);
-        //}
-        //return this;
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    private static String normalize(String s) {
+private static String normalize(String s) {
         if (s == null || s.length() > 0) {
             return s;
         } else {
@@ -305,20 +261,74 @@ CallerInfo var72A74007B2BE62B849F475C7BDA4658B_1258116002 =         this;
         }
     }
 
+    /**
+     * Returns the column index to use to find the "person_id" field in
+     * the specified cursor, based on the contact URI that was originally
+     * queried.
+     *
+     * This is a helper function for the getCallerInfo() method that takes
+     * a Cursor.  Looking up the person_id is nontrivial (compared to all
+     * the other CallerInfo fields) since the column we need to use
+     * depends on what query we originally ran.
+     *
+     * Watch out: be sure to not do any database access in this method, since
+     * it's run from the UI thread (see comments below for more info.)
+     *
+     * @return the columnIndex to use (with cursor.getLong()) to get the
+     * person_id, or -1 if we couldn't figure out what colum to use.
+     *
+     * TODO: Add a unittest for this method.  (This is a little tricky to
+     * test, since we'll need a live contacts database to test against,
+     * preloaded with at least some phone numbers and SIP addresses.  And
+     * we'll probably have to hardcode the column indexes we expect, so
+     * the test might break whenever the contacts schema changes.  But we
+     * can at least make sure we handle all the URI patterns we claim to,
+     * and that the mime types match what we expect...)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.426 -0500", hash_original_method = "97B5B13CD9531D9C33606FD55C18B289", hash_generated_method = "708E7269CAE868800938544CD9E20D21")
     
-    @DSModeled(DSC.BAN)
-    private static int getColumnIndexForPersonId(Uri contactRef, Cursor cursor) {
+private static int getColumnIndexForPersonId(Uri contactRef, Cursor cursor) {
+        // TODO: This is pretty ugly now, see bug 2269240 for
+        // more details. The column to use depends upon the type of URL:
+        // - content://com.android.contacts/data/phones ==> use the "contact_id" column
+        // - content://com.android.contacts/phone_lookup ==> use the "_ID" column
+        // - content://com.android.contacts/data ==> use the "contact_id" column
+        // If it's none of the above, we leave columnIndex=-1 which means
+        // that the person_id field will be left unset.
+        //
+        // The logic here *used* to be based on the mime type of contactRef
+        // (for example Phone.CONTENT_ITEM_TYPE would tell us to use the
+        // RawContacts.CONTACT_ID column).  But looking up the mime type requires
+        // a call to context.getContentResolver().getType(contactRef), which
+        // isn't safe to do from the UI thread since it can cause an ANR if
+        // the contacts provider is slow or blocked (like during a sync.)
+        //
+        // So instead, figure out the column to use for person_id by just
+        // looking at the URI itself.
+
         if (VDBG) Log.v(TAG, "- getColumnIndexForPersonId: contactRef URI = '"
                         + contactRef + "'...");
+        // Warning: Do not enable the following logging (due to ANR risk.)
+        // if (VDBG) Log.v(TAG, "- MIME type: "
+        //                 + context.getContentResolver().getType(contactRef));
+
         String url = contactRef.toString();
         String columnName = null;
         if (url.startsWith("content://com.android.contacts/data/phones")) {
+            // Direct lookup in the Phone table.
+            // MIME type: Phone.CONTENT_ITEM_TYPE (= "vnd.android.cursor.item/phone_v2")
             if (VDBG) Log.v(TAG, "'data/phones' URI; using RawContacts.CONTACT_ID");
             columnName = RawContacts.CONTACT_ID;
         } else if (url.startsWith("content://com.android.contacts/data")) {
+            // Direct lookup in the Data table.
+            // MIME type: Data.CONTENT_TYPE (= "vnd.android.cursor.dir/data")
             if (VDBG) Log.v(TAG, "'data' URI; using Data.CONTACT_ID");
+            // (Note Data.CONTACT_ID and RawContacts.CONTACT_ID are equivalent.)
             columnName = Data.CONTACT_ID;
         } else if (url.startsWith("content://com.android.contacts/phone_lookup")) {
+            // Lookup in the PhoneLookup table, which provides "fuzzy matching"
+            // for phone numbers.
+            // MIME type: PhoneLookup.CONTENT_TYPE (= "vnd.android.cursor.dir/phone_lookup")
             if (VDBG) Log.v(TAG, "'phone_lookup' URI; using PhoneLookup._ID");
             columnName = PhoneLookup._ID;
         } else {
@@ -330,27 +340,22 @@ CallerInfo var72A74007B2BE62B849F475C7BDA4658B_1258116002 =         this;
         return columnIndex;
     }
 
+    /**
+     * @return a geographical description string for the specified number.
+     * @see com.android.i18n.phonenumbers.PhoneNumberOfflineGeocoder
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.433 -0500", hash_original_method = "4B8F82068E1A8ACD295433986C1E11C8", hash_generated_method = "E14D0297110973E7DC1BD55768C4078F")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.579 -0400", hash_original_method = "3180F1E37BC19852F53F68E8E13D968F", hash_generated_method = "4C6D13AE6F83DD7FE5892D790FE2AE9F")
-    public void updateGeoDescription(Context context, String fallbackNumber) {
-        addTaint(fallbackNumber.getTaint());
-        String number = TextUtils.isEmpty(phoneNumber) ? fallbackNumber : phoneNumber;
-        geoDescription = getGeoDescription(context, number);
-        // ---------- Original Method ----------
-        //String number = TextUtils.isEmpty(phoneNumber) ? fallbackNumber : phoneNumber;
-        //geoDescription = getGeoDescription(context, number);
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    private static String getGeoDescription(Context context, String number) {
+private static String getGeoDescription(Context context, String number) {
         if (VDBG) Log.v(TAG, "getGeoDescription('" + number + "')...");
+
         if (TextUtils.isEmpty(number)) {
             return null;
         }
+
         PhoneNumberUtil util = PhoneNumberUtil.getInstance();
         PhoneNumberOfflineGeocoder geocoder = PhoneNumberOfflineGeocoder.getInstance();
+
         Locale locale = context.getResources().getConfiguration().locale;
         String countryIso = getCurrentCountryIso(context, locale);
         PhoneNumber pn = null;
@@ -362,6 +367,7 @@ CallerInfo var72A74007B2BE62B849F475C7BDA4658B_1258116002 =         this;
         } catch (NumberParseException e) {
             Log.w(TAG, "getGeoDescription: NumberParseException for incoming number '" + number + "'");
         }
+
         if (pn != null) {
             String description = geocoder.getDescriptionForNumber(pn, locale);
             if (VDBG) Log.v(TAG, "- got description: '" + description + "'");
@@ -371,30 +377,225 @@ CallerInfo var72A74007B2BE62B849F475C7BDA4658B_1258116002 =         this;
         }
     }
 
+    /**
+     * @return The ISO 3166-1 two letters country code of the country the user
+     *         is in.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.436 -0500", hash_original_method = "0D5401F0D97863706C064268E937371A", hash_generated_method = "0C80639C06ED731977181720804DDAFB")
     
-    @DSModeled(DSC.BAN)
-    private static String getCurrentCountryIso(Context context, Locale locale) {
-        String countryIso;
-        CountryDetector detector = (CountryDetector) context.getSystemService(
+private static String getCurrentCountryIso(Context context, Locale locale) {
+      String countryIso;
+      CountryDetector detector = (CountryDetector) context.getSystemService(
           Context.COUNTRY_DETECTOR);
-        if (detector != null) {
+      if (detector != null) {
         countryIso = detector.detectCountry().getCountryIso();
       } else {
         countryIso = locale.getCountry();
         Log.w(TAG, "No CountryDetector; falling back to countryIso based on locale: "
               + countryIso);
       }
-        return countryIso;
+      return countryIso;
+    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.332 -0500", hash_original_field = "24F2322836AB1B8A7BD0513635DB2C39", hash_generated_field = "C5F3F4D6C7BF19031224AC54C88CAD76")
+
+    private static final String TAG = "CallerInfo";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.334 -0500", hash_original_field = "D5BCFD9D55F5E2FDD0A34ACE949618EF", hash_generated_field = "CD7C09194C67AD23C544256A6D8EFBB5")
+
+    private static final boolean VDBG = Log.isLoggable(TAG, Log.VERBOSE);
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.337 -0500", hash_original_field = "88E44D205DD4CD062C11D9A9EBE039D4", hash_generated_field = "14B5286CD5D74D78D60A61E8C23808CE")
+
+
+    public static final String UNKNOWN_NUMBER = "-1";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.340 -0500", hash_original_field = "400A8812536EC2D8A5A82ED8FC0A8857", hash_generated_field = "F1BFDCCA16CC5317696C3F332263F25D")
+
+    public static final String PRIVATE_NUMBER = "-2";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.343 -0500", hash_original_field = "572D897123F626D02CFB052CCD7E3FAB", hash_generated_field = "AD763B8C4A748AFE8A010B8438E44320")
+
+    public static final String PAYPHONE_NUMBER = "-3";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.345 -0500", hash_original_field = "BF45F7481B8091DE3CBF80E94F7F940B", hash_generated_field = "D29EB809CD7E712070B86A449A5F2E82")
+
+    public String name;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.348 -0500", hash_original_field = "A04F843FCA6ED01F4CA0662FF1DB199D", hash_generated_field = "440AA77A6AFE31BB4A89DD3D69494FCC")
+
+    public String phoneNumber;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.350 -0500", hash_original_field = "E21455718ED54AF9066F8010A3E5E3B6", hash_generated_field = "1FCAC956C55CA8FE65CE95314F7F25A5")
+
+    public String normalizedNumber;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.352 -0500", hash_original_field = "8BCBB81FE2872579625B63FCCBF9BA9B", hash_generated_field = "B0F47A76CE370376335E2E3B255A2766")
+
+    public String geoDescription;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.354 -0500", hash_original_field = "A86CFAAA1D8CDA1D974D232F92D46C54", hash_generated_field = "B239E8D02EB187DB23B68D6C87ACA90A")
+
+
+    public String cnapName;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.357 -0500", hash_original_field = "091FFF931E0CD34BE4923BA987466B67", hash_generated_field = "6CB3D906347F781338EC2DA9AF9D3365")
+
+    public int numberPresentation;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.360 -0500", hash_original_field = "721EAC59B6591E31E8992E203B2B56AC", hash_generated_field = "7E759DEFD9070D930A5C3E6F52204FE3")
+
+    public int namePresentation;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.362 -0500", hash_original_field = "FEA319BCF25E7974B5CF54A6AB87B266", hash_generated_field = "BA5FDC53005F54B6481D897E9773C1AD")
+
+    public boolean contactExists;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.364 -0500", hash_original_field = "95C16318AFD6918358C801BB8461E342", hash_generated_field = "B16EA2F1B36E8F31FFFDD25645C62D92")
+
+
+    public String phoneLabel;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.366 -0500", hash_original_field = "E16E5C9061E3FE5EA676B56B8F3FE12A", hash_generated_field = "CB2493E4DE6F750739F3F00C76D6A18B")
+
+    public int    numberType;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.369 -0500", hash_original_field = "AC150EDA039E39FC33F6127CA31D7746", hash_generated_field = "DC003E91EAF2F383F99FD982D8286299")
+
+    public String numberLabel;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.371 -0500", hash_original_field = "E040943544417634A9F8730D6BF32FF4", hash_generated_field = "7D7BB200679F8010347C035166402B92")
+
+
+    public int photoResource;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.373 -0500", hash_original_field = "D890AD54D13DB50B764EDF26A6912FAE", hash_generated_field = "FDDDE3BF3B641EAA1034B3C7122F3126")
+
+    public long person_id;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.376 -0500", hash_original_field = "E7876C24AC2FEF19279BE93301995D9B", hash_generated_field = "17EB7188E1B1D845DEEC396DC31CC981")
+
+    public boolean needUpdate;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.379 -0500", hash_original_field = "E6FE2C85BD8AED1A45E92536CB58EF94", hash_generated_field = "612D6F5E16D520A8FBC35209D3A929E0")
+
+    public Uri contactRefUri;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.381 -0500", hash_original_field = "97C454826C52D464945775EACEF122CD", hash_generated_field = "9866CCD528FD6B9BE8BC0A1FABA8076F")
+
+    // including the send to voicemail flag and the ringtone
+    // uri reference.
+    public Uri contactRingtoneUri;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.384 -0500", hash_original_field = "30A988FA21E597576878E9B257F59B69", hash_generated_field = "B5047F13B9C79DABFA54CBD97E311123")
+
+    public boolean shouldSendToVoicemail;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.386 -0500", hash_original_field = "7C3670BB92C33909031315997ABEA84E", hash_generated_field = "BD5B69D3766879CD2CBA19452914957C")
+
+    public Drawable cachedPhoto;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.388 -0500", hash_original_field = "AD8B69B9C3B44F0BDE9948BD83993F25", hash_generated_field = "BAFA7F448C3A70043BC325312AF1D8E9")
+
+    public boolean isCachedPhotoCurrent;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.391 -0500", hash_original_field = "79ACDEE21348FCBA838FCD3882A1E1F2", hash_generated_field = "A071CE64713D0CEBE0F796AE77A242C0")
+
+
+    private boolean mIsEmergency;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.393 -0500", hash_original_field = "FC816548BA48F427434856E62F32DAFD", hash_generated_field = "FDF7722A08FE4E08F4285E4AC4744B13")
+
+    private boolean mIsVoiceMail;
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.395 -0500", hash_original_method = "35A0AB919675AC2E6DFA09874C99CFA1", hash_generated_method = "3203BA7BAB90011193C0ECF77A188AB3")
+    
+public CallerInfo() {
+        // TODO: Move all the basic initialization here?
+        mIsEmergency = false;
+        mIsVoiceMail = false;
     }
 
+    // Accessors
+
+    /**
+     * @return true if the caller info is an emergency number.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.414 -0500", hash_original_method = "949F12A508ED637C7BFB9FE80F3ED419", hash_generated_method = "02824529B8E2768EC15C370229C0E676")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.580 -0400", hash_original_method = "B2E8AF8AE71BB271A220763604B9FEA5", hash_generated_method = "1016AA1CC9C20FA62A99D0AAB6DF1DB8")
-    public String toString() {
+public boolean isEmergencyNumber() {
+        return mIsEmergency;
+    }
+
+    /**
+     * @return true if the caller info is a voicemail number.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.416 -0500", hash_original_method = "61436A0A05C2AD638DF9E2E803CA6155", hash_generated_method = "84A96A2BC608CC5A2D95B9C31C7E5E7D")
+    
+public boolean isVoiceMailNumber() {
+        return mIsVoiceMail;
+    }
+
+    /**
+     * Mark this CallerInfo as an emergency call.
+     * @param context To lookup the localized 'Emergency Number' string.
+     * @return this instance.
+     */
+    // TODO: Note we're setting the phone number here (refer to
+    // javadoc comments at the top of CallerInfo class) to a localized
+    // string 'Emergency Number'. This is pretty bad because we are
+    // making UI work here instead of just packaging the data. We
+    // should set the phone number to the dialed number and name to
+    // 'Emergency Number' and let the UI make the decision about what
+    // should be displayed.
+    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.418 -0500", hash_original_method = "0EF2E0F94875209BDFD349217543907F", hash_generated_method = "0EF2E0F94875209BDFD349217543907F")
+    
+CallerInfo markAsEmergency(Context context) {
+        phoneNumber = context.getString(
+            com.android.internal.R.string.emergency_call_dialog_number_for_display);
+        photoResource = com.android.internal.R.drawable.picture_emergency;
+        mIsEmergency = true;
+        return this;
+    }
+
+
+    /**
+     * Mark this CallerInfo as a voicemail call. The voicemail label
+     * is obtained from the telephony manager. Caller must hold the
+     * READ_PHONE_STATE permission otherwise the phoneNumber will be
+     * set to null.
+     * @return this instance.
+     */
+    // TODO: As in the emergency number handling, we end up writing a
+    // string in the phone number field.
+    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.421 -0500", hash_original_method = "E50E44C9D86336E922CA2AE8F511D506", hash_generated_method = "80AC8B6BE9B156C3EE30B3EFE4A2A8F1")
+    
+CallerInfo markAsVoiceMail() {
+        mIsVoiceMail = true;
+
+        try {
+            String voiceMailLabel = TelephonyManager.getDefault().getVoiceMailAlphaTag();
+
+            phoneNumber = voiceMailLabel;
+        } catch (SecurityException se) {
+            // Should never happen: if this process does not have
+            // permission to retrieve VM tag, it should not have
+            // permission to retrieve VM number and would not call
+            // this method.
+            // Leave phoneNumber untouched.
+            Log.e(TAG, "Cannot access VoiceMail.", se);
+        }
+        // TODO: There is no voicemail picture?
+        // FIXME: FIND ANOTHER ICON
+        // photoResource = android.R.drawable.badge_voicemail;
+        return this;
+    }
+
+    /**
+     * Updates this CallerInfo's geoDescription field, based on the raw
+     * phone number in the phoneNumber field.
+     *
+     * (Note that the various getCallerInfo() methods do *not* set the
+     * geoDescription automatically; you need to call this method
+     * explicitly to get it.)
+     *
+     * @param context the context used to look up the current locale / country
+     * @param fallbackNumber if this CallerInfo's phoneNumber field is empty,
+     *        this specifies a fallback number to use instead.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.429 -0500", hash_original_method = "3180F1E37BC19852F53F68E8E13D968F", hash_generated_method = "142D116AA6B903156CA8D0D1CDF95D3B")
+    
+public void updateGeoDescription(Context context, String fallbackNumber) {
+        String number = TextUtils.isEmpty(phoneNumber) ? fallbackNumber : phoneNumber;
+        geoDescription = getGeoDescription(context, number);
+    }
+
+    /**
+     * @return a string debug representation of this instance.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.440 -0500", hash_original_method = "B2E8AF8AE71BB271A220763604B9FEA5", hash_generated_method = "7A65E4C100BDD67B7E46680E057873AC")
+    
+public String toString() {
+        // Warning: never check in this file with VERBOSE_DEBUG = true
+        // because that will result in PII in the system log.
         final boolean VERBOSE_DEBUG = false;
-        if(VERBOSE_DEBUG)        
-        {
-String varB0E974098EC24B66E77031F32EEA3BB7_827666372 =             new StringBuilder(384)
+
+        if (VERBOSE_DEBUG) {
+            return new StringBuilder(384)
                     .append(super.toString() + " { ")
                     .append("\nname: " + name)
                     .append("\nphoneNumber: " + phoneNumber)
@@ -420,39 +621,14 @@ String varB0E974098EC24B66E77031F32EEA3BB7_827666372 =             new StringBui
                     .append("\ncontactExists " + contactExists)
                     .append(" }")
                     .toString();
-            varB0E974098EC24B66E77031F32EEA3BB7_827666372.addTaint(taint);
-            return varB0E974098EC24B66E77031F32EEA3BB7_827666372;
-        } //End block
-        else
-        {
-String varEB68FA4DA29D6D2DA3AE46CB2065A18F_1323246221 =             new StringBuilder(128)
+        } else {
+            return new StringBuilder(128)
                     .append(super.toString() + " { ")
                     .append("name " + ((name == null) ? "null" : "non-null"))
                     .append(", phoneNumber " + ((phoneNumber == null) ? "null" : "non-null"))
                     .append(" }")
                     .toString();
-            varEB68FA4DA29D6D2DA3AE46CB2065A18F_1323246221.addTaint(taint);
-            return varEB68FA4DA29D6D2DA3AE46CB2065A18F_1323246221;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        }
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.581 -0400", hash_original_field = "B4956EA7908FECA8BF408633E06F5234", hash_generated_field = "C5F3F4D6C7BF19031224AC54C88CAD76")
-
-    private static final String TAG = "CallerInfo";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.581 -0400", hash_original_field = "0BC31D132ED22BDCCE73050D2E753EDE", hash_generated_field = "CD7C09194C67AD23C544256A6D8EFBB5")
-
-    private static final boolean VDBG = Log.isLoggable(TAG, Log.VERBOSE);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.581 -0400", hash_original_field = "86FBD2801D6BC73E16D3D03603642188", hash_generated_field = "14B5286CD5D74D78D60A61E8C23808CE")
-
-    public static final String UNKNOWN_NUMBER = "-1";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.581 -0400", hash_original_field = "44E8780CF940019656CD29807BC39C33", hash_generated_field = "F1BFDCCA16CC5317696C3F332263F25D")
-
-    public static final String PRIVATE_NUMBER = "-2";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:15.581 -0400", hash_original_field = "B57F7F5D5DF09506AE80865F0E28CBA7", hash_generated_field = "AD763B8C4A748AFE8A010B8438E44320")
-
-    public static final String PAYPHONE_NUMBER = "-3";
 }
 

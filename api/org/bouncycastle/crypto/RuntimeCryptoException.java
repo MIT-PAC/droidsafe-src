@@ -1,25 +1,32 @@
 package org.bouncycastle.crypto;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
 public class RuntimeCryptoException extends RuntimeException {
+    /**
+     * base constructor.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:30.634 -0500", hash_original_method = "967763ED132A6B5D59753D4D73A06C5A", hash_generated_method = "CF795E3D52EBE93E77A273A9387551D1")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.487 -0400", hash_original_method = "967763ED132A6B5D59753D4D73A06C5A", hash_generated_method = "D6A2F7F0EC5B2291AE5C6C87E6295099")
-    public  RuntimeCryptoException() {
-        // ---------- Original Method ----------
+public RuntimeCryptoException()
+    {
     }
 
+    /**
+     * create a RuntimeCryptoException with the given message.
+     *
+     * @param message the message to be carried with the exception.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:30.637 -0500", hash_original_method = "E9BB75E73BA30AD97FC5CFD7AF8A9F87", hash_generated_method = "C05B94153B1A5E317ECE0E6053D562B3")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.487 -0400", hash_original_method = "E9BB75E73BA30AD97FC5CFD7AF8A9F87", hash_generated_method = "383E90D38FAFD32EB8D3C2B60414DEA5")
-    public  RuntimeCryptoException(
-        String  message) {
+public RuntimeCryptoException(
+        String  message)
+    {
         super(message);
-        addTaint(message.getTaint());
-        // ---------- Original Method ----------
     }
 
     

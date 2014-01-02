@@ -1,6 +1,8 @@
 package org.apache.harmony.security.x509;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.security.PublicKey;
 
@@ -10,77 +12,52 @@ import java.security.PublicKey;
 
 
 public final class X509PublicKey implements PublicKey {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.975 -0400", hash_original_field = "ED469618898D75B149E5C7C4B6A1C415", hash_generated_field = "40E4722A302366B2A43F1CD6C99E2454")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.987 -0500", hash_original_field = "1DDAED4286CC7F9A2BC49502885440CE", hash_generated_field = "40E4722A302366B2A43F1CD6C99E2454")
 
-    private String algorithm;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.975 -0400", hash_original_field = "4B719ACEE4A1D5E30577F59E80D06205", hash_generated_field = "ED95B2E967E3B561D98D41FC80663441")
+    private  String algorithm;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.989 -0500", hash_original_field = "B26EA4441AC976CE9D513DB2C8639526", hash_generated_field = "ED95B2E967E3B561D98D41FC80663441")
 
-    private byte[] encoded;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.975 -0400", hash_original_field = "A001B1C67F087A988E05F71CB2EAA379", hash_generated_field = "F8BF44934CF513C25EA736CCFDA9B231")
+    private  byte[] encoded;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.991 -0500", hash_original_field = "C58A3C98BE896932A1CA164990DDB8E6", hash_generated_field = "F8BF44934CF513C25EA736CCFDA9B231")
 
-    private byte[] keyBytes;
+    private  byte[] keyBytes;
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.994 -0500", hash_original_method = "9FD348638D81D976A870B98763E67369", hash_generated_method = "00AE7068999CE575B147DFC448516BAE")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.976 -0400", hash_original_method = "9FD348638D81D976A870B98763E67369", hash_generated_method = "D790DFA6420E40E56C1C8FB9BD83052A")
-    public  X509PublicKey(String algorithm, byte[] encoded, byte[] keyBytes) {
+public X509PublicKey(String algorithm, byte[] encoded, byte[] keyBytes) {
         this.algorithm = algorithm;
         this.encoded = encoded;
         this.keyBytes = keyBytes;
-        // ---------- Original Method ----------
-        //this.algorithm = algorithm;
-        //this.encoded = encoded;
-        //this.keyBytes = keyBytes;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.996 -0500", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "09B8CB0F05513E7BA5A386900D5BF6E6")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.977 -0400", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "8612C6ACB4B90F7472DB4FB1BDFC3B2F")
-    public String getAlgorithm() {
-String var44A46B4003FC81ACB0223385BA1FA818_57337466 =         algorithm;
-        var44A46B4003FC81ACB0223385BA1FA818_57337466.addTaint(taint);
-        return var44A46B4003FC81ACB0223385BA1FA818_57337466;
-        // ---------- Original Method ----------
-        //return algorithm;
+public String getAlgorithm() {
+        return algorithm;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.998 -0500", hash_original_method = "52CFE6084CDA819966418EDF944DBC96", hash_generated_method = "7238AE3F6AC2664EEF973F2CB2EA7A49")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.977 -0400", hash_original_method = "52CFE6084CDA819966418EDF944DBC96", hash_generated_method = "CF0829DF9D52B3B57EB03036561094EB")
-    public String getFormat() {
-String varF820115C876B7F160DE375988A3E1CA1_1306700469 =         "X.509";
-        varF820115C876B7F160DE375988A3E1CA1_1306700469.addTaint(taint);
-        return varF820115C876B7F160DE375988A3E1CA1_1306700469;
-        // ---------- Original Method ----------
-        //return "X.509";
+public String getFormat() {
+        return "X.509";
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:56.001 -0500", hash_original_method = "4EC4E5E78B7F57FB746895217115C4A0", hash_generated_method = "D6850C5A9F5DEB5E23D686FE3D53149E")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.977 -0400", hash_original_method = "4EC4E5E78B7F57FB746895217115C4A0", hash_generated_method = "698D53804EE2BDE91716388357EA534F")
-    public byte[] getEncoded() {
-        byte[] var4B719ACEE4A1D5E30577F59E80D06205_613105453 = (encoded);
-                byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_327711589 = {getTaintByte()};
-        return var2F9C81BC6E497382285CD6B7A7E33DE1_327711589;
-        // ---------- Original Method ----------
-        //return encoded;
+public byte[] getEncoded() {
+        return encoded;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:56.004 -0500", hash_original_method = "20DEFC617AA5E46ABFC95D3E93C239C4", hash_generated_method = "96DFD8424131B803A4EF93B61EB26A33")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.977 -0400", hash_original_method = "20DEFC617AA5E46ABFC95D3E93C239C4", hash_generated_method = "246F56D4C624B63B775FF2C5F819B5B2")
-    @Override
+@Override
     public String toString() {
         StringBuilder buf = new StringBuilder("algorithm = ");
         buf.append(algorithm);
         buf.append(", params unparsed, unparsed keybits = \n");
-String var4FC680801218E6372BC708D6FA44AE60_768229637 =         buf.toString();
-        var4FC680801218E6372BC708D6FA44AE60_768229637.addTaint(taint);
-        return var4FC680801218E6372BC708D6FA44AE60_768229637;
-        // ---------- Original Method ----------
-        //StringBuilder buf = new StringBuilder("algorithm = ");
-        //buf.append(algorithm);
-        //buf.append(", params unparsed, unparsed keybits = \n");
-        //return buf.toString();
+        // TODO: implement compatible toString method()
+        // buf.append(Arrays.toString(keyBytes));
+        return buf.toString();
     }
 
     

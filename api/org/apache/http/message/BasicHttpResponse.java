@@ -1,6 +1,8 @@
 package org.apache.http.message;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Locale;
 
@@ -16,220 +18,191 @@ import org.apache.http.StatusLine;
 
 
 public class BasicHttpResponse extends AbstractHttpMessage implements HttpResponse {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.893 -0400", hash_original_field = "AA0D4A4A699CB2EF82685419DB641FCD", hash_generated_field = "4CCD72942F5376DF30647BDBD097E9E4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.869 -0500", hash_original_field = "D9859D2DC4F9E5867AA6A26BB559533E", hash_generated_field = "4CCD72942F5376DF30647BDBD097E9E4")
 
-    private StatusLine statusline;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.893 -0400", hash_original_field = "F5E638CC78DD325906C1298A0C21FB6B", hash_generated_field = "1845537B516494D16BEEE561F2E771CF")
 
-    private HttpEntity entity;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.893 -0400", hash_original_field = "7396F84CD8586AB513EED3D2A634318F", hash_generated_field = "66B942B399EC48BCD27B61E760B1CE99")
+    private StatusLine          statusline;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.871 -0500", hash_original_field = "84BEE3610D6DA557FD534AD24775E93F", hash_generated_field = "1845537B516494D16BEEE561F2E771CF")
+
+    private HttpEntity          entity;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.875 -0500", hash_original_field = "D8E058CC9400D2B49594453D57519F61", hash_generated_field = "66B942B399EC48BCD27B61E760B1CE99")
 
     private ReasonPhraseCatalog reasonCatalog;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.893 -0400", hash_original_field = "FB216D9E8791E63C8D12BDC420956839", hash_generated_field = "3C599F5969C756C105E47474D7BCB663")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.878 -0500", hash_original_field = "A25411C3C357716626A9185E220A5EAA", hash_generated_field = "3C599F5969C756C105E47474D7BCB663")
 
-    private Locale locale;
+    private Locale              locale;
+
+
+    /**
+     * Creates a new response.
+     * This is the constructor to which all others map.
+     *
+     * @param statusline        the status line
+     * @param catalog           the reason phrase catalog, or
+     *                          <code>null</code> to disable automatic
+     *                          reason phrase lookup
+     * @param locale            the locale for looking up reason phrases, or
+     *                          <code>null</code> for the system locale
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.881 -0500", hash_original_method = "A29A20D85E2A95F9F380E42B440BE20C", hash_generated_method = "A59FDEF13035105775FFBF5C1559BF57")
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.894 -0400", hash_original_method = "A29A20D85E2A95F9F380E42B440BE20C", hash_generated_method = "F62FBB036191731763E50F35AFEE3CC1")
-    public  BasicHttpResponse(final StatusLine statusline,
+public BasicHttpResponse(final StatusLine statusline,
                              final ReasonPhraseCatalog catalog,
                              final Locale locale) {
         super();
-        if(statusline == null)        
-        {
-            IllegalArgumentException var4709414B32B1770E2C45CBE97DD5D9E5_1422712833 = new IllegalArgumentException("Status line may not be null.");
-            var4709414B32B1770E2C45CBE97DD5D9E5_1422712833.addTaint(taint);
-            throw var4709414B32B1770E2C45CBE97DD5D9E5_1422712833;
-        } //End block
+        if (statusline == null) {
+            throw new IllegalArgumentException("Status line may not be null.");
+        }
         this.statusline    = statusline;
         this.reasonCatalog = catalog;
         this.locale        = (locale != null) ? locale : Locale.getDefault();
-        // ---------- Original Method ----------
-        //if (statusline == null) {
-            //throw new IllegalArgumentException("Status line may not be null.");
-        //}
-        //this.statusline    = statusline;
-        //this.reasonCatalog = catalog;
-        //this.locale        = (locale != null) ? locale : Locale.getDefault();
     }
 
+    /**
+     * Creates a response from a status line.
+     * The response will not have a reason phrase catalog and
+     * use the system default locale.
+     *
+     * @param statusline        the status line
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.884 -0500", hash_original_method = "AAC0170DE8A46A77F8ABEAF95E5D47DF", hash_generated_method = "0303EF5FD77338E65FA4817037189CB6")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.895 -0400", hash_original_method = "AAC0170DE8A46A77F8ABEAF95E5D47DF", hash_generated_method = "1D6ED238FFB7668E21F795FEA61006F7")
-    public  BasicHttpResponse(final StatusLine statusline) {
+public BasicHttpResponse(final StatusLine statusline) {
         this(statusline, null, null);
-        addTaint(statusline.getTaint());
-        // ---------- Original Method ----------
     }
 
+    /**
+     * Creates a response from elements of a status line.
+     * The response will not have a reason phrase catalog and
+     * use the system default locale.
+     *
+     * @param ver       the protocol version of the response
+     * @param code      the status code of the response
+     * @param reason    the reason phrase to the status code, or
+     *                  <code>null</code>
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.887 -0500", hash_original_method = "6506B3795A3A16C6E9B1FFC15C1ED834", hash_generated_method = "CC65B08E151A2078BB23C8227F59BC6B")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.895 -0400", hash_original_method = "6506B3795A3A16C6E9B1FFC15C1ED834", hash_generated_method = "555CD811A3B58BF43063D7090991996F")
-    public  BasicHttpResponse(final ProtocolVersion ver,
+public BasicHttpResponse(final ProtocolVersion ver,
                              final int code,
                              final String reason) {
         this(new BasicStatusLine(ver, code, reason), null, null);
-        addTaint(reason.getTaint());
-        addTaint(code);
-        addTaint(ver.getTaint());
-        // ---------- Original Method ----------
     }
 
+
+    // non-javadoc, see interface HttpMessage
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.889 -0500", hash_original_method = "90208803F02F793AFF747002BC8D1B69", hash_generated_method = "116490FDB9CFC58F547476EB349C29C7")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.896 -0400", hash_original_method = "90208803F02F793AFF747002BC8D1B69", hash_generated_method = "CFE7516447259D80B03F14C7BBC40BC9")
-    public ProtocolVersion getProtocolVersion() {
-ProtocolVersion varD90C043793F7774DAF136F85478656A2_699467058 =         this.statusline.getProtocolVersion();
-        varD90C043793F7774DAF136F85478656A2_699467058.addTaint(taint);
-        return varD90C043793F7774DAF136F85478656A2_699467058;
-        // ---------- Original Method ----------
-        //return this.statusline.getProtocolVersion();
+public ProtocolVersion getProtocolVersion() {
+        return this.statusline.getProtocolVersion();
     }
 
+    // non-javadoc, see interface HttpResponse
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.892 -0500", hash_original_method = "17E71ED31D66483D3BDF78C743004CA2", hash_generated_method = "8ABB7B3878FF89EA492FEE050D9D5995")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.896 -0400", hash_original_method = "17E71ED31D66483D3BDF78C743004CA2", hash_generated_method = "3D7A4E3AF14E1D175A6526D99805B107")
-    public StatusLine getStatusLine() {
-StatusLine var3F6855B8C489EBE58B05E134AAAD021B_175356872 =         this.statusline;
-        var3F6855B8C489EBE58B05E134AAAD021B_175356872.addTaint(taint);
-        return var3F6855B8C489EBE58B05E134AAAD021B_175356872;
-        // ---------- Original Method ----------
-        //return this.statusline;
+public StatusLine getStatusLine() {
+        return this.statusline; 
     }
 
+    // non-javadoc, see interface HttpResponse
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.894 -0500", hash_original_method = "FCFC1A07171F7DE920C85D2DD77008FA", hash_generated_method = "F26E442D152B9CF496C6F072484628AD")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.896 -0400", hash_original_method = "FCFC1A07171F7DE920C85D2DD77008FA", hash_generated_method = "2886B2F531A3777B6C2E420297E292E7")
-    public HttpEntity getEntity() {
-HttpEntity varB0390008473457B24431D383C02B7BE2_1346307996 =         this.entity;
-        varB0390008473457B24431D383C02B7BE2_1346307996.addTaint(taint);
-        return varB0390008473457B24431D383C02B7BE2_1346307996;
-        // ---------- Original Method ----------
-        //return this.entity;
+public HttpEntity getEntity() {
+        return this.entity;
     }
 
+    // non-javadoc, see interface HttpResponse
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.896 -0500", hash_original_method = "733D9DF7D9A8D6EAEA176BCCAA80EA96", hash_generated_method = "CCD4021A5F38FD450220610E2095A85C")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.896 -0400", hash_original_method = "733D9DF7D9A8D6EAEA176BCCAA80EA96", hash_generated_method = "41063F1B5C1A8C2B772814190C280C76")
-    public Locale getLocale() {
-Locale var07CBB3424B1C5A44A7FC0518D56FE503_2015192595 =         this.locale;
-        var07CBB3424B1C5A44A7FC0518D56FE503_2015192595.addTaint(taint);
-        return var07CBB3424B1C5A44A7FC0518D56FE503_2015192595;
-        // ---------- Original Method ----------
-        //return this.locale;
+public Locale getLocale() {
+        return this.locale;
     }
 
+    // non-javadoc, see interface HttpResponse
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.898 -0500", hash_original_method = "D370D995D9AEDFD784968CDDE918B3A9", hash_generated_method = "3EE5491478A04AEA0AB403B5E2172CD4")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.897 -0400", hash_original_method = "D370D995D9AEDFD784968CDDE918B3A9", hash_generated_method = "118160F34B7DA901A56F4D5BB557ABEB")
-    public void setStatusLine(final StatusLine statusline) {
-        if(statusline == null)        
-        {
-            IllegalArgumentException var1636A5AFF6F53BF0101E09315281948D_1595226606 = new IllegalArgumentException("Status line may not be null");
-            var1636A5AFF6F53BF0101E09315281948D_1595226606.addTaint(taint);
-            throw var1636A5AFF6F53BF0101E09315281948D_1595226606;
-        } //End block
+public void setStatusLine(final StatusLine statusline) {
+        if (statusline == null) {
+            throw new IllegalArgumentException("Status line may not be null");
+        }
         this.statusline = statusline;
-        // ---------- Original Method ----------
-        //if (statusline == null) {
-            //throw new IllegalArgumentException("Status line may not be null");
-        //}
-        //this.statusline = statusline;
     }
 
+    // non-javadoc, see interface HttpResponse
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.900 -0500", hash_original_method = "1BC8215859DBDD8C612AAF8D25EAF759", hash_generated_method = "4239ABFBE7F30A1D74A85984AB874748")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.897 -0400", hash_original_method = "1BC8215859DBDD8C612AAF8D25EAF759", hash_generated_method = "536DAFF9BA693838F6F90920759EF12D")
-    public void setStatusLine(final ProtocolVersion ver, final int code) {
+public void setStatusLine(final ProtocolVersion ver, final int code) {
+        // arguments checked in BasicStatusLine constructor
         this.statusline = new BasicStatusLine(ver, code, getReason(code));
-        // ---------- Original Method ----------
-        //this.statusline = new BasicStatusLine(ver, code, getReason(code));
     }
 
+    // non-javadoc, see interface HttpResponse
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.902 -0500", hash_original_method = "6CC4B11D9AD32634701C1082F63EF70B", hash_generated_method = "91AB09417C98E00D98C7ABD6DA3869A1")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.898 -0400", hash_original_method = "6CC4B11D9AD32634701C1082F63EF70B", hash_generated_method = "B3CCD57AC733622755F9F233A81FF38D")
-    public void setStatusLine(final ProtocolVersion ver, final int code,
+public void setStatusLine(final ProtocolVersion ver, final int code,
                               final String reason) {
+        // arguments checked in BasicStatusLine constructor
         this.statusline = new BasicStatusLine(ver, code, reason);
-        // ---------- Original Method ----------
-        //this.statusline = new BasicStatusLine(ver, code, reason);
     }
 
+    // non-javadoc, see interface HttpResponse
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.905 -0500", hash_original_method = "7D42455A6D5293330CE36AB0F03AF641", hash_generated_method = "2CD76105C8047D9A893926BAC0F9255A")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.898 -0400", hash_original_method = "7D42455A6D5293330CE36AB0F03AF641", hash_generated_method = "00F9C756B89CB533C444745750A41BFC")
-    public void setStatusCode(int code) {
+public void setStatusCode(int code) {
+        // argument checked in BasicStatusLine constructor
         ProtocolVersion ver = this.statusline.getProtocolVersion();
         this.statusline = new BasicStatusLine(ver, code, getReason(code));
-        // ---------- Original Method ----------
-        //ProtocolVersion ver = this.statusline.getProtocolVersion();
-        //this.statusline = new BasicStatusLine(ver, code, getReason(code));
     }
 
+    // non-javadoc, see interface HttpResponse
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.908 -0500", hash_original_method = "8A9577D3FB93048CF250DA10DB0B55E0", hash_generated_method = "83FA437DE0BA59FFEC73B29FD04AB860")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.899 -0400", hash_original_method = "8A9577D3FB93048CF250DA10DB0B55E0", hash_generated_method = "91ACF82945313113769D10BBF18FC6AC")
-    public void setReasonPhrase(String reason) {
-        if((reason != null) && ((reason.indexOf('\n') >= 0) ||
-                                 (reason.indexOf('\r') >= 0)))        
-        {
-            IllegalArgumentException var9E32F7C57C8E470485D53529D69B0D89_982188233 = new IllegalArgumentException("Line break in reason phrase.");
-            var9E32F7C57C8E470485D53529D69B0D89_982188233.addTaint(taint);
-            throw var9E32F7C57C8E470485D53529D69B0D89_982188233;
-        } //End block
+public void setReasonPhrase(String reason) {
+
+        if ((reason != null) && ((reason.indexOf('\n') >= 0) ||
+                                 (reason.indexOf('\r') >= 0))
+            ) {
+            throw new IllegalArgumentException("Line break in reason phrase.");
+        }
         this.statusline = new BasicStatusLine(this.statusline.getProtocolVersion(),
                                               this.statusline.getStatusCode(),
                                               reason);
-        // ---------- Original Method ----------
-        //if ((reason != null) && ((reason.indexOf('\n') >= 0) ||
-                                 //(reason.indexOf('\r') >= 0))
-            //) {
-            //throw new IllegalArgumentException("Line break in reason phrase.");
-        //}
-        //this.statusline = new BasicStatusLine(this.statusline.getProtocolVersion(),
-                                              //this.statusline.getStatusCode(),
-                                              //reason);
     }
 
+    // non-javadoc, see interface HttpResponse
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.910 -0500", hash_original_method = "ACC3C31B4104E926438E24B159B6E3A2", hash_generated_method = "79AAFF6E92B5322E414271D0A9826A70")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.900 -0400", hash_original_method = "ACC3C31B4104E926438E24B159B6E3A2", hash_generated_method = "FB3E9570D6065D0B91C8CE936F48D4CA")
-    public void setEntity(final HttpEntity entity) {
+public void setEntity(final HttpEntity entity) {
         this.entity = entity;
-        // ---------- Original Method ----------
-        //this.entity = entity;
     }
 
+    // non-javadoc, see interface HttpResponse
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.912 -0500", hash_original_method = "0DB1ABBE31592BCC04F2F708A5F68A93", hash_generated_method = "28FE45C7E0F441580F6306A8B04503A1")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.901 -0400", hash_original_method = "0DB1ABBE31592BCC04F2F708A5F68A93", hash_generated_method = "EC32EFF891F60CC525902A14B704B20D")
-    public void setLocale(Locale loc) {
-        if(loc == null)        
-        {
-            IllegalArgumentException var375D7E0D2547FD54B345F11E55227B22_369570033 = new IllegalArgumentException("Locale may not be null.");
-            var375D7E0D2547FD54B345F11E55227B22_369570033.addTaint(taint);
-            throw var375D7E0D2547FD54B345F11E55227B22_369570033;
-        } //End block
+public void setLocale(Locale loc) {
+        if (loc == null) {
+            throw new IllegalArgumentException("Locale may not be null.");
+        }
         this.locale = loc;
         final int code = this.statusline.getStatusCode();
         this.statusline = new BasicStatusLine
             (this.statusline.getProtocolVersion(), code, getReason(code));
-        // ---------- Original Method ----------
-        //if (loc == null) {
-            //throw new IllegalArgumentException("Locale may not be null.");
-        //}
-        //this.locale = loc;
-        //final int code = this.statusline.getStatusCode();
-        //this.statusline = new BasicStatusLine
-            //(this.statusline.getProtocolVersion(), code, getReason(code));
     }
 
+    /**
+     * Looks up a reason phrase.
+     * This method evaluates the currently set catalog and locale.
+     * It also handles a missing catalog.
+     *
+     * @param code      the status code for which to look up the reason
+     *
+     * @return  the reason phrase, or <code>null</code> if there is none
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.915 -0500", hash_original_method = "FEEB8D9BF9C5F48AC25C3CD2E5553BCA", hash_generated_method = "5F374C21892D63154BFD6314348D2005")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.901 -0400", hash_original_method = "FEEB8D9BF9C5F48AC25C3CD2E5553BCA", hash_generated_method = "9C11798EEFBF59AB50E368580BEBDA51")
-    protected String getReason(int code) {
-        addTaint(code);
-String var60644D7B8CCB006F15086BB6E0A0C18A_1484758995 =         (this.reasonCatalog == null) ?
+protected String getReason(int code) {
+        return (this.reasonCatalog == null) ?
             null : this.reasonCatalog.getReason(code, this.locale);
-        var60644D7B8CCB006F15086BB6E0A0C18A_1484758995.addTaint(taint);
-        return var60644D7B8CCB006F15086BB6E0A0C18A_1484758995;
-        // ---------- Original Method ----------
-        //return (this.reasonCatalog == null) ?
-            //null : this.reasonCatalog.getReason(code, this.locale);
     }
 
     

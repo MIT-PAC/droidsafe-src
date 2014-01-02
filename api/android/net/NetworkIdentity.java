@@ -1,6 +1,8 @@
 package android.net;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import static android.net.ConnectivityManager.isNetworkTypeMobile;
 import android.content.Context;
@@ -15,155 +17,13 @@ import com.android.internal.util.Objects;
 
 
 public class NetworkIdentity {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.336 -0400", hash_original_field = "3462A1A18A0EE070E8953CCF1DD788C0", hash_generated_field = "B93BF1EFA6B57CC598632E54B97CD147")
 
-    int mType;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.336 -0400", hash_original_field = "9626C0B267A1B4C2C31F3FFD0E237EB6", hash_generated_field = "BCF34990D5BD6C62B9906AA3AA07B984")
-
-    int mSubType;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.336 -0400", hash_original_field = "742C66A57AD769F98E0E69DE23964AB5", hash_generated_field = "4CB6146C3E5C68A8736082D04D2233DE")
-
-    String mSubscriberId;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.336 -0400", hash_original_field = "53676CF9ACC69A311F8B40D8878A560F", hash_generated_field = "443BCEF3EEBE54B39D5E3E92FF87E1E4")
-
-    boolean mRoaming;
+    /**
+     * Scrub given IMSI on production builds.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:30.038 -0500", hash_original_method = "4BE093C11D479D0397F563135FCE31CE", hash_generated_method = "2C80080EF4C7396B9E92D8DE282373A4")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.337 -0400", hash_original_method = "D66D82649648EB29DB5225580D369B63", hash_generated_method = "C3CF55C2AC8127625AA75BCBD592237A")
-    public  NetworkIdentity(int type, int subType, String subscriberId, boolean roaming) {
-        this.mType = type;
-        this.mSubType = subType;
-        this.mSubscriberId = subscriberId;
-        this.mRoaming = roaming;
-        // ---------- Original Method ----------
-        //this.mType = type;
-        //this.mSubType = subType;
-        //this.mSubscriberId = subscriberId;
-        //this.mRoaming = roaming;
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.337 -0400", hash_original_method = "70DBA97D9C7155A4770B35E22D7D5A29", hash_generated_method = "8CAA0525E4F7517ADFB6951E2A530A49")
-    @Override
-    public int hashCode() {
-        int varB41F65015920D960CDE3EE03D0FF5496_1774556377 = (Objects.hashCode(mType, mSubType, mSubscriberId));
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1831807017 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1831807017;
-        // ---------- Original Method ----------
-        //return Objects.hashCode(mType, mSubType, mSubscriberId);
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.337 -0400", hash_original_method = "A5A3AB07A0E4347DBE654AC710955A89", hash_generated_method = "F3EB6444DC18DA6F9D2E3AF3C325E737")
-    @Override
-    public boolean equals(Object obj) {
-        addTaint(obj.getTaint());
-        if(obj instanceof NetworkIdentity)        
-        {
-            final NetworkIdentity ident = (NetworkIdentity) obj;
-            boolean varDC2B84D20BB772F85604A54288B37A56_1562719365 = (mType == ident.mType && mSubType == ident.mSubType
-                    && Objects.equal(mSubscriberId, ident.mSubscriberId)
-                    && mRoaming == ident.mRoaming);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_435575878 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_435575878;
-        } //End block
-        boolean var68934A3E9455FA72420237EB05902327_184306257 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1187072860 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1187072860;
-        // ---------- Original Method ----------
-        //if (obj instanceof NetworkIdentity) {
-            //final NetworkIdentity ident = (NetworkIdentity) obj;
-            //return mType == ident.mType && mSubType == ident.mSubType
-                    //&& Objects.equal(mSubscriberId, ident.mSubscriberId)
-                    //&& mRoaming == ident.mRoaming;
-        //}
-        //return false;
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.338 -0400", hash_original_method = "750D47FEDF778AEB33FDF257D4CBFC36", hash_generated_method = "A04ECE4F03530F1C7FB07D8DDC95AD71")
-    @Override
-    public String toString() {
-        final String typeName = ConnectivityManager.getNetworkTypeName(mType);
-        String subTypeName;
-        if(ConnectivityManager.isNetworkTypeMobile(mType))        
-        {
-            subTypeName = TelephonyManager.getNetworkTypeName(mSubType);
-        } //End block
-        else
-        {
-            subTypeName = Integer.toString(mSubType);
-        } //End block
-        final String scrubSubscriberId = scrubSubscriberId(mSubscriberId);
-        final String roaming = mRoaming ? ", ROAMING" : "";
-String varC04A558420C11F186DEAB34E29860899_378201177 =         "[type=" + typeName + ", subType=" + subTypeName + ", subscriberId="
-                + scrubSubscriberId + roaming + "]";
-        varC04A558420C11F186DEAB34E29860899_378201177.addTaint(taint);
-        return varC04A558420C11F186DEAB34E29860899_378201177;
-        // ---------- Original Method ----------
-        //final String typeName = ConnectivityManager.getNetworkTypeName(mType);
-        //final String subTypeName;
-        //if (ConnectivityManager.isNetworkTypeMobile(mType)) {
-            //subTypeName = TelephonyManager.getNetworkTypeName(mSubType);
-        //} else {
-            //subTypeName = Integer.toString(mSubType);
-        //}
-        //final String scrubSubscriberId = scrubSubscriberId(mSubscriberId);
-        //final String roaming = mRoaming ? ", ROAMING" : "";
-        //return "[type=" + typeName + ", subType=" + subTypeName + ", subscriberId="
-                //+ scrubSubscriberId + roaming + "]";
-    }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.338 -0400", hash_original_method = "E9AD68D49398B2B9D86D12D221B14582", hash_generated_method = "40C360F128B0931C41877FA8E0348531")
-    public int getType() {
-        int var3462A1A18A0EE070E8953CCF1DD788C0_323109062 = (mType);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1392862575 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1392862575;
-        // ---------- Original Method ----------
-        //return mType;
-    }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.338 -0400", hash_original_method = "A4DDC328E17941CDB6FA9336B74814D9", hash_generated_method = "ED178F4B0E566AF60F56E790E67B992D")
-    public int getSubType() {
-        int var9626C0B267A1B4C2C31F3FFD0E237EB6_1266972738 = (mSubType);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_238993470 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_238993470;
-        // ---------- Original Method ----------
-        //return mSubType;
-    }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.338 -0400", hash_original_method = "DC04D62E493D044F593223B75A4808C0", hash_generated_method = "B0B0F3BFDAB0ABB7A5BDC6A0408E817D")
-    public String getSubscriberId() {
-String varD221C4376DC09E8E422076D12DB9853B_1319501581 =         mSubscriberId;
-        varD221C4376DC09E8E422076D12DB9853B_1319501581.addTaint(taint);
-        return varD221C4376DC09E8E422076D12DB9853B_1319501581;
-        // ---------- Original Method ----------
-        //return mSubscriberId;
-    }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.338 -0400", hash_original_method = "27B48B56BD1E05F31D9E74CC53E25407", hash_generated_method = "5DB7D39A77121E41D8F19900F512328F")
-    public boolean getRoaming() {
-        boolean var53676CF9ACC69A311F8B40D8878A560F_655786716 = (mRoaming);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_943857967 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_943857967;
-        // ---------- Original Method ----------
-        //return mRoaming;
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    public static String scrubSubscriberId(String subscriberId) {
+public static String scrubSubscriberId(String subscriberId) {
         if ("eng".equals(Build.TYPE)) {
             return subscriberId;
         } else {
@@ -171,11 +31,19 @@ String varD221C4376DC09E8E422076D12DB9853B_1319501581 =         mSubscriberId;
         }
     }
 
+    /**
+     * Build a {@link NetworkIdentity} from the given {@link NetworkState},
+     * assuming that any mobile networks are using the current IMSI.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:30.041 -0500", hash_original_method = "A1B551EBFE60B760F1915D4D252977B7", hash_generated_method = "679A44E866A29FD84A3F572B18F5FE7E")
     
-    @DSModeled(DSC.BAN)
-    public static NetworkIdentity buildNetworkIdentity(Context context, NetworkState state) {
+public static NetworkIdentity buildNetworkIdentity(Context context, NetworkState state) {
         final int type = state.networkInfo.getType();
         final int subType = state.networkInfo.getSubtype();
+
+        // TODO: consider moving subscriberId over to LinkCapabilities, so it
+        // comes from an authoritative source.
+
         final String subscriberId;
         final boolean roaming;
         if (isNetworkTypeMobile(type)) {
@@ -192,6 +60,89 @@ String varD221C4376DC09E8E422076D12DB9853B_1319501581 =         mSubscriberId;
             roaming = false;
         }
         return new NetworkIdentity(type, subType, subscriberId, roaming);
+    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:30.009 -0500", hash_original_field = "B93BF1EFA6B57CC598632E54B97CD147", hash_generated_field = "B93BF1EFA6B57CC598632E54B97CD147")
+
+     int mType;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:30.012 -0500", hash_original_field = "BCF34990D5BD6C62B9906AA3AA07B984", hash_generated_field = "BCF34990D5BD6C62B9906AA3AA07B984")
+
+     int mSubType;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:30.014 -0500", hash_original_field = "4CB6146C3E5C68A8736082D04D2233DE", hash_generated_field = "4CB6146C3E5C68A8736082D04D2233DE")
+
+     String mSubscriberId;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:30.016 -0500", hash_original_field = "443BCEF3EEBE54B39D5E3E92FF87E1E4", hash_generated_field = "443BCEF3EEBE54B39D5E3E92FF87E1E4")
+
+     boolean mRoaming;
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:30.019 -0500", hash_original_method = "D66D82649648EB29DB5225580D369B63", hash_generated_method = "33DF76630AC5B021A93FDB4BBA2ACBEF")
+    
+public NetworkIdentity(int type, int subType, String subscriberId, boolean roaming) {
+        this.mType = type;
+        this.mSubType = subType;
+        this.mSubscriberId = subscriberId;
+        this.mRoaming = roaming;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:30.022 -0500", hash_original_method = "70DBA97D9C7155A4770B35E22D7D5A29", hash_generated_method = "E00E75E8B615CA371DA18D4C16FAF210")
+    
+@Override
+    public int hashCode() {
+        return Objects.hashCode(mType, mSubType, mSubscriberId);
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:30.025 -0500", hash_original_method = "A5A3AB07A0E4347DBE654AC710955A89", hash_generated_method = "6534FACE73C9A29038A916D1A0E42084")
+    
+@Override
+    public boolean equals(Object obj) {
+        if (obj instanceof NetworkIdentity) {
+            final NetworkIdentity ident = (NetworkIdentity) obj;
+            return mType == ident.mType && mSubType == ident.mSubType
+                    && Objects.equal(mSubscriberId, ident.mSubscriberId)
+                    && mRoaming == ident.mRoaming;
+        }
+        return false;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:30.027 -0500", hash_original_method = "750D47FEDF778AEB33FDF257D4CBFC36", hash_generated_method = "EE7CB84F497B89197DA4CCB1CCFA08F8")
+    
+@Override
+    public String toString() {
+        final String typeName = ConnectivityManager.getNetworkTypeName(mType);
+        final String subTypeName;
+        if (ConnectivityManager.isNetworkTypeMobile(mType)) {
+            subTypeName = TelephonyManager.getNetworkTypeName(mSubType);
+        } else {
+            subTypeName = Integer.toString(mSubType);
+        }
+
+        final String scrubSubscriberId = scrubSubscriberId(mSubscriberId);
+        final String roaming = mRoaming ? ", ROAMING" : "";
+        return "[type=" + typeName + ", subType=" + subTypeName + ", subscriberId="
+                + scrubSubscriberId + roaming + "]";
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:30.029 -0500", hash_original_method = "E9AD68D49398B2B9D86D12D221B14582", hash_generated_method = "32498FCDA3AC1E9A676800B51A331335")
+    
+public int getType() {
+        return mType;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:30.031 -0500", hash_original_method = "A4DDC328E17941CDB6FA9336B74814D9", hash_generated_method = "9D4666CD302A26D0071E781A6FD2DF73")
+    
+public int getSubType() {
+        return mSubType;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:30.033 -0500", hash_original_method = "DC04D62E493D044F593223B75A4808C0", hash_generated_method = "A7AB8B338BFAABE54CF6CD80FDE63752")
+    
+public String getSubscriberId() {
+        return mSubscriberId;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:30.036 -0500", hash_original_method = "27B48B56BD1E05F31D9E74CC53E25407", hash_generated_method = "CC0583C9CA1287F8D242AB48312C845D")
+    
+public boolean getRoaming() {
+        return mRoaming;
     }
 
     

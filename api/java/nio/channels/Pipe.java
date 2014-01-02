@@ -1,6 +1,8 @@
 package java.nio.channels;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 import java.nio.channels.spi.AbstractSelectableChannel;
@@ -11,46 +13,69 @@ import java.nio.channels.spi.SelectorProvider;
 
 
 public abstract class Pipe {
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.243 -0400", hash_original_method = "AB1C252ACF4CEE3E1F01631225D9EB55", hash_generated_method = "FDC0FEC870B63611D7A177DD42514223")
-    protected  Pipe() {
-        // ---------- Original Method ----------
-    }
 
+    /**
+     * Returns a new pipe from the default {@see java.nio.channels.spi.SelectorProvider}.
+     *
+     * @throws IOException
+     *             if an I/O error occurs.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.777 -0500", hash_original_method = "DEAA17350CC2E5E935405ABC338450AB", hash_generated_method = "8C5D6C0F92E4264803AD977F0CB40CEC")
     
-    public static Pipe open() throws IOException {
+public static Pipe open() throws IOException {
         return SelectorProvider.provider().openPipe();
     }
 
+    /**
+     * The protected default constructor.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.781 -0500", hash_original_method = "AB1C252ACF4CEE3E1F01631225D9EB55", hash_generated_method = "402940CFAE1ABA8620A2D5B606F4117F")
     
-    @DSModeled(DSC.SAFE)
-    public abstract SinkChannel sink();
+protected Pipe() {
+    }
 
+    /**
+     * Returns the sink channel of the pipe.
+     *
+     * @return a writable sink channel of the pipe.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.783 -0500", hash_original_method = "AD3F0081408BB2FCEECAE63479FE7E5A", hash_generated_method = "E0239CD9C0D91AE8D96FDA2FAA979DD8")
     
-    @DSModeled(DSC.SAFE)
-    public abstract SourceChannel source();
+public abstract SinkChannel sink();
+
+    /**
+     * Returns the source channel of the pipe.
+     *
+     * @return a readable source channel of the pipe.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.786 -0500", hash_original_method = "B343D6974A4C4F073595EF38542D761F", hash_generated_method = "C2E867FEB59FED1AE08078B3B51F39A5")
+    
+public abstract SourceChannel source();
 
     
     public static abstract class SinkChannel extends AbstractSelectableChannel implements WritableByteChannel, GatheringByteChannel {
+        /**
+         * Constructs a new {@code SinkChannel}.
+         *
+         * @param provider
+         *            the provider of the channel.
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.763 -0500", hash_original_method = "6199DECCB48C88702EC19067764991B0", hash_generated_method = "85F41140EAC6B7FFBC2B221FE48DA53F")
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.245 -0400", hash_original_method = "6199DECCB48C88702EC19067764991B0", hash_generated_method = "C72698FDAA0C247A4C9BAA911A820984")
-        protected  SinkChannel(SelectorProvider provider) {
+protected SinkChannel(SelectorProvider provider) {
             super(provider);
-            addTaint(provider.getTaint());
-            // ---------- Original Method ----------
         }
 
+        /**
+         * Indicates that this channel only supports writing.
+         *
+         * @return a static value of OP_WRITE.
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.765 -0500", hash_original_method = "C028D25CCC7628B8923253B7D8B4C45A", hash_generated_method = "EC431122F271EADC293EE80F5B6817E1")
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.246 -0400", hash_original_method = "C028D25CCC7628B8923253B7D8B4C45A", hash_generated_method = "5678EAF84A8EE85979DC14D88223D018")
-        @Override
+@Override
         public final int validOps() {
-            int var53A444133ECFA2A63AB8406200B028D1_73088768 = (SelectionKey.OP_WRITE);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2025395353 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2025395353;
-            // ---------- Original Method ----------
-            //return SelectionKey.OP_WRITE;
+            return SelectionKey.OP_WRITE;
         }
 
         
@@ -59,24 +84,28 @@ public abstract class Pipe {
 
     
     public static abstract class SourceChannel extends AbstractSelectableChannel implements ReadableByteChannel, ScatteringByteChannel {
+        /**
+         * Constructs a new {@code SourceChannel}.
+         *
+         * @param provider
+         *            the provider of the channel.
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.770 -0500", hash_original_method = "9817FE62735CF1F1F50A3C676A019302", hash_generated_method = "C23D2215BDF603EA893EBE51BFD85CCF")
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.247 -0400", hash_original_method = "9817FE62735CF1F1F50A3C676A019302", hash_generated_method = "F17F93443685466D9F960296B170ECA4")
-        protected  SourceChannel(SelectorProvider provider) {
+protected SourceChannel(SelectorProvider provider) {
             super(provider);
-            addTaint(provider.getTaint());
-            // ---------- Original Method ----------
         }
 
+        /**
+         * Indicates that this channel only supports reading.
+         *
+         * @return a static value of OP_READ.
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.773 -0500", hash_original_method = "D2EA48B97033CCCA8D2B0ECC7F0D7822", hash_generated_method = "4B8803BC0EE51139D29E4539E5B57336")
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.248 -0400", hash_original_method = "D2EA48B97033CCCA8D2B0ECC7F0D7822", hash_generated_method = "D2C69C211E2C5158B83CDBE936CFD2D3")
-        @Override
+@Override
         public final int validOps() {
-            int varA020689BBAF72FA5CC26EDDF439F5FFD_1279661883 = (SelectionKey.OP_READ);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_770043295 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_770043295;
-            // ---------- Original Method ----------
-            //return SelectionKey.OP_READ;
+            return SelectionKey.OP_READ;
         }
 
         

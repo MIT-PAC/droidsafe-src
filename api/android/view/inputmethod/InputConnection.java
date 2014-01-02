@@ -1,6 +1,8 @@
 package android.view.inputmethod;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.os.Bundle;
 import android.view.KeyEvent;

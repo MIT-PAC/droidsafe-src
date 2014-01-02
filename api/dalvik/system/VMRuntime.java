@@ -1,6 +1,8 @@
 package dalvik.system;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
@@ -8,17 +10,28 @@ import droidsafe.annotations.*;
 
 
 public final class VMRuntime {
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.854 -0400", hash_original_method = "33A03FA36AA2C869C23BC2B48A2B01BF", hash_generated_method = "7F5477CE47831425632DC95401495DBA")
-    private  VMRuntime() {
-        // ---------- Original Method ----------
-    }
 
+    /**
+     * Returns the object that represents the VM instance's Dalvik-specific
+     * runtime environment.
+     *
+     * @return the runtime object
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:39.059 -0500", hash_original_method = "CBA2B68727D1F6F9168A66453269BED7", hash_generated_method = "B3FF717E7D00C98A9C1EB7ECEBF6367C")
     
-    @DSModeled(DSC.BAN)
-    public static VMRuntime getRuntime() {
+public static VMRuntime getRuntime() {
         return THE_ONE;
+    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:39.054 -0500", hash_original_field = "6108CD8BBAD4D69277D78C6C5769CAC1", hash_generated_field = "894A31B8E254C688D0C13EABA3654B94")
+
+    private static final VMRuntime THE_ONE = new VMRuntime();
+
+    /**
+     * Prevents this class from being instantiated.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:39.057 -0500", hash_original_method = "33A03FA36AA2C869C23BC2B48A2B01BF", hash_generated_method = "756025D690F3417AC1E320794E486242")
+    
+private VMRuntime() {
     }
 
     
@@ -50,146 +63,176 @@ public final class VMRuntime {
     	return new String();
     }
 
+    /**
+     * Gets the current ideal heap utilization, represented as a number
+     * between zero and one.  After a GC happens, the Dalvik heap may
+     * be resized so that (size of live objects) / (size of heap) is
+     * equal to this number.
+     *
+     * @return the current ideal heap utilization
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:39.079 -0500", hash_original_method = "A53C7C5E8A86B0A14FF3A91D5B112A95", hash_generated_method = "04E8E12A216710B02A37D7C8CF9C6330")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.855 -0400", hash_original_method = "A53C7C5E8A86B0A14FF3A91D5B112A95", hash_generated_method = "C96E2A9EC444161F6BCD18BCDC210F15")
-    public float getTargetHeapUtilization() {
-        float var546ADE640B6EDFBC8A086EF31347E768_85774206 = getTaintFloat();
-        return var546ADE640B6EDFBC8A086EF31347E768_85774206;
+    public float getTargetHeapUtilization(){
+    	//Formerly a native method
+    	return getTaintFloat();
     }
 
+
+    /**
+     * Sets the current ideal heap utilization, represented as a number
+     * between zero and one.  After a GC happens, the Dalvik heap may
+     * be resized so that (size of live objects) / (size of heap) is
+     * equal to this number.
+     *
+     * <p>This is only a hint to the garbage collector and may be ignored.
+     *
+     * @param newTarget the new suggested ideal heap utilization.
+     *                  This value may be adjusted internally.
+     * @return the previous ideal heap utilization
+     * @throws IllegalArgumentException if newTarget is &lt;= 0.0 or &gt;= 1.0
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:39.081 -0500", hash_original_method = "F170D2A35A1238A4622F6C568D71821B", hash_generated_method = "63D4DE5166AF6144484EDCE804D08415")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.855 -0400", hash_original_method = "F170D2A35A1238A4622F6C568D71821B", hash_generated_method = "0BAA28D5580495532F2FE60648C2D6CC")
-    public float setTargetHeapUtilization(float newTarget) {
-        addTaint(newTarget);
-        if(newTarget <= 0.0 || newTarget >= 1.0)        
-        {
-            IllegalArgumentException varE9D0E9601FDADDC4175B20E492D198EA_1812347296 = new IllegalArgumentException(newTarget +
+public float setTargetHeapUtilization(float newTarget) {
+        if (newTarget <= 0.0 || newTarget >= 1.0) {
+            throw new IllegalArgumentException(newTarget +
                     " out of range (0,1)");
-            varE9D0E9601FDADDC4175B20E492D198EA_1812347296.addTaint(taint);
-            throw varE9D0E9601FDADDC4175B20E492D198EA_1812347296;
-        } //End block
-        synchronized
-(this)        {
+        }
+        /* Synchronize to make sure that only one thread gets
+         * a given "old" value if both update at the same time.
+         * Allows for reliable save-and-restore semantics.
+         */
+        synchronized (this) {
             float oldTarget = getTargetHeapUtilization();
             nativeSetTargetHeapUtilization(newTarget);
-            float var026C01A31A0D69AD963D62F9A9A5A059_262434728 = (oldTarget);
-                        float var546ADE640B6EDFBC8A086EF31347E768_2022024542 = getTaintFloat();
-            return var546ADE640B6EDFBC8A086EF31347E768_2022024542;
-        } //End block
-        // ---------- Original Method ----------
-        //if (newTarget <= 0.0 || newTarget >= 1.0) {
-            //throw new IllegalArgumentException(newTarget +
-                    //" out of range (0,1)");
-        //}
-        //synchronized (this) {
-            //float oldTarget = getTargetHeapUtilization();
-            //nativeSetTargetHeapUtilization(newTarget);
-            //return oldTarget;
-        //}
+            return oldTarget;
+        }
     }
 
+    /**
+     * Sets the target SDK version. Should only be called before the
+     * app starts to run, because it may change the VM's behavior in
+     * dangerous ways. Use 0 to mean "current" (since callers won't
+     * necessarily know the actual current SDK version, and the
+     * allocated version numbers start at 1).
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:39.085 -0500", hash_original_method = "C39A30D8892B0E36B74298597ED5FBE9", hash_generated_method = "A4BF180AF10C8672A4771D8D1BA6BFDF")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.855 -0400", hash_original_method = "C39A30D8892B0E36B74298597ED5FBE9", hash_generated_method = "EA21A7B0162E01E5EA792CC7A6CE2370")
-    public void setTargetSdkVersion(int targetSdkVersion) {
+    public void setTargetSdkVersion(int targetSdkVersion){
+    	//Formerly a native method
+    	addTaint(targetSdkVersion);
     }
 
+
+    /**
+     * This method exists for binary compatibility.  It was part of a
+     * heap sizing API which was removed in Honeycomb.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:39.088 -0500", hash_original_method = "923B1334376C4F437A073246F9A10510", hash_generated_method = "744B0BA307BEFA7C92952F34F23E8D69")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.855 -0400", hash_original_method = "923B1334376C4F437A073246F9A10510", hash_generated_method = "B5B89CA086A35A2083EC0A0D8AA0F074")
-    @Deprecated
+@Deprecated
     public long getMinimumHeapSize() {
-        long varCFCD208495D565EF66E7DFF9F98764DA_574016448 = (0);
-                long var0F5264038205EDFB1AC05FBB0E8C5E94_1805222173 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_1805222173;
-        // ---------- Original Method ----------
-        //return 0;
+        return 0;
     }
 
+    /**
+     * This method exists for binary compatibility.  It was part of a
+     * heap sizing API which was removed in Honeycomb.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:39.091 -0500", hash_original_method = "CEB5420B7859E2786C7813E3E643E566", hash_generated_method = "F536C31D9AE833438A6B6BE8C37140D4")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.855 -0400", hash_original_method = "CEB5420B7859E2786C7813E3E643E566", hash_generated_method = "939032B3BBAA0CDA5F87B5E0138BDC14")
-    @Deprecated
+@Deprecated
     public long setMinimumHeapSize(long size) {
-        addTaint(size);
-        long varCFCD208495D565EF66E7DFF9F98764DA_1784499073 = (0);
-                long var0F5264038205EDFB1AC05FBB0E8C5E94_1433685608 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_1433685608;
-        // ---------- Original Method ----------
-        //return 0;
+        return 0;
     }
 
+    /**
+     * This method exists for binary compatibility.  It used to
+     * perform a garbage collection that cleared SoftReferences.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:39.093 -0500", hash_original_method = "7E7FC96AF2763DCE3DA2004144A94138", hash_generated_method = "9796C302A4192B7DCB46D87DA5E6D425")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.855 -0400", hash_original_method = "7E7FC96AF2763DCE3DA2004144A94138", hash_generated_method = "C3FE825593A165B12ADFD8E36D4D78F4")
-    @Deprecated
-    public void gcSoftReferences() {
-        // ---------- Original Method ----------
-    }
+@Deprecated
+    public void gcSoftReferences() {}
 
+    /**
+     * This method exists for binary compatibility.  It is equivalent
+     * to {@link System#runFinalization}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:39.096 -0500", hash_original_method = "3F466C6AD532878D6C4CCB4CF518C455", hash_generated_method = "1C9F5BB8A2B98711006F5F671786C000")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.855 -0400", hash_original_method = "3F466C6AD532878D6C4CCB4CF518C455", hash_generated_method = "8EB14B4D72CA777DA01382AEBEEFF1B9")
-    @Deprecated
+@Deprecated
     public void runFinalizationSync() {
         System.runFinalization();
-        // ---------- Original Method ----------
-        //System.runFinalization();
     }
 
+    /**
+     * Implements setTargetHeapUtilization().
+     *
+     * @param newTarget the new suggested ideal heap utilization.
+     *                  This value may be adjusted internally.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:39.100 -0500", hash_original_method = "1BC492CFAAC06440005836321EF40EC6", hash_generated_method = "E8E53714CB7D45FC31B5E152CC74A9F2")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.855 -0400", hash_original_method = "1BC492CFAAC06440005836321EF40EC6", hash_generated_method = "2A4500EED54D06B53CF090EFE1949B33")
-    private void nativeSetTargetHeapUtilization(float newTarget) {
+    private void nativeSetTargetHeapUtilization(float newTarget){
+    	//Formerly a native method
+    	addTaint(newTarget);
     }
 
+
+    /**
+     * This method exists for binary compatibility.  It was part of
+     * the external allocation API which was removed in Honeycomb.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:39.102 -0500", hash_original_method = "0DBB3F3440DA26D4CDE5B1A71A1243C2", hash_generated_method = "FBD310130D4B9C224C0895282A9E3E5C")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.856 -0400", hash_original_method = "0DBB3F3440DA26D4CDE5B1A71A1243C2", hash_generated_method = "76443DD38298374EB31F1F4206666737")
-    @Deprecated
+@Deprecated
     public boolean trackExternalAllocation(long size) {
-        addTaint(size);
-        boolean varB326B5062B2F0E69046810717534CB09_1305927435 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_741351968 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_741351968;
-        // ---------- Original Method ----------
-        //return true;
+        return true;
     }
 
+    /**
+     * This method exists for binary compatibility.  It was part of
+     * the external allocation API which was removed in Honeycomb.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:39.104 -0500", hash_original_method = "22330635CB403C3ADB4BC9A546866054", hash_generated_method = "CF14B3DEA7D6CA29CBA2485ECD24310A")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.856 -0400", hash_original_method = "22330635CB403C3ADB4BC9A546866054", hash_generated_method = "CE2AEFA646DA82A51D36B8F06ED1BFAC")
-    @Deprecated
-    public void trackExternalFree(long size) {
-        addTaint(size);
-        // ---------- Original Method ----------
-    }
+@Deprecated
+    public void trackExternalFree(long size) {}
 
+    /**
+     * This method exists for binary compatibility.  It was part of
+     * the external allocation API which was removed in Honeycomb.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:39.106 -0500", hash_original_method = "A946C3EA36CF5D407B19BD7EB5F84EAB", hash_generated_method = "AE5DF6FFEE4F14850B5D5B2EDB525C5E")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.856 -0400", hash_original_method = "A946C3EA36CF5D407B19BD7EB5F84EAB", hash_generated_method = "63E62E0D4801A91891C2289A87044983")
-    @Deprecated
+@Deprecated
     public long getExternalBytesAllocated() {
-        long varCFCD208495D565EF66E7DFF9F98764DA_1168757812 = (0);
-                long var0F5264038205EDFB1AC05FBB0E8C5E94_1420274802 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_1420274802;
-        // ---------- Original Method ----------
-        //return 0;
+        return 0;
     }
 
+    /**
+     * Tells the VM to enable the JIT compiler. If the VM does not have a JIT
+     * implementation, calling this method should have no effect.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:39.110 -0500", hash_original_method = "2166D40B30A2B78A2A8578391CF70C71", hash_generated_method = "29BDC10AADFD96C19F029D1714A554B1")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.856 -0400", hash_original_method = "2166D40B30A2B78A2A8578391CF70C71", hash_generated_method = "5CE41E3C314575546051C1FC068CDF23")
-    public void startJitCompilation() {
+    public void startJitCompilation(){
+    	//Formerly a native method
     }
 
+
+    /**
+     * Tells the VM to disable the JIT compiler. If the VM does not have a JIT
+     * implementation, calling this method should have no effect.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:39.114 -0500", hash_original_method = "988710BD2A10AD89943FF29F774B18B3", hash_generated_method = "CA353D2A388EF4A594B5C454D32C0CAC")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.856 -0400", hash_original_method = "988710BD2A10AD89943FF29F774B18B3", hash_generated_method = "5394F4F9494DB803D576EA0E55AE138D")
-    public void disableJitCompilation() {
+    public void disableJitCompilation(){
+    	//Formerly a native method
     }
+
 
     
     @DSModeled(DSC.BAN)
@@ -200,31 +243,39 @@ public final class VMRuntime {
     	return new Object();
     }
 
+    /**
+     * Returns the address of array[0]. This differs from using JNI in that JNI might lie and
+     * give you the address of a copy of the array when in forcecopy mode.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:39.123 -0500", hash_original_method = "F2F9C5A5D8870A09D65982DFE8B619AA", hash_generated_method = "5E3094D0ACFCB5350E53B25A2B650DD8")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.856 -0400", hash_original_method = "F2F9C5A5D8870A09D65982DFE8B619AA", hash_generated_method = "5D3CF82E2F5EECD43E253822BAF31A6B")
-    public long addressOf(Object array) {
-        long var0F5264038205EDFB1AC05FBB0E8C5E94_751142300 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_751142300;
+    public long addressOf(Object array){
+    	//Formerly a native method
+    	addTaint(array.getTaint());
+    	return getTaintLong();
     }
 
+
+    /**
+     * Removes any growth limits, allowing the application to allocate
+     * up to the maximum heap size.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:39.127 -0500", hash_original_method = "008D98C2BCE518EEA7FDC1071598BCD6", hash_generated_method = "ABFD836FB1AE1F876C0489EF4E0B4791")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.856 -0400", hash_original_method = "008D98C2BCE518EEA7FDC1071598BCD6", hash_generated_method = "EEB37EDD5B5B9071347315008085CFAF")
-    public void clearGrowthLimit() {
+    public void clearGrowthLimit(){
+    	//Formerly a native method
     }
 
+
+    /**
+     * Returns true if either a Java debugger or native debugger is active.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:39.130 -0500", hash_original_method = "FD10061FB9DFD564FAB6BA17DFE98F77", hash_generated_method = "7DBF5BD38DA526086B79259046E6CD8E")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.856 -0400", hash_original_method = "FD10061FB9DFD564FAB6BA17DFE98F77", hash_generated_method = "E8B5A4E418AE7B4344F9BE83A99BC2C6")
-    public boolean isDebuggerActive() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1157197785 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1157197785;
+    public boolean isDebuggerActive(){
+    	//Formerly a native method
+    	return getTaintBoolean();
     }
 
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.856 -0400", hash_original_field = "BE97E66CF27F33E333158EB7DAA93C92", hash_generated_field = "894A31B8E254C688D0C13EABA3654B94")
-
-    private static final VMRuntime THE_ONE = new VMRuntime();
 }
 

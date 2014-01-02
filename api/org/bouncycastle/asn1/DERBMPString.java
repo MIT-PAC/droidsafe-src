@@ -1,6 +1,8 @@
 package org.bouncycastle.asn1;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 
@@ -10,56 +12,43 @@ import java.io.IOException;
 
 
 public class DERBMPString extends ASN1Object implements DERString {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.102 -0400", hash_original_field = "B45CFFE084DD3D20D928BEE85E7B0F21", hash_generated_field = "38EA5C212184AA9651934368805B840B")
 
-    String string;
+    /**
+     * return a BMP String from the given object.
+     *
+     * @param obj the object we want converted.
+     * @exception IllegalArgumentException if the object cannot be converted.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.037 -0500", hash_original_method = "FDD631165EEC56FE1D7AF0C1924E7160", hash_generated_method = "C51D880494ECE6006275AE2D7DE414B4")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.103 -0400", hash_original_method = "78F8AAB34A37706FEFE708907754C8E8", hash_generated_method = "2CEF79AB0E569859213614DB23F10A82")
-    public  DERBMPString(
-        byte[]   string) {
-        char[] cs = new char[string.length / 2];
-for(int i = 0;i != cs.length;i++)
-        {
-            cs[i] = (char)((string[2 * i] << 8) | (string[2 * i + 1] & 0xff));
-        } //End block
-        this.string = new String(cs);
-        // ---------- Original Method ----------
-        //char[]  cs = new char[string.length / 2];
-        //for (int i = 0; i != cs.length; i++)
-        //{
-            //cs[i] = (char)((string[2 * i] << 8) | (string[2 * i + 1] & 0xff));
-        //}
-        //this.string = new String(cs);
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.104 -0400", hash_original_method = "6B5E4F39ED8278020082E899D53170B5", hash_generated_method = "BA47B4DA0E258D9BDA4360123DE13384")
-    public  DERBMPString(
-        String   string) {
-        this.string = string;
-        // ---------- Original Method ----------
-        //this.string = string;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    public static DERBMPString getInstance(
-        Object  obj) {
+public static DERBMPString getInstance(
+        Object  obj)
+    {
         if (obj == null || obj instanceof DERBMPString)
         {
             return (DERBMPString)obj;
         }
+
         throw new IllegalArgumentException("illegal object in getInstance: " + obj.getClass().getName());
     }
 
+    /**
+     * return a BMP String from a tagged object.
+     *
+     * @param obj the tagged object holding the object we want
+     * @param explicit true if the object is meant to be explicitly
+     *              tagged false otherwise.
+     * @exception IllegalArgumentException if the tagged object cannot
+     *              be converted.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.041 -0500", hash_original_method = "26EBD9D89444D14878E2921E253645CB", hash_generated_method = "D385A0A2BE470855A7B663497268627B")
     
-    @DSModeled(DSC.SAFE)
-    public static DERBMPString getInstance(
+public static DERBMPString getInstance(
         ASN1TaggedObject obj,
-        boolean          explicit) {
+        boolean          explicit)
+    {
         DERObject o = obj.getObject();
+
         if (explicit || o instanceof DERBMPString)
         {
             return getInstance(o);
@@ -69,88 +58,92 @@ for(int i = 0;i != cs.length;i++)
             return new DERBMPString(ASN1OctetString.getInstance(o).getOctets());
         }
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.034 -0500", hash_original_field = "38EA5C212184AA9651934368805B840B", hash_generated_field = "38EA5C212184AA9651934368805B840B")
 
+    String  string;
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.105 -0400", hash_original_method = "3CB977BE316CAC9520A0E1ADE8D338F7", hash_generated_method = "2993959F2D3346B6569C92C4D3C7DCF2")
-    public String getString() {
-String varDCF8A90B03379D9C1C8BF337A3879E0C_223083313 =         string;
-        varDCF8A90B03379D9C1C8BF337A3879E0C_223083313.addTaint(taint);
-        return varDCF8A90B03379D9C1C8BF337A3879E0C_223083313;
-        // ---------- Original Method ----------
-        //return string;
-    }
 
+    /**
+     * basic constructor - byte encoded string.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.045 -0500", hash_original_method = "78F8AAB34A37706FEFE708907754C8E8", hash_generated_method = "49B87A64A3990CB089835F310507B33B")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.105 -0400", hash_original_method = "A7AD745E242BD88C36EC3708384A50C0", hash_generated_method = "0E7EEFA56E5423F71F5A744E6CA4B202")
-    public String toString() {
-String varDCF8A90B03379D9C1C8BF337A3879E0C_1199043327 =         string;
-        varDCF8A90B03379D9C1C8BF337A3879E0C_1199043327.addTaint(taint);
-        return varDCF8A90B03379D9C1C8BF337A3879E0C_1199043327;
-        // ---------- Original Method ----------
-        //return string;
-    }
+public DERBMPString(
+        byte[]   string)
+    {
+        char[]  cs = new char[string.length / 2];
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.105 -0400", hash_original_method = "929F8DA4B9097458735D9AC5748FD267", hash_generated_method = "268964B6CE22099830352692652745AC")
-    public int hashCode() {
-        int var5EE87F4C9D30CCD0C63D46FAC325C3D6_467860620 = (this.getString().hashCode());
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_683935233 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_683935233;
-        // ---------- Original Method ----------
-        //return this.getString().hashCode();
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.106 -0400", hash_original_method = "7D03FB23F5FAD453913811002EB3F146", hash_generated_method = "C5A47B8316F7EEFCECB072FE19F9FDB7")
-    protected boolean asn1Equals(
-        DERObject  o) {
-        addTaint(o.getTaint());
-        if(!(o instanceof DERBMPString))        
+        for (int i = 0; i != cs.length; i++)
         {
-            boolean var68934A3E9455FA72420237EB05902327_61155296 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1546282812 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1546282812;
-        } //End block
-        DERBMPString s = (DERBMPString)o;
-        boolean varEDB7CD599351FA878152EF17A169B1A6_541165916 = (this.getString().equals(s.getString()));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1748703296 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1748703296;
-        // ---------- Original Method ----------
-        //if (!(o instanceof DERBMPString))
-        //{
-            //return false;
-        //}
-        //DERBMPString  s = (DERBMPString)o;
-        //return this.getString().equals(s.getString());
+            cs[i] = (char)((string[2 * i] << 8) | (string[2 * i + 1] & 0xff));
+        }
+
+        this.string = new String(cs);
     }
 
+    /**
+     * basic constructor
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.048 -0500", hash_original_method = "6B5E4F39ED8278020082E899D53170B5", hash_generated_method = "C188958FAB55E1A09C736A65734BA869")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.107 -0400", hash_original_method = "FF137816E9C451A6CEB1C43EC2D7AD7D", hash_generated_method = "86BC185068295DF8220E50980B3D028E")
-     void encode(
-        DEROutputStream  out) throws IOException {
-        addTaint(out.getTaint());
-        char[] c = string.toCharArray();
-        byte[] b = new byte[c.length * 2];
-for(int i = 0;i != c.length;i++)
+public DERBMPString(
+        String   string)
+    {
+        this.string = string;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.050 -0500", hash_original_method = "3CB977BE316CAC9520A0E1ADE8D338F7", hash_generated_method = "0799D80CD18A4A810496E9156E8785AE")
+    
+public String getString()
+    {
+        return string;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.053 -0500", hash_original_method = "A7AD745E242BD88C36EC3708384A50C0", hash_generated_method = "2D11779E0451E86157AACAD10BFF2E34")
+    
+public String toString()
+    {
+        return string;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.055 -0500", hash_original_method = "929F8DA4B9097458735D9AC5748FD267", hash_generated_method = "54F3A64DBCC65B097BA7A8E0BB1579E9")
+    
+public int hashCode()
+    {
+        return this.getString().hashCode();
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.058 -0500", hash_original_method = "7D03FB23F5FAD453913811002EB3F146", hash_generated_method = "8A902F41582DFA5890125C4E4EDB5C15")
+    
+protected boolean asn1Equals(
+        DERObject  o)
+    {
+        if (!(o instanceof DERBMPString))
+        {
+            return false;
+        }
+
+        DERBMPString  s = (DERBMPString)o;
+
+        return this.getString().equals(s.getString());
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.062 -0500", hash_original_method = "FF137816E9C451A6CEB1C43EC2D7AD7D", hash_generated_method = "FF137816E9C451A6CEB1C43EC2D7AD7D")
+    
+void encode(
+        DEROutputStream  out)
+        throws IOException
+    {
+        char[]  c = string.toCharArray();
+        byte[]  b = new byte[c.length * 2];
+
+        for (int i = 0; i != c.length; i++)
         {
             b[2 * i] = (byte)(c[i] >> 8);
             b[2 * i + 1] = (byte)c[i];
-        } //End block
+        }
+
         out.writeEncoded(BMP_STRING, b);
-        // ---------- Original Method ----------
-        //char[]  c = string.toCharArray();
-        //byte[]  b = new byte[c.length * 2];
-        //for (int i = 0; i != c.length; i++)
-        //{
-            //b[2 * i] = (byte)(c[i] >> 8);
-            //b[2 * i + 1] = (byte)c[i];
-        //}
-        //out.writeEncoded(BMP_STRING, b);
     }
 
     

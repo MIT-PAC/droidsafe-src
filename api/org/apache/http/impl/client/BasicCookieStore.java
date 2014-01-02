@@ -1,6 +1,8 @@
 package org.apache.http.impl.client;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -17,141 +19,125 @@ import org.apache.http.cookie.CookieIdentityComparator;
 
 
 public class BasicCookieStore implements CookieStore {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.611 -0400", hash_original_field = "55E7DD3016CE4AC57B9A0F56AF12F7C2", hash_generated_field = "889AFA10BF8703D281158D946DEF0E23")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.540 -0500", hash_original_field = "857FB572661B8DF2EA46EDCCE0F39FF4", hash_generated_field = "889AFA10BF8703D281158D946DEF0E23")
 
-    private ArrayList<Cookie> cookies;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.611 -0400", hash_original_field = "FBCB977535D84EAAA96CA6649D45EFEF", hash_generated_field = "7D5FE1B394E08AAC5030ED65F9BDE34B")
 
-    private Comparator<Cookie> cookieComparator;
+    private  ArrayList<Cookie> cookies;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.542 -0500", hash_original_field = "530902EC2CBE0E7B976D4A090E07685B", hash_generated_field = "7D5FE1B394E08AAC5030ED65F9BDE34B")
+
+
+    private  Comparator<Cookie> cookieComparator;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.611 -0400", hash_original_method = "7CB52AB4B53860D7A09DB1DA893E1548", hash_generated_method = "22D06068CA70CB1411551B0651180E58")
-    public  BasicCookieStore() {
+    // -------------------------------------------------------- Class Variables
+
+    /**
+     * Default constructor.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.545 -0500", hash_original_method = "7CB52AB4B53860D7A09DB1DA893E1548", hash_generated_method = "888F20966991AE81C667B903F9B4799E")
+    
+public BasicCookieStore() {
         super();
         this.cookies = new ArrayList<Cookie>();
         this.cookieComparator = new CookieIdentityComparator();
-        // ---------- Original Method ----------
-        //this.cookies = new ArrayList<Cookie>();
-        //this.cookieComparator = new CookieIdentityComparator();
     }
 
+    /**
+     * Adds an {@link Cookie HTTP cookie}, replacing any existing equivalent cookies.
+     * If the given cookie has already expired it will not be added, but existing 
+     * values will still be removed.
+     * 
+     * @param cookie the {@link Cookie cookie} to be added
+     * 
+     * @see #addCookies(Cookie[])
+     * 
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.548 -0500", hash_original_method = "47E381A9C2C1FA70862098466A29B040", hash_generated_method = "71248FA2B4A9118200223D402E4C25A9")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.611 -0400", hash_original_method = "47E381A9C2C1FA70862098466A29B040", hash_generated_method = "A7C9FBE88548C28F13DF9BB10F32BD2F")
-    public synchronized void addCookie(Cookie cookie) {
-        addTaint(cookie.getTaint());
-        if(cookie != null)        
-        {
-for(Iterator<Cookie> it = cookies.iterator();it.hasNext();)
-            {
-                if(cookieComparator.compare(cookie, it.next()) == 0)                
-                {
+public synchronized void addCookie(Cookie cookie) {
+        if (cookie != null) {
+            // first remove any old cookie that is equivalent
+            for (Iterator<Cookie> it = cookies.iterator(); it.hasNext();) {
+                if (cookieComparator.compare(cookie, it.next()) == 0) {
                     it.remove();
                     break;
-                } //End block
-            } //End block
-            if(!cookie.isExpired(new Date()))            
-            {
+                }
+            }
+            if (!cookie.isExpired(new Date())) {
                 cookies.add(cookie);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (cookie != null) {
-            //for (Iterator<Cookie> it = cookies.iterator(); it.hasNext();) {
-                //if (cookieComparator.compare(cookie, it.next()) == 0) {
-                    //it.remove();
-                    //break;
-                //}
-            //}
-            //if (!cookie.isExpired(new Date())) {
-                //cookies.add(cookie);
-            //}
-        //}
+            }
+        }
     }
 
+    /**
+     * Adds an array of {@link Cookie HTTP cookies}. Cookies are added individually and 
+     * in the given array order. If any of the given cookies has already expired it will 
+     * not be added, but existing values will still be removed.
+     * 
+     * @param cookies the {@link Cookie cookies} to be added
+     * 
+     * @see #addCookie(Cookie)
+     * 
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.550 -0500", hash_original_method = "E08AF67230303C760B74C49856ED8B12", hash_generated_method = "008F927C6A22C75725D8F408C043D635")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.611 -0400", hash_original_method = "E08AF67230303C760B74C49856ED8B12", hash_generated_method = "58E55FA9C878A3F9A0B27A6EB9825E28")
-    public synchronized void addCookies(Cookie[] cookies) {
-        addTaint(cookies[0].getTaint());
-        if(cookies != null)        
-        {
-for(Cookie cooky : cookies)
-            {
+public synchronized void addCookies(Cookie[] cookies) {
+        if (cookies != null) {
+            for (Cookie cooky : cookies) {
                 this.addCookie(cooky);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (cookies != null) {
-            //for (Cookie cooky : cookies) {
-                //this.addCookie(cooky);
-            //}
-        //}
+            }
+        }
     }
 
+    /**
+     * Returns an immutable array of {@link Cookie cookies} that this HTTP
+     * state currently contains.
+     * 
+     * @return an array of {@link Cookie cookies}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.553 -0500", hash_original_method = "4518D291A6406FB94614916CA57C71BE", hash_generated_method = "B03207FF93EBC9252776C36B81C2329D")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.611 -0400", hash_original_method = "4518D291A6406FB94614916CA57C71BE", hash_generated_method = "1AA9649152ACC792BF01A9854F8753F5")
-    public synchronized List<Cookie> getCookies() {
-List<Cookie> varCBE2F43F7F720C22A8D82FB98D41DC23_314871575 =         Collections.unmodifiableList(this.cookies);
-        varCBE2F43F7F720C22A8D82FB98D41DC23_314871575.addTaint(taint);
-        return varCBE2F43F7F720C22A8D82FB98D41DC23_314871575;
-        // ---------- Original Method ----------
-        //return Collections.unmodifiableList(this.cookies);
+public synchronized List<Cookie> getCookies() {
+        return Collections.unmodifiableList(this.cookies);
     }
 
+    /**
+     * Removes all of {@link Cookie cookies} in this HTTP state
+     * that have expired by the specified {@link java.util.Date date}. 
+     * 
+     * @return true if any cookies were purged.
+     * 
+     * @see Cookie#isExpired(Date)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.556 -0500", hash_original_method = "882C42ACB6CC9EA440C89C4BE76EF44B", hash_generated_method = "9BD6C188A5E52262005E7053BA74231C")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.611 -0400", hash_original_method = "882C42ACB6CC9EA440C89C4BE76EF44B", hash_generated_method = "342125F1B5121493C6C82D942913996E")
-    public synchronized boolean clearExpired(final Date date) {
-        addTaint(date.getTaint());
-        if(date == null)        
-        {
-            boolean var68934A3E9455FA72420237EB05902327_547545528 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1180829746 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1180829746;
-        } //End block
+public synchronized boolean clearExpired(final Date date) {
+        if (date == null) {
+            return false;
+        }
         boolean removed = false;
-for(Iterator<Cookie> it = cookies.iterator();it.hasNext();)
-        {
-            if(it.next().isExpired(date))            
-            {
+        for (Iterator<Cookie> it = cookies.iterator(); it.hasNext();) {
+            if (it.next().isExpired(date)) {
                 it.remove();
                 removed = true;
-            } //End block
-        } //End block
-        boolean varB07286EBBB5BC7AA91CC3EAA8BC19711_1019598151 = (removed);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1519261430 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1519261430;
-        // ---------- Original Method ----------
-        //if (date == null) {
-            //return false;
-        //}
-        //boolean removed = false;
-        //for (Iterator<Cookie> it = cookies.iterator(); it.hasNext();) {
-            //if (it.next().isExpired(date)) {
-                //it.remove();
-                //removed = true;
-            //}
-        //}
-        //return removed;
+            }
+        }
+        return removed;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.559 -0500", hash_original_method = "3BF0AB240A348C3188E3D51149860C91", hash_generated_method = "DD60D1499FF9AAF6DD237D4EE34C3711")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.612 -0400", hash_original_method = "3BF0AB240A348C3188E3D51149860C91", hash_generated_method = "71AA275ED67492ACB50135EF181F0AE4")
-    @Override
+@Override
     public String toString() {
-String var5FB4B77384CA93A6200A4A8905C96E29_311781332 =         cookies.toString();
-        var5FB4B77384CA93A6200A4A8905C96E29_311781332.addTaint(taint);
-        return var5FB4B77384CA93A6200A4A8905C96E29_311781332;
-        // ---------- Original Method ----------
-        //return cookies.toString();
+        return cookies.toString();
     }
-
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.612 -0400", hash_original_method = "918F9BD76316B2620CCA2503ADA6AAF2", hash_generated_method = "31DAF4A715C672504B7C730D1B4A0A58")
-    public synchronized void clear() {
+    /**
+     * Clears all cookies.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.561 -0500", hash_original_method = "918F9BD76316B2620CCA2503ADA6AAF2", hash_generated_method = "949F95E24D4D8B7381B3B7E2455D8467")
+    
+public synchronized void clear() {
         cookies.clear();
-        // ---------- Original Method ----------
-        //cookies.clear();
     }
 
     

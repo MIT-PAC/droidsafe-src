@@ -16,32 +16,20 @@ import org.apache.http.protocol.HTTP;
 
 public class StringEntity extends AbstractHttpEntity implements Cloneable {
     protected  byte[] content = null;
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:46.030 -0500", hash_original_method = "310FAE5CF3493E31DD2A41A7B590618B", hash_generated_method = "AB109E6E9CB1E6644855DA118C9B8507")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:01.793 -0400", hash_original_method = "310FAE5CF3493E31DD2A41A7B590618B", hash_generated_method = "D6DF4A142B89E0B0B95941A5CA423B41")
-    public  StringEntity(final String s, String charset) throws UnsupportedEncodingException {
+public StringEntity(final String s, String charset) 
+            throws UnsupportedEncodingException {
         super();
-        if(s == null)        
-        {
-            IllegalArgumentException varE24C186B16DB6A69B6EFDB5064864FE5_1995702918 = new IllegalArgumentException("Source string may not be null");
-            varE24C186B16DB6A69B6EFDB5064864FE5_1995702918.addTaint(taint);
-            throw varE24C186B16DB6A69B6EFDB5064864FE5_1995702918;
-        } //End block
-        if(charset == null)        
-        {
+        if (s == null) {
+            throw new IllegalArgumentException("Source string may not be null");
+        }
+        if (charset == null) {
             charset = HTTP.DEFAULT_CONTENT_CHARSET;
-        } //End block
+        }
         this.content = s.getBytes(charset);
         setContentType(HTTP.PLAIN_TEXT_TYPE + HTTP.CHARSET_PARAM + charset);
-        // ---------- Original Method ----------
-        //if (s == null) {
-            //throw new IllegalArgumentException("Source string may not be null");
-        //}
-        //if (charset == null) {
-            //charset = HTTP.DEFAULT_CONTENT_CHARSET;
-        //}
-        //this.content = s.getBytes(charset);
-        //setContentType(HTTP.PLAIN_TEXT_TYPE + HTTP.CHARSET_PARAM + charset);
     }
 
     
@@ -51,6 +39,18 @@ public class StringEntity extends AbstractHttpEntity implements Cloneable {
         //this(s, null);
         addTaint(s.getTaint());
         // ---------- Original Method ----------
+    }
+
+    
+    // orphaned legacy method
+    public StringEntity(final String string, final ContentType contentType) {
+        this.content = string.getBytes();
+        setContentType(contentType.toString());
+    }
+    
+    // orphaned legacy method
+    public StringEntity(final String string, final Charset charset) {
+        this(string, ContentType.create(ContentType.TEXT_PLAIN.getMimeType(), charset));
     }
 
     
@@ -76,50 +76,32 @@ public class StringEntity extends AbstractHttpEntity implements Cloneable {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:01.799 -0400", hash_original_method = "F9996C70B2856060246DFF92163DB1CA", hash_generated_method = "5F994F9AF4B08F36F8435C59D110FF86")
-    public void writeTo(final OutputStream outstream) throws IOException {
-        addTaint(outstream.getTaint());
-        if(outstream == null)        
-        {
-            IllegalArgumentException var8C9256F172D6E7DD26CC6F974ABC4716_1274632363 = new IllegalArgumentException("Output stream may not be null");
-            var8C9256F172D6E7DD26CC6F974ABC4716_1274632363.addTaint(taint);
-            throw var8C9256F172D6E7DD26CC6F974ABC4716_1274632363;
-        } //End block
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:46.044 -0500", hash_original_method = "F9996C70B2856060246DFF92163DB1CA", hash_generated_method = "BDD092DE07E44519E63AE6CE1D7E2553")
+    
+public void writeTo(final OutputStream outstream) throws IOException {
+        if (outstream == null) {
+            throw new IllegalArgumentException("Output stream may not be null");
+        }
         outstream.write(this.content);
         outstream.flush();
-        // ---------- Original Method ----------
-        //if (outstream == null) {
-            //throw new IllegalArgumentException("Output stream may not be null");
-        //}
-        //outstream.write(this.content);
-        //outstream.flush();
     }
 
+    /**
+     * Tells that this entity is not streaming.
+     *
+     * @return <code>false</code>
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:46.048 -0500", hash_original_method = "1C9916E491D93B6DAF758D3D738C6EEB", hash_generated_method = "15A1411ACDA23E1A918918FF0CDDBE57")
     
-    @DSModeled(DSC.SAFE)
-    @Override
-	public boolean isStreaming() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:01.811 -0400", hash_original_method = "66DEBDF0D0405CDDBB7BD5DED76064DF", hash_generated_method = "102D7ED25E1B5F12D69392169FBE7276")
-    public Object clone() throws CloneNotSupportedException {
-Object var46F3A0D86742C1D6E099C2B166941A33_246926352 =         super.clone();
-        var46F3A0D86742C1D6E099C2B166941A33_246926352.addTaint(taint);
-        return var46F3A0D86742C1D6E099C2B166941A33_246926352;
-        // ---------- Original Method ----------
-        //return super.clone();
+public boolean isStreaming() {
+        return false;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:46.052 -0500", hash_original_method = "66DEBDF0D0405CDDBB7BD5DED76064DF", hash_generated_method = "587F7AA34F50D42D8C2635621B97F7C1")
     
-    // orphaned legacy method
-    public StringEntity(final String string, final ContentType contentType) {
-        this.content = string.getBytes();
-        setContentType(contentType.toString());
+public Object clone() throws CloneNotSupportedException {
+        return super.clone();
     }
     
     // orphaned legacy method
@@ -128,11 +110,6 @@ Object var46F3A0D86742C1D6E099C2B166941A33_246926352 =         super.clone();
 		// TODO Auto-generated method stub
 		return false;
 	}
-    
-    // orphaned legacy method
-    public StringEntity(final String string, final Charset charset) {
-        this(string, ContentType.create(ContentType.TEXT_PLAIN.getMimeType(), charset));
-    }
     
     
     // orphaned legacy method

@@ -1,6 +1,8 @@
 package com.android.internal.telephony.cat;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
@@ -8,105 +10,69 @@ import droidsafe.annotations.*;
 
 
 public class ResultException extends CatException {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.527 -0400", hash_original_field = "313AEF43C06545BCEAC152A1C285EBE1", hash_generated_field = "4AC7FC9F4E020263BC66789E594B2993")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:06.598 -0500", hash_original_field = "115A09806B035A9C2A9F9E9F3A37F598", hash_generated_field = "4AC7FC9F4E020263BC66789E594B2993")
 
     private ResultCode mResult;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.527 -0400", hash_original_field = "6498C80FCD262D5996F8FC6DFBCB3810", hash_generated_field = "CBC99389386D87423ED8125BD72ABE6E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:06.601 -0500", hash_original_field = "70854963B65996F51B0DD07E81D3DBE8", hash_generated_field = "CBC99389386D87423ED8125BD72ABE6E")
 
     private int mAdditionalInfo;
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:06.604 -0500", hash_original_method = "68A91FDF5AB4F0330196DC8A0AB86338", hash_generated_method = "B634DA81137103DD6AF19A5BA68722BD")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.528 -0400", hash_original_method = "68A91FDF5AB4F0330196DC8A0AB86338", hash_generated_method = "937A2968CD96CF0E360CC15A5FC232A1")
-    public  ResultException(ResultCode result) {
+public ResultException(ResultCode result) {
         super();
-switch(result){
-        case TERMINAL_CRNTLY_UNABLE_TO_PROCESS:
-        case NETWORK_CRNTLY_UNABLE_TO_PROCESS:
-        case LAUNCH_BROWSER_ERROR:
-        case MULTI_CARDS_CMD_ERROR:
-        case USIM_CALL_CONTROL_PERMANENT:
-        case BIP_ERROR:
-        case FRAMES_ERROR:
-        case MMS_ERROR:
-        AssertionError var33E7929F74F47B391FB5094D4EA0FA2E_539761042 = new AssertionError(
+
+        // ETSI TS 102 223, 8.12 -- For the general results '20', '21', '26',
+        // '38', '39', '3A', '3C', and '3D', it is mandatory for the terminal
+        // to provide a specific cause value as additional information.
+        switch (result) {
+            case TERMINAL_CRNTLY_UNABLE_TO_PROCESS:    // 0x20
+            case NETWORK_CRNTLY_UNABLE_TO_PROCESS:     // 0x21
+            case LAUNCH_BROWSER_ERROR:                 // 0x26
+            case MULTI_CARDS_CMD_ERROR:                // 0x38
+            case USIM_CALL_CONTROL_PERMANENT:          // 0x39
+            case BIP_ERROR:                            // 0x3a
+            case FRAMES_ERROR:                         // 0x3c
+            case MMS_ERROR:                            // 0x3d
+                throw new AssertionError(
                         "For result code, " + result +
                         ", additional information must be given!");
-        var33E7929F74F47B391FB5094D4EA0FA2E_539761042.addTaint(taint);
-        throw var33E7929F74F47B391FB5094D4EA0FA2E_539761042;
-}        mResult = result;
+        }
+
+        mResult = result;
         mAdditionalInfo = -1;
-        // ---------- Original Method ----------
-        //switch (result) {
-            //case TERMINAL_CRNTLY_UNABLE_TO_PROCESS:    
-            //case NETWORK_CRNTLY_UNABLE_TO_PROCESS:     
-            //case LAUNCH_BROWSER_ERROR:                 
-            //case MULTI_CARDS_CMD_ERROR:                
-            //case USIM_CALL_CONTROL_PERMANENT:          
-            //case BIP_ERROR:                            
-            //case FRAMES_ERROR:                         
-            //case MMS_ERROR:                            
-                //throw new AssertionError(
-                        //"For result code, " + result +
-                        //", additional information must be given!");
-        //}
-        //mResult = result;
-        //mAdditionalInfo = -1;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:06.607 -0500", hash_original_method = "04974938152AFE565028AB1B397B6372", hash_generated_method = "B46938F6D4F89ACF15851B9607BC19A7")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.529 -0400", hash_original_method = "04974938152AFE565028AB1B397B6372", hash_generated_method = "AB868A6CFFDC0A932E252A2E9BDF3C6E")
-    public  ResultException(ResultCode result, int additionalInfo) {
+public ResultException(ResultCode result, int additionalInfo) {
         super();
-        if(additionalInfo < 0)        
-        {
-            AssertionError var30A8245AE5940E473F92B163F3FFEB21_366481173 = new AssertionError(
+
+        if (additionalInfo < 0) {
+            throw new AssertionError(
                     "Additional info must be greater than zero!");
-            var30A8245AE5940E473F92B163F3FFEB21_366481173.addTaint(taint);
-            throw var30A8245AE5940E473F92B163F3FFEB21_366481173;
-        } //End block
+        }
+
         mResult = result;
         mAdditionalInfo = additionalInfo;
-        // ---------- Original Method ----------
-        //if (additionalInfo < 0) {
-            //throw new AssertionError(
-                    //"Additional info must be greater than zero!");
-        //}
-        //mResult = result;
-        //mAdditionalInfo = additionalInfo;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:06.609 -0500", hash_original_method = "A57BD664B9013CBC4792F94DA18D35A2", hash_generated_method = "F9A620449F2DA1FD900A9177C7353A34")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.530 -0400", hash_original_method = "A57BD664B9013CBC4792F94DA18D35A2", hash_generated_method = "6B86D9EB5A68FC90B1F5A0C83A3E3DD5")
-    public ResultCode result() {
-ResultCode var8EC17D26103D23643357521909BC2C9A_645283829 =         mResult;
-        var8EC17D26103D23643357521909BC2C9A_645283829.addTaint(taint);
-        return var8EC17D26103D23643357521909BC2C9A_645283829;
-        // ---------- Original Method ----------
-        //return mResult;
+public ResultCode result() {
+        return mResult;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:06.611 -0500", hash_original_method = "AD79E69220253098AEFB7D9A4D5D98C9", hash_generated_method = "F10D1BA9991E2F435F40C9067C4C5443")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.531 -0400", hash_original_method = "AD79E69220253098AEFB7D9A4D5D98C9", hash_generated_method = "F12BF968C0BCEA15AC9D9EE4A9566512")
-    public boolean hasAdditionalInfo() {
-        boolean var3EA2D272F0FBB334247B11D270B31BE9_268263581 = (mAdditionalInfo >= 0);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1331610064 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1331610064;
-        // ---------- Original Method ----------
-        //return mAdditionalInfo >= 0;
+public boolean hasAdditionalInfo() {
+        return mAdditionalInfo >= 0;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:06.613 -0500", hash_original_method = "B6D84D422E51AC37891071F2EE987CA4", hash_generated_method = "5454E2B18A9BE8FB4E97F16CFFB98BCB")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.531 -0400", hash_original_method = "B6D84D422E51AC37891071F2EE987CA4", hash_generated_method = "BCF7F408EE30E58DD355C7939B32EC13")
-    public int additionalInfo() {
-        int var6498C80FCD262D5996F8FC6DFBCB3810_1473750997 = (mAdditionalInfo);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1803221005 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1803221005;
-        // ---------- Original Method ----------
-        //return mAdditionalInfo;
+public int additionalInfo() {
+        return mAdditionalInfo;
     }
 
     

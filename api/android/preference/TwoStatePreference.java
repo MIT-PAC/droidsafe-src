@@ -1,6 +1,8 @@
 package android.preference;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -17,410 +19,331 @@ import android.widget.TextView;
 
 
 public abstract class TwoStatePreference extends Preference {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.922 -0400", hash_original_field = "16D20186D5AA4CF4BF1132594D02BA75", hash_generated_field = "0A63C4508093BBBDC63A916183312B21")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.335 -0500", hash_original_field = "79F956D2046D3349120E2925E931AB04", hash_generated_field = "0A63C4508093BBBDC63A916183312B21")
+
 
     private CharSequence mSummaryOn;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.922 -0400", hash_original_field = "B78FF240CB74BC7C7CDDCEB5DC4DDDFF", hash_generated_field = "7936F2388E5FECE5D26263562952AF1C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.337 -0500", hash_original_field = "C9C703DAFAF0CC0824DEBF823C9E9923", hash_generated_field = "7936F2388E5FECE5D26263562952AF1C")
 
     private CharSequence mSummaryOff;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.922 -0400", hash_original_field = "B7985199D35C1155A55567C458443B15", hash_generated_field = "2095822BEB25A977611B30C48AE7794D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.339 -0500", hash_original_field = "2095822BEB25A977611B30C48AE7794D", hash_generated_field = "2095822BEB25A977611B30C48AE7794D")
 
     boolean mChecked;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.922 -0400", hash_original_field = "BA02A487DDDF80B1BCEFB080B47DA49C", hash_generated_field = "35334A485195E89BB569733AA9D3EF56")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.342 -0500", hash_original_field = "D485DAA0B69379179DC2A5907E551868", hash_generated_field = "35334A485195E89BB569733AA9D3EF56")
 
     private boolean mSendClickAccessibilityEvent;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.922 -0400", hash_original_field = "B485C56B2E2F60A8579BB8CCE5F5F8B6", hash_generated_field = "A45150049825FDCDA3DE269C67272345")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.344 -0500", hash_original_field = "6DE548F910A03AB37C1AA22EC9C7CFC6", hash_generated_field = "A45150049825FDCDA3DE269C67272345")
 
     private boolean mDisableDependentsState;
+
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.346 -0500", hash_original_method = "9308B3B15F4DE8F7508C8EA50D56D8AD", hash_generated_method = "258A6CAC93AAD14C03652E28A1D45CF7")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.922 -0400", hash_original_method = "9308B3B15F4DE8F7508C8EA50D56D8AD", hash_generated_method = "25DBA64900E9B3AE70991F314184257B")
-    public  TwoStatePreference(Context context, AttributeSet attrs, int defStyle) {
+public TwoStatePreference(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-        addTaint(defStyle);
-        addTaint(attrs.getTaint());
-        addTaint(context.getTaint());
-        // ---------- Original Method ----------
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.349 -0500", hash_original_method = "069F398059373859493FBC4CB93F22AA", hash_generated_method = "BA81303DD1058CFB4FCD0E4BA9BCFF71")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.923 -0400", hash_original_method = "069F398059373859493FBC4CB93F22AA", hash_generated_method = "5D1A159E1EDD41237E37B3284CA56407")
-    public  TwoStatePreference(Context context, AttributeSet attrs) {
+public TwoStatePreference(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
-        addTaint(attrs.getTaint());
-        addTaint(context.getTaint());
-        // ---------- Original Method ----------
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.351 -0500", hash_original_method = "DE7459DE73702557DE26E7B158A3632F", hash_generated_method = "17C7EEBC783299CAF8A59F3BE5CBE456")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.923 -0400", hash_original_method = "DE7459DE73702557DE26E7B158A3632F", hash_generated_method = "1C73A2C1F02E9B56C524EA06321EA376")
-    public  TwoStatePreference(Context context) {
+public TwoStatePreference(Context context) {
         this(context, null);
-        addTaint(context.getTaint());
-        // ---------- Original Method ----------
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.353 -0500", hash_original_method = "41BF424D5DCED4AFC88BB1561E7758B1", hash_generated_method = "7A03287DCF28281EA2B997AF41CC167E")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.924 -0400", hash_original_method = "41BF424D5DCED4AFC88BB1561E7758B1", hash_generated_method = "F85F5ACE579E4237BAE1A8EEC96CAA96")
-    @Override
+@Override
     protected void onClick() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
         super.onClick();
+
         boolean newValue = !isChecked();
+
         mSendClickAccessibilityEvent = true;
-        if(!callChangeListener(newValue))        
-        {
+
+        if (!callChangeListener(newValue)) {
             return;
-        } //End block
+        }
+
         setChecked(newValue);
-        // ---------- Original Method ----------
-        //super.onClick();
-        //boolean newValue = !isChecked();
-        //mSendClickAccessibilityEvent = true;
-        //if (!callChangeListener(newValue)) {
-            //return;
-        //}
-        //setChecked(newValue);
     }
 
+    /**
+     * Sets the checked state and saves it to the {@link SharedPreferences}.
+     *
+     * @param checked The checked state.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.356 -0500", hash_original_method = "12D9CEBA0208655576D33A98ED54981A", hash_generated_method = "784176010AB6914D1ADE8C4FD8CEA97D")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.924 -0400", hash_original_method = "12D9CEBA0208655576D33A98ED54981A", hash_generated_method = "FCB722B53DB1EFADEF31625EE7EE4BCE")
-    public void setChecked(boolean checked) {
-        if(mChecked != checked)        
-        {
+public void setChecked(boolean checked) {
+        if (mChecked != checked) {
             mChecked = checked;
             persistBoolean(checked);
             notifyDependencyChange(shouldDisableDependents());
             notifyChanged();
-        } //End block
-        // ---------- Original Method ----------
-        //if (mChecked != checked) {
-            //mChecked = checked;
-            //persistBoolean(checked);
-            //notifyDependencyChange(shouldDisableDependents());
-            //notifyChanged();
-        //}
+        }
     }
 
+    /**
+     * Returns the checked state.
+     *
+     * @return The checked state.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.358 -0500", hash_original_method = "1057BD246BBC96B40BF6B862055C5AB8", hash_generated_method = "7DBC96472843914D224753BAD760B683")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.925 -0400", hash_original_method = "1057BD246BBC96B40BF6B862055C5AB8", hash_generated_method = "C75D3BC4FBB35B1B5B5578D1DBC347FE")
-    public boolean isChecked() {
-        boolean varB7985199D35C1155A55567C458443B15_707008030 = (mChecked);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_308337119 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_308337119;
-        // ---------- Original Method ----------
-        //return mChecked;
+public boolean isChecked() {
+        return mChecked;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.360 -0500", hash_original_method = "4E403BDF8313BB473693F04068F62649", hash_generated_method = "E4EBFCC7536539CE59A70909C958FE50")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.926 -0400", hash_original_method = "4E403BDF8313BB473693F04068F62649", hash_generated_method = "525CB0A7E5BE2BD05A4D9426D897C91A")
-    @Override
+@Override
     public boolean shouldDisableDependents() {
         boolean shouldDisable = mDisableDependentsState ? mChecked : !mChecked;
-        boolean var9293DB48DDC70F24637FC9558F6C4405_2087955587 = (shouldDisable || super.shouldDisableDependents());
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_396722931 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_396722931;
-        // ---------- Original Method ----------
-        //boolean shouldDisable = mDisableDependentsState ? mChecked : !mChecked;
-        //return shouldDisable || super.shouldDisableDependents();
+        return shouldDisable || super.shouldDisableDependents();
     }
 
+    /**
+     * Sets the summary to be shown when checked.
+     *
+     * @param summary The summary to be shown when checked.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.363 -0500", hash_original_method = "ABD6122B04EABCC29A2D57307245871E", hash_generated_method = "C46997D2300F9B96A75CB0A2563ADC11")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.926 -0400", hash_original_method = "ABD6122B04EABCC29A2D57307245871E", hash_generated_method = "8C5E1C28B09728942892A3304640D660")
-    public void setSummaryOn(CharSequence summary) {
+public void setSummaryOn(CharSequence summary) {
         mSummaryOn = summary;
-        if(isChecked())        
-        {
+        if (isChecked()) {
             notifyChanged();
-        } //End block
-        // ---------- Original Method ----------
-        //mSummaryOn = summary;
-        //if (isChecked()) {
-            //notifyChanged();
-        //}
+        }
     }
 
+    /**
+     * @see #setSummaryOn(CharSequence)
+     * @param summaryResId The summary as a resource.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.365 -0500", hash_original_method = "840A2DF332BCD4D47FC113ECD5767E5E", hash_generated_method = "2AD79D3C20A788609781E3D3765ED605")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.927 -0400", hash_original_method = "840A2DF332BCD4D47FC113ECD5767E5E", hash_generated_method = "63364D1BFCEBB03223B66404D3DEE4D4")
-    public void setSummaryOn(int summaryResId) {
-        addTaint(summaryResId);
+public void setSummaryOn(int summaryResId) {
         setSummaryOn(getContext().getString(summaryResId));
-        // ---------- Original Method ----------
-        //setSummaryOn(getContext().getString(summaryResId));
     }
 
+    /**
+     * Returns the summary to be shown when checked.
+     * @return The summary.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.367 -0500", hash_original_method = "53022197E36EDF9F1FD4F6F19ADFC277", hash_generated_method = "1BBE5CF26238E024D5A2941A62474B93")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.927 -0400", hash_original_method = "53022197E36EDF9F1FD4F6F19ADFC277", hash_generated_method = "E45EA2C60805C82B9BF0E294E0739A0D")
-    public CharSequence getSummaryOn() {
-CharSequence varD1E749C94F9B28E16C4A47C78F19D8A5_1568715208 =         mSummaryOn;
-        varD1E749C94F9B28E16C4A47C78F19D8A5_1568715208.addTaint(taint);
-        return varD1E749C94F9B28E16C4A47C78F19D8A5_1568715208;
-        // ---------- Original Method ----------
-        //return mSummaryOn;
+public CharSequence getSummaryOn() {
+        return mSummaryOn;
     }
 
+    /**
+     * Sets the summary to be shown when unchecked.
+     *
+     * @param summary The summary to be shown when unchecked.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.369 -0500", hash_original_method = "D2C60679B7A2716D92F9A6A90EE31D5E", hash_generated_method = "7D192ED844E9ECE7FDC04FC71260413E")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.927 -0400", hash_original_method = "D2C60679B7A2716D92F9A6A90EE31D5E", hash_generated_method = "F161A57C5FFA118076F8F82DB07C7BA0")
-    public void setSummaryOff(CharSequence summary) {
+public void setSummaryOff(CharSequence summary) {
         mSummaryOff = summary;
-        if(!isChecked())        
-        {
+        if (!isChecked()) {
             notifyChanged();
-        } //End block
-        // ---------- Original Method ----------
-        //mSummaryOff = summary;
-        //if (!isChecked()) {
-            //notifyChanged();
-        //}
+        }
     }
 
+    /**
+     * @see #setSummaryOff(CharSequence)
+     * @param summaryResId The summary as a resource.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.372 -0500", hash_original_method = "A777E36B9565634072F09AB599AD44D9", hash_generated_method = "76D16EE5D58E9509BE497B7372C08656")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.928 -0400", hash_original_method = "A777E36B9565634072F09AB599AD44D9", hash_generated_method = "1E81C7B3FC3B0BA36BC120C5EA9A61D9")
-    public void setSummaryOff(int summaryResId) {
-        addTaint(summaryResId);
+public void setSummaryOff(int summaryResId) {
         setSummaryOff(getContext().getString(summaryResId));
-        // ---------- Original Method ----------
-        //setSummaryOff(getContext().getString(summaryResId));
     }
 
+    /**
+     * Returns the summary to be shown when unchecked.
+     * @return The summary.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.374 -0500", hash_original_method = "71CAEB9E0C109885D80E1240FC68BC2D", hash_generated_method = "1620D3A9C805C85EA5E74E56DD32733F")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.928 -0400", hash_original_method = "71CAEB9E0C109885D80E1240FC68BC2D", hash_generated_method = "39761F1BE2D79A5C383D7084912FE6F7")
-    public CharSequence getSummaryOff() {
-CharSequence var2641568191E73DF01E4F2B182167672C_717953182 =         mSummaryOff;
-        var2641568191E73DF01E4F2B182167672C_717953182.addTaint(taint);
-        return var2641568191E73DF01E4F2B182167672C_717953182;
-        // ---------- Original Method ----------
-        //return mSummaryOff;
+public CharSequence getSummaryOff() {
+        return mSummaryOff;
     }
 
+    /**
+     * Returns whether dependents are disabled when this preference is on ({@code true})
+     * or when this preference is off ({@code false}).
+     *
+     * @return Whether dependents are disabled when this preference is on ({@code true})
+     *         or when this preference is off ({@code false}).
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.376 -0500", hash_original_method = "3884E74D45C3003321F5E57E22265849", hash_generated_method = "DF82E5FF12077E56CA645577AFB253B0")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.928 -0400", hash_original_method = "3884E74D45C3003321F5E57E22265849", hash_generated_method = "928FF6C71B772652DB91471347D07D26")
-    public boolean getDisableDependentsState() {
-        boolean varB485C56B2E2F60A8579BB8CCE5F5F8B6_1177246196 = (mDisableDependentsState);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_940195914 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_940195914;
-        // ---------- Original Method ----------
-        //return mDisableDependentsState;
+public boolean getDisableDependentsState() {
+        return mDisableDependentsState;
     }
 
+    /**
+     * Sets whether dependents are disabled when this preference is on ({@code true})
+     * or when this preference is off ({@code false}).
+     *
+     * @param disableDependentsState The preference state that should disable dependents.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.378 -0500", hash_original_method = "DD37671E97B19E2FAA5E6DF537625889", hash_generated_method = "AEF138ACE5F0FB3869C0DC0DC2B58971")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.929 -0400", hash_original_method = "DD37671E97B19E2FAA5E6DF537625889", hash_generated_method = "74CF59A9D65521DE993E4BF0B8B81534")
-    public void setDisableDependentsState(boolean disableDependentsState) {
+public void setDisableDependentsState(boolean disableDependentsState) {
         mDisableDependentsState = disableDependentsState;
-        // ---------- Original Method ----------
-        //mDisableDependentsState = disableDependentsState;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.381 -0500", hash_original_method = "CD855B5FF5EBE7A616F45EDA9F1DAEC1", hash_generated_method = "23A47C106A4DFFA0F1C09F22F89964B6")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.929 -0400", hash_original_method = "CD855B5FF5EBE7A616F45EDA9F1DAEC1", hash_generated_method = "9DC7B8FC1A474C14924FD3B9C1FD054C")
-    @Override
+@Override
     protected Object onGetDefaultValue(TypedArray a, int index) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(index);
-        addTaint(a.getTaint());
-Object varB9D762988BDD10E681231DA7DDF58A47_1575248190 =         a.getBoolean(index, false);
-        varB9D762988BDD10E681231DA7DDF58A47_1575248190.addTaint(taint);
-        return varB9D762988BDD10E681231DA7DDF58A47_1575248190;
-        // ---------- Original Method ----------
-        //return a.getBoolean(index, false);
+        return a.getBoolean(index, false);
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.383 -0500", hash_original_method = "EEED4140B5DC5D316316DEC318D41EA8", hash_generated_method = "3EECB24A18B50FA0BD4E2DAFD0A4E349")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.929 -0400", hash_original_method = "EEED4140B5DC5D316316DEC318D41EA8", hash_generated_method = "33CFD44B8D8C5A7E246299C2CFF88B20")
-    @Override
+@Override
     protected void onSetInitialValue(boolean restoreValue, Object defaultValue) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(defaultValue.getTaint());
-        addTaint(restoreValue);
         setChecked(restoreValue ? getPersistedBoolean(mChecked)
                 : (Boolean) defaultValue);
-        // ---------- Original Method ----------
-        //setChecked(restoreValue ? getPersistedBoolean(mChecked)
-                //: (Boolean) defaultValue);
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.385 -0500", hash_original_method = "6184398C925EDFB35C067E47CDB9F78F", hash_generated_method = "164EFE9A1695D41D60B2616745708182")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.930 -0400", hash_original_method = "6184398C925EDFB35C067E47CDB9F78F", hash_generated_method = "1AB232AA6D212D4C771A6F9B34F900BB")
-     void sendAccessibilityEvent(View view) {
-        addTaint(view.getTaint());
+void sendAccessibilityEvent(View view) {
+        // Since the view is still not attached we create, populate,
+        // and send the event directly since we do not know when it
+        // will be attached and posting commands is not as clean.
         AccessibilityManager accessibilityManager = AccessibilityManager.getInstance(getContext());
-        if(mSendClickAccessibilityEvent && accessibilityManager.isEnabled())        
-        {
+        if (mSendClickAccessibilityEvent && accessibilityManager.isEnabled()) {
             AccessibilityEvent event = AccessibilityEvent.obtain();
             event.setEventType(AccessibilityEvent.TYPE_VIEW_CLICKED);
             view.onInitializeAccessibilityEvent(event);
             view.dispatchPopulateAccessibilityEvent(event);
             accessibilityManager.sendAccessibilityEvent(event);
-        } //End block
+        }
         mSendClickAccessibilityEvent = false;
-        // ---------- Original Method ----------
-        //AccessibilityManager accessibilityManager = AccessibilityManager.getInstance(getContext());
-        //if (mSendClickAccessibilityEvent && accessibilityManager.isEnabled()) {
-            //AccessibilityEvent event = AccessibilityEvent.obtain();
-            //event.setEventType(AccessibilityEvent.TYPE_VIEW_CLICKED);
-            //view.onInitializeAccessibilityEvent(event);
-            //view.dispatchPopulateAccessibilityEvent(event);
-            //accessibilityManager.sendAccessibilityEvent(event);
-        //}
-        //mSendClickAccessibilityEvent = false;
     }
 
+    /**
+     * Sync a summary view contained within view's subhierarchy with the correct summary text.
+     * @param view View where a summary should be located
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.388 -0500", hash_original_method = "901B0F4CA28424233D996D3F63CA3D29", hash_generated_method = "4B5893EEDD3C4DA62552168499070307")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.932 -0400", hash_original_method = "901B0F4CA28424233D996D3F63CA3D29", hash_generated_method = "9C8EC085D03E52E48D7FA262BECD9E5C")
-     void syncSummaryView(View view) {
-        addTaint(view.getTaint());
+void syncSummaryView(View view) {
+        // Sync the summary view
         TextView summaryView = (TextView) view.findViewById(com.android.internal.R.id.summary);
-        if(summaryView != null)        
-        {
+        if (summaryView != null) {
             boolean useDefaultSummary = true;
-            if(mChecked && mSummaryOn != null)            
-            {
+            if (mChecked && mSummaryOn != null) {
                 summaryView.setText(mSummaryOn);
                 useDefaultSummary = false;
-            } //End block
-            else
-            if(!mChecked && mSummaryOff != null)            
-            {
+            } else if (!mChecked && mSummaryOff != null) {
                 summaryView.setText(mSummaryOff);
                 useDefaultSummary = false;
-            } //End block
-            if(useDefaultSummary)            
-            {
+            }
+
+            if (useDefaultSummary) {
                 final CharSequence summary = getSummary();
-                if(summary != null)                
-                {
+                if (summary != null) {
                     summaryView.setText(summary);
                     useDefaultSummary = false;
-                } //End block
-            } //End block
+                }
+            }
+
             int newVisibility = View.GONE;
-            if(!useDefaultSummary)            
-            {
+            if (!useDefaultSummary) {
+                // Someone has written to it
                 newVisibility = View.VISIBLE;
-            } //End block
-            if(newVisibility != summaryView.getVisibility())            
-            {
+            }
+            if (newVisibility != summaryView.getVisibility()) {
                 summaryView.setVisibility(newVisibility);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            }
+        }
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.390 -0500", hash_original_method = "128E228DA264F73B8973AB4629CC5B53", hash_generated_method = "0E47EB36BA3D571B10DE0502F108D59F")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.934 -0400", hash_original_method = "128E228DA264F73B8973AB4629CC5B53", hash_generated_method = "B7AC8106D511ACF66F10E38387AA530F")
-    @Override
+@Override
     protected Parcelable onSaveInstanceState() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
         final Parcelable superState = super.onSaveInstanceState();
-        if(isPersistent())        
-        {
-Parcelable varBA7A3E641095ABD11C9DBE16D47F122C_1998945773 =             superState;
-            varBA7A3E641095ABD11C9DBE16D47F122C_1998945773.addTaint(taint);
-            return varBA7A3E641095ABD11C9DBE16D47F122C_1998945773;
-        } //End block
+        if (isPersistent()) {
+            // No need to save instance state since it's persistent
+            return superState;
+        }
+
         final SavedState myState = new SavedState(superState);
         myState.checked = isChecked();
-Parcelable varA730247CC64767D7A83D25979CFF71FB_1604798056 =         myState;
-        varA730247CC64767D7A83D25979CFF71FB_1604798056.addTaint(taint);
-        return varA730247CC64767D7A83D25979CFF71FB_1604798056;
-        // ---------- Original Method ----------
-        //final Parcelable superState = super.onSaveInstanceState();
-        //if (isPersistent()) {
-            //return superState;
-        //}
-        //final SavedState myState = new SavedState(superState);
-        //myState.checked = isChecked();
-        //return myState;
+        return myState;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.393 -0500", hash_original_method = "391D589FD70A1E2CE27C524E3DFC61F4", hash_generated_method = "926A533289D83272AC9E9930FAC04CBC")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.935 -0400", hash_original_method = "391D589FD70A1E2CE27C524E3DFC61F4", hash_generated_method = "0A2478405B9808E6AFE1A6511FF6B2F6")
-    @Override
+@Override
     protected void onRestoreInstanceState(Parcelable state) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(state.getTaint());
-        if(state == null || !state.getClass().equals(SavedState.class))        
-        {
+        if (state == null || !state.getClass().equals(SavedState.class)) {
+            // Didn't save state for us in onSaveInstanceState
             super.onRestoreInstanceState(state);
             return;
-        } //End block
+        }
+
         SavedState myState = (SavedState) state;
         super.onRestoreInstanceState(myState.getSuperState());
         setChecked(myState.checked);
-        // ---------- Original Method ----------
-        //if (state == null || !state.getClass().equals(SavedState.class)) {
-            //super.onRestoreInstanceState(state);
-            //return;
-        //}
-        //SavedState myState = (SavedState) state;
-        //super.onRestoreInstanceState(myState.getSuperState());
-        //setChecked(myState.checked);
     }
 
     
     static class SavedState extends BaseSavedState {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.936 -0400", hash_original_field = "3793EA52A7BE2D7DEAFD858FDA50775C", hash_generated_field = "6F0D05495423C9405B09D32CCA18EA7F")
-
-        boolean checked;
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.936 -0400", hash_original_method = "BB6B7FCEDF34CA74F36D6258486FF337", hash_generated_method = "49AC5E3B0A809768E3B5980304872239")
-        public  SavedState(Parcel source) {
-            super(source);
-            checked = source.readInt() == 1;
-            // ---------- Original Method ----------
-            //checked = source.readInt() == 1;
-        }
-
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.936 -0400", hash_original_method = "89EB4EC154F05BF905ECA8E02BBD14BC", hash_generated_method = "AB11810075E98F66089A29D0DD89C4B4")
-        public  SavedState(Parcelable superState) {
-            super(superState);
-            addTaint(superState.getTaint());
-            // ---------- Original Method ----------
-        }
-
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.937 -0400", hash_original_method = "5F0C2D7310332C4BBDEFEA2518DC2D5F", hash_generated_method = "980ACDE293416983A34F34555E490FA3")
-        @Override
-        public void writeToParcel(Parcel dest, int flags) {
-            addTaint(flags);
-            addTaint(dest.getTaint());
-            super.writeToParcel(dest, flags);
-            dest.writeInt(checked ? 1 : 0);
-            // ---------- Original Method ----------
-            //super.writeToParcel(dest, flags);
-            //dest.writeInt(checked ? 1 : 0);
-        }
 
         
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.937 -0400", hash_original_field = "7DF6FB2587CB67E9544A859A8F6E8FF3", hash_generated_field = "263FCDD65C2156B1D1E1B4D9AE8D7FFA")
 
         public static final Parcelable.Creator<SavedState> CREATOR =
                 new Parcelable.Creator<SavedState>() {
-            public SavedState createFromParcel(Parcel in) {
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.406 -0500", hash_original_method = "E26812089C072DDE1A14AECAA6CD6686", hash_generated_method = "C97AA17CB243756458D0FB7A2D786EA0")
+            
+public SavedState createFromParcel(Parcel in) {
                 return new SavedState(in);
             }
 
-            @DSModeled(DSC.SAFE)
-            public SavedState[] newArray(int size) {
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.409 -0500", hash_original_method = "2D31E9CBAAAE05B696D738324F87FF78", hash_generated_method = "020465B62F970B98C266AF229149E391")
+            
+public SavedState[] newArray(int size) {
                 return new SavedState[size];
             }
         };
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.395 -0500", hash_original_field = "6F0D05495423C9405B09D32CCA18EA7F", hash_generated_field = "6F0D05495423C9405B09D32CCA18EA7F")
+
+        boolean checked;
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.398 -0500", hash_original_method = "BB6B7FCEDF34CA74F36D6258486FF337", hash_generated_method = "920C12215E1E25AF653D9E914DEAF2FE")
+        
+public SavedState(Parcel source) {
+            super(source);
+            checked = source.readInt() == 1;
+        }
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.403 -0500", hash_original_method = "89EB4EC154F05BF905ECA8E02BBD14BC", hash_generated_method = "E32D4593A5A22DE64D4F3221E06324D4")
+        
+public SavedState(Parcelable superState) {
+            super(superState);
+        }
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.400 -0500", hash_original_method = "5F0C2D7310332C4BBDEFEA2518DC2D5F", hash_generated_method = "D7BCD3CA61BA8DBE593392F304F188F0")
+        
+@Override
+        public void writeToParcel(Parcel dest, int flags) {
+            super.writeToParcel(dest, flags);
+            dest.writeInt(checked ? 1 : 0);
+        }
         // orphaned legacy method
         public SavedState createFromParcel(Parcel in) {
                 return new SavedState(in);

@@ -1,6 +1,8 @@
 package java.io;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.nio.ByteOrder;
 import java.nio.charset.ModifiedUtf8;
@@ -13,231 +15,202 @@ import libcore.io.SizeOf;
 
 
 public class DataOutputStream extends FilterOutputStream implements DataOutput {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.614 -0400", hash_original_field = "239E1A8E5C884A724F64EE44024C15F5", hash_generated_field = "0DF1829DEBB6EA0D971CFA5BDB181CF9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.600 -0500", hash_original_field = "BB6EE13587F628B91D273A1D077E6D31", hash_generated_field = "0DF1829DEBB6EA0D971CFA5BDB181CF9")
 
     private final byte[] scratch = new byte[8];
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.614 -0400", hash_original_field = "9CC26FA09CE37BC95AFE01BC718836D1", hash_generated_field = "E741850208E8C13ED74657425073FA6A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.603 -0500", hash_original_field = "6BEB77487CF3182B1F4EE9D9A9B77205", hash_generated_field = "E741850208E8C13ED74657425073FA6A")
 
     protected int written;
+
+    /**
+     * Constructs a new {@code DataOutputStream} on the {@code OutputStream}
+     * {@code out}. Note that data written by this stream is not in a human
+     * readable form but can be reconstructed by using a {@link DataInputStream}
+     * on the resulting output.
+     *
+     * @param out
+     *            the target stream for writing.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.605 -0500", hash_original_method = "1F21B50AF2AC9DDDB6B0A66AE5784248", hash_generated_method = "5DCE7229AD881E0B9ABCB5542416823B")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.615 -0400", hash_original_method = "1F21B50AF2AC9DDDB6B0A66AE5784248", hash_generated_method = "9E5DB5C7F7B5409C1D3AE14446B961AE")
-    public  DataOutputStream(OutputStream out) {
+public DataOutputStream(OutputStream out) {
         super(out);
-        addTaint(out.getTaint());
-        // ---------- Original Method ----------
     }
 
+    /**
+     * Flushes this stream to ensure all pending data is sent out to the target
+     * stream. This implementation then also flushes the target stream.
+     *
+     * @throws IOException
+     *             if an error occurs attempting to flush this stream.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.608 -0500", hash_original_method = "85FD61C7B117729DDA17405FA5EDFA09", hash_generated_method = "685D98350CD97C9342EE1C690C8DF05E")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.615 -0400", hash_original_method = "85FD61C7B117729DDA17405FA5EDFA09", hash_generated_method = "44E353C81F2F5BBACFB91689B686E7A5")
-    @Override
+@Override
     public void flush() throws IOException {
         super.flush();
-        // ---------- Original Method ----------
-        //super.flush();
     }
 
+    /**
+     * Returns the total number of bytes written to the target stream so far.
+     *
+     * @return the number of bytes written to the target stream.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.611 -0500", hash_original_method = "93505B8C7EE8964F6C5155AF365C502B", hash_generated_method = "EF0FDF676146F6BDFEDB75BACC892E4B")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.615 -0400", hash_original_method = "93505B8C7EE8964F6C5155AF365C502B", hash_generated_method = "DFEBA78A95D0516D403F922B372621E3")
-    public final int size() {
-        if(written < 0)        
-        {
+public final int size() {
+        if (written < 0) {
             written = Integer.MAX_VALUE;
-        } //End block
-        int var9CC26FA09CE37BC95AFE01BC718836D1_2031240147 = (written);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_301451094 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_301451094;
-        // ---------- Original Method ----------
-        //if (written < 0) {
-            //written = Integer.MAX_VALUE;
-        //}
-        //return written;
+        }
+        return written;
     }
 
+    /**
+     * Writes {@code count} bytes from the byte array {@code buffer} starting at
+     * {@code offset} to the target stream.
+     *
+     * @param buffer
+     *            the buffer to write to the target stream.
+     * @param offset
+     *            the index of the first byte in {@code buffer} to write.
+     * @param count
+     *            the number of bytes from the {@code buffer} to write.
+     * @throws IOException
+     *             if an error occurs while writing to the target stream.
+     * @throws NullPointerException
+     *             if {@code buffer} is {@code null}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.614 -0500", hash_original_method = "91D255AEAD2ED7375F2242249D64C3A6", hash_generated_method = "1314E249A0FB0A0967DD391BB94D9A0D")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.616 -0400", hash_original_method = "91D255AEAD2ED7375F2242249D64C3A6", hash_generated_method = "56546464D587C7C90AAED11E653AD3C2")
-    @Override
+@Override
     public void write(byte[] buffer, int offset, int count) throws IOException {
-        addTaint(offset);
-        addTaint(buffer[0]);
-        if(buffer == null)        
-        {
-            NullPointerException varD1F0B530B211C354FD4DD40207900970_1545091968 = new NullPointerException("buffer == null");
-            varD1F0B530B211C354FD4DD40207900970_1545091968.addTaint(taint);
-            throw varD1F0B530B211C354FD4DD40207900970_1545091968;
-        } //End block
+        if (buffer == null) {
+            throw new NullPointerException("buffer == null");
+        }
         out.write(buffer, offset, count);
         written += count;
-        // ---------- Original Method ----------
-        //if (buffer == null) {
-            //throw new NullPointerException("buffer == null");
-        //}
-        //out.write(buffer, offset, count);
-        //written += count;
     }
 
+    /**
+     * Writes a byte to the target stream. Only the least significant byte of
+     * the integer {@code oneByte} is written.
+     *
+     * @param oneByte
+     *            the byte to write to the target stream.
+     * @throws IOException
+     *             if an error occurs while writing to the target stream.
+     * @see DataInputStream#readByte()
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.616 -0500", hash_original_method = "480870EC6BADBB21CCFBD983315F3126", hash_generated_method = "0DA8DCF8A72CE0A0690961D8DC195CF7")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.616 -0400", hash_original_method = "480870EC6BADBB21CCFBD983315F3126", hash_generated_method = "9838A5626C6527C941A5325E9C608F26")
-    @Override
+@Override
     public void write(int oneByte) throws IOException {
-        addTaint(oneByte);
         out.write(oneByte);
         written++;
-        // ---------- Original Method ----------
-        //out.write(oneByte);
-        //written++;
     }
 
+    /**
+     * Writes a boolean to the target stream.
+     *
+     * @param val
+     *            the boolean value to write to the target stream.
+     * @throws IOException
+     *             if an error occurs while writing to the target stream.
+     * @see DataInputStream#readBoolean()
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.619 -0500", hash_original_method = "A77584E214A9D3ECC7E83106209731E2", hash_generated_method = "B8415B4CF44291581AD37B7E19828B7B")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.616 -0400", hash_original_method = "A77584E214A9D3ECC7E83106209731E2", hash_generated_method = "85D0B82D52292C0E29D0617A1AB19785")
-    public final void writeBoolean(boolean val) throws IOException {
-        addTaint(val);
+public final void writeBoolean(boolean val) throws IOException {
         out.write(val ? 1 : 0);
         written++;
-        // ---------- Original Method ----------
-        //out.write(val ? 1 : 0);
-        //written++;
     }
 
+    /**
+     * Writes an 8-bit byte to the target stream. Only the least significant
+     * byte of the integer {@code val} is written.
+     *
+     * @param val
+     *            the byte value to write to the target stream.
+     * @throws IOException
+     *             if an error occurs while writing to the target stream.
+     * @see DataInputStream#readByte()
+     * @see DataInputStream#readUnsignedByte()
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.621 -0500", hash_original_method = "3FF3B06C0E9CF4CECAE3125D160806A3", hash_generated_method = "467CC22D59F0D574A1647E1C1FF806FE")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.616 -0400", hash_original_method = "3FF3B06C0E9CF4CECAE3125D160806A3", hash_generated_method = "B1BDA16A6E9FE01C00849DE0652F3443")
-    public final void writeByte(int val) throws IOException {
-        addTaint(val);
+public final void writeByte(int val) throws IOException {
         out.write(val);
         written++;
-        // ---------- Original Method ----------
-        //out.write(val);
-        //written++;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.624 -0500", hash_original_method = "2B2A2FBAAA2AE585E2D089CF030D969B", hash_generated_method = "9EE83BA4C7BA1BF83E75A29293DC19EF")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.617 -0400", hash_original_method = "2B2A2FBAAA2AE585E2D089CF030D969B", hash_generated_method = "8A7FDDD8E6807EFF62DA62E0A993867C")
-    public final void writeBytes(String str) throws IOException {
-        addTaint(str.getTaint());
-        if(str.length() == 0)        
-        {
+public final void writeBytes(String str) throws IOException {
+        if (str.length() == 0) {
             return;
-        } //End block
+        }
         byte[] bytes = new byte[str.length()];
-for(int index = 0;index < str.length();index++)
-        {
+        for (int index = 0; index < str.length(); index++) {
             bytes[index] = (byte) str.charAt(index);
-        } //End block
+        }
         out.write(bytes);
         written += bytes.length;
-        // ---------- Original Method ----------
-        //if (str.length() == 0) {
-            //return;
-        //}
-        //byte[] bytes = new byte[str.length()];
-        //for (int index = 0; index < str.length(); index++) {
-            //bytes[index] = (byte) str.charAt(index);
-        //}
-        //out.write(bytes);
-        //written += bytes.length;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.627 -0500", hash_original_method = "ECFC19989A55A064EF569F6E00E03595", hash_generated_method = "932B9992937F002B26811C18101888C1")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.617 -0400", hash_original_method = "ECFC19989A55A064EF569F6E00E03595", hash_generated_method = "1E31D82E4CCC1BDCFE3108E1328D9F76")
-    public final void writeChar(int val) throws IOException {
-        addTaint(val);
+public final void writeChar(int val) throws IOException {
         writeShort(val);
-        // ---------- Original Method ----------
-        //writeShort(val);
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.629 -0500", hash_original_method = "8A00B7ED3E4C8E18D5DAA971EE1A3300", hash_generated_method = "4C4548AA5CDEEC6841B45960D446F88C")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.618 -0400", hash_original_method = "8A00B7ED3E4C8E18D5DAA971EE1A3300", hash_generated_method = "ADEB12ED03B85557EBF17CC6D6B3DEC2")
-    public final void writeChars(String str) throws IOException {
-        addTaint(str.getTaint());
+public final void writeChars(String str) throws IOException {
         byte[] bytes = str.getBytes("UTF-16BE");
         out.write(bytes);
         written += bytes.length;
-        // ---------- Original Method ----------
-        //byte[] bytes = str.getBytes("UTF-16BE");
-        //out.write(bytes);
-        //written += bytes.length;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.632 -0500", hash_original_method = "F72176A2741A4B219C2AAE16A0D68BA2", hash_generated_method = "F3BF6663D138ED0E1DFEA62B1C80FA3F")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.618 -0400", hash_original_method = "F72176A2741A4B219C2AAE16A0D68BA2", hash_generated_method = "015AAB732EE3FB11ACE6574EE6EF9751")
-    public final void writeDouble(double val) throws IOException {
-        addTaint(val);
+public final void writeDouble(double val) throws IOException {
         writeLong(Double.doubleToLongBits(val));
-        // ---------- Original Method ----------
-        //writeLong(Double.doubleToLongBits(val));
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.634 -0500", hash_original_method = "D8994DA56D4741462EE1F41757FFAE01", hash_generated_method = "1792C72D5DB8A7188EE6A15A300D3124")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.618 -0400", hash_original_method = "D8994DA56D4741462EE1F41757FFAE01", hash_generated_method = "D86DCBAF1163AA0C9FB91F716904211F")
-    public final void writeFloat(float val) throws IOException {
-        addTaint(val);
+public final void writeFloat(float val) throws IOException {
         writeInt(Float.floatToIntBits(val));
-        // ---------- Original Method ----------
-        //writeInt(Float.floatToIntBits(val));
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.637 -0500", hash_original_method = "F03796591B445F12DEDD3500300CBF0A", hash_generated_method = "5E91487BC25631CF747CB54ECA66F448")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.618 -0400", hash_original_method = "F03796591B445F12DEDD3500300CBF0A", hash_generated_method = "EF92336E807A82B5A842F3CE33CD0757")
-    public final void writeInt(int val) throws IOException {
-        addTaint(val);
+public final void writeInt(int val) throws IOException {
         Memory.pokeInt(scratch, 0, val, ByteOrder.BIG_ENDIAN);
         out.write(scratch, 0, SizeOf.INT);
         written += SizeOf.INT;
-        // ---------- Original Method ----------
-        //Memory.pokeInt(scratch, 0, val, ByteOrder.BIG_ENDIAN);
-        //out.write(scratch, 0, SizeOf.INT);
-        //written += SizeOf.INT;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.639 -0500", hash_original_method = "95F3A047CFE8B2E6EECA757BB89D80AE", hash_generated_method = "091AAB9442100D8BDAEDE95427FB4C48")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.619 -0400", hash_original_method = "95F3A047CFE8B2E6EECA757BB89D80AE", hash_generated_method = "69FCD2E5D7472A3BA57CD81BC90E8F0A")
-    public final void writeLong(long val) throws IOException {
-        addTaint(val);
+public final void writeLong(long val) throws IOException {
         Memory.pokeLong(scratch, 0, val, ByteOrder.BIG_ENDIAN);
         out.write(scratch, 0, SizeOf.LONG);
         written += SizeOf.LONG;
-        // ---------- Original Method ----------
-        //Memory.pokeLong(scratch, 0, val, ByteOrder.BIG_ENDIAN);
-        //out.write(scratch, 0, SizeOf.LONG);
-        //written += SizeOf.LONG;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.642 -0500", hash_original_method = "C58CFA32359226806A4206A3D5262CA2", hash_generated_method = "EEC192FAADE8CC25AA4C6B2838FDC939")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.619 -0400", hash_original_method = "C58CFA32359226806A4206A3D5262CA2", hash_generated_method = "866DE674A62E4A5C0C2254D034856C48")
-    public final void writeShort(int val) throws IOException {
-        addTaint(val);
+public final void writeShort(int val) throws IOException {
         Memory.pokeShort(scratch, 0, (short) val, ByteOrder.BIG_ENDIAN);
         out.write(scratch, 0, SizeOf.SHORT);
         written += SizeOf.SHORT;
-        // ---------- Original Method ----------
-        //Memory.pokeShort(scratch, 0, (short) val, ByteOrder.BIG_ENDIAN);
-        //out.write(scratch, 0, SizeOf.SHORT);
-        //written += SizeOf.SHORT;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.644 -0500", hash_original_method = "9D44E024EEA016D3EAD697517CA83CDC", hash_generated_method = "58B20B8780C4182A44E8248160366D2A")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.620 -0400", hash_original_method = "9D44E024EEA016D3EAD697517CA83CDC", hash_generated_method = "F3F91246F6CBB42958111ACA3F00042D")
-    public final void writeUTF(String str) throws IOException {
-        addTaint(str.getTaint());
+public final void writeUTF(String str) throws IOException {
         write(ModifiedUtf8.encode(str));
-        // ---------- Original Method ----------
-        //write(ModifiedUtf8.encode(str));
     }
 
     

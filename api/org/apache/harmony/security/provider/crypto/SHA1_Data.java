@@ -1,6 +1,8 @@
 package org.apache.harmony.security.provider.crypto;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 public interface SHA1_Data {

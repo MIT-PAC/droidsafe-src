@@ -1,48 +1,65 @@
 package java.security;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
 
 public class SignatureException extends GeneralSecurityException {
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.521 -0400", hash_original_method = "1A64E23BD4BC60E25E0621B283BA1364", hash_generated_method = "C71B9CE6B395B0E57D426F180728D6CC")
-    public  SignatureException(String msg) {
-        super(msg);
-        addTaint(msg.getTaint());
-        // ---------- Original Method ----------
-    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.657 -0500", hash_original_field = "2FB8486D897250C0EE64DC1703B99376", hash_generated_field = "8852B99AF1FA24D08606C87FCCB86602")
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.521 -0400", hash_original_method = "FC81C3C47A9C38543897BA92BDE9ED63", hash_generated_method = "9B6C915C21DA34F6FA6FCE12975D4CE6")
-    public  SignatureException() {
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.522 -0400", hash_original_method = "016680A93C61AAA9E83AF67D8C91F93A", hash_generated_method = "235295AC12209FD131042B171620EDED")
-    public  SignatureException(String message, Throwable cause) {
-        super(message, cause);
-        addTaint(cause.getTaint());
-        addTaint(message.getTaint());
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.522 -0400", hash_original_method = "3352DA5C6676595EED2C0C966A19B61C", hash_generated_method = "895EECBC965475F068EB6F442AE732E8")
-    public  SignatureException(Throwable cause) {
-        super(cause);
-        addTaint(cause.getTaint());
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.522 -0400", hash_original_field = "A038CA2BE43CB77D44777E4A7BF1B467", hash_generated_field = "8852B99AF1FA24D08606C87FCCB86602")
 
     private static final long serialVersionUID = 7509989324975124438L;
+
+    /**
+     * Constructs a new instance of {@code SignatureException} with the
+     * given message.
+     *
+     * @param msg
+     *            the detail message for this exception.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.660 -0500", hash_original_method = "1A64E23BD4BC60E25E0621B283BA1364", hash_generated_method = "67F29DCBDF719F95E48DFA66266AE34F")
+    
+public SignatureException(String msg) {
+        super(msg);
+    }
+
+    /**
+     * Constructs a new instance of {@code SignatureException}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.663 -0500", hash_original_method = "FC81C3C47A9C38543897BA92BDE9ED63", hash_generated_method = "49B60DB86F158BF9320D2F281B28E8D7")
+    
+public SignatureException() {
+    }
+
+    /**
+     * Constructs a new instance of {@code SignatureException} with the
+     * given message and the cause.
+     *
+     * @param message
+     *            the detail message for this exception
+     * @param cause
+     *            the exception which is the cause for this exception
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.665 -0500", hash_original_method = "016680A93C61AAA9E83AF67D8C91F93A", hash_generated_method = "7432C396A65E8E9151B297B73F71B47B")
+    
+public SignatureException(String message, Throwable cause) {
+        super(message, cause);
+    }
+
+    /**
+     * Constructs a new instance of {@code SignatureException} with the
+     * cause.
+     *
+     * @param cause
+     *            the exception which is the cause for this exception
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.668 -0500", hash_original_method = "3352DA5C6676595EED2C0C966A19B61C", hash_generated_method = "9B9347E567A8560F6A66D3575766792A")
+    
+public SignatureException(Throwable cause) {
+        super(cause);
+    }
 }
 

@@ -1,6 +1,8 @@
 package com.android.internal.logging;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -20,103 +22,23 @@ import dalvik.system.DalvikLogging;
 import droidsafe.runtime.DroidSafeAndroidRuntime;
 
 public class AndroidHandler extends Handler implements DalvikLogHandler {
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.250 -0400", hash_original_method = "3144D6BF2066D661F792BBA409558AA4", hash_generated_method = "499BDCB128B25531C4DD756ECC316A4F")
-    public  AndroidHandler() {
-        setFormatter(THE_FORMATTER);
-        // ---------- Original Method ----------
-        //setFormatter(THE_FORMATTER);
-    }
 
+    /**
+     * Converts a {@link java.util.logging.Logger} logging level into an Android one.
+     *
+     * @param level The {@link java.util.logging.Logger} logging level.
+     *
+     * @return The resulting Android logging level.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:39.853 -0500", hash_original_method = "3F92BD817EEC109FB3EFF14A3BE3BBE9", hash_generated_method = "35B5BBAE71B726DCD5E0BB70F044795B")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.250 -0400", hash_original_method = "B96EF178F3ED1A0DFACDA94649407E5C", hash_generated_method = "1A3F8C083102602A57FB2D0CBE40EA76")
-    @Override
-    public void close() {
-        // ---------- Original Method ----------
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.251 -0400", hash_original_method = "336EB9AA03C5B902D3CE726BD69F433F", hash_generated_method = "4A4713C8ADAF7778CF4E4BBDA39355C2")
-    @Override
-    public void flush() {
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.252 -0400", hash_original_method = "CEA54EC9759DF54F81D3C4C5F0B6BD15", hash_generated_method = "246215A133F1BFE6B0FFEC419C6FC955")
-    @Override
-    public void publish(LogRecord record) {
-        addTaint(record.getTaint());
-        int level = getAndroidLevel(record.getLevel());
-        String tag = DalvikLogging.loggerNameToTag(record.getLoggerName());
-        if(!Log.isLoggable(tag, level))        
-        {
-            return;
-        } //End block
-        try 
-        {
-            String message = getFormatter().format(record);
-            Log.println(level, tag, message);
-        } //End block
-        catch (RuntimeException e)
-        {
-        } //End block
-        // ---------- Original Method ----------
-        //int level = getAndroidLevel(record.getLevel());
-        //String tag = DalvikLogging.loggerNameToTag(record.getLoggerName());
-        //if (!Log.isLoggable(tag, level)) {
-            //return;
-        //}
-        //try {
-            //String message = getFormatter().format(record);
-            //Log.println(level, tag, message);
-        //} catch (RuntimeException e) {
-            //Log.e("AndroidHandler", "Error logging message.", e);
-        //}
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.253 -0400", hash_original_method = "23FAB086781713B49A4D1AC40EDC6A51", hash_generated_method = "025FD5B6A24F75086E4C8B6757718A47")
-    public void publish(Logger source, String tag, Level level, String message) {
-        addTaint(message.getTaint());
-        addTaint(level.getTaint());
-        addTaint(tag.getTaint());
-        addTaint(source.getTaint());
-        int priority = getAndroidLevel(level);
-        if(!Log.isLoggable(tag, priority))        
-        {
-            return;
-        } //End block
-        try 
-        {
-            Log.println(priority, tag, message);
-        } //End block
-        catch (RuntimeException e)
-        {
-        } //End block
-        // ---------- Original Method ----------
-        //int priority = getAndroidLevel(level);
-        //if (!Log.isLoggable(tag, priority)) {
-            //return;
-        //}
-        //try {
-            //Log.println(priority, tag, message);
-        //} catch (RuntimeException e) {
-            //Log.e("AndroidHandler", "Error logging message.", e);
-        //}
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    static int getAndroidLevel(Level level) {
+static int getAndroidLevel(Level level) {
         int value = level.intValue();
-        if (value >= 1000) { 
+        if (value >= 1000) { // SEVERE
             return Log.ERROR;
-        } else if (value >= 900) { 
+        } else if (value >= 900) { // WARNING
             return Log.WARN;
-        } else if (value >= 800) { 
+        } else if (value >= 800) { // INFO
             return Log.INFO;
         } else {
             return Log.DEBUG;
@@ -175,5 +97,62 @@ public class AndroidHandler extends Handler implements DalvikLogHandler {
 
         
 };
+
+    /**
+     * Constructs a new instance of the Android log handler.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:39.838 -0500", hash_original_method = "3144D6BF2066D661F792BBA409558AA4", hash_generated_method = "743A6DC2556A7FDAC6C726598DD2E01D")
+    
+public AndroidHandler() {
+        setFormatter(THE_FORMATTER);
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:39.841 -0500", hash_original_method = "B96EF178F3ED1A0DFACDA94649407E5C", hash_generated_method = "0161489F396FA1AC6DE664D6EC9C8356")
+    
+@Override
+    public void close() {
+        // No need to close, but must implement abstract method.
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:39.844 -0500", hash_original_method = "336EB9AA03C5B902D3CE726BD69F433F", hash_generated_method = "E2C939B3E0C64F082957286C67166E9D")
+    
+@Override
+    public void flush() {
+        // No need to flush, but must implement abstract method.
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:39.848 -0500", hash_original_method = "CEA54EC9759DF54F81D3C4C5F0B6BD15", hash_generated_method = "A33B4D4D9FD9E95ACA274375B1828ED7")
+    
+@Override
+    public void publish(LogRecord record) {
+        int level = getAndroidLevel(record.getLevel());
+        String tag = DalvikLogging.loggerNameToTag(record.getLoggerName());
+        if (!Log.isLoggable(tag, level)) {
+            return;
+        }
+
+        try {
+            String message = getFormatter().format(record);
+            Log.println(level, tag, message);
+        } catch (RuntimeException e) {
+            Log.e("AndroidHandler", "Error logging message.", e);
+        }
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:39.850 -0500", hash_original_method = "23FAB086781713B49A4D1AC40EDC6A51", hash_generated_method = "A6C649DFABC7E10B72064E69B72963DC")
+    
+public void publish(Logger source, String tag, Level level, String message) {
+        // TODO: avoid ducking into native 2x; we aren't saving any formatter calls
+        int priority = getAndroidLevel(level);
+        if (!Log.isLoggable(tag, priority)) {
+            return;
+        }
+
+        try {
+            Log.println(priority, tag, message);
+        } catch (RuntimeException e) {
+            Log.e("AndroidHandler", "Error logging message.", e);
+        }
+    }
 }
 

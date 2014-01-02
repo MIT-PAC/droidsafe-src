@@ -1,6 +1,8 @@
 package org.xml.sax;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.InputStream;
 import java.io.Reader;
@@ -11,154 +13,312 @@ import java.io.Reader;
 
 
 public class InputSource {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.201 -0400", hash_original_field = "24AB20BFB578F0A89FF4A9C081F21384", hash_generated_field = "60BF385FD0C88E4BC32EFD3E71F5528C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:47.646 -0500", hash_original_field = "A787D4782D28CB658656F9CEA39140B8", hash_generated_field = "8C20C363CB97A5312B8A9E5F182DBDF4")
+
+    // Internal state.
+    ////////////////////////////////////////////////////////////////////
 
     private String publicId;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.201 -0400", hash_original_field = "089D1A278481B86E821237F8E98E6DE7", hash_generated_field = "D8573F28EF4599A1790219EF1708D9C9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:47.648 -0500", hash_original_field = "EA33D5D9FADC1DE12A306FAB26B3A5DA", hash_generated_field = "D8573F28EF4599A1790219EF1708D9C9")
 
     private String systemId;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.201 -0400", hash_original_field = "04C58E7EA9C250FD95881822011BDF22", hash_generated_field = "F48D8933D1E0CC3DCA366E513A5A0250")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:47.650 -0500", hash_original_field = "BA38C079FA1F85CB3FDFDA791B5E38AF", hash_generated_field = "F48D8933D1E0CC3DCA366E513A5A0250")
 
     private InputStream byteStream;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.201 -0400", hash_original_field = "84BEA1F0FD2CE16F7E562A9F06EF03D3", hash_generated_field = "AA03A19AA54A465901EEA798BB232EAE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:47.652 -0500", hash_original_field = "C7941A2E59CC2DF1A97D47295C728725", hash_generated_field = "AA03A19AA54A465901EEA798BB232EAE")
 
     private String encoding;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.201 -0400", hash_original_field = "537EB9017301361716D8F0B0A9C21991", hash_generated_field = "063FD46ACCBF055B33EB5A7725463DCE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:47.655 -0500", hash_original_field = "C80288420C0FBFA7028519B6A3C8A163", hash_generated_field = "063FD46ACCBF055B33EB5A7725463DCE")
 
     private Reader characterStream;
+
+    /**
+     * Zero-argument default constructor.
+     *
+     * @see #setPublicId
+     * @see #setSystemId
+     * @see #setByteStream
+     * @see #setCharacterStream
+     * @see #setEncoding
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:47.614 -0500", hash_original_method = "ECF04DED512C86950B6E52F582DBB4DE", hash_generated_method = "217A98420DCE906E732B6983D19C2476")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.201 -0400", hash_original_method = "ECF04DED512C86950B6E52F582DBB4DE", hash_generated_method = "179D2E0E4F762DB57C25831D6BADEBE2")
-    public  InputSource() {
-        // ---------- Original Method ----------
+public InputSource ()
+    {
     }
 
+
+    /**
+     * Create a new input source with a system identifier.
+     *
+     * <p>Applications may use setPublicId to include a
+     * public identifier as well, or setEncoding to specify
+     * the character encoding, if known.</p>
+     *
+     * <p>If the system identifier is a URL, it must be fully
+     * resolved (it may not be a relative URL).</p>
+     *
+     * @param systemId The system identifier (URI).
+     * @see #setPublicId
+     * @see #setSystemId
+     * @see #setByteStream
+     * @see #setEncoding
+     * @see #setCharacterStream
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:47.616 -0500", hash_original_method = "7919F547FCB87899F58CF069384E6AAD", hash_generated_method = "D1835C4469F5A6537AB5B42A8D63DDEC")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.202 -0400", hash_original_method = "7919F547FCB87899F58CF069384E6AAD", hash_generated_method = "5C8DC55271245F54C5895098E7D088D2")
-    public  InputSource(String systemId) {
-        addTaint(systemId.getTaint());
-        setSystemId(systemId);
-        // ---------- Original Method ----------
-        //setSystemId(systemId);
+public InputSource (String systemId)
+    {
+    setSystemId(systemId);
     }
 
+
+    /**
+     * Create a new input source with a byte stream.
+     *
+     * <p>Application writers should use setSystemId() to provide a base
+     * for resolving relative URIs, may use setPublicId to include a
+     * public identifier, and may use setEncoding to specify the object's
+     * character encoding.</p>
+     *
+     * @param byteStream The raw byte stream containing the document.
+     * @see #setPublicId
+     * @see #setSystemId
+     * @see #setEncoding
+     * @see #setByteStream
+     * @see #setCharacterStream
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:47.619 -0500", hash_original_method = "7C3B72CDCF95023F438211CC038E601E", hash_generated_method = "B633A9743DD0CC7151290BD357306BDA")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.202 -0400", hash_original_method = "7C3B72CDCF95023F438211CC038E601E", hash_generated_method = "EFF5430C840A38D076B7A7F747401349")
-    public  InputSource(InputStream byteStream) {
-        addTaint(byteStream.getTaint());
-        setByteStream(byteStream);
-        // ---------- Original Method ----------
-        //setByteStream(byteStream);
+public InputSource (InputStream byteStream)
+    {
+    setByteStream(byteStream);
     }
 
+
+    /**
+     * Create a new input source with a character stream.
+     *
+     * <p>Application writers should use setSystemId() to provide a base
+     * for resolving relative URIs, and may use setPublicId to include a
+     * public identifier.</p>
+     *
+     * <p>The character stream shall not include a byte order mark.</p>
+     *
+     * @param characterStream The raw character stream containing the document.
+     * @see #setPublicId
+     * @see #setSystemId
+     * @see #setByteStream
+     * @see #setCharacterStream
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:47.621 -0500", hash_original_method = "F589E4069755916CEDC29D447D78E1F5", hash_generated_method = "00DC1AEE141141E3911D24487E76D6D2")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.202 -0400", hash_original_method = "F589E4069755916CEDC29D447D78E1F5", hash_generated_method = "74EB651189824C5FFF175F27ABA62352")
-    public  InputSource(Reader characterStream) {
-        addTaint(characterStream.getTaint());
-        setCharacterStream(characterStream);
-        // ---------- Original Method ----------
-        //setCharacterStream(characterStream);
+public InputSource (Reader characterStream)
+    {
+    setCharacterStream(characterStream);
     }
 
+
+    /**
+     * Set the public identifier for this input source.
+     *
+     * <p>The public identifier is always optional: if the application
+     * writer includes one, it will be provided as part of the
+     * location information.</p>
+     *
+     * @param publicId The public identifier as a string.
+     * @see #getPublicId
+     * @see org.xml.sax.Locator#getPublicId
+     * @see org.xml.sax.SAXParseException#getPublicId
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:47.623 -0500", hash_original_method = "0C418225BFB03C04E3636F3891B47A3E", hash_generated_method = "3A3E52BAAC3045FB9B9AC7B751166BEE")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.203 -0400", hash_original_method = "0C418225BFB03C04E3636F3891B47A3E", hash_generated_method = "784431903087FA4FFEF9763F16480709")
-    public void setPublicId(String publicId) {
-        this.publicId = publicId;
-        // ---------- Original Method ----------
-        //this.publicId = publicId;
+public void setPublicId (String publicId)
+    {
+    this.publicId = publicId;
     }
 
+
+    /**
+     * Get the public identifier for this input source.
+     *
+     * @return The public identifier, or null if none was supplied.
+     * @see #setPublicId
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:47.625 -0500", hash_original_method = "C19BBE926A67132A1C6BC386100A3E69", hash_generated_method = "C2B64346C205A83C958059FEF62D1E97")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.203 -0400", hash_original_method = "C19BBE926A67132A1C6BC386100A3E69", hash_generated_method = "BF78659BC6D8C59129BF6F4D8D6FB0E3")
-    public String getPublicId() {
-String var76991CCBEF027A0871CF61642EBA53AB_13959332 =         publicId;
-        var76991CCBEF027A0871CF61642EBA53AB_13959332.addTaint(taint);
-        return var76991CCBEF027A0871CF61642EBA53AB_13959332;
-        // ---------- Original Method ----------
-        //return publicId;
+public String getPublicId ()
+    {
+    return publicId;
     }
 
+
+    /**
+     * Set the system identifier for this input source.
+     *
+     * <p>The system identifier is optional if there is a byte stream
+     * or a character stream, but it is still useful to provide one,
+     * since the application can use it to resolve relative URIs
+     * and can include it in error messages and warnings (the parser
+     * will attempt to open a connection to the URI only if
+     * there is no byte stream or character stream specified).</p>
+     *
+     * <p>If the application knows the character encoding of the
+     * object pointed to by the system identifier, it can register
+     * the encoding using the setEncoding method.</p>
+     *
+     * <p>If the system identifier is a URL, it must be fully
+     * resolved (it may not be a relative URL).</p>
+     *
+     * @param systemId The system identifier as a string.
+     * @see #setEncoding
+     * @see #getSystemId
+     * @see org.xml.sax.Locator#getSystemId
+     * @see org.xml.sax.SAXParseException#getSystemId
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:47.627 -0500", hash_original_method = "77F5337B905F22D1C71F7C949FEF5117", hash_generated_method = "D9FED68AD30F5F5E327902500C39300D")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.204 -0400", hash_original_method = "77F5337B905F22D1C71F7C949FEF5117", hash_generated_method = "DE20300D341EFA9D9888E5637810608B")
-    public void setSystemId(String systemId) {
-        this.systemId = systemId;
-        // ---------- Original Method ----------
-        //this.systemId = systemId;
+public void setSystemId (String systemId)
+    {
+    this.systemId = systemId;
     }
 
+
+    /**
+     * Get the system identifier for this input source.
+     *
+     * <p>The getEncoding method will return the character encoding
+     * of the object pointed to, or null if unknown.</p>
+     *
+     * <p>If the system ID is a URL, it will be fully resolved.</p>
+     *
+     * @return The system identifier, or null if none was supplied.
+     * @see #setSystemId
+     * @see #getEncoding
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:47.630 -0500", hash_original_method = "8088708D8DEEE6054468B7FD77400E50", hash_generated_method = "6A03DC8D49FB90AC37FD320CD622E272")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.204 -0400", hash_original_method = "8088708D8DEEE6054468B7FD77400E50", hash_generated_method = "A9A32ED526C3E008AE355DB9E6675566")
-    public String getSystemId() {
-String varB7D0727ACC7388EA86587212DD1C6E9F_730257358 =         systemId;
-        varB7D0727ACC7388EA86587212DD1C6E9F_730257358.addTaint(taint);
-        return varB7D0727ACC7388EA86587212DD1C6E9F_730257358;
-        // ---------- Original Method ----------
-        //return systemId;
+public String getSystemId ()
+    {
+    return systemId;
     }
 
+
+    /**
+     * Set the byte stream for this input source.
+     *
+     * <p>The SAX parser will ignore this if there is also a character
+     * stream specified, but it will use a byte stream in preference
+     * to opening a URI connection itself.</p>
+     *
+     * <p>If the application knows the character encoding of the
+     * byte stream, it should set it with the setEncoding method.</p>
+     *
+     * @param byteStream A byte stream containing an XML document or
+     *        other entity.
+     * @see #setEncoding
+     * @see #getByteStream
+     * @see #getEncoding
+     * @see java.io.InputStream
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:47.632 -0500", hash_original_method = "E15E53FA80250CBE7F24584A185B9018", hash_generated_method = "7170255CE17CFBCBB0C9C68C57B03FC2")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.205 -0400", hash_original_method = "E15E53FA80250CBE7F24584A185B9018", hash_generated_method = "B841545B8F2C566C639881C15FF48B83")
-    public void setByteStream(InputStream byteStream) {
-        this.byteStream = byteStream;
-        // ---------- Original Method ----------
-        //this.byteStream = byteStream;
+public void setByteStream (InputStream byteStream)
+    {
+    this.byteStream = byteStream;
     }
 
+
+    /**
+     * Get the byte stream for this input source.
+     *
+     * <p>The getEncoding method will return the character
+     * encoding for this byte stream, or null if unknown.</p>
+     *
+     * @return The byte stream, or null if none was supplied.
+     * @see #getEncoding
+     * @see #setByteStream
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:47.635 -0500", hash_original_method = "831A861201E96F794D74C2B24BAB3555", hash_generated_method = "76EC79038C4C277B48D1CB1A365564C4")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.206 -0400", hash_original_method = "831A861201E96F794D74C2B24BAB3555", hash_generated_method = "4FB830C69F54580B73DDFBB9B6411A81")
-    public InputStream getByteStream() {
-InputStream var5991B75FB36D48D1B405290D28A5B1D9_1461890710 =         byteStream;
-        var5991B75FB36D48D1B405290D28A5B1D9_1461890710.addTaint(taint);
-        return var5991B75FB36D48D1B405290D28A5B1D9_1461890710;
-        // ---------- Original Method ----------
-        //return byteStream;
+public InputStream getByteStream ()
+    {
+    return byteStream;
     }
 
+
+    /**
+     * Set the character encoding, if known.
+     *
+     * <p>The encoding must be a string acceptable for an
+     * XML encoding declaration (see section 4.3.3 of the XML 1.0
+     * recommendation).</p>
+     *
+     * <p>This method has no effect when the application provides a
+     * character stream.</p>
+     *
+     * @param encoding A string describing the character encoding.
+     * @see #setSystemId
+     * @see #setByteStream
+     * @see #getEncoding
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:47.637 -0500", hash_original_method = "109F4EE072FF4A68A1B686347AFE92DB", hash_generated_method = "F16BDC16289B2D2161EBDE6B982650A4")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.206 -0400", hash_original_method = "109F4EE072FF4A68A1B686347AFE92DB", hash_generated_method = "7E8E9F5581B45D04B721857DE5AE6090")
-    public void setEncoding(String encoding) {
-        this.encoding = encoding;
-        // ---------- Original Method ----------
-        //this.encoding = encoding;
+public void setEncoding (String encoding)
+    {
+    this.encoding = encoding;
     }
 
+
+    /**
+     * Get the character encoding for a byte stream or URI.
+     * This value will be ignored when the application provides a
+     * character stream.
+     *
+     * @return The encoding, or null if none was supplied.
+     * @see #setByteStream
+     * @see #getSystemId
+     * @see #getByteStream
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:47.639 -0500", hash_original_method = "ECC6E581C26F132636CDCE9C9A5E5807", hash_generated_method = "AB48E45DF4593246DCA3A0BE40153818")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.207 -0400", hash_original_method = "ECC6E581C26F132636CDCE9C9A5E5807", hash_generated_method = "B1280A564B513E5E7AD8286B62C5313F")
-    public String getEncoding() {
-String varE424DD5E6E58EB63E1272B71B5A81966_1490574975 =         encoding;
-        varE424DD5E6E58EB63E1272B71B5A81966_1490574975.addTaint(taint);
-        return varE424DD5E6E58EB63E1272B71B5A81966_1490574975;
-        // ---------- Original Method ----------
-        //return encoding;
+public String getEncoding ()
+    {
+    return encoding;
     }
 
+
+    /**
+     * Set the character stream for this input source.
+     *
+     * <p>If there is a character stream specified, the SAX parser
+     * will ignore any byte stream and will not attempt to open
+     * a URI connection to the system identifier.</p>
+     *
+     * @param characterStream The character stream containing the
+     *        XML document or other entity.
+     * @see #getCharacterStream
+     * @see java.io.Reader
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:47.641 -0500", hash_original_method = "079C1AFEC48E7E3C6462740060167438", hash_generated_method = "3E62366D6D0369BEB314A23F18365986")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.207 -0400", hash_original_method = "079C1AFEC48E7E3C6462740060167438", hash_generated_method = "81D26BAB949E3D4C89EA05FA577F07A9")
-    public void setCharacterStream(Reader characterStream) {
-        this.characterStream = characterStream;
-        // ---------- Original Method ----------
-        //this.characterStream = characterStream;
+public void setCharacterStream (Reader characterStream)
+    {
+    this.characterStream = characterStream;
     }
 
+
+    /**
+     * Get the character stream for this input source.
+     *
+     * @return The character stream, or null if none was supplied.
+     * @see #setCharacterStream
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:47.644 -0500", hash_original_method = "420D22C3C623A59BA758E1AC6387B142", hash_generated_method = "EBA0998A74E28C27CEDA0CDD239F6CC3")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.207 -0400", hash_original_method = "420D22C3C623A59BA758E1AC6387B142", hash_generated_method = "E0EB0F1E8DA27AA34AC4A415E040F7BC")
-    public Reader getCharacterStream() {
-Reader var5F7C051DCFB839DE58097C10207CC6DF_439445146 =         characterStream;
-        var5F7C051DCFB839DE58097C10207CC6DF_439445146.addTaint(taint);
-        return var5F7C051DCFB839DE58097C10207CC6DF_439445146;
-        // ---------- Original Method ----------
-        //return characterStream;
+public Reader getCharacterStream ()
+    {
+    return characterStream;
     }
 
     

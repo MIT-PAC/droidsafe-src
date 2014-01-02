@@ -1,40 +1,61 @@
 package android.security;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
 public class KeyChainException extends Exception {
+
+    /**
+     * Constructs a new {@code KeyChainException} that includes the
+     * current stack trace.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:57.267 -0500", hash_original_method = "07A073FF0F51A72901A8B28E6AC903AE", hash_generated_method = "02A24FEEB5AC65E638433C51E1C12BE4")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.064 -0400", hash_original_method = "07A073FF0F51A72901A8B28E6AC903AE", hash_generated_method = "23E3F1B8D4BA1176F337353CEEB0458D")
-    public  KeyChainException() {
-        // ---------- Original Method ----------
+public KeyChainException() {
     }
 
+    /**
+     * Constructs a new {@code KeyChainException} with the current stack
+     * trace and the specified detail message.
+     *
+     * @param detailMessage
+     *            the detail message for this exception.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:57.270 -0500", hash_original_method = "0A58DB61FCFCEABE9058FC3092E58BF3", hash_generated_method = "87AF306655F017EA667BF87615F03EBC")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.065 -0400", hash_original_method = "0A58DB61FCFCEABE9058FC3092E58BF3", hash_generated_method = "44A8C69696CDC558A95F9EFE54E392EE")
-    public  KeyChainException(String detailMessage) {
+public KeyChainException(String detailMessage) {
         super(detailMessage);
-        addTaint(detailMessage.getTaint());
-        // ---------- Original Method ----------
     }
 
+    /**
+     * Constructs a new {@code KeyChainException} with the current stack
+     * trace, the specified detail message and the specified cause.
+     *
+     * @param message
+     *            the detail message for this exception.
+     * @param cause
+     *            the cause of this exception, may be {@code null}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:57.273 -0500", hash_original_method = "3E8EDDC6FC8719784A3F6D961EFA0DBF", hash_generated_method = "0C9C6D90523277E25B3DFDE07B842BE4")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.066 -0400", hash_original_method = "3E8EDDC6FC8719784A3F6D961EFA0DBF", hash_generated_method = "9A0F3A7C9FA8E815D2B6125688248C58")
-    public  KeyChainException(String message, Throwable cause) {
+public KeyChainException(String message, Throwable cause) {
         super(message, cause);
-        addTaint(cause.getTaint());
-        addTaint(message.getTaint());
-        // ---------- Original Method ----------
     }
 
+    /**
+     * Constructs a new {@code KeyChainException} with the current stack
+     * trace and the specified cause.
+     *
+     * @param cause
+     *            the cause of this exception, may be {@code null}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:57.276 -0500", hash_original_method = "8CC23A5EEF616E11C5C7CDC0612B705F", hash_generated_method = "DE1CA4EB68D0FF20D9D270B4A5483195")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.066 -0400", hash_original_method = "8CC23A5EEF616E11C5C7CDC0612B705F", hash_generated_method = "ECEDA574E6A3ECB23575DB9CD1F202E5")
-    public  KeyChainException(Throwable cause) {
+public KeyChainException(Throwable cause) {
         super((cause == null ? null : cause.toString()), cause);
-        addTaint(cause.getTaint());
-        // ---------- Original Method ----------
     }
 
     

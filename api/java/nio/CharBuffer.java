@@ -1,6 +1,8 @@
 package java.nio;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 import java.util.Arrays;
@@ -10,33 +12,62 @@ import java.util.Arrays;
 
 
 public abstract class CharBuffer extends Buffer implements Comparable<CharBuffer>, CharSequence, Appendable, Readable {
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.341 -0400", hash_original_method = "295C6F316A1C76C71107A06FE21F48B5", hash_generated_method = "856FDA6EDC6BF7740B409AA337EC184E")
-      CharBuffer(int capacity) {
-        super(1, capacity, null);
-        addTaint(capacity);
-        // ---------- Original Method ----------
-    }
 
+    /**
+     * Creates a char buffer based on a newly allocated char array.
+     *
+     * @param capacity
+     *            the capacity of the new buffer.
+     * @return the created char buffer.
+     * @throws IllegalArgumentException
+     *             if {@code capacity} is less than zero.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.724 -0500", hash_original_method = "8E15B4BAB979FFE1D8AD7F6E38D447D6", hash_generated_method = "C5F8F31431C8864718BD1CDDB3322B44")
     
-    @DSModeled(DSC.SAFE)
-    public static CharBuffer allocate(int capacity) {
+public static CharBuffer allocate(int capacity) {
         if (capacity < 0) {
             throw new IllegalArgumentException();
         }
         return new ReadWriteCharArrayBuffer(capacity);
     }
 
+    /**
+     * Creates a new char buffer by wrapping the given char array.
+     * <p>
+     * Calling this method has the same effect as
+     * {@code wrap(array, 0, array.length)}.
+     *
+     * @param array
+     *            the char array which the new buffer will be based on.
+     * @return the created char buffer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.726 -0500", hash_original_method = "D9A2F140B5EF04EB7DEC41094ED7E8AE", hash_generated_method = "65ED0488DDDF29B220084A330F6927CA")
     
-    @DSModeled(DSC.SAFE)
-    public static CharBuffer wrap(char[] array) {
+public static CharBuffer wrap(char[] array) {
         return wrap(array, 0, array.length);
     }
 
+    /**
+     * Creates a new char buffer by wrapping the given char array.
+     * <p>
+     * The new buffer's position will be {@code start}, limit will be
+     * {@code start + charCount}, capacity will be the length of the array.
+     *
+     * @param array
+     *            the char array which the new buffer will be based on.
+     * @param start
+     *            the start index, must not be negative and not greater than
+     *            {@code array.length}.
+     * @param charCount
+     *            the length, must not be negative and not greater than
+     *            {@code array.length - start}.
+     * @return the created char buffer.
+     * @exception IndexOutOfBoundsException
+     *                if either {@code start} or {@code charCount} is invalid.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.729 -0500", hash_original_method = "F4BBCADC2CAAE6F42E5D0A764115F8AA", hash_generated_method = "D5490944D7BAD3977680C13B7CFB7E2A")
     
-    @DSModeled(DSC.SAFE)
-    public static CharBuffer wrap(char[] array, int start, int charCount) {
+public static CharBuffer wrap(char[] array, int start, int charCount) {
         Arrays.checkOffsetAndCount(array.length, start, charCount);
         CharBuffer buf = new ReadWriteCharArrayBuffer(array);
         buf.position = start;
@@ -44,15 +75,44 @@ public abstract class CharBuffer extends Buffer implements Comparable<CharBuffer
         return buf;
     }
 
+    /**
+     * Creates a new char buffer by wrapping the given char sequence.
+     * <p>
+     * Calling this method has the same effect as
+     * {@code wrap(chseq, 0, chseq.length())}.
+     *
+     * @param chseq
+     *            the char sequence which the new buffer will be based on.
+     * @return the created char buffer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.731 -0500", hash_original_method = "A0EB00DB48D8743104B82F6C26C74F16", hash_generated_method = "EBAB227E99E79F26C2763E8C24D9BF33")
     
-    @DSModeled(DSC.SAFE)
-    public static CharBuffer wrap(CharSequence chseq) {
+public static CharBuffer wrap(CharSequence chseq) {
         return new CharSequenceAdapter(chseq);
     }
 
+    /**
+     * Creates a new char buffer by wrapping the given char sequence.
+     * <p>
+     * The new buffer's position will be {@code start}, limit will be
+     * {@code end}, capacity will be the length of the char sequence. The new
+     * buffer is read-only.
+     *
+     * @param cs
+     *            the char sequence which the new buffer will be based on.
+     * @param start
+     *            the start index, must not be negative and not greater than
+     *            {@code cs.length()}.
+     * @param end
+     *            the end index, must be no less than {@code start} and no
+     *            greater than {@code cs.length()}.
+     * @return the created char buffer.
+     * @exception IndexOutOfBoundsException
+     *                if either {@code start} or {@code end} is invalid.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.734 -0500", hash_original_method = "6F90926803EA51F00CE00F4590525589", hash_generated_method = "D9FFB72AF163F0ACAE0C27A8A19234D4")
     
-    @DSModeled(DSC.SAFE)
-    public static CharBuffer wrap(CharSequence cs, int start, int end) {
+public static CharBuffer wrap(CharSequence cs, int start, int end) {
         if (start < 0 || end < start || end > cs.length()) {
             throw new IndexOutOfBoundsException("cs.length()=" + cs.length() + ", start=" + start + ", end=" + end);
         }
@@ -62,561 +122,685 @@ public abstract class CharBuffer extends Buffer implements Comparable<CharBuffer
         return result;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.737 -0500", hash_original_method = "295C6F316A1C76C71107A06FE21F48B5", hash_generated_method = "295C6F316A1C76C71107A06FE21F48B5")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.343 -0400", hash_original_method = "B8788BC8872EF40BE08078E90206AB2A", hash_generated_method = "4B3EB7C5A7339B4751BA6AD79FFA4959")
-    public final char[] array() {
-        char[] var68B89E48382A0AA51B25AC59599E2EB0_1721196672 = (protectedArray());
-                char[] var50607924ABD4C17119BAF3A1CE41C0EC_1969673569 = {getTaintChar()};
-        return var50607924ABD4C17119BAF3A1CE41C0EC_1969673569;
-        // ---------- Original Method ----------
-        //return protectedArray();
+CharBuffer(int capacity) {
+        super(1, capacity, null);
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.739 -0500", hash_original_method = "B8788BC8872EF40BE08078E90206AB2A", hash_generated_method = "F7EF93A89420C122FCC187990CCE4477")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.343 -0400", hash_original_method = "0D5EF56CBEA1DA16093A6276D10D9347", hash_generated_method = "5AFCA57E3D990504305579858CB063A1")
-    public final int arrayOffset() {
-        int var0B794CE56A38A9F3BFDD2D53E83BB109_561538584 = (protectedArrayOffset());
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1038302813 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1038302813;
-        // ---------- Original Method ----------
-        //return protectedArrayOffset();
+public final char[] array() {
+        return protectedArray();
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.742 -0500", hash_original_method = "0D5EF56CBEA1DA16093A6276D10D9347", hash_generated_method = "28A2D71AE8939DE09018E333ADFF6CAE")
     
-    @DSModeled(DSC.SAFE)
-    public abstract CharBuffer asReadOnlyBuffer();
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.344 -0400", hash_original_method = "064ED2665DC7B0A0ED1B4C93428755B4", hash_generated_method = "635113519BFFD581A3FCED197832E942")
-    public final char charAt(int index) {
-        addTaint(index);
-        if(index < 0 || index >= remaining())        
-        {
-            IndexOutOfBoundsException var7EDBAAD1EBDE2B517419CD574EFB00C6_849597861 = new IndexOutOfBoundsException("index=" + index + ", remaining()=" + remaining());
-            var7EDBAAD1EBDE2B517419CD574EFB00C6_849597861.addTaint(taint);
-            throw var7EDBAAD1EBDE2B517419CD574EFB00C6_849597861;
-        } //End block
-        char var2571BF635708C79B1D5368209BC3ED18_1458887957 = (get(position + index));
-                char varA87DEB01C5F539E6BDA34829C8EF2368_1415896501 = getTaintChar();
-        return varA87DEB01C5F539E6BDA34829C8EF2368_1415896501;
-        // ---------- Original Method ----------
-        //if (index < 0 || index >= remaining()) {
-            //throw new IndexOutOfBoundsException("index=" + index + ", remaining()=" + remaining());
-        //}
-        //return get(position + index);
+public final int arrayOffset() {
+        return protectedArrayOffset();
     }
 
+    /**
+     * Returns a read-only buffer that shares its content with this buffer.
+     * <p>
+     * The returned buffer is guaranteed to be a new instance, even if this
+     * buffer is read-only itself. The new buffer's position, limit, capacity
+     * and mark are the same as this buffer's.
+     * <p>
+     * The new buffer shares its content with this buffer, which means this
+     * buffer's change of content will be visible to the new buffer. The two
+     * buffer's position, limit and mark are independent.
+     *
+     * @return a read-only version of this buffer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.744 -0500", hash_original_method = "E9C6B44F85BB9193F204D1E49DCFF090", hash_generated_method = "BD21260925E192AF83E56ED872F08B60")
     
-    @DSModeled(DSC.SAFE)
-    public abstract CharBuffer compact();
+public abstract CharBuffer asReadOnlyBuffer();
 
+    /**
+     * Returns the character located at the specified index in the buffer. The
+     * index value is referenced from the current buffer position.
+     *
+     * @param index
+     *            the index referenced from the current buffer position. It must
+     *            not be less than zero but less than the value obtained from a
+     *            call to {@code remaining()}.
+     * @return the character located at the specified index (referenced from the
+     *         current position) in the buffer.
+     * @exception IndexOutOfBoundsException
+     *                if the index is invalid.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.747 -0500", hash_original_method = "064ED2665DC7B0A0ED1B4C93428755B4", hash_generated_method = "E0528FF289F11D7D7DE35009840902E6")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.345 -0400", hash_original_method = "726E488C44BA42D1E85B63DB9E089EB1", hash_generated_method = "50F105E97B253066219A974E9AE572E3")
-    public int compareTo(CharBuffer otherBuffer) {
-        addTaint(otherBuffer.getTaint());
+public final char charAt(int index) {
+        if (index < 0 || index >= remaining()) {
+            throw new IndexOutOfBoundsException("index=" + index + ", remaining()=" + remaining());
+        }
+        return get(position + index);
+    }
+
+    /**
+     * Compacts this char buffer.
+     * <p>
+     * The remaining chars will be moved to the head of the buffer,
+     * starting from position zero. Then the position is set to
+     * {@code remaining()}; the limit is set to capacity; the mark is cleared.
+     *
+     * @return this buffer.
+     * @exception ReadOnlyBufferException
+     *                if no changes may be made to the contents of this buffer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.749 -0500", hash_original_method = "4734CE8977AF20831B683F622B556E41", hash_generated_method = "132D1383C510B50C25E6DF2A3CA8EF13")
+    
+public abstract CharBuffer compact();
+
+    /**
+     * Compare the remaining chars of this buffer to another char
+     * buffer's remaining chars.
+     *
+     * @param otherBuffer
+     *            another char buffer.
+     * @return a negative value if this is less than {@code otherBuffer}; 0 if
+     *         this equals to {@code otherBuffer}; a positive value if this is
+     *         greater than {@code otherBuffer}.
+     * @exception ClassCastException
+     *                if {@code otherBuffer} is not a char buffer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.752 -0500", hash_original_method = "726E488C44BA42D1E85B63DB9E089EB1", hash_generated_method = "8467A4596428B2A439EFBB856C3EE3D9")
+    
+public int compareTo(CharBuffer otherBuffer) {
         int compareRemaining = (remaining() < otherBuffer.remaining()) ? remaining()
                 : otherBuffer.remaining();
         int thisPos = position;
         int otherPos = otherBuffer.position;
-        char thisByte;
-        char otherByte;
-        while
-(compareRemaining > 0)        
-        {
+        char thisByte, otherByte;
+        while (compareRemaining > 0) {
             thisByte = get(thisPos);
             otherByte = otherBuffer.get(otherPos);
-            if(thisByte != otherByte)            
-            {
-                int var0D4D283E60262FF52C1A7D956005837E_101692304 = (thisByte < otherByte ? -1 : 1);
-                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1112632500 = getTaintInt();
-                return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1112632500;
-            } //End block
+            if (thisByte != otherByte) {
+                return thisByte < otherByte ? -1 : 1;
+            }
             thisPos++;
             otherPos++;
             compareRemaining--;
-        } //End block
-        int var1DC167191FBC7DAD3BADAE830552C692_781950470 = (remaining() - otherBuffer.remaining());
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1072964364 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1072964364;
-        // ---------- Original Method ----------
-        //int compareRemaining = (remaining() < otherBuffer.remaining()) ? remaining()
-                //: otherBuffer.remaining();
-        //int thisPos = position;
-        //int otherPos = otherBuffer.position;
-        //char thisByte, otherByte;
-        //while (compareRemaining > 0) {
-            //thisByte = get(thisPos);
-            //otherByte = otherBuffer.get(otherPos);
-            //if (thisByte != otherByte) {
-                //return thisByte < otherByte ? -1 : 1;
-            //}
-            //thisPos++;
-            //otherPos++;
-            //compareRemaining--;
-        //}
-        //return remaining() - otherBuffer.remaining();
+        }
+        return remaining() - otherBuffer.remaining();
     }
 
+    /**
+     * Returns a duplicated buffer that shares its content with this buffer.
+     * <p>
+     * The duplicated buffer's initial position, limit, capacity and mark are
+     * the same as this buffer's. The duplicated buffer's read-only property and
+     * byte order are the same as this buffer's, too.
+     * <p>
+     * The new buffer shares its content with this buffer, which means either
+     * buffer's change of content will be visible to the other. The two buffer's
+     * position, limit and mark are independent.
+     *
+     * @return a duplicated buffer that shares its content with this buffer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.754 -0500", hash_original_method = "B6D218A3CD92B4ADC9511EB98EDFD60B", hash_generated_method = "F52BEDA6CC60856F0546400F6EECE9BF")
     
-    @DSModeled(DSC.SAFE)
-    public abstract CharBuffer duplicate();
+public abstract CharBuffer duplicate();
 
+    /**
+     * Checks whether this char buffer is equal to another object.
+     * <p>
+     * If {@code other} is not a char buffer then {@code false} is returned. Two
+     * char buffers are equal if and only if their remaining chars are exactly
+     * the same. Position, limit, capacity and mark are not considered.
+     *
+     * @param other
+     *            the object to compare with this char buffer.
+     * @return {@code true} if this char buffer is equal to {@code other},
+     *         {@code false} otherwise.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.757 -0500", hash_original_method = "43FFCFC26BAE21B80C74493A78B534C8", hash_generated_method = "6EEB7BA4B6B7183769BC94F588EE1AF2")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.346 -0400", hash_original_method = "43FFCFC26BAE21B80C74493A78B534C8", hash_generated_method = "90002019A8F12DE0026029590B39ADE3")
-    @Override
+@Override
     public boolean equals(Object other) {
-        addTaint(other.getTaint());
-        if(!(other instanceof CharBuffer))        
-        {
-            boolean var68934A3E9455FA72420237EB05902327_538680156 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1847823645 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1847823645;
-        } //End block
+        if (!(other instanceof CharBuffer)) {
+            return false;
+        }
         CharBuffer otherBuffer = (CharBuffer) other;
-        if(remaining() != otherBuffer.remaining())        
-        {
-            boolean var68934A3E9455FA72420237EB05902327_950202515 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_437730477 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_437730477;
-        } //End block
+
+        if (remaining() != otherBuffer.remaining()) {
+            return false;
+        }
+
         int myPosition = position;
         int otherPosition = otherBuffer.position;
         boolean equalSoFar = true;
-        while
-(equalSoFar && (myPosition < limit))        
-        {
+        while (equalSoFar && (myPosition < limit)) {
             equalSoFar = get(myPosition++) == otherBuffer.get(otherPosition++);
-        } //End block
-        boolean var4A97EF18B93B276118DD50585250A586_192037190 = (equalSoFar);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_891624576 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_891624576;
-        // ---------- Original Method ----------
-        //if (!(other instanceof CharBuffer)) {
-            //return false;
-        //}
-        //CharBuffer otherBuffer = (CharBuffer) other;
-        //if (remaining() != otherBuffer.remaining()) {
-            //return false;
-        //}
-        //int myPosition = position;
-        //int otherPosition = otherBuffer.position;
-        //boolean equalSoFar = true;
-        //while (equalSoFar && (myPosition < limit)) {
-            //equalSoFar = get(myPosition++) == otherBuffer.get(otherPosition++);
-        //}
-        //return equalSoFar;
+        }
+
+        return equalSoFar;
     }
 
+    /**
+     * Returns the char at the current position and increases the position by 1.
+     *
+     * @return the char at the current position.
+     * @exception BufferUnderflowException
+     *                if the position is equal or greater than limit.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.759 -0500", hash_original_method = "1850A36FB6FEA614E5920130AEF47F4F", hash_generated_method = "16456A3FF8F8E0989D5459246EBEF5BE")
     
-    @DSModeled(DSC.SAFE)
-    public abstract char get();
+public abstract char get();
 
+    /**
+     * Reads chars from the current position into the specified char array and
+     * increases the position by the number of chars read.
+     * <p>
+     * Calling this method has the same effect as
+     * {@code get(dst, 0, dst.length)}.
+     *
+     * @param dst
+     *            the destination char array.
+     * @return this buffer.
+     * @exception BufferUnderflowException
+     *                if {@code dst.length} is greater than {@code remaining()}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.762 -0500", hash_original_method = "CCEA164926296D5352A245D12A0C46F5", hash_generated_method = "191FA0F1A1725B2094DF30D3780BBD15")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.347 -0400", hash_original_method = "CCEA164926296D5352A245D12A0C46F5", hash_generated_method = "2DD293CDD8970D658810D73A6E5D68BA")
-    public CharBuffer get(char[] dst) {
-        addTaint(dst[0]);
-CharBuffer varAF8F268F60258FE30F192DE78F11CD4A_558160443 =         get(dst, 0, dst.length);
-        varAF8F268F60258FE30F192DE78F11CD4A_558160443.addTaint(taint);
-        return varAF8F268F60258FE30F192DE78F11CD4A_558160443;
-        // ---------- Original Method ----------
-        //return get(dst, 0, dst.length);
+public CharBuffer get(char[] dst) {
+        return get(dst, 0, dst.length);
     }
 
+    /**
+     * Reads chars from the current position into the specified char array,
+     * starting from the specified offset, and increases the position by the
+     * number of chars read.
+     *
+     * @param dst
+     *            the target char array.
+     * @param dstOffset
+     *            the offset of the char array, must not be negative and not
+     *            greater than {@code dst.length}.
+     * @param charCount
+     *            The number of chars to read, must be no less than zero and no
+     *            greater than {@code dst.length - dstOffset}.
+     * @return this buffer.
+     * @exception IndexOutOfBoundsException
+     *                if either {@code dstOffset} or {@code charCount} is invalid.
+     * @exception BufferUnderflowException
+     *                if {@code charCount} is greater than {@code remaining()}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.765 -0500", hash_original_method = "098FD190C217FD14B547D1BC38021C90", hash_generated_method = "4E65E0F49D964022501BB9659D732E79")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.347 -0400", hash_original_method = "098FD190C217FD14B547D1BC38021C90", hash_generated_method = "83EC632CB48766C9F2F5FF2D1FE27CDC")
-    public CharBuffer get(char[] dst, int dstOffset, int charCount) {
-        addTaint(charCount);
-        addTaint(dstOffset);
-        addTaint(dst[0]);
+public CharBuffer get(char[] dst, int dstOffset, int charCount) {
         Arrays.checkOffsetAndCount(dst.length, dstOffset, charCount);
-        if(charCount > remaining())        
-        {
-            BufferUnderflowException var77B0EAE3DCF68E57AAEF834AFBC7D762_1444515625 = new BufferUnderflowException();
-            var77B0EAE3DCF68E57AAEF834AFBC7D762_1444515625.addTaint(taint);
-            throw var77B0EAE3DCF68E57AAEF834AFBC7D762_1444515625;
-        } //End block
-for(int i = dstOffset;i < dstOffset + charCount;++i)
-        {
+        if (charCount > remaining()) {
+            throw new BufferUnderflowException();
+        }
+        for (int i = dstOffset; i < dstOffset + charCount; ++i) {
             dst[i] = get();
-        } //End block
-CharBuffer var72A74007B2BE62B849F475C7BDA4658B_432142668 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_432142668.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_432142668;
-        // ---------- Original Method ----------
-        //Arrays.checkOffsetAndCount(dst.length, dstOffset, charCount);
-        //if (charCount > remaining()) {
-            //throw new BufferUnderflowException();
-        //}
-        //for (int i = dstOffset; i < dstOffset + charCount; ++i) {
-            //dst[i] = get();
-        //}
-        //return this;
+        }
+        return this;
     }
 
+    /**
+     * Returns a char at the specified index; the position is not changed.
+     *
+     * @param index
+     *            the index, must not be negative and less than limit.
+     * @return a char at the specified index.
+     * @exception IndexOutOfBoundsException
+     *                if index is invalid.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.768 -0500", hash_original_method = "AAD541C0A943308D03DC370F70AABFC7", hash_generated_method = "702C6AA2AC3B48F035AF66A2D86DBA29")
     
-    @DSModeled(DSC.SAFE)
-    public abstract char get(int index);
+public abstract char get(int index);
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.770 -0500", hash_original_method = "89C81F0EAF8FCCBFE368437CC8972DD7", hash_generated_method = "9ABCCA1D4392A43B7EAC3713FD39CEA8")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.348 -0400", hash_original_method = "89C81F0EAF8FCCBFE368437CC8972DD7", hash_generated_method = "56EF58C76B4ADF7CCBE8E9FE8771782A")
-    public final boolean hasArray() {
-        boolean var55B7C03E3C1EBABD22606AD17EE923C3_1334326882 = (protectedHasArray());
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_575046059 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_575046059;
-        // ---------- Original Method ----------
-        //return protectedHasArray();
+public final boolean hasArray() {
+        return protectedHasArray();
     }
 
+    /**
+     * Calculates this buffer's hash code from the remaining chars. The
+     * position, limit, capacity and mark don't affect the hash code.
+     *
+     * @return the hash code calculated from the remaining chars.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.772 -0500", hash_original_method = "371FAD0CF0C9AC8E78075F4EA52336BD", hash_generated_method = "1E25806FB1ABDE5EAE09DE7EAB683BE8")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.348 -0400", hash_original_method = "371FAD0CF0C9AC8E78075F4EA52336BD", hash_generated_method = "0FD2E8051D66FEFB709B21A4D7BFD50A")
-    @Override
+@Override
     public int hashCode() {
         int myPosition = position;
         int hash = 0;
-        while
-(myPosition < limit)        
-        {
+        while (myPosition < limit) {
             hash = hash + get(myPosition++);
-        } //End block
-        int var0800FC577294C34E0B28AD2839435945_1081459387 = (hash);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1933085996 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1933085996;
-        // ---------- Original Method ----------
-        //int myPosition = position;
-        //int hash = 0;
-        //while (myPosition < limit) {
-            //hash = hash + get(myPosition++);
-        //}
-        //return hash;
+        }
+        return hash;
     }
 
+    /**
+     * Indicates whether this buffer is direct. A direct buffer will try its
+     * best to take advantage of native memory APIs and it may not stay in the
+     * Java heap, so it is not affected by garbage collection.
+     * <p>
+     * A char buffer is direct if it is based on a byte buffer and the byte
+     * buffer is direct.
+     *
+     * @return {@code true} if this buffer is direct, {@code false} otherwise.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.775 -0500", hash_original_method = "2B5243B32EFBD4C87A9512D0DB4C2075", hash_generated_method = "FFC399E278E774AC5C957525392E5B9B")
     
-    @DSModeled(DSC.SAFE)
-    public abstract boolean isDirect();
+public abstract boolean isDirect();
 
+    /**
+     * Returns the number of remaining chars.
+     *
+     * @return the number of remaining chars.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.777 -0500", hash_original_method = "C49AE9EB347B20902074CA3EBA57FA96", hash_generated_method = "F35DC62349F3AD30827027EE6CC83782")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.348 -0400", hash_original_method = "C49AE9EB347B20902074CA3EBA57FA96", hash_generated_method = "853D5F2E07CC9E7C205D722F989B4D3B")
-    public final int length() {
-        int varDDC5A90D80216ADD8FAE07957BE5782C_1396683064 = (remaining());
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_860598744 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_860598744;
-        // ---------- Original Method ----------
-        //return remaining();
+public final int length() {
+        return remaining();
     }
 
+    /**
+     * Returns the byte order used by this buffer when converting chars from/to
+     * bytes.
+     * <p>
+     * If this buffer is not based on a byte buffer, then this always returns
+     * the platform's native byte order.
+     *
+     * @return the byte order used by this buffer when converting chars from/to
+     *         bytes.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.779 -0500", hash_original_method = "2DA427F16EF708C854E7D0C984AF174B", hash_generated_method = "2BEDE1A9F84B5799B19A96DDBD47ABB8")
     
-    @DSModeled(DSC.SAFE)
-    public abstract ByteOrder order();
+public abstract ByteOrder order();
 
+    /**
+     * Child class implements this method to realize {@code array()}.
+     *
+     * @see #array()
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.782 -0500", hash_original_method = "47D1D50E8E7D288303379675E63DADA6", hash_generated_method = "8B277730029D605093B8781CFD73DDCA")
     
-    @DSModeled(DSC.SAFE)
-    abstract char[] protectedArray();
+abstract char[] protectedArray();
 
+    /**
+     * Child class implements this method to realize {@code arrayOffset()}.
+     *
+     * @see #arrayOffset()
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.784 -0500", hash_original_method = "9E60C7ACB7338AE2B38C3B6B2C95F717", hash_generated_method = "CF9DD77B0F7512BEF2952176796D1F74")
     
-    @DSModeled(DSC.SAFE)
-    abstract int protectedArrayOffset();
+abstract int protectedArrayOffset();
 
+    /**
+     * Child class implements this method to realize {@code hasArray()}.
+     *
+     * @see #hasArray()
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.786 -0500", hash_original_method = "A4BB1744D6CB0B58561CD2147D66FE72", hash_generated_method = "6F3071F3A04983A3B50C9AF29E029577")
     
-    @DSModeled(DSC.SAFE)
-    abstract boolean protectedHasArray();
+abstract boolean protectedHasArray();
 
+    /**
+     * Writes the given char to the current position and increases the position
+     * by 1.
+     *
+     * @param c
+     *            the char to write.
+     * @return this buffer.
+     * @exception BufferOverflowException
+     *                if position is equal or greater than limit.
+     * @exception ReadOnlyBufferException
+     *                if no changes may be made to the contents of this buffer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.789 -0500", hash_original_method = "F19EB97E90F9577C945FC2A86DA468D8", hash_generated_method = "85AFD595D3F36EA1A3437288DCA79CB7")
     
-    @DSModeled(DSC.SAFE)
-    public abstract CharBuffer put(char c);
+public abstract CharBuffer put(char c);
 
+    /**
+     * Writes chars from the given char array to the current position and
+     * increases the position by the number of chars written.
+     * <p>
+     * Calling this method has the same effect as
+     * {@code put(src, 0, src.length)}.
+     *
+     * @param src
+     *            the source char array.
+     * @return this buffer.
+     * @exception BufferOverflowException
+     *                if {@code remaining()} is less than {@code src.length}.
+     * @exception ReadOnlyBufferException
+     *                if no changes may be made to the contents of this buffer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.791 -0500", hash_original_method = "470B54D034ECB079323054E5FA7FB003", hash_generated_method = "43651BE45F5D8F0AFEEB782FAE4BFA77")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.348 -0400", hash_original_method = "470B54D034ECB079323054E5FA7FB003", hash_generated_method = "D94461FCC1893D02B546A333278CE5F2")
-    public final CharBuffer put(char[] src) {
-        addTaint(src[0]);
-CharBuffer var7D505613BED257805463C43ADCB4DBAD_1166144060 =         put(src, 0, src.length);
-        var7D505613BED257805463C43ADCB4DBAD_1166144060.addTaint(taint);
-        return var7D505613BED257805463C43ADCB4DBAD_1166144060;
-        // ---------- Original Method ----------
-        //return put(src, 0, src.length);
+public final CharBuffer put(char[] src) {
+        return put(src, 0, src.length);
     }
 
+    /**
+     * Writes chars from the given char array, starting from the specified offset,
+     * to the current position and increases the position by the number of chars
+     * written.
+     *
+     * @param src
+     *            the source char array.
+     * @param srcOffset
+     *            the offset of char array, must not be negative and not greater
+     *            than {@code src.length}.
+     * @param charCount
+     *            the number of chars to write, must be no less than zero and no
+     *            greater than {@code src.length - srcOffset}.
+     * @return this buffer.
+     * @exception BufferOverflowException
+     *                if {@code remaining()} is less than {@code charCount}.
+     * @exception IndexOutOfBoundsException
+     *                if either {@code srcOffset} or {@code charCount} is invalid.
+     * @exception ReadOnlyBufferException
+     *                if no changes may be made to the contents of this buffer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.794 -0500", hash_original_method = "022BE284F152CDC3C1FB1410D39A7C9D", hash_generated_method = "02D3786322E03C26806C036B38D25D9E")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.349 -0400", hash_original_method = "022BE284F152CDC3C1FB1410D39A7C9D", hash_generated_method = "DB0EBBA3E5648280329464E49EB8FF93")
-    public CharBuffer put(char[] src, int srcOffset, int charCount) {
-        addTaint(charCount);
-        addTaint(srcOffset);
-        addTaint(src[0]);
+public CharBuffer put(char[] src, int srcOffset, int charCount) {
         Arrays.checkOffsetAndCount(src.length, srcOffset, charCount);
-        if(charCount > remaining())        
-        {
-            BufferOverflowException var773478A23217201B18B531915D367F31_1864075854 = new BufferOverflowException();
-            var773478A23217201B18B531915D367F31_1864075854.addTaint(taint);
-            throw var773478A23217201B18B531915D367F31_1864075854;
-        } //End block
-for(int i = srcOffset;i < srcOffset + charCount;++i)
-        {
+        if (charCount > remaining()) {
+            throw new BufferOverflowException();
+        }
+        for (int i = srcOffset; i < srcOffset + charCount; ++i) {
             put(src[i]);
-        } //End block
-CharBuffer var72A74007B2BE62B849F475C7BDA4658B_1552854205 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_1552854205.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_1552854205;
-        // ---------- Original Method ----------
-        //Arrays.checkOffsetAndCount(src.length, srcOffset, charCount);
-        //if (charCount > remaining()) {
-            //throw new BufferOverflowException();
-        //}
-        //for (int i = srcOffset; i < srcOffset + charCount; ++i) {
-            //put(src[i]);
-        //}
-        //return this;
+        }
+        return this;
     }
 
+    /**
+     * Writes all the remaining chars of the {@code src} char buffer to this
+     * buffer's current position, and increases both buffers' position by the
+     * number of chars copied.
+     *
+     * @param src
+     *            the source char buffer.
+     * @return this buffer.
+     * @exception BufferOverflowException
+     *                if {@code src.remaining()} is greater than this buffer's
+     *                {@code remaining()}.
+     * @exception IllegalArgumentException
+     *                if {@code src} is this buffer.
+     * @exception ReadOnlyBufferException
+     *                if no changes may be made to the contents of this buffer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.796 -0500", hash_original_method = "37C3423DFAF6E5EC51AB38006AB488BA", hash_generated_method = "81937F4E7EC54F35925FFCA752194CC2")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.349 -0400", hash_original_method = "37C3423DFAF6E5EC51AB38006AB488BA", hash_generated_method = "E4FAAEAAFDD4CB0E16E4681307A2E9EA")
-    public CharBuffer put(CharBuffer src) {
-        addTaint(src.getTaint());
-        if(src == this)        
-        {
-            IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_1130122132 = new IllegalArgumentException();
-            var5783EF97022AA508B74A1E3EA38534AF_1130122132.addTaint(taint);
-            throw var5783EF97022AA508B74A1E3EA38534AF_1130122132;
-        } //End block
-        if(src.remaining() > remaining())        
-        {
-            BufferOverflowException var773478A23217201B18B531915D367F31_1509138623 = new BufferOverflowException();
-            var773478A23217201B18B531915D367F31_1509138623.addTaint(taint);
-            throw var773478A23217201B18B531915D367F31_1509138623;
-        } //End block
+public CharBuffer put(CharBuffer src) {
+        if (src == this) {
+            throw new IllegalArgumentException();
+        }
+        if (src.remaining() > remaining()) {
+            throw new BufferOverflowException();
+        }
+
         char[] contents = new char[src.remaining()];
         src.get(contents);
         put(contents);
-CharBuffer var72A74007B2BE62B849F475C7BDA4658B_98317293 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_98317293.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_98317293;
-        // ---------- Original Method ----------
-        //if (src == this) {
-            //throw new IllegalArgumentException();
-        //}
-        //if (src.remaining() > remaining()) {
-            //throw new BufferOverflowException();
-        //}
-        //char[] contents = new char[src.remaining()];
-        //src.get(contents);
-        //put(contents);
-        //return this;
+        return this;
     }
 
+    /**
+     * Writes a char to the specified index of this buffer; the position is not
+     * changed.
+     *
+     * @param index
+     *            the index, must be no less than zero and less than the limit.
+     * @param c
+     *            the char to write.
+     * @return this buffer.
+     * @exception IndexOutOfBoundsException
+     *                if index is invalid.
+     * @exception ReadOnlyBufferException
+     *                if no changes may be made to the contents of this buffer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.799 -0500", hash_original_method = "B4FC48477262D11801112BB7E12149CE", hash_generated_method = "D715DB6A762D536206BD0E9BF8B1E04B")
     
-    @DSModeled(DSC.SAFE)
-    public abstract CharBuffer put(int index, char c);
+public abstract CharBuffer put(int index, char c);
 
+    /**
+     * Writes all chars of the given string to the current position of this
+     * buffer, and increases the position by the length of string.
+     * <p>
+     * Calling this method has the same effect as
+     * {@code put(str, 0, str.length())}.
+     *
+     * @param str
+     *            the string to write.
+     * @return this buffer.
+     * @exception BufferOverflowException
+     *                if {@code remaining()} is less than the length of string.
+     * @exception ReadOnlyBufferException
+     *                if no changes may be made to the contents of this buffer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.802 -0500", hash_original_method = "E7006B831E6768B620311924466DB7A4", hash_generated_method = "4B9B6ED275EF14DF7F13CE8DBE9C44E1")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.349 -0400", hash_original_method = "E7006B831E6768B620311924466DB7A4", hash_generated_method = "FB743D1E23D119BD8F97C4B7EBF14B38")
-    public final CharBuffer put(String str) {
-        addTaint(str.getTaint());
-CharBuffer var80E016D18018A9A6110F6C1B5F9ADE1F_370800662 =         put(str, 0, str.length());
-        var80E016D18018A9A6110F6C1B5F9ADE1F_370800662.addTaint(taint);
-        return var80E016D18018A9A6110F6C1B5F9ADE1F_370800662;
-        // ---------- Original Method ----------
-        //return put(str, 0, str.length());
+public final CharBuffer put(String str) {
+        return put(str, 0, str.length());
     }
 
+    /**
+     * Writes chars of the given string to the current position of this buffer,
+     * and increases the position by the number of chars written.
+     *
+     * @param str
+     *            the string to write.
+     * @param start
+     *            the first char to write, must not be negative and not greater
+     *            than {@code str.length()}.
+     * @param end
+     *            the last char to write (excluding), must be less than
+     *            {@code start} and not greater than {@code str.length()}.
+     * @return this buffer.
+     * @exception BufferOverflowException
+     *                if {@code remaining()} is less than {@code end - start}.
+     * @exception IndexOutOfBoundsException
+     *                if either {@code start} or {@code end} is invalid.
+     * @exception ReadOnlyBufferException
+     *                if no changes may be made to the contents of this buffer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.804 -0500", hash_original_method = "D2CD34EAF4E6074C289823E8F75291E2", hash_generated_method = "BEBCA007E3E0477D10B11131B9FB7D27")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.349 -0400", hash_original_method = "D2CD34EAF4E6074C289823E8F75291E2", hash_generated_method = "2C933084FFBBEBCAACA4EF81B695E8BE")
-    public CharBuffer put(String str, int start, int end) {
-        addTaint(end);
-        addTaint(start);
-        addTaint(str.getTaint());
-        if(start < 0 || end < start || end > str.length())        
-        {
-            IndexOutOfBoundsException var85E786FB40E8A812D6BA58B12716CB8A_1170382809 = new IndexOutOfBoundsException("str.length()=" + str.length() +
+public CharBuffer put(String str, int start, int end) {
+        if (start < 0 || end < start || end > str.length()) {
+            throw new IndexOutOfBoundsException("str.length()=" + str.length() +
                     ", start=" + start + ", end=" + end);
-            var85E786FB40E8A812D6BA58B12716CB8A_1170382809.addTaint(taint);
-            throw var85E786FB40E8A812D6BA58B12716CB8A_1170382809;
-        } //End block
-        if(end - start > remaining())        
-        {
-            BufferOverflowException var773478A23217201B18B531915D367F31_1788228624 = new BufferOverflowException();
-            var773478A23217201B18B531915D367F31_1788228624.addTaint(taint);
-            throw var773478A23217201B18B531915D367F31_1788228624;
-        } //End block
-for(int i = start;i < end;i++)
-        {
+        }
+        if (end - start > remaining()) {
+            throw new BufferOverflowException();
+        }
+        for (int i = start; i < end; i++) {
             put(str.charAt(i));
-        } //End block
-CharBuffer var72A74007B2BE62B849F475C7BDA4658B_184787133 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_184787133.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_184787133;
-        // ---------- Original Method ----------
-        //if (start < 0 || end < start || end > str.length()) {
-            //throw new IndexOutOfBoundsException("str.length()=" + str.length() +
-                    //", start=" + start + ", end=" + end);
-        //}
-        //if (end - start > remaining()) {
-            //throw new BufferOverflowException();
-        //}
-        //for (int i = start; i < end; i++) {
-            //put(str.charAt(i));
-        //}
-        //return this;
+        }
+        return this;
     }
 
+    /**
+     * Returns a sliced buffer that shares its content with this buffer.
+     * <p>
+     * The sliced buffer's capacity will be this buffer's {@code remaining()},
+     * and its zero position will correspond to this buffer's current position.
+     * The new buffer's position will be 0, limit will be its capacity, and its
+     * mark is cleared. The new buffer's read-only property and byte order are
+     * same as this buffer.
+     * <p>
+     * The new buffer shares its content with this buffer, which means either
+     * buffer's change of content will be visible to the other. The two buffer's
+     * position, limit and mark are independent.
+     *
+     * @return a sliced buffer that shares its content with this buffer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.806 -0500", hash_original_method = "C5C9BF0F4A6933B0CC2EE10D9BDC82D3", hash_generated_method = "A48B1767436E9EA6AC807558E9050885")
     
-    @DSModeled(DSC.SAFE)
-    public abstract CharBuffer slice();
+public abstract CharBuffer slice();
 
+    /**
+     * Returns a new char buffer representing a sub-sequence of this buffer's
+     * current remaining content.
+     * <p>
+     * The new buffer's position will be {@code position() + start}, limit will
+     * be {@code position() + end}, capacity will be the same as this buffer.
+     * The new buffer's read-only property and byte order are the same as this
+     * buffer.
+     * <p>
+     * The new buffer shares its content with this buffer, which means either
+     * buffer's change of content will be visible to the other. The two buffer's
+     * position, limit and mark are independent.
+     *
+     * @param start
+     *            the start index of the sub-sequence, referenced from the
+     *            current buffer position. Must not be less than zero and not
+     *            greater than the value obtained from a call to
+     *            {@code remaining()}.
+     * @param end
+     *            the end index of the sub-sequence, referenced from the current
+     *            buffer position. Must not be less than {@code start} and not
+     *            be greater than the value obtained from a call to
+     *            {@code remaining()}.
+     * @return a new char buffer represents a sub-sequence of this buffer's
+     *         current remaining content.
+     * @exception IndexOutOfBoundsException
+     *                if either {@code start} or {@code end} is invalid.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.809 -0500", hash_original_method = "CC1A918E751879C0CACBEAD0F53D48ED", hash_generated_method = "460F5702CFF0539D37C9D86BAB80AFE3")
     
-    @DSModeled(DSC.SAFE)
-    public abstract CharSequence subSequence(int start, int end);
+public abstract CharSequence subSequence(int start, int end);
 
+    /**
+     * Returns a string representing the current remaining chars of this buffer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.812 -0500", hash_original_method = "7C6B898DBE310393A5687B676A637050", hash_generated_method = "00B4A448AFB77E5525AA5B006C3CEB6D")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.350 -0400", hash_original_method = "7C6B898DBE310393A5687B676A637050", hash_generated_method = "B8515CAB401AFC924057D3AB32607EEC")
-    @Override
+@Override
     public String toString() {
         StringBuilder result = new StringBuilder(limit - position);
-for(int i = position;i < limit;i++)
-        {
+        for (int i = position; i < limit; i++) {
             result.append(get(i));
-        } //End block
-String varE65B3A02759122992CB82C0E651AD408_1138615381 =         result.toString();
-        varE65B3A02759122992CB82C0E651AD408_1138615381.addTaint(taint);
-        return varE65B3A02759122992CB82C0E651AD408_1138615381;
-        // ---------- Original Method ----------
-        //StringBuilder result = new StringBuilder(limit - position);
-        //for (int i = position; i < limit; i++) {
-            //result.append(get(i));
-        //}
-        //return result.toString();
+        }
+        return result.toString();
     }
 
+    /**
+     * Writes the given char to the current position and increases the position
+     * by 1.
+     *
+     * @param c
+     *            the char to write.
+     * @return this buffer.
+     * @exception BufferOverflowException
+     *                if position is equal or greater than limit.
+     * @exception ReadOnlyBufferException
+     *                if no changes may be made to the contents of this buffer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.814 -0500", hash_original_method = "B2B921133AE3BAD544E239EA4D0BB16C", hash_generated_method = "9E7DD5F3797D5B52007932CF09EB8FBB")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.350 -0400", hash_original_method = "B2B921133AE3BAD544E239EA4D0BB16C", hash_generated_method = "7FEE7DF9EF0DE824F605D2054178655B")
-    public CharBuffer append(char c) {
-        addTaint(c);
-CharBuffer var2B6273DE4DE54F57140B73EE93BBE5BC_1581357939 =         put(c);
-        var2B6273DE4DE54F57140B73EE93BBE5BC_1581357939.addTaint(taint);
-        return var2B6273DE4DE54F57140B73EE93BBE5BC_1581357939;
-        // ---------- Original Method ----------
-        //return put(c);
+public CharBuffer append(char c) {
+        return put(c);
     }
 
+    /**
+     * Writes all chars of the given character sequence {@code csq} to the
+     * current position of this buffer, and increases the position by the length
+     * of the csq.
+     * <p>
+     * Calling this method has the same effect as {@code append(csq.toString())}.
+     * If the {@code CharSequence} is {@code null} the string "null" will be
+     * written to the buffer.
+     *
+     * @param csq
+     *            the {@code CharSequence} to write.
+     * @return this buffer.
+     * @exception BufferOverflowException
+     *                if {@code remaining()} is less than the length of csq.
+     * @exception ReadOnlyBufferException
+     *                if no changes may be made to the contents of this buffer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.816 -0500", hash_original_method = "832DE990D6C4F53D8F1E55F3872916C2", hash_generated_method = "2E9F81D0A0AB63E64D2C92C0A73F4023")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.350 -0400", hash_original_method = "832DE990D6C4F53D8F1E55F3872916C2", hash_generated_method = "005F4782F31021462AFF278D401118EE")
-    public CharBuffer append(CharSequence csq) {
-        addTaint(csq.getTaint());
-        if(csq != null)        
-        {
-CharBuffer var201AE26096F56A0C3091616FFDB02190_1100093094 =             put(csq.toString());
-            var201AE26096F56A0C3091616FFDB02190_1100093094.addTaint(taint);
-            return var201AE26096F56A0C3091616FFDB02190_1100093094;
-        } //End block
-CharBuffer var377E45898C2B390206A4ADB7EC4B7A33_1571861885 =         put("null");
-        var377E45898C2B390206A4ADB7EC4B7A33_1571861885.addTaint(taint);
-        return var377E45898C2B390206A4ADB7EC4B7A33_1571861885;
-        // ---------- Original Method ----------
-        //if (csq != null) {
-            //return put(csq.toString());
-        //}
-        //return put("null");
+public CharBuffer append(CharSequence csq) {
+        if (csq != null) {
+            return put(csq.toString());
+        }
+        return put("null");
     }
 
+    /**
+     * Writes chars of the given {@code CharSequence} to the current position of
+     * this buffer, and increases the position by the number of chars written.
+     *
+     * @param csq
+     *            the {@code CharSequence} to write.
+     * @param start
+     *            the first char to write, must not be negative and not greater
+     *            than {@code csq.length()}.
+     * @param end
+     *            the last char to write (excluding), must be less than
+     *            {@code start} and not greater than {@code csq.length()}.
+     * @return this buffer.
+     * @exception BufferOverflowException
+     *                if {@code remaining()} is less than {@code end - start}.
+     * @exception IndexOutOfBoundsException
+     *                if either {@code start} or {@code end} is invalid.
+     * @exception ReadOnlyBufferException
+     *                if no changes may be made to the contents of this buffer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.818 -0500", hash_original_method = "006D95454A8B407A6CE6A3881397CD6E", hash_generated_method = "2D33A52979140EEEDD22B43246DAD055")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.350 -0400", hash_original_method = "006D95454A8B407A6CE6A3881397CD6E", hash_generated_method = "D96FA03359C682DEC878076585178D7B")
-    public CharBuffer append(CharSequence csq, int start, int end) {
-        addTaint(end);
-        addTaint(start);
-        addTaint(csq.getTaint());
-        if(csq == null)        
-        {
+public CharBuffer append(CharSequence csq, int start, int end) {
+        if (csq == null) {
             csq = "null";
-        } //End block
+        }
         CharSequence cs = csq.subSequence(start, end);
-        if(cs.length() > 0)        
-        {
-CharBuffer var67C6B63C38225F64455A2BCE48BC6CA7_196663998 =             put(cs.toString());
-            var67C6B63C38225F64455A2BCE48BC6CA7_196663998.addTaint(taint);
-            return var67C6B63C38225F64455A2BCE48BC6CA7_196663998;
-        } //End block
-CharBuffer var72A74007B2BE62B849F475C7BDA4658B_2125179719 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_2125179719.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_2125179719;
-        // ---------- Original Method ----------
-        //if (csq == null) {
-            //csq = "null";
-        //}
-        //CharSequence cs = csq.subSequence(start, end);
-        //if (cs.length() > 0) {
-            //return put(cs.toString());
-        //}
-        //return this;
+        if (cs.length() > 0) {
+            return put(cs.toString());
+        }
+        return this;
     }
 
+    /**
+     * Reads characters from this buffer and puts them into {@code target}. The
+     * number of chars that are copied is either the number of remaining chars
+     * in this buffer or the number of remaining chars in {@code target},
+     * whichever is smaller.
+     *
+     * @param target
+     *            the target char buffer.
+     * @throws IllegalArgumentException
+     *             if {@code target} is this buffer.
+     * @throws IOException
+     *             if an I/O error occurs.
+     * @throws ReadOnlyBufferException
+     *             if no changes may be made to the contents of {@code target}.
+     * @return the number of chars copied or -1 if there are no chars left to be
+     *         read from this buffer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.821 -0500", hash_original_method = "412283507A99EDD12D2C7BFEC4EFD5FB", hash_generated_method = "68C4C9B2FB6A1D49B82F37C0DD39E65D")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.351 -0400", hash_original_method = "412283507A99EDD12D2C7BFEC4EFD5FB", hash_generated_method = "C92AAEC1E587E1B305F1FD48A184D4F1")
-    public int read(CharBuffer target) throws IOException {
-        addTaint(target.getTaint());
+public int read(CharBuffer target) throws IOException {
         int remaining = remaining();
-        if(target == this)        
-        {
-            if(remaining == 0)            
-            {
-                int var6BB61E3B7BCE0931DA574D19D1D82C88_1033204555 = (-1);
-                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1349066435 = getTaintInt();
-                return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1349066435;
-            } //End block
-            IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_573308269 = new IllegalArgumentException();
-            var5783EF97022AA508B74A1E3EA38534AF_573308269.addTaint(taint);
-            throw var5783EF97022AA508B74A1E3EA38534AF_573308269;
-        } //End block
-        if(remaining == 0)        
-        {
-            int varEDED0BA610ADD42446DF1159D678D6EF_1143799141 = (limit > 0 && target.remaining() == 0 ? 0 : -1);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1283563920 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1283563920;
-        } //End block
+        if (target == this) {
+            if (remaining == 0) {
+                return -1;
+            }
+            throw new IllegalArgumentException();
+        }
+        if (remaining == 0) {
+            return limit > 0 && target.remaining() == 0 ? 0 : -1;
+        }
         remaining = Math.min(target.remaining(), remaining);
-        if(remaining > 0)        
-        {
+        if (remaining > 0) {
             char[] chars = new char[remaining];
             get(chars);
             target.put(chars);
-        } //End block
-        int var2626772C17D90CF46BE4FE981FF30AC8_1284045805 = (remaining);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_309199013 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_309199013;
-        // ---------- Original Method ----------
-        //int remaining = remaining();
-        //if (target == this) {
-            //if (remaining == 0) {
-                //return -1;
-            //}
-            //throw new IllegalArgumentException();
-        //}
-        //if (remaining == 0) {
-            //return limit > 0 && target.remaining() == 0 ? 0 : -1;
-        //}
-        //remaining = Math.min(target.remaining(), remaining);
-        //if (remaining > 0) {
-            //char[] chars = new char[remaining];
-            //get(chars);
-            //target.put(chars);
-        //}
-        //return remaining;
+        }
+        return remaining;
     }
 
     

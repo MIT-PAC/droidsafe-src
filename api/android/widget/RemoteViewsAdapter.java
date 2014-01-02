@@ -1,6 +1,9 @@
 package android.widget;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
+import android.util.Log;
 import droidsafe.annotations.*;
 import java.lang.ref.WeakReference;
 import java.util.HashMap;
@@ -30,930 +33,574 @@ import com.android.internal.widget.IRemoteViewsFactory;
 
 
 public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.892 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.541 -0500", hash_original_field = "9015949F6F6D68CEB48F73FC8B9DBBF1", hash_generated_field = "911EBCEFE4CCEB1A8C54FB61D7AB0AD9")
 
-    private Context mContext;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.892 -0400", hash_original_field = "B1135DD88C82BCDD4DCD8391BCD99883", hash_generated_field = "5782C825DA3F61D408DF2DCA63E7F54A")
+    private static final String TAG = "RemoteViewsAdapter";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.544 -0500", hash_original_field = "E7BC63F21296D24F2707934CE9E848F9", hash_generated_field = "7B64BF8061986040376D887000FE60FC")
 
-    private Intent mIntent;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.892 -0400", hash_original_field = "905A4BBD5E07D0C7A80D7BBC86A773FE", hash_generated_field = "B6D817E86C2105E427B243C6F2B8620A")
+    private static final int sDefaultCacheSize = 40;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.546 -0500", hash_original_field = "F2A73CB5294A0F44F41F76484913ED39", hash_generated_field = "BF771CB2EB1487BE1CD8F8C333A3062E")
 
-    private int mAppWidgetId;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.892 -0400", hash_original_field = "C443A03F92046D0F01F0B3A84FC6B50F", hash_generated_field = "6C3DDC70E78FA863A6FCDBA124DEDF31")
+    // This ensures that we don't stay continually bound to the service and that it can be destroyed
+    // if we need the memory elsewhere in the system.
+    private static final int sUnbindServiceDelay = 5000;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.548 -0500", hash_original_field = "3ACB8FA65DD02D5D16DA738879F6DA7E", hash_generated_field = "CD7B880CABC800B219D85862AA4BAB3E")
+
+    private static final int sDefaultLoadingViewHeight = 50;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.551 -0500", hash_original_field = "54DDDE91F3903D58198A8CE45732DD47", hash_generated_field = "B4ACA6FFB73AE04B468186CDC32AA932")
+
+    private static final int sDefaultMessageType = 0;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.553 -0500", hash_original_field = "B9D4DFC85D54D8D8588BAF1656221187", hash_generated_field = "3A6B65139510D8443CF01354FDD1924A")
+
+    private static final int sUnbindServiceMessageType = 1;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.555 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
+
+
+    private  Context mContext;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.557 -0500", hash_original_field = "1811495D939DB843870F6315E04555CC", hash_generated_field = "5782C825DA3F61D408DF2DCA63E7F54A")
+
+    private  Intent mIntent;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.559 -0500", hash_original_field = "C187677719C4391D45C59B42615D4AC2", hash_generated_field = "B6D817E86C2105E427B243C6F2B8620A")
+
+    private  int mAppWidgetId;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.562 -0500", hash_original_field = "F0BCED03E8DC2B26A7860C39890DB1F4", hash_generated_field = "6C3DDC70E78FA863A6FCDBA124DEDF31")
 
     private LayoutInflater mLayoutInflater;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.892 -0400", hash_original_field = "94CA83B0A5EF3662095068A2D93D4E51", hash_generated_field = "BD40E8C59E7AC3257D3A47F00953ACF9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.564 -0500", hash_original_field = "023ACC87E27D21D201DC783D8353E8AD", hash_generated_field = "BD40E8C59E7AC3257D3A47F00953ACF9")
 
     private RemoteViewsAdapterServiceConnection mServiceConnection;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.892 -0400", hash_original_field = "1804C5EC7AAE0B28B15CFDA061D25829", hash_generated_field = "2853390AFCDB24EF7B383440520C8195")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.566 -0500", hash_original_field = "D88BFDCCD09703FFC789C4E54D6C2B3C", hash_generated_field = "2853390AFCDB24EF7B383440520C8195")
 
     private WeakReference<RemoteAdapterConnectionCallback> mCallback;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.892 -0400", hash_original_field = "FA75DB4B1A95A78968F552A9DCC88B0C", hash_generated_field = "6CEEDA92C0B838E0583FA20FED984233")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.568 -0500", hash_original_field = "248678473A958E83408E9323CAE1B35E", hash_generated_field = "6CEEDA92C0B838E0583FA20FED984233")
 
     private FixedSizeRemoteViewsCache mCache;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.892 -0400", hash_original_field = "D40837C5C96F2BC6FB8B15E5D5D9A8E4", hash_generated_field = "2CBB88FF54D1CB615E7672C77E0FDC22")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.570 -0500", hash_original_field = "4AAFA5A49457AFEC148686B8F1B1B736", hash_generated_field = "2CBB88FF54D1CB615E7672C77E0FDC22")
 
     private boolean mNotifyDataSetChangedAfterOnServiceConnected = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.892 -0400", hash_original_field = "48E773D9FF4DCC371E25C83CB3C47074", hash_generated_field = "4BD04F08A083FFC0AD9FAED854002A9F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.572 -0500", hash_original_field = "6C6539814C30CB54E70990096B7E94EB", hash_generated_field = "837B6838854A47F3C53086E369CD0530")
 
+    // loaded.
     private RemoteViewsFrameLayoutRefSet mRequestedViews;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.892 -0400", hash_original_field = "057DFDF088887624A60064F086C80D70", hash_generated_field = "F80515F1CBDC27AC738FAA2D73C57FAC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.575 -0500", hash_original_field = "B475099F40B00216D4FB8409F5914925", hash_generated_field = "F80515F1CBDC27AC738FAA2D73C57FAC")
+
 
     private HandlerThread mWorkerThread;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.892 -0400", hash_original_field = "6B46E04E2DA4F6D5AFFCE71F4C5D8248", hash_generated_field = "117A70523E02BF403FE90D6FEB3CF957")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.577 -0500", hash_original_field = "CDE5657076443D1F482368B4D67E4492", hash_generated_field = "117A70523E02BF403FE90D6FEB3CF957")
 
     private Handler mWorkerQueue;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.892 -0400", hash_original_field = "C57F865EFE060D469EE2E4964E3F0FA8", hash_generated_field = "6EC87008C9BC7C9DBF6022010FD5DC7F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.579 -0500", hash_original_field = "C43DB800FAE0295E33A4B9FFD127DCD1", hash_generated_field = "6EC87008C9BC7C9DBF6022010FD5DC7F")
 
     private Handler mMainQueue;
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.774 -0500", hash_original_method = "812B134D167B9B4075E3C9A16E9536C3", hash_generated_method = "38F4874911220085CBC9E5ED8EAE4FED")
     
-        @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.895 -0400", hash_original_method = "812B134D167B9B4075E3C9A16E9536C3", hash_generated_method = "75DDC759DD04A6C78349CA4EB660C109")
-    public  RemoteViewsAdapter(Context context, Intent intent, RemoteAdapterConnectionCallback callback) {
+public RemoteViewsAdapter(Context context, Intent intent, RemoteAdapterConnectionCallback callback) {
         mContext = context;
         mIntent = intent;
         mAppWidgetId = intent.getIntExtra(RemoteViews.EXTRA_REMOTEADAPTER_APPWIDGET_ID, -1);
         mLayoutInflater = LayoutInflater.from(context);
-        if(mIntent == null)        
-        {
-            IllegalArgumentException varCD200ACC7550FC872CE82265047D75E7_1408165563 = new IllegalArgumentException("Non-null Intent must be specified.");
-            varCD200ACC7550FC872CE82265047D75E7_1408165563.addTaint(taint);
-            throw varCD200ACC7550FC872CE82265047D75E7_1408165563;
-        } //End block
+        if (mIntent == null) {
+            throw new IllegalArgumentException("Non-null Intent must be specified.");
+        }
         mRequestedViews = new RemoteViewsFrameLayoutRefSet();
-        if(intent.hasExtra(RemoteViews.EXTRA_REMOTEADAPTER_APPWIDGET_ID))        
-        {
+
+        // Strip the previously injected app widget id from service intent
+        if (intent.hasExtra(RemoteViews.EXTRA_REMOTEADAPTER_APPWIDGET_ID)) {
             intent.removeExtra(RemoteViews.EXTRA_REMOTEADAPTER_APPWIDGET_ID);
-        } //End block
+        }
+
+        // Initialize the worker thread
         mWorkerThread = new HandlerThread("RemoteViewsCache-loader");
         mWorkerThread.start();
         mWorkerQueue = new Handler(mWorkerThread.getLooper());
         mMainQueue = new Handler(Looper.myLooper(), this);
+
+        // Initialize the cache and the service connection on startup
         mCache = new FixedSizeRemoteViewsCache(sDefaultCacheSize);
         mCallback = new WeakReference<RemoteAdapterConnectionCallback>(callback);
         mServiceConnection = new RemoteViewsAdapterServiceConnection(this);
         requestBindService();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.777 -0500", hash_original_method = "448EC732CCF4B62AEFADFAF844C3E610", hash_generated_method = "B9F27E1AE2C5E521B4D92AFA06DE56D7")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.895 -0400", hash_original_method = "448EC732CCF4B62AEFADFAF844C3E610", hash_generated_method = "EBD45D3C3D7CC57726031C1C8395EB38")
-    @Override
+@Override
     protected void finalize() throws Throwable {
-        try 
-        {
-            if(mWorkerThread != null)            
-            {
+        try {
+            if (mWorkerThread != null) {
                 mWorkerThread.quit();
-            } //End block
-        } //End block
-        finally 
-        {
+            }
+        } finally {
             super.finalize();
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //if (mWorkerThread != null) {
-                //mWorkerThread.quit();
-            //}
-        //} finally {
-            //super.finalize();
-        //}
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.897 -0400", hash_original_method = "34DA0EC600A8592A38E8BB75F944416C", hash_generated_method = "350ABD5DD82BCF2104E98A765693617E")
-    private void loadNextIndexInBackground() {
-        mWorkerQueue.post(new Runnable() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.896 -0400", hash_original_method = "4CF90A1CB7C420A204E3629193269707", hash_generated_method = "4F8E79260CEDFB83D7C7B20CF954EF60")
-        @Override
-        public void run() {
-            if(mServiceConnection.isConnected())            
-            {
-                int position = -1;
-                boolean isRequested = false;
-                synchronized
-(mCache)                {
-                    int[] res = mCache.getNextIndexToLoad();
-                    position = res[0];
-                    isRequested = res[1] > 0;
-                } //End block
-                if(position > -1)                
-                {
-                    updateRemoteViews(position, isRequested);
-                    loadNextIndexInBackground();
-                } //End block
-                else
-                {
-                    enqueueDeferredUnbindServiceMessage();
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            //if (mServiceConnection.isConnected()) {
-                    //int position = -1;
-                    //boolean isRequested = false;
-                    //synchronized (mCache) {
-                        //int[] res = mCache.getNextIndexToLoad();
-                        //position = res[0];
-                        //isRequested = res[1] > 0;
-                    //}
-                    //if (position > -1) {
-                        //updateRemoteViews(position, isRequested);
-                        //loadNextIndexInBackground();
-                    //} else {
-                        //enqueueDeferredUnbindServiceMessage();
-                    //}
-                //}
         }
-});
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.784 -0500", hash_original_method = "34DA0EC600A8592A38E8BB75F944416C", hash_generated_method = "52BF1AD069255F109AED9B1C2ACF231B")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.897 -0400", hash_original_method = "E1B2571B376275F4805513EEE2D5A305", hash_generated_method = "7603A905450E58DDDDCFCBA113D1DED7")
-    private void processException(String method, Exception e) {
-        addTaint(e.getTaint());
-        addTaint(method.getTaint());
+private void loadNextIndexInBackground() {
+        mWorkerQueue.post(new Runnable() {
+            @Override
+            public void run() {
+                if (mServiceConnection.isConnected()) {
+                    // Get the next index to load
+                    int position = -1;
+                    boolean isRequested = false;
+                    synchronized (mCache) {
+                        int[] res = mCache.getNextIndexToLoad();
+                        position = res[0];
+                        isRequested = res[1] > 0;
+                    }
+                    if (position > -1) {
+                        // Load the item, and notify any existing RemoteViewsFrameLayouts
+                        updateRemoteViews(position, isRequested);
+
+                        // Queue up for the next one to load
+                        loadNextIndexInBackground();
+                    } else {
+                        // No more items to load, so queue unbind
+                        enqueueDeferredUnbindServiceMessage();
+                    }
+                }
+            }
+        });
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.789 -0500", hash_original_method = "E1B2571B376275F4805513EEE2D5A305", hash_generated_method = "9D39499690B802221A61BAD23E04C794")
+    
+private void processException(String method, Exception e) {
+        Log.e("RemoteViewsAdapter", "Error in " + method + ": " + e.getMessage());
+
+        // If we encounter a crash when updating, we should reset the metadata & cache and trigger
+        // a notifyDataSetChanged to update the widget accordingly
         final RemoteViewsMetaData metaData = mCache.getMetaData();
-        synchronized
-(metaData)        {
+        synchronized (metaData) {
             metaData.reset();
-        } //End block
-        synchronized
-(mCache)        {
-            mCache.reset();
-        } //End block
-        mMainQueue.post(new Runnable() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.897 -0400", hash_original_method = "20780F1316FA6B5AAEF80ABB110F8A58", hash_generated_method = "9658C6127F239982755926B1BF541104")
-        @Override
-        public void run() {
-            superNotifyDataSetChanged();
-            // ---------- Original Method ----------
-            //superNotifyDataSetChanged();
         }
-});
-        // ---------- Original Method ----------
-        //Log.e("RemoteViewsAdapter", "Error in " + method + ": " + e.getMessage());
-        //final RemoteViewsMetaData metaData = mCache.getMetaData();
-        //synchronized (metaData) {
-            //metaData.reset();
-        //}
-        //synchronized (mCache) {
-            //mCache.reset();
-        //}
-        //mMainQueue.post(new Runnable() {
-            //@Override
-            //public void run() {
-                //superNotifyDataSetChanged();
-            //}
-        //});
+        synchronized (mCache) {
+            mCache.reset();
+        }
+        mMainQueue.post(new Runnable() {
+            @Override
+            public void run() {
+                superNotifyDataSetChanged();
+            }
+        });
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.792 -0500", hash_original_method = "49F084C42EF1DBBC4522A49655FF79A1", hash_generated_method = "812225256F26E08DFEE92718825B2DBB")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.899 -0400", hash_original_method = "49F084C42EF1DBBC4522A49655FF79A1", hash_generated_method = "C94DF60BDA17E5A3472086883E948346")
-    private void updateTemporaryMetaData() {
+private void updateTemporaryMetaData() {
         IRemoteViewsFactory factory = mServiceConnection.getRemoteViewsFactory();
-        try 
-        {
+
+        try {
+            // get the properties/first view (so that we can use it to
+            // measure our dummy views)
             boolean hasStableIds = factory.hasStableIds();
             int viewTypeCount = factory.getViewTypeCount();
             int count = factory.getCount();
             RemoteViews loadingView = factory.getLoadingView();
             RemoteViews firstView = null;
-            if((count > 0) && (loadingView == null))            
-            {
+            if ((count > 0) && (loadingView == null)) {
                 firstView = factory.getViewAt(0);
-            } //End block
+            }
             final RemoteViewsMetaData tmpMetaData = mCache.getTemporaryMetaData();
-            synchronized
-(tmpMetaData)            {
+            synchronized (tmpMetaData) {
                 tmpMetaData.hasStableIds = hasStableIds;
+                // We +1 because the base view type is the loading view
                 tmpMetaData.viewTypeCount = viewTypeCount + 1;
                 tmpMetaData.count = count;
                 tmpMetaData.setLoadingViewTemplates(loadingView, firstView);
-            } //End block
-        } //End block
-        catch (RemoteException e)
-        {
+            }
+        } catch(RemoteException e) {
             processException("updateMetaData", e);
-        } //End block
-        catch (RuntimeException e)
-        {
+        } catch(RuntimeException e) {
             processException("updateMetaData", e);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        }
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.798 -0500", hash_original_method = "5FA96F3EFCF6BBECAF668E31FDA609B8", hash_generated_method = "5722455ECC2761004F2D7A3C6E3DCFA6")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.900 -0400", hash_original_method = "5FA96F3EFCF6BBECAF668E31FDA609B8", hash_generated_method = "1014D5D3BCC4BBC0DF6A72DA0B4D05DA")
-    private void updateRemoteViews(final int position, boolean isRequested) {
-        addTaint(isRequested);
-        addTaint(position);
-        if(!mServiceConnection.isConnected())        
-        return;
+private void updateRemoteViews(final int position, boolean isRequested) {
+        if (!mServiceConnection.isConnected()) return;
         IRemoteViewsFactory factory = mServiceConnection.getRemoteViewsFactory();
+
+        // Load the item information from the remote service
         RemoteViews remoteViews = null;
         long itemId = 0;
-        try 
-        {
+        try {
             remoteViews = factory.getViewAt(position);
             itemId = factory.getItemId(position);
-        } //End block
-        catch (RemoteException e)
-        {
+        } catch (RemoteException e) {
+            Log.e(TAG, "Error in updateRemoteViews(" + position + "): " + e.getMessage());
+
+            // Return early to prevent additional work in re-centering the view cache, and
+            // swapping from the loading view
             return;
-        } //End block
-        catch (RuntimeException e)
-        {
+        } catch (RuntimeException e) {
+            Log.e(TAG, "Error in updateRemoteViews(" + position + "): " + e.getMessage());
             return;
-        } //End block
-        if(remoteViews == null)        
-        {
+        }
+
+        if (remoteViews == null) {
+            // If a null view was returned, we break early to prevent it from getting
+            // into our cache and causing problems later. The effect is that the child  at this
+            // position will remain as a loading view until it is updated.
+            Log.e(TAG, "Error in updateRemoteViews(" + position + "): " + " null RemoteViews " +
+                    "returned from RemoteViewsFactory.");
             return;
-        } //End block
-        synchronized
-(mCache)        {
+        }
+        synchronized (mCache) {
+            // Cache the RemoteViews we loaded
             mCache.insert(position, remoteViews, itemId, isRequested);
+
+            // Notify all the views that we have previously returned for this index that
+            // there is new data for it.
             final RemoteViews rv = remoteViews;
             final int typeId = mCache.getMetaDataAt(position).typeId;
-            mMainQueue.post(new Runnable() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.900 -0400", hash_original_method = "893654825C9F0EE31547B34AB12EB1B2", hash_generated_method = "EC088C820250E0DE41EE3A77F29725DC")
-        @Override
-        public void run() {
-            mRequestedViews.notifyOnRemoteViewsLoaded(position, rv, typeId);
-            // ---------- Original Method ----------
-            //mRequestedViews.notifyOnRemoteViewsLoaded(position, rv, typeId);
+            mMainQueue.post(new Runnable() {
+                @Override
+                public void run() {
+                    mRequestedViews.notifyOnRemoteViewsLoaded(position, rv, typeId);
+                }
+            });
         }
-});
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.800 -0500", hash_original_method = "F998EBA4725E32A416A597964901E5AB", hash_generated_method = "63A7599C2C6C6EC6808F0DCE287B9FFC")
     
-        @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.900 -0400", hash_original_method = "F998EBA4725E32A416A597964901E5AB", hash_generated_method = "566D79826FA0BF858132DC7A309B48DB")
-    public Intent getRemoteViewsServiceIntent() {
-Intent var4DCF8E3D75AE0B94CDA94656DCE16BCE_2048254829 =         mIntent;
-        var4DCF8E3D75AE0B94CDA94656DCE16BCE_2048254829.addTaint(taint);
-        return var4DCF8E3D75AE0B94CDA94656DCE16BCE_2048254829;
-        // ---------- Original Method ----------
-        //return mIntent;
+public Intent getRemoteViewsServiceIntent() {
+        return mIntent;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.802 -0500", hash_original_method = "BD4FA508848CEC346AF576100841FA5B", hash_generated_method = "7B01FFC912B8670E72D0F21E92BF70CA")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.901 -0400", hash_original_method = "BD4FA508848CEC346AF576100841FA5B", hash_generated_method = "2B73C45C72128849ACC86CF7635D72FA")
-    public int getCount() {
+public int getCount() {
         final RemoteViewsMetaData metaData = mCache.getMetaData();
-        synchronized
-(metaData)        {
-            int varADF0D97DEFDF3C282CCD2E376CFB1815_1964491117 = (metaData.count);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2083347102 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2083347102;
-        } //End block
-        // ---------- Original Method ----------
-        //final RemoteViewsMetaData metaData = mCache.getMetaData();
-        //synchronized (metaData) {
-            //return metaData.count;
-        //}
+        synchronized (metaData) {
+            return metaData.count;
+        }
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.804 -0500", hash_original_method = "AE0D3BF5CEF608E0D2B9C47624E8B8EC", hash_generated_method = "E569AB7B5B0CDAA6E5C890C7128913B7")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.901 -0400", hash_original_method = "AE0D3BF5CEF608E0D2B9C47624E8B8EC", hash_generated_method = "5CDA81DC568638FAA8EFC8493C95FAEE")
-    public Object getItem(int position) {
-        addTaint(position);
-Object var540C13E9E156B687226421B24F2DF178_1383272812 =         null;
-        var540C13E9E156B687226421B24F2DF178_1383272812.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_1383272812;
-        // ---------- Original Method ----------
-        //return null;
+public Object getItem(int position) {
+        // Disallow arbitrary object to be associated with an item for the time being
+        return null;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.806 -0500", hash_original_method = "03B3187C996D144F3BCFDF9DFF16615D", hash_generated_method = "B4206B0E296ADAA37479C22D619BA053")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.902 -0400", hash_original_method = "03B3187C996D144F3BCFDF9DFF16615D", hash_generated_method = "7A8995EB7959E1B770430DD51FB7E7A6")
-    public long getItemId(int position) {
-        addTaint(position);
-        synchronized
-(mCache)        {
-            if(mCache.containsMetaDataAt(position))            
-            {
-                long varAD3999B8114F8EBC087307F2920D831F_800491967 = (mCache.getMetaDataAt(position).itemId);
-                                long var0F5264038205EDFB1AC05FBB0E8C5E94_1320169431 = getTaintLong();
-                return var0F5264038205EDFB1AC05FBB0E8C5E94_1320169431;
-            } //End block
-            long varCFCD208495D565EF66E7DFF9F98764DA_1960631803 = (0);
-                        long var0F5264038205EDFB1AC05FBB0E8C5E94_231600691 = getTaintLong();
-            return var0F5264038205EDFB1AC05FBB0E8C5E94_231600691;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mCache) {
-            //if (mCache.containsMetaDataAt(position)) {
-                //return mCache.getMetaDataAt(position).itemId;
-            //}
-            //return 0;
-        //}
+public long getItemId(int position) {
+        synchronized (mCache) {
+            if (mCache.containsMetaDataAt(position)) {
+                return mCache.getMetaDataAt(position).itemId;
+            }
+            return 0;
+        }
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.808 -0500", hash_original_method = "BDCE0C462966DEB126F7FB99CEF6A82A", hash_generated_method = "7FB499C9BFF1F83EAFC225BD8BE8672A")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.904 -0400", hash_original_method = "BDCE0C462966DEB126F7FB99CEF6A82A", hash_generated_method = "649A0032F2A5AC72E6F984C1BFEAF046")
-    public int getItemViewType(int position) {
-        addTaint(position);
+public int getItemViewType(int position) {
         int typeId = 0;
-        synchronized
-(mCache)        {
-            if(mCache.containsMetaDataAt(position))            
-            {
+        synchronized (mCache) {
+            if (mCache.containsMetaDataAt(position)) {
                 typeId = mCache.getMetaDataAt(position).typeId;
-            } //End block
-            else
-            {
-                int varCFCD208495D565EF66E7DFF9F98764DA_506734771 = (0);
-                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2085116895 = getTaintInt();
-                return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2085116895;
-            } //End block
-        } //End block
+            } else {
+                return 0;
+            }
+        }
+
         final RemoteViewsMetaData metaData = mCache.getMetaData();
-        synchronized
-(metaData)        {
-            int var9B4BF38F0C072312E913D5E5340E1514_1738083564 = (metaData.getMappedViewType(typeId));
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1743295430 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1743295430;
-        } //End block
-        // ---------- Original Method ----------
-        //int typeId = 0;
-        //synchronized (mCache) {
-            //if (mCache.containsMetaDataAt(position)) {
-                //typeId = mCache.getMetaDataAt(position).typeId;
-            //} else {
-                //return 0;
-            //}
-        //}
-        //final RemoteViewsMetaData metaData = mCache.getMetaData();
-        //synchronized (metaData) {
-            //return metaData.getMappedViewType(typeId);
-        //}
+        synchronized (metaData) {
+            return metaData.getMappedViewType(typeId);
+        }
     }
 
+    /**
+     * Returns the item type id for the specified convert view.  Returns -1 if the convert view
+     * is invalid.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.811 -0500", hash_original_method = "A43180B0154FDAA6CD8755A8245F56F8", hash_generated_method = "7B777983BAE848A12E9BA05A56262790")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.904 -0400", hash_original_method = "A43180B0154FDAA6CD8755A8245F56F8", hash_generated_method = "8F9BB20FF8DBA4D79EA273A4BEF92B49")
-    private int getConvertViewTypeId(View convertView) {
-        addTaint(convertView.getTaint());
+private int getConvertViewTypeId(View convertView) {
         int typeId = -1;
-        if(convertView != null)        
-        {
+        if (convertView != null) {
             Object tag = convertView.getTag(com.android.internal.R.id.rowTypeId);
-            if(tag != null)            
-            {
+            if (tag != null) {
                 typeId = (Integer) tag;
-            } //End block
-        } //End block
-        int var5F694956811487225D15E973CA38FBAB_2097154635 = (typeId);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_995455374 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_995455374;
-        // ---------- Original Method ----------
-        //int typeId = -1;
-        //if (convertView != null) {
-            //Object tag = convertView.getTag(com.android.internal.R.id.rowTypeId);
-            //if (tag != null) {
-                //typeId = (Integer) tag;
-            //}
-        //}
-        //return typeId;
+            }
+        }
+        return typeId;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.815 -0500", hash_original_method = "6C789CA1A76BB0C76EA62E1C57E6DD64", hash_generated_method = "009CF9883B23FFD201E9ADDF0D31D177")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.906 -0400", hash_original_method = "6C789CA1A76BB0C76EA62E1C57E6DD64", hash_generated_method = "309D9FA80CEEE214106800F9520F1394")
-    public View getView(int position, View convertView, ViewGroup parent) {
-        addTaint(parent.getTaint());
-        addTaint(convertView.getTaint());
-        addTaint(position);
-        synchronized
-(mCache)        {
+public View getView(int position, View convertView, ViewGroup parent) {
+        // "Request" an index so that we can queue it for loading, initiate subsequent
+        // preloading, etc.
+        synchronized (mCache) {
             boolean isInCache = mCache.containsRemoteViewAt(position);
             boolean isConnected = mServiceConnection.isConnected();
             boolean hasNewItems = false;
-            if(!isInCache && !isConnected)            
-            {
+
+            if (!isInCache && !isConnected) {
+                // Requesting bind service will trigger a super.notifyDataSetChanged(), which will
+                // in turn trigger another request to getView()
                 requestBindService();
-            } //End block
-            else
-            {
+            } else {
+                // Queue up other indices to be preloaded based on this position
                 hasNewItems = mCache.queuePositionsToBePreloadedFromRequestedPosition(position);
-            } //End block
-            if(isInCache)            
-            {
+            }
+
+            if (isInCache) {
                 View convertViewChild = null;
                 int convertViewTypeId = 0;
                 RemoteViewsFrameLayout layout = null;
-                if(convertView instanceof RemoteViewsFrameLayout)                
-                {
+
+                if (convertView instanceof RemoteViewsFrameLayout) {
                     layout = (RemoteViewsFrameLayout) convertView;
                     convertViewChild = layout.getChildAt(0);
                     convertViewTypeId = getConvertViewTypeId(convertViewChild);
-                } //End block
+                }
+
+                // Second, we try and retrieve the RemoteViews from the cache, returning a loading
+                // view and queueing it to be loaded if it has not already been loaded.
                 Context context = parent.getContext();
                 RemoteViews rv = mCache.getRemoteViewsAt(position);
                 RemoteViewsIndexMetaData indexMetaData = mCache.getMetaDataAt(position);
                 indexMetaData.isRequested = true;
                 int typeId = indexMetaData.typeId;
-                try 
-                {
-                    if(layout != null)                    
-                    {
-                        if(convertViewTypeId == typeId)                        
-                        {
+
+                try {
+                    // Reuse the convert view where possible
+                    if (layout != null) {
+                        if (convertViewTypeId == typeId) {
                             rv.reapply(context, convertViewChild);
-View var6BB281F92ECF603ABC908502047A266C_425012602 =                             layout;
-                            var6BB281F92ECF603ABC908502047A266C_425012602.addTaint(taint);
-                            return var6BB281F92ECF603ABC908502047A266C_425012602;
-                        } //End block
+                            return layout;
+                        }
                         layout.removeAllViews();
-                    } //End block
-                    else
-                    {
+                    } else {
                         layout = new RemoteViewsFrameLayout(context);
-                    } //End block
+                    }
+
+                    // Otherwise, create a new view to be returned
                     View newView = rv.apply(context, parent);
                     newView.setTagInternal(com.android.internal.R.id.rowTypeId,
                             new Integer(typeId));
                     layout.addView(newView);
-View var6BB281F92ECF603ABC908502047A266C_1375065747 =                     layout;
-                    var6BB281F92ECF603ABC908502047A266C_1375065747.addTaint(taint);
-                    return var6BB281F92ECF603ABC908502047A266C_1375065747;
-                } //End block
-                catch (Exception e)
-                {
+                    return layout;
+
+                } catch (Exception e){
+                    // We have to make sure that we successfully inflated the RemoteViews, if not
+                    // we return the loading view instead.
+                    Log.w(TAG, "Error inflating RemoteViews at position: " + position + ", using" +
+                            "loading view instead" + e);
+
                     RemoteViewsFrameLayout loadingView = null;
                     final RemoteViewsMetaData metaData = mCache.getMetaData();
-                    synchronized
-(metaData)                    {
+                    synchronized (metaData) {
                         loadingView = metaData.createLoadingView(position, convertView, parent);
-                    } //End block
-View var1E24B731A35B9B8D5F7D3DE335D90A52_211477631 =                     loadingView;
-                    var1E24B731A35B9B8D5F7D3DE335D90A52_211477631.addTaint(taint);
-                    return var1E24B731A35B9B8D5F7D3DE335D90A52_211477631;
-                } //End block
-                finally 
-                {
-                    if(hasNewItems)                    
-                    loadNextIndexInBackground();
-                } //End block
-            } //End block
-            else
-            {
+                    }
+                    return loadingView;
+                } finally {
+                    if (hasNewItems) loadNextIndexInBackground();
+                }
+            } else {
+                // If the cache does not have the RemoteViews at this position, then create a
+                // loading view and queue the actual position to be loaded in the background
                 RemoteViewsFrameLayout loadingView = null;
                 final RemoteViewsMetaData metaData = mCache.getMetaData();
-                synchronized
-(metaData)                {
+                synchronized (metaData) {
                     loadingView = metaData.createLoadingView(position, convertView, parent);
-                } //End block
+                }
+
                 mRequestedViews.add(position, loadingView);
                 mCache.queueRequestedPositionToLoad(position);
                 loadNextIndexInBackground();
-View var1E24B731A35B9B8D5F7D3DE335D90A52_1382011465 =                 loadingView;
-                var1E24B731A35B9B8D5F7D3DE335D90A52_1382011465.addTaint(taint);
-                return var1E24B731A35B9B8D5F7D3DE335D90A52_1382011465;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.906 -0400", hash_original_method = "E20153FA245BC3D829E7670B1CF87BF9", hash_generated_method = "EF8927D5DF96BF118E73A236EF5E60C5")
-    public int getViewTypeCount() {
-        final RemoteViewsMetaData metaData = mCache.getMetaData();
-        synchronized
-(metaData)        {
-            int varC8132AF0C5C1B198CD092E9E07E18117_146931619 = (metaData.viewTypeCount);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1499439161 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1499439161;
-        } //End block
-        // ---------- Original Method ----------
-        //final RemoteViewsMetaData metaData = mCache.getMetaData();
-        //synchronized (metaData) {
-            //return metaData.viewTypeCount;
-        //}
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.906 -0400", hash_original_method = "30FBD60CD0291FCC8DBBE0ACB800AAAA", hash_generated_method = "C1026EF68FC73D17650E0CCFB368DEDE")
-    public boolean hasStableIds() {
-        final RemoteViewsMetaData metaData = mCache.getMetaData();
-        synchronized
-(metaData)        {
-            boolean var009BB28B0DB682E659144E38ACC269E1_649001569 = (metaData.hasStableIds);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_723093794 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_723093794;
-        } //End block
-        // ---------- Original Method ----------
-        //final RemoteViewsMetaData metaData = mCache.getMetaData();
-        //synchronized (metaData) {
-            //return metaData.hasStableIds;
-        //}
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.907 -0400", hash_original_method = "53D7DB97161C41CC976317DC7E27F456", hash_generated_method = "FF412A0421B537F0EE8554B5C4423631")
-    public boolean isEmpty() {
-        boolean varA16589CB230D710779025FE5755999D8_1860456010 = (getCount() <= 0);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1105426430 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1105426430;
-        // ---------- Original Method ----------
-        //return getCount() <= 0;
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.907 -0400", hash_original_method = "2DAA079F2CA383CBC7C346F3BCA57054", hash_generated_method = "EF732E814BD0FA51CFF73A21F74E2D03")
-    private void onNotifyDataSetChanged() {
-        IRemoteViewsFactory factory = mServiceConnection.getRemoteViewsFactory();
-        try 
-        {
-            factory.onDataSetChanged();
-        } //End block
-        catch (RemoteException e)
-        {
-            return;
-        } //End block
-        catch (RuntimeException e)
-        {
-            return;
-        } //End block
-        synchronized
-(mCache)        {
-            mCache.reset();
-        } //End block
-        updateTemporaryMetaData();
-        mMainQueue.post(new Runnable() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.907 -0400", hash_original_method = "599F6D416D0C87E072E14AB486244C9F", hash_generated_method = "E6817A54A3D5239EFDEB5489BD481077")
-        @Override
-        public void run() {
-            synchronized
-(mCache)            {
-                mCache.commitTemporaryMetaData();
-            } //End block
-            superNotifyDataSetChanged();
-            enqueueDeferredUnbindServiceMessage();
-            // ---------- Original Method ----------
-            //synchronized (mCache) {
-                    //mCache.commitTemporaryMetaData();
-                //}
-            //superNotifyDataSetChanged();
-            //enqueueDeferredUnbindServiceMessage();
+                return loadingView;
+            }
         }
-});
-        mNotifyDataSetChangedAfterOnServiceConnected = false;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.818 -0500", hash_original_method = "E20153FA245BC3D829E7670B1CF87BF9", hash_generated_method = "0750C7960BBCEDC584AD0B79AE91AB8D")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.909 -0400", hash_original_method = "0764FC8C95C069ED9ED094B35DCC527A", hash_generated_method = "84C2BBE8A62947F0D9A44E5A18EE61C1")
-    public void notifyDataSetChanged() {
-        mMainQueue.removeMessages(sUnbindServiceMessageType);
-        if(!mServiceConnection.isConnected())        
-        {
-            if(mNotifyDataSetChangedAfterOnServiceConnected)            
-            {
-                return;
-            } //End block
-            mNotifyDataSetChangedAfterOnServiceConnected = true;
-            requestBindService();
-            return;
-        } //End block
-        mWorkerQueue.post(new Runnable() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.909 -0400", hash_original_method = "041C495048132FF173BFCDF38ABB5707", hash_generated_method = "A0E7FB80DBA0806D596A5B67FD46EBEA")
-        @Override
-        public void run() {
-            onNotifyDataSetChanged();
-            // ---------- Original Method ----------
-            //onNotifyDataSetChanged();
+public int getViewTypeCount() {
+        final RemoteViewsMetaData metaData = mCache.getMetaData();
+        synchronized (metaData) {
+            return metaData.viewTypeCount;
         }
-});
-        // ---------- Original Method ----------
-        //mMainQueue.removeMessages(sUnbindServiceMessageType);
-        //if (!mServiceConnection.isConnected()) {
-            //if (mNotifyDataSetChangedAfterOnServiceConnected) {
-                //return;
-            //}
-            //mNotifyDataSetChangedAfterOnServiceConnected = true;
-            //requestBindService();
-            //return;
-        //}
-        //mWorkerQueue.post(new Runnable() {
-            //@Override
-            //public void run() {
-                //onNotifyDataSetChanged();
-            //}
-        //});
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.820 -0500", hash_original_method = "30FBD60CD0291FCC8DBBE0ACB800AAAA", hash_generated_method = "F47140C23AB1A19D5E828B9AB67576C0")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.910 -0400", hash_original_method = "A1EDDF3811A1F9D28CCD28C93269FAD1", hash_generated_method = "13135540CF0C096F7922371AE0301E89")
-     void superNotifyDataSetChanged() {
-        super.notifyDataSetChanged();
-        // ---------- Original Method ----------
-        //super.notifyDataSetChanged();
+public boolean hasStableIds() {
+        final RemoteViewsMetaData metaData = mCache.getMetaData();
+        synchronized (metaData) {
+            return metaData.hasStableIds;
+        }
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.822 -0500", hash_original_method = "53D7DB97161C41CC976317DC7E27F456", hash_generated_method = "B5A996F6CAD1AF368697CFFC7FD81B30")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.911 -0400", hash_original_method = "96758E0B3254F3B4A777FC060A49CC59", hash_generated_method = "9F1AE213B5495B0496D6A63E660D6482")
-    @Override
-    public boolean handleMessage(Message msg) {
-        addTaint(msg.getTaint());
-        boolean result = false;
-switch(msg.what){
-        case sUnbindServiceMessageType:
-        if(mServiceConnection.isConnected())        
-        {
-            mServiceConnection.unbind(mContext, mAppWidgetId, mIntent);
-        } //End block
-        result = true;
-        break;
-        default:
-        break;
-}        boolean varB4A88417B3D0170D754C647C30B7216A_263672958 = (result);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_310955925 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_310955925;
-        // ---------- Original Method ----------
-        //boolean result = false;
-        //switch (msg.what) {
-        //case sUnbindServiceMessageType:
-            //if (mServiceConnection.isConnected()) {
-                //mServiceConnection.unbind(mContext, mAppWidgetId, mIntent);
-            //}
-            //result = true;
-            //break;
-        //default:
-            //break;
-        //}
-        //return result;
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.911 -0400", hash_original_method = "D880D88722499DDF7E3D229A00764CBB", hash_generated_method = "8943C3C3F64C9B76CBBF6A8AA4DF52C7")
-    private void enqueueDeferredUnbindServiceMessage() {
-        mMainQueue.removeMessages(sUnbindServiceMessageType);
-        mMainQueue.sendEmptyMessageDelayed(sUnbindServiceMessageType, sUnbindServiceDelay);
-        // ---------- Original Method ----------
-        //mMainQueue.removeMessages(sUnbindServiceMessageType);
-        //mMainQueue.sendEmptyMessageDelayed(sUnbindServiceMessageType, sUnbindServiceDelay);
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.911 -0400", hash_original_method = "FD0BDD14354B6205FD4E5E773D9BDB6D", hash_generated_method = "9077FE2114AEA08C6DBF9D5A81F431FA")
-    private boolean requestBindService() {
-        if(!mServiceConnection.isConnected())        
-        {
-            mServiceConnection.bind(mContext, mAppWidgetId, mIntent);
-        } //End block
-        mMainQueue.removeMessages(sUnbindServiceMessageType);
-        boolean varFA613BFDB2C7CD590F74314A66212A91_673050002 = (mServiceConnection.isConnected());
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1017308783 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1017308783;
-        // ---------- Original Method ----------
-        //if (!mServiceConnection.isConnected()) {
-            //mServiceConnection.bind(mContext, mAppWidgetId, mIntent);
-        //}
-        //mMainQueue.removeMessages(sUnbindServiceMessageType);
-        //return mServiceConnection.isConnected();
+public boolean isEmpty() {
+        return getCount() <= 0;
     }
 
     
     private static class RemoteViewsAdapterServiceConnection extends IRemoteViewsAdapterConnection.Stub {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.912 -0400", hash_original_field = "CC8BFB84898B22492B7F55096CBDF6CC", hash_generated_field = "76A19B81A43EEDF4AF3BF911EC3960E9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.585 -0500", hash_original_field = "C55D9286978463BA48249377B65E8F9B", hash_generated_field = "76A19B81A43EEDF4AF3BF911EC3960E9")
 
         private boolean mIsConnected;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.912 -0400", hash_original_field = "0B061825A2BD144F822A600E85C8460D", hash_generated_field = "71FF1B688CE6E1B60B73B36B2E842EB8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.587 -0500", hash_original_field = "B1C4D25B960993B66CA45F64EFEA50D7", hash_generated_field = "71FF1B688CE6E1B60B73B36B2E842EB8")
 
         private boolean mIsConnecting;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.912 -0400", hash_original_field = "59E9F255F2F17EC006AE601269EA8540", hash_generated_field = "DF300972716819DE62AFA33FE9FFC280")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.589 -0500", hash_original_field = "7324E8FF3E08E74010F50AC6950C96C0", hash_generated_field = "DF300972716819DE62AFA33FE9FFC280")
 
         private WeakReference<RemoteViewsAdapter> mAdapter;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.912 -0400", hash_original_field = "3259B525D7D221061093A7706AFAA49A", hash_generated_field = "722330FA05DFEF3176A8163BFC4DC620")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.592 -0500", hash_original_field = "A2863C59EF9B73463F69F1583FA8F47C", hash_generated_field = "722330FA05DFEF3176A8163BFC4DC620")
 
         private IRemoteViewsFactory mRemoteViewsFactory;
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.594 -0500", hash_original_method = "7E10295116D6DF0B2080F7EEB3B8FF2F", hash_generated_method = "63ACE39DF33A26BD07B21CC6BD1E235C")
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.913 -0400", hash_original_method = "7E10295116D6DF0B2080F7EEB3B8FF2F", hash_generated_method = "2CBC4DD0E19B00EEE4BD2962CC59C85E")
-        public  RemoteViewsAdapterServiceConnection(RemoteViewsAdapter adapter) {
+public RemoteViewsAdapterServiceConnection(RemoteViewsAdapter adapter) {
             mAdapter = new WeakReference<RemoteViewsAdapter>(adapter);
-            // ---------- Original Method ----------
-            //mAdapter = new WeakReference<RemoteViewsAdapter>(adapter);
         }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.597 -0500", hash_original_method = "8522D247C3B96C2C6A0E0A6DFCD61958", hash_generated_method = "903EDC1D988BB3540A404E98688F0AF3")
         
-                @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.914 -0400", hash_original_method = "8522D247C3B96C2C6A0E0A6DFCD61958", hash_generated_method = "8B3BBB5F44E6978ADC93DD4F467AD41B")
-        public synchronized void bind(Context context, int appWidgetId, Intent intent) {
-            addTaint(intent.getTaint());
-            addTaint(appWidgetId);
-            addTaint(context.getTaint());
-            if(!mIsConnecting)            
-            {
-                try 
-                {
+public synchronized void bind(Context context, int appWidgetId, Intent intent) {
+            if (!mIsConnecting) {
+                try {
                     final AppWidgetManager mgr = AppWidgetManager.getInstance(context);
                     mgr.bindRemoteViewsService(appWidgetId, intent, asBinder());
                     mIsConnecting = true;
-                } //End block
-                catch (Exception e)
-                {
+                } catch (Exception e) {
+                    Log.e("RemoteViewsAdapterServiceConnection", "bind(): " + e.getMessage());
                     mIsConnecting = false;
                     mIsConnected = false;
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            //if (!mIsConnecting) {
-                //try {
-                    //final AppWidgetManager mgr = AppWidgetManager.getInstance(context);
-                    //mgr.bindRemoteViewsService(appWidgetId, intent, asBinder());
-                    //mIsConnecting = true;
-                //} catch (Exception e) {
-                    //Log.e("RemoteViewsAdapterServiceConnection", "bind(): " + e.getMessage());
-                    //mIsConnecting = false;
-                    //mIsConnected = false;
-                //}
-            //}
+                }
+            }
         }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.599 -0500", hash_original_method = "21A72C8FC580D8D0E809A3FEE2FDD93D", hash_generated_method = "15C8B74CC50AE017D955C5AE8717B708")
         
-                @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.914 -0400", hash_original_method = "21A72C8FC580D8D0E809A3FEE2FDD93D", hash_generated_method = "A29871953EEC9D3275E7EF1E571F5459")
-        public synchronized void unbind(Context context, int appWidgetId, Intent intent) {
-            addTaint(intent.getTaint());
-            addTaint(appWidgetId);
-            addTaint(context.getTaint());
-            try 
-            {
+public synchronized void unbind(Context context, int appWidgetId, Intent intent) {
+            try {
                 final AppWidgetManager mgr = AppWidgetManager.getInstance(context);
                 mgr.unbindRemoteViewsService(appWidgetId, intent);
                 mIsConnecting = false;
-            } //End block
-            catch (Exception e)
-            {
+            } catch (Exception e) {
+                Log.e("RemoteViewsAdapterServiceConnection", "unbind(): " + e.getMessage());
                 mIsConnecting = false;
                 mIsConnected = false;
-            } //End block
-            // ---------- Original Method ----------
-            //try {
-                //final AppWidgetManager mgr = AppWidgetManager.getInstance(context);
-                //mgr.unbindRemoteViewsService(appWidgetId, intent);
-                //mIsConnecting = false;
-            //} catch (Exception e) {
-                //Log.e("RemoteViewsAdapterServiceConnection", "unbind(): " + e.getMessage());
-                //mIsConnecting = false;
-                //mIsConnected = false;
-            //}
+            }
         }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.611 -0500", hash_original_method = "08CA49D02360F6C2A6BB2EFEF11F092E", hash_generated_method = "50C387288B482527C86D1940B00CF7B3")
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.916 -0400", hash_original_method = "08CA49D02360F6C2A6BB2EFEF11F092E", hash_generated_method = "9062E70CD336E86C58F6A7605AC504B0")
-        public synchronized void onServiceConnected(IBinder service) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+public synchronized void onServiceConnected(IBinder service) {
             mRemoteViewsFactory = IRemoteViewsFactory.Stub.asInterface(service);
+
+            // Remove any deferred unbind messages
             final RemoteViewsAdapter adapter = mAdapter.get();
-            if(adapter == null)            
-            return;
-            adapter.mWorkerQueue.post(new Runnable() {            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.915 -0400", hash_original_method = "C9280BFFF3D57DCE91D4B8E9AF737343", hash_generated_method = "6584FD347BD8592C028BBC4680A81904")
-            @Override
-            public void run() {
-                if(adapter.mNotifyDataSetChangedAfterOnServiceConnected)                
-                {
-                    adapter.onNotifyDataSetChanged();
-                } //End block
-                else
-                {
-                    IRemoteViewsFactory factory = adapter.mServiceConnection.getRemoteViewsFactory();
-                    try 
-                    {
-                        if(!factory.isCreated())                        
-                        {
-                            factory.onDataSetChanged();
-                        } //End block
-                    } //End block
-                    catch (RemoteException e)
-                    {
-                        return;
-                    } //End block
-                    catch (RuntimeException e)
-                    {
-                    } //End block
-                    adapter.updateTemporaryMetaData();
-                    adapter.mMainQueue.post(new Runnable() {                
-                @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.915 -0400", hash_original_method = "15183F885AD888FE838F648B256AD495", hash_generated_method = "013EE7FDC19C4B344416CEA2C0C5B1A0")
+            if (adapter == null) return;
+
+            // Queue up work that we need to do for the callback to run
+            adapter.mWorkerQueue.post(new Runnable() {
                 @Override
                 public void run() {
-                    synchronized
-(adapter.mCache)                    {
-                        adapter.mCache.commitTemporaryMetaData();
-                    } //End block
-                    final RemoteAdapterConnectionCallback callback = adapter.mCallback.get();
-                    if(callback != null)                    
-                    {
-                        callback.onRemoteAdapterConnected();
-                    } //End block
-                    // ---------- Original Method ----------
-                    //synchronized (adapter.mCache) {
-                                    //adapter.mCache.commitTemporaryMetaData();
-                                //}
-                    //final RemoteAdapterConnectionCallback callback =
-                                    //adapter.mCallback.get();
-                    //if (callback != null) {
-                                    //callback.onRemoteAdapterConnected();
-                                //}
+                    if (adapter.mNotifyDataSetChangedAfterOnServiceConnected) {
+                        // Handle queued notifyDataSetChanged() if necessary
+                        adapter.onNotifyDataSetChanged();
+                    } else {
+                        IRemoteViewsFactory factory =
+                            adapter.mServiceConnection.getRemoteViewsFactory();
+                        try {
+                            if (!factory.isCreated()) {
+                                // We only call onDataSetChanged() if this is the factory was just
+                                // create in response to this bind
+                                factory.onDataSetChanged();
+                            }
+                        } catch (RemoteException e) {
+                            Log.e(TAG, "Error notifying factory of data set changed in " +
+                                        "onServiceConnected(): " + e.getMessage());
+
+                            // Return early to prevent anything further from being notified
+                            // (effectively nothing has changed)
+                            return;
+                        } catch (RuntimeException e) {
+                            Log.e(TAG, "Error notifying factory of data set changed in " +
+                                    "onServiceConnected(): " + e.getMessage());
+                        }
+
+                        // Request meta data so that we have up to date data when calling back to
+                        // the remote adapter callback
+                        adapter.updateTemporaryMetaData();
+
+                        // Notify the host that we've connected
+                        adapter.mMainQueue.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                synchronized (adapter.mCache) {
+                                    adapter.mCache.commitTemporaryMetaData();
+                                }
+
+                                final RemoteAdapterConnectionCallback callback =
+                                    adapter.mCallback.get();
+                                if (callback != null) {
+                                    callback.onRemoteAdapterConnected();
+                                }
+                            }
+                        });
+                    }
+
+                    // Enqueue unbind message
+                    adapter.enqueueDeferredUnbindServiceMessage();
+                    mIsConnected = true;
+                    mIsConnecting = false;
                 }
-});
-                } //End block
-                adapter.enqueueDeferredUnbindServiceMessage();
-                mIsConnected = true;
-                mIsConnecting = false;
-                // ---------- Original Method ----------
-                // Original Method Too Long, Refer to Original Implementation
-            }
-});
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            });
         }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.618 -0500", hash_original_method = "6AD1D56D3A677AEA97BA981AA56DEDEB", hash_generated_method = "8A712F85DBF05F2D52E487B413F65A65")
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.916 -0400", hash_original_method = "6AD1D56D3A677AEA97BA981AA56DEDEB", hash_generated_method = "8DD0CBEF80998F1AEB33F89F59335BBA")
-        public synchronized void onServiceDisconnected() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+public synchronized void onServiceDisconnected() {
             mIsConnected = false;
             mIsConnecting = false;
             mRemoteViewsFactory = null;
+
+            // Clear the main/worker queues
             final RemoteViewsAdapter adapter = mAdapter.get();
-            if(adapter == null)            
-            return;
-            adapter.mMainQueue.post(new Runnable() {            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.916 -0400", hash_original_method = "5256C3FE0B7F0EC8DBD6E0D8928BE4C4", hash_generated_method = "455E960911DC063566DB4A85069CB4F5")
-            @Override
-            public void run() {
-                adapter.mMainQueue.removeMessages(sUnbindServiceMessageType);
-                final RemoteAdapterConnectionCallback callback = adapter.mCallback.get();
-                if(callback != null)                
-                {
-                    callback.onRemoteAdapterDisconnected();
-                } //End block
-                // ---------- Original Method ----------
-                //adapter.mMainQueue.removeMessages(sUnbindServiceMessageType);
-                //final RemoteAdapterConnectionCallback callback = adapter.mCallback.get();
-                //if (callback != null) {
-                        //callback.onRemoteAdapterDisconnected();
-                    //}
-            }
-});
-            // ---------- Original Method ----------
-            //mIsConnected = false;
-            //mIsConnecting = false;
-            //mRemoteViewsFactory = null;
-            //final RemoteViewsAdapter adapter = mAdapter.get();
-            //if (adapter == null) return;
-            //adapter.mMainQueue.post(new Runnable() {
-                //@Override
-                //public void run() {
-                    //adapter.mMainQueue.removeMessages(sUnbindServiceMessageType);
-                    //final RemoteAdapterConnectionCallback callback = adapter.mCallback.get();
-                    //if (callback != null) {
-                        //callback.onRemoteAdapterDisconnected();
-                    //}
-                //}
-            //});
+            if (adapter == null) return;
+            
+            adapter.mMainQueue.post(new Runnable() {
+                @Override
+                public void run() {
+                    // Dequeue any unbind messages
+                    adapter.mMainQueue.removeMessages(sUnbindServiceMessageType);
+
+                    final RemoteAdapterConnectionCallback callback = adapter.mCallback.get();
+                    if (callback != null) {
+                        callback.onRemoteAdapterDisconnected();
+                    }
+                }
+            });
         }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.620 -0500", hash_original_method = "9AC2F72588B70E9E489A1C9892FF58B7", hash_generated_method = "6CC4DC1940AB4F29E9DB83F0CF535A7A")
         
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.916 -0400", hash_original_method = "9AC2F72588B70E9E489A1C9892FF58B7", hash_generated_method = "3532D093889B585DAC2D692377ADA005")
-        public synchronized IRemoteViewsFactory getRemoteViewsFactory() {
-IRemoteViewsFactory varAF67D4556746D546103D77FCAD8F9B06_838986348 =             mRemoteViewsFactory;
-            varAF67D4556746D546103D77FCAD8F9B06_838986348.addTaint(taint);
-            return varAF67D4556746D546103D77FCAD8F9B06_838986348;
-            // ---------- Original Method ----------
-            //return mRemoteViewsFactory;
+public synchronized IRemoteViewsFactory getRemoteViewsFactory() {
+            return mRemoteViewsFactory;
         }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.622 -0500", hash_original_method = "EB76BB3DACEAD8AEFFF382088AE69C8F", hash_generated_method = "D1E25F2EE4FE0ADF70F1001CBF707D7F")
         
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.916 -0400", hash_original_method = "EB76BB3DACEAD8AEFFF382088AE69C8F", hash_generated_method = "0E3562CB50E13A5DB59BD0F504B93D96")
-        public synchronized boolean isConnected() {
-            boolean varCC8BFB84898B22492B7F55096CBDF6CC_889643892 = (mIsConnected);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1891633802 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1891633802;
-            // ---------- Original Method ----------
-            //return mIsConnected;
+public synchronized boolean isConnected() {
+            return mIsConnected;
         }
 
         
@@ -962,34 +609,27 @@ IRemoteViewsFactory varAF67D4556746D546103D77FCAD8F9B06_838986348 =             
 
     
     private class RemoteViewsFrameLayout extends FrameLayout {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.629 -0500", hash_original_method = "15F65CD5E3BE0169B47C7BF19C42CB6A", hash_generated_method = "ABFCA66BFA93CA4D32BE7A9879BA7490")
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.917 -0400", hash_original_method = "15F65CD5E3BE0169B47C7BF19C42CB6A", hash_generated_method = "84BEC92F8166F0087E1C907BC13AD329")
-        public  RemoteViewsFrameLayout(Context context) {
+public RemoteViewsFrameLayout(Context context) {
             super(context);
-            addTaint(context.getTaint());
-            // ---------- Original Method ----------
         }
 
+        /**
+         * Updates this RemoteViewsFrameLayout depending on the view that was loaded.
+         * @param view the RemoteViews that was loaded. If null, the RemoteViews was not loaded
+         *             successfully.
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.631 -0500", hash_original_method = "376943697B2A7028E475228F1F5698F0", hash_generated_method = "35E5339EE92626508EDEFE4F38B7E137")
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.917 -0400", hash_original_method = "376943697B2A7028E475228F1F5698F0", hash_generated_method = "965322F5E61FD90578F02C19D3641151")
-        public void onRemoteViewsLoaded(RemoteViews view) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
-            addTaint(view.getTaint());
-            try 
-            {
+public void onRemoteViewsLoaded(RemoteViews view) {
+            try {
+                // Remove all the children of this layout first
                 removeAllViews();
                 addView(view.apply(getContext(), this));
-            } //End block
-            catch (Exception e)
-            {
-            } //End block
-            // ---------- Original Method ----------
-            //try {
-                //removeAllViews();
-                //addView(view.apply(getContext(), this));
-            //} catch (Exception e) {
-                //Log.e(TAG, "Failed to apply RemoteViews.");
-            //}
+            } catch (Exception e) {
+                Log.e(TAG, "Failed to apply RemoteViews.");
+            }
         }
 
         
@@ -998,84 +638,69 @@ IRemoteViewsFactory varAF67D4556746D546103D77FCAD8F9B06_838986348 =             
 
     
     private class RemoteViewsFrameLayoutRefSet {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.917 -0400", hash_original_field = "49480114F1DA72B3D385F91F28CAB531", hash_generated_field = "0DDDAE295C285660CD7FE8EBB6DC5F4A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.635 -0500", hash_original_field = "C91012CBE89A7E6646719176F59C71F4", hash_generated_field = "0DDDAE295C285660CD7FE8EBB6DC5F4A")
 
         private HashMap<Integer, LinkedList<RemoteViewsFrameLayout>> mReferences;
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.638 -0500", hash_original_method = "6FF139149B49AE6D730172FAFB07DD3B", hash_generated_method = "6126AD3CBCD4270E009293C103F19F28")
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.917 -0400", hash_original_method = "6FF139149B49AE6D730172FAFB07DD3B", hash_generated_method = "04F49291A2A41B3FE0D9405505C49E32")
-        public  RemoteViewsFrameLayoutRefSet() {
+public RemoteViewsFrameLayoutRefSet() {
             mReferences = new HashMap<Integer, LinkedList<RemoteViewsFrameLayout>>();
-            // ---------- Original Method ----------
-            //mReferences = new HashMap<Integer, LinkedList<RemoteViewsFrameLayout>>();
         }
 
+        /**
+         * Adds a new reference to a RemoteViewsFrameLayout returned by the adapter.
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.640 -0500", hash_original_method = "3F0456D57D98DD5B5AAA7D7D24636D4D", hash_generated_method = "6E043746E6C17D431B58F16530321006")
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.917 -0400", hash_original_method = "3F0456D57D98DD5B5AAA7D7D24636D4D", hash_generated_method = "E3A2008839D15B2C0631BC59DB4A5F08")
-        public void add(int position, RemoteViewsFrameLayout layout) {
-            addTaint(layout.getTaint());
-            addTaint(position);
+public void add(int position, RemoteViewsFrameLayout layout) {
             final Integer pos = position;
             LinkedList<RemoteViewsFrameLayout> refs;
-            if(mReferences.containsKey(pos))            
-            {
+
+            // Create the list if necessary
+            if (mReferences.containsKey(pos)) {
                 refs = mReferences.get(pos);
-            } //End block
-            else
-            {
+            } else {
                 refs = new LinkedList<RemoteViewsFrameLayout>();
                 mReferences.put(pos, refs);
-            } //End block
+            }
+
+            // Add the references to the list
             refs.add(layout);
-            // ---------- Original Method ----------
-            //final Integer pos = position;
-            //LinkedList<RemoteViewsFrameLayout> refs;
-            //if (mReferences.containsKey(pos)) {
-                //refs = mReferences.get(pos);
-            //} else {
-                //refs = new LinkedList<RemoteViewsFrameLayout>();
-                //mReferences.put(pos, refs);
-            //}
-            //refs.add(layout);
         }
 
+        /**
+         * Notifies each of the RemoteViewsFrameLayouts associated with a particular position that
+         * the associated RemoteViews has loaded.
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.643 -0500", hash_original_method = "B75D35E25E548F04E2C73EAA0A8BAD12", hash_generated_method = "1204A5CAFEA36D3FDC7845C22A09D3B8")
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.917 -0400", hash_original_method = "B75D35E25E548F04E2C73EAA0A8BAD12", hash_generated_method = "68AB02ECBDB1B65F23E6874480F5F0D2")
-        public void notifyOnRemoteViewsLoaded(int position, RemoteViews view, int typeId) {
-            addTaint(typeId);
-            addTaint(view.getTaint());
-            addTaint(position);
-            if(view == null)            
-            return;
+public void notifyOnRemoteViewsLoaded(int position, RemoteViews view, int typeId) {
+            if (view == null) return;
+
             final Integer pos = position;
-            if(mReferences.containsKey(pos))            
-            {
+            if (mReferences.containsKey(pos)) {
+                // Notify all the references for that position of the newly loaded RemoteViews
                 final LinkedList<RemoteViewsFrameLayout> refs = mReferences.get(pos);
-for(RemoteViewsFrameLayout ref : refs)
-                {
+                for (final RemoteViewsFrameLayout ref : refs) {
                     ref.onRemoteViewsLoaded(view);
-                } //End block
+                }
                 refs.clear();
+
+                // Remove this set from the original mapping
                 mReferences.remove(pos);
-            } //End block
-            // ---------- Original Method ----------
-            //if (view == null) return;
-            //final Integer pos = position;
-            //if (mReferences.containsKey(pos)) {
-                //final LinkedList<RemoteViewsFrameLayout> refs = mReferences.get(pos);
-                //for (final RemoteViewsFrameLayout ref : refs) {
-                    //ref.onRemoteViewsLoaded(view);
-                //}
-                //refs.clear();
-                //mReferences.remove(pos);
-            //}
+            }
         }
 
+        /**
+         * Removes all references to all RemoteViewsFrameLayouts returned by the adapter.
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.645 -0500", hash_original_method = "A232CA036EBBA3D167286637450EBE5D", hash_generated_method = "A03DAEE5639762EE04C66A10A2482FAB")
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.917 -0400", hash_original_method = "A232CA036EBBA3D167286637450EBE5D", hash_generated_method = "24EBFCA05188B87B49D1A34189D809C7")
-        public void clear() {
+public void clear() {
+            // We currently just clear the references, and leave all the previous layouts returned
+            // in their default state of the loading view.
             mReferences.clear();
-            // ---------- Original Method ----------
-            //mReferences.clear();
         }
 
         
@@ -1084,181 +709,141 @@ for(RemoteViewsFrameLayout ref : refs)
 
     
     private class RemoteViewsMetaData {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.918 -0400", hash_original_field = "E2942A04780E223B215EB8B663CF5353", hash_generated_field = "B83BF7ED7F5719DA923E1BC0AC69952B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.649 -0500", hash_original_field = "B83BF7ED7F5719DA923E1BC0AC69952B", hash_generated_field = "B83BF7ED7F5719DA923E1BC0AC69952B")
 
         int count;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.918 -0400", hash_original_field = "838BF490B590E83463A4659B060C26FC", hash_generated_field = "C1E9C1B6290BF40ADECDA7DF82FAC94D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.652 -0500", hash_original_field = "C1E9C1B6290BF40ADECDA7DF82FAC94D", hash_generated_field = "C1E9C1B6290BF40ADECDA7DF82FAC94D")
 
         int viewTypeCount;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.918 -0400", hash_original_field = "DAF737EDDF98B803755EC84BA73A5E3F", hash_generated_field = "004C2D81765875057DD2D513A7A85CEF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.654 -0500", hash_original_field = "004C2D81765875057DD2D513A7A85CEF", hash_generated_field = "004C2D81765875057DD2D513A7A85CEF")
 
         boolean hasStableIds;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.918 -0400", hash_original_field = "6EDDEBA4B8B8FD0722D0BB53E14FFC0C", hash_generated_field = "9A49302F66DF2887EFAB714BA0B6B15B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.656 -0500", hash_original_field = "9A49302F66DF2887EFAB714BA0B6B15B", hash_generated_field = "183505E227BCC2FCDE88D0BDF0CDABEE")
 
+        // by the user, then we try and load the first view, and use its height as the height for
+        // the default loading view.
         RemoteViews mUserLoadingView;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.918 -0400", hash_original_field = "41D6ADCC8C59297CD329E31519FD34AA", hash_generated_field = "39C526A78EF58332F9FAD2AD78897B3C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.659 -0500", hash_original_field = "39C526A78EF58332F9FAD2AD78897B3C", hash_generated_field = "39C526A78EF58332F9FAD2AD78897B3C")
 
         RemoteViews mFirstView;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.918 -0400", hash_original_field = "308D00B001FC55B7BD96E24977E53940", hash_generated_field = "32C08FC6170C53D3EDBAD53E03B1BB3B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.661 -0500", hash_original_field = "32C08FC6170C53D3EDBAD53E03B1BB3B", hash_generated_field = "32C08FC6170C53D3EDBAD53E03B1BB3B")
 
         int mFirstViewHeight;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.918 -0400", hash_original_field = "F7A46FD11046228C04C0DA5E8752213C", hash_generated_field = "0D244E4CBA0E96257463501C2DF63318")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.663 -0500", hash_original_field = "3160A9799114A7B3BC4DCB5322439DAD", hash_generated_field = "0D244E4CBA0E96257463501C2DF63318")
 
         private final HashMap<Integer, Integer> mTypeIdIndexMap = new HashMap<Integer, Integer>();
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.666 -0500", hash_original_method = "A4C124A869EBADBA9AE6D60BBB8A7C9F", hash_generated_method = "4B1DDE4E802B42D2FB2A0A1348AF2A7D")
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.918 -0400", hash_original_method = "A4C124A869EBADBA9AE6D60BBB8A7C9F", hash_generated_method = "3DCD91096CB130F5938CD8D146151676")
-        public  RemoteViewsMetaData() {
+public RemoteViewsMetaData() {
             reset();
-            // ---------- Original Method ----------
-            //reset();
         }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.668 -0500", hash_original_method = "90BA893E06B3709572F4D6BD4487FB6C", hash_generated_method = "93C8BF06AAFC2DC3B98B73FAB63BB431")
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.918 -0400", hash_original_method = "90BA893E06B3709572F4D6BD4487FB6C", hash_generated_method = "707F04AB9E070A59A452C861A2233E92")
-        public void set(RemoteViewsMetaData d) {
-            synchronized
-(d)            {
+public void set(RemoteViewsMetaData d) {
+            synchronized (d) {
                 count = d.count;
                 viewTypeCount = d.viewTypeCount;
                 hasStableIds = d.hasStableIds;
                 setLoadingViewTemplates(d.mUserLoadingView, d.mFirstView);
-            } //End block
-            // ---------- Original Method ----------
-            //synchronized (d) {
-                //count = d.count;
-                //viewTypeCount = d.viewTypeCount;
-                //hasStableIds = d.hasStableIds;
-                //setLoadingViewTemplates(d.mUserLoadingView, d.mFirstView);
-            //}
+            }
         }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.670 -0500", hash_original_method = "AE7C296E4C5BBC73F59980BD54540BF2", hash_generated_method = "FB0D81DBF8FD441761C80C8E7A712815")
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.918 -0400", hash_original_method = "AE7C296E4C5BBC73F59980BD54540BF2", hash_generated_method = "E27E2C57D2D5002944558FDACF04DF1D")
-        public void reset() {
+public void reset() {
             count = 0;
+
+            // by default there is at least one dummy view type
             viewTypeCount = 1;
             hasStableIds = true;
             mUserLoadingView = null;
             mFirstView = null;
             mFirstViewHeight = 0;
             mTypeIdIndexMap.clear();
-            // ---------- Original Method ----------
-            //count = 0;
-            //viewTypeCount = 1;
-            //hasStableIds = true;
-            //mUserLoadingView = null;
-            //mFirstView = null;
-            //mFirstViewHeight = 0;
-            //mTypeIdIndexMap.clear();
         }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.673 -0500", hash_original_method = "E784F858D155FE6C94A91B290D47017F", hash_generated_method = "8B2390B810D8A881474CC61D04EBFD8E")
         
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.918 -0400", hash_original_method = "E784F858D155FE6C94A91B290D47017F", hash_generated_method = "996C18A8F0BEBB2D319EAD8B9E9DDAB6")
-        public void setLoadingViewTemplates(RemoteViews loadingView, RemoteViews firstView) {
+public void setLoadingViewTemplates(RemoteViews loadingView, RemoteViews firstView) {
             mUserLoadingView = loadingView;
-            if(firstView != null)            
-            {
+            if (firstView != null) {
                 mFirstView = firstView;
                 mFirstViewHeight = -1;
-            } //End block
-            // ---------- Original Method ----------
-            //mUserLoadingView = loadingView;
-            //if (firstView != null) {
-                //mFirstView = firstView;
-                //mFirstViewHeight = -1;
-            //}
+            }
         }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.675 -0500", hash_original_method = "78DD70270396881EC8B9AE912C927B26", hash_generated_method = "F047133FFE3A7C4D231A02D80EB10DBE")
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.919 -0400", hash_original_method = "78DD70270396881EC8B9AE912C927B26", hash_generated_method = "7CDC5615D34CE7CFE93B4DFFB74FABEC")
-        public int getMappedViewType(int typeId) {
-            addTaint(typeId);
-            if(mTypeIdIndexMap.containsKey(typeId))            
-            {
-                int var2C51CE7380EBD7940D26243A0F0E9133_1306585181 = (mTypeIdIndexMap.get(typeId));
-                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_742609840 = getTaintInt();
-                return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_742609840;
-            } //End block
-            else
-            {
+public int getMappedViewType(int typeId) {
+            if (mTypeIdIndexMap.containsKey(typeId)) {
+                return mTypeIdIndexMap.get(typeId);
+            } else {
+                // We +1 because the loading view always has view type id of 0
                 int incrementalTypeId = mTypeIdIndexMap.size() + 1;
                 mTypeIdIndexMap.put(typeId, incrementalTypeId);
-                int varCC0537845765F58F5A8E0E117616BC13_232513558 = (incrementalTypeId);
-                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_309516512 = getTaintInt();
-                return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_309516512;
-            } //End block
-            // ---------- Original Method ----------
-            //if (mTypeIdIndexMap.containsKey(typeId)) {
-                //return mTypeIdIndexMap.get(typeId);
-            //} else {
-                //int incrementalTypeId = mTypeIdIndexMap.size() + 1;
-                //mTypeIdIndexMap.put(typeId, incrementalTypeId);
-                //return incrementalTypeId;
-            //}
+                return incrementalTypeId;
+            }
         }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.679 -0500", hash_original_method = "6B923D58C715B2F45FA359F8E18C8A1F", hash_generated_method = "52D1FD8917C0E239147B11BBB779D50C")
         
-        @DSModeled(DSC.BAN)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.920 -0400", hash_original_method = "6B923D58C715B2F45FA359F8E18C8A1F", hash_generated_method = "39A0A2CF4AC79563FBCD637BAF27486D")
-        private RemoteViewsFrameLayout createLoadingView(int position, View convertView,
+private RemoteViewsFrameLayout createLoadingView(int position, View convertView,
                 ViewGroup parent) {
-            addTaint(parent.getTaint());
-            addTaint(convertView.getTaint());
-            addTaint(position);
+            // Create and return a new FrameLayout, and setup the references for this position
             final Context context = parent.getContext();
             RemoteViewsFrameLayout layout = new RemoteViewsFrameLayout(context);
-            synchronized
-(mCache)            {
+
+            // Create a new loading view
+            synchronized (mCache) {
                 boolean customLoadingViewAvailable = false;
-                if(mUserLoadingView != null)                
-                {
-                    try 
-                    {
+
+                if (mUserLoadingView != null) {
+                    // Try to inflate user-specified loading view
+                    try {
                         View loadingView = mUserLoadingView.apply(parent.getContext(), parent);
                         loadingView.setTagInternal(com.android.internal.R.id.rowTypeId,
                                 new Integer(0));
                         layout.addView(loadingView);
                         customLoadingViewAvailable = true;
-                    } //End block
-                    catch (Exception e)
-                    {
-                    } //End block
-                } //End block
-                if(!customLoadingViewAvailable)                
-                {
-                    if(mFirstViewHeight < 0)                    
-                    {
-                        try 
-                        {
+                    } catch (Exception e) {
+                        Log.w(TAG, "Error inflating custom loading view, using default loading" +
+                                "view instead", e);
+                    }
+                }
+                if (!customLoadingViewAvailable) {
+                    // A default loading view
+                    // Use the size of the first row as a guide for the size of the loading view
+                    if (mFirstViewHeight < 0) {
+                        try {
                             View firstView = mFirstView.apply(parent.getContext(), parent);
                             firstView.measure(
                                     MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED),
                                     MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
                             mFirstViewHeight = firstView.getMeasuredHeight();
                             mFirstView = null;
-                        } //End block
-                        catch (Exception e)
-                        {
+                        } catch (Exception e) {
                             float density = mContext.getResources().getDisplayMetrics().density;
                             mFirstViewHeight = (int)
                                     Math.round(sDefaultLoadingViewHeight * density);
                             mFirstView = null;
-                        } //End block
-                    } //End block
+                            Log.w(TAG, "Error inflating first RemoteViews" + e);
+                        }
+                    }
+
+                    // Compose the loading view text
                     TextView loadingTextView = (TextView) mLayoutInflater.inflate(
                             com.android.internal.R.layout.remote_views_adapter_default_loading_view,
                             layout, false);
                     loadingTextView.setHeight(mFirstViewHeight);
                     loadingTextView.setTag(new Integer(0));
+
                     layout.addView(loadingTextView);
-                } //End block
-            } //End block
-RemoteViewsFrameLayout var6BB281F92ECF603ABC908502047A266C_987747862 =             layout;
-            var6BB281F92ECF603ABC908502047A266C_987747862.addTaint(taint);
-            return var6BB281F92ECF603ABC908502047A266C_987747862;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+                }
+            }
+
+            return layout;
         }
 
         
@@ -1267,42 +852,31 @@ RemoteViewsFrameLayout var6BB281F92ECF603ABC908502047A266C_987747862 =          
 
     
     private class RemoteViewsIndexMetaData {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.920 -0400", hash_original_field = "5F694956811487225D15E973CA38FBAB", hash_generated_field = "76F76148F5071AE6285A6BC57B0ADE91")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.684 -0500", hash_original_field = "76F76148F5071AE6285A6BC57B0ADE91", hash_generated_field = "76F76148F5071AE6285A6BC57B0ADE91")
 
         int typeId;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.920 -0400", hash_original_field = "59A814AA020A1B32C4674A5887A35022", hash_generated_field = "90EEB5AA84937AD6A8CE9746B6FECA6A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.686 -0500", hash_original_field = "90EEB5AA84937AD6A8CE9746B6FECA6A", hash_generated_field = "90EEB5AA84937AD6A8CE9746B6FECA6A")
 
         long itemId;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.920 -0400", hash_original_field = "1F12075C4184F616A07646739C4342EE", hash_generated_field = "060C657FCDBB17A3289922E65DB8FCC4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.688 -0500", hash_original_field = "060C657FCDBB17A3289922E65DB8FCC4", hash_generated_field = "060C657FCDBB17A3289922E65DB8FCC4")
 
         boolean isRequested;
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.691 -0500", hash_original_method = "429CAA99D27E695F91D025FEB15660FB", hash_generated_method = "6B59AE80858F2DAC17F7189B2F89B781")
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.921 -0400", hash_original_method = "429CAA99D27E695F91D025FEB15660FB", hash_generated_method = "FB1243FFAB8B5AE6A9A1DC9B23DC1E4C")
-        public  RemoteViewsIndexMetaData(RemoteViews v, long itemId, boolean requested) {
-            addTaint(requested);
-            addTaint(itemId);
-            addTaint(v.getTaint());
+public RemoteViewsIndexMetaData(RemoteViews v, long itemId, boolean requested) {
             set(v, itemId, requested);
-            // ---------- Original Method ----------
-            //set(v, itemId, requested);
         }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.693 -0500", hash_original_method = "6F36A962FFB607392BC2E34875EB4BD4", hash_generated_method = "D5F03CE80CDEAE3EA1E4483B85099D0D")
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.921 -0400", hash_original_method = "6F36A962FFB607392BC2E34875EB4BD4", hash_generated_method = "E48E04E907EB21F704B8A501D3C21431")
-        public void set(RemoteViews v, long id, boolean requested) {
+public void set(RemoteViews v, long id, boolean requested) {
             itemId = id;
-            if(v != null)            
-            typeId = v.getLayoutId();
+            if (v != null)
+                typeId = v.getLayoutId();
             else
-            typeId = 0;
+                typeId = 0;
             isRequested = requested;
-            // ---------- Original Method ----------
-            //itemId = id;
-            //if (v != null)
-                //typeId = v.getLayoutId();
-            //else
-                //typeId = 0;
-            //isRequested = requested;
         }
 
         
@@ -1311,42 +885,65 @@ RemoteViewsFrameLayout var6BB281F92ECF603ABC908502047A266C_987747862 =          
 
     
     private class FixedSizeRemoteViewsCache {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.921 -0400", hash_original_field = "0FCE5B64423E6B04C33CE3468F58DA62", hash_generated_field = "C7BAEA4EAD131C24153F2BC22502F2DA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.699 -0500", hash_original_field = "A29FD7555FE4F655CC762981664D87C7", hash_generated_field = "E4C58D7C8C895509DA92BEC5943A1E34")
+
+        private static final String TAG = "FixedSizeRemoteViewsCache";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.726 -0500", hash_original_field = "E684F2D84FA7DC3EFBA4928F4825DB34", hash_generated_field = "386965B336D6EC3D60AD83613B46FEC6")
+
+        private static final float sMaxCountSlackPercent = 0.75f;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.728 -0500", hash_original_field = "AC946B7CB64AAC6EC238372B8F17CC91", hash_generated_field = "FC99CB6D04167C2E00EDD95CD8617B9F")
+
+        private static final int sMaxMemoryLimitInBytes = 2 * 1024 * 1024;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.701 -0500", hash_original_field = "CB6EAF1824445922D3C4B3C8D6AF8ACD", hash_generated_field = "C7BAEA4EAD131C24153F2BC22502F2DA")
 
         private RemoteViewsMetaData mMetaData;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.921 -0400", hash_original_field = "35898A5A614C542A7664A6A85A2DF029", hash_generated_field = "CCFF7299FB9E7ED02A6E6C63B5236D05")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.703 -0500", hash_original_field = "707414B3F585E459734C592448007803", hash_generated_field = "CCFF7299FB9E7ED02A6E6C63B5236D05")
 
         private RemoteViewsMetaData mTemporaryMetaData;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.921 -0400", hash_original_field = "BBD9C074C8BFE7F5F7C066E06D309B25", hash_generated_field = "4D7BFF7687FF3AEB2660E6771DA7A41D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.705 -0500", hash_original_field = "A096563F5114311517347BE29915A458", hash_generated_field = "753EF3328AAB2345C7802747C9A771C7")
 
+        // greater than or equal to the set of RemoteViews.
+        // Note: The reason that we keep this separate from the RemoteViews cache below is that this
+        // we still need to be able to access the mapping of position to meta data, without keeping
+        // the heavy RemoteViews around.  The RemoteViews cache is trimmed to fixed constraints wrt.
+        // memory and size, but this metadata cache will retain information until the data at the
+        // position is guaranteed as not being necessary any more (usually on notifyDataSetChanged).
         private HashMap<Integer, RemoteViewsIndexMetaData> mIndexMetaData;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.921 -0400", hash_original_field = "E23925CEBC8CCBD3D31D40082C05C370", hash_generated_field = "622EF405E12F8FB6D80FD7F1E7909760")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.708 -0500", hash_original_field = "88D12761108E2F15CE0CC7A77E6617FE", hash_generated_field = "E0C91D878D27D6D2E9FF3423A3E10934")
 
+        // too much memory.
         private HashMap<Integer, RemoteViews> mIndexRemoteViews;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.921 -0400", hash_original_field = "585798A32AF4C3DD10344010FF6B9706", hash_generated_field = "534B08E02E91774394FCE7D691C682CB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.710 -0500", hash_original_field = "4051004794F0C90B582066D7C17F8830", hash_generated_field = "534B08E02E91774394FCE7D691C682CB")
 
         private HashSet<Integer> mRequestedIndices;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.921 -0400", hash_original_field = "461C6567414062E123C02AA45E52645E", hash_generated_field = "EDD6140FE3EFE2A884527802E7502D5E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.712 -0500", hash_original_field = "6C493B3E8987B33A1752F091528E3814", hash_generated_field = "4774F75EA833CCE751EB2DD9476C0BEC")
 
+        // farthest items from when we hit the memory limit
         private int mLastRequestedIndex;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.921 -0400", hash_original_field = "E8A3A3187B0CAF3B63074C35EF6D6C3C", hash_generated_field = "7552CCBBABA4C6673CFCAA35306E60E9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.714 -0500", hash_original_field = "927A07156A680B31183596DB1DDFFD05", hash_generated_field = "37517A26D105BB420B63E2FCF94EB57D")
 
+        // determined by the preloading algorithm to be prefetched
         private HashSet<Integer> mLoadIndices;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.921 -0400", hash_original_field = "65E5D7D551CCC2236163247CBA82EA30", hash_generated_field = "AF3636EC231AD49E7BB961CA0D975BAD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.716 -0500", hash_original_field = "0F9B5B21B778B01BA7DFA2D9D4555E7A", hash_generated_field = "AF3636EC231AD49E7BB961CA0D975BAD")
 
         private int mPreloadLowerBound;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.921 -0400", hash_original_field = "5918180AF4002B2A1ADC99DB1B26CFD5", hash_generated_field = "8874B6DBCCBC94897623594595F133DB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.719 -0500", hash_original_field = "DED8D432ED8BAD26134C979B677EF822", hash_generated_field = "8874B6DBCCBC94897623594595F133DB")
 
         private int mPreloadUpperBound;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.921 -0400", hash_original_field = "DA6F53F2281C91E02577C5A3C4B75B90", hash_generated_field = "07593739EA51894193F3BFC61924FDA8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.721 -0500", hash_original_field = "D7F38B5F52A0797B2EBB6AFB2F40BD92", hash_generated_field = "02B6EFF7CDEE7A5597425152FD641028")
 
+        // the maxCount number of items, or the maxSize memory usage.
+        // The maxCountSlack is used to determine if a new position in the cache to be loaded is
+        // sufficiently ouside the old set, prompting a shifting of the "window" of items to be
+        // preloaded.
         private int mMaxCount;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.921 -0400", hash_original_field = "0CFFCC288FFB8495CE255EC76ADE18D2", hash_generated_field = "802409AF8ABEE98E4B589C02F0E51998")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.723 -0500", hash_original_field = "57185E26DC6EA5A111016A32E74C2432", hash_generated_field = "802409AF8ABEE98E4B589C02F0E51998")
 
         private int mMaxCountSlack;
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.731 -0500", hash_original_method = "AFDF05837CF8EF03047EB57BF9703B63", hash_generated_method = "70CFD6B82D8F0C3B2490F21A96C2D9C9")
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.922 -0400", hash_original_method = "AFDF05837CF8EF03047EB57BF9703B63", hash_generated_method = "C06B39B7022755D679EF8EF25E68C287")
-        public  FixedSizeRemoteViewsCache(int maxCacheSize) {
+public FixedSizeRemoteViewsCache(int maxCacheSize) {
             mMaxCount = maxCacheSize;
             mMaxCountSlack = Math.round(sMaxCountSlackPercent * (mMaxCount / 2));
             mPreloadLowerBound = 0;
@@ -1358,351 +955,215 @@ RemoteViewsFrameLayout var6BB281F92ECF603ABC908502047A266C_987747862 =          
             mRequestedIndices = new HashSet<Integer>();
             mLastRequestedIndex = -1;
             mLoadIndices = new HashSet<Integer>();
-            // ---------- Original Method ----------
-            //mMaxCount = maxCacheSize;
-            //mMaxCountSlack = Math.round(sMaxCountSlackPercent * (mMaxCount / 2));
-            //mPreloadLowerBound = 0;
-            //mPreloadUpperBound = -1;
-            //mMetaData = new RemoteViewsMetaData();
-            //mTemporaryMetaData = new RemoteViewsMetaData();
-            //mIndexMetaData = new HashMap<Integer, RemoteViewsIndexMetaData>();
-            //mIndexRemoteViews = new HashMap<Integer, RemoteViews>();
-            //mRequestedIndices = new HashSet<Integer>();
-            //mLastRequestedIndex = -1;
-            //mLoadIndices = new HashSet<Integer>();
         }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.734 -0500", hash_original_method = "3B60FC97D93DDECF59F968EA9F5DCEA5", hash_generated_method = "D4AF76873ABB20A68E09AF5976D19028")
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.922 -0400", hash_original_method = "3B60FC97D93DDECF59F968EA9F5DCEA5", hash_generated_method = "0D5CFE0E6AE86BCB41754164DCCFF2B4")
-        public void insert(int position, RemoteViews v, long itemId, boolean isRequested) {
-            addTaint(isRequested);
-            addTaint(itemId);
-            addTaint(v.getTaint());
-            addTaint(position);
-            if(mIndexRemoteViews.size() >= mMaxCount)            
-            {
+public void insert(int position, RemoteViews v, long itemId, boolean isRequested) {
+            // Trim the cache if we go beyond the count
+            if (mIndexRemoteViews.size() >= mMaxCount) {
                 mIndexRemoteViews.remove(getFarthestPositionFrom(position));
-            } //End block
+            }
+
+            // Trim the cache if we go beyond the available memory size constraints
             int pruneFromPosition = (mLastRequestedIndex > -1) ? mLastRequestedIndex : position;
-            while
-(getRemoteViewsBitmapMemoryUsage() >= sMaxMemoryLimitInBytes)            
-            {
+            while (getRemoteViewsBitmapMemoryUsage() >= sMaxMemoryLimitInBytes) {
+                // Note: This is currently the most naive mechanism for deciding what to prune when
+                // we hit the memory limit.  In the future, we may want to calculate which index to
+                // remove based on both its position as well as it's current memory usage, as well
+                // as whether it was directly requested vs. whether it was preloaded by our caching
+                // mechanism.
                 mIndexRemoteViews.remove(getFarthestPositionFrom(pruneFromPosition));
-            } //End block
-            if(mIndexMetaData.containsKey(position))            
-            {
+            }
+
+            // Update the metadata cache
+            if (mIndexMetaData.containsKey(position)) {
                 final RemoteViewsIndexMetaData metaData = mIndexMetaData.get(position);
                 metaData.set(v, itemId, isRequested);
-            } //End block
-            else
-            {
+            } else {
                 mIndexMetaData.put(position, new RemoteViewsIndexMetaData(v, itemId, isRequested));
-            } //End block
+            }
             mIndexRemoteViews.put(position, v);
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
         }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.736 -0500", hash_original_method = "CE79B98C6EC29820DC37D3CBF74EA749", hash_generated_method = "4F2A0D462DB125E753F5F16C35A28294")
         
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.922 -0400", hash_original_method = "CE79B98C6EC29820DC37D3CBF74EA749", hash_generated_method = "0CE1BDBB2E0234177C57078D237D5DF9")
-        public RemoteViewsMetaData getMetaData() {
-RemoteViewsMetaData var9D2A3B5F7701188602630E4A3AA72144_1812075622 =             mMetaData;
-            var9D2A3B5F7701188602630E4A3AA72144_1812075622.addTaint(taint);
-            return var9D2A3B5F7701188602630E4A3AA72144_1812075622;
-            // ---------- Original Method ----------
-            //return mMetaData;
+public RemoteViewsMetaData getMetaData() {
+            return mMetaData;
+        }
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.739 -0500", hash_original_method = "1D24E06D74C40EECF68D58BAFBBECA77", hash_generated_method = "404CBB9D8422B7929844E505F7719764")
+        
+public RemoteViewsMetaData getTemporaryMetaData() {
+            return mTemporaryMetaData;
+        }
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.742 -0500", hash_original_method = "2697DBEF8CDE0991B3151B5A3E03C7EB", hash_generated_method = "6E5C74D857A5A52221A850556029EF50")
+        
+public RemoteViews getRemoteViewsAt(int position) {
+            if (mIndexRemoteViews.containsKey(position)) {
+                return mIndexRemoteViews.get(position);
+            }
+            return null;
+        }
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.744 -0500", hash_original_method = "1A017214F368969D3B3DFEA7A0D6E60A", hash_generated_method = "AD6B43FD2477AB00BA3BBCC982E30CE2")
+        
+public RemoteViewsIndexMetaData getMetaDataAt(int position) {
+            if (mIndexMetaData.containsKey(position)) {
+                return mIndexMetaData.get(position);
+            }
+            return null;
         }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.747 -0500", hash_original_method = "4EDEA047857C8C00C25F35FE7AF06430", hash_generated_method = "9A887955327899B0A06F4F58047B6D68")
         
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.922 -0400", hash_original_method = "1D24E06D74C40EECF68D58BAFBBECA77", hash_generated_method = "CC6A6981337B16268197EA7BE13B2ED8")
-        public RemoteViewsMetaData getTemporaryMetaData() {
-RemoteViewsMetaData var72BECA95754275A213FC731900C43798_465861911 =             mTemporaryMetaData;
-            var72BECA95754275A213FC731900C43798_465861911.addTaint(taint);
-            return var72BECA95754275A213FC731900C43798_465861911;
-            // ---------- Original Method ----------
-            //return mTemporaryMetaData;
-        }
-
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.922 -0400", hash_original_method = "2697DBEF8CDE0991B3151B5A3E03C7EB", hash_generated_method = "48C502F3CBE4A512F46C8FC9E9DAA351")
-        public RemoteViews getRemoteViewsAt(int position) {
-            addTaint(position);
-            if(mIndexRemoteViews.containsKey(position))            
-            {
-RemoteViews var41F06D658A14D25FF31D2714734A3B7B_1878120188 =                 mIndexRemoteViews.get(position);
-                var41F06D658A14D25FF31D2714734A3B7B_1878120188.addTaint(taint);
-                return var41F06D658A14D25FF31D2714734A3B7B_1878120188;
-            } //End block
-RemoteViews var540C13E9E156B687226421B24F2DF178_2127664834 =             null;
-            var540C13E9E156B687226421B24F2DF178_2127664834.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_2127664834;
-            // ---------- Original Method ----------
-            //if (mIndexRemoteViews.containsKey(position)) {
-                //return mIndexRemoteViews.get(position);
-            //}
-            //return null;
-        }
-
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.922 -0400", hash_original_method = "1A017214F368969D3B3DFEA7A0D6E60A", hash_generated_method = "C01BE36C75660AE711EB70E2322562A1")
-        public RemoteViewsIndexMetaData getMetaDataAt(int position) {
-            addTaint(position);
-            if(mIndexMetaData.containsKey(position))            
-            {
-RemoteViewsIndexMetaData var575E413A51040B3C942670D75B4767CB_896366623 =                 mIndexMetaData.get(position);
-                var575E413A51040B3C942670D75B4767CB_896366623.addTaint(taint);
-                return var575E413A51040B3C942670D75B4767CB_896366623;
-            } //End block
-RemoteViewsIndexMetaData var540C13E9E156B687226421B24F2DF178_267245487 =             null;
-            var540C13E9E156B687226421B24F2DF178_267245487.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_267245487;
-            // ---------- Original Method ----------
-            //if (mIndexMetaData.containsKey(position)) {
-                //return mIndexMetaData.get(position);
-            //}
-            //return null;
-        }
-
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.922 -0400", hash_original_method = "4EDEA047857C8C00C25F35FE7AF06430", hash_generated_method = "EE5F47AFFC39D562DD0AE22AAFF40649")
-        public void commitTemporaryMetaData() {
-            synchronized
-(mTemporaryMetaData)            {
-                synchronized
-(mMetaData)                {
+public void commitTemporaryMetaData() {
+            synchronized (mTemporaryMetaData) {
+                synchronized (mMetaData) {
                     mMetaData.set(mTemporaryMetaData);
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            //synchronized (mTemporaryMetaData) {
-                //synchronized (mMetaData) {
-                    //mMetaData.set(mTemporaryMetaData);
-                //}
-            //}
+                }
+            }
         }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.749 -0500", hash_original_method = "1379738D9DE8B74BE60C7743F79F9609", hash_generated_method = "0F52340F651BE5B40F8182343FFAF11E")
         
-        @DSModeled(DSC.BAN)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.923 -0400", hash_original_method = "1379738D9DE8B74BE60C7743F79F9609", hash_generated_method = "3314531A2D749D7A14602A62DF96502B")
-        private int getRemoteViewsBitmapMemoryUsage() {
+private int getRemoteViewsBitmapMemoryUsage() {
+            // Calculate the memory usage of all the RemoteViews bitmaps being cached
             int mem = 0;
-for(Integer i : mIndexRemoteViews.keySet())
-            {
+            for (Integer i : mIndexRemoteViews.keySet()) {
                 final RemoteViews v = mIndexRemoteViews.get(i);
-                if(v != null)                
-                {
+                if (v != null) {
                     mem += v.estimateBitmapMemoryUsage();
-                } //End block
-            } //End block
-            int varAFC4FC7E48A0710A1DC94EF3E8BC5764_719975799 = (mem);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_777095395 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_777095395;
-            // ---------- Original Method ----------
-            //int mem = 0;
-            //for (Integer i : mIndexRemoteViews.keySet()) {
-                //final RemoteViews v = mIndexRemoteViews.get(i);
-                //if (v != null) {
-                    //mem += v.estimateBitmapMemoryUsage();
-                //}
-            //}
-            //return mem;
+                }
+            }
+            return mem;
         }
-
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.752 -0500", hash_original_method = "61B11826B25E039221975DE702D21975", hash_generated_method = "CC6A94417222AAA2AF529317CFEE76F8")
         
-        @DSModeled(DSC.BAN)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.923 -0400", hash_original_method = "61B11826B25E039221975DE702D21975", hash_generated_method = "B2AED4713EE0E13BE3D6BF851634E470")
-        private int getFarthestPositionFrom(int pos) {
-            addTaint(pos);
+private int getFarthestPositionFrom(int pos) {
+            // Find the index farthest away and remove that
             int maxDist = 0;
             int maxDistIndex = -1;
             int maxDistNonRequested = 0;
             int maxDistIndexNonRequested = -1;
-for(int i : mIndexRemoteViews.keySet())
-            {
+            for (int i : mIndexRemoteViews.keySet()) {
                 int dist = Math.abs(i-pos);
-                if(dist > maxDistNonRequested && !mIndexMetaData.get(i).isRequested)                
-                {
+                if (dist > maxDistNonRequested && !mIndexMetaData.get(i).isRequested) {
+                    // maxDistNonRequested/maxDistIndexNonRequested will store the index of the
+                    // farthest non-requested position
                     maxDistIndexNonRequested = i;
                     maxDistNonRequested = dist;
-                } //End block
-                if(dist > maxDist)                
-                {
+                }
+                if (dist > maxDist) {
+                    // maxDist/maxDistIndex will store the index of the farthest position
+                    // regardless of whether it was directly requested or not
                     maxDistIndex = i;
                     maxDist = dist;
-                } //End block
-            } //End block
-            if(maxDistIndexNonRequested > -1)            
-            {
-                int varC12DB98CAA427D99B604C7BDEE26CBD2_398081844 = (maxDistIndexNonRequested);
-                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1394752995 = getTaintInt();
-                return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1394752995;
-            } //End block
-            int var9E43A0CF6731D9E1442BFF36E775B65E_1090748139 = (maxDistIndex);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1012672362 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1012672362;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+                }
+            }
+            if (maxDistIndexNonRequested > -1) {
+                return maxDistIndexNonRequested;
+            }
+            return maxDistIndex;
         }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.754 -0500", hash_original_method = "FD296F73133B242F283CE39F258C0B72", hash_generated_method = "0190E2A27D9DC6017F2677BDCE21CE06")
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.923 -0400", hash_original_method = "FD296F73133B242F283CE39F258C0B72", hash_generated_method = "A0C6ABB844F7AF4641B566F58D7C31B7")
-        public void queueRequestedPositionToLoad(int position) {
+public void queueRequestedPositionToLoad(int position) {
             mLastRequestedIndex = position;
-            synchronized
-(mLoadIndices)            {
+            synchronized (mLoadIndices) {
                 mRequestedIndices.add(position);
                 mLoadIndices.add(position);
-            } //End block
-            // ---------- Original Method ----------
-            //mLastRequestedIndex = position;
-            //synchronized (mLoadIndices) {
-                //mRequestedIndices.add(position);
-                //mLoadIndices.add(position);
-            //}
+            }
         }
-
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.757 -0500", hash_original_method = "5E1B16EBD16301761756030AADF8738C", hash_generated_method = "5190469BE2278886D2D725196C08086C")
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.924 -0400", hash_original_method = "5E1B16EBD16301761756030AADF8738C", hash_generated_method = "8BDF87A599AAC3932BCA0E5E0AA4B0C9")
-        public boolean queuePositionsToBePreloadedFromRequestedPosition(int position) {
-            if(mPreloadLowerBound <= position && position <= mPreloadUpperBound)            
-            {
+public boolean queuePositionsToBePreloadedFromRequestedPosition(int position) {
+            // Check if we need to preload any items
+            if (mPreloadLowerBound <= position && position <= mPreloadUpperBound) {
                 int center = (mPreloadUpperBound + mPreloadLowerBound) / 2;
-                if(Math.abs(position - center) < mMaxCountSlack)                
-                {
-                    boolean var68934A3E9455FA72420237EB05902327_1687206418 = (false);
-                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_824514737 = getTaintBoolean();
-                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_824514737;
-                } //End block
-            } //End block
+                if (Math.abs(position - center) < mMaxCountSlack) {
+                    return false;
+                }
+            }
+
             int count = 0;
-            synchronized
-(mMetaData)            {
+            synchronized (mMetaData) {
                 count = mMetaData.count;
-            } //End block
-            synchronized
-(mLoadIndices)            {
+            }
+            synchronized (mLoadIndices) {
                 mLoadIndices.clear();
+
+                // Add all the requested indices
                 mLoadIndices.addAll(mRequestedIndices);
+
+                // Add all the preload indices
                 int halfMaxCount = mMaxCount / 2;
                 mPreloadLowerBound = position - halfMaxCount;
                 mPreloadUpperBound = position + halfMaxCount;
                 int effectiveLowerBound = Math.max(0, mPreloadLowerBound);
                 int effectiveUpperBound = Math.min(mPreloadUpperBound, count - 1);
-for(int i = effectiveLowerBound;i <= effectiveUpperBound;++i)
-                {
+                for (int i = effectiveLowerBound; i <= effectiveUpperBound; ++i) {
                     mLoadIndices.add(i);
-                } //End block
-                mLoadIndices.removeAll(mIndexRemoteViews.keySet());
-            } //End block
-            boolean varB326B5062B2F0E69046810717534CB09_2109479939 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_109960025 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_109960025;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
-        }
+                }
 
+                // But remove all the indices that have already been loaded and are cached
+                mLoadIndices.removeAll(mIndexRemoteViews.keySet());
+            }
+            return true;
+        }
+        /** Returns the next index to load, and whether that index was directly requested or not */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.759 -0500", hash_original_method = "06D7248AE2FAA4148F7714FEE4BB20F2", hash_generated_method = "08145387FB1EA1258391C3CBA995C2E5")
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.924 -0400", hash_original_method = "06D7248AE2FAA4148F7714FEE4BB20F2", hash_generated_method = "83E93302462E92C747EAF0104777F13F")
-        public int[] getNextIndexToLoad() {
-            synchronized
-(mLoadIndices)            {
-                if(!mRequestedIndices.isEmpty())                
-                {
+public int[] getNextIndexToLoad() {
+            // We try and prioritize items that have been requested directly, instead
+            // of items that are loaded as a result of the caching mechanism
+            synchronized (mLoadIndices) {
+                // Prioritize requested indices to be loaded first
+                if (!mRequestedIndices.isEmpty()) {
                     Integer i = mRequestedIndices.iterator().next();
                     mRequestedIndices.remove(i);
                     mLoadIndices.remove(i);
-                    int[] var0F0B96631A55AFEDE575F00BE8B35E64_72352087 = (new int[]{i.intValue(), 1});
-                                        int[] varB4CCCA26F9DB9189C32F33E82D425CFB_1193403805 = {getTaintInt()};
-                    return varB4CCCA26F9DB9189C32F33E82D425CFB_1193403805;
-                } //End block
-                if(!mLoadIndices.isEmpty())                
-                {
+                    return new int[]{i.intValue(), 1};
+                }
+
+                // Otherwise, preload other indices as necessary
+                if (!mLoadIndices.isEmpty()) {
                     Integer i = mLoadIndices.iterator().next();
                     mLoadIndices.remove(i);
-                    int[] varAF6664BF1B3E7952D5EE406AE7467346_1272980922 = (new int[]{i.intValue(), 0});
-                                        int[] varB4CCCA26F9DB9189C32F33E82D425CFB_2042691327 = {getTaintInt()};
-                    return varB4CCCA26F9DB9189C32F33E82D425CFB_2042691327;
-                } //End block
-                int[] var9010B87C7D73BB6FE9F7388D0B0798DF_267096610 = (new int[]{-1, 0});
-                                int[] varB4CCCA26F9DB9189C32F33E82D425CFB_1478984152 = {getTaintInt()};
-                return varB4CCCA26F9DB9189C32F33E82D425CFB_1478984152;
-            } //End block
-            // ---------- Original Method ----------
-            //synchronized (mLoadIndices) {
-                //if (!mRequestedIndices.isEmpty()) {
-                    //Integer i = mRequestedIndices.iterator().next();
-                    //mRequestedIndices.remove(i);
-                    //mLoadIndices.remove(i);
-                    //return new int[]{i.intValue(), 1};
-                //}
-                //if (!mLoadIndices.isEmpty()) {
-                    //Integer i = mLoadIndices.iterator().next();
-                    //mLoadIndices.remove(i);
-                    //return new int[]{i.intValue(), 0};
-                //}
-                //return new int[]{-1, 0};
-            //}
+                    return new int[]{i.intValue(), 0};
+                }
+
+                return new int[]{-1, 0};
+            }
         }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.762 -0500", hash_original_method = "BBBDB78E47117BE8689A9C55BD30A227", hash_generated_method = "8DDD0D93F11C81581E0240ACECB42D8E")
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.924 -0400", hash_original_method = "BBBDB78E47117BE8689A9C55BD30A227", hash_generated_method = "4BA8391B2FF4ACBFDEEF5B2591548026")
-        public boolean containsRemoteViewAt(int position) {
-            addTaint(position);
-            boolean var50C03CE0AAA9B0A0CAB1DDE734019B8F_11793727 = (mIndexRemoteViews.containsKey(position));
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_435502985 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_435502985;
-            // ---------- Original Method ----------
-            //return mIndexRemoteViews.containsKey(position);
+public boolean containsRemoteViewAt(int position) {
+            return mIndexRemoteViews.containsKey(position);
+        }
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.764 -0500", hash_original_method = "97177722E4C5BA4D6397E6B225C059F2", hash_generated_method = "7944256EC15756642CBD500144ADC0F4")
+        
+public boolean containsMetaDataAt(int position) {
+            return mIndexMetaData.containsKey(position);
         }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.767 -0500", hash_original_method = "7D514E4141E3BAA67EC2DA2CF01B70A8", hash_generated_method = "63C304C12A7D6C8B19C50D0D887CE3C6")
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.924 -0400", hash_original_method = "97177722E4C5BA4D6397E6B225C059F2", hash_generated_method = "6FB44FE8657416C3EAE3F69812884113")
-        public boolean containsMetaDataAt(int position) {
-            addTaint(position);
-            boolean var301052880A22C4797E996A7194F5223F_1459893331 = (mIndexMetaData.containsKey(position));
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_4313889 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_4313889;
-            // ---------- Original Method ----------
-            //return mIndexMetaData.containsKey(position);
-        }
+public void reset() {
+            // Note: We do not try and reset the meta data, since that information is still used by
+            // collection views to validate it's own contents (and will be re-requested if the data
+            // is invalidated through the notifyDataSetChanged() flow).
 
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.925 -0400", hash_original_method = "7D514E4141E3BAA67EC2DA2CF01B70A8", hash_generated_method = "A24F69D9CDE95373EDB977B6722CC9F2")
-        public void reset() {
             mPreloadLowerBound = 0;
             mPreloadUpperBound = -1;
             mLastRequestedIndex = -1;
             mIndexRemoteViews.clear();
             mIndexMetaData.clear();
-            synchronized
-(mLoadIndices)            {
+            synchronized (mLoadIndices) {
                 mRequestedIndices.clear();
                 mLoadIndices.clear();
-            } //End block
-            // ---------- Original Method ----------
-            //mPreloadLowerBound = 0;
-            //mPreloadUpperBound = -1;
-            //mLastRequestedIndex = -1;
-            //mIndexRemoteViews.clear();
-            //mIndexMetaData.clear();
-            //synchronized (mLoadIndices) {
-                //mRequestedIndices.clear();
-                //mLoadIndices.clear();
-            //}
+            }
         }
-
-        
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.925 -0400", hash_original_field = "FB81249BF3052258E45C3888EBC350DA", hash_generated_field = "E4C58D7C8C895509DA92BEC5943A1E34")
-
-        private static final String TAG = "FixedSizeRemoteViewsCache";
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.925 -0400", hash_original_field = "F9740182F353B90A4BDBE330395C68FF", hash_generated_field = "386965B336D6EC3D60AD83613B46FEC6")
-
-        private static final float sMaxCountSlackPercent = 0.75f;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.925 -0400", hash_original_field = "FD1B2A98BB85E0640F1E9C7C18E4BBFA", hash_generated_field = "FC99CB6D04167C2E00EDD95CD8617B9F")
-
-        private static final int sMaxMemoryLimitInBytes = 2 * 1024 * 1024;
     }
 
 
@@ -1716,24 +1177,119 @@ for(int i = effectiveLowerBound;i <= effectiveUpperBound;++i)
         
         public void deferNotifyDataSetChanged();
     }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.828 -0500", hash_original_method = "2DAA079F2CA383CBC7C346F3BCA57054", hash_generated_method = "40BF1DD2C41F1855A16AF209F239C285")
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.925 -0400", hash_original_field = "3F15C32F22D5D28B231422C2ED8DEA65", hash_generated_field = "911EBCEFE4CCEB1A8C54FB61D7AB0AD9")
+private void onNotifyDataSetChanged() {
+        // Complete the actual notifyDataSetChanged() call initiated earlier
+        IRemoteViewsFactory factory = mServiceConnection.getRemoteViewsFactory();
+        try {
+            factory.onDataSetChanged();
+        } catch (RemoteException e) {
+            Log.e(TAG, "Error in updateNotifyDataSetChanged(): " + e.getMessage());
 
-    private static final String TAG = "RemoteViewsAdapter";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.925 -0400", hash_original_field = "9A2599D66205440D0C81070B0087E6C0", hash_generated_field = "7B64BF8061986040376D887000FE60FC")
+            // Return early to prevent from further being notified (since nothing has
+            // changed)
+            return;
+        } catch (RuntimeException e) {
+            Log.e(TAG, "Error in updateNotifyDataSetChanged(): " + e.getMessage());
+            return;
+        }
 
-    private static final int sDefaultCacheSize = 40;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.925 -0400", hash_original_field = "D3029EB3FA6C6D927DC18B448E254A9B", hash_generated_field = "29B284EBC17ABF0E537021A944F5E17B")
+        // Flush the cache so that we can reload new items from the service
+        synchronized (mCache) {
+            mCache.reset();
+        }
 
-    private static final int sUnbindServiceDelay = 5000;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.925 -0400", hash_original_field = "5AE9F7C5EEA0C30BF3724A26667822E1", hash_generated_field = "CD7B880CABC800B219D85862AA4BAB3E")
+        // Re-request the new metadata (only after the notification to the factory)
+        updateTemporaryMetaData();
 
-    private static final int sDefaultLoadingViewHeight = 50;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.925 -0400", hash_original_field = "ADA4A5984A61A504209F17405FAE49F5", hash_generated_field = "B4ACA6FFB73AE04B468186CDC32AA932")
+        // Propagate the notification back to the base adapter
+        mMainQueue.post(new Runnable() {
+            @Override
+            public void run() {
+                synchronized (mCache) {
+                    mCache.commitTemporaryMetaData();
+                }
 
-    private static final int sDefaultMessageType = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.925 -0400", hash_original_field = "2D292FE9AC86EFA8AB6604D58311922B", hash_generated_field = "3A6B65139510D8443CF01354FDD1924A")
+                superNotifyDataSetChanged();
+                enqueueDeferredUnbindServiceMessage();
+            }
+        });
 
-    private static final int sUnbindServiceMessageType = 1;
+        // Reset the notify flagflag
+        mNotifyDataSetChangedAfterOnServiceConnected = false;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.833 -0500", hash_original_method = "0764FC8C95C069ED9ED094B35DCC527A", hash_generated_method = "4F91F4E720FAE3D08410193811CAC9C6")
+    
+public void notifyDataSetChanged() {
+        // Dequeue any unbind messages
+        mMainQueue.removeMessages(sUnbindServiceMessageType);
+
+        // If we are not connected, queue up the notifyDataSetChanged to be handled when we do
+        // connect
+        if (!mServiceConnection.isConnected()) {
+            if (mNotifyDataSetChangedAfterOnServiceConnected) {
+                return;
+            }
+
+            mNotifyDataSetChangedAfterOnServiceConnected = true;
+            requestBindService();
+            return;
+        }
+
+        mWorkerQueue.post(new Runnable() {
+            @Override
+            public void run() {
+                onNotifyDataSetChanged();
+            }
+        });
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.835 -0500", hash_original_method = "A1EDDF3811A1F9D28CCD28C93269FAD1", hash_generated_method = "A1EDDF3811A1F9D28CCD28C93269FAD1")
+    
+void superNotifyDataSetChanged() {
+        super.notifyDataSetChanged();
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.838 -0500", hash_original_method = "96758E0B3254F3B4A777FC060A49CC59", hash_generated_method = "5EEBB680A09C38B8B19ECFA468C375E0")
+    
+@Override
+    public boolean handleMessage(Message msg) {
+        boolean result = false;
+        switch (msg.what) {
+        case sUnbindServiceMessageType:
+            if (mServiceConnection.isConnected()) {
+                mServiceConnection.unbind(mContext, mAppWidgetId, mIntent);
+            }
+            result = true;
+            break;
+        default:
+            break;
+        }
+        return result;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.840 -0500", hash_original_method = "D880D88722499DDF7E3D229A00764CBB", hash_generated_method = "DB4A17D1F23846134055B3E2AB23F377")
+    
+private void enqueueDeferredUnbindServiceMessage() {
+        // Remove any existing deferred-unbind messages
+        mMainQueue.removeMessages(sUnbindServiceMessageType);
+        mMainQueue.sendEmptyMessageDelayed(sUnbindServiceMessageType, sUnbindServiceDelay);
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.842 -0500", hash_original_method = "FD0BDD14354B6205FD4E5E773D9BDB6D", hash_generated_method = "0C92A40ACFEF5CC4C3A631F85F9C5C83")
+    
+private boolean requestBindService() {
+        // Try binding the service (which will start it if it's not already running)
+        if (!mServiceConnection.isConnected()) {
+            mServiceConnection.bind(mContext, mAppWidgetId, mIntent);
+        }
+
+        // Remove any existing deferred-unbind messages
+        mMainQueue.removeMessages(sUnbindServiceMessageType);
+        return mServiceConnection.isConnected();
+    }
 }
 

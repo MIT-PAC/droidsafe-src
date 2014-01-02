@@ -1,6 +1,8 @@
 package org.bouncycastle.openssl;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -64,58 +66,81 @@ import org.bouncycastle.x509.X509V2AttributeCertificate;
 
 
 public class PEMReader extends PemReader {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.062 -0400", hash_original_field = "DFAA5B65B87CDDE1589034B535B31A0A", hash_generated_field = "1B324848B9CCB600B6F9F412146CB5D6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.361 -0500", hash_original_field = "9B1CD2D518DEAD091777D6CB81C5816E", hash_generated_field = "1B324848B9CCB600B6F9F412146CB5D6")
 
     private final Map parsers = new HashMap();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.062 -0400", hash_original_field = "5CD9C2E7D64B912B29078A3E35C28F5E", hash_generated_field = "7A318D1FC589B8A927004A5BBE837049")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.363 -0500", hash_original_field = "75C5E5F13C2720237139D3675B80F4E6", hash_generated_field = "7A318D1FC589B8A927004A5BBE837049")
+
 
     private PasswordFinder pFinder;
+
+
+    /**
+     * Create a new PEMReader
+     *
+     * @param reader the Reader
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.366 -0500", hash_original_method = "2732903E834E35077990228D3EC5372C", hash_generated_method = "874B62147D53C021C6F32B5DF2CF4549")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.063 -0400", hash_original_method = "2732903E834E35077990228D3EC5372C", hash_generated_method = "9D0E243820E7950FE695D0C348CB2B9F")
-    public  PEMReader(
-        Reader reader) {
+public PEMReader(
+        Reader reader)
+    {
         this(reader, null, "BC");
-        addTaint(reader.getTaint());
-        // ---------- Original Method ----------
     }
 
+    /**
+     * Create a new PEMReader with a password finder
+     *
+     * @param reader  the Reader
+     * @param pFinder the password finder
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.369 -0500", hash_original_method = "264D7373D1280C46B7B3C63F3DA0F057", hash_generated_method = "0BBF51B5D4A1AFD777DF9DF211414B13")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.063 -0400", hash_original_method = "264D7373D1280C46B7B3C63F3DA0F057", hash_generated_method = "705B33BAACE1A8A98B2560263763B8D5")
-    public  PEMReader(
+public PEMReader(
         Reader reader,
-        PasswordFinder pFinder) {
+        PasswordFinder pFinder)
+    {
         this(reader, pFinder, "BC");
-        addTaint(pFinder.getTaint());
-        addTaint(reader.getTaint());
-        // ---------- Original Method ----------
     }
 
+    /**
+     * Create a new PEMReader with a password finder
+     *
+     * @param reader   the Reader
+     * @param pFinder  the password finder
+     * @param provider the cryptography provider to use
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.371 -0500", hash_original_method = "F26FB5757482F756B15ADBECFFA22920", hash_generated_method = "866E2D88D33729E33FBF0566E77B7956")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.063 -0400", hash_original_method = "F26FB5757482F756B15ADBECFFA22920", hash_generated_method = "0168B3B6DCC204D41581A4E4A23DEF2E")
-    public  PEMReader(
+public PEMReader(
         Reader reader,
         PasswordFinder pFinder,
-        String provider) {
+        String provider)
+    {
         this(reader, pFinder, provider, provider);
-        addTaint(provider.getTaint());
-        addTaint(pFinder.getTaint());
-        addTaint(reader.getTaint());
-        // ---------- Original Method ----------
     }
 
+    /**
+     * Create a new PEMReader with a password finder and differing providers for secret and public key
+     * operations.
+     *
+     * @param reader   the Reader
+     * @param pFinder  the password finder
+     * @param symProvider  provider to use for symmetric operations
+     * @param asymProvider provider to use for asymmetric (public/private key) operations
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.374 -0500", hash_original_method = "CEFEBB919AD354EB1A0A7FBF2E2E3ECF", hash_generated_method = "1D6284387BD85B0E08A4B494D5BEC91A")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.064 -0400", hash_original_method = "CEFEBB919AD354EB1A0A7FBF2E2E3ECF", hash_generated_method = "DB91BC49650093E23DF34F596B13748D")
-    public  PEMReader(
+public PEMReader(
         Reader reader,
         PasswordFinder pFinder,
         String symProvider,
-        String asymProvider) {
+        String asymProvider)
+    {
         super(reader);
-        addTaint(asymProvider.getTaint());
-        addTaint(symProvider.getTaint());
-        addTaint(reader.getTaint());
+
         this.pFinder = pFinder;
+
         parsers.put("CERTIFICATE REQUEST", new PKCS10CertificationRequestParser());
         parsers.put("NEW CERTIFICATE REQUEST", new PKCS10CertificationRequestParser());
         parsers.put("CERTIFICATE", new X509CertificateParser(asymProvider));
@@ -131,145 +156,123 @@ public class PEMReader extends PemReader {
         parsers.put("EC PRIVATE KEY", new ECDSAKeyPairParser(asymProvider));
         parsers.put("ENCRYPTED PRIVATE KEY", new EncryptedPrivateKeyParser(symProvider, asymProvider));
         parsers.put("PRIVATE KEY", new PrivateKeyParser(asymProvider));
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.377 -0500", hash_original_method = "127E22226D67F5F9289AA2863D2E5AFD", hash_generated_method = "E7B4598E68D943668CA5499F2933BCA8")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.065 -0400", hash_original_method = "127E22226D67F5F9289AA2863D2E5AFD", hash_generated_method = "B6937B370CAF564D03458A1EF8C893E2")
-    public Object readObject() throws IOException {
+public Object readObject()
+        throws IOException
+    {
         PemObject obj = readPemObject();
-        if(obj != null)        
+
+        if (obj != null)
         {
             String type = obj.getType();
-            if(parsers.containsKey(type))            
+            if (parsers.containsKey(type))
             {
-Object var3A81707C91CA6721ECEB781CDBC013C2_1133551358 =                 ((PemObjectParser)parsers.get(type)).parseObject(obj);
-                var3A81707C91CA6721ECEB781CDBC013C2_1133551358.addTaint(taint);
-                return var3A81707C91CA6721ECEB781CDBC013C2_1133551358;
-            } //End block
+                return ((PemObjectParser)parsers.get(type)).parseObject(obj);
+            }
             else
             {
-                IOException var70A619DCC02CED381329A437D633B59D_601715278 = new IOException("unrecognised object: " + type);
-                var70A619DCC02CED381329A437D633B59D_601715278.addTaint(taint);
-                throw var70A619DCC02CED381329A437D633B59D_601715278;
-            } //End block
-        } //End block
-Object var540C13E9E156B687226421B24F2DF178_620129068 =         null;
-        var540C13E9E156B687226421B24F2DF178_620129068.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_620129068;
-        // ---------- Original Method ----------
-        //PemObject obj = readPemObject();
-        //if (obj != null)
-        //{
-            //String type = obj.getType();
-            //if (parsers.containsKey(type))
-            //{
-                //return ((PemObjectParser)parsers.get(type)).parseObject(obj);
-            //}
-            //else
-            //{
-                //throw new IOException("unrecognised object: " + type);
-            //}
-        //}
-        //return null;
+                throw new IOException("unrecognised object: " + type);
+            }
+        }
+
+        return null;
     }
 
     
     private abstract class KeyPairParser implements PemObjectParser {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.065 -0400", hash_original_field = "9E9F3D70BD8C8957627EADA96D967706", hash_generated_field = "AFDE0FC943DF429CC56BE81349BC4014")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.380 -0500", hash_original_field = "A5A1D795BB0E6A860404CE54547A2FCF", hash_generated_field = "AFDE0FC943DF429CC56BE81349BC4014")
 
         protected String provider;
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.383 -0500", hash_original_method = "D97A7462FC5E95C470F1E84C9A4F9D7B", hash_generated_method = "F8C46D382714D6BC9EE642A403775A5A")
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.066 -0400", hash_original_method = "D97A7462FC5E95C470F1E84C9A4F9D7B", hash_generated_method = "AEB043DD3F85D4A6336E5753ECB334C0")
-        public  KeyPairParser(String provider) {
+public KeyPairParser(String provider)
+        {
             this.provider = provider;
-            // ---------- Original Method ----------
-            //this.provider = provider;
         }
 
+        /**
+         * Read a Key Pair
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.387 -0500", hash_original_method = "D2B938CFC8BBB876E5EB510A00C9CCB3", hash_generated_method = "424654138E7F0D121A69909EF97DBEFA")
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.066 -0400", hash_original_method = "D2B938CFC8BBB876E5EB510A00C9CCB3", hash_generated_method = "A3DBB722D66ADF3E690A0F5932387A7D")
-        protected ASN1Sequence readKeyPair(
-            PemObject obj) throws IOException {
-            addTaint(obj.getTaint());
+protected ASN1Sequence readKeyPair(
+            PemObject obj)
+            throws IOException
+        {
             boolean isEncrypted = false;
             String dekInfo = null;
             List headers = obj.getHeaders();
-for(Iterator it = headers.iterator();it.hasNext();)
+
+            for (Iterator it = headers.iterator(); it.hasNext();)
             {
                 PemHeader hdr = (PemHeader)it.next();
-                if(hdr.getName().equals("Proc-Type") && hdr.getValue().equals("4,ENCRYPTED"))                
+
+                if (hdr.getName().equals("Proc-Type") && hdr.getValue().equals("4,ENCRYPTED"))
                 {
                     isEncrypted = true;
-                } //End block
-                else
-                if(hdr.getName().equals("DEK-Info"))                
+                }
+                else if (hdr.getName().equals("DEK-Info"))
                 {
                     dekInfo = hdr.getValue();
-                } //End block
-            } //End block
+                }
+            }
+
+            //
+            // extract the key
+            //
             byte[] keyBytes = obj.getContent();
-            if(isEncrypted)            
+
+            if (isEncrypted)
             {
-                if(pFinder == null)                
+                if (pFinder == null)
                 {
-                    PasswordException var91FF4DCF86A2042EE65FD11154EAEAB6_1236066786 = new PasswordException("No password finder specified, but a password is required");
-                    var91FF4DCF86A2042EE65FD11154EAEAB6_1236066786.addTaint(taint);
-                    throw var91FF4DCF86A2042EE65FD11154EAEAB6_1236066786;
-                } //End block
+                    throw new PasswordException("No password finder specified, but a password is required");
+                }
+
                 char[] password = pFinder.getPassword();
-                if(password == null)                
+
+                if (password == null)
                 {
-                    PasswordException var72B5E4C3645EE62C98877BEE4FA7A205_726450289 = new PasswordException("Password is null, but a password is required");
-                    var72B5E4C3645EE62C98877BEE4FA7A205_726450289.addTaint(taint);
-                    throw var72B5E4C3645EE62C98877BEE4FA7A205_726450289;
-                } //End block
+                    throw new PasswordException("Password is null, but a password is required");
+                }
+
                 StringTokenizer tknz = new StringTokenizer(dekInfo, ",");
                 String dekAlgName = tknz.nextToken();
                 byte[] iv = Hex.decode(tknz.nextToken());
+
                 keyBytes = PEMUtilities.crypt(false, provider, keyBytes, password, dekAlgName, iv);
-            } //End block
-            try 
+            }
+
+            try
             {
-ASN1Sequence var2E579F18C8B32DEE34ED2B653450B91E_1310034899 =                 (ASN1Sequence)ASN1Object.fromByteArray(keyBytes);
-                var2E579F18C8B32DEE34ED2B653450B91E_1310034899.addTaint(taint);
-                return var2E579F18C8B32DEE34ED2B653450B91E_1310034899;
-            } //End block
+                return (ASN1Sequence)ASN1Object.fromByteArray(keyBytes);
+            }
             catch (IOException e)
             {
-                if(isEncrypted)                
+                if (isEncrypted)
                 {
-                    PEMException var23ADDE189C9D3294BE4E23AAC9C6C524_1589437169 = new PEMException("exception decoding - please check password and data.", e);
-                    var23ADDE189C9D3294BE4E23AAC9C6C524_1589437169.addTaint(taint);
-                    throw var23ADDE189C9D3294BE4E23AAC9C6C524_1589437169;
-                } //End block
+                    throw new PEMException("exception decoding - please check password and data.", e);
+                }
                 else
                 {
-                    PEMException var0E2F75B091E2B3678FDBDFC9DA487A03_1637481497 = new PEMException(e.getMessage(), e);
-                    var0E2F75B091E2B3678FDBDFC9DA487A03_1637481497.addTaint(taint);
-                    throw var0E2F75B091E2B3678FDBDFC9DA487A03_1637481497;
-                } //End block
-            } //End block
+                    throw new PEMException(e.getMessage(), e);
+                }
+            }
             catch (ClassCastException e)
             {
-                if(isEncrypted)                
+                if (isEncrypted)
                 {
-                    PEMException var23ADDE189C9D3294BE4E23AAC9C6C524_1153840104 = new PEMException("exception decoding - please check password and data.", e);
-                    var23ADDE189C9D3294BE4E23AAC9C6C524_1153840104.addTaint(taint);
-                    throw var23ADDE189C9D3294BE4E23AAC9C6C524_1153840104;
-                } //End block
+                    throw new PEMException("exception decoding - please check password and data.", e);
+                }
                 else
                 {
-                    PEMException var0E2F75B091E2B3678FDBDFC9DA487A03_1862695731 = new PEMException(e.getMessage(), e);
-                    var0E2F75B091E2B3678FDBDFC9DA487A03_1862695731.addTaint(taint);
-                    throw var0E2F75B091E2B3678FDBDFC9DA487A03_1862695731;
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+                    throw new PEMException(e.getMessage(), e);
+                }
+            }
         }
 
         
@@ -278,60 +281,56 @@ ASN1Sequence var2E579F18C8B32DEE34ED2B653450B91E_1310034899 =                 (A
 
     
     private class DSAKeyPairParser extends KeyPairParser {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.392 -0500", hash_original_method = "ADBD617F929757840A0FD32FA3C710F1", hash_generated_method = "5DE1123A8D868D13C61FFB66BA6883C1")
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.067 -0400", hash_original_method = "ADBD617F929757840A0FD32FA3C710F1", hash_generated_method = "98E9B2A9DBB6C5434EE239E1D433E12C")
-        public  DSAKeyPairParser(String provider) {
+public DSAKeyPairParser(String provider)
+        {
             super(provider);
-            addTaint(provider.getTaint());
-            // ---------- Original Method ----------
         }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.395 -0500", hash_original_method = "ADE2E96FAD316F0BCF76F4FEB2795A67", hash_generated_method = "487B04015C51652D46919394D99D2075")
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.068 -0400", hash_original_method = "ADE2E96FAD316F0BCF76F4FEB2795A67", hash_generated_method = "8EEAE4CD9EDB32FF9A9663D600668A7B")
-        public Object parseObject(PemObject obj) throws IOException {
-            addTaint(obj.getTaint());
-            try 
+public Object parseObject(PemObject obj)
+            throws IOException
+        {
+            try
             {
                 ASN1Sequence seq = readKeyPair(obj);
-                if(seq.size() != 6)                
+
+                if (seq.size() != 6)
                 {
-                    PEMException varEE7D65505957B3E6B6E02FD39B74044F_680972523 = new PEMException("malformed sequence in DSA private key");
-                    varEE7D65505957B3E6B6E02FD39B74044F_680972523.addTaint(taint);
-                    throw varEE7D65505957B3E6B6E02FD39B74044F_680972523;
-                } //End block
+                    throw new PEMException("malformed sequence in DSA private key");
+                }
+
+                //            DERInteger              v = (DERInteger)seq.getObjectAt(0);
                 DERInteger p = (DERInteger)seq.getObjectAt(1);
                 DERInteger q = (DERInteger)seq.getObjectAt(2);
                 DERInteger g = (DERInteger)seq.getObjectAt(3);
                 DERInteger y = (DERInteger)seq.getObjectAt(4);
                 DERInteger x = (DERInteger)seq.getObjectAt(5);
+
                 DSAPrivateKeySpec privSpec = new DSAPrivateKeySpec(
                     x.getValue(), p.getValue(),
                     q.getValue(), g.getValue());
                 DSAPublicKeySpec pubSpec = new DSAPublicKeySpec(
                     y.getValue(), p.getValue(),
                     q.getValue(), g.getValue());
+
                 KeyFactory fact = KeyFactory.getInstance("DSA", provider);
-Object varEAE0B1873A9922293A96783FD42EB56C_49954851 =                 new KeyPair(
+
+                return new KeyPair(
                     fact.generatePublic(pubSpec),
                     fact.generatePrivate(privSpec));
-                varEAE0B1873A9922293A96783FD42EB56C_49954851.addTaint(taint);
-                return varEAE0B1873A9922293A96783FD42EB56C_49954851;
-            } //End block
+            }
             catch (IOException e)
             {
-                e.addTaint(taint);
                 throw e;
-            } //End block
+            }
             catch (Exception e)
             {
-                PEMException var73A90879EB20D8885E68D8211442ED4B_1993840527 = new PEMException(
+                throw new PEMException(
                     "problem creating DSA private key: " + e.toString(), e);
-                var73A90879EB20D8885E68D8211442ED4B_1993840527.addTaint(taint);
-                throw var73A90879EB20D8885E68D8211442ED4B_1993840527;
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            }
         }
 
         
@@ -340,49 +339,47 @@ Object varEAE0B1873A9922293A96783FD42EB56C_49954851 =                 new KeyPai
 
     
     private class ECDSAKeyPairParser extends KeyPairParser {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.400 -0500", hash_original_method = "3D5918BC33C2E8750A0F79CF102B6DFC", hash_generated_method = "FC6CB8564356E7B70EFBC5E495CF5A60")
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.068 -0400", hash_original_method = "3D5918BC33C2E8750A0F79CF102B6DFC", hash_generated_method = "9454600B5FFF7DD0CC1E82DDDFCBAB29")
-        public  ECDSAKeyPairParser(String provider) {
+public ECDSAKeyPairParser(String provider)
+        {
             super(provider);
-            addTaint(provider.getTaint());
-            // ---------- Original Method ----------
         }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.403 -0500", hash_original_method = "C19C67ADBE6E6117AD29F18C950B281B", hash_generated_method = "318147FC558244690A9888F2218B1B56")
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.069 -0400", hash_original_method = "C19C67ADBE6E6117AD29F18C950B281B", hash_generated_method = "61C9A8506EEF6890DA67120A6E023008")
-        public Object parseObject(PemObject obj) throws IOException {
-            addTaint(obj.getTaint());
-            try 
+public Object parseObject(PemObject obj)
+            throws IOException
+        {
+            try
             {
                 ASN1Sequence seq = readKeyPair(obj);
+
                 ECPrivateKeyStructure pKey = new ECPrivateKeyStructure(seq);
                 AlgorithmIdentifier algId = new AlgorithmIdentifier(X9ObjectIdentifiers.id_ecPublicKey, pKey.getParameters());
                 PrivateKeyInfo privInfo = new PrivateKeyInfo(algId, pKey.getDERObject());
                 SubjectPublicKeyInfo pubInfo = new SubjectPublicKeyInfo(algId, pKey.getPublicKey().getBytes());
+
                 PKCS8EncodedKeySpec privSpec = new PKCS8EncodedKeySpec(privInfo.getEncoded());
                 X509EncodedKeySpec pubSpec = new X509EncodedKeySpec(pubInfo.getEncoded());
+
+
                 KeyFactory fact = KeyFactory.getInstance("ECDSA", provider);
-Object varEAE0B1873A9922293A96783FD42EB56C_1782388867 =                 new KeyPair(
+
+
+                return new KeyPair(
                     fact.generatePublic(pubSpec),
                     fact.generatePrivate(privSpec));
-                varEAE0B1873A9922293A96783FD42EB56C_1782388867.addTaint(taint);
-                return varEAE0B1873A9922293A96783FD42EB56C_1782388867;
-            } //End block
+            }
             catch (IOException e)
             {
-                e.addTaint(taint);
                 throw e;
-            } //End block
+            }
             catch (Exception e)
             {
-                PEMException var7818C22FBFAD5DBAD24C042C426D3FD8_962719357 = new PEMException(
+                throw new PEMException(
                     "problem creating EC private key: " + e.toString(), e);
-                var7818C22FBFAD5DBAD24C042C426D3FD8_962719357.addTaint(taint);
-                throw var7818C22FBFAD5DBAD24C042C426D3FD8_962719357;
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            }
         }
 
         
@@ -391,28 +388,28 @@ Object varEAE0B1873A9922293A96783FD42EB56C_1782388867 =                 new KeyP
 
     
     private class RSAKeyPairParser extends KeyPairParser {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.408 -0500", hash_original_method = "77B6A791758EAFC47A0B2DE5F4E18FED", hash_generated_method = "46B4C2C7A3D7DE2ED540B58D362D44E3")
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.069 -0400", hash_original_method = "77B6A791758EAFC47A0B2DE5F4E18FED", hash_generated_method = "DDA6623EB3D7AC273FEBB7D9CBACF755")
-        public  RSAKeyPairParser(String provider) {
+public RSAKeyPairParser(String provider)
+        {
             super(provider);
-            addTaint(provider.getTaint());
-            // ---------- Original Method ----------
         }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.412 -0500", hash_original_method = "C48B53F279450A4E2A5829BDF7A98326", hash_generated_method = "40F4F96513AEBCB1B6AC6A8FC560295B")
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.070 -0400", hash_original_method = "C48B53F279450A4E2A5829BDF7A98326", hash_generated_method = "55AC1E1EB0702224B0BA9CBCF41409E5")
-        public Object parseObject(PemObject obj) throws IOException {
-            addTaint(obj.getTaint());
-            try 
+public Object parseObject(PemObject obj)
+            throws IOException
+        {
+            try
             {
                 ASN1Sequence seq = readKeyPair(obj);
-                if(seq.size() != 9)                
+
+                if (seq.size() != 9)
                 {
-                    PEMException varD35B5544DCEC0F2768B5D4A85981A218_1388846951 = new PEMException("malformed sequence in RSA private key");
-                    varD35B5544DCEC0F2768B5D4A85981A218_1388846951.addTaint(taint);
-                    throw varD35B5544DCEC0F2768B5D4A85981A218_1388846951;
-                } //End block
+                    throw new PEMException("malformed sequence in RSA private key");
+                }
+
+                //            DERInteger              v = (DERInteger)seq.getObjectAt(0);
                 DERInteger mod = (DERInteger)seq.getObjectAt(1);
                 DERInteger pubExp = (DERInteger)seq.getObjectAt(2);
                 DERInteger privExp = (DERInteger)seq.getObjectAt(3);
@@ -421,6 +418,7 @@ Object varEAE0B1873A9922293A96783FD42EB56C_1782388867 =                 new KeyP
                 DERInteger exp1 = (DERInteger)seq.getObjectAt(6);
                 DERInteger exp2 = (DERInteger)seq.getObjectAt(7);
                 DERInteger crtCoef = (DERInteger)seq.getObjectAt(8);
+
                 RSAPublicKeySpec pubSpec = new RSAPublicKeySpec(
                     mod.getValue(), pubExp.getValue());
                 RSAPrivateCrtKeySpec privSpec = new RSAPrivateCrtKeySpec(
@@ -428,27 +426,24 @@ Object varEAE0B1873A9922293A96783FD42EB56C_1782388867 =                 new KeyP
                     p1.getValue(), p2.getValue(),
                     exp1.getValue(), exp2.getValue(),
                     crtCoef.getValue());
+
+
                 KeyFactory fact = KeyFactory.getInstance("RSA", provider);
-Object varEAE0B1873A9922293A96783FD42EB56C_984859776 =                 new KeyPair(
+
+
+                return new KeyPair(
                     fact.generatePublic(pubSpec),
                     fact.generatePrivate(privSpec));
-                varEAE0B1873A9922293A96783FD42EB56C_984859776.addTaint(taint);
-                return varEAE0B1873A9922293A96783FD42EB56C_984859776;
-            } //End block
+            }
             catch (IOException e)
             {
-                e.addTaint(taint);
                 throw e;
-            } //End block
+            }
             catch (Exception e)
             {
-                PEMException varFA2BBA67F244E3218E96D4A808E1DD95_1482632208 = new PEMException(
+                throw new PEMException(
                     "problem creating RSA private key: " + e.toString(), e);
-                varFA2BBA67F244E3218E96D4A808E1DD95_1482632208.addTaint(taint);
-                throw varFA2BBA67F244E3218E96D4A808E1DD95_1482632208;
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            }
         }
 
         
@@ -457,52 +452,48 @@ Object varEAE0B1873A9922293A96783FD42EB56C_984859776 =                 new KeyPa
 
     
     private class PublicKeyParser implements PemObjectParser {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.070 -0400", hash_original_field = "9E9F3D70BD8C8957627EADA96D967706", hash_generated_field = "0595F09DA04DDB6CAB7E48663879A009")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.416 -0500", hash_original_field = "A5A1D795BB0E6A860404CE54547A2FCF", hash_generated_field = "0595F09DA04DDB6CAB7E48663879A009")
 
         private String provider;
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.419 -0500", hash_original_method = "0B170982AEB3AA2304D2A6B36AB698F1", hash_generated_method = "3315DCC7E4C58C58B29D54F0DE196036")
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.071 -0400", hash_original_method = "0B170982AEB3AA2304D2A6B36AB698F1", hash_generated_method = "6FEA18513C00881A82B8B19C6587D7C1")
-        public  PublicKeyParser(String provider) {
+public PublicKeyParser(String provider)
+        {
             this.provider = provider;
-            // ---------- Original Method ----------
-            //this.provider = provider;
         }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.421 -0500", hash_original_method = "5FFFDE03CF0C93B31D80B463283D2455", hash_generated_method = "CD0022AFE0FF8DA75BD93E11F944523D")
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.071 -0400", hash_original_method = "5FFFDE03CF0C93B31D80B463283D2455", hash_generated_method = "77C800E576CDED1194DFB0B0FBEBA794")
-        public Object parseObject(PemObject obj) throws IOException {
-            addTaint(obj.getTaint());
+public Object parseObject(PemObject obj)
+            throws IOException
+        {
             KeySpec keySpec = new X509EncodedKeySpec(obj.getContent());
             String[] algorithms = {"DSA", "RSA"};
-for(int i = 0;i < algorithms.length;i++)
+            for (int i = 0; i < algorithms.length; i++)
             {
-                try 
+                try
                 {
                     KeyFactory keyFact = KeyFactory.getInstance(algorithms[i], provider);
                     PublicKey pubKey = keyFact.generatePublic(keySpec);
-Object var1AFC1D83658F9274302DC97B89F2B6FD_1589611610 =                     pubKey;
-                    var1AFC1D83658F9274302DC97B89F2B6FD_1589611610.addTaint(taint);
-                    return var1AFC1D83658F9274302DC97B89F2B6FD_1589611610;
-                } //End block
+
+                    return pubKey;
+                }
                 catch (NoSuchAlgorithmException e)
                 {
-                } //End block
+                    // ignore
+                }
                 catch (InvalidKeySpecException e)
                 {
-                } //End block
+                    // ignore
+                }
                 catch (NoSuchProviderException e)
                 {
-                    RuntimeException var06E4C1177140C070A53A854F6BF67B9E_785148214 = new RuntimeException("can't find provider " + provider);
-                    var06E4C1177140C070A53A854F6BF67B9E_785148214.addTaint(taint);
-                    throw var06E4C1177140C070A53A854F6BF67B9E_785148214;
-                } //End block
-            } //End block
-Object var540C13E9E156B687226421B24F2DF178_569905279 =             null;
-            var540C13E9E156B687226421B24F2DF178_569905279.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_569905279;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+                    throw new RuntimeException("can't find provider " + provider);
+                }
+            }
+
+            return null;
         }
 
         
@@ -511,23 +502,23 @@ Object var540C13E9E156B687226421B24F2DF178_569905279 =             null;
 
     
     private class RSAPublicKeyParser implements PemObjectParser {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.071 -0400", hash_original_field = "9E9F3D70BD8C8957627EADA96D967706", hash_generated_field = "0595F09DA04DDB6CAB7E48663879A009")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.426 -0500", hash_original_field = "A5A1D795BB0E6A860404CE54547A2FCF", hash_generated_field = "0595F09DA04DDB6CAB7E48663879A009")
 
         private String provider;
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.429 -0500", hash_original_method = "43B57D7EBB5BEFFE4B105714BFD44A53", hash_generated_method = "F85D61DE0903DABC00822B4CEEDD59CB")
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.072 -0400", hash_original_method = "43B57D7EBB5BEFFE4B105714BFD44A53", hash_generated_method = "84CF85625A64D3F5A7330BBE15B0C603")
-        public  RSAPublicKeyParser(String provider) {
+public RSAPublicKeyParser(String provider)
+        {
             this.provider = provider;
-            // ---------- Original Method ----------
-            //this.provider = provider;
         }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.432 -0500", hash_original_method = "2B7340E6F342A11B50254F4EBFCAD61E", hash_generated_method = "CFDB245EA0A9C0E3EDDA62CEBEC1B15B")
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.072 -0400", hash_original_method = "2B7340E6F342A11B50254F4EBFCAD61E", hash_generated_method = "5143A3D4D2CD6E3AA344D2CE79690CD0")
-        public Object parseObject(PemObject obj) throws IOException {
-            addTaint(obj.getTaint());
-            try 
+public Object parseObject(PemObject obj)
+            throws IOException
+        {
+            try
             {
                 ASN1InputStream ais = new ASN1InputStream(obj.getContent());
                 Object asnObject = ais.readObject();
@@ -536,30 +527,24 @@ Object var540C13E9E156B687226421B24F2DF178_569905279 =             null;
                 RSAPublicKeySpec keySpec = new RSAPublicKeySpec(
                     rsaPubStructure.getModulus(),
                     rsaPubStructure.getPublicExponent());
-                KeyFactory keyFact = KeyFactory.getInstance("RSA", provider);
-Object var94012F6C458E41964D9D2A9EDC7EEEAB_220062019 =                 keyFact.generatePublic(keySpec);
-                var94012F6C458E41964D9D2A9EDC7EEEAB_220062019.addTaint(taint);
-                return var94012F6C458E41964D9D2A9EDC7EEEAB_220062019;
-            } //End block
+
+
+                    KeyFactory keyFact = KeyFactory.getInstance("RSA", provider);
+
+                    return keyFact.generatePublic(keySpec);
+            }
             catch (IOException e)
             {
-                e.addTaint(taint);
                 throw e;
-            } //End block
+            }
             catch (NoSuchProviderException e)
             {
-                IOException var06C07CB5CCA95B2BB388BD250A1D1C79_1368664980 = new IOException("can't find provider " + provider);
-                var06C07CB5CCA95B2BB388BD250A1D1C79_1368664980.addTaint(taint);
-                throw var06C07CB5CCA95B2BB388BD250A1D1C79_1368664980;
-            } //End block
+                throw new IOException("can't find provider " + provider);
+            }
             catch (Exception e)
             {
-                PEMException var3A65DA81297E461EF32141452EA84422_1157766241 = new PEMException("problem extracting key: " + e.toString(), e);
-                var3A65DA81297E461EF32141452EA84422_1157766241.addTaint(taint);
-                throw var3A65DA81297E461EF32141452EA84422_1157766241;
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+                throw new PEMException("problem extracting key: " + e.toString(), e);
+            }
         }
 
         
@@ -568,48 +553,41 @@ Object var94012F6C458E41964D9D2A9EDC7EEEAB_220062019 =                 keyFact.g
 
     
     private class X509CertificateParser implements PemObjectParser {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.072 -0400", hash_original_field = "9E9F3D70BD8C8957627EADA96D967706", hash_generated_field = "0595F09DA04DDB6CAB7E48663879A009")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.436 -0500", hash_original_field = "A5A1D795BB0E6A860404CE54547A2FCF", hash_generated_field = "0595F09DA04DDB6CAB7E48663879A009")
 
         private String provider;
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.439 -0500", hash_original_method = "A94C5E4D766266E16A102DAB21BC091D", hash_generated_method = "027336EF1FCF3AD4ABA53400BBD00565")
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.073 -0400", hash_original_method = "A94C5E4D766266E16A102DAB21BC091D", hash_generated_method = "568E9262F1819DF68669D1C2DA0166D3")
-        public  X509CertificateParser(String provider) {
+public X509CertificateParser(String provider)
+        {
             this.provider = provider;
-            // ---------- Original Method ----------
-            //this.provider = provider;
         }
 
+        /**
+         * Reads in a X509Certificate.
+         *
+         * @return the X509Certificate
+         * @throws IOException if an I/O error occured
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.442 -0500", hash_original_method = "E970ED81058B7D7B34834ED92B99A71B", hash_generated_method = "F807A53F2862992E0847ADBEAEAD50F3")
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.073 -0400", hash_original_method = "E970ED81058B7D7B34834ED92B99A71B", hash_generated_method = "8879BBA40A5296B8F7D90FCE0797AEE2")
-        public Object parseObject(PemObject obj) throws IOException {
-            addTaint(obj.getTaint());
+public Object parseObject(PemObject obj)
+            throws IOException
+        {
             ByteArrayInputStream bIn = new ByteArrayInputStream(obj.getContent());
-            try 
+
+            try
             {
-                CertificateFactory certFact = CertificateFactory.getInstance("X.509", provider);
-Object var3EC6CBB1AD67E157BDCC0ED4E890A225_1433313601 =                 certFact.generateCertificate(bIn);
-                var3EC6CBB1AD67E157BDCC0ED4E890A225_1433313601.addTaint(taint);
-                return var3EC6CBB1AD67E157BDCC0ED4E890A225_1433313601;
-            } //End block
+                CertificateFactory certFact
+                    = CertificateFactory.getInstance("X.509", provider);
+
+                return certFact.generateCertificate(bIn);
+            }
             catch (Exception e)
             {
-                PEMException varA7138674E94C4196DD2BFC018DCB434A_494581697 = new PEMException("problem parsing cert: " + e.toString(), e);
-                varA7138674E94C4196DD2BFC018DCB434A_494581697.addTaint(taint);
-                throw varA7138674E94C4196DD2BFC018DCB434A_494581697;
-            } //End block
-            // ---------- Original Method ----------
-            //ByteArrayInputStream bIn = new ByteArrayInputStream(obj.getContent());
-            //try
-            //{
-                //CertificateFactory certFact
-                    //= CertificateFactory.getInstance("X.509", provider);
-                //return certFact.generateCertificate(bIn);
-            //}
-            //catch (Exception e)
-            //{
-                //throw new PEMException("problem parsing cert: " + e.toString(), e);
-            //}
+                throw new PEMException("problem parsing cert: " + e.toString(), e);
+            }
         }
 
         
@@ -618,48 +596,41 @@ Object var3EC6CBB1AD67E157BDCC0ED4E890A225_1433313601 =                 certFact
 
     
     private class X509CRLParser implements PemObjectParser {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.074 -0400", hash_original_field = "9E9F3D70BD8C8957627EADA96D967706", hash_generated_field = "0595F09DA04DDB6CAB7E48663879A009")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.446 -0500", hash_original_field = "A5A1D795BB0E6A860404CE54547A2FCF", hash_generated_field = "0595F09DA04DDB6CAB7E48663879A009")
 
         private String provider;
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.449 -0500", hash_original_method = "E353A700BDAAD44A8DB485E4FB446A3F", hash_generated_method = "6A07270B8654B9B2FA04A120ECC2DEDE")
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.074 -0400", hash_original_method = "E353A700BDAAD44A8DB485E4FB446A3F", hash_generated_method = "0CF046E0608AEC29C4EF1AD8599D11E1")
-        public  X509CRLParser(String provider) {
+public X509CRLParser(String provider)
+        {
             this.provider = provider;
-            // ---------- Original Method ----------
-            //this.provider = provider;
         }
 
+        /**
+         * Reads in a X509CRL.
+         *
+         * @return the X509Certificate
+         * @throws IOException if an I/O error occured
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.452 -0500", hash_original_method = "FC6031BD5FB1B476FDF70740E2B2704D", hash_generated_method = "4A36EA2E1CF5F8C9F0C14493D39E6A3A")
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.074 -0400", hash_original_method = "FC6031BD5FB1B476FDF70740E2B2704D", hash_generated_method = "3348AC59C4576ECBBD3848BC467CAF4E")
-        public Object parseObject(PemObject obj) throws IOException {
-            addTaint(obj.getTaint());
+public Object parseObject(PemObject obj)
+            throws IOException
+        {
             ByteArrayInputStream bIn = new ByteArrayInputStream(obj.getContent());
-            try 
+
+            try
             {
-                CertificateFactory certFact = CertificateFactory.getInstance("X.509", provider);
-Object var13675BEC202B29D0EFD6471DB06EE52F_802225166 =                 certFact.generateCRL(bIn);
-                var13675BEC202B29D0EFD6471DB06EE52F_802225166.addTaint(taint);
-                return var13675BEC202B29D0EFD6471DB06EE52F_802225166;
-            } //End block
+                CertificateFactory certFact
+                    = CertificateFactory.getInstance("X.509", provider);
+
+                return certFact.generateCRL(bIn);
+            }
             catch (Exception e)
             {
-                PEMException varA7138674E94C4196DD2BFC018DCB434A_300252603 = new PEMException("problem parsing cert: " + e.toString(), e);
-                varA7138674E94C4196DD2BFC018DCB434A_300252603.addTaint(taint);
-                throw varA7138674E94C4196DD2BFC018DCB434A_300252603;
-            } //End block
-            // ---------- Original Method ----------
-            //ByteArrayInputStream bIn = new ByteArrayInputStream(obj.getContent());
-            //try
-            //{
-                //CertificateFactory certFact
-                    //= CertificateFactory.getInstance("X.509", provider);
-                //return certFact.generateCRL(bIn);
-            //}
-            //catch (Exception e)
-            //{
-                //throw new PEMException("problem parsing cert: " + e.toString(), e);
-            //}
+                throw new PEMException("problem parsing cert: " + e.toString(), e);
+            }
         }
 
         
@@ -674,33 +645,25 @@ Object var13675BEC202B29D0EFD6471DB06EE52F_802225166 =                 certFact.
         {
             //Synthesized constructor
         }
-
-
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.075 -0400", hash_original_method = "CDCCA4D777F3AF625C0928D23D03AC75", hash_generated_method = "CCB2E4B2667CF51FCBA2FFA66609034E")
-        public Object parseObject(PemObject obj) throws IOException {
-            addTaint(obj.getTaint());
-            try 
+        /**
+         * Reads in a PKCS10 certification request.
+         *
+         * @return the certificate request.
+         * @throws IOException if an I/O error occured
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.457 -0500", hash_original_method = "CDCCA4D777F3AF625C0928D23D03AC75", hash_generated_method = "B4A77407821EC07A865080265F744865")
+        
+public Object parseObject(PemObject obj)
+            throws IOException
+        {
+            try
             {
-Object varB794FF0D3385F65F500FAC6419C1B46C_642344932 =                 new PKCS10CertificationRequest(obj.getContent());
-                varB794FF0D3385F65F500FAC6419C1B46C_642344932.addTaint(taint);
-                return varB794FF0D3385F65F500FAC6419C1B46C_642344932;
-            } //End block
+                return new PKCS10CertificationRequest(obj.getContent());
+            }
             catch (Exception e)
             {
-                PEMException varA65D34D20F4675BAB153354016AA3ED6_1830547338 = new PEMException("problem parsing certrequest: " + e.toString(), e);
-                varA65D34D20F4675BAB153354016AA3ED6_1830547338.addTaint(taint);
-                throw varA65D34D20F4675BAB153354016AA3ED6_1830547338;
-            } //End block
-            // ---------- Original Method ----------
-            //try
-            //{
-                //return new PKCS10CertificationRequest(obj.getContent());
-            //}
-            //catch (Exception e)
-            //{
-                //throw new PEMException("problem parsing certrequest: " + e.toString(), e);
-            //}
+                throw new PEMException("problem parsing certrequest: " + e.toString(), e);
+            }
         }
 
         
@@ -715,35 +678,28 @@ Object varB794FF0D3385F65F500FAC6419C1B46C_642344932 =                 new PKCS1
         {
             //Synthesized constructor
         }
-
-
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.076 -0400", hash_original_method = "349205E9CFEFFD40FE2D93E7DAF8E867", hash_generated_method = "EC14FD8B25222FC3BC4FDFA740CF0EDA")
-        public Object parseObject(PemObject obj) throws IOException {
-            addTaint(obj.getTaint());
-            try 
+        /**
+         * Reads in a PKCS7 object. This returns a ContentInfo object suitable for use with the CMS
+         * API.
+         *
+         * @return the X509Certificate
+         * @throws IOException if an I/O error occured
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.461 -0500", hash_original_method = "349205E9CFEFFD40FE2D93E7DAF8E867", hash_generated_method = "D8B4D1F60CD4A49FD451D41BAE0D9EB6")
+        
+public Object parseObject(PemObject obj)
+            throws IOException
+        {
+            try
             {
                 ASN1InputStream aIn = new ASN1InputStream(obj.getContent());
-Object varF87DDC234F8DB0B9A0944ABF7DB1E9CC_1670992535 =                 ContentInfo.getInstance(aIn.readObject());
-                varF87DDC234F8DB0B9A0944ABF7DB1E9CC_1670992535.addTaint(taint);
-                return varF87DDC234F8DB0B9A0944ABF7DB1E9CC_1670992535;
-            } //End block
+
+                return ContentInfo.getInstance(aIn.readObject());
+            }
             catch (Exception e)
             {
-                PEMException varF608CD1D605CAD111A2F2B5702096743_16154699 = new PEMException("problem parsing PKCS7 object: " + e.toString(), e);
-                varF608CD1D605CAD111A2F2B5702096743_16154699.addTaint(taint);
-                throw varF608CD1D605CAD111A2F2B5702096743_16154699;
-            } //End block
-            // ---------- Original Method ----------
-            //try
-            //{
-                //ASN1InputStream aIn = new ASN1InputStream(obj.getContent());
-                //return ContentInfo.getInstance(aIn.readObject());
-            //}
-            //catch (Exception e)
-            //{
-                //throw new PEMException("problem parsing PKCS7 object: " + e.toString(), e);
-            //}
+                throw new PEMException("problem parsing PKCS7 object: " + e.toString(), e);
+            }
         }
 
         
@@ -758,16 +714,12 @@ Object varF87DDC234F8DB0B9A0944ABF7DB1E9CC_1670992535 =                 ContentI
         {
             //Synthesized constructor
         }
-
-
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.077 -0400", hash_original_method = "C751E950E815D18D55C97B4D94E88025", hash_generated_method = "61A65A3220887DEA6A05165F0D10C99F")
-        public Object parseObject(PemObject obj) throws IOException {
-            addTaint(obj.getTaint());
-Object var3F85B151310A14F674B5DCDA5ED75C7E_1725220575 =             new X509V2AttributeCertificate(obj.getContent());
-            var3F85B151310A14F674B5DCDA5ED75C7E_1725220575.addTaint(taint);
-            return var3F85B151310A14F674B5DCDA5ED75C7E_1725220575;
-            // ---------- Original Method ----------
-            //return new X509V2AttributeCertificate(obj.getContent());
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.465 -0500", hash_original_method = "C751E950E815D18D55C97B4D94E88025", hash_generated_method = "91DF4FCE1261ABC12FEDDA47562DBD6B")
+        
+public Object parseObject(PemObject obj)
+            throws IOException
+        {
+            return new X509V2AttributeCertificate(obj.getContent());
         }
 
         
@@ -782,55 +734,32 @@ Object var3F85B151310A14F674B5DCDA5ED75C7E_1725220575 =             new X509V2At
         {
             //Synthesized constructor
         }
-
-
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.078 -0400", hash_original_method = "76529322BBA013222CE8C144A2985A3B", hash_generated_method = "762A806346F0C56BF89D91D929111A81")
-        public Object parseObject(PemObject obj) throws IOException {
-            addTaint(obj.getTaint());
-            try 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.471 -0500", hash_original_method = "76529322BBA013222CE8C144A2985A3B", hash_generated_method = "D1DCA3A13E434F18A9E36F1625C33347")
+        
+public Object parseObject(PemObject obj)
+            throws IOException
+        {
+            try
             {
                 DERObjectIdentifier oid = (DERObjectIdentifier)ASN1Object.fromByteArray(obj.getContent());
+
                 Object params = ECNamedCurveTable.getParameterSpec(oid.getId());
-                if(params == null)                
+
+                if (params == null)
                 {
-                    IOException var87F20EEB43CF33054FED1AD546747571_1976733733 = new IOException("object ID not found in EC curve table");
-                    var87F20EEB43CF33054FED1AD546747571_1976733733.addTaint(taint);
-                    throw var87F20EEB43CF33054FED1AD546747571_1976733733;
-                } //End block
-Object varD15CEB6F45B18F7EB233792D020C6115_720597052 =                 params;
-                varD15CEB6F45B18F7EB233792D020C6115_720597052.addTaint(taint);
-                return varD15CEB6F45B18F7EB233792D020C6115_720597052;
-            } //End block
+                    throw new IOException("object ID not found in EC curve table");
+                }
+
+                return params;
+            }
             catch (IOException e)
             {
-                e.addTaint(taint);
                 throw e;
-            } //End block
+            }
             catch (Exception e)
             {
-                PEMException var803B5A55ABF2064F29EB5D223301A05E_673567740 = new PEMException("exception extracting EC named curve: " + e.toString());
-                var803B5A55ABF2064F29EB5D223301A05E_673567740.addTaint(taint);
-                throw var803B5A55ABF2064F29EB5D223301A05E_673567740;
-            } //End block
-            // ---------- Original Method ----------
-            //try
-            //{
-                //DERObjectIdentifier oid = (DERObjectIdentifier)ASN1Object.fromByteArray(obj.getContent());
-                //Object params = ECNamedCurveTable.getParameterSpec(oid.getId());
-                //if (params == null)
-                //{
-                    //throw new IOException("object ID not found in EC curve table");
-                //}
-                //return params;
-            //}
-            //catch (IOException e)
-            //{
-                //throw e;
-            //}
-            //catch (Exception e)
-            //{
-                //throw new PEMException("exception extracting EC named curve: " + e.toString());
-            //}
+                throw new PEMException("exception extracting EC named curve: " + e.toString());
+            }
         }
 
         
@@ -839,111 +768,123 @@ Object varD15CEB6F45B18F7EB233792D020C6115_720597052 =                 params;
 
     
     private class EncryptedPrivateKeyParser implements PemObjectParser {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.078 -0400", hash_original_field = "4EACA8834A05AB66E18F6DFB559CED3E", hash_generated_field = "7250E15B2C636F0751D5B7C0DD47B256")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.475 -0500", hash_original_field = "9BA4AFAAF50A40E3743CD384237FD874", hash_generated_field = "7250E15B2C636F0751D5B7C0DD47B256")
 
         private String symProvider;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.078 -0400", hash_original_field = "CCA8F5193CBB2A08D508AA8F4F55F412", hash_generated_field = "0F549A2B688E81487E68FB3369A216E4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.477 -0500", hash_original_field = "DCA3883F62A97A4D3520EFAE3870D858", hash_generated_field = "0F549A2B688E81487E68FB3369A216E4")
 
         private String asymProvider;
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.481 -0500", hash_original_method = "E8D8629FC61D2C1E41CC63DCCA2261A4", hash_generated_method = "B65A5CE8FFAC4A3ED445D30D40B67CBB")
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.079 -0400", hash_original_method = "E8D8629FC61D2C1E41CC63DCCA2261A4", hash_generated_method = "9E67816548B159C198D0387C48F7FAEF")
-        public  EncryptedPrivateKeyParser(String symProvider, String asymProvider) {
+public EncryptedPrivateKeyParser(String symProvider, String asymProvider)
+        {
             this.symProvider = symProvider;
             this.asymProvider = asymProvider;
-            // ---------- Original Method ----------
-            //this.symProvider = symProvider;
-            //this.asymProvider = asymProvider;
         }
 
+        /**
+         * Reads in a X509CRL.
+         *
+         * @return the X509Certificate
+         * @throws IOException if an I/O error occured
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.485 -0500", hash_original_method = "B158B358DBE9E580DC539CC61ABD0BEA", hash_generated_method = "C47E3BBBC709FD56F3EC8334F23C2758")
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.082 -0400", hash_original_method = "B158B358DBE9E580DC539CC61ABD0BEA", hash_generated_method = "0820EC74CE0885A88FCA24C75D7C94BB")
-        public Object parseObject(PemObject obj) throws IOException {
-            addTaint(obj.getTaint());
-            try 
+public Object parseObject(PemObject obj)
+            throws IOException
+        {
+            try
             {
                 EncryptedPrivateKeyInfo info = EncryptedPrivateKeyInfo.getInstance(ASN1Object.fromByteArray(obj.getContent()));
                 AlgorithmIdentifier algId = info.getEncryptionAlgorithm();
-                if(pFinder == null)                
+
+                if (pFinder == null)
                 {
-                    PEMException var7032D0EE8B06618A4D668D31B1ADCE99_962650425 = new PEMException("no PasswordFinder specified");
-                    var7032D0EE8B06618A4D668D31B1ADCE99_962650425.addTaint(taint);
-                    throw var7032D0EE8B06618A4D668D31B1ADCE99_962650425;
-                } //End block
-                if(PEMUtilities.isPKCS5Scheme2(algId.getAlgorithm()))                
+                    throw new PEMException("no PasswordFinder specified");
+                }
+
+                if (PEMUtilities.isPKCS5Scheme2(algId.getAlgorithm()))
                 {
                     PBES2Parameters params = PBES2Parameters.getInstance(algId.getParameters());
                     KeyDerivationFunc func = params.getKeyDerivationFunc();
                     EncryptionScheme scheme = params.getEncryptionScheme();
                     PBKDF2Params defParams = (PBKDF2Params)func.getParameters();
+
                     int iterationCount = defParams.getIterationCount().intValue();
                     byte[] salt = defParams.getSalt();
+
                     String algorithm = scheme.getAlgorithm().getId();
+
                     SecretKey key = PEMUtilities.generateSecretKeyForPKCS5Scheme2(algorithm, pFinder.getPassword(), salt, iterationCount);
+
                     Cipher cipher = Cipher.getInstance(algorithm, symProvider);
                     AlgorithmParameters algParams = AlgorithmParameters.getInstance(algorithm, symProvider);
+
                     algParams.init(scheme.getParameters().getDERObject().getEncoded());
+
                     cipher.init(Cipher.DECRYPT_MODE, key, algParams);
+
                     PrivateKeyInfo pInfo = PrivateKeyInfo.getInstance(ASN1Object.fromByteArray(cipher.doFinal(info.getEncryptedData())));
                     PKCS8EncodedKeySpec keySpec = new PKCS8EncodedKeySpec(pInfo.getEncoded());
+
                     KeyFactory keyFact = KeyFactory.getInstance(pInfo.getAlgorithmId().getAlgorithm().getId(), asymProvider);
-Object varE1F9B715DB83CAAF9524B7CFB020968C_151698393 =                     keyFact.generatePrivate(keySpec);
-                    varE1F9B715DB83CAAF9524B7CFB020968C_151698393.addTaint(taint);
-                    return varE1F9B715DB83CAAF9524B7CFB020968C_151698393;
-                } //End block
-                else
-                if(PEMUtilities.isPKCS12(algId.getAlgorithm()))                
+
+                    return keyFact.generatePrivate(keySpec);
+                }
+                else if (PEMUtilities.isPKCS12(algId.getAlgorithm()))
                 {
                     PKCS12PBEParams params = PKCS12PBEParams.getInstance(algId.getParameters());
                     String algorithm = algId.getAlgorithm().getId();
                     PBEKeySpec pbeSpec = new PBEKeySpec(pFinder.getPassword());
+
                     SecretKeyFactory secKeyFact = SecretKeyFactory.getInstance(algorithm, symProvider);
                     PBEParameterSpec defParams = new PBEParameterSpec(params.getIV(), params.getIterations().intValue());
+
                     Cipher cipher = Cipher.getInstance(algorithm, symProvider);
+
                     cipher.init(Cipher.DECRYPT_MODE, secKeyFact.generateSecret(pbeSpec), defParams);
+
                     PrivateKeyInfo pInfo = PrivateKeyInfo.getInstance(ASN1Object.fromByteArray(cipher.doFinal(info.getEncryptedData())));
                     PKCS8EncodedKeySpec keySpec = new PKCS8EncodedKeySpec(pInfo.getEncoded());
+
                     KeyFactory keyFact = KeyFactory.getInstance(pInfo.getAlgorithmId().getAlgorithm().getId(), asymProvider);
-Object varE1F9B715DB83CAAF9524B7CFB020968C_1269220278 =                     keyFact.generatePrivate(keySpec);
-                    varE1F9B715DB83CAAF9524B7CFB020968C_1269220278.addTaint(taint);
-                    return varE1F9B715DB83CAAF9524B7CFB020968C_1269220278;
-                } //End block
-                else
-                if(PEMUtilities.isPKCS5Scheme1(algId.getAlgorithm()))                
+
+                    return keyFact.generatePrivate(keySpec);
+                }
+                else if (PEMUtilities.isPKCS5Scheme1(algId.getAlgorithm()))
                 {
                     PBEParameter params = PBEParameter.getInstance(algId.getParameters());
                     String algorithm = algId.getAlgorithm().getId();
                     PBEKeySpec pbeSpec = new PBEKeySpec(pFinder.getPassword());
+
                     SecretKeyFactory secKeyFact = SecretKeyFactory.getInstance(algorithm, symProvider);
                     PBEParameterSpec defParams = new PBEParameterSpec(params.getSalt(), params.getIterationCount().intValue());
+
                     Cipher cipher = Cipher.getInstance(algorithm, symProvider);
+
                     cipher.init(Cipher.DECRYPT_MODE, secKeyFact.generateSecret(pbeSpec), defParams);
+
                     PrivateKeyInfo pInfo = PrivateKeyInfo.getInstance(ASN1Object.fromByteArray(cipher.doFinal(info.getEncryptedData())));
                     PKCS8EncodedKeySpec keySpec = new PKCS8EncodedKeySpec(pInfo.getEncoded());
+
                     KeyFactory keyFact = KeyFactory.getInstance(pInfo.getAlgorithmId().getAlgorithm().getId(), asymProvider);
-Object varE1F9B715DB83CAAF9524B7CFB020968C_108232674 =                     keyFact.generatePrivate(keySpec);
-                    varE1F9B715DB83CAAF9524B7CFB020968C_108232674.addTaint(taint);
-                    return varE1F9B715DB83CAAF9524B7CFB020968C_108232674;
-                } //End block
+
+                    return keyFact.generatePrivate(keySpec);
+                }
                 else
                 {
-                    PEMException var4685040ECFE3A1A694DDE8DF71645E3D_448902844 = new PEMException("Unknown algorithm: " + algId.getAlgorithm());
-                    var4685040ECFE3A1A694DDE8DF71645E3D_448902844.addTaint(taint);
-                    throw var4685040ECFE3A1A694DDE8DF71645E3D_448902844;
-                } //End block
-            } //End block
+                    throw new PEMException("Unknown algorithm: " + algId.getAlgorithm());
+                }
+            }
             catch (IOException e)
             {
-                e.addTaint(taint);
                 throw e;
-            } //End block
+            }
             catch (Exception e)
             {
-                PEMException var7994463B2C9D40477BDBCFCE7AC1BFB9_14747951 = new PEMException("problem parsing ENCRYPTED PRIVATE KEY: " + e.toString(), e);
-                var7994463B2C9D40477BDBCFCE7AC1BFB9_14747951.addTaint(taint);
-                throw var7994463B2C9D40477BDBCFCE7AC1BFB9_14747951;
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+                throw new PEMException("problem parsing ENCRYPTED PRIVATE KEY: " + e.toString(), e);
+            }
         }
 
         
@@ -952,49 +893,35 @@ Object varE1F9B715DB83CAAF9524B7CFB020968C_108232674 =                     keyFa
 
     
     private class PrivateKeyParser implements PemObjectParser {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.083 -0400", hash_original_field = "9E9F3D70BD8C8957627EADA96D967706", hash_generated_field = "0595F09DA04DDB6CAB7E48663879A009")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.491 -0500", hash_original_field = "A5A1D795BB0E6A860404CE54547A2FCF", hash_generated_field = "0595F09DA04DDB6CAB7E48663879A009")
 
         private String provider;
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.494 -0500", hash_original_method = "0877761703B26434F32E47C53A29AE74", hash_generated_method = "802A668420942984C1CC115E54B34B68")
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.084 -0400", hash_original_method = "0877761703B26434F32E47C53A29AE74", hash_generated_method = "15BF9532DC3933BF57B695673E62B835")
-        public  PrivateKeyParser(String provider) {
+public PrivateKeyParser(String provider)
+        {
             this.provider = provider;
-            // ---------- Original Method ----------
-            //this.provider = provider;
         }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:33.497 -0500", hash_original_method = "2553B1C8B63939D2139C3EAA36C566E7", hash_generated_method = "E940A6EEFA95A38A762E20D5E2F53DC9")
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.085 -0400", hash_original_method = "2553B1C8B63939D2139C3EAA36C566E7", hash_generated_method = "B4061E09CB146B2320CD6A721192A8E0")
-        public Object parseObject(PemObject obj) throws IOException {
-            addTaint(obj.getTaint());
-            try 
+public Object parseObject(PemObject obj)
+            throws IOException
+        {
+            try
             {
                 PrivateKeyInfo info = PrivateKeyInfo.getInstance(ASN1Object.fromByteArray(obj.getContent()));
                 PKCS8EncodedKeySpec keySpec = new PKCS8EncodedKeySpec(obj.getContent());
+
                 KeyFactory keyFact = KeyFactory.getInstance(info.getAlgorithmId().getAlgorithm().getId(), provider);
-Object varE1F9B715DB83CAAF9524B7CFB020968C_506524753 =                 keyFact.generatePrivate(keySpec);
-                varE1F9B715DB83CAAF9524B7CFB020968C_506524753.addTaint(taint);
-                return varE1F9B715DB83CAAF9524B7CFB020968C_506524753;
-            } //End block
+
+                return keyFact.generatePrivate(keySpec);
+            }
             catch (Exception e)
             {
-                PEMException var4A1EFFF69C98A3BD87AA816E3B244482_1385350636 = new PEMException("problem parsing PRIVATE KEY: " + e.toString(), e);
-                var4A1EFFF69C98A3BD87AA816E3B244482_1385350636.addTaint(taint);
-                throw var4A1EFFF69C98A3BD87AA816E3B244482_1385350636;
-            } //End block
-            // ---------- Original Method ----------
-            //try
-            //{
-                //PrivateKeyInfo info = PrivateKeyInfo.getInstance(ASN1Object.fromByteArray(obj.getContent()));
-                //PKCS8EncodedKeySpec keySpec = new PKCS8EncodedKeySpec(obj.getContent());
-                //KeyFactory keyFact = KeyFactory.getInstance(info.getAlgorithmId().getAlgorithm().getId(), provider);
-                //return keyFact.generatePrivate(keySpec);
-            //}
-            //catch (Exception e)
-            //{
-                //throw new PEMException("problem parsing PRIVATE KEY: " + e.toString(), e);
-            //}
+                throw new PEMException("problem parsing PRIVATE KEY: " + e.toString(), e);
+            }
         }
 
         

@@ -1,6 +1,8 @@
 package java.math;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Arrays;
 
@@ -8,21 +10,26 @@ import java.util.Arrays;
 
 
 class Primality {
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.226 -0400", hash_original_method = "3E56E5809677C3FC79921E23C4FBCC34", hash_generated_method = "BF7E1FB696DD619FEE28860391904779")
-    private  Primality() {
-        // ---------- Original Method ----------
-    }
 
+    /**
+     * It uses the sieve of Eratosthenes to discard several composite numbers in
+     * some appropriate range (at the moment {@code [this, this + 1024]}). After
+     * this process it applies the Miller-Rabin test to the numbers that were
+     * not discarded in the sieve.
+     *
+     * @see BigInteger#nextProbablePrime()
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:34.698 -0500", hash_original_method = "03EAD52EF6C4F384E7E8361BBED5D4F8", hash_generated_method = "1C5C9667967D12828A8772423BE465C9")
     
-    @DSModeled(DSC.SAFE)
-    static BigInteger nextProbablePrime(BigInteger n) {
+static BigInteger nextProbablePrime(BigInteger n) {
+        // PRE: n >= 0
         int i, j;
-        int gapSize = 1024;
+//        int certainty;
+        int gapSize = 1024; // for searching of the next probable prime number
         int[] modules = new int[primes.length];
         boolean isDivisible[] = new boolean[gapSize];
         BigInt ni = n.getBigInt();
+        // If n < "last prime of table" searches next prime in the table
         if (ni.bitLength() <= 10) {
             int l = (int)ni.longInt();
             if (l < primes[primes.length - 1]) {
@@ -30,14 +37,28 @@ class Primality {
                 return BIprimes[i];
             }
         }
+
         BigInt startPoint = ni.copy();
         BigInt probPrime = new BigInt();
+
+        // Fix startPoint to "next odd number":
         startPoint.addPositiveInt(BigInt.remainderByPositiveInt(ni, 2) + 1);
+
+//        // To set the improved certainty of Miller-Rabin
+//        j = startPoint.bitLength();
+//        for (certainty = 2; j < BITS[certainty]; certainty++) {
+//            ;
+//        }
+
+        // To calculate modules: N mod p1, N mod p2, ... for first primes.
         for (i = 0; i < primes.length; i++) {
             modules[i] = BigInt.remainderByPositiveInt(startPoint, primes[i]) - gapSize;
         }
         while (true) {
+            // At this point, all numbers in the gap are initialized as
+            // probably primes
             Arrays.fill(isDivisible, false);
+            // To discard multiples of first primes
             for (i = 0; i < primes.length; i++) {
                 modules[i] = (modules[i] + gapSize) % primes[i];
                 j = (modules[i] == 0) ? 0 : (primes[i] - modules[i]);
@@ -45,6 +66,8 @@ class Primality {
                     isDivisible[j] = true;
                 }
             }
+            // To execute Miller-Rabin for non-divisible numbers by all first
+            // primes
             for (j = 0; j < gapSize; j++) {
                 if (!isDivisible[j]) {
                     probPrime.putCopy(startPoint);
@@ -57,9 +80,7 @@ class Primality {
             startPoint.addPositiveInt(gapSize);
         }
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.229 -0400", hash_original_field = "A30A479233D903EB994AD7FFD4E8F32C", hash_generated_field = "C83F4D8599BBB0CEE3395F15A4E154B6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:34.692 -0500", hash_original_field = "C3DA734B26E9CB4D731987BCAE74BCEA", hash_generated_field = "C83F4D8599BBB0CEE3395F15A4E154B6")
 
     private static final int[] primes = { 2, 3, 5, 7, 11, 13, 17, 19, 23, 29,
             31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101,
@@ -75,9 +96,14 @@ class Primality {
             827, 829, 839, 853, 857, 859, 863, 877, 881, 883, 887, 907, 911,
             919, 929, 937, 941, 947, 953, 967, 971, 977, 983, 991, 997, 1009,
             1013, 1019, 1021 };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.229 -0400", hash_original_field = "6B29DE19A7248E70046FAC8FB4519EC0", hash_generated_field = "694815BADD9AFBE18A40D6B05D39F7EA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:34.695 -0500", hash_original_field = "E4B2B472C21ECCC0FAF6F73441D5C348", hash_generated_field = "694815BADD9AFBE18A40D6B05D39F7EA")
 
     private static final BigInteger BIprimes[] = new BigInteger[primes.length];
+
+    /** Just to denote that this class can't be instantiated. */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:34.688 -0500", hash_original_method = "3E56E5809677C3FC79921E23C4FBCC34", hash_generated_method = "3C90B9653382FF7F7553ECE11AC58DB1")
+    
+private Primality() {}
     static {
         for (int i = 0; i < primes.length; i++) {
             BIprimes[i] = BigInteger.valueOf(primes[i]);

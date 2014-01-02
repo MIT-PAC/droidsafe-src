@@ -1,6 +1,8 @@
 package android.support.v4.app;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.content.Context;
 import android.os.Parcelable;
@@ -13,17 +15,9 @@ import android.widget.FrameLayout;
 
 
 class NoSaveStateFrameLayout extends FrameLayout {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:37.041 -0500", hash_original_method = "45D681996876077CE8F6D1AB53B953F4", hash_generated_method = "BDD516827EA173934CE50CA60ABABD79")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.699 -0400", hash_original_method = "3889CE5B7CA4679ACCB4D7B5EA6FB087", hash_generated_method = "D83F9BEABB74D6FEF2671DFB68B81652")
-    public  NoSaveStateFrameLayout(Context context) {
-        super(context);
-        addTaint(context.getTaint());
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    static ViewGroup wrap(View child) {
+static ViewGroup wrap(View child) {
         NoSaveStateFrameLayout wrapper = new NoSaveStateFrameLayout(child.getContext());
         ViewGroup.LayoutParams childParams = child.getLayoutParams();
         if (childParams != null) {
@@ -35,26 +29,31 @@ class NoSaveStateFrameLayout extends FrameLayout {
         wrapper.addView(child);
         return wrapper;
     }
-
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.700 -0400", hash_original_method = "0F3E63187E008FDE1692E75AF7E8484F", hash_generated_method = "DCFE5437586B2B72B2033C20A5FC2846")
-    @Override
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:37.045 -0500", hash_original_method = "3889CE5B7CA4679ACCB4D7B5EA6FB087", hash_generated_method = "DF955BECD4F08BC950719D74FE4A3E8B")
+    
+public NoSaveStateFrameLayout(Context context) {
+        super(context);
+    }
+    
+    /**
+     * Override to prevent freezing of any child views.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:37.047 -0500", hash_original_method = "0F3E63187E008FDE1692E75AF7E8484F", hash_generated_method = "1BDE1F94F0E2664277F773022732A7F6")
+    
+@Override
     protected void dispatchSaveInstanceState(SparseArray<Parcelable> container) {
-        addTaint(container.getTaint());
         dispatchFreezeSelfOnly(container);
-        // ---------- Original Method ----------
-        //dispatchFreezeSelfOnly(container);
     }
 
+    /**
+     * Override to prevent thawing of any child views.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:37.049 -0500", hash_original_method = "3B9D7DC916535DA1F64238687579C1A4", hash_generated_method = "C22EB0BEA05DE70A2CBD1DE4B70D044B")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.701 -0400", hash_original_method = "3B9D7DC916535DA1F64238687579C1A4", hash_generated_method = "049C55C9929D94261AAC15AFD146322A")
-    @Override
+@Override
     protected void dispatchRestoreInstanceState(SparseArray<Parcelable> container) {
-        addTaint(container.getTaint());
         dispatchThawSelfOnly(container);
-        // ---------- Original Method ----------
-        //dispatchThawSelfOnly(container);
     }
 
     

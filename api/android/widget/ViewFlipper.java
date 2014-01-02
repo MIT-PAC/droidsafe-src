@@ -1,6 +1,8 @@
 package android.widget;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -17,107 +19,89 @@ import android.util.Log;
 
 
 public class ViewFlipper extends ViewAnimator {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.240 -0400", hash_original_field = "AB885A31780121055D1BDD1B69C143B0", hash_generated_field = "EF72A9C12698542BA68675F47801C510")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.662 -0500", hash_original_field = "D3F755D7E6A94238E098AB303C90B35E", hash_generated_field = "CC4DF3149FCDDB900A4695D39D4D2780")
+
+    private static final String TAG = "ViewFlipper";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.664 -0500", hash_original_field = "D4ECFFBD11965A74CC5370FCF966AD54", hash_generated_field = "7A4FFF4799751F839BC14FD728217C88")
+
+    private static final boolean LOGD = false;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.667 -0500", hash_original_field = "981A5CEE819E2D7AB9C46995D4A7FFC1", hash_generated_field = "C50E8EF39D157581F3ADA3B799342BBB")
+
+
+    private static final int DEFAULT_INTERVAL = 3000;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.669 -0500", hash_original_field = "45FA4E5265FF50261C110F724A036FFE", hash_generated_field = "EF72A9C12698542BA68675F47801C510")
+
 
     private int mFlipInterval = DEFAULT_INTERVAL;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.240 -0400", hash_original_field = "9D1D7F0887BD27A8D16A59D275316158", hash_generated_field = "9C643D61158922DF6FDCA155A2D64171")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.671 -0500", hash_original_field = "501E8B454A780DB4BF3497D9A7232702", hash_generated_field = "9C643D61158922DF6FDCA155A2D64171")
 
     private boolean mAutoStart = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.240 -0400", hash_original_field = "62A2DC3D8C5F735AB3A7DFD6D4A40243", hash_generated_field = "BF66F685C8DAD91C6D305A2AD45B0022")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.674 -0500", hash_original_field = "B7399D00B226DB1EFC02A9A44C6E372C", hash_generated_field = "BF66F685C8DAD91C6D305A2AD45B0022")
+
 
     private boolean mRunning = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.240 -0400", hash_original_field = "465FED330AF0BFBBF47872297AAF1201", hash_generated_field = "649FDFAC63847330ACCF3CE36C09777A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.676 -0500", hash_original_field = "5D947BF952E8653BAADEA609028A78F9", hash_generated_field = "649FDFAC63847330ACCF3CE36C09777A")
 
     private boolean mStarted = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.240 -0400", hash_original_field = "95D7DEECF5DCCC2A9C275828FA450168", hash_generated_field = "95F7E58D2B9BB4F0C1C65AF576B6388E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.678 -0500", hash_original_field = "DEB26416BF26A48B3D4535794C8EE816", hash_generated_field = "95F7E58D2B9BB4F0C1C65AF576B6388E")
 
     private boolean mVisible = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.240 -0400", hash_original_field = "14A8C83C7F1FF831F0A13A17DF5AB6A7", hash_generated_field = "22924785424C7732F326AFFE2483DB6D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.680 -0500", hash_original_field = "C2E7E9865FC949B188CDC2778A3CDB49", hash_generated_field = "22924785424C7732F326AFFE2483DB6D")
 
     private boolean mUserPresent = true;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.242 -0400", hash_original_field = "222E91439CEAD2DB1901D5AA0C5663AF", hash_generated_field = "8570C3C2B40A1C3E01F5D2029A49DFD5")
 
-    private final BroadcastReceiver mReceiver = new BroadcastReceiver() {        
-        @DSModeled(DSC.SPEC)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.242 -0400", hash_original_method = "42FB9B1799748BE0453D66D785C793D7", hash_generated_method = "7CF62093314DB968F107DD7907FD4417")
-        @Override
+    private final BroadcastReceiver mReceiver = new BroadcastReceiver() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.688 -0500", hash_original_method = "42FB9B1799748BE0453D66D785C793D7", hash_generated_method = "23D1606681C6D12B93F6FE5A1B1DE135")
+        
+@Override
         public void onReceive(Context context, Intent intent) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
-            addTaint(intent.getTaint());
-            addTaint(context.getTaint());
             final String action = intent.getAction();
-            if(Intent.ACTION_SCREEN_OFF.equals(action))            
-            {
+            if (Intent.ACTION_SCREEN_OFF.equals(action)) {
                 mUserPresent = false;
                 updateRunning();
-            } //End block
-            else
-            if(Intent.ACTION_USER_PRESENT.equals(action))            
-            {
+            } else if (Intent.ACTION_USER_PRESENT.equals(action)) {
                 mUserPresent = true;
                 updateRunning(false);
-            } //End block
-            // ---------- Original Method ----------
-            //final String action = intent.getAction();
-            //if (Intent.ACTION_SCREEN_OFF.equals(action)) {
-                //mUserPresent = false;
-                //updateRunning();
-            //} else if (Intent.ACTION_USER_PRESENT.equals(action)) {
-                //mUserPresent = true;
-                //updateRunning(false);
-            //}
+            }
         }
 
         
 };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.242 -0400", hash_original_field = "E862543A04A58E4E58FB8E81927C11E8", hash_generated_field = "1535E31D28A65629AD405F9453386A42")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.718 -0500", hash_original_field = "BA0637B23BB6A08212BC08AF87AA314C", hash_generated_field = "1535E31D28A65629AD405F9453386A42")
+
 
     private final int FLIP_MSG = 1;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.243 -0400", hash_original_field = "02869CDAF60D7BAD10F76E3EF9313FAC", hash_generated_field = "1FE43EAD86528C4571343BC4A0A3488D")
 
-    private final Handler mHandler = new Handler() {        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.243 -0400", hash_original_method = "9F9F367503C2FAC32268BB267EBDCEAD", hash_generated_method = "8005712ED1DB8AF5F18C577789BDFE94")
-        @Override
+    private final Handler mHandler = new Handler() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.721 -0500", hash_original_method = "9F9F367503C2FAC32268BB267EBDCEAD", hash_generated_method = "CD26E5BE6357ABE9D2346B7AF9741B36")
+        
+@Override
         public void handleMessage(Message msg) {
-            addTaint(msg.getTaint());
-            if(msg.what == FLIP_MSG)            
-            {
-                if(mRunning)                
-                {
+            if (msg.what == FLIP_MSG) {
+                if (mRunning) {
                     showNext();
                     msg = obtainMessage(FLIP_MSG);
                     sendMessageDelayed(msg, mFlipInterval);
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            //if (msg.what == FLIP_MSG) {
-                //if (mRunning) {
-                    //showNext();
-                    //msg = obtainMessage(FLIP_MSG);
-                    //sendMessageDelayed(msg, mFlipInterval);
-                //}
-            //}
+                }
+            }
         }
 
         
 };
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.683 -0500", hash_original_method = "A199B0DFDE8F43BC0101C713FC646DAD", hash_generated_method = "F1434FE2DD7F51D20188988B1483EF43")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.244 -0400", hash_original_method = "A199B0DFDE8F43BC0101C713FC646DAD", hash_generated_method = "BDA2F2DCBBDA64CD6219797FF6339D94")
-    public  ViewFlipper(Context context) {
+public ViewFlipper(Context context) {
         super(context);
-        addTaint(context.getTaint());
-        // ---------- Original Method ----------
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.685 -0500", hash_original_method = "723832B306031BCDBE4BDCBA5DD42292", hash_generated_method = "EB20B59F8C96A8F49C048C0431FD3F80")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.245 -0400", hash_original_method = "723832B306031BCDBE4BDCBA5DD42292", hash_generated_method = "8490F8A313C8F8C2154537D3C3B5AABE")
-    public  ViewFlipper(Context context, AttributeSet attrs) {
+public ViewFlipper(Context context, AttributeSet attrs) {
         super(context, attrs);
-        addTaint(attrs.getTaint());
-        addTaint(context.getTaint());
+
         TypedArray a = context.obtainStyledAttributes(attrs,
                 com.android.internal.R.styleable.ViewFlipper);
         mFlipInterval = a.getInt(
@@ -125,198 +109,144 @@ public class ViewFlipper extends ViewAnimator {
         mAutoStart = a.getBoolean(
                 com.android.internal.R.styleable.ViewFlipper_autoStart, false);
         a.recycle();
-        // ---------- Original Method ----------
-        //TypedArray a = context.obtainStyledAttributes(attrs,
-                //com.android.internal.R.styleable.ViewFlipper);
-        //mFlipInterval = a.getInt(
-                //com.android.internal.R.styleable.ViewFlipper_flipInterval, DEFAULT_INTERVAL);
-        //mAutoStart = a.getBoolean(
-                //com.android.internal.R.styleable.ViewFlipper_autoStart, false);
-        //a.recycle();
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.693 -0500", hash_original_method = "3C103BE4B999027DCB77DEB70D76599C", hash_generated_method = "FCE5AF733C5043F7461CE249BD2606AB")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.246 -0400", hash_original_method = "3C103BE4B999027DCB77DEB70D76599C", hash_generated_method = "56ACD26DC3FECE8BECD1A84A8FD6652E")
-    @Override
+@Override
     protected void onAttachedToWindow() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
         super.onAttachedToWindow();
+
+        // Listen for broadcasts related to user-presence
         final IntentFilter filter = new IntentFilter();
         filter.addAction(Intent.ACTION_SCREEN_OFF);
         filter.addAction(Intent.ACTION_USER_PRESENT);
         getContext().registerReceiver(mReceiver, filter);
-        if(mAutoStart)        
-        {
+
+        if (mAutoStart) {
+            // Automatically start when requested
             startFlipping();
-        } //End block
-        // ---------- Original Method ----------
-        //super.onAttachedToWindow();
-        //final IntentFilter filter = new IntentFilter();
-        //filter.addAction(Intent.ACTION_SCREEN_OFF);
-        //filter.addAction(Intent.ACTION_USER_PRESENT);
-        //getContext().registerReceiver(mReceiver, filter);
-        //if (mAutoStart) {
-            //startFlipping();
-        //}
+        }
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.696 -0500", hash_original_method = "5655570C437E83231F73A4B16A590D9C", hash_generated_method = "D0F3975A24544A8640CD91BD25CE7B13")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.246 -0400", hash_original_method = "5655570C437E83231F73A4B16A590D9C", hash_generated_method = "1626FB59EA0EC65657B41C811C1E9B62")
-    @Override
+@Override
     protected void onDetachedFromWindow() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
         super.onDetachedFromWindow();
         mVisible = false;
+
         getContext().unregisterReceiver(mReceiver);
         updateRunning();
-        // ---------- Original Method ----------
-        //super.onDetachedFromWindow();
-        //mVisible = false;
-        //getContext().unregisterReceiver(mReceiver);
-        //updateRunning();
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.698 -0500", hash_original_method = "B937BC0D8F057FC72AF74494BA3F6E3F", hash_generated_method = "7055D7B4883B6AB16F1FE2A76FC4240A")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.247 -0400", hash_original_method = "B937BC0D8F057FC72AF74494BA3F6E3F", hash_generated_method = "B204E105A37E32714A21261055CC4D32")
-    @Override
+@Override
     protected void onWindowVisibilityChanged(int visibility) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
         super.onWindowVisibilityChanged(visibility);
         mVisible = visibility == VISIBLE;
         updateRunning(false);
-        // ---------- Original Method ----------
-        //super.onWindowVisibilityChanged(visibility);
-        //mVisible = visibility == VISIBLE;
-        //updateRunning(false);
     }
 
+    /**
+     * How long to wait before flipping to the next view
+     *
+     * @param milliseconds
+     *            time in milliseconds
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.700 -0500", hash_original_method = "FE23BFE06BF9BB8E822638D81DB338AA", hash_generated_method = "3BBF18AB973F26F75921817E02CEF872")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.248 -0400", hash_original_method = "FE23BFE06BF9BB8E822638D81DB338AA", hash_generated_method = "188583DA2B863DCE0CA05C073A880E59")
-    @android.view.RemotableViewMethod
+@android.view.RemotableViewMethod
     public void setFlipInterval(int milliseconds) {
         mFlipInterval = milliseconds;
-        // ---------- Original Method ----------
-        //mFlipInterval = milliseconds;
     }
 
+    /**
+     * Start a timer to cycle through child views
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.702 -0500", hash_original_method = "5822F81CA7F02DBEFB349FF1928E2AAF", hash_generated_method = "39C61B259BA1261CD6245AE66BFEBE04")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.249 -0400", hash_original_method = "5822F81CA7F02DBEFB349FF1928E2AAF", hash_generated_method = "DB03EDEB5215E2582BB6D4307C3D23A6")
-    public void startFlipping() {
+public void startFlipping() {
         mStarted = true;
         updateRunning();
-        // ---------- Original Method ----------
-        //mStarted = true;
-        //updateRunning();
     }
 
+    /**
+     * No more flips
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.704 -0500", hash_original_method = "B53A11C7EF817F793ACB0CF78B800084", hash_generated_method = "8E3EB162110C30BEE66BD38213722D7C")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.249 -0400", hash_original_method = "B53A11C7EF817F793ACB0CF78B800084", hash_generated_method = "01BA27082DF02AD7E00FD433569A0C08")
-    public void stopFlipping() {
+public void stopFlipping() {
         mStarted = false;
         updateRunning();
-        // ---------- Original Method ----------
-        //mStarted = false;
-        //updateRunning();
     }
 
+    /**
+     * Internal method to start or stop dispatching flip {@link Message} based
+     * on {@link #mRunning} and {@link #mVisible} state.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.707 -0500", hash_original_method = "01EB120A60E7A5C93ADD152BE225A9A1", hash_generated_method = "EDCA1C3925D67C2FE8986A6375531C5A")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.249 -0400", hash_original_method = "01EB120A60E7A5C93ADD152BE225A9A1", hash_generated_method = "95DAE41B7EF1D4EE1E159B09B77728E8")
-    private void updateRunning() {
+private void updateRunning() {
         updateRunning(true);
-        // ---------- Original Method ----------
-        //updateRunning(true);
     }
 
+    /**
+     * Internal method to start or stop dispatching flip {@link Message} based
+     * on {@link #mRunning} and {@link #mVisible} state.
+     *
+     * @param flipNow Determines whether or not to execute the animation now, in
+     *            addition to queuing future flips. If omitted, defaults to
+     *            true.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.710 -0500", hash_original_method = "FEBFE82757020B844DFA7E8A1658E9A7", hash_generated_method = "B818E36C169E4F3ABFEA4B684A66854A")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.250 -0400", hash_original_method = "FEBFE82757020B844DFA7E8A1658E9A7", hash_generated_method = "AFC07426A2A5ED4EB088A9BC40257CB4")
-    private void updateRunning(boolean flipNow) {
-        addTaint(flipNow);
+private void updateRunning(boolean flipNow) {
         boolean running = mVisible && mStarted && mUserPresent;
-        if(running != mRunning)        
-        {
-            if(running)            
-            {
+        if (running != mRunning) {
+            if (running) {
                 showOnly(mWhichChild, flipNow);
                 Message msg = mHandler.obtainMessage(FLIP_MSG);
                 mHandler.sendMessageDelayed(msg, mFlipInterval);
-            } //End block
-            else
-            {
+            } else {
                 mHandler.removeMessages(FLIP_MSG);
-            } //End block
+            }
             mRunning = running;
-        } //End block
-        if(LOGD)        
-        {
+        }
+        if (LOGD) {
             Log.d(TAG, "updateRunning() mVisible=" + mVisible + ", mStarted=" + mStarted
                     + ", mUserPresent=" + mUserPresent + ", mRunning=" + mRunning);
-        } //End block
-        // ---------- Original Method ----------
-        //boolean running = mVisible && mStarted && mUserPresent;
-        //if (running != mRunning) {
-            //if (running) {
-                //showOnly(mWhichChild, flipNow);
-                //Message msg = mHandler.obtainMessage(FLIP_MSG);
-                //mHandler.sendMessageDelayed(msg, mFlipInterval);
-            //} else {
-                //mHandler.removeMessages(FLIP_MSG);
-            //}
-            //mRunning = running;
-        //}
-        //if (LOGD) {
-            //Log.d(TAG, "updateRunning() mVisible=" + mVisible + ", mStarted=" + mStarted
-                    //+ ", mUserPresent=" + mUserPresent + ", mRunning=" + mRunning);
-        //}
+        }
     }
 
+    /**
+     * Returns true if the child views are flipping.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.712 -0500", hash_original_method = "DA5270F6FAC446A7F1E0A4F7A45712B2", hash_generated_method = "CC45C819AC99492B223D0D8A3E72BB57")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.252 -0400", hash_original_method = "DA5270F6FAC446A7F1E0A4F7A45712B2", hash_generated_method = "88A03475FA4719DDABBC7F82E234D77D")
-    public boolean isFlipping() {
-        boolean var7103AE9E2C0D3B676C4EDC763D39DFCF_163316129 = (mStarted);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1564229102 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1564229102;
-        // ---------- Original Method ----------
-        //return mStarted;
+public boolean isFlipping() {
+        return mStarted;
     }
 
+    /**
+     * Set if this view automatically calls {@link #startFlipping()} when it
+     * becomes attached to a window.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.714 -0500", hash_original_method = "718522AE4DB02C55EF285DE2125FBBC5", hash_generated_method = "469968AC2CEC14C20335FC3120ADE3F0")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.252 -0400", hash_original_method = "718522AE4DB02C55EF285DE2125FBBC5", hash_generated_method = "08DBE650A810C02E22CB6F0FC46C6DBE")
-    public void setAutoStart(boolean autoStart) {
+public void setAutoStart(boolean autoStart) {
         mAutoStart = autoStart;
-        // ---------- Original Method ----------
-        //mAutoStart = autoStart;
     }
 
+    /**
+     * Returns true if this view automatically calls {@link #startFlipping()}
+     * when it becomes attached to a window.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.716 -0500", hash_original_method = "0E315A42E6B247C6D130CCD7ADAB21A6", hash_generated_method = "CAA954AB0CA6C52101704248348CA558")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.253 -0400", hash_original_method = "0E315A42E6B247C6D130CCD7ADAB21A6", hash_generated_method = "BCAE6591DA06F462D4F7907924F8D19E")
-    public boolean isAutoStart() {
-        boolean varDCC34F800E29708C501869F2DC7EB795_295123079 = (mAutoStart);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_924120088 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_924120088;
-        // ---------- Original Method ----------
-        //return mAutoStart;
+public boolean isAutoStart() {
+        return mAutoStart;
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.253 -0400", hash_original_field = "BC8852EEA50B9EE6865A85E4B21B4864", hash_generated_field = "CC4DF3149FCDDB900A4695D39D4D2780")
-
-    private static final String TAG = "ViewFlipper";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.253 -0400", hash_original_field = "928751A5F820D0540184847C19228178", hash_generated_field = "7A4FFF4799751F839BC14FD728217C88")
-
-    private static final boolean LOGD = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.253 -0400", hash_original_field = "D5606AB479F311FCCCCE6432412DF379", hash_generated_field = "C50E8EF39D157581F3ADA3B799342BBB")
-
-    private static final int DEFAULT_INTERVAL = 3000;
 }
 

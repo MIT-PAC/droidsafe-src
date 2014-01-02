@@ -1,6 +1,8 @@
 package org.bouncycastle.asn1;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 import java.math.BigInteger;
@@ -13,55 +15,42 @@ import org.bouncycastle.util.Arrays;
 
 
 public class DEREnumerated extends ASN1Object {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.186 -0400", hash_original_field = "4B3A6218BB3E3A7303E8A171A60FCF92", hash_generated_field = "AB97A4156FC1CC1DAF26375194010FF1")
 
-    byte[] bytes;
+    /**
+     * return an integer from the passed in object
+     *
+     * @exception IllegalArgumentException if the object cannot be converted.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:17.437 -0500", hash_original_method = "5BC8F220C44E187EC01A5EA2B16F4349", hash_generated_method = "FBA16E6864C853B49E7FB002A8B9126E")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.187 -0400", hash_original_method = "B36B300F3CB5F32541367868C7626677", hash_generated_method = "E532E052C1FA38D42DFB95732E77D2B4")
-    public  DEREnumerated(
-        int         value) {
-        bytes = BigInteger.valueOf(value).toByteArray();
-        // ---------- Original Method ----------
-        //bytes = BigInteger.valueOf(value).toByteArray();
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.187 -0400", hash_original_method = "678F1FE65267358F51A86F36E09F17C8", hash_generated_method = "2D794F76CC64ED7BEB779014F7114CE5")
-    public  DEREnumerated(
-        BigInteger   value) {
-        bytes = value.toByteArray();
-        // ---------- Original Method ----------
-        //bytes = value.toByteArray();
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.188 -0400", hash_original_method = "AD7320D92755415772C23A44F11EC5AC", hash_generated_method = "42B294B3504DA5B568596960B2B8FA33")
-    public  DEREnumerated(
-        byte[]   bytes) {
-        this.bytes = bytes;
-        // ---------- Original Method ----------
-        //this.bytes = bytes;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    public static DEREnumerated getInstance(
-        Object  obj) {
+public static DEREnumerated getInstance(
+        Object  obj)
+    {
         if (obj == null || obj instanceof DEREnumerated)
         {
             return (DEREnumerated)obj;
         }
+
         throw new IllegalArgumentException("illegal object in getInstance: " + obj.getClass().getName());
     }
 
+    /**
+     * return an Enumerated from a tagged object.
+     *
+     * @param obj the tagged object holding the object we want
+     * @param explicit true if the object is meant to be explicitly
+     *              tagged false otherwise.
+     * @exception IllegalArgumentException if the tagged object cannot
+     *               be converted.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:17.439 -0500", hash_original_method = "D49EC344EFD928ED887B967EA7DC5448", hash_generated_method = "2AE72E88238D48CAE54DEFF5FDF5F424")
     
-    @DSModeled(DSC.SAFE)
-    public static DEREnumerated getInstance(
+public static DEREnumerated getInstance(
         ASN1TaggedObject obj,
-        boolean          explicit) {
+        boolean          explicit)
+    {
         DERObject o = obj.getObject();
+
         if (explicit || o instanceof DEREnumerated)
         {
             return getInstance(o);
@@ -71,63 +60,70 @@ public class DEREnumerated extends ASN1Object {
             return new DEREnumerated(((ASN1OctetString)o).getOctets());
         }
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:17.434 -0500", hash_original_field = "AB97A4156FC1CC1DAF26375194010FF1", hash_generated_field = "AB97A4156FC1CC1DAF26375194010FF1")
 
+    byte[]      bytes;
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:17.442 -0500", hash_original_method = "B36B300F3CB5F32541367868C7626677", hash_generated_method = "74167A0C76D7B350B4903E8C3FD1F267")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.189 -0400", hash_original_method = "9CD9452AB0CD35F4B73E8FBD8DC6F0C8", hash_generated_method = "20CB6A6B4F7DA6ED348B3AA6001F6410")
-    public BigInteger getValue() {
-BigInteger varE4C146659CDD6B837AD2066CCD33EC90_1851454397 =         new BigInteger(bytes);
-        varE4C146659CDD6B837AD2066CCD33EC90_1851454397.addTaint(taint);
-        return varE4C146659CDD6B837AD2066CCD33EC90_1851454397;
-        // ---------- Original Method ----------
-        //return new BigInteger(bytes);
+public DEREnumerated(
+        int         value)
+    {
+        bytes = BigInteger.valueOf(value).toByteArray();
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:17.444 -0500", hash_original_method = "678F1FE65267358F51A86F36E09F17C8", hash_generated_method = "05DB6019C1C0B3EC49815463CE4DDF95")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.189 -0400", hash_original_method = "F1F5D8639E81BFE0F662E5D9DEEDCE8E", hash_generated_method = "8A30D4DA141341743CEA9BBC57C8BE1B")
-     void encode(
-        DEROutputStream out) throws IOException {
-        addTaint(out.getTaint());
+public DEREnumerated(
+        BigInteger   value)
+    {
+        bytes = value.toByteArray();
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:17.447 -0500", hash_original_method = "AD7320D92755415772C23A44F11EC5AC", hash_generated_method = "2B3E448631E23D8CE491C82214FCE3D1")
+    
+public DEREnumerated(
+        byte[]   bytes)
+    {
+        this.bytes = bytes;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:17.449 -0500", hash_original_method = "9CD9452AB0CD35F4B73E8FBD8DC6F0C8", hash_generated_method = "3C97FB31F711F8438DD2BD49E656445F")
+    
+public BigInteger getValue()
+    {
+        return new BigInteger(bytes);
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:17.451 -0500", hash_original_method = "F1F5D8639E81BFE0F662E5D9DEEDCE8E", hash_generated_method = "F1F5D8639E81BFE0F662E5D9DEEDCE8E")
+    
+void encode(
+        DEROutputStream out)
+        throws IOException
+    {
         out.writeEncoded(ENUMERATED, bytes);
-        // ---------- Original Method ----------
-        //out.writeEncoded(ENUMERATED, bytes);
     }
-
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.190 -0400", hash_original_method = "87F9EE40A630F0723068642FAAE69D4D", hash_generated_method = "A6A96B61C96B69074E126CFF630C7CA2")
-     boolean asn1Equals(
-        DERObject  o) {
-        addTaint(o.getTaint());
-        if(!(o instanceof DEREnumerated))        
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:17.453 -0500", hash_original_method = "87F9EE40A630F0723068642FAAE69D4D", hash_generated_method = "87F9EE40A630F0723068642FAAE69D4D")
+    
+boolean asn1Equals(
+        DERObject  o)
+    {
+        if (!(o instanceof DEREnumerated))
         {
-            boolean var68934A3E9455FA72420237EB05902327_1457254774 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1498813220 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1498813220;
-        } //End block
+            return false;
+        }
+
         DEREnumerated other = (DEREnumerated)o;
-        boolean varBE5FAAF65272FB3F96FDABF4701C5209_2066018561 = (Arrays.areEqual(this.bytes, other.bytes));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_509664865 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_509664865;
-        // ---------- Original Method ----------
-        //if (!(o instanceof DEREnumerated))
-        //{
-            //return false;
-        //}
-        //DEREnumerated other = (DEREnumerated)o;
-        //return Arrays.areEqual(this.bytes, other.bytes);
+
+        return Arrays.areEqual(this.bytes, other.bytes);
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:17.455 -0500", hash_original_method = "ECC4B202736A567045152AD0D498E31B", hash_generated_method = "68A737718BE4129A2E38665F9FD0A635")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.190 -0400", hash_original_method = "ECC4B202736A567045152AD0D498E31B", hash_generated_method = "74C2599E4557752FD4142600B6348157")
-    public int hashCode() {
-        int var2CDE289E7BF5766320CC430660AA476C_662462332 = (Arrays.hashCode(bytes));
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1987785254 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1987785254;
-        // ---------- Original Method ----------
-        //return Arrays.hashCode(bytes);
+public int hashCode()
+    {
+        return Arrays.hashCode(bytes);
     }
 
     

@@ -1,6 +1,8 @@
 package org.apache.harmony.dalvik.ddmc;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
@@ -8,12 +10,6 @@ import droidsafe.annotations.*;
 import droidsafe.helpers.DSUtils;
 
 public class DdmVmInternal {
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.871 -0400", hash_original_method = "D0F76540C42EA165AE45A0473185E42C", hash_generated_method = "25D97099B63C10431BD47D09A2644BA5")
-    private  DdmVmInternal() {
-        // ---------- Original Method ----------
-    }
 
     
     @DSModeled(DSC.SAFE)
@@ -68,6 +64,11 @@ public class DdmVmInternal {
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_125459604 = {DSUtils.UNKNOWN_BYTE};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_125459604;
     }
+
+    /* do not instantiate */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:25.377 -0500", hash_original_method = "D0F76540C42EA165AE45A0473185E42C", hash_generated_method = "ECBD8B9A7C7FA66BB37ACB1437C1F5A1")
+    
+private DdmVmInternal() {}
 
     
 }

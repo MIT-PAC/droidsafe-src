@@ -1,6 +1,8 @@
 package android.os;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
@@ -8,148 +10,109 @@ import droidsafe.annotations.*;
 
 
 public class HandlerThread extends Thread {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:26.213 -0400", hash_original_field = "22FC7A378B4F7C5F90F70A47BE1E4FCD", hash_generated_field = "1D8CA7654CC48BAF402334392A1619BF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.197 -0500", hash_original_field = "1D8CA7654CC48BAF402334392A1619BF", hash_generated_field = "1D8CA7654CC48BAF402334392A1619BF")
 
     int mPriority;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:26.213 -0400", hash_original_field = "786D3949F65E83EBF0570337C6D9716A", hash_generated_field = "443BB6C8F0508752717F617F7353B13A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.199 -0500", hash_original_field = "443BB6C8F0508752717F617F7353B13A", hash_generated_field = "443BB6C8F0508752717F617F7353B13A")
 
     int mTid = -1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:26.213 -0400", hash_original_field = "DA288C1345E9C94467C02060ED19C6FA", hash_generated_field = "4C6A73D1D5351706C43659B423CF9288")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.201 -0500", hash_original_field = "4C6A73D1D5351706C43659B423CF9288", hash_generated_field = "4C6A73D1D5351706C43659B423CF9288")
 
     Looper mLooper;
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.204 -0500", hash_original_method = "E5F101A858C2AB40D5C2E9617BFE5E37", hash_generated_method = "3E0C0881ECB68AF6855B784013C5EA28")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:26.213 -0400", hash_original_method = "E5F101A858C2AB40D5C2E9617BFE5E37", hash_generated_method = "FCB270CCF80D7A39E5F41F9293FDE504")
-    public  HandlerThread(String name) {
+public HandlerThread(String name) {
         super(name);
-        addTaint(name.getTaint());
         mPriority = Process.THREAD_PRIORITY_DEFAULT;
-        // ---------- Original Method ----------
-        //mPriority = Process.THREAD_PRIORITY_DEFAULT;
     }
-
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:26.214 -0400", hash_original_method = "E70E3F12F9547EDCFC1C795A424416CD", hash_generated_method = "A0A04D764B43C8282C78CE35882E9EB6")
-    public  HandlerThread(String name, int priority) {
+    /**
+     * Constructs a HandlerThread.
+     * @param name
+     * @param priority The priority to run the thread at. The value supplied must be from 
+     * {@link android.os.Process} and not from java.lang.Thread.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.207 -0500", hash_original_method = "E70E3F12F9547EDCFC1C795A424416CD", hash_generated_method = "965A538D3098226CBCAF41065E4CD7F9")
+    
+public HandlerThread(String name, int priority) {
         super(name);
-        addTaint(name.getTaint());
         mPriority = priority;
-        // ---------- Original Method ----------
-        //mPriority = priority;
+    }
+    
+    /**
+     * Call back method that can be explicitly over ridden if needed to execute some
+     * setup before Looper loops.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.209 -0500", hash_original_method = "7869505C1EE96F329E4F7F0EA5AF9C5D", hash_generated_method = "F5B9F1894C2B7AD20F6F29B9231F6283")
+    
+protected void onLooperPrepared() {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.212 -0500", hash_original_method = "9E0B8BC0299FD7F24B369B7431C1A009", hash_generated_method = "10FDEB337D9B6B5924296A208F963B2B")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:26.215 -0400", hash_original_method = "7869505C1EE96F329E4F7F0EA5AF9C5D", hash_generated_method = "FB28300AB029F1A68D6A159EC4AF6459")
-    protected void onLooperPrepared() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:26.216 -0400", hash_original_method = "9E0B8BC0299FD7F24B369B7431C1A009", hash_generated_method = "0B5CC3F60971D75F6E00E5C05E9341C9")
-    public void run() {
+public void run() {
         mTid = Process.myTid();
         Looper.prepare();
-        synchronized
-(this)        {
+        synchronized (this) {
             mLooper = Looper.myLooper();
             notifyAll();
-        } //End block
+        }
         Process.setThreadPriority(mPriority);
         onLooperPrepared();
         Looper.loop();
         mTid = -1;
-        // ---------- Original Method ----------
-        //mTid = Process.myTid();
-        //Looper.prepare();
-        //synchronized (this) {
-            //mLooper = Looper.myLooper();
-            //notifyAll();
-        //}
-        //Process.setThreadPriority(mPriority);
-        //onLooperPrepared();
-        //Looper.loop();
-        //mTid = -1;
     }
-
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:26.216 -0400", hash_original_method = "0FC13809696BA2D6DC441C842770D0F1", hash_generated_method = "E2EDF91F5386DA87DFFE501F94670950")
-    public Looper getLooper() {
-        if(!isAlive())        
-        {
-Looper var540C13E9E156B687226421B24F2DF178_1381021412 =             null;
-            var540C13E9E156B687226421B24F2DF178_1381021412.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_1381021412;
-        } //End block
-        synchronized
-(this)        {
-            while
-(isAlive() && mLooper == null)            
-            {
-                try 
-                {
+    /**
+     * This method returns the Looper associated with this thread. If this thread not been started
+     * or for any reason is isAlive() returns false, this method will return null. If this thread 
+     * has been started, this method will block until the looper has been initialized.  
+     * @return The looper.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.214 -0500", hash_original_method = "0FC13809696BA2D6DC441C842770D0F1", hash_generated_method = "4B1708DC77C7D7E3B2BA2EC8692FAEBE")
+    
+public Looper getLooper() {
+        if (!isAlive()) {
+            return null;
+        }
+        
+        // If the thread has been started, wait until the looper has been created.
+        synchronized (this) {
+            while (isAlive() && mLooper == null) {
+                try {
                     wait();
-                } //End block
-                catch (InterruptedException e)
-                {
-                } //End block
-            } //End block
-        } //End block
-Looper var0D78717954912E9F181D5C0583378DCC_1702024292 =         mLooper;
-        var0D78717954912E9F181D5C0583378DCC_1702024292.addTaint(taint);
-        return var0D78717954912E9F181D5C0583378DCC_1702024292;
-        // ---------- Original Method ----------
-        //if (!isAlive()) {
-            //return null;
-        //}
-        //synchronized (this) {
-            //while (isAlive() && mLooper == null) {
-                //try {
-                    //wait();
-                //} catch (InterruptedException e) {
-                //}
-            //}
-        //}
-        //return mLooper;
+                } catch (InterruptedException e) {
+                }
+            }
+        }
+        return mLooper;
     }
-
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:26.217 -0400", hash_original_method = "45988F35C3EAC3EE4988825F5EC29D45", hash_generated_method = "059AE2F792F478B6B34F7E1EC30BAB94")
-    public boolean quit() {
+    /**
+     * Ask the currently running looper to quit.  If the thread has not
+     * been started or has finished (that is if {@link #getLooper} returns
+     * null), then false is returned.  Otherwise the looper is asked to
+     * quit and true is returned.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.216 -0500", hash_original_method = "45988F35C3EAC3EE4988825F5EC29D45", hash_generated_method = "61D5C501697D0C9B0E5B1637868ED248")
+    
+public boolean quit() {
         Looper looper = getLooper();
-        if(looper != null)        
-        {
+        if (looper != null) {
             looper.quit();
-            boolean varB326B5062B2F0E69046810717534CB09_1132083265 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2145374827 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_2145374827;
-        } //End block
-        boolean var68934A3E9455FA72420237EB05902327_159547992 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1452474500 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1452474500;
-        // ---------- Original Method ----------
-        //Looper looper = getLooper();
-        //if (looper != null) {
-            //looper.quit();
-            //return true;
-        //}
-        //return false;
+            return true;
+        }
+        return false;
     }
-
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:26.218 -0400", hash_original_method = "EC4E0EE5AEE6B394A49A3FA195776A82", hash_generated_method = "CDC2CF30922BF09518EE4392B8834B27")
-    public int getThreadId() {
-        int var112D67724C3A8F952B4AC2B5A69FBC94_894590399 = (mTid);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1487023818 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1487023818;
-        // ---------- Original Method ----------
-        //return mTid;
+    /**
+     * Returns the identifier of this thread. See Process.myTid().
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.219 -0500", hash_original_method = "EC4E0EE5AEE6B394A49A3FA195776A82", hash_generated_method = "8D563438E811E72E71A9B78483890840")
+    
+public int getThreadId() {
+        return mTid;
     }
 
     

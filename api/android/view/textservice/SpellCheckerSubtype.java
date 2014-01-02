@@ -1,6 +1,8 @@
 package android.view.textservice;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -19,135 +21,15 @@ import android.text.TextUtils;
 
 
 public final class SpellCheckerSubtype implements Parcelable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.970 -0400", hash_original_field = "DB752714D7C5597F6D4538948E3D4382", hash_generated_field = "1C2C808B01EBFBF48626EDEF77BDA121")
 
-    private int mSubtypeHashCode;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.970 -0400", hash_original_field = "AE10E74C5B8FF193877E0EC967173BB0", hash_generated_field = "57FC2D78B24F52DDE6BE3F9540A84844")
-
-    private int mSubtypeNameResId;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.970 -0400", hash_original_field = "62668E4A833F1CB4D52D80EE2676B489", hash_generated_field = "09B229A20252A09636BE45D10E545437")
-
-    private String mSubtypeLocale;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.970 -0400", hash_original_field = "925770EC9378B8FB525692C9358CB66A", hash_generated_field = "8C6B632ACA59D6C798D88A0425FBB914")
-
-    private String mSubtypeExtraValue;
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:47.428 -0500", hash_original_method = "8E1C6298EB66C275DF3380320723757A", hash_generated_method = "FE94C4A8FECD84D683885278E012F460")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.971 -0400", hash_original_method = "3A30DA6D8D85E7F9D6AFF40F9B2BC528", hash_generated_method = "980FDD3E96F63120DD6D6A74E5B9D797")
-    public  SpellCheckerSubtype(int nameId, String locale, String extraValue) {
-        mSubtypeNameResId = nameId;
-        mSubtypeLocale = locale != null ? locale : "";
-        mSubtypeExtraValue = extraValue != null ? extraValue : "";
-        mSubtypeHashCode = hashCodeInternal(mSubtypeLocale, mSubtypeExtraValue);
-        // ---------- Original Method ----------
-        //mSubtypeNameResId = nameId;
-        //mSubtypeLocale = locale != null ? locale : "";
-        //mSubtypeExtraValue = extraValue != null ? extraValue : "";
-        //mSubtypeHashCode = hashCodeInternal(mSubtypeLocale, mSubtypeExtraValue);
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.971 -0400", hash_original_method = "3B75B8CFEB6B6700A7C113FAE634CC5F", hash_generated_method = "39C8675410726AB5491DA3D839BFB49B")
-      SpellCheckerSubtype(Parcel source) {
-        String s;
-        mSubtypeNameResId = source.readInt();
-        s = source.readString();
-        mSubtypeLocale = s != null ? s : "";
-        s = source.readString();
-        mSubtypeExtraValue = s != null ? s : "";
-        mSubtypeHashCode = hashCodeInternal(mSubtypeLocale, mSubtypeExtraValue);
-        // ---------- Original Method ----------
-        //String s;
-        //mSubtypeNameResId = source.readInt();
-        //s = source.readString();
-        //mSubtypeLocale = s != null ? s : "";
-        //s = source.readString();
-        //mSubtypeExtraValue = s != null ? s : "";
-        //mSubtypeHashCode = hashCodeInternal(mSubtypeLocale, mSubtypeExtraValue);
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.972 -0400", hash_original_method = "C7E80880FBF7E5F0758D048854BC1B6A", hash_generated_method = "0C2CA0EA9956023A46DE2C75DE78E30A")
-    public int getNameResId() {
-        int varAE10E74C5B8FF193877E0EC967173BB0_900751823 = (mSubtypeNameResId);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1587818654 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1587818654;
-        // ---------- Original Method ----------
-        //return mSubtypeNameResId;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.972 -0400", hash_original_method = "945286B5D069547CEB4FBAF8F8B7964A", hash_generated_method = "74E7FA1D7904B9BDDB407EAA2D8AE499")
-    public String getLocale() {
-String varC07DAECEA29B71A30EF35B60B8076743_1117941380 =         mSubtypeLocale;
-        varC07DAECEA29B71A30EF35B60B8076743_1117941380.addTaint(taint);
-        return varC07DAECEA29B71A30EF35B60B8076743_1117941380;
-        // ---------- Original Method ----------
-        //return mSubtypeLocale;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.972 -0400", hash_original_method = "253C17894C35FFAF30C08472F23E48B8", hash_generated_method = "7813AFB956983C2089A6150BDDCBC04B")
-    public String getExtraValue() {
-String varD5103786A790F3D4881070784C5A1DFD_2136825052 =         mSubtypeExtraValue;
-        varD5103786A790F3D4881070784C5A1DFD_2136825052.addTaint(taint);
-        return varD5103786A790F3D4881070784C5A1DFD_2136825052;
-        // ---------- Original Method ----------
-        //return mSubtypeExtraValue;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.972 -0400", hash_original_method = "BAAF551B86708907A8B178A5447B667E", hash_generated_method = "8D787C6446B42CDAD9D6C357559E1EA1")
-    @Override
-    public int hashCode() {
-        int varDB752714D7C5597F6D4538948E3D4382_1158358254 = (mSubtypeHashCode);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1490818500 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1490818500;
-        // ---------- Original Method ----------
-        //return mSubtypeHashCode;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.973 -0400", hash_original_method = "214F55EDB23FD4CF8A5A66E21291C440", hash_generated_method = "AA7CB7A8C4CE63FB91D0C4DE8266CFB3")
-    @Override
-    public boolean equals(Object o) {
-        addTaint(o.getTaint());
-        if(o instanceof SpellCheckerSubtype)        
-        {
-            SpellCheckerSubtype subtype = (SpellCheckerSubtype) o;
-            boolean var4174AC03594A871CC98E9C72F0B7DAE8_971123923 = ((subtype.hashCode() == hashCode())
-                && (subtype.getNameResId() == getNameResId())
-                && (subtype.getLocale().equals(getLocale()))
-                && (subtype.getExtraValue().equals(getExtraValue())));
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1043872722 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1043872722;
-        } //End block
-        boolean var68934A3E9455FA72420237EB05902327_2107255660 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_706933476 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_706933476;
-        // ---------- Original Method ----------
-        //if (o instanceof SpellCheckerSubtype) {
-            //SpellCheckerSubtype subtype = (SpellCheckerSubtype) o;
-            //return (subtype.hashCode() == hashCode())
-                //&& (subtype.getNameResId() == getNameResId())
-                //&& (subtype.getLocale().equals(getLocale()))
-                //&& (subtype.getExtraValue().equals(getExtraValue()));
-        //}
-        //return false;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    private static Locale constructLocaleFromString(String localeStr) {
+private static Locale constructLocaleFromString(String localeStr) {
         if (TextUtils.isEmpty(localeStr))
             return null;
         String[] localeParams = localeStr.split("_", 3);
+        // The length of localeStr is guaranteed to always return a 1 <= value <= 3
+        // because localeStr is not empty.
         if (localeParams.length == 1) {
             return new Locale(localeParams[0]);
         } else if (localeParams.length == 2) {
@@ -158,88 +40,24 @@ String varD5103786A790F3D4881070784C5A1DFD_2136825052 =         mSubtypeExtraVal
         return null;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:47.447 -0500", hash_original_method = "C3EB8F3C38068CB5E6BC8AD1B82B692A", hash_generated_method = "AAC5CB824032748E2936F1FF72846D35")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.974 -0400", hash_original_method = "968D29448AF0C4C278C68BBABC30BCB9", hash_generated_method = "5D26566A761275671ACB096D2007E123")
-    public CharSequence getDisplayName(
-            Context context, String packageName, ApplicationInfo appInfo) {
-        addTaint(appInfo.getTaint());
-        addTaint(packageName.getTaint());
-        addTaint(context.getTaint());
-        final Locale locale = constructLocaleFromString(mSubtypeLocale);
-        final String localeStr = locale != null ? locale.getDisplayName() : mSubtypeLocale;
-        if(mSubtypeNameResId == 0)        
-        {
-CharSequence varF1554E4544B9FE124AB662A8FBD78003_1603052318 =             localeStr;
-            varF1554E4544B9FE124AB662A8FBD78003_1603052318.addTaint(taint);
-            return varF1554E4544B9FE124AB662A8FBD78003_1603052318;
-        } //End block
-        final CharSequence subtypeName = context.getPackageManager().getText(
-                packageName, mSubtypeNameResId, appInfo);
-        if(!TextUtils.isEmpty(subtypeName))        
-        {
-CharSequence var5322360A9D2672FE8DDC97C43EADEEB5_679147424 =             String.format(subtypeName.toString(), localeStr);
-            var5322360A9D2672FE8DDC97C43EADEEB5_679147424.addTaint(taint);
-            return var5322360A9D2672FE8DDC97C43EADEEB5_679147424;
-        } //End block
-        else
-        {
-CharSequence varF1554E4544B9FE124AB662A8FBD78003_1831196585 =             localeStr;
-            varF1554E4544B9FE124AB662A8FBD78003_1831196585.addTaint(taint);
-            return varF1554E4544B9FE124AB662A8FBD78003_1831196585;
-        } //End block
-        // ---------- Original Method ----------
-        //final Locale locale = constructLocaleFromString(mSubtypeLocale);
-        //final String localeStr = locale != null ? locale.getDisplayName() : mSubtypeLocale;
-        //if (mSubtypeNameResId == 0) {
-            //return localeStr;
-        //}
-        //final CharSequence subtypeName = context.getPackageManager().getText(
-                //packageName, mSubtypeNameResId, appInfo);
-        //if (!TextUtils.isEmpty(subtypeName)) {
-            //return String.format(subtypeName.toString(), localeStr);
-        //} else {
-            //return localeStr;
-        //}
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.975 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "E2407F1524FF40BCF56DDB45117724DA")
-    @Override
-    public int describeContents() {
-        int varCFCD208495D565EF66E7DFF9F98764DA_2056639377 = (0);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_334783180 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_334783180;
-        // ---------- Original Method ----------
-        //return 0;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.975 -0400", hash_original_method = "AC1CB8559B86122857E11C69298B0C2C", hash_generated_method = "63DAF4D2DF6DCF4D5AAA97C477D14334")
-    @Override
-    public void writeToParcel(Parcel dest, int parcelableFlags) {
-        addTaint(parcelableFlags);
-        addTaint(dest.getTaint());
-        dest.writeInt(mSubtypeNameResId);
-        dest.writeString(mSubtypeLocale);
-        dest.writeString(mSubtypeExtraValue);
-        // ---------- Original Method ----------
-        //dest.writeInt(mSubtypeNameResId);
-        //dest.writeString(mSubtypeLocale);
-        //dest.writeString(mSubtypeExtraValue);
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    private static int hashCodeInternal(String locale, String extraValue) {
+private static int hashCodeInternal(String locale, String extraValue) {
         return Arrays.hashCode(new Object[] {locale, extraValue});
     }
 
+    /**
+     * Sort the list of subtypes
+     * @param context Context will be used for getting localized strings
+     * @param flags Flags for the sort order
+     * @param sci SpellCheckerInfo of which subtypes are subject to be sorted
+     * @param subtypeList List which will be sorted
+     * @return Sorted list of subtypes
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:47.449 -0500", hash_original_method = "A5A1976DCF128376F1184597AC290A44", hash_generated_method = "EFD999286E4154CC4017A058D559EA48")
     
-    @DSModeled(DSC.SAFE)
-    public static List<SpellCheckerSubtype> sort(Context context, int flags, SpellCheckerInfo sci,
+public static List<SpellCheckerSubtype> sort(Context context, int flags, SpellCheckerInfo sci,
             List<SpellCheckerSubtype> subtypeList) {
         if (sci == null) return subtypeList;
         final HashSet<SpellCheckerSubtype> subtypesSet = new HashSet<SpellCheckerSubtype>(
@@ -253,6 +71,8 @@ CharSequence varF1554E4544B9FE124AB662A8FBD78003_1831196585 =             locale
                 subtypesSet.remove(subtype);
             }
         }
+        // If subtypes in subtypesSet remain, that means these subtypes are not
+        // contained in sci, so the remaining subtypes will be appended.
         for (SpellCheckerSubtype subtype: subtypesSet) {
             sortedList.add(subtype);
         }
@@ -264,17 +84,151 @@ CharSequence varF1554E4544B9FE124AB662A8FBD78003_1831196585 =             locale
 
     public static final Parcelable.Creator<SpellCheckerSubtype> CREATOR
             = new Parcelable.Creator<SpellCheckerSubtype>() {
-        @DSModeled(DSC.SAFE)
-        @Override
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:47.439 -0500", hash_original_method = "0AEF6B6A73DAA67659A967ED2D4E69A6", hash_generated_method = "9610D3FC972D8307808FFBC0303AE5BD")
+        
+@Override
         public SpellCheckerSubtype createFromParcel(Parcel source) {
             return new SpellCheckerSubtype(source);
         }
 
-        @DSModeled(DSC.SAFE)
-        @Override
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:47.442 -0500", hash_original_method = "D3DF61D23BE3223F4B9216C6941BE85D", hash_generated_method = "3F6FF8E6BCC27565F0991F50B9A261B3")
+        
+@Override
         public SpellCheckerSubtype[] newArray(int size) {
             return new SpellCheckerSubtype[size];
         }
     };
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:47.401 -0500", hash_original_field = "622071262F8C7323916A08E8A5FE5B0F", hash_generated_field = "1C2C808B01EBFBF48626EDEF77BDA121")
+
+
+    private  int mSubtypeHashCode;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:47.404 -0500", hash_original_field = "4B8E567964882234BB978E7260845CFE", hash_generated_field = "57FC2D78B24F52DDE6BE3F9540A84844")
+
+    private  int mSubtypeNameResId;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:47.406 -0500", hash_original_field = "90577A26519101012AB8C79E4EBE45D5", hash_generated_field = "09B229A20252A09636BE45D10E545437")
+
+    private  String mSubtypeLocale;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:47.408 -0500", hash_original_field = "5A1BB8126BCD812601DD28966BD5A486", hash_generated_field = "8C6B632ACA59D6C798D88A0425FBB914")
+
+    private  String mSubtypeExtraValue;
+
+    /**
+     * Constructor
+     * @param nameId The name of the subtype
+     * @param locale The locale supported by the subtype
+     * @param extraValue The extra value of the subtype
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:47.411 -0500", hash_original_method = "3A30DA6D8D85E7F9D6AFF40F9B2BC528", hash_generated_method = "DA06D75434107847A6D32A2567C0E192")
+    
+public SpellCheckerSubtype(int nameId, String locale, String extraValue) {
+        mSubtypeNameResId = nameId;
+        mSubtypeLocale = locale != null ? locale : "";
+        mSubtypeExtraValue = extraValue != null ? extraValue : "";
+        mSubtypeHashCode = hashCodeInternal(mSubtypeLocale, mSubtypeExtraValue);
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:47.414 -0500", hash_original_method = "3B75B8CFEB6B6700A7C113FAE634CC5F", hash_generated_method = "3B75B8CFEB6B6700A7C113FAE634CC5F")
+    
+SpellCheckerSubtype(Parcel source) {
+        String s;
+        mSubtypeNameResId = source.readInt();
+        s = source.readString();
+        mSubtypeLocale = s != null ? s : "";
+        s = source.readString();
+        mSubtypeExtraValue = s != null ? s : "";
+        mSubtypeHashCode = hashCodeInternal(mSubtypeLocale, mSubtypeExtraValue);
+    }
+
+    /**
+     * @return the name of the subtype
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:47.416 -0500", hash_original_method = "C7E80880FBF7E5F0758D048854BC1B6A", hash_generated_method = "26CBCDA99AD203B4314FE6FE708C7FDB")
+    
+public int getNameResId() {
+        return mSubtypeNameResId;
+    }
+
+    /**
+     * @return the locale of the subtype
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:47.418 -0500", hash_original_method = "945286B5D069547CEB4FBAF8F8B7964A", hash_generated_method = "EE03D54FF1419549D24B5FD49A307399")
+    
+public String getLocale() {
+        return mSubtypeLocale;
+    }
+
+    /**
+     * @return the extra value of the subtype
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:47.421 -0500", hash_original_method = "253C17894C35FFAF30C08472F23E48B8", hash_generated_method = "B0B48211E788C5E773FA1B3FFFFC18D8")
+    
+public String getExtraValue() {
+        return mSubtypeExtraValue;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:47.423 -0500", hash_original_method = "BAAF551B86708907A8B178A5447B667E", hash_generated_method = "59CD8717BAF0B810679FFE0F1F02958C")
+    
+@Override
+    public int hashCode() {
+        return mSubtypeHashCode;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:47.425 -0500", hash_original_method = "214F55EDB23FD4CF8A5A66E21291C440", hash_generated_method = "5F829979AF5B8EC92C3AFE5F8A322D28")
+    
+@Override
+    public boolean equals(Object o) {
+        if (o instanceof SpellCheckerSubtype) {
+            SpellCheckerSubtype subtype = (SpellCheckerSubtype) o;
+            return (subtype.hashCode() == hashCode())
+                && (subtype.getNameResId() == getNameResId())
+                && (subtype.getLocale().equals(getLocale()))
+                && (subtype.getExtraValue().equals(getExtraValue()));
+        }
+        return false;
+    }
+
+    /**
+     * @param context Context will be used for getting Locale and PackageManager.
+     * @param packageName The package name of the spell checker
+     * @param appInfo The application info of the spell checker
+     * @return a display name for this subtype. The string resource of the label (mSubtypeNameResId)
+     * can have only one %s in it. If there is, the %s part will be replaced with the locale's
+     * display name by the formatter. If there is not, this method simply returns the string
+     * specified by mSubtypeNameResId. If mSubtypeNameResId is not specified (== 0), it's up to the
+     * framework to generate an appropriate display name.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:47.431 -0500", hash_original_method = "968D29448AF0C4C278C68BBABC30BCB9", hash_generated_method = "D9FE477B4AE71540ABA1B09AB9219FF9")
+    
+public CharSequence getDisplayName(
+            Context context, String packageName, ApplicationInfo appInfo) {
+        final Locale locale = constructLocaleFromString(mSubtypeLocale);
+        final String localeStr = locale != null ? locale.getDisplayName() : mSubtypeLocale;
+        if (mSubtypeNameResId == 0) {
+            return localeStr;
+        }
+        final CharSequence subtypeName = context.getPackageManager().getText(
+                packageName, mSubtypeNameResId, appInfo);
+        if (!TextUtils.isEmpty(subtypeName)) {
+            return String.format(subtypeName.toString(), localeStr);
+        } else {
+            return localeStr;
+        }
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:47.433 -0500", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "8188008AC9C80E87937FE73DCA905200")
+    
+@Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:47.436 -0500", hash_original_method = "AC1CB8559B86122857E11C69298B0C2C", hash_generated_method = "22B946E482F4438DD7A016CE36C39DCE")
+    
+@Override
+    public void writeToParcel(Parcel dest, int parcelableFlags) {
+        dest.writeInt(mSubtypeNameResId);
+        dest.writeString(mSubtypeLocale);
+        dest.writeString(mSubtypeExtraValue);
+    }
 }
 

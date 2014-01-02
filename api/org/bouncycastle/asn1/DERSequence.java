@@ -1,6 +1,8 @@
 package org.bouncycastle.asn1;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -9,88 +11,85 @@ import java.util.Enumeration;
 
 
 public class DERSequence extends ASN1Sequence {
+    /**
+     * create an empty sequence
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.876 -0500", hash_original_method = "B1D7F8D200E7560B8E505C8DEB6A735D", hash_generated_method = "85D53223E55406568DCC1E3049BE6B3B")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.522 -0400", hash_original_method = "B1D7F8D200E7560B8E505C8DEB6A735D", hash_generated_method = "DE383D98243C35C2EE2100E102854830")
-    public  DERSequence() {
-        // ---------- Original Method ----------
+public DERSequence()
+    {
     }
 
+    /**
+     * create a sequence containing one object
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.880 -0500", hash_original_method = "02EB65A37D4D288F16E2D066B80A09B0", hash_generated_method = "F90E40FD842414200810B891B70D4B65")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.523 -0400", hash_original_method = "02EB65A37D4D288F16E2D066B80A09B0", hash_generated_method = "73DBB9CE6A7AE6E78AE85BEB85DE358B")
-    public  DERSequence(
-        DEREncodable    obj) {
-        addTaint(obj.getTaint());
+public DERSequence(
+        DEREncodable    obj)
+    {
         this.addObject(obj);
-        // ---------- Original Method ----------
-        //this.addObject(obj);
     }
 
+    /**
+     * create a sequence containing a vector of objects.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.883 -0500", hash_original_method = "74532D23F47B58A7B943BD7A29A6F5A5", hash_generated_method = "0688AD0FCF54E3601A33DFBBE5746A1C")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.523 -0400", hash_original_method = "74532D23F47B58A7B943BD7A29A6F5A5", hash_generated_method = "C6325B232843E170FD5D9D0524113B84")
-    public  DERSequence(
-        ASN1EncodableVector   v) {
-        addTaint(v.getTaint());
-for(int i = 0;i != v.size();i++)
+public DERSequence(
+        ASN1EncodableVector   v)
+    {
+        for (int i = 0; i != v.size(); i++)
         {
             this.addObject(v.get(i));
-        } //End block
-        // ---------- Original Method ----------
-        //for (int i = 0; i != v.size(); i++)
-        //{
-            //this.addObject(v.get(i));
-        //}
+        }
     }
 
+    /**
+     * create a sequence containing an array of objects.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.885 -0500", hash_original_method = "6C44128901F5187598F8352DD3C74981", hash_generated_method = "86E5FD8BB1F2A96A9350DE12B2BEE997")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.523 -0400", hash_original_method = "6C44128901F5187598F8352DD3C74981", hash_generated_method = "7DA2B3217D3A5F071D14C57F6BFE268F")
-    public  DERSequence(
-        ASN1Encodable[]   a) {
-        addTaint(a[0].getTaint());
-for(int i = 0;i != a.length;i++)
+public DERSequence(
+        ASN1Encodable[]   a)
+    {
+        for (int i = 0; i != a.length; i++)
         {
             this.addObject(a[i]);
-        } //End block
-        // ---------- Original Method ----------
-        //for (int i = 0; i != a.length; i++)
-        //{
-            //this.addObject(a[i]);
-        //}
+        }
     }
-
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.524 -0400", hash_original_method = "EB6AC1866581E5FE18FBF3DDAE772D4D", hash_generated_method = "F795A4A35B62312F1F15DA1D8E8B6F4F")
-     void encode(
-        DEROutputStream out) throws IOException {
-        addTaint(out.getTaint());
-        ByteArrayOutputStream bOut = new ByteArrayOutputStream();
-        DEROutputStream dOut = new DEROutputStream(bOut);
-        Enumeration e = this.getObjects();
-        while
-(e.hasMoreElements())        
+    /*
+     * A note on the implementation:
+     * <p>
+     * As DER requires the constructed, definite-length model to
+     * be used for structured types, this varies slightly from the
+     * ASN.1 descriptions given. Rather than just outputing SEQUENCE,
+     * we also have to specify CONSTRUCTED, and the objects length.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.887 -0500", hash_original_method = "EB6AC1866581E5FE18FBF3DDAE772D4D", hash_generated_method = "7741E6233F15C15B810E57DD9EDBEC11")
+    
+void encode(
+        DEROutputStream out)
+        throws IOException
+    {
+        // TODO Intermediate buffer could be avoided if we could calculate expected length
+        ByteArrayOutputStream   bOut = new ByteArrayOutputStream();
+        DEROutputStream         dOut = new DEROutputStream(bOut);
+        Enumeration             e = this.getObjects();
+
+        while (e.hasMoreElements())
         {
-            Object obj = e.nextElement();
+            Object    obj = e.nextElement();
+
             dOut.writeObject(obj);
-        } //End block
+        }
+
         dOut.close();
-        byte[] bytes = bOut.toByteArray();
+
+        byte[]  bytes = bOut.toByteArray();
+
         out.writeEncoded(SEQUENCE | CONSTRUCTED, bytes);
-        // ---------- Original Method ----------
-        //ByteArrayOutputStream   bOut = new ByteArrayOutputStream();
-        //DEROutputStream         dOut = new DEROutputStream(bOut);
-        //Enumeration             e = this.getObjects();
-        //while (e.hasMoreElements())
-        //{
-            //Object    obj = e.nextElement();
-            //dOut.writeObject(obj);
-        //}
-        //dOut.close();
-        //byte[]  bytes = bOut.toByteArray();
-        //out.writeEncoded(SEQUENCE | CONSTRUCTED, bytes);
     }
 
     

@@ -1,23 +1,20 @@
 package android.database.sqlite;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
 public class SQLiteDoneException extends SQLiteException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:42.692 -0500", hash_original_method = "087A947C5BE50A0F3752ED574446980B", hash_generated_method = "46FFBC20A18E99181F3458790BB661A1")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.769 -0400", hash_original_method = "087A947C5BE50A0F3752ED574446980B", hash_generated_method = "A74388AF4CC6CB7C05BC0DE595911247")
-    public  SQLiteDoneException() {
-        // ---------- Original Method ----------
-    }
+public SQLiteDoneException() {}
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:42.695 -0500", hash_original_method = "EE57819E67D990C0D8E763C3CA986E14", hash_generated_method = "E4EE2F553944FB1F9585F35F5572B658")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.770 -0400", hash_original_method = "EE57819E67D990C0D8E763C3CA986E14", hash_generated_method = "13D4EF13D2C244E1CD7242F8E67DB475")
-    public  SQLiteDoneException(String error) {
+public SQLiteDoneException(String error) {
         super(error);
-        addTaint(error.getTaint());
-        // ---------- Original Method ----------
     }
 
     

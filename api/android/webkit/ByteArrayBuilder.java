@@ -1,6 +1,8 @@
 package android.webkit;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.lang.ref.ReferenceQueue;
 import java.lang.ref.SoftReference;
@@ -13,254 +15,160 @@ import java.util.ListIterator;
 
 
 class ByteArrayBuilder {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.330 -0400", hash_original_field = "D96663553B59C302287984487A58CF9F", hash_generated_field = "B776907C1A6A4E01FFB277D178950D86")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.020 -0500", hash_original_field = "D90E68022A4FB3270027D1F0FF67C191", hash_generated_field = "3DAEEFED1145BF3DC7E54720D7042881")
+
+
+    private static final int DEFAULT_CAPACITY = 8192;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.023 -0500", hash_original_field = "EB9567C1FECB9A49841277DD0F3CDB82", hash_generated_field = "17FC8AB839DC2BF0E0AEEEE12FA31109")
+
+    private static final LinkedList<SoftReference<Chunk>> sPool =
+            new LinkedList<SoftReference<Chunk>>();
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.025 -0500", hash_original_field = "DFC382CDFCA0ED4A7C72A516854B15B2", hash_generated_field = "0910402B8F1D975C39ECFC606C833B18")
+
+    private static final ReferenceQueue<Chunk> sQueue =
+            new ReferenceQueue<Chunk>();
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.028 -0500", hash_original_field = "80AD2E8B287372A40D02DBBE7E931F01", hash_generated_field = "B776907C1A6A4E01FFB277D178950D86")
+
 
     private LinkedList<Chunk> mChunks;
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.031 -0500", hash_original_method = "4B643343F90EB2A0E25A848B20B29FC2", hash_generated_method = "70BD4D371B468DC8E79D214F46CEAA88")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.331 -0400", hash_original_method = "4B643343F90EB2A0E25A848B20B29FC2", hash_generated_method = "585D3F9A7DBBC98189950DBD22ABFA56")
-    public  ByteArrayBuilder() {
+public ByteArrayBuilder() {
         mChunks = new LinkedList<Chunk>();
-        // ---------- Original Method ----------
-        //mChunks = new LinkedList<Chunk>();
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.033 -0500", hash_original_method = "F99906839EA8B42FAEE592DB92B3532B", hash_generated_method = "95F08E499D14CB27445A43046C3AAE25")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.332 -0400", hash_original_method = "F99906839EA8B42FAEE592DB92B3532B", hash_generated_method = "F716C9B9F59A870F6651BA318CF060D1")
-    public synchronized void append(byte[] array, int offset, int length) {
-        addTaint(length);
-        addTaint(offset);
-        addTaint(array[0]);
-        while
-(length > 0)        
-        {
+public synchronized void append(byte[] array, int offset, int length) {
+        while (length > 0) {
             Chunk c = null;
-            if(mChunks.isEmpty())            
-            {
+            if (mChunks.isEmpty()) {
                 c = obtainChunk(length);
                 mChunks.addLast(c);
-            } //End block
-            else
-            {
+            } else {
                 c = mChunks.getLast();
-                if(c.mLength == c.mArray.length)                
-                {
+                if (c.mLength == c.mArray.length) {
                     c = obtainChunk(length);
                     mChunks.addLast(c);
-                } //End block
-            } //End block
+                }
+            }
             int amount = Math.min(length, c.mArray.length - c.mLength);
             System.arraycopy(array, offset, c.mArray, c.mLength, amount);
             c.mLength += amount;
             length -= amount;
             offset += amount;
-        } //End block
-        // ---------- Original Method ----------
-        //while (length > 0) {
-            //Chunk c = null;
-            //if (mChunks.isEmpty()) {
-                //c = obtainChunk(length);
-                //mChunks.addLast(c);
-            //} else {
-                //c = mChunks.getLast();
-                //if (c.mLength == c.mArray.length) {
-                    //c = obtainChunk(length);
-                    //mChunks.addLast(c);
-                //}
-            //}
-            //int amount = Math.min(length, c.mArray.length - c.mLength);
-            //System.arraycopy(array, offset, c.mArray, c.mLength, amount);
-            //c.mLength += amount;
-            //length -= amount;
-            //offset += amount;
-        //}
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.332 -0400", hash_original_method = "A351746FD34CE9C266D741F531DA2BD6", hash_generated_method = "DF09C529AA47FA5F2C0238F46905AACF")
-    public synchronized Chunk getFirstChunk() {
-        if(mChunks.isEmpty())        
-        {
-Chunk var540C13E9E156B687226421B24F2DF178_935332142 =         null;
-        var540C13E9E156B687226421B24F2DF178_935332142.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_935332142;
         }
-Chunk varC2D728EB19718E4BE6488369DA087CF3_1752700387 =         mChunks.removeFirst();
-        varC2D728EB19718E4BE6488369DA087CF3_1752700387.addTaint(taint);
-        return varC2D728EB19718E4BE6488369DA087CF3_1752700387;
-        // ---------- Original Method ----------
-        //if (mChunks.isEmpty()) return null;
-        //return mChunks.removeFirst();
     }
 
+    /**
+     * The fastest way to retrieve the data is to iterate through the
+     * chunks.  This returns the first chunk.  Note: this pulls the
+     * chunk out of the queue.  The caller must call Chunk.release() to
+     * dispose of it.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.035 -0500", hash_original_method = "A351746FD34CE9C266D741F531DA2BD6", hash_generated_method = "5510CCDF7848516818DD499F2303D931")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.332 -0400", hash_original_method = "16ED363A8E80AEA093971B1CDA828010", hash_generated_method = "23CF97B4777238B890CCEA7CC64259B5")
-    public synchronized boolean isEmpty() {
-        boolean varE85C4ADB4BA58A94A981B77BD2E5382D_401390915 = (mChunks.isEmpty());
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1418193360 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1418193360;
-        // ---------- Original Method ----------
-        //return mChunks.isEmpty();
+public synchronized Chunk getFirstChunk() {
+        if (mChunks.isEmpty()) return null;
+        return mChunks.removeFirst();
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.037 -0500", hash_original_method = "16ED363A8E80AEA093971B1CDA828010", hash_generated_method = "20E96DBE03FE4C60996D191802380F3E")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.333 -0400", hash_original_method = "6BBE6D0629DEE9459E725081CE095168", hash_generated_method = "110A24EB15DE16AC1BCB97DD0A5A2DA2")
-    public synchronized int getByteSize() {
+public synchronized boolean isEmpty() {
+        return mChunks.isEmpty();
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.039 -0500", hash_original_method = "6BBE6D0629DEE9459E725081CE095168", hash_generated_method = "A894256BA5D1EA51D5D3B96D77AC722F")
+    
+public synchronized int getByteSize() {
         int total = 0;
         ListIterator<Chunk> it = mChunks.listIterator(0);
-        while
-(it.hasNext())        
-        {
+        while (it.hasNext()) {
             Chunk c = it.next();
             total += c.mLength;
-        } //End block
-        int varFBB44B4487415B134BCE9C790A27FE5E_237339947 = (total);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1851715794 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1851715794;
-        // ---------- Original Method ----------
-        //int total = 0;
-        //ListIterator<Chunk> it = mChunks.listIterator(0);
-        //while (it.hasNext()) {
-            //Chunk c = it.next();
-            //total += c.mLength;
-        //}
-        //return total;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.333 -0400", hash_original_method = "F807D4A4D9C660A6AF7B8E4ADC0E0EE6", hash_generated_method = "FE9FC7E3F5C3C5E0A6A31CBC5466203B")
-    public synchronized void clear() {
-        Chunk c = getFirstChunk();
-        while
-(c != null)        
-        {
-            c.release();
-            c = getFirstChunk();
-        } //End block
-        // ---------- Original Method ----------
-        //Chunk c = getFirstChunk();
-        //while (c != null) {
-            //c.release();
-            //c = getFirstChunk();
-        //}
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.334 -0400", hash_original_method = "3A2BA3FFD8F41065BE9E5F1BD3D65412", hash_generated_method = "1EB4B4A1E7FA715FCC99A0FD6C6AAEBA")
-    private void processPoolLocked() {
-        while
-(true)        
-        {
-            SoftReference<Chunk> entry = (SoftReference<Chunk>) sQueue.poll();
-            if(entry == null)            
-            {
-                break;
-            } //End block
-            sPool.remove(entry);
-        } //End block
-        // ---------- Original Method ----------
-        //while (true) {
-            //SoftReference<Chunk> entry = (SoftReference<Chunk>) sQueue.poll();
-            //if (entry == null) {
-                //break;
-            //}
-            //sPool.remove(entry);
-        //}
-    }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.334 -0400", hash_original_method = "823F243F1FE2DDA7035072AD49FCCD96", hash_generated_method = "0353DE0C405506CD1CDA6AFC07F97AE8")
-    private Chunk obtainChunk(int length) {
-        addTaint(length);
-        if(length < DEFAULT_CAPACITY)        
-        {
-            length = DEFAULT_CAPACITY;
-        } //End block
-        synchronized
-(sPool)        {
-            processPoolLocked();
-            if(!sPool.isEmpty())            
-            {
-                Chunk c = sPool.removeFirst().get();
-                if(c != null)                
-                {
-Chunk var807FB10045EE51C06BDB74744A6714DF_1615308147 =                     c;
-                    var807FB10045EE51C06BDB74744A6714DF_1615308147.addTaint(taint);
-                    return var807FB10045EE51C06BDB74744A6714DF_1615308147;
-                } //End block
-            } //End block
-Chunk var25D655AA1A429AC271EAF4DC65CAF319_524317345 =             new Chunk(length);
-            var25D655AA1A429AC271EAF4DC65CAF319_524317345.addTaint(taint);
-            return var25D655AA1A429AC271EAF4DC65CAF319_524317345;
-        } //End block
-        // ---------- Original Method ----------
-        //if (length < DEFAULT_CAPACITY) {
-            //length = DEFAULT_CAPACITY;
-        //}
-        //synchronized (sPool) {
-            //processPoolLocked();
-            //if (!sPool.isEmpty()) {
-                //Chunk c = sPool.removeFirst().get();
-                //if (c != null) {
-                    //return c;
-                //}
-            //}
-            //return new Chunk(length);
-        //}
+        }
+        return total;
     }
 
     
     public static class Chunk {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.335 -0400", hash_original_field = "982501881A3C318D6605E92D3AB0ADBA", hash_generated_field = "0EDCDC8DA17864CD42594730EA96D957")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.050 -0500", hash_original_field = "F421D8AFAAC1D792F938E23541530028", hash_generated_field = "0EDCDC8DA17864CD42594730EA96D957")
 
-        public byte[] mArray;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.335 -0400", hash_original_field = "429F431E8CD8AC287AA27460675EAEFE", hash_generated_field = "D223D4590FC7845D7348BABCD2C232A4")
+        public byte[]  mArray;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.052 -0500", hash_original_field = "FC3D477E7B6A4ACE9A379E6E41129BD1", hash_generated_field = "D223D4590FC7845D7348BABCD2C232A4")
 
-        public int mLength;
+        public int     mLength;
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.054 -0500", hash_original_method = "7BA2D66980388409381C11ACBE550E64", hash_generated_method = "740AD7E96BFFA77901B631A9408B80CD")
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.336 -0400", hash_original_method = "7BA2D66980388409381C11ACBE550E64", hash_generated_method = "6BFFC18DD8022D0016AEE6264E983E07")
-        public  Chunk(int length) {
+public Chunk(int length) {
             mArray = new byte[length];
             mLength = 0;
-            // ---------- Original Method ----------
-            //mArray = new byte[length];
-            //mLength = 0;
         }
 
+        /**
+         * Release the chunk and make it available for reuse.
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.057 -0500", hash_original_method = "3768D7B4204F23A6FF321EC840D75009", hash_generated_method = "B70A91142CA8AE381D4E0ED914D64153")
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.337 -0400", hash_original_method = "3768D7B4204F23A6FF321EC840D75009", hash_generated_method = "7ADB2B8A1D44657987D12AE6352EE312")
-        public void release() {
+public void release() {
             mLength = 0;
-            synchronized
-(sPool)            {
+            synchronized (sPool) {
+                // Add the chunk back to the pool as a SoftReference so it can
+                // be gc'd if needed.
                 sPool.offer(new SoftReference<Chunk>(this, sQueue));
                 sPool.notifyAll();
-            } //End block
-            // ---------- Original Method ----------
-            //mLength = 0;
-            //synchronized (sPool) {
-                //sPool.offer(new SoftReference<Chunk>(this, sQueue));
-                //sPool.notifyAll();
-            //}
+            }
         }
 
         
     }
 
-
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.042 -0500", hash_original_method = "F807D4A4D9C660A6AF7B8E4ADC0E0EE6", hash_generated_method = "82672CCCE175514B81EE923AFB5FFA43")
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.337 -0400", hash_original_field = "38D15E82EC973864FD3752B99D07E77B", hash_generated_field = "3DAEEFED1145BF3DC7E54720D7042881")
+public synchronized void clear() {
+        Chunk c = getFirstChunk();
+        while (c != null) {
+            c.release();
+            c = getFirstChunk();
+        }
+    }
 
-    private static final int DEFAULT_CAPACITY = 8192;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.337 -0400", hash_original_field = "816179A8A82629E5F41E68E61458E62A", hash_generated_field = "17FC8AB839DC2BF0E0AEEEE12FA31109")
+    // Must be called with lock held on sPool.
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.044 -0500", hash_original_method = "3A2BA3FFD8F41065BE9E5F1BD3D65412", hash_generated_method = "7CF91C143EFCEEA7FC5F4DA321CA6FDD")
+    
+private void processPoolLocked() {
+        while (true) {
+            SoftReference<Chunk> entry = (SoftReference<Chunk>) sQueue.poll();
+            if (entry == null) {
+                break;
+            }
+            sPool.remove(entry);
+        }
+    }
 
-    private static final LinkedList<SoftReference<Chunk>> sPool = new LinkedList<SoftReference<Chunk>>();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.337 -0400", hash_original_field = "F230A632C09600C5590998055E0EA3CB", hash_generated_field = "0910402B8F1D975C39ECFC606C833B18")
-
-    private static final ReferenceQueue<Chunk> sQueue = new ReferenceQueue<Chunk>();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.047 -0500", hash_original_method = "823F243F1FE2DDA7035072AD49FCCD96", hash_generated_method = "69947A8872E8E49A91FC0CA032020271")
+    
+private Chunk obtainChunk(int length) {
+        // Correct a small length.
+        if (length < DEFAULT_CAPACITY) {
+            length = DEFAULT_CAPACITY;
+        }
+        synchronized (sPool) {
+            // Process any queued references and remove them from the pool.
+            processPoolLocked();
+            if (!sPool.isEmpty()) {
+                Chunk c = sPool.removeFirst().get();
+                // The first item may have been queued after processPoolLocked
+                // so check for null.
+                if (c != null) {
+                    return c;
+                }
+            }
+            return new Chunk(length);
+        }
+    }
 }
 

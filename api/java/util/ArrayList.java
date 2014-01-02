@@ -1,6 +1,7 @@
 package java.util;
 
 // Droidsafe Imports
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
 
@@ -18,7 +19,22 @@ import libcore.util.EmptyArray;
 
 
 public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializable, RandomAccess {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.819 -0400", hash_original_field = "F1F713C9E000F5D3F280ADBD124DF4F5", hash_generated_field = "7675584818BEF48C593B15A4C030F967")
+
+    /**
+     * This method was extracted to encourage VM to inline callers.
+     * TODO: when we have a VM that can actually inline, move the test in here too!
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.923 -0500", hash_original_method = "4D1AAFD088944D073F1D6AEA9907E5AD", hash_generated_method = "7B46C8F09C7254045F5048910CD6EB03")
+    
+static IndexOutOfBoundsException throwIndexOutOfBoundsException(int index, int size) {
+        throw new IndexOutOfBoundsException("Invalid index " + index + ", size is " + size);
+    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.994 -0500", hash_original_field = "3AA5C0C0296B47F3F0330027910A6EB1", hash_generated_field = "E089B2B162ABB353A6199922AA057C3E")
+
+
+    private static final long serialVersionUID = 8683452581122892189L;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.898 -0500", hash_original_field = "3E4C52F6F0428C39E4E692D20A9AA9AA", hash_generated_field = "7675584818BEF48C593B15A4C030F967")
+
     transient Object[] array;
     
         @DSModeled(DSC.SAFE)
@@ -70,38 +86,23 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
         //size = a.length;
     }
 
-    @DSModeled(DSC.SAFE)
-    static IndexOutOfBoundsException throwIndexOutOfBoundsException(int index, int size) {
-        throw new IndexOutOfBoundsException("Invalid index " + index + ", size is " + size);
-    }
-
-  
-   @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.827 -0400", hash_original_method = "B3DA051C4891B8092C007B9652169D27", hash_generated_method = "FA92824A0A4AC99EF172A7C6DB1ECC56")
-    @Override
-    public Object clone() {
-        try 
-        {
+    /**
+     * Returns a new {@code ArrayList} with the same elements, the same size and
+     * the same capacity as this {@code ArrayList}.
+     *
+     * @return a shallow copy of this {@code ArrayList}
+     * @see java.lang.Cloneable
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.928 -0500", hash_original_method = "B3DA051C4891B8092C007B9652169D27", hash_generated_method = "A66D91953438B3767055934DA3E96394")
+    
+@Override public Object clone() {
+        try {
             ArrayList<?> result = (ArrayList<?>) super.clone();
             result.array = array.clone();
-Object varDC838461EE2FA0CA4C9BBB70A15456B0_1640159609 =             result;
-            varDC838461EE2FA0CA4C9BBB70A15456B0_1640159609.addTaint(taint);
-            return varDC838461EE2FA0CA4C9BBB70A15456B0_1640159609;
-        } //End block
-        catch (CloneNotSupportedException e)
-        {
-            AssertionError varA81442E36297E737EB908877E58260E8_1898656167 = new AssertionError();
-            varA81442E36297E737EB908877E58260E8_1898656167.addTaint(taint);
-            throw varA81442E36297E737EB908877E58260E8_1898656167;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //ArrayList<?> result = (ArrayList<?>) super.clone();
-            //result.array = array.clone();
-            //return result;
-        //} catch (CloneNotSupportedException e) {
-           //throw new AssertionError();
-        //}
+            return result;
+        } catch (CloneNotSupportedException e) {
+           throw new AssertionError();
+        }
     }
 
     
@@ -222,10 +223,7 @@ Object varDC838461EE2FA0CA4C9BBB70A15456B0_1640159609 =             result;
     public E get(int location) {
         // TODO Auto-generated method stub
         return getElementAt(location);
-    } 
-
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.840 -0400", hash_original_field = "C1AC5D7497D25261150408B53250333D", hash_generated_field = "E089B2B162ABB353A6199922AA057C3E")
-    private static final long serialVersionUID = 8683452581122892189L;
+    }
 
     
 }

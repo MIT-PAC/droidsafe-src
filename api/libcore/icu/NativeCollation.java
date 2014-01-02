@@ -1,6 +1,8 @@
 package libcore.icu;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
@@ -8,12 +10,6 @@ import droidsafe.annotations.*;
 import droidsafe.helpers.DSUtils;
 
 public final class NativeCollation {
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:22.973 -0400", hash_original_method = "16B47962CFF99F85D0E598C53BC7328E", hash_generated_method = "FF71B9CC7F83E39BD5165BFFBBD0AADB")
-    private  NativeCollation() {
-        // ---------- Original Method ----------
-    }
 
     
     @DSModeled(DSC.SAFE)
@@ -126,6 +122,10 @@ public final class NativeCollation {
     
     @DSModeled(DSC.SAFE)
     public static void setText(int address, String source) {
+    }
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:08.600 -0500", hash_original_method = "16B47962CFF99F85D0E598C53BC7328E", hash_generated_method = "5509F5737819DB87F3C8389561825DA9")
+    
+private NativeCollation() {
     }
 
     

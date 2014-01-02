@@ -1,19 +1,28 @@
 package java.util;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.DroidSafeAndroidRuntime;
 
 
 public abstract class AbstractList<E> extends AbstractCollection<E> implements List<E> {
-    //@DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.419 -0400", hash_original_field = "675B3022548A1029F9CE7A2C25B23BBF", hash_generated_field = "D904B48F1A1A3F19ECDEE2D75BF7C70B")
+    
+    @DSModeled(DSC.SAFE)
+    public static List newSimpleList() {
+        return new SubAbstractList();
+    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:24.837 -0500", hash_original_field = "52F3DED7388D6DA42BC9C902075440B5", hash_generated_field = "D904B48F1A1A3F19ECDEE2D75BF7C70B")
 
     protected transient int modCount;
+
+    /**
+     * Constructs a new instance of this AbstractList.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:24.970 -0500", hash_original_method = "AFDDADD59FA06C48A3131F90ADCD1B27", hash_generated_method = "D2CD754E0F115F288E42249DC6A8FBE4")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.419 -0400", hash_original_method = "AFDDADD59FA06C48A3131F90ADCD1B27", hash_generated_method = "C2512795C4B4D09B5344EF8EABF2A19D")
-    protected  AbstractList() {
-        // ---------- Original Method ----------
+protected AbstractList() {
     }
 
     
@@ -50,9 +59,18 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
         return super.isEqualTo(object);
     }
 
+    /**
+     * Returns the element at the specified location in this list.
+     *
+     * @param location
+     *            the index of the element to return.
+     * @return the element at the specified index.
+     * @throws IndexOutOfBoundsException
+     *             if {@code location < 0 || >= size()}
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:24.985 -0500", hash_original_method = "028843ECC72155B435F1914365BF5067", hash_generated_method = "FA43A5DF06AE806D1B6BA7C7E16F414D")
     
-    @DSModeled(DSC.SAFE)
-    public abstract E get(int location);
+public abstract E get(int location);
 
     
         @DSModeled(DSC.SAFE)
@@ -161,11 +179,6 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
             varE4A00D3DB3B35ED0F12562B8AA17377A_1336418229.addTaint(end);
             throw varE4A00D3DB3B35ED0F12562B8AA17377A_1336418229;
         }
-    }
-    
-    @DSModeled(DSC.SAFE)
-    public static List newSimpleList() {
-        return new SubAbstractList();
     }
     
     /***********************************************************************

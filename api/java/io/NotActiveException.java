@@ -1,29 +1,38 @@
 package java.io;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
 
 public class NotActiveException extends ObjectStreamException {
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.150 -0400", hash_original_method = "04F1D3389F0C6F41AEA2935866CA7222", hash_generated_method = "071F1807AA26DA7AB825233FA3566BF3")
-    public  NotActiveException() {
-        // ---------- Original Method ----------
-    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.303 -0500", hash_original_field = "429100C72BDDB505521A80AF3B26D70E", hash_generated_field = "59CE9C2AB058E4F2700142FBFEC5D993")
 
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.150 -0400", hash_original_method = "3214341FEC67E095A6821294CDC33C6B", hash_generated_method = "EA8F8CC401F1A58B43354791D5B4D78C")
-    public  NotActiveException(String detailMessage) {
-        super(detailMessage);
-        addTaint(detailMessage.getTaint());
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.151 -0400", hash_original_field = "4B8ABC053A2DCE4C236BA4F246F73C53", hash_generated_field = "59CE9C2AB058E4F2700142FBFEC5D993")
 
     private static final long serialVersionUID = -3893467273049808895L;
+
+    /**
+     * Constructs a new {@code NotActiveException} with its stack trace filled
+     * in.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.306 -0500", hash_original_method = "04F1D3389F0C6F41AEA2935866CA7222", hash_generated_method = "481F09D10808C0266582E4084A39A7D9")
+    
+public NotActiveException() {
+    }
+
+    /**
+     * Constructs a new {@code NotActiveException} with its stack trace and
+     * detail message filled in.
+     *
+     * @param detailMessage
+     *            the detail message for this exception.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.309 -0500", hash_original_method = "3214341FEC67E095A6821294CDC33C6B", hash_generated_method = "2A9BA8E30CD0FAF6D9BC6613B3288C1E")
+    
+public NotActiveException(String detailMessage) {
+        super(detailMessage);
+    }
 }
 

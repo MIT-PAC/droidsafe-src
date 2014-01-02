@@ -1,14 +1,22 @@
 package java.util;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 public class Stack<E> extends Vector<E> {
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:23.932 -0500", hash_original_field = "7B45B91C3E17EC3DBBE0867E23E6214B", hash_generated_field = "B114A5411C4CC65AB8A6E3407B2F7E77")
+
+
+    private static final long serialVersionUID = 1224463164541339165L;
+
+    /**
+     * Constructs a stack with the default size of {@code Vector}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:23.934 -0500", hash_original_method = "625E2B3812BBF73AC690F7D19F4288A9", hash_generated_method = "929D9277DEEF374CC6B17326832CDE90")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.605 -0400", hash_original_method = "625E2B3812BBF73AC690F7D19F4288A9", hash_generated_method = "C931746C59237A3AA8E23B4112671D1E")
-    public  Stack() {
-        // ---------- Original Method ----------
+public Stack() {
     }
 
     
@@ -46,18 +54,20 @@ public class Stack<E> extends Vector<E> {
         return removeLastElement();
     }
 
+    /**
+     * Pushes the specified object onto the top of the stack.
+     *
+     * @param object
+     *            The object to be added on top of the stack.
+     * @return the object argument.
+     * @see #peek
+     * @see #pop
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:23.944 -0500", hash_original_method = "FB7AFAD158F104C5EE0D062F7452B9D0", hash_generated_method = "F0F6FE2D7660908EBD9C2CBA85446EC1")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.607 -0400", hash_original_method = "FB7AFAD158F104C5EE0D062F7452B9D0", hash_generated_method = "5B156394BA2F14B3BF8F5A0147788BFD")
-    public E push(E object) {
-        addTaint(object.getTaint());
+public E push(E object) {
         addElement(object);
-        E var6F3B27511D98F0E852A24482F031265F_1455572488 =         object;
-        var6F3B27511D98F0E852A24482F031265F_1455572488.addTaint(taint);
-        return var6F3B27511D98F0E852A24482F031265F_1455572488;
-        // ---------- Original Method ----------
-        //addElement(object);
-        //return object;
+        return object;
     }
 
     
@@ -67,10 +77,5 @@ public class Stack<E> extends Vector<E> {
         addTaint(o.getTaint());
         return super.getLastIndexOf(o);
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.608 -0400", hash_original_field = "FB71933909E079B5587A84A46C0F4F2C", hash_generated_field = "B114A5411C4CC65AB8A6E3407B2F7E77")
-
-    private static final long serialVersionUID = 1224463164541339165L;
 }
 

@@ -1,6 +1,8 @@
 package android.animation;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.ArrayList;
 
@@ -10,7 +12,7 @@ import java.util.ArrayList;
 
 
 public abstract class Animator implements Cloneable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:13.806 -0400", hash_original_field = "76E8AF78EA383C38A6F80E45CCFEA268", hash_generated_field = "3FD42DDC5A574D761F1E8BD3EC073311")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.269 -0500", hash_original_field = "3FD42DDC5A574D761F1E8BD3EC073311", hash_generated_field = "3FD42DDC5A574D761F1E8BD3EC073311")
 
     ArrayList<AnimatorListener> mListeners = null;
     
@@ -21,60 +23,127 @@ public abstract class Animator implements Cloneable {
         //Synthesized constructor
     }
 
-
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:13.810 -0400", hash_original_method = "077E81C30B4BFFEF2F9502DB378CA204", hash_generated_method = "A801E423F89557B74070F06DC0AB8DFA")
-    public void start() {
-        // ---------- Original Method ----------
+    /**
+     * Starts this animation. If the animation has a nonzero startDelay, the animation will start
+     * running after that delay elapses. A non-delayed animation will have its initial
+     * value(s) set immediately, followed by calls to
+     * {@link AnimatorListener#onAnimationStart(Animator)} for any listeners of this animator.
+     *
+     * <p>The animation started by calling this method will be run on the thread that called
+     * this method. This thread should have a Looper on it (a runtime exception will be thrown if
+     * this is not the case). Also, if the animation will animate
+     * properties of objects in the view hierarchy, then the calling thread should be the UI
+     * thread for that view hierarchy.</p>
+     *
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.271 -0500", hash_original_method = "077E81C30B4BFFEF2F9502DB378CA204", hash_generated_method = "DA898781E1CBA774E3501CFEAD68389F")
+    
+public void start() {
     }
 
+    /**
+     * Cancels the animation. Unlike {@link #end()}, <code>cancel()</code> causes the animation to
+     * stop in its tracks, sending an
+     * {@link android.animation.Animator.AnimatorListener#onAnimationCancel(Animator)} to
+     * its listeners, followed by an
+     * {@link android.animation.Animator.AnimatorListener#onAnimationEnd(Animator)} message.
+     *
+     * <p>This method must be called on the thread that is running the animation.</p>
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.273 -0500", hash_original_method = "E5C5DBED2FC0D18DB80484DB83D94F8A", hash_generated_method = "03D37BD64D7EA5A498C29F3157B06CA4")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:13.813 -0400", hash_original_method = "E5C5DBED2FC0D18DB80484DB83D94F8A", hash_generated_method = "43CBBEFF14DFE69DF0FC06DADAEF94C2")
-    public void cancel() {
-        // ---------- Original Method ----------
+public void cancel() {
     }
 
+    /**
+     * Ends the animation. This causes the animation to assign the end value of the property being
+     * animated, then calling the
+     * {@link android.animation.Animator.AnimatorListener#onAnimationEnd(Animator)} method on
+     * its listeners.
+     *
+     * <p>This method must be called on the thread that is running the animation.</p>
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.275 -0500", hash_original_method = "4F105473DD7236D24F8992C8503B57B1", hash_generated_method = "FE6D8DF71959D6F4FDE5F0F03D32C242")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:13.815 -0400", hash_original_method = "4F105473DD7236D24F8992C8503B57B1", hash_generated_method = "9DFCE4A1701D66E2F860131DA801747C")
-    public void end() {
-        // ---------- Original Method ----------
+public void end() {
     }
 
+    /**
+     * The amount of time, in milliseconds, to delay starting the animation after
+     * {@link #start()} is called.
+     *
+     * @return the number of milliseconds to delay running the animation
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.277 -0500", hash_original_method = "A456A6B27B0B6401B5CBF81B119A96B0", hash_generated_method = "FC57DB7F599A90334BED2B9983159634")
     
-    @DSModeled(DSC.SAFE)
-    public abstract long getStartDelay();
+public abstract long getStartDelay();
 
-    
-    @DSModeled(DSC.SAFE)
-    public abstract void setStartDelay(long startDelay);
+    /**
+     * The amount of time, in milliseconds, to delay starting the animation after
+     * {@link #start()} is called.
 
+     * @param startDelay The amount of the delay, in milliseconds
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.279 -0500", hash_original_method = "D1BDC615F0D6CB689D5A02F46F04F12A", hash_generated_method = "2CA8B335A9269A0A3839B3FA55AEDEF4")
     
-    @DSModeled(DSC.SAFE)
-    public abstract Animator setDuration(long duration);
+public abstract void setStartDelay(long startDelay);
 
-    
-    @DSModeled(DSC.SAFE)
-    public abstract long getDuration();
 
+    /**
+     * Sets the length of the animation.
+     *
+     * @param duration The length of the animation, in milliseconds.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.281 -0500", hash_original_method = "82DE27B36BC4484095B14F7E1A297A9F", hash_generated_method = "9880ED4057E2743F5C69F69D7436C09A")
     
-    @DSModeled(DSC.SAFE)
-    public abstract void setInterpolator(TimeInterpolator value);
+public abstract Animator setDuration(long duration);
 
+    /**
+     * Gets the length of the animation.
+     *
+     * @return The length of the animation, in milliseconds.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.284 -0500", hash_original_method = "13809D2532E5FA38EF98BEB630AAB08D", hash_generated_method = "FF9278407590D9A00164135C344715E5")
     
-    @DSModeled(DSC.SAFE)
-    public abstract boolean isRunning();
+public abstract long getDuration();
 
+    /**
+     * The time interpolator used in calculating the elapsed fraction of this animation. The
+     * interpolator determines whether the animation runs with linear or non-linear motion,
+     * such as acceleration and deceleration. The default value is
+     * {@link android.view.animation.AccelerateDecelerateInterpolator}
+     *
+     * @param value the interpolator to be used by this animation
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.286 -0500", hash_original_method = "ECD218A4FB106B8E45D391E2FCFE38AF", hash_generated_method = "8E1A8C2825A4BD9063900C0EE443C3BD")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:13.829 -0400", hash_original_method = "5FAE51F608329798E727CB5CCA21128D", hash_generated_method = "76BE79E698B7251D3BF51E131C8CDFFE")
-    public boolean isStarted() {
-        boolean varF7BD74CE9A58FA4CCEA8BB81790EAC23_1865415482 = (isRunning());
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1853781609 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1853781609;
-        // ---------- Original Method ----------
-        //return isRunning();
+public abstract void setInterpolator(TimeInterpolator value);
+
+    /**
+     * Returns whether this Animator is currently running (having been started and gone past any
+     * initial startDelay period and not yet ended).
+     *
+     * @return Whether the Animator is running.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.288 -0500", hash_original_method = "01F0FE44E71A30E093E481EBA696B87A", hash_generated_method = "6E27EBB5A90EFE7D59D40ADC42E0CBF6")
+    
+public abstract boolean isRunning();
+
+    /**
+     * Returns whether this Animator has been started and not yet ended. This state is a superset
+     * of the state of {@link #isRunning()}, because an Animator with a nonzero
+     * {@link #getStartDelay() startDelay} will return true for {@link #isStarted()} during the
+     * delay phase, whereas {@link #isRunning()} will return true only after the delay phase
+     * is complete.
+     *
+     * @return Whether the Animator has been started and not yet ended.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.290 -0500", hash_original_method = "5FAE51F608329798E727CB5CCA21128D", hash_generated_method = "F5AC37B65A93F3FBD5BB00F5B58D8A73")
+    
+public boolean isStarted() {
+        // Default method returns value for isRunning(). Subclasses should override to return a
+        // real value.
+        return isRunning();
     }
 
     
@@ -98,122 +167,109 @@ public abstract class Animator implements Cloneable {
         //mListeners.add(listener);
     }
 
+    /**
+     * Removes a listener from the set listening to this animation.
+     *
+     * @param listener the listener to be removed from the current set of listeners for this
+     *                 animation.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.295 -0500", hash_original_method = "AF89FA0687B9630A1A89E59A21836778", hash_generated_method = "562085D41EA94DF7CF8C8CC219EFCA79")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:13.836 -0400", hash_original_method = "AF89FA0687B9630A1A89E59A21836778", hash_generated_method = "3C0FFCE85AC2501FD610186ED4E6FC48")
-    @DSModeled(DSC.SAFE)
-    public void removeListener(AnimatorListener listener) {
-        addTaint(listener.getTaint());
-        if(mListeners == null)        
-        {
+public void removeListener(AnimatorListener listener) {
+        if (mListeners == null) {
             return;
-        } //End block
+        }
         mListeners.remove(listener);
-        if(mListeners.size() == 0)        
-        {
+        if (mListeners.size() == 0) {
             mListeners = null;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mListeners == null) {
-            //return;
-        //}
-        //mListeners.remove(listener);
-        //if (mListeners.size() == 0) {
-            //mListeners = null;
-        //}
+        }
     }
 
+    /**
+     * Gets the set of {@link android.animation.Animator.AnimatorListener} objects that are currently
+     * listening for events on this <code>Animator</code> object.
+     *
+     * @return ArrayList<AnimatorListener> The set of listeners.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.297 -0500", hash_original_method = "A0C570F4990D85172FF1B2594590DE80", hash_generated_method = "44544A80D5F91B2783A66E5247A2E8B1")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:13.840 -0400", hash_original_method = "A0C570F4990D85172FF1B2594590DE80", hash_generated_method = "80EB6D23C0E183B892E0E9305C327579")
-    public ArrayList<AnimatorListener> getListeners() {
-ArrayList<AnimatorListener> var6F226E74DAC534764C2244A2BF49F27C_7535036 =         mListeners;
-        var6F226E74DAC534764C2244A2BF49F27C_7535036.addTaint(taint);
-        return var6F226E74DAC534764C2244A2BF49F27C_7535036;
-        // ---------- Original Method ----------
-        //return mListeners;
+public ArrayList<AnimatorListener> getListeners() {
+        return mListeners;
     }
 
+    /**
+     * Removes all listeners from this object. This is equivalent to calling
+     * <code>getListeners()</code> followed by calling <code>clear()</code> on the
+     * returned list of listeners.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.299 -0500", hash_original_method = "9F15C7E7001670487AA27A3E97528F7B", hash_generated_method = "EA064C71E10C4E95A204ACCF55D3C492")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:13.844 -0400", hash_original_method = "9F15C7E7001670487AA27A3E97528F7B", hash_generated_method = "5B058AAE3460F4AEFCF3F780E30BA666")
-    public void removeAllListeners() {
-        if(mListeners != null)        
-        {
+public void removeAllListeners() {
+        if (mListeners != null) {
             mListeners.clear();
             mListeners = null;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mListeners != null) {
-            //mListeners.clear();
-            //mListeners = null;
-        //}
+        }
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.302 -0500", hash_original_method = "D34181C2AB04F8825A2BE8661E83342B", hash_generated_method = "B7F66985686932E1DF636764C91CD1BA")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:13.853 -0400", hash_original_method = "D34181C2AB04F8825A2BE8661E83342B", hash_generated_method = "412815C57F1A77E71236CF0F155CB0D6")
-    @Override
+@Override
     public Animator clone() {
-        try 
-        {
+        try {
             final Animator anim = (Animator) super.clone();
-            if(mListeners != null)            
-            {
+            if (mListeners != null) {
                 ArrayList<AnimatorListener> oldListeners = mListeners;
                 anim.mListeners = new ArrayList<AnimatorListener>();
                 int numListeners = oldListeners.size();
-for(int i = 0;i < numListeners;++i)
-                {
+                for (int i = 0; i < numListeners; ++i) {
                     anim.mListeners.add(oldListeners.get(i));
-                } //End block
-            } //End block
-Animator var6E2178F33F884BED37C5DEBCD18F9A96_1651601836 =             anim;
-            var6E2178F33F884BED37C5DEBCD18F9A96_1651601836.addTaint(taint);
-            return var6E2178F33F884BED37C5DEBCD18F9A96_1651601836;
-        } //End block
-        catch (CloneNotSupportedException e)
-        {
-            AssertionError varA81442E36297E737EB908877E58260E8_40329820 = new AssertionError();
-            varA81442E36297E737EB908877E58260E8_40329820.addTaint(taint);
-            throw varA81442E36297E737EB908877E58260E8_40329820;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //final Animator anim = (Animator) super.clone();
-            //if (mListeners != null) {
-                //ArrayList<AnimatorListener> oldListeners = mListeners;
-                //anim.mListeners = new ArrayList<AnimatorListener>();
-                //int numListeners = oldListeners.size();
-                //for (int i = 0; i < numListeners; ++i) {
-                    //anim.mListeners.add(oldListeners.get(i));
-                //}
-            //}
-            //return anim;
-        //} catch (CloneNotSupportedException e) {
-           //throw new AssertionError();
-        //}
+                }
+            }
+            return anim;
+        } catch (CloneNotSupportedException e) {
+           throw new AssertionError();
+        }
     }
 
+    /**
+     * This method tells the object to use appropriate information to extract
+     * starting values for the animation. For example, a AnimatorSet object will pass
+     * this call to its child objects to tell them to set up the values. A
+     * ObjectAnimator object will use the information it has about its target object
+     * and PropertyValuesHolder objects to get the start values for its properties.
+     * An ValueAnimator object will ignore the request since it does not have enough
+     * information (such as a target object) to gather these values.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.304 -0500", hash_original_method = "32F08DC85010676418427AA8D9A17152", hash_generated_method = "6730FDB6F6254C0B72706150269179FD")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:13.857 -0400", hash_original_method = "32F08DC85010676418427AA8D9A17152", hash_generated_method = "BF5AF1AD862E3A79F4B93BAB44171538")
-    public void setupStartValues() {
-        // ---------- Original Method ----------
+public void setupStartValues() {
     }
 
+    /**
+     * This method tells the object to use appropriate information to extract
+     * ending values for the animation. For example, a AnimatorSet object will pass
+     * this call to its child objects to tell them to set up the values. A
+     * ObjectAnimator object will use the information it has about its target object
+     * and PropertyValuesHolder objects to get the start values for its properties.
+     * An ValueAnimator object will ignore the request since it does not have enough
+     * information (such as a target object) to gather these values.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.306 -0500", hash_original_method = "4E652EB88F78E42C7E65C332BEA7074B", hash_generated_method = "0F36AB957B35647210D5123B32DEBC83")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:13.859 -0400", hash_original_method = "4E652EB88F78E42C7E65C332BEA7074B", hash_generated_method = "F85A6F7F464E8F9389DDB8CE57A7E36C")
-    public void setupEndValues() {
-        // ---------- Original Method ----------
+public void setupEndValues() {
     }
 
+    /**
+     * Sets the target object whose property will be animated by this animation. Not all subclasses
+     * operate on target objects (for example, {@link ValueAnimator}, but this method
+     * is on the superclass for the convenience of dealing generically with those subclasses
+     * that do handle targets.
+     *
+     * @param target The object being animated
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.308 -0500", hash_original_method = "0B5C67CA62B433384E1BDDE3EB79AFB5", hash_generated_method = "F29AFE070434CC410DBB0B279E1F6376")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:13.863 -0400", hash_original_method = "0B5C67CA62B433384E1BDDE3EB79AFB5", hash_generated_method = "085860A0B63A5244CC48441EE96D69F4")
-    public void setTarget(Object target) {
-        addTaint(target.getTaint());
-        // ---------- Original Method ----------
+public void setTarget(Object target) {
     }
 
     

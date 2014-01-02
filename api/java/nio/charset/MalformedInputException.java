@@ -1,6 +1,8 @@
 package java.nio.charset;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
@@ -8,44 +10,41 @@ import droidsafe.annotations.*;
 
 
 public class MalformedInputException extends CharacterCodingException {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.661 -0400", hash_original_field = "041709F4FF2A8080D6F626D7CB84757B", hash_generated_field = "939A3890EE1598347B6974B9F9310D43")
-
-    private int inputLength;
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.661 -0400", hash_original_method = "18BAC8E5082B44B03924789E1D8CD6BE", hash_generated_method = "8016B46A7DF01A09F456F05131FC6411")
-    public  MalformedInputException(int length) {
-        this.inputLength = length;
-        // ---------- Original Method ----------
-        //this.inputLength = length;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.662 -0400", hash_original_method = "99174ED6911F5F8CBB68A90343CD57CF", hash_generated_method = "A5CFF569EC8CEB726074F3BAD3E1C271")
-    public int getInputLength() {
-        int varF1CEB9E26A0768A795CBAD9C5D7C65DC_70897077 = (this.inputLength);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_574268066 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_574268066;
-        // ---------- Original Method ----------
-        //return this.inputLength;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.662 -0400", hash_original_method = "7D10807CFABB560A12F38675F46A3FF5", hash_generated_method = "4B9AD19AB9278C6D137F24712D022740")
-    @Override
-    public String getMessage() {
-String var81FD86717EF7CC5DC6C9094CF8A5F984_720493170 =         "Length: " + inputLength;
-        var81FD86717EF7CC5DC6C9094CF8A5F984_720493170.addTaint(taint);
-        return var81FD86717EF7CC5DC6C9094CF8A5F984_720493170;
-        // ---------- Original Method ----------
-        //return "Length: " + inputLength;
-    }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.662 -0400", hash_original_field = "95AAF9962932929B8D57DEC535383638", hash_generated_field = "AD2DD481E60844E3D7253976946DDA58")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.083 -0500", hash_original_field = "2B7F2530086621A042092B57ACAB6983", hash_generated_field = "AD2DD481E60844E3D7253976946DDA58")
 
     private static final long serialVersionUID = -3438823399834806194L;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.086 -0500", hash_original_field = "755C7B08BD7CC897183CC4B0B5436326", hash_generated_field = "939A3890EE1598347B6974B9F9310D43")
+
+    private int inputLength;
+
+    /**
+     * Constructs a new {@code MalformedInputException}.
+     *
+     * @param length
+     *            the length of the malformed input.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.088 -0500", hash_original_method = "18BAC8E5082B44B03924789E1D8CD6BE", hash_generated_method = "9353A0EB2ECDCF84D7E945D0B98F71D8")
+    
+public MalformedInputException(int length) {
+        this.inputLength = length;
+    }
+
+    /**
+     * Gets the length of the malformed input.
+     *
+     * @return the length of the malformed input.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.091 -0500", hash_original_method = "99174ED6911F5F8CBB68A90343CD57CF", hash_generated_method = "FA812069F55585CBB369DCEB6C68F21E")
+    
+public int getInputLength() {
+        return this.inputLength;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.093 -0500", hash_original_method = "7D10807CFABB560A12F38675F46A3FF5", hash_generated_method = "1857012EE798A7AA3F53EF74BDA89DF6")
+    
+@Override
+    public String getMessage() {
+        return "Length: " + inputLength;
+    }
 }
 

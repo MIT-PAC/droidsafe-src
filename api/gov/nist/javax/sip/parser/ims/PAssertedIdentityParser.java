@@ -1,6 +1,8 @@
 package gov.nist.javax.sip.parser.ims;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import gov.nist.javax.sip.header.SIPHeader;
 import gov.nist.javax.sip.header.ims.PAssertedIdentity;
@@ -15,62 +17,68 @@ import java.text.ParseException;
 
 
 public class PAssertedIdentityParser extends AddressParametersParser implements TokenTypes {
+
+    /**
+     * Constructor
+     * @param assertedIdentity -  message to parse to set
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:44.074 -0500", hash_original_method = "C02C6F9EBCA71551D8AF330F3F45B00C", hash_generated_method = "CA679919BC5CD4241CF65888D47DD19F")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.866 -0400", hash_original_method = "C02C6F9EBCA71551D8AF330F3F45B00C", hash_generated_method = "CAB075B76C2EEE3FDBCE822C4D4678EC")
-    public  PAssertedIdentityParser(String assertedIdentity) {
+public PAssertedIdentityParser(String assertedIdentity) {
         super(assertedIdentity);
-        addTaint(assertedIdentity.getTaint());
-        // ---------- Original Method ----------
+
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:44.076 -0500", hash_original_method = "EBF7927CE1D82A95913A99D5074781DB", hash_generated_method = "0446E9C19D94405F80ABC11CAAB1E212")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.866 -0400", hash_original_method = "EBF7927CE1D82A95913A99D5074781DB", hash_generated_method = "8FBB134D8A84A5466095E6E0DF4AFDC2")
-    protected  PAssertedIdentityParser(Lexer lexer) {
+protected PAssertedIdentityParser(Lexer lexer) {
         super(lexer);
-        addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+
     }
 
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:44.084 -0500", hash_original_method = "F1FB2D5EE9E961EE6E5DF8A2F520567C", hash_generated_method = "31419CB40B1D2D413322EF8FDC4D5DBE")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:39.867 -0400", hash_original_method = "F1FB2D5EE9E961EE6E5DF8A2F520567C", hash_generated_method = "6B01C5F756ACECC53826F7DB00401214")
-    public SIPHeader parse() throws ParseException {
-        if(debug)        
-        dbg_enter("AssertedIdentityParser.parse");
+public SIPHeader parse() throws ParseException {
+
+        if (debug)
+            dbg_enter("AssertedIdentityParser.parse");
+
         PAssertedIdentityList assertedIdList = new PAssertedIdentityList();
-        try 
-        {
+
+        try {
+
             headerName(TokenTypes.P_ASSERTED_IDENTITY);
+
             PAssertedIdentity pai = new PAssertedIdentity();
             pai.setHeaderName(SIPHeaderNamesIms.P_ASSERTED_IDENTITY);
+
             super.parse(pai);
             assertedIdList.add(pai);
+
             this.lexer.SPorHT();
-            while
-(lexer.lookAhead(0) == ',')            
+            while (lexer.lookAhead(0) == ',')
             {
                 this.lexer.match(',');
                 this.lexer.SPorHT();
+
                 pai = new PAssertedIdentity();
                 super.parse(pai);
                 assertedIdList.add(pai);
+
                 this.lexer.SPorHT();
-            } //End block
+            }
             this.lexer.SPorHT();
             this.lexer.match('\n');
-SIPHeader varA71E01B4BE13127DBE4088ADB6E3CDAB_3774202 =             assertedIdList;
-            varA71E01B4BE13127DBE4088ADB6E3CDAB_3774202.addTaint(taint);
-            return varA71E01B4BE13127DBE4088ADB6E3CDAB_3774202;
-        } //End block
-        finally 
-        {
-            if(debug)            
-            dbg_leave("AssertedIdentityParser.parse");
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+
+            return assertedIdList;
+
+        }
+
+        finally {
+            if (debug)
+                dbg_leave("AssertedIdentityParser.parse");
+            }
     }
 
     

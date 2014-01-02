@@ -1,6 +1,8 @@
 package java.net;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Locale;
 
@@ -14,45 +16,23 @@ class DefaultFileNameMap implements FileNameMap {
     {
         //Synthesized constructor
     }
-
-
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.439 -0400", hash_original_method = "CD3BB5C1D36DDF595D7942DB441DE716", hash_generated_method = "EC4477E342F5010EF08F63DE0BD27096")
-    public String getContentTypeFor(String filename) {
-        addTaint(filename.getTaint());
-        if(filename.endsWith("/"))        
-        {
-String varFFB0A94021F9EAA0E57D20606DA1549E_1654427786 =             MimeUtils.guessMimeTypeFromExtension("html");
-            varFFB0A94021F9EAA0E57D20606DA1549E_1654427786.addTaint(taint);
-            return varFFB0A94021F9EAA0E57D20606DA1549E_1654427786;
-        } //End block
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.535 -0500", hash_original_method = "CD3BB5C1D36DDF595D7942DB441DE716", hash_generated_method = "383DA40FA4C20B646270A71CD8C2DB89")
+    
+public String getContentTypeFor(String filename) {
+        if (filename.endsWith("/")) {
+            // a directory, return html
+            return MimeUtils.guessMimeTypeFromExtension("html");
+        }
         int lastCharInExtension = filename.lastIndexOf('#');
-        if(lastCharInExtension < 0)        
-        {
+        if (lastCharInExtension < 0) {
             lastCharInExtension = filename.length();
-        } //End block
+        }
         int firstCharInExtension = filename.lastIndexOf('.') + 1;
         String ext = "";
-        if(firstCharInExtension > filename.lastIndexOf('/'))        
-        {
+        if (firstCharInExtension > filename.lastIndexOf('/')) {
             ext = filename.substring(firstCharInExtension, lastCharInExtension);
-        } //End block
-String var70816CE115E885350FDEF9844DE4A2F8_1144958643 =         MimeUtils.guessMimeTypeFromExtension(ext.toLowerCase(Locale.US));
-        var70816CE115E885350FDEF9844DE4A2F8_1144958643.addTaint(taint);
-        return var70816CE115E885350FDEF9844DE4A2F8_1144958643;
-        // ---------- Original Method ----------
-        //if (filename.endsWith("/")) {
-            //return MimeUtils.guessMimeTypeFromExtension("html");
-        //}
-        //int lastCharInExtension = filename.lastIndexOf('#');
-        //if (lastCharInExtension < 0) {
-            //lastCharInExtension = filename.length();
-        //}
-        //int firstCharInExtension = filename.lastIndexOf('.') + 1;
-        //String ext = "";
-        //if (firstCharInExtension > filename.lastIndexOf('/')) {
-            //ext = filename.substring(firstCharInExtension, lastCharInExtension);
-        //}
-        //return MimeUtils.guessMimeTypeFromExtension(ext.toLowerCase(Locale.US));
+        }
+        return MimeUtils.guessMimeTypeFromExtension(ext.toLowerCase(Locale.US));
     }
 
     

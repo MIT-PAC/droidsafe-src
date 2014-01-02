@@ -1,6 +1,9 @@
 package android.net.http;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
+import android.util.Log;
 import droidsafe.annotations.*;
 import org.apache.http.HttpHost;
 
@@ -11,194 +14,54 @@ import android.os.SystemClock;
 
 
 class IdleCache {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.262 -0400", hash_original_field = "379C729523CD5967E1C64411ED82B1A2", hash_generated_field = "5DA8A4D4C2CDF098EB768C6225089E33")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.008 -0500", hash_original_field = "7B2144BEEC0414B7B620CCBFC36930F5", hash_generated_field = "844D05329852E8C591AB6BCD91CF4039")
+
+
+    private final static int IDLE_CACHE_MAX = 8;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.010 -0500", hash_original_field = "5D4BE83937850A1A05D60BAFB8354CFD", hash_generated_field = "B31C9FE229293E94ED98B7862DD3C494")
+
+    private final static int EMPTY_CHECK_MAX = 5;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.012 -0500", hash_original_field = "D8E0BD98B94AF1ABD4D40812D3CD4B1C", hash_generated_field = "A07A037A70CF5B89CA1BD6E1B94EB41D")
+
+    private final static int TIMEOUT = 6 * 1000;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.015 -0500", hash_original_field = "787767ACA9553C8145CFC9B805FF35BB", hash_generated_field = "37419313EC4BFBD208F8E416592511E0")
+
+    private final static int CHECK_INTERVAL = 2 * 1000;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.017 -0500", hash_original_field = "0FF216EB85BA78ADDEC3C8A41FEC1EA4", hash_generated_field = "5DA8A4D4C2CDF098EB768C6225089E33")
 
     private Entry[] mEntries = new Entry[IDLE_CACHE_MAX];
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.262 -0400", hash_original_field = "DFBC16768366A2556A52E5DCDCD8E737", hash_generated_field = "FF64F9A7A53D85DAFE355CC940E3F92D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.019 -0500", hash_original_field = "D01C96038701D525501067476D6E20FD", hash_generated_field = "FF64F9A7A53D85DAFE355CC940E3F92D")
+
 
     private int mCount = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.262 -0400", hash_original_field = "4637F257714ED0010AAAD4B2D42CA0B5", hash_generated_field = "E1D81FFF9FA8DBF8F061A478C1B8E12A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.021 -0500", hash_original_field = "823D5CC7A6FBE6E7E207151FFC739A3B", hash_generated_field = "E1D81FFF9FA8DBF8F061A478C1B8E12A")
+
 
     private IdleReaper mThread = null;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.262 -0400", hash_original_field = "38257BA3A260211EFCDC2FFD340429F5", hash_generated_field = "5F06A5363A8AD1B70971804573712105")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.023 -0500", hash_original_field = "39077C14E378039D1D2674EB097F2854", hash_generated_field = "5F06A5363A8AD1B70971804573712105")
 
     private int mCached = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.262 -0400", hash_original_field = "91F643CB351DFCE613F512FC46A2B2E7", hash_generated_field = "9E8AFFB866082F7AAC658675F2987073")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.025 -0500", hash_original_field = "763259DA916FAE756C76543310996E2A", hash_generated_field = "9E8AFFB866082F7AAC658675F2987073")
 
     private int mReused = 0;
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.028 -0500", hash_original_method = "381EAC5E18A2676540DA51802FE9C22A", hash_generated_method = "381EAC5E18A2676540DA51802FE9C22A")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.263 -0400", hash_original_method = "381EAC5E18A2676540DA51802FE9C22A", hash_generated_method = "BAFC3C81E726FE7B91D886E61387DE79")
-      IdleCache() {
-for(int i = 0;i < IDLE_CACHE_MAX;i++)
-        {
+IdleCache() {
+        for (int i = 0; i < IDLE_CACHE_MAX; i++) {
             mEntries[i] = new Entry();
-        } //End block
-        // ---------- Original Method ----------
-        //for (int i = 0; i < IDLE_CACHE_MAX; i++) {
-            //mEntries[i] = new Entry();
-        //}
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.264 -0400", hash_original_method = "15C17CA69A0E3C6519F160E1B18C9284", hash_generated_method = "893332F3D6039DC2FA2054AC6DAACFDA")
-    synchronized boolean cacheConnection(
-            HttpHost host, Connection connection) {
-        addTaint(connection.getTaint());
-        addTaint(host.getTaint());
-        boolean ret = false;
-        if(HttpLog.LOGV)        
-        {
-            HttpLog.v("IdleCache size " + mCount + " host "  + host);
-        } //End block
-        if(mCount < IDLE_CACHE_MAX)        
-        {
-            long time = SystemClock.uptimeMillis();
-for(int i = 0;i < IDLE_CACHE_MAX;i++)
-            {
-                Entry entry = mEntries[i];
-                if(entry.mHost == null)                
-                {
-                    entry.mHost = host;
-                    entry.mConnection = connection;
-                    entry.mTimeout = time + TIMEOUT;
-                    mCount++;
-                    if(HttpLog.LOGV)                    
-                    mCached++;
-                    ret = true;
-                    if(mThread == null)                    
-                    {
-                        mThread = new IdleReaper();
-                        mThread.start();
-                    } //End block
-                    break;
-                } //End block
-            } //End block
-        } //End block
-        boolean var2CB9DF9898E55FD0AD829DC202DDBD1C_1987759481 = (ret);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_691567381 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_691567381;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.267 -0400", hash_original_method = "84A867D5F5B3563DFEB3ADE540AAE988", hash_generated_method = "2F5ABF904043E0FB6A3C79479B9A6B9F")
-    synchronized Connection getConnection(HttpHost host) {
-        addTaint(host.getTaint());
-        Connection ret = null;
-        if(mCount > 0)        
-        {
-for(int i = 0;i < IDLE_CACHE_MAX;i++)
-            {
-                Entry entry = mEntries[i];
-                HttpHost eHost = entry.mHost;
-                if(eHost != null && eHost.equals(host))                
-                {
-                    ret = entry.mConnection;
-                    entry.mHost = null;
-                    entry.mConnection = null;
-                    mCount--;
-                    if(HttpLog.LOGV)                    
-                    mReused++;
-                    break;
-                } //End block
-            } //End block
-        } //End block
-Connection varEDFF4FBBF053B5DC2B444ADFA049EE0F_1192020068 =         ret;
-        varEDFF4FBBF053B5DC2B444ADFA049EE0F_1192020068.addTaint(taint);
-        return varEDFF4FBBF053B5DC2B444ADFA049EE0F_1192020068;
-        // ---------- Original Method ----------
-        //Connection ret = null;
-        //if (mCount > 0) {
-            //for (int i = 0; i < IDLE_CACHE_MAX; i++) {
-                //Entry entry = mEntries[i];
-                //HttpHost eHost = entry.mHost;
-                //if (eHost != null && eHost.equals(host)) {
-                    //ret = entry.mConnection;
-                    //entry.mHost = null;
-                    //entry.mConnection = null;
-                    //mCount--;
-                    //if (HttpLog.LOGV) mReused++;
-                    //break;
-                //}
-            //}
-        //}
-        //return ret;
-    }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.270 -0400", hash_original_method = "3CB6FBE953A3200168C4C82134203CFB", hash_generated_method = "8B2D5B358AEA1270BD5C5EDACCB39C3A")
-    synchronized void clear() {
-for(int i = 0;mCount > 0 && i < IDLE_CACHE_MAX;i++)
-        {
-            Entry entry = mEntries[i];
-            if(entry.mHost != null)            
-            {
-                entry.mHost = null;
-                entry.mConnection.closeConnection();
-                entry.mConnection = null;
-                mCount--;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //for (int i = 0; mCount > 0 && i < IDLE_CACHE_MAX; i++) {
-            //Entry entry = mEntries[i];
-            //if (entry.mHost != null) {
-                //entry.mHost = null;
-                //entry.mConnection.closeConnection();
-                //entry.mConnection = null;
-                //mCount--;
-            //}
-        //}
-    }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.272 -0400", hash_original_method = "D819290B68B2E791C413DF56F024C65B", hash_generated_method = "AEE43958128F0F79804035295610C6AA")
-    private synchronized void clearIdle() {
-        if(mCount > 0)        
-        {
-            long time = SystemClock.uptimeMillis();
-for(int i = 0;i < IDLE_CACHE_MAX;i++)
-            {
-                Entry entry = mEntries[i];
-                if(entry.mHost != null && time > entry.mTimeout)                
-                {
-                    entry.mHost = null;
-                    entry.mConnection.closeConnection();
-                    entry.mConnection = null;
-                    mCount--;
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (mCount > 0) {
-            //long time = SystemClock.uptimeMillis();
-            //for (int i = 0; i < IDLE_CACHE_MAX; i++) {
-                //Entry entry = mEntries[i];
-                //if (entry.mHost != null && time > entry.mTimeout) {
-                    //entry.mHost = null;
-                    //entry.mConnection.closeConnection();
-                    //entry.mConnection = null;
-                    //mCount--;
-                //}
-            //}
-        //}
+        }
     }
 
     
     class Entry {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.273 -0400", hash_original_field = "AE3E518F8FFDE1F8C00699B4C58E95B5", hash_generated_field = "BB62408D38B8CFFE64423F7A37FB51DF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.999 -0500", hash_original_field = "BB62408D38B8CFFE64423F7A37FB51DF", hash_generated_field = "BB62408D38B8CFFE64423F7A37FB51DF")
 
         HttpHost mHost;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.273 -0400", hash_original_field = "8FB9CEDC14BF8DE9558825242E11E275", hash_generated_field = "D468AD0EA1184CE89FA8A45254E2CDD6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.001 -0500", hash_original_field = "D468AD0EA1184CE89FA8A45254E2CDD6", hash_generated_field = "D468AD0EA1184CE89FA8A45254E2CDD6")
 
         Connection mConnection;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.273 -0400", hash_original_field = "A6EFB54FFD2811DD57158A62FDEF145A", hash_generated_field = "4664F919744F49AEF8673D87A7926AAD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.003 -0500", hash_original_field = "4664F919744F49AEF8673D87A7926AAD", hash_generated_field = "4664F919744F49AEF8673D87A7926AAD")
 
         long mTimeout;
         
@@ -221,65 +84,128 @@ for(int i = 0;i < IDLE_CACHE_MAX;i++)
             //Synthesized constructor
         }
 
-
-                @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.275 -0400", hash_original_method = "251C8B975B1D281BC736CAA8083B5C8E", hash_generated_method = "D8917CFCEA8A09470AD25411D95F05B8")
-        public void run() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.041 -0500", hash_original_method = "251C8B975B1D281BC736CAA8083B5C8E", hash_generated_method = "BB0F0F94ADAC2E85899BAFAA68AB3C32")
+        
+public void run() {
             int check = 0;
+
             setName("IdleReaper");
             android.os.Process.setThreadPriority(
                     android.os.Process.THREAD_PRIORITY_BACKGROUND);
-            synchronized
-(IdleCache.this)            {
-                while
-(check < EMPTY_CHECK_MAX)                
-                {
-                    try 
-                    {
+            synchronized (IdleCache.this) {
+                while (check < EMPTY_CHECK_MAX) {
+                    try {
                         IdleCache.this.wait(CHECK_INTERVAL);
-                    } //End block
-                    catch (InterruptedException ex)
-                    {
-                    } //End block
-                    if(mCount == 0)                    
-                    {
+                    } catch (InterruptedException ex) {
+                    }
+                    if (mCount == 0) {
                         check++;
-                    } //End block
-                    else
-                    {
+                    } else {
                         check = 0;
                         clearIdle();
-                    } //End block
-                } //End block
+                    }
+                }
                 mThread = null;
-            } //End block
-            if(HttpLog.LOGV)            
-            {
+            }
+            if (HttpLog.LOGV) {
                 HttpLog.v("IdleCache IdleReaper shutdown: cached " + mCached +
                           " reused " + mReused);
                 mCached = 0;
                 mReused = 0;
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            }
         }
 
         
     }
 
-
+    /**
+     * Caches connection, if there is room.
+     * @return true if connection cached
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.031 -0500", hash_original_method = "15C17CA69A0E3C6519F160E1B18C9284", hash_generated_method = "DDB193F4AB03DBF42B77F2F79AFB5FBA")
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.276 -0400", hash_original_field = "03E5A01A6925293D011A56AE5E24D1E6", hash_generated_field = "844D05329852E8C591AB6BCD91CF4039")
+synchronized boolean cacheConnection(
+            HttpHost host, Connection connection) {
 
-    private final static int IDLE_CACHE_MAX = 8;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.276 -0400", hash_original_field = "F6F867A703F127802873EF72834A03A9", hash_generated_field = "B31C9FE229293E94ED98B7862DD3C494")
+        boolean ret = false;
 
-    private final static int EMPTY_CHECK_MAX = 5;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.276 -0400", hash_original_field = "D86BC5265DAD5551631EE19814B1E068", hash_generated_field = "A07A037A70CF5B89CA1BD6E1B94EB41D")
+        if (HttpLog.LOGV) {
+            HttpLog.v("IdleCache size " + mCount + " host "  + host);
+        }
 
-    private final static int TIMEOUT = 6 * 1000;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.276 -0400", hash_original_field = "134D854D0A1BB3BE0EBA823B202676B5", hash_generated_field = "37419313EC4BFBD208F8E416592511E0")
+        if (mCount < IDLE_CACHE_MAX) {
+            long time = SystemClock.uptimeMillis();
+            for (int i = 0; i < IDLE_CACHE_MAX; i++) {
+                Entry entry = mEntries[i];
+                if (entry.mHost == null) {
+                    entry.mHost = host;
+                    entry.mConnection = connection;
+                    entry.mTimeout = time + TIMEOUT;
+                    mCount++;
+                    if (HttpLog.LOGV) mCached++;
+                    ret = true;
+                    if (mThread == null) {
+                        mThread = new IdleReaper();
+                        mThread.start();
+                    }
+                    break;
+                }
+            }
+        }
+        return ret;
+    }
 
-    private final static int CHECK_INTERVAL = 2 * 1000;
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.034 -0500", hash_original_method = "84A867D5F5B3563DFEB3ADE540AAE988", hash_generated_method = "8D515E030AE7DD404198E0F4C7514E84")
+    
+synchronized Connection getConnection(HttpHost host) {
+        Connection ret = null;
+
+        if (mCount > 0) {
+            for (int i = 0; i < IDLE_CACHE_MAX; i++) {
+                Entry entry = mEntries[i];
+                HttpHost eHost = entry.mHost;
+                if (eHost != null && eHost.equals(host)) {
+                    ret = entry.mConnection;
+                    entry.mHost = null;
+                    entry.mConnection = null;
+                    mCount--;
+                    if (HttpLog.LOGV) mReused++;
+                    break;
+                }
+            }
+        }
+        return ret;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.036 -0500", hash_original_method = "3CB6FBE953A3200168C4C82134203CFB", hash_generated_method = "B8167B7BD46151462D923C6809F040AC")
+    
+synchronized void clear() {
+        for (int i = 0; mCount > 0 && i < IDLE_CACHE_MAX; i++) {
+            Entry entry = mEntries[i];
+            if (entry.mHost != null) {
+                entry.mHost = null;
+                entry.mConnection.closeConnection();
+                entry.mConnection = null;
+                mCount--;
+            }
+        }
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.038 -0500", hash_original_method = "D819290B68B2E791C413DF56F024C65B", hash_generated_method = "2737D354493D3C4E4BD3DE8A1BFACE75")
+    
+private synchronized void clearIdle() {
+        if (mCount > 0) {
+            long time = SystemClock.uptimeMillis();
+            for (int i = 0; i < IDLE_CACHE_MAX; i++) {
+                Entry entry = mEntries[i];
+                if (entry.mHost != null && time > entry.mTimeout) {
+                    entry.mHost = null;
+                    entry.mConnection.closeConnection();
+                    entry.mConnection = null;
+                    mCount--;
+                }
+            }
+        }
+    }
 }
 

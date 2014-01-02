@@ -1,6 +1,8 @@
 package com.android.internal.telephony.cdma;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.os.AsyncResult;
 import android.os.Message;
@@ -22,260 +24,280 @@ import com.android.internal.telephony.gsm.GsmDataConnectionTracker;
 
 
 public class CdmaLteServiceStateTracker extends CdmaServiceStateTracker {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.738 -0400", hash_original_field = "B5F20DF0028332D17F33E3BF40040A23", hash_generated_field = "879F4AF456AD7D7A9BB5520F0BAD6F62")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.448 -0500", hash_original_field = "879F4AF456AD7D7A9BB5520F0BAD6F62", hash_generated_field = "879F4AF456AD7D7A9BB5520F0BAD6F62")
 
     CDMALTEPhone mCdmaLtePhone;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.739 -0400", hash_original_field = "422A4AE190845160AC9AC0B750445158", hash_generated_field = "CCE1FE524FD9420E4F8B07A4C62521E0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.450 -0500", hash_original_field = "30863065C53EF2AE7F6D6E713A334376", hash_generated_field = "CCE1FE524FD9420E4F8B07A4C62521E0")
 
-    private ServiceState mLteSS;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.739 -0400", hash_original_field = "8F9DBE53F0380067CC21F8BCAF3A13AB", hash_generated_field = "33DD1D28F358EBB2DB6B0718CE46393E")
+
+    private ServiceState  mLteSS;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.453 -0500", hash_original_field = "C7C433963F4B4A5906B8318911ECA31F", hash_generated_field = "33DD1D28F358EBB2DB6B0718CE46393E")
 
     private boolean mNeedToRegForSimLoaded = true;
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.455 -0500", hash_original_method = "47593605762760CA14FD5EED8D416F47", hash_generated_method = "B56056DFB2764A7F316092A36DCAAC40")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.739 -0400", hash_original_method = "47593605762760CA14FD5EED8D416F47", hash_generated_method = "8CC02D5856489478DBA476AA6E781FDD")
-    public  CdmaLteServiceStateTracker(CDMALTEPhone phone) {
+public CdmaLteServiceStateTracker(CDMALTEPhone phone) {
         super(phone);
         cm.registerForSIMReady(this, EVENT_SIM_READY, null);
         mCdmaLtePhone = phone;
+
         mLteSS = new ServiceState();
-        if(DBG)        
-        log("CdmaLteServiceStateTracker Constructors");
-        // ---------- Original Method ----------
-        //cm.registerForSIMReady(this, EVENT_SIM_READY, null);
-        //mCdmaLtePhone = phone;
-        //mLteSS = new ServiceState();
-        //if (DBG) log("CdmaLteServiceStateTracker Constructors");
+        if (DBG) log("CdmaLteServiceStateTracker Constructors");
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.458 -0500", hash_original_method = "E8B96682BA406A5B61C3BDB5E6938EBA", hash_generated_method = "8CD85EC22F318208A04AAAAA6FBC67F9")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.739 -0400", hash_original_method = "E8B96682BA406A5B61C3BDB5E6938EBA", hash_generated_method = "C9E65A83CD4B2E304C5D2B05ECCE7357")
-    @Override
+@Override
     public void dispose() {
         cm.unregisterForSIMReady(this);
         super.dispose();
-        // ---------- Original Method ----------
-        //cm.unregisterForSIMReady(this);
-        //super.dispose();
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.461 -0500", hash_original_method = "D5AC4DEC3B42E743000565D518230B6D", hash_generated_method = "175356D8D372E9D980766052FA5AC179")
     
-        @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.741 -0400", hash_original_method = "D5AC4DEC3B42E743000565D518230B6D", hash_generated_method = "99F6F9E45C1260AD764C2BCE0C13A713")
-    @Override
+@Override
     public void handleMessage(Message msg) {
-        addTaint(msg.getTaint());
         AsyncResult ar;
         int[] ints;
         String[] strings;
-switch(msg.what){
+        switch (msg.what) {
         case EVENT_POLL_STATE_GPRS:
-        if(DBG)        
-        log("handleMessage EVENT_POLL_STATE_GPRS");
-        ar = (AsyncResult)msg.obj;
-        handlePollStateResult(msg.what, ar);
-        break;
+            if (DBG) log("handleMessage EVENT_POLL_STATE_GPRS");
+            ar = (AsyncResult)msg.obj;
+            handlePollStateResult(msg.what, ar);
+            break;
         case EVENT_SIM_READY:
-        if(DBG)        
-        log("handleMessage EVENT_SIM_READY");
-        isSubscriptionFromRuim = false;
-        if(mNeedToRegForSimLoaded)        
-        {
-            phone.mIccRecords.registerForRecordsLoaded(this, EVENT_SIM_RECORDS_LOADED, null);
-            mNeedToRegForSimLoaded = false;
-        } //End block
-        pollState();
-        queueNextSignalStrengthPoll();
-        phone.prepareEri();
-        break;
+            if (DBG) log("handleMessage EVENT_SIM_READY");
+            isSubscriptionFromRuim = false;
+            // Register SIM_RECORDS_LOADED dynamically.
+            // This is to avoid confilct with RUIM_READY scenario)
+            if (mNeedToRegForSimLoaded) {
+                phone.mIccRecords.registerForRecordsLoaded(this, EVENT_SIM_RECORDS_LOADED, null);
+                mNeedToRegForSimLoaded = false;
+            }
+            pollState();
+            // Signal strength polling stops when radio is off.
+            queueNextSignalStrengthPoll();
+
+            // load ERI file
+            phone.prepareEri();
+            break;
         case EVENT_SIM_RECORDS_LOADED:
-        CdmaLteUiccRecords sim = (CdmaLteUiccRecords)phone.mIccRecords;
-        if((sim != null) && sim.isProvisioned())        
-        {
-            mMdn = sim.getMdn();
-            mMin = sim.getMin();
-            parseSidNid(sim.getSid(), sim.getNid());
-            mPrlVersion = sim.getPrlVersion();
-            ;
-            mIsMinInfoReady = true;
-            updateOtaspState();
-        } //End block
-        pollState();
-        break;
+            CdmaLteUiccRecords sim = (CdmaLteUiccRecords)phone.mIccRecords;
+            if ((sim != null) && sim.isProvisioned()) {
+                mMdn = sim.getMdn();
+                mMin = sim.getMin();
+                parseSidNid(sim.getSid(), sim.getNid());
+                mPrlVersion = sim.getPrlVersion();;
+                mIsMinInfoReady = true;
+                updateOtaspState();
+            }
+            // SID/NID/PRL is loaded. Poll service state
+            // again to update to the roaming state with
+            // the latest variables.
+            pollState();
+            break;
         default:
-        super.handleMessage(msg);
-}
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            super.handleMessage(msg);
+        }
     }
 
+    /**
+     * Set the cdmaSS for EVENT_POLL_STATE_REGISTRATION_CDMA
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.463 -0500", hash_original_method = "F7DAEBCFC7E85FA3AD1692EAA757E22A", hash_generated_method = "0F2F03D179DB5107AF9DDE5CA61A118A")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.742 -0400", hash_original_method = "F7DAEBCFC7E85FA3AD1692EAA757E22A", hash_generated_method = "FE6134B3653813226AE2A5A663467FE8")
-    @Override
+@Override
     protected void setCdmaTechnology(int radioTechnology) {
-        addTaint(radioTechnology);
+        // Called on voice registration state response.
+        // Just record new CDMA radio technology
         newSS.setRadioTechnology(radioTechnology);
-        // ---------- Original Method ----------
-        //newSS.setRadioTechnology(radioTechnology);
     }
 
+    /**
+     * Handle the result of one of the pollState()-related requests
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.466 -0500", hash_original_method = "DA636A49D82699419B2FBA1150F1CBEF", hash_generated_method = "F667FE431F48E013D6A55B3947BBB1B2")
     
-        @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.743 -0400", hash_original_method = "DA636A49D82699419B2FBA1150F1CBEF", hash_generated_method = "7EE7351FE073D76A4EE957740A245782")
-    @Override
+@Override
     protected void handlePollStateResultMessage(int what, AsyncResult ar) {
-        addTaint(ar.getTaint());
-        addTaint(what);
-        if(what == EVENT_POLL_STATE_GPRS)        
-        {
-            if(DBG)            
-            log("handlePollStateResultMessage: EVENT_POLL_STATE_GPRS");
+        if (what == EVENT_POLL_STATE_GPRS) {
+            if (DBG) log("handlePollStateResultMessage: EVENT_POLL_STATE_GPRS");
             String states[] = (String[])ar.result;
+
             int type = 0;
             int regState = -1;
-            if(states.length > 0)            
-            {
-                try 
-                {
+            if (states.length > 0) {
+                try {
                     regState = Integer.parseInt(states[0]);
-                    if(states.length >= 4 && states[3] != null)                    
-                    {
+
+                    // states[3] (if present) is the current radio technology
+                    if (states.length >= 4 && states[3] != null) {
                         type = Integer.parseInt(states[3]);
-                    } //End block
-                } //End block
-                catch (NumberFormatException ex)
-                {
+                    }
+                } catch (NumberFormatException ex) {
                     loge("handlePollStateResultMessage: error parsing GprsRegistrationState: "
                                     + ex);
-                } //End block
-            } //End block
+                }
+            }
+
             mLteSS.setRadioTechnology(type);
             mLteSS.setState(regCodeToServiceState(regState));
-        } //End block
-        else
-        {
+        } else {
             super.handlePollStateResultMessage(what, ar);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        }
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.469 -0500", hash_original_method = "10E4D98F7F6A52C0BD2C384AE2F36499", hash_generated_method = "EE52FB270FB21FA9B7391BE3FCC699CC")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.744 -0400", hash_original_method = "10E4D98F7F6A52C0BD2C384AE2F36499", hash_generated_method = "FE4E9808A03FFE71C90B9C094045E9B6")
-    @Override
+@Override
     protected void setSignalStrengthDefaultValues() {
         mSignalStrength = new SignalStrength(99, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, false);
-        // ---------- Original Method ----------
-        //mSignalStrength = new SignalStrength(99, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, false);
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.472 -0500", hash_original_method = "B583B233911BF73B0CF330862869CA80", hash_generated_method = "35A2F7BAE98F1B1784CDE3149FE1C049")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.745 -0400", hash_original_method = "B583B233911BF73B0CF330862869CA80", hash_generated_method = "B09C2F3C804DD2D8F311DFE081057E12")
-    @Override
+@Override
     protected void pollState() {
         pollingContext = new int[1];
         pollingContext[0] = 0;
-switch(cm.getRadioState()){
-        case RADIO_UNAVAILABLE:
-        newSS.setStateOutOfService();
-        newCellLoc.setStateInvalid();
-        setSignalStrengthDefaultValues();
-        mGotCountryCode = false;
-        pollStateDone();
-        break;
-        case RADIO_OFF:
-        newSS.setStateOff();
-        newCellLoc.setStateInvalid();
-        setSignalStrengthDefaultValues();
-        mGotCountryCode = false;
-        pollStateDone();
-        break;
-        default:
-        pollingContext[0]++;
-        cm.getOperator(obtainMessage(EVENT_POLL_STATE_OPERATOR_CDMA, pollingContext));
-        pollingContext[0]++;
-        cm.getVoiceRegistrationState(obtainMessage(EVENT_POLL_STATE_REGISTRATION_CDMA,
+
+        switch (cm.getRadioState()) {
+            case RADIO_UNAVAILABLE:
+                newSS.setStateOutOfService();
+                newCellLoc.setStateInvalid();
+                setSignalStrengthDefaultValues();
+                mGotCountryCode = false;
+
+                pollStateDone();
+                break;
+
+            case RADIO_OFF:
+                newSS.setStateOff();
+                newCellLoc.setStateInvalid();
+                setSignalStrengthDefaultValues();
+                mGotCountryCode = false;
+
+                pollStateDone();
+                break;
+
+            default:
+                // Issue all poll-related commands at once, then count
+                // down the responses which are allowed to arrive
+                // out-of-order.
+
+                pollingContext[0]++;
+                // RIL_REQUEST_OPERATOR is necessary for CDMA
+                cm.getOperator(obtainMessage(EVENT_POLL_STATE_OPERATOR_CDMA, pollingContext));
+
+                pollingContext[0]++;
+                // RIL_REQUEST_VOICE_REGISTRATION_STATE is necessary for CDMA
+                cm.getVoiceRegistrationState(obtainMessage(EVENT_POLL_STATE_REGISTRATION_CDMA,
                         pollingContext));
-        int networkMode = android.provider.Settings.Secure.getInt(phone.getContext()
+
+                int networkMode = android.provider.Settings.Secure.getInt(phone.getContext()
                         .getContentResolver(),
                         android.provider.Settings.Secure.PREFERRED_NETWORK_MODE,
                         RILConstants.PREFERRED_NETWORK_MODE);
-        if(DBG)        
-        log("pollState: network mode here is = " + networkMode);
-        if((networkMode == RILConstants.NETWORK_MODE_GLOBAL)
-                        || (networkMode == RILConstants.NETWORK_MODE_LTE_ONLY))        
-        {
-            pollingContext[0]++;
-            cm.getDataRegistrationState(obtainMessage(EVENT_POLL_STATE_GPRS,
+                if (DBG) log("pollState: network mode here is = " + networkMode);
+                if ((networkMode == RILConstants.NETWORK_MODE_GLOBAL)
+                        || (networkMode == RILConstants.NETWORK_MODE_LTE_ONLY)) {
+                    pollingContext[0]++;
+                    // RIL_REQUEST_DATA_REGISTRATION_STATE
+                    cm.getDataRegistrationState(obtainMessage(EVENT_POLL_STATE_GPRS,
                                                 pollingContext));
-        } //End block
-        break;
-}
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                }
+                break;
+        }
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.479 -0500", hash_original_method = "8C8D67873F7E3A192C41A2E8D9515387", hash_generated_method = "96F36937C3740CD00970039902AD023C")
     
-        @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.750 -0400", hash_original_method = "8C8D67873F7E3A192C41A2E8D9515387", hash_generated_method = "EF9D54C421B6EC1B80DF5D9F6CA8E789")
-    @Override
+@Override
     protected void pollStateDone() {
-        if(mLteSS.getState() == ServiceState.STATE_IN_SERVICE)        
-        {
+        // determine data NetworkType from both LET and CDMA SS
+        if (mLteSS.getState() == ServiceState.STATE_IN_SERVICE) {
+            //in LTE service
             newNetworkType = mLteSS.getRadioTechnology();
             mNewDataConnectionState = mLteSS.getState();
             newSS.setRadioTechnology(newNetworkType);
             log("pollStateDone LTE/eHRPD STATE_IN_SERVICE newNetworkType = " + newNetworkType);
-        } //End block
-        else
-        {
+        } else {
+            // LTE out of service, get CDMA Service State
             newNetworkType = newSS.getRadioTechnology();
             mNewDataConnectionState = radioTechnologyToDataServiceState(newNetworkType);
             log("pollStateDone CDMA STATE_IN_SERVICE newNetworkType = " + newNetworkType +
                 " mNewDataConnectionState = " + mNewDataConnectionState);
-        } //End block
-        if(newSS.getState() == ServiceState.STATE_OUT_OF_SERVICE)        
-        {
+        }
+
+        // TODO: Add proper support for LTE Only, we should be looking at
+        //       the preferred network mode, to know when newSS state should
+        //       be coming from mLteSs state. This was needed to pass a VZW
+        //       LTE Only test.
+        //
+        // If CDMA service is OOS, double check if the device is running with LTE only
+        // mode. If that is the case, derive the service state from LTE side.
+        // To set in LTE only mode, sqlite3 /data/data/com.android.providers.settings/
+        // databases/settings.db "update secure set value='11' where name='preferred_network_mode'"
+        if (newSS.getState() == ServiceState.STATE_OUT_OF_SERVICE) {
             int networkMode = android.provider.Settings.Secure.getInt(phone.getContext()
                                   .getContentResolver(),
                                   android.provider.Settings.Secure.PREFERRED_NETWORK_MODE,
                                   RILConstants.PREFERRED_NETWORK_MODE);
-            if(networkMode == RILConstants.NETWORK_MODE_LTE_ONLY)            
-            {
-                if(DBG)                
-                log("pollState: LTE Only mode");
+            if (networkMode == RILConstants.NETWORK_MODE_LTE_ONLY) {
+                if (DBG) log("pollState: LTE Only mode");
                 newSS.setState(mLteSS.getState());
-            } //End block
-        } //End block
-        if(DBG)        
-        log("pollStateDone: oldSS=[" + ss + "] newSS=[" + newSS + "]");
+            }
+        }
+
+        if (DBG) log("pollStateDone: oldSS=[" + ss + "] newSS=[" + newSS + "]");
+
         boolean hasRegistered = ss.getState() != ServiceState.STATE_IN_SERVICE
                 && newSS.getState() == ServiceState.STATE_IN_SERVICE;
+
         boolean hasDeregistered = ss.getState() == ServiceState.STATE_IN_SERVICE
                 && newSS.getState() != ServiceState.STATE_IN_SERVICE;
-        boolean hasCdmaDataConnectionAttached = mDataConnectionState != ServiceState.STATE_IN_SERVICE
+
+        boolean hasCdmaDataConnectionAttached =
+            mDataConnectionState != ServiceState.STATE_IN_SERVICE
                 && mNewDataConnectionState == ServiceState.STATE_IN_SERVICE;
-        boolean hasCdmaDataConnectionDetached = mDataConnectionState == ServiceState.STATE_IN_SERVICE
+
+        boolean hasCdmaDataConnectionDetached =
+            mDataConnectionState == ServiceState.STATE_IN_SERVICE
                 && mNewDataConnectionState != ServiceState.STATE_IN_SERVICE;
-        boolean hasCdmaDataConnectionChanged = mDataConnectionState != mNewDataConnectionState;
+
+        boolean hasCdmaDataConnectionChanged =
+            mDataConnectionState != mNewDataConnectionState;
+
         boolean hasNetworkTypeChanged = networkType != newNetworkType;
+
         boolean hasChanged = !newSS.equals(ss);
+
         boolean hasRoamingOn = !ss.getRoaming() && newSS.getRoaming();
+
         boolean hasRoamingOff = ss.getRoaming() && !newSS.getRoaming();
+
         boolean hasLocationChanged = !newCellLoc.equals(cellLoc);
-        boolean has4gHandoff = mNewDataConnectionState == ServiceState.STATE_IN_SERVICE &&
+
+        boolean has4gHandoff =
+                mNewDataConnectionState == ServiceState.STATE_IN_SERVICE &&
                 (((networkType == ServiceState.RADIO_TECHNOLOGY_LTE) &&
                   (newNetworkType == ServiceState.RADIO_TECHNOLOGY_EHRPD)) ||
                  ((networkType == ServiceState.RADIO_TECHNOLOGY_EHRPD) &&
                   (newNetworkType == ServiceState.RADIO_TECHNOLOGY_LTE)));
-        boolean hasMultiApnSupport = (((newNetworkType == ServiceState.RADIO_TECHNOLOGY_LTE) ||
+
+        boolean hasMultiApnSupport =
+                (((newNetworkType == ServiceState.RADIO_TECHNOLOGY_LTE) ||
                   (newNetworkType == ServiceState.RADIO_TECHNOLOGY_EHRPD)) &&
                  ((networkType != ServiceState.RADIO_TECHNOLOGY_LTE) &&
                   (networkType != ServiceState.RADIO_TECHNOLOGY_EHRPD)));
-        boolean hasLostMultiApnSupport = ((newNetworkType >= ServiceState.RADIO_TECHNOLOGY_IS95A) &&
+
+        boolean hasLostMultiApnSupport =
+            ((newNetworkType >= ServiceState.RADIO_TECHNOLOGY_IS95A) &&
              (newNetworkType <= ServiceState.RADIO_TECHNOLOGY_EVDO_A));
-        if(DBG)        
-        {
+
+        if (DBG) {
             log("pollStateDone:"
                 + " hasRegistered=" + hasRegistered
                 + " hasDeegistered=" + hasDeregistered
@@ -290,160 +312,159 @@ switch(cm.getRadioState()){
                 + " has4gHandoff = " + has4gHandoff
                 + " hasMultiApnSupport=" + hasMultiApnSupport
                 + " hasLostMultiApnSupport=" + hasLostMultiApnSupport);
-        } //End block
-        if(ss.getState() != newSS.getState()
-                || mDataConnectionState != mNewDataConnectionState)        
-        {
+        }
+        // Add an event log when connection state changes
+        if (ss.getState() != newSS.getState()
+                || mDataConnectionState != mNewDataConnectionState) {
             EventLog.writeEvent(EventLogTags.CDMA_SERVICE_STATE_CHANGE, ss.getState(),
                     mDataConnectionState, newSS.getState(), mNewDataConnectionState);
-        } //End block
+        }
+
         ServiceState tss;
         tss = ss;
         ss = newSS;
         newSS = tss;
+        // clean slate for next time
         newSS.setStateOutOfService();
         mLteSS.setStateOutOfService();
-        if((hasMultiApnSupport)
-                && (phone.mDataConnectionTracker instanceof CdmaDataConnectionTracker))        
-        {
-            if(DBG)            
-            log("GsmDataConnectionTracker Created");
+
+        if ((hasMultiApnSupport)
+                && (phone.mDataConnectionTracker instanceof CdmaDataConnectionTracker)) {
+            if (DBG) log("GsmDataConnectionTracker Created");
             phone.mDataConnectionTracker.dispose();
             phone.mDataConnectionTracker = new GsmDataConnectionTracker(mCdmaLtePhone);
-        } //End block
-        if((hasLostMultiApnSupport)
-                && (phone.mDataConnectionTracker instanceof GsmDataConnectionTracker))        
-        {
-            if(DBG)            
-            log("GsmDataConnectionTracker disposed");
+        }
+
+        if ((hasLostMultiApnSupport)
+                && (phone.mDataConnectionTracker instanceof GsmDataConnectionTracker)) {
+            if (DBG)log("GsmDataConnectionTracker disposed");
             phone.mDataConnectionTracker.dispose();
             phone.mDataConnectionTracker = new CdmaDataConnectionTracker(phone);
-        } //End block
+        }
+
         CdmaCellLocation tcl = cellLoc;
         cellLoc = newCellLoc;
         newCellLoc = tcl;
+
         mDataConnectionState = mNewDataConnectionState;
         networkType = newNetworkType;
-        newSS.setStateOutOfService();
-        if(hasNetworkTypeChanged)        
-        {
+
+        newSS.setStateOutOfService(); // clean slate for next time
+
+        if (hasNetworkTypeChanged) {
             phone.setSystemProperty(TelephonyProperties.PROPERTY_DATA_NETWORK_TYPE,
                     ServiceState.radioTechnologyToString(networkType));
-        } //End block
-        if(hasRegistered)        
-        {
+        }
+
+        if (hasRegistered) {
             mNetworkAttachedRegistrants.notifyRegistrants();
-        } //End block
-        if(hasChanged)        
-        {
-            if(phone.isEriFileLoaded())            
-            {
+        }
+
+        if (hasChanged) {
+            if (phone.isEriFileLoaded()) {
                 String eriText;
-                if(ss.getState() == ServiceState.STATE_IN_SERVICE)                
-                {
+                // Now the CDMAPhone sees the new ServiceState so it can get the
+                // new ERI text
+                if (ss.getState() == ServiceState.STATE_IN_SERVICE) {
                     eriText = phone.getCdmaEriText();
-                } //End block
-                else
-                {
+                } else {
+                    // Note that ServiceState.STATE_OUT_OF_SERVICE is valid used
+                    // for
+                    // mRegistrationState 0,2,3 and 4
                     eriText = phone.getContext()
                             .getText(com.android.internal.R.string.roamingTextSearching).toString();
-                } //End block
+                }
                 ss.setOperatorAlphaLong(eriText);
-            } //End block
-            if(cm.getSimState().isSIMReady())            
-            {
-                boolean showSpn = ((CdmaLteUiccRecords)phone.mIccRecords).getCsimSpnDisplayCondition();
+            }
+
+            if (cm.getSimState().isSIMReady()) {
+                // SIM is found on the device. If ERI roaming is OFF and SID/NID matches
+                // one configfured in SIM, use operator name from CSIM record.
+                boolean showSpn =
+                    ((CdmaLteUiccRecords)phone.mIccRecords).getCsimSpnDisplayCondition();
                 int iconIndex = ss.getCdmaEriIconIndex();
-                if(showSpn && (iconIndex == EriInfo.ROAMING_INDICATOR_OFF) &&
-                    isInHomeSidNid(ss.getSystemId(), ss.getNetworkId()))                
-                {
+
+                if (showSpn && (iconIndex == EriInfo.ROAMING_INDICATOR_OFF) &&
+                    isInHomeSidNid(ss.getSystemId(), ss.getNetworkId())) {
                     ss.setOperatorAlphaLong(phone.mIccRecords.getServiceProviderName());
-                } //End block
-            } //End block
+                }
+            }
+
             String operatorNumeric;
+
             phone.setSystemProperty(TelephonyProperties.PROPERTY_OPERATOR_ALPHA,
                     ss.getOperatorAlphaLong());
+
             operatorNumeric = ss.getOperatorNumeric();
             phone.setSystemProperty(TelephonyProperties.PROPERTY_OPERATOR_NUMERIC, operatorNumeric);
-            if(operatorNumeric == null)            
-            {
+
+            if (operatorNumeric == null) {
                 phone.setSystemProperty(TelephonyProperties.PROPERTY_OPERATOR_ISO_COUNTRY, "");
                 mGotCountryCode = false;
-            } //End block
-            else
-            {
+            } else {
                 String isoCountryCode = "";
-                try 
-                {
+                try {
                     isoCountryCode = MccTable.countryCodeForMcc(Integer.parseInt(operatorNumeric
                             .substring(0, 3)));
-                } //End block
-                catch (NumberFormatException ex)
-                {
+                } catch (NumberFormatException ex) {
                     loge("countryCodeForMcc error" + ex);
-                } //End block
-                catch (StringIndexOutOfBoundsException ex)
-                {
+                } catch (StringIndexOutOfBoundsException ex) {
                     loge("countryCodeForMcc error" + ex);
-                } //End block
+                }
+
                 phone.setSystemProperty(TelephonyProperties.PROPERTY_OPERATOR_ISO_COUNTRY,
                         isoCountryCode);
                 mGotCountryCode = true;
-                if(mNeedFixZone)                
-                {
+                if (mNeedFixZone) {
                     fixTimeZone(isoCountryCode);
-                } //End block
-            } //End block
+                }
+            }
+
             phone.setSystemProperty(TelephonyProperties.PROPERTY_OPERATOR_ISROAMING,
                     ss.getRoaming() ? "true" : "false");
+
             updateSpnDisplay();
             phone.notifyServiceStateChanged(ss);
-        } //End block
-        if(hasCdmaDataConnectionAttached || has4gHandoff)        
-        {
+        }
+
+        if (hasCdmaDataConnectionAttached || has4gHandoff) {
             mAttachedRegistrants.notifyRegistrants();
-        } //End block
-        if(hasCdmaDataConnectionDetached)        
-        {
+        }
+
+        if (hasCdmaDataConnectionDetached) {
             mDetachedRegistrants.notifyRegistrants();
-        } //End block
-        if((hasCdmaDataConnectionChanged || hasNetworkTypeChanged))        
-        {
+        }
+
+        if ((hasCdmaDataConnectionChanged || hasNetworkTypeChanged)) {
             phone.notifyDataConnection(null);
-        } //End block
-        if(hasRoamingOn)        
-        {
+        }
+
+        if (hasRoamingOn) {
             mRoamingOnRegistrants.notifyRegistrants();
-        } //End block
-        if(hasRoamingOff)        
-        {
+        }
+
+        if (hasRoamingOff) {
             mRoamingOffRegistrants.notifyRegistrants();
-        } //End block
-        if(hasLocationChanged)        
-        {
+        }
+
+        if (hasLocationChanged) {
             phone.notifyLocationChanged();
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        }
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.484 -0500", hash_original_method = "0ED1F162D4C144EF609907545C4226C8", hash_generated_method = "602FD629C257ACC57CBB9E3A7CA58384")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.753 -0400", hash_original_method = "0ED1F162D4C144EF609907545C4226C8", hash_generated_method = "E88F45F59F5F84E8D3ED32B6BEF3371F")
-    @Override
+@Override
     protected void onSignalStrengthResult(AsyncResult ar) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(ar.getTaint());
         SignalStrength oldSignalStrength = mSignalStrength;
-        if(ar.exception != null)        
-        {
+
+        if (ar.exception != null) {
+            // Most likely radio is resetting/disconnected change to default
+            // values.
             setSignalStrengthDefaultValues();
-        } //End block
-        else
-        {
+        } else {
             int[] ints = (int[])ar.result;
-            int lteCqi = 99;
-            int lteRsrp = -1;
+            int lteCqi = 99, lteRsrp = -1;
             int lteRssi = 99;
             int offset = 2;
             int cdmaDbm = (ints[offset] > 0) ? -ints[offset] : -120;
@@ -452,119 +473,81 @@ switch(cm.getRadioState()){
             int evdoEcio = (ints[offset + 3] > 0) ? -ints[offset + 3] : -1;
             int evdoSnr = ((ints[offset + 4] > 0) && (ints[offset + 4] <= 8)) ? ints[offset + 4]
                     : -1;
-            if(networkType == ServiceState.RADIO_TECHNOLOGY_LTE)            
-            {
+            if (networkType == ServiceState.RADIO_TECHNOLOGY_LTE) {
                 lteRssi = (ints[offset + 5] >= 0) ? ints[offset + 5] : 99;
                 lteRsrp = (ints[offset + 6] < 0) ? ints[offset + 6] : -1;
                 lteCqi = (ints[offset + 7] >= 0) ? ints[offset + 7] : 99;
-            } //End block
-            if(networkType != ServiceState.RADIO_TECHNOLOGY_LTE)            
-            {
+            }
+
+            if (networkType != ServiceState.RADIO_TECHNOLOGY_LTE) {
                 mSignalStrength = new SignalStrength(99, -1, cdmaDbm, cdmaEcio, evdoRssi, evdoEcio,
                         evdoSnr, false);
-            } //End block
-            else
-            {
+            } else {
                 mSignalStrength = new SignalStrength(99, -1, cdmaDbm, cdmaEcio, evdoRssi, evdoEcio,
                         evdoSnr, lteRssi, lteRsrp, -1, -1, lteCqi, true);
-            } //End block
-        } //End block
-        try 
-        {
+            }
+        }
+
+        try {
             phone.notifySignalStrength();
-        } //End block
-        catch (NullPointerException ex)
-        {
+        } catch (NullPointerException ex) {
             loge("onSignalStrengthResult() Phone already destroyed: " + ex
                     + "SignalStrength not notified");
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        }
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.486 -0500", hash_original_method = "020897B26D59971A2D338DF9E45E01F9", hash_generated_method = "C4DFBDDC6593B307B9173E8F4B98AFE9")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.754 -0400", hash_original_method = "020897B26D59971A2D338DF9E45E01F9", hash_generated_method = "7E41AC13C0DDA500017DED4A8E0746AD")
-    @Override
+@Override
     public boolean isConcurrentVoiceAndDataAllowed() {
-        boolean var202937DDE9B2F6E32AF932440DA25F83_30542891 = ((networkType == ServiceState.RADIO_TECHNOLOGY_LTE));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1953053594 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1953053594;
-        // ---------- Original Method ----------
-        //return (networkType == ServiceState.RADIO_TECHNOLOGY_LTE);
+        // Note: it needs to be confirmed which CDMA network types
+        // can support voice and data calls concurrently.
+        // For the time-being, the return value will be false.
+        return (networkType == ServiceState.RADIO_TECHNOLOGY_LTE);
     }
 
+    /**
+     * Check whether the specified SID and NID pair appears in the HOME SID/NID list
+     * read from NV or SIM.
+     *
+     * @return true if provided sid/nid pair belongs to operator's home network.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.489 -0500", hash_original_method = "CF88CF61D429A57A2B7C32EDDBA3E37B", hash_generated_method = "BC0C7568898C2FF324345168E2B73A7D")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.754 -0400", hash_original_method = "CF88CF61D429A57A2B7C32EDDBA3E37B", hash_generated_method = "0FB2904CFA2FEECE62FF41B0044DEB10")
-    private boolean isInHomeSidNid(int sid, int nid) {
-        addTaint(nid);
-        addTaint(sid);
-        if(isSidsAllZeros())        
-        {
-        boolean varB326B5062B2F0E69046810717534CB09_1748622231 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2034944949 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2034944949;
-        }
-        if(mHomeSystemId.length != mHomeNetworkId.length)        
-        {
-        boolean varB326B5062B2F0E69046810717534CB09_1130920643 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1007243799 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1007243799;
-        }
-        if(sid == 0)        
-        {
-        boolean varB326B5062B2F0E69046810717534CB09_103411685 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2104079744 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2104079744;
-        }
-for(int i = 0;i < mHomeSystemId.length;i++)
-        {
-            if((mHomeSystemId[i] == sid) &&
+private boolean isInHomeSidNid(int sid, int nid) {
+        // if SID/NID is not available, assume this is home network.
+        if (isSidsAllZeros()) return true;
+
+        // length of SID/NID shold be same
+        if (mHomeSystemId.length != mHomeNetworkId.length) return true;
+
+        if (sid == 0) return true;
+
+        for (int i = 0; i < mHomeSystemId.length; i++) {
+            // Use SID only if NID is a reserved value.
+            // SID 0 and NID 0 and 65535 are reserved. (C.0005 2.6.5.2)
+            if ((mHomeSystemId[i] == sid) &&
                 ((mHomeNetworkId[i] == 0) || (mHomeNetworkId[i] == 65535) ||
-                 (nid == 0) || (nid == 65535) || (mHomeNetworkId[i] == nid)))            
-            {
-                boolean varB326B5062B2F0E69046810717534CB09_977477317 = (true);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_434327084 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_434327084;
-            } //End block
-        } //End block
-        boolean var68934A3E9455FA72420237EB05902327_815099100 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_930020079 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_930020079;
-        // ---------- Original Method ----------
-        //if (isSidsAllZeros()) return true;
-        //if (mHomeSystemId.length != mHomeNetworkId.length) return true;
-        //if (sid == 0) return true;
-        //for (int i = 0; i < mHomeSystemId.length; i++) {
-            //if ((mHomeSystemId[i] == sid) &&
-                //((mHomeNetworkId[i] == 0) || (mHomeNetworkId[i] == 65535) ||
-                 //(nid == 0) || (nid == 65535) || (mHomeNetworkId[i] == nid))) {
-                //return true;
-            //}
-        //}
-        //return false;
+                 (nid == 0) || (nid == 65535) || (mHomeNetworkId[i] == nid))) {
+                return true;
+            }
+        }
+        // SID/NID are not in the list. So device is not in home network
+        return false;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.492 -0500", hash_original_method = "3CA2CE2F434AACC848657E54771E66A4", hash_generated_method = "C9DA0BC0F5BE642C8EDCEAFD0D2068AE")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.755 -0400", hash_original_method = "3CA2CE2F434AACC848657E54771E66A4", hash_generated_method = "B6DA6A58DAF4513C2CBC2FEB61446FA4")
-    @Override
+@Override
     protected void log(String s) {
-        addTaint(s.getTaint());
         Log.d(LOG_TAG, "[CdmaLteSST] " + s);
-        // ---------- Original Method ----------
-        //Log.d(LOG_TAG, "[CdmaLteSST] " + s);
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.494 -0500", hash_original_method = "CE31FBC457ABF05FA318FEB73DCA10E2", hash_generated_method = "A57137CA1176F14542C6B8BD6FFDE6A6")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.755 -0400", hash_original_method = "CE31FBC457ABF05FA318FEB73DCA10E2", hash_generated_method = "9CAD79F5F2E82C48926C38487323D3F6")
-    @Override
+@Override
     protected void loge(String s) {
-        addTaint(s.getTaint());
-        // ---------- Original Method ----------
-        //Log.e(LOG_TAG, "[CdmaLteSST] " + s);
+        Log.e(LOG_TAG, "[CdmaLteSST] " + s);
     }
 
     

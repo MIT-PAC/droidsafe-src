@@ -1,6 +1,8 @@
 package org.bouncycastle.asn1.x509;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 import java.util.Enumeration;
@@ -21,77 +23,21 @@ import org.bouncycastle.asn1.DERSequence;
 
 
 public class SubjectPublicKeyInfo extends ASN1Encodable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.832 -0400", hash_original_field = "7E017AD6DBE390CDE33A4543127F45F7", hash_generated_field = "7AD6F6C3D264D25074D6D91921F8050B")
 
-    private AlgorithmIdentifier algId;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.832 -0400", hash_original_field = "FBE14519E78E13F41E1D21BCCBD58AF0", hash_generated_field = "B87CF10479B698EDA26B972A47E11904")
-
-    private DERBitString keyData;
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:23.524 -0500", hash_original_method = "59FD1238A50E7C71F5A7740863FEAF63", hash_generated_method = "CAEBEE4C0FA46A3DB43DA4586838010E")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.833 -0400", hash_original_method = "DAF161BC79C94F8473696EE08E829AE4", hash_generated_method = "4363098941C5E033671050691A8E48D2")
-    public  SubjectPublicKeyInfo(
-        AlgorithmIdentifier algId,
-        DEREncodable        publicKey) {
-        this.keyData = new DERBitString(publicKey);
-        this.algId = algId;
-        // ---------- Original Method ----------
-        //this.keyData = new DERBitString(publicKey);
-        //this.algId = algId;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.834 -0400", hash_original_method = "01C45324BCF6F8FB0A087E5E236F4467", hash_generated_method = "DCA3B9BB1ABF80FCD998139CDB109A4E")
-    public  SubjectPublicKeyInfo(
-        AlgorithmIdentifier algId,
-        byte[]              publicKey) {
-        this.keyData = new DERBitString(publicKey);
-        this.algId = algId;
-        // ---------- Original Method ----------
-        //this.keyData = new DERBitString(publicKey);
-        //this.algId = algId;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.835 -0400", hash_original_method = "6922DB35904CEC4F9CE097AEE1FB704C", hash_generated_method = "5876984261060BDD8A5C485C02022707")
-    public  SubjectPublicKeyInfo(
-        ASN1Sequence  seq) {
-        addTaint(seq.getTaint());
-        if(seq.size() != 2)        
-        {
-            IllegalArgumentException varA2072CF614C7B8C7696DD5A02DBCCE9C_1552311784 = new IllegalArgumentException("Bad sequence size: "
-                    + seq.size());
-            varA2072CF614C7B8C7696DD5A02DBCCE9C_1552311784.addTaint(taint);
-            throw varA2072CF614C7B8C7696DD5A02DBCCE9C_1552311784;
-        } //End block
-        Enumeration e = seq.getObjects();
-        this.algId = AlgorithmIdentifier.getInstance(e.nextElement());
-        this.keyData = DERBitString.getInstance(e.nextElement());
-        // ---------- Original Method ----------
-        //if (seq.size() != 2)
-        //{
-            //throw new IllegalArgumentException("Bad sequence size: "
-                    //+ seq.size());
-        //}
-        //Enumeration         e = seq.getObjects();
-        //this.algId = AlgorithmIdentifier.getInstance(e.nextElement());
-        //this.keyData = DERBitString.getInstance(e.nextElement());
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    public static SubjectPublicKeyInfo getInstance(
+public static SubjectPublicKeyInfo getInstance(
         ASN1TaggedObject obj,
-        boolean          explicit) {
+        boolean          explicit)
+    {
         return getInstance(ASN1Sequence.getInstance(obj, explicit));
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:23.527 -0500", hash_original_method = "0E3E7EF469DA28D1A197D13A6FA73576", hash_generated_method = "87D8C3988800926D61169A9CC86C1163")
     
-    @DSModeled(DSC.SAFE)
-    public static SubjectPublicKeyInfo getInstance(
-        Object  obj) {
+public static SubjectPublicKeyInfo getInstance(
+        Object  obj)
+    {
         if (obj instanceof SubjectPublicKeyInfo)
         {
             return (SubjectPublicKeyInfo)obj;
@@ -100,59 +46,105 @@ public class SubjectPublicKeyInfo extends ASN1Encodable {
         {
             return new SubjectPublicKeyInfo(ASN1Sequence.getInstance(obj));
         }
+
         return null;
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:23.519 -0500", hash_original_field = "77AE1AC968895C7830B8ADE3B24ECA2A", hash_generated_field = "7AD6F6C3D264D25074D6D91921F8050B")
 
+    private AlgorithmIdentifier     algId;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:23.521 -0500", hash_original_field = "DC8F4C0896F58A16A26B2D1A239BE743", hash_generated_field = "B87CF10479B698EDA26B972A47E11904")
+
+    private DERBitString            keyData;
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:23.530 -0500", hash_original_method = "DAF161BC79C94F8473696EE08E829AE4", hash_generated_method = "72FA15591A1F857ACB08086B59CD4CC8")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.836 -0400", hash_original_method = "47532F5520D2937711F415E7F39EF8B8", hash_generated_method = "C5F3189EC598C74B46311C93ED5EC93E")
-    public AlgorithmIdentifier getAlgorithmId() {
-AlgorithmIdentifier varA285EDCEC70BDAD72C7F53B57CB6849B_1477397614 =         algId;
-        varA285EDCEC70BDAD72C7F53B57CB6849B_1477397614.addTaint(taint);
-        return varA285EDCEC70BDAD72C7F53B57CB6849B_1477397614;
-        // ---------- Original Method ----------
-        //return algId;
+public SubjectPublicKeyInfo(
+        AlgorithmIdentifier algId,
+        DEREncodable        publicKey)
+    {
+        this.keyData = new DERBitString(publicKey);
+        this.algId = algId;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:23.533 -0500", hash_original_method = "01C45324BCF6F8FB0A087E5E236F4467", hash_generated_method = "9D7D222E4252C4382A21A51D3E9539FE")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.837 -0400", hash_original_method = "090BC4B735B0EF996158F2D4FCADB97F", hash_generated_method = "EB69673EDCDEF0E6E95A7F98F487C054")
-    public DERObject getPublicKey() throws IOException {
-        ASN1InputStream aIn = new ASN1InputStream(keyData.getBytes());
-DERObject var744C7B728C1BF7AC9370DA8D8B9598D6_293279520 =         aIn.readObject();
-        var744C7B728C1BF7AC9370DA8D8B9598D6_293279520.addTaint(taint);
-        return var744C7B728C1BF7AC9370DA8D8B9598D6_293279520;
-        // ---------- Original Method ----------
-        //ASN1InputStream         aIn = new ASN1InputStream(keyData.getBytes());
-        //return aIn.readObject();
+public SubjectPublicKeyInfo(
+        AlgorithmIdentifier algId,
+        byte[]              publicKey)
+    {
+        this.keyData = new DERBitString(publicKey);
+        this.algId = algId;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:23.535 -0500", hash_original_method = "6922DB35904CEC4F9CE097AEE1FB704C", hash_generated_method = "161CC86EDDDFABBA3E665739F2AE9DA9")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.837 -0400", hash_original_method = "FD0FC1FA0D4AD47E47F52CC8C4964141", hash_generated_method = "AF31C8B0DD57695F7F34BA6463269520")
-    public DERBitString getPublicKeyData() {
-DERBitString varE693AFBBC8CDD78D253BF1E5459B5722_1340930718 =         keyData;
-        varE693AFBBC8CDD78D253BF1E5459B5722_1340930718.addTaint(taint);
-        return varE693AFBBC8CDD78D253BF1E5459B5722_1340930718;
-        // ---------- Original Method ----------
-        //return keyData;
+public SubjectPublicKeyInfo(
+        ASN1Sequence  seq)
+    {
+        if (seq.size() != 2)
+        {
+            throw new IllegalArgumentException("Bad sequence size: "
+                    + seq.size());
+        }
+
+        Enumeration         e = seq.getObjects();
+
+        this.algId = AlgorithmIdentifier.getInstance(e.nextElement());
+        this.keyData = DERBitString.getInstance(e.nextElement());
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:23.538 -0500", hash_original_method = "47532F5520D2937711F415E7F39EF8B8", hash_generated_method = "BCED03BC4375EE48DC08B032712FE68B")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.837 -0400", hash_original_method = "8E6747A0EE688E54DEDDDF71F404B9F7", hash_generated_method = "2F4CCC875B3C111BCEAF48ECF9FF0C1C")
-    public DERObject toASN1Object() {
-        ASN1EncodableVector v = new ASN1EncodableVector();
+public AlgorithmIdentifier getAlgorithmId()
+    {
+        return algId;
+    }
+
+    /**
+     * for when the public key is an encoded object - if the bitstring
+     * can't be decoded this routine throws an IOException.
+     *
+     * @exception IOException - if the bit string doesn't represent a DER
+     * encoded object.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:23.541 -0500", hash_original_method = "090BC4B735B0EF996158F2D4FCADB97F", hash_generated_method = "D4469112C8AA5CA33918D180170945EF")
+    
+public DERObject getPublicKey()
+        throws IOException
+    {
+        ASN1InputStream         aIn = new ASN1InputStream(keyData.getBytes());
+
+        return aIn.readObject();
+    }
+
+    /**
+     * for when the public key is raw bits...
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:23.544 -0500", hash_original_method = "FD0FC1FA0D4AD47E47F52CC8C4964141", hash_generated_method = "4478A4890BBEF1E246A2B8E762C0A3AA")
+    
+public DERBitString getPublicKeyData()
+    {
+        return keyData;
+    }
+
+    /**
+     * Produce an object suitable for an ASN1OutputStream.
+     * <pre>
+     * SubjectPublicKeyInfo ::= SEQUENCE {
+     *                          algorithm AlgorithmIdentifier,
+     *                          publicKey BIT STRING }
+     * </pre>
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:23.546 -0500", hash_original_method = "8E6747A0EE688E54DEDDDF71F404B9F7", hash_generated_method = "8F534217A8FF2702C9892CED0504B925")
+    
+public DERObject toASN1Object()
+    {
+        ASN1EncodableVector  v = new ASN1EncodableVector();
+
         v.add(algId);
         v.add(keyData);
-DERObject var0B338F106E3279986C87B595B0F4A439_1226824805 =         new DERSequence(v);
-        var0B338F106E3279986C87B595B0F4A439_1226824805.addTaint(taint);
-        return var0B338F106E3279986C87B595B0F4A439_1226824805;
-        // ---------- Original Method ----------
-        //ASN1EncodableVector  v = new ASN1EncodableVector();
-        //v.add(algId);
-        //v.add(keyData);
-        //return new DERSequence(v);
+
+        return new DERSequence(v);
     }
 
     

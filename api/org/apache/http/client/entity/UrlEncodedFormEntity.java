@@ -14,32 +14,39 @@ import org.apache.http.entity.StringEntity;
 import org.apache.http.protocol.HTTP;
 
 public class UrlEncodedFormEntity extends StringEntity {
+  
+    /**
+     * Constructs a new {@link UrlEncodedFormEntity} with the list
+     * of parameters in the specified encoding.
+     * 
+     * @param parameters list of name/value pairs
+     * @param encoding encoding the name/value pairs be encoded with
+     * @throws UnsupportedEncodingException if the encoding isn't supported
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:44.628 -0500", hash_original_method = "2B79106283EA78C37FC06864AB4CC20F", hash_generated_method = "97236FA94CD4379FBBB97CBB8054EEFB")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:02.151 -0400", hash_original_method = "2B79106283EA78C37FC06864AB4CC20F", hash_generated_method = "870E258256A0348FBCB54679377D3638")
-    @DSModeled(DSC.SAFE)
-    public  UrlEncodedFormEntity(
+public UrlEncodedFormEntity (
         final List <? extends NameValuePair> parameters, 
         final String encoding) throws UnsupportedEncodingException {
         super(URLEncodedUtils.format(parameters, encoding), 
             encoding);
-        addTaint(encoding.getTaint());
-        addTaint(parameters.getTaint());
         setContentType(URLEncodedUtils.CONTENT_TYPE);
-        // ---------- Original Method ----------
-        //setContentType(URLEncodedUtils.CONTENT_TYPE);
     }
 
+    /**
+     * Constructs a new {@link UrlEncodedFormEntity} with the list
+     * of parameters with the default encoding of {@link HTTP#DEFAULT_CONTENT_CHARSET}
+     * 
+     * @param parameters list of name/value pairs
+     * @throws UnsupportedEncodingException if the default encoding isn't supported
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:44.631 -0500", hash_original_method = "EFE31A1BCD3079C9AAB0E8E3BC2999DC", hash_generated_method = "F2ADCBCD03D851844BFD7EFF8118FD22")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:02.152 -0400", hash_original_method = "EFE31A1BCD3079C9AAB0E8E3BC2999DC", hash_generated_method = "0FBF6EAF74398CAC4AD274B8F07409B7")
-    @DSModeled(DSC.SAFE)
-    public  UrlEncodedFormEntity(
+public UrlEncodedFormEntity (
         final List <? extends NameValuePair> parameters) throws UnsupportedEncodingException {
         super(URLEncodedUtils.format(parameters, HTTP.DEFAULT_CONTENT_CHARSET), 
             HTTP.DEFAULT_CONTENT_CHARSET);
-        addTaint(parameters.getTaint());
         setContentType(URLEncodedUtils.CONTENT_TYPE);
-        // ---------- Original Method ----------
-        //setContentType(URLEncodedUtils.CONTENT_TYPE);
     }
 
     

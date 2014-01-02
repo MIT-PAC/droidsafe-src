@@ -1,6 +1,8 @@
 package java.util;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.Serializable;
 
@@ -10,6 +12,10 @@ import java.io.Serializable;
 
 
 public class LinkedHashSet<E> extends HashSet<E> implements Set<E>, Cloneable, Serializable {
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:37.288 -0500", hash_original_field = "A3A620E6BD10FB5E1B95C7C0FE237122", hash_generated_field = "9AC03C289FA70340AC8107CAE1966D0A")
+
+
+    private static final long serialVersionUID = -2851667679971038690L;
     
         @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.760 -0400", hash_original_method = "FA64C9B63CE04BA03B3070651E56EFED", hash_generated_method = "B99E3A755713053C1BCF05A2186909D1")
@@ -43,9 +49,5 @@ public class LinkedHashSet<E> extends HashSet<E> implements Set<E>, Cloneable, S
             //add(e);
         //}
     }
-
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.762 -0400", hash_original_field = "AB5DC023C1FE59C566EEDFE5B0F41541", hash_generated_field = "9AC03C289FA70340AC8107CAE1966D0A")
-
-    private static final long serialVersionUID = -2851667679971038690L;
 }
 

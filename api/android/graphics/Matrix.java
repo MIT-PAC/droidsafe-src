@@ -1,6 +1,8 @@
 package android.graphics;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.PrintWriter;
 
@@ -8,6 +10,377 @@ import java.io.PrintWriter;
 
 
 public class Matrix {
+
+    
+    @DSModeled(DSC.BAN)
+    private static void checkPointArrays(float[] src, int srcIndex,
+                                         float[] dst, int dstIndex,
+                                         int pointCount){
+		// Original method
+		/*
+		{
+        int srcStop = srcIndex + (pointCount << 1);
+        int dstStop = dstIndex + (pointCount << 1);
+        if ((pointCount | srcIndex | dstIndex | srcStop | dstStop) < 0 ||
+                srcStop > src.length || dstStop > dst.length) {
+            throw new ArrayIndexOutOfBoundsException();
+        }
+    }
+		*/
+		//Return nothing
+	}
+
+    
+    @DSModeled(DSC.SAFE)
+    private static int native_create(int native_src_or_zero){
+		//Formerly a native function
+		return 0;
+	}
+
+    
+    @DSModeled(DSC.SAFE)
+    private static boolean native_isIdentity(int native_object){
+		//Formerly a native function
+		return false;
+	}
+
+    
+    @DSModeled(DSC.SAFE)
+    private static boolean native_rectStaysRect(int native_object){
+		//Formerly a native function
+		return false;
+	}
+
+    
+    @DSModeled(DSC.SAFE)
+    private static void native_reset(int native_object){
+		//Formerly a native function
+		//Return nothing
+	}
+
+    
+    @DSModeled(DSC.SAFE)
+    private static void native_set(int native_object, int other){
+		//Formerly a native function
+		//Return nothing
+	}
+
+    
+    @DSModeled(DSC.SAFE)
+    private static void native_setTranslate(int native_object,
+                                                   float dx, float dy){
+		//Formerly a native function
+		//Return nothing
+	}
+
+    
+    @DSModeled(DSC.SAFE)
+    private static void native_setScale(int native_object,
+                                        float sx, float sy, float px, float py){
+		//Formerly a native function
+		//Return nothing
+	}
+
+    
+    @DSModeled(DSC.SAFE)
+    private static void native_setScale(int native_object,
+                                               float sx, float sy){
+		//Formerly a native function
+		//Return nothing
+	}
+
+    
+    @DSModeled(DSC.SAFE)
+    private static void native_setRotate(int native_object,
+                                            float degrees, float px, float py){
+		//Formerly a native function
+		//Return nothing
+	}
+
+    
+    @DSModeled(DSC.SAFE)
+    private static void native_setRotate(int native_object,
+                                                float degrees){
+		//Formerly a native function
+		//Return nothing
+	}
+
+    
+    @DSModeled(DSC.SAFE)
+    private static void native_setSinCos(int native_object,
+                            float sinValue, float cosValue, float px, float py){
+		//Formerly a native function
+		//Return nothing
+	}
+
+    
+    @DSModeled(DSC.SAFE)
+    private static void native_setSinCos(int native_object,
+                                                float sinValue, float cosValue){
+		//Formerly a native function
+		//Return nothing
+	}
+
+    
+    @DSModeled(DSC.SAFE)
+    private static void native_setSkew(int native_object,
+                                        float kx, float ky, float px, float py){
+		//Formerly a native function
+		//Return nothing
+	}
+
+    
+    @DSModeled(DSC.SAFE)
+    private static void native_setSkew(int native_object,
+                                              float kx, float ky){
+		//Formerly a native function
+		//Return nothing
+	}
+
+    
+    @DSModeled(DSC.SAFE)
+    private static boolean native_setConcat(int native_object,
+                                                   int a, int b){
+		//Formerly a native function
+		return false;
+	}
+
+    
+    @DSModeled(DSC.SAFE)
+    private static boolean native_preTranslate(int native_object,
+                                                      float dx, float dy){
+		//Formerly a native function
+		return false;
+	}
+
+    
+    @DSModeled(DSC.SAFE)
+    private static boolean native_preScale(int native_object,
+                                        float sx, float sy, float px, float py){
+		//Formerly a native function
+		return false;
+	}
+
+    
+    @DSModeled(DSC.SAFE)
+    private static boolean native_preScale(int native_object,
+                                                  float sx, float sy){
+		//Formerly a native function
+		return false;
+	}
+
+    
+    @DSModeled(DSC.SAFE)
+    private static boolean native_preRotate(int native_object,
+                                            float degrees, float px, float py){
+		//Formerly a native function
+		return false;
+	}
+
+    
+    @DSModeled(DSC.SAFE)
+    private static boolean native_preRotate(int native_object,
+                                                   float degrees){
+		//Formerly a native function
+		return false;
+	}
+
+    
+    @DSModeled(DSC.SAFE)
+    private static boolean native_preSkew(int native_object,
+                                        float kx, float ky, float px, float py){
+		//Formerly a native function
+		return false;
+	}
+
+    
+    @DSModeled(DSC.SAFE)
+    private static boolean native_preSkew(int native_object,
+                                                 float kx, float ky){
+		//Formerly a native function
+		return false;
+	}
+
+    
+    @DSModeled(DSC.SAFE)
+    private static boolean native_preConcat(int native_object,
+                                                   int other_matrix){
+		//Formerly a native function
+		return false;
+	}
+
+    
+    @DSModeled(DSC.SAFE)
+    private static boolean native_postTranslate(int native_object,
+                                                       float dx, float dy){
+		//Formerly a native function
+		return false;
+	}
+
+    
+    @DSModeled(DSC.SAFE)
+    private static boolean native_postScale(int native_object,
+                                        float sx, float sy, float px, float py){
+		//Formerly a native function
+		return false;
+	}
+
+    
+    @DSModeled(DSC.SAFE)
+    private static boolean native_postScale(int native_object,
+                                                   float sx, float sy){
+		//Formerly a native function
+		return false;
+	}
+
+    
+    @DSModeled(DSC.SAFE)
+    private static boolean native_postRotate(int native_object,
+                                            float degrees, float px, float py){
+		//Formerly a native function
+		return false;
+	}
+
+    
+    @DSModeled(DSC.SAFE)
+    private static boolean native_postRotate(int native_object,
+                                                    float degrees){
+		//Formerly a native function
+		return false;
+	}
+
+    
+    @DSModeled(DSC.SAFE)
+    private static boolean native_postSkew(int native_object,
+                                        float kx, float ky, float px, float py){
+		//Formerly a native function
+		return false;
+	}
+
+    
+    @DSModeled(DSC.SAFE)
+    private static boolean native_postSkew(int native_object,
+                                                  float kx, float ky){
+		//Formerly a native function
+		return false;
+	}
+
+    
+    @DSModeled(DSC.SAFE)
+    private static boolean native_postConcat(int native_object,
+                                                    int other_matrix){
+		//Formerly a native function
+		return false;
+	}
+
+    
+    @DSModeled(DSC.SAFE)
+    private static boolean native_setRectToRect(int native_object,
+                                                RectF src, RectF dst, int stf){
+		//Formerly a native function
+		return false;
+	}
+
+    
+    @DSModeled(DSC.SAFE)
+    private static boolean native_setPolyToPoly(int native_object,
+        float[] src, int srcIndex, float[] dst, int dstIndex, int pointCount){
+		//Formerly a native function
+		return false;
+	}
+
+    
+    @DSModeled(DSC.SAFE)
+    private static boolean native_invert(int native_object, int inverse){
+		//Formerly a native function
+		return false;
+	}
+
+    
+    @DSModeled(DSC.SAFE)
+    private static void native_mapPoints(int native_object,
+                        float[] dst, int dstIndex, float[] src, int srcIndex,
+                        int ptCount, boolean isPts){
+		//Formerly a native function
+		//Return nothing
+	}
+
+    
+    @DSModeled(DSC.SAFE)
+    private static boolean native_mapRect(int native_object,
+                                                 RectF dst, RectF src){
+		//Formerly a native function
+		return false;
+	}
+
+    
+    @DSModeled(DSC.SAFE)
+    private static float native_mapRadius(int native_object,
+                                                 float radius){
+		//Formerly a native function
+		return 0;
+	}
+
+    
+    @DSModeled(DSC.SAFE)
+    private static void native_getValues(int native_object,
+                                                float[] values){
+		//Formerly a native function
+		//Return nothing
+	}
+
+    
+    @DSModeled(DSC.SAFE)
+    private static void native_setValues(int native_object,
+                                                float[] values){
+		//Formerly a native function
+		//Return nothing
+	}
+
+    
+    @DSModeled(DSC.SAFE)
+    private static boolean native_equals(int native_a, int native_b){
+		//Formerly a native function
+		return false;
+	}
+
+    
+    @DSModeled(DSC.SAFE)
+    private static void finalizer(int native_instance){
+		//Formerly a native function
+		//Return nothing
+	}
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:21.461 -0500", hash_original_field = "397F6C4BE2DD640B9585E93522FF654F", hash_generated_field = "EFA3DBAD301BED225815D2F749817006")
+
+
+    public static final int MSCALE_X = 0;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:21.464 -0500", hash_original_field = "D8BA06E22D3857EC9F5D5294939E37E2", hash_generated_field = "67EAC113D4E4932D73D3A487643F0FD1")
+
+    public static final int MSKEW_X  = 1;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:21.466 -0500", hash_original_field = "6DC0939477C0263C9490EE8154FC5BD1", hash_generated_field = "07E5E1B67F0C9E5278715AAB25E91DAB")
+
+    public static final int MTRANS_X = 2;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:21.468 -0500", hash_original_field = "2B35732BD55A3DD3A77625CB5BB2F729", hash_generated_field = "41EBD7259F41631F6876F58AE3C95D05")
+
+    public static final int MSKEW_Y  = 3;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:21.471 -0500", hash_original_field = "06A95EC58DA72F86869B1D82485A40A0", hash_generated_field = "27781A2223BB5718506AC48FB1837DB0")
+
+    public static final int MSCALE_Y = 4;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:21.473 -0500", hash_original_field = "984FA747058BF7EE322A5D2AB3B15B91", hash_generated_field = "43C2504D96C28B177ABC2A96E8E9F767")
+
+    public static final int MTRANS_Y = 5;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:21.475 -0500", hash_original_field = "1C4A2F3F0A315431CB378C42988A8AA9", hash_generated_field = "5A7F9B6FF116E340A9248A261942F12B")
+
+    public static final int MPERSP_0 = 6;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:21.478 -0500", hash_original_field = "4F6AA819731A8266BC8B15F0578DA8AE", hash_generated_field = "4F80C0BDF0D0A262209ADA0919682BD4")
+
+    public static final int MPERSP_1 = 7;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:21.480 -0500", hash_original_field = "8E124C62359AC9F8056E069E958B7FE7", hash_generated_field = "1EF21E44267C42FB84A589D371DA23B3")
+
+    public static final int MPERSP_2 = 8;
+    public static Matrix IDENTITY_MATRIX = new Matrix();
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:21.571 -0500", hash_original_field = "1353DF0D3FEF59358BA81F3F4AC59875", hash_generated_field = "368FA2DC569BFE75826F8A8AC6BD5246")
+
     public int native_instance;
     
     @DSModeled(DSC.SAFE)
@@ -420,25 +793,6 @@ public class Matrix {
 	}
 
     
-    @DSModeled(DSC.BAN)
-    private static void checkPointArrays(float[] src, int srcIndex,
-                                         float[] dst, int dstIndex,
-                                         int pointCount){
-		// Original method
-		/*
-		{
-        int srcStop = srcIndex + (pointCount << 1);
-        int dstStop = dstIndex + (pointCount << 1);
-        if ((pointCount | srcIndex | dstIndex | srcStop | dstStop) < 0 ||
-                srcStop > src.length || dstStop > dst.length) {
-            throw new ArrayIndexOutOfBoundsException();
-        }
-    }
-		*/
-		//Return nothing
-	}
-
-    
     @DSModeled(DSC.SAFE)
     public boolean setPolyToPoly(float[] src, int srcIndex,
                                  float[] dst, int dstIndex,
@@ -567,6 +921,24 @@ public class Matrix {
 		*/
 		return false;
 	}
+
+    
+    public enum ScaleToFit {
+        FILL    (0),
+        START   (1),
+        CENTER  (2),
+        END     (3);
+
+        // the native values must match those in SkMatrix.h 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:21.647 -0500", hash_original_method = "63FB077414864D6FD8B685EA30FF9871", hash_generated_method = "63FB077414864D6FD8B685EA30FF9871")
+            
+ScaleToFit(int nativeInt) {
+            this.nativeInt = nativeInt;
+        }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:21.649 -0500", hash_original_field = "6B116C6445FBD920A2653C64D32C9FB3", hash_generated_field = "6B116C6445FBD920A2653C64D32C9FB3")
+
+         int nativeInt;
+    }
 
     
     @DSModeled(DSC.SAFE)
@@ -715,351 +1087,5 @@ public class Matrix {
     }
 		*/
 	}
-
-    
-    @DSModeled(DSC.SAFE)
-    private static int native_create(int native_src_or_zero){
-		//Formerly a native function
-		return 0;
-	}
-
-    
-    @DSModeled(DSC.SAFE)
-    private static boolean native_isIdentity(int native_object){
-		//Formerly a native function
-		return false;
-	}
-
-    
-    @DSModeled(DSC.SAFE)
-    private static boolean native_rectStaysRect(int native_object){
-		//Formerly a native function
-		return false;
-	}
-
-    
-    @DSModeled(DSC.SAFE)
-    private static void native_reset(int native_object){
-		//Formerly a native function
-		//Return nothing
-	}
-
-    
-    @DSModeled(DSC.SAFE)
-    private static void native_set(int native_object, int other){
-		//Formerly a native function
-		//Return nothing
-	}
-
-    
-    @DSModeled(DSC.SAFE)
-    private static void native_setTranslate(int native_object,
-                                                   float dx, float dy){
-		//Formerly a native function
-		//Return nothing
-	}
-
-    
-    @DSModeled(DSC.SAFE)
-    private static void native_setScale(int native_object,
-                                        float sx, float sy, float px, float py){
-		//Formerly a native function
-		//Return nothing
-	}
-
-    
-    @DSModeled(DSC.SAFE)
-    private static void native_setScale(int native_object,
-                                               float sx, float sy){
-		//Formerly a native function
-		//Return nothing
-	}
-
-    
-    @DSModeled(DSC.SAFE)
-    private static void native_setRotate(int native_object,
-                                            float degrees, float px, float py){
-		//Formerly a native function
-		//Return nothing
-	}
-
-    
-    @DSModeled(DSC.SAFE)
-    private static void native_setRotate(int native_object,
-                                                float degrees){
-		//Formerly a native function
-		//Return nothing
-	}
-
-    
-    @DSModeled(DSC.SAFE)
-    private static void native_setSinCos(int native_object,
-                            float sinValue, float cosValue, float px, float py){
-		//Formerly a native function
-		//Return nothing
-	}
-
-    
-    @DSModeled(DSC.SAFE)
-    private static void native_setSinCos(int native_object,
-                                                float sinValue, float cosValue){
-		//Formerly a native function
-		//Return nothing
-	}
-
-    
-    @DSModeled(DSC.SAFE)
-    private static void native_setSkew(int native_object,
-                                        float kx, float ky, float px, float py){
-		//Formerly a native function
-		//Return nothing
-	}
-
-    
-    @DSModeled(DSC.SAFE)
-    private static void native_setSkew(int native_object,
-                                              float kx, float ky){
-		//Formerly a native function
-		//Return nothing
-	}
-
-    
-    @DSModeled(DSC.SAFE)
-    private static boolean native_setConcat(int native_object,
-                                                   int a, int b){
-		//Formerly a native function
-		return false;
-	}
-
-    
-    @DSModeled(DSC.SAFE)
-    private static boolean native_preTranslate(int native_object,
-                                                      float dx, float dy){
-		//Formerly a native function
-		return false;
-	}
-
-    
-    @DSModeled(DSC.SAFE)
-    private static boolean native_preScale(int native_object,
-                                        float sx, float sy, float px, float py){
-		//Formerly a native function
-		return false;
-	}
-
-    
-    @DSModeled(DSC.SAFE)
-    private static boolean native_preScale(int native_object,
-                                                  float sx, float sy){
-		//Formerly a native function
-		return false;
-	}
-
-    
-    @DSModeled(DSC.SAFE)
-    private static boolean native_preRotate(int native_object,
-                                            float degrees, float px, float py){
-		//Formerly a native function
-		return false;
-	}
-
-    
-    @DSModeled(DSC.SAFE)
-    private static boolean native_preRotate(int native_object,
-                                                   float degrees){
-		//Formerly a native function
-		return false;
-	}
-
-    
-    @DSModeled(DSC.SAFE)
-    private static boolean native_preSkew(int native_object,
-                                        float kx, float ky, float px, float py){
-		//Formerly a native function
-		return false;
-	}
-
-    
-    @DSModeled(DSC.SAFE)
-    private static boolean native_preSkew(int native_object,
-                                                 float kx, float ky){
-		//Formerly a native function
-		return false;
-	}
-
-    
-    @DSModeled(DSC.SAFE)
-    private static boolean native_preConcat(int native_object,
-                                                   int other_matrix){
-		//Formerly a native function
-		return false;
-	}
-
-    
-    @DSModeled(DSC.SAFE)
-    private static boolean native_postTranslate(int native_object,
-                                                       float dx, float dy){
-		//Formerly a native function
-		return false;
-	}
-
-    
-    @DSModeled(DSC.SAFE)
-    private static boolean native_postScale(int native_object,
-                                        float sx, float sy, float px, float py){
-		//Formerly a native function
-		return false;
-	}
-
-    
-    @DSModeled(DSC.SAFE)
-    private static boolean native_postScale(int native_object,
-                                                   float sx, float sy){
-		//Formerly a native function
-		return false;
-	}
-
-    
-    @DSModeled(DSC.SAFE)
-    private static boolean native_postRotate(int native_object,
-                                            float degrees, float px, float py){
-		//Formerly a native function
-		return false;
-	}
-
-    
-    @DSModeled(DSC.SAFE)
-    private static boolean native_postRotate(int native_object,
-                                                    float degrees){
-		//Formerly a native function
-		return false;
-	}
-
-    
-    @DSModeled(DSC.SAFE)
-    private static boolean native_postSkew(int native_object,
-                                        float kx, float ky, float px, float py){
-		//Formerly a native function
-		return false;
-	}
-
-    
-    @DSModeled(DSC.SAFE)
-    private static boolean native_postSkew(int native_object,
-                                                  float kx, float ky){
-		//Formerly a native function
-		return false;
-	}
-
-    
-    @DSModeled(DSC.SAFE)
-    private static boolean native_postConcat(int native_object,
-                                                    int other_matrix){
-		//Formerly a native function
-		return false;
-	}
-
-    
-    @DSModeled(DSC.SAFE)
-    private static boolean native_setRectToRect(int native_object,
-                                                RectF src, RectF dst, int stf){
-		//Formerly a native function
-		return false;
-	}
-
-    
-    @DSModeled(DSC.SAFE)
-    private static boolean native_setPolyToPoly(int native_object,
-        float[] src, int srcIndex, float[] dst, int dstIndex, int pointCount){
-		//Formerly a native function
-		return false;
-	}
-
-    
-    @DSModeled(DSC.SAFE)
-    private static boolean native_invert(int native_object, int inverse){
-		//Formerly a native function
-		return false;
-	}
-
-    
-    @DSModeled(DSC.SAFE)
-    private static void native_mapPoints(int native_object,
-                        float[] dst, int dstIndex, float[] src, int srcIndex,
-                        int ptCount, boolean isPts){
-		//Formerly a native function
-		//Return nothing
-	}
-
-    
-    @DSModeled(DSC.SAFE)
-    private static boolean native_mapRect(int native_object,
-                                                 RectF dst, RectF src){
-		//Formerly a native function
-		return false;
-	}
-
-    
-    @DSModeled(DSC.SAFE)
-    private static float native_mapRadius(int native_object,
-                                                 float radius){
-		//Formerly a native function
-		return 0;
-	}
-
-    
-    @DSModeled(DSC.SAFE)
-    private static void native_getValues(int native_object,
-                                                float[] values){
-		//Formerly a native function
-		//Return nothing
-	}
-
-    
-    @DSModeled(DSC.SAFE)
-    private static void native_setValues(int native_object,
-                                                float[] values){
-		//Formerly a native function
-		//Return nothing
-	}
-
-    
-    @DSModeled(DSC.SAFE)
-    private static boolean native_equals(int native_a, int native_b){
-		//Formerly a native function
-		return false;
-	}
-
-    
-    @DSModeled(DSC.SAFE)
-    private static void finalizer(int native_instance){
-		//Formerly a native function
-		//Return nothing
-	}
-
-    
-    public enum ScaleToFit {
-        FILL    (0),
-        START   (1),
-        CENTER  (2),
-        END     (3);
-        @DSModeled(DSC.SAFE)
-        ScaleToFit(int nativeInt) {
-            this.nativeInt = nativeInt;
-        }
-        final int nativeInt;
-    }
-
-    
-    public static final int MSCALE_X = 0;
-    public static final int MSKEW_X  = 1;
-    public static final int MTRANS_X = 2;
-    public static final int MSKEW_Y  = 3;
-    public static final int MSCALE_Y = 4;
-    public static final int MTRANS_Y = 5;
-    public static final int MPERSP_0 = 6;
-    public static final int MPERSP_1 = 7;
-    public static final int MPERSP_2 = 8;
-    public static Matrix IDENTITY_MATRIX = new Matrix();
 }
 

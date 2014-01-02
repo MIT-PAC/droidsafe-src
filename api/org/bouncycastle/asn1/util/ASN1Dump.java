@@ -1,6 +1,8 @@
 package org.bouncycastle.asn1.util;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 import java.util.Enumeration;
@@ -45,25 +47,26 @@ import org.bouncycastle.util.encoders.Hex;
 
 
 public class ASN1Dump {
+
+    /**
+     * dump a DER object as a formatted string with indentation
+     *
+     * @param obj the DERObject to be dumped out.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:28.167 -0500", hash_original_method = "CD75AC17D7F386D86DC2E6459CAA03CB", hash_generated_method = "5FF28E01CC55A0DCA7583B0CF55EFA69")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.277 -0400", hash_original_method = "3C39DC3F42F8284331A1E50F07E6A630", hash_generated_method = "3C39DC3F42F8284331A1E50F07E6A630")
-    public ASN1Dump ()
-    {
-        //Synthesized constructor
-    }
-
-
-    @DSModeled(DSC.SAFE)
-    static void _dumpAsString(
+static void _dumpAsString(
         String      indent,
         boolean     verbose,
         DERObject   obj,
-        StringBuffer    buf) {
+        StringBuffer    buf)
+    {
         String nl = System.getProperty("line.separator");
         if (obj instanceof ASN1Sequence)
         {
             Enumeration     e = ((ASN1Sequence)obj).getObjects();
             String          tab = indent + TAB;
+
             buf.append(indent);
             if (obj instanceof BERSequence)
             {
@@ -77,11 +80,16 @@ public class ASN1Dump {
             {
                 buf.append("Sequence");
             }
+
             buf.append(nl);
+
             while (e.hasMoreElements())
             {
                 Object  o = e.nextElement();
+
+                // BEGIN android-changed
                 if (o == null || o.equals(DERNull.INSTANCE))
+                // END android-changed
                 {
                     buf.append(tab);
                     buf.append("NULL");
@@ -100,6 +108,7 @@ public class ASN1Dump {
         else if (obj instanceof DERTaggedObject)
         {
             String          tab = indent + TAB;
+
             buf.append(indent);
             if (obj instanceof BERTaggedObject)
             {
@@ -109,14 +118,19 @@ public class ASN1Dump {
             {
                 buf.append("Tagged [");
             }
+
             DERTaggedObject o = (DERTaggedObject)obj;
+
             buf.append(Integer.toString(o.getTagNo()));
             buf.append(']');
+
             if (!o.isExplicit())
             {
                 buf.append(" IMPLICIT ");
             }
+
             buf.append(nl);
+
             if (o.isEmpty())
             {
                 buf.append(tab);
@@ -132,12 +146,15 @@ public class ASN1Dump {
         {
             Enumeration     e = ((ASN1Set)obj).getObjects();
             String          tab = indent + TAB;
+
             buf.append(indent);
             buf.append("BER Set");
             buf.append(nl);
+
             while (e.hasMoreElements())
             {
                 Object  o = e.nextElement();
+
                 if (o == null)
                 {
                     buf.append(tab);
@@ -158,12 +175,15 @@ public class ASN1Dump {
         {
             Enumeration     e = ((ASN1Set)obj).getObjects();
             String          tab = indent + TAB;
+
             buf.append(indent);
             buf.append("DER Set");
             buf.append(nl);
+
             while (e.hasMoreElements())
             {
                 Object  o = e.nextElement();
+
                 if (o == null)
                 {
                     buf.append(tab);
@@ -302,12 +322,14 @@ public class ASN1Dump {
             buf.append(indent + obj.toString() + nl);
         }
     }
-
     
-    @DSModeled(DSC.BAN)
-    private static String outputApplicationSpecific(String type, String indent, boolean verbose, DERObject obj, String nl) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:28.170 -0500", hash_original_method = "A085E90B685E2DD1BB807B35DC58CB82", hash_generated_method = "6E3C46138551D08E7509B06BB5FB5701")
+    
+private static String outputApplicationSpecific(String type, String indent, boolean verbose, DERObject obj, String nl)
+    {
         DERApplicationSpecific app = (DERApplicationSpecific)obj;
         StringBuffer buf = new StringBuffer();
+
         if (app.isConstructed())
         {
             try
@@ -325,22 +347,39 @@ public class ASN1Dump {
             }
             return buf.toString();
         }
+
         return indent + type + " ApplicationSpecific[" + app.getApplicationTag() + "] (" + new String(Hex.encode(app.getContents())) + ")" + nl;
     }
 
+    /**
+     * dump out a DER object as a formatted string, in non-verbose mode.
+     *
+     * @param obj the DERObject to be dumped out.
+     * @return  the resulting string.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:28.172 -0500", hash_original_method = "4ACF3BC65F0835BDAED23C3218607CC6", hash_generated_method = "AB47D7FD2D522A6C4B52051AE9DD7CB1")
     
-    @DSModeled(DSC.SAFE)
-    public static String dumpAsString(
-        Object   obj) {
+public static String dumpAsString(
+        Object   obj)
+    {
         return dumpAsString(obj, false);
     }
 
+    /**
+     * Dump out the object as a string.
+     *
+     * @param obj  the object to be dumped
+     * @param verbose  if true, dump out the contents of octet and bit strings.
+     * @return  the resulting string.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:28.175 -0500", hash_original_method = "1D99DCC453E784FF5D3F8F4D5E30D7F1", hash_generated_method = "F8DEFD92E985896075DF4A52D4143A21")
     
-    @DSModeled(DSC.SAFE)
-    public static String dumpAsString(
+public static String dumpAsString(
         Object   obj,
-        boolean  verbose) {
+        boolean  verbose)
+    {
         StringBuffer buf = new StringBuffer();
+
         if (obj instanceof DERObject)
         {
             _dumpAsString("", verbose, (DERObject)obj, buf);
@@ -353,15 +392,19 @@ public class ASN1Dump {
         {
             return "unknown object type " + obj.toString();
         }
+
         return buf.toString();
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:28.178 -0500", hash_original_method = "3D6C67C11A06616DF2A4DB86F4BD675E", hash_generated_method = "BE9E9BFE41C2CE7AB847C0394AFCE1BF")
     
-    @DSModeled(DSC.BAN)
-    private static String dumpBinaryDataAsString(String indent, byte[] bytes) {
+private static String dumpBinaryDataAsString(String indent, byte[] bytes)
+    {
         String nl = System.getProperty("line.separator");
         StringBuffer buf = new StringBuffer();
+
         indent += TAB;
+        
         buf.append(nl);
         for (int i = 0; i < bytes.length; i += SAMPLE_SIZE)
         {
@@ -386,13 +429,16 @@ public class ASN1Dump {
                 buf.append(nl);
             }
         }
+        
         return buf.toString();
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:28.181 -0500", hash_original_method = "B7AB993C8FF8F0BB3933979E8FD641AD", hash_generated_method = "B782F7489415D349C53C522882507B00")
     
-    @DSModeled(DSC.BAN)
-    private static String calculateAscString(byte[] bytes, int off, int len) {
+private static String calculateAscString(byte[] bytes, int off, int len)
+    {
         StringBuffer buf = new StringBuffer();
+
         for (int i = off; i != off + len; i++)
         {
             if (bytes[i] >= ' ' && bytes[i] <= '~')
@@ -400,15 +446,20 @@ public class ASN1Dump {
                 buf.append((char)bytes[i]);
             }
         }
+
         return buf.toString();
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:28.158 -0500", hash_original_field = "438765849B728A4D470967DDA176F6F1", hash_generated_field = "A38D576A197CBBF0C244B1F346CC2E3F")
 
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.279 -0400", hash_original_field = "633168FFC8FC39CA03D7A4991058214D", hash_generated_field = "A38D576A197CBBF0C244B1F346CC2E3F")
-
-    private static final String TAB = "    ";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.279 -0400", hash_original_field = "9351A2B3EACAB6291A50C024DD53CE21", hash_generated_field = "400B646519ABB7EFD5C377C33E8EFD31")
+    private static final String  TAB = "    ";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:28.160 -0500", hash_original_field = "B2161652CF4640A23D0045E350406E14", hash_generated_field = "400B646519ABB7EFD5C377C33E8EFD31")
 
     private static final int SAMPLE_SIZE = 32;
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.277 -0400", hash_original_method = "3C39DC3F42F8284331A1E50F07E6A630", hash_generated_method = "3C39DC3F42F8284331A1E50F07E6A630")
+    public ASN1Dump ()
+    {
+        //Synthesized constructor
+    }
 }
 

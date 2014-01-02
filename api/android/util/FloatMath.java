@@ -1,6 +1,8 @@
 package android.util;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
@@ -8,12 +10,6 @@ import droidsafe.annotations.*;
 import droidsafe.helpers.DSUtils;
 
 public class FloatMath {
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.709 -0400", hash_original_method = "1F13790E730E0CCC2AC5BFBAA0385051", hash_generated_method = "D48FCD0E22A30AE22D8E0CFA1293CBCE")
-    private  FloatMath() {
-        // ---------- Original Method ----------
-    }
 
     
     @DSModeled(DSC.SAFE)
@@ -44,6 +40,11 @@ public class FloatMath {
     public static float sqrt(float value) {
         return DSUtils.UNKNOWN_FLOAT;
     }
+
+    /** Prevents instantiation. */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:25.639 -0500", hash_original_method = "1F13790E730E0CCC2AC5BFBAA0385051", hash_generated_method = "D298F494DD520E539E8C56F1D85453BE")
+    
+private FloatMath() {}
 
     
 }

@@ -1,6 +1,8 @@
 package libcore.net.http;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -15,16 +17,14 @@ import java.util.TimeZone;
 
 
 public final class HttpDate {
+
+    /**
+     * Returns the date for {@code value}. Returns null if the value couldn't be
+     * parsed.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:31.094 -0500", hash_original_method = "4E4294A231C025C52A332D4C9E438EF3", hash_generated_method = "26D4025E49970D7630B2DC56E7555674")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.172 -0400", hash_original_method = "0136B205498F115685D55FF9321B6B42", hash_generated_method = "0136B205498F115685D55FF9321B6B42")
-    public HttpDate ()
-    {
-        //Synthesized constructor
-    }
-
-
-    @DSModeled(DSC.SAFE)
-    public static Date parse(String value) {
+public static Date parse(String value) {
         try {
             return STANDARD_DATE_FORMAT.get().parse(value);
         } catch (ParseException ignore) {
@@ -38,9 +38,12 @@ public final class HttpDate {
         return null;
     }
 
+    /**
+     * Returns the string for {@code value}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:31.096 -0500", hash_original_method = "EA7DEE8E3C730970C4001E63A088D685", hash_generated_method = "E81B2DAF7930C84C4E2B73F1855BB57C")
     
-    @DSModeled(DSC.SAFE)
-    public static String format(Date value) {
+public static String format(Date value) {
         return STANDARD_DATE_FORMAT.get().format(value);
     }
 
@@ -66,12 +69,12 @@ public final class HttpDate {
 
         
 };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.173 -0400", hash_original_field = "1A5262111CAC9B43E8DD975F2EB0643F", hash_generated_field = "BEEAED429442B6C53D9D9D627997B72C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:31.091 -0500", hash_original_field = "1C8CEDAF61B9471A928C540FEDF2383A", hash_generated_field = "75790BD0D521D57ABCF72CD45F74CCDF")
 
     private static final String[] BROWSER_COMPATIBLE_DATE_FORMATS = new String[] {
-            
-            "EEEE, dd-MMM-yy HH:mm:ss zzz", 
-            "EEE MMM d HH:mm:ss yyyy", 
+            /* This list comes from  {@code org.apache.http.impl.cookie.BrowserCompatSpec}. */
+            "EEEE, dd-MMM-yy HH:mm:ss zzz", // RFC 1036
+            "EEE MMM d HH:mm:ss yyyy", // ANSI C asctime()
             "EEE, dd-MMM-yyyy HH:mm:ss z",
             "EEE, dd-MMM-yyyy HH-mm-ss z",
             "EEE, dd MMM yy HH:mm:ss z",
@@ -84,8 +87,14 @@ public final class HttpDate {
             "EEE,dd-MMM-yyyy HH:mm:ss z",
             "EEE, dd-MM-yyyy HH:mm:ss z",
 
-            
+            /* RI bug 6641315 claims a cookie of this format was once served by www.yahoo.com */
             "EEE MMM d yyyy HH:mm:ss z",
     };
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.172 -0400", hash_original_method = "0136B205498F115685D55FF9321B6B42", hash_generated_method = "0136B205498F115685D55FF9321B6B42")
+    public HttpDate ()
+    {
+        //Synthesized constructor
+    }
 }
 

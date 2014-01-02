@@ -1,6 +1,8 @@
 package org.bouncycastle.asn1.x500.style;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 import java.util.Hashtable;
@@ -24,573 +26,420 @@ import org.bouncycastle.asn1.x509.X509ObjectIdentifiers;
 
 
 public class BCStyle implements X500NameStyle {
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.427 -0400", hash_original_method = "0ABD618DA1E5963140699C4BF03983EF", hash_generated_method = "62EA560CCC47607A51180F5CADA7A74F")
-    protected  BCStyle() {
-        // ---------- Original Method ----------
-    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.198 -0500", hash_original_field = "14EECF58FF12DE9D1A9B3EDCC3D81AEE", hash_generated_field = "C060850A5B8A43A9641AC7C3AC19DAD7")
 
+    public static final X500NameStyle INSTANCE = new BCStyle();
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.201 -0500", hash_original_field = "73D81AB761AD0DD1368B09CDD84C52B9", hash_generated_field = "6B28731F0BA377BA3BC00D3B29680EC1")
+
+    public static final ASN1ObjectIdentifier C = new ASN1ObjectIdentifier("2.5.4.6");
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.204 -0500", hash_original_field = "7C20096B8D92FB48F8968BBA708DC654", hash_generated_field = "DCD93051F670D07A94A163A4BE5E36EF")
+
+    public static final ASN1ObjectIdentifier O = new ASN1ObjectIdentifier("2.5.4.10");
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.207 -0500", hash_original_field = "261320B7D7A937905795F882118E4E09", hash_generated_field = "9AB62218CD4C726913D30E0BBEBC7C7C")
+
+    public static final ASN1ObjectIdentifier OU = new ASN1ObjectIdentifier("2.5.4.11");
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.210 -0500", hash_original_field = "434F07241DCA4ABB45B208E5A1CC0F9E", hash_generated_field = "0EDFBC5765D192124E2D2BB3B3E17741")
+
+    public static final ASN1ObjectIdentifier T = new ASN1ObjectIdentifier("2.5.4.12");
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.212 -0500", hash_original_field = "64F2A24255D0083FA41103C3E04946C0", hash_generated_field = "E4A6683D7D329DBD320CF3D2B2EA169C")
+
+    public static final ASN1ObjectIdentifier CN = new ASN1ObjectIdentifier("2.5.4.3");
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.215 -0500", hash_original_field = "2A334247662CB3AC10543E7C6E1F2E7F", hash_generated_field = "DD2BAC4A277DDB3FD10FF9B797FE9F9F")
+
+    public static final ASN1ObjectIdentifier SN = new ASN1ObjectIdentifier("2.5.4.5");
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.218 -0500", hash_original_field = "205E4CE2323A7484E18CE86BF536E799", hash_generated_field = "DCCEE879790C242119D271A476CBFC2A")
+
+    public static final ASN1ObjectIdentifier STREET = new ASN1ObjectIdentifier("2.5.4.9");
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.221 -0500", hash_original_field = "DB080139CF0F8DC50CBD6D225A67326B", hash_generated_field = "8799CCA7411F87A17F66029334CEB2B0")
+
+    public static final ASN1ObjectIdentifier SERIALNUMBER = SN;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.223 -0500", hash_original_field = "FB4B2E953DCECD07D4AA41EB6D4BA3BD", hash_generated_field = "DB4DE5AFB6B9EB71ACB9A4701CAFDAAB")
+
+    public static final ASN1ObjectIdentifier L = new ASN1ObjectIdentifier("2.5.4.7");
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.226 -0500", hash_original_field = "5DD4F56E6CE6122F4C8862FABCDD72A7", hash_generated_field = "251E35276C1DCFF2938FEEBD4AD8B644")
+
+    public static final ASN1ObjectIdentifier ST = new ASN1ObjectIdentifier("2.5.4.8");
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.228 -0500", hash_original_field = "E11A0F31B5D8CF61D084F672D212F134", hash_generated_field = "3695E4F72DE11638D74469831AF5929C")
+
+    public static final ASN1ObjectIdentifier SURNAME = new ASN1ObjectIdentifier("2.5.4.4");
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.231 -0500", hash_original_field = "A85ABDC95C916371CF20280195D5D73B", hash_generated_field = "77FD96683E323E771BCC50C906DF9C79")
+
+    public static final ASN1ObjectIdentifier GIVENNAME = new ASN1ObjectIdentifier("2.5.4.42");
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.233 -0500", hash_original_field = "8FCAC6F24F2503411149DB897132006B", hash_generated_field = "DA98051E334D0DD7CDFE685451ADD496")
+
+    public static final ASN1ObjectIdentifier INITIALS = new ASN1ObjectIdentifier("2.5.4.43");
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.236 -0500", hash_original_field = "38FDCDF4071D394CB102AA2560DC8C15", hash_generated_field = "5737E3ABFD2D4040805F7878259AF508")
+
+    public static final ASN1ObjectIdentifier GENERATION = new ASN1ObjectIdentifier("2.5.4.44");
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.239 -0500", hash_original_field = "5D5AC0609CBA20300CDF8CFD04C66C92", hash_generated_field = "893B9D2C6C1C3B3A18AF963C8C678081")
+
+    public static final ASN1ObjectIdentifier UNIQUE_IDENTIFIER = new ASN1ObjectIdentifier("2.5.4.45");
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.242 -0500", hash_original_field = "FDBD2A9EC71D562DCEC1DD2A76ABDD6C", hash_generated_field = "F3121166E0BE18E9CA551FF6E105E14F")
+
+    public static final ASN1ObjectIdentifier BUSINESS_CATEGORY = new ASN1ObjectIdentifier(
+        "2.5.4.15");
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.244 -0500", hash_original_field = "4EA924988DB48327C9B95E32B385691E", hash_generated_field = "D0103C15BA15D290911D36A6E8B05BEF")
+
+    public static final ASN1ObjectIdentifier POSTAL_CODE = new ASN1ObjectIdentifier(
+        "2.5.4.17");
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.248 -0500", hash_original_field = "65209EB0BB05C67D7921B307FAF7232E", hash_generated_field = "A6604F09378F02C3F9F7E14C925545A4")
+
+    public static final ASN1ObjectIdentifier DN_QUALIFIER = new ASN1ObjectIdentifier(
+        "2.5.4.46");
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.250 -0500", hash_original_field = "193D5D621785CBFE77DE0CA4950443B2", hash_generated_field = "BBE741739A39F87431005A9211781950")
+
+    public static final ASN1ObjectIdentifier PSEUDONYM = new ASN1ObjectIdentifier(
+        "2.5.4.65");
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.253 -0500", hash_original_field = "F2578A8A11B411E8FD640934A5147D98", hash_generated_field = "3919D8BC4E0752B5A5D4B9A2777A6C49")
+
+    public static final ASN1ObjectIdentifier DATE_OF_BIRTH = new ASN1ObjectIdentifier(
+        "1.3.6.1.5.5.7.9.1");
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.255 -0500", hash_original_field = "39A6954C77102FD829C8F40785626AFB", hash_generated_field = "FC9C0DA941FD49257DA639F087D05445")
+
+    public static final ASN1ObjectIdentifier PLACE_OF_BIRTH = new ASN1ObjectIdentifier(
+        "1.3.6.1.5.5.7.9.2");
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.258 -0500", hash_original_field = "4BCB68EBA1BE1674464543F0C99E18DD", hash_generated_field = "930968633593A298F6B31E8852A0BE7E")
+
+    public static final ASN1ObjectIdentifier GENDER = new ASN1ObjectIdentifier(
+        "1.3.6.1.5.5.7.9.3");
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.261 -0500", hash_original_field = "2978189DA05811E2AB6589CD1BE44DB0", hash_generated_field = "3B8A2BCCC5E177AFADF12BDA6D520BB3")
+
+    public static final ASN1ObjectIdentifier COUNTRY_OF_CITIZENSHIP = new ASN1ObjectIdentifier(
+        "1.3.6.1.5.5.7.9.4");
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.263 -0500", hash_original_field = "6962A78EB10F329700077EF326DDC6C0", hash_generated_field = "2B0839E58743B99E48859FB6D192EFAE")
+
+    public static final ASN1ObjectIdentifier COUNTRY_OF_RESIDENCE = new ASN1ObjectIdentifier(
+        "1.3.6.1.5.5.7.9.5");
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.266 -0500", hash_original_field = "CAA4A191805D1CF84D7A9265DACCE4C0", hash_generated_field = "7AE5C39091A4CDDC2D9AF0B1D718DB07")
+
+    public static final ASN1ObjectIdentifier NAME_AT_BIRTH = new ASN1ObjectIdentifier("1.3.36.8.3.14");
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.269 -0500", hash_original_field = "45A588F362EF8945A8C0B39993A25F3A", hash_generated_field = "D1C997078495D2FD99EEF9EA6A41DD23")
+
+    public static final ASN1ObjectIdentifier POSTAL_ADDRESS = new ASN1ObjectIdentifier("2.5.4.16");
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.271 -0500", hash_original_field = "33C40600055CEC4F16EFCEA20083D269", hash_generated_field = "A260837E3A196A3A66F3FD05B823BE27")
+
+    public static final ASN1ObjectIdentifier DMD_NAME = new ASN1ObjectIdentifier("2.5.4.54");
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.273 -0500", hash_original_field = "D503D3FE6FF9D6AEFD0E3605CEB3BA2E", hash_generated_field = "6D0BA46185F6A42217195304B2C48E58")
+
+    public static final ASN1ObjectIdentifier TELEPHONE_NUMBER = X509ObjectIdentifiers.id_at_telephoneNumber;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.276 -0500", hash_original_field = "E9EDC0CECF09B0459B017C7E7A8C49A0", hash_generated_field = "78046C0D514B11059FCF6140B23BD69F")
+
+    public static final ASN1ObjectIdentifier NAME = X509ObjectIdentifiers.id_at_name;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.278 -0500", hash_original_field = "5542DA1DD2158A38E4D228E6F3785B2D", hash_generated_field = "94768FD0A0AB3FD788AA8DF7729248B3")
+
+    public static final ASN1ObjectIdentifier EmailAddress = PKCSObjectIdentifiers.pkcs_9_at_emailAddress;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.282 -0500", hash_original_field = "5D83861705C711D925B1BE338C9807FB", hash_generated_field = "4D93C13CEDC0C534265A556FB79EF3F2")
+
+    public static final ASN1ObjectIdentifier UnstructuredName = PKCSObjectIdentifiers.pkcs_9_at_unstructuredName;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.284 -0500", hash_original_field = "236E995CAA2A8E5A98D9C69C1AEE2905", hash_generated_field = "63E5E1B58595E52C940179E3469A4EDB")
+
+    public static final ASN1ObjectIdentifier UnstructuredAddress = PKCSObjectIdentifiers.pkcs_9_at_unstructuredAddress;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.287 -0500", hash_original_field = "4E5FEA981BDD2164BCE47F293EBB1D01", hash_generated_field = "86CB254127BC8C87A86C3CFB8F5D1BA7")
+
+    public static final ASN1ObjectIdentifier E = EmailAddress;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.289 -0500", hash_original_field = "F3A59E520E18B2E0EC587EFA3EDFA71D", hash_generated_field = "62065CBD2CB2E1E03C54078E6D100D7F")
+
+    public static final ASN1ObjectIdentifier DC = new ASN1ObjectIdentifier("0.9.2342.19200300.100.1.25");
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.292 -0500", hash_original_field = "1CA13852AA2F5D130D5A5D87E7D6E64F", hash_generated_field = "6696F260EEF01FB0CFC05225B4A9E9B4")
+
+    public static final ASN1ObjectIdentifier UID = new ASN1ObjectIdentifier("0.9.2342.19200300.100.1.1");
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.295 -0500", hash_original_field = "BB36420B0085FE57C4931038638024E1", hash_generated_field = "DA9A8DC7E5E394013019E7145DE74EC2")
+
+    private static final Hashtable DefaultSymbols = new Hashtable();
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.298 -0500", hash_original_field = "6A9B8BA2687E2B038C6E773AEF73F5D5", hash_generated_field = "CFA0F3F94E79998418B90A094C11CB18")
+
+    private static final Hashtable DefaultLookUp = new Hashtable();
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.301 -0500", hash_original_method = "0ABD618DA1E5963140699C4BF03983EF", hash_generated_method = "61B48DA66F30B4E5130E97C77C601644")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.428 -0400", hash_original_method = "BD2E63080765E1C5F0301383BAEA0055", hash_generated_method = "2CC284D6F474EA38D18DC06008E7F6E7")
-    public ASN1Encodable stringToValue(ASN1ObjectIdentifier oid, String value) {
-        addTaint(value.getTaint());
-        addTaint(oid.getTaint());
-        if(value.length() != 0 && value.charAt(0) == '#')        
+protected BCStyle()
+    {
+
+    }
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.304 -0500", hash_original_method = "BD2E63080765E1C5F0301383BAEA0055", hash_generated_method = "B6E79ACF4EC8A4C418592D7E89927AC7")
+    
+public ASN1Encodable stringToValue(ASN1ObjectIdentifier oid, String value)
+    {
+        if (value.length() != 0 && value.charAt(0) == '#')
         {
-            try 
+            try
             {
-ASN1Encodable var6C07062AE2FFDCB89429828B339426A8_40430405 =                 IETFUtils.valueFromHexString(value, 1);
-                var6C07062AE2FFDCB89429828B339426A8_40430405.addTaint(taint);
-                return var6C07062AE2FFDCB89429828B339426A8_40430405;
-            } //End block
+                return IETFUtils.valueFromHexString(value, 1);
+            }
             catch (IOException e)
             {
-                RuntimeException var6DFFBB33DC6D67FE3709FD741BFDC9CF_990120226 = new RuntimeException("can't recode value for oid " + oid.getId());
-                var6DFFBB33DC6D67FE3709FD741BFDC9CF_990120226.addTaint(taint);
-                throw var6DFFBB33DC6D67FE3709FD741BFDC9CF_990120226;
-            } //End block
-        } //End block
+                throw new RuntimeException("can't recode value for oid " + oid.getId());
+            }
+        }
         else
         {
-            if(value.length() != 0 && value.charAt(0) == '\\')            
+            if (value.length() != 0 && value.charAt(0) == '\\')
             {
                 value = value.substring(1);
-            } //End block
-            if(oid.equals(EmailAddress) || oid.equals(DC))            
+            }
+            if (oid.equals(EmailAddress) || oid.equals(DC))
             {
-ASN1Encodable var33DE795DC3C6B2B339D412A48CEFF243_1234767841 =                 new DERIA5String(value);
-                var33DE795DC3C6B2B339D412A48CEFF243_1234767841.addTaint(taint);
-                return var33DE795DC3C6B2B339D412A48CEFF243_1234767841;
-            } //End block
-            else
-            if(oid.equals(DATE_OF_BIRTH))            
+                return new DERIA5String(value);
+            }
+            else if (oid.equals(DATE_OF_BIRTH))  // accept time string as well as # (for compatibility)
             {
-ASN1Encodable varA0E9AA915FE5B2238A1C04164293600B_1544347095 =                 new DERGeneralizedTime(value);
-                varA0E9AA915FE5B2238A1C04164293600B_1544347095.addTaint(taint);
-                return varA0E9AA915FE5B2238A1C04164293600B_1544347095;
-            } //End block
-            else
-            if(oid.equals(C) || oid.equals(SN) || oid.equals(DN_QUALIFIER)
-                || oid.equals(TELEPHONE_NUMBER))            
+                return new DERGeneralizedTime(value);
+            }
+            else if (oid.equals(C) || oid.equals(SN) || oid.equals(DN_QUALIFIER)
+                || oid.equals(TELEPHONE_NUMBER))
             {
-ASN1Encodable varE4B9BE1D4E9D486AB677DC69399C8BDE_1386107234 =                 new DERPrintableString(value);
-                varE4B9BE1D4E9D486AB677DC69399C8BDE_1386107234.addTaint(taint);
-                return varE4B9BE1D4E9D486AB677DC69399C8BDE_1386107234;
-            } //End block
-        } //End block
-ASN1Encodable var2B1683A8AF4155B42EB4E966D550EB40_127390986 =         new DERUTF8String(value);
-        var2B1683A8AF4155B42EB4E966D550EB40_127390986.addTaint(taint);
-        return var2B1683A8AF4155B42EB4E966D550EB40_127390986;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                return new DERPrintableString(value);
+            }
+        }
+
+        return new DERUTF8String(value);
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.307 -0500", hash_original_method = "9484E4F8104F6AF4F123D2A5FD97E1FE", hash_generated_method = "32461126B147CC801BF23B9115D91674")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.429 -0400", hash_original_method = "9484E4F8104F6AF4F123D2A5FD97E1FE", hash_generated_method = "5A03C79DAD52FE393D7D0A8B7E806184")
-    public ASN1ObjectIdentifier attrNameToOID(String attrName) {
-        addTaint(attrName.getTaint());
-ASN1ObjectIdentifier var36DEFB4E7CCF4A65D077415213D06BF0_1301176335 =         IETFUtils.decodeAttrName(attrName, DefaultLookUp);
-        var36DEFB4E7CCF4A65D077415213D06BF0_1301176335.addTaint(taint);
-        return var36DEFB4E7CCF4A65D077415213D06BF0_1301176335;
-        // ---------- Original Method ----------
-        //return IETFUtils.decodeAttrName(attrName, DefaultLookUp);
+public ASN1ObjectIdentifier attrNameToOID(String attrName)
+    {
+        return IETFUtils.decodeAttrName(attrName, DefaultLookUp);
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.309 -0500", hash_original_method = "3E0470485E902738E6BF6ED5F1A7F39D", hash_generated_method = "3310208CA47A026AB10903BAAB3EC31C")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.430 -0400", hash_original_method = "3E0470485E902738E6BF6ED5F1A7F39D", hash_generated_method = "F56D093D980F5EF249C686518BFE0D82")
-    public boolean areEqual(X500Name name1, X500Name name2) {
-        addTaint(name2.getTaint());
-        addTaint(name1.getTaint());
+public boolean areEqual(X500Name name1, X500Name name2)
+    {
         RDN[] rdns1 = name1.getRDNs();
         RDN[] rdns2 = name2.getRDNs();
-        if(rdns1.length != rdns2.length)        
+
+        if (rdns1.length != rdns2.length)
         {
-            boolean var68934A3E9455FA72420237EB05902327_694257716 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_528407841 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_528407841;
-        } //End block
+            return false;
+        }
+
         boolean reverse = false;
-        if(rdns1[0].getFirst() != null && rdns2[0].getFirst() != null)        
+
+        if (rdns1[0].getFirst() != null && rdns2[0].getFirst() != null)
         {
-            reverse = !rdns1[0].getFirst().getType().equals(rdns2[0].getFirst().getType());
-        } //End block
-for(int i = 0;i != rdns1.length;i++)
+            reverse = !rdns1[0].getFirst().getType().equals(rdns2[0].getFirst().getType());  // guess forward
+        }
+
+        for (int i = 0; i != rdns1.length; i++)
         {
-            if(!foundMatch(reverse, rdns1[i], rdns2))            
+            if (!foundMatch(reverse, rdns1[i], rdns2))
             {
-                boolean var68934A3E9455FA72420237EB05902327_2011847132 = (false);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_629348859 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_629348859;
-            } //End block
-        } //End block
-        boolean varB326B5062B2F0E69046810717534CB09_786885431 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_911566927 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_911566927;
-        // ---------- Original Method ----------
-        //RDN[] rdns1 = name1.getRDNs();
-        //RDN[] rdns2 = name2.getRDNs();
-        //if (rdns1.length != rdns2.length)
-        //{
-            //return false;
-        //}
-        //boolean reverse = false;
-        //if (rdns1[0].getFirst() != null && rdns2[0].getFirst() != null)
-        //{
-            //reverse = !rdns1[0].getFirst().getType().equals(rdns2[0].getFirst().getType());  
-        //}
-        //for (int i = 0; i != rdns1.length; i++)
-        //{
-            //if (!foundMatch(reverse, rdns1[i], rdns2))
-            //{
-                //return false;
-            //}
-        //}
-        //return true;
+                return false;
+            }
+        }
+
+        return true;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.312 -0500", hash_original_method = "54A0483298F3DFD022315937FBAF5933", hash_generated_method = "3E745317653D6C3DD80B0C0A65CC8360")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.432 -0400", hash_original_method = "54A0483298F3DFD022315937FBAF5933", hash_generated_method = "8ED91514F4A82EF0BC3A17CDE8DC050A")
-    private boolean foundMatch(boolean reverse, RDN rdn, RDN[] possRDNs) {
-        addTaint(possRDNs[0].getTaint());
-        addTaint(rdn.getTaint());
-        addTaint(reverse);
-        if(reverse)        
+private boolean foundMatch(boolean reverse, RDN rdn, RDN[] possRDNs)
+    {
+        if (reverse)
         {
-for(int i = possRDNs.length - 1;i >= 0;i--)
+            for (int i = possRDNs.length - 1; i >= 0; i--)
             {
-                if(possRDNs[i] != null && rdnAreEqual(rdn, possRDNs[i]))                
+                if (possRDNs[i] != null && rdnAreEqual(rdn, possRDNs[i]))
                 {
                     possRDNs[i] = null;
-                    boolean varB326B5062B2F0E69046810717534CB09_494736738 = (true);
-                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_80336162 = getTaintBoolean();
-                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_80336162;
-                } //End block
-            } //End block
-        } //End block
+                    return true;
+                }
+            }
+        }
         else
         {
-for(int i = 0;i != possRDNs.length;i++)
+            for (int i = 0; i != possRDNs.length; i++)
             {
-                if(possRDNs[i] != null && rdnAreEqual(rdn, possRDNs[i]))                
+                if (possRDNs[i] != null && rdnAreEqual(rdn, possRDNs[i]))
                 {
                     possRDNs[i] = null;
-                    boolean varB326B5062B2F0E69046810717534CB09_617691201 = (true);
-                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_940599763 = getTaintBoolean();
-                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_940599763;
-                } //End block
-            } //End block
-        } //End block
-        boolean var68934A3E9455FA72420237EB05902327_1725710553 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1617856816 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1617856816;
-        // ---------- Original Method ----------
-        //if (reverse)
-        //{
-            //for (int i = possRDNs.length - 1; i >= 0; i--)
-            //{
-                //if (possRDNs[i] != null && rdnAreEqual(rdn, possRDNs[i]))
-                //{
-                    //possRDNs[i] = null;
-                    //return true;
-                //}
-            //}
-        //}
-        //else
-        //{
-            //for (int i = 0; i != possRDNs.length; i++)
-            //{
-                //if (possRDNs[i] != null && rdnAreEqual(rdn, possRDNs[i]))
-                //{
-                    //possRDNs[i] = null;
-                    //return true;
-                //}
-            //}
-        //}
-        //return false;
+                    return true;
+                }
+            }
+        }
+
+        return false;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.315 -0500", hash_original_method = "D45006114E7131F95F9CCEC1C09C1466", hash_generated_method = "8A3D90C144F23291D996BE6B895644F3")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.432 -0400", hash_original_method = "D45006114E7131F95F9CCEC1C09C1466", hash_generated_method = "D65323D89D3481E4E39DA4A913E360BA")
-    protected boolean rdnAreEqual(RDN rdn1, RDN rdn2) {
-        addTaint(rdn2.getTaint());
-        addTaint(rdn1.getTaint());
-        if(rdn1.isMultiValued())        
+protected boolean rdnAreEqual(RDN rdn1, RDN rdn2)
+    {
+        if (rdn1.isMultiValued())
         {
-            if(rdn2.isMultiValued())            
+            if (rdn2.isMultiValued())
             {
                 AttributeTypeAndValue[] atvs1 = rdn1.getTypesAndValues();
                 AttributeTypeAndValue[] atvs2 = rdn2.getTypesAndValues();
-                if(atvs1.length != atvs2.length)                
+
+                if (atvs1.length != atvs2.length)
                 {
-                    boolean var68934A3E9455FA72420237EB05902327_1293931508 = (false);
-                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_748174962 = getTaintBoolean();
-                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_748174962;
-                } //End block
-for(int i = 0;i != atvs1.length;i++)
+                    return false;
+                }
+
+                for (int i = 0; i != atvs1.length; i++)
                 {
-                    if(!atvAreEqual(atvs1[i], atvs2[i]))                    
+                    if (!atvAreEqual(atvs1[i], atvs2[i]))
                     {
-                        boolean var68934A3E9455FA72420237EB05902327_457045239 = (false);
-                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_107595540 = getTaintBoolean();
-                        return var84E2C64F38F78BA3EA5C905AB5A2DA27_107595540;
-                    } //End block
-                } //End block
-            } //End block
+                        return false;
+                    }
+                }
+            }
             else
             {
-                boolean var68934A3E9455FA72420237EB05902327_1320891585 = (false);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1595200451 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1595200451;
-            } //End block
-        } //End block
+                return false;
+            }
+        }
         else
         {
-            if(!rdn2.isMultiValued())            
+            if (!rdn2.isMultiValued())
             {
-                boolean var1403ECC56C5738062A4CCD1AD18F3BFA_996859797 = (atvAreEqual(rdn1.getFirst(), rdn2.getFirst()));
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1728433350 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1728433350;
-            } //End block
+                return atvAreEqual(rdn1.getFirst(), rdn2.getFirst());
+            }
             else
             {
-                boolean var68934A3E9455FA72420237EB05902327_1263496277 = (false);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1553622707 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1553622707;
-            } //End block
-        } //End block
-        boolean varB326B5062B2F0E69046810717534CB09_1105834092 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1855726108 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1855726108;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                return false;
+            }
+        }
+
+        return true;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.317 -0500", hash_original_method = "9BB2C53F6636F1E7BA3066DC2FBD5F40", hash_generated_method = "21AFE7C629E132C230961AD1A1A741F9")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.434 -0400", hash_original_method = "9BB2C53F6636F1E7BA3066DC2FBD5F40", hash_generated_method = "45B332F92849B4C2FA330047D206BC9B")
-    private boolean atvAreEqual(AttributeTypeAndValue atv1, AttributeTypeAndValue atv2) {
-        addTaint(atv2.getTaint());
-        addTaint(atv1.getTaint());
-        if(atv1 == atv2)        
+private boolean atvAreEqual(AttributeTypeAndValue atv1, AttributeTypeAndValue atv2)
+    {
+        if (atv1 == atv2)
         {
-            boolean varB326B5062B2F0E69046810717534CB09_138324910 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1606930279 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1606930279;
-        } //End block
-        if(atv1 == null)        
+            return true;
+        }
+
+        if (atv1 == null)
         {
-            boolean var68934A3E9455FA72420237EB05902327_1582657375 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1465065836 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1465065836;
-        } //End block
-        if(atv2 == null)        
+            return false;
+        }
+
+        if (atv2 == null)
         {
-            boolean var68934A3E9455FA72420237EB05902327_310202946 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1135385823 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1135385823;
-        } //End block
+            return false;
+        }
+
         ASN1ObjectIdentifier o1 = atv1.getType();
         ASN1ObjectIdentifier o2 = atv2.getType();
-        if(!o1.equals(o2))        
+
+        if (!o1.equals(o2))
         {
-            boolean var68934A3E9455FA72420237EB05902327_1367391660 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1286718466 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1286718466;
-        } //End block
+            return false;
+        }
+
         String v1 = IETFUtils.canonicalize(IETFUtils.valueToString(atv1.getValue()));
         String v2 = IETFUtils.canonicalize(IETFUtils.valueToString(atv2.getValue()));
-        if(!v1.equals(v2))        
+
+        if (!v1.equals(v2))
         {
-            boolean var68934A3E9455FA72420237EB05902327_1822824760 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1185483711 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1185483711;
-        } //End block
-        boolean varB326B5062B2F0E69046810717534CB09_776149029 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_125073807 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_125073807;
-        // ---------- Original Method ----------
-        //if (atv1 == atv2)
-        //{
-            //return true;
-        //}
-        //if (atv1 == null)
-        //{
-            //return false;
-        //}
-        //if (atv2 == null)
-        //{
-            //return false;
-        //}
-        //ASN1ObjectIdentifier o1 = atv1.getType();
-        //ASN1ObjectIdentifier o2 = atv2.getType();
-        //if (!o1.equals(o2))
-        //{
-            //return false;
-        //}
-        //String v1 = IETFUtils.canonicalize(IETFUtils.valueToString(atv1.getValue()));
-        //String v2 = IETFUtils.canonicalize(IETFUtils.valueToString(atv2.getValue()));
-        //if (!v1.equals(v2))
-        //{
-            //return false;
-        //}
-        //return true;
+            return false;
+        }
+
+        return true;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.320 -0500", hash_original_method = "A9463F881D57C8D610E0B84E4769BF0F", hash_generated_method = "6251EC235DCDBA1B6B3598D12DD1AB30")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.434 -0400", hash_original_method = "A9463F881D57C8D610E0B84E4769BF0F", hash_generated_method = "D8D70036F8B220C2F7FA2FC7E2F430A7")
-    public RDN[] fromString(String dirName) {
-        addTaint(dirName.getTaint());
-RDN[] varB4707AA258BA2978AA365DCAAA9F4D7C_1246266345 =         IETFUtils.rDNsFromString(dirName, this);
-        varB4707AA258BA2978AA365DCAAA9F4D7C_1246266345.addTaint(taint);
-        return varB4707AA258BA2978AA365DCAAA9F4D7C_1246266345;
-        // ---------- Original Method ----------
-        //return IETFUtils.rDNsFromString(dirName, this);
+public RDN[] fromString(String dirName)
+    {
+        return IETFUtils.rDNsFromString(dirName, this);
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.322 -0500", hash_original_method = "EA77324623CE6D0B04D0F275B161435F", hash_generated_method = "B0785328296350D825FFBF13D548C98B")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.435 -0400", hash_original_method = "EA77324623CE6D0B04D0F275B161435F", hash_generated_method = "67F2B083374A19970C37468742772298")
-    public int calculateHashCode(X500Name name) {
-        addTaint(name.getTaint());
+public int calculateHashCode(X500Name name)
+    {
         int hashCodeValue = 0;
         RDN[] rdns = name.getRDNs();
-for(int i = 0;i != rdns.length;i++)
+
+        // this needs to be order independent, like equals
+        for (int i = 0; i != rdns.length; i++)
         {
-            if(rdns[i].isMultiValued())            
+            if (rdns[i].isMultiValued())
             {
                 AttributeTypeAndValue[] atv = rdns[i].getTypesAndValues();
-for(int j = 0;j != atv.length;j++)
+
+                for (int j = 0; j != atv.length; j++)
                 {
                     hashCodeValue ^= atv[j].getType().hashCode();
                     hashCodeValue ^= calcHashCode(atv[j].getValue());
-                } //End block
-            } //End block
+                }
+            }
             else
             {
                 hashCodeValue ^= rdns[i].getFirst().getType().hashCode();
                 hashCodeValue ^= calcHashCode(rdns[i].getFirst().getValue());
-            } //End block
-        } //End block
-        int var4D002D69417019F289C8061B82207DD2_440106535 = (hashCodeValue);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2123825040 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2123825040;
-        // ---------- Original Method ----------
-        //int hashCodeValue = 0;
-        //RDN[] rdns = name.getRDNs();
-        //for (int i = 0; i != rdns.length; i++)
-        //{
-            //if (rdns[i].isMultiValued())
-            //{
-                //AttributeTypeAndValue[] atv = rdns[i].getTypesAndValues();
-                //for (int j = 0; j != atv.length; j++)
-                //{
-                    //hashCodeValue ^= atv[j].getType().hashCode();
-                    //hashCodeValue ^= calcHashCode(atv[j].getValue());
-                //}
-            //}
-            //else
-            //{
-                //hashCodeValue ^= rdns[i].getFirst().getType().hashCode();
-                //hashCodeValue ^= calcHashCode(rdns[i].getFirst().getValue());
-            //}
-        //}
-        //return hashCodeValue;
+            }
+        }
+
+        return hashCodeValue;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.326 -0500", hash_original_method = "D9D0265B1123594600F423F1ABB5E8A9", hash_generated_method = "427E59F503130DA5A5103EE91BDFAB18")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.436 -0400", hash_original_method = "D9D0265B1123594600F423F1ABB5E8A9", hash_generated_method = "A85A7C2439633990DD2133D3798DA9FD")
-    private int calcHashCode(ASN1Encodable enc) {
-        addTaint(enc.getTaint());
+private int calcHashCode(ASN1Encodable enc)
+    {
         String value = IETFUtils.valueToString(enc);
+
         value = IETFUtils.canonicalize(value);
-        int varB074603E1AD45DDD8A09B63727AC1669_1455179076 = (value.hashCode());
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_634771544 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_634771544;
-        // ---------- Original Method ----------
-        //String value = IETFUtils.valueToString(enc);
-        //value = IETFUtils.canonicalize(value);
-        //return value.hashCode();
+
+        return value.hashCode();
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:25.329 -0500", hash_original_method = "C53C9B056BF6D42B40010FA6E5F8B1BD", hash_generated_method = "4DBAD7455486DC987C476499ED3B1473")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.437 -0400", hash_original_method = "C53C9B056BF6D42B40010FA6E5F8B1BD", hash_generated_method = "66B65D6B29BFB95FC966E936C5E4A41A")
-    public String toString(X500Name name) {
-        addTaint(name.getTaint());
+public String toString(X500Name name)
+    {
         StringBuffer buf = new StringBuffer();
         boolean first = true;
+
         RDN[] rdns = name.getRDNs();
-for(int i = 0;i < rdns.length;i++)
+
+        for (int i = 0; i < rdns.length; i++)
         {
-            if(first)            
+            if (first)
             {
                 first = false;
-            } //End block
+            }
             else
             {
                 buf.append(',');
-            } //End block
-            if(rdns[i].isMultiValued())            
+            }
+
+            if (rdns[i].isMultiValued())
             {
                 AttributeTypeAndValue[] atv = rdns[i].getTypesAndValues();
                 boolean firstAtv = true;
-for(int j = 0;j != atv.length;j++)
+
+                for (int j = 0; j != atv.length; j++)
                 {
-                    if(firstAtv)                    
+                    if (firstAtv)
                     {
                         firstAtv = false;
-                    } //End block
+                    }
                     else
                     {
                         buf.append('+');
-                    } //End block
+                    }
+                    
                     IETFUtils.appendTypeAndValue(buf, atv[j], DefaultSymbols);
-                } //End block
-            } //End block
+                }
+            }
             else
             {
                 IETFUtils.appendTypeAndValue(buf, rdns[i].getFirst(), DefaultSymbols);
-            } //End block
-        } //End block
-String var4FC680801218E6372BC708D6FA44AE60_641707352 =         buf.toString();
-        var4FC680801218E6372BC708D6FA44AE60_641707352.addTaint(taint);
-        return var4FC680801218E6372BC708D6FA44AE60_641707352;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            }
+        }
+
+        return buf.toString();
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.437 -0400", hash_original_field = "609838652B93D33DFCC6212D95B98870", hash_generated_field = "C060850A5B8A43A9641AC7C3AC19DAD7")
-
-    public static final X500NameStyle INSTANCE = new BCStyle();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.437 -0400", hash_original_field = "DF3D2B0EC08A46678E8095714F7CB96F", hash_generated_field = "6B28731F0BA377BA3BC00D3B29680EC1")
-
-    public static final ASN1ObjectIdentifier C = new ASN1ObjectIdentifier("2.5.4.6");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.437 -0400", hash_original_field = "31A9CF9ED94ED5D10BB38126E0719632", hash_generated_field = "DCD93051F670D07A94A163A4BE5E36EF")
-
-    public static final ASN1ObjectIdentifier O = new ASN1ObjectIdentifier("2.5.4.10");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.437 -0400", hash_original_field = "1061F50D1A3154175B8ABDEFB137C6EB", hash_generated_field = "9AB62218CD4C726913D30E0BBEBC7C7C")
-
-    public static final ASN1ObjectIdentifier OU = new ASN1ObjectIdentifier("2.5.4.11");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.438 -0400", hash_original_field = "A9DA33F4ADC4BDADCFEB9FD123953FF2", hash_generated_field = "0EDFBC5765D192124E2D2BB3B3E17741")
-
-    public static final ASN1ObjectIdentifier T = new ASN1ObjectIdentifier("2.5.4.12");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.438 -0400", hash_original_field = "D52FC34D7A68DCC325308F0AE7FA9585", hash_generated_field = "E4A6683D7D329DBD320CF3D2B2EA169C")
-
-    public static final ASN1ObjectIdentifier CN = new ASN1ObjectIdentifier("2.5.4.3");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.438 -0400", hash_original_field = "9CD0DA9786EC16AE81A57F71B047B6C2", hash_generated_field = "DD2BAC4A277DDB3FD10FF9B797FE9F9F")
-
-    public static final ASN1ObjectIdentifier SN = new ASN1ObjectIdentifier("2.5.4.5");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.438 -0400", hash_original_field = "956EE34F5FB5D025EC6E32028169AAE9", hash_generated_field = "DCCEE879790C242119D271A476CBFC2A")
-
-    public static final ASN1ObjectIdentifier STREET = new ASN1ObjectIdentifier("2.5.4.9");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.438 -0400", hash_original_field = "5AC9323E3AB7013AFF904A3D9E7AE793", hash_generated_field = "8799CCA7411F87A17F66029334CEB2B0")
-
-    public static final ASN1ObjectIdentifier SERIALNUMBER = SN;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.438 -0400", hash_original_field = "6FEA45110D81391C49D122A3CA74C615", hash_generated_field = "DB4DE5AFB6B9EB71ACB9A4701CAFDAAB")
-
-    public static final ASN1ObjectIdentifier L = new ASN1ObjectIdentifier("2.5.4.7");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.438 -0400", hash_original_field = "E2F77EB33506346479BA61D1D5524D60", hash_generated_field = "251E35276C1DCFF2938FEEBD4AD8B644")
-
-    public static final ASN1ObjectIdentifier ST = new ASN1ObjectIdentifier("2.5.4.8");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.438 -0400", hash_original_field = "867A66A6368603CB753E96F4EC558839", hash_generated_field = "3695E4F72DE11638D74469831AF5929C")
-
-    public static final ASN1ObjectIdentifier SURNAME = new ASN1ObjectIdentifier("2.5.4.4");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.438 -0400", hash_original_field = "DDEEFF957FD44C0D21D24CDEB121A7B6", hash_generated_field = "77FD96683E323E771BCC50C906DF9C79")
-
-    public static final ASN1ObjectIdentifier GIVENNAME = new ASN1ObjectIdentifier("2.5.4.42");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.438 -0400", hash_original_field = "DCE46911988A24C925244DC77A040906", hash_generated_field = "DA98051E334D0DD7CDFE685451ADD496")
-
-    public static final ASN1ObjectIdentifier INITIALS = new ASN1ObjectIdentifier("2.5.4.43");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.438 -0400", hash_original_field = "083211F5F6E5431627E043AD65A77474", hash_generated_field = "5737E3ABFD2D4040805F7878259AF508")
-
-    public static final ASN1ObjectIdentifier GENERATION = new ASN1ObjectIdentifier("2.5.4.44");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.438 -0400", hash_original_field = "A0CFE66590582041EBCAABB1E4355E9F", hash_generated_field = "893B9D2C6C1C3B3A18AF963C8C678081")
-
-    public static final ASN1ObjectIdentifier UNIQUE_IDENTIFIER = new ASN1ObjectIdentifier("2.5.4.45");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.438 -0400", hash_original_field = "0DF519CBFF057BCF8779AD58088BE8D5", hash_generated_field = "F3121166E0BE18E9CA551FF6E105E14F")
-
-    public static final ASN1ObjectIdentifier BUSINESS_CATEGORY = new ASN1ObjectIdentifier(
-        "2.5.4.15");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.438 -0400", hash_original_field = "6D1D752DD529691FCFD4231BD3EE7718", hash_generated_field = "D0103C15BA15D290911D36A6E8B05BEF")
-
-    public static final ASN1ObjectIdentifier POSTAL_CODE = new ASN1ObjectIdentifier(
-        "2.5.4.17");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.439 -0400", hash_original_field = "A42579AD143735A05DC8A288AC188960", hash_generated_field = "A6604F09378F02C3F9F7E14C925545A4")
-
-    public static final ASN1ObjectIdentifier DN_QUALIFIER = new ASN1ObjectIdentifier(
-        "2.5.4.46");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.439 -0400", hash_original_field = "6AE9356966130F78A044D4F7F907C42D", hash_generated_field = "BBE741739A39F87431005A9211781950")
-
-    public static final ASN1ObjectIdentifier PSEUDONYM = new ASN1ObjectIdentifier(
-        "2.5.4.65");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.439 -0400", hash_original_field = "A8A9CB649FC40032F86A9B42A256DF07", hash_generated_field = "3919D8BC4E0752B5A5D4B9A2777A6C49")
-
-    public static final ASN1ObjectIdentifier DATE_OF_BIRTH = new ASN1ObjectIdentifier(
-        "1.3.6.1.5.5.7.9.1");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.439 -0400", hash_original_field = "A83072DAE8684E811DA118D4F5625E6C", hash_generated_field = "FC9C0DA941FD49257DA639F087D05445")
-
-    public static final ASN1ObjectIdentifier PLACE_OF_BIRTH = new ASN1ObjectIdentifier(
-        "1.3.6.1.5.5.7.9.2");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.439 -0400", hash_original_field = "E53D79361F36EDD49E45F2517D996744", hash_generated_field = "930968633593A298F6B31E8852A0BE7E")
-
-    public static final ASN1ObjectIdentifier GENDER = new ASN1ObjectIdentifier(
-        "1.3.6.1.5.5.7.9.3");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.439 -0400", hash_original_field = "AE9ECF549D5A6110AC29148FA47ED4B6", hash_generated_field = "3B8A2BCCC5E177AFADF12BDA6D520BB3")
-
-    public static final ASN1ObjectIdentifier COUNTRY_OF_CITIZENSHIP = new ASN1ObjectIdentifier(
-        "1.3.6.1.5.5.7.9.4");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.439 -0400", hash_original_field = "C75D274F9E63D1B32F84849C86B1749E", hash_generated_field = "2B0839E58743B99E48859FB6D192EFAE")
-
-    public static final ASN1ObjectIdentifier COUNTRY_OF_RESIDENCE = new ASN1ObjectIdentifier(
-        "1.3.6.1.5.5.7.9.5");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.439 -0400", hash_original_field = "635FC53C082AC210BE11DD6FCD162FF0", hash_generated_field = "7AE5C39091A4CDDC2D9AF0B1D718DB07")
-
-    public static final ASN1ObjectIdentifier NAME_AT_BIRTH = new ASN1ObjectIdentifier("1.3.36.8.3.14");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.439 -0400", hash_original_field = "CC20CE30D6B5A2410D47FF817CC706C6", hash_generated_field = "D1C997078495D2FD99EEF9EA6A41DD23")
-
-    public static final ASN1ObjectIdentifier POSTAL_ADDRESS = new ASN1ObjectIdentifier("2.5.4.16");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.439 -0400", hash_original_field = "251EBFE49AA8EFAB4C363293A97CC881", hash_generated_field = "A260837E3A196A3A66F3FD05B823BE27")
-
-    public static final ASN1ObjectIdentifier DMD_NAME = new ASN1ObjectIdentifier("2.5.4.54");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.439 -0400", hash_original_field = "ABCD051D2584EDF4C7DAC45C2213D37A", hash_generated_field = "6D0BA46185F6A42217195304B2C48E58")
-
-    public static final ASN1ObjectIdentifier TELEPHONE_NUMBER = X509ObjectIdentifiers.id_at_telephoneNumber;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.439 -0400", hash_original_field = "E931C7B03A64786863967F0BC14890C6", hash_generated_field = "78046C0D514B11059FCF6140B23BD69F")
-
-    public static final ASN1ObjectIdentifier NAME = X509ObjectIdentifiers.id_at_name;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.439 -0400", hash_original_field = "AB5376EA36F8610FEC8AE6621D7491D9", hash_generated_field = "94768FD0A0AB3FD788AA8DF7729248B3")
-
-    public static final ASN1ObjectIdentifier EmailAddress = PKCSObjectIdentifiers.pkcs_9_at_emailAddress;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.439 -0400", hash_original_field = "CCCA67DADCF824B36D120A0A0E7847F2", hash_generated_field = "4D93C13CEDC0C534265A556FB79EF3F2")
-
-    public static final ASN1ObjectIdentifier UnstructuredName = PKCSObjectIdentifiers.pkcs_9_at_unstructuredName;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.440 -0400", hash_original_field = "A1069D8572967482B49C98AED67A215B", hash_generated_field = "63E5E1B58595E52C940179E3469A4EDB")
-
-    public static final ASN1ObjectIdentifier UnstructuredAddress = PKCSObjectIdentifiers.pkcs_9_at_unstructuredAddress;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.440 -0400", hash_original_field = "05C9073B7E40A1D4E6C8466E0DDA9A6F", hash_generated_field = "86CB254127BC8C87A86C3CFB8F5D1BA7")
-
-    public static final ASN1ObjectIdentifier E = EmailAddress;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.440 -0400", hash_original_field = "778990712ED8236CAAB99CE587843C51", hash_generated_field = "62065CBD2CB2E1E03C54078E6D100D7F")
-
-    public static final ASN1ObjectIdentifier DC = new ASN1ObjectIdentifier("0.9.2342.19200300.100.1.25");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.440 -0400", hash_original_field = "1BAC2D627C6B0F1399FF322F3CC8D859", hash_generated_field = "6696F260EEF01FB0CFC05225B4A9E9B4")
-
-    public static final ASN1ObjectIdentifier UID = new ASN1ObjectIdentifier("0.9.2342.19200300.100.1.1");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.440 -0400", hash_original_field = "F5684916D3BA1C14EACDDDD00DA1C309", hash_generated_field = "DA9A8DC7E5E394013019E7145DE74EC2")
-
-    private static final Hashtable DefaultSymbols = new Hashtable();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.440 -0400", hash_original_field = "80F42D6B53063097AA147CC39ED38975", hash_generated_field = "CFA0F3F94E79998418B90A094C11CB18")
-
-    private static final Hashtable DefaultLookUp = new Hashtable();
     static {
         DefaultSymbols.put(C, "C");
         DefaultSymbols.put(O, "O");

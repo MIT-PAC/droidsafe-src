@@ -1,6 +1,8 @@
 package java.util;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
@@ -8,53 +10,47 @@ import droidsafe.annotations.*;
 
 
 public class DuplicateFormatFlagsException extends IllegalFormatException {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:07.325 -0400", hash_original_field = "4E5868D676CB634AA75B125A0F741ABF", hash_generated_field = "656D592B6CD40AFAB0AF81166CB40D7D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:47.992 -0500", hash_original_field = "69212B48BC641C20E2E5ACE6CED63595", hash_generated_field = "4C0E6AE2289782AA658DEA3E3AFA2999")
 
-    private String flags;
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:07.325 -0400", hash_original_method = "BC09E00DC83FE8523846524A935EDBC5", hash_generated_method = "BA20D72A65CC353E0D54071CA3FA9727")
-    public  DuplicateFormatFlagsException(String f) {
-        if(f == null)        
-        {
-            NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_1319822934 = new NullPointerException();
-            var7338BC9F48D81FE0BBD6183F4014DCC4_1319822934.addTaint(taint);
-            throw var7338BC9F48D81FE0BBD6183F4014DCC4_1319822934;
-        } //End block
-        flags = f;
-        // ---------- Original Method ----------
-        //if (f == null) {
-            //throw new NullPointerException();
-        //}
-        //flags = f;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:07.325 -0400", hash_original_method = "29D28F2D87A5BF440E9E6F54EB537F58", hash_generated_method = "9BA36442A2C38C21D962E59B14F0605F")
-    public String getFlags() {
-String varD39F51C38FBA335F3A30D14A3811A82C_981230655 =         flags;
-        varD39F51C38FBA335F3A30D14A3811A82C_981230655.addTaint(taint);
-        return varD39F51C38FBA335F3A30D14A3811A82C_981230655;
-        // ---------- Original Method ----------
-        //return flags;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:07.325 -0400", hash_original_method = "EC94AFCF80AA730DDC49A1A93BB12591", hash_generated_method = "31A05343D3647AB240033BA681FB31AC")
-    @Override
-    public String getMessage() {
-String varD39F51C38FBA335F3A30D14A3811A82C_1499160483 =         flags;
-        varD39F51C38FBA335F3A30D14A3811A82C_1499160483.addTaint(taint);
-        return varD39F51C38FBA335F3A30D14A3811A82C_1499160483;
-        // ---------- Original Method ----------
-        //return flags;
-    }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:07.325 -0400", hash_original_field = "F993B819FAAC7CCE6A9417B26EF9DEB5", hash_generated_field = "4C0E6AE2289782AA658DEA3E3AFA2999")
 
     private static final long serialVersionUID = 18890531L;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:47.994 -0500", hash_original_field = "806B57DB0428E85D2726FB0E46248D66", hash_generated_field = "656D592B6CD40AFAB0AF81166CB40D7D")
+
+
+    private  String flags;
+
+    /**
+     * Constructs a new {@code DuplicateFormatFlagsException} with the flags
+     * containing duplicates.
+     *
+     * @param f
+     *           the format flags that contain a duplicate flag.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:47.997 -0500", hash_original_method = "BC09E00DC83FE8523846524A935EDBC5", hash_generated_method = "83F4CCFB7ED7CF4F9ACCFE23B4350C57")
+    
+public DuplicateFormatFlagsException(String f) {
+        if (f == null) {
+            throw new NullPointerException();
+        }
+        flags = f;
+    }
+
+    /**
+     * Returns the format flags that contain a duplicate flag.
+     *
+     * @return the format flags that contain a duplicate flag.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:48.000 -0500", hash_original_method = "29D28F2D87A5BF440E9E6F54EB537F58", hash_generated_method = "755C27A527F4F0B24180AE62DAAD9815")
+    
+public String getFlags() {
+        return flags;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:48.002 -0500", hash_original_method = "EC94AFCF80AA730DDC49A1A93BB12591", hash_generated_method = "D3CC7E01EA9B8CB8A8BD4B18FB45E983")
+    
+@Override
+    public String getMessage() {
+        return flags;
+    }
 }
 

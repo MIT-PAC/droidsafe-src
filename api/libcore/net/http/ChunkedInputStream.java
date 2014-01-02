@@ -1,6 +1,8 @@
 package libcore.net.http;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.InputStream;
@@ -14,196 +16,108 @@ import libcore.io.Streams;
 
 
 final class ChunkedInputStream extends AbstractHttpInputStream {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.908 -0400", hash_original_field = "837B811620D66AECDECD9FB207F3D4F7", hash_generated_field = "FDB0DA7DADF9682B7A13CAE6AF74D826")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.177 -0500", hash_original_field = "7C2F50DA7B80834C3EBC5883220B91A4", hash_generated_field = "C5956A6D669A15373C0A4736E4DBDA7D")
+
+    private static final int MIN_LAST_CHUNK_LENGTH = "\r\n0\r\n\r\n".length();
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.179 -0500", hash_original_field = "8A758D378B9E66356E80A5AADCF1F5D4", hash_generated_field = "D686DA2F205CF442EB1A44AB0D31BF16")
+
+    private static final int NO_CHUNK_YET = -1;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.181 -0500", hash_original_field = "0BF31337EFE4D6E35B41A33FCF8225B8", hash_generated_field = "FDB0DA7DADF9682B7A13CAE6AF74D826")
 
     private int bytesRemainingInChunk = NO_CHUNK_YET;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.909 -0400", hash_original_field = "F2767B700D21ABCF8D14F590FE4DB4E3", hash_generated_field = "B67E9C22EADF6797D475937CE5ACA397")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.184 -0500", hash_original_field = "5C9E22882196AB45785F170A34492461", hash_generated_field = "B67E9C22EADF6797D475937CE5ACA397")
 
     private boolean hasMoreChunks = true;
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.186 -0500", hash_original_method = "F83C2E58EBE5A0D51F69F747FEAA67C2", hash_generated_method = "F83C2E58EBE5A0D51F69F747FEAA67C2")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.909 -0400", hash_original_method = "F83C2E58EBE5A0D51F69F747FEAA67C2", hash_generated_method = "F4BADE76F5C981ECA829182116065B50")
-      ChunkedInputStream(InputStream is, CacheRequest cacheRequest,
+ChunkedInputStream(InputStream is, CacheRequest cacheRequest,
             HttpEngine httpEngine) throws IOException {
         super(is, httpEngine, cacheRequest);
-        addTaint(httpEngine.getTaint());
-        addTaint(cacheRequest.getTaint());
-        addTaint(is.getTaint());
-        // ---------- Original Method ----------
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.189 -0500", hash_original_method = "A69C93E854B37E522584F08EF88E59BD", hash_generated_method = "DBB71B4DE0D29A8F21B556BD955CF36C")
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.910 -0400", hash_original_method = "A69C93E854B37E522584F08EF88E59BD", hash_generated_method = "E417B2D8EC7E19C2651D070F1809C908")
-    @Override
-    public int read(byte[] buffer, int offset, int count) throws IOException {
-        addTaint(count);
-        addTaint(offset);
-        addTaint(buffer[0]);
+@Override public int read(byte[] buffer, int offset, int count) throws IOException {
         Arrays.checkOffsetAndCount(buffer.length, offset, count);
         checkNotClosed();
-        if(!hasMoreChunks)        
-        {
-            int var6BB61E3B7BCE0931DA574D19D1D82C88_2082255287 = (-1);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_494134051 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_494134051;
-        } //End block
-        if(bytesRemainingInChunk == 0 || bytesRemainingInChunk == NO_CHUNK_YET)        
-        {
+
+        if (!hasMoreChunks) {
+            return -1;
+        }
+        if (bytesRemainingInChunk == 0 || bytesRemainingInChunk == NO_CHUNK_YET) {
             readChunkSize();
-            if(!hasMoreChunks)            
-            {
-                int var6BB61E3B7BCE0931DA574D19D1D82C88_767486231 = (-1);
-                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1561417575 = getTaintInt();
-                return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1561417575;
-            } //End block
-        } //End block
+            if (!hasMoreChunks) {
+                return -1;
+            }
+        }
         int read = in.read(buffer, offset, Math.min(count, bytesRemainingInChunk));
-        if(read == -1)        
-        {
-            unexpectedEndOfInput();
-            IOException var9FCEBBA092763F5F75BC70A376D097E6_122895265 = new IOException("unexpected end of stream");
-            var9FCEBBA092763F5F75BC70A376D097E6_122895265.addTaint(taint);
-            throw var9FCEBBA092763F5F75BC70A376D097E6_122895265;
-        } //End block
+        if (read == -1) {
+            unexpectedEndOfInput(); // the server didn't supply the promised chunk length
+            throw new IOException("unexpected end of stream");
+        }
         bytesRemainingInChunk -= read;
         cacheWrite(buffer, offset, read);
-        if(bytesRemainingInChunk == 0 && in.available() >= MIN_LAST_CHUNK_LENGTH)        
-        {
+
+        /*
+         * If we're at the end of a chunk and the next chunk size is readable,
+         * read it! Reading the last chunk causes the underlying connection to
+         * be recycled and we want to do that as early as possible. Otherwise
+         * self-delimiting streams like gzip will never be recycled.
+         * http://code.google.com/p/android/issues/detail?id=7059
+         */
+        if (bytesRemainingInChunk == 0 && in.available() >= MIN_LAST_CHUNK_LENGTH) {
             readChunkSize();
-        } //End block
-        int varECAE13117D6F0584C25A9DA6C8F8415E_2098116567 = (read);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1769244289 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1769244289;
-        // ---------- Original Method ----------
-        //Arrays.checkOffsetAndCount(buffer.length, offset, count);
-        //checkNotClosed();
-        //if (!hasMoreChunks) {
-            //return -1;
-        //}
-        //if (bytesRemainingInChunk == 0 || bytesRemainingInChunk == NO_CHUNK_YET) {
-            //readChunkSize();
-            //if (!hasMoreChunks) {
-                //return -1;
-            //}
-        //}
-        //int read = in.read(buffer, offset, Math.min(count, bytesRemainingInChunk));
-        //if (read == -1) {
-            //unexpectedEndOfInput(); 
-            //throw new IOException("unexpected end of stream");
-        //}
-        //bytesRemainingInChunk -= read;
-        //cacheWrite(buffer, offset, read);
-        //if (bytesRemainingInChunk == 0 && in.available() >= MIN_LAST_CHUNK_LENGTH) {
-            //readChunkSize();
-        //}
-        //return read;
+        }
+
+        return read;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.192 -0500", hash_original_method = "140E1DA8E8861D1C317B4255A250B320", hash_generated_method = "70353ABF92C74D7D5E8E619BA9901C71")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.912 -0400", hash_original_method = "140E1DA8E8861D1C317B4255A250B320", hash_generated_method = "E9834B1059216BF5E6ABECF6E3AD1FC5")
-    private void readChunkSize() throws IOException {
-        if(bytesRemainingInChunk != NO_CHUNK_YET)        
-        {
+private void readChunkSize() throws IOException {
+        // read the suffix of the previous chunk
+        if (bytesRemainingInChunk != NO_CHUNK_YET) {
             Streams.readAsciiLine(in);
-        } //End block
+        }
         String chunkSizeString = Streams.readAsciiLine(in);
         int index = chunkSizeString.indexOf(";");
-        if(index != -1)        
-        {
+        if (index != -1) {
             chunkSizeString = chunkSizeString.substring(0, index);
-        } //End block
-        try 
-        {
+        }
+        try {
             bytesRemainingInChunk = Integer.parseInt(chunkSizeString.trim(), 16);
-        } //End block
-        catch (NumberFormatException e)
-        {
-            IOException var012098BF550B7327769772BC6B0C1846_1726631460 = new IOException("Expected a hex chunk size, but was " + chunkSizeString);
-            var012098BF550B7327769772BC6B0C1846_1726631460.addTaint(taint);
-            throw var012098BF550B7327769772BC6B0C1846_1726631460;
-        } //End block
-        if(bytesRemainingInChunk == 0)        
-        {
+        } catch (NumberFormatException e) {
+            throw new IOException("Expected a hex chunk size, but was " + chunkSizeString);
+        }
+        if (bytesRemainingInChunk == 0) {
             hasMoreChunks = false;
             httpEngine.readTrailers();
             endOfInput(true);
-        } //End block
-        // ---------- Original Method ----------
-        //if (bytesRemainingInChunk != NO_CHUNK_YET) {
-            //Streams.readAsciiLine(in);
-        //}
-        //String chunkSizeString = Streams.readAsciiLine(in);
-        //int index = chunkSizeString.indexOf(";");
-        //if (index != -1) {
-            //chunkSizeString = chunkSizeString.substring(0, index);
-        //}
-        //try {
-            //bytesRemainingInChunk = Integer.parseInt(chunkSizeString.trim(), 16);
-        //} catch (NumberFormatException e) {
-            //throw new IOException("Expected a hex chunk size, but was " + chunkSizeString);
-        //}
-        //if (bytesRemainingInChunk == 0) {
-            //hasMoreChunks = false;
-            //httpEngine.readTrailers();
-            //endOfInput(true);
-        //}
+        }
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.195 -0500", hash_original_method = "637FFB0CF7184A6B5BB58296121EFC54", hash_generated_method = "97EA194C9760A426EFA8CDE2FE8F0AAD")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.913 -0400", hash_original_method = "637FFB0CF7184A6B5BB58296121EFC54", hash_generated_method = "66504CE0B3AC8B805D93CB9D94DFE738")
-    @Override
-    public int available() throws IOException {
+@Override public int available() throws IOException {
         checkNotClosed();
-        if(!hasMoreChunks || bytesRemainingInChunk == NO_CHUNK_YET)        
-        {
-            int varCFCD208495D565EF66E7DFF9F98764DA_1073428624 = (0);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_175601792 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_175601792;
-        } //End block
-        int var79C497F3E0FA13A85FD80EA6E8DD7183_471739880 = (Math.min(in.available(), bytesRemainingInChunk));
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_982144445 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_982144445;
-        // ---------- Original Method ----------
-        //checkNotClosed();
-        //if (!hasMoreChunks || bytesRemainingInChunk == NO_CHUNK_YET) {
-            //return 0;
-        //}
-        //return Math.min(in.available(), bytesRemainingInChunk);
+        if (!hasMoreChunks || bytesRemainingInChunk == NO_CHUNK_YET) {
+            return 0;
+        }
+        return Math.min(in.available(), bytesRemainingInChunk);
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.198 -0500", hash_original_method = "A3F7257F208C4120BEF39F0167994D8B", hash_generated_method = "43ADE6742C42963FB294025234398842")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.914 -0400", hash_original_method = "A3F7257F208C4120BEF39F0167994D8B", hash_generated_method = "45B363479133BFF7E531B10717EF67BE")
-    @Override
-    public void close() throws IOException {
-        if(closed)        
-        {
+@Override public void close() throws IOException {
+        if (closed) {
             return;
-        } //End block
+        }
+
         closed = true;
-        if(hasMoreChunks)        
-        {
+        if (hasMoreChunks) {
             unexpectedEndOfInput();
-        } //End block
-        // ---------- Original Method ----------
-        //if (closed) {
-            //return;
-        //}
-        //closed = true;
-        //if (hasMoreChunks) {
-            //unexpectedEndOfInput();
-        //}
+        }
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.915 -0400", hash_original_field = "745082C684F20695677D0834835747B1", hash_generated_field = "C5956A6D669A15373C0A4736E4DBDA7D")
-
-    private static final int MIN_LAST_CHUNK_LENGTH = "\r\n0\r\n\r\n".length();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.915 -0400", hash_original_field = "2775A55E130B5CDA97B034600260B7B6", hash_generated_field = "D686DA2F205CF442EB1A44AB0D31BF16")
-
-    private static final int NO_CHUNK_YET = -1;
 }
 

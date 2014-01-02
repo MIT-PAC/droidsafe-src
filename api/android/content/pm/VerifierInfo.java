@@ -1,6 +1,8 @@
 package android.content.pm;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.security.PublicKey;
 
@@ -12,93 +14,74 @@ import android.os.Parcelable;
 
 
 public class VerifierInfo implements Parcelable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.872 -0400", hash_original_field = "387F1FA6FC99B8AE187C010A06120611", hash_generated_field = "AEA3D3739F492530AF8FD6582FAACBD9")
-
-    public String packageName;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.872 -0400", hash_original_field = "C36853EA059E0D71A67557E5EE54B835", hash_generated_field = "92C3AC622EF89C18B2E520A4E8042E87")
-
-    public PublicKey publicKey;
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.874 -0400", hash_original_method = "CA1DA71A9B8C344527DB0EB280A0A444", hash_generated_method = "6D1D7EFF4AE49334C9DE82052C4CD5C0")
-    public  VerifierInfo(String packageName, PublicKey publicKey) {
-        if(packageName == null || packageName.length() == 0)        
-        {
-            IllegalArgumentException varFF6190EF0E0E6C3A9D34F6FD43CD8DE4_2061437682 = new IllegalArgumentException("packageName must not be null or empty");
-            varFF6190EF0E0E6C3A9D34F6FD43CD8DE4_2061437682.addTaint(taint);
-            throw varFF6190EF0E0E6C3A9D34F6FD43CD8DE4_2061437682;
-        } //End block
-        else
-        if(publicKey == null)        
-        {
-            IllegalArgumentException varCAF1F0A35716EA1405F16973B546B3C5_2068517564 = new IllegalArgumentException("publicKey must not be null");
-            varCAF1F0A35716EA1405F16973B546B3C5_2068517564.addTaint(taint);
-            throw varCAF1F0A35716EA1405F16973B546B3C5_2068517564;
-        } //End block
-        this.packageName = packageName;
-        this.publicKey = publicKey;
-        // ---------- Original Method ----------
-        //if (packageName == null || packageName.length() == 0) {
-            //throw new IllegalArgumentException("packageName must not be null or empty");
-        //} else if (publicKey == null) {
-            //throw new IllegalArgumentException("publicKey must not be null");
-        //}
-        //this.packageName = packageName;
-        //this.publicKey = publicKey;
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.875 -0400", hash_original_method = "C00118AB5B5CCE6381E41D90579B27A9", hash_generated_method = "538AC1C4CA2AF3E4936D2D0C0FFD434A")
-    private  VerifierInfo(Parcel source) {
-        packageName = source.readString();
-        publicKey = (PublicKey) source.readSerializable();
-        // ---------- Original Method ----------
-        //packageName = source.readString();
-        //publicKey = (PublicKey) source.readSerializable();
-    }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.876 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "BCE028BE5E5719CC8CAFA80A14706011")
-    @Override
-    public int describeContents() {
-        int varCFCD208495D565EF66E7DFF9F98764DA_1101129652 = (0);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1404673101 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1404673101;
-        // ---------- Original Method ----------
-        //return 0;
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.877 -0400", hash_original_method = "F898CE68252B35C4629787E370ED7F66", hash_generated_method = "218A7E4B012B0800AE36210D3AF91041")
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        addTaint(flags);
-        addTaint(dest.getTaint());
-        dest.writeString(packageName);
-        dest.writeSerializable(publicKey);
-        // ---------- Original Method ----------
-        //dest.writeString(packageName);
-        //dest.writeSerializable(publicKey);
-    }
 
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.877 -0400", hash_original_field = "65964BA23E11E5A5472692A88A281144", hash_generated_field = "5A0B6B9CAD98D6A4E4EBB9028FEA4E95")
 
     public static final Parcelable.Creator<VerifierInfo> CREATOR
             = new Parcelable.Creator<VerifierInfo>() {
-        @DSModeled(DSC.BAN)
-        public VerifierInfo createFromParcel(Parcel source) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:55.627 -0500", hash_original_method = "189C78EFC045E49FDE942E42CD914197", hash_generated_method = "E8A2FB1FB20D2D9475BC39B3F538965B")
+        
+public VerifierInfo createFromParcel(Parcel source) {
             return new VerifierInfo(source);
         }
 
-        @DSModeled(DSC.BAN)
-        public VerifierInfo[] newArray(int size) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:55.630 -0500", hash_original_method = "2A57B99D5792DCAD0A00B68B5799D542", hash_generated_method = "E5E5DB557C59E445C4A5042383BB2E88")
+        
+public VerifierInfo[] newArray(int size) {
             return new VerifierInfo[size];
         }
     };
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:55.613 -0500", hash_original_field = "6F92EE1B3BCDC0C4179CF5FD998BE046", hash_generated_field = "AEA3D3739F492530AF8FD6582FAACBD9")
+
+    public  String packageName;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:55.615 -0500", hash_original_field = "B73719A7AAE8E737607C294F86B7D620", hash_generated_field = "92C3AC622EF89C18B2E520A4E8042E87")
+
+    public  PublicKey publicKey;
+
+    /**
+     * Creates an object that represents a verifier info object.
+     *
+     * @param packageName the package name in Java-style. Must not be {@code
+     *            null} or empty.
+     * @param publicKey the public key for the signer encoded in Base64. Must
+     *            not be {@code null} or empty.
+     * @throws IllegalArgumentException if either argument is null or empty.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:55.617 -0500", hash_original_method = "CA1DA71A9B8C344527DB0EB280A0A444", hash_generated_method = "18AF7E792E4462DFF18625B786A09317")
+    
+public VerifierInfo(String packageName, PublicKey publicKey) {
+        if (packageName == null || packageName.length() == 0) {
+            throw new IllegalArgumentException("packageName must not be null or empty");
+        } else if (publicKey == null) {
+            throw new IllegalArgumentException("publicKey must not be null");
+        }
+
+        this.packageName = packageName;
+        this.publicKey = publicKey;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:55.620 -0500", hash_original_method = "C00118AB5B5CCE6381E41D90579B27A9", hash_generated_method = "37D1B283BA5C6A792677AB241D3EBB04")
+    
+private VerifierInfo(Parcel source) {
+        packageName = source.readString();
+        publicKey = (PublicKey) source.readSerializable();
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:55.622 -0500", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "8188008AC9C80E87937FE73DCA905200")
+    
+@Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:55.624 -0500", hash_original_method = "F898CE68252B35C4629787E370ED7F66", hash_generated_method = "B752816B1ADC70B7DEA46EE650C9B388")
+    
+@Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(packageName);
+        dest.writeSerializable(publicKey);
+    }
     // orphaned legacy method
     public VerifierInfo createFromParcel(Parcel source) {
             return new VerifierInfo(source);

@@ -1,6 +1,8 @@
 package android.app.backup;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.File;
 
@@ -12,81 +14,78 @@ import android.util.Log;
 
 
 public class SharedPreferencesBackupHelper extends FileBackupHelperBase implements BackupHelper {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.611 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.054 -0500", hash_original_field = "441F26F60CF437254480994BF97ED0E8", hash_generated_field = "2A1678904A3C54D84365AE56750C6778")
+
+    private static final String TAG = "SharedPreferencesBackupHelper";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.057 -0500", hash_original_field = "81DD852ECBE07BA98A61C8F3D0C85F01", hash_generated_field = "58EDF43BA541A4D47EECFEC3901C7AED")
+
+    private static final boolean DEBUG = false;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.059 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
+
 
     private Context mContext;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.611 -0400", hash_original_field = "F0C78206B70401B929414E0F2480CF51", hash_generated_field = "3E4AAE035E48BA7652A5EEFD3A11385A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.061 -0500", hash_original_field = "D4FB85489DC7C988AF7D7503985618B1", hash_generated_field = "3E4AAE035E48BA7652A5EEFD3A11385A")
 
     private String[] mPrefGroups;
+
+    /**
+     * Construct a helper for backing up and restoring the
+     * {@link android.content.SharedPreferences} under the given names.
+     *
+     * @param context The application {@link android.content.Context}
+     * @param prefGroups The names of each {@link android.content.SharedPreferences} file to
+     * back up
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.064 -0500", hash_original_method = "0602A3CA84DE179918FE8DD18D4D9269", hash_generated_method = "D931D31C3BF33D248BFC44CABDB8DD4D")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.612 -0400", hash_original_method = "0602A3CA84DE179918FE8DD18D4D9269", hash_generated_method = "EBE642E7D513D7E674082B518D8DB45E")
-    public  SharedPreferencesBackupHelper(Context context, String... prefGroups) {
+public SharedPreferencesBackupHelper(Context context, String... prefGroups) {
         super(context);
+
         mContext = context;
         mPrefGroups = prefGroups;
-        // ---------- Original Method ----------
-        //mContext = context;
-        //mPrefGroups = prefGroups;
     }
 
+    /**
+     * Backs up the configured {@link android.content.SharedPreferences} groups.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.067 -0500", hash_original_method = "32B5B5F877732DB4D4CE78DD30722FCF", hash_generated_method = "5900981249FFB6B9CC7EEE5B801290E1")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.613 -0400", hash_original_method = "32B5B5F877732DB4D4CE78DD30722FCF", hash_generated_method = "3EB1599284A26E7A0465B75CAAB86C84")
-    public void performBackup(ParcelFileDescriptor oldState, BackupDataOutput data,
+public void performBackup(ParcelFileDescriptor oldState, BackupDataOutput data,
             ParcelFileDescriptor newState) {
-        addTaint(newState.getTaint());
-        addTaint(data.getTaint());
-        addTaint(oldState.getTaint());
         Context context = mContext;
+
+        // If a SharedPreference has an outstanding write in flight,
+        // wait for it to finish flushing to disk.
         QueuedWork.waitToFinish();
+
+        // make filenames for the prefGroups
         String[] prefGroups = mPrefGroups;
         final int N = prefGroups.length;
         String[] files = new String[N];
-for(int i=0;i<N;i++)
-        {
+        for (int i=0; i<N; i++) {
             files[i] = context.getSharedPrefsFile(prefGroups[i]).getAbsolutePath();
-        } //End block
+        }
+
+        // go
         performBackup_checked(oldState, data, newState, files, prefGroups);
-        // ---------- Original Method ----------
-        //Context context = mContext;
-        //QueuedWork.waitToFinish();
-        //String[] prefGroups = mPrefGroups;
-        //final int N = prefGroups.length;
-        //String[] files = new String[N];
-        //for (int i=0; i<N; i++) {
-            //files[i] = context.getSharedPrefsFile(prefGroups[i]).getAbsolutePath();
-        //}
-        //performBackup_checked(oldState, data, newState, files, prefGroups);
     }
 
+    /**
+     * Restores one entity from the restore data stream to its proper shared
+     * preferences file store.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.069 -0500", hash_original_method = "4157DB54FF0EFBF9F8662A7A8A8DB6F2", hash_generated_method = "894EDC9231418AEFE5ABBFFA0E812A84")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.615 -0400", hash_original_method = "4157DB54FF0EFBF9F8662A7A8A8DB6F2", hash_generated_method = "A3EC1FC12A1C224A6962D39CD992C32C")
-    public void restoreEntity(BackupDataInputStream data) {
-        addTaint(data.getTaint());
+public void restoreEntity(BackupDataInputStream data) {
         Context context = mContext;
+        
         String key = data.getKey();
-        if(DEBUG)        
-        Log.d(TAG, "got entity '" + key + "' size=" + data.size());
-        if(isKeyInList(key, mPrefGroups))        
-        {
+        if (DEBUG) Log.d(TAG, "got entity '" + key + "' size=" + data.size());
+
+        if (isKeyInList(key, mPrefGroups)) {
             File f = context.getSharedPrefsFile(key).getAbsoluteFile();
             writeFile(f, data);
-        } //End block
-        // ---------- Original Method ----------
-        //Context context = mContext;
-        //String key = data.getKey();
-        //if (DEBUG) Log.d(TAG, "got entity '" + key + "' size=" + data.size());
-        //if (isKeyInList(key, mPrefGroups)) {
-            //File f = context.getSharedPrefsFile(key).getAbsoluteFile();
-            //writeFile(f, data);
-        //}
+        }
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.615 -0400", hash_original_field = "070D1D1C1A0A52FBDA796851804C0781", hash_generated_field = "2A1678904A3C54D84365AE56750C6778")
-
-    private static final String TAG = "SharedPreferencesBackupHelper";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.615 -0400", hash_original_field = "021906CCEC815FC820B74F760E7368C7", hash_generated_field = "58EDF43BA541A4D47EECFEC3901C7AED")
-
-    private static final boolean DEBUG = false;
 }
 

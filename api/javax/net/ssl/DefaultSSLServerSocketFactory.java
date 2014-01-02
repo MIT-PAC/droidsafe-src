@@ -1,6 +1,8 @@
 package javax.net.ssl;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 import java.net.InetAddress;
@@ -14,82 +16,51 @@ import libcore.util.EmptyArray;
 
 
 class DefaultSSLServerSocketFactory extends SSLServerSocketFactory {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.569 -0400", hash_original_field = "A35A1CBBA413D923284FE4F467EA17EB", hash_generated_field = "9CF404529F089526CB6A4794BF7634AB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:02.039 -0500", hash_original_field = "E54DFF2DC8E1BA5EA237533EDA39F4E1", hash_generated_field = "9CF404529F089526CB6A4794BF7634AB")
 
-    private String errMessage;
+
+    private  String errMessage;
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:02.042 -0500", hash_original_method = "75914460F849F70EB9C61E69E22A6D0F", hash_generated_method = "75914460F849F70EB9C61E69E22A6D0F")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.569 -0400", hash_original_method = "75914460F849F70EB9C61E69E22A6D0F", hash_generated_method = "D44D9734EF6EA12716A4A51DD204BD62")
-      DefaultSSLServerSocketFactory(String mes) {
+DefaultSSLServerSocketFactory(String mes) {
         errMessage = mes;
-        // ---------- Original Method ----------
-        //errMessage = mes;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:02.044 -0500", hash_original_method = "12108FA96648EC8E1683C3067260A382", hash_generated_method = "75E10C557E5ED421A6A96DF7BC668ED0")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.570 -0400", hash_original_method = "12108FA96648EC8E1683C3067260A382", hash_generated_method = "F6F597C0BE02CC92F3815BF2B3CD76E7")
-    @Override
+@Override
     public String[] getDefaultCipherSuites() {
-String[] var46F61E348BE3BFB8B0571B04F2FE2C80_1919591812 =         EmptyArray.STRING;
-        var46F61E348BE3BFB8B0571B04F2FE2C80_1919591812.addTaint(taint);
-        return var46F61E348BE3BFB8B0571B04F2FE2C80_1919591812;
-        // ---------- Original Method ----------
-        //return EmptyArray.STRING;
+        return EmptyArray.STRING;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:02.047 -0500", hash_original_method = "02FB44E3332A242283DAD5FC179FF843", hash_generated_method = "EF7DACA8298C2A694CB6406898565668")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.570 -0400", hash_original_method = "02FB44E3332A242283DAD5FC179FF843", hash_generated_method = "0891B57C0D8B6C47A93996FECC497AD9")
-    @Override
+@Override
     public String[] getSupportedCipherSuites() {
-String[] var46F61E348BE3BFB8B0571B04F2FE2C80_642271864 =         EmptyArray.STRING;
-        var46F61E348BE3BFB8B0571B04F2FE2C80_642271864.addTaint(taint);
-        return var46F61E348BE3BFB8B0571B04F2FE2C80_642271864;
-        // ---------- Original Method ----------
-        //return EmptyArray.STRING;
+        return EmptyArray.STRING;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:02.049 -0500", hash_original_method = "3CA5D0FA144D223B163E20364EF717CA", hash_generated_method = "0DA37F16AB440864C47F5E95951842AE")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.570 -0400", hash_original_method = "3CA5D0FA144D223B163E20364EF717CA", hash_generated_method = "133FC510E625DA106FE17BBC85906791")
-    @Override
+@Override
     public ServerSocket createServerSocket(int port) throws IOException {
-        addTaint(port);
-        SocketException varEB339767C6BAA0A2146810EA7017633C_449620729 = new SocketException(errMessage);
-        varEB339767C6BAA0A2146810EA7017633C_449620729.addTaint(taint);
-        throw varEB339767C6BAA0A2146810EA7017633C_449620729;
-        // ---------- Original Method ----------
-        //throw new SocketException(errMessage);
+        throw new SocketException(errMessage);
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:02.051 -0500", hash_original_method = "72A7F975E743E745F7B0696336C67E27", hash_generated_method = "463F6D20369C616B6F1F8D19B4E92DC2")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.570 -0400", hash_original_method = "72A7F975E743E745F7B0696336C67E27", hash_generated_method = "FC23AD8D3FECF15650B620CC2879C618")
-    @Override
+@Override
     public ServerSocket createServerSocket(int port, int backlog) throws IOException {
-        addTaint(backlog);
-        addTaint(port);
-        SocketException varEB339767C6BAA0A2146810EA7017633C_1782816825 = new SocketException(errMessage);
-        varEB339767C6BAA0A2146810EA7017633C_1782816825.addTaint(taint);
-        throw varEB339767C6BAA0A2146810EA7017633C_1782816825;
-        // ---------- Original Method ----------
-        //throw new SocketException(errMessage);
+        throw new SocketException(errMessage);
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:02.053 -0500", hash_original_method = "46FACB6F6AB575F914E1C4CC8DD6AA24", hash_generated_method = "B09F5F30F24E446C076557409CFC186D")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.571 -0400", hash_original_method = "46FACB6F6AB575F914E1C4CC8DD6AA24", hash_generated_method = "171AA8F72664419240807E7CC8F4CB00")
-    @Override
-    public ServerSocket createServerSocket(int port, int backlog, InetAddress iAddress) throws IOException {
-        addTaint(iAddress.getTaint());
-        addTaint(backlog);
-        addTaint(port);
-        SocketException varEB339767C6BAA0A2146810EA7017633C_11879112 = new SocketException(errMessage);
-        varEB339767C6BAA0A2146810EA7017633C_11879112.addTaint(taint);
-        throw varEB339767C6BAA0A2146810EA7017633C_11879112;
-        // ---------- Original Method ----------
-        //throw new SocketException(errMessage);
+@Override
+    public ServerSocket createServerSocket(int port, int backlog, InetAddress iAddress)
+            throws IOException {
+        throw new SocketException(errMessage);
     }
 
     

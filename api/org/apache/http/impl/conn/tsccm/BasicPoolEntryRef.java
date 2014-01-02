@@ -1,6 +1,8 @@
 package org.apache.http.impl.conn.tsccm;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.lang.ref.ReferenceQueue;
 import java.lang.ref.WeakReference;
@@ -13,40 +15,40 @@ import org.apache.http.conn.routing.HttpRoute;
 
 
 public class BasicPoolEntryRef extends WeakReference<BasicPoolEntry> {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.328 -0400", hash_original_field = "9C46408A3BC655C68505C57A11D6C4EE", hash_generated_field = "81479629776815A054F50541D8F2C724")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.926 -0500", hash_original_field = "8824947D446181E666F5CCE159788709", hash_generated_field = "81479629776815A054F50541D8F2C724")
 
-    private HttpRoute route;
+    private  HttpRoute route;
+
+
+    /**
+     * Creates a new reference to a pool entry.
+     *
+     * @param entry   the pool entry, must not be <code>null</code>
+     * @param queue   the reference queue, or <code>null</code>
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.929 -0500", hash_original_method = "CD37A3591E91E9E69217B8444E13EA3F", hash_generated_method = "B2522EE3459C1FA0C920B6703052297C")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.328 -0400", hash_original_method = "CD37A3591E91E9E69217B8444E13EA3F", hash_generated_method = "C59E7ECDF477C33250F1AFF3B8523B13")
-    public  BasicPoolEntryRef(BasicPoolEntry entry,
+public BasicPoolEntryRef(BasicPoolEntry entry,
                              ReferenceQueue<Object> queue) {
         super(entry, queue);
-        addTaint(queue.getTaint());
-        if(entry == null)        
-        {
-            IllegalArgumentException varD6302AFC160661DCD8E9B63B55D40A10_1680738692 = new IllegalArgumentException
+        if (entry == null) {
+            throw new IllegalArgumentException
                 ("Pool entry must not be null.");
-            varD6302AFC160661DCD8E9B63B55D40A10_1680738692.addTaint(taint);
-            throw varD6302AFC160661DCD8E9B63B55D40A10_1680738692;
-        } //End block
+        }
         route = entry.getPlannedRoute();
-        // ---------- Original Method ----------
-        //if (entry == null) {
-            //throw new IllegalArgumentException
-                //("Pool entry must not be null.");
-        //}
-        //route = entry.getPlannedRoute();
     }
 
+
+    /**
+     * Obtain the planned route for the referenced entry.
+     * The planned route is still available, even if the entry is gone.
+     *
+     * @return      the planned route
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.931 -0500", hash_original_method = "70D653A6C3CCC37B9D27B2DACB554C85", hash_generated_method = "CEDA45E567D55F23E75E6004A2646B42")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.329 -0400", hash_original_method = "70D653A6C3CCC37B9D27B2DACB554C85", hash_generated_method = "222C2D58F0C8F791B053E8E8BE798AD9")
-    public final HttpRoute getRoute() {
-HttpRoute varB98EE6416538ED05061231EA0E9F2622_1500046608 =         this.route;
-        varB98EE6416538ED05061231EA0E9F2622_1500046608.addTaint(taint);
-        return varB98EE6416538ED05061231EA0E9F2622_1500046608;
-        // ---------- Original Method ----------
-        //return this.route;
+public final HttpRoute getRoute() {
+        return this.route;
     }
 
     

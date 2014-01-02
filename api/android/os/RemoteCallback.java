@@ -1,6 +1,8 @@
 package android.os;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
@@ -8,137 +10,100 @@ import droidsafe.annotations.*;
 
 
 public abstract class RemoteCallback implements Parcelable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.470 -0400", hash_original_field = "C78BEDFC523DB73DF63EFB071AF1C35B", hash_generated_field = "A163099B522120C606A3CA562F90E927")
 
-    Handler mHandler;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.470 -0400", hash_original_field = "562619214306F5C11A815E975B7D2477", hash_generated_field = "2AB83AA43D542094128EC2A15E8F4E08")
 
-    IRemoteCallback mTarget;
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.472 -0400", hash_original_method = "50DD48E58CB649CEFAA75AE1D62E7A3D", hash_generated_method = "106DDBD9A30F2F286547618F0B5D5A39")
-    public  RemoteCallback(Handler handler) {
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.482 -0400", hash_original_field = "342F5DC731DC7D0C10BC6BF67EBBAD67", hash_generated_field = "0FA4B7A723E7C659BF3C80CC594308CD")
+
+    public static final Parcelable.Creator<RemoteCallback> CREATOR
+            = new Parcelable.Creator<RemoteCallback>() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.354 -0500", hash_original_method = "D7C71538FF6AF5BB1E831523DD5751DF", hash_generated_method = "8AF557AB7FDF4F12DA5130C605057CC2")
+        
+public RemoteCallback createFromParcel(Parcel in) {
+            IBinder target = in.readStrongBinder();
+            return target != null ? new RemoteCallbackProxy(
+                    IRemoteCallback.Stub.asInterface(target)) : null;
+        }
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.356 -0500", hash_original_method = "0600D833FECA72598EBC0FD684B8E4BB", hash_generated_method = "C8A9EAD6F40E10493937D70A85659E8B")
+        
+public RemoteCallback[] newArray(int size) {
+            return new RemoteCallback[size];
+        }
+    };
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.309 -0500", hash_original_field = "A163099B522120C606A3CA562F90E927", hash_generated_field = "A163099B522120C606A3CA562F90E927")
+
+     Handler mHandler;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.311 -0500", hash_original_field = "2AB83AA43D542094128EC2A15E8F4E08", hash_generated_field = "2AB83AA43D542094128EC2A15E8F4E08")
+
+     IRemoteCallback mTarget;
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.333 -0500", hash_original_method = "50DD48E58CB649CEFAA75AE1D62E7A3D", hash_generated_method = "E3308F390518A90E71AC8A2FA9367BF5")
+    
+public RemoteCallback(Handler handler) {
         mHandler = handler;
         mTarget = new LocalCallback();
-        // ---------- Original Method ----------
-        //mHandler = handler;
-        //mTarget = new LocalCallback();
     }
-
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.473 -0400", hash_original_method = "0B794F9104639CB6919FB2A3A2B6E7D4", hash_generated_method = "D4A0AC52F8E4448E204454433D057D67")
-      RemoteCallback(IRemoteCallback target) {
+     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.337 -0500", hash_original_method = "0B794F9104639CB6919FB2A3A2B6E7D4", hash_generated_method = "0B794F9104639CB6919FB2A3A2B6E7D4")
+    
+RemoteCallback(IRemoteCallback target) {
         mHandler = null;
         mTarget = target;
-        // ---------- Original Method ----------
-        //mHandler = null;
-        //mTarget = target;
     }
-
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.473 -0400", hash_original_method = "AAFA6B317F34ECAA46BF4F3A7ADBE4F2", hash_generated_method = "6F2A3ACF45D152C14FEC853D111C982E")
-    public void sendResult(Bundle bundle) throws RemoteException {
-        addTaint(bundle.getTaint());
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.339 -0500", hash_original_method = "AAFA6B317F34ECAA46BF4F3A7ADBE4F2", hash_generated_method = "4C30EB20716F13BBAC725C6C51144497")
+    
+public void sendResult(Bundle bundle) throws RemoteException {
         mTarget.sendResult(bundle);
-        // ---------- Original Method ----------
-        //mTarget.sendResult(bundle);
     }
-
     
-    @DSModeled(DSC.SAFE)
-    protected abstract void onResult(Bundle bundle);
-
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.342 -0500", hash_original_method = "DDBE4F03B4F4F42CB3E14CAE57B6594B", hash_generated_method = "DD6CD927127F6B9BC8B5C25B8638BF91")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.475 -0400", hash_original_method = "EF8232A158BD658260B74FAB493C1DB9", hash_generated_method = "18BE7B8A1F6C083E5F8014856123A4CD")
-    public boolean equals(Object otherObj) {
-        addTaint(otherObj.getTaint());
-        if(otherObj == null)        
-        {
-            boolean var68934A3E9455FA72420237EB05902327_388040828 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_745762062 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_745762062;
-        } //End block
-        try 
-        {
-            boolean varD1389714F0F009155EA48014426114F1_1899768105 = (mTarget.asBinder().equals(((RemoteCallback)otherObj)
-                    .mTarget.asBinder()));
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_310341981 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_310341981;
-        } //End block
-        catch (ClassCastException e)
-        {
-        } //End block
-        boolean var68934A3E9455FA72420237EB05902327_1516075275 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1795577741 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1795577741;
-        // ---------- Original Method ----------
-        //if (otherObj == null) {
-            //return false;
-        //}
-        //try {
-            //return mTarget.asBinder().equals(((RemoteCallback)otherObj)
-                    //.mTarget.asBinder());
-        //} catch (ClassCastException e) {
-        //}
-        //return false;
+protected abstract void onResult(Bundle bundle);
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.344 -0500", hash_original_method = "EF8232A158BD658260B74FAB493C1DB9", hash_generated_method = "1BE7A3362E5A3DC4CF5D0052AA7716EB")
+    
+public boolean equals(Object otherObj) {
+        if (otherObj == null) {
+            return false;
+        }
+        try {
+            return mTarget.asBinder().equals(((RemoteCallback)otherObj)
+                    .mTarget.asBinder());
+        } catch (ClassCastException e) {
+        }
+        return false;
     }
-
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.476 -0400", hash_original_method = "72E49DA56EC3D19D8D09B0982F6DDB55", hash_generated_method = "B8D80A4924A0BDC275184CFE9BBF7798")
-    public int hashCode() {
-        int var015DBE14D40CCC902461F5EB4537F2D8_1269724626 = (mTarget.asBinder().hashCode());
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1917490237 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1917490237;
-        // ---------- Original Method ----------
-        //return mTarget.asBinder().hashCode();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.346 -0500", hash_original_method = "72E49DA56EC3D19D8D09B0982F6DDB55", hash_generated_method = "D3CD0FF680AAF7AE0414AB6B38BC2F04")
+    
+public int hashCode() {
+        return mTarget.asBinder().hashCode();
     }
-
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.477 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "E48C441F096521902EC69D8FD4C8E6EF")
-    public int describeContents() {
-        int varCFCD208495D565EF66E7DFF9F98764DA_480167389 = (0);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_921920453 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_921920453;
-        // ---------- Original Method ----------
-        //return 0;
-    }
-
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.348 -0500", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "D90463461B2A94FF94D13FDF69BB80C9")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.478 -0400", hash_original_method = "FF0A290BC61B9CD02F1DD23699EA8B8B", hash_generated_method = "C7A202EDEDAAFB23E59B79A7FE9B7381")
-    public void writeToParcel(Parcel out, int flags) {
-        addTaint(flags);
-        addTaint(out.getTaint());
-        out.writeStrongBinder(mTarget.asBinder());
-        // ---------- Original Method ----------
-        //out.writeStrongBinder(mTarget.asBinder());
+public int describeContents() {
+        return 0;
     }
 
     
     class DeliverResult implements Runnable {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.479 -0400", hash_original_field = "313AEF43C06545BCEAC152A1C285EBE1", hash_generated_field = "2517D973108B732BC287D585B503B92F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.314 -0500", hash_original_field = "2517D973108B732BC287D585B503B92F", hash_generated_field = "2517D973108B732BC287D585B503B92F")
 
-        Bundle mResult;
+         Bundle mResult;
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.479 -0400", hash_original_method = "8836597D628A377AAE6A26C90BCE24D7", hash_generated_method = "A82DFEA894E0637039F25C70A44639EF")
-          DeliverResult(Bundle result) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.317 -0500", hash_original_method = "8836597D628A377AAE6A26C90BCE24D7", hash_generated_method = "8836597D628A377AAE6A26C90BCE24D7")
+        
+DeliverResult(Bundle result) {
             mResult = result;
-            // ---------- Original Method ----------
-            //mResult = result;
         }
-
         
-        @DSModeled(DSC.BAN)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.480 -0400", hash_original_method = "603C18F53B6556C1CA52545158AE7A51", hash_generated_method = "9E0214968917459FE5CC8F87C4155B4C")
-        public void run() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.319 -0500", hash_original_method = "603C18F53B6556C1CA52545158AE7A51", hash_generated_method = "E4A96AD2F241C1E6AFF6E991B848CC36")
+        
+public void run() {
             onResult(mResult);
-            // ---------- Original Method ----------
-            //onResult(mResult);
         }
 
         
@@ -153,15 +118,10 @@ public abstract class RemoteCallback implements Parcelable {
         {
             //Synthesized constructor
         }
-
-
-        @DSModeled(DSC.BAN)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.481 -0400", hash_original_method = "FF1279923A180340D1364807D3537EE5", hash_generated_method = "8F8150F0775E4B1C33482C77E3C9CDF2")
-        public void sendResult(Bundle bundle) {
-            addTaint(bundle.getTaint());
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.323 -0500", hash_original_method = "FF1279923A180340D1364807D3537EE5", hash_generated_method = "9AC77E0AF70A947EE512BC888F0D69F2")
+        
+public void sendResult(Bundle bundle) {
             mHandler.post(new DeliverResult(bundle));
-            // ---------- Original Method ----------
-            //mHandler.post(new DeliverResult(bundle));
         }
 
         
@@ -170,45 +130,25 @@ public abstract class RemoteCallback implements Parcelable {
 
     
     static class RemoteCallbackProxy extends RemoteCallback {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.328 -0500", hash_original_method = "883FA11D61E159E4AB8658B2E38FCD52", hash_generated_method = "883FA11D61E159E4AB8658B2E38FCD52")
         
-        @DSModeled(DSC.BAN)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.482 -0400", hash_original_method = "883FA11D61E159E4AB8658B2E38FCD52", hash_generated_method = "412D9FFD9DFA23DCA348E77AE57F3443")
-          RemoteCallbackProxy(IRemoteCallback target) {
+RemoteCallbackProxy(IRemoteCallback target) {
             super(target);
-            addTaint(target.getTaint());
-            // ---------- Original Method ----------
         }
-
         
-                @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.482 -0400", hash_original_method = "C1383866A4D5D22E2E944ECBE9D44118", hash_generated_method = "53C9A15F32E108D2F7A58D17A06027A8")
-        protected void onResult(Bundle bundle) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
-            addTaint(bundle.getTaint());
-            // ---------- Original Method ----------
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.330 -0500", hash_original_method = "C1383866A4D5D22E2E944ECBE9D44118", hash_generated_method = "CC177A00BFCFC3DABA61BBCC9D5B5374")
+        
+protected void onResult(Bundle bundle) {
         }
 
         
     }
 
-
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.351 -0500", hash_original_method = "FF0A290BC61B9CD02F1DD23699EA8B8B", hash_generated_method = "5FB48EDF3036D823DDA10D61F6FC459B")
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.482 -0400", hash_original_field = "342F5DC731DC7D0C10BC6BF67EBBAD67", hash_generated_field = "0FA4B7A723E7C659BF3C80CC594308CD")
-
-    public static final Parcelable.Creator<RemoteCallback> CREATOR
-            = new Parcelable.Creator<RemoteCallback>() {
-        @DSModeled(DSC.BAN)
-        public RemoteCallback createFromParcel(Parcel in) {
-            IBinder target = in.readStrongBinder();
-            return target != null ? new RemoteCallbackProxy(
-                    IRemoteCallback.Stub.asInterface(target)) : null;
-        }
-
-        @DSModeled(DSC.BAN)
-        public RemoteCallback[] newArray(int size) {
-            return new RemoteCallback[size];
-        }
-    };
+public void writeToParcel(Parcel out, int flags) {
+        out.writeStrongBinder(mTarget.asBinder());
+    }
     // orphaned legacy method
     public RemoteCallback createFromParcel(Parcel in) {
             IBinder target = in.readStrongBinder();

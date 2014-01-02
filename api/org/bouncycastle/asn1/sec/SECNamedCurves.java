@@ -1,6 +1,8 @@
 package org.bouncycastle.asn1.sec;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.math.BigInteger;
 import java.util.Enumeration;
@@ -21,69 +23,92 @@ import org.bouncycastle.util.encoders.Hex;
 
 
 public class SECNamedCurves {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:16.134 -0500", hash_original_method = "257B088F16AD234B1226009C83E2E43F", hash_generated_method = "EC0DF9DCA8CE83204ACDEA090D85F0D0")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.204 -0400", hash_original_method = "23A51E56E8942FF07ABE86D375C28B89", hash_generated_method = "23A51E56E8942FF07ABE86D375C28B89")
-    public SECNamedCurves ()
+private static BigInteger fromHex(
+        String hex)
     {
-        //Synthesized constructor
-    }
-
-
-    @DSModeled(DSC.BAN)
-    private static BigInteger fromHex(
-        String hex) {
         return new BigInteger(1, Hex.decode(hex));
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:16.351 -0500", hash_original_method = "D496A72DDCEE7F5F04116790B757B93C", hash_generated_method = "A5CBB41323AEE52B90D4E09F74E60444")
     
-    @DSModeled(DSC.SAFE)
-    static void defineCurve(String name, DERObjectIdentifier oid, X9ECParametersHolder holder) {
+static void defineCurve(String name, DERObjectIdentifier oid, X9ECParametersHolder holder)
+    {
         objIds.put(name, oid);
         names.put(oid, name);
         curves.put(oid, holder);
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:16.354 -0500", hash_original_method = "1332421A9126C1D93EF276796596C535", hash_generated_method = "CB53AA3E6F6D7F01823E871B6EEE3082")
     
-    @DSModeled(DSC.SAFE)
-    public static X9ECParameters getByName(
-        String name) {
+public static X9ECParameters getByName(
+        String name)
+    {
         DERObjectIdentifier oid = (DERObjectIdentifier)objIds.get(Strings.toLowerCase(name));
+
         if (oid != null)
         {
             return getByOID(oid);
         }
+
         return null;
     }
 
+    /**
+     * return the X9ECParameters object for the named curve represented by
+     * the passed in object identifier. Null if the curve isn't present.
+     *
+     * @param oid an object identifier representing a named curve, if present.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:16.357 -0500", hash_original_method = "CB4C7C1424FC82BD63F9572E3BBD62F4", hash_generated_method = "3EEF2B28422BE2CECFE5150360638180")
     
-    @DSModeled(DSC.SAFE)
-    public static X9ECParameters getByOID(
-        DERObjectIdentifier oid) {
+public static X9ECParameters getByOID(
+        DERObjectIdentifier oid)
+    {
         X9ECParametersHolder holder = (X9ECParametersHolder)curves.get(oid);
+
         if (holder != null)
         {
             return holder.getParameters();
         }
+
         return null;
     }
 
+    /**
+     * return the object identifier signified by the passed in name. Null
+     * if there is no object identifier associated with name.
+     *
+     * @return the object identifier associated with name, if present.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:16.359 -0500", hash_original_method = "BA8AAD35304499CD769C6F05D020CE25", hash_generated_method = "AC7D3214060767441415299363CAF654")
     
-    @DSModeled(DSC.SAFE)
-    public static DERObjectIdentifier getOID(
-        String name) {
+public static DERObjectIdentifier getOID(
+        String name)
+    {
         return (DERObjectIdentifier)objIds.get(Strings.toLowerCase(name));
     }
 
+    /**
+     * return the named curve name represented by the given object identifier.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:16.361 -0500", hash_original_method = "842AE20B2323661CD1A911AC1FDD139F", hash_generated_method = "FD2759FE761DD6B24CA207881D36F304")
     
-    @DSModeled(DSC.SAFE)
-    public static String getName(
-        DERObjectIdentifier oid) {
+public static String getName(
+        DERObjectIdentifier oid)
+    {
         return (String)names.get(oid);
     }
 
+    /**
+     * returns an enumeration containing the name strings for curves
+     * contained in this structure.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:16.364 -0500", hash_original_method = "516595D0FA5B972F8928119781E833A4", hash_generated_method = "2FF83217840B907592489710D19997C3")
     
-    @DSModeled(DSC.SAFE)
-    public static Enumeration getNames() {
+public static Enumeration getNames()
+    {
         return objIds.keys();
     }
 
@@ -1258,15 +1283,23 @@ public class SECNamedCurves {
 
         
 };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.207 -0400", hash_original_field = "09196982C4917B07F992CCE003F1710F", hash_generated_field = "1269679D47B7C172C418131040DC03AA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:16.343 -0500", hash_original_field = "C19E4507CE52B3E3E9AD718D35D22591", hash_generated_field = "1269679D47B7C172C418131040DC03AA")
+
+
 
     static final Hashtable objIds = new Hashtable();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.207 -0400", hash_original_field = "53A355950F48EB163EF1F9185C63BB74", hash_generated_field = "A509875984E2DDE173DFA329D230AB1E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:16.346 -0500", hash_original_field = "BBDAA2F25E745C761B45CBDAFF4D1B92", hash_generated_field = "A509875984E2DDE173DFA329D230AB1E")
 
     static final Hashtable curves = new Hashtable();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.207 -0400", hash_original_field = "E70BACFD70C0C66E2A0FC643AF5696C0", hash_generated_field = "734EE0BA6EAA0FCA9CCE9A4B643B3169")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:16.349 -0500", hash_original_field = "D32C06F3AA2D7D68279CA3E62E7A38C6", hash_generated_field = "734EE0BA6EAA0FCA9CCE9A4B643B3169")
 
     static final Hashtable names = new Hashtable();
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:39.204 -0400", hash_original_method = "23A51E56E8942FF07ABE86D375C28B89", hash_generated_method = "23A51E56E8942FF07ABE86D375C28B89")
+    public SECNamedCurves ()
+    {
+        //Synthesized constructor
+    }
     static {
         defineCurve("secp112r1", SECObjectIdentifiers.secp112r1, secp112r1);
         defineCurve("secp112r2", SECObjectIdentifiers.secp112r2, secp112r2);

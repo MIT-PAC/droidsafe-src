@@ -1,6 +1,8 @@
 package gov.nist.javax.sip.header;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import javax.sip.header.ProxyAuthorizationHeader;
 
@@ -10,17 +12,16 @@ import javax.sip.header.ProxyAuthorizationHeader;
 
 
 public class ProxyAuthorization extends AuthenticationHeader implements ProxyAuthorizationHeader {
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.748 -0400", hash_original_method = "4D6EF56A1C3453732D0F9A353B9A4089", hash_generated_method = "EAFE69677E4CD29F6950DC57C40DD2A6")
-    public  ProxyAuthorization() {
-        super(PROXY_AUTHORIZATION);
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.748 -0400", hash_original_field = "A89D3C1F1A5CB108F36FBBF59CFFEEAA", hash_generated_field = "BA6BF9CE8BFECE5A05580B2B32C52A19")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.475 -0500", hash_original_field = "E834C8FD63A0563AA15EA31AE1CC8E4A", hash_generated_field = "BA6BF9CE8BFECE5A05580B2B32C52A19")
 
     private static final long serialVersionUID = -6374966905199799098L;
+
+    /** default constructor
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.479 -0500", hash_original_method = "4D6EF56A1C3453732D0F9A353B9A4089", hash_generated_method = "ABED2B00634C03B09E688587CE8F6409")
+    
+public ProxyAuthorization() {
+        super(PROXY_AUTHORIZATION);
+    }
 }
 

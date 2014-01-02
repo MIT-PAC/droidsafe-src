@@ -1,6 +1,8 @@
 package java.nio.charset;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.UTFDataFormatException;
 import java.nio.ByteOrder;
@@ -12,16 +14,15 @@ import libcore.io.SizeOf;
 
 
 public class ModifiedUtf8 {
+    /**
+     * Decodes a byte array containing <i>modified UTF-8</i> bytes into a string.
+     *
+     * <p>Note that although this method decodes the (supposedly impossible) zero byte to U+0000,
+     * that's what the RI does too.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.677 -0500", hash_original_method = "5393979ADC62E28ADD27F66A98DE94B1", hash_generated_method = "E5BF9B5D16592C07021AAD713B61E5BA")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.683 -0400", hash_original_method = "64489454DCC17A9858C56DA9699AAAE7", hash_generated_method = "7413CA2F03D7938EC2CAD9273A6D3E8D")
-    private  ModifiedUtf8() {
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    public static String decode(byte[] in, char[] out, int offset, int utfSize) throws UTFDataFormatException {
+public static String decode(byte[] in, char[] out, int offset, int utfSize) throws UTFDataFormatException {
         int count = 0, s = 0, a;
         while (count < utfSize) {
             if ((out[s] = (char) in[offset + count++]) < '\u0080') {
@@ -52,14 +53,21 @@ public class ModifiedUtf8 {
         return new String(out, 0, s);
     }
 
+    /**
+     * Returns the number of bytes the modified UTF-8 representation of 's' would take. Note
+     * that this is just the space for the bytes representing the characters, not the length
+     * which precedes those bytes, because different callers represent the length differently,
+     * as two, four, or even eight bytes. If {@code shortLength} is true, we'll throw an
+     * exception if the string is too long for its length to be represented by a short.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.680 -0500", hash_original_method = "27037B6AE773D08320C8E234F08B9D01", hash_generated_method = "37460BD83B24AD5DC5FD245D5ADED94E")
     
-    @DSModeled(DSC.BAN)
-    public static long countBytes(String s, boolean shortLength) throws UTFDataFormatException {
+public static long countBytes(String s, boolean shortLength) throws UTFDataFormatException {
         long result = 0;
         final int length = s.length();
         for (int i = 0; i < length; ++i) {
             char ch = s.charAt(i);
-            if (ch != 0 && ch <= 127) { 
+            if (ch != 0 && ch <= 127) { // U+0000 uses two bytes.
                 ++result;
             } else if (ch <= 2047) {
                 result += 2;
@@ -73,13 +81,17 @@ public class ModifiedUtf8 {
         return result;
     }
 
+    /**
+     * Encodes the <i>modified UTF-8</i> bytes corresponding to string {@code s} into the
+     * byte array {@code dst}, starting at the given {@code offset}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.683 -0500", hash_original_method = "08FFAD61125D208C57B7F98D1BD8BCF0", hash_generated_method = "69D46A38D913DE91F841F8B0969B189B")
     
-    @DSModeled(DSC.BAN)
-    public static void encode(byte[] dst, int offset, String s) {
+public static void encode(byte[] dst, int offset, String s) {
         final int length = s.length();
         for (int i = 0; i < length; i++) {
             char ch = s.charAt(i);
-            if (ch != 0 && ch <= 127) { 
+            if (ch != 0 && ch <= 127) { // U+0000 uses two bytes.
                 dst[offset++] = (byte) ch;
             } else if (ch <= 2047) {
                 dst[offset++] = (byte) (0xc0 | (0x1f & (ch >> 6)));
@@ -92,14 +104,24 @@ public class ModifiedUtf8 {
         }
     }
 
+    /**
+     * Returns an array containing the <i>modified UTF-8</i> form of {@code s}, using a
+     * big-endian 16-bit length. Throws UTFDataFormatException if {@code s} is too long
+     * for a two-byte length.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.686 -0500", hash_original_method = "C3E6BB1DD42E4EBE7B80ABC48FCD6E53", hash_generated_method = "33B14CD4DA61BCF290C46EBC50DE517C")
     
-    @DSModeled(DSC.BAN)
-    public static byte[] encode(String s) throws UTFDataFormatException {
+public static byte[] encode(String s) throws UTFDataFormatException {
         int utfCount = (int) ModifiedUtf8.countBytes(s, true);
         byte[] result = new byte[SizeOf.SHORT + utfCount];
         Memory.pokeShort(result, 0, (short) utfCount, ByteOrder.BIG_ENDIAN);
         ModifiedUtf8.encode(result, SizeOf.SHORT, s);
         return result;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.688 -0500", hash_original_method = "64489454DCC17A9858C56DA9699AAAE7", hash_generated_method = "BD4DD56CDB226A8A143AE67AC1075BF1")
+    
+private ModifiedUtf8() {
     }
 
     

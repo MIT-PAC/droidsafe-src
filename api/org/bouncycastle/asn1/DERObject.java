@@ -1,6 +1,8 @@
 package org.bouncycastle.asn1;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 
@@ -16,29 +18,24 @@ public abstract class DERObject extends ASN1Encodable implements DERTags {
     {
         //Synthesized constructor
     }
-
-
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:38.405 -0400", hash_original_method = "E2D1E8CC85ED259FA016D4CED2E671CA", hash_generated_method = "17E8C6329E310989818333AE8524AEE4")
-    public DERObject toASN1Object() {
-DERObject var72A74007B2BE62B849F475C7BDA4658B_1418859672 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_1418859672.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_1418859672;
-        // ---------- Original Method ----------
-        //return this;
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:28.934 -0500", hash_original_method = "E2D1E8CC85ED259FA016D4CED2E671CA", hash_generated_method = "5BCE74A3339F2B8C12C1DCCFF2316103")
+    
+public DERObject toASN1Object()
+    {
+        return this;
     }
-
     
-    @DSModeled(DSC.SAFE)
-    public abstract int hashCode();
-
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:28.937 -0500", hash_original_method = "55C270AB7FB96DF5C59CA61A88D62880", hash_generated_method = "6DC7B39669B69F5C42BF1BAC2411F684")
     
-    @DSModeled(DSC.SAFE)
-    public abstract boolean equals(Object o);
-
+public abstract int hashCode();
     
-    @DSModeled(DSC.SAFE)
-    abstract void encode(DEROutputStream out)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:28.939 -0500", hash_original_method = "ABA676D17E1DCC5B68CA9641467BE6F0", hash_generated_method = "5F04941C356A0F51887E7E2A00CF4487")
+    
+public abstract boolean equals(Object o);
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:28.941 -0500", hash_original_method = "A1E289DFE0364C85836C0C8908499825", hash_generated_method = "877693E84D45EBE13EC3671BCE6F2F0C")
+    
+abstract void encode(DEROutputStream out)
         throws IOException;
 
     

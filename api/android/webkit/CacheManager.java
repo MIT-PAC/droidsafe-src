@@ -1,6 +1,8 @@
 package android.webkit;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.File;
 import java.io.FileInputStream;
@@ -28,22 +30,27 @@ import com.android.org.bouncycastle.crypto.digests.SHA1Digest;
 
 
 public final class CacheManager {
+
+    /**
+     * Initialize the CacheManager.
+     *
+     * Note that this is called automatically when a {@link android.webkit.WebView} is created.
+     *
+     * @param context The application context.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:19.008 -0500", hash_original_method = "FD0A44038543D4B071B714911C2F38E6", hash_generated_method = "35AE2BCA55738371B7CE0EA20089509D")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.526 -0400", hash_original_method = "A0B4DD756EBE924AE07FCEE8B62EE3BB", hash_generated_method = "A0B4DD756EBE924AE07FCEE8B62EE3BB")
-    public CacheManager ()
-    {
-        //Synthesized constructor
-    }
-
-
-    static void init(Context context) {
+static void init(Context context) {
         if (JniUtil.useChromiumHttpStack()) {
+            // This isn't actually where the real cache lives, but where we put files for the
+            // purpose of getCacheFile().
             mBaseDir = new File(context.getCacheDir(), "webviewCacheChromiumStaging");
             if (!mBaseDir.exists()) {
                 mBaseDir.mkdirs();
             }
             return;
         }
+
         mDataBase = WebViewDatabase.getInstance(context.getApplicationContext());
         mBaseDir = new File(context.getCacheDir(), "webviewCache");
         if (createCacheDirectory() && mClearCacheOnInit) {
@@ -52,10 +59,16 @@ public final class CacheManager {
         }
     }
 
+    /**
+     * Create the cache directory if it does not already exist.
+     *
+     * @return true if the cache directory didn't exist and was created.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:19.011 -0500", hash_original_method = "39AF7BF095F0C2B1607F33D11417DF97", hash_generated_method = "F376D4A493B2A43313AC5AD7B7320ED8")
     
-    @DSModeled(DSC.BAN)
-    static private boolean createCacheDirectory() {
+static private boolean createCacheDirectory() {
         assert !JniUtil.useChromiumHttpStack();
+
         if (!mBaseDir.exists()) {
             if(!mBaseDir.mkdirs()) {
                 Log.w(LOGTAG, "Unable to create webviewCache directory");
@@ -65,6 +78,11 @@ public final class CacheManager {
                     mBaseDir.toString(),
                     FileUtils.S_IRWXU | FileUtils.S_IRWXG,
                     -1, -1);
+            // If we did create the directory, we need to flush
+            // the cache database. The directory could be recreated
+            // because the system flushed all the data/cache directories
+            // to free up disk space.
+            // delete rows in the cache database
             WebViewWorker.getHandler().sendEmptyMessage(
                     WebViewWorker.MSG_CLEAR_CACHE);
             return true;
@@ -72,16 +90,35 @@ public final class CacheManager {
         return false;
     }
 
+    /**
+     * Get the base directory of the cache. Together with the local path of the CacheResult,
+     * obtained from {@link android.webkit.CacheManager.CacheResult#getLocalPath}, this
+     * identifies the cache file.
+     *
+     * Cache files are not guaranteed to be in this directory before
+     * CacheManager#getCacheFile(String, Map<String, String>) is called.
+     *
+     * @return File The base directory of the cache.
+     *
+     * @deprecated Access to the HTTP cache will be removed in a future release.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:19.014 -0500", hash_original_method = "F0B0827516949949C11BBC015D95A105", hash_generated_method = "38AC16CFBD9C5FA36401E7D47C89A1CA")
     
-    @DSModeled(DSC.SAFE)
-    @Deprecated
+@Deprecated
     public static File getCacheFileBaseDir() {
         return mBaseDir;
     }
 
+    /**
+     * Sets whether the cache is disabled.
+     *
+     * @param disabled Whether the cache should be disabled
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:19.016 -0500", hash_original_method = "15A04C0B3B55BED81D42B45C3530CD7B", hash_generated_method = "B5DD7A823CC11E052351146D788A64DE")
     
-    static void setCacheDisabled(boolean disabled) {
+static void setCacheDisabled(boolean disabled) {
         assert !JniUtil.useChromiumHttpStack();
+
         if (disabled == mDisabled) {
             return;
         }
@@ -91,17 +128,27 @@ public final class CacheManager {
         }
     }
 
+    /**
+     * Whether the cache is disabled.
+     *
+     * @return return Whether the cache is disabled
+     *
+     * @deprecated Access to the HTTP cache will be removed in a future release.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:19.018 -0500", hash_original_method = "70B1862B4F6250E0DD71D86C1C84F44C", hash_generated_method = "A3DE51B2043BB8B2898D278AD98EF725")
     
-    @DSModeled(DSC.SAFE)
-    @Deprecated
+@Deprecated
     public static boolean cacheDisabled() {
         return mDisabled;
     }
 
+    // only called from WebViewWorkerThread
+    // make sure to call enableTransaction/disableTransaction in pair
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:19.021 -0500", hash_original_method = "953C900A9DBD3B15E27F74DCB29F2A3F", hash_generated_method = "4A49FA9A6979EE8FDC70C3F4922446F1")
     
-    @DSModeled(DSC.SAFE)
-    static boolean enableTransaction() {
+static boolean enableTransaction() {
         assert !JniUtil.useChromiumHttpStack();
+
         if (++mRefCount == 1) {
             mDataBase.startCacheTransaction();
             return true;
@@ -109,10 +156,13 @@ public final class CacheManager {
         return false;
     }
 
+    // only called from WebViewWorkerThread
+    // make sure to call enableTransaction/disableTransaction in pair
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:19.023 -0500", hash_original_method = "65C222DBB0B16E3D9C9A879D8816B411", hash_generated_method = "C392682FBE357FFA274F9965349DF02B")
     
-    @DSModeled(DSC.SAFE)
-    static boolean disableTransaction() {
+static boolean disableTransaction() {
         assert !JniUtil.useChromiumHttpStack();
+
         if (--mRefCount == 0) {
             mDataBase.endCacheTransaction();
             return true;
@@ -120,17 +170,23 @@ public final class CacheManager {
         return false;
     }
 
+    // only called from WebViewWorkerThread
+    // make sure to call startTransaction/endTransaction in pair
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:19.025 -0500", hash_original_method = "604E7ACA960E1118AEAD24723E3956E2", hash_generated_method = "95E7F886CB4ED8D88ED2EF3449898360")
     
-    @DSModeled(DSC.SAFE)
-    static boolean startTransaction() {
+static boolean startTransaction() {
         assert !JniUtil.useChromiumHttpStack();
+
         return mDataBase.startCacheTransaction();
     }
 
+    // only called from WebViewWorkerThread
+    // make sure to call startTransaction/endTransaction in pair
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:19.028 -0500", hash_original_method = "0D470A4357137F5CF22E27F25D4438C9", hash_generated_method = "7ACFB55C8E973782678CC1B31B064791")
     
-    @DSModeled(DSC.SAFE)
-    static boolean endTransaction() {
+static boolean endTransaction() {
         assert !JniUtil.useChromiumHttpStack();
+
         boolean ret = mDataBase.endCacheTransaction();
         if (++mTrimCacheCount >= TRIM_CACHE_INTERVAL) {
             mTrimCacheCount = 0;
@@ -139,49 +195,79 @@ public final class CacheManager {
         return ret;
     }
 
+    // only called from WebCore Thread
+    // make sure to call startCacheTransaction/endCacheTransaction in pair
+    /**
+     * @deprecated Always returns false.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:19.030 -0500", hash_original_method = "68D8E567ECF8419214532FD1E5C7DE3D", hash_generated_method = "DC655AD59EB271742B300115B8F74F29")
     
-    @DSModeled(DSC.SAFE)
-    @Deprecated
+@Deprecated
     public static boolean startCacheTransaction() {
         return false;
     }
 
+    // only called from WebCore Thread
+    // make sure to call startCacheTransaction/endCacheTransaction in pair
+    /**
+     * @deprecated Always returns false.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:19.032 -0500", hash_original_method = "DAA428FC30DB4B3CA06158EC67C51CFA", hash_generated_method = "E0C46280222321E7B005E281EAFC6630")
     
-    @DSModeled(DSC.SAFE)
-    @Deprecated
+@Deprecated
     public static boolean endCacheTransaction() {
         return false;
     }
 
+    /**
+     * Given a URL, returns the corresponding CacheResult if it exists, or null otherwise.
+     *
+     * The input stream of the CacheEntry object is initialized and opened and should be closed by
+     * the caller when access to the underlying file is no longer required.
+     * If a non-zero value is provided for the headers map, and the cache entry needs validation,
+     * HEADER_KEY_IFNONEMATCH or HEADER_KEY_IFMODIFIEDSINCE will be set in headers.
+     *
+     * @return The CacheResult for the given URL
+     *
+     * @deprecated Access to the HTTP cache will be removed in a future release.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:19.034 -0500", hash_original_method = "9B43E497167E7B91E0514510F337FC0F", hash_generated_method = "D81D57C18D8A8C63C92545594B794F56")
     
-    @DSModeled(DSC.SAFE)
-    @Deprecated
+@Deprecated
     public static CacheResult getCacheFile(String url,
             Map<String, String> headers) {
         return getCacheFile(url, 0, headers);
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:19.042 -0500", hash_original_method = "4E4FEE3E45B78C1C1F78769485D846E8", hash_generated_method = "186F1920794D592844A4AE88FB54D7E3")
     
-    @DSModeled(DSC.SAFE)
-    static CacheResult getCacheFile(String url, long postIdentifier,
+static CacheResult getCacheFile(String url, long postIdentifier,
             Map<String, String> headers) {
         if (mDisabled) {
             return null;
         }
+
         if (JniUtil.useChromiumHttpStack()) {
             CacheResult result = nativeGetCacheResult(url);
             if (result == null) {
                 return null;
             }
+            // A temporary local file will have been created native side and localPath set
+            // appropriately.
             File src = new File(mBaseDir, result.localPath);
             try {
+                // Open the file here so that even if it is deleted, the content
+                // is still readable by the caller until close() is called.
                 result.inStream = new FileInputStream(src);
             } catch (FileNotFoundException e) {
                 Log.v(LOGTAG, "getCacheFile(): Failed to open file: " + e);
+                // TODO: The files in the cache directory can be removed by the
+                // system. If it is gone, what should we do?
                 return null;
             }
             return result;
         }
+
         String databaseKey = getDatabaseKey(url, postIdentifier);
         CacheResult result = mDataBase.getCache(databaseKey);
         if (result == null) {
@@ -189,23 +275,34 @@ public final class CacheManager {
         }
         if (result.contentLength == 0) {
             if (!isCachableRedirect(result.httpStatusCode)) {
+                // This should not happen. If it does, remove it.
                 mDataBase.removeCache(databaseKey);
                 return null;
             }
         } else {
             File src = new File(mBaseDir, result.localPath);
             try {
+                // Open the file here so that even if it is deleted, the content
+                // is still readable by the caller until close() is called.
                 result.inStream = new FileInputStream(src);
             } catch (FileNotFoundException e) {
+                // The files in the cache directory can be removed by the
+                // system. If it is gone, clean up the database.
                 mDataBase.removeCache(databaseKey);
                 return null;
             }
         }
+
+        // A null value for headers is used by CACHE_MODE_CACHE_ONLY to imply
+        // that we should provide the cache result even if it is expired.
+        // Note that a negative expires value means a time in the far future.
         if (headers != null && result.expires >= 0
                 && result.expires <= System.currentTimeMillis()) {
             if (result.lastModified == null && result.etag == null) {
                 return null;
             }
+            // Return HEADER_KEY_IFNONEMATCH or HEADER_KEY_IFMODIFIEDSINCE
+            // for requesting validation.
             if (result.etag != null) {
                 headers.put(HEADER_KEY_IFNONEMATCH, result.etag);
             }
@@ -213,87 +310,145 @@ public final class CacheManager {
                 headers.put(HEADER_KEY_IFMODIFIEDSINCE, result.lastModified);
             }
         }
+
         if (DebugFlags.CACHE_MANAGER) {
             Log.v(LOGTAG, "getCacheFile for url " + url);
         }
+
         return result;
     }
 
+    /**
+     * Given a url and its full headers, returns CacheResult if a local cache
+     * can be stored. Otherwise returns null. The mimetype is passed in so that
+     * the function can use the mimetype that will be passed to WebCore which
+     * could be different from the mimetype defined in the headers.
+     * forceCache is for out-of-package callers to force creation of a
+     * CacheResult, and is used to supply surrogate responses for URL
+     * interception.
+     * @return CacheResult for a given url
+     * @hide - hide createCacheFile since it has a parameter of type headers, which is
+     * in a hidden package.
+     *
+     * @deprecated Access to the HTTP cache will be removed in a future release.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:19.045 -0500", hash_original_method = "9D8B0292BF61165D11B09A1D07C57FAA", hash_generated_method = "E361570C5B288849B1CC1922D12008B8")
     
-    @DSModeled(DSC.BAN)
-    @Deprecated
+@Deprecated
     public static CacheResult createCacheFile(String url, int statusCode,
             Headers headers, String mimeType, boolean forceCache) {
         if (JniUtil.useChromiumHttpStack()) {
+            // This method is public but hidden. We break functionality.
             return null;
         }
+
         return createCacheFile(url, statusCode, headers, mimeType, 0,
                 forceCache);
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:19.048 -0500", hash_original_method = "187B06232F6CDF0CCCDCE98BD1510E22", hash_generated_method = "4BBC48687B0E9E70DF00C903661299B1")
     
-    @DSModeled(DSC.SAFE)
-    static CacheResult createCacheFile(String url, int statusCode,
+static CacheResult createCacheFile(String url, int statusCode,
             Headers headers, String mimeType, long postIdentifier,
             boolean forceCache) {
         assert !JniUtil.useChromiumHttpStack();
+
         if (!forceCache && mDisabled) {
             return null;
         }
+
         String databaseKey = getDatabaseKey(url, postIdentifier);
+
+        // according to the rfc 2616, the 303 response MUST NOT be cached.
         if (statusCode == 303) {
+            // remove the saved cache if there is any
             mDataBase.removeCache(databaseKey);
             return null;
         }
+
+        // like the other browsers, do not cache redirects containing a cookie
+        // header.
         if (isCachableRedirect(statusCode) && !headers.getSetCookie().isEmpty()) {
+            // remove the saved cache if there is any
             mDataBase.removeCache(databaseKey);
             return null;
         }
+
         CacheResult ret = parseHeaders(statusCode, headers, mimeType);
         if (ret == null) {
+            // this should only happen if the headers has "no-store" in the
+            // cache-control. remove the saved cache if there is any
             mDataBase.removeCache(databaseKey);
         } else {
             setupFiles(databaseKey, ret);
             try {
                 ret.outStream = new FileOutputStream(ret.outFile);
             } catch (FileNotFoundException e) {
+                // This can happen with the system did a purge and our
+                // subdirectory has gone, so lets try to create it again
                 if (createCacheDirectory()) {
                     try {
                         ret.outStream = new FileOutputStream(ret.outFile);
                     } catch  (FileNotFoundException e2) {
+                        // We failed to create the file again, so there
+                        // is something else wrong. Return null.
                         return null;
                     }
                 } else {
+                    // Failed to create cache directory
                     return null;
                 }
             }
             ret.mimeType = mimeType;
         }
+
         return ret;
     }
 
+    /**
+     * Save the info of a cache file for a given url to the CacheMap so that it
+     * can be reused later
+     *
+     * @deprecated Access to the HTTP cache will be removed in a future release.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:19.051 -0500", hash_original_method = "5B2895B02F770919C7A447FD3807A154", hash_generated_method = "FA2A899FD670AAECA62D52DFEA96AC42")
     
-    @Deprecated
+@Deprecated
     public static void saveCacheFile(String url, CacheResult cacheRet) {
         saveCacheFile(url, 0, cacheRet);
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:19.054 -0500", hash_original_method = "D54B5DD76D17F77C2D9B6B75315C12AF", hash_generated_method = "89A64AF45B131CCFF1019C348D94DB00")
     
-    static void saveCacheFile(String url, long postIdentifier,
+static void saveCacheFile(String url, long postIdentifier,
             CacheResult cacheRet) {
         try {
             cacheRet.outStream.close();
         } catch (IOException e) {
             return;
         }
+
         if (JniUtil.useChromiumHttpStack()) {
+            // This method is exposed in the public API but the API provides no way to obtain a
+            // new CacheResult object with a non-null output stream ...
+            // - CacheResult objects returned by getCacheFile() have a null output stream.
+            // - new CacheResult objects have a null output stream and no setter is provided.
+            // Since for the Android HTTP stack this method throws a null pointer exception in this
+            // case, this method is effectively useless from the point of view of the public API.
+
+            // We should already have thrown an exception above, to maintain 'backward
+            // compatibility' with the Android HTTP stack.
             assert false;
         }
+
         if (!cacheRet.outFile.exists()) {
+            // the file in the cache directory can be removed by the system
             return;
         }
+
         boolean redirect = isCachableRedirect(cacheRet.httpStatusCode);
         if (redirect) {
+            // location is in database, no need to keep the file
             cacheRet.contentLength = 0;
             cacheRet.localPath = "";
         }
@@ -304,16 +459,19 @@ public final class CacheManager {
         if (cacheRet.contentLength == 0) {
             return;
         }
+
         mDataBase.addCache(getDatabaseKey(url, postIdentifier), cacheRet);
+
         if (DebugFlags.CACHE_MANAGER) {
             Log.v(LOGTAG, "saveCacheFile for url " + url);
         }
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:19.056 -0500", hash_original_method = "B851752E3F10EA31521F02463559936A", hash_generated_method = "EEEDD582EF83443F85726A43EF882B5B")
     
-    @DSModeled(DSC.SAFE)
-    static boolean cleanupCacheFile(CacheResult cacheRet) {
+static boolean cleanupCacheFile(CacheResult cacheRet) {
         assert !JniUtil.useChromiumHttpStack();
+
         try {
             cacheRet.outStream.close();
         } catch (IOException e) {
@@ -322,20 +480,36 @@ public final class CacheManager {
         return cacheRet.outFile.delete();
     }
 
+    /**
+     * Remove all cache files.
+     *
+     * @return Whether the removal succeeded.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:19.062 -0500", hash_original_method = "8B053D7F1520F6A3CE30DCCA756BED4A", hash_generated_method = "9D6D7D01366558B86F29E0C160A9B1C1")
     
-    @DSModeled(DSC.SAFE)
-    static boolean removeAllCacheFiles() {
+static boolean removeAllCacheFiles() {
+        // Note, this is called before init() when the database is
+        // created or upgraded.
         if (mBaseDir == null) {
+            // This method should not be called before init() when using the
+            // chrome http stack
             assert !JniUtil.useChromiumHttpStack();
+            // Init() has not been called yet, so just flag that
+            // we need to clear the cache when init() is called.
             mClearCacheOnInit = true;
             return true;
         }
+        // delete rows in the cache database
         if (!JniUtil.useChromiumHttpStack())
             WebViewWorker.getHandler().sendEmptyMessage(WebViewWorker.MSG_CLEAR_CACHE);
+
+        // delete cache files in a separate thread to not block UI.
         final Runnable clearCache = new Runnable() {
             public void run() {
+                // delete all cache files
                 try {
                     String[] files = mBaseDir.list();
+                    // if mBaseDir doesn't exist, files can be null.
                     if (files != null) {
                         for (int i = 0; i < files.length; i++) {
                             File f = new File(mBaseDir, files[i]);
@@ -345,6 +519,7 @@ public final class CacheManager {
                         }
                     }
                 } catch (SecurityException e) {
+                    // Ignore SecurityExceptions.
                 }
             }
         };
@@ -352,10 +527,11 @@ public final class CacheManager {
         return true;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:19.069 -0500", hash_original_method = "BDADE4E0F63929C91E9784D4BEEE6A94", hash_generated_method = "821533AB969EC30D88C5041F2FCAF74E")
     
-    @DSModeled(DSC.SAFE)
-    static void trimCacheIfNeeded() {
+static void trimCacheIfNeeded() {
         assert !JniUtil.useChromiumHttpStack();
+
         if (mDataBase.getCacheTotalSize() > CACHE_THRESHOLD) {
             List<String> pathList = mDataBase.trimCache(CACHE_TRIM_AMOUNT);
             int size = pathList.size();
@@ -365,6 +541,7 @@ public final class CacheManager {
                     Log.e(LOGTAG, f.getPath() + " delete failed.");
                 }
             }
+            // remove the unreferenced files in the cache directory
             final List<String> fileList = mDataBase.getAllCacheFileNames();
             if (fileList == null) return;
             String[] toDelete = mBaseDir.list(new FilenameFilter() {
@@ -387,36 +564,49 @@ public final class CacheManager {
         }
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:19.071 -0500", hash_original_method = "EBF8FF361B062C01F7D2F6B200ABB9BA", hash_generated_method = "06ABC24E4421DFFA3721DF4A1A45CD9D")
     
-    static void clearCache() {
+static void clearCache() {
         assert !JniUtil.useChromiumHttpStack();
+
+        // delete database
         mDataBase.clearCache();
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:19.074 -0500", hash_original_method = "F3AB8B6931536450A242ABE9EADE3D7B", hash_generated_method = "FF12C91EA0A617FB3EF6CDFA7687F14E")
     
-    @DSModeled(DSC.BAN)
-    private static boolean isCachableRedirect(int statusCode) {
+private static boolean isCachableRedirect(int statusCode) {
         if (statusCode == 301 || statusCode == 302 || statusCode == 307) {
+            // as 303 can't be cached, we do not return true
             return true;
         } else {
             return false;
         }
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:19.076 -0500", hash_original_method = "95FFC22FDD78E23D1DBD2657CF1B4DEF", hash_generated_method = "9A879508B81EA3BDEABDB475FFC6E80E")
     
-    @DSModeled(DSC.BAN)
-    private static String getDatabaseKey(String url, long postIdentifier) {
+private static String getDatabaseKey(String url, long postIdentifier) {
         assert !JniUtil.useChromiumHttpStack();
+
         if (postIdentifier == 0) return url;
         return postIdentifier + url;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:19.079 -0500", hash_original_method = "4240110803662B438BF7B628CA7A5C2B", hash_generated_method = "AD9CFFD4832CBAB3EA78544D498E72C0")
     
-    @DSModeled(DSC.BAN)
-    @SuppressWarnings("deprecation")
+@SuppressWarnings("deprecation")
     private static void setupFiles(String url, CacheResult cacheRet) {
         assert !JniUtil.useChromiumHttpStack();
+
         if (true) {
+            // Note: SHA1 is much stronger hash. But the cost of setupFiles() is
+            // 3.2% cpu time for a fresh load of nytimes.com. While a simple
+            // String.hashCode() is only 0.6%. If adding the collision resolving
+            // to String.hashCode(), it makes the cpu time to be 1.6% for a 
+            // fresh load, but 5.3% for the worst case where all the files 
+            // already exist in the file system, but database is gone. So it
+            // needs to resolve collision for every file at least once.
             int hashCode = url.hashCode();
             StringBuffer ret = new StringBuffer(8);
             appendAsHex(hashCode, ret);
@@ -424,6 +614,12 @@ public final class CacheManager {
             File file = new File(mBaseDir, path);
             if (true) {
                 boolean checkOldPath = true;
+                // Check hash collision. If the hash file doesn't exist, just
+                // continue. There is a chance that the old cache file is not
+                // same as the hash file. As mDataBase.getCache() is more 
+                // expansive than "leak" a file until clear cache, don't bother.
+                // If the hash file exists, make sure that it is same as the 
+                // cache file. If it is not, resolve the collision.
                 while (file.exists()) {
                     if (checkOldPath) {
                         CacheResult oldResult = mDataBase.getCache(url);
@@ -447,6 +643,7 @@ public final class CacheManager {
             cacheRet.localPath = path;
             cacheRet.outFile = file;
         } else {
+            // get hash in byte[]
             Digest digest = new SHA1Digest();
             int digestLen = digest.getDigestSize();
             byte[] hash = new byte[digestLen];
@@ -455,6 +652,7 @@ public final class CacheManager {
             url.getBytes(0, urlLen, data, 0);
             digest.update(data, 0, urlLen);
             digest.doFinal(hash, 0);
+            // convert byte[] to hex String
             StringBuffer result = new StringBuffer(2 * digestLen);
             for (int i = 0; i < digestLen; i = i + 4) {
                 int h = (0x00ff & hash[i]) << 24 | (0x00ff & hash[i + 1]) << 16
@@ -466,10 +664,11 @@ public final class CacheManager {
         }
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:19.082 -0500", hash_original_method = "800F2AC69DCF49143539415C1D541617", hash_generated_method = "9D0BB8A2014EC570579C15D1059CEB30")
     
-    @DSModeled(DSC.BAN)
-    private static void appendAsHex(int i, StringBuffer ret) {
+private static void appendAsHex(int i, StringBuffer ret) {
         assert !JniUtil.useChromiumHttpStack();
+
         String hex = Integer.toHexString(i);
         switch (hex.length()) {
             case 1:
@@ -497,40 +696,63 @@ public final class CacheManager {
         ret.append(hex);
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:19.087 -0500", hash_original_method = "1ECAF0C7E317327AAFF7668BB9253488", hash_generated_method = "4ECE103822C066B9D7DB7BFC24BB39BC")
     
-    @DSModeled(DSC.BAN)
-    private static CacheResult parseHeaders(int statusCode, Headers headers,
+private static CacheResult parseHeaders(int statusCode, Headers headers,
             String mimeType) {
         assert !JniUtil.useChromiumHttpStack();
+
+        // if the contentLength is already larger than CACHE_MAX_SIZE, skip it
         if (headers.getContentLength() > CACHE_MAX_SIZE) return null;
+
+        // The HTML 5 spec, section 6.9.4, step 7.3 of the application cache
+        // process states that HTTP caching rules are ignored for the
+        // purposes of the application cache download process.
+        // At this point we can't tell that if a file is part of this process,
+        // except for the manifest, which has its own mimeType.
+        // TODO: work out a way to distinguish all responses that are part of
+        // the application download process and skip them.
         if (MANIFEST_MIME.equals(mimeType)) return null;
+
+        // TODO: if authenticated or secure, return null
         CacheResult ret = new CacheResult();
         ret.httpStatusCode = statusCode;
+
         ret.location = headers.getLocation();
+
         ret.expires = -1;
         ret.expiresString = headers.getExpires();
         if (ret.expiresString != null) {
             try {
                 ret.expires = AndroidHttpClient.parseDate(ret.expiresString);
             } catch (IllegalArgumentException ex) {
+                // Take care of the special "-1" and "0" cases
                 if ("-1".equals(ret.expiresString)
                         || "0".equals(ret.expiresString)) {
+                    // make it expired, but can be used for history navigation
                     ret.expires = 0;
                 } else {
                     Log.e(LOGTAG, "illegal expires: " + ret.expiresString);
                 }
             }
         }
+
         ret.contentdisposition = headers.getContentDisposition();
+
         ret.crossDomain = headers.getXPermittedCrossDomainPolicies();
+
+        // lastModified and etag may be set back to http header. So they can't
+        // be empty string.
         String lastModified = headers.getLastModified();
         if (lastModified != null && lastModified.length() > 0) {
             ret.lastModified = lastModified;
         }
+
         String etag = headers.getEtag();
         if (etag != null && etag.length() > 0) {
             ret.etag = etag;
         }
+
         String cacheControl = headers.getCacheControl();
         if (cacheControl != null) {
             String[] controls = cacheControl.toLowerCase().split("[ ,;]");
@@ -539,9 +761,17 @@ public final class CacheManager {
                 if (NO_STORE.equals(controls[i])) {
                     return null;
                 }
+                // According to the spec, 'no-cache' means that the content
+                // must be re-validated on every load. It does not mean that
+                // the content can not be cached. set to expire 0 means it
+                // can only be used in CACHE_MODE_CACHE_ONLY case
                 if (NO_CACHE.equals(controls[i])) {
                     ret.expires = 0;
                     noCache = true;
+                // if cache control = no-cache has been received, ignore max-age
+                // header, according to http spec:
+                // If a request includes the no-cache directive, it SHOULD NOT
+                // include min-fresh, max-stale, or max-age.
                 } else if (controls[i].startsWith(MAX_AGE) && !noCache) {
                     int separator = controls[i].indexOf('=');
                     if (separator < 0) {
@@ -557,7 +787,8 @@ public final class CacheManager {
                             }
                         } catch (NumberFormatException ex) {
                             if ("1d".equals(s)) {
-                                ret.expires = System.currentTimeMillis() + 86400000; 
+                                // Take care of the special "1d" case
+                                ret.expires = System.currentTimeMillis() + 86400000; // 24*60*60*1000
                             } else {
                                 Log.e(LOGTAG, "exception in parseHeaders for "
                                         + "max-age:"
@@ -569,21 +800,45 @@ public final class CacheManager {
                 }
             }
         }
+
+        // According to RFC 2616 section 14.32:
+        // HTTP/1.1 caches SHOULD treat "Pragma: no-cache" as if the
+        // client had sent "Cache-Control: no-cache"
         if (NO_CACHE.equals(headers.getPragma())) {
             ret.expires = 0;
         }
+
+        // According to RFC 2616 section 13.2.4, if an expiration has not been
+        // explicitly defined a heuristic to set an expiration may be used.
         if (ret.expires == -1) {
             if (ret.httpStatusCode == 301) {
+                // If it is a permanent redirect, and it did not have an
+                // explicit cache directive, then it never expires
                 ret.expires = Long.MAX_VALUE;
             } else if (ret.httpStatusCode == 302 || ret.httpStatusCode == 307) {
+                // If it is temporary redirect, expires
                 ret.expires = 0;
             } else if (ret.lastModified == null) {
+                // When we have no last-modified, then expire the content with
+                // in 24hrs as, according to the RFC, longer time requires a
+                // warning 113 to be added to the response.
+
+                // Only add the default expiration for non-html markup. Some
+                // sites like news.google.com have no cache directives.
                 if (!mimeType.startsWith("text/html")) {
-                    ret.expires = System.currentTimeMillis() + 86400000; 
+                    ret.expires = System.currentTimeMillis() + 86400000; // 24*60*60*1000
                 } else {
+                    // Setting a expires as zero will cache the result for
+                    // forward/back nav.
                     ret.expires = 0;
                 }
             } else {
+                // If we have a last-modified value, we could use it to set the
+                // expiration. Suggestion from RFC is 10% of time since
+                // last-modified. As we are on mobile, loads are expensive,
+                // increasing this to 20%.
+
+                // 24 * 60 * 60 * 1000
                 long lastmod = System.currentTimeMillis() + 86400000;
                 try {
                     lastmod = AndroidHttpClient.parseDate(ret.lastModified);
@@ -594,10 +849,13 @@ public final class CacheManager {
                 if (difference > 0) {
                     ret.expires = System.currentTimeMillis() + difference / 5;
                 } else {
+                    // last modified is in the future, expire the content
+                    // on the last modified
                     ret.expires = lastmod;
                 }
             }
         }
+
         return ret;
     }
 
@@ -608,52 +866,56 @@ public final class CacheManager {
     	ret.taint.addTaint(url.taint);
     	return ret;
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.898 -0500", hash_original_field = "81C4610321BCE12B5287EA324FFC2568", hash_generated_field = "389C12A8617D8BCC08630F7BA010C0E2")
+
+
+    private static final String LOGTAG = "cache";
 
     
     public static class CacheResult {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.532 -0400", hash_original_field = "31BE39A7EEBA2250BD0701D4F35DD278", hash_generated_field = "6C670D782CFBD30F05F5773A857F5BD7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.937 -0500", hash_original_field = "6C670D782CFBD30F05F5773A857F5BD7", hash_generated_field = "6C670D782CFBD30F05F5773A857F5BD7")
 
         int httpStatusCode;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.532 -0400", hash_original_field = "C22384F3ABFE57BC648B6E1701C98123", hash_generated_field = "1E697977C6954C6B938DDD0BFFFD6A14")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.940 -0500", hash_original_field = "1E697977C6954C6B938DDD0BFFFD6A14", hash_generated_field = "1E697977C6954C6B938DDD0BFFFD6A14")
 
         long contentLength;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.532 -0400", hash_original_field = "09BCB72D61C0D6D1EFF5336DA6881557", hash_generated_field = "79E45F34FE773E697DAD830A242384A5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.942 -0500", hash_original_field = "79E45F34FE773E697DAD830A242384A5", hash_generated_field = "79E45F34FE773E697DAD830A242384A5")
 
         long expires;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.532 -0400", hash_original_field = "FF92BA01E9F20B21FFFAB5BCA69EAB7C", hash_generated_field = "7815601E56735F19D559F76C33613949")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.944 -0500", hash_original_field = "7815601E56735F19D559F76C33613949", hash_generated_field = "7815601E56735F19D559F76C33613949")
 
         String expiresString;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.532 -0400", hash_original_field = "854C6C62527722D75943FE3E6F81914B", hash_generated_field = "1EFCF95FF82C8B86BA07D210605AF3E7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.946 -0500", hash_original_field = "1EFCF95FF82C8B86BA07D210605AF3E7", hash_generated_field = "1EFCF95FF82C8B86BA07D210605AF3E7")
 
         String localPath;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.532 -0400", hash_original_field = "56D4CE3ADDD9E0185B21EB938EA5BC79", hash_generated_field = "EFB9BC01C22F5C81858357CDB303A6BA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.949 -0500", hash_original_field = "EFB9BC01C22F5C81858357CDB303A6BA", hash_generated_field = "EFB9BC01C22F5C81858357CDB303A6BA")
 
         String lastModified;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.532 -0400", hash_original_field = "1872ADE88F3013EDEB33DECD74A4F947", hash_generated_field = "00F25F78CD9C317A5119E7AB2B23712A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.951 -0500", hash_original_field = "00F25F78CD9C317A5119E7AB2B23712A", hash_generated_field = "00F25F78CD9C317A5119E7AB2B23712A")
 
         String etag;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.532 -0400", hash_original_field = "6DAD333C676844FE3B2A53FB6BE02D3A", hash_generated_field = "199378A118748448CD8C8A5B6EE3C464")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.953 -0500", hash_original_field = "199378A118748448CD8C8A5B6EE3C464", hash_generated_field = "199378A118748448CD8C8A5B6EE3C464")
 
         String mimeType;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.532 -0400", hash_original_field = "D5189DE027922F81005951E6EFE0EFD5", hash_generated_field = "4B5743C8685C2D199755623CB9DF3317")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.955 -0500", hash_original_field = "4B5743C8685C2D199755623CB9DF3317", hash_generated_field = "4B5743C8685C2D199755623CB9DF3317")
 
         String location;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.533 -0400", hash_original_field = "84BEA1F0FD2CE16F7E562A9F06EF03D3", hash_generated_field = "C7941A2E59CC2DF1A97D47295C728725")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.957 -0500", hash_original_field = "C7941A2E59CC2DF1A97D47295C728725", hash_generated_field = "C7941A2E59CC2DF1A97D47295C728725")
 
         String encoding;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.533 -0400", hash_original_field = "F24980AD6D5357B4F343994DF24B5BAE", hash_generated_field = "4265D6CD339375A09FEF81E5473D341C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.959 -0500", hash_original_field = "4265D6CD339375A09FEF81E5473D341C", hash_generated_field = "4265D6CD339375A09FEF81E5473D341C")
 
         String contentdisposition;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.533 -0400", hash_original_field = "DCD4373AC65082967053B1B9BEADFAFF", hash_generated_field = "C13D92B86B5B4AF70043404C40B34ACF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.961 -0500", hash_original_field = "C13D92B86B5B4AF70043404C40B34ACF", hash_generated_field = "C13D92B86B5B4AF70043404C40B34ACF")
 
         String crossDomain;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.533 -0400", hash_original_field = "F62CCA1498B2D705CDB564215019352D", hash_generated_field = "CE67F8E6759E7AA9F0B2D1B1C622FA48")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.962 -0500", hash_original_field = "CE67F8E6759E7AA9F0B2D1B1C622FA48", hash_generated_field = "CE67F8E6759E7AA9F0B2D1B1C622FA48")
 
         InputStream inStream;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.533 -0400", hash_original_field = "5E808B253DC23FAC8AF0D5A2DA6A1AA4", hash_generated_field = "430FBB760F592DD8FEBCE2866E75BC6B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.965 -0500", hash_original_field = "430FBB760F592DD8FEBCE2866E75BC6B", hash_generated_field = "430FBB760F592DD8FEBCE2866E75BC6B")
 
         OutputStream outStream;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.533 -0400", hash_original_field = "0ACAEB80BC1D14407D481471162043B3", hash_generated_field = "20194DFB6E90B876A72FB28D859C6FC5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.967 -0500", hash_original_field = "20194DFB6E90B876A72FB28D859C6FC5", hash_generated_field = "20194DFB6E90B876A72FB28D859C6FC5")
 
         File outFile;
         
@@ -663,231 +925,170 @@ public final class CacheManager {
             //Synthesized constructor
         }
 
-
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.533 -0400", hash_original_method = "DD5A2376D1CE8800456745E0EBB16914", hash_generated_method = "A00AE089E5FC612F50C11C6FFD8F4FAC")
-        public int getHttpStatusCode() {
-            int var31BE39A7EEBA2250BD0701D4F35DD278_51627811 = (httpStatusCode);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_183020327 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_183020327;
-            // ---------- Original Method ----------
-            //return httpStatusCode;
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.969 -0500", hash_original_method = "DD5A2376D1CE8800456745E0EBB16914", hash_generated_method = "05E1BDC3F930AE4663B3ADC026DD22C2")
+        
+public int getHttpStatusCode() {
+            return httpStatusCode;
         }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.972 -0500", hash_original_method = "043A311B0C55CC2C0E7ED635C15C25FD", hash_generated_method = "64E0C789E764D7FD18A4925FDDA762C8")
         
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.533 -0400", hash_original_method = "043A311B0C55CC2C0E7ED635C15C25FD", hash_generated_method = "904515DA07E051197A1594556F475770")
-        public long getContentLength() {
-            long varC22384F3ABFE57BC648B6E1701C98123_947620298 = (contentLength);
-                        long var0F5264038205EDFB1AC05FBB0E8C5E94_1044557397 = getTaintLong();
-            return var0F5264038205EDFB1AC05FBB0E8C5E94_1044557397;
-            // ---------- Original Method ----------
-            //return contentLength;
+public long getContentLength() {
+            return contentLength;
         }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.974 -0500", hash_original_method = "AD502AEBBD528088B1D12F9CAC38CB54", hash_generated_method = "4DD9751EF04928DC79E9AA1DE1356FEE")
         
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.533 -0400", hash_original_method = "AD502AEBBD528088B1D12F9CAC38CB54", hash_generated_method = "0CF5F594A9E30B5718B42CA77451E0A7")
-        public String getLocalPath() {
-String var42F44E42C4ADE0B7BBA6346ECBD9F0DB_1254059656 =             localPath;
-            var42F44E42C4ADE0B7BBA6346ECBD9F0DB_1254059656.addTaint(taint);
-            return var42F44E42C4ADE0B7BBA6346ECBD9F0DB_1254059656;
-            // ---------- Original Method ----------
-            //return localPath;
+public String getLocalPath() {
+            return localPath;
         }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.976 -0500", hash_original_method = "4C886ADD26DB3A9818AA89FF03B8C3FC", hash_generated_method = "12335BAB18601E1037EC411935B42E23")
         
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.533 -0400", hash_original_method = "4C886ADD26DB3A9818AA89FF03B8C3FC", hash_generated_method = "3C0BCBD9F165D3E80AD2D3E21FE5994B")
-        public long getExpires() {
-            long var09BCB72D61C0D6D1EFF5336DA6881557_1082070539 = (expires);
-                        long var0F5264038205EDFB1AC05FBB0E8C5E94_1804853292 = getTaintLong();
-            return var0F5264038205EDFB1AC05FBB0E8C5E94_1804853292;
-            // ---------- Original Method ----------
-            //return expires;
+public long getExpires() {
+            return expires;
         }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.979 -0500", hash_original_method = "EF25E8FEFAF784FE84A0290E2AAD114E", hash_generated_method = "187EC9566E2CC705D650305F823DDA0F")
         
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.533 -0400", hash_original_method = "EF25E8FEFAF784FE84A0290E2AAD114E", hash_generated_method = "A40C22AEF7B885B78ADCF7B323191D1B")
-        public String getExpiresString() {
-String varFFAE9AD52B61206B9686FD5ACACDF68E_559064725 =             expiresString;
-            varFFAE9AD52B61206B9686FD5ACACDF68E_559064725.addTaint(taint);
-            return varFFAE9AD52B61206B9686FD5ACACDF68E_559064725;
-            // ---------- Original Method ----------
-            //return expiresString;
+public String getExpiresString() {
+            return expiresString;
         }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.981 -0500", hash_original_method = "9BE76A44786245A5C82A387C274361E4", hash_generated_method = "720ADC2B71BAD00DC8CFB20AB813B3DD")
         
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.533 -0400", hash_original_method = "9BE76A44786245A5C82A387C274361E4", hash_generated_method = "CB0D4FB41A1159427357F157258025E0")
-        public String getLastModified() {
-String var516C2A6FCD26E1D0D88121A19963AD63_562431399 =             lastModified;
-            var516C2A6FCD26E1D0D88121A19963AD63_562431399.addTaint(taint);
-            return var516C2A6FCD26E1D0D88121A19963AD63_562431399;
-            // ---------- Original Method ----------
-            //return lastModified;
+public String getLastModified() {
+            return lastModified;
         }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.984 -0500", hash_original_method = "C916AEC2FCF91BC5DCA69D0B98CD1013", hash_generated_method = "0B3F663A0C2BFFC22DD63EF03D0F9EB2")
         
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.533 -0400", hash_original_method = "C916AEC2FCF91BC5DCA69D0B98CD1013", hash_generated_method = "52A5F95BE10F56AF1769DB2B06B805A2")
-        public String getETag() {
-String var5EC213F5B8A0028786E3BB0C8E4ED840_710264410 =             etag;
-            var5EC213F5B8A0028786E3BB0C8E4ED840_710264410.addTaint(taint);
-            return var5EC213F5B8A0028786E3BB0C8E4ED840_710264410;
-            // ---------- Original Method ----------
-            //return etag;
+public String getETag() {
+            return etag;
         }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.986 -0500", hash_original_method = "6CD12CC12FD0AC9D51B06E8F6D96C76B", hash_generated_method = "225784A00B7377228AA4645659A263CC")
         
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.533 -0400", hash_original_method = "6CD12CC12FD0AC9D51B06E8F6D96C76B", hash_generated_method = "CD53D9B6DFF2535AB30587306B79BA63")
-        public String getMimeType() {
-String var31E26FAFE73C53DECDB0A7F1CF57D932_396581949 =             mimeType;
-            var31E26FAFE73C53DECDB0A7F1CF57D932_396581949.addTaint(taint);
-            return var31E26FAFE73C53DECDB0A7F1CF57D932_396581949;
-            // ---------- Original Method ----------
-            //return mimeType;
+public String getMimeType() {
+            return mimeType;
         }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.988 -0500", hash_original_method = "958E0B7EB30F5353747022B831D2FD74", hash_generated_method = "ADF84B7CD584A3086AA314B699B00CEF")
         
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.533 -0400", hash_original_method = "958E0B7EB30F5353747022B831D2FD74", hash_generated_method = "0E62A5A6B5246CE6993C0844AF129CCF")
-        public String getLocation() {
-String var96C70FF298E5697493B0D776E54760A4_577468301 =             location;
-            var96C70FF298E5697493B0D776E54760A4_577468301.addTaint(taint);
-            return var96C70FF298E5697493B0D776E54760A4_577468301;
-            // ---------- Original Method ----------
-            //return location;
+public String getLocation() {
+            return location;
         }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.990 -0500", hash_original_method = "ECC6E581C26F132636CDCE9C9A5E5807", hash_generated_method = "AB48E45DF4593246DCA3A0BE40153818")
         
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.534 -0400", hash_original_method = "ECC6E581C26F132636CDCE9C9A5E5807", hash_generated_method = "3A5D25D8F144D54FF4D8105D8102C0E4")
-        public String getEncoding() {
-String varE424DD5E6E58EB63E1272B71B5A81966_520136986 =             encoding;
-            varE424DD5E6E58EB63E1272B71B5A81966_520136986.addTaint(taint);
-            return varE424DD5E6E58EB63E1272B71B5A81966_520136986;
-            // ---------- Original Method ----------
-            //return encoding;
+public String getEncoding() {
+            return encoding;
         }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.992 -0500", hash_original_method = "C0D4D7C4AE17A99630CF9DD48649B988", hash_generated_method = "28853BE5A577482C17B67B77E9997A22")
         
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.534 -0400", hash_original_method = "C0D4D7C4AE17A99630CF9DD48649B988", hash_generated_method = "B44BA85052866FCE0B116E375B5ED72A")
-        public String getContentDisposition() {
-String var9EB1A3307B3562ED31E222746F3AB26A_1927844883 =             contentdisposition;
-            var9EB1A3307B3562ED31E222746F3AB26A_1927844883.addTaint(taint);
-            return var9EB1A3307B3562ED31E222746F3AB26A_1927844883;
-            // ---------- Original Method ----------
-            //return contentdisposition;
+public String getContentDisposition() {
+            return contentdisposition;
         }
 
+        // For out-of-package access to the underlying streams.
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.995 -0500", hash_original_method = "3D92385EA50556C1C84606BD9B5473E5", hash_generated_method = "B57247C408127008EF13DE390580A218")
         
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.534 -0400", hash_original_method = "3D92385EA50556C1C84606BD9B5473E5", hash_generated_method = "BA5D89C947F3B736A05A62BF94C2ACDC")
-        public InputStream getInputStream() {
-InputStream varDBF027E1BB3550352743CD41C783F39D_1202635870 =             inStream;
-            varDBF027E1BB3550352743CD41C783F39D_1202635870.addTaint(taint);
-            return varDBF027E1BB3550352743CD41C783F39D_1202635870;
-            // ---------- Original Method ----------
-            //return inStream;
+public InputStream getInputStream() {
+            return inStream;
         }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.997 -0500", hash_original_method = "B77E86F2D56E5DBE0D55411B47D89551", hash_generated_method = "F74C956C913E715C9216BB2E8F5A91CB")
         
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.534 -0400", hash_original_method = "B77E86F2D56E5DBE0D55411B47D89551", hash_generated_method = "B9E3FD82430D0AE3731C390DA35F0D30")
-        public OutputStream getOutputStream() {
-OutputStream var586556CF1CDD9DA081CC8DC911E7A6E6_1341470846 =             outStream;
-            var586556CF1CDD9DA081CC8DC911E7A6E6_1341470846.addTaint(taint);
-            return var586556CF1CDD9DA081CC8DC911E7A6E6_1341470846;
-            // ---------- Original Method ----------
-            //return outStream;
+public OutputStream getOutputStream() {
+            return outStream;
         }
 
+        // These fields can be set manually.
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.999 -0500", hash_original_method = "B7D827E5771A9B377DDBAC601F400FD6", hash_generated_method = "9BE7805248AEDDB9A0770DAEE15BF6EB")
         
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.534 -0400", hash_original_method = "B7D827E5771A9B377DDBAC601F400FD6", hash_generated_method = "D50427B4C8F38D7752B90DF293596A71")
-        public void setInputStream(InputStream stream) {
+public void setInputStream(InputStream stream) {
             this.inStream = stream;
-            // ---------- Original Method ----------
-            //this.inStream = stream;
         }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:19.001 -0500", hash_original_method = "109F4EE072FF4A68A1B686347AFE92DB", hash_generated_method = "F16BDC16289B2D2161EBDE6B982650A4")
         
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.534 -0400", hash_original_method = "109F4EE072FF4A68A1B686347AFE92DB", hash_generated_method = "7E8E9F5581B45D04B721857DE5AE6090")
-        public void setEncoding(String encoding) {
+public void setEncoding(String encoding) {
             this.encoding = encoding;
-            // ---------- Original Method ----------
-            //this.encoding = encoding;
         }
 
+        /**
+         * @hide
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:19.003 -0500", hash_original_method = "24FE4CA1135DA21E8B00A4A2D819D5D2", hash_generated_method = "D0AA115BAB323123886FEA387318191B")
         
-                @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.534 -0400", hash_original_method = "24FE4CA1135DA21E8B00A4A2D819D5D2", hash_generated_method = "3969089D2E06A5D5A418BB6CA59DBC16")
-        public void setContentLength(long contentLength) {
+public void setContentLength(long contentLength) {
             this.contentLength = contentLength;
-            // ---------- Original Method ----------
-            //this.contentLength = contentLength;
         }
 
         
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.901 -0500", hash_original_field = "61FA04D7E8ADF1B0CC1869A6A1603B58", hash_generated_field = "05C239D2ED2147F03B62552EFE9672C2")
 
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.534 -0400", hash_original_field = "B66D27ECF66350D8FF23DCBA7089DE52", hash_generated_field = "389C12A8617D8BCC08630F7BA010C0E2")
-
-    private static final String LOGTAG = "cache";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.534 -0400", hash_original_field = "DE9667FB2D01D9FCE38A17C11C2E92CE", hash_generated_field = "05C239D2ED2147F03B62552EFE9672C2")
 
     static final String HEADER_KEY_IFMODIFIEDSINCE = "if-modified-since";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.534 -0400", hash_original_field = "FF42D3D52DF837140761AB93C6729C1D", hash_generated_field = "74E44E569BB9F45FBC857E67B78E6030")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.903 -0500", hash_original_field = "0DC5995A1034243BCF9D61DB5154E627", hash_generated_field = "74E44E569BB9F45FBC857E67B78E6030")
 
     static final String HEADER_KEY_IFNONEMATCH = "if-none-match";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.534 -0400", hash_original_field = "ACC53A0E7D2047A668D5472D7489EABD", hash_generated_field = "939B143BA252760FE6A2040085DA20D1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.905 -0500", hash_original_field = "E171209401D4ECEC0C7E62839C040319", hash_generated_field = "939B143BA252760FE6A2040085DA20D1")
+
 
     private static final String NO_STORE = "no-store";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.534 -0400", hash_original_field = "BD33180106684E2C1B3A35F672990B6E", hash_generated_field = "AE15FEBAB58E4F297E6B247B85A02B60")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.908 -0500", hash_original_field = "426483A1C20B927FA6B0FF7AB5830782", hash_generated_field = "AE15FEBAB58E4F297E6B247B85A02B60")
 
     private static final String NO_CACHE = "no-cache";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.534 -0400", hash_original_field = "2D4FDC7F9F47E8939FD8E883ADA3143E", hash_generated_field = "17FDE42B196035B579C4AE0481D84D7C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.910 -0500", hash_original_field = "04D54F7257534E50A6A60C8A9BACF9EA", hash_generated_field = "17FDE42B196035B579C4AE0481D84D7C")
 
     private static final String MAX_AGE = "max-age";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.534 -0400", hash_original_field = "0F1AEE29AF7773C25575936E807BF39C", hash_generated_field = "8EEB13495576D8136145DB9C601F7A1C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.912 -0500", hash_original_field = "DCCACD75283DADAE0A2418B96F29AE8F", hash_generated_field = "8EEB13495576D8136145DB9C601F7A1C")
 
     private static final String MANIFEST_MIME = "text/cache-manifest";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.534 -0400", hash_original_field = "FA5EC069DA7A5DA3BFC15DA670F2BD60", hash_generated_field = "D647BC6BC6F91B30C579B54074B4681D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.914 -0500", hash_original_field = "1B11CC923E16BC5CF98BDDE4FEC59652", hash_generated_field = "D647BC6BC6F91B30C579B54074B4681D")
+
 
     private static long CACHE_THRESHOLD = 6 * 1024 * 1024;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.534 -0400", hash_original_field = "B15C00624A8A0E135A4A36AB8A424085", hash_generated_field = "C7BC04A2C8C224B4992692522B1C9534")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.916 -0500", hash_original_field = "220EB643096147A378626A5C3B55BFC6", hash_generated_field = "C7BC04A2C8C224B4992692522B1C9534")
 
     private static long CACHE_TRIM_AMOUNT = 2 * 1024 * 1024;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.534 -0400", hash_original_field = "359FA27C4198DF5509DA713CEEDEA3C5", hash_generated_field = "955815A71A2F2BF01B99CE38A6328746")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.918 -0500", hash_original_field = "F801075601131568468FE4052F24C38F", hash_generated_field = "955815A71A2F2BF01B99CE38A6328746")
 
     static long CACHE_MAX_SIZE = (CACHE_THRESHOLD - CACHE_TRIM_AMOUNT) / 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.534 -0400", hash_original_field = "D3D807667F408C606306DFF9C9D6DEB7", hash_generated_field = "065C749395F8EEFD3FA335C42BB42982")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.921 -0500", hash_original_field = "5C14BBA06D128BE82D86D31F8DDD2320", hash_generated_field = "065C749395F8EEFD3FA335C42BB42982")
+
 
     private static boolean mDisabled;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.534 -0400", hash_original_field = "DAC8A06C1EDF9825CDAF6DFCD18A7ADC", hash_generated_field = "612C983B5C95EDDDA5D6667269D6C1BD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.923 -0500", hash_original_field = "10901FC32DF7F71F9F354DE920A6F5B1", hash_generated_field = "612C983B5C95EDDDA5D6667269D6C1BD")
 
     private static int mRefCount;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.535 -0400", hash_original_field = "1B9B1E0D0A499175F315211C756E6EF5", hash_generated_field = "AF873A801F4AD3AA4F395DD249CF70E1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.926 -0500", hash_original_field = "24CDF727303D83E32EAD6FF72A7DCF68", hash_generated_field = "64979C270AC155439BA3EAEE15A87924")
 
+    // can load the content, e.g. in a slideshow, continuously, so we need to
+    // trim the cache on a timer base too. endCacheTransaction() is called on a 
+    // timer base. We share the same timer with less frequent update.
     private static int mTrimCacheCount = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.535 -0400", hash_original_field = "5B3A69E2CCF9BF10C33DACC346FE87AD", hash_generated_field = "75DC397F63C8ACC66AC03AE377165A97")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.928 -0500", hash_original_field = "92D8D6BED5C84D2AE968361DF1D8FE21", hash_generated_field = "75DC397F63C8ACC66AC03AE377165A97")
 
     private static final int TRIM_CACHE_INTERVAL = 5;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.535 -0400", hash_original_field = "C1A3099D37A59968718DB374307A0212", hash_generated_field = "112D7378ACAC09B383FA76ADC4A7A80A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.930 -0500", hash_original_field = "D432C32D33F8FDFC876BCEEC94F4E8D4", hash_generated_field = "112D7378ACAC09B383FA76ADC4A7A80A")
+
 
     private static WebViewDatabase mDataBase;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.535 -0400", hash_original_field = "BD240BC136A080D492A6E7497D54B26C", hash_generated_field = "E5AA5969C86636B06EBA401AAD2DB4DE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.932 -0500", hash_original_field = "A463709AFBD745F5F6949AAF0F7C62A9", hash_generated_field = "E5AA5969C86636B06EBA401AAD2DB4DE")
 
     private static File mBaseDir;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.535 -0400", hash_original_field = "9482EE7290FD75B68702A7612F864D33", hash_generated_field = "485E2AE6AF65AD3F25A212E1A5B60B89")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.935 -0500", hash_original_field = "34C52DD55A41D3C2BBF7BC1909104C92", hash_generated_field = "485E2AE6AF65AD3F25A212E1A5B60B89")
 
     private static boolean mClearCacheOnInit = false;
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.526 -0400", hash_original_method = "A0B4DD756EBE924AE07FCEE8B62EE3BB", hash_generated_method = "A0B4DD756EBE924AE07FCEE8B62EE3BB")
+    public CacheManager ()
+    {
+        //Synthesized constructor
+    }
 }
 

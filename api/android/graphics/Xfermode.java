@@ -1,6 +1,8 @@
 package android.graphics;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
@@ -8,7 +10,13 @@ import droidsafe.annotations.*;
 
 
 public class Xfermode {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.217 -0400", hash_original_field = "7E2E7BFEC42581BDE25254C4BB512478", hash_generated_field = "1353DF0D3FEF59358BA81F3F4AC59875")
+
+    
+    @DSModeled(DSC.SAFE)
+    private static void finalizer(int native_instance) {
+    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.848 -0500", hash_original_field = "1353DF0D3FEF59358BA81F3F4AC59875", hash_generated_field = "1353DF0D3FEF59358BA81F3F4AC59875")
+
 
     int native_instance;
     
@@ -19,29 +27,14 @@ public class Xfermode {
         //Synthesized constructor
     }
 
-
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.217 -0400", hash_original_method = "E460B29F415CD7A40554AE473F148807", hash_generated_method = "498A22B6312114B222536B9B92E00CB2")
-    protected void finalize() throws Throwable {
-        try 
-        {
-            finalizer(native_instance);
-        } //End block
-        finally 
-        {
-            super.finalize();
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //finalizer(native_instance);
-        //} finally {
-            //super.finalize();
-        //}
-    }
-
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.842 -0500", hash_original_method = "E460B29F415CD7A40554AE473F148807", hash_generated_method = "D49DD5D2A6C2FBFC72BA771457583316")
     
-    @DSModeled(DSC.SAFE)
-    private static void finalizer(int native_instance) {
+protected void finalize() throws Throwable {
+        try {
+            finalizer(native_instance);
+        } finally {
+            super.finalize();
+        }
     }
 
     

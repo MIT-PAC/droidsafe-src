@@ -1,6 +1,8 @@
 package gov.nist.javax.sip.parser;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import gov.nist.core.Token;
 import gov.nist.javax.sip.header.ContentLanguage;
@@ -14,46 +16,53 @@ import java.text.ParseException;
 
 
 public class ContentLanguageParser extends HeaderParser {
+
+    /**
+     * Creates a new instance of ContentLanguageParser
+     * @param contentLanguage the header to parse
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:47.589 -0500", hash_original_method = "0E099EDE885EEFB21F71B8A7B980DD82", hash_generated_method = "605D64B29EFC9BDFE12926D99E84F3C2")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:37.190 -0400", hash_original_method = "0E099EDE885EEFB21F71B8A7B980DD82", hash_generated_method = "89C9A160B2C1B8A9C1BDA1A76AFA4AEF")
-    public  ContentLanguageParser(String contentLanguage) {
+public ContentLanguageParser(String contentLanguage) {
         super(contentLanguage);
-        addTaint(contentLanguage.getTaint());
-        // ---------- Original Method ----------
     }
 
+    /**
+     * Constructor
+     * @param lexer the lexer to use to parse the header
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:47.592 -0500", hash_original_method = "2896A247DEE95FE46B57871751B12905", hash_generated_method = "296F5A82687ABB6E21DC8977C8B93294")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:37.191 -0400", hash_original_method = "2896A247DEE95FE46B57871751B12905", hash_generated_method = "FD31EB8813837D78ACC5589B695912D3")
-    protected  ContentLanguageParser(Lexer lexer) {
+protected ContentLanguageParser(Lexer lexer) {
         super(lexer);
-        addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
     }
 
+    /**
+     * parse the ContentLanguageHeader String header
+     * @return SIPHeader (ContentLanguageList object)
+     * @throws SIPParseException if the message does not respect the spec.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:47.594 -0500", hash_original_method = "B9174D052A2AFCDDC5C88393A2D6AF07", hash_generated_method = "93C05A9EFE7836DF946A7635EBAB7C31")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:37.278 -0400", hash_original_method = "B9174D052A2AFCDDC5C88393A2D6AF07", hash_generated_method = "141E1B346828A07C1CB970D75D465F75")
-    public SIPHeader parse() throws ParseException {
-        if(debug)        
-        dbg_enter("ContentLanguageParser.parse");
+public SIPHeader parse() throws ParseException {
+
+        if (debug)
+            dbg_enter("ContentLanguageParser.parse");
         ContentLanguageList list = new ContentLanguageList();
-        try 
-        {
+
+        try {
             headerName(TokenTypes.CONTENT_LANGUAGE);
-            while
-(lexer.lookAhead(0) != '\n')            
-            {
+
+            while (lexer.lookAhead(0) != '\n') {
                 this.lexer.SPorHT();
                 this.lexer.match(TokenTypes.ID);
+
                 Token token = lexer.getNextToken();
                 ContentLanguage cl = new ContentLanguage( token.getTokenValue() );
                 this.lexer.SPorHT();
                 list.add(cl);
-                while
-(lexer.lookAhead(0) == ',')                
-                {
+
+                while (lexer.lookAhead(0) == ',') {
                     this.lexer.match(',');
                     this.lexer.SPorHT();
                     this.lexer.match(TokenTypes.ID);
@@ -62,25 +71,16 @@ public class ContentLanguageParser extends HeaderParser {
                     cl = new ContentLanguage( token.getTokenValue() );
                     this.lexer.SPorHT();
                     list.add(cl);
-                } //End block
-            } //End block
-SIPHeader varED12C351C2E8CA4F85F097DDC7E77B4D_412900731 =             list;
-            varED12C351C2E8CA4F85F097DDC7E77B4D_412900731.addTaint(taint);
-            return varED12C351C2E8CA4F85F097DDC7E77B4D_412900731;
-        } //End block
-        catch (ParseException ex)
-        {
-            java.text.ParseException varB8C80F72F95BF6A850D07F4EC5726C09_615154651 = createParseException(ex.getMessage());
-            varB8C80F72F95BF6A850D07F4EC5726C09_615154651.addTaint(taint);
-            throw varB8C80F72F95BF6A850D07F4EC5726C09_615154651;
-        } //End block
-        finally 
-        {
-            if(debug)            
-            dbg_leave("ContentLanguageParser.parse");
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                }
+            }
+
+            return list;
+        } catch (ParseException ex) {
+            throw createParseException(ex.getMessage());
+        } finally {
+            if (debug)
+                dbg_leave("ContentLanguageParser.parse");
+        }
     }
 
     

@@ -1,6 +1,8 @@
 package gov.nist.core;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.Serializable;
 import java.lang.reflect.Field;
@@ -16,56 +18,10 @@ import java.util.Set;
 
 
 public abstract class GenericObject implements Serializable, Cloneable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.204 -0400", hash_original_field = "449072E30B43D04B744F22522A880818", hash_generated_field = "3BB4EF50B1D217FA88F0841635612381")
 
-    protected int indentation;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.204 -0400", hash_original_field = "494C9560B4D085454F43F2CC050768A4", hash_generated_field = "9E5739E35654F3700B4DC02E1276C03E")
-
-    protected String stringRepresentation;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.204 -0400", hash_original_field = "8A586A72E3C2C66C051718676CE8506A", hash_generated_field = "1FBB25CEF289694DDD0EE719A8EBD93D")
-
-    protected Match matchExpression;
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.773 -0500", hash_original_method = "3ADC87FD7E0CE83F45EDE92BAF50BA02", hash_generated_method = "3AAAF751889C9C699791AFC88073E877")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.205 -0400", hash_original_method = "26BB6C9083355DA218DE35B50B1395A1", hash_generated_method = "A848942BE08E69D42E88C40CE7E5C52A")
-    protected  GenericObject() {
-        indentation = 0;
-        stringRepresentation = "";
-        // ---------- Original Method ----------
-        //indentation = 0;
-        //stringRepresentation = "";
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.205 -0400", hash_original_method = "D09804B85BA352DF07D45D843F3B447E", hash_generated_method = "B6C0CB6945BF0965DAF2D17F964E8B96")
-    public void setMatcher(Match matchExpression) {
-        if(matchExpression == null)        
-        {
-        IllegalArgumentException var053881D20B3B8151BB5016293D40B619_463234664 = new IllegalArgumentException("null arg!");
-        var053881D20B3B8151BB5016293D40B619_463234664.addTaint(taint);
-        throw var053881D20B3B8151BB5016293D40B619_463234664;
-        }
-        this.matchExpression = matchExpression;
-        // ---------- Original Method ----------
-        //if (matchExpression == null)
-            //throw new IllegalArgumentException("null arg!");
-        //this.matchExpression = matchExpression;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.205 -0400", hash_original_method = "5F1EBA3A7EC51605C965562331E40E61", hash_generated_method = "E3DA26E26142AE75AB376CC9FC37D32B")
-    public Match getMatcher() {
-Match var07D3D711528CBAE19CEE0BCA651B1D5B_1467624633 =         matchExpression;
-        var07D3D711528CBAE19CEE0BCA651B1D5B_1467624633.addTaint(taint);
-        return var07D3D711528CBAE19CEE0BCA651B1D5B_1467624633;
-        // ---------- Original Method ----------
-        //return matchExpression;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    public static Class<?> getClassFromName(String className) {
+public static Class<?> getClassFromName(String className) {
         try {
             return Class.forName(className);
         } catch (Exception ex) {
@@ -74,15 +30,24 @@ Match var07D3D711528CBAE19CEE0BCA651B1D5B_1467624633 =         matchExpression;
         }
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.776 -0500", hash_original_method = "EF8AFE13396C3D5BB8999D24EBF9F5DC", hash_generated_method = "D969C44A303A70CE8E5715D125680212")
     
-    @DSModeled(DSC.SAFE)
-    public static boolean isMySubclass(Class<?> other) {
-        return GenericObject.class.isAssignableFrom(other);
+public static boolean isMySubclass(Class<?> other) {
+
+            return GenericObject.class.isAssignableFrom(other);
+
     }
 
+    /** Clones the given object.
+     *  If the object is a wrapped type, an array, a GenericObject
+     *  or a GenericObjectList, it is cast to the appropriate type
+     *  and the clone() method is invoked. Else if the object implements
+     *  Cloneable, reflection is used to discover and invoke
+     *  clone() method. Otherwise, the original object is returned.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.779 -0500", hash_original_method = "919C8056B91C479DBF440A03C3E884A4", hash_generated_method = "35DD9E899C5E71D8C4E8252A016940D1")
     
-    @DSModeled(DSC.SAFE)
-    public static Object makeClone(Object obj) {
+public static Object makeClone(Object obj) {
         if (obj == null)
             throw new NullPointerException("null obj!");
         Class<?> c = obj.getClass();
@@ -116,6 +81,8 @@ Match var07D3D711528CBAE19CEE0BCA651B1D5B_1467624633 =         matchExpression;
         else if (GenericObjectList.class.isAssignableFrom (c))
             clone_obj = ((GenericObjectList) obj).clone();
         else if (Cloneable.class.isAssignableFrom (c)) {
+            // If a clone method exists for the object, then
+            // invoke it
             try {
                 Method meth = c.getMethod("clone", (Class[]) null);
                 clone_obj = meth.invoke(obj,(Object[]) null);
@@ -129,894 +96,687 @@ Match var07D3D711528CBAE19CEE0BCA651B1D5B_1467624633 =         matchExpression;
         }
         return clone_obj;
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.697 -0500", hash_original_field = "E9205B48E353C2B1F4B96A83A943F3A0", hash_generated_field = "02EC968BA435084EE7ADC81279AB56D8")
 
+    protected static final String SEMICOLON = Separators.SEMICOLON;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.699 -0500", hash_original_field = "D77BD2C56F0ED05DF3619D69EC5649F2", hash_generated_field = "6B6A3C0E5AAA12BC4230EF790A3C2476")
+
+    protected static final String COLON = Separators.COLON;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.702 -0500", hash_original_field = "5201C3D18F11737A5DD3460775E883ED", hash_generated_field = "2C4A8D03DDB954D51E978CD8F8E2DEA4")
+
+    protected static final String COMMA = Separators.COMMA;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.705 -0500", hash_original_field = "0C18FFF75A726C363F0DB6D598A8E1AD", hash_generated_field = "8A50D691E37AC9254B7ED2ABCE4AC6D2")
+
+    protected static final String SLASH = Separators.SLASH;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.707 -0500", hash_original_field = "0F465C1A1C5914A9212A6C1DC851E9B7", hash_generated_field = "0CF03E9FD9212362B2D202A36124051A")
+
+    protected static final String SP = Separators.SP;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.710 -0500", hash_original_field = "2DB7282116447C711C852E29F65C28C9", hash_generated_field = "AD22F298E6FF482BE0BD697358901610")
+
+    protected static final String EQUALS = Separators.EQUALS;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.713 -0500", hash_original_field = "16A0EB1F3341F8778CCE9E8B90D6DDE3", hash_generated_field = "2A5C8D44567A1C68D53F48B0CD1AF72E")
+
+    protected static final String STAR = Separators.STAR;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.715 -0500", hash_original_field = "535F896CBCDC67C062AECC6B8D97F82B", hash_generated_field = "99D8C532EFD2EC03350A98B152CEDB7F")
+
+    protected static final String NEWLINE = Separators.NEWLINE;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.718 -0500", hash_original_field = "CE823ACDDD84129449B4E21BF2FF83A6", hash_generated_field = "5E44FE20A9580182CC4CE4836B87D2F2")
+
+    protected static final String RETURN = Separators.RETURN;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.720 -0500", hash_original_field = "D15F62FC9A8937755EA0BA75161B9A7F", hash_generated_field = "03472463E2EA98D819ECAC54647D9EEB")
+
+    protected static final String LESS_THAN = Separators.LESS_THAN;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.723 -0500", hash_original_field = "3D37A32BEC186FF520FFD38791BDF5EF", hash_generated_field = "EADC9D4C7F8A41AC9253B4399DD9CC22")
+
+    protected static final String GREATER_THAN = Separators.GREATER_THAN;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.726 -0500", hash_original_field = "DAEDC9E484E5315814F455409686FE3F", hash_generated_field = "94E22BF70767B9E5F90C8BEFB48DFB31")
+
+    protected static final String AT = Separators.AT;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.729 -0500", hash_original_field = "09B222C8B655C77BFC9278CC42ED844D", hash_generated_field = "C68E946646D329E00948C391567E8245")
+
+    protected static final String DOT = Separators.DOT;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.731 -0500", hash_original_field = "E6FD69D5C38CE5CD44E0697BF8DED97D", hash_generated_field = "C6F6498E0BEB8E9B929D5FF0691C60C5")
+
+    protected static final String QUESTION = Separators.QUESTION;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.735 -0500", hash_original_field = "6CCD01656CADA37CEC29F4F620E7B103", hash_generated_field = "3931FF01A0452F4B915432DFE1D8342B")
+
+    protected static final String POUND = Separators.POUND;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.737 -0500", hash_original_field = "3BD4DCA47A0CF037479AC0875C12BF09", hash_generated_field = "A7C8E60A9ACCF4FC95E42A6FE3CBE98A")
+
+    protected static final String AND = Separators.AND;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.740 -0500", hash_original_field = "C0F5D3F991B86901594C17F73AE21724", hash_generated_field = "96B1BA6A04896DF507DBF5F6007D53FF")
+
+    protected static final String LPAREN = Separators.LPAREN;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.742 -0500", hash_original_field = "EBA28B5ABEF9F9C40189523E5809ACE7", hash_generated_field = "04E1EDA33DBBA7B9CD0B5320DA6E2B15")
+
+    protected static final String RPAREN = Separators.RPAREN;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.745 -0500", hash_original_field = "A3D0DB312B6F76C52BC72B77300EB77C", hash_generated_field = "60970C4DF02E2922FFB2BB3FCBF1CC4C")
+
+    protected static final String DOUBLE_QUOTE = Separators.DOUBLE_QUOTE;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.748 -0500", hash_original_field = "A012C2C89C3BC94350D794BCFAA61AC6", hash_generated_field = "36D2B8942300A11E9A202D488BEEC708")
+
+    protected static final String QUOTE = Separators.QUOTE;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.750 -0500", hash_original_field = "46C5ABFAF9FA93391F615FBAF29CAF5D", hash_generated_field = "EE0F746E0ADCCF78C293F0BC27A024C1")
+
+    protected static final String HT = Separators.HT;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.753 -0500", hash_original_field = "CFBF7772290813FB9E7FE633CE7D8D3B", hash_generated_field = "E525B1F947054DAAB71F0D7018A0312F")
+
+    protected static final String PERCENT = Separators.PERCENT;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.756 -0500", hash_original_field = "46B4BE6B9B17663D91BE0CBD6FC895ED", hash_generated_field = "23DD3DB933D01AADE0B2C40AA464AC9C")
+
+
+    protected static final Set<Class<?>> immutableClasses = new HashSet<Class<?>> (10);
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.758 -0500", hash_original_field = "7F6677E0154CDB5B80D151A3901979D8", hash_generated_field = "06A0F0FA7C3AA2D1A0C9419E5DAE1A94")
+
+    static final String[] immutableClassNames ={
+        "String", "Character",
+        "Boolean", "Byte", "Short", "Integer", "Long",
+        "Float", "Double"
+        };
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.760 -0500", hash_original_field = "286452610CAD998336F0009181E4D242", hash_generated_field = "3BB4EF50B1D217FA88F0841635612381")
+
+
+    protected int indentation;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.762 -0500", hash_original_field = "D8755CDD7F030BEFEB89CB6F60C5B2A3", hash_generated_field = "9E5739E35654F3700B4DC02E1276C03E")
+
+    protected String stringRepresentation;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.765 -0500", hash_original_field = "2A1F5BE09411F9A2D63C355A93433EB0", hash_generated_field = "1FBB25CEF289694DDD0EE719A8EBD93D")
+
+    protected Match matchExpression;
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.789 -0500", hash_original_method = "26BB6C9083355DA218DE35B50B1395A1", hash_generated_method = "1EDC7F93E170B3C09DA6CE0C48C88764")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.207 -0400", hash_original_method = "2321A1A51988B1008E8A21E8D40DF48D", hash_generated_method = "8677BC493AFC2719C7B7D87DA052FBA2")
-    public Object clone() {
-        try 
-        {
-Object var46F3A0D86742C1D6E099C2B166941A33_1850218895 =             super.clone();
-            var46F3A0D86742C1D6E099C2B166941A33_1850218895.addTaint(taint);
-            return var46F3A0D86742C1D6E099C2B166941A33_1850218895;
-        } //End block
-        catch (CloneNotSupportedException e)
-        {
-            RuntimeException var1A3D561C49733FF4B8E39ED1A5C8FCCD_1152641029 = new RuntimeException("Internal error");
-            var1A3D561C49733FF4B8E39ED1A5C8FCCD_1152641029.addTaint(taint);
-            throw var1A3D561C49733FF4B8E39ED1A5C8FCCD_1152641029;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return super.clone();
-        //} catch (CloneNotSupportedException e) {
-            //throw new RuntimeException("Internal error");
-        //}
+protected GenericObject() {
+        indentation = 0;
+        stringRepresentation = "";
     }
 
+    /** Set the  pattern matcher. To match on the
+     * field of a sip message, set the match expression in the match template
+     * and invoke the match function. This useful because
+     * SIP headers and parameters may appear in different orders and are not
+     * necessarily in canonical form. This makes it hard to write a pattern
+     * matcher that relies on regular expressions alone.
+     * Thus we rely on the following  strategy i.e. To do pattern matching on
+     * an incoming message, first parse it, and then construct a match template,
+     * filling in the fields that you want to
+     * match. The rules for matching are: A null object matches wild card -
+     * that is a match template of null matches any parsed SIP object.
+     * To match with any subfield, set the match template on a template object
+     * of the same type and invoke the match interface.
+     * Regular expressions matching implements the gov.nist.sip.Match interface
+     * that can be done using the Jakarta regexp package for example.
+     * package included herein. This can be used to implement the Match interface
+     * <a href=http://www.apache.org> See the APACHE website for documents </a>
+     *
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.767 -0500", hash_original_method = "D09804B85BA352DF07D45D843F3B447E", hash_generated_method = "2035B4D23EAE70A6A3BFB7E4AD1AF311")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.208 -0400", hash_original_method = "1F4053FE4D1137EC6D445870C27D5323", hash_generated_method = "2207A19879527D3FC0B65A123B147E34")
-    public void merge(Object mergeObject) {
-        addTaint(mergeObject.getTaint());
-        if(mergeObject == null)        
-        return;
-        if(!mergeObject.getClass().equals(this.getClass()))        
-        {
-        IllegalArgumentException var161E6816678ACACD1EE7A24B33F68583_1693067709 = new IllegalArgumentException("Bad override object");
-        var161E6816678ACACD1EE7A24B33F68583_1693067709.addTaint(taint);
-        throw var161E6816678ACACD1EE7A24B33F68583_1693067709;
+public void setMatcher(Match matchExpression) {
+        if (matchExpression == null)
+            throw new IllegalArgumentException("null arg!");
+        this.matchExpression = matchExpression;
+    }
+
+    /** Return the match expression.
+     *@return the match expression that has previously been set.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.770 -0500", hash_original_method = "5F1EBA3A7EC51605C965562331E40E61", hash_generated_method = "2A30BE8BED95C7D68E8EE546CC02F42B")
+    
+public Match getMatcher() {
+        return matchExpression;
+    }
+
+    /** Clones this object.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.782 -0500", hash_original_method = "2321A1A51988B1008E8A21E8D40DF48D", hash_generated_method = "CC1B934CC7175FE37AA368A3286E9D4F")
+    
+public Object clone() {
+        try {
+            return super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new RuntimeException("Internal error");
         }
+    }
+    /**
+     * Recursively override the fields of this object with the fields
+     * of a new object. This is useful when you want to genrate a template
+     * and override the fields of an incoming SIPMessage with another
+     * SIP message that you have already generated.
+     *
+     * @param mergeObject is the replacement object.  The override
+     * obect must be of the same class as this object.
+     * Set any fields that you do not want to override as null in the
+     * mergeOject object.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.786 -0500", hash_original_method = "1F4053FE4D1137EC6D445870C27D5323", hash_generated_method = "86DC407EB44562B96E61143973E33085")
+    
+public void merge(Object mergeObject) {
+        // Base case.
+        if (mergeObject == null)
+            return;
+
+        if (!mergeObject.getClass().equals(this.getClass()))
+            throw new IllegalArgumentException("Bad override object");
+                        
         Class<?> myclass = this.getClass();
-        while
-(true)        
-        {
+        while (true) {
             Field[] fields = myclass.getDeclaredFields();
-for(int i = 0;i < fields.length;i++)
-            {
+            for (int i = 0; i < fields.length; i++) {
                 Field f = fields[i];
                 int modifier = f.getModifiers();
-                if(Modifier.isPrivate(modifier))                
-                {
+                if (Modifier.isPrivate(modifier)) {
                     continue;
-                } //End block
-                else
-                if(Modifier.isStatic(modifier))                
-                {
+                } else if (Modifier.isStatic(modifier)) {
                     continue;
-                } //End block
-                else
-                if(Modifier.isInterface(modifier))                
-                {
+                } else if (Modifier.isInterface(modifier)) {
                     continue;
-                } //End block
+                }
                 Class<?> fieldType = f.getType();
                 String fname = fieldType.toString();
-                try 
-                {
-                    if(fieldType.isPrimitive())                    
-                    {
-                        if(fname.compareTo("int") == 0)                        
-                        {
+                try {
+                    // Primitive fields are printed with type: value
+                    if (fieldType.isPrimitive()) {
+                        if (fname.compareTo("int") == 0) {
                             int intfield = f.getInt(mergeObject);
                             f.setInt(this, intfield);
-                        } //End block
-                        else
-                        if(fname.compareTo("short") == 0)                        
-                        {
+                        } else if (fname.compareTo("short") == 0) {
                             short shortField = f.getShort(mergeObject);
                             f.setShort(this, shortField);
-                        } //End block
-                        else
-                        if(fname.compareTo("char") == 0)                        
-                        {
+                        } else if (fname.compareTo("char") == 0) {
                             char charField = f.getChar(mergeObject);
                             f.setChar(this, charField);
-                        } //End block
-                        else
-                        if(fname.compareTo("long") == 0)                        
-                        {
+                        } else if (fname.compareTo("long") == 0) {
                             long longField = f.getLong(mergeObject);
                             f.setLong(this, longField);
-                        } //End block
-                        else
-                        if(fname.compareTo("boolean") == 0)                        
-                        {
+                        } else if (fname.compareTo("boolean") == 0) {
                             boolean booleanField = f.getBoolean(mergeObject);
                             f.setBoolean(this, booleanField);
-                        } //End block
-                        else
-                        if(fname.compareTo("double") == 0)                        
-                        {
+                        } else if (fname.compareTo("double") == 0) {
                             double doubleField = f.getDouble(mergeObject);
                             f.setDouble(this, doubleField);
-                        } //End block
-                        else
-                        if(fname.compareTo("float") == 0)                        
-                        {
+                        } else if (fname.compareTo("float") == 0) {
                             float floatField = f.getFloat(mergeObject);
                             f.setFloat(this, floatField);
-                        } //End block
-                    } //End block
-                    else
-                    {
+                        }
+                    } else {
                         Object obj = f.get(this);
                         Object mobj = f.get(mergeObject);
-                        if(mobj == null)                        
-                        continue;
-                        if(obj == null)                        
-                        {
+                        if (mobj == null)
+                            continue;
+                        if (obj == null) {
                             f.set(this, mobj);
                             continue;
-                        } //End block
-                        if(obj instanceof GenericObject)                        
-                        {
+                        }
+                        if (obj instanceof GenericObject) {
                             GenericObject gobj = (GenericObject) obj;
                             gobj.merge(mobj);
-                        } //End block
-                        else
-                        {
+                        } else {
                             f.set(this, mobj);
-                        } //End block
-                    } //End block
-                } //End block
-                catch (IllegalAccessException ex1)
-                {
+                        }
+                    }
+                } catch (IllegalAccessException ex1) {
                     ex1.printStackTrace();
-                    continue;
-                } //End block
-            } //End block
+                    continue; // we are accessing a private field...
+                }
+            }
             myclass = myclass.getSuperclass();
-            if(myclass.equals(GenericObject.class))            
-            break;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            if (myclass.equals(GenericObject.class))
+                break;
+        }
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.791 -0500", hash_original_method = "F608522BE2D902628C253AAC05B9941D", hash_generated_method = "BDD6C135FB07D8AC261FA4D2B4D2AE55")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.210 -0400", hash_original_method = "F608522BE2D902628C253AAC05B9941D", hash_generated_method = "4EDFD4E6683C15E57CADE48EEBF2666D")
-    protected String getIndentation() {
-        char [] chars = new char [indentation];
-        java.util.Arrays.fill (chars, ' ');
-String var300818D7D4F603E5F4346D4E090224B6_976494987 =         new String (chars);
-        var300818D7D4F603E5F4346D4E090224B6_976494987.addTaint(taint);
-        return var300818D7D4F603E5F4346D4E090224B6_976494987;
-        // ---------- Original Method ----------
-        //char [] chars = new char [indentation];
-        //java.util.Arrays.fill (chars, ' ');
-        //return new String (chars);
+protected String getIndentation() {
+    char [] chars = new char [indentation];
+    java.util.Arrays.fill (chars, ' ');
+    return new String (chars);
     }
 
+    /**
+     * Add a new string to the accumulated string representation.
+     */
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.794 -0500", hash_original_method = "81374D32EA999C5E19458011FA3994BB", hash_generated_method = "6E75796BB452A27E6E1A9C6465DC6B9F")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.211 -0400", hash_original_method = "81374D32EA999C5E19458011FA3994BB", hash_generated_method = "3B969F4AD69B24CD6387D27B5FD9EBE4")
-    protected void sprint(String a) {
-        if(a == null)        
-        {
+protected void sprint(String a) {
+        if (a == null) {
             stringRepresentation += getIndentation();
             stringRepresentation += "<null>\n";
             return;
-        } //End block
-        if(a.compareTo("}") == 0 || a.compareTo("]") == 0)        
-        {
+        }
+        if (a.compareTo("}") == 0 || a.compareTo("]") == 0) {
             indentation--;
-        } //End block
+        }
         stringRepresentation += getIndentation();
         stringRepresentation += a;
         stringRepresentation += "\n";
-        if(a.compareTo("{") == 0 || a.compareTo("[") == 0)        
-        {
+        if (a.compareTo("{") == 0 || a.compareTo("[") == 0) {
             indentation++;
-        } //End block
-        // ---------- Original Method ----------
-        //if (a == null) {
-            //stringRepresentation += getIndentation();
-            //stringRepresentation += "<null>\n";
-            //return;
-        //}
-        //if (a.compareTo("}") == 0 || a.compareTo("]") == 0) {
-            //indentation--;
-        //}
-        //stringRepresentation += getIndentation();
-        //stringRepresentation += a;
-        //stringRepresentation += "\n";
-        //if (a.compareTo("{") == 0 || a.compareTo("[") == 0) {
-            //indentation++;
-        //}
+        }
+
     }
 
+    /**
+     * Pretty printing function accumulator for objects.
+     */
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.796 -0500", hash_original_method = "453FE126FB96D6280FF2B67B25D884AF", hash_generated_method = "8CA4F8D911584E4411A35AF482C64908")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.211 -0400", hash_original_method = "453FE126FB96D6280FF2B67B25D884AF", hash_generated_method = "06341DBEBC0D6629FECF2575E850896A")
-    protected void sprint(Object o) {
-        addTaint(o.getTaint());
+protected void sprint(Object o) {
         sprint(o.toString());
-        // ---------- Original Method ----------
-        //sprint(o.toString());
     }
 
+    /**
+     * Pretty printing accumulator function for ints
+     */
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.799 -0500", hash_original_method = "EF724337BA21340D79134B1646FA7D50", hash_generated_method = "2332956D49AF497FE8FA51B253C97FFC")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.212 -0400", hash_original_method = "EF724337BA21340D79134B1646FA7D50", hash_generated_method = "BC7FC853FF8588B45A11A1034385B98D")
-    protected void sprint(int intField) {
-        addTaint(intField);
+protected void sprint(int intField) {
         sprint(String.valueOf(intField));
-        // ---------- Original Method ----------
-        //sprint(String.valueOf(intField));
     }
 
+    /**
+     * Pretty printing accumulator function for shorts
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.801 -0500", hash_original_method = "8A8752611967BFFBE38D675256F01214", hash_generated_method = "29594FA8A3C6E9165DB16FC4ED689F89")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.212 -0400", hash_original_method = "8A8752611967BFFBE38D675256F01214", hash_generated_method = "4104706924DF1E70C8DBF1013A7F0630")
-    protected void sprint(short shortField) {
-        addTaint(shortField);
+protected void sprint(short shortField) {
         sprint(String.valueOf(shortField));
-        // ---------- Original Method ----------
-        //sprint(String.valueOf(shortField));
     }
 
+    /**
+     * Pretty printing accumulator function for chars
+     */
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.804 -0500", hash_original_method = "B9E7539CD6E988936CBC2F41DE2D2255", hash_generated_method = "5B38337A863313934C1A55AD7975759E")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.212 -0400", hash_original_method = "B9E7539CD6E988936CBC2F41DE2D2255", hash_generated_method = "D9F479BFF3B57A5A7BFD57802F7905B5")
-    protected void sprint(char charField) {
-        addTaint(charField);
+protected void sprint(char charField) {
         sprint(String.valueOf(charField));
-        // ---------- Original Method ----------
-        //sprint(String.valueOf(charField));
+
     }
 
+    /**
+     * Pretty printing accumulator function for longs
+     */
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.806 -0500", hash_original_method = "CC6905368951D9D7C183C56D69A53B5E", hash_generated_method = "CAEDC2A91616CEA25C5EA2B2577D48A7")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.212 -0400", hash_original_method = "CC6905368951D9D7C183C56D69A53B5E", hash_generated_method = "F4ED9CD6CADF6186D2769FB4F65FAB6D")
-    protected void sprint(long longField) {
-        addTaint(longField);
+protected void sprint(long longField) {
         sprint(String.valueOf(longField));
-        // ---------- Original Method ----------
-        //sprint(String.valueOf(longField));
     }
 
+    /**
+     * Pretty printing accumulator function for booleans
+     */
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.808 -0500", hash_original_method = "27E91C5243CD6D4BB691664DB4C3BC19", hash_generated_method = "8791B26AC5CC9846B3D9143CC0A866BB")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.212 -0400", hash_original_method = "27E91C5243CD6D4BB691664DB4C3BC19", hash_generated_method = "9F7D24B2A77CAF13081398C8320E3F2E")
-    protected void sprint(boolean booleanField) {
-        addTaint(booleanField);
+protected void sprint(boolean booleanField) {
         sprint(String.valueOf(booleanField));
-        // ---------- Original Method ----------
-        //sprint(String.valueOf(booleanField));
     }
 
+    /**
+     * Pretty printing accumulator function for doubles
+     */
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.810 -0500", hash_original_method = "A8149AFA8BAA8D148E9A9CE1C6489F0C", hash_generated_method = "89DA97485B69D7DB8DB5557CA17A7984")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.213 -0400", hash_original_method = "A8149AFA8BAA8D148E9A9CE1C6489F0C", hash_generated_method = "BC120763B7CB24B86251205E260AE92F")
-    protected void sprint(double doubleField) {
-        addTaint(doubleField);
+protected void sprint(double doubleField) {
         sprint(String.valueOf(doubleField));
-        // ---------- Original Method ----------
-        //sprint(String.valueOf(doubleField));
     }
 
+    /**
+     * Pretty printing accumulator function for floats
+     */
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.813 -0500", hash_original_method = "96C3F949D4FB0E545745C5388D6DC08E", hash_generated_method = "F589F19994F3A748881B57DF74381FDF")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.213 -0400", hash_original_method = "96C3F949D4FB0E545745C5388D6DC08E", hash_generated_method = "0239E35134B29E8AF1A3CFEDC8C3EA80")
-    protected void sprint(float floatField) {
-        addTaint(floatField);
+protected void sprint(float floatField) {
         sprint(String.valueOf(floatField));
-        // ---------- Original Method ----------
-        //sprint(String.valueOf(floatField));
     }
 
+    /**
+     * Debug printing function.
+     */
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.816 -0500", hash_original_method = "C3665E5B2DC148B3D9AC2D1614738627", hash_generated_method = "DC22718455CD4E87BAD65DB81258DE08")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.213 -0400", hash_original_method = "C3665E5B2DC148B3D9AC2D1614738627", hash_generated_method = "CC9960C463BA8ADB2C2953D0609F3E40")
-    protected void dbgPrint() {
+protected void dbgPrint() {
         Debug.println(debugDump());
-        // ---------- Original Method ----------
-        //Debug.println(debugDump());
     }
 
+    /**
+     * Debug printing function.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.819 -0500", hash_original_method = "F3C9E7E4BCD0D7ECC989FFC8CBCF37DF", hash_generated_method = "F59F8E3ABDC9B0D727646709B1D5D654")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.213 -0400", hash_original_method = "F3C9E7E4BCD0D7ECC989FFC8CBCF37DF", hash_generated_method = "CCBC14C6B0E34F3773483F3DFEB683B2")
-    protected void dbgPrint(String s) {
-        addTaint(s.getTaint());
+protected void dbgPrint(String s) {
         Debug.println(s);
-        // ---------- Original Method ----------
-        //Debug.println(s);
     }
 
+    /**
+     * An introspection based equality predicate for GenericObjects.
+     *@param that is the other object to test against.
+     *@return true if the objects are euqal and false otherwise
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.823 -0500", hash_original_method = "B5B25EA3AF1891601BFD267279427EFB", hash_generated_method = "44AC996741CE1A8293D5C87B547ABF0A")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.215 -0400", hash_original_method = "B5B25EA3AF1891601BFD267279427EFB", hash_generated_method = "87728D3D64E4CBA5DFBCCB634D8354AE")
-    public boolean equals(Object that) {
-        addTaint(that.getTaint());
-        if(that == null)        
-        {
-        boolean var68934A3E9455FA72420237EB05902327_1998674743 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_660018657 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_660018657;
-        }
-        if(!this.getClass().equals(that.getClass()))        
-        {
-        boolean var68934A3E9455FA72420237EB05902327_1470545270 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1962012325 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1962012325;
-        }
+public boolean equals(Object that) {
+        if ( that == null ) return false;
+        if (!this.getClass().equals(that.getClass()))
+            return false;
         Class<?> myclass = this.getClass();
         Class<?> hisclass = that.getClass();
-        while
-(true)        
-        {
+        while (true) {
             Field[] fields = myclass.getDeclaredFields();
             Field[] hisfields = hisclass.getDeclaredFields();
-for(int i = 0;i < fields.length;i++)
-            {
+            for (int i = 0; i < fields.length; i++) {
                 Field f = fields[i];
                 Field g = hisfields[i];
+                // Only print protected and public members.
                 int modifier = f.getModifiers();
-                if((modifier & Modifier.PRIVATE) == Modifier.PRIVATE)                
-                continue;
+                if ((modifier & Modifier.PRIVATE) == Modifier.PRIVATE)
+                    continue;
                 Class<?> fieldType = f.getType();
                 String fieldName = f.getName();
-                if(fieldName.compareTo("stringRepresentation") == 0)                
-                {
+                if (fieldName.compareTo("stringRepresentation") == 0) {
                     continue;
-                } //End block
-                if(fieldName.compareTo("indentation") == 0)                
-                {
+                }
+                if (fieldName.compareTo("indentation") == 0) {
                     continue;
-                } //End block
-                try 
-                {
-                    if(fieldType.isPrimitive())                    
-                    {
+                }
+                try {
+                    // Primitive fields are printed with type: value
+                    if (fieldType.isPrimitive()) {
                         String fname = fieldType.toString();
-                        if(fname.compareTo("int") == 0)                        
-                        {
-                            if(f.getInt(this) != g.getInt(that))                            
-                            {
-                            boolean var68934A3E9455FA72420237EB05902327_1572404680 = (false);
-                                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_901917089 = getTaintBoolean();
-                            return var84E2C64F38F78BA3EA5C905AB5A2DA27_901917089;
-                            }
-                        } //End block
-                        else
-                        if(fname.compareTo("short") == 0)                        
-                        {
-                            if(f.getShort(this) != g.getShort(that))                            
-                            {
-                            boolean var68934A3E9455FA72420237EB05902327_838749403 = (false);
-                                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1992382142 = getTaintBoolean();
-                            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1992382142;
-                            }
-                        } //End block
-                        else
-                        if(fname.compareTo("char") == 0)                        
-                        {
-                            if(f.getChar(this) != g.getChar(that))                            
-                            {
-                            boolean var68934A3E9455FA72420237EB05902327_269407931 = (false);
-                                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_284171385 = getTaintBoolean();
-                            return var84E2C64F38F78BA3EA5C905AB5A2DA27_284171385;
-                            }
-                        } //End block
-                        else
-                        if(fname.compareTo("long") == 0)                        
-                        {
-                            if(f.getLong(this) != g.getLong(that))                            
-                            {
-                            boolean var68934A3E9455FA72420237EB05902327_1705493202 = (false);
-                                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1907077176 = getTaintBoolean();
-                            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1907077176;
-                            }
-                        } //End block
-                        else
-                        if(fname.compareTo("boolean") == 0)                        
-                        {
-                            if(f.getBoolean(this) != g.getBoolean(that))                            
-                            {
-                            boolean var68934A3E9455FA72420237EB05902327_135408186 = (false);
-                                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1468632344 = getTaintBoolean();
-                            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1468632344;
-                            }
-                        } //End block
-                        else
-                        if(fname.compareTo("double") == 0)                        
-                        {
-                            if(f.getDouble(this) != g.getDouble(that))                            
-                            {
-                            boolean var68934A3E9455FA72420237EB05902327_1261374085 = (false);
-                                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_133155274 = getTaintBoolean();
-                            return var84E2C64F38F78BA3EA5C905AB5A2DA27_133155274;
-                            }
-                        } //End block
-                        else
-                        if(fname.compareTo("float") == 0)                        
-                        {
-                            if(f.getFloat(this) != g.getFloat(that))                            
-                            {
-                            boolean var68934A3E9455FA72420237EB05902327_266558706 = (false);
-                                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1498253605 = getTaintBoolean();
-                            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1498253605;
-                            }
-                        } //End block
-                    } //End block
-                    else
-                    if(g.get(that) == f.get(this))                    
-                    {
-                    boolean varB326B5062B2F0E69046810717534CB09_2000911370 = (true);
-                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_790432417 = getTaintBoolean();
-                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_790432417;
-                    }
-                    else
-                    if(f.get(this) == null)                    
-                    {
-                    boolean var68934A3E9455FA72420237EB05902327_945918162 = (false);
-                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1842126520 = getTaintBoolean();
-                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_1842126520;
-                    }
-                    else
-                    if(g.get(that) == null)                    
-                    {
-                    boolean var68934A3E9455FA72420237EB05902327_297386189 = (false);
-                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1977787075 = getTaintBoolean();
-                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_1977787075;
-                    }
-                    else
-                    if(g.get(that) == null && f.get(this) != null)                    
-                    {
-                    boolean var68934A3E9455FA72420237EB05902327_518624545 = (false);
-                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1659414958 = getTaintBoolean();
-                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_1659414958;
-                    }
-                    else
-                    if(!f.get(this).equals(g.get(that)))                    
-                    {
-                    boolean var68934A3E9455FA72420237EB05902327_1981693469 = (false);
-                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_758384489 = getTaintBoolean();
-                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_758384489;
-                    }
-                } //End block
-                catch (IllegalAccessException ex1)
-                {
+                        if (fname.compareTo("int") == 0) {
+                            if (f.getInt(this) != g.getInt(that))
+                                return false;
+                        } else if (fname.compareTo("short") == 0) {
+                            if (f.getShort(this) != g.getShort(that))
+                                return false;
+                        } else if (fname.compareTo("char") == 0) {
+                            if (f.getChar(this) != g.getChar(that))
+                                return false;
+                        } else if (fname.compareTo("long") == 0) {
+                            if (f.getLong(this) != g.getLong(that))
+                                return false;
+                        } else if (fname.compareTo("boolean") == 0) {
+                            if (f.getBoolean(this) != g.getBoolean(that))
+                                return false;
+                        } else if (fname.compareTo("double") == 0) {
+                            if (f.getDouble(this) != g.getDouble(that))
+                                return false;
+                        } else if (fname.compareTo("float") == 0) {
+                            if (f.getFloat(this) != g.getFloat(that))
+                                return false;
+                        }
+                    } else if (g.get(that) == f.get(this))
+                        return true;
+                    else if (f.get(this) == null)
+                        return false;
+                    else if (g.get(that) == null)
+                        return false;
+                    else if (g.get(that) == null && f.get(this) != null)
+                        return false;
+                    else if (!f.get(this).equals(g.get(that)))
+                        return false;
+                } catch (IllegalAccessException ex1) {
                     InternalErrorHandler.handleException(ex1);
-                } //End block
-            } //End block
-            if(myclass.equals(GenericObject.class))            
-            break;
-            else
-            {
+                }
+            }
+            if (myclass.equals(GenericObject.class))
+                break;
+            else {
                 myclass = myclass.getSuperclass();
                 hisclass = hisclass.getSuperclass();
-            } //End block
-        } //End block
-        boolean varB326B5062B2F0E69046810717534CB09_1939570558 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_742488563 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_742488563;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            }
+
+        }
+        return true;
     }
 
+    /** An introspection based predicate matching using a template
+     * object. Allows for partial match of two protocl Objects.
+     *@param other the match pattern to test against. The match object
+     * has to be of the same type (class). Primitive types
+     * and non-sip fields that are non null are matched for equality.
+     * Null in any field  matches anything. Some book-keeping fields
+     * are ignored when making the comparison.
+     */
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.827 -0500", hash_original_method = "EA6AD5335EE18CA3C2D0278C0E091AE5", hash_generated_method = "5C2EDB15CA7FDB2D52A071C21F5DC8CB")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.217 -0400", hash_original_method = "EA6AD5335EE18CA3C2D0278C0E091AE5", hash_generated_method = "F45CEE6A324E32B5CB1570DD5F603708")
-    public boolean match(Object other) {
-        addTaint(other.getTaint());
-        if(other == null)        
-        {
-        boolean varB326B5062B2F0E69046810717534CB09_2009333362 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2038770506 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2038770506;
-        }
-        if(!this.getClass().equals(other.getClass()))        
-        {
-        boolean var68934A3E9455FA72420237EB05902327_2043293534 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2108608028 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2108608028;
-        }
+public boolean match(Object other) {
+        if (other == null)
+            return true;
+        if (!this.getClass().equals(other.getClass()))
+            return false;
         GenericObject that = (GenericObject) other;
         Class<?> myclass = this.getClass();
         Field[] fields = myclass.getDeclaredFields();
         Class<?> hisclass = other.getClass();
         Field[] hisfields = hisclass.getDeclaredFields();
-for(int i = 0;i < fields.length;i++)
-        {
+        for (int i = 0; i < fields.length; i++) {
             Field f = fields[i];
             Field g = hisfields[i];
+            // Only print protected and public members.
             int modifier = f.getModifiers();
-            if((modifier & Modifier.PRIVATE) == Modifier.PRIVATE)            
-            continue;
+            if ((modifier & Modifier.PRIVATE) == Modifier.PRIVATE)
+                continue;
             Class<?> fieldType = f.getType();
             String fieldName = f.getName();
-            if(fieldName.compareTo("stringRepresentation") == 0)            
-            {
+            if (fieldName.compareTo("stringRepresentation") == 0) {
                 continue;
-            } //End block
-            if(fieldName.compareTo("indentation") == 0)            
-            {
+            }
+            if (fieldName.compareTo("indentation") == 0) {
                 continue;
-            } //End block
-            try 
-            {
-                if(fieldType.isPrimitive())                
-                {
+            }
+            try {
+                // Primitive fields are printed with type: value
+                if (fieldType.isPrimitive()) {
                     String fname = fieldType.toString();
-                    if(fname.compareTo("int") == 0)                    
-                    {
-                        if(f.getInt(this) != g.getInt(that))                        
-                        {
-                        boolean var68934A3E9455FA72420237EB05902327_1269454506 = (false);
-                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_490619508 = getTaintBoolean();
-                        return var84E2C64F38F78BA3EA5C905AB5A2DA27_490619508;
-                        }
-                    } //End block
-                    else
-                    if(fname.compareTo("short") == 0)                    
-                    {
-                        if(f.getShort(this) != g.getShort(that))                        
-                        {
-                        boolean var68934A3E9455FA72420237EB05902327_375411753 = (false);
-                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1662433017 = getTaintBoolean();
-                        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1662433017;
-                        }
-                    } //End block
-                    else
-                    if(fname.compareTo("char") == 0)                    
-                    {
-                        if(f.getChar(this) != g.getChar(that))                        
-                        {
-                        boolean var68934A3E9455FA72420237EB05902327_106529684 = (false);
-                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2049529415 = getTaintBoolean();
-                        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2049529415;
-                        }
-                    } //End block
-                    else
-                    if(fname.compareTo("long") == 0)                    
-                    {
-                        if(f.getLong(this) != g.getLong(that))                        
-                        {
-                        boolean var68934A3E9455FA72420237EB05902327_680744171 = (false);
-                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2138401702 = getTaintBoolean();
-                        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2138401702;
-                        }
-                    } //End block
-                    else
-                    if(fname.compareTo("boolean") == 0)                    
-                    {
-                        if(f.getBoolean(this) != g.getBoolean(that))                        
-                        {
-                        boolean var68934A3E9455FA72420237EB05902327_1229769446 = (false);
-                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_266611361 = getTaintBoolean();
-                        return var84E2C64F38F78BA3EA5C905AB5A2DA27_266611361;
-                        }
-                    } //End block
-                    else
-                    if(fname.compareTo("double") == 0)                    
-                    {
-                        if(f.getDouble(this) != g.getDouble(that))                        
-                        {
-                        boolean var68934A3E9455FA72420237EB05902327_1092210854 = (false);
-                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_60579548 = getTaintBoolean();
-                        return var84E2C64F38F78BA3EA5C905AB5A2DA27_60579548;
-                        }
-                    } //End block
-                    else
-                    if(fname.compareTo("float") == 0)                    
-                    {
-                        if(f.getFloat(this) != g.getFloat(that))                        
-                        {
-                        boolean var68934A3E9455FA72420237EB05902327_1516344231 = (false);
-                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2012637485 = getTaintBoolean();
-                        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2012637485;
-                        }
-                    } //End block
-                } //End block
-                else
-                {
+                    if (fname.compareTo("int") == 0) {
+                        if (f.getInt(this) != g.getInt(that))
+                            return false;
+                    } else if (fname.compareTo("short") == 0) {
+                        if (f.getShort(this) != g.getShort(that))
+                            return false;
+                    } else if (fname.compareTo("char") == 0) {
+                        if (f.getChar(this) != g.getChar(that))
+                            return false;
+                    } else if (fname.compareTo("long") == 0) {
+                        if (f.getLong(this) != g.getLong(that))
+                            return false;
+                    } else if (fname.compareTo("boolean") == 0) {
+                        if (f.getBoolean(this) != g.getBoolean(that))
+                            return false;
+                    } else if (fname.compareTo("double") == 0) {
+                        if (f.getDouble(this) != g.getDouble(that))
+                            return false;
+                    } else if (fname.compareTo("float") == 0) {
+                        if (f.getFloat(this) != g.getFloat(that))
+                            return false;
+                    }
+                } else {
                     Object myObj = f.get(this);
                     Object hisObj = g.get(that);
-                    if(hisObj != null && myObj == null)                    
-                    {
-                    boolean var68934A3E9455FA72420237EB05902327_692425338 = (false);
-                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1532204775 = getTaintBoolean();
-                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_1532204775;
-                    }
-                    else
-                    if(hisObj == null && myObj != null)                    
-                    continue;
-                    else
-                    if(hisObj == null && myObj == null)                    
-                    continue;
-                    else
-                    if(hisObj instanceof java.lang.String
-                            && myObj instanceof java.lang.String)                    
-                    {
-                        if((((String) hisObj).trim()).equals(""))                        
+                    if (hisObj != null && myObj == null)
+                        return false;
+                    else if (hisObj == null && myObj != null)
                         continue;
-                        if(((String) myObj)
+                    else if (hisObj == null && myObj == null)
+                        continue;
+                    else if (
+                        hisObj instanceof java.lang.String
+                            && myObj instanceof java.lang.String) {
+                        if ((((String) hisObj).trim()).equals(""))
+                            continue;
+                        if (((String) myObj)
                             .compareToIgnoreCase((String) hisObj)
-                            != 0)                        
-                        {
-                        boolean var68934A3E9455FA72420237EB05902327_2101470402 = (false);
-                                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1332206430 = getTaintBoolean();
-                        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1332206430;
-                        }
-                    } //End block
-                    else
-                    if(GenericObject.isMySubclass(myObj.getClass())
-                            && !((GenericObject) myObj).match(hisObj))                    
-                    {
-                    boolean var68934A3E9455FA72420237EB05902327_284347285 = (false);
-                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_231161781 = getTaintBoolean();
-                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_231161781;
-                    }
-                    else
-                    if(GenericObjectList.isMySubclass(myObj.getClass())
-                            && !((GenericObjectList) myObj).match(hisObj))                    
-                    {
-                    boolean var68934A3E9455FA72420237EB05902327_812698349 = (false);
-                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_918702107 = getTaintBoolean();
-                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_918702107;
-                    }
-                } //End block
-            } //End block
-            catch (IllegalAccessException ex1)
-            {
+                            != 0)
+                            return false;
+                    } else if (
+                        GenericObject.isMySubclass(myObj.getClass())
+                            && !((GenericObject) myObj).match(hisObj))
+                        return false;
+                    else if (
+                        GenericObjectList.isMySubclass(myObj.getClass())
+                            && !((GenericObjectList) myObj).match(hisObj))
+                        return false;
+
+                }
+            } catch (IllegalAccessException ex1) {
                 InternalErrorHandler.handleException(ex1);
-            } //End block
-        } //End block
-        boolean varB326B5062B2F0E69046810717534CB09_272508996 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2048653094 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2048653094;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            }
+        }
+        return true;
     }
 
+    /**
+     * Generic print formatting function:
+     * Does depth-first descent of the structure and
+     * recursively prints all non-private objects pointed to
+     * by this object.
+     * <bf>
+     * Warning - the following generic string routine will
+     * bomb (go into infinite loop) if there are any circularly linked
+     * structures so if you have these, they had better be private!
+     * </bf>
+     * We dont have to worry about such things for our structures
+     *(we never use circular linked structures).
+     */
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.831 -0500", hash_original_method = "9A2585B996B0A77325ECBDA944C7F6EB", hash_generated_method = "DDF6FCE2F5659819DBDB244DBC4187E6")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.220 -0400", hash_original_method = "9A2585B996B0A77325ECBDA944C7F6EB", hash_generated_method = "7A7622F40CC878690A2084D42201628F")
-    public String debugDump() {
+public String debugDump() {
         stringRepresentation = "";
         Class<?> myclass = getClass();
         sprint(myclass.getName());
         sprint("{");
         Field[] fields = myclass.getDeclaredFields();
-for(int i = 0;i < fields.length;i++)
-        {
+        for (int i = 0; i < fields.length; i++) {
             Field f = fields[i];
+            // Only print protected and public members.
             int modifier = f.getModifiers();
-            if((modifier & Modifier.PRIVATE) == Modifier.PRIVATE)            
-            continue;
+            if ((modifier & Modifier.PRIVATE) == Modifier.PRIVATE)
+                continue;
             Class<?> fieldType = f.getType();
             String fieldName = f.getName();
-            if(fieldName.compareTo("stringRepresentation") == 0)            
-            {
+            if (fieldName.compareTo("stringRepresentation") == 0) {
+                // avoid nasty recursions...
                 continue;
-            } //End block
-            if(fieldName.compareTo("indentation") == 0)            
-            {
+            }
+            if (fieldName.compareTo("indentation") == 0) {
+                // formatting stuff - not relevant here.
                 continue;
-            } //End block
+            }
             sprint(fieldName + ":");
-            try 
-            {
-                if(fieldType.isPrimitive())                
-                {
+            try {
+                // Primitive fields are printed with type: value
+                if (fieldType.isPrimitive()) {
                     String fname = fieldType.toString();
                     sprint(fname + ":");
-                    if(fname.compareTo("int") == 0)                    
-                    {
+                    if (fname.compareTo("int") == 0) {
                         int intfield = f.getInt(this);
                         sprint(intfield);
-                    } //End block
-                    else
-                    if(fname.compareTo("short") == 0)                    
-                    {
+                    } else if (fname.compareTo("short") == 0) {
                         short shortField = f.getShort(this);
                         sprint(shortField);
-                    } //End block
-                    else
-                    if(fname.compareTo("char") == 0)                    
-                    {
+                    } else if (fname.compareTo("char") == 0) {
                         char charField = f.getChar(this);
                         sprint(charField);
-                    } //End block
-                    else
-                    if(fname.compareTo("long") == 0)                    
-                    {
+                    } else if (fname.compareTo("long") == 0) {
                         long longField = f.getLong(this);
                         sprint(longField);
-                    } //End block
-                    else
-                    if(fname.compareTo("boolean") == 0)                    
-                    {
+                    } else if (fname.compareTo("boolean") == 0) {
                         boolean booleanField = f.getBoolean(this);
                         sprint(booleanField);
-                    } //End block
-                    else
-                    if(fname.compareTo("double") == 0)                    
-                    {
+                    } else if (fname.compareTo("double") == 0) {
                         double doubleField = f.getDouble(this);
                         sprint(doubleField);
-                    } //End block
-                    else
-                    if(fname.compareTo("float") == 0)                    
-                    {
+                    } else if (fname.compareTo("float") == 0) {
                         float floatField = f.getFloat(this);
                         sprint(floatField);
-                    } //End block
-                } //End block
-                else
-                if(GenericObject.class.isAssignableFrom(fieldType))                
-                {
-                    if(f.get(this) != null)                    
-                    {
+                    }
+                } else if (GenericObject.class.isAssignableFrom(fieldType)) {
+                    if (f.get(this) != null) {
                         sprint(
                             ((GenericObject) f.get(this)).debugDump(
                                 indentation + 1));
-                    } //End block
-                    else
-                    {
+                    } else {
                         sprint("<null>");
-                    } //End block
-                } //End block
-                else
-                if(GenericObjectList.class.isAssignableFrom(fieldType))                
-                {
-                    if(f.get(this) != null)                    
-                    {
+                    }
+
+                } else if (
+                    GenericObjectList.class.isAssignableFrom(fieldType)) {
+                    if (f.get(this) != null) {
                         sprint(
                             ((GenericObjectList) f.get(this)).debugDump(
                                 indentation + 1));
-                    } //End block
-                    else
-                    {
+                    } else {
                         sprint("<null>");
-                    } //End block
-                } //End block
-                else
-                {
-                    if(f.get(this) != null)                    
-                    {
+                    }
+
+                } else {
+                    // Dont do recursion on things that are not
+                    // of our header type...
+                    if (f.get(this) != null) {
                         sprint(f.get(this).getClass().getName() + ":");
-                    } //End block
-                    else
-                    {
+                    } else {
                         sprint(fieldType.getName() + ":");
-                    } //End block
+                    }
+
                     sprint("{");
-                    if(f.get(this) != null)                    
-                    {
+                    if (f.get(this) != null) {
                         sprint(f.get(this).toString());
-                    } //End block
-                    else
-                    {
+                    } else {
                         sprint("<null>");
-                    } //End block
+                    }
                     sprint("}");
-                } //End block
-            } //End block
-            catch (IllegalAccessException ex1)
-            {
-                continue;
-            } //End block
-            catch (Exception ex)
-            {
+                }
+            } catch (IllegalAccessException ex1) {
+                continue; // we are accessing a private field...
+            } catch (Exception ex) {
                 InternalErrorHandler.handleException(ex);
-            } //End block
-        } //End block
+            }
+        }
         sprint("}");
-String var8D11C2D110975896438D6F91C60E6D6F_1739608602 =         stringRepresentation;
-        var8D11C2D110975896438D6F91C60E6D6F_1739608602.addTaint(taint);
-        return var8D11C2D110975896438D6F91C60E6D6F_1739608602;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        return stringRepresentation;
     }
 
+    /**
+     * Formatter with a given starting indentation.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.834 -0500", hash_original_method = "C8764A7C07CF0ED92D22CFD53801BCA7", hash_generated_method = "AF6F4638872E8DBEAB253224E1EC5A56")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.220 -0400", hash_original_method = "C8764A7C07CF0ED92D22CFD53801BCA7", hash_generated_method = "9FCE3B0ED390D3878BF7D3E74013CD96")
-    public String debugDump(int indent) {
+public String debugDump(int indent) {
         indentation = indent;
         String retval = this.debugDump();
         indentation = 0;
-String varF9E19AD6135C970F387F77C6F3DE4477_141646998 =         retval;
-        varF9E19AD6135C970F387F77C6F3DE4477_141646998.addTaint(taint);
-        return varF9E19AD6135C970F387F77C6F3DE4477_141646998;
-        // ---------- Original Method ----------
-        //indentation = indent;
-        //String retval = this.debugDump();
-        //indentation = 0;
-        //return retval;
+        return retval;
     }
 
-    
-    @DSModeled(DSC.SAFE)
-    public abstract String encode();
 
+    /**
+     *  Get the string encoded version of this object
+     * @since v1.0
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.837 -0500", hash_original_method = "62F9CE492238F967486EB3E8B7CFE75A", hash_generated_method = "5BF421C60268DEDED1E2C31D57984D81")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.221 -0400", hash_original_method = "23BD5BF1494AAB1936A4882B6C7896EB", hash_generated_method = "DFF52B96AAA722016AA283A1E63B41C5")
-    public StringBuffer encode(StringBuffer buffer) {
-        addTaint(buffer.getTaint());
-StringBuffer var7758A6E5CA5A3C31A1AD4D3B1CB2BC22_600201251 =         buffer.append(encode());
-        var7758A6E5CA5A3C31A1AD4D3B1CB2BC22_600201251.addTaint(taint);
-        return var7758A6E5CA5A3C31A1AD4D3B1CB2BC22_600201251;
-        // ---------- Original Method ----------
-        //return buffer.append(encode());
+public abstract String encode();
+
+    /**
+     * Put the encoded version of this object in the given StringBuffer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.839 -0500", hash_original_method = "23BD5BF1494AAB1936A4882B6C7896EB", hash_generated_method = "E83555D6561D540C12E200451394DEB5")
+    
+public StringBuffer encode(StringBuffer buffer) {
+        return buffer.append(encode());
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.221 -0400", hash_original_field = "D1190824E35A683C05589F1C776EEB98", hash_generated_field = "02EC968BA435084EE7ADC81279AB56D8")
-
-    protected static final String SEMICOLON = Separators.SEMICOLON;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.221 -0400", hash_original_field = "02A534AF21A6F783F08D86D26579E890", hash_generated_field = "6B6A3C0E5AAA12BC4230EF790A3C2476")
-
-    protected static final String COLON = Separators.COLON;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.221 -0400", hash_original_field = "6C852D8F8039F1F9747489612DAC3C3C", hash_generated_field = "2C4A8D03DDB954D51E978CD8F8E2DEA4")
-
-    protected static final String COMMA = Separators.COMMA;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.221 -0400", hash_original_field = "04C5392343613D1101130F746A81D0F3", hash_generated_field = "8A50D691E37AC9254B7ED2ABCE4AC6D2")
-
-    protected static final String SLASH = Separators.SLASH;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.221 -0400", hash_original_field = "D8EE4E7D0F1EAB2E2745753B5AD2FE8D", hash_generated_field = "0CF03E9FD9212362B2D202A36124051A")
-
-    protected static final String SP = Separators.SP;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.221 -0400", hash_original_field = "3C7C6B82B012EBDA39975B1F72983C28", hash_generated_field = "AD22F298E6FF482BE0BD697358901610")
-
-    protected static final String EQUALS = Separators.EQUALS;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.221 -0400", hash_original_field = "B9D394806A580E8DE8984E11AC02BDE2", hash_generated_field = "2A5C8D44567A1C68D53F48B0CD1AF72E")
-
-    protected static final String STAR = Separators.STAR;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.221 -0400", hash_original_field = "4B65D6BACAFDD7AB302810256C42CCB9", hash_generated_field = "99D8C532EFD2EC03350A98B152CEDB7F")
-
-    protected static final String NEWLINE = Separators.NEWLINE;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.221 -0400", hash_original_field = "4E25B108371C30F889E1B6E8C1046FAB", hash_generated_field = "5E44FE20A9580182CC4CE4836B87D2F2")
-
-    protected static final String RETURN = Separators.RETURN;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.221 -0400", hash_original_field = "7E16A38DE053150CC3BF00FEBC32CBB3", hash_generated_field = "03472463E2EA98D819ECAC54647D9EEB")
-
-    protected static final String LESS_THAN = Separators.LESS_THAN;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.221 -0400", hash_original_field = "CBC3FB6A2E3BC245B189168F8F698149", hash_generated_field = "EADC9D4C7F8A41AC9253B4399DD9CC22")
-
-    protected static final String GREATER_THAN = Separators.GREATER_THAN;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.221 -0400", hash_original_field = "72EE65D27F762C3B2FB94C3FA334B5E4", hash_generated_field = "94E22BF70767B9E5F90C8BEFB48DFB31")
-
-    protected static final String AT = Separators.AT;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.221 -0400", hash_original_field = "3ACE38B8B42CCCDC519BBD9065EB1D1A", hash_generated_field = "C68E946646D329E00948C391567E8245")
-
-    protected static final String DOT = Separators.DOT;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.221 -0400", hash_original_field = "B2A15792014FB9077E86DD721A8EFBA4", hash_generated_field = "C6F6498E0BEB8E9B929D5FF0691C60C5")
-
-    protected static final String QUESTION = Separators.QUESTION;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.222 -0400", hash_original_field = "096D0F7D4D4C7B4283D714ECD7F549C3", hash_generated_field = "3931FF01A0452F4B915432DFE1D8342B")
-
-    protected static final String POUND = Separators.POUND;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.222 -0400", hash_original_field = "705C7DB0DE742246702AC85CCAA66A2B", hash_generated_field = "A7C8E60A9ACCF4FC95E42A6FE3CBE98A")
-
-    protected static final String AND = Separators.AND;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.222 -0400", hash_original_field = "B7554C14B11FFE96B375109E44C62935", hash_generated_field = "96B1BA6A04896DF507DBF5F6007D53FF")
-
-    protected static final String LPAREN = Separators.LPAREN;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.222 -0400", hash_original_field = "ED8913C274C5CDFEFC62F7A7FE2688CB", hash_generated_field = "04E1EDA33DBBA7B9CD0B5320DA6E2B15")
-
-    protected static final String RPAREN = Separators.RPAREN;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.222 -0400", hash_original_field = "CD4D1E68FDC871F3D1A212D438F276AF", hash_generated_field = "60970C4DF02E2922FFB2BB3FCBF1CC4C")
-
-    protected static final String DOUBLE_QUOTE = Separators.DOUBLE_QUOTE;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.222 -0400", hash_original_field = "1084586CDB13332FA26836F7CE2B3817", hash_generated_field = "36D2B8942300A11E9A202D488BEEC708")
-
-    protected static final String QUOTE = Separators.QUOTE;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.222 -0400", hash_original_field = "58E3D5E258B17E5D6D1BDF83FE976FD6", hash_generated_field = "EE0F746E0ADCCF78C293F0BC27A024C1")
-
-    protected static final String HT = Separators.HT;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.222 -0400", hash_original_field = "4AEF06B345694E240504FA11CF16C815", hash_generated_field = "E525B1F947054DAAB71F0D7018A0312F")
-
-    protected static final String PERCENT = Separators.PERCENT;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.222 -0400", hash_original_field = "6796B59570731F7B6F84E1F281186777", hash_generated_field = "23DD3DB933D01AADE0B2C40AA464AC9C")
-
-    protected static final Set<Class<?>> immutableClasses = new HashSet<Class<?>> (10);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:30.222 -0400", hash_original_field = "0903587AC197526F6DF5345E92DCF834", hash_generated_field = "06A0F0FA7C3AA2D1A0C9419E5DAE1A94")
-
-    static final String[] immutableClassNames = {
-        "String", "Character",
-        "Boolean", "Byte", "Short", "Integer", "Long",
-        "Float", "Double"
-        };
     static {
         try {
             for (int i = 0; i < immutableClassNames.length; i++)

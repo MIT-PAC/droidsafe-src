@@ -1,6 +1,8 @@
 package javax.xml.parsers;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
@@ -8,79 +10,101 @@ import droidsafe.annotations.*;
 
 
 public class FactoryConfigurationError extends Error {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.786 -0400", hash_original_field = "42552B1F133F9F8EB406D4F306EA9FD1", hash_generated_field = "70BD42A5533D521458BB067703B0D3E8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.287 -0500", hash_original_field = "2CBC6074DF6BD2C2AC2A7CA4BC170BEC", hash_generated_field = "70BD42A5533D521458BB067703B0D3E8")
 
     private Exception exception;
+
+    /**
+     * Create a new <code>FactoryConfigurationError</code> with no
+     * detail message.
+     */
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.290 -0500", hash_original_method = "6620C9D65D7B9B8AED04F1E2286BE37D", hash_generated_method = "745C8338A29F863D10814EC116A8F2BD")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.787 -0400", hash_original_method = "6620C9D65D7B9B8AED04F1E2286BE37D", hash_generated_method = "3197EEE679B539DCD98F16DC71478ECF")
-    public  FactoryConfigurationError() {
+public FactoryConfigurationError() {
         this.exception = null;
-        // ---------- Original Method ----------
-        //this.exception = null;
     }
 
+    /**
+     * Create a new <code>FactoryConfigurationError</code> with
+     * the <code>String </code> specified as an error message.
+     *
+     * @param msg The error message for the exception.
+     */
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.292 -0500", hash_original_method = "48F1E682C4A714972A38A39D612B5275", hash_generated_method = "D0676D1AFF49D70AC248B711D650CDA6")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.787 -0400", hash_original_method = "48F1E682C4A714972A38A39D612B5275", hash_generated_method = "BA7E26A4B501BE659DD2B1554937B270")
-    public  FactoryConfigurationError(String msg) {
+public FactoryConfigurationError(String msg) {
         super(msg);
-        addTaint(msg.getTaint());
         this.exception = null;
-        // ---------- Original Method ----------
-        //this.exception = null;
     }
 
+
+    /**
+     * Create a new <code>FactoryConfigurationError</code> with a
+     * given <code>Exception</code> base cause of the error.
+     *
+     * @param e The exception to be encapsulated in a
+     * FactoryConfigurationError.
+     */
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.296 -0500", hash_original_method = "50F0E936640865FC69642EB9E9B7DACD", hash_generated_method = "0108B88B4CBED651CB8E96F68E07A12C")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.788 -0400", hash_original_method = "50F0E936640865FC69642EB9E9B7DACD", hash_generated_method = "DECEA99A83213F9667E844B2E4FA90A5")
-    public  FactoryConfigurationError(Exception e) {
+public FactoryConfigurationError(Exception e) {
         super(e.toString());
         this.exception = e;
-        // ---------- Original Method ----------
-        //this.exception = e;
     }
 
+    /**
+     * Create a new <code>FactoryConfigurationError</code> with the
+     * given <code>Exception</code> base cause and detail message.
+     *
+     * @param e The exception to be encapsulated in a
+     * FactoryConfigurationError
+     * @param msg The detail message.
+     */
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.299 -0500", hash_original_method = "6DA0E2DE853AFE92CEEE23D7625EA5CB", hash_generated_method = "D14E373FB5C0C305D1EECCFB4C942FA0")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.789 -0400", hash_original_method = "6DA0E2DE853AFE92CEEE23D7625EA5CB", hash_generated_method = "657D61BA3640D975C04CF28B971A83F3")
-    public  FactoryConfigurationError(Exception e, String msg) {
+public FactoryConfigurationError(Exception e, String msg) {
         super(msg);
-        addTaint(msg.getTaint());
         this.exception = e;
-        // ---------- Original Method ----------
-        //this.exception = e;
     }
 
+
+    /**
+     * Return the message (if any) for this error . If there is no
+     * message for the exception and there is an encapsulated
+     * exception then the message of that exception, if it exists will be
+     * returned. Else the name of the encapsulated exception will be
+     * returned.
+     *
+     * @return The error message.
+     */
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.301 -0500", hash_original_method = "3CFCD04CF304E9364ADFC7DBDB377B80", hash_generated_method = "65176D00D2CAACC6AEEBD824B6D2D655")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.789 -0400", hash_original_method = "3CFCD04CF304E9364ADFC7DBDB377B80", hash_generated_method = "7A1FE3743556795D29B62AADA8020D90")
-    public String getMessage() {
+public String getMessage () {
         String message = super.getMessage ();
-        if(message == null && exception != null)        
-        {
-String var56A9A9C4DE0617B8FC85BA86A88F5292_2099275441 =             exception.getMessage();
-            var56A9A9C4DE0617B8FC85BA86A88F5292_2099275441.addTaint(taint);
-            return var56A9A9C4DE0617B8FC85BA86A88F5292_2099275441;
-        } //End block
-String varFD182D7074F3848E773A38B067BBB880_1630199000 =         message;
-        varFD182D7074F3848E773A38B067BBB880_1630199000.addTaint(taint);
-        return varFD182D7074F3848E773A38B067BBB880_1630199000;
-        // ---------- Original Method ----------
-        //String message = super.getMessage ();
-        //if (message == null && exception != null) {
-            //return exception.getMessage();
-        //}
-        //return message;
+
+        if (message == null && exception != null) {
+            return exception.getMessage();
+        }
+
+        return message;
     }
 
+    /**
+     * Return the actual exception (if any) that caused this exception to
+     * be raised.
+     *
+     * @return The encapsulated exception, or null if there is none.
+     */
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.303 -0500", hash_original_method = "DEACD8BC5F5C015493740DB375DC8E7E", hash_generated_method = "98F36C2AFC36910DAB242F709A323B7F")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.790 -0400", hash_original_method = "DEACD8BC5F5C015493740DB375DC8E7E", hash_generated_method = "53E7D33FD00D3E4CD5C89A71F106F355")
-    public Exception getException() {
-Exception varB0A8CAD4B1C89FFC19A72F5757E92C21_1703487791 =         exception;
-        varB0A8CAD4B1C89FFC19A72F5757E92C21_1703487791.addTaint(taint);
-        return varB0A8CAD4B1C89FFC19A72F5757E92C21_1703487791;
-        // ---------- Original Method ----------
-        //return exception;
+public Exception getException () {
+        return exception;
     }
 
     

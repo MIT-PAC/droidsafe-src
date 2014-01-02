@@ -1,6 +1,8 @@
 package android.widget;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.ArrayList;
 
@@ -10,80 +12,27 @@ import java.util.ArrayList;
 
 
 class ExpandableListPosition {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.412 -0400", hash_original_field = "EE07D40A93E39122F7007E1922755F80", hash_generated_field = "2301C40FE9B33471D945A5226ECAAB38")
 
-    public int groupPos;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.413 -0400", hash_original_field = "DEB93B3708C76AD8AAD280EF94D7E2FE", hash_generated_field = "60A49C0AC4F2F0436AB7AB0C7B3140B6")
-
-    public int childPos;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.413 -0400", hash_original_field = "1CED080A89697925D9EEB8ECFC3C5C9C", hash_generated_field = "ABD45EB65AB80D8EB9E3EA196D9D59D5")
-
-    int flatListPos;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.413 -0400", hash_original_field = "599DCCE2998A6B40B1E38E8C6006CB0A", hash_generated_field = "6AC5CE4BE311ED1283E9BD812937901E")
-
-    public int type;
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.519 -0500", hash_original_method = "F62027CF607D9C773A832245726377F9", hash_generated_method = "0EDAAA239E56E3025A3A7C8708AE6740")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.413 -0400", hash_original_method = "AC719FEF152399BDA1BD5A5CA7FBB765", hash_generated_method = "CA9DC1117656D5954D084C62466145DC")
-    private  ExpandableListPosition() {
-        // ---------- Original Method ----------
-    }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.413 -0400", hash_original_method = "6E7C899DC67219985BD699CC84AD95E6", hash_generated_method = "D1043CAEEE96B318519BE4957822CE46")
-    private void resetState() {
-        groupPos = 0;
-        childPos = 0;
-        flatListPos = 0;
-        type = 0;
-        // ---------- Original Method ----------
-        //groupPos = 0;
-        //childPos = 0;
-        //flatListPos = 0;
-        //type = 0;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.414 -0400", hash_original_method = "C8676DC8E5CB906E204449634591A777", hash_generated_method = "19157D8F75C76378422DF92393A1EC29")
-     long getPackedPosition() {
-        if(type == CHILD)        
-        {
-        long var93B7DCE54670510B5F23FE0D7DEBA2D1_1492324572 = (ExpandableListView.getPackedPositionForChild(groupPos, childPos));
-                long var0F5264038205EDFB1AC05FBB0E8C5E94_2086940721 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_2086940721;
-        }
-        else
-        {
-        long var5C19C1E26BCC08E214635C9470A5922C_2113468639 = (ExpandableListView.getPackedPositionForGroup(groupPos));
-                long var0F5264038205EDFB1AC05FBB0E8C5E94_230356351 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_230356351;
-        }
-        // ---------- Original Method ----------
-        //if (type == CHILD) return ExpandableListView.getPackedPositionForChild(groupPos, childPos);
-        //else return ExpandableListView.getPackedPositionForGroup(groupPos);
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    static ExpandableListPosition obtainGroupPosition(int groupPosition) {
+static ExpandableListPosition obtainGroupPosition(int groupPosition) {
         return obtain(GROUP, groupPosition, 0, 0);
     }
-
     
-    @DSModeled(DSC.SAFE)
-    static ExpandableListPosition obtainChildPosition(int groupPosition, int childPosition) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.521 -0500", hash_original_method = "3BC06DD7BAAC54221802467D7ABA70B4", hash_generated_method = "7D00132CD7D625ACD9095D531AE25628")
+    
+static ExpandableListPosition obtainChildPosition(int groupPosition, int childPosition) {
         return obtain(CHILD, groupPosition, childPosition, 0);
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.523 -0500", hash_original_method = "5FBB5616540ED7147D96F5EA87CDD381", hash_generated_method = "16EFAE12F0502E7E4169CA2300434A13")
     
-    @DSModeled(DSC.SAFE)
-    static ExpandableListPosition obtainPosition(long packedPosition) {
+static ExpandableListPosition obtainPosition(long packedPosition) {
         if (packedPosition == ExpandableListView.PACKED_POSITION_VALUE_NULL) {
             return null;
         }
-        ExpandableListPosition elp = getRecycledOrCreate();
+        
+        ExpandableListPosition elp = getRecycledOrCreate(); 
         elp.groupPos = ExpandableListView.getPackedPositionGroup(packedPosition);
         if (ExpandableListView.getPackedPositionType(packedPosition) ==
                 ExpandableListView.PACKED_POSITION_TYPE_CHILD) {
@@ -94,21 +43,21 @@ class ExpandableListPosition {
         }
         return elp;
     }
-
     
-    @DSModeled(DSC.SAFE)
-    static ExpandableListPosition obtain(int type, int groupPos, int childPos, int flatListPos) {
-        ExpandableListPosition elp = getRecycledOrCreate();
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.525 -0500", hash_original_method = "349EA56CA9F69D1CACC3FF6BC3EC031E", hash_generated_method = "BAB573D7135C0F6404B48E82DD2925CF")
+    
+static ExpandableListPosition obtain(int type, int groupPos, int childPos, int flatListPos) {
+        ExpandableListPosition elp = getRecycledOrCreate(); 
         elp.type = type;
         elp.groupPos = groupPos;
         elp.childPos = childPos;
         elp.flatListPos = flatListPos;
         return elp;
     }
-
     
-    @DSModeled(DSC.SAFE)
-    private static ExpandableListPosition getRecycledOrCreate() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.528 -0500", hash_original_method = "3CE001A01E3340578213485CE2CE282A", hash_generated_method = "E96B19956B454CF64E593FF07678E85D")
+    
+private static ExpandableListPosition getRecycledOrCreate() {
         ExpandableListPosition elp;
         synchronized (sPool) {
             if (sPool.size() > 0) {
@@ -120,38 +69,62 @@ class ExpandableListPosition {
         elp.resetState();
         return elp;
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.494 -0500", hash_original_field = "73A7DB4BA52C41C46FF2526949A8CECE", hash_generated_field = "7127A67374BF405D0F01EEB2429B1D48")
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.415 -0400", hash_original_method = "8A154BA1D9B394A3D67E04E6A86589B2", hash_generated_method = "630615FD0F25C98518FE11FF0693404C")
-    public void recycle() {
-        synchronized
-(sPool)        {
-            if(sPool.size() < MAX_POOL_SIZE)            
-            {
-                sPool.add(this);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (sPool) {
-            //if (sPool.size() < MAX_POOL_SIZE) {
-                //sPool.add(this);
-            //}
-        //}
-    }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.415 -0400", hash_original_field = "889E6ADBE471574497DA5C9E79EF7FCA", hash_generated_field = "7127A67374BF405D0F01EEB2429B1D48")
-
     private static final int MAX_POOL_SIZE = 5;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.415 -0400", hash_original_field = "5A94D2210A3BD35C5C514A0AAE6A7DBD", hash_generated_field = "13B9F617BBB013357274E6300FD7AEA8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.496 -0500", hash_original_field = "2497B91150CE738D981B2112EE504A93", hash_generated_field = "13B9F617BBB013357274E6300FD7AEA8")
 
-    private static ArrayList<ExpandableListPosition> sPool = new ArrayList<ExpandableListPosition>(MAX_POOL_SIZE);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.415 -0400", hash_original_field = "0FE51404ACE91FDA107540AE9D2D4278", hash_generated_field = "F0F5C77DA98AF028C1257C33F37951DA")
+    private static ArrayList<ExpandableListPosition> sPool =
+        new ArrayList<ExpandableListPosition>(MAX_POOL_SIZE);
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.499 -0500", hash_original_field = "79E7C7881F4C946D076BEDD9E54FAC56", hash_generated_field = "F0F5C77DA98AF028C1257C33F37951DA")
 
     public final static int CHILD = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.415 -0400", hash_original_field = "8B6AA562AB8083D61143786D8730F6DA", hash_generated_field = "4F320263FDA19E11C7632EEC3F961D53")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.501 -0500", hash_original_field = "51523F875D831FDC9782F54DC1DEA0FF", hash_generated_field = "4F320263FDA19E11C7632EEC3F961D53")
 
     public final static int GROUP = 2;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.503 -0500", hash_original_field = "8D09A429544F3F96BAF7D186AB509F75", hash_generated_field = "2301C40FE9B33471D945A5226ECAAB38")
+
+    public int groupPos;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.505 -0500", hash_original_field = "9EA5543E65769251227F2A954E26F94A", hash_generated_field = "60A49C0AC4F2F0436AB7AB0C7B3140B6")
+
+    public int childPos;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.507 -0500", hash_original_field = "ABD45EB65AB80D8EB9E3EA196D9D59D5", hash_generated_field = "ABD45EB65AB80D8EB9E3EA196D9D59D5")
+
+    int flatListPos;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.510 -0500", hash_original_field = "961B4204667A4AE2FF8DD374E6728ADE", hash_generated_field = "6AC5CE4BE311ED1283E9BD812937901E")
+
+    public int type;
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.514 -0500", hash_original_method = "AC719FEF152399BDA1BD5A5CA7FBB765", hash_generated_method = "651159CE316F03AD89288A0F5D8A9D64")
+    
+private ExpandableListPosition() {
+    }
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.512 -0500", hash_original_method = "6E7C899DC67219985BD699CC84AD95E6", hash_generated_method = "BEC0D5BA67FE24EBC17F3819B1BC262B")
+    
+private void resetState() {
+        groupPos = 0;
+        childPos = 0;
+        flatListPos = 0;
+        type = 0;
+    }
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.517 -0500", hash_original_method = "C8676DC8E5CB906E204449634591A777", hash_generated_method = "C8676DC8E5CB906E204449634591A777")
+    
+long getPackedPosition() {
+        if (type == CHILD) return ExpandableListView.getPackedPositionForChild(groupPos, childPos);
+        else return ExpandableListView.getPackedPositionForGroup(groupPos);
+    }
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.530 -0500", hash_original_method = "8A154BA1D9B394A3D67E04E6A86589B2", hash_generated_method = "D64E89134CFC371784818AC6DB037546")
+    
+public void recycle() {
+        synchronized (sPool) {
+            if (sPool.size() < MAX_POOL_SIZE) {
+                sPool.add(this);
+            }
+        }
+    }
 }
 

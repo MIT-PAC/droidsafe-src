@@ -12,115 +12,162 @@ import org.apache.http.message.BasicHeader;
 import org.apache.http.protocol.HTTP;
 
 public abstract class AbstractHttpEntity implements HttpEntity {
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:45.908 -0500", hash_original_field = "2FADA47DC2FC7C4F250B0D9A3B6953BE", hash_generated_field = "7707552268699116A6B81DCAB1E039E0")
+
     protected Header contentType;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:45.911 -0500", hash_original_field = "770563F888B945C7BCB239CF2A709073", hash_generated_field = "EE4016A6B9EC527F15082EA3FB92CF90")
+
     protected Header contentEncoding;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:45.913 -0500", hash_original_field = "EF4C7F6B09F0CE41C1BC01CB545F48C3", hash_generated_field = "AC5AAC899B99DDB88A53898F83C297BE")
+
     protected boolean chunked;
     
     @DSModeled(DSC.SAFE)
 	protected AbstractHttpEntity() {}
 
+
+    /**
+     * Obtains the Content-Type header.
+     * The default implementation returns the value of the
+     * {@link #contentType contentType} attribute.
+     *
+     * @return  the Content-Type header, or <code>null</code>
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:45.918 -0500", hash_original_method = "DA5232C01B88DD776A78D6C1E0EF7DB4", hash_generated_method = "33852E0EBCD1B1F03B200DF158C6DE03")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:01.751 -0400", hash_original_method = "DA5232C01B88DD776A78D6C1E0EF7DB4", hash_generated_method = "EF40BE92F22313642A74DF1065E07F14")
-    public Header getContentType() {
-Header varB33E79BD7783A8D6E8279F5398A07ECD_187706967 =         this.contentType;
-        varB33E79BD7783A8D6E8279F5398A07ECD_187706967.addTaint(taint);
-        return varB33E79BD7783A8D6E8279F5398A07ECD_187706967;
-        // ---------- Original Method ----------
-        //return this.contentType;
+public Header getContentType() {
+        return this.contentType;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:01.752 -0400", hash_original_method = "0300179EF34C28254565E1D29B0088D9", hash_generated_method = "06D2D50BE55D74BE2F0441205E61FF65")
-    public Header getContentEncoding() {
-Header var9FB76F0F7510CA91CDAC3C0B73E1BA5D_916294054 =         this.contentEncoding;
-        var9FB76F0F7510CA91CDAC3C0B73E1BA5D_916294054.addTaint(taint);
-        return var9FB76F0F7510CA91CDAC3C0B73E1BA5D_916294054;
-        // ---------- Original Method ----------
-        //return this.contentEncoding;
+    /**
+     * Obtains the Content-Encoding header.
+     * The default implementation returns the value of the
+     * {@link #contentEncoding contentEncoding} attribute.
+     *
+     * @return  the Content-Encoding header, or <code>null</code>
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:45.921 -0500", hash_original_method = "0300179EF34C28254565E1D29B0088D9", hash_generated_method = "0F715B6D0D7D905C0D822E970B6614D5")
+    
+public Header getContentEncoding() {
+        return this.contentEncoding;
+    }
+
+    /**
+     * Obtains the 'chunked' flag.
+     * The default implementation returns the value of the
+     * {@link #chunked chunked} attribute.
+     *
+     * @return  the 'chunked' flag
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:45.923 -0500", hash_original_method = "A2E32B99DD6261F3B5CB31D5FA7FC0FC", hash_generated_method = "D46D66383F14F25D695C786209B4FF6E")
+    
+public boolean isChunked() {
+        return this.chunked;
     }
 
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:01.753 -0400", hash_original_method = "A2E32B99DD6261F3B5CB31D5FA7FC0FC", hash_generated_method = "30C05184BB7AE12FD770F809B3E2BAC2")
-    public boolean isChunked() {
-        boolean varA9D5532A62E9998C758B235E369023D7_876992657 = (this.chunked);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1504308572 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1504308572;
-        // ---------- Original Method ----------
-        //return this.chunked;
-    }
-
+    /**
+     * Specifies the Content-Type header.
+     * The default implementation sets the value of the
+     * {@link #contentType contentType} attribute.
+     *
+     * @param contentType       the new Content-Encoding header, or
+     *                          <code>null</code> to unset
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:45.925 -0500", hash_original_method = "2A50843ADF5A0160EFC9E5758FE12891", hash_generated_method = "1874C3317F3410204EFC04FD9299595D")
     
-    @DSModeled(DSC.SAFE)
-    public void setContentType(final Header contentType) {
+public void setContentType(final Header contentType) {
         this.contentType = contentType;
     }
 
+    /**
+     * Specifies the Content-Type header, as a string.
+     * The default implementation calls
+     * {@link #setContentType(Header) setContentType(Header)}.
+     *
+     * @param ctString     the new Content-Type header, or
+     *                     <code>null</code> to unset
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:45.927 -0500", hash_original_method = "E88DF46252A0D3C2D0E67C1F492FFB2C", hash_generated_method = "3DFC5FA202A5B7D3D2C51A0040367FD0")
     
-    @DSModeled(DSC.SAFE)
-    public void setContentType(final String ctString) {
+public void setContentType(final String ctString) {
         Header h = null;
         if (ctString != null) {
             h = new BasicHeader(HTTP.CONTENT_TYPE, ctString);
         }
         setContentType(h);
     }
-
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:01.758 -0400", hash_original_method = "DEBEEA900825B0657525159073BC33A3", hash_generated_method = "1A414CB42618A24BED38C8E50DD477A0")
-    public void setContentEncoding(final Header contentEncoding) {
+
+    /**
+     * Specifies the Content-Encoding header.
+     * The default implementation sets the value of the
+     * {@link #contentEncoding contentEncoding} attribute.
+     *
+     * @param contentEncoding   the new Content-Encoding header, or
+     *                          <code>null</code> to unset
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:45.929 -0500", hash_original_method = "DEBEEA900825B0657525159073BC33A3", hash_generated_method = "50544A7BFB2B272F6A1826A6DC648C69")
+    
+public void setContentEncoding(final Header contentEncoding) {
         this.contentEncoding = contentEncoding;
-        // ---------- Original Method ----------
-        //this.contentEncoding = contentEncoding;
     }
 
+    /**
+     * Specifies the Content-Encoding header, as a string.
+     * The default implementation calls
+     * {@link #setContentEncoding(Header) setContentEncoding(Header)}.
+     *
+     * @param ceString     the new Content-Encoding header, or
+     *                     <code>null</code> to unset
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:45.932 -0500", hash_original_method = "C8D25A66722ADB2A8BE857D43D852F52", hash_generated_method = "D642BC53948088F105FD18B8BE2281A6")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:01.759 -0400", hash_original_method = "C8D25A66722ADB2A8BE857D43D852F52", hash_generated_method = "BCEED26725CC5C466F41BFDBA7565B3E")
-    public void setContentEncoding(final String ceString) {
-        addTaint(ceString.getTaint());
+public void setContentEncoding(final String ceString) {
         Header h = null;
-        if(ceString != null)        
-        {
+        if (ceString != null) {
             h = new BasicHeader(HTTP.CONTENT_ENCODING, ceString);
-        } //End block
+        }
         setContentEncoding(h);
-        // ---------- Original Method ----------
-        //Header h = null;
-        //if (ceString != null) {
-            //h = new BasicHeader(HTTP.CONTENT_ENCODING, ceString);
-        //}
-        //setContentEncoding(h);
     }
 
+
+    /**
+     * Specifies the 'chunked' flag.
+     * The default implementation sets the value of the
+     * {@link #chunked chunked} attribute.
+     *
+     * @param b         the new 'chunked' flag
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:45.936 -0500", hash_original_method = "1B88FA65FDF60169F373F298E33E777E", hash_generated_method = "257FDFC86D61A9133D77F54CD71C658D")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:01.760 -0400", hash_original_method = "1B88FA65FDF60169F373F298E33E777E", hash_generated_method = "31F89D88E68A040DC2DABC5362BEB7BE")
-    public void setChunked(boolean b) {
+public void setChunked(boolean b) {
         this.chunked = b;
-        // ---------- Original Method ----------
-        //this.chunked = b;
     }
 
+
+    /**
+     * Does not consume anything.
+     * The default implementation does nothing if
+     * {@link HttpEntity#isStreaming isStreaming}
+     * returns <code>false</code>, and throws an exception
+     * if it returns <code>true</code>.
+     * This removes the burden of implementing
+     * an empty method for non-streaming entities.
+     *
+     * @throws IOException      in case of an I/O problem
+     * @throws UnsupportedOperationException
+     *          if a streaming subclass does not override this method
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:45.939 -0500", hash_original_method = "3048E7043703056EA818491E1D9863FC", hash_generated_method = "3ED0DB4C1BFC2781032ABBA2CF53EE80")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:01.761 -0400", hash_original_method = "3048E7043703056EA818491E1D9863FC", hash_generated_method = "B44CE0248CDEDF1EFB7806A7D7105F83")
-    public void consumeContent() throws IOException, UnsupportedOperationException {
-        if(isStreaming())        
-        {
-            UnsupportedOperationException var4BA6BB3E3C71762B9E04D03749812A8B_91810872 = new UnsupportedOperationException
+public void consumeContent()
+        throws IOException, UnsupportedOperationException{
+        if (isStreaming()) {
+            throw new UnsupportedOperationException
                 ("streaming entity does not implement consumeContent()");
-            var4BA6BB3E3C71762B9E04D03749812A8B_91810872.addTaint(taint);
-            throw var4BA6BB3E3C71762B9E04D03749812A8B_91810872;
-        } //End block
-        // ---------- Original Method ----------
-        //if (isStreaming()) {
-            //throw new UnsupportedOperationException
-                //("streaming entity does not implement consumeContent()");
-        //}
+        }
     }
 
     

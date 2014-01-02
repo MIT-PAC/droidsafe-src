@@ -1,6 +1,8 @@
 package android.text.method;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.text.Editable;
 import android.view.KeyEvent;

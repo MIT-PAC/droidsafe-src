@@ -1,6 +1,8 @@
 package java.security;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.security.spec.AlgorithmParameterSpec;
 
@@ -9,32 +11,53 @@ import java.security.spec.AlgorithmParameterSpec;
 
 
 public abstract class KeyPairGeneratorSpi {
+    /**
+     * Constructs a new instance of {@code KeyPairGeneratorSpi}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.645 -0500", hash_original_method = "CDF881F5D78C7440721315183DA160B5", hash_generated_method = "7175B6D3A50E38748B9545E8BAA15E45")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.957 -0400", hash_original_method = "CDF881F5D78C7440721315183DA160B5", hash_generated_method = "A796CA261F352E71417CD5D1ED45A3DF")
-    public  KeyPairGeneratorSpi() {
-        // ---------- Original Method ----------
+public KeyPairGeneratorSpi() {
     }
 
+    /**
+     * Computes and returns a new unique {@code KeyPair} each time this method
+     * is called.
+     *
+     * @return a new unique {@code KeyPair} each time this method is called.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.648 -0500", hash_original_method = "D7450E1FCF116D6D34B6E19514AE2619", hash_generated_method = "120CECF0AA3746501E45C5FCB09D710C")
     
-    @DSModeled(DSC.SAFE)
-    public abstract KeyPair generateKeyPair();
+public abstract KeyPair generateKeyPair();
 
+    /**
+     * Initializes this {@code KeyPairGeneratorSpi} with the given key size and
+     * the given {@code SecureRandom}. The default parameter set will be used.
+     *
+     * @param keysize
+     *            the key size (number of bits).
+     * @param random
+     *            the source of randomness.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.650 -0500", hash_original_method = "6D427E576964585CD602010869E8BB6D", hash_generated_method = "6D6C69B4AAFD6A809A8B3BC78ED1D67E")
     
-    @DSModeled(DSC.SAFE)
-    public abstract void initialize(int keysize, SecureRandom random);
+public abstract void initialize(int keysize, SecureRandom random);
 
+    /**
+     * Initializes this {@code KeyPairGeneratorSpi} with the given {@code
+     * AlgorithmParameterSpec} and the given {@code SecureRandom}.
+     *
+     * @param params
+     *            the parameters to use.
+     * @param random
+     *            the source of randomness.
+     * @throws InvalidAlgorithmParameterException
+     *             if the specified parameters are not supported.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.653 -0500", hash_original_method = "C370D2A572FDE8D7C9214C2A1EC5BB2B", hash_generated_method = "798EA52CBC686B13F5E315A9B465F33C")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.958 -0400", hash_original_method = "C370D2A572FDE8D7C9214C2A1EC5BB2B", hash_generated_method = "5BB2C8DB89D06B961C64FC553034873D")
-    public void initialize(AlgorithmParameterSpec params, SecureRandom random) throws InvalidAlgorithmParameterException {
-        addTaint(random.getTaint());
-        addTaint(params.getTaint());
-        UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_730839425 = new UnsupportedOperationException();
-        var81FA7E299EEE7F062EBFBEEF08B0464D_730839425.addTaint(taint);
-        throw var81FA7E299EEE7F062EBFBEEF08B0464D_730839425;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+public void initialize(AlgorithmParameterSpec params, SecureRandom random)
+            throws InvalidAlgorithmParameterException {
+        throw new UnsupportedOperationException();
     }
 
     

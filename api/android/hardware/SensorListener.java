@@ -1,6 +1,8 @@
 package android.hardware;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 @Deprecated public interface SensorListener {

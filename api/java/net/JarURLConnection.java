@@ -1,6 +1,8 @@
 package java.net;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 import java.security.cert.Certificate;
@@ -15,169 +17,174 @@ import java.util.jar.Manifest;
 
 
 public abstract class JarURLConnection extends URLConnection {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.747 -0400", hash_original_field = "00173AD4681FE4F9D267E8220DCD34D1", hash_generated_field = "90997F9D911A1D629EE88BADE98B7D58")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:14.045 -0500", hash_original_field = "93D14AD8C7327C4E5F76F705777E71A8", hash_generated_field = "90997F9D911A1D629EE88BADE98B7D58")
 
     protected URLConnection jarFileURLConnection;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.747 -0400", hash_original_field = "30C6BF44CEEFFD9DF5233F58C3AA14FD", hash_generated_field = "6BE422D483C01C72CCB99BCB485E4E38")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:14.048 -0500", hash_original_field = "380454FECF00A43E372B31B7A119ED79", hash_generated_field = "6BE422D483C01C72CCB99BCB485E4E38")
+
 
     private String entryName;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.747 -0400", hash_original_field = "8E0F935426BCD4A3C27768F13B50EC39", hash_generated_field = "82E66C9916EFB4902E3AF0806E62A3D4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:14.050 -0500", hash_original_field = "2B598560502FFAE49A424093DCE88DD2", hash_generated_field = "82E66C9916EFB4902E3AF0806E62A3D4")
+
 
     private URL fileURL;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.747 -0400", hash_original_field = "8C7DD922AD47494FC02C388E12C00EAC", hash_generated_field = "30FC605F61F5025973295CA9594B2C5A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:14.052 -0500", hash_original_field = "71FDB50C85529723B422EF50FDC30702", hash_generated_field = "30FC605F61F5025973295CA9594B2C5A")
 
     private String file;
+
+    /**
+     * Constructs an instance of {@code JarURLConnection} that refers to the
+     * specified URL.
+     *
+     * @param url
+     *            the URL that contains the location to connect to.
+     * @throws MalformedURLException
+     *             if an invalid URL has been entered.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:14.055 -0500", hash_original_method = "E4DD2BF7117B0709966B99D66AA37CA9", hash_generated_method = "0A6D8D833CA10FC684091A8F0FA98175")
     
-        @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.748 -0400", hash_original_method = "E4DD2BF7117B0709966B99D66AA37CA9", hash_generated_method = "7C136D647D9674DCE2B4D0BB8008EB20")
-    protected  JarURLConnection(URL url) throws MalformedURLException {
+protected JarURLConnection(URL url) throws MalformedURLException {
         super(url);
         file = url.getFile();
         int sepIdx;
-        if((sepIdx = file.indexOf("!/")) < 0)        
-        {
-            MalformedURLException var21E10CD6C5DF9565D3549D417E79A72D_1822334617 = new MalformedURLException();
-            var21E10CD6C5DF9565D3549D417E79A72D_1822334617.addTaint(taint);
-            throw var21E10CD6C5DF9565D3549D417E79A72D_1822334617;
-        } //End block
+        if ((sepIdx = file.indexOf("!/")) < 0) {
+            throw new MalformedURLException();
+        }
         fileURL = new URL(url.getFile().substring(0,sepIdx));
         sepIdx += 2;
-        if(file.length() == sepIdx)        
-        {
+        if (file.length() == sepIdx) {
             return;
-        } //End block
+        }
         entryName = file.substring(sepIdx, file.length());
-        if(url.getRef() != null)        
-        {
+        if (url.getRef() != null) {
             entryName += "#" + url.getRef();
-        } //End block
-        // ---------- Original Method ----------
-        //file = url.getFile();
-        //int sepIdx;
-        //if ((sepIdx = file.indexOf("!/")) < 0) {
-            //throw new MalformedURLException();
-        //}
-        //fileURL = new URL(url.getFile().substring(0,sepIdx));
-        //sepIdx += 2;
-        //if (file.length() == sepIdx) {
-            //return;
-        //}
-        //entryName = file.substring(sepIdx, file.length());
-        //if (url.getRef() != null) {
-            //entryName += "#" + url.getRef();
-        //}
+        }
     }
 
+    /**
+     * Returns all attributes of the {@code JarEntry} referenced by this {@code
+     * JarURLConnection}.
+     *
+     * @return the attributes of the referenced {@code JarEntry}.
+     * @throws IOException
+     *                if an I/O exception occurs while retrieving the
+     *                JAR-entries.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:14.057 -0500", hash_original_method = "42C141A19D7A99858D326914023176B3", hash_generated_method = "465EE6B26AF8D33A8D218A55A49287F1")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.749 -0400", hash_original_method = "42C141A19D7A99858D326914023176B3", hash_generated_method = "CC8DBD598E46F4465D175F1D9326E070")
-    public Attributes getAttributes() throws java.io.IOException {
+public Attributes getAttributes() throws java.io.IOException {
         JarEntry jEntry = getJarEntry();
-Attributes var397D1096BF67692CA492F7FA250DB59A_442490671 =         (jEntry == null) ? null : jEntry.getAttributes();
-        var397D1096BF67692CA492F7FA250DB59A_442490671.addTaint(taint);
-        return var397D1096BF67692CA492F7FA250DB59A_442490671;
-        // ---------- Original Method ----------
-        //JarEntry jEntry = getJarEntry();
-        //return (jEntry == null) ? null : jEntry.getAttributes();
+        return (jEntry == null) ? null : jEntry.getAttributes();
     }
 
+    /**
+     * Returns all certificates of the {@code JarEntry} referenced by this
+     * {@code JarURLConnection} instance. This method will return {@code null}
+     * until the {@code InputStream} has been completely verified.
+     *
+     * @return the certificates of the {@code JarEntry} as an array.
+     * @throws IOException
+     *                if there is an I/O exception occurs while getting the
+     *                {@code JarEntry}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:14.060 -0500", hash_original_method = "D9106FD6CB62E572A0AA8ED3E04C3C09", hash_generated_method = "171C1CA2AA46ABDBDA99BC4144920BCE")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.749 -0400", hash_original_method = "D9106FD6CB62E572A0AA8ED3E04C3C09", hash_generated_method = "6061D25C9380775FF640D699B6BEC421")
-    public Certificate[] getCertificates() throws java.io.IOException {
+public Certificate[] getCertificates() throws java.io.IOException {
         JarEntry jEntry = getJarEntry();
-        if(jEntry == null)        
-        {
-Certificate[] var540C13E9E156B687226421B24F2DF178_1895808639 =             null;
-            var540C13E9E156B687226421B24F2DF178_1895808639.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_1895808639;
-        } //End block
-Certificate[] var20D23548D5B29B039534CE2DC596F6FF_199535281 =         jEntry.getCertificates();
-        var20D23548D5B29B039534CE2DC596F6FF_199535281.addTaint(taint);
-        return var20D23548D5B29B039534CE2DC596F6FF_199535281;
-        // ---------- Original Method ----------
-        //JarEntry jEntry = getJarEntry();
-        //if (jEntry == null) {
-            //return null;
-        //}
-        //return jEntry.getCertificates();
+        if (jEntry == null) {
+            return null;
+        }
+
+        return jEntry.getCertificates();
     }
 
+    /**
+     * Gets the name of the entry referenced by this {@code JarURLConnection}.
+     * The return value will be {@code null} if this instance refers to a JAR
+     * file rather than an JAR file entry.
+     *
+     * @return the {@code JarEntry} name this instance refers to.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:14.063 -0500", hash_original_method = "DAD1125851C16B3E7BCEFC2CE4B21F94", hash_generated_method = "5F1B96D10D677CC80F4A39346F21BC31")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.750 -0400", hash_original_method = "DAD1125851C16B3E7BCEFC2CE4B21F94", hash_generated_method = "A5C1147D8C9E34AB4FCC66D2F5B876EE")
-    public String getEntryName() {
-String varF3E8D7D8476436F75D1BE6BA494262B0_1963409154 =         entryName;
-        varF3E8D7D8476436F75D1BE6BA494262B0_1963409154.addTaint(taint);
-        return varF3E8D7D8476436F75D1BE6BA494262B0_1963409154;
-        // ---------- Original Method ----------
-        //return entryName;
+public String getEntryName() {
+        return entryName;
     }
 
+    /**
+     * Gets the {@code JarEntry} object of the entry referenced by this {@code
+     * JarURLConnection}.
+     *
+     * @return the referenced {@code JarEntry} object or {@code null} if no
+     *         entry name is specified.
+     * @throws IOException
+     *             if an error occurs while getting the file or file-entry.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:14.065 -0500", hash_original_method = "61250D8DAC5E4F2D4FA4FA4B1B6B705C", hash_generated_method = "4F76625C94010149473EBB79A61D5D9F")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.750 -0400", hash_original_method = "61250D8DAC5E4F2D4FA4FA4B1B6B705C", hash_generated_method = "70CED931FBC16C41C3C7A6A711CCD913")
-    public JarEntry getJarEntry() throws IOException {
-        if(!connected)        
-        {
+public JarEntry getJarEntry() throws IOException {
+        if (!connected) {
             connect();
-        } //End block
-        if(entryName == null)        
-        {
-JarEntry var540C13E9E156B687226421B24F2DF178_1959300110 =             null;
-            var540C13E9E156B687226421B24F2DF178_1959300110.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_1959300110;
-        } //End block
-JarEntry varF75877B5990554D5010042B3CE857FC6_2000728628 =         getJarFile().getJarEntry(entryName);
-        varF75877B5990554D5010042B3CE857FC6_2000728628.addTaint(taint);
-        return varF75877B5990554D5010042B3CE857FC6_2000728628;
-        // ---------- Original Method ----------
-        //if (!connected) {
-            //connect();
-        //}
-        //if (entryName == null) {
-            //return null;
-        //}
-        //return getJarFile().getJarEntry(entryName);
+        }
+        if (entryName == null) {
+            return null;
+        }
+        // The entry must exist since the connect succeeded
+        return getJarFile().getJarEntry(entryName);
     }
 
+    /**
+     * Gets the manifest file associated with this JAR-URL.
+     *
+     * @return the manifest of the referenced JAR-file.
+     * @throws IOException
+     *             if an error occurs while getting the manifest file.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:14.068 -0500", hash_original_method = "EC6192B3278FED11B844B429A38C32F1", hash_generated_method = "10C1284C26B94E6CCFDFBE9F97C14404")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.751 -0400", hash_original_method = "EC6192B3278FED11B844B429A38C32F1", hash_generated_method = "1C7EA6703911A13F2002EFFE6079429C")
-    public Manifest getManifest() throws java.io.IOException {
-Manifest varD6A473F34A9B589697EE5BB39DA55A84_413545800 =         (Manifest)getJarFile().getManifest().clone();
-        varD6A473F34A9B589697EE5BB39DA55A84_413545800.addTaint(taint);
-        return varD6A473F34A9B589697EE5BB39DA55A84_413545800;
-        // ---------- Original Method ----------
-        //return (Manifest)getJarFile().getManifest().clone();
+public Manifest getManifest() throws java.io.IOException {
+        return (Manifest)getJarFile().getManifest().clone();
     }
 
+    /**
+     * Gets the {@code JarFile} object referenced by this {@code
+     * JarURLConnection}.
+     *
+     * @return the referenced JarFile object.
+     * @throws IOException
+     *                if an I/O exception occurs while retrieving the JAR-file.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:14.071 -0500", hash_original_method = "BF5CCCDB452875A850EBFBEAFE3E1375", hash_generated_method = "939D31392D6E9D4BEED6B815B24B4D7E")
     
-    @DSModeled(DSC.SAFE)
-    public abstract JarFile getJarFile() throws java.io.IOException;
+public abstract JarFile getJarFile() throws java.io.IOException;
 
+    /**
+     * Gets the URL to the JAR-file referenced by this {@code JarURLConnection}.
+     *
+     * @return the URL to the JAR-file or {@code null} if there was an error
+     *         retrieving the URL.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:14.073 -0500", hash_original_method = "35923E0EC1A4B6746505AC2CF9BCB1E8", hash_generated_method = "8CC1ACE1CFC60AB221FC4EF323219F05")
     
-        @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.751 -0400", hash_original_method = "35923E0EC1A4B6746505AC2CF9BCB1E8", hash_generated_method = "783C90ACFEFBB0168F679ACABC4058C5")
-    public URL getJarFileURL() {
-URL var8B7F9BD78C6186977C46D48EA3629742_1428480114 =         fileURL;
-        var8B7F9BD78C6186977C46D48EA3629742_1428480114.addTaint(taint);
-        return var8B7F9BD78C6186977C46D48EA3629742_1428480114;
-        // ---------- Original Method ----------
-        //return fileURL;
+public URL getJarFileURL() {
+        return fileURL;
     }
 
+    /**
+     * Gets all attributes of the manifest file referenced by this {@code
+     * JarURLConnection}. If this instance refers to a JAR-file rather than a
+     * JAR-file entry, {@code null} will be returned.
+     *
+     * @return the attributes of the manifest file or {@code null}.
+     * @throws IOException
+     *                if an I/O exception occurs while retrieving the {@code
+     *                JarFile}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:14.076 -0500", hash_original_method = "392ECCC5BDE098E1298FE9F5D5A5083C", hash_generated_method = "6716954CDF1063A52CFE32BCA8CD08F0")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.751 -0400", hash_original_method = "392ECCC5BDE098E1298FE9F5D5A5083C", hash_generated_method = "AC734A1CF820EE9417249DC72BB974ED")
-    public Attributes getMainAttributes() throws java.io.IOException {
+public Attributes getMainAttributes() throws java.io.IOException {
         Manifest m = getJarFile().getManifest();
-Attributes varEF0569FCE2C5DC98D21FE9C1CBEF240D_1208525154 =         (m == null) ? null : m.getMainAttributes();
-        varEF0569FCE2C5DC98D21FE9C1CBEF240D_1208525154.addTaint(taint);
-        return varEF0569FCE2C5DC98D21FE9C1CBEF240D_1208525154;
-        // ---------- Original Method ----------
-        //Manifest m = getJarFile().getManifest();
-        //return (m == null) ? null : m.getMainAttributes();
+        return (m == null) ? null : m.getMainAttributes();
     }
 
     

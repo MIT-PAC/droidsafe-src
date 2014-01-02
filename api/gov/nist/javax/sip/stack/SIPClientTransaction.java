@@ -1,6 +1,8 @@
 package gov.nist.javax.sip.stack;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import gov.nist.core.InternalErrorHandler;
 import gov.nist.core.NameValueList;
@@ -47,110 +49,127 @@ import javax.sip.message.Request;
 
 
 public class SIPClientTransaction extends SIPTransaction implements ServerResponseInterface, javax.sip.ClientTransaction, gov.nist.javax.sip.ClientTransactionExt {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.874 -0400", hash_original_field = "9D1B3F5D17ED1B162A9028E26EB002CF", hash_generated_field = "4FD467E2912A8CCA6B0DF0BC8D0D1212")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:28.931 -0500", hash_original_field = "58283386B675010F4891CF27E94157D3", hash_generated_field = "1487DE1D87B4F987EFCACDA15F312B17")
+
+    // dialogs in the early state. These dialogs all have
+    // the same call ID and same From tag but different to tags.
 
     private ConcurrentHashMap<String,SIPDialog> sipDialogs;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.874 -0400", hash_original_field = "F4C9163F3B67F1BAF07814D81D1A5BFF", hash_generated_field = "609F87DF574B03997F5F114A0B9D153C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:28.933 -0500", hash_original_field = "49DD22F94DF245317ED1A2BD8A02CFDB", hash_generated_field = "609F87DF574B03997F5F114A0B9D153C")
+
 
     private SIPRequest lastRequest;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.874 -0400", hash_original_field = "9FF65E805E77272D5E272AE178834E8E", hash_generated_field = "EBCE51BBA382AA4A4CBC72431B4DD4F6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:28.936 -0500", hash_original_field = "D6A71000355B6BFBB50B46A66F901937", hash_generated_field = "EBCE51BBA382AA4A4CBC72431B4DD4F6")
+
 
     private int viaPort;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.874 -0400", hash_original_field = "08E65A0B18A72698816D81C11CBA7C86", hash_generated_field = "638E6682C500E41733363C20AADC9C2B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:28.938 -0500", hash_original_field = "4BA0D9B2BD51634788CE72CB007A32A1", hash_generated_field = "638E6682C500E41733363C20AADC9C2B")
+
 
     private String viaHost;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.874 -0400", hash_original_field = "C2F5B0984A31E2BF00C102C547210A78", hash_generated_field = "D5BADECCFB140300052474F1FF053995")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:28.941 -0500", hash_original_field = "65AD11AD54A2F67B68FF72DF0F0B9619", hash_generated_field = "D5BADECCFB140300052474F1FF053995")
 
     private transient ServerResponseInterface respondTo;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.874 -0400", hash_original_field = "F86AD9818A501BA0007B6D4CB23A57E7", hash_generated_field = "9DA006915F9968E7F19F133BB3970E72")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:28.945 -0500", hash_original_field = "4CD2877ACCF9846A4F145B6AB6FC362C", hash_generated_field = "9DA006915F9968E7F19F133BB3970E72")
+
 
     private SIPDialog defaultDialog;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.874 -0400", hash_original_field = "75129D9368F303477B6712550E089B5E", hash_generated_field = "B633077E034AF130A4E0928C373CBB0D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:28.948 -0500", hash_original_field = "3566D4B8C0AEF966330B649D87EC260C", hash_generated_field = "B633077E034AF130A4E0928C373CBB0D")
+
 
     private Hop nextHop;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.874 -0400", hash_original_field = "A6A57E5FB85DB2354843F5CFC0F10126", hash_generated_field = "F8A9EE3383846FA140533EA0DC849D5A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:28.950 -0500", hash_original_field = "9C492E8F94C2A6777DDA6DBC2C27E513", hash_generated_field = "F8A9EE3383846FA140533EA0DC849D5A")
+
 
     private boolean notifyOnRetransmit;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.874 -0400", hash_original_field = "3375F1DE75A740A2863FD66BD8AF168D", hash_generated_field = "3AFD3FC295AA4B6D90EAF77E52351862")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:28.953 -0500", hash_original_field = "36DCA919BF89F587B06884FD9CF79079", hash_generated_field = "3AFD3FC295AA4B6D90EAF77E52351862")
+
 
     private boolean timeoutIfStillInCallingState;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.874 -0400", hash_original_field = "E6FA2A24AC6D7E8AC19BEC7E11CB1C83", hash_generated_field = "5D7F837D171773BD9460FE3577E94E41")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:28.955 -0500", hash_original_field = "5AD8D84FA0FEEAB1970AAD286406ABD6", hash_generated_field = "5D7F837D171773BD9460FE3577E94E41")
+
 
     private int callingStateTimeoutCount;
+
+    /**
+     * Creates a new client transaction.
+     * 
+     * @param newSIPStack Transaction stack this transaction belongs to.
+     * @param newChannelToUse Channel to encapsulate.
+     * @return the created client transaction.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:28.968 -0500", hash_original_method = "7433B8F0086E8DE587CA3684570FA4BD", hash_generated_method = "2018AF2AD2E4969987BE9EBAB6C8F47A")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.875 -0400", hash_original_method = "7433B8F0086E8DE587CA3684570FA4BD", hash_generated_method = "D0BB4646DF55AEC0B8DDCD47BEFC4796")
-    protected  SIPClientTransaction(SIPTransactionStack newSIPStack, MessageChannel newChannelToUse) {
+protected SIPClientTransaction(SIPTransactionStack newSIPStack, MessageChannel newChannelToUse) {
         super(newSIPStack, newChannelToUse);
-        addTaint(newChannelToUse.getTaint());
-        addTaint(newSIPStack.getTaint());
+        // Create a random branch parameter for this transaction
+        // setBranch( SIPConstants.BRANCH_MAGIC_COOKIE +
+        // Integer.toHexString( hashCode( ) ) );
         setBranch(Utils.getInstance().generateBranchId());
         this.messageProcessor = newChannelToUse.messageProcessor;
         this.setEncapsulatedChannel(newChannelToUse);
         this.notifyOnRetransmit = false;
         this.timeoutIfStillInCallingState = false;
-        if(sipStack.isLoggingEnabled())        
-        {
+
+        // This semaphore guards the listener from being
+        // re-entered for this transaction. That is
+        // for a give tx, the listener is called at most
+        // once with an outstanding request.
+
+        if (sipStack.isLoggingEnabled()) {
             sipStack.getStackLogger().logDebug("Creating clientTransaction " + this);
             sipStack.getStackLogger().logStackTrace();
-        } //End block
+        }
+        // this.startTransactionTimer();
         this.sipDialogs = new ConcurrentHashMap();
-        // ---------- Original Method ----------
-        //setBranch(Utils.getInstance().generateBranchId());
-        //this.messageProcessor = newChannelToUse.messageProcessor;
-        //this.setEncapsulatedChannel(newChannelToUse);
-        //this.notifyOnRetransmit = false;
-        //this.timeoutIfStillInCallingState = false;
-        //if (sipStack.isLoggingEnabled()) {
-            //sipStack.getStackLogger().logDebug("Creating clientTransaction " + this);
-            //sipStack.getStackLogger().logStackTrace();
-        //}
-        //this.sipDialogs = new ConcurrentHashMap();
     }
 
+    /**
+     * Sets the real ResponseInterface this transaction encapsulates.
+     * 
+     * @param newRespondTo ResponseInterface to send messages to.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:28.971 -0500", hash_original_method = "A499701B9B92E6B9F8BD35BBCEA7DB79", hash_generated_method = "F73C5307D17B8945C733B02534BA0F7D")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.876 -0400", hash_original_method = "A499701B9B92E6B9F8BD35BBCEA7DB79", hash_generated_method = "81BDAC6E2EAD5181CA933DB4CA73C8DB")
-    public void setResponseInterface(ServerResponseInterface newRespondTo) {
-        if(sipStack.isLoggingEnabled())        
-        {
+public void setResponseInterface(ServerResponseInterface newRespondTo) {
+        if (sipStack.isLoggingEnabled()) {
             sipStack.getStackLogger().logDebug(
                     "Setting response interface for " + this + " to " + newRespondTo);
-            if(newRespondTo == null)            
-            {
+            if (newRespondTo == null) {
                 sipStack.getStackLogger().logStackTrace();
                 sipStack.getStackLogger().logDebug("WARNING -- setting to null!");
-            } //End block
-        } //End block
+            }
+        }
+
         respondTo = newRespondTo;
-        // ---------- Original Method ----------
-        //if (sipStack.isLoggingEnabled()) {
-            //sipStack.getStackLogger().logDebug(
-                    //"Setting response interface for " + this + " to " + newRespondTo);
-            //if (newRespondTo == null) {
-                //sipStack.getStackLogger().logStackTrace();
-                //sipStack.getStackLogger().logDebug("WARNING -- setting to null!");
-            //}
-        //}
-        //respondTo = newRespondTo;
+
     }
 
+    /**
+     * Returns this transaction.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:28.974 -0500", hash_original_method = "2565B9EE896335E27EEEABBB213A9C77", hash_generated_method = "52A37846A02A7017E22F7016E885C2EF")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.876 -0400", hash_original_method = "2565B9EE896335E27EEEABBB213A9C77", hash_generated_method = "020DF755F8CC6CD5F037CE149335A718")
-    public MessageChannel getRequestChannel() {
-MessageChannel var72A74007B2BE62B849F475C7BDA4658B_1838047113 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_1838047113.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_1838047113;
-        // ---------- Original Method ----------
-        //return this;
+public MessageChannel getRequestChannel() {
+
+        return this;
+
     }
 
+    /**
+     * Deterines if the message is a part of this transaction.
+     * 
+     * @param messageToTest Message to check if it is part of this transaction.
+     * 
+     * @return true if the message is part of this transaction, false if not.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:28.977 -0500", hash_original_method = "C99C4952C168074F3FBA7AB2C1372665", hash_generated_method = "F33ED7C3E1DB2DC82243B965350B6674")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.878 -0400", hash_original_method = "C99C4952C168074F3FBA7AB2C1372665", hash_generated_method = "B42594B0AF5CCBC1023AA53C1444D8DA")
-    public boolean isMessagePartOfTransaction(SIPMessage messageToTest) {
-        addTaint(messageToTest.getTaint());
+public boolean isMessagePartOfTransaction(SIPMessage messageToTest) {
+
+        // List of Via headers in the message to test
         ViaList viaHeaders = messageToTest.getViaHeaders();
+        // Flags whether the select message is part of this transaction
         boolean transactionMatches;
         String messageBranch = ((Via) viaHeaders.getFirst()).getBranch();
         boolean rfc3261Compliant = getBranch() != null
@@ -159,1377 +178,1346 @@ MessageChannel var72A74007B2BE62B849F475C7BDA4658B_1838047113 =         this;
                         SIPConstants.BRANCH_MAGIC_COOKIE_LOWER_CASE)
                 && messageBranch.toLowerCase().startsWith(
                         SIPConstants.BRANCH_MAGIC_COOKIE_LOWER_CASE);
+
         transactionMatches = false;
-        if(TransactionState.COMPLETED == this.getState())        
-        {
-            if(rfc3261Compliant)            
-            {
+        if (TransactionState.COMPLETED == this.getState()) {
+            if (rfc3261Compliant) {
                 transactionMatches = getBranch().equalsIgnoreCase(
                         ((Via) viaHeaders.getFirst()).getBranch())
                         && getMethod().equals(messageToTest.getCSeq().getMethod());
-            } //End block
-            else
-            {
+            } else {
                 transactionMatches = getBranch().equals(messageToTest.getTransactionId());
-            } //End block
-        } //End block
-        else
-        if(!isTerminated())        
-        {
-            if(rfc3261Compliant)            
-            {
-                if(viaHeaders != null)                
-                {
-                    if(getBranch().equalsIgnoreCase(((Via) viaHeaders.getFirst()).getBranch()))                    
-                    {
+            }
+        } else if (!isTerminated()) {
+            if (rfc3261Compliant) {
+                if (viaHeaders != null) {
+                    // If the branch parameter is the
+                    // same as this transaction and the method is the same,
+                    if (getBranch().equalsIgnoreCase(((Via) viaHeaders.getFirst()).getBranch())) {
                         transactionMatches = getOriginalRequest().getCSeq().getMethod().equals(
                                 messageToTest.getCSeq().getMethod());
-                    } //End block
-                } //End block
-            } //End block
-            else
-            {
-                if(getBranch() != null)                
-                {
+
+                    }
+                }
+            } else {
+                // not RFC 3261 compliant.
+                if (getBranch() != null) {
                     transactionMatches = getBranch().equalsIgnoreCase(
                             messageToTest.getTransactionId());
-                } //End block
-                else
-                {
+                } else {
                     transactionMatches = getOriginalRequest().getTransactionId()
                             .equalsIgnoreCase(messageToTest.getTransactionId());
-                } //End block
-            } //End block
-        } //End block
-        boolean var05E079BB3C0AA5EA1496AF660BBDEC18_2099202383 = (transactionMatches);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_444625356 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_444625356;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                }
+
+            }
+
+        }
+        return transactionMatches;
+
     }
 
+    /**
+     * Send a request message through this transaction and onto the client.
+     * 
+     * @param messageToSend Request to process and send.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:28.981 -0500", hash_original_method = "1DFD8968C3CA232EAF5E448E3048EE02", hash_generated_method = "4218F1362D3FAC8D5423CCE43D04CC05")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.880 -0400", hash_original_method = "1DFD8968C3CA232EAF5E448E3048EE02", hash_generated_method = "7A603E1F44F89C22440E584A8D85AB74")
-    public void sendMessage(SIPMessage messageToSend) throws IOException {
-        addTaint(messageToSend.getTaint());
-        try 
-        {
+public void sendMessage(SIPMessage messageToSend) throws IOException {
+
+        try {
+            // Message typecast as a request
             SIPRequest transactionRequest;
+
             transactionRequest = (SIPRequest) messageToSend;
+
+            // Set the branch id for the top via header.
             Via topVia = (Via) transactionRequest.getViaHeaders().getFirst();
-            try 
-            {
+            // Tack on a branch identifier to match responses.
+            try {
                 topVia.setBranch(getBranch());
-            } //End block
-            catch (java.text.ParseException ex)
-            {
-            } //End block
-            if(sipStack.isLoggingEnabled())            
-            {
+            } catch (java.text.ParseException ex) {
+            }
+
+            if (sipStack.isLoggingEnabled()) {
                 sipStack.getStackLogger().logDebug("Sending Message " + messageToSend);
                 sipStack.getStackLogger().logDebug("TransactionState " + this.getState());
-            } //End block
-            if(TransactionState.PROCEEDING == getState()
-                    || TransactionState.CALLING == getState())            
-            {
-                if(transactionRequest.getMethod().equals(Request.ACK))                
-                {
-                    if(isReliable())                    
-                    {
+            }
+            // If this is the first request for this transaction,
+            if (TransactionState.PROCEEDING == getState()
+                    || TransactionState.CALLING == getState()) {
+
+                // If this is a TU-generated ACK request,
+                if (transactionRequest.getMethod().equals(Request.ACK)) {
+
+                    // Send directly to the underlying
+                    // transport and close this transaction
+                    if (isReliable()) {
                         this.setState(TransactionState.TERMINATED);
-                    } //End block
-                    else
-                    {
+                    } else {
                         this.setState(TransactionState.COMPLETED);
-                    } //End block
+                    }
+                    // BUGBUG -- This suppresses sending the ACK uncomment this
+                    // to
+                    // test 4xx retransmission
+                    // if (transactionRequest.getMethod() != Request.ACK)
                     super.sendMessage(transactionRequest);
                     return;
-                } //End block
-            } //End block
-            try 
-            {
+
+                }
+
+            }
+            try {
+
+                // Send the message to the server
                 lastRequest = transactionRequest;
-                if(getState() == null)                
-                {
+                if (getState() == null) {
+                    // Save this request as the one this transaction
+                    // is handling
                     setOriginalRequest(transactionRequest);
-                    if(transactionRequest.getMethod().equals(Request.INVITE))                    
-                    {
+                    // Change to trying/calling state
+                    // Set state first to avoid race condition..
+
+                    if (transactionRequest.getMethod().equals(Request.INVITE)) {
                         this.setState(TransactionState.CALLING);
-                    } //End block
-                    else
-                    if(transactionRequest.getMethod().equals(Request.ACK))                    
-                    {
+                    } else if (transactionRequest.getMethod().equals(Request.ACK)) {
+                        // Acks are never retransmitted.
                         this.setState(TransactionState.TERMINATED);
-                    } //End block
-                    else
-                    {
+                    } else {
                         this.setState(TransactionState.TRYING);
-                    } //End block
-                    if(!isReliable())                    
-                    {
+                    }
+                    if (!isReliable()) {
                         enableRetransmissionTimer();
-                    } //End block
-                    if(isInviteTransaction())                    
-                    {
+                    }
+                    if (isInviteTransaction()) {
                         enableTimeoutTimer(TIMER_B);
-                    } //End block
-                    else
-                    {
+                    } else {
                         enableTimeoutTimer(TIMER_F);
-                    } //End block
-                } //End block
+                    }
+                }
+                // BUGBUG This supresses sending ACKS -- uncomment to test
+                // 4xx retransmission.
+                // if (transactionRequest.getMethod() != Request.ACK)
                 super.sendMessage(transactionRequest);
-            } //End block
-            catch (IOException e)
-            {
+
+            } catch (IOException e) {
+
                 this.setState(TransactionState.TERMINATED);
-                e.addTaint(taint);
                 throw e;
-            } //End block
-        } //End block
-        finally 
-        {
+
+            }
+        } finally {
             this.isMapped = true;
             this.startTransactionTimer();
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+
+        }
+
     }
 
+    /**
+     * Process a new response message through this transaction. If necessary, this message will
+     * also be passed onto the TU.
+     * 
+     * @param transactionResponse Response to process.
+     * @param sourceChannel Channel that received this message.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:28.984 -0500", hash_original_method = "27FC8E987828EB63A48AA2B14048F41C", hash_generated_method = "8F28EC71A380BCA40C14376432A1A42D")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.881 -0400", hash_original_method = "27FC8E987828EB63A48AA2B14048F41C", hash_generated_method = "DA679BFF18BA26AD4A1EF8DA988AEEA4")
-    public synchronized void processResponse(SIPResponse transactionResponse,
+public synchronized void processResponse(SIPResponse transactionResponse,
             MessageChannel sourceChannel, SIPDialog dialog) {
-        addTaint(dialog.getTaint());
-        addTaint(sourceChannel.getTaint());
-        addTaint(transactionResponse.getTaint());
-        if(getState() == null)        
-        return;
-        if((TransactionState.COMPLETED == this.getState() || TransactionState.TERMINATED == this
-                .getState())
-                && transactionResponse.getStatusCode() / 100 == 1)        
-        {
+
+        // If the state has not yet been assigned then this is a
+        // spurious response.
+
+        if (getState() == null)
             return;
-        } //End block
-        if(sipStack.isLoggingEnabled())        
-        {
+
+        // Ignore 1xx
+        if ((TransactionState.COMPLETED == this.getState() || TransactionState.TERMINATED == this
+                .getState())
+                && transactionResponse.getStatusCode() / 100 == 1) {
+            return;
+        }
+
+        if (sipStack.isLoggingEnabled()) {
             sipStack.getStackLogger().logDebug(
                     "processing " + transactionResponse.getFirstLine() + "current state = "
                             + getState());
             sipStack.getStackLogger().logDebug("dialog = " + dialog);
-        } //End block
+        }
+
         this.lastResponse = transactionResponse;
-        try 
-        {
-            if(isInviteTransaction())            
-            inviteClientTransaction(transactionResponse, sourceChannel, dialog);
+
+        /*
+         * JvB: this is now duplicate with code in the other processResponse
+         * 
+         * if (dialog != null && transactionResponse.getStatusCode() != 100 &&
+         * (transactionResponse.getTo().getTag() != null || sipStack .isRfc2543Supported())) { //
+         * add the route before you process the response. dialog.setLastResponse(this,
+         * transactionResponse); this.setDialog(dialog, transactionResponse.getDialogId(false)); }
+         */
+
+        try {
+            if (isInviteTransaction())
+                inviteClientTransaction(transactionResponse, sourceChannel, dialog);
             else
-            nonInviteClientTransaction(transactionResponse, sourceChannel, dialog);
-        } //End block
-        catch (IOException ex)
-        {
-            if(sipStack.isLoggingEnabled())            
-            sipStack.getStackLogger().logException(ex);
+                nonInviteClientTransaction(transactionResponse, sourceChannel, dialog);
+        } catch (IOException ex) {
+            if (sipStack.isLoggingEnabled())
+                sipStack.getStackLogger().logException(ex);
             this.setState(TransactionState.TERMINATED);
             raiseErrorEvent(SIPTransactionErrorEvent.TRANSPORT_ERROR);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        }
     }
 
+    /**
+     * Implements the state machine for invite client transactions.
+     * 
+     * <pre>
+     *                   
+     *                    
+     *                     
+     *                      
+     *                      
+     *                                                         |Request from TU
+     *                                                         |send request
+     *                                     Timer E             V
+     *                                     send request  +-----------+
+     *                                         +---------|           |-------------------+
+     *                                         |         |  Trying   |  Timer F          |
+     *                                         +--------&gt;|           |  or Transport Err.|
+     *                                                   +-----------+  inform TU        |
+     *                                      200-699         |  |                         |
+     *                                      resp. to TU     |  |1xx                      |
+     *                                      +---------------+  |resp. to TU              |
+     *                                      |                  |                         |
+     *                                      |   Timer E        V       Timer F           |
+     *                                      |   send req +-----------+ or Transport Err. |
+     *                                      |  +---------|           | inform TU         |
+     *                                      |  |         |Proceeding |------------------&gt;|
+     *                                      |  +--------&gt;|           |-----+             |
+     *                                      |            +-----------+     |1xx          |
+     *                                      |              |      &circ;        |resp to TU   |
+     *                                      | 200-699      |      +--------+             |
+     *                                      | resp. to TU  |                             |
+     *                                      |              |                             |
+     *                                      |              V                             |
+     *                                      |            +-----------+                   |
+     *                                      |            |           |                   |
+     *                                      |            | Completed |                   |
+     *                                      |            |           |                   |
+     *                                      |            +-----------+                   |
+     *                                      |              &circ;   |                         |
+     *                                      |              |   | Timer K                 |
+     *                                      +--------------+   | -                       |
+     *                                                         |                         |
+     *                                                         V                         |
+     *                                   NOTE:           +-----------+                   |
+     *                                                   |           |                   |
+     *                               transitions         | Terminated|&lt;------------------+
+     *                               labeled with        |           |
+     *                               the event           +-----------+
+     *                               over the action
+     *                               to take
+     *                      
+     *                                       Figure 6: non-INVITE client transaction
+     *                      
+     *                      
+     *                     
+     *                    
+     * </pre>
+     * 
+     * @param transactionResponse -- transaction response received.
+     * @param sourceChannel - source channel on which the response was received.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:28.988 -0500", hash_original_method = "ADF3D75C6ADD47CBC6B3D63B5D3998CF", hash_generated_method = "0877A94654B2780C0441D1B234A42B9A")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.882 -0400", hash_original_method = "ADF3D75C6ADD47CBC6B3D63B5D3998CF", hash_generated_method = "0E34F8263D7006E4E63431945E103609")
-    private void nonInviteClientTransaction(SIPResponse transactionResponse,
+private void nonInviteClientTransaction(SIPResponse transactionResponse,
             MessageChannel sourceChannel, SIPDialog sipDialog) throws IOException {
-        addTaint(sipDialog.getTaint());
-        addTaint(sourceChannel.getTaint());
-        addTaint(transactionResponse.getTaint());
         int statusCode = transactionResponse.getStatusCode();
-        if(TransactionState.TRYING == this.getState())        
-        {
-            if(statusCode / 100 == 1)            
-            {
+        if (TransactionState.TRYING == this.getState()) {
+            if (statusCode / 100 == 1) {
                 this.setState(TransactionState.PROCEEDING);
                 enableRetransmissionTimer(MAXIMUM_RETRANSMISSION_TICK_COUNT);
                 enableTimeoutTimer(TIMER_F);
-                if(respondTo != null)                
-                {
+                // According to RFC, the TU has to be informed on
+                // this transition.
+                if (respondTo != null) {
                     respondTo.processResponse(transactionResponse, this, sipDialog);
-                } //End block
-                else
-                {
+                } else {
                     this.semRelease();
-                } //End block
-            } //End block
-            else
-            if(200 <= statusCode && statusCode <= 699)            
-            {
-                if(respondTo != null)                
-                {
+                }
+            } else if (200 <= statusCode && statusCode <= 699) {
+                // Send the response up to the TU.
+                if (respondTo != null) {
                     respondTo.processResponse(transactionResponse, this, sipDialog);
-                } //End block
-                else
-                {
+                } else {
                     this.semRelease();
-                } //End block
-                if(!isReliable())                
-                {
+                }
+                if (!isReliable()) {
                     this.setState(TransactionState.COMPLETED);
                     enableTimeoutTimer(TIMER_K);
-                } //End block
-                else
-                {
+                } else {
                     this.setState(TransactionState.TERMINATED);
-                } //End block
-            } //End block
-        } //End block
-        else
-        if(TransactionState.PROCEEDING == this.getState())        
-        {
-            if(statusCode / 100 == 1)            
-            {
-                if(respondTo != null)                
-                {
+                }
+            }
+        } else if (TransactionState.PROCEEDING == this.getState()) {
+            if (statusCode / 100 == 1) {
+                if (respondTo != null) {
                     respondTo.processResponse(transactionResponse, this, sipDialog);
-                } //End block
-                else
-                {
+                } else {
                     this.semRelease();
-                } //End block
-            } //End block
-            else
-            if(200 <= statusCode && statusCode <= 699)            
-            {
-                if(respondTo != null)                
-                {
+                }
+            } else if (200 <= statusCode && statusCode <= 699) {
+                if (respondTo != null) {
                     respondTo.processResponse(transactionResponse, this, sipDialog);
-                } //End block
-                else
-                {
+                } else {
                     this.semRelease();
-                } //End block
+                }
                 disableRetransmissionTimer();
                 disableTimeoutTimer();
-                if(!isReliable())                
-                {
+                if (!isReliable()) {
                     this.setState(TransactionState.COMPLETED);
                     enableTimeoutTimer(TIMER_K);
-                } //End block
-                else
-                {
+                } else {
                     this.setState(TransactionState.TERMINATED);
-                } //End block
-            } //End block
-        } //End block
-        else
-        {
-            if(sipStack.isLoggingEnabled())            
-            {
+                }
+            }
+        } else {
+            if (sipStack.isLoggingEnabled()) {
                 sipStack.getStackLogger().logDebug(
                         " Not sending response to TU! " + getState());
-            } //End block
+            }
             this.semRelease();
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        }
     }
 
+    /**
+     * Implements the state machine for invite client transactions.
+     * 
+     * <pre>
+     *                   
+     *                    
+     *                     
+     *                      
+     *                      
+     *                                                     |INVITE from TU
+     *                                   Timer A fires     |INVITE sent
+     *                                   Reset A,          V                      Timer B fires
+     *                                   INVITE sent +-----------+                or Transport Err.
+     *                                     +---------|           |---------------+inform TU
+     *                                     |         |  Calling  |               |
+     *                                     +--------&gt;|           |--------------&gt;|
+     *                                               +-----------+ 2xx           |
+     *                                                  |  |       2xx to TU     |
+     *                                                  |  |1xx                  |
+     *                          300-699 +---------------+  |1xx to TU            |
+     *                         ACK sent |                  |                     |
+     *                      resp. to TU |  1xx             V                     |
+     *                                  |  1xx to TU  -----------+               |
+     *                                  |  +---------|           |               |
+     *                                  |  |         |Proceeding |--------------&gt;|
+     *                                  |  +--------&gt;|           | 2xx           |
+     *                                  |            +-----------+ 2xx to TU     |
+     *                                  |       300-699    |                     |
+     *                                  |       ACK sent,  |                     |
+     *                                  |       resp. to TU|                     |
+     *                                  |                  |                     |      NOTE:
+     *                                  |  300-699         V                     |
+     *                                  |  ACK sent  +-----------+Transport Err. |  transitions
+     *                                  |  +---------|           |Inform TU      |  labeled with
+     *                                  |  |         | Completed |--------------&gt;|  the event
+     *                                  |  +--------&gt;|           |               |  over the action
+     *                                  |            +-----------+               |  to take
+     *                                  |              &circ;   |                     |
+     *                                  |              |   | Timer D fires       |
+     *                                  +--------------+   | -                   |
+     *                                                     |                     |
+     *                                                     V                     |
+     *                                               +-----------+               |
+     *                                               |           |               |
+     *                                               | Terminated|&lt;--------------+
+     *                                               |           |
+     *                                               +-----------+
+     *                      
+     *                      
+     *                     
+     *                    
+     * </pre>
+     * 
+     * @param transactionResponse -- transaction response received.
+     * @param sourceChannel - source channel on which the response was received.
+     */
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:28.993 -0500", hash_original_method = "C74AAAAD68DF1265333F033333BC207B", hash_generated_method = "3EB99BFD5E7B84123E5B644CCCED444B")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.884 -0400", hash_original_method = "C74AAAAD68DF1265333F033333BC207B", hash_generated_method = "F9C87560DDA7F0452FEDB1728923712A")
-    private void inviteClientTransaction(SIPResponse transactionResponse,
+private void inviteClientTransaction(SIPResponse transactionResponse,
             MessageChannel sourceChannel, SIPDialog dialog) throws IOException {
-        addTaint(dialog.getTaint());
-        addTaint(sourceChannel.getTaint());
-        addTaint(transactionResponse.getTaint());
         int statusCode = transactionResponse.getStatusCode();
-        if(TransactionState.TERMINATED == this.getState())        
-        {
+       
+        if (TransactionState.TERMINATED == this.getState()) {
             boolean ackAlreadySent = false;
-            if(dialog != null && dialog.isAckSeen() && dialog.getLastAckSent() != null)            
-            {
-                if(dialog.getLastAckSent().getCSeq().getSeqNumber() == transactionResponse.getCSeq()
+            if (dialog != null && dialog.isAckSeen() && dialog.getLastAckSent() != null) {
+                if (dialog.getLastAckSent().getCSeq().getSeqNumber() == transactionResponse.getCSeq()
                         .getSeqNumber()
                         && transactionResponse.getFromTag().equals(
-                                dialog.getLastAckSent().getFromTag()))                
-                {
+                                dialog.getLastAckSent().getFromTag())) {
+                    // the last ack sent corresponded to this response
                     ackAlreadySent = true;
-                } //End block
-            } //End block
-            if(dialog!= null && ackAlreadySent
-                    && transactionResponse.getCSeq().getMethod().equals(dialog.getMethod()))            
-            {
-                try 
-                {
-                    if(sipStack.isLoggingEnabled())                    
-                    sipStack.getStackLogger().logDebug("resending ACK");
+                }
+            }
+            // retransmit the ACK for this response.
+            if (dialog!= null && ackAlreadySent
+                    && transactionResponse.getCSeq().getMethod().equals(dialog.getMethod())) {
+                try {
+                    // Found the dialog - resend the ACK and
+                    // dont pass up the null transaction
+                    if (sipStack.isLoggingEnabled())
+                        sipStack.getStackLogger().logDebug("resending ACK");
+
                     dialog.resendAck();
-                } //End block
-                catch (SipException ex)
-                {
-                } //End block
-            } //End block
+                } catch (SipException ex) {
+                    // What to do here ?? kill the dialog?
+                }
+            }
+
             this.semRelease();
             return;
-        } //End block
-        else
-        if(TransactionState.CALLING == this.getState())        
-        {
-            if(statusCode / 100 == 2)            
-            {
+        } else if (TransactionState.CALLING == this.getState()) {
+            if (statusCode / 100 == 2) {
+
+                // JvB: do this ~before~ calling the application, to avoid
+                // retransmissions
+                // of the INVITE after app sends ACK
                 disableRetransmissionTimer();
                 disableTimeoutTimer();
                 this.setState(TransactionState.TERMINATED);
-                if(respondTo != null)                
-                respondTo.processResponse(transactionResponse, this, dialog);
-                else
-                {
+
+                // 200 responses are always seen by TU.
+                if (respondTo != null)
+                    respondTo.processResponse(transactionResponse, this, dialog);
+                else {
                     this.semRelease();
-                } //End block
-            } //End block
-            else
-            if(statusCode / 100 == 1)            
-            {
+                }
+
+            } else if (statusCode / 100 == 1) {
                 disableRetransmissionTimer();
                 disableTimeoutTimer();
                 this.setState(TransactionState.PROCEEDING);
-                if(respondTo != null)                
-                respondTo.processResponse(transactionResponse, this, dialog);
-                else
-                {
+
+                if (respondTo != null)
+                    respondTo.processResponse(transactionResponse, this, dialog);
+                else {
                     this.semRelease();
-                } //End block
-            } //End block
-            else
-            if(300 <= statusCode && statusCode <= 699)            
-            {
-                try 
-                {
+                }
+
+            } else if (300 <= statusCode && statusCode <= 699) {
+                // Send back an ACK request
+
+                try {
                     sendMessage((SIPRequest) createErrorAck());
-                } //End block
-                catch (Exception ex)
-                {
+
+                } catch (Exception ex) {
                     sipStack.getStackLogger().logError(
                             "Unexpected Exception sending ACK -- sending error AcK ", ex);
-                } //End block
-                if(respondTo != null)                
-                {
+
+                }
+
+                /*
+                 * When in either the "Calling" or "Proceeding" states, reception of response with
+                 * status code from 300-699 MUST cause the client transaction to transition to
+                 * "Completed". The client transaction MUST pass the received response up to the
+                 * TU, and the client transaction MUST generate an ACK request.
+                 */
+
+                if (respondTo != null) {
                     respondTo.processResponse(transactionResponse, this, dialog);
-                } //End block
-                else
-                {
+                } else {
                     this.semRelease();
-                } //End block
-                if(this.getDialog() != null &&  ((SIPDialog)this.getDialog()).isBackToBackUserAgent())                
-                {
+                }
+
+                if (this.getDialog() != null &&  ((SIPDialog)this.getDialog()).isBackToBackUserAgent()) {
                     ((SIPDialog) this.getDialog()).releaseAckSem();
-                } //End block
-                if(!isReliable())                
-                {
+                }
+
+                if (!isReliable()) {
                     this.setState(TransactionState.COMPLETED);
                     enableTimeoutTimer(TIMER_D);
-                } //End block
-                else
-                {
+                } else {
+                    // Proceed immediately to the TERMINATED state.
                     this.setState(TransactionState.TERMINATED);
-                } //End block
-            } //End block
-        } //End block
-        else
-        if(TransactionState.PROCEEDING == this.getState())        
-        {
-            if(statusCode / 100 == 1)            
-            {
-                if(respondTo != null)                
-                {
+                }
+            }
+        } else if (TransactionState.PROCEEDING == this.getState()) {
+            if (statusCode / 100 == 1) {
+                if (respondTo != null) {
                     respondTo.processResponse(transactionResponse, this, dialog);
-                } //End block
-                else
-                {
+                } else {
                     this.semRelease();
-                } //End block
-            } //End block
-            else
-            if(statusCode / 100 == 2)            
-            {
+                }
+            } else if (statusCode / 100 == 2) {
                 this.setState(TransactionState.TERMINATED);
-                if(respondTo != null)                
-                {
+                if (respondTo != null) {
                     respondTo.processResponse(transactionResponse, this, dialog);
-                } //End block
-                else
-                {
+                } else {
                     this.semRelease();
-                } //End block
-            } //End block
-            else
-            if(300 <= statusCode && statusCode <= 699)            
-            {
-                try 
-                {
+                }
+
+            } else if (300 <= statusCode && statusCode <= 699) {
+                // Send back an ACK request
+                try {
                     sendMessage((SIPRequest) createErrorAck());
-                } //End block
-                catch (Exception ex)
-                {
+                } catch (Exception ex) {
                     InternalErrorHandler.handleException(ex);
-                } //End block
-                if(this.getDialog() != null)                
-                {
+                }
+
+                if (this.getDialog() != null) {
                     ((SIPDialog) this.getDialog()).releaseAckSem();
-                } //End block
-                if(!isReliable())                
-                {
+                }
+                // JvB: update state before passing to app
+                if (!isReliable()) {
                     this.setState(TransactionState.COMPLETED);
                     this.enableTimeoutTimer(TIMER_D);
-                } //End block
-                else
-                {
+                } else {
                     this.setState(TransactionState.TERMINATED);
-                } //End block
-                if(respondTo != null)                
-                respondTo.processResponse(transactionResponse, this, dialog);
-                else
-                {
+                }
+
+                // Pass up to the TU for processing.
+                if (respondTo != null)
+                    respondTo.processResponse(transactionResponse, this, dialog);
+                else {
                     this.semRelease();
-                } //End block
-            } //End block
-        } //End block
-        else
-        if(TransactionState.COMPLETED == this.getState())        
-        {
-            if(300 <= statusCode && statusCode <= 699)            
-            {
-                try 
-                {
+                }
+
+                // JvB: duplicate with line 874
+                // if (!isReliable()) {
+                // enableTimeoutTimer(TIMER_D);
+                // }
+            }
+        } else if (TransactionState.COMPLETED == this.getState()) {
+            if (300 <= statusCode && statusCode <= 699) {
+                // Send back an ACK request
+                try {
                     sendMessage((SIPRequest) createErrorAck());
-                } //End block
-                catch (Exception ex)
-                {
+                } catch (Exception ex) {
                     InternalErrorHandler.handleException(ex);
-                } //End block
-                finally 
-                {
+                } finally {
                     this.semRelease();
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                }
+            }
+
+        }
+
     }
 
+    /*
+     * (non-Javadoc)
+     * 
+     * @see javax.sip.ClientTransaction#sendRequest()
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:28.998 -0500", hash_original_method = "9C1F15FBE6A7795E5EE0D6BE4F94BCBE", hash_generated_method = "E6564F2955B5D9CD84E08D528F5AB8E2")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.887 -0400", hash_original_method = "9C1F15FBE6A7795E5EE0D6BE4F94BCBE", hash_generated_method = "4045CDC80ADC7000B5CBFD72FBCF3284")
-    public void sendRequest() throws SipException {
+public void sendRequest() throws SipException {
         SIPRequest sipRequest = this.getOriginalRequest();
-        if(this.getState() != null)        
-        {
-        SipException var323EC48B4E48AB2794DF82AC704E6880_946526622 = new SipException("Request already sent");
-        var323EC48B4E48AB2794DF82AC704E6880_946526622.addTaint(taint);
-        throw var323EC48B4E48AB2794DF82AC704E6880_946526622;
-        }
-        if(sipStack.isLoggingEnabled())        
-        {
+
+        if (this.getState() != null)
+            throw new SipException("Request already sent");
+
+        if (sipStack.isLoggingEnabled()) {
             sipStack.getStackLogger().logDebug("sendRequest() " + sipRequest);
-        } //End block
-        try 
-        {
+        }
+
+        try {
             sipRequest.checkHeaders();
-        } //End block
-        catch (ParseException ex)
-        {
-            if(sipStack.isLoggingEnabled())            
-            sipStack.getStackLogger().logError("missing required header");
-            SipException var892635990475903AE5F007B5D011DC38_1567669016 = new SipException(ex.getMessage());
-            var892635990475903AE5F007B5D011DC38_1567669016.addTaint(taint);
-            throw var892635990475903AE5F007B5D011DC38_1567669016;
-        } //End block
-        if(getMethod().equals(Request.SUBSCRIBE)
-                && sipRequest.getHeader(ExpiresHeader.NAME) == null)        
-        {
-            if(sipStack.isLoggingEnabled())            
-            sipStack.getStackLogger().logWarning(
+        } catch (ParseException ex) {
+        	if (sipStack.isLoggingEnabled())
+        		sipStack.getStackLogger().logError("missing required header");
+            throw new SipException(ex.getMessage());
+        }
+
+        if (getMethod().equals(Request.SUBSCRIBE)
+                && sipRequest.getHeader(ExpiresHeader.NAME) == null) {
+            /*
+             * If no "Expires" header is present in a SUBSCRIBE request, the implied default is
+             * defined by the event package being used.
+             * 
+             */
+        	if (sipStack.isLoggingEnabled())
+        		sipStack.getStackLogger().logWarning(
                     "Expires header missing in outgoing subscribe --"
                             + " Notifier will assume implied value on event package");
-        } //End block
-        try 
-        {
-            if(this.getOriginalRequest().getMethod().equals(Request.CANCEL)
-                    && sipStack.isCancelClientTransactionChecked())            
-            {
+        }
+        try {
+            /*
+             * This check is removed because it causes problems for load balancers ( See issue
+             * 136) reported by Raghav Ramesh ( BT )
+             * 
+             */
+            if (this.getOriginalRequest().getMethod().equals(Request.CANCEL)
+                    && sipStack.isCancelClientTransactionChecked()) {
                 SIPClientTransaction ct = (SIPClientTransaction) sipStack.findCancelTransaction(
                         this.getOriginalRequest(), false);
-                if(ct == null)                
-                {
-                    SipException var5623065BB8CB1B84B3235D801110D626_1037528416 = new SipException("Could not find original tx to cancel. RFC 3261 9.1");
-                    var5623065BB8CB1B84B3235D801110D626_1037528416.addTaint(taint);
-                    throw var5623065BB8CB1B84B3235D801110D626_1037528416;
-                } //End block
-                else
-                if(ct.getState() == null)                
-                {
-                    SipException varD384862B33895AC5BA03FBB252919FF0_56130661 = new SipException(
+                if (ct == null) {
+                    /*
+                     * If the original request has generated a final response, the CANCEL SHOULD
+                     * NOT be sent, as it is an effective no-op, since CANCEL has no effect on
+                     * requests that have already generated a final response.
+                     */
+                    throw new SipException("Could not find original tx to cancel. RFC 3261 9.1");
+                } else if (ct.getState() == null) {
+                    throw new SipException(
                             "State is null no provisional response yet -- cannot cancel RFC 3261 9.1");
-                    varD384862B33895AC5BA03FBB252919FF0_56130661.addTaint(taint);
-                    throw varD384862B33895AC5BA03FBB252919FF0_56130661;
-                } //End block
-                else
-                if(!ct.getMethod().equals(Request.INVITE))                
-                {
-                    SipException var9A48AF195A96F4F65AFD0681AD6B8DFA_1799263001 = new SipException("Cannot cancel non-invite requests RFC 3261 9.1");
-                    var9A48AF195A96F4F65AFD0681AD6B8DFA_1799263001.addTaint(taint);
-                    throw var9A48AF195A96F4F65AFD0681AD6B8DFA_1799263001;
-                } //End block
-            } //End block
-            else
-            if(this.getOriginalRequest().getMethod().equals(Request.BYE)
-                    || this.getOriginalRequest().getMethod().equals(Request.NOTIFY))            
-            {
+                } else if (!ct.getMethod().equals(Request.INVITE)) {
+                    throw new SipException("Cannot cancel non-invite requests RFC 3261 9.1");
+                }
+            } else
+
+            if (this.getOriginalRequest().getMethod().equals(Request.BYE)
+                    || this.getOriginalRequest().getMethod().equals(Request.NOTIFY)) {
                 SIPDialog dialog = sipStack.getDialog(this.getOriginalRequest()
                         .getDialogId(false));
-                if(this.getSipProvider().isAutomaticDialogSupportEnabled() && dialog != null)                
-                {
-                    SipException var51DB0FE9536946D398FFD0021FFBD630_1003599948 = new SipException(
+                // I want to behave like a user agent so send the BYE using the
+                // Dialog
+                if (this.getSipProvider().isAutomaticDialogSupportEnabled() && dialog != null) {
+                    throw new SipException(
                             "Dialog is present and AutomaticDialogSupport is enabled for "
                                     + " the provider -- Send the Request using the Dialog.sendRequest(transaction)");
-                    var51DB0FE9536946D398FFD0021FFBD630_1003599948.addTaint(taint);
-                    throw var51DB0FE9536946D398FFD0021FFBD630_1003599948;
-                } //End block
-            } //End block
-            if(this.getMethod().equals(Request.INVITE))            
-            {
+                }
+            }
+            // Only map this after the fist request is sent out.
+            if (this.getMethod().equals(Request.INVITE)) {
                 SIPDialog dialog = this.getDefaultDialog();
-                if(dialog != null && dialog.isBackToBackUserAgent())                
-                {
-                    if(! dialog.takeAckSem())                    
-                    {
-                        SipException var6D42BBD9DCA679354CDF7F25AB3CB52B_1257818316 = new SipException ("Failed to take ACK semaphore");
-                        var6D42BBD9DCA679354CDF7F25AB3CB52B_1257818316.addTaint(taint);
-                        throw var6D42BBD9DCA679354CDF7F25AB3CB52B_1257818316;
-                    } //End block
-                } //End block
-            } //End block
+
+                if (dialog != null && dialog.isBackToBackUserAgent()) {
+                    // Block sending re-INVITE till we see the ACK.
+                    if ( ! dialog.takeAckSem() ) {
+                        throw new SipException ("Failed to take ACK semaphore");
+                    }
+
+                }
+            }
             this.isMapped = true;
             this.sendMessage(sipRequest);
-        } //End block
-        catch (IOException ex)
-        {
+
+        } catch (IOException ex) {
             this.setState(TransactionState.TERMINATED);
-            SipException var9970C3F2D77AA08BF1A0FB59825D7A46_242614000 = new SipException("IO Error sending request", ex);
-            var9970C3F2D77AA08BF1A0FB59825D7A46_242614000.addTaint(taint);
-            throw var9970C3F2D77AA08BF1A0FB59825D7A46_242614000;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            throw new SipException("IO Error sending request", ex);
+
+        }
+
     }
 
+    /**
+     * Called by the transaction stack when a retransmission timer fires.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:29.002 -0500", hash_original_method = "328DA368C3B0C5FF79EC2B4ACE66A1A9", hash_generated_method = "C9E59CBA897C530A6A55F5DD7BEEA99A")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.888 -0400", hash_original_method = "328DA368C3B0C5FF79EC2B4ACE66A1A9", hash_generated_method = "FA557C4BFA3C175EFC0192B72F6B3A23")
-    protected void fireRetransmissionTimer() {
-        try 
-        {
-            if(this.getState() == null || !this.isMapped)            
-            return;
+protected void fireRetransmissionTimer() {
+
+        try {
+
+            // Resend the last request sent
+            if (this.getState() == null || !this.isMapped)
+                return;
+
             boolean inv = isInviteTransaction();
             TransactionState s = this.getState();
-            if((inv && TransactionState.CALLING == s)
-                    || (!inv && (TransactionState.TRYING == s || TransactionState.PROCEEDING == s)))            
-            {
-                if(lastRequest != null)                
-                {
-                    if(sipStack.generateTimeStampHeader
-                            && lastRequest.getHeader(TimeStampHeader.NAME) != null)                    
-                    {
+
+            // JvB: INVITE CTs only retransmit in CALLING, non-INVITE in both TRYING and
+            // PROCEEDING
+            // Bug-fix for non-INVITE transactions not retransmitted when 1xx response received
+            if ((inv && TransactionState.CALLING == s)
+                    || (!inv && (TransactionState.TRYING == s || TransactionState.PROCEEDING == s))) {
+                // If the retransmission filter is disabled then
+                // retransmission of the INVITE is the application
+                // responsibility.
+
+                if (lastRequest != null) {
+                    if (sipStack.generateTimeStampHeader
+                            && lastRequest.getHeader(TimeStampHeader.NAME) != null) {
                         long milisec = System.currentTimeMillis();
                         TimeStamp timeStamp = new TimeStamp();
-                        try 
-                        {
+                        try {
                             timeStamp.setTimeStamp(milisec);
-                        } //End block
-                        catch (InvalidArgumentException ex)
-                        {
+                        } catch (InvalidArgumentException ex) {
                             InternalErrorHandler.handleException(ex);
-                        } //End block
+                        }
                         lastRequest.setHeader(timeStamp);
-                    } //End block
+                    }
                     super.sendMessage(lastRequest);
-                    if(this.notifyOnRetransmit)                    
-                    {
+                    if (this.notifyOnRetransmit) {
                         TimeoutEvent txTimeout = new TimeoutEvent(this.getSipProvider(), this,
                                 Timeout.RETRANSMIT);
                         this.getSipProvider().handleEvent(txTimeout, this);
-                    } //End block
-                    if(this.timeoutIfStillInCallingState
-                            && this.getState() == TransactionState.CALLING)                    
-                    {
+                    }
+                    if (this.timeoutIfStillInCallingState
+                            && this.getState() == TransactionState.CALLING) {
                         this.callingStateTimeoutCount--;
-                        if(callingStateTimeoutCount == 0)                        
-                        {
+                        if (callingStateTimeoutCount == 0) {
                             TimeoutEvent timeoutEvent = new TimeoutEvent(this.getSipProvider(),
                                     this, Timeout.RETRANSMIT);
                             this.getSipProvider().handleEvent(timeoutEvent, this);
                             this.timeoutIfStillInCallingState = false;
-                        } //End block
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
-        catch (IOException e)
-        {
+                        }
+
+                    }
+                }
+
+            }
+        } catch (IOException e) {
             this.raiseIOExceptionEvent();
             raiseErrorEvent(SIPTransactionErrorEvent.TRANSPORT_ERROR);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        }
+
     }
 
+    /**
+     * Called by the transaction stack when a timeout timer fires.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:29.005 -0500", hash_original_method = "F0DB4D0E841E14FF88BA6095928288BF", hash_generated_method = "694195C523131C2F5C607CBD71DBBD1C")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.889 -0400", hash_original_method = "F0DB4D0E841E14FF88BA6095928288BF", hash_generated_method = "66BED8820FB28123830C985DF6631E58")
-    protected void fireTimeoutTimer() {
-        if(sipStack.isLoggingEnabled())        
-        sipStack.getStackLogger().logDebug("fireTimeoutTimer " + this);
+protected void fireTimeoutTimer() {
+
+        if (sipStack.isLoggingEnabled())
+            sipStack.getStackLogger().logDebug("fireTimeoutTimer " + this);
+
         SIPDialog dialog = (SIPDialog) this.getDialog();
-        if(TransactionState.CALLING == this.getState()
+        if (TransactionState.CALLING == this.getState()
                 || TransactionState.TRYING == this.getState()
-                || TransactionState.PROCEEDING == this.getState())        
-        {
-            if(dialog != null
-                    && (dialog.getState() == null || dialog.getState() == DialogState.EARLY))            
-            {
-                if(((SIPTransactionStack) getSIPStack()).isDialogCreated(this
-                        .getOriginalRequest().getMethod()))                
-                {
+                || TransactionState.PROCEEDING == this.getState()) {
+            // Timeout occured. If this is asociated with a transaction
+            // creation then kill the dialog.
+            if (dialog != null
+                    && (dialog.getState() == null || dialog.getState() == DialogState.EARLY)) {
+                if (((SIPTransactionStack) getSIPStack()).isDialogCreated(this
+                        .getOriginalRequest().getMethod())) {
+                    // If this is a re-invite we do not delete the dialog even
+                    // if the
+                    // reinvite times out. Else
+                    // terminate the enclosing dialog.
                     dialog.delete();
-                } //End block
-            } //End block
-            else
-            if(dialog != null)            
-            {
-                if(getOriginalRequest().getMethod().equalsIgnoreCase(Request.BYE)
-                        && dialog.isTerminatedOnBye())                
-                {
+                }
+            } else if (dialog != null) {
+                // Guard against the case of BYE time out.
+
+                if (getOriginalRequest().getMethod().equalsIgnoreCase(Request.BYE)
+                        && dialog.isTerminatedOnBye()) {
+                    // Terminate the associated dialog on BYE Timeout.
                     dialog.delete();
-                } //End block
-            } //End block
-        } //End block
-        if(TransactionState.COMPLETED != this.getState())        
-        {
+                }
+            }
+        }
+        if (TransactionState.COMPLETED != this.getState()) {
             raiseErrorEvent(SIPTransactionErrorEvent.TIMEOUT_ERROR);
-            if(this.getOriginalRequest().getMethod().equalsIgnoreCase(Request.CANCEL))            
-            {
+            // Got a timeout error on a cancel.
+            if (this.getOriginalRequest().getMethod().equalsIgnoreCase(Request.CANCEL)) {
                 SIPClientTransaction inviteTx = (SIPClientTransaction) this.getOriginalRequest()
                         .getInviteTransaction();
-                if(inviteTx != null
+                if (inviteTx != null
                         && ((inviteTx.getState() == TransactionState.CALLING || inviteTx
                                 .getState() == TransactionState.PROCEEDING))
-                        && inviteTx.getDialog() != null)                
-                {
+                        && inviteTx.getDialog() != null) {
+                    /*
+                     * A proxy server should have started TIMER C and take care of the Termination
+                     * using transaction.terminate() by itself (i.e. this is not the job of the
+                     * stack at this point but we do it to be nice.
+                     */
                     inviteTx.setState(TransactionState.TERMINATED);
-                } //End block
-            } //End block
-        } //End block
-        else
-        {
+
+                }
+            }
+
+        } else {
             this.setState(TransactionState.TERMINATED);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        }
+
     }
 
+    /*
+     * (non-Javadoc)
+     * 
+     * @see javax.sip.ClientTransaction#createCancel()
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:29.008 -0500", hash_original_method = "2914559B80386C20A981D1BD82B7352B", hash_generated_method = "A21D87919D52D9CBE60F4041F8BFD612")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.890 -0400", hash_original_method = "2914559B80386C20A981D1BD82B7352B", hash_generated_method = "877FECF65DE41489318E7FD33008B715")
-    public Request createCancel() throws SipException {
+public Request createCancel() throws SipException {
         SIPRequest originalRequest = this.getOriginalRequest();
-        if(originalRequest == null)        
-        {
-        SipException var18B76834363424CDD125E2AA64838D19_522160046 = new SipException("Bad state " + getState());
-        var18B76834363424CDD125E2AA64838D19_522160046.addTaint(taint);
-        throw var18B76834363424CDD125E2AA64838D19_522160046;
-        }
-        if(!originalRequest.getMethod().equals(Request.INVITE))        
-        {
-        SipException varA18337FC5CB83A82DBEDAFC4C2492923_66739639 = new SipException("Only INIVTE may be cancelled");
-        varA18337FC5CB83A82DBEDAFC4C2492923_66739639.addTaint(taint);
-        throw varA18337FC5CB83A82DBEDAFC4C2492923_66739639;
-        }
-        if(originalRequest.getMethod().equalsIgnoreCase(Request.ACK))        
-        {
-        SipException var78FB36631624D00982EED30DEED5BB40_837424893 = new SipException("Cannot Cancel ACK!");
-        var78FB36631624D00982EED30DEED5BB40_837424893.addTaint(taint);
-        throw var78FB36631624D00982EED30DEED5BB40_837424893;
-        }
-        else
-        {
+        if (originalRequest == null)
+            throw new SipException("Bad state " + getState());
+        if (!originalRequest.getMethod().equals(Request.INVITE))
+            throw new SipException("Only INIVTE may be cancelled");
+
+        if (originalRequest.getMethod().equalsIgnoreCase(Request.ACK))
+            throw new SipException("Cannot Cancel ACK!");
+        else {
             SIPRequest cancelRequest = originalRequest.createCancelRequest();
             cancelRequest.setInviteTransaction(this);
-Request varACA153049E738A20BB5740684F6D8EF1_426856298 =             cancelRequest;
-            varACA153049E738A20BB5740684F6D8EF1_426856298.addTaint(taint);
-            return varACA153049E738A20BB5740684F6D8EF1_426856298;
-        } //End block
-        // ---------- Original Method ----------
-        //SIPRequest originalRequest = this.getOriginalRequest();
-        //if (originalRequest == null)
-            //throw new SipException("Bad state " + getState());
-        //if (!originalRequest.getMethod().equals(Request.INVITE))
-            //throw new SipException("Only INIVTE may be cancelled");
-        //if (originalRequest.getMethod().equalsIgnoreCase(Request.ACK))
-            //throw new SipException("Cannot Cancel ACK!");
-        //else {
-            //SIPRequest cancelRequest = originalRequest.createCancelRequest();
-            //cancelRequest.setInviteTransaction(this);
-            //return cancelRequest;
-        //}
+            return cancelRequest;
+        }
     }
 
+    /*
+     * (non-Javadoc)
+     * 
+     * @see javax.sip.ClientTransaction#createAck()
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:29.013 -0500", hash_original_method = "59092618FB848453FA0559AC58047778", hash_generated_method = "194F8DAA60D5DA096C3626DF64E87588")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.891 -0400", hash_original_method = "59092618FB848453FA0559AC58047778", hash_generated_method = "884924CD5F29E12838BD58E3E949CBF4")
-    public Request createAck() throws SipException {
+public Request createAck() throws SipException {
         SIPRequest originalRequest = this.getOriginalRequest();
-        if(originalRequest == null)        
-        {
-        SipException varB03D7382310E3D88ABC47C127A09486A_846687267 = new SipException("bad state " + getState());
-        varB03D7382310E3D88ABC47C127A09486A_846687267.addTaint(taint);
-        throw varB03D7382310E3D88ABC47C127A09486A_846687267;
-        }
-        if(getMethod().equalsIgnoreCase(Request.ACK))        
-        {
-            SipException var009E015AE15B853B2D4591E9AABA5E99_1866182993 = new SipException("Cannot ACK an ACK!");
-            var009E015AE15B853B2D4591E9AABA5E99_1866182993.addTaint(taint);
-            throw var009E015AE15B853B2D4591E9AABA5E99_1866182993;
-        } //End block
-        else
-        if(lastResponse == null)        
-        {
-            SipException varD59D3207F7990DD4DAC24E65A1CE35E6_650660718 = new SipException("bad Transaction state");
-            varD59D3207F7990DD4DAC24E65A1CE35E6_650660718.addTaint(taint);
-            throw varD59D3207F7990DD4DAC24E65A1CE35E6_650660718;
-        } //End block
-        else
-        if(lastResponse.getStatusCode() < 200)        
-        {
-            if(sipStack.isLoggingEnabled())            
-            {
+        if (originalRequest == null)
+            throw new SipException("bad state " + getState());
+        if (getMethod().equalsIgnoreCase(Request.ACK)) {
+            throw new SipException("Cannot ACK an ACK!");
+        } else if (lastResponse == null) {
+            throw new SipException("bad Transaction state");
+        } else if (lastResponse.getStatusCode() < 200) {
+            if (sipStack.isLoggingEnabled()) {
                 sipStack.getStackLogger().logDebug("lastResponse = " + lastResponse);
-            } //End block
-            SipException varD7CEAC34620F3EF85D7F67F88F42DD93_1366027192 = new SipException("Cannot ACK a provisional response!");
-            varD7CEAC34620F3EF85D7F67F88F42DD93_1366027192.addTaint(taint);
-            throw varD7CEAC34620F3EF85D7F67F88F42DD93_1366027192;
-        } //End block
+            }
+            throw new SipException("Cannot ACK a provisional response!");
+        }
         SIPRequest ackRequest = originalRequest.createAckRequest((To) lastResponse.getTo());
+        // Pull the record route headers from the last reesponse.
         RecordRouteList recordRouteList = lastResponse.getRecordRouteHeaders();
-        if(recordRouteList == null)        
-        {
-            if(lastResponse.getContactHeaders() != null
-                    && lastResponse.getStatusCode() / 100 != 3)            
-            {
+        if (recordRouteList == null) {
+            // If the record route list is null then we can
+            // construct the ACK from the specified contact header.
+            // Note the 3xx check here because 3xx is a redirect.
+            // The contact header for the 3xx is the redirected
+            // location so we cannot use that to construct the
+            // request URI.
+            if (lastResponse.getContactHeaders() != null
+                    && lastResponse.getStatusCode() / 100 != 3) {
                 Contact contact = (Contact) lastResponse.getContactHeaders().getFirst();
                 javax.sip.address.URI uri = (javax.sip.address.URI) contact.getAddress().getURI()
                         .clone();
                 ackRequest.setRequestURI(uri);
-            } //End block
-Request var53E5C6F852A0BB73314408FE0ABC9A68_2008145090 =             ackRequest;
-            var53E5C6F852A0BB73314408FE0ABC9A68_2008145090.addTaint(taint);
-            return var53E5C6F852A0BB73314408FE0ABC9A68_2008145090;
-        } //End block
+            }
+            return ackRequest;
+        }
+
         ackRequest.removeHeader(RouteHeader.NAME);
         RouteList routeList = new RouteList();
+        // start at the end of the list and walk backwards
         ListIterator<RecordRoute> li = recordRouteList.listIterator(recordRouteList.size());
-        while
-(li.hasPrevious())        
-        {
+        while (li.hasPrevious()) {
             RecordRoute rr = (RecordRoute) li.previous();
+
             Route route = new Route();
             route.setAddress((AddressImpl) ((AddressImpl) rr.getAddress()).clone());
             route.setParameters((NameValueList) rr.getParameters().clone());
             routeList.add(route);
-        } //End block
+        }
+
         Contact contact = null;
-        if(lastResponse.getContactHeaders() != null)        
-        {
+        if (lastResponse.getContactHeaders() != null) {
             contact = (Contact) lastResponse.getContactHeaders().getFirst();
-        } //End block
-        if(!((SipURI) ((Route) routeList.getFirst()).getAddress().getURI()).hasLrParam())        
-        {
+        }
+
+        if (!((SipURI) ((Route) routeList.getFirst()).getAddress().getURI()).hasLrParam()) {
+
+            // Contact may not yet be there (bug reported by Andreas B).
+
             Route route = null;
-            if(contact != null)            
-            {
+            if (contact != null) {
                 route = new Route();
                 route.setAddress((AddressImpl) ((AddressImpl) (contact.getAddress())).clone());
-            } //End block
+            }
+
             Route firstRoute = (Route) routeList.getFirst();
             routeList.removeFirst();
             javax.sip.address.URI uri = firstRoute.getAddress().getURI();
             ackRequest.setRequestURI(uri);
-            if(route != null)            
-            routeList.add(route);
+
+            if (route != null)
+                routeList.add(route);
+
             ackRequest.addHeader(routeList);
-        } //End block
-        else
-        {
-            if(contact != null)            
-            {
+        } else {
+            if (contact != null) {
                 javax.sip.address.URI uri = (javax.sip.address.URI) contact.getAddress().getURI()
                         .clone();
                 ackRequest.setRequestURI(uri);
                 ackRequest.addHeader(routeList);
-            } //End block
-        } //End block
-Request var53E5C6F852A0BB73314408FE0ABC9A68_895348035 =         ackRequest;
-        var53E5C6F852A0BB73314408FE0ABC9A68_895348035.addTaint(taint);
-        return var53E5C6F852A0BB73314408FE0ABC9A68_895348035;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.893 -0400", hash_original_method = "C777E21FF4216BC8A7ADE1EB27ADDE8D", hash_generated_method = "1C2F8DCC2FF03C6D1BEB2EBE085771C9")
-    private final Request createErrorAck() throws SipException, ParseException {
-        SIPRequest originalRequest = this.getOriginalRequest();
-        if(originalRequest == null)        
-        {
-        SipException varB03D7382310E3D88ABC47C127A09486A_1963320006 = new SipException("bad state " + getState());
-        varB03D7382310E3D88ABC47C127A09486A_1963320006.addTaint(taint);
-        throw varB03D7382310E3D88ABC47C127A09486A_1963320006;
+            }
         }
-        if(!getMethod().equals(Request.INVITE))        
-        {
-            SipException var33C0B577B139AB1BF6F1006FA990B153_1009277984 = new SipException("Can only ACK an INVITE!");
-            var33C0B577B139AB1BF6F1006FA990B153_1009277984.addTaint(taint);
-            throw var33C0B577B139AB1BF6F1006FA990B153_1009277984;
-        } //End block
-        else
-        if(lastResponse == null)        
-        {
-            SipException varD59D3207F7990DD4DAC24E65A1CE35E6_581622256 = new SipException("bad Transaction state");
-            varD59D3207F7990DD4DAC24E65A1CE35E6_581622256.addTaint(taint);
-            throw varD59D3207F7990DD4DAC24E65A1CE35E6_581622256;
-        } //End block
-        else
-        if(lastResponse.getStatusCode() < 200)        
-        {
-            if(sipStack.isLoggingEnabled())            
-            {
+        return ackRequest;
+
+    }
+
+    /*
+     * Creates an ACK for an error response, according to RFC3261 section 17.1.1.3
+     * 
+     * Note that this is different from an ACK for 2xx
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:29.016 -0500", hash_original_method = "C777E21FF4216BC8A7ADE1EB27ADDE8D", hash_generated_method = "1106CF9D033B224BB717BD53D35FD0EB")
+    
+private final Request createErrorAck() throws SipException, ParseException {
+        SIPRequest originalRequest = this.getOriginalRequest();
+        if (originalRequest == null)
+            throw new SipException("bad state " + getState());
+        if (!getMethod().equals(Request.INVITE)) {
+            throw new SipException("Can only ACK an INVITE!");
+        } else if (lastResponse == null) {
+            throw new SipException("bad Transaction state");
+        } else if (lastResponse.getStatusCode() < 200) {
+            if (sipStack.isLoggingEnabled()) {
                 sipStack.getStackLogger().logDebug("lastResponse = " + lastResponse);
-            } //End block
-            SipException varD7CEAC34620F3EF85D7F67F88F42DD93_1247663139 = new SipException("Cannot ACK a provisional response!");
-            varD7CEAC34620F3EF85D7F67F88F42DD93_1247663139.addTaint(taint);
-            throw varD7CEAC34620F3EF85D7F67F88F42DD93_1247663139;
-        } //End block
-Request varB1D621DACB597072EA649D0AC7D0DC3C_915732743 =         originalRequest.createErrorAck((To) lastResponse.getTo());
-        varB1D621DACB597072EA649D0AC7D0DC3C_915732743.addTaint(taint);
-        return varB1D621DACB597072EA649D0AC7D0DC3C_915732743;
-        // ---------- Original Method ----------
-        //SIPRequest originalRequest = this.getOriginalRequest();
-        //if (originalRequest == null)
-            //throw new SipException("bad state " + getState());
-        //if (!getMethod().equals(Request.INVITE)) {
-            //throw new SipException("Can only ACK an INVITE!");
-        //} else if (lastResponse == null) {
-            //throw new SipException("bad Transaction state");
-        //} else if (lastResponse.getStatusCode() < 200) {
-            //if (sipStack.isLoggingEnabled()) {
-                //sipStack.getStackLogger().logDebug("lastResponse = " + lastResponse);
-            //}
-            //throw new SipException("Cannot ACK a provisional response!");
-        //}
-        //return originalRequest.createErrorAck((To) lastResponse.getTo());
+            }
+            throw new SipException("Cannot ACK a provisional response!");
+        }
+        return originalRequest.createErrorAck((To) lastResponse.getTo());
     }
 
+    /**
+     * Set the port of the recipient.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:29.019 -0500", hash_original_method = "FADEF945106DA805CF02027B2BE28020", hash_generated_method = "69B62B2783825261FFFD670703A28D6D")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.894 -0400", hash_original_method = "FADEF945106DA805CF02027B2BE28020", hash_generated_method = "F178A79F5020E3C9AEE90D08526F030A")
-    protected void setViaPort(int port) {
+protected void setViaPort(int port) {
         this.viaPort = port;
-        // ---------- Original Method ----------
-        //this.viaPort = port;
     }
 
+    /**
+     * Set the port of the recipient.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:29.022 -0500", hash_original_method = "0E538A29C97CB223EF1CD12A71C73074", hash_generated_method = "6DF11C0EA4BA366B574256E72409BF02")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.894 -0400", hash_original_method = "0E538A29C97CB223EF1CD12A71C73074", hash_generated_method = "49F7B6C2EB4C3BA81CAAD6672E78455A")
-    protected void setViaHost(String host) {
+protected void setViaHost(String host) {
         this.viaHost = host;
-        // ---------- Original Method ----------
-        //this.viaHost = host;
     }
 
+    /**
+     * Get the port of the recipient.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:29.024 -0500", hash_original_method = "133D8E60A07873D19335FF91037EC663", hash_generated_method = "47E8349AAEDCC463643334B5373A918E")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.894 -0400", hash_original_method = "133D8E60A07873D19335FF91037EC663", hash_generated_method = "272F0CD9877DE30E1990C157D0D73536")
-    public int getViaPort() {
-        int varD43D0AD9254055D58B581E8CE6E033A9_1658316770 = (this.viaPort);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_645767782 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_645767782;
-        // ---------- Original Method ----------
-        //return this.viaPort;
+public int getViaPort() {
+        return this.viaPort;
     }
 
+    /**
+     * Get the host of the recipient.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:29.027 -0500", hash_original_method = "BFF3BD5D9B7619BE758B5D7001336743", hash_generated_method = "039119DB2163C31C729A57BCE7626576")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.895 -0400", hash_original_method = "BFF3BD5D9B7619BE758B5D7001336743", hash_generated_method = "CA3FB6C9BF1EC5D74A298313633FAAC7")
-    public String getViaHost() {
-String var5C49F2A6248841A6C8138BE7213E150E_297859893 =         this.viaHost;
-        var5C49F2A6248841A6C8138BE7213E150E_297859893.addTaint(taint);
-        return var5C49F2A6248841A6C8138BE7213E150E_297859893;
-        // ---------- Original Method ----------
-        //return this.viaHost;
+public String getViaHost() {
+        return this.viaHost;
     }
 
+    /**
+     * get the via header for an outgoing request.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:29.029 -0500", hash_original_method = "0750F8DA140E6BEE450B9743ACFD7E44", hash_generated_method = "9C92BA4FD41355353691977C36D2DA21")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.895 -0400", hash_original_method = "0750F8DA140E6BEE450B9743ACFD7E44", hash_generated_method = "330D44B243680028B2B967F86FB080F7")
-    public Via getOutgoingViaHeader() {
-Via var9A2F2EDE559A039B7F1EAC2CD02F6527_66104491 =         this.getMessageProcessor().getViaHeader();
-        var9A2F2EDE559A039B7F1EAC2CD02F6527_66104491.addTaint(taint);
-        return var9A2F2EDE559A039B7F1EAC2CD02F6527_66104491;
-        // ---------- Original Method ----------
-        //return this.getMessageProcessor().getViaHeader();
+public Via getOutgoingViaHeader() {
+        return this.getMessageProcessor().getViaHeader();
     }
 
+    /**
+     * This is called by the stack after a non-invite client transaction goes to completed state.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:29.032 -0500", hash_original_method = "B250DD181A3373E2CC04255377753F31", hash_generated_method = "66E28C27DA9C4D6709862FD4742C6441")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.895 -0400", hash_original_method = "B250DD181A3373E2CC04255377753F31", hash_generated_method = "6CCA103991603EF3F3C26F3C09E7F13D")
-    public void clearState() {
-        // ---------- Original Method ----------
+public void clearState() {
+        // reduce the state to minimum
+        // This assumes that the application will not need
+        // to access the request once the transaction is
+        // completed.
+        // TODO -- revisit this - results in a null pointer
+        // occuring occasionally.
+        // this.lastRequest = null;
+        // this.originalRequest = null;
+        // this.lastResponse = null;
     }
 
+    /**
+     * Sets a timeout after which the connection is closed (provided the server does not use the
+     * connection for outgoing requests in this time period) and calls the superclass to set
+     * state.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:29.035 -0500", hash_original_method = "513C7C1329620A072B43100259C2C5F6", hash_generated_method = "DA1A7D4A616512B8A2170ABC61DA0D9D")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.895 -0400", hash_original_method = "513C7C1329620A072B43100259C2C5F6", hash_generated_method = "7E5B38E45DDC0A88EF7BA5931A947D15")
-    public void setState(TransactionState newState) {
-        addTaint(newState.getTaint());
-        if(newState == TransactionState.TERMINATED && this.isReliable()
-                && (!getSIPStack().cacheClientConnections))        
-        {
+public void setState(TransactionState newState) {
+        // Set this timer for connection caching
+        // of incoming connections.
+        if (newState == TransactionState.TERMINATED && this.isReliable()
+                && (!getSIPStack().cacheClientConnections)) {
+            // Set a time after which the connection
+            // is closed.
             this.collectionTime = TIMER_J;
-        } //End block
-        if(super.getState() != TransactionState.COMPLETED
-                && (newState == TransactionState.COMPLETED || newState == TransactionState.TERMINATED))        
-        {
+
+        }
+        if (super.getState() != TransactionState.COMPLETED
+                && (newState == TransactionState.COMPLETED || newState == TransactionState.TERMINATED)) {
             sipStack.decrementActiveClientTransactionCount();
-        } //End block
+        }
         super.setState(newState);
-        // ---------- Original Method ----------
-        //if (newState == TransactionState.TERMINATED && this.isReliable()
-                //&& (!getSIPStack().cacheClientConnections)) {
-            //this.collectionTime = TIMER_J;
-        //}
-        //if (super.getState() != TransactionState.COMPLETED
-                //&& (newState == TransactionState.COMPLETED || newState == TransactionState.TERMINATED)) {
-            //sipStack.decrementActiveClientTransactionCount();
-        //}
-        //super.setState(newState);
     }
 
+    /**
+     * Start the timer task.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:29.037 -0500", hash_original_method = "8AD9FEC5ADB8A6F1DFBB290459716C8C", hash_generated_method = "7C0DBF937F45AF34490E16CDFA0E724E")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.896 -0400", hash_original_method = "8AD9FEC5ADB8A6F1DFBB290459716C8C", hash_generated_method = "580BF89705E4BAF1556D75F00CF9DF2F")
-    protected void startTransactionTimer() {
-        if(this.transactionTimerStarted.compareAndSet(false, true))        
-        {
-            TimerTask myTimer = new TransactionTimer();
-            if(sipStack.getTimer() != null)            
-            {
-                sipStack.getTimer().schedule(myTimer, BASE_TIMER_INTERVAL, BASE_TIMER_INTERVAL);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (this.transactionTimerStarted.compareAndSet(false, true)) {
-	        //TimerTask myTimer = new TransactionTimer();
-	        //if ( sipStack.getTimer() != null ) {
-	            //sipStack.getTimer().schedule(myTimer, BASE_TIMER_INTERVAL, BASE_TIMER_INTERVAL);
-	        //}
-        //}
+protected  void startTransactionTimer() {
+        if (this.transactionTimerStarted.compareAndSet(false, true)) {
+	        TimerTask myTimer = new TransactionTimer();
+	        if ( sipStack.getTimer() != null ) {
+	            sipStack.getTimer().schedule(myTimer, BASE_TIMER_INTERVAL, BASE_TIMER_INTERVAL);
+	        }
+        }
     }
 
+    /*
+     * Terminate a transaction. This marks the tx as terminated The tx scanner will run and remove
+     * the tx. (non-Javadoc)
+     * 
+     * @see javax.sip.Transaction#terminate()
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:29.040 -0500", hash_original_method = "ACD8113ABC5B192A943EAFBD5656CA38", hash_generated_method = "D52B63D32C55DE721F6C07A8E1F15598")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.896 -0400", hash_original_method = "ACD8113ABC5B192A943EAFBD5656CA38", hash_generated_method = "9600A5B5EE9B39E2643E3ED4DD70BFBE")
-    public void terminate() throws ObjectInUseException {
+public void terminate() throws ObjectInUseException {
         this.setState(TransactionState.TERMINATED);
-        // ---------- Original Method ----------
-        //this.setState(TransactionState.TERMINATED);
+
     }
 
+    /**
+     * Check if the From tag of the response matches the from tag of the original message. A
+     * Response with a tag mismatch should be dropped if a Dialog has been created for the
+     * original request.
+     * 
+     * @param sipResponse the response to check.
+     * @return true if the check passes.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:29.043 -0500", hash_original_method = "8BA63F6111F6111C9CE6504A86A67BA3", hash_generated_method = "3E6435A5A93E05E491F006FC4E37176A")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.897 -0400", hash_original_method = "8BA63F6111F6111C9CE6504A86A67BA3", hash_generated_method = "083B7D70FE271E8999B21A52C0FA3A65")
-    public boolean checkFromTag(SIPResponse sipResponse) {
-        addTaint(sipResponse.getTaint());
+public boolean checkFromTag(SIPResponse sipResponse) {
         String originalFromTag = ((SIPRequest) this.getRequest()).getFromTag();
-        if(this.defaultDialog != null)        
-        {
-            if(originalFromTag == null ^ sipResponse.getFrom().getTag() == null)            
-            {
-                if(sipStack.isLoggingEnabled())                
-                sipStack.getStackLogger().logDebug("From tag mismatch -- dropping response");
-                boolean var68934A3E9455FA72420237EB05902327_752639192 = (false);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_235312190 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_235312190;
-            } //End block
-            if(originalFromTag != null
-                    && !originalFromTag.equalsIgnoreCase(sipResponse.getFrom().getTag()))            
-            {
-                if(sipStack.isLoggingEnabled())                
-                sipStack.getStackLogger().logDebug("From tag mismatch -- dropping response");
-                boolean var68934A3E9455FA72420237EB05902327_185742978 = (false);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_798802351 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_798802351;
-            } //End block
-        } //End block
-        boolean varB326B5062B2F0E69046810717534CB09_1443830367 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_609208579 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_609208579;
-        // ---------- Original Method ----------
-        //String originalFromTag = ((SIPRequest) this.getRequest()).getFromTag();
-        //if (this.defaultDialog != null) {
-            //if (originalFromTag == null ^ sipResponse.getFrom().getTag() == null) {
-            	//if (sipStack.isLoggingEnabled())
-            		//sipStack.getStackLogger().logDebug("From tag mismatch -- dropping response");
-                //return false;
-            //}
-            //if (originalFromTag != null
-                    //&& !originalFromTag.equalsIgnoreCase(sipResponse.getFrom().getTag())) {
-            	//if (sipStack.isLoggingEnabled())
-            		//sipStack.getStackLogger().logDebug("From tag mismatch -- dropping response");
-                //return false;
-            //}
-        //}
-        //return true;
+        if (this.defaultDialog != null) {
+            if (originalFromTag == null ^ sipResponse.getFrom().getTag() == null) {
+            	if (sipStack.isLoggingEnabled())
+            		sipStack.getStackLogger().logDebug("From tag mismatch -- dropping response");
+                return false;
+            }
+            if (originalFromTag != null
+                    && !originalFromTag.equalsIgnoreCase(sipResponse.getFrom().getTag())) {
+            	if (sipStack.isLoggingEnabled())
+            		sipStack.getStackLogger().logDebug("From tag mismatch -- dropping response");
+                return false;
+            }
+        }
+        return true;
+
     }
 
+    /*
+     * (non-Javadoc)
+     * 
+     * @see gov.nist.javax.sip.stack.ServerResponseInterface#processResponse(gov.nist.javax.sip.message.SIPResponse,
+     *      gov.nist.javax.sip.stack.MessageChannel)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:29.047 -0500", hash_original_method = "38065D3AA78F19CFA0459E8A308EC067", hash_generated_method = "2822CB128B646821D5C13237EF91297F")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.898 -0400", hash_original_method = "38065D3AA78F19CFA0459E8A308EC067", hash_generated_method = "EAA36E15AF8A0CC93627C882E40909B7")
-    public void processResponse(SIPResponse sipResponse, MessageChannel incomingChannel) {
-        addTaint(incomingChannel.getTaint());
-        addTaint(sipResponse.getTaint());
+public void processResponse(SIPResponse sipResponse, MessageChannel incomingChannel) {
+
+        // If a dialog has already been created for this response,
+        // pass it up.
         SIPDialog dialog = null;
         String method = sipResponse.getCSeq().getMethod();
         String dialogId = sipResponse.getDialogId(false);
-        if(method.equals(Request.CANCEL) && lastRequest != null)        
-        {
+        if (method.equals(Request.CANCEL) && lastRequest != null) {
+            // JvB for CANCEL: use invite CT in CANCEL request to get dialog
+            // (instead of stripping tag)
             SIPClientTransaction ict = (SIPClientTransaction) lastRequest.getInviteTransaction();
-            if(ict != null)            
-            {
+            if (ict != null) {
                 dialog = ict.defaultDialog;
-            } //End block
-        } //End block
-        else
-        {
+            }
+        } else {
             dialog = this.getDialog(dialogId);
-        } //End block
-        if(dialog == null)        
-        {
+        }
+
+        // JvB: Check all conditions required for creating a new Dialog
+        if (dialog == null) {
             int code = sipResponse.getStatusCode();
-            if((code > 100 && code < 300)
+            if ((code > 100 && code < 300)
+            /* skip 100 (may have a to tag */
             && (sipResponse.getToTag() != null || sipStack.isRfc2543Supported())
-                    && sipStack.isDialogCreated(method))            
-            {
-                synchronized
-(this)                {
-                    if(defaultDialog != null)                    
-                    {
-                        if(sipResponse.getFromTag() != null)                        
-                        {
+                    && sipStack.isDialogCreated(method)) {
+
+                /*
+                 * Dialog cannot be found for the response. This must be a forked response. no
+                 * dialog assigned to this response but a default dialog has been assigned. Note
+                 * that if automatic dialog support is configured then a default dialog is always
+                 * created.
+                 */
+
+                synchronized (this) {
+                    /*
+                     * We need synchronization here because two responses may compete for the
+                     * default dialog simultaneously
+                     */
+                    if (defaultDialog != null) {
+                        if (sipResponse.getFromTag() != null) {
                             SIPResponse dialogResponse = defaultDialog.getLastResponse();
                             String defaultDialogId = defaultDialog.getDialogId();
-                            if(dialogResponse == null
+                            if (dialogResponse == null
                                     || (method.equals(Request.SUBSCRIBE)
                                             && dialogResponse.getCSeq().getMethod().equals(
                                                     Request.NOTIFY) && defaultDialogId
-                                            .equals(dialogId)))                            
-                            {
+                                            .equals(dialogId))) {
+                                // The default dialog has not been claimed yet.
                                 defaultDialog.setLastResponse(this, sipResponse);
                                 dialog = defaultDialog;
-                            } //End block
-                            else
-                            {
+                            } else {
+                                /*
+                                 * check if we have created one previously (happens in the case of
+                                 * REINVITE processing. JvB: should not happen, this.defaultDialog
+                                 * should then get set in Dialog#sendRequest line 1662
+                                 */
+
                                 dialog = sipStack.getDialog(dialogId);
-                                if(dialog == null)                                
-                                {
-                                    if(defaultDialog.isAssigned())                                    
-                                    {
+                                if (dialog == null) {
+                                    if (defaultDialog.isAssigned()) {
+                                        /*
+                                         * Nop we dont have one. so go ahead and allocate a new
+                                         * one.
+                                         */
                                         dialog = sipStack.createDialog(this, sipResponse);
-                                    } //End block
-                                } //End block
-                            } //End block
-                            if(dialog != null)                            
-                            {
+
+                                    }
+                                }
+
+                            }
+                            if ( dialog != null ) {
                                 this.setDialog(dialog, dialog.getDialogId());
-                            } //End block
-                            else
-                            {
+                            } else {
                                 sipStack.getStackLogger().logError("dialog is unexpectedly null",new NullPointerException());
-                            } //End block
-                        } //End block
-                        else
-                        {
-                            RuntimeException var6755A7A7F32D8B6EF3BEF356B4AC67B6_1598185117 = new RuntimeException("Response without from-tag");
-                            var6755A7A7F32D8B6EF3BEF356B4AC67B6_1598185117.addTaint(taint);
-                            throw var6755A7A7F32D8B6EF3BEF356B4AC67B6_1598185117;
-                        } //End block
-                    } //End block
-                    else
-                    {
-                        if(sipStack.isAutomaticDialogSupportEnabled)                        
-                        {
+                            }
+                        } else {
+                            throw new RuntimeException("Response without from-tag");
+                        }
+                    } else {
+                        // Need to create a new Dialog, this becomes default
+                        // JvB: not sure if this ever gets executed
+                        if (sipStack.isAutomaticDialogSupportEnabled) {
                             dialog = sipStack.createDialog(this, sipResponse);
                             this.setDialog(dialog, dialog.getDialogId());
-                        } //End block
-                    } //End block
-                } //End block
-            } //End block
-            else
-            {
+                        }
+                    }
+                } // synchronized
+            } else {
                 dialog = defaultDialog;
-            } //End block
-        } //End block
-        else
-        {
+            }
+        } else {
             dialog.setLastResponse(this, sipResponse);
-        } //End block
+        }
         this.processResponse(sipResponse, incomingChannel, dialog);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
     }
 
+    /*
+     * (non-Javadoc)
+     * 
+     * @see gov.nist.javax.sip.stack.SIPTransaction#getDialog()
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:29.050 -0500", hash_original_method = "A455A41B989A73F91883A443A89AF007", hash_generated_method = "FD23868559BDFE18A1336D5F8FE31CBF")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.899 -0400", hash_original_method = "A455A41B989A73F91883A443A89AF007", hash_generated_method = "5CDD785102471E5FE8B303F9B12C0E4D")
-    public Dialog getDialog() {
+public  Dialog getDialog() {
+        // This is for backwards compatibility.
         Dialog retval = null;
-        if(this.lastResponse != null && this.lastResponse.getFromTag() != null
+        if (this.lastResponse != null && this.lastResponse.getFromTag() != null
                 && this.lastResponse.getToTag() != null
-                && this.lastResponse.getStatusCode() != 100)        
-        {
+                && this.lastResponse.getStatusCode() != 100) {
             String dialogId = this.lastResponse.getDialogId(false);
             retval = (Dialog) getDialog(dialogId);
-        } //End block
-        if(retval == null)        
-        {
+        }
+
+        if (retval == null) {
             retval = (Dialog) this.defaultDialog;
-        } //End block
-        if(sipStack.isLoggingEnabled())        
-        {
+
+        }
+        if (sipStack.isLoggingEnabled()) {
             sipStack.getStackLogger().logDebug(
                     " sipDialogs =  " + sipDialogs + " default dialog " + this.defaultDialog
                             + " retval " + retval);
-        } //End block
-Dialog varF9E19AD6135C970F387F77C6F3DE4477_547616619 =         retval;
-        varF9E19AD6135C970F387F77C6F3DE4477_547616619.addTaint(taint);
-        return varF9E19AD6135C970F387F77C6F3DE4477_547616619;
-        // ---------- Original Method ----------
-        //Dialog retval = null;
-        //if (this.lastResponse != null && this.lastResponse.getFromTag() != null
-                //&& this.lastResponse.getToTag() != null
-                //&& this.lastResponse.getStatusCode() != 100) {
-            //String dialogId = this.lastResponse.getDialogId(false);
-            //retval = (Dialog) getDialog(dialogId);
-        //}
-        //if (retval == null) {
-            //retval = (Dialog) this.defaultDialog;
-        //}
-        //if (sipStack.isLoggingEnabled()) {
-            //sipStack.getStackLogger().logDebug(
-                    //" sipDialogs =  " + sipDialogs + " default dialog " + this.defaultDialog
-                            //+ " retval " + retval);
-        //}
-        //return retval;
+        }
+        return retval;
+
     }
 
+    /*
+     * (non-Javadoc)
+     * 
+     * @see gov.nist.javax.sip.stack.SIPTransaction#setDialog(gov.nist.javax.sip.stack.SIPDialog,
+     *      gov.nist.javax.sip.message.SIPMessage)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:29.053 -0500", hash_original_method = "7CA3466B3B290C9233529520194EB8A2", hash_generated_method = "0C9B6900A90B5B2C0B76494AD7ADD1FE")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.899 -0400", hash_original_method = "7CA3466B3B290C9233529520194EB8A2", hash_generated_method = "5D3C1B89E6A1E9BD0F1F89D3D8B3B2DD")
-    public SIPDialog getDialog(String dialogId) {
-        addTaint(dialogId.getTaint());
+public SIPDialog getDialog(String dialogId) {
         SIPDialog retval = (SIPDialog) this.sipDialogs.get(dialogId);
-SIPDialog varF9E19AD6135C970F387F77C6F3DE4477_362229602 =         retval;
-        varF9E19AD6135C970F387F77C6F3DE4477_362229602.addTaint(taint);
-        return varF9E19AD6135C970F387F77C6F3DE4477_362229602;
-        // ---------- Original Method ----------
-        //SIPDialog retval = (SIPDialog) this.sipDialogs.get(dialogId);
-        //return retval;
+        return retval;
+
     }
 
+    /*
+     * (non-Javadoc)
+     * 
+     * @see gov.nist.javax.sip.stack.SIPTransaction#setDialog(gov.nist.javax.sip.stack.SIPDialog,
+     *      gov.nist.javax.sip.message.SIPMessage)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:29.056 -0500", hash_original_method = "9816411304542A0CA40176674DC457D1", hash_generated_method = "2023AC5D58B374E7D429DAC7185BF846")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.900 -0400", hash_original_method = "9816411304542A0CA40176674DC457D1", hash_generated_method = "E2317C00C5E53BCCF8F849764A053190")
-    public void setDialog(SIPDialog sipDialog, String dialogId) {
-        addTaint(dialogId.getTaint());
-        if(sipStack.isLoggingEnabled())        
-        sipStack.getStackLogger().logDebug(
+public void setDialog(SIPDialog sipDialog, String dialogId) {
+        if (sipStack.isLoggingEnabled())
+            sipStack.getStackLogger().logDebug(
                     "setDialog: " + dialogId + "sipDialog = " + sipDialog);
-        if(sipDialog == null)        
-        {
-            if(sipStack.isLoggingEnabled())            
-            sipStack.getStackLogger().logError("NULL DIALOG!!");
-            NullPointerException varDBD8AFDE5895AD4848FD81F119F093F5_1678683323 = new NullPointerException("bad dialog null");
-            varDBD8AFDE5895AD4848FD81F119F093F5_1678683323.addTaint(taint);
-            throw varDBD8AFDE5895AD4848FD81F119F093F5_1678683323;
-        } //End block
-        if(this.defaultDialog == null)        
-        {
+
+        if (sipDialog == null) {
+        	if (sipStack.isLoggingEnabled())
+        		sipStack.getStackLogger().logError("NULL DIALOG!!");
+            throw new NullPointerException("bad dialog null");
+        }
+        if (this.defaultDialog == null) {
             this.defaultDialog = sipDialog;
-            if(this.getMethod().equals(Request.INVITE) && this.getSIPStack().maxForkTime != 0)            
-            {
+            if ( this.getMethod().equals(Request.INVITE) && this.getSIPStack().maxForkTime != 0) {
                 this.getSIPStack().addForkedClientTransaction(this);
-            } //End block
-        } //End block
-        if(dialogId != null && sipDialog.getDialogId() != null)        
-        {
+            }
+        }
+        if (dialogId != null && sipDialog.getDialogId() != null) {
             this.sipDialogs.put(dialogId, sipDialog);
-        } //End block
-        // ---------- Original Method ----------
-        //if (sipStack.isLoggingEnabled())
-            //sipStack.getStackLogger().logDebug(
-                    //"setDialog: " + dialogId + "sipDialog = " + sipDialog);
-        //if (sipDialog == null) {
-        	//if (sipStack.isLoggingEnabled())
-        		//sipStack.getStackLogger().logError("NULL DIALOG!!");
-            //throw new NullPointerException("bad dialog null");
-        //}
-        //if (this.defaultDialog == null) {
-            //this.defaultDialog = sipDialog;
-            //if ( this.getMethod().equals(Request.INVITE) && this.getSIPStack().maxForkTime != 0) {
-                //this.getSIPStack().addForkedClientTransaction(this);
-            //}
-        //}
-        //if (dialogId != null && sipDialog.getDialogId() != null) {
-            //this.sipDialogs.put(dialogId, sipDialog);
-        //}
+
+        }
+
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:29.059 -0500", hash_original_method = "EC86D15857564E1427115ADA6B1A0784", hash_generated_method = "21F9EDBC8D80BE52B8A821DB6AFCF3E9")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.900 -0400", hash_original_method = "EC86D15857564E1427115ADA6B1A0784", hash_generated_method = "DCBC92366F24680B7B7E465B95F953BF")
-    public SIPDialog getDefaultDialog() {
-SIPDialog var07DB6ED3B1EC8AA2EFC7D90D814BC07B_1296719875 =         this.defaultDialog;
-        var07DB6ED3B1EC8AA2EFC7D90D814BC07B_1296719875.addTaint(taint);
-        return var07DB6ED3B1EC8AA2EFC7D90D814BC07B_1296719875;
-        // ---------- Original Method ----------
-        //return this.defaultDialog;
+public SIPDialog getDefaultDialog() {
+        return this.defaultDialog;
     }
 
+    /**
+     * Set the next hop ( if it has already been computed).
+     * 
+     * @param hop -- the hop that has been previously computed.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:29.061 -0500", hash_original_method = "BBF8312DD6859DF11BA280D3CE71F333", hash_generated_method = "700D5A83C07E6D4AE6DDEA4F45ECA115")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.900 -0400", hash_original_method = "BBF8312DD6859DF11BA280D3CE71F333", hash_generated_method = "92C54DFEBE82A33476818E16370481AA")
-    public void setNextHop(Hop hop) {
+public void setNextHop(Hop hop) {
         this.nextHop = hop;
-        // ---------- Original Method ----------
-        //this.nextHop = hop;
+
     }
 
+    /**
+     * Reeturn the previously computed next hop (avoid computing it twice).
+     * 
+     * @return -- next hop previously computed.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:29.064 -0500", hash_original_method = "F8BB258224ADAD4254DDBC66AEC6C06F", hash_generated_method = "6CA26D0EC82CDBAA9FD6A788CFF1CBCE")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.901 -0400", hash_original_method = "F8BB258224ADAD4254DDBC66AEC6C06F", hash_generated_method = "2324356E5F46661BC4A4E02F17ABA4A9")
-    public Hop getNextHop() {
-Hop var7E6D0C89CF2547AEC7B1741A7E613AB4_1105159126 =         nextHop;
-        var7E6D0C89CF2547AEC7B1741A7E613AB4_1105159126.addTaint(taint);
-        return var7E6D0C89CF2547AEC7B1741A7E613AB4_1105159126;
-        // ---------- Original Method ----------
-        //return nextHop;
+public Hop getNextHop() {
+        return nextHop;
     }
 
+    /**
+     * Set this flag if you want your Listener to get Timeout.RETRANSMIT notifications each time a
+     * retransmission occurs.
+     * 
+     * @param notifyOnRetransmit the notifyOnRetransmit to set
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:29.066 -0500", hash_original_method = "5A4A2DE6DA5EAFA8C9F9B9398CD98855", hash_generated_method = "0CF8CBD35E6918414B624445A15DE787")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.901 -0400", hash_original_method = "5A4A2DE6DA5EAFA8C9F9B9398CD98855", hash_generated_method = "77796E2667351045720A96FACE4561A1")
-    public void setNotifyOnRetransmit(boolean notifyOnRetransmit) {
+public void setNotifyOnRetransmit(boolean notifyOnRetransmit) {
         this.notifyOnRetransmit = notifyOnRetransmit;
-        // ---------- Original Method ----------
-        //this.notifyOnRetransmit = notifyOnRetransmit;
     }
 
+    /**
+     * @return the notifyOnRetransmit
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:29.068 -0500", hash_original_method = "27ED93829BD70EC80C4ABB0868670759", hash_generated_method = "0EB80BE7FF1F58BF9A16CEF82D510702")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.902 -0400", hash_original_method = "27ED93829BD70EC80C4ABB0868670759", hash_generated_method = "1578E6630F6C5CD23DC6C56502B747B9")
-    public boolean isNotifyOnRetransmit() {
-        boolean varA6A57E5FB85DB2354843F5CFC0F10126_438326373 = (notifyOnRetransmit);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1689681106 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1689681106;
-        // ---------- Original Method ----------
-        //return notifyOnRetransmit;
+public boolean isNotifyOnRetransmit() {
+        return notifyOnRetransmit;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:29.071 -0500", hash_original_method = "E7190C5FA03F5363EA136DFEC0492C73", hash_generated_method = "94CD9310101FC536FDF493096AEB5261")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.902 -0400", hash_original_method = "E7190C5FA03F5363EA136DFEC0492C73", hash_generated_method = "A815816922C53FB5571D66EB4D353EEE")
-    public void alertIfStillInCallingStateBy(int count) {
+public void alertIfStillInCallingStateBy(int count) {
         this.timeoutIfStillInCallingState = true;
         this.callingStateTimeoutCount = count;
-        // ---------- Original Method ----------
-        //this.timeoutIfStillInCallingState = true;
-        //this.callingStateTimeoutCount = count;
     }
 
     
     public class TransactionTimer extends SIPStackTimerTask {
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:28.958 -0500", hash_original_method = "7764BAFD5C7951E95371726125E892CE", hash_generated_method = "EEE3315EAAAE14F533BDF577209D76E6")
         
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.902 -0400", hash_original_method = "7764BAFD5C7951E95371726125E892CE", hash_generated_method = "33DB74724AFAD3CA3F59EFA77CA701E3")
-        public  TransactionTimer() {
-            // ---------- Original Method ----------
+public TransactionTimer() {
+
         }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:28.963 -0500", hash_original_method = "0968D865D1ED49C59C7D505E50E4DC62", hash_generated_method = "E2ED4187AC291A42C6E128BC0393CFC7")
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.903 -0400", hash_original_method = "0968D865D1ED49C59C7D505E50E4DC62", hash_generated_method = "56E212B85E11A641E734CB49ACDBB9CC")
-        protected void runTask() {
+protected void runTask() {
             SIPClientTransaction clientTransaction;
             SIPTransactionStack sipStack;
             clientTransaction = SIPClientTransaction.this;
             sipStack = clientTransaction.sipStack;
-            if(clientTransaction.isTerminated())            
-            {
-                if(sipStack.isLoggingEnabled())                
-                {
+
+            // If the transaction has terminated,
+            if (clientTransaction.isTerminated()) {
+
+                if (sipStack.isLoggingEnabled()) {
                     sipStack.getStackLogger().logDebug(
                             "removing  = " + clientTransaction + " isReliable "
                                     + clientTransaction.isReliable());
-                } //End block
+                }
+
                 sipStack.removeTransaction(clientTransaction);
-                try 
-                {
+
+                try {
                     this.cancel();
-                } //End block
-                catch (IllegalStateException ex)
-                {
-                    if(!sipStack.isAlive())                    
-                    return;
-                } //End block
-                if((!sipStack.cacheClientConnections) && clientTransaction.isReliable())                
-                {
+
+                } catch (IllegalStateException ex) {
+                    if (!sipStack.isAlive())
+                        return;
+                }
+
+                // Client transaction terminated. Kill connection if
+                // this is a TCP after the linger timer has expired.
+                // The linger timer is needed to allow any pending requests to
+                // return responses.
+                if ((!sipStack.cacheClientConnections) && clientTransaction.isReliable()) {
+
                     int newUseCount = --clientTransaction.getMessageChannel().useCount;
-                    if(newUseCount <= 0)                    
-                    {
+                    if (newUseCount <= 0) {
+                        // Let the connection linger for a while and then close
+                        // it.
                         TimerTask myTimer = new LingerTimer();
                         sipStack.getTimer().schedule(myTimer,
                                 SIPTransactionStack.CONNECTION_LINGER_TIME * 1000);
-                    } //End block
-                } //End block
-                else
-                {
-                    if(sipStack.isLoggingEnabled() && clientTransaction.isReliable())                    
-                    {
-                        int useCount = clientTransaction.getMessageChannel().useCount;
-                        if(sipStack.isLoggingEnabled())                        
-                        sipStack.getStackLogger().logDebug("Client Use Count = " + useCount);
-                    } //End block
-                } //End block
-            } //End block
-            else
-            {
+                    }
+
+                } else {
+                    // Cache the client connections so dont close the
+                    // connection. This keeps the connection open permanently
+                    // until the client disconnects.
+                    if (sipStack.isLoggingEnabled() && clientTransaction.isReliable()) {
+                       	int useCount = clientTransaction.getMessageChannel().useCount;
+                       	if (sipStack.isLoggingEnabled())
+                       		sipStack.getStackLogger().logDebug("Client Use Count = " + useCount);
+                    }
+                }
+
+            } else {
+                // If this transaction has not
+                // terminated,
+                // Fire the transaction timer.
                 clientTransaction.fireTimer();
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+
+            }
+
         }
 
         

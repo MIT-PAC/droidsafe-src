@@ -1,6 +1,8 @@
 package android.view;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.graphics.Rect;
 import android.view.accessibility.AccessibilityEvent;

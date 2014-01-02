@@ -1,6 +1,8 @@
 package android.app.backup;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.File;
 import java.io.FileInputStream;
@@ -18,12 +20,6 @@ import android.util.Log;
 import droidsafe.helpers.DSUtils;
 
 public class FullBackup {
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.342 -0400", hash_original_method = "E56D2C5902E2E32DC49936A701F181C3", hash_generated_method = "E56D2C5902E2E32DC49936A701F181C3")
-    public FullBackup ()
-    {
-        //Synthesized constructor
-    }
 
 
     @DSModeled(DSC.SAFE)
@@ -32,18 +28,53 @@ public class FullBackup {
         return DSUtils.UNKNOWN_INT;
     }
 
+    /**
+     * Copy data from a socket to the given File location on permanent storage.  The
+     * modification time and access mode of the resulting file will be set if desired.
+     * If the {@code type} parameter indicates that the result should be a directory,
+     * the socket parameter may be {@code null}; even if it is valid, no data will be
+     * read from it in this case.
+     * <p>
+     * If the {@code mode} argument is negative, then the resulting output file will not
+     * have its access mode or last modification time reset as part of this operation.
+     *
+     * @param data Socket supplying the data to be copied to the output file.  If the
+     *    output is a directory, this may be {@code null}.
+     * @param size Number of bytes of data to copy from the socket to the file.  At least
+     *    this much data must be available through the {@code data} parameter.
+     * @param type Must be either {@link BackupAgent#TYPE_FILE} for ordinary file data
+     *    or {@link BackupAgent#TYPE_DIRECTORY} for a directory.
+     * @param mode Unix-style file mode (as used by the chmod(2) syscall) to be set on
+     *    the output file or directory.  If this parameter is negative then neither
+     *    the mode nor the mtime parameters will be used.
+     * @param mtime A timestamp in the standard Unix epoch that will be imposed as the
+     *    last modification time of the output file.  if the {@code mode} parameter is
+     *    negative then this parameter will be ignored.
+     * @param outFile Location within the filesystem to place the data.  This must point
+     *    to a location that is writeable by the caller, prefereably using an absolute path.
+     * @throws IOException
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.889 -0500", hash_original_method = "F9DFB08D12B24563CC8422B4E7125730", hash_generated_method = "961888451F126DE9730D91AC31697FB8")
     
-    @DSModeled(DSC.BAN)
-    static public void restoreFile(ParcelFileDescriptor data,
+static public void restoreFile(ParcelFileDescriptor data,
             long size, int type, long mode, long mtime, File outFile) throws IOException {
         if (type == BackupAgent.TYPE_DIRECTORY) {
+            // Canonically a directory has no associated content, so we don't need to read
+            // anything from the pipe in this case.  Just create the directory here and
+            // drop down to the final metadata adjustment.
             if (outFile != null) outFile.mkdirs();
         } else {
             FileOutputStream out = null;
+
+            // Pull the data from the pipe, copying it to the output file, until we're done
             try {
                 if (outFile != null) {
                     File parent = outFile.getParentFile();
                     if (!parent.exists()) {
+                        // in practice this will only be for the default semantic directories,
+                        // and using the default mode for those is appropriate.
+                        // TODO: support the edge case of apps that have adjusted the
+                        //       permissions on these core directories
                         parent.mkdirs();
                     }
                     out = new FileOutputStream(outFile);
@@ -51,6 +82,7 @@ public class FullBackup {
             } catch (IOException e) {
                 Log.e(TAG, "Unable to create/open file " + outFile.getPath(), e);
             }
+
             byte[] buffer = new byte[32 * 1024];
             final long origSize = size;
             FileInputStream in = new FileInputStream(data.getFileDescriptor());
@@ -66,6 +98,8 @@ public class FullBackup {
                     try {
                         out.write(buffer, 0, got);
                     } catch (IOException e) {
+                        // Problem writing to the file.  Quit copying data and delete
+                        // the file, but of course keep consuming the input stream.
                         Log.e(TAG, "Unable to write to file " + outFile.getPath(), e);
                         out.close();
                         out = null;
@@ -76,6 +110,8 @@ public class FullBackup {
             }
             if (out != null) out.close();
         }
+
+        // Now twiddle the state to match the backup, assuming all went well
         if (mode >= 0 && outFile != null) {
             try {
                 Libcore.os.chmod(outFile.getPath(), (int)mode);
@@ -85,49 +121,56 @@ public class FullBackup {
             outFile.setLastModified(mtime);
         }
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.344 -0400", hash_original_field = "13FB333B433788822081C4523FB8D4B5", hash_generated_field = "D653D0907C71ABE401F9B043A993232F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.849 -0500", hash_original_field = "6EAD3247AD828AB3EB69FAFCFAC6E406", hash_generated_field = "D653D0907C71ABE401F9B043A993232F")
 
     static final String TAG = "FullBackup";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.344 -0400", hash_original_field = "C5687A82B46906B957C5D35E8BE2DD98", hash_generated_field = "D9775026128515092C93F31EACE9EB8A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.852 -0500", hash_original_field = "E981F008616A41D7B878F9DA4901677A", hash_generated_field = "D9775026128515092C93F31EACE9EB8A")
+
 
     public static final String APK_TREE_TOKEN = "a";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.344 -0400", hash_original_field = "9763C720BE748535070C8086718B7765", hash_generated_field = "90B28BE334297A0B3D32120A9059DEF3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.855 -0500", hash_original_field = "2A9E375BE89669169722BE08618E63CB", hash_generated_field = "90B28BE334297A0B3D32120A9059DEF3")
 
     public static final String OBB_TREE_TOKEN = "obb";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.344 -0400", hash_original_field = "9A25415A321699EB26923F88A0F229E7", hash_generated_field = "66C2CCFF3239241B2479A296770C6133")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.857 -0500", hash_original_field = "A8B6B4FFAF6B3964549F9710425CF2FC", hash_generated_field = "66C2CCFF3239241B2479A296770C6133")
 
     public static final String ROOT_TREE_TOKEN = "r";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.344 -0400", hash_original_field = "B9833A9C239339E4B4A0BABF216A5968", hash_generated_field = "1B5FD799214AAF9E8B6BDCBA1FD7456E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.859 -0500", hash_original_field = "6DFFC1D0D29CBF6FED7459AD907C5F3E", hash_generated_field = "1B5FD799214AAF9E8B6BDCBA1FD7456E")
 
     public static final String DATA_TREE_TOKEN = "f";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.345 -0400", hash_original_field = "786DDE6ECB3F41E6C88848FB08F80336", hash_generated_field = "FBA35C1A6192AB9994C48D251CAECC02")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.862 -0500", hash_original_field = "2D5A603A8FB8F0499DDC6971987D4B0D", hash_generated_field = "FBA35C1A6192AB9994C48D251CAECC02")
 
     public static final String DATABASE_TREE_TOKEN = "db";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.345 -0400", hash_original_field = "35758E3EECF6BFBD969E8C094E57C5CC", hash_generated_field = "79960F3BF74B5E9A291F717CA0B701DA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.864 -0500", hash_original_field = "68C413504BA120C3708C16F8E9A6167D", hash_generated_field = "79960F3BF74B5E9A291F717CA0B701DA")
 
     public static final String SHAREDPREFS_TREE_TOKEN = "sp";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.345 -0400", hash_original_field = "144C669D3BD1566E7018A2DE9C57F16F", hash_generated_field = "A96ACAA267817BB1A150AAD1DC613584")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.867 -0500", hash_original_field = "DE4CA414E08DE87865202FD42EE7B368", hash_generated_field = "A96ACAA267817BB1A150AAD1DC613584")
 
     public static final String CACHE_TREE_TOKEN = "c";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.345 -0400", hash_original_field = "AEC20611D972915DFD547577E6CB873C", hash_generated_field = "860B8AE14DAB52E7FA17916C477026E5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.869 -0500", hash_original_field = "CBCBEC1E425B632F698D2730C01BF5C1", hash_generated_field = "860B8AE14DAB52E7FA17916C477026E5")
 
     public static final String SHARED_STORAGE_TOKEN = "shared";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.345 -0400", hash_original_field = "25F41CAFFE686119CD58D2921657F927", hash_generated_field = "7DCEEB367EE72AAAC7F240EC43FA960A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.871 -0500", hash_original_field = "9C21CE9E7A9A477D6B1975B75A5C889D", hash_generated_field = "7DCEEB367EE72AAAC7F240EC43FA960A")
+
 
     public static final String APPS_PREFIX = "apps/";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.345 -0400", hash_original_field = "CBC6244847D58947CB6A498EC87C4632", hash_generated_field = "2192D0DEC5AD60E570C532207FF50390")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.874 -0500", hash_original_field = "C2C3EC43B5EFA052B973C553DE7E6945", hash_generated_field = "2192D0DEC5AD60E570C532207FF50390")
 
     public static final String SHARED_PREFIX = SHARED_STORAGE_TOKEN + "/";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.345 -0400", hash_original_field = "73A3B1671AE261B78B4DC383A4497741", hash_generated_field = "0C934D4C26F9E2BF6DA50A8DB1E9BDFB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.876 -0500", hash_original_field = "C1B1D83D86932E8CF5C70391F3C5801E", hash_generated_field = "0C934D4C26F9E2BF6DA50A8DB1E9BDFB")
+
 
     public static final String FULL_BACKUP_INTENT_ACTION = "fullback";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.345 -0400", hash_original_field = "DAE11233E8B31534FDC86770D9E74247", hash_generated_field = "444C653AB98B9CF687C1840438401C92")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.879 -0500", hash_original_field = "E327DF17FB89028FE18E002BED29CDE7", hash_generated_field = "444C653AB98B9CF687C1840438401C92")
 
     public static final String FULL_RESTORE_INTENT_ACTION = "fullrest";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.345 -0400", hash_original_field = "61B8299001860199D5F5177CA2A553D6", hash_generated_field = "8B42D8A2FC8538D2278CBEDF793D4F9D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.881 -0500", hash_original_field = "CDB6B24DBB38D9F2025A06DC29B41BC0", hash_generated_field = "8B42D8A2FC8538D2278CBEDF793D4F9D")
 
     public static final String CONF_TOKEN_INTENT_EXTRA = "conftoken";
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.342 -0400", hash_original_method = "E56D2C5902E2E32DC49936A701F181C3", hash_generated_method = "E56D2C5902E2E32DC49936A701F181C3")
+    public FullBackup ()
+    {
+        //Synthesized constructor
+    }
 }
 

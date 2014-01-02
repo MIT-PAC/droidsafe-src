@@ -1,6 +1,8 @@
 package java.io;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Arrays;
 
@@ -10,393 +12,398 @@ import java.util.Arrays;
 
 
 public class PipedInputStream extends InputStream {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.150 -0400", hash_original_field = "231D9796F07169E79A8FE9CAFA5AE69C", hash_generated_field = "F5A62F451E05D22096D6EE6BA212D601")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.835 -0500", hash_original_field = "32272A849EA457522206621DB7551BDB", hash_generated_field = "98981E77F477BF5BC6052D8850C465A7")
+
+    protected static final int PIPE_SIZE = 1024;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.821 -0500", hash_original_field = "0C274599D1E182E9646E850B1F54838C", hash_generated_field = "F5A62F451E05D22096D6EE6BA212D601")
+
 
     private Thread lastReader;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.150 -0400", hash_original_field = "E1009AE69BA1CE27303C8FCB7B3693F1", hash_generated_field = "276A7969C85F5DE4B1F84464F2E355FA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.823 -0500", hash_original_field = "11B82934C1097E36AA09E79AB8952C5D", hash_generated_field = "276A7969C85F5DE4B1F84464F2E355FA")
+
 
     private Thread lastWriter;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.150 -0400", hash_original_field = "7587750400D3C39AEAD7C1489F6FE7F3", hash_generated_field = "61C76B683BBEFCB5006250611D355A94")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.825 -0500", hash_original_field = "FF1318BD7B381B7887A6EEC627EFEF6C", hash_generated_field = "61C76B683BBEFCB5006250611D355A94")
+
 
     private boolean isClosed;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.150 -0400", hash_original_field = "7F2DB423A49B305459147332FB01CF87", hash_generated_field = "FBA3E90E1AEF84B9DE40F7F93AE8B84B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.828 -0500", hash_original_field = "3923F3F9F9ECABE8D28493E863FC2CD8", hash_generated_field = "FBA3E90E1AEF84B9DE40F7F93AE8B84B")
 
     protected byte[] buffer;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.150 -0400", hash_original_field = "9AE8C0B11714442FC9030E9DA4B97E4C", hash_generated_field = "58862AB4E2B0CB5FD1377E7AA508B6BA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.830 -0500", hash_original_field = "6C2A488AC6B0C698A8607CEA3B0A6CD5", hash_generated_field = "58862AB4E2B0CB5FD1377E7AA508B6BA")
 
     protected int in = -1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.150 -0400", hash_original_field = "C68271A63DDBC431C307BEB7D2918275", hash_generated_field = "B9DAD1FC7D32BD3FCCD6EA20CBE64C1B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.832 -0500", hash_original_field = "F336AD514990B0A382A01CD56F41BE74", hash_generated_field = "B9DAD1FC7D32BD3FCCD6EA20CBE64C1B")
 
     protected int out;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.150 -0400", hash_original_field = "8CADFAB0F66545464EF713B1AEC0C7DD", hash_generated_field = "63EA3415F69DFBAE1E285FCFD4110E54")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.837 -0500", hash_original_field = "63EA3415F69DFBAE1E285FCFD4110E54", hash_generated_field = "63EA3415F69DFBAE1E285FCFD4110E54")
 
     boolean isConnected;
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.150 -0400", hash_original_method = "EAE18C87236155EAE738625B0EE95D6C", hash_generated_method = "D3E67D51FFBABB34996E2D70DC239248")
-    public  PipedInputStream() {
-        // ---------- Original Method ----------
-    }
 
+    /**
+     * Constructs a new unconnected {@code PipedInputStream}. The resulting
+     * stream must be connected to a {@link PipedOutputStream} before data may
+     * be read from it.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.840 -0500", hash_original_method = "EAE18C87236155EAE738625B0EE95D6C", hash_generated_method = "E7FB40C6AB2C8096523A1C2B218A59B4")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.151 -0400", hash_original_method = "5C6A295DEF226D787CAB21BFAF549F52", hash_generated_method = "FF70040C8E3B850B9D161B1AC6867330")
-    public  PipedInputStream(PipedOutputStream out) throws IOException {
-        addTaint(out.getTaint());
+public PipedInputStream() {}
+
+    /**
+     * Constructs a new {@code PipedInputStream} connected to the
+     * {@link PipedOutputStream} {@code out}. Any data written to the output
+     * stream can be read from the this input stream.
+     *
+     * @param out
+     *            the piped output stream to connect to.
+     * @throws IOException
+     *             if this stream or {@code out} are already connected.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.843 -0500", hash_original_method = "5C6A295DEF226D787CAB21BFAF549F52", hash_generated_method = "496B6F83C7A477341F9D7519173DCAB3")
+    
+public PipedInputStream(PipedOutputStream out) throws IOException {
         connect(out);
-        // ---------- Original Method ----------
-        //connect(out);
     }
 
+    /**
+     * Constructs a new unconnected {@code PipedInputStream} with the given
+     * buffer size. The resulting stream must be connected to a
+     * {@code PipedOutputStream} before data may be read from it.
+     *
+     * @param pipeSize the size of the buffer in bytes.
+     * @throws IllegalArgumentException if pipeSize is less than or equal to zero.
+     * @since 1.6
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.846 -0500", hash_original_method = "E71321ED2FFA70E9F11724EE1BE224BC", hash_generated_method = "579223054415B6B88118728AB8960597")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.151 -0400", hash_original_method = "E71321ED2FFA70E9F11724EE1BE224BC", hash_generated_method = "F9B244DCB21A45148F8093B41DE071DB")
-    public  PipedInputStream(int pipeSize) {
-        if(pipeSize <= 0)        
-        {
-            IllegalArgumentException var14B56B7417000A6322DBDC3AD243C74B_1001318054 = new IllegalArgumentException("pipe size " + pipeSize + " too small");
-            var14B56B7417000A6322DBDC3AD243C74B_1001318054.addTaint(taint);
-            throw var14B56B7417000A6322DBDC3AD243C74B_1001318054;
-        } //End block
+public PipedInputStream(int pipeSize) {
+        if (pipeSize <= 0) {
+            throw new IllegalArgumentException("pipe size " + pipeSize + " too small");
+        }
         buffer = new byte[pipeSize];
-        // ---------- Original Method ----------
-        //if (pipeSize <= 0) {
-            //throw new IllegalArgumentException("pipe size " + pipeSize + " too small");
-        //}
-        //buffer = new byte[pipeSize];
     }
 
+    /**
+     * Constructs a new {@code PipedInputStream} connected to the given {@code PipedOutputStream},
+     * with the given buffer size. Any data written to the output stream can be read from this
+     * input stream.
+     *
+     * @param out the {@code PipedOutputStream} to connect to.
+     * @param pipeSize the size of the buffer in bytes.
+     * @throws IOException if an I/O error occurs.
+     * @throws IllegalArgumentException if pipeSize is less than or equal to zero.
+     * @since 1.6
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.849 -0500", hash_original_method = "A3EF9AC77ADE8608AA265A4D24E9A500", hash_generated_method = "5B25F97E3955958762693BDD25DF1DD4")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.151 -0400", hash_original_method = "A3EF9AC77ADE8608AA265A4D24E9A500", hash_generated_method = "BDAD7C2C5CDCD39A076E9FFB309624E4")
-    public  PipedInputStream(PipedOutputStream out, int pipeSize) throws IOException {
+public PipedInputStream(PipedOutputStream out, int pipeSize) throws IOException {
         this(pipeSize);
-        addTaint(pipeSize);
-        addTaint(out.getTaint());
         connect(out);
-        // ---------- Original Method ----------
-        //connect(out);
     }
 
+    /**
+     * {@inheritDoc}
+     *
+     * <p>Unlike most streams, {@code PipedInputStream} returns 0 rather than throwing
+     * {@code IOException} if the stream has been closed. Unconnected and broken pipes also
+     * return 0.
+     *
+     * @throws IOException if an I/O error occurs
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.852 -0500", hash_original_method = "2A98E1CFDF4B9A3EC436EF3BA87395EB", hash_generated_method = "55B947A3E612BD1E29ED2B3E8790B567")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.152 -0400", hash_original_method = "2A98E1CFDF4B9A3EC436EF3BA87395EB", hash_generated_method = "97AFC47CEC93EF396B0CA84AD44AF319")
-    @Override
+@Override
     public synchronized int available() throws IOException {
-        if(buffer == null || in == -1)        
-        {
-            int varCFCD208495D565EF66E7DFF9F98764DA_286036567 = (0);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2108388664 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2108388664;
-        } //End block
-        int var66A5CA4646F3D9C506DDD7A718627107_425030598 = (in <= out ? buffer.length - out + in : in - out);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1678164809 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1678164809;
-        // ---------- Original Method ----------
-        //if (buffer == null || in == -1) {
-            //return 0;
-        //}
-        //return in <= out ? buffer.length - out + in : in - out;
+        if (buffer == null || in == -1) {
+            return 0;
+        }
+        return in <= out ? buffer.length - out + in : in - out;
     }
 
+    /**
+     * Closes this stream. This implementation releases the buffer used for the
+     * pipe and notifies all threads waiting to read or write.
+     *
+     * @throws IOException
+     *             if an error occurs while closing this stream.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.855 -0500", hash_original_method = "3F663E82A2EB3C95CA9BF0AFC9912DC8", hash_generated_method = "DBB377E63B1D8B44DF2588167E13233A")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.153 -0400", hash_original_method = "3F663E82A2EB3C95CA9BF0AFC9912DC8", hash_generated_method = "9C54C673D55F64DD4AC0EE092DC7D204")
-    @Override
+@Override
     public synchronized void close() throws IOException {
         buffer = null;
         notifyAll();
-        // ---------- Original Method ----------
-        //buffer = null;
-        //notifyAll();
     }
 
+    /**
+     * Connects this {@code PipedInputStream} to a {@link PipedOutputStream}.
+     * Any data written to the output stream becomes readable in this input
+     * stream.
+     *
+     * @param src
+     *            the source output stream.
+     * @throws IOException
+     *             if either stream is already connected.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.857 -0500", hash_original_method = "577007FA4B30A526722BCCB2926E190B", hash_generated_method = "C353233A3672428C8E74F3B8D253DC73")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.153 -0400", hash_original_method = "577007FA4B30A526722BCCB2926E190B", hash_generated_method = "CF0C2237C89D95FEE3360BC8ED26CA9F")
-    public void connect(PipedOutputStream src) throws IOException {
-        addTaint(src.getTaint());
+public void connect(PipedOutputStream src) throws IOException {
         src.connect(this);
-        // ---------- Original Method ----------
-        //src.connect(this);
     }
 
+    /**
+     * Establishes the connection to the PipedOutputStream.
+     *
+     * @throws IOException
+     *             If this Reader is already connected.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.859 -0500", hash_original_method = "5C9219C47AC485F782454E337FD705F5", hash_generated_method = "9EC41D60B9E82340DD96551BF7F48F3A")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.154 -0400", hash_original_method = "5C9219C47AC485F782454E337FD705F5", hash_generated_method = "B673961F827DD2979B3B9D3B8D9AFC6D")
-    synchronized void establishConnection() throws IOException {
-        if(isConnected)        
-        {
-            IOException var59E3110525112AD12A0795267BCC8DC7_1827469950 = new IOException("Pipe already connected");
-            var59E3110525112AD12A0795267BCC8DC7_1827469950.addTaint(taint);
-            throw var59E3110525112AD12A0795267BCC8DC7_1827469950;
-        } //End block
-        if(buffer == null)        
-        {
+synchronized void establishConnection() throws IOException {
+        if (isConnected) {
+            throw new IOException("Pipe already connected");
+        }
+        if (buffer == null) { // We may already have allocated the buffer.
             buffer = new byte[PipedInputStream.PIPE_SIZE];
-        } //End block
+        }
         isConnected = true;
-        // ---------- Original Method ----------
-        //if (isConnected) {
-            //throw new IOException("Pipe already connected");
-        //}
-        //if (buffer == null) { 
-            //buffer = new byte[PipedInputStream.PIPE_SIZE];
-        //}
-        //isConnected = true;
     }
 
+    /**
+     * Reads a single byte from this stream and returns it as an integer in the
+     * range from 0 to 255. Returns -1 if the end of this stream has been
+     * reached. If there is no data in the pipe, this method blocks until data
+     * is available, the end of the stream is detected or an exception is
+     * thrown.
+     * <p>
+     * Separate threads should be used to read from a {@code PipedInputStream}
+     * and to write to the connected {@link PipedOutputStream}. If the same
+     * thread is used, a deadlock may occur.
+     *
+     * @return the byte read or -1 if the end of the source stream has been
+     *         reached.
+     * @throws IOException
+     *             if this stream is closed or not connected to an output
+     *             stream, or if the thread writing to the connected output
+     *             stream is no longer alive.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.863 -0500", hash_original_method = "2CE52A22634017D3B9A1E29444B8338A", hash_generated_method = "6B35C78925AC44ADD51236A6E5FEBB2D")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.155 -0400", hash_original_method = "2CE52A22634017D3B9A1E29444B8338A", hash_generated_method = "B0E8026E3CCE6004E2894AE2CBDCDB09")
-    @Override
+@Override
     public synchronized int read() throws IOException {
-        if(!isConnected)        
-        {
-            IOException var5ACBC0578C8271E4B1FBA9054656F0A9_1528456416 = new IOException("Not connected");
-            var5ACBC0578C8271E4B1FBA9054656F0A9_1528456416.addTaint(taint);
-            throw var5ACBC0578C8271E4B1FBA9054656F0A9_1528456416;
-        } //End block
-        if(buffer == null)        
-        {
-            IOException var49FC1A6C11DB0A4BE9BF7960D4D933DF_1784527205 = new IOException("InputStream is closed");
-            var49FC1A6C11DB0A4BE9BF7960D4D933DF_1784527205.addTaint(taint);
-            throw var49FC1A6C11DB0A4BE9BF7960D4D933DF_1784527205;
-        } //End block
+        if (!isConnected) {
+            throw new IOException("Not connected");
+        }
+        if (buffer == null) {
+            throw new IOException("InputStream is closed");
+        }
+
+        /**
+         * Set the last thread to be reading on this PipedInputStream. If
+         * lastReader dies while someone is waiting to write an IOException of
+         * "Pipe broken" will be thrown in receive()
+         */
         lastReader = Thread.currentThread();
-        try 
-        {
+        try {
             int attempts = 3;
-            while
-(in == -1)            
-            {
-                if(isClosed)                
-                {
-                    int var6BB61E3B7BCE0931DA574D19D1D82C88_815518033 = (-1);
-                                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_164662458 = getTaintInt();
-                    return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_164662458;
-                } //End block
-                if((attempts-- <= 0) && lastWriter != null && !lastWriter.isAlive())                
-                {
-                    IOException var21F067B593CB8DB6DCADD1F25439FAC6_1726107566 = new IOException("Pipe broken");
-                    var21F067B593CB8DB6DCADD1F25439FAC6_1726107566.addTaint(taint);
-                    throw var21F067B593CB8DB6DCADD1F25439FAC6_1726107566;
-                } //End block
+            while (in == -1) {
+                // Are we at end of stream?
+                if (isClosed) {
+                    return -1;
+                }
+                if ((attempts-- <= 0) && lastWriter != null && !lastWriter.isAlive()) {
+                    throw new IOException("Pipe broken");
+                }
+                // Notify callers of receive()
                 notifyAll();
                 wait(1000);
-            } //End block
-        } //End block
-        catch (InterruptedException e)
-        {
-            InterruptedIOException var46B941F497A45BD71FFF5B2BE2F4FCEC_1642562278 = new InterruptedIOException();
-            var46B941F497A45BD71FFF5B2BE2F4FCEC_1642562278.addTaint(taint);
-            throw var46B941F497A45BD71FFF5B2BE2F4FCEC_1642562278;
-        } //End block
+            }
+        } catch (InterruptedException e) {
+            throw new InterruptedIOException();
+        }
+
         int result = buffer[out++] & 0xff;
-        if(out == buffer.length)        
-        {
+        if (out == buffer.length) {
             out = 0;
-        } //End block
-        if(out == in)        
-        {
+        }
+        if (out == in) {
+            // empty buffer
             in = -1;
             out = 0;
-        } //End block
+        }
+
+        // let blocked writers write to the newly available buffer space
         notifyAll();
-        int varB4A88417B3D0170D754C647C30B7216A_1552701844 = (result);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_485178524 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_485178524;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+
+        return result;
     }
 
+    /**
+     * Reads at most {@code byteCount} bytes from this stream and stores them in the
+     * byte array {@code bytes} starting at {@code offset}. Blocks until at
+     * least one byte has been read, the end of the stream is detected or an
+     * exception is thrown.
+     * <p>
+     * Separate threads should be used to read from a {@code PipedInputStream}
+     * and to write to the connected {@link PipedOutputStream}. If the same
+     * thread is used, a deadlock may occur.
+     *
+     * @return the number of bytes actually read or -1 if the end of the stream
+     *         has been reached.
+     * @throws IndexOutOfBoundsException
+     *             if {@code offset < 0} or {@code byteCount < 0}, or if {@code
+     *             offset + byteCount} is greater than the size of {@code bytes}.
+     * @throws InterruptedIOException
+     *             if the thread reading from this stream is interrupted.
+     * @throws IOException
+     *             if this stream is closed or not connected to an output
+     *             stream, or if the thread writing to the connected output
+     *             stream is no longer alive.
+     * @throws NullPointerException
+     *             if {@code bytes} is {@code null}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.866 -0500", hash_original_method = "D28D662CAD3AC901637BA85FDFEE5B3E", hash_generated_method = "4EB375BFE4DC1AB0442C4397A7F58490")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.159 -0400", hash_original_method = "D28D662CAD3AC901637BA85FDFEE5B3E", hash_generated_method = "2F1CBCF09B284FB2E2167D2520A3AA4B")
-    @Override
+@Override
     public synchronized int read(byte[] bytes, int offset, int byteCount) throws IOException {
-        addTaint(byteCount);
-        addTaint(offset);
-        addTaint(bytes[0]);
         Arrays.checkOffsetAndCount(bytes.length, offset, byteCount);
-        if(byteCount == 0)        
-        {
-            int varCFCD208495D565EF66E7DFF9F98764DA_1281771833 = (0);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_548084693 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_548084693;
-        } //End block
-        if(!isConnected)        
-        {
-            IOException var5ACBC0578C8271E4B1FBA9054656F0A9_216208241 = new IOException("Not connected");
-            var5ACBC0578C8271E4B1FBA9054656F0A9_216208241.addTaint(taint);
-            throw var5ACBC0578C8271E4B1FBA9054656F0A9_216208241;
-        } //End block
-        if(buffer == null)        
-        {
-            IOException var49FC1A6C11DB0A4BE9BF7960D4D933DF_48655115 = new IOException("InputStream is closed");
-            var49FC1A6C11DB0A4BE9BF7960D4D933DF_48655115.addTaint(taint);
-            throw var49FC1A6C11DB0A4BE9BF7960D4D933DF_48655115;
-        } //End block
+        if (byteCount == 0) {
+            return 0;
+        }
+
+        if (!isConnected) {
+            throw new IOException("Not connected");
+        }
+
+        if (buffer == null) {
+            throw new IOException("InputStream is closed");
+        }
+
+        /*
+         * Set the last thread to be reading on this PipedInputStream. If
+         * lastReader dies while someone is waiting to write an IOException of
+         * "Pipe broken" will be thrown in receive()
+         */
         lastReader = Thread.currentThread();
-        try 
-        {
+        try {
             int attempts = 3;
-            while
-(in == -1)            
-            {
-                if(isClosed)                
-                {
-                    int var6BB61E3B7BCE0931DA574D19D1D82C88_259373980 = (-1);
-                                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1081178276 = getTaintInt();
-                    return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1081178276;
-                } //End block
-                if((attempts-- <= 0) && lastWriter != null && !lastWriter.isAlive())                
-                {
-                    IOException var21F067B593CB8DB6DCADD1F25439FAC6_971691700 = new IOException("Pipe broken");
-                    var21F067B593CB8DB6DCADD1F25439FAC6_971691700.addTaint(taint);
-                    throw var21F067B593CB8DB6DCADD1F25439FAC6_971691700;
-                } //End block
+            while (in == -1) {
+                // Are we at end of stream?
+                if (isClosed) {
+                    return -1;
+                }
+                if ((attempts-- <= 0) && lastWriter != null && !lastWriter.isAlive()) {
+                    throw new IOException("Pipe broken");
+                }
+                // Notify callers of receive()
                 notifyAll();
                 wait(1000);
-            } //End block
-        } //End block
-        catch (InterruptedException e)
-        {
-            InterruptedIOException var46B941F497A45BD71FFF5B2BE2F4FCEC_511548753 = new InterruptedIOException();
-            var46B941F497A45BD71FFF5B2BE2F4FCEC_511548753.addTaint(taint);
-            throw var46B941F497A45BD71FFF5B2BE2F4FCEC_511548753;
-        } //End block
+            }
+        } catch (InterruptedException e) {
+            throw new InterruptedIOException();
+        }
+
         int totalCopied = 0;
-        if(out >= in)        
-        {
+
+        // copy bytes from out thru the end of buffer
+        if (out >= in) {
             int leftInBuffer = buffer.length - out;
             int length = leftInBuffer < byteCount ? leftInBuffer : byteCount;
             System.arraycopy(buffer, out, bytes, offset, length);
             out += length;
-            if(out == buffer.length)            
-            {
+            if (out == buffer.length) {
                 out = 0;
-            } //End block
-            if(out == in)            
-            {
+            }
+            if (out == in) {
+                // empty buffer
                 in = -1;
                 out = 0;
-            } //End block
+            }
             totalCopied += length;
-        } //End block
-        if(totalCopied < byteCount && in != -1)        
-        {
+        }
+
+        // copy bytes from out thru in
+        if (totalCopied < byteCount && in != -1) {
             int leftInBuffer = in - out;
             int leftToCopy = byteCount - totalCopied;
             int length = leftToCopy < leftInBuffer ? leftToCopy : leftInBuffer;
             System.arraycopy(buffer, out, bytes, offset + totalCopied, length);
             out += length;
-            if(out == in)            
-            {
+            if (out == in) {
+                // empty buffer
                 in = -1;
                 out = 0;
-            } //End block
+            }
             totalCopied += length;
-        } //End block
+        }
+
+        // let blocked writers write to the newly available buffer space
         notifyAll();
-        int varB401FFFD57D1F4ACC4CA5F4F04A9D9A7_1099220902 = (totalCopied);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2105476567 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2105476567;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+
+        return totalCopied;
     }
 
+    /**
+     * Receives a byte and stores it in this stream's {@code buffer}. This
+     * method is called by {@link PipedOutputStream#write(int)}. The least
+     * significant byte of the integer {@code oneByte} is stored at index
+     * {@code in} in the {@code buffer}.
+     * <p>
+     * This method blocks as long as {@code buffer} is full.
+     *
+     * @param oneByte
+     *            the byte to store in this pipe.
+     * @throws InterruptedIOException
+     *             if the {@code buffer} is full and the thread that has called
+     *             this method is interrupted.
+     * @throws IOException
+     *             if this stream is closed or the thread that has last read
+     *             from this stream is no longer alive.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.869 -0500", hash_original_method = "F1DDF844B79F62E2699AFB2EF26553A3", hash_generated_method = "D65DF3570488C96DD21CDC4BE59E708C")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.161 -0400", hash_original_method = "F1DDF844B79F62E2699AFB2EF26553A3", hash_generated_method = "32238708859EFF4E9B4F5152ED4E0B86")
-    protected synchronized void receive(int oneByte) throws IOException {
-        if(buffer == null || isClosed)        
-        {
-            IOException var1000524CAB3836FE6B4154A68C06F70C_666959142 = new IOException("Pipe is closed");
-            var1000524CAB3836FE6B4154A68C06F70C_666959142.addTaint(taint);
-            throw var1000524CAB3836FE6B4154A68C06F70C_666959142;
-        } //End block
+protected synchronized void receive(int oneByte) throws IOException {
+        if (buffer == null || isClosed) {
+            throw new IOException("Pipe is closed");
+        }
+
+        /*
+         * Set the last thread to be writing on this PipedInputStream. If
+         * lastWriter dies while someone is waiting to read an IOException of
+         * "Pipe broken" will be thrown in read()
+         */
         lastWriter = Thread.currentThread();
-        try 
-        {
-            while
-(buffer != null && out == in)            
-            {
-                if(lastReader != null && !lastReader.isAlive())                
-                {
-                    IOException var21F067B593CB8DB6DCADD1F25439FAC6_1898428633 = new IOException("Pipe broken");
-                    var21F067B593CB8DB6DCADD1F25439FAC6_1898428633.addTaint(taint);
-                    throw var21F067B593CB8DB6DCADD1F25439FAC6_1898428633;
-                } //End block
+        try {
+            while (buffer != null && out == in) {
+                if (lastReader != null && !lastReader.isAlive()) {
+                    throw new IOException("Pipe broken");
+                }
                 notifyAll();
                 wait(1000);
-            } //End block
-        } //End block
-        catch (InterruptedException e)
-        {
-            InterruptedIOException var46B941F497A45BD71FFF5B2BE2F4FCEC_1985153882 = new InterruptedIOException();
-            var46B941F497A45BD71FFF5B2BE2F4FCEC_1985153882.addTaint(taint);
-            throw var46B941F497A45BD71FFF5B2BE2F4FCEC_1985153882;
-        } //End block
-        if(buffer == null)        
-        {
-            IOException var1000524CAB3836FE6B4154A68C06F70C_1446403172 = new IOException("Pipe is closed");
-            var1000524CAB3836FE6B4154A68C06F70C_1446403172.addTaint(taint);
-            throw var1000524CAB3836FE6B4154A68C06F70C_1446403172;
-        } //End block
-        if(in == -1)        
-        {
+            }
+        } catch (InterruptedException e) {
+            throw new InterruptedIOException();
+        }
+        if (buffer == null) {
+            throw new IOException("Pipe is closed");
+        }
+        if (in == -1) {
             in = 0;
-        } //End block
+        }
         buffer[in++] = (byte) oneByte;
-        if(in == buffer.length)        
-        {
+        if (in == buffer.length) {
             in = 0;
-        } //End block
+        }
+
+        // let blocked readers read the newly available data
         notifyAll();
-        // ---------- Original Method ----------
-        //if (buffer == null || isClosed) {
-            //throw new IOException("Pipe is closed");
-        //}
-        //lastWriter = Thread.currentThread();
-        //try {
-            //while (buffer != null && out == in) {
-                //if (lastReader != null && !lastReader.isAlive()) {
-                    //throw new IOException("Pipe broken");
-                //}
-                //notifyAll();
-                //wait(1000);
-            //}
-        //} catch (InterruptedException e) {
-            //throw new InterruptedIOException();
-        //}
-        //if (buffer == null) {
-            //throw new IOException("Pipe is closed");
-        //}
-        //if (in == -1) {
-            //in = 0;
-        //}
-        //buffer[in++] = (byte) oneByte;
-        //if (in == buffer.length) {
-            //in = 0;
-        //}
-        //notifyAll();
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.872 -0500", hash_original_method = "19BFAB2AD4E1A13AD9CB12419968F5AB", hash_generated_method = "0B05E6B5D4DC4B6BD624E8CCC3D31FDE")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.162 -0400", hash_original_method = "19BFAB2AD4E1A13AD9CB12419968F5AB", hash_generated_method = "0196391A7590C9F432C6D9A3A742BE34")
-    synchronized void done() {
+synchronized void done() {
         isClosed = true;
         notifyAll();
-        // ---------- Original Method ----------
-        //isClosed = true;
-        //notifyAll();
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:45.162 -0400", hash_original_field = "DD1669F2E42B518F13205231CA7F8736", hash_generated_field = "98981E77F477BF5BC6052D8850C465A7")
-
-    protected static final int PIPE_SIZE = 1024;
 }
 

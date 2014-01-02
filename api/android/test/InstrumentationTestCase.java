@@ -1,6 +1,9 @@
 package android.test;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
+import android.util.Log;
 import droidsafe.annotations.*;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -19,7 +22,8 @@ import android.view.KeyEvent;
 
 
 public class InstrumentationTestCase extends TestCase {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.606 -0400", hash_original_field = "E062CE48CD3AFCDDC19DD9FCF2E119D4", hash_generated_field = "B2267B39A1EB39D35FC793A28FB486AB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.649 -0500", hash_original_field = "5CBE0F2EE224A7AD181F35AE16EC5D56", hash_generated_field = "B2267B39A1EB39D35FC793A28FB486AB")
+
 
     private Instrumentation mInstrumentation;
     
@@ -29,35 +33,42 @@ public class InstrumentationTestCase extends TestCase {
         //Synthesized constructor
     }
 
-
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.606 -0400", hash_original_method = "30957576898B0AE27F5837919E36AECD", hash_generated_method = "52FC0986A496E063EF447F094F5B0687")
-    public void injectInstrumentation(Instrumentation instrumentation) {
+    /**
+     * Injects instrumentation into this test case. This method is
+     * called by the test runner during test setup.
+     * 
+     * @param instrumentation the instrumentation to use with this instance
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.652 -0500", hash_original_method = "30957576898B0AE27F5837919E36AECD", hash_generated_method = "27BC3CA23290C294456ECA80A96CE2A3")
+    
+public void injectInstrumentation(Instrumentation instrumentation) {
         mInstrumentation = instrumentation;
-        // ---------- Original Method ----------
-        //mInstrumentation = instrumentation;
     }
 
+    /**
+     * Injects instrumentation into this test case. This method is
+     * called by the test runner during test setup.
+     *
+     * @param instrumentation the instrumentation to use with this instance
+     *
+     * @deprecated Incorrect spelling,
+     * use {@link #injectInstrumentation(android.app.Instrumentation)} instead.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.655 -0500", hash_original_method = "80E7DE8B78F72228CE1CBFCE791EFB84", hash_generated_method = "B65E30465F363197B705A3C86C2FABCB")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.606 -0400", hash_original_method = "80E7DE8B78F72228CE1CBFCE791EFB84", hash_generated_method = "5A6AD4CB7D8865EE3D58DD9D6C618685")
-    @Deprecated
+@Deprecated
     public void injectInsrumentation(Instrumentation instrumentation) {
-        addTaint(instrumentation.getTaint());
         injectInstrumentation(instrumentation);
-        // ---------- Original Method ----------
-        //injectInstrumentation(instrumentation);
     }
 
+    /**
+     * Inheritors can access the instrumentation using this.
+     * @return instrumentation
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.657 -0500", hash_original_method = "84F87CEBEDE5D31C88CD24E066F68A95", hash_generated_method = "952CE09D28EE4A9669353A5E94B20293")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.607 -0400", hash_original_method = "84F87CEBEDE5D31C88CD24E066F68A95", hash_generated_method = "78B98383AA558E4E5158799136B94F91")
-    public Instrumentation getInstrumentation() {
-Instrumentation var0FB7EFFFC0B8CD54E817BBC71710DE88_1917378878 =         mInstrumentation;
-        var0FB7EFFFC0B8CD54E817BBC71710DE88_1917378878.addTaint(taint);
-        return var0FB7EFFFC0B8CD54E817BBC71710DE88_1917378878;
-        // ---------- Original Method ----------
-        //return mInstrumentation;
+public Instrumentation getInstrumentation() {
+        return mInstrumentation;
     }
 
     
@@ -111,330 +122,261 @@ T var8CEBAC25E19008E785695F06EF11C2CD_232979124 =         activity;
         //getInstrumentation().waitForIdleSync();
         //return activity;
     }
-
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.609 -0400", hash_original_method = "F4164F0D843971333C91373781EC7696", hash_generated_method = "CD5E7B031A9CF6C8039D99954A6F5F8F")
-    public void runTestOnUiThread(final Runnable r) throws Throwable {
-        addTaint(r.getTaint());
+    /**
+     * Helper for running portions of a test on the UI thread.
+     * 
+     * Note, in most cases it is simpler to annotate the test method with 
+     * {@link android.test.UiThreadTest}, which will run the entire test method on the UI thread.
+     * Use this method if you need to switch in and out of the UI thread to perform your test.
+     * 
+     * @param r runnable containing test code in the {@link Runnable#run()} method
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.667 -0500", hash_original_method = "F4164F0D843971333C91373781EC7696", hash_generated_method = "FA78C3D82C6F95488BFEC136367D79E7")
+    
+public void runTestOnUiThread(final Runnable r) throws Throwable {
         final Throwable[] exceptions = new Throwable[1];
-        getInstrumentation().runOnMainSync(new Runnable() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.609 -0400", hash_original_method = "9BA516EA7E7C66F18D761E409539F223", hash_generated_method = "7A68474A1AEED7AB63E6550AA15CB070")
-        public void run() {
-            try 
-            {
-                r.run();
-            } //End block
-            catch (Throwable throwable)
-            {
-                exceptions[0] = throwable;
-            } //End block
-            // ---------- Original Method ----------
-            //try {
-                    //r.run();
-                //} catch (Throwable throwable) {
-                    //exceptions[0] = throwable;
-                //}
+        getInstrumentation().runOnMainSync(new Runnable() {
+            public void run() {
+                try {
+                    r.run();
+                } catch (Throwable throwable) {
+                    exceptions[0] = throwable;
+                }
+            }
+        });
+        if (exceptions[0] != null) {
+            throw exceptions[0];
         }
-});
-        if(exceptions[0] != null)        
-        {
-            Throwable var296B1984B2B2C37AA52E811D451E8A46_1109201515 = exceptions[0];
-            var296B1984B2B2C37AA52E811D451E8A46_1109201515.addTaint(taint);
-            throw var296B1984B2B2C37AA52E811D451E8A46_1109201515;
-        } //End block
-        // ---------- Original Method ----------
-        //final Throwable[] exceptions = new Throwable[1];
-        //getInstrumentation().runOnMainSync(new Runnable() {
-            //public void run() {
-                //try {
-                    //r.run();
-                //} catch (Throwable throwable) {
-                    //exceptions[0] = throwable;
-                //}
-            //}
-        //});
-        //if (exceptions[0] != null) {
-            //throw exceptions[0];
-        //}
     }
 
+    /**
+     * Runs the current unit test. If the unit test is annotated with
+     * {@link android.test.UiThreadTest}, the test is run on the UI thread.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.673 -0500", hash_original_method = "58232FB81B29EAE27E4B0E868189E51E", hash_generated_method = "9E354E4A8B85C516A1BC416C3F058180")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.612 -0400", hash_original_method = "58232FB81B29EAE27E4B0E868189E51E", hash_generated_method = "AAB97AC8682E651CC6F41728149FB45A")
-    @Override
+@Override
     protected void runTest() throws Throwable {
         String fName = getName();
         assertNotNull(fName);
         Method method = null;
-        try 
-        {
+        try {
+            // use getMethod to get all public inherited
+            // methods. getDeclaredMethods returns all
+            // methods of this class but excludes the
+            // inherited ones.
             method = getClass().getMethod(fName, (Class[]) null);
-        } //End block
-        catch (NoSuchMethodException e)
-        {
+        } catch (NoSuchMethodException e) {
             fail("Method \""+fName+"\" not found");
-        } //End block
-        if(!Modifier.isPublic(method.getModifiers()))        
-        {
+        }
+
+        if (!Modifier.isPublic(method.getModifiers())) {
             fail("Method \""+fName+"\" should be public");
-        } //End block
+        }
+
         int runCount = 1;
         boolean isRepetitive = false;
-        if(method.isAnnotationPresent(FlakyTest.class))        
-        {
+        if (method.isAnnotationPresent(FlakyTest.class)) {
             runCount = method.getAnnotation(FlakyTest.class).tolerance();
-        } //End block
-        else
-        if(method.isAnnotationPresent(RepetitiveTest.class))        
-        {
+        } else if (method.isAnnotationPresent(RepetitiveTest.class)) {
             runCount = method.getAnnotation(RepetitiveTest.class).numIterations();
             isRepetitive = true;
-        } //End block
-        if(method.isAnnotationPresent(UiThreadTest.class))        
-        {
+        }
+
+        if (method.isAnnotationPresent(UiThreadTest.class)) {
             final int tolerance = runCount;
             final boolean repetitive = isRepetitive;
             final Method testMethod = method;
             final Throwable[] exceptions = new Throwable[1];
-            getInstrumentation().runOnMainSync(new Runnable() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.611 -0400", hash_original_method = "18AEF0A24287139D18AF6F95A1C9DFBE", hash_generated_method = "BF55256D99C438C4FF15569DF1773FEB")
-        public void run() {
-            try 
-            {
-                runMethod(testMethod, tolerance, repetitive);
-            } //End block
-            catch (Throwable throwable)
-            {
-                exceptions[0] = throwable;
-            } //End block
-            // ---------- Original Method ----------
-            //try {
-                        //runMethod(testMethod, tolerance, repetitive);
-                    //} catch (Throwable throwable) {
-                        //exceptions[0] = throwable;
-                    //}
-        }
-});
-            if(exceptions[0] != null)            
-            {
-                Throwable var296B1984B2B2C37AA52E811D451E8A46_251358053 = exceptions[0];
-                var296B1984B2B2C37AA52E811D451E8A46_251358053.addTaint(taint);
-                throw var296B1984B2B2C37AA52E811D451E8A46_251358053;
-            } //End block
-        } //End block
-        else
-        {
+            getInstrumentation().runOnMainSync(new Runnable() {
+                public void run() {
+                    try {
+                        runMethod(testMethod, tolerance, repetitive);
+                    } catch (Throwable throwable) {
+                        exceptions[0] = throwable;
+                    }
+                }
+            });
+            if (exceptions[0] != null) {
+                throw exceptions[0];
+            }
+        } else {
             runMethod(method, runCount, isRepetitive);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        }
     }
 
+    // For backwards-compatibility after adding isRepetitive
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.676 -0500", hash_original_method = "73C1718FE30AA12508CCB537F6FDE014", hash_generated_method = "F684732A2DB48884CF3D52D339B7917A")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.615 -0400", hash_original_method = "73C1718FE30AA12508CCB537F6FDE014", hash_generated_method = "6FD84F0A28FA93C338CFF549740A23D6")
-    private void runMethod(Method runMethod, int tolerance) throws Throwable {
-        addTaint(tolerance);
-        addTaint(runMethod.getTaint());
+private void runMethod(Method runMethod, int tolerance) throws Throwable {
         runMethod(runMethod, tolerance, false);
-        // ---------- Original Method ----------
-        //runMethod(runMethod, tolerance, false);
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.678 -0500", hash_original_method = "FE4B0FEDC134C5D618CB046880639140", hash_generated_method = "84881099638F5CAC8A41158572946D5F")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.617 -0400", hash_original_method = "FE4B0FEDC134C5D618CB046880639140", hash_generated_method = "A132FD85C25B60D304FD653C5EC05DD7")
-    private void runMethod(Method runMethod, int tolerance, boolean isRepetitive) throws Throwable {
-        addTaint(isRepetitive);
-        addTaint(tolerance);
-        addTaint(runMethod.getTaint());
+private void runMethod(Method runMethod, int tolerance, boolean isRepetitive) throws Throwable {
         Throwable exception = null;
+
         int runCount = 0;
         do {
-            {
-                try 
-                {
-                    runMethod.invoke(this, (Object[]) null);
-                    exception = null;
-                } //End block
-                catch (InvocationTargetException e)
-                {
-                    e.fillInStackTrace();
-                    exception = e.getTargetException();
-                } //End block
-                catch (IllegalAccessException e)
-                {
-                    e.fillInStackTrace();
-                    exception = e;
-                } //End block
-                finally 
-                {
-                    runCount++;
-                    if(isRepetitive)                    
-                    {
-                        Bundle iterations = new Bundle();
-                        iterations.putInt("currentiterations", runCount);
-                        getInstrumentation().sendStatus(2, iterations);
-                    } //End block
-                } //End block
-            } //End block
-} while ((runCount < tolerance) && (isRepetitive || exception != null));
-        if(exception != null)        
-        {
-            exception.addTaint(taint);
+            try {
+                runMethod.invoke(this, (Object[]) null);
+                exception = null;
+            } catch (InvocationTargetException e) {
+                e.fillInStackTrace();
+                exception = e.getTargetException();
+            } catch (IllegalAccessException e) {
+                e.fillInStackTrace();
+                exception = e;
+            } finally {
+                runCount++;
+                // Report current iteration number, if test is repetitive
+                if (isRepetitive) {
+                    Bundle iterations = new Bundle();
+                    iterations.putInt("currentiterations", runCount);
+                    getInstrumentation().sendStatus(2, iterations);
+                }
+            }
+        } while ((runCount < tolerance) && (isRepetitive || exception != null));
+
+        if (exception != null) {
             throw exception;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        }
     }
 
+    /**
+     * Sends a series of key events through instrumentation and waits for idle. The sequence
+     * of keys is a string containing the key names as specified in KeyEvent, without the
+     * KEYCODE_ prefix. For instance: sendKeys("DPAD_LEFT A B C DPAD_CENTER"). Each key can
+     * be repeated by using the N* prefix. For instance, to send two KEYCODE_DPAD_LEFT, use
+     * the following: sendKeys("2*DPAD_LEFT").
+     *
+     * @param keysSequence The sequence of keys.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.681 -0500", hash_original_method = "F1A2611A7518798734124BE0FA3DC184", hash_generated_method = "2954BED3906FA26E267504074A939ECD")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.619 -0400", hash_original_method = "F1A2611A7518798734124BE0FA3DC184", hash_generated_method = "877E1BF34F4001EB0BD7B6997E3850F8")
-    public void sendKeys(String keysSequence) {
-        addTaint(keysSequence.getTaint());
+public void sendKeys(String keysSequence) {
         final String[] keys = keysSequence.split(" ");
         final int count = keys.length;
+
         final Instrumentation instrumentation = getInstrumentation();
-for(int i = 0;i < count;i++)
-        {
+
+        for (int i = 0; i < count; i++) {
             String key = keys[i];
             int repeater = key.indexOf('*');
+
             int keyCount;
-            try 
-            {
+            try {
                 keyCount = repeater == -1 ? 1 : Integer.parseInt(key.substring(0, repeater));
-            } //End block
-            catch (NumberFormatException e)
-            {
+            } catch (NumberFormatException e) {
+                Log.w("ActivityTestCase", "Invalid repeat count: " + key);
                 continue;
-            } //End block
-            if(repeater != -1)            
-            {
+            }
+
+            if (repeater != -1) {
                 key = key.substring(repeater + 1);
-            } //End block
-for(int j = 0;j < keyCount;j++)
-            {
-                try 
-                {
+            }
+
+            for (int j = 0; j < keyCount; j++) {
+                try {
                     final Field keyCodeField = KeyEvent.class.getField("KEYCODE_" + key);
                     final int keyCode = keyCodeField.getInt(null);
-                    try 
-                    {
+                    try {
                         instrumentation.sendKeyDownUpSync(keyCode);
-                    } //End block
-                    catch (SecurityException e)
-                    {
-                    } //End block
-                } //End block
-                catch (NoSuchFieldException e)
-                {
+                    } catch (SecurityException e) {
+                        // Ignore security exceptions that are now thrown
+                        // when trying to send to another app, to retain
+                        // compatibility with existing tests.
+                    }
+                } catch (NoSuchFieldException e) {
+                    Log.w("ActivityTestCase", "Unknown keycode: KEYCODE_" + key);
                     break;
-                } //End block
-                catch (IllegalAccessException e)
-                {
+                } catch (IllegalAccessException e) {
+                    Log.w("ActivityTestCase", "Unknown keycode: KEYCODE_" + key);
                     break;
-                } //End block
-            } //End block
-        } //End block
+                }
+            }
+        }
+
         instrumentation.waitForIdleSync();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
     }
 
+    /**
+     * Sends a series of key events through instrumentation and waits for idle. For instance:
+     * sendKeys(KEYCODE_DPAD_LEFT, KEYCODE_DPAD_CENTER).
+     *
+     * @param keys The series of key codes to send through instrumentation.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.683 -0500", hash_original_method = "25439235D86C904EDC7CD1B76214296A", hash_generated_method = "1C437CDD5C62F5899CF06D0019BF182B")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.621 -0400", hash_original_method = "25439235D86C904EDC7CD1B76214296A", hash_generated_method = "9EDB6398BEFD71D3422C2B5294C4E7EB")
-    public void sendKeys(int... keys) {
-        addTaint(keys[0]);
+public void sendKeys(int... keys) {
         final int count = keys.length;
         final Instrumentation instrumentation = getInstrumentation();
-for(int i = 0;i < count;i++)
-        {
-            try 
-            {
+
+        for (int i = 0; i < count; i++) {
+            try {
                 instrumentation.sendKeyDownUpSync(keys[i]);
-            } //End block
-            catch (SecurityException e)
-            {
-            } //End block
-        } //End block
+            } catch (SecurityException e) {
+                // Ignore security exceptions that are now thrown
+                // when trying to send to another app, to retain
+                // compatibility with existing tests.
+            }
+        }
+
         instrumentation.waitForIdleSync();
-        // ---------- Original Method ----------
-        //final int count = keys.length;
-        //final Instrumentation instrumentation = getInstrumentation();
-        //for (int i = 0; i < count; i++) {
-            //try {
-                //instrumentation.sendKeyDownUpSync(keys[i]);
-            //} catch (SecurityException e) {
-            //}
-        //}
-        //instrumentation.waitForIdleSync();
     }
 
+    /**
+     * Sends a series of key events through instrumentation and waits for idle. Each key code
+     * must be preceded by the number of times the key code must be sent. For instance:
+     * sendRepeatedKeys(1, KEYCODE_DPAD_CENTER, 2, KEYCODE_DPAD_LEFT).
+     *
+     * @param keys The series of key repeats and codes to send through instrumentation.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.686 -0500", hash_original_method = "FBC03E5CDE4AF992F9EAA065B65F23C0", hash_generated_method = "7F19AE149B5B43D49DC16C43F00EF024")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.623 -0400", hash_original_method = "FBC03E5CDE4AF992F9EAA065B65F23C0", hash_generated_method = "7D61D50D84DBB19E4ECD145C5D601935")
-    public void sendRepeatedKeys(int... keys) {
-        addTaint(keys[0]);
+public void sendRepeatedKeys(int... keys) {
         final int count = keys.length;
-        if((count & 0x1) == 0x1)        
-        {
-            IllegalArgumentException var5656FBDBB1C46FC1D6197ED73B4B9310_688836872 = new IllegalArgumentException("The size of the keys array must "
+        if ((count & 0x1) == 0x1) {
+            throw new IllegalArgumentException("The size of the keys array must "
                     + "be a multiple of 2");
-            var5656FBDBB1C46FC1D6197ED73B4B9310_688836872.addTaint(taint);
-            throw var5656FBDBB1C46FC1D6197ED73B4B9310_688836872;
-        } //End block
+        }
+
         final Instrumentation instrumentation = getInstrumentation();
-for(int i = 0;i < count;i += 2)
-        {
+
+        for (int i = 0; i < count; i += 2) {
             final int keyCount = keys[i];
             final int keyCode = keys[i + 1];
-for(int j = 0;j < keyCount;j++)
-            {
-                try 
-                {
+            for (int j = 0; j < keyCount; j++) {
+                try {
                     instrumentation.sendKeyDownUpSync(keyCode);
-                } //End block
-                catch (SecurityException e)
-                {
-                } //End block
-            } //End block
-        } //End block
-        instrumentation.waitForIdleSync();
-        // ---------- Original Method ----------
-        //final int count = keys.length;
-        //if ((count & 0x1) == 0x1) {
-            //throw new IllegalArgumentException("The size of the keys array must "
-                    //+ "be a multiple of 2");
-        //}
-        //final Instrumentation instrumentation = getInstrumentation();
-        //for (int i = 0; i < count; i += 2) {
-            //final int keyCount = keys[i];
-            //final int keyCode = keys[i + 1];
-            //for (int j = 0; j < keyCount; j++) {
-                //try {
-                    //instrumentation.sendKeyDownUpSync(keyCode);
-                //} catch (SecurityException e) {
-                //}
-            //}
-        //}
-        //instrumentation.waitForIdleSync();
-    }
+                } catch (SecurityException e) {
+                    // Ignore security exceptions that are now thrown
+                    // when trying to send to another app, to retain
+                    // compatibility with existing tests.
+                }
+            }
+        }
 
+        instrumentation.waitForIdleSync();
+    }
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.625 -0400", hash_original_method = "FDD2FC9FD3536A57EA5709C92DDFDA00", hash_generated_method = "372A69750FC2736F23FDA80CC31739F7")
-    @Override
+    /**
+     * Make sure all resources are cleaned up and garbage collected before moving on to the next
+     * test. Subclasses that override this method should make sure they call super.tearDown()
+     * at the end of the overriding method.
+     * 
+     * @throws Exception
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.688 -0500", hash_original_method = "FDD2FC9FD3536A57EA5709C92DDFDA00", hash_generated_method = "25F8972A71AF3F265EBEAA230EB3E829")
+    
+@Override
     protected void tearDown() throws Exception {
         Runtime.getRuntime().gc();
         Runtime.getRuntime().runFinalization();
         Runtime.getRuntime().gc();
         super.tearDown();
-        // ---------- Original Method ----------
-        //Runtime.getRuntime().gc();
-        //Runtime.getRuntime().runFinalization();
-        //Runtime.getRuntime().gc();
-        //super.tearDown();
     }
 
     

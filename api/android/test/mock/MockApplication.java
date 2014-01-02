@@ -1,6 +1,8 @@
 package android.test.mock;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.app.Application;
 import android.content.res.Configuration;
@@ -8,50 +10,30 @@ import android.content.res.Configuration;
 
 public class MockApplication extends Application {
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.054 -0400", hash_original_method = "1B19C6453B2D07E5BCC8816EA82B0228", hash_generated_method = "FFE941A3C9F3A64BF791EC2AFB439F21")
-    public  MockApplication() {
-        // ---------- Original Method ----------
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:44.971 -0500", hash_original_method = "1B19C6453B2D07E5BCC8816EA82B0228", hash_generated_method = "15C3A0A61B7C0F3007C3F2D0670A6F02")
+    
+public MockApplication() {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:44.973 -0500", hash_original_method = "AB55BCFD90D9CF641566BDB5BAD65AFF", hash_generated_method = "D7E69C6D9C3495D5EF31B1477698DA4C")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.055 -0400", hash_original_method = "AB55BCFD90D9CF641566BDB5BAD65AFF", hash_generated_method = "89D535F36644052A64306CEC7C49617F")
-    @Override
+@Override
     public void onCreate() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_130511122 = new UnsupportedOperationException();
-        var81FA7E299EEE7F062EBFBEEF08B0464D_130511122.addTaint(taint);
-        throw var81FA7E299EEE7F062EBFBEEF08B0464D_130511122;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:44.976 -0500", hash_original_method = "9991613DFAC855235B415C4774CC80EA", hash_generated_method = "16F7ED9664099BE606754E50B16E01CC")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.055 -0400", hash_original_method = "9991613DFAC855235B415C4774CC80EA", hash_generated_method = "F966D1AD11CA0FE0A0C72058DB17500F")
-    @Override
+@Override
     public void onTerminate() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_312213223 = new UnsupportedOperationException();
-        var81FA7E299EEE7F062EBFBEEF08B0464D_312213223.addTaint(taint);
-        throw var81FA7E299EEE7F062EBFBEEF08B0464D_312213223;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.055 -0400", hash_original_method = "7E56559F8B4EC145CBEC91305D6CF8F3", hash_generated_method = "BF7EFFDC61C761235A2CDEC926F4E7BC")
-    @Override
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:44.978 -0500", hash_original_method = "7E56559F8B4EC145CBEC91305D6CF8F3", hash_generated_method = "A98CE60F4C41025303976C5973E48F2E")
+    
+@Override
     public void onConfigurationChanged(Configuration newConfig) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(newConfig.getTaint());
-        UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1862066878 = new UnsupportedOperationException();
-        var81FA7E299EEE7F062EBFBEEF08B0464D_1862066878.addTaint(taint);
-        throw var81FA7E299EEE7F062EBFBEEF08B0464D_1862066878;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        throw new UnsupportedOperationException();
     }
 
     

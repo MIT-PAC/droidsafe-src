@@ -1,6 +1,8 @@
 package org.apache.http.impl.io;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 import java.net.Socket;
@@ -10,29 +12,24 @@ import org.apache.http.params.HttpParams;
 
 
 public class SocketOutputBuffer extends AbstractSessionOutputBuffer {
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:41.887 -0500", hash_original_method = "1DA9FA2C2AD0E745701D10A4EA37C418", hash_generated_method = "1D50A2ADD7E5B5808E84882EDC02D876")
     
-    @DSModeled(DSC.SPEC)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.649 -0400", hash_original_method = "1DA9FA2C2AD0E745701D10A4EA37C418", hash_generated_method = "999529FA66E8471E2B9F7371CEF1C574")
-    public  SocketOutputBuffer(
+public SocketOutputBuffer(
             final Socket socket,
             int buffersize,
             final HttpParams params) throws IOException {
         super();
-        addTaint(params.getTaint());
-        addTaint(buffersize);
-        addTaint(socket.getTaint());
-        if(socket == null)        
-        {
-            IllegalArgumentException varCBABC6A96FAFFF53CCBEEA230A20A836_801183770 = new IllegalArgumentException("Socket may not be null");
-            varCBABC6A96FAFFF53CCBEEA230A20A836_801183770.addTaint(taint);
-            throw varCBABC6A96FAFFF53CCBEEA230A20A836_801183770;
-        } //End block
+        if (socket == null) {
+            throw new IllegalArgumentException("Socket may not be null");
+        }
+        // BEGIN android-changed
+        // Workaround for http://b/1083103 and http://b/3514259. We take
+        // 'buffersize' as a hint in the weakest sense, and always use
+        // an 8KiB heap buffer and leave the kernel buffer size alone,
+        // trusting the system to have set a network-appropriate default.
         init(socket.getOutputStream(), 8192, params);
-        // ---------- Original Method ----------
-        //if (socket == null) {
-            //throw new IllegalArgumentException("Socket may not be null");
-        //}
-        //init(socket.getOutputStream(), 8192, params);
+        // END android-changed
     }
 
     

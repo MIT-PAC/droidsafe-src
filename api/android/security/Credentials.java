@@ -1,6 +1,9 @@
 package android.security;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
+import android.util.Log;
 import droidsafe.annotations.*;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -24,15 +27,15 @@ import android.content.Intent;
 
 
 public class Credentials {
+
+    /**
+     * Convert objects to a PEM format, which is used for
+     * CA_CERTIFICATE, USER_CERTIFICATE, and USER_PRIVATE_KEY
+     * entries.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:57.380 -0500", hash_original_method = "8B20078D970D567CC41CA64CA9C8F771", hash_generated_method = "CE4455212C3B8EAB38281BA81F86F88E")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.930 -0400", hash_original_method = "1F7275C8DACF289F4D2AEA7102114D3A", hash_generated_method = "1F7275C8DACF289F4D2AEA7102114D3A")
-    public Credentials ()
-    {
-        //Synthesized constructor
-    }
-
-
-    public static byte[] convertToPem(Object... objects) throws IOException {
+public static byte[] convertToPem(Object... objects) throws IOException {
         ByteArrayOutputStream bao = new ByteArrayOutputStream();
         Writer writer = new OutputStreamWriter(bao, Charsets.US_ASCII);
         PEMWriter pw = new PEMWriter(writer);
@@ -42,13 +45,18 @@ public class Credentials {
         pw.close();
         return bao.toByteArray();
     }
-
+    /**
+     * Convert objects from PEM format, which is used for
+     * CA_CERTIFICATE, USER_CERTIFICATE, and USER_PRIVATE_KEY
+     * entries.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:57.384 -0500", hash_original_method = "F0ABBF5B9651EE5121610CD48916D5A8", hash_generated_method = "085EFC9B30C254937B2F82B25DA23398")
     
-    @DSModeled(DSC.BAN)
-    public static List<Object> convertFromPem(byte[] bytes) throws IOException {
+public static List<Object> convertFromPem(byte[] bytes) throws IOException {
         ByteArrayInputStream bai = new ByteArrayInputStream(bytes);
         Reader reader = new InputStreamReader(bai, Charsets.US_ASCII);
         PEMReader pr = new PEMReader(reader);
+
         List<Object> result = new ArrayList<Object>();
         Object o;
         while ((o = pr.readObject()) != null) {
@@ -58,157 +66,114 @@ public class Credentials {
         return result;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:57.389 -0500", hash_original_method = "9C858811BB4060B16ECD93FD3573ADC2", hash_generated_method = "516E05BB5789732D83B572D07C814C5C")
     
-    @DSModeled(DSC.BAN)
-    public static Credentials getInstance() {
+public static Credentials getInstance() {
         if (singleton == null) {
             singleton = new Credentials();
         }
         return singleton;
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:57.336 -0500", hash_original_field = "26FCF7673A4B02F039FA2A278434875A", hash_generated_field = "6F3651127EA440B3E6DC55A1DDB183B2")
 
+    private static final String LOGTAG = "Credentials";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:57.339 -0500", hash_original_field = "9DB20F28D7CAD388159300B983B19C79", hash_generated_field = "1709FA3F0025860464A5F5DF644178F7")
+
+
+    public static final String INSTALL_ACTION = "android.credentials.INSTALL";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:57.342 -0500", hash_original_field = "1ACB4F4FF682688F8CE6789F1C6B162B", hash_generated_field = "BDFDB7B0C73DAC00B7E889E660EF4662")
+
+
+    public static final String UNLOCK_ACTION = "com.android.credentials.UNLOCK";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:57.345 -0500", hash_original_field = "36832B061A6CC16993E3E13026EC81F8", hash_generated_field = "50F5C06806AB125569FB6AEF6E7A0321")
+
+    public static final String CA_CERTIFICATE = "CACERT_";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:57.348 -0500", hash_original_field = "A898DD9C19E7949C7F2BB1DBCBD6A2AE", hash_generated_field = "2F4F05867E2EA9F2E7A799A1E15C7024")
+
+    public static final String USER_CERTIFICATE = "USRCERT_";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:57.352 -0500", hash_original_field = "74F249359DD8E6561D78D134FEEFDA3C", hash_generated_field = "7ACBBAE3DFA2D19991143851C22B323E")
+
+    public static final String USER_PRIVATE_KEY = "USRPKEY_";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:57.355 -0500", hash_original_field = "8F635A3B7A7EA8ADD46EB4BBCAF8FB86", hash_generated_field = "0AFE5770E2B2FC2283F10B25EAB69CDF")
+
+    public static final String VPN = "VPN_";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:57.358 -0500", hash_original_field = "E65E268FEE3F50FB536B0D81723131D9", hash_generated_field = "69981F8FE86EA5FABCC0BCB3F03B9841")
+
+    public static final String WIFI = "WIFI_";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:57.361 -0500", hash_original_field = "6366971A78801208DC81D10782368B04", hash_generated_field = "8FF9D494590BA62F44F238634250D08E")
+
+    public static final String EXTRA_PUBLIC_KEY = "KEY";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:57.364 -0500", hash_original_field = "7B271B571111CDD363A6B629455988E7", hash_generated_field = "174CAAD863D2733195B4B56F6BE94713")
+
+    public static final String EXTRA_PRIVATE_KEY = "PKEY";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:57.367 -0500", hash_original_field = "1405DC1AED1E159295779D01CA6CFB37", hash_generated_field = "5B02BBBD621F97791C48AE2B89BCAAC9")
+
+    public static final String EXTENSION_CRT = ".crt";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:57.370 -0500", hash_original_field = "309258B7CB14167894157355269A8CC1", hash_generated_field = "E2A3A1B95CEBC5359470D01430015069")
+
+    public static final String EXTENSION_P12 = ".p12";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:57.373 -0500", hash_original_field = "068FFD4EB4146A6AE615BAD361B45064", hash_generated_field = "C0A51FDC40722D8A1275745833FBB534")
+
+    public static final String EXTENSION_CER = ".cer";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:57.377 -0500", hash_original_field = "2EDE9354571BB7B314F20F4002656C82", hash_generated_field = "516AB5F934F457BB6F6A72A2C8C5F1FA")
+
+    public static final String EXTENSION_PFX = ".pfx";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:57.386 -0500", hash_original_field = "64F7F9694387CFA20D388BACB931FFAC", hash_generated_field = "1E5765EE035DA8F60280ACCF0416ACD1")
+
+
+    private static Credentials singleton;
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.932 -0400", hash_original_method = "E5CB597E19A699BEE6BE3111711F0E73", hash_generated_method = "996BF821DC9F1F7D522F9DD418C16CFE")
-    public void unlock(Context context) {
-        addTaint(context.getTaint());
-        try 
-        {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.930 -0400", hash_original_method = "1F7275C8DACF289F4D2AEA7102114D3A", hash_generated_method = "1F7275C8DACF289F4D2AEA7102114D3A")
+    public Credentials ()
+    {
+        //Synthesized constructor
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:57.392 -0500", hash_original_method = "E5CB597E19A699BEE6BE3111711F0E73", hash_generated_method = "D7178BD33127286974F17C9F256B7D8F")
+    
+public void unlock(Context context) {
+        try {
             Intent intent = new Intent(UNLOCK_ACTION);
             context.startActivity(intent);
-        } //End block
-        catch (ActivityNotFoundException e)
-        {
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //Intent intent = new Intent(UNLOCK_ACTION);
-            //context.startActivity(intent);
-        //} catch (ActivityNotFoundException e) {
-            //Log.w(LOGTAG, e.toString());
-        //}
+        } catch (ActivityNotFoundException e) {
+            Log.w(LOGTAG, e.toString());
+        }
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:57.395 -0500", hash_original_method = "495C1AA770D3E4C1428A37EE08C3D570", hash_generated_method = "725724970BCF5F0A1B2925DC172BB643")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.932 -0400", hash_original_method = "495C1AA770D3E4C1428A37EE08C3D570", hash_generated_method = "C11F41E67AD2858A0FFCDAEF7D0E2708")
-    public void install(Context context) {
-        addTaint(context.getTaint());
-        try 
-        {
+public void install(Context context) {
+        try {
             Intent intent = KeyChain.createInstallIntent();
             context.startActivity(intent);
-        } //End block
-        catch (ActivityNotFoundException e)
-        {
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //Intent intent = KeyChain.createInstallIntent();
-            //context.startActivity(intent);
-        //} catch (ActivityNotFoundException e) {
-            //Log.w(LOGTAG, e.toString());
-        //}
+        } catch (ActivityNotFoundException e) {
+            Log.w(LOGTAG, e.toString());
+        }
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:57.398 -0500", hash_original_method = "37483F7105DB6C05B518E1F3D82A6DB5", hash_generated_method = "5CDE2431698DF60FACB0144E4C7BC591")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.932 -0400", hash_original_method = "37483F7105DB6C05B518E1F3D82A6DB5", hash_generated_method = "6D1AC5EACDD00255E33E10DAE0B558F8")
-    public void install(Context context, KeyPair pair) {
-        addTaint(pair.getTaint());
-        addTaint(context.getTaint());
-        try 
-        {
+public void install(Context context, KeyPair pair) {
+        try {
             Intent intent = KeyChain.createInstallIntent();
             intent.putExtra(EXTRA_PRIVATE_KEY, pair.getPrivate().getEncoded());
             intent.putExtra(EXTRA_PUBLIC_KEY, pair.getPublic().getEncoded());
             context.startActivity(intent);
-        } //End block
-        catch (ActivityNotFoundException e)
-        {
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //Intent intent = KeyChain.createInstallIntent();
-            //intent.putExtra(EXTRA_PRIVATE_KEY, pair.getPrivate().getEncoded());
-            //intent.putExtra(EXTRA_PUBLIC_KEY, pair.getPublic().getEncoded());
-            //context.startActivity(intent);
-        //} catch (ActivityNotFoundException e) {
-            //Log.w(LOGTAG, e.toString());
-        //}
+        } catch (ActivityNotFoundException e) {
+            Log.w(LOGTAG, e.toString());
+        }
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:57.401 -0500", hash_original_method = "CC15ACCAB16387C45A58B01F639D7908", hash_generated_method = "6DFE9697E4DAE2437A3BF86C64F8DA4E")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.933 -0400", hash_original_method = "CC15ACCAB16387C45A58B01F639D7908", hash_generated_method = "95818ACAC06CC229F691306D0D70550A")
-    public void install(Context context, String type, byte[] value) {
-        addTaint(value[0]);
-        addTaint(type.getTaint());
-        addTaint(context.getTaint());
-        try 
-        {
+public void install(Context context, String type, byte[] value) {
+        try {
             Intent intent = KeyChain.createInstallIntent();
             intent.putExtra(type, value);
             context.startActivity(intent);
-        } //End block
-        catch (ActivityNotFoundException e)
-        {
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //Intent intent = KeyChain.createInstallIntent();
-            //intent.putExtra(type, value);
-            //context.startActivity(intent);
-        //} catch (ActivityNotFoundException e) {
-            //Log.w(LOGTAG, e.toString());
-        //}
+        } catch (ActivityNotFoundException e) {
+            Log.w(LOGTAG, e.toString());
+        }
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.933 -0400", hash_original_field = "CE1ACF3E6C3947BF905CCB939D9792EA", hash_generated_field = "6F3651127EA440B3E6DC55A1DDB183B2")
-
-    private static final String LOGTAG = "Credentials";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.933 -0400", hash_original_field = "3642562609862EFB6F09F70C7009C872", hash_generated_field = "1709FA3F0025860464A5F5DF644178F7")
-
-    public static final String INSTALL_ACTION = "android.credentials.INSTALL";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.933 -0400", hash_original_field = "AE68D790EC6B775F9028B8E3E6958410", hash_generated_field = "BDFDB7B0C73DAC00B7E889E660EF4662")
-
-    public static final String UNLOCK_ACTION = "com.android.credentials.UNLOCK";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.933 -0400", hash_original_field = "6A4AB3099880BD571EC4659721AD6F21", hash_generated_field = "50F5C06806AB125569FB6AEF6E7A0321")
-
-    public static final String CA_CERTIFICATE = "CACERT_";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.933 -0400", hash_original_field = "EB1DA2BECFD5E6CAADB4B83A359F733C", hash_generated_field = "2F4F05867E2EA9F2E7A799A1E15C7024")
-
-    public static final String USER_CERTIFICATE = "USRCERT_";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.933 -0400", hash_original_field = "7C1493CDA44143889BE8116FEEF00BE9", hash_generated_field = "7ACBBAE3DFA2D19991143851C22B323E")
-
-    public static final String USER_PRIVATE_KEY = "USRPKEY_";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.933 -0400", hash_original_field = "1E4839409F67AA5962B427A256B402BA", hash_generated_field = "0AFE5770E2B2FC2283F10B25EAB69CDF")
-
-    public static final String VPN = "VPN_";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.934 -0400", hash_original_field = "3F79037A373AA548AA121246EA29A6DC", hash_generated_field = "69981F8FE86EA5FABCC0BCB3F03B9841")
-
-    public static final String WIFI = "WIFI_";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.934 -0400", hash_original_field = "3D9B6619D6EDBC5D17DF5EFC509DBFA3", hash_generated_field = "8FF9D494590BA62F44F238634250D08E")
-
-    public static final String EXTRA_PUBLIC_KEY = "KEY";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.934 -0400", hash_original_field = "F0F326D1EFEBAD6340D8E69131E09794", hash_generated_field = "174CAAD863D2733195B4B56F6BE94713")
-
-    public static final String EXTRA_PRIVATE_KEY = "PKEY";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.934 -0400", hash_original_field = "90179B0295B5947532778B862238151D", hash_generated_field = "5B02BBBD621F97791C48AE2B89BCAAC9")
-
-    public static final String EXTENSION_CRT = ".crt";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.934 -0400", hash_original_field = "4D59A48833315E1E34B79CECB0242DE9", hash_generated_field = "E2A3A1B95CEBC5359470D01430015069")
-
-    public static final String EXTENSION_P12 = ".p12";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.934 -0400", hash_original_field = "910B60D78BFBA2A88D03CF3B9E0DE0BD", hash_generated_field = "C0A51FDC40722D8A1275745833FBB534")
-
-    public static final String EXTENSION_CER = ".cer";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.934 -0400", hash_original_field = "0F2B00A5099BD307595E8049D7FC0D9E", hash_generated_field = "516AB5F934F457BB6F6A72A2C8C5F1FA")
-
-    public static final String EXTENSION_PFX = ".pfx";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.934 -0400", hash_original_field = "2ED500A3529637175E675A8791B7C56E", hash_generated_field = "1E5765EE035DA8F60280ACCF0416ACD1")
-
-    private static Credentials singleton;
 }
 

@@ -1,6 +1,8 @@
 package android.content;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.content.res.Configuration;
 

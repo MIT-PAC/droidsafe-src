@@ -1,6 +1,8 @@
 package java.util.concurrent;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.AbstractSet;
 import java.util.Collection;
@@ -13,73 +15,103 @@ import java.util.Set;
 
 
 public class CopyOnWriteArraySet<E> extends AbstractSet<E> implements java.io.Serializable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.883 -0400", hash_original_field = "97282B278E5D51866F8E57204E4820E5", hash_generated_field = "CEE47592CD991F798055CF00F61D5D32")
 
-    private CopyOnWriteArrayList<E> al;
+    /**
+     * Test for equality, coping with nulls.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.673 -0500", hash_original_method = "454D6D8A7D641F48CA6B87A071B1615F", hash_generated_method = "0DDF0DBFDE1A6689A83DC6DC03EBC794")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.883 -0400", hash_original_method = "719CF91FD15681D04C85978CBE8B39AE", hash_generated_method = "0FB9C3E2A709B12CF65A46E85BF7EE93")
-    public  CopyOnWriteArraySet() {
+private static boolean eq(Object o1, Object o2) {
+        return (o1 == null ? o2 == null : o1.equals(o2));
+    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.628 -0500", hash_original_field = "37A814F518B219251AA46BDA21997F4A", hash_generated_field = "B2F6A1A939754D8234C996B8AA693186")
+
+    private static final long serialVersionUID = 5457747651344034263L;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.630 -0500", hash_original_field = "273D71B1B710C303797F8830CD9E9627", hash_generated_field = "CEE47592CD991F798055CF00F61D5D32")
+
+
+    private  CopyOnWriteArrayList<E> al;
+
+    /**
+     * Creates an empty set.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.633 -0500", hash_original_method = "719CF91FD15681D04C85978CBE8B39AE", hash_generated_method = "3CBB1DE415F0C19FD3572B7CD1FC83A1")
+    
+public CopyOnWriteArraySet() {
         al = new CopyOnWriteArrayList<E>();
-        // ---------- Original Method ----------
-        //al = new CopyOnWriteArrayList<E>();
     }
 
+    /**
+     * Creates a set containing all of the elements of the specified
+     * collection.
+     *
+     * @param c the collection of elements to initially contain
+     * @throws NullPointerException if the specified collection is null
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.635 -0500", hash_original_method = "A905F7DF70B1EDD8621789C3C3A6CD84", hash_generated_method = "B003E144846289E0AEB6814A85C77E68")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.884 -0400", hash_original_method = "A905F7DF70B1EDD8621789C3C3A6CD84", hash_generated_method = "AF148E3BB9B3105E752B2DF2ECA0FF4B")
-    public  CopyOnWriteArraySet(Collection<? extends E> c) {
-        addTaint(c.getTaint());
+public CopyOnWriteArraySet(Collection<? extends E> c) {
         al = new CopyOnWriteArrayList<E>();
         al.addAllAbsent(c);
-        // ---------- Original Method ----------
-        //al = new CopyOnWriteArrayList<E>();
-        //al.addAllAbsent(c);
     }
 
+    /**
+     * Returns the number of elements in this set.
+     *
+     * @return the number of elements in this set
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.638 -0500", hash_original_method = "3CEC44303CC022BBEC9F119BC403FDBC", hash_generated_method = "FD349EDA389F166F5AB5B32AD7B69928")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.884 -0400", hash_original_method = "3CEC44303CC022BBEC9F119BC403FDBC", hash_generated_method = "24F0E9BEFBF29FEB51E3BC34810A1E78")
-    public int size() {
-        int varC60094971D0DC1BA2308A4430FB51AA2_2134750737 = (al.size());
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_40705464 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_40705464;
-        // ---------- Original Method ----------
-        //return al.size();
+public int size() {
+        return al.size();
     }
 
+    /**
+     * Returns <tt>true</tt> if this set contains no elements.
+     *
+     * @return <tt>true</tt> if this set contains no elements
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.640 -0500", hash_original_method = "3B66E92AC54A2F386067AD3C16431654", hash_generated_method = "B6A29C44E6421DAC7A6BB388191FD1B5")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.884 -0400", hash_original_method = "3B66E92AC54A2F386067AD3C16431654", hash_generated_method = "31BD6A1CE89FDD9C1715F0FBE0BC5310")
-    public boolean isEmpty() {
-        boolean var0C66FAF77C910DA93FC2B96790B002D0_69691409 = (al.isEmpty());
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_448378199 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_448378199;
-        // ---------- Original Method ----------
-        //return al.isEmpty();
+public boolean isEmpty() {
+        return al.isEmpty();
     }
 
+    /**
+     * Returns <tt>true</tt> if this set contains the specified element.
+     * More formally, returns <tt>true</tt> if and only if this set
+     * contains an element <tt>e</tt> such that
+     * <tt>(o==null&nbsp;?&nbsp;e==null&nbsp;:&nbsp;o.equals(e))</tt>.
+     *
+     * @param o element whose presence in this set is to be tested
+     * @return <tt>true</tt> if this set contains the specified element
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.642 -0500", hash_original_method = "45B83D89DB9565F8F2123157436CF2DA", hash_generated_method = "C1C2C141E940D6A5568E115AEE5A3968")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.884 -0400", hash_original_method = "45B83D89DB9565F8F2123157436CF2DA", hash_generated_method = "1AB94E50FB100DCA9E4C592EF8C64526")
-    public boolean contains(Object o) {
-        addTaint(o.getTaint());
-        boolean var6CC85BAC674B259C2EF2EBE6F8C28AF8_399921594 = (al.contains(o));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1022410695 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1022410695;
-        // ---------- Original Method ----------
-        //return al.contains(o);
+public boolean contains(Object o) {
+        return al.contains(o);
     }
 
+    /**
+     * Returns an array containing all of the elements in this set.
+     * If this set makes any guarantees as to what order its elements
+     * are returned by its iterator, this method must return the
+     * elements in the same order.
+     *
+     * <p>The returned array will be "safe" in that no references to it
+     * are maintained by this set.  (In other words, this method must
+     * allocate a new array even if this set is backed by an array).
+     * The caller is thus free to modify the returned array.
+     *
+     * <p>This method acts as bridge between array-based and collection-based
+     * APIs.
+     *
+     * @return an array containing all the elements in this set
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.644 -0500", hash_original_method = "59659636145935A673C89066DF38E15C", hash_generated_method = "4D665EBC24AE869D73CB844CF0201465")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.885 -0400", hash_original_method = "59659636145935A673C89066DF38E15C", hash_generated_method = "829E15619F86BD785759BA7EE3AC730A")
-    public Object[] toArray() {
-Object[] varEE356BC8028D35EDB407C2CD6F5C7F86_487859408 =         al.toArray();
-        varEE356BC8028D35EDB407C2CD6F5C7F86_487859408.addTaint(taint);
-        return varEE356BC8028D35EDB407C2CD6F5C7F86_487859408;
-        // ---------- Original Method ----------
-        //return al.toArray();
+public Object[] toArray() {
+        return al.toArray();
     }
 
     
@@ -94,182 +126,197 @@ T[] varAA44379FEF6B0261A49B4F9151CB856C_1385790034 =         al.toArray(a);
         //return al.toArray(a);
     }
 
+    /**
+     * Removes all of the elements from this set.
+     * The set will be empty after this call returns.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.649 -0500", hash_original_method = "3A8225B3804E9179BE65F5C2B01036E9", hash_generated_method = "ED19120A679128891E62BAFC6205202D")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.885 -0400", hash_original_method = "3A8225B3804E9179BE65F5C2B01036E9", hash_generated_method = "51E35B8C0D9675FA92693C3EC2EACF08")
-    public void clear() {
+public void clear() {
         al.clear();
-        // ---------- Original Method ----------
-        //al.clear();
     }
 
+    /**
+     * Removes the specified element from this set if it is present.
+     * More formally, removes an element <tt>e</tt> such that
+     * <tt>(o==null&nbsp;?&nbsp;e==null&nbsp;:&nbsp;o.equals(e))</tt>,
+     * if this set contains such an element.  Returns <tt>true</tt> if
+     * this set contained the element (or equivalently, if this set
+     * changed as a result of the call).  (This set will not contain the
+     * element once the call returns.)
+     *
+     * @param o object to be removed from this set, if present
+     * @return <tt>true</tt> if this set contained the specified element
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.652 -0500", hash_original_method = "4B916DD49AA1C881C6B40C3BB12114A0", hash_generated_method = "E99DE92F5D686004F214CC5A1E5D831F")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.886 -0400", hash_original_method = "4B916DD49AA1C881C6B40C3BB12114A0", hash_generated_method = "D6D3B2B7CF73BE0E6165574CC3247069")
-    public boolean remove(Object o) {
-        addTaint(o.getTaint());
-        boolean varA0832791B6D86DC5E5F406EFEDF6B6D8_823254350 = (al.remove(o));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1542238460 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1542238460;
-        // ---------- Original Method ----------
-        //return al.remove(o);
+public boolean remove(Object o) {
+        return al.remove(o);
     }
 
+    /**
+     * Adds the specified element to this set if it is not already present.
+     * More formally, adds the specified element <tt>e</tt> to this set if
+     * the set contains no element <tt>e2</tt> such that
+     * <tt>(e==null&nbsp;?&nbsp;e2==null&nbsp;:&nbsp;e.equals(e2))</tt>.
+     * If this set already contains the element, the call leaves the set
+     * unchanged and returns <tt>false</tt>.
+     *
+     * @param e element to be added to this set
+     * @return <tt>true</tt> if this set did not already contain the specified
+     *         element
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.654 -0500", hash_original_method = "C36F2E0651BF3F93251D9AAA1075E241", hash_generated_method = "691DCD4142B8BB56E48201EC4322E72A")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.886 -0400", hash_original_method = "C36F2E0651BF3F93251D9AAA1075E241", hash_generated_method = "52CC5896B6583E1D9F5F3584637BA501")
-    public boolean add(E e) {
-        addTaint(e.getTaint());
-        boolean varC6A63B1CC1DD782DDF71404353CCFD6B_697257112 = (al.addIfAbsent(e));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1983375977 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1983375977;
-        // ---------- Original Method ----------
-        //return al.addIfAbsent(e);
+public boolean add(E e) {
+        return al.addIfAbsent(e);
     }
 
+    /**
+     * Returns <tt>true</tt> if this set contains all of the elements of the
+     * specified collection.  If the specified collection is also a set, this
+     * method returns <tt>true</tt> if it is a <i>subset</i> of this set.
+     *
+     * @param  c collection to be checked for containment in this set
+     * @return <tt>true</tt> if this set contains all of the elements of the
+     *         specified collection
+     * @throws NullPointerException if the specified collection is null
+     * @see #contains(Object)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.656 -0500", hash_original_method = "BAD19EAB09738DBB9663648D63DFE74C", hash_generated_method = "20C24386DF433EE5A344EEACFE69F45D")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.886 -0400", hash_original_method = "BAD19EAB09738DBB9663648D63DFE74C", hash_generated_method = "6E768E546926F759CD87326459A7B1F5")
-    public boolean containsAll(Collection<?> c) {
-        addTaint(c.getTaint());
-        boolean varD3954A30DF241B5F6E071253B71B5A71_1422513629 = (al.containsAll(c));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1382278266 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1382278266;
-        // ---------- Original Method ----------
-        //return al.containsAll(c);
+public boolean containsAll(Collection<?> c) {
+        return al.containsAll(c);
     }
 
+    /**
+     * Adds all of the elements in the specified collection to this set if
+     * they're not already present.  If the specified collection is also a
+     * set, the <tt>addAll</tt> operation effectively modifies this set so
+     * that its value is the <i>union</i> of the two sets.  The behavior of
+     * this operation is undefined if the specified collection is modified
+     * while the operation is in progress.
+     *
+     * @param  c collection containing elements to be added to this set
+     * @return <tt>true</tt> if this set changed as a result of the call
+     * @throws NullPointerException if the specified collection is null
+     * @see #add(Object)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.659 -0500", hash_original_method = "B7022E0CB9EF549D20482BA7616126CF", hash_generated_method = "B52446F79F5608D2C75D96940DC21B7C")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.886 -0400", hash_original_method = "B7022E0CB9EF549D20482BA7616126CF", hash_generated_method = "9085EE0B27DBF76AF74D496066CFC56E")
-    public boolean addAll(Collection<? extends E> c) {
-        addTaint(c.getTaint());
-        boolean varBACC16A49891C46F713717A8C731DCC0_170126722 = (al.addAllAbsent(c) > 0);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_42917663 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_42917663;
-        // ---------- Original Method ----------
-        //return al.addAllAbsent(c) > 0;
+public boolean addAll(Collection<? extends E> c) {
+        return al.addAllAbsent(c) > 0;
     }
 
+    /**
+     * Removes from this set all of its elements that are contained in the
+     * specified collection.  If the specified collection is also a set,
+     * this operation effectively modifies this set so that its value is the
+     * <i>asymmetric set difference</i> of the two sets.
+     *
+     * @param  c collection containing elements to be removed from this set
+     * @return <tt>true</tt> if this set changed as a result of the call
+     * @throws ClassCastException if the class of an element of this set
+     *         is incompatible with the specified collection (optional)
+     * @throws NullPointerException if this set contains a null element and the
+     *         specified collection does not permit null elements (optional),
+     *         or if the specified collection is null
+     * @see #remove(Object)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.661 -0500", hash_original_method = "66AA12EE71C1D65DECB2FC917ACDE24D", hash_generated_method = "ED1ECAE0EB0C2B56318148858C23D470")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.886 -0400", hash_original_method = "66AA12EE71C1D65DECB2FC917ACDE24D", hash_generated_method = "DEE13E6E5D254B0A1AC1815A569D941E")
-    public boolean removeAll(Collection<?> c) {
-        addTaint(c.getTaint());
-        boolean varEEFB2908DC005B9DB13B8A91A265ED5B_1520978487 = (al.removeAll(c));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1595863439 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1595863439;
-        // ---------- Original Method ----------
-        //return al.removeAll(c);
+public boolean removeAll(Collection<?> c) {
+        return al.removeAll(c);
     }
 
+    /**
+     * Retains only the elements in this set that are contained in the
+     * specified collection.  In other words, removes from this set all of
+     * its elements that are not contained in the specified collection.  If
+     * the specified collection is also a set, this operation effectively
+     * modifies this set so that its value is the <i>intersection</i> of the
+     * two sets.
+     *
+     * @param  c collection containing elements to be retained in this set
+     * @return <tt>true</tt> if this set changed as a result of the call
+     * @throws ClassCastException if the class of an element of this set
+     *         is incompatible with the specified collection (optional)
+     * @throws NullPointerException if this set contains a null element and the
+     *         specified collection does not permit null elements (optional),
+     *         or if the specified collection is null
+     * @see #remove(Object)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.664 -0500", hash_original_method = "D0A4CF23F1E9AE32CFAA8649387F142B", hash_generated_method = "79BF9843443FC370A29F536A14E6646B")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.887 -0400", hash_original_method = "D0A4CF23F1E9AE32CFAA8649387F142B", hash_generated_method = "514123490E166B00AB7F08BBFD6A17AB")
-    public boolean retainAll(Collection<?> c) {
-        addTaint(c.getTaint());
-        boolean varA845A13020D2C49250FEC58E2C803A10_194591381 = (al.retainAll(c));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1959384226 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1959384226;
-        // ---------- Original Method ----------
-        //return al.retainAll(c);
+public boolean retainAll(Collection<?> c) {
+        return al.retainAll(c);
     }
 
+    /**
+     * Returns an iterator over the elements contained in this set
+     * in the order in which these elements were added.
+     *
+     * <p>The returned iterator provides a snapshot of the state of the set
+     * when the iterator was constructed. No synchronization is needed while
+     * traversing the iterator. The iterator does <em>NOT</em> support the
+     * <tt>remove</tt> method.
+     *
+     * @return an iterator over the elements in this set
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.667 -0500", hash_original_method = "1D191D7F570684E003696ECD55ECD643", hash_generated_method = "0A46AE5BBA3526BAF33DF6C195CE13E9")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.887 -0400", hash_original_method = "1D191D7F570684E003696ECD55ECD643", hash_generated_method = "22156E87E644851A7EDF50146C5059B3")
-    public Iterator<E> iterator() {
-Iterator<E> var9170DAE396001991D3A16AF07A4247B9_536686804 =         al.iterator();
-        var9170DAE396001991D3A16AF07A4247B9_536686804.addTaint(taint);
-        return var9170DAE396001991D3A16AF07A4247B9_536686804;
-        // ---------- Original Method ----------
-        //return al.iterator();
+public Iterator<E> iterator() {
+        return al.iterator();
     }
 
+    /**
+     * Compares the specified object with this set for equality.
+     * Returns {@code true} if the specified object is the same object
+     * as this object, or if it is also a {@link Set} and the elements
+     * returned by an {@linkplain List#iterator() iterator} over the
+     * specified set are the same as the elements returned by an
+     * iterator over this set.  More formally, the two iterators are
+     * considered to return the same elements if they return the same
+     * number of elements and for every element {@code e1} returned by
+     * the iterator over the specified set, there is an element
+     * {@code e2} returned by the iterator over this set such that
+     * {@code (e1==null ? e2==null : e1.equals(e2))}.
+     *
+     * @param o object to be compared for equality with this set
+     * @return {@code true} if the specified object is equal to this set
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.670 -0500", hash_original_method = "EF3132D176498E8C292078B60C02B2A5", hash_generated_method = "D090C344345913673474764ABF474EB7")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.888 -0400", hash_original_method = "EF3132D176498E8C292078B60C02B2A5", hash_generated_method = "4E37D36BECCCC0146A752B2D26B3E55C")
-    public boolean equals(Object o) {
-        addTaint(o.getTaint());
-        if(o == this)        
-        {
-        boolean varB326B5062B2F0E69046810717534CB09_2019028790 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1696819073 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1696819073;
-        }
-        if(!(o instanceof Set))        
-        {
-        boolean var68934A3E9455FA72420237EB05902327_1778227948 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2060908123 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2060908123;
-        }
+public boolean equals(Object o) {
+        if (o == this)
+            return true;
+        if (!(o instanceof Set))
+            return false;
         Set<?> set = (Set<?>)(o);
         Iterator<?> it = set.iterator();
+
+        // Uses O(n^2) algorithm that is only appropriate
+        // for small sets, which CopyOnWriteArraySets should be.
+
+        //  Use a single snapshot of underlying array
         Object[] elements = al.getArray();
         int len = elements.length;
+        // Mark matched elements to avoid re-checking
         boolean[] matched = new boolean[len];
         int k = 0;
-        outer        :
-        while
-(it.hasNext())        
-        {
-            if(++k > len)            
-            {
-            boolean var68934A3E9455FA72420237EB05902327_659510232 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_514906103 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_514906103;
-            }
+        outer: while (it.hasNext()) {
+            if (++k > len)
+                return false;
             Object x = it.next();
-for(int i = 0;i < len;++i)
-            {
-                if(!matched[i] && eq(x, elements[i]))                
-                {
+            for (int i = 0; i < len; ++i) {
+                if (!matched[i] && eq(x, elements[i])) {
                     matched[i] = true;
                     continue outer;
-                } //End block
-            } //End block
-            boolean var68934A3E9455FA72420237EB05902327_388012493 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_441696639 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_441696639;
-        } //End block
-        boolean var39D746AF77FCD02D26104C8EF542DC68_955939839 = (k == len);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1177944074 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1177944074;
-        // ---------- Original Method ----------
-        //if (o == this)
-            //return true;
-        //if (!(o instanceof Set))
-            //return false;
-        //Set<?> set = (Set<?>)(o);
-        //Iterator<?> it = set.iterator();
-        //Object[] elements = al.getArray();
-        //int len = elements.length;
-        //boolean[] matched = new boolean[len];
-        //int k = 0;
-        //outer: while (it.hasNext()) {
-            //if (++k > len)
-                //return false;
-            //Object x = it.next();
-            //for (int i = 0; i < len; ++i) {
-                //if (!matched[i] && eq(x, elements[i])) {
-                    //matched[i] = true;
-                    //continue outer;
-                //}
-            //}
-            //return false;
-        //}
-        //return k == len;
+                }
+            }
+            return false;
+        }
+        return k == len;
     }
-
-    
-    @DSModeled(DSC.BAN)
-    private static boolean eq(Object o1, Object o2) {
-        return (o1 == null ? o2 == null : o1.equals(o2));
-    }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.889 -0400", hash_original_field = "40C6D58C911799600E3343B6CE6ADAFA", hash_generated_field = "B2F6A1A939754D8234C996B8AA693186")
-
-    private static final long serialVersionUID = 5457747651344034263L;
 }
 

@@ -1,6 +1,8 @@
 package org.bouncycastle.asn1;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 
@@ -10,299 +12,242 @@ import java.io.IOException;
 
 
 public abstract class ASN1TaggedObject extends ASN1Object implements ASN1TaggedObjectParser {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.883 -0400", hash_original_field = "5725D710258369113D712F6D4ABF6730", hash_generated_field = "FA62A32896A7308D5C3ACC05B62DCB16")
 
-    int tagNo;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.883 -0400", hash_original_field = "B4A8E09BB57CCF7D96716F9A43485E3E", hash_generated_field = "A3C5A9AF358FD2BFCBE0C2693903BB82")
-
-    boolean empty = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.883 -0400", hash_original_field = "3E40242F1A39AB0A286E83CF367BEE19", hash_generated_field = "83237803BCA36CFD769F62D64B3B892F")
-
-    boolean explicit = true;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.883 -0400", hash_original_field = "47189E8EF2397EADF5CDF5F3A182EACB", hash_generated_field = "27B23743F26E5B0F431105D2841F3A3B")
-
-    DEREncodable obj = null;
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:29.126 -0500", hash_original_method = "B10D1DEB1333C8895ED68C0DE4D64E52", hash_generated_method = "CF1AC47EE66EE08B989C6DF373014CD3")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.884 -0400", hash_original_method = "00E51A508FDFE6A586E84CD8A518A30A", hash_generated_method = "DA23F9717F5F756F2361C3E8C1AED031")
-    public  ASN1TaggedObject(
-        int             tagNo,
-        DEREncodable    obj) {
-        this.explicit = true;
-        this.tagNo = tagNo;
-        this.obj = obj;
-        // ---------- Original Method ----------
-        //this.explicit = true;
-        //this.tagNo = tagNo;
-        //this.obj = obj;
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.886 -0400", hash_original_method = "9F7BD38C3B2D03C6929A27397833F44D", hash_generated_method = "BCCA2545AEB85D5C456E91F6E5661421")
-    public  ASN1TaggedObject(
-        boolean         explicit,
-        int             tagNo,
-        DEREncodable    obj) {
-        if(obj instanceof ASN1Choice)        
-        {
-            this.explicit = true;
-        } //End block
-        else
-        {
-            this.explicit = explicit;
-        } //End block
-        this.tagNo = tagNo;
-        this.obj = obj;
-        // ---------- Original Method ----------
-        //if (obj instanceof ASN1Choice)
-        //{
-            //this.explicit = true;
-        //}
-        //else
-        //{
-            //this.explicit = explicit;
-        //}
-        //this.tagNo = tagNo;
-        //this.obj = obj;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    static public ASN1TaggedObject getInstance(
+static public ASN1TaggedObject getInstance(
         ASN1TaggedObject    obj,
-        boolean             explicit) {
+        boolean             explicit)
+    {
         if (explicit)
         {
             return (ASN1TaggedObject)obj.getObject();
         }
+
         throw new IllegalArgumentException("implicitly tagged tagged object");
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:29.128 -0500", hash_original_method = "82C02E87071271D1F62BCD4C0AA46A8B", hash_generated_method = "6CC3B653BD37022DD6F229D6D930D9A5")
     
-    @DSModeled(DSC.SAFE)
-    static public ASN1TaggedObject getInstance(
-        Object obj) {
+static public ASN1TaggedObject getInstance(
+        Object obj) 
+    {
         if (obj == null || obj instanceof ASN1TaggedObject) 
         {
                 return (ASN1TaggedObject)obj;
         }
+
         throw new IllegalArgumentException("unknown object in getInstance: " + obj.getClass().getName());
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:29.117 -0500", hash_original_field = "FA62A32896A7308D5C3ACC05B62DCB16", hash_generated_field = "FA62A32896A7308D5C3ACC05B62DCB16")
 
+    int             tagNo;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:29.120 -0500", hash_original_field = "A3C5A9AF358FD2BFCBE0C2693903BB82", hash_generated_field = "A3C5A9AF358FD2BFCBE0C2693903BB82")
+
+    boolean         empty = false;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:29.121 -0500", hash_original_field = "83237803BCA36CFD769F62D64B3B892F", hash_generated_field = "83237803BCA36CFD769F62D64B3B892F")
+
+    boolean         explicit = true;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:29.124 -0500", hash_original_field = "27B23743F26E5B0F431105D2841F3A3B", hash_generated_field = "27B23743F26E5B0F431105D2841F3A3B")
+
+    DEREncodable    obj = null;
+
+    /**
+     * Create a tagged object in the explicit style.
+     * 
+     * @param tagNo the tag number for this object.
+     * @param obj the tagged object.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:29.131 -0500", hash_original_method = "00E51A508FDFE6A586E84CD8A518A30A", hash_generated_method = "A915928119868388C6DA10DB89253826")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.888 -0400", hash_original_method = "68AE9CCB33F87A12C7FA4AA63E83BFDC", hash_generated_method = "D2DFDF69FBEDDF28D3F2974703618270")
-     boolean asn1Equals(
-        DERObject o) {
-        addTaint(o.getTaint());
-        if(!(o instanceof ASN1TaggedObject))        
+public ASN1TaggedObject(
+        int             tagNo,
+        DEREncodable    obj)
+    {
+        this.explicit = true;
+        this.tagNo = tagNo;
+        this.obj = obj;
+    }
+
+    /**
+     * Create a tagged object with the style given by the value of explicit.
+     * <p>
+     * If the object implements ASN1Choice the tag style will always be changed
+     * to explicit in accordance with the ASN.1 encoding rules.
+     * </p>
+     * @param explicit true if the object is explicitly tagged.
+     * @param tagNo the tag number for this object.
+     * @param obj the tagged object.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:29.134 -0500", hash_original_method = "9F7BD38C3B2D03C6929A27397833F44D", hash_generated_method = "F945546D0C43A9E9268B7B1207F23901")
+    
+public ASN1TaggedObject(
+        boolean         explicit,
+        int             tagNo,
+        DEREncodable    obj)
+    {
+        if (obj instanceof ASN1Choice)
         {
-            boolean var68934A3E9455FA72420237EB05902327_770792008 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_528313754 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_528313754;
-        } //End block
-        ASN1TaggedObject other = (ASN1TaggedObject)o;
-        if(tagNo != other.tagNo || empty != other.empty || explicit != other.explicit)        
-        {
-            boolean var68934A3E9455FA72420237EB05902327_1162717307 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1966433652 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1966433652;
-        } //End block
-        if(obj == null)        
-        {
-            if(other.obj != null)            
-            {
-                boolean var68934A3E9455FA72420237EB05902327_259750106 = (false);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1714093231 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1714093231;
-            } //End block
-        } //End block
+            this.explicit = true;
+        }
         else
         {
-            if(!(obj.getDERObject().equals(other.obj.getDERObject())))            
-            {
-                boolean var68934A3E9455FA72420237EB05902327_1177548613 = (false);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_559022938 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_559022938;
-            } //End block
-        } //End block
-        boolean varB326B5062B2F0E69046810717534CB09_14879017 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1804326701 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1804326701;
-        // ---------- Original Method ----------
-        //if (!(o instanceof ASN1TaggedObject))
-        //{
-            //return false;
-        //}
-        //ASN1TaggedObject other = (ASN1TaggedObject)o;
-        //if (tagNo != other.tagNo || empty != other.empty || explicit != other.explicit)
-        //{
-            //return false;
-        //}
-        //if(obj == null)
-        //{
-            //if (other.obj != null)
-            //{
-                //return false;
-            //}
-        //}
-        //else
-        //{
-            //if (!(obj.getDERObject().equals(other.obj.getDERObject())))
-            //{
-                //return false;
-            //}
-        //}
-        //return true;
+            this.explicit = explicit;
+        }
+        
+        this.tagNo = tagNo;
+        this.obj = obj;
     }
-
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.889 -0400", hash_original_method = "996889D0C05CC309872B8EE7FF5C4369", hash_generated_method = "D1AE21C6672586BC965EEC7913385B16")
-    public int hashCode() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:29.137 -0500", hash_original_method = "68AE9CCB33F87A12C7FA4AA63E83BFDC", hash_generated_method = "68AE9CCB33F87A12C7FA4AA63E83BFDC")
+    
+boolean asn1Equals(
+        DERObject o)
+    {
+        if (!(o instanceof ASN1TaggedObject))
+        {
+            return false;
+        }
+        
+        ASN1TaggedObject other = (ASN1TaggedObject)o;
+        
+        if (tagNo != other.tagNo || empty != other.empty || explicit != other.explicit)
+        {
+            return false;
+        }
+        
+        if(obj == null)
+        {
+            if (other.obj != null)
+            {
+                return false;
+            }
+        }
+        else
+        {
+            if (!(obj.getDERObject().equals(other.obj.getDERObject())))
+            {
+                return false;
+            }
+        }
+        
+        return true;
+    }
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:29.139 -0500", hash_original_method = "996889D0C05CC309872B8EE7FF5C4369", hash_generated_method = "07979806C0C20ADDDA772A11324248EC")
+    
+public int hashCode()
+    {
         int code = tagNo;
-        if(obj != null)        
+
+        // TODO: actually this is wrong - the problem is that a re-encoded
+        // object may end up with a different hashCode due to implicit
+        // tagging. As implicit tagging is ambiguous if a sequence is involved
+        // it seems the only correct method for both equals and hashCode is to
+        // compare the encodings...
+        if (obj != null)
         {
             code ^= obj.hashCode();
-        } //End block
-        int varC13367945D5D4C91047B3B50234AA7AB_295293100 = (code);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_37684852 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_37684852;
-        // ---------- Original Method ----------
-        //int code = tagNo;
-        //if (obj != null)
-        //{
-            //code ^= obj.hashCode();
-        //}
-        //return code;
+        }
+
+        return code;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:29.142 -0500", hash_original_method = "CB42AFB8AF1DB9A93243A50229C66A0D", hash_generated_method = "DABB94A5116DC7589A63C7B0A88E4699")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.889 -0400", hash_original_method = "CB42AFB8AF1DB9A93243A50229C66A0D", hash_generated_method = "ADD3029466918095DFBCF5D9D400BE65")
-    public int getTagNo() {
-        int var5725D710258369113D712F6D4ABF6730_685777352 = (tagNo);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_140659847 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_140659847;
-        // ---------- Original Method ----------
-        //return tagNo;
+public int getTagNo()
+    {
+        return tagNo;
     }
 
+    /**
+     * return whether or not the object may be explicitly tagged. 
+     * <p>
+     * Note: if the object has been read from an input stream, the only
+     * time you can be sure if isExplicit is returning the true state of
+     * affairs is if it returns false. An implicitly tagged object may appear
+     * to be explicitly tagged, so you need to understand the context under
+     * which the reading was done as well, see getObject below.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:29.144 -0500", hash_original_method = "AF6534B2BC536C6B2446F0C361A4EC15", hash_generated_method = "C5352AA7DF0C00ED1852C045A2A07019")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.890 -0400", hash_original_method = "AF6534B2BC536C6B2446F0C361A4EC15", hash_generated_method = "E7ABE0029C0BEFF99915A6694B055D99")
-    public boolean isExplicit() {
-        boolean varE2A3307DD8A12A0B820132B2C1C27819_1104725760 = (explicit);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_927533883 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_927533883;
-        // ---------- Original Method ----------
-        //return explicit;
+public boolean isExplicit()
+    {
+        return explicit;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:29.146 -0500", hash_original_method = "A3A283EA275283949A16122176F95537", hash_generated_method = "8EC7CB9A70495B8A7A532D0FAAB166D0")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.890 -0400", hash_original_method = "A3A283EA275283949A16122176F95537", hash_generated_method = "233FE39588E00644EFF337964E3B216F")
-    public boolean isEmpty() {
-        boolean varA2E4822A98337283E39F7B60ACF85EC9_118780689 = (empty);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1009451229 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1009451229;
-        // ---------- Original Method ----------
-        //return empty;
+public boolean isEmpty()
+    {
+        return empty;
     }
 
+    /**
+     * return whatever was following the tag.
+     * <p>
+     * Note: tagged objects are generally context dependent if you're
+     * trying to extract a tagged object you should be going via the
+     * appropriate getInstance method.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:29.148 -0500", hash_original_method = "71996C10B1D68BDB26DD531066806FCB", hash_generated_method = "2D25E3A4D9CA0CCEEE0E62B9CFDEC97D")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.890 -0400", hash_original_method = "71996C10B1D68BDB26DD531066806FCB", hash_generated_method = "2D996148AC565275F2DFD9BC6C078261")
-    public DERObject getObject() {
-        if(obj != null)        
+public DERObject getObject()
+    {
+        if (obj != null)
         {
-DERObject var23A4222CF5292FF705C5DA2A104D1850_1376922925 =             obj.getDERObject();
-            var23A4222CF5292FF705C5DA2A104D1850_1376922925.addTaint(taint);
-            return var23A4222CF5292FF705C5DA2A104D1850_1376922925;
-        } //End block
-DERObject var540C13E9E156B687226421B24F2DF178_651167278 =         null;
-        var540C13E9E156B687226421B24F2DF178_651167278.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_651167278;
-        // ---------- Original Method ----------
-        //if (obj != null)
-        //{
-            //return obj.getDERObject();
-        //}
-        //return null;
+            return obj.getDERObject();
+        }
+
+        return null;
     }
 
+    /**
+     * Return the object held in this tagged object as a parser assuming it has
+     * the type of the passed in tag. If the object doesn't have a parser
+     * associated with it, the base object is returned.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:29.151 -0500", hash_original_method = "45814A62D9590995EE34A14DC507BC36", hash_generated_method = "1222D41CD8670E178BC4D4A7883F57A7")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.891 -0400", hash_original_method = "45814A62D9590995EE34A14DC507BC36", hash_generated_method = "A6E2DF0D72CE68306E84DEDA9757147D")
-    public DEREncodable getObjectParser(
+public DEREncodable getObjectParser(
         int     tag,
-        boolean isExplicit) {
-        addTaint(isExplicit);
-        addTaint(tag);
-switch(tag){
-        case DERTags.SET:
-DEREncodable var880E67636514E4B8374190F8474A6E7F_195994798 =         ASN1Set.getInstance(this, isExplicit).parser();
-        var880E67636514E4B8374190F8474A6E7F_195994798.addTaint(taint);
-        return var880E67636514E4B8374190F8474A6E7F_195994798;
-        case DERTags.SEQUENCE:
-DEREncodable var3FDD8B7B0223B31D3B1C97D5E884302E_1854961029 =         ASN1Sequence.getInstance(this, isExplicit).parser();
-        var3FDD8B7B0223B31D3B1C97D5E884302E_1854961029.addTaint(taint);
-        return var3FDD8B7B0223B31D3B1C97D5E884302E_1854961029;
-        case DERTags.OCTET_STRING:
-DEREncodable varBD62BAA67427D1C13A0898EAAD77920C_658071183 =         ASN1OctetString.getInstance(this, isExplicit).parser();
-        varBD62BAA67427D1C13A0898EAAD77920C_658071183.addTaint(taint);
-        return varBD62BAA67427D1C13A0898EAAD77920C_658071183;
-}        if(isExplicit)        
+        boolean isExplicit)
+    {
+        switch (tag)
         {
-DEREncodable var63D6E0ED18B2DCD697AD4DA88AE04A3A_104081820 =             getObject();
-            var63D6E0ED18B2DCD697AD4DA88AE04A3A_104081820.addTaint(taint);
-            return var63D6E0ED18B2DCD697AD4DA88AE04A3A_104081820;
-        } //End block
-        RuntimeException var0F0AECC06703C00CA3D5496CE88A4347_535916277 = new RuntimeException("implicit tagging not implemented for tag: " + tag);
-        var0F0AECC06703C00CA3D5496CE88A4347_535916277.addTaint(taint);
-        throw var0F0AECC06703C00CA3D5496CE88A4347_535916277;
-        // ---------- Original Method ----------
-        //switch (tag)
-        //{
-        //case DERTags.SET:
-            //return ASN1Set.getInstance(this, isExplicit).parser();
-        //case DERTags.SEQUENCE:
-            //return ASN1Sequence.getInstance(this, isExplicit).parser();
-        //case DERTags.OCTET_STRING:
-            //return ASN1OctetString.getInstance(this, isExplicit).parser();
-        //}
-        //if (isExplicit)
-        //{
-            //return getObject();
-        //}
-        //throw new RuntimeException("implicit tagging not implemented for tag: " + tag);
+        case DERTags.SET:
+            return ASN1Set.getInstance(this, isExplicit).parser();
+        case DERTags.SEQUENCE:
+            return ASN1Sequence.getInstance(this, isExplicit).parser();
+        case DERTags.OCTET_STRING:
+            return ASN1OctetString.getInstance(this, isExplicit).parser();
+        }
+
+        if (isExplicit)
+        {
+            return getObject();
+        }
+
+        throw new RuntimeException("implicit tagging not implemented for tag: " + tag);
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:29.153 -0500", hash_original_method = "D3363286272FDA8D05900543905FFBE8", hash_generated_method = "8623B307B61B507AA76548169F67C95B")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.891 -0400", hash_original_method = "D3363286272FDA8D05900543905FFBE8", hash_generated_method = "8C76B9B75F8A541451397F23D15045AD")
-    public DERObject getLoadedObject() {
-DERObject var637323B1C4EE7CAF17B2CD40E14254B5_1827792468 =         this.getDERObject();
-        var637323B1C4EE7CAF17B2CD40E14254B5_1827792468.addTaint(taint);
-        return var637323B1C4EE7CAF17B2CD40E14254B5_1827792468;
-        // ---------- Original Method ----------
-        //return this.getDERObject();
+public DERObject getLoadedObject()
+    {
+        return this.getDERObject();
     }
-
     
-    @DSModeled(DSC.SAFE)
-    abstract void encode(DEROutputStream  out)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:29.156 -0500", hash_original_method = "A1E289DFE0364C85836C0C8908499825", hash_generated_method = "877693E84D45EBE13EC3671BCE6F2F0C")
+    
+abstract void encode(DEROutputStream  out)
         throws IOException;
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:29.158 -0500", hash_original_method = "5750585E0FAF2C7F60E10F96F297B6DF", hash_generated_method = "103ACC5A0DA98A573B1996BD5781ECB8")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.892 -0400", hash_original_method = "5750585E0FAF2C7F60E10F96F297B6DF", hash_generated_method = "FEB1424C06971C9299FA5ABDBC8FC97B")
-    public String toString() {
-String varD4481D92D04117EB9AC946380B8C587E_940345397 =         "[" + tagNo + "]" + obj;
-        varD4481D92D04117EB9AC946380B8C587E_940345397.addTaint(taint);
-        return varD4481D92D04117EB9AC946380B8C587E_940345397;
-        // ---------- Original Method ----------
-        //return "[" + tagNo + "]" + obj;
+public String toString()
+    {
+        return "[" + tagNo + "]" + obj;
     }
 
     

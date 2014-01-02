@@ -1,6 +1,8 @@
 package org.bouncycastle.asn1.x509;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 import java.util.Enumeration;
@@ -31,349 +33,28 @@ import org.bouncycastle.util.encoders.Hex;
 
 
 public class X509Name extends ASN1Encodable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.195 -0400", hash_original_field = "A34048331D21536E4DEEECC5E8A1DED5", hash_generated_field = "9B1A952CEBF3178959A402DABEDC0A6B")
 
-    private X509NameEntryConverter converter = null;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.195 -0400", hash_original_field = "1E8C32F4C6EEE7D3CD7F8426CD048BA3", hash_generated_field = "C8A65116741473EAA58816E75213B0AF")
-
-    private Vector ordering = new Vector();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.195 -0400", hash_original_field = "7BCFB62748A3418E1EB532A92A7C5C78", hash_generated_field = "F7859DDEE63780863860095D2E4D0AB7")
-
-    private Vector values = new Vector();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.195 -0400", hash_original_field = "ADFA51CFEE10A2F9F8E091B21ABE19E2", hash_generated_field = "93EE51D59E70850C8E38EBF0508102EE")
-
-    private Vector added = new Vector();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.195 -0400", hash_original_field = "E068C2DE26D760F20CF10AFC4B87EF0F", hash_generated_field = "37E06257AFCE21CC4EDFE67F34DC271C")
-
-    private ASN1Sequence seq;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.195 -0400", hash_original_field = "DE525AA08E2B8CBA006E16ED96D38FAC", hash_generated_field = "FFD3E18FB59EA084D3FD8E8945E2AACA")
-
-    private boolean isHashCodeCalculated;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.195 -0400", hash_original_field = "4D002D69417019F289C8061B82207DD2", hash_generated_field = "D4D90810E0E6D99534BB2E8797B7FFA9")
-
-    private int hashCodeValue;
+    /**
+     * Return a X509Name based on the passed in tagged object.
+     * 
+     * @param obj tag object holding name.
+     * @param explicit true if explicitly tagged false otherwise.
+     * @return the X509Name
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.897 -0500", hash_original_method = "35717B5D44D40B15BC305384A515B852", hash_generated_method = "95406EE1261899B50CBD9CB2E395A509")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.196 -0400", hash_original_method = "E0A402814C87C5337199B2B0EDD62792", hash_generated_method = "057550D58678CB656F886F7D19F48820")
-    protected  X509Name() {
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.196 -0400", hash_original_method = "88A842BBAF40DA82D57137327D6884BA", hash_generated_method = "729383BE804D5B075D4D3A6B8E6AAD05")
-    public  X509Name(
-        ASN1Sequence  seq) {
-        this.seq = seq;
-        Enumeration e = seq.getObjects();
-        while
-(e.hasMoreElements())        
-        {
-            ASN1Set set = ASN1Set.getInstance(((DEREncodable)e.nextElement()).getDERObject());
-for(int i = 0;i < set.size();i++)
-            {
-                ASN1Sequence s = ASN1Sequence.getInstance(set.getObjectAt(i));
-                if(s.size() != 2)                
-                {
-                    IllegalArgumentException var8225E7D760902CE5C3E99FCCFDE6CA09_1074659421 = new IllegalArgumentException("badly sized pair");
-                    var8225E7D760902CE5C3E99FCCFDE6CA09_1074659421.addTaint(taint);
-                    throw var8225E7D760902CE5C3E99FCCFDE6CA09_1074659421;
-                } //End block
-                ordering.addElement(DERObjectIdentifier.getInstance(s.getObjectAt(0)));
-                DEREncodable value = s.getObjectAt(1);
-                if(value instanceof DERString && !(value instanceof DERUniversalString))                
-                {
-                    String v = ((DERString)value).getString();
-                    if(v.length() > 0 && v.charAt(0) == '#')                    
-                    {
-                        values.addElement("\\" + v);
-                    } //End block
-                    else
-                    {
-                        values.addElement(v);
-                    } //End block
-                } //End block
-                else
-                {
-                    values.addElement("#" + bytesToString(Hex.encode(value.getDERObject().getDEREncoded())));
-                } //End block
-                added.addElement(Boolean.valueOf(i != 0));
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.197 -0400", hash_original_method = "E338E099196C520643EABA462B148868", hash_generated_method = "4F3D38547E82E9E318C39F8B7A6E3207")
-    public  X509Name(
-        Hashtable  attributes) {
-        this(null, attributes);
-        addTaint(attributes.getTaint());
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.197 -0400", hash_original_method = "0E56A2506DE147DC0FDCD121F4661515", hash_generated_method = "A49EF6B0C5B62CA69F33510749DE931F")
-    public  X509Name(
-        Vector      ordering,
-        Hashtable   attributes) {
-        this(ordering, attributes, new X509DefaultEntryConverter());
-        addTaint(attributes.getTaint());
-        addTaint(ordering.getTaint());
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.198 -0400", hash_original_method = "391D1DCB58738C4647988CF64EC70334", hash_generated_method = "C8B7393ED9FDD9B6432305E5596BA5B0")
-    public  X509Name(
-        Vector                   ordering,
-        Hashtable                attributes,
-        X509NameEntryConverter   converter) {
-        addTaint(attributes.getTaint());
-        addTaint(ordering.getTaint());
-        this.converter = converter;
-        if(ordering != null)        
-        {
-for(int i = 0;i != ordering.size();i++)
-            {
-                this.ordering.addElement(ordering.elementAt(i));
-                this.added.addElement(FALSE);
-            } //End block
-        } //End block
-        else
-        {
-            Enumeration e = attributes.keys();
-            while
-(e.hasMoreElements())            
-            {
-                this.ordering.addElement(e.nextElement());
-                this.added.addElement(FALSE);
-            } //End block
-        } //End block
-for(int i = 0;i != this.ordering.size();i++)
-        {
-            DERObjectIdentifier oid = (DERObjectIdentifier)this.ordering.elementAt(i);
-            if(attributes.get(oid) == null)            
-            {
-                IllegalArgumentException var395EF524058B951BA48FFDB657C8D23C_425738616 = new IllegalArgumentException("No attribute for object id - " + oid.getId() + " - passed to distinguished name");
-                var395EF524058B951BA48FFDB657C8D23C_425738616.addTaint(taint);
-                throw var395EF524058B951BA48FFDB657C8D23C_425738616;
-            } //End block
-            this.values.addElement(attributes.get(oid));
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.199 -0400", hash_original_method = "09339315E74F09704223BAA476796553", hash_generated_method = "0F41C1E3C1E5E881D2C0FD837D91BC14")
-    public  X509Name(
-        Vector  oids,
-        Vector  values) {
-        this(oids, values, new X509DefaultEntryConverter());
-        addTaint(values.getTaint());
-        addTaint(oids.getTaint());
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.199 -0400", hash_original_method = "492C8BC9ACE864159B4ED5D85649FE7D", hash_generated_method = "0F32012FE3C7BD4EBAB240E85483ED30")
-    public  X509Name(
-        Vector                  oids,
-        Vector                  values,
-        X509NameEntryConverter  converter) {
-        addTaint(values.getTaint());
-        addTaint(oids.getTaint());
-        this.converter = converter;
-        if(oids.size() != values.size())        
-        {
-            IllegalArgumentException var8B9F22F4CB47AB28A0E3D6B76D1B1D06_857194026 = new IllegalArgumentException("oids vector must be same length as values.");
-            var8B9F22F4CB47AB28A0E3D6B76D1B1D06_857194026.addTaint(taint);
-            throw var8B9F22F4CB47AB28A0E3D6B76D1B1D06_857194026;
-        } //End block
-for(int i = 0;i < oids.size();i++)
-        {
-            this.ordering.addElement(oids.elementAt(i));
-            this.values.addElement(values.elementAt(i));
-            this.added.addElement(FALSE);
-        } //End block
-        // ---------- Original Method ----------
-        //this.converter = converter;
-        //if (oids.size() != values.size())
-        //{
-            //throw new IllegalArgumentException("oids vector must be same length as values.");
-        //}
-        //for (int i = 0; i < oids.size(); i++)
-        //{
-            //this.ordering.addElement(oids.elementAt(i));
-            //this.values.addElement(values.elementAt(i));
-            //this.added.addElement(FALSE);
-        //}
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.200 -0400", hash_original_method = "4DE51E849F59B0AA80C7ECB38F0D9925", hash_generated_method = "3DC3E88039FCBFD7D79B0174FAD45B0F")
-    public  X509Name(
-        String  dirName) {
-        this(DefaultReverse, DefaultLookUp, dirName);
-        addTaint(dirName.getTaint());
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.200 -0400", hash_original_method = "225E7940DFC3CDF11421E5A31C692555", hash_generated_method = "A024263123D4A3F4C04E171635CEFE11")
-    public  X509Name(
-        String                  dirName,
-        X509NameEntryConverter  converter) {
-        this(DefaultReverse, DefaultLookUp, dirName, converter);
-        addTaint(converter.getTaint());
-        addTaint(dirName.getTaint());
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.200 -0400", hash_original_method = "A1386F925B8F997747CFC9FBEC64818C", hash_generated_method = "3E05FD368AB3F462CC34AD8AA65CF293")
-    public  X509Name(
-        boolean reverse,
-        String  dirName) {
-        this(reverse, DefaultLookUp, dirName);
-        addTaint(dirName.getTaint());
-        addTaint(reverse);
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.201 -0400", hash_original_method = "0ED99673E1BB44384871E74A0AAAAEE6", hash_generated_method = "6D8DC8B4F730D61439367E6EA1D209AB")
-    public  X509Name(
-        boolean                 reverse,
-        String                  dirName,
-        X509NameEntryConverter  converter) {
-        this(reverse, DefaultLookUp, dirName, converter);
-        addTaint(converter.getTaint());
-        addTaint(dirName.getTaint());
-        addTaint(reverse);
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.201 -0400", hash_original_method = "AD0C5D6A617F7C4CAD4929B6BAF77A7F", hash_generated_method = "2E465D7394BE3FD3FEFE3A3D438D8658")
-    public  X509Name(
-        boolean     reverse,
-        Hashtable   lookUp,
-        String      dirName) {
-        this(reverse, lookUp, dirName, new X509DefaultEntryConverter());
-        addTaint(dirName.getTaint());
-        addTaint(lookUp.getTaint());
-        addTaint(reverse);
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.203 -0400", hash_original_method = "E0536EE704C9789715788F9D659749FC", hash_generated_method = "020F0C820D551360F3FD7A8E5D61E0B1")
-    public  X509Name(
-        boolean                 reverse,
-        Hashtable               lookUp,
-        String                  dirName,
-        X509NameEntryConverter  converter) {
-        addTaint(dirName.getTaint());
-        addTaint(lookUp.getTaint());
-        addTaint(reverse);
-        this.converter = converter;
-        X509NameTokenizer nTok = new X509NameTokenizer(dirName);
-        while
-(nTok.hasMoreTokens())        
-        {
-            String token = nTok.nextToken();
-            int index = token.indexOf('=');
-            if(index == -1)            
-            {
-                IllegalArgumentException var0F4662F40FB0E6B066ACA52697955804_976708966 = new IllegalArgumentException("badly formatted directory string");
-                var0F4662F40FB0E6B066ACA52697955804_976708966.addTaint(taint);
-                throw var0F4662F40FB0E6B066ACA52697955804_976708966;
-            } //End block
-            String name = token.substring(0, index);
-            String value = token.substring(index + 1);
-            DERObjectIdentifier oid = decodeOID(name, lookUp);
-            if(value.indexOf('+') > 0)            
-            {
-                X509NameTokenizer vTok = new X509NameTokenizer(value, '+');
-                String v = vTok.nextToken();
-                this.ordering.addElement(oid);
-                this.values.addElement(v);
-                this.added.addElement(FALSE);
-                while
-(vTok.hasMoreTokens())                
-                {
-                    String sv = vTok.nextToken();
-                    int ndx = sv.indexOf('=');
-                    String nm = sv.substring(0, ndx);
-                    String vl = sv.substring(ndx + 1);
-                    this.ordering.addElement(decodeOID(nm, lookUp));
-                    this.values.addElement(vl);
-                    this.added.addElement(TRUE);
-                } //End block
-            } //End block
-            else
-            {
-                this.ordering.addElement(oid);
-                this.values.addElement(value);
-                this.added.addElement(FALSE);
-            } //End block
-        } //End block
-        if(reverse)        
-        {
-            Vector o = new Vector();
-            Vector v = new Vector();
-            Vector a = new Vector();
-            int count = 1;
-for(int i = 0;i < this.ordering.size();i++)
-            {
-                if(((Boolean)this.added.elementAt(i)).booleanValue())                
-                {
-                    o.insertElementAt(this.ordering.elementAt(i), count);
-                    v.insertElementAt(this.values.elementAt(i), count);
-                    a.insertElementAt(this.added.elementAt(i), count);
-                    count++;
-                } //End block
-                else
-                {
-                    o.insertElementAt(this.ordering.elementAt(i), 0);
-                    v.insertElementAt(this.values.elementAt(i), 0);
-                    a.insertElementAt(this.added.elementAt(i), 0);
-                    count = 1;
-                } //End block
-            } //End block
-            this.ordering = o;
-            this.values = v;
-            this.added = a;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    public static X509Name getInstance(
+public static X509Name getInstance(
         ASN1TaggedObject obj,
-        boolean          explicit) {
+        boolean          explicit)
+    {
         return getInstance(ASN1Sequence.getInstance(obj, explicit));
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.899 -0500", hash_original_method = "48285B3BE307C3DF1D7E2E269123DFE3", hash_generated_method = "6B86B0BE37D36155AC11623678B6E32F")
     
-    @DSModeled(DSC.SAFE)
-    public static X509Name getInstance(
-        Object  obj) {
+public static X509Name getInstance(
+        Object  obj)
+    {
         if (obj == null || obj instanceof X509Name)
         {
             return (X509Name)obj;
@@ -386,605 +67,1050 @@ for(int i = 0;i < this.ordering.size();i++)
         {
             return new X509Name(ASN1Sequence.getInstance(obj));
         }
+
         return null;
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.768 -0500", hash_original_field = "AC43C952E106CFD7F964E16593B15917", hash_generated_field = "82D687239E3C86279A9A387C3E8AE15F")
 
+    public static final DERObjectIdentifier C = new DERObjectIdentifier("2.5.4.6");
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.771 -0500", hash_original_field = "FDDED9CA16A440BADDF82743028CFDF5", hash_generated_field = "9A0BCC4B2444A7BF0405630803C2F2D0")
+
+    public static final DERObjectIdentifier O = new DERObjectIdentifier("2.5.4.10");
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.774 -0500", hash_original_field = "8D088347DE678410C2C4659D9E7F69F4", hash_generated_field = "6326280D591C30719B3DB5C13338F0A3")
+
+    public static final DERObjectIdentifier OU = new DERObjectIdentifier("2.5.4.11");
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.776 -0500", hash_original_field = "6E31D186555B147C5C13BE685C0ED00C", hash_generated_field = "E8B45184A7115EE6111EDB1B37A68019")
+
+    public static final DERObjectIdentifier T = new DERObjectIdentifier("2.5.4.12");
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.779 -0500", hash_original_field = "7CBBBC6FA98F82D006AC1C3CEBD357A8", hash_generated_field = "CF9435847FFC6C3C7927992F9EE3FAFF")
+
+    public static final DERObjectIdentifier CN = new DERObjectIdentifier("2.5.4.3");
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.781 -0500", hash_original_field = "78CAFEE0257AB794C6021C33D0C258DC", hash_generated_field = "1C5FE81E2DBFFB02A7D19673EC4A90E2")
+
+    public static final DERObjectIdentifier SN = new DERObjectIdentifier("2.5.4.5");
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.783 -0500", hash_original_field = "6C28EFC044ABF6316678E6C3502849E7", hash_generated_field = "2F85801FBF51C8EE5695ECB3E05715B4")
+
+    public static final DERObjectIdentifier STREET = new DERObjectIdentifier("2.5.4.9");
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.786 -0500", hash_original_field = "D284015078C9FE4C22D3CC2C97D9914E", hash_generated_field = "BDDAF789362E72D2FF3111AE8E110F7A")
+
+    public static final DERObjectIdentifier SERIALNUMBER = SN;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.788 -0500", hash_original_field = "A00E2F3F6341370BDDDFDCCCCBB14F51", hash_generated_field = "CBB2A0091E475910A1B9F56755855304")
+
+    public static final DERObjectIdentifier L = new DERObjectIdentifier("2.5.4.7");
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.791 -0500", hash_original_field = "6B1B2A615D04B83D8E2D786231B08734", hash_generated_field = "FA86D310F2857FB8F860635B33CDE85B")
+
+    public static final DERObjectIdentifier ST = new DERObjectIdentifier("2.5.4.8");
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.794 -0500", hash_original_field = "9E5210CF50E0ACD198AAE2B8B5C76D0C", hash_generated_field = "59FFCD55B0D0B45F483BC2293E395377")
+
+    public static final DERObjectIdentifier SURNAME = new DERObjectIdentifier("2.5.4.4");
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.796 -0500", hash_original_field = "1BB8F42BE8272C131965F4476D448078", hash_generated_field = "E97C7C5B7041A426BC30CC1454C5DBF7")
+
+    public static final DERObjectIdentifier GIVENNAME = new DERObjectIdentifier("2.5.4.42");
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.799 -0500", hash_original_field = "868A98DFC8291023040AD2693FABC4E2", hash_generated_field = "A5FD4B35D111D951F8765946D5A83284")
+
+    public static final DERObjectIdentifier INITIALS = new DERObjectIdentifier("2.5.4.43");
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.801 -0500", hash_original_field = "3121D94201EBFF735BEA4326E520CC24", hash_generated_field = "533BDABA5EA8217D595157FA1EE80ABF")
+
+    public static final DERObjectIdentifier GENERATION = new DERObjectIdentifier("2.5.4.44");
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.804 -0500", hash_original_field = "4D6B68FAD518E0281F3F27A0713BDB6D", hash_generated_field = "4F43AC9282AD9798244BC73AEDAA5A8D")
+
+    public static final DERObjectIdentifier UNIQUE_IDENTIFIER = new DERObjectIdentifier("2.5.4.45");
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.807 -0500", hash_original_field = "AD0FC11A41EC275AB549DD7964A240B1", hash_generated_field = "B855455F4EDB294C798C9D3C9026BF51")
+
+    public static final DERObjectIdentifier BUSINESS_CATEGORY = new DERObjectIdentifier(
+                    "2.5.4.15");
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.809 -0500", hash_original_field = "738BF07F1B7B3E4D4E9A6F8708625BDE", hash_generated_field = "AFCF615F7F4AD23472ADBFCF9493AE20")
+
+    public static final DERObjectIdentifier POSTAL_CODE = new DERObjectIdentifier(
+                    "2.5.4.17");
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.812 -0500", hash_original_field = "768FBD571C177EED83315C564FD135E5", hash_generated_field = "3BEB0664EEAAC66C4E6B3507A541A961")
+
+    public static final DERObjectIdentifier DN_QUALIFIER = new DERObjectIdentifier(
+                    "2.5.4.46");
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.814 -0500", hash_original_field = "692BFD9E5BEED93D3C8DDCF285E53E6F", hash_generated_field = "8BDA30822F069D0EF535FB88FF8A1F36")
+
+    public static final DERObjectIdentifier PSEUDONYM = new DERObjectIdentifier(
+                    "2.5.4.65");
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.817 -0500", hash_original_field = "AB843B3B41951FDE3F0B407B2A612E8E", hash_generated_field = "9420DBC6483B34D87C2038353B444C41")
+
+    public static final DERObjectIdentifier DATE_OF_BIRTH = new DERObjectIdentifier(
+                    "1.3.6.1.5.5.7.9.1");
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.819 -0500", hash_original_field = "E31B74347ED6B9DAFEEE3FDC7A6FD5D3", hash_generated_field = "DD23A595DF652DF1A4A46D9CF34396D1")
+
+    public static final DERObjectIdentifier PLACE_OF_BIRTH = new DERObjectIdentifier(
+                    "1.3.6.1.5.5.7.9.2");
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.822 -0500", hash_original_field = "8FD528DD146BF5E6980947A67BB732EE", hash_generated_field = "653665F25666ED2418201CB7491A2E83")
+
+    public static final DERObjectIdentifier GENDER = new DERObjectIdentifier(
+                    "1.3.6.1.5.5.7.9.3");
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.824 -0500", hash_original_field = "3E6A15C3DBFD631D10CAC1E0B3CD4C9D", hash_generated_field = "60C31DC383F5B2CBA146E21EF7DBE62C")
+
+    public static final DERObjectIdentifier COUNTRY_OF_CITIZENSHIP = new DERObjectIdentifier(
+                    "1.3.6.1.5.5.7.9.4");
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.827 -0500", hash_original_field = "8E8F94E57C95E02D32A483C187B2E0A0", hash_generated_field = "298A701F0CC84796B2E4DA6C024B48DE")
+
+    public static final DERObjectIdentifier COUNTRY_OF_RESIDENCE = new DERObjectIdentifier(
+                    "1.3.6.1.5.5.7.9.5");
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.829 -0500", hash_original_field = "77D35207023305A12D6FCB1221141DA6", hash_generated_field = "543131AACA3F47053FDEC53A1C384306")
+
+    public static final DERObjectIdentifier NAME_AT_BIRTH =  new DERObjectIdentifier("1.3.36.8.3.14");
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.831 -0500", hash_original_field = "C892E218C458E4D5433134662755C17F", hash_generated_field = "587BAD00A55BF518298D870F21FA8435")
+
+    public static final DERObjectIdentifier POSTAL_ADDRESS = new DERObjectIdentifier("2.5.4.16");
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.834 -0500", hash_original_field = "6FE626B521B4AAC85AEA0A402A79AA98", hash_generated_field = "EFCF83D1673ED3AA566EA2CBA7E1FCE8")
+
+    public static final DERObjectIdentifier DMD_NAME = new DERObjectIdentifier("2.5.4.54");
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.837 -0500", hash_original_field = "8DA62222BE5ABB5D41D75AECFE738C8A", hash_generated_field = "9E94AA66AACE8B4A0BE080CCD0FAC70F")
+
+    public static final DERObjectIdentifier TELEPHONE_NUMBER = X509ObjectIdentifiers.id_at_telephoneNumber;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.840 -0500", hash_original_field = "F4E9AD83FB9FA1AC2DAC854510EEF810", hash_generated_field = "FFAD4425897D716BCD593C09C46AFD73")
+
+    public static final DERObjectIdentifier NAME = X509ObjectIdentifiers.id_at_name;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.843 -0500", hash_original_field = "7A52801220B5B641D1C3965842F88193", hash_generated_field = "584A7AECA4B0ACA0DBBC90E0BD7C9332")
+
+    public static final DERObjectIdentifier EmailAddress = PKCSObjectIdentifiers.pkcs_9_at_emailAddress;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.845 -0500", hash_original_field = "A25D3A9F838B0783AC81B66E39A852BE", hash_generated_field = "CCAA56F97463C5118260AD6DD1DDC80F")
+
+    public static final DERObjectIdentifier UnstructuredName = PKCSObjectIdentifiers.pkcs_9_at_unstructuredName;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.848 -0500", hash_original_field = "895770A4CBCA274AC674A78BCE0FB03C", hash_generated_field = "342508E8CA88924FDFDA1D381AFD3338")
+
+    public static final DERObjectIdentifier UnstructuredAddress = PKCSObjectIdentifiers.pkcs_9_at_unstructuredAddress;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.850 -0500", hash_original_field = "A6687F29245D3E2FC23B9E8AFB5C8BBF", hash_generated_field = "021E5BC1569FD92F01DB6A01724523C2")
+
+    public static final DERObjectIdentifier E = EmailAddress;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.853 -0500", hash_original_field = "866FA73658D1416F11983C47F692BC40", hash_generated_field = "1334C446DFB8D545DC3107A020531330")
+
+    public static final DERObjectIdentifier DC = new DERObjectIdentifier("0.9.2342.19200300.100.1.25");
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.855 -0500", hash_original_field = "743CAEB97E7D363A5238FD78BCE894F5", hash_generated_field = "E4CD602AF9770F8D3B9404D5F2532570")
+
+    public static final DERObjectIdentifier UID = new DERObjectIdentifier("0.9.2342.19200300.100.1.1");
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.857 -0500", hash_original_field = "0D67DF502A72844A0964BC1D0556CF02", hash_generated_field = "BB46BFBE07BCC7526C461E59C789AB8E")
+
+    public static boolean DefaultReverse = false;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.860 -0500", hash_original_field = "BB36420B0085FE57C4931038638024E1", hash_generated_field = "158D1B2B36F24863D1B8E7C3B9D7F7A2")
+
+    public static final Hashtable DefaultSymbols = new Hashtable();
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.863 -0500", hash_original_field = "2432E3E061948F72A55E387668E5BCF8", hash_generated_field = "C9354DE849CFE049572C4221C51E7309")
+
+    public static final Hashtable RFC2253Symbols = new Hashtable();
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.865 -0500", hash_original_field = "89FDAC41F8450B8A51C2C7B094C0B651", hash_generated_field = "10F89287F10A6638EB4EE375195390E2")
+
+    public static final Hashtable RFC1779Symbols = new Hashtable();
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.868 -0500", hash_original_field = "6A9B8BA2687E2B038C6E773AEF73F5D5", hash_generated_field = "9EEF14EBA4A5D75E5091872B5F8BAEFC")
+
+    public static final Hashtable DefaultLookUp = new Hashtable();
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.870 -0500", hash_original_field = "AAF24ECDD294C1626FFC3EDAE8C51F4C", hash_generated_field = "914593EB818CF28AF7D26BC6344231F7")
+
+    public static final Hashtable OIDLookUp = DefaultSymbols;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.872 -0500", hash_original_field = "90B5DE8F2CE0353CE1B72C7F34419119", hash_generated_field = "777E54E742DACB0C5BCAD8347B24CD80")
+
+    public static final Hashtable SymbolLookUp = DefaultLookUp;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.875 -0500", hash_original_field = "4C49049C10203D323EC00B264E2B128E", hash_generated_field = "D283B4A736D2AC5091CFA69743A46FDD")
+
+    private static final Boolean TRUE = Boolean.TRUE;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.877 -0500", hash_original_field = "A97F87E7EEC56616A0D5FA3208AED11B", hash_generated_field = "0C266C5D45C3B38D3B96B825C1C5DA0B")
+
+    private static final Boolean FALSE = Boolean.FALSE;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.881 -0500", hash_original_field = "4991E2934223DCC25A5EF9D9C72EA338", hash_generated_field = "9B1A952CEBF3178959A402DABEDC0A6B")
+
+
+    private X509NameEntryConverter  converter = null;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.884 -0500", hash_original_field = "8370039E4421170D8B7341A1E9105E8E", hash_generated_field = "C8A65116741473EAA58816E75213B0AF")
+
+    private Vector                  ordering = new Vector();
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.886 -0500", hash_original_field = "D5F4258DC93AB73236ACC763C6FC18B8", hash_generated_field = "F7859DDEE63780863860095D2E4D0AB7")
+
+    private Vector                  values = new Vector();
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.888 -0500", hash_original_field = "A77CAF43271092CCE53A1C59B522B483", hash_generated_field = "93EE51D59E70850C8E38EBF0508102EE")
+
+    private Vector                  added = new Vector();
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.890 -0500", hash_original_field = "67B66723C4558F27E19029159A09253A", hash_generated_field = "37E06257AFCE21CC4EDFE67F34DC271C")
+
+
+    private ASN1Sequence            seq;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.892 -0500", hash_original_field = "B6293280C3B6F91ED7F24C3952096C1C", hash_generated_field = "FFD3E18FB59EA084D3FD8E8945E2AACA")
+
+
+    private boolean                 isHashCodeCalculated;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.895 -0500", hash_original_field = "2D42E71DE4D8857610CF43708417333A", hash_generated_field = "D4D90810E0E6D99534BB2E8797B7FFA9")
+
+    private int                     hashCodeValue;
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.902 -0500", hash_original_method = "E0A402814C87C5337199B2B0EDD62792", hash_generated_method = "4C8C3C7FF82B27C841BA9074162C5C32")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.204 -0400", hash_original_method = "964F6D63AF200DB73DB551657282148F", hash_generated_method = "8383E393BB94621645487748E96BE6DD")
-    private DERObjectIdentifier decodeOID(
-        String      name,
-        Hashtable   lookUp) {
-        addTaint(lookUp.getTaint());
-        addTaint(name.getTaint());
-        if(Strings.toUpperCase(name).startsWith("OID."))        
+protected X509Name()
+    {
+        // constructure use by new X500 Name class
+    }
+    /**
+     * Constructor from ASN1Sequence
+     *
+     * the principal will be a list of constructed sets, each containing an (OID, String) pair.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.905 -0500", hash_original_method = "88A842BBAF40DA82D57137327D6884BA", hash_generated_method = "84F6C70CA1BEF05ED67A3F94D642FC68")
+    
+public X509Name(
+        ASN1Sequence  seq)
+    {
+        this.seq = seq;
+
+        Enumeration e = seq.getObjects();
+
+        while (e.hasMoreElements())
         {
-DERObjectIdentifier varD445AEFB1A26516FDA5584BF11DCB649_447691008 =             new DERObjectIdentifier(name.substring(4));
-            varD445AEFB1A26516FDA5584BF11DCB649_447691008.addTaint(taint);
-            return varD445AEFB1A26516FDA5584BF11DCB649_447691008;
-        } //End block
-        else
-        if(name.charAt(0) >= '0' && name.charAt(0) <= '9')        
-        {
-DERObjectIdentifier varDB076E8F3C9AA5817E9BAB61D656C690_280868388 =             new DERObjectIdentifier(name);
-            varDB076E8F3C9AA5817E9BAB61D656C690_280868388.addTaint(taint);
-            return varDB076E8F3C9AA5817E9BAB61D656C690_280868388;
-        } //End block
-        DERObjectIdentifier oid = (DERObjectIdentifier)lookUp.get(Strings.toLowerCase(name));
-        if(oid == null)        
-        {
-            IllegalArgumentException varA0F19C560D30A8661B2D4483C63CCEC3_556088603 = new IllegalArgumentException("Unknown object id - " + name + " - passed to distinguished name");
-            varA0F19C560D30A8661B2D4483C63CCEC3_556088603.addTaint(taint);
-            throw varA0F19C560D30A8661B2D4483C63CCEC3_556088603;
-        } //End block
-DERObjectIdentifier var6EE0E520E830DF58CC7591C0A7BECFB6_366033994 =         oid;
-        var6EE0E520E830DF58CC7591C0A7BECFB6_366033994.addTaint(taint);
-        return var6EE0E520E830DF58CC7591C0A7BECFB6_366033994;
-        // ---------- Original Method ----------
-        //if (Strings.toUpperCase(name).startsWith("OID."))
-        //{
-            //return new DERObjectIdentifier(name.substring(4));
-        //}
-        //else if (name.charAt(0) >= '0' && name.charAt(0) <= '9')
-        //{
-            //return new DERObjectIdentifier(name);
-        //}
-        //DERObjectIdentifier oid = (DERObjectIdentifier)lookUp.get(Strings.toLowerCase(name));
-        //if (oid == null)
-        //{
-            //throw new IllegalArgumentException("Unknown object id - " + name + " - passed to distinguished name");
-        //}
-        //return oid;
+            ASN1Set         set = ASN1Set.getInstance(((DEREncodable)e.nextElement()).getDERObject());
+
+            for (int i = 0; i < set.size(); i++) 
+            {
+                   ASN1Sequence s = ASN1Sequence.getInstance(set.getObjectAt(i));
+
+                   if (s.size() != 2)
+                   {
+                       throw new IllegalArgumentException("badly sized pair");
+                   }
+
+                   ordering.addElement(DERObjectIdentifier.getInstance(s.getObjectAt(0)));
+                   
+                   DEREncodable value = s.getObjectAt(1);
+                   if (value instanceof DERString && !(value instanceof DERUniversalString))
+                   {
+                       String v = ((DERString)value).getString();
+                       if (v.length() > 0 && v.charAt(0) == '#')
+                       {
+                           values.addElement("\\" + v);
+                       }
+                       else
+                       {
+                           values.addElement(v);
+                       }
+                   }
+                   else
+                   {
+                       values.addElement("#" + bytesToString(Hex.encode(value.getDERObject().getDEREncoded())));
+                   }
+                   // BEGIN android-changed
+                   added.addElement(Boolean.valueOf(i != 0));
+                   // END android-changed
+            }
+        }
     }
 
+    /**
+     * constructor from a table of attributes.
+     * <p>
+     * it's is assumed the table contains OID/String pairs, and the contents
+     * of the table are copied into an internal table as part of the
+     * construction process.
+     * <p>
+     * <b>Note:</b> if the name you are trying to generate should be
+     * following a specific ordering, you should use the constructor
+     * with the ordering specified below.
+     * @deprecated use an ordered constructor! The hashtable ordering is rarely correct
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.908 -0500", hash_original_method = "E338E099196C520643EABA462B148868", hash_generated_method = "AE21EDE54C7ECC7ED02380890890761E")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.204 -0400", hash_original_method = "2D101B81AA4F7CB6B72317966361C7FD", hash_generated_method = "2CF88432046725E1793F9B0DED9671EA")
-    public Vector getOIDs() {
-        Vector v = new Vector();
-for(int i = 0;i != ordering.size();i++)
+public X509Name(
+        Hashtable  attributes)
+    {
+        this(null, attributes);
+    }
+
+    /**
+     * Constructor from a table of attributes with ordering.
+     * <p>
+     * it's is assumed the table contains OID/String pairs, and the contents
+     * of the table are copied into an internal table as part of the
+     * construction process. The ordering vector should contain the OIDs
+     * in the order they are meant to be encoded or printed in toString.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.911 -0500", hash_original_method = "0E56A2506DE147DC0FDCD121F4661515", hash_generated_method = "211D2849828CF9FF2A857A4E3A6B6F8C")
+    
+public X509Name(
+        Vector      ordering,
+        Hashtable   attributes)
+    {
+        this(ordering, attributes, new X509DefaultEntryConverter());
+    }
+
+    /**
+     * Constructor from a table of attributes with ordering.
+     * <p>
+     * it's is assumed the table contains OID/String pairs, and the contents
+     * of the table are copied into an internal table as part of the
+     * construction process. The ordering vector should contain the OIDs
+     * in the order they are meant to be encoded or printed in toString.
+     * <p>
+     * The passed in converter will be used to convert the strings into their
+     * ASN.1 counterparts.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.914 -0500", hash_original_method = "391D1DCB58738C4647988CF64EC70334", hash_generated_method = "3BA3642B5ADE2BD217D7E933B5622096")
+    
+public X509Name(
+        Vector                   ordering,
+        Hashtable                attributes,
+        X509NameEntryConverter   converter)
+    {
+        this.converter = converter;
+
+        if (ordering != null)
+        {
+            for (int i = 0; i != ordering.size(); i++)
+            {
+                this.ordering.addElement(ordering.elementAt(i));
+                this.added.addElement(FALSE);
+            }
+        }
+        else
+        {
+            Enumeration     e = attributes.keys();
+
+            while (e.hasMoreElements())
+            {
+                this.ordering.addElement(e.nextElement());
+                this.added.addElement(FALSE);
+            }
+        }
+
+        for (int i = 0; i != this.ordering.size(); i++)
+        {
+            DERObjectIdentifier     oid = (DERObjectIdentifier)this.ordering.elementAt(i);
+
+            if (attributes.get(oid) == null)
+            {
+                throw new IllegalArgumentException("No attribute for object id - " + oid.getId() + " - passed to distinguished name");
+            }
+
+            this.values.addElement(attributes.get(oid)); // copy the hash table
+        }
+    }
+
+    /**
+     * Takes two vectors one of the oids and the other of the values.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.917 -0500", hash_original_method = "09339315E74F09704223BAA476796553", hash_generated_method = "2C68E0B96E192360B579F5B500C88F97")
+    
+public X509Name(
+        Vector  oids,
+        Vector  values)
+    {
+        this(oids, values, new X509DefaultEntryConverter());
+    }
+
+    /**
+     * Takes two vectors one of the oids and the other of the values.
+     * <p>
+     * The passed in converter will be used to convert the strings into their
+     * ASN.1 counterparts.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.920 -0500", hash_original_method = "492C8BC9ACE864159B4ED5D85649FE7D", hash_generated_method = "EEAA5DD329489A39C31FC59FF3F1E428")
+    
+public X509Name(
+        Vector                  oids,
+        Vector                  values,
+        X509NameEntryConverter  converter)
+    {
+        this.converter = converter;
+
+        if (oids.size() != values.size())
+        {
+            throw new IllegalArgumentException("oids vector must be same length as values.");
+        }
+
+        for (int i = 0; i < oids.size(); i++)
+        {
+            this.ordering.addElement(oids.elementAt(i));
+            this.values.addElement(values.elementAt(i));
+            this.added.addElement(FALSE);
+        }
+    }
+
+//    private Boolean isEncoded(String s)
+//    {
+//        if (s.charAt(0) == '#')
+//        {
+//            return TRUE;
+//        }
+//
+//        return FALSE;
+//    }
+
+    /**
+     * Takes an X509 dir name as a string of the format "C=AU, ST=Victoria", or
+     * some such, converting it into an ordered set of name attributes.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.922 -0500", hash_original_method = "4DE51E849F59B0AA80C7ECB38F0D9925", hash_generated_method = "75DE0EBDD6E564D92EC7944E0433C01E")
+    
+public X509Name(
+        String  dirName)
+    {
+        this(DefaultReverse, DefaultLookUp, dirName);
+    }
+
+    /**
+     * Takes an X509 dir name as a string of the format "C=AU, ST=Victoria", or
+     * some such, converting it into an ordered set of name attributes with each
+     * string value being converted to its associated ASN.1 type using the passed
+     * in converter.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.925 -0500", hash_original_method = "225E7940DFC3CDF11421E5A31C692555", hash_generated_method = "E9F4A4633FFFB712F3C91CCD1598E010")
+    
+public X509Name(
+        String                  dirName,
+        X509NameEntryConverter  converter)
+    {
+        this(DefaultReverse, DefaultLookUp, dirName, converter);
+    }
+
+    /**
+     * Takes an X509 dir name as a string of the format "C=AU, ST=Victoria", or
+     * some such, converting it into an ordered set of name attributes. If reverse
+     * is true, create the encoded version of the sequence starting from the
+     * last element in the string.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.928 -0500", hash_original_method = "A1386F925B8F997747CFC9FBEC64818C", hash_generated_method = "4F117C36CA82C778618B1D2E8208F876")
+    
+public X509Name(
+        boolean reverse,
+        String  dirName)
+    {
+        this(reverse, DefaultLookUp, dirName);
+    }
+
+    /**
+     * Takes an X509 dir name as a string of the format "C=AU, ST=Victoria", or
+     * some such, converting it into an ordered set of name attributes with each
+     * string value being converted to its associated ASN.1 type using the passed
+     * in converter. If reverse is true the ASN.1 sequence representing the DN will
+     * be built by starting at the end of the string, rather than the start.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.930 -0500", hash_original_method = "0ED99673E1BB44384871E74A0AAAAEE6", hash_generated_method = "E892788093A2CD439E9F7B181AC8482E")
+    
+public X509Name(
+        boolean                 reverse,
+        String                  dirName,
+        X509NameEntryConverter  converter)
+    {
+        this(reverse, DefaultLookUp, dirName, converter);
+    }
+
+    /**
+     * Takes an X509 dir name as a string of the format "C=AU, ST=Victoria", or
+     * some such, converting it into an ordered set of name attributes. lookUp
+     * should provide a table of lookups, indexed by lowercase only strings and
+     * yielding a DERObjectIdentifier, other than that OID. and numeric oids
+     * will be processed automatically.
+     * <br>
+     * If reverse is true, create the encoded version of the sequence
+     * starting from the last element in the string.
+     * @param reverse true if we should start scanning from the end (RFC 2553).
+     * @param lookUp table of names and their oids.
+     * @param dirName the X.500 string to be parsed.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.933 -0500", hash_original_method = "AD0C5D6A617F7C4CAD4929B6BAF77A7F", hash_generated_method = "9B10DB69B913282F9475EFAEA3120D4C")
+    
+public X509Name(
+        boolean     reverse,
+        Hashtable   lookUp,
+        String      dirName)
+    {
+        this(reverse, lookUp, dirName, new X509DefaultEntryConverter());
+    }
+
+    /**
+     * Takes an X509 dir name as a string of the format "C=AU, ST=Victoria", or
+     * some such, converting it into an ordered set of name attributes. lookUp
+     * should provide a table of lookups, indexed by lowercase only strings and
+     * yielding a DERObjectIdentifier, other than that OID. and numeric oids
+     * will be processed automatically. The passed in converter is used to convert the
+     * string values to the right of each equals sign to their ASN.1 counterparts.
+     * <br>
+     * @param reverse true if we should start scanning from the end, false otherwise.
+     * @param lookUp table of names and oids.
+     * @param dirName the string dirName
+     * @param converter the converter to convert string values into their ASN.1 equivalents
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.939 -0500", hash_original_method = "E0536EE704C9789715788F9D659749FC", hash_generated_method = "673D0E77C6829E7F611F2082214D9A94")
+    
+public X509Name(
+        boolean                 reverse,
+        Hashtable               lookUp,
+        String                  dirName,
+        X509NameEntryConverter  converter)
+    {
+        this.converter = converter;
+        X509NameTokenizer   nTok = new X509NameTokenizer(dirName);
+
+        while (nTok.hasMoreTokens())
+        {
+            String  token = nTok.nextToken();
+            int     index = token.indexOf('=');
+
+            if (index == -1)
+            {
+                // BEGIN android-changed
+                throw new IllegalArgumentException("badly formatted directory string");
+                // END android-changed
+            }
+
+            String              name = token.substring(0, index);
+            String              value = token.substring(index + 1);
+            DERObjectIdentifier oid = decodeOID(name, lookUp);
+
+            if (value.indexOf('+') > 0)
+            {
+                X509NameTokenizer   vTok = new X509NameTokenizer(value, '+');
+                String  v = vTok.nextToken();
+
+                this.ordering.addElement(oid);
+                this.values.addElement(v);
+                this.added.addElement(FALSE);
+
+                while (vTok.hasMoreTokens())
+                {
+                    String  sv = vTok.nextToken();
+                    int     ndx = sv.indexOf('=');
+
+                    String  nm = sv.substring(0, ndx);
+                    String  vl = sv.substring(ndx + 1);
+                    this.ordering.addElement(decodeOID(nm, lookUp));
+                    this.values.addElement(vl);
+                    this.added.addElement(TRUE);
+                }
+            }
+            else
+            {
+                this.ordering.addElement(oid);
+                this.values.addElement(value);
+                this.added.addElement(FALSE);
+            }
+        }
+
+        if (reverse)
+        {
+            Vector  o = new Vector();
+            Vector  v = new Vector();
+            Vector  a = new Vector();
+
+            int count = 1;
+
+            for (int i = 0; i < this.ordering.size(); i++)
+            {
+                if (((Boolean)this.added.elementAt(i)).booleanValue())
+                {
+                    o.insertElementAt(this.ordering.elementAt(i), count);
+                    v.insertElementAt(this.values.elementAt(i), count);
+                    a.insertElementAt(this.added.elementAt(i), count);
+                    count++;
+                }
+                else
+                {
+                    o.insertElementAt(this.ordering.elementAt(i), 0);
+                    v.insertElementAt(this.values.elementAt(i), 0);
+                    a.insertElementAt(this.added.elementAt(i), 0);
+                    count = 1;
+                }
+            }
+
+            this.ordering = o;
+            this.values = v;
+            this.added = a;
+        }
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.935 -0500", hash_original_method = "964F6D63AF200DB73DB551657282148F", hash_generated_method = "813BD70A3791EAD090BFF26467F4BC63")
+    
+private DERObjectIdentifier decodeOID(
+        String      name,
+        Hashtable   lookUp)
+    {
+        if (Strings.toUpperCase(name).startsWith("OID."))
+        {
+            return new DERObjectIdentifier(name.substring(4));
+        }
+        else if (name.charAt(0) >= '0' && name.charAt(0) <= '9')
+        {
+            return new DERObjectIdentifier(name);
+        }
+
+        DERObjectIdentifier oid = (DERObjectIdentifier)lookUp.get(Strings.toLowerCase(name));
+        if (oid == null)
+        {
+            throw new IllegalArgumentException("Unknown object id - " + name + " - passed to distinguished name");
+        }
+
+        return oid;
+    }
+
+    /**
+     * return a vector of the oids in the name, in the order they were found.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.942 -0500", hash_original_method = "2D101B81AA4F7CB6B72317966361C7FD", hash_generated_method = "8FDD2BD7B996DEBBA0343B72267A4050")
+    
+public Vector getOIDs()
+    {
+        Vector  v = new Vector();
+
+        for (int i = 0; i != ordering.size(); i++)
         {
             v.addElement(ordering.elementAt(i));
-        } //End block
-Vector var6DC76BC51820DD65E8396280E884AA78_815994314 =         v;
-        var6DC76BC51820DD65E8396280E884AA78_815994314.addTaint(taint);
-        return var6DC76BC51820DD65E8396280E884AA78_815994314;
-        // ---------- Original Method ----------
-        //Vector  v = new Vector();
-        //for (int i = 0; i != ordering.size(); i++)
-        //{
-            //v.addElement(ordering.elementAt(i));
-        //}
-        //return v;
+        }
+
+        return v;
     }
 
+    /**
+     * return a vector of the values found in the name, in the order they
+     * were found.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.944 -0500", hash_original_method = "F648A0377CD08E6DCA69D49343904A7E", hash_generated_method = "11B393EA383F1D6622D44834F15AC67C")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.204 -0400", hash_original_method = "F648A0377CD08E6DCA69D49343904A7E", hash_generated_method = "8C3DEDB1D65E0B41D9EE36CD2B0B468F")
-    public Vector getValues() {
-        Vector v = new Vector();
-for(int i = 0;i != values.size();i++)
+public Vector getValues()
+    {
+        Vector  v = new Vector();
+
+        for (int i = 0; i != values.size(); i++)
         {
             v.addElement(values.elementAt(i));
-        } //End block
-Vector var6DC76BC51820DD65E8396280E884AA78_1602479944 =         v;
-        var6DC76BC51820DD65E8396280E884AA78_1602479944.addTaint(taint);
-        return var6DC76BC51820DD65E8396280E884AA78_1602479944;
-        // ---------- Original Method ----------
-        //Vector  v = new Vector();
-        //for (int i = 0; i != values.size(); i++)
-        //{
-            //v.addElement(values.elementAt(i));
-        //}
-        //return v;
+        }
+
+        return v;
     }
 
+    /**
+     * return a vector of the values found in the name, in the order they
+     * were found, with the DN label corresponding to passed in oid.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.947 -0500", hash_original_method = "B5B05F9A72085C1CEE80B6960CBCC4AA", hash_generated_method = "F2CD46D39A604F19567622D7DC53FDE3")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.204 -0400", hash_original_method = "B5B05F9A72085C1CEE80B6960CBCC4AA", hash_generated_method = "E1BA681B4C3C90BBA2879D038B0740A2")
-    public Vector getValues(
-        DERObjectIdentifier oid) {
-        addTaint(oid.getTaint());
-        Vector v = new Vector();
-for(int i = 0;i != values.size();i++)
+public Vector getValues(
+        DERObjectIdentifier oid)
+    {
+        Vector  v = new Vector();
+
+        for (int i = 0; i != values.size(); i++)
         {
-            if(ordering.elementAt(i).equals(oid))            
+            if (ordering.elementAt(i).equals(oid))
             {
                 String val = (String)values.elementAt(i);
-                if(val.length() > 2 && val.charAt(0) == '\\' && val.charAt(1) == '#')                
+
+                if (val.length() > 2 && val.charAt(0) == '\\' && val.charAt(1) == '#')
                 {
                     v.addElement(val.substring(1));
-                } //End block
+                }
                 else
                 {
                     v.addElement(val);
-                } //End block
-            } //End block
-        } //End block
-Vector var6DC76BC51820DD65E8396280E884AA78_832564794 =         v;
-        var6DC76BC51820DD65E8396280E884AA78_832564794.addTaint(taint);
-        return var6DC76BC51820DD65E8396280E884AA78_832564794;
-        // ---------- Original Method ----------
-        //Vector  v = new Vector();
-        //for (int i = 0; i != values.size(); i++)
-        //{
-            //if (ordering.elementAt(i).equals(oid))
-            //{
-                //String val = (String)values.elementAt(i);
-                //if (val.length() > 2 && val.charAt(0) == '\\' && val.charAt(1) == '#')
-                //{
-                    //v.addElement(val.substring(1));
-                //}
-                //else
-                //{
-                    //v.addElement(val);
-                //}
-            //}
-        //}
-        //return v;
+                }
+            }
+        }
+
+        return v;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.949 -0500", hash_original_method = "3947A3064A86A512C4391326C6ABB01D", hash_generated_method = "EC2F005F89183801DBAB204494839EC6")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.205 -0400", hash_original_method = "3947A3064A86A512C4391326C6ABB01D", hash_generated_method = "3DD26A0AC7761C9DB2A9598BA9FD9125")
-    public DERObject toASN1Object() {
-        if(seq == null)        
+public DERObject toASN1Object()
+    {
+        if (seq == null)
         {
-            ASN1EncodableVector vec = new ASN1EncodableVector();
-            ASN1EncodableVector sVec = new ASN1EncodableVector();
-            DERObjectIdentifier lstOid = null;
-for(int i = 0;i != ordering.size();i++)
+            ASN1EncodableVector  vec = new ASN1EncodableVector();
+            ASN1EncodableVector  sVec = new ASN1EncodableVector();
+            DERObjectIdentifier  lstOid = null;
+            
+            for (int i = 0; i != ordering.size(); i++)
             {
-                ASN1EncodableVector v = new ASN1EncodableVector();
-                DERObjectIdentifier oid = (DERObjectIdentifier)ordering.elementAt(i);
+                ASN1EncodableVector     v = new ASN1EncodableVector();
+                DERObjectIdentifier     oid = (DERObjectIdentifier)ordering.elementAt(i);
+
                 v.add(oid);
-                String str = (String)values.elementAt(i);
+
+                String  str = (String)values.elementAt(i);
+
                 v.add(converter.getConvertedValue(oid, str));
-                if(lstOid == null 
-                    || ((Boolean)this.added.elementAt(i)).booleanValue())                
+ 
+                if (lstOid == null 
+                    || ((Boolean)this.added.elementAt(i)).booleanValue())
                 {
                     sVec.add(new DERSequence(v));
-                } //End block
+                }
                 else
                 {
                     vec.add(new DERSet(sVec));
                     sVec = new ASN1EncodableVector();
+                    
                     sVec.add(new DERSequence(v));
-                } //End block
+                }
+                
                 lstOid = oid;
-            } //End block
+            }
+            
             vec.add(new DERSet(sVec));
+            
             seq = new DERSequence(vec);
-        } //End block
-DERObject var42A78C062640017A329FA085150BC1B8_884349102 =         seq;
-        var42A78C062640017A329FA085150BC1B8_884349102.addTaint(taint);
-        return var42A78C062640017A329FA085150BC1B8_884349102;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        }
+
+        return seq;
     }
 
+    /**
+     * @param inOrder if true the order of both X509 names must be the same,
+     * as well as the values associated with each element.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.952 -0500", hash_original_method = "280DBAE44A81315C42DC75BD60909480", hash_generated_method = "9521315A265A3D7B1BDAA93659BA6D02")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.205 -0400", hash_original_method = "280DBAE44A81315C42DC75BD60909480", hash_generated_method = "6ED7AF80B00B74E308EB38946A167614")
-    public boolean equals(Object obj, boolean inOrder) {
-        addTaint(inOrder);
-        addTaint(obj.getTaint());
-        if(!inOrder)        
+public boolean equals(Object obj, boolean inOrder)
+    {
+        if (!inOrder)
         {
-            boolean var6B45452ACCD7D93A4F0BF18AB7DE1D52_1251856516 = (this.equals(obj));
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1594954387 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1594954387;
-        } //End block
-        if(obj == this)        
+            return this.equals(obj);
+        }
+
+        if (obj == this)
         {
-            boolean varB326B5062B2F0E69046810717534CB09_1455429313 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1505482107 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1505482107;
-        } //End block
-        if(!(obj instanceof X509Name || obj instanceof ASN1Sequence))        
+            return true;
+        }
+
+        if (!(obj instanceof X509Name || obj instanceof ASN1Sequence))
         {
-            boolean var68934A3E9455FA72420237EB05902327_1313163636 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_267518993 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_267518993;
-        } //End block
+            return false;
+        }
+
         DERObject derO = ((DEREncodable)obj).getDERObject();
-        if(this.getDERObject().equals(derO))        
+
+        if (this.getDERObject().equals(derO))
         {
-            boolean varB326B5062B2F0E69046810717534CB09_1364345689 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_985347805 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_985347805;
-        } //End block
+            return true;
+        }
+
         X509Name other;
-        try 
+
+        try
         {
             other = X509Name.getInstance(obj);
-        } //End block
+        }
         catch (IllegalArgumentException e)
         {
-            boolean var68934A3E9455FA72420237EB05902327_207118863 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1531628278 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1531628278;
-        } //End block
-        int orderingSize = ordering.size();
-        if(orderingSize != other.ordering.size())        
+            return false;
+        }
+
+        int      orderingSize = ordering.size();
+
+        if (orderingSize != other.ordering.size())
         {
-            boolean var68934A3E9455FA72420237EB05902327_1194845051 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1413512116 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1413512116;
-        } //End block
-for(int i = 0;i < orderingSize;i++)
+            return false;
+        }
+
+        for (int i = 0; i < orderingSize; i++)
         {
-            DERObjectIdentifier oid = (DERObjectIdentifier)ordering.elementAt(i);
-            DERObjectIdentifier oOid = (DERObjectIdentifier)other.ordering.elementAt(i);
-            if(oid.equals(oOid))            
+            DERObjectIdentifier  oid = (DERObjectIdentifier)ordering.elementAt(i);
+            DERObjectIdentifier  oOid = (DERObjectIdentifier)other.ordering.elementAt(i);
+
+            if (oid.equals(oOid))
             {
                 String value = (String)values.elementAt(i);
                 String oValue = (String)other.values.elementAt(i);
-                if(!equivalentStrings(value, oValue))                
+
+                if (!equivalentStrings(value, oValue))
                 {
-                    boolean var68934A3E9455FA72420237EB05902327_962909987 = (false);
-                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1810339173 = getTaintBoolean();
-                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_1810339173;
-                } //End block
-            } //End block
+                    return false;
+                }
+            }
             else
             {
-                boolean var68934A3E9455FA72420237EB05902327_491039478 = (false);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1383802082 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1383802082;
-            } //End block
-        } //End block
-        boolean varB326B5062B2F0E69046810717534CB09_1863015482 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_169313691 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_169313691;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                return false;
+            }
+        }
+
+        return true;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.956 -0500", hash_original_method = "F1AF8C1EFC711A1D842EED436165BEED", hash_generated_method = "E12114BF123A62D0442731AC9267F725")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.207 -0400", hash_original_method = "F1AF8C1EFC711A1D842EED436165BEED", hash_generated_method = "F2A02CF5F15F7615F60B14B7A1E5C2D8")
-    public int hashCode() {
-        if(isHashCodeCalculated)        
+public int hashCode()
+    {
+        if (isHashCodeCalculated)
         {
-            int var4D002D69417019F289C8061B82207DD2_531151390 = (hashCodeValue);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_628577483 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_628577483;
-        } //End block
+            return hashCodeValue;
+        }
+
         isHashCodeCalculated = true;
-for(int i = 0;i != ordering.size();i += 1)
+
+        // this needs to be order independent, like equals
+        for (int i = 0; i != ordering.size(); i += 1)
         {
             String value = (String)values.elementAt(i);
+
             value = canonicalize(value);
             value = stripInternalSpaces(value);
+
             hashCodeValue ^= ordering.elementAt(i).hashCode();
             hashCodeValue ^= value.hashCode();
-        } //End block
-        int var4D002D69417019F289C8061B82207DD2_1210636542 = (hashCodeValue);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_783183055 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_783183055;
-        // ---------- Original Method ----------
-        //if (isHashCodeCalculated)
-        //{
-            //return hashCodeValue;
-        //}
-        //isHashCodeCalculated = true;
-        //for (int i = 0; i != ordering.size(); i += 1)
-        //{
-            //String value = (String)values.elementAt(i);
-            //value = canonicalize(value);
-            //value = stripInternalSpaces(value);
-            //hashCodeValue ^= ordering.elementAt(i).hashCode();
-            //hashCodeValue ^= value.hashCode();
-        //}
-        //return hashCodeValue;
+        }
+
+        return hashCodeValue;
     }
 
+    /**
+     * test for equality - note: case is ignored.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.959 -0500", hash_original_method = "9BE112C8870FAD3CF61652B8C6BD4A74", hash_generated_method = "F2D77CB590F7FA9E0FF8D44FB616069C")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.208 -0400", hash_original_method = "9BE112C8870FAD3CF61652B8C6BD4A74", hash_generated_method = "D45D9B2B3341F51E18C7CF289164C610")
-    public boolean equals(Object obj) {
-        addTaint(obj.getTaint());
-        if(obj == this)        
+public boolean equals(Object obj)
+    {
+        if (obj == this)
         {
-            boolean varB326B5062B2F0E69046810717534CB09_252395888 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1672839645 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1672839645;
-        } //End block
-        if(!(obj instanceof X509Name || obj instanceof ASN1Sequence))        
+            return true;
+        }
+
+        if (!(obj instanceof X509Name || obj instanceof ASN1Sequence))
         {
-            boolean var68934A3E9455FA72420237EB05902327_712542147 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1625572076 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1625572076;
-        } //End block
+            return false;
+        }
+        
         DERObject derO = ((DEREncodable)obj).getDERObject();
-        if(this.getDERObject().equals(derO))        
+        
+        if (this.getDERObject().equals(derO))
         {
-            boolean varB326B5062B2F0E69046810717534CB09_1312569507 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1632155146 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1632155146;
-        } //End block
+            return true;
+        }
+
         X509Name other;
-        try 
+
+        try
         {
             other = X509Name.getInstance(obj);
-        } //End block
+        }
         catch (IllegalArgumentException e)
+        { 
+            return false;
+        }
+
+        int      orderingSize = ordering.size();
+
+        if (orderingSize != other.ordering.size())
         {
-            boolean var68934A3E9455FA72420237EB05902327_1943803498 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1490442482 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1490442482;
-        } //End block
-        int orderingSize = ordering.size();
-        if(orderingSize != other.ordering.size())        
-        {
-            boolean var68934A3E9455FA72420237EB05902327_1138604840 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1165452499 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1165452499;
-        } //End block
+            return false;
+        }
+        
         boolean[] indexes = new boolean[orderingSize];
-        int start;
-        int end;
-        int delta;
-        if(ordering.elementAt(0).equals(other.ordering.elementAt(0)))        
+        int       start, end, delta;
+
+        if (ordering.elementAt(0).equals(other.ordering.elementAt(0)))   // guess forward
         {
             start = 0;
             end = orderingSize;
             delta = 1;
-        } //End block
-        else
+        }
+        else  // guess reversed - most common problem
         {
             start = orderingSize - 1;
             end = -1;
             delta = -1;
-        } //End block
-for(int i = start;i != end;i += delta)
+        }
+
+        for (int i = start; i != end; i += delta)
         {
-            boolean found = false;
-            DERObjectIdentifier oid = (DERObjectIdentifier)ordering.elementAt(i);
-            String value = (String)values.elementAt(i);
-for(int j = 0;j < orderingSize;j++)
+            boolean              found = false;
+            DERObjectIdentifier  oid = (DERObjectIdentifier)ordering.elementAt(i);
+            String               value = (String)values.elementAt(i);
+
+            for (int j = 0; j < orderingSize; j++)
             {
-                if(indexes[j])                
+                if (indexes[j])
                 {
                     continue;
-                } //End block
+                }
+
                 DERObjectIdentifier oOid = (DERObjectIdentifier)other.ordering.elementAt(j);
-                if(oid.equals(oOid))                
+
+                if (oid.equals(oOid))
                 {
                     String oValue = (String)other.values.elementAt(j);
-                    if(equivalentStrings(value, oValue))                    
+
+                    if (equivalentStrings(value, oValue))
                     {
                         indexes[j] = true;
                         found      = true;
                         break;
-                    } //End block
-                } //End block
-            } //End block
-            if(!found)            
+                    }
+                }
+            }
+
+            if (!found)
             {
-                boolean var68934A3E9455FA72420237EB05902327_457367026 = (false);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_620308623 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_620308623;
-            } //End block
-        } //End block
-        boolean varB326B5062B2F0E69046810717534CB09_20101538 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1266625369 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1266625369;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                return false;
+            }
+        }
+        
+        return true;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.961 -0500", hash_original_method = "4C05CDE4A9C2B68738F6FCFBDDBEA55B", hash_generated_method = "0DC697C632F8E307989A51314BBE9F7A")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.208 -0400", hash_original_method = "4C05CDE4A9C2B68738F6FCFBDDBEA55B", hash_generated_method = "4F32A910B539D22150FE787957D1078F")
-    private boolean equivalentStrings(String s1, String s2) {
-        addTaint(s2.getTaint());
-        addTaint(s1.getTaint());
+private boolean equivalentStrings(String s1, String s2)
+    {
         String value = canonicalize(s1);
         String oValue = canonicalize(s2);
-        if(!value.equals(oValue))        
+        
+        if (!value.equals(oValue))
         {
             value = stripInternalSpaces(value);
             oValue = stripInternalSpaces(oValue);
-            if(!value.equals(oValue))            
+
+            if (!value.equals(oValue))
             {
-                boolean var68934A3E9455FA72420237EB05902327_342953632 = (false);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_863170497 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_863170497;
-            } //End block
-        } //End block
-        boolean varB326B5062B2F0E69046810717534CB09_1968044615 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1254820564 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1254820564;
-        // ---------- Original Method ----------
-        //String value = canonicalize(s1);
-        //String oValue = canonicalize(s2);
-        //if (!value.equals(oValue))
-        //{
-            //value = stripInternalSpaces(value);
-            //oValue = stripInternalSpaces(oValue);
-            //if (!value.equals(oValue))
-            //{
-                //return false;
-            //}
-        //}
-        //return true;
+                return false;
+            }
+        }
+
+        return true;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.964 -0500", hash_original_method = "94F49650EDA8FF5038678A71C47387EA", hash_generated_method = "99D555158364CA3DEF5AF3388187EB1F")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.209 -0400", hash_original_method = "94F49650EDA8FF5038678A71C47387EA", hash_generated_method = "662A584615DFF528F598BB2773AF53ED")
-    private String canonicalize(String s) {
-        addTaint(s.getTaint());
+private String canonicalize(String s)
+    {
         String value = Strings.toLowerCase(s.trim());
-        if(value.length() > 0 && value.charAt(0) == '#')        
+        
+        if (value.length() > 0 && value.charAt(0) == '#')
         {
             DERObject obj = decodeObject(value);
-            if(obj instanceof DERString)            
+
+            if (obj instanceof DERString)
             {
                 value = Strings.toLowerCase(((DERString)obj).getString().trim());
-            } //End block
-        } //End block
-String varAF280DA2BC37D8BE783D8499160168DE_479002831 =         value;
-        varAF280DA2BC37D8BE783D8499160168DE_479002831.addTaint(taint);
-        return varAF280DA2BC37D8BE783D8499160168DE_479002831;
-        // ---------- Original Method ----------
-        //String value = Strings.toLowerCase(s.trim());
-        //if (value.length() > 0 && value.charAt(0) == '#')
-        //{
-            //DERObject obj = decodeObject(value);
-            //if (obj instanceof DERString)
-            //{
-                //value = Strings.toLowerCase(((DERString)obj).getString().trim());
-            //}
-        //}
-        //return value;
+            }
+        }
+
+        return value;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.966 -0500", hash_original_method = "DA9861DC0244404A041AD42C955600B0", hash_generated_method = "5DAC87C479937FD6C9024087BA34C1AD")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.209 -0400", hash_original_method = "DA9861DC0244404A041AD42C955600B0", hash_generated_method = "1715BA5BBF60D20A8E5502C0E7F89042")
-    private ASN1Object decodeObject(String oValue) {
-        addTaint(oValue.getTaint());
-        try 
+private ASN1Object decodeObject(String oValue)
+    {
+        try
         {
-ASN1Object varDC836AD1738524F460698D3D090F44A0_2111923778 =             ASN1Object.fromByteArray(Hex.decode(oValue.substring(1)));
-            varDC836AD1738524F460698D3D090F44A0_2111923778.addTaint(taint);
-            return varDC836AD1738524F460698D3D090F44A0_2111923778;
-        } //End block
+            return ASN1Object.fromByteArray(Hex.decode(oValue.substring(1)));
+        }
         catch (IOException e)
         {
-            IllegalStateException var6000C227E791C30DAB9C9FD41D40B372_1492280845 = new IllegalStateException("unknown encoding in name: " + e);
-            var6000C227E791C30DAB9C9FD41D40B372_1492280845.addTaint(taint);
-            throw var6000C227E791C30DAB9C9FD41D40B372_1492280845;
-        } //End block
-        // ---------- Original Method ----------
-        //try
-        //{
-            //return ASN1Object.fromByteArray(Hex.decode(oValue.substring(1)));
-        //}
-        //catch (IOException e)
-        //{
-            //throw new IllegalStateException("unknown encoding in name: " + e);
-        //}
+            throw new IllegalStateException("unknown encoding in name: " + e);
+        }
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.969 -0500", hash_original_method = "1E1DA2E49EB072DAE70813000ABE2315", hash_generated_method = "9DC24EF1383CA0D3011861C7B442B127")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.209 -0400", hash_original_method = "1E1DA2E49EB072DAE70813000ABE2315", hash_generated_method = "0B3967651A83688C2E29590C8AB3C1F4")
-    private String stripInternalSpaces(
-        String str) {
-        addTaint(str.getTaint());
+private String stripInternalSpaces(
+        String str)
+    {
         StringBuffer res = new StringBuffer();
-        if(str.length() != 0)        
+
+        if (str.length() != 0)
         {
-            char c1 = str.charAt(0);
+            char    c1 = str.charAt(0);
+
             res.append(c1);
-for(int k = 1;k < str.length();k++)
+
+            for (int k = 1; k < str.length(); k++)
             {
-                char c2 = str.charAt(k);
-                if(!(c1 == ' ' && c2 == ' '))                
+                char    c2 = str.charAt(k);
+                if (!(c1 == ' ' && c2 == ' '))
                 {
                     res.append(c2);
-                } //End block
+                }
                 c1 = c2;
-            } //End block
-        } //End block
-String varEC7EB75EF3C7FA633C54FC66A0358174_716714771 =         res.toString();
-        varEC7EB75EF3C7FA633C54FC66A0358174_716714771.addTaint(taint);
-        return varEC7EB75EF3C7FA633C54FC66A0358174_716714771;
-        // ---------- Original Method ----------
-        //StringBuffer res = new StringBuffer();
-        //if (str.length() != 0)
-        //{
-            //char    c1 = str.charAt(0);
-            //res.append(c1);
-            //for (int k = 1; k < str.length(); k++)
-            //{
-                //char    c2 = str.charAt(k);
-                //if (!(c1 == ' ' && c2 == ' '))
-                //{
-                    //res.append(c2);
-                //}
-                //c1 = c2;
-            //}
-        //}
-        //return res.toString();
+            }
+        }
+
+        return res.toString();
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.972 -0500", hash_original_method = "276C610AF86C7F7EC8233E2E5B295559", hash_generated_method = "A5562AC24A647AF0B591142A9B8EE0F8")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.209 -0400", hash_original_method = "276C610AF86C7F7EC8233E2E5B295559", hash_generated_method = "72C683AF7BF2C0498E9BE64DE54A298D")
-    private void appendValue(
+private void appendValue(
         StringBuffer        buf,
         Hashtable           oidSymbols,
         DERObjectIdentifier oid,
-        String              value) {
-        addTaint(value.getTaint());
-        addTaint(oid.getTaint());
-        addTaint(oidSymbols.getTaint());
-        addTaint(buf.getTaint());
-        String sym = (String)oidSymbols.get(oid);
-        if(sym != null)        
+        String              value)
+    {
+        String  sym = (String)oidSymbols.get(oid);
+
+        if (sym != null)
         {
             buf.append(sym);
-        } //End block
+        }
         else
         {
             buf.append(oid.getId());
-        } //End block
+        }
+
         buf.append('=');
-        int index = buf.length();
+
+        int     index = buf.length();
+        
         buf.append(value);
-        int end = buf.length();
-        if(value.length() >= 2 && value.charAt(0) == '\\' && value.charAt(1) == '#')        
+
+        int     end = buf.length();
+
+        if (value.length() >= 2 && value.charAt(0) == '\\' && value.charAt(1) == '#')
         {
-            index += 2;
-        } //End block
-        while
-(index != end)        
+            index += 2;   
+        }
+
+        while (index != end)
         {
-            if((buf.charAt(index) == ',')
+            if ((buf.charAt(index) == ',')
                || (buf.charAt(index) == '"')
                || (buf.charAt(index) == '\\')
                || (buf.charAt(index) == '+')
                || (buf.charAt(index) == '=')
                || (buf.charAt(index) == '<')
                || (buf.charAt(index) == '>')
-               || (buf.charAt(index) == ';'))            
+               || (buf.charAt(index) == ';'))
             {
                 buf.insert(index, "\\");
                 index++;
                 end++;
-            } //End block
+            }
+
             index++;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        }
     }
 
+    /**
+     * convert the structure to a string - if reverse is true the
+     * oids and values are listed out starting with the last element
+     * in the sequence (ala RFC 2253), otherwise the string will begin
+     * with the first element of the structure. If no string definition
+     * for the oid is found in oidSymbols the string value of the oid is
+     * added. Two standard symbol tables are provided DefaultSymbols, and
+     * RFC2253Symbols as part of this class.
+     *
+     * @param reverse if true start at the end of the sequence and work back.
+     * @param oidSymbols look up table strings for oids.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.975 -0500", hash_original_method = "656BABE23C68D82FE6D3AB319F560E81", hash_generated_method = "AD96BCE3B23DB4C0476167B5645576D5")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.210 -0400", hash_original_method = "656BABE23C68D82FE6D3AB319F560E81", hash_generated_method = "0F7E955D187C0A0E158EEC04F089EFE0")
-    public String toString(
+public String toString(
         boolean     reverse,
-        Hashtable   oidSymbols) {
-        addTaint(oidSymbols.getTaint());
-        addTaint(reverse);
-        StringBuffer buf = new StringBuffer();
-        Vector components = new Vector();
-        boolean first = true;
+        Hashtable   oidSymbols)
+    {
+        StringBuffer            buf = new StringBuffer();
+        Vector                  components = new Vector();
+        boolean                 first = true;
+
         StringBuffer ava = null;
-for(int i = 0;i < ordering.size();i++)
+
+        for (int i = 0; i < ordering.size(); i++)
         {
-            if(((Boolean)added.elementAt(i)).booleanValue())            
+            if (((Boolean)added.elementAt(i)).booleanValue())
             {
                 ava.append('+');
                 appendValue(ava, oidSymbols,
                     (DERObjectIdentifier)ordering.elementAt(i),
                     (String)values.elementAt(i));
-            } //End block
+            }
             else
             {
                 ava = new StringBuffer();
@@ -992,221 +1118,66 @@ for(int i = 0;i < ordering.size();i++)
                     (DERObjectIdentifier)ordering.elementAt(i),
                     (String)values.elementAt(i));
                 components.addElement(ava);
-            } //End block
-        } //End block
-        if(reverse)        
+            }
+        }
+
+        if (reverse)
         {
-for(int i = components.size() - 1;i >= 0;i--)
+            for (int i = components.size() - 1; i >= 0; i--)
             {
-                if(first)                
+                if (first)
                 {
                     first = false;
-                } //End block
+                }
                 else
                 {
                     buf.append(',');
-                } //End block
+                }
+
                 buf.append(components.elementAt(i).toString());
-            } //End block
-        } //End block
+            }
+        }
         else
         {
-for(int i = 0;i < components.size();i++)
+            for (int i = 0; i < components.size(); i++)
             {
-                if(first)                
+                if (first)
                 {
                     first = false;
-                } //End block
+                }
                 else
                 {
                     buf.append(',');
-                } //End block
+                }
+
                 buf.append(components.elementAt(i).toString());
-            } //End block
-        } //End block
-String var4FC680801218E6372BC708D6FA44AE60_149756947 =         buf.toString();
-        var4FC680801218E6372BC708D6FA44AE60_149756947.addTaint(taint);
-        return var4FC680801218E6372BC708D6FA44AE60_149756947;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            }
+        }
+
+        return buf.toString();
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.977 -0500", hash_original_method = "B6C7D564A6D3D0BE9A656CE0C6CFB554", hash_generated_method = "6E98F280D567BB4804327BA6C2203108")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.211 -0400", hash_original_method = "B6C7D564A6D3D0BE9A656CE0C6CFB554", hash_generated_method = "378794CEEE2AB1A23A8EBB1C5DC390AF")
-    private String bytesToString(
-        byte[] data) {
-        addTaint(data[0]);
-        char[] cs = new char[data.length];
-for(int i = 0;i != cs.length;i++)
+private String bytesToString(
+        byte[] data)
+    {
+        char[]  cs = new char[data.length];
+
+        for (int i = 0; i != cs.length; i++)
         {
             cs[i] = (char)(data[i] & 0xff);
-        } //End block
-String varEE3C15FF17401E8EE402ABCA933B75C8_395855674 =         new String(cs);
-        varEE3C15FF17401E8EE402ABCA933B75C8_395855674.addTaint(taint);
-        return varEE3C15FF17401E8EE402ABCA933B75C8_395855674;
-        // ---------- Original Method ----------
-        //char[]  cs = new char[data.length];
-        //for (int i = 0; i != cs.length; i++)
-        //{
-            //cs[i] = (char)(data[i] & 0xff);
-        //}
-        //return new String(cs);
+        }
+
+        return new String(cs);
     }
-
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.211 -0400", hash_original_method = "E860E9E8B8CF997531DC86A289D376AE", hash_generated_method = "6E140EB15D6135BBD03BAC3F310856A5")
-    public String toString() {
-String varD00BB2E4A865BC001F6C25F341B09FCC_104761465 =         toString(DefaultReverse, DefaultSymbols);
-        varD00BB2E4A865BC001F6C25F341B09FCC_104761465.addTaint(taint);
-        return varD00BB2E4A865BC001F6C25F341B09FCC_104761465;
-        // ---------- Original Method ----------
-        //return toString(DefaultReverse, DefaultSymbols);
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:19.980 -0500", hash_original_method = "E860E9E8B8CF997531DC86A289D376AE", hash_generated_method = "8B72C1A60AC984BE730E0959D0E7CD26")
+    
+public String toString()
+    {
+        return toString(DefaultReverse, DefaultSymbols);
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.211 -0400", hash_original_field = "E177AA3BCF90C6371FF59014C82D88D2", hash_generated_field = "82D687239E3C86279A9A387C3E8AE15F")
-
-    public static final DERObjectIdentifier C = new DERObjectIdentifier("2.5.4.6");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.211 -0400", hash_original_field = "7015CC2DE8BD3D7E95B89FA0CD2F2666", hash_generated_field = "9A0BCC4B2444A7BF0405630803C2F2D0")
-
-    public static final DERObjectIdentifier O = new DERObjectIdentifier("2.5.4.10");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.211 -0400", hash_original_field = "9A5D4B7E4ECE2A9BB425C3345B998E46", hash_generated_field = "6326280D591C30719B3DB5C13338F0A3")
-
-    public static final DERObjectIdentifier OU = new DERObjectIdentifier("2.5.4.11");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.211 -0400", hash_original_field = "A4A00A65CC8B84CBAB3B3F883DE3FF99", hash_generated_field = "E8B45184A7115EE6111EDB1B37A68019")
-
-    public static final DERObjectIdentifier T = new DERObjectIdentifier("2.5.4.12");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.211 -0400", hash_original_field = "BFA71FD8EC8226C6E62235868202C6A4", hash_generated_field = "CF9435847FFC6C3C7927992F9EE3FAFF")
-
-    public static final DERObjectIdentifier CN = new DERObjectIdentifier("2.5.4.3");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.211 -0400", hash_original_field = "9F650D1C8A874B962150648810632848", hash_generated_field = "1C5FE81E2DBFFB02A7D19673EC4A90E2")
-
-    public static final DERObjectIdentifier SN = new DERObjectIdentifier("2.5.4.5");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.211 -0400", hash_original_field = "50FA3A65F1BF8421A7EB643D999BA6AA", hash_generated_field = "2F85801FBF51C8EE5695ECB3E05715B4")
-
-    public static final DERObjectIdentifier STREET = new DERObjectIdentifier("2.5.4.9");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.211 -0400", hash_original_field = "5AC9323E3AB7013AFF904A3D9E7AE793", hash_generated_field = "BDDAF789362E72D2FF3111AE8E110F7A")
-
-    public static final DERObjectIdentifier SERIALNUMBER = SN;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.211 -0400", hash_original_field = "83E634BE0BD02D990AFD5FE5C22B868F", hash_generated_field = "CBB2A0091E475910A1B9F56755855304")
-
-    public static final DERObjectIdentifier L = new DERObjectIdentifier("2.5.4.7");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.211 -0400", hash_original_field = "CE43E33A8A444765C4CC410459950723", hash_generated_field = "FA86D310F2857FB8F860635B33CDE85B")
-
-    public static final DERObjectIdentifier ST = new DERObjectIdentifier("2.5.4.8");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.211 -0400", hash_original_field = "900C53B4AA95A8DF8A53C6824593741F", hash_generated_field = "59FFCD55B0D0B45F483BC2293E395377")
-
-    public static final DERObjectIdentifier SURNAME = new DERObjectIdentifier("2.5.4.4");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.211 -0400", hash_original_field = "1A941C6061399864B810187E9795E1A8", hash_generated_field = "E97C7C5B7041A426BC30CC1454C5DBF7")
-
-    public static final DERObjectIdentifier GIVENNAME = new DERObjectIdentifier("2.5.4.42");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.211 -0400", hash_original_field = "3B788DA4453226CBD0BE4B7A432EF6E0", hash_generated_field = "A5FD4B35D111D951F8765946D5A83284")
-
-    public static final DERObjectIdentifier INITIALS = new DERObjectIdentifier("2.5.4.43");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.211 -0400", hash_original_field = "A2557D3D54AF5E3AE31A9E53F6CB85F0", hash_generated_field = "533BDABA5EA8217D595157FA1EE80ABF")
-
-    public static final DERObjectIdentifier GENERATION = new DERObjectIdentifier("2.5.4.44");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.211 -0400", hash_original_field = "6554E8B92D20941B0A52552C31DD327C", hash_generated_field = "4F43AC9282AD9798244BC73AEDAA5A8D")
-
-    public static final DERObjectIdentifier UNIQUE_IDENTIFIER = new DERObjectIdentifier("2.5.4.45");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.211 -0400", hash_original_field = "5EC2CC421BAEE892929844AF98CC386D", hash_generated_field = "B855455F4EDB294C798C9D3C9026BF51")
-
-    public static final DERObjectIdentifier BUSINESS_CATEGORY = new DERObjectIdentifier(
-                    "2.5.4.15");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.211 -0400", hash_original_field = "5FA3FC0B0C13B35F0314B3478EACE2F1", hash_generated_field = "AFCF615F7F4AD23472ADBFCF9493AE20")
-
-    public static final DERObjectIdentifier POSTAL_CODE = new DERObjectIdentifier(
-                    "2.5.4.17");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.211 -0400", hash_original_field = "D1AC0C308E6330692C598894228A894D", hash_generated_field = "3BEB0664EEAAC66C4E6B3507A541A961")
-
-    public static final DERObjectIdentifier DN_QUALIFIER = new DERObjectIdentifier(
-                    "2.5.4.46");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.212 -0400", hash_original_field = "680CF654F71DAF4F8D2E34F81109BE8B", hash_generated_field = "8BDA30822F069D0EF535FB88FF8A1F36")
-
-    public static final DERObjectIdentifier PSEUDONYM = new DERObjectIdentifier(
-                    "2.5.4.65");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.212 -0400", hash_original_field = "7559D4BCC6B41CF1F1591E5313D3D96C", hash_generated_field = "9420DBC6483B34D87C2038353B444C41")
-
-    public static final DERObjectIdentifier DATE_OF_BIRTH = new DERObjectIdentifier(
-                    "1.3.6.1.5.5.7.9.1");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.212 -0400", hash_original_field = "BBF1794F0A17E2E42707F6ACE95AA8FF", hash_generated_field = "DD23A595DF652DF1A4A46D9CF34396D1")
-
-    public static final DERObjectIdentifier PLACE_OF_BIRTH = new DERObjectIdentifier(
-                    "1.3.6.1.5.5.7.9.2");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.212 -0400", hash_original_field = "D0E9FB33B291E4536A8FB1F8A2D73FEB", hash_generated_field = "653665F25666ED2418201CB7491A2E83")
-
-    public static final DERObjectIdentifier GENDER = new DERObjectIdentifier(
-                    "1.3.6.1.5.5.7.9.3");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.212 -0400", hash_original_field = "E14448FDD84DD8C7143C71E9CB988AEC", hash_generated_field = "60C31DC383F5B2CBA146E21EF7DBE62C")
-
-    public static final DERObjectIdentifier COUNTRY_OF_CITIZENSHIP = new DERObjectIdentifier(
-                    "1.3.6.1.5.5.7.9.4");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.212 -0400", hash_original_field = "23D0CB6366D0BCE573F5EE2192F2AA98", hash_generated_field = "298A701F0CC84796B2E4DA6C024B48DE")
-
-    public static final DERObjectIdentifier COUNTRY_OF_RESIDENCE = new DERObjectIdentifier(
-                    "1.3.6.1.5.5.7.9.5");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.212 -0400", hash_original_field = "D71309D586C2FA6034AFF2E0B1673E1B", hash_generated_field = "543131AACA3F47053FDEC53A1C384306")
-
-    public static final DERObjectIdentifier NAME_AT_BIRTH =  new DERObjectIdentifier("1.3.36.8.3.14");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.212 -0400", hash_original_field = "D32E8904B3B1909A368EA22DEA55AEAE", hash_generated_field = "587BAD00A55BF518298D870F21FA8435")
-
-    public static final DERObjectIdentifier POSTAL_ADDRESS = new DERObjectIdentifier("2.5.4.16");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.212 -0400", hash_original_field = "7393274E24112AE209E570068E2CB377", hash_generated_field = "EFCF83D1673ED3AA566EA2CBA7E1FCE8")
-
-    public static final DERObjectIdentifier DMD_NAME = new DERObjectIdentifier("2.5.4.54");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.212 -0400", hash_original_field = "ABCD051D2584EDF4C7DAC45C2213D37A", hash_generated_field = "9E94AA66AACE8B4A0BE080CCD0FAC70F")
-
-    public static final DERObjectIdentifier TELEPHONE_NUMBER = X509ObjectIdentifiers.id_at_telephoneNumber;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.212 -0400", hash_original_field = "E931C7B03A64786863967F0BC14890C6", hash_generated_field = "FFAD4425897D716BCD593C09C46AFD73")
-
-    public static final DERObjectIdentifier NAME = X509ObjectIdentifiers.id_at_name;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.212 -0400", hash_original_field = "AB5376EA36F8610FEC8AE6621D7491D9", hash_generated_field = "584A7AECA4B0ACA0DBBC90E0BD7C9332")
-
-    public static final DERObjectIdentifier EmailAddress = PKCSObjectIdentifiers.pkcs_9_at_emailAddress;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.212 -0400", hash_original_field = "CCCA67DADCF824B36D120A0A0E7847F2", hash_generated_field = "CCAA56F97463C5118260AD6DD1DDC80F")
-
-    public static final DERObjectIdentifier UnstructuredName = PKCSObjectIdentifiers.pkcs_9_at_unstructuredName;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.212 -0400", hash_original_field = "A1069D8572967482B49C98AED67A215B", hash_generated_field = "342508E8CA88924FDFDA1D381AFD3338")
-
-    public static final DERObjectIdentifier UnstructuredAddress = PKCSObjectIdentifiers.pkcs_9_at_unstructuredAddress;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.212 -0400", hash_original_field = "05C9073B7E40A1D4E6C8466E0DDA9A6F", hash_generated_field = "021E5BC1569FD92F01DB6A01724523C2")
-
-    public static final DERObjectIdentifier E = EmailAddress;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.212 -0400", hash_original_field = "FF41B5069397DB28084CF5A9EA58927A", hash_generated_field = "1334C446DFB8D545DC3107A020531330")
-
-    public static final DERObjectIdentifier DC = new DERObjectIdentifier("0.9.2342.19200300.100.1.25");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.212 -0400", hash_original_field = "A5CF3CCCCD787F36C43EB5EB32ADB0BF", hash_generated_field = "E4CD602AF9770F8D3B9404D5F2532570")
-
-    public static final DERObjectIdentifier UID = new DERObjectIdentifier("0.9.2342.19200300.100.1.1");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.212 -0400", hash_original_field = "93EAA62615B304AC8EF691777F01487C", hash_generated_field = "BB46BFBE07BCC7526C461E59C789AB8E")
-
-    public static boolean DefaultReverse = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.212 -0400", hash_original_field = "F5684916D3BA1C14EACDDDD00DA1C309", hash_generated_field = "158D1B2B36F24863D1B8E7C3B9D7F7A2")
-
-    public static final Hashtable DefaultSymbols = new Hashtable();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.212 -0400", hash_original_field = "B36EDAD4E06FB368958AF79EF01DB8F2", hash_generated_field = "C9354DE849CFE049572C4221C51E7309")
-
-    public static final Hashtable RFC2253Symbols = new Hashtable();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.212 -0400", hash_original_field = "453F4DA5E0995DE0291DC6BE429E78D1", hash_generated_field = "10F89287F10A6638EB4EE375195390E2")
-
-    public static final Hashtable RFC1779Symbols = new Hashtable();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.212 -0400", hash_original_field = "80F42D6B53063097AA147CC39ED38975", hash_generated_field = "9EEF14EBA4A5D75E5091872B5F8BAEFC")
-
-    public static final Hashtable DefaultLookUp = new Hashtable();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.212 -0400", hash_original_field = "553A55526C7B5E0DCD086FBD4EDC9B90", hash_generated_field = "914593EB818CF28AF7D26BC6344231F7")
-
-    public static final Hashtable OIDLookUp = DefaultSymbols;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.212 -0400", hash_original_field = "862868D7B55C07F13D3F93635BF0228A", hash_generated_field = "777E54E742DACB0C5BCAD8347B24CD80")
-
-    public static final Hashtable SymbolLookUp = DefaultLookUp;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.212 -0400", hash_original_field = "F9CC458E79700B174BE3EEB0E2933EF6", hash_generated_field = "D283B4A736D2AC5091CFA69743A46FDD")
-
-    private static final Boolean TRUE = Boolean.TRUE;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.212 -0400", hash_original_field = "FAF750A21704D3B76419462A3FBB66E1", hash_generated_field = "0C266C5D45C3B38D3B96B825C1C5DA0B")
-
-    private static final Boolean FALSE = Boolean.FALSE;
     static {
         DefaultSymbols.put(C, "C");
         DefaultSymbols.put(O, "O");

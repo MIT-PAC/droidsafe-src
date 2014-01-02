@@ -1,6 +1,8 @@
 package com.android.internal.telephony;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
@@ -8,121 +10,56 @@ import droidsafe.annotations.*;
 
 
 public class ApnSetting {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:13.160 -0400", hash_original_field = "D45EC3C4AF38967DE454F9E45BB1CEF4", hash_generated_field = "1B56B32F4BBBFCB07F306A0886B2F6DD")
 
-    public String carrier;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:13.160 -0400", hash_original_field = "006F1F60AC2C8635325E1AE37581797A", hash_generated_field = "43C67387F9D911D56E54C3F641D51852")
-
-    public String apn;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:13.160 -0400", hash_original_field = "431387EB7262E1CFC79B125EB8A67C60", hash_generated_field = "204F02D2F127442F5112CF2440745992")
-
-    public String proxy;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:13.160 -0400", hash_original_field = "901555FB06E346CB065CEB9808DCFC25", hash_generated_field = "B29C4253E03CC2A3CB8BF39AE0A2E0B8")
-
-    public String port;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:13.160 -0400", hash_original_field = "BB1697FE6E01DB169450DB10E0A5F5C5", hash_generated_field = "EB442594E5C6CB6F271D09EB2CE6F4D6")
-
-    public String mmsc;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:13.160 -0400", hash_original_field = "7C0A166C947C00F136A7C6C5F0234458", hash_generated_field = "04E859DEEB689204B556F76B5E3CC499")
-
-    public String mmsProxy;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:13.160 -0400", hash_original_field = "F0AB7A19DFFBCCA97CEB7F6686991DD3", hash_generated_field = "6EF8897D8A281D751BA5B5366F199ABE")
-
-    public String mmsPort;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:13.160 -0400", hash_original_field = "EE11CBB19052E40B07AAC0CA060C23EE", hash_generated_field = "0D37FB1187DC93A5CBFAB3C14B0F27FB")
-
-    public String user;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:13.160 -0400", hash_original_field = "5F4DCC3B5AA765D61D8327DEB882CF99", hash_generated_field = "0446FA69F560C33BCB5F21BC6DCFB254")
-
-    public String password;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:13.160 -0400", hash_original_field = "280FA711B12D488436B7CDCBFB2543FC", hash_generated_field = "32526975D8C21A7F3ED70D70FA9B4A95")
-
-    public int authType;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:13.160 -0400", hash_original_field = "D14A8022B085F9EF19D479CBDD581127", hash_generated_field = "C14D67F278B4AD2B78219EA179DE6529")
-
-    public String[] types;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:13.160 -0400", hash_original_field = "B80BB7740288FDA1F201890375A60C8F", hash_generated_field = "FA0A3841DE31A9B4AD2F31B3665056D8")
-
-    public int id;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:13.160 -0400", hash_original_field = "49057168D24DC9566533EC48326CED2C", hash_generated_field = "E8F4A660D351A64CFB19BF1938B21CA7")
-
-    public String numeric;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:13.160 -0400", hash_original_field = "81788BA0D7D02D81C063DBCA621BA11B", hash_generated_field = "3A97C2FA19B2163E578F6919D504ED80")
-
-    public String protocol;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:13.160 -0400", hash_original_field = "ED60CE11CA492684E5D2ED6F8D0101DF", hash_generated_field = "A23BC43BD5E5C02CE697183561409560")
-
-    public String roamingProtocol;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:13.160 -0400", hash_original_field = "4F380BD482C68A16CFC5784FB21813FE", hash_generated_field = "B7CB42509FAEFB23D011734CE6D1C670")
-
-    public boolean carrierEnabled;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:13.160 -0400", hash_original_field = "040D78A40AE0C384FB528C3EEDCD65F1", hash_generated_field = "CACBC7F220FD0DABA80B6499EE2FA7B6")
-
-    public int bearer;
+    /**
+     * Creates an ApnSetting object from a string.
+     *
+     * @param data the string to read.
+     *
+     * The string must be in one of two formats (newlines added for clarity,
+     * spaces are optional):
+     *
+     * v1 format:
+     *   <carrier>, <apn>, <proxy>, <port>, <mmsc>, <mmsproxy>,
+     *   <mmsport>, <user>, <password>, <authtype>, <mcc>,<mnc>,
+     *   <type>[, <type>...]
+     *
+     * v2 format:
+     *   [ApnSettingV2] <carrier>, <apn>, <proxy>, <port>, <mmsc>, <mmsproxy>,
+     *   <mmsport>, <user>, <password>, <authtype>, <mcc>, <mnc>,
+     *   <type>[| <type>...], <protocol>, <roaming_protocol>, <carrierEnabled>, <bearer>
+     *
+     * Note that the strings generated by toString() do not contain the username
+     * and password and thus cannot be read by this method.
+     *
+     * @see ApnSettingTest
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:19.573 -0500", hash_original_method = "50013D1BFDE90D48B77E5308F2555E14", hash_generated_method = "C8184D0A3CCC7B7E4EB18A24673D33BD")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:13.161 -0400", hash_original_method = "F17703E22091A1B5F76C15F7BC9ABE4F", hash_generated_method = "734F820B59160C8D91EB5207CDDB46F5")
-    public  ApnSetting(int id, String numeric, String carrier, String apn,
-            String proxy, String port,
-            String mmsc, String mmsProxy, String mmsPort,
-            String user, String password, int authType, String[] types,
-            String protocol, String roamingProtocol, boolean carrierEnabled, int bearer) {
-        this.id = id;
-        this.numeric = numeric;
-        this.carrier = carrier;
-        this.apn = apn;
-        this.proxy = proxy;
-        this.port = port;
-        this.mmsc = mmsc;
-        this.mmsProxy = mmsProxy;
-        this.mmsPort = mmsPort;
-        this.user = user;
-        this.password = password;
-        this.authType = authType;
-        this.types = types;
-        this.protocol = protocol;
-        this.roamingProtocol = roamingProtocol;
-        this.carrierEnabled = carrierEnabled;
-        this.bearer = bearer;
-        // ---------- Original Method ----------
-        //this.id = id;
-        //this.numeric = numeric;
-        //this.carrier = carrier;
-        //this.apn = apn;
-        //this.proxy = proxy;
-        //this.port = port;
-        //this.mmsc = mmsc;
-        //this.mmsProxy = mmsProxy;
-        //this.mmsPort = mmsPort;
-        //this.user = user;
-        //this.password = password;
-        //this.authType = authType;
-        //this.types = types;
-        //this.protocol = protocol;
-        //this.roamingProtocol = roamingProtocol;
-        //this.carrierEnabled = carrierEnabled;
-        //this.bearer = bearer;
-    }
-
-    
-    public static ApnSetting fromString(String data) {
+public static ApnSetting fromString(String data) {
         if (data == null) return null;
+
         int version;
+        // matches() operates on the whole string, so append .* to the regex.
         if (data.matches(V2_FORMAT_REGEX + ".*")) {
             version = 2;
             data = data.replaceFirst(V2_FORMAT_REGEX, "");
         } else {
             version = 1;
         }
+
         String[] a = data.split("\\s*,\\s*");
         if (a.length < 14) {
             return null;
         }
+
         int authType;
         try {
             authType = Integer.parseInt(a[12]);
         } catch (Exception e) {
             authType = 0;
         }
+
         String[] typeArray;
         String protocol, roamingProtocol;
         boolean carrierEnabled;
@@ -148,14 +85,96 @@ public class ApnSetting {
             }
             bearer = Integer.parseInt(a[17]);
         }
+
         return new ApnSetting(-1,a[10]+a[11],a[0],a[1],a[2],a[3],a[7],a[8],
                 a[9],a[4],a[5],authType,typeArray,protocol,roamingProtocol,carrierEnabled,bearer);
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:19.521 -0500", hash_original_field = "80A51A39B5DD360D5F7ABA7E9CE088FD", hash_generated_field = "98446639026B9F4F206499ECD891F44B")
 
+
+    static final String V2_FORMAT_REGEX = "^\\[ApnSettingV2\\]\\s*";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:19.524 -0500", hash_original_field = "912D2DCE1116AD3027D0823B814A3825", hash_generated_field = "1B56B32F4BBBFCB07F306A0886B2F6DD")
+
+
+    public  String carrier;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:19.526 -0500", hash_original_field = "CF66D996D363C4130678F1A5558A2B30", hash_generated_field = "43C67387F9D911D56E54C3F641D51852")
+
+    public  String apn;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:19.529 -0500", hash_original_field = "2B03D9F3DE98AC3B24B189EBA054CC41", hash_generated_field = "204F02D2F127442F5112CF2440745992")
+
+    public  String proxy;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:19.531 -0500", hash_original_field = "737990CEEC96D149B37D8E257C785312", hash_generated_field = "B29C4253E03CC2A3CB8BF39AE0A2E0B8")
+
+    public  String port;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:19.534 -0500", hash_original_field = "F01D47B361927F89E45F330E5F3A5FC4", hash_generated_field = "EB442594E5C6CB6F271D09EB2CE6F4D6")
+
+    public  String mmsc;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:19.537 -0500", hash_original_field = "C860D0E45A9B9B16422C4DA17EC6B50B", hash_generated_field = "04E859DEEB689204B556F76B5E3CC499")
+
+    public  String mmsProxy;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:19.539 -0500", hash_original_field = "6CBA00E09C7BC8CE6C2BEDA0F0568746", hash_generated_field = "6EF8897D8A281D751BA5B5366F199ABE")
+
+    public  String mmsPort;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:19.542 -0500", hash_original_field = "B37EB1ED61432756B8E994D3D7BA4599", hash_generated_field = "0D37FB1187DC93A5CBFAB3C14B0F27FB")
+
+    public  String user;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:19.544 -0500", hash_original_field = "2AFEDC818D0EF3384B2D2537704E6E21", hash_generated_field = "0446FA69F560C33BCB5F21BC6DCFB254")
+
+    public  String password;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:19.547 -0500", hash_original_field = "28CB218536AD2A612F6F52D92DA3E7EB", hash_generated_field = "32526975D8C21A7F3ED70D70FA9B4A95")
+
+    public  int authType;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:19.550 -0500", hash_original_field = "AD31D1EACC903A55746FD46BDB9A966C", hash_generated_field = "C14D67F278B4AD2B78219EA179DE6529")
+
+    public  String[] types;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:19.553 -0500", hash_original_field = "53E65FEF28E32C7EDCD1B07B4F5A0DE3", hash_generated_field = "FA0A3841DE31A9B4AD2F31B3665056D8")
+
+    public  int id;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:19.555 -0500", hash_original_field = "5D377290D2A73C797746F0B669946864", hash_generated_field = "E8F4A660D351A64CFB19BF1938B21CA7")
+
+    public  String numeric;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:19.558 -0500", hash_original_field = "DE3F28962485CE99CA97D0A480B93596", hash_generated_field = "3A97C2FA19B2163E578F6919D504ED80")
+
+    public  String protocol;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:19.560 -0500", hash_original_field = "EAE60B5C44C237DAA25F101D0149CFB8", hash_generated_field = "A23BC43BD5E5C02CE697183561409560")
+
+    public  String roamingProtocol;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:19.563 -0500", hash_original_field = "666F2FA7F778C5EDC24D68847E8544EE", hash_generated_field = "B7CB42509FAEFB23D011734CE6D1C670")
+
+    public  boolean carrierEnabled;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:19.565 -0500", hash_original_field = "FA8501B4700B9AC54DBA061B1EFFC89D", hash_generated_field = "CACBC7F220FD0DABA80B6499EE2FA7B6")
+
+    public  int bearer;
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:19.569 -0500", hash_original_method = "F17703E22091A1B5F76C15F7BC9ABE4F", hash_generated_method = "567620C57BEA3857E88E712BCCED9F33")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:13.162 -0400", hash_original_method = "A2933E4E94FCB15D27495600AE7ECB36", hash_generated_method = "059C7C650B1D4AB94F40775403B80CBC")
-    public String toString() {
+public ApnSetting(int id, String numeric, String carrier, String apn,
+            String proxy, String port,
+            String mmsc, String mmsProxy, String mmsPort,
+            String user, String password, int authType, String[] types,
+            String protocol, String roamingProtocol, boolean carrierEnabled, int bearer) {
+        this.id = id;
+        this.numeric = numeric;
+        this.carrier = carrier;
+        this.apn = apn;
+        this.proxy = proxy;
+        this.port = port;
+        this.mmsc = mmsc;
+        this.mmsProxy = mmsProxy;
+        this.mmsPort = mmsPort;
+        this.user = user;
+        this.password = password;
+        this.authType = authType;
+        this.types = types;
+        this.protocol = protocol;
+        this.roamingProtocol = roamingProtocol;
+        this.carrierEnabled = carrierEnabled;
+        this.bearer = bearer;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:19.576 -0500", hash_original_method = "A2933E4E94FCB15D27495600AE7ECB36", hash_generated_method = "B90D3A1B8CDDD45FECAA4AF9318F6404")
+    
+public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("[ApnSettingV2] ")
         .append(carrier)
@@ -168,76 +187,40 @@ public class ApnSetting {
         .append(", ").append(mmsPort)
         .append(", ").append(port)
         .append(", ").append(authType).append(", ");
-for(int i = 0;i < types.length;i++)
-        {
+        for (int i = 0; i < types.length; i++) {
             sb.append(types[i]);
-            if(i < types.length - 1)            
-            {
+            if (i < types.length - 1) {
                 sb.append(" | ");
-            } //End block
-        } //End block
+            }
+        }
         sb.append(", ").append(protocol);
         sb.append(", ").append(roamingProtocol);
         sb.append(", ").append(carrierEnabled);
         sb.append(", ").append(bearer);
-String var2460B846747F8B22185AD8BE722266A5_1641512099 =         sb.toString();
-        var2460B846747F8B22185AD8BE722266A5_1641512099.addTaint(taint);
-        return var2460B846747F8B22185AD8BE722266A5_1641512099;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        return sb.toString();
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:19.578 -0500", hash_original_method = "36728FD5FCF430F65422B3FEF52D0F76", hash_generated_method = "6A727A2E8B225DA666E757126E8EEA8E")
     
-        @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:13.162 -0400", hash_original_method = "36728FD5FCF430F65422B3FEF52D0F76", hash_generated_method = "197E801EE367D349B0135BDCDE484F25")
-    public boolean canHandleType(String type) {
-        addTaint(type.getTaint());
-for(String t : types)
-        {
-            if(t.equals(type) || t.equals(Phone.APN_TYPE_ALL) ||
+public boolean canHandleType(String type) {
+        for (String t : types) {
+            // DEFAULT handles all, and HIPRI is handled by DEFAULT
+            if (t.equals(type) || t.equals(Phone.APN_TYPE_ALL) ||
                     (t.equals(Phone.APN_TYPE_DEFAULT) &&
-                    type.equals(Phone.APN_TYPE_HIPRI)))            
-            {
-                boolean varB326B5062B2F0E69046810717534CB09_1943749947 = (true);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1488161439 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1488161439;
-            } //End block
-        } //End block
-        boolean var68934A3E9455FA72420237EB05902327_588785637 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1822387819 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1822387819;
-        // ---------- Original Method ----------
-        //for (String t : types) {
-            //if (t.equals(type) || t.equals(Phone.APN_TYPE_ALL) ||
-                    //(t.equals(Phone.APN_TYPE_DEFAULT) &&
-                    //type.equals(Phone.APN_TYPE_HIPRI))) {
-                //return true;
-            //}
-        //}
-        //return false;
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:13.162 -0400", hash_original_method = "08D43BEDE35E924972E54800A3F170A8", hash_generated_method = "3389886ECDC7A0F756B880634183DF85")
-    public boolean equals(Object o) {
-        addTaint(o.getTaint());
-        if(o instanceof ApnSetting == false)        
-        {
-        boolean var68934A3E9455FA72420237EB05902327_844492104 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1379269233 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1379269233;
+                    type.equals(Phone.APN_TYPE_HIPRI))) {
+                return true;
+            }
         }
-        boolean var16EE280E18A7FF37820D23FDCEA22EBD_1769837726 = ((this.toString().equals(o.toString())));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_844975042 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_844975042;
-        // ---------- Original Method ----------
-        //if (o instanceof ApnSetting == false) return false;
-        //return (this.toString().equals(o.toString()));
+        return false;
     }
 
+    // TODO - if we have this function we should also have hashCode.
+    // Also should handle changes in type order and perhaps case-insensitivity
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:19.581 -0500", hash_original_method = "08D43BEDE35E924972E54800A3F170A8", hash_generated_method = "7E26A52FCCA10D8B884F3B6A569E864F")
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:13.162 -0400", hash_original_field = "1F57D45CD0E569AD1BA08CA6A234DDE5", hash_generated_field = "98446639026B9F4F206499ECD891F44B")
-
-    static final String V2_FORMAT_REGEX = "^\\[ApnSettingV2\\]\\s*";
+public boolean equals(Object o) {
+        if (o instanceof ApnSetting == false) return false;
+        return (this.toString().equals(o.toString()));
+    }
 }
 

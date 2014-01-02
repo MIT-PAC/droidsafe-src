@@ -1,6 +1,8 @@
 package org.bouncycastle.jce.spec;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import org.bouncycastle.math.ec.ECPoint;
 
@@ -10,31 +12,35 @@ import org.bouncycastle.math.ec.ECPoint;
 
 
 public class ECPublicKeySpec extends ECKeySpec {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.741 -0400", hash_original_field = "7694F4A66316E53C8CDD9D9954BD611D", hash_generated_field = "190FD5BD9908F6C1ABFEFC9764DEAE12")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:34.747 -0500", hash_original_field = "B639ECC6DF5B6C2001EEBC2714C3EDEB", hash_generated_field = "190FD5BD9908F6C1ABFEFC9764DEAE12")
 
-    private ECPoint q;
+    private ECPoint    q;
+
+    /**
+     * base constructor
+     *
+     * @param q the public point on the curve.
+     * @param spec the domain parameters for the curve.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:34.750 -0500", hash_original_method = "1E18973C74B180C46739C7EAE31BBB7B", hash_generated_method = "3A2D71AEC332982B8B2221A1DEBB49C8")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.741 -0400", hash_original_method = "1E18973C74B180C46739C7EAE31BBB7B", hash_generated_method = "E690FA0806CF3BAADEFF6E883C4AF48A")
-    public  ECPublicKeySpec(
+public ECPublicKeySpec(
         ECPoint         q,
-        ECParameterSpec spec) {
+        ECParameterSpec spec)
+    {
         super(spec);
-        addTaint(spec.getTaint());
+
         this.q = q;
-        // ---------- Original Method ----------
-        //this.q = q;
     }
 
+    /**
+     * return the public point q
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:34.752 -0500", hash_original_method = "A7464FB9BEF133E2EB393CD87C3AFDA4", hash_generated_method = "125EC69B3651E626D0E73C8BE7124D18")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.741 -0400", hash_original_method = "A7464FB9BEF133E2EB393CD87C3AFDA4", hash_generated_method = "84261B964FFB9F4EB25C7B7F8A74864A")
-    public ECPoint getQ() {
-ECPoint varBEF1B7662E10AF6D5747729987514CB6_1402204828 =         q;
-        varBEF1B7662E10AF6D5747729987514CB6_1402204828.addTaint(taint);
-        return varBEF1B7662E10AF6D5747729987514CB6_1402204828;
-        // ---------- Original Method ----------
-        //return q;
+public ECPoint getQ()
+    {
+        return q;
     }
 
     

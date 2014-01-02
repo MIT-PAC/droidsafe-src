@@ -1,35 +1,53 @@
 package java.io;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
 public class FileReader extends InputStreamReader {
+
+    /**
+     * Constructs a new FileReader on the given {@code file}.
+     *
+     * @param file
+     *            a File to be opened for reading characters from.
+     * @throws FileNotFoundException
+     *             if {@code file} does not exist.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.668 -0500", hash_original_method = "0939BF332CE432F578D5C221A304222E", hash_generated_method = "DD63061D68715F93ADB26D2C55A0FFBB")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.958 -0400", hash_original_method = "0939BF332CE432F578D5C221A304222E", hash_generated_method = "75E46C7E98044334C539CA4679FBA01F")
-    public  FileReader(File file) throws FileNotFoundException {
+public FileReader(File file) throws FileNotFoundException {
         super(new FileInputStream(file));
-        addTaint(file.getTaint());
-        // ---------- Original Method ----------
     }
 
+    /**
+     * Construct a new FileReader on the given FileDescriptor {@code fd}. Since
+     * a previously opened FileDescriptor is passed as an argument, no
+     * FileNotFoundException can be thrown.
+     *
+     * @param fd
+     *            the previously opened file descriptor.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.670 -0500", hash_original_method = "13E06B0BF199770B67C55D66A2E28679", hash_generated_method = "DE3333235C07BFE2E5A4EC123A0D5F68")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.959 -0400", hash_original_method = "13E06B0BF199770B67C55D66A2E28679", hash_generated_method = "638BA5852A1A0315FBD3EF4022495C6A")
-    public  FileReader(FileDescriptor fd) {
+public FileReader(FileDescriptor fd) {
         super(new FileInputStream(fd));
-        addTaint(fd.getTaint());
-        // ---------- Original Method ----------
     }
 
+    /**
+     * Construct a new FileReader on the given file named {@code filename}.
+     *
+     * @param filename
+     *            an absolute or relative path specifying the file to open.
+     * @throws FileNotFoundException
+     *             if there is no file named {@code filename}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.673 -0500", hash_original_method = "4AC2E8EE80FFC4D42725FA480AA6947B", hash_generated_method = "BD0CE6A83F0A740DDE78B9DFDC68AF98")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.959 -0400", hash_original_method = "4AC2E8EE80FFC4D42725FA480AA6947B", hash_generated_method = "91630CB4DF8A8DF6EA83C591D4B2EE03")
-    public  FileReader(String filename) throws FileNotFoundException {
+public FileReader(String filename) throws FileNotFoundException {
         super(new FileInputStream(filename));
-        addTaint(filename.getTaint());
-        // ---------- Original Method ----------
     }
 
     

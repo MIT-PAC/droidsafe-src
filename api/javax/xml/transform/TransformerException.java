@@ -1,6 +1,8 @@
 package javax.xml.transform;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
@@ -8,309 +10,324 @@ import droidsafe.annotations.*;
 
 
 public class TransformerException extends Exception {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.082 -0400", hash_original_field = "AB1E07F86CA37C6521CC1969EE2AC6C9", hash_generated_field = "242C14456A521485BE94EFFE33D8EF15")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.391 -0500", hash_original_field = "5558AD85FB938A7671619C5EC4E7AF73", hash_generated_field = "FAB3AA9E21148B68815314C0C638BF27")
+
+    private static final long serialVersionUID = 975798773772956428L;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.393 -0500", hash_original_field = "242C14456A521485BE94EFFE33D8EF15", hash_generated_field = "242C14456A521485BE94EFFE33D8EF15")
 
     SourceLocator locator;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.082 -0400", hash_original_field = "666707D818022CC67C8A24390966B951", hash_generated_field = "FB75E61C44B34E5DCDC79855DF4646BE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.399 -0500", hash_original_field = "FB75E61C44B34E5DCDC79855DF4646BE", hash_generated_field = "FB75E61C44B34E5DCDC79855DF4646BE")
 
     Throwable containedException;
+
+    /**
+     * Create a new TransformerException.
+     *
+     * @param message The error or warning message.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.409 -0500", hash_original_method = "ABE089B555C0BBE77A7ADBD2839474AC", hash_generated_method = "000E1DE47EA28A846705866007F87BFF")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.082 -0400", hash_original_method = "ABE089B555C0BBE77A7ADBD2839474AC", hash_generated_method = "2B350626ACE88F11560D0D8824671729")
-    public  TransformerException(String message) {
+public TransformerException(String message) {
+
         super(message);
-        addTaint(message.getTaint());
+
         this.containedException = null;
         this.locator            = null;
-        // ---------- Original Method ----------
-        //this.containedException = null;
-        //this.locator            = null;
     }
 
+    /**
+     * Create a new TransformerException wrapping an existing exception.
+     *
+     * @param e The exception to be wrapped.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.411 -0500", hash_original_method = "BCE7B8322CC2320F24F40E1C57B1D6A6", hash_generated_method = "25936BC200236774CFBBA514A187D197")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.083 -0400", hash_original_method = "BCE7B8322CC2320F24F40E1C57B1D6A6", hash_generated_method = "6B6F250FA67E31550203926FF836ECDC")
-    public  TransformerException(Throwable e) {
+public TransformerException(Throwable e) {
+
         super(e.toString());
+
         this.containedException = e;
         this.locator            = null;
-        // ---------- Original Method ----------
-        //this.containedException = e;
-        //this.locator            = null;
     }
 
+    /**
+     * Wrap an existing exception in a TransformerException.
+     *
+     * <p>This is used for throwing processor exceptions before
+     * the processing has started.</p>
+     *
+     * @param message The error or warning message, or null to
+     *                use the message from the embedded exception.
+     * @param e Any exception
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.414 -0500", hash_original_method = "D45FC511BA6A923B19FFB66FC049AAEB", hash_generated_method = "7756E00B3977CA5B64F45C943CD8A29B")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.084 -0400", hash_original_method = "D45FC511BA6A923B19FFB66FC049AAEB", hash_generated_method = "43BA7BE70D6F7434E28246E7A0ED9534")
-    public  TransformerException(String message, Throwable e) {
+public TransformerException(String message, Throwable e) {
+
         super(((message == null) || (message.length() == 0))
               ? e.toString()
               : message);
-        addTaint(message.getTaint());
+
         this.containedException = e;
         this.locator            = null;
-        // ---------- Original Method ----------
-        //this.containedException = e;
-        //this.locator            = null;
     }
 
+    /**
+     * Create a new TransformerException from a message and a Locator.
+     *
+     * <p>This constructor is especially useful when an application is
+     * creating its own exception from within a DocumentHandler
+     * callback.</p>
+     *
+     * @param message The error or warning message.
+     * @param locator The locator object for the error or warning.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.417 -0500", hash_original_method = "DD07B7FCC3EF7EDD2CCAD748CE266263", hash_generated_method = "D3FF44579D24C5873923A5AFF708148B")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.085 -0400", hash_original_method = "DD07B7FCC3EF7EDD2CCAD748CE266263", hash_generated_method = "7297AB3FA9F370CE449C62251261B4FE")
-    public  TransformerException(String message, SourceLocator locator) {
+public TransformerException(String message, SourceLocator locator) {
+
         super(message);
-        addTaint(message.getTaint());
+
         this.containedException = null;
         this.locator            = locator;
-        // ---------- Original Method ----------
-        //this.containedException = null;
-        //this.locator            = locator;
     }
 
+    /**
+     * Wrap an existing exception in a TransformerException.
+     *
+     * @param message The error or warning message, or null to
+     *                use the message from the embedded exception.
+     * @param locator The locator object for the error or warning.
+     * @param e Any exception
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.419 -0500", hash_original_method = "48CCF75E307E890A227C0CAEA85C6D48", hash_generated_method = "5F88073B7E65B6DD93BD31CCC3EEEE18")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.086 -0400", hash_original_method = "48CCF75E307E890A227C0CAEA85C6D48", hash_generated_method = "D1660D35E82666749AAC5F28B3458DC8")
-    public  TransformerException(String message, SourceLocator locator,
+public TransformerException(String message, SourceLocator locator,
                                 Throwable e) {
+
         super(message);
-        addTaint(message.getTaint());
+
         this.containedException = e;
         this.locator            = locator;
-        // ---------- Original Method ----------
-        //this.containedException = e;
-        //this.locator            = locator;
     }
 
+    /**
+     * Method getLocator retrieves an instance of a SourceLocator
+     * object that specifies where an error occurred.
+     *
+     * @return A SourceLocator object, or null if none was specified.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.395 -0500", hash_original_method = "78CCEDF93B9D36FA2F4D6EE8483F521D", hash_generated_method = "78AB11BCEBBBC2FCF89A2993A49EDCA3")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.086 -0400", hash_original_method = "78CCEDF93B9D36FA2F4D6EE8483F521D", hash_generated_method = "B18312B3193D91A1A34FA047E35C42A0")
-    public SourceLocator getLocator() {
-SourceLocator var33D67455F55B75787251435F488B9C18_977784636 =         locator;
-        var33D67455F55B75787251435F488B9C18_977784636.addTaint(taint);
-        return var33D67455F55B75787251435F488B9C18_977784636;
-        // ---------- Original Method ----------
-        //return locator;
+public SourceLocator getLocator() {
+        return locator;
     }
 
+    /**
+     * Method setLocator sets an instance of a SourceLocator
+     * object that specifies where an error occurred.
+     *
+     * @param location A SourceLocator object, or null to clear the location.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.397 -0500", hash_original_method = "2730D26302DDFE02DFC9B94C57BA2229", hash_generated_method = "6AA84A78185C81C08D20A0C4FF7901E2")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.086 -0400", hash_original_method = "2730D26302DDFE02DFC9B94C57BA2229", hash_generated_method = "3A60D6D9C48F9C8CC784DDE0EBAB1BA2")
-    public void setLocator(SourceLocator location) {
+public void setLocator(SourceLocator location) {
         locator = location;
-        // ---------- Original Method ----------
-        //locator = location;
     }
 
+    /**
+     * This method retrieves an exception that this exception wraps.
+     *
+     * @return An Throwable object, or null.
+     * @see #getCause
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.401 -0500", hash_original_method = "4E3501B9804FC98D0826FF297E292112", hash_generated_method = "3623FABB5AADCB689C45E34A1151713A")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.087 -0400", hash_original_method = "4E3501B9804FC98D0826FF297E292112", hash_generated_method = "AE84F0E45258A862467E81A0FF11BE50")
-    public Throwable getException() {
-Throwable varF2A110AF41FD2A1760878EFAF72F9E9A_1868111703 =         containedException;
-        varF2A110AF41FD2A1760878EFAF72F9E9A_1868111703.addTaint(taint);
-        return varF2A110AF41FD2A1760878EFAF72F9E9A_1868111703;
-        // ---------- Original Method ----------
-        //return containedException;
+public Throwable getException() {
+        return containedException;
     }
 
+    /**
+     * Returns the cause of this throwable or <code>null</code> if the
+     * cause is nonexistent or unknown.  (The cause is the throwable that
+     * caused this throwable to get thrown.)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.403 -0500", hash_original_method = "CFB99AF15EF81FE883309E381BCDFD32", hash_generated_method = "4B82F41B424CEBFFB7BCA3B411E82EA0")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.087 -0400", hash_original_method = "CFB99AF15EF81FE883309E381BCDFD32", hash_generated_method = "CB8843F25283B9DEE95131DB7578CFBA")
-    public Throwable getCause() {
-Throwable var7AD5C7EA160E04D21F46409BCB89DECC_652590788 =         ((containedException == this)
+public Throwable getCause() {
+
+        return ((containedException == this)
                 ? null
                 : containedException);
-        var7AD5C7EA160E04D21F46409BCB89DECC_652590788.addTaint(taint);
-        return var7AD5C7EA160E04D21F46409BCB89DECC_652590788;
-        // ---------- Original Method ----------
-        //return ((containedException == this)
-                //? null
-                //: containedException);
     }
 
+    /**
+     * Initializes the <i>cause</i> of this throwable to the specified value.
+     * (The cause is the throwable that caused this throwable to get thrown.)
+     *
+     * <p>This method can be called at most once.  It is generally called from
+     * within the constructor, or immediately after creating the
+     * throwable.  If this throwable was created
+     * with {@link #TransformerException(Throwable)} or
+     * {@link #TransformerException(String,Throwable)}, this method cannot be called
+     * even once.
+     *
+     * @param  cause the cause (which is saved for later retrieval by the
+     *         {@link #getCause()} method).  (A <tt>null</tt> value is
+     *         permitted, and indicates that the cause is nonexistent or
+     *         unknown.)
+     * @return  a reference to this <code>Throwable</code> instance.
+     * @throws IllegalArgumentException if <code>cause</code> is this
+     *         throwable.  (A throwable cannot
+     *         be its own cause.)
+     * @throws IllegalStateException if this throwable was
+     *         created with {@link #TransformerException(Throwable)} or
+     *         {@link #TransformerException(String,Throwable)}, or this method has already
+     *         been called on this throwable.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.406 -0500", hash_original_method = "480EED18E1765067FE991AF0B4A8D2D9", hash_generated_method = "D92B47C8AABBD243B75CE59F6692A560")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.087 -0400", hash_original_method = "480EED18E1765067FE991AF0B4A8D2D9", hash_generated_method = "C4195EB43FE76A81EF68F2AA4A72C04F")
-    public synchronized Throwable initCause(Throwable cause) {
-        if(this.containedException != null)        
-        {
-            IllegalStateException varE9003A1100706138F1345FD3B3B905A3_1230251318 = new IllegalStateException("Can't overwrite cause");
-            varE9003A1100706138F1345FD3B3B905A3_1230251318.addTaint(taint);
-            throw varE9003A1100706138F1345FD3B3B905A3_1230251318;
-        } //End block
-        if(cause == this)        
-        {
-            IllegalArgumentException var3A4BD4026EBDC61CB9C770B3ED542F24_1627370964 = new IllegalArgumentException(
+public synchronized Throwable initCause(Throwable cause) {
+
+        if (this.containedException != null) {
+            throw new IllegalStateException("Can't overwrite cause");
+        }
+
+        if (cause == this) {
+            throw new IllegalArgumentException(
                 "Self-causation not permitted");
-            var3A4BD4026EBDC61CB9C770B3ED542F24_1627370964.addTaint(taint);
-            throw var3A4BD4026EBDC61CB9C770B3ED542F24_1627370964;
-        } //End block
+        }
+
         this.containedException = cause;
-Throwable var72A74007B2BE62B849F475C7BDA4658B_627807708 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_627807708.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_627807708;
-        // ---------- Original Method ----------
-        //if (this.containedException != null) {
-            //throw new IllegalStateException("Can't overwrite cause");
-        //}
-        //if (cause == this) {
-            //throw new IllegalArgumentException(
-                //"Self-causation not permitted");
-        //}
-        //this.containedException = cause;
-        //return this;
+
+        return this;
     }
 
+    /**
+     * Get the error message with location information
+     * appended.
+     *
+     * @return A <code>String</code> representing the error message with
+     *         location information appended.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.422 -0500", hash_original_method = "5F0314D1FF4AABD6580ED0D63B1DE248", hash_generated_method = "B996CB1C53E16086C6E44E2C23AAE1CD")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.088 -0400", hash_original_method = "5F0314D1FF4AABD6580ED0D63B1DE248", hash_generated_method = "733E5845110A4B34D0B3AADC19245B9B")
-    public String getMessageAndLocation() {
+public String getMessageAndLocation() {
+
         StringBuilder sbuffer = new StringBuilder();
-        String message = super.getMessage();
-        if(null != message)        
-        {
+        String       message = super.getMessage();
+
+        if (null != message) {
             sbuffer.append(message);
-        } //End block
-        if(null != locator)        
-        {
+        }
+
+        if (null != locator) {
             String systemID = locator.getSystemId();
-            int line = locator.getLineNumber();
-            int column = locator.getColumnNumber();
-            if(null != systemID)            
-            {
+            int    line     = locator.getLineNumber();
+            int    column   = locator.getColumnNumber();
+
+            if (null != systemID) {
                 sbuffer.append("; SystemID: ");
                 sbuffer.append(systemID);
-            } //End block
-            if(0 != line)            
-            {
+            }
+
+            if (0 != line) {
                 sbuffer.append("; Line#: ");
                 sbuffer.append(line);
-            } //End block
-            if(0 != column)            
-            {
+            }
+
+            if (0 != column) {
                 sbuffer.append("; Column#: ");
                 sbuffer.append(column);
-            } //End block
-        } //End block
-String varEFC2B84A819C9F41414BE54046FF2802_702764779 =         sbuffer.toString();
-        varEFC2B84A819C9F41414BE54046FF2802_702764779.addTaint(taint);
-        return varEFC2B84A819C9F41414BE54046FF2802_702764779;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            }
+        }
+
+        return sbuffer.toString();
     }
 
+    /**
+     * Get the location information as a string.
+     *
+     * @return A string with location info, or null
+     * if there is no location information.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.425 -0500", hash_original_method = "066E0A6F600039820661DC1AB443CC5D", hash_generated_method = "12C86AC3248C5D9F8218B885189BD02B")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.089 -0400", hash_original_method = "066E0A6F600039820661DC1AB443CC5D", hash_generated_method = "1790BD6611973ABBD0EBEBC6204EF9E6")
-    public String getLocationAsString() {
-        if(null != locator)        
-        {
-            StringBuilder sbuffer = new StringBuilder();
-            String systemID = locator.getSystemId();
-            int line = locator.getLineNumber();
-            int column = locator.getColumnNumber();
-            if(null != systemID)            
-            {
+public String getLocationAsString() {
+
+        if (null != locator) {
+            StringBuilder sbuffer  = new StringBuilder();
+            String       systemID = locator.getSystemId();
+            int          line     = locator.getLineNumber();
+            int          column   = locator.getColumnNumber();
+
+            if (null != systemID) {
                 sbuffer.append("; SystemID: ");
                 sbuffer.append(systemID);
-            } //End block
-            if(0 != line)            
-            {
+            }
+
+            if (0 != line) {
                 sbuffer.append("; Line#: ");
                 sbuffer.append(line);
-            } //End block
-            if(0 != column)            
-            {
+            }
+
+            if (0 != column) {
                 sbuffer.append("; Column#: ");
                 sbuffer.append(column);
-            } //End block
-String varEFC2B84A819C9F41414BE54046FF2802_2106477537 =             sbuffer.toString();
-            varEFC2B84A819C9F41414BE54046FF2802_2106477537.addTaint(taint);
-            return varEFC2B84A819C9F41414BE54046FF2802_2106477537;
-        } //End block
-        else
-        {
-String var540C13E9E156B687226421B24F2DF178_1007161776 =             null;
-            var540C13E9E156B687226421B24F2DF178_1007161776.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_1007161776;
-        } //End block
-        // ---------- Original Method ----------
-        //if (null != locator) {
-            //StringBuilder sbuffer  = new StringBuilder();
-            //String       systemID = locator.getSystemId();
-            //int          line     = locator.getLineNumber();
-            //int          column   = locator.getColumnNumber();
-            //if (null != systemID) {
-                //sbuffer.append("; SystemID: ");
-                //sbuffer.append(systemID);
-            //}
-            //if (0 != line) {
-                //sbuffer.append("; Line#: ");
-                //sbuffer.append(line);
-            //}
-            //if (0 != column) {
-                //sbuffer.append("; Column#: ");
-                //sbuffer.append(column);
-            //}
-            //return sbuffer.toString();
-        //} else {
-            //return null;
-        //}
+            }
+
+            return sbuffer.toString();
+        } else {
+            return null;
+        }
     }
 
+    /**
+     * Print the the trace of methods from where the error
+     * originated.  This will trace all nested exception
+     * objects, as well as this object.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.427 -0500", hash_original_method = "BFEE5D773C8C1A637BA8549A5548CE5E", hash_generated_method = "E341FECD54C25953BA09A90E6F690069")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.089 -0400", hash_original_method = "BFEE5D773C8C1A637BA8549A5548CE5E", hash_generated_method = "5DE43A2AD9D57F579CB99E2DD2DEBB6F")
-    public void printStackTrace() {
+public void printStackTrace() {
         printStackTrace(new java.io.PrintWriter(System.err, true));
-        // ---------- Original Method ----------
-        //printStackTrace(new java.io.PrintWriter(System.err, true));
     }
 
+    /**
+     * Print the the trace of methods from where the error
+     * originated.  This will trace all nested exception
+     * objects, as well as this object.
+     * @param s The stream where the dump will be sent to.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.429 -0500", hash_original_method = "396FE4FDBD72A1A44CDA1D64A960A2B6", hash_generated_method = "E7D49A0DBE7DE3D1C84124DB37885C80")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.090 -0400", hash_original_method = "396FE4FDBD72A1A44CDA1D64A960A2B6", hash_generated_method = "FC5B9AD021B95237BD477BDDB89C5770")
-    public void printStackTrace(java.io.PrintStream s) {
-        addTaint(s.getTaint());
+public void printStackTrace(java.io.PrintStream s) {
         printStackTrace(new java.io.PrintWriter(s));
-        // ---------- Original Method ----------
-        //printStackTrace(new java.io.PrintWriter(s));
     }
 
+    /**
+     * Print the the trace of methods from where the error
+     * originated.  This will trace all nested exception
+     * objects, as well as this object.
+     * @param s The writer where the dump will be sent to.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.432 -0500", hash_original_method = "A67ED2D6F45381C31C2891A6F92AFBC4", hash_generated_method = "F57BCB0D6CB5F326A2C8616C413C919C")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.091 -0400", hash_original_method = "A67ED2D6F45381C31C2891A6F92AFBC4", hash_generated_method = "0830A5AB41CC9A63A06EA2C84FB9B3F4")
-    public void printStackTrace(java.io.PrintWriter s) {
-        addTaint(s.getTaint());
-        if(s == null)        
-        {
+public void printStackTrace(java.io.PrintWriter s) {
+
+        if (s == null) {
             s = new java.io.PrintWriter(System.err, true);
-        } //End block
-        try 
-        {
+        }
+
+        try {
             String locInfo = getLocationAsString();
-            if(null != locInfo)            
-            {
+
+            if (null != locInfo) {
                 s.println(locInfo);
-            } //End block
+            }
+
             super.printStackTrace(s);
-        } //End block
-        catch (Throwable e)
-        {
-        } //End block
-        // ---------- Original Method ----------
-        //if (s == null) {
-            //s = new java.io.PrintWriter(System.err, true);
-        //}
-        //try {
-            //String locInfo = getLocationAsString();
-            //if (null != locInfo) {
-                //s.println(locInfo);
-            //}
-            //super.printStackTrace(s);
-        //} catch (Throwable e) {}
+        } catch (Throwable e) {}
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.091 -0400", hash_original_field = "CF11F5DB9FDEA42A11ADE0EBA3C62E0F", hash_generated_field = "FAB3AA9E21148B68815314C0C638BF27")
-
-    private static final long serialVersionUID = 975798773772956428L;
 }
 

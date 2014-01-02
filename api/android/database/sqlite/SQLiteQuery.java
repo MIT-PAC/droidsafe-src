@@ -1,6 +1,8 @@
 package android.database.sqlite;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.database.CursorWindow;
 import android.os.SystemClock;
@@ -13,38 +15,6 @@ import android.util.Log;
 import droidsafe.helpers.DSUtils;
 
 public class SQLiteQuery extends SQLiteProgram {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.932 -0400", hash_original_field = "4A4AFE184AA8D6209A0E3DD0DCD593B5", hash_generated_field = "834FF8F7040C5E40B4484771C7969574")
-
-    private int mOffsetIndex = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.932 -0400", hash_original_field = "D72871D5CE2EB17105099280224B0CCD", hash_generated_field = "0FB4858B613824FE6FDA94A379EBC4D0")
-
-    private boolean mClosed = false;
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.933 -0400", hash_original_method = "B04E51F22DB6FA67074D367FD62C2A3B", hash_generated_method = "18D8D2891ECFC4704610AF4707BD2E8D")
-      SQLiteQuery(SQLiteDatabase db, String query, int offsetIndex, String[] bindArgs) {
-        super(db, query);
-        addTaint(bindArgs[0].getTaint());
-        addTaint(query.getTaint());
-        addTaint(db.getTaint());
-        mOffsetIndex = offsetIndex;
-        bindAllArgsAsStrings(bindArgs);
-        // ---------- Original Method ----------
-        //mOffsetIndex = offsetIndex;
-        //bindAllArgsAsStrings(bindArgs);
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.934 -0400", hash_original_method = "ACE77F48482E9278318C8F93FF273D4F", hash_generated_method = "E346673D1C67FDBA52707DE4236A8647")
-      SQLiteQuery(SQLiteDatabase db, SQLiteQuery query) {
-        super(db, query.mSql);
-        addTaint(db.getTaint());
-        this.mBindArgs = query.mBindArgs;
-        this.mOffsetIndex = query.mOffsetIndex;
-        // ---------- Original Method ----------
-        //this.mBindArgs = query.mBindArgs;
-        //this.mOffsetIndex = query.mOffsetIndex;
-    }
 
     
     @DSModeled(DSC.SAFE)
@@ -64,28 +34,69 @@ public class SQLiteQuery extends SQLiteProgram {
     private static String nativeColumnName(int statementPtr, int columnIndex) {
         	return new String();
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:39.469 -0500", hash_original_field = "60D09076627E73BCAEEB6F563954C30A", hash_generated_field = "33B4EC31717AE04F4951ABB455378F67")
 
+    private static final String TAG = "SQLiteQuery";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:39.483 -0500", hash_original_field = "635E86039A5B1D292EA8131FF2D5D0BF", hash_generated_field = "834FF8F7040C5E40B4484771C7969574")
+
+    private int mOffsetIndex = 0;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:39.486 -0500", hash_original_field = "68E7C3569E191B98218FD7A043574AEA", hash_generated_field = "0FB4858B613824FE6FDA94A379EBC4D0")
+
+
+    private boolean mClosed = false;
+
+    /**
+     * Create a persistent query object.
+     *
+     * @param db The database that this query object is associated with
+     * @param query The SQL string for this query. 
+     * @param offsetIndex The 1-based index to the OFFSET parameter, 
+     */
+    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:39.488 -0500", hash_original_method = "B04E51F22DB6FA67074D367FD62C2A3B", hash_generated_method = "B04E51F22DB6FA67074D367FD62C2A3B")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.937 -0400", hash_original_method = "D55C6AB533D249202FC7A2AC29FF93BB", hash_generated_method = "9C9626814FFF627F30FA2F59798ABB1B")
-     int fillWindow(CursorWindow window) {
-        addTaint(window.getTaint());
+SQLiteQuery(SQLiteDatabase db, String query, int offsetIndex, String[] bindArgs) {
+        super(db, query);
+        mOffsetIndex = offsetIndex;
+        bindAllArgsAsStrings(bindArgs);
+    }
+
+    /**
+     * Constructor used to create new instance to replace a given instance of this class.
+     * This constructor is used when the current Query object is now associated with a different
+     * {@link SQLiteDatabase} object.
+     *
+     * @param db The database that this query object is associated with
+     * @param query the instance of {@link SQLiteQuery} to be replaced
+     */
+    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:39.491 -0500", hash_original_method = "ACE77F48482E9278318C8F93FF273D4F", hash_generated_method = "ACE77F48482E9278318C8F93FF273D4F")
+    
+SQLiteQuery(SQLiteDatabase db, SQLiteQuery query) {
+        super(db, query.mSql);
+        this.mBindArgs = query.mBindArgs;
+        this.mOffsetIndex = query.mOffsetIndex;
+    }
+
+    /**
+     * Reads rows into a buffer. This method acquires the database lock.
+     *
+     * @param window The window to fill into
+     * @return number of total rows in the query
+     */
+    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:39.493 -0500", hash_original_method = "D55C6AB533D249202FC7A2AC29FF93BB", hash_generated_method = "2020EB7A90BA7B22232FE2964D5A4746")
+    
+int fillWindow(CursorWindow window) {
         mDatabase.lock(mSql);
         long timeStart = SystemClock.uptimeMillis();
-        try 
-        {
+        try {
             acquireReference();
-            try 
-            {
+            try {
                 window.acquireReference();
                 int startPos = window.getStartPosition();
                 int numRows = nativeFillWindow(nHandle, nStatement, window.mWindowPtr,
                         startPos, mOffsetIndex);
-                if(SQLiteDebug.DEBUG_LOG_SLOW_QUERIES)                
-                {
+                if (SQLiteDebug.DEBUG_LOG_SLOW_QUERIES) {
                     long elapsed = SystemClock.uptimeMillis() - timeStart;
-                    if(SQLiteDebug.shouldLogSlowQuery(elapsed))                    
-                    {
+                    if (SQLiteDebug.shouldLogSlowQuery(elapsed)) {
                         Log.d(TAG, "fillWindow took " + elapsed
                                 + " ms: window=\"" + window
                                 + "\", startPos=" + startPos
@@ -96,137 +107,89 @@ public class SQLiteQuery extends SQLiteProgram {
                                 + ", args=[" + (mBindArgs != null ?
                                         TextUtils.join(", ", mBindArgs.values()) : "")
                                 + "]");
-                    } //End block
-                } //End block
+                    }
+                }
                 mDatabase.logTimeStat(mSql, timeStart);
-                int var998EA97634C71C025EB15D1618C2A376_1830740468 = (numRows);
-                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_111263212 = getTaintInt();
-                return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_111263212;
-            } //End block
-            catch (IllegalStateException e)
-            {
-                int varCFCD208495D565EF66E7DFF9F98764DA_1807909439 = (0);
-                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_388501231 = getTaintInt();
-                return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_388501231;
-            } //End block
-            catch (SQLiteDatabaseCorruptException e)
-            {
+                return numRows;
+            } catch (IllegalStateException e){
+                // simply ignore it
+                return 0;
+            } catch (SQLiteDatabaseCorruptException e) {
                 mDatabase.onCorruption();
-                e.addTaint(taint);
                 throw e;
-            } //End block
-            catch (SQLiteException e)
-            {
-                e.addTaint(taint);
+            } catch (SQLiteException e) {
+                Log.e(TAG, "exception: " + e.getMessage() + "; query: " + mSql);
                 throw e;
-            } //End block
-            finally 
-            {
+            } finally {
                 window.releaseReference();
-            } //End block
-        } //End block
-        finally 
-        {
+            }
+        } finally {
             releaseReference();
             mDatabase.unlock();
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        }
     }
 
+    /**
+     * Get the column count for the statement. Only valid on query based
+     * statements. The database must be locked
+     * when calling this method.
+     * 
+     * @return The number of column in the statement's result set.
+     */
+    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:39.496 -0500", hash_original_method = "54618FF47D2C419F49442C51D0DA0774", hash_generated_method = "54618FF47D2C419F49442C51D0DA0774")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.938 -0400", hash_original_method = "54618FF47D2C419F49442C51D0DA0774", hash_generated_method = "CD867919B72D3220A28CDE0271AB8B8B")
-     int columnCountLocked() {
+int columnCountLocked() {
         acquireReference();
-        try 
-        {
-            int var38E37CE3C8D0439303E00926E6741308_573988934 = (nativeColumnCount(nStatement));
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_430027756 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_430027756;
-        } //End block
-        finally 
-        {
+        try {
+            return nativeColumnCount(nStatement);
+        } finally {
             releaseReference();
-        } //End block
-        // ---------- Original Method ----------
-        //acquireReference();
-        //try {
-            //return nativeColumnCount(nStatement);
-        //} finally {
-            //releaseReference();
-        //}
+        }
     }
 
+    /**
+     * Retrieves the column name for the given column index. The database must be locked
+     * when calling this method.
+     * 
+     * @param columnIndex the index of the column to get the name for
+     * @return The requested column's name
+     */
+    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:39.498 -0500", hash_original_method = "B5AB077B4013E218660670FE95A73F4B", hash_generated_method = "B5AB077B4013E218660670FE95A73F4B")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.939 -0400", hash_original_method = "B5AB077B4013E218660670FE95A73F4B", hash_generated_method = "CE491A9FC4641E26B335D99C7F8EA688")
-     String columnNameLocked(int columnIndex) {
-        addTaint(columnIndex);
+String columnNameLocked(int columnIndex) {
         acquireReference();
-        try 
-        {
-String var96AFF3FBA6F9E943FBE0AF3FA990EC97_945492448 =             nativeColumnName(nStatement, columnIndex);
-            var96AFF3FBA6F9E943FBE0AF3FA990EC97_945492448.addTaint(taint);
-            return var96AFF3FBA6F9E943FBE0AF3FA990EC97_945492448;
-        } //End block
-        finally 
-        {
+        try {
+            return nativeColumnName(nStatement, columnIndex);
+        } finally {
             releaseReference();
-        } //End block
-        // ---------- Original Method ----------
-        //acquireReference();
-        //try {
-            //return nativeColumnName(nStatement, columnIndex);
-        //} finally {
-            //releaseReference();
-        //}
+        }
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:39.501 -0500", hash_original_method = "818F0EC4250B389213C92FDEA7A7A5CE", hash_generated_method = "E3988E23A202244D7F0D4727DC92B445")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.939 -0400", hash_original_method = "818F0EC4250B389213C92FDEA7A7A5CE", hash_generated_method = "6D208CD010ABE2AA8A4EB381EBCD3B42")
-    @Override
+@Override
     public String toString() {
-String var3EFB8F4E9BBF4DC978F8DF4F177CC507_1487590186 =         "SQLiteQuery: " + mSql;
-        var3EFB8F4E9BBF4DC978F8DF4F177CC507_1487590186.addTaint(taint);
-        return var3EFB8F4E9BBF4DC978F8DF4F177CC507_1487590186;
-        // ---------- Original Method ----------
-        //return "SQLiteQuery: " + mSql;
+        return "SQLiteQuery: " + mSql;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:39.504 -0500", hash_original_method = "C1F8301470323E9B4CE9B1F32DF8E225", hash_generated_method = "E59CB6D70209DADFB4D42037D59EB518")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.940 -0400", hash_original_method = "C1F8301470323E9B4CE9B1F32DF8E225", hash_generated_method = "6C73A8E1493172E7E20CAF1DBE3B5224")
-    @Override
+@Override
     public void close() {
         super.close();
         mClosed = true;
-        // ---------- Original Method ----------
-        //super.close();
-        //mClosed = true;
     }
 
+    /**
+     * Called by SQLiteCursor when it is requeried.
+     */
+    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:39.506 -0500", hash_original_method = "10930ECAA546E890A142B67C44E349E2", hash_generated_method = "10930ECAA546E890A142B67C44E349E2")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.940 -0400", hash_original_method = "10930ECAA546E890A142B67C44E349E2", hash_generated_method = "A1859D28EBF954E76B11AC2B3A708A1D")
-     void requery() {
-        if(mClosed)        
-        {
-            IllegalStateException var6CAE77F670F1174A16CD140BED6B8FCA_1884334409 = new IllegalStateException("requerying a closed cursor");
-            var6CAE77F670F1174A16CD140BED6B8FCA_1884334409.addTaint(taint);
-            throw var6CAE77F670F1174A16CD140BED6B8FCA_1884334409;
-        } //End block
+void requery() {
+        if (mClosed) {
+            throw new IllegalStateException("requerying a closed cursor");
+        }
         compileAndbindAllArgs();
-        // ---------- Original Method ----------
-        //if (mClosed) {
-            //throw new IllegalStateException("requerying a closed cursor");
-        //}
-        //compileAndbindAllArgs();
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.941 -0400", hash_original_field = "B4D62BC7E132324EDD96845B1B8BA5B6", hash_generated_field = "33B4EC31717AE04F4951ABB455378F67")
-
-    private static final String TAG = "SQLiteQuery";
 }
 

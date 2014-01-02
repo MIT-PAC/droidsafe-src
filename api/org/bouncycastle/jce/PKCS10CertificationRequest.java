@@ -1,6 +1,8 @@
 package org.bouncycastle.jce;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 import java.security.AlgorithmParameters;
@@ -51,181 +53,11 @@ import org.bouncycastle.util.Strings;
 
 
 public class PKCS10CertificationRequest extends CertificationRequest {
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.249 -0400", hash_original_method = "3A41672F51C7647865E5A6F21420932E", hash_generated_method = "FF24829872F3AA31786B4DCB8CC254E0")
-    public  PKCS10CertificationRequest(
-        byte[]  bytes) {
-        super(toDERSequence(bytes));
-        addTaint(bytes[0]);
-        // ---------- Original Method ----------
-    }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.223 -0500", hash_original_method = "25B2A761D6FCD88D1F6D5EF8095097C3", hash_generated_method = "BBC0B09FA1E82C1739E7BED70CD2D30F")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.249 -0400", hash_original_method = "E80E9113023CB84AD6D915B7A5F597A7", hash_generated_method = "4ABCE1760383597C1301750287ADF3F7")
-    public  PKCS10CertificationRequest(
-        ASN1Sequence  sequence) {
-        super(sequence);
-        addTaint(sequence.getTaint());
-        // ---------- Original Method ----------
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.250 -0400", hash_original_method = "DCC234DC4AA32AD53B9F45C5CD92E5AA", hash_generated_method = "D6258080ABBCD93337111577476C7AD9")
-    public  PKCS10CertificationRequest(
-        String              signatureAlgorithm,
-        X509Name            subject,
-        PublicKey           key,
-        ASN1Set             attributes,
-        PrivateKey          signingKey) throws NoSuchAlgorithmException, NoSuchProviderException,
-                InvalidKeyException, SignatureException {
-        this(signatureAlgorithm, subject, key, attributes, signingKey, BouncyCastleProvider.PROVIDER_NAME);
-        addTaint(signingKey.getTaint());
-        addTaint(attributes.getTaint());
-        addTaint(key.getTaint());
-        addTaint(subject.getTaint());
-        addTaint(signatureAlgorithm.getTaint());
-        // ---------- Original Method ----------
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.250 -0400", hash_original_method = "8331D41600BE6136ABFAAFB9EC7881F5", hash_generated_method = "D6D6AE127A2EA6FF1A02E4C3D7F97044")
-    public  PKCS10CertificationRequest(
-        String              signatureAlgorithm,
-        X500Principal       subject,
-        PublicKey           key,
-        ASN1Set             attributes,
-        PrivateKey          signingKey) throws NoSuchAlgorithmException, NoSuchProviderException,
-                InvalidKeyException, SignatureException {
-        this(signatureAlgorithm, convertName(subject), key, attributes, signingKey, BouncyCastleProvider.PROVIDER_NAME);
-        addTaint(signingKey.getTaint());
-        addTaint(attributes.getTaint());
-        addTaint(key.getTaint());
-        addTaint(subject.getTaint());
-        addTaint(signatureAlgorithm.getTaint());
-        // ---------- Original Method ----------
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.251 -0400", hash_original_method = "47F27C3C5B072C1921CEA8CD2618865D", hash_generated_method = "6FDB8329B6328664E5F47F239FB24DF0")
-    public  PKCS10CertificationRequest(
-        String              signatureAlgorithm,
-        X500Principal       subject,
-        PublicKey           key,
-        ASN1Set             attributes,
-        PrivateKey          signingKey,
-        String              provider) throws NoSuchAlgorithmException, NoSuchProviderException,
-                InvalidKeyException, SignatureException {
-        this(signatureAlgorithm, convertName(subject), key, attributes, signingKey, provider);
-        addTaint(provider.getTaint());
-        addTaint(signingKey.getTaint());
-        addTaint(attributes.getTaint());
-        addTaint(key.getTaint());
-        addTaint(subject.getTaint());
-        addTaint(signatureAlgorithm.getTaint());
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.253 -0400", hash_original_method = "9B8C4723941705C4AF87CD12244595BD", hash_generated_method = "74C86B98FE1BABF9D67598B0C39B0570")
-    public  PKCS10CertificationRequest(
-        String              signatureAlgorithm,
-        X509Name            subject,
-        PublicKey           key,
-        ASN1Set             attributes,
-        PrivateKey          signingKey,
-        String              provider) throws NoSuchAlgorithmException, NoSuchProviderException,
-                InvalidKeyException, SignatureException {
-        addTaint(provider.getTaint());
-        addTaint(signingKey.getTaint());
-        addTaint(attributes.getTaint());
-        addTaint(key.getTaint());
-        addTaint(subject.getTaint());
-        addTaint(signatureAlgorithm.getTaint());
-        String algorithmName = Strings.toUpperCase(signatureAlgorithm);
-        DERObjectIdentifier sigOID = (DERObjectIdentifier)algorithms.get(algorithmName);
-        if(sigOID == null)        
-        {
-            try 
-            {
-                sigOID = new DERObjectIdentifier(algorithmName);
-            } //End block
-            catch (Exception e)
-            {
-                IllegalArgumentException varB18074A21B8B08497C53127CA4DD90CB_769871989 = new IllegalArgumentException("Unknown signature type requested");
-                varB18074A21B8B08497C53127CA4DD90CB_769871989.addTaint(taint);
-                throw varB18074A21B8B08497C53127CA4DD90CB_769871989;
-            } //End block
-        } //End block
-        if(subject == null)        
-        {
-            IllegalArgumentException varF7E6557D5CD0EEE16A97877333591AF9_2131166133 = new IllegalArgumentException("subject must not be null");
-            varF7E6557D5CD0EEE16A97877333591AF9_2131166133.addTaint(taint);
-            throw varF7E6557D5CD0EEE16A97877333591AF9_2131166133;
-        } //End block
-        if(key == null)        
-        {
-            IllegalArgumentException var7FA406A36111F20A2D59C5557337A99E_969321336 = new IllegalArgumentException("public key must not be null");
-            var7FA406A36111F20A2D59C5557337A99E_969321336.addTaint(taint);
-            throw var7FA406A36111F20A2D59C5557337A99E_969321336;
-        } //End block
-        if(noParams.contains(sigOID))        
-        {
-            this.sigAlgId = new AlgorithmIdentifier(sigOID);
-        } //End block
-        else
-        if(params.containsKey(algorithmName))        
-        {
-            this.sigAlgId = new AlgorithmIdentifier(sigOID, (DEREncodable)params.get(algorithmName));
-        } //End block
-        else
-        {
-            this.sigAlgId = new AlgorithmIdentifier(sigOID, DERNull.INSTANCE);
-        } //End block
-        try 
-        {
-            ASN1Sequence seq = (ASN1Sequence)ASN1Object.fromByteArray(key.getEncoded());
-            this.reqInfo = new CertificationRequestInfo(subject, new SubjectPublicKeyInfo(seq), attributes);
-        } //End block
-        catch (IOException e)
-        {
-            IllegalArgumentException var19AFF07EBF0D285E6200B15847475545_1866682171 = new IllegalArgumentException("can't encode public key");
-            var19AFF07EBF0D285E6200B15847475545_1866682171.addTaint(taint);
-            throw var19AFF07EBF0D285E6200B15847475545_1866682171;
-        } //End block
-        Signature sig;
-        if(provider == null)        
-        {
-            sig = Signature.getInstance(signatureAlgorithm);
-        } //End block
-        else
-        {
-            sig = Signature.getInstance(signatureAlgorithm, provider);
-        } //End block
-        sig.initSign(signingKey);
-        try 
-        {
-            sig.update(reqInfo.getEncoded(ASN1Encodable.DER));
-        } //End block
-        catch (Exception e)
-        {
-            IllegalArgumentException var28DBE1BCED21F9B7B371B30A4EA3167D_1827584261 = new IllegalArgumentException("exception encoding TBS cert request - " + e);
-            var28DBE1BCED21F9B7B371B30A4EA3167D_1827584261.addTaint(taint);
-            throw var28DBE1BCED21F9B7B371B30A4EA3167D_1827584261;
-        } //End block
-        this.sigBits = new DERBitString(sig.sign());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    private static RSASSAPSSparams creatPSSParams(AlgorithmIdentifier hashAlgId, int saltSize) {
+private static RSASSAPSSparams creatPSSParams(AlgorithmIdentifier hashAlgId, int saltSize)
+    {
         return new RSASSAPSSparams(
             hashAlgId,
             new AlgorithmIdentifier(PKCSObjectIdentifiers.id_mgf1, hashAlgId),
@@ -233,13 +65,15 @@ public class PKCS10CertificationRequest extends CertificationRequest {
             new DERInteger(1));
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.225 -0500", hash_original_method = "B7B42C128A250CD690CFAC82FBCAFAD6", hash_generated_method = "49F9951902F74AC0AD87EAA49D146595")
     
-    @DSModeled(DSC.BAN)
-    private static ASN1Sequence toDERSequence(
-        byte[]  bytes) {
+private static ASN1Sequence toDERSequence(
+        byte[]  bytes)
+    {
         try
         {
             ASN1InputStream         dIn = new ASN1InputStream(bytes);
+
             return (ASN1Sequence)dIn.readObject();
         }
         catch (Exception e)
@@ -248,10 +82,11 @@ public class PKCS10CertificationRequest extends CertificationRequest {
         }
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.237 -0500", hash_original_method = "1712D37D77918FC140E45AF86BEEDC9E", hash_generated_method = "AEAD122CB780C3B8C0E5BB640A83C181")
     
-    @DSModeled(DSC.BAN)
-    private static X509Name convertName(
-        X500Principal    name) {
+private static X509Name convertName(
+        X500Principal    name)
+    {
         try
         {
             return new X509Principal(name.getEncoded());
@@ -262,232 +97,13 @@ public class PKCS10CertificationRequest extends CertificationRequest {
         }
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.267 -0500", hash_original_method = "9038DA3F1958107AA4433A375AF2AA35", hash_generated_method = "9A4696D6131CE918E35B6EA2D2873C98")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.255 -0400", hash_original_method = "43324B511CA49EBF5AC84C5892E16660", hash_generated_method = "35DBBE56CC6D0DFD5865FE4851463AF4")
-    public PublicKey getPublicKey() throws NoSuchAlgorithmException, NoSuchProviderException, InvalidKeyException {
-PublicKey varC3D0D1C56178EDDD777C8C53EF7F0CE9_103346534 =         getPublicKey(BouncyCastleProvider.PROVIDER_NAME);
-        varC3D0D1C56178EDDD777C8C53EF7F0CE9_103346534.addTaint(taint);
-        return varC3D0D1C56178EDDD777C8C53EF7F0CE9_103346534;
-        // ---------- Original Method ----------
-        //return getPublicKey(BouncyCastleProvider.PROVIDER_NAME);
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.256 -0400", hash_original_method = "B8875DFEFA5CEF760F6C887EECDEC741", hash_generated_method = "ADC68574CB07494A2E0419883103099A")
-    public PublicKey getPublicKey(
-        String  provider) throws NoSuchAlgorithmException, NoSuchProviderException,
-                InvalidKeyException {
-        addTaint(provider.getTaint());
-        SubjectPublicKeyInfo subjectPKInfo = reqInfo.getSubjectPublicKeyInfo();
-        X509EncodedKeySpec xspec = new X509EncodedKeySpec(new DERBitString(subjectPKInfo).getBytes());
-        AlgorithmIdentifier keyAlg = subjectPKInfo.getAlgorithmId();
-        try 
-        {
-            try 
-            {
-                if(provider == null)                
-                {
-PublicKey var41DC99F01DD21ADDF0ABED61A14977D8_799186848 =                     KeyFactory.getInstance(keyAlg.getObjectId().getId()).generatePublic(xspec);
-                    var41DC99F01DD21ADDF0ABED61A14977D8_799186848.addTaint(taint);
-                    return var41DC99F01DD21ADDF0ABED61A14977D8_799186848;
-                } //End block
-                else
-                {
-PublicKey varEBB5C620BE73D7C58524D5E2E4FDA5D2_692558561 =                     KeyFactory.getInstance(keyAlg.getObjectId().getId(), provider).generatePublic(xspec);
-                    varEBB5C620BE73D7C58524D5E2E4FDA5D2_692558561.addTaint(taint);
-                    return varEBB5C620BE73D7C58524D5E2E4FDA5D2_692558561;
-                } //End block
-            } //End block
-            catch (NoSuchAlgorithmException e)
-            {
-                if(keyAlgorithms.get(keyAlg.getObjectId()) != null)                
-                {
-                    String keyAlgorithm = (String)keyAlgorithms.get(keyAlg.getObjectId());
-                    if(provider == null)                    
-                    {
-PublicKey var819053A5996B66C1588BC8CB811D91A6_924516791 =                         KeyFactory.getInstance(keyAlgorithm).generatePublic(xspec);
-                        var819053A5996B66C1588BC8CB811D91A6_924516791.addTaint(taint);
-                        return var819053A5996B66C1588BC8CB811D91A6_924516791;
-                    } //End block
-                    else
-                    {
-PublicKey var1984EAB4E1C296EE1F73B3B0EE5AB623_2100554869 =                         KeyFactory.getInstance(keyAlgorithm, provider).generatePublic(xspec);
-                        var1984EAB4E1C296EE1F73B3B0EE5AB623_2100554869.addTaint(taint);
-                        return var1984EAB4E1C296EE1F73B3B0EE5AB623_2100554869;
-                    } //End block
-                } //End block
-                e.addTaint(taint);
-                throw e;
-            } //End block
-        } //End block
-        catch (InvalidKeySpecException e)
-        {
-            InvalidKeyException varB47E630CF91EC6A257E24F063B634927_635991839 = new InvalidKeyException("error decoding public key");
-            varB47E630CF91EC6A257E24F063B634927_635991839.addTaint(taint);
-            throw varB47E630CF91EC6A257E24F063B634927_635991839;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.256 -0400", hash_original_method = "76B4A35CDD087589FE1D86D8EB63F14C", hash_generated_method = "E71B53D0E06CCB66C4C0E0856F141A0D")
-    public boolean verify() throws NoSuchAlgorithmException, NoSuchProviderException,
-                InvalidKeyException, SignatureException {
-        boolean varDFDA2B739D43284084054634F274B202_855472976 = (verify(BouncyCastleProvider.PROVIDER_NAME));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1091076498 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1091076498;
-        // ---------- Original Method ----------
-        //return verify(BouncyCastleProvider.PROVIDER_NAME);
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.257 -0400", hash_original_method = "EEEA1D6F83C84A4A1EBDD2FD7850BFFE", hash_generated_method = "27339F45B910255DDC2F521BF4EAE835")
-    public boolean verify(
-        String provider) throws NoSuchAlgorithmException, NoSuchProviderException,
-                InvalidKeyException, SignatureException {
-        addTaint(provider.getTaint());
-        boolean var870A8DDE759B8F2968C7A4D4A7FE5FFC_1053145651 = (verify(this.getPublicKey(provider), provider));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1633320468 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1633320468;
-        // ---------- Original Method ----------
-        //return verify(this.getPublicKey(provider), provider);
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.258 -0400", hash_original_method = "23EDAE0C7E13C4B3F88052C2DB8B64F6", hash_generated_method = "8320E5446476AA6523E2561488742C80")
-    public boolean verify(
-        PublicKey pubKey,
-        String provider) throws NoSuchAlgorithmException, NoSuchProviderException,
-                InvalidKeyException, SignatureException {
-        addTaint(provider.getTaint());
-        addTaint(pubKey.getTaint());
-        Signature sig;
-        try 
-        {
-            if(provider == null)            
-            {
-                sig = Signature.getInstance(getSignatureName(sigAlgId));
-            } //End block
-            else
-            {
-                sig = Signature.getInstance(getSignatureName(sigAlgId), provider);
-            } //End block
-        } //End block
-        catch (NoSuchAlgorithmException e)
-        {
-            if(oids.get(sigAlgId.getObjectId()) != null)            
-            {
-                String signatureAlgorithm = (String)oids.get(sigAlgId.getObjectId());
-                if(provider == null)                
-                {
-                    sig = Signature.getInstance(signatureAlgorithm);
-                } //End block
-                else
-                {
-                    sig = Signature.getInstance(signatureAlgorithm, provider);
-                } //End block
-            } //End block
-            else
-            {
-                e.addTaint(taint);
-                throw e;
-            } //End block
-        } //End block
-        setSignatureParameters(sig, sigAlgId.getParameters());
-        sig.initVerify(pubKey);
-        try 
-        {
-            sig.update(reqInfo.getEncoded(ASN1Encodable.DER));
-        } //End block
-        catch (Exception e)
-        {
-            SignatureException var50132ED7A0D04A650E1E6822352B6B4F_2022522685 = new SignatureException("exception encoding TBS cert request - " + e);
-            var50132ED7A0D04A650E1E6822352B6B4F_2022522685.addTaint(taint);
-            throw var50132ED7A0D04A650E1E6822352B6B4F_2022522685;
-        } //End block
-        boolean var55FC8C227B44C450556E137AA201B486_963644722 = (sig.verify(sigBits.getBytes()));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_996900828 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_996900828;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.258 -0400", hash_original_method = "FFCAA10D74329AA15B8FE83335744F82", hash_generated_method = "8BD4939D28737F166DA1C5DEEBDFEBAF")
-    public byte[] getEncoded() {
-        try 
-        {
-            byte[] var75679B9D6E0C3BD65FFE938E240A5B3B_10092271 = (this.getEncoded(ASN1Encodable.DER));
-                        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1975824700 = {getTaintByte()};
-            return var2F9C81BC6E497382285CD6B7A7E33DE1_1975824700;
-        } //End block
-        catch (IOException e)
-        {
-            RuntimeException var7731B7FAF9DB516E410EE38D728795B2_400152887 = new RuntimeException(e.toString());
-            var7731B7FAF9DB516E410EE38D728795B2_400152887.addTaint(taint);
-            throw var7731B7FAF9DB516E410EE38D728795B2_400152887;
-        } //End block
-        // ---------- Original Method ----------
-        //try
-        //{
-            //return this.getEncoded(ASN1Encodable.DER);
-        //}
-        //catch (IOException e)
-        //{
-            //throw new RuntimeException(e.toString());
-        //}
-    }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.259 -0400", hash_original_method = "572BCE240DBAD7E2FCA6B5178E7F9E48", hash_generated_method = "ECA18CCBBB9FF4A7FC3B8B40F1D1D462")
-    private void setSignatureParameters(
-        Signature signature,
-        DEREncodable params) throws NoSuchAlgorithmException, SignatureException, InvalidKeyException {
-        addTaint(params.getTaint());
-        addTaint(signature.getTaint());
-        if(params != null && !DERNull.INSTANCE.equals(params))        
-        {
-            AlgorithmParameters sigParams = AlgorithmParameters.getInstance(signature.getAlgorithm(), signature.getProvider());
-            try 
-            {
-                sigParams.init(params.getDERObject().getDEREncoded());
-            } //End block
-            catch (IOException e)
-            {
-                SignatureException var4C6E34B998119F08550B28F7354D74CB_1275589053 = new SignatureException("IOException decoding parameters: " + e.getMessage());
-                var4C6E34B998119F08550B28F7354D74CB_1275589053.addTaint(taint);
-                throw var4C6E34B998119F08550B28F7354D74CB_1275589053;
-            } //End block
-            if(signature.getAlgorithm().endsWith("MGF1"))            
-            {
-                try 
-                {
-                    signature.setParameter(sigParams.getParameterSpec(PSSParameterSpec.class));
-                } //End block
-                catch (GeneralSecurityException e)
-                {
-                    SignatureException var1A8C4267253B70F3D11993580B705F98_237323191 = new SignatureException("Exception extracting parameters: " + e.getMessage());
-                    var1A8C4267253B70F3D11993580B705F98_237323191.addTaint(taint);
-                    throw var1A8C4267253B70F3D11993580B705F98_237323191;
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    static String getSignatureName(
-        AlgorithmIdentifier sigAlgId) {
+static String getSignatureName(
+        AlgorithmIdentifier sigAlgId)
+    {
         DEREncodable params = sigAlgId.getParameters();
+
         if (params != null && !DERNull.INSTANCE.equals(params))
         {
             if (sigAlgId.getObjectId().equals(PKCSObjectIdentifiers.id_RSASSA_PSS))
@@ -496,13 +112,15 @@ PublicKey var1984EAB4E1C296EE1F73B3B0EE5AB623_2100554869 =                      
                 return getDigestAlgName(rsaParams.getHashAlgorithm().getObjectId()) + "withRSAandMGF1";
             }
         }
+
         return sigAlgId.getObjectId().getId();
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.270 -0500", hash_original_method = "E4BEEAE8AEEE7829CDFFCFF7B53EF391", hash_generated_method = "96DEB51CD8B19C25BE874E5A654ABB40")
     
-    @DSModeled(DSC.BAN)
-    private static String getDigestAlgName(
-        DERObjectIdentifier digestAlgOID) {
+private static String getDigestAlgName(
+        DERObjectIdentifier digestAlgOID)
+    {
         if (PKCSObjectIdentifiers.md5.equals(digestAlgOID))
         {
             return "MD5";
@@ -511,6 +129,12 @@ PublicKey var1984EAB4E1C296EE1F73B3B0EE5AB623_2100554869 =                      
         {
             return "SHA1";
         }
+        // BEGIN android-removed
+        // else if (NISTObjectIdentifiers.id_sha224.equals(digestAlgOID))
+        // {
+        //     return "SHA224";
+        // }
+        // END android-removed
         else if (NISTObjectIdentifiers.id_sha256.equals(digestAlgOID))
         {
             return "SHA256";
@@ -523,28 +147,407 @@ PublicKey var1984EAB4E1C296EE1F73B3B0EE5AB623_2100554869 =                      
         {
             return "SHA512";
         }
+        // BEGIN android-removed
+        // else if (TeleTrusTObjectIdentifiers.ripemd128.equals(digestAlgOID))
+        // {
+        //     return "RIPEMD128";
+        // }
+        // else if (TeleTrusTObjectIdentifiers.ripemd160.equals(digestAlgOID))
+        // {
+        //     return "RIPEMD160";
+        // }
+        // else if (TeleTrusTObjectIdentifiers.ripemd256.equals(digestAlgOID))
+        // {
+        //     return "RIPEMD256";
+        // }
+        // else if (CryptoProObjectIdentifiers.gostR3411.equals(digestAlgOID))
+        // {
+        //     return "GOST3411";
+        // }
+        // END android-removed
         else
         {
             return digestAlgOID.getId();            
         }
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.209 -0500", hash_original_field = "A8B38EFEBE1FD690B18E15CE341717C3", hash_generated_field = "2A7E0957EAD856B3315504481686A7DE")
 
+    private static Hashtable            algorithms = new Hashtable();
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.212 -0500", hash_original_field = "9F226D98C1CB8D80E9F82A4DB61E3C25", hash_generated_field = "3580C2237188FBF88703AFC814D06B98")
+
+    private static Hashtable            params = new Hashtable();
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.214 -0500", hash_original_field = "9983F7ECB8274F6EDC057E020591B9F9", hash_generated_field = "C8FBF8B644E3B7297D2EC131F85F7B39")
+
+    private static Hashtable            keyAlgorithms = new Hashtable();
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.217 -0500", hash_original_field = "321B66DBE27FCDCC20E9094F46ED8726", hash_generated_field = "6D958D15EBDB3005FA7CB66D7A014B22")
+
+    private static Hashtable            oids = new Hashtable();
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.219 -0500", hash_original_field = "3251BB4B6326B92285C39B28EEE8EF19", hash_generated_field = "E222E546E7C245483C60E7B45F19B3A8")
+
+    private static Set                  noParams = new HashSet();
+
+    /**
+     * construct a PKCS10 certification request from a DER encoded
+     * byte stream.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.228 -0500", hash_original_method = "3A41672F51C7647865E5A6F21420932E", hash_generated_method = "7CC931B79D0F2CBE4F800519728D8281")
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.260 -0400", hash_original_field = "B39C3BE7546FA73A752B6C68B346E2B1", hash_generated_field = "2A7E0957EAD856B3315504481686A7DE")
+public PKCS10CertificationRequest(
+        byte[]  bytes)
+    {
+        super(toDERSequence(bytes));
+    }
 
-    private static Hashtable algorithms = new Hashtable();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.260 -0400", hash_original_field = "0D433ED6AA05239AA7FFA603AE52EAF9", hash_generated_field = "3580C2237188FBF88703AFC814D06B98")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.230 -0500", hash_original_method = "E80E9113023CB84AD6D915B7A5F597A7", hash_generated_method = "CE7605C128F64B8FA557EA677E644E8A")
+    
+public PKCS10CertificationRequest(
+        ASN1Sequence  sequence)
+    {
+        super(sequence);
+    }
 
-    private static Hashtable params = new Hashtable();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.260 -0400", hash_original_field = "A13D3CE5CEDBFFEA1E23C07F3E99C13F", hash_generated_field = "C8FBF8B644E3B7297D2EC131F85F7B39")
+    /**
+     * create a PKCS10 certfication request using the BC provider.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.233 -0500", hash_original_method = "DCC234DC4AA32AD53B9F45C5CD92E5AA", hash_generated_method = "E6AC43C33B37640BFAB5E9FD0FD9D86B")
+    
+public PKCS10CertificationRequest(
+        String              signatureAlgorithm,
+        X509Name            subject,
+        PublicKey           key,
+        ASN1Set             attributes,
+        PrivateKey          signingKey)
+        throws NoSuchAlgorithmException, NoSuchProviderException,
+                InvalidKeyException, SignatureException
+    {
+        this(signatureAlgorithm, subject, key, attributes, signingKey, BouncyCastleProvider.PROVIDER_NAME);
+    }
+    
+    /**
+     * create a PKCS10 certfication request using the BC provider.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.239 -0500", hash_original_method = "8331D41600BE6136ABFAAFB9EC7881F5", hash_generated_method = "324750FBBE8C80F17D896F967175A5D6")
+    
+public PKCS10CertificationRequest(
+        String              signatureAlgorithm,
+        X500Principal       subject,
+        PublicKey           key,
+        ASN1Set             attributes,
+        PrivateKey          signingKey)
+        throws NoSuchAlgorithmException, NoSuchProviderException,
+                InvalidKeyException, SignatureException
+    {
+        this(signatureAlgorithm, convertName(subject), key, attributes, signingKey, BouncyCastleProvider.PROVIDER_NAME);
+    }
+    
+    /**
+     * create a PKCS10 certfication request using the named provider.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.242 -0500", hash_original_method = "47F27C3C5B072C1921CEA8CD2618865D", hash_generated_method = "9D8CFACFF8E35C4B4371E245059063AE")
+    
+public PKCS10CertificationRequest(
+        String              signatureAlgorithm,
+        X500Principal       subject,
+        PublicKey           key,
+        ASN1Set             attributes,
+        PrivateKey          signingKey,
+        String              provider)
+        throws NoSuchAlgorithmException, NoSuchProviderException,
+                InvalidKeyException, SignatureException
+    {
+        this(signatureAlgorithm, convertName(subject), key, attributes, signingKey, provider);
+    }
+    
+    /**
+     * create a PKCS10 certfication request using the named provider.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.246 -0500", hash_original_method = "9B8C4723941705C4AF87CD12244595BD", hash_generated_method = "DD7F4EF291BE4E4AF536E68B0F4C8912")
+    
+public PKCS10CertificationRequest(
+        String              signatureAlgorithm,
+        X509Name            subject,
+        PublicKey           key,
+        ASN1Set             attributes,
+        PrivateKey          signingKey,
+        String              provider)
+        throws NoSuchAlgorithmException, NoSuchProviderException,
+                InvalidKeyException, SignatureException
+    {
+        String algorithmName = Strings.toUpperCase(signatureAlgorithm);
+        DERObjectIdentifier sigOID = (DERObjectIdentifier)algorithms.get(algorithmName);
 
-    private static Hashtable keyAlgorithms = new Hashtable();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.260 -0400", hash_original_field = "E4322C1573762E02D6AC3A68C442E016", hash_generated_field = "6D958D15EBDB3005FA7CB66D7A014B22")
+        if (sigOID == null)
+        {
+            try
+            {
+                sigOID = new DERObjectIdentifier(algorithmName);
+            }
+            catch (Exception e)
+            {
+                throw new IllegalArgumentException("Unknown signature type requested");
+            }
+        }
 
-    private static Hashtable oids = new Hashtable();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.260 -0400", hash_original_field = "9599D5E70EEA113DAC00F7EA2B8AD147", hash_generated_field = "E222E546E7C245483C60E7B45F19B3A8")
+        if (subject == null)
+        {
+            throw new IllegalArgumentException("subject must not be null");
+        }
 
-    private static Set noParams = new HashSet();
+        if (key == null)
+        {
+            throw new IllegalArgumentException("public key must not be null");
+        }
+
+        if (noParams.contains(sigOID))
+        {
+            this.sigAlgId = new AlgorithmIdentifier(sigOID);
+        }
+        else if (params.containsKey(algorithmName))
+        {
+            this.sigAlgId = new AlgorithmIdentifier(sigOID, (DEREncodable)params.get(algorithmName));
+        }
+        else
+        {
+            this.sigAlgId = new AlgorithmIdentifier(sigOID, DERNull.INSTANCE);
+        }
+
+        try
+        {
+            ASN1Sequence seq = (ASN1Sequence)ASN1Object.fromByteArray(key.getEncoded());
+            this.reqInfo = new CertificationRequestInfo(subject, new SubjectPublicKeyInfo(seq), attributes);
+        }
+        catch (IOException e)
+        {
+            throw new IllegalArgumentException("can't encode public key");
+        }
+
+        Signature sig;
+        if (provider == null)
+        {
+            sig = Signature.getInstance(signatureAlgorithm);
+        }
+        else
+        {
+            sig = Signature.getInstance(signatureAlgorithm, provider);
+        }
+
+        sig.initSign(signingKey);
+
+        try
+        {
+            sig.update(reqInfo.getEncoded(ASN1Encodable.DER));
+        }
+        catch (Exception e)
+        {
+            throw new IllegalArgumentException("exception encoding TBS cert request - " + e);
+        }
+
+        this.sigBits = new DERBitString(sig.sign());
+    }
+
+    /**
+     * return the public key associated with the certification request -
+     * the public key is created using the BC provider.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.248 -0500", hash_original_method = "43324B511CA49EBF5AC84C5892E16660", hash_generated_method = "9C8E7A5652AD54B82F68169E31DFCC08")
+    
+public PublicKey getPublicKey()
+        throws NoSuchAlgorithmException, NoSuchProviderException, InvalidKeyException
+    {
+        return getPublicKey(BouncyCastleProvider.PROVIDER_NAME);
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.251 -0500", hash_original_method = "B8875DFEFA5CEF760F6C887EECDEC741", hash_generated_method = "A2EA45DB0FBA486491FFB3ECA56DB54B")
+    
+public PublicKey getPublicKey(
+        String  provider)
+        throws NoSuchAlgorithmException, NoSuchProviderException,
+                InvalidKeyException
+    {
+        SubjectPublicKeyInfo    subjectPKInfo = reqInfo.getSubjectPublicKeyInfo();
+        X509EncodedKeySpec      xspec = new X509EncodedKeySpec(new DERBitString(subjectPKInfo).getBytes());
+        AlgorithmIdentifier     keyAlg = subjectPKInfo.getAlgorithmId();
+        
+        try
+        {
+            try
+            {
+                if (provider == null)
+                {
+                    return KeyFactory.getInstance(keyAlg.getObjectId().getId()).generatePublic(xspec);
+                }
+                else
+                {
+                    return KeyFactory.getInstance(keyAlg.getObjectId().getId(), provider).generatePublic(xspec);
+                }
+            }
+            catch (NoSuchAlgorithmException e)
+            {
+                //
+                // try an alternate
+                //
+                if (keyAlgorithms.get(keyAlg.getObjectId()) != null)
+                {
+                    String  keyAlgorithm = (String)keyAlgorithms.get(keyAlg.getObjectId());
+                    
+                    if (provider == null)
+                    {
+                        return KeyFactory.getInstance(keyAlgorithm).generatePublic(xspec);
+                    }
+                    else
+                    {
+                        return KeyFactory.getInstance(keyAlgorithm, provider).generatePublic(xspec);
+                    }
+                }
+                
+                throw e;
+            }
+        }
+        catch (InvalidKeySpecException e)
+        {
+            throw new InvalidKeyException("error decoding public key");
+        }
+    }
+
+    /**
+     * verify the request using the BC provider.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.253 -0500", hash_original_method = "76B4A35CDD087589FE1D86D8EB63F14C", hash_generated_method = "0E8AE9B05A74B6F7DE6780CF3FACE534")
+    
+public boolean verify()
+        throws NoSuchAlgorithmException, NoSuchProviderException,
+                InvalidKeyException, SignatureException
+    {
+        return verify(BouncyCastleProvider.PROVIDER_NAME);
+    }
+
+    /**
+     * verify the request using the passed in provider.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.255 -0500", hash_original_method = "EEEA1D6F83C84A4A1EBDD2FD7850BFFE", hash_generated_method = "6A266B715AEA1EC82B0D2051E5253859")
+    
+public boolean verify(
+        String provider)
+        throws NoSuchAlgorithmException, NoSuchProviderException,
+                InvalidKeyException, SignatureException
+    {
+        return verify(this.getPublicKey(provider), provider);
+    }
+
+    /**
+     * verify the request using the passed in public key and the provider..
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.258 -0500", hash_original_method = "23EDAE0C7E13C4B3F88052C2DB8B64F6", hash_generated_method = "42E7C75D85E2C3704A1ADD32430A0AF4")
+    
+public boolean verify(
+        PublicKey pubKey,
+        String provider)
+        throws NoSuchAlgorithmException, NoSuchProviderException,
+                InvalidKeyException, SignatureException
+    {
+        Signature   sig;
+
+        try
+        {
+            if (provider == null)
+            {
+                sig = Signature.getInstance(getSignatureName(sigAlgId));
+            }
+            else
+            {
+                sig = Signature.getInstance(getSignatureName(sigAlgId), provider);
+            }
+        }
+        catch (NoSuchAlgorithmException e)
+        {
+            //
+            // try an alternate
+            //
+            if (oids.get(sigAlgId.getObjectId()) != null)
+            {
+                String  signatureAlgorithm = (String)oids.get(sigAlgId.getObjectId());
+
+                if (provider == null)
+                {
+                    sig = Signature.getInstance(signatureAlgorithm);
+                }
+                else
+                {
+                    sig = Signature.getInstance(signatureAlgorithm, provider);
+                }
+            }
+            else
+            {
+                throw e;
+            }
+        }
+
+        setSignatureParameters(sig, sigAlgId.getParameters());
+        
+        sig.initVerify(pubKey);
+
+        try
+        {
+            sig.update(reqInfo.getEncoded(ASN1Encodable.DER));
+        }
+        catch (Exception e)
+        {
+            throw new SignatureException("exception encoding TBS cert request - " + e);
+        }
+
+        return sig.verify(sigBits.getBytes());
+    }
+
+    /**
+     * return a DER encoded byte array representing this object
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.261 -0500", hash_original_method = "FFCAA10D74329AA15B8FE83335744F82", hash_generated_method = "DCCE93F4D0141431F9D725745B73FBC0")
+    
+public byte[] getEncoded()
+    {
+        try
+        {
+            return this.getEncoded(ASN1Encodable.DER);
+        }
+        catch (IOException e)
+        {
+            throw new RuntimeException(e.toString());
+        }
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:36.265 -0500", hash_original_method = "572BCE240DBAD7E2FCA6B5178E7F9E48", hash_generated_method = "BAD94E6087F1945FE1FF43E265DD50AD")
+    
+private void setSignatureParameters(
+        Signature signature,
+        DEREncodable params)
+        throws NoSuchAlgorithmException, SignatureException, InvalidKeyException
+    {
+        if (params != null && !DERNull.INSTANCE.equals(params))
+        {
+            AlgorithmParameters sigParams = AlgorithmParameters.getInstance(signature.getAlgorithm(), signature.getProvider());
+
+            try
+            {
+                sigParams.init(params.getDERObject().getDEREncoded());
+            }
+            catch (IOException e)
+            {
+                throw new SignatureException("IOException decoding parameters: " + e.getMessage());
+            }
+
+            if (signature.getAlgorithm().endsWith("MGF1"))
+            {
+                try
+                {
+                    signature.setParameter(sigParams.getParameterSpec(PSSParameterSpec.class));
+                }
+                catch (GeneralSecurityException e)
+                {
+                    throw new SignatureException("Exception extracting parameters: " + e.getMessage());
+                }
+            }
+        }
+    }
     static {
         algorithms.put("MD5WITHRSAENCRYPTION", new DERObjectIdentifier("1.2.840.113549.1.1.4"));
         algorithms.put("MD5WITHRSA", new DERObjectIdentifier("1.2.840.113549.1.1.4"));

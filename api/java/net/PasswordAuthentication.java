@@ -1,6 +1,8 @@
 package java.net;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
@@ -8,43 +10,53 @@ import droidsafe.annotations.*;
 
 
 public final class PasswordAuthentication {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.954 -0400", hash_original_field = "435E0648D634175C46BD40AC366545A8", hash_generated_field = "4011AE72656FEC39CB60833262E361C8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:05.452 -0500", hash_original_field = "603671BF518F3A411771AE6211095177", hash_generated_field = "4011AE72656FEC39CB60833262E361C8")
+
 
     private String userName;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.954 -0400", hash_original_field = "5F4DCC3B5AA765D61D8327DEB882CF99", hash_generated_field = "E9D3F141738563A4D1D32A99D6434F98")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:05.454 -0500", hash_original_field = "21BCD293DE862031F898430214E88677", hash_generated_field = "E9D3F141738563A4D1D32A99D6434F98")
+
 
     private char[] password;
+
+    /**
+     * Creates an instance of a password authentication with a specified
+     * username and password.
+     *
+     * @param userName
+     *            the username to store.
+     * @param password
+     *            the associated password to store.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:05.457 -0500", hash_original_method = "5D7214C35F0B8EFCD4776395D10A0F27", hash_generated_method = "29ACC9DE2D8A4C1B8CFCE6AA59A2D59D")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.956 -0400", hash_original_method = "5D7214C35F0B8EFCD4776395D10A0F27", hash_generated_method = "25328EA123D9D2C607C2E93AA009C49C")
-    public  PasswordAuthentication(String userName, char[] password) {
+public PasswordAuthentication(String userName, char[] password) {
         this.userName = userName;
         this.password = password.clone();
-        // ---------- Original Method ----------
-        //this.userName = userName;
-        //this.password = password.clone();
     }
 
+    /**
+     * Gets a clone of the password stored by this instance. The user is
+     * responsible to finalize the returned array if the password clone is no
+     * longer needed.
+     *
+     * @return the copied password.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:05.459 -0500", hash_original_method = "79A6CAB64FA4B390A39CA60FAD9B839D", hash_generated_method = "C814E988AE5D6DF03B812A5ABE48A46E")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.957 -0400", hash_original_method = "79A6CAB64FA4B390A39CA60FAD9B839D", hash_generated_method = "6D5548BA0F2ED4F0AC0DE5E4D0C2AE2B")
-    public char[] getPassword() {
-        char[] var4344A63B108F14EA871CFA63D8482D53_1055639413 = (password.clone());
-                char[] var50607924ABD4C17119BAF3A1CE41C0EC_1417517042 = {getTaintChar()};
-        return var50607924ABD4C17119BAF3A1CE41C0EC_1417517042;
-        // ---------- Original Method ----------
-        //return password.clone();
+public char[] getPassword() {
+        return password.clone();
     }
 
+    /**
+     * Gets the username stored by this instance.
+     *
+     * @return the stored username.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:05.461 -0500", hash_original_method = "AE8C8ADC981355D9DAA86F7D72E53644", hash_generated_method = "A531C69D4F950205F39A1FFF6AFE3034")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.958 -0400", hash_original_method = "AE8C8ADC981355D9DAA86F7D72E53644", hash_generated_method = "BD67857E08EBFD145AE9488033294680")
-    public String getUserName() {
-String varAE6871DB21169C2532F1A9E69AA090CE_1748964133 =         userName;
-        varAE6871DB21169C2532F1A9E69AA090CE_1748964133.addTaint(taint);
-        return varAE6871DB21169C2532F1A9E69AA090CE_1748964133;
-        // ---------- Original Method ----------
-        //return userName;
+public String getUserName() {
+        return userName;
     }
 
     

@@ -1,6 +1,8 @@
 package android.view;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,34 +16,15 @@ import android.os.RemoteException;
 
 
 public final class InputDevice implements Parcelable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.996 -0400", hash_original_field = "6AC7F06B6413A1BE9C136DC7DF0D2B60", hash_generated_field = "9AA2EA3A2433F5D6F841BEFD54A673B4")
 
-    private int mId;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.996 -0400", hash_original_field = "311C2C8498DF6A626CBDB8AA4193499C", hash_generated_field = "886C24C67739C97CF77B8DD239E412F9")
-
-    private String mName;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.996 -0400", hash_original_field = "DB16CA429360673C225135A6E95335E5", hash_generated_field = "93F8C3686E416465BD516F0456984FB5")
-
-    private int mSources;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.996 -0400", hash_original_field = "4F373ED5F3CABA41929A1177EB3FB926", hash_generated_field = "A34912FA2700058D6266925EFA16F418")
-
-    private int mKeyboardType;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.997 -0400", hash_original_field = "AB30725F38523A03DBBFE4BBA5B3B40D", hash_generated_field = "70C3EC525DB53326DF319F2822B78445")
-
-    private String mKeyCharacterMapFile;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.997 -0400", hash_original_field = "7CF9875B144A6D9731314267623BF1A5", hash_generated_field = "3D9ACF5B843900F5B90A6C764A13538C")
-
-    private final ArrayList<MotionRange> mMotionRanges = new ArrayList<MotionRange>();
+    /**
+     * Gets information about the input device with the specified id.
+     * @param id The device id.
+     * @return The input device or null if not found.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.367 -0500", hash_original_method = "617D080CD74F90AAB540B4EFDECA9911", hash_generated_method = "7BC6C5EBD73EE06C676013B0BD6BF4AD")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.997 -0400", hash_original_method = "2C37C35B619B46784669EFC9CA5E5179", hash_generated_method = "93E63FA312CE70DEEBBCD18536A99918")
-    private  InputDevice() {
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    public static InputDevice getDevice(int id) {
+public static InputDevice getDevice(int id) {
         IWindowManager wm = Display.getWindowManager();
         try {
             return wm.getInputDevice(id);
@@ -50,10 +33,14 @@ public final class InputDevice implements Parcelable {
                     "Could not get input device information from Window Manager.", ex);
         }
     }
-
     
-    @DSModeled(DSC.SAFE)
-    public static int[] getDeviceIds() {
+    /**
+     * Gets the ids of all input devices in the system.
+     * @return The input device ids.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.369 -0500", hash_original_method = "716B8A04ACA0E57FD1299C1099CDE32D", hash_generated_method = "33B8A268DD6909CE1CFA3F327E40702A")
+    
+public static int[] getDeviceIds() {
         IWindowManager wm = Display.getWindowManager();
         try {
             return wm.getInputDeviceIds();
@@ -62,211 +49,421 @@ public final class InputDevice implements Parcelable {
                     "Could not get input device ids from Window Manager.", ex);
         }
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.286 -0500", hash_original_field = "66AF631211387FE10BB685CD53D152A2", hash_generated_field = "79DB10EEA8A684684DB29410B9A96FA0")
+
+    public static final int SOURCE_CLASS_MASK = 0x000000ff;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.289 -0500", hash_original_field = "B44703407145C7F1C3B2E35764248DA8", hash_generated_field = "E552F6201060CE6A7B2CE06101B73E27")
+
+    public static final int SOURCE_CLASS_BUTTON = 0x00000001;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.292 -0500", hash_original_field = "894917D4BB3234FC5836BAE57D837B1E", hash_generated_field = "18DBBE7D23B1AA4FDF7D48FAFD16B7D1")
+
+    public static final int SOURCE_CLASS_POINTER = 0x00000002;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.294 -0500", hash_original_field = "675113C60F1AAE5F88A0148C2CAAD6D9", hash_generated_field = "37A91856BE5B43482A6CC532660B322F")
+
+    public static final int SOURCE_CLASS_TRACKBALL = 0x00000004;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.297 -0500", hash_original_field = "9419BEE30ED1A6676503BC1597F01842", hash_generated_field = "0503278EA3937695357A92063C04A747")
+
+    public static final int SOURCE_CLASS_POSITION = 0x00000008;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.300 -0500", hash_original_field = "DB3F6E8216648F093BA4454A48E6CC27", hash_generated_field = "AF06B443A783729C3E25A4612CDC3B0D")
+
+    public static final int SOURCE_CLASS_JOYSTICK = 0x00000010;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.302 -0500", hash_original_field = "8F090BF47B3CB3F3253C4C369BC83C51", hash_generated_field = "F6F380DD90283AD8ED2E8942E2CBEDE2")
+
+    public static final int SOURCE_UNKNOWN = 0x00000000;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.305 -0500", hash_original_field = "585321483703A36FEDA7B7D5C2C2B1D2", hash_generated_field = "441DB42929C199D0380A266A0DB14AA5")
+
+    public static final int SOURCE_KEYBOARD = 0x00000100 | SOURCE_CLASS_BUTTON;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.308 -0500", hash_original_field = "03E304A6EA5FAB71C8515B65C042250A", hash_generated_field = "6EDC9B58D615427A3172FD2132FF7676")
+
+    public static final int SOURCE_DPAD = 0x00000200 | SOURCE_CLASS_BUTTON;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.310 -0500", hash_original_field = "12C5CF326C50B29BBB87A68F11A2B21D", hash_generated_field = "7E0C514E09049DD5397963B1A29C34C4")
+
+    public static final int SOURCE_GAMEPAD = 0x00000400 | SOURCE_CLASS_BUTTON;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.313 -0500", hash_original_field = "DB6916444F3BAFCE56CDD3B1D481CACF", hash_generated_field = "515BC29AF997D9AB3CC8C7F1589F726B")
+
+    public static final int SOURCE_TOUCHSCREEN = 0x00001000 | SOURCE_CLASS_POINTER;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.315 -0500", hash_original_field = "E2A0260F7C78825047CD8FD81EFD7A8E", hash_generated_field = "4CC18EC988EC3A098925B2A857E3567F")
+
+    public static final int SOURCE_MOUSE = 0x00002000 | SOURCE_CLASS_POINTER;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.318 -0500", hash_original_field = "F3A3A565FD358535B6C8F82123F3464E", hash_generated_field = "92EEB77027297EE4EFF782F8EF1FF0F7")
+
+    public static final int SOURCE_STYLUS = 0x00004000 | SOURCE_CLASS_POINTER;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.320 -0500", hash_original_field = "CCB48329DA4DF717A72DA9CE89F104FE", hash_generated_field = "9E9C6DB0CFC4958D3637F63294124775")
+
+    public static final int SOURCE_TRACKBALL = 0x00010000 | SOURCE_CLASS_TRACKBALL;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.322 -0500", hash_original_field = "5F2AB898B4C55720B6E736E31AC483FC", hash_generated_field = "C53F1BB8BA42E382D162BEB6C06A5DA6")
+
+    public static final int SOURCE_TOUCHPAD = 0x00100000 | SOURCE_CLASS_POSITION;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.325 -0500", hash_original_field = "69CC7ECB954F7506BC8F125D19970273", hash_generated_field = "2611C3DA236978609FE6ADB1CA63EA73")
+
+    public static final int SOURCE_JOYSTICK = 0x01000000 | SOURCE_CLASS_JOYSTICK;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.327 -0500", hash_original_field = "82D7FF719BDAABE7A1FAA1E0E6EAB836", hash_generated_field = "E9DD51F79C072DFDE77333973F1DFBB8")
+
+    public static final int SOURCE_ANY = 0xffffff00;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.330 -0500", hash_original_field = "CDC0645332BD7352C5366E357F9B6359", hash_generated_field = "7B2FEF95F8CA0D6FBF240CB6110B772A")
+
+    @Deprecated
+    public static final int MOTION_RANGE_X = MotionEvent.AXIS_X;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.333 -0500", hash_original_field = "CFA6F86A33811B2088F712DB91A7650E", hash_generated_field = "18F61B4D7D5E46C987CB6812F2F23765")
+
+    @Deprecated
+    public static final int MOTION_RANGE_Y = MotionEvent.AXIS_Y;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.335 -0500", hash_original_field = "A9771BE3806894ED7544CF3BDF0C0E9F", hash_generated_field = "78402228454C81DFEE033C1B1A06C2D9")
+
+    @Deprecated
+    public static final int MOTION_RANGE_PRESSURE = MotionEvent.AXIS_PRESSURE;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.338 -0500", hash_original_field = "0020335378A514247BC8661BE83BFC61", hash_generated_field = "D70BF0ADE61441527074BAD011B363EF")
+
+    @Deprecated
+    public static final int MOTION_RANGE_SIZE = MotionEvent.AXIS_SIZE;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.340 -0500", hash_original_field = "9A6022A43E677B18127AF819AF131A23", hash_generated_field = "CA1F1E21E04D0900660382D6C6FB2288")
+
+    @Deprecated
+    public static final int MOTION_RANGE_TOUCH_MAJOR = MotionEvent.AXIS_TOUCH_MAJOR;
 
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.997 -0400", hash_original_method = "849E83C6BA01C72387E236CA4FAA38B9", hash_generated_method = "D32B351913D7858A330B79A7B1170295")
-    public int getId() {
-        int var6AC7F06B6413A1BE9C136DC7DF0D2B60_305616651 = (mId);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1334568701 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1334568701;
-        // ---------- Original Method ----------
-        //return mId;
+    public static final class MotionRange {
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.397 -0500", hash_original_field = "DE6B5F8A8E01B01D6955CFF5AC6A1196", hash_generated_field = "291186BF7CD64560031686367E49FDA6")
+
+        private int mAxis;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.399 -0500", hash_original_field = "11DA1CE39E46044FC7D0DA0865E06F43", hash_generated_field = "D564CAA4C2DB0DC0AAAD32F1767ED66A")
+
+        private int mSource;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.401 -0500", hash_original_field = "178EA862ED0376AE8765C7120C2B0D2C", hash_generated_field = "C65C1A7B3549B2CAE727CE60B163A9D5")
+
+        private float mMin;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.404 -0500", hash_original_field = "49586E9819437ED10960A2451558B838", hash_generated_field = "61EBA81EE8DC22B1F5E764B863E5361B")
+
+        private float mMax;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.406 -0500", hash_original_field = "EFC66A5463B7690527BF444F55B9761E", hash_generated_field = "EE76E1A2F0CC7EE13DBD206CE7906C7D")
+
+        private float mFlat;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.408 -0500", hash_original_field = "67B0051A4EB3458680212EDE61F8D8C8", hash_generated_field = "88080FE0B3D7FAD3C1754E24E4008D99")
+
+        private float mFuzz;
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.411 -0500", hash_original_method = "003C115B43ED25425A82F4C0BC4BFB2D", hash_generated_method = "D463009C9EB0E2425D401CE128054BB0")
+        
+private MotionRange(int axis, int source, float min, float max, float flat, float fuzz) {
+            mAxis = axis;
+            mSource = source;
+            mMin = min;
+            mMax = max;
+            mFlat = flat;
+            mFuzz = fuzz;
+        }
+
+        /**
+         * Gets the axis id.
+         * @return The axis id.
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.413 -0500", hash_original_method = "7AA123496C72318A01ADA9E2FDF13D66", hash_generated_method = "119033B1332952A1AB2AB0A3BDCBA63F")
+        
+public int getAxis() {
+            return mAxis;
+        }
+
+        /**
+         * Gets the source for which the axis is defined.
+         * @return The source.
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.416 -0500", hash_original_method = "7037355E864C633C32E117AF9FFED93E", hash_generated_method = "37E408648F09142C829775B047DEE782")
+        
+public int getSource() {
+            return mSource;
+        }
+
+        /**
+         * Gets the inclusive minimum value for the axis.
+         * @return The inclusive minimum value.
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.418 -0500", hash_original_method = "5BD2FEA7B11B9283C78F11EA439073DF", hash_generated_method = "BB3E176470B5D4510F6AC0C42EBA7AC2")
+        
+public float getMin() {
+            return mMin;
+        }
+
+        /**
+         * Gets the inclusive maximum value for the axis.
+         * @return The inclusive maximum value.
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.421 -0500", hash_original_method = "CDE9D2624870C8EBE80058272C14174B", hash_generated_method = "344FD9D59085229F8DB479FE996BF4B7")
+        
+public float getMax() {
+            return mMax;
+        }
+
+        /**
+         * Gets the range of the axis (difference between maximum and minimum).
+         * @return The range of values.
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.423 -0500", hash_original_method = "FCC48134B6B008CC9CD869CCEF03FE5F", hash_generated_method = "E6A895AA8F92AA489C5ADBB451AE25A9")
+        
+public float getRange() {
+            return mMax - mMin;
+        }
+
+        /**
+         * Gets the extent of the center flat position with respect to this axis.
+         * <p>
+         * For example, a flat value of 8 means that the center position is between -8 and +8.
+         * This value is mainly useful for calibrating self-centering devices.
+         * </p>
+         * @return The extent of the center flat position.
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.426 -0500", hash_original_method = "6E70447A0F19559DDEE9B218BFC4E0A9", hash_generated_method = "D8AF144CC29FD5DA02EAA9D5412C0267")
+        
+public float getFlat() {
+            return mFlat;
+        }
+
+        /**
+         * Gets the error tolerance for input device measurements with respect to this axis.
+         * <p>
+         * For example, a value of 2 indicates that the measured value may be up to +/- 2 units
+         * away from the actual value due to noise and device sensitivity limitations.
+         * </p>
+         * @return The error tolerance.
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.428 -0500", hash_original_method = "6C32BE9CB35AEE464A215A2BDA6324A6", hash_generated_method = "E9B070ECFE6804903E47CE7EACE19667")
+        
+public float getFuzz() {
+            return mFuzz;
+        }
+
+        
+    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.343 -0500", hash_original_field = "7182ADA3CE1BFB2D7797DE987827A330", hash_generated_field = "D4E5B4D1F104C8CA42C6BF23E778DEB1")
+
+    @Deprecated
+    public static final int MOTION_RANGE_TOUCH_MINOR = MotionEvent.AXIS_TOUCH_MINOR;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.347 -0500", hash_original_field = "7D5BA5A1DA4CA1633626329354D82079", hash_generated_field = "AD49F028075332D31893082B82F68E04")
+
+    @Deprecated
+    public static final int MOTION_RANGE_TOOL_MAJOR = MotionEvent.AXIS_TOOL_MAJOR;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.350 -0500", hash_original_field = "E5BB17C42AB1C31B865EFBB54780CD37", hash_generated_field = "511D721009CA62BDE2CC36BB8E606383")
+
+    @Deprecated
+    public static final int MOTION_RANGE_TOOL_MINOR = MotionEvent.AXIS_TOOL_MINOR;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.353 -0500", hash_original_field = "D41729EBCD99C4FBC0BA47CCD7ECA1B5", hash_generated_field = "563E0FE22373B2EDB536DD2ED09C2EC5")
+
+    @Deprecated
+    public static final int MOTION_RANGE_ORIENTATION = MotionEvent.AXIS_ORIENTATION;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.355 -0500", hash_original_field = "1210ABDB780C36FE5AF44FF969894AD7", hash_generated_field = "507B4AF09182B5A80D31534C6DAEFF45")
+
+    public static final int KEYBOARD_TYPE_NONE = 0;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.358 -0500", hash_original_field = "B98C630BD586F9E0E2C13269B9F71E2C", hash_generated_field = "145C88DB25C6C4CA9096B45DFE955870")
+
+    public static final int KEYBOARD_TYPE_NON_ALPHABETIC = 1;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.361 -0500", hash_original_field = "566F79DA4B4A42E1088DA6B617F0B9E5", hash_generated_field = "99F61A684F6C37D75D47C8B4FBE3DDA3")
+
+    public static final int KEYBOARD_TYPE_ALPHABETIC = 2;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.005 -0400", hash_original_field = "0D395022D7ACD5A6443859D3E67FCA44", hash_generated_field = "21D35EEA2F1A31C6EEE3B233C84334EE")
+
+    public static final Parcelable.Creator<InputDevice> CREATOR
+            = new Parcelable.Creator<InputDevice>() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.433 -0500", hash_original_method = "A4482F32448D2C09B30B76D771E4FD04", hash_generated_method = "1C9A7A7AE65CEF2F049CE5ABFC1416CA")
+        
+public InputDevice createFromParcel(Parcel in) {
+            InputDevice result = new InputDevice();
+            result.readFromParcel(in);
+            return result;
+        }
+        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.436 -0500", hash_original_method = "2D0218425C4C471D120CA5746FC5C4BA", hash_generated_method = "A9B1F2B40E35A805575F94F8C9AECFC5")
+        
+public InputDevice[] newArray(int size) {
+            return new InputDevice[size];
+        }
+    };
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.272 -0500", hash_original_field = "9F66E723E60E4F10157FDA7C23C67293", hash_generated_field = "9AA2EA3A2433F5D6F841BEFD54A673B4")
+
+    private int mId;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.275 -0500", hash_original_field = "ED29A5CAC2A4A14894CD28BA3B1CE29C", hash_generated_field = "886C24C67739C97CF77B8DD239E412F9")
+
+    private String mName;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.277 -0500", hash_original_field = "E153425512B0D84B466F8ACA2E1AEC36", hash_generated_field = "93F8C3686E416465BD516F0456984FB5")
+
+    private int mSources;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.279 -0500", hash_original_field = "560FE554C43355D543AB5334B0A3737F", hash_generated_field = "A34912FA2700058D6266925EFA16F418")
+
+    private int mKeyboardType;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.281 -0500", hash_original_field = "8C462514055DA1BF3C67CAD41F740EFC", hash_generated_field = "70C3EC525DB53326DF319F2822B78445")
+
+    private String mKeyCharacterMapFile;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.283 -0500", hash_original_field = "2F49349C025260EF41839D257CCFC6D8", hash_generated_field = "3D9ACF5B843900F5B90A6C764A13538C")
+
+
+    private final ArrayList<MotionRange> mMotionRanges = new ArrayList<MotionRange>();
+
+    // Called by native code.
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.364 -0500", hash_original_method = "2C37C35B619B46784669EFC9CA5E5179", hash_generated_method = "EF21FEBD1D8CB31B9833DDCC077F3763")
+    
+private InputDevice() {
+    }
+    
+    /**
+     * Gets the input device id.
+     * @return The input device id.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.371 -0500", hash_original_method = "849E83C6BA01C72387E236CA4FAA38B9", hash_generated_method = "11DEA77066B2A20ED28C130805C2B9DE")
+    
+public int getId() {
+        return mId;
+    }
+    
+    /**
+     * Gets the name of this input device.
+     * @return The input device name.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.373 -0500", hash_original_method = "9194A7433912D38B9A3F1171AC921C56", hash_generated_method = "AD920925278DEAFAFBD283F9C2E39E5D")
+    
+public String getName() {
+        return mName;
+    }
+    
+    /**
+     * Gets the input sources supported by this input device as a combined bitfield.
+     * @return The supported input sources.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.376 -0500", hash_original_method = "3BD5CDD2AD0F6E345998577876EA9513", hash_generated_method = "4CB920375ED755DF3F38DFDF5E3AB986")
+    
+public int getSources() {
+        return mSources;
+    }
+    
+    /**
+     * Gets the keyboard type.
+     * @return The keyboard type.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.379 -0500", hash_original_method = "3E019E9C92E6EAD3726AE49F913F1619", hash_generated_method = "AB4393F0105E67E42064EBE153D95003")
+    
+public int getKeyboardType() {
+        return mKeyboardType;
+    }
+    
+    /**
+     * Gets the key character map associated with this input device.
+     * @return The key character map.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.381 -0500", hash_original_method = "88E280A067EB975F01B9806455B5FBF9", hash_generated_method = "611B2D839650BD7D423E37BCD24B6D45")
+    
+public KeyCharacterMap getKeyCharacterMap() {
+        return KeyCharacterMap.load(mId);
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.383 -0500", hash_original_method = "6E63969CFD2DFD594C82531499F7DA54", hash_generated_method = "6E63969CFD2DFD594C82531499F7DA54")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.997 -0400", hash_original_method = "9194A7433912D38B9A3F1171AC921C56", hash_generated_method = "08BA6CFC78ABDC1B07934C535B5CEBE6")
-    public String getName() {
-String varDBF15A5FB8102A5C28D5046A0E92E443_419714970 =         mName;
-        varDBF15A5FB8102A5C28D5046A0E92E443_419714970.addTaint(taint);
-        return varDBF15A5FB8102A5C28D5046A0E92E443_419714970;
-        // ---------- Original Method ----------
-        //return mName;
+String getKeyCharacterMapFile() {
+        return mKeyCharacterMapFile;
     }
 
+    /**
+     * Gets information about the range of values for a particular {@link MotionEvent} axis.
+     * If the device supports multiple sources, the same axis may have different meanings
+     * for each source.  Returns information about the first axis found for any source.
+     * To obtain information about the axis for a specific source, use
+     * {@link #getMotionRange(int, int)}.
+     *
+     * @param axis The axis constant.
+     * @return The range of values, or null if the requested axis is not
+     * supported by the device.
+     *
+     * @see MotionEvent#AXIS_X
+     * @see MotionEvent#AXIS_Y
+     * @see #getSupportedAxes()
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.385 -0500", hash_original_method = "496E5C96705FE1519429C9151F8650BC", hash_generated_method = "6379AEBBE4764AE05828F0A0DC74305A")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.998 -0400", hash_original_method = "3BD5CDD2AD0F6E345998577876EA9513", hash_generated_method = "4358B6844346181BC7D4D312A20A72AC")
-    public int getSources() {
-        int varDB16CA429360673C225135A6E95335E5_805109270 = (mSources);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1078482891 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1078482891;
-        // ---------- Original Method ----------
-        //return mSources;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.998 -0400", hash_original_method = "3E019E9C92E6EAD3726AE49F913F1619", hash_generated_method = "463928872844D4F818BD0AF305DA8192")
-    public int getKeyboardType() {
-        int var4F373ED5F3CABA41929A1177EB3FB926_960569677 = (mKeyboardType);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1723005862 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1723005862;
-        // ---------- Original Method ----------
-        //return mKeyboardType;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.998 -0400", hash_original_method = "88E280A067EB975F01B9806455B5FBF9", hash_generated_method = "AAE25240BB930ABE53263BB555450FB3")
-    public KeyCharacterMap getKeyCharacterMap() {
-KeyCharacterMap var0C467EEC84F0F598C0D81E03A823790D_1710469526 =         KeyCharacterMap.load(mId);
-        var0C467EEC84F0F598C0D81E03A823790D_1710469526.addTaint(taint);
-        return var0C467EEC84F0F598C0D81E03A823790D_1710469526;
-        // ---------- Original Method ----------
-        //return KeyCharacterMap.load(mId);
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.998 -0400", hash_original_method = "6E63969CFD2DFD594C82531499F7DA54", hash_generated_method = "F4D5688BA0BC469F75EBFE15A35849AA")
-     String getKeyCharacterMapFile() {
-String varC41B4C4A25BA902F7F690BA9A2B25586_1120901632 =         mKeyCharacterMapFile;
-        varC41B4C4A25BA902F7F690BA9A2B25586_1120901632.addTaint(taint);
-        return varC41B4C4A25BA902F7F690BA9A2B25586_1120901632;
-        // ---------- Original Method ----------
-        //return mKeyCharacterMapFile;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.998 -0400", hash_original_method = "496E5C96705FE1519429C9151F8650BC", hash_generated_method = "A55D5C0EDD5CF32EE859A5AAE104829F")
-    public MotionRange getMotionRange(int axis) {
-        addTaint(axis);
+public MotionRange getMotionRange(int axis) {
         final int numRanges = mMotionRanges.size();
-for(int i = 0;i < numRanges;i++)
-        {
+        for (int i = 0; i < numRanges; i++) {
             final MotionRange range = mMotionRanges.get(i);
-            if(range.mAxis == axis)            
-            {
-MotionRange varF8A2EC64DE65E58A942AA1E46755B5CE_525897995 =                 range;
-                varF8A2EC64DE65E58A942AA1E46755B5CE_525897995.addTaint(taint);
-                return varF8A2EC64DE65E58A942AA1E46755B5CE_525897995;
-            } //End block
-        } //End block
-MotionRange var540C13E9E156B687226421B24F2DF178_96920310 =         null;
-        var540C13E9E156B687226421B24F2DF178_96920310.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_96920310;
-        // ---------- Original Method ----------
-        //final int numRanges = mMotionRanges.size();
-        //for (int i = 0; i < numRanges; i++) {
-            //final MotionRange range = mMotionRanges.get(i);
-            //if (range.mAxis == axis) {
-                //return range;
-            //}
-        //}
-        //return null;
+            if (range.mAxis == axis) {
+                return range;
+            }
+        }
+        return null;
     }
 
+    /**
+     * Gets information about the range of values for a particular {@link MotionEvent} axis
+     * used by a particular source on the device.
+     * If the device supports multiple sources, the same axis may have different meanings
+     * for each source.
+     *
+     * @param axis The axis constant.
+     * @param source The source for which to return information.
+     * @return The range of values, or null if the requested axis is not
+     * supported by the device.
+     *
+     * @see MotionEvent#AXIS_X
+     * @see MotionEvent#AXIS_Y
+     * @see #getSupportedAxes()
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.388 -0500", hash_original_method = "2F158E6F6F2CA810A33FC3C995F22831", hash_generated_method = "A58B2C171FBEE7CB533E8276E61812AC")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.998 -0400", hash_original_method = "2F158E6F6F2CA810A33FC3C995F22831", hash_generated_method = "C5480CC32273D017324855583D04AFBB")
-    public MotionRange getMotionRange(int axis, int source) {
-        addTaint(source);
-        addTaint(axis);
+public MotionRange getMotionRange(int axis, int source) {
         final int numRanges = mMotionRanges.size();
-for(int i = 0;i < numRanges;i++)
-        {
+        for (int i = 0; i < numRanges; i++) {
             final MotionRange range = mMotionRanges.get(i);
-            if(range.mAxis == axis && range.mSource == source)            
-            {
-MotionRange varF8A2EC64DE65E58A942AA1E46755B5CE_1507344128 =                 range;
-                varF8A2EC64DE65E58A942AA1E46755B5CE_1507344128.addTaint(taint);
-                return varF8A2EC64DE65E58A942AA1E46755B5CE_1507344128;
-            } //End block
-        } //End block
-MotionRange var540C13E9E156B687226421B24F2DF178_70993439 =         null;
-        var540C13E9E156B687226421B24F2DF178_70993439.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_70993439;
-        // ---------- Original Method ----------
-        //final int numRanges = mMotionRanges.size();
-        //for (int i = 0; i < numRanges; i++) {
-            //final MotionRange range = mMotionRanges.get(i);
-            //if (range.mAxis == axis && range.mSource == source) {
-                //return range;
-            //}
-        //}
-        //return null;
+            if (range.mAxis == axis && range.mSource == source) {
+                return range;
+            }
+        }
+        return null;
     }
 
+    /**
+     * Gets the ranges for all axes supported by the device.
+     * @return The motion ranges for the device.
+     *
+     * @see #getMotionRange(int, int)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.390 -0500", hash_original_method = "8F0147E430687E8511683E1D47819832", hash_generated_method = "4D77AE38450C3F67B77C0E16C81B1C69")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.999 -0400", hash_original_method = "8F0147E430687E8511683E1D47819832", hash_generated_method = "B0EB5F12481288AE94B9F6ECC837880F")
-    public List<MotionRange> getMotionRanges() {
-List<MotionRange> varFFE5FF278A34CE0245187BDB61690F1F_361978484 =         mMotionRanges;
-        varFFE5FF278A34CE0245187BDB61690F1F_361978484.addTaint(taint);
-        return varFFE5FF278A34CE0245187BDB61690F1F_361978484;
-        // ---------- Original Method ----------
-        //return mMotionRanges;
+public List<MotionRange> getMotionRanges() {
+        return mMotionRanges;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.393 -0500", hash_original_method = "F938DEDD59851FE8B4D63705E085118B", hash_generated_method = "0F3603C011A2194091D5E6406DF7D606")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.999 -0400", hash_original_method = "F938DEDD59851FE8B4D63705E085118B", hash_generated_method = "4AE7F16C0174DD6AD10D81EDBC912323")
-    private void addMotionRange(int axis, int source,
+private void addMotionRange(int axis, int source,
             float min, float max, float flat, float fuzz) {
-        addTaint(fuzz);
-        addTaint(flat);
-        addTaint(max);
-        addTaint(min);
-        addTaint(source);
-        addTaint(axis);
         mMotionRanges.add(new MotionRange(axis, source, min, max, flat, fuzz));
-        // ---------- Original Method ----------
-        //mMotionRanges.add(new MotionRange(axis, source, min, max, flat, fuzz));
     }
-
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.000 -0400", hash_original_method = "66E89B3285A9850971D96BAD9F2BB44F", hash_generated_method = "7FA6141262F5D3ECEE0E316A6E848BC9")
-    private void readFromParcel(Parcel in) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.441 -0500", hash_original_method = "66E89B3285A9850971D96BAD9F2BB44F", hash_generated_method = "8E5476A5D8910D0832C1DB2A7C8C4C82")
+    
+private void readFromParcel(Parcel in) {
         mId = in.readInt();
         mName = in.readString();
         mSources = in.readInt();
         mKeyboardType = in.readInt();
         mKeyCharacterMapFile = in.readString();
-for(;;)
-        {
+
+        for (;;) {
             int axis = in.readInt();
-            if(axis < 0)            
-            {
+            if (axis < 0) {
                 break;
-            } //End block
+            }
             addMotionRange(axis, in.readInt(),
                     in.readFloat(), in.readFloat(), in.readFloat(), in.readFloat());
-        } //End block
-        // ---------- Original Method ----------
-        //mId = in.readInt();
-        //mName = in.readString();
-        //mSources = in.readInt();
-        //mKeyboardType = in.readInt();
-        //mKeyCharacterMapFile = in.readString();
-        //for (;;) {
-            //int axis = in.readInt();
-            //if (axis < 0) {
-                //break;
-            //}
-            //addMotionRange(axis, in.readInt(),
-                    //in.readFloat(), in.readFloat(), in.readFloat(), in.readFloat());
-        //}
+        }
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.444 -0500", hash_original_method = "91853B6BABA9CBC4F027C3C314DDF153", hash_generated_method = "44644FE9A20EECDBA3A08DD54B874281")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.000 -0400", hash_original_method = "91853B6BABA9CBC4F027C3C314DDF153", hash_generated_method = "44787D17FB255D243655B790F649BE4D")
-    @Override
+@Override
     public void writeToParcel(Parcel out, int flags) {
-        addTaint(flags);
-        addTaint(out.getTaint());
         out.writeInt(mId);
         out.writeString(mName);
         out.writeInt(mSources);
         out.writeInt(mKeyboardType);
         out.writeString(mKeyCharacterMapFile);
+
         final int numRanges = mMotionRanges.size();
-for(int i = 0;i < numRanges;i++)
-        {
+        for (int i = 0; i < numRanges; i++) {
             MotionRange range = mMotionRanges.get(i);
             out.writeInt(range.mAxis);
             out.writeInt(range.mSource);
@@ -274,59 +471,40 @@ for(int i = 0;i < numRanges;i++)
             out.writeFloat(range.mMax);
             out.writeFloat(range.mFlat);
             out.writeFloat(range.mFuzz);
-        } //End block
+        }
         out.writeInt(-1);
-        // ---------- Original Method ----------
-        //out.writeInt(mId);
-        //out.writeString(mName);
-        //out.writeInt(mSources);
-        //out.writeInt(mKeyboardType);
-        //out.writeString(mKeyCharacterMapFile);
-        //final int numRanges = mMotionRanges.size();
-        //for (int i = 0; i < numRanges; i++) {
-            //MotionRange range = mMotionRanges.get(i);
-            //out.writeInt(range.mAxis);
-            //out.writeInt(range.mSource);
-            //out.writeFloat(range.mMin);
-            //out.writeFloat(range.mMax);
-            //out.writeFloat(range.mFlat);
-            //out.writeFloat(range.mFuzz);
-        //}
-        //out.writeInt(-1);
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.446 -0500", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "8188008AC9C80E87937FE73DCA905200")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.000 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "5C723AA074FC4B7B16F21E937FF53043")
-    @Override
+@Override
     public int describeContents() {
-        int varCFCD208495D565EF66E7DFF9F98764DA_221858075 = (0);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1406708460 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1406708460;
-        // ---------- Original Method ----------
-        //return 0;
+        return 0;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.450 -0500", hash_original_method = "9F735BD3745C12E449D13E0D45FB54C8", hash_generated_method = "10DE9F01AF1E7DA174A411543A6854B6")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.002 -0400", hash_original_method = "9F735BD3745C12E449D13E0D45FB54C8", hash_generated_method = "80DC29ADB9CA8BE2A171C94D3CCB12DF")
-    @Override
+@Override
     public String toString() {
         StringBuilder description = new StringBuilder();
         description.append("Input Device ").append(mId).append(": ").append(mName).append("\n");
+        
         description.append("  Keyboard Type: ");
-switch(mKeyboardType){
-        case KEYBOARD_TYPE_NONE:
-        description.append("none");
-        break;
-        case KEYBOARD_TYPE_NON_ALPHABETIC:
-        description.append("non-alphabetic");
-        break;
-        case KEYBOARD_TYPE_ALPHABETIC:
-        description.append("alphabetic");
-        break;
-}        description.append("\n");
+        switch (mKeyboardType) {
+            case KEYBOARD_TYPE_NONE:
+                description.append("none");
+                break;
+            case KEYBOARD_TYPE_NON_ALPHABETIC:
+                description.append("non-alphabetic");
+                break;
+            case KEYBOARD_TYPE_ALPHABETIC:
+                description.append("alphabetic");
+                break;
+        }
+        description.append("\n");
+
         description.append("  Key Character Map: ").append(mKeyCharacterMapFile).append("\n");
+
         description.append("  Sources: 0x").append(Integer.toHexString(mSources)).append(" (");
         appendSourceDescriptionIfApplicable(description, SOURCE_KEYBOARD, "keyboard");
         appendSourceDescriptionIfApplicable(description, SOURCE_DPAD, "dpad");
@@ -338,9 +516,9 @@ switch(mKeyboardType){
         appendSourceDescriptionIfApplicable(description, SOURCE_JOYSTICK, "joystick");
         appendSourceDescriptionIfApplicable(description, SOURCE_GAMEPAD, "gamepad");
         description.append(" )\n");
+
         final int numAxes = mMotionRanges.size();
-for(int i = 0;i < numAxes;i++)
-        {
+        for (int i = 0; i < numAxes; i++) {
             MotionRange range = mMotionRanges.get(i);
             description.append("    ").append(MotionEvent.axisToString(range.mAxis));
             description.append(": source=0x").append(Integer.toHexString(range.mSource));
@@ -349,267 +527,19 @@ for(int i = 0;i < numAxes;i++)
             description.append(" flat=").append(range.mFlat);
             description.append(" fuzz=").append(range.mFuzz);
             description.append("\n");
-        } //End block
-String var748F562E35834E3B11BDA296A09FD9A8_1307843716 =         description.toString();
-        var748F562E35834E3B11BDA296A09FD9A8_1307843716.addTaint(taint);
-        return var748F562E35834E3B11BDA296A09FD9A8_1307843716;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        }
+        return description.toString();
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.453 -0500", hash_original_method = "C8D7AE07A3174BF8CEBA0E0E2EC288B0", hash_generated_method = "5BA1D53736C98B494EE8755DBC246A47")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.002 -0400", hash_original_method = "C8D7AE07A3174BF8CEBA0E0E2EC288B0", hash_generated_method = "8D760B6A315FB9259DF622AD08B13A80")
-    private void appendSourceDescriptionIfApplicable(StringBuilder description, int source,
+private void appendSourceDescriptionIfApplicable(StringBuilder description, int source,
             String sourceName) {
-        addTaint(sourceName.getTaint());
-        addTaint(source);
-        addTaint(description.getTaint());
-        if((mSources & source) == source)        
-        {
+        if ((mSources & source) == source) {
             description.append(" ");
             description.append(sourceName);
-        } //End block
-        // ---------- Original Method ----------
-        //if ((mSources & source) == source) {
-            //description.append(" ");
-            //description.append(sourceName);
-        //}
+        }
     }
-
-    
-    public static final class MotionRange {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.003 -0400", hash_original_field = "DDDC097689F9367A976032A7CB2D356F", hash_generated_field = "291186BF7CD64560031686367E49FDA6")
-
-        private int mAxis;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.003 -0400", hash_original_field = "6917951DFB797D97827BAAA584F128DE", hash_generated_field = "D564CAA4C2DB0DC0AAAD32F1767ED66A")
-
-        private int mSource;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.003 -0400", hash_original_field = "5226ADEF3F3B32783B4143237DC7F62E", hash_generated_field = "C65C1A7B3549B2CAE727CE60B163A9D5")
-
-        private float mMin;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.003 -0400", hash_original_field = "C886C6FF92A43B3F6833B7BAFD354FBA", hash_generated_field = "61EBA81EE8DC22B1F5E764B863E5361B")
-
-        private float mMax;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.003 -0400", hash_original_field = "C5775080456E320FD2BA8673FDF85440", hash_generated_field = "EE76E1A2F0CC7EE13DBD206CE7906C7D")
-
-        private float mFlat;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.003 -0400", hash_original_field = "A0A8D80651D8BE9B0B3FA9DF5C043C6F", hash_generated_field = "88080FE0B3D7FAD3C1754E24E4008D99")
-
-        private float mFuzz;
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.003 -0400", hash_original_method = "003C115B43ED25425A82F4C0BC4BFB2D", hash_generated_method = "F4F973ACE14B026CE8F881C426E10F2D")
-        private  MotionRange(int axis, int source, float min, float max, float flat, float fuzz) {
-            mAxis = axis;
-            mSource = source;
-            mMin = min;
-            mMax = max;
-            mFlat = flat;
-            mFuzz = fuzz;
-            // ---------- Original Method ----------
-            //mAxis = axis;
-            //mSource = source;
-            //mMin = min;
-            //mMax = max;
-            //mFlat = flat;
-            //mFuzz = fuzz;
-        }
-
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.003 -0400", hash_original_method = "7AA123496C72318A01ADA9E2FDF13D66", hash_generated_method = "17A61BB195DEB0B101FBA39EA4998483")
-        public int getAxis() {
-            int varDDDC097689F9367A976032A7CB2D356F_551102997 = (mAxis);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1418483710 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1418483710;
-            // ---------- Original Method ----------
-            //return mAxis;
-        }
-
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.004 -0400", hash_original_method = "7037355E864C633C32E117AF9FFED93E", hash_generated_method = "D88551D4B50C075B81D23F7FF0E00E6A")
-        public int getSource() {
-            int var6917951DFB797D97827BAAA584F128DE_984225684 = (mSource);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1228343420 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1228343420;
-            // ---------- Original Method ----------
-            //return mSource;
-        }
-
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.004 -0400", hash_original_method = "5BD2FEA7B11B9283C78F11EA439073DF", hash_generated_method = "EF1C2334C2F429556BC908AA3A7B5863")
-        public float getMin() {
-            float var5226ADEF3F3B32783B4143237DC7F62E_802105540 = (mMin);
-                        float var546ADE640B6EDFBC8A086EF31347E768_1310825883 = getTaintFloat();
-            return var546ADE640B6EDFBC8A086EF31347E768_1310825883;
-            // ---------- Original Method ----------
-            //return mMin;
-        }
-
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.004 -0400", hash_original_method = "CDE9D2624870C8EBE80058272C14174B", hash_generated_method = "18B4302A9FBD1C8416744D520F71A4F6")
-        public float getMax() {
-            float varC886C6FF92A43B3F6833B7BAFD354FBA_114512013 = (mMax);
-                        float var546ADE640B6EDFBC8A086EF31347E768_163426014 = getTaintFloat();
-            return var546ADE640B6EDFBC8A086EF31347E768_163426014;
-            // ---------- Original Method ----------
-            //return mMax;
-        }
-
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.004 -0400", hash_original_method = "FCC48134B6B008CC9CD869CCEF03FE5F", hash_generated_method = "9E2E7BA033D11C70670DAF69916BEA2C")
-        public float getRange() {
-            float varBCE7EEE240F58C938F84D6A44D3B7270_1255008417 = (mMax - mMin);
-                        float var546ADE640B6EDFBC8A086EF31347E768_1022927232 = getTaintFloat();
-            return var546ADE640B6EDFBC8A086EF31347E768_1022927232;
-            // ---------- Original Method ----------
-            //return mMax - mMin;
-        }
-
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.004 -0400", hash_original_method = "6E70447A0F19559DDEE9B218BFC4E0A9", hash_generated_method = "641901F49F0FC980BE2609E0D6B2BE09")
-        public float getFlat() {
-            float varC5775080456E320FD2BA8673FDF85440_1069626449 = (mFlat);
-                        float var546ADE640B6EDFBC8A086EF31347E768_1260802789 = getTaintFloat();
-            return var546ADE640B6EDFBC8A086EF31347E768_1260802789;
-            // ---------- Original Method ----------
-            //return mFlat;
-        }
-
-        
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.004 -0400", hash_original_method = "6C32BE9CB35AEE464A215A2BDA6324A6", hash_generated_method = "65A5E8B59210749C8029A32649D62DD4")
-        public float getFuzz() {
-            float varA0A8D80651D8BE9B0B3FA9DF5C043C6F_908827527 = (mFuzz);
-                        float var546ADE640B6EDFBC8A086EF31347E768_719333885 = getTaintFloat();
-            return var546ADE640B6EDFBC8A086EF31347E768_719333885;
-            // ---------- Original Method ----------
-            //return mFuzz;
-        }
-
-        
-    }
-
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.004 -0400", hash_original_field = "CE278AAAC0EEDF0668BB29E5EFF55401", hash_generated_field = "79DB10EEA8A684684DB29410B9A96FA0")
-
-    public static final int SOURCE_CLASS_MASK = 0x000000ff;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.004 -0400", hash_original_field = "417AF9EE29AAC27F93BD8A31462A6CD4", hash_generated_field = "E552F6201060CE6A7B2CE06101B73E27")
-
-    public static final int SOURCE_CLASS_BUTTON = 0x00000001;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.004 -0400", hash_original_field = "9555DAB3EC96ACC4F728A7F10BB14481", hash_generated_field = "18DBBE7D23B1AA4FDF7D48FAFD16B7D1")
-
-    public static final int SOURCE_CLASS_POINTER = 0x00000002;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.004 -0400", hash_original_field = "E433ACEBED4290DEA3D11D2D04462355", hash_generated_field = "37A91856BE5B43482A6CC532660B322F")
-
-    public static final int SOURCE_CLASS_TRACKBALL = 0x00000004;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.004 -0400", hash_original_field = "D73C7E3D38AE7B6140145CEC65264C58", hash_generated_field = "0503278EA3937695357A92063C04A747")
-
-    public static final int SOURCE_CLASS_POSITION = 0x00000008;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.005 -0400", hash_original_field = "33AE5DEDE5E9128ED4B35A28864E36B4", hash_generated_field = "AF06B443A783729C3E25A4612CDC3B0D")
-
-    public static final int SOURCE_CLASS_JOYSTICK = 0x00000010;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.005 -0400", hash_original_field = "7A00188CF4A876FEC5734A8B07AE4AEC", hash_generated_field = "F6F380DD90283AD8ED2E8942E2CBEDE2")
-
-    public static final int SOURCE_UNKNOWN = 0x00000000;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.005 -0400", hash_original_field = "D9AA0255E5CEBB40AE6691A4D0B57CC6", hash_generated_field = "441DB42929C199D0380A266A0DB14AA5")
-
-    public static final int SOURCE_KEYBOARD = 0x00000100 | SOURCE_CLASS_BUTTON;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.005 -0400", hash_original_field = "FBD3811E34C4A016BD1048D4E3FF77BA", hash_generated_field = "6EDC9B58D615427A3172FD2132FF7676")
-
-    public static final int SOURCE_DPAD = 0x00000200 | SOURCE_CLASS_BUTTON;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.005 -0400", hash_original_field = "306606F9C139C95841EE0A1DDBFE77E1", hash_generated_field = "7E0C514E09049DD5397963B1A29C34C4")
-
-    public static final int SOURCE_GAMEPAD = 0x00000400 | SOURCE_CLASS_BUTTON;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.005 -0400", hash_original_field = "C2770E63F6DE49117109C6C86D0582C6", hash_generated_field = "515BC29AF997D9AB3CC8C7F1589F726B")
-
-    public static final int SOURCE_TOUCHSCREEN = 0x00001000 | SOURCE_CLASS_POINTER;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.005 -0400", hash_original_field = "905E4411A356CA2F1749B2E6D938893F", hash_generated_field = "4CC18EC988EC3A098925B2A857E3567F")
-
-    public static final int SOURCE_MOUSE = 0x00002000 | SOURCE_CLASS_POINTER;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.005 -0400", hash_original_field = "CC3EB4E32B3305159BA96EA999D33E2A", hash_generated_field = "92EEB77027297EE4EFF782F8EF1FF0F7")
-
-    public static final int SOURCE_STYLUS = 0x00004000 | SOURCE_CLASS_POINTER;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.005 -0400", hash_original_field = "49B5C818013877148A116E0FCAA21BD2", hash_generated_field = "9E9C6DB0CFC4958D3637F63294124775")
-
-    public static final int SOURCE_TRACKBALL = 0x00010000 | SOURCE_CLASS_TRACKBALL;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.005 -0400", hash_original_field = "B6A9B0231C193A980A8AE0717FD0EC96", hash_generated_field = "C53F1BB8BA42E382D162BEB6C06A5DA6")
-
-    public static final int SOURCE_TOUCHPAD = 0x00100000 | SOURCE_CLASS_POSITION;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.005 -0400", hash_original_field = "4C26E6726FB7CAFA588649FBFBB3E698", hash_generated_field = "2611C3DA236978609FE6ADB1CA63EA73")
-
-    public static final int SOURCE_JOYSTICK = 0x01000000 | SOURCE_CLASS_JOYSTICK;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.005 -0400", hash_original_field = "91B65E67AD0BCE504F7F9A190785F0B0", hash_generated_field = "E9DD51F79C072DFDE77333973F1DFBB8")
-
-    public static final int SOURCE_ANY = 0xffffff00;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.005 -0400", hash_original_field = "CEE30D0EDF1C9DF608B6C89AA4B8D09C", hash_generated_field = "7B2FEF95F8CA0D6FBF240CB6110B772A")
-
-    @Deprecated
-    public static final int MOTION_RANGE_X = MotionEvent.AXIS_X;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.005 -0400", hash_original_field = "FA30E93BDDE6E4DF2B43399E4A187E66", hash_generated_field = "18F61B4D7D5E46C987CB6812F2F23765")
-
-    @Deprecated
-    public static final int MOTION_RANGE_Y = MotionEvent.AXIS_Y;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.005 -0400", hash_original_field = "FE1C53E61FDBC13AC4362D813A01CA8D", hash_generated_field = "78402228454C81DFEE033C1B1A06C2D9")
-
-    @Deprecated
-    public static final int MOTION_RANGE_PRESSURE = MotionEvent.AXIS_PRESSURE;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.005 -0400", hash_original_field = "368412F9365F9E92B4F5A84291E8C794", hash_generated_field = "D70BF0ADE61441527074BAD011B363EF")
-
-    @Deprecated
-    public static final int MOTION_RANGE_SIZE = MotionEvent.AXIS_SIZE;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.005 -0400", hash_original_field = "DB2BBF09F3B04F01AF6C6D133B5BE518", hash_generated_field = "CA1F1E21E04D0900660382D6C6FB2288")
-
-    @Deprecated
-    public static final int MOTION_RANGE_TOUCH_MAJOR = MotionEvent.AXIS_TOUCH_MAJOR;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.005 -0400", hash_original_field = "5F03D1C8DB410D3AAC45B85F5DE1B84D", hash_generated_field = "D4E5B4D1F104C8CA42C6BF23E778DEB1")
-
-    @Deprecated
-    public static final int MOTION_RANGE_TOUCH_MINOR = MotionEvent.AXIS_TOUCH_MINOR;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.005 -0400", hash_original_field = "41CC4BCD0AAFCEA34F21E781DDC3BFDE", hash_generated_field = "AD49F028075332D31893082B82F68E04")
-
-    @Deprecated
-    public static final int MOTION_RANGE_TOOL_MAJOR = MotionEvent.AXIS_TOOL_MAJOR;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.005 -0400", hash_original_field = "BAAE71D6D53DB3FDDB22E7336E3FB7F4", hash_generated_field = "511D721009CA62BDE2CC36BB8E606383")
-
-    @Deprecated
-    public static final int MOTION_RANGE_TOOL_MINOR = MotionEvent.AXIS_TOOL_MINOR;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.005 -0400", hash_original_field = "40E5DEEB843FB6AE9C1751F78DCF4C7D", hash_generated_field = "563E0FE22373B2EDB536DD2ED09C2EC5")
-
-    @Deprecated
-    public static final int MOTION_RANGE_ORIENTATION = MotionEvent.AXIS_ORIENTATION;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.005 -0400", hash_original_field = "6D932CBCC6B9EDD8C267B047D9A6A627", hash_generated_field = "507B4AF09182B5A80D31534C6DAEFF45")
-
-    public static final int KEYBOARD_TYPE_NONE = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.005 -0400", hash_original_field = "21EDB24132D7DB1EB8CCA6AB24B125BE", hash_generated_field = "145C88DB25C6C4CA9096B45DFE955870")
-
-    public static final int KEYBOARD_TYPE_NON_ALPHABETIC = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.005 -0400", hash_original_field = "9D712DCC960D74DECA08AA4F811EA526", hash_generated_field = "99F61A684F6C37D75D47C8B4FBE3DDA3")
-
-    public static final int KEYBOARD_TYPE_ALPHABETIC = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.005 -0400", hash_original_field = "0D395022D7ACD5A6443859D3E67FCA44", hash_generated_field = "21D35EEA2F1A31C6EEE3B233C84334EE")
-
-    public static final Parcelable.Creator<InputDevice> CREATOR
-            = new Parcelable.Creator<InputDevice>() {
-    	@DSModeled(DSC.SAFE)
-        public InputDevice createFromParcel(Parcel in) {
-            InputDevice result = new InputDevice();
-            result.readFromParcel(in);
-            return result;
-        }
-        
-        @DSModeled(DSC.SAFE)
-        public InputDevice[] newArray(int size) {
-            return new InputDevice[size];
-        }
-    };
     // orphaned legacy method
     public InputDevice createFromParcel(Parcel in) {
             InputDevice result = new InputDevice();

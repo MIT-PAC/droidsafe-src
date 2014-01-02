@@ -1,6 +1,8 @@
 package java.util.logging;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.text.MessageFormat;
 import java.util.ResourceBundle;
@@ -10,98 +12,101 @@ import java.util.ResourceBundle;
 
 
 public abstract class Formatter {
+
+    /**
+     * Constructs a {@code Formatter} object.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.818 -0500", hash_original_method = "3D350E85A089AFD791F4A318777DFCA3", hash_generated_method = "B391543BD46E60AF59B6CE3503AD0B73")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.071 -0400", hash_original_method = "3D350E85A089AFD791F4A318777DFCA3", hash_generated_method = "6FBB4F35E1975CE926BE7C768BE8709E")
-    protected  Formatter() {
-        // ---------- Original Method ----------
+protected Formatter() {
     }
 
+    /**
+     * Converts a {@link LogRecord} object into a string representation. The
+     * resulted string is usually localized and includes the message field of
+     * the record.
+     *
+     * @param r
+     *            the log record to be formatted into a string.
+     * @return the formatted string.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.821 -0500", hash_original_method = "7E168986BF1FADDA4930F992D3D84353", hash_generated_method = "E6DE8F47A6778B61C83B2AA82D9DF8FB")
     
-    @DSModeled(DSC.SAFE)
-    public abstract String format(LogRecord r);
+public abstract String format(LogRecord r);
 
+    /**
+     * Formats a {@code LogRecord} object into a localized string
+     * representation. This is a convenience method for subclasses of {@code
+     * Formatter}.
+     * <p>
+     * The message string is firstly localized using the {@code ResourceBundle}
+     * object associated with the supplied {@code LogRecord}.
+     * <p>
+     * Notice : if message contains "{0", then java.text.MessageFormat is used.
+     * Otherwise no formatting is performed.
+     *
+     * @param r
+     *            the log record to be formatted.
+     * @return the string resulted from the formatting.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.824 -0500", hash_original_method = "C04F7375B92ACCB2488DC0EF0253C5B2", hash_generated_method = "2477C53B755CB69B3C21EA08E87BCC0E")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.073 -0400", hash_original_method = "C04F7375B92ACCB2488DC0EF0253C5B2", hash_generated_method = "45F62138E03AA2FDD7E81C77DD4E0CC3")
-    public String formatMessage(LogRecord r) {
-        addTaint(r.getTaint());
+public String formatMessage(LogRecord r) {
         String pattern = r.getMessage();
         ResourceBundle rb = null;
-        if((rb = r.getResourceBundle()) != null)        
-        {
-            try 
-            {
+        // try to localize the message string first
+        if ((rb = r.getResourceBundle()) != null) {
+            try {
                 pattern = rb.getString(pattern);
-            } //End block
-            catch (Exception e)
-            {
+            } catch (Exception e) {
                 pattern = r.getMessage();
-            } //End block
-        } //End block
-        if(pattern != null)        
-        {
+            }
+        }
+        if (pattern != null) {
             Object[] params = r.getParameters();
-            if(pattern.indexOf("{0") >= 0 && params != null && params.length > 0)            
-            {
-                try 
-                {
+            /*
+             * if the message contains "{0", use java.text.MessageFormat to
+             * format the string
+             */
+            if (pattern.indexOf("{0") >= 0 && params != null && params.length > 0) {
+                try {
                     pattern = MessageFormat.format(pattern, params);
-                } //End block
-                catch (IllegalArgumentException e)
-                {
+                } catch (IllegalArgumentException e) {
                     pattern = r.getMessage();
-                } //End block
-            } //End block
-        } //End block
-String var407D32260E541B695CF3FD3F7EFB76AB_287126499 =         pattern;
-        var407D32260E541B695CF3FD3F7EFB76AB_287126499.addTaint(taint);
-        return var407D32260E541B695CF3FD3F7EFB76AB_287126499;
-        // ---------- Original Method ----------
-        //String pattern = r.getMessage();
-        //ResourceBundle rb = null;
-        //if ((rb = r.getResourceBundle()) != null) {
-            //try {
-                //pattern = rb.getString(pattern);
-            //} catch (Exception e) {
-                //pattern = r.getMessage();
-            //}
-        //}
-        //if (pattern != null) {
-            //Object[] params = r.getParameters();
-            //if (pattern.indexOf("{0") >= 0 && params != null && params.length > 0) {
-                //try {
-                    //pattern = MessageFormat.format(pattern, params);
-                //} catch (IllegalArgumentException e) {
-                    //pattern = r.getMessage();
-                //}
-            //}
-        //}
-        //return pattern;
+                }
+            }
+        }
+        return pattern;
     }
 
+    /**
+     * Gets the head string used to wrap a set of log records. This base class
+     * always returns an empty string.
+     *
+     * @param h
+     *            the target handler.
+     * @return the head string used to wrap a set of log records, empty in this
+     *         implementation.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.826 -0500", hash_original_method = "07107B089EAE5612AD155B7D9F923109", hash_generated_method = "101AC05BF274870B943BA199D7465EAE")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.073 -0400", hash_original_method = "07107B089EAE5612AD155B7D9F923109", hash_generated_method = "FB168E85580D430FD6B24F5D4EF25E02")
-    public String getHead(Handler h) {
-        addTaint(h.getTaint());
-String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1774945831 =         "";
-        var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1774945831.addTaint(taint);
-        return var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1774945831;
-        // ---------- Original Method ----------
-        //return "";
+public String getHead(Handler h) {
+        return "";
     }
 
+    /**
+     * Gets the tail string used to wrap a set of log records. This base class
+     * always returns the empty string.
+     *
+     * @param h
+     *            the target handler.
+     * @return the tail string used to wrap a set of log records, empty in this
+     *         implementation.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.828 -0500", hash_original_method = "C189C1A511189A9AF799AA8C081148A1", hash_generated_method = "98F3E6FA5F9C1CD9F3A0ED244AD38C4E")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.074 -0400", hash_original_method = "C189C1A511189A9AF799AA8C081148A1", hash_generated_method = "9352015DC86EFCD3E13946BC1025C6F3")
-    public String getTail(Handler h) {
-        addTaint(h.getTaint());
-String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_227629306 =         "";
-        var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_227629306.addTaint(taint);
-        return var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_227629306;
-        // ---------- Original Method ----------
-        //return "";
+public String getTail(Handler h) {
+        return "";
     }
 
     

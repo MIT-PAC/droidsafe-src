@@ -1,6 +1,8 @@
 package android.bluetooth;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.InputStream;
@@ -11,96 +13,85 @@ import java.io.InputStream;
 
 
 final class BluetoothInputStream extends InputStream {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.542 -0400", hash_original_field = "ADAA094F2E9199B78AA3ADA013DBD64F", hash_generated_field = "F41529E7146F039F8982FD61509E896F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.438 -0500", hash_original_field = "F88CEEEA2A0982472DB6E6356FAA58B9", hash_generated_field = "F41529E7146F039F8982FD61509E896F")
 
     private BluetoothSocket mSocket;
+
+    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.440 -0500", hash_original_method = "A759A55FDB7858A5B7FBD6EFC5F7FCA1", hash_generated_method = "A759A55FDB7858A5B7FBD6EFC5F7FCA1")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.543 -0400", hash_original_method = "A759A55FDB7858A5B7FBD6EFC5F7FCA1", hash_generated_method = "51DD95F90510A057FC33A562FC393929")
-      BluetoothInputStream(BluetoothSocket s) {
+BluetoothInputStream(BluetoothSocket s) {
         mSocket = s;
-        // ---------- Original Method ----------
-        //mSocket = s;
     }
 
+    /**
+     * Return number of bytes available before this stream will block.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.442 -0500", hash_original_method = "F8D5D10C5F2F8FB1DCC0A3044A3235C3", hash_generated_method = "698BE5E5354DC14F82BB3A94A7C5289A")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.544 -0400", hash_original_method = "F8D5D10C5F2F8FB1DCC0A3044A3235C3", hash_generated_method = "3BA9A6A09AECF38338432FAD247DC680")
-    public int available() throws IOException {
-        int varEDE8435F226749B7C408708AD6C4DD12_381519550 = (mSocket.available());
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1727541932 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1727541932;
-        // ---------- Original Method ----------
-        //return mSocket.available();
+public int available() throws IOException {
+        return mSocket.available();
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.445 -0500", hash_original_method = "1323B57D07CB6385C2F8CE9373488A22", hash_generated_method = "C95071B8627034E7D9B94D5D2A0541A3")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.545 -0400", hash_original_method = "1323B57D07CB6385C2F8CE9373488A22", hash_generated_method = "FD4CC8D718C262BFF2A44C717A5A00BB")
-    public void close() throws IOException {
+public void close() throws IOException {
         mSocket.close();
-        // ---------- Original Method ----------
-        //mSocket.close();
     }
 
+    /**
+     * Reads a single byte from this stream and returns it as an integer in the
+     * range from 0 to 255. Returns -1 if the end of the stream has been
+     * reached. Blocks until one byte has been read, the end of the source
+     * stream is detected or an exception is thrown.
+     *
+     * @return the byte read or -1 if the end of stream has been reached.
+     * @throws IOException
+     *             if the stream is closed or another IOException occurs.
+     * @since Android 1.5
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.447 -0500", hash_original_method = "2059D974D6DFEDC9A8B8553096188222", hash_generated_method = "6E79AC07ED988EFBA15A6F1994AEF577")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.546 -0400", hash_original_method = "2059D974D6DFEDC9A8B8553096188222", hash_generated_method = "D0A545C552BF89965D6F9E4C791B8681")
-    public int read() throws IOException {
+public int read() throws IOException {
         byte b[] = new byte[1];
         int ret = mSocket.read(b, 0, 1);
-        if(ret == 1)        
-        {
-            int var55D3865AACD24064F6ACF0F89CB68FB7_345046828 = ((int)b[0] & 0xff);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2100013060 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2100013060;
-        } //End block
-        else
-        {
-            int var6BB61E3B7BCE0931DA574D19D1D82C88_1165957812 = (-1);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1602807698 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1602807698;
-        } //End block
-        // ---------- Original Method ----------
-        //byte b[] = new byte[1];
-        //int ret = mSocket.read(b, 0, 1);
-        //if (ret == 1) {
-            //return (int)b[0] & 0xff;
-        //} else {
-            //return -1;
-        //}
+        if (ret == 1) {
+            return (int)b[0] & 0xff;
+        } else {
+            return -1;
+        }
     }
 
+    /**
+     * Reads at most {@code length} bytes from this stream and stores them in
+     * the byte array {@code b} starting at {@code offset}.
+     *
+     * @param b
+     *            the byte array in which to store the bytes read.
+     * @param offset
+     *            the initial position in {@code buffer} to store the bytes
+     *            read from this stream.
+     * @param length
+     *            the maximum number of bytes to store in {@code b}.
+     * @return the number of bytes actually read or -1 if the end of the stream
+     *         has been reached.
+     * @throws IndexOutOfBoundsException
+     *             if {@code offset < 0} or {@code length < 0}, or if
+     *             {@code offset + length} is greater than the length of
+     *             {@code b}.
+     * @throws IOException
+     *             if the stream is closed or another IOException occurs.
+     * @since Android 1.5
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.449 -0500", hash_original_method = "20F62B1F3CA63F6FE3BCEE9660F3F09F", hash_generated_method = "0DF6D203DCBC3F1E01A85090A3B0A6A7")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.549 -0400", hash_original_method = "20F62B1F3CA63F6FE3BCEE9660F3F09F", hash_generated_method = "46E7C3EA611BB7EC9176F845509BABF3")
-    public int read(byte[] b, int offset, int length) throws IOException {
-        addTaint(length);
-        addTaint(offset);
-        addTaint(b[0]);
-        if(b == null)        
-        {
-            NullPointerException varFDA6DA8786FB3EDEDA1C4BF2D933D93D_330398779 = new NullPointerException("byte array is null");
-            varFDA6DA8786FB3EDEDA1C4BF2D933D93D_330398779.addTaint(taint);
-            throw varFDA6DA8786FB3EDEDA1C4BF2D933D93D_330398779;
-        } //End block
-        if((offset | length) < 0 || length > b.length - offset)        
-        {
-            ArrayIndexOutOfBoundsException varF956884CC32113133701D15839A01732_2115292299 = new ArrayIndexOutOfBoundsException("invalid offset or length");
-            varF956884CC32113133701D15839A01732_2115292299.addTaint(taint);
-            throw varF956884CC32113133701D15839A01732_2115292299;
-        } //End block
-        int varC95072A2E1DBA960320350DBD9DB4A02_293157138 = (mSocket.read(b, offset, length));
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1337099936 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1337099936;
-        // ---------- Original Method ----------
-        //if (b == null) {
-            //throw new NullPointerException("byte array is null");
-        //}
-        //if ((offset | length) < 0 || length > b.length - offset) {
-            //throw new ArrayIndexOutOfBoundsException("invalid offset or length");
-        //}
-        //return mSocket.read(b, offset, length);
+public int read(byte[] b, int offset, int length) throws IOException {
+        if (b == null) {
+            throw new NullPointerException("byte array is null");
+        }
+        if ((offset | length) < 0 || length > b.length - offset) {
+            throw new ArrayIndexOutOfBoundsException("invalid offset or length");
+        }
+        return mSocket.read(b, offset, length);
     }
 
     

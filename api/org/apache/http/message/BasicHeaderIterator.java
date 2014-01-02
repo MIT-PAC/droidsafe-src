@@ -10,84 +10,77 @@ import org.apache.http.Header;
 import org.apache.http.HeaderIterator;
 
 public class BasicHeaderIterator implements HeaderIterator {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:01.578 -0400", hash_original_field = "70C9DAFA949FAFF76AD7BDC73045BC73", hash_generated_field = "9D20A5B33FC154C445108A690F776855")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.556 -0500", hash_original_field = "7561685C14CD5CD7F041FA1870ADDE5B", hash_generated_field = "9D20A5B33FC154C445108A690F776855")
 
-    protected Header[] allHeaders;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:01.578 -0400", hash_original_field = "4BD5A8B788F2E9E58294F9371A3CF365", hash_generated_field = "888ED00F76573C33F42FD289758C6753")
+    protected  Header[] allHeaders;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.559 -0500", hash_original_field = "6F81E025B1753B7DB14DC2504C9B53B1", hash_generated_field = "888ED00F76573C33F42FD289758C6753")
 
     protected int currentIndex;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:01.579 -0400", hash_original_field = "5B56D13EFD69E1602F78DED5D4B9CB80", hash_generated_field = "A59FED2AE4AD2264FB1F7BF89553485D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.561 -0500", hash_original_field = "BD66DD28721A718F4DADB56502A74024", hash_generated_field = "A59FED2AE4AD2264FB1F7BF89553485D")
 
     protected String headerName;
+
+
+
+    /**
+     * Creates a new header iterator.
+     *
+     * @param headers   an array of headers over which to iterate
+     * @param name      the name of the headers over which to iterate, or
+     *                  <code>null</code> for any
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.564 -0500", hash_original_method = "55914EF56C76B8DDF5A0F659085C899A", hash_generated_method = "B0A067E01290EFC07BA78E64742D3EE9")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:01.581 -0400", hash_original_method = "55914EF56C76B8DDF5A0F659085C899A", hash_generated_method = "8B89439E21D10B0360D98E988C5EEFED")
-    public  BasicHeaderIterator(Header[] headers, String name) {
-        if(headers == null)        
-        {
-            IllegalArgumentException varF2EDCEA803CFC639953C3D405096CECF_2049089918 = new IllegalArgumentException
+public BasicHeaderIterator(Header[] headers, String name) {
+        if (headers == null) {
+            throw new IllegalArgumentException
                 ("Header array must not be null.");
-            varF2EDCEA803CFC639953C3D405096CECF_2049089918.addTaint(taint);
-            throw varF2EDCEA803CFC639953C3D405096CECF_2049089918;
-        } //End block
+        }
+
         this.allHeaders = headers;
         this.headerName = name;
         this.currentIndex = findNext(-1);
-        // ---------- Original Method ----------
-        //if (headers == null) {
-            //throw new IllegalArgumentException
-                //("Header array must not be null.");
-        //}
-        //this.allHeaders = headers;
-        //this.headerName = name;
-        //this.currentIndex = findNext(-1);
     }
 
+
+    /**
+     * Determines the index of the next header.
+     *
+     * @param from      one less than the index to consider first,
+     *                  -1 to search for the first header
+     *
+     * @return  the index of the next header that matches the filter name,
+     *          or negative if there are no more headers
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.566 -0500", hash_original_method = "FA5378A644617D9F29788BE3811B38CD", hash_generated_method = "4DB9B209B4DD0C72B03CA03D0C5421AC")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:01.583 -0400", hash_original_method = "FA5378A644617D9F29788BE3811B38CD", hash_generated_method = "8E3AC563479A56ECAF9278513AF1A94A")
-    protected int findNext(int from) {
-        addTaint(from);
-        if(from < -1)        
-        {
-        int var6BB61E3B7BCE0931DA574D19D1D82C88_39145816 = (-1);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_227711838 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_227711838;
-        }
+protected int findNext(int from) {
+        if (from < -1)
+            return -1;
+
         final int to = this.allHeaders.length-1;
         boolean found = false;
-        while
-(!found && (from < to))        
-        {
+        while (!found && (from < to)) {
             from++;
             found = filterHeader(from);
-        } //End block
-        int var30BEC673AA85928644B576FD1EBDB4A9_1351575723 = (found ? from : -1);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_829101325 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_829101325;
-        // ---------- Original Method ----------
-        //if (from < -1)
-            //return -1;
-        //final int to = this.allHeaders.length-1;
-        //boolean found = false;
-        //while (!found && (from < to)) {
-            //from++;
-            //found = filterHeader(from);
-        //}
-        //return found ? from : -1;
+        }
+        return found ? from : -1;
     }
 
+
+    /**
+     * Checks whether a header is part of the iteration.
+     *
+     * @param index     the index of the header to check
+     *
+     * @return  <code>true</code> if the header should be part of the
+     *          iteration, <code>false</code> to skip
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.569 -0500", hash_original_method = "9D88E0551A3FF4A21A3E39810268F7E4", hash_generated_method = "A165D91B4AEB54800A42FB79DF93E3BE")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:01.584 -0400", hash_original_method = "9D88E0551A3FF4A21A3E39810268F7E4", hash_generated_method = "877E17D4DF69D4A31FAA88999B89688C")
-    protected boolean filterHeader(int index) {
-        addTaint(index);
-        boolean var20CD6195CD6576D5C0C8A71101676A49_1483089768 = ((this.headerName == null) ||
-            this.headerName.equalsIgnoreCase(this.allHeaders[index].getName()));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_972176638 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_972176638;
-        // ---------- Original Method ----------
-        //return (this.headerName == null) ||
-            //this.headerName.equalsIgnoreCase(this.allHeaders[index].getName());
+protected boolean filterHeader(int index) {
+        return (this.headerName == null) ||
+            this.headerName.equalsIgnoreCase(this.allHeaders[index].getName());
     }
 
     

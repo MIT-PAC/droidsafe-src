@@ -1,6 +1,9 @@
 package android.net;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
+import android.util.Log;
 import droidsafe.annotations.*;
 import java.io.File;
 import java.io.IOException;
@@ -13,45 +16,43 @@ import android.content.Context;
 
 
 public final class SSLSessionCache {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.320 -0400", hash_original_field = "8713673389F715AC61146DC2ACD6B364", hash_generated_field = "D03E46EDECBAA58DC5BFAFCFA4D7C707")
-
-    SSLClientSessionCache mSessionCache;
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.320 -0400", hash_original_method = "6BE9C825DC583F0CB57790078D9D850C", hash_generated_method = "BFF2023672F9B3C3573F503758C24A48")
-    public  SSLSessionCache(File dir) throws IOException {
-        mSessionCache = FileClientSessionCache.usingDirectory(dir);
-        // ---------- Original Method ----------
-        //mSessionCache = FileClientSessionCache.usingDirectory(dir);
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.320 -0400", hash_original_method = "5579597B1129E64225215E4123F94CC0", hash_generated_method = "E95A8D7A66D8A26EB3E3E69F60062ED0")
-    public  SSLSessionCache(Context context) {
-        addTaint(context.getTaint());
-        File dir = context.getDir("sslcache", Context.MODE_PRIVATE);
-        SSLClientSessionCache cache = null;
-        try 
-        {
-            cache = FileClientSessionCache.usingDirectory(dir);
-        } //End block
-        catch (IOException e)
-        {
-        } //End block
-        mSessionCache = cache;
-        // ---------- Original Method ----------
-        //File dir = context.getDir("sslcache", Context.MODE_PRIVATE);
-        //SSLClientSessionCache cache = null;
-        //try {
-            //cache = FileClientSessionCache.usingDirectory(dir);
-        //} catch (IOException e) {
-            //Log.w(TAG, "Unable to create SSL session cache in " + dir, e);
-        //}
-        //mSessionCache = cache;
-    }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.320 -0400", hash_original_field = "F49A29534D2CB7814A731E7945B4ECD0", hash_generated_field = "AD0B528015E7884FCFBB50D4A7FE6352")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:21.759 -0500", hash_original_field = "A5740984D5A883313C3C3CD53D225302", hash_generated_field = "AD0B528015E7884FCFBB50D4A7FE6352")
 
     private static final String TAG = "SSLSessionCache";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:21.761 -0500", hash_original_field = "D03E46EDECBAA58DC5BFAFCFA4D7C707", hash_generated_field = "D03E46EDECBAA58DC5BFAFCFA4D7C707")
+  SSLClientSessionCache mSessionCache;
+
+    /**
+     * Create a session cache using the specified directory.
+     * Individual session entries will be files within the directory.
+     * Multiple instances for the same directory share data internally.
+     *
+     * @param dir to store session files in (created if necessary)
+     * @throws IOException if the cache can't be opened
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:21.763 -0500", hash_original_method = "6BE9C825DC583F0CB57790078D9D850C", hash_generated_method = "A56A9EB534D0001D160743C198ECB5AA")
+    
+public SSLSessionCache(File dir) throws IOException {
+        mSessionCache = FileClientSessionCache.usingDirectory(dir);
+    }
+
+    /**
+     * Create a session cache at the default location for this app.
+     * Multiple instances share data internally.
+     *
+     * @param context for the application
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:21.767 -0500", hash_original_method = "5579597B1129E64225215E4123F94CC0", hash_generated_method = "C5447136828C243E028DB5BE4DE9556C")
+    
+public SSLSessionCache(Context context) {
+        File dir = context.getDir("sslcache", Context.MODE_PRIVATE);
+        SSLClientSessionCache cache = null;
+        try {
+            cache = FileClientSessionCache.usingDirectory(dir);
+        } catch (IOException e) {
+            Log.w(TAG, "Unable to create SSL session cache in " + dir, e);
+        }
+        mSessionCache = cache;
+    }
 }
 

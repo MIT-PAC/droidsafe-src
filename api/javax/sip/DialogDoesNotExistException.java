@@ -1,33 +1,27 @@
 package javax.sip;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
 public class DialogDoesNotExistException extends SipException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:03.918 -0500", hash_original_method = "9202A0FE59991A3B0A837B4E7082EB36", hash_generated_method = "4300171E25B35A316F2C7ECECA3F8A77")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.225 -0400", hash_original_method = "9202A0FE59991A3B0A837B4E7082EB36", hash_generated_method = "1B44DD3DAF591CD5FC0BE6F2586414D3")
-    public  DialogDoesNotExistException() {
-        // ---------- Original Method ----------
+public DialogDoesNotExistException(){
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:03.921 -0500", hash_original_method = "92D6A3CD46517681F25A7E8C2DA97A21", hash_generated_method = "9FA7D789FE450212B93BE0ABBD3325EA")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.226 -0400", hash_original_method = "92D6A3CD46517681F25A7E8C2DA97A21", hash_generated_method = "4E5A89A2B1BB6CDEAF1AB0111246325E")
-    public  DialogDoesNotExistException(String message) {
+public DialogDoesNotExistException(String message) {
         super(message);
-        addTaint(message.getTaint());
-        // ---------- Original Method ----------
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:03.923 -0500", hash_original_method = "3EDA84A1781F815A2C18879AE2F847E8", hash_generated_method = "F500D10C082C49BED33B22CBBF8F29CE")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.226 -0400", hash_original_method = "3EDA84A1781F815A2C18879AE2F847E8", hash_generated_method = "C94681786C45942412CCE73A258ACF72")
-    public  DialogDoesNotExistException(String message, Throwable cause) {
+public DialogDoesNotExistException(String message, Throwable cause) {
         super(message, cause);
-        addTaint(cause.getTaint());
-        addTaint(message.getTaint());
-        // ---------- Original Method ----------
     }
 
     

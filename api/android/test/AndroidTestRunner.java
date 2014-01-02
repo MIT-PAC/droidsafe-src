@@ -1,6 +1,8 @@
 package android.test;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
@@ -23,28 +25,30 @@ import com.google.android.collect.Lists;
 
 
 public class AndroidTestRunner extends BaseTestRunner {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.342 -0400", hash_original_field = "AFBAC9716FC2073B5BFEA6A40ED35C25", hash_generated_field = "6DA683BBE787F263E5F5E79B3A62B986")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.123 -0500", hash_original_field = "FAF947ADE8CA338CF26CE4594F5A8D6D", hash_generated_field = "6DA683BBE787F263E5F5E79B3A62B986")
+
 
     private TestResult mTestResult;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.342 -0400", hash_original_field = "D6C521397458BAA8B5C127809C7EE875", hash_generated_field = "5B8CC2DB991885EB5008A645801A9BD1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.125 -0500", hash_original_field = "C3CB53F1A053E8E518BD9775B0ABB434", hash_generated_field = "5B8CC2DB991885EB5008A645801A9BD1")
 
     private String mTestClassName;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.342 -0400", hash_original_field = "2ED4118B5877939A22B338135FF316EF", hash_generated_field = "57CD2938F6E71D086604FFB94901029B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.127 -0500", hash_original_field = "0E706547655C6D1E7EE8011ED977D558", hash_generated_field = "57CD2938F6E71D086604FFB94901029B")
 
     private List<TestCase> mTestCases;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.342 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.129 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
 
     private Context mContext;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.342 -0400", hash_original_field = "683B51EE2461241E872BC0BA75571CEB", hash_generated_field = "6FD7A350695311DE0709E7C398EDB658")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.131 -0500", hash_original_field = "0EA3B0D784086A5E26566265423312CF", hash_generated_field = "6FD7A350695311DE0709E7C398EDB658")
 
     private boolean mSkipExecution = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.342 -0400", hash_original_field = "9CB4F75DAF2383CB5E4CE6C101A581F1", hash_generated_field = "AED73EC002699D3069BEE18C310BB33E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.133 -0500", hash_original_field = "0794755E72236CB587617728E7BD124C", hash_generated_field = "AED73EC002699D3069BEE18C310BB33E")
+
 
     private List<TestListener> mTestListeners = Lists.newArrayList();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.342 -0400", hash_original_field = "E062CE48CD3AFCDDC19DD9FCF2E119D4", hash_generated_field = "B2267B39A1EB39D35FC793A28FB486AB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.136 -0500", hash_original_field = "5CBE0F2EE224A7AD181F35AE16EC5D56", hash_generated_field = "B2267B39A1EB39D35FC793A28FB486AB")
 
     private Instrumentation mInstrumentation;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.342 -0400", hash_original_field = "26B1BECD2B69E5E2482C90E44053F874", hash_generated_field = "2E6B5EF6C826CFAA09973D53DE7A3FDC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.138 -0500", hash_original_field = "E336978E128E2D4BAC13ECE6FC28940B", hash_generated_field = "2E6B5EF6C826CFAA09973D53DE7A3FDC")
 
     private PerformanceResultsWriter mPerfWriter;
     
@@ -54,451 +58,250 @@ public class AndroidTestRunner extends BaseTestRunner {
         //Synthesized constructor
     }
 
-
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.343 -0400", hash_original_method = "C1F9E85AE774BF3AF2496CEC49DDE295", hash_generated_method = "76EDE852B8EB8625361EFA4F5CC3129B")
-    @SuppressWarnings("unchecked")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.140 -0500", hash_original_method = "C1F9E85AE774BF3AF2496CEC49DDE295", hash_generated_method = "45521EACE69F176AAB49A02D38E1B1F7")
+    
+@SuppressWarnings("unchecked")
     public void setTestClassName(String testClassName, String testMethodName) {
-        addTaint(testMethodName.getTaint());
-        addTaint(testClassName.getTaint());
         Class testClass = loadTestClass(testClassName);
-        if(shouldRunSingleTestMethod(testMethodName, testClass))        
-        {
+
+        if (shouldRunSingleTestMethod(testMethodName, testClass)) {
             TestCase testCase = buildSingleTestMethod(testClass, testMethodName);
             mTestCases = Lists.newArrayList(testCase);
             mTestClassName = testClass.getSimpleName();
-        } //End block
-        else
-        {
+        } else {
             setTest(getTest(testClass), testClass);
-        } //End block
-        // ---------- Original Method ----------
-        //Class testClass = loadTestClass(testClassName);
-        //if (shouldRunSingleTestMethod(testMethodName, testClass)) {
-            //TestCase testCase = buildSingleTestMethod(testClass, testMethodName);
-            //mTestCases = Lists.newArrayList(testCase);
-            //mTestClassName = testClass.getSimpleName();
-        //} else {
-            //setTest(getTest(testClass), testClass);
-        //}
+        }
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.142 -0500", hash_original_method = "621D8E85057FEDDF5A2E0BEC9A1D4675", hash_generated_method = "4E8A61C0EFE5347504DB4717E726CCAB")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.344 -0400", hash_original_method = "621D8E85057FEDDF5A2E0BEC9A1D4675", hash_generated_method = "D5FE32FC45621BCC192C9CB3EC2B0208")
-    public void setTest(Test test) {
-        addTaint(test.getTaint());
+public void setTest(Test test) {
         setTest(test, test.getClass());
-        // ---------- Original Method ----------
-        //setTest(test, test.getClass());
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.145 -0500", hash_original_method = "8A2ED2B311133489D5211F7B75C9AF00", hash_generated_method = "410699AEEE9950A0F333408530BA2573")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.345 -0400", hash_original_method = "8A2ED2B311133489D5211F7B75C9AF00", hash_generated_method = "2511B15D278614C90540582FAE83990C")
-    private void setTest(Test test, Class<? extends Test> testClass) {
+private void setTest(Test test, Class<? extends Test> testClass) {
         mTestCases = (List<TestCase>) TestCaseUtil.getTests(test, true);
-        if(TestSuite.class.isAssignableFrom(testClass))        
-        {
+        if (TestSuite.class.isAssignableFrom(testClass)) {
             mTestClassName = TestCaseUtil.getTestName(test);
-        } //End block
-        else
-        {
+        } else {
             mTestClassName = testClass.getSimpleName();
-        } //End block
-        // ---------- Original Method ----------
-        //mTestCases = (List<TestCase>) TestCaseUtil.getTests(test, true);
-        //if (TestSuite.class.isAssignableFrom(testClass)) {
-            //mTestClassName = TestCaseUtil.getTestName(test);
-        //} else {
-            //mTestClassName = testClass.getSimpleName();
-        //}
+        }
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.147 -0500", hash_original_method = "934673426DE78D3BF4595E284314BBA0", hash_generated_method = "94BAD423046962F2AABADA33055AEA29")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.345 -0400", hash_original_method = "934673426DE78D3BF4595E284314BBA0", hash_generated_method = "0391313513991CD10F2F9FB4A878CA34")
-    public void clearTestListeners() {
+public void clearTestListeners() {
         mTestListeners.clear();
-        // ---------- Original Method ----------
-        //mTestListeners.clear();
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.149 -0500", hash_original_method = "69E18BF63A69D4030ECF7F312645F69E", hash_generated_method = "63AA6234DEE829925810B129520E1F69")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.346 -0400", hash_original_method = "69E18BF63A69D4030ECF7F312645F69E", hash_generated_method = "E489713107907E23AD20E6B642B30217")
-    public void addTestListener(TestListener testListener) {
-        addTaint(testListener.getTaint());
-        if(testListener != null)        
-        {
+public void addTestListener(TestListener testListener) {
+        if (testListener != null) {
             mTestListeners.add(testListener);
-        } //End block
-        // ---------- Original Method ----------
-        //if (testListener != null) {
-            //mTestListeners.add(testListener);
-        //}
+        }
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.151 -0500", hash_original_method = "4ED6259CFCB0F06AF455BB5AA68C8ADA", hash_generated_method = "0C73C2364852FEB687E4526313F238A5")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.346 -0400", hash_original_method = "4ED6259CFCB0F06AF455BB5AA68C8ADA", hash_generated_method = "DE72AECEBDAE420775D700182F85157F")
-    @SuppressWarnings("unchecked")
+@SuppressWarnings("unchecked")
     private Class<? extends Test> loadTestClass(String testClassName) {
-        addTaint(testClassName.getTaint());
-        try 
-        {
-Class<? extends Test> var30ECC5D58D34BFEFC07D6F484C75F66D_335185721 =             (Class<? extends Test>) mContext.getClassLoader().loadClass(testClassName);
-            var30ECC5D58D34BFEFC07D6F484C75F66D_335185721.addTaint(taint);
-            return var30ECC5D58D34BFEFC07D6F484C75F66D_335185721;
-        } //End block
-        catch (ClassNotFoundException e)
-        {
+        try {
+            return (Class<? extends Test>) mContext.getClassLoader().loadClass(testClassName);
+        } catch (ClassNotFoundException e) {
             runFailed("Could not find test class. Class: " + testClassName);
-        } //End block
-Class<? extends Test> var540C13E9E156B687226421B24F2DF178_676899573 =         null;
-        var540C13E9E156B687226421B24F2DF178_676899573.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_676899573;
-        // ---------- Original Method ----------
-        //try {
-            //return (Class<? extends Test>) mContext.getClassLoader().loadClass(testClassName);
-        //} catch (ClassNotFoundException e) {
-            //runFailed("Could not find test class. Class: " + testClassName);
-        //}
-        //return null;
+        }
+        return null;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.154 -0500", hash_original_method = "680F4AFE025176BB5C5C3EA4F624B107", hash_generated_method = "7E527D59F3A66F96630DAE3691C8A27C")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.347 -0400", hash_original_method = "680F4AFE025176BB5C5C3EA4F624B107", hash_generated_method = "A084F214802D4AA08E8157C030626113")
-    private TestCase buildSingleTestMethod(Class testClass, String testMethodName) {
-        addTaint(testMethodName.getTaint());
-        addTaint(testClass.getTaint());
-        try 
-        {
+private TestCase buildSingleTestMethod(Class testClass, String testMethodName) {
+        try {
             TestCase testCase = (TestCase) testClass.newInstance();
             testCase.setName(testMethodName);
-TestCase varFB127DFE6431D25557ED04A60EC03FF7_211738010 =             testCase;
-            varFB127DFE6431D25557ED04A60EC03FF7_211738010.addTaint(taint);
-            return varFB127DFE6431D25557ED04A60EC03FF7_211738010;
-        } //End block
-        catch (IllegalAccessException e)
-        {
+            return testCase;
+        } catch (IllegalAccessException e) {
             runFailed("Could not access test class. Class: " + testClass.getName());
-        } //End block
-        catch (InstantiationException e)
-        {
+        } catch (InstantiationException e) {
             runFailed("Could not instantiate test class. Class: " + testClass.getName());
-        } //End block
-TestCase var540C13E9E156B687226421B24F2DF178_2139168606 =         null;
-        var540C13E9E156B687226421B24F2DF178_2139168606.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_2139168606;
-        // ---------- Original Method ----------
-        //try {
-            //TestCase testCase = (TestCase) testClass.newInstance();
-            //testCase.setName(testMethodName);
-            //return testCase;
-        //} catch (IllegalAccessException e) {
-            //runFailed("Could not access test class. Class: " + testClass.getName());
-        //} catch (InstantiationException e) {
-            //runFailed("Could not instantiate test class. Class: " + testClass.getName());
-        //}
-        //return null;
+        }
+
+        return null;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.156 -0500", hash_original_method = "DDD5F7F4EAC683F5EFEEC11885AD09F9", hash_generated_method = "16D4C93CAE9D746EF0B46366E79262CB")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.348 -0400", hash_original_method = "DDD5F7F4EAC683F5EFEEC11885AD09F9", hash_generated_method = "F3C1EE9501C5411324292706BED679EE")
-    private boolean shouldRunSingleTestMethod(String testMethodName,
+private boolean shouldRunSingleTestMethod(String testMethodName,
             Class<? extends Test> testClass) {
-        addTaint(testClass.getTaint());
-        addTaint(testMethodName.getTaint());
-        boolean var908F3200A69B401FB0E0BC02ECC36290_590922838 = (testMethodName != null && TestCase.class.isAssignableFrom(testClass));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1912801986 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1912801986;
-        // ---------- Original Method ----------
-        //return testMethodName != null && TestCase.class.isAssignableFrom(testClass);
+        return testMethodName != null && TestCase.class.isAssignableFrom(testClass);
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.159 -0500", hash_original_method = "771A297B38A7AB0B0FF5862A497CDBEC", hash_generated_method = "6C01E3DBFEBFDBCD202F68F78B8929B0")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.349 -0400", hash_original_method = "771A297B38A7AB0B0FF5862A497CDBEC", hash_generated_method = "6F946C7F2AF08368991157AD3F83F438")
-    private Test getTest(Class clazz) {
-        addTaint(clazz.getTaint());
-        if(TestSuiteProvider.class.isAssignableFrom(clazz))        
-        {
-            try 
-            {
-                TestSuiteProvider testSuiteProvider = (TestSuiteProvider) clazz.getConstructor().newInstance();
-Test var68AE946AB4E14D9FAAB225BDA8F4D94A_193175137 =                 testSuiteProvider.getTestSuite();
-                var68AE946AB4E14D9FAAB225BDA8F4D94A_193175137.addTaint(taint);
-                return var68AE946AB4E14D9FAAB225BDA8F4D94A_193175137;
-            } //End block
-            catch (InstantiationException e)
-            {
+private Test getTest(Class clazz) {
+        if (TestSuiteProvider.class.isAssignableFrom(clazz)) {
+            try {
+                TestSuiteProvider testSuiteProvider =
+                        (TestSuiteProvider) clazz.getConstructor().newInstance();
+                return testSuiteProvider.getTestSuite();
+            } catch (InstantiationException e) {
                 runFailed("Could not instantiate test suite provider. Class: " + clazz.getName());
-            } //End block
-            catch (IllegalAccessException e)
-            {
+            } catch (IllegalAccessException e) {
                 runFailed("Illegal access of test suite provider. Class: " + clazz.getName());
-            } //End block
-            catch (InvocationTargetException e)
-            {
+            } catch (InvocationTargetException e) {
                 runFailed("Invocation exception test suite provider. Class: " + clazz.getName());
-            } //End block
-            catch (NoSuchMethodException e)
-            {
+            } catch (NoSuchMethodException e) {
                 runFailed("No such method on test suite provider. Class: " + clazz.getName());
-            } //End block
-        } //End block
-Test var996CF625C9F3B89DE3BAFE852F5148F8_1688111478 =         getTest(clazz.getName());
-        var996CF625C9F3B89DE3BAFE852F5148F8_1688111478.addTaint(taint);
-        return var996CF625C9F3B89DE3BAFE852F5148F8_1688111478;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            }
+        }
+        return getTest(clazz.getName());
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.162 -0500", hash_original_method = "FD0715829EDCBEE3D15F529E318762AF", hash_generated_method = "0138184FB594B570F8D73152598FE65D")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.349 -0400", hash_original_method = "FD0715829EDCBEE3D15F529E318762AF", hash_generated_method = "05008DD7993CD13D9351F088354CCFFB")
-    protected TestResult createTestResult() {
-        if(mSkipExecution)        
-        {
-TestResult varA06DDFD40BCE7BD2DEE2613EAA6910FC_908186771 =             new NoExecTestResult();
-            varA06DDFD40BCE7BD2DEE2613EAA6910FC_908186771.addTaint(taint);
-            return varA06DDFD40BCE7BD2DEE2613EAA6910FC_908186771;
-        } //End block
-TestResult varB1D52DB2FC7B844B35F46763F5119AF7_186386494 =         new TestResult();
-        varB1D52DB2FC7B844B35F46763F5119AF7_186386494.addTaint(taint);
-        return varB1D52DB2FC7B844B35F46763F5119AF7_186386494;
-        // ---------- Original Method ----------
-        //if (mSkipExecution) {
-            //return new NoExecTestResult();
-        //}
-        //return new TestResult();
+protected TestResult createTestResult() {
+        if (mSkipExecution) {
+            return new NoExecTestResult();
+        }
+        return new TestResult();
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.164 -0500", hash_original_method = "35C6F654589DD3EA8896BA4A5DEE7BCB", hash_generated_method = "35C6F654589DD3EA8896BA4A5DEE7BCB")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.350 -0400", hash_original_method = "35C6F654589DD3EA8896BA4A5DEE7BCB", hash_generated_method = "52A0B91FB5E6FFC3CAC7A12EB59B5758")
-     void setSkipExecution(boolean skip) {
+void setSkipExecution(boolean skip) {
         mSkipExecution = skip;
-        // ---------- Original Method ----------
-        //mSkipExecution = skip;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.166 -0500", hash_original_method = "88882B49F41F9B7FE520559A2C518CF5", hash_generated_method = "E958B99EE289329D71DF85C11D3EF35F")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.350 -0400", hash_original_method = "88882B49F41F9B7FE520559A2C518CF5", hash_generated_method = "543AF49E01E3C2C86938D3E7E98AF350")
-    public List<TestCase> getTestCases() {
-List<TestCase> var8F97DD99F42FF73EAB8CDB477DFEE3E9_811917267 =         mTestCases;
-        var8F97DD99F42FF73EAB8CDB477DFEE3E9_811917267.addTaint(taint);
-        return var8F97DD99F42FF73EAB8CDB477DFEE3E9_811917267;
-        // ---------- Original Method ----------
-        //return mTestCases;
+public List<TestCase> getTestCases() {
+        return mTestCases;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.168 -0500", hash_original_method = "F2D7E2FB778FC0649CC40AF9C1142527", hash_generated_method = "DEE206C1E07693087949E0CEA63711EF")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.350 -0400", hash_original_method = "F2D7E2FB778FC0649CC40AF9C1142527", hash_generated_method = "05AA088EF387A56AA89CD3EC45C63564")
-    public String getTestClassName() {
-String var1CB478C44ABEF9FA32CEDB99E8709D2F_1069215776 =         mTestClassName;
-        var1CB478C44ABEF9FA32CEDB99E8709D2F_1069215776.addTaint(taint);
-        return var1CB478C44ABEF9FA32CEDB99E8709D2F_1069215776;
-        // ---------- Original Method ----------
-        //return mTestClassName;
+public String getTestClassName() {
+        return mTestClassName;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.170 -0500", hash_original_method = "5B53C1B8ED988918C7336B043C531676", hash_generated_method = "A6FD686CD7B3A867501DACC8F83BFDDA")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.350 -0400", hash_original_method = "5B53C1B8ED988918C7336B043C531676", hash_generated_method = "6BE36ABA313B8A289FCE09619BB4E9ED")
-    public TestResult getTestResult() {
-TestResult var437D81FF8A497B3A9605171F4D29C8AB_12986752 =         mTestResult;
-        var437D81FF8A497B3A9605171F4D29C8AB_12986752.addTaint(taint);
-        return var437D81FF8A497B3A9605171F4D29C8AB_12986752;
-        // ---------- Original Method ----------
-        //return mTestResult;
+public TestResult getTestResult() {
+        return mTestResult;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.172 -0500", hash_original_method = "99F47304AAC4A5C182E0EF1BC1C1BE8D", hash_generated_method = "7E19174E5BA44226A5801560E83A0277")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.351 -0400", hash_original_method = "99F47304AAC4A5C182E0EF1BC1C1BE8D", hash_generated_method = "B2AC6C3F8BB8B04F2AB4C8D04FFDB305")
-    public void runTest() {
+public void runTest() {
         runTest(createTestResult());
-        // ---------- Original Method ----------
-        //runTest(createTestResult());
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.175 -0500", hash_original_method = "ED862A4D59493014B8A195EE02B51D32", hash_generated_method = "D2444EF7E6F58DC6ED1FC9163392AD99")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.351 -0400", hash_original_method = "ED862A4D59493014B8A195EE02B51D32", hash_generated_method = "A5EF62A37F4659DF1F164432950B98F3")
-    public void runTest(TestResult testResult) {
+public void runTest(TestResult testResult) {
         mTestResult = testResult;
-for(TestListener testListener : mTestListeners)
-        {
+
+        for (TestListener testListener : mTestListeners) {
             mTestResult.addListener(testListener);
-        } //End block
+        }
+
         Context testContext = mInstrumentation == null ? mContext : mInstrumentation.getContext();
-for(TestCase testCase : mTestCases)
-        {
+        for (TestCase testCase : mTestCases) {
             setContextIfAndroidTestCase(testCase, mContext, testContext);
             setInstrumentationIfInstrumentationTestCase(testCase, mInstrumentation);
             setPerformanceWriterIfPerformanceCollectorTestCase(testCase, mPerfWriter);
             testCase.run(mTestResult);
-        } //End block
-        // ---------- Original Method ----------
-        //mTestResult = testResult;
-        //for (TestListener testListener : mTestListeners) {
-            //mTestResult.addListener(testListener);
-        //}
-        //Context testContext = mInstrumentation == null ? mContext : mInstrumentation.getContext();
-        //for (TestCase testCase : mTestCases) {
-            //setContextIfAndroidTestCase(testCase, mContext, testContext);
-            //setInstrumentationIfInstrumentationTestCase(testCase, mInstrumentation);
-            //setPerformanceWriterIfPerformanceCollectorTestCase(testCase, mPerfWriter);
-            //testCase.run(mTestResult);
-        //}
+        }
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.177 -0500", hash_original_method = "949353832C2D9CAB570B13ECD24DC64F", hash_generated_method = "6B5410A5E6A44144F76CB2B78960E68A")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.352 -0400", hash_original_method = "949353832C2D9CAB570B13ECD24DC64F", hash_generated_method = "808065C7833D1F85AE2C8B8012A988E9")
-    private void setContextIfAndroidTestCase(Test test, Context context, Context testContext) {
-        addTaint(testContext.getTaint());
-        addTaint(context.getTaint());
-        addTaint(test.getTaint());
-        if(AndroidTestCase.class.isAssignableFrom(test.getClass()))        
-        {
+private void setContextIfAndroidTestCase(Test test, Context context, Context testContext) {
+        if (AndroidTestCase.class.isAssignableFrom(test.getClass())) {
             ((AndroidTestCase) test).setContext(context);
             ((AndroidTestCase) test).setTestContext(testContext);
-        } //End block
-        // ---------- Original Method ----------
-        //if (AndroidTestCase.class.isAssignableFrom(test.getClass())) {
-            //((AndroidTestCase) test).setContext(context);
-            //((AndroidTestCase) test).setTestContext(testContext);
-        //}
+        }
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.179 -0500", hash_original_method = "79C5FD8850A7FDB4967DBA296D1AB9AD", hash_generated_method = "8123FBA4DFA38D2D9EDCDEEE26B6DCB9")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.352 -0400", hash_original_method = "79C5FD8850A7FDB4967DBA296D1AB9AD", hash_generated_method = "6F13A8B42448B2C5D39C1B275EFDE141")
-    public void setContext(Context context) {
+public void setContext(Context context) {
         mContext = context;
-        // ---------- Original Method ----------
-        //mContext = context;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.181 -0500", hash_original_method = "E266649630C8CD4E16F7F34F320F1B2E", hash_generated_method = "00D8387B614FDA64AA754A61F66C161A")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.353 -0400", hash_original_method = "E266649630C8CD4E16F7F34F320F1B2E", hash_generated_method = "0C8097DE2199C4BEABCDC9B38773AB56")
-    private void setInstrumentationIfInstrumentationTestCase(
+private void setInstrumentationIfInstrumentationTestCase(
             Test test, Instrumentation instrumentation) {
-        addTaint(instrumentation.getTaint());
-        addTaint(test.getTaint());
-        if(InstrumentationTestCase.class.isAssignableFrom(test.getClass()))        
-        {
+        if (InstrumentationTestCase.class.isAssignableFrom(test.getClass())) {
             ((InstrumentationTestCase) test).injectInstrumentation(instrumentation);
-        } //End block
-        // ---------- Original Method ----------
-        //if (InstrumentationTestCase.class.isAssignableFrom(test.getClass())) {
-            //((InstrumentationTestCase) test).injectInstrumentation(instrumentation);
-        //}
+        }
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.184 -0500", hash_original_method = "3D5BBB4E1A08BB692C099BDBCA18366E", hash_generated_method = "84F07B2FE95779CE3249EC52AB034043")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.353 -0400", hash_original_method = "3D5BBB4E1A08BB692C099BDBCA18366E", hash_generated_method = "BB08EF2EAD84481345DB17C62819481D")
-    private void setPerformanceWriterIfPerformanceCollectorTestCase(
+private void setPerformanceWriterIfPerformanceCollectorTestCase(
             Test test, PerformanceResultsWriter writer) {
-        addTaint(writer.getTaint());
-        addTaint(test.getTaint());
-        if(PerformanceCollectorTestCase.class.isAssignableFrom(test.getClass()))        
-        {
+        if (PerformanceCollectorTestCase.class.isAssignableFrom(test.getClass())) {
             ((PerformanceCollectorTestCase) test).setPerformanceResultsWriter(writer);
-        } //End block
-        // ---------- Original Method ----------
-        //if (PerformanceCollectorTestCase.class.isAssignableFrom(test.getClass())) {
-            //((PerformanceCollectorTestCase) test).setPerformanceResultsWriter(writer);
-        //}
+        }
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.186 -0500", hash_original_method = "0EFFD9B799AED609D4828DB6F7AAB0E5", hash_generated_method = "717D638FD35EF51867D6410C89565654")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.353 -0400", hash_original_method = "0EFFD9B799AED609D4828DB6F7AAB0E5", hash_generated_method = "3ACD0016E8612A780C3363D803A8AF08")
-    public void setInstrumentation(Instrumentation instrumentation) {
+public void setInstrumentation(Instrumentation instrumentation) {
         mInstrumentation = instrumentation;
-        // ---------- Original Method ----------
-        //mInstrumentation = instrumentation;
     }
 
+    /**
+     * @deprecated Incorrect spelling,
+     * use {@link #setInstrumentation(android.app.Instrumentation)} instead.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.188 -0500", hash_original_method = "8B0B0B0117FF17F8E6C78456D5FA2528", hash_generated_method = "CA29C0A0811207789DF151706A367E65")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.353 -0400", hash_original_method = "8B0B0B0117FF17F8E6C78456D5FA2528", hash_generated_method = "3EF8B0CB7FF92401818A0D3175C4DD53")
-    @Deprecated
+@Deprecated
     public void setInstrumentaiton(Instrumentation instrumentation) {
-        addTaint(instrumentation.getTaint());
         setInstrumentation(instrumentation);
-        // ---------- Original Method ----------
-        //setInstrumentation(instrumentation);
     }
 
+    /**
+     * {@hide} Pending approval for public API.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.190 -0500", hash_original_method = "37F3C4CB00E2065177941F440A1EB96E", hash_generated_method = "208A4627DE12EEF6AF05DEF218E1C36B")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.354 -0400", hash_original_method = "37F3C4CB00E2065177941F440A1EB96E", hash_generated_method = "B9C8894AFEBF94656C66FAA8B38F355F")
-    public void setPerformanceResultsWriter(PerformanceResultsWriter writer) {
+public void setPerformanceResultsWriter(PerformanceResultsWriter writer) {
         mPerfWriter = writer;
-        // ---------- Original Method ----------
-        //mPerfWriter = writer;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.193 -0500", hash_original_method = "9985589E6BCEC9AEDE0CE1DCD556A8F2", hash_generated_method = "EC6CBD6AC34D4A6429B49DDE6BFC4038")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.354 -0400", hash_original_method = "9985589E6BCEC9AEDE0CE1DCD556A8F2", hash_generated_method = "B426E3C62EB39FFE1905E1450387C98B")
-    @Override
+@Override
     protected Class loadSuiteClass(String suiteClassName) throws ClassNotFoundException {
-        addTaint(suiteClassName.getTaint());
-Class var46F17594A492923407012C376C374B95_1886772087 =         mContext.getClassLoader().loadClass(suiteClassName);
-        var46F17594A492923407012C376C374B95_1886772087.addTaint(taint);
-        return var46F17594A492923407012C376C374B95_1886772087;
-        // ---------- Original Method ----------
-        //return mContext.getClassLoader().loadClass(suiteClassName);
+        return mContext.getClassLoader().loadClass(suiteClassName);
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.195 -0500", hash_original_method = "1FEF70E96102D7304D006BBFDC4DE6B7", hash_generated_method = "04CDBDA0DBAE932D025ABBC9B68B52FD")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.354 -0400", hash_original_method = "1FEF70E96102D7304D006BBFDC4DE6B7", hash_generated_method = "4FAFD7517E2617F717E5C9E85C0A14FE")
-    public void testStarted(String testName) {
-        addTaint(testName.getTaint());
-        // ---------- Original Method ----------
+public void testStarted(String testName) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.197 -0500", hash_original_method = "95F90AC078029D49ABA36F5E39CE4989", hash_generated_method = "6660BBE65D150E7BA3CD4924169AA014")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.354 -0400", hash_original_method = "95F90AC078029D49ABA36F5E39CE4989", hash_generated_method = "9E4B00FBBA1794C65D5334E8AFC03502")
-    public void testEnded(String testName) {
-        addTaint(testName.getTaint());
-        // ---------- Original Method ----------
+public void testEnded(String testName) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.199 -0500", hash_original_method = "3C8F23863ACC349D5F634378B8407602", hash_generated_method = "851E95F7B4CF27F0534F12D22C7B0481")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.354 -0400", hash_original_method = "3C8F23863ACC349D5F634378B8407602", hash_generated_method = "343C81A91A376A476B6E63854712BD10")
-    public void testFailed(int status, Test test, Throwable t) {
-        addTaint(t.getTaint());
-        addTaint(test.getTaint());
-        addTaint(status);
-        // ---------- Original Method ----------
+public void testFailed(int status, Test test, Throwable t) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.201 -0500", hash_original_method = "F9958EFC768179587B664BD8FA1B92E0", hash_generated_method = "AC8B64732951D6C6451A561EB06DF03B")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.354 -0400", hash_original_method = "F9958EFC768179587B664BD8FA1B92E0", hash_generated_method = "0CBD45E4C06E99F9741366258990E9E9")
-    protected void runFailed(String message) {
-        addTaint(message.getTaint());
-        RuntimeException var84ECB4EA3AEDFA95D03DB645F86E7A03_1417112244 = new RuntimeException(message);
-        var84ECB4EA3AEDFA95D03DB645F86E7A03_1417112244.addTaint(taint);
-        throw var84ECB4EA3AEDFA95D03DB645F86E7A03_1417112244;
-        // ---------- Original Method ----------
-        //throw new RuntimeException(message);
+protected void runFailed(String message) {
+        throw new RuntimeException(message);
     }
 
     

@@ -1,6 +1,8 @@
 package java.io;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.nio.ByteBuffer;
 import java.nio.CharBuffer;
@@ -16,321 +18,307 @@ import java.util.Arrays;
 
 
 public class InputStreamReader extends Reader {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.110 -0400", hash_original_field = "13B5BFE96F3E2FE411C9F66F4A582ADF", hash_generated_field = "9DA78E40E39AA56A72373CEA8B1326DF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.957 -0500", hash_original_field = "0A829BC26C36EAF422E245C1EC11D5B0", hash_generated_field = "9DA78E40E39AA56A72373CEA8B1326DF")
 
     private InputStream in;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.110 -0400", hash_original_field = "1BD372EDACBB8876856A0324150C4E1B", hash_generated_field = "C1BD264EA71B8905202FEFE2EB6106E5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.959 -0500", hash_original_field = "C9198FC6CD0651265F41AA62AD6A1F5C", hash_generated_field = "C1BD264EA71B8905202FEFE2EB6106E5")
+
 
     private boolean endOfInput = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.110 -0400", hash_original_field = "3A6BDBA8FB33A88CF7D52A1AF07A9C00", hash_generated_field = "E190C0DE068854E0E786DAC309DED1B8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.961 -0500", hash_original_field = "EB8B81788E764E7EC09C99438B975CD8", hash_generated_field = "E190C0DE068854E0E786DAC309DED1B8")
+
 
     private CharsetDecoder decoder;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.110 -0400", hash_original_field = "50E41AB3FDB67E2442AFB04B480B97A2", hash_generated_field = "C7ACDD8E59EDFE2B06C91B0B5639E9AE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.963 -0500", hash_original_field = "D75566C09E1648987D573E04AE908DE5", hash_generated_field = "C7ACDD8E59EDFE2B06C91B0B5639E9AE")
+
 
     private final ByteBuffer bytes = ByteBuffer.allocate(8192);
+
+    /**
+     * Constructs a new {@code InputStreamReader} on the {@link InputStream}
+     * {@code in}. This constructor sets the character converter to the encoding
+     * specified in the "file.encoding" property and falls back to ISO 8859_1
+     * (ISO-Latin-1) if the property doesn't exist.
+     *
+     * @param in
+     *            the input stream from which to read characters.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.966 -0500", hash_original_method = "3590A2EED02D10C52AB0172AD4BE22C4", hash_generated_method = "2BA25DDC3C17AC85E8604B7021C53C69")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.110 -0400", hash_original_method = "3590A2EED02D10C52AB0172AD4BE22C4", hash_generated_method = "C11E1C8740A43C21BC55AB18059CCFB4")
-    public  InputStreamReader(InputStream in) {
+public InputStreamReader(InputStream in) {
         this(in, Charset.defaultCharset());
-        addTaint(in.getTaint());
-        // ---------- Original Method ----------
     }
 
+    /**
+     * Constructs a new InputStreamReader on the InputStream {@code in}. The
+     * character converter that is used to decode bytes into characters is
+     * identified by name by {@code enc}. If the encoding cannot be found, an
+     * UnsupportedEncodingException error is thrown.
+     *
+     * @param in
+     *            the InputStream from which to read characters.
+     * @param enc
+     *            identifies the character converter to use.
+     * @throws NullPointerException
+     *             if {@code enc} is {@code null}.
+     * @throws UnsupportedEncodingException
+     *             if the encoding specified by {@code enc} cannot be found.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.969 -0500", hash_original_method = "EBBB6FD529AC9BA283207DBA01D68764", hash_generated_method = "928B63F479963A3A8B7A87B65C786357")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.111 -0400", hash_original_method = "EBBB6FD529AC9BA283207DBA01D68764", hash_generated_method = "8BD7A404AB6716E807F4322DA252A54F")
-    public  InputStreamReader(InputStream in, final String enc) throws UnsupportedEncodingException {
+public InputStreamReader(InputStream in, final String enc)
+            throws UnsupportedEncodingException {
         super(in);
-        if(enc == null)        
-        {
-            NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_258736474 = new NullPointerException();
-            var7338BC9F48D81FE0BBD6183F4014DCC4_258736474.addTaint(taint);
-            throw var7338BC9F48D81FE0BBD6183F4014DCC4_258736474;
-        } //End block
+        if (enc == null) {
+            throw new NullPointerException();
+        }
         this.in = in;
-        try 
-        {
+        try {
             decoder = Charset.forName(enc).newDecoder().onMalformedInput(
                     CodingErrorAction.REPLACE).onUnmappableCharacter(
                     CodingErrorAction.REPLACE);
-        } //End block
-        catch (IllegalArgumentException e)
-        {
-            UnsupportedEncodingException varDA8FCC63ED22BFE7F42A166818154BA3_339299954 = (UnsupportedEncodingException)
+        } catch (IllegalArgumentException e) {
+            throw (UnsupportedEncodingException)
                     new UnsupportedEncodingException(enc).initCause(e);
-            varDA8FCC63ED22BFE7F42A166818154BA3_339299954.addTaint(taint);
-            throw varDA8FCC63ED22BFE7F42A166818154BA3_339299954;
-        } //End block
+        }
         bytes.limit(0);
-        // ---------- Original Method ----------
-        //if (enc == null) {
-            //throw new NullPointerException();
-        //}
-        //this.in = in;
-        //try {
-            //decoder = Charset.forName(enc).newDecoder().onMalformedInput(
-                    //CodingErrorAction.REPLACE).onUnmappableCharacter(
-                    //CodingErrorAction.REPLACE);
-        //} catch (IllegalArgumentException e) {
-            //throw (UnsupportedEncodingException)
-                    //new UnsupportedEncodingException(enc).initCause(e);
-        //}
-        //bytes.limit(0);
     }
 
+    /**
+     * Constructs a new InputStreamReader on the InputStream {@code in} and
+     * CharsetDecoder {@code dec}.
+     *
+     * @param in
+     *            the source InputStream from which to read characters.
+     * @param dec
+     *            the CharsetDecoder used by the character conversion.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.972 -0500", hash_original_method = "A7068E06FC6AB9497581BF79FF6884E3", hash_generated_method = "1CD6FFD5964E8F92B391E44B0726D407")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.112 -0400", hash_original_method = "A7068E06FC6AB9497581BF79FF6884E3", hash_generated_method = "B08D041F736141AFFE6AB91E312D04A3")
-    public  InputStreamReader(InputStream in, CharsetDecoder dec) {
+public InputStreamReader(InputStream in, CharsetDecoder dec) {
         super(in);
         dec.averageCharsPerByte();
         this.in = in;
         decoder = dec;
         bytes.limit(0);
-        // ---------- Original Method ----------
-        //dec.averageCharsPerByte();
-        //this.in = in;
-        //decoder = dec;
-        //bytes.limit(0);
     }
 
+    /**
+     * Constructs a new InputStreamReader on the InputStream {@code in} and
+     * Charset {@code charset}.
+     *
+     * @param in
+     *            the source InputStream from which to read characters.
+     * @param charset
+     *            the Charset that defines the character converter
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.975 -0500", hash_original_method = "F689BDB30C937E91D3C146F93A07A4B9", hash_generated_method = "25C9BE37F4F9559B696FB3861A4C24DF")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.113 -0400", hash_original_method = "F689BDB30C937E91D3C146F93A07A4B9", hash_generated_method = "638E03BD1AF4CDE5E50D3D3938B8A100")
-    public  InputStreamReader(InputStream in, Charset charset) {
+public InputStreamReader(InputStream in, Charset charset) {
         super(in);
         this.in = in;
         decoder = charset.newDecoder().onMalformedInput(
                 CodingErrorAction.REPLACE).onUnmappableCharacter(
                 CodingErrorAction.REPLACE);
         bytes.limit(0);
-        // ---------- Original Method ----------
-        //this.in = in;
-        //decoder = charset.newDecoder().onMalformedInput(
-                //CodingErrorAction.REPLACE).onUnmappableCharacter(
-                //CodingErrorAction.REPLACE);
-        //bytes.limit(0);
     }
 
+    /**
+     * Closes this reader. This implementation closes the source InputStream and
+     * releases all local storage.
+     *
+     * @throws IOException
+     *             if an error occurs attempting to close this reader.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.978 -0500", hash_original_method = "FE46DA5B445A82E67613621D1604074D", hash_generated_method = "64568DB66E5B89ACA9154E9C002982F9")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.113 -0400", hash_original_method = "FE46DA5B445A82E67613621D1604074D", hash_generated_method = "FD7FB0415BB06C755E2B8C451E4BC414")
-    @Override
+@Override
     public void close() throws IOException {
-        synchronized
-(lock)        {
-            if(decoder != null)            
-            {
+        synchronized (lock) {
+            if (decoder != null) {
                 decoder.reset();
-            } //End block
+            }
             decoder = null;
-            if(in != null)            
-            {
+            if (in != null) {
                 in.close();
                 in = null;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (lock) {
-            //if (decoder != null) {
-                //decoder.reset();
-            //}
-            //decoder = null;
-            //if (in != null) {
-                //in.close();
-                //in = null;
-            //}
-        //}
+            }
+        }
     }
 
+    /**
+     * Returns the historical name of the encoding used by this writer to convert characters to
+     * bytes, or null if this writer has been closed. Most callers should probably keep
+     * track of the String or Charset they passed in; this method may not return the same
+     * name.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.980 -0500", hash_original_method = "4B46B0B3D8C39E950459FB803D7FD65D", hash_generated_method = "1D58F563A49A07C6EFD3A0F1D5FF34D9")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.113 -0400", hash_original_method = "4B46B0B3D8C39E950459FB803D7FD65D", hash_generated_method = "DBC8D67D124E424ABBC3028B403BDB5F")
-    public String getEncoding() {
-        if(!isOpen())        
-        {
-String var540C13E9E156B687226421B24F2DF178_1131526652 =             null;
-            var540C13E9E156B687226421B24F2DF178_1131526652.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_1131526652;
-        } //End block
-String var0CAEB9C5EE04F06514583664597031A5_2023730002 =         HistoricalCharsetNames.get(decoder.charset());
-        var0CAEB9C5EE04F06514583664597031A5_2023730002.addTaint(taint);
-        return var0CAEB9C5EE04F06514583664597031A5_2023730002;
-        // ---------- Original Method ----------
-        //if (!isOpen()) {
-            //return null;
-        //}
-        //return HistoricalCharsetNames.get(decoder.charset());
+public String getEncoding() {
+        if (!isOpen()) {
+            return null;
+        }
+        return HistoricalCharsetNames.get(decoder.charset());
     }
 
+    /**
+     * Reads a single character from this reader and returns it as an integer
+     * with the two higher-order bytes set to 0. Returns -1 if the end of the
+     * reader has been reached. The byte value is either obtained from
+     * converting bytes in this reader's buffer or by first filling the buffer
+     * from the source InputStream and then reading from the buffer.
+     *
+     * @return the character read or -1 if the end of the reader has been
+     *         reached.
+     * @throws IOException
+     *             if this reader is closed or some other I/O error occurs.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.983 -0500", hash_original_method = "42220754D208F7633D722D928E4FD163", hash_generated_method = "608AB390C1A12B16DEDCCA342E1016AE")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.114 -0400", hash_original_method = "42220754D208F7633D722D928E4FD163", hash_generated_method = "17B33CF98F9F83760EEDEA554DD1EA50")
-    @Override
+@Override
     public int read() throws IOException {
-        synchronized
-(lock)        {
-            if(!isOpen())            
-            {
-                IOException varC10ADDF6EFCFF82B0AD0EE2A95AAB1A9_2069437578 = new IOException("InputStreamReader is closed");
-                varC10ADDF6EFCFF82B0AD0EE2A95AAB1A9_2069437578.addTaint(taint);
-                throw varC10ADDF6EFCFF82B0AD0EE2A95AAB1A9_2069437578;
-            } //End block
+        synchronized (lock) {
+            if (!isOpen()) {
+                throw new IOException("InputStreamReader is closed");
+            }
             char[] buf = new char[1];
-            int varA403D89C2CA6CC03C5AE994E3A0B4027_1877056443 = (read(buf, 0, 1) != -1 ? buf[0] : -1);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_920250784 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_920250784;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (lock) {
-            //if (!isOpen()) {
-                //throw new IOException("InputStreamReader is closed");
-            //}
-            //char[] buf = new char[1];
-            //return read(buf, 0, 1) != -1 ? buf[0] : -1;
-        //}
+            return read(buf, 0, 1) != -1 ? buf[0] : -1;
+        }
     }
 
+    /**
+     * Reads at most {@code length} characters from this reader and stores them
+     * at position {@code offset} in the character array {@code buf}. Returns
+     * the number of characters actually read or -1 if the end of the reader has
+     * been reached. The bytes are either obtained from converting bytes in this
+     * reader's buffer or by first filling the buffer from the source
+     * InputStream and then reading from the buffer.
+     *
+     * @param buffer
+     *            the array to store the characters read.
+     * @param offset
+     *            the initial position in {@code buf} to store the characters
+     *            read from this reader.
+     * @param length
+     *            the maximum number of characters to read.
+     * @return the number of characters read or -1 if the end of the reader has
+     *         been reached.
+     * @throws IndexOutOfBoundsException
+     *             if {@code offset < 0} or {@code length < 0}, or if
+     *             {@code offset + length} is greater than the length of
+     *             {@code buf}.
+     * @throws IOException
+     *             if this reader is closed or some other I/O error occurs.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.987 -0500", hash_original_method = "610EEC39BC95175186F6D1B73FBDC240", hash_generated_method = "550A9EF91DBCD99AD901345976E441C5")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.116 -0400", hash_original_method = "610EEC39BC95175186F6D1B73FBDC240", hash_generated_method = "033061A0E1CAFDD8A4CC48A23C72B74C")
-    @Override
+@Override
     public int read(char[] buffer, int offset, int length) throws IOException {
-        addTaint(length);
-        addTaint(offset);
-        addTaint(buffer[0]);
-        synchronized
-(lock)        {
-            if(!isOpen())            
-            {
-                IOException varC10ADDF6EFCFF82B0AD0EE2A95AAB1A9_1691446603 = new IOException("InputStreamReader is closed");
-                varC10ADDF6EFCFF82B0AD0EE2A95AAB1A9_1691446603.addTaint(taint);
-                throw varC10ADDF6EFCFF82B0AD0EE2A95AAB1A9_1691446603;
-            } //End block
+        synchronized (lock) {
+            if (!isOpen()) {
+                throw new IOException("InputStreamReader is closed");
+            }
+
             Arrays.checkOffsetAndCount(buffer.length, offset, length);
-            if(length == 0)            
-            {
-                int varCFCD208495D565EF66E7DFF9F98764DA_861306191 = (0);
-                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1235103549 = getTaintInt();
-                return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1235103549;
-            } //End block
+            if (length == 0) {
+                return 0;
+            }
+
             CharBuffer out = CharBuffer.wrap(buffer, offset, length);
             CoderResult result = CoderResult.UNDERFLOW;
+
+            // bytes.remaining() indicates number of bytes in buffer
+            // when 1-st time entered, it'll be equal to zero
             boolean needInput = !bytes.hasRemaining();
-            while
-(out.hasRemaining())            
-            {
-                if(needInput)                
-                {
-                    try 
-                    {
-                        if(in.available() == 0 && out.position() > offset)                        
-                        {
+
+            while (out.hasRemaining()) {
+                // fill the buffer if needed
+                if (needInput) {
+                    try {
+                        if (in.available() == 0 && out.position() > offset) {
+                            // we could return the result without blocking read
                             break;
-                        } //End block
-                    } //End block
-                    catch (IOException e)
-                    {
-                    } //End block
+                        }
+                    } catch (IOException e) {
+                        // available didn't work so just try the read
+                    }
+
                     int desiredByteCount = bytes.capacity() - bytes.limit();
                     int off = bytes.arrayOffset() + bytes.limit();
                     int actualByteCount = in.read(bytes.array(), off, desiredByteCount);
-                    if(actualByteCount == -1)                    
-                    {
+
+                    if (actualByteCount == -1) {
                         endOfInput = true;
                         break;
-                    } //End block
-                    else
-                    if(actualByteCount == 0)                    
-                    {
+                    } else if (actualByteCount == 0) {
                         break;
-                    } //End block
+                    }
                     bytes.limit(bytes.limit() + actualByteCount);
                     needInput = false;
-                } //End block
+                }
+
+                // decode bytes
                 result = decoder.decode(bytes, out, false);
-                if(result.isUnderflow())                
-                {
-                    if(bytes.limit() == bytes.capacity())                    
-                    {
+
+                if (result.isUnderflow()) {
+                    // compact the buffer if no space left
+                    if (bytes.limit() == bytes.capacity()) {
                         bytes.compact();
                         bytes.limit(bytes.position());
                         bytes.position(0);
-                    } //End block
+                    }
                     needInput = true;
-                } //End block
-                else
-                {
+                } else {
                     break;
-                } //End block
-            } //End block
-            if(result == CoderResult.UNDERFLOW && endOfInput)            
-            {
+                }
+            }
+
+            if (result == CoderResult.UNDERFLOW && endOfInput) {
                 result = decoder.decode(bytes, out, true);
                 decoder.flush(out);
                 decoder.reset();
-            } //End block
-            if(result.isMalformed() || result.isUnmappable())            
-            {
+            }
+            if (result.isMalformed() || result.isUnmappable()) {
                 result.throwException();
-            } //End block
-            int var42025BE1D23AB7981C542C79B0CBFF55_1943362841 = (out.position() - offset == 0 ? -1 : out.position() - offset);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_221086353 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_221086353;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            }
+
+            return out.position() - offset == 0 ? -1 : out.position() - offset;
+        }
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.989 -0500", hash_original_method = "2814A675517787CC2FFF66E2663BBAA6", hash_generated_method = "D3C76831C6D46CAC396A10504AD86E99")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.117 -0400", hash_original_method = "2814A675517787CC2FFF66E2663BBAA6", hash_generated_method = "BDFFDC05FB1531294BFA8744512F705E")
-    private boolean isOpen() {
-        boolean var0756A9CF6E7FC23D4EDE35D48E0E460B_760606085 = (in != null);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_688323590 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_688323590;
-        // ---------- Original Method ----------
-        //return in != null;
+private boolean isOpen() {
+        return in != null;
     }
 
+    /**
+     * Indicates whether this reader is ready to be read without blocking. If
+     * the result is {@code true}, the next {@code read()} will not block. If
+     * the result is {@code false} then this reader may or may not block when
+     * {@code read()} is called. This implementation returns {@code true} if
+     * there are bytes available in the buffer or the source stream has bytes
+     * available.
+     *
+     * @return {@code true} if the receiver will not block when {@code read()}
+     *         is called, {@code false} if unknown or blocking will occur.
+     * @throws IOException
+     *             if this reader is closed or some other I/O error occurs.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.993 -0500", hash_original_method = "281B3CA6768822BAE894DB2D1EB23921", hash_generated_method = "2498DC1D1B71629ADBB2B0126A321243")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:44.117 -0400", hash_original_method = "281B3CA6768822BAE894DB2D1EB23921", hash_generated_method = "2866075CC198AD6B58727C357BA8979D")
-    @Override
+@Override
     public boolean ready() throws IOException {
-        synchronized
-(lock)        {
-            if(in == null)            
-            {
-                IOException varC10ADDF6EFCFF82B0AD0EE2A95AAB1A9_1253318934 = new IOException("InputStreamReader is closed");
-                varC10ADDF6EFCFF82B0AD0EE2A95AAB1A9_1253318934.addTaint(taint);
-                throw varC10ADDF6EFCFF82B0AD0EE2A95AAB1A9_1253318934;
-            } //End block
-            try 
-            {
-                boolean var3B3558484A377AC5313F52A7F104C4B4_1930481568 = (bytes.hasRemaining() || in.available() > 0);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1461221151 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1461221151;
-            } //End block
-            catch (IOException e)
-            {
-                boolean var68934A3E9455FA72420237EB05902327_819932537 = (false);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2108632109 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_2108632109;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (lock) {
-            //if (in == null) {
-                //throw new IOException("InputStreamReader is closed");
-            //}
-            //try {
-                //return bytes.hasRemaining() || in.available() > 0;
-            //} catch (IOException e) {
-                //return false;
-            //}
-        //}
+        synchronized (lock) {
+            if (in == null) {
+                throw new IOException("InputStreamReader is closed");
+            }
+            try {
+                return bytes.hasRemaining() || in.available() > 0;
+            } catch (IOException e) {
+                return false;
+            }
+        }
     }
 
     

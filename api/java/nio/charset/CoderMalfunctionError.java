@@ -1,6 +1,8 @@
 package java.nio.charset;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
@@ -8,18 +10,20 @@ import droidsafe.annotations.*;
 
 
 public class CoderMalfunctionError extends Error {
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.606 -0400", hash_original_method = "883FFC59265DE3B21E7C8AE56E57641B", hash_generated_method = "2133BCAD975CC26F38D1A082BEC9E5A3")
-    public  CoderMalfunctionError(Exception ex) {
-        super(ex);
-        addTaint(ex.getTaint());
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.606 -0400", hash_original_field = "1A335B9C4DBEB9C7F7E507913845A35B", hash_generated_field = "113DCE2BB9203B33E699C7CF2E28F6A0")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.129 -0500", hash_original_field = "7DFEDDA9E891EAD71DBA7C5C4438C252", hash_generated_field = "113DCE2BB9203B33E699C7CF2E28F6A0")
 
     private static final long serialVersionUID = -1151412348057794301L;
+
+    /**
+     * Constructs a new {@code CoderMalfunctionError}.
+     *
+     * @param ex
+     *            the original exception thrown by the encoder/decoder.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.132 -0500", hash_original_method = "883FFC59265DE3B21E7C8AE56E57641B", hash_generated_method = "E4916F828F004F03CB8972C5E11408EA")
+    
+public CoderMalfunctionError(Exception ex) {
+        super(ex);
+    }
 }
 

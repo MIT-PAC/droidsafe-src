@@ -1,6 +1,8 @@
 package java.io;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Arrays;
 
@@ -11,321 +13,298 @@ import libcore.util.SneakyThrow;
 
 
 public class BufferedWriter extends Writer {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.400 -0400", hash_original_field = "C68271A63DDBC431C307BEB7D2918275", hash_generated_field = "0251D9C19BD1379B95D6A9A5D4A8C80D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.393 -0500", hash_original_field = "EBCE22DD0E30FF0E4040ABB2E7F29C97", hash_generated_field = "0251D9C19BD1379B95D6A9A5D4A8C80D")
+
 
     private Writer out;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.400 -0400", hash_original_field = "CB7E52B21171FB9A53B498202607F0BD", hash_generated_field = "29466223C47F8B8BB1DFDB9869023C70")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.396 -0500", hash_original_field = "40514AFF00B14ABD40D54C723F22A0B4", hash_generated_field = "29466223C47F8B8BB1DFDB9869023C70")
+
 
     private char[] buf;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.401 -0400", hash_original_field = "5E0BDCBDDCCCA4D66D74BA8C1CEE1A68", hash_generated_field = "74B29150B9CA7F1725D53FF286BFBC4B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.398 -0500", hash_original_field = "5780BC7BCF265A6425A5A90F1AD9B24E", hash_generated_field = "74B29150B9CA7F1725D53FF286BFBC4B")
+
 
     private int pos;
+
+    /**
+     * Constructs a new {@code BufferedWriter}, providing {@code out} with a buffer
+     * of 8192 bytes.
+     *
+     * @param out the {@code Writer} the buffer writes to.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.401 -0500", hash_original_method = "D0AF799B17153797A8965CAE82858C8B", hash_generated_method = "FAED49220CE1BA4E9A3247C527651C59")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.401 -0400", hash_original_method = "D0AF799B17153797A8965CAE82858C8B", hash_generated_method = "4374D4B84A8E9BB7E975D27D1D8AB4A2")
-    public  BufferedWriter(Writer out) {
+public BufferedWriter(Writer out) {
         this(out, 8192);
-        addTaint(out.getTaint());
-        // ---------- Original Method ----------
     }
 
+    /**
+     * Constructs a new {@code BufferedWriter}, providing {@code out} with {@code size} bytes
+     * of buffer.
+     *
+     * @param out the {@code OutputStream} the buffer writes to.
+     * @param size the size of buffer in bytes.
+     * @throws IllegalArgumentException if {@code size <= 0}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.404 -0500", hash_original_method = "BD90CD6D32AE7EB9B6CCE31F3688E0F2", hash_generated_method = "F1E03926A4E3DA844CAF0FC8D59F2B35")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.402 -0400", hash_original_method = "BD90CD6D32AE7EB9B6CCE31F3688E0F2", hash_generated_method = "D3848D9212D30220CDC9B62D4D4045E8")
-    public  BufferedWriter(Writer out, int size) {
+public BufferedWriter(Writer out, int size) {
         super(out);
-        if(size <= 0)        
-        {
-            IllegalArgumentException var5AFB46BA040E4CEE38200888DC74991F_1908890313 = new IllegalArgumentException("size <= 0");
-            var5AFB46BA040E4CEE38200888DC74991F_1908890313.addTaint(taint);
-            throw var5AFB46BA040E4CEE38200888DC74991F_1908890313;
-        } //End block
+        if (size <= 0) {
+            throw new IllegalArgumentException("size <= 0");
+        }
         this.out = out;
         this.buf = new char[size];
-        // ---------- Original Method ----------
-        //if (size <= 0) {
-            //throw new IllegalArgumentException("size <= 0");
-        //}
-        //this.out = out;
-        //this.buf = new char[size];
     }
 
+    /**
+     * Closes this writer. The contents of the buffer are flushed, the target
+     * writer is closed, and the buffer is released. Only the first invocation
+     * of close has any effect.
+     *
+     * @throws IOException
+     *             if an error occurs while closing this writer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.407 -0500", hash_original_method = "1FFBADE50F933DAEBE6B8AB97A0787F1", hash_generated_method = "127F1A20360C713C7F1AB5B9AF7B63D3")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.404 -0400", hash_original_method = "1FFBADE50F933DAEBE6B8AB97A0787F1", hash_generated_method = "90322F3E471EEF794EA7FCC03D7AE5BA")
-    @Override
+@Override
     public void close() throws IOException {
-        synchronized
-(lock)        {
-            if(isClosed())            
-            {
+        synchronized (lock) {
+            if (isClosed()) {
                 return;
-            } //End block
+            }
+
             Throwable thrown = null;
-            try 
-            {
+            try {
                 flushInternal();
-            } //End block
-            catch (Throwable e)
-            {
+            } catch (Throwable e) {
                 thrown = e;
-            } //End block
+            }
             buf = null;
-            try 
-            {
+
+            try {
                 out.close();
-            } //End block
-            catch (Throwable e)
-            {
-                if(thrown == null)                
-                {
+            } catch (Throwable e) {
+                if (thrown == null) {
                     thrown = e;
-                } //End block
-            } //End block
+                }
+            }
             out = null;
-            if(thrown != null)            
-            {
+
+            if (thrown != null) {
                 SneakyThrow.sneakyThrow(thrown);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (lock) {
-            //if (isClosed()) {
-                //return;
-            //}
-            //Throwable thrown = null;
-            //try {
-                //flushInternal();
-            //} catch (Throwable e) {
-                //thrown = e;
-            //}
-            //buf = null;
-            //try {
-                //out.close();
-            //} catch (Throwable e) {
-                //if (thrown == null) {
-                    //thrown = e;
-                //}
-            //}
-            //out = null;
-            //if (thrown != null) {
-                //SneakyThrow.sneakyThrow(thrown);
-            //}
-        //}
+            }
+        }
     }
 
+    /**
+     * Flushes this writer. The contents of the buffer are committed to the
+     * target writer and it is then flushed.
+     *
+     * @throws IOException
+     *             if an error occurs while flushing this writer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.410 -0500", hash_original_method = "CDBC99BDF3D706FE5CF6000E4273C9D9", hash_generated_method = "EE62E3FF899BD2828946937B2BAF16E5")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.405 -0400", hash_original_method = "CDBC99BDF3D706FE5CF6000E4273C9D9", hash_generated_method = "2B3DF9BABC6BACEA379ABCDCC553578E")
-    @Override
+@Override
     public void flush() throws IOException {
-        synchronized
-(lock)        {
+        synchronized (lock) {
             checkNotClosed();
             flushInternal();
             out.flush();
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (lock) {
-            //checkNotClosed();
-            //flushInternal();
-            //out.flush();
-        //}
+        }
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.413 -0500", hash_original_method = "023D06F961F755F2334356A83B61D7A7", hash_generated_method = "5E7823C8E0E8B576442E72FE23F39A88")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.406 -0400", hash_original_method = "023D06F961F755F2334356A83B61D7A7", hash_generated_method = "D5B6A3F8AB9EA2E05029A9C8B87126F9")
-    private void checkNotClosed() throws IOException {
-        if(isClosed())        
-        {
-            IOException var2274052E96CC2921AC28657447A07720_1954927262 = new IOException("BufferedWriter is closed");
-            var2274052E96CC2921AC28657447A07720_1954927262.addTaint(taint);
-            throw var2274052E96CC2921AC28657447A07720_1954927262;
-        } //End block
-        // ---------- Original Method ----------
-        //if (isClosed()) {
-            //throw new IOException("BufferedWriter is closed");
-        //}
+private void checkNotClosed() throws IOException {
+        if (isClosed()) {
+            throw new IOException("BufferedWriter is closed");
+        }
     }
 
+    /**
+     * Flushes the internal buffer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.415 -0500", hash_original_method = "56ED8A50252CAA4A163E554237CE5ACA", hash_generated_method = "44F53CF6742339CE56733D4953AB5880")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.406 -0400", hash_original_method = "56ED8A50252CAA4A163E554237CE5ACA", hash_generated_method = "E40EA2268EB097A4F1392CA223EF1383")
-    private void flushInternal() throws IOException {
-        if(pos > 0)        
-        {
+private void flushInternal() throws IOException {
+        if (pos > 0) {
             out.write(buf, 0, pos);
-        } //End block
+        }
         pos = 0;
-        // ---------- Original Method ----------
-        //if (pos > 0) {
-            //out.write(buf, 0, pos);
-        //}
-        //pos = 0;
     }
 
+    /**
+     * Indicates whether this writer is closed.
+     *
+     * @return {@code true} if this writer is closed, {@code false} otherwise.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.418 -0500", hash_original_method = "65F785E5C7A072182DBDFA4385D9D27B", hash_generated_method = "49B5D6BDDF3744E41E97B3326CF144AB")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.407 -0400", hash_original_method = "65F785E5C7A072182DBDFA4385D9D27B", hash_generated_method = "7F9CA8F69650F2F5DA796329762CBF07")
-    private boolean isClosed() {
-        boolean varAE601444E7D588038E147A2CA548E6D7_1754750598 = (out == null);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1129259496 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1129259496;
-        // ---------- Original Method ----------
-        //return out == null;
+private boolean isClosed() {
+        return out == null;
     }
 
+    /**
+     * Writes a newline to this writer. On Android, this is {@code "\n"}.
+     * The target writer may or may not be flushed when a newline is written.
+     *
+     * @throws IOException
+     *             if an error occurs attempting to write to this writer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.420 -0500", hash_original_method = "2B3D7D602A7E63B6C09E849C2D681C65", hash_generated_method = "3A13DB33FEE4E58AA5B65F7DD55F0264")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.408 -0400", hash_original_method = "2B3D7D602A7E63B6C09E849C2D681C65", hash_generated_method = "95268A8136CFE30ED36AA1BE72C081F8")
-    public void newLine() throws IOException {
+public void newLine() throws IOException {
         write(System.lineSeparator());
-        // ---------- Original Method ----------
-        //write(System.lineSeparator());
     }
 
+    /**
+     * Writes {@code count} characters starting at {@code offset} in
+     * {@code cbuf} to this writer. If {@code count} is greater than this
+     * writer's buffer, then the buffer is flushed and the characters are
+     * written directly to the target writer.
+     *
+     * @param cbuf
+     *            the array containing characters to write.
+     * @param offset
+     *            the start position in {@code cbuf} for retrieving characters.
+     * @param count
+     *            the maximum number of characters to write.
+     * @throws IndexOutOfBoundsException
+     *             if {@code offset < 0} or {@code count < 0}, or if
+     *             {@code offset + count} is greater than the size of
+     *             {@code cbuf}.
+     * @throws IOException
+     *             if this writer is closed or another I/O error occurs.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.424 -0500", hash_original_method = "2ACD1A4D73C211D3299604BDD7AD25D9", hash_generated_method = "210CE2FA3BEB7A9654223F17CE4CC4B5")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.410 -0400", hash_original_method = "2ACD1A4D73C211D3299604BDD7AD25D9", hash_generated_method = "E76072C2E28CDF0AF593A3B635EA15B5")
-    @Override
+@Override
     public void write(char[] cbuf, int offset, int count) throws IOException {
-        addTaint(count);
-        addTaint(offset);
-        addTaint(cbuf[0]);
-        synchronized
-(lock)        {
+        synchronized (lock) {
             checkNotClosed();
-            if(cbuf == null)            
-            {
-                NullPointerException varD1F0B530B211C354FD4DD40207900970_1224244544 = new NullPointerException("buffer == null");
-                varD1F0B530B211C354FD4DD40207900970_1224244544.addTaint(taint);
-                throw varD1F0B530B211C354FD4DD40207900970_1224244544;
-            } //End block
+            if (cbuf == null) {
+                throw new NullPointerException("buffer == null");
+            }
             Arrays.checkOffsetAndCount(cbuf.length, offset, count);
-            if(pos == 0 && count >= this.buf.length)            
-            {
+            if (pos == 0 && count >= this.buf.length) {
                 out.write(cbuf, offset, count);
                 return;
-            } //End block
+            }
             int available = this.buf.length - pos;
-            if(count < available)            
-            {
+            if (count < available) {
                 available = count;
-            } //End block
-            if(available > 0)            
-            {
+            }
+            if (available > 0) {
                 System.arraycopy(cbuf, offset, this.buf, pos, available);
                 pos += available;
-            } //End block
-            if(pos == this.buf.length)            
-            {
+            }
+            if (pos == this.buf.length) {
                 out.write(this.buf, 0, this.buf.length);
                 pos = 0;
-                if(count > available)                
-                {
+                if (count > available) {
                     offset += available;
                     available = count - available;
-                    if(available >= this.buf.length)                    
-                    {
+                    if (available >= this.buf.length) {
                         out.write(cbuf, offset, available);
                         return;
-                    } //End block
+                    }
+
                     System.arraycopy(cbuf, offset, this.buf, pos, available);
                     pos += available;
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                }
+            }
+        }
     }
 
+    /**
+     * Writes the character {@code oneChar} to this writer. If the buffer
+     * gets full by writing this character, this writer is flushed. Only the
+     * lower two bytes of the integer {@code oneChar} are written.
+     *
+     * @param oneChar
+     *            the character to write.
+     * @throws IOException
+     *             if this writer is closed or another I/O error occurs.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.427 -0500", hash_original_method = "C57AC7B5490B3E246FD3E407701AE232", hash_generated_method = "5754A8963C9C380CBB2742943A30E3F9")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.412 -0400", hash_original_method = "C57AC7B5490B3E246FD3E407701AE232", hash_generated_method = "819489A921CCAB1BD8545F2FAEBA3480")
-    @Override
+@Override
     public void write(int oneChar) throws IOException {
-        synchronized
-(lock)        {
+        synchronized (lock) {
             checkNotClosed();
-            if(pos >= buf.length)            
-            {
+            if (pos >= buf.length) {
                 out.write(buf, 0, buf.length);
                 pos = 0;
-            } //End block
+            }
             buf[pos++] = (char) oneChar;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (lock) {
-            //checkNotClosed();
-            //if (pos >= buf.length) {
-                //out.write(buf, 0, buf.length);
-                //pos = 0;
-            //}
-            //buf[pos++] = (char) oneChar;
-        //}
+        }
     }
 
+    /**
+     * Writes {@code count} characters starting at {@code offset} in {@code str}
+     * to this writer. If {@code count} is greater than this writer's buffer,
+     * then this writer is flushed and the remaining characters are written
+     * directly to the target writer. If count is negative no characters are
+     * written to the buffer. This differs from the behavior of the superclass.
+     *
+     * @param str
+     *            the non-null String containing characters to write.
+     * @param offset
+     *            the start position in {@code str} for retrieving characters.
+     * @param count
+     *            maximum number of characters to write.
+     * @throws IOException
+     *             if this writer has already been closed or another I/O error
+     *             occurs.
+     * @throws IndexOutOfBoundsException
+     *             if {@code offset < 0} or {@code offset + count} is greater
+     *             than the length of {@code str}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.432 -0500", hash_original_method = "AE740E7607559E2B849C6855BC31C773", hash_generated_method = "CC19827EBE9A9C4E7EA3C6B136BC89B1")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.415 -0400", hash_original_method = "AE740E7607559E2B849C6855BC31C773", hash_generated_method = "F1C43EE76940DE3E454E83A3638FDBE9")
-    @Override
+@Override
     public void write(String str, int offset, int count) throws IOException {
-        addTaint(count);
-        addTaint(offset);
-        addTaint(str.getTaint());
-        synchronized
-(lock)        {
+        synchronized (lock) {
             checkNotClosed();
-            if(count <= 0)            
-            {
+            if (count <= 0) {
                 return;
-            } //End block
-            if(offset < 0 || offset > str.length() - count)            
-            {
-                StringIndexOutOfBoundsException varDD6466A465572C8C2EC4C6C733FC9AF8_1588343665 = new StringIndexOutOfBoundsException(str, offset, count);
-                varDD6466A465572C8C2EC4C6C733FC9AF8_1588343665.addTaint(taint);
-                throw varDD6466A465572C8C2EC4C6C733FC9AF8_1588343665;
-            } //End block
-            if(pos == 0 && count >= buf.length)            
-            {
+            }
+            if (offset < 0 || offset > str.length() - count) {
+                throw new StringIndexOutOfBoundsException(str, offset, count);
+            }
+            if (pos == 0 && count >= buf.length) {
                 char[] chars = new char[count];
                 str.getChars(offset, offset + count, chars, 0);
                 out.write(chars, 0, count);
                 return;
-            } //End block
+            }
             int available = buf.length - pos;
-            if(count < available)            
-            {
+            if (count < available) {
                 available = count;
-            } //End block
-            if(available > 0)            
-            {
+            }
+            if (available > 0) {
                 str.getChars(offset, offset + available, buf, pos);
                 pos += available;
-            } //End block
-            if(pos == buf.length)            
-            {
+            }
+            if (pos == buf.length) {
                 out.write(this.buf, 0, this.buf.length);
                 pos = 0;
-                if(count > available)                
-                {
+                if (count > available) {
                     offset += available;
                     available = count - available;
-                    if(available >= buf.length)                    
-                    {
+                    if (available >= buf.length) {
                         char[] chars = new char[count];
                         str.getChars(offset, offset + available, chars, 0);
                         out.write(chars, 0, available);
                         return;
-                    } //End block
+                    }
                     str.getChars(offset, offset + available, buf, pos);
                     pos += available;
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                }
+            }
+        }
     }
 
     

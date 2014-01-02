@@ -1,6 +1,8 @@
 package java.net;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -11,281 +13,254 @@ import java.io.ObjectInputStream;
 
 
 public class InetSocketAddress extends SocketAddress {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.694 -0400", hash_original_field = "3EF9A0D7FAB5D2BCABF0978C0A35244E", hash_generated_field = "0B6CE69CF925D6E46B22FFB8B45B7F59")
 
-    @DSVAModeled
-    private InetAddress addr;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.694 -0400", hash_original_field = "0897ACF49C7C1EA9F76EFE59187AA046", hash_generated_field = "A7530665071F24FF1A9052578197759B")
-
-    @DSVAModeled
-    private String hostname;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.695 -0400", hash_original_field = "901555FB06E346CB065CEB9808DCFC25", hash_generated_field = "D40522EE9D0571A9162D4F847D658065")
-
-    @DSVAModeled
-    private int port;
+    /**
+     * Creates an {@code InetSocketAddress} without trying to resolve the
+     * hostname into an {@code InetAddress}. The address field is marked as
+     * unresolved.
+     *
+     * @param host
+     *            the specified hostname to which this socket is bound.
+     * @param port
+     *            the specified port number to which this socket is bound.
+     * @return the created InetSocketAddress instance.
+     * @throws IllegalArgumentException
+     *             if the hostname {@code host} is {@code null} or the port is
+     *             not in the range between 0 and 65535.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.641 -0500", hash_original_method = "D59CB5797FE9FDEEAB13B54DF3C64F08", hash_generated_method = "B3021AE91BF852E930D2D98E82380796")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.695 -0400", hash_original_method = "E61EEABC5DF9527410338B11302226FE", hash_generated_method = "D6A8A6FF7A7F9DF0030B1E8520AD5301")
-    public  InetSocketAddress() {
+public static InetSocketAddress createUnresolved(String host, int port) {
+        return new InetSocketAddress(host, port, false);
+    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.617 -0500", hash_original_field = "7F743DE8058FB2755DC0C37C7CC9A08D", hash_generated_field = "CA65D985F490176D565176BDD0E73685")
+
+
+    private static final long serialVersionUID = 5076001401234631237L;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.619 -0500", hash_original_field = "AD87F1710B0BBE13E418BD36FE4E24C7", hash_generated_field = "0B6CE69CF925D6E46B22FFB8B45B7F59")
+
+    private  InetAddress addr;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.622 -0500", hash_original_field = "6B66041FD39815DF98C48C22668D1653", hash_generated_field = "A7530665071F24FF1A9052578197759B")
+
+    private  String hostname;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.624 -0500", hash_original_field = "5A948EF636511EF149269A68FE278AED", hash_generated_field = "D40522EE9D0571A9162D4F847D658065")
+
+    private  int port;
+
+    /**
+     * @hide internal use only
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.627 -0500", hash_original_method = "E61EEABC5DF9527410338B11302226FE", hash_generated_method = "4D6101AB37389FFA45490C9C535069AE")
+    
+public InetSocketAddress() {
+        // These will be filled in the native implementation of recvfrom.
         this.addr = null;
         this.hostname = null;
         this.port = -1;
-        // ---------- Original Method ----------
-        //this.addr = null;
-        //this.hostname = null;
-        //this.port = -1;
     }
 
+    /**
+     * Creates a socket endpoint with the given port number {@code port} and
+     * no specified address. The range for valid port numbers is between 0 and
+     * 65535 inclusive.
+     *
+     * @param port
+     *            the specified port number to which this socket is bound.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.629 -0500", hash_original_method = "95F398A6CE4FD1305EED1666777F8263", hash_generated_method = "CD33CA8FB1F3123A4A03C02AA3494ECC")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.696 -0400", hash_original_method = "95F398A6CE4FD1305EED1666777F8263", hash_generated_method = "A47176D4EA4DC38BCEA4A38EAF031A75")
-    public  InetSocketAddress(int port) {
+public InetSocketAddress(int port) {
         this((InetAddress) null, port);
-        addTaint(port);
-        // ---------- Original Method ----------
     }
 
+    /**
+     * Creates a socket endpoint with the given port number {@code port} and
+     * {@code address}. The range for valid port numbers is between 0 and 65535
+     * inclusive. If {@code address} is {@code null} this socket is bound to the
+     * IPv4 wildcard address.
+     *
+     * @param port
+     *            the specified port number to which this socket is bound.
+     * @param address
+     *            the specified address to which this socket is bound.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.632 -0500", hash_original_method = "9F6BF484BF454F89FD6A310ADFCD9122", hash_generated_method = "A3FF0FE93DD89D7DDA0D00CCF9EE59E9")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.697 -0400", hash_original_method = "9F6BF484BF454F89FD6A310ADFCD9122", hash_generated_method = "24D4F5688495039847A193F72239DB29")
-    public  InetSocketAddress(InetAddress address, int port) {
-        if(port < 0 || port > 65535)        
-        {
-            IllegalArgumentException var85A8ACB08F64870E8355BDC8963AF636_609099244 = new IllegalArgumentException("port=" + port);
-            var85A8ACB08F64870E8355BDC8963AF636_609099244.addTaint(taint);
-            throw var85A8ACB08F64870E8355BDC8963AF636_609099244;
-        } //End block
+public InetSocketAddress(InetAddress address, int port) {
+        if (port < 0 || port > 65535) {
+            throw new IllegalArgumentException("port=" + port);
+        }
         this.addr = (address == null) ? Inet4Address.ANY : address;
         this.hostname = null;
         this.port = port;
-        // ---------- Original Method ----------
-        //if (port < 0 || port > 65535) {
-            //throw new IllegalArgumentException("port=" + port);
-        //}
-        //this.addr = (address == null) ? Inet4Address.ANY : address;
-        //this.hostname = null;
-        //this.port = port;
     }
 
+    /**
+     * Creates a socket endpoint with the given port number {@code port} and the
+     * hostname {@code host}. The hostname is tried to be resolved and cannot be
+     * {@code null}. The range for valid port numbers is between 0 and 65535
+     * inclusive.
+     *
+     * @param port
+     *            the specified port number to which this socket is bound.
+     * @param host
+     *            the specified hostname to which this socket is bound.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.635 -0500", hash_original_method = "6C9F5B77CD6EF4C5F038F88B12F1FECD", hash_generated_method = "71E9E971E7D0422D05092181F52B89E1")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.697 -0400", hash_original_method = "6C9F5B77CD6EF4C5F038F88B12F1FECD", hash_generated_method = "AAE39BB1651B916EC3C89DB87B8FB535")
-    public  InetSocketAddress(String host, int port) {
+public InetSocketAddress(String host, int port) {
         this(host, port, true);
-        addTaint(port);
-        addTaint(host.getTaint());
-        // ---------- Original Method ----------
     }
 
+    /*
+     * Internal constructor for InetSocketAddress(String, int) and
+     * createUnresolved(String, int);
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.638 -0500", hash_original_method = "10794513C1E3AAEE9C124882A7C67C11", hash_generated_method = "10794513C1E3AAEE9C124882A7C67C11")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.699 -0400", hash_original_method = "10794513C1E3AAEE9C124882A7C67C11", hash_generated_method = "EA0B2876AF6FA286FA924CF3262C5FED")
-      InetSocketAddress(String hostname, int port, boolean needResolved) {
-        addTaint(needResolved);
-        if(hostname == null || port < 0 || port > 65535)        
-        {
-            IllegalArgumentException var6CDF6FA7F951A63D323FEB16F3FFED6C_1162735188 = new IllegalArgumentException("host=" + hostname + ", port=" + port);
-            var6CDF6FA7F951A63D323FEB16F3FFED6C_1162735188.addTaint(taint);
-            throw var6CDF6FA7F951A63D323FEB16F3FFED6C_1162735188;
-        } //End block
+InetSocketAddress(String hostname, int port, boolean needResolved) {
+        if (hostname == null || port < 0 || port > 65535) {
+            throw new IllegalArgumentException("host=" + hostname + ", port=" + port);
+        }
+
         InetAddress addr = null;
-        if(needResolved)        
-        {
-            try 
-            {
+        if (needResolved) {
+            try {
                 addr = InetAddress.getByName(hostname);
                 hostname = null;
-            } //End block
-            catch (UnknownHostException ignored)
-            {
-            } //End block
-        } //End block
+            } catch (UnknownHostException ignored) {
+            }
+        }
         this.addr = addr;
         this.hostname = hostname;
         this.port = port;
-        // ---------- Original Method ----------
-        //if (hostname == null || port < 0 || port > 65535) {
-            //throw new IllegalArgumentException("host=" + hostname + ", port=" + port);
-        //}
-        //InetAddress addr = null;
-        //if (needResolved) {
-            //try {
-                //addr = InetAddress.getByName(hostname);
-                //hostname = null;
-            //} catch (UnknownHostException ignored) {
-            //}
-        //}
-        //this.addr = addr;
-        //this.hostname = hostname;
-        //this.port = port;
     }
 
+    /**
+     * Gets the port number of this socket.
+     *
+     * @return the socket endpoint port number.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.643 -0500", hash_original_method = "A5F7344FAECBE0D6DB15D1F6E7BEBC6E", hash_generated_method = "E126B6DCEFD20BABFE67A5DF1C3260B4")
     
-    @DSModeled(DSC.SAFE)
-    public static InetSocketAddress createUnresolved(String host, int port) {
-        return new InetSocketAddress(host, port, false);
+public final int getPort() {
+        return port;
     }
 
+    /**
+     * Gets the address of this socket.
+     *
+     * @return the socket endpoint address.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.646 -0500", hash_original_method = "EBC0D8AF364C08270D1E1C0275ACCE70", hash_generated_method = "58EFD60573CF340F0B118334D4223CC2")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.700 -0400", hash_original_method = "A5F7344FAECBE0D6DB15D1F6E7BEBC6E", hash_generated_method = "C5E80346E961E14B78747C6E09CC79A5")
-    public final int getPort() {
-        int var901555FB06E346CB065CEB9808DCFC25_1339703200 = (port);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_295345340 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_295345340;
-        // ---------- Original Method ----------
-        //return port;
+public final InetAddress getAddress() {
+        return addr;
     }
 
+    /**
+     * Returns the hostname, doing a reverse lookup on the {@code InetAddress} if no
+     * hostname string was provided at construction time.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.648 -0500", hash_original_method = "6B2BE268DC286B10AABA01E5C61B1025", hash_generated_method = "47DBD0EB47A52E31FF9344CBBA2DA06B")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.700 -0400", hash_original_method = "EBC0D8AF364C08270D1E1C0275ACCE70", hash_generated_method = "8D8B5EFB6649A195601B0E4D839BB2D6")
-    public final InetAddress getAddress() {
-InetAddress var93F8352EAB50DBA73F526833D82E48F9_659594681 =         addr;
-        var93F8352EAB50DBA73F526833D82E48F9_659594681.addTaint(taint);
-        return var93F8352EAB50DBA73F526833D82E48F9_659594681;
-        // ---------- Original Method ----------
-        //return addr;
+public final String getHostName() {
+        return (addr != null) ? addr.getHostName() : hostname;
     }
 
+    /**
+     * Returns the hostname if known, or the result of {@code InetAddress.getHostAddress}.
+     * Unlike {@link #getHostName}, this method will never cause a DNS lookup.
+     * @since 1.7
+     * @hide 1.7 - remember to add a link in the getHostName documentation!
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.650 -0500", hash_original_method = "152FB4941FA191CB3163ABC6AAB86F6D", hash_generated_method = "B696DAEE59E1EF2DF1031EFD69771561")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.701 -0400", hash_original_method = "6B2BE268DC286B10AABA01E5C61B1025", hash_generated_method = "182ABDE68546DECC752CD70F20A26CF1")
-    public final String getHostName() {
-String varAC60CAEE0ED0B1E182673A2E3E7A6307_1567749775 =         (addr != null) ? addr.getHostName() : hostname;
-        varAC60CAEE0ED0B1E182673A2E3E7A6307_1567749775.addTaint(taint);
-        return varAC60CAEE0ED0B1E182673A2E3E7A6307_1567749775;
-        // ---------- Original Method ----------
-        //return (addr != null) ? addr.getHostName() : hostname;
+public final String getHostString() {
+        return (hostname != null) ? hostname : addr.getHostAddress();
     }
 
+    /**
+     * Returns whether this socket address is unresolved or not.
+     *
+     * @return {@code true} if this socket address is unresolved, {@code false}
+     *         otherwise.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.653 -0500", hash_original_method = "516016D8DE08604CF0F5A3746D5ACA08", hash_generated_method = "F7284E3F9F89FE40660E3A9EBEBCC085")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.701 -0400", hash_original_method = "152FB4941FA191CB3163ABC6AAB86F6D", hash_generated_method = "20B17B93B0A9799B58880BA9E6D72148")
-    public final String getHostString() {
-String varA176FBB649535D87C7C729399E998756_1767560490 =         (hostname != null) ? hostname : addr.getHostAddress();
-        varA176FBB649535D87C7C729399E998756_1767560490.addTaint(taint);
-        return varA176FBB649535D87C7C729399E998756_1767560490;
-        // ---------- Original Method ----------
-        //return (hostname != null) ? hostname : addr.getHostAddress();
+public final boolean isUnresolved() {
+        return addr == null;
     }
 
+    /**
+     * Gets a string representation of this socket included the address and the
+     * port number.
+     *
+     * @return the address and port number as a textual representation.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.655 -0500", hash_original_method = "B37E37F388D00532D9BE005F391E9AE5", hash_generated_method = "783EE48230B34BDEE2030AD8909E7990")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.701 -0400", hash_original_method = "516016D8DE08604CF0F5A3746D5ACA08", hash_generated_method = "6B025878AC95B0E7FDF1D3A442F9884A")
-    public final boolean isUnresolved() {
-        boolean varAF772B268FBA8C120460CEDF303B798C_83209549 = (addr == null);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1235510768 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1235510768;
-        // ---------- Original Method ----------
-        //return addr == null;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.702 -0400", hash_original_method = "B37E37F388D00532D9BE005F391E9AE5", hash_generated_method = "40006086B41EA0656E88A7CC9ADA615B")
-    @Override
+@Override
     public String toString() {
-String var1B7CAFC033DE18D29F647AE499B2444D_593277045 =         ((addr != null) ? addr.toString() : hostname) + ":" + port;
-        var1B7CAFC033DE18D29F647AE499B2444D_593277045.addTaint(taint);
-        return var1B7CAFC033DE18D29F647AE499B2444D_593277045;
-        // ---------- Original Method ----------
-        //return ((addr != null) ? addr.toString() : hostname) + ":" + port;
+        return ((addr != null) ? addr.toString() : hostname) + ":" + port;
     }
 
+    /**
+     * Compares two socket endpoints and returns true if they are equal. Two
+     * socket endpoints are equal if the IP address or the hostname of both are
+     * equal and they are bound to the same port.
+     *
+     * @param socketAddr
+     *            the object to be tested for equality.
+     * @return {@code true} if this socket and the given socket object {@code
+     *         socketAddr} are equal, {@code false} otherwise.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.658 -0500", hash_original_method = "A55E654199D420BD447FD45C56E388DE", hash_generated_method = "04E26C740CBB268443E88B1C4173063B")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.703 -0400", hash_original_method = "A55E654199D420BD447FD45C56E388DE", hash_generated_method = "B6453D233C2695912BF9A7AA2605051E")
-    @Override
+@Override
     public final boolean equals(Object socketAddr) {
-        addTaint(socketAddr.getTaint());
-        if(this == socketAddr)        
-        {
-            boolean varB326B5062B2F0E69046810717534CB09_2047641167 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1597044239 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1597044239;
-        } //End block
-        if(!(socketAddr instanceof InetSocketAddress))        
-        {
-            boolean var68934A3E9455FA72420237EB05902327_1094673076 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1932867517 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1932867517;
-        } //End block
+        if (this == socketAddr) {
+            return true;
+        }
+        if (!(socketAddr instanceof InetSocketAddress)) {
+            return false;
+        }
         InetSocketAddress iSockAddr = (InetSocketAddress) socketAddr;
-        if(port != iSockAddr.port)        
-        {
-            boolean var68934A3E9455FA72420237EB05902327_1465284174 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1249726572 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1249726572;
-        } //End block
-        if((addr == null) && (iSockAddr.addr == null))        
-        {
-            boolean varBAB89A7C24C90095B361AC56141979C1_650009258 = (hostname.equals(iSockAddr.hostname));
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1215619430 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1215619430;
-        } //End block
-        if(addr == null)        
-        {
-            boolean var68934A3E9455FA72420237EB05902327_753705501 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1916881506 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1916881506;
-        } //End block
-        boolean var625AACD729EAE77DCC7B80EB17B04339_1561527541 = (addr.equals(iSockAddr.addr));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1716503043 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1716503043;
-        // ---------- Original Method ----------
-        //if (this == socketAddr) {
-            //return true;
-        //}
-        //if (!(socketAddr instanceof InetSocketAddress)) {
-            //return false;
-        //}
-        //InetSocketAddress iSockAddr = (InetSocketAddress) socketAddr;
-        //if (port != iSockAddr.port) {
-            //return false;
-        //}
-        //if ((addr == null) && (iSockAddr.addr == null)) {
-            //return hostname.equals(iSockAddr.hostname);
-        //}
-        //if (addr == null) {
-            //return false;
-        //}
-        //return addr.equals(iSockAddr.addr);
+
+        // check the ports as we always need to do this
+        if (port != iSockAddr.port) {
+            return false;
+        }
+
+        // we only use the hostnames in the comparison if the addrs were not
+        // resolved
+        if ((addr == null) && (iSockAddr.addr == null)) {
+            return hostname.equals(iSockAddr.hostname);
+        }
+
+        // addrs were resolved so use them for the comparison
+        if (addr == null) {
+            // if we are here we know iSockAddr is not null so just return
+            // false
+            return false;
+        }
+        return addr.equals(iSockAddr.addr);
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.661 -0500", hash_original_method = "65AE406344FAC31F9ADA9FAD1BC1AA72", hash_generated_method = "5E6C36BD731406DA9ACC181859B04F7D")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.705 -0400", hash_original_method = "65AE406344FAC31F9ADA9FAD1BC1AA72", hash_generated_method = "0A5AECDD2FC9A80B1DADBBCEE8A4EEBE")
-    @Override
+@Override
     public final int hashCode() {
-        if(addr == null)        
-        {
-            int var6A7487EEFDF19E84AC70A27C0BADA2F0_26875760 = (hostname.hashCode() + port);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1794058361 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1794058361;
-        } //End block
-        int var00EDC9A626FBDEBADB981528C3D06165_1315910229 = (addr.hashCode() + port);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_107945453 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_107945453;
-        // ---------- Original Method ----------
-        //if (addr == null) {
-            //return hostname.hashCode() + port;
-        //}
-        //return addr.hashCode() + port;
+        if (addr == null) {
+            return hostname.hashCode() + port;
+        }
+        return addr.hashCode() + port;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.663 -0500", hash_original_method = "A70A079C45F63B1946A4E7EB22F91BB3", hash_generated_method = "A4B6EECE5542ADD758A9646D60C4E193")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.705 -0400", hash_original_method = "A70A079C45F63B1946A4E7EB22F91BB3", hash_generated_method = "F24508607C5B504D65DD7E44716575A0")
-    private void readObject(ObjectInputStream stream) throws IOException, ClassNotFoundException {
-        addTaint(stream.getTaint());
+private void readObject(ObjectInputStream stream) throws IOException, ClassNotFoundException {
         stream.defaultReadObject();
-        // ---------- Original Method ----------
-        //stream.defaultReadObject();
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.706 -0400", hash_original_field = "8AABC4CEB9087CA4231164B288223D7A", hash_generated_field = "CA65D985F490176D565176BDD0E73685")
-
-    private static final long serialVersionUID = 5076001401234631237L;
 }
 

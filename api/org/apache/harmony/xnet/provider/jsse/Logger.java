@@ -1,6 +1,8 @@
 package org.apache.harmony.xnet.provider.jsse;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.PrintStream;
 
@@ -11,16 +13,10 @@ import libcore.util.EmptyArray;
 
 
 public class Logger {
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.194 -0500", hash_original_method = "D4B2CBF47D8E9A1B445D77283A531F6E", hash_generated_method = "7EAFF6B3B6EDB4B9629F65757D303AD2")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.666 -0400", hash_original_method = "E12CB5567684A77D5AAB00FDDBE756D7", hash_generated_method = "E12CB5567684A77D5AAB00FDDBE756D7")
-    public Logger ()
-    {
-        //Synthesized constructor
-    }
-
-
-    @DSModeled(DSC.SAFE)
-    public static Stream getStream(String name) {
+public static Stream getStream(String name) {
         for (int i=0; i<names.length; i++) {
             if (names[i].equals(name)) {
                 return new Stream(name);
@@ -28,152 +24,99 @@ public class Logger {
         }
         return null;
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.191 -0500", hash_original_field = "111AE7964AF24B253E7924F33761BE69", hash_generated_field = "8B709FD8D963B8653EBAE16DA6B1F60B")
+
+
+    private static String[] names;
 
     
     public static class Stream extends PrintStream {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.666 -0400", hash_original_field = "851F5AC9941D720844D143ED9CFCF60A", hash_generated_field = "F717D382565968ED95842821FAEC62F9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.163 -0500", hash_original_field = "472440F4277CF14A117E9F03066DCFEC", hash_generated_field = "CC16B6CC34CB003B39D25C6316DD75BD")
 
-        private String prefix;
+        private static int indent = 0;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.161 -0500", hash_original_field = "D07D332701F9B92847141D46D8B2C7CF", hash_generated_field = "F717D382565968ED95842821FAEC62F9")
+
+        private  String prefix;
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.166 -0500", hash_original_method = "5B47239B5174F6EBCA9E4F35C8BFA346", hash_generated_method = "1A8D5791845DD452B36B4C1C126A1CCB")
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.666 -0400", hash_original_method = "5B47239B5174F6EBCA9E4F35C8BFA346", hash_generated_method = "C1A387A4B681305609275C7F863AB8E4")
-        public  Stream(String name) {
+public Stream(String name) {
             super(System.err);
             prefix = name + "["+Thread.currentThread().getName()+"] ";
-            // ---------- Original Method ----------
-            //prefix = name + "["+Thread.currentThread().getName()+"] ";
         }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.169 -0500", hash_original_method = "D4FE33DE2CA80BB3708E6A0E802F0C32", hash_generated_method = "857DBBAAF7E6696751028A99F26E908E")
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.667 -0400", hash_original_method = "D4FE33DE2CA80BB3708E6A0E802F0C32", hash_generated_method = "169A0D7024A07C7ACE474062C763ED75")
-        @Override
+@Override
         public void print(String msg) {
-            addTaint(msg.getTaint());
-for(int i=0;i<indent;i++)
-            {
+            for (int i=0; i<indent; i++) {
                 super.print("  ");
-            } //End block
+            }
             super.print(msg);
-            // ---------- Original Method ----------
-            //for (int i=0; i<indent; i++) {
-                //super.print("  ");
-            //}
-            //super.print(msg);
         }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.171 -0500", hash_original_method = "330ED05F95D8039149C4EE202C44E32C", hash_generated_method = "0C6F01AFADEDE73EEDF2F426E9AB3047")
         
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.667 -0400", hash_original_method = "330ED05F95D8039149C4EE202C44E32C", hash_generated_method = "47144670D508CFD561143F4799BC76AB")
-        public void newIndent() {
+public void newIndent() {
             indent ++;
-            // ---------- Original Method ----------
-            //indent ++;
         }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.174 -0500", hash_original_method = "85AD8C1F1AFBCA83430C30D8B2614DB0", hash_generated_method = "B7421E911A1EED512FC46DE58E2C2332")
         
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.667 -0400", hash_original_method = "85AD8C1F1AFBCA83430C30D8B2614DB0", hash_generated_method = "06F7FF18FCADBC918591EB35F5BEEA6F")
-        public void endIndent() {
+public void endIndent() {
             indent --;
-            // ---------- Original Method ----------
-            //indent --;
         }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.176 -0500", hash_original_method = "9FCCAC1E0D29D125BE9308EF391306A0", hash_generated_method = "66209703A73C9C9B32D7E53D6814B02B")
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.667 -0400", hash_original_method = "9FCCAC1E0D29D125BE9308EF391306A0", hash_generated_method = "69289A700A38602A4EFDF2DFE85A0F6B")
-        @Override
+@Override
         public void println(String msg) {
-            addTaint(msg.getTaint());
             print(prefix);
             super.println(msg);
-            // ---------- Original Method ----------
-            //print(prefix);
-            //super.println(msg);
         }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.179 -0500", hash_original_method = "8FD37FA4B52BC22F9117E57A4C975FCE", hash_generated_method = "B120231928A524A0791E32CFA6701F46")
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.668 -0400", hash_original_method = "8FD37FA4B52BC22F9117E57A4C975FCE", hash_generated_method = "ED8D0DE2E5AA0B4C2F4FE94AD6949ED6")
-        public void print(byte[] data) {
-            addTaint(data[0]);
+public void print(byte[] data) {
             printAsHex(16, " ", "", data, 0, data.length);
-            // ---------- Original Method ----------
-            //printAsHex(16, " ", "", data, 0, data.length);
         }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.181 -0500", hash_original_method = "97F4A1EEA64A5AE021D275219F0FBD08", hash_generated_method = "1ED33B0A8BDB500B341EEF394C8E5882")
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.668 -0400", hash_original_method = "97F4A1EEA64A5AE021D275219F0FBD08", hash_generated_method = "BB181D24226617F36B2C948E761DB4AF")
-        public void print(byte[] data, int offset, int len) {
-            addTaint(len);
-            addTaint(offset);
-            addTaint(data[0]);
+public void print(byte[] data, int offset, int len) {
             printAsHex(16, " ", "", data, offset, len);
-            // ---------- Original Method ----------
-            //printAsHex(16, " ", "", data, offset, len);
         }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.183 -0500", hash_original_method = "6BD913AAA4D9B14F7C28D0536E7C7B24", hash_generated_method = "FFD78DAEE8DE16F49AC817E469AAA3FD")
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.669 -0400", hash_original_method = "6BD913AAA4D9B14F7C28D0536E7C7B24", hash_generated_method = "88C77C40CE254F14A3BBEE66CBD686B5")
-        public void printAsHex(int perLine, String prefix, String delimiter, byte[] data) {
-            addTaint(data[0]);
-            addTaint(delimiter.getTaint());
-            addTaint(prefix.getTaint());
-            addTaint(perLine);
+public void printAsHex(int perLine, String prefix, String delimiter, byte[] data) {
             printAsHex(perLine, prefix, delimiter, data, 0, data.length);
-            // ---------- Original Method ----------
-            //printAsHex(perLine, prefix, delimiter, data, 0, data.length);
         }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.186 -0500", hash_original_method = "FDE1B5B6670F726EAB891149ED6137F5", hash_generated_method = "DAE773C20D9A20F35CA0F019A3F8755C")
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.669 -0400", hash_original_method = "FDE1B5B6670F726EAB891149ED6137F5", hash_generated_method = "F8B86C6DEA689116C8D721EC1A63959F")
-        public void printAsHex(int perLine, String prefix, String delimiter,
+public void printAsHex(int perLine, String prefix, String delimiter,
                 byte[] data, int offset, int len) {
-            addTaint(len);
-            addTaint(offset);
-            addTaint(data[0]);
-            addTaint(delimiter.getTaint());
-            addTaint(prefix.getTaint());
-            addTaint(perLine);
             StringBuilder line = new StringBuilder();
-for(int i = 0;i < len;i++)
-            {
+            for (int i = 0; i < len; i++) {
                 line.append(prefix);
                 line.append(Byte.toHexString(data[i+offset], false));
                 line.append(delimiter);
-                if(((i+1)%perLine) == 0)                
-                {
+
+                if (((i+1)%perLine) == 0) {
                     super.println(line.toString());
                     line = new StringBuilder();
-                } //End block
-            } //End block
+                }
+            }
             super.println(line.toString());
-            // ---------- Original Method ----------
-            //StringBuilder line = new StringBuilder();
-            //for (int i = 0; i < len; i++) {
-                //line.append(prefix);
-                //line.append(Byte.toHexString(data[i+offset], false));
-                //line.append(delimiter);
-                //if (((i+1)%perLine) == 0) {
-                    //super.println(line.toString());
-                    //line = new StringBuilder();
-                //}
-            //}
-            //super.println(line.toString());
         }
-
-        
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.670 -0400", hash_original_field = "423320F92FC463A2B5F25B94F633420D", hash_generated_field = "CC16B6CC34CB003B39D25C6316DD75BD")
-
-        private static int indent = 0;
     }
-
-
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.670 -0400", hash_original_field = "A8998C31A141924D06220074FCDC6925", hash_generated_field = "8B709FD8D963B8653EBAE16DA6B1F60B")
-
-    private static String[] names;
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.666 -0400", hash_original_method = "E12CB5567684A77D5AAB00FDDBE756D7", hash_generated_method = "E12CB5567684A77D5AAB00FDDBE756D7")
+    public Logger ()
+    {
+        //Synthesized constructor
+    }
     static {
         try {
             names = System.getProperty("jsse", "").split(",");

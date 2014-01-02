@@ -1,6 +1,8 @@
 package java.beans;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.EventObject;
 
@@ -10,90 +12,114 @@ import java.util.EventObject;
 
 
 public class PropertyChangeEvent extends EventObject {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.127 -0400", hash_original_field = "9190E95D1C478ACEB70AC5C82692A74C", hash_generated_field = "F6E23082B68F75302CA6A0F5F57467FF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.228 -0500", hash_original_field = "B02A1F0D1203DE34BB9BF2014933A140", hash_generated_field = "E6562888893882FF6552413C35A8C7AF")
+
+
+    private static final long serialVersionUID = 7042693688939648123L;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.230 -0500", hash_original_field = "F6E23082B68F75302CA6A0F5F57467FF", hash_generated_field = "F6E23082B68F75302CA6A0F5F57467FF")
+
 
     String propertyName;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.127 -0400", hash_original_field = "0382B9FD9EF50B6A335F35E0AAAEBF99", hash_generated_field = "960A7902634592C07CD47A2F225C6AD8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.232 -0500", hash_original_field = "960A7902634592C07CD47A2F225C6AD8", hash_generated_field = "960A7902634592C07CD47A2F225C6AD8")
+
 
     Object oldValue;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.127 -0400", hash_original_field = "7F7CFDE5EC586119B48911A2C75851E5", hash_generated_field = "B1A1DE6E10506FDF1F20E177533AEE3E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.234 -0500", hash_original_field = "B1A1DE6E10506FDF1F20E177533AEE3E", hash_generated_field = "B1A1DE6E10506FDF1F20E177533AEE3E")
+
 
     Object newValue;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.127 -0400", hash_original_field = "395600DB5D6C7217F52C02B5FEE8B3FB", hash_generated_field = "C9CA963F2944CBDFFCE0DEC6BEFF8F88")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.237 -0500", hash_original_field = "C9CA963F2944CBDFFCE0DEC6BEFF8F88", hash_generated_field = "C9CA963F2944CBDFFCE0DEC6BEFF8F88")
+
 
     Object propagationId;
+
+    /**
+     * The constructor used to create a new {@code PropertyChangeEvent}.
+     *
+     * @param source
+     *            the changed bean.
+     * @param propertyName
+     *            the changed property, or <code>null</code> to indicate an
+     *            unspecified set of the properties has changed.
+     * @param oldValue
+     *            the previous value of the property, or <code>null</code> if
+     *            the <code>propertyName</code> is <code>null</code> or the
+     *            previous value is unknown.
+     * @param newValue
+     *            the new value of the property, or <code>null</code> if the
+     *            <code>propertyName</code> is <code>null</code> or the new
+     *            value is unknown.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.240 -0500", hash_original_method = "6BC761D29E61B2DA2BCFDF9B41EBE38E", hash_generated_method = "13D6616BBC8230FD1098109DD2F300ED")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.128 -0400", hash_original_method = "6BC761D29E61B2DA2BCFDF9B41EBE38E", hash_generated_method = "79EA52EBA18099D1FB7ACA8506163AB9")
-    public  PropertyChangeEvent(Object source, String propertyName,
+public PropertyChangeEvent(Object source, String propertyName,
             Object oldValue, Object newValue) {
         super(source);
-        addTaint(source.getTaint());
+
         this.propertyName = propertyName;
         this.oldValue = oldValue;
         this.newValue = newValue;
-        // ---------- Original Method ----------
-        //this.propertyName = propertyName;
-        //this.oldValue = oldValue;
-        //this.newValue = newValue;
     }
 
+    /**
+     * Returns the name of the property that has changed. If an unspecified set
+     * of properties has changed it returns null.
+     *
+     * @return the name of the property that has changed, or null.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.242 -0500", hash_original_method = "F855330D0A49F166D335D3D735B1EC12", hash_generated_method = "79D137ECBA6D10D7E0F2DC15CD7EDB65")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.129 -0400", hash_original_method = "F855330D0A49F166D335D3D735B1EC12", hash_generated_method = "A67BB6D4EA14F63DE4CE5458BBEB2D67")
-    public String getPropertyName() {
-String var3D632F0E4FFF94E691F92D3669CF1392_699480106 =         propertyName;
-        var3D632F0E4FFF94E691F92D3669CF1392_699480106.addTaint(taint);
-        return var3D632F0E4FFF94E691F92D3669CF1392_699480106;
-        // ---------- Original Method ----------
-        //return propertyName;
+public String getPropertyName() {
+        return propertyName;
     }
 
+    /**
+     * Sets the propagationId object.
+     *
+     * @see #getPropagationId()
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.244 -0500", hash_original_method = "570268AC213ADE0DD8E583FF2E0DF2D9", hash_generated_method = "67506D72A9ECA48F6877280A845E3FE9")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.130 -0400", hash_original_method = "570268AC213ADE0DD8E583FF2E0DF2D9", hash_generated_method = "99F56DD866E50C8B6DA45D24B96D6C66")
-    public void setPropagationId(Object propagationId) {
+public void setPropagationId(Object propagationId) {
         this.propagationId = propagationId;
-        // ---------- Original Method ----------
-        //this.propagationId = propagationId;
     }
 
+    /**
+     * Returns the propagationId object. This is reserved for future use. Beans
+     * 1.0 demands that a listener receiving this property and then sending its
+     * own PropertyChangeEvent sets the received propagationId on the new
+     * PropertyChangeEvent's propagationId field.
+     *
+     * @return the propagationId object.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.247 -0500", hash_original_method = "B4EBBB8113E4594B079A51C3F9A7BBBF", hash_generated_method = "7D15BB631FB5997900F66BD721659878")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.130 -0400", hash_original_method = "B4EBBB8113E4594B079A51C3F9A7BBBF", hash_generated_method = "792555BA7D6B5FD0C7869CCBABECAC4C")
-    public Object getPropagationId() {
-Object varFF94D242D232A6C3EBF9D401FB06DA21_929825196 =         propagationId;
-        varFF94D242D232A6C3EBF9D401FB06DA21_929825196.addTaint(taint);
-        return varFF94D242D232A6C3EBF9D401FB06DA21_929825196;
-        // ---------- Original Method ----------
-        //return propagationId;
+public Object getPropagationId() {
+        return propagationId;
     }
 
+    /**
+     * Returns the old value that the property had. If the old value is unknown
+     * this method returns null.
+     *
+     * @return the old property value or null.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.250 -0500", hash_original_method = "F6F859A65246176318D5EFB34CCA1A19", hash_generated_method = "7AFA9801F3D766F442A5CBEB2FBAF866")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.131 -0400", hash_original_method = "F6F859A65246176318D5EFB34CCA1A19", hash_generated_method = "0FAC6C9BE83CF74E91DE5359143C92AD")
-    public Object getOldValue() {
-Object var8CDBD2181CBEF5C2129AFFA68C014D4A_547734050 =         oldValue;
-        var8CDBD2181CBEF5C2129AFFA68C014D4A_547734050.addTaint(taint);
-        return var8CDBD2181CBEF5C2129AFFA68C014D4A_547734050;
-        // ---------- Original Method ----------
-        //return oldValue;
+public Object getOldValue() {
+        return oldValue;
     }
 
+    /**
+     * Returns the new value that the property now has. If the new value is
+     * unknown this method returns null.
+     *
+     * @return the old property value or null.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.252 -0500", hash_original_method = "623578C48E0252EB5211DBCA0AAE39FA", hash_generated_method = "CFD9A4C92E90EFFA42437FFBAECBE674")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.131 -0400", hash_original_method = "623578C48E0252EB5211DBCA0AAE39FA", hash_generated_method = "8AAC65AF1A4F731F846BE705F52B8F38")
-    public Object getNewValue() {
-Object varB6587BDEA47787223F4D0D9CD73A12B5_1568668114 =         newValue;
-        varB6587BDEA47787223F4D0D9CD73A12B5_1568668114.addTaint(taint);
-        return varB6587BDEA47787223F4D0D9CD73A12B5_1568668114;
-        // ---------- Original Method ----------
-        //return newValue;
+public Object getNewValue() {
+        return newValue;
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.131 -0400", hash_original_field = "82D11D8EBC6C3E983DD174677B6801AA", hash_generated_field = "E6562888893882FF6552413C35A8C7AF")
-
-    private static final long serialVersionUID = 7042693688939648123L;
 }
 

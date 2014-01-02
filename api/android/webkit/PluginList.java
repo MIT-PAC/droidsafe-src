@@ -1,6 +1,8 @@
 package android.webkit;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,96 +14,103 @@ import android.content.Context;
 
 
 public class PluginList {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.792 -0400", hash_original_field = "3BBFD44F77386E6A06EB986F62953E04", hash_generated_field = "2E9E45DF2A62E67ADA94EFB03194A6CB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:03.116 -0500", hash_original_field = "6F1ADA12B2C2CA117AD1C9371F4F403A", hash_generated_field = "2E9E45DF2A62E67ADA94EFB03194A6CB")
 
     private ArrayList<Plugin> mPlugins;
+
+   /**
+    * Public constructor. Initializes the list of plugins.
+    *
+    * @hide
+    * @deprecated This interface was intended to be used by Gears. Since Gears was
+    * deprecated, so is this class.
+    */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:03.119 -0500", hash_original_method = "AFA11BE3CB57F72948CE6AE6103E33EF", hash_generated_method = "C450610E90B426B4B4E1C5DF32174271")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.792 -0400", hash_original_method = "AFA11BE3CB57F72948CE6AE6103E33EF", hash_generated_method = "C0A35AE6C5CE177275069814697F2449")
-    @Deprecated
-    public  PluginList() {
+@Deprecated
+    public PluginList() {
         mPlugins = new ArrayList<Plugin>();
-        // ---------- Original Method ----------
-        //mPlugins = new ArrayList<Plugin>();
     }
 
+   /**
+    * Returns the list of plugins as a java.util.List.
+    *
+    * @hide
+    * @deprecated This interface was intended to be used by Gears. Since Gears was
+    * deprecated, so is this class.
+    */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:03.121 -0500", hash_original_method = "1801070113215AA650907EEB61F166CD", hash_generated_method = "3BECEFBF0B6E4E8E898E2706F0B4BF10")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.792 -0400", hash_original_method = "1801070113215AA650907EEB61F166CD", hash_generated_method = "9238712433EFAEF44E0E9E7D52F7C912")
-    @Deprecated
+@Deprecated
     public synchronized List getList() {
-List varCE31BA4CD4F7594C4294BA5D3443F606_2138606153 =         mPlugins;
-        varCE31BA4CD4F7594C4294BA5D3443F606_2138606153.addTaint(taint);
-        return varCE31BA4CD4F7594C4294BA5D3443F606_2138606153;
-        // ---------- Original Method ----------
-        //return mPlugins;
+        return mPlugins;
     }
 
+   /**
+    * Adds a plugin to the list.
+    *
+    * @hide
+    * @deprecated This interface was intended to be used by Gears. Since Gears was
+    * deprecated, so is this class.
+    */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:03.124 -0500", hash_original_method = "C7DCB9134CAFAAB6388686E1F6701327", hash_generated_method = "62831236AB3808260B941677BFCA6C2C")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.792 -0400", hash_original_method = "C7DCB9134CAFAAB6388686E1F6701327", hash_generated_method = "67A3D1222E8DE7CD64D71D2CA0545524")
-    @Deprecated
+@Deprecated
     public synchronized void addPlugin(Plugin plugin) {
-        addTaint(plugin.getTaint());
-        if(!mPlugins.contains(plugin))        
-        {
+        if (!mPlugins.contains(plugin)) {
             mPlugins.add(plugin);
-        } //End block
-        // ---------- Original Method ----------
-        //if (!mPlugins.contains(plugin)) {
-            //mPlugins.add(plugin);
-        //}
+        }
     }
 
+   /**
+    * Removes a plugin from the list.
+    *
+    * @hide
+    * @deprecated This interface was intended to be used by Gears. Since Gears was
+    * deprecated, so is this class.
+    */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:03.126 -0500", hash_original_method = "980F1FA54E922541E9F37CE45E714F3E", hash_generated_method = "FCDDB2333CBDCEDA0B80DCA021DCFF52")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.792 -0400", hash_original_method = "980F1FA54E922541E9F37CE45E714F3E", hash_generated_method = "7F857B0E768C6CEEE483EBB6149AE6A1")
-    @Deprecated
+@Deprecated
     public synchronized void removePlugin(Plugin plugin) {
-        addTaint(plugin.getTaint());
         int location = mPlugins.indexOf(plugin);
-        if(location != -1)        
-        {
+        if (location != -1) {
             mPlugins.remove(location);
-        } //End block
-        // ---------- Original Method ----------
-        //int location = mPlugins.indexOf(plugin);
-        //if (location != -1) {
-            //mPlugins.remove(location);
-        //}
+        }
     }
 
+   /**
+    * Clears the plugin list.
+    *
+    * @hide
+    * @deprecated This interface was intended to be used by Gears. Since Gears was
+    * deprecated, so is this class.
+    */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:03.129 -0500", hash_original_method = "D08BA028CDC8B846863357DB1B876085", hash_generated_method = "C93B72394AF8999743A4416F94F84797")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.792 -0400", hash_original_method = "D08BA028CDC8B846863357DB1B876085", hash_generated_method = "DCFA1CD279657F7D3B02F4C9E52A23CF")
-    @Deprecated
+@Deprecated
     public synchronized void clear() {
         mPlugins.clear();
-        // ---------- Original Method ----------
-        //mPlugins.clear();
     }
 
+   /**
+    * Dispatches the click event to the appropriate plugin.
+    *
+    * @hide
+    * @deprecated This interface was intended to be used by Gears. Since Gears was
+    * deprecated, so is this class.
+    */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:03.131 -0500", hash_original_method = "FD99E1EA214C7B87A27E9195924486C8", hash_generated_method = "E01615E8723A0E425B6CB93EA2F40F69")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.792 -0400", hash_original_method = "FD99E1EA214C7B87A27E9195924486C8", hash_generated_method = "5AEDE06D92F59382E859C924A8FB4289")
-    @Deprecated
+@Deprecated
     public synchronized void pluginClicked(Context context, int position) {
-        addTaint(position);
-        addTaint(context.getTaint());
-        try 
-        {
+        try {
             Plugin plugin = mPlugins.get(position);
             plugin.dispatchClickEvent(context);
-        } //End block
-        catch (IndexOutOfBoundsException e)
-        {
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //Plugin plugin = mPlugins.get(position);
-            //plugin.dispatchClickEvent(context);
-        //} catch (IndexOutOfBoundsException e) {
-        //}
+        } catch (IndexOutOfBoundsException e) {
+            // This can happen if the list of plugins
+            // gets changed while the pref menu is up.
+        }
     }
 
     

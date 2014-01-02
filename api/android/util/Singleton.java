@@ -1,6 +1,8 @@
 package android.util;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
@@ -8,7 +10,7 @@ import droidsafe.annotations.*;
 
 
 public abstract class Singleton<T> {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.072 -0400", hash_original_field = "DD62467EBA66E288A1769E403146FE2D", hash_generated_field = "782E9E6E7CD7863D539D69517CB053E4")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:21.140 -0500", hash_original_field = "3D00B588D04AEAB45027249A92A58FD8", hash_generated_field = "782E9E6E7CD7863D539D69517CB053E4")
 
     private T mInstance;
     
@@ -19,31 +21,19 @@ public abstract class Singleton<T> {
         //Synthesized constructor
     }
 
-
-    @DSModeled(DSC.SAFE)
-    protected abstract T create();
-
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:21.143 -0500", hash_original_method = "143703A29AF7B044F625A19484C15EC6", hash_generated_method = "7FFE270DF8135A8EC19A46E31E7B1DE8")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.072 -0400", hash_original_method = "CF8212F11D8E5F22A25C4FBFDDF16383", hash_generated_method = "12AF1D299B0076642AE6D9BBABA46B96")
-    public final T get() {
-        synchronized
-(this)        {
-            if(mInstance == null)            
-            {
+protected abstract T create();
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:21.145 -0500", hash_original_method = "CF8212F11D8E5F22A25C4FBFDDF16383", hash_generated_method = "62CFCE0241BE7E6153D0BE1DAA53363E")
+    
+public final T get() {
+        synchronized (this) {
+            if (mInstance == null) {
                 mInstance = create();
-            } //End block
-T var01A4E1572BEF98558ED7F4E845C07CFE_1239204021 =             mInstance;
-            var01A4E1572BEF98558ED7F4E845C07CFE_1239204021.addTaint(taint);
-            return var01A4E1572BEF98558ED7F4E845C07CFE_1239204021;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //if (mInstance == null) {
-                //mInstance = create();
-            //}
-            //return mInstance;
-        //}
+            }
+            return mInstance;
+        }
     }
 
     

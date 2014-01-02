@@ -1,6 +1,8 @@
 package java.security.cert;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.InputStream;
 import java.security.NoSuchAlgorithmException;
@@ -19,32 +21,23 @@ import org.apache.harmony.security.fortress.Engine;
 
 
 public class CertificateFactory {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.730 -0400", hash_original_field = "9E9F3D70BD8C8957627EADA96D967706", hash_generated_field = "2D84320E029EBF537A8555BC820086EF")
 
-    private Provider provider;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.730 -0400", hash_original_field = "96FF779E0BE718F2D29D8C56320393D2", hash_generated_field = "B931F49514C7C80BDCB99D7936A2923D")
-
-    private CertificateFactorySpi spiImpl;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.730 -0400", hash_original_field = "599DCCE2998A6B40B1E38E8C6006CB0A", hash_generated_field = "AB2C9E2EF2C4EBDBF6BF18A679B45B62")
-
-    private String type;
+    /**
+     * Creates a new {@code CertificateFactory} instance that provides the
+     * requested certificate type.
+     *
+     * @param type
+     *            the certificate type.
+     * @return the new {@code CertificateFactory} instance.
+     * @throws CertificateException
+     *             if the specified certificate type is not available at any
+     *             installed provider.
+     * @throws NullPointerException if {@code type == null}
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.891 -0500", hash_original_method = "4AD7FAA844427F176B8B65D577E52F93", hash_generated_method = "87D3B2169C00645004EE6002962939F6")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.731 -0400", hash_original_method = "8F22BB9FD67741B57F6E16F313DC406A", hash_generated_method = "48FF456B73A12C26B39567DE9F0035F0")
-    protected  CertificateFactory(CertificateFactorySpi certFacSpi,
-            Provider provider, String type) {
-        this.provider = provider;
-        this.type = type;
-        this.spiImpl = certFacSpi;
-        // ---------- Original Method ----------
-        //this.provider = provider;
-        //this.type = type;
-        //this.spiImpl = certFacSpi;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    public static final CertificateFactory getInstance(String type) throws CertificateException {
+public static final CertificateFactory getInstance(String type)
+            throws CertificateException {
         if (type == null) {
             throw new NullPointerException();
         }
@@ -56,9 +49,28 @@ public class CertificateFactory {
         }
     }
 
+    /**
+     * Creates a new {@code CertificateFactory} instance from the specified
+     * provider that provides the requested certificate type.
+     *
+     * @param type
+     *            the certificate type.
+     * @param provider
+     *            the name of the provider providing certificates of the
+     *            specified type.
+     * @return the new {@code CertificateFactory} instance.
+     * @throws CertificateException
+     *             if the specified certificate type is not available by the
+     *             specified provider.
+     * @throws NoSuchProviderException
+     *             if no provider with the specified name can be found.
+     * @throws IllegalArgumentException if {@code provider == null || provider.isEmpty()}
+     * @throws NullPointerException
+     *             it {@code type} is {@code null}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.894 -0500", hash_original_method = "8516850578A03892E88112705C313FAD", hash_generated_method = "7918DBFDD3E629F72077CF0ECDDBD807")
     
-    @DSModeled(DSC.SAFE)
-    public static final CertificateFactory getInstance(String type,
+public static final CertificateFactory getInstance(String type,
             String provider) throws CertificateException,
             NoSuchProviderException {
         if (provider == null || provider.isEmpty()) {
@@ -71,9 +83,27 @@ public class CertificateFactory {
         return getInstance(type, impProvider);
     }
 
+    /**
+     * Creates a new {@code CertificateFactory} instance from the specified
+     * provider that provides the requested certificate type.
+     *
+     * @param type
+     *            the certificate type.
+     * @param provider
+     *            the name of the provider providing certificates of the
+     *            specified type.
+     * @return the new {@code CertificateFactory} instance.
+     * @throws CertificateException
+     *             if the specified certificate type is not available at the
+     *             specified provider.
+     * @throws IllegalArgumentException
+     *             if the specified provider is {@code null}.
+     * @throws NullPointerException if {@code type == null}
+     * @throws IllegalArgumentException if {@code provider == null}
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.897 -0500", hash_original_method = "5A73DDBD4164B592F1D7657222558E65", hash_generated_method = "148B2F0E6CCE90FEBAF4EBBBA3C5CA46")
     
-    @DSModeled(DSC.SAFE)
-    public static final CertificateFactory getInstance(String type,
+public static final CertificateFactory getInstance(String type,
             Provider provider) throws CertificateException {
         if (provider == null) {
             throw new IllegalArgumentException();
@@ -88,142 +118,206 @@ public class CertificateFactory {
             throw new CertificateException(e);
         }
     }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.731 -0400", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "76922A5682C8EEDDEEF72AB17137D055")
-    public final Provider getProvider() {
-Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_317946582 =         provider;
-        varC1EB7B12CCABB27D431E5B91E5FF9ECB_317946582.addTaint(taint);
-        return varC1EB7B12CCABB27D431E5B91E5FF9ECB_317946582;
-        // ---------- Original Method ----------
-        //return provider;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.731 -0400", hash_original_method = "0E0B07C7C3039087C9D268CAF8DACC19", hash_generated_method = "9BA72280F80A8069227505BDA3037714")
-    public final String getType() {
-String varC5B9F25B4EEAD3E8E2C33F9429204397_1909359034 =         type;
-        varC5B9F25B4EEAD3E8E2C33F9429204397_1909359034.addTaint(taint);
-        return varC5B9F25B4EEAD3E8E2C33F9429204397_1909359034;
-        // ---------- Original Method ----------
-        //return type;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.731 -0400", hash_original_method = "056686B78E96E8E09F6472D6283D322E", hash_generated_method = "854A0FA9D9B25085A41821669BA9EA30")
-    public final Certificate generateCertificate(InputStream inStream) throws CertificateException {
-        addTaint(inStream.getTaint());
-Certificate var9F9D4B573DBE5D77E046560951546040_1805311099 =         spiImpl.engineGenerateCertificate(inStream);
-        var9F9D4B573DBE5D77E046560951546040_1805311099.addTaint(taint);
-        return var9F9D4B573DBE5D77E046560951546040_1805311099;
-        // ---------- Original Method ----------
-        //return spiImpl.engineGenerateCertificate(inStream);
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.731 -0400", hash_original_method = "E0154FCC8B9DF343492D74548A8DABBF", hash_generated_method = "1016744B57A4585BEE8E7C5B003906DA")
-    public final Iterator<String> getCertPathEncodings() {
-Iterator<String> var6B27921EA9F87AED9ACC12772C0D7430_897068804 =         spiImpl.engineGetCertPathEncodings();
-        var6B27921EA9F87AED9ACC12772C0D7430_897068804.addTaint(taint);
-        return var6B27921EA9F87AED9ACC12772C0D7430_897068804;
-        // ---------- Original Method ----------
-        //return spiImpl.engineGetCertPathEncodings();
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.732 -0400", hash_original_method = "3A334BAABFC8F8F07B1C887BAAF7ABEE", hash_generated_method = "DDB3683247E77F28C024E43E947F0270")
-    public final CertPath generateCertPath(InputStream inStream) throws CertificateException {
-        addTaint(inStream.getTaint());
-        Iterator<String> it = getCertPathEncodings();
-        if(!it.hasNext())        
-        {
-            CertificateException var3EA95212AA505588821FB2A800B429BB_1322905722 = new CertificateException("There are no CertPath encodings");
-            var3EA95212AA505588821FB2A800B429BB_1322905722.addTaint(taint);
-            throw var3EA95212AA505588821FB2A800B429BB_1322905722;
-        } //End block
-CertPath varBDCFDEACCD25CA979BA744B7C1536D27_252287430 =         spiImpl.engineGenerateCertPath(inStream, it.next());
-        varBDCFDEACCD25CA979BA744B7C1536D27_252287430.addTaint(taint);
-        return varBDCFDEACCD25CA979BA744B7C1536D27_252287430;
-        // ---------- Original Method ----------
-        //Iterator<String> it = getCertPathEncodings();
-        //if (!it.hasNext()) {
-            //throw new CertificateException("There are no CertPath encodings");
-        //}
-        //return spiImpl.engineGenerateCertPath(inStream, it.next());
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.732 -0400", hash_original_method = "2B5CC92C0290261B5C7A25A0F691CEF6", hash_generated_method = "89C0F696C7C0C78C2B9FDB4CFD0674EF")
-    public final CertPath generateCertPath(InputStream inStream, String encoding) throws CertificateException {
-        addTaint(encoding.getTaint());
-        addTaint(inStream.getTaint());
-CertPath var228E9CE69491ED7827223E0008579F48_737367939 =         spiImpl.engineGenerateCertPath(inStream, encoding);
-        var228E9CE69491ED7827223E0008579F48_737367939.addTaint(taint);
-        return var228E9CE69491ED7827223E0008579F48_737367939;
-        // ---------- Original Method ----------
-        //return spiImpl.engineGenerateCertPath(inStream, encoding);
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.732 -0400", hash_original_method = "FE6370346FB92E14C140A17484E61066", hash_generated_method = "EE388F3B0F12BFFA5FBC30F81A84D1A0")
-    public final CertPath generateCertPath(List<? extends Certificate> certificates) throws CertificateException {
-        addTaint(certificates.getTaint());
-CertPath varA72F36A352F789B87B191E0E9CE9E911_1428111224 =         spiImpl.engineGenerateCertPath(certificates);
-        varA72F36A352F789B87B191E0E9CE9E911_1428111224.addTaint(taint);
-        return varA72F36A352F789B87B191E0E9CE9E911_1428111224;
-        // ---------- Original Method ----------
-        //return spiImpl.engineGenerateCertPath(certificates);
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.732 -0400", hash_original_method = "2C42C184C3EAF19809C332EBF46CD8DC", hash_generated_method = "0DB1E464432CEFB7BDB0A2CA6A734BF5")
-    public final Collection<? extends Certificate> generateCertificates(InputStream inStream) throws CertificateException {
-        addTaint(inStream.getTaint());
-Collection<? extends Certificate> var93F857E0ABFD39144F430F52BB4EC83F_265172635 =         spiImpl.engineGenerateCertificates(inStream);
-        var93F857E0ABFD39144F430F52BB4EC83F_265172635.addTaint(taint);
-        return var93F857E0ABFD39144F430F52BB4EC83F_265172635;
-        // ---------- Original Method ----------
-        //return spiImpl.engineGenerateCertificates(inStream);
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.732 -0400", hash_original_method = "61C041CED79E728E684417F700AE9F1B", hash_generated_method = "098659BF705D1F066070BA4114024BC1")
-    public final CRL generateCRL(InputStream inStream) throws CRLException {
-        addTaint(inStream.getTaint());
-CRL var1223BE834767CB6064751A594C1B891F_683033077 =         spiImpl.engineGenerateCRL(inStream);
-        var1223BE834767CB6064751A594C1B891F_683033077.addTaint(taint);
-        return var1223BE834767CB6064751A594C1B891F_683033077;
-        // ---------- Original Method ----------
-        //return spiImpl.engineGenerateCRL(inStream);
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.732 -0400", hash_original_method = "82C17943BE49A882CA4049864C9D79C5", hash_generated_method = "46C25FFCDA4465E73B7E2363EBD948B6")
-    public final Collection<? extends CRL> generateCRLs(InputStream inStream) throws CRLException {
-        addTaint(inStream.getTaint());
-Collection<? extends CRL> varD257CDECBBA0CF8F47B41179978125E2_1223182182 =         spiImpl.engineGenerateCRLs(inStream);
-        varD257CDECBBA0CF8F47B41179978125E2_1223182182.addTaint(taint);
-        return varD257CDECBBA0CF8F47B41179978125E2_1223182182;
-        // ---------- Original Method ----------
-        //return spiImpl.engineGenerateCRLs(inStream);
-    }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.732 -0400", hash_original_field = "B841CBE76346F2F1B8808B92FE062632", hash_generated_field = "A66EAB910E2080B86DC151E0E257CE68")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.876 -0500", hash_original_field = "91D59D0E3FA22017ECC2DD4FE8A893A4", hash_generated_field = "A66EAB910E2080B86DC151E0E257CE68")
 
     private static final String SERVICE = "CertificateFactory";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.732 -0400", hash_original_field = "48254CA5EA2459783D1EB8D6358A6F88", hash_generated_field = "0CDCB796C7211B2802F60DAA409FC065")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.878 -0500", hash_original_field = "17F86B5CB94419D7D346BC8D1B101EA5", hash_generated_field = "0CDCB796C7211B2802F60DAA409FC065")
 
     private static final Engine ENGINE = new Engine(SERVICE);
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.881 -0500", hash_original_field = "70389BF55D92237F4948951640719A18", hash_generated_field = "2D84320E029EBF537A8555BC820086EF")
+
+    private  Provider provider;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.883 -0500", hash_original_field = "F816EB69C9D1C2CF02F3A29C789D5552", hash_generated_field = "B931F49514C7C80BDCB99D7936A2923D")
+
+    private  CertificateFactorySpi spiImpl;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.886 -0500", hash_original_field = "1B03D0EF3E71EB350936336F82D5E0C5", hash_generated_field = "AB2C9E2EF2C4EBDBF6BF18A679B45B62")
+
+    private  String type;
+
+    /**
+     * Creates a new {@code CertificateFactory} instance.
+     *
+     * @param certFacSpi
+     *            the implementation delegate.
+     * @param provider
+     *            the associated provider.
+     * @param type
+     *            the certificate type.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.888 -0500", hash_original_method = "8F22BB9FD67741B57F6E16F313DC406A", hash_generated_method = "5DD04C865CFD5A8DB8CFCB510BE20266")
+    
+protected CertificateFactory(CertificateFactorySpi certFacSpi,
+            Provider provider, String type) {
+        this.provider = provider;
+        this.type = type;
+        this.spiImpl = certFacSpi;
+    }
+
+    /**
+     * Returns the {@code Provider} of the certificate factory represented by
+     * the certificate.
+     *
+     * @return the provider of this certificate factory.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.899 -0500", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "443000CF13C77ABCABFC8B67E2DE556F")
+    
+public final Provider getProvider() {
+        return provider;
+    }
+
+    /**
+     * Returns the Certificate type.
+     *
+     * @return type of certificate being used.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.902 -0500", hash_original_method = "0E0B07C7C3039087C9D268CAF8DACC19", hash_generated_method = "B5025B3379E65F477B29B0C5C8B783DF")
+    
+public final String getType() {
+        return type;
+    }
+
+    /**
+     * Generates and initializes a {@code Certificate} from the provided input
+     * stream.
+     *
+     * @param inStream
+     *            the stream from where data is read to create the {@code
+     *            Certificate}.
+     * @return an initialized Certificate.
+     * @throws CertificateException
+     *             if parsing problems are detected.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.906 -0500", hash_original_method = "056686B78E96E8E09F6472D6283D322E", hash_generated_method = "0444684966816F1C38BE82369A0C5646")
+    
+public final Certificate generateCertificate(InputStream inStream)
+            throws CertificateException {
+        return spiImpl.engineGenerateCertificate(inStream);
+    }
+
+    /**
+     * Returns an {@code Iterator} over the supported {@code CertPath} encodings
+     * (as Strings). The first element is the default encoding scheme to apply.
+     *
+     * @return an iterator over supported {@link CertPath} encodings (as
+     *         Strings).
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.908 -0500", hash_original_method = "E0154FCC8B9DF343492D74548A8DABBF", hash_generated_method = "95471670040F9731176EC96070384C81")
+    
+public final Iterator<String> getCertPathEncodings() {
+        return spiImpl.engineGetCertPathEncodings();
+    }
+
+    /**
+     * Generates a {@code CertPath} (a certificate chain) from the provided
+     * {@code InputStream}. The default encoding scheme is applied.
+     *
+     * @param inStream
+     *            {@code InputStream} with encoded data.
+     * @return a {@code CertPath} initialized from the provided data.
+     * @throws CertificateException
+     *             if parsing problems are detected.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.911 -0500", hash_original_method = "3A334BAABFC8F8F07B1C887BAAF7ABEE", hash_generated_method = "39FFEE8E6A55FA04CEED8DBE066F23F7")
+    
+public final CertPath generateCertPath(InputStream inStream) throws CertificateException {
+        Iterator<String> it = getCertPathEncodings();
+        if (!it.hasNext()) {
+            throw new CertificateException("There are no CertPath encodings");
+        }
+        return spiImpl.engineGenerateCertPath(inStream, it.next());
+    }
+
+    /**
+     * Generates a {@code CertPath} (a certificate chain) from the provided
+     * {@code InputStream} and the specified encoding scheme.
+     *
+     * @param inStream
+     *            {@code InputStream} containing certificate path data in
+     *            specified encoding.
+     * @param encoding
+     *            encoding of the data in the input stream.
+     * @return a {@code CertPath} initialized from the provided data.
+     * @throws CertificateException
+     *             if parsing problems are detected.
+     * @throws UnsupportedOperationException
+     *             if the provider does not implement this method.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.913 -0500", hash_original_method = "2B5CC92C0290261B5C7A25A0F691CEF6", hash_generated_method = "BD4C94A0745326B90DC6690BD73E65C4")
+    
+public final CertPath generateCertPath(InputStream inStream, String encoding)
+            throws CertificateException {
+        return spiImpl.engineGenerateCertPath(inStream, encoding);
+    }
+
+    /**
+     * Generates a {@code CertPath} from the provided list of certificates. The
+     * encoding is the default encoding.
+     *
+     * @param certificates
+     *            the list containing certificates in a format supported by the
+     *            {@code CertificateFactory}.
+     * @return a {@code CertPath} initialized from the provided data.
+     * @throws CertificateException
+     *             if parsing problems are detected.
+     * @throws UnsupportedOperationException
+     *             if the provider does not implement this method.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.916 -0500", hash_original_method = "FE6370346FB92E14C140A17484E61066", hash_generated_method = "48452F19DB0CD40F8E00E22CA8F4AF85")
+    
+public final CertPath generateCertPath(List<? extends Certificate> certificates)
+            throws CertificateException {
+        return spiImpl.engineGenerateCertPath(certificates);
+    }
+
+    /**
+     * Generates and initializes a collection of (unrelated) certificates from
+     * the provided input stream.
+     *
+     * @param inStream
+     *            the stream from which the data is read to create the
+     *            collection.
+     * @return an initialized collection of certificates.
+     * @throws CertificateException
+     *             if parsing problems are detected.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.918 -0500", hash_original_method = "2C42C184C3EAF19809C332EBF46CD8DC", hash_generated_method = "3835A6A016D70AAB4CCE556486752FB7")
+    
+public final Collection<? extends Certificate> generateCertificates(InputStream inStream)
+            throws CertificateException {
+        return spiImpl.engineGenerateCertificates(inStream);
+    }
+
+    /**
+     * Generates and initializes a <i>Certificate Revocation List</i> (CRL) from
+     * the provided input stream.
+     *
+     * @param inStream
+     *            the stream from where data is read to create the CRL.
+     * @return an initialized CRL.
+     * @exception CRLException
+     *                if parsing problems are detected.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.921 -0500", hash_original_method = "61C041CED79E728E684417F700AE9F1B", hash_generated_method = "DE4CAF8E51A5F2419171F98B28019BB8")
+    
+public final CRL generateCRL(InputStream inStream) throws CRLException {
+        return spiImpl.engineGenerateCRL(inStream);
+    }
+
+    /**
+     * Generates and initializes a collection of <i>Certificate Revocation
+     * List</i> (CRL) from the provided input stream.
+     *
+     * @param inStream
+     *            the stream from which the data is read to create the CRLs.
+     * @return an initialized collection of CRLs.
+     * @exception CRLException
+     *                if parsing problems are detected.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.924 -0500", hash_original_method = "82C17943BE49A882CA4049864C9D79C5", hash_generated_method = "1CADE1F32E0D1257A23A04EC925B3F76")
+    
+public final Collection<? extends CRL> generateCRLs(InputStream inStream)
+            throws CRLException {
+        return spiImpl.engineGenerateCRLs(inStream);
+    }
 }
 

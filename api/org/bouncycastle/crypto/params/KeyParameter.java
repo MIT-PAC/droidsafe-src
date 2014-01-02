@@ -1,6 +1,8 @@
 package org.bouncycastle.crypto.params;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import org.bouncycastle.crypto.CipherParameters;
 
@@ -10,42 +12,35 @@ import org.bouncycastle.crypto.CipherParameters;
 
 
 public class KeyParameter implements CipherParameters {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.111 -0400", hash_original_field = "3C6E0B8A9C15224A8228B9A98CA1531D", hash_generated_field = "AEF19C0A7530E140588DCBA91FF66D28")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:30.423 -0500", hash_original_field = "874EBF47D328D135486F03BCE6DDD19A", hash_generated_field = "AEF19C0A7530E140588DCBA91FF66D28")
 
-    private byte[] key;
+    private byte[]  key;
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:30.425 -0500", hash_original_method = "63385B3E5C2FC85A4948D309DD0E5CB6", hash_generated_method = "C88ED3DD3DEBB066D26FFA6500109306")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.112 -0400", hash_original_method = "63385B3E5C2FC85A4948D309DD0E5CB6", hash_generated_method = "F26D7FC9289AEBA419B2C1CBF3614608")
-    public  KeyParameter(
-        byte[]  key) {
+public KeyParameter(
+        byte[]  key)
+    {
         this(key, 0, key.length);
-        addTaint(key[0]);
-        // ---------- Original Method ----------
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:30.428 -0500", hash_original_method = "B61F1FEDEF5D4C73DB3CB7494F513C96", hash_generated_method = "6741BACA86A9DA894D9B323E620BE0C5")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.113 -0400", hash_original_method = "B61F1FEDEF5D4C73DB3CB7494F513C96", hash_generated_method = "083676695D6245357A44262794731790")
-    public  KeyParameter(
+public KeyParameter(
         byte[]  key,
         int     keyOff,
-        int     keyLen) {
-        addTaint(keyOff);
+        int     keyLen)
+    {
         this.key = new byte[keyLen];
+
         System.arraycopy(key, keyOff, this.key, 0, keyLen);
-        // ---------- Original Method ----------
-        //this.key = new byte[keyLen];
-        //System.arraycopy(key, keyOff, this.key, 0, keyLen);
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:30.430 -0500", hash_original_method = "4D0869BDED080E6228BF118F17313DFD", hash_generated_method = "F6BA40ED41B35932060F7CD0F4D88932")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.113 -0400", hash_original_method = "4D0869BDED080E6228BF118F17313DFD", hash_generated_method = "80743DD17229F708E9A1EFD872364094")
-    public byte[] getKey() {
-        byte[] var3C6E0B8A9C15224A8228B9A98CA1531D_226311573 = (key);
-                byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1059552076 = {getTaintByte()};
-        return var2F9C81BC6E497382285CD6B7A7E33DE1_1059552076;
-        // ---------- Original Method ----------
-        //return key;
+public byte[] getKey()
+    {
+        return key;
     }
 
     

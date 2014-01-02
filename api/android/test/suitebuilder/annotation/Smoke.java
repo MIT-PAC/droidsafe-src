@@ -1,6 +1,8 @@
 package android.test.suitebuilder.annotation;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

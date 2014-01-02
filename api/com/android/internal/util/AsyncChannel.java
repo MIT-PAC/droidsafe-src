@@ -1,6 +1,8 @@
 package com.android.internal.util;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Stack;
 
@@ -22,697 +24,486 @@ import android.util.Slog;
 
 
 public class AsyncChannel {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.581 -0400", hash_original_field = "8FB9CEDC14BF8DE9558825242E11E275", hash_generated_field = "E0FE31041D4B400F1ECC0924DC307F23")
+
+    /**
+     * Log the string.
+     *
+     * @param s
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.610 -0500", hash_original_method = "6FCA9AA6353D4B452135E8444180D2C6", hash_generated_method = "BDA28BABE71D91786DFE8D4E9E911424")
+    
+private static void log(String s) {
+        Slog.d(TAG, s);
+    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.427 -0500", hash_original_field = "95A8D559154803A1416476EBC0AF2D32", hash_generated_field = "ED89618E6E1B400B84A83667045BD90E")
+
+    private static final String TAG = "AsyncChannel";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.429 -0500", hash_original_field = "B2601CA7445F6BA19FA7884763D82281", hash_generated_field = "1A61763F9CABC9206BB5AE6E570AB8AE")
+
+    private static final boolean DBG = false;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.432 -0500", hash_original_field = "2047023046CD71CF4AAF6B2B3DA0FA39", hash_generated_field = "080FE22C2EA5E5AA1B11A1E7CA05F0C9")
+
+
+    private static final int BASE = Protocol.BASE_SYSTEM_ASYNC_CHANNEL;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.434 -0500", hash_original_field = "3480C29848F7CC2D4F1A632387FA28BE", hash_generated_field = "5922F98D688E75A7DA6D8670F04E1B69")
+
+    public static final int CMD_CHANNEL_HALF_CONNECTED = BASE + 0;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.436 -0500", hash_original_field = "DB2AB601D2852F7271410A5E57662D22", hash_generated_field = "09022465BCC7090283436B7B026D0301")
+
+    public static final int CMD_CHANNEL_FULL_CONNECTION = BASE + 1;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.439 -0500", hash_original_field = "54CB95D77CCCF845D73D9692B7CFFC87", hash_generated_field = "08BDA67F386A31687D7F2E728CCB59EF")
+
+    public static final int CMD_CHANNEL_FULLY_CONNECTED = BASE + 2;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.442 -0500", hash_original_field = "8EA595A253E0AEF90BF7320DC78E1FC6", hash_generated_field = "5CF66347F536B38BA730A7CEF6E0CFE9")
+
+    public static final int CMD_CHANNEL_DISCONNECT = BASE + 3;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.444 -0500", hash_original_field = "C497168A3DCC02CA3C5B705C9036FCBA", hash_generated_field = "6D1D7878C43DD2115A6EF5986CC11811")
+
+    public static final int CMD_CHANNEL_DISCONNECTED = BASE + 4;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.447 -0500", hash_original_field = "89692847E6BD0F83A12707A04DBD5FCA", hash_generated_field = "BE2B5B401DA0D15F4F87FD186400D2D9")
+
+    public static final int STATUS_SUCCESSFUL = 0;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.449 -0500", hash_original_field = "6E8176F9BC447172AE9E461B283D8B55", hash_generated_field = "B8538B9846A8FDBE9642FF7E31DD496A")
+
+    public static final int STATUS_BINDING_UNSUCCESSFUL = 1;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.451 -0500", hash_original_field = "6A81C204E1119C0E075B6140442C7BBD", hash_generated_field = "CB11C33E8E76C086F8C44E0468197078")
+
+    public static final int STATUS_SEND_UNSUCCESSFUL = 2;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.454 -0500", hash_original_field = "482E69F0E1A82A5C7C3C4B9F83A7A30E", hash_generated_field = "E6FE28BA2B9755538A9039337B98C62B")
+
+    public static final int STATUS_FULL_CONNECTION_REFUSED_ALREADY_CONNECTED = 3;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.456 -0500", hash_original_field = "F4471023D55D85B2ED3D88D3F14E604B", hash_generated_field = "E0FE31041D4B400F1ECC0924DC307F23")
 
     private AsyncChannelConnection mConnection;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.581 -0400", hash_original_field = "87C08AEB5A3D17BF072E78C95BF6609A", hash_generated_field = "D92C09EC63748E6484EE8DFEB808CFD6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.458 -0500", hash_original_field = "5917DF89E53660C9A2AFB2773E027958", hash_generated_field = "D92C09EC63748E6484EE8DFEB808CFD6")
 
     private Context mSrcContext;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.582 -0400", hash_original_field = "25F77AD5B1AB9A0784B314E923CD2968", hash_generated_field = "BD0D117ED673366AC3516437E5A4C86B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.460 -0500", hash_original_field = "6BB20412E591A6DA226F8B270B002CC6", hash_generated_field = "BD0D117ED673366AC3516437E5A4C86B")
 
     private Handler mSrcHandler;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.582 -0400", hash_original_field = "2CD378F6D7DA03699B005770FABF01BA", hash_generated_field = "ADFCAC580CFA427EE53B41262D89A4AC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.462 -0500", hash_original_field = "1F1D6034E598F0E0F1B4062DC6C5520C", hash_generated_field = "ADFCAC580CFA427EE53B41262D89A4AC")
 
     private Messenger mSrcMessenger;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.582 -0400", hash_original_field = "E889B286B5240397E7C14C0C448740E9", hash_generated_field = "12D94F9D13B393CF02D9A14BBEC89054")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.464 -0500", hash_original_field = "78711A7D09B1AE1F7B43A7045E087D16", hash_generated_field = "12D94F9D13B393CF02D9A14BBEC89054")
 
     private Messenger mDstMessenger;
+
+    /**
+     * AsyncChannel constructor
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.467 -0500", hash_original_method = "FDD6D3EF5F7BC7D6883E0BF7536BB913", hash_generated_method = "7B270163FB00B2D668E83F5F3AC47A37")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.582 -0400", hash_original_method = "FDD6D3EF5F7BC7D6883E0BF7536BB913", hash_generated_method = "CBC4A48158E97A41700C96C588786574")
-    public  AsyncChannel() {
-        // ---------- Original Method ----------
+public AsyncChannel() {
     }
 
+    /**
+     * Connect handler to named package/class synchronously.
+     *
+     * @param srcContext is the context of the source
+     * @param srcHandler is the hander to receive CONNECTED & DISCONNECTED
+     *            messages
+     * @param dstPackageName is the destination package name
+     * @param dstClassName is the fully qualified class name (i.e. contains
+     *            package name)
+     *
+     * @return STATUS_SUCCESSFUL on success any other value is an error.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.470 -0500", hash_original_method = "89C8C4B82DB5AC36CAD55D59C7A76E33", hash_generated_method = "1F9346CADD06FBFF3294E9C4A4C60388")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.583 -0400", hash_original_method = "89C8C4B82DB5AC36CAD55D59C7A76E33", hash_generated_method = "6502AE2B136059846A9284675C6722C8")
-    public int connectSrcHandlerToPackageSync(
+public int connectSrcHandlerToPackageSync(
             Context srcContext, Handler srcHandler, String dstPackageName, String dstClassName) {
-        addTaint(dstClassName.getTaint());
-        addTaint(dstPackageName.getTaint());
-        if(DBG)        
-        log("connect srcHandler to dst Package & class E");
+        if (DBG) log("connect srcHandler to dst Package & class E");
+
         mConnection = new AsyncChannelConnection();
+
+        /* Initialize the source information */
         mSrcContext = srcContext;
         mSrcHandler = srcHandler;
         mSrcMessenger = new Messenger(srcHandler);
+
+        /*
+         * Initialize destination information to null they will
+         * be initialized when the AsyncChannelConnection#onServiceConnected
+         * is called
+         */
         mDstMessenger = null;
+
+        /* Send intent to create the connection */
         Intent intent = new Intent(Intent.ACTION_MAIN);
         intent.setClassName(dstPackageName, dstClassName);
         boolean result = srcContext.bindService(intent, mConnection, Context.BIND_AUTO_CREATE);
-        if(DBG)        
-        log("connect srcHandler to dst Package & class X result=" + result);
-        int var1AC7C9796BC1520CC7268C33CB683A44_472859481 = (result ? STATUS_SUCCESSFUL : STATUS_BINDING_UNSUCCESSFUL);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_206356942 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_206356942;
-        // ---------- Original Method ----------
-        //if (DBG) log("connect srcHandler to dst Package & class E");
-        //mConnection = new AsyncChannelConnection();
-        //mSrcContext = srcContext;
-        //mSrcHandler = srcHandler;
-        //mSrcMessenger = new Messenger(srcHandler);
-        //mDstMessenger = null;
-        //Intent intent = new Intent(Intent.ACTION_MAIN);
-        //intent.setClassName(dstPackageName, dstClassName);
-        //boolean result = srcContext.bindService(intent, mConnection, Context.BIND_AUTO_CREATE);
-        //if (DBG) log("connect srcHandler to dst Package & class X result=" + result);
-        //return result ? STATUS_SUCCESSFUL : STATUS_BINDING_UNSUCCESSFUL;
+        if (DBG) log("connect srcHandler to dst Package & class X result=" + result);
+        return result ? STATUS_SUCCESSFUL : STATUS_BINDING_UNSUCCESSFUL;
     }
 
+    /**
+     * Connect a handler to Messenger synchronously.
+     *
+     * @param srcContext is the context of the source
+     * @param srcHandler is the hander to receive CONNECTED & DISCONNECTED
+     *            messages
+     * @param dstMessenger is the hander to send messages to.
+     *
+     * @return STATUS_SUCCESSFUL on success any other value is an error.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.473 -0500", hash_original_method = "ABB64391FEF3212581FCE62A24663F37", hash_generated_method = "5D650CF88D5D3982DDC619DAC8596630")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.584 -0400", hash_original_method = "ABB64391FEF3212581FCE62A24663F37", hash_generated_method = "B57CA3C2AE7ADB45D78570DC04550424")
-    public int connectSync(Context srcContext, Handler srcHandler, Messenger dstMessenger) {
-        addTaint(dstMessenger.getTaint());
-        addTaint(srcHandler.getTaint());
-        addTaint(srcContext.getTaint());
-        if(DBG)        
-        log("halfConnectSync srcHandler to the dstMessenger  E");
+public int connectSync(Context srcContext, Handler srcHandler, Messenger dstMessenger) {
+        if (DBG) log("halfConnectSync srcHandler to the dstMessenger  E");
+
+        // We are connected
         connected(srcContext, srcHandler, dstMessenger);
-        if(DBG)        
-        log("halfConnectSync srcHandler to the dstMessenger X");
-        int varD23D9492A3BD1374EC1F40BED7C7B412_1805006611 = (STATUS_SUCCESSFUL);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2135653398 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2135653398;
-        // ---------- Original Method ----------
-        //if (DBG) log("halfConnectSync srcHandler to the dstMessenger  E");
-        //connected(srcContext, srcHandler, dstMessenger);
-        //if (DBG) log("halfConnectSync srcHandler to the dstMessenger X");
-        //return STATUS_SUCCESSFUL;
+
+        if (DBG) log("halfConnectSync srcHandler to the dstMessenger X");
+        return STATUS_SUCCESSFUL;
     }
 
+    /**
+     * connect two local Handlers synchronously.
+     *
+     * @param srcContext is the context of the source
+     * @param srcHandler is the hander to receive CONNECTED & DISCONNECTED
+     *            messages
+     * @param dstHandler is the hander to send messages to.
+     *
+     * @return STATUS_SUCCESSFUL on success any other value is an error.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.475 -0500", hash_original_method = "E8061690950B5AC4037948D29BFD7764", hash_generated_method = "8302A676A8C20EDE123C534A387EF955")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.585 -0400", hash_original_method = "E8061690950B5AC4037948D29BFD7764", hash_generated_method = "1D2A3B8B479D9ACDFF695E8CD3640676")
-    public int connectSync(Context srcContext, Handler srcHandler, Handler dstHandler) {
-        addTaint(dstHandler.getTaint());
-        addTaint(srcHandler.getTaint());
-        addTaint(srcContext.getTaint());
-        int var3A3611EEEC27DF63C067ACCB07382B70_1889245523 = (connectSync(srcContext, srcHandler, new Messenger(dstHandler)));
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_627094434 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_627094434;
-        // ---------- Original Method ----------
-        //return connectSync(srcContext, srcHandler, new Messenger(dstHandler));
+public int connectSync(Context srcContext, Handler srcHandler, Handler dstHandler) {
+        return connectSync(srcContext, srcHandler, new Messenger(dstHandler));
     }
 
+    /**
+     * Fully connect two local Handlers synchronously.
+     *
+     * @param srcContext is the context of the source
+     * @param srcHandler is the hander to receive CONNECTED & DISCONNECTED
+     *            messages
+     * @param dstHandler is the hander to send messages to.
+     *
+     * @return STATUS_SUCCESSFUL on success any other value is an error.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.478 -0500", hash_original_method = "47E7CF94088222D35244DD2A346F6D10", hash_generated_method = "E19E8E64771431B6C6256E770157CA8B")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.585 -0400", hash_original_method = "47E7CF94088222D35244DD2A346F6D10", hash_generated_method = "F241D337077661BAD5565E69A8BB6410")
-    public int fullyConnectSync(Context srcContext, Handler srcHandler, Handler dstHandler) {
-        addTaint(dstHandler.getTaint());
-        addTaint(srcHandler.getTaint());
-        addTaint(srcContext.getTaint());
+public int fullyConnectSync(Context srcContext, Handler srcHandler, Handler dstHandler) {
         int status = connectSync(srcContext, srcHandler, dstHandler);
-        if(status == STATUS_SUCCESSFUL)        
-        {
+        if (status == STATUS_SUCCESSFUL) {
             Message response = sendMessageSynchronously(CMD_CHANNEL_FULL_CONNECTION);
             status = response.arg1;
-        } //End block
-        int var9ACB44549B41563697BB490144EC6258_1349952279 = (status);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1566459377 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1566459377;
-        // ---------- Original Method ----------
-        //int status = connectSync(srcContext, srcHandler, dstHandler);
-        //if (status == STATUS_SUCCESSFUL) {
-            //Message response = sendMessageSynchronously(CMD_CHANNEL_FULL_CONNECTION);
-            //status = response.arg1;
-        //}
-        //return status;
+        }
+        return status;
     }
 
+    /**
+     * Connect handler to named package/class.
+     *
+     * Sends a CMD_CHANNEL_HALF_CONNECTED message to srcHandler when complete.
+     *      msg.arg1 = status
+     *      msg.obj = the AsyncChannel
+     *
+     * @param srcContext is the context of the source
+     * @param srcHandler is the hander to receive CONNECTED & DISCONNECTED
+     *            messages
+     * @param dstPackageName is the destination package name
+     * @param dstClassName is the fully qualified class name (i.e. contains
+     *            package name)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.495 -0500", hash_original_method = "D2A6022ADF54D8001301F184CF4606D0", hash_generated_method = "2E6273C4271CC00F55FB791C2B3B78E7")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.589 -0400", hash_original_method = "D2A6022ADF54D8001301F184CF4606D0", hash_generated_method = "5BD53745041CA633C9BC7CCCCB8BCFBF")
-    public void connect(Context srcContext, Handler srcHandler, String dstPackageName,
+public void connect(Context srcContext, Handler srcHandler, String dstPackageName,
             String dstClassName) {
-        addTaint(dstClassName.getTaint());
-        addTaint(dstPackageName.getTaint());
-        addTaint(srcHandler.getTaint());
-        addTaint(srcContext.getTaint());
-        if(DBG)        
-        log("connect srcHandler to dst Package & class E");
+        if (DBG) log("connect srcHandler to dst Package & class E");
+
         final class ConnectAsync implements Runnable {
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.587 -0400", hash_original_field = "8B4484FBC1FE4E9FD584DAC7346C7CEC", hash_generated_field = "4B9A8ADECB00B1FBBEDF74A87B7B2E14")
             Context mSrcCtx;
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.587 -0400", hash_original_field = "E96852DA8247712DB7EB401462C40821", hash_generated_field = "F848A9BC15E1D508EFDE78836A1E1229")
             Handler mSrcHdlr;
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.587 -0400", hash_original_field = "0F52918D1CA58D31CA1BF2218A89271C", hash_generated_field = "09F25A8665AE8101339100B925E40D3B")
             String mDstPackageName;
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.587 -0400", hash_original_field = "07A7F28D26F6AA9DDDAB0EA14CDCA2B4", hash_generated_field = "0B219ED940AA101E1553BAC3E721EBE1")
             String mDstClassName;
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.588 -0400", hash_original_method = "26202A470B4739436FF7E15729D19468", hash_generated_method = "FAA1C1EEB7ED522D3810785DA72A55B9")
-              ConnectAsync(Context srcContext, Handler srcHandler, String dstPackageName,
+
+            ConnectAsync(Context srcContext, Handler srcHandler, String dstPackageName,
                     String dstClassName) {
                 mSrcCtx = srcContext;
                 mSrcHdlr = srcHandler;
                 mDstPackageName = dstPackageName;
                 mDstClassName = dstClassName;
-                // ---------- Original Method ----------
-                //mSrcCtx = srcContext;
-                //mSrcHdlr = srcHandler;
-                //mDstPackageName = dstPackageName;
-                //mDstClassName = dstClassName;
             }
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.588 -0400", hash_original_method = "16F182387C74E8BFEA3B17CE5A08CAA0", hash_generated_method = "C4A4854D1D30E31E416BAF5B738DF7AC")
+
             @Override
             public void run() {
                 int result = connectSrcHandlerToPackageSync(mSrcCtx, mSrcHdlr, mDstPackageName,
                         mDstClassName);
                 replyHalfConnected(result);
-                // ---------- Original Method ----------
-                //int result = connectSrcHandlerToPackageSync(mSrcCtx, mSrcHdlr, mDstPackageName,
-                        //mDstClassName);
-                //replyHalfConnected(result);
             }
         }
+
         ConnectAsync ca = new ConnectAsync(srcContext, srcHandler, dstPackageName, dstClassName);
         new Thread(ca).start();
-        if(DBG)        
-        log("connect srcHandler to dst Package & class X");
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+
+        if (DBG) log("connect srcHandler to dst Package & class X");
     }
 
+    /**
+     * Connect handler to a class
+     *
+     * Sends a CMD_CHANNEL_HALF_CONNECTED message to srcHandler when complete.
+     *      msg.arg1 = status
+     *      msg.obj = the AsyncChannel
+     *
+     * @param srcContext
+     * @param srcHandler
+     * @param klass is the class to send messages to.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.498 -0500", hash_original_method = "EF115B092B0444968DFDE421B1D070CE", hash_generated_method = "C7D761A604DCC217929B7918AB961994")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.589 -0400", hash_original_method = "EF115B092B0444968DFDE421B1D070CE", hash_generated_method = "28F461CC57C0714BB9A1229645B242B1")
-    public void connect(Context srcContext, Handler srcHandler, Class<?> klass) {
-        addTaint(klass.getTaint());
-        addTaint(srcHandler.getTaint());
-        addTaint(srcContext.getTaint());
+public void connect(Context srcContext, Handler srcHandler, Class<?> klass) {
         connect(srcContext, srcHandler, klass.getPackage().getName(), klass.getName());
-        // ---------- Original Method ----------
-        //connect(srcContext, srcHandler, klass.getPackage().getName(), klass.getName());
     }
 
+    /**
+     * Connect handler and messenger.
+     *
+     * Sends a CMD_CHANNEL_HALF_CONNECTED message to srcHandler when complete.
+     *      msg.arg1 = status
+     *      msg.obj = the AsyncChannel
+     *
+     * @param srcContext
+     * @param srcHandler
+     * @param dstMessenger
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.500 -0500", hash_original_method = "D9A9DAD002038F54D59084B945A008ED", hash_generated_method = "4C9173AD3605BE46EEB06DBE1A2B9E52")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.590 -0400", hash_original_method = "D9A9DAD002038F54D59084B945A008ED", hash_generated_method = "247E05EC0A294D4C3408E354B226366A")
-    public void connect(Context srcContext, Handler srcHandler, Messenger dstMessenger) {
-        addTaint(dstMessenger.getTaint());
-        addTaint(srcHandler.getTaint());
-        addTaint(srcContext.getTaint());
-        if(DBG)        
-        log("connect srcHandler to the dstMessenger  E");
+public void connect(Context srcContext, Handler srcHandler, Messenger dstMessenger) {
+        if (DBG) log("connect srcHandler to the dstMessenger  E");
+
+        // We are connected
         connected(srcContext, srcHandler, dstMessenger);
+
+        // Tell source we are half connected
         replyHalfConnected(STATUS_SUCCESSFUL);
-        if(DBG)        
-        log("connect srcHandler to the dstMessenger X");
-        // ---------- Original Method ----------
-        //if (DBG) log("connect srcHandler to the dstMessenger  E");
-        //connected(srcContext, srcHandler, dstMessenger);
-        //replyHalfConnected(STATUS_SUCCESSFUL);
-        //if (DBG) log("connect srcHandler to the dstMessenger X");
+
+        if (DBG) log("connect srcHandler to the dstMessenger X");
     }
 
+    /**
+     * Connect handler to messenger. This method is typically called
+     * when a server receives a CMD_CHANNEL_FULL_CONNECTION request
+     * and initializes the internal instance variables to allow communication
+     * with the dstMessenger.
+     *
+     * @param srcContext
+     * @param srcHandler
+     * @param dstMessenger
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.502 -0500", hash_original_method = "6B74CB8285045DC3058688AFD39174C7", hash_generated_method = "D21EC7D6F55E6DDB571DC2CC93C25E59")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.592 -0400", hash_original_method = "6B74CB8285045DC3058688AFD39174C7", hash_generated_method = "75AEF2C85985F1C59D0D5965095183A9")
-    public void connected(Context srcContext, Handler srcHandler, Messenger dstMessenger) {
-        if(DBG)        
-        log("connected srcHandler to the dstMessenger  E");
+public void connected(Context srcContext, Handler srcHandler, Messenger dstMessenger) {
+        if (DBG) log("connected srcHandler to the dstMessenger  E");
+
+        // Initialize source fields
         mSrcContext = srcContext;
         mSrcHandler = srcHandler;
         mSrcMessenger = new Messenger(mSrcHandler);
+
+        // Initialize destination fields
         mDstMessenger = dstMessenger;
-        if(DBG)        
-        log("connected srcHandler to the dstMessenger X");
-        // ---------- Original Method ----------
-        //if (DBG) log("connected srcHandler to the dstMessenger  E");
-        //mSrcContext = srcContext;
-        //mSrcHandler = srcHandler;
-        //mSrcMessenger = new Messenger(mSrcHandler);
-        //mDstMessenger = dstMessenger;
-        //if (DBG) log("connected srcHandler to the dstMessenger X");
+
+        if (DBG) log("connected srcHandler to the dstMessenger X");
     }
 
+    /**
+     * Connect two local Handlers.
+     *
+     * @param srcContext is the context of the source
+     * @param srcHandler is the hander to receive CONNECTED & DISCONNECTED
+     *            messages
+     * @param dstHandler is the hander to send messages to.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.505 -0500", hash_original_method = "30351ACDB73035A90D0CFF564E4380CE", hash_generated_method = "48DADB4CE0ACD3C0C678FBD72552DA66")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.593 -0400", hash_original_method = "30351ACDB73035A90D0CFF564E4380CE", hash_generated_method = "BFF984F76E2467320702BBB5CFDD4355")
-    public void connect(Context srcContext, Handler srcHandler, Handler dstHandler) {
-        addTaint(dstHandler.getTaint());
-        addTaint(srcHandler.getTaint());
-        addTaint(srcContext.getTaint());
+public void connect(Context srcContext, Handler srcHandler, Handler dstHandler) {
         connect(srcContext, srcHandler, new Messenger(dstHandler));
-        // ---------- Original Method ----------
-        //connect(srcContext, srcHandler, new Messenger(dstHandler));
     }
 
+    /**
+     * Connect service and messenger.
+     *
+     * Sends a CMD_CHANNEL_HALF_CONNECTED message to srcAsyncService when complete.
+     *      msg.arg1 = status
+     *      msg.obj = the AsyncChannel
+     *
+     * @param srcAsyncService
+     * @param dstMessenger
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.507 -0500", hash_original_method = "AB6DAC74FF8B2E5B9FEB974F6DCFF3D6", hash_generated_method = "87BDA9A9972ECA7310DB39F217B483FA")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.593 -0400", hash_original_method = "AB6DAC74FF8B2E5B9FEB974F6DCFF3D6", hash_generated_method = "5000A075795BE8819ABC84CEC6ECCF16")
-    public void connect(AsyncService srcAsyncService, Messenger dstMessenger) {
-        addTaint(dstMessenger.getTaint());
-        addTaint(srcAsyncService.getTaint());
+public void connect(AsyncService srcAsyncService, Messenger dstMessenger) {
         connect(srcAsyncService, srcAsyncService.getHandler(), dstMessenger);
-        // ---------- Original Method ----------
-        //connect(srcAsyncService, srcAsyncService.getHandler(), dstMessenger);
     }
 
+    /**
+     * To close the connection call when handler receives CMD_CHANNEL_DISCONNECTED
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.509 -0500", hash_original_method = "C231E33C68F8FEC3C6EDCF993CA1BD7A", hash_generated_method = "60AE8F641AB448C2AE7DFA7C6F9FF823")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.594 -0400", hash_original_method = "C231E33C68F8FEC3C6EDCF993CA1BD7A", hash_generated_method = "F0979877F363BD7302AAF19A7B022C1A")
-    public void disconnected() {
+public void disconnected() {
         mSrcContext = null;
         mSrcHandler = null;
         mSrcMessenger = null;
         mDstMessenger = null;
         mConnection = null;
-        // ---------- Original Method ----------
-        //mSrcContext = null;
-        //mSrcHandler = null;
-        //mSrcMessenger = null;
-        //mDstMessenger = null;
-        //mConnection = null;
     }
 
+    /**
+     * Disconnect
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.511 -0500", hash_original_method = "206D442C26BC964C7153F638F49072D1", hash_generated_method = "2C42D0809BF4810FABDA72F0A6E05C53")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.594 -0400", hash_original_method = "206D442C26BC964C7153F638F49072D1", hash_generated_method = "C6EFEACF7B5174667D908753F2F7939F")
-    public void disconnect() {
-        if((mConnection != null) && (mSrcContext != null))        
-        {
+public void disconnect() {
+        if ((mConnection != null) && (mSrcContext != null)) {
             mSrcContext.unbindService(mConnection);
-        } //End block
-        if(mSrcHandler != null)        
-        {
+        }
+        if (mSrcHandler != null) {
             replyDisconnected(STATUS_SUCCESSFUL);
-        } //End block
-        // ---------- Original Method ----------
-        //if ((mConnection != null) && (mSrcContext != null)) {
-            //mSrcContext.unbindService(mConnection);
-        //}
-        //if (mSrcHandler != null) {
-            //replyDisconnected(STATUS_SUCCESSFUL);
-        //}
+        }
     }
 
+    /**
+     * Send a message to the destination handler.
+     *
+     * @param msg
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.513 -0500", hash_original_method = "9DAC7AFA4C14A1022E9DEC304018391F", hash_generated_method = "B2E7772166FCACAF852F55F44CB46D51")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.594 -0400", hash_original_method = "9DAC7AFA4C14A1022E9DEC304018391F", hash_generated_method = "71120F6F2CE7AD5B93EF5EC6250C0885")
-    public void sendMessage(Message msg) {
-        addTaint(msg.getTaint());
+public void sendMessage(Message msg) {
         msg.replyTo = mSrcMessenger;
-        try 
-        {
+        try {
             mDstMessenger.send(msg);
-        } //End block
-        catch (RemoteException e)
-        {
+        } catch (RemoteException e) {
             replyDisconnected(STATUS_SEND_UNSUCCESSFUL);
-        } //End block
-        // ---------- Original Method ----------
-        //msg.replyTo = mSrcMessenger;
-        //try {
-            //mDstMessenger.send(msg);
-        //} catch (RemoteException e) {
-            //replyDisconnected(STATUS_SEND_UNSUCCESSFUL);
-        //}
+        }
     }
 
+    /**
+     * Send a message to the destination handler
+     *
+     * @param what
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.516 -0500", hash_original_method = "C8C31043DDFE26EC3BE146F1B2B418E3", hash_generated_method = "4278121A770EE39DDEB6E37D007DBBC8")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.594 -0400", hash_original_method = "C8C31043DDFE26EC3BE146F1B2B418E3", hash_generated_method = "06398CE67DCE7135B7A87BF66738FAAA")
-    public void sendMessage(int what) {
-        addTaint(what);
+public void sendMessage(int what) {
         Message msg = Message.obtain();
         msg.what = what;
         sendMessage(msg);
-        // ---------- Original Method ----------
-        //Message msg = Message.obtain();
-        //msg.what = what;
-        //sendMessage(msg);
     }
 
+    /**
+     * Send a message to the destination handler
+     *
+     * @param what
+     * @param arg1
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.518 -0500", hash_original_method = "6C3F9593FC3095346100149D0CBBAD3F", hash_generated_method = "74BFDE300F5DD4E078EA04A4A8181904")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.595 -0400", hash_original_method = "6C3F9593FC3095346100149D0CBBAD3F", hash_generated_method = "C613A983AF76765536AE52487EF30E89")
-    public void sendMessage(int what, int arg1) {
-        addTaint(arg1);
-        addTaint(what);
+public void sendMessage(int what, int arg1) {
         Message msg = Message.obtain();
         msg.what = what;
         msg.arg1 = arg1;
         sendMessage(msg);
-        // ---------- Original Method ----------
-        //Message msg = Message.obtain();
-        //msg.what = what;
-        //msg.arg1 = arg1;
-        //sendMessage(msg);
     }
 
+    /**
+     * Send a message to the destination handler
+     *
+     * @param what
+     * @param arg1
+     * @param arg2
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.521 -0500", hash_original_method = "23E4A4D5EBFE681605B0582F17F8E799", hash_generated_method = "2407FCFDBD809792EEC39AD82D87DDCA")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.595 -0400", hash_original_method = "23E4A4D5EBFE681605B0582F17F8E799", hash_generated_method = "FFB99DE4DDB7E6EB7F4D25F9E91E4BE0")
-    public void sendMessage(int what, int arg1, int arg2) {
-        addTaint(arg2);
-        addTaint(arg1);
-        addTaint(what);
+public void sendMessage(int what, int arg1, int arg2) {
         Message msg = Message.obtain();
         msg.what = what;
         msg.arg1 = arg1;
         msg.arg2 = arg2;
         sendMessage(msg);
-        // ---------- Original Method ----------
-        //Message msg = Message.obtain();
-        //msg.what = what;
-        //msg.arg1 = arg1;
-        //msg.arg2 = arg2;
-        //sendMessage(msg);
     }
 
+    /**
+     * Send a message to the destination handler
+     *
+     * @param what
+     * @param arg1
+     * @param arg2
+     * @param obj
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.524 -0500", hash_original_method = "066946089A5EEE9700468FE67EE373C2", hash_generated_method = "39D30A18E3CBA1A0CA0CA065CE6FFE58")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.596 -0400", hash_original_method = "066946089A5EEE9700468FE67EE373C2", hash_generated_method = "FB309C453F4A437ECAD66C01B67215B7")
-    public void sendMessage(int what, int arg1, int arg2, Object obj) {
-        addTaint(obj.getTaint());
-        addTaint(arg2);
-        addTaint(arg1);
-        addTaint(what);
+public void sendMessage(int what, int arg1, int arg2, Object obj) {
         Message msg = Message.obtain();
         msg.what = what;
         msg.arg1 = arg1;
         msg.arg2 = arg2;
         msg.obj = obj;
         sendMessage(msg);
-        // ---------- Original Method ----------
-        //Message msg = Message.obtain();
-        //msg.what = what;
-        //msg.arg1 = arg1;
-        //msg.arg2 = arg2;
-        //msg.obj = obj;
-        //sendMessage(msg);
     }
 
+    /**
+     * Send a message to the destination handler
+     *
+     * @param what
+     * @param obj
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.526 -0500", hash_original_method = "D262961B9C2C88432C23CE1E616C0D35", hash_generated_method = "E58A9FC8C58B34F13DDC5C274B23CB07")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.596 -0400", hash_original_method = "D262961B9C2C88432C23CE1E616C0D35", hash_generated_method = "8F88B37C63740F741D5A5BEE52256A61")
-    public void sendMessage(int what, Object obj) {
-        addTaint(obj.getTaint());
-        addTaint(what);
+public void sendMessage(int what, Object obj) {
         Message msg = Message.obtain();
         msg.what = what;
         msg.obj = obj;
         sendMessage(msg);
-        // ---------- Original Method ----------
-        //Message msg = Message.obtain();
-        //msg.what = what;
-        //msg.obj = obj;
-        //sendMessage(msg);
     }
 
+    /**
+     * Reply to srcMsg sending dstMsg
+     *
+     * @param srcMsg
+     * @param dstMsg
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.528 -0500", hash_original_method = "9F609FC4DF465EEA0A9F2C3A79A2C6B4", hash_generated_method = "B9D65B71D31F113C9D169E78F4EAE96E")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.597 -0400", hash_original_method = "9F609FC4DF465EEA0A9F2C3A79A2C6B4", hash_generated_method = "068E07885C442793CBD2FE3EF0AFB093")
-    public void replyToMessage(Message srcMsg, Message dstMsg) {
-        addTaint(dstMsg.getTaint());
-        addTaint(srcMsg.getTaint());
-        try 
-        {
+public void replyToMessage(Message srcMsg, Message dstMsg) {
+        try {
             dstMsg.replyTo = mSrcMessenger;
             srcMsg.replyTo.send(dstMsg);
-        } //End block
-        catch (RemoteException e)
-        {
+        } catch (RemoteException e) {
             log("TODO: handle replyToMessage RemoteException" + e);
             e.printStackTrace();
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //dstMsg.replyTo = mSrcMessenger;
-            //srcMsg.replyTo.send(dstMsg);
-        //} catch (RemoteException e) {
-            //log("TODO: handle replyToMessage RemoteException" + e);
-            //e.printStackTrace();
-        //}
+        }
     }
 
+    /**
+     * Reply to srcMsg
+     *
+     * @param srcMsg
+     * @param what
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.530 -0500", hash_original_method = "BD4B3A181E1CE5BF498106AFACED886D", hash_generated_method = "30CA07B05F86A174B85EE2CBAC1889BC")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.597 -0400", hash_original_method = "BD4B3A181E1CE5BF498106AFACED886D", hash_generated_method = "4AE15D31F02E7AC85CC871A73AF8E54C")
-    public void replyToMessage(Message srcMsg, int what) {
-        addTaint(what);
-        addTaint(srcMsg.getTaint());
+public void replyToMessage(Message srcMsg, int what) {
         Message msg = Message.obtain();
         msg.what = what;
         replyToMessage(srcMsg, msg);
-        // ---------- Original Method ----------
-        //Message msg = Message.obtain();
-        //msg.what = what;
-        //replyToMessage(srcMsg, msg);
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.598 -0400", hash_original_method = "3044254AB71061FF974CD0BBDD0D9BC5", hash_generated_method = "F3ED75FCA64C73C17E7B6B341D2CFD63")
-    public void replyToMessage(Message srcMsg, int what, int arg1) {
-        addTaint(arg1);
-        addTaint(what);
-        addTaint(srcMsg.getTaint());
-        Message msg = Message.obtain();
-        msg.what = what;
-        msg.arg1 = arg1;
-        replyToMessage(srcMsg, msg);
-        // ---------- Original Method ----------
-        //Message msg = Message.obtain();
-        //msg.what = what;
-        //msg.arg1 = arg1;
-        //replyToMessage(srcMsg, msg);
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.599 -0400", hash_original_method = "DA98F71F7AF234EE48D27745943E51D8", hash_generated_method = "4B0E48CA17934D8321C47F6E44812103")
-    public void replyToMessage(Message srcMsg, int what, int arg1, int arg2) {
-        addTaint(arg2);
-        addTaint(arg1);
-        addTaint(what);
-        addTaint(srcMsg.getTaint());
-        Message msg = Message.obtain();
-        msg.what = what;
-        msg.arg1 = arg1;
-        msg.arg2 = arg2;
-        replyToMessage(srcMsg, msg);
-        // ---------- Original Method ----------
-        //Message msg = Message.obtain();
-        //msg.what = what;
-        //msg.arg1 = arg1;
-        //msg.arg2 = arg2;
-        //replyToMessage(srcMsg, msg);
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.599 -0400", hash_original_method = "69829FBE15E20ADBF8C45DA9DA2D1745", hash_generated_method = "C40F2D1C923EE5E365997AACB2B21AE3")
-    public void replyToMessage(Message srcMsg, int what, int arg1, int arg2, Object obj) {
-        addTaint(obj.getTaint());
-        addTaint(arg2);
-        addTaint(arg1);
-        addTaint(what);
-        addTaint(srcMsg.getTaint());
-        Message msg = Message.obtain();
-        msg.what = what;
-        msg.arg1 = arg1;
-        msg.arg2 = arg2;
-        msg.obj = obj;
-        replyToMessage(srcMsg, msg);
-        // ---------- Original Method ----------
-        //Message msg = Message.obtain();
-        //msg.what = what;
-        //msg.arg1 = arg1;
-        //msg.arg2 = arg2;
-        //msg.obj = obj;
-        //replyToMessage(srcMsg, msg);
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.600 -0400", hash_original_method = "7A8712370119BFFFB8554DE52F815A80", hash_generated_method = "96C0B74E039C516DA95EBF538BE32A36")
-    public void replyToMessage(Message srcMsg, int what, Object obj) {
-        addTaint(obj.getTaint());
-        addTaint(what);
-        addTaint(srcMsg.getTaint());
-        Message msg = Message.obtain();
-        msg.what = what;
-        msg.obj = obj;
-        replyToMessage(srcMsg, msg);
-        // ---------- Original Method ----------
-        //Message msg = Message.obtain();
-        //msg.what = what;
-        //msg.obj = obj;
-        //replyToMessage(srcMsg, msg);
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.600 -0400", hash_original_method = "44E20F477AE4DBE39F2143CAA1307C1F", hash_generated_method = "6499A6E35018EDEE067D56FC9F7FD18D")
-    public Message sendMessageSynchronously(Message msg) {
-        addTaint(msg.getTaint());
-        Message resultMsg = SyncMessenger.sendMessageSynchronously(mDstMessenger, msg);
-Message varB356C499DD5E97FACB94A386F09DEB99_819756766 =         resultMsg;
-        varB356C499DD5E97FACB94A386F09DEB99_819756766.addTaint(taint);
-        return varB356C499DD5E97FACB94A386F09DEB99_819756766;
-        // ---------- Original Method ----------
-        //Message resultMsg = SyncMessenger.sendMessageSynchronously(mDstMessenger, msg);
-        //return resultMsg;
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.600 -0400", hash_original_method = "42BD69B2114459AD691B3AEBDAE73546", hash_generated_method = "D3DF55C87B766C5F5F80D54F3AFF08B3")
-    public Message sendMessageSynchronously(int what) {
-        addTaint(what);
-        Message msg = Message.obtain();
-        msg.what = what;
-        Message resultMsg = sendMessageSynchronously(msg);
-Message varB356C499DD5E97FACB94A386F09DEB99_947603623 =         resultMsg;
-        varB356C499DD5E97FACB94A386F09DEB99_947603623.addTaint(taint);
-        return varB356C499DD5E97FACB94A386F09DEB99_947603623;
-        // ---------- Original Method ----------
-        //Message msg = Message.obtain();
-        //msg.what = what;
-        //Message resultMsg = sendMessageSynchronously(msg);
-        //return resultMsg;
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.600 -0400", hash_original_method = "69DA3E1B323882B9D4B744C6E35751A3", hash_generated_method = "FBBA49E6B41B6CA9639C7CF8041DC095")
-    public Message sendMessageSynchronously(int what, int arg1) {
-        addTaint(arg1);
-        addTaint(what);
-        Message msg = Message.obtain();
-        msg.what = what;
-        msg.arg1 = arg1;
-        Message resultMsg = sendMessageSynchronously(msg);
-Message varB356C499DD5E97FACB94A386F09DEB99_1111265780 =         resultMsg;
-        varB356C499DD5E97FACB94A386F09DEB99_1111265780.addTaint(taint);
-        return varB356C499DD5E97FACB94A386F09DEB99_1111265780;
-        // ---------- Original Method ----------
-        //Message msg = Message.obtain();
-        //msg.what = what;
-        //msg.arg1 = arg1;
-        //Message resultMsg = sendMessageSynchronously(msg);
-        //return resultMsg;
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.600 -0400", hash_original_method = "AFDADB0B0E37C71FB8D4BE31CA39F990", hash_generated_method = "C2F52E27608EE4773C88DCF7D7C1B51C")
-    public Message sendMessageSynchronously(int what, int arg1, int arg2) {
-        addTaint(arg2);
-        addTaint(arg1);
-        addTaint(what);
-        Message msg = Message.obtain();
-        msg.what = what;
-        msg.arg1 = arg1;
-        msg.arg2 = arg2;
-        Message resultMsg = sendMessageSynchronously(msg);
-Message varB356C499DD5E97FACB94A386F09DEB99_753484121 =         resultMsg;
-        varB356C499DD5E97FACB94A386F09DEB99_753484121.addTaint(taint);
-        return varB356C499DD5E97FACB94A386F09DEB99_753484121;
-        // ---------- Original Method ----------
-        //Message msg = Message.obtain();
-        //msg.what = what;
-        //msg.arg1 = arg1;
-        //msg.arg2 = arg2;
-        //Message resultMsg = sendMessageSynchronously(msg);
-        //return resultMsg;
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.600 -0400", hash_original_method = "EEAA69B320108852E46A6304535CC9F5", hash_generated_method = "A67356621A928FE8C40AF6A4C1F54999")
-    public Message sendMessageSynchronously(int what, int arg1, int arg2, Object obj) {
-        addTaint(obj.getTaint());
-        addTaint(arg2);
-        addTaint(arg1);
-        addTaint(what);
-        Message msg = Message.obtain();
-        msg.what = what;
-        msg.arg1 = arg1;
-        msg.arg2 = arg2;
-        msg.obj = obj;
-        Message resultMsg = sendMessageSynchronously(msg);
-Message varB356C499DD5E97FACB94A386F09DEB99_958395012 =         resultMsg;
-        varB356C499DD5E97FACB94A386F09DEB99_958395012.addTaint(taint);
-        return varB356C499DD5E97FACB94A386F09DEB99_958395012;
-        // ---------- Original Method ----------
-        //Message msg = Message.obtain();
-        //msg.what = what;
-        //msg.arg1 = arg1;
-        //msg.arg2 = arg2;
-        //msg.obj = obj;
-        //Message resultMsg = sendMessageSynchronously(msg);
-        //return resultMsg;
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.601 -0400", hash_original_method = "35A5E39A8A1820326BDEA32FA9EDD100", hash_generated_method = "3F5CD47EF102D2855ADD02AD10FCD964")
-    public Message sendMessageSynchronously(int what, Object obj) {
-        addTaint(obj.getTaint());
-        addTaint(what);
-        Message msg = Message.obtain();
-        msg.what = what;
-        msg.obj = obj;
-        Message resultMsg = sendMessageSynchronously(msg);
-Message varB356C499DD5E97FACB94A386F09DEB99_1938576809 =         resultMsg;
-        varB356C499DD5E97FACB94A386F09DEB99_1938576809.addTaint(taint);
-        return varB356C499DD5E97FACB94A386F09DEB99_1938576809;
-        // ---------- Original Method ----------
-        //Message msg = Message.obtain();
-        //msg.what = what;
-        //msg.obj = obj;
-        //Message resultMsg = sendMessageSynchronously(msg);
-        //return resultMsg;
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.601 -0400", hash_original_method = "DECE161063975CD41C076FDB9612D509", hash_generated_method = "3F55CE226FF42AC005882C002699E92C")
-    private void replyHalfConnected(int status) {
-        addTaint(status);
-        Message msg = mSrcHandler.obtainMessage(CMD_CHANNEL_HALF_CONNECTED);
-        msg.arg1 = status;
-        msg.obj = this;
-        msg.replyTo = mDstMessenger;
-        mSrcHandler.sendMessage(msg);
-        // ---------- Original Method ----------
-        //Message msg = mSrcHandler.obtainMessage(CMD_CHANNEL_HALF_CONNECTED);
-        //msg.arg1 = status;
-        //msg.obj = this;
-        //msg.replyTo = mDstMessenger;
-        //mSrcHandler.sendMessage(msg);
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.601 -0400", hash_original_method = "6CA7282E928AA840C6D25E995C5EBFEA", hash_generated_method = "5BE3C2E2B91740B7EE24A0C23E43AEED")
-    private void replyDisconnected(int status) {
-        addTaint(status);
-        Message msg = mSrcHandler.obtainMessage(CMD_CHANNEL_DISCONNECTED);
-        msg.arg1 = status;
-        msg.obj = this;
-        msg.replyTo = mDstMessenger;
-        mSrcHandler.sendMessage(msg);
-        // ---------- Original Method ----------
-        //Message msg = mSrcHandler.obtainMessage(CMD_CHANNEL_DISCONNECTED);
-        //msg.arg1 = status;
-        //msg.obj = this;
-        //msg.replyTo = mDstMessenger;
-        //mSrcHandler.sendMessage(msg);
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    private static void log(String s) {
-        Slog.d(TAG, s);
     }
 
     
     private static class SyncMessenger {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.601 -0400", hash_original_field = "4EEFCD2A2A4035CCD511CEED7C58DB1C", hash_generated_field = "3DDB918E56B395BB39CEA1B60967B4FA")
 
-        private HandlerThread mHandlerThread;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.601 -0400", hash_original_field = "C78BEDFC523DB73DF63EFB071AF1C35B", hash_generated_field = "F1B2A09EB6C60E9B00FCB576607A28F3")
-
-        private SyncHandler mHandler;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.601 -0400", hash_original_field = "83FE717B4B643B5D605C868F0E136C03", hash_generated_field = "EF6FF2C2BD8A30E297033DA686E82F32")
-
-        private Messenger mMessenger;
+        /**
+         * @return the SyncMessenger
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.585 -0500", hash_original_method = "6842F7631484B475B06161058D6842E6", hash_generated_method = "59982E7C0D8FDD0B2B29D39E7BB14C2B")
         
-        @DSModeled(DSC.BAN)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.601 -0400", hash_original_method = "836D007993A4B13DC1AF265962B161E2", hash_generated_method = "C3453B046382A1E37BE69572B5A5208C")
-        private  SyncMessenger() {
-            // ---------- Original Method ----------
-        }
-
-        
-        @DSModeled(DSC.BAN)
-        private static SyncMessenger obtain() {
+private static SyncMessenger obtain() {
             SyncMessenger sm;
             synchronized (sStack) {
                 if (sStack.isEmpty()) {
@@ -728,23 +519,15 @@ Message varB356C499DD5E97FACB94A386F09DEB99_1938576809 =         resultMsg;
             return sm;
         }
 
+        /**
+         * Send a message synchronously.
+         *
+         * @param msg to send
+         * @return result message or null if an error occurs
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.591 -0500", hash_original_method = "73417FF22870072B41D9E8892C6ACEAF", hash_generated_method = "98D30C9AEE1B66AD2FCFA7D7A2E2B430")
         
-        @DSModeled(DSC.BAN)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.601 -0400", hash_original_method = "FF57C371186B795A0CEFC17D6A21913E", hash_generated_method = "CAF6CD4E18F4A1C91FFBF693F6326B2C")
-        private void recycle() {
-            synchronized
-(sStack)            {
-                sStack.push(this);
-            } //End block
-            // ---------- Original Method ----------
-            //synchronized (sStack) {
-                //sStack.push(this);
-            //}
-        }
-
-        
-        @DSModeled(DSC.BAN)
-        private static Message sendMessageSynchronously(Messenger dstMessenger, Message msg) {
+private static Message sendMessageSynchronously(Messenger dstMessenger, Message msg) {
             SyncMessenger sm = SyncMessenger.obtain();
             try {
                 if (dstMessenger != null && msg != null) {
@@ -765,129 +548,299 @@ Message varB356C499DD5E97FACB94A386F09DEB99_1938576809 =         resultMsg;
             sm.recycle();
             return resultMsg;
         }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.555 -0500", hash_original_field = "44D8B304FF0825ED15C01664A684AE43", hash_generated_field = "F3416F3570137CC324435FDCE21F667F")
+
+        private static Stack<SyncMessenger> sStack = new Stack<SyncMessenger>();
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.558 -0500", hash_original_field = "FB6343B76EE64852803F4660B30FE5B9", hash_generated_field = "0416DF7181AEB41469BF60FA4A630909")
+
+        private static int sCount = 0;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.561 -0500", hash_original_field = "7832E10F24770DD5CAC6B982304E164E", hash_generated_field = "3DDB918E56B395BB39CEA1B60967B4FA")
+
+        private HandlerThread mHandlerThread;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.564 -0500", hash_original_field = "D1D93C6A9AA80D42503B85A2E5071210", hash_generated_field = "F1B2A09EB6C60E9B00FCB576607A28F3")
+
+        private SyncHandler mHandler;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.567 -0500", hash_original_field = "8B6DF3488BAD8021770FD91E0323D045", hash_generated_field = "EF6FF2C2BD8A30E297033DA686E82F32")
+
+        private Messenger mMessenger;
 
         
         private class SyncHandler extends Handler {
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.602 -0400", hash_original_field = "A45638FBBD363E7511A7CC55752D99A2", hash_generated_field = "F4ED03908BB0903225C1F23BCCA22B59")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.572 -0500", hash_original_field = "A30922BDA37A1ABC6EAFB02E5CFDF21E", hash_generated_field = "F4ED03908BB0903225C1F23BCCA22B59")
 
             private Object mLockObject = new Object();
-            @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.602 -0400", hash_original_field = "821BEB084D776D7083F53B82D8CA446F", hash_generated_field = "1581C98D68E5DB7A76672FB90829B905")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.575 -0500", hash_original_field = "F104CEF064CE711A728BFA78771B4DB7", hash_generated_field = "1581C98D68E5DB7A76672FB90829B905")
 
             private Message mResultMsg;
+
+            /** Constructor */
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.577 -0500", hash_original_method = "483F6356A2D06E95B4EBFBB05049FAB5", hash_generated_method = "162EE86AD77E39FC7FB5466CD2B2FA31")
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.602 -0400", hash_original_method = "483F6356A2D06E95B4EBFBB05049FAB5", hash_generated_method = "8AE03423E5A017F61CD2095B7940F6AD")
-            private  SyncHandler(Looper looper) {
+private SyncHandler(Looper looper) {
                 super(looper);
-                addTaint(looper.getTaint());
-                // ---------- Original Method ----------
             }
 
+            /** Handle of the reply message */
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.580 -0500", hash_original_method = "2469457C965E8FC7C139A1D414384428", hash_generated_method = "42C86E9B0B120923F19E3F5FDF13C046")
             
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.602 -0400", hash_original_method = "2469457C965E8FC7C139A1D414384428", hash_generated_method = "B68F6F5AFC2CC313B0558FB987D81D3F")
-            @Override
+@Override
             public void handleMessage(Message msg) {
-                addTaint(msg.getTaint());
                 mResultMsg = Message.obtain();
                 mResultMsg.copyFrom(msg);
-                synchronized
-(mLockObject)                {
+                synchronized(mLockObject) {
                     mLockObject.notify();
-                } //End block
-                // ---------- Original Method ----------
-                //mResultMsg = Message.obtain();
-                //mResultMsg.copyFrom(msg);
-                //synchronized(mLockObject) {
-                    //mLockObject.notify();
-                //}
+                }
             }
 
             
         }
 
-
+        /** private constructor */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.569 -0500", hash_original_method = "836D007993A4B13DC1AF265962B161E2", hash_generated_method = "CE56A48956738928E715C01B16E44A32")
         
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.602 -0400", hash_original_field = "32E0B371970B38DE7A4C70F0A6D4ADB2", hash_generated_field = "F3416F3570137CC324435FDCE21F667F")
+private SyncMessenger() {
+        }
 
-        private static Stack<SyncMessenger> sStack = new Stack<SyncMessenger>();
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.602 -0400", hash_original_field = "AB4B446C9A519117945C332D08F2B3AA", hash_generated_field = "0416DF7181AEB41469BF60FA4A630909")
-
-        private static int sCount = 0;
+        /**
+         * Recycle this object
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.588 -0500", hash_original_method = "FF57C371186B795A0CEFC17D6A21913E", hash_generated_method = "611CD75D4F68FA4F8A749A0A3935CD3E")
+        
+private void recycle() {
+            synchronized (sStack) {
+                sStack.push(this);
+            }
+        }
     }
 
 
     
     class AsyncChannelConnection implements ServiceConnection {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.600 -0500", hash_original_method = "5CA2E7F994E5D5CA10120B6A293C36BC", hash_generated_method = "5CA2E7F994E5D5CA10120B6A293C36BC")
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.602 -0400", hash_original_method = "5CA2E7F994E5D5CA10120B6A293C36BC", hash_generated_method = "A6BACC4CE181C0EB5D92D381782508F2")
-          AsyncChannelConnection() {
-            // ---------- Original Method ----------
+AsyncChannelConnection() {
         }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.602 -0500", hash_original_method = "0E2027B9824173FAE83BA1B2B965BB96", hash_generated_method = "83656E4DC5DA7B5C38300C15CF4CEDC9")
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.602 -0400", hash_original_method = "0E2027B9824173FAE83BA1B2B965BB96", hash_generated_method = "AF4832D931480F2287E43C9F8D5B6162")
-        @Override
+@Override
         public void onServiceConnected(ComponentName className, IBinder service) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
-            addTaint(service.getTaint());
-            addTaint(className.getTaint());
             mDstMessenger = new Messenger(service);
             replyHalfConnected(STATUS_SUCCESSFUL);
-            // ---------- Original Method ----------
-            //mDstMessenger = new Messenger(service);
-            //replyHalfConnected(STATUS_SUCCESSFUL);
         }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.605 -0500", hash_original_method = "050AF9875EBB5531901E44E1327B5019", hash_generated_method = "4820F9F47CB085274AF4F450BDE93F1D")
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.602 -0400", hash_original_method = "050AF9875EBB5531901E44E1327B5019", hash_generated_method = "9B68FC3708EF5E8A7003120A0B0EC98A")
-        @Override
+@Override
         public void onServiceDisconnected(ComponentName className) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
-            addTaint(className.getTaint());
             replyDisconnected(STATUS_SUCCESSFUL);
-            // ---------- Original Method ----------
-            //replyDisconnected(STATUS_SUCCESSFUL);
         }
 
         
     }
 
-
+    /**
+     * Reply to srcMsg
+     *
+     * @param srcMsg
+     * @param what
+     * @param arg1
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.533 -0500", hash_original_method = "3044254AB71061FF974CD0BBDD0D9BC5", hash_generated_method = "AB88D3EC467AC5EB0755042C58CA48D6")
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.603 -0400", hash_original_field = "E3C3F9FDF6D9AEB53E9CF9AD9B38D9F9", hash_generated_field = "ED89618E6E1B400B84A83667045BD90E")
+public void replyToMessage(Message srcMsg, int what, int arg1) {
+        Message msg = Message.obtain();
+        msg.what = what;
+        msg.arg1 = arg1;
+        replyToMessage(srcMsg, msg);
+    }
 
-    private static final String TAG = "AsyncChannel";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.603 -0400", hash_original_field = "0F6F0EB642B3F46DE2B2DF48DA4427EF", hash_generated_field = "1A61763F9CABC9206BB5AE6E570AB8AE")
+    /**
+     * Reply to srcMsg
+     *
+     * @param srcMsg
+     * @param what
+     * @param arg1
+     * @param arg2
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.535 -0500", hash_original_method = "DA98F71F7AF234EE48D27745943E51D8", hash_generated_method = "10C67902A1722E17522D578EE4DF0395")
+    
+public void replyToMessage(Message srcMsg, int what, int arg1, int arg2) {
+        Message msg = Message.obtain();
+        msg.what = what;
+        msg.arg1 = arg1;
+        msg.arg2 = arg2;
+        replyToMessage(srcMsg, msg);
+    }
 
-    private static final boolean DBG = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.603 -0400", hash_original_field = "779C1F1D3686E0AC3092BEEC135D9001", hash_generated_field = "080FE22C2EA5E5AA1B11A1E7CA05F0C9")
+    /**
+     * Reply to srcMsg
+     *
+     * @param srcMsg
+     * @param what
+     * @param arg1
+     * @param arg2
+     * @param obj
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.537 -0500", hash_original_method = "69829FBE15E20ADBF8C45DA9DA2D1745", hash_generated_method = "6825C0FB6336688E464A7DD79DC4298D")
+    
+public void replyToMessage(Message srcMsg, int what, int arg1, int arg2, Object obj) {
+        Message msg = Message.obtain();
+        msg.what = what;
+        msg.arg1 = arg1;
+        msg.arg2 = arg2;
+        msg.obj = obj;
+        replyToMessage(srcMsg, msg);
+    }
 
-    private static final int BASE = Protocol.BASE_SYSTEM_ASYNC_CHANNEL;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.603 -0400", hash_original_field = "95A07A59335AACDE68585393F863D004", hash_generated_field = "5922F98D688E75A7DA6D8670F04E1B69")
+    /**
+     * Reply to srcMsg
+     *
+     * @param srcMsg
+     * @param what
+     * @param obj
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.539 -0500", hash_original_method = "7A8712370119BFFFB8554DE52F815A80", hash_generated_method = "FE54F644B4F66941ECFA28250BF16714")
+    
+public void replyToMessage(Message srcMsg, int what, Object obj) {
+        Message msg = Message.obtain();
+        msg.what = what;
+        msg.obj = obj;
+        replyToMessage(srcMsg, msg);
+    }
 
-    public static final int CMD_CHANNEL_HALF_CONNECTED = BASE + 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.603 -0400", hash_original_field = "B7BEE252F0BD8FC3350488CD3CBB6812", hash_generated_field = "09022465BCC7090283436B7B026D0301")
+    /**
+     * Send the Message synchronously.
+     *
+     * @param msg to send
+     * @return reply message or null if an error.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.541 -0500", hash_original_method = "44E20F477AE4DBE39F2143CAA1307C1F", hash_generated_method = "36868A8632F5BB2EF68675431B9B2D63")
+    
+public Message sendMessageSynchronously(Message msg) {
+        Message resultMsg = SyncMessenger.sendMessageSynchronously(mDstMessenger, msg);
+        return resultMsg;
+    }
 
-    public static final int CMD_CHANNEL_FULL_CONNECTION = BASE + 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.603 -0400", hash_original_field = "EFD5B8353E29D041ACBB294F825761D6", hash_generated_field = "08BDA67F386A31687D7F2E728CCB59EF")
+    /**
+     * Send the Message synchronously.
+     *
+     * @param what
+     * @return reply message or null if an error.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.544 -0500", hash_original_method = "42BD69B2114459AD691B3AEBDAE73546", hash_generated_method = "C285A4D23EAB85D82915D70E1F66F84C")
+    
+public Message sendMessageSynchronously(int what) {
+        Message msg = Message.obtain();
+        msg.what = what;
+        Message resultMsg = sendMessageSynchronously(msg);
+        return resultMsg;
+    }
 
-    public static final int CMD_CHANNEL_FULLY_CONNECTED = BASE + 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.603 -0400", hash_original_field = "CD9064240D73E3135EB494A9D1ED8316", hash_generated_field = "5CF66347F536B38BA730A7CEF6E0CFE9")
+    /**
+     * Send the Message synchronously.
+     *
+     * @param what
+     * @param arg1
+     * @return reply message or null if an error.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.546 -0500", hash_original_method = "69DA3E1B323882B9D4B744C6E35751A3", hash_generated_method = "60004DC4003AFFE42822995754840E35")
+    
+public Message sendMessageSynchronously(int what, int arg1) {
+        Message msg = Message.obtain();
+        msg.what = what;
+        msg.arg1 = arg1;
+        Message resultMsg = sendMessageSynchronously(msg);
+        return resultMsg;
+    }
 
-    public static final int CMD_CHANNEL_DISCONNECT = BASE + 3;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.603 -0400", hash_original_field = "3FC9A07CB962A7C0A1A7EE392FF6D160", hash_generated_field = "6D1D7878C43DD2115A6EF5986CC11811")
+    /**
+     * Send the Message synchronously.
+     *
+     * @param what
+     * @param arg1
+     * @param arg2
+     * @return reply message or null if an error.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.548 -0500", hash_original_method = "AFDADB0B0E37C71FB8D4BE31CA39F990", hash_generated_method = "B6827FF2C6A650BBE4692173D7372E8C")
+    
+public Message sendMessageSynchronously(int what, int arg1, int arg2) {
+        Message msg = Message.obtain();
+        msg.what = what;
+        msg.arg1 = arg1;
+        msg.arg2 = arg2;
+        Message resultMsg = sendMessageSynchronously(msg);
+        return resultMsg;
+    }
 
-    public static final int CMD_CHANNEL_DISCONNECTED = BASE + 4;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.603 -0400", hash_original_field = "707DC8BC3F4CF3FAADE6DDC746417FF4", hash_generated_field = "BE2B5B401DA0D15F4F87FD186400D2D9")
+    /**
+     * Send the Message synchronously.
+     *
+     * @param what
+     * @param arg1
+     * @param arg2
+     * @param obj
+     * @return reply message or null if an error.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.550 -0500", hash_original_method = "EEAA69B320108852E46A6304535CC9F5", hash_generated_method = "D642B9F06D082255CC2F6570E4A84B40")
+    
+public Message sendMessageSynchronously(int what, int arg1, int arg2, Object obj) {
+        Message msg = Message.obtain();
+        msg.what = what;
+        msg.arg1 = arg1;
+        msg.arg2 = arg2;
+        msg.obj = obj;
+        Message resultMsg = sendMessageSynchronously(msg);
+        return resultMsg;
+    }
 
-    public static final int STATUS_SUCCESSFUL = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.603 -0400", hash_original_field = "E872BA8C35702738E004C4886AAB6262", hash_generated_field = "B8538B9846A8FDBE9642FF7E31DD496A")
+    /**
+     * Send the Message synchronously.
+     *
+     * @param what
+     * @param obj
+     * @return reply message or null if an error.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.552 -0500", hash_original_method = "35A5E39A8A1820326BDEA32FA9EDD100", hash_generated_method = "CE016FA9F8D335C8879BF83223FA7CD6")
+    
+public Message sendMessageSynchronously(int what, Object obj) {
+        Message msg = Message.obtain();
+        msg.what = what;
+        msg.obj = obj;
+        Message resultMsg = sendMessageSynchronously(msg);
+        return resultMsg;
+    }
 
-    public static final int STATUS_BINDING_UNSUCCESSFUL = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.603 -0400", hash_original_field = "93ADC6BE18B0207C4C575F755F0A4A5A", hash_generated_field = "CB11C33E8E76C086F8C44E0468197078")
+    /**
+     * Reply to the src handler that we're half connected.
+     * see: CMD_CHANNEL_HALF_CONNECTED for message contents
+     *
+     * @param status to be stored in msg.arg1
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.595 -0500", hash_original_method = "DECE161063975CD41C076FDB9612D509", hash_generated_method = "F774B739C33D0D5630FC3BFA9F4F988D")
+    
+private void replyHalfConnected(int status) {
+        Message msg = mSrcHandler.obtainMessage(CMD_CHANNEL_HALF_CONNECTED);
+        msg.arg1 = status;
+        msg.obj = this;
+        msg.replyTo = mDstMessenger;
+        mSrcHandler.sendMessage(msg);
+    }
 
-    public static final int STATUS_SEND_UNSUCCESSFUL = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.603 -0400", hash_original_field = "529684E8A613CD3A83BD8105CA8E2B95", hash_generated_field = "E6FE28BA2B9755538A9039337B98C62B")
-
-    public static final int STATUS_FULL_CONNECTION_REFUSED_ALREADY_CONNECTED = 3;
+    /**
+     * Reply to the src handler that we are disconnected
+     * see: CMD_CHANNEL_DISCONNECTED for message contents
+     *
+     * @param status to be stored in msg.arg1
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.597 -0500", hash_original_method = "6CA7282E928AA840C6D25E995C5EBFEA", hash_generated_method = "EE2364AE0179C423F2BD973FF5B92F49")
+    
+private void replyDisconnected(int status) {
+        Message msg = mSrcHandler.obtainMessage(CMD_CHANNEL_DISCONNECTED);
+        msg.arg1 = status;
+        msg.obj = this;
+        msg.replyTo = mDstMessenger;
+        mSrcHandler.sendMessage(msg);
+    }
 }
 

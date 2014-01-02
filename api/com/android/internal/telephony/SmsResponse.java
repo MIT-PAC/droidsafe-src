@@ -1,6 +1,8 @@
 package com.android.internal.telephony;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
@@ -8,44 +10,32 @@ import droidsafe.annotations.*;
 
 
 public class SmsResponse {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.304 -0400", hash_original_field = "3DD57A6A28CB3BA5D3DDB93FBFBCD8F0", hash_generated_field = "E6F7BFC22487D00A28F9E36C2AA573F1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:19.288 -0500", hash_original_field = "E6F7BFC22487D00A28F9E36C2AA573F1", hash_generated_field = "E6F7BFC22487D00A28F9E36C2AA573F1")
 
     int messageRef;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.305 -0400", hash_original_field = "BD83253369470ACA828003EFEC253E8A", hash_generated_field = "447B56C16ADE1A3EBD20B53504F3A1D8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:19.290 -0500", hash_original_field = "447B56C16ADE1A3EBD20B53504F3A1D8", hash_generated_field = "447B56C16ADE1A3EBD20B53504F3A1D8")
 
     String ackPdu;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.305 -0400", hash_original_field = "0279985CDCA9AD2836B5DC949AF215C8", hash_generated_field = "882AAD94CF961762112192DCF3E37119")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:19.293 -0500", hash_original_field = "882AAD94CF961762112192DCF3E37119", hash_generated_field = "882AAD94CF961762112192DCF3E37119")
 
     int errorCode;
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:19.296 -0500", hash_original_method = "3700DD8B61A34F0B0DF8E5BCBD18E935", hash_generated_method = "862F856DD52DE47D969EA6BC32E4AF97")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.306 -0400", hash_original_method = "3700DD8B61A34F0B0DF8E5BCBD18E935", hash_generated_method = "C465187D5327EC890864B613CFFFDF9C")
-    public  SmsResponse(int messageRef, String ackPdu, int errorCode) {
+public SmsResponse(int messageRef, String ackPdu, int errorCode) {
         this.messageRef = messageRef;
         this.ackPdu = ackPdu;
         this.errorCode = errorCode;
-        // ---------- Original Method ----------
-        //this.messageRef = messageRef;
-        //this.ackPdu = ackPdu;
-        //this.errorCode = errorCode;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:19.298 -0500", hash_original_method = "713734C16C162CC185BDF9249475CA58", hash_generated_method = "B5147131D2C4BB90C91C47A69831E916")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.310 -0400", hash_original_method = "713734C16C162CC185BDF9249475CA58", hash_generated_method = "08779FD37B075A82414AF856221A1DCE")
-    public String toString() {
+public String toString() {
         String ret = "{ messageRef = " + messageRef
                         + ", errorCode = " + errorCode
                         + ", ackPdu = " + ackPdu
                         + "}";
-String varEDFF4FBBF053B5DC2B444ADFA049EE0F_36173338 =         ret;
-        varEDFF4FBBF053B5DC2B444ADFA049EE0F_36173338.addTaint(taint);
-        return varEDFF4FBBF053B5DC2B444ADFA049EE0F_36173338;
-        // ---------- Original Method ----------
-        //String ret = "{ messageRef = " + messageRef
-                        //+ ", errorCode = " + errorCode
-                        //+ ", ackPdu = " + ackPdu
-                        //+ "}";
-        //return ret;
+        return ret;
     }
 
     

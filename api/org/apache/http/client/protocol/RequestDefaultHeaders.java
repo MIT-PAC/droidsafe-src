@@ -1,6 +1,8 @@
 package org.apache.http.client.protocol;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 import java.util.Collection;
@@ -15,44 +17,28 @@ import org.apache.http.protocol.HttpContext;
 
 
 public class RequestDefaultHeaders implements HttpRequestInterceptor {
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.524 -0400", hash_original_method = "A692411AA68D5698704806EAFB0D6447", hash_generated_method = "BC9A54616EA56C3FB9CBB65BD3CE817E")
-    public  RequestDefaultHeaders() {
-        super();
-        // ---------- Original Method ----------
-    }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:44.666 -0500", hash_original_method = "A692411AA68D5698704806EAFB0D6447", hash_generated_method = "BD7FFDE8DB7E8AE23358B8D03BBB8E00")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.525 -0400", hash_original_method = "BC6D4315FE478105CC299FA29DDE20AF", hash_generated_method = "04A61F8264D55758D1856387FBF4BF4F")
-    public void process(final HttpRequest request, final HttpContext context) throws HttpException, IOException {
-        addTaint(context.getTaint());
-        addTaint(request.getTaint());
-        if(request == null)        
-        {
-            IllegalArgumentException varF07DEF4BA25028D1DB51C0BA629AF0B4_355779953 = new IllegalArgumentException("HTTP request may not be null");
-            varF07DEF4BA25028D1DB51C0BA629AF0B4_355779953.addTaint(taint);
-            throw varF07DEF4BA25028D1DB51C0BA629AF0B4_355779953;
-        } //End block
+public RequestDefaultHeaders() {
+        super();
+    }
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:44.669 -0500", hash_original_method = "BC6D4315FE478105CC299FA29DDE20AF", hash_generated_method = "10E5C0C258D6760FF3D6408A8AF1DCEE")
+    
+public void process(final HttpRequest request, final HttpContext context) 
+            throws HttpException, IOException {
+        if (request == null) {
+            throw new IllegalArgumentException("HTTP request may not be null");
+        }
+        // Add default headers
         Collection<?> defHeaders = (Collection<?>) request.getParams().getParameter(
                 ClientPNames.DEFAULT_HEADERS);
-        if(defHeaders != null)        
-        {
-for(Object defHeader : defHeaders)
-            {
+        if (defHeaders != null) {
+            for (Object defHeader : defHeaders) {
                 request.addHeader((Header) defHeader);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (request == null) {
-            //throw new IllegalArgumentException("HTTP request may not be null");
-        //}
-        //Collection<?> defHeaders = (Collection<?>) request.getParams().getParameter(
-                //ClientPNames.DEFAULT_HEADERS);
-        //if (defHeaders != null) {
-            //for (Object defHeader : defHeaders) {
-                //request.addHeader((Header) defHeader);
-            //}
-        //}
+            }
+        }
     }
 
     

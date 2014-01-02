@@ -1,6 +1,8 @@
 package android.hardware.usb;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.FileDescriptor;
 
@@ -12,213 +14,245 @@ import android.os.ParcelFileDescriptor;
 import droidsafe.helpers.DSUtils;
 
 public class UsbDeviceConnection {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.933 -0400", hash_original_field = "E34C72FF56A1DC3BE5FEA16F9D3434DA", hash_generated_field = "70928665C1B6A300CDA8094BC826C018")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.069 -0500", hash_original_field = "0C663A0453FFCA73CBAF02CA4F25527B", hash_generated_field = "4D3562CD13C810BE38422BD8716B9B6F")
 
-    private UsbDevice mDevice;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.934 -0400", hash_original_field = "20E813A614226843849BF2E571A8EBCA", hash_generated_field = "0A3F8EE607897645EB2EE30B6939205B")
+
+    private static final String TAG = "UsbDeviceConnection";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.073 -0500", hash_original_field = "96CF9DCB0700F4F17C2B20B3728B381A", hash_generated_field = "70928665C1B6A300CDA8094BC826C018")
+
+
+    private  UsbDevice mDevice;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.076 -0500", hash_original_field = "A4A4998D7B0D1DA56BE7F415CF4F3BBD", hash_generated_field = "0A3F8EE607897645EB2EE30B6939205B")
 
     private int mNativeContext;
+
+    /**
+     * UsbDevice should only be instantiated by UsbService implementation
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.079 -0500", hash_original_method = "890EADCD61ADE223E295BF032157EE11", hash_generated_method = "C5803FF78AE2719195D1DC69971E9931")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.934 -0400", hash_original_method = "890EADCD61ADE223E295BF032157EE11", hash_generated_method = "D29F217DDACE7CAD99DBB7C07BFE803F")
-    public  UsbDeviceConnection(UsbDevice device) {
+public UsbDeviceConnection(UsbDevice device) {
         mDevice = device;
-        // ---------- Original Method ----------
-        //mDevice = device;
     }
 
+    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.081 -0500", hash_original_method = "F5372DEAC10FA7FD7870C2FF0E38F2EF", hash_generated_method = "F5372DEAC10FA7FD7870C2FF0E38F2EF")
     
-        @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.935 -0400", hash_original_method = "F5372DEAC10FA7FD7870C2FF0E38F2EF", hash_generated_method = "05B68FBA6CB06C90BC5F0933054ACDD5")
-     boolean open(String name, ParcelFileDescriptor pfd) {
-        addTaint(pfd.getTaint());
-        addTaint(name.getTaint());
-        boolean varEA6F7C6AA25D64763666034AA8C1A110_540385424 = (native_open(name, pfd.getFileDescriptor()));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1411038704 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1411038704;
-        // ---------- Original Method ----------
-        //return native_open(name, pfd.getFileDescriptor());
+boolean open(String name, ParcelFileDescriptor pfd) {
+        return native_open(name, pfd.getFileDescriptor());
     }
 
+    /**
+     * Releases all system resources related to the device.
+     * Once the object is closed it cannot be used again.
+     * The client must call {@link UsbManager#openDevice} again
+     * to retrieve a new instance to reestablish communication with the device.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.083 -0500", hash_original_method = "5F783EAAF9B610A42120DC63BC101285", hash_generated_method = "9257A400E80B3398D82DE45E753ECB2C")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.936 -0400", hash_original_method = "5F783EAAF9B610A42120DC63BC101285", hash_generated_method = "02B7C7291AB385CA3FB44FB9C4735A37")
-    public void close() {
+public void close() {
         native_close();
-        // ---------- Original Method ----------
-        //native_close();
     }
 
+    /**
+     * Returns the native file descriptor for the device, or
+     * -1 if the device is not opened.
+     * This is intended for passing to native code to access the device.
+     *
+     * @return the native file descriptor
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.086 -0500", hash_original_method = "60A97EE86A4E90019B43CF20671154F6", hash_generated_method = "D1AFDC3E572AC08C800BDCCFD464C4B5")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.936 -0400", hash_original_method = "60A97EE86A4E90019B43CF20671154F6", hash_generated_method = "D0C1E55F2254AD3B56D0685F94FA43DC")
-    public int getFileDescriptor() {
-        int var146D2C80FFCD3E9CDD655A43248E972A_1730772704 = (native_get_fd());
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1342212641 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1342212641;
-        // ---------- Original Method ----------
-        //return native_get_fd();
+public int getFileDescriptor() {
+        return native_get_fd();
     }
 
+    /**
+     * Returns the raw USB descriptors for the device.
+     * This can be used to access descriptors not supported directly
+     * via the higher level APIs.
+     *
+     * @return raw USB descriptors
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.088 -0500", hash_original_method = "C038534F3EE98DEDE0B2FBB8841C177D", hash_generated_method = "E506C17EE9482F4A7FEE53DA20E123B8")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.936 -0400", hash_original_method = "C038534F3EE98DEDE0B2FBB8841C177D", hash_generated_method = "D24125442E8F952DDE721EBFA04FC96B")
-    public byte[] getRawDescriptors() {
-        byte[] varD09739513A6279AA0B9EB08AD5AEB185_314300017 = (native_get_desc());
-                byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_215350129 = {getTaintByte()};
-        return var2F9C81BC6E497382285CD6B7A7E33DE1_215350129;
-        // ---------- Original Method ----------
-        //return native_get_desc();
+public byte[] getRawDescriptors() {
+        return native_get_desc();
     }
 
+    /**
+     * Claims exclusive access to a {@link android.hardware.usb.UsbInterface}.
+     * This must be done before sending or receiving data on any
+     * {@link android.hardware.usb.UsbEndpoint}s belonging to the interface.
+     *
+     * @param intf the interface to claim
+     * @param force true to disconnect kernel driver if necessary
+     * @return true if the interface was successfully claimed
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.092 -0500", hash_original_method = "D71499ECC8620176973E88D08B964E3F", hash_generated_method = "68A5C818784255C557663E724D6F9B0D")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.937 -0400", hash_original_method = "D71499ECC8620176973E88D08B964E3F", hash_generated_method = "80B216C30A6BE32C22580190759D4B0F")
-    public boolean claimInterface(UsbInterface intf, boolean force) {
-        addTaint(force);
-        addTaint(intf.getTaint());
-        boolean var201587C0056AB9C10E81B98F9EDA0933_12015891 = (native_claim_interface(intf.getId(), force));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2081085832 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2081085832;
-        // ---------- Original Method ----------
-        //return native_claim_interface(intf.getId(), force);
+public boolean claimInterface(UsbInterface intf, boolean force) {
+        return native_claim_interface(intf.getId(), force);
     }
 
+    /**
+     * Releases exclusive access to a {@link android.hardware.usb.UsbInterface}.
+     *
+     * @return true if the interface was successfully released
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.095 -0500", hash_original_method = "74FDC63F26CB41DAB86083310901B59F", hash_generated_method = "6C9ED174316CDF155C29E7307DCA1E88")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.938 -0400", hash_original_method = "74FDC63F26CB41DAB86083310901B59F", hash_generated_method = "7E499AA38DB3A5FB99750C9986BAE490")
-    public boolean releaseInterface(UsbInterface intf) {
-        addTaint(intf.getTaint());
-        boolean varCDC0280562D323B2ABB08EBDC5FF73FB_432656141 = (native_release_interface(intf.getId()));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1894624060 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1894624060;
-        // ---------- Original Method ----------
-        //return native_release_interface(intf.getId());
+public boolean releaseInterface(UsbInterface intf) {
+        return native_release_interface(intf.getId());
     }
 
+    /**
+     * Performs a control transaction on endpoint zero for this device.
+     * The direction of the transfer is determined by the request type.
+     * If requestType & {@link UsbConstants#USB_ENDPOINT_DIR_MASK} is
+     * {@link UsbConstants#USB_DIR_OUT}, then the transfer is a write,
+     * and if it is {@link UsbConstants#USB_DIR_IN}, then the transfer
+     * is a read.
+     *
+     * @param requestType request type for this transaction
+     * @param request request ID for this transaction
+     * @param value value field for this transaction
+     * @param index index field for this transaction
+     * @param buffer buffer for data portion of transaction,
+     * or null if no data needs to be sent or received
+     * @param length the length of the data to send or receive
+     * @param timeout in milliseconds
+     * @return length of data transferred (or zero) for success,
+     * or negative value for failure
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.099 -0500", hash_original_method = "287C316117341FB52A3A40CE5C499D4B", hash_generated_method = "CE61F0C638961A5D4F378D03E7A5F968")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.939 -0400", hash_original_method = "287C316117341FB52A3A40CE5C499D4B", hash_generated_method = "DAE9A2F3E971C01C6FBCD20A50B77BE7")
-    public int controlTransfer(int requestType, int request, int value,
+public int controlTransfer(int requestType, int request, int value,
             int index, byte[] buffer, int length, int timeout) {
-        addTaint(timeout);
-        addTaint(length);
-        addTaint(buffer[0]);
-        addTaint(index);
-        addTaint(value);
-        addTaint(request);
-        addTaint(requestType);
-        int var31A50C600220D6BFC984CA860632D8CB_914078208 = (native_control_request(requestType, request, value, index, buffer, length, timeout));
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1502085964 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1502085964;
-        // ---------- Original Method ----------
-        //return native_control_request(requestType, request, value, index, buffer, length, timeout);
+        return native_control_request(requestType, request, value, index, buffer, length, timeout);
     }
 
+    /**
+     * Performs a bulk transaction on the given endpoint.
+     * The direction of the transfer is determined by the direction of the endpoint
+     *
+     * @param endpoint the endpoint for this transaction
+     * @param buffer buffer for data to send or receive,
+     * @param length the length of the data to send or receive
+     * @param timeout in milliseconds
+     * @return length of data transferred (or zero) for success,
+     * or negative value for failure
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.102 -0500", hash_original_method = "3B16B20932FC06A1773A3617B4E26D41", hash_generated_method = "D5B0FFEC51ADE550873498514BC5E299")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.940 -0400", hash_original_method = "3B16B20932FC06A1773A3617B4E26D41", hash_generated_method = "512A5F7023E841912173487F7FA6ED0F")
-    public int bulkTransfer(UsbEndpoint endpoint, byte[] buffer, int length, int timeout) {
-        addTaint(timeout);
-        addTaint(length);
-        addTaint(buffer[0]);
-        addTaint(endpoint.getTaint());
-        int varF6116850FFE379DB0FD51163181563EE_1352470988 = (native_bulk_request(endpoint.getAddress(), buffer, length, timeout));
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_422624946 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_422624946;
-        // ---------- Original Method ----------
-        //return native_bulk_request(endpoint.getAddress(), buffer, length, timeout);
+public int bulkTransfer(UsbEndpoint endpoint, byte[] buffer, int length, int timeout) {
+        return native_bulk_request(endpoint.getAddress(), buffer, length, timeout);
     }
 
+    /**
+     * Waits for the result of a {@link android.hardware.usb.UsbRequest#queue} operation
+     * Note that this may return requests queued on multiple 
+     * {@link android.hardware.usb.UsbEndpoint}s.
+     * When multiple endpoints are in use, {@link android.hardware.usb.UsbRequest#getEndpoint} and
+     * {@link android.hardware.usb.UsbRequest#getClientData} can be useful in determining
+     * how to process the result of this function.
+     *
+     * @return a completed USB request, or null if an error occurred
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.104 -0500", hash_original_method = "5A7C23F6CB3FDC4E6440FEB4EA7749FE", hash_generated_method = "05F936B2991D6F7B534B28AFE283CE34")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.940 -0400", hash_original_method = "5A7C23F6CB3FDC4E6440FEB4EA7749FE", hash_generated_method = "A1BA8A8715831C424E11AC3E7AE52B7B")
-    public UsbRequest requestWait() {
+public UsbRequest requestWait() {
         UsbRequest request = native_request_wait();
-        if(request != null)        
-        {
+        if (request != null) {
             request.dequeue();
-        } //End block
-UsbRequest varCA5195E6E15F740103A7066F05C33A8B_697725926 =         request;
-        varCA5195E6E15F740103A7066F05C33A8B_697725926.addTaint(taint);
-        return varCA5195E6E15F740103A7066F05C33A8B_697725926;
-        // ---------- Original Method ----------
-        //UsbRequest request = native_request_wait();
-        //if (request != null) {
-            //request.dequeue();
-        //}
-        //return request;
+        }
+        return request;
     }
 
+    /**
+     * Returns the serial number for the device.
+     * This will return null if the device has not been opened.
+     *
+     * @return the device serial number
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.107 -0500", hash_original_method = "4F2DA9C2985F5A00889FEF441508C01D", hash_generated_method = "F9BAFD5263D02D037A5EBA14281ADB38")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.961 -0400", hash_original_method = "4F2DA9C2985F5A00889FEF441508C01D", hash_generated_method = "36BD21046B5384A678B87FE288CB62C5")
-    public String getSerial() {
-String var270454DF88BA715612072DB600947C1B_1679448533 =         native_get_serial();
-        var270454DF88BA715612072DB600947C1B_1679448533.addTaint(taint);
-        return var270454DF88BA715612072DB600947C1B_1679448533;
-        // ---------- Original Method ----------
-        //return native_get_serial();
+public String getSerial() {
+        return native_get_serial();
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.112 -0500", hash_original_method = "9E62342DA92A170CFD59DE9144D49504", hash_generated_method = "8CB5F8D9B5EB05A61C61E034D75C67F5")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.961 -0400", hash_original_method = "9E62342DA92A170CFD59DE9144D49504", hash_generated_method = "F26B0E6DBCCE17028078CDAF8519B854")
-    private boolean native_open(String deviceName, FileDescriptor pfd) {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_867855313 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_867855313;
+    private boolean native_open(String deviceName, FileDescriptor pfd){
+    	//Formerly a native method
+    	addTaint(deviceName.getTaint());
+    	addTaint(pfd.getTaint());
+    	return getTaintBoolean();
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.116 -0500", hash_original_method = "6753B93585F19A7AC1519FB4DFF90D14", hash_generated_method = "75E92DEDBEC5DB3628B1DCB207D9511C")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.961 -0400", hash_original_method = "6753B93585F19A7AC1519FB4DFF90D14", hash_generated_method = "2E0BD664A18EDEE4C394D0A3A394EB28")
-    private void native_close() {
+    private void native_close(){
+    	//Formerly a native method
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.121 -0500", hash_original_method = "A13B1C2D71E358422B30B2068556F978", hash_generated_method = "8B72AFBCBF44300893A5227B6BD7856C")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.961 -0400", hash_original_method = "A13B1C2D71E358422B30B2068556F978", hash_generated_method = "4D624980AAE5242F9DB49CE6920F9E85")
-    private int native_get_fd() {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_928834685 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_928834685;
+    private int native_get_fd(){
+    	//Formerly a native method
+    	return getTaintInt();
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.125 -0500", hash_original_method = "6CA261B8E8A3305819062B147F5E1387", hash_generated_method = "C6A6B8E359B6F087548C8B30EA48B374")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.961 -0400", hash_original_method = "6CA261B8E8A3305819062B147F5E1387", hash_generated_method = "F0F87480A0649C01542A418C62739E81")
-    private byte[] native_get_desc() {
-        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1128802255 = {getTaintByte()};
-        return var2F9C81BC6E497382285CD6B7A7E33DE1_1128802255;
+    private byte[] native_get_desc(){
+    	//Formerly a native method
+    	return new byte[]{getTaintByte(),};
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.129 -0500", hash_original_method = "391F7A5C89801BBAF6BA75AC34FFB355", hash_generated_method = "97638E79E50C39579ACC41895D412928")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.961 -0400", hash_original_method = "391F7A5C89801BBAF6BA75AC34FFB355", hash_generated_method = "F8D36DDF2AB0F4CF702247060BCF6927")
-    private boolean native_claim_interface(int interfaceID, boolean force) {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1783819979 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1783819979;
+    private boolean native_claim_interface(int interfaceID, boolean force){
+    	//Formerly a native method
+    	addTaint(interfaceID);
+    	addTaint(force);
+    	return getTaintBoolean();
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.134 -0500", hash_original_method = "0891BD3C52B455B725F54E6AE146CA4B", hash_generated_method = "2A6230FC45A4FE9E939E5E08D8207806")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.962 -0400", hash_original_method = "0891BD3C52B455B725F54E6AE146CA4B", hash_generated_method = "01ADF6D6594565F6ABCF8B017F89CDFB")
-    private boolean native_release_interface(int interfaceID) {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1700223433 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1700223433;
+    private boolean native_release_interface(int interfaceID){
+    	//Formerly a native method
+    	addTaint(interfaceID);
+    	return getTaintBoolean();
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.138 -0500", hash_original_method = "F086403F8994814C82D251244C9D0D13", hash_generated_method = "5AA2AFAA78DB3704B6ED0871646E6400")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.962 -0400", hash_original_method = "F086403F8994814C82D251244C9D0D13", hash_generated_method = "8AADE8183F50538C2B31F5FAC608F8B8")
     private int native_control_request(int requestType, int request, int value,
-            int index, byte[] buffer, int length, int timeout) {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1492761879 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1492761879;
+                int index, byte[] buffer, int length, int timeout){
+    	//Formerly a native method
+    	addTaint(requestType);
+    	addTaint(request);
+    	addTaint(value);
+    	addTaint(index);
+    	addTaint(buffer[0]);
+    	addTaint(length);
+    	addTaint(timeout);
+    	return getTaintInt();
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.143 -0500", hash_original_method = "BF7603948EC97A6C2A6FF162EAFF5EC5", hash_generated_method = "7FFF791DC0F6219145A9D508B19CE03E")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.962 -0400", hash_original_method = "BF7603948EC97A6C2A6FF162EAFF5EC5", hash_generated_method = "31E47830DF17F79F059CDFE155AF87F5")
-    private int native_bulk_request(int endpoint, byte[] buffer, int length, int timeout) {
-        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_630567492 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_630567492;
+    private int native_bulk_request(int endpoint, byte[] buffer, int length, int timeout){
+    	//Formerly a native method
+    	addTaint(endpoint);
+    	addTaint(buffer[0]);
+    	addTaint(length);
+    	addTaint(timeout);
+    	return getTaintInt();
     }
+
 
     
     @DSModeled(DSC.SAFE)
@@ -233,10 +267,5 @@ String var270454DF88BA715612072DB600947C1B_1679448533 =         native_get_seria
     private String native_get_serial() {
     	return DSUtils.UNKNOWN_STRING;
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.962 -0400", hash_original_field = "6CCCB99B62C738C90FA895B8D5FF6882", hash_generated_field = "4D3562CD13C810BE38422BD8716B9B6F")
-
-    private static final String TAG = "UsbDeviceConnection";
 }
 

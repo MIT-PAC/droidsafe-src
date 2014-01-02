@@ -1,6 +1,8 @@
 package gov.nist.javax.sip.header;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import gov.nist.core.PackageNames;
 import gov.nist.javax.sip.header.ims.PAccessNetworkInfo;
@@ -31,24 +33,18 @@ import java.util.Hashtable;
 
 
 public class NameMap implements SIPHeaderNames, PackageNames {
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:00.939 -0500", hash_original_method = "0CF4D79C066C097F21221FDB060FA4F8", hash_generated_method = "56033EF2E571984869A8811F671FA2EB")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.605 -0400", hash_original_method = "4E6FA555129DB964A8E35D51AC605671", hash_generated_method = "4E6FA555129DB964A8E35D51AC605671")
-    public NameMap ()
-    {
-        //Synthesized constructor
-    }
-
-
-    @DSModeled(DSC.SAFE)
-    protected static void putNameMap(String headerName, String className) {
+protected static void putNameMap(String headerName, String className) {
         nameMap.put(
             headerName.toLowerCase(),
             className);
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:00.942 -0500", hash_original_method = "B248307A8F9E50DFEF49B17C8E17D951", hash_generated_method = "E563A0A86173E21089A84293AA15A801")
     
-    @DSModeled(DSC.SAFE)
-    public static Class getClassFromName(String headerName) {
+public static Class getClassFromName(String headerName) {
         String className = (String) nameMap.get(headerName.toLowerCase());
         if (className == null)
             return null;
@@ -61,87 +57,165 @@ public class NameMap implements SIPHeaderNames, PackageNames {
         }
     }
 
+    /** add an extension header to this map.
+    *@param headerName is the extension header name.
+    *@param className is the fully qualified class name that implements
+    * the header (does not have to belong to the nist-sip package).
+    * Use this if you want to use the introspection-based methods.
+    */
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:00.945 -0500", hash_original_method = "87CEA39C87C6E6A55E0C3E8D0DB070E7", hash_generated_method = "433F39090E4F70958D2750670C5A6784")
     
-    @DSModeled(DSC.SAFE)
-    public static void addExtensionHeader(
+public static void addExtensionHeader(
         String headerName,
         String className) {
         nameMap.put(headerName.toLowerCase(), className);
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:00.952 -0500", hash_original_method = "E9B22A8DE01AD2CD98E62339746DE4A7", hash_generated_method = "5F8B99DAC7CF3485F2B4ACAF3F264FB7")
     
-    @DSModeled(DSC.BAN)
-    private static void initializeNameMap() {
+private static void initializeNameMap() {
         nameMap = new Hashtable();
-        putNameMap(MinExpires.NAME, MinExpires.class.getName());
-        putNameMap(ErrorInfo.NAME, ErrorInfo.class.getName());
-        putNameMap(MimeVersion.NAME, MimeVersion.class.getName());
-        putNameMap(InReplyTo.NAME, InReplyTo.class.getName());
-        putNameMap(Allow.NAME, Allow.class.getName());
-        putNameMap(ContentLanguage.NAME, ContentLanguage.class.getName());
-        putNameMap(CALL_INFO, CallInfo.class.getName());
-        putNameMap(CSEQ, CSeq.class.getName());
-        putNameMap(ALERT_INFO, AlertInfo.class.getName());
-        putNameMap(ACCEPT_ENCODING, AcceptEncoding.class.getName());
-        putNameMap(ACCEPT, Accept.class.getName());
-        putNameMap(ACCEPT_LANGUAGE, AcceptLanguage.class.getName());
-        putNameMap(RECORD_ROUTE, RecordRoute.class.getName());
-        putNameMap(TIMESTAMP, TimeStamp.class.getName());
-        putNameMap(TO, To.class.getName());
-        putNameMap(VIA, Via.class.getName());
-        putNameMap(FROM, From.class.getName());
-        putNameMap(CALL_ID, CallID.class.getName());
-        putNameMap(AUTHORIZATION, Authorization.class.getName());
-        putNameMap(PROXY_AUTHENTICATE, ProxyAuthenticate.class.getName());
-        putNameMap(SERVER, Server.class.getName());
-        putNameMap(UNSUPPORTED, Unsupported.class.getName());
-        putNameMap(RETRY_AFTER, RetryAfter.class.getName());
-        putNameMap(CONTENT_TYPE, ContentType.class.getName());
-        putNameMap(CONTENT_ENCODING, ContentEncoding.class.getName());
-        putNameMap(CONTENT_LENGTH, ContentLength.class.getName());
-        putNameMap(ROUTE, Route.class.getName());
-        putNameMap(CONTACT, Contact.class.getName());
-        putNameMap(WWW_AUTHENTICATE, WWWAuthenticate.class.getName());
-        putNameMap(MAX_FORWARDS, MaxForwards.class.getName());
-        putNameMap(ORGANIZATION, Organization.class.getName());
-        putNameMap(PROXY_AUTHORIZATION, ProxyAuthorization.class.getName());
-        putNameMap(PROXY_REQUIRE, ProxyRequire.class.getName());
-        putNameMap(REQUIRE, Require.class.getName());
-        putNameMap(CONTENT_DISPOSITION, ContentDisposition.class.getName());
-        putNameMap(SUBJECT, Subject.class.getName());
-        putNameMap(USER_AGENT, UserAgent.class.getName());
-        putNameMap(WARNING, Warning.class.getName());
-        putNameMap(PRIORITY, Priority.class.getName());
-        putNameMap(DATE, SIPDateHeader.class.getName());
-        putNameMap(EXPIRES, Expires.class.getName());
-        putNameMap(SUPPORTED, Supported.class.getName());
-        putNameMap(REPLY_TO, ReplyTo.class.getName());
-        putNameMap(SUBSCRIPTION_STATE, SubscriptionState.class.getName());
-        putNameMap(EVENT, Event.class.getName());
-        putNameMap(ALLOW_EVENTS, AllowEvents.class.getName());
+        putNameMap(MinExpires.NAME, MinExpires.class.getName()); // 1
+
+        putNameMap(ErrorInfo.NAME, ErrorInfo.class.getName()); // 2
+
+        putNameMap(MimeVersion.NAME, MimeVersion.class.getName()); // 3
+
+        putNameMap(InReplyTo.NAME, InReplyTo.class.getName()); // 4
+
+        putNameMap(Allow.NAME, Allow.class.getName()); // 5
+
+        putNameMap(ContentLanguage.NAME, ContentLanguage.class.getName()); // 6
+
+        putNameMap(CALL_INFO, CallInfo.class.getName()); //7
+
+        putNameMap(CSEQ, CSeq.class.getName()); //8
+
+        putNameMap(ALERT_INFO, AlertInfo.class.getName()); //9
+
+        putNameMap(ACCEPT_ENCODING, AcceptEncoding.class.getName()); //10
+
+        putNameMap(ACCEPT, Accept.class.getName()); //11
+
+        putNameMap(ACCEPT_LANGUAGE, AcceptLanguage.class.getName()); //12
+
+        putNameMap(RECORD_ROUTE, RecordRoute.class.getName()); //13
+
+        putNameMap(TIMESTAMP, TimeStamp.class.getName()); //14
+
+        putNameMap(TO, To.class.getName()); //15
+
+        putNameMap(VIA, Via.class.getName()); //16
+
+        putNameMap(FROM, From.class.getName()); //17
+
+        putNameMap(CALL_ID, CallID.class.getName()); //18
+
+        putNameMap(AUTHORIZATION, Authorization.class.getName()); //19
+
+        putNameMap(PROXY_AUTHENTICATE, ProxyAuthenticate.class.getName()); //20
+
+        putNameMap(SERVER, Server.class.getName()); //21
+
+        putNameMap(UNSUPPORTED, Unsupported.class.getName()); //22
+
+        putNameMap(RETRY_AFTER, RetryAfter.class.getName()); //23
+
+        putNameMap(CONTENT_TYPE, ContentType.class.getName()); //24
+
+        putNameMap(CONTENT_ENCODING, ContentEncoding.class.getName()); //25
+
+        putNameMap(CONTENT_LENGTH, ContentLength.class.getName()); //26
+
+        putNameMap(ROUTE, Route.class.getName()); //27
+
+        putNameMap(CONTACT, Contact.class.getName()); //28
+
+        putNameMap(WWW_AUTHENTICATE, WWWAuthenticate.class.getName()); //29
+
+        putNameMap(MAX_FORWARDS, MaxForwards.class.getName()); //30
+
+        putNameMap(ORGANIZATION, Organization.class.getName()); //31
+
+        putNameMap(PROXY_AUTHORIZATION, ProxyAuthorization.class.getName()); //32
+
+        putNameMap(PROXY_REQUIRE, ProxyRequire.class.getName()); //33
+
+        putNameMap(REQUIRE, Require.class.getName()); //34
+
+        putNameMap(CONTENT_DISPOSITION, ContentDisposition.class.getName()); //35
+
+        putNameMap(SUBJECT, Subject.class.getName()); //36
+
+        putNameMap(USER_AGENT, UserAgent.class.getName()); //37
+
+        putNameMap(WARNING, Warning.class.getName()); //38
+
+        putNameMap(PRIORITY, Priority.class.getName()); //39
+
+        putNameMap(DATE, SIPDateHeader.class.getName()); //40
+
+        putNameMap(EXPIRES, Expires.class.getName()); //41
+
+        putNameMap(SUPPORTED, Supported.class.getName()); //42
+
+        putNameMap(REPLY_TO, ReplyTo.class.getName()); // 43
+
+        putNameMap(SUBSCRIPTION_STATE, SubscriptionState.class.getName()); //44
+
+        putNameMap(EVENT, Event.class.getName()); //45
+
+        putNameMap(ALLOW_EVENTS, AllowEvents.class.getName()); //46
+
+
+        // pmusgrave - extensions
         putNameMap(REFERRED_BY, "ReferredBy");
         putNameMap(SESSION_EXPIRES, "SessionExpires");
         putNameMap(MIN_SE, "MinSE");
         putNameMap(REPLACES, "Replaces");
+        // jean deruelle
         putNameMap(JOIN, "Join");
-        putNameMap(PAccessNetworkInfoHeader.NAME, PAccessNetworkInfo.class.getName());
-        putNameMap(PAssertedIdentityHeader.NAME, PAssertedIdentity.class.getName());
-        putNameMap(PAssociatedURIHeader.NAME, PAssociatedURI.class.getName());
-        putNameMap(PCalledPartyIDHeader.NAME, PCalledPartyID.class.getName());
-        putNameMap(PChargingFunctionAddressesHeader.NAME,  PChargingFunctionAddresses.class.getName());
-        putNameMap(PChargingVectorHeader.NAME,PChargingVector.class.getName());
-        putNameMap(PMediaAuthorizationHeader.NAME,PMediaAuthorization.class.getName());
-        putNameMap(Path.NAME, Path.class.getName());
-        putNameMap(PPreferredIdentity.NAME, PPreferredIdentity.class.getName());
-        putNameMap(Privacy.NAME,Privacy.class.getName());
-        putNameMap(ServiceRoute.NAME, ServiceRoute.class.getName());
-        putNameMap(PVisitedNetworkID.NAME, PVisitedNetworkID.class.getName());
-    }
 
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.607 -0400", hash_original_field = "C45F42D8E26367D12A9961EAC2595CDF", hash_generated_field = "531CBEFD115E0D8DD45BF7A253D5B3F3")
+
+        // IMS Specific headers.
+
+        putNameMap(PAccessNetworkInfoHeader.NAME, PAccessNetworkInfo.class.getName());
+
+        putNameMap(PAssertedIdentityHeader.NAME, PAssertedIdentity.class.getName());
+
+        putNameMap(PAssociatedURIHeader.NAME, PAssociatedURI.class.getName());
+
+        putNameMap(PCalledPartyIDHeader.NAME, PCalledPartyID.class.getName());
+
+        putNameMap(PChargingFunctionAddressesHeader.NAME,  PChargingFunctionAddresses.class.getName());
+
+        putNameMap(PChargingVectorHeader.NAME,PChargingVector.class.getName());
+
+        putNameMap(PMediaAuthorizationHeader.NAME,PMediaAuthorization.class.getName());
+
+        putNameMap(Path.NAME, Path.class.getName());
+
+        putNameMap(PPreferredIdentity.NAME, PPreferredIdentity.class.getName());
+
+        putNameMap(Privacy.NAME,Privacy.class.getName());
+
+        putNameMap(ServiceRoute.NAME, ServiceRoute.class.getName());
+
+        putNameMap(PVisitedNetworkID.NAME, PVisitedNetworkID.class.getName());
+
+
+
+    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:00.936 -0500", hash_original_field = "96028DEAB127065E601657D11EE5475A", hash_generated_field = "531CBEFD115E0D8DD45BF7A253D5B3F3")
 
     static Hashtable nameMap;
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:33.605 -0400", hash_original_method = "4E6FA555129DB964A8E35D51AC605671", hash_generated_method = "4E6FA555129DB964A8E35D51AC605671")
+    public NameMap ()
+    {
+        //Synthesized constructor
+    }
     static {
         initializeNameMap();
     }

@@ -1,6 +1,8 @@
 package gov.nist.javax.sip;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import gov.nist.core.ThreadAuditor;
 import gov.nist.javax.sip.message.SIPRequest;
@@ -32,145 +34,128 @@ import javax.sip.message.Response;
 
 
 class EventScanner implements Runnable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:31.412 -0400", hash_original_field = "DC3583D0854933870215DB386EA8D30E", hash_generated_field = "14EA4271F1CA4E544DF5B6D3AACE226C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.193 -0500", hash_original_field = "028C4EA5C52309C2DE6D499D1B3E3FEF", hash_generated_field = "14EA4271F1CA4E544DF5B6D3AACE226C")
+
 
     private boolean isStopped;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:31.412 -0400", hash_original_field = "1FDC49C806523B6E8C1509C3BF8BDC31", hash_generated_field = "FA603FB92FA509FB776643125A3C791C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.195 -0500", hash_original_field = "11FA541DFC204F75CB36FDDB52ABFC51", hash_generated_field = "FA603FB92FA509FB776643125A3C791C")
+
 
     private int refCount;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:31.412 -0400", hash_original_field = "2F257C654F11384A90D2E638E4BD28E3", hash_generated_field = "3C5E83405A53D5FBE5E156D2F74AA766")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.198 -0500", hash_original_field = "4CF73E35276C2E18559F95BDB74A21C4", hash_generated_field = "3C5E83405A53D5FBE5E156D2F74AA766")
 
     private LinkedList pendingEvents = new LinkedList();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:31.412 -0400", hash_original_field = "C33F74E52313CD1C332E99C7F2371316", hash_generated_field = "467BA1CC5CE0750BC552D8D3070838DC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.201 -0500", hash_original_field = "0919A27EA1347E2B8BF180BE7E741D38", hash_generated_field = "467BA1CC5CE0750BC552D8D3070838DC")
+
 
     private int[] eventMutex = { 0 };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:31.412 -0400", hash_original_field = "37460D4BF2BA47A13FF9D922C4B14B2E", hash_generated_field = "B028268F85C87F49A0E45B93954BF938")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.204 -0500", hash_original_field = "03821C4D777C0A4AB8577E0C5F2371D6", hash_generated_field = "B028268F85C87F49A0E45B93954BF938")
+
 
     private SipStackImpl sipStack;
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.210 -0500", hash_original_method = "ABAFBB618BA49E3B8625E32FADC601ED", hash_generated_method = "BC9AA7CB98DD4C3C92FF8D5A0058083F")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:31.413 -0400", hash_original_method = "ABAFBB618BA49E3B8625E32FADC601ED", hash_generated_method = "640AE9DCA3DB4EFBAE34E349BE80A259")
-    public  EventScanner(SipStackImpl sipStackImpl) {
+public EventScanner(SipStackImpl sipStackImpl) {
         this.pendingEvents = new LinkedList();
         Thread myThread = new Thread(this);
+        // This needs to be set to false else the
+        // main thread mysteriously exits.
         myThread.setDaemon(false);
+
         this.sipStack = sipStackImpl;
+
         myThread.setName("EventScannerThread");
+
         myThread.start();
-        // ---------- Original Method ----------
-        //this.pendingEvents = new LinkedList();
-        //Thread myThread = new Thread(this);
-        //myThread.setDaemon(false);
-        //this.sipStack = sipStackImpl;
-        //myThread.setName("EventScannerThread");
-        //myThread.start();
+
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.207 -0500", hash_original_method = "ECD8E06DC4873A7C1CEDFF4BF8BB2937", hash_generated_method = "2FFC30AF5AA015252C3F0BF71309F00D")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:31.413 -0400", hash_original_method = "ECD8E06DC4873A7C1CEDFF4BF8BB2937", hash_generated_method = "8922132426CA4DFC9E29A3D13CA8BAD1")
-    public void incrementRefcount() {
-        synchronized
-(eventMutex)        {
+public void incrementRefcount() {
+        synchronized (eventMutex) {
             this.refCount++;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (eventMutex) {
-            //this.refCount++;
-        //}
+        }
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.214 -0500", hash_original_method = "A71B34BF35FB557BC1E9288C6E8DE3F6", hash_generated_method = "FCF5B860CD02396C92316E386081BE0E")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:31.413 -0400", hash_original_method = "A71B34BF35FB557BC1E9288C6E8DE3F6", hash_generated_method = "EE0F9CE3BD8341FB293279BC2F97C0A2")
-    public void addEvent(EventWrapper eventWrapper) {
-        addTaint(eventWrapper.getTaint());
-        if(sipStack.isLoggingEnabled())        
-        sipStack.getStackLogger().logDebug("addEvent " + eventWrapper);
-        synchronized
-(this.eventMutex)        {
+public void addEvent(EventWrapper eventWrapper) {
+    	if (sipStack.isLoggingEnabled())
+    		sipStack.getStackLogger().logDebug("addEvent " + eventWrapper);
+        synchronized (this.eventMutex) {
+
             pendingEvents.add(eventWrapper);
+
+            // Add the event into the pending events list
+
             eventMutex.notify();
-        } //End block
-        // ---------- Original Method ----------
-        //if (sipStack.isLoggingEnabled())
-    		//sipStack.getStackLogger().logDebug("addEvent " + eventWrapper);
-        //synchronized (this.eventMutex) {
-            //pendingEvents.add(eventWrapper);
-            //eventMutex.notify();
-        //}
+        }
+
     }
 
+    /**
+     * Stop the event scanner. Decrement the reference count and exit the
+     * scanner thread if the ref count goes to 0.
+     */
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.217 -0500", hash_original_method = "66FF7F77E84125B131D0D04138A3FE42", hash_generated_method = "CB4C0906D3BAE20BA6638CD5E104CC6B")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:31.414 -0400", hash_original_method = "66FF7F77E84125B131D0D04138A3FE42", hash_generated_method = "C1768E218AB02D6895B611755F1204FA")
-    public void stop() {
-        synchronized
-(eventMutex)        {
-            if(this.refCount > 0)            
-            this.refCount--;
-            if(this.refCount == 0)            
-            {
+public void stop() {
+        synchronized (eventMutex) {
+
+            if (this.refCount > 0)
+                this.refCount--;
+
+            if (this.refCount == 0) {
                 isStopped = true;
                 eventMutex.notify();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (eventMutex) {
-            //if (this.refCount > 0)
-                //this.refCount--;
-            //if (this.refCount == 0) {
-                //isStopped = true;
-                //eventMutex.notify();
-            //}
-        //}
+
+            }
+        }
     }
 
+    /**
+     * Brutally stop the event scanner. This does not wait for the refcount to
+     * go to 0.
+     *
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.220 -0500", hash_original_method = "F0E51D59DB287FD1630B012799B48A4C", hash_generated_method = "A0A42509F3805F589A9CF13C272D1360")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:31.415 -0400", hash_original_method = "F0E51D59DB287FD1630B012799B48A4C", hash_generated_method = "5F44D689C5F207AE2B81454D4BA3AE06")
-    public void forceStop() {
-        synchronized
-(this.eventMutex)        {
+public void forceStop() {
+        synchronized (this.eventMutex) {
             this.isStopped = true;
             this.refCount = 0;
             this.eventMutex.notify();
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (this.eventMutex) {
-            //this.isStopped = true;
-            //this.refCount = 0;
-            //this.eventMutex.notify();
-        //}
+        }
+
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.228 -0500", hash_original_method = "1FB221E344118E77FADF803461DF7CDF", hash_generated_method = "F039D07B9DEF47FA6A6A240BF6071529")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:31.419 -0400", hash_original_method = "1FB221E344118E77FADF803461DF7CDF", hash_generated_method = "469FEA17AA20C391E32C7AED6A530B1E")
-    public void deliverEvent(EventWrapper eventWrapper) {
-        addTaint(eventWrapper.getTaint());
+public void deliverEvent(EventWrapper eventWrapper) {
         EventObject sipEvent = eventWrapper.sipEvent;
-        if(sipStack.isLoggingEnabled())        
-        sipStack.getStackLogger().logDebug(
+        if (sipStack.isLoggingEnabled())
+            sipStack.getStackLogger().logDebug(
                     "sipEvent = " + sipEvent + "source = "
                             + sipEvent.getSource());
         SipListener sipListener = null;
-        if(!(sipEvent instanceof IOExceptionEvent))        
-        {
+
+        if (!(sipEvent instanceof IOExceptionEvent)) {
             sipListener = ((SipProviderImpl) sipEvent.getSource()).getSipListener();
-        } //End block
-        else
-        {
+        } else {
             sipListener = sipStack.getSipListener();
-        } //End block
-        if(sipEvent instanceof RequestEvent)        
-        {
-            try 
-            {
+        }
+
+        if (sipEvent instanceof RequestEvent) {
+            try {
+                // Check if this request has already created a
+                // transaction
                 SIPRequest sipRequest = (SIPRequest) ((RequestEvent) sipEvent)
                         .getRequest();
-                if(sipStack.isLoggingEnabled())                
-                {
+
+                if (sipStack.isLoggingEnabled()) {
                     sipStack.getStackLogger().logDebug(
                             "deliverEvent : "
                                     + sipRequest.getFirstLine()
@@ -179,225 +164,254 @@ class EventScanner implements Runnable {
                                     + " sipEvent.serverTx = "
                                     + ((RequestEvent) sipEvent)
                                             .getServerTransaction());
-                } //End block
+                }
+
+                // Discard the duplicate request if a
+                // transaction already exists. If the listener chose
+                // to handle the request statelessly, then the listener
+                // will see the retransmission.
+                // Note that in both of these two cases, JAIN SIP will allow
+                // you to handle the request statefully or statelessly.
+                // An example of the latter case is REGISTER and an example
+                // of the former case is INVITE.
+
                 SIPServerTransaction tx = (SIPServerTransaction) sipStack
                         .findTransaction(sipRequest, true);
-                if(tx != null && !tx.passToListener())                
-                {
-                    if(sipRequest.getMethod().equals(Request.ACK)
+
+                if (tx != null && !tx.passToListener()) {
+
+                    // JvB: make an exception for a very rare case: some
+                    // (broken) UACs use
+                    // the same branch parameter for an ACK. Such an ACK should
+                    // be passed
+                    // to the listener (tx == INVITE ST, terminated upon sending
+                    // 2xx but
+                    // lingering to catch retransmitted INVITEs)
+                    if (sipRequest.getMethod().equals(Request.ACK)
                             && tx.isInviteTransaction() &&
                             ( tx.getLastResponse().getStatusCode()/100 == 2 ||
-                                sipStack.isNon2XXAckPassedToListener()))                    
-                    {
-                        if(sipStack.isLoggingEnabled())                        
-                        sipStack
+                                sipStack.isNon2XXAckPassedToListener())) {
+
+                        if (sipStack.isLoggingEnabled())
+                            sipStack
                                     .getStackLogger()
                                     .logDebug(
                                             "Detected broken client sending ACK with same branch! Passing...");
-                    } //End block
-                    else
-                    {
-                        if(sipStack.isLoggingEnabled())                        
-                        sipStack.getStackLogger().logDebug(
+                    } else {
+                        if (sipStack.isLoggingEnabled())
+                            sipStack.getStackLogger().logDebug(
                                     "transaction already exists! " + tx);
                         return;
-                    } //End block
-                } //End block
-                else
-                if(sipStack.findPendingTransaction(sipRequest) != null)                
-                {
-                    if(sipStack.isLoggingEnabled())                    
-                    sipStack.getStackLogger().logDebug(
+                    }
+                } else if (sipStack.findPendingTransaction(sipRequest) != null) {
+                    if (sipStack.isLoggingEnabled())
+                        sipStack.getStackLogger().logDebug(
                                 "transaction already exists!!");
+
                     return;
-                } //End block
-                else
-                {
+                } else {
+                    // Put it in the pending list so that if a repeat
+                    // request comes along it will not get assigned a
+                    // new transaction
                     SIPServerTransaction st = (SIPServerTransaction) eventWrapper.transaction;
                     sipStack.putPendingTransaction(st);
-                } //End block
+                }
+
+                // Set up a pointer to the transaction.
                 sipRequest.setTransaction(eventWrapper.transaction);
-                try 
-                {
-                    if(sipStack.isLoggingEnabled())                    
-                    {
+                // Change made by SIPquest
+                try {
+
+                    if (sipStack.isLoggingEnabled()) {
                         sipStack.getStackLogger()
                                 .logDebug(
                                         "Calling listener "
                                                 + sipRequest.getFirstLine());
                         sipStack.getStackLogger().logDebug(
                                 "Calling listener " + eventWrapper.transaction);
-                    } //End block
-                    if(sipListener != null)                    
-                    sipListener.processRequest((RequestEvent) sipEvent);
-                    if(sipStack.isLoggingEnabled())                    
-                    {
+                    }
+                    if (sipListener != null)
+                        sipListener.processRequest((RequestEvent) sipEvent);
+
+                    if (sipStack.isLoggingEnabled()) {
                         sipStack.getStackLogger().logDebug(
                                 "Done processing Message "
                                         + sipRequest.getFirstLine());
-                    } //End block
-                    if(eventWrapper.transaction != null)                    
-                    {
+                    }
+                    if (eventWrapper.transaction != null) {
+
                         SIPDialog dialog = (SIPDialog) eventWrapper.transaction
                                 .getDialog();
-                        if(dialog != null)                        
-                        dialog.requestConsumed();
-                    } //End block
-                } //End block
-                catch (Exception ex)
-                {
+                        if (dialog != null)
+                            dialog.requestConsumed();
+
+                    }
+                } catch (Exception ex) {
+                    // We cannot let this thread die under any
+                    // circumstances. Protect ourselves by logging
+                    // errors to the console but continue.
                     sipStack.getStackLogger().logException(ex);
-                } //End block
-            } //End block
-            finally 
-            {
-                if(sipStack.isLoggingEnabled())                
-                {
+                }
+            } finally {
+                if (sipStack.isLoggingEnabled()) {
                     sipStack.getStackLogger().logDebug(
                             "Done processing Message "
                                     + ((SIPRequest) (((RequestEvent) sipEvent)
                                             .getRequest())).getFirstLine());
-                } //End block
-                if(eventWrapper.transaction != null
+                }
+                if (eventWrapper.transaction != null
                         && ((SIPServerTransaction) eventWrapper.transaction)
-                                .passToListener())                
-                {
+                                .passToListener()) {
                     ((SIPServerTransaction) eventWrapper.transaction)
                             .releaseSem();
-                } //End block
-                if(eventWrapper.transaction != null)                
-                sipStack
+                }
+
+                if (eventWrapper.transaction != null)
+                    sipStack
                             .removePendingTransaction((SIPServerTransaction) eventWrapper.transaction);
-                if(eventWrapper.transaction.getOriginalRequest().getMethod()
-                        .equals(Request.ACK))                
-                {
+                if (eventWrapper.transaction.getOriginalRequest().getMethod()
+                        .equals(Request.ACK)) {
+                    // Set the tx state to terminated so it is removed from the
+                    // stack
+                    // if the user configured to get notification on ACK
+                    // termination
                     eventWrapper.transaction
                             .setState(TransactionState.TERMINATED);
-                } //End block
-            } //End block
-        } //End block
-        else
-        if(sipEvent instanceof ResponseEvent)        
-        {
-            try 
-            {
+                }
+            }
+
+        } else if (sipEvent instanceof ResponseEvent) {
+            try {
                 ResponseEvent responseEvent = (ResponseEvent) sipEvent;
                 SIPResponse sipResponse = (SIPResponse) responseEvent
                         .getResponse();
                 SIPDialog sipDialog = ((SIPDialog) responseEvent.getDialog());
-                try 
-                {
-                    if(sipStack.isLoggingEnabled())                    
-                    {
+                try {
+                    if (sipStack.isLoggingEnabled()) {
+
                         sipStack.getStackLogger().logDebug(
                                 "Calling listener for "
                                         + sipResponse.getFirstLine());
-                    } //End block
-                    if(sipListener != null)                    
-                    {
+                    }
+                    if (sipListener != null) {
                         SIPTransaction tx = eventWrapper.transaction;
-                        if(tx != null)                        
-                        {
+                        if (tx != null) {
                             tx.setPassToListener();
-                        } //End block
+                        }
                         sipListener.processResponse((ResponseEvent) sipEvent);
-                    } //End block
-                    if((sipDialog != null && (sipDialog.getState() == null || !sipDialog
+                    }
+
+                    /*
+                     * If the response for a request within a dialog is a 481
+                     * (Call/Transaction Does Not Exist) or a 408 (Request
+                     * Timeout), the UAC SHOULD terminate the dialog.
+                     */
+                    if ((sipDialog != null && (sipDialog.getState() == null || !sipDialog
                             .getState().equals(DialogState.TERMINATED)))
                             && (sipResponse.getStatusCode() == Response.CALL_OR_TRANSACTION_DOES_NOT_EXIST || sipResponse
-                                    .getStatusCode() == Response.REQUEST_TIMEOUT))                    
-                    {
-                        if(sipStack.isLoggingEnabled())                        
-                        {
+                                    .getStatusCode() == Response.REQUEST_TIMEOUT)) {
+                        if (sipStack.isLoggingEnabled()) {
                             sipStack.getStackLogger().logDebug(
                                     "Removing dialog on 408 or 481 response");
-                        } //End block
+                        }
                         sipDialog.doDeferredDelete();
-                    } //End block
-                    if(sipResponse.getCSeq().getMethod()
+                    }
+
+                    /*
+                     * The Client tx disappears after the first 2xx response
+                     * However, additional 2xx responses may arrive later for
+                     * example in the following scenario:
+                     *
+                     * Multiple 2xx responses may arrive at the UAC for a single
+                     * INVITE request due to a forking proxy. Each response is
+                     * distinguished by the tag parameter in the To header
+                     * field, and each represents a distinct dialog, with a
+                     * distinct dialog identifier.
+                     *
+                     * If the Listener does not ACK the 200 then we assume he
+                     * does not care about the dialog and gc the dialog after
+                     * some time. However, this is really an application bug.
+                     * This garbage collects unacknowledged dialogs.
+                     *
+                     */
+                    if (sipResponse.getCSeq().getMethod()
                             .equals(Request.INVITE)
                             && sipDialog != null
-                            && sipResponse.getStatusCode() == 200)                    
-                    {
-                        if(sipStack.isLoggingEnabled())                        
-                        {
+                            && sipResponse.getStatusCode() == 200) {
+                        if (sipStack.isLoggingEnabled()) {
                             sipStack.getStackLogger().logDebug(
                                     "Warning! unacknowledged dialog. " + sipDialog.getState());
-                        } //End block
+                        }
+                        /*
+                         * If we dont see an ACK in 32 seconds, we want to tear down the dialog.
+                         */
                         sipDialog.doDeferredDeleteIfNoAckSent(sipResponse.getCSeq().getSeqNumber());
-                    } //End block
-                } //End block
-                catch (Exception ex)
-                {
+                    }
+                } catch (Exception ex) {
+                    // We cannot let this thread die under any
+                    // circumstances. Protect ourselves by logging
+                    // errors to the console but continue.
                     sipStack.getStackLogger().logException(ex);
-                } //End block
+                }
+                // The original request is not needed except for INVITE
+                // transactions -- null the pointers to the transactions so
+                // that state may be released.
                 SIPClientTransaction ct = (SIPClientTransaction) eventWrapper.transaction;
-                if(ct != null
+                if (ct != null
                         && TransactionState.COMPLETED == ct.getState()
                         && ct.getOriginalRequest() != null
                         && !ct.getOriginalRequest().getMethod().equals(
-                                Request.INVITE))                
-                {
+                                Request.INVITE)) {
+                    // reduce the state to minimum
+                    // This assumes that the application will not need
+                    // to access the request once the transaction is
+                    // completed.
                     ct.clearState();
-                } //End block
-            } //End block
-            finally 
-            {
-                if(eventWrapper.transaction != null
-                        && eventWrapper.transaction.passToListener())                
-                {
+                }
+                // mark no longer in the event queue.
+            } finally {
+                if (eventWrapper.transaction != null
+                        && eventWrapper.transaction.passToListener()) {
                     eventWrapper.transaction.releaseSem();
-                } //End block
-            } //End block
-        } //End block
-        else
-        if(sipEvent instanceof TimeoutEvent)        
-        {
-            try 
-            {
-                if(sipListener != null)                
-                sipListener.processTimeout((TimeoutEvent) sipEvent);
-            } //End block
-            catch (Exception ex)
-            {
+                }
+            }
+
+        } else if (sipEvent instanceof TimeoutEvent) {
+            // Change made by SIPquest
+            try {
+                // Check for null as listener could be removed.
+                if (sipListener != null)
+                    sipListener.processTimeout((TimeoutEvent) sipEvent);
+            } catch (Exception ex) {
+                // We cannot let this thread die under any
+                // circumstances. Protect ourselves by logging
+                // errors to the console but continue.
                 sipStack.getStackLogger().logException(ex);
-            } //End block
-        } //End block
-        else
-        if(sipEvent instanceof DialogTimeoutEvent)        
-        {
-            try 
-            {
-                if(sipListener != null && sipListener instanceof SipListenerExt)                
-                {
-                    ((SipListenerExt)sipListener).processDialogTimeout((DialogTimeoutEvent) sipEvent);
-                } //End block
-            } //End block
-            catch (Exception ex)
-            {
+            }
+
+        } else if (sipEvent instanceof DialogTimeoutEvent) {
+            try {
+                // Check for null as listener could be removed.
+                if (sipListener != null && sipListener instanceof SipListenerExt) {
+                    ((SipListenerExt)sipListener).processDialogTimeout((DialogTimeoutEvent) sipEvent);                    
+                }
+            } catch (Exception ex) {
+                // We cannot let this thread die under any
+                // circumstances. Protect ourselves by logging
+                // errors to the console but continue.
                 sipStack.getStackLogger().logException(ex);
-            } //End block
-        } //End block
-        else
-        if(sipEvent instanceof IOExceptionEvent)        
-        {
-            try 
-            {
-                if(sipListener != null)                
-                sipListener.processIOException((IOExceptionEvent) sipEvent);
-            } //End block
-            catch (Exception ex)
-            {
+            }
+
+        } else if (sipEvent instanceof IOExceptionEvent) {
+            try {
+                if (sipListener != null)
+                    sipListener.processIOException((IOExceptionEvent) sipEvent);
+            } catch (Exception ex) {
                 sipStack.getStackLogger().logException(ex);
-            } //End block
-        } //End block
-        else
-        if(sipEvent instanceof TransactionTerminatedEvent)        
-        {
-            try 
-            {
-                if(sipStack.isLoggingEnabled())                
-                {
+            }
+        } else if (sipEvent instanceof TransactionTerminatedEvent) {
+            try {
+                if (sipStack.isLoggingEnabled()) {
                     sipStack.getStackLogger().logDebug(
                             "About to deliver transactionTerminatedEvent");
                     sipStack.getStackLogger().logDebug(
@@ -408,129 +422,120 @@ class EventScanner implements Runnable {
                             "tx = "
                                     + ((TransactionTerminatedEvent) sipEvent)
                                             .getServerTransaction());
-                } //End block
-                if(sipListener != null)                
-                sipListener
+
+                }
+                if (sipListener != null)
+                    sipListener
                             .processTransactionTerminated((TransactionTerminatedEvent) sipEvent);
-            } //End block
-            catch (AbstractMethodError ame)
-            {
-                if(sipStack.isLoggingEnabled())                
-                sipStack
+            } catch (AbstractMethodError ame) {
+                // JvB: for backwards compatibility, accept this
+            	if (sipStack.isLoggingEnabled())
+            		sipStack
                         .getStackLogger()
                         .logWarning(
                                 "Unable to call sipListener.processTransactionTerminated");
-            } //End block
-            catch (Exception ex)
-            {
+            } catch (Exception ex) {
                 sipStack.getStackLogger().logException(ex);
-            } //End block
-        } //End block
-        else
-        if(sipEvent instanceof DialogTerminatedEvent)        
-        {
-            try 
-            {
-                if(sipListener != null)                
-                sipListener
+            }
+        } else if (sipEvent instanceof DialogTerminatedEvent) {
+            try {
+                if (sipListener != null)
+                    sipListener
                             .processDialogTerminated((DialogTerminatedEvent) sipEvent);
-            } //End block
-            catch (AbstractMethodError ame)
-            {
-                if(sipStack.isLoggingEnabled())                
-                sipStack.getStackLogger().logWarning(
+            } catch (AbstractMethodError ame) {
+                // JvB: for backwards compatibility, accept this
+            	if (sipStack.isLoggingEnabled())
+            		sipStack.getStackLogger().logWarning(
                         "Unable to call sipListener.processDialogTerminated");
-            } //End block
-            catch (Exception ex)
-            {
+            } catch (Exception ex) {
                 sipStack.getStackLogger().logException(ex);
-            } //End block
-        } //End block
-        else
-        {
+            }
+        } else {
+
             sipStack.getStackLogger().logFatalError("bad event" + sipEvent);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        }
+
     }
 
+    /**
+     * For the non-re-entrant listener this delivers the events to the listener
+     * from a single queue. If the listener is re-entrant, then the stack just
+     * calls the deliverEvent method above.
+     */
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.234 -0500", hash_original_method = "5CCAE779A521C5AA39F7D74A098F474A", hash_generated_method = "C673673F7FA2F5C78C4D05886458027F")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:31.422 -0400", hash_original_method = "5CCAE779A521C5AA39F7D74A098F474A", hash_generated_method = "2529A2AAD0F5D7AA92835BB34E5EE903")
-    public void run() {
-        try 
-        {
+public void run() {
+        try {
+            // Ask the auditor to monitor this thread
             ThreadAuditor.ThreadHandle threadHandle = sipStack.getThreadAuditor().addCurrentThread();
-            while
-(true)            
-            {
+
+            while (true) {
                 EventWrapper eventWrapper = null;
+
                 LinkedList eventsToDeliver;
-                synchronized
-(this.eventMutex)                {
-                    while
-(pendingEvents.isEmpty())                    
-                    {
-                        if(this.isStopped)                        
-                        {
-                            if(sipStack.isLoggingEnabled())                            
-                            sipStack.getStackLogger().logDebug(
+                synchronized (this.eventMutex) {
+                    // First, wait for some events to become available.
+                    while (pendingEvents.isEmpty()) {
+                        // There's nothing in the list, check to make sure we
+                        // haven't
+                        // been stopped. If we have, then let the thread die.
+                        if (this.isStopped) {
+                            if (sipStack.isLoggingEnabled())
+                                sipStack.getStackLogger().logDebug(
                                         "Stopped event scanner!!");
                             return;
-                        } //End block
-                        try 
-                        {
+                        }
+
+                        // We haven't been stopped, and the event list is indeed
+                        // rather empty. Wait for some events to come along.
+                        try {
+                            // Send a heartbeat to the thread auditor
                             threadHandle.ping();
+
+                            // Wait for events (with a timeout)
                             eventMutex.wait(threadHandle.getPingIntervalInMillisecs());
-                        } //End block
-                        catch (InterruptedException ex)
-                        {
-                            if(sipStack.isLoggingEnabled())                            
-                            sipStack.getStackLogger().logDebug("Interrupted!");
+                        } catch (InterruptedException ex) {
+                            // Let the thread die a normal death
+                        	if (sipStack.isLoggingEnabled())
+                        		sipStack.getStackLogger().logDebug("Interrupted!");
                             return;
-                        } //End block
-                    } //End block
+                        }
+                    }
+
+                    // There are events in the 'pending events list' that need
+                    // processing. Hold onto the old 'pending Events' list, but
+                    // make a new one for the other methods to operate on. This
+                    // tap-dancing is to avoid deadlocks and also to ensure that
+                    // the list is not modified while we are iterating over it.
                     eventsToDeliver = pendingEvents;
                     pendingEvents = new LinkedList();
-                } //End block
+                }
                 ListIterator iterator = eventsToDeliver.listIterator();
-                while
-(iterator.hasNext())                
-                {
+                while (iterator.hasNext()) {
                     eventWrapper = (EventWrapper) iterator.next();
-                    if(sipStack.isLoggingEnabled())                    
-                    {
+                    if (sipStack.isLoggingEnabled()) {
                         sipStack.getStackLogger().logDebug(
                                 "Processing " + eventWrapper + "nevents "
                                         + eventsToDeliver.size());
-                    } //End block
-                    try 
-                    {
+                    }
+                    try {
                         deliverEvent(eventWrapper);
-                    } //End block
-                    catch (Exception e)
-                    {
-                        if(sipStack.isLoggingEnabled())                        
-                        {
+                    } catch (Exception e) {
+                        if (sipStack.isLoggingEnabled()) {
                             sipStack.getStackLogger().logError(
                                     "Unexpected exception caught while delivering event -- carrying on bravely", e);
-                        } //End block
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
-        finally 
-        {
-            if(sipStack.isLoggingEnabled())            
-            {
-                if(!this.isStopped)                
-                {
+                        }
+                    }
+                }
+            } // end While
+        } finally {
+            if (sipStack.isLoggingEnabled()) {
+                if (!this.isStopped) {
                     sipStack.getStackLogger().logFatalError("Event scanner exited abnormally");
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                }
+            }
+        }
     }
 
     

@@ -1,6 +1,8 @@
 package com.android.internal.telephony.sip;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.content.Context;
 import android.os.Handler;
@@ -16,1096 +18,619 @@ import com.android.internal.telephony.gsm.SmsBroadcastConfigInfo;
 
 
 class SipCommandInterface extends BaseCommands implements CommandsInterface {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.504 -0500", hash_original_method = "A6511375FC27D28438216697969D84B8", hash_generated_method = "A6511375FC27D28438216697969D84B8")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.109 -0400", hash_original_method = "A6511375FC27D28438216697969D84B8", hash_generated_method = "A859198BE8A3007C12546D581D9014DC")
-      SipCommandInterface(Context context) {
+SipCommandInterface(Context context) {
         super(context);
-        addTaint(context.getTaint());
-        // ---------- Original Method ----------
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.506 -0500", hash_original_method = "7892594A38871B784C768CFB911D0AFF", hash_generated_method = "5A578BBF7A7D5E55DB8675EE63D6893A")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.110 -0400", hash_original_method = "7892594A38871B784C768CFB911D0AFF", hash_generated_method = "50D976BC8A2D1F224A5F3DEE5A5257DE")
-    @Override
-    public void setOnNITZTime(Handler h, int what, Object obj) {
-        addTaint(obj.getTaint());
-        addTaint(what);
-        addTaint(h.getTaint());
-        // ---------- Original Method ----------
+@Override public void setOnNITZTime(Handler h, int what, Object obj) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.509 -0500", hash_original_method = "4FF9B345C0ACD80EE0490BCC729EF93D", hash_generated_method = "76B9215D66EE12BF215EE5A62B460C47")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.110 -0400", hash_original_method = "4FF9B345C0ACD80EE0490BCC729EF93D", hash_generated_method = "F24701863F5458CA56139F025132F419")
-    public void getIccCardStatus(Message result) {
-        addTaint(result.getTaint());
-        // ---------- Original Method ----------
+public void getIccCardStatus(Message result) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.512 -0500", hash_original_method = "312175F43C21A9CB89FD25F385D47375", hash_generated_method = "0CC36062313BF0EB99287B24D20699D6")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.111 -0400", hash_original_method = "312175F43C21A9CB89FD25F385D47375", hash_generated_method = "01D9D18D1295F3C5798E543A4FF8844D")
-    public void supplyIccPin(String pin, Message result) {
-        addTaint(result.getTaint());
-        addTaint(pin.getTaint());
-        // ---------- Original Method ----------
+public void supplyIccPin(String pin, Message result) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.514 -0500", hash_original_method = "8D2388C3F4BE09E9BCDF564DE7BCBB17", hash_generated_method = "05FDB5F71EE9C10B7F436222123C6160")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.111 -0400", hash_original_method = "8D2388C3F4BE09E9BCDF564DE7BCBB17", hash_generated_method = "70A5A8DC7DB9D67461D4DD4594305B57")
-    public void supplyIccPuk(String puk, String newPin, Message result) {
-        addTaint(result.getTaint());
-        addTaint(newPin.getTaint());
-        addTaint(puk.getTaint());
-        // ---------- Original Method ----------
+public void supplyIccPuk(String puk, String newPin, Message result) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.516 -0500", hash_original_method = "498621A7956DB667721B9B2B71D65CFE", hash_generated_method = "33FBB2EE6BF8A205BF79B5B9AB7E22B7")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.112 -0400", hash_original_method = "498621A7956DB667721B9B2B71D65CFE", hash_generated_method = "A086A3A56A58BDE1C3CB9EF902809F17")
-    public void supplyIccPin2(String pin, Message result) {
-        addTaint(result.getTaint());
-        addTaint(pin.getTaint());
-        // ---------- Original Method ----------
+public void supplyIccPin2(String pin, Message result) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.518 -0500", hash_original_method = "40AAC8CED8D5308D12D2E5CDAF9B6A47", hash_generated_method = "7537D54F9939C75D4CB77975EE3242C8")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.112 -0400", hash_original_method = "40AAC8CED8D5308D12D2E5CDAF9B6A47", hash_generated_method = "F3A3C410784B251C34F3742B15CB978C")
-    public void supplyIccPuk2(String puk, String newPin2, Message result) {
-        addTaint(result.getTaint());
-        addTaint(newPin2.getTaint());
-        addTaint(puk.getTaint());
-        // ---------- Original Method ----------
+public void supplyIccPuk2(String puk, String newPin2, Message result) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.520 -0500", hash_original_method = "B3FC9EBBB6773F816458111FF8F155DE", hash_generated_method = "41434C0D7EAFB4C29D76B51F8B723798")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.113 -0400", hash_original_method = "B3FC9EBBB6773F816458111FF8F155DE", hash_generated_method = "0A941721CAA8FCE2FE510F613A108A9B")
-    public void changeIccPin(String oldPin, String newPin, Message result) {
-        addTaint(result.getTaint());
-        addTaint(newPin.getTaint());
-        addTaint(oldPin.getTaint());
-        // ---------- Original Method ----------
+public void changeIccPin(String oldPin, String newPin, Message result) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.523 -0500", hash_original_method = "8D51802625738E75E56F41DE488CEBFD", hash_generated_method = "C5289A06D4F545BC16CB91431CEA620F")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.114 -0400", hash_original_method = "8D51802625738E75E56F41DE488CEBFD", hash_generated_method = "44AAAF70398611193B9425B01C7520C5")
-    public void changeIccPin2(String oldPin2, String newPin2, Message result) {
-        addTaint(result.getTaint());
-        addTaint(newPin2.getTaint());
-        addTaint(oldPin2.getTaint());
-        // ---------- Original Method ----------
+public void changeIccPin2(String oldPin2, String newPin2, Message result) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.525 -0500", hash_original_method = "FE49297D5F160C632D8EB8B38400EA83", hash_generated_method = "4120649DCDB8B88EA35A5753610371E2")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.115 -0400", hash_original_method = "FE49297D5F160C632D8EB8B38400EA83", hash_generated_method = "51DC9B9F8C93C052B2C46E4D56152218")
-    public void changeBarringPassword(String facility, String oldPwd,
+public void changeBarringPassword(String facility, String oldPwd,
             String newPwd, Message result) {
-        addTaint(result.getTaint());
-        addTaint(newPwd.getTaint());
-        addTaint(oldPwd.getTaint());
-        addTaint(facility.getTaint());
-        // ---------- Original Method ----------
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.528 -0500", hash_original_method = "CEDA07561D4A2E174B41C09240087336", hash_generated_method = "952376CD6FC90F9A7BBC7B31395C85FB")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.115 -0400", hash_original_method = "CEDA07561D4A2E174B41C09240087336", hash_generated_method = "675973EFD77A5C2A524AFC8E5C2EA6AA")
-    public void supplyNetworkDepersonalization(String netpin, Message result) {
-        addTaint(result.getTaint());
-        addTaint(netpin.getTaint());
-        // ---------- Original Method ----------
+public void supplyNetworkDepersonalization(String netpin, Message result) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.530 -0500", hash_original_method = "0065DCF0A6FA35BBD3B5D6CD7BC5264B", hash_generated_method = "2541E6019B85EA74F2EE4175A2DD5BEB")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.115 -0400", hash_original_method = "0065DCF0A6FA35BBD3B5D6CD7BC5264B", hash_generated_method = "A9FD7129926168194F8C81738F73B523")
-    public void getCurrentCalls(Message result) {
-        addTaint(result.getTaint());
-        // ---------- Original Method ----------
+public void getCurrentCalls(Message result) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.532 -0500", hash_original_method = "1C2C08D3245326421BB25469D878BC40", hash_generated_method = "51C54F69FCE8C97877947FE42615003D")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.115 -0400", hash_original_method = "1C2C08D3245326421BB25469D878BC40", hash_generated_method = "65E61C9D84233D07628E18B039C789FC")
-    @Deprecated
-    public void getPDPContextList(Message result) {
-        addTaint(result.getTaint());
-        // ---------- Original Method ----------
+@Deprecated public void getPDPContextList(Message result) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.534 -0500", hash_original_method = "327D3ACFB77EFA2CD859CBEFD5183E40", hash_generated_method = "C032B00F50B61CD48ACE7483C1CAE1F6")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.116 -0400", hash_original_method = "327D3ACFB77EFA2CD859CBEFD5183E40", hash_generated_method = "6B4B0DFBD4A658CE1D78BA583D8B89B4")
-    public void getDataCallList(Message result) {
-        addTaint(result.getTaint());
-        // ---------- Original Method ----------
+public void getDataCallList(Message result) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.537 -0500", hash_original_method = "DAA1A0C85E21F9D3405F2D9B646EE982", hash_generated_method = "D86502440D184E0C950D53E00BF0DBFA")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.116 -0400", hash_original_method = "DAA1A0C85E21F9D3405F2D9B646EE982", hash_generated_method = "0252DD0B7BDA1F311AD10DEA4FA153BF")
-    public void dial(String address, int clirMode, Message result) {
-        addTaint(result.getTaint());
-        addTaint(clirMode);
-        addTaint(address.getTaint());
-        // ---------- Original Method ----------
+public void dial(String address, int clirMode, Message result) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.539 -0500", hash_original_method = "013CAFE12783E64D183D4781FFBCA18A", hash_generated_method = "7860C8B7FF0D93D6F8EA83440938E3CE")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.117 -0400", hash_original_method = "013CAFE12783E64D183D4781FFBCA18A", hash_generated_method = "602BC4678809614BCBF2C725DD34443A")
-    public void dial(String address, int clirMode, UUSInfo uusInfo,
+public void dial(String address, int clirMode, UUSInfo uusInfo,
             Message result) {
-        addTaint(result.getTaint());
-        addTaint(uusInfo.getTaint());
-        addTaint(clirMode);
-        addTaint(address.getTaint());
-        // ---------- Original Method ----------
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.541 -0500", hash_original_method = "1348EC8F8E592B792A235EF8BDA1A728", hash_generated_method = "2C9D2B54C552FC93C53D0E71928C6700")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.117 -0400", hash_original_method = "1348EC8F8E592B792A235EF8BDA1A728", hash_generated_method = "1BC3CF6348D02C0F570A871C8BBFFA45")
-    public void getIMSI(Message result) {
-        addTaint(result.getTaint());
-        // ---------- Original Method ----------
+public void getIMSI(Message result) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.543 -0500", hash_original_method = "9CFFA6883C5B8E59E96AC7EBA98411BF", hash_generated_method = "DCE270BE5A15685BE5AE62BE96FC962B")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.118 -0400", hash_original_method = "9CFFA6883C5B8E59E96AC7EBA98411BF", hash_generated_method = "4A2BAF0F00DC24A2AA69BBF374CCA3DD")
-    public void getIMEI(Message result) {
-        addTaint(result.getTaint());
-        // ---------- Original Method ----------
+public void getIMEI(Message result) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.545 -0500", hash_original_method = "16825ADE4AEE806A281B5593AC7D63E8", hash_generated_method = "93840DE1625C177F9AEEE641FC9153AE")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.118 -0400", hash_original_method = "16825ADE4AEE806A281B5593AC7D63E8", hash_generated_method = "3BB7929D47817BC305092EC99E5B8635")
-    public void getIMEISV(Message result) {
-        addTaint(result.getTaint());
-        // ---------- Original Method ----------
+public void getIMEISV(Message result) {
     }
 
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.547 -0500", hash_original_method = "367D9C3523440D236020890B46AD46EA", hash_generated_method = "59C0419BF5664B61247B5C6AD39930F8")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.118 -0400", hash_original_method = "367D9C3523440D236020890B46AD46EA", hash_generated_method = "B0B238908FC7D1E1AF10F4E39C172B84")
-    public void hangupConnection(int gsmIndex, Message result) {
-        addTaint(result.getTaint());
-        addTaint(gsmIndex);
-        // ---------- Original Method ----------
+public void hangupConnection (int gsmIndex, Message result) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.549 -0500", hash_original_method = "24CF4908E9C6B567B8992DC13D635451", hash_generated_method = "9D06DD511404884EACCE08FE080194D8")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.119 -0400", hash_original_method = "24CF4908E9C6B567B8992DC13D635451", hash_generated_method = "9CF931A7984CF9D3DFD49C044AD9E861")
-    public void hangupWaitingOrBackground(Message result) {
-        addTaint(result.getTaint());
-        // ---------- Original Method ----------
+public void hangupWaitingOrBackground (Message result) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.551 -0500", hash_original_method = "B6BFA6F3A6A105C9D4B6C1E698A66938", hash_generated_method = "FDF983B8313A79F6512119C1F507F2DA")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.119 -0400", hash_original_method = "B6BFA6F3A6A105C9D4B6C1E698A66938", hash_generated_method = "EB5FF15763B981051CDE84C45FC37FDD")
-    public void hangupForegroundResumeBackground(Message result) {
-        addTaint(result.getTaint());
-        // ---------- Original Method ----------
+public void hangupForegroundResumeBackground (Message result) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.553 -0500", hash_original_method = "E5CA3DEE020231D0A58CD27DCC9A3298", hash_generated_method = "C4F0F27606F26C0E295732F42E1BFC9A")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.119 -0400", hash_original_method = "E5CA3DEE020231D0A58CD27DCC9A3298", hash_generated_method = "2EB6B5FB9DD529E12232CA700C580183")
-    public void switchWaitingOrHoldingAndActive(Message result) {
-        addTaint(result.getTaint());
-        // ---------- Original Method ----------
+public void switchWaitingOrHoldingAndActive (Message result) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.556 -0500", hash_original_method = "1DEC6D6ED7076F247D9C03337753D9B5", hash_generated_method = "1DA486F474CA9B368AC6F4FE7221B366")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.119 -0400", hash_original_method = "1DEC6D6ED7076F247D9C03337753D9B5", hash_generated_method = "00621E9ACCB42DF5B85E6254C9122846")
-    public void conference(Message result) {
-        addTaint(result.getTaint());
-        // ---------- Original Method ----------
+public void conference (Message result) {
     }
 
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.559 -0500", hash_original_method = "F8189B7D9A2D4B100A35E308752559C1", hash_generated_method = "A4310B7F921493C4C6CC636F7691937B")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.120 -0400", hash_original_method = "F8189B7D9A2D4B100A35E308752559C1", hash_generated_method = "3000F0DA05D969EF140E6A6F0FE5B702")
-    public void setPreferredVoicePrivacy(boolean enable, Message result) {
-        addTaint(result.getTaint());
-        addTaint(enable);
-        // ---------- Original Method ----------
+public void setPreferredVoicePrivacy(boolean enable, Message result) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.561 -0500", hash_original_method = "7AC939257493C8EDA50728ACBE47AB6E", hash_generated_method = "DFC24014F1C443B1B12AC986D8473A48")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.120 -0400", hash_original_method = "7AC939257493C8EDA50728ACBE47AB6E", hash_generated_method = "044CDAD52FE5D5F0B5C779E0CE297612")
-    public void getPreferredVoicePrivacy(Message result) {
-        addTaint(result.getTaint());
-        // ---------- Original Method ----------
+public void getPreferredVoicePrivacy(Message result) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.563 -0500", hash_original_method = "0FFF3C40EB3863D408D749356210235C", hash_generated_method = "B2FF05DC74085DBD707DF91785529099")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.121 -0400", hash_original_method = "0FFF3C40EB3863D408D749356210235C", hash_generated_method = "3B52B3A30AF73BD39C99DBC8313E3D3D")
-    public void separateConnection(int gsmIndex, Message result) {
-        addTaint(result.getTaint());
-        addTaint(gsmIndex);
-        // ---------- Original Method ----------
+public void separateConnection (int gsmIndex, Message result) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.566 -0500", hash_original_method = "5D47CDCEE79D220D19ED199AB41576BB", hash_generated_method = "3B045CEA0ADC1BF95EDEF8CB54C47D87")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.121 -0400", hash_original_method = "5D47CDCEE79D220D19ED199AB41576BB", hash_generated_method = "DFE95CFD54ECEF124528CED319D5697E")
-    public void acceptCall(Message result) {
-        addTaint(result.getTaint());
-        // ---------- Original Method ----------
+public void acceptCall (Message result) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.568 -0500", hash_original_method = "B0370CE1AC140C2D8FD8DDB138D51178", hash_generated_method = "06EA40C76B93C16D92193F1414F16D11")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.121 -0400", hash_original_method = "B0370CE1AC140C2D8FD8DDB138D51178", hash_generated_method = "0FE53FDD0041F1BCA7DF741C14DBE141")
-    public void rejectCall(Message result) {
-        addTaint(result.getTaint());
-        // ---------- Original Method ----------
+public void rejectCall (Message result) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.570 -0500", hash_original_method = "423F7E66395D67C4DDE50E0CD115AB32", hash_generated_method = "52B7A76324F60D0444567F23F51FCB7A")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.121 -0400", hash_original_method = "423F7E66395D67C4DDE50E0CD115AB32", hash_generated_method = "FD83E185257D53510C5E0E9D216695F3")
-    public void explicitCallTransfer(Message result) {
-        addTaint(result.getTaint());
-        // ---------- Original Method ----------
+public void explicitCallTransfer (Message result) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.572 -0500", hash_original_method = "452E3A07FEEB48EC41C26B70B19470A7", hash_generated_method = "8AF10DCCBE0C98B6EAEFE811B1402356")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.121 -0400", hash_original_method = "452E3A07FEEB48EC41C26B70B19470A7", hash_generated_method = "682C0B022992F413C4D7A22CF5F801C5")
-    public void getLastCallFailCause(Message result) {
-        addTaint(result.getTaint());
-        // ---------- Original Method ----------
+public void getLastCallFailCause (Message result) {
     }
 
+    /** @deprecated */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.574 -0500", hash_original_method = "866637DA865C177743D4ACCECF2320D1", hash_generated_method = "20F317FA91A75BD80E48365B4F426719")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.122 -0400", hash_original_method = "866637DA865C177743D4ACCECF2320D1", hash_generated_method = "335BC2681608A5C56412A2FD0E8D2C2F")
-    public void getLastPdpFailCause(Message result) {
-        addTaint(result.getTaint());
-        // ---------- Original Method ----------
+public void getLastPdpFailCause (Message result) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.576 -0500", hash_original_method = "5E09CD605032BAD12B5071D1198B480C", hash_generated_method = "36DAEDAE43FF56DE1EA0A3F419AC788B")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.122 -0400", hash_original_method = "5E09CD605032BAD12B5071D1198B480C", hash_generated_method = "5010C1BF40DDE1230AD9415958DAD666")
-    public void getLastDataCallFailCause(Message result) {
-        addTaint(result.getTaint());
-        // ---------- Original Method ----------
+public void getLastDataCallFailCause (Message result) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.579 -0500", hash_original_method = "47C0EC939F57E1591B76316E27B95AC6", hash_generated_method = "6D5ECDFE5AEEC870266D089926FB46AD")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.122 -0400", hash_original_method = "47C0EC939F57E1591B76316E27B95AC6", hash_generated_method = "866BB7FD1B89A05D76C6615D3E56A542")
-    public void setMute(boolean enableMute, Message response) {
-        addTaint(response.getTaint());
-        addTaint(enableMute);
-        // ---------- Original Method ----------
+public void setMute (boolean enableMute, Message response) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.581 -0500", hash_original_method = "18914EB1B73273C70F170F17B7ABD9F7", hash_generated_method = "DFB8537121E87F267CEED44CFDC78F88")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.122 -0400", hash_original_method = "18914EB1B73273C70F170F17B7ABD9F7", hash_generated_method = "61548E4FA53247DA0988874CDE5990B2")
-    public void getMute(Message response) {
-        addTaint(response.getTaint());
-        // ---------- Original Method ----------
+public void getMute (Message response) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.583 -0500", hash_original_method = "2E5F50302D75BF22D071DDE735D84DDB", hash_generated_method = "A5D08C97EB76F1632822EEB8387E9841")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.123 -0400", hash_original_method = "2E5F50302D75BF22D071DDE735D84DDB", hash_generated_method = "5BCBB88C39ABDACE5025F557438913AA")
-    public void getSignalStrength(Message result) {
-        addTaint(result.getTaint());
-        // ---------- Original Method ----------
+public void getSignalStrength (Message result) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.585 -0500", hash_original_method = "E48AE2BAAEA38C3013B3567C40E7D695", hash_generated_method = "915B32BE6C0316BD73590860F1946CAA")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.123 -0400", hash_original_method = "E48AE2BAAEA38C3013B3567C40E7D695", hash_generated_method = "1DD98F561D2F66B1206EACD26CAB0AA4")
-    public void getVoiceRegistrationState(Message result) {
-        addTaint(result.getTaint());
-        // ---------- Original Method ----------
+public void getVoiceRegistrationState (Message result) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.587 -0500", hash_original_method = "3D40BE498077599AA87C5D11079E9906", hash_generated_method = "8D8A036BFBBB06393FD736A388F218C3")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.123 -0400", hash_original_method = "3D40BE498077599AA87C5D11079E9906", hash_generated_method = "53BCA2DDD180EE45B506353788C026C0")
-    public void getDataRegistrationState(Message result) {
-        addTaint(result.getTaint());
-        // ---------- Original Method ----------
+public void getDataRegistrationState (Message result) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.589 -0500", hash_original_method = "0ABE511CA2DC2D12C96958F57DAAD741", hash_generated_method = "491BEC73E4E683B1013C80762E71B8D9")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.123 -0400", hash_original_method = "0ABE511CA2DC2D12C96958F57DAAD741", hash_generated_method = "27B44CA05C8A23318034154BD171C433")
-    public void getOperator(Message result) {
-        addTaint(result.getTaint());
-        // ---------- Original Method ----------
+public void getOperator(Message result) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.592 -0500", hash_original_method = "AD70FA03EB7E7D9139EEB149F6091A1C", hash_generated_method = "6D4A047781FA4D6F1BC41C0EC0911550")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.123 -0400", hash_original_method = "AD70FA03EB7E7D9139EEB149F6091A1C", hash_generated_method = "0A9511FDA8B56853B3A210BB43B3360B")
-    public void sendDtmf(char c, Message result) {
-        addTaint(result.getTaint());
-        addTaint(c);
-        // ---------- Original Method ----------
+public void sendDtmf(char c, Message result) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.594 -0500", hash_original_method = "EE6742CCEC46FE0C371CDA35CEE96A7C", hash_generated_method = "A9FBE54EB8D7A7EC369DFAAEA165C103")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.123 -0400", hash_original_method = "EE6742CCEC46FE0C371CDA35CEE96A7C", hash_generated_method = "422E1DFDF62C8082D65B32A7ABBEE2ED")
-    public void startDtmf(char c, Message result) {
-        addTaint(result.getTaint());
-        addTaint(c);
-        // ---------- Original Method ----------
+public void startDtmf(char c, Message result) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.596 -0500", hash_original_method = "CE80A91715BFB5541CB44AB81DDE6D0F", hash_generated_method = "138BC1FC450AF904E50ECACF52627642")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.124 -0400", hash_original_method = "CE80A91715BFB5541CB44AB81DDE6D0F", hash_generated_method = "C6E4F2B30088D852AF2F167D7624A826")
-    public void stopDtmf(Message result) {
-        addTaint(result.getTaint());
-        // ---------- Original Method ----------
+public void stopDtmf(Message result) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.598 -0500", hash_original_method = "9D33455A19E4CDFE7486EF4C6C2B8AAA", hash_generated_method = "4E0CEBEB5C71C187752508A94405477A")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.124 -0400", hash_original_method = "9D33455A19E4CDFE7486EF4C6C2B8AAA", hash_generated_method = "2DF360359D8702829CF749F4CBE38492")
-    public void sendBurstDtmf(String dtmfString, int on, int off,
+public void sendBurstDtmf(String dtmfString, int on, int off,
             Message result) {
-        addTaint(result.getTaint());
-        addTaint(off);
-        addTaint(on);
-        addTaint(dtmfString.getTaint());
-        // ---------- Original Method ----------
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.600 -0500", hash_original_method = "1A6264A9FF23649BF5DB6F7920F9A21A", hash_generated_method = "B5FF7CBA0BCE016F01249BDE86AF58D6")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.124 -0400", hash_original_method = "1A6264A9FF23649BF5DB6F7920F9A21A", hash_generated_method = "DDA83F7A3DA6C2DFCB2DF67C58157714")
-    public void sendSMS(String smscPDU, String pdu, Message result) {
-        addTaint(result.getTaint());
-        addTaint(pdu.getTaint());
-        addTaint(smscPDU.getTaint());
-        // ---------- Original Method ----------
+public void sendSMS (String smscPDU, String pdu, Message result) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.603 -0500", hash_original_method = "6EB636270661AC6BE13856E5BA601B13", hash_generated_method = "0ADE81982E6685491470B265225037EE")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.124 -0400", hash_original_method = "6EB636270661AC6BE13856E5BA601B13", hash_generated_method = "EEF86FDAE53AA98584D39C2171FD6F56")
-    public void sendCdmaSms(byte[] pdu, Message result) {
-        addTaint(result.getTaint());
-        addTaint(pdu[0]);
-        // ---------- Original Method ----------
+public void sendCdmaSms(byte[] pdu, Message result) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.605 -0500", hash_original_method = "D5DE63795C5344B7C78E8B6314329432", hash_generated_method = "1803AC257F862D098269F780BB0807F1")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.125 -0400", hash_original_method = "D5DE63795C5344B7C78E8B6314329432", hash_generated_method = "FCEB766F384ED582777585496CD2997C")
-    public void deleteSmsOnSim(int index, Message response) {
-        addTaint(response.getTaint());
-        addTaint(index);
-        // ---------- Original Method ----------
+public void deleteSmsOnSim(int index, Message response) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.607 -0500", hash_original_method = "03C10B95DDA41CA22B6255050F7053EA", hash_generated_method = "FBC8A4943AEF27E6DE964977D6D13137")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.125 -0400", hash_original_method = "03C10B95DDA41CA22B6255050F7053EA", hash_generated_method = "FF594D26DB87C4F0303CD47ED870F4D8")
-    public void deleteSmsOnRuim(int index, Message response) {
-        addTaint(response.getTaint());
-        addTaint(index);
-        // ---------- Original Method ----------
+public void deleteSmsOnRuim(int index, Message response) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.609 -0500", hash_original_method = "E5ECA9ECE683BEAA97AF5287FA4FD73D", hash_generated_method = "DAA14ECB46F4954855FBA90844FD3191")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.125 -0400", hash_original_method = "E5ECA9ECE683BEAA97AF5287FA4FD73D", hash_generated_method = "E1C21DC5C086AC451EA77EB72E4F711A")
-    public void writeSmsToSim(int status, String smsc, String pdu, Message response) {
-        addTaint(response.getTaint());
-        addTaint(pdu.getTaint());
-        addTaint(smsc.getTaint());
-        addTaint(status);
-        // ---------- Original Method ----------
+public void writeSmsToSim(int status, String smsc, String pdu, Message response) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.612 -0500", hash_original_method = "301EEEF677F35EBA7B87E2EF64620E88", hash_generated_method = "56C476670DC4CF62CAAAB7AC01666AC9")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.125 -0400", hash_original_method = "301EEEF677F35EBA7B87E2EF64620E88", hash_generated_method = "C5723D6D6AB359F70EC3408DF6AA24DF")
-    public void writeSmsToRuim(int status, String pdu, Message response) {
-        addTaint(response.getTaint());
-        addTaint(pdu.getTaint());
-        addTaint(status);
-        // ---------- Original Method ----------
+public void writeSmsToRuim(int status, String pdu, Message response) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.614 -0500", hash_original_method = "5419A5B08D65477966DC4B41045B2D43", hash_generated_method = "52CD6B0BEA3867E003C4C15BD05C1D26")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.125 -0400", hash_original_method = "5419A5B08D65477966DC4B41045B2D43", hash_generated_method = "AAB046DE4217644CCF0867EDD4206E0C")
-    public void setupDataCall(String radioTechnology, String profile,
+public void setupDataCall(String radioTechnology, String profile,
             String apn, String user, String password, String authType,
             String protocol, Message result) {
-        addTaint(result.getTaint());
-        addTaint(protocol.getTaint());
-        addTaint(authType.getTaint());
-        addTaint(password.getTaint());
-        addTaint(user.getTaint());
-        addTaint(apn.getTaint());
-        addTaint(profile.getTaint());
-        addTaint(radioTechnology.getTaint());
-        // ---------- Original Method ----------
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.616 -0500", hash_original_method = "F4E5DEF79555248AC6400DB4F70FA346", hash_generated_method = "08F18A6BC4F66868F7A26E4B8DB60F58")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.125 -0400", hash_original_method = "F4E5DEF79555248AC6400DB4F70FA346", hash_generated_method = "C4601460B30AFC6461B34623DD83F881")
-    public void deactivateDataCall(int cid, int reason, Message result) {
-        addTaint(result.getTaint());
-        addTaint(reason);
-        addTaint(cid);
-        // ---------- Original Method ----------
+public void deactivateDataCall(int cid, int reason, Message result) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.618 -0500", hash_original_method = "658BFFD1699DF28E1FC33C876F64D0E2", hash_generated_method = "2C22752599418AA1C18236084A6E6268")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.125 -0400", hash_original_method = "658BFFD1699DF28E1FC33C876F64D0E2", hash_generated_method = "4FD426D81286409565D47503F148234C")
-    public void setRadioPower(boolean on, Message result) {
-        addTaint(result.getTaint());
-        addTaint(on);
-        // ---------- Original Method ----------
+public void setRadioPower(boolean on, Message result) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.620 -0500", hash_original_method = "34A3D962E1CAE2FDD06754C7CD1F32F3", hash_generated_method = "50080C11500F8DDA673FCC18DE366C90")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.125 -0400", hash_original_method = "34A3D962E1CAE2FDD06754C7CD1F32F3", hash_generated_method = "F727A2439B4BD3D04A19A43C456921C8")
-    public void setSuppServiceNotifications(boolean enable, Message result) {
-        addTaint(result.getTaint());
-        addTaint(enable);
-        // ---------- Original Method ----------
+public void setSuppServiceNotifications(boolean enable, Message result) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.623 -0500", hash_original_method = "04D2C2576FBA17CACB979DAC278A3D84", hash_generated_method = "0E731209962F09AD9ECDF8FA0AC16329")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.125 -0400", hash_original_method = "04D2C2576FBA17CACB979DAC278A3D84", hash_generated_method = "76212FD231600376799B12D1227CD1E2")
-    public void acknowledgeLastIncomingGsmSms(boolean success, int cause,
+public void acknowledgeLastIncomingGsmSms(boolean success, int cause,
             Message result) {
-        addTaint(result.getTaint());
-        addTaint(cause);
-        addTaint(success);
-        // ---------- Original Method ----------
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.625 -0500", hash_original_method = "BBFEF1AC264FC2EFFBA144FBBD11A68E", hash_generated_method = "B28E556D481EC2EF2445CD059FD2DC5F")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.125 -0400", hash_original_method = "BBFEF1AC264FC2EFFBA144FBBD11A68E", hash_generated_method = "F3C1345F508363A561A4FAC7116047E1")
-    public void acknowledgeLastIncomingCdmaSms(boolean success, int cause,
+public void acknowledgeLastIncomingCdmaSms(boolean success, int cause,
             Message result) {
-        addTaint(result.getTaint());
-        addTaint(cause);
-        addTaint(success);
-        // ---------- Original Method ----------
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.627 -0500", hash_original_method = "281B95F00D12B8C721DC5976D4A537AE", hash_generated_method = "8D1D77776B10791A60EE4E34E821815D")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.126 -0400", hash_original_method = "281B95F00D12B8C721DC5976D4A537AE", hash_generated_method = "152466A5B5A8E4F21B741F0BB637443D")
-    public void acknowledgeIncomingGsmSmsWithPdu(boolean success, String ackPdu,
+public void acknowledgeIncomingGsmSmsWithPdu(boolean success, String ackPdu,
             Message result) {
-        addTaint(result.getTaint());
-        addTaint(ackPdu.getTaint());
-        addTaint(success);
-        // ---------- Original Method ----------
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.629 -0500", hash_original_method = "D56D36D653FFB0D666CDD952E4E3B98E", hash_generated_method = "5B6D78F430479EB99EEA0990A60A26F1")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.126 -0400", hash_original_method = "D56D36D653FFB0D666CDD952E4E3B98E", hash_generated_method = "8869FC9C480118ECD3E3AE6B37D1E448")
-    public void iccIO(int command, int fileid, String path, int p1, int p2,
+public void iccIO (int command, int fileid, String path, int p1, int p2,
             int p3, String data, String pin2, Message result) {
-        addTaint(result.getTaint());
-        addTaint(pin2.getTaint());
-        addTaint(data.getTaint());
-        addTaint(p3);
-        addTaint(p2);
-        addTaint(p1);
-        addTaint(path.getTaint());
-        addTaint(fileid);
-        addTaint(command);
-        // ---------- Original Method ----------
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.632 -0500", hash_original_method = "97A78B1A23DB91BDC82BEB1858BCD95E", hash_generated_method = "6FBDB743F1E63FF09FC1DC4D77078785")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.126 -0400", hash_original_method = "97A78B1A23DB91BDC82BEB1858BCD95E", hash_generated_method = "DEFE694FDA9832A3244B7548A67F8BEA")
-    public void getCLIR(Message result) {
-        addTaint(result.getTaint());
-        // ---------- Original Method ----------
+public void getCLIR(Message result) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.634 -0500", hash_original_method = "B8D63B72DC65EE3608FC65F298DE2981", hash_generated_method = "487C3E24601F5BDEC62BFDE58F3ED640")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.126 -0400", hash_original_method = "B8D63B72DC65EE3608FC65F298DE2981", hash_generated_method = "D0CB34E26D72909033E85718CE2B8AE5")
-    public void setCLIR(int clirMode, Message result) {
-        addTaint(result.getTaint());
-        addTaint(clirMode);
-        // ---------- Original Method ----------
+public void setCLIR(int clirMode, Message result) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.636 -0500", hash_original_method = "5B2012150FA92F57F4DA5FBC8874C419", hash_generated_method = "71284C0D43110D409605A6457E5E1F3A")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.126 -0400", hash_original_method = "5B2012150FA92F57F4DA5FBC8874C419", hash_generated_method = "B7551992587AE4A15B29BC8BD685B8E5")
-    public void queryCallWaiting(int serviceClass, Message response) {
-        addTaint(response.getTaint());
-        addTaint(serviceClass);
-        // ---------- Original Method ----------
+public void queryCallWaiting(int serviceClass, Message response) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.638 -0500", hash_original_method = "5B610ADF58E8A4CB2911C741C5D1D851", hash_generated_method = "BEEB3B4BD9C9417A7D13A2A4AF2A3DED")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.126 -0400", hash_original_method = "5B610ADF58E8A4CB2911C741C5D1D851", hash_generated_method = "BFBEE9A6BAEB7351333169B8C059E7C3")
-    public void setCallWaiting(boolean enable, int serviceClass,
+public void setCallWaiting(boolean enable, int serviceClass,
             Message response) {
-        addTaint(response.getTaint());
-        addTaint(serviceClass);
-        addTaint(enable);
-        // ---------- Original Method ----------
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.640 -0500", hash_original_method = "958A118B1D6DEAAC3F2CD7A0471E8E5A", hash_generated_method = "5C44E2DE0145E74BE24D559D7FB4F61E")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.126 -0400", hash_original_method = "958A118B1D6DEAAC3F2CD7A0471E8E5A", hash_generated_method = "7A56B99868460FC0089A1CFE78EAEABC")
-    public void setNetworkSelectionModeAutomatic(Message response) {
-        addTaint(response.getTaint());
-        // ---------- Original Method ----------
+public void setNetworkSelectionModeAutomatic(Message response) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.642 -0500", hash_original_method = "A699748593EA9CB79EF65A1D8087DE87", hash_generated_method = "C9B8FF5BD94FE479422CEB7457AEC539")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.126 -0400", hash_original_method = "A699748593EA9CB79EF65A1D8087DE87", hash_generated_method = "162B52E0B872C80B84D84C256DDD84EB")
-    public void setNetworkSelectionModeManual(
+public void setNetworkSelectionModeManual(
             String operatorNumeric, Message response) {
-        addTaint(response.getTaint());
-        addTaint(operatorNumeric.getTaint());
-        // ---------- Original Method ----------
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.645 -0500", hash_original_method = "37E66FF0A3AEDBEF007D30C9E2FF98CD", hash_generated_method = "750EC9D099AE8ED87C7F6016FA21C266")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.126 -0400", hash_original_method = "37E66FF0A3AEDBEF007D30C9E2FF98CD", hash_generated_method = "CE677D930885CD53D9A4B104247DF930")
-    public void getNetworkSelectionMode(Message response) {
-        addTaint(response.getTaint());
-        // ---------- Original Method ----------
+public void getNetworkSelectionMode(Message response) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.647 -0500", hash_original_method = "F3D2B6350F8E1C278AFA7ECA9187C8D7", hash_generated_method = "4FB3045AEB51BE4AE5BA1B2F97822222")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.126 -0400", hash_original_method = "F3D2B6350F8E1C278AFA7ECA9187C8D7", hash_generated_method = "8DE8805B27756ABC38F4FA4C3F7580C2")
-    public void getAvailableNetworks(Message response) {
-        addTaint(response.getTaint());
-        // ---------- Original Method ----------
+public void getAvailableNetworks(Message response) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.649 -0500", hash_original_method = "DA232DDE50E73AC5D636EAD7EF5FC864", hash_generated_method = "78B4368EDB55C78685590968D2879D91")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.126 -0400", hash_original_method = "DA232DDE50E73AC5D636EAD7EF5FC864", hash_generated_method = "96D0F85BE8D73CF6889F728EB026E6E7")
-    public void setCallForward(int action, int cfReason, int serviceClass,
+public void setCallForward(int action, int cfReason, int serviceClass,
                 String number, int timeSeconds, Message response) {
-        addTaint(response.getTaint());
-        addTaint(timeSeconds);
-        addTaint(number.getTaint());
-        addTaint(serviceClass);
-        addTaint(cfReason);
-        addTaint(action);
-        // ---------- Original Method ----------
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.652 -0500", hash_original_method = "455A9434E862CC2E0C873DE31EB09A28", hash_generated_method = "1C7D1318CD4BD75FC2299D377F092A3E")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.127 -0400", hash_original_method = "455A9434E862CC2E0C873DE31EB09A28", hash_generated_method = "5406B527F2092EFCD0C04D595F5968C8")
-    public void queryCallForwardStatus(int cfReason, int serviceClass,
+public void queryCallForwardStatus(int cfReason, int serviceClass,
             String number, Message response) {
-        addTaint(response.getTaint());
-        addTaint(number.getTaint());
-        addTaint(serviceClass);
-        addTaint(cfReason);
-        // ---------- Original Method ----------
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.654 -0500", hash_original_method = "1E5E60364AF2DDDA55FE9584B8EF0B2C", hash_generated_method = "91C0AE1325FEE356724D94620E928740")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.127 -0400", hash_original_method = "1E5E60364AF2DDDA55FE9584B8EF0B2C", hash_generated_method = "9147641EFFDAF93914A6EABC0CFE6AB9")
-    public void queryCLIP(Message response) {
-        addTaint(response.getTaint());
-        // ---------- Original Method ----------
+public void queryCLIP(Message response) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.656 -0500", hash_original_method = "EE7857BCB5A1D2385833186B6353BDF6", hash_generated_method = "48793710A2CD622658F3F8DE073389DA")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.127 -0400", hash_original_method = "EE7857BCB5A1D2385833186B6353BDF6", hash_generated_method = "8EF8B502E5543E4FA6B8D0E9B9B758FD")
-    public void getBasebandVersion(Message response) {
-        addTaint(response.getTaint());
-        // ---------- Original Method ----------
+public void getBasebandVersion (Message response) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.658 -0500", hash_original_method = "A56D965167C62C2F95036EFE39C4CA71", hash_generated_method = "59EB3D69CE2DA21EFAAB0026083C52B1")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.127 -0400", hash_original_method = "A56D965167C62C2F95036EFE39C4CA71", hash_generated_method = "B54224A9A59DE514DCF1E8421DBC3F3B")
-    @Override
+@Override
     public void queryFacilityLock(String facility, String password,
             int serviceClass, Message response) {
-        addTaint(response.getTaint());
-        addTaint(serviceClass);
-        addTaint(password.getTaint());
-        addTaint(facility.getTaint());
-        // ---------- Original Method ----------
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.660 -0500", hash_original_method = "230F3C7CDCF2BDF61799EBE662AE054E", hash_generated_method = "226B00A2CA72ADCD4C405CDAEC418736")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.127 -0400", hash_original_method = "230F3C7CDCF2BDF61799EBE662AE054E", hash_generated_method = "155F0815FB3127D858CA2B683C063583")
-    @Override
+@Override
     public void queryFacilityLockForApp(String facility, String password,
             int serviceClass, String appId, Message response) {
-        addTaint(response.getTaint());
-        addTaint(appId.getTaint());
-        addTaint(serviceClass);
-        addTaint(password.getTaint());
-        addTaint(facility.getTaint());
-        // ---------- Original Method ----------
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.663 -0500", hash_original_method = "AD3FF097428D5AB19C8EE6C9813E3899", hash_generated_method = "C3764D7F8C6421AB96AD1C0ECD0D57AB")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.127 -0400", hash_original_method = "AD3FF097428D5AB19C8EE6C9813E3899", hash_generated_method = "1B5BCAEFE15DF77124D79F989BA341BE")
-    @Override
+@Override
     public void setFacilityLock(String facility, boolean lockState,
             String password, int serviceClass, Message response) {
-        addTaint(response.getTaint());
-        addTaint(serviceClass);
-        addTaint(password.getTaint());
-        addTaint(lockState);
-        addTaint(facility.getTaint());
-        // ---------- Original Method ----------
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.665 -0500", hash_original_method = "933F2123A615A9A39A40CBF915D35DBF", hash_generated_method = "ABB15714AFB35E99821079D4BDECED3B")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.128 -0400", hash_original_method = "933F2123A615A9A39A40CBF915D35DBF", hash_generated_method = "8044789C9B0A8CBE67D0CB07D54088EF")
-    @Override
+@Override
     public void setFacilityLockForApp(String facility, boolean lockState,
             String password, int serviceClass, String appId, Message response) {
-        addTaint(response.getTaint());
-        addTaint(appId.getTaint());
-        addTaint(serviceClass);
-        addTaint(password.getTaint());
-        addTaint(lockState);
-        addTaint(facility.getTaint());
-        // ---------- Original Method ----------
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.668 -0500", hash_original_method = "F9FFB06D76A77B7B92045DB70103041E", hash_generated_method = "95F3480671289286868A1C55EEF16322")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.128 -0400", hash_original_method = "F9FFB06D76A77B7B92045DB70103041E", hash_generated_method = "A502491F26D17F9676F63FA4314E9FB8")
-    public void sendUSSD(String ussdString, Message response) {
-        addTaint(response.getTaint());
-        addTaint(ussdString.getTaint());
-        // ---------- Original Method ----------
+public void sendUSSD (String ussdString, Message response) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.670 -0500", hash_original_method = "087B5572C84FB61528C8D96F1C079352", hash_generated_method = "5EB9777F0820F1A5CD31EDE08CF095E0")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.128 -0400", hash_original_method = "087B5572C84FB61528C8D96F1C079352", hash_generated_method = "236723AE7FCF2BF8A022AB9F84BA8CF8")
-    public void cancelPendingUssd(Message response) {
-        addTaint(response.getTaint());
-        // ---------- Original Method ----------
+public void cancelPendingUssd (Message response) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.672 -0500", hash_original_method = "B603C96410E7BFF356539653D85D8A4B", hash_generated_method = "1CB1FDC519CFA0AE932DC9847332BAF9")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.128 -0400", hash_original_method = "B603C96410E7BFF356539653D85D8A4B", hash_generated_method = "48880F5B99EA0990FA58F3834AFA969F")
-    public void resetRadio(Message result) {
-        addTaint(result.getTaint());
-        // ---------- Original Method ----------
+public void resetRadio(Message result) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.675 -0500", hash_original_method = "304D94F0A203021B29E8BE917AB2A88E", hash_generated_method = "825D0D14877074DE432AD2513DF0E4E5")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.128 -0400", hash_original_method = "304D94F0A203021B29E8BE917AB2A88E", hash_generated_method = "BBC4BADFA4986326D34AE02CC6D95EBC")
-    public void invokeOemRilRequestRaw(byte[] data, Message response) {
-        addTaint(response.getTaint());
-        addTaint(data[0]);
-        // ---------- Original Method ----------
+public void invokeOemRilRequestRaw(byte[] data, Message response) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.677 -0500", hash_original_method = "5FCB7D9B46CBA85CB2A2479605C5EBE0", hash_generated_method = "19F7C2D125CB12D05DFC7F76C65DAA1F")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.128 -0400", hash_original_method = "5FCB7D9B46CBA85CB2A2479605C5EBE0", hash_generated_method = "67E4AC990919C70B583083C5518375AA")
-    public void invokeOemRilRequestStrings(String[] strings, Message response) {
-        addTaint(response.getTaint());
-        addTaint(strings[0].getTaint());
-        // ---------- Original Method ----------
+public void invokeOemRilRequestStrings(String[] strings, Message response) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.679 -0500", hash_original_method = "B390B8B053975D6E247D6ADF9DE7B6FC", hash_generated_method = "9B1E26C88804147F1044601E6FAFD0D1")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.128 -0400", hash_original_method = "B390B8B053975D6E247D6ADF9DE7B6FC", hash_generated_method = "01F702E216A0427E1846C804D8DCE1FB")
-    public void setBandMode(int bandMode, Message response) {
-        addTaint(response.getTaint());
-        addTaint(bandMode);
-        // ---------- Original Method ----------
+public void setBandMode (int bandMode, Message response) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.681 -0500", hash_original_method = "CDBADCA8574456832760B996C8943606", hash_generated_method = "F12FCA5CA1CBC2538E7C948B5FD9C704")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.128 -0400", hash_original_method = "CDBADCA8574456832760B996C8943606", hash_generated_method = "9E905752474D54F07494DE0266882C50")
-    public void queryAvailableBandMode(Message response) {
-        addTaint(response.getTaint());
-        // ---------- Original Method ----------
+public void queryAvailableBandMode (Message response) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.683 -0500", hash_original_method = "1B08354C58BC7E4FA9F6A992437EB8EB", hash_generated_method = "11B38D25E7337C9942626E677CC05CD5")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.128 -0400", hash_original_method = "1B08354C58BC7E4FA9F6A992437EB8EB", hash_generated_method = "F78C94E82B91129DA9B7F1C68E11D39D")
-    public void sendTerminalResponse(String contents, Message response) {
-        addTaint(response.getTaint());
-        addTaint(contents.getTaint());
-        // ---------- Original Method ----------
+public void sendTerminalResponse(String contents, Message response) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.685 -0500", hash_original_method = "8510CB1FCB2D71445BC7D7948652F9FF", hash_generated_method = "277D160E2BCED1813CBC38E24F18ED75")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.129 -0400", hash_original_method = "8510CB1FCB2D71445BC7D7948652F9FF", hash_generated_method = "1D4C12CA7F75E289A70D3ADEECA77EAA")
-    public void sendEnvelope(String contents, Message response) {
-        addTaint(response.getTaint());
-        addTaint(contents.getTaint());
-        // ---------- Original Method ----------
+public void sendEnvelope(String contents, Message response) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.687 -0500", hash_original_method = "A584A8270CEEFF3893478A017045D938", hash_generated_method = "701A8A2326E4652731616B817B35A9DB")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.129 -0400", hash_original_method = "A584A8270CEEFF3893478A017045D938", hash_generated_method = "EAC7A971D5443642F2EF39534F510A3F")
-    public void sendEnvelopeWithStatus(String contents, Message response) {
-        addTaint(response.getTaint());
-        addTaint(contents.getTaint());
-        // ---------- Original Method ----------
+public void sendEnvelopeWithStatus(String contents, Message response) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.689 -0500", hash_original_method = "7D7F347B6C7F161149D5C29633177CD2", hash_generated_method = "5E964BF2AEBFCE3356F29D6337E2A4CF")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.129 -0400", hash_original_method = "7D7F347B6C7F161149D5C29633177CD2", hash_generated_method = "9BDFEC505FC0F5951851FB0DE793BF16")
-    public void handleCallSetupRequestFromSim(
+public void handleCallSetupRequestFromSim(
             boolean accept, Message response) {
-        addTaint(response.getTaint());
-        addTaint(accept);
-        // ---------- Original Method ----------
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.692 -0500", hash_original_method = "27AB8573439D5EB2F33C81C73E25E8F8", hash_generated_method = "B70520F14CE098A6483B62DA41D8EE88")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.129 -0400", hash_original_method = "27AB8573439D5EB2F33C81C73E25E8F8", hash_generated_method = "0C15BA53C77F4454EB4ED2DEF60A8A03")
-    public void setPreferredNetworkType(int networkType , Message response) {
-        addTaint(response.getTaint());
-        addTaint(networkType);
-        // ---------- Original Method ----------
+public void setPreferredNetworkType(int networkType , Message response) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.694 -0500", hash_original_method = "C86073EB20CA48BDFFC81AAA868A3BB1", hash_generated_method = "43D58558D25D3F982400172415A99BCC")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.129 -0400", hash_original_method = "C86073EB20CA48BDFFC81AAA868A3BB1", hash_generated_method = "1AE3884B7769F676D97B43ED8992EB06")
-    public void getPreferredNetworkType(Message response) {
-        addTaint(response.getTaint());
-        // ---------- Original Method ----------
+public void getPreferredNetworkType(Message response) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.696 -0500", hash_original_method = "1E1F359D4473F2441E02E8FE890DEF1C", hash_generated_method = "EA4BBF728E1D00DE51E3F73E281A4213")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.129 -0400", hash_original_method = "1E1F359D4473F2441E02E8FE890DEF1C", hash_generated_method = "803A54BA31E9F8CEE7211DF5B414A74F")
-    public void getNeighboringCids(Message response) {
-        addTaint(response.getTaint());
-        // ---------- Original Method ----------
+public void getNeighboringCids(Message response) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.698 -0500", hash_original_method = "8F4AD1B328B83D997278B06A4EE5820C", hash_generated_method = "1AA99C3733ECBCE7289E95C8E86FB1EF")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.129 -0400", hash_original_method = "8F4AD1B328B83D997278B06A4EE5820C", hash_generated_method = "C92F892C73DBEB4A237BF25001034A4A")
-    public void setLocationUpdates(boolean enable, Message response) {
-        addTaint(response.getTaint());
-        addTaint(enable);
-        // ---------- Original Method ----------
+public void setLocationUpdates(boolean enable, Message response) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.701 -0500", hash_original_method = "341ECD479C88F08657B8FDC222C9F79A", hash_generated_method = "DF20BC64AC2B0FF51EFF5B0E5559BCDA")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.129 -0400", hash_original_method = "341ECD479C88F08657B8FDC222C9F79A", hash_generated_method = "E69DF1715AEE0C76AF6DD5DA6BDA2970")
-    public void getSmscAddress(Message result) {
-        addTaint(result.getTaint());
-        // ---------- Original Method ----------
+public void getSmscAddress(Message result) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.703 -0500", hash_original_method = "7097F8C49B12B71CDD20291B3AB7964A", hash_generated_method = "F1F2D79AF5A315939AAA30BD67428C6E")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.129 -0400", hash_original_method = "7097F8C49B12B71CDD20291B3AB7964A", hash_generated_method = "C04D994BED4DAD55D122515149B9786C")
-    public void setSmscAddress(String address, Message result) {
-        addTaint(result.getTaint());
-        addTaint(address.getTaint());
-        // ---------- Original Method ----------
+public void setSmscAddress(String address, Message result) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.705 -0500", hash_original_method = "BC0B755F5F01D800040615DED3BCDBA0", hash_generated_method = "4B74BF21920DA77CCA3BE72141F7B0E5")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.129 -0400", hash_original_method = "BC0B755F5F01D800040615DED3BCDBA0", hash_generated_method = "33B369ADB97D43A930A882E1189E2528")
-    public void reportSmsMemoryStatus(boolean available, Message result) {
-        addTaint(result.getTaint());
-        addTaint(available);
-        // ---------- Original Method ----------
+public void reportSmsMemoryStatus(boolean available, Message result) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.708 -0500", hash_original_method = "F7AB9C173D1A57BFEBFB44A47237DF7D", hash_generated_method = "1DBB5783E8B25E1F683BAE19133B3E1D")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.129 -0400", hash_original_method = "F7AB9C173D1A57BFEBFB44A47237DF7D", hash_generated_method = "9B2A5E8BC9430E71FAC3D943F3EDA078")
-    public void reportStkServiceIsRunning(Message result) {
-        addTaint(result.getTaint());
-        // ---------- Original Method ----------
+public void reportStkServiceIsRunning(Message result) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.710 -0500", hash_original_method = "9CF99F7F300A93DDBFE74502145A8475", hash_generated_method = "8486F5B190ADEBEDB556535E22F1CEAA")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.129 -0400", hash_original_method = "9CF99F7F300A93DDBFE74502145A8475", hash_generated_method = "673B73A3BBF3B5793688DE676C55629D")
-    @Override
+@Override
     public void getCdmaSubscriptionSource(Message response) {
-        addTaint(response.getTaint());
-        // ---------- Original Method ----------
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.712 -0500", hash_original_method = "4329D3CD35E915BD99C5B818B449ACA1", hash_generated_method = "964F72DD5DAA5C342B345044B48F1AFA")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.130 -0400", hash_original_method = "4329D3CD35E915BD99C5B818B449ACA1", hash_generated_method = "0F983DDFECA339A2571F58256E842EC7")
-    public void getGsmBroadcastConfig(Message response) {
-        addTaint(response.getTaint());
-        // ---------- Original Method ----------
+public void getGsmBroadcastConfig(Message response) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.715 -0500", hash_original_method = "BEC32E28BD6A6EC85956F36B9D44924D", hash_generated_method = "5978E03091F56949C348C5214327B1BF")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.130 -0400", hash_original_method = "BEC32E28BD6A6EC85956F36B9D44924D", hash_generated_method = "0619A5C5F17D6280851BEC83A8B90F4D")
-    public void setGsmBroadcastConfig(SmsBroadcastConfigInfo[] config, Message response) {
-        addTaint(response.getTaint());
-        addTaint(config[0].getTaint());
-        // ---------- Original Method ----------
+public void setGsmBroadcastConfig(SmsBroadcastConfigInfo[] config, Message response) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.717 -0500", hash_original_method = "2F3C945F2B405B443912668B2367D904", hash_generated_method = "95BF91ECE4CDA58D19672556E37F549A")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.130 -0400", hash_original_method = "2F3C945F2B405B443912668B2367D904", hash_generated_method = "747059A3275E74B5891060348A9C9F68")
-    public void setGsmBroadcastActivation(boolean activate, Message response) {
-        addTaint(response.getTaint());
-        addTaint(activate);
-        // ---------- Original Method ----------
+public void setGsmBroadcastActivation(boolean activate, Message response) {
     }
 
+    // ***** Methods for CDMA support
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.719 -0500", hash_original_method = "BB255671D9D9AE82C00FD12FF12E7590", hash_generated_method = "9FE4E4684D8427384C7C74A24B6FB758")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.130 -0400", hash_original_method = "BB255671D9D9AE82C00FD12FF12E7590", hash_generated_method = "DB24117E6DE10F13EFAC1A8522F70166")
-    public void getDeviceIdentity(Message response) {
-        addTaint(response.getTaint());
-        // ---------- Original Method ----------
+public void getDeviceIdentity(Message response) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.721 -0500", hash_original_method = "A28D6B43032903DAFA850C3B9E02D39E", hash_generated_method = "AEA22E7FEE9003B3CF660E65DD2731D6")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.130 -0400", hash_original_method = "A28D6B43032903DAFA850C3B9E02D39E", hash_generated_method = "F4357765C51371751C336814DDF5280D")
-    public void getCDMASubscription(Message response) {
-        addTaint(response.getTaint());
-        // ---------- Original Method ----------
+public void getCDMASubscription(Message response) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.723 -0500", hash_original_method = "6A64EDF04D6CCF6DA11C17A9004CF963", hash_generated_method = "CC059F0DCBF839ED9EA3313B96D3950A")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.130 -0400", hash_original_method = "6A64EDF04D6CCF6DA11C17A9004CF963", hash_generated_method = "A6502C086B19911110474955EBB8B371")
-    public void setPhoneType(int phoneType) {
-        addTaint(phoneType);
-        // ---------- Original Method ----------
+public void setPhoneType(int phoneType) { //Set by CDMAPhone and GSMPhone constructor
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.725 -0500", hash_original_method = "A9CEBF170D0F656D33BCE6259BBB358F", hash_generated_method = "25F240ADA9BCA0BE982821D83BF0C438")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.130 -0400", hash_original_method = "A9CEBF170D0F656D33BCE6259BBB358F", hash_generated_method = "23F0FDDC3F629DFEEBDB3B08BA87060C")
-    public void queryCdmaRoamingPreference(Message response) {
-        addTaint(response.getTaint());
-        // ---------- Original Method ----------
+public void queryCdmaRoamingPreference(Message response) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.727 -0500", hash_original_method = "A524FD7F96F7FB62BB4ABD4057A9354C", hash_generated_method = "9F7F20AD0C191DEC70DB60BF092B918F")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.130 -0400", hash_original_method = "A524FD7F96F7FB62BB4ABD4057A9354C", hash_generated_method = "B2BB58CE72BD7FB630F15AEDA40DFE3B")
-    public void setCdmaRoamingPreference(int cdmaRoamingType, Message response) {
-        addTaint(response.getTaint());
-        addTaint(cdmaRoamingType);
-        // ---------- Original Method ----------
+public void setCdmaRoamingPreference(int cdmaRoamingType, Message response) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.729 -0500", hash_original_method = "87C7978CD92754BB7623428AEFA60479", hash_generated_method = "E78ACD72FB9CCFD3EF6DBC11CFB911A7")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.130 -0400", hash_original_method = "87C7978CD92754BB7623428AEFA60479", hash_generated_method = "B029C5FF9C9DAF75CF88A35E55725609")
-    public void setCdmaSubscriptionSource(int cdmaSubscription , Message response) {
-        addTaint(response.getTaint());
-        addTaint(cdmaSubscription);
-        // ---------- Original Method ----------
+public void setCdmaSubscriptionSource(int cdmaSubscription , Message response) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.732 -0500", hash_original_method = "DC6F83E2EE7B0408161F523478208FCE", hash_generated_method = "A84D2E86A2F377B13815AF5175F355B9")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.130 -0400", hash_original_method = "DC6F83E2EE7B0408161F523478208FCE", hash_generated_method = "E756AE3736151DA11240B89608D0CA53")
-    public void queryTTYMode(Message response) {
-        addTaint(response.getTaint());
-        // ---------- Original Method ----------
+public void queryTTYMode(Message response) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.734 -0500", hash_original_method = "44348CEECDEE74EEC687675A834A99DA", hash_generated_method = "BA3B94CAA5505B85E7DB6F18D3B4C2BD")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.130 -0400", hash_original_method = "44348CEECDEE74EEC687675A834A99DA", hash_generated_method = "DBF8AE7CB9904711CE7A4C0925B8A84E")
-    public void setTTYMode(int ttyMode, Message response) {
-        addTaint(response.getTaint());
-        addTaint(ttyMode);
-        // ---------- Original Method ----------
+public void setTTYMode(int ttyMode, Message response) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.736 -0500", hash_original_method = "D826071ECAAC08358EF9CEAACAFF0A2A", hash_generated_method = "9687F74FCA14235DC5A15670CE86E8DB")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.131 -0400", hash_original_method = "D826071ECAAC08358EF9CEAACAFF0A2A", hash_generated_method = "7104ABFB270F8CD991562761EF587AE7")
-    public void sendCDMAFeatureCode(String FeatureCode, Message response) {
-        addTaint(response.getTaint());
-        addTaint(FeatureCode.getTaint());
-        // ---------- Original Method ----------
+public void sendCDMAFeatureCode(String FeatureCode, Message response) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.739 -0500", hash_original_method = "DCBE6B932ED9844344E5753E79DB999C", hash_generated_method = "3D9AE95DE3B350388D48EBEDAFD8D5EC")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.131 -0400", hash_original_method = "DCBE6B932ED9844344E5753E79DB999C", hash_generated_method = "58AC89E2B35F1C53FBB37DBB95FBFBCF")
-    public void getCdmaBroadcastConfig(Message response) {
-        addTaint(response.getTaint());
-        // ---------- Original Method ----------
+public void getCdmaBroadcastConfig(Message response) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.741 -0500", hash_original_method = "86E74F47BAC216027EBD89BDEFC4A2E0", hash_generated_method = "60402C15D180EC0A74591AD70A5EE162")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.131 -0400", hash_original_method = "86E74F47BAC216027EBD89BDEFC4A2E0", hash_generated_method = "7EAC490D1BBB238688203A239BDC8244")
-    public void setCdmaBroadcastConfig(int[] configValuesArray, Message response) {
-        addTaint(response.getTaint());
-        addTaint(configValuesArray[0]);
-        // ---------- Original Method ----------
+public void setCdmaBroadcastConfig(int[] configValuesArray, Message response) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.743 -0500", hash_original_method = "02EE3B357DCB6CF5847DAE1F69A62BD8", hash_generated_method = "771D09A44B2159B3BA55D1C97F6FE92F")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.131 -0400", hash_original_method = "02EE3B357DCB6CF5847DAE1F69A62BD8", hash_generated_method = "46A4A3BE1C26A4A669602A6150A68AB3")
-    public void setCdmaBroadcastActivation(boolean activate, Message response) {
-        addTaint(response.getTaint());
-        addTaint(activate);
-        // ---------- Original Method ----------
+public void setCdmaBroadcastActivation(boolean activate, Message response) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.746 -0500", hash_original_method = "B73B7043BB86BD20367E2BA4C1F7579D", hash_generated_method = "E4C0D0F538E047D7B49657740B090EC6")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.131 -0400", hash_original_method = "B73B7043BB86BD20367E2BA4C1F7579D", hash_generated_method = "F59E0E4F5F3C654DF2D57C3B4CF2BC39")
-    public void exitEmergencyCallbackMode(Message response) {
-        addTaint(response.getTaint());
-        // ---------- Original Method ----------
+public void exitEmergencyCallbackMode(Message response) {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.748 -0500", hash_original_method = "A7B720D7AAE639C9AA81ACDD2FD07958", hash_generated_method = "D4CA3FE5AE34BD9215D5177E4E76987B")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.131 -0400", hash_original_method = "A7B720D7AAE639C9AA81ACDD2FD07958", hash_generated_method = "C4020BC078E6D25BA42500F71884296A")
-    @Override
+@Override
     public void supplyIccPinForApp(String pin, String aid, Message response) {
-        addTaint(response.getTaint());
-        addTaint(aid.getTaint());
-        addTaint(pin.getTaint());
-        // ---------- Original Method ----------
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.750 -0500", hash_original_method = "85052B085E211221DC52D076F63CDE51", hash_generated_method = "A691998C3AC6119AA241473E4D9015FE")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.131 -0400", hash_original_method = "85052B085E211221DC52D076F63CDE51", hash_generated_method = "018A92435E414829B302BD2758A26939")
-    @Override
+@Override
     public void supplyIccPukForApp(String puk, String newPin, String aid, Message response) {
-        addTaint(response.getTaint());
-        addTaint(aid.getTaint());
-        addTaint(newPin.getTaint());
-        addTaint(puk.getTaint());
-        // ---------- Original Method ----------
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.753 -0500", hash_original_method = "4EA9B69CB4BB92F6CBD1A973DB39784D", hash_generated_method = "29C454BBACFACF4A061CA617A00D69CF")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.131 -0400", hash_original_method = "4EA9B69CB4BB92F6CBD1A973DB39784D", hash_generated_method = "D585834EBA34D01A96B0482CCF4B70B0")
-    @Override
+@Override
     public void supplyIccPin2ForApp(String pin2, String aid, Message response) {
-        addTaint(response.getTaint());
-        addTaint(aid.getTaint());
-        addTaint(pin2.getTaint());
-        // ---------- Original Method ----------
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.755 -0500", hash_original_method = "FF125CC3CEA22589265ADC8CAED2B3CC", hash_generated_method = "9AFB9349AEDE7E9B30D7C047A4073FC8")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.131 -0400", hash_original_method = "FF125CC3CEA22589265ADC8CAED2B3CC", hash_generated_method = "8661977891F5FE6442F72D59E97E9FDE")
-    @Override
+@Override
     public void supplyIccPuk2ForApp(String puk2, String newPin2, String aid, Message response) {
-        addTaint(response.getTaint());
-        addTaint(aid.getTaint());
-        addTaint(newPin2.getTaint());
-        addTaint(puk2.getTaint());
-        // ---------- Original Method ----------
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.757 -0500", hash_original_method = "A51A50ABC77958852F41695682CE2620", hash_generated_method = "B45995CBB85D5D14A0080579636A1699")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.132 -0400", hash_original_method = "A51A50ABC77958852F41695682CE2620", hash_generated_method = "AB43CBE2E9650DFAF4BBE898F35E2923")
-    @Override
+@Override
     public void changeIccPinForApp(String oldPin, String newPin, String aidPtr, Message response) {
-        addTaint(response.getTaint());
-        addTaint(aidPtr.getTaint());
-        addTaint(newPin.getTaint());
-        addTaint(oldPin.getTaint());
-        // ---------- Original Method ----------
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.759 -0500", hash_original_method = "39AB2DAFFDF72A29B22CB665239943F5", hash_generated_method = "08DF8EB57819F08BC1C0811C3F4C8696")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.133 -0400", hash_original_method = "39AB2DAFFDF72A29B22CB665239943F5", hash_generated_method = "5030C6D55B05C52AB237988E716D3F31")
-    @Override
+@Override
     public void changeIccPin2ForApp(String oldPin2, String newPin2, String aidPtr,
             Message response) {
-        addTaint(response.getTaint());
-        addTaint(aidPtr.getTaint());
-        addTaint(newPin2.getTaint());
-        addTaint(oldPin2.getTaint());
-        // ---------- Original Method ----------
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.761 -0500", hash_original_method = "417EB29332801A205E6BDDA18E3F8488", hash_generated_method = "54A7B51FC233852AC63508E8696C2C07")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.133 -0400", hash_original_method = "417EB29332801A205E6BDDA18E3F8488", hash_generated_method = "0F6A29E5DEA46B79A65C936EA68B91A4")
-    public void requestIsimAuthentication(String nonce, Message response) {
-        addTaint(response.getTaint());
-        addTaint(nonce.getTaint());
-        // ---------- Original Method ----------
+public void requestIsimAuthentication(String nonce, Message response) {
     }
 
     

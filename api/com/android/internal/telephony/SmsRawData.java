@@ -1,6 +1,8 @@
 package com.android.internal.telephony;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -10,58 +12,15 @@ import android.os.Parcelable;
 
 
 public class SmsRawData implements Parcelable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.294 -0400", hash_original_field = "8D777F385D3DFEC8815D20F7496026DC", hash_generated_field = "B330DF564CD90A5498A9E4F0AB344BB9")
-
-    byte[] data;
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.296 -0400", hash_original_method = "786E0C6936F82B829DA5B3FF66BF9330", hash_generated_method = "9696AEC10121DADFC74AB9E5C21D1B54")
-    public  SmsRawData(byte[] data) {
-        this.data = data;
-        // ---------- Original Method ----------
-        //this.data = data;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.297 -0400", hash_original_method = "A347A6B90A5D4D940F0721005973D58D", hash_generated_method = "F73451FC4DC7CEF205E99F41FB48C911")
-    public byte[] getBytes() {
-        byte[] var8D777F385D3DFEC8815D20F7496026DC_2060016790 = (data);
-                byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1007262365 = {getTaintByte()};
-        return var2F9C81BC6E497382285CD6B7A7E33DE1_1007262365;
-        // ---------- Original Method ----------
-        //return data;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.297 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "D10D2CC9C14DC3D7FEA67AF99EC4E2C3")
-    public int describeContents() {
-        int varCFCD208495D565EF66E7DFF9F98764DA_2123883670 = (0);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_567812855 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_567812855;
-        // ---------- Original Method ----------
-        //return 0;
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.299 -0400", hash_original_method = "D4C3CA886CA029713C39962D7FB3C06B", hash_generated_method = "9B0573B203D719FA7E739B1D40A76BB6")
-    public void writeToParcel(Parcel dest, int flags) {
-        addTaint(flags);
-        addTaint(dest.getTaint());
-        dest.writeInt(data.length);
-        dest.writeByteArray(data);
-        // ---------- Original Method ----------
-        //dest.writeInt(data.length);
-        //dest.writeByteArray(data);
-    }
 
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.300 -0400", hash_original_field = "5F248018C4F105B9FC6BE9470BA097DB", hash_generated_field = "AED96BE50F57834351625E8AF71D8275")
 
     public static final Parcelable.Creator<SmsRawData> CREATOR
             = new Parcelable.Creator<SmsRawData> (){
-        public SmsRawData createFromParcel(Parcel source) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:19.214 -0500", hash_original_method = "F1422F1901EE9861E97E875C16081393", hash_generated_method = "CC2AE54837ED271F414AE0BE9B40DF87")
+        
+public SmsRawData createFromParcel(Parcel source) {
             int size;
             size = source.readInt();
             byte[] data = new byte[size];
@@ -69,11 +28,41 @@ public class SmsRawData implements Parcelable {
             return new SmsRawData(data);
         }
 
-        @DSModeled(DSC.SAFE)
-        public SmsRawData[] newArray(int size) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:19.217 -0500", hash_original_method = "A7CDF66D285B3D1FAFEC746019F799D8", hash_generated_method = "3270F6E6E837B0086218DA03B43A620B")
+        
+public SmsRawData[] newArray(int size) {
             return new SmsRawData[size];
         }
     };
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:19.210 -0500", hash_original_field = "B330DF564CD90A5498A9E4F0AB344BB9", hash_generated_field = "B330DF564CD90A5498A9E4F0AB344BB9")
+
+    byte[] data;
+
+    // Constructor
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:19.223 -0500", hash_original_method = "786E0C6936F82B829DA5B3FF66BF9330", hash_generated_method = "A05FAFF842B04C1718E224ACB930FC77")
+    
+public SmsRawData(byte[] data) {
+        this.data = data;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:19.225 -0500", hash_original_method = "A347A6B90A5D4D940F0721005973D58D", hash_generated_method = "3C7438C8A4069E5C199E2D48F79B0806")
+    
+public byte[] getBytes() {
+        return data;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:19.228 -0500", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "D90463461B2A94FF94D13FDF69BB80C9")
+    
+public int describeContents() {
+        return 0;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:19.230 -0500", hash_original_method = "D4C3CA886CA029713C39962D7FB3C06B", hash_generated_method = "7D70EC3F42867245D2B569BE15182600")
+    
+public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(data.length);
+        dest.writeByteArray(data);
+    }
     // orphaned legacy method
     public SmsRawData createFromParcel(Parcel source) {
             int size;

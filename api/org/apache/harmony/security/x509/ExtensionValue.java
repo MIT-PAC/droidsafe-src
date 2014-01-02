@@ -1,6 +1,8 @@
 package org.apache.harmony.security.x509;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import org.apache.harmony.security.utils.Array;
 
@@ -10,75 +12,47 @@ import org.apache.harmony.security.utils.Array;
 
 
 public class ExtensionValue {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.175 -0400", hash_original_field = "84BEA1F0FD2CE16F7E562A9F06EF03D3", hash_generated_field = "D780785EF370A874C4FD0A663CBEE653")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:56.592 -0500", hash_original_field = "B36A946B5145D992E53209BC6743765D", hash_generated_field = "D780785EF370A874C4FD0A663CBEE653")
 
     protected byte[] encoding;
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.175 -0400", hash_original_method = "92B36A954C74D787717A80E6E1DCF4CB", hash_generated_method = "646DDFB6B137A2CD94865A6E1E6AF5F3")
-    public  ExtensionValue() {
-        // ---------- Original Method ----------
-    }
 
+    /** Default constructor. */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:56.595 -0500", hash_original_method = "92B36A954C74D787717A80E6E1DCF4CB", hash_generated_method = "D1D0CC2F98E8E8D6230AA8A987B52F25")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.176 -0400", hash_original_method = "92F18F58E02D664C24F95F43BB13284A", hash_generated_method = "B5B41EEA3422EF95BC843761DA63367E")
-    public  ExtensionValue(byte[] encoding) {
+public ExtensionValue() {}
+
+    /** Creates the object on the base of its encoded form. */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:56.597 -0500", hash_original_method = "92F18F58E02D664C24F95F43BB13284A", hash_generated_method = "34EA0CB7FE2D52EF5B3AFE41A5C11766")
+    
+public ExtensionValue(byte[] encoding) {
         this.encoding = encoding;
-        // ---------- Original Method ----------
-        //this.encoding = encoding;
     }
 
+    /** Returns encoded form of the object. */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:56.599 -0500", hash_original_method = "377D44A9A27BF814250295098F20477B", hash_generated_method = "1FAC514B8B58DEE35114AACC993B54AF")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.176 -0400", hash_original_method = "377D44A9A27BF814250295098F20477B", hash_generated_method = "A3C862C508AAB74A36F41456A1C5D85B")
-    public byte[] getEncoded() {
-        byte[] var84BEA1F0FD2CE16F7E562A9F06EF03D3_1031797422 = (encoding);
-                byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_740080261 = {getTaintByte()};
-        return var2F9C81BC6E497382285CD6B7A7E33DE1_740080261;
-        // ---------- Original Method ----------
-        //return encoding;
+public byte[] getEncoded() {
+        return encoding;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:56.602 -0500", hash_original_method = "EBD96CEB228F4E98BF0AC3D53A96C792", hash_generated_method = "03A992F1793712A41C66624428C4CBB2")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.177 -0400", hash_original_method = "EBD96CEB228F4E98BF0AC3D53A96C792", hash_generated_method = "ED8BA5E6ED92519FA6C0C16EA29DBEF4")
-    public void dumpValue(StringBuilder sb, String prefix) {
-        addTaint(prefix.getTaint());
-        addTaint(sb.getTaint());
+public void dumpValue(StringBuilder sb, String prefix) {
         sb.append(prefix).append("Unparseable extension value:\n");
-        if(encoding == null)        
-        {
+        if (encoding == null) {
             encoding = getEncoded();
-        } //End block
-        if(encoding == null)        
-        {
+        }
+        if (encoding == null) {
             sb.append("NULL\n");
-        } //End block
-        else
-        {
+        } else {
             sb.append(Array.toString(encoding, prefix));
-        } //End block
-        // ---------- Original Method ----------
-        //sb.append(prefix).append("Unparseable extension value:\n");
-        //if (encoding == null) {
-            //encoding = getEncoded();
-        //}
-        //if (encoding == null) {
-            //sb.append("NULL\n");
-        //} else {
-            //sb.append(Array.toString(encoding, prefix));
-        //}
+        }
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:56.604 -0500", hash_original_method = "6724193923CC6FF1B2BB2E93A0E55B86", hash_generated_method = "D296D2692AE900133BEA982B0CB51ACB")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.177 -0400", hash_original_method = "6724193923CC6FF1B2BB2E93A0E55B86", hash_generated_method = "BA883F714988E28D95E3137D99B7876F")
-    public void dumpValue(StringBuilder sb) {
-        addTaint(sb.getTaint());
+public void dumpValue(StringBuilder sb) {
         dumpValue(sb, "");
-        // ---------- Original Method ----------
-        //dumpValue(sb, "");
     }
 
     

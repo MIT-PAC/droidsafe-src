@@ -1,6 +1,8 @@
 package android.util;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -10,21 +12,54 @@ import java.lang.reflect.Method;
 
 
 public class DebugUtils {
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.631 -0400", hash_original_method = "4AD5C036447EEE6EF322222D7F2F6DED", hash_generated_method = "40067A418DEF2AF784763164D3515C4D")
-    public  DebugUtils() {
-        // ---------- Original Method ----------
-    }
 
+    /**
+     * <p>Filters objects against the <code>ANDROID_OBJECT_FILTER</code>
+     * environment variable. This environment variable can filter objects
+     * based on their class name and attribute values.</p>
+     *
+     * <p>Here is the syntax for <code>ANDROID_OBJECT_FILTER</code>:</p>
+     *
+     * <p><code>ClassName@attribute1=value1@attribute2=value2...</code></p>
+     *
+     * <p>Examples:</p>
+     * <ul>
+     * <li>Select TextView instances: <code>TextView</code></li>
+     * <li>Select TextView instances of text "Loading" and bottom offset of 22:
+     * <code>TextView@text=Loading.*@bottom=22</code></li>
+     * </ul>
+     *
+     * <p>The class name and the values are regular expressions.</p>
+     *
+     * <p>This class is useful for debugging and logging purpose:</p>
+     * <pre>
+     * if (DEBUG) {
+     *   if (DebugUtils.isObjectSelected(childView) && LOGV_ENABLED) {
+     *     Log.v(TAG, "Object " + childView + " logged!");
+     *   }
+     * }
+     * </pre>
+     *
+     * <p><strong>NOTE</strong>: This method is very expensive as it relies
+     * heavily on regular expressions and reflection. Calls to this method
+     * should always be stripped out of the release binaries and avoided
+     * as much as possible in debug mode.</p>
+     *
+     * @param object any object to match against the ANDROID_OBJECT_FILTER
+     *        environement variable
+     * @return true if object is selected by the ANDROID_OBJECT_FILTER
+     *         environment variable, false otherwise
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:24.463 -0500", hash_original_method = "89690390C58E88977CA907FE5A88EB05", hash_generated_method = "E3F84148E6D130EB22903A427DD6E36D")
     
-    @DSModeled(DSC.SAFE)
-    public static boolean isObjectSelected(Object object) {
+public static boolean isObjectSelected(Object object) {
         boolean match = false;
         String s = System.getenv("ANDROID_OBJECT_FILTER");
         if (s != null && s.length() > 0) {
             String[] selectors = s.split("@");
+            // first selector == class name
             if (object.getClass().getSimpleName().matches(selectors[0])) {
+                // check potential attributes
                 for (int i = 1; i < selectors.length; i++) {
                     String[] pair = selectors[i].split("=");
                     Class<?> klass = object.getClass();
@@ -38,6 +73,7 @@ public class DebugUtils {
                                     (Class[]) null);
                         } while ((parent = klass.getSuperclass()) != null &&
                                 declaredMethod == null);
+
                         if (declaredMethod != null) {
                             Object value = declaredMethod
                                     .invoke(object, (Object[])null);
@@ -57,9 +93,10 @@ public class DebugUtils {
         return match;
     }
 
+    /** @hide */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:24.465 -0500", hash_original_method = "BC1C0A6DDB905724B12A3BE1E03F80F1", hash_generated_method = "A0E49CBE1D8E6D2C12C59921D8EDC0B4")
     
-    @DSModeled(DSC.BAN)
-    public static void buildShortClassTag(Object cls, StringBuilder out) {
+public static void buildShortClassTag(Object cls, StringBuilder out) {
         if (cls == null) {
             out.append("null");
         } else {
@@ -76,6 +113,9 @@ public class DebugUtils {
             out.append(Integer.toHexString(System.identityHashCode(cls)));
         }
     }
+    /** @hide */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:24.460 -0500", hash_original_method = "4AD5C036447EEE6EF322222D7F2F6DED", hash_generated_method = "BF5454E33769117159B2FC3ECE3C6B8B")
+    
+public DebugUtils() {}
 
     
 }

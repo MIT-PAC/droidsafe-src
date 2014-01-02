@@ -16,6 +16,8 @@
 
 package android.test.mock;
 //Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.content.ContentProvider;
 import android.content.ContentResolver;
@@ -55,14 +57,17 @@ import java.util.Map;
  */
 
 public class MockContentResolver extends ContentResolver {
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:45.010 -0500", hash_original_field = "552B7A966F5AC4BF1D378359AEC135FA", hash_generated_field = "552B7A966F5AC4BF1D378359AEC135FA")
+
     Map<String, ContentProvider> mProviders;
 
     /*
      * Creates a local map of providers. This map is used instead of the global map when an
      * API call tries to acquire a provider.
      */
-    @DSModeled(DSC.BAN)
-    public MockContentResolver() {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:45.013 -0500", hash_original_method = "A661690524C88F823732CD1198B81C7F", hash_generated_method = "69AC10086FD726A936B085DBF3B465C6")
+    
+public MockContentResolver() {
         super(null);
         mProviders = Maps.newHashMap();
     }
@@ -74,8 +79,9 @@ public class MockContentResolver extends ContentResolver {
      * @param provider An instance of {@link android.content.ContentProvider} or one of its
      * subclasses, or null.
      */
-    @DSModeled(DSC.BAN)
-    public void addProvider(String name, ContentProvider provider) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:45.015 -0500", hash_original_method = "FA861A4F4A3AD51C69F90915108FDD56", hash_generated_method = "CF72EC6317D5D2FD71FF445EC7F8AA75")
+    
+public void addProvider(String name, ContentProvider provider) {
 
         /*
          * Maps the authority to the provider locally.
@@ -84,15 +90,17 @@ public class MockContentResolver extends ContentResolver {
     }
 
     /** @hide */
-    @DSModeled(DSC.BAN)
-    @Override
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:45.017 -0500", hash_original_method = "50EEEC9C29C7F8C00FF96EAB87299625", hash_generated_method = "7501BE01B2A3A50C57DC4C3B75E865E1")
+    
+@Override
     protected IContentProvider acquireProvider(Context context, String name) {
         return acquireExistingProvider(context, name);
     }
 
     /** @hide */
-    @DSModeled(DSC.BAN)
-    @Override
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:45.020 -0500", hash_original_method = "62AC33657D9355178DB566B04AB4A5F7", hash_generated_method = "F2351185E03BC113DE4789A75FEE332B")
+    
+@Override
     protected IContentProvider acquireExistingProvider(Context context, String name) {
 
         /*
@@ -108,8 +116,9 @@ public class MockContentResolver extends ContentResolver {
     }
 
     /** @hide */
-    @DSModeled(DSC.BAN)
-    @Override
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:45.022 -0500", hash_original_method = "2BBC74854CB7DFF372BE1D3A080C6F9A", hash_generated_method = "34799AB26D3B43DCFD030443CD248A4F")
+    
+@Override
     public boolean releaseProvider(IContentProvider provider) {
         return true;
     }
@@ -123,8 +132,9 @@ public class MockContentResolver extends ContentResolver {
      * @param observer (Ignored) The observer that originated the change.
      * @param syncToNetwork (Ignored) If true, attempt to sync the change to the network.
      */
-    @DSModeled(DSC.SPEC)
-    @Override
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:45.025 -0500", hash_original_method = "0D07CE2954E4C9CEFA50CEA6EA0149DC", hash_generated_method = "A086E5523CC5A4E1BD40AD6DF29C6B52")
+    
+@Override
     public void notifyChange(Uri uri,
             ContentObserver observer,
             boolean syncToNetwork) {

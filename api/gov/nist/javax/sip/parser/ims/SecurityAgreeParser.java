@@ -1,6 +1,8 @@
 package gov.nist.javax.sip.parser.ims;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import gov.nist.core.NameValue;
 import gov.nist.core.Token;
@@ -21,147 +23,119 @@ import java.text.ParseException;
 
 
 public class SecurityAgreeParser extends HeaderParser {
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:43.958 -0500", hash_original_method = "3C9B744CAD21A5FF0128608065B78D3C", hash_generated_method = "693ED6A66AE8EFF88C187F7207BB7AEA")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.112 -0400", hash_original_method = "3C9B744CAD21A5FF0128608065B78D3C", hash_generated_method = "CC9828D5309CF88A17780C7D47A7AC99")
-    public  SecurityAgreeParser(String security) {
+public SecurityAgreeParser(String security) {
         super(security);
-        addTaint(security.getTaint());
-        // ---------- Original Method ----------
     }
 
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:43.960 -0500", hash_original_method = "901019111A521E611D0FA754D5F384A4", hash_generated_method = "2DF8CC0EB1F18964A2541DC051B69355")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.112 -0400", hash_original_method = "901019111A521E611D0FA754D5F384A4", hash_generated_method = "DFEE8107DE9D6223B0CDE8A1E6B1EECC")
-    protected  SecurityAgreeParser(Lexer lexer) {
+protected SecurityAgreeParser(Lexer lexer) {
         super(lexer);
-        addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
     }
 
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:43.963 -0500", hash_original_method = "F5B0772594CADDF674D010ACA1204B13", hash_generated_method = "90EC3697B8B82B1EEDFD6B77A91DF932")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.112 -0400", hash_original_method = "F5B0772594CADDF674D010ACA1204B13", hash_generated_method = "634F5424E1BC0DC9ACFD5EF7F2751253")
-    protected void parseParameter(SecurityAgree header) throws ParseException {
-        addTaint(header.getTaint());
-        if(debug)        
-        dbg_enter("parseParameter");
-        try 
-        {
+protected void parseParameter(SecurityAgree header)
+        throws ParseException
+    {
+        if (debug)
+            dbg_enter("parseParameter");
+        try {
             NameValue nv = this.nameValue('=');
             header.setParameter(nv);
-        } //End block
-        finally 
-        {
-            if(debug)            
-            dbg_leave("parseParameter");
-        } //End block
-        // ---------- Original Method ----------
-        //if (debug)
-            //dbg_enter("parseParameter");
-        //try {
-            //NameValue nv = this.nameValue('=');
-            //header.setParameter(nv);
-        //} finally {
-            //if (debug)
-                //dbg_leave("parseParameter");
-        //}
+        } finally {
+            if (debug)
+                dbg_leave("parseParameter");
+        }
     }
 
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:43.967 -0500", hash_original_method = "12664C139391D128E477218D3F3EA9C3", hash_generated_method = "31C5AD713B3B0B11C9ECBCE0EC0E27A4")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:40.116 -0400", hash_original_method = "12664C139391D128E477218D3F3EA9C3", hash_generated_method = "D3770F893701749A53158521978B4259")
-    public SIPHeaderList parse(SecurityAgree header) throws ParseException {
-        addTaint(header.getTaint());
+public SIPHeaderList parse(SecurityAgree header) throws ParseException
+    {
+
         SIPHeaderList list;
-        if(header.getClass().isInstance(new SecurityClient()))        
-        {
+
+        if (header.getClass().isInstance(new SecurityClient())) {
             list = new SecurityClientList();
-        } //End block
-        else
-        if(header.getClass().isInstance(new SecurityServer()))        
-        {
+        } else if (header.getClass().isInstance(new SecurityServer())) {
             list = new SecurityServerList();
-        } //End block
-        else
-        if(header.getClass().isInstance(new SecurityVerify()))        
-        {
+        } else if (header.getClass().isInstance(new SecurityVerify())) {
             list = new SecurityVerifyList();
-        } //End block
-        else
-        {
-SIPHeaderList var540C13E9E156B687226421B24F2DF178_1037655735 =         null;
-        var540C13E9E156B687226421B24F2DF178_1037655735.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_1037655735;
         }
+        else
+            return null;
+
+
+        // the security-mechanism:
         this.lexer.SPorHT();
         lexer.match(TokenTypes.ID);
         Token type = lexer.getNextToken();
         header.setSecurityMechanism(type.getTokenValue());
         this.lexer.SPorHT();
+
         char la = lexer.lookAhead(0);
-        if(la == '\n')        
+        if (la == '\n')
         {
             list.add(header);
-SIPHeaderList varED12C351C2E8CA4F85F097DDC7E77B4D_1405565469 =             list;
-            varED12C351C2E8CA4F85F097DDC7E77B4D_1405565469.addTaint(taint);
-            return varED12C351C2E8CA4F85F097DDC7E77B4D_1405565469;
-        } //End block
-        else
-        if(la == ';')        
-        this.lexer.match(';');
+            return list;
+        }
+        else if (la == ';')
+            this.lexer.match(';');
+
         this.lexer.SPorHT();
-        try 
-        {
-            while
-(lexer.lookAhead(0) != '\n')            
-            {
+
+        // The parameters:
+        try {
+            while (lexer.lookAhead(0) != '\n') {
+
                 this.parseParameter(header);
                 this.lexer.SPorHT();
                 char laInLoop = lexer.lookAhead(0);
-                if(laInLoop == '\n' || laInLoop == '\0')                
-                break;
-                else
-                if(laInLoop == ',')                
+                if (laInLoop == '\n' || laInLoop == '\0')
+                    break;
+                else if (laInLoop == ',')
                 {
                     list.add(header);
-                    if(header.getClass().isInstance(new SecurityClient()))                    
-                    {
+                    if (header.getClass().isInstance(new SecurityClient())) {
                         header = new SecurityClient();
-                    } //End block
-                    else
-                    if(header.getClass().isInstance(new SecurityServer()))                    
-                    {
+                    } else if (header.getClass().isInstance(new SecurityServer())) {
                         header = new SecurityServer();
-                    } //End block
-                    else
-                    if(header.getClass().isInstance(new SecurityVerify()))                    
-                    {
+                    } else if (header.getClass().isInstance(new SecurityVerify())) {
                         header = new SecurityVerify();
-                    } //End block
+                    }
+
                     this.lexer.match(',');
+                    // the security-mechanism:
                     this.lexer.SPorHT();
                     lexer.match(TokenTypes.ID);
                     type = lexer.getNextToken();
                     header.setSecurityMechanism(type.getTokenValue());
-                } //End block
+
+                }
                 this.lexer.SPorHT();
-                if(lexer.lookAhead(0) == ';')                
-                this.lexer.match(';');
+
+                if (lexer.lookAhead(0) == ';')
+                    this.lexer.match(';');
+
                 this.lexer.SPorHT();
-            } //End block
+
+            }
             list.add(header);
-SIPHeaderList varED12C351C2E8CA4F85F097DDC7E77B4D_1620130409 =             list;
-            varED12C351C2E8CA4F85F097DDC7E77B4D_1620130409.addTaint(taint);
-            return varED12C351C2E8CA4F85F097DDC7E77B4D_1620130409;
-        } //End block
-        catch (ParseException ex)
-        {
-            ex.addTaint(taint);
+
+            return list;
+
+        } catch (ParseException ex) {
             throw ex;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        }
+
+
     }
 
     

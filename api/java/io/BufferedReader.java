@@ -1,6 +1,8 @@
 package java.io;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Arrays;
 
@@ -10,499 +12,502 @@ import java.util.Arrays;
 
 
 public class BufferedReader extends Reader {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.360 -0400", hash_original_field = "13B5BFE96F3E2FE411C9F66F4A582ADF", hash_generated_field = "D82948BDB5B1A4AE5A3AFAB6DC9986E6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.770 -0500", hash_original_field = "905D4A99F191C55F09924512539E6D8F", hash_generated_field = "D82948BDB5B1A4AE5A3AFAB6DC9986E6")
+
 
     private Reader in;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.360 -0400", hash_original_field = "CB7E52B21171FB9A53B498202607F0BD", hash_generated_field = "29466223C47F8B8BB1DFDB9869023C70")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.772 -0500", hash_original_field = "40514AFF00B14ABD40D54C723F22A0B4", hash_generated_field = "29466223C47F8B8BB1DFDB9869023C70")
 
     private char[] buf;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.360 -0400", hash_original_field = "5E0BDCBDDCCCA4D66D74BA8C1CEE1A68", hash_generated_field = "74B29150B9CA7F1725D53FF286BFBC4B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.775 -0500", hash_original_field = "5780BC7BCF265A6425A5A90F1AD9B24E", hash_generated_field = "74B29150B9CA7F1725D53FF286BFBC4B")
+
 
     private int pos;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.360 -0400", hash_original_field = "7F021A1415B86F2D013B2618FB31AE53", hash_generated_field = "BDD622074D0B9CD7867B17F38BB0017C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.777 -0500", hash_original_field = "302E5A3147803830441A79AED31F4022", hash_generated_field = "BDD622074D0B9CD7867B17F38BB0017C")
+
 
     private int end;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.360 -0400", hash_original_field = "AEBE787CB6F497D2AAE0B3BE79923B47", hash_generated_field = "7486F438FD6BACD8803ADD46E32EFC8C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.780 -0500", hash_original_field = "0000817AC2603B47AF2835983C585870", hash_generated_field = "7486F438FD6BACD8803ADD46E32EFC8C")
+
 
     private int mark = -1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.360 -0400", hash_original_field = "AD44D772CC8F65477B44CADA956AB95F", hash_generated_field = "D78FB5CB883E6ED18FF304428EA74785")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.782 -0500", hash_original_field = "75A2423C827798DC27E81DD12A7578BB", hash_generated_field = "D78FB5CB883E6ED18FF304428EA74785")
+
 
     private int markLimit = -1;
+
+    /**
+     * Constructs a new {@code BufferedReader}, providing {@code in} with a buffer
+     * of 8192 characters.
+     *
+     * @param in the {@code Reader} the buffer reads from.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.785 -0500", hash_original_method = "942CB30D704BB0D453BC7285AF3F8F63", hash_generated_method = "C875FF71AF33FE067958C813F8D30031")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.360 -0400", hash_original_method = "942CB30D704BB0D453BC7285AF3F8F63", hash_generated_method = "1E283231B6628C9D10DDED98EF8AEFDD")
-    public  BufferedReader(Reader in) {
+public BufferedReader(Reader in) {
         this(in, 8192);
-        addTaint(in.getTaint());
-        // ---------- Original Method ----------
     }
 
+    /**
+     * Constructs a new {@code BufferedReader}, providing {@code in} with {@code size} characters
+     * of buffer.
+     *
+     * @param in the {@code InputStream} the buffer reads from.
+     * @param size the size of buffer in characters.
+     * @throws IllegalArgumentException if {@code size <= 0}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.788 -0500", hash_original_method = "14FDA92282030C83FA853ED51BF21EF3", hash_generated_method = "606113C73DB54594A0B938E27DBC855E")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.361 -0400", hash_original_method = "14FDA92282030C83FA853ED51BF21EF3", hash_generated_method = "7DE0FD15C8CD0BAD03F36B0F0B624B9B")
-    public  BufferedReader(Reader in, int size) {
+public BufferedReader(Reader in, int size) {
         super(in);
-        if(size <= 0)        
-        {
-            IllegalArgumentException var5AFB46BA040E4CEE38200888DC74991F_553458580 = new IllegalArgumentException("size <= 0");
-            var5AFB46BA040E4CEE38200888DC74991F_553458580.addTaint(taint);
-            throw var5AFB46BA040E4CEE38200888DC74991F_553458580;
-        } //End block
+        if (size <= 0) {
+            throw new IllegalArgumentException("size <= 0");
+        }
         this.in = in;
         buf = new char[size];
-        // ---------- Original Method ----------
-        //if (size <= 0) {
-            //throw new IllegalArgumentException("size <= 0");
-        //}
-        //this.in = in;
-        //buf = new char[size];
     }
 
+    /**
+     * Closes this reader. This implementation closes the buffered source reader
+     * and releases the buffer. Nothing is done if this reader has already been
+     * closed.
+     *
+     * @throws IOException
+     *             if an error occurs while closing this reader.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.790 -0500", hash_original_method = "B09EB233D31BD7460B333EC44F947FB5", hash_generated_method = "E7CB9BC1806291A715CC7DD98DB83FD9")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.362 -0400", hash_original_method = "B09EB233D31BD7460B333EC44F947FB5", hash_generated_method = "24027C403C7C0374B7EA2222DB95D040")
-    @Override
+@Override
     public void close() throws IOException {
-        synchronized
-(lock)        {
-            if(!isClosed())            
-            {
+        synchronized (lock) {
+            if (!isClosed()) {
                 in.close();
                 buf = null;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (lock) {
-            //if (!isClosed()) {
-                //in.close();
-                //buf = null;
-            //}
-        //}
+            }
+        }
     }
 
+    /**
+     * Populates the buffer with data. It is an error to call this method when
+     * the buffer still contains data; ie. if {@code pos < end}.
+     *
+     * @return the number of bytes read into the buffer, or -1 if the end of the
+     *      source stream has been reached.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.793 -0500", hash_original_method = "CF9579814E96BB14759649D94186035A", hash_generated_method = "A5B09B701CF70EC579E890FDD3F967A4")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.363 -0400", hash_original_method = "CF9579814E96BB14759649D94186035A", hash_generated_method = "8C7FECA201D8681A9AB4B4F7E63A1605")
-    private int fillBuf() throws IOException {
-        if(mark == -1 || (pos - mark >= markLimit))        
-        {
+private int fillBuf() throws IOException {
+        // assert(pos == end);
+
+        if (mark == -1 || (pos - mark >= markLimit)) {
+            /* mark isn't set or has exceeded its limit. use the whole buffer */
             int result = in.read(buf, 0, buf.length);
-            if(result > 0)            
-            {
+            if (result > 0) {
                 mark = -1;
                 pos = 0;
                 end = result;
-            } //End block
-            int varB4A88417B3D0170D754C647C30B7216A_729383145 = (result);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1281593446 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1281593446;
-        } //End block
-        if(mark == 0 && markLimit > buf.length)        
-        {
+            }
+            return result;
+        }
+
+        if (mark == 0 && markLimit > buf.length) {
+            /* the only way to make room when mark=0 is by growing the buffer */
             int newLength = buf.length * 2;
-            if(newLength > markLimit)            
-            {
+            if (newLength > markLimit) {
                 newLength = markLimit;
-            } //End block
+            }
             char[] newbuf = new char[newLength];
             System.arraycopy(buf, 0, newbuf, 0, buf.length);
             buf = newbuf;
-        } //End block
-        else
-        if(mark > 0)        
-        {
+        } else if (mark > 0) {
+            /* make room by shifting the buffered data to left mark positions */
             System.arraycopy(buf, mark, buf, 0, buf.length - mark);
             pos -= mark;
             end -= mark;
             mark = 0;
-        } //End block
+        }
+
+        /* Set the new position and mark position */
         int count = in.read(buf, pos, buf.length - pos);
-        if(count != -1)        
-        {
+        if (count != -1) {
             end += count;
-        } //End block
-        int varE2942A04780E223B215EB8B663CF5353_79803898 = (count);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_439364792 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_439364792;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        }
+        return count;
     }
 
+    /**
+     * Indicates whether or not this reader is closed.
+     *
+     * @return {@code true} if this reader is closed, {@code false}
+     *         otherwise.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.797 -0500", hash_original_method = "1E545822701FEAEF52AB68BFB73351A8", hash_generated_method = "67B0DB4F7332E1551B3772D6F1B4F707")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.364 -0400", hash_original_method = "1E545822701FEAEF52AB68BFB73351A8", hash_generated_method = "F283A32F101E75C44DB0A66E786D915B")
-    private boolean isClosed() {
-        boolean var424D22B8FEEB84C8061682CC5DE6923D_206533586 = (buf == null);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_312090591 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_312090591;
-        // ---------- Original Method ----------
-        //return buf == null;
+private boolean isClosed() {
+        return buf == null;
     }
 
+    /**
+     * Sets a mark position in this reader. The parameter {@code markLimit}
+     * indicates how many characters can be read before the mark is invalidated.
+     * Calling {@code reset()} will reposition the reader back to the marked
+     * position if {@code markLimit} has not been surpassed.
+     *
+     * @param markLimit
+     *            the number of characters that can be read before the mark is
+     *            invalidated.
+     * @throws IllegalArgumentException
+     *             if {@code markLimit < 0}.
+     * @throws IOException
+     *             if an error occurs while setting a mark in this reader.
+     * @see #markSupported()
+     * @see #reset()
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.799 -0500", hash_original_method = "EDD7C6600C30549E606135C51354C55D", hash_generated_method = "CAABEFE942DFA274FF2672C1771C1A9C")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.364 -0400", hash_original_method = "EDD7C6600C30549E606135C51354C55D", hash_generated_method = "A1C696FA5A919D72C261A94906419DC9")
-    @Override
+@Override
     public void mark(int markLimit) throws IOException {
-        if(markLimit < 0)        
-        {
-            IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_1824177988 = new IllegalArgumentException();
-            var5783EF97022AA508B74A1E3EA38534AF_1824177988.addTaint(taint);
-            throw var5783EF97022AA508B74A1E3EA38534AF_1824177988;
-        } //End block
-        synchronized
-(lock)        {
+        if (markLimit < 0) {
+            throw new IllegalArgumentException();
+        }
+        synchronized (lock) {
             checkNotClosed();
             this.markLimit = markLimit;
             mark = pos;
-        } //End block
-        // ---------- Original Method ----------
-        //if (markLimit < 0) {
-            //throw new IllegalArgumentException();
-        //}
-        //synchronized (lock) {
-            //checkNotClosed();
-            //this.markLimit = markLimit;
-            //mark = pos;
-        //}
+        }
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.801 -0500", hash_original_method = "DB9CD04B651C70299E4D82CCA50FA441", hash_generated_method = "9DDB8F58B4353B4CA656716199D36B12")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.365 -0400", hash_original_method = "DB9CD04B651C70299E4D82CCA50FA441", hash_generated_method = "F48ADBE2E5FF94B73FAB787906F98C1C")
-    private void checkNotClosed() throws IOException {
-        if(isClosed())        
-        {
-            IOException var773CF08A86433AFB48FB4822457098D4_221539244 = new IOException("BufferedReader is closed");
-            var773CF08A86433AFB48FB4822457098D4_221539244.addTaint(taint);
-            throw var773CF08A86433AFB48FB4822457098D4_221539244;
-        } //End block
-        // ---------- Original Method ----------
-        //if (isClosed()) {
-            //throw new IOException("BufferedReader is closed");
-        //}
+private void checkNotClosed() throws IOException {
+        if (isClosed()) {
+            throw new IOException("BufferedReader is closed");
+        }
     }
 
+    /**
+     * Indicates whether this reader supports the {@code mark()} and
+     * {@code reset()} methods. This implementation returns {@code true}.
+     *
+     * @return {@code true} for {@code BufferedReader}.
+     * @see #mark(int)
+     * @see #reset()
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.804 -0500", hash_original_method = "3448BF342B33B519FE64A3FA0274077D", hash_generated_method = "8651EC098CD56FF2A595F29537142CD3")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.365 -0400", hash_original_method = "3448BF342B33B519FE64A3FA0274077D", hash_generated_method = "2171C4F714FEF1729565748386DB0EF7")
-    @Override
+@Override
     public boolean markSupported() {
-        boolean varB326B5062B2F0E69046810717534CB09_768223355 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1625253985 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1625253985;
-        // ---------- Original Method ----------
-        //return true;
+        return true;
     }
 
+    /**
+     * Reads a single character from this reader and returns it with the two
+     * higher-order bytes set to 0. If possible, BufferedReader returns a
+     * character from the buffer. If there are no characters available in the
+     * buffer, it fills the buffer and then returns a character. It returns -1
+     * if there are no more characters in the source reader.
+     *
+     * @return the character read or -1 if the end of the source reader has been
+     *         reached.
+     * @throws IOException
+     *             if this reader is closed or some other I/O error occurs.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.807 -0500", hash_original_method = "434E790CE8DCEADB6D081C3AE915A829", hash_generated_method = "BD51F80B0E1483CC290DA4C926697DD8")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.365 -0400", hash_original_method = "434E790CE8DCEADB6D081C3AE915A829", hash_generated_method = "74044E9BFBE1831F5E6C4CF5B1AB73E9")
-    @Override
+@Override
     public int read() throws IOException {
-        synchronized
-(lock)        {
+        synchronized (lock) {
             checkNotClosed();
-            if(pos < end || fillBuf() != -1)            
-            {
-                int varB70884BE019EF8C23F78111B3A15614D_328380900 = (buf[pos++]);
-                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1442211984 = getTaintInt();
-                return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1442211984;
-            } //End block
-            int var6BB61E3B7BCE0931DA574D19D1D82C88_399505639 = (-1);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_679944084 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_679944084;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (lock) {
-            //checkNotClosed();
-            //if (pos < end || fillBuf() != -1) {
-                //return buf[pos++];
-            //}
-            //return -1;
-        //}
+            /* Are there buffered characters available? */
+            if (pos < end || fillBuf() != -1) {
+                return buf[pos++];
+            }
+            return -1;
+        }
     }
 
+    /**
+     * Reads at most {@code length} characters from this reader and stores them
+     * at {@code offset} in the character array {@code buffer}. Returns the
+     * number of characters actually read or -1 if the end of the source reader
+     * has been reached. If all the buffered characters have been used, a mark
+     * has not been set and the requested number of characters is larger than
+     * this readers buffer size, BufferedReader bypasses the buffer and simply
+     * places the results directly into {@code buffer}.
+     *
+     * @param buffer
+     *            the character array to store the characters read.
+     * @param offset
+     *            the initial position in {@code buffer} to store the bytes read
+     *            from this reader.
+     * @param length
+     *            the maximum number of characters to read, must be
+     *            non-negative.
+     * @return number of characters read or -1 if the end of the source reader
+     *         has been reached.
+     * @throws IndexOutOfBoundsException
+     *             if {@code offset < 0} or {@code length < 0}, or if
+     *             {@code offset + length} is greater than the size of
+     *             {@code buffer}.
+     * @throws IOException
+     *             if this reader is closed or some other I/O error occurs.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.810 -0500", hash_original_method = "EFCE29DD70FA840EFC7C884DCFC84327", hash_generated_method = "D9AE1B55A0510DB080BA6CE3B1DC1A90")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.367 -0400", hash_original_method = "EFCE29DD70FA840EFC7C884DCFC84327", hash_generated_method = "370D0F50776AA01CD4857D0F2D671255")
-    @Override
+@Override
     public int read(char[] buffer, int offset, int length) throws IOException {
-        addTaint(length);
-        addTaint(offset);
-        addTaint(buffer[0]);
-        synchronized
-(lock)        {
+        synchronized (lock) {
             checkNotClosed();
             Arrays.checkOffsetAndCount(buffer.length, offset, length);
             int outstanding = length;
-            while
-(outstanding > 0)            
-            {
+            while (outstanding > 0) {
+
+                /*
+                 * If there are bytes in the buffer, grab those first.
+                 */
                 int available = end - pos;
-                if(available > 0)                
-                {
+                if (available > 0) {
                     int count = available >= outstanding ? outstanding : available;
                     System.arraycopy(buf, pos, buffer, offset, count);
                     pos += count;
                     offset += count;
                     outstanding -= count;
-                } //End block
-                if(outstanding == 0 || (outstanding < length && !in.ready()))                
-                {
+                }
+
+                /*
+                 * Before attempting to read from the underlying stream, make
+                 * sure we really, really want to. We won't bother if we're
+                 * done, or if we've already got some bytes and reading from the
+                 * underlying stream would block.
+                 */
+                if (outstanding == 0 || (outstanding < length && !in.ready())) {
                     break;
-                } //End block
-                if((mark == -1 || (pos - mark >= markLimit)) && outstanding >= buf.length)                
-                {
+                }
+
+                // assert(pos == end);
+
+                /*
+                 * If we're unmarked and the requested size is greater than our
+                 * buffer, read the bytes directly into the caller's buffer. We
+                 * don't read into smaller buffers because that could result in
+                 * a many reads.
+                 */
+                if ((mark == -1 || (pos - mark >= markLimit)) && outstanding >= buf.length) {
                     int count = in.read(buffer, offset, outstanding);
-                    if(count > 0)                    
-                    {
+                    if (count > 0) {
                         outstanding -= count;
                         mark = -1;
-                    } //End block
-                    break;
-                } //End block
-                if(fillBuf() == -1)                
-                {
-                    break;
-                } //End block
-            } //End block
+                    }
+                    break; // assume the source stream gave us all that it could
+                }
+
+                if (fillBuf() == -1) {
+                    break; // source is exhausted
+                }
+            }
+
             int count = length - outstanding;
-            int var3F4530AEEB9DE39C06A8F31E42B1FD8F_144237342 = ((count > 0 || count == length) ? count : -1);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1513150306 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1513150306;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            return (count > 0 || count == length) ? count : -1;
+        }
     }
 
+    /**
+     * Peeks at the next input character, refilling the buffer if necessary. If
+     * this character is a newline character ("\n"), it is discarded.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.812 -0500", hash_original_method = "5E2706ACF0BEEE9ADCFD58329E615807", hash_generated_method = "28E9B033F43A6657D4E841C5908095A9")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.368 -0400", hash_original_method = "5E2706ACF0BEEE9ADCFD58329E615807", hash_generated_method = "CFB7A766D5BADFE9817321AF207EA165")
-    final void chompNewline() throws IOException {
-        if((pos != end || fillBuf() != -1)
-                && buf[pos] == '\n')        
-        {
+final void chompNewline() throws IOException {
+        if ((pos != end || fillBuf() != -1)
+                && buf[pos] == '\n') {
             pos++;
-        } //End block
-        // ---------- Original Method ----------
-        //if ((pos != end || fillBuf() != -1)
-                //&& buf[pos] == '\n') {
-            //pos++;
-        //}
+        }
     }
 
+    /**
+     * Returns the next line of text available from this reader. A line is
+     * represented by zero or more characters followed by {@code '\n'},
+     * {@code '\r'}, {@code "\r\n"} or the end of the reader. The string does
+     * not include the newline sequence.
+     *
+     * @return the contents of the line or {@code null} if no characters were
+     *         read before the end of the reader has been reached.
+     * @throws IOException
+     *             if this reader is closed or some other I/O error occurs.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.816 -0500", hash_original_method = "2E7624AE82CF066587D6991C8B167359", hash_generated_method = "4EED909B4B3AA6607F4DB5B32DA059E8")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.372 -0400", hash_original_method = "2E7624AE82CF066587D6991C8B167359", hash_generated_method = "BA927ABE7EE6D520F24F9370A9FD6B22")
-    public String readLine() throws IOException {
-        synchronized
-(lock)        {
+public String readLine() throws IOException {
+        synchronized (lock) {
             checkNotClosed();
-            if(pos == end && fillBuf() == -1)            
-            {
-String var540C13E9E156B687226421B24F2DF178_719797647 =                 null;
-                var540C13E9E156B687226421B24F2DF178_719797647.addTaint(taint);
-                return var540C13E9E156B687226421B24F2DF178_719797647;
-            } //End block
-for(int charPos = pos;charPos < end;charPos++)
-            {
+            /* has the underlying stream been exhausted? */
+            if (pos == end && fillBuf() == -1) {
+                return null;
+            }
+            for (int charPos = pos; charPos < end; charPos++) {
                 char ch = buf[charPos];
-                if(ch > '\r')                
-                {
+                if (ch > '\r') {
                     continue;
-                } //End block
-                if(ch == '\n')                
-                {
+                }
+                if (ch == '\n') {
                     String res = new String(buf, pos, charPos - pos);
                     pos = charPos + 1;
-String varB5053E025797B3BF768F5C37934C244D_1046684927 =                     res;
-                    varB5053E025797B3BF768F5C37934C244D_1046684927.addTaint(taint);
-                    return varB5053E025797B3BF768F5C37934C244D_1046684927;
-                } //End block
-                else
-                if(ch == '\r')                
-                {
+                    return res;
+                } else if (ch == '\r') {
                     String res = new String(buf, pos, charPos - pos);
                     pos = charPos + 1;
-                    if(((pos < end) || (fillBuf() != -1))
-                            && (buf[pos] == '\n'))                    
-                    {
+                    if (((pos < end) || (fillBuf() != -1))
+                            && (buf[pos] == '\n')) {
                         pos++;
-                    } //End block
-String varB5053E025797B3BF768F5C37934C244D_1259667738 =                     res;
-                    varB5053E025797B3BF768F5C37934C244D_1259667738.addTaint(taint);
-                    return varB5053E025797B3BF768F5C37934C244D_1259667738;
-                } //End block
-            } //End block
+                    }
+                    return res;
+                }
+            }
+
             char eol = '\0';
             StringBuilder result = new StringBuilder(80);
+            /* Typical Line Length */
+
             result.append(buf, pos, end - pos);
-            while
-(true)            
-            {
+            while (true) {
                 pos = end;
-                if(eol == '\n')                
-                {
-String varE65B3A02759122992CB82C0E651AD408_227736061 =                     result.toString();
-                    varE65B3A02759122992CB82C0E651AD408_227736061.addTaint(taint);
-                    return varE65B3A02759122992CB82C0E651AD408_227736061;
-                } //End block
-                if(fillBuf() == -1)                
-                {
-String var1490B320368AC741C1C3B31B0E693849_1186118130 =                     result.length() > 0 || eol != '\0'
+
+                /* Are there buffered characters available? */
+                if (eol == '\n') {
+                    return result.toString();
+                }
+                // attempt to fill buffer
+                if (fillBuf() == -1) {
+                    // characters or null.
+                    return result.length() > 0 || eol != '\0'
                             ? result.toString()
                             : null;
-                    var1490B320368AC741C1C3B31B0E693849_1186118130.addTaint(taint);
-                    return var1490B320368AC741C1C3B31B0E693849_1186118130;
-                } //End block
-for(int charPos = pos;charPos < end;charPos++)
-                {
+                }
+                for (int charPos = pos; charPos < end; charPos++) {
                     char c = buf[charPos];
-                    if(eol == '\0')                    
-                    {
-                        if((c == '\n' || c == '\r'))                        
-                        {
+                    if (eol == '\0') {
+                        if ((c == '\n' || c == '\r')) {
                             eol = c;
-                        } //End block
-                    } //End block
-                    else
-                    if(eol == '\r' && c == '\n')                    
-                    {
-                        if(charPos > pos)                        
-                        {
+                        }
+                    } else if (eol == '\r' && c == '\n') {
+                        if (charPos > pos) {
                             result.append(buf, pos, charPos - pos - 1);
-                        } //End block
+                        }
                         pos = charPos + 1;
-String varE65B3A02759122992CB82C0E651AD408_2059324016 =                         result.toString();
-                        varE65B3A02759122992CB82C0E651AD408_2059324016.addTaint(taint);
-                        return varE65B3A02759122992CB82C0E651AD408_2059324016;
-                    } //End block
-                    else
-                    {
-                        if(charPos > pos)                        
-                        {
+                        return result.toString();
+                    } else {
+                        if (charPos > pos) {
                             result.append(buf, pos, charPos - pos - 1);
-                        } //End block
+                        }
                         pos = charPos;
-String varE65B3A02759122992CB82C0E651AD408_1552686172 =                         result.toString();
-                        varE65B3A02759122992CB82C0E651AD408_1552686172.addTaint(taint);
-                        return varE65B3A02759122992CB82C0E651AD408_1552686172;
-                    } //End block
-                } //End block
-                if(eol == '\0')                
-                {
+                        return result.toString();
+                    }
+                }
+                if (eol == '\0') {
                     result.append(buf, pos, end - pos);
-                } //End block
-                else
-                {
+                } else {
                     result.append(buf, pos, end - pos - 1);
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                }
+            }
+        }
+
     }
 
+    /**
+     * Indicates whether this reader is ready to be read without blocking.
+     *
+     * @return {@code true} if this reader will not block when {@code read} is
+     *         called, {@code false} if unknown or blocking will occur.
+     * @throws IOException
+     *             if this reader is closed or some other I/O error occurs.
+     * @see #read()
+     * @see #read(char[], int, int)
+     * @see #readLine()
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.818 -0500", hash_original_method = "8DBFD5F046457CCDE72CB0FF01FB7E1A", hash_generated_method = "3EBE27587D105331186151656D37C486")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.373 -0400", hash_original_method = "8DBFD5F046457CCDE72CB0FF01FB7E1A", hash_generated_method = "0D8D73EB2CCE05939B396A7397D9A55B")
-    @Override
+@Override
     public boolean ready() throws IOException {
-        synchronized
-(lock)        {
+        synchronized (lock) {
             checkNotClosed();
-            boolean var60CA1460E090F38094E9E2CD495E04A1_2083336577 = (((end - pos) > 0) || in.ready());
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_380325745 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_380325745;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (lock) {
-            //checkNotClosed();
-            //return ((end - pos) > 0) || in.ready();
-        //}
+            return ((end - pos) > 0) || in.ready();
+        }
     }
 
+    /**
+     * Resets this reader's position to the last {@code mark()} location.
+     * Invocations of {@code read()} and {@code skip()} will occur from this new
+     * location.
+     *
+     * @throws IOException
+     *             if this reader is closed or no mark has been set.
+     * @see #mark(int)
+     * @see #markSupported()
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.822 -0500", hash_original_method = "CFE9F55B11CEBEA9E9DFCD46210902F2", hash_generated_method = "5A668F668B96C14B8161823E07BB19C4")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.373 -0400", hash_original_method = "CFE9F55B11CEBEA9E9DFCD46210902F2", hash_generated_method = "06CD05105F50E066B4FE16C10FB3A80C")
-    @Override
+@Override
     public void reset() throws IOException {
-        synchronized
-(lock)        {
+        synchronized (lock) {
             checkNotClosed();
-            if(mark == -1)            
-            {
-                IOException var4F1C6E834A8374D577B52D8C74A83D86_497358079 = new IOException("Invalid mark");
-                var4F1C6E834A8374D577B52D8C74A83D86_497358079.addTaint(taint);
-                throw var4F1C6E834A8374D577B52D8C74A83D86_497358079;
-            } //End block
+            if (mark == -1) {
+                throw new IOException("Invalid mark");
+            }
             pos = mark;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (lock) {
-            //checkNotClosed();
-            //if (mark == -1) {
-                //throw new IOException("Invalid mark");
-            //}
-            //pos = mark;
-        //}
+        }
     }
 
+    /**
+     * Skips {@code byteCount} bytes in this stream. Subsequent calls to
+     * {@code read} will not return these bytes unless {@code reset} is
+     * used.
+     * Skipping characters may invalidate a mark if {@code markLimit}
+     * is surpassed.
+     *
+     * @param byteCount
+     *            the maximum number of characters to skip.
+     * @return the number of characters actually skipped.
+     * @throws IllegalArgumentException
+     *             if {@code byteCount < 0}.
+     * @throws IOException
+     *             if this reader is closed or some other I/O error occurs.
+     * @see #mark(int)
+     * @see #markSupported()
+     * @see #reset()
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.825 -0500", hash_original_method = "6635225943CAECFE84E5456D76E9313A", hash_generated_method = "D469B8C92A4DD0CAC2335E1C956715AA")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.374 -0400", hash_original_method = "6635225943CAECFE84E5456D76E9313A", hash_generated_method = "D0C993DFFF038AEC6B34DD7A7B9BE1DE")
-    @Override
+@Override
     public long skip(long byteCount) throws IOException {
-        if(byteCount < 0)        
-        {
-            IllegalArgumentException var900667B0838C150D775E63B4D4D6DD8D_1482780072 = new IllegalArgumentException("byteCount < 0: " + byteCount);
-            var900667B0838C150D775E63B4D4D6DD8D_1482780072.addTaint(taint);
-            throw var900667B0838C150D775E63B4D4D6DD8D_1482780072;
-        } //End block
-        synchronized
-(lock)        {
+        if (byteCount < 0) {
+            throw new IllegalArgumentException("byteCount < 0: " + byteCount);
+        }
+        synchronized (lock) {
             checkNotClosed();
-            if(byteCount < 1)            
-            {
-                long varCFCD208495D565EF66E7DFF9F98764DA_1005990341 = (0);
-                                long var0F5264038205EDFB1AC05FBB0E8C5E94_89502730 = getTaintLong();
-                return var0F5264038205EDFB1AC05FBB0E8C5E94_89502730;
-            } //End block
-            if(end - pos >= byteCount)            
-            {
+            if (byteCount < 1) {
+                return 0;
+            }
+            if (end - pos >= byteCount) {
                 pos += byteCount;
-                long varA43EF6D60A83013EA1A61A23BDB16029_654798391 = (byteCount);
-                                long var0F5264038205EDFB1AC05FBB0E8C5E94_1852529901 = getTaintLong();
-                return var0F5264038205EDFB1AC05FBB0E8C5E94_1852529901;
-            } //End block
+                return byteCount;
+            }
+
             long read = end - pos;
             pos = end;
-            while
-(read < byteCount)            
-            {
-                if(fillBuf() == -1)                
-                {
-                    long varECAE13117D6F0584C25A9DA6C8F8415E_338854775 = (read);
-                                        long var0F5264038205EDFB1AC05FBB0E8C5E94_1016696623 = getTaintLong();
-                    return var0F5264038205EDFB1AC05FBB0E8C5E94_1016696623;
-                } //End block
-                if(end - pos >= byteCount - read)                
-                {
+            while (read < byteCount) {
+                if (fillBuf() == -1) {
+                    return read;
+                }
+                if (end - pos >= byteCount - read) {
                     pos += byteCount - read;
-                    long varA43EF6D60A83013EA1A61A23BDB16029_1212824169 = (byteCount);
-                                        long var0F5264038205EDFB1AC05FBB0E8C5E94_776696832 = getTaintLong();
-                    return var0F5264038205EDFB1AC05FBB0E8C5E94_776696832;
-                } //End block
+                    return byteCount;
+                }
+                // Couldn't get all the characters, skip what we read
                 read += (end - pos);
                 pos = end;
-            } //End block
-            long varA43EF6D60A83013EA1A61A23BDB16029_1902642537 = (byteCount);
-                        long var0F5264038205EDFB1AC05FBB0E8C5E94_1791196413 = getTaintLong();
-            return var0F5264038205EDFB1AC05FBB0E8C5E94_1791196413;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            }
+            return byteCount;
+        }
     }
 
     

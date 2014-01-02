@@ -1,6 +1,8 @@
 package gov.nist.javax.sip.parser;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import gov.nist.core.Token;
 import gov.nist.javax.sip.header.AllowEvents;
@@ -15,67 +17,73 @@ import java.text.ParseException;
 
 
 public class AllowEventsParser extends HeaderParser {
+
+    /**
+     * Creates a new instance of AllowEventsParser
+     * @param allowEvents the header to parse
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:45.110 -0500", hash_original_method = "B8B57389921DBA1CC2428437DFD404AC", hash_generated_method = "BA87E322AB32D77DC767F35C91B4FDB3")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:36.855 -0400", hash_original_method = "B8B57389921DBA1CC2428437DFD404AC", hash_generated_method = "5AC91EE0056EEBBD86FC067D51E73555")
-    public  AllowEventsParser(String allowEvents) {
+public AllowEventsParser(String allowEvents) {
         super(allowEvents);
-        addTaint(allowEvents.getTaint());
-        // ---------- Original Method ----------
     }
 
+    /**
+     * Constructor
+     * @param lexer the lexer to use to parse the header
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:45.113 -0500", hash_original_method = "53ECD40448666EF39463E8A30244C2E7", hash_generated_method = "958CE1F57150E5C71320DD5AEA3202BC")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:36.855 -0400", hash_original_method = "53ECD40448666EF39463E8A30244C2E7", hash_generated_method = "8FDDFDAA1BA9889E2ED576BBB1A6320C")
-    protected  AllowEventsParser(Lexer lexer) {
+protected AllowEventsParser(Lexer lexer) {
         super(lexer);
-        addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
     }
 
+    /**
+     * parse the AllowEvents String header
+     * @return SIPHeader (AllowEventsList object)
+     * @throws SIPParseException if the message does not respect the spec.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:45.117 -0500", hash_original_method = "457BF63FCB5F5743303EA5CCFBD04779", hash_generated_method = "3C6470CF292E197FFE72DA0E47EA6081")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:36.856 -0400", hash_original_method = "457BF63FCB5F5743303EA5CCFBD04779", hash_generated_method = "1409FBD88678D108B77D3E38F58BEAFD")
-    public SIPHeader parse() throws ParseException {
-        if(debug)        
-        dbg_enter("AllowEventsParser.parse");
+public SIPHeader parse() throws ParseException {
+
+        if (debug)
+            dbg_enter("AllowEventsParser.parse");
         AllowEventsList list = new AllowEventsList();
-        try 
-        {
+
+        try {
             headerName(TokenTypes.ALLOW_EVENTS);
+
             AllowEvents allowEvents = new AllowEvents();
             allowEvents.setHeaderName(SIPHeaderNames.ALLOW_EVENTS);
+
             this.lexer.SPorHT();
             this.lexer.match(TokenTypes.ID);
             Token token = lexer.getNextToken();
             allowEvents.setEventType(token.getTokenValue());
+
             list.add(allowEvents);
             this.lexer.SPorHT();
-            while
-(lexer.lookAhead(0) == ',')            
-            {
+            while (lexer.lookAhead(0) == ',') {
                 this.lexer.match(',');
                 this.lexer.SPorHT();
+
                 allowEvents = new AllowEvents();
                 this.lexer.match(TokenTypes.ID);
                 token = lexer.getNextToken();
                 allowEvents.setEventType(token.getTokenValue());
+
                 list.add(allowEvents);
                 this.lexer.SPorHT();
-            } //End block
+            }
             this.lexer.SPorHT();
             this.lexer.match('\n');
-SIPHeader varED12C351C2E8CA4F85F097DDC7E77B4D_1920119137 =             list;
-            varED12C351C2E8CA4F85F097DDC7E77B4D_1920119137.addTaint(taint);
-            return varED12C351C2E8CA4F85F097DDC7E77B4D_1920119137;
-        } //End block
-        finally 
-        {
-            if(debug)            
-            dbg_leave("AllowEventsParser.parse");
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+
+            return list;
+        } finally {
+            if (debug)
+                dbg_leave("AllowEventsParser.parse");
+        }
     }
 
     

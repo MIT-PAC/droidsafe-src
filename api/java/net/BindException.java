@@ -1,40 +1,43 @@
 package java.net;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
 
 public class BindException extends SocketException {
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.289 -0400", hash_original_method = "D66D1C4C5928E000A465F2B26896B637", hash_generated_method = "C638B86E6197A90D0C5D3DF2A4972BCE")
-    public  BindException() {
-        // ---------- Original Method ----------
-    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:16.012 -0500", hash_original_field = "59B89B96D77D39960A9CC4B33424C199", hash_generated_field = "EA3137D160EDA862C3C64F1345348850")
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.289 -0400", hash_original_method = "6FF32DF773E2792C41FA7AD13FDCFDDC", hash_generated_method = "BE7E73FDC246F21A9CA5B2C1286D2489")
-    public  BindException(String detailMessage) {
-        super(detailMessage);
-        addTaint(detailMessage.getTaint());
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.290 -0400", hash_original_method = "C8F93BE3A806C12732DAADB48D8791E4", hash_generated_method = "7529504FC975453FD409C06506129ECE")
-    public  BindException(String detailMessage, Throwable cause) {
-        super(detailMessage, cause);
-        addTaint(cause.getTaint());
-        addTaint(detailMessage.getTaint());
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.290 -0400", hash_original_field = "7A61C5E0953A7786CF3BC27BE1A3D948", hash_generated_field = "EA3137D160EDA862C3C64F1345348850")
 
     private static final long serialVersionUID = -5945005768251722951L;
+
+    /**
+     * Constructs a new instance.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:16.015 -0500", hash_original_method = "D66D1C4C5928E000A465F2B26896B637", hash_generated_method = "67462F58C9225E1872E2A6EC78A7CCD4")
+    
+public BindException() {
+    }
+
+    /**
+     * Constructs a new instance with the given detail message.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:16.018 -0500", hash_original_method = "6FF32DF773E2792C41FA7AD13FDCFDDC", hash_generated_method = "FA7A2FC4F704693B139DE1009428863C")
+    
+public BindException(String detailMessage) {
+        super(detailMessage);
+    }
+
+    /**
+     * Constructs a new instance with the given detail message and cause.
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:16.021 -0500", hash_original_method = "C8F93BE3A806C12732DAADB48D8791E4", hash_generated_method = "C5B311C94510CAEE036013661C9C799B")
+    
+public BindException(String detailMessage, Throwable cause) {
+        super(detailMessage, cause);
+    }
 }
 

@@ -1,6 +1,8 @@
 package android.widget;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -20,81 +22,141 @@ import android.view.ViewGroup;
 
 
 public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
+
+    /**
+     * Creates a new ArrayAdapter from external resources. The content of the array is
+     * obtained through {@link android.content.res.Resources#getTextArray(int)}.
+     *
+     * @param context The application's environment.
+     * @param textArrayResId The identifier of the array to use as the data source.
+     * @param textViewResId The identifier of the layout used to create views.
+     *
+     * @return An ArrayAdapter<CharSequence>.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:13.015 -0500", hash_original_method = "DFE3FD4383B9B7A9483BDED3B595C376", hash_generated_method = "2B98C8C49F28CBA4ED8C5C2766468CF4")
+    
+public static ArrayAdapter<CharSequence> createFromResource(Context context,
+            int textArrayResId, int textViewResId) {
+        CharSequence[] strings = context.getResources().getTextArray(textArrayResId);
+        return new ArrayAdapter<CharSequence>(context, textViewResId, strings);
+    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.934 -0500", hash_original_field = "FAFC73E4140DF5541A47D5CE15906D54", hash_generated_field = "C5D6BBA40E88AD4B20810C36AB0B4200")
+
     private List<T> mObjects;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:42.309 -0400", hash_original_field = "B89DEBA2CB26B1AC973763E3E152017B", hash_generated_field = "E59081251AD157907AA4CE8B3D8E654E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.936 -0500", hash_original_field = "83DB9DCBBD2D99A708D9A1934D5CD5AB", hash_generated_field = "E59081251AD157907AA4CE8B3D8E654E")
 
     private final Object mLock = new Object();
-    private int mResource;
-    private int mDropDownResource;
-    private int mFieldId = 0;
-    private boolean mNotifyOnChange = true;
-    private Context mContext;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:42.309 -0400", hash_original_field = "7E1411E28582E7BB5CB8D7EF06A96926", hash_generated_field = "D3DC3ECDE417C076679DF4CF25A2ECC3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.939 -0500", hash_original_field = "803A97A9A69A64DC7CFAABA01F910CD8", hash_generated_field = "6ED56B37E58621AEB8D63CC1C5EA1E67")
 
+    private int mResource;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.941 -0500", hash_original_field = "20C2241273ABB539644EF14C80A7B539", hash_generated_field = "605FFB4549B20BAE4E7EBD72916F9C8F")
+
+    private int mDropDownResource;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.943 -0500", hash_original_field = "C1BF34D2F9A778F9ED15B2D8A779E8B7", hash_generated_field = "D4C9AF545A1F6103644303EF50B22F18")
+
+    private int mFieldId = 0;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.945 -0500", hash_original_field = "8B6726EACC4D57999C959DFD932043D5", hash_generated_field = "FE0D43348CFC831A210569F9A601B409")
+
+    private boolean mNotifyOnChange = true;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.947 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
+
+
+    private Context mContext;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.949 -0500", hash_original_field = "E150C83BA2F03D9A5074F8AAC75B848B", hash_generated_field = "A67EA060A25CBEA9882A255490E7A91B")
+
+    // the mFilter ArrayFilter is used. mObjects will then only contain the filtered values.
     private ArrayList<T> mOriginalValues;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:42.309 -0400", hash_original_field = "C781ED17A87FBE09F8079C6EC63D1F26", hash_generated_field = "A0F0365EB2712D5C3F88231E50941E9D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.952 -0500", hash_original_field = "40A1A0893B3BEBD0888E1B1CC6A4071B", hash_generated_field = "A0F0365EB2712D5C3F88231E50941E9D")
 
     private ArrayFilter mFilter;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.955 -0500", hash_original_field = "B03B4DAE3F576B7166425BEE37B96C5E", hash_generated_field = "CBB0EE0A851756643DA52E1D33B6B161")
+
+
     private LayoutInflater mInflater;
+
+    /**
+     * Constructor
+     *
+     * @param context The current context.
+     * @param textViewResourceId The resource ID for a layout file containing a TextView to use when
+     *                 instantiating views.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.957 -0500", hash_original_method = "789F3BF67B69FD6C237A5778FFC1188F", hash_generated_method = "2833C0B2FA5336AAF90E2EF1D9BD3CCA")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:42.310 -0400", hash_original_method = "789F3BF67B69FD6C237A5778FFC1188F", hash_generated_method = "9F2D5759E56F73FA5A593FA701BA5C3D")
-    public  ArrayAdapter(Context context, int textViewResourceId) {
-        addTaint(textViewResourceId);
-        addTaint(context.getTaint());
+public ArrayAdapter(Context context, int textViewResourceId) {
         init(context, textViewResourceId, 0, new ArrayList<T>());
-        // ---------- Original Method ----------
-        //init(context, textViewResourceId, 0, new ArrayList<T>());
     }
 
+    /**
+     * Constructor
+     *
+     * @param context The current context.
+     * @param resource The resource ID for a layout file containing a layout to use when
+     *                 instantiating views.
+     * @param textViewResourceId The id of the TextView within the layout resource to be populated
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.959 -0500", hash_original_method = "8D997C3441EFBFDB8F1974C979BCB748", hash_generated_method = "197052AC52C52F6F0E59AF710A9BE149")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:42.311 -0400", hash_original_method = "8D997C3441EFBFDB8F1974C979BCB748", hash_generated_method = "BB5F52F252315BDE0DD91C6E208DD112")
-    public  ArrayAdapter(Context context, int resource, int textViewResourceId) {
-        addTaint(textViewResourceId);
-        addTaint(resource);
-        addTaint(context.getTaint());
+public ArrayAdapter(Context context, int resource, int textViewResourceId) {
         init(context, resource, textViewResourceId, new ArrayList<T>());
-        // ---------- Original Method ----------
-        //init(context, resource, textViewResourceId, new ArrayList<T>());
     }
 
+    /**
+     * Constructor
+     *
+     * @param context The current context.
+     * @param textViewResourceId The resource ID for a layout file containing a TextView to use when
+     *                 instantiating views.
+     * @param objects The objects to represent in the ListView.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.962 -0500", hash_original_method = "0DF55CD51396FFBE8E2D3620B337DDA2", hash_generated_method = "CBD80B289FE05C4187C964890824DEEF")
     
-    @DSModeled(DSC.SAFE)
-	public ArrayAdapter(Context context, int textViewResourceId, T[] objects) {
+public ArrayAdapter(Context context, int textViewResourceId, T[] objects) {
         init(context, textViewResourceId, 0, Arrays.asList(objects));
     }
 
+    /**
+     * Constructor
+     *
+     * @param context The current context.
+     * @param resource The resource ID for a layout file containing a layout to use when
+     *                 instantiating views.
+     * @param textViewResourceId The id of the TextView within the layout resource to be populated
+     * @param objects The objects to represent in the ListView.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.964 -0500", hash_original_method = "69F6C47A6CFAD9DAEB9B15D26A429BD2", hash_generated_method = "1268B755BFCE63F9CBC2F7BAC8EC34B5")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:42.311 -0400", hash_original_method = "69F6C47A6CFAD9DAEB9B15D26A429BD2", hash_generated_method = "0AD77E38C114B56F67EBF8911FE368C0")
-    public  ArrayAdapter(Context context, int resource, int textViewResourceId, T[] objects) {
-        addTaint(objects[0].getTaint());
-        addTaint(textViewResourceId);
-        addTaint(resource);
-        addTaint(context.getTaint());
+public ArrayAdapter(Context context, int resource, int textViewResourceId, T[] objects) {
         init(context, resource, textViewResourceId, Arrays.asList(objects));
-        // ---------- Original Method ----------
-        //init(context, resource, textViewResourceId, Arrays.asList(objects));
     }
 
+    /**
+     * Constructor
+     *
+     * @param context The current context.
+     * @param textViewResourceId The resource ID for a layout file containing a TextView to use when
+     *                 instantiating views.
+     * @param objects The objects to represent in the ListView.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.967 -0500", hash_original_method = "223AE4BB7D76AAEAE470FF2DB97AEEF6", hash_generated_method = "1AF214BAB132148F3F1A696130278B2A")
     
-    @DSModeled(DSC.SAFE)
-	public ArrayAdapter(Context context, int textViewResourceId, List<T> objects) {
+public ArrayAdapter(Context context, int textViewResourceId, List<T> objects) {
         init(context, textViewResourceId, 0, objects);
     }
 
+    /**
+     * Constructor
+     *
+     * @param context The current context.
+     * @param resource The resource ID for a layout file containing a layout to use when
+     *                 instantiating views.
+     * @param textViewResourceId The id of the TextView within the layout resource to be populated
+     * @param objects The objects to represent in the ListView.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.970 -0500", hash_original_method = "25BF5070AB68B4CC94195FE94A6CDD15", hash_generated_method = "EB8E16267550BBD05261CAC002377E2D")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:42.312 -0400", hash_original_method = "25BF5070AB68B4CC94195FE94A6CDD15", hash_generated_method = "45C05D2F6900A6552B59CA1E74D9A522")
-    public  ArrayAdapter(Context context, int resource, int textViewResourceId, List<T> objects) {
-        addTaint(objects.getTaint());
-        addTaint(textViewResourceId);
-        addTaint(resource);
-        addTaint(context.getTaint());
+public ArrayAdapter(Context context, int resource, int textViewResourceId, List<T> objects) {
         init(context, resource, textViewResourceId, objects);
-        // ---------- Original Method ----------
-        //init(context, resource, textViewResourceId, objects);
     }
 
     
@@ -104,199 +166,148 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
         notifyDataSetChanged();
     }
 
+    /**
+     * Adds the specified Collection at the end of the array.
+     *
+     * @param collection The Collection to add at the end of the array.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.974 -0500", hash_original_method = "2106A171487E5CA0624DE157360DB991", hash_generated_method = "16BB2292608F1A3AE6064F75050FAF53")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:42.313 -0400", hash_original_method = "2106A171487E5CA0624DE157360DB991", hash_generated_method = "79FA754AF55A7046C9471BCF42F16886")
-    public void addAll(Collection<? extends T> collection) {
-        addTaint(collection.getTaint());
-        synchronized
-(mLock)        {
-            if(mOriginalValues != null)            
-            {
+public void addAll(Collection<? extends T> collection) {
+        synchronized (mLock) {
+            if (mOriginalValues != null) {
                 mOriginalValues.addAll(collection);
-            } //End block
-            else
-            {
+            } else {
                 mObjects.addAll(collection);
-            } //End block
-        } //End block
-        if(mNotifyOnChange)        
-        notifyDataSetChanged();
-        // ---------- Original Method ----------
-        //synchronized (mLock) {
-            //if (mOriginalValues != null) {
-                //mOriginalValues.addAll(collection);
-            //} else {
-                //mObjects.addAll(collection);
-            //}
-        //}
-        //if (mNotifyOnChange) notifyDataSetChanged();
+            }
+        }
+        if (mNotifyOnChange) notifyDataSetChanged();
     }
 
+    /**
+     * Adds the specified items at the end of the array.
+     *
+     * @param items The items to add at the end of the array.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.977 -0500", hash_original_method = "0FB4566239B43452682D3C6768E6D3AE", hash_generated_method = "B9CC032117011CACFB53540192F33883")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:42.314 -0400", hash_original_method = "0FB4566239B43452682D3C6768E6D3AE", hash_generated_method = "F42D037C8C7AD0C6C7A4391992090E1D")
-    public void addAll(T ... items) {
-        addTaint(items[0].getTaint());
-        synchronized
-(mLock)        {
-            if(mOriginalValues != null)            
-            {
+public void addAll(T ... items) {
+        synchronized (mLock) {
+            if (mOriginalValues != null) {
                 Collections.addAll(mOriginalValues, items);
-            } //End block
-            else
-            {
+            } else {
                 Collections.addAll(mObjects, items);
-            } //End block
-        } //End block
-        if(mNotifyOnChange)        
-        notifyDataSetChanged();
-        // ---------- Original Method ----------
-        //synchronized (mLock) {
-            //if (mOriginalValues != null) {
-                //Collections.addAll(mOriginalValues, items);
-            //} else {
-                //Collections.addAll(mObjects, items);
-            //}
-        //}
-        //if (mNotifyOnChange) notifyDataSetChanged();
+            }
+        }
+        if (mNotifyOnChange) notifyDataSetChanged();
     }
 
+    /**
+     * Inserts the specified object at the specified index in the array.
+     *
+     * @param object The object to insert into the array.
+     * @param index The index at which the object must be inserted.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.979 -0500", hash_original_method = "E6733B2C388AB0385CFE6D2E53E92DC8", hash_generated_method = "28E006E392B53873C75752A8259F600D")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:42.315 -0400", hash_original_method = "E6733B2C388AB0385CFE6D2E53E92DC8", hash_generated_method = "C3B7E909806CA2AF41449C8A9AB2A7EE")
-    public void insert(T object, int index) {
-        addTaint(index);
-        addTaint(object.getTaint());
-        synchronized
-(mLock)        {
-            if(mOriginalValues != null)            
-            {
+public void insert(T object, int index) {
+        synchronized (mLock) {
+            if (mOriginalValues != null) {
                 mOriginalValues.add(index, object);
-            } //End block
-            else
-            {
+            } else {
                 mObjects.add(index, object);
-            } //End block
-        } //End block
-        if(mNotifyOnChange)        
-        notifyDataSetChanged();
-        // ---------- Original Method ----------
-        //synchronized (mLock) {
-            //if (mOriginalValues != null) {
-                //mOriginalValues.add(index, object);
-            //} else {
-                //mObjects.add(index, object);
-            //}
-        //}
-        //if (mNotifyOnChange) notifyDataSetChanged();
+            }
+        }
+        if (mNotifyOnChange) notifyDataSetChanged();
     }
 
+    /**
+     * Removes the specified object from the array.
+     *
+     * @param object The object to remove.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.981 -0500", hash_original_method = "6A184D6E0EB34E61EA380878C12E3D42", hash_generated_method = "4725E2AEE9CDDA06641D129FBE976B4B")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:42.315 -0400", hash_original_method = "6A184D6E0EB34E61EA380878C12E3D42", hash_generated_method = "45D17E6A0AF764C0FD5FF96FC91D8B9D")
-    public void remove(T object) {
-        addTaint(object.getTaint());
-        synchronized
-(mLock)        {
-            if(mOriginalValues != null)            
-            {
+public void remove(T object) {
+        synchronized (mLock) {
+            if (mOriginalValues != null) {
                 mOriginalValues.remove(object);
-            } //End block
-            else
-            {
+            } else {
                 mObjects.remove(object);
-            } //End block
-        } //End block
-        if(mNotifyOnChange)        
-        notifyDataSetChanged();
-        // ---------- Original Method ----------
-        //synchronized (mLock) {
-            //if (mOriginalValues != null) {
-                //mOriginalValues.remove(object);
-            //} else {
-                //mObjects.remove(object);
-            //}
-        //}
-        //if (mNotifyOnChange) notifyDataSetChanged();
+            }
+        }
+        if (mNotifyOnChange) notifyDataSetChanged();
     }
 
+    /**
+     * Remove all elements from the list.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.983 -0500", hash_original_method = "E80E28672DD45A1486192C70E40EF7F5", hash_generated_method = "694E1B024AC5136EEA404518D3F1B451")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:42.316 -0400", hash_original_method = "E80E28672DD45A1486192C70E40EF7F5", hash_generated_method = "C4F1F91442599AE68F832F75FB6037BB")
-    public void clear() {
-        synchronized
-(mLock)        {
-            if(mOriginalValues != null)            
-            {
+public void clear() {
+        synchronized (mLock) {
+            if (mOriginalValues != null) {
                 mOriginalValues.clear();
-            } //End block
-            else
-            {
+            } else {
                 mObjects.clear();
-            } //End block
-        } //End block
-        if(mNotifyOnChange)        
-        notifyDataSetChanged();
-        // ---------- Original Method ----------
-        //synchronized (mLock) {
-            //if (mOriginalValues != null) {
-                //mOriginalValues.clear();
-            //} else {
-                //mObjects.clear();
-            //}
-        //}
-        //if (mNotifyOnChange) notifyDataSetChanged();
+            }
+        }
+        if (mNotifyOnChange) notifyDataSetChanged();
     }
 
+    /**
+     * Sorts the content of this adapter using the specified comparator.
+     *
+     * @param comparator The comparator used to sort the objects contained
+     *        in this adapter.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.986 -0500", hash_original_method = "56420943E8AF9990310F4859FACB8646", hash_generated_method = "8745A21541E29843AB6A207C20FDB3B3")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:42.316 -0400", hash_original_method = "56420943E8AF9990310F4859FACB8646", hash_generated_method = "3DA380F8887A0573D7C23BFEE52E0CDB")
-    public void sort(Comparator<? super T> comparator) {
-        addTaint(comparator.getTaint());
-        synchronized
-(mLock)        {
-            if(mOriginalValues != null)            
-            {
+public void sort(Comparator<? super T> comparator) {
+        synchronized (mLock) {
+            if (mOriginalValues != null) {
                 Collections.sort(mOriginalValues, comparator);
-            } //End block
-            else
-            {
+            } else {
                 Collections.sort(mObjects, comparator);
-            } //End block
-        } //End block
-        if(mNotifyOnChange)        
-        notifyDataSetChanged();
-        // ---------- Original Method ----------
-        //synchronized (mLock) {
-            //if (mOriginalValues != null) {
-                //Collections.sort(mOriginalValues, comparator);
-            //} else {
-                //Collections.sort(mObjects, comparator);
-            //}
-        //}
-        //if (mNotifyOnChange) notifyDataSetChanged();
+            }
+        }
+        if (mNotifyOnChange) notifyDataSetChanged();
     }
 
+    /**
+     * {@inheritDoc}
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.989 -0500", hash_original_method = "4B6963AC4824E23107C3535DF32052A8", hash_generated_method = "7086D0B5780CC15DBA499BE5E9121DB8")
     
-    @Override
-	@DSModeled(DSC.SAFE)
+@Override
     public void notifyDataSetChanged() {
         super.notifyDataSetChanged();
         mNotifyOnChange = true;
     }
 
+    /**
+     * Control whether methods that change the list ({@link #add},
+     * {@link #insert}, {@link #remove}, {@link #clear}) automatically call
+     * {@link #notifyDataSetChanged}.  If set to false, caller must
+     * manually call notifyDataSetChanged() to have the changes
+     * reflected in the attached view.
+     *
+     * The default is true, and calling notifyDataSetChanged()
+     * resets the flag to true.
+     *
+     * @param notifyOnChange if true, modifications to the list will
+     *                       automatically call {@link
+     *                       #notifyDataSetChanged}
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.991 -0500", hash_original_method = "B014C1A32626DBADC83EC827393C5854", hash_generated_method = "CC6788FD6F9B3A6D84BB6BE5FBACB64C")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:42.317 -0400", hash_original_method = "B014C1A32626DBADC83EC827393C5854", hash_generated_method = "DF16B68FF23EAD56FA4255B3D48770B3")
-    public void setNotifyOnChange(boolean notifyOnChange) {
+public void setNotifyOnChange(boolean notifyOnChange) {
         mNotifyOnChange = notifyOnChange;
-        // ---------- Original Method ----------
-        //mNotifyOnChange = notifyOnChange;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.993 -0500", hash_original_method = "0AB52E86A6B570420A2DD21D48564743", hash_generated_method = "CB6916EBBEFB3B0CDDB4B56CE0890354")
     
-    @DSModeled(DSC.SAFE)
-	private void init(Context context, int resource, int textViewResourceId, List<T> objects) {
+private void init(Context context, int resource, int textViewResourceId, List<T> objects) {
         mContext = context;
         mInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         mResource = mDropDownResource = resource;
@@ -304,15 +315,16 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
         mFieldId = textViewResourceId;
     }
 
+    /**
+     * Returns the context associated with this array adapter. The context is used
+     * to create views from the resource passed to the constructor.
+     *
+     * @return The Context associated with this adapter.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.995 -0500", hash_original_method = "4F4EBC54D108D66F416C93B46580E117", hash_generated_method = "BA026F6873AF9B17E96AB49AFB6CEE03")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:42.318 -0400", hash_original_method = "4F4EBC54D108D66F416C93B46580E117", hash_generated_method = "E1F8BA78AFDA16DD62827582E21F0D52")
-    public Context getContext() {
-Context var178E2AD52D6FBBB503F908168856B574_967216275 =         mContext;
-        var178E2AD52D6FBBB503F908168856B574_967216275.addTaint(taint);
-        return var178E2AD52D6FBBB503F908168856B574_967216275;
-        // ---------- Original Method ----------
-        //return mContext;
+public Context getContext() {
+        return mContext;
     }
 
     
@@ -331,29 +343,34 @@ Context var178E2AD52D6FBBB503F908168856B574_967216275 =         mContext;
 	    //return mObjects.get(position);
 	}
 
+    /**
+     * Returns the position of the specified item in the array.
+     *
+     * @param item The item to retrieve the position of.
+     *
+     * @return The position of the specified item.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:13.001 -0500", hash_original_method = "4B52B65CCBAD37C22D6FCF1BE4A30381", hash_generated_method = "9F0BAE87F4E89FF7FF8FCDB2DA5566FE")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:42.320 -0400", hash_original_method = "4B52B65CCBAD37C22D6FCF1BE4A30381", hash_generated_method = "4306745B19EF41037F68A6DA3555ACDB")
-    public int getPosition(T item) {
-        addTaint(item.getTaint());
-        int varDFBE5BD03266E32EAAAEB8FB3F55CCB4_1480060948 = (mObjects.indexOf(item));
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1050412391 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1050412391;
-        // ---------- Original Method ----------
-        //return mObjects.indexOf(item);
+public int getPosition(T item) {
+        return mObjects.indexOf(item);
     }
 
+    /**
+     * {@inheritDoc}
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:13.003 -0500", hash_original_method = "7144EF990F660E75AA61001CF21A1CD5", hash_generated_method = "86EF76D6295D66F6DBBE39DCDBA9A1C9")
     
-    @DSModeled(DSC.SAFE)
-    @Override
-	public long getItemId(int position) {
-		return position;
-	}
+public long getItemId(int position) {
+        return position;
+    }
 
+    /**
+     * {@inheritDoc}
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:13.005 -0500", hash_original_method = "180EEF863853B86A02E5E476168E516D", hash_generated_method = "A5B1D9C00E70EDAFF5DE72AD387583B6")
     
-    @DSModeled(DSC.SAFE)
-    @Override
-	public View getView(int position, View convertView, ViewGroup parent) {
+public View getView(int position, View convertView, ViewGroup parent) {
         return createViewFromResource(position, convertView, parent, mResource);
     }
 
@@ -390,36 +407,26 @@ Context var178E2AD52D6FBBB503F908168856B574_967216275 =         mContext;
         return view;
     }
 
+    /**
+     * <p>Sets the layout resource to create the drop down views.</p>
+     *
+     * @param resource the layout resource defining the drop down views
+     * @see #getDropDownView(int, android.view.View, android.view.ViewGroup)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:13.010 -0500", hash_original_method = "614355FA33E2A17CA6280A34FDBFFDC0", hash_generated_method = "53E9BC2B4CD88AE698F664DCCF80E05A")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:42.327 -0400", hash_original_method = "614355FA33E2A17CA6280A34FDBFFDC0", hash_generated_method = "166D468151E808B5172814612FD9B5A0")
-    public void setDropDownViewResource(int resource) {
+public void setDropDownViewResource(int resource) {
         this.mDropDownResource = resource;
-        // ---------- Original Method ----------
-        //this.mDropDownResource = resource;
     }
 
+    /**
+     * {@inheritDoc}
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:13.013 -0500", hash_original_method = "55A24C3FF57565648C18AD1B34A1D191", hash_generated_method = "354A608CAB67E58C0C02915FF74A2A17")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:42.327 -0400", hash_original_method = "55A24C3FF57565648C18AD1B34A1D191", hash_generated_method = "0D0D9F47EFB820C2116417EC15C21887")
-    @Override
+@Override
     public View getDropDownView(int position, View convertView, ViewGroup parent) {
-        addTaint(parent.getTaint());
-        addTaint(convertView.getTaint());
-        addTaint(position);
-View var73BABEDDC942C821B8059F08E1C361F2_1090442088 =         createViewFromResource(position, convertView, parent, mDropDownResource);
-        var73BABEDDC942C821B8059F08E1C361F2_1090442088.addTaint(taint);
-        return var73BABEDDC942C821B8059F08E1C361F2_1090442088;
-        // ---------- Original Method ----------
-        //return createViewFromResource(position, convertView, parent, mDropDownResource);
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    public static ArrayAdapter<CharSequence> createFromResource(Context context,
-            int textArrayResId, int textViewResId) {
-        CharSequence[] strings = context.getResources().getTextArray(textArrayResId);
-        return new ArrayAdapter<CharSequence>(context, textViewResId, strings);
+        return createViewFromResource(position, convertView, parent, mDropDownResource);
     }
 
     
@@ -497,9 +504,9 @@ View var73BABEDDC942C821B8059F08E1C361F2_1090442088 =         createViewFromReso
             */
         }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:13.024 -0500", hash_original_method = "109574F1A4050F52746E85DE95C85548", hash_generated_method = "CEF2A45E0F9CDED972AD8C22BA69C5A9")
         
-        @DSModeled(DSC.SAFE)
-        @Override
+@Override
         protected void publishResults(CharSequence constraint, FilterResults results) {
             //noinspection unchecked
             mObjects = (List<T>) results.values;

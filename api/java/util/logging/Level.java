@@ -1,6 +1,8 @@
 package java.util.logging;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -19,83 +21,26 @@ import dalvik.system.VMStack;
 
 
 public class Level implements Serializable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.140 -0400", hash_original_field = "B068931CC450442B63F5B3D276EA4297", hash_generated_field = "531F96E2AEBFB44CD229EC4CB1F012B0")
 
-    private String name;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.141 -0400", hash_original_field = "2063C1608D6E0BAF80249C42E2BE5804", hash_generated_field = "810C3DA5CE7DA1BA423D6BE76816E5C9")
-
-    private int value;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.141 -0400", hash_original_field = "9623BCEF06C4EDCE06D889B615841D11", hash_generated_field = "4BDB4C6F49EE0D4ED40E32BE56CE6580")
-
-    private String resourceBundleName;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.141 -0400", hash_original_field = "9E3F4F69757D07F6A0D2AF4F1F2A1103", hash_generated_field = "A47C9414E01189F2E30143A3854D6AFC")
-
-    private transient ResourceBundle rb;
+    /**
+     * Parses a level name into a {@code Level} object.
+     *
+     * @param name
+     *            the name of the desired {@code level}, which cannot be
+     *            {@code null}.
+     * @return the level with the specified name.
+     * @throws NullPointerException
+     *             if {@code name} is {@code null}.
+     * @throws IllegalArgumentException
+     *             if {@code name} is not valid.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.617 -0500", hash_original_method = "B522AEDC8C75E1BBD9453A71CF2D6695", hash_generated_method = "FD598772B9D86AE223E3CFCC6AF6E842")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.141 -0400", hash_original_method = "BA2D7DFC8FDB62519DA8B21DD64373B1", hash_generated_method = "5D13951DD8E87306CD7F4B33BD4FE6EE")
-    protected  Level(String name, int level) {
-        this(name, level, null);
-        addTaint(level);
-        addTaint(name.getTaint());
-        // ---------- Original Method ----------
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.143 -0400", hash_original_method = "53B5A8F24D3D39AE441B077329C71771", hash_generated_method = "29A1BFF498CDF42580862B12055729F5")
-    protected  Level(String name, int level, String resourceBundleName) {
-        if(name == null)        
-        {
-            NullPointerException varA117BA528B11F7D1AC96CABFD5286E5C_1277003096 = new NullPointerException("name == null");
-            varA117BA528B11F7D1AC96CABFD5286E5C_1277003096.addTaint(taint);
-            throw varA117BA528B11F7D1AC96CABFD5286E5C_1277003096;
-        } //End block
-        this.name = name;
-        this.value = level;
-        this.resourceBundleName = resourceBundleName;
-        if(resourceBundleName != null)        
-        {
-            try 
-            {
-                rb = ResourceBundle.getBundle(resourceBundleName,
-                        Locale.getDefault(), VMStack.getCallingClassLoader());
-            } //End block
-            catch (MissingResourceException e)
-            {
-                rb = null;
-            } //End block
-        } //End block
-        synchronized
-(levels)        {
-            levels.add(this);
-        } //End block
-        // ---------- Original Method ----------
-        //if (name == null) {
-            //throw new NullPointerException("name == null");
-        //}
-        //this.name = name;
-        //this.value = level;
-        //this.resourceBundleName = resourceBundleName;
-        //if (resourceBundleName != null) {
-            //try {
-                //rb = ResourceBundle.getBundle(resourceBundleName,
-                        //Locale.getDefault(), VMStack.getCallingClassLoader());
-            //} catch (MissingResourceException e) {
-                //rb = null;
-            //}
-        //}
-        //synchronized (levels) {
-            //levels.add(this);
-        //}
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    public static Level parse(String name) throws IllegalArgumentException {
+public static Level parse(String name) throws IllegalArgumentException {
         if (name == null) {
             throw new NullPointerException("name == null");
         }
+
         boolean isNameAnInt;
         int nameAsInt;
         try {
@@ -105,13 +50,19 @@ public class Level implements Serializable {
             nameAsInt = 0;
             isNameAnInt = false;
         }
+
         synchronized (levels) {
             for (Level level : levels) {
                 if (name.equals(level.getName())) {
                     return level;
                 }
             }
+
             if (isNameAnInt) {
+                /*
+                 * Loop through levels a second time, so that the returned
+                 * instance will be passed on the order of construction.
+                 */
                 for (Level level : levels) {
                     if (nameAsInt == level.intValue()) {
                         return level;
@@ -119,241 +70,265 @@ public class Level implements Serializable {
                 }
             }
         }
+
         if (!isNameAnInt) {
             throw new IllegalArgumentException("Cannot parse name '" + name + "'");
         }
+
         return new Level(name, nameAsInt);
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.589 -0500", hash_original_field = "4E1718917C44931E02E5D2CF6F9A5FAF", hash_generated_field = "D33AC5439F5BB9E615F192463618D9E3")
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.144 -0400", hash_original_method = "6F5A80252F54E883F3837DA0C6833E69", hash_generated_method = "20D95D4DE5DF41ED4A3485524A086134")
-    public String getName() {
-String varDC708CD29829AA84C3F2D9B68CF84B0D_1092935689 =         this.name;
-        varDC708CD29829AA84C3F2D9B68CF84B0D_1092935689.addTaint(taint);
-        return varDC708CD29829AA84C3F2D9B68CF84B0D_1092935689;
-        // ---------- Original Method ----------
-        //return this.name;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.144 -0400", hash_original_method = "6DEDF515FC3DFB06F00973FF806B7B79", hash_generated_method = "E6DD87FBBEE01B544868E5F46E91B6BE")
-    public String getResourceBundleName() {
-String var7214CEE3997909E522736F52DB465A8B_1227544428 =         this.resourceBundleName;
-        var7214CEE3997909E522736F52DB465A8B_1227544428.addTaint(taint);
-        return var7214CEE3997909E522736F52DB465A8B_1227544428;
-        // ---------- Original Method ----------
-        //return this.resourceBundleName;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.144 -0400", hash_original_method = "8914B55F694F31BD669F4AB78F5D8E0B", hash_generated_method = "1C1C99F4DA8B9707346771AC8E6DC5AC")
-    public final int intValue() {
-        int varBA12F6D323945424B7A4EAC0C07E7B2C_1773661381 = (this.value);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_955160005 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_955160005;
-        // ---------- Original Method ----------
-        //return this.value;
-    }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.145 -0400", hash_original_method = "68F6CB700CD961C98FAD85DDC5107742", hash_generated_method = "75ECC68B6E36609E233BF844D833974A")
-    private Object readResolve() {
-        synchronized
-(levels)        {
-for(Level level : levels)
-            {
-                if(value != level.value)                
-                {
-                    continue;
-                } //End block
-                if(!name.equals(level.name))                
-                {
-                    continue;
-                } //End block
-                if(Objects.equal(resourceBundleName, level.resourceBundleName))                
-                {
-Object varBBB01F92FFE3DDEF2182A71AE5793430_1700908647 =                     level;
-                    varBBB01F92FFE3DDEF2182A71AE5793430_1700908647.addTaint(taint);
-                    return varBBB01F92FFE3DDEF2182A71AE5793430_1700908647;
-                } //End block
-            } //End block
-            levels.add(this);
-Object var72A74007B2BE62B849F475C7BDA4658B_641176677 =             this;
-            var72A74007B2BE62B849F475C7BDA4658B_641176677.addTaint(taint);
-            return var72A74007B2BE62B849F475C7BDA4658B_641176677;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (levels) {
-            //for (Level level : levels) {
-                //if (value != level.value) {
-                    //continue;
-                //}
-                //if (!name.equals(level.name)) {
-                    //continue;
-                //}
-                //if (Objects.equal(resourceBundleName, level.resourceBundleName)) {
-                    //return level;
-                //}
-            //}
-            //levels.add(this);
-            //return this;
-        //}
-    }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.145 -0400", hash_original_method = "267F1EA9E96531D86D40818D686262D8", hash_generated_method = "C1A531C66B9B2D21B1427DEC27AAFD80")
-    private void readObject(ObjectInputStream in) throws IOException,
-            ClassNotFoundException {
-        addTaint(in.getTaint());
-        in.defaultReadObject();
-        if(resourceBundleName != null)        
-        {
-            try 
-            {
-                rb = ResourceBundle.getBundle(resourceBundleName);
-            } //End block
-            catch (MissingResourceException e)
-            {
-                rb = null;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //in.defaultReadObject();
-        //if (resourceBundleName != null) {
-            //try {
-                //rb = ResourceBundle.getBundle(resourceBundleName);
-            //} catch (MissingResourceException e) {
-                //rb = null;
-            //}
-        //}
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.146 -0400", hash_original_method = "DEC78AA3502D783DBE391483E644D523", hash_generated_method = "099D03864C777CDA57105338B04A2E99")
-    public String getLocalizedName() {
-        if(rb == null)        
-        {
-String varB017984728AC60AD1F0BF8734F33F15C_1691133053 =             name;
-            varB017984728AC60AD1F0BF8734F33F15C_1691133053.addTaint(taint);
-            return varB017984728AC60AD1F0BF8734F33F15C_1691133053;
-        } //End block
-        try 
-        {
-String var86A4BBDA5786BD31861538F8C8D35F6F_199030701 =             rb.getString(name);
-            var86A4BBDA5786BD31861538F8C8D35F6F_199030701.addTaint(taint);
-            return var86A4BBDA5786BD31861538F8C8D35F6F_199030701;
-        } //End block
-        catch (MissingResourceException e)
-        {
-String varB017984728AC60AD1F0BF8734F33F15C_164968020 =             name;
-            varB017984728AC60AD1F0BF8734F33F15C_164968020.addTaint(taint);
-            return varB017984728AC60AD1F0BF8734F33F15C_164968020;
-        } //End block
-        // ---------- Original Method ----------
-        //if (rb == null) {
-            //return name;
-        //}
-        //try {
-            //return rb.getString(name);
-        //} catch (MissingResourceException e) {
-            //return name;
-        //}
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.146 -0400", hash_original_method = "B7F9927C4C2FEE34F933446CD9D546A4", hash_generated_method = "9FF277BA3605215DCE3D927B2749D7C9")
-    @Override
-    public boolean equals(Object o) {
-        addTaint(o.getTaint());
-        if(this == o)        
-        {
-            boolean varB326B5062B2F0E69046810717534CB09_1486139318 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1584882821 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1584882821;
-        } //End block
-        if(!(o instanceof Level))        
-        {
-            boolean var68934A3E9455FA72420237EB05902327_1042080058 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1541940033 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1541940033;
-        } //End block
-        boolean varDBD9BE81A7ABD64EC5DC68DCE54E527C_1501437147 = (((Level) o).intValue() == this.value);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1799166196 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1799166196;
-        // ---------- Original Method ----------
-        //if (this == o) {
-            //return true;
-        //}
-        //if (!(o instanceof Level)) {
-            //return false;
-        //}
-        //return ((Level) o).intValue() == this.value;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.147 -0400", hash_original_method = "B2C871D8CEAC47C4CD40779F84B10431", hash_generated_method = "DAA9D42AC8D61C657CCB7DBC8E293309")
-    @Override
-    public int hashCode() {
-        int varBA12F6D323945424B7A4EAC0C07E7B2C_1003452127 = (this.value);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_948367977 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_948367977;
-        // ---------- Original Method ----------
-        //return this.value;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.147 -0400", hash_original_method = "1304E162466F7C6D399933DD8CDA12C4", hash_generated_method = "D132CB1888B09CD9A8D4D3E82A5251D4")
-    @Override
-    public final String toString() {
-String varDC708CD29829AA84C3F2D9B68CF84B0D_726656229 =         this.name;
-        varDC708CD29829AA84C3F2D9B68CF84B0D_726656229.addTaint(taint);
-        return varDC708CD29829AA84C3F2D9B68CF84B0D_726656229;
-        // ---------- Original Method ----------
-        //return this.name;
-    }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.147 -0400", hash_original_field = "A510FBD61CF6433DC1B175D364070D99", hash_generated_field = "D33AC5439F5BB9E615F192463618D9E3")
 
     private static final long serialVersionUID = -8176160795706313070L;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.147 -0400", hash_original_field = "9846B94D1E5D63529397134055FC8E44", hash_generated_field = "5545112DFF5AE761BF55D4BFDB05CF99")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.591 -0500", hash_original_field = "1FC4A542D0E5293588F58550387070F6", hash_generated_field = "5545112DFF5AE761BF55D4BFDB05CF99")
+
 
     private static final List<Level> levels = new ArrayList<Level>(9);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.148 -0400", hash_original_field = "E42B3E38E962DC772837339B0AE785F5", hash_generated_field = "7D4FE1BCF9F743133D4A933C0D2E6229")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.594 -0500", hash_original_field = "6AA1449FCEFAEE395608E659A0D31188", hash_generated_field = "7D4FE1BCF9F743133D4A933C0D2E6229")
 
     public static final Level OFF = new Level("OFF", Integer.MAX_VALUE);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.148 -0400", hash_original_field = "F90365F1504FEC505378D81DAE49D65F", hash_generated_field = "4E601095036636FC5637E144C84926F9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.596 -0500", hash_original_field = "35AE8BA34AA91E10A4A5EEF067120878", hash_generated_field = "4E601095036636FC5637E144C84926F9")
 
     public static final Level SEVERE = new Level("SEVERE", 1000);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.148 -0400", hash_original_field = "BB7D329893836B6F2DC449A77E110B41", hash_generated_field = "75B160565D9E8B7BAAAAEBB0EB411DCE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.599 -0500", hash_original_field = "5E5F8FB68D351F5A0DEDEAA5B1A88A4A", hash_generated_field = "75B160565D9E8B7BAAAAEBB0EB411DCE")
 
     public static final Level WARNING = new Level("WARNING", 900);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.148 -0400", hash_original_field = "273EE4426F2F5988F2F2A2E4F284BD76", hash_generated_field = "268DFBD0EE059C15C2D32B20BC6D11FD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.601 -0500", hash_original_field = "A5621B808718F5712D4966BBA9695504", hash_generated_field = "268DFBD0EE059C15C2D32B20BC6D11FD")
 
     public static final Level INFO = new Level("INFO", 800);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.148 -0400", hash_original_field = "F8A0F12AFB6FA4CF9286E87716E40E3F", hash_generated_field = "566FF1B651D340629CC4A97442061FBB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.605 -0500", hash_original_field = "1F087806312562D4982929B0C839D494", hash_generated_field = "566FF1B651D340629CC4A97442061FBB")
 
     public static final Level CONFIG = new Level("CONFIG", 700);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.148 -0400", hash_original_field = "B97D2D99EEDF7FDFC8CDD1B32EBF9790", hash_generated_field = "AE5992FAEA9E073263D8DEC10FE933BC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.607 -0500", hash_original_field = "73F7CE828771BAA136164CB175232EEC", hash_generated_field = "AE5992FAEA9E073263D8DEC10FE933BC")
 
     public static final Level FINE = new Level("FINE", 500);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.148 -0400", hash_original_field = "737487473CC170234068CE91617C150E", hash_generated_field = "4B170E8B3034DDA19FAC260F54AECC50")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.610 -0500", hash_original_field = "1F969DFE592CFCDA42720A42C6B22A1B", hash_generated_field = "4B170E8B3034DDA19FAC260F54AECC50")
 
     public static final Level FINER = new Level("FINER", 400);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.148 -0400", hash_original_field = "F491ADAF22E215C62AEA59F697BB579B", hash_generated_field = "9EFCE8FEA6DBE72770E62DEF2AFF1BF2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.612 -0500", hash_original_field = "385BADD5891ED293EFED9CD1E22974C1", hash_generated_field = "9EFCE8FEA6DBE72770E62DEF2AFF1BF2")
 
     public static final Level FINEST = new Level("FINEST", 300);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.148 -0400", hash_original_field = "6934F2D5E54432A13EAD330A1F0E862F", hash_generated_field = "F56ECB9CF27A97D320EEC5079D9727A9")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.614 -0500", hash_original_field = "2C8A769D965745E96B4E0E20A6F99806", hash_generated_field = "F56ECB9CF27A97D320EEC5079D9727A9")
 
     public static final Level ALL = new Level("ALL", Integer.MIN_VALUE);
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.620 -0500", hash_original_field = "BF45F7481B8091DE3CBF80E94F7F940B", hash_generated_field = "531F96E2AEBFB44CD229EC4CB1F012B0")
+
+    private  String name;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.623 -0500", hash_original_field = "2A5EA2B60261C751D318C2CB32BF7CEC", hash_generated_field = "810C3DA5CE7DA1BA423D6BE76816E5C9")
+
+    private  int value;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.625 -0500", hash_original_field = "35CC6187306CFB2B68FF26D1B6A58A2F", hash_generated_field = "4BDB4C6F49EE0D4ED40E32BE56CE6580")
+
+    private  String resourceBundleName;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.628 -0500", hash_original_field = "913BB31457DB0E26778958CD08525E01", hash_generated_field = "A47C9414E01189F2E30143A3854D6AFC")
+
+    private transient ResourceBundle rb;
+
+    /**
+     * Constructs an instance of {@code Level} taking the supplied name and
+     * level value.
+     *
+     * @param name
+     *            the name of the level.
+     * @param level
+     *            an integer value indicating the level.
+     * @throws NullPointerException
+     *             if {@code name} is {@code null}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.630 -0500", hash_original_method = "BA2D7DFC8FDB62519DA8B21DD64373B1", hash_generated_method = "A0540D1B7C8728695592E68DDC6B6543")
+    
+protected Level(String name, int level) {
+        this(name, level, null);
+    }
+
+    /**
+     * Constructs an instance of {@code Level} taking the supplied name, level
+     * value and resource bundle name.
+     *
+     * @param name
+     *            the name of the level.
+     * @param level
+     *            an integer value indicating the level.
+     * @param resourceBundleName
+     *            the name of the resource bundle to use.
+     * @throws NullPointerException
+     *             if {@code name} is {@code null}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.633 -0500", hash_original_method = "53B5A8F24D3D39AE441B077329C71771", hash_generated_method = "58FB46748A3B0D03F6D22447095E48BE")
+    
+protected Level(String name, int level, String resourceBundleName) {
+        if (name == null) {
+            throw new NullPointerException("name == null");
+        }
+        this.name = name;
+        this.value = level;
+        this.resourceBundleName = resourceBundleName;
+        if (resourceBundleName != null) {
+            try {
+                rb = ResourceBundle.getBundle(resourceBundleName,
+                        Locale.getDefault(), VMStack.getCallingClassLoader());
+            } catch (MissingResourceException e) {
+                rb = null;
+            }
+        }
+        synchronized (levels) {
+            levels.add(this);
+        }
+    }
+
+    /**
+     * Gets the name of this level.
+     *
+     * @return this level's name.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.636 -0500", hash_original_method = "6F5A80252F54E883F3837DA0C6833E69", hash_generated_method = "10AFD575EA26BE807F18801FAC02C531")
+    
+public String getName() {
+        return this.name;
+    }
+
+    /**
+     * Gets the name of the resource bundle associated with this level.
+     *
+     * @return the name of this level's resource bundle.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.638 -0500", hash_original_method = "6DEDF515FC3DFB06F00973FF806B7B79", hash_generated_method = "795ECC4106B798264DC061D44D617BDB")
+    
+public String getResourceBundleName() {
+        return this.resourceBundleName;
+    }
+
+    /**
+     * Gets the integer value indicating this level.
+     *
+     * @return this level's integer value.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.640 -0500", hash_original_method = "8914B55F694F31BD669F4AB78F5D8E0B", hash_generated_method = "722E199462D7D6C816EA7F52782180C2")
+    
+public final int intValue() {
+        return this.value;
+    }
+
+    /**
+     * Serialization helper method to maintain singletons and add any new
+     * levels.
+     *
+     * @return the resolved instance.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.643 -0500", hash_original_method = "68F6CB700CD961C98FAD85DDC5107742", hash_generated_method = "DF1F5C1E9236855CC6A3ED494BE08945")
+    
+private Object readResolve() {
+        synchronized (levels) {
+            for (Level level : levels) {
+                if (value != level.value) {
+                    continue;
+                }
+                if (!name.equals(level.name)) {
+                    continue;
+                }
+                if (Objects.equal(resourceBundleName, level.resourceBundleName)) {
+                    return level;
+                }
+            }
+            // This is a new value, so add it.
+            levels.add(this);
+            return this;
+        }
+    }
+
+    /**
+     * Serialization helper to setup transient resource bundle instance.
+     *
+     * @param in
+     *            the input stream to read the instance data from.
+     * @throws IOException
+     *             if an IO error occurs.
+     * @throws ClassNotFoundException
+     *             if a class is not found.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.645 -0500", hash_original_method = "267F1EA9E96531D86D40818D686262D8", hash_generated_method = "5288DA0CB42918DD18AA147B00D6674B")
+    
+private void readObject(ObjectInputStream in) throws IOException,
+            ClassNotFoundException {
+        in.defaultReadObject();
+        if (resourceBundleName != null) {
+            try {
+                rb = ResourceBundle.getBundle(resourceBundleName);
+            } catch (MissingResourceException e) {
+                rb = null;
+            }
+        }
+    }
+
+    /**
+     * Gets the localized name of this level. The default locale is used. If no
+     * resource bundle is associated with this level then the original level
+     * name is returned.
+     *
+     * @return the localized name of this level.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.648 -0500", hash_original_method = "DEC78AA3502D783DBE391483E644D523", hash_generated_method = "17B331D2A9D24EC6EB750C5F9F54597A")
+    
+public String getLocalizedName() {
+        if (rb == null) {
+            return name;
+        }
+
+        try {
+            return rb.getString(name);
+        } catch (MissingResourceException e) {
+            return name;
+        }
+    }
+
+    /**
+     * Compares two {@code Level} objects for equality. They are considered to
+     * be equal if they have the same level value.
+     *
+     * @param o
+     *            the other object to compare this level to.
+     * @return {@code true} if this object equals to the supplied object,
+     *         {@code false} otherwise.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.651 -0500", hash_original_method = "B7F9927C4C2FEE34F933446CD9D546A4", hash_generated_method = "B130B68E3F411670DB14ADA9AA9A22AD")
+    
+@Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+
+        if (!(o instanceof Level)) {
+            return false;
+        }
+
+        return ((Level) o).intValue() == this.value;
+    }
+
+    /**
+     * Returns the hash code of this {@code Level} object.
+     *
+     * @return this level's hash code.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.653 -0500", hash_original_method = "B2C871D8CEAC47C4CD40779F84B10431", hash_generated_method = "F423F80DC97919734AF46D1780DF4AF2")
+    
+@Override
+    public int hashCode() {
+        return this.value;
+    }
+
+    /**
+     * Returns the string representation of this {@code Level} object. In
+     * this case, it is the level's name.
+     *
+     * @return the string representation of this level.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.656 -0500", hash_original_method = "1304E162466F7C6D399933DD8CDA12C4", hash_generated_method = "2C7423C5B42F1AAB29BE1C2C0841EC2B")
+    
+@Override
+    public final String toString() {
+        return this.name;
+    }
 }
 

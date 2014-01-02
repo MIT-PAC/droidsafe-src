@@ -1,6 +1,8 @@
 package android.nfc;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.DroidSafeAndroidRuntime;
 
@@ -26,41 +28,16 @@ import android.util.Log;
 
 
 public final class NfcAdapter {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.219 -0400", hash_original_field = "11781F6194F8930ED75DD00D22475BDB", hash_generated_field = "35B3C2E1A1D38F975F8DF16795973C35")
 
-    NfcActivityManager mNfcActivityManager;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.219 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "B997E37019471EC8FC5B98148C7A8AD7")
-
-    Context mContext;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.133 -0400", hash_original_field = "158683AE178C4CD4D4CD46B2CA281B7C", hash_generated_field = "5ABD4D31FC9F42AC1531FBC9E85DB3FF")
-
-    OnActivityPausedListener mForegroundDispatchListener = new OnActivityPausedListener() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.133 -0400", hash_original_method = "20720EE87497F4AA75409509758C29CB", hash_generated_method = "CCDF3879995637CE1FE9CE6838EC2B7B")
-        @Override
-        public void onPaused(Activity activity) {
-            
-            disableForegroundDispatchInternal(activity, true);
-            addTaint(activity.getTaint());
-            
-            
-        }
-
-        
-};
+    /**
+     * Helper to check if this device has FEATURE_NFC, but without using
+     * a context.
+     * Equivalent to
+     * context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_NFC)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.652 -0500", hash_original_method = "EB029713530469167365B3658B6FC47E", hash_generated_method = "679B5280429AEA728A25AE4EF9C45DBC")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.220 -0400", hash_original_method = "C4AF3477B0D281733AFB736BB9D4035F", hash_generated_method = "30D49F121006E5986523C8D7A73A0AB0")
-      NfcAdapter(Context context) {
-        mContext = context;
-        mNfcActivityManager = new NfcActivityManager(this);
-        // ---------- Original Method ----------
-        //mContext = context;
-        //mNfcActivityManager = new NfcActivityManager(this);
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    private static boolean hasNfcFeature() {
+private static boolean hasNfcFeature() {
         IPackageManager pm = ActivityThread.getPackageManager();
         if (pm == null) {
             Log.e(TAG, "Cannot get package manager, assuming no NFC feature");
@@ -95,9 +72,11 @@ public final class NfcAdapter {
         return adapter;
     }
 
+    /** get handle to NFC service interface */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.657 -0500", hash_original_method = "0FFEE716C32FBFB9A0B5A211768219BA", hash_generated_method = "A69D89BB473C479A38B8A821A81439C0")
     
-    @DSModeled(DSC.BAN)
-    private static INfcAdapter getServiceInterface() {
+private static INfcAdapter getServiceInterface() {
+        /* get a handle to NFC service */
         IBinder b = ServiceManager.getService("nfc");
         if (b == null) {
             return null;
@@ -105,642 +84,205 @@ public final class NfcAdapter {
         return INfcAdapter.Stub.asInterface(b);
     }
 
+    /**
+     * Helper to get the default NFC Adapter.
+     * <p>
+     * Most Android devices will only have one NFC Adapter (NFC Controller).
+     * <p>
+     * This helper is the equivalent of:
+     * <pre>{@code
+     * NfcManager manager = (NfcManager) context.getSystemService(Context.NFC_SERVICE);
+     * NfcAdapter adapter = manager.getDefaultAdapter();
+     * }</pre>
+     * @param context the calling application's context
+     *
+     * @return the default NFC adapter, or null if no NFC adapter exists
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.659 -0500", hash_original_method = "BBAF054E3A572AA64409457A2C6BC138", hash_generated_method = "5115AE9CECB46ACBA915434EDC27859F")
     
-    public static NfcAdapter getDefaultAdapter(Context context) {
+public static NfcAdapter getDefaultAdapter(Context context) {
         if (context == null) {
             throw new IllegalArgumentException("context cannot be null");
         }
         context = context.getApplicationContext();
+        /* use getSystemService() instead of just instantiating to take
+         * advantage of the context's cached NfcManager & NfcAdapter */
         NfcManager manager = (NfcManager) context.getSystemService(Context.NFC_SERVICE);
         if (manager == null) {
+            // NFC not available
             return null;
         }
         return manager.getDefaultAdapter();
     }
 
+    /**
+     * Legacy NfcAdapter getter, always use {@link #getDefaultAdapter(Context)} instead.<p>
+     * This method was deprecated at API level 10 (Gingerbread MR1) because a context is required
+     * for many NFC API methods. Those methods will fail when called on an NfcAdapter
+     * object created from this method.<p>
+     * @deprecated use {@link #getDefaultAdapter(Context)}
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.662 -0500", hash_original_method = "48A7691839F3163BD41DEB5028DF54C7", hash_generated_method = "00D355938CBC4A736CD55F3604C3ECCB")
     
-    @Deprecated
+@Deprecated
     public static NfcAdapter getDefaultAdapter() {
         Log.w(TAG, "WARNING: NfcAdapter.getDefaultAdapter() is deprecated, use " +
                 "NfcAdapter.getDefaultAdapter(Context) instead", new Exception());
+
         return NfcAdapter.getNfcAdapter(null);
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.591 -0500", hash_original_field = "76B42502A850F1BA8F9A78C316486025", hash_generated_field = "B5A60E2FA52639EB51E0CC65701892A4")
 
+    static final String TAG = "NFC";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.595 -0500", hash_original_field = "B556699344548323303635D3C515B3B6", hash_generated_field = "12E09594F7A717118A3DADA24A701917")
+
+    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION)
+    public static final String ACTION_NDEF_DISCOVERED = "android.nfc.action.NDEF_DISCOVERED";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.598 -0500", hash_original_field = "93070AD8B3837B4B71EC0F00DC42ABB8", hash_generated_field = "421DFCD0950F69398DB7B948AD45CD3D")
+
+    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION)
+    public static final String ACTION_TECH_DISCOVERED = "android.nfc.action.TECH_DISCOVERED";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.601 -0500", hash_original_field = "6DA5AFC2842F7EA2D0798E495FF6E507", hash_generated_field = "6C611E0AE33420401C802C4D28DAF2D8")
+
+    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION)
+    public static final String ACTION_TAG_DISCOVERED = "android.nfc.action.TAG_DISCOVERED";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.604 -0500", hash_original_field = "58DC5B8507186B8F94BC8D6EA1643E20", hash_generated_field = "05DA916FF7DE9C6A5E3D0ED553A216B2")
+
+    public static final String ACTION_TAG_LEFT_FIELD = "android.nfc.action.TAG_LOST";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.606 -0500", hash_original_field = "FF9B908A8930E493AC4D33A030F9046C", hash_generated_field = "864FDBA549D69F45DE502B8133671865")
+
+    public static final String EXTRA_TAG = "android.nfc.extra.TAG";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.609 -0500", hash_original_field = "DF4C5D05D7919416996E8C3E7DF61778", hash_generated_field = "B8A498585D958ACF371A30D7A693AF39")
+
+    public static final String EXTRA_NDEF_MESSAGES = "android.nfc.extra.NDEF_MESSAGES";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.612 -0500", hash_original_field = "76C644CAB7321CE637A84954169830F2", hash_generated_field = "9AFE253D7BCA0B91EEBBA17305076401")
+
+    public static final String EXTRA_ID = "android.nfc.extra.ID";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.615 -0500", hash_original_field = "7427C04515F5C016CB8523F63DC37FC8", hash_generated_field = "64EAD31FCC5D8863D42B912D821EC041")
+
+    @SdkConstant(SdkConstantType.BROADCAST_INTENT_ACTION)
+    public static final String ACTION_ADAPTER_STATE_CHANGED =
+            "android.nfc.action.ADAPTER_STATE_CHANGED";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.618 -0500", hash_original_field = "10E4914A677975ECC13B7B77064559BB", hash_generated_field = "5610F9B2EBB4FB9B1E6D234598ECA413")
+
+    public static final String EXTRA_ADAPTER_STATE = "android.nfc.extra.ADAPTER_STATE";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.620 -0500", hash_original_field = "DFA817520B4BD2D1F63D38E0170AAAA6", hash_generated_field = "501F4A67DD89031B57A5BA8625CF46AC")
+
+    public static final int STATE_OFF = 1;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.623 -0500", hash_original_field = "EBA28948D041A52778AC30C0E2179E52", hash_generated_field = "09B2FFE38FB2948139C918D224403C50")
+
+    public static final int STATE_TURNING_ON = 2;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.625 -0500", hash_original_field = "5CC75307D8BCC154BBEB956FB3BB7E02", hash_generated_field = "4D3064FE8FD25755AD9FCE56B0968A76")
+
+    public static final int STATE_ON = 3;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.627 -0500", hash_original_field = "95F9057FFCA95A636EFB9A5F7725DE81", hash_generated_field = "66FFFDE84846BF12D6E7B1556699CCE2")
+
+    public static final int STATE_TURNING_OFF = 4;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.630 -0500", hash_original_field = "85B25108193CD96000076C9FEB763F37", hash_generated_field = "F9BB84E3D4C91D00C4A915F1D24BE4F8")
+
+    static boolean sIsInitialized = false;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.632 -0500", hash_original_field = "42BFC8F87F5DAA35E2B85F9027E47BF5", hash_generated_field = "651AB749C4ED1A0349F68E271823B3C3")
+
+    // attemptDeadServiceRecovery() when NFC crashes - we accept a best effort
+    // recovery
+    static INfcAdapter sService;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.635 -0500", hash_original_field = "32B868ACD220513B566D230E5282ADC1", hash_generated_field = "2233B419DEF0D6D6964CA486B17F24A6")
+
+    static INfcTag sTagService;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.638 -0500", hash_original_field = "B9B707A015CD8AC987CC5B0619A91F7A", hash_generated_field = "43AC8A4224DE3385E9255D2280FEE77B")
+
+    static HashMap<Context, NfcAdapter> sNfcAdapters = new HashMap();
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.640 -0500", hash_original_field = "98BCE2FA4CD149969F933211DFD678A2", hash_generated_field = "1DAC697DF93D7551113C7B2C5A1CB051")
+
+
+    /**
+     * NfcAdapter used with a null context. This ctor was deprecated but we have
+     * to support it for backwards compatibility. New methods that require context
+     * might throw when called on the null-context NfcAdapter.
+     */
+    static NfcAdapter sNullContextNfcAdapter;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.642 -0500", hash_original_field = "35B3C2E1A1D38F975F8DF16795973C35", hash_generated_field = "35B3C2E1A1D38F975F8DF16795973C35")
+
+
+     NfcActivityManager mNfcActivityManager;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.645 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "B997E37019471EC8FC5B98148C7A8AD7")
+
+     Context mContext;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.133 -0400", hash_original_field = "158683AE178C4CD4D4CD46B2CA281B7C", hash_generated_field = "5ABD4D31FC9F42AC1531FBC9E85DB3FF")
+
+    OnActivityPausedListener mForegroundDispatchListener = new OnActivityPausedListener() {        
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.133 -0400", hash_original_method = "20720EE87497F4AA75409509758C29CB", hash_generated_method = "CCDF3879995637CE1FE9CE6838EC2B7B")
+        @Override
+        public void onPaused(Activity activity) {
+            
+            disableForegroundDispatchInternal(activity, true);
+            addTaint(activity.getTaint());
+            
+            
+        }
+
+        
+};
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.665 -0500", hash_original_method = "C4AF3477B0D281733AFB736BB9D4035F", hash_generated_method = "C4AF3477B0D281733AFB736BB9D4035F")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.222 -0400", hash_original_method = "4F4EBC54D108D66F416C93B46580E117", hash_generated_method = "B6F2A6C19162530AEFD85AD977F6D75A")
-    public Context getContext() {
-Context var178E2AD52D6FBBB503F908168856B574_1624558705 =         mContext;
-        var178E2AD52D6FBBB503F908168856B574_1624558705.addTaint(taint);
-        return var178E2AD52D6FBBB503F908168856B574_1624558705;
-        // ---------- Original Method ----------
-        //return mContext;
+NfcAdapter(Context context) {
+        mContext = context;
+        mNfcActivityManager = new NfcActivityManager(this);
     }
 
+    /**
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.668 -0500", hash_original_method = "4F4EBC54D108D66F416C93B46580E117", hash_generated_method = "BA026F6873AF9B17E96AB49AFB6CEE03")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.223 -0400", hash_original_method = "5DC17A5CA100E57D93FCA0A10242D110", hash_generated_method = "4CCC0C7FBA4406207E8F7B8D13A396BC")
-    public INfcAdapter getService() {
-        isEnabled();
-INfcAdapter var938DAF7C4B8292E45D258C2CDDCCD9C3_77209557 =         sService;
-        var938DAF7C4B8292E45D258C2CDDCCD9C3_77209557.addTaint(taint);
-        return var938DAF7C4B8292E45D258C2CDDCCD9C3_77209557;
-        // ---------- Original Method ----------
-        //isEnabled();
-        //return sService;
+public Context getContext() {
+        return mContext;
     }
 
+    /**
+     * Returns the binder interface to the service.
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.670 -0500", hash_original_method = "5DC17A5CA100E57D93FCA0A10242D110", hash_generated_method = "67BDEEAF74AD8E7AA4D695CD3950CDFF")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.223 -0400", hash_original_method = "1AA3314EB2D88084AC95E9F76A714199", hash_generated_method = "CCCE49257F984D86939E968E21022363")
-    public INfcTag getTagService() {
-        isEnabled();
-INfcTag var95361F532ED5F296684FC2AB649983EC_792422382 =         sTagService;
-        var95361F532ED5F296684FC2AB649983EC_792422382.addTaint(taint);
-        return var95361F532ED5F296684FC2AB649983EC_792422382;
-        // ---------- Original Method ----------
-        //isEnabled();
-        //return sTagService;
+public INfcAdapter getService() {
+        isEnabled();  // NOP call to recover sService if it is stale
+        return sService;
     }
 
+    /**
+     * Returns the binder interface to the tag service.
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.672 -0500", hash_original_method = "1AA3314EB2D88084AC95E9F76A714199", hash_generated_method = "9F6A59069E733103F62E8135C7AA16B9")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.224 -0400", hash_original_method = "8B420ADA6778D8BC08D2E0440E69F337", hash_generated_method = "CFB1964E2444680DCD0F6B02BCA09FCC")
-    public void attemptDeadServiceRecovery(Exception e) {
-        addTaint(e.getTaint());
-        INfcAdapter service = getServiceInterface();
-        if(service == null)        
-        {
-            return;
-        } //End block
-        sService = service;
-        try 
-        {
-            sTagService = service.getNfcTagInterface();
-        } //End block
-        catch (RemoteException ee)
-        {
-        } //End block
-        return;
-        // ---------- Original Method ----------
-        //Log.e(TAG, "NFC service dead - attempting to recover", e);
-        //INfcAdapter service = getServiceInterface();
-        //if (service == null) {
-            //Log.e(TAG, "could not retrieve NFC service during service recovery");
-            //return;
-        //}
-        //sService = service;
-        //try {
-            //sTagService = service.getNfcTagInterface();
-        //} catch (RemoteException ee) {
-            //Log.e(TAG, "could not retrieve NFC tag service during service recovery");
-        //}
-        //return;
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.225 -0400", hash_original_method = "7D7BBD1D80D27F2FA89C3E978875F335", hash_generated_method = "C28AB3B9F3871D705574B6689C0F581F")
-    public boolean isEnabled() {
-        try 
-        {
-            boolean varCC361E2FB22CF45855688F850C27E53C_1394594027 = (sService.getState() == STATE_ON);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1960619195 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1960619195;
-        } //End block
-        catch (RemoteException e)
-        {
-            attemptDeadServiceRecovery(e);
-            boolean var68934A3E9455FA72420237EB05902327_1052922560 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1126514918 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1126514918;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return sService.getState() == STATE_ON;
-        //} catch (RemoteException e) {
-            //attemptDeadServiceRecovery(e);
-            //return false;
-        //}
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.226 -0400", hash_original_method = "928B269965D2C98169E42755C4D77176", hash_generated_method = "705BC86C289C7573BD1BF3BA46EDF806")
-    public int getAdapterState() {
-        try 
-        {
-            int var7F03367C92C380A2F1C14F7B990829D7_1084061661 = (sService.getState());
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_543907575 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_543907575;
-        } //End block
-        catch (RemoteException e)
-        {
-            attemptDeadServiceRecovery(e);
-            int varB3CC8A8B913CDC32BBF03AD716A4D656_893504093 = (NfcAdapter.STATE_OFF);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1165345678 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1165345678;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return sService.getState();
-        //} catch (RemoteException e) {
-            //attemptDeadServiceRecovery(e);
-            //return NfcAdapter.STATE_OFF;
-        //}
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.227 -0400", hash_original_method = "1A932A08F1F08387DBC22C33FE8F21F7", hash_generated_method = "3F64BC3E34FC39FD92A668355001DA7F")
-    public boolean enable() {
-        try 
-        {
-            boolean varD3C1CFA6F5055200D9D8AC5042182D54_993882842 = (sService.enable());
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_111961431 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_111961431;
-        } //End block
-        catch (RemoteException e)
-        {
-            attemptDeadServiceRecovery(e);
-            boolean var68934A3E9455FA72420237EB05902327_683546937 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1852106051 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1852106051;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return sService.enable();
-        //} catch (RemoteException e) {
-            //attemptDeadServiceRecovery(e);
-            //return false;
-        //}
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.228 -0400", hash_original_method = "C2CC7D959D4121C24D40293E0B89029D", hash_generated_method = "BA916EAAF36598D9484BEEAC88450F63")
-    public boolean disable() {
-        try 
-        {
-            boolean varFCD5C868A0B8451A8803861ABA2A69E5_906647893 = (sService.disable());
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1677710791 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1677710791;
-        } //End block
-        catch (RemoteException e)
-        {
-            attemptDeadServiceRecovery(e);
-            boolean var68934A3E9455FA72420237EB05902327_606465208 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1177164306 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1177164306;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return sService.disable();
-        //} catch (RemoteException e) {
-            //attemptDeadServiceRecovery(e);
-            //return false;
-        //}
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.229 -0400", hash_original_method = "A1E6832BF1F30CB75C5E3838CB4EB39F", hash_generated_method = "E9855AD5E60420EAA76D41B44DF835D3")
-    public void setNdefPushMessage(NdefMessage message, Activity activity,
-            Activity ... activities) {
-        addTaint(activities[0].getTaint());
-        addTaint(activity.getTaint());
-        addTaint(message.getTaint());
-        if(activity == null)        
-        {
-            NullPointerException varCF0EA2FBB1ED5EBEBC81DB06EF910DB5_2128440631 = new NullPointerException("activity cannot be null");
-            varCF0EA2FBB1ED5EBEBC81DB06EF910DB5_2128440631.addTaint(taint);
-            throw varCF0EA2FBB1ED5EBEBC81DB06EF910DB5_2128440631;
-        } //End block
-        mNfcActivityManager.setNdefPushMessage(activity, message);
-for(Activity a : activities)
-        {
-            if(a == null)            
-            {
-                NullPointerException var733F4F427D8A0EDBD91FCC2BC1473083_1946389898 = new NullPointerException("activities cannot contain null");
-                var733F4F427D8A0EDBD91FCC2BC1473083_1946389898.addTaint(taint);
-                throw var733F4F427D8A0EDBD91FCC2BC1473083_1946389898;
-            } //End block
-            mNfcActivityManager.setNdefPushMessage(a, message);
-        } //End block
-        // ---------- Original Method ----------
-        //if (activity == null) {
-            //throw new NullPointerException("activity cannot be null");
-        //}
-        //mNfcActivityManager.setNdefPushMessage(activity, message);
-        //for (Activity a : activities) {
-            //if (a == null) {
-                //throw new NullPointerException("activities cannot contain null");
-            //}
-            //mNfcActivityManager.setNdefPushMessage(a, message);
-        //}
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.231 -0400", hash_original_method = "B0650F3F4DF141FA2A729CEDE59567AC", hash_generated_method = "50062652106CD99644002D03603DA6EE")
-    public void setNdefPushMessageCallback(CreateNdefMessageCallback callback, Activity activity,
-            Activity ... activities) {
-        addTaint(activities[0].getTaint());
-        addTaint(activity.getTaint());
-        addTaint(callback.getTaint());
-        if(activity == null)        
-        {
-            NullPointerException varCF0EA2FBB1ED5EBEBC81DB06EF910DB5_585067377 = new NullPointerException("activity cannot be null");
-            varCF0EA2FBB1ED5EBEBC81DB06EF910DB5_585067377.addTaint(taint);
-            throw varCF0EA2FBB1ED5EBEBC81DB06EF910DB5_585067377;
-        } //End block
-        mNfcActivityManager.setNdefPushMessageCallback(activity, callback);
-for(Activity a : activities)
-        {
-            if(a == null)            
-            {
-                NullPointerException var733F4F427D8A0EDBD91FCC2BC1473083_901204879 = new NullPointerException("activities cannot contain null");
-                var733F4F427D8A0EDBD91FCC2BC1473083_901204879.addTaint(taint);
-                throw var733F4F427D8A0EDBD91FCC2BC1473083_901204879;
-            } //End block
-            mNfcActivityManager.setNdefPushMessageCallback(a, callback);
-        } //End block
-        // ---------- Original Method ----------
-        //if (activity == null) {
-            //throw new NullPointerException("activity cannot be null");
-        //}
-        //mNfcActivityManager.setNdefPushMessageCallback(activity, callback);
-        //for (Activity a : activities) {
-            //if (a == null) {
-                //throw new NullPointerException("activities cannot contain null");
-            //}
-            //mNfcActivityManager.setNdefPushMessageCallback(a, callback);
-        //}
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.232 -0400", hash_original_method = "4C0E012E0D16CCB4DEFB75A7779BC5C8", hash_generated_method = "E59AD4998EE80D1A60D46B431B05B157")
-    public void setOnNdefPushCompleteCallback(OnNdefPushCompleteCallback callback,
-            Activity activity, Activity ... activities) {
-        addTaint(activities[0].getTaint());
-        addTaint(activity.getTaint());
-        addTaint(callback.getTaint());
-        if(activity == null)        
-        {
-            NullPointerException varCF0EA2FBB1ED5EBEBC81DB06EF910DB5_1748803545 = new NullPointerException("activity cannot be null");
-            varCF0EA2FBB1ED5EBEBC81DB06EF910DB5_1748803545.addTaint(taint);
-            throw varCF0EA2FBB1ED5EBEBC81DB06EF910DB5_1748803545;
-        } //End block
-        mNfcActivityManager.setOnNdefPushCompleteCallback(activity, callback);
-for(Activity a : activities)
-        {
-            if(a == null)            
-            {
-                NullPointerException var733F4F427D8A0EDBD91FCC2BC1473083_1171001984 = new NullPointerException("activities cannot contain null");
-                var733F4F427D8A0EDBD91FCC2BC1473083_1171001984.addTaint(taint);
-                throw var733F4F427D8A0EDBD91FCC2BC1473083_1171001984;
-            } //End block
-            mNfcActivityManager.setOnNdefPushCompleteCallback(a, callback);
-        } //End block
-        // ---------- Original Method ----------
-        //if (activity == null) {
-            //throw new NullPointerException("activity cannot be null");
-        //}
-        //mNfcActivityManager.setOnNdefPushCompleteCallback(activity, callback);
-        //for (Activity a : activities) {
-            //if (a == null) {
-                //throw new NullPointerException("activities cannot contain null");
-            //}
-            //mNfcActivityManager.setOnNdefPushCompleteCallback(a, callback);
-        //}
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.234 -0400", hash_original_method = "7DFF841E004C0B63DC3E7B85FC7B1907", hash_generated_method = "E4B90372A6BB08D368C684E463406495")
-    public void enableForegroundDispatch(Activity activity, PendingIntent intent,
-            IntentFilter[] filters, String[][] techLists) {
-        addTaint(techLists[0][0].getTaint());
-        addTaint(filters[0].getTaint());
-        addTaint(intent.getTaint());
-        addTaint(activity.getTaint());
-        if(activity == null || intent == null)        
-        {
-            NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_1072164652 = new NullPointerException();
-            var7338BC9F48D81FE0BBD6183F4014DCC4_1072164652.addTaint(taint);
-            throw var7338BC9F48D81FE0BBD6183F4014DCC4_1072164652;
-        } //End block
-        if(!activity.isResumed())        
-        {
-            IllegalStateException varB2586EF98F77842DA20777812DF98FC3_609276656 = new IllegalStateException("Foreground dispatch can only be enabled " +
-                    "when your activity is resumed");
-            varB2586EF98F77842DA20777812DF98FC3_609276656.addTaint(taint);
-            throw varB2586EF98F77842DA20777812DF98FC3_609276656;
-        } //End block
-        try 
-        {
-            TechListParcel parcel = null;
-            if(techLists != null && techLists.length > 0)            
-            {
-                parcel = new TechListParcel(techLists);
-            } //End block
-            ActivityThread.currentActivityThread().registerOnActivityPausedListener(activity,
-                    mForegroundDispatchListener);
-            sService.setForegroundDispatch(intent, filters, parcel);
-        } //End block
-        catch (RemoteException e)
-        {
-            attemptDeadServiceRecovery(e);
-        } //End block
-        // ---------- Original Method ----------
-        //if (activity == null || intent == null) {
-            //throw new NullPointerException();
-        //}
-        //if (!activity.isResumed()) {
-            //throw new IllegalStateException("Foreground dispatch can only be enabled " +
-                    //"when your activity is resumed");
-        //}
-        //try {
-            //TechListParcel parcel = null;
-            //if (techLists != null && techLists.length > 0) {
-                //parcel = new TechListParcel(techLists);
-            //}
-            //ActivityThread.currentActivityThread().registerOnActivityPausedListener(activity,
-                    //mForegroundDispatchListener);
-            //sService.setForegroundDispatch(intent, filters, parcel);
-        //} catch (RemoteException e) {
-            //attemptDeadServiceRecovery(e);
-        //}
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.237 -0400", hash_original_method = "18ACF5FE6AECAA88942AA43DE81790DE", hash_generated_method = "DAB8A4571F8E473A419038C9F95E9DA2")
-    public void disableForegroundDispatch(Activity activity) {
-        addTaint(activity.getTaint());
-        ActivityThread.currentActivityThread().unregisterOnActivityPausedListener(activity,
-                mForegroundDispatchListener);
-        disableForegroundDispatchInternal(activity, false);
-        // ---------- Original Method ----------
-        //ActivityThread.currentActivityThread().unregisterOnActivityPausedListener(activity,
-                //mForegroundDispatchListener);
-        //disableForegroundDispatchInternal(activity, false);
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.238 -0400", hash_original_method = "3391D46AA688F0DFABC27A2628A920CB", hash_generated_method = "2AA991A35C0854956DB0587AB5288A68")
-     void disableForegroundDispatchInternal(Activity activity, boolean force) {
-        addTaint(force);
-        addTaint(activity.getTaint());
-        try 
-        {
-            sService.setForegroundDispatch(null, null, null);
-            if(!force && !activity.isResumed())            
-            {
-                IllegalStateException varCFA7471A5AC7D6E813AE5E0ADEFCCE55_156604067 = new IllegalStateException("You must disable foreground dispatching " +
-                        "while your activity is still resumed");
-                varCFA7471A5AC7D6E813AE5E0ADEFCCE55_156604067.addTaint(taint);
-                throw varCFA7471A5AC7D6E813AE5E0ADEFCCE55_156604067;
-            } //End block
-        } //End block
-        catch (RemoteException e)
-        {
-            attemptDeadServiceRecovery(e);
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //sService.setForegroundDispatch(null, null, null);
-            //if (!force && !activity.isResumed()) {
-                //throw new IllegalStateException("You must disable foreground dispatching " +
-                        //"while your activity is still resumed");
-            //}
-        //} catch (RemoteException e) {
-            //attemptDeadServiceRecovery(e);
-        //}
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.239 -0400", hash_original_method = "6149A052111CDC5E5BB88FC2B2B826FC", hash_generated_method = "03D6CE00D410E99C4C047DAA6C7BF8AF")
-    @Deprecated
-    public void enableForegroundNdefPush(Activity activity, NdefMessage message) {
-        addTaint(message.getTaint());
-        addTaint(activity.getTaint());
-        if(activity == null || message == null)        
-        {
-            NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_1854142483 = new NullPointerException();
-            var7338BC9F48D81FE0BBD6183F4014DCC4_1854142483.addTaint(taint);
-            throw var7338BC9F48D81FE0BBD6183F4014DCC4_1854142483;
-        } //End block
-        enforceResumed(activity);
-        mNfcActivityManager.setNdefPushMessage(activity, message);
-        // ---------- Original Method ----------
-        //if (activity == null || message == null) {
-            //throw new NullPointerException();
-        //}
-        //enforceResumed(activity);
-        //mNfcActivityManager.setNdefPushMessage(activity, message);
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.240 -0400", hash_original_method = "D87492DD9C8E48B40BF8DEA34B5D588A", hash_generated_method = "FEE1A84897D1A235057700DA9AC0213B")
-    public void disableForegroundNdefPush(Activity activity) {
-        addTaint(activity.getTaint());
-        if(activity == null)        
-        {
-            NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_483723713 = new NullPointerException();
-            var7338BC9F48D81FE0BBD6183F4014DCC4_483723713.addTaint(taint);
-            throw var7338BC9F48D81FE0BBD6183F4014DCC4_483723713;
-        } //End block
-        enforceResumed(activity);
-        mNfcActivityManager.setNdefPushMessage(activity, null);
-        mNfcActivityManager.setNdefPushMessageCallback(activity, null);
-        mNfcActivityManager.setOnNdefPushCompleteCallback(activity, null);
-        // ---------- Original Method ----------
-        //if (activity == null) {
-            //throw new NullPointerException();
-        //}
-        //enforceResumed(activity);
-        //mNfcActivityManager.setNdefPushMessage(activity, null);
-        //mNfcActivityManager.setNdefPushMessageCallback(activity, null);
-        //mNfcActivityManager.setOnNdefPushCompleteCallback(activity, null);
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.240 -0400", hash_original_method = "61512909C8D6C025A83A4E62D3CEE407", hash_generated_method = "ADC625F42C1A8DC9E916687CB9F49F02")
-    @Deprecated
-    public void enableForegroundNdefPush(Activity activity, final NdefPushCallback callback) {
-        addTaint(callback.getTaint());
-        addTaint(activity.getTaint());
-        if(activity == null || callback == null)        
-        {
-            NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_1128184842 = new NullPointerException();
-            var7338BC9F48D81FE0BBD6183F4014DCC4_1128184842.addTaint(taint);
-            throw var7338BC9F48D81FE0BBD6183F4014DCC4_1128184842;
-        } //End block
-        enforceResumed(activity);
-        LegacyCallbackWrapper callbackWrapper = new LegacyCallbackWrapper(callback);
-        mNfcActivityManager.setNdefPushMessageCallback(activity, callbackWrapper);
-        mNfcActivityManager.setOnNdefPushCompleteCallback(activity, callbackWrapper);
-        // ---------- Original Method ----------
-        //if (activity == null || callback == null) {
-            //throw new NullPointerException();
-        //}
-        //enforceResumed(activity);
-        //LegacyCallbackWrapper callbackWrapper = new LegacyCallbackWrapper(callback);
-        //mNfcActivityManager.setNdefPushMessageCallback(activity, callbackWrapper);
-        //mNfcActivityManager.setOnNdefPushCompleteCallback(activity, callbackWrapper);
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.241 -0400", hash_original_method = "D0E93F9BEA709C21A3E1070B6361A93C", hash_generated_method = "796FFFA5F29C40FAD115284EBE230989")
-    public boolean enableNdefPush() {
-        try 
-        {
-            boolean varE02BEB5844CA701534F5B85CA0654B2C_1888082076 = (sService.enableNdefPush());
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1863868501 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1863868501;
-        } //End block
-        catch (RemoteException e)
-        {
-            attemptDeadServiceRecovery(e);
-            boolean var68934A3E9455FA72420237EB05902327_344744842 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1674346018 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1674346018;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return sService.enableNdefPush();
-        //} catch (RemoteException e) {
-            //attemptDeadServiceRecovery(e);
-            //return false;
-        //}
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.241 -0400", hash_original_method = "D8D13AD2FDADF22949A24C8F8EF157C1", hash_generated_method = "80717BF042C90DEF0C8087E10C5501E5")
-    public boolean disableNdefPush() {
-        try 
-        {
-            boolean var8BA03E77403647B1D417F922F80047EE_1371026556 = (sService.disableNdefPush());
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1336006886 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1336006886;
-        } //End block
-        catch (RemoteException e)
-        {
-            attemptDeadServiceRecovery(e);
-            boolean var68934A3E9455FA72420237EB05902327_489453284 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1623971213 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1623971213;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return sService.disableNdefPush();
-        //} catch (RemoteException e) {
-            //attemptDeadServiceRecovery(e);
-            //return false;
-        //}
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.241 -0400", hash_original_method = "94A881D4AB3515CFCD4651DB6D7A2223", hash_generated_method = "34663A7ED246ED7AA0D0840C6A6139EB")
-    public boolean isNdefPushEnabled() {
-        try 
-        {
-            boolean varDBD27EFED216468AF5DCC6742D47A68C_2023730896 = (sService.isNdefPushEnabled());
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1627621173 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1627621173;
-        } //End block
-        catch (RemoteException e)
-        {
-            attemptDeadServiceRecovery(e);
-            boolean var68934A3E9455FA72420237EB05902327_795354904 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1851105639 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1851105639;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return sService.isNdefPushEnabled();
-        //} catch (RemoteException e) {
-            //attemptDeadServiceRecovery(e);
-            //return false;
-        //}
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.242 -0400", hash_original_method = "AC9BE1816495D76DB77DE4C0C93B101E", hash_generated_method = "D349194D92FE50194CD7BC0E14983EC8")
-    public INfcAdapterExtras getNfcAdapterExtrasInterface() {
-        if(mContext == null)        
-        {
-            UnsupportedOperationException varC950F527E6C526FA74DB304A2DC00F0C_1487856687 = new UnsupportedOperationException("You need a context on NfcAdapter to use the "
-                    + " NFC extras APIs");
-            varC950F527E6C526FA74DB304A2DC00F0C_1487856687.addTaint(taint);
-            throw varC950F527E6C526FA74DB304A2DC00F0C_1487856687;
-        } //End block
-        try 
-        {
-INfcAdapterExtras var57D052F3D4FA0853A3A8D75F81D61555_1709784380 =             sService.getNfcAdapterExtrasInterface(mContext.getPackageName());
-            var57D052F3D4FA0853A3A8D75F81D61555_1709784380.addTaint(taint);
-            return var57D052F3D4FA0853A3A8D75F81D61555_1709784380;
-        } //End block
-        catch (RemoteException e)
-        {
-            attemptDeadServiceRecovery(e);
-INfcAdapterExtras var540C13E9E156B687226421B24F2DF178_1870984466 =             null;
-            var540C13E9E156B687226421B24F2DF178_1870984466.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_1870984466;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mContext == null) {
-            //throw new UnsupportedOperationException("You need a context on NfcAdapter to use the "
-                    //+ " NFC extras APIs");
-        //}
-        //try {
-            //return sService.getNfcAdapterExtrasInterface(mContext.getPackageName());
-        //} catch (RemoteException e) {
-            //attemptDeadServiceRecovery(e);
-            //return null;
-        //}
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.242 -0400", hash_original_method = "219F2FC6E26DD458668CD53974B46E26", hash_generated_method = "450820EC8B25351E4AD0CBE895C5DC54")
-     void enforceResumed(Activity activity) {
-        addTaint(activity.getTaint());
-        if(!activity.isResumed())        
-        {
-            IllegalStateException var84383A9F11310D2CF8AAB2CF74320295_1870901207 = new IllegalStateException("API cannot be called while activity is paused");
-            var84383A9F11310D2CF8AAB2CF74320295_1870901207.addTaint(taint);
-            throw var84383A9F11310D2CF8AAB2CF74320295_1870901207;
-        } //End block
-        // ---------- Original Method ----------
-        //if (!activity.isResumed()) {
-            //throw new IllegalStateException("API cannot be called while activity is paused");
-        //}
+public INfcTag getTagService() {
+        isEnabled();  // NOP call to recover sTagService if it is stale
+        return sTagService;
     }
 
     
     static final class LegacyCallbackWrapper implements CreateNdefMessageCallback, OnNdefPushCompleteCallback {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.242 -0400", hash_original_field = "68BAA09986A995ECA579C1C3F2CA43D3", hash_generated_field = "C7B0DB97242B1A2CD9ADF6D51253FEC6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.714 -0500", hash_original_field = "C7B0DB97242B1A2CD9ADF6D51253FEC6", hash_generated_field = "C7B0DB97242B1A2CD9ADF6D51253FEC6")
 
-        NdefPushCallback mLegacyCallback;
+         NdefPushCallback mLegacyCallback;
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.716 -0500", hash_original_method = "6BEF15BCF15DD0D85DE3520BB316E0D4", hash_generated_method = "6BEF15BCF15DD0D85DE3520BB316E0D4")
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.242 -0400", hash_original_method = "6BEF15BCF15DD0D85DE3520BB316E0D4", hash_generated_method = "21E11278C209B656E61A1BA349ACB39A")
-          LegacyCallbackWrapper(NdefPushCallback legacyCallback) {
+LegacyCallbackWrapper(NdefPushCallback legacyCallback) {
             mLegacyCallback = legacyCallback;
-            // ---------- Original Method ----------
-            //mLegacyCallback = legacyCallback;
         }
-
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.718 -0500", hash_original_method = "D841E457F2B17E12C1E2098B1C645A79", hash_generated_method = "E9AF1347D2C2208247823B1D0D9EDCA5")
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.243 -0400", hash_original_method = "D841E457F2B17E12C1E2098B1C645A79", hash_generated_method = "CD0E4C6F116DCF59D10B209EF8EF5FD7")
-        @Override
+@Override
         public void onNdefPushComplete(NfcEvent event) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
-            addTaint(event.getTaint());
             mLegacyCallback.onMessagePushed();
-            // ---------- Original Method ----------
-            //mLegacyCallback.onMessagePushed();
         }
-
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.721 -0500", hash_original_method = "FCA6320615812CADE55DD6047E7D7630", hash_generated_method = "1ACCC19FA75F6B9C1DD23063F7120C64")
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.243 -0400", hash_original_method = "FCA6320615812CADE55DD6047E7D7630", hash_generated_method = "FF8C2F8702C38E6A0E8013B8FBD3B416")
-        @Override
+@Override
         public NdefMessage createNdefMessage(NfcEvent event) {
-            addTaint(event.getTaint());
-NdefMessage varAF42AD55DEAE724D07B6EF46A48CC555_1549058169 =             mLegacyCallback.createMessage();
-            varAF42AD55DEAE724D07B6EF46A48CC555_1549058169.addTaint(taint);
-            return varAF42AD55DEAE724D07B6EF46A48CC555_1549058169;
-            // ---------- Original Method ----------
-            //return mLegacyCallback.createMessage();
+            return mLegacyCallback.createMessage();
         }
 
         
@@ -766,68 +308,508 @@ NdefMessage varAF42AD55DEAE724D07B6EF46A48CC555_1549058169 =             mLegacy
         @Deprecated
         void onMessagePushed();
     }
+
+    /**
+     * NFC service dead - attempt best effort recovery
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.674 -0500", hash_original_method = "8B420ADA6778D8BC08D2E0440E69F337", hash_generated_method = "8A11DC2539ACC515F2B1C9FA87D3843E")
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.243 -0400", hash_original_field = "839E89798F641D78E99C5732B39CA844", hash_generated_field = "B5A60E2FA52639EB51E0CC65701892A4")
+public void attemptDeadServiceRecovery(Exception e) {
+        Log.e(TAG, "NFC service dead - attempting to recover", e);
+        INfcAdapter service = getServiceInterface();
+        if (service == null) {
+            Log.e(TAG, "could not retrieve NFC service during service recovery");
+            // nothing more can be done now, sService is still stale, we'll hit
+            // this recovery path again later
+            return;
+        }
+        // assigning to sService is not thread-safe, but this is best-effort code
+        // and on a well-behaved system should never happen
+        sService = service;
+        try {
+            sTagService = service.getNfcTagInterface();
+        } catch (RemoteException ee) {
+            Log.e(TAG, "could not retrieve NFC tag service during service recovery");
+            // nothing more can be done now, sService is still stale, we'll hit
+            // this recovery path again later
+        }
 
-    static final String TAG = "NFC";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.243 -0400", hash_original_field = "BBCAAF7A6BB4164CED9FE0085D3B96EF", hash_generated_field = "12E09594F7A717118A3DADA24A701917")
+        return;
+    }
 
-    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION)
-    public static final String ACTION_NDEF_DISCOVERED = "android.nfc.action.NDEF_DISCOVERED";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.243 -0400", hash_original_field = "389ED5DFDA100510247D71E900BEE0FC", hash_generated_field = "421DFCD0950F69398DB7B948AD45CD3D")
+    /**
+     * Return true if this NFC Adapter has any features enabled.
+     *
+     * <p>Application may use this as a helper to suggest that the user
+     * should turn on NFC in Settings.
+     * <p>If this method returns false, the NFC hardware is guaranteed not to
+     * generate or respond to any NFC transactions.
+     *
+     * @return true if this NFC Adapter has any features enabled
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.677 -0500", hash_original_method = "7D7BBD1D80D27F2FA89C3E978875F335", hash_generated_method = "47231A760E79B9BF2AABBE52B0F725EB")
+    
+public boolean isEnabled() {
+        try {
+            return sService.getState() == STATE_ON;
+        } catch (RemoteException e) {
+            attemptDeadServiceRecovery(e);
+            return false;
+        }
+    }
 
-    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION)
-    public static final String ACTION_TECH_DISCOVERED = "android.nfc.action.TECH_DISCOVERED";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.243 -0400", hash_original_field = "EAC6D60264575BCCDB78233863641967", hash_generated_field = "6C611E0AE33420401C802C4D28DAF2D8")
+    /**
+     * Return the state of this NFC Adapter.
+     *
+     * <p>Returns one of {@link #STATE_ON}, {@link #STATE_TURNING_ON},
+     * {@link #STATE_OFF}, {@link #STATE_TURNING_OFF}.
+     *
+     * <p>{@link #isEnabled()} is equivalent to
+     * <code>{@link #getAdapterState()} == {@link #STATE_ON}</code>
+     *
+     * @return the current state of this NFC adapter
+     *
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.679 -0500", hash_original_method = "928B269965D2C98169E42755C4D77176", hash_generated_method = "333AE0A5C2E08ACB07CD764088133ED1")
+    
+public int getAdapterState() {
+        try {
+            return sService.getState();
+        } catch (RemoteException e) {
+            attemptDeadServiceRecovery(e);
+            return NfcAdapter.STATE_OFF;
+        }
+    }
 
-    @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION)
-    public static final String ACTION_TAG_DISCOVERED = "android.nfc.action.TAG_DISCOVERED";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.244 -0400", hash_original_field = "E12A67E7317687E272FF20692CE79ACE", hash_generated_field = "05DA916FF7DE9C6A5E3D0ED553A216B2")
+    /**
+     * Enable NFC hardware.
+     *
+     * <p>This call is asynchronous. Listen for
+     * {@link #ACTION_ADAPTER_STATE_CHANGED} broadcasts to find out when the
+     * operation is complete.
+     *
+     * <p>If this returns true, then either NFC is already on, or
+     * a {@link #ACTION_ADAPTER_STATE_CHANGED} broadcast will be sent
+     * to indicate a state transition. If this returns false, then
+     * there is some problem that prevents an attempt to turn
+     * NFC on (for example we are in airplane mode and NFC is not
+     * toggleable in airplane mode on this platform).
+     *
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.681 -0500", hash_original_method = "1A932A08F1F08387DBC22C33FE8F21F7", hash_generated_method = "5A3AA53BCC141B0FAE519EBDE31574E1")
+    
+public boolean enable() {
+        try {
+            return sService.enable();
+        } catch (RemoteException e) {
+            attemptDeadServiceRecovery(e);
+            return false;
+        }
+    }
 
-    public static final String ACTION_TAG_LEFT_FIELD = "android.nfc.action.TAG_LOST";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.244 -0400", hash_original_field = "B2AA4477E41C3D08AE974DC9DFBEB3C0", hash_generated_field = "864FDBA549D69F45DE502B8133671865")
+    /**
+     * Disable NFC hardware.
+     *
+     * <p>No NFC features will work after this call, and the hardware
+     * will not perform or respond to any NFC communication.
+     *
+     * <p>This call is asynchronous. Listen for
+     * {@link #ACTION_ADAPTER_STATE_CHANGED} broadcasts to find out when the
+     * operation is complete.
+     *
+     * <p>If this returns true, then either NFC is already off, or
+     * a {@link #ACTION_ADAPTER_STATE_CHANGED} broadcast will be sent
+     * to indicate a state transition. If this returns false, then
+     * there is some problem that prevents an attempt to turn
+     * NFC off.
+     *
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.683 -0500", hash_original_method = "C2CC7D959D4121C24D40293E0B89029D", hash_generated_method = "15E62F32E4F0F268EB3E4688A1902237")
+    
+public boolean disable() {
+        try {
+            return sService.disable();
+        } catch (RemoteException e) {
+            attemptDeadServiceRecovery(e);
+            return false;
+        }
+    }
 
-    public static final String EXTRA_TAG = "android.nfc.extra.TAG";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.244 -0400", hash_original_field = "AAE1680F083B9048EB2990BC2C0475CB", hash_generated_field = "B8A498585D958ACF371A30D7A693AF39")
+    /**
+     * Set the {@link NdefMessage} to push over NFC during the specified activities.
+     *
+     * <p>This method may be called at any time, but the NDEF message is
+     * only made available for NDEF push when one of the specified activities
+     * is in resumed (foreground) state.
+     *
+     * <p>Only one NDEF message can be pushed by the currently resumed activity.
+     * If both {@link #setNdefPushMessage} and
+     * {@link #setNdefPushMessageCallback} are set then
+     * the callback will take priority.
+     *
+     * <p>Pass a null NDEF message to disable foreground NDEF push in the
+     * specified activities.
+     *
+     * <p>At least one activity must be specified, and usually only one is necessary.
+     *
+     * <p class="note">Requires the {@link android.Manifest.permission#NFC} permission.
+     *
+     * @param message NDEF message to push over NFC, or null to disable
+     * @param activity an activity in which NDEF push should be enabled to share the provided
+     *                 NDEF message
+     * @param activities optional additional activities that should also enable NDEF push with
+     *                   the provided NDEF message
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.685 -0500", hash_original_method = "A1E6832BF1F30CB75C5E3838CB4EB39F", hash_generated_method = "2801EBC84E285C2B255CCA9C15DB4170")
+    
+public void setNdefPushMessage(NdefMessage message, Activity activity,
+            Activity ... activities) {
+        if (activity == null) {
+            throw new NullPointerException("activity cannot be null");
+        }
+        mNfcActivityManager.setNdefPushMessage(activity, message);
+        for (Activity a : activities) {
+            if (a == null) {
+                throw new NullPointerException("activities cannot contain null");
+            }
+            mNfcActivityManager.setNdefPushMessage(a, message);
+        }
+    }
 
-    public static final String EXTRA_NDEF_MESSAGES = "android.nfc.extra.NDEF_MESSAGES";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.244 -0400", hash_original_field = "B1D4035C008D1A17FE88B2A11F232B62", hash_generated_field = "9AFE253D7BCA0B91EEBBA17305076401")
+    /**
+     * Set the callback to create a {@link NdefMessage} to push over NFC.
+     *
+     * <p>This method may be called at any time, but this callback is
+     * only made if one of the specified activities
+     * is in resumed (foreground) state.
+     *
+     * <p>Only one NDEF message can be pushed by the currently resumed activity.
+     * If both {@link #setNdefPushMessage} and
+     * {@link #setNdefPushMessageCallback} are set then
+     * the callback will take priority.
+     *
+     * <p>Pass a null callback to disable the callback in the
+     * specified activities.
+     *
+     * <p>At least one activity must be specified, and usually only one is necessary.
+     *
+     * <p class="note">Requires the {@link android.Manifest.permission#NFC} permission.
+     *
+     * @param callback callback, or null to disable
+     * @param activity an activity in which NDEF push should be enabled to share an NDEF message
+     *                 that's retrieved from the provided callback
+     * @param activities optional additional activities that should also enable NDEF push using
+     *                   the provided callback
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.688 -0500", hash_original_method = "B0650F3F4DF141FA2A729CEDE59567AC", hash_generated_method = "2346FDDB2041D1DA7877C35531AD6783")
+    
+public void setNdefPushMessageCallback(CreateNdefMessageCallback callback, Activity activity,
+            Activity ... activities) {
+        if (activity == null) {
+            throw new NullPointerException("activity cannot be null");
+        }
+        mNfcActivityManager.setNdefPushMessageCallback(activity, callback);
+        for (Activity a : activities) {
+            if (a == null) {
+                throw new NullPointerException("activities cannot contain null");
+            }
+            mNfcActivityManager.setNdefPushMessageCallback(a, callback);
+        }
+    }
 
-    public static final String EXTRA_ID = "android.nfc.extra.ID";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.244 -0400", hash_original_field = "BD30416007FD045B23F88E67DF9A65BC", hash_generated_field = "64EAD31FCC5D8863D42B912D821EC041")
+    /**
+     * Set the callback on a successful NDEF push over NFC.
+     *
+     * <p>This method may be called at any time, but NDEF push and this callback
+     * can only occur when one of the specified activities is in resumed
+     * (foreground) state.
+     *
+     * <p>One or more activities must be specified.
+     *
+     * <p class="note">Requires the {@link android.Manifest.permission#NFC} permission.
+     *
+     * @param callback callback, or null to disable
+     * @param activity an activity to enable the callback (at least one is required)
+     * @param activities zero or more additional activities to enable to callback
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.690 -0500", hash_original_method = "4C0E012E0D16CCB4DEFB75A7779BC5C8", hash_generated_method = "85267C8B4583C8482B8780F134972F10")
+    
+public void setOnNdefPushCompleteCallback(OnNdefPushCompleteCallback callback,
+            Activity activity, Activity ... activities) {
+        if (activity == null) {
+            throw new NullPointerException("activity cannot be null");
+        }
+        mNfcActivityManager.setOnNdefPushCompleteCallback(activity, callback);
+        for (Activity a : activities) {
+            if (a == null) {
+                throw new NullPointerException("activities cannot contain null");
+            }
+            mNfcActivityManager.setOnNdefPushCompleteCallback(a, callback);
+        }
+    }
 
-    @SdkConstant(SdkConstantType.BROADCAST_INTENT_ACTION)
-    public static final String ACTION_ADAPTER_STATE_CHANGED =
-            "android.nfc.action.ADAPTER_STATE_CHANGED";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.244 -0400", hash_original_field = "95AFECFB12145D62B88111622C2CF93B", hash_generated_field = "5610F9B2EBB4FB9B1E6D234598ECA413")
+    /**
+     * Enable foreground dispatch to the given Activity.
+     *
+     * <p>This will give give priority to the foreground activity when
+     * dispatching a discovered {@link Tag} to an application.
+     *
+     * <p>If any IntentFilters are provided to this method they are used to match dispatch Intents
+     * for both the {@link NfcAdapter#ACTION_NDEF_DISCOVERED} and
+     * {@link NfcAdapter#ACTION_TAG_DISCOVERED}. Since {@link NfcAdapter#ACTION_TECH_DISCOVERED}
+     * relies on meta data outside of the IntentFilter matching for that dispatch Intent is handled
+     * by passing in the tech lists separately. Each first level entry in the tech list represents
+     * an array of technologies that must all be present to match. If any of the first level sets
+     * match then the dispatch is routed through the given PendingIntent. In other words, the second
+     * level is ANDed together and the first level entries are ORed together.
+     *
+     * <p>If you pass {@code null} for both the {@code filters} and {@code techLists} parameters
+     * that acts a wild card and will cause the foreground activity to receive all tags via the
+     * {@link NfcAdapter#ACTION_TAG_DISCOVERED} intent.
+     *
+     * <p>This method must be called from the main thread, and only when the activity is in the
+     * foreground (resumed). Also, activities must call {@link #disableForegroundDispatch} before
+     * the completion of their {@link Activity#onPause} callback to disable foreground dispatch
+     * after it has been enabled.
+     *
+     * <p class="note">Requires the {@link android.Manifest.permission#NFC} permission.
+     *
+     * @param activity the Activity to dispatch to
+     * @param intent the PendingIntent to start for the dispatch
+     * @param filters the IntentFilters to override dispatching for, or null to always dispatch
+     * @param techLists the tech lists used to perform matching for dispatching of the
+     *      {@link NfcAdapter#ACTION_TECH_DISCOVERED} intent
+     * @throws IllegalStateException if the Activity is not currently in the foreground
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.693 -0500", hash_original_method = "7DFF841E004C0B63DC3E7B85FC7B1907", hash_generated_method = "070D430D5D9AEFA4114F930CD19E2A91")
+    
+public void enableForegroundDispatch(Activity activity, PendingIntent intent,
+            IntentFilter[] filters, String[][] techLists) {
+        if (activity == null || intent == null) {
+            throw new NullPointerException();
+        }
+        if (!activity.isResumed()) {
+            throw new IllegalStateException("Foreground dispatch can only be enabled " +
+                    "when your activity is resumed");
+        }
+        try {
+            TechListParcel parcel = null;
+            if (techLists != null && techLists.length > 0) {
+                parcel = new TechListParcel(techLists);
+            }
+            ActivityThread.currentActivityThread().registerOnActivityPausedListener(activity,
+                    mForegroundDispatchListener);
+            sService.setForegroundDispatch(intent, filters, parcel);
+        } catch (RemoteException e) {
+            attemptDeadServiceRecovery(e);
+        }
+    }
 
-    public static final String EXTRA_ADAPTER_STATE = "android.nfc.extra.ADAPTER_STATE";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.244 -0400", hash_original_field = "0A53D89ED725A061255F15DE04453C0F", hash_generated_field = "501F4A67DD89031B57A5BA8625CF46AC")
+    /**
+     * Disable foreground dispatch to the given activity.
+     *
+     * <p>After calling {@link #enableForegroundDispatch}, an activity
+     * must call this method before its {@link Activity#onPause} callback
+     * completes.
+     *
+     * <p>This method must be called from the main thread.
+     *
+     * <p class="note">Requires the {@link android.Manifest.permission#NFC} permission.
+     *
+     * @param activity the Activity to disable dispatch to
+     * @throws IllegalStateException if the Activity has already been paused
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.696 -0500", hash_original_method = "18ACF5FE6AECAA88942AA43DE81790DE", hash_generated_method = "71ECA6B462C079E252759F86E931323D")
+    
+public void disableForegroundDispatch(Activity activity) {
+        ActivityThread.currentActivityThread().unregisterOnActivityPausedListener(activity,
+                mForegroundDispatchListener);
+        disableForegroundDispatchInternal(activity, false);
+    }
 
-    public static final int STATE_OFF = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.244 -0400", hash_original_field = "5AD7C406039106B63B2813040FCCE645", hash_generated_field = "09B2FFE38FB2948139C918D224403C50")
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.703 -0500", hash_original_method = "3391D46AA688F0DFABC27A2628A920CB", hash_generated_method = "3391D46AA688F0DFABC27A2628A920CB")
+    
+void disableForegroundDispatchInternal(Activity activity, boolean force) {
+        try {
+            sService.setForegroundDispatch(null, null, null);
+            if (!force && !activity.isResumed()) {
+                throw new IllegalStateException("You must disable foreground dispatching " +
+                        "while your activity is still resumed");
+            }
+        } catch (RemoteException e) {
+            attemptDeadServiceRecovery(e);
+        }
+    }
 
-    public static final int STATE_TURNING_ON = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.245 -0400", hash_original_field = "2434AE8CED23C865189AE860BB6CC36A", hash_generated_field = "4D3064FE8FD25755AD9FCE56B0968A76")
+    /**
+     * Enable NDEF message push over NFC while this Activity is in the foreground.
+     *
+     * <p>You must explicitly call this method every time the activity is
+     * resumed, and you must call {@link #disableForegroundNdefPush} before
+     * your activity completes {@link Activity#onPause}.
+     *
+     * <p>Strongly recommend to use the new {@link #setNdefPushMessage}
+     * instead: it automatically hooks into your activity life-cycle,
+     * so you do not need to call enable/disable in your onResume/onPause.
+     *
+     * <p>For NDEF push to function properly the other NFC device must
+     * support either NFC Forum's SNEP (Simple Ndef Exchange Protocol), or
+     * Android's "com.android.npp" (Ndef Push Protocol). This was optional
+     * on Gingerbread level Android NFC devices, but SNEP is mandatory on
+     * Ice-Cream-Sandwich and beyond.
+     *
+     * <p>This method must be called from the main thread.
+     *
+     * <p class="note">Requires the {@link android.Manifest.permission#NFC} permission.
+     *
+     * @param activity foreground activity
+     * @param message a NDEF Message to push over NFC
+     * @throws IllegalStateException if the activity is not currently in the foreground
+     * @deprecated use {@link #setNdefPushMessage} instead
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.706 -0500", hash_original_method = "6149A052111CDC5E5BB88FC2B2B826FC", hash_generated_method = "B5F9F8F40EDCBAA9E1922A8584B3F862")
+    
+@Deprecated
+    public void enableForegroundNdefPush(Activity activity, NdefMessage message) {
+        if (activity == null || message == null) {
+            throw new NullPointerException();
+        }
+        enforceResumed(activity);
+        mNfcActivityManager.setNdefPushMessage(activity, message);
+    }
 
-    public static final int STATE_ON = 3;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.245 -0400", hash_original_field = "787EE4347FF30A418AB554F78013C338", hash_generated_field = "66FFFDE84846BF12D6E7B1556699CCE2")
+    /**
+     * Disable NDEF message push over P2P.
+     *
+     * <p>After calling {@link #enableForegroundNdefPush}, an activity
+     * must call this method before its {@link Activity#onPause} callback
+     * completes.
+     *
+     * <p>Strongly recommend to use the new {@link #setNdefPushMessage}
+     * instead: it automatically hooks into your activity life-cycle,
+     * so you do not need to call enable/disable in your onResume/onPause.
+     *
+     * <p>This method must be called from the main thread.
+     *
+     * <p class="note">Requires the {@link android.Manifest.permission#NFC} permission.
+     *
+     * @param activity the Foreground activity
+     * @throws IllegalStateException if the Activity has already been paused
+     * @deprecated use {@link #setNdefPushMessage} instead
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.708 -0500", hash_original_method = "D87492DD9C8E48B40BF8DEA34B5D588A", hash_generated_method = "8C82D17F1E7BAC177DF80416DABB4CCA")
+    
+public void disableForegroundNdefPush(Activity activity) {
+        if (activity == null) {
+            throw new NullPointerException();
+        }
+        enforceResumed(activity);
+        mNfcActivityManager.setNdefPushMessage(activity, null);
+        mNfcActivityManager.setNdefPushMessageCallback(activity, null);
+        mNfcActivityManager.setOnNdefPushCompleteCallback(activity, null);
+    }
 
-    public static final int STATE_TURNING_OFF = 4;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.245 -0400", hash_original_field = "2D97EC3B76910B149F69BDEF7C5EC755", hash_generated_field = "F9BB84E3D4C91D00C4A915F1D24BE4F8")
+    /**
+     * TODO: Remove this once pre-built apk's (Maps, Youtube etc) are updated
+     * @deprecated use {@link #setNdefPushMessageCallback} instead
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.727 -0500", hash_original_method = "61512909C8D6C025A83A4E62D3CEE407", hash_generated_method = "D3C51A3B6F24560B676AB8897CCD66E9")
+    
+@Deprecated
+    public void enableForegroundNdefPush(Activity activity, final NdefPushCallback callback) {
+        if (activity == null || callback == null) {
+            throw new NullPointerException();
+        }
+        enforceResumed(activity);
+        LegacyCallbackWrapper callbackWrapper = new LegacyCallbackWrapper(callback);
+        mNfcActivityManager.setNdefPushMessageCallback(activity, callbackWrapper);
+        mNfcActivityManager.setOnNdefPushCompleteCallback(activity, callbackWrapper);
+    }
 
-    static boolean sIsInitialized = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.245 -0400", hash_original_field = "5B4BCAAF27A7649717520CAA43216111", hash_generated_field = "41D15F90E751870BA8CE193EE4F4BAD4")
+    /**
+     * Enable NDEF Push feature.
+     * <p>This API is for the Settings application.
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.729 -0500", hash_original_method = "D0E93F9BEA709C21A3E1070B6361A93C", hash_generated_method = "009AFF2E064ED178754602E4701CA4A8")
+    
+public boolean enableNdefPush() {
+        try {
+            return sService.enableNdefPush();
+        } catch (RemoteException e) {
+            attemptDeadServiceRecovery(e);
+            return false;
+        }
+    }
 
-    static INfcAdapter sService;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.245 -0400", hash_original_field = "6DE46BB21844BCA0E34002FC9E3D3A55", hash_generated_field = "2233B419DEF0D6D6964CA486B17F24A6")
+    /**
+     * Disable NDEF Push feature.
+     * <p>This API is for the Settings application.
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.731 -0500", hash_original_method = "D8D13AD2FDADF22949A24C8F8EF157C1", hash_generated_method = "2A9627F77288CF19CCF723C7F614425C")
+    
+public boolean disableNdefPush() {
+        try {
+            return sService.disableNdefPush();
+        } catch (RemoteException e) {
+            attemptDeadServiceRecovery(e);
+            return false;
+        }
+    }
 
-    static INfcTag sTagService;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.245 -0400", hash_original_field = "D511F14CF57E503C61C29EBE5986FE9C", hash_generated_field = "43AC8A4224DE3385E9255D2280FEE77B")
+    /**
+     * Return true if NDEF Push feature is enabled.
+     * <p>This function can return true even if NFC is currently turned-off.
+     * This indicates that NDEF Push is not currently active, but it has
+     * been requested by the user and will be active as soon as NFC is turned
+     * on.
+     * <p>If you want to check if NDEF PUsh sharing is currently active, use
+     * <code>{@link #isEnabled()} && {@link #isNdefPushEnabled()}</code>
+     *
+     * @return true if NDEF Push feature is enabled
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.733 -0500", hash_original_method = "94A881D4AB3515CFCD4651DB6D7A2223", hash_generated_method = "15DFF662420FE1B8A07948A766B67C64")
+    
+public boolean isNdefPushEnabled() {
+        try {
+            return sService.isNdefPushEnabled();
+        } catch (RemoteException e) {
+            attemptDeadServiceRecovery(e);
+            return false;
+        }
+    }
 
-    static HashMap<Context, NfcAdapter> sNfcAdapters = new HashMap();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.245 -0400", hash_original_field = "83A0202946E64804ABA88F9B3361A49F", hash_generated_field = "DF70B7C03DCF051010C92018533E7115")
+    /**
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.736 -0500", hash_original_method = "AC9BE1816495D76DB77DE4C0C93B101E", hash_generated_method = "FA2152B5FBA646DF6DD8C402D9DDB792")
+    
+public INfcAdapterExtras getNfcAdapterExtrasInterface() {
+        if (mContext == null) {
+            throw new UnsupportedOperationException("You need a context on NfcAdapter to use the "
+                    + " NFC extras APIs");
+        }
+        try {
+            return sService.getNfcAdapterExtrasInterface(mContext.getPackageName());
+        } catch (RemoteException e) {
+            attemptDeadServiceRecovery(e);
+            return null;
+        }
+    }
 
-    static NfcAdapter sNullContextNfcAdapter;
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.738 -0500", hash_original_method = "219F2FC6E26DD458668CD53974B46E26", hash_generated_method = "219F2FC6E26DD458668CD53974B46E26")
+    
+void enforceResumed(Activity activity) {
+        if (!activity.isResumed()) {
+            throw new IllegalStateException("API cannot be called while activity is paused");
+        }
+    }
 }
 

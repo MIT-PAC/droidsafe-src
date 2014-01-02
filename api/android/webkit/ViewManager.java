@@ -1,6 +1,8 @@
 package android.webkit;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.ArrayList;
 
@@ -14,470 +16,332 @@ import android.widget.AbsoluteLayout;
 
 
 class ViewManager {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.270 -0400", hash_original_field = "72439B8F99EB438C3DA5D9CD798C6786", hash_generated_field = "99346B50377E115231263981E00655CA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.355 -0500", hash_original_field = "BAFAAB07E3E16D198144C59EEA29BFF5", hash_generated_field = "52CD7F2804541D9D147DA6137D506751")
 
-    private WebView mWebView;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.270 -0400", hash_original_field = "43045D65246CA9EA1CD85C8ED95C81B9", hash_generated_field = "A23DCC2022137B3032C531881F046064")
+    private static final int MAX_SURFACE_DIMENSION = 2048;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.342 -0500", hash_original_field = "E044D69EE05B24F4B93E3A3B208F5343", hash_generated_field = "99346B50377E115231263981E00655CA")
+
+    private  WebView mWebView;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.344 -0500", hash_original_field = "512DDD6260448235A87A2D7DBCE78B3A", hash_generated_field = "A23DCC2022137B3032C531881F046064")
 
     private final ArrayList<ChildView> mChildren = new ArrayList<ChildView>();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.270 -0400", hash_original_field = "6E5D0646172E31357AC5264CFC6DCF7B", hash_generated_field = "3F147822327D2F3E101E54AA2BDEB694")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.347 -0500", hash_original_field = "DB81C7417E8D5BB2C252FB40F8D91CF8", hash_generated_field = "3F147822327D2F3E101E54AA2BDEB694")
 
     private boolean mHidden;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.270 -0400", hash_original_field = "B9F5B669639E87CD8DBAB250FCF69B7E", hash_generated_field = "D4ED2FE7B592D39DCE852F60F1DDCF62")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.349 -0500", hash_original_field = "DF2B831C5787CC09C8522AA5C6CB6818", hash_generated_field = "D4ED2FE7B592D39DCE852F60F1DDCF62")
 
     private boolean mReadyToDraw;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.270 -0400", hash_original_field = "A9A71EF9CAE6C95EE103CF9C30B71089", hash_generated_field = "E2D29020496E97D1FD814233F5B97E36")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.351 -0500", hash_original_field = "B147F7AC28D8FB59201A86F235EF2A4D", hash_generated_field = "E2D29020496E97D1FD814233F5B97E36")
 
     private boolean mZoomInProgress = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.270 -0400", hash_original_field = "8BC809A76EF6A9FF57A6D2B9C094DDEB", hash_generated_field = "8321EFE222E741830F977A0EDC376DEE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.353 -0500", hash_original_field = "06315E20245EB78FD301784396B7BBB2", hash_generated_field = "8321EFE222E741830F977A0EDC376DEE")
 
-    private int MAX_SURFACE_AREA;
+    private  int MAX_SURFACE_AREA;
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.390 -0500", hash_original_method = "41D6739987EDABAA49AC971619E5EA69", hash_generated_method = "129E9A10B1F96A52757E0F16C329E5B4")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.271 -0400", hash_original_method = "41D6739987EDABAA49AC971619E5EA69", hash_generated_method = "F5AC1D0F052B1AED1208A98AFCA451B7")
-      ViewManager(WebView w) {
+ViewManager(WebView w) {
         mWebView = w;
+
         int pixelArea = w.getResources().getDisplayMetrics().widthPixels *
                         w.getResources().getDisplayMetrics().heightPixels;
+        /* set the threshold to be 275% larger than the screen size. The
+           percentage is simply an estimation and is not based on anything but
+           basic trial-and-error tests run on multiple devices.
+         */
         MAX_SURFACE_AREA = (int)(pixelArea * 2.75);
-        // ---------- Original Method ----------
-        //mWebView = w;
-        //int pixelArea = w.getResources().getDisplayMetrics().widthPixels *
-                        //w.getResources().getDisplayMetrics().heightPixels;
-        //MAX_SURFACE_AREA = (int)(pixelArea * 2.75);
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.392 -0500", hash_original_method = "FA4B0F6C2AA9564529C02D0C8EC5ABBE", hash_generated_method = "FA4B0F6C2AA9564529C02D0C8EC5ABBE")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.271 -0400", hash_original_method = "FA4B0F6C2AA9564529C02D0C8EC5ABBE", hash_generated_method = "27308E66C60EEB22AD56FAFDDCF893AB")
-     ChildView createView() {
-ChildView var8A3190BB88EBE69DB41074FCFE3B369D_788869339 =         new ChildView();
-        var8A3190BB88EBE69DB41074FCFE3B369D_788869339.addTaint(taint);
-        return var8A3190BB88EBE69DB41074FCFE3B369D_788869339;
-        // ---------- Original Method ----------
-        //return new ChildView();
+ChildView createView() {
+        return new ChildView();
     }
 
+    /**
+     * This should only be called from the UI thread.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.400 -0500", hash_original_method = "2B29D777BD882375E9FE491E62B8E4F4", hash_generated_method = "5288B64B6675C9E90C864CABB0D62146")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.275 -0400", hash_original_method = "2B29D777BD882375E9FE491E62B8E4F4", hash_generated_method = "02092D08166DC093F55A0C828EC87D69")
-    private void requestLayout(ChildView v) {
-        addTaint(v.getTaint());
+private void requestLayout(ChildView v) {
+
         int width = mWebView.contentToViewDimension(v.width);
         int height = mWebView.contentToViewDimension(v.height);
         int x = mWebView.contentToViewX(v.x);
         int y = mWebView.contentToViewY(v.y);
+
         AbsoluteLayout.LayoutParams lp;
         ViewGroup.LayoutParams layoutParams = v.mView.getLayoutParams();
-        if(layoutParams instanceof AbsoluteLayout.LayoutParams)        
-        {
+
+        if (layoutParams instanceof AbsoluteLayout.LayoutParams) {
             lp = (AbsoluteLayout.LayoutParams) layoutParams;
             lp.width = width;
             lp.height = height;
             lp.x = x;
             lp.y = y;
-        } //End block
-        else
-        {
+        } else {
             lp = new AbsoluteLayout.LayoutParams(width, height, x, y);
-        } //End block
+        }
+
+        // apply the layout to the view
         v.mView.setLayoutParams(lp);
-        if(v.mView instanceof SurfaceView)        
-        {
+
+        if(v.mView instanceof SurfaceView) {
+
             final SurfaceView sView = (SurfaceView) v.mView;
-            if(sView.isFixedSize() && mZoomInProgress)            
-            {
+
+            if (sView.isFixedSize() && mZoomInProgress) {
+                /* If we're already fixed, and we're in a zoom, then do nothing
+                   about the size. Just wait until we get called at the end of
+                   the zoom session (with mZoomInProgress false) and we'll
+                   fixup our size then.
+                 */
                 return;
-            } //End block
+            }
+
+            /* Compute proportional fixed width/height if necessary.
+             *
+             * NOTE: plugins (e.g. Flash) must not explicitly fix the size of
+             * their surface. The logic below will result in unexpected behavior
+             * for the plugin if they attempt to fix the size of the surface.
+             */
             int fixedW = width;
             int fixedH = height;
-            if(fixedW > MAX_SURFACE_DIMENSION || fixedH > MAX_SURFACE_DIMENSION)            
-            {
-                if(v.width > v.height)                
-                {
+            if (fixedW > MAX_SURFACE_DIMENSION || fixedH > MAX_SURFACE_DIMENSION) {
+                if (v.width > v.height) {
                     fixedW = MAX_SURFACE_DIMENSION;
                     fixedH = v.height * MAX_SURFACE_DIMENSION / v.width;
-                } //End block
-                else
-                {
+                } else {
                     fixedH = MAX_SURFACE_DIMENSION;
                     fixedW = v.width * MAX_SURFACE_DIMENSION / v.height;
-                } //End block
-            } //End block
-            if(fixedW * fixedH > MAX_SURFACE_AREA)            
-            {
+                }
+            }
+            if (fixedW * fixedH > MAX_SURFACE_AREA) {
                 float area = MAX_SURFACE_AREA;
-                if(v.width > v.height)                
-                {
+                if (v.width > v.height) {
                     fixedW = (int)Math.sqrt(area * v.width / v.height);
                     fixedH = v.height * fixedW / v.width;
-                } //End block
-                else
-                {
+                } else {
                     fixedH = (int)Math.sqrt(area * v.height / v.width);
                     fixedW = v.width * fixedH / v.height;
-                } //End block
-            } //End block
-            if(fixedW != width || fixedH != height)            
-            {
+                }
+            }
+
+            if (fixedW != width || fixedH != height) {
+                // if we get here, either our dimensions or area (or both)
+                // exeeded our max, so we had to compute fixedW and fixedH
                 sView.getHolder().setFixedSize(fixedW, fixedH);
-            } //End block
-            else
-            if(!sView.isFixedSize() && mZoomInProgress)            
-            {
+            } else if (!sView.isFixedSize() && mZoomInProgress) {
+                // just freeze where we were (view size) until we're done with
+                // the zoom progress
                 sView.getHolder().setFixedSize(sView.getWidth(),
                                                sView.getHeight());
-            } //End block
-            else
-            if(sView.isFixedSize() && !mZoomInProgress)            
-            {
-                if(sView.getVisibility() == View.VISIBLE)                
-                {
+            } else if (sView.isFixedSize() && !mZoomInProgress) {
+                /* The changing of visibility is a hack to get around a bug in
+                 * the framework that causes the surface to revert to the size
+                 * it was prior to being fixed before it redraws using the
+                 * values currently in its layout.
+                 *
+                 * The surface is destroyed when it is set to invisible and then
+                 * recreated at the new dimensions when it is made visible. The
+                 * same destroy/create step occurs without the change in
+                 * visibility, but then exhibits the behavior described in the
+                 * previous paragraph.
+                 */
+                if (sView.getVisibility() == View.VISIBLE) {
                     sView.setVisibility(View.INVISIBLE);
                     sView.getHolder().setSizeFromLayout();
-                    mWebView.mPrivateHandler.post(new Runnable() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.274 -0400", hash_original_method = "FC4D9F6633FDA07933C38D9105D81F42", hash_generated_method = "CD4E9DF20EB12C15EED4A8BEC8E97002")
-        public void run() {
-            sView.setVisibility(View.VISIBLE);
-            // ---------- Original Method ----------
-            //sView.setVisibility(View.VISIBLE);
-        }
-});
-                } //End block
-                else
-                {
+                    // setLayoutParams() only requests the layout. If we set it
+                    // to VISIBLE now, it will use the old dimension to set the
+                    // size. Post a message to ensure that it shows the new size.
+                    mWebView.mPrivateHandler.post(new Runnable() {
+                        public void run() {
+                            sView.setVisibility(View.VISIBLE);
+                        }
+                    });
+                } else {
                     sView.getHolder().setSizeFromLayout();
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                }
+            }
+        }
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.402 -0500", hash_original_method = "4F661FC74F7E1A720FEE3022046A7DAD", hash_generated_method = "4F661FC74F7E1A720FEE3022046A7DAD")
     
-        @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.277 -0400", hash_original_method = "4F661FC74F7E1A720FEE3022046A7DAD", hash_generated_method = "A1669D7EFC5E91A1C2431496C0B82E56")
-     void startZoom() {
+void startZoom() {
         mZoomInProgress = true;
-for(ChildView v : mChildren)
-        {
+        for (ChildView v : mChildren) {
             requestLayout(v);
-        } //End block
-        // ---------- Original Method ----------
-        //mZoomInProgress = true;
-        //for (ChildView v : mChildren) {
-            //requestLayout(v);
-        //}
+        }
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.404 -0500", hash_original_method = "F0F47054709F050065D565E243DB8138", hash_generated_method = "F0F47054709F050065D565E243DB8138")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.278 -0400", hash_original_method = "F0F47054709F050065D565E243DB8138", hash_generated_method = "2F391B4B259977D73AFFFA42D3682276")
-     void endZoom() {
+void endZoom() {
         mZoomInProgress = false;
-for(ChildView v : mChildren)
-        {
+        for (ChildView v : mChildren) {
             requestLayout(v);
-        } //End block
-        // ---------- Original Method ----------
-        //mZoomInProgress = false;
-        //for (ChildView v : mChildren) {
-            //requestLayout(v);
-        //}
+        }
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.406 -0500", hash_original_method = "C82C75EA2573C85D59C63AD0662E50B7", hash_generated_method = "C82C75EA2573C85D59C63AD0662E50B7")
     
-        @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.278 -0400", hash_original_method = "C82C75EA2573C85D59C63AD0662E50B7", hash_generated_method = "5110AFD9926B9EDC2F5CDEE0E17B367F")
-     void scaleAll() {
-for(ChildView v : mChildren)
-        {
+void scaleAll() {
+        for (ChildView v : mChildren) {
             requestLayout(v);
-        } //End block
-        // ---------- Original Method ----------
-        //for (ChildView v : mChildren) {
-            //requestLayout(v);
-        //}
+        }
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.408 -0500", hash_original_method = "4F028387E717D291F0C61AFA65DDC151", hash_generated_method = "4F028387E717D291F0C61AFA65DDC151")
     
-        @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.279 -0400", hash_original_method = "4F028387E717D291F0C61AFA65DDC151", hash_generated_method = "899EEA859992131FDE618D4D2A6C7D40")
-     void hideAll() {
-        if(mHidden)        
-        {
+void hideAll() {
+        if (mHidden) {
             return;
-        } //End block
-for(ChildView v : mChildren)
-        {
+        }
+        for (ChildView v : mChildren) {
             v.mView.setVisibility(View.GONE);
-        } //End block
+        }
         mHidden = true;
-        // ---------- Original Method ----------
-        //if (mHidden) {
-            //return;
-        //}
-        //for (ChildView v : mChildren) {
-            //v.mView.setVisibility(View.GONE);
-        //}
-        //mHidden = true;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.410 -0500", hash_original_method = "B75BBFE8728E55E21A97BD827A74F550", hash_generated_method = "B75BBFE8728E55E21A97BD827A74F550")
     
-        @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.279 -0400", hash_original_method = "B75BBFE8728E55E21A97BD827A74F550", hash_generated_method = "B8376291755508591E874DDA1C30F9ED")
-     void showAll() {
-        if(!mHidden)        
-        {
+void showAll() {
+        if (!mHidden) {
             return;
-        } //End block
-for(ChildView v : mChildren)
-        {
+        }
+        for (ChildView v : mChildren) {
             v.mView.setVisibility(View.VISIBLE);
-        } //End block
+        }
         mHidden = false;
-        // ---------- Original Method ----------
-        //if (!mHidden) {
-            //return;
-        //}
-        //for (ChildView v : mChildren) {
-            //v.mView.setVisibility(View.VISIBLE);
-        //}
-        //mHidden = false;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.414 -0500", hash_original_method = "CA54479F86F4EE856736FA836E1EE2FC", hash_generated_method = "CA54479F86F4EE856736FA836E1EE2FC")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.279 -0400", hash_original_method = "CA54479F86F4EE856736FA836E1EE2FC", hash_generated_method = "3660FB45C72E6B5520D62C6C5230C284")
-     void postResetStateAll() {
-        mWebView.mPrivateHandler.post(new Runnable() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.279 -0400", hash_original_method = "F322BBB18B8C9804A44774BD272CE6E8", hash_generated_method = "37882F67833C95B3928A4473246B16DD")
-        public void run() {
-            mReadyToDraw = false;
-            // ---------- Original Method ----------
-            //mReadyToDraw = false;
-        }
-});
-        // ---------- Original Method ----------
-        //mWebView.mPrivateHandler.post(new Runnable() {
-            //public void run() {
-                //mReadyToDraw = false;
-            //}
-        //});
+void postResetStateAll() {
+        mWebView.mPrivateHandler.post(new Runnable() {
+            public void run() {
+                mReadyToDraw = false;
+            }
+        });
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.419 -0500", hash_original_method = "60132EA2B1596F91D6DE492E58F4C89D", hash_generated_method = "60132EA2B1596F91D6DE492E58F4C89D")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.281 -0400", hash_original_method = "60132EA2B1596F91D6DE492E58F4C89D", hash_generated_method = "DE5A188D12A37F24EE062D93EBF2FA9C")
-     void postReadyToDrawAll() {
-        mWebView.mPrivateHandler.post(new Runnable() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.280 -0400", hash_original_method = "2C6BB02E5E23FA08F7366ED9683BEC00", hash_generated_method = "004BD4EAD0FD03899A7C3AE7605CEB3E")
-        public void run() {
-            mReadyToDraw = true;
-for(ChildView v : mChildren)
-            {
-                v.mView.setVisibility(View.VISIBLE);
-            } //End block
-            // ---------- Original Method ----------
-            //mReadyToDraw = true;
-            //for (ChildView v : mChildren) {
-                    //v.mView.setVisibility(View.VISIBLE);
-                //}
-        }
-});
-        // ---------- Original Method ----------
-        //mWebView.mPrivateHandler.post(new Runnable() {
-            //public void run() {
-                //mReadyToDraw = true;
-                //for (ChildView v : mChildren) {
-                    //v.mView.setVisibility(View.VISIBLE);
-                //}
-            //}
-        //});
-    }
-
-    
-        @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.282 -0400", hash_original_method = "69EC682FAEAFF2A8235362C63F30F73F", hash_generated_method = "6F7B1896588220596224A902E9B8C921")
-     ChildView hitTest(int contentX, int contentY) {
-        addTaint(contentY);
-        addTaint(contentX);
-        if(mHidden)        
-        {
-ChildView var540C13E9E156B687226421B24F2DF178_2117522545 =             null;
-            var540C13E9E156B687226421B24F2DF178_2117522545.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_2117522545;
-        } //End block
-for(ChildView v : mChildren)
-        {
-            if(v.mView.getVisibility() == View.VISIBLE)            
-            {
-                if(contentX >= v.x && contentX < (v.x + v.width)
-                        && contentY >= v.y && contentY < (v.y + v.height))                
-                {
-ChildView var6DC76BC51820DD65E8396280E884AA78_257909615 =                     v;
-                    var6DC76BC51820DD65E8396280E884AA78_257909615.addTaint(taint);
-                    return var6DC76BC51820DD65E8396280E884AA78_257909615;
-                } //End block
-            } //End block
-        } //End block
-ChildView var540C13E9E156B687226421B24F2DF178_450023259 =         null;
-        var540C13E9E156B687226421B24F2DF178_450023259.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_450023259;
-        // ---------- Original Method ----------
-        //if (mHidden) {
-            //return null;
-        //}
-        //for (ChildView v : mChildren) {
-            //if (v.mView.getVisibility() == View.VISIBLE) {
-                //if (contentX >= v.x && contentX < (v.x + v.width)
-                        //&& contentY >= v.y && contentY < (v.y + v.height)) {
-                    //return v;
-                //}
-            //}
-        //}
-        //return null;
+void postReadyToDrawAll() {
+        mWebView.mPrivateHandler.post(new Runnable() {
+            public void run() {
+                mReadyToDraw = true;
+                for (ChildView v : mChildren) {
+                    v.mView.setVisibility(View.VISIBLE);
+                }
+            }
+        });
     }
 
     
     class ChildView {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.282 -0400", hash_original_field = "9DD4E461268C8034F5C8564E155C67A6", hash_generated_field = "3ECDEC351FCE13CBA8A59E38409B3C9E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.358 -0500", hash_original_field = "3ECDEC351FCE13CBA8A59E38409B3C9E", hash_generated_field = "3ECDEC351FCE13CBA8A59E38409B3C9E")
 
         int x;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.282 -0400", hash_original_field = "415290769594460E2E485922904F345D", hash_generated_field = "93D19118DABD6AC5BACF335A34537CEB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.360 -0500", hash_original_field = "93D19118DABD6AC5BACF335A34537CEB", hash_generated_field = "93D19118DABD6AC5BACF335A34537CEB")
 
         int y;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.282 -0400", hash_original_field = "EAAE26A6FB20ED3EF54FB23BFA0B1FCC", hash_generated_field = "1589F848FE4FF192F7CCE1B9F9E85747")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.362 -0500", hash_original_field = "1589F848FE4FF192F7CCE1B9F9E85747", hash_generated_field = "1589F848FE4FF192F7CCE1B9F9E85747")
 
         int width;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.282 -0400", hash_original_field = "B435E227D5DD201E1768B2BCB2E0AA81", hash_generated_field = "CE84F1587D182C1F0A32D7CD44443A18")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.364 -0500", hash_original_field = "CE84F1587D182C1F0A32D7CD44443A18", hash_generated_field = "CE84F1587D182C1F0A32D7CD44443A18")
 
         int height;
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.282 -0400", hash_original_field = "7D6C73188D7990FE5A4B99F8F090B9EA", hash_generated_field = "6F4F028D1DE9C463F753A80DD0991753")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.366 -0500", hash_original_field = "6F4F028D1DE9C463F753A80DD0991753", hash_generated_field = "6F4F028D1DE9C463F753A80DD0991753")
 
-        View mView;
+        View mView; // generic view to show
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.369 -0500", hash_original_method = "444F58071031B7B88B9F4BACE4B52E97", hash_generated_method = "444F58071031B7B88B9F4BACE4B52E97")
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.283 -0400", hash_original_method = "444F58071031B7B88B9F4BACE4B52E97", hash_generated_method = "410801DAAF0618526A8A1435EE4A6E2B")
-          ChildView() {
-            // ---------- Original Method ----------
+ChildView() {
         }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.371 -0500", hash_original_method = "49948859AFA14B35AAA713D3429ED265", hash_generated_method = "49948859AFA14B35AAA713D3429ED265")
         
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.284 -0400", hash_original_method = "49948859AFA14B35AAA713D3429ED265", hash_generated_method = "1647B31ED8A57F0659AE086FB95F7A06")
-         void setBounds(int x, int y, int width, int height) {
+void setBounds(int x, int y, int width, int height) {
             this.x = x;
             this.y = y;
             this.width = width;
             this.height = height;
-            // ---------- Original Method ----------
-            //this.x = x;
-            //this.y = y;
-            //this.width = width;
-            //this.height = height;
         }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.376 -0500", hash_original_method = "C5CB26D6C1A4635E70554CC63D76B563", hash_generated_method = "3D46DAB228E58C931888FB6D80231ED0")
         
-                @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.284 -0400", hash_original_method = "C5CB26D6C1A4635E70554CC63D76B563", hash_generated_method = "DEB0E4B9BAD57648370D52F75FD77D10")
-         void attachView(int x, int y, int width, int height) {
-            addTaint(height);
-            addTaint(width);
-            addTaint(y);
-            addTaint(x);
-            if(mView == null)            
-            {
+void attachView(int x, int y, int width, int height) {
+            if (mView == null) {
                 return;
-            } //End block
-            setBounds(x, y, width, height);
-            mWebView.mPrivateHandler.post(new Runnable() {            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.284 -0400", hash_original_method = "117F704DE47DD7EBA32238E52F602D4F", hash_generated_method = "5B1844C55739E8BDD92198BB8013169B")
-            public void run() {
-                requestLayout(ChildView.this);
-                if(mView.getParent() == null)                
-                {
-                    attachViewOnUIThread();
-                } //End block
-                // ---------- Original Method ----------
-                //requestLayout(ChildView.this);
-                //if (mView.getParent() == null) {
-                        //attachViewOnUIThread();
-                    //}
             }
-});
-            // ---------- Original Method ----------
-            //if (mView == null) {
-                //return;
-            //}
-            //setBounds(x, y, width, height);
-            //mWebView.mPrivateHandler.post(new Runnable() {
-                //public void run() {
-                    //requestLayout(ChildView.this);
-                    //if (mView.getParent() == null) {
-                        //attachViewOnUIThread();
-                    //}
-                //}
-            //});
+            setBounds(x, y, width, height);
+
+            mWebView.mPrivateHandler.post(new Runnable() {
+                public void run() {
+                    // This method may be called multiple times. If the view is
+                    // already attached, just set the new LayoutParams,
+                    // otherwise attach the view and add it to the list of
+                    // children.
+                    requestLayout(ChildView.this);
+
+                    if (mView.getParent() == null) {
+                        attachViewOnUIThread();
+                    }
+                }
+            });
         }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.379 -0500", hash_original_method = "E19361570D109423E86E664B0AC4389A", hash_generated_method = "C90C39F16FFD9315E5FB7AA3A3CF4FC8")
         
-        @DSModeled(DSC.BAN)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.285 -0400", hash_original_method = "E19361570D109423E86E664B0AC4389A", hash_generated_method = "81F1B9CCE09D41FA95747D6546C055C7")
-        private void attachViewOnUIThread() {
+private void attachViewOnUIThread() {
             mWebView.addView(mView);
             mChildren.add(this);
-            if(!mReadyToDraw)            
-            {
+            if (!mReadyToDraw) {
                 mView.setVisibility(View.GONE);
-            } //End block
-            // ---------- Original Method ----------
-            //mWebView.addView(mView);
-            //mChildren.add(this);
-            //if (!mReadyToDraw) {
-                //mView.setVisibility(View.GONE);
-            //}
-        }
-
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.286 -0400", hash_original_method = "82A15EE3F2ACFE39B2389F6444C4BAEB", hash_generated_method = "1D24778D1C6CE9D6EF839A1C8DA8C421")
-         void removeView() {
-            if(mView == null)            
-            {
-                return;
-            } //End block
-            mWebView.mPrivateHandler.post(new Runnable() {            
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.286 -0400", hash_original_method = "FB4DFE3FA699C3363858A9F5BC93D3A8", hash_generated_method = "539B0E7B57B1BE3E5EDA6BDC15BC6A3C")
-            public void run() {
-                removeViewOnUIThread();
-                // ---------- Original Method ----------
-                //removeViewOnUIThread();
             }
-});
-            // ---------- Original Method ----------
-            //if (mView == null) {
-                //return;
-            //}
-            //mWebView.mPrivateHandler.post(new Runnable() {
-                //public void run() {
-                    //removeViewOnUIThread();
-                //}
-            //});
         }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.384 -0500", hash_original_method = "82A15EE3F2ACFE39B2389F6444C4BAEB", hash_generated_method = "82A15EE3F2ACFE39B2389F6444C4BAEB")
         
-                @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.286 -0400", hash_original_method = "2FC5BD33F15E4B580397FED329387FB1", hash_generated_method = "766AEA0F1F8FC4C35F207C999F4B4121")
-        private void removeViewOnUIThread() {
+void removeView() {
+            if (mView == null) {
+                return;
+            }
+            mWebView.mPrivateHandler.post(new Runnable() {
+                public void run() {
+                    removeViewOnUIThread();
+                }
+            });
+        }
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.386 -0500", hash_original_method = "2FC5BD33F15E4B580397FED329387FB1", hash_generated_method = "0FD1231D619BF4E62EDF563955299AA0")
+        
+private void removeViewOnUIThread() {
             mWebView.removeView(mView);
             mChildren.remove(this);
-            // ---------- Original Method ----------
-            //mWebView.removeView(mView);
-            //mChildren.remove(this);
         }
 
         
     }
 
-
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.422 -0500", hash_original_method = "69EC682FAEAFF2A8235362C63F30F73F", hash_generated_method = "69EC682FAEAFF2A8235362C63F30F73F")
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.286 -0400", hash_original_field = "5DBBC034EF39D44AEF389028B9BB96CC", hash_generated_field = "52CD7F2804541D9D147DA6137D506751")
-
-    private static final int MAX_SURFACE_DIMENSION = 2048;
+ChildView hitTest(int contentX, int contentY) {
+        if (mHidden) {
+            return null;
+        }
+        for (ChildView v : mChildren) {
+            if (v.mView.getVisibility() == View.VISIBLE) {
+                if (contentX >= v.x && contentX < (v.x + v.width)
+                        && contentY >= v.y && contentY < (v.y + v.height)) {
+                    return v;
+                }
+            }
+        }
+        return null;
+    }
 }
 

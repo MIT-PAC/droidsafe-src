@@ -22,7 +22,7 @@ public class DroidSafeSensorManager extends SensorManager {
 	
 	@DSModeled(DSC.SAFE)
 	public boolean registerListener(SensorEventListener listener, Sensor sensor, int rate) {
-		SensorEvent se = new SensorEvent(0);
+		SensorEvent se = new SensorEvent();
 		se.sensor = sensor;
 		
 		listener.onSensorChanged(se);

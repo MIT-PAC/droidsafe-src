@@ -1,6 +1,9 @@
 package com.android.internal.policy;
 
 // Droidsafe Imports
+import droidsafe.annotations.*;
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import android.content.Context;
 import android.view.FallbackEventHandler;
 import android.view.LayoutInflater;
@@ -14,12 +17,6 @@ import droidsafe.annotations.DSModeled;
 
 
 public final class PolicyManager {
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.904 -0400", hash_original_method = "8280FBDEA727C0869187AB3F61DD27B1", hash_generated_method = "84C464024E5F34F099B0A60B3B8B9AAB")
-    private  PolicyManager() {
-        // ---------- Original Method ----------
-    }
 
     
     @DSModeled(DSC.BAN)
@@ -38,25 +35,30 @@ public final class PolicyManager {
         */
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:39.936 -0500", hash_original_method = "8ED2BEB4D404F0707648CE3290A7E37D", hash_generated_method = "3C28F6E0D0FB0BE09724EEF78AE3FC28")
     
-    @DSModeled(DSC.BAN)
-    public static WindowManagerPolicy makeNewWindowManager() {
+public static WindowManagerPolicy makeNewWindowManager() {
         return sPolicy.makeNewWindowManager();
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:39.940 -0500", hash_original_method = "2FC59449732FB8F4271558BE9548F773", hash_generated_method = "2F685FEDCD500870706279D01512C43E")
     
-    @DSModeled(DSC.BAN)
-    public static FallbackEventHandler makeNewFallbackEventHandler(Context context) {
+public static FallbackEventHandler makeNewFallbackEventHandler(Context context) {
         return sPolicy.makeNewFallbackEventHandler(context);
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:39.918 -0500", hash_original_field = "2F01B66073B64B1A11ABACB2CA0436B1", hash_generated_field = "F2EC3626690C6C0CDE9F04BA5A37D39E")
 
+    private static final String POLICY_IMPL_CLASS_NAME =
+        "com.android.internal.policy.impl.Policy";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:39.921 -0500", hash_original_field = "A3CC4162A3CE5448C65A9A659D94B53C", hash_generated_field = "100BB36640E39269E598568BB8ACACA8")
+
+
+    private static  IPolicy sPolicy;
+
+    // Cannot instantiate this class
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:39.924 -0500", hash_original_method = "8280FBDEA727C0869187AB3F61DD27B1", hash_generated_method = "D10607CEED0D4A5C5218027895A483A6")
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.904 -0400", hash_original_field = "CC1EE3A6531AE6E81333C3C9BE207A23", hash_generated_field = "F2EC3626690C6C0CDE9F04BA5A37D39E")
-
-    private static final String POLICY_IMPL_CLASS_NAME = "com.android.internal.policy.impl.Policy";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.904 -0400", hash_original_field = "C0FFFDB7650DF02B56107C0B1FCBC1F0", hash_generated_field = "100BB36640E39269E598568BB8ACACA8")
-
-    private static IPolicy sPolicy;
+private PolicyManager() {}
     static {
         try {
             Class policyClass = Class.forName(POLICY_IMPL_CLASS_NAME);

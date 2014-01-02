@@ -1,6 +1,8 @@
 package org.apache.http.impl.io;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -13,201 +15,173 @@ import org.apache.http.io.SessionOutputBuffer;
 
 
 public class ChunkedOutputStream extends OutputStream {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.522 -0400", hash_original_field = "C68271A63DDBC431C307BEB7D2918275", hash_generated_field = "77BC14A656F9BA385AF4199F8E7C3C1D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.498 -0500", hash_original_field = "862CD4E306AB155A980F18A7EE0A0BF8", hash_generated_field = "77BC14A656F9BA385AF4199F8E7C3C1D")
 
-    private SessionOutputBuffer out;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.522 -0400", hash_original_field = "0FEA6A13C52B4D4725368F24B045CA84", hash_generated_field = "EBA08CF4C3E674FAE289C26AD80951B3")
+    private  SessionOutputBuffer out;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.500 -0500", hash_original_field = "0C211D26B312EE2C89BEFF712202C7AE", hash_generated_field = "EBA08CF4C3E674FAE289C26AD80951B3")
+
 
     private byte[] cache;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.522 -0400", hash_original_field = "46E3E8CFBDA7F68778B66F017C5C2FE1", hash_generated_field = "8AF6C10D15ADA8AC990219FA73C4C6FF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.502 -0500", hash_original_field = "01F113117CDB8E17A401EB9369CF51E3", hash_generated_field = "8AF6C10D15ADA8AC990219FA73C4C6FF")
+
 
     private int cachePosition = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.522 -0400", hash_original_field = "5AC2988E242259708AF30EE611285F47", hash_generated_field = "079555C6CADEB50B1BB49A96B89EAB4C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.504 -0500", hash_original_field = "862858CDE54366C6091E0A52DAD048AD", hash_generated_field = "079555C6CADEB50B1BB49A96B89EAB4C")
+
 
     private boolean wroteLastChunk = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.522 -0400", hash_original_field = "1E79543A888DE7BB0ADBB289A8F4251D", hash_generated_field = "AA98B16E301073717D23E903C6D6286D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.506 -0500", hash_original_field = "3AA5C7F0C9D40E3C1B48B8404423A098", hash_generated_field = "AA98B16E301073717D23E903C6D6286D")
 
     private boolean closed = false;
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.523 -0400", hash_original_method = "56C47BEE54D84D2C2F06C5F3380F6FB5", hash_generated_method = "13922ECA8643BCE0F6F9E2C85B378856")
-    public  ChunkedOutputStream(final SessionOutputBuffer out, int bufferSize) throws IOException {
+    // ----------------------------------------------------------- Constructors
+    /**
+     * Wraps a session output buffer and chunks the output.
+     * @param out the session output buffer to wrap
+     * @param bufferSize minimum chunk size (excluding last chunk)
+     * @throws IOException
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.509 -0500", hash_original_method = "56C47BEE54D84D2C2F06C5F3380F6FB5", hash_generated_method = "137823E306F1E3181E0323F27A60481E")
+    
+public ChunkedOutputStream(final SessionOutputBuffer out, int bufferSize)
+            throws IOException {
         super();
         this.cache = new byte[bufferSize];
         this.out = out;
-        // ---------- Original Method ----------
-        //this.cache = new byte[bufferSize];
-        //this.out = out;
     }
 
+    /**
+     * Wraps a session output buffer and chunks the output. The default buffer 
+     * size of 2048 was chosen because the chunk overhead is less than 0.5%
+     *
+     * @param out       the output buffer to wrap
+     * @throws IOException
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.512 -0500", hash_original_method = "0998BD1AC5B9537C7B2BFA3E832ED71A", hash_generated_method = "6AA1C1C41048396E244FE7724B12A914")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.523 -0400", hash_original_method = "0998BD1AC5B9537C7B2BFA3E832ED71A", hash_generated_method = "D4570D00A61C6FB90014617F162A887A")
-    public  ChunkedOutputStream(final SessionOutputBuffer out) throws IOException {
+public ChunkedOutputStream(final SessionOutputBuffer out) 
+            throws IOException {
         this(out, 2048);
-        addTaint(out.getTaint());
-        // ---------- Original Method ----------
     }
 
+    // ----------------------------------------------------------- Internal methods
+    /**
+     * Writes the cache out onto the underlying stream
+     * @throws IOException
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.514 -0500", hash_original_method = "320F140F8D57B27D338CDA0750999A03", hash_generated_method = "A536783168A45F38B4FBC5281CBB1B4D")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.524 -0400", hash_original_method = "320F140F8D57B27D338CDA0750999A03", hash_generated_method = "24651ED8CD5565703872EAAEB1079B47")
-    protected void flushCache() throws IOException {
-        if(this.cachePosition > 0)        
-        {
+protected void flushCache() throws IOException {
+        if (this.cachePosition > 0) {
             this.out.writeLine(Integer.toHexString(this.cachePosition));
             this.out.write(this.cache, 0, this.cachePosition);
             this.out.writeLine("");
             this.cachePosition = 0;
-        } //End block
-        // ---------- Original Method ----------
-        //if (this.cachePosition > 0) {
-            //this.out.writeLine(Integer.toHexString(this.cachePosition));
-            //this.out.write(this.cache, 0, this.cachePosition);
-            //this.out.writeLine("");
-            //this.cachePosition = 0;
-        //}
+        }
     }
 
+    /**
+     * Writes the cache and bufferToAppend to the underlying stream
+     * as one large chunk
+     * @param bufferToAppend
+     * @param off
+     * @param len
+     * @throws IOException
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.516 -0500", hash_original_method = "B6A1CB3240895E2E2F127D1796BCAECF", hash_generated_method = "A30ADD53DA444FC89EBE3A6591604ECF")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.524 -0400", hash_original_method = "B6A1CB3240895E2E2F127D1796BCAECF", hash_generated_method = "65D804933EB4153CC6FAC13E20289400")
-    protected void flushCacheWithAppend(byte bufferToAppend[], int off, int len) throws IOException {
-        addTaint(len);
-        addTaint(off);
-        addTaint(bufferToAppend[0]);
+protected void flushCacheWithAppend(byte bufferToAppend[], int off, int len) throws IOException {
         this.out.writeLine(Integer.toHexString(this.cachePosition + len));
         this.out.write(this.cache, 0, this.cachePosition);
         this.out.write(bufferToAppend, off, len);
         this.out.writeLine("");
         this.cachePosition = 0;
-        // ---------- Original Method ----------
-        //this.out.writeLine(Integer.toHexString(this.cachePosition + len));
-        //this.out.write(this.cache, 0, this.cachePosition);
-        //this.out.write(bufferToAppend, off, len);
-        //this.out.writeLine("");
-        //this.cachePosition = 0;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.519 -0500", hash_original_method = "967E1BC0792D48B7189E3B566BF7EE9B", hash_generated_method = "209105C50080DF7926A1C563C970270B")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.525 -0400", hash_original_method = "967E1BC0792D48B7189E3B566BF7EE9B", hash_generated_method = "A8D8CA5274DD64B5F9C5A1D621BA437B")
-    protected void writeClosingChunk() throws IOException {
+protected void writeClosingChunk() throws IOException {
+        // Write the final chunk.
         this.out.writeLine("0");
         this.out.writeLine("");
-        // ---------- Original Method ----------
-        //this.out.writeLine("0");
-        //this.out.writeLine("");
     }
 
+    // ----------------------------------------------------------- Public Methods
+    /**
+     * Must be called to ensure the internal cache is flushed and the closing chunk is written.
+     * @throws IOException
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.521 -0500", hash_original_method = "48C91C3E7A4F39D8E60BF0ABE327AC31", hash_generated_method = "30DC26F914220D71E7656F090C402658")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.525 -0400", hash_original_method = "48C91C3E7A4F39D8E60BF0ABE327AC31", hash_generated_method = "3FDAC3B070CD42C7A1F64954F4D7BF84")
-    public void finish() throws IOException {
-        if(!this.wroteLastChunk)        
-        {
+public void finish() throws IOException {
+        if (!this.wroteLastChunk) {
             flushCache();
             writeClosingChunk();
             this.wroteLastChunk = true;
-        } //End block
-        // ---------- Original Method ----------
-        //if (!this.wroteLastChunk) {
-            //flushCache();
-            //writeClosingChunk();
-            //this.wroteLastChunk = true;
-        //}
+        }
     }
 
+    // -------------------------------------------- OutputStream Methods
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.523 -0500", hash_original_method = "97963AB3B21DB4797CA6C19C718B8A38", hash_generated_method = "CF1E450E6EB239C83DE93F69EFB91E68")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.526 -0400", hash_original_method = "97963AB3B21DB4797CA6C19C718B8A38", hash_generated_method = "ED48C5013C7413711DFC2210FD4C560C")
-    public void write(int b) throws IOException {
-        if(this.closed)        
-        {
-            IOException varB052DBEEB15E0A31B3EDC9E0CDC85E32_1264274060 = new IOException("Attempted write to closed stream.");
-            varB052DBEEB15E0A31B3EDC9E0CDC85E32_1264274060.addTaint(taint);
-            throw varB052DBEEB15E0A31B3EDC9E0CDC85E32_1264274060;
-        } //End block
+public void write(int b) throws IOException {
+        if (this.closed) {
+            throw new IOException("Attempted write to closed stream.");
+        }
         this.cache[this.cachePosition] = (byte) b;
         this.cachePosition++;
-        if(this.cachePosition == this.cache.length)        
-        flushCache();
-        // ---------- Original Method ----------
-        //if (this.closed) {
-            //throw new IOException("Attempted write to closed stream.");
-        //}
-        //this.cache[this.cachePosition] = (byte) b;
-        //this.cachePosition++;
-        //if (this.cachePosition == this.cache.length) flushCache();
+        if (this.cachePosition == this.cache.length) flushCache();
     }
 
+    /**
+     * Writes the array. If the array does not fit within the buffer, it is
+     * not split, but rather written out as one large chunk.
+     * @param b
+     * @throws IOException
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.525 -0500", hash_original_method = "3A39FD94F4678FF92F02222292608085", hash_generated_method = "F6C81F6D58C1DBA8A32360C2D4037BF3")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.527 -0400", hash_original_method = "3A39FD94F4678FF92F02222292608085", hash_generated_method = "0D12FC600229B512F27E34195CC74680")
-    public void write(byte b[]) throws IOException {
-        addTaint(b[0]);
+public void write(byte b[]) throws IOException {
         write(b, 0, b.length);
-        // ---------- Original Method ----------
-        //write(b, 0, b.length);
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.527 -0500", hash_original_method = "CCAB33DDE1A6D08280EC0BE0610A6B79", hash_generated_method = "6B6F1E98A57891C1B4D1833806E6B11D")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.529 -0400", hash_original_method = "CCAB33DDE1A6D08280EC0BE0610A6B79", hash_generated_method = "B7B751D180EC7F2B09B85043B0F7EFC3")
-    public void write(byte src[], int off, int len) throws IOException {
-        addTaint(off);
-        addTaint(src[0]);
-        if(this.closed)        
-        {
-            IOException varB052DBEEB15E0A31B3EDC9E0CDC85E32_2122837636 = new IOException("Attempted write to closed stream.");
-            varB052DBEEB15E0A31B3EDC9E0CDC85E32_2122837636.addTaint(taint);
-            throw varB052DBEEB15E0A31B3EDC9E0CDC85E32_2122837636;
-        } //End block
-        if(len >= this.cache.length - this.cachePosition)        
-        {
+public void write(byte src[], int off, int len) throws IOException {
+        if (this.closed) {
+            throw new IOException("Attempted write to closed stream.");
+        }
+        if (len >= this.cache.length - this.cachePosition) {
             flushCacheWithAppend(src, off, len);
-        } //End block
-        else
-        {
+        } else {
             System.arraycopy(src, off, cache, this.cachePosition, len);
             this.cachePosition += len;
-        } //End block
-        // ---------- Original Method ----------
-        //if (this.closed) {
-            //throw new IOException("Attempted write to closed stream.");
-        //}
-        //if (len >= this.cache.length - this.cachePosition) {
-            //flushCacheWithAppend(src, off, len);
-        //} else {
-            //System.arraycopy(src, off, cache, this.cachePosition, len);
-            //this.cachePosition += len;
-        //}
+        }
     }
 
+    /**
+     * Flushes the content buffer and the underlying stream.
+     * @throws IOException
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.530 -0500", hash_original_method = "1D035E07BE479B8A909681E6BF90CFBD", hash_generated_method = "30EC794E829AE5A6C71E9027AA07F44F")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.530 -0400", hash_original_method = "1D035E07BE479B8A909681E6BF90CFBD", hash_generated_method = "A492F731C1F84352887E9BB507A040A1")
-    public void flush() throws IOException {
+public void flush() throws IOException {
         flushCache();
         this.out.flush();
-        // ---------- Original Method ----------
-        //flushCache();
-        //this.out.flush();
     }
 
+    /**
+     * Finishes writing to the underlying stream, but does NOT close the underlying stream.
+     * @throws IOException
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.532 -0500", hash_original_method = "E495FD5BB343CF99481A29E811E92BD2", hash_generated_method = "0AF69A29991DEB492291E42E4EEA1909")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.531 -0400", hash_original_method = "E495FD5BB343CF99481A29E811E92BD2", hash_generated_method = "B11B90BB85CBB573ACA2B305EEAF5E66")
-    public void close() throws IOException {
-        if(!this.closed)        
-        {
+public void close() throws IOException {
+        if (!this.closed) {
             this.closed = true;
             finish();
             this.out.flush();
-        } //End block
-        // ---------- Original Method ----------
-        //if (!this.closed) {
-            //this.closed = true;
-            //finish();
-            //this.out.flush();
-        //}
+        }
     }
 
     

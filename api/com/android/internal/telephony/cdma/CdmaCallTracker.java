@@ -1,6 +1,8 @@
 package com.android.internal.telephony.cdma;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -29,61 +31,95 @@ import com.android.internal.telephony.TelephonyProperties;
 
 
 public final class CdmaCallTracker extends CallTracker {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.282 -0400", hash_original_field = "C58F53C459878D89B341FB80EA845365", hash_generated_field = "6A689CEE5AFC02EE7871982A34436F33")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.664 -0500", hash_original_field = "DB10E3AE28CC9996A816C3CCD7216A83", hash_generated_field = "37C2AB96DD7CCDC96FF809DAC1A6D712")
+
+    static final String LOG_TAG = "CDMA";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.666 -0500", hash_original_field = "C0E75EBA000DEBDBEC9BEF2F1AD73912", hash_generated_field = "A7B75AEFB3EF53E7FDD36572121557CF")
+
+
+    private static final boolean REPEAT_POLLING = false;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.669 -0500", hash_original_field = "83EC3F78C66627469DFE7766D8BC2B63", hash_generated_field = "5105F543721DFE6C6FC4422BBF3A00CF")
+
+
+    private static final boolean DBG_POLL = false;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.672 -0500", hash_original_field = "8687A18135CDCE52A057265B20651AFF", hash_generated_field = "3D5BB3B6A3F2D8A508B231AB505DE10A")
+
+
+    static final int MAX_CONNECTIONS = 1;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.674 -0500", hash_original_field = "7ED5FB0B00FB656A373A1FE348FE2FBB", hash_generated_field = "50E5124FACE9F1EADB0A251AF8BCB55D")
+
+    static final int MAX_CONNECTIONS_PER_CALL = 1;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.676 -0500", hash_original_field = "6A689CEE5AFC02EE7871982A34436F33", hash_generated_field = "8778DA83769DA6B7C7A4F54B9D0B49D2")
+
+
+    //***** Instance Variables
 
     CdmaConnection connections[] = new CdmaConnection[MAX_CONNECTIONS];
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.282 -0400", hash_original_field = "8A0F3DEC66CFEEB2ECB457E5EA849D37", hash_generated_field = "D5D06964BBEC51B3D32BF2A900BC948B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.678 -0500", hash_original_field = "D5D06964BBEC51B3D32BF2A900BC948B", hash_generated_field = "D5D06964BBEC51B3D32BF2A900BC948B")
 
     RegistrantList voiceCallEndedRegistrants = new RegistrantList();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.282 -0400", hash_original_field = "CDE5B90F2260D3DC8A84E35500B6775B", hash_generated_field = "A661D5B9F6F26D0E5672FF445A016D80")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.680 -0500", hash_original_field = "A661D5B9F6F26D0E5672FF445A016D80", hash_generated_field = "A661D5B9F6F26D0E5672FF445A016D80")
 
     RegistrantList voiceCallStartedRegistrants = new RegistrantList();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.282 -0400", hash_original_field = "64CA897868DAA4175C07D9B00CA5A6F5", hash_generated_field = "3D70A22464952A3DA788ACD133F18F18")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.682 -0500", hash_original_field = "3D70A22464952A3DA788ACD133F18F18", hash_generated_field = "3D70A22464952A3DA788ACD133F18F18")
 
-    RegistrantList callWaitingRegistrants = new RegistrantList();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.282 -0400", hash_original_field = "FC84CE24FEB0A9E7F05DBB7000558261", hash_generated_field = "A29022524411F1FE9FAA91E8C50F5273")
+    RegistrantList callWaitingRegistrants =  new RegistrantList();
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.685 -0500", hash_original_field = "A29022524411F1FE9FAA91E8C50F5273", hash_generated_field = "A29022524411F1FE9FAA91E8C50F5273")
 
-    ArrayList<CdmaConnection> droppedDuringPoll = new ArrayList<CdmaConnection>(MAX_CONNECTIONS);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.282 -0400", hash_original_field = "0619E76BCFD69B42BEE8BE2B7FD7B9BD", hash_generated_field = "4BBDA18FC07012B464497A7036E9A64A")
+    ArrayList<CdmaConnection> droppedDuringPoll
+        = new ArrayList<CdmaConnection>(MAX_CONNECTIONS);
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.687 -0500", hash_original_field = "4BBDA18FC07012B464497A7036E9A64A", hash_generated_field = "4BBDA18FC07012B464497A7036E9A64A")
+
 
     CdmaCall ringingCall = new CdmaCall(this);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.282 -0400", hash_original_field = "07FC128BE6CC33337F9DAFFBF9A07F18", hash_generated_field = "0CD0B75B3735614AF877856265E67CC2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.689 -0500", hash_original_field = "0CD0B75B3735614AF877856265E67CC2", hash_generated_field = "0CD0B75B3735614AF877856265E67CC2")
 
     CdmaCall foregroundCall = new CdmaCall(this);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.282 -0400", hash_original_field = "D855CF3B69C3475BF5A643D82E27F8C2", hash_generated_field = "1378E8D8E46107C480B8A53E811982F8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.692 -0500", hash_original_field = "1378E8D8E46107C480B8A53E811982F8", hash_generated_field = "1378E8D8E46107C480B8A53E811982F8")
 
     CdmaCall backgroundCall = new CdmaCall(this);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.282 -0400", hash_original_field = "FFF3375B9BFF76918F491666B68949AD", hash_generated_field = "2DB35562B0BF54F2C81F690DFDF249EA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.695 -0500", hash_original_field = "2DB35562B0BF54F2C81F690DFDF249EA", hash_generated_field = "2DB35562B0BF54F2C81F690DFDF249EA")
+
 
     CdmaConnection pendingMO;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.282 -0400", hash_original_field = "1A8ABF13D702402EE54BFD56E4804126", hash_generated_field = "02C3359C89BD9A3EFAD64C6344B66724")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.697 -0500", hash_original_field = "02C3359C89BD9A3EFAD64C6344B66724", hash_generated_field = "02C3359C89BD9A3EFAD64C6344B66724")
 
     boolean hangupPendingMO;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.282 -0400", hash_original_field = "5FBB09530AC5F254B2B994A0BEBD3EE3", hash_generated_field = "2E8EE5EFDD4628948AC6D63D5B84BCF2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.699 -0500", hash_original_field = "2E8EE5EFDD4628948AC6D63D5B84BCF2", hash_generated_field = "2E8EE5EFDD4628948AC6D63D5B84BCF2")
 
-    boolean pendingCallInEcm = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.282 -0400", hash_original_field = "123254AC1D49AFA1C4F58BABA1AE7779", hash_generated_field = "BC28D21C00A5A62F4E1E102DA65D0E68")
+    boolean pendingCallInEcm=false;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.701 -0500", hash_original_field = "BC28D21C00A5A62F4E1E102DA65D0E68", hash_generated_field = "BC28D21C00A5A62F4E1E102DA65D0E68")
 
     boolean mIsInEmergencyCall = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.283 -0400", hash_original_field = "F7A42FE7211F98AC7A60A285AC3A9E87", hash_generated_field = "F2FC592D71DA2BCBED04F0F797B7B907")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.703 -0500", hash_original_field = "F2FC592D71DA2BCBED04F0F797B7B907", hash_generated_field = "F2FC592D71DA2BCBED04F0F797B7B907")
 
     CDMAPhone phone;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.283 -0400", hash_original_field = "B262B2D3199ADD4E02EA2C990EA1FE1C", hash_generated_field = "9D75FD49CDE6D2073BBD4C557B93C735")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.705 -0500", hash_original_field = "9D75FD49CDE6D2073BBD4C557B93C735", hash_generated_field = "9D75FD49CDE6D2073BBD4C557B93C735")
+
 
     boolean desiredMute = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.283 -0400", hash_original_field = "DBE99956F51C5D22A6E661875847A04F", hash_generated_field = "27174E0D68E2766EF4C51C4E944D5755")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.707 -0500", hash_original_field = "27174E0D68E2766EF4C51C4E944D5755", hash_generated_field = "27174E0D68E2766EF4C51C4E944D5755")
+
 
     int pendingCallClirMode;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.283 -0400", hash_original_field = "2A29A007EEA18F3490433A6FDFAFB956", hash_generated_field = "40E232559DDE23609D651E7B63760E6C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.710 -0500", hash_original_field = "40E232559DDE23609D651E7B63760E6C", hash_generated_field = "40E232559DDE23609D651E7B63760E6C")
 
     Phone.State state = Phone.State.IDLE;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.283 -0400", hash_original_field = "9523AEECAD03B3078CD81B79CF3CBE20", hash_generated_field = "B4B1C0C1B427A1CEF2D1461193F5A876")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.712 -0500", hash_original_field = "42A7493F9C995CAD89B391816B271217", hash_generated_field = "B4B1C0C1B427A1CEF2D1461193F5A876")
+
 
     private boolean mIsEcmTimerCanceled = false;
+
+//    boolean needsPoll;
+
+
+
+    //***** Events
+
+    //***** Constructors
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.715 -0500", hash_original_method = "D7E78FBD4DB8C2DC376D4ABE79BA3592", hash_generated_method = "D7E78FBD4DB8C2DC376D4ABE79BA3592")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.283 -0400", hash_original_method = "D7E78FBD4DB8C2DC376D4ABE79BA3592", hash_generated_method = "B09BDF1A72EC50C995F9CEB1AB13E5B7")
-      CdmaCallTracker(CDMAPhone phone) {
+CdmaCallTracker(CDMAPhone phone) {
         this.phone = phone;
         cm = phone.mCM;
         cm.registerForCallStateChanged(this, EVENT_CALL_STATE_CHANGE, null);
@@ -91,423 +127,299 @@ public final class CdmaCallTracker extends CallTracker {
         cm.registerForNotAvailable(this, EVENT_RADIO_NOT_AVAILABLE, null);
         cm.registerForCallWaitingInfo(this, EVENT_CALL_WAITING_INFO_CDMA, null);
         foregroundCall.setGeneric(false);
-        // ---------- Original Method ----------
-        //this.phone = phone;
-        //cm = phone.mCM;
-        //cm.registerForCallStateChanged(this, EVENT_CALL_STATE_CHANGE, null);
-        //cm.registerForOn(this, EVENT_RADIO_AVAILABLE, null);
-        //cm.registerForNotAvailable(this, EVENT_RADIO_NOT_AVAILABLE, null);
-        //cm.registerForCallWaitingInfo(this, EVENT_CALL_WAITING_INFO_CDMA, null);
-        //foregroundCall.setGeneric(false);
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.717 -0500", hash_original_method = "2338338535849E159E02E311688F6BB3", hash_generated_method = "8026639319EA7D7D538CAA88FAC5DA9B")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.284 -0400", hash_original_method = "2338338535849E159E02E311688F6BB3", hash_generated_method = "99C4F86851782734DAD63FF89717F794")
-    public void dispose() {
+public void dispose() {
         cm.unregisterForCallStateChanged(this);
         cm.unregisterForOn(this);
         cm.unregisterForNotAvailable(this);
         cm.unregisterForCallWaitingInfo(this);
-for(CdmaConnection c : connections)
-        {
-            try 
-            {
-                if(c != null)                
-                hangup(c);
-            } //End block
-            catch (CallStateException ex)
-            {
-            } //End block
-        } //End block
-        try 
-        {
-            if(pendingMO != null)            
-            hangup(pendingMO);
-        } //End block
-        catch (CallStateException ex)
-        {
-        } //End block
+        for(CdmaConnection c : connections) {
+            try {
+                if(c != null) hangup(c);
+            } catch (CallStateException ex) {
+                Log.e(LOG_TAG, "unexpected error on hangup during dispose");
+            }
+        }
+
+        try {
+            if(pendingMO != null) hangup(pendingMO);
+        } catch (CallStateException ex) {
+            Log.e(LOG_TAG, "unexpected error on hangup during dispose");
+        }
+
         clearDisconnected();
-        // ---------- Original Method ----------
-        //cm.unregisterForCallStateChanged(this);
-        //cm.unregisterForOn(this);
-        //cm.unregisterForNotAvailable(this);
-        //cm.unregisterForCallWaitingInfo(this);
-        //for(CdmaConnection c : connections) {
-            //try {
-                //if(c != null) hangup(c);
-            //} catch (CallStateException ex) {
-                //Log.e(LOG_TAG, "unexpected error on hangup during dispose");
-            //}
-        //}
-        //try {
-            //if(pendingMO != null) hangup(pendingMO);
-        //} catch (CallStateException ex) {
-            //Log.e(LOG_TAG, "unexpected error on hangup during dispose");
-        //}
-        //clearDisconnected();
+
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.721 -0500", hash_original_method = "73544050C1854D0258F226F7B919F554", hash_generated_method = "C470172F982ABBA31D01D9E31C6B3D79")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.284 -0400", hash_original_method = "73544050C1854D0258F226F7B919F554", hash_generated_method = "B58278D50A7470E880C8DDDBFC5E6BDE")
-    @Override
+@Override
     protected void finalize() {
         Log.d(LOG_TAG, "CdmaCallTracker finalized");
-        // ---------- Original Method ----------
-        //Log.d(LOG_TAG, "CdmaCallTracker finalized");
     }
 
+    //***** Instance Methods
+
+    //***** Public Methods
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.723 -0500", hash_original_method = "A19F9CA037C5D9E07B1DD2AD491B323A", hash_generated_method = "78183CFD9993C1DBB9A4301F1D3A7472")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.285 -0400", hash_original_method = "A19F9CA037C5D9E07B1DD2AD491B323A", hash_generated_method = "E27CAF9935D2468457687BCD0D4A34D3")
-    public void registerForVoiceCallStarted(Handler h, int what, Object obj) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
-        addTaint(obj.getTaint());
-        addTaint(what);
-        addTaint(h.getTaint());
+public void registerForVoiceCallStarted(Handler h, int what, Object obj) {
         Registrant r = new Registrant(h, what, obj);
         voiceCallStartedRegistrants.add(r);
-        if(state != Phone.State.IDLE)        
-        {
+        // Notify if in call when registering
+        if (state != Phone.State.IDLE) {
             r.notifyRegistrant(new AsyncResult(null, null, null));
-        } //End block
-        // ---------- Original Method ----------
-        //Registrant r = new Registrant(h, what, obj);
-        //voiceCallStartedRegistrants.add(r);
-        //if (state != Phone.State.IDLE) {
-            //r.notifyRegistrant(new AsyncResult(null, null, null));
-        //}
+        }
     }
-
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.725 -0500", hash_original_method = "3C910908B4B98998A7936D8F8AE4D170", hash_generated_method = "90C53E0CBF7A9C3668641394B500053A")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.285 -0400", hash_original_method = "3C910908B4B98998A7936D8F8AE4D170", hash_generated_method = "9B599ABCA06C3CB11CC100B15D3B63CA")
-    public void unregisterForVoiceCallStarted(Handler h) {
-        addTaint(h.getTaint());
+public void unregisterForVoiceCallStarted(Handler h) {
         voiceCallStartedRegistrants.remove(h);
-        // ---------- Original Method ----------
-        //voiceCallStartedRegistrants.remove(h);
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.727 -0500", hash_original_method = "D7F70C00A904DE96D26BDF7C49F41DAA", hash_generated_method = "EA8657688A790592CA2BF7644170F3D6")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.286 -0400", hash_original_method = "D7F70C00A904DE96D26BDF7C49F41DAA", hash_generated_method = "F39032696EB04762CD7CB95E9F29536E")
-    public void registerForVoiceCallEnded(Handler h, int what, Object obj) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
-        addTaint(obj.getTaint());
-        addTaint(what);
-        addTaint(h.getTaint());
+public void registerForVoiceCallEnded(Handler h, int what, Object obj) {
         Registrant r = new Registrant(h, what, obj);
         voiceCallEndedRegistrants.add(r);
-        // ---------- Original Method ----------
-        //Registrant r = new Registrant(h, what, obj);
-        //voiceCallEndedRegistrants.add(r);
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.729 -0500", hash_original_method = "91176AF98778238DB3B453F2FC7D9448", hash_generated_method = "BC9403E0CD3C928D209E83809DDE4C4E")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.286 -0400", hash_original_method = "91176AF98778238DB3B453F2FC7D9448", hash_generated_method = "F7797E359E79D0A4733AB0A2C469DA29")
-    public void unregisterForVoiceCallEnded(Handler h) {
-        addTaint(h.getTaint());
+public void unregisterForVoiceCallEnded(Handler h) {
         voiceCallEndedRegistrants.remove(h);
-        // ---------- Original Method ----------
-        //voiceCallEndedRegistrants.remove(h);
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.732 -0500", hash_original_method = "F34086F28C205DD5876302448C7FB8FC", hash_generated_method = "79A93FEA3EE7351D10239BCCD58C5E9D")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.287 -0400", hash_original_method = "F34086F28C205DD5876302448C7FB8FC", hash_generated_method = "A98A58DF19DE8E652FEE2AF1FBC4E9B6")
-    public void registerForCallWaiting(Handler h, int what, Object obj) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
-        addTaint(obj.getTaint());
-        addTaint(what);
-        addTaint(h.getTaint());
+public void registerForCallWaiting(Handler h, int what, Object obj) {
         Registrant r = new Registrant (h, what, obj);
         callWaitingRegistrants.add(r);
-        // ---------- Original Method ----------
-        //Registrant r = new Registrant (h, what, obj);
-        //callWaitingRegistrants.add(r);
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.734 -0500", hash_original_method = "F71574762174031DAD3F3CD1050F608A", hash_generated_method = "D37312F44CB7035FC4084870E0DC07EF")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.287 -0400", hash_original_method = "F71574762174031DAD3F3CD1050F608A", hash_generated_method = "05F955562F027DF842DDD74BC13A260B")
-    public void unregisterForCallWaiting(Handler h) {
-        addTaint(h.getTaint());
+public void unregisterForCallWaiting(Handler h) {
         callWaitingRegistrants.remove(h);
-        // ---------- Original Method ----------
-        //callWaitingRegistrants.remove(h);
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.736 -0500", hash_original_method = "B11C1D24F61F5A9ABEB7D187928BEC26", hash_generated_method = "028DCC8F83F806C4F951FBA15447674D")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.287 -0400", hash_original_method = "B11C1D24F61F5A9ABEB7D187928BEC26", hash_generated_method = "9AB3F2F39380BAE5E0A799C34165AB19")
-    private void fakeHoldForegroundBeforeDial() {
+private void
+    fakeHoldForegroundBeforeDial() {
         List<Connection> connCopy;
+
+        // We need to make a copy here, since fakeHoldBeforeDial()
+        // modifies the lists, and we don't want to reverse the order
         connCopy = (List<Connection>) foregroundCall.connections.clone();
-for(int i = 0, s = connCopy.size();i < s;i++)
-        {
+
+        for (int i = 0, s = connCopy.size() ; i < s ; i++) {
             CdmaConnection conn = (CdmaConnection)connCopy.get(i);
+
             conn.fakeHoldBeforeDial();
-        } //End block
-        // ---------- Original Method ----------
-        //List<Connection> connCopy;
-        //connCopy = (List<Connection>) foregroundCall.connections.clone();
-        //for (int i = 0, s = connCopy.size() ; i < s ; i++) {
-            //CdmaConnection conn = (CdmaConnection)connCopy.get(i);
-            //conn.fakeHoldBeforeDial();
-        //}
+        }
     }
 
+    /**
+     * clirMode is one of the CLIR_ constants
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.739 -0500", hash_original_method = "FEC4E6BC08FD10A2C518984DAAD113C7", hash_generated_method = "1588BDF5754148DC78081AD24F221FCD")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.289 -0400", hash_original_method = "FEC4E6BC08FD10A2C518984DAAD113C7", hash_generated_method = "57327F4A195BC7D502E56192D4AB73DC")
-     Connection dial(String dialString, int clirMode) throws CallStateException {
+Connection
+    dial (String dialString, int clirMode) throws CallStateException {
+        // note that this triggers call state changed notif
         clearDisconnected();
-        if(!canDial())        
-        {
-            CallStateException var9E415163F1883D794EA7CDA9658E5AEC_239101593 = new CallStateException("cannot dial in current state");
-            var9E415163F1883D794EA7CDA9658E5AEC_239101593.addTaint(taint);
-            throw var9E415163F1883D794EA7CDA9658E5AEC_239101593;
-        } //End block
-        String inEcm = SystemProperties.get(TelephonyProperties.PROPERTY_INECM_MODE, "false");
+
+        if (!canDial()) {
+            throw new CallStateException("cannot dial in current state");
+        }
+
+        String inEcm=SystemProperties.get(TelephonyProperties.PROPERTY_INECM_MODE, "false");
         boolean isPhoneInEcmMode = inEcm.equals("true");
-        boolean isEmergencyCall = PhoneNumberUtils.isLocalEmergencyNumber(dialString, phone.getContext());
-        if(isPhoneInEcmMode && isEmergencyCall)        
-        {
+        boolean isEmergencyCall =
+                PhoneNumberUtils.isLocalEmergencyNumber(dialString, phone.getContext());
+
+        // Cancel Ecm timer if a second emergency call is originating in Ecm mode
+        if (isPhoneInEcmMode && isEmergencyCall) {
             handleEcmTimer(phone.CANCEL_ECM_TIMER);
-        } //End block
+        }
+
+        // We are initiating a call therefore even if we previously
+        // didn't know the state (i.e. Generic was true) we now know
+        // and therefore can set Generic to false.
         foregroundCall.setGeneric(false);
-        if(foregroundCall.getState() == CdmaCall.State.ACTIVE)        
-        {
-Connection var0D0173C65DF18B64351D0649B2D04417_444677504 =             dialThreeWay(dialString);
-            var0D0173C65DF18B64351D0649B2D04417_444677504.addTaint(taint);
-            return var0D0173C65DF18B64351D0649B2D04417_444677504;
-        } //End block
+
+        // The new call must be assigned to the foreground call.
+        // That call must be idle, so place anything that's
+        // there on hold
+        if (foregroundCall.getState() == CdmaCall.State.ACTIVE) {
+            return dialThreeWay(dialString);
+        }
+
         pendingMO = new CdmaConnection(phone.getContext(), dialString, this, foregroundCall);
         hangupPendingMO = false;
-        if(pendingMO.address == null || pendingMO.address.length() == 0
-            || pendingMO.address.indexOf(PhoneNumberUtils.WILD) >= 0)        
-        {
+
+        if (pendingMO.address == null || pendingMO.address.length() == 0
+            || pendingMO.address.indexOf(PhoneNumberUtils.WILD) >= 0) {
+            // Phone number is invalid
             pendingMO.cause = Connection.DisconnectCause.INVALID_NUMBER;
+
+            // handlePollCalls() will notice this call not present
+            // and will mark it as dropped.
             pollCallsWhenSafe();
-        } //End block
-        else
-        {
+        } else {
+            // Always unmute when initiating a new call
             setMute(false);
+
+            // Check data call
             disableDataCallInEmergencyCall(dialString);
-            if(!isPhoneInEcmMode || (isPhoneInEcmMode && isEmergencyCall))            
-            {
+
+            // In Ecm mode, if another emergency call is dialed, Ecm mode will not exit.
+            if(!isPhoneInEcmMode || (isPhoneInEcmMode && isEmergencyCall)) {
                 cm.dial(pendingMO.address, clirMode, obtainCompleteMessage());
-            } //End block
-            else
-            {
+            } else {
                 phone.exitEmergencyCallbackMode();
                 phone.setOnEcbModeExitResponse(this,EVENT_EXIT_ECM_RESPONSE_CDMA, null);
                 pendingCallClirMode=clirMode;
                 pendingCallInEcm=true;
-            } //End block
-        } //End block
+            }
+        }
+
         updatePhoneState();
         phone.notifyPreciseCallStateChanged();
-Connection var14BF1C8BBB47038F78C99A232B009337_1020080456 =         pendingMO;
-        var14BF1C8BBB47038F78C99A232B009337_1020080456.addTaint(taint);
-        return var14BF1C8BBB47038F78C99A232B009337_1020080456;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+
+        return pendingMO;
     }
 
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.742 -0500", hash_original_method = "916DB4F3BDDE26A491E1178653223CEE", hash_generated_method = "916DB4F3BDDE26A491E1178653223CEE")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.289 -0400", hash_original_method = "916DB4F3BDDE26A491E1178653223CEE", hash_generated_method = "19B3501616F673E7A4249B3151ED96C4")
-     Connection dial(String dialString) throws CallStateException {
-        addTaint(dialString.getTaint());
-Connection varE8109EC8026230EB0B66EDCCD607E699_2030030216 =         dial(dialString, CommandsInterface.CLIR_DEFAULT);
-        varE8109EC8026230EB0B66EDCCD607E699_2030030216.addTaint(taint);
-        return varE8109EC8026230EB0B66EDCCD607E699_2030030216;
-        // ---------- Original Method ----------
-        //return dial(dialString, CommandsInterface.CLIR_DEFAULT);
+Connection
+    dial (String dialString) throws CallStateException {
+        return dial(dialString, CommandsInterface.CLIR_DEFAULT);
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.745 -0500", hash_original_method = "88840CD76FEAD0D0B90DCB96EA4A4A27", hash_generated_method = "30E30D8F19F28E82625A92DF4695ABBC")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.290 -0400", hash_original_method = "88840CD76FEAD0D0B90DCB96EA4A4A27", hash_generated_method = "295FFBEE1D737B98D6B6D23EF698D101")
-    private Connection dialThreeWay(String dialString) {
-        if(!foregroundCall.isIdle())        
-        {
+private Connection
+    dialThreeWay (String dialString) {
+        if (!foregroundCall.isIdle()) {
+            // Check data call
             disableDataCallInEmergencyCall(dialString);
+
+            // Attach the new connection to foregroundCall
             pendingMO = new CdmaConnection(phone.getContext(),
                                 dialString, this, foregroundCall);
             cm.sendCDMAFeatureCode(pendingMO.address,
                 obtainMessage(EVENT_THREE_WAY_DIAL_L2_RESULT_CDMA));
-Connection var14BF1C8BBB47038F78C99A232B009337_984810642 =             pendingMO;
-            var14BF1C8BBB47038F78C99A232B009337_984810642.addTaint(taint);
-            return var14BF1C8BBB47038F78C99A232B009337_984810642;
-        } //End block
-Connection var540C13E9E156B687226421B24F2DF178_737658811 =         null;
-        var540C13E9E156B687226421B24F2DF178_737658811.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_737658811;
-        // ---------- Original Method ----------
-        //if (!foregroundCall.isIdle()) {
-            //disableDataCallInEmergencyCall(dialString);
-            //pendingMO = new CdmaConnection(phone.getContext(),
-                                //dialString, this, foregroundCall);
-            //cm.sendCDMAFeatureCode(pendingMO.address,
-                //obtainMessage(EVENT_THREE_WAY_DIAL_L2_RESULT_CDMA));
-            //return pendingMO;
-        //}
-        //return null;
+            return pendingMO;
+        }
+        return null;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.748 -0500", hash_original_method = "A15B8A9C3B79A061845560CDFB3D1962", hash_generated_method = "9628ED37CC3A69F6AD179A03E35B5D7F")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.290 -0400", hash_original_method = "A15B8A9C3B79A061845560CDFB3D1962", hash_generated_method = "F6673C98AB91D70F2037F12A126A5827")
-     void acceptCall() throws CallStateException {
-        if(ringingCall.getState() == CdmaCall.State.INCOMING)        
-        {
+void
+    acceptCall() throws CallStateException {
+        if (ringingCall.getState() == CdmaCall.State.INCOMING) {
+            Log.i("phone", "acceptCall: incoming...");
+            // Always unmute when answering a new call
             setMute(false);
             cm.acceptCall(obtainCompleteMessage());
-        } //End block
-        else
-        if(ringingCall.getState() == CdmaCall.State.WAITING)        
-        {
+        } else if (ringingCall.getState() == CdmaCall.State.WAITING) {
             CdmaConnection cwConn = (CdmaConnection)(ringingCall.getLatestConnection());
+
+            // Since there is no network response for supplimentary
+            // service for CDMA, we assume call waiting is answered.
+            // ringing Call state change to idle is in CdmaCall.detach
+            // triggered by updateParent.
             cwConn.updateParent(ringingCall, foregroundCall);
             cwConn.onConnectedInOrOut();
             updatePhoneState();
             switchWaitingOrHoldingAndActive();
-        } //End block
-        else
-        {
-            CallStateException var566A6D1258D88782F935EBCAFFB89CEC_1967822271 = new CallStateException("phone not ringing");
-            var566A6D1258D88782F935EBCAFFB89CEC_1967822271.addTaint(taint);
-            throw var566A6D1258D88782F935EBCAFFB89CEC_1967822271;
-        } //End block
-        // ---------- Original Method ----------
-        //if (ringingCall.getState() == CdmaCall.State.INCOMING) {
-            //Log.i("phone", "acceptCall: incoming...");
-            //setMute(false);
-            //cm.acceptCall(obtainCompleteMessage());
-        //} else if (ringingCall.getState() == CdmaCall.State.WAITING) {
-            //CdmaConnection cwConn = (CdmaConnection)(ringingCall.getLatestConnection());
-            //cwConn.updateParent(ringingCall, foregroundCall);
-            //cwConn.onConnectedInOrOut();
-            //updatePhoneState();
-            //switchWaitingOrHoldingAndActive();
-        //} else {
-            //throw new CallStateException("phone not ringing");
-        //}
+        } else {
+            throw new CallStateException("phone not ringing");
+        }
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.751 -0500", hash_original_method = "9B02E01190499DD77CD223AD7831C55B", hash_generated_method = "159188A7D123B2C37B5B4116F07A42E0")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.291 -0400", hash_original_method = "9B02E01190499DD77CD223AD7831C55B", hash_generated_method = "2687566F7C256AD75D107D231806918D")
-     void rejectCall() throws CallStateException {
-        if(ringingCall.getState().isRinging())        
-        {
+void
+    rejectCall () throws CallStateException {
+        // AT+CHLD=0 means "release held or UDUB"
+        // so if the phone isn't ringing, this could hang up held
+        if (ringingCall.getState().isRinging()) {
             cm.rejectCall(obtainCompleteMessage());
-        } //End block
-        else
-        {
-            CallStateException var566A6D1258D88782F935EBCAFFB89CEC_1636372454 = new CallStateException("phone not ringing");
-            var566A6D1258D88782F935EBCAFFB89CEC_1636372454.addTaint(taint);
-            throw var566A6D1258D88782F935EBCAFFB89CEC_1636372454;
-        } //End block
-        // ---------- Original Method ----------
-        //if (ringingCall.getState().isRinging()) {
-            //cm.rejectCall(obtainCompleteMessage());
-        //} else {
-            //throw new CallStateException("phone not ringing");
-        //}
+        } else {
+            throw new CallStateException("phone not ringing");
+        }
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.753 -0500", hash_original_method = "4E2E600B83947FE548823E8A00BDC609", hash_generated_method = "FBEEF82AA24D8E5869DB130B1C5155CD")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.291 -0400", hash_original_method = "4E2E600B83947FE548823E8A00BDC609", hash_generated_method = "287146332FBE5A298778223BC94AB633")
-     void switchWaitingOrHoldingAndActive() throws CallStateException {
-        if(ringingCall.getState() == CdmaCall.State.INCOMING)        
-        {
-            CallStateException varE42FEAD21291D7FDB488D92CAF81155C_1407706617 = new CallStateException("cannot be in the incoming state");
-            varE42FEAD21291D7FDB488D92CAF81155C_1407706617.addTaint(taint);
-            throw varE42FEAD21291D7FDB488D92CAF81155C_1407706617;
-        } //End block
-        else
-        if(foregroundCall.getConnections().size() > 1)        
-        {
+void
+    switchWaitingOrHoldingAndActive() throws CallStateException {
+        // Should we bother with this check?
+        if (ringingCall.getState() == CdmaCall.State.INCOMING) {
+            throw new CallStateException("cannot be in the incoming state");
+        } else if (foregroundCall.getConnections().size() > 1) {
             flashAndSetGenericTrue();
-        } //End block
-        else
-        {
+        } else {
+            // Send a flash command to CDMA network for putting the other party on hold.
+            // For CDMA networks which do not support this the user would just hear a beep
+            // from the network. For CDMA networks which do support it will put the other
+            // party on hold.
             cm.sendCDMAFeatureCode("", obtainMessage(EVENT_SWITCH_RESULT));
-        } //End block
-        // ---------- Original Method ----------
-        //if (ringingCall.getState() == CdmaCall.State.INCOMING) {
-            //throw new CallStateException("cannot be in the incoming state");
-        //} else if (foregroundCall.getConnections().size() > 1) {
-            //flashAndSetGenericTrue();
-        //} else {
-            //cm.sendCDMAFeatureCode("", obtainMessage(EVENT_SWITCH_RESULT));
-        //}
+        }
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.756 -0500", hash_original_method = "B1073FCDB805CE663445BC5D803D76AA", hash_generated_method = "F8BCEA4E8B3CB91F30D58DEB594FFF78")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.292 -0400", hash_original_method = "B1073FCDB805CE663445BC5D803D76AA", hash_generated_method = "90ECDE91CEB46AEDFA1995478C6494BA")
-     void conference() throws CallStateException {
+void
+    conference() throws CallStateException {
+        // Should we be checking state?
         flashAndSetGenericTrue();
-        // ---------- Original Method ----------
-        //flashAndSetGenericTrue();
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.758 -0500", hash_original_method = "B9B58214FE30DEB2D41379B25D88E6DD", hash_generated_method = "B9B58214FE30DEB2D41379B25D88E6DD")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.292 -0400", hash_original_method = "B9B58214FE30DEB2D41379B25D88E6DD", hash_generated_method = "91DDF637F580C2F12D44ADB525F30440")
-     void explicitCallTransfer() throws CallStateException {
+void
+    explicitCallTransfer() throws CallStateException {
         cm.explicitCallTransfer(obtainCompleteMessage(EVENT_ECT_RESULT));
-        // ---------- Original Method ----------
-        //cm.explicitCallTransfer(obtainCompleteMessage(EVENT_ECT_RESULT));
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.760 -0500", hash_original_method = "89E1881B087BAA2C040FAFD444B532DA", hash_generated_method = "89E1881B087BAA2C040FAFD444B532DA")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.292 -0400", hash_original_method = "89E1881B087BAA2C040FAFD444B532DA", hash_generated_method = "93C10D32BFEAACBDB937011534F3F686")
-     void clearDisconnected() {
+void
+    clearDisconnected() {
         internalClearDisconnected();
+
         updatePhoneState();
         phone.notifyPreciseCallStateChanged();
-        // ---------- Original Method ----------
-        //internalClearDisconnected();
-        //updatePhoneState();
-        //phone.notifyPreciseCallStateChanged();
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.763 -0500", hash_original_method = "885B69631C6ACC1E38924306F8EB7459", hash_generated_method = "885B69631C6ACC1E38924306F8EB7459")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.292 -0400", hash_original_method = "885B69631C6ACC1E38924306F8EB7459", hash_generated_method = "1568996C06EBA81351E27F0E0417E2FB")
-     boolean canConference() {
-        boolean varB56B5C49D7206233B27CE5D29642483D_2126403432 = (foregroundCall.getState() == CdmaCall.State.ACTIVE
+boolean
+    canConference() {
+        return foregroundCall.getState() == CdmaCall.State.ACTIVE
                 && backgroundCall.getState() == CdmaCall.State.HOLDING
                 && !backgroundCall.isFull()
-                && !foregroundCall.isFull());
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1520094020 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1520094020;
-        // ---------- Original Method ----------
-        //return foregroundCall.getState() == CdmaCall.State.ACTIVE
-                //&& backgroundCall.getState() == CdmaCall.State.HOLDING
-                //&& !backgroundCall.isFull()
-                //&& !foregroundCall.isFull();
+                && !foregroundCall.isFull();
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.765 -0500", hash_original_method = "DFFE89A6FC85DFAF69854FF09292A4CC", hash_generated_method = "DFFE89A6FC85DFAF69854FF09292A4CC")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.293 -0400", hash_original_method = "DFFE89A6FC85DFAF69854FF09292A4CC", hash_generated_method = "92EDC40739D6FA8EE70BAC25CB1A95BB")
-     boolean canDial() {
+boolean
+    canDial() {
         boolean ret;
         int serviceState = phone.getServiceState().getState();
         String disableCall = SystemProperties.get(
                 TelephonyProperties.PROPERTY_DISABLE_CALL, "false");
+
         ret = (serviceState != ServiceState.STATE_POWER_OFF)
                 && pendingMO == null
                 && !ringingCall.isRinging()
@@ -515,8 +427,8 @@ Connection var540C13E9E156B687226421B24F2DF178_737658811 =         null;
                 && (!foregroundCall.getState().isAlive()
                     || (foregroundCall.getState() == CdmaCall.State.ACTIVE)
                     || !backgroundCall.getState().isAlive());
-        if(!ret)        
-        {
+
+        if (!ret) {
             log(String.format("canDial is false\n" +
                               "((serviceState=%d) != ServiceState.STATE_POWER_OFF)::=%s\n" +
                               "&& pendingMO == null::=%s\n" +
@@ -533,1000 +445,814 @@ Connection var540C13E9E156B687226421B24F2DF178_737658811 =         null;
                     !foregroundCall.getState().isAlive(),
                     foregroundCall.getState() == CdmaCall.State.ACTIVE,
                     !backgroundCall.getState().isAlive()));
-        } //End block
-        boolean var2CB9DF9898E55FD0AD829DC202DDBD1C_996916376 = (ret);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1902828345 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1902828345;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        }
+        return ret;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.767 -0500", hash_original_method = "F828A2F1845194FFD82C471D7E89F726", hash_generated_method = "F828A2F1845194FFD82C471D7E89F726")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.293 -0400", hash_original_method = "F828A2F1845194FFD82C471D7E89F726", hash_generated_method = "4A23C2EF968728391F9520776F3491D5")
-     boolean canTransfer() {
-        boolean var68934A3E9455FA72420237EB05902327_1956923428 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_17411375 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_17411375;
-        // ---------- Original Method ----------
-        //Log.e(LOG_TAG, "canTransfer: not possible in CDMA");
-        //return false;
+boolean
+    canTransfer() {
+        Log.e(LOG_TAG, "canTransfer: not possible in CDMA");
+        return false;
     }
 
+    //***** Private Instance Methods
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.769 -0500", hash_original_method = "3058DCAC5E1117AE07A379578E7C6A20", hash_generated_method = "9EAF3135810EB7776F7263823E069660")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.294 -0400", hash_original_method = "3058DCAC5E1117AE07A379578E7C6A20", hash_generated_method = "F0E9C736A8A4591368CEECFAB84F530D")
-    private void internalClearDisconnected() {
+private void
+    internalClearDisconnected() {
         ringingCall.clearDisconnected();
         foregroundCall.clearDisconnected();
         backgroundCall.clearDisconnected();
-        // ---------- Original Method ----------
-        //ringingCall.clearDisconnected();
-        //foregroundCall.clearDisconnected();
-        //backgroundCall.clearDisconnected();
     }
 
+    /**
+     * Obtain a message to use for signalling "invoke getCurrentCalls() when
+     * this operation and all other pending operations are complete
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.772 -0500", hash_original_method = "89F67FF5AFAE8FAD9F556239F3E27159", hash_generated_method = "805FDE0EC1A77B26DA5992514EDF2DAB")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.294 -0400", hash_original_method = "89F67FF5AFAE8FAD9F556239F3E27159", hash_generated_method = "71FA60F94AB515A09CC23BCBDDB51019")
-    private Message obtainCompleteMessage() {
-Message varA06F2757B7CF455962BF6FB3E43CCFD1_1201407468 =         obtainCompleteMessage(EVENT_OPERATION_COMPLETE);
-        varA06F2757B7CF455962BF6FB3E43CCFD1_1201407468.addTaint(taint);
-        return varA06F2757B7CF455962BF6FB3E43CCFD1_1201407468;
-        // ---------- Original Method ----------
-        //return obtainCompleteMessage(EVENT_OPERATION_COMPLETE);
+private Message
+    obtainCompleteMessage() {
+        return obtainCompleteMessage(EVENT_OPERATION_COMPLETE);
     }
 
+    /**
+     * Obtain a message to use for signalling "invoke getCurrentCalls() when
+     * this operation and all other pending operations are complete
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.774 -0500", hash_original_method = "F527C5C3DD4F0176588A0C261AD76B7A", hash_generated_method = "E21B90D8FFA2C73529233B2579E8CE52")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.294 -0400", hash_original_method = "F527C5C3DD4F0176588A0C261AD76B7A", hash_generated_method = "37C6A7D8F8AC3276475C0D9CFC1532DE")
-    private Message obtainCompleteMessage(int what) {
-        addTaint(what);
+private Message
+    obtainCompleteMessage(int what) {
         pendingOperations++;
         lastRelevantPoll = null;
         needsPoll = true;
-        if(DBG_POLL)        
-        log("obtainCompleteMessage: pendingOperations=" +
+
+        if (DBG_POLL) log("obtainCompleteMessage: pendingOperations=" +
                 pendingOperations + ", needsPoll=" + needsPoll);
-Message var7D44CBDF570B5CB81D544F0887CE90C1_748200647 =         obtainMessage(what);
-        var7D44CBDF570B5CB81D544F0887CE90C1_748200647.addTaint(taint);
-        return var7D44CBDF570B5CB81D544F0887CE90C1_748200647;
-        // ---------- Original Method ----------
-        //pendingOperations++;
-        //lastRelevantPoll = null;
-        //needsPoll = true;
-        //if (DBG_POLL) log("obtainCompleteMessage: pendingOperations=" +
-                //pendingOperations + ", needsPoll=" + needsPoll);
-        //return obtainMessage(what);
+
+        return obtainMessage(what);
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.777 -0500", hash_original_method = "179E11A88A956D6661DD344814FD0D33", hash_generated_method = "D7248FD5C0CAD7AF1FBA9E72CA812D4F")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.295 -0400", hash_original_method = "179E11A88A956D6661DD344814FD0D33", hash_generated_method = "4DAF9902539F0654FF72510A53A2A5A9")
-    private void operationComplete() {
+private void
+    operationComplete() {
         pendingOperations--;
-        if(DBG_POLL)        
-        log("operationComplete: pendingOperations=" +
+
+        if (DBG_POLL) log("operationComplete: pendingOperations=" +
                 pendingOperations + ", needsPoll=" + needsPoll);
-        if(pendingOperations == 0 && needsPoll)        
-        {
+
+        if (pendingOperations == 0 && needsPoll) {
             lastRelevantPoll = obtainMessage(EVENT_POLL_CALLS_RESULT);
             cm.getCurrentCalls(lastRelevantPoll);
-        } //End block
-        else
-        if(pendingOperations < 0)        
-        {
+        } else if (pendingOperations < 0) {
+            // this should never happen
+            Log.e(LOG_TAG,"CdmaCallTracker.pendingOperations < 0");
             pendingOperations = 0;
-        } //End block
-        // ---------- Original Method ----------
-        //pendingOperations--;
-        //if (DBG_POLL) log("operationComplete: pendingOperations=" +
-                //pendingOperations + ", needsPoll=" + needsPoll);
-        //if (pendingOperations == 0 && needsPoll) {
-            //lastRelevantPoll = obtainMessage(EVENT_POLL_CALLS_RESULT);
-            //cm.getCurrentCalls(lastRelevantPoll);
-        //} else if (pendingOperations < 0) {
-            //Log.e(LOG_TAG,"CdmaCallTracker.pendingOperations < 0");
-            //pendingOperations = 0;
-        //}
+        }
     }
 
+
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.780 -0500", hash_original_method = "E4BBEB9CBA55B093A717754E6D30B945", hash_generated_method = "142EF9AA83C1CCB33DCBB91CE86B2AB7")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.295 -0400", hash_original_method = "E4BBEB9CBA55B093A717754E6D30B945", hash_generated_method = "FEB6DD46BE681E0D2220A6EEC91E4B0C")
-    private void updatePhoneState() {
+private void
+    updatePhoneState() {
         Phone.State oldState = state;
-        if(ringingCall.isRinging())        
-        {
+
+        if (ringingCall.isRinging()) {
             state = Phone.State.RINGING;
-        } //End block
-        else
-        if(pendingMO != null ||
-                !(foregroundCall.isIdle() && backgroundCall.isIdle()))        
-        {
+        } else if (pendingMO != null ||
+                !(foregroundCall.isIdle() && backgroundCall.isIdle())) {
             state = Phone.State.OFFHOOK;
-        } //End block
-        else
-        {
+        } else {
             state = Phone.State.IDLE;
-        } //End block
-        if(state == Phone.State.IDLE && oldState != state)        
-        {
+        }
+
+        if (state == Phone.State.IDLE && oldState != state) {
             voiceCallEndedRegistrants.notifyRegistrants(
                 new AsyncResult(null, null, null));
-        } //End block
-        else
-        if(oldState == Phone.State.IDLE && oldState != state)        
-        {
+        } else if (oldState == Phone.State.IDLE && oldState != state) {
             voiceCallStartedRegistrants.notifyRegistrants (
                     new AsyncResult(null, null, null));
-        } //End block
-        if(Phone.DEBUG_PHONE)        
-        {
+        }
+        if (Phone.DEBUG_PHONE) {
             log("update phone state, old=" + oldState + " new="+ state);
-        } //End block
-        if(state != oldState)        
-        {
+        }
+        if (state != oldState) {
             phone.notifyPhoneStateChanged();
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        }
     }
 
+    // ***** Overwritten from CallTracker
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.787 -0500", hash_original_method = "63502DE56EE8A86B2DF78F720505C320", hash_generated_method = "6722EB5075ACDEB542DE14906A4A3A3F")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.299 -0400", hash_original_method = "63502DE56EE8A86B2DF78F720505C320", hash_generated_method = "6E790D96BF927AD05504AD16F034F463")
-    protected void handlePollCalls(AsyncResult ar) {
-        addTaint(ar.getTaint());
+protected void
+    handlePollCalls(AsyncResult ar) {
         List polledCalls;
-        if(ar.exception == null)        
-        {
+
+        if (ar.exception == null) {
             polledCalls = (List)ar.result;
-        } //End block
-        else
-        if(isCommandExceptionRadioNotAvailable(ar.exception))        
-        {
+        } else if (isCommandExceptionRadioNotAvailable(ar.exception)) {
+            // just a dummy empty ArrayList to cause the loop
+            // to hang up all the calls
             polledCalls = new ArrayList();
-        } //End block
-        else
-        {
+        } else {
+            // Radio probably wasn't ready--try again in a bit
+            // But don't keep polling if the channel is closed
             pollCallsAfterDelay();
             return;
-        } //End block
-        Connection newRinging = null;
-        boolean hasNonHangupStateChanged = false;
+        }
+
+        Connection newRinging = null; //or waiting
+        boolean hasNonHangupStateChanged = false;   // Any change besides
+                                                    // a dropped connection
         boolean needsPollDelay = false;
         boolean unknownConnectionAppeared = false;
-for(int i = 0, curDC = 0, dcSize = polledCalls.size();i < connections.length;i++)
-        {
+
+        for (int i = 0, curDC = 0, dcSize = polledCalls.size()
+                ; i < connections.length; i++) {
             CdmaConnection conn = connections[i];
             DriverCall dc = null;
-            if(curDC < dcSize)            
-            {
+
+            // polledCall list is sparse
+            if (curDC < dcSize) {
                 dc = (DriverCall) polledCalls.get(curDC);
-                if(dc.index == i+1)                
-                {
+
+                if (dc.index == i+1) {
                     curDC++;
-                } //End block
-                else
-                {
+                } else {
                     dc = null;
-                } //End block
-            } //End block
-            if(DBG_POLL)            
-            log("poll: conn[i=" + i + "]=" +
+                }
+            }
+
+            if (DBG_POLL) log("poll: conn[i=" + i + "]=" +
                     conn+", dc=" + dc);
-            if(conn == null && dc != null)            
-            {
-                if(pendingMO != null && pendingMO.compareTo(dc))                
-                {
-                    if(DBG_POLL)                    
-                    log("poll: pendingMO=" + pendingMO);
+
+            if (conn == null && dc != null) {
+                // Connection appeared in CLCC response that we don't know about
+                if (pendingMO != null && pendingMO.compareTo(dc)) {
+
+                    if (DBG_POLL) log("poll: pendingMO=" + pendingMO);
+
+                    // It's our pending mobile originating call
                     connections[i] = pendingMO;
                     pendingMO.index = i;
                     pendingMO.update(dc);
                     pendingMO = null;
-                    if(hangupPendingMO)                    
-                    {
+
+                    // Someone has already asked to hangup this call
+                    if (hangupPendingMO) {
                         hangupPendingMO = false;
-                        if(mIsEcmTimerCanceled)                        
-                        {
+                        // Re-start Ecm timer when an uncompleted emergency call ends
+                        if (mIsEcmTimerCanceled) {
                             handleEcmTimer(phone.RESTART_ECM_TIMER);
-                        } //End block
-                        try 
-                        {
-                            if(Phone.DEBUG_PHONE)                            
-                            log(
+                        }
+
+                        try {
+                            if (Phone.DEBUG_PHONE) log(
                                     "poll: hangupPendingMO, hangup conn " + i);
                             hangup(connections[i]);
-                        } //End block
-                        catch (CallStateException ex)
-                        {
-                        } //End block
+                        } catch (CallStateException ex) {
+                            Log.e(LOG_TAG, "unexpected error on hangup");
+                        }
+
+                        // Do not continue processing this poll
+                        // Wait for hangup and repoll
                         return;
-                    } //End block
-                } //End block
-                else
-                {
-                    if(Phone.DEBUG_PHONE)                    
-                    {
+                    }
+                } else {
+                    if (Phone.DEBUG_PHONE) {
                         log("pendingMo=" + pendingMO + ", dc=" + dc);
-                    } //End block
+                    }
+                    // find if the MT call is a new ring or unknown connection
                     newRinging = checkMtFindNewRinging(dc,i);
-                    if(newRinging == null)                    
-                    {
+                    if (newRinging == null) {
                         unknownConnectionAppeared = true;
-                    } //End block
+                    }
                     checkAndEnableDataCallAfterEmergencyCallDropped();
-                } //End block
+                }
                 hasNonHangupStateChanged = true;
-            } //End block
-            else
-            if(conn != null && dc == null)            
-            {
+            } else if (conn != null && dc == null) {
+                // This case means the RIL has no more active call anymore and
+                // we need to clean up the foregroundCall and ringingCall.
+                // Loop through foreground call connections as
+                // it contains the known logical connections.
                 int count = foregroundCall.connections.size();
-for(int n = 0;n < count;n++)
-                {
-                    if(Phone.DEBUG_PHONE)                    
-                    log("adding fgCall cn " + n + " to droppedDuringPoll");
+                for (int n = 0; n < count; n++) {
+                    if (Phone.DEBUG_PHONE) log("adding fgCall cn " + n + " to droppedDuringPoll");
                     CdmaConnection cn = (CdmaConnection)foregroundCall.connections.get(n);
                     droppedDuringPoll.add(cn);
-                } //End block
+                }
                 count = ringingCall.connections.size();
-for(int n = 0;n < count;n++)
-                {
-                    if(Phone.DEBUG_PHONE)                    
-                    log("adding rgCall cn " + n + " to droppedDuringPoll");
+                // Loop through ringing call connections as
+                // it may contain the known logical connections.
+                for (int n = 0; n < count; n++) {
+                    if (Phone.DEBUG_PHONE) log("adding rgCall cn " + n + " to droppedDuringPoll");
                     CdmaConnection cn = (CdmaConnection)ringingCall.connections.get(n);
                     droppedDuringPoll.add(cn);
-                } //End block
+                }
                 foregroundCall.setGeneric(false);
                 ringingCall.setGeneric(false);
-                if(mIsEcmTimerCanceled)                
-                {
+
+                // Re-start Ecm timer when the connected emergency call ends
+                if (mIsEcmTimerCanceled) {
                     handleEcmTimer(phone.RESTART_ECM_TIMER);
-                } //End block
+                }
+                // If emergency call is not going through while dialing
                 checkAndEnableDataCallAfterEmergencyCallDropped();
+
+                // Dropped connections are removed from the CallTracker
+                // list but kept in the Call list
                 connections[i] = null;
-            } //End block
-            else
-            if(conn != null && dc != null)            
-            {
-                if(conn.isIncoming != dc.isMT)                
-                {
-                    if(dc.isMT == true)                    
-                    {
+            } else if (conn != null && dc != null) { /* implicit conn.compareTo(dc) */
+                // Call collision case
+                if (conn.isIncoming != dc.isMT) {
+                    if (dc.isMT == true){
+                        // Mt call takes precedence than Mo,drops Mo
                         droppedDuringPoll.add(conn);
+                        // find if the MT call is a new ring or unknown connection
                         newRinging = checkMtFindNewRinging(dc,i);
-                        if(newRinging == null)                        
-                        {
+                        if (newRinging == null) {
                             unknownConnectionAppeared = true;
-                        } //End block
+                        }
                         checkAndEnableDataCallAfterEmergencyCallDropped();
-                    } //End block
-                    else
-                    {
-                    } //End block
-                } //End block
-                else
-                {
+                    } else {
+                        // Call info stored in conn is not consistent with the call info from dc.
+                        // We should follow the rule of MT calls taking precedence over MO calls
+                        // when there is conflict, so here we drop the call info from dc and
+                        // continue to use the call info from conn, and only take a log.
+                        Log.e(LOG_TAG,"Error in RIL, Phantom call appeared " + dc);
+                    }
+                } else {
                     boolean changed;
                     changed = conn.update(dc);
                     hasNonHangupStateChanged = hasNonHangupStateChanged || changed;
-                } //End block
-            } //End block
-            if(REPEAT_POLLING)            
-            {
-                if(dc != null)                
-                {
-                    if((dc.state == DriverCall.State.DIALING
-                            )
+                }
+            }
+
+            if (REPEAT_POLLING) {
+                if (dc != null) {
+                    // FIXME with RIL, we should not need this anymore
+                    if ((dc.state == DriverCall.State.DIALING
+                            /*&& cm.getOption(cm.OPTION_POLL_DIALING)*/)
                         || (dc.state == DriverCall.State.ALERTING
-                            )
+                            /*&& cm.getOption(cm.OPTION_POLL_ALERTING)*/)
                         || (dc.state == DriverCall.State.INCOMING
-                            )
+                            /*&& cm.getOption(cm.OPTION_POLL_INCOMING)*/)
                         || (dc.state == DriverCall.State.WAITING
-                            ))                    
-                    {
+                            /*&& cm.getOption(cm.OPTION_POLL_WAITING)*/)
+                    ) {
+                        // Sometimes there's no unsolicited notification
+                        // for state transitions
                         needsPollDelay = true;
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
-        if(pendingMO != null)        
-        {
+                    }
+                }
+            }
+        }
+
+        // This is the first poll after an ATD.
+        // We expect the pending call to appear in the list
+        // If it does not, we land here
+        if (pendingMO != null) {
             Log.d(LOG_TAG,"Pending MO dropped before poll fg state:"
                             + foregroundCall.getState());
+
             droppedDuringPoll.add(pendingMO);
             pendingMO = null;
             hangupPendingMO = false;
-            if(pendingCallInEcm)            
-            {
+            if( pendingCallInEcm) {
                 pendingCallInEcm = false;
-            } //End block
-        } //End block
-        if(newRinging != null)        
-        {
+            }
+        }
+
+        if (newRinging != null) {
             phone.notifyNewRingingConnection(newRinging);
-        } //End block
-for(int i = droppedDuringPoll.size() - 1;i >= 0;i--)
-        {
+        }
+
+        // clear the "local hangup" and "missed/rejected call"
+        // cases from the "dropped during poll" list
+        // These cases need no "last call fail" reason
+        for (int i = droppedDuringPoll.size() - 1; i >= 0 ; i--) {
             CdmaConnection conn = droppedDuringPoll.get(i);
-            if(conn.isIncoming() && conn.getConnectTime() == 0)            
-            {
+
+            if (conn.isIncoming() && conn.getConnectTime() == 0) {
+                // Missed or rejected call
                 Connection.DisconnectCause cause;
-                if(conn.cause == Connection.DisconnectCause.LOCAL)                
-                {
+                if (conn.cause == Connection.DisconnectCause.LOCAL) {
                     cause = Connection.DisconnectCause.INCOMING_REJECTED;
-                } //End block
-                else
-                {
+                } else {
                     cause = Connection.DisconnectCause.INCOMING_MISSED;
-                } //End block
-                if(Phone.DEBUG_PHONE)                
-                {
+                }
+
+                if (Phone.DEBUG_PHONE) {
                     log("missed/rejected call, conn.cause=" + conn.cause);
                     log("setting cause to " + cause);
-                } //End block
+                }
                 droppedDuringPoll.remove(i);
                 conn.onDisconnect(cause);
-            } //End block
-            else
-            if(conn.cause == Connection.DisconnectCause.LOCAL)            
-            {
+            } else if (conn.cause == Connection.DisconnectCause.LOCAL) {
+                // Local hangup
                 droppedDuringPoll.remove(i);
                 conn.onDisconnect(Connection.DisconnectCause.LOCAL);
-            } //End block
-            else
-            if(conn.cause == Connection.DisconnectCause.INVALID_NUMBER)            
-            {
+            } else if (conn.cause == Connection.DisconnectCause.INVALID_NUMBER) {
                 droppedDuringPoll.remove(i);
                 conn.onDisconnect(Connection.DisconnectCause.INVALID_NUMBER);
-            } //End block
-        } //End block
-        if(droppedDuringPoll.size() > 0)        
-        {
+            }
+        }
+
+        // Any non-local disconnects: determine cause
+        if (droppedDuringPoll.size() > 0) {
             cm.getLastCallFailCause(
                 obtainNoPollCompleteMessage(EVENT_GET_LAST_CALL_FAIL_CAUSE));
-        } //End block
-        if(needsPollDelay)        
-        {
+        }
+
+        if (needsPollDelay) {
             pollCallsAfterDelay();
-        } //End block
-        if(newRinging != null || hasNonHangupStateChanged)        
-        {
+        }
+
+        // Cases when we can no longer keep disconnected Connection's
+        // with their previous calls
+        // 1) the phone has started to ring
+        // 2) A Call/Connection object has changed state...
+        //    we may have switched or held or answered (but not hung up)
+        if (newRinging != null || hasNonHangupStateChanged) {
             internalClearDisconnected();
-        } //End block
+        }
+
         updatePhoneState();
-        if(unknownConnectionAppeared)        
-        {
+
+        if (unknownConnectionAppeared) {
             phone.notifyUnknownConnection();
-        } //End block
-        if(hasNonHangupStateChanged || newRinging != null)        
-        {
+        }
+
+        if (hasNonHangupStateChanged || newRinging != null) {
             phone.notifyPreciseCallStateChanged();
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        }
+
+        //dumpState();
     }
 
+    //***** Called from CdmaConnection
+    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.790 -0500", hash_original_method = "CA7F8E55CA885F7D7A3A262DD3D03608", hash_generated_method = "32D326C0F023261C0B289ABEC9139820")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.303 -0400", hash_original_method = "CA7F8E55CA885F7D7A3A262DD3D03608", hash_generated_method = "77ED0931DE90308081FF86E3469C911C")
-     void hangup(CdmaConnection conn) throws CallStateException {
-        addTaint(conn.getTaint());
-        if(conn.owner != this)        
-        {
-            CallStateException var2CBEFEAE783A82F1D7BA506523E68F2B_1376306723 = new CallStateException ("CdmaConnection " + conn
+void
+    hangup (CdmaConnection conn) throws CallStateException {
+        if (conn.owner != this) {
+            throw new CallStateException ("CdmaConnection " + conn
                                     + "does not belong to CdmaCallTracker " + this);
-            var2CBEFEAE783A82F1D7BA506523E68F2B_1376306723.addTaint(taint);
-            throw var2CBEFEAE783A82F1D7BA506523E68F2B_1376306723;
-        } //End block
-        if(conn == pendingMO)        
-        {
-            if(Phone.DEBUG_PHONE)            
-            log("hangup: set hangupPendingMO to true");
+        }
+
+        if (conn == pendingMO) {
+            // We're hanging up an outgoing call that doesn't have it's
+            // GSM index assigned yet
+
+            if (Phone.DEBUG_PHONE) log("hangup: set hangupPendingMO to true");
             hangupPendingMO = true;
-        } //End block
-        else
-        if((conn.getCall() == ringingCall)
-                && (ringingCall.getState() == CdmaCall.State.WAITING))        
-        {
+        } else if ((conn.getCall() == ringingCall)
+                && (ringingCall.getState() == CdmaCall.State.WAITING)) {
+            // Handle call waiting hang up case.
+            //
+            // The ringingCall state will change to IDLE in CdmaCall.detach
+            // if the ringing call connection size is 0. We don't specifically
+            // set the ringing call state to IDLE here to avoid a race condition
+            // where a new call waiting could get a hang up from an old call
+            // waiting ringingCall.
+            //
+            // PhoneApp does the call log itself since only PhoneApp knows
+            // the hangup reason is user ignoring or timing out. So conn.onDisconnect()
+            // is not called here. Instead, conn.onLocalDisconnect() is called.
             conn.onLocalDisconnect();
             updatePhoneState();
             phone.notifyPreciseCallStateChanged();
             return;
-        } //End block
-        else
-        {
-            try 
-            {
+        } else {
+            try {
                 cm.hangupConnection (conn.getCDMAIndex(), obtainCompleteMessage());
-            } //End block
-            catch (CallStateException ex)
-            {
-            } //End block
-        } //End block
+            } catch (CallStateException ex) {
+                // Ignore "connection not found"
+                // Call may have hung up already
+                Log.w(LOG_TAG,"CdmaCallTracker WARN: hangup() on absent connection "
+                                + conn);
+            }
+        }
+
         conn.onHangupLocal();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
     }
 
+    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.793 -0500", hash_original_method = "B6040BEA0CD88965F5BB741ECCA6B877", hash_generated_method = "A06604AB24FFBAE744262B82DDD832BD")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.303 -0400", hash_original_method = "B6040BEA0CD88965F5BB741ECCA6B877", hash_generated_method = "2103C28347FBCB6AC87360122EF77E1B")
-     void separate(CdmaConnection conn) throws CallStateException {
-        addTaint(conn.getTaint());
-        if(conn.owner != this)        
-        {
-            CallStateException var2CBEFEAE783A82F1D7BA506523E68F2B_1380221094 = new CallStateException ("CdmaConnection " + conn
+void
+    separate (CdmaConnection conn) throws CallStateException {
+        if (conn.owner != this) {
+            throw new CallStateException ("CdmaConnection " + conn
                                     + "does not belong to CdmaCallTracker " + this);
-            var2CBEFEAE783A82F1D7BA506523E68F2B_1380221094.addTaint(taint);
-            throw var2CBEFEAE783A82F1D7BA506523E68F2B_1380221094;
-        } //End block
-        try 
-        {
+        }
+        try {
             cm.separateConnection (conn.getCDMAIndex(),
                 obtainCompleteMessage(EVENT_SEPARATE_RESULT));
-        } //End block
-        catch (CallStateException ex)
-        {
-        } //End block
-        // ---------- Original Method ----------
-        //if (conn.owner != this) {
-            //throw new CallStateException ("CdmaConnection " + conn
-                                    //+ "does not belong to CdmaCallTracker " + this);
-        //}
-        //try {
-            //cm.separateConnection (conn.getCDMAIndex(),
-                //obtainCompleteMessage(EVENT_SEPARATE_RESULT));
-        //} catch (CallStateException ex) {
-            //Log.w(LOG_TAG,"CdmaCallTracker WARN: separate() on absent connection "
-                          //+ conn);
-        //}
+        } catch (CallStateException ex) {
+            // Ignore "connection not found"
+            // Call may have hung up already
+            Log.w(LOG_TAG,"CdmaCallTracker WARN: separate() on absent connection "
+                          + conn);
+        }
     }
 
+    //***** Called from CDMAPhone
+
+    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.795 -0500", hash_original_method = "8E7DA06B8727FE7EBCD155EA09819106", hash_generated_method = "8E7DA06B8727FE7EBCD155EA09819106")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.303 -0400", hash_original_method = "8E7DA06B8727FE7EBCD155EA09819106", hash_generated_method = "09D97CBFA339BB68260AAF45EF5FD946")
-     void setMute(boolean mute) {
+void
+    setMute(boolean mute) {
         desiredMute = mute;
         cm.setMute(desiredMute, null);
-        // ---------- Original Method ----------
-        //desiredMute = mute;
-        //cm.setMute(desiredMute, null);
     }
 
+    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.797 -0500", hash_original_method = "11907D6A9C6D8F23B8C0FECA1425D0D1", hash_generated_method = "11907D6A9C6D8F23B8C0FECA1425D0D1")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.304 -0400", hash_original_method = "11907D6A9C6D8F23B8C0FECA1425D0D1", hash_generated_method = "FDD750FFFB649576EB7AED511655FD7A")
-     boolean getMute() {
-        boolean var8C4FD417B21794EC88BA7D0D7F766EFA_471296838 = (desiredMute);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1346450384 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1346450384;
-        // ---------- Original Method ----------
-        //return desiredMute;
+boolean
+    getMute() {
+        return desiredMute;
     }
 
+
+    //***** Called from CdmaCall
+
+    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.800 -0500", hash_original_method = "E9438EE2A649600B881089247D36F1D3", hash_generated_method = "E9438EE2A649600B881089247D36F1D3")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.304 -0400", hash_original_method = "E9438EE2A649600B881089247D36F1D3", hash_generated_method = "120E7BB1A15F56A1082C28E4CE135D53")
-     void hangup(CdmaCall call) throws CallStateException {
-        addTaint(call.getTaint());
-        if(call.getConnections().size() == 0)        
-        {
-            CallStateException var7CA8A13B34F3A8E0BB05065301525BCE_1375799196 = new CallStateException("no connections in call");
-            var7CA8A13B34F3A8E0BB05065301525BCE_1375799196.addTaint(taint);
-            throw var7CA8A13B34F3A8E0BB05065301525BCE_1375799196;
-        } //End block
-        if(call == ringingCall)        
-        {
-            if(Phone.DEBUG_PHONE)            
-            log("(ringing) hangup waiting or background");
+void
+    hangup (CdmaCall call) throws CallStateException {
+        if (call.getConnections().size() == 0) {
+            throw new CallStateException("no connections in call");
+        }
+
+        if (call == ringingCall) {
+            if (Phone.DEBUG_PHONE) log("(ringing) hangup waiting or background");
             cm.hangupWaitingOrBackground(obtainCompleteMessage());
-        } //End block
-        else
-        if(call == foregroundCall)        
-        {
-            if(call.isDialingOrAlerting())            
-            {
-                if(Phone.DEBUG_PHONE)                
-                {
+        } else if (call == foregroundCall) {
+            if (call.isDialingOrAlerting()) {
+                if (Phone.DEBUG_PHONE) {
                     log("(foregnd) hangup dialing or alerting...");
-                } //End block
+                }
                 hangup((CdmaConnection)(call.getConnections().get(0)));
-            } //End block
-            else
-            {
+            } else {
                 hangupForegroundResumeBackground();
-            } //End block
-        } //End block
-        else
-        if(call == backgroundCall)        
-        {
-            if(ringingCall.isRinging())            
-            {
-                if(Phone.DEBUG_PHONE)                
-                {
+            }
+        } else if (call == backgroundCall) {
+            if (ringingCall.isRinging()) {
+                if (Phone.DEBUG_PHONE) {
                     log("hangup all conns in background call");
-                } //End block
+                }
                 hangupAllConnections(call);
-            } //End block
-            else
-            {
+            } else {
                 hangupWaitingOrBackground();
-            } //End block
-        } //End block
-        else
-        {
-            RuntimeException var8E9EC94AF4906F8A59FD035228DE17CE_792532262 = new RuntimeException ("CdmaCall " + call +
+            }
+        } else {
+            throw new RuntimeException ("CdmaCall " + call +
                     "does not belong to CdmaCallTracker " + this);
-            var8E9EC94AF4906F8A59FD035228DE17CE_792532262.addTaint(taint);
-            throw var8E9EC94AF4906F8A59FD035228DE17CE_792532262;
-        } //End block
+        }
+
         call.onHangupLocal();
         phone.notifyPreciseCallStateChanged();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
     }
 
+    /* package */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.802 -0500", hash_original_method = "E840FBD61F8E6AF3DE802E32C39DD93E", hash_generated_method = "E840FBD61F8E6AF3DE802E32C39DD93E")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.304 -0400", hash_original_method = "E840FBD61F8E6AF3DE802E32C39DD93E", hash_generated_method = "71FDB30D1F27C61E34ADE7E6DB4F8FE8")
-     void hangupWaitingOrBackground() {
-        if(Phone.DEBUG_PHONE)        
-        log("hangupWaitingOrBackground");
+void hangupWaitingOrBackground() {
+        if (Phone.DEBUG_PHONE) log("hangupWaitingOrBackground");
         cm.hangupWaitingOrBackground(obtainCompleteMessage());
-        // ---------- Original Method ----------
-        //if (Phone.DEBUG_PHONE) log("hangupWaitingOrBackground");
-        //cm.hangupWaitingOrBackground(obtainCompleteMessage());
     }
 
+    /* package */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.805 -0500", hash_original_method = "D10B26113142441F52E905015040129F", hash_generated_method = "D10B26113142441F52E905015040129F")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.304 -0400", hash_original_method = "D10B26113142441F52E905015040129F", hash_generated_method = "777D99ECDB3D6E9138E0EBC648830F13")
-     void hangupForegroundResumeBackground() {
-        if(Phone.DEBUG_PHONE)        
-        log("hangupForegroundResumeBackground");
+void hangupForegroundResumeBackground() {
+        if (Phone.DEBUG_PHONE) log("hangupForegroundResumeBackground");
         cm.hangupForegroundResumeBackground(obtainCompleteMessage());
-        // ---------- Original Method ----------
-        //if (Phone.DEBUG_PHONE) log("hangupForegroundResumeBackground");
-        //cm.hangupForegroundResumeBackground(obtainCompleteMessage());
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.807 -0500", hash_original_method = "46F42EF7B8FEEB9638F3768D6C678D5F", hash_generated_method = "46F42EF7B8FEEB9638F3768D6C678D5F")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.305 -0400", hash_original_method = "46F42EF7B8FEEB9638F3768D6C678D5F", hash_generated_method = "C22AA6685F598CCE8DE1A51088C93DDF")
-     void hangupConnectionByIndex(CdmaCall call, int index) throws CallStateException {
-        addTaint(index);
-        addTaint(call.getTaint());
+void hangupConnectionByIndex(CdmaCall call, int index)
+            throws CallStateException {
         int count = call.connections.size();
-for(int i = 0;i < count;i++)
-        {
+        for (int i = 0; i < count; i++) {
             CdmaConnection cn = (CdmaConnection)call.connections.get(i);
-            if(cn.getCDMAIndex() == index)            
-            {
+            if (cn.getCDMAIndex() == index) {
                 cm.hangupConnection(index, obtainCompleteMessage());
                 return;
-            } //End block
-        } //End block
-        CallStateException var1FF6C7272361548DF4B718F88E457962_1458954165 = new CallStateException("no gsm index found");
-        var1FF6C7272361548DF4B718F88E457962_1458954165.addTaint(taint);
-        throw var1FF6C7272361548DF4B718F88E457962_1458954165;
-        // ---------- Original Method ----------
-        //int count = call.connections.size();
-        //for (int i = 0; i < count; i++) {
-            //CdmaConnection cn = (CdmaConnection)call.connections.get(i);
-            //if (cn.getCDMAIndex() == index) {
-                //cm.hangupConnection(index, obtainCompleteMessage());
-                //return;
-            //}
-        //}
-        //throw new CallStateException("no gsm index found");
+            }
+        }
+
+        throw new CallStateException("no gsm index found");
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.809 -0500", hash_original_method = "C8ED8584ACDA74B40EBCC108129D9E6B", hash_generated_method = "C8ED8584ACDA74B40EBCC108129D9E6B")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.305 -0400", hash_original_method = "C8ED8584ACDA74B40EBCC108129D9E6B", hash_generated_method = "E6FC6FB46600305EE771FE87B5AE51C4")
-     void hangupAllConnections(CdmaCall call) throws CallStateException {
-        addTaint(call.getTaint());
-        try 
-        {
+void hangupAllConnections(CdmaCall call) throws CallStateException{
+        try {
             int count = call.connections.size();
-for(int i = 0;i < count;i++)
-            {
+            for (int i = 0; i < count; i++) {
                 CdmaConnection cn = (CdmaConnection)call.connections.get(i);
                 cm.hangupConnection(cn.getCDMAIndex(), obtainCompleteMessage());
-            } //End block
-        } //End block
-        catch (CallStateException ex)
-        {
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //int count = call.connections.size();
-            //for (int i = 0; i < count; i++) {
-                //CdmaConnection cn = (CdmaConnection)call.connections.get(i);
-                //cm.hangupConnection(cn.getCDMAIndex(), obtainCompleteMessage());
-            //}
-        //} catch (CallStateException ex) {
-            //Log.e(LOG_TAG, "hangupConnectionByIndex caught " + ex);
-        //}
+            }
+        } catch (CallStateException ex) {
+            Log.e(LOG_TAG, "hangupConnectionByIndex caught " + ex);
+        }
     }
 
+    /* package */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.812 -0500", hash_original_method = "DA3BA6D275DE18892F45915EBAE08DC8", hash_generated_method = "DA3BA6D275DE18892F45915EBAE08DC8")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.305 -0400", hash_original_method = "DA3BA6D275DE18892F45915EBAE08DC8", hash_generated_method = "5186A18124238F4B1EAB300FEE4960B0")
-     CdmaConnection getConnectionByIndex(CdmaCall call, int index) throws CallStateException {
-        addTaint(index);
-        addTaint(call.getTaint());
+CdmaConnection getConnectionByIndex(CdmaCall call, int index)
+            throws CallStateException {
         int count = call.connections.size();
-for(int i = 0;i < count;i++)
-        {
+        for (int i = 0; i < count; i++) {
             CdmaConnection cn = (CdmaConnection)call.connections.get(i);
-            if(cn.getCDMAIndex() == index)            
-            {
-CdmaConnection varDCCFDFA3C846990C7CD62841D6F23059_1151292851 =                 cn;
-                varDCCFDFA3C846990C7CD62841D6F23059_1151292851.addTaint(taint);
-                return varDCCFDFA3C846990C7CD62841D6F23059_1151292851;
-            } //End block
-        } //End block
-CdmaConnection var540C13E9E156B687226421B24F2DF178_1118954970 =         null;
-        var540C13E9E156B687226421B24F2DF178_1118954970.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_1118954970;
-        // ---------- Original Method ----------
-        //int count = call.connections.size();
-        //for (int i = 0; i < count; i++) {
-            //CdmaConnection cn = (CdmaConnection)call.connections.get(i);
-            //if (cn.getCDMAIndex() == index) {
-                //return cn;
-            //}
-        //}
-        //return null;
+            if (cn.getCDMAIndex() == index) {
+                return cn;
+            }
+        }
+
+        return null;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.814 -0500", hash_original_method = "EB39E7AA8B070FEFE523D7C5104C422F", hash_generated_method = "952A288DE63B2D8E63BC4A8DAEFEBFCF")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.305 -0400", hash_original_method = "EB39E7AA8B070FEFE523D7C5104C422F", hash_generated_method = "F2B22B9C2961AD4C91E3828C52AE1EE4")
-    private void flashAndSetGenericTrue() throws CallStateException {
+private void flashAndSetGenericTrue() throws CallStateException {
         cm.sendCDMAFeatureCode("", obtainMessage(EVENT_SWITCH_RESULT));
+
+        // Set generic to true because in CDMA it is not known what
+        // the status of the call is after a call waiting is answered,
+        // 3 way call merged or a switch between calls.
         foregroundCall.setGeneric(true);
         phone.notifyPreciseCallStateChanged();
-        // ---------- Original Method ----------
-        //cm.sendCDMAFeatureCode("", obtainMessage(EVENT_SWITCH_RESULT));
-        //foregroundCall.setGeneric(true);
-        //phone.notifyPreciseCallStateChanged();
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.816 -0500", hash_original_method = "65CD53B5AAA831AF61B9937ED3D66C8B", hash_generated_method = "1B5E0158171E6616D923AB0254C22598")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.306 -0400", hash_original_method = "65CD53B5AAA831AF61B9937ED3D66C8B", hash_generated_method = "8E93CBED1B934131D3D34235E21BDC9E")
-    private Phone.SuppService getFailedService(int what) {
-        addTaint(what);
-switch(what){
-        case EVENT_SWITCH_RESULT:
-Phone.SuppService varE22DD80AE4A37137D78E9AD8129DDDE5_130528355 =         Phone.SuppService.SWITCH;
-        varE22DD80AE4A37137D78E9AD8129DDDE5_130528355.addTaint(taint);
-        return varE22DD80AE4A37137D78E9AD8129DDDE5_130528355;
-        case EVENT_CONFERENCE_RESULT:
-Phone.SuppService var5C5B8916362367E090BABE152AC535D8_1345903612 =         Phone.SuppService.CONFERENCE;
-        var5C5B8916362367E090BABE152AC535D8_1345903612.addTaint(taint);
-        return var5C5B8916362367E090BABE152AC535D8_1345903612;
-        case EVENT_SEPARATE_RESULT:
-Phone.SuppService var344A7C631A306D913F88C3977DA00F12_294091592 =         Phone.SuppService.SEPARATE;
-        var344A7C631A306D913F88C3977DA00F12_294091592.addTaint(taint);
-        return var344A7C631A306D913F88C3977DA00F12_294091592;
-        case EVENT_ECT_RESULT:
-Phone.SuppService var3A80E047DEE6FAD19C2D6A342608C348_1563084902 =         Phone.SuppService.TRANSFER;
-        var3A80E047DEE6FAD19C2D6A342608C348_1563084902.addTaint(taint);
-        return var3A80E047DEE6FAD19C2D6A342608C348_1563084902;
-}Phone.SuppService varCF97A101D0A9E76722DC33F7967766DE_1362241010 =         Phone.SuppService.UNKNOWN;
-        varCF97A101D0A9E76722DC33F7967766DE_1362241010.addTaint(taint);
-        return varCF97A101D0A9E76722DC33F7967766DE_1362241010;
-        // ---------- Original Method ----------
-        //switch (what) {
-            //case EVENT_SWITCH_RESULT:
-                //return Phone.SuppService.SWITCH;
-            //case EVENT_CONFERENCE_RESULT:
-                //return Phone.SuppService.CONFERENCE;
-            //case EVENT_SEPARATE_RESULT:
-                //return Phone.SuppService.SEPARATE;
-            //case EVENT_ECT_RESULT:
-                //return Phone.SuppService.TRANSFER;
-        //}
-        //return Phone.SuppService.UNKNOWN;
+private Phone.SuppService getFailedService(int what) {
+        switch (what) {
+            case EVENT_SWITCH_RESULT:
+                return Phone.SuppService.SWITCH;
+            case EVENT_CONFERENCE_RESULT:
+                return Phone.SuppService.CONFERENCE;
+            case EVENT_SEPARATE_RESULT:
+                return Phone.SuppService.SEPARATE;
+            case EVENT_ECT_RESULT:
+                return Phone.SuppService.TRANSFER;
+        }
+        return Phone.SuppService.UNKNOWN;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.819 -0500", hash_original_method = "6E2D3B844106C3BA4166C29F96BB7EA0", hash_generated_method = "7EA909082D0F3A766A83D359A75C4FD3")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.306 -0400", hash_original_method = "6E2D3B844106C3BA4166C29F96BB7EA0", hash_generated_method = "3D35CA8E198B65065816E56AAB25BAB7")
-    private void handleRadioNotAvailable() {
+private void handleRadioNotAvailable() {
+        // handlePollCalls will clear out its
+        // call list when it gets the CommandException
+        // error result from this
         pollCallsWhenSafe();
-        // ---------- Original Method ----------
-        //pollCallsWhenSafe();
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.823 -0500", hash_original_method = "8A157B3E162ABAFDC3219E193FD9AF9E", hash_generated_method = "9C64105F2EFF3511A73662BA5F99F8BA")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.306 -0400", hash_original_method = "8A157B3E162ABAFDC3219E193FD9AF9E", hash_generated_method = "56D50D87F0BD244AB844F179DC9669FD")
-    private void notifyCallWaitingInfo(CdmaCallWaitingNotification obj) {
-        addTaint(obj.getTaint());
-        if(callWaitingRegistrants != null)        
-        {
+private void notifyCallWaitingInfo(CdmaCallWaitingNotification obj) {
+        if (callWaitingRegistrants != null) {
             callWaitingRegistrants.notifyRegistrants(new AsyncResult(null, obj, null));
-        } //End block
-        // ---------- Original Method ----------
-        //if (callWaitingRegistrants != null) {
-            //callWaitingRegistrants.notifyRegistrants(new AsyncResult(null, obj, null));
-        //}
+        }
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.825 -0500", hash_original_method = "8AEB0E73C414AF95EF44C542FCF55311", hash_generated_method = "2E28B2A83EFD60C49DEC2CDBCDEA905C")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.306 -0400", hash_original_method = "8AEB0E73C414AF95EF44C542FCF55311", hash_generated_method = "64D97BF275CB00A21BC4AF2757ACAFD3")
-    private void handleCallWaitingInfo(CdmaCallWaitingNotification cw) {
-        addTaint(cw.getTaint());
-        if(foregroundCall.connections.size() > 1)        
-        {
+private void handleCallWaitingInfo (CdmaCallWaitingNotification cw) {
+        // Check how many connections in foregroundCall.
+        // If the connection in foregroundCall is more
+        // than one, then the connection information is
+        // not reliable anymore since it means either
+        // call waiting is connected or 3 way call is
+        // dialed before, so set generic.
+        if (foregroundCall.connections.size() > 1 ) {
             foregroundCall.setGeneric(true);
-        } //End block
+        }
+
+        // Create a new CdmaConnection which attaches itself to ringingCall.
         ringingCall.setGeneric(false);
         new CdmaConnection(phone.getContext(), cw, this, ringingCall);
         updatePhoneState();
+
+        // Finally notify application
         notifyCallWaitingInfo(cw);
-        // ---------- Original Method ----------
-        //if (foregroundCall.connections.size() > 1 ) {
-            //foregroundCall.setGeneric(true);
-        //}
-        //ringingCall.setGeneric(false);
-        //new CdmaConnection(phone.getContext(), cw, this, ringingCall);
-        //updatePhoneState();
-        //notifyCallWaitingInfo(cw);
     }
+    //****** Overridden from Handler
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.829 -0500", hash_original_method = "D1EB700FB6D9FD1E2DF39441FB36A7DD", hash_generated_method = "46996E77C662E1737BAE7325001DAED7")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.307 -0400", hash_original_method = "D1EB700FB6D9FD1E2DF39441FB36A7DD", hash_generated_method = "D09B8D1685A294018B5C8F7B526F91FC")
-    public void handleMessage(Message msg) {
-        addTaint(msg.getTaint());
+public void
+    handleMessage (Message msg) {
         AsyncResult ar;
-switch(msg.what){
-        case EVENT_POLL_CALLS_RESULT:
-        {
-            Log.d(LOG_TAG, "Event EVENT_POLL_CALLS_RESULT Received");
-            ar = (AsyncResult)msg.obj;
-            if(msg == lastRelevantPoll)            
-            {
-                if(DBG_POLL)                
-                log(
+
+        switch (msg.what) {
+            case EVENT_POLL_CALLS_RESULT:{
+                Log.d(LOG_TAG, "Event EVENT_POLL_CALLS_RESULT Received");
+                ar = (AsyncResult)msg.obj;
+
+                if(msg == lastRelevantPoll) {
+                    if(DBG_POLL) log(
                             "handle EVENT_POLL_CALL_RESULT: set needsPoll=F");
-                needsPoll = false;
-                lastRelevantPoll = null;
-                handlePollCalls((AsyncResult)msg.obj);
-            } //End block
-        } //End block
-        break;
-        case EVENT_OPERATION_COMPLETE:
-        operationComplete();
-        break;
-        case EVENT_SWITCH_RESULT:
-        break;
-        case EVENT_GET_LAST_CALL_FAIL_CAUSE:
-        int causeCode;
-        ar = (AsyncResult)msg.obj;
-        operationComplete();
-        if(ar.exception != null)        
-        {
-            causeCode = CallFailCause.NORMAL_CLEARING;
-        } //End block
-        else
-        {
-            causeCode = ((int[])ar.result)[0];
-        } //End block
-for(int i = 0, s =  droppedDuringPoll.size();i < s;i++)
-        {
-            CdmaConnection conn = droppedDuringPoll.get(i);
-            conn.onRemoteDisconnect(causeCode);
-        } //End block
-        updatePhoneState();
-        phone.notifyPreciseCallStateChanged();
-        droppedDuringPoll.clear();
-        break;
-        case EVENT_REPOLL_AFTER_DELAY:
-        case EVENT_CALL_STATE_CHANGE:
-        pollCallsWhenSafe();
-        break;
-        case EVENT_RADIO_AVAILABLE:
-        handleRadioAvailable();
-        break;
-        case EVENT_RADIO_NOT_AVAILABLE:
-        handleRadioNotAvailable();
-        break;
-        case EVENT_EXIT_ECM_RESPONSE_CDMA:
-        if(pendingCallInEcm)        
-        {
-            cm.dial(pendingMO.address, pendingCallClirMode, obtainCompleteMessage());
-            pendingCallInEcm = false;
-        } //End block
-        phone.unsetOnEcbModeExitResponse(this);
-        break;
-        case EVENT_CALL_WAITING_INFO_CDMA:
-        ar = (AsyncResult)msg.obj;
-        if(ar.exception == null)        
-        {
-            handleCallWaitingInfo((CdmaCallWaitingNotification)ar.result);
-            Log.d(LOG_TAG, "Event EVENT_CALL_WAITING_INFO_CDMA Received");
-        } //End block
-        break;
-        case EVENT_THREE_WAY_DIAL_L2_RESULT_CDMA:
-        ar = (AsyncResult)msg.obj;
-        if(ar.exception == null)        
-        {
-            pendingMO.onConnectedInOrOut();
-            pendingMO = null;
-        } //End block
-        break;
-        default:
-        {
-            RuntimeException var1F26AA1784701DB7B59508D786B99B94_142224624 = new RuntimeException("unexpected event not handled");
-            var1F26AA1784701DB7B59508D786B99B94_142224624.addTaint(taint);
-            throw var1F26AA1784701DB7B59508D786B99B94_142224624;
-        } //End block
-}
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                    needsPoll = false;
+                    lastRelevantPoll = null;
+                    handlePollCalls((AsyncResult)msg.obj);
+                }
+            }
+            break;
+
+            case EVENT_OPERATION_COMPLETE:
+                operationComplete();
+            break;
+
+            case EVENT_SWITCH_RESULT:
+                 // In GSM call operationComplete() here which gets the
+                 // current call list. But in CDMA there is no list so
+                 // there is nothing to do.
+            break;
+
+            case EVENT_GET_LAST_CALL_FAIL_CAUSE:
+                int causeCode;
+                ar = (AsyncResult)msg.obj;
+
+                operationComplete();
+
+                if (ar.exception != null) {
+                    // An exception occurred...just treat the disconnect
+                    // cause as "normal"
+                    causeCode = CallFailCause.NORMAL_CLEARING;
+                    Log.i(LOG_TAG,
+                            "Exception during getLastCallFailCause, assuming normal disconnect");
+                } else {
+                    causeCode = ((int[])ar.result)[0];
+                }
+
+                for (int i = 0, s =  droppedDuringPoll.size()
+                        ; i < s ; i++
+                ) {
+                    CdmaConnection conn = droppedDuringPoll.get(i);
+
+                    conn.onRemoteDisconnect(causeCode);
+                }
+
+                updatePhoneState();
+
+                phone.notifyPreciseCallStateChanged();
+                droppedDuringPoll.clear();
+            break;
+
+            case EVENT_REPOLL_AFTER_DELAY:
+            case EVENT_CALL_STATE_CHANGE:
+                pollCallsWhenSafe();
+            break;
+
+            case EVENT_RADIO_AVAILABLE:
+                handleRadioAvailable();
+            break;
+
+            case EVENT_RADIO_NOT_AVAILABLE:
+                handleRadioNotAvailable();
+            break;
+
+            case EVENT_EXIT_ECM_RESPONSE_CDMA:
+               //no matter the result, we still do the same here
+               if (pendingCallInEcm) {
+                   cm.dial(pendingMO.address, pendingCallClirMode, obtainCompleteMessage());
+                   pendingCallInEcm = false;
+               }
+               phone.unsetOnEcbModeExitResponse(this);
+            break;
+
+            case EVENT_CALL_WAITING_INFO_CDMA:
+               ar = (AsyncResult)msg.obj;
+               if (ar.exception == null) {
+                   handleCallWaitingInfo((CdmaCallWaitingNotification)ar.result);
+                   Log.d(LOG_TAG, "Event EVENT_CALL_WAITING_INFO_CDMA Received");
+               }
+            break;
+
+            case EVENT_THREE_WAY_DIAL_L2_RESULT_CDMA:
+                ar = (AsyncResult)msg.obj;
+                if (ar.exception == null) {
+                    // Assume 3 way call is connected
+                    pendingMO.onConnectedInOrOut();
+                    pendingMO = null;
+                }
+            break;
+
+            default:{
+               throw new RuntimeException("unexpected event not handled");
+            }
+        }
     }
 
+    /**
+     * Handle Ecm timer to be canceled or re-started
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.832 -0500", hash_original_method = "53D0BC70C94C51E4941A4869C727C1EF", hash_generated_method = "C6205B9368136494AA6E18F1D039A277")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.307 -0400", hash_original_method = "53D0BC70C94C51E4941A4869C727C1EF", hash_generated_method = "995B6294B11CCF29EC04DAAC7C70E58D")
-    private void handleEcmTimer(int action) {
-        addTaint(action);
+private void handleEcmTimer(int action) {
         phone.handleTimerInEmergencyCallbackMode(action);
-switch(action){
-        case CDMAPhone.CANCEL_ECM_TIMER:
-        mIsEcmTimerCanceled = true;
-        break;
-        case CDMAPhone.RESTART_ECM_TIMER:
-        mIsEcmTimerCanceled = false;
-        break;
+        switch(action) {
+        case CDMAPhone.CANCEL_ECM_TIMER: mIsEcmTimerCanceled = true; break;
+        case CDMAPhone.RESTART_ECM_TIMER: mIsEcmTimerCanceled = false; break;
         default:
-}
-        // ---------- Original Method ----------
-        //phone.handleTimerInEmergencyCallbackMode(action);
-        //switch(action) {
-        //case CDMAPhone.CANCEL_ECM_TIMER: mIsEcmTimerCanceled = true; break;
-        //case CDMAPhone.RESTART_ECM_TIMER: mIsEcmTimerCanceled = false; break;
-        //default:
-            //Log.e(LOG_TAG, "handleEcmTimer, unsupported action " + action);
-        //}
+            Log.e(LOG_TAG, "handleEcmTimer, unsupported action " + action);
+        }
     }
 
+    /**
+     * Disable data call when emergency call is connected
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.834 -0500", hash_original_method = "E45025BA49DB75441FB058D043F13559", hash_generated_method = "70809E6D41784C91458DFE99BB274D58")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.307 -0400", hash_original_method = "E45025BA49DB75441FB058D043F13559", hash_generated_method = "2A099C8EF9D96CBDF8F3E011E007AF99")
-    private void disableDataCallInEmergencyCall(String dialString) {
-        addTaint(dialString.getTaint());
-        if(PhoneNumberUtils.isLocalEmergencyNumber(dialString, phone.getContext()))        
-        {
-            if(Phone.DEBUG_PHONE)            
-            log("disableDataCallInEmergencyCall");
+private void disableDataCallInEmergencyCall(String dialString) {
+        if (PhoneNumberUtils.isLocalEmergencyNumber(dialString, phone.getContext())) {
+            if (Phone.DEBUG_PHONE) log("disableDataCallInEmergencyCall");
             mIsInEmergencyCall = true;
             phone.mDataConnectionTracker.setInternalDataEnabled(false);
-        } //End block
-        // ---------- Original Method ----------
-        //if (PhoneNumberUtils.isLocalEmergencyNumber(dialString, phone.getContext())) {
-            //if (Phone.DEBUG_PHONE) log("disableDataCallInEmergencyCall");
-            //mIsInEmergencyCall = true;
-            //phone.mDataConnectionTracker.setInternalDataEnabled(false);
-        //}
+        }
     }
 
+    /**
+     * Check and enable data call after an emergency call is dropped if it's
+     * not in ECM
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.837 -0500", hash_original_method = "4B192230440137F94B49778D22CB7CD2", hash_generated_method = "EF578A8F193603212D59FEC332ACDBA1")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.307 -0400", hash_original_method = "4B192230440137F94B49778D22CB7CD2", hash_generated_method = "D8F1131BD32CE99E8C00BAE82AA1B732")
-    private void checkAndEnableDataCallAfterEmergencyCallDropped() {
-        if(mIsInEmergencyCall)        
-        {
+private void checkAndEnableDataCallAfterEmergencyCallDropped() {
+        if (mIsInEmergencyCall) {
             mIsInEmergencyCall = false;
-            String inEcm = SystemProperties.get(TelephonyProperties.PROPERTY_INECM_MODE, "false");
-            if(Phone.DEBUG_PHONE)            
-            {
+            String inEcm=SystemProperties.get(TelephonyProperties.PROPERTY_INECM_MODE, "false");
+            if (Phone.DEBUG_PHONE) {
                 log("checkAndEnableDataCallAfterEmergencyCallDropped,inEcm=" + inEcm);
-            } //End block
-            if(inEcm.compareTo("false") == 0)            
-            {
+            }
+            if (inEcm.compareTo("false") == 0) {
+                // Re-initiate data connection
                 phone.mDataConnectionTracker.setInternalDataEnabled(true);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (mIsInEmergencyCall) {
-            //mIsInEmergencyCall = false;
-            //String inEcm=SystemProperties.get(TelephonyProperties.PROPERTY_INECM_MODE, "false");
-            //if (Phone.DEBUG_PHONE) {
-                //log("checkAndEnableDataCallAfterEmergencyCallDropped,inEcm=" + inEcm);
-            //}
-            //if (inEcm.compareTo("false") == 0) {
-                //phone.mDataConnectionTracker.setInternalDataEnabled(true);
-            //}
-        //}
+            }
+        }
     }
 
+    /**
+     * Check the MT call to see if it's a new ring or
+     * a unknown connection.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.840 -0500", hash_original_method = "D359964B058F5C9ECC2D15DB024983EF", hash_generated_method = "0D8C7939C3B1DDE90D4DB882655A0701")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.308 -0400", hash_original_method = "D359964B058F5C9ECC2D15DB024983EF", hash_generated_method = "182BEEBD741EA78A015A70D926B852E0")
-    private Connection checkMtFindNewRinging(DriverCall dc, int i) {
+private Connection checkMtFindNewRinging(DriverCall dc, int i) {
+
         Connection newRinging = null;
+
         connections[i] = new CdmaConnection(phone.getContext(), dc, this, i);
-        if(connections[i].getCall() == ringingCall)        
-        {
+        // it's a ringing call
+        if (connections[i].getCall() == ringingCall) {
             newRinging = connections[i];
-            if(Phone.DEBUG_PHONE)            
-            log("Notify new ring " + dc);
-        } //End block
-        else
-        {
-            if(dc.state != DriverCall.State.ALERTING
-                && dc.state != DriverCall.State.DIALING)            
-            {
+            if (Phone.DEBUG_PHONE) log("Notify new ring " + dc);
+        } else {
+            // Something strange happened: a call which is neither
+            // a ringing call nor the one we created. It could be the
+            // call collision result from RIL
+            Log.e(LOG_TAG,"Phantom call appeared " + dc);
+            // If it's a connected call, set the connect time so that
+            // it's non-zero.  It may not be accurate, but at least
+            // it won't appear as a Missed Call.
+            if (dc.state != DriverCall.State.ALERTING
+                && dc.state != DriverCall.State.DIALING) {
                 connections[i].connectTime = System.currentTimeMillis();
-            } //End block
-        } //End block
-Connection var94D414EAF654DC6D341716982125A4F3_1890192924 =         newRinging;
-        var94D414EAF654DC6D341716982125A4F3_1890192924.addTaint(taint);
-        return var94D414EAF654DC6D341716982125A4F3_1890192924;
-        // ---------- Original Method ----------
-        //Connection newRinging = null;
-        //connections[i] = new CdmaConnection(phone.getContext(), dc, this, i);
-        //if (connections[i].getCall() == ringingCall) {
-            //newRinging = connections[i];
-            //if (Phone.DEBUG_PHONE) log("Notify new ring " + dc);
-        //} else {
-            //Log.e(LOG_TAG,"Phantom call appeared " + dc);
-            //if (dc.state != DriverCall.State.ALERTING
-                //&& dc.state != DriverCall.State.DIALING) {
-                //connections[i].connectTime = System.currentTimeMillis();
-            //}
-        //}
-        //return newRinging;
+            }
+        }
+        return newRinging;
     }
 
+    /**
+     * Check if current call is in emergency call
+     *
+     * @return true if it is in emergency call
+     *         false if it is not in emergency call
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.842 -0500", hash_original_method = "1842D0C2283B311B2A29E474687D9235", hash_generated_method = "1842D0C2283B311B2A29E474687D9235")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.308 -0400", hash_original_method = "1842D0C2283B311B2A29E474687D9235", hash_generated_method = "7E49871AC934AD30BCA6915D063E0FA8")
-     boolean isInEmergencyCall() {
-        boolean var2A38944C11BF5A57D2726A92DC4FCE09_467566119 = (mIsInEmergencyCall);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1833938091 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1833938091;
-        // ---------- Original Method ----------
-        //return mIsInEmergencyCall;
+boolean isInEmergencyCall() {
+        return mIsInEmergencyCall;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.844 -0500", hash_original_method = "FF708F6402A7A18425D7FC72639DE93E", hash_generated_method = "59056F0A087C6863B1CF7F9D449DB1C6")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.308 -0400", hash_original_method = "FF708F6402A7A18425D7FC72639DE93E", hash_generated_method = "C1AD46F8C6B7AF0D4AC495360BF711BE")
-    protected void log(String msg) {
-        addTaint(msg.getTaint());
+protected void log(String msg) {
         Log.d(LOG_TAG, "[CdmaCallTracker] " + msg);
-        // ---------- Original Method ----------
-        //Log.d(LOG_TAG, "[CdmaCallTracker] " + msg);
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.308 -0400", hash_original_field = "951C150E6D062E6AED2C45BB9B756185", hash_generated_field = "37C2AB96DD7CCDC96FF809DAC1A6D712")
-
-    static final String LOG_TAG = "CDMA";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.308 -0400", hash_original_field = "CC792B139E86B59BF5644A291C349001", hash_generated_field = "A7B75AEFB3EF53E7FDD36572121557CF")
-
-    private static final boolean REPEAT_POLLING = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.308 -0400", hash_original_field = "BA76C0C87FE0928477EB48E458A4151B", hash_generated_field = "5105F543721DFE6C6FC4422BBF3A00CF")
-
-    private static final boolean DBG_POLL = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.308 -0400", hash_original_field = "5D8CCE6E8CAE49F3DAE5020BF6731533", hash_generated_field = "3D5BB3B6A3F2D8A508B231AB505DE10A")
-
-    static final int MAX_CONNECTIONS = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:22.308 -0400", hash_original_field = "109C1DEC6EE2198ED540651FC4E6F2F6", hash_generated_field = "50E5124FACE9F1EADB0A251AF8BCB55D")
-
-    static final int MAX_CONNECTIONS_PER_CALL = 1;
 }
 

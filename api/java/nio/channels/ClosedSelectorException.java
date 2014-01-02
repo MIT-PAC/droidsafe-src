@@ -1,6 +1,8 @@
 package java.nio.channels;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
@@ -8,16 +10,17 @@ import droidsafe.annotations.*;
 
 
 public class ClosedSelectorException extends IllegalStateException {
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.148 -0400", hash_original_method = "DF89DC603B24D4C0D4A25FAB2E303102", hash_generated_method = "EBC2602035EFA186F6E82D28AAA9EB87")
-    public  ClosedSelectorException() {
-        // ---------- Original Method ----------
-    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.501 -0500", hash_original_field = "6DD754B9ABD5E361A79A385EC6E23B40", hash_generated_field = "5138752FDFC112C37F07DCD671980E16")
 
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.148 -0400", hash_original_field = "19F392ECD6F28885BEFD21BA4C2E1F2B", hash_generated_field = "5138752FDFC112C37F07DCD671980E16")
 
     private static final long serialVersionUID = 6466297122317847835L;
+
+    /**
+     * Constructs a {@code ClosedSelectorException}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.503 -0500", hash_original_method = "DF89DC603B24D4C0D4A25FAB2E303102", hash_generated_method = "447C877A55A6D18CC402797D83E99EB8")
+    
+public ClosedSelectorException() {
+    }
 }
 

@@ -1,6 +1,8 @@
 package gov.nist.javax.sip.parser;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import gov.nist.core.Token;
 import gov.nist.javax.sip.header.RAck;
@@ -16,37 +18,45 @@ import javax.sip.InvalidArgumentException;
 
 
 public class RAckParser extends HeaderParser {
+
+    /**
+     * Creates a new instance of RAckParser
+     * @param rack the header to parse
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:47.413 -0500", hash_original_method = "35CA8C822A17FE233ECB2E3810B4D5A5", hash_generated_method = "24C57D0918286878DA98E99F52EEAD4C")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.387 -0400", hash_original_method = "35CA8C822A17FE233ECB2E3810B4D5A5", hash_generated_method = "204EAA0FF73FCB80B592091AB94B2072")
-    public  RAckParser(String rack) {
+public RAckParser(String rack) {
         super(rack);
-        addTaint(rack.getTaint());
-        // ---------- Original Method ----------
     }
 
+    /**
+     * Constructor
+     * @param lexer the lexer to use to parse the header
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:47.416 -0500", hash_original_method = "8178ADDB9459B460DE70CCF5467A1FD6", hash_generated_method = "5A5515353A821A230431DAF89E36F034")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.387 -0400", hash_original_method = "8178ADDB9459B460DE70CCF5467A1FD6", hash_generated_method = "68F94D595AD7B884EA33EDFE3B3CF328")
-    protected  RAckParser(Lexer lexer) {
+protected RAckParser(Lexer lexer) {
         super(lexer);
-        addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
     }
 
+    /**
+     * parse the String message
+     * @return SIPHeader (RAck object)
+     * @throws SIPParseException if the message does not respect the spec.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:47.418 -0500", hash_original_method = "D7A41CF31988627D95B578BB3BBF9822", hash_generated_method = "9630959A166C23AFBB0C2214C1D71B34")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:38.418 -0400", hash_original_method = "D7A41CF31988627D95B578BB3BBF9822", hash_generated_method = "B15B0917C344D9FE09462EFA69B32B6D")
-    public SIPHeader parse() throws ParseException {
-        if(debug)        
-        dbg_enter("RAckParser.parse");
+public SIPHeader parse() throws ParseException {
+
+        if (debug)
+            dbg_enter("RAckParser.parse");
         RAck rack = new RAck();
-        try 
-        {
+        try {
             headerName(TokenTypes.RACK);
+
             rack.setHeaderName(SIPHeaderNames.RACK);
-            try 
-            {
+
+            try {
                 String number = this.lexer.number();
                 rack.setRSequenceNumber(Long.parseLong(number));
                 this.lexer.SPorHT();
@@ -56,26 +66,18 @@ public class RAckParser extends HeaderParser {
                 this.lexer.match(TokenTypes.ID);
                 Token token = lexer.getNextToken();
                 rack.setMethod(token.getTokenValue());
-            } //End block
-            catch (InvalidArgumentException ex)
-            {
-                java.text.ParseException varB8C80F72F95BF6A850D07F4EC5726C09_1746762640 = createParseException(ex.getMessage());
-                varB8C80F72F95BF6A850D07F4EC5726C09_1746762640.addTaint(taint);
-                throw varB8C80F72F95BF6A850D07F4EC5726C09_1746762640;
-            } //End block
+
+            } catch (InvalidArgumentException ex) {
+                throw createParseException(ex.getMessage());
+            }
             this.lexer.SPorHT();
             this.lexer.match('\n');
-SIPHeader var55285630369F90A1D1B24F624C06D15F_1809096590 =             rack;
-            var55285630369F90A1D1B24F624C06D15F_1809096590.addTaint(taint);
-            return var55285630369F90A1D1B24F624C06D15F_1809096590;
-        } //End block
-        finally 
-        {
-            if(debug)            
-            dbg_leave("RAckParser.parse");
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+
+            return rack;
+        } finally {
+            if (debug)
+                dbg_leave("RAckParser.parse");
+        }
     }
 
     

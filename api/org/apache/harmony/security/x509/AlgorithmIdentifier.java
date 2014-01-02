@@ -1,6 +1,8 @@
 package org.apache.harmony.security.x509;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Arrays;
 
@@ -18,184 +20,6 @@ import org.apache.harmony.security.utils.AlgNameMapper;
 
 
 public final class AlgorithmIdentifier {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.785 -0400", hash_original_field = "ED469618898D75B149E5C7C4B6A1C415", hash_generated_field = "40E4722A302366B2A43F1CD6C99E2454")
-
-    private String algorithm;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.785 -0400", hash_original_field = "D74BA757D8516B995BEF66ADBC091A9F", hash_generated_field = "4A61F6719BEAA78381132679E3C29E60")
-
-    private String algorithmName;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.785 -0400", hash_original_field = "166E64F6C3677D0C513901242A3E702D", hash_generated_field = "BDB7CE72F1F070C790060F407EE69616")
-
-    private byte[] parameters;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.785 -0400", hash_original_field = "84BEA1F0FD2CE16F7E562A9F06EF03D3", hash_generated_field = "ACB189C73E1A6432570001B3B9D3D516")
-
-    private byte[] encoding;
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.786 -0400", hash_original_method = "2A12FAF842ACAA2DBD4904F8F0273D03", hash_generated_method = "2EBF08AB7CEC761BB58F4F2AC8E07597")
-
-    public  AlgorithmIdentifier(String algorithm) {
-        this(algorithm, null, null);
-        addTaint(algorithm.getTaint());
-        // ---------- Original Method ----------
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.786 -0400", hash_original_method = "3A9ADFAB73D31AB7E50DF2B242FDEB53", hash_generated_method = "12A74528D275DAB41B9C77B0333CD230")
-    public  AlgorithmIdentifier(String algorithm, byte[] parameters) {
-        this(algorithm, parameters, null);
-        addTaint(parameters[0]);
-        addTaint(algorithm.getTaint());
-        // ---------- Original Method ----------
-    }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.787 -0400", hash_original_method = "D2431539DF2ECCEF9FBA946BEDC34F61", hash_generated_method = "B03A559CDDF8734F7178FAD091F38793")
-    private  AlgorithmIdentifier(String algorithm, byte[] parameters, byte[] encoding) {
-        this.algorithm = algorithm;
-        this.parameters = parameters;
-        this.encoding = encoding;
-        // ---------- Original Method ----------
-        //this.algorithm = algorithm;
-        //this.parameters = parameters;
-        //this.encoding = encoding;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.788 -0400", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "E430BF9AC3B914429AB8074C93B1DDDA")
-    public String getAlgorithm() {
-String var44A46B4003FC81ACB0223385BA1FA818_925138110 =         algorithm;
-        var44A46B4003FC81ACB0223385BA1FA818_925138110.addTaint(taint);
-        return var44A46B4003FC81ACB0223385BA1FA818_925138110;
-        // ---------- Original Method ----------
-        //return algorithm;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.788 -0400", hash_original_method = "EFA02412B3D98573C0B83612EF561CD2", hash_generated_method = "7C2783F8861A8B06C1DC4EB5D3C8DCDB")
-    public String getAlgorithmName() {
-        if(algorithmName == null)        
-        {
-            algorithmName = AlgNameMapper.map2AlgName(algorithm);
-            if(algorithmName == null)            
-            {
-                algorithmName = algorithm;
-            } //End block
-        } //End block
-String var2F10FAEB775F4B5DF3001375F37870C3_762411297 =         algorithmName;
-        var2F10FAEB775F4B5DF3001375F37870C3_762411297.addTaint(taint);
-        return var2F10FAEB775F4B5DF3001375F37870C3_762411297;
-        // ---------- Original Method ----------
-        //if (algorithmName == null) {
-            //algorithmName = AlgNameMapper.map2AlgName(algorithm);
-            //if (algorithmName == null) {
-                //algorithmName = algorithm;
-            //}
-        //}
-        //return algorithmName;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.789 -0400", hash_original_method = "360B58AAED509D402161560B83FBF1AD", hash_generated_method = "D64BE671877B9D3037AED7A02A2F5FF1")
-    public byte[] getParameters() {
-        byte[] var166E64F6C3677D0C513901242A3E702D_89799497 = (parameters);
-                byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_703168000 = {getTaintByte()};
-        return var2F9C81BC6E497382285CD6B7A7E33DE1_703168000;
-        // ---------- Original Method ----------
-        //return parameters;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.789 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "E64BDA7C7D0D23AA177578963E65805C")
-    public byte[] getEncoded() {
-        if(encoding == null)        
-        {
-            encoding = ASN1.encode(this);
-        } //End block
-        byte[] var84BEA1F0FD2CE16F7E562A9F06EF03D3_59398775 = (encoding);
-                byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_166829527 = {getTaintByte()};
-        return var2F9C81BC6E497382285CD6B7A7E33DE1_166829527;
-        // ---------- Original Method ----------
-        //if (encoding == null) {
-            //encoding = ASN1.encode(this);
-        //}
-        //return encoding;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.790 -0400", hash_original_method = "CF4BFB68A01F84A2E157841F7FC296C6", hash_generated_method = "69F4BF891D9BA5D427EFB5FDEAF01B74")
-    @Override
-    public boolean equals(Object ai) {
-        addTaint(ai.getTaint());
-        if(!(ai instanceof AlgorithmIdentifier))        
-        {
-            boolean var68934A3E9455FA72420237EB05902327_2028586726 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_631508267 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_631508267;
-        } //End block
-        AlgorithmIdentifier algid = (AlgorithmIdentifier) ai;
-        boolean var685CF0CB3386C3A710FD03431FA58B76_634721640 = ((algorithm.equals(algid.algorithm))
-            && ((parameters == null)
-                    ? algid.parameters == null
-                    : Arrays.equals(parameters, algid.parameters)));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1194187942 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1194187942;
-        // ---------- Original Method ----------
-        //if (!(ai instanceof AlgorithmIdentifier)) {
-            //return false;
-        //}
-        //AlgorithmIdentifier algid = (AlgorithmIdentifier) ai;
-        //return (algorithm.equals(algid.algorithm))
-            //&& ((parameters == null)
-                    //? algid.parameters == null
-                    //: Arrays.equals(parameters, algid.parameters));
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.791 -0400", hash_original_method = "E65C54FCC20A7D2FAC5D39EC6758FF2C", hash_generated_method = "3E62AFAC90EED385B206EB74D946FE6D")
-    @Override
-    public int hashCode() {
-        int var1FA5D2E5DE5434E7F76D626DE91EE834_897518337 = (algorithm.hashCode() * 37 + (parameters != null ? Arrays.hashCode(parameters) : 0));
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_563022303 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_563022303;
-        // ---------- Original Method ----------
-        //return algorithm.hashCode() * 37 + (parameters != null ? Arrays.hashCode(parameters) : 0);
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.792 -0400", hash_original_method = "BB3CE84D97D9ED23CA58D78F5AD0AB33", hash_generated_method = "ED9C4B999F2E0516BDA8743856A6566D")
-    public void dumpValue(StringBuilder sb) {
-        addTaint(sb.getTaint());
-        sb.append(getAlgorithmName());
-        if(parameters == null)        
-        {
-            sb.append(", no params, ");
-        } //End block
-        else
-        {
-            sb.append(", params unparsed, ");
-        } //End block
-        sb.append("OID = ");
-        sb.append(getAlgorithm());
-        // ---------- Original Method ----------
-        //sb.append(getAlgorithmName());
-        //if (parameters == null) {
-            //sb.append(", no params, ");
-        //} else {
-            //sb.append(", params unparsed, ");
-        //}
-        //sb.append("OID = ");
-        //sb.append(getAlgorithm());
-    }
 
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.792 -0400", hash_original_field = "0379B40A69260257BE6FAF87FE8921A2", hash_generated_field = "D57B6C9D256FA01BB83ACCC1550296AC")
@@ -206,15 +30,17 @@ String var2F10FAEB775F4B5DF3001375F37870C3_762411297 =         algorithmName;
             setOptional(1); 
         }
 
-	@DSModeled(DSC.SAFE)
-        @Override protected Object getDecodedObject(BerInputStream in) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:01.343 -0500", hash_original_method = "E5864BBB3AEA6202E3F7EB2686660296", hash_generated_method = "F48BB096D750A26B83F1E3FF6E75F89A")
+        
+@Override protected Object getDecodedObject(BerInputStream in) {
             Object[] values = (Object[]) in.content;
             return new AlgorithmIdentifier(ObjectIdentifier
                     .toString((int[]) values[0]), (byte[]) values[1]);
         }
 
-	@DSModeled(DSC.SAFE)
-        @Override protected void getValues(Object object, Object[] values) {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:01.346 -0500", hash_original_method = "EDE1554E6577A894B2989F0DB9001552", hash_generated_method = "7F5D1B87D7DA488E31F7FAA696074235")
+        
+@Override protected void getValues(Object object, Object[] values) {
 
             AlgorithmIdentifier aID = (AlgorithmIdentifier) object;
 
@@ -222,5 +48,116 @@ String var2F10FAEB775F4B5DF3001375F37870C3_762411297 =         algorithmName;
             values[1] = aID.getParameters();
         }
     };
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:01.308 -0500", hash_original_field = "1DDAED4286CC7F9A2BC49502885440CE", hash_generated_field = "40E4722A302366B2A43F1CD6C99E2454")
+
+    private String algorithm;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:01.310 -0500", hash_original_field = "59661F2A89A32CB5CC4FFC351D8D7CFF", hash_generated_field = "4A61F6719BEAA78381132679E3C29E60")
+
+    private String algorithmName;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:01.312 -0500", hash_original_field = "4939A11DCC484FD402D6F14863D1736C", hash_generated_field = "BDB7CE72F1F070C790060F407EE69616")
+
+    private byte[] parameters;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:01.314 -0500", hash_original_field = "B36A946B5145D992E53209BC6743765D", hash_generated_field = "ACB189C73E1A6432570001B3B9D3D516")
+
+    private byte[] encoding;
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:01.317 -0500", hash_original_method = "2A12FAF842ACAA2DBD4904F8F0273D03", hash_generated_method = "46693DB9F8F2B846E1553756FA35F2A0")
+    
+public AlgorithmIdentifier(String algorithm) {
+        this(algorithm, null, null);
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:01.319 -0500", hash_original_method = "3A9ADFAB73D31AB7E50DF2B242FDEB53", hash_generated_method = "5673A8139D0F1BB223046E8203D33049")
+    
+public AlgorithmIdentifier(String algorithm, byte[] parameters) {
+        this(algorithm, parameters, null);
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:01.322 -0500", hash_original_method = "D2431539DF2ECCEF9FBA946BEDC34F61", hash_generated_method = "D8B071983057F5FC10BD2CF045C30092")
+    
+private AlgorithmIdentifier(String algorithm, byte[] parameters, byte[] encoding) {
+        this.algorithm = algorithm;
+        this.parameters = parameters;
+        this.encoding = encoding;
+    }
+
+    /**
+     * Returns the value of algorithm field of the structure.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:01.324 -0500", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "09B8CB0F05513E7BA5A386900D5BF6E6")
+    
+public String getAlgorithm() {
+        return algorithm;
+    }
+
+    /**
+     * Returns the name of the algorithm corresponding to
+     * its OID. If there is no the such correspondence,
+     * algorithm OID is returned.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:01.327 -0500", hash_original_method = "EFA02412B3D98573C0B83612EF561CD2", hash_generated_method = "AE7B7B5C4A50959248A1EE3D48EE12E6")
+    
+public String getAlgorithmName() {
+        if (algorithmName == null) {
+            algorithmName = AlgNameMapper.map2AlgName(algorithm);
+            if (algorithmName == null) {
+                algorithmName = algorithm;
+            }
+        }
+        return algorithmName;
+    }
+
+    /**
+     * Returns the value of parameters field of the structure.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:01.329 -0500", hash_original_method = "360B58AAED509D402161560B83FBF1AD", hash_generated_method = "6CE288EFDC710AAF8CD7886B917F1DAC")
+    
+public byte[] getParameters() {
+        return parameters;
+    }
+
+    /**
+     * Returns ASN.1 encoded form of this X.509 AlgorithmIdentifier value.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:01.331 -0500", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "5349B65E746CD014BDA35ADFF927FD5B")
+    
+public byte[] getEncoded() {
+        if (encoding == null) {
+            encoding = ASN1.encode(this);
+        }
+        return encoding;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:01.334 -0500", hash_original_method = "CF4BFB68A01F84A2E157841F7FC296C6", hash_generated_method = "972723D20C45183383335D563C2CCACD")
+    
+@Override public boolean equals(Object ai) {
+        if (!(ai instanceof AlgorithmIdentifier)) {
+            return false;
+        }
+        AlgorithmIdentifier algid = (AlgorithmIdentifier) ai;
+        return (algorithm.equals(algid.algorithm))
+            && ((parameters == null)
+                    ? algid.parameters == null
+                    : Arrays.equals(parameters, algid.parameters));
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:01.336 -0500", hash_original_method = "E65C54FCC20A7D2FAC5D39EC6758FF2C", hash_generated_method = "D538904D2381C811FF6D8A3B40578794")
+    
+@Override public int hashCode() {
+        return algorithm.hashCode() * 37 + (parameters != null ? Arrays.hashCode(parameters) : 0);
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:01.338 -0500", hash_original_method = "BB3CE84D97D9ED23CA58D78F5AD0AB33", hash_generated_method = "55C790F3066060267E3509748C12E017")
+    
+public void dumpValue(StringBuilder sb) {
+        sb.append(getAlgorithmName());
+        if (parameters == null) {
+            sb.append(", no params, ");
+        } else {
+            sb.append(", params unparsed, ");
+        }
+        sb.append("OID = ");
+        sb.append(getAlgorithm());
+    }
 }
 

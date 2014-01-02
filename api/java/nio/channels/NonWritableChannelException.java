@@ -1,6 +1,8 @@
 package java.nio.channels;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
@@ -8,16 +10,17 @@ import droidsafe.annotations.*;
 
 
 public class NonWritableChannelException extends IllegalStateException {
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.217 -0400", hash_original_method = "DD4364D6F2E76958E04196C03440F0A2", hash_generated_method = "2BF951121B4822F356A7705B9844EE8C")
-    public  NonWritableChannelException() {
-        // ---------- Original Method ----------
-    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.041 -0500", hash_original_field = "A9A02EE7BA6F116E7061C509EF76117D", hash_generated_field = "291E41594EE4E5883DC0042B2E0FB9E9")
 
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.218 -0400", hash_original_field = "959B53E30104E065CB9426561AF5C247", hash_generated_field = "291E41594EE4E5883DC0042B2E0FB9E9")
 
     private static final long serialVersionUID = -7071230488279011621L;
+
+    /**
+     * Constructs a {@code NonWritableChannelException}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.043 -0500", hash_original_method = "DD4364D6F2E76958E04196C03440F0A2", hash_generated_method = "698C0B9E0A64B8C9D8A6F89A9BE01A3F")
+    
+public NonWritableChannelException() {
+    }
 }
 

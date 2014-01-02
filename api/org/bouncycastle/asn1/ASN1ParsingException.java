@@ -1,6 +1,8 @@
 package org.bouncycastle.asn1;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
@@ -8,37 +10,30 @@ import droidsafe.annotations.*;
 
 
 public class ASN1ParsingException extends IllegalStateException {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.748 -0400", hash_original_field = "560220FC3242A805F094EDCE47F35702", hash_generated_field = "8A44E2478DCB737F0795473263737867")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:12.969 -0500", hash_original_field = "E65D4B046C7E75D4305AF1275FC1F72B", hash_generated_field = "8A44E2478DCB737F0795473263737867")
 
     private Throwable cause;
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:12.972 -0500", hash_original_method = "A04BEE8A9A73EAD532708A0AE36FAA5C", hash_generated_method = "A04BEE8A9A73EAD532708A0AE36FAA5C")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.749 -0400", hash_original_method = "A04BEE8A9A73EAD532708A0AE36FAA5C", hash_generated_method = "B74E3B8C969CC011DCD96E67B42BFF1B")
-      ASN1ParsingException(String message) {
+ASN1ParsingException(String message)
+    {
         super(message);
-        addTaint(message.getTaint());
-        // ---------- Original Method ----------
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:12.975 -0500", hash_original_method = "9ABB1845457B0FD65DC264E5CAAB1469", hash_generated_method = "9ABB1845457B0FD65DC264E5CAAB1469")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.750 -0400", hash_original_method = "9ABB1845457B0FD65DC264E5CAAB1469", hash_generated_method = "18BF7A2B1AFF0B7FE09CB5BBE740B59B")
-      ASN1ParsingException(String message, Throwable cause) {
+ASN1ParsingException(String message, Throwable cause)
+    {
         super(message);
-        addTaint(message.getTaint());
         this.cause = cause;
-        // ---------- Original Method ----------
-        //this.cause = cause;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:12.978 -0500", hash_original_method = "CDBDBC1C44563A9D34649A0018341F0E", hash_generated_method = "7216169927F14A6BA3457BBD72FD53B3")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.751 -0400", hash_original_method = "CDBDBC1C44563A9D34649A0018341F0E", hash_generated_method = "71C9798E92E7CC1DC8F954F1E51919D3")
-    public Throwable getCause() {
-Throwable var3C8F3313F49435961542E8707E527956_78050001 =         cause;
-        var3C8F3313F49435961542E8707E527956_78050001.addTaint(taint);
-        return var3C8F3313F49435961542E8707E527956_78050001;
-        // ---------- Original Method ----------
-        //return cause;
+public Throwable getCause()
+    {
+        return cause;
     }
 
     

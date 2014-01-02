@@ -1,6 +1,8 @@
 package android.support.v4.view;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.view.MotionEvent;
 
@@ -9,48 +11,84 @@ import android.view.MotionEvent;
 
 
 public class MotionEventCompat {
+
+    /**
+     * Call {@link MotionEvent#getAction}, returning only the {@link #ACTION_MASK}
+     * portion.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:20.128 -0500", hash_original_method = "CEB0F6E9A644FE5457EF6DDC68D66AE8", hash_generated_method = "5BE1F4103ACB423FCC073C9D6F258C22")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.277 -0400", hash_original_method = "5A13315CB97E0E2867AD42FF281F6179", hash_generated_method = "5A13315CB97E0E2867AD42FF281F6179")
-    public MotionEventCompat ()
-    {
-        //Synthesized constructor
-    }
-
-
-    public static int getActionMasked(MotionEvent event) {
+public static int getActionMasked(MotionEvent event) {
         return event.getAction() & ACTION_MASK;
     }
 
+    /**
+     * Call {@link MotionEvent#getAction}, returning only the pointer index
+     * portion
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:20.131 -0500", hash_original_method = "78466E0DF0FE78667216774839ACB2D1", hash_generated_method = "30BB8E3E501C2C944F9121D10C447A7C")
     
-    public static int getActionIndex(MotionEvent event) {
+public static int getActionIndex(MotionEvent event) {
         return (event.getAction() & ACTION_POINTER_INDEX_MASK)
                 >> ACTION_POINTER_INDEX_SHIFT;
     }
 
+    /**
+     * Call {@link MotionEvent#findPointerIndex(int)}.
+     * If running on a pre-{@link android.os.Build.VERSION_CODES#ECLAIR} device,
+     * does nothing and returns -1.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:20.133 -0500", hash_original_method = "578781200794E634D734CB09A568D710", hash_generated_method = "602F0B9592F408EC78E78F9080D2DD3D")
     
-    public static int findPointerIndex(MotionEvent event, int pointerId) {
+public static int findPointerIndex(MotionEvent event, int pointerId) {
         return IMPL.findPointerIndex(event, pointerId);
     }
 
+    /**
+     * Call {@link MotionEvent#getPointerId(int)}.
+     * If running on a pre-{@link android.os.Build.VERSION_CODES#ECLAIR} device,
+     * {@link IndexOutOfBoundsException} is thrown.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:20.137 -0500", hash_original_method = "B1540D1BC1A1FC10A324E41A4C3A2405", hash_generated_method = "382EB163A990682DFAB09CD958D65566")
     
-    public static int getPointerId(MotionEvent event, int pointerIndex) {
+public static int getPointerId(MotionEvent event, int pointerIndex) {
         return IMPL.getPointerId(event, pointerIndex);
     }
 
+    /**
+     * Call {@link MotionEvent#getX(int)}.
+     * If running on a pre-{@link android.os.Build.VERSION_CODES#ECLAIR} device,
+     * {@link IndexOutOfBoundsException} is thrown.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:20.139 -0500", hash_original_method = "1C14F481F0BFBC3447CC457FAD37D977", hash_generated_method = "55EFB08BBE706DCE92C726173C6752EE")
     
-    public static float getX(MotionEvent event, int pointerIndex) {
+public static float getX(MotionEvent event, int pointerIndex) {
         return IMPL.getX(event, pointerIndex);
     }
 
+    /**
+     * Call {@link MotionEvent#getY(int)}.
+     * If running on a pre-{@link android.os.Build.VERSION_CODES#ECLAIR} device,
+     * {@link IndexOutOfBoundsException} is thrown.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:20.142 -0500", hash_original_method = "1E91C7B0F2EEFBADAE6B674321FBDEE0", hash_generated_method = "23F58386A7E2C4F6F13B47C0C6EEADE2")
     
-    public static float getY(MotionEvent event, int pointerIndex) {
+public static float getY(MotionEvent event, int pointerIndex) {
         return IMPL.getY(event, pointerIndex);
     }
 
+    /**
+     * The number of pointers of data contained in this event.  Always
+     * >= 1.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:20.144 -0500", hash_original_method = "A9B2A5B4740C128E6AAD1EC58C9079ED", hash_generated_method = "F73457934A29BBFED6EBA081EB6DBF0E")
     
-    public static int getPointerCount(MotionEvent event) {
+public static int getPointerCount(MotionEvent event) {
         return IMPL.getPointerCount(event);
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:20.103 -0500", hash_original_field = "5FE5861F8F7B4FBDED72C34227E6EC0C", hash_generated_field = "F0C04F9075773F238646F09F10EC5686")
+
+    static  MotionEventVersionImpl IMPL;
 
     
     static class BaseMotionEventVersionImpl implements MotionEventVersionImpl {
@@ -61,107 +99,49 @@ public class MotionEventCompat {
         {
             //Synthesized constructor
         }
-
-
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.291 -0400", hash_original_method = "915485589CA18931BFA6184EB5D82CE0", hash_generated_method = "327E54D9EBDCF148475922E0A4BE7636")
-        @Override
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:20.074 -0500", hash_original_method = "915485589CA18931BFA6184EB5D82CE0", hash_generated_method = "FF53067342017ECEFB88A2761B9C2579")
+        
+@Override
         public int findPointerIndex(MotionEvent event, int pointerId) {
-            addTaint(pointerId);
-            addTaint(event.getTaint());
-            if(pointerId == 0)            
-            {
-                int varCFCD208495D565EF66E7DFF9F98764DA_842353279 = (0);
-                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1426798311 = getTaintInt();
-                return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1426798311;
-            } //End block
-            int var6BB61E3B7BCE0931DA574D19D1D82C88_1849659007 = (-1);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1855555962 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1855555962;
-            // ---------- Original Method ----------
-            //if (pointerId == 0) {
-                //return 0;
-            //}
-            //return -1;
+            if (pointerId == 0) {
+                // id 0 == index 0 and vice versa.
+                return 0;
+            }
+            return -1;
         }
-
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:20.077 -0500", hash_original_method = "9E7B122BF9BB453BF7E85C1115C02518", hash_generated_method = "F152F02751C2E7D7863B3B04B3FDBE31")
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.292 -0400", hash_original_method = "9E7B122BF9BB453BF7E85C1115C02518", hash_generated_method = "7E2EC3F0082AA0D1D719515B914A3C01")
-        @Override
+@Override
         public int getPointerId(MotionEvent event, int pointerIndex) {
-            addTaint(pointerIndex);
-            addTaint(event.getTaint());
-            if(pointerIndex == 0)            
-            {
-                int varCFCD208495D565EF66E7DFF9F98764DA_960510253 = (0);
-                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_273120817 = getTaintInt();
-                return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_273120817;
-            } //End block
-            IndexOutOfBoundsException varFB6DBA9FCC1FE2B5EB2CB2CFCA71FA1A_1760845226 = new IndexOutOfBoundsException("Pre-Eclair does not support multiple pointers");
-            varFB6DBA9FCC1FE2B5EB2CB2CFCA71FA1A_1760845226.addTaint(taint);
-            throw varFB6DBA9FCC1FE2B5EB2CB2CFCA71FA1A_1760845226;
-            // ---------- Original Method ----------
-            //if (pointerIndex == 0) {
-                //return 0;
-            //}
-            //throw new IndexOutOfBoundsException("Pre-Eclair does not support multiple pointers");
+            if (pointerIndex == 0) {
+                // index 0 == id 0 and vice versa.
+                return 0;
+            }
+            throw new IndexOutOfBoundsException("Pre-Eclair does not support multiple pointers");
         }
-
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:20.079 -0500", hash_original_method = "46B436EF23A4E7BD3E33198488E751EA", hash_generated_method = "0A2573A4B1DE5086E58AE54C66458173")
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.292 -0400", hash_original_method = "46B436EF23A4E7BD3E33198488E751EA", hash_generated_method = "9FED06AA6AC40BD85B1AC3FB95EA6F5F")
-        @Override
+@Override
         public float getX(MotionEvent event, int pointerIndex) {
-            addTaint(pointerIndex);
-            addTaint(event.getTaint());
-            if(pointerIndex == 0)            
-            {
-                float var5A4C8BA8E3F304B8752A45E6A3A6D4FB_627218411 = (event.getX());
-                                float var546ADE640B6EDFBC8A086EF31347E768_1175799894 = getTaintFloat();
-                return var546ADE640B6EDFBC8A086EF31347E768_1175799894;
-            } //End block
-            IndexOutOfBoundsException varFB6DBA9FCC1FE2B5EB2CB2CFCA71FA1A_1749380503 = new IndexOutOfBoundsException("Pre-Eclair does not support multiple pointers");
-            varFB6DBA9FCC1FE2B5EB2CB2CFCA71FA1A_1749380503.addTaint(taint);
-            throw varFB6DBA9FCC1FE2B5EB2CB2CFCA71FA1A_1749380503;
-            // ---------- Original Method ----------
-            //if (pointerIndex == 0) {
-                //return event.getX();
-            //}
-            //throw new IndexOutOfBoundsException("Pre-Eclair does not support multiple pointers");
+            if (pointerIndex == 0) {
+                return event.getX();
+            }
+            throw new IndexOutOfBoundsException("Pre-Eclair does not support multiple pointers");
         }
-
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:20.082 -0500", hash_original_method = "71D40AC5F4F710155978216341C47632", hash_generated_method = "D45EA97749AE8F1AC4EDA839E7CB9729")
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.294 -0400", hash_original_method = "71D40AC5F4F710155978216341C47632", hash_generated_method = "C43A05016E443A7C38DF099949CF0F5D")
-        @Override
+@Override
         public float getY(MotionEvent event, int pointerIndex) {
-            addTaint(pointerIndex);
-            addTaint(event.getTaint());
-            if(pointerIndex == 0)            
-            {
-                float varC5AB7FD21957E7EBC0E9A40F08AFB325_1846517476 = (event.getY());
-                                float var546ADE640B6EDFBC8A086EF31347E768_116015364 = getTaintFloat();
-                return var546ADE640B6EDFBC8A086EF31347E768_116015364;
-            } //End block
-            IndexOutOfBoundsException varFB6DBA9FCC1FE2B5EB2CB2CFCA71FA1A_872161906 = new IndexOutOfBoundsException("Pre-Eclair does not support multiple pointers");
-            varFB6DBA9FCC1FE2B5EB2CB2CFCA71FA1A_872161906.addTaint(taint);
-            throw varFB6DBA9FCC1FE2B5EB2CB2CFCA71FA1A_872161906;
-            // ---------- Original Method ----------
-            //if (pointerIndex == 0) {
-                //return event.getY();
-            //}
-            //throw new IndexOutOfBoundsException("Pre-Eclair does not support multiple pointers");
+            if (pointerIndex == 0) {
+                return event.getY();
+            }
+            throw new IndexOutOfBoundsException("Pre-Eclair does not support multiple pointers");
         }
-
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:20.084 -0500", hash_original_method = "F1B2637001FBFFCBD7AA64840D270091", hash_generated_method = "A877E8BC25517DB8FF994556EB2F4D41")
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.294 -0400", hash_original_method = "F1B2637001FBFFCBD7AA64840D270091", hash_generated_method = "CE09DC14B3B952464B06CD872A75D93C")
-        @Override
+@Override
         public int getPointerCount(MotionEvent event) {
-            addTaint(event.getTaint());
-            int varC4CA4238A0B923820DCC509A6F75849B_2108274875 = (1);
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_526042863 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_526042863;
-            // ---------- Original Method ----------
-            //return 1;
+            return 1;
         }
 
         
@@ -177,69 +157,35 @@ public class MotionEventCompat {
         {
             //Synthesized constructor
         }
-
-
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.295 -0400", hash_original_method = "1F125219ECB51BDA24372EEEA6E62AC1", hash_generated_method = "D92A3981AD9B94E4AAA9B9AF87B737E0")
-        @Override
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:20.089 -0500", hash_original_method = "1F125219ECB51BDA24372EEEA6E62AC1", hash_generated_method = "AE6A01B8C36EC035A5C113FE444D84E1")
+        
+@Override
         public int findPointerIndex(MotionEvent event, int pointerId) {
-            addTaint(pointerId);
-            addTaint(event.getTaint());
-            int varE62E7B17F19D8C087D1F6291891581A7_1096573368 = (MotionEventCompatEclair.findPointerIndex(event, pointerId));
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2013721357 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2013721357;
-            // ---------- Original Method ----------
-            //return MotionEventCompatEclair.findPointerIndex(event, pointerId);
+            return MotionEventCompatEclair.findPointerIndex(event, pointerId);
         }
-
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:20.092 -0500", hash_original_method = "CB6B0C0269880E57D0AAF045A3B12252", hash_generated_method = "B6BE71A9C417A78A5A6EFAE265396E48")
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.295 -0400", hash_original_method = "CB6B0C0269880E57D0AAF045A3B12252", hash_generated_method = "CE7DD0BFD4F2600B64734F02C75039CD")
-        @Override
+@Override
         public int getPointerId(MotionEvent event, int pointerIndex) {
-            addTaint(pointerIndex);
-            addTaint(event.getTaint());
-            int var4C22A572F25F1EC2E523F073F961A1E5_678416130 = (MotionEventCompatEclair.getPointerId(event, pointerIndex));
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_290993231 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_290993231;
-            // ---------- Original Method ----------
-            //return MotionEventCompatEclair.getPointerId(event, pointerIndex);
+            return MotionEventCompatEclair.getPointerId(event, pointerIndex);
         }
-
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:20.094 -0500", hash_original_method = "CC9227E21CD6D287D30FF5F6779E2A13", hash_generated_method = "6390123E90E7ED3C9C419A6E139ADC53")
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.295 -0400", hash_original_method = "CC9227E21CD6D287D30FF5F6779E2A13", hash_generated_method = "0948832AA10AC6D8936B5EC58517E40A")
-        @Override
+@Override
         public float getX(MotionEvent event, int pointerIndex) {
-            addTaint(pointerIndex);
-            addTaint(event.getTaint());
-            float varB080E7BF07FE665BD3A6C35AF1F2203D_1233365739 = (MotionEventCompatEclair.getX(event, pointerIndex));
-                        float var546ADE640B6EDFBC8A086EF31347E768_1346126984 = getTaintFloat();
-            return var546ADE640B6EDFBC8A086EF31347E768_1346126984;
-            // ---------- Original Method ----------
-            //return MotionEventCompatEclair.getX(event, pointerIndex);
+            return MotionEventCompatEclair.getX(event, pointerIndex);
         }
-
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:20.097 -0500", hash_original_method = "F1D4241FA671175201C1D58741E0B6B9", hash_generated_method = "84FD1ED546F874D63C449DD2DCE71C97")
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.296 -0400", hash_original_method = "F1D4241FA671175201C1D58741E0B6B9", hash_generated_method = "194D8505D8F74F5C71FEB7E6C0B241D3")
-        @Override
+@Override
         public float getY(MotionEvent event, int pointerIndex) {
-            addTaint(pointerIndex);
-            addTaint(event.getTaint());
-            float var697F62025966D984AB3627608CB4FDDC_632115164 = (MotionEventCompatEclair.getY(event, pointerIndex));
-                        float var546ADE640B6EDFBC8A086EF31347E768_961049862 = getTaintFloat();
-            return var546ADE640B6EDFBC8A086EF31347E768_961049862;
-            // ---------- Original Method ----------
-            //return MotionEventCompatEclair.getY(event, pointerIndex);
+            return MotionEventCompatEclair.getY(event, pointerIndex);
         }
-
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:20.099 -0500", hash_original_method = "9E092C63409B479B27716D0F10009856", hash_generated_method = "A78D3EC0ED2D1F7D0A0D72B24D8309AD")
         
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.296 -0400", hash_original_method = "9E092C63409B479B27716D0F10009856", hash_generated_method = "02E5205AF17976B5C2C63EA5D69239CB")
-        @Override
+@Override
         public int getPointerCount(MotionEvent event) {
-            addTaint(event.getTaint());
-            int var28718044D95E132813DF0065AA460AFB_1901765191 = (MotionEventCompatEclair.getPointerCount(event));
-                        int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_900204684 = getTaintInt();
-            return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_900204684;
-            // ---------- Original Method ----------
-            //return MotionEventCompatEclair.getPointerCount(event);
+            return MotionEventCompatEclair.getPointerCount(event);
         }
 
         
@@ -254,10 +200,13 @@ public class MotionEventCompat {
         public float getY(MotionEvent event, int pointerIndex);
         public int getPointerCount(MotionEvent event);
     }
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.296 -0400", hash_original_field = "27A9F92549363F04EF46148FE9E87EEE", hash_generated_field = "F0C04F9075773F238646F09F10EC5686")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:20.106 -0500", hash_original_field = "FC4C290B75F77C9110197620363F9111", hash_generated_field = "CA4F36A588CFE36A93CA952406390368")
 
-    static MotionEventVersionImpl IMPL;
+
+    /**
+     * Synonym for {@link MotionEvent#ACTION_MASK}.
+     */
+    public static final int ACTION_MASK = 0xff;
     static {
         if (android.os.Build.VERSION.SDK_INT >= 5) {
             IMPL = new EclairMotionEventVersionImpl();
@@ -265,33 +214,35 @@ public class MotionEventCompat {
             IMPL = new BaseMotionEventVersionImpl();
         }
     }
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.296 -0400", hash_original_field = "034E2BCD80D0FE32BEE35A26F527AB82", hash_generated_field = "464488178905DF6887AEEC102D03F9BB")
-
-    public static final int ACTION_MASK = 0xff;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.296 -0400", hash_original_field = "596B10C23830633246B5FE119303CA31", hash_generated_field = "BE1BA8B002AC6D11B1BA8B25140F3104")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:20.109 -0500", hash_original_field = "6B8026AE673197DC4509FD1C52E85893", hash_generated_field = "BE1BA8B002AC6D11B1BA8B25140F3104")
 
     public static final int ACTION_POINTER_DOWN = 5;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.296 -0400", hash_original_field = "1CD52FBA3CE6A637AE86BF305E1727A2", hash_generated_field = "779F82BEF077301CD2887D1C33590F74")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:20.112 -0500", hash_original_field = "918CC644F8F3853E02E49713894DFC96", hash_generated_field = "779F82BEF077301CD2887D1C33590F74")
 
     public static final int ACTION_POINTER_UP = 6;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.296 -0400", hash_original_field = "A117FB885030C87F8035EE8197E01274", hash_generated_field = "A31BF98337FB8359E97DA48D76D80977")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:20.114 -0500", hash_original_field = "C216C2D482483B9B30C7BB2675C50F3F", hash_generated_field = "A31BF98337FB8359E97DA48D76D80977")
 
     public static final int ACTION_HOVER_MOVE = 7;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.296 -0400", hash_original_field = "EDD00CD16649F89FF44DD9C0E161B238", hash_generated_field = "D4C11BB0C70739D756D7BA7A8EBDE32D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:20.116 -0500", hash_original_field = "ABED2ED2557F7CC3CCDED7CE69B5434B", hash_generated_field = "D4C11BB0C70739D756D7BA7A8EBDE32D")
 
     public static final int ACTION_SCROLL = 8;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.296 -0400", hash_original_field = "F94A33E7C5ACFBEFDFBB09F0FB9B278A", hash_generated_field = "E260033975F8D36BD53DB361D54BA2BF")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:20.119 -0500", hash_original_field = "B84AC1CDEB7CB6E7A2AD3AF6ED95FD6D", hash_generated_field = "E260033975F8D36BD53DB361D54BA2BF")
 
     public static final int ACTION_POINTER_INDEX_MASK  = 0xff00;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.296 -0400", hash_original_field = "DAB0332B2F0024984DE4DD67C040BC0F", hash_generated_field = "3ED9AD85BB2784B1321927FB5C085339")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:20.122 -0500", hash_original_field = "B386A1CE3358CBFE4E59C73CCCF8B604", hash_generated_field = "3ED9AD85BB2784B1321927FB5C085339")
 
     public static final int ACTION_POINTER_INDEX_SHIFT = 8;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.297 -0400", hash_original_field = "E6889A317885B7F3FCFCB516DDE1B506", hash_generated_field = "6EED9A028D9812B11E3EC6500A22417D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:20.124 -0500", hash_original_field = "6DFA606950D7B0DEC8419F9FB95C2C3C", hash_generated_field = "6EED9A028D9812B11E3EC6500A22417D")
 
     public static final int ACTION_HOVER_ENTER = 9;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.297 -0400", hash_original_field = "5A019C5D2F9BBBECE84DA46559873CDE", hash_generated_field = "36537B951CA8A88E1E580F444A68C4EB")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:20.126 -0500", hash_original_field = "82CE12F47ED4177C0200CD4F439C144D", hash_generated_field = "36537B951CA8A88E1E580F444A68C4EB")
 
     public static final int ACTION_HOVER_EXIT = 10;
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.277 -0400", hash_original_method = "5A13315CB97E0E2867AD42FF281F6179", hash_generated_method = "5A13315CB97E0E2867AD42FF281F6179")
+    public MotionEventCompat ()
+    {
+        //Synthesized constructor
+    }
 }
 

@@ -1,6 +1,8 @@
 package gov.nist.javax.sip.stack;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.TimerTask;
 
@@ -15,31 +17,22 @@ public abstract class SIPStackTimerTask extends TimerTask {
     {
         //Synthesized constructor
     }
-
-
-    @DSModeled(DSC.SAFE)
-    protected abstract void runTask();
-
+    // / Implements code to be run when the SIPStackTimerTask is executed.
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.636 -0500", hash_original_method = "CB5870151CD6DF3DC7632725FAC776A4", hash_generated_method = "4CAC313E67DDA91D5DC1289C58A06F81")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:41.996 -0400", hash_original_method = "83C0265BCA7923E7BED6DC913E28AE42", hash_generated_method = "B81B556CAB994BDEB0B84F4F8D69A273")
-    public final void run() {
-        try 
-        {
+protected abstract void runTask();
+
+    // / The run() method is final to ensure that all subclasses inherit the
+    // exception handling.
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.639 -0500", hash_original_method = "83C0265BCA7923E7BED6DC913E28AE42", hash_generated_method = "375D4E0374AEC4D1F88E5FBFD6B7396D")
+    
+public final void run() {
+        try {
             runTask();
-        } //End block
-        catch (Throwable e)
-        {
+        } catch (Throwable e) {
             System.out.println("SIP stack timer task failed due to exception:");
             e.printStackTrace();
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //runTask();
-        //} catch (Throwable e) {
-            //System.out.println("SIP stack timer task failed due to exception:");
-            //e.printStackTrace();
-        //}
+        }
     }
 
     

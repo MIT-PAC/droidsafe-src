@@ -1,115 +1,170 @@
 package java.io;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
 
 public class FilterInputStream extends InputStream {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.981 -0400", hash_original_field = "13B5BFE96F3E2FE411C9F66F4A582ADF", hash_generated_field = "6D3D0ED73C3C0D0A9AF6A684E0D210F5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.036 -0500", hash_original_field = "0A829BC26C36EAF422E245C1EC11D5B0", hash_generated_field = "6D3D0ED73C3C0D0A9AF6A684E0D210F5")
 
     protected volatile InputStream in;
+
+    /**
+     * Constructs a new {@code FilterInputStream} with the specified input
+     * stream as source.
+     *
+     * <p><strong>Warning:</strong> passing a null source creates an invalid
+     * {@code FilterInputStream}, that fails on every method that is not
+     * overridden. Subclasses should check for null in their constructors.
+     *
+     * @param in the input stream to filter reads on.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.038 -0500", hash_original_method = "28F38498A0B180D5BCC888F2248F3934", hash_generated_method = "D28A4C86943E8574377DFF40EEBB983E")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.981 -0400", hash_original_method = "28F38498A0B180D5BCC888F2248F3934", hash_generated_method = "5A27BC4A52A8F095F38D366D78918442")
-    protected  FilterInputStream(InputStream in) {
+protected FilterInputStream(InputStream in) {
         this.in = in;
-        // ---------- Original Method ----------
-        //this.in = in;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.040 -0500", hash_original_method = "0AD8415E97210126520B7235309B4152", hash_generated_method = "8E5606FF0A120193314716C29AE15BAC")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.981 -0400", hash_original_method = "0AD8415E97210126520B7235309B4152", hash_generated_method = "14B5D4493E92C9E3A2E4B5103B70FD6A")
-    @Override
+@Override
     public int available() throws IOException {
-        int var443A4CD22A314221356D4EA83AFE1E61_877972787 = (in.available());
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1465929403 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1465929403;
-        // ---------- Original Method ----------
-        //return in.available();
+        return in.available();
     }
 
+    /**
+     * Closes this stream. This implementation closes the filtered stream.
+     *
+     * @throws IOException
+     *             if an error occurs while closing this stream.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.043 -0500", hash_original_method = "8853C25F592811C3C813B7E0334D3C5F", hash_generated_method = "150283417C2E86293C532259A36378CD")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.982 -0400", hash_original_method = "8853C25F592811C3C813B7E0334D3C5F", hash_generated_method = "9CF60855AD0CE7D671F0019EA0CE4A52")
-    @Override
+@Override
     public void close() throws IOException {
         in.close();
-        // ---------- Original Method ----------
-        //in.close();
     }
 
+    /**
+     * Sets a mark position in this stream. The parameter {@code readlimit}
+     * indicates how many bytes can be read before the mark is invalidated.
+     * Sending {@code reset()} will reposition this stream back to the marked
+     * position, provided that {@code readlimit} has not been surpassed.
+     * <p>
+     * This implementation sets a mark in the filtered stream.
+     *
+     * @param readlimit
+     *            the number of bytes that can be read from this stream before
+     *            the mark is invalidated.
+     * @see #markSupported()
+     * @see #reset()
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.045 -0500", hash_original_method = "FFAC7C303832D87EA3757F73ECC9CF0F", hash_generated_method = "97D4206E523BA3252F44669193A79E5B")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.982 -0400", hash_original_method = "FFAC7C303832D87EA3757F73ECC9CF0F", hash_generated_method = "F56924027E62E4D2B8F7633C4CCD626A")
-    @Override
+@Override
     public synchronized void mark(int readlimit) {
-        addTaint(readlimit);
         in.mark(readlimit);
-        // ---------- Original Method ----------
-        //in.mark(readlimit);
     }
 
+    /**
+     * Indicates whether this stream supports {@code mark()} and {@code reset()}.
+     * This implementation returns whether or not the filtered stream supports
+     * marking.
+     *
+     * @return {@code true} if {@code mark()} and {@code reset()} are supported,
+     *         {@code false} otherwise.
+     * @see #mark(int)
+     * @see #reset()
+     * @see #skip(long)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.048 -0500", hash_original_method = "41BA5D3E6CD82551F6C2FAFF3850B986", hash_generated_method = "AAA0E9FA70DCC42A6EF6C686E3CCDC7E")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.982 -0400", hash_original_method = "41BA5D3E6CD82551F6C2FAFF3850B986", hash_generated_method = "00F2A93EE923A08DB5E375A6405104F1")
-    @Override
+@Override
     public boolean markSupported() {
-        boolean var92424DC7E92354A95936078BD657F7DC_1390901070 = (in.markSupported());
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_964026654 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_964026654;
-        // ---------- Original Method ----------
-        //return in.markSupported();
+        return in.markSupported();
     }
 
+    /**
+     * Reads a single byte from the filtered stream and returns it as an integer
+     * in the range from 0 to 255. Returns -1 if the end of this stream has been
+     * reached.
+     *
+     * @return the byte read or -1 if the end of the filtered stream has been
+     *         reached.
+     * @throws IOException
+     *             if the stream is closed or another IOException occurs.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.051 -0500", hash_original_method = "E44784058F4742ED0C6AEE646C9728C1", hash_generated_method = "6F8C3CEAFF598327D551893A3095CDD9")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.983 -0400", hash_original_method = "E44784058F4742ED0C6AEE646C9728C1", hash_generated_method = "F19EBFE81BE6E79884387D56951EDD14")
-    @Override
+@Override
     public int read() throws IOException {
-        int varC746AA2461228F1337791E992A2C4661_527843226 = (in.read());
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1187745222 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1187745222;
-        // ---------- Original Method ----------
-        //return in.read();
+        return in.read();
     }
 
+    /**
+     * Reads at most {@code count} bytes from this stream and stores them in the
+     * byte array {@code buffer} starting at {@code offset}. Returns the number
+     * of bytes actually read or -1 if no bytes have been read and the end of
+     * this stream has been reached. This implementation reads bytes from the
+     * filtered stream.
+     *
+     * @param buffer
+     *            the byte array in which to store the bytes read.
+     * @param offset
+     *            the initial position in {@code buffer} to store the bytes
+     *            read from this stream.
+     * @param count
+     *            the maximum number of bytes to store in {@code buffer}.
+     * @return the number of bytes actually read or -1 if the end of the
+     *         filtered stream has been reached while reading.
+     * @throws IOException
+     *             if this stream is closed or another I/O error occurs.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.054 -0500", hash_original_method = "77ABDF7CA6BAECB9E04E38AE745E4AA8", hash_generated_method = "595F6EE2F2435B28EBBB9F808779088C")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.983 -0400", hash_original_method = "77ABDF7CA6BAECB9E04E38AE745E4AA8", hash_generated_method = "2B108C8ACE67D66B28D62885BAE02134")
-    @Override
+@Override
     public int read(byte[] buffer, int offset, int count) throws IOException {
-        addTaint(count);
-        addTaint(offset);
-        addTaint(buffer[0]);
-        int var16B8A5ED779D2972EF4A24F254214E3B_1945178515 = (in.read(buffer, offset, count));
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_710163731 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_710163731;
-        // ---------- Original Method ----------
-        //return in.read(buffer, offset, count);
+        return in.read(buffer, offset, count);
     }
 
+    /**
+     * Resets this stream to the last marked location. This implementation
+     * resets the target stream.
+     *
+     * @throws IOException
+     *             if this stream is already closed, no mark has been set or the
+     *             mark is no longer valid because more than {@code readlimit}
+     *             bytes have been read since setting the mark.
+     * @see #mark(int)
+     * @see #markSupported()
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.056 -0500", hash_original_method = "61478AA9F56747991020142C67580FB8", hash_generated_method = "F44C74B35137AEFCC17E0B0D490721CE")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.984 -0400", hash_original_method = "61478AA9F56747991020142C67580FB8", hash_generated_method = "9EDBB723B02439FE9CA3EA9025D627E0")
-    @Override
+@Override
     public synchronized void reset() throws IOException {
         in.reset();
-        // ---------- Original Method ----------
-        //in.reset();
     }
 
+    /**
+     * Skips {@code byteCount} bytes in this stream. Subsequent
+     * calls to {@code read} will not return these bytes unless {@code reset} is
+     * used. This implementation skips {@code byteCount} bytes in the
+     * filtered stream.
+     *
+     * @return the number of bytes actually skipped.
+     * @throws IOException
+     *             if this stream is closed or another IOException occurs.
+     * @see #mark(int)
+     * @see #reset()
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.058 -0500", hash_original_method = "871C50CABEA9E636393963333B4BFE2A", hash_generated_method = "41FD1968033290FD52A55E2E96D53127")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.984 -0400", hash_original_method = "871C50CABEA9E636393963333B4BFE2A", hash_generated_method = "CC9F33999CE93ECD6D82AEF98A295198")
-    @Override
+@Override
     public long skip(long byteCount) throws IOException {
-        addTaint(byteCount);
-        long varEBA3748D4ACE0E943E64A9E07D224ABB_1626742347 = (in.skip(byteCount));
-                long var0F5264038205EDFB1AC05FBB0E8C5E94_1905651770 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_1905651770;
-        // ---------- Original Method ----------
-        //return in.skip(byteCount);
+        return in.skip(byteCount);
     }
 
     

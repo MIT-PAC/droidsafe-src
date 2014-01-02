@@ -1,6 +1,8 @@
 package java.security.spec;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.security.GeneralSecurityException;
 
@@ -8,25 +10,29 @@ import java.security.GeneralSecurityException;
 
 
 public class InvalidParameterSpecException extends GeneralSecurityException {
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.060 -0400", hash_original_method = "4F41FA7C8D97BC8BFE10106F914E22B9", hash_generated_method = "AA1B3190339FF7A757551B54F1A86973")
-    public  InvalidParameterSpecException(String msg) {
-        super(msg);
-        addTaint(msg.getTaint());
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.060 -0400", hash_original_method = "8EAE2A7FB2FA88B3FDA40537BCBC1806", hash_generated_method = "AC7D4098D3DDF51A0AD7D0E5575B2B91")
-    public  InvalidParameterSpecException() {
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.060 -0400", hash_original_field = "A8CA0BAA016528B332BBA9AA6A11B1D4", hash_generated_field = "D7B23BABA4FB334103D8F72DD98A7A49")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.010 -0500", hash_original_field = "BA17B4FB265B7E555FAC823B44C2A1C2", hash_generated_field = "D7B23BABA4FB334103D8F72DD98A7A49")
 
     private static final long serialVersionUID = -970468769593399342L;
+
+    /**
+     * Creates a new {@code InvalidParameterSpecException} with the specified
+     * message.
+     *
+     * @param msg
+     *            the detail message for this exception.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.012 -0500", hash_original_method = "4F41FA7C8D97BC8BFE10106F914E22B9", hash_generated_method = "91F2E20D6EC1D690792217B1643F9979")
+    
+public InvalidParameterSpecException(String msg) {
+        super(msg);
+    }
+
+    /**
+     * Creates a new {@code InvalidParameterSpecException}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.015 -0500", hash_original_method = "8EAE2A7FB2FA88B3FDA40537BCBC1806", hash_generated_method = "45BA54F57967D5B879775B1EE5635F1D")
+    
+public InvalidParameterSpecException() {
+    }
 }
 

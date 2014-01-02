@@ -1,32 +1,27 @@
 package javax.sip;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
 public class TransactionDoesNotExistException extends SipException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:03.848 -0500", hash_original_method = "750F8F9B78D69ABAD487E00FF1714036", hash_generated_method = "013530B554B40462B928B381412C07CF")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.368 -0400", hash_original_method = "750F8F9B78D69ABAD487E00FF1714036", hash_generated_method = "B97A8DA2301BB8BC36CF55AD5F049642")
-    public  TransactionDoesNotExistException() {
-        // ---------- Original Method ----------
+public TransactionDoesNotExistException(){
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:03.851 -0500", hash_original_method = "FEB1A81DE901FC743AFE681804A1F11C", hash_generated_method = "0D81498B3BFD832A388A23E04322EF7E")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.368 -0400", hash_original_method = "FEB1A81DE901FC743AFE681804A1F11C", hash_generated_method = "8DA048A2C5245050F2F850498F31FD30")
-    public  TransactionDoesNotExistException(String message) {
+public TransactionDoesNotExistException(String message) {
         super(message);
-        addTaint(message.getTaint());
-        // ---------- Original Method ----------
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:03.854 -0500", hash_original_method = "B970C645A776B4A2B1D89F6D22EB1C05", hash_generated_method = "47796FAA4EF72777305F6DD06613F37B")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:18.369 -0400", hash_original_method = "B970C645A776B4A2B1D89F6D22EB1C05", hash_generated_method = "2AF6DF383EA3FD38A633796B270D20F7")
-    public  TransactionDoesNotExistException(String message, Throwable cause) {
+public TransactionDoesNotExistException(String message, Throwable cause) {
         super(message, cause);
-        addTaint(cause.getTaint());
-        addTaint(message.getTaint());
-        // ---------- Original Method ----------
     }
 
     

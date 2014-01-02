@@ -1,6 +1,8 @@
 package libcore.util;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.lang.ref.Reference;
 import java.util.Collections;
@@ -11,12 +13,6 @@ import java.util.List;
 
 
 public final class CollectionUtils {
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.432 -0400", hash_original_method = "01B59B68B4B802DAB48FA08289978867", hash_generated_method = "5F02E4CDD07A625A72FAF95BCC9B1BCC")
-    private  CollectionUtils() {
-        // ---------- Original Method ----------
-    }
 
     
     @DSModeled(DSC.SAFE)
@@ -26,11 +22,19 @@ public final class CollectionUtils {
             @DSModeled(DSC.SAFE)
         public Iterator<T> iterator() {
                 return new Iterator<T>() {
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:30.088 -0500", hash_original_field = "FC1841E2B61E0112C65F1A7B40112CCF", hash_generated_field = "BA3AF217822442F4EBB0D4F80E08231E")
+
                     private final Iterator<? extends Reference<T>> delegate = iterable.iterator();
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:30.091 -0500", hash_original_field = "2E6EC376CACD2EFB5EA0E7A5EE8CFB7F", hash_generated_field = "B7A3D502C84BFF6D6C17E75516015E89")
+
                     private boolean removeIsOkay;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:30.094 -0500", hash_original_field = "DB5AAA58E6C7A117C4D5D733F5BFE4DB", hash_generated_field = "13CF7518FEC9876914E0AF86C869524E")
+
                     private T next;
-                    @DSModeled(DSC.SAFE)
-            private void computeNext() {
+
+                    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:30.098 -0500", hash_original_method = "E85EAE479DB025693A9729458E71245D", hash_generated_method = "5FF4E103A055D1C17EDE93548A8402A2")
+                    
+private void computeNext() {
                         removeIsOkay = false;
                         while (next == null && delegate.hasNext()) {
                             next = delegate.next().get();
@@ -39,13 +43,17 @@ public final class CollectionUtils {
                             }
                         }
                     }
-                    @DSModeled(DSC.SAFE)
-            @Override public boolean hasNext() {
+
+                    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:30.101 -0500", hash_original_method = "F98C6B6D707EE7EA3A5FD2D39F4A0387", hash_generated_method = "549F51A1F66C51FA06F9B2518887C403")
+                    
+@Override public boolean hasNext() {
                         computeNext();
                         return next != null;
                     }
-                    @DSModeled(DSC.SAFE)
-            @Override public T next() {
+
+                    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:30.105 -0500", hash_original_method = "F120D99BE5EA300D8BF38607156FC87D", hash_generated_method = "C18C10D62F3F060AD23759D819CE225C")
+                    
+@Override public T next() {
                         if (!hasNext()) {
                             throw new IllegalStateException();
                         }
@@ -54,8 +62,10 @@ public final class CollectionUtils {
                         next = null;
                         return result;
                     }
-                    @DSModeled(DSC.SAFE)
-            public void remove() {
+
+                    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:30.108 -0500", hash_original_method = "8B1109B1635017616160F426171DA3AB", hash_generated_method = "146A4B3FE5B45281653375C39EBC7B3B")
+                    
+public void remove() {
                         if (!removeIsOkay) {
                             throw new IllegalStateException();
                         }
@@ -81,6 +91,9 @@ public final class CollectionUtils {
             list.subList(j, list.size()).clear();
         }
     }
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:30.084 -0500", hash_original_method = "01B59B68B4B802DAB48FA08289978867", hash_generated_method = "9ECF08C0F15D4899C88459A1B3061187")
+    
+private CollectionUtils() {}
 
     
 }

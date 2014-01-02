@@ -1,6 +1,8 @@
 package java.nio.channels;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 
@@ -10,16 +12,17 @@ import java.io.IOException;
 
 
 public class ClosedChannelException extends IOException {
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.145 -0400", hash_original_method = "7CC295EB5F92211F4200E6DBDAD17CF7", hash_generated_method = "4526C63F6F4566A792A24BA3A3710B83")
-    public  ClosedChannelException() {
-        // ---------- Original Method ----------
-    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.085 -0500", hash_original_field = "B28EC91F6C9425AE601D0DC4C49E6E2E", hash_generated_field = "13CCC85E008F56C61F5D7A104A9100D9")
 
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.145 -0400", hash_original_field = "8343DFA23EBA3077AA107FC62A5E12F7", hash_generated_field = "13CCC85E008F56C61F5D7A104A9100D9")
 
     private static final long serialVersionUID = 882777185433553857L;
+
+    /**
+     * Constructs a {@code ClosedChannelException}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.089 -0500", hash_original_method = "7CC295EB5F92211F4200E6DBDAD17CF7", hash_generated_method = "6B74D1ED8707925AEF76533321A868E7")
+    
+public ClosedChannelException() {
+    }
 }
 

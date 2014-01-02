@@ -1,30 +1,36 @@
 package org.apache.http;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
 
 public class ParseException extends RuntimeException {
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.187 -0400", hash_original_method = "43A50A2814EFBF0D7758AAE9FD7C9320", hash_generated_method = "9A467B6CDF547A2C71AA208E65181C5B")
-    public  ParseException() {
-        super();
-        // ---------- Original Method ----------
-    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:27.423 -0500", hash_original_field = "E19C8717934231C920AD6F30E71BC83A", hash_generated_field = "D9C114BB8386200D98E8040578E8C75C")
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.188 -0400", hash_original_method = "AA2D3B43514461050036AD8670526A69", hash_generated_method = "5E059B7A27B3133D67D677E5E1E7ADA4")
-    public  ParseException(String message) {
-        super(message);
-        addTaint(message.getTaint());
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.188 -0400", hash_original_field = "BCD1CEA4A43E96CEC6F1DD6D103C2931", hash_generated_field = "D9C114BB8386200D98E8040578E8C75C")
 
     private static final long serialVersionUID = -7288819855864183578L;
+
+    /**
+     * Creates a {@link ParseException} without details.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:27.426 -0500", hash_original_method = "43A50A2814EFBF0D7758AAE9FD7C9320", hash_generated_method = "00404CCAB93CD9FB4A71881A3ACD10B5")
+    
+public ParseException() {
+        super();
+    }
+
+    /**
+     * Creates a {@link ParseException} with a detail message.
+     * 
+     * @param message the exception detail message, or <code>null</code>
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:27.428 -0500", hash_original_method = "AA2D3B43514461050036AD8670526A69", hash_generated_method = "B7F8F15591BDA2D742576262916B6A93")
+    
+public ParseException(String message) {
+        super(message);
+    }
 }
 

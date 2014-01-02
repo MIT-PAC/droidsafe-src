@@ -1,6 +1,8 @@
 package java.util;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
@@ -8,44 +10,55 @@ import droidsafe.annotations.*;
 
 
 public class ConcurrentModificationException extends RuntimeException {
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.975 -0400", hash_original_method = "5F5AEF59023EF0CE03A16FBB12617DB7", hash_generated_method = "79688BEA5D6B303CB294241AA0949D8E")
-    public  ConcurrentModificationException() {
-        // ---------- Original Method ----------
-    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.261 -0500", hash_original_field = "557B581588154B680EBBA0EFE4F73934", hash_generated_field = "BE6788E7D91F00AD085BECEE1E4F5DE1")
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.975 -0400", hash_original_method = "106C24DD3D2A07AA8584E42740C7683A", hash_generated_method = "48EF744F66E1DD67C648FF03510CC342")
-    public  ConcurrentModificationException(String detailMessage) {
-        super(detailMessage);
-        addTaint(detailMessage.getTaint());
-        // ---------- Original Method ----------
-    }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.975 -0400", hash_original_method = "2C18D4011661B4B4C3C2AF76F80D71D0", hash_generated_method = "D54BC96BBFF941E955626CF545F2B2D1")
-    public  ConcurrentModificationException(String detailMessage, Throwable cause) {
-        super(detailMessage, cause);
-        addTaint(cause.getTaint());
-        addTaint(detailMessage.getTaint());
-        // ---------- Original Method ----------
-    }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.975 -0400", hash_original_method = "1483D8E8224DDF6AD31766681C65E484", hash_generated_method = "51B1549ED82E454472609869B884B7D8")
-    public  ConcurrentModificationException(Throwable cause) {
-        super(cause);
-        addTaint(cause.getTaint());
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.975 -0400", hash_original_field = "6F023EBCD220EEE9FD9D969786933435", hash_generated_field = "BE6788E7D91F00AD085BECEE1E4F5DE1")
 
     private static final long serialVersionUID = -3666751008965953603L;
+
+    /**
+     * Constructs a new {@code ConcurrentModificationException} with the current
+     * stack trace filled in.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.264 -0500", hash_original_method = "5F5AEF59023EF0CE03A16FBB12617DB7", hash_generated_method = "36411DD424D866BE99107FE1F2CAFAAC")
+    
+public ConcurrentModificationException() {
+        /*empty*/
+    }
+
+    /**
+     * Constructs a new {@code ConcurrentModificationException} with the current
+     * stack trace and message filled in.
+     *
+     * @param detailMessage
+     *           the detail message for the exception.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.266 -0500", hash_original_method = "106C24DD3D2A07AA8584E42740C7683A", hash_generated_method = "AF6C9CF7F087DDFFAE2DE0F344896AA8")
+    
+public ConcurrentModificationException(String detailMessage) {
+        super(detailMessage);
+    }
+
+    /**
+     * Constructs a new {@code ConcurrentModificationException} with the given detail
+     * message and cause.
+     * @since 1.7
+     * @hide 1.7
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.269 -0500", hash_original_method = "2C18D4011661B4B4C3C2AF76F80D71D0", hash_generated_method = "6C86FBCCFB6A47ADD3BE2BE14A44B5EA")
+    
+public ConcurrentModificationException(String detailMessage, Throwable cause) {
+        super(detailMessage, cause);
+    }
+
+    /**
+     * Constructs a new {@code ConcurrentModificationException} with the given cause.
+     * @since 1.7
+     * @hide 1.7
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.272 -0500", hash_original_method = "1483D8E8224DDF6AD31766681C65E484", hash_generated_method = "4637238951A922846FDFD9A2504F0E10")
+    
+public ConcurrentModificationException(Throwable cause) {
+        super(cause);
+    }
 }
 

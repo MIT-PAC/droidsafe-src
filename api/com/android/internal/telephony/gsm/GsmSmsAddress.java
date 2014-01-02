@@ -1,6 +1,8 @@
 package com.android.internal.telephony.gsm;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.telephony.PhoneNumberUtils;
 
@@ -13,125 +15,148 @@ import com.android.internal.telephony.SmsAddress;
 
 
 public class GsmSmsAddress extends SmsAddress {
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.412 -0400", hash_original_method = "A0B07CD6AB37B7B30863E7D1CAF36981", hash_generated_method = "7F1AD34958D911C580798ABF07860B3C")
-    public  GsmSmsAddress(byte[] data, int offset, int length) {
-        addTaint(length);
-        addTaint(offset);
-        addTaint(data[0]);
-        origBytes = new byte[length];
-        System.arraycopy(data, offset, origBytes, 0, length);
-        int addressLength = origBytes[OFFSET_ADDRESS_LENGTH] & 0xff;
-        int toa = origBytes[OFFSET_TOA] & 0xff;
-        ton = 0x7 & (toa >> 4);
-        if((toa & 0x80) != 0x80)        
-        {
-            RuntimeException var6CA3073F7E67558B97FD5C508BD6CFEC_1176108925 = new RuntimeException("Invalid TOA - high bit must be set");
-            var6CA3073F7E67558B97FD5C508BD6CFEC_1176108925.addTaint(taint);
-            throw var6CA3073F7E67558B97FD5C508BD6CFEC_1176108925;
-        } //End block
-        if(isAlphanumeric())        
-        {
-            int countSeptets = addressLength * 4 / 7;
-            address = GsmAlphabet.gsm7BitPackedToString(origBytes,
-                    OFFSET_ADDRESS_VALUE, countSeptets);
-        } //End block
-        else
-        {
-            byte lastByte = origBytes[length - 1];
-            if((addressLength & 1) == 1)            
-            {
-                origBytes[length - 1] |= 0xf0;
-            } //End block
-            address = PhoneNumberUtils.calledPartyBCDToString(origBytes,
-                    OFFSET_TOA, length - OFFSET_TOA);
-            origBytes[length - 1] = lastByte;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:21.633 -0500", hash_original_field = "18DA9B883CBAF7214F059A4E280D4E9A", hash_generated_field = "BAEAAA3B1617171D1C1E99BC0FAB1BFC")
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.412 -0400", hash_original_method = "EAD8B5BB0DBAF5034E5C9FE6C7B0909A", hash_generated_method = "4779B4B6BD4D676D3C7ADCBFC818D660")
-    public String getAddressString() {
-String var814577DDD37BAFB17E08CBEFDB411BAE_786891284 =         address;
-        var814577DDD37BAFB17E08CBEFDB411BAE_786891284.addTaint(taint);
-        return var814577DDD37BAFB17E08CBEFDB411BAE_786891284;
-        // ---------- Original Method ----------
-        //return address;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.412 -0400", hash_original_method = "364284D6387231DFE8BEB00860E244AE", hash_generated_method = "7D0F3273BF40802A7011144E385ED164")
-    public boolean isAlphanumeric() {
-        boolean var8474A011523A2E65AABA589B65056EFA_1166853336 = (ton == TON_ALPHANUMERIC);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1468599816 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1468599816;
-        // ---------- Original Method ----------
-        //return ton == TON_ALPHANUMERIC;
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.413 -0400", hash_original_method = "9A297062C2D2EDFA0EA27742D0F1F520", hash_generated_method = "A0518BD4C7E7CB78429D245A1F1406E5")
-    public boolean isNetworkSpecific() {
-        boolean varAC4CC2CBB1E733051BE0F1E272DA0F89_868561599 = (ton == TON_NETWORK);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1735829264 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1735829264;
-        // ---------- Original Method ----------
-        //return ton == TON_NETWORK;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.413 -0400", hash_original_method = "7BECB9552858FA87C7AFE2E5228279B4", hash_generated_method = "4744AFEA24CAB7FA1A7A9D21FE7FC326")
-    public boolean isCphsVoiceMessageIndicatorAddress() {
-        boolean var95ACF0A9BE4A49BF12B0430CD6C50261_774385182 = ((origBytes[OFFSET_ADDRESS_LENGTH] & 0xff) == 4
-                && isAlphanumeric() && (origBytes[OFFSET_TOA] & 0x0f) == 0);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_943672991 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_943672991;
-        // ---------- Original Method ----------
-        //return (origBytes[OFFSET_ADDRESS_LENGTH] & 0xff) == 4
-                //&& isAlphanumeric() && (origBytes[OFFSET_TOA] & 0x0f) == 0;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.413 -0400", hash_original_method = "4D79B8C2A51115F6F438822C99644146", hash_generated_method = "079EEB721B933EE0B2C3D6B99A5A4E12")
-    public boolean isCphsVoiceMessageSet() {
-        boolean varFB8178DB0D1582B09684FEDA60AAB8D2_646605073 = (isCphsVoiceMessageIndicatorAddress()
-                && (origBytes[OFFSET_ADDRESS_VALUE] & 0xff) == 0x11);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_738503983 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_738503983;
-        // ---------- Original Method ----------
-        //return isCphsVoiceMessageIndicatorAddress()
-                //&& (origBytes[OFFSET_ADDRESS_VALUE] & 0xff) == 0x11;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.413 -0400", hash_original_method = "4C77C20AE3A5F3CC1A1FB56D13643756", hash_generated_method = "471D4659BC9673DE119B1D8AA694A034")
-    public boolean isCphsVoiceMessageClear() {
-        boolean var1E82CA9B40E32514DB7591611C2E873C_690871101 = (isCphsVoiceMessageIndicatorAddress()
-                && (origBytes[OFFSET_ADDRESS_VALUE] & 0xff) == 0x10);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_634136273 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_634136273;
-        // ---------- Original Method ----------
-        //return isCphsVoiceMessageIndicatorAddress()
-                //&& (origBytes[OFFSET_ADDRESS_VALUE] & 0xff) == 0x10;
-    }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.413 -0400", hash_original_field = "FE0C689D40893F8D8408B0C3C164717C", hash_generated_field = "BAEAAA3B1617171D1C1E99BC0FAB1BFC")
 
     static final int OFFSET_ADDRESS_LENGTH = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.413 -0400", hash_original_field = "D51390E83923F00957E2D1C0C4CB59F9", hash_generated_field = "7FDA3A692BC2298A10BEE7791ED6AD24")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:21.636 -0500", hash_original_field = "9E47FBBB53AF74FDF2F28F097B14D2E3", hash_generated_field = "7FDA3A692BC2298A10BEE7791ED6AD24")
+
 
     static final int OFFSET_TOA = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:25.413 -0400", hash_original_field = "D5730F45AA393C85136C068E8D1F3B94", hash_generated_field = "E0E5804158D85D8E1B3FA048EFDDDD90")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:21.638 -0500", hash_original_field = "E8F4F7484EB3F156514A17792BA2EDD6", hash_generated_field = "E0E5804158D85D8E1B3FA048EFDDDD90")
+
 
     static final int OFFSET_ADDRESS_VALUE = 2;
+
+    /**
+     * New GsmSmsAddress from TS 23.040 9.1.2.5 Address Field
+     *
+     * @param offset the offset of the Address-Length byte
+     * @param length the length in bytes rounded up, e.g. "2 +
+     *        (addressLength + 1) / 2"
+     */
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:21.641 -0500", hash_original_method = "A0B07CD6AB37B7B30863E7D1CAF36981", hash_generated_method = "5DFF62CE6B9C14D1C45D38C7C356DD12")
+    
+public GsmSmsAddress(byte[] data, int offset, int length) {
+        origBytes = new byte[length];
+        System.arraycopy(data, offset, origBytes, 0, length);
+
+        // addressLength is the count of semi-octets, not bytes
+        int addressLength = origBytes[OFFSET_ADDRESS_LENGTH] & 0xff;
+
+        int toa = origBytes[OFFSET_TOA] & 0xff;
+        ton = 0x7 & (toa >> 4);
+
+        // TOA must have its high bit set
+        if ((toa & 0x80) != 0x80) {
+            throw new RuntimeException("Invalid TOA - high bit must be set");
+        }
+
+        if (isAlphanumeric()) {
+            // An alphanumeric address
+            int countSeptets = addressLength * 4 / 7;
+
+            address = GsmAlphabet.gsm7BitPackedToString(origBytes,
+                    OFFSET_ADDRESS_VALUE, countSeptets);
+        } else {
+            // TS 23.040 9.1.2.5 says
+            // that "the MS shall interpret reserved values as 'Unknown'
+            // but shall store them exactly as received"
+
+            byte lastByte = origBytes[length - 1];
+
+            if ((addressLength & 1) == 1) {
+                // Make sure the final unused BCD digit is 0xf
+                origBytes[length - 1] |= 0xf0;
+            }
+            address = PhoneNumberUtils.calledPartyBCDToString(origBytes,
+                    OFFSET_TOA, length - OFFSET_TOA);
+
+            // And restore origBytes
+            origBytes[length - 1] = lastByte;
+        }
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:21.644 -0500", hash_original_method = "EAD8B5BB0DBAF5034E5C9FE6C7B0909A", hash_generated_method = "16A98D98BF22E2226CA4E552EBC9B9DF")
+    
+public String getAddressString() {
+        return address;
+    }
+
+    /**
+     * Returns true if this is an alphanumeric address
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:21.646 -0500", hash_original_method = "364284D6387231DFE8BEB00860E244AE", hash_generated_method = "94FCF7D6584B29E11994CD05B47D594C")
+    
+public boolean isAlphanumeric() {
+        return ton == TON_ALPHANUMERIC;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:21.648 -0500", hash_original_method = "9A297062C2D2EDFA0EA27742D0F1F520", hash_generated_method = "4702E1F913E3FD9A825CCD513A01703B")
+    
+public boolean isNetworkSpecific() {
+        return ton == TON_NETWORK;
+    }
+
+    /**
+     * Returns true of this is a valid CPHS voice message waiting indicator
+     * address
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:21.651 -0500", hash_original_method = "7BECB9552858FA87C7AFE2E5228279B4", hash_generated_method = "A92CF9911E7F488800E294D71D407FCD")
+    
+public boolean isCphsVoiceMessageIndicatorAddress() {
+        // CPHS-style MWI message
+        // See CPHS 4.7 B.4.2.1
+        //
+        // Basically:
+        //
+        // - Originating address should be 4 bytes long and alphanumeric
+        // - Decode will result with two chars:
+        // - Char 1
+        // 76543210
+        // ^ set/clear indicator (0 = clear)
+        // ^^^ type of indicator (000 = voice)
+        // ^^^^ must be equal to 0001
+        // - Char 2:
+        // 76543210
+        // ^ line number (0 = line 1)
+        // ^^^^^^^ set to 0
+        //
+        // Remember, since the alpha address is stored in 7-bit compact form,
+        // the "line number" is really the top bit of the first address value
+        // byte
+
+        return (origBytes[OFFSET_ADDRESS_LENGTH] & 0xff) == 4
+                && isAlphanumeric() && (origBytes[OFFSET_TOA] & 0x0f) == 0;
+    }
+
+    /**
+     * Returns true if this is a valid CPHS voice message waiting indicator
+     * address indicating a "set" of "indicator 1" of type "voice message
+     * waiting"
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:21.654 -0500", hash_original_method = "4D79B8C2A51115F6F438822C99644146", hash_generated_method = "86F79CBB124E16917B7A1AE7C11CD87B")
+    
+public boolean isCphsVoiceMessageSet() {
+        // 0x11 means "set" "voice message waiting" "indicator 1"
+        return isCphsVoiceMessageIndicatorAddress()
+                && (origBytes[OFFSET_ADDRESS_VALUE] & 0xff) == 0x11;
+
+    }
+
+    /**
+     * Returns true if this is a valid CPHS voice message waiting indicator
+     * address indicating a "clear" of "indicator 1" of type "voice message
+     * waiting"
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:21.657 -0500", hash_original_method = "4C77C20AE3A5F3CC1A1FB56D13643756", hash_generated_method = "3C47A8B9F98A0EC35EE39FB32875C58F")
+    
+public boolean isCphsVoiceMessageClear() {
+        // 0x10 means "clear" "voice message waiting" "indicator 1"
+        return isCphsVoiceMessageIndicatorAddress()
+                && (origBytes[OFFSET_ADDRESS_VALUE] & 0xff) == 0x10;
+
+    }
 }
 

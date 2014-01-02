@@ -1,6 +1,8 @@
 package java.lang;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
@@ -8,25 +10,31 @@ import droidsafe.annotations.*;
 
 
 public class ClassFormatError extends LinkageError {
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.661 -0400", hash_original_method = "425CA80A6692859A51AA327ECCF27B34", hash_generated_method = "BF82F7972D435F9EE4D71CA7D0625D1F")
-    public  ClassFormatError() {
-        // ---------- Original Method ----------
-    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.429 -0500", hash_original_field = "16E549032B7EC4EBE37CBBDA56B69A2E", hash_generated_field = "5EA27B59C36E073C15C01C9D2F77DFE8")
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.661 -0400", hash_original_method = "BAE3B13B354B16D7CAA986D0ECE3EF81", hash_generated_method = "B2AB2C4D43C370115B45008C4ACD2EEC")
-    public  ClassFormatError(String detailMessage) {
-        super(detailMessage);
-        addTaint(detailMessage.getTaint());
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.661 -0400", hash_original_field = "D280089B89EA3EF97019C2C1064183E7", hash_generated_field = "5EA27B59C36E073C15C01C9D2F77DFE8")
 
     private static final long serialVersionUID = -8420114879011949195L;
+
+    /**
+     * Constructs a new {@code ClassFormatError} that includes the current stack
+     * trace.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.431 -0500", hash_original_method = "425CA80A6692859A51AA327ECCF27B34", hash_generated_method = "56A869F7F22EF0248DEDF8F6B1BF0E6E")
+    
+public ClassFormatError() {
+    }
+
+    /**
+     * Constructs a new {@code ClassFormatError} with the current stack trace
+     * and the specified detail message.
+     *
+     * @param detailMessage
+     *            the detail message for this error.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.434 -0500", hash_original_method = "BAE3B13B354B16D7CAA986D0ECE3EF81", hash_generated_method = "E206EB0E0AD07F3E5CDEB8C58994FB8A")
+    
+public ClassFormatError(String detailMessage) {
+        super(detailMessage);
+    }
 }
 

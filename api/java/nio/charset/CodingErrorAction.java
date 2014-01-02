@@ -1,47 +1,48 @@
 package java.nio.charset;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
 
 public class CodingErrorAction {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.640 -0400", hash_original_field = "418C5509E2171D55B0AEE5C2EA4442B5", hash_generated_field = "B1982569D823DF720405855D93182845")
-
-    private String action;
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.640 -0400", hash_original_method = "97CD51F500ABFE41AE4BD609F91C5F74", hash_generated_method = "7A8E959B2CD8A428B2EF81F66E186CC8")
-    private  CodingErrorAction(String action) {
-        this.action = action;
-        // ---------- Original Method ----------
-        //this.action = action;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.641 -0400", hash_original_method = "A74604AE646C671FE46897A241086F47", hash_generated_method = "61070809916B04E20EF54E0222E1D585")
-    @Override
-    public String toString() {
-String varF1DD6EC1551B46D722599FEE38985636_1737670330 =         "Action: " + this.action;
-        varF1DD6EC1551B46D722599FEE38985636_1737670330.addTaint(taint);
-        return varF1DD6EC1551B46D722599FEE38985636_1737670330;
-        // ---------- Original Method ----------
-        //return "Action: " + this.action;
-    }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.641 -0400", hash_original_field = "0F5B8118B30070942489AD77C0474094", hash_generated_field = "180E61F2E81DA6FA0483F69131029064")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.598 -0500", hash_original_field = "36280811176184BD58DAE93CABA1A5DB", hash_generated_field = "180E61F2E81DA6FA0483F69131029064")
 
     public static final CodingErrorAction IGNORE = new CodingErrorAction(
             "IGNORE");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.641 -0400", hash_original_field = "09AFE2E9F798DE3373809AE3664DDC29", hash_generated_field = "71B23436B9F036A6D96826127DFB318D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.600 -0500", hash_original_field = "483D08839D36B31B21EB1ADFC1E03915", hash_generated_field = "71B23436B9F036A6D96826127DFB318D")
 
     public static final CodingErrorAction REPLACE = new CodingErrorAction(
             "REPLACE");
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.641 -0400", hash_original_field = "48B81E9D42599CE475EF19EF6CF26E3F", hash_generated_field = "D805EA59DDF422B4EBEECDD03C0F17B7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.603 -0500", hash_original_field = "98C8D23B755BE4CDFBAB6BAA4C1CB9BA", hash_generated_field = "D805EA59DDF422B4EBEECDD03C0F17B7")
 
     public static final CodingErrorAction REPORT = new CodingErrorAction(
             "REPORT");
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.606 -0500", hash_original_field = "F0D53334D1D58D4E79746838A9C851E9", hash_generated_field = "B1982569D823DF720405855D93182845")
+
+    private String action;
+
+    /*
+     * Can't instantiate outside.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.608 -0500", hash_original_method = "97CD51F500ABFE41AE4BD609F91C5F74", hash_generated_method = "53D432196C6DD13986E47F240213F053")
+    
+private CodingErrorAction(String action) {
+        this.action = action;
+    }
+
+    /**
+     * Returns a text description of this action indication.
+     *
+     * @return a text description of this action indication.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.610 -0500", hash_original_method = "A74604AE646C671FE46897A241086F47", hash_generated_method = "5056D2985CC88098CE33EFAAF49CE7F6")
+    
+@Override
+    public String toString() {
+        return "Action: " + this.action;
+    }
 }
 

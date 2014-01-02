@@ -1,6 +1,8 @@
 package java.math;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
@@ -8,20 +10,17 @@ import droidsafe.annotations.*;
 
 
 class Conversion {
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.883 -0400", hash_original_method = "A600C72BC77DD5DD4F1CBED3B2E3D2F0", hash_generated_method = "80546BF6DE416F93FA5C3272886F6955")
-    private  Conversion() {
-        // ---------- Original Method ----------
-    }
 
+
+    /** @see BigInteger#toString(int) */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:34.099 -0500", hash_original_method = "772044A697B0A3955AAC66B382242312", hash_generated_method = "8807D038D38E6169705B33AF641BFDD7")
     
-    @DSModeled(DSC.SAFE)
-    static String bigInteger2String(BigInteger val, int radix) {
+static String bigInteger2String(BigInteger val, int radix) {
         val.prepareJavaRepresentation();
         int sign = val.sign;
         int numberLength = val.numberLength;
         int[] digits = val.digits;
+
         if (sign == 0) {
             return "0";
         }
@@ -41,6 +40,7 @@ class Conversion {
         bitsForRadixDigit = Math.log(radix) / Math.log(2);
         int resLengthInChars = (int) (val.abs().bitLength() / bitsForRadixDigit + ((sign < 0) ? 1
                 : 0)) + 1;
+
         char[] result = new char[resLengthInChars];
         int currentChar = resLengthInChars;
         int resDigit;
@@ -50,8 +50,11 @@ class Conversion {
             int tempLen = numberLength;
             int charsPerInt = digitFitInInt[radix];
             int i;
+            // get the maximal power of radix that fits in int
             int bigRadix = bigRadices[radix - 2];
             while (true) {
+                // divide the array of digits by bigRadix and convert remainders
+                // to characters collecting them in the char array
                 resDigit = Division.divideArrayByInt(temp, temp, tempLen,
                         bigRadix);
                 int previous = currentChar;
@@ -67,11 +70,12 @@ class Conversion {
                     ;
                 }
                 tempLen = i + 1;
-                if ((tempLen == 1) && (temp[0] == 0)) { 
+                if ((tempLen == 1) && (temp[0] == 0)) { // the quotient is 0
                     break;
                 }
             }
         } else {
+            // radix == 16
             for (int i = 0; i < numberLength; i++) {
                 for (int j = 0; (j < 8) && (currentChar > 0); j++) {
                     resDigit = digits[i] >> (j << 2) & 0xf;
@@ -88,9 +92,16 @@ class Conversion {
         return new String(result, currentChar, resLengthInChars - currentChar);
     }
 
+    /**
+     * Builds the correspondent {@code String} representation of {@code val}
+     * being scaled by {@code scale}.
+     *
+     * @see BigInteger#toString()
+     * @see BigDecimal#toString()
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:34.104 -0500", hash_original_method = "ECCDDE8CF78405B2C7A885C17695063A", hash_generated_method = "4661E4799A0A89D7D8BA207A96FFB159")
     
-    @DSModeled(DSC.SAFE)
-    static String toDecimalScaledString(BigInteger val, int scale) {
+static String toDecimalScaledString(BigInteger val, int scale) {
         val.prepareJavaRepresentation();
         int sign = val.sign;
         int numberLength = val.numberLength;
@@ -98,6 +109,7 @@ class Conversion {
         int resLengthInChars;
         int currentChar;
         char[] result;
+
         if (sign == 0) {
             switch (scale) {
                 case 0:
@@ -125,8 +137,16 @@ class Conversion {
                     return result1.toString();
             }
         }
+        // one 32-bit unsigned value may contains 10 decimal digits
         resLengthInChars = numberLength * 10 + 1 + 7;
+        // Explanation why +1+7:
+        // +1 - one char for sign if needed.
+        // +7 - For "special case 2" (see below) we have 7 free chars for
+        // inserting necessary scaled digits.
         result = new char[resLengthInChars + 1];
+        // allocated [resLengthInChars+1] characters.
+        // a free latest character may be used for "special case 1" (see
+        // below)
         currentChar = resLengthInChars;
         if (numberLength == 1) {
             int highDigit = digits[0];
@@ -150,6 +170,9 @@ class Conversion {
             int tempLen = numberLength;
             System.arraycopy(digits, 0, temp, 0, tempLen);
             BIG_LOOP: while (true) {
+                // divide the array of digits by bigRadix and convert
+                // remainders
+                // to characters collecting them in the char array
                 long result11 = 0;
                 for (int i1 = tempLen - 1; i1 >= 0; i1--) {
                     long temp1 = (result11 << 32)
@@ -169,7 +192,7 @@ class Conversion {
                 }
                 int j = tempLen - 1;
                 for (; temp[j] == 0; j--) {
-                    if (j == 0) { 
+                    if (j == 0) { // means temp[0] == 0
                         break BIG_LOOP;
                     }
                 }
@@ -190,6 +213,7 @@ class Conversion {
         }
         if ((scale > 0) && (exponent >= -6)) {
             if (exponent >= 0) {
+                // special case 1
                 int insertPoint = currentChar + exponent;
                 for (int j = resLengthInChars - 1; j >= insertPoint; j--) {
                     result[j + 1] = result[j];
@@ -201,6 +225,7 @@ class Conversion {
                 return new String(result, currentChar, resLengthInChars
                         - currentChar + 1);
             }
+            // special case 2
             for (int j = 2; j < -exponent + 1; j++) {
                 result[--currentChar] = '0';
             }
@@ -235,9 +260,10 @@ class Conversion {
         return result1.toString();
     }
 
+    /* can process only 32-bit numbers */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:34.108 -0500", hash_original_method = "201E7AEE63EBD628AB78F5CEAD89D42F", hash_generated_method = "9419F6C5515D327CC57BA5C463908593")
     
-    @DSModeled(DSC.SAFE)
-    static String toDecimalScaledString(long value, int scale) {
+static String toDecimalScaledString(long value, int scale) {
         int resLengthInChars;
         int currentChar;
         char[] result;
@@ -265,8 +291,15 @@ class Conversion {
                     return result1.toString();
             }
         }
+        // one 32-bit unsigned value may contains 10 decimal digits
         resLengthInChars = 18;
+        // Explanation why +1+7:
+        // +1 - one char for sign if needed.
+        // +7 - For "special case 2" (see below) we have 7 free chars for
+        //  inserting necessary scaled digits.
         result = new char[resLengthInChars+1];
+        //  Allocated [resLengthInChars+1] characters.
+        // a free latest character may be used for "special case 1" (see below)
         currentChar = resLengthInChars;
         long v = value;
         do {
@@ -274,6 +307,7 @@ class Conversion {
             v /= 10;
             result[--currentChar] = (char) (0x0030 + (prev - v * 10));
         } while (v != 0);
+
         long exponent = (long)resLengthInChars - (long)currentChar - scale - 1L;
         if (scale == 0) {
             if (negNumber) {
@@ -283,6 +317,7 @@ class Conversion {
         }
         if (scale > 0 && exponent >= -6) {
             if (exponent >= 0) {
+                // special case 1
                 int insertPoint = currentChar + (int) exponent ;
                 for (int j=resLengthInChars-1; j>=insertPoint; j--) {
                     result[j+1] = result[j];
@@ -293,6 +328,7 @@ class Conversion {
                 }
                 return new String(result, currentChar, resLengthInChars - currentChar + 1);
             }
+            // special case 2
             for (int j = 2; j < -exponent + 1; j++) {
                 result[--currentChar] = '0';
             }
@@ -324,33 +360,42 @@ class Conversion {
         return result1.toString();
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:34.111 -0500", hash_original_method = "A8B9614249F094BD6D2B27571E6B35A9", hash_generated_method = "22949F2418B12D16283978E94EA6A0CC")
     
-    @DSModeled(DSC.SAFE)
-    static long divideLongByBillion(long a) {
+static long divideLongByBillion(long a) {
         long quot;
         long rem;
+
         if (a >= 0) {
             long bLong = 1000000000L;
             quot = (a / bLong);
             rem = (a % bLong);
         } else {
+            /*
+             * Make the dividend positive shifting it right by 1 bit then get
+             * the quotient an remainder and correct them properly
+             */
             long aPos = a >>> 1;
             long bPos = 1000000000L >>> 1;
             quot = aPos / bPos;
             rem = aPos % bPos;
+            // double the remainder and add 1 if 'a' is odd
             rem = (rem << 1) + (a & 1);
         }
         return ((rem << 32) | (quot & 0xFFFFFFFFL));
     }
 
+    /** @see BigInteger#doubleValue() */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:34.115 -0500", hash_original_method = "FB6C73E4A3BD3BD2C5D2B6433E6DFD5C", hash_generated_method = "8C3F32ECEDDBA392345AB721DC818532")
     
-    @DSModeled(DSC.SAFE)
-    static double bigInteger2Double(BigInteger val) {
+static double bigInteger2Double(BigInteger val) {
         val.prepareJavaRepresentation();
+        // val.bitLength() < 64
         if ((val.numberLength < 2)
                 || ((val.numberLength == 2) && (val.digits[1] > 0))) {
             return val.longValue();
         }
+        // val.bitLength() >= 33 * 32 > 1024
         if (val.numberLength > 32) {
             return ((val.sign > 0) ? Double.POSITIVE_INFINITY
                     : Double.NEGATIVE_INFINITY);
@@ -358,7 +403,12 @@ class Conversion {
         int bitLen = val.abs().bitLength();
         long exponent = bitLen - 1;
         int delta = bitLen - 54;
+        // We need 54 top bits from this, the 53th bit is always 1 in lVal.
         long lVal = val.abs().shiftRight(delta).longValue();
+        /*
+         * Take 53 bits from lVal to mantissa. The least significant bit is
+         * needed for rounding.
+         */
         long mantissa = lVal & 0x1FFFFFFFFFFFFFL;
         if (exponent == 1023) {
             if (mantissa == 0X1FFFFFFFFFFFFFL) {
@@ -369,25 +419,25 @@ class Conversion {
                 return ((val.sign > 0) ? Double.MAX_VALUE : -Double.MAX_VALUE);
             }
         }
+        // Round the mantissa
         if (((mantissa & 1) == 1)
                 && (((mantissa & 2) == 2) || BitLevel.nonZeroDroppedBits(delta,
                         val.digits))) {
             mantissa += 2;
         }
-        mantissa >>= 1;
+        mantissa >>= 1; // drop the rounding bit
         long resSign = (val.sign < 0) ? 0x8000000000000000L : 0;
         exponent = ((1023 + exponent) << 52) & 0x7FF0000000000000L;
         long result = resSign | exponent | mantissa;
         return Double.longBitsToDouble(result);
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.885 -0400", hash_original_field = "79CEEB0B96E31706DC35916021293954", hash_generated_field = "84ACB74AE0C2E46DB3D63D4F9B7B0A72")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:34.092 -0500", hash_original_field = "3AA009C3AA22C32CFF003DDE778D0CCB", hash_generated_field = "84ACB74AE0C2E46DB3D63D4F9B7B0A72")
 
     static final int[] digitFitInInt = { -1, -1, 31, 19, 15, 13, 11,
             11, 10, 9, 9, 8, 8, 8, 8, 7, 7, 7, 7, 7, 7, 7, 6, 6, 6, 6, 6, 6, 6,
             6, 6, 6, 6, 6, 6, 6, 5 };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.885 -0400", hash_original_field = "FC1884A674814367F99D68DA056FBF33", hash_generated_field = "BD1A65B06765EC59F73D0719049ECD1B")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:34.095 -0500", hash_original_field = "CD7097E492F5DF815D1022CD39139733", hash_generated_field = "BD1A65B06765EC59F73D0719049ECD1B")
+
 
     static final int[] bigRadices = { -2147483648, 1162261467,
             1073741824, 1220703125, 362797056, 1977326743, 1073741824,
@@ -396,5 +446,10 @@ class Conversion {
             1801088541, 113379904, 148035889, 191102976, 244140625, 308915776,
             387420489, 481890304, 594823321, 729000000, 887503681, 1073741824,
             1291467969, 1544804416, 1838265625, 60466176 };
+
+    /** Just to denote that this class can't be instantiated */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:34.089 -0500", hash_original_method = "A600C72BC77DD5DD4F1CBED3B2E3D2F0", hash_generated_method = "94DED0337828532B8CFA714A972D6810")
+    
+private Conversion() {}
 }
 

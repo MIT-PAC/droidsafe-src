@@ -1,26 +1,22 @@
 package android.database.sqlite;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
 
 
 public class SQLiteConstraintException extends SQLiteException {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.201 -0500", hash_original_method = "54E210BA0478409278B66FC02B0AED97", hash_generated_method = "B767F6FF1223E59872B5285AF97324E1")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.240 -0400", hash_original_method = "54E210BA0478409278B66FC02B0AED97", hash_generated_method = "C012C4A362A74E2CB18A66561EDA8AD6")
-    public  SQLiteConstraintException() {
-        // ---------- Original Method ----------
-    }
+public SQLiteConstraintException() {}
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.204 -0500", hash_original_method = "89F6431428B1D3B90E4A41F02ECB258C", hash_generated_method = "1B9088AC708DB04252BB3F046849205E")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.241 -0400", hash_original_method = "89F6431428B1D3B90E4A41F02ECB258C", hash_generated_method = "574C715742EA196600030FBB507B2ED3")
-    public  SQLiteConstraintException(String error) {
+public SQLiteConstraintException(String error) {
         super(error);
-        addTaint(error.getTaint());
-        // ---------- Original Method ----------
     }
 
     

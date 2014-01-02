@@ -1,6 +1,8 @@
 package java.sql;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Date;
 
@@ -10,197 +12,39 @@ import java.util.Date;
 
 
 public class Time extends Date {
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.174 -0400", hash_original_method = "90AD2E582B6AD132E43906287427EB15", hash_generated_method = "689231C1F3CAD771BF3F0548AB3C32EA")
-    @SuppressWarnings("deprecation")
-    @Deprecated
-    public  Time(int theHour, int theMinute, int theSecond) {
-        super(70, 0, 1, theHour, theMinute, theSecond);
-        addTaint(theSecond);
-        addTaint(theMinute);
-        addTaint(theHour);
-        // ---------- Original Method ----------
-    }
 
+    /**
+     * Creates a {@code Time} object from a string holding a time represented in
+     * JDBC escape format: {@code hh:mm:ss}.
+     * <p>
+     * An exception occurs if the input string does not comply with this format.
+     *
+     * @param timeString
+     *            A String representing the time value in JDBC escape format:
+     *            {@code hh:mm:ss}.
+     * @return The {@code Time} object set to a time corresponding to the given
+     *         time.
+     * @throws IllegalArgumentException
+     *             if the supplied time string is not in JDBC escape format.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.435 -0500", hash_original_method = "AA506CC3B0FAA4D759DD5518FC1CB57C", hash_generated_method = "BFF4DC3C3EAF5AF467939B509F8DF063")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.175 -0400", hash_original_method = "B92128F71421A4A6F232F0ACA6BED466", hash_generated_method = "978E08BF8DDBC1030801843B432DADC7")
-    public  Time(long theTime) {
-        super(theTime);
-        addTaint(theTime);
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.175 -0400", hash_original_method = "B5DD06F1BCDFBA8A25753DB83CF1DFDC", hash_generated_method = "D22287C16817D8D03FC1904D698AD1D3")
-    @SuppressWarnings("deprecation")
-    @Deprecated
-    @Override
-    public int getDate() {
-        IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_1803971038 = new IllegalArgumentException();
-        var5783EF97022AA508B74A1E3EA38534AF_1803971038.addTaint(taint);
-        throw var5783EF97022AA508B74A1E3EA38534AF_1803971038;
-        // ---------- Original Method ----------
-        //throw new IllegalArgumentException();
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.175 -0400", hash_original_method = "665EBFB3A2ED57C64152ECE07C939E3F", hash_generated_method = "708A391FF2E7E4E07B5D8AE6387C56D9")
-    @SuppressWarnings("deprecation")
-    @Deprecated
-    @Override
-    public int getDay() {
-        IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_1187459863 = new IllegalArgumentException();
-        var5783EF97022AA508B74A1E3EA38534AF_1187459863.addTaint(taint);
-        throw var5783EF97022AA508B74A1E3EA38534AF_1187459863;
-        // ---------- Original Method ----------
-        //throw new IllegalArgumentException();
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.176 -0400", hash_original_method = "69C5A301771AF98F1D4892C6CE16968D", hash_generated_method = "60976D42A45C3CCFA71664919BBC752A")
-    @SuppressWarnings("deprecation")
-    @Deprecated
-    @Override
-    public int getMonth() {
-        IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_2080496044 = new IllegalArgumentException();
-        var5783EF97022AA508B74A1E3EA38534AF_2080496044.addTaint(taint);
-        throw var5783EF97022AA508B74A1E3EA38534AF_2080496044;
-        // ---------- Original Method ----------
-        //throw new IllegalArgumentException();
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.176 -0400", hash_original_method = "7CCE4B7904CC8188031B8C2C69560853", hash_generated_method = "4E68BCDD3C57F86F8C5D6D559187F639")
-    @SuppressWarnings("deprecation")
-    @Deprecated
-    @Override
-    public int getYear() {
-        IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_818968951 = new IllegalArgumentException();
-        var5783EF97022AA508B74A1E3EA38534AF_818968951.addTaint(taint);
-        throw var5783EF97022AA508B74A1E3EA38534AF_818968951;
-        // ---------- Original Method ----------
-        //throw new IllegalArgumentException();
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.176 -0400", hash_original_method = "06E47849A7E1FF17AD4998EA261CC682", hash_generated_method = "856E796A3C297A833642E55F6C85F6AB")
-    @SuppressWarnings("deprecation")
-    @Deprecated
-    @Override
-    public void setDate(int i) {
-        addTaint(i);
-        IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_471485485 = new IllegalArgumentException();
-        var5783EF97022AA508B74A1E3EA38534AF_471485485.addTaint(taint);
-        throw var5783EF97022AA508B74A1E3EA38534AF_471485485;
-        // ---------- Original Method ----------
-        //throw new IllegalArgumentException();
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.177 -0400", hash_original_method = "C1F6FF91AA347F0EE969BFBA7872CFEF", hash_generated_method = "D4BEE4A64181524CE9F108A6EE7F06A5")
-    @SuppressWarnings("deprecation")
-    @Deprecated
-    @Override
-    public void setMonth(int i) {
-        addTaint(i);
-        IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_1356712130 = new IllegalArgumentException();
-        var5783EF97022AA508B74A1E3EA38534AF_1356712130.addTaint(taint);
-        throw var5783EF97022AA508B74A1E3EA38534AF_1356712130;
-        // ---------- Original Method ----------
-        //throw new IllegalArgumentException();
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.177 -0400", hash_original_method = "C3860AE5740D96D0AEE02219E848BE80", hash_generated_method = "045C6167CE6697565825E94D4BB11765")
-    @SuppressWarnings("deprecation")
-    @Deprecated
-    @Override
-    public void setYear(int i) {
-        addTaint(i);
-        IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_1872689112 = new IllegalArgumentException();
-        var5783EF97022AA508B74A1E3EA38534AF_1872689112.addTaint(taint);
-        throw var5783EF97022AA508B74A1E3EA38534AF_1872689112;
-        // ---------- Original Method ----------
-        //throw new IllegalArgumentException();
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.177 -0400", hash_original_method = "5C30660C9B840F0068D4ACA53BC409AF", hash_generated_method = "0290DDF634ED42C3C1C7C3841CDD37EB")
-    @Override
-    public void setTime(long time) {
-        addTaint(time);
-        super.setTime(time);
-        // ---------- Original Method ----------
-        //super.setTime(time);
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.178 -0400", hash_original_method = "DF37E49816EA2C75935CB3795350B39F", hash_generated_method = "DF240C0D7D322ECDCF8D95C9BD86F2E4")
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder(8);
-        format(getHours(), 2, sb);
-        sb.append(':');
-        format(getMinutes(), 2, sb);
-        sb.append(':');
-        format(getSeconds(), 2, sb);
-String var2460B846747F8B22185AD8BE722266A5_50684734 =         sb.toString();
-        var2460B846747F8B22185AD8BE722266A5_50684734.addTaint(taint);
-        return var2460B846747F8B22185AD8BE722266A5_50684734;
-        // ---------- Original Method ----------
-        //StringBuilder sb = new StringBuilder(8);
-        //format(getHours(), 2, sb);
-        //sb.append(':');
-        //format(getMinutes(), 2, sb);
-        //sb.append(':');
-        //format(getSeconds(), 2, sb);
-        //return sb.toString();
-    }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.178 -0400", hash_original_method = "D5825B232A74B71A26A12413148003F7", hash_generated_method = "3B6BC052A730CD4CC839ACA88FCF6674")
-    private void format(int date, int digits, StringBuilder sb) {
-        addTaint(sb.getTaint());
-        addTaint(digits);
-        addTaint(date);
-        String str = String.valueOf(date);
-        if(digits - str.length() > 0)        
-        {
-            sb.append(PADDING.substring(0, digits - str.length()));
-        } //End block
-        sb.append(str);
-        // ---------- Original Method ----------
-        //String str = String.valueOf(date);
-        //if (digits - str.length() > 0) {
-            //sb.append(PADDING.substring(0, digits - str.length()));
-        //}
-        //sb.append(str);
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    public static Time valueOf(String timeString) {
+public static Time valueOf(String timeString) {
         if (timeString == null) {
             throw new IllegalArgumentException();
         }
         int firstIndex = timeString.indexOf(':');
         int secondIndex = timeString.indexOf(':', firstIndex + 1);
+        // secondIndex == -1 means none or only one separator '-' has been
+        // found.
+        // The string is separated into three parts by two separator characters,
+        // if the first or the third part is null string, we should throw
+        // IllegalArgumentException to follow RI
         if (secondIndex == -1 || firstIndex == 0
                 || secondIndex + 1 == timeString.length()) {
             throw new IllegalArgumentException();
         }
+        // parse each part of the string
         int hour = Integer.parseInt(timeString.substring(0, firstIndex));
         int minute = Integer.parseInt(timeString.substring(firstIndex + 1,
                 secondIndex));
@@ -208,13 +52,215 @@ String var2460B846747F8B22185AD8BE722266A5_50684734 =         sb.toString();
                 timeString.length()));
         return new Time(hour, minute, second);
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.395 -0500", hash_original_field = "566E16E9A1BEC2B21274067FBF29DFFA", hash_generated_field = "4135C293268358DD66284F75791C870B")
 
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.179 -0400", hash_original_field = "1401318ECC8D1FCA234DD9C3B4F30F64", hash_generated_field = "4135C293268358DD66284F75791C870B")
 
     private static final long serialVersionUID = 8397324403548013681L;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.179 -0400", hash_original_field = "89C021B92219B7CE37A13E910A83FD32", hash_generated_field = "87ECBDD5C24F81CDDFA22805D091687F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.429 -0500", hash_original_field = "497A72B691A0ED83978226EE6DC45FA0", hash_generated_field = "87ECBDD5C24F81CDDFA22805D091687F")
+
 
     private static final String PADDING = "00";
+
+    /**
+     * Constructs a {@code Time} object using the supplied values for <i>Hour</i>,
+     * <i>Minute</i> and <i>Second</i>. The <i>Year</i>, <i>Month</i> and
+     * <i>Day</i> elements of the {@code Time} object are set to the date
+     * of the Epoch (January 1, 1970).
+     * <p>
+     * Any attempt to access the <i>Year</i>, <i>Month</i> or <i>Day</i>
+     * elements of a {@code Time} object will result in an {@code
+     * IllegalArgumentException}.
+     * <p>
+     * The result is undefined if any argument is out of bounds.
+     *
+     * @deprecated Use the constructor {@link #Time(long)}.
+     * @param theHour
+     *            a value in the range {@code [0,23]}.
+     * @param theMinute
+     *            a value in the range {@code [0,59]}.
+     * @param theSecond
+     *            a value in the range {@code [0,59]}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.399 -0500", hash_original_method = "90AD2E582B6AD132E43906287427EB15", hash_generated_method = "CBC503D6A3E6A288968A9EBBC459EA7A")
+    
+@SuppressWarnings("deprecation")
+    @Deprecated
+    public Time(int theHour, int theMinute, int theSecond) {
+        super(70, 0, 1, theHour, theMinute, theSecond);
+    }
+
+    /**
+     * Constructs a {@code Time} object using a supplied time specified in
+     * milliseconds.
+     *
+     * @param theTime
+     *            a {@code Time} specified in milliseconds since the
+     *            <i>Epoch</i> (January 1st 1970, 00:00:00.000).
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.401 -0500", hash_original_method = "B92128F71421A4A6F232F0ACA6BED466", hash_generated_method = "A7E8C95BC20E27D3316018E3FD76067B")
+    
+public Time(long theTime) {
+        super(theTime);
+    }
+
+    /**
+     * @deprecated This method is deprecated and must not be used. An SQL
+     *             {@code Time} object does not have a {@code Date} component.
+     * @return does not return anything.
+     * @throws IllegalArgumentException
+     *             if this method is called.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.404 -0500", hash_original_method = "B5DD06F1BCDFBA8A25753DB83CF1DFDC", hash_generated_method = "3A65018A2CD5D3018A5C2756E768040B")
+    
+@SuppressWarnings("deprecation")
+    @Deprecated
+    @Override
+    public int getDate() {
+        throw new IllegalArgumentException();
+    }
+
+    /**
+     * @deprecated This method is deprecated and must not be used. An SQL
+     *             {@code Time} object does not have a <i>Day</i> component.
+     * @return does not return anything.
+     * @throws IllegalArgumentException
+     *             if this method is called.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.407 -0500", hash_original_method = "665EBFB3A2ED57C64152ECE07C939E3F", hash_generated_method = "4C5FFEA472B1DA43678EE8BF20CE37C3")
+    
+@SuppressWarnings("deprecation")
+    @Deprecated
+    @Override
+    public int getDay() {
+        throw new IllegalArgumentException();
+    }
+
+    /**
+     * @deprecated This method is deprecated and must not be used. An SQL
+     *             {@code Time} object does not have a <i>Month</i> component.
+     * @return does not return anything.
+     * @throws IllegalArgumentException
+     *             if this method is called.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.410 -0500", hash_original_method = "69C5A301771AF98F1D4892C6CE16968D", hash_generated_method = "DDA89909FBA9B60BF2EE4EC94510791E")
+    
+@SuppressWarnings("deprecation")
+    @Deprecated
+    @Override
+    public int getMonth() {
+        throw new IllegalArgumentException();
+    }
+
+    /**
+     * @deprecated This method is deprecated and must not be used. An SQL
+     *             {@code Time} object does not have a <i>Year</i> component.
+     * @return does not return anything.
+     * @throws IllegalArgumentException
+     *             if this method is called.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.412 -0500", hash_original_method = "7CCE4B7904CC8188031B8C2C69560853", hash_generated_method = "2E2EA23BFB4A5BEDFF1D2A7D91FD2C58")
+    
+@SuppressWarnings("deprecation")
+    @Deprecated
+    @Override
+    public int getYear() {
+        throw new IllegalArgumentException();
+    }
+
+    /**
+     * @deprecated This method is deprecated and must not be used. An SQL
+     *             {@code Time} object does not have a {@code Date} component.
+     * @throws IllegalArgumentException
+     *             if this method is called.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.415 -0500", hash_original_method = "06E47849A7E1FF17AD4998EA261CC682", hash_generated_method = "C6D6750EA2C02FB82933AEE5459A1727")
+    
+@SuppressWarnings("deprecation")
+    @Deprecated
+    @Override
+    public void setDate(int i) {
+        throw new IllegalArgumentException();
+    }
+
+    /**
+     * @deprecated This method is deprecated and must not be used. An SQL
+     *             {@code Time} object does not have a <i>Month</i> component.
+     * @throws IllegalArgumentException
+     *             if this method is called.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.418 -0500", hash_original_method = "C1F6FF91AA347F0EE969BFBA7872CFEF", hash_generated_method = "7737A7C42FEABB64EE8DFBF4B2B900E7")
+    
+@SuppressWarnings("deprecation")
+    @Deprecated
+    @Override
+    public void setMonth(int i) {
+        throw new IllegalArgumentException();
+    }
+
+    /**
+     * @deprecated This method is deprecated and must not be used. An SQL
+     *             {@code Time} object does not have a <i>Year</i> component.
+     * @throws IllegalArgumentException
+     *             if this method is called.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.421 -0500", hash_original_method = "C3860AE5740D96D0AEE02219E848BE80", hash_generated_method = "9B16E29124C6F3DAEA6C72946B4FB8F4")
+    
+@SuppressWarnings("deprecation")
+    @Deprecated
+    @Override
+    public void setYear(int i) {
+        throw new IllegalArgumentException();
+    }
+
+    /**
+     * Sets the time for this {@code Time} object to the supplied milliseconds
+     * value.
+     *
+     * @param time
+     *            A time value expressed as milliseconds since the <i>Epoch</i>.
+     *            Negative values are milliseconds before the Epoch. The Epoch
+     *            is January 1 1970, 00:00:00.000.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.424 -0500", hash_original_method = "5C30660C9B840F0068D4ACA53BC409AF", hash_generated_method = "2A73D86A0F2B0467E05B2671F95B43C2")
+    
+@Override
+    public void setTime(long time) {
+        super.setTime(time);
+    }
+
+    /**
+     * Formats the {@code Time} as a String in JDBC escape format: {@code
+     * hh:mm:ss}.
+     *
+     * @return A String representing the {@code Time} value in JDBC escape
+     *         format: {@code HH:mm:ss}
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.426 -0500", hash_original_method = "DF37E49816EA2C75935CB3795350B39F", hash_generated_method = "346AE4E29A4F7882008D887D1F8667F6")
+    
+@Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder(8);
+
+        format(getHours(), 2, sb);
+        sb.append(':');
+        format(getMinutes(), 2, sb);
+        sb.append(':');
+        format(getSeconds(), 2, sb);
+
+        return sb.toString();
+    }
+
+    /*
+    * Private method to format the time
+    */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.431 -0500", hash_original_method = "D5825B232A74B71A26A12413148003F7", hash_generated_method = "42C4F2A798161F88780A237C678B7BD2")
+    
+private void format(int date, int digits, StringBuilder sb) {
+        String str = String.valueOf(date);
+        if (digits - str.length() > 0) {
+            sb.append(PADDING.substring(0, digits - str.length()));
+        }
+        sb.append(str);
+    }
 }
 

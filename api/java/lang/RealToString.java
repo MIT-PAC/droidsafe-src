@@ -1,6 +1,8 @@
 package java.lang;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import libcore.math.MathUtils;
 
@@ -9,493 +11,21 @@ import libcore.math.MathUtils;
 
 
 final class RealToString {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.518 -0400", hash_original_field = "9ABBD36D7ACD664753616E6F0C45ED20", hash_generated_field = "6D9BB978CBD3D3FD82983DAB50AF5B36")
 
-    private int firstK;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.518 -0400", hash_original_field = "D19261FDC6A043F101704BAE71C83311", hash_generated_field = "50690E06A9DD54E798BAB9384D861132")
-
-    private final int[] digits = new int[64];
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.519 -0400", hash_original_field = "FC8A7BC7ABE2BC8420967291A5AC1D9E", hash_generated_field = "A3250AF80A97B4CAE044DFA388B9EA6A")
-
-    private int digitCount;
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.672 -0500", hash_original_method = "30D5D492EADCC746F56566F6C51DBFB8", hash_generated_method = "6210D16B0A5F121D177C5A787BA02E44")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.519 -0400", hash_original_method = "F7A95644C563B2D2A217A4C43DE10AFD", hash_generated_method = "169948A49888C1C730B719BC7C95C046")
-    @DSModeled(DSC.BAN)
-    private  RealToString() {
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    public static RealToString getInstance() {
+public static RealToString getInstance() {
         return INSTANCE.get();
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.675 -0500", hash_original_method = "A3C59A2427D4266EFD936A5ED960D197", hash_generated_method = "0F4C501A9B62AFB41F5015526CA43006")
     
-    @DSModeled(DSC.BAN)
-    private static String resultOrSideEffect(AbstractStringBuilder sb, String s) {
+private static String resultOrSideEffect(AbstractStringBuilder sb, String s) {
         if (sb != null) {
             sb.append0(s);
             return null;
         }
         return s;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.520 -0400", hash_original_method = "1884E8ED6DAC8970F9D7F2BC46F506BE", hash_generated_method = "F50443A26D124792F3E34A9A228D1E2A")
-    public String doubleToString(double d) {
-        addTaint(d);
-String varF4EEEB4C20BC8ED70835679C92A2BBC0_385646869 =         convertDouble(null, d);
-        varF4EEEB4C20BC8ED70835679C92A2BBC0_385646869.addTaint(taint);
-        return varF4EEEB4C20BC8ED70835679C92A2BBC0_385646869;
-        // ---------- Original Method ----------
-        //return convertDouble(null, d);
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.520 -0400", hash_original_method = "60FFADFBFC8614534238C3F90209FDC5", hash_generated_method = "96B881292F90283D20AB0751FFC15BEC")
-    public void appendDouble(AbstractStringBuilder sb, double d) {
-        addTaint(d);
-        addTaint(sb.getTaint());
-        convertDouble(sb, d);
-        // ---------- Original Method ----------
-        //convertDouble(sb, d);
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.522 -0400", hash_original_method = "3B1841CA85DCDA9CC6F8697012DC38A6", hash_generated_method = "89C00D0EA8D7927F106521A3B3D5A8DE")
-    private String convertDouble(AbstractStringBuilder sb, double inputNumber) {
-        addTaint(inputNumber);
-        addTaint(sb.getTaint());
-        long inputNumberBits = Double.doubleToRawLongBits(inputNumber);
-        boolean positive = (inputNumberBits & Double.SIGN_MASK) == 0;
-        int e = (int) ((inputNumberBits & Double.EXPONENT_MASK) >> Double.MANTISSA_BITS);
-        long f = inputNumberBits & Double.MANTISSA_MASK;
-        boolean mantissaIsZero = f == 0;
-        String quickResult = null;
-        if(e == 2047)        
-        {
-            if(mantissaIsZero)            
-            {
-                quickResult = positive ? "Infinity" : "-Infinity";
-            } //End block
-            else
-            {
-                quickResult = "NaN";
-            } //End block
-        } //End block
-        else
-        if(e == 0)        
-        {
-            if(mantissaIsZero)            
-            {
-                quickResult = positive ? "0.0" : "-0.0";
-            } //End block
-            else
-            if(f == 1)            
-            {
-                quickResult = positive ? "4.9E-324" : "-4.9E-324";
-            } //End block
-        } //End block
-        if(quickResult != null)        
-        {
-String var9A8B76D48F32C2D137B4298AA9B38EF7_251975334 =             resultOrSideEffect(sb, quickResult);
-            var9A8B76D48F32C2D137B4298AA9B38EF7_251975334.addTaint(taint);
-            return var9A8B76D48F32C2D137B4298AA9B38EF7_251975334;
-        } //End block
-        int p = Double.EXPONENT_BIAS + Double.MANTISSA_BITS;
-        int pow;
-        int numBits = Double.MANTISSA_BITS;
-        if(e == 0)        
-        {
-            pow = 1 - p;
-            long ff = f;
-            while
-((ff & 0x0010000000000000L) == 0)            
-            {
-                ff = ff << 1;
-                numBits--;
-            } //End block
-        } //End block
-        else
-        {
-            f = f | 0x0010000000000000L;
-            pow = e - p;
-        } //End block
-        firstK = digitCount = 0;
-        if(-59 < pow && pow < 6 || (pow == -59 && !mantissaIsZero))        
-        {
-            longDigitGenerator(f, pow, e == 0, mantissaIsZero, numBits);
-        } //End block
-        else
-        {
-            bigIntDigitGenerator(f, pow, e == 0, numBits);
-        } //End block
-        AbstractStringBuilder dst = (sb != null) ? sb : new StringBuilder(26);
-        if(inputNumber >= 1e7D || inputNumber <= -1e7D
-                || (inputNumber > -1e-3D && inputNumber < 1e-3D))        
-        {
-            freeFormatExponential(dst, positive);
-        } //End block
-        else
-        {
-            freeFormat(dst, positive);
-        } //End block
-String var8EEABFE9064AA4A4E48633B57953C96D_1031323988 =         (sb != null) ? null : dst.toString();
-        var8EEABFE9064AA4A4E48633B57953C96D_1031323988.addTaint(taint);
-        return var8EEABFE9064AA4A4E48633B57953C96D_1031323988;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.523 -0400", hash_original_method = "2E0F3580AFBA548A22C88B300D06F425", hash_generated_method = "2026B57DDE8FAB4DF918847A4D9F4FC9")
-    public String floatToString(float f) {
-        addTaint(f);
-String varB391F46B8760ED0A83E036BDEFCD27E0_588257281 =         convertFloat(null, f);
-        varB391F46B8760ED0A83E036BDEFCD27E0_588257281.addTaint(taint);
-        return varB391F46B8760ED0A83E036BDEFCD27E0_588257281;
-        // ---------- Original Method ----------
-        //return convertFloat(null, f);
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.524 -0400", hash_original_method = "A5528970A4B6C3EDBBDAB69CF73AE9A3", hash_generated_method = "4C340E7C710E2526B201FB211D0F8A9E")
-    @DSModeled(DSC.SAFE)
-    public void appendFloat(AbstractStringBuilder sb, float f) {
-        addTaint(f);
-        addTaint(sb.getTaint());
-        convertFloat(sb, f);
-        // ---------- Original Method ----------
-        //convertFloat(sb, f);
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.526 -0400", hash_original_method = "E5DE8038B72ADC299B522ADF153A4152", hash_generated_method = "E2B0D78517FA7A41F31FB48E47E92657")
-    @DSModeled(DSC.SAFE)
-    public String convertFloat(AbstractStringBuilder sb, float inputNumber) {
-        addTaint(inputNumber);
-        addTaint(sb.getTaint());
-        int inputNumberBits = Float.floatToRawIntBits(inputNumber);
-        boolean positive = (inputNumberBits & Float.SIGN_MASK) == 0;
-        int e = (inputNumberBits & Float.EXPONENT_MASK) >> Float.MANTISSA_BITS;
-        int f = inputNumberBits & Float.MANTISSA_MASK;
-        boolean mantissaIsZero = f == 0;
-        String quickResult = null;
-        if(e == 255)        
-        {
-            if(mantissaIsZero)            
-            {
-                quickResult = positive ? "Infinity" : "-Infinity";
-            } //End block
-            else
-            {
-                quickResult = "NaN";
-            } //End block
-        } //End block
-        else
-        if(e == 0 && mantissaIsZero)        
-        {
-            quickResult = positive ? "0.0" : "-0.0";
-        } //End block
-        if(quickResult != null)        
-        {
-String var9A8B76D48F32C2D137B4298AA9B38EF7_63141476 =             resultOrSideEffect(sb, quickResult);
-            var9A8B76D48F32C2D137B4298AA9B38EF7_63141476.addTaint(taint);
-            return var9A8B76D48F32C2D137B4298AA9B38EF7_63141476;
-        } //End block
-        int p = Float.EXPONENT_BIAS + Float.MANTISSA_BITS;
-        int pow;
-        int numBits = Float.MANTISSA_BITS;
-        if(e == 0)        
-        {
-            pow = 1 - p;
-            if(f < 8)            
-            {
-                f = f << 2;
-                pow -= 2;
-            } //End block
-            int ff = f;
-            while
-((ff & 0x00800000) == 0)            
-            {
-                ff = ff << 1;
-                numBits--;
-            } //End block
-        } //End block
-        else
-        {
-            f = f | 0x00800000;
-            pow = e - p;
-        } //End block
-        firstK = digitCount = 0;
-        if(-59 < pow && pow < 35 || (pow == -59 && !mantissaIsZero))        
-        {
-            longDigitGenerator(f, pow, e == 0, mantissaIsZero, numBits);
-        } //End block
-        else
-        {
-            bigIntDigitGenerator(f, pow, e == 0, numBits);
-        } //End block
-        AbstractStringBuilder dst = (sb != null) ? sb : new StringBuilder(26);
-        if(inputNumber >= 1e7f || inputNumber <= -1e7f
-                || (inputNumber > -1e-3f && inputNumber < 1e-3f))        
-        {
-            freeFormatExponential(dst, positive);
-        } //End block
-        else
-        {
-            freeFormat(dst, positive);
-        } //End block
-String var8EEABFE9064AA4A4E48633B57953C96D_897356997 =         (sb != null) ? null : dst.toString();
-        var8EEABFE9064AA4A4E48633B57953C96D_897356997.addTaint(taint);
-        return var8EEABFE9064AA4A4E48633B57953C96D_897356997;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.527 -0400", hash_original_method = "C9139C7071A5044040591AD73A0078E9", hash_generated_method = "DF0DA0D72AB2EDCC9146BC22E27677F0")
-    @DSModeled(DSC.BAN)
-    private void freeFormatExponential(AbstractStringBuilder sb, boolean positive) {
-        addTaint(positive);
-        addTaint(sb.getTaint());
-        int digitIndex = 0;
-        if(!positive)        
-        {
-            sb.append0('-');
-        } //End block
-        sb.append0((char) ('0' + digits[digitIndex++]));
-        sb.append0('.');
-        int k = firstK;
-        int exponent = k;
-        while
-(true)        
-        {
-            k--;
-            if(digitIndex >= digitCount)            
-            {
-                break;
-            } //End block
-            sb.append0((char) ('0' + digits[digitIndex++]));
-        } //End block
-        if(k == exponent - 1)        
-        {
-            sb.append0('0');
-        } //End block
-        sb.append0('E');
-        IntegralToString.appendInt(sb, exponent);
-        // ---------- Original Method ----------
-        //int digitIndex = 0;
-        //if (!positive) {
-            //sb.append0('-');
-        //}
-        //sb.append0((char) ('0' + digits[digitIndex++]));
-        //sb.append0('.');
-        //int k = firstK;
-        //int exponent = k;
-        //while (true) {
-            //k--;
-            //if (digitIndex >= digitCount) {
-                //break;
-            //}
-            //sb.append0((char) ('0' + digits[digitIndex++]));
-        //}
-        //if (k == exponent - 1) {
-            //sb.append0('0');
-        //}
-        //sb.append0('E');
-        //IntegralToString.appendInt(sb, exponent);
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.527 -0400", hash_original_method = "81B49BC2D9465FB81325CD1E0D55DA15", hash_generated_method = "F75125C491EFD4B5CF589E85703570C4")
-    @DSModeled(DSC.BAN)
-    private void freeFormat(AbstractStringBuilder sb, boolean positive) {
-        addTaint(positive);
-        addTaint(sb.getTaint());
-        int digitIndex = 0;
-        if(!positive)        
-        {
-            sb.append0('-');
-        } //End block
-        int k = firstK;
-        if(k < 0)        
-        {
-            sb.append0('0');
-            sb.append0('.');
-for(int i = k + 1;i < 0;++i)
-            {
-                sb.append0('0');
-            } //End block
-        } //End block
-        int U = digits[digitIndex++];
-        do {
-            {
-                if(U != -1)                
-                {
-                    sb.append0((char) ('0' + U));
-                } //End block
-                else
-                if(k >= -1)                
-                {
-                    sb.append0('0');
-                } //End block
-                if(k == 0)                
-                {
-                    sb.append0('.');
-                } //End block
-                k--;
-                U = digitIndex < digitCount ? digits[digitIndex++] : -1;
-            } //End block
-} while (U != -1 || k >= -1);
-        // ---------- Original Method ----------
-        //int digitIndex = 0;
-        //if (!positive) {
-            //sb.append0('-');
-        //}
-        //int k = firstK;
-        //if (k < 0) {
-            //sb.append0('0');
-            //sb.append0('.');
-            //for (int i = k + 1; i < 0; ++i) {
-                //sb.append0('0');
-            //}
-        //}
-        //int U = digits[digitIndex++];
-        //do {
-            //if (U != -1) {
-                //sb.append0((char) ('0' + U));
-            //} else if (k >= -1) {
-                //sb.append0('0');
-            //}
-            //if (k == 0) {
-                //sb.append0('.');
-            //}
-            //k--;
-            //U = digitIndex < digitCount ? digits[digitIndex++] : -1;
-        //} while (U != -1 || k >= -1);
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.528 -0400", hash_original_method = "83E7E0138396E030AA4AE60F27CCD6BF", hash_generated_method = "E4714EA4E71BB41E4DA00CDB72CD4BD6")
-    private void bigIntDigitGenerator(long f, int e, boolean isDenormalized, int p) {
-    }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.530 -0400", hash_original_method = "6A17AA5B213AA1683132D90321A5CCE9", hash_generated_method = "E43B3BEE7A9C7BCE6E3CD8D745468F89")
-    private void longDigitGenerator(long f, int e, boolean isDenormalized,
-            boolean mantissaIsZero, int p) {
-        addTaint(p);
-        addTaint(mantissaIsZero);
-        addTaint(isDenormalized);
-        addTaint(e);
-        addTaint(f);
-        long R;
-        long S;
-        long M;
-        if(e >= 0)        
-        {
-            M = 1l << e;
-            if(!mantissaIsZero)            
-            {
-                R = f << (e + 1);
-                S = 2;
-            } //End block
-            else
-            {
-                R = f << (e + 2);
-                S = 4;
-            } //End block
-        } //End block
-        else
-        {
-            M = 1;
-            if(isDenormalized || !mantissaIsZero)            
-            {
-                R = f << 1;
-                S = 1l << (1 - e);
-            } //End block
-            else
-            {
-                R = f << 2;
-                S = 1l << (2 - e);
-            } //End block
-        } //End block
-        int k = (int) Math.ceil((e + p - 1) * invLogOfTenBaseTwo - 1e-10);
-        if(k > 0)        
-        {
-            S = S * MathUtils.LONG_POWERS_OF_TEN[k];
-        } //End block
-        else
-        if(k < 0)        
-        {
-            long scale = MathUtils.LONG_POWERS_OF_TEN[-k];
-            R = R * scale;
-            M = M == 1 ? scale : M * scale;
-        } //End block
-        if(R + M > S)        
-        {
-            firstK = k;
-        } //End block
-        else
-        {
-            firstK = k - 1;
-            R = R * 10;
-            M = M * 10;
-        } //End block
-        boolean low;
-        boolean high;
-        int U;
-        while
-(true)        
-        {
-            U = 0;
-for(int i = 3;i >= 0;i--)
-            {
-                long remainder = R - (S << i);
-                if(remainder >= 0)                
-                {
-                    R = remainder;
-                    U += 1 << i;
-                } //End block
-            } //End block
-            low = R < M;
-            high = R + M > S;
-            if(low || high)            
-            {
-                break;
-            } //End block
-            R = R * 10;
-            M = M * 10;
-            digits[digitCount++] = U;
-        } //End block
-        if(low && !high)        
-        {
-            digits[digitCount++] = U;
-        } //End block
-        else
-        if(high && !low)        
-        {
-            digits[digitCount++] = U + 1;
-        } //End block
-        else
-        if((R << 1) < S)        
-        {
-            digits[digitCount++] = U;
-        } //End block
-        else
-        {
-            digits[digitCount++] = U + 1;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
     }
 
     
@@ -516,8 +46,314 @@ for(int i = 3;i >= 0;i--)
 
         
 };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.530 -0400", hash_original_field = "2F77789CC0DAB0E5A1919C7EEAB90978", hash_generated_field = "CB87C311F6043A6FA9F065A81B47C7CD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.660 -0500", hash_original_field = "DDCFC4BA9A320738A311B6CDFAC04909", hash_generated_field = "CB87C311F6043A6FA9F065A81B47C7CD")
+
 
     private static final double invLogOfTenBaseTwo = Math.log(2.0) / Math.log(10.0);
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.662 -0500", hash_original_field = "7B483AA2F3A8F35DB64B8F104D661A1E", hash_generated_field = "6D9BB978CBD3D3FD82983DAB50AF5B36")
+
+
+    private int firstK;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.664 -0500", hash_original_field = "43D0909B7EC78B784A77E0B7A5D12574", hash_generated_field = "50690E06A9DD54E798BAB9384D861132")
+
+    private final int[] digits = new int[64];
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.667 -0500", hash_original_field = "DA306FBA251AF5817D2AA075E284A0EC", hash_generated_field = "A3250AF80A97B4CAE044DFA388B9EA6A")
+
+    private int digitCount;
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.669 -0500", hash_original_method = "F7A95644C563B2D2A217A4C43DE10AFD", hash_generated_method = "51776C658104A660CFC7D2506C25B592")
+    
+private RealToString() {
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.677 -0500", hash_original_method = "1884E8ED6DAC8970F9D7F2BC46F506BE", hash_generated_method = "C5A77350F7EC45269ABE48122B95663D")
+    
+public String doubleToString(double d) {
+        return convertDouble(null, d);
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.679 -0500", hash_original_method = "60FFADFBFC8614534238C3F90209FDC5", hash_generated_method = "CD9EC8ED1D84EEF20DEB8AFBCD0E782C")
+    
+public void appendDouble(AbstractStringBuilder sb, double d) {
+        convertDouble(sb, d);
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.683 -0500", hash_original_method = "3B1841CA85DCDA9CC6F8697012DC38A6", hash_generated_method = "5848186623705B9B0A9C31305748F30C")
+    
+private String convertDouble(AbstractStringBuilder sb, double inputNumber) {
+        long inputNumberBits = Double.doubleToRawLongBits(inputNumber);
+        boolean positive = (inputNumberBits & Double.SIGN_MASK) == 0;
+        int e = (int) ((inputNumberBits & Double.EXPONENT_MASK) >> Double.MANTISSA_BITS);
+        long f = inputNumberBits & Double.MANTISSA_MASK;
+        boolean mantissaIsZero = f == 0;
+
+        String quickResult = null;
+        if (e == 2047) {
+            if (mantissaIsZero) {
+                quickResult = positive ? "Infinity" : "-Infinity";
+            } else {
+                quickResult = "NaN";
+            }
+        } else if (e == 0) {
+            if (mantissaIsZero) {
+                quickResult = positive ? "0.0" : "-0.0";
+            } else if (f == 1) {
+                // special case to increase precision even though 2 * Double.MIN_VALUE is 1.0e-323
+                quickResult = positive ? "4.9E-324" : "-4.9E-324";
+            }
+        }
+        if (quickResult != null) {
+            return resultOrSideEffect(sb, quickResult);
+        }
+
+        int p = Double.EXPONENT_BIAS + Double.MANTISSA_BITS; // the power offset (precision)
+        int pow;
+        int numBits = Double.MANTISSA_BITS;
+        if (e == 0) {
+            pow = 1 - p; // a denormalized number
+            long ff = f;
+            while ((ff & 0x0010000000000000L) == 0) {
+                ff = ff << 1;
+                numBits--;
+            }
+        } else {
+            // 0 < e < 2047
+            // a "normalized" number
+            f = f | 0x0010000000000000L;
+            pow = e - p;
+        }
+
+        firstK = digitCount = 0;
+        if (-59 < pow && pow < 6 || (pow == -59 && !mantissaIsZero)) {
+            longDigitGenerator(f, pow, e == 0, mantissaIsZero, numBits);
+        } else {
+            bigIntDigitGenerator(f, pow, e == 0, numBits);
+        }
+        AbstractStringBuilder dst = (sb != null) ? sb : new StringBuilder(26);
+        if (inputNumber >= 1e7D || inputNumber <= -1e7D
+                || (inputNumber > -1e-3D && inputNumber < 1e-3D)) {
+            freeFormatExponential(dst, positive);
+        } else {
+            freeFormat(dst, positive);
+        }
+        return (sb != null) ? null : dst.toString();
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.685 -0500", hash_original_method = "2E0F3580AFBA548A22C88B300D06F425", hash_generated_method = "0226850FC0A373006994FC1BF3B248F6")
+    
+public String floatToString(float f) {
+        return convertFloat(null, f);
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.688 -0500", hash_original_method = "A5528970A4B6C3EDBBDAB69CF73AE9A3", hash_generated_method = "8FABAB0166BFE09DCEC037AE095C10A4")
+    
+public void appendFloat(AbstractStringBuilder sb, float f) {
+        convertFloat(sb, f);
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.692 -0500", hash_original_method = "E5DE8038B72ADC299B522ADF153A4152", hash_generated_method = "B2A7C1F6A2239EC1955869A0760FC556")
+    
+public String convertFloat(AbstractStringBuilder sb, float inputNumber) {
+        int inputNumberBits = Float.floatToRawIntBits(inputNumber);
+        boolean positive = (inputNumberBits & Float.SIGN_MASK) == 0;
+        int e = (inputNumberBits & Float.EXPONENT_MASK) >> Float.MANTISSA_BITS;
+        int f = inputNumberBits & Float.MANTISSA_MASK;
+        boolean mantissaIsZero = f == 0;
+
+        String quickResult = null;
+        if (e == 255) {
+            if (mantissaIsZero) {
+                quickResult = positive ? "Infinity" : "-Infinity";
+            } else {
+                quickResult = "NaN";
+            }
+        } else if (e == 0 && mantissaIsZero) {
+            quickResult = positive ? "0.0" : "-0.0";
+        }
+        if (quickResult != null) {
+            return resultOrSideEffect(sb, quickResult);
+        }
+
+        int p = Float.EXPONENT_BIAS + Float.MANTISSA_BITS; // the power offset (precision)
+        int pow;
+        int numBits = Float.MANTISSA_BITS;
+        if (e == 0) {
+            pow = 1 - p; // a denormalized number
+            if (f < 8) { // want more precision with smallest values
+                f = f << 2;
+                pow -= 2;
+            }
+            int ff = f;
+            while ((ff & 0x00800000) == 0) {
+                ff = ff << 1;
+                numBits--;
+            }
+        } else {
+            // 0 < e < 255
+            // a "normalized" number
+            f = f | 0x00800000;
+            pow = e - p;
+        }
+
+        firstK = digitCount = 0;
+        if (-59 < pow && pow < 35 || (pow == -59 && !mantissaIsZero)) {
+            longDigitGenerator(f, pow, e == 0, mantissaIsZero, numBits);
+        } else {
+            bigIntDigitGenerator(f, pow, e == 0, numBits);
+        }
+        AbstractStringBuilder dst = (sb != null) ? sb : new StringBuilder(26);
+        if (inputNumber >= 1e7f || inputNumber <= -1e7f
+                || (inputNumber > -1e-3f && inputNumber < 1e-3f)) {
+            freeFormatExponential(dst, positive);
+        } else {
+            freeFormat(dst, positive);
+        }
+        return (sb != null) ? null : dst.toString();
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.695 -0500", hash_original_method = "C9139C7071A5044040591AD73A0078E9", hash_generated_method = "46EC5F47320CB4889A37E8F8FCB7C1B6")
+    
+private void freeFormatExponential(AbstractStringBuilder sb, boolean positive) {
+        int digitIndex = 0;
+        if (!positive) {
+            sb.append0('-');
+        }
+        sb.append0((char) ('0' + digits[digitIndex++]));
+        sb.append0('.');
+
+        int k = firstK;
+        int exponent = k;
+        while (true) {
+            k--;
+            if (digitIndex >= digitCount) {
+                break;
+            }
+            sb.append0((char) ('0' + digits[digitIndex++]));
+        }
+
+        if (k == exponent - 1) {
+            sb.append0('0');
+        }
+        sb.append0('E');
+        IntegralToString.appendInt(sb, exponent);
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.698 -0500", hash_original_method = "81B49BC2D9465FB81325CD1E0D55DA15", hash_generated_method = "D73E1B369B32FBCBFEDAC49BEE1134F1")
+    
+private void freeFormat(AbstractStringBuilder sb, boolean positive) {
+        int digitIndex = 0;
+        if (!positive) {
+            sb.append0('-');
+        }
+        int k = firstK;
+        if (k < 0) {
+            sb.append0('0');
+            sb.append0('.');
+            for (int i = k + 1; i < 0; ++i) {
+                sb.append0('0');
+            }
+        }
+        int U = digits[digitIndex++];
+        do {
+            if (U != -1) {
+                sb.append0((char) ('0' + U));
+            } else if (k >= -1) {
+                sb.append0('0');
+            }
+            if (k == 0) {
+                sb.append0('.');
+            }
+            k--;
+            U = digitIndex < digitCount ? digits[digitIndex++] : -1;
+        } while (U != -1 || k >= -1);
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.702 -0500", hash_original_method = "83E7E0138396E030AA4AE60F27CCD6BF", hash_generated_method = "CE87286F710EAF6BF35F0A28E4FD7CB6")
+    
+    private void bigIntDigitGenerator(long f, int e, boolean isDenormalized, int p){
+    	//Formerly a native method
+    	addTaint(f);
+    	addTaint(e);
+    	addTaint(isDenormalized);
+    	addTaint(p);
+    }
+
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.705 -0500", hash_original_method = "6A17AA5B213AA1683132D90321A5CCE9", hash_generated_method = "6CC7C02F98A2E528A75F213DFC3EA7C7")
+    
+private void longDigitGenerator(long f, int e, boolean isDenormalized,
+            boolean mantissaIsZero, int p) {
+        long R, S, M;
+        if (e >= 0) {
+            M = 1l << e;
+            if (!mantissaIsZero) {
+                R = f << (e + 1);
+                S = 2;
+            } else {
+                R = f << (e + 2);
+                S = 4;
+            }
+        } else {
+            M = 1;
+            if (isDenormalized || !mantissaIsZero) {
+                R = f << 1;
+                S = 1l << (1 - e);
+            } else {
+                R = f << 2;
+                S = 1l << (2 - e);
+            }
+        }
+
+        int k = (int) Math.ceil((e + p - 1) * invLogOfTenBaseTwo - 1e-10);
+
+        if (k > 0) {
+            S = S * MathUtils.LONG_POWERS_OF_TEN[k];
+        } else if (k < 0) {
+            long scale = MathUtils.LONG_POWERS_OF_TEN[-k];
+            R = R * scale;
+            M = M == 1 ? scale : M * scale;
+        }
+
+        if (R + M > S) { // was M_plus
+            firstK = k;
+        } else {
+            firstK = k - 1;
+            R = R * 10;
+            M = M * 10;
+        }
+
+        boolean low, high;
+        int U;
+        while (true) {
+            // Set U to floor(R/S) and R to the remainder, using *unsigned* 64-bit division
+            U = 0;
+            for (int i = 3; i >= 0; i--) {
+                long remainder = R - (S << i);
+                if (remainder >= 0) {
+                    R = remainder;
+                    U += 1 << i;
+                }
+            }
+
+            low = R < M; // was M_minus
+            high = R + M > S; // was M_plus
+
+            if (low || high) {
+                break;
+            }
+            R = R * 10;
+            M = M * 10;
+            digits[digitCount++] = U;
+        }
+        if (low && !high) {
+            digits[digitCount++] = U;
+        } else if (high && !low) {
+            digits[digitCount++] = U + 1;
+        } else if ((R << 1) < S) {
+            digits[digitCount++] = U;
+        } else {
+            digits[digitCount++] = U + 1;
+        }
+    }
 }
 

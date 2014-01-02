@@ -1,6 +1,8 @@
 package java.lang;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.InputStream;
 import java.io.Serializable;
@@ -38,61 +40,77 @@ import dalvik.system.VMStack;
 import droidsafe.helpers.DSUtils;
 
 public final class Class<T> implements Serializable, AnnotatedElement, GenericDeclaration, Type {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.624 -0400", hash_original_field = "B068931CC450442B63F5B3D276EA4297", hash_generated_field = "0C932604663D7874D47A840F24BC4843")
 
-    @DSVAModeled
-    private transient String name;
+    /**
+     * Returns a {@code Class} object which represents the class with the
+     * specified name. The name should be the name of a class as described in
+     * the {@link Class class definition}; however, {@code Class}es representing
+     * primitive types can not be found using this method.
+     * <p>
+     * If the class has not been loaded so far, it is being loaded and linked
+     * first. This is done through either the class loader of the calling class
+     * or one of its parent class loaders. The class is also being initialized,
+     * which means that a possible static initializer block is executed.
+     *
+     * @param className
+     *            the name of the non-primitive-type class to find.
+     * @return the named {@code Class} instance.
+     * @throws ClassNotFoundException
+     *             if the requested class can not be found.
+     * @throws LinkageError
+     *             if an error occurs during linkage
+     * @throws ExceptionInInitializerError
+     *             if an exception occurs during static initialization of a
+     *             class.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.871 -0500", hash_original_method = "9BF97E3639356761488C43790786ED6D", hash_generated_method = "22AAAEA8B777BEFA6A0FBF037144BB50")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.490 -0400", hash_original_method = "290C4C92EA00F4559290C8F8CF6D9B35", hash_generated_method = "E946603C401B0F4C9A405067C69B1976")
-	public  Class() {
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.624 -0400", hash_original_method = "D48BE9AB17D8906757B56E4D680A2C57", hash_generated_method = "F381E7F26C23D7611FE4A21954F45510")
-    private String getSignatureAttribute() {
-        Object[] annotation = getSignatureAnnotation();
-        if(annotation == null)        
-        {
-String var540C13E9E156B687226421B24F2DF178_2138252727 =             null;
-            var540C13E9E156B687226421B24F2DF178_2138252727.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_2138252727;
-        } //End block
-String var2F8E51633C4B934C6A6871930033C26B_2107392196 =         StringUtils.combineStrings(annotation);
-        var2F8E51633C4B934C6A6871930033C26B_2107392196.addTaint(taint);
-        return var2F8E51633C4B934C6A6871930033C26B_2107392196;
-        // ---------- Original Method ----------
-        //Object[] annotation = getSignatureAnnotation();
-        //if (annotation == null) {
-            //return null;
-        //}
-        //return StringUtils.combineStrings(annotation);
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.692 -0400", hash_original_method = "D517197DC7BA53960E7471B1FA197117", hash_generated_method = "580560D142C0CD8EEA5AC831F856A095")
-    private Object[] getSignatureAnnotation() {
-    	Object[] foo = new Object[0];
-    	foo.addTaint(this.taint);
-    	return foo;
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    public static Class<?> forName(String className) throws ClassNotFoundException {
+public static Class<?> forName(String className) throws ClassNotFoundException {
         return forName(className, true, VMStack.getCallingClassLoader());
     }
 
+    /**
+     * Returns a {@code Class} object which represents the class with the
+     * specified name. The name should be the name of a class as described in
+     * the {@link Class class definition}, however {@code Class}es representing
+     * primitive types can not be found using this method. Security rules will
+     * be obeyed.
+     * <p>
+     * If the class has not been loaded so far, it is being loaded and linked
+     * first. This is done through either the specified class loader or one of
+     * its parent class loaders. The caller can also request the class to be
+     * initialized, which means that a possible static initializer block is
+     * executed.
+     *
+     * @param className
+     *            the name of the non-primitive-type class to find.
+     * @param initializeBoolean
+     *            indicates whether the class should be initialized.
+     * @param classLoader
+     *            the class loader to use to load the class.
+     * @return the named {@code Class} instance.
+     * @throws ClassNotFoundException
+     *             if the requested class can not be found.
+     * @throws LinkageError
+     *             if an error occurs during linkage
+     * @throws ExceptionInInitializerError
+     *             if an exception occurs during static initialization of a
+     *             class.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.874 -0500", hash_original_method = "007FA0806960DEBB516C0AC4BBAC43FF", hash_generated_method = "96F9103EAAF63D703BB0D402C06D3482")
     
-    @DSModeled(DSC.BAN)
-    public static Class<?> forName(String className, boolean initializeBoolean,
+public static Class<?> forName(String className, boolean initializeBoolean,
             ClassLoader classLoader) throws ClassNotFoundException {
+
         if (classLoader == null) {
             classLoader = ClassLoader.getSystemClassLoader();
         }
+        // Catch an Exception thrown by the underlying native code. It wraps
+        // up everything inside a ClassNotFoundException, even if e.g. an
+        // Error occurred during initialization. This as a workaround for
+        // an ExceptionInInitilaizerError that's also wrapped. It is actually
+        // expected to be thrown. Maybe the same goes for other errors.
+        // Not wrapping up all the errors will break android though.
         Class<?> result;
         try {
             result = classForName(className, initializeBoolean,
@@ -117,13 +135,131 @@ String var2F8E51633C4B934C6A6871930033C26B_2107392196 =         StringUtils.comb
 
     
     @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.626 -0400", hash_original_method = "0A5E0D64FA55612B299C6956628C149D", hash_generated_method = "D65A47A68B039DD0ED589DE86DE4B062")
-    public Class<?>[] getClasses() {
-Class<?>[] var57EE08F656A9480168173204F99AA4D1_78090352 =         getFullListOfClasses(true);
-        var57EE08F656A9480168173204F99AA4D1_78090352.addTaint(taint);
-        return var57EE08F656A9480168173204F99AA4D1_78090352;
+    private static ClassLoader getClassLoader(Class<?> clazz) {
+    	return clazz.getClassLoader();
+    }
+
+    
+    @DSModeled(DSC.BAN)
+    private static Class<?>[] getDeclaredClasses(Class<?> clazz, boolean publicOnly) {
+    	Class[] ret = new Class[0];
+    	ret.addTaint(clazz.taint);
+    	ret.addTaint(publicOnly);
+    	return ret;
+    }
+
+    
+    @DSModeled(DSC.BAN)
+    private static <T> Constructor<T>[] getDeclaredConstructors(
+            Class<T> clazz, boolean publicOnly) {
+    	Constructor[] ret = new Constructor[0];
+    	ret.addTaint(clazz.taint);
+    	ret.addTaint(publicOnly);
+    	return ret;
+    }
+
+    
+    @DSModeled(DSC.SAFE)
+    static Field[] getDeclaredFields(Class<?> clazz, boolean publicOnly) {
+    	Field[] ret = new Field[0];
+    	ret.addTaint(clazz.taint);
+    	ret.addTaint(publicOnly);
+    	return ret;
+    }
+
+    
+    @DSModeled(DSC.BAN)
+    static Field getDeclaredField(Class<?> clazz, String name) {
+    	Field ret = new Field();
+    	ret.addTaint(clazz.taint);
+    	ret.addTaint(name.taint);
+    	return ret;
+    }
+
+    
+    @DSModeled(DSC.SAFE)
+    static Method[] getDeclaredMethods(Class<?> clazz, boolean publicOnly) {
+    	Method[] ret = new Method[0];
+    	ret[0].addTaint(clazz.taint);
+    	ret[0].addTaint(publicOnly);
+    	return ret;
+    }
+
+    
+    @DSModeled(DSC.SAFE)
+    static Member getDeclaredConstructorOrMethod(Class clazz, String name, Class[] args) {
+    	Method ret = new Method();
+    	ret.addTaint(clazz.taint);
+    	ret.addTaint(name.taint);
+    	ret.addTaint(args[0].taint);
+    	return ret;
+    }
+
+    
+    @DSModeled(DSC.SAFE)
+    private static int getModifiers(Class<?> clazz, boolean ignoreInnerClassesAttrib) {
+                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_64442902 = DSUtils.UNKNOWN_INT;
+        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_64442902;
+    }
+
+    
+    @DSModeled(DSC.SAFE)
+    private static <T extends Object> T[] arraycopy(T[] result, T[] head, T[] tail) {
+        System.arraycopy(head, 0, result, 0, head.length);
+        System.arraycopy(tail, 0, result, head.length, tail.length);
+        return result;
+    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.857 -0500", hash_original_field = "5345B2523025935E4E520B1555936347", hash_generated_field = "A2E36971CC30DE91D1AF4E9C02F420A3")
+
+
+    private static final long serialVersionUID = 3206093459760846163L;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.860 -0500", hash_original_field = "BF45F7481B8091DE3CBF80E94F7F940B", hash_generated_field = "0C932604663D7874D47A840F24BC4843")
+
+    private transient String name;
+    
+    @DSModeled(DSC.BAN)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.490 -0400", hash_original_method = "290C4C92EA00F4559290C8F8CF6D9B35", hash_generated_method = "E946603C401B0F4C9A405067C69B1976")
+	public  Class() {
         // ---------- Original Method ----------
-        //return getFullListOfClasses(true);
+    }
+
+    /**
+     * Get the Signature attribute for this class.  Returns null if not found.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.865 -0500", hash_original_method = "D48BE9AB17D8906757B56E4D680A2C57", hash_generated_method = "B78AD642016FCC1825F3A1A209AE1A79")
+    
+private String getSignatureAttribute() {
+        Object[] annotation = getSignatureAnnotation();
+
+        if (annotation == null) {
+            return null;
+        }
+
+        return StringUtils.combineStrings(annotation);
+    }
+
+    
+    @DSModeled(DSC.SAFE)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.692 -0400", hash_original_method = "D517197DC7BA53960E7471B1FA197117", hash_generated_method = "580560D142C0CD8EEA5AC831F856A095")
+    private Object[] getSignatureAnnotation() {
+    	Object[] foo = new Object[0];
+    	foo.addTaint(this.taint);
+    	return foo;
+    }
+
+    /**
+     * Returns an array containing {@code Class} objects for all public classes
+     * and interfaces that are members of this class. This includes public
+     * members inherited from super classes and interfaces. If there are no such
+     * class members or if this object represents a primitive type then an array
+     * of length 0 is returned.
+     *
+     * @return the public class members of the class represented by this object.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.881 -0500", hash_original_method = "0A5E0D64FA55612B299C6956628C149D", hash_generated_method = "D7203C509B77A1072C11ED193F651546")
+    
+public Class<?>[] getClasses() {
+        return getFullListOfClasses(true);
     }
 
     
@@ -179,141 +315,134 @@ A var540C13E9E156B687226421B24F2DF178_936883154 =         null;
         //return null;
     }
 
+    /**
+     * Returns all the annotations of this class. If there are no annotations
+     * then an empty array is returned.
+     *
+     * @return a copy of the array containing this class' annotations.
+     * @see #getDeclaredAnnotations()
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.887 -0500", hash_original_method = "214E042C121A5AA68E2A99AA55DE15AA", hash_generated_method = "6FD3E304A8DF098A20CB6436606F5062")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.627 -0400", hash_original_method = "214E042C121A5AA68E2A99AA55DE15AA", hash_generated_method = "4B551EF27DC43B309DA4B1B8F35E960C")
-    public Annotation[] getAnnotations() {
+public Annotation[] getAnnotations() {
+        /*
+         * We need to get the annotations declared on this class, plus the
+         * annotations from superclasses that have the "@Inherited" annotation
+         * set.  We create a temporary map to use while we accumulate the
+         * annotations and convert it to an array at the end.
+         *
+         * It's possible to have duplicates when annotations are inherited.
+         * We use a Map to filter those out.
+         *
+         * HashMap might be overkill here.
+         */
         HashMap<Class, Annotation> map = new HashMap<Class, Annotation>();
         Annotation[] declaredAnnotations = getDeclaredAnnotations();
-for(int i = declaredAnnotations.length-1;i >= 0;--i)
-        {
+
+        for (int i = declaredAnnotations.length-1; i >= 0; --i) {
             map.put(declaredAnnotations[i].annotationType(), declaredAnnotations[i]);
-        } //End block
-for(Class<?> sup = getSuperclass();sup != null;sup = sup.getSuperclass())
-        {
-            declaredAnnotations = sup.getDeclaredAnnotations();
-for(int i = declaredAnnotations.length-1;i >= 0;--i)
-            {
-                Class<?> clazz = declaredAnnotations[i].annotationType();
-                if(!map.containsKey(clazz) && clazz.isAnnotationPresent(Inherited.class))                
-                {
-                    map.put(clazz, declaredAnnotations[i]);
-                } //End block
-            } //End block
-        } //End block
-        Collection<Annotation> coll = map.values();
-Annotation[] var4D8E3EA02357DB4A1B69E2F9F800E29B_574772046 =         coll.toArray(new Annotation[coll.size()]);
-        var4D8E3EA02357DB4A1B69E2F9F800E29B_574772046.addTaint(taint);
-        return var4D8E3EA02357DB4A1B69E2F9F800E29B_574772046;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.627 -0400", hash_original_method = "79C3FAE0B22F6799153600E0BD41AE53", hash_generated_method = "81BD4EFEAC4B38E4C50966BAA6459CC9")
-    public String getCanonicalName() {
-        if(isLocalClass() || isAnonymousClass())        
-        {
-String var540C13E9E156B687226421B24F2DF178_242186414 =         null;
-        var540C13E9E156B687226421B24F2DF178_242186414.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_242186414;
         }
-        if(isArray())        
-        {
+        for (Class<?> sup = getSuperclass(); sup != null; sup = sup.getSuperclass()) {
+            declaredAnnotations = sup.getDeclaredAnnotations();
+            for (int i = declaredAnnotations.length-1; i >= 0; --i) {
+                Class<?> clazz = declaredAnnotations[i].annotationType();
+                if (!map.containsKey(clazz) && clazz.isAnnotationPresent(Inherited.class)) {
+                    map.put(clazz, declaredAnnotations[i]);
+                }
+            }
+        }
+
+        /* convert annotation values from HashMap to array */
+        Collection<Annotation> coll = map.values();
+        return coll.toArray(new Annotation[coll.size()]);
+    }
+
+    /**
+     * Returns the canonical name of this class. If this class does not have a
+     * canonical name as defined in the Java Language Specification, then the
+     * method returns {@code null}.
+     *
+     * @return this class' canonical name, or {@code null} if it does not have a
+     *         canonical name.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.889 -0500", hash_original_method = "79C3FAE0B22F6799153600E0BD41AE53", hash_generated_method = "D53A66E2D95F9FCB432551D2F3BDDC4D")
+    
+public String getCanonicalName() {
+        if (isLocalClass() || isAnonymousClass())
+            return null;
+
+        if (isArray()) {
+            /*
+             * The canonical name of an array type depends on the (existence of)
+             * the component type's canonical name.
+             */
             String name = getComponentType().getCanonicalName();
-            if(name != null)            
-            {
-String var23BD481D46C5AB23ACCAFBC01875058D_10959188 =                 name + "[]";
-                var23BD481D46C5AB23ACCAFBC01875058D_10959188.addTaint(taint);
-                return var23BD481D46C5AB23ACCAFBC01875058D_10959188;
-            } //End block
-        } //End block
-        else
-        if(isMemberClass())        
-        {
+            if (name != null) {
+                return name + "[]";
+            }
+        } else if (isMemberClass()) {
+            /*
+             * The canonical name of an inner class depends on the (existence
+             * of) the declaring class' canonical name.
+             */
             String name = getDeclaringClass().getCanonicalName();
-            if(name != null)            
-            {
-String varACD0E7C41AB29D5A792C8B678E06D150_1495589943 =                 name + "." + getSimpleName();
-                varACD0E7C41AB29D5A792C8B678E06D150_1495589943.addTaint(taint);
-                return varACD0E7C41AB29D5A792C8B678E06D150_1495589943;
-            } //End block
-        } //End block
-        else
-        {
-String var674CAC8E34E5C6C4D042792BFADA198C_645417913 =             getName();
-            var674CAC8E34E5C6C4D042792BFADA198C_645417913.addTaint(taint);
-            return var674CAC8E34E5C6C4D042792BFADA198C_645417913;
-        } //End block
-String var540C13E9E156B687226421B24F2DF178_437128057 =         null;
-        var540C13E9E156B687226421B24F2DF178_437128057.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_437128057;
-        // ---------- Original Method ----------
-        //if (isLocalClass() || isAnonymousClass())
-            //return null;
-        //if (isArray()) {
-            //String name = getComponentType().getCanonicalName();
-            //if (name != null) {
-                //return name + "[]";
-            //}
-        //} else if (isMemberClass()) {
-            //String name = getDeclaringClass().getCanonicalName();
-            //if (name != null) {
-                //return name + "." + getSimpleName();
-            //}
-        //} else {
-            //return getName();
-        //}
-        //return null;
+            if (name != null) {
+                return name + "." + getSimpleName();
+            }
+        } else {
+            /*
+             * The canonical name of a top-level class or primitive type is
+             * equal to the fully qualified name.
+             */
+            return getName();
+        }
+
+        /*
+         * Other classes don't have a canonical name.
+         */
+        return null;
     }
 
+    /**
+     * Returns the class loader which was used to load the class represented by
+     * this {@code Class}. Implementations are free to return {@code null} for
+     * classes that were loaded by the bootstrap class loader. The Android
+     * reference implementation, though, returns a reference to an actual
+     * representation of the bootstrap class loader.
+     *
+     * @return the class loader for the represented class.
+     * @see ClassLoader
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.892 -0500", hash_original_method = "3030130FFB93A0C1BBA3E92339DE84EE", hash_generated_method = "B0FEF2208E9859EF6D970383264412F7")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.628 -0400", hash_original_method = "3030130FFB93A0C1BBA3E92339DE84EE", hash_generated_method = "E00AA8FEA6081F66C75CD71FF4F609FC")
-    public ClassLoader getClassLoader() {
-        if(this.isPrimitive())        
-        {
-ClassLoader var540C13E9E156B687226421B24F2DF178_1917115939 =             null;
-            var540C13E9E156B687226421B24F2DF178_1917115939.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_1917115939;
-        } //End block
+public ClassLoader getClassLoader() {
+        if (this.isPrimitive()) {
+            return null;
+        }
+
         ClassLoader loader = getClassLoaderImpl();
-        if(loader == null)        
-        {
+        if (loader == null) {
             loader = BootClassLoader.getInstance();
-        } //End block
-ClassLoader var556906CF8230EF926A9ABDA8D8CDBEFA_2002422129 =         loader;
-        var556906CF8230EF926A9ABDA8D8CDBEFA_2002422129.addTaint(taint);
-        return var556906CF8230EF926A9ABDA8D8CDBEFA_2002422129;
-        // ---------- Original Method ----------
-        //if (this.isPrimitive()) {
-            //return null;
-        //}
-        //ClassLoader loader = getClassLoaderImpl();
-        //if (loader == null) {
-            //loader = BootClassLoader.getInstance();
-        //}
-        //return loader;
+        }
+        return loader;
     }
 
+    /**
+     * This must be provided by the VM vendor, as it is used by other provided
+     * class implementations in this package. Outside of this class, it is used
+     * by SecurityManager.classLoaderDepth(),
+     * currentClassLoader() and currentLoadedClass(). Return the ClassLoader for
+     * this Class without doing any security checks. The bootstrap ClassLoader
+     * is returned, unlike getClassLoader() which returns null in place of the
+     * bootstrap ClassLoader.
+     *
+     * @return the ClassLoader
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.894 -0500", hash_original_method = "CA71AD82665CF5FC19F2861C6018C612", hash_generated_method = "CA71AD82665CF5FC19F2861C6018C612")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.628 -0400", hash_original_method = "CA71AD82665CF5FC19F2861C6018C612", hash_generated_method = "CC7F6BAC62A26F0A14443C5A01CDDFA4")
-     ClassLoader getClassLoaderImpl() {
+ClassLoader getClassLoaderImpl() {
         ClassLoader loader = getClassLoader(this);
-ClassLoader varCF4789975F8C078EDDC0A2EE6321BC19_697004622 =         loader == null ? BootClassLoader.getInstance() : loader;
-        varCF4789975F8C078EDDC0A2EE6321BC19_697004622.addTaint(taint);
-        return varCF4789975F8C078EDDC0A2EE6321BC19_697004622;
-        // ---------- Original Method ----------
-        //ClassLoader loader = getClassLoader(this);
-        //return loader == null ? BootClassLoader.getInstance() : loader;
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    private static ClassLoader getClassLoader(Class<?> clazz) {
-    	return clazz.getClassLoader();
+        return loader == null ? BootClassLoader.getInstance() : loader;
     }
 
     
@@ -325,128 +454,96 @@ ClassLoader varCF4789975F8C078EDDC0A2EE6321BC19_697004622 =         loader == nu
     	return cl;
     }
 
+    /**
+     * Returns a {@code Constructor} object which represents the public
+     * constructor matching the specified parameter types.
+     *
+     * @param parameterTypes
+     *            the parameter types of the requested constructor.
+     *            {@code (Class[]) null} is equivalent to the empty array.
+     * @return the constructor described by {@code parameterTypes}.
+     * @throws NoSuchMethodException
+     *             if the constructor can not be found.
+     * @see #getDeclaredConstructor(Class[])
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.905 -0500", hash_original_method = "F0845B6DA735A4C36F51E7CB08D1D9A7", hash_generated_method = "2060266FA2D0F6DCF32A8D8414835B9B")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.628 -0400", hash_original_method = "F0845B6DA735A4C36F51E7CB08D1D9A7", hash_generated_method = "AF3BF7D2847B87E92369F3E0FA377EFE")
-    @SuppressWarnings("unchecked")
+@SuppressWarnings("unchecked")
     public Constructor<T> getConstructor(Class<?>... parameterTypes) throws NoSuchMethodException {
-        addTaint(parameterTypes[0].getTaint());
-Constructor<T> var47E06E3838B21F4A2F3DABBEB5CEAF67_137831484 =         (Constructor) getConstructorOrMethod("<init>", false, true, parameterTypes);
-        var47E06E3838B21F4A2F3DABBEB5CEAF67_137831484.addTaint(taint);
-        return var47E06E3838B21F4A2F3DABBEB5CEAF67_137831484;
-        // ---------- Original Method ----------
-        //return (Constructor) getConstructorOrMethod("<init>", false, true, parameterTypes);
+        return (Constructor) getConstructorOrMethod("<init>", false, true, parameterTypes);
     }
 
+    /**
+     * Returns a constructor or method with the specified name.
+     *
+     * @param name the method name, or "<init>" to return a constructor.
+     * @param recursive true to search supertypes.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.908 -0500", hash_original_method = "4EF95E7321A9A3F23E7914021D1D63A7", hash_generated_method = "98A59BB2F64617285B92F7E1C4D1EF02")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.629 -0400", hash_original_method = "4EF95E7321A9A3F23E7914021D1D63A7", hash_generated_method = "DA8179D78C8ECEF5A1CD6846841BC252")
-    private Member getConstructorOrMethod(String name, boolean recursive,
+private Member getConstructorOrMethod(String name, boolean recursive,
             boolean publicOnly, Class<?>[] parameterTypes) throws NoSuchMethodException {
-        addTaint(parameterTypes[0].getTaint());
-        addTaint(publicOnly);
-        addTaint(recursive);
-        addTaint(name.getTaint());
-        if(recursive && !publicOnly)        
-        {
-            AssertionError varA81442E36297E737EB908877E58260E8_51015181 = new AssertionError();
-            varA81442E36297E737EB908877E58260E8_51015181.addTaint(taint);
-            throw varA81442E36297E737EB908877E58260E8_51015181;
-        } //End block
-        if(name == null)        
-        {
-            NullPointerException varA117BA528B11F7D1AC96CABFD5286E5C_249086522 = new NullPointerException("name == null");
-            varA117BA528B11F7D1AC96CABFD5286E5C_249086522.addTaint(taint);
-            throw varA117BA528B11F7D1AC96CABFD5286E5C_249086522;
-        } //End block
-        if(parameterTypes == null)        
-        {
+        if (recursive && !publicOnly) {
+            throw new AssertionError(); // can't lookup non-public members recursively
+        }
+        if (name == null) {
+            throw new NullPointerException("name == null");
+        }
+        if (parameterTypes == null) {
             parameterTypes = EmptyArray.CLASS;
-        } //End block
-for(Class<?> c : parameterTypes)
-        {
-            if(c == null)            
-            {
-                NoSuchMethodException varA4C56224F20096ECA3BB3F14FA4B502E_1915855657 = new NoSuchMethodException("parameter type is null");
-                varA4C56224F20096ECA3BB3F14FA4B502E_1915855657.addTaint(taint);
-                throw varA4C56224F20096ECA3BB3F14FA4B502E_1915855657;
-            } //End block
-        } //End block
+        }
+        for (Class<?> c : parameterTypes) {
+            if (c == null) {
+                throw new NoSuchMethodException("parameter type is null");
+            }
+        }
         Member result = recursive
                 ? getPublicConstructorOrMethodRecursive(name, parameterTypes)
                 : Class.getDeclaredConstructorOrMethod(this, name, parameterTypes);
-        if(result == null || publicOnly && (result.getModifiers() & Modifier.PUBLIC) == 0)        
-        {
-            NoSuchMethodException varCC7AF5C3A968FEE7885B0585D35A6D6F_1394279535 = new NoSuchMethodException(name + " " + Arrays.toString(parameterTypes));
-            varCC7AF5C3A968FEE7885B0585D35A6D6F_1394279535.addTaint(taint);
-            throw varCC7AF5C3A968FEE7885B0585D35A6D6F_1394279535;
-        } //End block
-Member varDC838461EE2FA0CA4C9BBB70A15456B0_37218051 =         result;
-        varDC838461EE2FA0CA4C9BBB70A15456B0_37218051.addTaint(taint);
-        return varDC838461EE2FA0CA4C9BBB70A15456B0_37218051;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        if (result == null || publicOnly && (result.getModifiers() & Modifier.PUBLIC) == 0) {
+            throw new NoSuchMethodException(name + " " + Arrays.toString(parameterTypes));
+        }
+        return result;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.912 -0500", hash_original_method = "388841491B60993DDBB0AE9912E3B4BA", hash_generated_method = "619CFCA5B6AB6934299A174E960CA98B")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.630 -0400", hash_original_method = "388841491B60993DDBB0AE9912E3B4BA", hash_generated_method = "3281140ECD1E1C0F0D5988CE4375C0EC")
-    private Member getPublicConstructorOrMethodRecursive(String name, Class<?>[] parameterTypes) {
-        addTaint(parameterTypes[0].getTaint());
-        addTaint(name.getTaint());
-for(Class<?> c = this;c != null;c = c.getSuperclass())
-        {
+private Member getPublicConstructorOrMethodRecursive(String name, Class<?>[] parameterTypes) {
+        // search superclasses
+        for (Class<?> c = this; c != null; c = c.getSuperclass()) {
             Member result = Class.getDeclaredConstructorOrMethod(c, name, parameterTypes);
-            if(result != null && (result.getModifiers() & Modifier.PUBLIC) != 0)            
-            {
-Member varDC838461EE2FA0CA4C9BBB70A15456B0_2028787390 =                 result;
-                varDC838461EE2FA0CA4C9BBB70A15456B0_2028787390.addTaint(taint);
-                return varDC838461EE2FA0CA4C9BBB70A15456B0_2028787390;
-            } //End block
-        } //End block
-for(Class<?> c = this;c != null;c = c.getSuperclass())
-        {
-for(Class<?> ifc : c.getInterfaces())
-            {
+            if (result != null && (result.getModifiers() & Modifier.PUBLIC) != 0) {
+                return result;
+            }
+        }
+
+        // search implemented interfaces
+        for (Class<?> c = this; c != null; c = c.getSuperclass()) {
+            for (Class<?> ifc : c.getInterfaces()) {
                 Member result = ifc.getPublicConstructorOrMethodRecursive(name, parameterTypes);
-                if(result != null && (result.getModifiers() & Modifier.PUBLIC) != 0)                
-                {
-Member varDC838461EE2FA0CA4C9BBB70A15456B0_1298759409 =                     result;
-                    varDC838461EE2FA0CA4C9BBB70A15456B0_1298759409.addTaint(taint);
-                    return varDC838461EE2FA0CA4C9BBB70A15456B0_1298759409;
-                } //End block
-            } //End block
-        } //End block
-Member var540C13E9E156B687226421B24F2DF178_193240318 =         null;
-        var540C13E9E156B687226421B24F2DF178_193240318.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_193240318;
-        // ---------- Original Method ----------
-        //for (Class<?> c = this; c != null; c = c.getSuperclass()) {
-            //Member result = Class.getDeclaredConstructorOrMethod(c, name, parameterTypes);
-            //if (result != null && (result.getModifiers() & Modifier.PUBLIC) != 0) {
-                //return result;
-            //}
-        //}
-        //for (Class<?> c = this; c != null; c = c.getSuperclass()) {
-            //for (Class<?> ifc : c.getInterfaces()) {
-                //Member result = ifc.getPublicConstructorOrMethodRecursive(name, parameterTypes);
-                //if (result != null && (result.getModifiers() & Modifier.PUBLIC) != 0) {
-                    //return result;
-                //}
-            //}
-        //}
-        //return null;
+                if (result != null && (result.getModifiers() & Modifier.PUBLIC) != 0) {
+                    return result;
+                }
+            }
+        }
+
+        return null;
     }
 
+    /**
+     * Returns an array containing {@code Constructor} objects for all public
+     * constructors for the class represented by this {@code Class}. If there
+     * are no public constructors or if this {@code Class} represents an array
+     * class, a primitive type or void then an empty array is returned.
+     *
+     * @return an array with the public constructors of the class represented by
+     *         this {@code Class}.
+     * @see #getDeclaredConstructors()
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.914 -0500", hash_original_method = "A702CB469FC49B7BFA8C73D523E80DBC", hash_generated_method = "C6285A2293FC0FC9E24ABE031CAEAF52")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.630 -0400", hash_original_method = "A702CB469FC49B7BFA8C73D523E80DBC", hash_generated_method = "439B1BF20B06DC700EBEBDAD920EC571")
-    public Constructor<?>[] getConstructors() {
-Constructor<?>[] varA9159445F27BE5BF96D07DDC5E555495_1540592959 =         getDeclaredConstructors(this, true);
-        varA9159445F27BE5BF96D07DDC5E555495_1540592959.addTaint(taint);
-        return varA9159445F27BE5BF96D07DDC5E555495_1540592959;
-        // ---------- Original Method ----------
-        //return getDeclaredConstructors(this, true);
+public Constructor<?>[] getConstructors() {
+        return getDeclaredConstructors(this, true);
     }
 
     
@@ -466,214 +563,178 @@ Constructor<?>[] varA9159445F27BE5BF96D07DDC5E555495_1540592959 =         getDec
     	return ret;
     }
 
+    /**
+     * Returns true if the annotation exists.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.924 -0500", hash_original_method = "172017F5B780130A5E2B4C50427437CE", hash_generated_method = "BAF0A1CF7EF8BA29691E3C8313FFA064")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.631 -0400", hash_original_method = "172017F5B780130A5E2B4C50427437CE", hash_generated_method = "53C538F592E38246CBBA117245307E84")
-    private boolean isDeclaredAnnotationPresent(Class<? extends Annotation> annotationClass) {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_255707121 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_255707121;
+    private boolean isDeclaredAnnotationPresent(Class<? extends Annotation> annotationClass){
+    	//Formerly a native method
+    	addTaint(annotationClass.getTaint());
+    	return getTaintBoolean();
     }
 
+
+    /**
+     * Returns an array containing {@code Class} objects for all classes and
+     * interfaces that are declared as members of the class which this {@code
+     * Class} represents. If there are no classes or interfaces declared or if
+     * this class represents an array class, a primitive type or void, then an
+     * empty array is returned.
+     *
+     * @return an array with {@code Class} objects for all the classes and
+     *         interfaces that are used in member declarations.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.928 -0500", hash_original_method = "0C6BF22DB8EB38DEB860C0E90FF64AEC", hash_generated_method = "7AE1F5EBD013B58268EBCB9E63397A2E")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.631 -0400", hash_original_method = "0C6BF22DB8EB38DEB860C0E90FF64AEC", hash_generated_method = "E956F68FF1264D99EA10920E14CB8B6C")
-    public Class<?>[] getDeclaredClasses() {
-Class<?>[] var8EE83CDE3434CCDD419D669BAA2B0697_1153274799 =         getDeclaredClasses(this, false);
-        var8EE83CDE3434CCDD419D669BAA2B0697_1153274799.addTaint(taint);
-        return var8EE83CDE3434CCDD419D669BAA2B0697_1153274799;
-        // ---------- Original Method ----------
-        //return getDeclaredClasses(this, false);
+public Class<?>[] getDeclaredClasses() {
+        return getDeclaredClasses(this, false);
     }
 
+    /*
+     * Returns the list of member classes without performing any security checks
+     * first. This includes the member classes inherited from superclasses. If no
+     * member classes exist at all, an empty array is returned.
+     *
+     * @param publicOnly reflects whether we want only public members or all of them
+     * @return the list of classes
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.930 -0500", hash_original_method = "11EF0E91CA4D1D0CA140D53473DE14D1", hash_generated_method = "741370FF0451A2D498B788FAEA4EB5D6")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.632 -0400", hash_original_method = "11EF0E91CA4D1D0CA140D53473DE14D1", hash_generated_method = "5C893C103376D6A470D535D0396E0571")
-    private Class<?>[] getFullListOfClasses(boolean publicOnly) {
-        addTaint(publicOnly);
+private Class<?>[] getFullListOfClasses(boolean publicOnly) {
         Class<?>[] result = getDeclaredClasses(this, publicOnly);
+
+        // Traverse all superclasses
         Class<?> clazz = this.getSuperclass();
-        while
-(clazz != null)        
-        {
+        while (clazz != null) {
             Class<?>[] temp = getDeclaredClasses(clazz, publicOnly);
-            if(temp.length != 0)            
-            {
+            if (temp.length != 0) {
                 result = arraycopy(new Class[result.length + temp.length], result, temp);
-            } //End block
+            }
+
             clazz = clazz.getSuperclass();
-        } //End block
-Class<?>[] varDC838461EE2FA0CA4C9BBB70A15456B0_2086192930 =         result;
-        varDC838461EE2FA0CA4C9BBB70A15456B0_2086192930.addTaint(taint);
-        return varDC838461EE2FA0CA4C9BBB70A15456B0_2086192930;
-        // ---------- Original Method ----------
-        //Class<?>[] result = getDeclaredClasses(this, publicOnly);
-        //Class<?> clazz = this.getSuperclass();
-        //while (clazz != null) {
-            //Class<?>[] temp = getDeclaredClasses(clazz, publicOnly);
-            //if (temp.length != 0) {
-                //result = arraycopy(new Class[result.length + temp.length], result, temp);
-            //}
-            //clazz = clazz.getSuperclass();
-        //}
-        //return result;
+        }
+
+        return result;
     }
 
+    /**
+     * Returns a {@code Constructor} object which represents the constructor
+     * matching the specified parameter types that is declared by the class
+     * represented by this {@code Class}.
+     *
+     * @param parameterTypes
+     *            the parameter types of the requested constructor.
+     *            {@code (Class[]) null} is equivalent to the empty array.
+     * @return the constructor described by {@code parameterTypes}.
+     * @throws NoSuchMethodException
+     *             if the requested constructor can not be found.
+     * @see #getConstructor(Class[])
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.937 -0500", hash_original_method = "BE852690AE0E27D0B9CC0DDC2FD443E4", hash_generated_method = "D0D731FB6821D6C0AB12837A56C6FE11")
     
-    @DSModeled(DSC.BAN)
-    private static Class<?>[] getDeclaredClasses(Class<?> clazz, boolean publicOnly) {
-    	Class[] ret = new Class[0];
-    	ret.addTaint(clazz.taint);
-    	ret.addTaint(publicOnly);
-    	return ret;
+@SuppressWarnings("unchecked")
+    public Constructor<T> getDeclaredConstructor(Class<?>... parameterTypes)
+            throws NoSuchMethodException {
+        return (Constructor) getConstructorOrMethod("<init>", false, false, parameterTypes);
     }
 
+    /**
+     * Returns an array containing {@code Constructor} objects for all
+     * constructors declared in the class represented by this {@code Class}. If
+     * there are no constructors or if this {@code Class} represents an array
+     * class, a primitive type or void then an empty array is returned.
+     *
+     * @return an array with the constructors declared in the class represented
+     *         by this {@code Class}.
+     * @see #getConstructors()
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.939 -0500", hash_original_method = "689106DC2122D9CD807ABDF15BAA670D", hash_generated_method = "A5160AEFF05AA595A8F6FC2468B59CF6")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.632 -0400", hash_original_method = "BE852690AE0E27D0B9CC0DDC2FD443E4", hash_generated_method = "A036CE7F889C5B8983F5CC2ED85B9E7D")
-    @SuppressWarnings("unchecked")
-    public Constructor<T> getDeclaredConstructor(Class<?>... parameterTypes) throws NoSuchMethodException {
-        addTaint(parameterTypes[0].getTaint());
-Constructor<T> varE919D75DEE456BB1E58FF0D420209277_914568623 =         (Constructor) getConstructorOrMethod("<init>", false, false, parameterTypes);
-        varE919D75DEE456BB1E58FF0D420209277_914568623.addTaint(taint);
-        return varE919D75DEE456BB1E58FF0D420209277_914568623;
-        // ---------- Original Method ----------
-        //return (Constructor) getConstructorOrMethod("<init>", false, false, parameterTypes);
+public Constructor<?>[] getDeclaredConstructors() {
+        return getDeclaredConstructors(this, false);
     }
 
+    /**
+     * Returns a {@code Field} object for the field with the specified name
+     * which is declared in the class represented by this {@code Class}.
+     *
+     * @param name the name of the requested field.
+     * @return the requested field in the class represented by this class.
+     * @throws NoSuchFieldException if the requested field can not be found.
+     * @see #getField(String)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.945 -0500", hash_original_method = "8A682798BA4F3E7A7CABB0F16EFFEE4D", hash_generated_method = "C66D19B472FEF5D13D7F4877F2BBF29A")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.632 -0400", hash_original_method = "689106DC2122D9CD807ABDF15BAA670D", hash_generated_method = "1F52E19EDAC3EDCEE3E1EB436C50B346")
-    public Constructor<?>[] getDeclaredConstructors() {
-Constructor<?>[] var5F5BAEB34C8FF5D8C71B8F5213D8B45B_301923970 =         getDeclaredConstructors(this, false);
-        var5F5BAEB34C8FF5D8C71B8F5213D8B45B_301923970.addTaint(taint);
-        return var5F5BAEB34C8FF5D8C71B8F5213D8B45B_301923970;
-        // ---------- Original Method ----------
-        //return getDeclaredConstructors(this, false);
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    private static <T> Constructor<T>[] getDeclaredConstructors(
-            Class<T> clazz, boolean publicOnly) {
-    	Constructor[] ret = new Constructor[0];
-    	ret.addTaint(clazz.taint);
-    	ret.addTaint(publicOnly);
-    	return ret;
-    }
-
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.633 -0400", hash_original_method = "8A682798BA4F3E7A7CABB0F16EFFEE4D", hash_generated_method = "23C1E48257964DDA12D98E7FA2819C3E")
-    public Field getDeclaredField(String name) throws NoSuchFieldException {
-        addTaint(name.getTaint());
-        if(name == null)        
-        {
-            NullPointerException varA117BA528B11F7D1AC96CABFD5286E5C_1728202239 = new NullPointerException("name == null");
-            varA117BA528B11F7D1AC96CABFD5286E5C_1728202239.addTaint(taint);
-            throw varA117BA528B11F7D1AC96CABFD5286E5C_1728202239;
-        } //End block
+public Field getDeclaredField(String name) throws NoSuchFieldException {
+        if (name == null) {
+            throw new NullPointerException("name == null");
+        }
         Field result = getDeclaredField(this, name);
-        if(result == null)        
-        {
-            NoSuchFieldException varD1B492B296DA9CE84CEF37C9691D7298_1504577009 = new NoSuchFieldException(name);
-            varD1B492B296DA9CE84CEF37C9691D7298_1504577009.addTaint(taint);
-            throw varD1B492B296DA9CE84CEF37C9691D7298_1504577009;
-        } //End block
-Field varDC838461EE2FA0CA4C9BBB70A15456B0_1463488020 =         result;
-        varDC838461EE2FA0CA4C9BBB70A15456B0_1463488020.addTaint(taint);
-        return varDC838461EE2FA0CA4C9BBB70A15456B0_1463488020;
-        // ---------- Original Method ----------
-        //if (name == null) {
-            //throw new NullPointerException("name == null");
-        //}
-        //Field result = getDeclaredField(this, name);
-        //if (result == null) {
-            //throw new NoSuchFieldException(name);
-        //}
-        //return result;
+        if (result == null) {
+            throw new NoSuchFieldException(name);
+        }
+        return result;
     }
 
+    /**
+     * Returns an array containing {@code Field} objects for all fields declared
+     * in the class represented by this {@code Class}. If there are no fields or
+     * if this {@code Class} represents an array class, a primitive type or void
+     * then an empty array is returned.
+     *
+     * @return an array with the fields declared in the class represented by
+     *         this class.
+     * @see #getFields()
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.948 -0500", hash_original_method = "AA99B76B619CDC6E346F586A8911140C", hash_generated_method = "28B58F0009A6BCAB227105536EC99296")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.633 -0400", hash_original_method = "AA99B76B619CDC6E346F586A8911140C", hash_generated_method = "2D6CD6C22A0CF9E3EF2D1A38778E0FAA")
-    public Field[] getDeclaredFields() {
-Field[] varB13318B8B62F8154F0AA694406899EAD_732481342 =         getDeclaredFields(this, false);
-        varB13318B8B62F8154F0AA694406899EAD_732481342.addTaint(taint);
-        return varB13318B8B62F8154F0AA694406899EAD_732481342;
-        // ---------- Original Method ----------
-        //return getDeclaredFields(this, false);
+public Field[] getDeclaredFields() {
+        return getDeclaredFields(this, false);
     }
 
+    /**
+     * Returns a {@code Method} object which represents the method matching the
+     * specified name and parameter types that is declared by the class
+     * represented by this {@code Class}.
+     *
+     * @param name
+     *            the requested method's name.
+     * @param parameterTypes
+     *            the parameter types of the requested method.
+     *            {@code (Class[]) null} is equivalent to the empty array.
+     * @return the method described by {@code name} and {@code parameterTypes}.
+     * @throws NoSuchMethodException
+     *             if the requested constructor can not be found.
+     * @throws NullPointerException
+     *             if {@code name} is {@code null}.
+     * @see #getMethod(String, Class[])
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.959 -0500", hash_original_method = "03F26499B4401EE2D953FCB368DE68F4", hash_generated_method = "D43A7411BC634182976F9568E4280AC1")
     
-    @DSModeled(DSC.SAFE)
-    static Field[] getDeclaredFields(Class<?> clazz, boolean publicOnly) {
-    	Field[] ret = new Field[0];
-    	ret.addTaint(clazz.taint);
-    	ret.addTaint(publicOnly);
-    	return ret;
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    static Field getDeclaredField(Class<?> clazz, String name) {
-    	Field ret = new Field();
-    	ret.addTaint(clazz.taint);
-    	ret.addTaint(name.taint);
-    	return ret;
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.633 -0400", hash_original_method = "03F26499B4401EE2D953FCB368DE68F4", hash_generated_method = "D0CF2093E4AA413D9F87759F13C74310")
-    public Method getDeclaredMethod(String name, Class<?>... parameterTypes) throws NoSuchMethodException {
-        addTaint(parameterTypes[0].getTaint());
-        addTaint(name.getTaint());
+public Method getDeclaredMethod(String name, Class<?>... parameterTypes)
+            throws NoSuchMethodException {
         Member member = getConstructorOrMethod(name, false, false, parameterTypes);
-        if(member instanceof Constructor)        
-        {
-            NoSuchMethodException var93C0A6E4B35311031E6696E05613AB9B_1283858730 = new NoSuchMethodException(name);
-            var93C0A6E4B35311031E6696E05613AB9B_1283858730.addTaint(taint);
-            throw var93C0A6E4B35311031E6696E05613AB9B_1283858730;
-        } //End block
-Method var66E333884789DB1C291D2403B1EF3C16_2046084421 =         (Method) member;
-        var66E333884789DB1C291D2403B1EF3C16_2046084421.addTaint(taint);
-        return var66E333884789DB1C291D2403B1EF3C16_2046084421;
-        // ---------- Original Method ----------
-        //Member member = getConstructorOrMethod(name, false, false, parameterTypes);
-        //if (member instanceof Constructor) {
-            //throw new NoSuchMethodException(name);
-        //}
-        //return (Method) member;
+        if (member instanceof Constructor) {
+            throw new NoSuchMethodException(name);
+        }
+        return (Method) member;
     }
 
+    /**
+     * Returns an array containing {@code Method} objects for all methods
+     * declared in the class represented by this {@code Class}. If there are no
+     * methods or if this {@code Class} represents an array class, a primitive
+     * type or void then an empty array is returned.
+     *
+     * @return an array with the methods declared in the class represented by
+     *         this {@code Class}.
+     * @see #getMethods()
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.961 -0500", hash_original_method = "76B8AECB3C8722E0C9050BEEFD88DA1C", hash_generated_method = "C0886B96300C43CFB5185B9FE17032D3")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.633 -0400", hash_original_method = "76B8AECB3C8722E0C9050BEEFD88DA1C", hash_generated_method = "97E8F52775ABDB8F0900AE1D648B0F72")
-    public Method[] getDeclaredMethods() {
-Method[] var25212F30F28FFBC38919078B7CC0EB00_1791002978 =         getDeclaredMethods(this, false);
-        var25212F30F28FFBC38919078B7CC0EB00_1791002978.addTaint(taint);
-        return var25212F30F28FFBC38919078B7CC0EB00_1791002978;
-        // ---------- Original Method ----------
-        //return getDeclaredMethods(this, false);
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    static Method[] getDeclaredMethods(Class<?> clazz, boolean publicOnly) {
-    	Method[] ret = new Method[0];
-    	ret[0].addTaint(clazz.taint);
-    	ret[0].addTaint(publicOnly);
-    	return ret;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    static Member getDeclaredConstructorOrMethod(Class clazz, String name, Class[] args) {
-    	Method ret = new Method();
-    	ret.addTaint(clazz.taint);
-    	ret.addTaint(name.taint);
-    	ret.addTaint(args[0].taint);
-    	return ret;
+public Method[] getDeclaredMethods() {
+        return getDeclaredMethods(this, false);
     }
 
     
@@ -708,185 +769,150 @@ Method[] var25212F30F28FFBC38919078B7CC0EB00_1791002978 =         getDeclaredMet
     	return ret;
     }
 
+    /**
+     * Gets the {@code enum} constants associated with this {@code Class}.
+     * Returns {@code null} if this {@code Class} does not represent an {@code
+     * enum} type.
+     *
+     * @return an array with the {@code enum} constants or {@code null}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.987 -0500", hash_original_method = "4BAB4756A542B5987CFE5A9EBB7771C0", hash_generated_method = "501C2BA0B65CD7CC10B3624A12BF9703")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.634 -0400", hash_original_method = "4BAB4756A542B5987CFE5A9EBB7771C0", hash_generated_method = "605356D16B18958B582150948FDFE273")
-    @SuppressWarnings("unchecked")
+@SuppressWarnings("unchecked") // we only cast after confirming that this class is an enum
     public T[] getEnumConstants() {
-        if(!isEnum())        
-        {
-T[] var540C13E9E156B687226421B24F2DF178_751348504 =             null;
-            var540C13E9E156B687226421B24F2DF178_751348504.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_751348504;
-        } //End block
-T[] varC2E74EBDC7FFA30F9E3563FB5AB670BB_884900310 =         (T[]) Enum.getSharedConstants((Class) this).clone();
-        varC2E74EBDC7FFA30F9E3563FB5AB670BB_884900310.addTaint(taint);
-        return varC2E74EBDC7FFA30F9E3563FB5AB670BB_884900310;
-        // ---------- Original Method ----------
-        //if (!isEnum()) {
-            //return null;
-        //}
-        //return (T[]) Enum.getSharedConstants((Class) this).clone();
+        if (!isEnum()) {
+            return null;
+        }
+        return (T[]) Enum.getSharedConstants((Class) this).clone();
     }
 
+    /**
+     * Returns a {@code Field} object which represents the public field with the
+     * specified name. This method first searches the class C represented by
+     * this {@code Class}, then the interfaces implemented by C and finally the
+     * superclasses of C.
+     *
+     * @param name
+     *            the name of the requested field.
+     * @return the public field specified by {@code name}.
+     * @throws NoSuchFieldException
+     *             if the field can not be found.
+     * @see #getDeclaredField(String)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.990 -0500", hash_original_method = "FA8DAD805A6C401E4747A9C743D605D2", hash_generated_method = "DFB95ADC3E3E5C8B3666944FA264C214")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.634 -0400", hash_original_method = "FA8DAD805A6C401E4747A9C743D605D2", hash_generated_method = "8980F9434EE83C83F4E1A6CEBA2BA578")
-    public Field getField(String name) throws NoSuchFieldException {
-        addTaint(name.getTaint());
-        if(name == null)        
-        {
-            NullPointerException varA117BA528B11F7D1AC96CABFD5286E5C_687836968 = new NullPointerException("name == null");
-            varA117BA528B11F7D1AC96CABFD5286E5C_687836968.addTaint(taint);
-            throw varA117BA528B11F7D1AC96CABFD5286E5C_687836968;
-        } //End block
+public Field getField(String name) throws NoSuchFieldException {
+        if (name == null) {
+            throw new NullPointerException("name == null");
+        }
         Field result = getPublicFieldRecursive(name);
-        if(result == null)        
-        {
-            NoSuchFieldException varD1B492B296DA9CE84CEF37C9691D7298_1509316714 = new NoSuchFieldException(name);
-            varD1B492B296DA9CE84CEF37C9691D7298_1509316714.addTaint(taint);
-            throw varD1B492B296DA9CE84CEF37C9691D7298_1509316714;
-        } //End block
-Field varDC838461EE2FA0CA4C9BBB70A15456B0_993043516 =         result;
-        varDC838461EE2FA0CA4C9BBB70A15456B0_993043516.addTaint(taint);
-        return varDC838461EE2FA0CA4C9BBB70A15456B0_993043516;
-        // ---------- Original Method ----------
-        //if (name == null) {
-            //throw new NullPointerException("name == null");
-        //}
-        //Field result = getPublicFieldRecursive(name);
-        //if (result == null) {
-            //throw new NoSuchFieldException(name);
-        //}
-        //return result;
+        if (result == null) {
+            throw new NoSuchFieldException(name);
+        }
+        return result;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.992 -0500", hash_original_method = "5B7CAA69F62F801E9329410682C5B334", hash_generated_method = "F3676BC6F341EBA853F3C761606E9195")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.634 -0400", hash_original_method = "5B7CAA69F62F801E9329410682C5B334", hash_generated_method = "AD95D2C9A97BF346CEDD54ECEE6C3BBD")
-    private Field getPublicFieldRecursive(String name) {
-        addTaint(name.getTaint());
-for(Class<?> c = this;c != null;c = c.getSuperclass())
-        {
+private Field getPublicFieldRecursive(String name) {
+        // search superclasses
+        for (Class<?> c = this; c != null; c = c.getSuperclass()) {
             Field result = Class.getDeclaredField(c, name);
-            if(result != null && (result.getModifiers() & Modifier.PUBLIC) != 0)            
-            {
-Field varDC838461EE2FA0CA4C9BBB70A15456B0_1145603665 =                 result;
-                varDC838461EE2FA0CA4C9BBB70A15456B0_1145603665.addTaint(taint);
-                return varDC838461EE2FA0CA4C9BBB70A15456B0_1145603665;
-            } //End block
-        } //End block
-for(Class<?> c = this;c != null;c = c.getSuperclass())
-        {
-for(Class<?> ifc : c.getInterfaces())
-            {
+            if (result != null && (result.getModifiers() & Modifier.PUBLIC) != 0) {
+                return result;
+            }
+        }
+
+        // search implemented interfaces
+        for (Class<?> c = this; c != null; c = c.getSuperclass()) {
+            for (Class<?> ifc : c.getInterfaces()) {
                 Field result = ifc.getPublicFieldRecursive(name);
-                if(result != null && (result.getModifiers() & Modifier.PUBLIC) != 0)                
-                {
-Field varDC838461EE2FA0CA4C9BBB70A15456B0_1033351298 =                     result;
-                    varDC838461EE2FA0CA4C9BBB70A15456B0_1033351298.addTaint(taint);
-                    return varDC838461EE2FA0CA4C9BBB70A15456B0_1033351298;
-                } //End block
-            } //End block
-        } //End block
-Field var540C13E9E156B687226421B24F2DF178_795432382 =         null;
-        var540C13E9E156B687226421B24F2DF178_795432382.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_795432382;
-        // ---------- Original Method ----------
-        //for (Class<?> c = this; c != null; c = c.getSuperclass()) {
-            //Field result = Class.getDeclaredField(c, name);
-            //if (result != null && (result.getModifiers() & Modifier.PUBLIC) != 0) {
-                //return result;
-            //}
-        //}
-        //for (Class<?> c = this; c != null; c = c.getSuperclass()) {
-            //for (Class<?> ifc : c.getInterfaces()) {
-                //Field result = ifc.getPublicFieldRecursive(name);
-                //if (result != null && (result.getModifiers() & Modifier.PUBLIC) != 0) {
-                    //return result;
-                //}
-            //}
-        //}
-        //return null;
+                if (result != null && (result.getModifiers() & Modifier.PUBLIC) != 0) {
+                    return result;
+                }
+            }
+        }
+
+        return null;
     }
 
+    /**
+     * Returns an array containing {@code Field} objects for all public fields
+     * for the class C represented by this {@code Class}. Fields may be declared
+     * in C, the interfaces it implements or in the superclasses of C. The
+     * elements in the returned array are in no particular order.
+     *
+     * <p>If there are no public fields or if this class represents an array class,
+     * a primitive type or {@code void} then an empty array is returned.
+     *
+     * @return an array with the public fields of the class represented by this
+     *         {@code Class}.
+     * @see #getDeclaredFields()
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.995 -0500", hash_original_method = "EE852D72665161D6434FA53D37832A51", hash_generated_method = "B8AF57BF684DA5AEB97D474BC198A0CA")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.635 -0400", hash_original_method = "EE852D72665161D6434FA53D37832A51", hash_generated_method = "B401BA0D16342623556EE62358F29DC1")
-    public Field[] getFields() {
+public Field[] getFields() {
         List<Field> fields = new ArrayList<Field>();
         getPublicFieldsRecursive(fields);
+
+        /*
+         * The result may include duplicates when clazz implements an interface
+         * through multiple paths. Remove those duplicates.
+         */
         CollectionUtils.removeDuplicates(fields, Field.ORDER_BY_NAME_AND_DECLARING_CLASS);
-Field[] varF97ABECB072F72F32D1A6FDB275E9804_821689451 =         fields.toArray(new Field[fields.size()]);
-        varF97ABECB072F72F32D1A6FDB275E9804_821689451.addTaint(taint);
-        return varF97ABECB072F72F32D1A6FDB275E9804_821689451;
-        // ---------- Original Method ----------
-        //List<Field> fields = new ArrayList<Field>();
-        //getPublicFieldsRecursive(fields);
-        //CollectionUtils.removeDuplicates(fields, Field.ORDER_BY_NAME_AND_DECLARING_CLASS);
-        //return fields.toArray(new Field[fields.size()]);
+        return fields.toArray(new Field[fields.size()]);
     }
 
+    /**
+     * Populates {@code result} with public fields defined by this class, its
+     * superclasses, and all implemented interfaces.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.998 -0500", hash_original_method = "CCD964C4509A9C827773CB1F1BD75566", hash_generated_method = "22B82B382902708AC3C30359D5ED8391")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.635 -0400", hash_original_method = "CCD964C4509A9C827773CB1F1BD75566", hash_generated_method = "361118F139993F02EF5C2AEF8822592C")
-    private void getPublicFieldsRecursive(List<Field> result) {
-        addTaint(result.getTaint());
-for(Class<?> c = this;c != null;c = c.getSuperclass())
-        {
-for(Field field : Class.getDeclaredFields(c, true))
-            {
+private void getPublicFieldsRecursive(List<Field> result) {
+        // search superclasses
+        for (Class<?> c = this; c != null; c = c.getSuperclass()) {
+            for (Field field : Class.getDeclaredFields(c, true)) {
                 result.add(field);
-            } //End block
-        } //End block
-for(Class<?> c = this;c != null;c = c.getSuperclass())
-        {
-for(Class<?> ifc : c.getInterfaces())
-            {
+            }
+        }
+
+        // search implemented interfaces
+        for (Class<?> c = this; c != null; c = c.getSuperclass()) {
+            for (Class<?> ifc : c.getInterfaces()) {
                 ifc.getPublicFieldsRecursive(result);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //for (Class<?> c = this; c != null; c = c.getSuperclass()) {
-            //for (Field field : Class.getDeclaredFields(c, true)) {
-                //result.add(field);
-            //}
-        //}
-        //for (Class<?> c = this; c != null; c = c.getSuperclass()) {
-            //for (Class<?> ifc : c.getInterfaces()) {
-                //ifc.getPublicFieldsRecursive(result);
-            //}
-        //}
+            }
+        }
     }
 
+    /**
+     * Gets the {@link Type}s of the interfaces that this {@code Class} directly
+     * implements. If the {@code Class} represents a primitive type or {@code
+     * void} then an empty array is returned.
+     *
+     * @return an array of {@link Type} instances directly implemented by the
+     *         class represented by this {@code class}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.001 -0500", hash_original_method = "A82263350C71E60DCD37A3953DD0C780", hash_generated_method = "A29F8C52D29EEC64FFAED8E112A51280")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.635 -0400", hash_original_method = "A82263350C71E60DCD37A3953DD0C780", hash_generated_method = "8F11D9058D463F7DD0F67EA272271A16")
-    public Type[] getGenericInterfaces() {
+public Type[] getGenericInterfaces() {
         GenericSignatureParser parser = new GenericSignatureParser(getClassLoader());
         parser.parseForClass(this, getSignatureAttribute());
-Type[] var00DF7A095BC8013DB06DB16809D8ED14_1699004143 =         Types.getClonedTypeArray(parser.interfaceTypes);
-        var00DF7A095BC8013DB06DB16809D8ED14_1699004143.addTaint(taint);
-        return var00DF7A095BC8013DB06DB16809D8ED14_1699004143;
-        // ---------- Original Method ----------
-        //GenericSignatureParser parser = new GenericSignatureParser(getClassLoader());
-        //parser.parseForClass(this, getSignatureAttribute());
-        //return Types.getClonedTypeArray(parser.interfaceTypes);
+        return Types.getClonedTypeArray(parser.interfaceTypes);
     }
 
+    /**
+     * Gets the {@code Type} that represents the superclass of this {@code
+     * class}.
+     *
+     * @return an instance of {@code Type} representing the superclass.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.003 -0500", hash_original_method = "F49B4034A49DCE93E76B5D95ACE6523A", hash_generated_method = "F60C4EB1F233218BED00254491D8F23F")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.635 -0400", hash_original_method = "F49B4034A49DCE93E76B5D95ACE6523A", hash_generated_method = "B7D20D0D6F47060EFA69EEB95D40BA4D")
-    public Type getGenericSuperclass() {
+public Type getGenericSuperclass() {
         GenericSignatureParser parser = new GenericSignatureParser(getClassLoader());
         parser.parseForClass(this, getSignatureAttribute());
-Type var71A5E1DE09D6EE3F5949C6CCEFB94DA4_1863108335 =         Types.getType(parser.superclassType);
-        var71A5E1DE09D6EE3F5949C6CCEFB94DA4_1863108335.addTaint(taint);
-        return var71A5E1DE09D6EE3F5949C6CCEFB94DA4_1863108335;
-        // ---------- Original Method ----------
-        //GenericSignatureParser parser = new GenericSignatureParser(getClassLoader());
-        //parser.parseForClass(this, getSignatureAttribute());
-        //return Types.getType(parser.superclassType);
+        return Types.getType(parser.superclassType);
     }
 
     
@@ -897,108 +923,108 @@ Type var71A5E1DE09D6EE3F5949C6CCEFB94DA4_1863108335 =         Types.getType(pars
     	return ret;
     }
 
+    /**
+     * Returns a {@code Method} object which represents the public method with
+     * the specified name and parameter types. This method first searches the
+     * class C represented by this {@code Class}, then the superclasses of C and
+     * finally the interfaces implemented by C and finally the superclasses of C
+     * for a method with matching name.
+     *
+     * @param name
+     *            the requested method's name.
+     * @param parameterTypes
+     *            the parameter types of the requested method.
+     *            {@code (Class[]) null} is equivalent to the empty array.
+     * @return the public field specified by {@code name}.
+     * @throws NoSuchMethodException
+     *             if the method can not be found.
+     * @see #getDeclaredMethod(String, Class[])
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.010 -0500", hash_original_method = "8DB3D81F35D9B25D91AF567693EFE9FF", hash_generated_method = "F6FE7925D7C8D66FCFBB28D88158DAE4")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.635 -0400", hash_original_method = "8DB3D81F35D9B25D91AF567693EFE9FF", hash_generated_method = "28768E7A161FD8044CABECEE1834BDEF")
-    public Method getMethod(String name, Class<?>... parameterTypes) throws NoSuchMethodException {
-        addTaint(parameterTypes[0].getTaint());
-        addTaint(name.getTaint());
+public Method getMethod(String name, Class<?>... parameterTypes) throws NoSuchMethodException {
         Member member = getConstructorOrMethod(name, true, true, parameterTypes);
-        if(member instanceof Constructor)        
-        {
-            NoSuchMethodException var93C0A6E4B35311031E6696E05613AB9B_972050929 = new NoSuchMethodException(name);
-            var93C0A6E4B35311031E6696E05613AB9B_972050929.addTaint(taint);
-            throw var93C0A6E4B35311031E6696E05613AB9B_972050929;
-        } //End block
-Method var66E333884789DB1C291D2403B1EF3C16_2114431022 =         (Method) member;
-        var66E333884789DB1C291D2403B1EF3C16_2114431022.addTaint(taint);
-        return var66E333884789DB1C291D2403B1EF3C16_2114431022;
-        // ---------- Original Method ----------
-        //Member member = getConstructorOrMethod(name, true, true, parameterTypes);
-        //if (member instanceof Constructor) {
-            //throw new NoSuchMethodException(name);
-        //}
-        //return (Method) member;
+        if (member instanceof Constructor) {
+            throw new NoSuchMethodException(name);
+        }
+        return (Method) member;
     }
 
+    /**
+     * Returns an array containing {@code Method} objects for all public methods
+     * for the class C represented by this {@code Class}. Methods may be
+     * declared in C, the interfaces it implements or in the superclasses of C.
+     * The elements in the returned array are in no particular order.
+     * <p>
+     * If there are no public methods or if this {@code Class} represents a
+     * primitive type or {@code void} then an empty array is returned.
+     * </p>
+     *
+     * @return an array with the methods of the class represented by this
+     *         {@code Class}.
+     * @see #getDeclaredMethods()
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.012 -0500", hash_original_method = "C97EB7E8DB296134D4BC8E9F9CBD0F21", hash_generated_method = "16F5EFC638AA638137B136FC5EE069E5")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.636 -0400", hash_original_method = "C97EB7E8DB296134D4BC8E9F9CBD0F21", hash_generated_method = "3148101F22F6866524C465E17D398C1E")
-    public Method[] getMethods() {
+public Method[] getMethods() {
         List<Method> methods = new ArrayList<Method>();
         getPublicMethodsRecursive(methods);
+
+        /*
+         * Remove methods defined by multiple types, preferring to keep methods
+         * declared by derived types.
+         */
         CollectionUtils.removeDuplicates(methods, Method.ORDER_BY_SIGNATURE);
-Method[] var1C3E257A090AB3A7E4DC4AC6985BC9FB_1683180750 =         methods.toArray(new Method[methods.size()]);
-        var1C3E257A090AB3A7E4DC4AC6985BC9FB_1683180750.addTaint(taint);
-        return var1C3E257A090AB3A7E4DC4AC6985BC9FB_1683180750;
-        // ---------- Original Method ----------
-        //List<Method> methods = new ArrayList<Method>();
-        //getPublicMethodsRecursive(methods);
-        //CollectionUtils.removeDuplicates(methods, Method.ORDER_BY_SIGNATURE);
-        //return methods.toArray(new Method[methods.size()]);
+        return methods.toArray(new Method[methods.size()]);
     }
 
+    /**
+     * Populates {@code result} with public methods defined by {@code clazz}, its
+     * superclasses, and all implemented interfaces, including overridden methods.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.015 -0500", hash_original_method = "99CBF7E189E92697D7579B92856775ED", hash_generated_method = "F7C8E7FB5A1E5F59BD59B5D6B127FD35")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.636 -0400", hash_original_method = "99CBF7E189E92697D7579B92856775ED", hash_generated_method = "3CEF07DB9400012F26BC5401CF6AD7DB")
-    private void getPublicMethodsRecursive(List<Method> result) {
-        addTaint(result.getTaint());
-for(Class<?> c = this;c != null;c = c.getSuperclass())
-        {
-for(Method method : Class.getDeclaredMethods(c, true))
-            {
+private void getPublicMethodsRecursive(List<Method> result) {
+        // search superclasses
+        for (Class<?> c = this; c != null; c = c.getSuperclass()) {
+            for (Method method : Class.getDeclaredMethods(c, true)) {
                 result.add(method);
-            } //End block
-        } //End block
-for(Class<?> c = this;c != null;c = c.getSuperclass())
-        {
-for(Class<?> ifc : c.getInterfaces())
-            {
+            }
+        }
+
+        // search implemented interfaces
+        for (Class<?> c = this; c != null; c = c.getSuperclass()) {
+            for (Class<?> ifc : c.getInterfaces()) {
                 ifc.getPublicMethodsRecursive(result);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //for (Class<?> c = this; c != null; c = c.getSuperclass()) {
-            //for (Method method : Class.getDeclaredMethods(c, true)) {
-                //result.add(method);
-            //}
-        //}
-        //for (Class<?> c = this; c != null; c = c.getSuperclass()) {
-            //for (Class<?> ifc : c.getInterfaces()) {
-                //ifc.getPublicMethodsRecursive(result);
-            //}
-        //}
+            }
+        }
     }
 
+    /**
+     * Returns an integer that represents the modifiers of the class represented
+     * by this {@code Class}. The returned value is a combination of bits
+     * defined by constants in the {@link Modifier} class.
+     *
+     * @return the modifiers of the class represented by this {@code Class}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.018 -0500", hash_original_method = "49C2E28E402D8BB5DB2322E2416CA9ED", hash_generated_method = "41DF567D91CEAD08F40DC4816EDC53B5")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.636 -0400", hash_original_method = "49C2E28E402D8BB5DB2322E2416CA9ED", hash_generated_method = "5B873533CFE9265A2B31B5389EE5BDF6")
-    public int getModifiers() {
-        int varFE4FFB4CAC8BB487081CD848C12AB306_747472459 = (getModifiers(this, false));
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_671161057 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_671161057;
-        // ---------- Original Method ----------
-        //return getModifiers(this, false);
+public int getModifiers() {
+        return getModifiers(this, false);
     }
 
+    /**
+     * Returns the name of the class represented by this {@code Class}. For a
+     * description of the format which is used, see the class definition of
+     * {@link Class}.
+     *
+     * @return the name of the class represented by this {@code Class}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.024 -0500", hash_original_method = "187913D585B2E6CDD83B5D111AE83BCF", hash_generated_method = "17A7776BBC6BDB5FF5C2292D74566F63")
     
-    @DSModeled(DSC.SAFE)
-    private static int getModifiers(Class<?> clazz, boolean ignoreInnerClassesAttrib) {
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_64442902 = DSUtils.UNKNOWN_INT;
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_64442902;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.636 -0400", hash_original_method = "187913D585B2E6CDD83B5D111AE83BCF", hash_generated_method = "EA739B3003F4C912DEAA33B13691CFA1")
-    public String getName() {
+public String getName() {
         String result = name;
-String var4C566AF6B2791407A05E4F4E371A49A8_1464709607 =         (result == null) ? (name = getNameNative()) : result;
-        var4C566AF6B2791407A05E4F4E371A49A8_1464709607.addTaint(taint);
-        return var4C566AF6B2791407A05E4F4E371A49A8_1464709607;
-        // ---------- Original Method ----------
-        //String result = name;
-        //return (result == null) ? (name = getNameNative()) : result;
+        return (result == null) ? (name = getNameNative()) : result;
     }
 
     
@@ -1009,55 +1035,38 @@ String var4C566AF6B2791407A05E4F4E371A49A8_1464709607 =         (result == null)
     	return ret;
     }
 
+    /**
+     * Returns the simple name of the class represented by this {@code Class} as
+     * defined in the source code. If there is no name (that is, the class is
+     * anonymous) then an empty string is returned. If the receiver is an array
+     * then the name of the underlying type with square braces appended (for
+     * example {@code "Integer[]"}) is returned.
+     *
+     * @return the simple name of the class represented by this {@code Class}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.030 -0500", hash_original_method = "74B632DBB542B67A6D43387B2BA8D973", hash_generated_method = "5F5DA6A35D4A0CEBE565D4944B684DD0")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.636 -0400", hash_original_method = "74B632DBB542B67A6D43387B2BA8D973", hash_generated_method = "FE62B6D1677B962A9E8D7239D728DFF5")
-    public String getSimpleName() {
-        if(isArray())        
-        {
-String var8EFB0828ABFAF4510FBFBDDE880D15A2_270744478 =             getComponentType().getSimpleName() + "[]";
-            var8EFB0828ABFAF4510FBFBDDE880D15A2_270744478.addTaint(taint);
-            return var8EFB0828ABFAF4510FBFBDDE880D15A2_270744478;
-        } //End block
+public String getSimpleName() {
+        if (isArray()) {
+            return getComponentType().getSimpleName() + "[]";
+        }
+
         String name = getName();
-        if(isAnonymousClass())        
-        {
-String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1474725886 =             "";
-            var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1474725886.addTaint(taint);
-            return var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1474725886;
-        } //End block
-        if(isMemberClass() || isLocalClass())        
-        {
-String var905F5014FFB14FA466009DDEAEA3A905_1810438132 =             getInnerClassName();
-            var905F5014FFB14FA466009DDEAEA3A905_1810438132.addTaint(taint);
-            return var905F5014FFB14FA466009DDEAEA3A905_1810438132;
-        } //End block
+
+        if (isAnonymousClass()) {
+            return "";
+        }
+
+        if (isMemberClass() || isLocalClass()) {
+            return getInnerClassName();
+        }
+
         int dot = name.lastIndexOf('.');
-        if(dot != -1)        
-        {
-String var08A3BE0F715A4C53303FE59AFABEDC64_143829681 =             name.substring(dot + 1);
-            var08A3BE0F715A4C53303FE59AFABEDC64_143829681.addTaint(taint);
-            return var08A3BE0F715A4C53303FE59AFABEDC64_143829681;
-        } //End block
-String varB017984728AC60AD1F0BF8734F33F15C_583985181 =         name;
-        varB017984728AC60AD1F0BF8734F33F15C_583985181.addTaint(taint);
-        return varB017984728AC60AD1F0BF8734F33F15C_583985181;
-        // ---------- Original Method ----------
-        //if (isArray()) {
-            //return getComponentType().getSimpleName() + "[]";
-        //}
-        //String name = getName();
-        //if (isAnonymousClass()) {
-            //return "";
-        //}
-        //if (isMemberClass() || isLocalClass()) {
-            //return getInnerClassName();
-        //}
-        //int dot = name.lastIndexOf('.');
-        //if (dot != -1) {
-            //return name.substring(dot + 1);
-        //}
-        //return name;
+        if (dot != -1) {
+            return name.substring(dot + 1);
+        }
+
+        return name;
     }
 
     
@@ -1068,140 +1077,104 @@ String varB017984728AC60AD1F0BF8734F33F15C_583985181 =         name;
     	return ret;
     }
 
+    /**
+     * Returns null.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.036 -0500", hash_original_method = "82F23D377D0B35BD25A884E70716090D", hash_generated_method = "8028A3F866A0CBD6BC2B22F8EEDAE4A1")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.637 -0400", hash_original_method = "82F23D377D0B35BD25A884E70716090D", hash_generated_method = "C40A0EADDB42600F5C697773BBCB03AC")
-    public ProtectionDomain getProtectionDomain() {
-ProtectionDomain var540C13E9E156B687226421B24F2DF178_793541053 =         null;
-        var540C13E9E156B687226421B24F2DF178_793541053.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_793541053;
-        // ---------- Original Method ----------
-        //return null;
+public ProtectionDomain getProtectionDomain() {
+        return null;
     }
 
+    /**
+     * Returns the URL of the resource specified by {@code resName}. The mapping
+     * between the resource name and the URL is managed by the class' class
+     * loader.
+     *
+     * @param resName
+     *            the name of the resource.
+     * @return the requested resource's {@code URL} object or {@code null} if
+     *         the resource can not be found.
+     * @see ClassLoader
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.040 -0500", hash_original_method = "98759567E5146872E262AEC3A30D35ED", hash_generated_method = "473C6F76FA3F6B45C570D7E720A53585")
     
-        @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.637 -0400", hash_original_method = "98759567E5146872E262AEC3A30D35ED", hash_generated_method = "C099C7A78A5EE272F85381E456F1580B")
-    public URL getResource(String resName) {
-        addTaint(resName.getTaint());
-        if(resName.startsWith("/"))        
-        {
+public URL getResource(String resName) {
+        // Get absolute resource name, but without the leading slash
+        if (resName.startsWith("/")) {
             resName = resName.substring(1);
-        } //End block
-        else
-        {
+        } else {
             String pkg = getName();
             int dot = pkg.lastIndexOf('.');
-            if(dot != -1)            
-            {
+            if (dot != -1) {
                 pkg = pkg.substring(0, dot).replace('.', '/');
-            } //End block
-            else
-            {
+            } else {
                 pkg = "";
-            } //End block
+            }
+
             resName = pkg + "/" + resName;
-        } //End block
+        }
+
+        // Delegate to proper class loader
         ClassLoader loader = getClassLoader();
-        if(loader != null)        
-        {
-URL varBD7E03DCE503846452E4C60F282C5082_636864636 =             loader.getResource(resName);
-            varBD7E03DCE503846452E4C60F282C5082_636864636.addTaint(taint);
-            return varBD7E03DCE503846452E4C60F282C5082_636864636;
-        } //End block
-        else
-        {
-URL var5BCE521397D83220649EE68F62831709_334750405 =             ClassLoader.getSystemResource(resName);
-            var5BCE521397D83220649EE68F62831709_334750405.addTaint(taint);
-            return var5BCE521397D83220649EE68F62831709_334750405;
-        } //End block
-        // ---------- Original Method ----------
-        //if (resName.startsWith("/")) {
-            //resName = resName.substring(1);
-        //} else {
-            //String pkg = getName();
-            //int dot = pkg.lastIndexOf('.');
-            //if (dot != -1) {
-                //pkg = pkg.substring(0, dot).replace('.', '/');
-            //} else {
-                //pkg = "";
-            //}
-            //resName = pkg + "/" + resName;
-        //}
-        //ClassLoader loader = getClassLoader();
-        //if (loader != null) {
-            //return loader.getResource(resName);
-        //} else {
-            //return ClassLoader.getSystemResource(resName);
-        //}
+        if (loader != null) {
+            return loader.getResource(resName);
+        } else {
+            return ClassLoader.getSystemResource(resName);
+        }
     }
 
+    /**
+     * Returns a read-only stream for the contents of the resource specified by
+     * {@code resName}. The mapping between the resource name and the stream is
+     * managed by the class' class loader.
+     *
+     * @param resName
+     *            the name of the resource.
+     * @return a stream for the requested resource or {@code null} if no
+     *         resource with the specified name can be found.
+     * @see ClassLoader
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.042 -0500", hash_original_method = "A39605B8A15ACAEBE8FD794856699A1B", hash_generated_method = "86CEEF39D17B80ED6EB9C612DF444F82")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.646 -0400", hash_original_method = "A39605B8A15ACAEBE8FD794856699A1B", hash_generated_method = "041C4A1EA1C56CA85BCF1EBC8F140785")
-    public InputStream getResourceAsStream(String resName) {
-        addTaint(resName.getTaint());
-        if(resName.startsWith("/"))        
-        {
+public InputStream getResourceAsStream(String resName) {
+        // Get absolute resource name, but without the leading slash
+        if (resName.startsWith("/")) {
             resName = resName.substring(1);
-        } //End block
-        else
-        {
+        } else {
             String pkg = getName();
             int dot = pkg.lastIndexOf('.');
-            if(dot != -1)            
-            {
+            if (dot != -1) {
                 pkg = pkg.substring(0, dot).replace('.', '/');
-            } //End block
-            else
-            {
+            } else {
                 pkg = "";
-            } //End block
+            }
+
             resName = pkg + "/" + resName;
-        } //End block
+        }
+
+        // Delegate to proper class loader
         ClassLoader loader = getClassLoader();
-        if(loader != null)        
-        {
-InputStream var7C96068EED3C187BCC2775F895143208_1589909595 =             loader.getResourceAsStream(resName);
-            var7C96068EED3C187BCC2775F895143208_1589909595.addTaint(taint);
-            return var7C96068EED3C187BCC2775F895143208_1589909595;
-        } //End block
-        else
-        {
-InputStream var3F96CF621A1F3E1A4483E32D8C834982_760105313 =             ClassLoader.getSystemResourceAsStream(resName);
-            var3F96CF621A1F3E1A4483E32D8C834982_760105313.addTaint(taint);
-            return var3F96CF621A1F3E1A4483E32D8C834982_760105313;
-        } //End block
-        // ---------- Original Method ----------
-        //if (resName.startsWith("/")) {
-            //resName = resName.substring(1);
-        //} else {
-            //String pkg = getName();
-            //int dot = pkg.lastIndexOf('.');
-            //if (dot != -1) {
-                //pkg = pkg.substring(0, dot).replace('.', '/');
-            //} else {
-                //pkg = "";
-            //}
-            //resName = pkg + "/" + resName;
-        //}
-        //ClassLoader loader = getClassLoader();
-        //if (loader != null) {
-            //return loader.getResourceAsStream(resName);
-        //} else {
-            //return ClassLoader.getSystemResourceAsStream(resName);
-        //}
+        if (loader != null) {
+            return loader.getResourceAsStream(resName);
+        } else {
+            return ClassLoader.getSystemResourceAsStream(resName);
+        }
     }
 
+    /**
+     * Returns null. (On Android, a {@code ClassLoader} can load classes from multiple dex files.
+     * All classes from any given dex file will have the same signers, but different dex
+     * files may have different signers. This does not fit well with the original
+     * {@code ClassLoader}-based model of {@code getSigners}.)
+     *
+     * @return null.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.045 -0500", hash_original_method = "23E1DD471F041FCBD863FD07CDFD9C50", hash_generated_method = "0FEDCEA57B2FDA4E2741434B8D686EE1")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.647 -0400", hash_original_method = "23E1DD471F041FCBD863FD07CDFD9C50", hash_generated_method = "364898A44A7EE0A487CAEE8C20DDAA6B")
-    public Object[] getSigners() {
-Object[] var540C13E9E156B687226421B24F2DF178_1667293101 =         null;
-        var540C13E9E156B687226421B24F2DF178_1667293101.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_1667293101;
-        // ---------- Original Method ----------
-        //return null;
+public Object[] getSigners() {
+        // See http://code.google.com/p/android/issues/detail?id=1766.
+        return null;
     }
 
     
@@ -1212,199 +1185,232 @@ Object[] var540C13E9E156B687226421B24F2DF178_1667293101 =         null;
     	return ret;
     }
 
+    /**
+     * Returns an array containing {@code TypeVariable} objects for type
+     * variables declared by the generic class represented by this {@code
+     * Class}. Returns an empty array if the class is not generic.
+     *
+     * @return an array with the type variables of the class represented by this
+     *         class.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.051 -0500", hash_original_method = "6787AAB5FB05E26F36F8582CB719E4B5", hash_generated_method = "FB368A623C43001AF0F281EC8C9BB200")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.647 -0400", hash_original_method = "6787AAB5FB05E26F36F8582CB719E4B5", hash_generated_method = "5042A01008EE01979D6C524A12E1324D")
-    @SuppressWarnings("unchecked")
+@SuppressWarnings("unchecked")
     public synchronized TypeVariable<Class<T>>[] getTypeParameters() {
         GenericSignatureParser parser = new GenericSignatureParser(getClassLoader());
         parser.parseForClass(this, getSignatureAttribute());
-TypeVariable<Class<T>>[] var88FA10730ED8D83D53A7F9A30F5F0311_251484601 =         parser.formalTypeParameters.clone();
-        var88FA10730ED8D83D53A7F9A30F5F0311_251484601.addTaint(taint);
-        return var88FA10730ED8D83D53A7F9A30F5F0311_251484601;
-        // ---------- Original Method ----------
-        //GenericSignatureParser parser = new GenericSignatureParser(getClassLoader());
-        //parser.parseForClass(this, getSignatureAttribute());
-        //return parser.formalTypeParameters.clone();
+        return parser.formalTypeParameters.clone();
     }
 
+    /**
+     * Indicates whether this {@code Class} represents an annotation class.
+     *
+     * @return {@code true} if this {@code Class} represents an annotation
+     *         class; {@code false} otherwise.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.054 -0500", hash_original_method = "4ABCCCB32AED1EA36AB75BC1C1D6F00F", hash_generated_method = "0B1CE4556A32614313477B12988F56FD")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.647 -0400", hash_original_method = "4ABCCCB32AED1EA36AB75BC1C1D6F00F", hash_generated_method = "DD26C3EFE53E746BBF0150135AD95244")
-    public boolean isAnnotation() {
-        final int ACC_ANNOTATION = 0x2000;
+public boolean isAnnotation() {
+        final int ACC_ANNOTATION = 0x2000;  // not public in reflect.Modifiers
         int mod = getModifiers(this, true);
-        boolean varA8ED21048ED38EB744FB2B250A06985D_1138922100 = ((mod & ACC_ANNOTATION) != 0);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1789760194 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1789760194;
-        // ---------- Original Method ----------
-        //final int ACC_ANNOTATION = 0x2000;
-        //int mod = getModifiers(this, true);
-        //return (mod & ACC_ANNOTATION) != 0;
+        return (mod & ACC_ANNOTATION) != 0;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.056 -0500", hash_original_method = "0543735514B2514B55E5A7CA82A68F41", hash_generated_method = "16BE0F77EC97D1B9B2C1E188F15C5E73")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.647 -0400", hash_original_method = "0543735514B2514B55E5A7CA82A68F41", hash_generated_method = "04AF7D4027BA793CC8B6E0B6EE44C791")
-    @Override
-    public boolean isAnnotationPresent(Class<? extends Annotation> annotationType) {
-        addTaint(annotationType.getTaint());
-        if(annotationType == null)        
-        {
-            NullPointerException varD3565833EFC12BC5822ABFE94D257EDE_958641712 = new NullPointerException("annotationType == null");
-            varD3565833EFC12BC5822ABFE94D257EDE_958641712.addTaint(taint);
-            throw varD3565833EFC12BC5822ABFE94D257EDE_958641712;
-        } //End block
-        if(isDeclaredAnnotationPresent(annotationType))        
-        {
-            boolean varB326B5062B2F0E69046810717534CB09_1135282376 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1589763824 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1589763824;
-        } //End block
-        if(annotationType.isDeclaredAnnotationPresent(Inherited.class))        
-        {
-for(Class<?> sup = getSuperclass();sup != null;sup = sup.getSuperclass())
-            {
-                if(sup.isDeclaredAnnotationPresent(annotationType))                
-                {
-                    boolean varB326B5062B2F0E69046810717534CB09_936317434 = (true);
-                                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1955938768 = getTaintBoolean();
-                    return var84E2C64F38F78BA3EA5C905AB5A2DA27_1955938768;
-                } //End block
-            } //End block
-        } //End block
-        boolean var68934A3E9455FA72420237EB05902327_675128352 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_637348275 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_637348275;
-        // ---------- Original Method ----------
-        //if (annotationType == null) {
-            //throw new NullPointerException("annotationType == null");
-        //}
-        //if (isDeclaredAnnotationPresent(annotationType)) {
-            //return true;
-        //}
-        //if (annotationType.isDeclaredAnnotationPresent(Inherited.class)) {
-            //for (Class<?> sup = getSuperclass(); sup != null; sup = sup.getSuperclass()) {
-                //if (sup.isDeclaredAnnotationPresent(annotationType)) {
-                    //return true;
-                //}
-            //}
-        //}
-        //return false;
+@Override public boolean isAnnotationPresent(Class<? extends Annotation> annotationType) {
+        if (annotationType == null) {
+            throw new NullPointerException("annotationType == null");
+        }
+
+        if (isDeclaredAnnotationPresent(annotationType)) {
+            return true;
+        }
+
+        if (annotationType.isDeclaredAnnotationPresent(Inherited.class)) {
+            for (Class<?> sup = getSuperclass(); sup != null; sup = sup.getSuperclass()) {
+                if (sup.isDeclaredAnnotationPresent(annotationType)) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
     }
 
+    /**
+     * Indicates whether the class represented by this {@code Class} is
+     * anonymously declared.
+     *
+     * @return {@code true} if the class represented by this {@code Class} is
+     *         anonymous; {@code false} otherwise.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.060 -0500", hash_original_method = "0B2F9CB5B3D3F1E238437E8B96C9A5C6", hash_generated_method = "6890CE8E012769B06F8E5B2F096E744B")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.647 -0400", hash_original_method = "0B2F9CB5B3D3F1E238437E8B96C9A5C6", hash_generated_method = "DD63EEA97FB6F80FCE8B17685C12458B")
-    public boolean isAnonymousClass() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1172758331 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1172758331;
+    public boolean isAnonymousClass(){
+    	//Formerly a native method
+    	return getTaintBoolean();
     }
 
+
+    /**
+     * Indicates whether the class represented by this {@code Class} is an array
+     * class.
+     *
+     * @return {@code true} if the class represented by this {@code Class} is an
+     *         array class; {@code false} otherwise.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.063 -0500", hash_original_method = "AA0408A05BAE9726C68A16303FDDA1C2", hash_generated_method = "295B3FD7BCB14D1F140029116A5683AB")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.647 -0400", hash_original_method = "AA0408A05BAE9726C68A16303FDDA1C2", hash_generated_method = "BBC3A8C80539B533D7EBCF7E23EFFAED")
-    @DSModeled(DSC.SAFE)
-    public boolean isArray() {
-        boolean varD9EC80EBE7F6EA0E95A1BEB28155A254_408431719 = (getComponentType() != null);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1344134589 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1344134589;
-        // ---------- Original Method ----------
-        //return getComponentType() != null;
+public boolean isArray() {
+        return getComponentType() != null;
     }
 
+    /**
+     * Indicates whether the specified class type can be converted to the class
+     * represented by this {@code Class}. Conversion may be done via an identity
+     * conversion or a widening reference conversion (if either the receiver or
+     * the argument represent primitive types, only the identity conversion
+     * applies).
+     *
+     * @param cls
+     *            the class to check.
+     * @return {@code true} if {@code cls} can be converted to the class
+     *         represented by this {@code Class}; {@code false} otherwise.
+     * @throws NullPointerException
+     *             if {@code cls} is {@code null}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.067 -0500", hash_original_method = "A1982F53FFC7DDA0FE0A72AB5EB8A2B7", hash_generated_method = "7D4144660EDDFA20785744BA037E6F04")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.647 -0400", hash_original_method = "A1982F53FFC7DDA0FE0A72AB5EB8A2B7", hash_generated_method = "47530057220D3DBD7FD8E1731E59904C")
-    public boolean isAssignableFrom(Class<?> cls) {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_6366830 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_6366830;
+    public boolean isAssignableFrom(Class<?> cls){
+    	//Formerly a native method
+    	addTaint(cls.getTaint());
+    	return getTaintBoolean();
     }
 
+
+    /**
+     * Indicates whether the class represented by this {@code Class} is an
+     * {@code enum}.
+     *
+     * @return {@code true} if the class represented by this {@code Class} is an
+     *         {@code enum}; {@code false} otherwise.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.069 -0500", hash_original_method = "52EC957E82FBDA76529AFBCF943E6548", hash_generated_method = "433854292DBBE11D1B7A199C41DDB4FD")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.648 -0400", hash_original_method = "52EC957E82FBDA76529AFBCF943E6548", hash_generated_method = "99DF7E42E57CBDCA6E517882B742F739")
-    public boolean isEnum() {
-        boolean var11C2EB902A1B8BD8CBB2D065CAECE303_1803550704 = (((getModifiers() & 0x4000) != 0) && (getSuperclass() == Enum.class));
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1904516973 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1904516973;
-        // ---------- Original Method ----------
-        //return ((getModifiers() & 0x4000) != 0) && (getSuperclass() == Enum.class);
+public boolean isEnum() {
+        return ((getModifiers() & 0x4000) != 0) && (getSuperclass() == Enum.class);
     }
 
+    /**
+     * Indicates whether the specified object can be cast to the class
+     * represented by this {@code Class}. This is the runtime version of the
+     * {@code instanceof} operator.
+     *
+     * @param object
+     *            the object to check.
+     * @return {@code true} if {@code object} can be cast to the type
+     *         represented by this {@code Class}; {@code false} if {@code
+     *         object} is {@code null} or cannot be cast.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.073 -0500", hash_original_method = "D7FA1612842AB24E73A4821AC9A1116F", hash_generated_method = "A26710A54E7215882856758239B85A71")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.648 -0400", hash_original_method = "D7FA1612842AB24E73A4821AC9A1116F", hash_generated_method = "BB54BF4595166E24A3A21C0E41950A2D")
-    public boolean isInstance(Object object) {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_745626549 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_745626549;
+    public boolean isInstance(Object object){
+    	//Formerly a native method
+    	addTaint(object.getTaint());
+    	return getTaintBoolean();
     }
 
+
+    /**
+     * Indicates whether this {@code Class} represents an interface.
+     *
+     * @return {@code true} if this {@code Class} represents an interface;
+     *         {@code false} otherwise.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.076 -0500", hash_original_method = "FC0FA8D38BCF14F0E529954D267C8D44", hash_generated_method = "08D704271A4540C93EEA278831C40C7C")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.651 -0400", hash_original_method = "FC0FA8D38BCF14F0E529954D267C8D44", hash_generated_method = "7403A65F4E2967C39437730A72FEEB91")
-    public boolean isInterface() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1972309842 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1972309842;
+    public boolean isInterface(){
+    	//Formerly a native method
+    	return getTaintBoolean();
     }
 
+
+    /**
+     * Indicates whether the class represented by this {@code Class} is defined
+     * locally.
+     *
+     * @return {@code true} if the class represented by this {@code Class} is
+     *         defined locally; {@code false} otherwise.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.079 -0500", hash_original_method = "3F7BF71CE24DC5396B729F24C64FF6F5", hash_generated_method = "106134B6F1D2F0617972FF12F0A7C885")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.651 -0400", hash_original_method = "3F7BF71CE24DC5396B729F24C64FF6F5", hash_generated_method = "5D9CE087E055D2F765FE5DFB95006A0C")
-    @DSModeled(DSC.SAFE)
-    public boolean isLocalClass() {
+public boolean isLocalClass() {
         boolean enclosed = (getEnclosingMethod() != null ||
                          getEnclosingConstructor() != null);
-        boolean var5A76BBF6F8D9D20B0C2DEE09C3D27C80_583155465 = (enclosed && !isAnonymousClass());
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_973677403 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_973677403;
-        // ---------- Original Method ----------
-        //boolean enclosed = (getEnclosingMethod() != null ||
-                         //getEnclosingConstructor() != null);
-        //return enclosed && !isAnonymousClass();
+        return enclosed && !isAnonymousClass();
     }
 
+    /**
+     * Indicates whether the class represented by this {@code Class} is a member
+     * class.
+     *
+     * @return {@code true} if the class represented by this {@code Class} is a
+     *         member class; {@code false} otherwise.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.081 -0500", hash_original_method = "C60F72E8D565680EAC577743F2D63678", hash_generated_method = "ED77BF92668C44C3CF8FD9420EB90C99")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.651 -0400", hash_original_method = "C60F72E8D565680EAC577743F2D63678", hash_generated_method = "A5AE12CFD2FAA602F5C0E4837056A273")
-    @DSModeled(DSC.SAFE)
-    public boolean isMemberClass() {
-        boolean varC9096DA666816CCFBD0380B7F2B1C51A_1395550525 = (getDeclaringClass() != null);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1499404624 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1499404624;
-        // ---------- Original Method ----------
-        //return getDeclaringClass() != null;
+public boolean isMemberClass() {
+        return getDeclaringClass() != null;
     }
 
+    /**
+     * Indicates whether this {@code Class} represents a primitive type.
+     *
+     * @return {@code true} if this {@code Class} represents a primitive type;
+     *         {@code false} otherwise.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.085 -0500", hash_original_method = "8FF8B3D321E9B47A5AC7E5D4DF30BFE3", hash_generated_method = "5DA70992F03DF30911CCCBF32E05030B")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.651 -0400", hash_original_method = "8FF8B3D321E9B47A5AC7E5D4DF30BFE3", hash_generated_method = "08680C65DA5E403C742978BBC6B7E2D8")
-    public boolean isPrimitive() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1733259656 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1733259656;
+    public boolean isPrimitive(){
+    	//Formerly a native method
+    	return getTaintBoolean();
     }
 
+
+    /**
+     * Indicates whether this {@code Class} represents a synthetic type.
+     *
+     * @return {@code true} if this {@code Class} represents a synthetic type;
+     *         {@code false} otherwise.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.088 -0500", hash_original_method = "022E776606079BC3CFEA0634201C3D50", hash_generated_method = "610ED7C0D1FA396EDA2EE5DFF7D56D3A")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.651 -0400", hash_original_method = "022E776606079BC3CFEA0634201C3D50", hash_generated_method = "0E8E0B6876AF9B58B613AF32B34CDDF6")
-    public boolean isSynthetic() {
-        final int ACC_SYNTHETIC = 0x1000;
+public boolean isSynthetic() {
+        final int ACC_SYNTHETIC = 0x1000;   // not public in reflect.Modifiers
         int mod = getModifiers(this, true);
-        boolean varA3ED4501470133DDF149A0E39C2DD31F_666800730 = ((mod & ACC_SYNTHETIC) != 0);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_275604264 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_275604264;
-        // ---------- Original Method ----------
-        //final int ACC_SYNTHETIC = 0x1000;
-        //int mod = getModifiers(this, true);
-        //return (mod & ACC_SYNTHETIC) != 0;
+        return (mod & ACC_SYNTHETIC) != 0;
     }
 
+    /**
+     * Returns a new instance of the class represented by this {@code Class},
+     * created by invoking the default (that is, zero-argument) constructor. If
+     * there is no such constructor, or if the creation fails (either because of
+     * a lack of available memory or because an exception is thrown by the
+     * constructor), an {@code InstantiationException} is thrown. If the default
+     * constructor exists but is not accessible from the context where this
+     * method is invoked, an {@code IllegalAccessException} is thrown.
+     *
+     * @return a new instance of the class represented by this {@code Class}.
+     * @throws IllegalAccessException
+     *             if the default constructor is not visible.
+     * @throws InstantiationException
+     *             if the instance can not be created.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.091 -0500", hash_original_method = "5CAD01C91ED82C15E838E91DCE6C6576", hash_generated_method = "FDDB42B0D188A0B956339356BF11732B")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.652 -0400", hash_original_method = "5CAD01C91ED82C15E838E91DCE6C6576", hash_generated_method = "817F95E6C8C06997062B26BD4E2EEF58")
-    public T newInstance() throws InstantiationException, IllegalAccessException {
-T varDABAB645F82D7DAC0FD72FFCF9059689_912412957 =         newInstanceImpl();
-        varDABAB645F82D7DAC0FD72FFCF9059689_912412957.addTaint(taint);
-        return varDABAB645F82D7DAC0FD72FFCF9059689_912412957;
-        // ---------- Original Method ----------
-        //return newInstanceImpl();
+public T newInstance() throws InstantiationException, IllegalAccessException {
+        return newInstanceImpl();
     }
 
     
@@ -1415,64 +1421,53 @@ T varDABAB645F82D7DAC0FD72FFCF9059689_912412957 =         newInstanceImpl();
     	return ret;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.097 -0500", hash_original_method = "EB1BF1C423B147859F4E7C903D1661B8", hash_generated_method = "7292E9E5EDF7CF3E16FDA7C8739C03F9")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.652 -0400", hash_original_method = "EB1BF1C423B147859F4E7C903D1661B8", hash_generated_method = "469F8D9AE5FCC2ADC6D3AE301CEE963C")
-    @Override
+@Override
     public String toString() {
-        if(isPrimitive())        
-        {
-String var3324D10DB87BCD465548F8DC9ECC57B8_946178748 =             getSimpleName();
-            var3324D10DB87BCD465548F8DC9ECC57B8_946178748.addTaint(taint);
-            return var3324D10DB87BCD465548F8DC9ECC57B8_946178748;
-        } //End block
-        else
-        {
-String var098FF1C1E251D1D541F5C2B99C1AEADF_411521045 =             (isInterface() ? "interface " : "class ") + getName();
-            var098FF1C1E251D1D541F5C2B99C1AEADF_411521045.addTaint(taint);
-            return var098FF1C1E251D1D541F5C2B99C1AEADF_411521045;
-        } //End block
-        // ---------- Original Method ----------
-        //if (isPrimitive()) {
-            //return getSimpleName();
-        //} else {
-            //return (isInterface() ? "interface " : "class ") + getName();
-        //}
+        if (isPrimitive()) {
+            return getSimpleName();
+        } else {
+            return (isInterface() ? "interface " : "class ") + getName();
+        }
     }
 
+    /**
+     * Returns the {@code Package} of which the class represented by this
+     * {@code Class} is a member. Returns {@code null} if no {@code Package}
+     * object was created by the class loader of the class.
+     *
+     * @return Package the {@code Package} of which this {@code Class} is a
+     *         member or {@code null}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.099 -0500", hash_original_method = "AFC08E4F788A8A715582FE5BCDA4146B", hash_generated_method = "99264132046FF3CADEE61A42634D3476")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.652 -0400", hash_original_method = "AFC08E4F788A8A715582FE5BCDA4146B", hash_generated_method = "4A6CC5B9623A5F517F7A0E46369D8337")
-    public Package getPackage() {
+public Package getPackage() {
+        // TODO This might be a hack, but the VM doesn't have the necessary info.
         ClassLoader loader = getClassLoader();
-        if(loader != null)        
-        {
+        if (loader != null) {
             String name = getName();
             int dot = name.lastIndexOf('.');
-Package var6194FAAADA178101667EADF15CA13617_1439984144 =             (dot != -1 ? loader.getPackage(name.substring(0, dot)) : null);
-            var6194FAAADA178101667EADF15CA13617_1439984144.addTaint(taint);
-            return var6194FAAADA178101667EADF15CA13617_1439984144;
-        } //End block
-Package var540C13E9E156B687226421B24F2DF178_337558637 =         null;
-        var540C13E9E156B687226421B24F2DF178_337558637.addTaint(taint);
-        return var540C13E9E156B687226421B24F2DF178_337558637;
-        // ---------- Original Method ----------
-        //ClassLoader loader = getClassLoader();
-        //if (loader != null) {
-            //String name = getName();
-            //int dot = name.lastIndexOf('.');
-            //return (dot != -1 ? loader.getPackage(name.substring(0, dot)) : null);
-        //}
-        //return null;
+            return (dot != -1 ? loader.getPackage(name.substring(0, dot)) : null);
+        }
+        return null;
     }
 
+    /**
+     * Returns the assertion status for the class represented by this {@code
+     * Class}. Assertion is enabled / disabled based on the class loader,
+     * package or class default at runtime.
+     *
+     * @return the assertion status for the class represented by this {@code
+     *         Class}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.102 -0500", hash_original_method = "979945A4786597A7E7ECDDD9487DBA25", hash_generated_method = "550D874087B9E936358B5AA79DF78671")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.652 -0400", hash_original_method = "979945A4786597A7E7ECDDD9487DBA25", hash_generated_method = "4866438F4E45146CB57377E525623BEF")
-    public boolean desiredAssertionStatus() {
-        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1414493066 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1414493066;
+    public boolean desiredAssertionStatus(){
+    	//Formerly a native method
+    	return getTaintBoolean();
     }
+
 
     
     @DSModeled(DSC.SAFE)
@@ -1500,52 +1495,28 @@ Class<? extends U> var02DA6192FD05C589213B6B2CDFCD6CAA_1691582090 =             
         //throw new ClassCastException(actualClassName + " cannot be cast to " + desiredClassName);
     }
 
+    /**
+     * Casts the specified object to the type represented by this {@code Class}.
+     * If the object is {@code null} then the result is also {@code null}.
+     *
+     * @param obj
+     *            the object to cast.
+     * @return the object that has been cast.
+     * @throws ClassCastException
+     *             if the object cannot be cast to the specified type.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.108 -0500", hash_original_method = "E0CC08D19733748B74C939DEAB4797E1", hash_generated_method = "66593E0828C148F6EA2B3EEA96365AB6")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.652 -0400", hash_original_method = "E0CC08D19733748B74C939DEAB4797E1", hash_generated_method = "521BA862A15172BE90D80E3869E14622")
-    @SuppressWarnings("unchecked")
+@SuppressWarnings("unchecked")
     public T cast(Object obj) {
-        addTaint(obj.getTaint());
-        if(obj == null)        
-        {
-T var540C13E9E156B687226421B24F2DF178_2081061281 =             null;
-            var540C13E9E156B687226421B24F2DF178_2081061281.addTaint(taint);
-            return var540C13E9E156B687226421B24F2DF178_2081061281;
-        } //End block
-        else
-        if(this.isInstance(obj))        
-        {
-T var60E33DF11B55697B4C1C6AE5825E84D3_1320749960 =             (T)obj;
-            var60E33DF11B55697B4C1C6AE5825E84D3_1320749960.addTaint(taint);
-            return var60E33DF11B55697B4C1C6AE5825E84D3_1320749960;
-        } //End block
+        if (obj == null) {
+            return null;
+        } else if (this.isInstance(obj)) {
+            return (T)obj;
+        }
         String actualClassName = obj.getClass().getName();
         String desiredClassName = this.getName();
-        ClassCastException var7B10A624B63DE93BBB3082FF2B62182B_1244987968 = new ClassCastException(actualClassName + " cannot be cast to " + desiredClassName);
-        var7B10A624B63DE93BBB3082FF2B62182B_1244987968.addTaint(taint);
-        throw var7B10A624B63DE93BBB3082FF2B62182B_1244987968;
-        // ---------- Original Method ----------
-        //if (obj == null) {
-            //return null;
-        //} else if (this.isInstance(obj)) {
-            //return (T)obj;
-        //}
-        //String actualClassName = obj.getClass().getName();
-        //String desiredClassName = this.getName();
-        //throw new ClassCastException(actualClassName + " cannot be cast to " + desiredClassName);
+        throw new ClassCastException(actualClassName + " cannot be cast to " + desiredClassName);
     }
-
-    
-    @DSModeled(DSC.SAFE)
-    private static <T extends Object> T[] arraycopy(T[] result, T[] head, T[] tail) {
-        System.arraycopy(head, 0, result, 0, head.length);
-        System.arraycopy(tail, 0, result, head.length, tail.length);
-        return result;
-    }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.652 -0400", hash_original_field = "07BD6CDA090731A5E103F68AD0EAE9F3", hash_generated_field = "A2E36971CC30DE91D1AF4E9C02F420A3")
-
-    private static final long serialVersionUID = 3206093459760846163L;
 }
 

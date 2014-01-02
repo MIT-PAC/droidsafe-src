@@ -1,6 +1,8 @@
 package java.net;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.FileDescriptor;
 import java.io.IOException;
@@ -8,38 +10,25 @@ import java.io.IOException;
 
 
 public class PlainServerSocketImpl extends PlainSocketImpl {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:09.375 -0500", hash_original_method = "CB92FA37CCF842A0A29D6A265F149C47", hash_generated_method = "8358F680F9D52E3259C8D1FCC816F95B")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.066 -0400", hash_original_method = "CB92FA37CCF842A0A29D6A265F149C47", hash_generated_method = "B39DF470BED074E64F0FF7F3AC8F71B2")
-    public  PlainServerSocketImpl() {
-        // ---------- Original Method ----------
+public PlainServerSocketImpl() {
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:09.377 -0500", hash_original_method = "188CEC52BC9D693EB11C74D723EB792B", hash_generated_method = "391C9D44B19A74797BC113CF7EE3DF0C")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.066 -0400", hash_original_method = "188CEC52BC9D693EB11C74D723EB792B", hash_generated_method = "79443F2EBF1404FA718A959E906BF2D0")
-    public  PlainServerSocketImpl(FileDescriptor fd) {
+public PlainServerSocketImpl(FileDescriptor fd) {
         super(fd);
-        addTaint(fd.getTaint());
-        // ---------- Original Method ----------
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:09.380 -0500", hash_original_method = "76AEC2BC7D7414BFD7FB8B5DC8DD0C2B", hash_generated_method = "9EFEF6DC5395C4E32A8858AF6636850F")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.066 -0400", hash_original_method = "76AEC2BC7D7414BFD7FB8B5DC8DD0C2B", hash_generated_method = "6C8C09DDE2460C3F13B1B7E8EF3A01C1")
-    @Override
+@Override
     protected void create(boolean isStreaming) throws IOException {
-        addTaint(isStreaming);
         super.create(isStreaming);
-        if(isStreaming)        
-        {
+        if (isStreaming) {
             setOption(SocketOptions.SO_REUSEADDR, Boolean.TRUE);
-        } //End block
-        // ---------- Original Method ----------
-        //super.create(isStreaming);
-        //if (isStreaming) {
-            //setOption(SocketOptions.SO_REUSEADDR, Boolean.TRUE);
-        //}
+        }
     }
 
     

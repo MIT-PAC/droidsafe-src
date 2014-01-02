@@ -1,36 +1,33 @@
 package org.bouncycastle.asn1;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.math.BigInteger;
 
 
 
 public class ASN1Enumerated extends DEREnumerated {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:17.662 -0500", hash_original_method = "21C60C1A5AA0865B59F345279A6EA8BF", hash_generated_method = "21C60C1A5AA0865B59F345279A6EA8BF")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.619 -0400", hash_original_method = "21C60C1A5AA0865B59F345279A6EA8BF", hash_generated_method = "BDC61776DDBF1B8B80A4007221CFF0B9")
-      ASN1Enumerated(byte[] bytes) {
+ASN1Enumerated(byte[] bytes)
+    {
         super(bytes);
-        addTaint(bytes[0]);
-        // ---------- Original Method ----------
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:17.664 -0500", hash_original_method = "7B433ECBA08A5BBD92F98E49D15E8F41", hash_generated_method = "9B7A58266A5BDDB476408BED9A43C65B")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.619 -0400", hash_original_method = "7B433ECBA08A5BBD92F98E49D15E8F41", hash_generated_method = "2419982FDCDBD727B43582462A9FFF90")
-    public  ASN1Enumerated(BigInteger value) {
+public ASN1Enumerated(BigInteger value)
+    {
         super(value);
-        addTaint(value.getTaint());
-        // ---------- Original Method ----------
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:17.667 -0500", hash_original_method = "AB030E25D9BC2A8CAF201556A98FD5C6", hash_generated_method = "4D767F2CD9171820E4EF4506D6279756")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.620 -0400", hash_original_method = "AB030E25D9BC2A8CAF201556A98FD5C6", hash_generated_method = "91D1C94BD409E230DB9487E991D23405")
-    public  ASN1Enumerated(int value) {
+public ASN1Enumerated(int value)
+    {
         super(value);
-        addTaint(value);
-        // ---------- Original Method ----------
     }
 
     

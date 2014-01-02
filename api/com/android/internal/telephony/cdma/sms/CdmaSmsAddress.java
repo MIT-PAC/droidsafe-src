@@ -1,6 +1,8 @@
 package com.android.internal.telephony.cdma.sms;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.util.SparseBooleanArray;
 
@@ -13,60 +15,16 @@ import com.android.internal.util.HexDump;
 
 
 public class CdmaSmsAddress extends SmsAddress {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.735 -0400", hash_original_field = "49524A0E3EE6F35DABACF2EE847F7934", hash_generated_field = "84D708851062F6247553AB01A32917F4")
 
-    public int digitMode;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.735 -0400", hash_original_field = "9F6DEAB7E87E178AA4369A698B428CC9", hash_generated_field = "684B3B4D05E25597D49E78621D640BA3")
+    /*
+     * TODO(cleanup): Refactor the parsing for addresses to better
+     * share code and logic with GSM.  Also, gather all DTMF/BCD
+     * processing code in one place.
+     */
 
-    public int numberMode;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.735 -0400", hash_original_field = "4C094E528F219B5FA64F2348874263D5", hash_generated_field = "380C724376E6D50354D5A2BE6AD71C15")
-
-    public int numberOfDigits;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.735 -0400", hash_original_field = "38786F58063652B570260E8A16FE7DB3", hash_generated_field = "8732F91B3DDF6D0B0124E0E68F0A73A0")
-
-    public int numberPlan;
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.774 -0500", hash_original_method = "94CDCBFA443680005A46D43F8D4600C3", hash_generated_method = "9753CE4C72E0F575AE77034E87DF86E4")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.735 -0400", hash_original_method = "C14D3E49998397C1BAE29B9693261AA4", hash_generated_method = "D0B7A6B483495AD2F861F207E5EE1740")
-    public  CdmaSmsAddress() {
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.735 -0400", hash_original_method = "63A53E613DBD8AE7867F216680739B01", hash_generated_method = "AEBDC26D9D9DF4E6B200F71408B57078")
-    @Override
-    public String toString() {
-        StringBuilder builder = new StringBuilder();
-        builder.append("CdmaSmsAddress ");
-        builder.append("{ digitMode=" + digitMode);
-        builder.append(", numberMode=" + numberMode);
-        builder.append(", numberPlan=" + numberPlan);
-        builder.append(", numberOfDigits=" + numberOfDigits);
-        builder.append(", ton=" + ton);
-        builder.append(", address=\"" + address + "\"");
-        builder.append(", origBytes=" + HexDump.toHexString(origBytes));
-        builder.append(" }");
-String varF4CF030572656354ACFDF83FEE21D7A6_933893267 =         builder.toString();
-        varF4CF030572656354ACFDF83FEE21D7A6_933893267.addTaint(taint);
-        return varF4CF030572656354ACFDF83FEE21D7A6_933893267;
-        // ---------- Original Method ----------
-        //StringBuilder builder = new StringBuilder();
-        //builder.append("CdmaSmsAddress ");
-        //builder.append("{ digitMode=" + digitMode);
-        //builder.append(", numberMode=" + numberMode);
-        //builder.append(", numberPlan=" + numberPlan);
-        //builder.append(", numberOfDigits=" + numberOfDigits);
-        //builder.append(", ton=" + ton);
-        //builder.append(", address=\"" + address + "\"");
-        //builder.append(", origBytes=" + HexDump.toHexString(origBytes));
-        //builder.append(" }");
-        //return builder.toString();
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    private static byte[] parseToDtmf(String address) {
+private static byte[] parseToDtmf(String address) {
         int digits = address.length();
         byte[] result = new byte[digits];
         for (int i = 0; i < digits; i++) {
@@ -82,9 +40,15 @@ String varF4CF030572656354ACFDF83FEE21D7A6_933893267 =         builder.toString(
         return result;
     }
 
+    /**
+     * Given a numeric address string, return the string without
+     * syntactic sugar, meaning parens, spaces, hyphens/minuses, or
+     * plus signs.  If the input string contains non-numeric
+     * non-punctuation characters, return null.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.784 -0500", hash_original_method = "8E90C4CB34BFA3C349704DFD8C6BECF1", hash_generated_method = "A642FAE04AD387A5323BD6E74B8D7924")
     
-    @DSModeled(DSC.BAN)
-    private static String filterNumericSugar(String address) {
+private static String filterNumericSugar(String address) {
         StringBuilder builder = new StringBuilder();
         int len = address.length();
         for (int i = 0; i < len; i++) {
@@ -97,9 +61,13 @@ String varF4CF030572656354ACFDF83FEE21D7A6_933893267 =         builder.toString(
         return builder.toString();
     }
 
+    /**
+     * Given a string, return the string without whitespace,
+     * including CR/LF.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.787 -0500", hash_original_method = "93FB269A6EC54BFB27C79F36D7092575", hash_generated_method = "527BA607A8BF91EBA1712AE8BE5BC746")
     
-    @DSModeled(DSC.BAN)
-    private static String filterWhitespace(String address) {
+private static String filterWhitespace(String address) {
         StringBuilder builder = new StringBuilder();
         int len = address.length();
         for (int i = 0; i < len; i++) {
@@ -110,8 +78,19 @@ String varF4CF030572656354ACFDF83FEE21D7A6_933893267 =         builder.toString(
         return builder.toString();
     }
 
+    /**
+     * Given a string, create a corresponding CdmaSmsAddress object.
+     *
+     * The result will be null if the input string is not
+     * representable using printable ASCII.
+     *
+     * For numeric addresses, the string is cleaned up by removing
+     * common punctuation.  For alpha addresses, the string is cleaned
+     * up by removing whitespace.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.791 -0500", hash_original_method = "8094E6003A9AD72F860775776E112CF5", hash_generated_method = "75AB8E31F3FFE2C2BA960C3340D99E46")
     
-    public static CdmaSmsAddress parse(String address) {
+public static CdmaSmsAddress parse(String address) {
         CdmaSmsAddress addr = new CdmaSmsAddress();
         addr.address = address;
         addr.ton = CdmaSmsAddress.TON_UNKNOWN;
@@ -142,70 +121,116 @@ String varF4CF030572656354ACFDF83FEE21D7A6_933893267 =         builder.toString(
         addr.numberOfDigits = origBytes.length;
         return addr;
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.735 -0400", hash_original_field = "05583BD551D503CA7EA11893644DC766", hash_generated_field = "5A2758A0B87D9B18D12A9717FAD91DC1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.717 -0500", hash_original_field = "C9D5C5DBB0D9E0264F89AD98EA9C44EC", hash_generated_field = "5A2758A0B87D9B18D12A9717FAD91DC1")
 
     static public final int DIGIT_MODE_4BIT_DTMF              = 0x00;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.736 -0400", hash_original_field = "D3D16AF282309AD9335C6E1154F608DF", hash_generated_field = "54BE3135249F3F73963D11C2CFE3ACB7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.720 -0500", hash_original_field = "0687D74D6D548DB4D7871D5D2297D010", hash_generated_field = "54BE3135249F3F73963D11C2CFE3ACB7")
 
     static public final int DIGIT_MODE_8BIT_CHAR              = 0x01;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.736 -0400", hash_original_field = "631C635164DB5D39155F62701AFEBD29", hash_generated_field = "AD771361B86287E166B7D8CE7FC64849")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.724 -0500", hash_original_field = "7FE6D992E68DCA973893F44950DC23ED", hash_generated_field = "AD771361B86287E166B7D8CE7FC64849")
 
     static public final int NUMBER_MODE_NOT_DATA_NETWORK      = 0x00;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.736 -0400", hash_original_field = "BEF33DD6964C6C1D81160DFCB6438A5C", hash_generated_field = "E28E25A5920F22272F4F31D2133ADBB6")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.727 -0500", hash_original_field = "68E2691EA19CEBFE936552C6D218CDF1", hash_generated_field = "E28E25A5920F22272F4F31D2133ADBB6")
 
     static public final int NUMBER_MODE_DATA_NETWORK          = 0x01;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.736 -0400", hash_original_field = "10D9659F7C5DC6EE7A624399BBC8F445", hash_generated_field = "4E1D0DA3019C5ED56F45C703C86EF80A")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.732 -0500", hash_original_field = "2789B41D9E614B4E7F670B7F3B286EDC", hash_generated_field = "4E1D0DA3019C5ED56F45C703C86EF80A")
 
     static public final int TON_UNKNOWN                   = 0x00;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.736 -0400", hash_original_field = "44E315C22CB82648660B80953606CABF", hash_generated_field = "46DE4D9FC5CED5251126A93B49F31D15")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.735 -0500", hash_original_field = "C61F7E3748A5BB5CD1876D634E2C42DB", hash_generated_field = "46DE4D9FC5CED5251126A93B49F31D15")
 
     static public final int TON_INTERNATIONAL_OR_IP       = 0x01;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.736 -0400", hash_original_field = "FAE738F3C6BE541A2CD7D3E37176C4BB", hash_generated_field = "BEA310D2C3D82AE006FCAC9001DF328C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.737 -0500", hash_original_field = "6E5D4D02C07D093D64A1C4A14EA6B30F", hash_generated_field = "BEA310D2C3D82AE006FCAC9001DF328C")
 
     static public final int TON_NATIONAL_OR_EMAIL         = 0x02;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.736 -0400", hash_original_field = "7E92E1B294390A47501B12BE0B3BAF96", hash_generated_field = "66C75357AB4CBAD1CB386D03C954F069")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.739 -0500", hash_original_field = "0388B0F5A2288E4CC7D9B2E11AE1F47E", hash_generated_field = "66C75357AB4CBAD1CB386D03C954F069")
 
     static public final int TON_NETWORK                   = 0x03;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.736 -0400", hash_original_field = "727D26BE83B2228649D6A14E12721CB0", hash_generated_field = "C3F71FD8206C70C10E64C1CF22F24A5F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.742 -0500", hash_original_field = "9A808F6C51C23B14FAF8631742FFB4F2", hash_generated_field = "C3F71FD8206C70C10E64C1CF22F24A5F")
 
     static public final int TON_SUBSCRIBER                = 0x04;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.736 -0400", hash_original_field = "09FC45D1A929BE6A69C59BA5FB0B0317", hash_generated_field = "EE6F07B4A7D22A7604381942299D8AD8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.744 -0500", hash_original_field = "42D29FB64A0C2ADDE918A1B0F254A92C", hash_generated_field = "EE6F07B4A7D22A7604381942299D8AD8")
 
     static public final int TON_ALPHANUMERIC              = 0x05;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.736 -0400", hash_original_field = "53A8D7F863A73957A350B92F85DD96A1", hash_generated_field = "6E2A5EA3F3527C247807D43C2ACE0355")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.747 -0500", hash_original_field = "8EA177D7DA8558BC961593DA74AE6B43", hash_generated_field = "6E2A5EA3F3527C247807D43C2ACE0355")
 
     static public final int TON_ABBREVIATED               = 0x06;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.736 -0400", hash_original_field = "BEB150BAD875F701DFA4BFCFE014F72C", hash_generated_field = "925B7E8535A72B09739E108E8008CD09")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.750 -0500", hash_original_field = "F3B53247F88B225C483EC9996C4EE06A", hash_generated_field = "925B7E8535A72B09739E108E8008CD09")
 
     static public final int TON_RESERVED                  = 0x07;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.736 -0400", hash_original_field = "4719FCBF2016C14975D904E29E9B7E04", hash_generated_field = "6987753AD84CD41E4A5632238AAB4955")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.753 -0500", hash_original_field = "FD5D2F93FF5E58CB74EE35401F8D515B", hash_generated_field = "6987753AD84CD41E4A5632238AAB4955")
 
     static public final int SMS_ADDRESS_MAX          =  36;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.736 -0400", hash_original_field = "9179B7EF6FFB6D59758B73310F26F443", hash_generated_field = "6E0CB2CCD89D3350A3127CAF1CA95FE5")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.755 -0500", hash_original_field = "62B1AFEB280BAFF2D1768E5F2D22618B", hash_generated_field = "6E0CB2CCD89D3350A3127CAF1CA95FE5")
 
     static public final int SMS_SUBADDRESS_MAX       =  36;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.736 -0400", hash_original_field = "3E29746D0E09AB3DDC8052BBF212450D", hash_generated_field = "940A0C8E5C4FC7F3D3C2DEDC2FCC5C9D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.761 -0500", hash_original_field = "9D75F92B84E7241CAAD1C8521D460B08", hash_generated_field = "940A0C8E5C4FC7F3D3C2DEDC2FCC5C9D")
 
     static public final int NUMBERING_PLAN_UNKNOWN           = 0x0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.736 -0400", hash_original_field = "E53D44700F303BAF204D74A94743B589", hash_generated_field = "C1575C82F14549903772CBAD72AAD9B3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.763 -0500", hash_original_field = "9D21B48D9BFC441272C0B1C08336371C", hash_generated_field = "C1575C82F14549903772CBAD72AAD9B3")
 
     static public final int NUMBERING_PLAN_ISDN_TELEPHONY    = 0x1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.736 -0400", hash_original_field = "5AE19C60D35BB8B13ECA6E6C14209D9E", hash_generated_field = "00E884E68BEB39F563669D9FAF5BFCF3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.777 -0500", hash_original_field = "A64F5A798EB6CA8C17C15747160E252A", hash_generated_field = "00E884E68BEB39F563669D9FAF5BFCF3")
+
 
     private static final char[] numericCharsDialable = {
         '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '*', '#'
     };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.736 -0400", hash_original_field = "FB2AB05EA3AE03E2F4669DC06688BFB1", hash_generated_field = "EC628CFAB5EFDD0C4241E5FFF0B67C86")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.779 -0500", hash_original_field = "B05F9DA368C10DEF9F752276FDB4EEC5", hash_generated_field = "EC628CFAB5EFDD0C4241E5FFF0B67C86")
+
 
     private static final char[] numericCharsSugar = {
         '(', ')', ' ', '-', '+', '.', '/', '\\'
     };
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.736 -0400", hash_original_field = "F2B196133F7E2D81EAC9A53EF6BE910F", hash_generated_field = "2A475C0FC5FE4DAC50F34DDADF01035E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.782 -0500", hash_original_field = "D5086EE4F9CC96792F605F498053CE65", hash_generated_field = "2A475C0FC5FE4DAC50F34DDADF01035E")
+
 
     private static final SparseBooleanArray numericCharDialableMap = new SparseBooleanArray (
             numericCharsDialable.length + numericCharsSugar.length);
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.722 -0500", hash_original_field = "95A92FD03ED6030688D1428AC7469695", hash_generated_field = "84D708851062F6247553AB01A32917F4")
+
+
+    public int digitMode;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.729 -0500", hash_original_field = "962B558E45E8225B77AF1A46E6FCF9DB", hash_generated_field = "684B3B4D05E25597D49E78621D640BA3")
+
+
+    public int numberMode;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.758 -0500", hash_original_field = "BD35BB3473BF9134209D1D8D0E6D72E2", hash_generated_field = "380C724376E6D50354D5A2BE6AD71C15")
+
+    public int numberOfDigits;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.765 -0500", hash_original_field = "24727A36E01C18526D4583586B00366A", hash_generated_field = "8BE0FE6FF3ADD41BE52BAA8B67E235AA")
+
+    //static protected final int NUMBERING_PLAN_TELEX             = 0x4;
+    //static protected final int NUMBERING_PLAN_PRIVATE           = 0x9;
+
+    public int numberPlan;
+
+    /**
+     * NOTE: the parsed string address and the raw byte array values
+     * are stored in the parent class address and origBytes fields,
+     * respectively.
+     */
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.768 -0500", hash_original_method = "C14D3E49998397C1BAE29B9693261AA4", hash_generated_method = "91279E3A882CF9CD2214172B23D3D4B8")
+    
+public CdmaSmsAddress(){
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.771 -0500", hash_original_method = "63A53E613DBD8AE7867F216680739B01", hash_generated_method = "09CDD0D7433F20EFD32B305806295534")
+    
+@Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        builder.append("CdmaSmsAddress ");
+        builder.append("{ digitMode=" + digitMode);
+        builder.append(", numberMode=" + numberMode);
+        builder.append(", numberPlan=" + numberPlan);
+        builder.append(", numberOfDigits=" + numberOfDigits);
+        builder.append(", ton=" + ton);
+        builder.append(", address=\"" + address + "\"");
+        builder.append(", origBytes=" + HexDump.toHexString(origBytes));
+        builder.append(" }");
+        return builder.toString();
+    }
     static {
         for (int i = 0; i < numericCharsDialable.length; i++) {
             numericCharDialableMap.put(numericCharsDialable[i], true);

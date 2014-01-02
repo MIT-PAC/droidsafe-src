@@ -1,6 +1,8 @@
 package android.graphics;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
@@ -8,18 +10,6 @@ import droidsafe.annotations.*;
 import droidsafe.helpers.DSUtils;
 
 public class PorterDuffColorFilter extends ColorFilter {
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.666 -0400", hash_original_method = "7596573BC98218F8353DB810A415EA55", hash_generated_method = "D80BA774757B8E6D7A03404BAD569B9A")
-    public  PorterDuffColorFilter(int srcColor, PorterDuff.Mode mode) {
-        addTaint(mode.getTaint());
-        addTaint(srcColor);
-        native_instance = native_CreatePorterDuffFilter(srcColor, mode.nativeInt);
-        nativeColorFilter = nCreatePorterDuffFilter(native_instance, srcColor, mode.nativeInt);
-        // ---------- Original Method ----------
-        //native_instance = native_CreatePorterDuffFilter(srcColor, mode.nativeInt);
-        //nativeColorFilter = nCreatePorterDuffFilter(native_instance, srcColor, mode.nativeInt);
-    }
 
     
     @DSModeled(DSC.SAFE)
@@ -32,6 +22,19 @@ public class PorterDuffColorFilter extends ColorFilter {
     private static int nCreatePorterDuffFilter(int nativeFilter, int srcColor,
             int porterDuffMode) {
         return DSUtils.UNKNOWN_INT;
+    }
+    /**
+     * Create a colorfilter that uses the specified color and porter-duff mode.
+     *
+     * @param srcColor       The source color used with the specified
+     *                       porter-duff mode
+     * @param mode           The porter-duff mode that is applied
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:10.970 -0500", hash_original_method = "7596573BC98218F8353DB810A415EA55", hash_generated_method = "FC221DD174470D4245763A796A96A214")
+    
+public PorterDuffColorFilter(int srcColor, PorterDuff.Mode mode) {
+        native_instance = native_CreatePorterDuffFilter(srcColor, mode.nativeInt);
+        nativeColorFilter = nCreatePorterDuffFilter(native_instance, srcColor, mode.nativeInt);
     }
 
     

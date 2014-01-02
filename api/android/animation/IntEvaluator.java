@@ -1,6 +1,8 @@
 package android.animation;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
@@ -15,20 +17,25 @@ public class IntEvaluator implements TypeEvaluator<Integer> {
         //Synthesized constructor
     }
 
-
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.622 -0400", hash_original_method = "6401BD46F7D1EA9F5782F720B53B51D0", hash_generated_method = "7F3D3F6F019F204E0CBAB1A734CFA500")
-    public Integer evaluate(float fraction, Integer startValue, Integer endValue) {
-        addTaint(endValue.getTaint());
-        addTaint(startValue.getTaint());
-        addTaint(fraction);
+    /**
+     * This function returns the result of linearly interpolating the start and end values, with
+     * <code>fraction</code> representing the proportion between the start and end values. The
+     * calculation is a simple parametric calculation: <code>result = x0 + t * (v1 - v0)</code>,
+     * where <code>x0</code> is <code>startValue</code>, <code>x1</code> is <code>endValue</code>,
+     * and <code>t</code> is <code>fraction</code>.
+     *
+     * @param fraction   The fraction from the starting to the ending values
+     * @param startValue The start value; should be of type <code>int</code> or
+     *                   <code>Integer</code>
+     * @param endValue   The end value; should be of type <code>int</code> or <code>Integer</code>
+     * @return A linear interpolation between the start and end values, given the
+     *         <code>fraction</code> parameter.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:33.336 -0500", hash_original_method = "6401BD46F7D1EA9F5782F720B53B51D0", hash_generated_method = "99EE37795D574886793E48AD2066470F")
+    
+public Integer evaluate(float fraction, Integer startValue, Integer endValue) {
         int startInt = startValue;
-Integer varC552D327F4C770F40BF1C1A41BA4F5AE_1431041085 =         (int)(startInt + fraction * (endValue - startInt));
-        varC552D327F4C770F40BF1C1A41BA4F5AE_1431041085.addTaint(taint);
-        return varC552D327F4C770F40BF1C1A41BA4F5AE_1431041085;
-        // ---------- Original Method ----------
-        //int startInt = startValue;
-        //return (int)(startInt + fraction * (endValue - startInt));
+        return (int)(startInt + fraction * (endValue - startInt));
     }
 
     

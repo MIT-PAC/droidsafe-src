@@ -1,6 +1,8 @@
 package org.bouncycastle.jce;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 import java.security.Principal;
@@ -15,99 +17,12 @@ import org.bouncycastle.asn1.x509.X509Name;
 
 
 public class X509Principal extends X509Name implements Principal {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:34.906 -0500", hash_original_method = "FF25B788711032BAC2432264078A15A6", hash_generated_method = "C85E6D520322491A08965914F5D7DC41")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.283 -0400", hash_original_method = "B0820FF823FE44437CE57E7CCF385599", hash_generated_method = "7C2C0D2B162C7B0FBED2088FF82682BE")
-    public  X509Principal(
-        byte[]  bytes) throws IOException {
-        super(readSequence(new ASN1InputStream(bytes)));
-        addTaint(bytes[0]);
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.283 -0400", hash_original_method = "0E5AD6E3648EC2E4F0A2CBF76D62FE6E", hash_generated_method = "7FA2300D5FAB52E8F0DE87ED00A0C534")
-    public  X509Principal(
-        X509Name  name) {
-        super((ASN1Sequence)name.getDERObject());
-        addTaint(name.getTaint());
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.284 -0400", hash_original_method = "D3D6DABF2D2EE8D49403BBA6B447728D", hash_generated_method = "17864B7C5A8C9E650853114C17C4D4AF")
-    public  X509Principal(
-        Hashtable  attributes) {
-        super(attributes);
-        addTaint(attributes.getTaint());
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.284 -0400", hash_original_method = "33C0081C021F2AA73D8ACD68C98658C4", hash_generated_method = "54E46EA875C38CF765B84585C6104314")
-    public  X509Principal(
-        Vector      ordering,
-        Hashtable   attributes) {
-        super(ordering, attributes);
-        addTaint(attributes.getTaint());
-        addTaint(ordering.getTaint());
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.284 -0400", hash_original_method = "3B6A04762F0F16A7BA4938718F609D48", hash_generated_method = "AE8626085A947CD06A7EA6504A0D0C4C")
-    public  X509Principal(
-        Vector      oids,
-        Vector      values) {
-        super(oids, values);
-        addTaint(values.getTaint());
-        addTaint(oids.getTaint());
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.285 -0400", hash_original_method = "3167ECA848A59D0FB98E0257E20EB2C0", hash_generated_method = "8F759E22A75740EA44A03FBA22CEB932")
-    public  X509Principal(
-        String  dirName) {
-        super(dirName);
-        addTaint(dirName.getTaint());
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.285 -0400", hash_original_method = "8E38511E2EC0E52F81E91783DD99493A", hash_generated_method = "9EDA834132B1DD105E70D4BA4B37039C")
-    public  X509Principal(
-        boolean reverse,
-        String  dirName) {
-        super(reverse, dirName);
-        addTaint(dirName.getTaint());
-        addTaint(reverse);
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.285 -0400", hash_original_method = "F7CF19656BE8328A59A7894CA6394ACC", hash_generated_method = "48C3FDDF4D6BF8BBFF7A6F641FB789DF")
-    public  X509Principal(
-        boolean     reverse,
-        Hashtable   lookUp,
-        String      dirName) {
-        super(reverse, lookUp, dirName);
-        addTaint(dirName.getTaint());
-        addTaint(lookUp.getTaint());
-        addTaint(reverse);
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    private static ASN1Sequence readSequence(
-        ASN1InputStream aIn) throws IOException {
+private static ASN1Sequence readSequence(
+        ASN1InputStream aIn)
+        throws IOException
+    {
         try
         {
             return ASN1Sequence.getInstance(aIn.readObject());
@@ -118,42 +33,139 @@ public class X509Principal extends X509Name implements Principal {
         }
     }
 
+    /**
+     * Constructor from an encoded byte array.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:34.908 -0500", hash_original_method = "B0820FF823FE44437CE57E7CCF385599", hash_generated_method = "CA74E8C7D88A42EFBB18A00E67A1D68A")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.286 -0400", hash_original_method = "73EC4210941682DD4DF1478421683765", hash_generated_method = "83505683307A6048A87FA3E7A5FCC530")
-    public String getName() {
-String var4014743B4FB5C9F0052F04A16DA88A03_1946787728 =         this.toString();
-        var4014743B4FB5C9F0052F04A16DA88A03_1946787728.addTaint(taint);
-        return var4014743B4FB5C9F0052F04A16DA88A03_1946787728;
-        // ---------- Original Method ----------
-        //return this.toString();
+public X509Principal(
+        byte[]  bytes)
+        throws IOException
+    {
+        super(readSequence(new ASN1InputStream(bytes)));
     }
 
+    /**
+     * Constructor from an X509Name object.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:34.911 -0500", hash_original_method = "0E5AD6E3648EC2E4F0A2CBF76D62FE6E", hash_generated_method = "E78037CFF08527AE2EF495FE4A4B4A98")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:41.286 -0400", hash_original_method = "FFCAA10D74329AA15B8FE83335744F82", hash_generated_method = "3CE74E71A0806D5274F661F6C2DDB732")
-    public byte[] getEncoded() {
-        try 
+public X509Principal(
+        X509Name  name)
+    {
+        super((ASN1Sequence)name.getDERObject());
+    }
+
+    /**
+     * constructor from a table of attributes.
+     * <p>
+     * it's is assumed the table contains OID/String pairs.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:34.913 -0500", hash_original_method = "D3D6DABF2D2EE8D49403BBA6B447728D", hash_generated_method = "EAC42D76D31BFEE11EC5A8C55BF6085D")
+    
+public X509Principal(
+        Hashtable  attributes)
+    {
+        super(attributes);
+    }
+
+    /**
+     * constructor from a table of attributes and a vector giving the
+     * specific ordering required for encoding or conversion to a string.
+     * <p>
+     * it's is assumed the table contains OID/String pairs.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:34.916 -0500", hash_original_method = "33C0081C021F2AA73D8ACD68C98658C4", hash_generated_method = "3A690507D7EFEDE1986EFB1F448A33BA")
+    
+public X509Principal(
+        Vector      ordering,
+        Hashtable   attributes)
+    {
+        super(ordering, attributes);
+    }
+
+    /**
+     * constructor from a vector of attribute values and a vector of OIDs.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:34.918 -0500", hash_original_method = "3B6A04762F0F16A7BA4938718F609D48", hash_generated_method = "702E61657B9B14A8FDF04FF71D421185")
+    
+public X509Principal(
+        Vector      oids,
+        Vector      values)
+    {
+        super(oids, values);
+    }
+
+    /**
+     * takes an X509 dir name as a string of the format "C=AU,ST=Victoria", or
+     * some such, converting it into an ordered set of name attributes.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:34.922 -0500", hash_original_method = "3167ECA848A59D0FB98E0257E20EB2C0", hash_generated_method = "ACC8505AA35F49E36D783FB341A67AE3")
+    
+public X509Principal(
+        String  dirName)
+    {
+        super(dirName);
+    }
+
+    /**
+     * Takes an X509 dir name as a string of the format "C=AU,ST=Victoria", or
+     * some such, converting it into an ordered set of name attributes. If reverse
+     * is false the dir name will be encoded in the order of the (name, value) pairs 
+     * presented, otherwise the encoding will start with the last (name, value) pair
+     * and work back.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:34.924 -0500", hash_original_method = "8E38511E2EC0E52F81E91783DD99493A", hash_generated_method = "39D05B985C35F2EB9E6449B0282F5D02")
+    
+public X509Principal(
+        boolean reverse,
+        String  dirName)
+    {
+        super(reverse, dirName);
+    }
+
+    /**
+     * Takes an X509 dir name as a string of the format "C=AU, ST=Victoria", or
+     * some such, converting it into an ordered set of name attributes. lookUp 
+     * should provide a table of lookups, indexed by lowercase only strings and
+     * yielding a DERObjectIdentifier, other than that OID. and numeric oids
+     * will be processed automatically.
+     * <p>
+     * If reverse is true, create the encoded version of the sequence starting
+     * from the last element in the string.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:34.927 -0500", hash_original_method = "F7CF19656BE8328A59A7894CA6394ACC", hash_generated_method = "0B3728CF8B8DA8C27F7F140B7B7A8341")
+    
+public X509Principal(
+        boolean     reverse,
+        Hashtable   lookUp,
+        String      dirName)
+    {
+        super(reverse, lookUp, dirName);
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:34.929 -0500", hash_original_method = "73EC4210941682DD4DF1478421683765", hash_generated_method = "BF6AC6A6C5815BB61FD26F74E679ED31")
+    
+public String getName()
+    {
+        return this.toString();
+    }
+
+    /**
+     * return a DER encoded byte array representing this object
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:34.931 -0500", hash_original_method = "FFCAA10D74329AA15B8FE83335744F82", hash_generated_method = "DCCE93F4D0141431F9D725745B73FBC0")
+    
+public byte[] getEncoded()
+    {
+        try
         {
-            byte[] var75679B9D6E0C3BD65FFE938E240A5B3B_1017085543 = (this.getEncoded(ASN1Encodable.DER));
-                        byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1873804388 = {getTaintByte()};
-            return var2F9C81BC6E497382285CD6B7A7E33DE1_1873804388;
-        } //End block
+            return this.getEncoded(ASN1Encodable.DER);
+        }
         catch (IOException e)
         {
-            RuntimeException var7731B7FAF9DB516E410EE38D728795B2_189529727 = new RuntimeException(e.toString());
-            var7731B7FAF9DB516E410EE38D728795B2_189529727.addTaint(taint);
-            throw var7731B7FAF9DB516E410EE38D728795B2_189529727;
-        } //End block
-        // ---------- Original Method ----------
-        //try
-        //{
-            //return this.getEncoded(ASN1Encodable.DER);
-        //}
-        //catch (IOException e)
-        //{
-            //throw new RuntimeException(e.toString());
-        //}
+            throw new RuntimeException(e.toString());
+        }
     }
 
     

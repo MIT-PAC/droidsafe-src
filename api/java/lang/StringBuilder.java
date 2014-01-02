@@ -1,6 +1,8 @@
 package java.lang;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -13,562 +15,736 @@ import java.io.Serializable;
 
 
 public final class StringBuilder extends AbstractStringBuilder implements Appendable, CharSequence, Serializable {
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.175 -0500", hash_original_field = "7CEF4316B76E69AAF57103267772616E", hash_generated_field = "B39011C4BB0C9D7DCA32E1A2469D43EC")
+
+
+    private static final long serialVersionUID = 4383685877147921099L;
+
+    /**
+     * Constructs an instance with an initial capacity of {@code 16}.
+     *
+     * @see #capacity()
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.177 -0500", hash_original_method = "7F69BEEEB3AFB76A0F531C605E603484", hash_generated_method = "7169FB6FFC5F8BA666834292D850982F")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.256 -0400", hash_original_method = "7F69BEEEB3AFB76A0F531C605E603484", hash_generated_method = "DA4EC3AD95D3DFC18B77F5FCB55D20F9")
-    public  StringBuilder() {
-        // ---------- Original Method ----------
+public StringBuilder() {
     }
 
+    /**
+     * Constructs an instance with the specified capacity.
+     *
+     * @param capacity
+     *            the initial capacity to use.
+     * @throws NegativeArraySizeException
+     *             if the specified {@code capacity} is negative.
+     * @see #capacity()
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.180 -0500", hash_original_method = "E4F57F923C13DCFDFB2A278667BC010D", hash_generated_method = "5D0A27352F38E3C125CF335CBDA1294C")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.256 -0400", hash_original_method = "E4F57F923C13DCFDFB2A278667BC010D", hash_generated_method = "C87B8D5CC2E4D8F22859443EF81E10F6")
-    public  StringBuilder(int capacity) {
+public StringBuilder(int capacity) {
         super(capacity);
-        addTaint(capacity);
-        // ---------- Original Method ----------
     }
 
+    /**
+     * Constructs an instance that's initialized with the contents of the
+     * specified {@code CharSequence}. The capacity of the new builder will be
+     * the length of the {@code CharSequence} plus 16.
+     *
+     * @param seq
+     *            the {@code CharSequence} to copy into the builder.
+     * @throws NullPointerException
+     *            if {@code seq} is {@code null}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.183 -0500", hash_original_method = "6026ED097BE2B2C063828C0943FCE04D", hash_generated_method = "7BB2522BCAA4830FEDD7EA86B4207862")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.256 -0400", hash_original_method = "6026ED097BE2B2C063828C0943FCE04D", hash_generated_method = "9636F2E0396542ADA0291846333512D2")
-    public  StringBuilder(CharSequence seq) {
+public StringBuilder(CharSequence seq) {
         super(seq.toString());
-        addTaint(seq.getTaint());
-        // ---------- Original Method ----------
     }
 
+    /**
+     * Constructs an instance that's initialized with the contents of the
+     * specified {@code String}. The capacity of the new builder will be the
+     * length of the {@code String} plus 16.
+     *
+     * @param str
+     *            the {@code String} to copy into the builder.
+     * @throws NullPointerException
+     *            if {@code str} is {@code null}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.186 -0500", hash_original_method = "AED4EA464802033AF614945292CFDAC8", hash_generated_method = "DF9AB23776A1F0CC49E7F85950B92881")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.257 -0400", hash_original_method = "AED4EA464802033AF614945292CFDAC8", hash_generated_method = "53D779637098BD5B700EC43E5EA94586")
-    public  StringBuilder(String str) {
+public StringBuilder(String str) {
         super(str);
-        addTaint(str.getTaint());
-        // ---------- Original Method ----------
     }
 
+    /**
+     * Appends the string representation of the specified {@code boolean} value.
+     * The {@code boolean} value is converted to a String according to the rule
+     * defined by {@link String#valueOf(boolean)}.
+     *
+     * @param b
+     *            the {@code boolean} value to append.
+     * @return this builder.
+     * @see String#valueOf(boolean)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.188 -0500", hash_original_method = "F4B609B0FD968769DCA7EA12F3C7D749", hash_generated_method = "10234F2C6B874DC25F3B85EB5405B8BF")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.257 -0400", hash_original_method = "F4B609B0FD968769DCA7EA12F3C7D749", hash_generated_method = "879976EEB10F513ACABF0D688D0CD6BD")
-    public StringBuilder append(boolean b) {
-        addTaint(b);
+public StringBuilder append(boolean b) {
         append0(b ? "true" : "false");
-StringBuilder var72A74007B2BE62B849F475C7BDA4658B_1439541659 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_1439541659.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_1439541659;
-        // ---------- Original Method ----------
-        //append0(b ? "true" : "false");
-        //return this;
+        return this;
     }
 
+    /**
+     * Appends the string representation of the specified {@code char} value.
+     * The {@code char} value is converted to a string according to the rule
+     * defined by {@link String#valueOf(char)}.
+     *
+     * @param c
+     *            the {@code char} value to append.
+     * @return this builder.
+     * @see String#valueOf(char)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.190 -0500", hash_original_method = "9D73E236BE501966A93F921E007247A5", hash_generated_method = "573014C053845D973AB8BF2E1141C001")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.257 -0400", hash_original_method = "9D73E236BE501966A93F921E007247A5", hash_generated_method = "AB369F74A3D877880880B8D5EDCA633B")
-    public StringBuilder append(char c) {
-        addTaint(c);
+public StringBuilder append(char c) {
         append0(c);
-StringBuilder var72A74007B2BE62B849F475C7BDA4658B_418667761 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_418667761.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_418667761;
-        // ---------- Original Method ----------
-        //append0(c);
-        //return this;
+        return this;
     }
 
+    /**
+     * Appends the string representation of the specified {@code int} value. The
+     * {@code int} value is converted to a string according to the rule defined
+     * by {@link String#valueOf(int)}.
+     *
+     * @param i
+     *            the {@code int} value to append.
+     * @return this builder.
+     * @see String#valueOf(int)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.193 -0500", hash_original_method = "03C42A72247CEAA018EF9799EE93DC9B", hash_generated_method = "06B8F1DCC54980DA0607BA7F80669E0E")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.257 -0400", hash_original_method = "03C42A72247CEAA018EF9799EE93DC9B", hash_generated_method = "ABB28E43998DA715C3B08BE22CB18379")
-    public StringBuilder append(int i) {
-        addTaint(i);
+public StringBuilder append(int i) {
         IntegralToString.appendInt(this, i);
-StringBuilder var72A74007B2BE62B849F475C7BDA4658B_1879777885 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_1879777885.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_1879777885;
-        // ---------- Original Method ----------
-        //IntegralToString.appendInt(this, i);
-        //return this;
+        return this;
     }
 
+    /**
+     * Appends the string representation of the specified {@code long} value.
+     * The {@code long} value is converted to a string according to the rule
+     * defined by {@link String#valueOf(long)}.
+     *
+     * @param l
+     *            the {@code long} value.
+     * @return this builder.
+     * @see String#valueOf(long)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.195 -0500", hash_original_method = "3D332B8F712AE97F73088EED6A4C60D8", hash_generated_method = "AF09391DF0EB76459C4CDE72BE800231")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.258 -0400", hash_original_method = "3D332B8F712AE97F73088EED6A4C60D8", hash_generated_method = "ACB5D16D4E6ED83D901341D5D020C599")
-    public StringBuilder append(long l) {
-        addTaint(l);
+public StringBuilder append(long l) {
         IntegralToString.appendLong(this, l);
-StringBuilder var72A74007B2BE62B849F475C7BDA4658B_889463036 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_889463036.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_889463036;
-        // ---------- Original Method ----------
-        //IntegralToString.appendLong(this, l);
-        //return this;
+        return this;
     }
 
+    /**
+     * Appends the string representation of the specified {@code float} value.
+     * The {@code float} value is converted to a string according to the rule
+     * defined by {@link String#valueOf(float)}.
+     *
+     * @param f
+     *            the {@code float} value to append.
+     * @return this builder.
+     * @see String#valueOf(float)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.197 -0500", hash_original_method = "C39FE91FF51EAFB5C369F19D2F31B26F", hash_generated_method = "CDEFE36323E4CF99EA8F8E5BB889EA8B")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.258 -0400", hash_original_method = "C39FE91FF51EAFB5C369F19D2F31B26F", hash_generated_method = "217DC1A3B7198594194F47E14683CE52")
-    public StringBuilder append(float f) {
-        addTaint(f);
+public StringBuilder append(float f) {
         RealToString.getInstance().appendFloat(this, f);
-StringBuilder var72A74007B2BE62B849F475C7BDA4658B_1096831149 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_1096831149.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_1096831149;
-        // ---------- Original Method ----------
-        //RealToString.getInstance().appendFloat(this, f);
-        //return this;
+        return this;
     }
 
+    /**
+     * Appends the string representation of the specified {@code double} value.
+     * The {@code double} value is converted to a string according to the rule
+     * defined by {@link String#valueOf(double)}.
+     *
+     * @param d
+     *            the {@code double} value to append.
+     * @return this builder.
+     * @see String#valueOf(double)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.200 -0500", hash_original_method = "E9C651CD5B73A9D5605CA0251B77324C", hash_generated_method = "4D0DCE75113BEA77BE9EBE194E669575")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.258 -0400", hash_original_method = "E9C651CD5B73A9D5605CA0251B77324C", hash_generated_method = "9408392D65FB3C3CE7AD316D5D230E28")
-    public StringBuilder append(double d) {
-        addTaint(d);
+public StringBuilder append(double d) {
         RealToString.getInstance().appendDouble(this, d);
-StringBuilder var72A74007B2BE62B849F475C7BDA4658B_1664686412 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_1664686412.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_1664686412;
-        // ---------- Original Method ----------
-        //RealToString.getInstance().appendDouble(this, d);
-        //return this;
+        return this;
     }
 
+    /**
+     * Appends the string representation of the specified {@code Object}.
+     * The {@code Object} value is converted to a string according to the rule
+     * defined by {@link String#valueOf(Object)}.
+     *
+     * @param obj
+     *            the {@code Object} to append.
+     * @return this builder.
+     * @see String#valueOf(Object)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.203 -0500", hash_original_method = "63927F926AE6750A93D97E305D647A93", hash_generated_method = "9E396BD3A53B208EFDF6E5AE46CE5E65")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.258 -0400", hash_original_method = "63927F926AE6750A93D97E305D647A93", hash_generated_method = "8E7D80627EF9DE898B2F39CA0F3CBF43")
-    public StringBuilder append(Object obj) {
-        addTaint(obj.getTaint());
-        if(obj == null)        
-        {
+public StringBuilder append(Object obj) {
+        if (obj == null) {
             appendNull();
-        } //End block
-        else
-        {
+        } else {
             append0(obj.toString());
-        } //End block
-StringBuilder var72A74007B2BE62B849F475C7BDA4658B_1187954154 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_1187954154.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_1187954154;
-        // ---------- Original Method ----------
-        //if (obj == null) {
-            //appendNull();
-        //} else {
-            //append0(obj.toString());
-        //}
-        //return this;
+        }
+        return this;
     }
 
+    /**
+     * Appends the contents of the specified string. If the string is {@code
+     * null}, then the string {@code "null"} is appended.
+     *
+     * @param str
+     *            the string to append.
+     * @return this builder.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.205 -0500", hash_original_method = "055F3A9C4AB035713F11AAFD846DE2F4", hash_generated_method = "1CA0EEEC4D7F7F784CE4A097257726E9")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.259 -0400", hash_original_method = "055F3A9C4AB035713F11AAFD846DE2F4", hash_generated_method = "9BA35BB7F8FEE948560C982CEF5F2967")
-    public StringBuilder append(String str) {
-        addTaint(str.getTaint());
+public StringBuilder append(String str) {
         append0(str);
-StringBuilder var72A74007B2BE62B849F475C7BDA4658B_1165466372 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_1165466372.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_1165466372;
-        // ---------- Original Method ----------
-        //append0(str);
-        //return this;
+        return this;
     }
 
+    /**
+     * Appends the contents of the specified {@code StringBuffer}. If the
+     * StringBuffer is {@code null}, then the string {@code "null"} is
+     * appended.
+     *
+     * @param sb
+     *            the {@code StringBuffer} to append.
+     * @return this builder.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.207 -0500", hash_original_method = "DA3BC72B04D08CA1AE27B14F3B2132F6", hash_generated_method = "3CDECCB6296E381BB262A6BF8AF07057")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.259 -0400", hash_original_method = "DA3BC72B04D08CA1AE27B14F3B2132F6", hash_generated_method = "AE6EBE577B9B49DAA284E48CDE20547E")
-    public StringBuilder append(StringBuffer sb) {
-        addTaint(sb.getTaint());
-        if(sb == null)        
-        {
+public StringBuilder append(StringBuffer sb) {
+        if (sb == null) {
             appendNull();
-        } //End block
-        else
-        {
+        } else {
             append0(sb.getValue(), 0, sb.length());
-        } //End block
-StringBuilder var72A74007B2BE62B849F475C7BDA4658B_1599179103 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_1599179103.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_1599179103;
-        // ---------- Original Method ----------
-        //if (sb == null) {
-            //appendNull();
-        //} else {
-            //append0(sb.getValue(), 0, sb.length());
-        //}
-        //return this;
+        }
+        return this;
     }
 
+    /**
+     * Appends the string representation of the specified {@code char[]}.
+     * The {@code char[]} is converted to a string according to the rule
+     * defined by {@link String#valueOf(char[])}.
+     *
+     * @param chars
+     *            the {@code char[]} to append..
+     * @return this builder.
+     * @see String#valueOf(char[])
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.210 -0500", hash_original_method = "E629F87AB17E4A16AA1195961D01ABB5", hash_generated_method = "C96A15857874B6E4B9B3612988C7C3ED")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.259 -0400", hash_original_method = "E629F87AB17E4A16AA1195961D01ABB5", hash_generated_method = "77BB8710870215CB0723CEC3177996D7")
-    public StringBuilder append(char[] chars) {
-        addTaint(chars[0]);
+public StringBuilder append(char[] chars) {
         append0(chars);
-StringBuilder var72A74007B2BE62B849F475C7BDA4658B_2013061112 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_2013061112.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_2013061112;
-        // ---------- Original Method ----------
-        //append0(chars);
-        //return this;
+        return this;
     }
 
+    /**
+     * Appends the string representation of the specified subset of the {@code
+     * char[]}. The {@code char[]} value is converted to a String according to
+     * the rule defined by {@link String#valueOf(char[],int,int)}.
+     *
+     * @param str
+     *            the {@code char[]} to append.
+     * @param offset
+     *            the inclusive offset index.
+     * @param len
+     *            the number of characters.
+     * @return this builder.
+     * @throws ArrayIndexOutOfBoundsException
+     *             if {@code offset} and {@code len} do not specify a valid
+     *             subsequence.
+     * @see String#valueOf(char[],int,int)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.213 -0500", hash_original_method = "68F618A3FDF87C48D7DDC534C9C181A8", hash_generated_method = "7C783A60ED2BEC8CF513FFA3F10A8FC8")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.260 -0400", hash_original_method = "68F618A3FDF87C48D7DDC534C9C181A8", hash_generated_method = "FB112D550DC5210AA9A764FCC178769E")
-    public StringBuilder append(char[] str, int offset, int len) {
-        addTaint(len);
-        addTaint(offset);
-        addTaint(str[0]);
+public StringBuilder append(char[] str, int offset, int len) {
         append0(str, offset, len);
-StringBuilder var72A74007B2BE62B849F475C7BDA4658B_248438315 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_248438315.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_248438315;
-        // ---------- Original Method ----------
-        //append0(str, offset, len);
-        //return this;
+        return this;
     }
 
+    /**
+     * Appends the string representation of the specified {@code CharSequence}.
+     * If the {@code CharSequence} is {@code null}, then the string {@code
+     * "null"} is appended.
+     *
+     * @param csq
+     *            the {@code CharSequence} to append.
+     * @return this builder.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.215 -0500", hash_original_method = "D80365633E36C9036E4897C864A6AF37", hash_generated_method = "FDC02CA5B38F45068CDDBB9202395239")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.260 -0400", hash_original_method = "D80365633E36C9036E4897C864A6AF37", hash_generated_method = "C45FED5A3FF4D242470223EB2CC96B63")
-    public StringBuilder append(CharSequence csq) {
-        addTaint(csq.getTaint());
-        if(csq == null)        
-        {
+public StringBuilder append(CharSequence csq) {
+        if (csq == null) {
             appendNull();
-        } //End block
-        else
-        {
+        } else {
             append0(csq, 0, csq.length());
-        } //End block
-StringBuilder var72A74007B2BE62B849F475C7BDA4658B_1110018839 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_1110018839.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_1110018839;
-        // ---------- Original Method ----------
-        //if (csq == null) {
-            //appendNull();
-        //} else {
-            //append0(csq, 0, csq.length());
-        //}
-        //return this;
+        }
+        return this;
     }
 
+    /**
+     * Appends the string representation of the specified subsequence of the
+     * {@code CharSequence}. If the {@code CharSequence} is {@code null}, then
+     * the string {@code "null"} is used to extract the subsequence from.
+     *
+     * @param csq
+     *            the {@code CharSequence} to append.
+     * @param start
+     *            the beginning index.
+     * @param end
+     *            the ending index.
+     * @return this builder.
+     * @throws IndexOutOfBoundsException
+     *             if {@code start} or {@code end} are negative, {@code start}
+     *             is greater than {@code end} or {@code end} is greater than
+     *             the length of {@code csq}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.218 -0500", hash_original_method = "B3407F260091B09D879B57806B9A4E00", hash_generated_method = "794B834A31083CBEDCB6E4DE1626E692")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.260 -0400", hash_original_method = "B3407F260091B09D879B57806B9A4E00", hash_generated_method = "E1B4E83B1BD70EBC5821B178D5A98DD5")
-    public StringBuilder append(CharSequence csq, int start, int end) {
-        addTaint(end);
-        addTaint(start);
-        addTaint(csq.getTaint());
+public StringBuilder append(CharSequence csq, int start, int end) {
         append0(csq, start, end);
-StringBuilder var72A74007B2BE62B849F475C7BDA4658B_985524693 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_985524693.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_985524693;
-        // ---------- Original Method ----------
-        //append0(csq, start, end);
-        //return this;
+        return this;
     }
 
+    /**
+     * Appends the encoded Unicode code point. The code point is converted to a
+     * {@code char[]} as defined by {@link Character#toChars(int)}.
+     *
+     * @param codePoint
+     *            the Unicode code point to encode and append.
+     * @return this builder.
+     * @see Character#toChars(int)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.220 -0500", hash_original_method = "6B412AA8DE0150EC1DBDE5B0F42A5CFB", hash_generated_method = "4AE22F5CB99576F6B7D639914551478A")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.261 -0400", hash_original_method = "6B412AA8DE0150EC1DBDE5B0F42A5CFB", hash_generated_method = "74E4645FC4C581238A692419DA046A95")
-    public StringBuilder appendCodePoint(int codePoint) {
-        addTaint(codePoint);
+public StringBuilder appendCodePoint(int codePoint) {
         append0(Character.toChars(codePoint));
-StringBuilder var72A74007B2BE62B849F475C7BDA4658B_1177999217 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_1177999217.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_1177999217;
-        // ---------- Original Method ----------
-        //append0(Character.toChars(codePoint));
-        //return this;
+        return this;
     }
 
+    /**
+     * Deletes a sequence of characters specified by {@code start} and {@code
+     * end}. Shifts any remaining characters to the left.
+     *
+     * @param start
+     *            the inclusive start index.
+     * @param end
+     *            the exclusive end index.
+     * @return this builder.
+     * @throws StringIndexOutOfBoundsException
+     *             if {@code start} is less than zero, greater than the current
+     *             length or greater than {@code end}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.223 -0500", hash_original_method = "803DF05D4CC063384FBA901C5CCA5A92", hash_generated_method = "B5E959D005426B0B53B53DF077CB11E6")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.261 -0400", hash_original_method = "803DF05D4CC063384FBA901C5CCA5A92", hash_generated_method = "EB15DF61BC443217837D83D0E074A6B9")
-    public StringBuilder delete(int start, int end) {
-        addTaint(end);
-        addTaint(start);
+public StringBuilder delete(int start, int end) {
         delete0(start, end);
-StringBuilder var72A74007B2BE62B849F475C7BDA4658B_56191742 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_56191742.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_56191742;
-        // ---------- Original Method ----------
-        //delete0(start, end);
-        //return this;
+        return this;
     }
 
+    /**
+     * Deletes the character at the specified index. shifts any remaining
+     * characters to the left.
+     *
+     * @param index
+     *            the index of the character to delete.
+     * @return this builder.
+     * @throws StringIndexOutOfBoundsException
+     *             if {@code index} is less than zero or is greater than or
+     *             equal to the current length.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.225 -0500", hash_original_method = "9587E0C001AA5E4FBDAD3ADB8121DB12", hash_generated_method = "7294A5044E5D4CF77099393F4198FD4D")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.261 -0400", hash_original_method = "9587E0C001AA5E4FBDAD3ADB8121DB12", hash_generated_method = "78A78CA7256DB477672A188C5E2AEF30")
-    public StringBuilder deleteCharAt(int index) {
-        addTaint(index);
+public StringBuilder deleteCharAt(int index) {
         deleteCharAt0(index);
-StringBuilder var72A74007B2BE62B849F475C7BDA4658B_1770272222 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_1770272222.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_1770272222;
-        // ---------- Original Method ----------
-        //deleteCharAt0(index);
-        //return this;
+        return this;
     }
 
+    /**
+     * Inserts the string representation of the specified {@code boolean} value
+     * at the specified {@code offset}. The {@code boolean} value is converted
+     * to a string according to the rule defined by
+     * {@link String#valueOf(boolean)}.
+     *
+     * @param offset
+     *            the index to insert at.
+     * @param b
+     *            the {@code boolean} value to insert.
+     * @return this builder.
+     * @throws StringIndexOutOfBoundsException
+     *             if {@code offset} is negative or greater than the current
+     *             {@code length}.
+     * @see String#valueOf(boolean)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.227 -0500", hash_original_method = "9E94636A15CA5FDDF7E9AC999A98B61E", hash_generated_method = "D5451CE46EB1A61A7740C8D3D125ABAF")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.262 -0400", hash_original_method = "9E94636A15CA5FDDF7E9AC999A98B61E", hash_generated_method = "17632FCD8916D04C14DF6ADEB5DEEE52")
-    public StringBuilder insert(int offset, boolean b) {
-        addTaint(b);
-        addTaint(offset);
+public StringBuilder insert(int offset, boolean b) {
         insert0(offset, b ? "true" : "false");
-StringBuilder var72A74007B2BE62B849F475C7BDA4658B_1653976691 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_1653976691.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_1653976691;
-        // ---------- Original Method ----------
-        //insert0(offset, b ? "true" : "false");
-        //return this;
+        return this;
     }
 
+    /**
+     * Inserts the string representation of the specified {@code char} value at
+     * the specified {@code offset}. The {@code char} value is converted to a
+     * string according to the rule defined by {@link String#valueOf(char)}.
+     *
+     * @param offset
+     *            the index to insert at.
+     * @param c
+     *            the {@code char} value to insert.
+     * @return this builder.
+     * @throws IndexOutOfBoundsException
+     *             if {@code offset} is negative or greater than the current
+     *             {@code length()}.
+     * @see String#valueOf(char)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.229 -0500", hash_original_method = "50B127D3D7AA52B10DEE8D9E61CF2830", hash_generated_method = "E9E98D3666F6DCC95B4A80456C9FBE03")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.262 -0400", hash_original_method = "50B127D3D7AA52B10DEE8D9E61CF2830", hash_generated_method = "996928D224FA036DAE4D43786B5568F4")
-    public StringBuilder insert(int offset, char c) {
-        addTaint(c);
-        addTaint(offset);
+public StringBuilder insert(int offset, char c) {
         insert0(offset, c);
-StringBuilder var72A74007B2BE62B849F475C7BDA4658B_441631237 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_441631237.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_441631237;
-        // ---------- Original Method ----------
-        //insert0(offset, c);
-        //return this;
+        return this;
     }
 
+    /**
+     * Inserts the string representation of the specified {@code int} value at
+     * the specified {@code offset}. The {@code int} value is converted to a
+     * String according to the rule defined by {@link String#valueOf(int)}.
+     *
+     * @param offset
+     *            the index to insert at.
+     * @param i
+     *            the {@code int} value to insert.
+     * @return this builder.
+     * @throws StringIndexOutOfBoundsException
+     *             if {@code offset} is negative or greater than the current
+     *             {@code length()}.
+     * @see String#valueOf(int)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.232 -0500", hash_original_method = "0E2F0E15101F82363F6315617D179ADE", hash_generated_method = "8794B9AC39FE97D939AC8F6B3DABBC3A")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.262 -0400", hash_original_method = "0E2F0E15101F82363F6315617D179ADE", hash_generated_method = "6B46E7D706EDDA087E6CAFFA2E5C44CA")
-    public StringBuilder insert(int offset, int i) {
-        addTaint(i);
-        addTaint(offset);
+public StringBuilder insert(int offset, int i) {
         insert0(offset, Integer.toString(i));
-StringBuilder var72A74007B2BE62B849F475C7BDA4658B_665389580 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_665389580.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_665389580;
-        // ---------- Original Method ----------
-        //insert0(offset, Integer.toString(i));
-        //return this;
+        return this;
     }
 
+    /**
+     * Inserts the string representation of the specified {@code long} value at
+     * the specified {@code offset}. The {@code long} value is converted to a
+     * String according to the rule defined by {@link String#valueOf(long)}.
+     *
+     * @param offset
+     *            the index to insert at.
+     * @param l
+     *            the {@code long} value to insert.
+     * @return this builder.
+     * @throws StringIndexOutOfBoundsException
+     *             if {@code offset} is negative or greater than the current
+     *             {code length()}.
+     * @see String#valueOf(long)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.235 -0500", hash_original_method = "0414BCBB4B3CD85646765E73B01D123B", hash_generated_method = "A24B024E0D99D53BD03CEC4D3E9887E8")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.262 -0400", hash_original_method = "0414BCBB4B3CD85646765E73B01D123B", hash_generated_method = "034DD929B3D8483380E646E48F0A9797")
-    public StringBuilder insert(int offset, long l) {
-        addTaint(l);
-        addTaint(offset);
+public StringBuilder insert(int offset, long l) {
         insert0(offset, Long.toString(l));
-StringBuilder var72A74007B2BE62B849F475C7BDA4658B_1546532500 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_1546532500.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_1546532500;
-        // ---------- Original Method ----------
-        //insert0(offset, Long.toString(l));
-        //return this;
+        return this;
     }
 
+    /**
+     * Inserts the string representation of the specified {@code float} value at
+     * the specified {@code offset}. The {@code float} value is converted to a
+     * string according to the rule defined by {@link String#valueOf(float)}.
+     *
+     * @param offset
+     *            the index to insert at.
+     * @param f
+     *            the {@code float} value to insert.
+     * @return this builder.
+     * @throws StringIndexOutOfBoundsException
+     *             if {@code offset} is negative or greater than the current
+     *             {@code length()}.
+     * @see String#valueOf(float)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.237 -0500", hash_original_method = "8BED9229B1DF452CCAD065018015A008", hash_generated_method = "2EAB1FAF0819E152B085B766F439EB26")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.263 -0400", hash_original_method = "8BED9229B1DF452CCAD065018015A008", hash_generated_method = "61A43831631BFE8D1EE91B5C1BC3A74E")
-    public StringBuilder insert(int offset, float f) {
-        addTaint(f);
-        addTaint(offset);
+public StringBuilder insert(int offset, float f) {
         insert0(offset, Float.toString(f));
-StringBuilder var72A74007B2BE62B849F475C7BDA4658B_1104737939 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_1104737939.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_1104737939;
-        // ---------- Original Method ----------
-        //insert0(offset, Float.toString(f));
-        //return this;
+        return this;
     }
 
+    /**
+     * Inserts the string representation of the specified {@code double} value
+     * at the specified {@code offset}. The {@code double} value is converted
+     * to a String according to the rule defined by
+     * {@link String#valueOf(double)}.
+     *
+     * @param offset
+     *            the index to insert at.
+     * @param d
+     *            the {@code double} value to insert.
+     * @return this builder.
+     * @throws StringIndexOutOfBoundsException
+     *             if {@code offset} is negative or greater than the current
+     *             {@code length()}.
+     * @see String#valueOf(double)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.240 -0500", hash_original_method = "1BF020DB1D2B7F2D38356085E08D1D32", hash_generated_method = "C290A3D0DE64D1A7BB5BD94652237949")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.263 -0400", hash_original_method = "1BF020DB1D2B7F2D38356085E08D1D32", hash_generated_method = "50B6CB8B0DE058CCF377770593B3CE40")
-    public StringBuilder insert(int offset, double d) {
-        addTaint(d);
-        addTaint(offset);
+public StringBuilder insert(int offset, double d) {
         insert0(offset, Double.toString(d));
-StringBuilder var72A74007B2BE62B849F475C7BDA4658B_186855954 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_186855954.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_186855954;
-        // ---------- Original Method ----------
-        //insert0(offset, Double.toString(d));
-        //return this;
+        return this;
     }
 
+    /**
+     * Inserts the string representation of the specified {@code Object} at the
+     * specified {@code offset}. The {@code Object} value is converted to a
+     * String according to the rule defined by {@link String#valueOf(Object)}.
+     *
+     * @param offset
+     *            the index to insert at.
+     * @param obj
+     *            the {@code Object} to insert.
+     * @return this builder.
+     * @throws StringIndexOutOfBoundsException
+     *             if {@code offset} is negative or greater than the current
+     *             {@code length()}.
+     * @see String#valueOf(Object)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.242 -0500", hash_original_method = "61D3E125BF148F03C1F93F887D6D82B6", hash_generated_method = "FB88A32D48655BF1B000CF687A0A5E1E")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.263 -0400", hash_original_method = "61D3E125BF148F03C1F93F887D6D82B6", hash_generated_method = "4E81702337D3C5583393D0037F7A92A5")
-    public StringBuilder insert(int offset, Object obj) {
-        addTaint(obj.getTaint());
-        addTaint(offset);
+public StringBuilder insert(int offset, Object obj) {
         insert0(offset, obj == null ? "null" : obj.toString());
-StringBuilder var72A74007B2BE62B849F475C7BDA4658B_107191723 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_107191723.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_107191723;
-        // ---------- Original Method ----------
-        //insert0(offset, obj == null ? "null" : obj.toString());
-        //return this;
+        return this;
     }
 
+    /**
+     * Inserts the specified string at the specified {@code offset}. If the
+     * specified string is null, then the String {@code "null"} is inserted.
+     *
+     * @param offset
+     *            the index to insert at.
+     * @param str
+     *            the {@code String} to insert.
+     * @return this builder.
+     * @throws StringIndexOutOfBoundsException
+     *             if {@code offset} is negative or greater than the current
+     *             {@code length()}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.245 -0500", hash_original_method = "4CB9FC326C4E78987F03B46DA89B63D1", hash_generated_method = "C765E6E72AE3132F820D4A99E27BB5DC")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.263 -0400", hash_original_method = "4CB9FC326C4E78987F03B46DA89B63D1", hash_generated_method = "450CE72B181AF2614A599F01BA583D76")
-    public StringBuilder insert(int offset, String str) {
-        addTaint(str.getTaint());
-        addTaint(offset);
+public StringBuilder insert(int offset, String str) {
         insert0(offset, str);
-StringBuilder var72A74007B2BE62B849F475C7BDA4658B_11000954 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_11000954.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_11000954;
-        // ---------- Original Method ----------
-        //insert0(offset, str);
-        //return this;
+        return this;
     }
 
+    /**
+     * Inserts the string representation of the specified {@code char[]} at the
+     * specified {@code offset}. The {@code char[]} value is converted to a
+     * String according to the rule defined by {@link String#valueOf(char[])}.
+     *
+     * @param offset
+     *            the index to insert at.
+     * @param ch
+     *            the {@code char[]} to insert.
+     * @return this builder.
+     * @throws StringIndexOutOfBoundsException
+     *             if {@code offset} is negative or greater than the current
+     *             {@code length()}.
+     * @see String#valueOf(char[])
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.247 -0500", hash_original_method = "9DA55870F4603974121079300CB9220C", hash_generated_method = "D5440A8E10CCBDE365B6DD1208B2F624")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.264 -0400", hash_original_method = "9DA55870F4603974121079300CB9220C", hash_generated_method = "03929DD48AB26CE211FF20AC6682A624")
-    public StringBuilder insert(int offset, char[] ch) {
-        addTaint(ch[0]);
-        addTaint(offset);
+public StringBuilder insert(int offset, char[] ch) {
         insert0(offset, ch);
-StringBuilder var72A74007B2BE62B849F475C7BDA4658B_1432779407 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_1432779407.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_1432779407;
-        // ---------- Original Method ----------
-        //insert0(offset, ch);
-        //return this;
+        return this;
     }
 
+    /**
+     * Inserts the string representation of the specified subsequence of the
+     * {@code char[]} at the specified {@code offset}. The {@code char[]} value
+     * is converted to a String according to the rule defined by
+     * {@link String#valueOf(char[],int,int)}.
+     *
+     * @param offset
+     *            the index to insert at.
+     * @param str
+     *            the {@code char[]} to insert.
+     * @param strOffset
+     *            the inclusive index.
+     * @param strLen
+     *            the number of characters.
+     * @return this builder.
+     * @throws StringIndexOutOfBoundsException
+     *             if {@code offset} is negative or greater than the current
+     *             {@code length()}, or {@code strOffset} and {@code strLen} do
+     *             not specify a valid subsequence.
+     * @see String#valueOf(char[],int,int)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.249 -0500", hash_original_method = "74676FBA295331D75BECD58900BE097F", hash_generated_method = "C817D4366B92ACE52182F85AD59D5CAB")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.264 -0400", hash_original_method = "74676FBA295331D75BECD58900BE097F", hash_generated_method = "42C723C9FD2C5796149B9D8D8C32352C")
-    public StringBuilder insert(int offset, char[] str, int strOffset,
+public StringBuilder insert(int offset, char[] str, int strOffset,
             int strLen) {
-        addTaint(strLen);
-        addTaint(strOffset);
-        addTaint(str[0]);
-        addTaint(offset);
         insert0(offset, str, strOffset, strLen);
-StringBuilder var72A74007B2BE62B849F475C7BDA4658B_1558351922 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_1558351922.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_1558351922;
-        // ---------- Original Method ----------
-        //insert0(offset, str, strOffset, strLen);
-        //return this;
+        return this;
     }
 
+    /**
+     * Inserts the string representation of the specified {@code CharSequence}
+     * at the specified {@code offset}. The {@code CharSequence} is converted
+     * to a String as defined by {@link CharSequence#toString()}. If {@code s}
+     * is {@code null}, then the String {@code "null"} is inserted.
+     *
+     * @param offset
+     *            the index to insert at.
+     * @param s
+     *            the {@code CharSequence} to insert.
+     * @return this builder.
+     * @throws IndexOutOfBoundsException
+     *             if {@code offset} is negative or greater than the current
+     *             {@code length()}.
+     * @see CharSequence#toString()
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.252 -0500", hash_original_method = "0A4800E098392CF1EA9CC33E7FA664BB", hash_generated_method = "625E8215F22D8F7FC0AED569BB692C26")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.264 -0400", hash_original_method = "0A4800E098392CF1EA9CC33E7FA664BB", hash_generated_method = "F25B317BC41C07667894FC9C055B9331")
-    public StringBuilder insert(int offset, CharSequence s) {
-        addTaint(s.getTaint());
-        addTaint(offset);
+public StringBuilder insert(int offset, CharSequence s) {
         insert0(offset, s == null ? "null" : s.toString());
-StringBuilder var72A74007B2BE62B849F475C7BDA4658B_612576772 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_612576772.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_612576772;
-        // ---------- Original Method ----------
-        //insert0(offset, s == null ? "null" : s.toString());
-        //return this;
+        return this;
     }
 
+    /**
+     * Inserts the string representation of the specified subsequence of the
+     * {@code CharSequence} at the specified {@code offset}. The {@code
+     * CharSequence} is converted to a String as defined by
+     * {@link CharSequence#subSequence(int, int)}. If the {@code CharSequence}
+     * is {@code null}, then the string {@code "null"} is used to determine the
+     * subsequence.
+     *
+     * @param offset
+     *            the index to insert at.
+     * @param s
+     *            the {@code CharSequence} to insert.
+     * @param start
+     *            the start of the subsequence of the character sequence.
+     * @param end
+     *            the end of the subsequence of the character sequence.
+     * @return this builder.
+     * @throws IndexOutOfBoundsException
+     *             if {@code offset} is negative or greater than the current
+     *             {@code length()}, or {@code start} and {@code end} do not
+     *             specify a valid subsequence.
+     * @see CharSequence#subSequence(int, int)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.254 -0500", hash_original_method = "C80E7B31DC60FBAF173CE4F526E97A54", hash_generated_method = "918EF69E5FA94D4C371DDF236AE13456")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.264 -0400", hash_original_method = "C80E7B31DC60FBAF173CE4F526E97A54", hash_generated_method = "06212EB7BE06430B7ABC77A5F75BD0C1")
-    public StringBuilder insert(int offset, CharSequence s, int start, int end) {
-        addTaint(end);
-        addTaint(start);
-        addTaint(s.getTaint());
-        addTaint(offset);
+public StringBuilder insert(int offset, CharSequence s, int start, int end) {
         insert0(offset, s, start, end);
-StringBuilder var72A74007B2BE62B849F475C7BDA4658B_152705086 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_152705086.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_152705086;
-        // ---------- Original Method ----------
-        //insert0(offset, s, start, end);
-        //return this;
+        return this;
     }
 
+    /**
+     * Replaces the specified subsequence in this builder with the specified
+     * string.
+     *
+     * @param start
+     *            the inclusive begin index.
+     * @param end
+     *            the exclusive end index.
+     * @param str
+     *            the replacement string.
+     * @return this builder.
+     * @throws StringIndexOutOfBoundsException
+     *             if {@code start} is negative, greater than the current
+     *             {@code length()} or greater than {@code end}.
+     * @throws NullPointerException
+     *            if {@code str} is {@code null}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.256 -0500", hash_original_method = "3EE339644717E8959D7BEAA9750FDE03", hash_generated_method = "0F41B9F0A794DA792133C40C5D75BFC3")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.265 -0400", hash_original_method = "3EE339644717E8959D7BEAA9750FDE03", hash_generated_method = "D0E8275BBEFC124D84006EB327FB0D6C")
-    public StringBuilder replace(int start, int end, String str) {
-        addTaint(str.getTaint());
-        addTaint(end);
-        addTaint(start);
+public StringBuilder replace(int start, int end, String str) {
         replace0(start, end, str);
-StringBuilder var72A74007B2BE62B849F475C7BDA4658B_538867040 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_538867040.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_538867040;
-        // ---------- Original Method ----------
-        //replace0(start, end, str);
-        //return this;
+        return this;
     }
 
+    /**
+     * Reverses the order of characters in this builder.
+     *
+     * @return this buffer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.259 -0500", hash_original_method = "D5BEA44E320721AFAC8F5C9BC1BCBDE4", hash_generated_method = "750FE538DFFBF83E01F2E82D4AAF23C6")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.265 -0400", hash_original_method = "D5BEA44E320721AFAC8F5C9BC1BCBDE4", hash_generated_method = "A28A869FD35941E725A4BB3CA5D3FF36")
-    public StringBuilder reverse() {
+public StringBuilder reverse() {
         reverse0();
-StringBuilder var72A74007B2BE62B849F475C7BDA4658B_726554741 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_726554741.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_726554741;
-        // ---------- Original Method ----------
-        //reverse0();
-        //return this;
+        return this;
     }
 
+    /**
+     * Returns the contents of this builder.
+     *
+     * @return the string representation of the data in this builder.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.262 -0500", hash_original_method = "C92C5C24967E99B8B02E357BFAE9005B", hash_generated_method = "B495614081449F8C08A453388FD8F37A")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.265 -0400", hash_original_method = "C92C5C24967E99B8B02E357BFAE9005B", hash_generated_method = "183208EF0566FE902469CF6D70EEE577")
-    @Override
+@Override
     public String toString() {
-String varD8287C6801A4C167675BF9EBA9EC2C1B_235870127 =         super.toString();
-        varD8287C6801A4C167675BF9EBA9EC2C1B_235870127.addTaint(taint);
-        return varD8287C6801A4C167675BF9EBA9EC2C1B_235870127;
-        // ---------- Original Method ----------
-        //return super.toString();
+        /* Note: This method is required to workaround a compiler bug
+         * in the RI javac (at least in 1.5.0_06) that will generate a
+         * reference to the non-public AbstractStringBuilder if we don't
+         * override it here.
+         */
+        return super.toString();
     }
 
+    /**
+     * Reads the state of a {@code StringBuilder} from the passed stream and
+     * restores it to this instance.
+     *
+     * @param in
+     *            the stream to read the state from.
+     * @throws IOException
+     *             if the stream throws it during the read.
+     * @throws ClassNotFoundException
+     *             if the stream throws it during the read.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.264 -0500", hash_original_method = "2C3CA2755DA5729156EEFA2755095C82", hash_generated_method = "3584495E19EDD6202EC70FCEC799889D")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.265 -0400", hash_original_method = "2C3CA2755DA5729156EEFA2755095C82", hash_generated_method = "4DE1DD5BE1C3D644C6D668838FFFE727")
-    private void readObject(ObjectInputStream in) throws IOException,
+private void readObject(ObjectInputStream in) throws IOException,
             ClassNotFoundException {
-        addTaint(in.getTaint());
         in.defaultReadObject();
         int count = in.readInt();
         char[] value = (char[]) in.readObject();
         set(value, count);
-        // ---------- Original Method ----------
-        //in.defaultReadObject();
-        //int count = in.readInt();
-        //char[] value = (char[]) in.readObject();
-        //set(value, count);
     }
 
+    /**
+     * Writes the state of this object to the stream passed.
+     *
+     * @param out
+     *            the stream to write the state to.
+     * @throws IOException
+     *             if the stream throws it during the write.
+     * @serialData {@code int} - the length of this object. {@code char[]} - the
+     *             buffer from this object, which may be larger than the length
+     *             field.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.266 -0500", hash_original_method = "955BAED9D745223A762EA03F9D3C1E25", hash_generated_method = "D1E550090E6BBB897CAC6429B103B177")
     
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.266 -0400", hash_original_method = "955BAED9D745223A762EA03F9D3C1E25", hash_generated_method = "0CF6F2B40A5C1B15330F2F0B53F306B6")
-    private void writeObject(ObjectOutputStream out) throws IOException {
-        addTaint(out.getTaint());
+private void writeObject(ObjectOutputStream out) throws IOException {
         out.defaultWriteObject();
         out.writeInt(length());
         out.writeObject(getValue());
-        // ---------- Original Method ----------
-        //out.defaultWriteObject();
-        //out.writeInt(length());
-        //out.writeObject(getValue());
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.266 -0400", hash_original_field = "F4B2354B73ADC1BA12DBC18B912FD456", hash_generated_field = "B39011C4BB0C9D7DCA32E1A2469D43EC")
-
-    private static final long serialVersionUID = 4383685877147921099L;
 }
 

@@ -1,6 +1,8 @@
 package android.preference;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.content.Context;
 import android.content.Intent;
@@ -15,25 +17,30 @@ import android.util.AttributeSet;
 
 
 public class RingtonePreference extends Preference implements PreferenceManager.OnActivityResultListener {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.874 -0400", hash_original_field = "429D9ED5263EDB27ACD4DEA6BD2ED8B4", hash_generated_field = "94A7358A6004BBA5ED4F762F8CB38E98")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:28.708 -0500", hash_original_field = "56A1992F57CD1924005ABC17085148FA", hash_generated_field = "03561407E8406E5A39E47D0AFC27E984")
+
+
+    private static final String TAG = "RingtonePreference";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:28.711 -0500", hash_original_field = "4B2A2895326A27589C2FEFC503436FF2", hash_generated_field = "94A7358A6004BBA5ED4F762F8CB38E98")
+
 
     private int mRingtoneType;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.874 -0400", hash_original_field = "514AD2406CE06E7C36514763A6C232EE", hash_generated_field = "130B43374579980A9579B58E0CD66AF8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:28.713 -0500", hash_original_field = "02BFEC04AE288B6525C13AF6E6319CDD", hash_generated_field = "130B43374579980A9579B58E0CD66AF8")
 
     private boolean mShowDefault;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.874 -0400", hash_original_field = "79773116418F632DB2912626C537E0DC", hash_generated_field = "8DA646E2063FB9AF7649770779C16018")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:28.715 -0500", hash_original_field = "4F5792EC603C204E4DFF3464FB18180B", hash_generated_field = "8DA646E2063FB9AF7649770779C16018")
 
     private boolean mShowSilent;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.874 -0400", hash_original_field = "86891437037662D667B835C6AB354174", hash_generated_field = "475686F1F8A4FC0EFBA10CFC5E693B3C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:28.717 -0500", hash_original_field = "7DFBC3B390A93C26F8D09A6E08442EF1", hash_generated_field = "475686F1F8A4FC0EFBA10CFC5E693B3C")
 
-    private int mRequestCode;
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.875 -0400", hash_original_method = "29160518A38B8F608A0DA24D9951A92B", hash_generated_method = "B9154469A59A6714846C01B0D46E5096")
-    public  RingtonePreference(Context context, AttributeSet attrs, int defStyle) {
+    private int mRequestCode;
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:28.720 -0500", hash_original_method = "29160518A38B8F608A0DA24D9951A92B", hash_generated_method = "79EBDB42A3C41F899F2C7343F52369AC")
+    
+public RingtonePreference(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-        addTaint(defStyle);
-        addTaint(attrs.getTaint());
-        addTaint(context.getTaint());
+        
         TypedArray a = context.obtainStyledAttributes(attrs,
                 com.android.internal.R.styleable.RingtonePreference, defStyle, 0);
         mRingtoneType = a.getInt(com.android.internal.R.styleable.RingtonePreference_ringtoneType,
@@ -43,273 +50,219 @@ public class RingtonePreference extends Preference implements PreferenceManager.
         mShowSilent = a.getBoolean(com.android.internal.R.styleable.RingtonePreference_showSilent,
                 true);
         a.recycle();
-        // ---------- Original Method ----------
-        //TypedArray a = context.obtainStyledAttributes(attrs,
-                //com.android.internal.R.styleable.RingtonePreference, defStyle, 0);
-        //mRingtoneType = a.getInt(com.android.internal.R.styleable.RingtonePreference_ringtoneType,
-                //RingtoneManager.TYPE_RINGTONE);
-        //mShowDefault = a.getBoolean(com.android.internal.R.styleable.RingtonePreference_showDefault,
-                //true);
-        //mShowSilent = a.getBoolean(com.android.internal.R.styleable.RingtonePreference_showSilent,
-                //true);
-        //a.recycle();
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:28.723 -0500", hash_original_method = "AC92DB267D2F88D8705E896D57E3E92B", hash_generated_method = "04CF2FA73D484A47A33A7546CDEE1CEF")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.876 -0400", hash_original_method = "AC92DB267D2F88D8705E896D57E3E92B", hash_generated_method = "02FBA5F098A5FA178F5D075A0C2D3F91")
-    public  RingtonePreference(Context context, AttributeSet attrs) {
+public RingtonePreference(Context context, AttributeSet attrs) {
         this(context, attrs, com.android.internal.R.attr.ringtonePreferenceStyle);
-        addTaint(attrs.getTaint());
-        addTaint(context.getTaint());
-        // ---------- Original Method ----------
     }
-
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.876 -0400", hash_original_method = "00710FDF3ABE24D79A48628D9B9EF606", hash_generated_method = "AFBECD0C3DEB7FF402914478B0D8900F")
-    public  RingtonePreference(Context context) {
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:28.725 -0500", hash_original_method = "00710FDF3ABE24D79A48628D9B9EF606", hash_generated_method = "84C07F82B94B3D41FFB2C51FC9743954")
+    
+public RingtonePreference(Context context) {
         this(context, null);
-        addTaint(context.getTaint());
-        // ---------- Original Method ----------
     }
 
+    /**
+     * Returns the sound type(s) that are shown in the picker.
+     * 
+     * @return The sound type(s) that are shown in the picker.
+     * @see #setRingtoneType(int)
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:28.728 -0500", hash_original_method = "1A2D4AB1416848B6CAAD7584C5AE9825", hash_generated_method = "B0885575A71B774A9C6DE91C037D49AE")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.877 -0400", hash_original_method = "1A2D4AB1416848B6CAAD7584C5AE9825", hash_generated_method = "66AEC3036799B67B6391146B2774DA78")
-    public int getRingtoneType() {
-        int var429D9ED5263EDB27ACD4DEA6BD2ED8B4_389140934 = (mRingtoneType);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_746441678 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_746441678;
-        // ---------- Original Method ----------
-        //return mRingtoneType;
+public int getRingtoneType() {
+        return mRingtoneType;
     }
 
+    /**
+     * Sets the sound type(s) that are shown in the picker.
+     * 
+     * @param type The sound type(s) that are shown in the picker.
+     * @see RingtoneManager#EXTRA_RINGTONE_TYPE
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:28.730 -0500", hash_original_method = "D7B05FA08D1473DF1FF0F577252B94E4", hash_generated_method = "37CA30581B11F86FA81B248C4D736F72")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.878 -0400", hash_original_method = "D7B05FA08D1473DF1FF0F577252B94E4", hash_generated_method = "925E3007BFB79B5DD997814CAF0A2A83")
-    public void setRingtoneType(int type) {
+public void setRingtoneType(int type) {
         mRingtoneType = type;
-        // ---------- Original Method ----------
-        //mRingtoneType = type;
     }
 
+    /**
+     * Returns whether to a show an item for the default sound/ringtone.
+     * 
+     * @return Whether to show an item for the default sound/ringtone.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:28.732 -0500", hash_original_method = "1EDF917BBB16A2DD7FDEFF560CC91C95", hash_generated_method = "9597BC61ABE2DEF8B403E3EDC453F4F9")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.878 -0400", hash_original_method = "1EDF917BBB16A2DD7FDEFF560CC91C95", hash_generated_method = "14F010AA15DEF58146379B00118BF32F")
-    public boolean getShowDefault() {
-        boolean var514AD2406CE06E7C36514763A6C232EE_398242792 = (mShowDefault);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_695106047 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_695106047;
-        // ---------- Original Method ----------
-        //return mShowDefault;
+public boolean getShowDefault() {
+        return mShowDefault;
     }
 
+    /**
+     * Sets whether to show an item for the default sound/ringtone. The default
+     * to use will be deduced from the sound type(s) being shown.
+     * 
+     * @param showDefault Whether to show the default or not.
+     * @see RingtoneManager#EXTRA_RINGTONE_SHOW_DEFAULT
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:28.734 -0500", hash_original_method = "14F174C1761E0E1021260A615E0701C9", hash_generated_method = "671EA5E4AE2F093C49DA21BE294F2536")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.879 -0400", hash_original_method = "14F174C1761E0E1021260A615E0701C9", hash_generated_method = "58C0CBC734FA51C993C87DFEF109783C")
-    public void setShowDefault(boolean showDefault) {
+public void setShowDefault(boolean showDefault) {
         mShowDefault = showDefault;
-        // ---------- Original Method ----------
-        //mShowDefault = showDefault;
     }
 
+    /**
+     * Returns whether to a show an item for 'Silent'.
+     * 
+     * @return Whether to show an item for 'Silent'.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:28.736 -0500", hash_original_method = "78493F49FCDC7F2B17EDE4C6D3C9ED80", hash_generated_method = "BC7E753E10F078BC1EC5A10CD6185A35")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.879 -0400", hash_original_method = "78493F49FCDC7F2B17EDE4C6D3C9ED80", hash_generated_method = "F80D5B6A0A2CE2697F2F89FAEEA8DBB6")
-    public boolean getShowSilent() {
-        boolean var79773116418F632DB2912626C537E0DC_1199343729 = (mShowSilent);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1692673323 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1692673323;
-        // ---------- Original Method ----------
-        //return mShowSilent;
+public boolean getShowSilent() {
+        return mShowSilent;
     }
 
+    /**
+     * Sets whether to show an item for 'Silent'.
+     * 
+     * @param showSilent Whether to show 'Silent'.
+     * @see RingtoneManager#EXTRA_RINGTONE_SHOW_SILENT
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:28.738 -0500", hash_original_method = "96AD95F70E483549E08CF3AF9865FE34", hash_generated_method = "ED9A52E43C4E13A1AC073562FF44E841")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.880 -0400", hash_original_method = "96AD95F70E483549E08CF3AF9865FE34", hash_generated_method = "B26664B56E3CC7B2E9360E3FA7D3F7AA")
-    public void setShowSilent(boolean showSilent) {
+public void setShowSilent(boolean showSilent) {
         mShowSilent = showSilent;
-        // ---------- Original Method ----------
-        //mShowSilent = showSilent;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:28.741 -0500", hash_original_method = "086179E398C72E137D63A84E9C2B557A", hash_generated_method = "DD9080048B70F477EC82ACC08018AE6D")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.880 -0400", hash_original_method = "086179E398C72E137D63A84E9C2B557A", hash_generated_method = "1C4B4D333FEFE4D5719A474FD684703A")
-    @Override
+@Override
     protected void onClick() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        // Launch the ringtone picker
         Intent intent = new Intent(RingtoneManager.ACTION_RINGTONE_PICKER);
         onPrepareRingtonePickerIntent(intent);
         PreferenceFragment owningFragment = getPreferenceManager().getFragment();
-        if(owningFragment != null)        
-        {
+        if (owningFragment != null) {
             owningFragment.startActivityForResult(intent, mRequestCode);
-        } //End block
-        else
-        {
+        } else {
             getPreferenceManager().getActivity().startActivityForResult(intent, mRequestCode);
-        } //End block
-        // ---------- Original Method ----------
-        //Intent intent = new Intent(RingtoneManager.ACTION_RINGTONE_PICKER);
-        //onPrepareRingtonePickerIntent(intent);
-        //PreferenceFragment owningFragment = getPreferenceManager().getFragment();
-        //if (owningFragment != null) {
-            //owningFragment.startActivityForResult(intent, mRequestCode);
-        //} else {
-            //getPreferenceManager().getActivity().startActivityForResult(intent, mRequestCode);
-        //}
+        }
     }
 
+    /**
+     * Prepares the intent to launch the ringtone picker. This can be modified
+     * to adjust the parameters of the ringtone picker.
+     * 
+     * @param ringtonePickerIntent The ringtone picker intent that can be
+     *            modified by putting extras.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:28.743 -0500", hash_original_method = "3115FC99B9C3EE3EE3896CF41F72D355", hash_generated_method = "ADC6A4DABB5C962FC6FFAE4CB65D03D8")
     
-        @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.881 -0400", hash_original_method = "3115FC99B9C3EE3EE3896CF41F72D355", hash_generated_method = "0921D75130DB11864792D26D2454F05C")
-    protected void onPrepareRingtonePickerIntent(Intent ringtonePickerIntent) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(ringtonePickerIntent.getTaint());
+protected void onPrepareRingtonePickerIntent(Intent ringtonePickerIntent) {
+
         ringtonePickerIntent.putExtra(RingtoneManager.EXTRA_RINGTONE_EXISTING_URI,
                 onRestoreRingtone());
+        
         ringtonePickerIntent.putExtra(RingtoneManager.EXTRA_RINGTONE_SHOW_DEFAULT, mShowDefault);
-        if(mShowDefault)        
-        {
+        if (mShowDefault) {
             ringtonePickerIntent.putExtra(RingtoneManager.EXTRA_RINGTONE_DEFAULT_URI,
                     RingtoneManager.getDefaultUri(getRingtoneType()));
-        } //End block
+        }
+
         ringtonePickerIntent.putExtra(RingtoneManager.EXTRA_RINGTONE_SHOW_SILENT, mShowSilent);
         ringtonePickerIntent.putExtra(RingtoneManager.EXTRA_RINGTONE_TYPE, mRingtoneType);
         ringtonePickerIntent.putExtra(RingtoneManager.EXTRA_RINGTONE_TITLE, getTitle());
-        // ---------- Original Method ----------
-        //ringtonePickerIntent.putExtra(RingtoneManager.EXTRA_RINGTONE_EXISTING_URI,
-                //onRestoreRingtone());
-        //ringtonePickerIntent.putExtra(RingtoneManager.EXTRA_RINGTONE_SHOW_DEFAULT, mShowDefault);
-        //if (mShowDefault) {
-            //ringtonePickerIntent.putExtra(RingtoneManager.EXTRA_RINGTONE_DEFAULT_URI,
-                    //RingtoneManager.getDefaultUri(getRingtoneType()));
-        //}
-        //ringtonePickerIntent.putExtra(RingtoneManager.EXTRA_RINGTONE_SHOW_SILENT, mShowSilent);
-        //ringtonePickerIntent.putExtra(RingtoneManager.EXTRA_RINGTONE_TYPE, mRingtoneType);
-        //ringtonePickerIntent.putExtra(RingtoneManager.EXTRA_RINGTONE_TITLE, getTitle());
     }
-
     
-        @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.881 -0400", hash_original_method = "61F749C53ECEF8AEA7C45AB0E864D889", hash_generated_method = "645D8CF6C8F6B76200310492D5D2805F")
-    protected void onSaveRingtone(Uri ringtoneUri) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(ringtoneUri.getTaint());
+    /**
+     * Called when a ringtone is chosen.
+     * <p>
+     * By default, this saves the ringtone URI to the persistent storage as a
+     * string.
+     * 
+     * @param ringtoneUri The chosen ringtone's {@link Uri}. Can be null.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:28.746 -0500", hash_original_method = "61F749C53ECEF8AEA7C45AB0E864D889", hash_generated_method = "97E54B5514BAD5F6FE975E62C7DE9C0E")
+    
+protected void onSaveRingtone(Uri ringtoneUri) {
         persistString(ringtoneUri != null ? ringtoneUri.toString() : "");
-        // ---------- Original Method ----------
-        //persistString(ringtoneUri != null ? ringtoneUri.toString() : "");
     }
 
+    /**
+     * Called when the chooser is about to be shown and the current ringtone
+     * should be marked. Can return null to not mark any ringtone.
+     * <p>
+     * By default, this restores the previous ringtone URI from the persistent
+     * storage.
+     * 
+     * @return The ringtone to be marked as the current ringtone.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:28.748 -0500", hash_original_method = "0D14EAB00EC2474BC71AEF293B196DEA", hash_generated_method = "D2F960F779FD939B2BC59978D4D13AA0")
     
-        @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.882 -0400", hash_original_method = "0D14EAB00EC2474BC71AEF293B196DEA", hash_generated_method = "F7B5439CE72B96C49C70C960033A3ED2")
-    protected Uri onRestoreRingtone() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+protected Uri onRestoreRingtone() {
         final String uriString = getPersistedString(null);
-Uri varB4C485D3C0F7F65526EF1FB88DF2A78B_1314475111 =         !TextUtils.isEmpty(uriString) ? Uri.parse(uriString) : null;
-        varB4C485D3C0F7F65526EF1FB88DF2A78B_1314475111.addTaint(taint);
-        return varB4C485D3C0F7F65526EF1FB88DF2A78B_1314475111;
-        // ---------- Original Method ----------
-        //final String uriString = getPersistedString(null);
-        //return !TextUtils.isEmpty(uriString) ? Uri.parse(uriString) : null;
+        return !TextUtils.isEmpty(uriString) ? Uri.parse(uriString) : null;
     }
-
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.882 -0400", hash_original_method = "617E38A3300A64CD810B1ADC15B8238E", hash_generated_method = "DD2B8483738202831600DAEF49FAF1B3")
-    @Override
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:28.750 -0500", hash_original_method = "617E38A3300A64CD810B1ADC15B8238E", hash_generated_method = "497DF6D525CC8FE96585CAFDDA47A41E")
+    
+@Override
     protected Object onGetDefaultValue(TypedArray a, int index) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(index);
-        addTaint(a.getTaint());
-Object var0AC0FFFECD61C5D7F483CEEBDC224FAC_1417327749 =         a.getString(index);
-        var0AC0FFFECD61C5D7F483CEEBDC224FAC_1417327749.addTaint(taint);
-        return var0AC0FFFECD61C5D7F483CEEBDC224FAC_1417327749;
-        // ---------- Original Method ----------
-        //return a.getString(index);
+        return a.getString(index);
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:28.752 -0500", hash_original_method = "4538BE331A2E9864F7BFD6437D81EA48", hash_generated_method = "E35CADEDDDAAFCFC72E6D2425C91B3A9")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.883 -0400", hash_original_method = "4538BE331A2E9864F7BFD6437D81EA48", hash_generated_method = "1327348D2E2BCF174494313F629F28D1")
-    @Override
+@Override
     protected void onSetInitialValue(boolean restorePersistedValue, Object defaultValueObj) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(defaultValueObj.getTaint());
-        addTaint(restorePersistedValue);
         String defaultValue = (String) defaultValueObj;
-        if(restorePersistedValue)        
-        {
+        
+        /*
+         * This method is normally to make sure the internal state and UI
+         * matches either the persisted value or the default value. Since we
+         * don't show the current value in the UI (until the dialog is opened)
+         * and we don't keep local state, if we are restoring the persisted
+         * value we don't need to do anything.
+         */
+        if (restorePersistedValue) {
             return;
-        } //End block
-        if(!TextUtils.isEmpty(defaultValue))        
-        {
+        }
+        
+        // If we are setting to the default value, we should persist it.
+        if (!TextUtils.isEmpty(defaultValue)) {
             onSaveRingtone(Uri.parse(defaultValue));
-        } //End block
-        // ---------- Original Method ----------
-        //String defaultValue = (String) defaultValueObj;
-        //if (restorePersistedValue) {
-            //return;
-        //}
-        //if (!TextUtils.isEmpty(defaultValue)) {
-            //onSaveRingtone(Uri.parse(defaultValue));
-        //}
+        }
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:28.755 -0500", hash_original_method = "66AC871F7FDA479CD38955DE80C07AF7", hash_generated_method = "570064CFB7C390AF03FFD74E83DD848A")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.884 -0400", hash_original_method = "66AC871F7FDA479CD38955DE80C07AF7", hash_generated_method = "4955AE0E7341B05006E18BA6BB300EAC")
-    @Override
+@Override
     protected void onAttachedToHierarchy(PreferenceManager preferenceManager) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
         super.onAttachedToHierarchy(preferenceManager);
+        
         preferenceManager.registerOnActivityResultListener(this);
         mRequestCode = preferenceManager.getNextRequestCode();
-        // ---------- Original Method ----------
-        //super.onAttachedToHierarchy(preferenceManager);
-        //preferenceManager.registerOnActivityResultListener(this);
-        //mRequestCode = preferenceManager.getNextRequestCode();
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:28.757 -0500", hash_original_method = "E8C8E72048A77FCD0D377098E6D641A4", hash_generated_method = "CAAEDAFD4D14B2C6CC9FB50E8E8E0951")
     
-        @DSModeled(DSC.SPEC)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.885 -0400", hash_original_method = "E8C8E72048A77FCD0D377098E6D641A4", hash_generated_method = "0588760F2F0E8EB1CB2EA9AAFB16847D")
-    public boolean onActivityResult(int requestCode, int resultCode, Intent data) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        addTaint(data.getTaint());
-        addTaint(resultCode);
-        addTaint(requestCode);
-        if(requestCode == mRequestCode)        
-        {
-            if(data != null)            
-            {
+public boolean onActivityResult(int requestCode, int resultCode, Intent data) {
+        
+        if (requestCode == mRequestCode) {
+            
+            if (data != null) {
                 Uri uri = data.getParcelableExtra(RingtoneManager.EXTRA_RINGTONE_PICKED_URI);
-                if(callChangeListener(uri != null ? uri.toString() : ""))                
-                {
+                
+                if (callChangeListener(uri != null ? uri.toString() : "")) {
                     onSaveRingtone(uri);
-                } //End block
-            } //End block
-            boolean varB326B5062B2F0E69046810717534CB09_1628823828 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2035634052 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_2035634052;
-        } //End block
-        boolean var68934A3E9455FA72420237EB05902327_1718264318 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_143197744 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_143197744;
-        // ---------- Original Method ----------
-        //if (requestCode == mRequestCode) {
-            //if (data != null) {
-                //Uri uri = data.getParcelableExtra(RingtoneManager.EXTRA_RINGTONE_PICKED_URI);
-                //if (callChangeListener(uri != null ? uri.toString() : "")) {
-                    //onSaveRingtone(uri);
-                //}
-            //}
-            //return true;
-        //}
-        //return false;
+                }
+            }
+            
+            return true;
+        }
+        
+        return false;
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.886 -0400", hash_original_field = "048D7D525F021CD0B1D5BD6FCB72717B", hash_generated_field = "03561407E8406E5A39E47D0AFC27E984")
-
-    private static final String TAG = "RingtonePreference";
 }
 

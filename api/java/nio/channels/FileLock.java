@@ -1,6 +1,8 @@
 package java.nio.channels;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 
@@ -10,130 +12,148 @@ import java.io.IOException;
 
 
 public abstract class FileLock {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.189 -0400", hash_original_field = "C485D2ED5CC4CE64FCCCCA710C7A0BB7", hash_generated_field = "D2F54CF06A6D02676AAD3B9CA4DD4532")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.920 -0500", hash_original_field = "606E91E177C017AB22115E5BAB9B1D1A", hash_generated_field = "D2F54CF06A6D02676AAD3B9CA4DD4532")
 
-    private FileChannel channel;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.189 -0400", hash_original_field = "4757FE07FD492A8BE0EA6A760D683D6E", hash_generated_field = "8E29B08B4FE682944F05067766AFABCB")
+    private  FileChannel channel;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.922 -0500", hash_original_field = "52DF2E6914C34BE1E271C4366CA6267D", hash_generated_field = "8E29B08B4FE682944F05067766AFABCB")
 
-    private long position;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.189 -0400", hash_original_field = "F7BD60B75B29D79B660A2859395C1A24", hash_generated_field = "CB917F06730B11F4BAAAFECA2C1D90A2")
+    private  long position;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.925 -0500", hash_original_field = "298A39EB1E059FD1DCE8DF5205BAB3E6", hash_generated_field = "CB917F06730B11F4BAAAFECA2C1D90A2")
 
-    private long size;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.190 -0400", hash_original_field = "9E81E7B963C71363E2FB3EEFCFECFC0E", hash_generated_field = "208F8AA93D19EFFECF64F85E89AD016E")
+    private  long size;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.927 -0500", hash_original_field = "34293CAAA37E17C8FA8487D55D95082F", hash_generated_field = "208F8AA93D19EFFECF64F85E89AD016E")
 
-    private boolean shared;
+    private  boolean shared;
+
+    /**
+     * Constructs a new file lock instance for a given channel. The constructor
+     * enforces the starting position, length and sharing mode of the lock.
+     *
+     * @param channel
+     *            the underlying file channel that holds the lock.
+     * @param position
+     *            the starting point for the lock.
+     * @param size
+     *            the length of the lock in number of bytes.
+     * @param shared
+     *            the lock's sharing mode of lock; {@code true} is shared,
+     *            {@code false} is exclusive.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.930 -0500", hash_original_method = "CD9224B029C4E22DF1D36B9A88EF4582", hash_generated_method = "A1F3049F811D2F197D46AA798FCEC4E8")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.191 -0400", hash_original_method = "CD9224B029C4E22DF1D36B9A88EF4582", hash_generated_method = "F5ABF1CB705B458A35B898221DEDA719")
-    protected  FileLock(FileChannel channel, long position, long size, boolean shared) {
-        if(position < 0 || size < 0 || position + size < 0)        
-        {
-            IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_1532028116 = new IllegalArgumentException();
-            var5783EF97022AA508B74A1E3EA38534AF_1532028116.addTaint(taint);
-            throw var5783EF97022AA508B74A1E3EA38534AF_1532028116;
-        } //End block
+protected FileLock(FileChannel channel, long position, long size, boolean shared) {
+        if (position < 0 || size < 0 || position + size < 0) {
+            throw new IllegalArgumentException();
+        }
         this.channel = channel;
         this.position = position;
         this.size = size;
         this.shared = shared;
-        // ---------- Original Method ----------
-        //if (position < 0 || size < 0 || position + size < 0) {
-            //throw new IllegalArgumentException();
-        //}
-        //this.channel = channel;
-        //this.position = position;
-        //this.size = size;
-        //this.shared = shared;
     }
 
+    /**
+     * Returns the lock's {@link FileChannel}.
+     *
+     * @return the channel.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.933 -0500", hash_original_method = "51CC76EF226D8C9ED837839CEF3A7EEC", hash_generated_method = "3B81DF277F91EAB739F4722133B81B97")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.191 -0400", hash_original_method = "51CC76EF226D8C9ED837839CEF3A7EEC", hash_generated_method = "4E63C680E81B793798F4969E2A8F8466")
-    public final FileChannel channel() {
-FileChannel var99BA3483FD74E36EACD435CEE6BD5D6F_1480987053 =         channel;
-        var99BA3483FD74E36EACD435CEE6BD5D6F_1480987053.addTaint(taint);
-        return var99BA3483FD74E36EACD435CEE6BD5D6F_1480987053;
-        // ---------- Original Method ----------
-        //return channel;
+public final FileChannel channel() {
+        return channel;
     }
 
+    /**
+     * Returns the lock's starting position in the file.
+     *
+     * @return the lock position.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.935 -0500", hash_original_method = "B51039013FACF3B9BE83986840749101", hash_generated_method = "3A969B8CA48AACD49D61680D9270B0B9")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.192 -0400", hash_original_method = "B51039013FACF3B9BE83986840749101", hash_generated_method = "38F5782B17269729EF586DF0CBFF690A")
-    public final long position() {
-        long var4757FE07FD492A8BE0EA6A760D683D6E_2140177084 = (position);
-                long var0F5264038205EDFB1AC05FBB0E8C5E94_317321577 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_317321577;
-        // ---------- Original Method ----------
-        //return position;
+public final long position() {
+        return position;
     }
 
+    /**
+     * Returns the length of the file lock in bytes.
+     *
+     * @return the size of the file lock in bytes.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.938 -0500", hash_original_method = "EA3441215E7ACDF721D34D006EDC791B", hash_generated_method = "6880D4F7C4EA71C45FEAC7C1E3AC5719")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.192 -0400", hash_original_method = "EA3441215E7ACDF721D34D006EDC791B", hash_generated_method = "7BD6F966375549015102387D60F06DAD")
-    public final long size() {
-        long varF7BD60B75B29D79B660A2859395C1A24_1685486664 = (size);
-                long var0F5264038205EDFB1AC05FBB0E8C5E94_129410936 = getTaintLong();
-        return var0F5264038205EDFB1AC05FBB0E8C5E94_129410936;
-        // ---------- Original Method ----------
-        //return size;
+public final long size() {
+        return size;
     }
 
+    /**
+     * Indicates if the file lock is shared with other processes or if it is
+     * exclusive.
+     *
+     * @return {@code true} if the lock is a shared lock, {@code false} if it is
+     *         exclusive.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.940 -0500", hash_original_method = "9101EDDE96E9CB8A45C7075BA466C705", hash_generated_method = "C5CA60BFCBFC0B387AEAC2879B2A1D50")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.192 -0400", hash_original_method = "9101EDDE96E9CB8A45C7075BA466C705", hash_generated_method = "253B7E77CB7BB16C779C2539CE2F2C87")
-    public final boolean isShared() {
-        boolean var9E81E7B963C71363E2FB3EEFCFECFC0E_422022562 = (shared);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1271229947 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1271229947;
-        // ---------- Original Method ----------
-        //return shared;
+public final boolean isShared() {
+        return shared;
     }
 
+    /**
+     * Indicates if the receiver's lock region overlaps the region described
+     * in the parameter list.
+     *
+     * @param start
+     *            the starting position for the comparative lock.
+     * @param length
+     *            the length of the comparative lock.
+     * @return {@code true} if there is an overlap, {@code false} otherwise.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.943 -0500", hash_original_method = "BD91EA1BF31FE8BEA01F707FE570CF9B", hash_generated_method = "7B3C12D3964E1AC5C0BC9EA9E05C5DF9")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.193 -0400", hash_original_method = "BD91EA1BF31FE8BEA01F707FE570CF9B", hash_generated_method = "A3CE1D14B763EE15C56811946EAC426A")
-    public final boolean overlaps(long start, long length) {
-        addTaint(length);
-        addTaint(start);
+public final boolean overlaps(long start, long length) {
         final long end = position + size - 1;
         final long newEnd = start + length - 1;
-        if(end < start || position > newEnd)        
-        {
-            boolean var68934A3E9455FA72420237EB05902327_1488772751 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_217743999 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_217743999;
-        } //End block
-        boolean varB326B5062B2F0E69046810717534CB09_1301859532 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_785647761 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_785647761;
-        // ---------- Original Method ----------
-        //final long end = position + size - 1;
-        //final long newEnd = start + length - 1;
-        //if (end < start || position > newEnd) {
-            //return false;
-        //}
-        //return true;
+        if (end < start || position > newEnd) {
+            return false;
+        }
+        return true;
     }
 
+    /**
+     * Indicates whether this lock is a valid file lock. The lock is
+     * valid unless the underlying channel has been closed or it has been
+     * explicitly released.
+     *
+     * @return {@code true} if the lock is valid, {@code false} otherwise.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.945 -0500", hash_original_method = "F1240C06AF1BA9E648B2E780B8155F1C", hash_generated_method = "DEB105C1692FABA897B5C0B0EC6247FE")
     
-    @DSModeled(DSC.SAFE)
-    public abstract boolean isValid();
+public abstract boolean isValid();
 
+    /**
+     * Releases this particular lock on the file. If the lock is invalid then
+     * this method has no effect. Once released, the lock becomes invalid.
+     *
+     * @throws ClosedChannelException
+     *             if the channel is already closed when an attempt to release
+     *             the lock is made.
+     * @throws IOException
+     *             if another I/O error occurs.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.947 -0500", hash_original_method = "22B65EDA9DAE2C971668345F22156AAE", hash_generated_method = "79128A57A8D9F19E7BCD0E731AF79772")
     
-    @DSModeled(DSC.SAFE)
-    public abstract void release() throws IOException;
+public abstract void release() throws IOException;
 
+    /**
+     * Returns a string that shows the details of the lock suitable for display
+     * to an end user.
+     *
+     * @return the display string.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.950 -0500", hash_original_method = "1F1F0B30DE920C1569E46FCBBEE46A56", hash_generated_method = "BA2B1869FB958D70BAED03A91339E6B1")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.193 -0400", hash_original_method = "1F1F0B30DE920C1569E46FCBBEE46A56", hash_generated_method = "D6B80064B4F48A7E2D7760A497203E2D")
-    @Override
+@Override
     public final String toString() {
-String var8E19B0E47F27C9581CD7CF22D53F3239_1114752451 =         "FileLock[position=" + position + ", size=" + size + ", shared=" + shared + "]";
-        var8E19B0E47F27C9581CD7CF22D53F3239_1114752451.addTaint(taint);
-        return var8E19B0E47F27C9581CD7CF22D53F3239_1114752451;
-        // ---------- Original Method ----------
-        //return "FileLock[position=" + position + ", size=" + size + ", shared=" + shared + "]";
+        return "FileLock[position=" + position + ", size=" + size + ", shared=" + shared + "]";
     }
 
     

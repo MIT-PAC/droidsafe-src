@@ -1,6 +1,8 @@
 package android.text.style;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.text.ParcelableSpan;
@@ -10,45 +12,32 @@ import android.text.TextUtils;
 
 
 public class EasyEditSpan implements ParcelableSpan {
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.230 -0500", hash_original_method = "A230929293AFFCA631493D5E514D429F", hash_generated_method = "37C9EA6078415747890F9889C5AC3A63")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.984 -0400", hash_original_method = "A230929293AFFCA631493D5E514D429F", hash_generated_method = "30C43FC9D033188B5BCE7C639844F2F1")
-    public  EasyEditSpan() {
-        // ---------- Original Method ----------
+public EasyEditSpan() {
+        // Empty
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.233 -0500", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "8188008AC9C80E87937FE73DCA905200")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.985 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "F72E79A4B4D5CAF5D5551DB1AD46291D")
-    @Override
+@Override
     public int describeContents() {
-        int varCFCD208495D565EF66E7DFF9F98764DA_1784929274 = (0);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_145652327 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_145652327;
-        // ---------- Original Method ----------
-        //return 0;
+        return 0;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.236 -0500", hash_original_method = "36081754C4A09732AEC95BB21FA0BDE7", hash_generated_method = "769DF2486ED6940F8E62EC11EEC3116C")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.985 -0400", hash_original_method = "36081754C4A09732AEC95BB21FA0BDE7", hash_generated_method = "7434FF73057D7851F1B1D87D94FFF3D5")
-    @Override
+@Override
     public void writeToParcel(Parcel dest, int flags) {
-        addTaint(flags);
-        addTaint(dest.getTaint());
-        // ---------- Original Method ----------
+        // Empty
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.238 -0500", hash_original_method = "B70B692D38FEF311001170F890E9CCAE", hash_generated_method = "31275165529ED4EB50CEF948BA58301D")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.986 -0400", hash_original_method = "B70B692D38FEF311001170F890E9CCAE", hash_generated_method = "0A28395F69112EAF2A30780BA128DE57")
-    @Override
+@Override
     public int getSpanTypeId() {
-        int varC884AAB69FE03F39DD13BC8983FA4E84_885412363 = (TextUtils.EASY_EDIT_SPAN);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1086071205 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1086071205;
-        // ---------- Original Method ----------
-        //return TextUtils.EASY_EDIT_SPAN;
+        return TextUtils.EASY_EDIT_SPAN;
     }
 
     

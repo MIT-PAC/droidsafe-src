@@ -1,6 +1,8 @@
 package org.apache.harmony.xml.parsers;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.HashMap;
 import java.util.Map;
@@ -15,7 +17,18 @@ import org.xml.sax.SAXNotRecognizedException;
 
 
 public class SAXParserFactoryImpl extends SAXParserFactory {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.791 -0400", hash_original_field = "987495AE8EA75D7FFAE9F17C211F4863", hash_generated_field = "BBF36E0D89D30BFFC00EE4B538D5AA0E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:23.741 -0500", hash_original_field = "23D5E90A009660027D8004B0865026CF", hash_generated_field = "BE5F1192FB3C2F3EED9964DA7D958C23")
+
+
+    private static final String NAMESPACES
+            = "http://xml.org/sax/features/namespaces";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:23.744 -0500", hash_original_field = "82AE1762CE90A109938E89B1ADAFE1BF", hash_generated_field = "70ED57CE87CAB83D17A94161FFE3B368")
+
+
+    private static final String VALIDATION
+            = "http://xml.org/sax/features/validation";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:23.746 -0500", hash_original_field = "52DB9F5445142ACC1EFB3E9C4AA84BD1", hash_generated_field = "BBF36E0D89D30BFFC00EE4B538D5AA0E")
+
 
     private Map<String, Boolean> features = new HashMap<String, Boolean>();
     
@@ -55,89 +68,42 @@ public class SAXParserFactoryImpl extends SAXParserFactory {
         //return Boolean.TRUE.equals(features.get(name));
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:23.751 -0500", hash_original_method = "D0236E56EB7DBB7A9FD9FE0F0B030A07", hash_generated_method = "BFC42B31CA1C4C999EA17472B847965F")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.793 -0400", hash_original_method = "D0236E56EB7DBB7A9FD9FE0F0B030A07", hash_generated_method = "4793B14099C6AC50A75111C67B60E8D4")
-    @Override
+@Override
     public boolean isNamespaceAware() {
-        try 
-        {
-            boolean varA85D5027A8BF86F9880028EE82799B8C_1166214095 = (getFeature(NAMESPACES));
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_355774060 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_355774060;
-        } //End block
-        catch (SAXNotRecognizedException ex)
-        {
-            AssertionError var856F93FDE0E323DC56DBDD84445E8491_1250886003 = new AssertionError(ex);
-            var856F93FDE0E323DC56DBDD84445E8491_1250886003.addTaint(taint);
-            throw var856F93FDE0E323DC56DBDD84445E8491_1250886003;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return getFeature(NAMESPACES);
-        //} catch (SAXNotRecognizedException ex) {
-            //throw new AssertionError(ex);
-        //}
+        try {
+            return getFeature(NAMESPACES);
+        } catch (SAXNotRecognizedException ex) {
+            throw new AssertionError(ex);
+        }
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:23.754 -0500", hash_original_method = "8429289DC0C07EE6D0C2B7B5BD1C7C0B", hash_generated_method = "3BBAB4825D5D80469A63DFB9A8C10023")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.794 -0400", hash_original_method = "8429289DC0C07EE6D0C2B7B5BD1C7C0B", hash_generated_method = "0E74336AB365DE33E4AD4CBA6C3EEC77")
-    @Override
+@Override
     public boolean isValidating() {
-        try 
-        {
-            boolean var8C62165CDF43988EF5B0DB9142FB8CE1_268505903 = (getFeature(VALIDATION));
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1807750672 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1807750672;
-        } //End block
-        catch (SAXNotRecognizedException ex)
-        {
-            AssertionError var856F93FDE0E323DC56DBDD84445E8491_210783407 = new AssertionError(ex);
-            var856F93FDE0E323DC56DBDD84445E8491_210783407.addTaint(taint);
-            throw var856F93FDE0E323DC56DBDD84445E8491_210783407;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return getFeature(VALIDATION);
-        //} catch (SAXNotRecognizedException ex) {
-            //throw new AssertionError(ex);
-        //}
+        try {
+            return getFeature(VALIDATION);
+        } catch (SAXNotRecognizedException ex) {
+            throw new AssertionError(ex);
+        }
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:23.756 -0500", hash_original_method = "296E37D815DC1709C2AEF832AA03671B", hash_generated_method = "EFDD6A79C863EB4469F78CA98E03AF0A")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.795 -0400", hash_original_method = "296E37D815DC1709C2AEF832AA03671B", hash_generated_method = "77B60062746E0ED42949EB8B22DBE242")
-    @Override
+@Override
     public SAXParser newSAXParser() throws ParserConfigurationException {
-        if(isValidating())        
-        {
-            ParserConfigurationException var3EE88861DE2349AF63FE4F2DF1665BA3_1486043171 = new ParserConfigurationException(
+        if (isValidating()) {
+            throw new ParserConfigurationException(
                     "No validating SAXParser implementation available");
-            var3EE88861DE2349AF63FE4F2DF1665BA3_1486043171.addTaint(taint);
-            throw var3EE88861DE2349AF63FE4F2DF1665BA3_1486043171;
-        } //End block
-        try 
-        {
-SAXParser var97136CDAC6E5068137219CC84BCFD745_372579539 =             new SAXParserImpl(features);
-            var97136CDAC6E5068137219CC84BCFD745_372579539.addTaint(taint);
-            return var97136CDAC6E5068137219CC84BCFD745_372579539;
-        } //End block
-        catch (Exception ex)
-        {
-            ParserConfigurationException var80352B97CDB95532FB2C18BFAB046C8B_13499543 = new ParserConfigurationException(ex.toString());
-            var80352B97CDB95532FB2C18BFAB046C8B_13499543.addTaint(taint);
-            throw var80352B97CDB95532FB2C18BFAB046C8B_13499543;
-        } //End block
-        // ---------- Original Method ----------
-        //if (isValidating()) {
-            //throw new ParserConfigurationException(
-                    //"No validating SAXParser implementation available");
-        //}
-        //try {
-            //return new SAXParserImpl(features);
-        //} catch (Exception ex) {
-            //throw new ParserConfigurationException(ex.toString());
-        //}
+        }
+
+        try {
+            return new SAXParserImpl(features);
+        } catch (Exception ex) {
+            throw new ParserConfigurationException(ex.toString());
+        }
     }
 
     
@@ -180,59 +146,26 @@ SAXParser var97136CDAC6E5068137219CC84BCFD745_372579539 =             new SAXPar
         //}
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:23.761 -0500", hash_original_method = "2AAB52F0B6288669A1F1A42BDA5388FA", hash_generated_method = "BFEA5614FD2CD0D47E80DBB6FACBFD99")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.796 -0400", hash_original_method = "2AAB52F0B6288669A1F1A42BDA5388FA", hash_generated_method = "7C1B418C9E6BCDD054C73197A2130C2E")
-    @Override
+@Override
     public void setNamespaceAware(boolean value) {
-        addTaint(value);
-        try 
-        {
+        try {
             setFeature(NAMESPACES, value);
-        } //End block
-        catch (SAXNotRecognizedException ex)
-        {
-            AssertionError var856F93FDE0E323DC56DBDD84445E8491_1143998732 = new AssertionError(ex);
-            var856F93FDE0E323DC56DBDD84445E8491_1143998732.addTaint(taint);
-            throw var856F93FDE0E323DC56DBDD84445E8491_1143998732;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //setFeature(NAMESPACES, value);
-        //} catch (SAXNotRecognizedException ex) {
-            //throw new AssertionError(ex);
-        //}
+        } catch (SAXNotRecognizedException ex) {
+            throw new AssertionError(ex);
+        }
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:23.763 -0500", hash_original_method = "FD755E093F221B14C5D40C6AB8BA5348", hash_generated_method = "43B468C824FE9A8BED391481C74D8CC4")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.797 -0400", hash_original_method = "FD755E093F221B14C5D40C6AB8BA5348", hash_generated_method = "0F19FD11F6B8C2EE843D2F7D095BC991")
-    @Override
+@Override
     public void setValidating(boolean value) {
-        addTaint(value);
-        try 
-        {
+        try {
             setFeature(VALIDATION, value);
-        } //End block
-        catch (SAXNotRecognizedException ex)
-        {
-            AssertionError var856F93FDE0E323DC56DBDD84445E8491_1122307185 = new AssertionError(ex);
-            var856F93FDE0E323DC56DBDD84445E8491_1122307185.addTaint(taint);
-            throw var856F93FDE0E323DC56DBDD84445E8491_1122307185;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //setFeature(VALIDATION, value);
-        //} catch (SAXNotRecognizedException ex) {
-            //throw new AssertionError(ex);
-        //}
+        } catch (SAXNotRecognizedException ex) {
+            throw new AssertionError(ex);
+        }
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.797 -0400", hash_original_field = "57DAABD72ED77A96967246F7788B1447", hash_generated_field = "BE5F1192FB3C2F3EED9964DA7D958C23")
-
-    private static final String NAMESPACES = "http://xml.org/sax/features/namespaces";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.797 -0400", hash_original_field = "1A6983F26F9A43F675933304E11A084C", hash_generated_field = "70ED57CE87CAB83D17A94161FFE3B368")
-
-    private static final String VALIDATION = "http://xml.org/sax/features/validation";
 }
 

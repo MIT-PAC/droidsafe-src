@@ -1,6 +1,8 @@
 package libcore.io;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.nio.charset.Charsets;
 
@@ -11,31 +13,32 @@ import libcore.util.EmptyArray;
 
 
 public final class Base64 {
-    
-        @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:23.957 -0400", hash_original_method = "B12DC6BE1A1E2EB3A4F484EDEACB8E03", hash_generated_method = "96F9E0BDD170E9FC5C3951236F2EB54E")
-    private  Base64() {
-        // ---------- Original Method ----------
-    }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:26.154 -0500", hash_original_method = "8535EDDE1B82B493909B7A5D7029E7BE", hash_generated_method = "6A8FCF4552AAB657EB72B7C62E120750")
     
-    @DSModeled(DSC.SAFE)
-    public static byte[] decode(byte[] in) {
+public static byte[] decode(byte[] in) {
         return decode(in, in.length);
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:26.157 -0500", hash_original_method = "C6A868DEF1696F686F485C4F95484204", hash_generated_method = "BB0A9EA117B311C37A5055FCC0BB6D2B")
     
-    @DSModeled(DSC.SAFE)
-    public static byte[] decode(byte[] in, int len) {
+public static byte[] decode(byte[] in, int len) {
+        // approximate output length
         int length = len / 4 * 3;
+        // return an empty array on empty or short input without padding
         if (length == 0) {
             return EmptyArray.BYTE;
         }
+        // temporary array
         byte[] out = new byte[length];
+        // number of padding characters ('=')
         int pad = 0;
         byte chr;
+        // compute the number of the padding characters
+        // and adjust the length of the input
         for (;;len--) {
             chr = in[len-1];
+            // skip the neutral characters
             if ((chr == '\n') || (chr == '\r') ||
                     (chr == ' ') || (chr == '\t')) {
                 continue;
@@ -46,21 +49,35 @@ public final class Base64 {
                 break;
             }
         }
+        // index in the output array
         int outIndex = 0;
+        // index in the input array
         int inIndex = 0;
+        // holds the value of the input character
         int bits = 0;
+        // holds the value of the input quantum
         int quantum = 0;
         for (int i=0; i<len; i++) {
             chr = in[i];
+            // skip the neutral characters
             if ((chr == '\n') || (chr == '\r') ||
                     (chr == ' ') || (chr == '\t')) {
                 continue;
             }
             if ((chr >= 'A') && (chr <= 'Z')) {
+                // char ASCII value
+                //  A    65    0
+                //  Z    90    25 (ASCII - 65)
                 bits = chr - 65;
             } else if ((chr >= 'a') && (chr <= 'z')) {
+                // char ASCII value
+                //  a    97    26
+                //  z    122   51 (ASCII - 71)
                 bits = chr - 71;
             } else if ((chr >= '0') && (chr <= '9')) {
+                // char ASCII value
+                //  0    48    52
+                //  9    57    61 (ASCII + 4)
                 bits = chr + 4;
             } else if (chr == '+') {
                 bits = 62;
@@ -69,8 +86,10 @@ public final class Base64 {
             } else {
                 return null;
             }
+            // append the value to the quantum
             quantum = (quantum << 6) | (byte) bits;
             if (inIndex%4 == 3) {
+                // 4 characters were read, so make the output:
                 out[outIndex++] = (byte) (quantum >> 16);
                 out[outIndex++] = (byte) (quantum >> 8);
                 out[outIndex++] = (byte) quantum;
@@ -78,20 +97,23 @@ public final class Base64 {
             inIndex++;
         }
         if (pad > 0) {
+            // adjust the quantum value according to the padding
             quantum = quantum << (6*pad);
+            // make output
             out[outIndex++] = (byte) (quantum >> 16);
             if (pad == 1) {
                 out[outIndex++] = (byte) (quantum >> 8);
             }
         }
+        // create the resulting array
         byte[] result = new byte[outIndex];
         System.arraycopy(out, 0, result, 0, outIndex);
         return result;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:26.163 -0500", hash_original_method = "3951A54D7E58E025CF9BE59B6C0BF589", hash_generated_method = "FE53652097EBC8DA4AE52F4B93D33BD1")
     
-    @DSModeled(DSC.SAFE)
-    public static String encode(byte[] in) {
+public static String encode(byte[] in) {
         int length = (in.length + 2) * 4 / 3;
         byte[] out = new byte[length];
         int index = 0, end = in.length - in.length % 3;
@@ -117,9 +139,8 @@ public final class Base64 {
         }
         return new String(out, 0, index, Charsets.US_ASCII);
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:26.160 -0500", hash_original_field = "3063CAA3327D5F99524D47E8A719D4E8", hash_generated_field = "82F1210628F15E92912F89A88C162707")
 
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:23.958 -0400", hash_original_field = "A5BA4FA48DF3D1EE63BD76EA10F554A0", hash_generated_field = "82F1210628F15E92912F89A88C162707")
 
     private static final byte[] map = new byte[]
         {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N',
@@ -127,5 +148,9 @@ public final class Base64 {
          'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p',
          'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3',
          '4', '5', '6', '7', '8', '9', '+', '/'};
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:26.151 -0500", hash_original_method = "B12DC6BE1A1E2EB3A4F484EDEACB8E03", hash_generated_method = "C3084AA7D5019852EF92F271F4A0E81D")
+    
+private Base64() {
+    }
 }
 

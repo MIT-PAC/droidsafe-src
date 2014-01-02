@@ -1,6 +1,8 @@
 package dalvik.system;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.FileDescriptor;
 import java.net.Socket;
@@ -12,64 +14,25 @@ import java.net.SocketException;
 
 
 public abstract class SocketTagger {
+
+    /**
+     * Sets this process' socket tagger to {@code tagger}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:41.450 -0500", hash_original_method = "EDEE55D75359311904AE78EC5039AEA8", hash_generated_method = "556290A77FEED0E42DE5ED0FAA7F3D27")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.818 -0400", hash_original_method = "3FCBFB017A056A47E7F458C1C015DE98", hash_generated_method = "3FCBFB017A056A47E7F458C1C015DE98")
-    public SocketTagger ()
-    {
-        //Synthesized constructor
-    }
-
-
-    @DSModeled(DSC.BAN)
-    public abstract void tag(FileDescriptor socketDescriptor) throws SocketException;
-
-    
-    @DSModeled(DSC.BAN)
-    public abstract void untag(FileDescriptor socketDescriptor) throws SocketException;
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.819 -0400", hash_original_method = "6DADFCEFEAC71C05F27C21DEA87D02DB", hash_generated_method = "DDC00633D2D9EC1D94B2A8F60DC571AB")
-    public final void tag(Socket socket) throws SocketException {
-        addTaint(socket.getTaint());
-        if(!socket.isClosed())        
-        {
-            tag(socket.getFileDescriptor$());
-        } //End block
-        // ---------- Original Method ----------
-        //if (!socket.isClosed()) {
-            //tag(socket.getFileDescriptor$());
-        //}
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.819 -0400", hash_original_method = "54DD0CF9051E663B674E2F8CC129A4E5", hash_generated_method = "11DB0139D656E16CF8014AF5BA170B57")
-    public final void untag(Socket socket) throws SocketException {
-        addTaint(socket.getTaint());
-        if(!socket.isClosed())        
-        {
-            untag(socket.getFileDescriptor$());
-        } //End block
-        // ---------- Original Method ----------
-        //if (!socket.isClosed()) {
-            //untag(socket.getFileDescriptor$());
-        //}
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    public static synchronized void set(SocketTagger tagger) {
+public static synchronized void set(SocketTagger tagger) {
         if (tagger == null) {
             throw new NullPointerException("tagger == null");
         }
         SocketTagger.tagger = tagger;
     }
 
+    /**
+     * Returns this process socket tagger.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:41.453 -0500", hash_original_method = "87B6FC7B35B939DE64706833D2FA396B", hash_generated_method = "9C72E2DCC2A6309C30FA4649268C0529")
     
-    @DSModeled(DSC.BAN)
-    public static synchronized SocketTagger get() {
+public static synchronized SocketTagger get() {
         return tagger;
     }
 
@@ -96,5 +59,49 @@ public abstract class SocketTagger {
 
         
 };
+    
+    @DSModeled(DSC.BAN)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.818 -0400", hash_original_method = "3FCBFB017A056A47E7F458C1C015DE98", hash_generated_method = "3FCBFB017A056A47E7F458C1C015DE98")
+    public SocketTagger ()
+    {
+        //Synthesized constructor
+    }
+
+    /**
+     * Notified when {@code socketDescriptor} is either assigned to the current
+     * thread. The socket is either newly connected or reused from a connection
+     * pool. Implementations of this method should be thread-safe.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:41.439 -0500", hash_original_method = "9BD43B1E2CFC27D090627A116B518176", hash_generated_method = "227AD56C5F547C039B73864DE505A308")
+    
+public abstract void tag(FileDescriptor socketDescriptor) throws SocketException;
+
+    /**
+     * Notified when {@code socketDescriptor} is released from the current
+     * thread to a connection pool. Implementations of this method should be
+     * thread-safe.
+     *
+     * <p><strong>Note:</strong> this method will not be invoked when the socket
+     * is closed.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:41.442 -0500", hash_original_method = "2BF068569797F0DFBCD6691D25ACF08F", hash_generated_method = "5FD01BB243B453B61CFC5CA4C40FE711")
+    
+public abstract void untag(FileDescriptor socketDescriptor) throws SocketException;
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:41.444 -0500", hash_original_method = "6DADFCEFEAC71C05F27C21DEA87D02DB", hash_generated_method = "A6AE8C55ABFE6600DC9D40F98777FC21")
+    
+public final void tag(Socket socket) throws SocketException {
+        if (!socket.isClosed()) {
+            tag(socket.getFileDescriptor$());
+        }
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:41.447 -0500", hash_original_method = "54DD0CF9051E663B674E2F8CC129A4E5", hash_generated_method = "FBDBD394A5D541F6E6E3D157E3F24C99")
+    
+public final void untag(Socket socket) throws SocketException {
+        if (!socket.isClosed()) {
+            untag(socket.getFileDescriptor$());
+        }
+    }
 }
 

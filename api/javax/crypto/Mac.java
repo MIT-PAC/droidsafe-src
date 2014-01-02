@@ -1,6 +1,8 @@
 package javax.crypto;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.nio.ByteBuffer;
 import java.security.InvalidAlgorithmParameterException;
@@ -20,58 +22,24 @@ import org.apache.harmony.security.fortress.Engine;
 
 
 public class Mac implements Cloneable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.259 -0400", hash_original_field = "9E9F3D70BD8C8957627EADA96D967706", hash_generated_field = "2D84320E029EBF537A8555BC820086EF")
 
-    private Provider provider;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.259 -0400", hash_original_field = "96FF779E0BE718F2D29D8C56320393D2", hash_generated_field = "0128BA68CF49937E6689B3B2ABC40132")
-
-    private MacSpi spiImpl;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.259 -0400", hash_original_field = "ED469618898D75B149E5C7C4B6A1C415", hash_generated_field = "40E4722A302366B2A43F1CD6C99E2454")
-
-    private String algorithm;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.259 -0400", hash_original_field = "71273B8DA3C3CDBA76CC033ECFD09BB7", hash_generated_field = "3ABD1385745F27F79CF607C339AD7462")
-
-    private boolean isInitMac;
+    /**
+     * Creates a new {@code Mac} instance that provides the specified MAC
+     * algorithm.
+     *
+     * @param algorithm
+     *            the name of the requested MAC algorithm.
+     * @return the new {@code Mac} instance.
+     * @throws NoSuchAlgorithmException
+     *             if the specified algorithm is not available by any provider.
+     * @throws NullPointerException
+     *             if {@code algorithm} is {@code null} (instead of
+     *             NoSuchAlgorithmException as in 1.4 release).
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.665 -0500", hash_original_method = "3E4BC559FFF8F8BDA507B13EF8AF490F", hash_generated_method = "14D7DD9047E39E52B5B033CEE35BB241")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.261 -0400", hash_original_method = "41257A854336509F555FDEC12089036E", hash_generated_method = "7032B200155C3BF44BC344231E63CB65")
-    protected  Mac(MacSpi macSpi, Provider provider, String algorithm) {
-        this.provider = provider;
-        this.algorithm = algorithm;
-        this.spiImpl = macSpi;
-        this.isInitMac = false;
-        // ---------- Original Method ----------
-        //this.provider = provider;
-        //this.algorithm = algorithm;
-        //this.spiImpl = macSpi;
-        //this.isInitMac = false;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.262 -0400", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "BA87FF6DF730C188D932B0D6E6470CDE")
-    public final String getAlgorithm() {
-String var44A46B4003FC81ACB0223385BA1FA818_476494383 =         algorithm;
-        var44A46B4003FC81ACB0223385BA1FA818_476494383.addTaint(taint);
-        return var44A46B4003FC81ACB0223385BA1FA818_476494383;
-        // ---------- Original Method ----------
-        //return algorithm;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.262 -0400", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "7DA71835032FD3D29D50F9F118E1577A")
-    public final Provider getProvider() {
-Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_806376510 =         provider;
-        varC1EB7B12CCABB27D431E5B91E5FF9ECB_806376510.addTaint(taint);
-        return varC1EB7B12CCABB27D431E5B91E5FF9ECB_806376510;
-        // ---------- Original Method ----------
-        //return provider;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    public static final Mac getInstance(String algorithm) throws NoSuchAlgorithmException {
+public static final Mac getInstance(String algorithm)
+            throws NoSuchAlgorithmException {
         if (algorithm == null) {
             throw new NullPointerException();
         }
@@ -79,9 +47,30 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_806376510 =         provider;
         return new Mac((MacSpi) sap.spi, sap.provider, algorithm);
     }
 
+    /**
+     * Creates a new {@code Mac} instance that provides the specified MAC
+     * algorithm from the specified provider.
+     *
+     * @param algorithm
+     *            the name of the requested MAC algorithm.
+     * @param provider
+     *            the name of the provider that is providing the algorithm.
+     * @return the new {@code Mac} instance.
+     * @throws NoSuchAlgorithmException
+     *             if the specified algorithm is not provided by the specified
+     *             provider.
+     * @throws NoSuchProviderException
+     *             if the specified provider is not available.
+     * @throws IllegalArgumentException
+     *             if the specified provider name is {@code null} or empty.
+     * @throws NullPointerException
+     *             if {@code algorithm} is {@code null} (instead of
+     *             NoSuchAlgorithmException as in 1.4 release).
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.668 -0500", hash_original_method = "C36E3B39C5242D2DC122D797569C3E46", hash_generated_method = "E9261B2D7224D6220A041C3242BFAB74")
     
-    @DSModeled(DSC.SAFE)
-    public static final Mac getInstance(String algorithm, String provider) throws NoSuchAlgorithmException, NoSuchProviderException {
+public static final Mac getInstance(String algorithm, String provider)
+            throws NoSuchAlgorithmException, NoSuchProviderException {
         if (provider == null || provider.isEmpty()) {
             throw new IllegalArgumentException("Provider is null or empty");
         }
@@ -92,9 +81,28 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_806376510 =         provider;
         return getInstance(algorithm, impProvider);
     }
 
+    /**
+     * Creates a new {@code Mac} instance that provides the specified MAC
+     * algorithm from the specified provider.
+     *
+     * @param algorithm
+     *            the name of the requested MAC algorithm.
+     * @param provider
+     *            the provider that is providing the algorithm.
+     * @return the new {@code Mac} instance.
+     * @throws NoSuchAlgorithmException
+     *             if the specified algorithm is not provided by the specified
+     *             provider.
+     * @throws IllegalArgumentException
+     *             if {@code provider} is {@code null}.
+     * @throws NullPointerException
+     *             if {@code algorithm} is {@code null} (instead of
+     *             NoSuchAlgorithmException as in 1.4 release).
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.671 -0500", hash_original_method = "9F8E4A6494CB361657567F0DE6275A17", hash_generated_method = "C113D69E0F2931D2076D5442F6A65023")
     
-    @DSModeled(DSC.SAFE)
-    public static final Mac getInstance(String algorithm, Provider provider) throws NoSuchAlgorithmException {
+public static final Mac getInstance(String algorithm, Provider provider)
+            throws NoSuchAlgorithmException {
         if (provider == null) {
             throw new IllegalArgumentException("provider == null");
         }
@@ -104,314 +112,335 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_806376510 =         provider;
         Object spi = ENGINE.getInstance(algorithm, provider, null);
         return new Mac((MacSpi) spi, provider, algorithm);
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.646 -0500", hash_original_field = "2653E60AD4168F29BCBE957ABC770C28", hash_generated_field = "806BD6BDD2ABE5FBF629090CA696D2F6")
 
+    private static final Engine ENGINE = new Engine("Mac");
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.648 -0500", hash_original_field = "70389BF55D92237F4948951640719A18", hash_generated_field = "2D84320E029EBF537A8555BC820086EF")
+
+    private  Provider provider;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.651 -0500", hash_original_field = "D5C6D39FF8B0FEC373455E53108A464C", hash_generated_field = "0128BA68CF49937E6689B3B2ABC40132")
+
+    private  MacSpi spiImpl;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.653 -0500", hash_original_field = "1DDAED4286CC7F9A2BC49502885440CE", hash_generated_field = "40E4722A302366B2A43F1CD6C99E2454")
+
+    private  String algorithm;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.655 -0500", hash_original_field = "7199DD0121DF2A6DCD548D72E04D0A40", hash_generated_field = "3ABD1385745F27F79CF607C339AD7462")
+
+    private boolean isInitMac;
+
+    /**
+     * Creates a new {@code Mac} instance.
+     *
+     * @param macSpi
+     *            the implementation delegate.
+     * @param provider
+     *            the implementation provider.
+     * @param algorithm
+     *            the name of the MAC algorithm.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.658 -0500", hash_original_method = "41257A854336509F555FDEC12089036E", hash_generated_method = "C350962D3304BAFED070EA865DB853EC")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.265 -0400", hash_original_method = "02AEE303A4D099BA107FB2CB7C60A1E3", hash_generated_method = "88195A32B310944125B60164B95C8D40")
-    public final int getMacLength() {
-        int var682E664C96A9B662D36EC2F18A07EE33_1303082927 = (spiImpl.engineGetMacLength());
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_166372763 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_166372763;
-        // ---------- Original Method ----------
-        //return spiImpl.engineGetMacLength();
+protected Mac(MacSpi macSpi, Provider provider, String algorithm) {
+        this.provider = provider;
+        this.algorithm = algorithm;
+        this.spiImpl = macSpi;
+        this.isInitMac = false;
     }
 
+    /**
+     * Returns the name of the MAC algorithm.
+     *
+     * @return the name of the MAC algorithm.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.661 -0500", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "8A7AA6162519FFB2228039F3D6331CE9")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.266 -0400", hash_original_method = "9228EAA32885A066BE953E8B5AE4C236", hash_generated_method = "2F2CA41C23E979A4890DC7AD6275794D")
-    public final void init(Key key, AlgorithmParameterSpec params) throws InvalidKeyException, InvalidAlgorithmParameterException {
-        addTaint(params.getTaint());
-        addTaint(key.getTaint());
-        if(key == null)        
-        {
-            InvalidKeyException var561EB6DA7D886C25C659084459A45580_35520156 = new InvalidKeyException("key == null");
-            var561EB6DA7D886C25C659084459A45580_35520156.addTaint(taint);
-            throw var561EB6DA7D886C25C659084459A45580_35520156;
-        } //End block
+public final String getAlgorithm() {
+        return algorithm;
+    }
+
+    /**
+     * Returns the provider of this {@code Mac} instance.
+     *
+     * @return the provider of this {@code Mac} instance.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.663 -0500", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "443000CF13C77ABCABFC8B67E2DE556F")
+    
+public final Provider getProvider() {
+        return provider;
+    }
+
+    /**
+     * Returns the length of this MAC (in bytes).
+     *
+     * @return the length of this MAC (in bytes).
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.673 -0500", hash_original_method = "02AEE303A4D099BA107FB2CB7C60A1E3", hash_generated_method = "656E9EB0E4DD43379A7E6E6A9ECA9FA5")
+    
+public final int getMacLength() {
+        return spiImpl.engineGetMacLength();
+    }
+
+    /**
+     * Initializes this {@code Mac} instance with the specified key and
+     * algorithm parameters.
+     *
+     * @param key
+     *            the key to initialize this algorithm.
+     * @param params
+     *            the parameters for this algorithm.
+     * @throws InvalidKeyException
+     *             if the specified key cannot be used to initialize this
+     *             algorithm, or it is null.
+     * @throws InvalidAlgorithmParameterException
+     *             if the specified parameters cannot be used to initialize this
+     *             algorithm.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.676 -0500", hash_original_method = "9228EAA32885A066BE953E8B5AE4C236", hash_generated_method = "E4A49B851F58AB4C9EBD03CD9A957F1A")
+    
+public final void init(Key key, AlgorithmParameterSpec params)
+            throws InvalidKeyException, InvalidAlgorithmParameterException {
+        if (key == null) {
+            throw new InvalidKeyException("key == null");
+        }
         spiImpl.engineInit(key, params);
         isInitMac = true;
-        // ---------- Original Method ----------
-        //if (key == null) {
-            //throw new InvalidKeyException("key == null");
-        //}
-        //spiImpl.engineInit(key, params);
-        //isInitMac = true;
     }
 
+    /**
+     * Initializes this {@code Mac} instance with the specified key.
+     *
+     * @param key
+     *            the key to initialize this algorithm.
+     * @throws InvalidKeyException
+     *             if initialization fails because the provided key is {@code
+     *             null}.
+     * @throws RuntimeException
+     *             if the specified key cannot be used to initialize this
+     *             algorithm.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.679 -0500", hash_original_method = "874C36BA9BA67506DF1E27339862DC05", hash_generated_method = "C5C2C8365CA2E2386B03EF357C9A23D3")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.266 -0400", hash_original_method = "874C36BA9BA67506DF1E27339862DC05", hash_generated_method = "9DAC96B8FD5FEEEA4023BD5478A8E51C")
-    public final void init(Key key) throws InvalidKeyException {
-        addTaint(key.getTaint());
-        if(key == null)        
-        {
-            InvalidKeyException var561EB6DA7D886C25C659084459A45580_177690772 = new InvalidKeyException("key == null");
-            var561EB6DA7D886C25C659084459A45580_177690772.addTaint(taint);
-            throw var561EB6DA7D886C25C659084459A45580_177690772;
-        } //End block
-        try 
-        {
+public final void init(Key key) throws InvalidKeyException {
+        if (key == null) {
+            throw new InvalidKeyException("key == null");
+        }
+        try {
             spiImpl.engineInit(key, null);
             isInitMac = true;
-        } //End block
-        catch (InvalidAlgorithmParameterException e)
-        {
-            RuntimeException varC76ADF009CE2FEDD948F7A54F409BA37_1263167565 = new RuntimeException(e);
-            varC76ADF009CE2FEDD948F7A54F409BA37_1263167565.addTaint(taint);
-            throw varC76ADF009CE2FEDD948F7A54F409BA37_1263167565;
-        } //End block
-        // ---------- Original Method ----------
-        //if (key == null) {
-            //throw new InvalidKeyException("key == null");
-        //}
-        //try {
-            //spiImpl.engineInit(key, null);
-            //isInitMac = true;
-        //} catch (InvalidAlgorithmParameterException e) {
-            //throw new RuntimeException(e);
-        //}
+        } catch (InvalidAlgorithmParameterException e) {
+            throw new RuntimeException(e);
+        }
     }
 
+    /**
+     * Updates this {@code Mac} instance with the specified byte.
+     *
+     * @param input
+     *            the byte
+     * @throws IllegalStateException
+     *             if this MAC is not initialized.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.681 -0500", hash_original_method = "CE2C32417AC34B9F04F350B6B83BA3FB", hash_generated_method = "C7EFEC23D4621DF0A643E6D009872FA4")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.267 -0400", hash_original_method = "CE2C32417AC34B9F04F350B6B83BA3FB", hash_generated_method = "45B3867C830924E5F2A2B91D523FA7F2")
-    public final void update(byte input) throws IllegalStateException {
-        addTaint(input);
-        if(!isInitMac)        
-        {
-            IllegalStateException varC311A989A119B96A6232C22ABFE87C25_1859599197 = new IllegalStateException();
-            varC311A989A119B96A6232C22ABFE87C25_1859599197.addTaint(taint);
-            throw varC311A989A119B96A6232C22ABFE87C25_1859599197;
-        } //End block
+public final void update(byte input) throws IllegalStateException {
+        if (!isInitMac) {
+            throw new IllegalStateException();
+        }
         spiImpl.engineUpdate(input);
-        // ---------- Original Method ----------
-        //if (!isInitMac) {
-            //throw new IllegalStateException();
-        //}
-        //spiImpl.engineUpdate(input);
     }
 
+    /**
+     * Updates this {@code Mac} instance with the data from the specified buffer
+     * {@code input} from the specified {@code offset} and length {@code len}.
+     *
+     * @param input
+     *            the buffer.
+     * @param offset
+     *            the offset in the buffer.
+     * @param len
+     *            the length of the data in the buffer.
+     * @throws IllegalStateException
+     *             if this MAC is not initialized.
+     * @throws IllegalArgumentException
+     *             if {@code offset} and {@code len} do not specified a valid
+     *             chunk in {@code input} buffer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.684 -0500", hash_original_method = "715302E1C20F57A2A8D63A54A99663FC", hash_generated_method = "F3D72487E7A5A494D889A8EDFD1CF1E6")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.268 -0400", hash_original_method = "715302E1C20F57A2A8D63A54A99663FC", hash_generated_method = "408BCF3038CE299B2834380BDDA9ABFA")
-    public final void update(byte[] input, int offset, int len) throws IllegalStateException {
-        addTaint(len);
-        addTaint(offset);
-        addTaint(input[0]);
-        if(!isInitMac)        
-        {
-            IllegalStateException varC311A989A119B96A6232C22ABFE87C25_502727662 = new IllegalStateException();
-            varC311A989A119B96A6232C22ABFE87C25_502727662.addTaint(taint);
-            throw varC311A989A119B96A6232C22ABFE87C25_502727662;
-        } //End block
-        if(input == null)        
-        {
+public final void update(byte[] input, int offset, int len) throws IllegalStateException {
+        if (!isInitMac) {
+            throw new IllegalStateException();
+        }
+        if (input == null) {
             return;
-        } //End block
-        if((offset < 0) || (len < 0) || ((offset + len) > input.length))        
-        {
-            IllegalArgumentException varD90B7656D507A0AA47CF759577F77B0C_490915602 = new IllegalArgumentException("Incorrect arguments");
-            varD90B7656D507A0AA47CF759577F77B0C_490915602.addTaint(taint);
-            throw varD90B7656D507A0AA47CF759577F77B0C_490915602;
-        } //End block
+        }
+        if ((offset < 0) || (len < 0) || ((offset + len) > input.length)) {
+            throw new IllegalArgumentException("Incorrect arguments");
+        }
         spiImpl.engineUpdate(input, offset, len);
-        // ---------- Original Method ----------
-        //if (!isInitMac) {
-            //throw new IllegalStateException();
-        //}
-        //if (input == null) {
-            //return;
-        //}
-        //if ((offset < 0) || (len < 0) || ((offset + len) > input.length)) {
-            //throw new IllegalArgumentException("Incorrect arguments");
-        //}
-        //spiImpl.engineUpdate(input, offset, len);
     }
 
+    /**
+     * Copies the buffer provided as input for further processing.
+     *
+     * @param input
+     *            the buffer.
+     * @throws IllegalStateException
+     *             if this MAC is not initialized.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.687 -0500", hash_original_method = "3D6841DD3321DF543EE186C2C08CA7E2", hash_generated_method = "F8C03B01875AE3EA2298F5B7496851FE")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.269 -0400", hash_original_method = "3D6841DD3321DF543EE186C2C08CA7E2", hash_generated_method = "522060CC728BE4F2ECCD9994A7486629")
-    public final void update(byte[] input) throws IllegalStateException {
-        addTaint(input[0]);
-        if(!isInitMac)        
-        {
-            IllegalStateException varC311A989A119B96A6232C22ABFE87C25_649415576 = new IllegalStateException();
-            varC311A989A119B96A6232C22ABFE87C25_649415576.addTaint(taint);
-            throw varC311A989A119B96A6232C22ABFE87C25_649415576;
-        } //End block
-        if(input != null)        
-        {
+public final void update(byte[] input) throws IllegalStateException {
+        if (!isInitMac) {
+            throw new IllegalStateException();
+        }
+        if (input != null) {
             spiImpl.engineUpdate(input, 0, input.length);
-        } //End block
-        // ---------- Original Method ----------
-        //if (!isInitMac) {
-            //throw new IllegalStateException();
-        //}
-        //if (input != null) {
-            //spiImpl.engineUpdate(input, 0, input.length);
-        //}
+        }
     }
 
+    /**
+     * Updates this {@code Mac} instance with the data from the specified
+     * buffer, starting at {@link ByteBuffer#position()}, including the next
+     * {@link ByteBuffer#remaining()} bytes.
+     *
+     * @param input
+     *            the buffer.
+     * @throws IllegalStateException
+     *             if this MAC is not initialized.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.689 -0500", hash_original_method = "A1BB43A6E7623A403344D1C2F2A132EB", hash_generated_method = "ADC74FDD8ACFD2F4407DF33AE46D9F42")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.271 -0400", hash_original_method = "A1BB43A6E7623A403344D1C2F2A132EB", hash_generated_method = "2E8F1217E5590EB75E9485587AEE3041")
-    public final void update(ByteBuffer input) {
-        addTaint(input.getTaint());
-        if(!isInitMac)        
-        {
-            IllegalStateException varC311A989A119B96A6232C22ABFE87C25_1832966608 = new IllegalStateException();
-            varC311A989A119B96A6232C22ABFE87C25_1832966608.addTaint(taint);
-            throw varC311A989A119B96A6232C22ABFE87C25_1832966608;
-        } //End block
-        if(input != null)        
-        {
+public final void update(ByteBuffer input) {
+        if (!isInitMac) {
+            throw new IllegalStateException();
+        }
+        if (input != null) {
             spiImpl.engineUpdate(input);
-        } //End block
-        else
-        {
-            IllegalArgumentException var6A6A965F33A186280ACCE222064E6554_893822233 = new IllegalArgumentException("input == null");
-            var6A6A965F33A186280ACCE222064E6554_893822233.addTaint(taint);
-            throw var6A6A965F33A186280ACCE222064E6554_893822233;
-        } //End block
-        // ---------- Original Method ----------
-        //if (!isInitMac) {
-            //throw new IllegalStateException();
-        //}
-        //if (input != null) {
-            //spiImpl.engineUpdate(input);
-        //} else {
-            //throw new IllegalArgumentException("input == null");
-        //}
+        } else {
+            throw new IllegalArgumentException("input == null");
+        }
     }
 
+    /**
+     * Computes the digest of this MAC based on the data previously specified in
+     * {@link #update} calls.
+     * <p>
+     * This {@code Mac} instance is reverted to its initial state and can be
+     * used to start the next MAC computation with the same parameters or
+     * initialized with different parameters.
+     *
+     * @return the generated digest.
+     * @throws IllegalStateException
+     *             if this MAC is not initialized.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.692 -0500", hash_original_method = "09A7E9E8BA2AA06F6A3808F7BB018D3B", hash_generated_method = "BBBC3271E7BF877707A76B4510A43D2F")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.272 -0400", hash_original_method = "09A7E9E8BA2AA06F6A3808F7BB018D3B", hash_generated_method = "19613AF18752916B0124B905484401E1")
-    public final byte[] doFinal() throws IllegalStateException {
-        if(!isInitMac)        
-        {
-            IllegalStateException varC311A989A119B96A6232C22ABFE87C25_1896084150 = new IllegalStateException();
-            varC311A989A119B96A6232C22ABFE87C25_1896084150.addTaint(taint);
-            throw varC311A989A119B96A6232C22ABFE87C25_1896084150;
-        } //End block
-        byte[] var3F88785EF2C499F8A050A47ED1CB1FEC_42826172 = (spiImpl.engineDoFinal());
-                byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_828304465 = {getTaintByte()};
-        return var2F9C81BC6E497382285CD6B7A7E33DE1_828304465;
-        // ---------- Original Method ----------
-        //if (!isInitMac) {
-            //throw new IllegalStateException();
-        //}
-        //return spiImpl.engineDoFinal();
+public final byte[] doFinal() throws IllegalStateException {
+        if (!isInitMac) {
+            throw new IllegalStateException();
+        }
+        return spiImpl.engineDoFinal();
     }
 
+    /**
+     * Computes the digest of this MAC based on the data previously specified in
+     * {@link #update} calls and stores the digest in the specified {@code
+     * output} buffer at offset {@code outOffset}.
+     * <p>
+     * This {@code Mac} instance is reverted to its initial state and can be
+     * used to start the next MAC computation with the same parameters or
+     * initialized with different parameters.
+     *
+     * @param output
+     *            the output buffer
+     * @param outOffset
+     *            the offset in the output buffer
+     * @throws ShortBufferException
+     *             if the specified output buffer is either too small for the
+     *             digest to be stored, the specified output buffer is {@code
+     *             null}, or the specified offset is negative or past the length
+     *             of the output buffer.
+     * @throws IllegalStateException
+     *             if this MAC is not initialized.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.694 -0500", hash_original_method = "3A73D46F22DAF7149F49DD945D0B4F9C", hash_generated_method = "653C16F6A05A5770FF3136B1C69F8005")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.272 -0400", hash_original_method = "3A73D46F22DAF7149F49DD945D0B4F9C", hash_generated_method = "BDBD850E87273281A847C93ED1FB761B")
-    public final void doFinal(byte[] output, int outOffset) throws ShortBufferException, IllegalStateException {
-        addTaint(outOffset);
-        addTaint(output[0]);
-        if(!isInitMac)        
-        {
-            IllegalStateException varC311A989A119B96A6232C22ABFE87C25_1922399604 = new IllegalStateException();
-            varC311A989A119B96A6232C22ABFE87C25_1922399604.addTaint(taint);
-            throw varC311A989A119B96A6232C22ABFE87C25_1922399604;
-        } //End block
-        if(output == null)        
-        {
-            ShortBufferException var446DDB2F8E22809C1F40C876189351CE_1255382671 = new ShortBufferException("output == null");
-            var446DDB2F8E22809C1F40C876189351CE_1255382671.addTaint(taint);
-            throw var446DDB2F8E22809C1F40C876189351CE_1255382671;
-        } //End block
-        if((outOffset < 0) || (outOffset >= output.length))        
-        {
-            ShortBufferException var7124C6EE3399F2D7037D3A40381E1031_1789596831 = new ShortBufferException("Incorrect outOffset: " + outOffset);
-            var7124C6EE3399F2D7037D3A40381E1031_1789596831.addTaint(taint);
-            throw var7124C6EE3399F2D7037D3A40381E1031_1789596831;
-        } //End block
+public final void doFinal(byte[] output, int outOffset)
+            throws ShortBufferException, IllegalStateException {
+        if (!isInitMac) {
+            throw new IllegalStateException();
+        }
+        if (output == null) {
+            throw new ShortBufferException("output == null");
+        }
+        if ((outOffset < 0) || (outOffset >= output.length)) {
+            throw new ShortBufferException("Incorrect outOffset: " + outOffset);
+        }
         int t = spiImpl.engineGetMacLength();
-        if(t > (output.length - outOffset))        
-        {
-            ShortBufferException varF7322BC0E6DACB842D8025AEE0CA403D_307931686 = new ShortBufferException("Output buffer is short. Needed " + t + " bytes.");
-            varF7322BC0E6DACB842D8025AEE0CA403D_307931686.addTaint(taint);
-            throw varF7322BC0E6DACB842D8025AEE0CA403D_307931686;
-        } //End block
+        if (t > (output.length - outOffset)) {
+            throw new ShortBufferException("Output buffer is short. Needed " + t + " bytes.");
+        }
         byte[] result = spiImpl.engineDoFinal();
         System.arraycopy(result, 0, output, outOffset, result.length);
-        // ---------- Original Method ----------
-        //if (!isInitMac) {
-            //throw new IllegalStateException();
-        //}
-        //if (output == null) {
-            //throw new ShortBufferException("output == null");
-        //}
-        //if ((outOffset < 0) || (outOffset >= output.length)) {
-            //throw new ShortBufferException("Incorrect outOffset: " + outOffset);
-        //}
-        //int t = spiImpl.engineGetMacLength();
-        //if (t > (output.length - outOffset)) {
-            //throw new ShortBufferException("Output buffer is short. Needed " + t + " bytes.");
-        //}
-        //byte[] result = spiImpl.engineDoFinal();
-        //System.arraycopy(result, 0, output, outOffset, result.length);
+
     }
 
+    /**
+     * Computes the digest of this MAC based on the data previously specified on
+     * {@link #update} calls and on the final bytes specified by {@code input}
+     * (or based on those bytes only).
+     * <p>
+     * This {@code Mac} instance is reverted to its initial state and can be
+     * used to start the next MAC computation with the same parameters or
+     * initialized with different parameters.
+     *
+     * @param input
+     *            the final bytes.
+     * @return the generated digest.
+     * @throws IllegalStateException
+     *             if this MAC is not initialized.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.697 -0500", hash_original_method = "D317760A96395810E5039143278FB4E4", hash_generated_method = "397FF92AD1E3086CF78C1865ECC76522")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.273 -0400", hash_original_method = "D317760A96395810E5039143278FB4E4", hash_generated_method = "6EB6B7DFA3D625232FE79C9A1DB36499")
-    public final byte[] doFinal(byte[] input) throws IllegalStateException {
-        addTaint(input[0]);
-        if(!isInitMac)        
-        {
-            IllegalStateException varC311A989A119B96A6232C22ABFE87C25_185916197 = new IllegalStateException();
-            varC311A989A119B96A6232C22ABFE87C25_185916197.addTaint(taint);
-            throw varC311A989A119B96A6232C22ABFE87C25_185916197;
-        } //End block
-        if(input != null)        
-        {
+public final byte[] doFinal(byte[] input) throws IllegalStateException {
+        if (!isInitMac) {
+            throw new IllegalStateException();
+        }
+        if (input != null) {
             spiImpl.engineUpdate(input, 0, input.length);
-        } //End block
-        byte[] var3F88785EF2C499F8A050A47ED1CB1FEC_852779962 = (spiImpl.engineDoFinal());
-                byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_623691399 = {getTaintByte()};
-        return var2F9C81BC6E497382285CD6B7A7E33DE1_623691399;
-        // ---------- Original Method ----------
-        //if (!isInitMac) {
-            //throw new IllegalStateException();
-        //}
-        //if (input != null) {
-            //spiImpl.engineUpdate(input, 0, input.length);
-        //}
-        //return spiImpl.engineDoFinal();
+        }
+        return spiImpl.engineDoFinal();
     }
 
+    /**
+     * Resets this {@code Mac} instance to its initial state.
+     * <p>
+     * This {@code Mac} instance is reverted to its initial state and can be
+     * used to start the next MAC computation with the same parameters or
+     * initialized with different parameters.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.699 -0500", hash_original_method = "81378E48B4C25C37826FA808778D1291", hash_generated_method = "5B38A2D1110748DB3AFA8347F5147BA3")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.274 -0400", hash_original_method = "81378E48B4C25C37826FA808778D1291", hash_generated_method = "77C57E72DC7D91B702D238A17B41BD51")
-    public final void reset() {
+public final void reset() {
         spiImpl.engineReset();
-        // ---------- Original Method ----------
-        //spiImpl.engineReset();
     }
 
+    /**
+     * Clones this {@code Mac} instance and the underlying implementation.
+     *
+     * @return the cloned instance.
+     * @throws CloneNotSupportedException
+     *             if the underlying implementation does not support cloning.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.702 -0500", hash_original_method = "D491B3C29A973D07513DEBD79BD84B18", hash_generated_method = "85156C9FA9461F9D0DB3DC1A0A2A08A2")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.274 -0400", hash_original_method = "D491B3C29A973D07513DEBD79BD84B18", hash_generated_method = "E28370C74BCEA8B2019782EB63F971DB")
-    @Override
+@Override
     public final Object clone() throws CloneNotSupportedException {
         MacSpi newSpiImpl = (MacSpi)spiImpl.clone();
         Mac mac = new Mac(newSpiImpl, this.provider, this.algorithm);
         mac.isInitMac = this.isInitMac;
-Object var36DD9F01D73A338B6C55C831B6AFFC27_259746982 =         mac;
-        var36DD9F01D73A338B6C55C831B6AFFC27_259746982.addTaint(taint);
-        return var36DD9F01D73A338B6C55C831B6AFFC27_259746982;
-        // ---------- Original Method ----------
-        //MacSpi newSpiImpl = (MacSpi)spiImpl.clone();
-        //Mac mac = new Mac(newSpiImpl, this.provider, this.algorithm);
-        //mac.isInitMac = this.isInitMac;
-        //return mac;
+        return mac;
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.274 -0400", hash_original_field = "85CE784A77CAA5294BF3FA70EE513A6D", hash_generated_field = "806BD6BDD2ABE5FBF629090CA696D2F6")
-
-    private static final Engine ENGINE = new Engine("Mac");
 }
 

@@ -1,6 +1,8 @@
 package android.bluetooth;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,1081 +20,721 @@ import android.util.Log;
 
 
 public final class BluetoothHeadset implements BluetoothProfile {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.271 -0400", hash_original_field = "51EF5995AD6B82C50AE546C1599EFFFA", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
 
-    private Context mContext;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.271 -0400", hash_original_field = "CA257FD83AF4C9E6C265E05B6CDBF2DD", hash_generated_field = "6FCEA0ED39BC377BA765F514A42DFCE9")
-
-    private ServiceListener mServiceListener;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.271 -0400", hash_original_field = "D96EB21FC1A83B484FAE33A12B05D9CB", hash_generated_field = "79B3CF63B286D2E971AC334B507D5268")
-
-    private IBluetoothHeadset mService;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.271 -0400", hash_original_field = "59E9F255F2F17EC006AE601269EA8540", hash_generated_field = "367F0BC6BC216C571A7E906A286477DF")
-
-    BluetoothAdapter mAdapter;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.273 -0400", hash_original_field = "23D4610316C4691B804316E58CB7E31E", hash_generated_field = "B1E39DD343E537E31D2D451F2E1E8203")
-
-    private ServiceConnection mConnection = new ServiceConnection() {        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.272 -0400", hash_original_method = "49B1367FF57AEC89B6CC00CC921EF188", hash_generated_method = "532E4A3B79937596CBCD7192F81D6D7F")
-        public void onServiceConnected(ComponentName className, IBinder service) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
-            addTaint(service.getTaint());
-            addTaint(className.getTaint());
-            if(DBG)            
-            Log.d(TAG, "Proxy object connected");
-            mService = IBluetoothHeadset.Stub.asInterface(service);
-            if(mServiceListener != null)            
-            {
-                mServiceListener.onServiceConnected(BluetoothProfile.HEADSET, BluetoothHeadset.this);
-            } //End block
-            // ---------- Original Method ----------
-            //if (DBG) Log.d(TAG, "Proxy object connected");
-            //mService = IBluetoothHeadset.Stub.asInterface(service);
-            //if (mServiceListener != null) {
-                //mServiceListener.onServiceConnected(BluetoothProfile.HEADSET, BluetoothHeadset.this);
-            //}
-        }
-
-        
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.273 -0400", hash_original_method = "5E9993D21DC5F46D871DD6D0C9DF0475", hash_generated_method = "7DBE42B6E64652795380B3C13EBF01B1")
-        public void onServiceDisconnected(ComponentName className) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
-            addTaint(className.getTaint());
-            if(DBG)            
-            Log.d(TAG, "Proxy object disconnected");
-            mService = null;
-            if(mServiceListener != null)            
-            {
-                mServiceListener.onServiceDisconnected(BluetoothProfile.HEADSET);
-            } //End block
-            // ---------- Original Method ----------
-            //if (DBG) Log.d(TAG, "Proxy object disconnected");
-            //mService = null;
-            //if (mServiceListener != null) {
-                //mServiceListener.onServiceDisconnected(BluetoothProfile.HEADSET);
-            //}
-        }
-
-        
-};
+    /**
+     * Indicates if current platform supports voice dialing over bluetooth SCO.
+     *
+     * @return true if voice dialing over bluetooth is supported, false otherwise.
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.918 -0500", hash_original_method = "7DFB2B07729CC5CD070DB2D2031A339C", hash_generated_method = "869441714ECC050145171561C4601151")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.274 -0400", hash_original_method = "B2E3A495C7EEB290E3194E45B33ED96D", hash_generated_method = "52FEF32AEBCAC4D7A8F3BB472E85F97E")
-      BluetoothHeadset(Context context, ServiceListener l) {
-        mContext = context;
-        mServiceListener = l;
-        mAdapter = BluetoothAdapter.getDefaultAdapter();
-        if(!context.bindService(new Intent(IBluetoothHeadset.class.getName()), mConnection, 0))        
-        {
-        } //End block
-        // ---------- Original Method ----------
-        //mContext = context;
-        //mServiceListener = l;
-        //mAdapter = BluetoothAdapter.getDefaultAdapter();
-        //if (!context.bindService(new Intent(IBluetoothHeadset.class.getName()), mConnection, 0)) {
-            //Log.e(TAG, "Could not bind to Bluetooth Headset Service");
-        //}
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.275 -0400", hash_original_method = "072F8B79FA7D55AD4D16BF2975AA6259", hash_generated_method = "6DF1504F89700C5086B3540A658448C4")
-    synchronized void close() {
-        if(DBG)        
-        log("close()");
-        if(mConnection != null)        
-        {
-            mContext.unbindService(mConnection);
-            mConnection = null;
-        } //End block
-        mServiceListener = null;
-        // ---------- Original Method ----------
-        //if (DBG) log("close()");
-        //if (mConnection != null) {
-            //mContext.unbindService(mConnection);
-            //mConnection = null;
-        //}
-        //mServiceListener = null;
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.276 -0400", hash_original_method = "7284EC53ABB82E4A2B97F7B894F0105F", hash_generated_method = "98BABF203BED510AB35336B20F6E50ED")
-    public boolean connect(BluetoothDevice device) {
-        addTaint(device.getTaint());
-        if(DBG)        
-        log("connect(" + device + ")");
-        if(mService != null && isEnabled() &&
-            isValidDevice(device))        
-        {
-            try 
-            {
-                boolean varEBACDF479EAFFE2AD53D5370B5C3FBBE_1495628604 = (mService.connect(device));
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1559717342 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1559717342;
-            } //End block
-            catch (RemoteException e)
-            {
-                boolean var68934A3E9455FA72420237EB05902327_1295998440 = (false);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_345232761 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_345232761;
-            } //End block
-        } //End block
-        if(mService == null){ }        boolean var68934A3E9455FA72420237EB05902327_1344499685 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_281086236 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_281086236;
-        // ---------- Original Method ----------
-        //if (DBG) log("connect(" + device + ")");
-        //if (mService != null && isEnabled() &&
-            //isValidDevice(device)) {
-            //try {
-                //return mService.connect(device);
-            //} catch (RemoteException e) {
-                //Log.e(TAG, Log.getStackTraceString(new Throwable()));
-                //return false;
-            //}
-        //}
-        //if (mService == null) Log.w(TAG, "Proxy not attached to service");
-        //return false;
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.277 -0400", hash_original_method = "4AB2501852FA35F2A69CDF567F29169A", hash_generated_method = "0AE802CEB7DFA7B4A6BD09E2A334885A")
-    public boolean disconnect(BluetoothDevice device) {
-        addTaint(device.getTaint());
-        if(DBG)        
-        log("disconnect(" + device + ")");
-        if(mService != null && isEnabled() &&
-            isValidDevice(device))        
-        {
-            try 
-            {
-                boolean var42FFDFE107D001E4DD32E59464767CFF_681671438 = (mService.disconnect(device));
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1739648936 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1739648936;
-            } //End block
-            catch (RemoteException e)
-            {
-                boolean var68934A3E9455FA72420237EB05902327_15832844 = (false);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_774960171 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_774960171;
-            } //End block
-        } //End block
-        if(mService == null){ }        boolean var68934A3E9455FA72420237EB05902327_401034254 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1276030048 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1276030048;
-        // ---------- Original Method ----------
-        //if (DBG) log("disconnect(" + device + ")");
-        //if (mService != null && isEnabled() &&
-            //isValidDevice(device)) {
-            //try {
-                //return mService.disconnect(device);
-            //} catch (RemoteException e) {
-              //Log.e(TAG, Log.getStackTraceString(new Throwable()));
-              //return false;
-            //}
-        //}
-        //if (mService == null) Log.w(TAG, "Proxy not attached to service");
-        //return false;
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.278 -0400", hash_original_method = "49C359566F3934D08711C62C957BAB9A", hash_generated_method = "E71EFA232D69E5218DE3C5E08161C465")
-    public List<BluetoothDevice> getConnectedDevices() {
-        if(DBG)        
-        log("getConnectedDevices()");
-        if(mService != null && isEnabled())        
-        {
-            try 
-            {
-List<BluetoothDevice> var0CBC70B0F206DDA9ED876FF389D40D78_1377051657 =                 mService.getConnectedDevices();
-                var0CBC70B0F206DDA9ED876FF389D40D78_1377051657.addTaint(taint);
-                return var0CBC70B0F206DDA9ED876FF389D40D78_1377051657;
-            } //End block
-            catch (RemoteException e)
-            {
-List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1623986723 =                 new ArrayList<BluetoothDevice>();
-                var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1623986723.addTaint(taint);
-                return var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1623986723;
-            } //End block
-        } //End block
-        if(mService == null){ }List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_813342681 =         new ArrayList<BluetoothDevice>();
-        var0DD13883ABBA5DF8AB8CAFEE38A3B82C_813342681.addTaint(taint);
-        return var0DD13883ABBA5DF8AB8CAFEE38A3B82C_813342681;
-        // ---------- Original Method ----------
-        //if (DBG) log("getConnectedDevices()");
-        //if (mService != null && isEnabled()) {
-            //try {
-                //return mService.getConnectedDevices();
-            //} catch (RemoteException e) {
-                //Log.e(TAG, Log.getStackTraceString(new Throwable()));
-                //return new ArrayList<BluetoothDevice>();
-            //}
-        //}
-        //if (mService == null) Log.w(TAG, "Proxy not attached to service");
-        //return new ArrayList<BluetoothDevice>();
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.279 -0400", hash_original_method = "E177F9FA262CA684CC709DA528C57F1A", hash_generated_method = "67EF29262ACD68CE9007D89AEEA9BB85")
-    public List<BluetoothDevice> getDevicesMatchingConnectionStates(int[] states) {
-        addTaint(states[0]);
-        if(DBG)        
-        log("getDevicesMatchingStates()");
-        if(mService != null && isEnabled())        
-        {
-            try 
-            {
-List<BluetoothDevice> varD888D9FBE2025148D0FB51CF8CEE87E5_1686781984 =                 mService.getDevicesMatchingConnectionStates(states);
-                varD888D9FBE2025148D0FB51CF8CEE87E5_1686781984.addTaint(taint);
-                return varD888D9FBE2025148D0FB51CF8CEE87E5_1686781984;
-            } //End block
-            catch (RemoteException e)
-            {
-List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_135315742 =                 new ArrayList<BluetoothDevice>();
-                var0DD13883ABBA5DF8AB8CAFEE38A3B82C_135315742.addTaint(taint);
-                return var0DD13883ABBA5DF8AB8CAFEE38A3B82C_135315742;
-            } //End block
-        } //End block
-        if(mService == null){ }List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1275823069 =         new ArrayList<BluetoothDevice>();
-        var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1275823069.addTaint(taint);
-        return var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1275823069;
-        // ---------- Original Method ----------
-        //if (DBG) log("getDevicesMatchingStates()");
-        //if (mService != null && isEnabled()) {
-            //try {
-                //return mService.getDevicesMatchingConnectionStates(states);
-            //} catch (RemoteException e) {
-                //Log.e(TAG, Log.getStackTraceString(new Throwable()));
-                //return new ArrayList<BluetoothDevice>();
-            //}
-        //}
-        //if (mService == null) Log.w(TAG, "Proxy not attached to service");
-        //return new ArrayList<BluetoothDevice>();
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.280 -0400", hash_original_method = "1FDB9A860CA32B38F33F04C33CC0DC9B", hash_generated_method = "99425EDFD9D8BEEB05C6FC146DEFFEB2")
-    public int getConnectionState(BluetoothDevice device) {
-        addTaint(device.getTaint());
-        if(DBG)        
-        log("getConnectionState(" + device + ")");
-        if(mService != null && isEnabled() &&
-            isValidDevice(device))        
-        {
-            try 
-            {
-                int var8DA78526B41CCAC0FE35CC7431643446_1636530309 = (mService.getConnectionState(device));
-                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1808292791 = getTaintInt();
-                return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1808292791;
-            } //End block
-            catch (RemoteException e)
-            {
-                int var6DC267D6C0363C5B94F222673460F45F_315713978 = (BluetoothProfile.STATE_DISCONNECTED);
-                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1359481891 = getTaintInt();
-                return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1359481891;
-            } //End block
-        } //End block
-        if(mService == null){ }        int var6DC267D6C0363C5B94F222673460F45F_547919830 = (BluetoothProfile.STATE_DISCONNECTED);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_239863898 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_239863898;
-        // ---------- Original Method ----------
-        //if (DBG) log("getConnectionState(" + device + ")");
-        //if (mService != null && isEnabled() &&
-            //isValidDevice(device)) {
-            //try {
-                //return mService.getConnectionState(device);
-            //} catch (RemoteException e) {
-                //Log.e(TAG, Log.getStackTraceString(new Throwable()));
-                //return BluetoothProfile.STATE_DISCONNECTED;
-            //}
-        //}
-        //if (mService == null) Log.w(TAG, "Proxy not attached to service");
-        //return BluetoothProfile.STATE_DISCONNECTED;
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.281 -0400", hash_original_method = "F982CE0C4DEC9189A14DF4553C949192", hash_generated_method = "757D2D1CBB5FE3F91437EA80F8E58CA9")
-    public boolean setPriority(BluetoothDevice device, int priority) {
-        addTaint(priority);
-        addTaint(device.getTaint());
-        if(DBG)        
-        log("setPriority(" + device + ", " + priority + ")");
-        if(mService != null && isEnabled() &&
-            isValidDevice(device))        
-        {
-            if(priority != BluetoothProfile.PRIORITY_OFF &&
-                priority != BluetoothProfile.PRIORITY_ON)            
-            {
-                boolean var68934A3E9455FA72420237EB05902327_1734704078 = (false);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2076164659 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_2076164659;
-            } //End block
-            try 
-            {
-                boolean varC080112B655E626AEC73393AE044B4DD_499260418 = (mService.setPriority(device, priority));
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_703637316 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_703637316;
-            } //End block
-            catch (RemoteException e)
-            {
-                boolean var68934A3E9455FA72420237EB05902327_2106210488 = (false);
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_102695912 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_102695912;
-            } //End block
-        } //End block
-        if(mService == null){ }        boolean var68934A3E9455FA72420237EB05902327_576496515 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_771052206 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_771052206;
-        // ---------- Original Method ----------
-        //if (DBG) log("setPriority(" + device + ", " + priority + ")");
-        //if (mService != null && isEnabled() &&
-            //isValidDevice(device)) {
-            //if (priority != BluetoothProfile.PRIORITY_OFF &&
-                //priority != BluetoothProfile.PRIORITY_ON) {
-              //return false;
-            //}
-            //try {
-                //return mService.setPriority(device, priority);
-            //} catch (RemoteException e) {
-                //Log.e(TAG, Log.getStackTraceString(new Throwable()));
-                //return false;
-            //}
-        //}
-        //if (mService == null) Log.w(TAG, "Proxy not attached to service");
-        //return false;
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.283 -0400", hash_original_method = "705F88F05E8E78847084743E12D945BD", hash_generated_method = "664E06B46C9D09F708EDE5F8CFD86F6E")
-    public int getPriority(BluetoothDevice device) {
-        addTaint(device.getTaint());
-        if(DBG)        
-        log("getPriority(" + device + ")");
-        if(mService != null && isEnabled() &&
-            isValidDevice(device))        
-        {
-            try 
-            {
-                int var989DD7E44FB699D3F65CF049678ECBF2_1565024950 = (mService.getPriority(device));
-                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_908145444 = getTaintInt();
-                return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_908145444;
-            } //End block
-            catch (RemoteException e)
-            {
-                int var3FE1174696877420FC87F195627E2B08_1065402220 = (PRIORITY_OFF);
-                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_750491428 = getTaintInt();
-                return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_750491428;
-            } //End block
-        } //End block
-        if(mService == null){ }        int var3FE1174696877420FC87F195627E2B08_705811590 = (PRIORITY_OFF);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_480926820 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_480926820;
-        // ---------- Original Method ----------
-        //if (DBG) log("getPriority(" + device + ")");
-        //if (mService != null && isEnabled() &&
-            //isValidDevice(device)) {
-            //try {
-                //return mService.getPriority(device);
-            //} catch (RemoteException e) {
-                //Log.e(TAG, Log.getStackTraceString(new Throwable()));
-                //return PRIORITY_OFF;
-            //}
-        //}
-        //if (mService == null) Log.w(TAG, "Proxy not attached to service");
-        //return PRIORITY_OFF;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.285 -0400", hash_original_method = "27AD2A5F99F8BC607BCDEC817A66E20B", hash_generated_method = "2DAB3DD6B4B64781664536958FE2E9B7")
-    public boolean startVoiceRecognition(BluetoothDevice device) {
-        addTaint(device.getTaint());
-        if(DBG)        
-        log("startVoiceRecognition()");
-        if(mService != null && isEnabled() &&
-            isValidDevice(device))        
-        {
-            try 
-            {
-                boolean var2E6278F99540BCA7BB6D7FB7EDBA4B95_1065530319 = (mService.startVoiceRecognition(device));
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_144410604 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_144410604;
-            } //End block
-            catch (RemoteException e)
-            {
-            } //End block
-        } //End block
-        if(mService == null){ }        boolean var68934A3E9455FA72420237EB05902327_1578333720 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_327404773 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_327404773;
-        // ---------- Original Method ----------
-        //if (DBG) log("startVoiceRecognition()");
-        //if (mService != null && isEnabled() &&
-            //isValidDevice(device)) {
-            //try {
-                //return mService.startVoiceRecognition(device);
-            //} catch (RemoteException e) {
-                //Log.e(TAG,  Log.getStackTraceString(new Throwable()));
-            //}
-        //}
-        //if (mService == null) Log.w(TAG, "Proxy not attached to service");
-        //return false;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.287 -0400", hash_original_method = "9C079C73E681F82F25C06C8EF6915217", hash_generated_method = "6A8C767DFE3C27AF9F6261BFDF43D8CC")
-    public boolean stopVoiceRecognition(BluetoothDevice device) {
-        addTaint(device.getTaint());
-        if(DBG)        
-        log("stopVoiceRecognition()");
-        if(mService != null && isEnabled() &&
-            isValidDevice(device))        
-        {
-            try 
-            {
-                boolean var3E7D8B85DCC3BFD70D55B81AD1DA2A5A_2051105802 = (mService.stopVoiceRecognition(device));
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1423594259 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1423594259;
-            } //End block
-            catch (RemoteException e)
-            {
-            } //End block
-        } //End block
-        if(mService == null){ }        boolean var68934A3E9455FA72420237EB05902327_1085566751 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2071222871 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2071222871;
-        // ---------- Original Method ----------
-        //if (DBG) log("stopVoiceRecognition()");
-        //if (mService != null && isEnabled() &&
-            //isValidDevice(device)) {
-            //try {
-                //return mService.stopVoiceRecognition(device);
-            //} catch (RemoteException e) {
-                //Log.e(TAG,  Log.getStackTraceString(new Throwable()));
-            //}
-        //}
-        //if (mService == null) Log.w(TAG, "Proxy not attached to service");
-        //return false;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.289 -0400", hash_original_method = "B8A3B3939435110554206CE07E152F67", hash_generated_method = "970C6DB89CD37A256A6CCA39A6FEDEF8")
-    public boolean isAudioConnected(BluetoothDevice device) {
-        addTaint(device.getTaint());
-        if(DBG)        
-        log("isAudioConnected()");
-        if(mService != null && isEnabled() &&
-            isValidDevice(device))        
-        {
-            try 
-            {
-                boolean varAB65A4ED5379193BE2DD7328F35729EC_2075093812 = (mService.isAudioConnected(device));
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_37498746 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_37498746;
-            } //End block
-            catch (RemoteException e)
-            {
-            } //End block
-        } //End block
-        if(mService == null){ }        boolean var68934A3E9455FA72420237EB05902327_931706994 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1231651688 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1231651688;
-        // ---------- Original Method ----------
-        //if (DBG) log("isAudioConnected()");
-        //if (mService != null && isEnabled() &&
-            //isValidDevice(device)) {
-            //try {
-              //return mService.isAudioConnected(device);
-            //} catch (RemoteException e) {
-              //Log.e(TAG,  Log.getStackTraceString(new Throwable()));
-            //}
-        //}
-        //if (mService == null) Log.w(TAG, "Proxy not attached to service");
-        //return false;
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.291 -0400", hash_original_method = "6F6D31332C45DEAF9F6DB793EAF6FAFC", hash_generated_method = "A1CF6D81A016E60606E49CF17A487406")
-    public int getBatteryUsageHint(BluetoothDevice device) {
-        addTaint(device.getTaint());
-        if(DBG)        
-        log("getBatteryUsageHint()");
-        if(mService != null && isEnabled() &&
-            isValidDevice(device))        
-        {
-            try 
-            {
-                int var7863C8B87099F4AC407F33ED733ED7D1_1118694097 = (mService.getBatteryUsageHint(device));
-                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1891833339 = getTaintInt();
-                return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1891833339;
-            } //End block
-            catch (RemoteException e)
-            {
-            } //End block
-        } //End block
-        if(mService == null){ }        int var6BB61E3B7BCE0931DA574D19D1D82C88_367981124 = (-1);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2117266951 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2117266951;
-        // ---------- Original Method ----------
-        //if (DBG) log("getBatteryUsageHint()");
-        //if (mService != null && isEnabled() &&
-            //isValidDevice(device)) {
-            //try {
-                //return mService.getBatteryUsageHint(device);
-            //} catch (RemoteException e) {
-                //Log.e(TAG,  Log.getStackTraceString(new Throwable()));
-            //}
-        //}
-        //if (mService == null) Log.w(TAG, "Proxy not attached to service");
-        //return -1;
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    public static boolean isBluetoothVoiceDialingEnabled(Context context) {
+public static boolean isBluetoothVoiceDialingEnabled(Context context) {
         return context.getResources().getBoolean(
                 com.android.internal.R.bool.config_bluetooth_sco_off_call);
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.959 -0500", hash_original_method = "0EBF7673E44AF610ADC3AB53A65BD597", hash_generated_method = "12E4FDCE2D2661CC6DF9F077D2C0BB73")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.292 -0400", hash_original_method = "2676E323C2C9765143A21FFE59CC6873", hash_generated_method = "9D202C50622B216A49815730434E6A29")
-    public boolean cancelConnectThread() {
-        if(DBG)        
-        log("cancelConnectThread");
-        if(mService != null && isEnabled())        
-        {
-            try 
-            {
-                boolean var8F612F355507F6BF9B63952A68F95EFA_109847996 = (mService.cancelConnectThread());
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_870980335 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_870980335;
-            } //End block
-            catch (RemoteException e)
-            {
-            } //End block
-        } //End block
-        else
-        {
-            if(DBG)            
-            Log.d(TAG, Log.getStackTraceString(new Throwable()));
-        } //End block
-        boolean var68934A3E9455FA72420237EB05902327_1186395559 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1359332313 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1359332313;
-        // ---------- Original Method ----------
-        //if (DBG) log("cancelConnectThread");
-        //if (mService != null && isEnabled()) {
-            //try {
-                //return mService.cancelConnectThread();
-            //} catch (RemoteException e) {Log.e(TAG, e.toString());}
-        //} else {
-            //Log.w(TAG, "Proxy not attached to service");
-            //if (DBG) Log.d(TAG, Log.getStackTraceString(new Throwable()));
-        //}
-        //return false;
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.293 -0400", hash_original_method = "EA55CECCBAC2EAE8EDC221C89634D263", hash_generated_method = "4DEBF16640B47E058DA4E3EB69FEBAD6")
-    public boolean acceptIncomingConnect(BluetoothDevice device) {
-        addTaint(device.getTaint());
-        if(DBG)        
-        log("acceptIncomingConnect");
-        if(mService != null && isEnabled())        
-        {
-            try 
-            {
-                boolean varF9C28B6E1AE85E729C6653EF3E879483_1212916063 = (mService.acceptIncomingConnect(device));
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1237735349 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1237735349;
-            } //End block
-            catch (RemoteException e)
-            {
-            } //End block
-        } //End block
-        else
-        {
-            if(DBG)            
-            Log.d(TAG, Log.getStackTraceString(new Throwable()));
-        } //End block
-        boolean var68934A3E9455FA72420237EB05902327_867045818 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1801755800 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1801755800;
-        // ---------- Original Method ----------
-        //if (DBG) log("acceptIncomingConnect");
-        //if (mService != null && isEnabled()) {
-            //try {
-                //return mService.acceptIncomingConnect(device);
-            //} catch (RemoteException e) {Log.e(TAG, e.toString());}
-        //} else {
-            //Log.w(TAG, "Proxy not attached to service");
-            //if (DBG) Log.d(TAG, Log.getStackTraceString(new Throwable()));
-        //}
-        //return false;
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.294 -0400", hash_original_method = "6D2538BEDFF897738BE4A0A290C33070", hash_generated_method = "61ED810C9BEF796C9525A3684E3E3F36")
-    public boolean createIncomingConnect(BluetoothDevice device) {
-        addTaint(device.getTaint());
-        if(DBG)        
-        log("createIncomingConnect");
-        if(mService != null && isEnabled())        
-        {
-            try 
-            {
-                boolean var9F587C777B124F841E17D9332B80F45D_393775792 = (mService.createIncomingConnect(device));
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_510160584 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_510160584;
-            } //End block
-            catch (RemoteException e)
-            {
-            } //End block
-        } //End block
-        else
-        {
-            if(DBG)            
-            Log.d(TAG, Log.getStackTraceString(new Throwable()));
-        } //End block
-        boolean var68934A3E9455FA72420237EB05902327_749828873 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1634000929 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1634000929;
-        // ---------- Original Method ----------
-        //if (DBG) log("createIncomingConnect");
-        //if (mService != null && isEnabled()) {
-            //try {
-                //return mService.createIncomingConnect(device);
-            //} catch (RemoteException e) {Log.e(TAG, e.toString());}
-        //} else {
-            //Log.w(TAG, "Proxy not attached to service");
-            //if (DBG) Log.d(TAG, Log.getStackTraceString(new Throwable()));
-        //}
-        //return false;
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.295 -0400", hash_original_method = "4505463E5EDB411267D82D01A0F1D824", hash_generated_method = "F45F6767147F7AD4E74C1206895A88B4")
-    public boolean rejectIncomingConnect(BluetoothDevice device) {
-        addTaint(device.getTaint());
-        if(DBG)        
-        log("rejectIncomingConnect");
-        if(mService != null)        
-        {
-            try 
-            {
-                boolean var36ABF51603D76C34EF0882E468415E22_1911726593 = (mService.rejectIncomingConnect(device));
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1540318974 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1540318974;
-            } //End block
-            catch (RemoteException e)
-            {
-            } //End block
-        } //End block
-        else
-        {
-            if(DBG)            
-            Log.d(TAG, Log.getStackTraceString(new Throwable()));
-        } //End block
-        boolean var68934A3E9455FA72420237EB05902327_520935515 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2055081203 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2055081203;
-        // ---------- Original Method ----------
-        //if (DBG) log("rejectIncomingConnect");
-        //if (mService != null) {
-            //try {
-                //return mService.rejectIncomingConnect(device);
-            //} catch (RemoteException e) {Log.e(TAG, e.toString());}
-        //} else {
-            //Log.w(TAG, "Proxy not attached to service");
-            //if (DBG) Log.d(TAG, Log.getStackTraceString(new Throwable()));
-        //}
-        //return false;
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.296 -0400", hash_original_method = "A8F7BAC49E734C18D4B72E93D6F191D5", hash_generated_method = "AB43F14767F72A623E11583F2973F8FC")
-    public boolean connectHeadsetInternal(BluetoothDevice device) {
-        addTaint(device.getTaint());
-        if(DBG)        
-        log("connectHeadsetInternal");
-        if(mService != null && isEnabled())        
-        {
-            try 
-            {
-                boolean var80E81716EE61B25591D10CB023BDFE66_92942297 = (mService.connectHeadsetInternal(device));
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_590809079 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_590809079;
-            } //End block
-            catch (RemoteException e)
-            {
-            } //End block
-        } //End block
-        else
-        {
-            if(DBG)            
-            Log.d(TAG, Log.getStackTraceString(new Throwable()));
-        } //End block
-        boolean var68934A3E9455FA72420237EB05902327_584994244 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1278907803 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1278907803;
-        // ---------- Original Method ----------
-        //if (DBG) log("connectHeadsetInternal");
-        //if (mService != null && isEnabled()) {
-            //try {
-                //return mService.connectHeadsetInternal(device);
-            //} catch (RemoteException e) {Log.e(TAG, e.toString());}
-        //} else {
-            //Log.w(TAG, "Proxy not attached to service");
-            //if (DBG) Log.d(TAG, Log.getStackTraceString(new Throwable()));
-        //}
-        //return false;
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.297 -0400", hash_original_method = "DE8B58BD5456FA1A62F7BE53852C68CF", hash_generated_method = "967FC1EEC0E752A6FECBDBED5EFD3CCB")
-    public boolean disconnectHeadsetInternal(BluetoothDevice device) {
-        addTaint(device.getTaint());
-        if(DBG)        
-        log("disconnectHeadsetInternal");
-        if(mService != null && !isDisabled())        
-        {
-            try 
-            {
-                boolean var83077D59398C4B52710A7457DD863D92_445189623 = (mService.disconnectHeadsetInternal(device));
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_13966859 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_13966859;
-            } //End block
-            catch (RemoteException e)
-            {
-            } //End block
-        } //End block
-        else
-        {
-            if(DBG)            
-            Log.d(TAG, Log.getStackTraceString(new Throwable()));
-        } //End block
-        boolean var68934A3E9455FA72420237EB05902327_2011629931 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1822874966 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1822874966;
-        // ---------- Original Method ----------
-        //if (DBG) log("disconnectHeadsetInternal");
-        //if (mService != null && !isDisabled()) {
-            //try {
-                 //return mService.disconnectHeadsetInternal(device);
-            //} catch (RemoteException e) {Log.e(TAG, e.toString());}
-        //} else {
-            //Log.w(TAG, "Proxy not attached to service");
-            //if (DBG) Log.d(TAG, Log.getStackTraceString(new Throwable()));
-        //}
-        //return false;
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.299 -0400", hash_original_method = "04E80317E50A33841443E656AF5FDA5A", hash_generated_method = "940536426C87A1FF3F34E31158A90066")
-    public boolean setAudioState(BluetoothDevice device, int state) {
-        addTaint(state);
-        addTaint(device.getTaint());
-        if(DBG)        
-        log("setAudioState");
-        if(mService != null && !isDisabled())        
-        {
-            try 
-            {
-                boolean varBF88569449B60A1ACD0300E088CD75B8_1285140246 = (mService.setAudioState(device, state));
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_815698731 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_815698731;
-            } //End block
-            catch (RemoteException e)
-            {
-            } //End block
-        } //End block
-        else
-        {
-            if(DBG)            
-            Log.d(TAG, Log.getStackTraceString(new Throwable()));
-        } //End block
-        boolean var68934A3E9455FA72420237EB05902327_1000638511 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1938718586 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1938718586;
-        // ---------- Original Method ----------
-        //if (DBG) log("setAudioState");
-        //if (mService != null && !isDisabled()) {
-            //try {
-                //return mService.setAudioState(device, state);
-            //} catch (RemoteException e) {Log.e(TAG, e.toString());}
-        //} else {
-            //Log.w(TAG, "Proxy not attached to service");
-            //if (DBG) Log.d(TAG, Log.getStackTraceString(new Throwable()));
-        //}
-        //return false;
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.301 -0400", hash_original_method = "398E968FC0AE96999E6F1C9EB97CF08A", hash_generated_method = "CC2F33360D9050947B05DA1BA20284FF")
-    public int getAudioState(BluetoothDevice device) {
-        addTaint(device.getTaint());
-        if(DBG)        
-        log("getAudioState");
-        if(mService != null && !isDisabled())        
-        {
-            try 
-            {
-                int var0479FBBCDD1F5B972572050DA4E69457_986567541 = (mService.getAudioState(device));
-                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_93077857 = getTaintInt();
-                return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_93077857;
-            } //End block
-            catch (RemoteException e)
-            {
-            } //End block
-        } //End block
-        else
-        {
-            if(DBG)            
-            Log.d(TAG, Log.getStackTraceString(new Throwable()));
-        } //End block
-        int var16ABE844BBE5415279E6F507178331F3_929194217 = (BluetoothHeadset.STATE_AUDIO_DISCONNECTED);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_180276430 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_180276430;
-        // ---------- Original Method ----------
-        //if (DBG) log("getAudioState");
-        //if (mService != null && !isDisabled()) {
-            //try {
-                //return mService.getAudioState(device);
-            //} catch (RemoteException e) {Log.e(TAG, e.toString());}
-        //} else {
-            //Log.w(TAG, "Proxy not attached to service");
-            //if (DBG) Log.d(TAG, Log.getStackTraceString(new Throwable()));
-        //}
-        //return BluetoothHeadset.STATE_AUDIO_DISCONNECTED;
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.302 -0400", hash_original_method = "D15419F6AD1B4E28C80D3421F9F86FA4", hash_generated_method = "36ACB6C2AA1DFEF85FA005ED7C384C91")
-    public boolean startScoUsingVirtualVoiceCall(BluetoothDevice device) {
-        addTaint(device.getTaint());
-        if(DBG)        
-        log("startScoUsingVirtualVoiceCall()");
-        if(mService != null && isEnabled() && isValidDevice(device))        
-        {
-            try 
-            {
-                boolean var85C40956CD68A2208AA5DAC2B51BA147_1969900659 = (mService.startScoUsingVirtualVoiceCall(device));
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_995961684 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_995961684;
-            } //End block
-            catch (RemoteException e)
-            {
-            } //End block
-        } //End block
-        else
-        {
-            if(DBG)            
-            Log.d(TAG, Log.getStackTraceString(new Throwable()));
-        } //End block
-        boolean var68934A3E9455FA72420237EB05902327_1844358320 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1104803935 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1104803935;
-        // ---------- Original Method ----------
-        //if (DBG) log("startScoUsingVirtualVoiceCall()");
-        //if (mService != null && isEnabled() && isValidDevice(device)) {
-            //try {
-                //return mService.startScoUsingVirtualVoiceCall(device);
-            //} catch (RemoteException e) {
-                //Log.e(TAG, e.toString());
-            //}
-        //} else {
-            //Log.w(TAG, "Proxy not attached to service");
-            //if (DBG) Log.d(TAG, Log.getStackTraceString(new Throwable()));
-        //}
-        //return false;
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.303 -0400", hash_original_method = "EC64256DA9DAF95A4E5DDEFAF84087E3", hash_generated_method = "F38A360982922B2587604FF8C44274B5")
-    public boolean stopScoUsingVirtualVoiceCall(BluetoothDevice device) {
-        addTaint(device.getTaint());
-        if(DBG)        
-        log("stopScoUsingVirtualVoiceCall()");
-        if(mService != null && isEnabled() && isValidDevice(device))        
-        {
-            try 
-            {
-                boolean var758ADF01BA34BA245EB8EA65B10A7BE8_2095364910 = (mService.stopScoUsingVirtualVoiceCall(device));
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1156113252 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1156113252;
-            } //End block
-            catch (RemoteException e)
-            {
-            } //End block
-        } //End block
-        else
-        {
-            if(DBG)            
-            Log.d(TAG, Log.getStackTraceString(new Throwable()));
-        } //End block
-        boolean var68934A3E9455FA72420237EB05902327_1232092781 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1700165992 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1700165992;
-        // ---------- Original Method ----------
-        //if (DBG) log("stopScoUsingVirtualVoiceCall()");
-        //if (mService != null && isEnabled() && isValidDevice(device)) {
-            //try {
-                //return mService.stopScoUsingVirtualVoiceCall(device);
-            //} catch (RemoteException e) {
-                //Log.e(TAG, e.toString());
-            //}
-        //} else {
-            //Log.w(TAG, "Proxy not attached to service");
-            //if (DBG) Log.d(TAG, Log.getStackTraceString(new Throwable()));
-        //}
-        //return false;
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.304 -0400", hash_original_method = "7937BC03D2C2DD83881BE0DF65C2C1C7", hash_generated_method = "EC5BAA0E814F06A7794CA42122C65933")
-    private boolean isEnabled() {
-        if(mAdapter.getState() == BluetoothAdapter.STATE_ON)        
-        {
-        boolean varB326B5062B2F0E69046810717534CB09_1468917773 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1143972943 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1143972943;
-        }
-        boolean var68934A3E9455FA72420237EB05902327_1955762262 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_774514801 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_774514801;
-        // ---------- Original Method ----------
-        //if (mAdapter.getState() == BluetoothAdapter.STATE_ON) return true;
-        //return false;
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.305 -0400", hash_original_method = "7FB46929D91880D43466C28024A250A9", hash_generated_method = "0B0DE4302DDDC76F601280B1F63F4CFE")
-    private boolean isDisabled() {
-        if(mAdapter.getState() == BluetoothAdapter.STATE_OFF)        
-        {
-        boolean varB326B5062B2F0E69046810717534CB09_1444903241 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_944943217 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_944943217;
-        }
-        boolean var68934A3E9455FA72420237EB05902327_1903503179 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1656781056 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1656781056;
-        // ---------- Original Method ----------
-        //if (mAdapter.getState() == BluetoothAdapter.STATE_OFF) return true;
-        //return false;
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.306 -0400", hash_original_method = "EB67AF48F977D4A31E9F2F2B80A49421", hash_generated_method = "0E3C8586D9B7062AC25DD8AF3C7B318F")
-    private boolean isValidDevice(BluetoothDevice device) {
-        addTaint(device.getTaint());
-        if(device == null)        
-        {
-        boolean var68934A3E9455FA72420237EB05902327_1059943626 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_98470836 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_98470836;
-        }
-        if(BluetoothAdapter.checkBluetoothAddress(device.getAddress()))        
-        {
-        boolean varB326B5062B2F0E69046810717534CB09_707972577 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_676779620 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_676779620;
-        }
-        boolean var68934A3E9455FA72420237EB05902327_1402613433 = (false);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2058671057 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_2058671057;
-        // ---------- Original Method ----------
-        //if (device == null) return false;
-        //if (BluetoothAdapter.checkBluetoothAddress(device.getAddress())) return true;
-        //return false;
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    private static void log(String msg) {
+private static void log(String msg) {
         Log.d(TAG, msg);
     }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.306 -0400", hash_original_field = "BD04568A92F85E35CB844729F0C3A798", hash_generated_field = "EBA83525E1B94BE4C4CA3565D8D3EE9E")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.836 -0500", hash_original_field = "8D4B0D43ECFEE4173B873B26DA3EB345", hash_generated_field = "EBA83525E1B94BE4C4CA3565D8D3EE9E")
 
     private static final String TAG = "BluetoothHeadset";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.306 -0400", hash_original_field = "0F6F0EB642B3F46DE2B2DF48DA4427EF", hash_generated_field = "1A61763F9CABC9206BB5AE6E570AB8AE")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.840 -0500", hash_original_field = "B2601CA7445F6BA19FA7884763D82281", hash_generated_field = "1A61763F9CABC9206BB5AE6E570AB8AE")
 
     private static final boolean DBG = false;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.307 -0400", hash_original_field = "672D4AAD8CD014AE5995B93963202C29", hash_generated_field = "ABC03AE60B852A1C7718E9A970BD1536")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.842 -0500", hash_original_field = "8BF8B4BC43D37119080421B184E47EBA", hash_generated_field = "ABC03AE60B852A1C7718E9A970BD1536")
 
     @SdkConstant(SdkConstantType.BROADCAST_INTENT_ACTION)
     public static final String ACTION_CONNECTION_STATE_CHANGED =
         "android.bluetooth.headset.profile.action.CONNECTION_STATE_CHANGED";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.307 -0400", hash_original_field = "940CAC348432C44F14F723D6076DE02B", hash_generated_field = "BB784B20611B5426CFF10690920EEB5C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.845 -0500", hash_original_field = "35D9C01CB853D29028369CB817599D26", hash_generated_field = "BB784B20611B5426CFF10690920EEB5C")
 
     @SdkConstant(SdkConstantType.BROADCAST_INTENT_ACTION)
     public static final String ACTION_AUDIO_STATE_CHANGED =
         "android.bluetooth.headset.profile.action.AUDIO_STATE_CHANGED";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.307 -0400", hash_original_field = "D35AD240456BC66A2DEC71A77CFD72A4", hash_generated_field = "AC2698553492ED5B94B3EFA99003D861")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.847 -0500", hash_original_field = "E61D62296D03C33C0D1F3439D49E2DE1", hash_generated_field = "AC2698553492ED5B94B3EFA99003D861")
 
     @SdkConstant(SdkConstantType.BROADCAST_INTENT_ACTION)
     public static final String ACTION_VENDOR_SPECIFIC_HEADSET_EVENT =
             "android.bluetooth.headset.action.VENDOR_SPECIFIC_HEADSET_EVENT";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.307 -0400", hash_original_field = "B6900C9E4FC9B76BDF6B5AB64B8BD668", hash_generated_field = "BDACDE0E26600FAE1AFF6AC736C7F543")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.850 -0500", hash_original_field = "D580865DB0C908ABBCAE25437B905731", hash_generated_field = "BDACDE0E26600FAE1AFF6AC736C7F543")
 
     public static final String EXTRA_VENDOR_SPECIFIC_HEADSET_EVENT_CMD =
             "android.bluetooth.headset.extra.VENDOR_SPECIFIC_HEADSET_EVENT_CMD";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.307 -0400", hash_original_field = "826CFED59CA895C44072A6FA47D4A64C", hash_generated_field = "90CECD7CE6C28ECC4D03E1709BB66CBD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.852 -0500", hash_original_field = "D10030A37DE26A4DA492E544EBB740CE", hash_generated_field = "90CECD7CE6C28ECC4D03E1709BB66CBD")
 
     public static final String EXTRA_VENDOR_SPECIFIC_HEADSET_EVENT_CMD_TYPE =
             "android.bluetooth.headset.extra.VENDOR_SPECIFIC_HEADSET_EVENT_CMD_TYPE";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.307 -0400", hash_original_field = "1242AAD6D44CD5550D7F75519D18C400", hash_generated_field = "4DE453250584C7FE6B64D6AD6C961CE8")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.855 -0500", hash_original_field = "04A3770DF47883E57A663A9BEC851FD8", hash_generated_field = "4DE453250584C7FE6B64D6AD6C961CE8")
 
     public static final int AT_CMD_TYPE_READ = 0;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.308 -0400", hash_original_field = "A6619D85A8C5882C0BF260C604A3C5D5", hash_generated_field = "2C2252AE507E225BC34F7AEA44E0AC49")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.857 -0500", hash_original_field = "26ED19FC5C64EC452936B3EF68A72033", hash_generated_field = "2C2252AE507E225BC34F7AEA44E0AC49")
 
     public static final int AT_CMD_TYPE_TEST = 1;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.308 -0400", hash_original_field = "28FCFB568CDA51D4B78DB7DEB8196ED6", hash_generated_field = "357B08A29D2379204652B128913E4928")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.859 -0500", hash_original_field = "6B78AC09C964142E3B8402F6E2389CE7", hash_generated_field = "357B08A29D2379204652B128913E4928")
 
     public static final int AT_CMD_TYPE_SET = 2;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.308 -0400", hash_original_field = "FB9B5054C0DE574D90887E1BA046CD58", hash_generated_field = "0A95BA5CB4DD042061A85BD7515A62D7")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.861 -0500", hash_original_field = "82C9B7FFD465F4B2688FE58285FDBE72", hash_generated_field = "0A95BA5CB4DD042061A85BD7515A62D7")
 
     public static final int AT_CMD_TYPE_BASIC = 3;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.308 -0400", hash_original_field = "B233DD7907877A2DE6CA78439C3700A9", hash_generated_field = "8A8D2B159027C806839DD114C91E3127")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.863 -0500", hash_original_field = "DE12227BDDA87983C9267B549456FABC", hash_generated_field = "8A8D2B159027C806839DD114C91E3127")
 
     public static final int AT_CMD_TYPE_ACTION = 4;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.308 -0400", hash_original_field = "B5852A50D1DD83F6A07B8B93DC3AF841", hash_generated_field = "51411B886A94D1180D892E92776C02D3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.866 -0500", hash_original_field = "34B5BD39B9D2369A1DB0DAECD1E85E20", hash_generated_field = "51411B886A94D1180D892E92776C02D3")
 
     public static final String EXTRA_VENDOR_SPECIFIC_HEADSET_EVENT_ARGS =
             "android.bluetooth.headset.extra.VENDOR_SPECIFIC_HEADSET_EVENT_ARGS";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.309 -0400", hash_original_field = "3F90B9C504BA70C93A0D9FA927F5FC63", hash_generated_field = "B5553D0E6B97FD79EBA3C206E2FF693C")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.868 -0500", hash_original_field = "F24AB090F3ADE8E7E7B31C3BAA21F024", hash_generated_field = "B5553D0E6B97FD79EBA3C206E2FF693C")
 
     public static final String VENDOR_SPECIFIC_HEADSET_EVENT_COMPANY_ID_CATEGORY  =
             "android.bluetooth.headset.intent.category.companyid";
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.309 -0400", hash_original_field = "657D1FB2064FBDA2A6DCBF26DE4BA6AC", hash_generated_field = "0D469E671F848187A0CDC591A24EABA1")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.871 -0500", hash_original_field = "9D8E80843D2FA0E5D56D7DBA354F62FF", hash_generated_field = "0D469E671F848187A0CDC591A24EABA1")
 
     public static final int STATE_AUDIO_DISCONNECTED = 10;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.309 -0400", hash_original_field = "D022E3BF246E2498ECFA4C1D3CB37450", hash_generated_field = "320FBFE32BF6DC544AAED5D9A84E5DBD")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.873 -0500", hash_original_field = "A9D6FF681A6550700BA78963940523E5", hash_generated_field = "320FBFE32BF6DC544AAED5D9A84E5DBD")
 
     public static final int STATE_AUDIO_CONNECTING = 11;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.309 -0400", hash_original_field = "0C92A4FE950C78554146B5C26212EFBA", hash_generated_field = "39ACE008F53ABD81B2D9586C9128E986")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.875 -0500", hash_original_field = "4A7EA07FED16E108810B8CFA842B41B0", hash_generated_field = "39ACE008F53ABD81B2D9586C9128E986")
 
     public static final int STATE_AUDIO_CONNECTED = 12;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.878 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
+
+
+
+    private Context mContext;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.880 -0500", hash_original_field = "AD4810E1EAEE0B4F351A0550C3A3183B", hash_generated_field = "6FCEA0ED39BC377BA765F514A42DFCE9")
+
+    private ServiceListener mServiceListener;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.882 -0500", hash_original_field = "6F3076DA398DDFA1ED47556A1836E19E", hash_generated_field = "79B3CF63B286D2E971AC334B507D5268")
+
+    private IBluetoothHeadset mService;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.884 -0500", hash_original_field = "367F0BC6BC216C571A7E906A286477DF", hash_generated_field = "367F0BC6BC216C571A7E906A286477DF")
+
+    BluetoothAdapter mAdapter;
+    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.273 -0400", hash_original_field = "23D4610316C4691B804316E58CB7E31E", hash_generated_field = "B1E39DD343E537E31D2D451F2E1E8203")
+
+    private ServiceConnection mConnection = new ServiceConnection() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.945 -0500", hash_original_method = "49B1367FF57AEC89B6CC00CC921EF188", hash_generated_method = "D8C0AB427A0DA4BC1DBC40C191A8EC0A")
+        
+public void onServiceConnected(ComponentName className, IBinder service) {
+            if (DBG) Log.d(TAG, "Proxy object connected");
+            mService = IBluetoothHeadset.Stub.asInterface(service);
+
+            if (mServiceListener != null) {
+                mServiceListener.onServiceConnected(BluetoothProfile.HEADSET, BluetoothHeadset.this);
+            }
+        }
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.948 -0500", hash_original_method = "5E9993D21DC5F46D871DD6D0C9DF0475", hash_generated_method = "F985A302CEB99495C956E6D774130AF3")
+        
+public void onServiceDisconnected(ComponentName className) {
+            if (DBG) Log.d(TAG, "Proxy object disconnected");
+            mService = null;
+            if (mServiceListener != null) {
+                mServiceListener.onServiceDisconnected(BluetoothProfile.HEADSET);
+            }
+        }
+
+        
+};
+
+    /**
+     * Create a BluetoothHeadset proxy object.
+     */
+    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.886 -0500", hash_original_method = "B2E3A495C7EEB290E3194E45B33ED96D", hash_generated_method = "B2E3A495C7EEB290E3194E45B33ED96D")
+    
+BluetoothHeadset(Context context, ServiceListener l) {
+        mContext = context;
+        mServiceListener = l;
+        mAdapter = BluetoothAdapter.getDefaultAdapter();
+        if (!context.bindService(new Intent(IBluetoothHeadset.class.getName()), mConnection, 0)) {
+            Log.e(TAG, "Could not bind to Bluetooth Headset Service");
+        }
+    }
+
+    /**
+     * Close the connection to the backing service.
+     * Other public functions of BluetoothHeadset will return default error
+     * results once close() has been called. Multiple invocations of close()
+     * are ok.
+     */
+    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.888 -0500", hash_original_method = "072F8B79FA7D55AD4D16BF2975AA6259", hash_generated_method = "F26C02109EF7607977BCCAA2DBE030B1")
+    
+synchronized void close() {
+        if (DBG) log("close()");
+        if (mConnection != null) {
+            mContext.unbindService(mConnection);
+            mConnection = null;
+        }
+        mServiceListener = null;
+    }
+
+    /**
+     * Initiate connection to a profile of the remote bluetooth device.
+     *
+     * <p> Currently, the system supports only 1 connection to the
+     * headset/handsfree profile. The API will automatically disconnect connected
+     * devices before connecting.
+     *
+     * <p> This API returns false in scenarios like the profile on the
+     * device is already connected or Bluetooth is not turned on.
+     * When this API returns true, it is guaranteed that
+     * connection state intent for the profile will be broadcasted with
+     * the state. Users can get the connection state of the profile
+     * from this intent.
+     *
+     * <p>Requires {@link android.Manifest.permission#BLUETOOTH_ADMIN}
+     * permission.
+     *
+     * @param device Remote Bluetooth Device
+     * @return false on immediate error,
+     *               true otherwise
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.891 -0500", hash_original_method = "7284EC53ABB82E4A2B97F7B894F0105F", hash_generated_method = "756BAB54C2322A3E9F05208D17F5C643")
+    
+public boolean connect(BluetoothDevice device) {
+        if (DBG) log("connect(" + device + ")");
+        if (mService != null && isEnabled() &&
+            isValidDevice(device)) {
+            try {
+                return mService.connect(device);
+            } catch (RemoteException e) {
+                Log.e(TAG, Log.getStackTraceString(new Throwable()));
+                return false;
+            }
+        }
+        if (mService == null) Log.w(TAG, "Proxy not attached to service");
+        return false;
+    }
+
+    /**
+     * Initiate disconnection from a profile
+     *
+     * <p> This API will return false in scenarios like the profile on the
+     * Bluetooth device is not in connected state etc. When this API returns,
+     * true, it is guaranteed that the connection state change
+     * intent will be broadcasted with the state. Users can get the
+     * disconnection state of the profile from this intent.
+     *
+     * <p> If the disconnection is initiated by a remote device, the state
+     * will transition from {@link #STATE_CONNECTED} to
+     * {@link #STATE_DISCONNECTED}. If the disconnect is initiated by the
+     * host (local) device the state will transition from
+     * {@link #STATE_CONNECTED} to state {@link #STATE_DISCONNECTING} to
+     * state {@link #STATE_DISCONNECTED}. The transition to
+     * {@link #STATE_DISCONNECTING} can be used to distinguish between the
+     * two scenarios.
+     *
+     * <p>Requires {@link android.Manifest.permission#BLUETOOTH_ADMIN}
+     * permission.
+     *
+     * @param device Remote Bluetooth Device
+     * @return false on immediate error,
+     *               true otherwise
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.893 -0500", hash_original_method = "4AB2501852FA35F2A69CDF567F29169A", hash_generated_method = "16BA60620A65376F190F1961155DADEF")
+    
+public boolean disconnect(BluetoothDevice device) {
+        if (DBG) log("disconnect(" + device + ")");
+        if (mService != null && isEnabled() &&
+            isValidDevice(device)) {
+            try {
+                return mService.disconnect(device);
+            } catch (RemoteException e) {
+              Log.e(TAG, Log.getStackTraceString(new Throwable()));
+              return false;
+            }
+        }
+        if (mService == null) Log.w(TAG, "Proxy not attached to service");
+        return false;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.897 -0500", hash_original_method = "49C359566F3934D08711C62C957BAB9A", hash_generated_method = "D3E8387F3626781AC42702A7A2FF865C")
+    
+public List<BluetoothDevice> getConnectedDevices() {
+        if (DBG) log("getConnectedDevices()");
+        if (mService != null && isEnabled()) {
+            try {
+                return mService.getConnectedDevices();
+            } catch (RemoteException e) {
+                Log.e(TAG, Log.getStackTraceString(new Throwable()));
+                return new ArrayList<BluetoothDevice>();
+            }
+        }
+        if (mService == null) Log.w(TAG, "Proxy not attached to service");
+        return new ArrayList<BluetoothDevice>();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.899 -0500", hash_original_method = "E177F9FA262CA684CC709DA528C57F1A", hash_generated_method = "4E2AB484F7FCAF48912E569EDD7FD9D8")
+    
+public List<BluetoothDevice> getDevicesMatchingConnectionStates(int[] states) {
+        if (DBG) log("getDevicesMatchingStates()");
+        if (mService != null && isEnabled()) {
+            try {
+                return mService.getDevicesMatchingConnectionStates(states);
+            } catch (RemoteException e) {
+                Log.e(TAG, Log.getStackTraceString(new Throwable()));
+                return new ArrayList<BluetoothDevice>();
+            }
+        }
+        if (mService == null) Log.w(TAG, "Proxy not attached to service");
+        return new ArrayList<BluetoothDevice>();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.901 -0500", hash_original_method = "1FDB9A860CA32B38F33F04C33CC0DC9B", hash_generated_method = "25E48229504EAA37090851E3A8E403A8")
+    
+public int getConnectionState(BluetoothDevice device) {
+        if (DBG) log("getConnectionState(" + device + ")");
+        if (mService != null && isEnabled() &&
+            isValidDevice(device)) {
+            try {
+                return mService.getConnectionState(device);
+            } catch (RemoteException e) {
+                Log.e(TAG, Log.getStackTraceString(new Throwable()));
+                return BluetoothProfile.STATE_DISCONNECTED;
+            }
+        }
+        if (mService == null) Log.w(TAG, "Proxy not attached to service");
+        return BluetoothProfile.STATE_DISCONNECTED;
+    }
+
+    /**
+     * Set priority of the profile
+     *
+     * <p> The device should already be paired.
+     *  Priority can be one of {@link #PRIORITY_ON} or
+     * {@link #PRIORITY_OFF},
+     *
+     * <p>Requires {@link android.Manifest.permission#BLUETOOTH_ADMIN}
+     * permission.
+     *
+     * @param device Paired bluetooth device
+     * @param priority
+     * @return true if priority is set, false on error
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.904 -0500", hash_original_method = "F982CE0C4DEC9189A14DF4553C949192", hash_generated_method = "01A34DB00D2DAC328E5A50D56D464ADF")
+    
+public boolean setPriority(BluetoothDevice device, int priority) {
+        if (DBG) log("setPriority(" + device + ", " + priority + ")");
+        if (mService != null && isEnabled() &&
+            isValidDevice(device)) {
+            if (priority != BluetoothProfile.PRIORITY_OFF &&
+                priority != BluetoothProfile.PRIORITY_ON) {
+              return false;
+            }
+            try {
+                return mService.setPriority(device, priority);
+            } catch (RemoteException e) {
+                Log.e(TAG, Log.getStackTraceString(new Throwable()));
+                return false;
+            }
+        }
+        if (mService == null) Log.w(TAG, "Proxy not attached to service");
+        return false;
+    }
+
+    /**
+     * Get the priority of the profile.
+     *
+     * <p> The priority can be any of:
+     * {@link #PRIORITY_AUTO_CONNECT}, {@link #PRIORITY_OFF},
+     * {@link #PRIORITY_ON}, {@link #PRIORITY_UNDEFINED}
+     *
+     * <p>Requires {@link android.Manifest.permission#BLUETOOTH} permission.
+     *
+     * @param device Bluetooth device
+     * @return priority of the device
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.906 -0500", hash_original_method = "705F88F05E8E78847084743E12D945BD", hash_generated_method = "05DE274BF4D8D86993642A38EC2A1CEF")
+    
+public int getPriority(BluetoothDevice device) {
+        if (DBG) log("getPriority(" + device + ")");
+        if (mService != null && isEnabled() &&
+            isValidDevice(device)) {
+            try {
+                return mService.getPriority(device);
+            } catch (RemoteException e) {
+                Log.e(TAG, Log.getStackTraceString(new Throwable()));
+                return PRIORITY_OFF;
+            }
+        }
+        if (mService == null) Log.w(TAG, "Proxy not attached to service");
+        return PRIORITY_OFF;
+    }
+
+    /**
+     * Start Bluetooth voice recognition. This methods sends the voice
+     * recognition AT command to the headset and establishes the
+     * audio connection.
+     *
+     * <p> Users can listen to {@link #ACTION_AUDIO_STATE_CHANGED}.
+     * If this function returns true, this intent will be broadcasted with
+     * {@link #EXTRA_STATE} set to {@link #STATE_AUDIO_CONNECTING}.
+     *
+     * <p> {@link #EXTRA_STATE} will transition from
+     * {@link #STATE_AUDIO_CONNECTING} to {@link #STATE_AUDIO_CONNECTED} when
+     * audio connection is established and to {@link #STATE_AUDIO_DISCONNECTED}
+     * in case of failure to establish the audio connection.
+     *
+     * <p>Requires {@link android.Manifest.permission#BLUETOOTH} permission.
+     *
+     * @param device Bluetooth headset
+     * @return false if there is no headset connected of if the
+     *               connected headset doesn't support voice recognition
+     *               or on error, true otherwise
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.908 -0500", hash_original_method = "27AD2A5F99F8BC607BCDEC817A66E20B", hash_generated_method = "AE7ECBDF0D6700335BAF64C90824AE25")
+    
+public boolean startVoiceRecognition(BluetoothDevice device) {
+        if (DBG) log("startVoiceRecognition()");
+        if (mService != null && isEnabled() &&
+            isValidDevice(device)) {
+            try {
+                return mService.startVoiceRecognition(device);
+            } catch (RemoteException e) {
+                Log.e(TAG,  Log.getStackTraceString(new Throwable()));
+            }
+        }
+        if (mService == null) Log.w(TAG, "Proxy not attached to service");
+        return false;
+    }
+
+    /**
+     * Stop Bluetooth Voice Recognition mode, and shut down the
+     * Bluetooth audio path.
+     *
+     * <p>Requires {@link android.Manifest.permission#BLUETOOTH} permission.
+     *
+     * @param device Bluetooth headset
+     * @return false if there is no headset connected
+     *               or on error, true otherwise
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.911 -0500", hash_original_method = "9C079C73E681F82F25C06C8EF6915217", hash_generated_method = "F4F1C98EF6C8DDABE4BFBC0A55CA18E7")
+    
+public boolean stopVoiceRecognition(BluetoothDevice device) {
+        if (DBG) log("stopVoiceRecognition()");
+        if (mService != null && isEnabled() &&
+            isValidDevice(device)) {
+            try {
+                return mService.stopVoiceRecognition(device);
+            } catch (RemoteException e) {
+                Log.e(TAG,  Log.getStackTraceString(new Throwable()));
+            }
+        }
+        if (mService == null) Log.w(TAG, "Proxy not attached to service");
+        return false;
+    }
+
+    /**
+     * Check if Bluetooth SCO audio is connected.
+     *
+     * <p>Requires {@link android.Manifest.permission#BLUETOOTH} permission.
+     *
+     * @param device Bluetooth headset
+     * @return true if SCO is connected,
+     *         false otherwise or on error
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.913 -0500", hash_original_method = "B8A3B3939435110554206CE07E152F67", hash_generated_method = "0521218EBF27B2D5E213DEFC996B60AE")
+    
+public boolean isAudioConnected(BluetoothDevice device) {
+        if (DBG) log("isAudioConnected()");
+        if (mService != null && isEnabled() &&
+            isValidDevice(device)) {
+            try {
+              return mService.isAudioConnected(device);
+            } catch (RemoteException e) {
+              Log.e(TAG,  Log.getStackTraceString(new Throwable()));
+            }
+        }
+        if (mService == null) Log.w(TAG, "Proxy not attached to service");
+        return false;
+    }
+
+    /**
+     * Get battery usage hint for Bluetooth Headset service.
+     * This is a monotonically increasing integer. Wraps to 0 at
+     * Integer.MAX_INT, and at boot.
+     * Current implementation returns the number of AT commands handled since
+     * boot. This is a good indicator for spammy headset/handsfree units that
+     * can keep the device awake by polling for cellular status updates. As a
+     * rule of thumb, each AT command prevents the CPU from sleeping for 500 ms
+     *
+     * @param device the bluetooth headset.
+     * @return monotonically increasing battery usage hint, or a negative error
+     *         code on error
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.916 -0500", hash_original_method = "6F6D31332C45DEAF9F6DB793EAF6FAFC", hash_generated_method = "980BBF94087217AC01F60196330E47A0")
+    
+public int getBatteryUsageHint(BluetoothDevice device) {
+        if (DBG) log("getBatteryUsageHint()");
+        if (mService != null && isEnabled() &&
+            isValidDevice(device)) {
+            try {
+                return mService.getBatteryUsageHint(device);
+            } catch (RemoteException e) {
+                Log.e(TAG,  Log.getStackTraceString(new Throwable()));
+            }
+        }
+        if (mService == null) Log.w(TAG, "Proxy not attached to service");
+        return -1;
+    }
+
+    /**
+     * Cancel the outgoing connection.
+     * Note: This is an internal function and shouldn't be exposed
+     *
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.920 -0500", hash_original_method = "2676E323C2C9765143A21FFE59CC6873", hash_generated_method = "517BCC3703C13440FDF238352FE358FB")
+    
+public boolean cancelConnectThread() {
+        if (DBG) log("cancelConnectThread");
+        if (mService != null && isEnabled()) {
+            try {
+                return mService.cancelConnectThread();
+            } catch (RemoteException e) {Log.e(TAG, e.toString());}
+        } else {
+            Log.w(TAG, "Proxy not attached to service");
+            if (DBG) Log.d(TAG, Log.getStackTraceString(new Throwable()));
+        }
+        return false;
+    }
+
+    /**
+     * Accept the incoming connection.
+     * Note: This is an internal function and shouldn't be exposed
+     *
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.923 -0500", hash_original_method = "EA55CECCBAC2EAE8EDC221C89634D263", hash_generated_method = "9662650A19DBD3BBFE05123312520AA9")
+    
+public boolean acceptIncomingConnect(BluetoothDevice device) {
+        if (DBG) log("acceptIncomingConnect");
+        if (mService != null && isEnabled()) {
+            try {
+                return mService.acceptIncomingConnect(device);
+            } catch (RemoteException e) {Log.e(TAG, e.toString());}
+        } else {
+            Log.w(TAG, "Proxy not attached to service");
+            if (DBG) Log.d(TAG, Log.getStackTraceString(new Throwable()));
+        }
+        return false;
+    }
+
+    /**
+     * Create the connect thread for the incoming connection.
+     * Note: This is an internal function and shouldn't be exposed
+     *
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.926 -0500", hash_original_method = "6D2538BEDFF897738BE4A0A290C33070", hash_generated_method = "B7D5D9AD8D04FA258AA5A2672A264BBC")
+    
+public boolean createIncomingConnect(BluetoothDevice device) {
+        if (DBG) log("createIncomingConnect");
+        if (mService != null && isEnabled()) {
+            try {
+                return mService.createIncomingConnect(device);
+            } catch (RemoteException e) {Log.e(TAG, e.toString());}
+        } else {
+            Log.w(TAG, "Proxy not attached to service");
+            if (DBG) Log.d(TAG, Log.getStackTraceString(new Throwable()));
+        }
+        return false;
+    }
+
+    /**
+     * Reject the incoming connection.
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.928 -0500", hash_original_method = "4505463E5EDB411267D82D01A0F1D824", hash_generated_method = "E9CEE2E3F31C00F30883BA7833B9BDB0")
+    
+public boolean rejectIncomingConnect(BluetoothDevice device) {
+        if (DBG) log("rejectIncomingConnect");
+        if (mService != null) {
+            try {
+                return mService.rejectIncomingConnect(device);
+            } catch (RemoteException e) {Log.e(TAG, e.toString());}
+        } else {
+            Log.w(TAG, "Proxy not attached to service");
+            if (DBG) Log.d(TAG, Log.getStackTraceString(new Throwable()));
+        }
+        return false;
+    }
+
+    /**
+     * Connect to a Bluetooth Headset.
+     * Note: This is an internal function and shouldn't be exposed
+     *
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.930 -0500", hash_original_method = "A8F7BAC49E734C18D4B72E93D6F191D5", hash_generated_method = "1DDA233E94630EFD323339E9EE81BFF5")
+    
+public boolean connectHeadsetInternal(BluetoothDevice device) {
+        if (DBG) log("connectHeadsetInternal");
+        if (mService != null && isEnabled()) {
+            try {
+                return mService.connectHeadsetInternal(device);
+            } catch (RemoteException e) {Log.e(TAG, e.toString());}
+        } else {
+            Log.w(TAG, "Proxy not attached to service");
+            if (DBG) Log.d(TAG, Log.getStackTraceString(new Throwable()));
+        }
+        return false;
+    }
+
+    /**
+     * Disconnect a Bluetooth Headset.
+     * Note: This is an internal function and shouldn't be exposed
+     *
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.933 -0500", hash_original_method = "DE8B58BD5456FA1A62F7BE53852C68CF", hash_generated_method = "386F136ED6A5A7CD8DC4F735D9BC6E64")
+    
+public boolean disconnectHeadsetInternal(BluetoothDevice device) {
+        if (DBG) log("disconnectHeadsetInternal");
+        if (mService != null && !isDisabled()) {
+            try {
+                 return mService.disconnectHeadsetInternal(device);
+            } catch (RemoteException e) {Log.e(TAG, e.toString());}
+        } else {
+            Log.w(TAG, "Proxy not attached to service");
+            if (DBG) Log.d(TAG, Log.getStackTraceString(new Throwable()));
+        }
+        return false;
+    }
+
+    /**
+     * Set the audio state of the Headset.
+     * Note: This is an internal function and shouldn't be exposed
+     *
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.935 -0500", hash_original_method = "04E80317E50A33841443E656AF5FDA5A", hash_generated_method = "C49FBCE40AFD2C7F45B23DC32F4C149F")
+    
+public boolean setAudioState(BluetoothDevice device, int state) {
+        if (DBG) log("setAudioState");
+        if (mService != null && !isDisabled()) {
+            try {
+                return mService.setAudioState(device, state);
+            } catch (RemoteException e) {Log.e(TAG, e.toString());}
+        } else {
+            Log.w(TAG, "Proxy not attached to service");
+            if (DBG) Log.d(TAG, Log.getStackTraceString(new Throwable()));
+        }
+        return false;
+    }
+
+    /**
+     * Get the current audio state of the Headset.
+     * Note: This is an internal function and shouldn't be exposed
+     *
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.937 -0500", hash_original_method = "398E968FC0AE96999E6F1C9EB97CF08A", hash_generated_method = "B0C1C27287FE4D1FB5805546ACE2C9C5")
+    
+public int getAudioState(BluetoothDevice device) {
+        if (DBG) log("getAudioState");
+        if (mService != null && !isDisabled()) {
+            try {
+                return mService.getAudioState(device);
+            } catch (RemoteException e) {Log.e(TAG, e.toString());}
+        } else {
+            Log.w(TAG, "Proxy not attached to service");
+            if (DBG) Log.d(TAG, Log.getStackTraceString(new Throwable()));
+        }
+        return BluetoothHeadset.STATE_AUDIO_DISCONNECTED;
+    }
+
+    /**
+     * Initiates a SCO channel connection with the headset (if connected).
+     * Also initiates a virtual voice call for Handsfree devices as many devices
+     * do not accept SCO audio without a call.
+     * This API allows the handsfree device to be used for routing non-cellular
+     * call audio.
+     *
+     * @param device Remote Bluetooth Device
+     * @return true if successful, false if there was some error.
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.940 -0500", hash_original_method = "D15419F6AD1B4E28C80D3421F9F86FA4", hash_generated_method = "B6AAA10A8046DEAF7A51157791491AE3")
+    
+public boolean startScoUsingVirtualVoiceCall(BluetoothDevice device) {
+        if (DBG) log("startScoUsingVirtualVoiceCall()");
+        if (mService != null && isEnabled() && isValidDevice(device)) {
+            try {
+                return mService.startScoUsingVirtualVoiceCall(device);
+            } catch (RemoteException e) {
+                Log.e(TAG, e.toString());
+            }
+        } else {
+            Log.w(TAG, "Proxy not attached to service");
+            if (DBG) Log.d(TAG, Log.getStackTraceString(new Throwable()));
+        }
+        return false;
+    }
+
+    /**
+     * Terminates an ongoing SCO connection and the associated virtual
+     * call.
+     *
+     * @param device Remote Bluetooth Device
+     * @return true if successful, false if there was some error.
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.942 -0500", hash_original_method = "EC64256DA9DAF95A4E5DDEFAF84087E3", hash_generated_method = "FDE5F684F2AD1C9B8754D076EFA6B089")
+    
+public boolean stopScoUsingVirtualVoiceCall(BluetoothDevice device) {
+        if (DBG) log("stopScoUsingVirtualVoiceCall()");
+        if (mService != null && isEnabled() && isValidDevice(device)) {
+            try {
+                return mService.stopScoUsingVirtualVoiceCall(device);
+            } catch (RemoteException e) {
+                Log.e(TAG, e.toString());
+            }
+        } else {
+            Log.w(TAG, "Proxy not attached to service");
+            if (DBG) Log.d(TAG, Log.getStackTraceString(new Throwable()));
+        }
+        return false;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.952 -0500", hash_original_method = "7937BC03D2C2DD83881BE0DF65C2C1C7", hash_generated_method = "199CD6721D66E41745A6F0D547B34AF7")
+    
+private boolean isEnabled() {
+       if (mAdapter.getState() == BluetoothAdapter.STATE_ON) return true;
+       return false;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.953 -0500", hash_original_method = "7FB46929D91880D43466C28024A250A9", hash_generated_method = "3C06CF0F89EACE9CA2AD2966A7F6F9D2")
+    
+private boolean isDisabled() {
+       if (mAdapter.getState() == BluetoothAdapter.STATE_OFF) return true;
+       return false;
+    }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.956 -0500", hash_original_method = "EB67AF48F977D4A31E9F2F2B80A49421", hash_generated_method = "3EEE3A9E12DCA4A453C7F11E3F959C9B")
+    
+private boolean isValidDevice(BluetoothDevice device) {
+       if (device == null) return false;
+
+       if (BluetoothAdapter.checkBluetoothAddress(device.getAddress())) return true;
+       return false;
+    }
 }
 

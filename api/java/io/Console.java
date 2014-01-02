@@ -1,6 +1,8 @@
 package java.io;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Formatter;
 
@@ -12,32 +14,21 @@ import libcore.io.Libcore;
 import droidsafe.helpers.DSUtils;
 
 public final class Console implements Flushable {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.569 -0400", hash_original_field = "1DE9B0A30075AE8C303EB420C103C320", hash_generated_field = "E1481C92EA038B35574B186892F59636")
 
-    private ConsoleReader reader;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.569 -0400", hash_original_field = "A82FEEE3CC1AF8BCABDA979E8775EF0F", hash_generated_field = "91C0360688E01789B87DE4B98C351C86")
-
-    private PrintWriter writer;
+    /**
+     * Secret accessor for {@code System.console}.
+     * @hide
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.426 -0500", hash_original_method = "E042DF20162499E05BE37E1E3B35DC0F", hash_generated_method = "CE2F8AC88C532DF19218B2E8BBEFE4BE")
     
-    @DSModeled(DSC.BAN)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.570 -0400", hash_original_method = "4BB1B19487B7F99D445DFF44E768497C", hash_generated_method = "F63CBA47110CFE9BD3FA9E844BE04033")
-    private  Console(InputStream in, OutputStream out) throws IOException {
-        this.reader = new ConsoleReader(in);
-        this.writer = new ConsoleWriter(out);
-        // ---------- Original Method ----------
-        //this.reader = new ConsoleReader(in);
-        //this.writer = new ConsoleWriter(out);
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    public static Console getConsole() {
+public static Console getConsole() {
         return console;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.429 -0500", hash_original_method = "44FBB43D16293FCD0C78B59D6359E9A1", hash_generated_method = "6BFC4CBA2ADD2B5AF844E21342281D24")
     
-    @DSModeled(DSC.BAN)
-    private static Console makeConsole() {
+private static Console makeConsole() {
+        // We don't care about stderr, because this class only uses stdin and stdout.
         if (!Libcore.os.isatty(FileDescriptor.in) || !Libcore.os.isatty(FileDescriptor.out)) {
             return null;
         }
@@ -48,135 +39,9 @@ public final class Console implements Flushable {
         }
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.452 -0500", hash_original_method = "366899432B3AD53D4041107C98D183D5", hash_generated_method = "EC07B1EC73AA052235667C4BF649789C")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.571 -0400", hash_original_method = "F7724246D188F0DD4BA6BF2BF289AD37", hash_generated_method = "4D7B28978F39C8925B3234F446DAAC01")
-    public void flush() {
-        writer.flush();
-        // ---------- Original Method ----------
-        //writer.flush();
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.571 -0400", hash_original_method = "92692099E41FF98F0151DCCF5CDE9533", hash_generated_method = "EB989877B09B82818348162139499BCF")
-    public Console format(String format, Object... args) {
-        addTaint(args[0].getTaint());
-        addTaint(format.getTaint());
-        Formatter f = new Formatter(writer);
-        f.format(format, args);
-        f.flush();
-Console var72A74007B2BE62B849F475C7BDA4658B_674659442 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_674659442.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_674659442;
-        // ---------- Original Method ----------
-        //Formatter f = new Formatter(writer);
-        //f.format(format, args);
-        //f.flush();
-        //return this;
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.572 -0400", hash_original_method = "DF820A490F330AE30ADE40F19C61D720", hash_generated_method = "BF10FF5DA662413A512A44C12C6B1B59")
-    public Console printf(String format, Object... args) {
-        addTaint(args[0].getTaint());
-        addTaint(format.getTaint());
-Console var1C1A7E0ECC814A41656D8DF055D1B8DD_1781091968 =         format(format, args);
-        var1C1A7E0ECC814A41656D8DF055D1B8DD_1781091968.addTaint(taint);
-        return var1C1A7E0ECC814A41656D8DF055D1B8DD_1781091968;
-        // ---------- Original Method ----------
-        //return format(format, args);
-    }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.572 -0400", hash_original_method = "6872D36E6DE03121BD2812355740CF6B", hash_generated_method = "1E0BB5EBF429A423844FF6A22C5107E9")
-    public Reader reader() {
-Reader var681AFDDDB48FD166DFCBFA04C65E6269_314543697 =         reader;
-        var681AFDDDB48FD166DFCBFA04C65E6269_314543697.addTaint(taint);
-        return var681AFDDDB48FD166DFCBFA04C65E6269_314543697;
-        // ---------- Original Method ----------
-        //return reader;
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.573 -0400", hash_original_method = "1B0888B6F2590EE27349101E4345456E", hash_generated_method = "D4C8B50C856450CB42BCFF6F04525B78")
-    public String readLine() {
-        try 
-        {
-String varA0A0B75A2C3B28E2BCA3874A2AF6FB2A_1859562639 =             reader.readLine();
-            varA0A0B75A2C3B28E2BCA3874A2AF6FB2A_1859562639.addTaint(taint);
-            return varA0A0B75A2C3B28E2BCA3874A2AF6FB2A_1859562639;
-        } //End block
-        catch (IOException e)
-        {
-            IOError varDAD4EC9CD68EF997C9389EB7A1B7124F_1400721233 = new IOError(e);
-            varDAD4EC9CD68EF997C9389EB7A1B7124F_1400721233.addTaint(taint);
-            throw varDAD4EC9CD68EF997C9389EB7A1B7124F_1400721233;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return reader.readLine();
-        //} catch (IOException e) {
-            //throw new IOError(e);
-        //}
-    }
-
-    
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.573 -0400", hash_original_method = "C57E41A9A92416727FE090794383909A", hash_generated_method = "00E8A27CE2AB32401B9857CB63DDEA60")
-    public String readLine(String format, Object... args) {
-        addTaint(args[0].getTaint());
-        addTaint(format.getTaint());
-        synchronized
-(CONSOLE_LOCK)        {
-            format(format, args);
-String var54932DCBE9604DD8D26100A2DD0CC65C_1559035034 =             readLine();
-            var54932DCBE9604DD8D26100A2DD0CC65C_1559035034.addTaint(taint);
-            return var54932DCBE9604DD8D26100A2DD0CC65C_1559035034;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (CONSOLE_LOCK) {
-            //format(format, args);
-            //return readLine();
-        //}
-    }
-
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.573 -0400", hash_original_method = "762DE6C819CD7377980A2753C88FB126", hash_generated_method = "B49411AF3EB8941781F06BF0E655E569")
-    public char[] readPassword() {
-        synchronized
-(CONSOLE_LOCK)        {
-            int previousState = setEcho(false, 0);
-            try 
-            {
-                String password = readLine();
-                writer.println();
-                char[] var9E7AB2C8A043C13D3A2102426F756EC2_314818533 = ((password == null) ? null : password.toCharArray());
-                                char[] var50607924ABD4C17119BAF3A1CE41C0EC_1071419967 = {getTaintChar()};
-                return var50607924ABD4C17119BAF3A1CE41C0EC_1071419967;
-            } //End block
-            finally 
-            {
-                setEcho(true, previousState);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (CONSOLE_LOCK) {
-            //int previousState = setEcho(false, 0);
-            //try {
-                //String password = readLine();
-                //writer.println(); 
-                //return (password == null) ? null : password.toCharArray();
-            //} finally {
-                //setEcho(true, previousState);
-            //}
-        //}
-    }
-
-    
-    @DSModeled(DSC.BAN)
-    private static int setEcho(boolean on, int previousState) {
+private static int setEcho(boolean on, int previousState) {
         try {
             return setEchoImpl(on, previousState);
         } catch (IOException ex) {
@@ -189,56 +54,144 @@ String var54932DCBE9604DD8D26100A2DD0CC65C_1559035034 =             readLine();
     private static int setEchoImpl(boolean on, int previousState) throws IOException {
         return DSUtils.UNKNOWN_INT;
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.416 -0500", hash_original_field = "BBCA88E2364A76AF3007D259E6D8A88C", hash_generated_field = "546A7D00A3DECA7028ABE7F203CC82FE")
 
+    private static final Object CONSOLE_LOCK = new Object();
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.419 -0500", hash_original_field = "D86A51B3BC21F2A21BE61CB7BEF830EE", hash_generated_field = "5493C82FF0BE1436D143CDAA63D9AEDB")
+
+
+    private static final Console console = makeConsole();
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.421 -0500", hash_original_field = "58293CE1EAA90810476F557AF923A37B", hash_generated_field = "E1481C92EA038B35574B186892F59636")
+
+
+    private  ConsoleReader reader;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.424 -0500", hash_original_field = "47BAA8D50DA4DDACCEB960B9BE04B99A", hash_generated_field = "91C0360688E01789B87DE4B98C351C86")
+
+    private  PrintWriter writer;
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.432 -0500", hash_original_method = "4BB1B19487B7F99D445DFF44E768497C", hash_generated_method = "7893804C010BDCD832EE6678ABEF1519")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.574 -0400", hash_original_method = "530DA602FE8EDD29DED20DF1AD2FA025", hash_generated_method = "A65FF425D3FB17993D39D8B152082148")
-    public char[] readPassword(String format, Object... args) {
-        addTaint(args[0].getTaint());
-        addTaint(format.getTaint());
-        synchronized
-(CONSOLE_LOCK)        {
-            format(format, args);
-            char[] var4FA87729348AEF40F0E50B593E75DA06_1404486900 = (readPassword());
-                        char[] var50607924ABD4C17119BAF3A1CE41C0EC_721840755 = {getTaintChar()};
-            return var50607924ABD4C17119BAF3A1CE41C0EC_721840755;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (CONSOLE_LOCK) {
-            //format(format, args);
-            //return readPassword();
-        //}
+private Console(InputStream in, OutputStream out) throws IOException {
+        this.reader = new ConsoleReader(in);
+        this.writer = new ConsoleWriter(out);
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.434 -0500", hash_original_method = "F7724246D188F0DD4BA6BF2BF289AD37", hash_generated_method = "5CB497A23E3D98725A07724A313B13FD")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.574 -0400", hash_original_method = "EF4D37EF542F65995124A506A5A02FEA", hash_generated_method = "CE8C9C9FE3A619A7B0A767B5347A62ED")
-    public PrintWriter writer() {
-PrintWriter varF684C05FE6F21143B285791952B93F74_1498134434 =         writer;
-        varF684C05FE6F21143B285791952B93F74_1498134434.addTaint(taint);
-        return varF684C05FE6F21143B285791952B93F74_1498134434;
-        // ---------- Original Method ----------
-        //return writer;
+public void flush() {
+        writer.flush();
+    }
+
+    /**
+     * Writes a formatted string to the console using
+     * the specified format string and arguments.
+     *
+     * @param format the format string (see {@link java.util.Formatter#format})
+     * @param args
+     *            the list of arguments passed to the formatter. If there are
+     *            more arguments than required by {@code format},
+     *            additional arguments are ignored.
+     * @return the console instance.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.437 -0500", hash_original_method = "92692099E41FF98F0151DCCF5CDE9533", hash_generated_method = "7FE21AC05C7F0A0FC6BB932DDC01DE96")
+    
+public Console format(String format, Object... args) {
+        Formatter f = new Formatter(writer);
+        f.format(format, args);
+        f.flush();
+        return this;
+    }
+
+    /**
+     * Equivalent to {@code format(format, args)}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.439 -0500", hash_original_method = "DF820A490F330AE30ADE40F19C61D720", hash_generated_method = "3EBFE9822BCE871720A426B1F8BE0307")
+    
+public Console printf(String format, Object... args) {
+        return format(format, args);
+    }
+
+    /**
+     * Returns the {@link Reader} associated with this console.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.441 -0500", hash_original_method = "6872D36E6DE03121BD2812355740CF6B", hash_generated_method = "1B34A1F2995B02D0623D166FB7B92B14")
+    
+public Reader reader() {
+        return reader;
+    }
+
+    /**
+     * Reads a line from the console.
+     *
+     * @return the line, or null at EOF.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.444 -0500", hash_original_method = "1B0888B6F2590EE27349101E4345456E", hash_generated_method = "2DF0FFA4A93FF56C0F67A3426C6CBE19")
+    
+public String readLine() {
+        try {
+            return reader.readLine();
+        } catch (IOException e) {
+            throw new IOError(e);
+        }
+    }
+
+    /**
+     * Reads a line from this console, using the specified prompt.
+     * The prompt is given as a format string and optional arguments.
+     * Note that this can be a source of errors: if it is possible that your
+     * prompt contains {@code %} characters, you must use the format string {@code "%s"}
+     * and pass the actual prompt as a parameter.
+     *
+     * @param format the format string (see {@link java.util.Formatter#format})
+     * @param args
+     *            the list of arguments passed to the formatter. If there are
+     *            more arguments than required by {@code format},
+     *            additional arguments are ignored.
+     * @return the line, or null at EOF.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.446 -0500", hash_original_method = "C57E41A9A92416727FE090794383909A", hash_generated_method = "2F1FF4D55692143DE7EF2CAC398D3622")
+    
+public String readLine(String format, Object... args) {
+        synchronized (CONSOLE_LOCK) {
+            format(format, args);
+            return readLine();
+        }
+    }
+
+    /**
+     * Reads a password from the console. The password will not be echoed to the display.
+     *
+     * @return a character array containing the password, or null at EOF.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.448 -0500", hash_original_method = "762DE6C819CD7377980A2753C88FB126", hash_generated_method = "A959C451F098B68BBA6E50D6EF2D1D2C")
+    
+public char[] readPassword() {
+        synchronized (CONSOLE_LOCK) {
+            int previousState = setEcho(false, 0);
+            try {
+                String password = readLine();
+                writer.println(); // We won't have echoed the user's newline.
+                return (password == null) ? null : password.toCharArray();
+            } finally {
+                setEcho(true, previousState);
+            }
+        }
     }
 
     
     private static class ConsoleReader extends BufferedReader {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.466 -0500", hash_original_method = "3E2241309C439E282539AD753E3DFD21", hash_generated_method = "69CC72363FBE8C1D916398D13FD10521")
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.575 -0400", hash_original_method = "3E2241309C439E282539AD753E3DFD21", hash_generated_method = "0644BC6EE196A5609954302B5CBEC9D5")
-        public  ConsoleReader(InputStream in) throws IOException {
+public ConsoleReader(InputStream in) throws IOException {
             super(new InputStreamReader(in, System.getProperty("file.encoding")), 256);
-            addTaint(in.getTaint());
             lock = CONSOLE_LOCK;
-            // ---------- Original Method ----------
-            //lock = CONSOLE_LOCK;
         }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.468 -0500", hash_original_method = "B96EF178F3ED1A0DFACDA94649407E5C", hash_generated_method = "F57733FD7E5364F9B6017FD9FB0CBFAB")
         
-                @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.575 -0400", hash_original_method = "B96EF178F3ED1A0DFACDA94649407E5C", hash_generated_method = "1A3F8C083102602A57FB2D0CBE40EA76")
-        @Override
+@Override
         public void close() {
-            // ---------- Original Method ----------
+            // Console.reader cannot be closed.
         }
 
         
@@ -247,37 +200,51 @@ PrintWriter varF684C05FE6F21143B285791952B93F74_1498134434 =         writer;
 
     
     private static class ConsoleWriter extends PrintWriter {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.473 -0500", hash_original_method = "FA093E69A8E73F56316EC18ECB712B0D", hash_generated_method = "67FBCFEF5ED0B313D9140CDC4784401D")
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.575 -0400", hash_original_method = "FA093E69A8E73F56316EC18ECB712B0D", hash_generated_method = "FECF41157503BFF0E243D80A4D189A41")
-        public  ConsoleWriter(OutputStream out) {
+public ConsoleWriter(OutputStream out) {
             super(out, true);
-            addTaint(out.getTaint());
             lock = CONSOLE_LOCK;
-            // ---------- Original Method ----------
-            //lock = CONSOLE_LOCK;
         }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.476 -0500", hash_original_method = "75157B2273B6AA161A7B1B413AEDC095", hash_generated_method = "7617F52AD8B0DD3F40B73D9405DB5418")
         
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.575 -0400", hash_original_method = "75157B2273B6AA161A7B1B413AEDC095", hash_generated_method = "A5E65993A379E3EA99BEF40B638BA0C1")
-        @Override
+@Override
         public void close() {
+            // Console.writer cannot be closed.
             flush();
-            // ---------- Original Method ----------
-            //flush();
         }
 
         
     }
 
-
+    /**
+     * Reads a password from the console. The password will not be echoed to the display.
+     * A formatted prompt is also displayed.
+     *
+     * @param format the format string (see {@link java.util.Formatter#format})
+     * @param args
+     *            the list of arguments passed to the formatter. If there are
+     *            more arguments than required by {@code format},
+     *            additional arguments are ignored.
+     * @return a character array containing the password, or null at EOF.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.459 -0500", hash_original_method = "530DA602FE8EDD29DED20DF1AD2FA025", hash_generated_method = "BB6489A580EA046E4810AB639A3B2AE3")
     
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.575 -0400", hash_original_field = "E87DC735B5F607608BFD6221C432D896", hash_generated_field = "546A7D00A3DECA7028ABE7F203CC82FE")
+public char[] readPassword(String format, Object... args) {
+        synchronized (CONSOLE_LOCK) {
+            format(format, args);
+            return readPassword();
+        }
+    }
 
-    private static final Object CONSOLE_LOCK = new Object();
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.575 -0400", hash_original_field = "58E5F5166043786555088055759DF670", hash_generated_field = "5493C82FF0BE1436D143CDAA63D9AEDB")
-
-    private static final Console console = makeConsole();
+    /**
+     * Returns the {@link Writer} associated with this console.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.462 -0500", hash_original_method = "EF4D37EF542F65995124A506A5A02FEA", hash_generated_method = "9CAE9C29CB08D60BAEDA3F44B4247294")
+    
+public PrintWriter writer() {
+        return writer;
+    }
 }
 

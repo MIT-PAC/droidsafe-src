@@ -1,6 +1,8 @@
 package java.security;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.Serializable;
 import java.util.Enumeration;
@@ -17,35 +19,25 @@ public abstract class PermissionCollection implements Serializable {
         //Synthesized constructor
     }
 
-
-    @DSModeled(DSC.SAFE)
-    public abstract void add(Permission permission);
-
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:55.049 -0500", hash_original_method = "A893CEBA2C1B71EC9B6720287A34E992", hash_generated_method = "51058B02CF300A57D579EC9F1DE7873E")
     
-    @DSModeled(DSC.SAFE)
-    public abstract Enumeration<Permission> elements();
+public abstract void add(Permission permission);
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:55.052 -0500", hash_original_method = "F81820C7A45D25FB2ECB06B8428FC1F6", hash_generated_method = "DAB6A40E19EF8A6639F31AB37799F968")
     
-    @DSModeled(DSC.SAFE)
-    public abstract boolean implies(Permission permission);
+public abstract Enumeration<Permission> elements();
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:55.054 -0500", hash_original_method = "EFDD42BDCC8AFC7DB3076C40E1EA19C3", hash_generated_method = "7DCD9075AD00F391A9B7B11ED234E399")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.126 -0400", hash_original_method = "D0F583BEFACE4F70BE4011CED42FF4E6", hash_generated_method = "3F931B3084501D4664912D95139AB00E")
-    public boolean isReadOnly() {
-        boolean varB326B5062B2F0E69046810717534CB09_1439169395 = (true);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_983392352 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_983392352;
-        // ---------- Original Method ----------
-        //return true;
-    }
+public abstract boolean implies(Permission permission);
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:55.057 -0500", hash_original_method = "D0F583BEFACE4F70BE4011CED42FF4E6", hash_generated_method = "2994F1C62F4372688739CAB83B342357")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.127 -0400", hash_original_method = "32FE512F278ECF7FA2513E0F8F8332CC", hash_generated_method = "A55E7890182104F16935D6993243BDE8")
-    public void setReadOnly() {
-        // ---------- Original Method ----------
-    }
+public boolean isReadOnly() { return true; }
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:55.059 -0500", hash_original_method = "32FE512F278ECF7FA2513E0F8F8332CC", hash_generated_method = "B136FF95B5A3D3070009D24507706350")
+    
+public void setReadOnly() { }
 
     
 }

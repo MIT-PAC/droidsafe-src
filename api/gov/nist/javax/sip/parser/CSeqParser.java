@@ -1,6 +1,8 @@
 package gov.nist.javax.sip.parser;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import gov.nist.core.Debug;
 import gov.nist.javax.sip.header.CSeq;
@@ -16,31 +18,25 @@ import javax.sip.InvalidArgumentException;
 
 
 public class CSeqParser extends HeaderParser {
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:45.886 -0500", hash_original_method = "315D7450D70C30EDB72AC7255664118E", hash_generated_method = "6AC381816EB47F5FD6DEBE09FEBCD220")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:36.903 -0400", hash_original_method = "315D7450D70C30EDB72AC7255664118E", hash_generated_method = "A8FDE793BDDBAFC103CC08AC2EE3CE0D")
-    public  CSeqParser(String cseq) {
+public CSeqParser(String cseq) {
         super(cseq);
-        addTaint(cseq.getTaint());
-        // ---------- Original Method ----------
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:45.889 -0500", hash_original_method = "8A2748B0467C573864DACC8328A787A7", hash_generated_method = "2668CBD343EFC1116D0F272E08A66E1B")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:36.903 -0400", hash_original_method = "8A2748B0467C573864DACC8328A787A7", hash_generated_method = "206A239BD298BB64B23E3F5F5597EE51")
-    protected  CSeqParser(Lexer lexer) {
+protected CSeqParser(Lexer lexer) {
         super(lexer);
-        addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:45.892 -0500", hash_original_method = "25983B4EEF6E8D8834C12C4F0FEB872C", hash_generated_method = "4684E7CFD9FCBDE598BF135EE34FE5DA")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:36.944 -0400", hash_original_method = "25983B4EEF6E8D8834C12C4F0FEB872C", hash_generated_method = "420F56FCEF41616217741D17A97EC87B")
-    public SIPHeader parse() throws ParseException {
-        try 
-        {
+public SIPHeader parse() throws ParseException {
+        try {
             CSeq c = new CSeq();
+
             this.lexer.match(TokenTypes.CSEQ);
             this.lexer.SPorHT();
             this.lexer.match(':');
@@ -49,29 +45,20 @@ public class CSeqParser extends HeaderParser {
             c.setSeqNumber(Long.parseLong(number));
             this.lexer.SPorHT();
             String m = SIPRequest.getCannonicalName( method() );
+            
+            
+            
             c.setMethod(m);
             this.lexer.SPorHT();
             this.lexer.match('\n');
-SIPHeader var807FB10045EE51C06BDB74744A6714DF_1042916618 =             c;
-            var807FB10045EE51C06BDB74744A6714DF_1042916618.addTaint(taint);
-            return var807FB10045EE51C06BDB74744A6714DF_1042916618;
-        } //End block
-        catch (NumberFormatException ex)
-        {
+            return c;
+        } catch (NumberFormatException ex) {
             Debug.printStackTrace(ex);
-            java.text.ParseException var47EC6AB6ED56A46F510856200B27A259_1100493333 = createParseException("Number format exception");
-            var47EC6AB6ED56A46F510856200B27A259_1100493333.addTaint(taint);
-            throw var47EC6AB6ED56A46F510856200B27A259_1100493333;
-        } //End block
-        catch (InvalidArgumentException ex)
-        {
+            throw createParseException("Number format exception");
+        } catch (InvalidArgumentException ex) {
             Debug.printStackTrace(ex);
-            java.text.ParseException varB8C80F72F95BF6A850D07F4EC5726C09_459423164 = createParseException(ex.getMessage());
-            varB8C80F72F95BF6A850D07F4EC5726C09_459423164.addTaint(taint);
-            throw varB8C80F72F95BF6A850D07F4EC5726C09_459423164;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            throw createParseException(ex.getMessage());
+        }
     }
 
     

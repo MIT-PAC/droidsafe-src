@@ -1,6 +1,8 @@
 package java.security.spec;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.math.BigInteger;
 
@@ -10,76 +12,84 @@ import java.math.BigInteger;
 
 
 public class DSAPrivateKeySpec implements KeySpec {
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.026 -0400", hash_original_field = "9DD4E461268C8034F5C8564E155C67A6", hash_generated_field = "3D78E4B6D398CF86CC9666CFD1AA5B41")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:57.600 -0500", hash_original_field = "8A69D3B9CF67CA1128DF293842071E77", hash_generated_field = "3D78E4B6D398CF86CC9666CFD1AA5B41")
 
-    private BigInteger x;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.026 -0400", hash_original_field = "83878C91171338902E0FE0FB97A8C47A", hash_generated_field = "0E1745DDBCB8E3192EFA76F952746D75")
+    private  BigInteger x;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:57.603 -0500", hash_original_field = "36A2346422FAB1A0484079E02615C501", hash_generated_field = "0E1745DDBCB8E3192EFA76F952746D75")
 
-    private BigInteger p;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.026 -0400", hash_original_field = "7694F4A66316E53C8CDD9D9954BD611D", hash_generated_field = "7F0CB7A9968EC0E34C6D35217A4E048F")
+    private  BigInteger p;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:57.606 -0500", hash_original_field = "F819999E3B2036A19089F4FD0B5D94F4", hash_generated_field = "7F0CB7A9968EC0E34C6D35217A4E048F")
 
-    private BigInteger q;
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.026 -0400", hash_original_field = "B2F5FF47436671B6E533D8DC3614845D", hash_generated_field = "5E2139CE4CF026F837A4AD7B2D5946CD")
+     private  BigInteger q;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:57.608 -0500", hash_original_field = "12F45ECD0F75F4702B861E1DEFDA99B3", hash_generated_field = "5E2139CE4CF026F837A4AD7B2D5946CD")
 
-    private BigInteger g;
+    private  BigInteger g;
+
+    /**
+     * Creates a new {@code DSAPrivateKeySpec} with the specified private key,
+     * prime, sub-prime and base.
+     *
+     * @param x
+     *            the private key {@code x}.
+     * @param p
+     *            the prime {@code p}.
+     * @param q
+     *            the sub-prime {@code q}.
+     * @param g
+     *            the base {@code g}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:57.611 -0500", hash_original_method = "391A7E7DFDE60B2C21A2B29998A00F20", hash_generated_method = "8FCB872D0ECE3F42AF99E35B1528CECE")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.027 -0400", hash_original_method = "391A7E7DFDE60B2C21A2B29998A00F20", hash_generated_method = "A54F6C07E02005AE26980ACC88E3F268")
-    public  DSAPrivateKeySpec(BigInteger x, BigInteger p,
+public DSAPrivateKeySpec(BigInteger x, BigInteger p,
             BigInteger q, BigInteger g) {
         this.x = x;
         this.p = p;
         this.q = q;
         this.g = g;
-        // ---------- Original Method ----------
-        //this.x = x;
-        //this.p = p;
-        //this.q = q;
-        //this.g = g;
     }
 
+    /**
+     * Returns the base {@code g}.
+     *
+     * @return the base {@code g}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:57.614 -0500", hash_original_method = "8C38F55FA5DB902C3D9409517AA217E2", hash_generated_method = "FBDB40C3059FF68266098ECF54AD2FB6")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.028 -0400", hash_original_method = "8C38F55FA5DB902C3D9409517AA217E2", hash_generated_method = "757FBD916BCF50DAE693245367B7895E")
-    public BigInteger getG() {
-BigInteger var96B5EDC7D356FCBAF3C926D8A70305DA_1790650949 =         g;
-        var96B5EDC7D356FCBAF3C926D8A70305DA_1790650949.addTaint(taint);
-        return var96B5EDC7D356FCBAF3C926D8A70305DA_1790650949;
-        // ---------- Original Method ----------
-        //return g;
+public BigInteger getG() {
+        return g;
     }
 
+    /**
+     * Returns the prime {@code p}.
+     *
+     * @return the prime {@code p}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:57.616 -0500", hash_original_method = "451C630A2F5A52BD2AE63729BE355876", hash_generated_method = "FA39994F0F567A64C38613032682F7D7")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.028 -0400", hash_original_method = "451C630A2F5A52BD2AE63729BE355876", hash_generated_method = "9D4CE826789424DF5D83965E5883F0EA")
-    public BigInteger getP() {
-BigInteger var74E4690D9F2A026504928C017944E149_1200327178 =         p;
-        var74E4690D9F2A026504928C017944E149_1200327178.addTaint(taint);
-        return var74E4690D9F2A026504928C017944E149_1200327178;
-        // ---------- Original Method ----------
-        //return p;
+public BigInteger getP() {
+        return p;
     }
 
+    /**
+     * Returns the sub-prime {@code q}.
+     *
+     * @return the sub-prime {@code q}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:57.619 -0500", hash_original_method = "ACFCE2DB75EFF131F33A5EE2D309C15F", hash_generated_method = "5A6F1A696B2A6370C598909B1A9A2601")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.028 -0400", hash_original_method = "ACFCE2DB75EFF131F33A5EE2D309C15F", hash_generated_method = "0B758B8A4744E6580FE91DCCCF67A53E")
-    public BigInteger getQ() {
-BigInteger varBEF1B7662E10AF6D5747729987514CB6_206083080 =         q;
-        varBEF1B7662E10AF6D5747729987514CB6_206083080.addTaint(taint);
-        return varBEF1B7662E10AF6D5747729987514CB6_206083080;
-        // ---------- Original Method ----------
-        //return q;
+public BigInteger getQ() {
+        return q;
     }
 
+    /**
+     * Returns the private key {@code x}.
+     *
+     * @return the private key {@code x}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:57.621 -0500", hash_original_method = "67A367EC1A42595A125F9EA99F2EC9F5", hash_generated_method = "B144ED3669B4AEF784786CAB344FA847")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.029 -0400", hash_original_method = "67A367EC1A42595A125F9EA99F2EC9F5", hash_generated_method = "C089E165D945EFD176DFFDCF454CF795")
-    public BigInteger getX() {
-BigInteger varEA5659DA512DECF23E6D37EE8060D074_373979852 =         x;
-        varEA5659DA512DECF23E6D37EE8060D074_373979852.addTaint(taint);
-        return varEA5659DA512DECF23E6D37EE8060D074_373979852;
-        // ---------- Original Method ----------
-        //return x;
+public BigInteger getX() {
+        return x;
     }
 
     

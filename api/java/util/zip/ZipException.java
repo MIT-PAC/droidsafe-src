@@ -1,31 +1,38 @@
 package java.util.zip;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 
 
 
 public class ZipException extends IOException {
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.766 -0400", hash_original_method = "2167A1F4D125B524620850E643449987", hash_generated_method = "26CDA45503C3CB1EA8909514B5B7B27F")
-    public  ZipException() {
-        // ---------- Original Method ----------
-    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.556 -0500", hash_original_field = "4A2D351F8B38814F4292A15EFC49EC22", hash_generated_field = "7A3B8D4739EACA05C4F8E66A30715AB1")
 
-    
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.766 -0400", hash_original_method = "594D1061F67CD3EF6F4592503B4204F0", hash_generated_method = "578ACCD10E461F8BB245A2FF358B352E")
-    public  ZipException(String detailMessage) {
-        super(detailMessage);
-        addTaint(detailMessage.getTaint());
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.766 -0400", hash_original_field = "F6F5B28DF01D2886A1A2A304D964ABD6", hash_generated_field = "7A3B8D4739EACA05C4F8E66A30715AB1")
 
     private static final long serialVersionUID = 8000196834066748623L;
+
+    /**
+     * Constructs a new {@code ZipException} instance.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.559 -0500", hash_original_method = "2167A1F4D125B524620850E643449987", hash_generated_method = "E5CE709B923AF08AC6458F4922EAC2D3")
+    
+public ZipException() {
+    }
+
+    /**
+     * Constructs a new {@code ZipException} instance with the specified
+     * message.
+     *
+     * @param detailMessage
+     *            the detail message for the exception.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.563 -0500", hash_original_method = "594D1061F67CD3EF6F4592503B4204F0", hash_generated_method = "BEB746CBC91CB5D7CA094315F0C2C9E2")
+    
+public ZipException(String detailMessage) {
+        super(detailMessage);
+    }
 }
 

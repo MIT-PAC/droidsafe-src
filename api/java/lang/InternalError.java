@@ -1,6 +1,8 @@
 package java.lang;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
 
@@ -8,25 +10,31 @@ import droidsafe.annotations.*;
 
 
 public class InternalError extends VirtualMachineError {
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.205 -0400", hash_original_method = "18A11DFE954AAC7F3401D9A18E98EAA5", hash_generated_method = "6CB2AD680A92FD012F933015174E0A46")
-    public  InternalError() {
-        // ---------- Original Method ----------
-    }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:32.110 -0500", hash_original_field = "B512AB1E07A78E16312CA58490B4C4F4", hash_generated_field = "DAD8FB96BBB0A062B3DA55A68D183E86")
 
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.206 -0400", hash_original_method = "11A7F61F65B1BF556316C3B357308A87", hash_generated_method = "E9DD4839E3562DA66C7916783D23E007")
-    public  InternalError(String detailMessage) {
-        super(detailMessage);
-        addTaint(detailMessage.getTaint());
-        // ---------- Original Method ----------
-    }
-
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.206 -0400", hash_original_field = "07244973AA85D4984C2BA9B8626B4EFA", hash_generated_field = "DAD8FB96BBB0A062B3DA55A68D183E86")
 
     private static final long serialVersionUID = -9062593416125562365L;
+
+    /**
+     * Constructs a new {@code InternalError} that includes the current stack
+     * trace.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:32.112 -0500", hash_original_method = "18A11DFE954AAC7F3401D9A18E98EAA5", hash_generated_method = "CAE3B5ACBC0F48D1AC89C2F70A7D594C")
+    
+public InternalError() {
+    }
+
+    /**
+     * Constructs a new {@code InternalError} with the current stack trace and
+     * the specified detail message.
+     *
+     * @param detailMessage
+     *            the detail message for this error.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:32.115 -0500", hash_original_method = "11A7F61F65B1BF556316C3B357308A87", hash_generated_method = "943A050F6994FC2E57B0120B909CF76D")
+    
+public InternalError(String detailMessage) {
+        super(detailMessage);
+    }
 }
 

@@ -1,6 +1,8 @@
 package java.nio;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Arrays;
 
@@ -9,33 +11,64 @@ import java.util.Arrays;
 
 
 public abstract class FloatBuffer extends Buffer implements Comparable<FloatBuffer> {
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.020 -0400", hash_original_method = "40CC822379F71BDE2069817768983643", hash_generated_method = "9E533343D88E64736D05E2F347F6068D")
-      FloatBuffer(int capacity) {
-        super(2, capacity, null);
-        addTaint(capacity);
-        // ---------- Original Method ----------
-    }
 
+    /**
+     * Creates a float buffer based on a newly allocated float array.
+     *
+     * @param capacity
+     *            the capacity of the new buffer.
+     * @return the created float buffer.
+     * @throws IllegalArgumentException
+     *             if {@code capacity} is less than zero.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.881 -0500", hash_original_method = "2FB775104C66661A886824538B4C7ED2", hash_generated_method = "950C460F63BEA3BB7574BF8AF1F6AE4B")
     
-    @DSModeled(DSC.SAFE)
-    public static FloatBuffer allocate(int capacity) {
+public static FloatBuffer allocate(int capacity) {
         if (capacity < 0) {
             throw new IllegalArgumentException();
         }
         return new ReadWriteFloatArrayBuffer(capacity);
     }
 
+    /**
+     * Creates a new float buffer by wrapping the given float array.
+     * <p>
+     * Calling this method has the same effect as
+     * {@code wrap(array, 0, array.length)}.
+     *
+     * @param array
+     *            the float array which the new buffer will be based on.
+     * @return the created float buffer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.884 -0500", hash_original_method = "F6DE4EB6E1FC74E6B009DCDAEF838F5B", hash_generated_method = "3C85BFB5E937DEBCF3D8C5D85A4ABFF3")
     
-    @DSModeled(DSC.SAFE)
-    public static FloatBuffer wrap(float[] array) {
+public static FloatBuffer wrap(float[] array) {
         return wrap(array, 0, array.length);
     }
 
+    /**
+     * Creates a new float buffer by wrapping the given float array.
+     * <p>
+     * The new buffer's position will be {@code start}, limit will be
+     * {@code start + floatCount}, capacity will be the length of the array.
+     *
+     * @param array
+     *            the float array which the new buffer will be based on.
+     * @param start
+     *            the start index, must not be negative and not greater than
+     *            {@code array.length}.
+     * @param floatCount
+     *            the length, must not be negative and not greater than
+     *            {@code array.length - start}.
+     * @return the created float buffer.
+     * @exception IndexOutOfBoundsException
+     *                if either {@code start} or {@code floatCount} is invalid.
+     * @exception NullPointerException
+     *                if {@code array} is null.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.886 -0500", hash_original_method = "D1BAE48EAFBA264E33C378E4B66BB5B1", hash_generated_method = "3785786E289B11CEBD7181C5C685306A")
     
-    @DSModeled(DSC.SAFE)
-    public static FloatBuffer wrap(float[] array, int start, int floatCount) {
+public static FloatBuffer wrap(float[] array, int start, int floatCount) {
         Arrays.checkOffsetAndCount(array.length, start, floatCount);
         FloatBuffer buf = new ReadWriteFloatArrayBuffer(array);
         buf.position = start;
@@ -43,339 +76,443 @@ public abstract class FloatBuffer extends Buffer implements Comparable<FloatBuff
         return buf;
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.888 -0500", hash_original_method = "40CC822379F71BDE2069817768983643", hash_generated_method = "40CC822379F71BDE2069817768983643")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.022 -0400", hash_original_method = "3D88E12435E8ECFF27E8491C8CFB38C5", hash_generated_method = "8B3175E2360BCE7F3CA6CFD835D96CEF")
-    public final float[] array() {
-        float[] var68B89E48382A0AA51B25AC59599E2EB0_1688382316 = (protectedArray());
-                float[] varB2C245003BAB9224CFB496218F7DAFE0_1039686227 = {getTaintFloat()};
-        return varB2C245003BAB9224CFB496218F7DAFE0_1039686227;
-        // ---------- Original Method ----------
-        //return protectedArray();
+FloatBuffer(int capacity) {
+        super(2, capacity, null);
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.891 -0500", hash_original_method = "3D88E12435E8ECFF27E8491C8CFB38C5", hash_generated_method = "8816DD4F29979B4BD6ABC553A2CDE741")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.022 -0400", hash_original_method = "0D5EF56CBEA1DA16093A6276D10D9347", hash_generated_method = "2D4C3EE9544DD6D7A28D2A68B77507ED")
-    public final int arrayOffset() {
-        int var0B794CE56A38A9F3BFDD2D53E83BB109_1999778145 = (protectedArrayOffset());
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1564503954 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1564503954;
-        // ---------- Original Method ----------
-        //return protectedArrayOffset();
+public final float[] array() {
+        return protectedArray();
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.893 -0500", hash_original_method = "0D5EF56CBEA1DA16093A6276D10D9347", hash_generated_method = "28A2D71AE8939DE09018E333ADFF6CAE")
     
-    @DSModeled(DSC.SAFE)
-    public abstract FloatBuffer asReadOnlyBuffer();
+public final int arrayOffset() {
+        return protectedArrayOffset();
+    }
 
+    /**
+     * Returns a read-only buffer that shares its content with this buffer.
+     * <p>
+     * The returned buffer is guaranteed to be a new instance, even if this
+     * buffer is read-only itself. The new buffer's position, limit, capacity
+     * and mark are the same as this buffer.
+     * <p>
+     * The new buffer shares its content with this buffer, which means this
+     * buffer's change of content will be visible to the new buffer. The two
+     * buffer's position, limit and mark are independent.
+     *
+     * @return a read-only version of this buffer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.896 -0500", hash_original_method = "7D04A9A0A6165ECC04702031574C9284", hash_generated_method = "CD1F845562D6F37D2A5B53D175237E61")
     
-    @DSModeled(DSC.SAFE)
-    public abstract FloatBuffer compact();
+public abstract FloatBuffer asReadOnlyBuffer();
 
+    /**
+     * Compacts this float buffer.
+     * <p>
+     * The remaining floats will be moved to the head of the buffer, starting
+     * from position zero. Then the position is set to {@code remaining()}; the
+     * limit is set to capacity; the mark is cleared.
+     *
+     * @return this buffer.
+     * @exception ReadOnlyBufferException
+     *                if no changes may be made to the contents of this buffer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.898 -0500", hash_original_method = "32451F91DF186B108F7203FB4BA804FE", hash_generated_method = "EF0844D0F5966A9C2725DA610CA19C52")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.023 -0400", hash_original_method = "255AC25FE0773812484072E75724705E", hash_generated_method = "15C87038626D16339864CAF9AE1170AE")
-    public int compareTo(FloatBuffer otherBuffer) {
-        addTaint(otherBuffer.getTaint());
+public abstract FloatBuffer compact();
+
+    /**
+     * Compare the remaining floats of this buffer to another float buffer's
+     * remaining floats.
+     *
+     * @param otherBuffer
+     *            another float buffer.
+     * @return a negative value if this is less than {@code otherBuffer}; 0 if
+     *         this equals to {@code otherBuffer}; a positive value if this is
+     *         greater than {@code otherBuffer}.
+     * @exception ClassCastException
+     *                if {@code otherBuffer} is not a float buffer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.901 -0500", hash_original_method = "255AC25FE0773812484072E75724705E", hash_generated_method = "C1CC1091457C3214DAF5CA5AF7A7D860")
+    
+public int compareTo(FloatBuffer otherBuffer) {
         int compareRemaining = (remaining() < otherBuffer.remaining()) ? remaining()
                 : otherBuffer.remaining();
         int thisPos = position;
         int otherPos = otherBuffer.position;
-        float thisFloat;
-        float otherFloat;
-        while
-(compareRemaining > 0)        
-        {
+        float thisFloat, otherFloat;
+        while (compareRemaining > 0) {
             thisFloat = get(thisPos);
             otherFloat = otherBuffer.get(otherPos);
-            if((thisFloat != otherFloat)
-                    && ((thisFloat == thisFloat) || (otherFloat == otherFloat)))            
-            {
-                int varC85F1A8B33FB73B6BB38C92945B2E25C_1046140455 = (thisFloat < otherFloat ? -1 : 1);
-                                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_754407812 = getTaintInt();
-                return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_754407812;
-            } //End block
+            // checks for float and NaN inequality
+            if ((thisFloat != otherFloat)
+                    && ((thisFloat == thisFloat) || (otherFloat == otherFloat))) {
+                return thisFloat < otherFloat ? -1 : 1;
+            }
             thisPos++;
             otherPos++;
             compareRemaining--;
-        } //End block
-        int var1DC167191FBC7DAD3BADAE830552C692_176603627 = (remaining() - otherBuffer.remaining());
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_157233860 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_157233860;
-        // ---------- Original Method ----------
-        //int compareRemaining = (remaining() < otherBuffer.remaining()) ? remaining()
-                //: otherBuffer.remaining();
-        //int thisPos = position;
-        //int otherPos = otherBuffer.position;
-        //float thisFloat, otherFloat;
-        //while (compareRemaining > 0) {
-            //thisFloat = get(thisPos);
-            //otherFloat = otherBuffer.get(otherPos);
-            //if ((thisFloat != otherFloat)
-                    //&& ((thisFloat == thisFloat) || (otherFloat == otherFloat))) {
-                //return thisFloat < otherFloat ? -1 : 1;
-            //}
-            //thisPos++;
-            //otherPos++;
-            //compareRemaining--;
-        //}
-        //return remaining() - otherBuffer.remaining();
+        }
+        return remaining() - otherBuffer.remaining();
     }
 
+    /**
+     * Returns a duplicated buffer that shares its content with this buffer.
+     * <p>
+     * The duplicated buffer's position, limit, capacity and mark are the same
+     * as this buffer. The duplicated buffer's read-only property and byte order
+     * are same as this buffer too.
+     * <p>
+     * The new buffer shares its content with this buffer, which means either
+     * buffer's change of content will be visible to the other. The two buffer's
+     * position, limit and mark are independent.
+     *
+     * @return a duplicated buffer that shares its content with this buffer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.904 -0500", hash_original_method = "1B86386F557AE66C36D17D9B1B10AA42", hash_generated_method = "50991417D689BE7BA7C34A224197ED5A")
     
-    @DSModeled(DSC.SAFE)
-    public abstract FloatBuffer duplicate();
+public abstract FloatBuffer duplicate();
 
+    /**
+     * Checks whether this float buffer is equal to another object. If {@code
+     * other} is not a {@code FloatBuffer} then {@code false} is returned.
+     *
+     * <p>Two float buffers are equal if their remaining floats are equal.
+     * Position, limit, capacity and mark are not considered.
+     *
+     * <p>This method considers two floats {@code a} and {@code b} to be equal
+     * if {@code a == b} or if {@code a} and {@code b} are both {@code NaN}.
+     * Unlike {@link Float#equals}, this method considers {@code -0.0} and
+     * {@code +0.0} to be equal.
+     *
+     * @param other
+     *            the object to compare with this float buffer.
+     * @return {@code true} if this float buffer is equal to {@code other},
+     *         {@code false} otherwise.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.907 -0500", hash_original_method = "962C433BA6F78C4BE1DF9C98AF3A7A4D", hash_generated_method = "2980BDA4B6B7ADD49B9A6AF3F520F9BA")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.024 -0400", hash_original_method = "962C433BA6F78C4BE1DF9C98AF3A7A4D", hash_generated_method = "DFFB08CF068CE579DFCF96BDEB3BEFAA")
-    @Override
+@Override
     public boolean equals(Object other) {
-        addTaint(other.getTaint());
-        if(!(other instanceof FloatBuffer))        
-        {
-            boolean var68934A3E9455FA72420237EB05902327_82474250 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1293196909 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1293196909;
-        } //End block
+        if (!(other instanceof FloatBuffer)) {
+            return false;
+        }
         FloatBuffer otherBuffer = (FloatBuffer) other;
-        if(remaining() != otherBuffer.remaining())        
-        {
-            boolean var68934A3E9455FA72420237EB05902327_2116843270 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1456995615 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1456995615;
-        } //End block
+
+        if (remaining() != otherBuffer.remaining()) {
+            return false;
+        }
+
         int myPosition = position;
         int otherPosition = otherBuffer.position;
         boolean equalSoFar = true;
-        while
-(equalSoFar && (myPosition < limit))        
-        {
+        while (equalSoFar && (myPosition < limit)) {
             float a = get(myPosition++);
             float b = otherBuffer.get(otherPosition++);
             equalSoFar = a == b || (a != a && b != b);
-        } //End block
-        boolean var4A97EF18B93B276118DD50585250A586_576356179 = (equalSoFar);
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1353323224 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1353323224;
-        // ---------- Original Method ----------
-        //if (!(other instanceof FloatBuffer)) {
-            //return false;
-        //}
-        //FloatBuffer otherBuffer = (FloatBuffer) other;
-        //if (remaining() != otherBuffer.remaining()) {
-            //return false;
-        //}
-        //int myPosition = position;
-        //int otherPosition = otherBuffer.position;
-        //boolean equalSoFar = true;
-        //while (equalSoFar && (myPosition < limit)) {
-            //float a = get(myPosition++);
-            //float b = otherBuffer.get(otherPosition++);
-            //equalSoFar = a == b || (a != a && b != b);
-        //}
-        //return equalSoFar;
+        }
+
+        return equalSoFar;
     }
 
+    /**
+     * Returns the float at the current position and increases the position by
+     * 1.
+     *
+     * @return the float at the current position.
+     * @exception BufferUnderflowException
+     *                if the position is equal or greater than limit.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.909 -0500", hash_original_method = "DD95629D26D81841C1FF3883AEB98612", hash_generated_method = "E89A65E5800A885076A7605D12085972")
     
-    @DSModeled(DSC.SAFE)
-    public abstract float get();
+public abstract float get();
 
+    /**
+     * Reads floats from the current position into the specified float array and
+     * increases the position by the number of floats read.
+     * <p>
+     * Calling this method has the same effect as
+     * {@code get(dst, 0, dst.length)}.
+     *
+     * @param dst
+     *            the destination float array.
+     * @return this buffer.
+     * @exception BufferUnderflowException
+     *                if {@code dst.length} is greater than {@code remaining()}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.911 -0500", hash_original_method = "5C1BC742B784E1F54201A6BFE04FB3C1", hash_generated_method = "A25DC9A0C575B997CCD28575DD9FA6AF")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.025 -0400", hash_original_method = "5C1BC742B784E1F54201A6BFE04FB3C1", hash_generated_method = "47715B7AD4C761EEBB4AAEA5F6DC4684")
-    public FloatBuffer get(float[] dst) {
-        addTaint(dst[0]);
-FloatBuffer varAF8F268F60258FE30F192DE78F11CD4A_1947380277 =         get(dst, 0, dst.length);
-        varAF8F268F60258FE30F192DE78F11CD4A_1947380277.addTaint(taint);
-        return varAF8F268F60258FE30F192DE78F11CD4A_1947380277;
-        // ---------- Original Method ----------
-        //return get(dst, 0, dst.length);
+public FloatBuffer get(float[] dst) {
+        return get(dst, 0, dst.length);
     }
 
+    /**
+     * Reads floats from the current position into the specified float array,
+     * starting from the specified offset, and increases the position by the
+     * number of floats read.
+     *
+     * @param dst
+     *            the target float array.
+     * @param dstOffset
+     *            the offset of the float array, must not be negative and no
+     *            greater than {@code dst.length}.
+     * @param floatCount
+     *            the number of floats to read, must be no less than zero and no
+     *            greater than {@code dst.length - dstOffset}.
+     * @return this buffer.
+     * @exception IndexOutOfBoundsException
+     *                if either {@code dstOffset} or {@code floatCount} is invalid.
+     * @exception BufferUnderflowException
+     *                if {@code floatCount} is greater than {@code remaining()}.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.914 -0500", hash_original_method = "62E3FD5BE0E5A19BF5F39022D7154217", hash_generated_method = "CFEDBCC4F65A19B096EA2EB2DAE7FBC4")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.025 -0400", hash_original_method = "62E3FD5BE0E5A19BF5F39022D7154217", hash_generated_method = "982AF9CC2B236B1A4D76664CC5B434F2")
-    public FloatBuffer get(float[] dst, int dstOffset, int floatCount) {
-        addTaint(floatCount);
-        addTaint(dstOffset);
-        addTaint(dst[0]);
+public FloatBuffer get(float[] dst, int dstOffset, int floatCount) {
         Arrays.checkOffsetAndCount(dst.length, dstOffset, floatCount);
-        if(floatCount > remaining())        
-        {
-            BufferUnderflowException var77B0EAE3DCF68E57AAEF834AFBC7D762_1631727496 = new BufferUnderflowException();
-            var77B0EAE3DCF68E57AAEF834AFBC7D762_1631727496.addTaint(taint);
-            throw var77B0EAE3DCF68E57AAEF834AFBC7D762_1631727496;
-        } //End block
-for(int i = dstOffset;i < dstOffset + floatCount;++i)
-        {
+        if (floatCount > remaining()) {
+            throw new BufferUnderflowException();
+        }
+        for (int i = dstOffset; i < dstOffset + floatCount; ++i) {
             dst[i] = get();
-        } //End block
-FloatBuffer var72A74007B2BE62B849F475C7BDA4658B_67169878 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_67169878.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_67169878;
-        // ---------- Original Method ----------
-        //Arrays.checkOffsetAndCount(dst.length, dstOffset, floatCount);
-        //if (floatCount > remaining()) {
-            //throw new BufferUnderflowException();
-        //}
-        //for (int i = dstOffset; i < dstOffset + floatCount; ++i) {
-            //dst[i] = get();
-        //}
-        //return this;
+        }
+        return this;
     }
 
+    /**
+     * Returns a float at the specified index; the position is not changed.
+     *
+     * @param index
+     *            the index, must not be negative and less than limit.
+     * @return a float at the specified index.
+     * @exception IndexOutOfBoundsException
+     *                if index is invalid.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.916 -0500", hash_original_method = "F91C260BFD4314693FFE7C960F687058", hash_generated_method = "ED2514FFDD12B9EA8E991C2A15809E5B")
     
-    @DSModeled(DSC.SAFE)
-    public abstract float get(int index);
+public abstract float get(int index);
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.919 -0500", hash_original_method = "89C81F0EAF8FCCBFE368437CC8972DD7", hash_generated_method = "9ABCCA1D4392A43B7EAC3713FD39CEA8")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.026 -0400", hash_original_method = "89C81F0EAF8FCCBFE368437CC8972DD7", hash_generated_method = "37398856BC447DF6828C8CE0AD4DA746")
-    public final boolean hasArray() {
-        boolean var55B7C03E3C1EBABD22606AD17EE923C3_1893339618 = (protectedHasArray());
-                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1871960732 = getTaintBoolean();
-        return var84E2C64F38F78BA3EA5C905AB5A2DA27_1871960732;
-        // ---------- Original Method ----------
-        //return protectedHasArray();
+public final boolean hasArray() {
+        return protectedHasArray();
     }
 
+    /**
+     * Calculates this buffer's hash code from the remaining chars. The
+     * position, limit, capacity and mark don't affect the hash code.
+     *
+     * @return the hash code calculated from the remaining floats.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.921 -0500", hash_original_method = "B144F8C59516E29D7B0EE6B79958F98A", hash_generated_method = "398E5B4217CC179808D12B8E7584D484")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.026 -0400", hash_original_method = "B144F8C59516E29D7B0EE6B79958F98A", hash_generated_method = "5F1F55A8B28F2A3073C3AF72C53D8EA4")
-    @Override
+@Override
     public int hashCode() {
         int myPosition = position;
         int hash = 0;
-        while
-(myPosition < limit)        
-        {
+        while (myPosition < limit) {
             hash = hash + Float.floatToIntBits(get(myPosition++));
-        } //End block
-        int var0800FC577294C34E0B28AD2839435945_98064562 = (hash);
-                int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1864146816 = getTaintInt();
-        return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1864146816;
-        // ---------- Original Method ----------
-        //int myPosition = position;
-        //int hash = 0;
-        //while (myPosition < limit) {
-            //hash = hash + Float.floatToIntBits(get(myPosition++));
-        //}
-        //return hash;
+        }
+        return hash;
     }
 
+    /**
+     * Indicates whether this buffer is direct. A direct buffer will try its
+     * best to take advantage of native memory APIs and it may not stay in the
+     * Java heap, so it is not affected by garbage collection.
+     * <p>
+     * A float buffer is direct if it is based on a byte buffer and the byte
+     * buffer is direct.
+     *
+     * @return {@code true} if this buffer is direct, {@code false} otherwise.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.924 -0500", hash_original_method = "2B5243B32EFBD4C87A9512D0DB4C2075", hash_generated_method = "FFC399E278E774AC5C957525392E5B9B")
     
-    @DSModeled(DSC.SAFE)
-    public abstract boolean isDirect();
+public abstract boolean isDirect();
 
+    /**
+     * Returns the byte order used by this buffer when converting floats from/to
+     * bytes.
+     * <p>
+     * If this buffer is not based on a byte buffer, then always return the
+     * platform's native byte order.
+     *
+     * @return the byte order used by this buffer when converting floats from/to
+     *         bytes.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.926 -0500", hash_original_method = "2DA427F16EF708C854E7D0C984AF174B", hash_generated_method = "2BEDE1A9F84B5799B19A96DDBD47ABB8")
     
-    @DSModeled(DSC.SAFE)
-    public abstract ByteOrder order();
+public abstract ByteOrder order();
 
+    /**
+     * Child class implements this method to realize {@code array()}.
+     *
+     * @return see {@code array()}
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.928 -0500", hash_original_method = "49CD62ACC68CCE0E42D0E52B209B94A8", hash_generated_method = "A92F33D350E7D3E689CEAD5B921975B9")
     
-    @DSModeled(DSC.SAFE)
-    abstract float[] protectedArray();
+abstract float[] protectedArray();
 
+    /**
+     * Child class implements this method to realize {@code arrayOffset()}.
+     *
+     * @return see {@code arrayOffset()}
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.931 -0500", hash_original_method = "9E60C7ACB7338AE2B38C3B6B2C95F717", hash_generated_method = "CF9DD77B0F7512BEF2952176796D1F74")
     
-    @DSModeled(DSC.SAFE)
-    abstract int protectedArrayOffset();
+abstract int protectedArrayOffset();
 
+    /**
+     * Child class implements this method to realize {@code hasArray()}.
+     *
+     * @return see {@code hasArray()}
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.933 -0500", hash_original_method = "A4BB1744D6CB0B58561CD2147D66FE72", hash_generated_method = "6F3071F3A04983A3B50C9AF29E029577")
     
-    @DSModeled(DSC.SAFE)
-    abstract boolean protectedHasArray();
+abstract boolean protectedHasArray();
 
+    /**
+     * Writes the given float to the current position and increases the position
+     * by 1.
+     *
+     * @param f
+     *            the float to write.
+     * @return this buffer.
+     * @exception BufferOverflowException
+     *                if position is equal or greater than limit.
+     * @exception ReadOnlyBufferException
+     *                if no changes may be made to the contents of this buffer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.935 -0500", hash_original_method = "41A5E27A4133F6F3A8C64820C2D21D90", hash_generated_method = "378AF54BC621B6DF660AC5E8B485929F")
     
-    @DSModeled(DSC.SAFE)
-    public abstract FloatBuffer put(float f);
+public abstract FloatBuffer put(float f);
 
+    /**
+     * Writes floats from the given float array to the current position and
+     * increases the position by the number of floats written.
+     * <p>
+     * Calling this method has the same effect as
+     * {@code put(src, 0, src.length)}.
+     *
+     * @param src
+     *            the source float array.
+     * @return this buffer.
+     * @exception BufferOverflowException
+     *                if {@code remaining()} is less than {@code src.length}.
+     * @exception ReadOnlyBufferException
+     *                if no changes may be made to the contents of this buffer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.937 -0500", hash_original_method = "5B7E9D4E0A0B3CF72C892C67E2CB78B1", hash_generated_method = "364B08C6990445194E4D43237CB05BC7")
     
-    @DSModeled(DSC.SAFE)
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.027 -0400", hash_original_method = "5B7E9D4E0A0B3CF72C892C67E2CB78B1", hash_generated_method = "CD79BF50F97AF2FC41B34D566EC52262")
-    public final FloatBuffer put(float[] src) {
-        addTaint(src[0]);
-FloatBuffer var7D505613BED257805463C43ADCB4DBAD_1887267415 =         put(src, 0, src.length);
-        var7D505613BED257805463C43ADCB4DBAD_1887267415.addTaint(taint);
-        return var7D505613BED257805463C43ADCB4DBAD_1887267415;
-        // ---------- Original Method ----------
-        //return put(src, 0, src.length);
+public final FloatBuffer put(float[] src) {
+        return put(src, 0, src.length);
     }
 
+    /**
+     * Writes floats from the given float array, starting from the specified
+     * offset, to the current position and increases the position by the number
+     * of floats written.
+     *
+     * @param src
+     *            the source float array.
+     * @param srcOffset
+     *            the offset of float array, must not be negative and not
+     *            greater than {@code src.length}.
+     * @param floatCount
+     *            the number of floats to write, must be no less than zero and
+     *            no greater than {@code src.length - srcOffset}.
+     * @return this buffer.
+     * @exception BufferOverflowException
+     *                if {@code remaining()} is less than {@code floatCount}.
+     * @exception IndexOutOfBoundsException
+     *                if either {@code srcOffset} or {@code floatCount} is invalid.
+     * @exception ReadOnlyBufferException
+     *                if no changes may be made to the contents of this buffer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.940 -0500", hash_original_method = "DFC1F5A8B9B8E6C8478049F847BE00DC", hash_generated_method = "ADFFCE20F56DE416B180F9199E877E04")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.028 -0400", hash_original_method = "DFC1F5A8B9B8E6C8478049F847BE00DC", hash_generated_method = "0D0D725CCC926F636FE25D787952521A")
-    public FloatBuffer put(float[] src, int srcOffset, int floatCount) {
-        addTaint(floatCount);
-        addTaint(srcOffset);
-        addTaint(src[0]);
+public FloatBuffer put(float[] src, int srcOffset, int floatCount) {
         Arrays.checkOffsetAndCount(src.length, srcOffset, floatCount);
-        if(floatCount > remaining())        
-        {
-            BufferOverflowException var773478A23217201B18B531915D367F31_1222393504 = new BufferOverflowException();
-            var773478A23217201B18B531915D367F31_1222393504.addTaint(taint);
-            throw var773478A23217201B18B531915D367F31_1222393504;
-        } //End block
-for(int i = srcOffset;i < srcOffset + floatCount;++i)
-        {
+        if (floatCount > remaining()) {
+            throw new BufferOverflowException();
+        }
+        for (int i = srcOffset; i < srcOffset + floatCount; ++i) {
             put(src[i]);
-        } //End block
-FloatBuffer var72A74007B2BE62B849F475C7BDA4658B_1148659578 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_1148659578.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_1148659578;
-        // ---------- Original Method ----------
-        //Arrays.checkOffsetAndCount(src.length, srcOffset, floatCount);
-        //if (floatCount > remaining()) {
-            //throw new BufferOverflowException();
-        //}
-        //for (int i = srcOffset; i < srcOffset + floatCount; ++i) {
-            //put(src[i]);
-        //}
-        //return this;
+        }
+        return this;
     }
 
+    /**
+     * Writes all the remaining floats of the {@code src} float buffer to this
+     * buffer's current position, and increases both buffers' position by the
+     * number of floats copied.
+     *
+     * @param src
+     *            the source float buffer.
+     * @return this buffer.
+     * @exception BufferOverflowException
+     *                if {@code src.remaining()} is greater than this buffer's
+     *                {@code remaining()}.
+     * @exception IllegalArgumentException
+     *                if {@code src} is this buffer.
+     * @exception ReadOnlyBufferException
+     *                if no changes may be made to the contents of this buffer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.943 -0500", hash_original_method = "338DD208CFE8C4AD7CB14619D9789866", hash_generated_method = "B4EEE4C4BA196D1B3218B7A8F1728EE4")
     
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.028 -0400", hash_original_method = "338DD208CFE8C4AD7CB14619D9789866", hash_generated_method = "5ECC2A217A93DA5BAC564FF59FE1926B")
-    public FloatBuffer put(FloatBuffer src) {
-        addTaint(src.getTaint());
-        if(src == this)        
-        {
-            IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_121379887 = new IllegalArgumentException();
-            var5783EF97022AA508B74A1E3EA38534AF_121379887.addTaint(taint);
-            throw var5783EF97022AA508B74A1E3EA38534AF_121379887;
-        } //End block
-        if(src.remaining() > remaining())        
-        {
-            BufferOverflowException var773478A23217201B18B531915D367F31_521175172 = new BufferOverflowException();
-            var773478A23217201B18B531915D367F31_521175172.addTaint(taint);
-            throw var773478A23217201B18B531915D367F31_521175172;
-        } //End block
+public FloatBuffer put(FloatBuffer src) {
+        if (src == this) {
+            throw new IllegalArgumentException();
+        }
+        if (src.remaining() > remaining()) {
+            throw new BufferOverflowException();
+        }
         float[] contents = new float[src.remaining()];
         src.get(contents);
         put(contents);
-FloatBuffer var72A74007B2BE62B849F475C7BDA4658B_1075699204 =         this;
-        var72A74007B2BE62B849F475C7BDA4658B_1075699204.addTaint(taint);
-        return var72A74007B2BE62B849F475C7BDA4658B_1075699204;
-        // ---------- Original Method ----------
-        //if (src == this) {
-            //throw new IllegalArgumentException();
-        //}
-        //if (src.remaining() > remaining()) {
-            //throw new BufferOverflowException();
-        //}
-        //float[] contents = new float[src.remaining()];
-        //src.get(contents);
-        //put(contents);
-        //return this;
+        return this;
     }
 
+    /**
+     * Writes a float to the specified index of this buffer; the position is not
+     * changed.
+     *
+     * @param index
+     *            the index, must not be negative and less than the limit.
+     * @param f
+     *            the float to write.
+     * @return this buffer.
+     * @exception IndexOutOfBoundsException
+     *                if index is invalid.
+     * @exception ReadOnlyBufferException
+     *                if no changes may be made to the contents of this buffer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.946 -0500", hash_original_method = "E055474EFA3FA7B3EA940C5865B7DADC", hash_generated_method = "FF72BFC456E313F487B3F4301D2E435E")
     
-    @DSModeled(DSC.SAFE)
-    public abstract FloatBuffer put(int index, float f);
+public abstract FloatBuffer put(int index, float f);
 
+    /**
+     * Returns a sliced buffer that shares its content with this buffer.
+     * <p>
+     * The sliced buffer's capacity will be this buffer's {@code remaining()},
+     * and its zero position will correspond to this buffer's current position.
+     * The new buffer's position will be 0, limit will be its capacity, and its
+     * mark is cleared. The new buffer's read-only property and byte order are
+     * same as this buffer's.
+     * <p>
+     * The new buffer shares its content with this buffer, which means either
+     * buffer's change of content will be visible to the other. The two buffer's
+     * position, limit and mark are independent.
+     *
+     * @return a sliced buffer that shares its content with this buffer.
+     */
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.948 -0500", hash_original_method = "BDB0C51DF50027D80732B423FDACD53A", hash_generated_method = "AD1D105D90B144C73812BDD3ADD1779B")
     
-    @DSModeled(DSC.SAFE)
-    public abstract FloatBuffer slice();
+public abstract FloatBuffer slice();
 
     
 }

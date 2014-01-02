@@ -1,6 +1,9 @@
 package android.os;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
+import android.util.Log;
 import droidsafe.annotations.*;
 import java.io.FileDescriptor;
 import java.io.Serializable;
@@ -15,21 +18,6 @@ import android.util.SparseBooleanArray;
 
 
 public final class Parcel {
-    @SuppressWarnings({"UnusedDeclaration"})
-    private int mObject;
-    @SuppressWarnings({"UnusedDeclaration"})
-    private int mOwnObject;
-    
-    @DSModeled(DSC.BAN)
-    private Parcel(int obj){
-		init(obj);
-		/*
-		if (DEBUG_RECYCLE) {
-            mStack = new RuntimeException();
-        }
-		init(obj);
-		*/
-	}
 
     
     @DSModeled(DSC.SAFE)
@@ -54,6 +42,305 @@ public final class Parcel {
         }
         return new Parcel(0);
     }
+		*/
+	}
+
+    
+    @DSModeled(DSC.SAFE)
+    static FileDescriptor openFileDescriptor(String file,
+            int mode){
+		//Formerly a native function
+		return new FileDescriptor();
+	}
+
+    
+    @DSModeled(DSC.SAFE)
+    static FileDescriptor dupFileDescriptor(FileDescriptor orig){
+		//Formerly a native function
+		return orig;
+	}
+
+    
+    @DSModeled(DSC.SAFE)
+    static void closeFileDescriptor(FileDescriptor desc){
+		//Formerly a native function
+		//Return nothing
+	}
+
+    
+    @DSModeled(DSC.SAFE)
+    static void clearFileDescriptor(FileDescriptor desc){
+		//Formerly a native function
+		//Return nothing
+	}
+
+    
+    static protected final Parcel obtain(int obj){
+		return new Parcel(obj);
+		// Original method
+		/*
+		{
+        final Parcel[] pool = sHolderPool;
+        synchronized (pool) {
+            Parcel p;
+            for (int i=0; i<POOL_SIZE; i++) {
+                p = pool[i];
+                if (p != null) {
+                    pool[i] = null;
+                    if (DEBUG_RECYCLE) {
+                        p.mStack = new RuntimeException();
+                    }
+                    p.init(obj);
+                    return p;
+                }
+            }
+        }
+        return new Parcel(obj);
+    }
+		*/
+	}
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.989 -0500", hash_original_field = "5FA4EBA8910C8246CD5330A7878C5E2B", hash_generated_field = "4C4C82AEA5D9854FC45DA5375C35C2B9")
+
+    private static final boolean DEBUG_RECYCLE = false;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.991 -0500", hash_original_field = "ECE0091090C14A39AF4EF00FE87FB1ED", hash_generated_field = "8D4BB406013288DABCF21E3086232FF0")
+
+    private static final String TAG = "Parcel";
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:31.002 -0500", hash_original_field = "255B8CC2A192C047539CE0DFA8D7FD2A", hash_generated_field = "806F090E7CB08EA4F7BB25E21BB089B9")
+
+
+    private static final int POOL_SIZE = 6;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:31.004 -0500", hash_original_field = "D3DFB7401AB3E827234BC17332BF00FE", hash_generated_field = "2B06E04682E05687F5FE1F91A80B5001")
+
+    private static final Parcel[] sOwnedPool = new Parcel[POOL_SIZE];
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:31.007 -0500", hash_original_field = "8443E44F95ABF540724E9C5A81DF7CFF", hash_generated_field = "6A8EC49B77FA2982F6172D9088BEE965")
+
+    private static final Parcel[] sHolderPool = new Parcel[POOL_SIZE];
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:31.009 -0500", hash_original_field = "96EFFF59895EEAB0615861612CE08DD0", hash_generated_field = "C083E5876DACD70ACA563A851C9BF80A")
+
+
+    private static final int VAL_NULL = -1;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:31.011 -0500", hash_original_field = "720C555A23FD6F10099487B3D8650C8B", hash_generated_field = "45F7F878732CA50D8D10532C9B029700")
+
+    private static final int VAL_STRING = 0;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:31.013 -0500", hash_original_field = "3B7BBB70B847B4DDC3F2EDEC51BB6F55", hash_generated_field = "3105C6E283A2C8969131A51B9084E315")
+
+    private static final int VAL_INTEGER = 1;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:31.016 -0500", hash_original_field = "0CA5935BC7BA82D6E36493C9F9D76D44", hash_generated_field = "1E3EDA05CA698B82AB90723508DE126A")
+
+    private static final int VAL_MAP = 2;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:31.018 -0500", hash_original_field = "B78094C133970BA2129340A0C8673F7D", hash_generated_field = "77D016C4104C510EB61EAD16649E4B98")
+
+    private static final int VAL_BUNDLE = 3;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:31.020 -0500", hash_original_field = "4E2F3F68C89825497924CF5354118708", hash_generated_field = "A89ABF4349986B7E1CF429EF8B150F43")
+
+    private static final int VAL_PARCELABLE = 4;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:31.023 -0500", hash_original_field = "5A5CDA0159F39EE039E63F6553B1A9A8", hash_generated_field = "97F320554483CFA3BD525573C34EEBF6")
+
+    private static final int VAL_SHORT = 5;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:31.025 -0500", hash_original_field = "6F3A5BA9F4C1495072EE22CC61489596", hash_generated_field = "F2505784946CF430B6454C933AA64E43")
+
+    private static final int VAL_LONG = 6;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:31.028 -0500", hash_original_field = "77B9CCC0903582CE006C697C198150CE", hash_generated_field = "15249D8B4B676F2BF7A97F24D427B5AA")
+
+    private static final int VAL_FLOAT = 7;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:31.030 -0500", hash_original_field = "E5214FC1A6C0077A9B20406AFB6C44E9", hash_generated_field = "1E7C612DDB2B7EF1312E741523E53799")
+
+    private static final int VAL_DOUBLE = 8;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:31.032 -0500", hash_original_field = "67BF4C57D48E99C96C95B7ED9E3B66C5", hash_generated_field = "E46F341BE0E2D054D53CDEAD96F1959D")
+
+    private static final int VAL_BOOLEAN = 9;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:31.034 -0500", hash_original_field = "0E5940489DB482E1A608A1429EAC0C87", hash_generated_field = "B7D4E411492999EB4EA9BF2AC586F223")
+
+    private static final int VAL_CHARSEQUENCE = 10;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:31.036 -0500", hash_original_field = "A45233739B5E74601403A8A75FDF70D6", hash_generated_field = "D4F1A8A9E0CE0974E2412812F0DA3F5D")
+
+    private static final int VAL_LIST  = 11;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:31.038 -0500", hash_original_field = "FBB2CA7C2670F607F4616A23EE40DE4C", hash_generated_field = "A131BD3EB211C05E3C6DF73570243AEC")
+
+    private static final int VAL_SPARSEARRAY = 12;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:31.041 -0500", hash_original_field = "2095ADF8B52C149986F10C28FA3BF224", hash_generated_field = "B0915F7A6E4DB352FA67870120FDC8AE")
+
+    private static final int VAL_BYTEARRAY = 13;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:31.044 -0500", hash_original_field = "613E6A58DAEC126F8FD860E34F5E2A8D", hash_generated_field = "076CE7EDAA5BD7403EB30339E6786640")
+
+    private static final int VAL_STRINGARRAY = 14;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:31.046 -0500", hash_original_field = "EBE69CD9E7D947958B3D10C41B815221", hash_generated_field = "4E84FC4E833FD58450A808B308F569C1")
+
+    private static final int VAL_IBINDER = 15;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:31.048 -0500", hash_original_field = "8041CF4E9302D6B0E3CCE0A447CD4121", hash_generated_field = "0D7C7CC2E878323D6F87D50D47E3E125")
+
+    private static final int VAL_PARCELABLEARRAY = 16;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:31.051 -0500", hash_original_field = "768E4A1F344EC30F0B3676965E29D69C", hash_generated_field = "6AC2F3E2A41C5CBB0C87EBFBA40C82C5")
+
+    private static final int VAL_OBJECTARRAY = 17;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:31.053 -0500", hash_original_field = "FD4615D9996935D2F8F60C850E479ABD", hash_generated_field = "CCE7A715FCB460D5B4607A19AB0D3775")
+
+    private static final int VAL_INTARRAY = 18;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:31.056 -0500", hash_original_field = "A668CD148C3D0E46783117C1A34C5000", hash_generated_field = "32BC10EA8947FB3B0761472950236075")
+
+    private static final int VAL_LONGARRAY = 19;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:31.058 -0500", hash_original_field = "9BE6D81CB33AF3EE009076843778C6FF", hash_generated_field = "8007D2C64A8C971CD877A22E5B760585")
+
+    private static final int VAL_BYTE = 20;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:31.061 -0500", hash_original_field = "D3C211A5A9C9DD4269A987DC69FB8D06", hash_generated_field = "69C2B09C1800B12048056C3570CC73EE")
+
+    private static final int VAL_SERIALIZABLE = 21;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:31.063 -0500", hash_original_field = "E70844D5FAF56DAC881424E07AC4C5D8", hash_generated_field = "76413C216A3003CB555A68458846A3B3")
+
+    private static final int VAL_SPARSEBOOLEANARRAY = 22;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:31.065 -0500", hash_original_field = "3E2FA07DD6A432137B974F606DFF8434", hash_generated_field = "59D72A13D8A7453CC576337F712A9C20")
+
+    private static final int VAL_BOOLEANARRAY = 23;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:31.068 -0500", hash_original_field = "C5A61CBDCFAFDD4813E1951E34065965", hash_generated_field = "9EFA3FF92CCB2C8FEE3D6C5358430431")
+
+    private static final int VAL_CHARSEQUENCEARRAY = 24;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:31.070 -0500", hash_original_field = "6DB24F660C7F8E7FFFA594AEB2C918CD", hash_generated_field = "A3D419976A9106B09BDA82EB2BFFD162")
+
+    private static final int EX_SECURITY = -1;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:31.072 -0500", hash_original_field = "03D193E76AF8925C04CA8CA6361D2C6A", hash_generated_field = "F8C2B1DD68AD90CB95C1595F2C9A5242")
+
+    private static final int EX_BAD_PARCELABLE = -2;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:31.075 -0500", hash_original_field = "8D78533F648B33C086BCDCD4E53130B9", hash_generated_field = "CB37D327BBB5DFC9C44E983C8B41B091")
+
+    private static final int EX_ILLEGAL_ARGUMENT = -3;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:31.077 -0500", hash_original_field = "16D014F8B61B4C1B28ACE9079E1EC15A", hash_generated_field = "5990AECC0626B57467FE5BBFA45A5C36")
+
+    private static final int EX_NULL_POINTER = -4;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:31.079 -0500", hash_original_field = "C4CCDED77175D5174FC179324FB7B5C5", hash_generated_field = "336D3C5B9AFBD7D73F11E5473530DAD0")
+
+    private static final int EX_ILLEGAL_STATE = -5;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:31.081 -0500", hash_original_field = "E30192DA2CFEC8AF7657DFF008F87FE1", hash_generated_field = "DFC9983F0C453250258C48F81D356118")
+
+    private static final int EX_HAS_REPLY_HEADER = -128;
+    public final static Parcelable.Creator<String> STRING_CREATOR
+             = new Parcelable.Creator<String>() {
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:31.084 -0500", hash_original_method = "CF5066ADB23AB15A8F47A7B0F4466503", hash_generated_method = "00F386650A051887ED9112C5F2C23E06")
+        
+public String createFromParcel(Parcel source) {
+            return source.readString();
+        }
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:31.087 -0500", hash_original_method = "6691A777569EDCC3CEA07BFC1CA591D5", hash_generated_method = "EC55A39083ADE33958EB94A300AD0C5A")
+        
+public String[] newArray(int size) {
+            return new String[size];
+        }
+    };
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:31.416 -0500", hash_original_field = "92CA539F70081A1A7ED1F5DB7121AA6E", hash_generated_field = "6A787662DBE18F044602D72270EA27F0")
+
+    // particular classes.  Keys are the names of the classes, values are
+    // Method objects.
+    private static final HashMap<ClassLoader,HashMap<String,Parcelable.Creator>>
+        mCreators = new HashMap<ClassLoader,HashMap<String,Parcelable.Creator>>();
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.993 -0500", hash_original_field = "099BEA65529558F891E66B800CD4AD52", hash_generated_field = "6861EF2C6719FB6BE9580A330103CA5F")
+
+
+    @SuppressWarnings({"UnusedDeclaration"})
+    private int mObject;
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.997 -0500", hash_original_field = "CD428A1D2A29D7772981B2F0C2B9C0C8", hash_generated_field = "E2BD6B8F2FA33686C59551B5BF00B3B5")
+
+    @SuppressWarnings({"UnusedDeclaration"})
+    private int mOwnObject;
+    // orphaned legacy field
+    private char[] mValueCharArray;
+    
+    // orphaned legacy field
+    private float[] mValueFloatArray;
+    
+    // orphaned legacy field
+    private int[] mValueIntArray;
+    
+    // orphaned legacy field
+    private byte[] mValueByteArray;
+    
+    // orphaned legacy field
+    private Map mValueMap;
+    
+    // orphaned legacy field
+    private boolean[] mValueBooleanArray;
+    
+    // orphaned legacy field
+    private IBinder mValueIBinder;
+    
+    // orphaned legacy field
+    private List<String> mValueStringList;
+    
+    // orphaned legacy field
+    private long[] mValueLongArray;
+    
+    // orphaned legacy field
+    private List<Parcelable> mValueTypedList;
+    
+    // orphaned legacy field
+    private String[] mValueStringArray;
+    
+    // orphaned legacy field
+    private IBinder[] mValueIBinderArray;
+    
+    // orphaned legacy field
+    private byte[] mData;
+    
+    // orphaned legacy field
+    private SparseArray<Object> mValueSparseArray;
+    
+    // orphaned legacy field
+    private Object[] mValueObjectArray;
+    
+    // orphaned legacy field
+    private IInterface mValueIInterface;
+    
+    // orphaned legacy field
+    private CharSequence mValueCharSequence;
+    
+    // orphaned legacy field
+    private Parcelable[] mValueParcelableArray;
+    
+    // orphaned legacy field
+    private Serializable mValueSerializable;
+    
+    // orphaned legacy field
+    private String mValueString;
+    
+    // orphaned legacy field
+    private Bundle mValueBundle;
+    
+    // orphaned legacy field
+    private List mValueList;
+    
+    // orphaned legacy field
+    private Exception mValueException;
+    
+    // orphaned legacy field
+    private CharSequence[] mValueCharSequenceArray;
+    
+    // orphaned legacy field
+    private Parcelable mValueParcelable;
+    
+    // orphaned legacy field
+    private Object mValueObject;
+    
+    // orphaned legacy field
+    private SparseBooleanArray mValueSparseBooleanArray;
+    
+    // orphaned legacy field
+    private double[] mValueDoubleArray;
+    
+    // orphaned legacy field
+    private FileDescriptor mValueFileDescriptor;
+    
+    // orphaned legacy field
+    private Parcelable[] mValueTypedArray;
+    
+    // orphaned legacy field
+    private List<IBinder> mValueIBinderList;
+    
+    @DSModeled(DSC.BAN)
+    private Parcel(int obj){
+		init(obj);
+		/*
+		if (DEBUG_RECYCLE) {
+            mStack = new RuntimeException();
+        }
+		init(obj);
 		*/
 	}
 
@@ -1329,35 +1616,6 @@ public final class Parcel {
 
     
     @DSModeled(DSC.SAFE)
-    static FileDescriptor openFileDescriptor(String file,
-            int mode){
-		//Formerly a native function
-		return new FileDescriptor();
-	}
-
-    
-    @DSModeled(DSC.SAFE)
-    static FileDescriptor dupFileDescriptor(FileDescriptor orig){
-		//Formerly a native function
-		return orig;
-	}
-
-    
-    @DSModeled(DSC.SAFE)
-    static void closeFileDescriptor(FileDescriptor desc){
-		//Formerly a native function
-		//Return nothing
-	}
-
-    
-    @DSModeled(DSC.SAFE)
-    static void clearFileDescriptor(FileDescriptor desc){
-		//Formerly a native function
-		//Return nothing
-	}
-
-    
-    @DSModeled(DSC.SAFE)
     public final byte readByte(){
 		return (byte)getTaintInt();
 		// Original method
@@ -1856,32 +2114,6 @@ public final class Parcel {
 	}
 
     
-    static protected final Parcel obtain(int obj){
-		return new Parcel(obj);
-		// Original method
-		/*
-		{
-        final Parcel[] pool = sHolderPool;
-        synchronized (pool) {
-            Parcel p;
-            for (int i=0; i<POOL_SIZE; i++) {
-                p = pool[i];
-                if (p != null) {
-                    pool[i] = null;
-                    if (DEBUG_RECYCLE) {
-                        p.mStack = new RuntimeException();
-                    }
-                    p.init(obj);
-                    return p;
-                }
-            }
-        }
-        return new Parcel(obj);
-    }
-		*/
-	}
-
-    
     @DSModeled(DSC.SAFE)
     @Override protected void finalize(){
 		destroy();
@@ -2005,150 +2237,6 @@ public final class Parcel {
 		*/
 		//Return nothing
 	}
-
-    
-    private static final boolean DEBUG_RECYCLE = false;
-    private static final String TAG = "Parcel";
-    private static final int POOL_SIZE = 6;
-    private static final Parcel[] sOwnedPool = new Parcel[POOL_SIZE];
-    private static final Parcel[] sHolderPool = new Parcel[POOL_SIZE];
-    private static final int VAL_NULL = -1;
-    private static final int VAL_STRING = 0;
-    private static final int VAL_INTEGER = 1;
-    private static final int VAL_MAP = 2;
-    private static final int VAL_BUNDLE = 3;
-    private static final int VAL_PARCELABLE = 4;
-    private static final int VAL_SHORT = 5;
-    private static final int VAL_LONG = 6;
-    private static final int VAL_FLOAT = 7;
-    private static final int VAL_DOUBLE = 8;
-    private static final int VAL_BOOLEAN = 9;
-    private static final int VAL_CHARSEQUENCE = 10;
-    private static final int VAL_LIST  = 11;
-    private static final int VAL_SPARSEARRAY = 12;
-    private static final int VAL_BYTEARRAY = 13;
-    private static final int VAL_STRINGARRAY = 14;
-    private static final int VAL_IBINDER = 15;
-    private static final int VAL_PARCELABLEARRAY = 16;
-    private static final int VAL_OBJECTARRAY = 17;
-    private static final int VAL_INTARRAY = 18;
-    private static final int VAL_LONGARRAY = 19;
-    private static final int VAL_BYTE = 20;
-    private static final int VAL_SERIALIZABLE = 21;
-    private static final int VAL_SPARSEBOOLEANARRAY = 22;
-    private static final int VAL_BOOLEANARRAY = 23;
-    private static final int VAL_CHARSEQUENCEARRAY = 24;
-    private static final int EX_SECURITY = -1;
-    private static final int EX_BAD_PARCELABLE = -2;
-    private static final int EX_ILLEGAL_ARGUMENT = -3;
-    private static final int EX_NULL_POINTER = -4;
-    private static final int EX_ILLEGAL_STATE = -5;
-    private static final int EX_HAS_REPLY_HEADER = -128;
-    public final static Parcelable.Creator<String> STRING_CREATOR
-             = new Parcelable.Creator<String>() {
-        @DSModeled(DSC.SAFE)
-        public String createFromParcel(Parcel source) {
-            return source.readString();
-        }
-        @DSModeled(DSC.SAFE)
-        public String[] newArray(int size) {
-            return new String[size];
-        }
-    };
-    private static final HashMap<ClassLoader,HashMap<String,Parcelable.Creator>>
-        mCreators = new HashMap<ClassLoader,HashMap<String,Parcelable.Creator>>();
-    // orphaned legacy field
-    private char[] mValueCharArray;
-    
-    // orphaned legacy field
-    private float[] mValueFloatArray;
-    
-    // orphaned legacy field
-    private int[] mValueIntArray;
-    
-    // orphaned legacy field
-    private byte[] mValueByteArray;
-    
-    // orphaned legacy field
-    private Map mValueMap;
-    
-    // orphaned legacy field
-    private boolean[] mValueBooleanArray;
-    
-    // orphaned legacy field
-    private IBinder mValueIBinder;
-    
-    // orphaned legacy field
-    private List<String> mValueStringList;
-    
-    // orphaned legacy field
-    private long[] mValueLongArray;
-    
-    // orphaned legacy field
-    private List<Parcelable> mValueTypedList;
-    
-    // orphaned legacy field
-    private String[] mValueStringArray;
-    
-    // orphaned legacy field
-    private IBinder[] mValueIBinderArray;
-    
-    // orphaned legacy field
-    private byte[] mData;
-    
-    // orphaned legacy field
-    private SparseArray<Object> mValueSparseArray;
-    
-    // orphaned legacy field
-    private Object[] mValueObjectArray;
-    
-    // orphaned legacy field
-    private IInterface mValueIInterface;
-    
-    // orphaned legacy field
-    private CharSequence mValueCharSequence;
-    
-    // orphaned legacy field
-    private Parcelable[] mValueParcelableArray;
-    
-    // orphaned legacy field
-    private Serializable mValueSerializable;
-    
-    // orphaned legacy field
-    private String mValueString;
-    
-    // orphaned legacy field
-    private Bundle mValueBundle;
-    
-    // orphaned legacy field
-    private List mValueList;
-    
-    // orphaned legacy field
-    private Exception mValueException;
-    
-    // orphaned legacy field
-    private CharSequence[] mValueCharSequenceArray;
-    
-    // orphaned legacy field
-    private Parcelable mValueParcelable;
-    
-    // orphaned legacy field
-    private Object mValueObject;
-    
-    // orphaned legacy field
-    private SparseBooleanArray mValueSparseBooleanArray;
-    
-    // orphaned legacy field
-    private double[] mValueDoubleArray;
-    
-    // orphaned legacy field
-    private FileDescriptor mValueFileDescriptor;
-    
-    // orphaned legacy field
-    private Parcelable[] mValueTypedArray;
-    
-    // orphaned legacy field
-    private List<IBinder> mValueIBinderList;
     
 }
 

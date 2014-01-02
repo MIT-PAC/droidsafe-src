@@ -1,6 +1,8 @@
 package android.text;
 
 // Droidsafe Imports
+import droidsafe.runtime.*;
+import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.util.LocaleUtil;
 
@@ -9,16 +11,10 @@ import android.util.LocaleUtil;
 
 
 public class TextDirectionHeuristics {
+
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:04.369 -0500", hash_original_method = "752EA957CA9ED0F2290DA6CA047E5538", hash_generated_method = "51C0AB5FAFE47421AB195FD369FF0AA8")
     
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.745 -0400", hash_original_method = "58EF974DE9597127C18BC29D51581A83", hash_generated_method = "58EF974DE9597127C18BC29D51581A83")
-    public TextDirectionHeuristics ()
-    {
-        //Synthesized constructor
-    }
-
-
-    @DSModeled(DSC.BAN)
-    private static TriState isRtlText(int directionality) {
+private static TriState isRtlText(int directionality) {
         switch (directionality) {
             case Character.DIRECTIONALITY_LEFT_TO_RIGHT:
                 return TriState.FALSE;
@@ -30,9 +26,9 @@ public class TextDirectionHeuristics {
         }
     }
 
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:04.372 -0500", hash_original_method = "2BBF7E97F24E7C203261C928D65397D1", hash_generated_method = "C9DF7C3593B3BB3AF0E2006D5A209844")
     
-    @DSModeled(DSC.BAN)
-    private static TriState isRtlTextOrFormat(int directionality) {
+private static TriState isRtlTextOrFormat(int directionality) {
         switch (directionality) {
             case Character.DIRECTIONALITY_LEFT_TO_RIGHT:
             case Character.DIRECTIONALITY_LEFT_TO_RIGHT_EMBEDDING:
@@ -47,6 +43,10 @@ public class TextDirectionHeuristics {
                 return TriState.UNKNOWN;
         }
     }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:04.320 -0500", hash_original_field = "CF62CD3795E24E5EDB0F2DB8E3337418", hash_generated_field = "F96A5945E9017421B25B4D4FEB4BC014")
+
+    public static final TextDirectionHeuristic LTR =
+        new TextDirectionHeuristicInternal(null /* no algorithm */, false);
 
     
     private static enum TriState {
@@ -55,85 +55,47 @@ public class TextDirectionHeuristics {
 
     
     public static abstract class TextDirectionHeuristicImpl implements TextDirectionHeuristic {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.745 -0400", hash_original_field = "F6E257862B80390CD13E2E0129E87947", hash_generated_field = "E3D2FDC0F5F8FA77A83B5258D585AD07")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:04.341 -0500", hash_original_field = "AC6A49EC5BD80FA8E4AC700D6D739531", hash_generated_field = "E3D2FDC0F5F8FA77A83B5258D585AD07")
 
-        private TextDirectionAlgorithm mAlgorithm;
+        private  TextDirectionAlgorithm mAlgorithm;
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:04.344 -0500", hash_original_method = "78BC1D5C61B057EE1329E0F2DC6F9F5C", hash_generated_method = "835E7045F765BB58E91223FA73DA9C25")
         
-        @DSModeled(DSC.BAN)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.746 -0400", hash_original_method = "78BC1D5C61B057EE1329E0F2DC6F9F5C", hash_generated_method = "05B6DD8753C7F8E313E2DF2F8649E7E1")
-        public  TextDirectionHeuristicImpl(TextDirectionAlgorithm algorithm) {
+public TextDirectionHeuristicImpl(TextDirectionAlgorithm algorithm) {
             mAlgorithm = algorithm;
-            // ---------- Original Method ----------
-            //mAlgorithm = algorithm;
         }
 
+        /**
+         * Return true if the default text direction is rtl.
+         */
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:04.347 -0500", hash_original_method = "6996B95EE8A602CD6D77610A0A9C1C36", hash_generated_method = "D128DA54F5CDD559D1B53B9FB923BF61")
         
-        @DSModeled(DSC.SAFE)
-        abstract protected boolean defaultIsRtl();
+abstract protected boolean defaultIsRtl();
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:04.350 -0500", hash_original_method = "B61CE3C920740D11C38763E0606997ED", hash_generated_method = "D36FD9B83932913BC0AA2827912C4191")
         
-        @DSModeled(DSC.BAN)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.747 -0400", hash_original_method = "B61CE3C920740D11C38763E0606997ED", hash_generated_method = "9D33E584F0529D0307B0980BAB99DDD4")
-        @Override
+@Override
         public boolean isRtl(char[] chars, int start, int count) {
-            addTaint(count);
-            addTaint(start);
-            addTaint(chars[0]);
-            if(chars == null || start < 0 || count < 0 || chars.length - count < start)            
-            {
-                IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_845167777 = new IllegalArgumentException();
-                var5783EF97022AA508B74A1E3EA38534AF_845167777.addTaint(taint);
-                throw var5783EF97022AA508B74A1E3EA38534AF_845167777;
-            } //End block
-            if(mAlgorithm == null)            
-            {
-                boolean varBB32C4C1D36B053EEEB61EF2C9BEE2EA_451427832 = (defaultIsRtl());
-                                boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1982444301 = getTaintBoolean();
-                return var84E2C64F38F78BA3EA5C905AB5A2DA27_1982444301;
-            } //End block
-            boolean var531FF2B696A577BD7DBE83F7CFAD64F3_424938159 = (doCheck(chars, start, count));
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_750810186 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_750810186;
-            // ---------- Original Method ----------
-            //if (chars == null || start < 0 || count < 0 || chars.length - count < start) {
-                //throw new IllegalArgumentException();
-            //}
-            //if (mAlgorithm == null) {
-                //return defaultIsRtl();
-            //}
-            //return doCheck(chars, start, count);
+            if (chars == null || start < 0 || count < 0 || chars.length - count < start) {
+                throw new IllegalArgumentException();
+            }
+            if (mAlgorithm == null) {
+                return defaultIsRtl();
+            }
+            return doCheck(chars, start, count);
         }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:04.353 -0500", hash_original_method = "F9BBF1A80AA076481C35E4EEAF375E25", hash_generated_method = "A33829D1716C7146D006AEA226146E9C")
         
-        @DSModeled(DSC.BAN)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.748 -0400", hash_original_method = "F9BBF1A80AA076481C35E4EEAF375E25", hash_generated_method = "FC340C4380C8AA584FE79B3381C89BC1")
-        private boolean doCheck(char[] chars, int start, int count) {
-            addTaint(count);
-            addTaint(start);
-            addTaint(chars[0]);
-switch(mAlgorithm.checkRtl(chars, start, count)){
-            case TRUE:
-            boolean varB326B5062B2F0E69046810717534CB09_386265562 = (true);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_989286468 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_989286468;
-            case FALSE:
-            boolean var68934A3E9455FA72420237EB05902327_2113927090 = (false);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_225247352 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_225247352;
-            default:
-            boolean varBB32C4C1D36B053EEEB61EF2C9BEE2EA_64355537 = (defaultIsRtl());
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_16995811 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_16995811;
-}
-            // ---------- Original Method ----------
-            //switch(mAlgorithm.checkRtl(chars, start, count)) {
-                //case TRUE:
-                    //return true;
-                //case FALSE:
-                    //return false;
-                //default:
-                    //return defaultIsRtl();
-            //}
+private boolean doCheck(char[] chars, int start, int count) {
+            switch(mAlgorithm.checkRtl(chars, start, count)) {
+                case TRUE:
+                    return true;
+                case FALSE:
+                    return false;
+                default:
+                    return defaultIsRtl();
+            }
         }
 
         
@@ -142,31 +104,23 @@ switch(mAlgorithm.checkRtl(chars, start, count)){
 
     
     private static class TextDirectionHeuristicInternal extends TextDirectionHeuristicImpl {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.748 -0400", hash_original_field = "9BDDA11E4292E9F50844540E81ABF998", hash_generated_field = "E35325D3CC72CD89F5834771DD655801")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:04.358 -0500", hash_original_field = "13EAD5D249DED3E29B625E1E15162FB5", hash_generated_field = "E35325D3CC72CD89F5834771DD655801")
 
-        private boolean mDefaultIsRtl;
+        private  boolean mDefaultIsRtl;
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:04.361 -0500", hash_original_method = "DF39989E195592DC6431878B17C9155B", hash_generated_method = "C205829268BA5A70B1D8D2BF6B5B02CD")
         
-        @DSModeled(DSC.BAN)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.749 -0400", hash_original_method = "DF39989E195592DC6431878B17C9155B", hash_generated_method = "1C0C94CAFACB26E5AAF7AB15601AF2EB")
-        private  TextDirectionHeuristicInternal(TextDirectionAlgorithm algorithm,
+private TextDirectionHeuristicInternal(TextDirectionAlgorithm algorithm,
                 boolean defaultIsRtl) {
             super(algorithm);
-            addTaint(algorithm.getTaint());
             mDefaultIsRtl = defaultIsRtl;
-            // ---------- Original Method ----------
-            //mDefaultIsRtl = defaultIsRtl;
         }
 
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:04.364 -0500", hash_original_method = "F33559B09616EA1059BD515D9BD28DCA", hash_generated_method = "60FED547FA85A8E4EEE847D941A20138")
         
-                @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.750 -0400", hash_original_method = "F33559B09616EA1059BD515D9BD28DCA", hash_generated_method = "3B84FEBF18F0D69B3FB54637BCA36559")
-        @Override
+@Override
         protected boolean defaultIsRtl() {
-            boolean var9BDDA11E4292E9F50844540E81ABF998_1747676578 = (mDefaultIsRtl);
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1933561685 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1933561685;
-            // ---------- Original Method ----------
-            //return mDefaultIsRtl;
+            return mDefaultIsRtl;
         }
 
         
@@ -175,144 +129,99 @@ switch(mAlgorithm.checkRtl(chars, start, count)){
 
     
     public static class FirstStrong implements TextDirectionAlgorithm {
-        
-        @DSModeled(DSC.BAN)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.750 -0400", hash_original_method = "77800305F201A2CE86A750D63435A8FC", hash_generated_method = "BD69D77294A463FBAD983B34950F9BCE")
-        private  FirstStrong() {
-            // ---------- Original Method ----------
-        }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:04.385 -0500", hash_original_field = "3EE67EB44D7BAB4F1CE4D811DC35F490", hash_generated_field = "E0B2FB089B175E1E869ABC9E4BB92E5B")
 
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.752 -0400", hash_original_method = "B12778B9891AAFECC2CB8B0C655200C4", hash_generated_method = "92389B9C7D97F347A96EA58121CA61BA")
-        @Override
-        public TriState checkRtl(char[] text, int start, int count) {
-            addTaint(count);
-            addTaint(start);
-            addTaint(text[0]);
-            TriState result = TriState.UNKNOWN;
-for(int i = start, e = start + count;i < e && result == TriState.UNKNOWN;++i)
-            {
-                result = isRtlTextOrFormat(Character.getDirectionality(text[i]));
-            } //End block
-TriState varDC838461EE2FA0CA4C9BBB70A15456B0_770460623 =             result;
-            varDC838461EE2FA0CA4C9BBB70A15456B0_770460623.addTaint(taint);
-            return varDC838461EE2FA0CA4C9BBB70A15456B0_770460623;
-            // ---------- Original Method ----------
-            //TriState result = TriState.UNKNOWN;
-            //for (int i = start, e = start + count; i < e && result == TriState.UNKNOWN; ++i) {
-                //result = isRtlTextOrFormat(Character.getDirectionality(text[i]));
-            //}
-            //return result;
-        }
-
-        
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.752 -0400", hash_original_field = "B7169C7C8B5B3672DE3844F17769F964", hash_generated_field = "E0B2FB089B175E1E869ABC9E4BB92E5B")
 
         public static final FirstStrong INSTANCE = new FirstStrong();
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:04.381 -0500", hash_original_method = "77800305F201A2CE86A750D63435A8FC", hash_generated_method = "1022AB52D2F89377DB2D7E24719DC90E")
+        
+private FirstStrong() {
+        }
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:04.378 -0500", hash_original_method = "B12778B9891AAFECC2CB8B0C655200C4", hash_generated_method = "E1AF42036FC6A8E6C748F37056819EA6")
+        
+@Override
+        public TriState checkRtl(char[] text, int start, int count) {
+            TriState result = TriState.UNKNOWN;
+            for (int i = start, e = start + count; i < e && result == TriState.UNKNOWN; ++i) {
+                result = isRtlTextOrFormat(Character.getDirectionality(text[i]));
+            }
+            return result;
+        }
     }
 
 
     
     public static class AnyStrong implements TextDirectionAlgorithm {
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.752 -0400", hash_original_field = "E86A07DD9C9BFE9688C9FAEE4BE688D7", hash_generated_field = "407F935E47F07BDB50023430051DDAEC")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:04.400 -0500", hash_original_field = "30FABEF1DCD8CA88BE3EF33E8E0639C2", hash_generated_field = "816BE95EB8392CC0E9496A4A3A0FD859")
 
-        private boolean mLookForRtl;
-        
-        @DSModeled(DSC.BAN)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.753 -0400", hash_original_method = "CE1C7FC082B7BD7DCEB5DEACBA006400", hash_generated_method = "FBA640D39B46307F538717C3F8D5574E")
-        private  AnyStrong(boolean lookForRtl) {
-            this.mLookForRtl = lookForRtl;
-            // ---------- Original Method ----------
-            //this.mLookForRtl = lookForRtl;
-        }
-
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.754 -0400", hash_original_method = "2D65014765DBEAE21140F9644F3DEE55", hash_generated_method = "B9BE5531E3CBFFE0FC50DCAF4B38B105")
-        @Override
-        public TriState checkRtl(char[] text, int start, int count) {
-            addTaint(count);
-            addTaint(start);
-            addTaint(text[0]);
-            boolean haveUnlookedFor = false;
-for(int i = start, e = start + count;i < e;++i)
-            {
-switch(isRtlText(Character.getDirectionality(text[i]))){
-                case TRUE:
-                if(mLookForRtl)                
-                {
-TriState varD972E7D14CF2543E1174427420693D1A_1491872053 =                     TriState.TRUE;
-                    varD972E7D14CF2543E1174427420693D1A_1491872053.addTaint(taint);
-                    return varD972E7D14CF2543E1174427420693D1A_1491872053;
-                } //End block
-                haveUnlookedFor = true;
-                break;
-                case FALSE:
-                if(!mLookForRtl)                
-                {
-TriState varCD0CFCF9CEBCBA1E3C29E021CD05E467_878276583 =                     TriState.FALSE;
-                    varCD0CFCF9CEBCBA1E3C29E021CD05E467_878276583.addTaint(taint);
-                    return varCD0CFCF9CEBCBA1E3C29E021CD05E467_878276583;
-                } //End block
-                haveUnlookedFor = true;
-                break;
-                default:
-                break;
-}
-            } //End block
-            if(haveUnlookedFor)            
-            {
-TriState var23A9CE6815D15B54439EE059A44514CB_1752625752 =                 mLookForRtl ? TriState.FALSE : TriState.TRUE;
-                var23A9CE6815D15B54439EE059A44514CB_1752625752.addTaint(taint);
-                return var23A9CE6815D15B54439EE059A44514CB_1752625752;
-            } //End block
-TriState var485D0EAC5426E5CF6B2DFC2FF63C06FB_1452865964 =             TriState.UNKNOWN;
-            var485D0EAC5426E5CF6B2DFC2FF63C06FB_1452865964.addTaint(taint);
-            return var485D0EAC5426E5CF6B2DFC2FF63C06FB_1452865964;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
-        }
-
-        
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.755 -0400", hash_original_field = "AC9EF564648DAA5541D919C29D6FDF92", hash_generated_field = "816BE95EB8392CC0E9496A4A3A0FD859")
 
         public static final AnyStrong INSTANCE_RTL = new AnyStrong(true);
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.755 -0400", hash_original_field = "AA7B41081238CEFD92491FFA97F665D8", hash_generated_field = "0C39513C6CBA973C236E9D8F6EB932D3")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:04.403 -0500", hash_original_field = "3A6421B9E017B1B953572DE1404CD4A8", hash_generated_field = "0C39513C6CBA973C236E9D8F6EB932D3")
 
         public static final AnyStrong INSTANCE_LTR = new AnyStrong(false);
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:04.390 -0500", hash_original_field = "4CD883064B23F0C9AED5C499F64B4BCF", hash_generated_field = "407F935E47F07BDB50023430051DDAEC")
+
+        private  boolean mLookForRtl;
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:04.397 -0500", hash_original_method = "CE1C7FC082B7BD7DCEB5DEACBA006400", hash_generated_method = "B3AF76681B7B3EDA504A86B9C505345F")
+        
+private AnyStrong(boolean lookForRtl) {
+            this.mLookForRtl = lookForRtl;
+        }
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:04.394 -0500", hash_original_method = "2D65014765DBEAE21140F9644F3DEE55", hash_generated_method = "7A6689A2EC5553ADC2B2F96B6C356267")
+        
+@Override
+        public TriState checkRtl(char[] text, int start, int count) {
+            boolean haveUnlookedFor = false;
+            for (int i = start, e = start + count; i < e; ++i) {
+                switch (isRtlText(Character.getDirectionality(text[i]))) {
+                    case TRUE:
+                        if (mLookForRtl) {
+                            return TriState.TRUE;
+                        }
+                        haveUnlookedFor = true;
+                        break;
+                    case FALSE:
+                        if (!mLookForRtl) {
+                            return TriState.FALSE;
+                        }
+                        haveUnlookedFor = true;
+                        break;
+                    default:
+                        break;
+                }
+            }
+            if (haveUnlookedFor) {
+                return mLookForRtl ? TriState.FALSE : TriState.TRUE;
+            }
+            return TriState.UNKNOWN;
+        }
     }
 
 
     
     public static class TextDirectionHeuristicLocale extends TextDirectionHeuristicImpl {
-        
-        @DSModeled(DSC.SAFE)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.755 -0400", hash_original_method = "CBB334D6CA70EC7E7043C3529CC3BCF6", hash_generated_method = "58F00443FB0688075F58A0CB5CD3BD72")
-        public  TextDirectionHeuristicLocale() {
-            super(null);
-            // ---------- Original Method ----------
-        }
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:04.415 -0500", hash_original_field = "C7D4E73351A56400CDCDFB799F49907D", hash_generated_field = "69EA35186DB990277D8AF9B472E41E71")
 
-        
-        @DSModeled(DSC.BAN)
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.756 -0400", hash_original_method = "CD13B75E835D71E46C5AAA6D1CEDF13D", hash_generated_method = "895ACB0F9FE7ED48F9C92F1749A85710")
-        @Override
-        protected boolean defaultIsRtl() {
-            final int dir = LocaleUtil.getLayoutDirectionFromLocale(java.util.Locale.getDefault());
-            boolean varE79FF023BBA8C12CAF58E0246B1CDA30_1486071648 = ((dir == LocaleUtil.TEXT_LAYOUT_DIRECTION_RTL_DO_NOT_USE));
-                        boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1855587261 = getTaintBoolean();
-            return var84E2C64F38F78BA3EA5C905AB5A2DA27_1855587261;
-            // ---------- Original Method ----------
-            //final int dir = LocaleUtil.getLayoutDirectionFromLocale(java.util.Locale.getDefault());
-            //return (dir == LocaleUtil.TEXT_LAYOUT_DIRECTION_RTL_DO_NOT_USE);
-        }
-
-        
-        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.756 -0400", hash_original_field = "7ABF1BD9117D0D4BE56238CC555DFFF3", hash_generated_field = "69EA35186DB990277D8AF9B472E41E71")
 
         public static final TextDirectionHeuristicLocale INSTANCE =
                 new TextDirectionHeuristicLocale();
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:04.409 -0500", hash_original_method = "CBB334D6CA70EC7E7043C3529CC3BCF6", hash_generated_method = "1187609E76BC4A6D7EC2495E32911E26")
+        
+public TextDirectionHeuristicLocale() {
+            super(null);
+        }
+
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:04.411 -0500", hash_original_method = "CD13B75E835D71E46C5AAA6D1CEDF13D", hash_generated_method = "8094082888A6A7BFA8C6D84CB53C8E91")
+        
+@Override
+        protected boolean defaultIsRtl() {
+            final int dir = LocaleUtil.getLayoutDirectionFromLocale(java.util.Locale.getDefault());
+            return (dir == LocaleUtil.TEXT_LAYOUT_DIRECTION_RTL_DO_NOT_USE);
+        }
     }
 
 
@@ -321,29 +230,30 @@ TriState var485D0EAC5426E5CF6B2DFC2FF63C06FB_1452865964 =             TriState.U
         
         TriState checkRtl(char[] text, int start, int count);
     }
-    
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.756 -0400", hash_original_field = "BDE40E8AF5BF161643A7B05F7DAF93D6", hash_generated_field = "7788A380E799C032FC116D4B90B74577")
-
-    public static final TextDirectionHeuristic LTR =
-        new TextDirectionHeuristicInternal(null , false);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.757 -0400", hash_original_field = "75688D5B3344E94CCD5F6019B4218434", hash_generated_field = "B3047D91C0433367D339C9AE025D70B2")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:04.323 -0500", hash_original_field = "6A6BA95E363B72C9B2697C9029D2F43F", hash_generated_field = "EDCE2C95226AB1016DB66CB22F146B52")
 
     public static final TextDirectionHeuristic RTL =
-        new TextDirectionHeuristicInternal(null , true);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.757 -0400", hash_original_field = "C6D3046BCA0CD9B3F315C6C0ED4981FF", hash_generated_field = "FB19007988632662E44B0BD2939BDCF4")
+        new TextDirectionHeuristicInternal(null /* no algorithm */, true);
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:04.326 -0500", hash_original_field = "3696F32B662DD695B8BC5E7B3F191876", hash_generated_field = "FB19007988632662E44B0BD2939BDCF4")
 
     public static final TextDirectionHeuristic FIRSTSTRONG_LTR =
         new TextDirectionHeuristicInternal(FirstStrong.INSTANCE, false);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.757 -0400", hash_original_field = "ACDBB8BF04B215BB127765C04E28BB37", hash_generated_field = "2A6F08FF0743B6D3EED006E185E1C41F")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:04.329 -0500", hash_original_field = "6EF0C5EE7B505DBBFCF88CF6F52ADECA", hash_generated_field = "2A6F08FF0743B6D3EED006E185E1C41F")
 
     public static final TextDirectionHeuristic FIRSTSTRONG_RTL =
         new TextDirectionHeuristicInternal(FirstStrong.INSTANCE, true);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.757 -0400", hash_original_field = "70CF25ED4801AE2D4DA8433DFF61788C", hash_generated_field = "A67ED36ACE0121EC842BF4F8BE348FCA")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:04.332 -0500", hash_original_field = "5985D8E61AD738E8764D3F1F761DCA6B", hash_generated_field = "A67ED36ACE0121EC842BF4F8BE348FCA")
 
     public static final TextDirectionHeuristic ANYRTL_LTR =
         new TextDirectionHeuristicInternal(AnyStrong.INSTANCE_RTL, false);
-    @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.757 -0400", hash_original_field = "97DF110BB6609B7CB4462011AC34948E", hash_generated_field = "F0612598BFF1E67595D8ACA39D00E56D")
+@DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:04.335 -0500", hash_original_field = "F90A25A29820EB47E2CB4844A5E3E650", hash_generated_field = "F0612598BFF1E67595D8ACA39D00E56D")
 
     public static final TextDirectionHeuristic LOCALE = TextDirectionHeuristicLocale.INSTANCE;
+    
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.745 -0400", hash_original_method = "58EF974DE9597127C18BC29D51581A83", hash_generated_method = "58EF974DE9597127C18BC29D51581A83")
+    public TextDirectionHeuristics ()
+    {
+        //Synthesized constructor
+    }
 }
 
