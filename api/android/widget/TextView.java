@@ -400,7 +400,6 @@ private static int extractRangeEndFromLong(long range) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.319 -0500", hash_original_field = "B31ADBE0719B7B69EDAEB4A1C7EA7A09", hash_generated_field = "F28951B95CC06B6EA971BC050BE7DE22")
 
 
-    @DSVAModeled
     private ColorStateList mTextColor;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.322 -0500", hash_original_field = "1A8A07EEE22FF4F1A21EA9577A682CF3", hash_generated_field = "DDC7D6F23AA3E68217EEBC390EBBF804")
 
@@ -591,6 +590,7 @@ private static int extractRangeEndFromLong(long range) {
 
 
     @ViewDebug.ExportedProperty(category = "text")
+    @DSVAModeled
     private CharSequence            mText;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:20.377 -0500", hash_original_field = "42E628F60C958E8C05B8C414894669BE", hash_generated_field = "30221785C9497266E9C8ABBDFDCBE7EC")
 
