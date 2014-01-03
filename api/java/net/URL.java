@@ -53,31 +53,39 @@ public static synchronized void setURLStreamHandlerFactory(URLStreamHandlerFacto
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.747 -0500", hash_original_field = "DE3F28962485CE99CA97D0A480B93596", hash_generated_field = "512C13BA7A4120A610964F395EA31E91")
 
 
+    @DSVAModeled
     private String protocol;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.749 -0500", hash_original_field = "246C0F9F2C0270494BEB2E9C6833888B", hash_generated_field = "AC50B8E8CEC0F955316DE9A8EC0AB5AE")
 
+    @DSVAModeled
     private String authority;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.752 -0500", hash_original_field = "3EBF9FC23C14AE1E55EAA4D77C46C987", hash_generated_field = "6D420698033AD4B037D630A04933A2DD")
 
+    @DSVAModeled
     private String host;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.754 -0500", hash_original_field = "BAF684EECB20D799A434AFCF1B13F01D", hash_generated_field = "F51DF048A4B5B6B4A61A3652544F4757")
 
     private int port = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.756 -0500", hash_original_field = "71FDB50C85529723B422EF50FDC30702", hash_generated_field = "30FC605F61F5025973295CA9594B2C5A")
 
+    @DSVAModeled
     private String file;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.758 -0500", hash_original_field = "F33091824EB9F51BA1B1D156BD282F5F", hash_generated_field = "4B296BDB98B3E9CBEDF6971A25928318")
 
+    @DSVAModeled
     private String ref;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.761 -0500", hash_original_field = "10F5F4BA00300524BD223470F05A568F", hash_generated_field = "BED672F8886D4042083406EE52B803AE")
 
 
+    @DSVAModeled
     private transient String userInfo;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.763 -0500", hash_original_field = "4936DBCD90EF1129A7D9F03C4DB55EE0", hash_generated_field = "1E845389D3352EECA0945BADE902EA26")
 
+    @DSVAModeled
     private transient String path;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.765 -0500", hash_original_field = "088250EB717186C03CE550061F0A72FD", hash_generated_field = "296DE38AE03D10320738C7EA0F932C4A")
 
+    @DSVAModeled
     private transient String query;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.768 -0500", hash_original_field = "3EC59952C66038F01917A6F0E7AE443B", hash_generated_field = "9DB4BB741418299310AFA5D983E7DA2C")
 

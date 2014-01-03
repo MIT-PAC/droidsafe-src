@@ -237,6 +237,7 @@ public static File createTempFile(String prefix, String suffix, File directory)
     public static  String pathSeparator;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.429 -0500", hash_original_field = "4936DBCD90EF1129A7D9F03C4DB55EE0", hash_generated_field = "E58B218DC2BC9CF2BD65F7BE2F7C20BE")
 
+    @DSVAModeled
     private String path;
 
     /**

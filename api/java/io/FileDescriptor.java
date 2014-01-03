@@ -26,6 +26,7 @@ public final class FileDescriptor {
     public static final FileDescriptor err = new FileDescriptor();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.706 -0500", hash_original_field = "D17F2DEAE17EE032C422372F031D91E8", hash_generated_field = "AD84990C5A466F07845F94B14109703E")
 
+    @DSVAModeled
     private int descriptor = -1;
 
     /**

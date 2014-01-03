@@ -42,6 +42,7 @@ public static synchronized void setSocketImplFactory(SocketImplFactory fac)
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.705 -0500", hash_original_field = "76382137C184A183F2BF2D8583A90AEC", hash_generated_field = "76382137C184A183F2BF2D8583A90AEC")
 
 
+    @DSVAModeled
      SocketImpl impl;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.707 -0500", hash_original_field = "CA775536D3A7F4013C2E9C464BE24463", hash_generated_field = "EE0BB8F1739D62A5A5C8EDF7D478A66B")
 

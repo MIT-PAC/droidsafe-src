@@ -165,6 +165,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 
     private Application mApplication;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.106 -0500", hash_original_field = "1811495D939DB843870F6315E04555CC", hash_generated_field = "1811495D939DB843870F6315E04555CC")
+ @DSVAModeled
  Intent mIntent;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.112 -0500", hash_original_field = "FC166AFC662871D7EC38777C0105881C", hash_generated_field = "1B40E7C57A0B1682389BAE16521C0844")
 

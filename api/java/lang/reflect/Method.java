@@ -127,14 +127,17 @@ public int compare(Method a, Method b) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.449 -0500", hash_original_field = "241D06F27490B4FC35F16806876AF0D3", hash_generated_field = "EC96049C106D95C970CBF94E8CE21744")
 
 
+    @DSVAModeled
     private Class<?> declaringClass;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.452 -0500", hash_original_field = "BF45F7481B8091DE3CBF80E94F7F940B", hash_generated_field = "531F96E2AEBFB44CD229EC4CB1F012B0")
 
 
+    @DSVAModeled
     private String name;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.454 -0500", hash_original_field = "6A17A418C19B2E2A1B1FDDDFEF7489B2", hash_generated_field = "2BEA8A3EFDFBD76D3A4CCA6C3AC7E53C")
 
 
+    @DSVAModeled
     private Class<?>[] parameterTypes;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.456 -0500", hash_original_field = "0166CFA676A3372FA7BAE30D743E0654", hash_generated_field = "2A0AC8F9632DF82B378D2F01BC74BDF4")
 
@@ -143,6 +146,7 @@ public int compare(Method a, Method b) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.459 -0500", hash_original_field = "1E56956502169CC95540A786BAA638AD", hash_generated_field = "052C26419A9A6CDFB48BC17097CACAE9")
 
 
+    @DSVAModeled
     private Class<?> returnType;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.461 -0500", hash_original_field = "1086E50AEBD292B3AD2410822F2C4F08", hash_generated_field = "924C48D07F65387E616D3CE31DE5954D")
 

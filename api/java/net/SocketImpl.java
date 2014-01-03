@@ -17,15 +17,19 @@ import java.io.OutputStream;
 public abstract class SocketImpl implements SocketOptions {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.273 -0500", hash_original_field = "FDCE7272CFC91A6374FBF7F54D5CC8E4", hash_generated_field = "3EF85E4B8326DFDFB5F1248DB5848FBE")
 
+    @DSVAModeled
     protected InetAddress address;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.275 -0500", hash_original_field = "5A948EF636511EF149269A68FE278AED", hash_generated_field = "C021A045CC358C8C262F3483738B3278")
 
+    @DSVAModeled
     protected int port;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.277 -0500", hash_original_field = "DC35B29CA7114A0CAB311A30B93CBE5F", hash_generated_field = "22B1DDEE70BE0A6499271C452045F538")
 
+    @DSVAModeled
     protected FileDescriptor fd;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.279 -0500", hash_original_field = "375BC793FA524CA3913F5FC07B349157", hash_generated_field = "ACF030B7409F7B39EDB4C92454C3B34B")
 
+    @DSVAModeled
     protected int localport;
     
     @DSModeled(DSC.SAFE)

@@ -39,12 +39,15 @@ public static InetSocketAddress createUnresolved(String host, int port) {
     private static final long serialVersionUID = 5076001401234631237L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.619 -0500", hash_original_field = "AD87F1710B0BBE13E418BD36FE4E24C7", hash_generated_field = "0B6CE69CF925D6E46B22FFB8B45B7F59")
 
+    @DSVAModeled
     private  InetAddress addr;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.622 -0500", hash_original_field = "6B66041FD39815DF98C48C22668D1653", hash_generated_field = "A7530665071F24FF1A9052578197759B")
 
+    @DSVAModeled
     private  String hostname;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.624 -0500", hash_original_field = "5A948EF636511EF149269A68FE278AED", hash_generated_field = "D40522EE9D0571A9162D4F847D658065")
 
+    @DSVAModeled
     private  int port;
 
     /**

@@ -22,10 +22,12 @@ public final class Constructor<T> extends AccessibleObject implements GenericDec
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.840 -0500", hash_original_field = "A496C5D8F7CD0CB9CA97840555DF2AAA", hash_generated_field = "A496C5D8F7CD0CB9CA97840555DF2AAA")
 
 
+    @DSVAModeled
     Class<T> declaringClass;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.842 -0500", hash_original_field = "6A17A418C19B2E2A1B1FDDDFEF7489B2", hash_generated_field = "6A17A418C19B2E2A1B1FDDDFEF7489B2")
 
 
+    @DSVAModeled
     Class<?>[] parameterTypes;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.844 -0500", hash_original_field = "0166CFA676A3372FA7BAE30D743E0654", hash_generated_field = "0166CFA676A3372FA7BAE30D743E0654")
 

@@ -100,9 +100,11 @@ public ComponentName[] newArray(int size) {
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:07.560 -0500", hash_original_field = "024AAB9E2577CC3DE3304162F102B92C", hash_generated_field = "D6E102019562022F9DE7C9915C7FD917")
 
+    @DSVAModeled
     private  String mPackage;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:07.562 -0500", hash_original_field = "7B9BED5A2E35C35D1D3CD4CF0C575024", hash_generated_field = "5E2CA74CC8E570ED6932C7E63B69D503")
 
+    @DSVAModeled
     private  String mClass;
 
     /**

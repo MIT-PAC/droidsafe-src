@@ -1624,27 +1624,34 @@ public Intent[] newArray(int size) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.262 -0500", hash_original_field = "8C9CE7EB6713765D87B246A6B527F11C", hash_generated_field = "6BA7274A46303AB4A280C73477809BB1")
 
 
+    @DSVAModeled
     private String mAction;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.264 -0500", hash_original_field = "5D8362EBD99622D5EB2A35214E4F749B", hash_generated_field = "EAE374FAE80C7320375D0E6D6C17A234")
 
+    @DSVAModeled
     private Uri mData;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.266 -0500", hash_original_field = "1672B69A08B1383BA3D3C191D3C06566", hash_generated_field = "DA7F98239A4F122D17620AC61DF29F55")
 
+    @DSVAModeled
     private String mType;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.268 -0500", hash_original_field = "024AAB9E2577CC3DE3304162F102B92C", hash_generated_field = "D6E102019562022F9DE7C9915C7FD917")
 
+    @DSVAModeled
     private String mPackage;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.270 -0500", hash_original_field = "FC166AFC662871D7EC38777C0105881C", hash_generated_field = "1B40E7C57A0B1682389BAE16521C0844")
 
+    @DSVAModeled
     private ComponentName mComponent;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.272 -0500", hash_original_field = "4E5A87EA4636A8ACF68875B877F3A7B8", hash_generated_field = "43F71E9173849705E01112D0229448B4")
 
+    @DSVAModeled
     private int mFlags;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.275 -0500", hash_original_field = "F5406B98105BE593D67B771784EBBF5F", hash_generated_field = "0CC4E2884DD354D66A438C7E26DB89B1")
 
     private HashSet<String> mCategories;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.276 -0500", hash_original_field = "8E33C9E28D87B1286C4160446ABF7B5C", hash_generated_field = "5596C79D633F3A9F64294D3BD6D43156")
 
+    @DSVAModeled
     private Bundle mExtras;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.278 -0500", hash_original_field = "708E5F39540EB50A3784AFB8B598ECB4", hash_generated_field = "B906B02E252E86FB4170D1D8409B9103")
 

@@ -450,6 +450,7 @@ private static byte[] ipv4MappedToIPv4(byte[] mappedAddress) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.205 -0500", hash_original_field = "1B7A53B08CE768344D84B69A12503624", hash_generated_field = "1B7A53B08CE768344D84B69A12503624")
 
 
+    @DSVAModeled
     String hostName;
 
     /**

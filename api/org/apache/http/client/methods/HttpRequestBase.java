@@ -32,6 +32,7 @@ public abstract class HttpRequestBase extends AbstractHttpMessage implements Htt
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:44.137 -0500", hash_original_field = "1154143EF3A042E6515BD6D5B42C64B6", hash_generated_field = "DDFAECCF21F90F28142F5C866534A5C3")
 
     
+    @DSVAModeled
     private URI uri;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:44.139 -0500", hash_original_field = "CD3008586A4079C953F39C8A5CFFD1A4", hash_generated_field = "9BD569E8B5A75FB995CED8041D010CC7")
 
