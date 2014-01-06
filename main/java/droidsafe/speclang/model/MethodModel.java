@@ -180,7 +180,7 @@ public class MethodModel extends ModelChangeSupport
     this.isNative = originalMethod.getSootMethod().isNative();
     this.permissions = Permissions.v().getPermissions(originalMethod.getSootMethod());
     if (originalMethod.hasReceiver()) {
-      Object receiver = originalMethod.getReceiver();
+      ArgumentValue receiver = originalMethod.getReceiverValues();
       if (receiver instanceof ConcreteListArgumentValue) {
           this.receiverValue = ((ConcreteListArgumentValue) receiver).toStringPretty().toString();
       }

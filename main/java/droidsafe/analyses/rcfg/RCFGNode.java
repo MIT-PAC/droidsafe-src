@@ -1,8 +1,11 @@
 package droidsafe.analyses.rcfg;
 
+import java.util.Collection;
+import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import org.slf4j.Logger;
@@ -35,7 +38,7 @@ public class RCFGNode implements PTAMethodInformation {
     /** The edge representing the Input Event entry point */
 	private PTAContext eventContext;
 	/** The list of output events associated with the input event */
-	private Set<OutputEvent> outputEvents;
+	private Map<Edge, OutputEvent> outputEvents;
 	/** the invoke expression that triggers the input event */
 	private InvokeExpr invokeExpr;
 
@@ -43,7 +46,7 @@ public class RCFGNode implements PTAMethodInformation {
 	 * Create a new RCFG Node with the given input event entry edge.
 	 */
 	public RCFGNode(Edge entryEdge) {
-		outputEvents = new LinkedHashSet<OutputEvent>();
+		outputEvents = new LinkedHashMap<Edge, OutputEvent>();
 		this.eventContext = new PTAContext(ContextType.EVENT_CONTEXT, entryEdge);
 		if (entryEdge.srcStmt().containsInvokeExpr())
 		    invokeExpr = (InvokeExpr)entryEdge.srcStmt().getInvokeExpr();
@@ -66,11 +69,31 @@ public class RCFGNode implements PTAMethodInformation {
 	/**
 	 * Add a new output event to this input event rCFG node.
 	 */
-	public void addOutputEvent(OutputEvent e) {
-		if (outputEvents.add(e))
-		    logger.debug("Found output event: {} {}", e.getContext(ContextType.ONE_CFA));
+	public void addOutputEvent(Edge edge, OutputEvent oe) {
+	    if (outputEvents.containsKey(edge)) {
+	        logger.error("Creating OutputEvent with Edge already in RCFGNode");
+	        droidsafe.main.Main.exit(1);
+	    }
+	    
+		outputEvents.put(edge, oe);
+		logger.debug("Found output event: {}", oe.getContext(ContextType.ONE_CFA));
 	}
 
+	
+	/**
+	 * Does the rcfg node contain an output event for the given edge
+	 */
+	public boolean hasOutputEventEdge(Edge e) {
+	    return outputEvents.containsKey(e);
+	}
+	
+	/**
+	 * Return the output event associated with the edge.
+	 */
+	public OutputEvent getOutputEvent(Edge e) {
+	    return outputEvents.get(e);
+	}
+	
 	/**
 	 * Return the SootMethod for the entry point.
 	 */
@@ -81,8 +104,8 @@ public class RCFGNode implements PTAMethodInformation {
 	/**
 	 * Return list of all output events for this node.
 	 */
-	public Set<OutputEvent> getOutputEvents() {
-		return outputEvents;
+	public Collection<OutputEvent> getOutputEvents() {
+		return outputEvents.values();
 	}
 
 	/**
@@ -99,7 +122,7 @@ public class RCFGNode implements PTAMethodInformation {
 		StringBuilder str = new StringBuilder();
 		
 		str.append(getEntryPoint() + "\n");
-		for (OutputEvent oe : outputEvents) {
+		for (OutputEvent oe : getOutputEvents()) {
 			str.append("\t" + oe.toString().replaceAll("\n", "\n\t") + "\n");
 		}
 		

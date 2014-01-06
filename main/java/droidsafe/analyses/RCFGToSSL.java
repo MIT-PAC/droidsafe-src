@@ -123,7 +123,7 @@ public class RCFGToSSL {
 	 * Create a method from the rCFG node's entry point (input event).
 	 */
 	private Method makeInputEventMethod(RCFGNode node) {
-	    Object receiver = makeMethodReceiver(node);
+	    ArgumentValue receiver = makeMethodReceiver(node);
 
 	    ArgumentValue[] args = new ArgumentValue[node.getNumArgs()];
 
@@ -164,7 +164,7 @@ public class RCFGToSSL {
 			}
 		}
 
-		Object receiver = makeMethodReceiver(oe);
+		ArgumentValue receiver = makeMethodReceiver(oe);
 		Method method = new Method(oe.getTarget(), oe, args, receiver);	
 		
 		logger.info("Created method with target: {}", method.getSootMethod());
@@ -181,7 +181,7 @@ public class RCFGToSSL {
 	 * Given the possible presence of a receiver for a method, query the VA for a result
 	 * and if no result, just return type.
 	 */
-	private Object makeMethodReceiver(PTAMethodInformation method) {
+	private ArgumentValue makeMethodReceiver(PTAMethodInformation method) {
 	    //if no receiver, then return null
 	    if (!method.hasReceiver())
 	        return null;

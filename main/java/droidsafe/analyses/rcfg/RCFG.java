@@ -76,7 +76,7 @@ import droidsafe.utils.Utils;
  * @author mgordon
  *
  */
-public class RCFG implements CGContextVisitor {
+public class RCFG  {
     /** logger object */
     private static final Logger logger = LoggerFactory.getLogger(RCFG.class);
     /** Singleton of this class */
@@ -120,27 +120,24 @@ public class RCFG implements CGContextVisitor {
      * Generate the rCFG.
      */
     public static void generate() {
-        //old traversal
-        //CallGraphTraversal.acceptContext(v(), ContextType.EVENT_CONTEXT);;
-        
         //optimized new search, assumes far fewer user calls than api calls
         v().runAlt();
-        
+
         //print unreachable methods to the debug log
         v().printUnreachableSrcMethods();
     }
 
     private void runAlt() {
         CallGraph cg = Scene.v().getCallGraph();
-        
+
         //loop over all reachable methods
         for (SootMethod method : PTABridge.v().getAllReachableMethods()) {
             //don't do anything for system methods
             if (API.v().isSystemMethod(method))
                 continue;
-       
+
             visitedMethods.add(method);
-            
+
             Iterator<Edge> incomingEdges = cg.edgesInto(method);
             while (incomingEdges.hasNext()) {
                 Edge incomingEdge = incomingEdges.next();
@@ -155,17 +152,17 @@ public class RCFG implements CGContextVisitor {
             }
         } 
     }
-    
+
     /** 
      * Starting from entry edge, find all reachable user method, stopping at system calls
      * for each user method, find all output event api calls and build nodes for them
      */
     private void findOutputEventsForEventEdge(Edge entryEdge) {
         CallGraph cg = Scene.v().getCallGraph();
-        
+
         LinkedList<Edge> stack = new LinkedList<Edge>();
         Set<Edge> visitedEdges = new HashSet<Edge>();
-        
+
         stack.add(entryEdge);
 
         while (!stack.isEmpty()) {
@@ -176,14 +173,14 @@ public class RCFG implements CGContextVisitor {
                 continue;
 
             SootMethod method = current.tgt();
-            
+
             //remember what we have visited
             visitedEdges.add(current);
-            
+
             //don't do anything if we are in a system method
             if (API.v().isSystemMethod(method))
                 continue;
-                        
+
             Iterator<Edge> ciEdges = cg.edgesOutOf(method);
 
             //iterate over all the ci edges from soot, and check to see
@@ -197,7 +194,7 @@ public class RCFG implements CGContextVisitor {
                     //possibly an output event
                     addOutputEvent(outgoingEdge, entryEdge);
                     //don't traverse into call
-                    
+
                 } else {
                     //call to another user method, add to stack if we have not seen it
                     if (!visitedEdges.contains(outgoingEdge))
@@ -206,7 +203,7 @@ public class RCFG implements CGContextVisitor {
             }
         }
     }
-    
+
     private RCFG() {
         this.visitedMethods = new HashSet<SootMethod>();
         this.entryEdgeToNode = new LinkedHashMap<Edge, RCFGNode>();
@@ -263,21 +260,21 @@ public class RCFG implements CGContextVisitor {
         SootMethod caller = callEdge.src();
         SootMethod callee = callEdge.tgt();
         boolean debug = false;
-        
+
         PTAContext eventContext = new PTAContext(ContextType.EVENT_CONTEXT, eventEdge);
         PTAContext oneCFAContext = new PTAContext(ContextType.ONE_CFA, callEdge);
-        
+
         if (API.v().isSystemMethod(callee) && 
                 !API.v().isSystemMethod(caller) &&
                 API.v().isInterestingMethod(callee) &&
                 !IGNORE_SYS_METHOD_WITH_NAME.contains(callee.getName()) &&
                 !ignoreSet.contains(callEdge.srcStmt())) {
-            
+
             RCFGNode node = getNodeForEntryEdge(eventEdge);
-            
+
             SourceLocationTag line = 
                     SootUtils.getSourceLocation(callEdge.srcStmt(), callEdge.src().getDeclaringClass());
-            
+
             InvokeExpr invoke = callEdge.srcStmt().getInvokeExpr();
             if (invoke instanceof InstanceInvokeExpr) {
                 InstanceInvokeExpr iie = (InstanceInvokeExpr)invoke;
@@ -290,14 +287,22 @@ public class RCFG implements CGContextVisitor {
                         if (entry.getValue().equals(callee)) {
                             if (debug)
                                 System.out.println(entry.getKey());
-                            
-                            OutputEvent oe = new OutputEvent(oneCFAContext, eventContext, node, line);
-                            oe.addReceiverNode(entry.getKey());
-                            
-                            node.addOutputEvent(oe);
+
+                            if (node.hasOutputEventEdge(callEdge)) {
+                                //we already have added an output event for this call site, so just add
+                                //the new allocnode
+                                OutputEvent oe = node.getOutputEvent(callEdge);
+                                oe.addReceiverNode(entry.getKey());
+                            } else {
+                                //new output event that we have not seen, create output event and install it
+                                OutputEvent oe = new OutputEvent(oneCFAContext, eventContext, node, line);
+                                oe.addReceiverNode(entry.getKey());
+                                node.addOutputEvent(callEdge, oe);
+                                apiCallNodes.addAll(oe.getAllArgsPTSet(eventContext));
+                            }
+
                             //remember interesting alloc nodes
-                            apiCallNodes.add(entry.getKey());
-                            apiCallNodes.addAll(oe.getAllArgsPTSet(eventContext));
+                            apiCallNodes.add(entry.getKey());                            
                         }
 
                     }
@@ -307,83 +312,17 @@ public class RCFG implements CGContextVisitor {
                     droidsafe.main.Main.exit(1);
                 }
             } else {
-                OutputEvent oe = new OutputEvent(oneCFAContext, eventContext, node, line);
-                logger.debug("Found output event: {} (null receiver)", callEdge.tgt());
-                node.addOutputEvent(oe);
-                apiCallNodes.addAll(oe.getAllArgsPTSet(eventContext));
-            }
-        }
-    }
-
-    /**
-     * for each edge, decide if the edge should appear as an output event for the context edge represented
-     * by the RCFGNode for the context.
-     * 
-     * Also, when an output event is found, query for all the alloc nodes that could be either a receiver or an 
-     * argument, and remember these nodes for later processing by MethodCallsOnAllocs.
-     */
-    public void visit(SootMethod method, PTAContext eventContext) { 
-        //remember that we have visited this method
-        visitedMethods.add(method);
-
-        //loop through all incoming edges for this method
-        CallGraph cg = Scene.v().getCallGraph();
-        Iterator<Edge> incomingEdges = cg.edgesInto(method); 
-        while (incomingEdges.hasNext()) {
-            Edge incomingEdge = incomingEdges.next();
-            PTAContext oneCFAContext = new PTAContext(ContextType.ONE_CFA, incomingEdge);
-
-            //only add to the rcfg node if there is a call from app code (non-system method) into the api (system method)
-            //and the called system method is interesting
-            //and we should not ignore it.
-            if (API.v().isSystemMethod(method) && 
-                    !API.v().isSystemMethod(incomingEdge.src()) &&
-                    API.v().isInterestingMethod(method) &&
-                    !IGNORE_SYS_METHOD_WITH_NAME.contains(method.getName()) &&
-                    !ignoreSet.contains(incomingEdge.srcStmt())) {
-
-                RCFGNode node = getNodeForEntryEdge(eventContext.getContext());
-
-                SourceLocationTag line = 
-                        SootUtils.getSourceLocation(incomingEdge.srcStmt(), incomingEdge.src().getDeclaringClass());
-
-                InvokeExpr invoke = incomingEdge.srcStmt().getInvokeExpr();
-                if (invoke instanceof InstanceInvokeExpr) {
-                    InstanceInvokeExpr iie = (InstanceInvokeExpr)invoke;
-                    try {
-                        //use the pta to find all the alloc nodes for the source call
-                        //for each, see if they map to the destination method, if they do,
-                        //create the output event
-                        for (Map.Entry<AllocNode, SootMethod> entry : 
-                            PTABridge.v().resolveInstanceInvokeMap(iie, eventContext).entrySet()) {
-                            if (entry.getValue().equals(method)) {
-                                OutputEvent oe = 
-                                        new OutputEvent(oneCFAContext, eventContext, node, line);
-                                oe.addReceiverNode(entry.getKey());
-                                
-                                logger.debug("Found output event: {} {}", incomingEdge.tgt(), entry.getKey());
-                                node.addOutputEvent(oe);
-                                //remember interesting alloc nodes
-                                apiCallNodes.add(entry.getKey());
-                                apiCallNodes.addAll(oe.getAllArgsPTSet(eventContext));
-                            }
-
-                        }
-                    } catch (CannotFindMethodException e) {
-                        logger.error("Could not find a possible target for a call (RCFG): {} in {}", iie, 
-                            incomingEdge.getSrc());
-                        droidsafe.main.Main.exit(1);
-                    }
-                } else {
+                if (!node.hasOutputEventEdge(callEdge)) {
                     OutputEvent oe = new OutputEvent(oneCFAContext, eventContext, node, line);
-                    logger.debug("Found output event: {} (null receiver)", incomingEdge.tgt());
-                    node.addOutputEvent(oe);
+                    logger.debug("Found output event: {} (null receiver)", callEdge.tgt());
+                    node.addOutputEvent(callEdge, oe);
                     apiCallNodes.addAll(oe.getAllArgsPTSet(eventContext));
                 }
             }
         }
     }
 
+ 
     /**
      * Find and return a string of all invoke statements that could invoke an API call.
      */

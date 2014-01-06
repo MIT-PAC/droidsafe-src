@@ -47,7 +47,7 @@ public class Method implements Comparable<Method> {
     /** argument full qualified types */
     private ArgumentValue[] args;
     /** receiver (could be a type or an object reference) */
-    private Object receiver;
+    private ArgumentValue receiverValues;
     /** locations where this method, either a call or a handler appear in source */
     private List<SourceLocationTag> lines;
     /** Points to information for this method call */
@@ -63,10 +63,10 @@ public class Method implements Comparable<Method> {
     
     
 
-    public Method(SootMethod method, PTAMethodInformation ptaInfo, ArgumentValue[] args, Object receiver) {
+    public Method(SootMethod method, PTAMethodInformation ptaInfo, ArgumentValue[] args, ArgumentValue receiver) {
         this.sootMethod = method;
         this.args = args;
-        this.receiver = receiver;
+        this.receiverValues = receiver;
         lines = new ArrayList<SourceLocationTag>();
         logger.info("Creating method: {} with receiever {}", method, receiver);
         this.ptaInfo = ptaInfo;
@@ -89,13 +89,7 @@ public class Method implements Comparable<Method> {
      * @return true if same underlying method that is called.
      */
     public boolean isSameMethod(Method meth2) {
-        if (!meth2.getSootMethod().equals(sootMethod))
-            return false;
-        if (this.hasReceiver() && meth2.hasReceiver() && !meth2.receiver.equals(this.receiver)) 
-            return false;
-        if (!this.hasReceiver() && meth2.hasReceiver())
-            return false;
-        return true;
+        return (!meth2.getSootMethod().equals(sootMethod));
     }
 
     /**
@@ -194,7 +188,7 @@ public class Method implements Comparable<Method> {
     }
 
     public boolean hasReceiver() {
-        return receiver != null && !receiver.equals("");			
+        return receiverValues != null && !receiverValues.equals("");			
     }
 
     /**
@@ -282,7 +276,7 @@ public class Method implements Comparable<Method> {
         String ret = "";
 
         if (hasReceiver()) 
-            ret += receiver;
+            ret += receiverValues;
         else 
             ret += getCname();
 
@@ -306,7 +300,7 @@ public class Method implements Comparable<Method> {
 
     public String toXML() {
         String ret = "<method name=\"" + getName() + "\" class=\"" + 
-                getCname() + "\" rtype=\"" + getRtype() +  "\" receiver=\"" + receiver + "\">\n"; 
+                getCname() + "\" rtype=\"" + getRtype() +  "\" receiver=\"" + receiverValues + "\">\n"; 
 
         for (ArgumentValue arg : args)
             ret += "<arg type = \"" + arg + "\"/>";
@@ -508,7 +502,7 @@ public class Method implements Comparable<Method> {
         result = prime * result + Arrays.hashCode(args);
         result = prime * result + ((lines == null) ? 0 : lines.hashCode());
         result = prime * result + ((ptaInfo == null) ? 0 : ptaInfo.hashCode());
-        result = prime * result + ((receiver == null) ? 0 : receiver.hashCode());
+        result = prime * result + ((receiverValues == null) ? 0 : receiverValues.hashCode());
         result = prime * result + ((sootMethod == null) ? 0 : sootMethod.hashCode());
         return result;
     }
@@ -527,9 +521,9 @@ public class Method implements Comparable<Method> {
         if (ptaInfo == null) {
             if (other.ptaInfo != null) return false;
         } else if (!ptaInfo.equals(other.ptaInfo)) return false;
-        if (receiver == null) {
-            if (other.receiver != null) return false;
-        } else if (!receiver.equals(other.receiver)) return false;
+        if (receiverValues == null) {
+            if (other.receiverValues != null) return false;
+        } else if (!receiverValues.equals(other.receiverValues)) return false;
         if (sootMethod == null) {
             if (other.sootMethod != null) return false;
         } else if (!sootMethod.equals(other.sootMethod)) return false;
@@ -537,8 +531,8 @@ public class Method implements Comparable<Method> {
     }
 
 
-    public void setReceiver(Object rec) {
-        this.receiver = rec;
+    public void setReceiverValues(ArgumentValue rec) {
+        this.receiverValues = rec;
     }
 
     public String getCname() {
@@ -553,8 +547,8 @@ public class Method implements Comparable<Method> {
         return args;
     }
 
-    public Object getReceiver() {
-        return receiver;
+    public ArgumentValue getReceiverValues() {
+        return receiverValues;
     }
 
     public String getRtype() {
