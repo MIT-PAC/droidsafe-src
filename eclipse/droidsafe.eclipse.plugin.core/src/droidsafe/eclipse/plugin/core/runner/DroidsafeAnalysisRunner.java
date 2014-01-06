@@ -50,7 +50,6 @@ import droidsafe.main.Main;
 import droidsafe.main.SootConfig;
 import droidsafe.speclang.SecuritySpecification;
 import droidsafe.speclang.model.SecuritySpecModel;
-import droidsafe.transforms.AddAllocsForAPICalls;
 import droidsafe.transforms.IntegrateXMLLayouts;
 import droidsafe.transforms.LocalForStringConstantArguments;
 import droidsafe.transforms.ResolveStringConstants;
