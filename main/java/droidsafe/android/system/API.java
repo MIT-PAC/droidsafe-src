@@ -162,7 +162,7 @@ public class API {
             droidsafe.main.Main.exit(1);
         }
 
-        loadDroidSafeCalls();
+        //loadDroidSafeCalls();
         findModeledMethods();
         checkForUnmodeledMissingAPIMethods();
         //old load classification code from config_files/system_calls.txt
