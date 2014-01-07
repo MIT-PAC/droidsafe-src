@@ -100,7 +100,9 @@ public class APIInfoKindMapping {
         if (API.v().isSystemMethod(method)) {
             for (SootMethod parent : 
                 SootUtils.getOverriddenMethodsFromParents(method.getDeclaringClass(), method.getSubSignature())) {
-                kinds.addAll(srcsMapping.get(parent));
+                Set<InfoKind> parentMappings = srcsMapping.get(parent);
+                if (parentMappings != null)
+                    kinds.addAll(parentMappings);
             }
         }
         
