@@ -6,8 +6,8 @@ import soot.Type;
 import soot.Value;
 import soot.jimple.InstanceInvokeExpr;
 import soot.jimple.InvokeExpr;
-import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.toolkits.callgraph.Edge;
+import soot.jimple.toolkits.pta.IAllocNode;
 import droidsafe.utils.Utils;
 
 /**
@@ -31,7 +31,7 @@ public interface PTAMethodInformation {
      * Return the points to set of the receiver (if it exists) in the context of this
      * output event.
      */
-    public Set<AllocNode> getReceiverPTSet(PTAContext context);
+    public Set<? extends IAllocNode> getReceiverPTSet(PTAContext context);
 
     /**
      * Return the type of the receiver value.
@@ -47,7 +47,7 @@ public interface PTAMethodInformation {
     /**
      * Return the points to set for the pointer argument at index i.
      */
-    public Set<AllocNode> getArgPTSet(PTAContext context, int i);
+    public Set<? extends IAllocNode> getArgPTSet(PTAContext context, int i);
     
     /** 
      * Return the number of args in the invoke expression.

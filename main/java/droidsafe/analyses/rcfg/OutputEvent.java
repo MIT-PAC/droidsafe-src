@@ -18,9 +18,9 @@ import soot.jimple.DynamicInvokeExpr;
 import soot.jimple.InstanceInvokeExpr;
 import soot.jimple.InvokeExpr;
 import soot.jimple.SpecialInvokeExpr;
-import soot.jimple.spark.pag.AllocNode;
-import soot.jimple.spark.pag.StringConstantNode;
 import soot.jimple.toolkits.callgraph.Edge;
+import soot.jimple.toolkits.pta.IAllocNode;
+import soot.jimple.toolkits.pta.IStringConstantNode;
 import droidsafe.analyses.pta.ContextType;
 import droidsafe.analyses.pta.PTABridge;
 import droidsafe.analyses.pta.PTAContext;
@@ -50,7 +50,7 @@ public class OutputEvent implements PTAMethodInformation {
     /** Source locations of the calls for this output event for the given input event */
     private SourceLocationTag linesTag = null;
     /** The receiver nodes that triggers this output event */
-    private Set<AllocNode> receiverNodes;
+    private Set<IAllocNode> receiverNodes;
     /** the types of the receivers */
     private Set<Type> receiverNodeTypes;
 
@@ -62,14 +62,14 @@ public class OutputEvent implements PTAMethodInformation {
         this.oneCFAContext = oneCFA;
         this.eventContext = eventContext;
         this.parent = p;
-        this.receiverNodes = new HashSet<AllocNode>();
+        this.receiverNodes = new HashSet<IAllocNode>();
         this.receiverNodeTypes = new HashSet<Type>();
         this.linesTag = ln;
 
         setInvoke();
     }
 
-    public void addReceiverNode(AllocNode an) {
+    public void addReceiverNode(IAllocNode an) {
         receiverNodes.add(an);
         receiverNodeTypes.add(an.getType());
     }
@@ -164,7 +164,7 @@ public class OutputEvent implements PTAMethodInformation {
      * Return the points to set of the receiver (if it exists) in the context of this
      * output event.
      */
-    public Set<AllocNode> getReceiverPTSet(PTAContext context) {
+    public Set<IAllocNode> getReceiverPTSet(PTAContext context) {
         getReceiver();
 
         return receiverNodes; 
@@ -195,7 +195,7 @@ public class OutputEvent implements PTAMethodInformation {
     /**
      * Return the points to set for the pointer argument at index i.
      */
-    public Set<AllocNode> getArgPTSet(PTAContext context, int i) {
+    public Set<? extends IAllocNode> getArgPTSet(PTAContext context, int i) {
         Value v = getArgValue(i);
         
         return PTABridge.v().getPTSet(v, context);
@@ -204,8 +204,8 @@ public class OutputEvent implements PTAMethodInformation {
     /**
      * Return a set of all the alloc nodes that all the of the args can point to.
      */
-    public Set<AllocNode> getAllArgsPTSet(PTAContext context) {
-        HashSet<AllocNode> nodes = new HashSet<AllocNode>();
+    public Set<IAllocNode> getAllArgsPTSet(PTAContext context) {
+        HashSet<IAllocNode> nodes = new HashSet<IAllocNode>();
         
         for (int i = 0; i < getNumArgs(); i++) {
             if (isArgPointer(i))
@@ -283,17 +283,17 @@ public class OutputEvent implements PTAMethodInformation {
             formatter.format("\tReceiver: %s (%s)\n", getReceiver(), getReceiver().getClass());
             str.append("\t\tPT Set:\n");
 
-            for (AllocNode receiverNode : receiverNodes)
+            for (IAllocNode receiverNode : receiverNodes)
                 formatter.format("\t\tNode: %s (%s)\n", receiverNode, receiverNode.getClass());
 
             for (int i = 0; i < getNumArgs(); i++) {
                 if (isArgPointer(i)) {
-                    Set<AllocNode> nodes = PTABridge.v().getPTSet(getArgValue(i));
+                    Set<? extends IAllocNode> nodes = PTABridge.v().getPTSet(getArgValue(i));
                     formatter.format("\tArg %d (size %d)\n", i, nodes.size());
-                    for (AllocNode node : nodes) {
-                        if (node instanceof StringConstantNode) {
+                    for (IAllocNode node : nodes) {
+                        if (node instanceof IStringConstantNode) {
                             formatter.format("\t\tString Constant: %s %s\n", node, 
-                                ((StringConstantNode)node).getString());
+                                ((IStringConstantNode)node).getString());
                         } else {
                             formatter.format("\t\tNode: %s (%s), New expr: %s (%s)\n", 
                                 node, node.getClass(), node.getNewExpr(), 

@@ -14,8 +14,8 @@ import soot.SootMethod;
 import soot.jimple.Expr;
 import soot.jimple.NewExpr;
 import soot.jimple.Stmt;
-import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.toolkits.callgraph.Edge;
+import soot.jimple.toolkits.pta.IAllocNode;
 import droidsafe.analyses.MethodCallsOnAlloc;
 import droidsafe.analyses.pta.PTABridge;
 import droidsafe.android.app.Project;
@@ -62,7 +62,7 @@ public class AllocLocationModel extends CodeLocationModel {
      * @param line the line number for the new expression corresponding to the underlying AllocNode
      * @param node the underlying AllocNode
      */
-    public AllocLocationModel(String clz, int line, AllocNode node) {
+    public AllocLocationModel(String clz, int line, IAllocNode node) {
         super(clz, line);
         fromAPI = Project.v().isSrcClass(clz);
         Object expr = node.getNewExpr();
@@ -91,7 +91,7 @@ public class AllocLocationModel extends CodeLocationModel {
      * @param line the source location tag for the new expression corresponding to the underlying AllocNode
      * @param node the underlying AllocNode
      */
-    public AllocLocationModel(SourceLocationTag line, AllocNode node) {
+    public AllocLocationModel(SourceLocationTag line, IAllocNode node) {
         this(line.getClz(), line.getLine(), node);
     }
 
@@ -127,7 +127,7 @@ public class AllocLocationModel extends CodeLocationModel {
         return type + " - " + str;
     }
 
-    private static Map<AllocNode, AllocLocationModel> map = new HashMap<AllocNode, AllocLocationModel>();
+    private static Map<IAllocNode, AllocLocationModel> map = new HashMap<IAllocNode, AllocLocationModel>();
     
     /**
      * Clear the static map from AllocNodes to their associated source line models.
@@ -139,7 +139,7 @@ public class AllocLocationModel extends CodeLocationModel {
     /**
      * Return the source line model for the give AllocNode. Return null if there are any problems.
      */
-    public static AllocLocationModel get(AllocNode node) {
+    public static AllocLocationModel get(IAllocNode node) {
         AllocLocationModel line = map.get(node);
         if (line == null) {
             Object expr = PTABridge.v().getNewExpr(node);

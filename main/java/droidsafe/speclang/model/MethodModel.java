@@ -13,7 +13,7 @@ import org.slf4j.LoggerFactory;
 import soot.SootMethod;
 import soot.Type;
 import soot.jimple.Stmt;
-import soot.jimple.spark.pag.AllocNode;
+import soot.jimple.toolkits.pta.IAllocNode;
 import droidsafe.analyses.infoflow.InfoKind;
 import droidsafe.android.system.Permissions;
 import droidsafe.speclang.ArgumentValue;
@@ -287,11 +287,11 @@ public class MethodModel extends ModelChangeSupport
     boolean hasInfo = false;
     methodArgumentAllocSources = new ArrayList<List<AllocLocationModel>>();
     for (int i = 0; i < originalMethod.getArgs().length; i++) {
-      Set<AllocNode> nodes = originalMethod.getArgAllocNodes(i);
+      Set<? extends IAllocNode> nodes = originalMethod.getArgAllocNodes(i);
       List<AllocLocationModel> argSources = null;
       if (!nodes.isEmpty()) {
         argSources = new ArrayList<AllocLocationModel>();
-        for (AllocNode node : nodes) {
+        for (IAllocNode node : nodes) {
           AllocLocationModel line = AllocLocationModel.get(node);
           if (line != null) argSources.add(line);
         }
@@ -347,10 +347,10 @@ public class MethodModel extends ModelChangeSupport
    * Compute and set the field receiverAllocSources.
    */
   private void setReceiverAllocSources(Method originalMethod) {
-    Set<AllocNode> allocNodes = originalMethod.getReceiverAllocNodes();
+    Set<? extends IAllocNode> allocNodes = originalMethod.getReceiverAllocNodes();
     if (!allocNodes.isEmpty()) {
       receiverAllocSources = new ArrayList<AllocLocationModel>();
-      for (AllocNode allocNode : allocNodes) {
+      for (IAllocNode allocNode : allocNodes) {
         AllocLocationModel line = AllocLocationModel.get(allocNode);
         if (line != null) receiverAllocSources.add(line);
       }

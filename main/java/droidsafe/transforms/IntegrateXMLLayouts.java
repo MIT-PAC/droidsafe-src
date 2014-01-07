@@ -34,7 +34,6 @@ import soot.jimple.InvokeStmt;
 import soot.jimple.Stmt;
 import soot.jimple.StmtBody;
 import soot.jimple.StringConstant;
-import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.Jimple;
 import soot.jimple.Expr;
 import soot.util.Chain;

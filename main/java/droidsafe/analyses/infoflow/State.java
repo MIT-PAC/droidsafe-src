@@ -33,8 +33,8 @@ import soot.jimple.SpecialInvokeExpr;
 import soot.jimple.StaticInvokeExpr;
 import soot.jimple.Stmt;
 import soot.jimple.VirtualInvokeExpr;
-import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.toolkits.callgraph.Targets;
+import soot.jimple.toolkits.pta.IAllocNode;
 import soot.toolkits.graph.Block;
 import droidsafe.analyses.pta.PTABridge;
 import droidsafe.analyses.pta.PTAContext;
@@ -299,7 +299,7 @@ class AddressField implements Comparable<AddressField> {
         if (!(field.getType() instanceof RefLikeType)) {
             addressFields = new HashSet<AddressField>();
             Value base = instanceFieldRef.getBase();
-            for (AllocNode allocNode : PTABridge.v().getPTSet(base)) {
+            for (IAllocNode allocNode : PTABridge.v().getPTSet(base)) {
                 addressFields.add(AddressField.v(Address.v(allocNode), field));
             }
         }
@@ -379,7 +379,7 @@ class AddressField implements Comparable<AddressField> {
             @Override
             public void caseLocal(Local local) {
                 HashSet<InfoValue> values = new HashSet<InfoValue>();
-                for (AllocNode allocNode : PTABridge.v().getPTSet(local)) {
+                for (IAllocNode allocNode : PTABridge.v().getPTSet(local)) {
                     values.add(Address.v(allocNode));
                 }
                 setResult(values);
@@ -1083,18 +1083,18 @@ class State {
 }
 
 class Address implements InfoValue, Comparable<Address> {
-    private static Map<AllocNode, Address> allocNodeToAddress = new HashMap<AllocNode, Address>();
+    private static Map<IAllocNode, Address> allocNodeToAddress = new HashMap<IAllocNode, Address>();
 
-    final AllocNode allocNode;
+    final IAllocNode allocNode;
 
-    private Address(AllocNode allocNode) {
+    private Address(IAllocNode allocNode) {
         if (Config.v().strict) {
             assert allocNode != null;
         }
         this.allocNode = allocNode;
     }
 
-    public static Address v(AllocNode allocNode) {
+    public static Address v(IAllocNode allocNode) {
         if (Config.v().strict) {
             assert allocNode != null;
         }
@@ -1164,7 +1164,7 @@ class Address implements InfoValue, Comparable<Address> {
         Set<Address> addresses = null;
         if (!(arrayRef.getType() instanceof RefLikeType)) {
             addresses = new HashSet<Address>();
-            for (AllocNode allocNode : PTABridge.v().getPTSet(arrayRef.getBase())) {
+            for (IAllocNode allocNode : PTABridge.v().getPTSet(arrayRef.getBase())) {
                 addresses.add(Address.v(allocNode));
             }
         }

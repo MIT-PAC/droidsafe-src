@@ -14,8 +14,8 @@ import soot.jimple.AssignStmt;
 import soot.jimple.InstanceInvokeExpr;
 import soot.jimple.InvokeExpr;
 import soot.jimple.Jimple;
-import soot.jimple.spark.pag.AllocNode;
-import soot.jimple.spark.pag.ClassConstantNode;
+import soot.jimple.toolkits.pta.IAllocNode;
+import soot.jimple.toolkits.pta.IClassConstantNode;
 import soot.jimple.Stmt;
 import soot.jimple.StmtBody;
 import soot.jimple.StringConstant;
@@ -84,15 +84,15 @@ public class ClassGetNameToClassString extends BodyTransformer {
                 //replace java.lang.Class.getName() with a string constant if possible
                 if ("<java.lang.Class: java.lang.String getName()>".equals(target.getSignature())) {
                     InstanceInvokeExpr iie = (InstanceInvokeExpr) invoke;
-                    Set<AllocNode> nodes = PTABridge.v().getPTSet(iie.getBase());
+                    Set<? extends IAllocNode> nodes = PTABridge.v().getPTSet(iie.getBase());
                     if (nodes.size() != 1) 
                         return false;
                             
-                    for (AllocNode node : nodes) {
-                        if (node instanceof ClassConstantNode) {
-                            String name = ((ClassConstantNode)node).getClassConstant().getValue().replace("/", ".");
+                    for (IAllocNode node : nodes) {
+                        if (node instanceof IClassConstantNode) {
+                            String name = ((IClassConstantNode)node).getClassConstant().getValue().replace("/", ".");
                             
-                            //add a local variable
+                            // add a local variable
                             Local newLocal = Jimple.v().newLocal(LOCAL_PREFIX + LOCAL_ID++, RefType.v("java.lang.String"));
                             stmtBody.getLocals().add(newLocal);
                             

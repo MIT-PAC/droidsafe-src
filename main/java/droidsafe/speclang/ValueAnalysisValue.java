@@ -1,7 +1,6 @@
 package droidsafe.speclang;
 
 import droidsafe.analyses.value.VAModel;
-import soot.jimple.spark.pag.AllocNode;
 
 /**
  * This class represents the result of the value analysis in the specificiation 

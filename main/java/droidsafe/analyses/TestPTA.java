@@ -19,8 +19,8 @@ import soot.jimple.InstanceInvokeExpr;
 import soot.jimple.InvokeExpr;
 import soot.jimple.NullConstant;
 import soot.jimple.Stmt;
-import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.toolkits.callgraph.Edge;
+import soot.jimple.toolkits.pta.IAllocNode;
 import droidsafe.android.system.API;
 import droidsafe.utils.SootUtils;
 import droidsafe.analyses.pta.ContextType;
@@ -92,13 +92,13 @@ public class TestPTA implements CGContextVisitor {
                 
                 System.out.println("Instance Invoke: " + st);
                 System.out.println("Context: " + context);
-                for (AllocNode node : PTABridge.v().getPTSet(iie.getBase(),
+                for (IAllocNode node : PTABridge.v().getPTSet(iie.getBase(),
                     context)) 
                     System.out.println("  " + node);
                 System.out.println("Args");
                 for (Value val : iie.getArgs()) {
                     if (PTABridge.v().isPointer(val)) {
-                        for (AllocNode node : PTABridge.v().getPTSet(val, 
+                        for (IAllocNode node : PTABridge.v().getPTSet(val, 
                             context))
                             System.out.println("  " + node);
                     } else {
@@ -118,29 +118,30 @@ public class TestPTA implements CGContextVisitor {
                     } 
                     
                     if (PTABridge.v().isPointer(a.getLeftOp())) {
-                        Set<AllocNode> lhsNodes = PTABridge.v().getPTSet(a.getLeftOp(), context);
+                        Set<? extends IAllocNode> lhsNodes = PTABridge.v().getPTSet(a.getLeftOp(), context);
 
-                        Set<AllocNode> rhsNodes = null;
+                        Set<? extends IAllocNode> rhsNodes = null;
                         if (PTABridge.v().isPointer(a.getRightOp())) {
                             rhsNodes = PTABridge.v().getPTSet(a.getRightOp(), 
                                 context);
                         } else if (PTABridge.v().getAllocNode(a.getRightOp()) != null) {
-                            rhsNodes = new LinkedHashSet<AllocNode>();
-                            rhsNodes.add(PTABridge.v().getAllocNode(a.getRightOp()));
+                            Set<IAllocNode> nodes = new LinkedHashSet<IAllocNode>();
+                            nodes.add(PTABridge.v().getAllocNode(a.getRightOp()));
+                            rhsNodes = nodes;
                         } else if (a.getRightOp() instanceof CastExpr) {
                             CastExpr castExpr = (CastExpr)a.getRightOp();
                             rhsNodes = PTABridge.v().getPTSet(castExpr.getOp(), context);
-                            Set<AllocNode> toRemove = new HashSet<AllocNode>();
-                            for (AllocNode node : rhsNodes) {
+                            Set<IAllocNode> toRemove = new HashSet<IAllocNode>();
+                            for (IAllocNode node : rhsNodes) {
                                 if (!PTABridge.v().isLegalCast(node.getType(), castExpr.getCastType())) {
                                     toRemove.add(node);
                                 }
                             }
                             rhsNodes.removeAll(toRemove);
                         } else if (a.getRightOp() instanceof InvokeExpr || a.getRightOp() instanceof NullConstant) {
-                            rhsNodes = new LinkedHashSet<AllocNode>();
+                            rhsNodes = new LinkedHashSet<IAllocNode>();
                         } else {
-                            rhsNodes = new LinkedHashSet<AllocNode>();
+                            rhsNodes = new LinkedHashSet<IAllocNode>();
                             System.out.println("** Empty RHS: " + a.getRightOp());
                         }
 
@@ -148,17 +149,17 @@ public class TestPTA implements CGContextVisitor {
                             System.out.println(sm + "\nAssign: " + st);
                             System.out.println("  Context: " + context);
                             System.out.println("RHS: " + a.getRightOp() + " " + a.getRightOp().getClass());
-                            for (AllocNode node : rhsNodes) 
+                            for (IAllocNode node : rhsNodes) 
                                 System.out.println("  " + node);
                             System.out.println("LHS: " + a.getLeftOp() + " " + a.getLeftOp().getClass());
-                            for (AllocNode node : lhsNodes) 
+                            for (IAllocNode node : lhsNodes) 
                                 System.out.println("  " + node);
                             if (a.getLeftOp() instanceof InstanceFieldRef) {
-                                Set<AllocNode> baseNodes = 
+                                Set<? extends IAllocNode> baseNodes = 
                                         PTABridge.v().getPTSet(
                                             ((InstanceFieldRef)a.getLeftOp()).getBase(), 
                                             context);
-                                for (AllocNode node : baseNodes) {
+                                for (IAllocNode node : baseNodes) {
                                     System.out.println("  baseNode: " + node);
                                 }
                             }

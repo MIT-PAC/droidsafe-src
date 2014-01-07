@@ -24,7 +24,7 @@ import org.slf4j.LoggerFactory;
 import soot.Body;
 import soot.jimple.InvokeExpr;
 import soot.jimple.Jimple;
-import soot.jimple.spark.pag.AllocNode;
+import soot.jimple.toolkits.pta.IAllocNode;
 import soot.jimple.Stmt;
 import soot.Local;
 import soot.RefType;
@@ -125,8 +125,8 @@ class StartActivityTransform implements VATransform {
      */
     private Set<SootField> getDestinationsOfIntent(Value intentArg, PTAContext context) {
         Set<SootField> destActivityHarnessSootFields = new HashSet<SootField>();
-        Set<AllocNode> allocNodes = PTABridge.v().getPTSet(intentArg, context);
-        for(AllocNode allocNode : allocNodes) {
+        Set<? extends IAllocNode> allocNodes = PTABridge.v().getPTSet(intentArg, context);
+        for(IAllocNode allocNode : allocNodes) {
             VAModel vaModel = ValueAnalysis.v().getResult(allocNode);
             if(vaModel != null && vaModel instanceof RefVAModel) {
                 destActivityHarnessSootFields.addAll(getDestinationsOfIntent((RefVAModel)vaModel));

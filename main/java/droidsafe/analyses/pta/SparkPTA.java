@@ -53,6 +53,7 @@ import soot.jimple.spark.geom.geomPA.GeomPointsTo;
 import soot.jimple.spark.geom.geomPA.GeomQueries;
 import soot.jimple.spark.geom.geomPA.IVarAbstraction;
 import soot.jimple.spark.pag.AllocNode;
+import soot.jimple.spark.pag.MethodPAG;
 import soot.jimple.spark.pag.Node;
 import soot.jimple.spark.pag.PAG;
 import soot.jimple.spark.sets.HashPointsToSet;
@@ -61,6 +62,7 @@ import soot.jimple.spark.sets.PointsToSetInternal;
 import soot.jimple.toolkits.callgraph.CallGraph;
 import soot.jimple.toolkits.callgraph.Edge;
 import soot.jimple.toolkits.callgraph.ReachableMethods;
+import soot.jimple.toolkits.pta.IAllocNode;
 import soot.toolkits.scalar.Pair;
 import soot.util.queue.QueueReader;
 import droidsafe.android.app.Harness;
@@ -93,7 +95,7 @@ public class SparkPTA extends PTABridge {
 
     @Override
     protected void releaseInternal() {
-        // nothing to do?
+    	G.v().MethodPAG_methodToPag = new HashMap<SootMethod, MethodPAG>();
     }
 
     @Override
@@ -141,29 +143,30 @@ public class SparkPTA extends PTABridge {
     /**
      * Given a new expression (Jimple NewExpr or String) return the corresponding AllocNode.
      */
-    public AllocNode getAllocNode(Object newExpr) {
+    public IAllocNode getAllocNode(Object newExpr) {
         if (newExpr instanceof NewMultiArrayExpr) {
             NewMultiArrayExpr newArr = (NewMultiArrayExpr)newExpr;
             ArrayType type = (ArrayType)newArr.getType();
             Integer i = type.numDimensions;
             Pair pair = new Pair(newArr, i);
-            return newToAllocNodeMap.get(pair);
+            return (IAllocNode) newToAllocNodeMap.get(pair);
         } else
-            return newToAllocNodeMap.get(newExpr);
+            return (IAllocNode) newToAllocNodeMap.get(newExpr);
     }
 
     /**
      * Return a set of all allocnodes in the program.
      */
-    public Set<AllocNode> getAllAllocNodes() {
-        return Collections.unmodifiableSet(newToAllocNodeMap.values());
+    public Set<? extends IAllocNode> getAllAllocNodes() {
+    	Set<AllocNode> nodes = Collections.unmodifiableSet(newToAllocNodeMap.values());
+        return (Set<? extends IAllocNode>) nodes;
     }
 
     /**
      * Given a Spark AllocNode return the corresponding new expression (Jimple NewExpr or String) 
      */
-    public Object getNewExpr(AllocNode an) {
-        return newToAllocNodeMap.inverse().get(an);
+    public Object getNewExpr(IAllocNode an) {
+        return newToAllocNodeMap.inverse().get((AllocNode) an);
     }
 
     
@@ -191,7 +194,7 @@ public class SparkPTA extends PTABridge {
     public Set<Type> getTypes(Value val) {
         Set<Type> types = new LinkedHashSet<Type>();
 
-        for (AllocNode node : getPTSet(val)) {
+        for (IAllocNode node : getPTSet(val)) {
             types.add(node.getType());
         }
 
@@ -202,7 +205,7 @@ public class SparkPTA extends PTABridge {
     public Set<Type> getTypes(Value val, PTAContext context) {
         Set<Type> types = new LinkedHashSet<Type>();
 
-        for (AllocNode node : getPTSet(val, context)) {
+        for (IAllocNode node : getPTSet(val, context)) {
             types.add(node.getType());
         }
 
@@ -210,7 +213,7 @@ public class SparkPTA extends PTABridge {
     }
 
     @Override
-    public Set<AllocNode> getPTSet(Value val) {
+    public Set<? extends IAllocNode> getPTSet(Value val) {
         final Set<AllocNode> allocNodes = new HashSet<AllocNode>();
         PointsToSetInternal pts = null;
         
@@ -228,7 +231,7 @@ public class SparkPTA extends PTABridge {
                 SootField field = ((StaticFieldRef)val).getField();
                 pts = (PointsToSetInternal)ptsProvider.reachingObjects(field);
             } else if (val instanceof NullConstant) {
-                return allocNodes;
+                return (Set<? extends IAllocNode>) allocNodes;
             } else {
                 logger.error("Unknown reference type for insenstive search: {} {}", val, val.getClass());
                 droidsafe.main.Main.exit(1);
@@ -246,15 +249,15 @@ public class SparkPTA extends PTABridge {
             //e.printStackTrace();
         }
 
-        return allocNodes;
+        return (Set<? extends IAllocNode>) allocNodes;
     }
     
     
-    public Set<AllocNode> getPTSetOfArrayElement(AllocNode allocNode) {
+    public Set<? extends IAllocNode> getPTSetOfArrayElement(IAllocNode allocNode) {
         final Set<AllocNode> ptSet = new HashSet<AllocNode>();
         
         HashPointsToSet pointsToSet = new HashPointsToSet(allocNode.getType(), ptsProvider);
-        pointsToSet.add(allocNode);
+        pointsToSet.add((AllocNode) allocNode);
         
                 ((PointsToSetInternal)ptsProvider.reachingObjectsOfArrayElement(pointsToSet)).forall(new P2SetVisitor() {
             @Override
@@ -263,11 +266,11 @@ public class SparkPTA extends PTABridge {
             }
         });
         
-        return ptSet;
+        return (Set<? extends IAllocNode>) ptSet;
     }
 
     @Override
-    public Set<AllocNode> getPTSet(AllocNode node, final SootField f) {
+    public Set<? extends IAllocNode> getPTSet(IAllocNode node, final SootField f) {
         if (f.isStatic()) {
             logger.error("Cannot call getPTSet(node, field) with static field: {}", f);
             droidsafe.main.Main.exit(1);
@@ -276,7 +279,7 @@ public class SparkPTA extends PTABridge {
         final Set<AllocNode> allocNodes = new HashSet<AllocNode>();
         
         HashPointsToSet pointsToSet = new HashPointsToSet(node.getType(), ptsProvider);
-        pointsToSet.add(node);
+        pointsToSet.add((AllocNode) node);
         
         ((PointsToSetInternal)ptsProvider.reachingObjects(pointsToSet, f)).forall(new P2SetVisitor() {
             @Override
@@ -304,12 +307,12 @@ public class SparkPTA extends PTABridge {
             }
         });
 */
-        return allocNodes;
+        return (Set<? extends IAllocNode>) allocNodes;
     }
 
     @Override
     /** Ignore context for now */
-    public Set<AllocNode> getPTSet(Value val, PTAContext context) {
+    public Set<? extends IAllocNode> getPTSet(Value val, PTAContext context) {
         return getPTSet(val);
         /*
         //can't handle event context in spark
@@ -402,7 +405,7 @@ public class SparkPTA extends PTABridge {
      * version, use the context insensitive result.  Return a map of each alloc node to its
      * target method.
      */
-    public Map<AllocNode,SootMethod> resolveInstanceInvokeMap(InstanceInvokeExpr invoke) 
+    public Map<IAllocNode,SootMethod> resolveInstanceInvokeMap(InstanceInvokeExpr invoke) 
         throws CannotFindMethodException {
         return resolveInstanceInvokeMap(invoke, null);
     }
@@ -412,9 +415,9 @@ public class SparkPTA extends PTABridge {
      * version, use the 1cfa context result.  Return a map of each alloc node to its
      * target method.
      */
-    public Map<AllocNode,SootMethod> resolveInstanceInvokeMap(InstanceInvokeExpr invoke, PTAContext context) 
+    public Map<IAllocNode,SootMethod> resolveInstanceInvokeMap(InstanceInvokeExpr invoke, PTAContext context) 
         throws CannotFindMethodException {
-        Set<AllocNode> allocs = null;
+        Set<? extends IAllocNode> allocs = null;
         //get either the context sensitive or insensitive result based on the context param 
         if (context == null) 
             allocs = getPTSet(invoke.getBase());
@@ -427,12 +430,12 @@ public class SparkPTA extends PTABridge {
     /**
      * 
      */
-    private Map<AllocNode, SootMethod> internalResolveInstanceInvokeMap(Set<AllocNode> allocs, 
+    private Map<IAllocNode, SootMethod> internalResolveInstanceInvokeMap(Set<? extends IAllocNode> allocs, 
         InstanceInvokeExpr invoke, PTAContext context) throws CannotFindMethodException {
-        Map<AllocNode, SootMethod> methods = new LinkedHashMap<AllocNode, SootMethod>();
+        Map<IAllocNode, SootMethod> methods = new LinkedHashMap<IAllocNode, SootMethod>();
         
       //loop over alloc nodes and resolve the concrete dispatch for each, placing in the set
-        for (AllocNode an : allocs) {
+        for (IAllocNode an : allocs) {
             if (invoke instanceof SpecialInvokeExpr) {
                 SootMethod resolved = SootUtils.resolveSpecialDispatch((SpecialInvokeExpr)invoke); 
                 methods.put(an, resolved);

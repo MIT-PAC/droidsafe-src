@@ -30,7 +30,7 @@ import org.slf4j.LoggerFactory;
 
 import soot.jimple.InvokeExpr;
 import soot.jimple.NewExpr;
-import soot.jimple.spark.pag.AllocNode;
+import soot.jimple.toolkits.pta.IAllocNode;
 import soot.RefType;
 import soot.SootClass;
 import soot.SootField;
@@ -48,13 +48,13 @@ public class VAStats {
     private static final Logger logger = LoggerFactory.getLogger(VAStats.class);
 
     // all lrelevant 
-    private Set<AllocNode> reachableAllocNodes = new HashSet<AllocNode>();
+    private Set<IAllocNode> reachableAllocNodes = new HashSet<IAllocNode>();
     
     // classes and fields resolved by value analysis
     private Map<String, Set<SootField>> vaResolvedClassNamesAndFields = new HashMap<String, Set<SootField>>();
 
-    // methods for which an allocNode is a receiver or an argument are marked as relevant
-    private Map<AllocNode, Set<SootMethod>> allocNodeToRelevantMethodsMap = new HashMap<AllocNode, Set<SootMethod>>();
+    // methods for which an IAllocNode is a receiver or an argument are marked as relevant
+    private Map<IAllocNode, Set<SootMethod>> allocNodeToRelevantMethodsMap = new HashMap<IAllocNode, Set<SootMethod>>();
 
     // singleton
     private static VAStats v;
@@ -86,9 +86,9 @@ public class VAStats {
                 SootMethod sm = ie.getMethod();
                 if(ie != null) {
                     if(oe.hasReceiver()) {
-                        // process receiver allocNodes
-                        Set<AllocNode> receiverPTSet = oe.getReceiverPTSet(oe.getContext(ContextType.EVENT_CONTEXT));
-                        for(AllocNode allocNode : receiverPTSet) {
+                        // process receiver IAllocNodes
+                        Set<IAllocNode> receiverPTSet = oe.getReceiverPTSet(oe.getContext(ContextType.EVENT_CONTEXT));
+                        for(IAllocNode allocNode : receiverPTSet) {
                             v.markAllocNodeAsReachable(allocNode);
                             v.markMethodAsRelevant(allocNode, sm);
                         }
@@ -96,8 +96,8 @@ public class VAStats {
                     // process argument allocNodes
                     for(int i = 0; i < oe.getNumArgs(); ++i) {
                         if(oe.isArgPointer(i)) {
-                            Set<AllocNode> argPTSet = oe.getArgPTSet(oe.getContext(ContextType.EVENT_CONTEXT), i);
-                            for(AllocNode allocNode : argPTSet) {
+                            Set<? extends IAllocNode> argPTSet = oe.getArgPTSet(oe.getContext(ContextType.EVENT_CONTEXT), i);
+                            for(IAllocNode allocNode : argPTSet) {
                                 v.markAllocNodeAsReachable(allocNode);
                                 v.markMethodAsRelevant(allocNode, sm);
                             }
@@ -112,7 +112,7 @@ public class VAStats {
 
         for(Map.Entry<Object, VAModel> entry : ValueAnalysis.v().getResults().entrySet()) {
             Object newExpr = entry.getKey();
-            AllocNode node = PTABridge.v().getAllocNode(newExpr);
+            IAllocNode node = PTABridge.v().getAllocNode(newExpr);
             Type type = node.getType();
             // we only care about reachable nodes
             if(type instanceof RefType && v.reachableAllocNodes.contains(node)) {
@@ -187,7 +187,7 @@ public class VAStats {
      * @return Concatinated string of 'relevant' methods, methods for which the object is a receiver or an argument. 
      *         We record these as another column in the csv file
      */
-    private String getRelevantMethods(AllocNode node) { 
+    private String getRelevantMethods(IAllocNode node) { 
         List<String> relevantMethodNames = new ArrayList<String>();
         if(allocNodeToRelevantMethodsMap.containsKey(node)) {
             for(SootMethod relevantMethod : v.allocNodeToRelevantMethodsMap.get(node)) {
@@ -213,7 +213,7 @@ public class VAStats {
     /**
      * Helper method that records a soot method as being reachable with respect to a particular allocNode
      */
-    private void markMethodAsRelevant(AllocNode allocNode, SootMethod sootMethod) {
+    private void markMethodAsRelevant(IAllocNode allocNode, SootMethod sootMethod) {
         if(!v.allocNodeToRelevantMethodsMap.containsKey(allocNode)) {
              v.allocNodeToRelevantMethodsMap.put(allocNode, new HashSet<SootMethod>());
         }
@@ -224,7 +224,7 @@ public class VAStats {
      * Marks the allocNode and any allocNodes that could be assigned ot its VA-resolved fields as reachable.
      * These are the allocNodes for which we want to dump specs about
      */ 
-    private void markAllocNodeAsReachable(AllocNode allocNode) {
+    private void markAllocNodeAsReachable(IAllocNode allocNode) {
         v.reachableAllocNodes.add(allocNode);
 
         Type type = allocNode.getType();
@@ -234,8 +234,8 @@ public class VAStats {
             String scName = ClassCloner.removeClassCloneSuffix(sc.getName());
             if(v.vaResolvedClassNamesAndFields.containsKey(scName)) {
                 for(SootField sf : v.vaResolvedClassNamesAndFields.get(scName)){
-                    Set<AllocNode> allocNodes = PTABridge.v().getPTSet(allocNode, sf);
-                    for(AllocNode an : allocNodes) {
+                    Set<? extends IAllocNode> allocNodes = PTABridge.v().getPTSet(allocNode, sf);
+                    for(IAllocNode an : allocNodes) {
                         markAllocNodeAsReachable(an);
                     }
                 }

@@ -25,8 +25,8 @@ import org.slf4j.LoggerFactory;
 
 import soot.jimple.internal.AbstractNewExpr;
 import soot.jimple.NewExpr;
-import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.toolkits.callgraph.Edge;
+import soot.jimple.toolkits.pta.IAllocNode;
 import soot.RefType;
 import soot.Scene;
 import soot.SootClass;
@@ -57,7 +57,7 @@ public class InjectedSourceFlows {
     private static InjectedSourceFlows v;
 
     /** results of this analysis, map from allocnodes to the flows injected */
-    private Map<AllocNode, Set<InfoKind>> injectedFlows;
+    private Map<IAllocNode, Set<InfoKind>> injectedFlows;
 
     /**
      * This map defines the flows we will inject based on values of fields.  
@@ -85,7 +85,7 @@ public class InjectedSourceFlows {
      */
     private InjectedSourceFlows() {
         initFlowsToInject();
-        this.injectedFlows = new LinkedHashMap<AllocNode, Set<InfoKind>>();
+        this.injectedFlows = new LinkedHashMap<IAllocNode, Set<InfoKind>>();
     }
 
     /**
@@ -111,7 +111,7 @@ public class InjectedSourceFlows {
         
         logger.info("Injected Flows: \n");
          
-        for (Entry<AllocNode, Set<InfoKind>> entry: v.injectedFlows.entrySet()) {
+        for (Entry<IAllocNode, Set<InfoKind>> entry: v.injectedFlows.entrySet()) {
             logger.info(entry.getKey().toString());
             for (InfoKind kind : entry.getValue())
                 logger.info("  " + kind);
@@ -129,7 +129,7 @@ public class InjectedSourceFlows {
     /**
      * Return the set of injected flows for this allocation site.
      */
-    public Set<InfoKind> getInjectedFlows(AllocNode node) {
+    public Set<InfoKind> getInjectedFlows(IAllocNode node) {
         Object newExpr = PTABridge.v().getNewExpr(node);
         if (newExpr instanceof NewExpr) {
             String className = ((NewExpr)newExpr).getBaseType().getClassName();
@@ -185,7 +185,7 @@ public class InjectedSourceFlows {
 
         //loop over all allocnodes in the results and if there is an inject flow, remember it
         for (Object newExpr : ValueAnalysis.v().getResults().keySet()) {
-            AllocNode node = PTABridge.v().getAllocNode(newExpr);
+            IAllocNode node = PTABridge.v().getAllocNode(newExpr);
             Type type = node.getType();
             if (type instanceof RefType) {
                 SootClass clz = ((RefType)type).getSootClass();
@@ -264,7 +264,7 @@ public class InjectedSourceFlows {
 
    
 
-    public Map<SootField, Set<InfoKind>> getInjectedFlows(AllocNode allocNode, Edge entryEdge) {
+    public Map<SootField, Set<InfoKind>> getInjectedFlows(IAllocNode allocNode, Edge entryEdge) {
         logger.error("Don't call this anymore!");
         droidsafe.main.Main.exit(1);
         return null;

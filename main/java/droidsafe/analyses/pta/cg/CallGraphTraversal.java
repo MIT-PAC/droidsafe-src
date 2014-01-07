@@ -23,10 +23,9 @@ import soot.Scene;
 import soot.SootMethod;
 import soot.jimple.InstanceInvokeExpr;
 import soot.jimple.SpecialInvokeExpr;
-import soot.jimple.spark.geom.dataRep.CgEdge;
-import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.toolkits.callgraph.CallGraph;
 import soot.jimple.toolkits.callgraph.Edge;
+import soot.jimple.toolkits.pta.IAllocNode;
 
 /**
  * This class performs a traversal of the call graph (hopefully using context sensitivity), and calls a visitor 
@@ -184,10 +183,10 @@ public class CallGraphTraversal {
                         try {
 
                             //Map<AllocNode, SootMethod> virtualCallMap = GeoPTA.v().resolveInstanceInvokeMap(iie, contextEntry);
-                            Map<AllocNode, SootMethod> virtualCallMap = 
+                            Map<IAllocNode, SootMethod> virtualCallMap = 
                                     PTABridge.v().resolveInstanceInvokeMap(iie, 
                                         new PTAContext(ContextType.ONE_CFA, current));
-                            for (Map.Entry<AllocNode, SootMethod> entry: 
+                            for (Map.Entry<IAllocNode, SootMethod> entry: 
                                 virtualCallMap.entrySet()) {
 
                                 // Only the virtual calls do the following test

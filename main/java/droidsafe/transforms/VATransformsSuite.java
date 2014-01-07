@@ -15,7 +15,6 @@ import java.util.List;
 import soot.jimple.InvokeExpr;
 import soot.jimple.Stmt;
 import soot.jimple.StmtBody;
-import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.toolkits.callgraph.Edge;
 import soot.util.Chain;
 import droidsafe.analyses.pta.ContextType;

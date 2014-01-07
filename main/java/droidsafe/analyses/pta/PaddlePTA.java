@@ -1,38 +1,79 @@
 package droidsafe.analyses.pta;
 
-import java.io.File;
 import java.io.PrintStream;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.Set;
 
-import org.apache.commons.io.output.NullOutputStream;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import soot.G;
+import soot.AnySubType;
+import soot.ArrayType;
+import soot.Context;
+import soot.Local;
 import soot.MethodOrMethodContext;
+import soot.PackManager;
+import soot.PointsToSet;
+import soot.RefLikeType;
+import soot.RefType;
 import soot.Scene;
+import soot.SootBridge;
+import soot.SootClass;
 import soot.SootField;
 import soot.SootMethod;
 import soot.Type;
 import soot.Value;
+import soot.jimple.ArrayRef;
+import soot.jimple.DynamicInvokeExpr;
+import soot.jimple.InstanceFieldRef;
 import soot.jimple.InstanceInvokeExpr;
+import soot.jimple.InterfaceInvokeExpr;
 import soot.jimple.InvokeExpr;
-import soot.jimple.paddle.PaddleTransformer;
-import soot.jimple.spark.pag.AllocNode;
-import soot.jimple.spark.pag.PAG;
-import soot.options.PaddleOptions;
+import soot.jimple.NewMultiArrayExpr;
+import soot.jimple.NullConstant;
+import soot.jimple.SpecialInvokeExpr;
+import soot.jimple.StaticFieldRef;
+import soot.jimple.StaticInvokeExpr;
+import soot.jimple.VirtualInvokeExpr;
+import soot.jimple.paddle.AbsP2Sets;
+import soot.jimple.paddle.AbsPointsToAnalysis;
+import soot.jimple.paddle.AllocDotField;
+import soot.jimple.paddle.AllocNode;
+import soot.jimple.paddle.ContextAllocDotField;
+import soot.jimple.paddle.ContextAllocNode;
+import soot.jimple.paddle.Node;
+import soot.jimple.paddle.NodeManager;
+import soot.jimple.paddle.P2SetVisitor;
+import soot.jimple.paddle.PaddleNumberers;
+import soot.jimple.paddle.PaddleScene;
+import soot.jimple.paddle.PointsToSetInternal;
+import soot.jimple.paddle.Results;
+import soot.jimple.paddle.VarNode;
+import soot.jimple.toolkits.pta.IAllocNode;
+import soot.toolkits.scalar.Pair;
 import soot.util.queue.QueueReader;
-import droidsafe.android.app.Project;
-import droidsafe.main.Config;
+
+import com.google.common.collect.HashBiMap;
+
 import droidsafe.utils.CannotFindMethodException;
+import droidsafe.utils.SootUtils;
 
 public class PaddlePTA extends PTABridge {
     /** Logger field */
     private static final Logger logger = LoggerFactory.getLogger(PaddlePTA.class);
+    /** bimap of new expressions to their alloc node representation */
+    private HashBiMap<Object, AllocNode> newToAllocNodeMap;
+    /** all method reachable from the harness main */
+    private Set<SootMethod> reachableMethods;
+    /** underlying pta */
+    private AbsPointsToAnalysis ptsProvider;
 
     public PaddlePTA() {
         // TODO Auto-generated constructor stub
@@ -40,8 +81,9 @@ public class PaddlePTA extends PTABridge {
 
     @Override
     protected void releaseInternal() {
-        // TODO Auto-generated method stub
-
+        Scene.v().releaseFastHierarchy();
+        Scene.v().releaseActiveHierarchy();
+        SootBridge.releaseContextNumberer();
     }
 
     @Override
@@ -51,146 +93,361 @@ public class PaddlePTA extends PTABridge {
 
         setPaddlePointsToAnalysis();
         
-    }
+        ptsProvider = (AbsPointsToAnalysis)Scene.v().getPointsToAnalysis();
+        
+        createNewToAllocMap();
+
+        //fill reachable methods map
+        reachableMethods = new HashSet<SootMethod>();
+       
+        QueueReader<MethodOrMethodContext> qr = Scene.v().getReachableMethods().listener();
+       
+        while (qr.hasNext()) {
+            MethodOrMethodContext momc = qr.next();
+            if (momc instanceof SootMethod) {
+                reachableMethods.add((SootMethod)momc);
+            }
+        }
+        
+        System.out.println("Size of reachable methods: " + reachableMethods.size());
+        System.out.println("Alloc Nodes: " + newToAllocNodeMap.size());
+}
     
     private void setPaddlePointsToAnalysis() {
-        logger.info("[spark] Starting analysis ...");
-
+        logger.info("[paddle] Starting analysis ...");
         HashMap<String, String> opt = new HashMap<String, String>();
         
-        opt.put("verbose","true");
-        opt.put("bdd","true");
-        opt.put("backend","buddy");
-        opt.put("context","objsens");
-        opt.put("k","2");
-        opt.put("propagator","auto");
-        opt.put("conf","ofcg");
-        opt.put("order","32");
-        opt.put("q","auto");
-        opt.put("set-impl","double");
-        opt.put("double-set-old","hybrid");
-        opt.put("double-set-new","hybrid");
-        opt.put("pre-jimplify","false");
-        
+        soot.options.Options.v().setPhaseOption("cg.paddle","enabled:true");
+        soot.options.Options.v().setPhaseOption("cg.paddle","verbose:false");
+        soot.options.Options.v().setPhaseOption("cg.paddle","bdd:true");
+        soot.options.Options.v().setPhaseOption("cg.paddle","backend:buddy");
+        soot.options.Options.v().setPhaseOption("cg.paddle","context:objsens");
+        soot.options.Options.v().setPhaseOption("cg.paddle","k:2");
+        soot.options.Options.v().setPhaseOption("cg.paddle","propagator:auto");
+        soot.options.Options.v().setPhaseOption("cg.paddle","conf:ofcg");
+        soot.options.Options.v().setPhaseOption("cg.paddle","order:32");
+        soot.options.Options.v().setPhaseOption("cg.paddle","q:auto");
+        soot.options.Options.v().setPhaseOption("cg.paddle","set-impl:double");
+        soot.options.Options.v().setPhaseOption("cg.paddle","double-set-old:hybrid");
+        soot.options.Options.v().setPhaseOption("cg.paddle","double-set-new:hybrid");
+        soot.options.Options.v().setPhaseOption("cg.paddle","pre-jimplify:false");
+     
         //handle strings with more precision
-        opt.put("merge-stringbuffer", "false");
-        opt.put("string-constants", "true");
+        soot.options.Options.v().setPhaseOption("cg.paddle", "merge-stringbuffer:false");
+        soot.options.Options.v().setPhaseOption("cg.paddle", "string-constants:true");
         
         //object sensitive heap?
-        opt.put("context-heap", "true");
+        soot.options.Options.v().setPhaseOption("cg.paddle", "context-heap:false");
 
+        PackManager.v().getPack("cg").apply();
+    }
 
-        PaddleTransformer pt = new PaddleTransformer();
-        PaddleOptions paddle_opt = new PaddleOptions(opt);
-        pt.setup(paddle_opt);
-        pt.solve(paddle_opt);
-        soot.jimple.paddle.Results.v().makeStandardSootResults();
-        
+    /**
+     * Create the bi map of NewExpr <-> AllocNode
+     */
+    private void createNewToAllocMap() {
+        newToAllocNodeMap = HashBiMap.create();
+        Iterator iter = PaddleNumberers.v().allocNodeNumberer().iterator();
+        while(iter.hasNext()) {
+        	AllocNode node = (AllocNode) iter.next();
+            newToAllocNodeMap.put(node.getNewExpr(), node);
+        }
     }
 
     @Override
     public boolean isLegalCast(Type objType, Type refType) {
-        // TODO Auto-generated method stub
-        return false;
+        return PaddleScene.v().tm.castNeverFails(objType, refType);
     }
 
-    @Override
-    public AllocNode getAllocNode(Object newExpr) {
-        // TODO Auto-generated method stub
-        return null;
+    /**
+     * Given a new expression (Jimple NewExpr or String) return the corresponding AllocNode.
+     */
+    public IAllocNode getAllocNode(Object newExpr) {
+        if (newExpr instanceof NewMultiArrayExpr) {
+            NewMultiArrayExpr newArr = (NewMultiArrayExpr)newExpr;
+            ArrayType type = (ArrayType)newArr.getType();
+            Integer i = type.numDimensions;
+            Pair pair = new Pair(newArr, i);
+            return (IAllocNode) newToAllocNodeMap.get(pair);
+        } else
+            return (IAllocNode) newToAllocNodeMap.get(newExpr);
     }
 
-    @Override
-    public Set<AllocNode> getAllAllocNodes() {
-        // TODO Auto-generated method stub
-        return null;
+    /**
+     * Return a set of all allocnodes in the program.
+     */
+    public Set<? extends IAllocNode> getAllAllocNodes() {
+    	Set<AllocNode> nodes = Collections.unmodifiableSet(newToAllocNodeMap.values());
+        return (Set<? extends IAllocNode>) nodes;
     }
 
-    @Override
-    public Object getNewExpr(AllocNode an) {
-        // TODO Auto-generated method stub
-        return null;
+    /**
+     * Given a Spark AllocNode return the corresponding new expression (Jimple NewExpr or String) 
+     */
+    public Object getNewExpr(IAllocNode an) {
+        return newToAllocNodeMap.inverse().get(an);
     }
 
     @Override
     public Set<SootMethod> getAllReachableMethods() {
-        // TODO Auto-generated method stub
-        return null;
+        return reachableMethods;
     }
 
     @Override
     public boolean isReachableMethod(SootMethod method) {
-        // TODO Auto-generated method stub
+        return reachableMethods.contains(method);
+    }
+
+    /**
+     * Return true if this value is a pointer that is represented in the 
+     * PTA graph.
+     */
+    public boolean isPointer(Value val) {
+        if (!(val.getType() instanceof RefLikeType)) 
+            return false;
+
+        //now see if it is tracked by the PTA
+        if (getInternalNode(val) != null) 
+            return true;
+
         return false;
     }
 
-    @Override
-    public boolean isPointer(Value val) {
-        // TODO Auto-generated method stub
-        return false;
+    /**
+     * Return the node representation for the value (local, fieldref, or array ref)
+     * in the pointer assignment graph.  
+     */
+    private Node getInternalNode(Value val) {
+    	NodeManager nodeManager = PaddleScene.v().nodeManager();
+    	Node node = null;
+        
+        if (val instanceof Local) {
+            node = nodeManager.findLocalVarNode((Local)val);
+        } else if (val instanceof InstanceFieldRef) {
+            node = nodeManager.findLocalVarNode((Local) ((InstanceFieldRef)val).getBase());    
+        } else if (val instanceof StaticFieldRef) {
+           SootField field = ((StaticFieldRef)val).getField();
+           node = nodeManager.findGlobalVarNode(field); 
+        } else if (val instanceof ArrayRef) {
+            ArrayRef arf = (ArrayRef) val;
+            node = nodeManager.findLocalVarNode((Local) arf.getBase());
+        }
+
+        return node;
     }
 
     @Override
     public Set<Type> getTypes(Value val) {
-        // TODO Auto-generated method stub
-        return null;
+        Set<Type> types = new LinkedHashSet<Type>();
+
+        for (IAllocNode node : getPTSet(val)) {
+            types.add(node.getType());
+        }
+
+        return types;
     }
 
     @Override
     public Set<Type> getTypes(Value val, PTAContext context) {
-        // TODO Auto-generated method stub
-        return null;
+        Set<Type> types = new LinkedHashSet<Type>();
+
+        for (IAllocNode node : getPTSet(val, context)) {
+            types.add(node.getType());
+        }
+
+        return types;
     }
 
     @Override
-    public Set<AllocNode> getPTSet(Value val) {
-        // TODO Auto-generated method stub
-        return null;
+    public Set<? extends IAllocNode> getPTSet(Value val) {
+        final Set<AllocNode> allocNodes = new HashSet<AllocNode>();
+        PointsToSetInternal pts = null;
+        
+        try {
+            if (val instanceof InstanceFieldRef) {
+                final InstanceFieldRef ifr = (InstanceFieldRef)val;
+                pts = (PointsToSetInternal)ptsProvider.reachingObjects((Local)ifr.getBase(), ifr.getField());
+            } else if (val instanceof ArrayRef) {
+                ArrayRef arrayRef = (ArrayRef)val;
+                pts = (PointsToSetInternal)ptsProvider.reachingObjectsOfArrayElement
+                        (ptsProvider.reachingObjects((Local)arrayRef.getBase()));
+            } else if (val instanceof Local){            
+                 pts = (PointsToSetInternal)ptsProvider.reachingObjects((Local)val);
+            } else if (val instanceof StaticFieldRef) {
+                SootField field = ((StaticFieldRef)val).getField();
+                pts = (PointsToSetInternal)ptsProvider.reachingObjects(field);
+            } else if (val instanceof NullConstant) {
+                return (Set<? extends IAllocNode>) allocNodes;
+            } else {
+                logger.error("Unknown reference type for insenstive search: {} {}", val, val.getClass());
+                droidsafe.main.Main.exit(1);
+            }
+            
+            //visit internal points to set and grab all allocnodes        
+            pts.forall(new P2SetVisitor() {
+                public void visit(ContextAllocNode n) {
+                    allocNodes.add(n.obj());
+                }
+            });
+            
+        } catch (Exception e) {
+            logger.info("Some sort of error getting context insensitive points to set for {}", val, e);
+            //e.printStackTrace();
+        }
+
+        return (Set<? extends IAllocNode>) allocNodes;
+    }
+
+    /**
+     * Context Insensitive query of field reference with allocnode and field. 
+     */
+    public Set<? extends IAllocNode> getPTSet(IAllocNode node, SootField field) {
+        if (field.isStatic()) {
+            logger.error("Cannot call getPTSet(node, field) with static field: {}", field);
+            droidsafe.main.Main.exit(1);
+        }
+
+        final Set<AllocNode> allocNodes = new HashSet<AllocNode>();        
+        AllocNode allocNode = (AllocNode) node;
+        AllocDotField allocDotField = allocNode.dot(field);
+        AbsP2Sets p2sets = Results.v().p2sets();
+        Iterator iter = allocDotField.contexts();
+        while (iter.hasNext()) {
+        	ContextAllocDotField cadf = (ContextAllocDotField) iter.next();
+        	PointsToSet pointsToSet = p2sets.get(cadf);
+        	((PointsToSetInternal)ptsProvider.reachingObjects(pointsToSet, field)).forall(new P2SetVisitor() {
+        		@Override
+        		public void visit(ContextAllocNode node) {
+        			allocNodes.add(node.obj());
+        		}
+        	});
+        }
+
+        return (Set<? extends IAllocNode>) allocNodes;
     }
 
     @Override
-    public Set<AllocNode> getPTSet(AllocNode node, SootField field) {
-        // TODO Auto-generated method stub
-        return null;
+    public Set<? extends IAllocNode> getPTSet(Value val, PTAContext context) {
+//        if (context.getType() == ContextType.EVENT_CONTEXT) {
+//            return getPTSetEventContext(val, context.getContext());
+//        } else if (context.getType() == ContextType.ONE_CFA) {
+//            return getPTSet1CFA(val, context.getContext());
+//        } else if (context.getType() == ContextType.NONE) {
+    	if (context.getType() == ContextType.NONE) {
+    		return getPTSet(val);
+        } else {
+            logger.error("Invalid Query Type: {}", context.getType());
+            droidsafe.main.Main.exit(1);
+            return null;
+        }
     }
 
     @Override
-    public Set<AllocNode> getPTSet(Value val, PTAContext context) {
-        // TODO Auto-generated method stub
+    public Set<? extends IAllocNode> getPTSetOfArrayElement(IAllocNode node) {
+        logger.error("Not yet implemented");
+        droidsafe.main.Main.exit(1);
         return null;
     }
 
-    @Override
-    public Set<AllocNode> getPTSetOfArrayElement(AllocNode nodes) {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    @Override
+    /**
+     * Given an invoke expression, resolve the targets of the method.  Perform a pta virtual method resolution
+     * for instance invokes, and use an insensitive search.
+     */
     public Collection<SootMethod> resolveInvoke(InvokeExpr invoke) throws CannotFindMethodException {
-        // TODO Auto-generated method stub
-        return null;
+        if (invoke instanceof StaticInvokeExpr) {
+            Set<SootMethod> ret = new HashSet<SootMethod>();
+            ret.add(((StaticInvokeExpr)invoke).getMethod());
+            return ret;
+        } else if (invoke instanceof DynamicInvokeExpr) {
+            logger.error("Should not see dynamic invoke expr: {}", invoke);
+            droidsafe.main.Main.exit(1);
+        } else if (invoke instanceof InstanceInvokeExpr) {
+            return resolveInstanceInvoke((InstanceInvokeExpr)invoke);
+        }
+        
+        return Collections.emptySet();
     }
 
     @Override
     public Collection<SootMethod> resolveInvoke(InvokeExpr invoke, PTAContext context)
             throws CannotFindMethodException {
-        // TODO Auto-generated method stub
-        return null;
+        if (invoke instanceof StaticInvokeExpr) {
+            Set<SootMethod> ret = new HashSet<SootMethod>();
+            ret.add(((StaticInvokeExpr)invoke).getMethod());
+            return ret;
+        } else if (invoke instanceof DynamicInvokeExpr) {
+            logger.error("Should not see dynamic invoke expr: {}", invoke);
+            droidsafe.main.Main.exit(1);
+        } else if (invoke instanceof InstanceInvokeExpr) {
+            return resolveInstanceInvokeMap((InstanceInvokeExpr)invoke, context).values();
+        }          
+        return Collections.emptySet();
     }
 
-    @Override
-    public Map<AllocNode, SootMethod> resolveInstanceInvokeMap(InstanceInvokeExpr invoke)
+    /**
+     * Use the PTA to resolve the set of method that an instance invoke could call.  In this 
+     * version, use the context insensitive result.  Return a map of each alloc node to its
+     * target method.
+     */
+    public Map<IAllocNode, SootMethod> resolveInstanceInvokeMap(InstanceInvokeExpr invoke)
             throws CannotFindMethodException {
-        // TODO Auto-generated method stub
-        return null;
+        return resolveInstanceInvokeMap(invoke, null);
     }
 
-    @Override
-    public Map<AllocNode, SootMethod> resolveInstanceInvokeMap(InstanceInvokeExpr invoke,
+    /**
+     * Use the PTA to resolve the set of method that an instance invoke could call.  In this 
+     * version, use the context sensitive result.  Return a map of each alloc node to its
+     * target method.
+     */
+    public Map<IAllocNode, SootMethod> resolveInstanceInvokeMap(InstanceInvokeExpr invoke,
             PTAContext context) throws CannotFindMethodException {
-        // TODO Auto-generated method stub
-        return null;
+        Set<? extends IAllocNode> allocs = null;
+        //get either the context sensitive or insensitive result based on the context param 
+        if (context == null) 
+            allocs = getPTSet(invoke.getBase());
+        else
+            allocs = getPTSet(invoke.getBase(), context);
+        
+        return internalResolveInstanceInvokeMap(allocs, invoke, context);
+    }
+
+    /**
+     * 
+     */
+    private Map<IAllocNode, SootMethod> internalResolveInstanceInvokeMap(Set<? extends IAllocNode> allocs, 
+        InstanceInvokeExpr invoke, PTAContext context) throws CannotFindMethodException {
+        Map<IAllocNode, SootMethod> methods = new LinkedHashMap<IAllocNode, SootMethod>();
+        
+      //loop over alloc nodes and resolve the concrete dispatch for each, placing in the set
+        for (IAllocNode an : allocs) {
+            if (invoke instanceof SpecialInvokeExpr) {
+                SootMethod resolved = SootUtils.resolveSpecialDispatch((SpecialInvokeExpr)invoke); 
+                methods.put(an, resolved);
+            } else if (invoke instanceof VirtualInvokeExpr || invoke instanceof InterfaceInvokeExpr) {
+                Type t = an.getType();
+                SootClass clz = null;
+                //some type that we don't understand, so throw that we cannot find the method
+                if ( t instanceof AnySubType ) {
+                    throw new CannotFindMethodException(t, invoke.getMethod());
+                } else if (t instanceof ArrayType) {
+                    //if array type then we have to get a reference to the Object class
+                    //because in java one can invoke methods of Object on arrays
+                    clz = Scene.v().getSootClass("java.lang.Object");
+                } else {
+                    //normal reference type, just get the soot class
+                    clz = ((RefType)t).getSootClass();
+                }   
+                
+                methods.put(an, SootUtils.resolveConcreteDispatch(clz, invoke.getMethod()));
+            } else {
+                logger.error("Unknown invoke expression type encountered when resolving InstanceInvoke {}", invoke);
+                droidsafe.main.Main.exit(1);
+            }
+            
+            
+        }
+
+        return methods;
     }
 
     @Override

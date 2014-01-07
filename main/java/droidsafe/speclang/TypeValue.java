@@ -3,7 +3,6 @@ package droidsafe.speclang;
 import java.util.Set;
 
 import soot.Type;
-import soot.jimple.spark.pag.AllocNode;
 import droidsafe.utils.SootUtils;
 
 public class TypeValue extends ArgumentValue {

@@ -35,10 +35,10 @@ import soot.jimple.InstanceFieldRef;
 import soot.jimple.IntConstant;
 import soot.jimple.LongConstant;
 import soot.jimple.StringConstant;
-import soot.jimple.spark.pag.AllocNode;
-import soot.jimple.spark.pag.StringConstantNode;
 import soot.jimple.Stmt;
 import soot.jimple.toolkits.callgraph.Edge;
+import soot.jimple.toolkits.pta.IAllocNode;
+import soot.jimple.toolkits.pta.IStringConstantNode;
 import soot.RefType;
 import soot.SootClass;
 import soot.SootField;
@@ -132,7 +132,7 @@ public class ValueAnalysis implements CGContextVisitor {
     /**
      * Return true if this alloc node has an analysis result (and is not invalidated)
      */
-    public boolean hasResult(AllocNode node) {
+    public boolean hasResult(IAllocNode node) {
         Object newExpr = PTABridge.v().getNewExpr(node);
 
         return this.allocNodeToVAModelMap.containsKey(newExpr) &&
@@ -142,7 +142,7 @@ public class ValueAnalysis implements CGContextVisitor {
     /**
      * Return the ModeledObject result for a given alloc node.
      */
-    public VAModel getResult(AllocNode node) {
+    public VAModel getResult(IAllocNode node) {
         Object newExpr = PTABridge.v().getNewExpr(node);
 
         return this.allocNodeToVAModelMap.get(newExpr);
@@ -199,13 +199,13 @@ public class ValueAnalysis implements CGContextVisitor {
     }
     
     public void createObjectModels() {
-        for(AllocNode allocNode : PTABridge.v().getAllAllocNodes()) {
+        for(IAllocNode allocNode : PTABridge.v().getAllAllocNodes()) {
             Object newExpr = PTABridge.v().getNewExpr(allocNode);
             createObjectModel(allocNode, newExpr);    
         }
     }
 
-    public void createObjectModel(AllocNode allocNode, Object newExpr) {
+    public void createObjectModel(IAllocNode allocNode, Object newExpr) {
         if(!(allocNode.getType() instanceof RefType)) {
             this.logError(allocNode.toString());
             return;
@@ -289,8 +289,8 @@ public class ValueAnalysis implements CGContextVisitor {
                         continue;
                                         
                     //this call here is expensive!!
-                    Set<AllocNode> baseAllocNodes = PTABridge.v().getPTSet(baseValue, ptaContext);
-                    for(AllocNode allocNode : baseAllocNodes) {
+                    Set<? extends IAllocNode> baseAllocNodes = PTABridge.v().getPTSet(baseValue, ptaContext);
+                    for(IAllocNode allocNode : baseAllocNodes) {
                         Object newExpr = PTABridge.v().getNewExpr(allocNode);
                         VAModel vaModel = this.allocNodeToVAModelMap.get(newExpr);
                         if(vaModel != null) {
@@ -349,26 +349,27 @@ public class ValueAnalysis implements CGContextVisitor {
     private void handleString(AssignStmt assignStmt, PrimVAModel fieldPrimVAModel, PTAContext eventContext) {
         //Found string
         //System.out.println("Found String!!: " + fieldObject);
-        Set<AllocNode> rhsNodes;
+        Set<? extends IAllocNode> rhsNodes;
 
         //get the string nodes the rhs expression could possibly point to
         if (assignStmt.getRightOp() instanceof StringConstant) {
             //if a direct string constant, then get the string constant node from pta
-            rhsNodes = new HashSet<AllocNode>();
-            rhsNodes.add(PTABridge.v().getAllocNode(assignStmt.getRightOp()));
+            Set<IAllocNode> nodes = new HashSet<IAllocNode>();
+            nodes.add(PTABridge.v().getAllocNode(assignStmt.getRightOp()));
+            rhsNodes = nodes;
         } else {
             //if not a string constant, then query pta
             rhsNodes = PTABridge.v().getPTSet(assignStmt.getRightOp(), eventContext);
         }
 
-        for(AllocNode rhsNode : rhsNodes) {
+        for(IAllocNode rhsNode : rhsNodes) {
             boolean knownValue = false;
-            if(rhsNode instanceof StringConstantNode) {
+            if(rhsNode instanceof IStringConstantNode) {
                 //logger.info("handleString: {}", rhsNode.getMethod());
                 StringConstant sc = (StringConstant)rhsNode.getNewExpr();
                 //are we tracking all strings, or just the strings injected by jsa for api calls in user code
                 if (!ONLY_TRACK_JSA_STRINGS || JSAResultInjection.trackedStringConstants.contains(sc)) {
-                    String value = ((StringConstantNode)rhsNode).getString();
+                    String value = ((IStringConstantNode)rhsNode).getString();
                     value = value.replaceAll("(\\r|\\n)", "");
                     value = value.replace("\"", "");
                     value = value.replace("\\uxxxx", "");

@@ -41,11 +41,9 @@ import soot.jimple.StaticInvokeExpr;
 import soot.jimple.Stmt;
 import soot.jimple.StmtBody;
 import soot.jimple.internal.JAssignStmt;
-import soot.jimple.spark.geom.dataRep.CgEdge;
-import soot.jimple.spark.geom.geomPA.GeomPointsTo;
-import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.toolkits.callgraph.CallGraph;
 import soot.jimple.toolkits.callgraph.Edge;
+import soot.jimple.toolkits.pta.IAllocNode;
 import soot.util.Chain;
 import soot.util.queue.QueueReader;
 import soot.Type;
@@ -94,7 +92,7 @@ public class RCFG  {
     /** methods we have visited in our search */
     private Set<SootMethod> visitedMethods;
     /** alloc nodes that are either a receiver or argument for an api call */
-    private Set<AllocNode> apiCallNodes;
+    private Set<IAllocNode> apiCallNodes;
     /** ignore making output events for stmts in this set */
     private Set<Stmt> ignoreSet;
 
@@ -207,7 +205,7 @@ public class RCFG  {
     private RCFG() {
         this.visitedMethods = new HashSet<SootMethod>();
         this.entryEdgeToNode = new LinkedHashMap<Edge, RCFGNode>();
-        this.apiCallNodes = new HashSet<AllocNode>();
+        this.apiCallNodes = new HashSet<IAllocNode>();
         this.ignoreSet = new HashSet<Stmt>(); 
     }
 
@@ -221,14 +219,14 @@ public class RCFG  {
     /**
      * Return true if this allocation node can possible be an argument or receiver for an output event.
      */
-    public boolean isRecOrArgForAPICall(AllocNode an) {
+    public boolean isRecOrArgForAPICall(IAllocNode an) {
         return apiCallNodes.contains(an);
     }
 
     /**
      * Return all nodes that are receiver or argument for interesting api calls.
      */
-    public Set<AllocNode> getRecOrArgsForAPICalls() {
+    public Set<IAllocNode> getRecOrArgsForAPICalls() {
         return apiCallNodes;
     }
 
@@ -282,7 +280,7 @@ public class RCFG  {
                     //use the pta to find all the alloc nodes for the source call
                     //for each, see if they map to the destination method, if they do,
                     //create the output event
-                    for (Map.Entry<AllocNode, SootMethod> entry : 
+                    for (Map.Entry<IAllocNode, SootMethod> entry : 
                         PTABridge.v().resolveInstanceInvokeMap(iie, eventContext).entrySet()) {
                         if (entry.getValue().equals(callee)) {
                             if (debug)

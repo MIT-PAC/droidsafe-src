@@ -21,8 +21,8 @@ import soot.Value;
 import soot.jimple.InstanceFieldRef;
 import soot.jimple.InstanceInvokeExpr;
 import soot.jimple.InvokeExpr;
-import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.toolkits.callgraph.Edge;
+import soot.jimple.toolkits.pta.IAllocNode;
 
 /**
  * A node in the forest of the rCFG.  This represents and input event (an entry point into
@@ -177,7 +177,7 @@ public class RCFGNode implements PTAMethodInformation {
 	 * Return the PT set as calculated by GeoPTA without context.
 	 * @return
 	 */
-	public Set<AllocNode> getReceiverPTSet(PTAContext context) {
+	public Set<? extends IAllocNode> getReceiverPTSet(PTAContext context) {
 	    if (isReceiverPointer()) 
 	        return PTABridge.v().getPTSet(getReceiver(), context);
 	    else
@@ -211,7 +211,7 @@ public class RCFGNode implements PTAMethodInformation {
 	/**
 	 * For a pointer arg value at i, return the PTA result (insensitive). 
 	 */
-	public Set<AllocNode> getArgPTSet(PTAContext context, int i) {
+	public Set<? extends IAllocNode> getArgPTSet(PTAContext context, int i) {
 	    if (!isArgPointer(i))
 	        return null;
 	    

@@ -2,7 +2,6 @@ package droidsafe.analyses.pta;
 
 import java.io.PrintStream;
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
@@ -10,8 +9,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import droidsafe.utils.CannotFindMethodException;
-import soot.G;
-import soot.PointsToSet;
 import soot.Scene;
 import soot.SootField;
 import soot.SootMethod;
@@ -19,9 +16,7 @@ import soot.Type;
 import soot.Value;
 import soot.jimple.InstanceInvokeExpr;
 import soot.jimple.InvokeExpr;
-import soot.jimple.spark.geom.helper.ContextTranslator;
-import soot.jimple.spark.pag.AllocNode;
-import soot.jimple.spark.pag.MethodPAG;
+import soot.jimple.toolkits.pta.IAllocNode;
 
 /**
  * This abstract class defines methods that an underlying points to analysis framework must implement
@@ -58,8 +53,6 @@ public abstract class PTABridge {
         Scene.v().releasePointsToAnalysis();
         Scene.v().releaseReachableMethods();
 
-        G.v().MethodPAG_methodToPag = new HashMap<SootMethod, MethodPAG>();
-
         System.gc();
         System.gc();
     }
@@ -76,7 +69,8 @@ public abstract class PTABridge {
         } else if (pta == PointsToAnalysisPackage.SPARK) {
             v = new SparkPTA();
             v.runInternal();
-        }  else if (pta == PointsToAnalysisPackage.PADDLE) {
+        }  else
+        if (pta == PointsToAnalysisPackage.PADDLE) {
             v = new PaddlePTA();
             v.runInternal();
         } else {
@@ -96,13 +90,13 @@ public abstract class PTABridge {
     public abstract boolean isLegalCast(Type objType, Type refType);
 
     /** return the alloc node of the PAG representing the new expr */
-    public abstract AllocNode getAllocNode(Object newExpr);
+    public abstract IAllocNode getAllocNode(Object newExpr);
     
     /** Get all the alloc nodes of the PAG */
-    public abstract Set<AllocNode> getAllAllocNodes();
+    public abstract Set<? extends IAllocNode> getAllAllocNodes();
     
     /** return the new expression in the IR that this alloc node represents */
-    public abstract Object getNewExpr(AllocNode an);
+    public abstract Object getNewExpr(IAllocNode an);
     
     /** Return a list of all reachable methods based on PTA */
     public abstract Set<SootMethod> getAllReachableMethods() ;
@@ -120,18 +114,18 @@ public abstract class PTABridge {
     public abstract Set<Type> getTypes(Value val, PTAContext context);
     
     /** Return the possible alloc nodes that the given pointer could point to, insensitive */
-    public abstract Set<AllocNode> getPTSet(Value val);
+    public abstract Set<? extends IAllocNode> getPTSet(Value val);
     
     /**
      * Content Insensitive query of field reference with allocnode and field. 
      */
-    public abstract Set<AllocNode> getPTSet(AllocNode node, SootField field);
+    public abstract Set<? extends IAllocNode> getPTSet(IAllocNode node, SootField field);
     
     /** Return the possible alloc nodes that the given points to could point to given the context */
-    public abstract Set<AllocNode> getPTSet(Value val, PTAContext context);
+    public abstract Set<? extends IAllocNode> getPTSet(Value val, PTAContext context);
     
     /** Return the possible alloc nodes that the given alloc node could point to, with alloc node arg an array */
-    public abstract Set<AllocNode> getPTSetOfArrayElement(AllocNode nodes);
+    public abstract Set<? extends IAllocNode> getPTSetOfArrayElement(IAllocNode nodes);
     
     /** Resolve the targets of the invoke statement given the PTA and an insensitive search */
     public abstract Collection<SootMethod> resolveInvoke(InvokeExpr invoke)  throws CannotFindMethodException;
@@ -164,12 +158,12 @@ public abstract class PTABridge {
     
     /** Resolve the targets of the invoke statement for each alloc node that the receiver could reference 
     given the PTA and an insensitive search */
-    public abstract Map<AllocNode,SootMethod> resolveInstanceInvokeMap(InstanceInvokeExpr invoke)
+    public abstract Map<IAllocNode,SootMethod> resolveInstanceInvokeMap(InstanceInvokeExpr invoke)
             throws CannotFindMethodException;
     
     /** Resolve the targets of the invoke statement for each alloc node that the receiver could reference 
         given the PTA and a context */
-    public abstract Map<AllocNode,SootMethod> resolveInstanceInvokeMap(InstanceInvokeExpr invoke, PTAContext context)
+    public abstract Map<IAllocNode,SootMethod> resolveInstanceInvokeMap(InstanceInvokeExpr invoke, PTAContext context)
             throws CannotFindMethodException;
     
     /** dump the pta result */

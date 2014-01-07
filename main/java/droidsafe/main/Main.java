@@ -230,7 +230,7 @@ public class Main {
         timer1.stop();
         driverMsg("Finished String Analysis: " + timer1);
 
-        if (Config.v().addObjectSensitivity) {
+        if (POINTS_TO_ANALYSIS_PACKAGE != PointsToAnalysisPackage.PADDLE && Config.v().addObjectSensitivity) {
             driverMsg("Adding Object Sensitivity by cloning...");
             monitor.subTask("Adding Object Sensitivity by cloning...");
             ObjectSensitivityCloner.v().runForVA();

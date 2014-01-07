@@ -31,7 +31,6 @@ import soot.jimple.NullConstant;
 import soot.jimple.internal.JAssignStmt;
 import soot.jimple.internal.JGotoStmt;
 import soot.jimple.internal.JIfStmt;
-import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.SpecialInvokeExpr;
 import soot.jimple.Stmt;
 import soot.jimple.StmtBody;

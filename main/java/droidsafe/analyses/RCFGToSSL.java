@@ -23,9 +23,9 @@ import soot.jimple.IntConstant;
 import soot.jimple.LongConstant;
 import soot.jimple.NullConstant;
 import soot.jimple.StringConstant;
-import soot.jimple.spark.pag.AllocNode;
-import soot.jimple.spark.pag.ClassConstantNode;
-import soot.jimple.spark.pag.StringConstantNode;
+import soot.jimple.toolkits.pta.IAllocNode;
+import soot.jimple.toolkits.pta.IStringConstantNode;
+import soot.jimple.toolkits.pta.IClassConstantNode;
 import droidsafe.analyses.pta.ContextType;
 import droidsafe.analyses.pta.PTAContext;
 import droidsafe.analyses.pta.PTAMethodInformation;
@@ -192,7 +192,7 @@ public class RCFGToSSL {
 	    
         //iterate over all the nodes pointed to and see if they are all va results
         //if not, break and remember
-        for (AllocNode node : method.getReceiverPTSet(eventContext)) {
+        for (IAllocNode node : method.getReceiverPTSet(eventContext)) {
             if (ValueAnalysis.v().hasResult(node)) {
                 //check to see if we have a value analysis result for this alloc node
                 //and if so, add it to the concrete list of values.
@@ -240,21 +240,21 @@ public class RCFGToSSL {
 	        return clrv;
 	    }
 	    
-	    Set<AllocNode> ptsToSet = methodInfo.getArgPTSet(methodInfo.getContext(ContextType.EVENT_CONTEXT), i); 
+	    Set<? extends IAllocNode> ptsToSet = methodInfo.getArgPTSet(methodInfo.getContext(ContextType.EVENT_CONTEXT), i); 
 		boolean allConstants = true;
 		//here we consider Value Analysis results as constants
 		List<ConcreteArgumentValue> constants = new LinkedList<ConcreteArgumentValue>();
 		
 		//iterate over all the nodes pointed to and see if they are all constants
 		//if not, break and remember
-		for (AllocNode node : ptsToSet) {
-			if (node instanceof StringConstantNode) {
+		for (IAllocNode node : ptsToSet) {
+			if (node instanceof IStringConstantNode) {
 				//create new string values just in case this is all constants
-				String value = ((StringConstantNode)node).getString();
+				String value = ((IStringConstantNode)node).getString();
 				constants.add(new StringValue(value));
-			} else if (node instanceof ClassConstantNode) {
+			} else if (node instanceof IClassConstantNode) {
 				//create a new concrete arg value just in case this is all constants
-				constants.add(new ClassValue(((ClassConstantNode)node).getClassConstant().getValue()));
+				constants.add(new ClassValue(((IClassConstantNode)node).getClassConstant().getValue()));
 			} else if (ValueAnalysis.v().hasResult(node)) {
 			    //check to see if we have a value analysis result for this alloc node
 			    //and if so, add it to the concrete list of values.

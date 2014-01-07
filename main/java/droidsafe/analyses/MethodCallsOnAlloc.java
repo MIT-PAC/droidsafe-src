@@ -16,8 +16,8 @@ import soot.Type;
 import soot.Value;
 import soot.jimple.InstanceInvokeExpr;
 import soot.jimple.InvokeExpr;
-import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.toolkits.callgraph.Edge;
+import soot.jimple.toolkits.pta.IAllocNode;
 import droidsafe.analyses.pta.ContextType;
 import droidsafe.analyses.pta.PTABridge;
 import droidsafe.analyses.pta.PTAContext;
@@ -42,7 +42,7 @@ import droidsafe.android.system.API;
  */
 public class MethodCallsOnAlloc implements CGVisitorEntryAnd1CFA {
     /** Map of alloc node to edges that could have alloc node as receiver or arg */
-    private Map<AllocNode,Set<Edge>> nodeToCalls;
+    private Map<IAllocNode,Set<Edge>> nodeToCalls;
     /** Singleton object */
     private static MethodCallsOnAlloc v;
     /** precalculate the types of objects we are tracking so we can reduce number of pta queries by 
@@ -53,7 +53,7 @@ public class MethodCallsOnAlloc implements CGVisitorEntryAnd1CFA {
      * Private constructor
      */
     private MethodCallsOnAlloc() {
-        nodeToCalls = new HashMap<AllocNode,Set<Edge>>();
+        nodeToCalls = new HashMap<IAllocNode,Set<Edge>>();
         typesToConsider = new HashSet<Type>();
         calculateTypesToConsider();
     }
@@ -62,7 +62,7 @@ public class MethodCallsOnAlloc implements CGVisitorEntryAnd1CFA {
      * precalculate the types we care about tracking so we can reduce the number of pta queries.
      */
     private void calculateTypesToConsider() {
-        for (AllocNode node : RCFG.v().getRecOrArgsForAPICalls()) {
+        for (IAllocNode node : RCFG.v().getRecOrArgsForAPICalls()) {
             if (!(node.getType() instanceof RefType))
                 continue;
             SootClass clz = ((RefType)node.getType()).getSootClass();
@@ -117,10 +117,10 @@ public class MethodCallsOnAlloc implements CGVisitorEntryAnd1CFA {
                 if (invoke instanceof InstanceInvokeExpr) {
                     InstanceInvokeExpr iie = (InstanceInvokeExpr)invoke;
                     if (typesToConsider.contains(iie.getBase().getType())) {
-                        Set<AllocNode> nodes;
+                        Set<? extends IAllocNode> nodes;
                         nodes = PTABridge.v().getPTSet(iie.getBase());
                         
-                        for (AllocNode an : nodes) {
+                        for (IAllocNode an : nodes) {
                             if (RCFG.v().isRecOrArgForAPICall(an)) {
                                 getCalls(an).add(edge);
                             }
@@ -130,10 +130,10 @@ public class MethodCallsOnAlloc implements CGVisitorEntryAnd1CFA {
 
                 for (Value argv : invoke.getArgs()) {
                     if (PTABridge.v().isPointer(argv) && typesToConsider.contains(argv.getType())) {
-                        Set<AllocNode> nodes;
+                        Set<? extends IAllocNode> nodes;
                         nodes = PTABridge.v().getPTSet(argv);
                             
-                        for (AllocNode an : nodes) {
+                        for (IAllocNode an : nodes) {
                             if (RCFG.v().isRecOrArgForAPICall(an)) {
                                 getCalls(an).add(edge);
                             }
@@ -165,14 +165,14 @@ public class MethodCallsOnAlloc implements CGVisitorEntryAnd1CFA {
         if (invoke instanceof InstanceInvokeExpr) {
             InstanceInvokeExpr iie = (InstanceInvokeExpr)invoke;
             if (typesToConsider.contains(iie.getBase().getType())) {
-                Set<AllocNode> nodes;
+                Set<? extends IAllocNode> nodes;
                 //if the context is the same as the edge into, then we cannot use context back to the src
                 if (eventContext.getContext() == edgeInto) 
                     nodes = PTABridge.v().getPTSet(iie.getBase());
                 else    
                     nodes = PTABridge.v().getPTSet(iie.getBase(), eventContext);
 
-                for (AllocNode an : nodes) {
+                for (IAllocNode an : nodes) {
                     if (RCFG.v().isRecOrArgForAPICall(an)) {
                         getCalls(an).add(edgeInto);
                     }
@@ -182,13 +182,13 @@ public class MethodCallsOnAlloc implements CGVisitorEntryAnd1CFA {
 
         for (Value argv : invoke.getArgs()) {
             if (PTABridge.v().isPointer(argv) && typesToConsider.contains(argv.getType())) {
-                Set<AllocNode> nodes;
+                Set<? extends IAllocNode> nodes;
                 //if the context is the same as the edge into, then we cannot use context back to the src
                 if (eventContext.getContext() == edgeInto) 
                     nodes = PTABridge.v().getPTSet(argv);
                 else    
                     nodes = PTABridge.v().getPTSet(argv, eventContext);
-                for (AllocNode an : nodes) {
+                for (IAllocNode an : nodes) {
                     if (RCFG.v().isRecOrArgForAPICall(an)) {
                         getCalls(an).add(edgeInto);
                     }
@@ -201,7 +201,7 @@ public class MethodCallsOnAlloc implements CGVisitorEntryAnd1CFA {
      * For a given alloc node that is important for RCFG (used in an api call) return the set
      * of all calls that could have this alloc node as either a receiver or argument. 
      */
-    public Set<Edge> getCalls(AllocNode an) {
+    public Set<Edge> getCalls(IAllocNode an) {
         if (!RCFG.v().isRecOrArgForAPICall(an)) 
             return null;
 

@@ -21,7 +21,7 @@ import soot.Value;
 import soot.jimple.Expr;
 import soot.jimple.InvokeExpr;
 import soot.jimple.Stmt;
-import soot.jimple.spark.pag.AllocNode;
+import soot.jimple.toolkits.pta.IAllocNode;
 import soot.tagkit.LineNumberTag;
 import droidsafe.analyses.infoflow.APIInfoKindMapping;
 import droidsafe.analyses.infoflow.InfoKind;
@@ -169,9 +169,9 @@ public class Method implements Comparable<Method> {
     /**
      * Return a set of allocation nodes for possible new expression that can reach receiver of this method.
      */
-    public Set<AllocNode> getReceiverAllocNodes() {
+    public Set<? extends IAllocNode> getReceiverAllocNodes() {
         if (ptaInfo == null || !ptaInfo.hasReceiver() || !PTABridge.v().isPointer(ptaInfo.getReceiver()))
-            return new HashSet<AllocNode>();
+            return new HashSet<IAllocNode>();
 
         return ptaInfo.getReceiverPTSet(ptaInfo.getContext(ContextType.EVENT_CONTEXT));
     }
@@ -180,9 +180,9 @@ public class Method implements Comparable<Method> {
      * Return the set of allocation nodes for new expression that could reach the argument i,  
      * assuming it is a pointer value.  Return empty set of any problems.
      */
-    public Set<AllocNode> getArgAllocNodes(int i) {
+    public Set<? extends IAllocNode> getArgAllocNodes(int i) {
         if (ptaInfo == null || !PTABridge.v().isPointer(ptaInfo.getArgValue(i)))
-            return new HashSet<AllocNode>();
+            return new HashSet<IAllocNode>();
 
         return ptaInfo.getArgPTSet(ptaInfo.getContext(ContextType.EVENT_CONTEXT), i);
     }

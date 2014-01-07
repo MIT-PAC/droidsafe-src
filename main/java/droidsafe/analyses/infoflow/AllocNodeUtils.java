@@ -2,14 +2,14 @@ package droidsafe.analyses.infoflow;
 
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Set;
 
 import soot.ArrayType;
 import soot.G;
 import soot.RefType;
 import soot.SootField;
-import soot.jimple.spark.pag.AllocDotField;
-import soot.jimple.spark.pag.AllocNode;
+import soot.jimple.toolkits.pta.IAllocNode;
 import droidsafe.analyses.pta.PTABridge;
 
 public class AllocNodeUtils {
@@ -23,48 +23,65 @@ public class AllocNodeUtils {
         return v;
     }
 
-    HashMap<AllocNode, Set<AllocNode>> allocNodeToReachableAllocNodes = new HashMap<AllocNode, Set<AllocNode>>();
+    HashMap<IAllocNode, Set<IAllocNode>> allocNodeToReachableAllocNodes = new HashMap<IAllocNode, Set<IAllocNode>>();
 
 
-    Set<AllocNode> reachable(Set<AllocNode> allocNodes) {
-        HashSet<AllocNode> reachableAllocNodes = new HashSet<AllocNode>();
-        for (AllocNode allocNode : allocNodes) {
+    Set<IAllocNode> reachable(Set<IAllocNode> allocNodes) {
+        HashSet<IAllocNode> reachableAllocNodes = new HashSet<IAllocNode>();
+        for (IAllocNode allocNode : allocNodes) {
             reachableAllocNodes.addAll(reachable(allocNode));
         }
         return reachableAllocNodes;
     }
 
-    Set<AllocNode> reachable(AllocNode allocNode) {
-        return reachable(allocNode, new HashSet<AllocNode>());
+    Set<IAllocNode> reachable(IAllocNode allocNode) {
+        return reachable(allocNode, new HashSet<IAllocNode>());
     }
 
-    Set<AllocNode> reachable(AllocNode allocNode, Set<AllocNode> visitedAllocNodes) {
+    Set<IAllocNode> reachable(IAllocNode allocNode, Set<IAllocNode> visitedAllocNodes) {
         visitedAllocNodes.add(allocNode);
 
         if (allocNodeToReachableAllocNodes.containsKey(allocNode)) {
             return allocNodeToReachableAllocNodes.get(allocNode);
         }
 
-        Set<AllocNode> reachableAllocNodes = new HashSet<AllocNode>();
+        Set<IAllocNode> reachableAllocNodes = new HashSet<IAllocNode>();
         reachableAllocNodes.add(allocNode);
-        Set<AllocNode> directlyReachableAllocNodes = new HashSet<AllocNode>();
+        Set<IAllocNode> directlyReachableAllocNodes = new HashSet<IAllocNode>();
         if (allocNode.getType() instanceof RefType) {
-            for (AllocDotField allocDotField : allocNode.getFields()) {
-                // FIXME FIXME       FIXME       FIXME                   FIXME
-                // FIXME             FIXME             FIXME       FIXME
-                // FIXME FIXME       FIXME                   FIXME
-                // FIXME             FIXME             FIXME       FIXME
-                // FIXME             FIXME       FIXME                   FIXME
-                try {
-                    directlyReachableAllocNodes.addAll(PTABridge.v().getPTSet(allocNode, (SootField)allocDotField.getField()));
-                } catch (RuntimeException exception) {
-                    exception.printStackTrace(G.v().out);
+        	if (allocNode instanceof soot.jimple.spark.pag.AllocNode) {
+                for (soot.jimple.spark.pag.AllocDotField allocDotField : ((soot.jimple.spark.pag.AllocNode) allocNode).getFields()) {
+                    // FIXME FIXME       FIXME       FIXME                   FIXME
+                    // FIXME             FIXME             FIXME       FIXME
+                    // FIXME FIXME       FIXME                   FIXME
+                    // FIXME             FIXME             FIXME       FIXME
+                    // FIXME             FIXME       FIXME                   FIXME
+                    try {
+                        directlyReachableAllocNodes.addAll(PTABridge.v().getPTSet(allocNode, (SootField)allocDotField.getField()));
+                    } catch (RuntimeException exception) {
+                        exception.printStackTrace(G.v().out);
+                    }
                 }
-            }
+        	} else if (allocNode instanceof soot.jimple.paddle.AllocNode) {
+        		Iterator iter = ((soot.jimple.paddle.AllocNode) allocNode).fields();
+        		while (iter.hasNext()) {
+        			soot.jimple.paddle.AllocDotField allocDotField = (soot.jimple.paddle.AllocDotField) iter.next();
+        			// FIXME FIXME       FIXME       FIXME                   FIXME
+        			// FIXME             FIXME             FIXME       FIXME
+        			// FIXME FIXME       FIXME                   FIXME
+        			// FIXME             FIXME             FIXME       FIXME
+        			// FIXME             FIXME       FIXME                   FIXME
+        			try {
+        				directlyReachableAllocNodes.addAll(PTABridge.v().getPTSet(allocNode, (SootField)allocDotField.field()));
+        			} catch (RuntimeException exception) {
+        				exception.printStackTrace(G.v().out);
+        			}
+        		}
+        	}
         } else if (allocNode.getType() instanceof ArrayType) {
             directlyReachableAllocNodes.addAll(PTABridge.v().getPTSetOfArrayElement(allocNode));
         }
-        for (AllocNode directlyReachableAllocNode : directlyReachableAllocNodes) {
+        for (IAllocNode directlyReachableAllocNode : directlyReachableAllocNodes) {
             if (!visitedAllocNodes.contains(directlyReachableAllocNode)) {
                 reachableAllocNodes.addAll(reachable(directlyReachableAllocNode, visitedAllocNodes));
             }

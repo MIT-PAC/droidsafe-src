@@ -19,8 +19,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import soot.jimple.spark.pag.AllocNode;
-import soot.jimple.spark.pag.StringConstantNode;
+import soot.jimple.toolkits.pta.IAllocNode;
 import soot.RefType;
 import soot.SootClass;
 import soot.SootField;
@@ -62,11 +61,11 @@ public abstract class RefVAModel extends VAModel {
         Type fieldType = sootField.getType();
         if(fieldType instanceof RefType && !SootUtils.isStringOrSimilarType(fieldType)) {
             RefType fieldRefType = (RefType)fieldType;
-            Set<AllocNode> allocNodes = PTABridge.v().getPTSet(this.getAllocNode(), sootField);
+            Set<? extends IAllocNode> allocNodes = PTABridge.v().getPTSet(this.getAllocNode(), sootField);
             if(allocNodes.size() > 0){
                 String fieldClassName = fieldRefType.getSootClass().getName();
                 //took out string code here!
-                for(AllocNode allocNode : allocNodes) {
+                for(IAllocNode allocNode : allocNodes) {
                     VAModel vaModel = ValueAnalysis.v().getResult(allocNode);
                     if(vaModel != null) {
                         fieldVAModels.add(vaModel);
@@ -117,7 +116,7 @@ public abstract class RefVAModel extends VAModel {
     /**
      * @returns AllocNode that corresponds to this model.
      */
-    public AllocNode getAllocNode(){
+    public IAllocNode getAllocNode(){
         return PTABridge.v().getAllocNode(this.newExpr);
     }
 

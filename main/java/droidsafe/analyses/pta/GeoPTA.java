@@ -74,6 +74,7 @@ import soot.jimple.spark.pag.Node;
 import soot.jimple.spark.pag.VarNode;
 import soot.jimple.toolkits.callgraph.CallGraph;
 import soot.jimple.toolkits.callgraph.Edge;
+import soot.jimple.toolkits.pta.IAllocNode;
 import soot.options.PaddleOptions;
 import soot.toolkits.scalar.Pair;
 import soot.jimple.ArrayRef;
@@ -134,6 +135,7 @@ public class GeoPTA extends PTABridge {
     protected void releaseInternal() {
         ContextTranslator.pts_1cfa_map = null;
         ContextTranslator.objs_1cfa_map = null;
+        G.v().MethodPAG_methodToPag = new HashMap<SootMethod, MethodPAG>();
     }
 
 
@@ -198,28 +200,29 @@ public class GeoPTA extends PTABridge {
     /**
      * Given a new expression (Jimple NewExpr or String) return the corresponding AllocNode.
      */
-    public AllocNode getAllocNode(Object newExpr) {
+    public IAllocNode getAllocNode(Object newExpr) {
         if (newExpr instanceof NewMultiArrayExpr) {
             NewMultiArrayExpr newArr = (NewMultiArrayExpr)newExpr;
             ArrayType type = (ArrayType)newArr.getType();
             Integer i = type.numDimensions;
             Pair pair = new Pair(newArr, i);
-            return newToAllocNodeMap.get(pair);
+            return (IAllocNode) newToAllocNodeMap.get(pair);
         } else
-            return newToAllocNodeMap.get(newExpr);
+            return (IAllocNode) newToAllocNodeMap.get(newExpr);
     }
 
     /**
      * Return a set of all allocnodes in the program.
      */
-    public Set<AllocNode> getAllAllocNodes() {
-        return Collections.unmodifiableSet(newToAllocNodeMap.values());
+    public Set<? extends IAllocNode> getAllAllocNodes() {
+    	Set<AllocNode> allocNodes = Collections.unmodifiableSet(newToAllocNodeMap.values());
+        return (Set<? extends IAllocNode>) allocNodes;
     }
 
     /**
      * Given a Spark AllocNode return the corresponding new expression (Jimple NewExpr or String) 
      */
-    public Object getNewExpr(AllocNode an) {
+    public Object getNewExpr(IAllocNode an) {
         return newToAllocNodeMap.inverse().get(an);
     }
 
@@ -309,7 +312,7 @@ public class GeoPTA extends PTABridge {
     public Set<Type> getTypes(Value val) {
         Set<Type> types = new LinkedHashSet<Type>();
 
-        for (AllocNode node : getPTSet(val)) {
+        for (IAllocNode node : getPTSet(val)) {
             types.add(node.getType());
         }
 
@@ -321,18 +324,18 @@ public class GeoPTA extends PTABridge {
     public Set<Type> getTypes(Value val, PTAContext context) {
         Set<Type> types = new LinkedHashSet<Type>();
 
-        for (AllocNode node : getPTSet(val, context)) {
+        for (IAllocNode node : getPTSet(val, context)) {
             types.add(node.getType());
         }
 
         return types;
     }
     
-    public Set<AllocNode> getPTSetOfArrayElement(AllocNode allocNode) {
+    public Set<? extends IAllocNode> getPTSetOfArrayElement(IAllocNode allocNode) {
         final Set<AllocNode> ptSet = new HashSet<AllocNode>();
         
         HashPointsToSet pointsToSet = new HashPointsToSet(allocNode.getType(), ptsProvider);
-        pointsToSet.add(allocNode);
+        pointsToSet.add((AllocNode) allocNode);
         
                 ((PointsToSetInternal)ptsProvider.reachingObjectsOfArrayElement(pointsToSet)).forall(new P2SetVisitor() {
             @Override
@@ -341,16 +344,16 @@ public class GeoPTA extends PTABridge {
             }
         });
         
-        return ptSet;
+        return (Set<? extends IAllocNode>) ptSet;
     }
     
     /**
      * Content Insensitive query of field reference with allocnode and field. 
      */
-    public Set<AllocNode> getPTSet(AllocNode node, SootField field) {
+    public Set<? extends IAllocNode> getPTSet(IAllocNode node, SootField field) {
         final Set<AllocNode> allocNodes = new HashSet<AllocNode>();
 
-        PointsToSetInternal pts = (PointsToSetInternal)ptsProvider.reachingObjects(node, field);
+        PointsToSetInternal pts = (PointsToSetInternal)ptsProvider.reachingObjects((AllocNode) node, field);
 
         //visit internal points to set and grab all allocnodes        
         pts.forall(new P2SetVisitor() {
@@ -359,11 +362,11 @@ public class GeoPTA extends PTABridge {
             }
         });
 
-        return allocNodes;
+        return (Set<? extends IAllocNode>) allocNodes;
     }
     
     @Override
-    public Set<AllocNode> getPTSet(Value val, PTAContext context) {
+    public Set<? extends IAllocNode> getPTSet(Value val, PTAContext context) {
         if (context.getType() == ContextType.EVENT_CONTEXT) {
             return getPTSetEventContext(val, context.getContext());
         } else if (context.getType() == ContextType.ONE_CFA) {
@@ -380,7 +383,7 @@ public class GeoPTA extends PTABridge {
     /** 
      * Return the 1CFA context query for reference and 1CFA context edge.
      */
-    private Set<AllocNode> getPTSet1CFA(Value val, Edge context) {
+    private Set<? extends IAllocNode> getPTSet1CFA(Value val, Edge context) {
         try {
             //if the context does not make sense, use the insensitive version
             if (context == null || context.srcStmt() == null)
@@ -411,7 +414,7 @@ public class GeoPTA extends PTABridge {
                 SootField field = ((StaticFieldRef)val).getField();
                 pts = (PointsToSetInternal)ptsProvider.reachingObjects(field);
             } else if (val instanceof NullConstant) {
-                return allocNodes;
+                return (Set<? extends IAllocNode>) allocNodes;
             } else {
                 logger.error("Unknown reference type for 1cfa search: {} {}", val, val.getClass());
                 droidsafe.main.Main.exit(1);
@@ -424,7 +427,7 @@ public class GeoPTA extends PTABridge {
                 }
             });
 
-            return allocNodes;
+            return (Set<? extends IAllocNode>) allocNodes;
         } catch (Exception ee) {
             logger.info("Some error in 1CFA search.  Falling back to insensitive search." , ee);
             return getPTSet(val);
@@ -437,7 +440,7 @@ public class GeoPTA extends PTABridge {
      * return the points to set of allocation nodes that can be pointed to in the
      * context.
      */
-    private Set<AllocNode> getPTSetEventContext(Value val, Edge context) {
+    private Set<? extends IAllocNode> getPTSetEventContext(Value val, Edge context) {
         if (!Config.v().eventContextPTA)
             return getPTSet(val);
         
@@ -448,7 +451,7 @@ public class GeoPTA extends PTABridge {
         //check the cache first
         if (eventEntryQueryCache.containsKey(vandc)) {
             cachedECQueries++;
-            return eventEntryQueryCache.get(vandc);
+            return (Set<? extends IAllocNode>) eventEntryQueryCache.get(vandc);
         }
         
      
@@ -468,7 +471,7 @@ public class GeoPTA extends PTABridge {
             }
             
             eventEntryQueryCache.put(vandc, allocNodes);
-            return allocNodes;
+            return (Set<? extends IAllocNode>) allocNodes;
         } else if (val instanceof InstanceFieldRef && ((InstanceFieldRef)val).getBase() instanceof Local) {
             Set<AllocNode> allocNodes = new HashSet<AllocNode>();
             InstanceFieldRef ifr = (InstanceFieldRef) val;
@@ -487,7 +490,7 @@ public class GeoPTA extends PTABridge {
                 allocNodes.add((AllocNode)icv.var);
             }
             eventEntryQueryCache.put(vandc, allocNodes);
-            return allocNodes;
+            return (Set<? extends IAllocNode>) allocNodes;
         } else if (val instanceof ArrayRef && ((ArrayRef)val).getBase() instanceof Local) {
             Set<AllocNode> allocNodes = new HashSet<AllocNode>();
             ArrayRef ifr = (ArrayRef) val;
@@ -506,7 +509,7 @@ public class GeoPTA extends PTABridge {
                 allocNodes.add((AllocNode)icv.var);
             }
             eventEntryQueryCache.put(vandc, allocNodes);
-            return allocNodes;
+            return (Set<? extends IAllocNode>) allocNodes;
         }
         else {
             return getPTSet(val);
@@ -516,7 +519,7 @@ public class GeoPTA extends PTABridge {
     /**
      * Given a pointer value, return the context insensitive points to set.
      */
-    public Set<AllocNode> getPTSet(Value val) {
+    public Set<? extends IAllocNode> getPTSet(Value val) {
                
         final Set<AllocNode> allocNodes = new HashSet<AllocNode>();
         PointsToSetInternal pts = null;
@@ -543,7 +546,7 @@ public class GeoPTA extends PTABridge {
                     }
                 });
                 
-                return allocNodes;
+                return (Set<? extends IAllocNode>) allocNodes;
 
             } else if (val instanceof ArrayRef) {
                 ArrayRef arrayRef = (ArrayRef)val;
@@ -555,7 +558,7 @@ public class GeoPTA extends PTABridge {
                 SootField field = ((StaticFieldRef)val).getField();
                 pts = (PointsToSetInternal)ptsProvider.reachingObjects(field);
             } else if (val instanceof NullConstant) {
-                return allocNodes;
+                return (Set<? extends IAllocNode>) allocNodes;
             } else {
                 logger.error("Unknown reference type for insenstive search: {} {}", val, val.getClass());
                 droidsafe.main.Main.exit(1);
@@ -573,7 +576,7 @@ public class GeoPTA extends PTABridge {
             //e.printStackTrace();
         }
 
-        return allocNodes;
+        return (Set<? extends IAllocNode>) allocNodes;
     }
 
     /**
@@ -654,7 +657,7 @@ public class GeoPTA extends PTABridge {
     
 
     @Override
-    public  Map<AllocNode,SootMethod> resolveInstanceInvokeMap(InstanceInvokeExpr invoke, PTAContext context) 
+    public  Map<IAllocNode,SootMethod> resolveInstanceInvokeMap(InstanceInvokeExpr invoke, PTAContext context) 
             throws CannotFindMethodException {
         if (context.getType() == ContextType.EVENT_CONTEXT) {
            return resolveInstanceInvokeMapEventContext(invoke, context.getContext()); 
@@ -674,7 +677,7 @@ public class GeoPTA extends PTABridge {
      * version, use the context insensitive result.  Return a map of each alloc node to its
      * target method.
      */
-    public Map<AllocNode,SootMethod> resolveInstanceInvokeMap(InstanceInvokeExpr invoke) 
+    public Map<IAllocNode,SootMethod> resolveInstanceInvokeMap(InstanceInvokeExpr invoke) 
         throws CannotFindMethodException {
         return resolveInstanceInvokeMap1CFA(invoke, null);
     }
@@ -684,9 +687,9 @@ public class GeoPTA extends PTABridge {
      * version, use the 1cfa context result.  Return a map of each alloc node to its
      * target method.
      */
-    private Map<AllocNode,SootMethod> resolveInstanceInvokeMap1CFA(InstanceInvokeExpr invoke, Edge context) 
+    private Map<IAllocNode,SootMethod> resolveInstanceInvokeMap1CFA(InstanceInvokeExpr invoke, Edge context) 
         throws CannotFindMethodException {
-        Set<AllocNode> allocs = null;
+        Set<? extends IAllocNode> allocs = null;
         //get either the context sensitive or insensitive result based on the context param 
         if (context == null) 
             allocs = getPTSet(invoke.getBase());
@@ -699,12 +702,12 @@ public class GeoPTA extends PTABridge {
     /**
      * 
      */
-    private Map<AllocNode, SootMethod> internalResolveInstanceInvokeMap(Set<AllocNode> allocs, 
+    private Map<IAllocNode, SootMethod> internalResolveInstanceInvokeMap(Set<? extends IAllocNode> allocs, 
         InstanceInvokeExpr invoke, Edge context) throws CannotFindMethodException {
-        Map<AllocNode, SootMethod> methods = new LinkedHashMap<AllocNode, SootMethod>();
+        Map<IAllocNode, SootMethod> methods = new LinkedHashMap<IAllocNode, SootMethod>();
         
       //loop over alloc nodes and resolve the concrete dispatch for each, placing in the set
-        for (AllocNode an : allocs) {
+        for (IAllocNode an : allocs) {
             if (invoke instanceof SpecialInvokeExpr) {
                 SootMethod resolved = SootUtils.resolveSpecialDispatch((SpecialInvokeExpr)invoke); 
                 methods.put(an, resolved);
@@ -742,9 +745,9 @@ public class GeoPTA extends PTABridge {
      * 
      * If the method cannot be found, then throw a specialized exception.
      */
-    public Map<AllocNode, SootMethod> resolveInstanceInvokeMapEventContext(InstanceInvokeExpr invoke, Edge context) 
+    public Map<IAllocNode, SootMethod> resolveInstanceInvokeMapEventContext(InstanceInvokeExpr invoke, Edge context) 
             throws CannotFindMethodException {
-        Set<AllocNode> allocs = null;
+        Set<? extends IAllocNode> allocs = null;
         //get either the context sensitive or insensitive result based on the context param 
         if (context == null) 
             allocs = getPTSet(invoke.getBase());
@@ -1155,7 +1158,7 @@ public class GeoPTA extends PTABridge {
     /**
      * Return the source location tag for an allocation node.
      */
-    private SourceLocationTag getSourceTag(AllocNode node) {
+    private SourceLocationTag getSourceTag(IAllocNode node) {
         Object newObject = getNewExpr(node);
         
         if (! (newObject instanceof Expr)) {
