@@ -49,17 +49,25 @@ public class CloneInheritedMethods {
     }
 
     public void transform() {
+        if (clazz.isPhantom())
+            return;
+        
         //build ancestor
         List<SootClass> ancestors = Scene.v().getActiveHierarchy().getSuperclassesOf(clazz);
 
         for (SootClass ancestor : ancestors) {
+            if (ancestor.isPhantom())
+                continue;
+            
             incorporateAncestorMethods(ancestor);
         }
 
         //modify ancestors fields
         for (SootClass ancestor : ancestors) {
+            if (ancestor.isPhantom())
+                continue;
+            
             makeAncestorFieldsVisible(ancestor);
-
         }
 
         fixInvokeSpecials();
@@ -197,7 +205,7 @@ public class CloneInheritedMethods {
     private void fixInvokeSpecials() {
         for (SootMethod method : clazz.getMethods()) {
 
-            Body body = method.getActiveBody();
+            Body body = method.retrieveActiveBody();
             StmtBody stmtBody = (StmtBody)body;
             Chain units = stmtBody.getUnits();
             Iterator stmtIt = units.iterator();
