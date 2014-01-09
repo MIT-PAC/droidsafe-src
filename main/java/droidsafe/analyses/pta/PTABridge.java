@@ -9,6 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import droidsafe.utils.CannotFindMethodException;
+import soot.G;
 import soot.Scene;
 import soot.SootField;
 import soot.SootMethod;
@@ -52,7 +53,14 @@ public abstract class PTABridge {
         Scene.v().releaseCallGraph();
         Scene.v().releasePointsToAnalysis();
         Scene.v().releaseReachableMethods();
-
+        Scene.v().releaseActiveHierarchy();
+        Scene.v().releaseFastHierarchy();
+        
+        G.v().instance_soot_jimple_toolkits_callgraph_VirtualCalls = null;
+        G.v().instance_soot_jimple_toolkits_typing_integer_ClassHierarchy = null;
+        G.v().instance_soot_jimple_spark_SparkTransformer = null;
+        G.v().ClassHierarchy_classHierarchyMap.clear();
+            
         System.gc();
         System.gc();
     }
