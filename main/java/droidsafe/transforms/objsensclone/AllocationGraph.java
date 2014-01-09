@@ -58,38 +58,51 @@ public class AllocationGraph {
         */
     }
     
+    public int getInDegree(SootClass clz) {
+        if (graph.containsVertex(clz))
+            return graph.inDegreeOf(clz);
+        return 0;
+    }
+    
+    public void removeClass(SootClass clz) {
+        graph.removeVertex(clz);
+    }
+    
+    public void updateAllocationGraph(SootMethod method) {
+        if (method.isAbstract() || !method.isConcrete())
+            return;
+
+        SootClass enclosingClass = method.getDeclaringClass();
+
+        Body body = method.getActiveBody();
+        StmtBody stmtBody = (StmtBody)body;
+        Chain units = stmtBody.getUnits();
+        Iterator stmtIt = units.snapshotIterator();
+
+        while (stmtIt.hasNext()) {
+            Stmt stmt = (Stmt)stmtIt.next();
+
+            if (stmt instanceof AssignStmt) {
+                AssignStmt assign = (AssignStmt) stmt;
+                if (assign.getRightOp() instanceof NewExpr) {
+                    NewExpr newExpr = (NewExpr)assign.getRightOp();
+                    SootClass newClass = newExpr.getBaseType().getSootClass();
+                    //is exception?
+                    if (!SootUtils.isSubTypeOfIncluding(RefType.v(newClass), RefType.v("java.lang.Throwable"))) {
+                        graph.addVertex(enclosingClass);
+                        graph.addVertex(newClass);
+                        graph.addEdge(enclosingClass, newClass);
+                    }
+                }
+            }
+        }
+    }
+    
     private  void buildAllocationGraph() {
         SootMethod[] methods = PTABridge.v().getAllReachableMethods().toArray(new SootMethod[0]);
 
         for (SootMethod method : methods) {
-            
-            if (method.isAbstract() || !method.isConcrete())
-                continue;
-
-            SootClass enclosingClass = method.getDeclaringClass();
-
-            Body body = method.getActiveBody();
-            StmtBody stmtBody = (StmtBody)body;
-            Chain units = stmtBody.getUnits();
-            Iterator stmtIt = units.snapshotIterator();
-
-            while (stmtIt.hasNext()) {
-                Stmt stmt = (Stmt)stmtIt.next();
-
-                if (stmt instanceof AssignStmt) {
-                    AssignStmt assign = (AssignStmt) stmt;
-                    if (assign.getRightOp() instanceof NewExpr) {
-                        NewExpr newExpr = (NewExpr)assign.getRightOp();
-                        SootClass newClass = newExpr.getBaseType().getSootClass();
-                        //is exception?
-                        if (!SootUtils.isSubTypeOfIncluding(RefType.v(newClass), RefType.v("java.lang.Throwable"))) {
-                            graph.addVertex(enclosingClass);
-                            graph.addVertex(newClass);
-                            graph.addEdge(enclosingClass, newClass);
-                        }
-                    }
-                }
-            }
+          updateAllocationGraph(method);  
         }
     }
 

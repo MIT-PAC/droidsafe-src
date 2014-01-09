@@ -5,8 +5,12 @@ import droidsafe.analyses.value.VAResultContainerClassGenerator;
 import droidsafe.android.app.Hierarchy;
 import droidsafe.android.app.Project;
 import droidsafe.android.system.API;
+import droidsafe.main.Config;
 import droidsafe.utils.SootUtils;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
@@ -111,23 +115,69 @@ public class ObjectSensitivityCloner {
 
         initMasterList();
 
-        for (SootClass currentClass : aGraph.workList()) {
-            //don't clone strings on first run
-            if (("java.lang.String".equals(currentClass.getName()) ||
-                    "java.lang.StringBuffer".equals(currentClass.getName()) ||
-                    "java.lang.StringBuilder".equals(currentClass.getName()) ) )
-                continue;
+        FileWriter fw = null;
 
-            cloneAllAllocsOfClass(currentClass);
-        }
+        try {
+            fw = new FileWriter(Project.v().getOutputDir() + File.separator + 
+                "obj-sens-cloner-va-stats.txt");
 
+            int prevClassCount = Scene.v().getClasses().size();
+            for (SootClass currentClass : aGraph.workList()) {
+                //don't clone strings on first run
+                if (("java.lang.String".equals(currentClass.getName()) ||
+                        "java.lang.StringBuffer".equals(currentClass.getName()) ||
+                        "java.lang.StringBuilder".equals(currentClass.getName()) ) )
+                    continue;
+
+
+                boolean cloned = false;
+                if (aGraph.getInDegree(currentClass) > 1) {
+                    cloned = cloneAllAllocsOfClass(currentClass, aGraph);
+                }
+                
+                if (cloned) {
+                    int currentClassCount = Scene.v().getClasses().size(); 
+                    fw.write(String.format("Cloning %s, in degree %s, total classes %d, percent change = %f\n", 
+                        currentClass, 
+                        aGraph.getInDegree(currentClass),
+                        currentClassCount,
+                        ((currentClassCount - prevClassCount) / (float)prevClassCount) * 100.0f
+                            ));
+
+                    prevClassCount = currentClassCount;
+                    
+                    //remove original method from allocation graph
+                    aGraph.removeClass(currentClass);
+                    
+                    //remove methods from the original class as being reachable, and thus not going to force a
+                    //clone
+                    for (SootMethod method : currentClass.getMethods()) 
+                        masterMethodList.remove(method);
+                } 
+                
+                if (!cloned) {
+                    //if not cloning, then just clone inherited methods of class
+                    CloneInheritedMethods cim = new CloneInheritedMethods(currentClass);
+                    cim.transform();
+                    //update allocation graph for new methods
+                    for (SootMethod method : cim.getReachableClonedMethods()) {
+                        aGraph.updateAllocationGraph(method);
+                    }
+                }
+            }
+            fw.close();
+        } catch (IOException e) {
+            logger.error("Error writing stats file.");
+            droidsafe.main.Main.exit(1);
+        } 
+        
         Scene.v().releaseActiveHierarchy();
         Scene.v().releaseFastHierarchy();
 
         System.out.printf("Finished cloning: added %d classes (%d errors).\n", numClonedClasses, cloneErrors);
     }
-    
 
+/*
     public void runForInfoFlow() {
         numClonedClasses = 0;
 
@@ -140,26 +190,30 @@ public class ObjectSensitivityCloner {
 
         Scene.v().releaseActiveHierarchy();
         Scene.v().releaseFastHierarchy();
-        
+
         System.out.printf("Finished cloning: added %d classes (%d errors).\n", numClonedClasses, cloneErrors);
     }
-
-    private void cloneAllAllocsOfClass(SootClass currentClass) {
+*/
+    
+    /**
+     * return true if we have cloned
+     * @param currentClass
+     * @return
+     */
+    private boolean cloneAllAllocsOfClass(SootClass currentClass, AllocationGraph aGraph) {
         if (clonedClasses.contains(currentClass)) {
             logger.error("Trying to clone allocs for already cloned class: {}", currentClass);
             droidsafe.main.Main.exit(1);
         }
 
-
+        boolean haveCloned = false;
+        
         //System.out.println("Cloning " + currentClass.getName());
 
         //create a list to iterate over that is the current snap shot of the master list
         //because we update the master list for each clone...
         List<SootMethod> iterationList = new LinkedList<SootMethod>();
         iterationList.addAll(masterMethodList);
-
-        //don't need to clone the first allocation expr
-        //boolean isFirst = true;
 
         for (SootMethod method : iterationList) {
 
@@ -194,7 +248,7 @@ public class ObjectSensitivityCloner {
                         try {
                             Set<Local> local = new HashSet<Local>();
                             local.add((Local)assign.getLeftOp());
-                            
+
                             SpecialInvokeExpr special = findConstructorCall(method,
                                 (Stmt)units.getSuccOf(assign), local);
 
@@ -203,12 +257,16 @@ public class ObjectSensitivityCloner {
                                 //clone class and install it as an new API class
 
                                 ClassCloner cCloner = ClassCloner.cloneClass(base);
-                                
+
                                 SootClass cloned = cCloner.getClonedClass();
 
                                 //add all cloned methods clone to the master list
                                 masterMethodList.addAll(cCloner.getReachableClonedMethods());
-
+                                
+                                //update allocation graph for new methods
+                                for (SootMethod newMethod : cCloner.getReachableClonedMethods())
+                                    aGraph.updateAllocationGraph(newMethod);
+                                
                                 SootMethodRef origMethodRef = special.getMethodRef();
 
                                 //replace old constructor call with call to cloned class
@@ -224,6 +282,7 @@ public class ObjectSensitivityCloner {
 
                                 numClonedClasses++;
                                 clonedClasses.add(currentClass);
+                                haveCloned = true;
                             } else {
                                 throw new Exception("Special Invoke Not Found!");
                             }
@@ -238,7 +297,7 @@ public class ObjectSensitivityCloner {
                 }
             }
         }
-        
+        return haveCloned;
     }
 
     /**
@@ -358,12 +417,12 @@ public class ObjectSensitivityCloner {
                 if (locals.contains(si.getBase()))
                     return si;
             }
-            
+
             //assigning local to new local, remember lhs
             if (stmt instanceof AssignStmt &&
                     locals.contains(((AssignStmt)stmt).getRightOp()) &&
                     ((AssignStmt)stmt).getLeftOp() instanceof Local) {
-                
+
                 locals.add((Local) ((AssignStmt)stmt).getLeftOp());
                 continue;
             }
@@ -381,16 +440,16 @@ public class ObjectSensitivityCloner {
             //now account for some jumps, and if constructs
             if (stmt instanceof JGotoStmt) {
                 //recurse into goto statements
-                
+
                 //but only go forward...to avoid loops
                 if (!units.follows((Stmt)((JGotoStmt) stmt).getTarget(), stmt))
                     return null;
-                
+
                 return findConstructorCall(method, (Stmt)((JGotoStmt) stmt).getTarget(), locals);
             } else if (stmt instanceof JIfStmt) {
                 if (!units.follows((Stmt)((JIfStmt) stmt).getTarget(), stmt))
                     return null;
-                
+
                 //recurse into if statement target and fall through
                 SpecialInvokeExpr trueBranch = findConstructorCall(method, ((JIfStmt) stmt).getTarget(), locals); 
                 SpecialInvokeExpr falseBranch = findConstructorCall(method, (Stmt)units.getSuccOf(stmt), locals); 
@@ -404,7 +463,7 @@ public class ObjectSensitivityCloner {
 
         return null;
     }
-    
+
     /**
      * For each original class that was cloned, remove it from lists of src, lib, gen
      */
