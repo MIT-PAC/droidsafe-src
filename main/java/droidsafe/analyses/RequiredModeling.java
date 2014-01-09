@@ -203,10 +203,10 @@ public class RequiredModeling {
         Set<InvokeExpr> invokes = new HashSet<InvokeExpr>();
         
         for (SootClass clz : Scene.v().getClasses()) {
-            if (!API.v().isSystemClass(clz))
-                continue;
-            
             for (SootMethod method : clz.getMethods()) {
+                if (!API.v().isSystemMethod(method))
+                    continue;
+                
                 if (!method.isConcrete()) 
                     continue;
                 StmtBody stmtBody = (StmtBody)method.retrieveActiveBody();

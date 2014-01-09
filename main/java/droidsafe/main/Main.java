@@ -231,6 +231,8 @@ public class Main {
         driverMsg("Finished String Analysis: " + timer1);
 
         if (POINTS_TO_ANALYSIS_PACKAGE != PointsToAnalysisPackage.PADDLE && Config.v().addObjectSensitivity) {
+            timer1.reset();
+            timer1.start();
             driverMsg("Adding Object Sensitivity by cloning...");
             monitor.subTask("Adding Object Sensitivity by cloning...");
             ObjectSensitivityCloner.v().runForVA();
@@ -238,6 +240,8 @@ public class Main {
             if (monitor.isCanceled()) {
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
             }
+            timer1.stop();
+            driverMsg("Finished cloning: " + timer1);
         }
             
         if (Config.v().runValueAnalysis) {

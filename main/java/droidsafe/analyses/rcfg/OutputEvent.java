@@ -106,16 +106,7 @@ public class OutputEvent implements PTAMethodInformation {
             logger.error("Cannot find context invoke expr in context: {}.", context);
             droidsafe.main.Main.exit(1);
         }
-        if (invokeExpr instanceof SpecialInvokeExpr && !hasReceiver()) {
-            logger.info("Found special invoke expr without a receiver {}", invokeExpr);
-        }
-
-        //ever instance invoke should have a receiver, unless something wrong with user code or with modeling or with
-        //PTA
-        if (hasReceiver() != (invokeExpr instanceof InstanceInvokeExpr)) {
-            logger.info("Presence of receiver is wrong for invoke expr type: {} and {} receiver (line {}).", 
-                invokeExpr, hasReceiver(), linesTag);
-        }
+       
 
         //do some checks for things we might not fully understand yet.
         if (invokeExpr instanceof DynamicInvokeExpr) {

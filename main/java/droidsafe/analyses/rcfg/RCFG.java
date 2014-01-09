@@ -123,6 +123,8 @@ public class RCFG  {
 
         //print unreachable methods to the debug log
         v().printUnreachableSrcMethods();
+        
+        //System.out.println(v().toString());
     }
 
     private void runAlt() {
@@ -262,6 +264,12 @@ public class RCFG  {
         PTAContext eventContext = new PTAContext(ContextType.EVENT_CONTEXT, eventEdge);
         PTAContext oneCFAContext = new PTAContext(ContextType.ONE_CFA, callEdge);
 
+        /*System.out.printf("Checking for output edge: %s %s %s %s\n", callee, API.v().isSystemMethod(callee), 
+            !API.v().isSystemMethod(caller),
+            API.v().isInterestingMethod(callee));
+        
+        System.out.println("\t" + callEdge.srcStmt()); */
+        
         if (API.v().isSystemMethod(callee) && 
                 !API.v().isSystemMethod(caller) &&
                 API.v().isInterestingMethod(callee) &&
@@ -282,6 +290,8 @@ public class RCFG  {
                     //create the output event
                     for (Map.Entry<IAllocNode, SootMethod> entry : 
                         PTABridge.v().resolveInstanceInvokeMap(iie, eventContext).entrySet()) {
+                        //System.out.printf("\t %s %s %s\n", entry.getKey(), entry.getValue(), callee);
+                        //System.out.println("\tReachable: " + Scene.v().getReachableMethods().contains(entry.getValue()));
                         if (entry.getValue().equals(callee)) {
                             if (debug)
                                 System.out.println(entry.getKey());
@@ -294,6 +304,7 @@ public class RCFG  {
                             } else {
                                 //new output event that we have not seen, create output event and install it
                                 OutputEvent oe = new OutputEvent(oneCFAContext, eventContext, node, line);
+                                logger.debug("Found output event: {}", callEdge.tgt());
                                 oe.addReceiverNode(entry.getKey());
                                 node.addOutputEvent(callEdge, oe);
                                 apiCallNodes.addAll(oe.getAllArgsPTSet(eventContext));
