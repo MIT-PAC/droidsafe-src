@@ -64,6 +64,12 @@ public class AllocationGraph {
         return 0;
     }
     
+    public int getOutDegree(SootClass clz) {
+        if (graph.containsVertex(clz))
+            return graph.outDegreeOf(clz);
+        return 0;
+    }
+    
     public void removeClass(SootClass clz) {
         graph.removeVertex(clz);
     }

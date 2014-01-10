@@ -153,6 +153,10 @@ public class ClassCloner {
         }
     }
 
+    public static boolean isClonedClass(SootClass clz) {
+        return clz.getName().contains(CLONE_POSTFIX);
+    }
+    
     public static String removeClassCloneSuffix(String str) {
         String regex = CLONE_POSTFIX+"[0-9]+";
         Pattern pattern = Pattern.compile(regex);

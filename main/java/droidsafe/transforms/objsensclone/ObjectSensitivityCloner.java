@@ -66,6 +66,9 @@ public class ObjectSensitivityCloner {
     /** logger object */
     private static final Logger logger = LoggerFactory.getLogger(ObjectSensitivityCloner.class);
 
+    /** Do not clone classes that will add more than this percentage to the total number of classes */
+    private static final double CLONING_THRESHOLD = .10;
+    
     /** list of classes resolved by VA, some of which should be cloned */
     public static final Set<SootClass> VA_RESOLVED_CLASSES = 
             VAResultContainerClassGenerator.getClassesAndFieldsToModel(false).keySet();
@@ -119,8 +122,10 @@ public class ObjectSensitivityCloner {
 
         try {
             fw = new FileWriter(Project.v().getOutputDir() + File.separator + 
-                "obj-sens-cloner-va-stats.txt");
+                "obj-sens-cloner-va-stats.csv");
 
+            fw.write("Class,InDegree,OutDegree,TotalClasses,PercentChange\n");
+            
             int prevClassCount = Scene.v().getClasses().size();
             for (SootClass currentClass : aGraph.workList()) {
                 //don't clone strings on first run
@@ -131,15 +136,22 @@ public class ObjectSensitivityCloner {
 
 
                 boolean cloned = false;
-                if (aGraph.getInDegree(currentClass) > 1) {
+                
+                //the percent change in additional classes if we clone all the allocations of currently class
+                double percentChange = ((double)aGraph.getInDegree(currentClass)) / ((double)prevClassCount);
+
+                //ONLY CLONE IF THERE IS AN INDEGREE OF > 1 AND WE WILL NOT HIT THE CLONE THRESHOLD!                
+                if (aGraph.getInDegree(currentClass) > 1 && 
+                        percentChange < CLONING_THRESHOLD) {
                     cloned = cloneAllAllocsOfClass(currentClass, aGraph);
                 }
                 
                 if (cloned) {
                     int currentClassCount = Scene.v().getClasses().size(); 
-                    fw.write(String.format("Cloning %s, in degree %s, total classes %d, percent change = %f\n", 
+                    fw.write(String.format("%s,%d,%d,%d,%f\n", 
                         currentClass, 
                         aGraph.getInDegree(currentClass),
+                        aGraph.getOutDegree(currentClass),
                         currentClassCount,
                         ((currentClassCount - prevClassCount) / (float)prevClassCount) * 100.0f
                             ));
@@ -464,16 +476,6 @@ public class ObjectSensitivityCloner {
         return null;
     }
 
-    /**
-     * For each original class that was cloned, remove it from lists of src, lib, gen
-     */
-    private void cleanUpProjectSets() {
-        for (SootClass clz : clonedClasses) {
-            Project.v().removeSrcClass(clz);
-            Project.v().removeGenClass(clz);
-            Project.v().removeLibClass(clz);
-        }
-    }
 }
 
 class ToStringComparator implements Comparator<Object> {

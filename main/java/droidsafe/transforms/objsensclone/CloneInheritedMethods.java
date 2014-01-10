@@ -5,6 +5,9 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import soot.Body;
 import soot.Modifier;
 import soot.Scene;
@@ -27,14 +30,14 @@ import droidsafe.utils.SootMethodList;
 import droidsafe.utils.SootUtils;
 
 public class CloneInheritedMethods {
-
+    /** logger object */
+    private static final Logger logger = LoggerFactory.getLogger(CloneInheritedMethods.class);
     /** methods of the new cloned class */
     private SootMethodList methods;
-    /** methods of the clone that are currently reachable based on if the orig method is reachable */
-    private Set<SootMethod> reachableClonedMethods;
     /** set of methods from ancestors that we have cloned into this clone */
     private Set<SootMethod> ancestorMethodsAdded = new HashSet<SootMethod>();
-
+    /** Set of methods that we have created and added to the clone */
+    private Set<SootMethod> clonedMethodsAdded = new HashSet<SootMethod>();
     private SootClass clazz;
 
     public CloneInheritedMethods(SootClass clz) {
@@ -44,8 +47,6 @@ public class CloneInheritedMethods {
         //add methods already in the clz
         for (SootMethod method : clazz.getMethods())
             methods.addMethod(method);
-
-        reachableClonedMethods = new HashSet<SootMethod>();
     }
 
     public void transform() {
@@ -97,7 +98,7 @@ public class CloneInheritedMethods {
      * @return
      */
     public Set<SootMethod> getReachableClonedMethods() {
-        return reachableClonedMethods;
+        return clonedMethodsAdded;
     }
 
 
@@ -105,17 +106,24 @@ public class CloneInheritedMethods {
      * Clone non-static ancestor methods that are not hidden by virtual dispatch.
      */
     private void incorporateAncestorMethods(SootClass ancestor) {
-
+        if (ClassCloner.isClonedClass(ancestor)) {
+            logger.error("Cloning method from clone: {}", ancestor);
+            droidsafe.main.Main.exit(1);
+        }
+        
         //create all methods, cloning body, replacing instance field refs
         for (SootMethod ancestorM : ancestor.getMethods()) {
             if (ancestorM.isAbstract() || ancestorM.isPhantom() || !ancestorM.isConcrete() || 
                     SootUtils.isRuntimeStubMethod(ancestorM))
                 continue;
-
+                       
             //never clone static methods
             if (ancestorM.isStatic())
                 continue;
 
+            //clone only reachable methods
+            if (!PTABridge.v().getAllReachableMethods().contains(ancestorM))
+                continue;
 
             //check if this method already exists
             if (containsMethod(ancestorM.getSignature())) {
@@ -128,7 +136,7 @@ public class CloneInheritedMethods {
                 ancestorM.setModifiers(ancestorM.getModifiers() ^ Modifier.FINAL);
 
             ancestorMethodsAdded.add(ancestorM);
-
+            
             SootMethod newMeth = new SootMethod(ancestorM.getName(), ancestorM.getParameterTypes(),
                 ancestorM.getReturnType(), ancestorM.getModifiers(), ancestorM.getExceptions());
 
@@ -137,6 +145,7 @@ public class CloneInheritedMethods {
             methods.addMethod(newMeth);
             clazz.addMethod(newMeth);
 
+            clonedMethodsAdded.add(newMeth);
 
             if (API.v().isBannedMethod(ancestorM.getSignature())) 
                 API.v().addBanMethod(newMeth);
@@ -147,19 +156,14 @@ public class CloneInheritedMethods {
             else if (API.v().isSystemClass(ancestor)){
                 //some methods are auto generated and don't have a classification 
                 //make them safe
-                API.v().addSafeMethod(newMeth);
+                API.v().addBanMethod(newMeth);
             }
-
-
+            
             //clone body
             Body newBody = (Body)ancestorM.retrieveActiveBody().clone();
             newMeth.setActiveBody(newBody);
 
             updateJSAResults(ancestorM.retrieveActiveBody(), newBody);
-
-            //if the original method is reachable, then so is this method
-            if (PTABridge.v().getAllReachableMethods().contains(ancestorM))
-                reachableClonedMethods.add(newMeth);
         }
     }
 
