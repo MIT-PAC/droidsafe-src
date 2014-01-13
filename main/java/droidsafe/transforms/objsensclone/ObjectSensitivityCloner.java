@@ -17,6 +17,7 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -26,12 +27,15 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import soot.Body;
+import soot.jimple.AnyNewExpr;
 import soot.jimple.AssignStmt;
+import soot.jimple.ClassConstant;
 import soot.jimple.InvokeExpr;
 import soot.jimple.Jimple;
 import soot.jimple.JimpleBody;
 import soot.jimple.NewExpr;
 import soot.jimple.NullConstant;
+import soot.jimple.StringConstant;
 import soot.jimple.internal.JAssignStmt;
 import soot.jimple.internal.JGotoStmt;
 import soot.jimple.internal.JIfStmt;
@@ -47,6 +51,7 @@ import soot.SootClass;
 import soot.SootMethod;
 import soot.SootMethodRef;
 import soot.Type;
+import soot.Value;
 import soot.VoidType;
 import soot.util.Chain;
 import soot.ValueBox;
@@ -63,26 +68,40 @@ import soot.ValueBox;
  *
  */
 public class ObjectSensitivityCloner {
+    
     /** logger object */
     private static final Logger logger = LoggerFactory.getLogger(ObjectSensitivityCloner.class);
 
     /** Do not clone classes that will add more than this percentage to the total number of classes */
     private static final double CLONING_THRESHOLD = .10;
+
+    private static final boolean CLONE_STRINGS = false;
     
     /** list of classes resolved by VA, some of which should be cloned */
     public static final Set<SootClass> VA_RESOLVED_CLASSES = 
             VAResultContainerClassGenerator.getClassesAndFieldsToModel(false).keySet();
 
-    private static final String[] STRING_CLASSES = new String[]{"java.lang.String", 
-                                                                "java.lang.StringBuffer",
-    "java.lang.StringBuilder"};
+    private static final Set<String> STRING_CLASSES = 
+                new HashSet<String>(Arrays.asList("java.lang.String", 
+                    "java.lang.StringBuffer",
+                        "java.lang.StringBuilder"));
 
     private int numClonedClasses = 0;
     private int cloneErrors = 0;
     private List<SootMethod> masterMethodList;
     private static ObjectSensitivityCloner v;
 
-    private Set<SootClass> clonedClasses;
+    private Set<SootClass> classesThatWereCloned;
+
+    private Set<SootClass> clonedClassesCreated;
+
+    private Map<SootMethod,Set<SootMethod>> methodToClonesMap;
+    
+    private Map<Value,Value> newExprMap;
+
+    private Set<SootMethod> clonedMethodsAdded;
+
+    public boolean hasRun = false;
 
     public static ObjectSensitivityCloner v() {
         if (v == null)
@@ -97,7 +116,11 @@ public class ObjectSensitivityCloner {
 
 
     private ObjectSensitivityCloner() {
-        clonedClasses = new HashSet<SootClass>();
+        clonedClassesCreated = new HashSet<SootClass>();
+        classesThatWereCloned = new HashSet<SootClass>();
+        clonedMethodsAdded = new HashSet<SootMethod>();
+        methodToClonesMap = new HashMap<SootMethod,Set<SootMethod>>();
+        newExprMap = new HashMap<Value,Value>();
     }
 
     private void initMasterList() {
@@ -108,11 +131,57 @@ public class ObjectSensitivityCloner {
         Collections.sort(masterMethodList, new ToStringComparator());
     }
 
+    public boolean isClonedClass(SootClass clz) {
+        return clonedClassesCreated.contains(clz);
+    }
+
+    public boolean isClonedMethod(SootMethod method) {
+        return clonedMethodsAdded.contains(method);
+    }
+
+    public Set<SootMethod> getClonedContextMethods(SootMethod method) {
+        SootClass clz = method.getDeclaringClass();
+
+        if (isClonedClass(clz)) {
+            logger.error("Trying to get cloned method context for cloned method: {}", method);
+            droidsafe.main.Main.exit(1);
+        }
+
+        if (methodToClonesMap.containsKey(method))
+            return methodToClonesMap.get(method);
+        else 
+            return Collections.emptySet();
+    }
+
+    /**
+     * This can be a NewExpr, ClassConstant, or StringConstant
+     * 
+     * @param value
+     * @return
+     */
+    public boolean isClonedNewExpr(Value value) {
+        return newExprMap.containsKey(value); 
+    }
+    
+    /**
+     * This can be a NewExpr, ClassConstant, or StringConstant
+     * 
+     */
+    public Value getOrigNewExpr(Value newExpr) {
+        if (!newExprMap.containsKey(newExpr)) {
+            logger.error("Not a cloned new expr: {}", newExpr);
+            droidsafe.main.Main.exit(1);
+        }
+        
+        return newExprMap.get(newExpr);
+    }
+    
     /**
      * Run the cloner on all new expression of classes in the list of classes to clone.  Produce clones for each
      * new expression.
      */
     public void runForVA() {
+        hasRun = true;
         numClonedClasses = 0;
         AllocationGraph aGraph = new AllocationGraph();
 
@@ -122,21 +191,24 @@ public class ObjectSensitivityCloner {
 
         try {
             fw = new FileWriter(Project.v().getOutputDir() + File.separator + 
-                "obj-sens-cloner-va-stats.csv");
+                    "obj-sens-cloner-va-stats.csv");
 
             fw.write("Class,InDegree,OutDegree,TotalClasses,PercentChange\n");
-            
+
             int prevClassCount = Scene.v().getClasses().size();
             for (SootClass currentClass : aGraph.workList()) {
                 //don't clone strings on first run
-                if (("java.lang.String".equals(currentClass.getName()) ||
-                        "java.lang.StringBuffer".equals(currentClass.getName()) ||
-                        "java.lang.StringBuilder".equals(currentClass.getName()) ) )
+                
+                fw.write("Considering " + currentClass + "\n");
+                
+                if (!CLONE_STRINGS && STRING_CLASSES.contains(currentClass.getName())) {
+                    fw.write("\tDo not touch: String class\n");
                     continue;
+                }
 
 
                 boolean cloned = false;
-                
+
                 //the percent change in additional classes if we clone all the allocations of currently class
                 double percentChange = ((double)aGraph.getInDegree(currentClass)) / ((double)prevClassCount);
 
@@ -145,10 +217,10 @@ public class ObjectSensitivityCloner {
                         percentChange < CLONING_THRESHOLD) {
                     cloned = cloneAllAllocsOfClass(currentClass, aGraph);
                 }
-                
+
                 if (cloned) {
                     int currentClassCount = Scene.v().getClasses().size(); 
-                    fw.write(String.format("%s,%d,%d,%d,%f\n", 
+                    fw.write(String.format("\tCloned: %s,%d,%d,%d,%f\n", 
                         currentClass, 
                         aGraph.getInDegree(currentClass),
                         aGraph.getOutDegree(currentClass),
@@ -157,39 +229,46 @@ public class ObjectSensitivityCloner {
                             ));
 
                     prevClassCount = currentClassCount;
-                    
-                    //remove original method from allocation graph
+
+                    //remove original class from allocation graph
                     aGraph.removeClass(currentClass);
-                    
+
                     //remove methods from the original class as being reachable, and thus not going to force a
                     //clone
-                    for (SootMethod method : currentClass.getMethods()) 
-                        masterMethodList.remove(method);
+                    for (SootMethod method : currentClass.getMethods()) { 
+                        if (!method.isStatic())
+                            masterMethodList.remove(method);
+                    }
                 } 
-                
+
                 if (!cloned) {
+                    fw.write("\tNot cloned: but removed inheritance\n");
                     //if not cloning, then just clone inherited methods of class
                     CloneInheritedMethods cim = new CloneInheritedMethods(currentClass);
                     cim.transform();
+                    rememberCloneContext(cim.getCloneToOriginalMap());
                     //update allocation graph for new methods
                     for (SootMethod method : cim.getReachableClonedMethods()) {
                         aGraph.updateAllocationGraph(method);
+                         masterMethodList.add(method);
                     }
+                    
                 }
             }
+            
             fw.close();
         } catch (IOException e) {
             logger.error("Error writing stats file.");
             droidsafe.main.Main.exit(1);
         } 
-        
+
         Scene.v().releaseActiveHierarchy();
         Scene.v().releaseFastHierarchy();
 
         System.out.printf("Finished cloning: added %d classes (%d errors).\n", numClonedClasses, cloneErrors);
     }
 
-/*
+    /*
     public void runForInfoFlow() {
         numClonedClasses = 0;
 
@@ -205,21 +284,69 @@ public class ObjectSensitivityCloner {
 
         System.out.printf("Finished cloning: added %d classes (%d errors).\n", numClonedClasses, cloneErrors);
     }
-*/
-    
+     */
+
+    /**
+     * Add the effects of cloning to the remember clone context for each original method
+     * @param cloneToOrg
+     */
+    private void rememberCloneContext(Map<SootMethod,SootMethod> cloneToOrg) {
+        for (SootMethod clone : cloneToOrg.keySet()) {
+            SootMethod org = cloneToOrg.get(clone);
+
+            clonedMethodsAdded.add(clone);
+
+            if (!methodToClonesMap.containsKey(org))
+                methodToClonesMap.put(org, new LinkedHashSet<SootMethod>());
+
+            methodToClonesMap.get(org).add(clone);
+                
+            //addToNewExprMap(clone, org);
+        }
+    }
+
+    private void addToNewExprMap(SootMethod clone, SootMethod orig) {
+        if (!Config.v().statsRun)
+            return;
+        
+        List<ValueBox> cloneVBs = clone.retrieveActiveBody().getUseAndDefBoxes();
+        List<ValueBox> origVBs = orig.retrieveActiveBody().getUseAndDefBoxes();
+        
+        if (cloneVBs.size() != origVBs.size()) {
+            logger.error("Clone and orig have def / use boxes that do not correspond! {} {}", clone, orig);
+            droidsafe.main.Main.exit(1);
+        }
+
+        for (int i = 0; i < origVBs.size(); i++) {
+            if (origVBs.get(i).getValue() instanceof AnyNewExpr ||
+                    origVBs.get(i).getValue() instanceof StringConstant ||
+                    origVBs.get(i).getValue() instanceof ClassConstant ) {
+
+            }
+
+            if (!(cloneVBs.get(i).getValue().getClass().equals(origVBs.get(i).getValue().getClass()))) {
+                logger.error("Clone and orig have def / use boxes that do not correspond! {} {}", clone, orig);
+                droidsafe.main.Main.exit(1);
+            }
+
+            newExprMap.put(cloneVBs.get(i).getValue(),origVBs.get(i).getValue());
+        }
+
+    }
+
     /**
      * return true if we have cloned
      * @param currentClass
      * @return
      */
     private boolean cloneAllAllocsOfClass(SootClass currentClass, AllocationGraph aGraph) {
-        if (clonedClasses.contains(currentClass)) {
+        if (classesThatWereCloned.contains(currentClass) || clonedClassesCreated.contains(currentClass)) {
             logger.error("Trying to clone allocs for already cloned class: {}", currentClass);
             droidsafe.main.Main.exit(1);
         }
 
         boolean haveCloned = false;
-        
+
         //System.out.println("Cloning " + currentClass.getName());
 
         //create a list to iterate over that is the current snap shot of the master list
@@ -246,8 +373,8 @@ public class ObjectSensitivityCloner {
                 if (stmt instanceof AssignStmt) {
                     AssignStmt assign = (AssignStmt) stmt;
                     if (assign.getRightOp() instanceof NewExpr && assign.getLeftOp() instanceof Local) {
-                        NewExpr oldNewExpr = (NewExpr) assign.getRightOp();
-                        SootClass base = oldNewExpr.getBaseType().getSootClass();
+                        NewExpr newExpr = (NewExpr) assign.getRightOp();
+                        SootClass base = newExpr.getBaseType().getSootClass();
                         String baseClassName = base.getName();
 
                         if (!currentClass.equals(base)) 
@@ -274,11 +401,13 @@ public class ObjectSensitivityCloner {
 
                                 //add all cloned methods clone to the master list
                                 masterMethodList.addAll(cCloner.getReachableClonedMethods());
-                                
+
+                                rememberCloneContext(cCloner.getCloneToOriginalMap());
+
                                 //update allocation graph for new methods
                                 for (SootMethod newMethod : cCloner.getReachableClonedMethods())
                                     aGraph.updateAllocationGraph(newMethod);
-                                
+
                                 SootMethodRef origMethodRef = special.getMethodRef();
 
                                 //replace old constructor call with call to cloned class
@@ -289,11 +418,11 @@ public class ObjectSensitivityCloner {
                                     origMethodRef.isStatic()));
 
                                 //replace new expression with new expression of cloned class
-                                NewExpr newNewExpr = Jimple.v().newNewExpr(RefType.v(cloned));
-                                assign.setRightOp(newNewExpr);
-
+                                newExpr.setBaseType(RefType.v(cloned));
+                                
                                 numClonedClasses++;
-                                clonedClasses.add(currentClass);
+                                clonedClassesCreated.add(cloned);
+                                classesThatWereCloned.add(currentClass);
                                 haveCloned = true;
                             } else {
                                 throw new Exception("Special Invoke Not Found!");
@@ -310,103 +439,6 @@ public class ObjectSensitivityCloner {
             }
         }
         return haveCloned;
-    }
-
-    /**
-     * After all clones are created for clz, wipe clean the original methods of clz, but deleting their code
-     * and calling super if it is a method that overrides a superclasses method... 
-     * 
-     * @param clz
-     */
-    private void sanitizeOriginalClass(SootClass clz) {
-        //what about for super methods that return a value?
-
-        for (SootMethod method : clz.getMethods()) {
-            //don't clean static methods, and don't do anything for methods that don't have a body
-            if (method.isStatic() || method.isAbstract() || method.isPhantom() || !method.isConcrete() || 
-                    SootUtils.isRuntimeStubMethod(method))
-                continue;
-
-            //release the active body
-            method.releaseActiveBody();
-            //create a new body that sets the this, and the arguments
-            JimpleBody body = Jimple.v().newBody(method);
-            method.setActiveBody(body);
-
-            //create the this identity
-            Local thisLocal = Jimple.v().newLocal("this_local", clz.getType());
-            body.getLocals().add(thisLocal);
-            body.getUnits().add(Jimple.v().newIdentityStmt(thisLocal,
-                Jimple.v().newThisRef(clz.getType())));
-
-            //create locals for parameters and reference params
-            int i = 0;
-            Local[] argLocals = new Local[method.getParameterCount()];
-
-            for (Type type : method.getParameterTypes()) {
-                //add local
-                argLocals[i] = Jimple.v().newLocal("l" + i, type);
-                body.getLocals().add(argLocals[i]);
-
-                //add param assignment
-                body.getUnits().add(Jimple.v().newIdentityStmt(argLocals[i], 
-                    Jimple.v().newParameterRef(type, i)));
-
-                i++;
-            }
-
-            Type rType = method.getReturnType();
-            SootMethod ancestorMethod = null;
-            //object has no superclass...
-            if (clz.hasSuperclass())
-                ancestorMethod = SootUtils.findClosetMatch(clz.getSuperclass(), method.makeRef());
-
-            boolean isOverride = ancestorMethod != null && 
-                    Scene.v().getActiveHierarchy().isVisible(clz, ancestorMethod);
-
-            if (isOverride) {
-                //of an override, then call super, if has a return type, then return it's value
-                //find super method reference
-                SootMethodRef superRef = ancestorMethod.makeRef();
-
-                //construct args
-                List<Local> args = Arrays.asList(argLocals);
-
-                if (rType == VoidType.v()) {
-                    //add call to super
-                    body.getUnits().add(Jimple.v().newInvokeStmt(Jimple.v().newSpecialInvokeExpr(
-                        thisLocal, superRef, args)));
-
-                    //add return statement
-                    body.getUnits().add(Jimple.v().newReturnVoidStmt());
-                } else {
-                    //create local 
-                    Local retValue = Jimple.v().newLocal("super_ret_value", clz.getType());
-                    body.getLocals().add(retValue);
-
-                    //assign local to the super call
-                    body.getUnits().add(Jimple.v().newAssignStmt(
-                        retValue, 
-                        Jimple.v().newSpecialInvokeExpr(thisLocal, superRef, args)
-                            )); 
-
-                    //return ret value
-                    body.getUnits().add(Jimple.v().newReturnStmt(retValue));
-                }
-            } else {
-                //remember this will never be called, but should generate legal code
-
-                //if not an override, then just return the return type or null
-                if (rType == VoidType.v()) {
-                    body.getUnits().add(Jimple.v().newReturnVoidStmt());
-                } else if (rType instanceof RefLikeType || rType instanceof PrimType) {
-                    body.getUnits().add(Jimple.v().newReturnStmt(SootUtils.getNullValue(rType)));
-                } else {
-                    logger.error("Unknown return type when sanitizing original method: {}", method.getReturnType());
-                    droidsafe.main.Main.exit(1);
-                }
-            }
-        }
     }
 
     /**
@@ -476,6 +508,42 @@ public class ObjectSensitivityCloner {
         return null;
     }
 
+    /**
+     * Given a non-cloned method and a local of the method, for all cloned context methods, find the locals
+     * that correspond.
+     */
+    public Set<Local> getClonedLocals(SootMethod origMeth, Local local) {
+        Set<Local> clonedLocals = new HashSet<Local>();
+        for (SootMethod clone : getClonedContextMethods(origMeth)) {
+            Body body = clone.retrieveActiveBody();
+
+            for (Local cloneLocal : body.getLocals()) {
+                if (cloneLocal.getName().equals(local.getName())) {
+                    clonedLocals.add(cloneLocal);
+                    break;
+                }
+            }
+        }
+        return clonedLocals;
+    }
+
+
+    public Local getClonedLocal(SootMethod origMeth, Local local, SootMethod clone) {
+        if (!getClonedContextMethods(origMeth).contains(clone)) {
+            logger.error("Not a context clone: {} {}", origMeth, clone);
+            droidsafe.main.Main.exit(1);
+        }
+
+        Body body = clone.retrieveActiveBody();
+
+        for (Local cloneLocal : body.getLocals()) {
+            if (cloneLocal.getName().equals(local.getName())) {
+                return cloneLocal;
+            }
+        }
+
+        return null;
+    }
 }
 
 class ToStringComparator implements Comparator<Object> {

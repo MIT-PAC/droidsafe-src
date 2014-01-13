@@ -24,6 +24,7 @@ import droidsafe.utils.SootMethodList;
 import droidsafe.utils.SootUtils;
 import soot.Body;
 import soot.Modifier;
+import soot.RefType;
 import soot.Scene;
 import soot.SootClass;
 import soot.SootField;
@@ -35,6 +36,7 @@ import soot.Value;
 import soot.ValueBox;
 import soot.jimple.FieldRef;
 import soot.jimple.InvokeExpr;
+import soot.jimple.NewExpr;
 import soot.jimple.SpecialInvokeExpr;
 import soot.jimple.Stmt;
 import soot.jimple.StmtBody;
@@ -43,15 +45,15 @@ import soot.util.Chain;
 
 /**
  * This transformation will create a clone of a given class that is appropriate for separating the cloned
- * class from the parent in the points to analysis, such that we can introduce Object Sensitivity for a subset of 
- * classes.
+ * class from the parent in the points to analysis, such that we can introduce Object Sensitivity.
  * 
  * In the original class, all private fields are made protected, so that code in the clone can access them.
  * 
  * The clone that is created does not include fields from the ancestor classes.
  * 
- * All non-static methods from the original class plus its ancestors are added to the clone 
- * (they are added in a way such that method inheritance is correctly observed from the original hierarchy).  
+ * All non-static methods from the original class plus its ancestors are added to the clone by using the
+ * CloneInheritedMethods transformation (they are added in a way such that method inheritance is correctly 
+ * observed from the original hierarchy).  
  * 
  * @author mgordon
  *
@@ -94,6 +96,10 @@ public class ClassCloner {
         return cim.getReachableClonedMethods();
     }
 
+    public Map<SootMethod,SootMethod> getCloneToOriginalMap() {
+        return cim.getCloneToOriginalMap();
+    }
+
     /** 
      * Static call to clone a particular class, and return the clone. 
      * 
@@ -127,7 +133,7 @@ public class ClassCloner {
         //remove inheritance by cloning
         cim = new CloneInheritedMethods(clone);
         cim.transform();
-        
+
         //install the class
         Scene.v().addClass(clone);
         Scene.v().loadClass(clone.getName(), SootClass.BODIES);
@@ -151,12 +157,28 @@ public class ClassCloner {
         if (Project.v().isLibClass(original)) {
             Project.v().addLibClass(clone);
         }
+
+        //for all new expressions in the cloned methods of the clone,
+        //replace self creations with creations of clone
+        RefType originalType = RefType.v(original);
+        RefType cloneType = RefType.v(clone);
+        for (SootMethod method : clone.getMethods()) {        
+            StmtBody stmtBody = (StmtBody)method.retrieveActiveBody();
+            for (ValueBox vb : stmtBody.getUseAndDefBoxes()) {
+                if (vb.getValue() instanceof NewExpr &&
+                        ((NewExpr)vb.getValue()).getBaseType().equals(originalType)) {
+                    NewExpr newE = (NewExpr)vb.getValue();
+                    newE.setBaseType(cloneType);
+                }
+            }
+        }
+
     }
 
     public static boolean isClonedClass(SootClass clz) {
         return clz.getName().contains(CLONE_POSTFIX);
     }
-    
+
     public static String removeClassCloneSuffix(String str) {
         String regex = CLONE_POSTFIX+"[0-9]+";
         Pattern pattern = Pattern.compile(regex);

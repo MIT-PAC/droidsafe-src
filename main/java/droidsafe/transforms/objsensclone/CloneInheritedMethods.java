@@ -1,8 +1,10 @@
 package droidsafe.transforms.objsensclone;
 
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import org.slf4j.Logger;
@@ -10,6 +12,7 @@ import org.slf4j.LoggerFactory;
 
 import soot.Body;
 import soot.Modifier;
+import soot.RefType;
 import soot.Scene;
 import soot.SootClass;
 import soot.SootField;
@@ -18,6 +21,7 @@ import soot.SootMethodRef;
 import soot.Type;
 import soot.ValueBox;
 import soot.jimple.InvokeExpr;
+import soot.jimple.NewExpr;
 import soot.jimple.SpecialInvokeExpr;
 import soot.jimple.Stmt;
 import soot.jimple.StmtBody;
@@ -29,15 +33,24 @@ import droidsafe.main.Config;
 import droidsafe.utils.SootMethodList;
 import droidsafe.utils.SootUtils;
 
+/**
+ * This transformation pulls all inherited methods into a class by cloning them and fixing up th
+ * cloned code.  It essentially introduces a limited form of object sensitivity on the cloned methods
+ * in the class because there are now distinct versions of the parent methods for each inherited class.
+ * 
+ * It is careful about respecting proper inheritance and remaining sound (one hopes).
+ * 
+ * @author mgordon
+ *
+ */
 public class CloneInheritedMethods {
     /** logger object */
     private static final Logger logger = LoggerFactory.getLogger(CloneInheritedMethods.class);
     /** methods of the new cloned class */
     private SootMethodList methods;
-    /** set of methods from ancestors that we have cloned into this clone */
-    private Set<SootMethod> ancestorMethodsAdded = new HashSet<SootMethod>();
-    /** Set of methods that we have created and added to the clone */
-    private Set<SootMethod> clonedMethodsAdded = new HashSet<SootMethod>();
+    /** map of cloned method to the original method */
+    private Map<SootMethod,SootMethod> clonedToOriginal = new HashMap<SootMethod,SootMethod>();
+    /** class on which we are working */
     private SootClass clazz;
 
     public CloneInheritedMethods(SootClass clz) {
@@ -71,7 +84,7 @@ public class CloneInheritedMethods {
             makeAncestorFieldsVisible(ancestor);
         }
 
-        fixInvokeSpecials();
+        fixClonedCode();
     }
 
     /**
@@ -98,9 +111,13 @@ public class CloneInheritedMethods {
      * @return
      */
     public Set<SootMethod> getReachableClonedMethods() {
-        return clonedMethodsAdded;
+        return clonedToOriginal.keySet();
     }
 
+    
+    public Map<SootMethod,SootMethod> getCloneToOriginalMap() {
+        return clonedToOriginal;
+    }
 
     /**
      * Clone non-static ancestor methods that are not hidden by virtual dispatch.
@@ -135,8 +152,6 @@ public class CloneInheritedMethods {
             if (ancestorM.isFinal())
                 ancestorM.setModifiers(ancestorM.getModifiers() ^ Modifier.FINAL);
 
-            ancestorMethodsAdded.add(ancestorM);
-            
             SootMethod newMeth = new SootMethod(ancestorM.getName(), ancestorM.getParameterTypes(),
                 ancestorM.getReturnType(), ancestorM.getModifiers(), ancestorM.getExceptions());
 
@@ -145,7 +160,7 @@ public class CloneInheritedMethods {
             methods.addMethod(newMeth);
             clazz.addMethod(newMeth);
 
-            clonedMethodsAdded.add(newMeth);
+            clonedToOriginal.put(newMeth, ancestorM);
 
             if (API.v().isBannedMethod(ancestorM.getSignature())) 
                 API.v().addBanMethod(newMeth);
@@ -206,11 +221,18 @@ public class CloneInheritedMethods {
         return false;
     }
 
-    private void fixInvokeSpecials() {
+    /**
+     * This will fix invoke special all for calls that are cloned in.
+     */
+    private void fixClonedCode() {
         for (SootMethod method : clazz.getMethods()) {
 
+            if (method.isAbstract() || method.isPhantom() || !method.isConcrete())
+                continue;
+            
             Body body = method.retrieveActiveBody();
             StmtBody stmtBody = (StmtBody)body;
+         
             Chain units = stmtBody.getUnits();
             Iterator stmtIt = units.iterator();
 
@@ -220,7 +242,7 @@ public class CloneInheritedMethods {
                 if (stmt.containsInvokeExpr() && stmt.getInvokeExpr() instanceof SpecialInvokeExpr) {
                     SpecialInvokeExpr si = (SpecialInvokeExpr) stmt.getInvokeExpr();
 
-                    if (ancestorMethodsAdded.contains(si.getMethod())) {
+                    if (clonedToOriginal.values().contains(si.getMethod())) {
                         SootMethodRef clonedMethodRef = clazz.getMethod(si.getMethod().getSubSignature()).makeRef();
                         si.setMethodRef(clonedMethodRef);
                     }
