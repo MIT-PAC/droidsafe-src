@@ -214,7 +214,7 @@ public class SparkPTA extends PTABridge {
                     origReachable++;
 
                     boolean debug = false;
-                            //method.getSignature().equals("<java.lang.Object: boolean equals(java.lang.Object)>");
+                    //method.getSignature().equals("<java.lang.Object: boolean equals(java.lang.Object)>");
 
                     if (method.isAbstract() || !method.isConcrete() || method.isPhantom())
                         continue;
@@ -238,7 +238,7 @@ public class SparkPTA extends PTABridge {
 
                         if (debug) System.out.println(local);
 
-                       
+
                         for (AllocNode an : ans) {
                             if (an.getType() instanceof RefType &&
                                     !shouldIgnoreForStats(((RefType)an.getType()).getSootClass())) {
@@ -251,14 +251,15 @@ public class SparkPTA extends PTABridge {
                         if (size > 150) {
                             System.out.printf("%d,  %s %s of %s\n", ans.size(), local, local.getType(), method);
                         }
-                        
-                         
+
+
                         PTSets++;
                         PTSetSize += size;
-                        
-                        /*
 
-                       
+                    }
+                    /*
+
+
                        Set<IAllocNode> allocNodes = new HashSet<IAllocNode>();
                         if (isReachableMethod(method)) {
                             allocNodes.addAll(getPTSet(local));
@@ -294,9 +295,9 @@ public class SparkPTA extends PTABridge {
                         PTSetSize += insensSet.size();
                     }
 
-                    /*  InstanceFieldRef
-                  ArrayRef
-                   StaticFieldRef*/
+                   //InstanceFieldRef
+                  //ArrayRef
+                   StaticFieldRef
 
 
                     //if here, then reachable or clone reachable
@@ -313,6 +314,7 @@ public class SparkPTA extends PTABridge {
                     //somehow build call graph??
 
                     //total casts that may fail
+                     */
                 }
             }
 
