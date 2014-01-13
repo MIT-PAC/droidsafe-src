@@ -35,6 +35,7 @@ import soot.jimple.Jimple;
 import soot.jimple.JimpleBody;
 import soot.jimple.NewExpr;
 import soot.jimple.NullConstant;
+import soot.jimple.StaticInvokeExpr;
 import soot.jimple.StringConstant;
 import soot.jimple.internal.JAssignStmt;
 import soot.jimple.internal.JGotoStmt;
@@ -123,6 +124,37 @@ public class ObjectSensitivityCloner {
         newExprMap = new HashMap<Value,Value>();
     }
 
+    /**
+     * Replace calls to array copy with explicit assignment expression of 2nd to 0th argument. 
+     */
+    private void replaceArrayCopyCalls() {
+        SootMethod arrayCopy = Scene.v().getMethod("<java.lang.System: void arraycopy(java.lang.Object,int,java.lang.Object,int,int)>");
+        
+        for (SootMethod method : PTABridge.v().getAllReachableMethods()) {
+            
+
+            if (method.isAbstract() || !method.isConcrete())
+                continue;
+
+            Body body = method.getActiveBody();
+            StmtBody stmtBody = (StmtBody)body;
+            Chain units = stmtBody.getUnits();
+            Iterator stmtIt = units.snapshotIterator();
+
+            while (stmtIt.hasNext()) {
+                Stmt stmt = (Stmt)stmtIt.next();
+                
+                if (stmt.containsInvokeExpr() && stmt.getInvokeExpr() instanceof StaticInvokeExpr) {
+                    StaticInvokeExpr sie = (StaticInvokeExpr)stmt.getInvokeExpr();
+                    if (sie.getMethod().equals(arrayCopy)) {
+                        AssignStmt assignStmt = Jimple.v().newAssignStmt(sie.getArg(2), sie.getArg(0));
+                        units.swapWith(stmt, assignStmt);
+                    }
+                }
+            }
+        }
+    }
+    
     private void initMasterList() {
         //we want to keep a consistent numbering across runs of droidsafe for clones
         //so we sort the classes list we go through

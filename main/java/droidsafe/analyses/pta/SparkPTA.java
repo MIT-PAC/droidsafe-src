@@ -1,7 +1,10 @@
 package droidsafe.analyses.pta;
 
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.io.PrintStream;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
@@ -67,7 +70,9 @@ import soot.toolkits.scalar.Pair;
 import soot.util.queue.QueueReader;
 import droidsafe.android.app.Harness;
 import droidsafe.android.app.Project;
+import droidsafe.android.system.API;
 import droidsafe.main.Config;
+import droidsafe.transforms.objsensclone.ObjectSensitivityCloner;
 import droidsafe.utils.CannotFindMethodException;
 import droidsafe.utils.SootUtils;
 
@@ -88,55 +93,247 @@ public class SparkPTA extends PTABridge {
     private Set<SootMethod> reachableMethods;
     /** underlying pta */
     private PAG ptsProvider;
-    
+
+    private static FileWriter fw;
+
+    static {
+        try {
+            fw = new FileWriter(Project.v().getOutputDir() + File.separator +"spark-stats.txt");
+        } catch (Exception e) {
+
+        }
+    }
+
     public SparkPTA() {
-        
+
     }
 
     @Override
     protected void releaseInternal() {
-    	G.v().MethodPAG_methodToPag = new HashMap<SootMethod, MethodPAG>();
+        G.v().MethodPAG_methodToPag = new HashMap<SootMethod, MethodPAG>();
     }
 
     @Override
     protected void runInternal() {
-      //don't print crap to screen!
+        //don't print crap to screen!
         G.v().out = new PrintStream(NullOutputStream.NULL_OUTPUT_STREAM);
         Scene.v().loadDynamicClasses();
 
         setSparkPointsToAnalysis();
-        
+
         //other passes can print crap now
         G.v().out = System.out;
-       
+
         ptsProvider = (PAG)Scene.v().getPointsToAnalysis();
-          
+
         //cache the call graph
         callGraph = Scene.v().getCallGraph();
-        
+
         createNewToAllocMap();
-        
+
         //fill reachable methods map
         reachableMethods = new HashSet<SootMethod>();
-       
+
         QueueReader<MethodOrMethodContext> qr = Scene.v().getReachableMethods().listener();
-       
+
         while (qr.hasNext()) {
             MethodOrMethodContext momc = qr.next();
             if (momc instanceof SootMethod) {
                 reachableMethods.add((SootMethod)momc);
             }
         }
-        
+
         System.out.println("Size of reachable methods: " + reachableMethods.size());
         System.out.println("Alloc Nodes: " + newToAllocNodeMap.size());
-        
+
         if (Config.v().dumpPta){
             dumpPTA(Project.v().getOutputDir() + File.separator +"pta.txt");
         }
 
         if (Config.v().dumpCallGraph) {
             dumpCallGraph(Project.v().getOutputDir() + File.separator + "callgraph.dot");
+        }
+
+        writeStats();
+    }
+
+    /**
+     * Work in progress!
+     */
+    public void writeStats() {
+        if (!Config.v().statsRun)
+            return;
+
+        try {
+            fw.write("\n=====================================================\n");
+            fw.write("Obj sens: " + ObjectSensitivityCloner.v().hasRun + "\n");
+
+            ObjectSensitivityCloner osc = ObjectSensitivityCloner.v();
+
+            long PTSets = 0;
+            long PTSetSize = 0;
+            long origReachable = 0;
+
+            //loop through all non-cloned methods, look for clones
+            //gather stats?
+
+            //loop through all non-cloned classes
+            for (SootClass clz : Scene.v().getClasses()) {
+
+                if (shouldIgnoreForStats(clz))
+                    continue;
+
+                //if (ObjectSensitivityCloner.v().isClonedClass(clz))
+                //    continue;
+
+                for (SootMethod method : clz.getMethods()) {
+
+                    /*if (ObjectSensitivityCloner.v().isClonedMethod(method))
+                        continue;*/
+
+                    boolean reachable = false;
+
+                    if (isReachableMethod(method)) {
+                        reachable = true;
+                    }
+
+                    /*
+                    if (!reachable) {
+                        for (SootMethod cloneC : ObjectSensitivityCloner.v().getClonedContextMethods(method)) {
+                            if (isReachableMethod(cloneC)) {
+                                reachable = true;
+                                break;
+                            }
+                        }
+                    }
+                     */
+
+                    if (!reachable)
+                        continue;
+
+                    origReachable++;
+
+                    boolean debug = false;
+                            //method.getSignature().equals("<java.lang.Object: boolean equals(java.lang.Object)>");
+
+                    if (method.isAbstract() || !method.isConcrete() || method.isPhantom())
+                        continue;
+
+                    if (debug) {
+                        Iterator<Edge> edges = callGraph.edgesInto(method);
+                        while (edges.hasNext()) {
+                            System.out.println(edges.next());
+                        }
+                    }
+
+                    for (Local local : method.retrieveActiveBody().getLocals()) {
+                        if (local.getType() instanceof RefType && 
+                                shouldIgnoreForStats(((RefType)local.getType()).getSootClass()))
+                            continue;
+
+                        Set<AllocNode> ans = (Set<AllocNode>)getPTSet(local);
+
+
+                        int size = 0;
+
+                        if (debug) System.out.println(local);
+
+                       
+                        for (AllocNode an : ans) {
+                            if (an.getType() instanceof RefType &&
+                                    !shouldIgnoreForStats(((RefType)an.getType()).getSootClass())) {
+                                size ++;
+                                if (debug) System.out.println("\t" + an);
+                            }
+                        }
+
+
+                        if (size > 150) {
+                            System.out.printf("%d,  %s %s of %s\n", ans.size(), local, local.getType(), method);
+                        }
+                        
+                         
+                        PTSets++;
+                        PTSetSize += size;
+                        
+                        /*
+
+                       
+                       Set<IAllocNode> allocNodes = new HashSet<IAllocNode>();
+                        if (isReachableMethod(method)) {
+                            allocNodes.addAll(getPTSet(local));
+                        }
+
+                        for (SootMethod cloneC : osc.getClonedContextMethods(method)) {
+                            if (isReachableMethod(cloneC)) 
+                                allocNodes.addAll(getPTSet(osc.getClonedLocal(method, local, cloneC)));
+                        }
+
+                        Set<Value> insensSet = new HashSet<Value>();
+                        for (IAllocNode iac : allocNodes) {
+                            Value newExpr = null;
+                            if (iac.getNewExpr() instanceof Value) {
+                                newExpr = (Value)iac.getNewExpr();
+                            } else if (iac.getNewExpr() instanceof Pair) {
+                                if (((Pair)iac.getNewExpr()).getO1() instanceof Value)
+                                    newExpr = (Value)((Pair)iac.getNewExpr()).getO1();
+                            } else {
+                                logger.info("Unknown new expression type: {} {}", 
+                                    iac.getNewExpr(), iac.getNewExpr().getClass());
+                            }
+
+                            if (osc.isClonedNewExpr(newExpr)) {
+                                insensSet.add(osc.getOrigNewExpr(newExpr));
+                            } else {
+                                insensSet.add(newExpr);
+                            }
+                        }
+
+
+                        PTSets++;
+                        PTSetSize += insensSet.size();
+                    }
+
+                    /*  InstanceFieldRef
+                  ArrayRef
+                   StaticFieldRef*/
+
+
+                    //if here, then reachable or clone reachable
+
+
+                    //loop through code
+
+                    //virtual calls (how to account for cloning?)
+
+                    //total polymorphic calls (how to account for cloning?)
+
+                    //reachable casts
+
+                    //somehow build call graph??
+
+                    //total casts that may fail
+                }
+            }
+
+            //raw call graph
+            fw.write("Raw reachable methods: " + reachableMethods.size() + "\n");
+            fw.write("Raw call graph edges: " + callGraph.size() + "\n");
+
+            fw.write("Collapsed Reachable Methods: " + origReachable + "\n");
+
+            //cloning removed call graph
+
+            fw.write("Average points to set size: " + ((double)PTSetSize)/((double)PTSets) + "\n");
+            /*
+            fw.write("virtual call sites: " + virtualCallSites + "\n");
+            fw.write("polymorphic call sites: " + polyCallSites + "\n");
+            fw.write("Casts: " + casts + "\n");
+            fw.write("Casts that may fail: " + castsMayFail + "\n");
+             */
+            fw.flush();
+        } catch (IOException e) {
+
         }
     }
 
@@ -158,7 +355,7 @@ public class SparkPTA extends PTABridge {
      * Return a set of all allocnodes in the program.
      */
     public Set<? extends IAllocNode> getAllAllocNodes() {
-    	Set<AllocNode> nodes = Collections.unmodifiableSet(newToAllocNodeMap.values());
+        Set<AllocNode> nodes = Collections.unmodifiableSet(newToAllocNodeMap.values());
         return (Set<? extends IAllocNode>) nodes;
     }
 
@@ -169,12 +366,12 @@ public class SparkPTA extends PTABridge {
         return newToAllocNodeMap.inverse().get((AllocNode) an);
     }
 
-    
+
     @Override
     public boolean isLegalCast(Type objType, Type refType) {
         return ptsProvider.getTypeManager().castNeverFails(objType, refType);
     }
-    
+
     @Override
     public Set<SootMethod> getAllReachableMethods() {
         return reachableMethods;
@@ -216,7 +413,7 @@ public class SparkPTA extends PTABridge {
     public Set<? extends IAllocNode> getPTSet(Value val) {
         final Set<AllocNode> allocNodes = new HashSet<AllocNode>();
         PointsToSetInternal pts = null;
-        
+
         try {
             if (val instanceof InstanceFieldRef) {
                 final InstanceFieldRef ifr = (InstanceFieldRef)val;
@@ -226,7 +423,7 @@ public class SparkPTA extends PTABridge {
                 pts = (PointsToSetInternal)ptsProvider.reachingObjectsOfArrayElement
                         (ptsProvider.reachingObjects((Local)arrayRef.getBase()));
             } else if (val instanceof Local){            
-                 pts = (PointsToSetInternal)ptsProvider.reachingObjects((Local)val);
+                pts = (PointsToSetInternal)ptsProvider.reachingObjects((Local)val);
             } else if (val instanceof StaticFieldRef) {
                 SootField field = ((StaticFieldRef)val).getField();
                 pts = (PointsToSetInternal)ptsProvider.reachingObjects(field);
@@ -236,36 +433,36 @@ public class SparkPTA extends PTABridge {
                 logger.error("Unknown reference type for insenstive search: {} {}", val, val.getClass());
                 droidsafe.main.Main.exit(1);
             }
-            
+
             //visit internal points to set and grab all allocnodes        
             pts.forall(new P2SetVisitor() {
                 public void visit(Node n) {
                     allocNodes.add((AllocNode)n);
                 }
             });
-            
+
         } catch (Exception e) {
             logger.info("Some sort of error getting context insensitive points to set for {}", val, e);
             //e.printStackTrace();
         }
 
-        return (Set<? extends IAllocNode>) allocNodes;
+        return allocNodes;
     }
-    
-    
+
+
     public Set<? extends IAllocNode> getPTSetOfArrayElement(IAllocNode allocNode) {
         final Set<AllocNode> ptSet = new HashSet<AllocNode>();
-        
+
         HashPointsToSet pointsToSet = new HashPointsToSet(allocNode.getType(), ptsProvider);
         pointsToSet.add((AllocNode) allocNode);
-        
-                ((PointsToSetInternal)ptsProvider.reachingObjectsOfArrayElement(pointsToSet)).forall(new P2SetVisitor() {
+
+        ((PointsToSetInternal)ptsProvider.reachingObjectsOfArrayElement(pointsToSet)).forall(new P2SetVisitor() {
             @Override
             public void visit(Node node) {
                 ptSet.add((AllocNode)node);
             }
         });
-        
+
         return (Set<? extends IAllocNode>) ptSet;
     }
 
@@ -275,23 +472,23 @@ public class SparkPTA extends PTABridge {
             logger.error("Cannot call getPTSet(node, field) with static field: {}", f);
             droidsafe.main.Main.exit(1);
         }
-        
+
         final Set<AllocNode> allocNodes = new HashSet<AllocNode>();
-        
+
         HashPointsToSet pointsToSet = new HashPointsToSet(node.getType(), ptsProvider);
         pointsToSet.add((AllocNode) node);
-        
+
         ((PointsToSetInternal)ptsProvider.reachingObjects(pointsToSet, f)).forall(new P2SetVisitor() {
             @Override
             public void visit(Node node) {
                 allocNodes.add((AllocNode)node);
             }
         }); 
-       
-/*
+
+        /*
         PointsToSetInternal bases = (PointsToSetInternal)ptsProvider.getSetFactory().newSet(node.getType(), ptsProvider);
         bases.add(node);
-        
+
         final PointsToSetInternal pts = ptsProvider.getSetFactory().newSet( 
             (f instanceof SootField) ? ((SootField)f).getType() : null, ptsProvider );
         bases.forall( new P2SetVisitor() {
@@ -299,14 +496,14 @@ public class SparkPTA extends PTABridge {
                 Node nDotF = ((AllocNode) n).dot( f );
                 if(nDotF != null) pts.addAll( nDotF.getP2Set(), null );
             }} );
-        
+
         //visit internal points to set and grab all allocnodes        
         pts.forall(new P2SetVisitor() {
             public void visit(Node n) {
                 allocNodes.add((AllocNode)n);
             }
         });
-*/
+         */
         return (Set<? extends IAllocNode>) allocNodes;
     }
 
@@ -322,12 +519,12 @@ public class SparkPTA extends PTABridge {
             logger.error("Invalid context type for spark query: {}", context.getType());
             droidsafe.main.Main.exit(1);
         }
-        
+
         Context sparkContext = context.getContext().srcCtxt();
-        
+
         final Set<AllocNode> allocNodes = new HashSet<AllocNode>();
         PointsToSetInternal pts = null;
-        
+
         try {
             if (val instanceof InstanceFieldRef) {
                 final InstanceFieldRef ifr = (InstanceFieldRef)val;
@@ -347,29 +544,29 @@ public class SparkPTA extends PTABridge {
                 logger.error("Unknown reference type for insenstive search: {} {}", val, val.getClass());
                 droidsafe.main.Main.exit(1);
             }
-            
+
             //visit internal points to set and grab all allocnodes        
             pts.forall(new P2SetVisitor() {
                 public void visit(Node n) {
                     allocNodes.add((AllocNode)n);
                 }
             });
-            
+
         } catch (Exception e) {
             logger.info("Some sort of error getting context insensitive points to set for {}", val, e);
             //e.printStackTrace();
         }
 
         return allocNodes;
-        */
+         */
     }
-    
+
     /**
      * Given an invoke expression, resolve the targets of the method.  Perform a pta virtual method resolution
      * for instance invokes, and use an insensitive search.
      */
     public Collection<SootMethod> resolveInvoke(InvokeExpr invoke) 
-        throws CannotFindMethodException {
+            throws CannotFindMethodException {
         if (invoke instanceof StaticInvokeExpr) {
             Set<SootMethod> ret = new HashSet<SootMethod>();
             ret.add(((StaticInvokeExpr)invoke).getMethod());
@@ -380,10 +577,10 @@ public class SparkPTA extends PTABridge {
         } else if (invoke instanceof InstanceInvokeExpr) {
             return resolveInstanceInvoke((InstanceInvokeExpr)invoke);
         }
-        
+
         return Collections.emptySet();
     }
-    
+
     @Override
     public Collection<SootMethod> resolveInvoke(InvokeExpr invoke, PTAContext context) 
             throws CannotFindMethodException {
@@ -406,24 +603,24 @@ public class SparkPTA extends PTABridge {
      * target method.
      */
     public Map<IAllocNode,SootMethod> resolveInstanceInvokeMap(InstanceInvokeExpr invoke) 
-        throws CannotFindMethodException {
+            throws CannotFindMethodException {
         return resolveInstanceInvokeMap(invoke, null);
     }
-    
+
     /**
      * Use the PTA to resolve the set of method that an instance invoke could call.  In this 
      * version, use the 1cfa context result.  Return a map of each alloc node to its
      * target method.
      */
     public Map<IAllocNode,SootMethod> resolveInstanceInvokeMap(InstanceInvokeExpr invoke, PTAContext context) 
-        throws CannotFindMethodException {
+            throws CannotFindMethodException {
         Set<? extends IAllocNode> allocs = null;
         //get either the context sensitive or insensitive result based on the context param 
         if (context == null) 
             allocs = getPTSet(invoke.getBase());
         else
             allocs = getPTSet(invoke.getBase(), context);
-        
+
         return internalResolveInstanceInvokeMap(allocs, invoke, context);
     }
 
@@ -433,8 +630,8 @@ public class SparkPTA extends PTABridge {
     private Map<IAllocNode, SootMethod> internalResolveInstanceInvokeMap(Set<? extends IAllocNode> allocs, 
         InstanceInvokeExpr invoke, PTAContext context) throws CannotFindMethodException {
         Map<IAllocNode, SootMethod> methods = new LinkedHashMap<IAllocNode, SootMethod>();
-        
-      //loop over alloc nodes and resolve the concrete dispatch for each, placing in the set
+
+        //loop over alloc nodes and resolve the concrete dispatch for each, placing in the set
         for (IAllocNode an : allocs) {
             if (invoke instanceof SpecialInvokeExpr) {
                 SootMethod resolved = SootUtils.resolveSpecialDispatch((SpecialInvokeExpr)invoke); 
@@ -453,14 +650,14 @@ public class SparkPTA extends PTABridge {
                     //normal reference type, just get the soot class
                     clz = ((RefType)t).getSootClass();
                 }   
-                
+
                 methods.put(an, SootUtils.resolveConcreteDispatch(clz, invoke.getMethod()));
             } else {
                 logger.error("Unknown invoke expression type encountered when resolving InstanceInvoke {}", invoke);
                 droidsafe.main.Main.exit(1);
             }
-            
-            
+
+
         }
 
         return methods;
@@ -489,18 +686,18 @@ public class SparkPTA extends PTABridge {
         // TODO Auto-generated method stub
 
     }
-    
+
     /**
      * Create the bi map of NewExpr <-> AllocNode
      */
     private void createNewToAllocMap() {
         newToAllocNodeMap = HashBiMap.create();
-        
+
         for (AllocNode node : ptsProvider.getAllocNodes()) {
             newToAllocNodeMap.put(node.getNewExpr(), node);
         }
-        
-        
+
+
     }
 
     /**
@@ -540,7 +737,7 @@ public class SparkPTA extends PTABridge {
         opt.put("dump-answer","false");          
         opt.put("add-tags","false");             
         opt.put("set-mass","false");
-        
+
         //some context sensitivity
         opt.put("cs-demand", "false");
         opt.put("lazy-pts", "true");

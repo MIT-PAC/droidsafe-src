@@ -26,7 +26,7 @@ import droidsafe.main.Main;
 import droidsafe.utils.SootUtils;
 
 /**
- * Remove methods in the application code that are overrides and do nothing but call the super method.
+ * Remove methods in all classes' code that are overrides and do nothing but call the super method.
  * 
  * This class is helpful for simplifying the code, and enabling other transformations.
  * 
@@ -45,18 +45,16 @@ public class RemoveStupidOverrides {
     }
 
     /**
-     * Call this pass on all application classes in the project.
+     * Call this on all methods in scene
      */
     public static void run() {
         RemoveStupidOverrides transformer = new RemoveStupidOverrides();
         for (SootClass clz : Scene.v().getClasses()) {
-            if (Project.v().isSrcClass(clz.toString()) || Project.v().isLibClass(clz)) {
-                SootMethod[] methods = clz.getMethods().toArray(new SootMethod[0]);
+            SootMethod[] methods = clz.getMethods().toArray(new SootMethod[0]);
                 for (SootMethod meth : methods) {
                     if (meth.isConcrete() && !meth.isStatic() && !meth.isConstructor())
                         transformer.removeMethodIfStupid(clz, meth);
                 }
-            }
         }
     }
 
