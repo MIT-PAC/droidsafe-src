@@ -1,7 +1,10 @@
 package droidsafe.analyses.pta;
 
 import java.io.PrintStream;
+import java.util.Arrays;
 import java.util.Collection;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -9,8 +12,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import droidsafe.utils.CannotFindMethodException;
+import droidsafe.utils.SootUtils;
 import soot.G;
+import soot.Hierarchy;
 import soot.Scene;
+import soot.SootClass;
 import soot.SootField;
 import soot.SootMethod;
 import soot.Type;
@@ -33,6 +39,15 @@ public abstract class PTABridge {
     private static PTABridge v;
 
     private static PointsToAnalysisPackage myPackage;
+    
+    /** When gathering statistics, ignore methods and references of these classes or subclasses */
+    public static final Set<String> STATS_IGNORE_CLASS_STRINGS = new HashSet<String>(Arrays.asList(
+        "java.lang.String", 
+        "java.lang.AbstractStringBuilder", 
+        "java.lang.Throwable",
+        "java.lang.CharSequence"));
+    /** Build above as soot classes with all children before each run */
+    public static Set<SootClass> STATS_IGNORE_SOOTCLASSES;
     
     public PointsToAnalysisPackage getPackage() {
         return myPackage;
@@ -68,8 +83,23 @@ public abstract class PTABridge {
     /** Internal run method for implementing analysis */
     protected abstract void runInternal();
 
+    /** 
+     * Return true if we should ignore this class for stats gathering.
+     */
+    public boolean shouldIgnoreForStats(SootClass clz) {
+        return STATS_IGNORE_SOOTCLASSES.contains(clz);
+    }
+    
     /** Run the points to analysis, if an analysis is to be added, it must be added here in the if statement */
     public static void run(PointsToAnalysisPackage pta) {
+       STATS_IGNORE_SOOTCLASSES = new HashSet<SootClass>();
+       for (String str : STATS_IGNORE_CLASS_STRINGS) {
+           SootClass clz = Scene.v().getSootClass(str);
+           List<SootClass> childrenInc = SootUtils.getChildrenIncluding(clz);
+           for (SootClass child : childrenInc)
+               STATS_IGNORE_SOOTCLASSES.add(child);
+       }
+            
         myPackage = pta;
         if (pta == PointsToAnalysisPackage.GEOPTA) {
             v = new GeoPTA();
