@@ -27,7 +27,7 @@ import sun.util.logging.resources.logging;
  * @author dpetters
  */
 public class JSAUtils {
-    
+
     /**
      *  The logging output.
      */
@@ -108,36 +108,34 @@ public class JSAUtils {
                 }
             }
         }
-        */
+         */
     }
-    
+
     /**
-     * Add hotspots for all of the spec methods.
+     * Add hotspots for all of the system methods.
      */
     public static void setupSpecHotspots()
     {
         for (SootMethod m : API.v().getAllSystemMethods()) {
-            //if (API.v().isInterestingMethod(m)) {
-                try {
-                    String sig = m.getSignature();
-                    int i = 0;
-                    for (soot.Type t : m.getParameterTypes()) {
-                        if (SootUtils.isStringOrSimilarType(t)) {
-                            List<ValueBox> hs = JSAStrings.v().addArgumentHotspots(sig, i);
-                        }
-                        i++;     
+            try {
+                String sig = m.getSignature();
+                int i = 0;
+                for (soot.Type t : m.getParameterTypes()) {
+                    if (SootUtils.isStringOrSimilarType(t)) {
+                        List<ValueBox> hs = JSAStrings.v().addArgumentHotspots(sig, i);
                     }
-                 } catch (Exception e) {
-                     logger.error("Exception when adding hotspot for method.");
-                 }
-                // FIXME: Return hotspots are raising an exception.
-                /*
+                    i++;     
+                }
+            } catch (Exception e) {
+                logger.error("Exception when adding hotspot for method.", e);
+            }
+            // FIXME: Return hotspots are raising an exception.
+            /*
                 if (SootUtils.isStringType(m.getReturnType())) {
                     System.out.println(String.format("addReturnHotspots(%s)", sig));
                     JSAStrings.v().addReturnHotspot(sig);
                 }
-                */
-            //}
+             */
         }
     }
 }
