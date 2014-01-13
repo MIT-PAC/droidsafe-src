@@ -112,6 +112,9 @@ public class Config {
   /** if true, use the small manual set of android classes for the api model, for a fast run. */
   public boolean useManualModeling = false;
 
+  /** for various passes do extra work to print stats, tied to --stats */
+  public boolean statsRun = false;
+  
   /**
    * if true, string analysis is done for all soot application classes. Otherwise, it is only done
    * for the source classes of the project.
@@ -213,6 +216,10 @@ public class Config {
             new Option("vastats", "Calculate VA stats.");
     options.addOption(vaStats);
 
+    Option allStatsRun =
+            new Option("stats", "Perform extra work to generate stats.");
+    options.addOption(allStatsRun);
+    
     Option noObjSens =
             new Option("noobjsens", "Do not add object sensitivity to points to analysis.");
     options.addOption(noObjSens);
@@ -305,6 +312,9 @@ public class Config {
     if (cmd.hasOption("vastats"))
         this.computeVAStats = true;
 
+    if (cmd.hasOption("stats"))
+        this.statsRun = true;
+    
     if (cmd.hasOption("noobjsens"))
         this.addObjectSensitivity = false;
     
