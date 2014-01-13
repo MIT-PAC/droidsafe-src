@@ -48,7 +48,7 @@ public class RCFGNode implements PTAMethodInformation {
 	public RCFGNode(Edge entryEdge) {
 		outputEvents = new LinkedHashMap<Edge, OutputEvent>();
 		this.eventContext = new PTAContext(ContextType.EVENT_CONTEXT, entryEdge);
-		if (entryEdge.srcStmt().containsInvokeExpr())
+		if (entryEdge.srcStmt() != null && entryEdge.srcStmt().containsInvokeExpr())
 		    invokeExpr = (InvokeExpr)entryEdge.srcStmt().getInvokeExpr();
 		else
 		    invokeExpr = null;
