@@ -37,6 +37,8 @@ def run(settings, args):
     path = os.environ['APAC_HOME'] + '/android-apps/engagements'
     statfiles = [os.path.join(dirpath, f) for dirpath, dirnames, files in os.walk(path) for f in fnmatch.filter(files, 'va-stats.csv')]
     print str(len(statfiles)) + " stat files found"
+    statfiles = filter(lambda x: os.stat(x).st_size != 0, statfiles)
+    print str(len(statfiles)) + " nonempty stat files found"
 
     ambg =  defaultdict(lambda : defaultdict(int))
     unambg = defaultdict(lambda : defaultdict(int))
