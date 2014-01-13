@@ -108,7 +108,7 @@ public class VAStats {
         }
 
         // write out headers for columns
-        writer.writeNext(new String[] {"class", "field", "size", "relevant methods"});
+        writer.writeNext(new String[] {"field", "size", "relevant methods"});
 
         for(Map.Entry<Object, VAModel> entry : ValueAnalysis.v().getResults().entrySet()) {
             Object newExpr = entry.getKey();
@@ -128,14 +128,13 @@ public class VAStats {
                     boolean containingModelInvalidated = refVAModel.invalidated();
                     for(SootField sf : v.vaResolvedClassNamesAndFields.get(scName)){
 
-                        // 1st & 2nd columns - class name and field name
+                        // 1st column - class name and field name
                         List<String> rowEntries = new ArrayList<String>();
-                        rowEntries.add(scName);
                         rowEntries.add(sf.toString());
 
-                        // 3rd column -  size of the resolved value set. -1 means we couldn't figure out the number
-                        // because either the field is a string and could be ANYTHING or got invalidated and means
-                        // we write UNKNOWN in this column
+                        // 2nd column -  size of the resolved value set, either an integer or UNKNOWN. In the code
+                        // below, -1 stands for UNKNOWN, which means we couldn't precisely identify the size of the
+                        // set, either because it is a string and could be ANYTHING or got invalidated
                         int size = -1;
                         // we claim that we don't know the sizes of any field sets if the containing model got
                         // invalidated
@@ -167,7 +166,7 @@ public class VAStats {
                         else
                             rowEntries.add(String.valueOf(size));
                
-                        // 4th column - relevant methods for the node
+                        // 3rd column - relevant methods for the node
                         rowEntries.add(v.getRelevantMethods(node));
          
                         // write out all columns
