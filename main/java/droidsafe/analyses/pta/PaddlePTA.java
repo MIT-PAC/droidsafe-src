@@ -44,6 +44,7 @@ import soot.jimple.StaticInvokeExpr;
 import soot.jimple.VirtualInvokeExpr;
 import soot.jimple.paddle.AbsP2Sets;
 import soot.jimple.paddle.AbsPointsToAnalysis;
+import soot.jimple.paddle.AbsReachableMethods;
 import soot.jimple.paddle.AllocDotField;
 import soot.jimple.paddle.AllocNode;
 import soot.jimple.paddle.ContextAllocDotField;
@@ -56,6 +57,7 @@ import soot.jimple.paddle.PaddleScene;
 import soot.jimple.paddle.PointsToSetInternal;
 import soot.jimple.paddle.Results;
 import soot.jimple.paddle.VarNode;
+import soot.jimple.paddle.queue.Rctxt_method;
 import soot.jimple.toolkits.pta.IAllocNode;
 import soot.toolkits.scalar.Pair;
 import soot.util.queue.QueueReader;
@@ -74,6 +76,33 @@ public class PaddlePTA extends PTABridge {
     private Set<SootMethod> reachableMethods;
     /** underlying pta */
     private AbsPointsToAnalysis ptsProvider;
+    /** Maps each reachable method to the contexts in which the method is reached. */
+    public Map<SootMethod, Set<Context>> reachableMethodContextMap = null;
+
+    /**
+     * Computes 'reachableMethodContextMap' which maps each reachable method to the set of
+     * contexts in which it is reachable.
+     */
+    public void computeReachableMethodContextMap() {
+        if (reachableMethodContextMap == null) {
+            reachableMethodContextMap = new HashMap<SootMethod, Set<Context>>();
+            AbsReachableMethods rc = Results.v().reachableMethods();
+            Rctxt_method ctxtMethods = rc.contextMethods();
+            Iterator iter = ctxtMethods.iterator();
+            while (iter.hasNext()) {
+                Rctxt_method.Tuple t = (Rctxt_method.Tuple)iter.next();
+                Context ctxt = t.ctxt();
+                SootMethod method = t.method();
+                Set<Context> ctxts = reachableMethodContextMap.get(method);
+                if (ctxts == null) {
+                    ctxts = new HashSet();
+                    reachableMethodContextMap.put(method, ctxts);
+                } 
+                ctxts.add(ctxt);
+            }
+        }
+    }
+
 
     public PaddlePTA() {
         // TODO Auto-generated constructor stub
@@ -88,35 +117,59 @@ public class PaddlePTA extends PTABridge {
 
     @Override
     protected void runInternal() {
-        
+
         Scene.v().loadDynamicClasses();
 
         setPaddlePointsToAnalysis();
-        
+
         ptsProvider = (AbsPointsToAnalysis)Scene.v().getPointsToAnalysis();
-        
+
         createNewToAllocMap();
 
         //fill reachable methods map
         reachableMethods = new HashSet<SootMethod>();
-       
+
         QueueReader<MethodOrMethodContext> qr = Scene.v().getReachableMethods().listener();
-       
+
         while (qr.hasNext()) {
             MethodOrMethodContext momc = qr.next();
             if (momc instanceof SootMethod) {
                 reachableMethods.add((SootMethod)momc);
             }
         }
-        
+
         System.out.println("Size of reachable methods: " + reachableMethods.size());
         System.out.println("Alloc Nodes: " + newToAllocNodeMap.size());
-}
+        
+        //printStats();
+    }
     
+    private void printStats() {
+        for (SootMethod method : reachableMethodContextMap.keySet()) {
+            //loop through instructions
+            Local local = null;
+            
+            //for any reference value perform the pta query
+            for (Context ctxt : reachableMethodContextMap.get(method)) {
+                PointsToSetInternal pts = (PointsToSetInternal)ptsProvider.reachingObjects(ctxt, local);
+                //visit internal points to set and grab all allocnodes
+                
+                int size = pts.size();
+                pts.forall(new P2SetVisitor() {
+                    public void visit(ContextAllocNode n) {
+                        //
+                    }
+                });
+                
+            }
+        }
+        
+    }
+
     private void setPaddlePointsToAnalysis() {
         logger.info("[paddle] Starting analysis ...");
         HashMap<String, String> opt = new HashMap<String, String>();
-        
+
         soot.options.Options.v().setPhaseOption("cg.paddle","enabled:true");
         soot.options.Options.v().setPhaseOption("cg.paddle","verbose:false");
         soot.options.Options.v().setPhaseOption("cg.paddle","bdd:true");
@@ -131,11 +184,11 @@ public class PaddlePTA extends PTABridge {
         soot.options.Options.v().setPhaseOption("cg.paddle","double-set-old:hybrid");
         soot.options.Options.v().setPhaseOption("cg.paddle","double-set-new:hybrid");
         soot.options.Options.v().setPhaseOption("cg.paddle","pre-jimplify:false");
-     
+
         //handle strings with more precision
         soot.options.Options.v().setPhaseOption("cg.paddle", "merge-stringbuffer:false");
         soot.options.Options.v().setPhaseOption("cg.paddle", "string-constants:true");
-        
+
         //object sensitive heap?
         soot.options.Options.v().setPhaseOption("cg.paddle", "context-heap:false");
 
@@ -149,7 +202,7 @@ public class PaddlePTA extends PTABridge {
         newToAllocNodeMap = HashBiMap.create();
         Iterator iter = PaddleNumberers.v().allocNodeNumberer().iterator();
         while(iter.hasNext()) {
-        	AllocNode node = (AllocNode) iter.next();
+            AllocNode node = (AllocNode) iter.next();
             newToAllocNodeMap.put(node.getNewExpr(), node);
         }
     }
@@ -177,7 +230,7 @@ public class PaddlePTA extends PTABridge {
      * Return a set of all allocnodes in the program.
      */
     public Set<? extends IAllocNode> getAllAllocNodes() {
-    	Set<AllocNode> nodes = Collections.unmodifiableSet(newToAllocNodeMap.values());
+        Set<AllocNode> nodes = Collections.unmodifiableSet(newToAllocNodeMap.values());
         return (Set<? extends IAllocNode>) nodes;
     }
 
@@ -218,16 +271,16 @@ public class PaddlePTA extends PTABridge {
      * in the pointer assignment graph.  
      */
     private Node getInternalNode(Value val) {
-    	NodeManager nodeManager = PaddleScene.v().nodeManager();
-    	Node node = null;
-        
+        NodeManager nodeManager = PaddleScene.v().nodeManager();
+        Node node = null;
+
         if (val instanceof Local) {
             node = nodeManager.findLocalVarNode((Local)val);
         } else if (val instanceof InstanceFieldRef) {
             node = nodeManager.findLocalVarNode((Local) ((InstanceFieldRef)val).getBase());    
         } else if (val instanceof StaticFieldRef) {
-           SootField field = ((StaticFieldRef)val).getField();
-           node = nodeManager.findGlobalVarNode(field); 
+            SootField field = ((StaticFieldRef)val).getField();
+            node = nodeManager.findGlobalVarNode(field); 
         } else if (val instanceof ArrayRef) {
             ArrayRef arf = (ArrayRef) val;
             node = nodeManager.findLocalVarNode((Local) arf.getBase());
@@ -262,7 +315,7 @@ public class PaddlePTA extends PTABridge {
     public Set<? extends IAllocNode> getPTSet(Value val) {
         final Set<AllocNode> allocNodes = new HashSet<AllocNode>();
         PointsToSetInternal pts = null;
-        
+
         try {
             if (val instanceof InstanceFieldRef) {
                 final InstanceFieldRef ifr = (InstanceFieldRef)val;
@@ -272,7 +325,7 @@ public class PaddlePTA extends PTABridge {
                 pts = (PointsToSetInternal)ptsProvider.reachingObjectsOfArrayElement
                         (ptsProvider.reachingObjects((Local)arrayRef.getBase()));
             } else if (val instanceof Local){            
-                 pts = (PointsToSetInternal)ptsProvider.reachingObjects((Local)val);
+                pts = (PointsToSetInternal)ptsProvider.reachingObjects((Local)val);
             } else if (val instanceof StaticFieldRef) {
                 SootField field = ((StaticFieldRef)val).getField();
                 pts = (PointsToSetInternal)ptsProvider.reachingObjects(field);
@@ -282,14 +335,14 @@ public class PaddlePTA extends PTABridge {
                 logger.error("Unknown reference type for insenstive search: {} {}", val, val.getClass());
                 droidsafe.main.Main.exit(1);
             }
-            
+
             //visit internal points to set and grab all allocnodes        
             pts.forall(new P2SetVisitor() {
                 public void visit(ContextAllocNode n) {
                     allocNodes.add(n.obj());
                 }
             });
-            
+
         } catch (Exception e) {
             logger.info("Some sort of error getting context insensitive points to set for {}", val, e);
             //e.printStackTrace();
@@ -313,14 +366,14 @@ public class PaddlePTA extends PTABridge {
         AbsP2Sets p2sets = Results.v().p2sets();
         Iterator iter = allocDotField.contexts();
         while (iter.hasNext()) {
-        	ContextAllocDotField cadf = (ContextAllocDotField) iter.next();
-        	PointsToSet pointsToSet = p2sets.get(cadf);
-        	((PointsToSetInternal)ptsProvider.reachingObjects(pointsToSet, field)).forall(new P2SetVisitor() {
-        		@Override
-        		public void visit(ContextAllocNode node) {
-        			allocNodes.add(node.obj());
-        		}
-        	});
+            ContextAllocDotField cadf = (ContextAllocDotField) iter.next();
+            PointsToSet pointsToSet = p2sets.get(cadf);
+            ((PointsToSetInternal)ptsProvider.reachingObjects(pointsToSet, field)).forall(new P2SetVisitor() {
+                @Override
+                public void visit(ContextAllocNode node) {
+                    allocNodes.add(node.obj());
+                }
+            });
         }
 
         return (Set<? extends IAllocNode>) allocNodes;
@@ -328,13 +381,13 @@ public class PaddlePTA extends PTABridge {
 
     @Override
     public Set<? extends IAllocNode> getPTSet(Value val, PTAContext context) {
-//        if (context.getType() == ContextType.EVENT_CONTEXT) {
-//            return getPTSetEventContext(val, context.getContext());
-//        } else if (context.getType() == ContextType.ONE_CFA) {
-//            return getPTSet1CFA(val, context.getContext());
-//        } else if (context.getType() == ContextType.NONE) {
-    	if (context.getType() == ContextType.NONE) {
-    		return getPTSet(val);
+        //        if (context.getType() == ContextType.EVENT_CONTEXT) {
+        //            return getPTSetEventContext(val, context.getContext());
+        //        } else if (context.getType() == ContextType.ONE_CFA) {
+        //            return getPTSet1CFA(val, context.getContext());
+        //        } else if (context.getType() == ContextType.NONE) {
+        if (context.getType() == ContextType.NONE) {
+            return getPTSet(val);
         } else {
             logger.error("Invalid Query Type: {}", context.getType());
             droidsafe.main.Main.exit(1);
@@ -364,7 +417,7 @@ public class PaddlePTA extends PTABridge {
         } else if (invoke instanceof InstanceInvokeExpr) {
             return resolveInstanceInvoke((InstanceInvokeExpr)invoke);
         }
-        
+
         return Collections.emptySet();
     }
 
@@ -400,14 +453,14 @@ public class PaddlePTA extends PTABridge {
      * target method.
      */
     public Map<IAllocNode, SootMethod> resolveInstanceInvokeMap(InstanceInvokeExpr invoke,
-            PTAContext context) throws CannotFindMethodException {
+        PTAContext context) throws CannotFindMethodException {
         Set<? extends IAllocNode> allocs = null;
         //get either the context sensitive or insensitive result based on the context param 
         if (context == null) 
             allocs = getPTSet(invoke.getBase());
         else
             allocs = getPTSet(invoke.getBase(), context);
-        
+
         return internalResolveInstanceInvokeMap(allocs, invoke, context);
     }
 
@@ -417,8 +470,8 @@ public class PaddlePTA extends PTABridge {
     private Map<IAllocNode, SootMethod> internalResolveInstanceInvokeMap(Set<? extends IAllocNode> allocs, 
         InstanceInvokeExpr invoke, PTAContext context) throws CannotFindMethodException {
         Map<IAllocNode, SootMethod> methods = new LinkedHashMap<IAllocNode, SootMethod>();
-        
-      //loop over alloc nodes and resolve the concrete dispatch for each, placing in the set
+
+        //loop over alloc nodes and resolve the concrete dispatch for each, placing in the set
         for (IAllocNode an : allocs) {
             if (invoke instanceof SpecialInvokeExpr) {
                 SootMethod resolved = SootUtils.resolveSpecialDispatch((SpecialInvokeExpr)invoke); 
@@ -437,14 +490,14 @@ public class PaddlePTA extends PTABridge {
                     //normal reference type, just get the soot class
                     clz = ((RefType)t).getSootClass();
                 }   
-                
+
                 methods.put(an, SootUtils.resolveConcreteDispatch(clz, invoke.getMethod()));
             } else {
                 logger.error("Unknown invoke expression type encountered when resolving InstanceInvoke {}", invoke);
                 droidsafe.main.Main.exit(1);
             }
-            
-            
+
+
         }
 
         return methods;
