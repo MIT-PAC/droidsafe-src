@@ -76,6 +76,7 @@ public static void setErr(PrintStream newErr) {
     
     @DSModeled(DSC.SAFE)
     public static void arraycopy(Object src, int srcPos, Object dst, int dstPos, int length) {
+        dst = src;
 	}
 
     
