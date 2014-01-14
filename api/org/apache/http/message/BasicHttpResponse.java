@@ -83,6 +83,7 @@ public BasicHttpResponse(final ProtocolVersion ver,
     }
 
     // non-javadoc, see interface HttpMessage
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.889 -0500", hash_original_method = "90208803F02F793AFF747002BC8D1B69", hash_generated_method = "116490FDB9CFC58F547476EB349C29C7")
     
 public ProtocolVersion getProtocolVersion() {
@@ -90,6 +91,7 @@ public ProtocolVersion getProtocolVersion() {
     }
 
     // non-javadoc, see interface HttpResponse
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.892 -0500", hash_original_method = "17E71ED31D66483D3BDF78C743004CA2", hash_generated_method = "8ABB7B3878FF89EA492FEE050D9D5995")
     
 public StatusLine getStatusLine() {
@@ -97,6 +99,7 @@ public StatusLine getStatusLine() {
     }
 
     // non-javadoc, see interface HttpResponse
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.894 -0500", hash_original_method = "FCFC1A07171F7DE920C85D2DD77008FA", hash_generated_method = "F26E442D152B9CF496C6F072484628AD")
     
 public HttpEntity getEntity() {
@@ -104,6 +107,7 @@ public HttpEntity getEntity() {
     }
 
     // non-javadoc, see interface HttpResponse
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.896 -0500", hash_original_method = "733D9DF7D9A8D6EAEA176BCCAA80EA96", hash_generated_method = "CCD4021A5F38FD450220610E2095A85C")
     
 public Locale getLocale() {
@@ -192,6 +196,7 @@ public void setLocale(Locale loc) {
      *
      * @return  the reason phrase, or <code>null</code> if there is none
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.915 -0500", hash_original_method = "FEEB8D9BF9C5F48AC25C3CD2E5553BCA", hash_generated_method = "5F374C21892D63154BFD6314348D2005")
     
 protected String getReason(int code) {

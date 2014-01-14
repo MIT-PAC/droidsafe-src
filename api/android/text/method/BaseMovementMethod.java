@@ -142,6 +142,7 @@ public class BaseMovementMethod implements MovementMethod {
      * @param event The key event.
      * @return The keyboard meta states used for movement.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:57.891 -0500", hash_original_method = "DBF5E10955F96650BAEE8C94618C2948", hash_generated_method = "10607B4D5EF2FBF5A3DD385D641184F5")
     
 protected int getMovementMetaState(Spannable buffer, KeyEvent event) {

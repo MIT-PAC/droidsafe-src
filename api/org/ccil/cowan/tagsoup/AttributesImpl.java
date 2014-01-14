@@ -57,6 +57,7 @@ public AttributesImpl (Attributes atts)
      * @return The number of attributes in the list.
      * @see org.xml.sax.Attributes#getLength
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:45.013 -0500", hash_original_method = "A993727E7D5DC0CA2BB581135F7F678B", hash_generated_method = "AF903EC3B9FE28DC883DCDAF202C537E")
     
 public int getLength ()
@@ -72,6 +73,7 @@ public int getLength ()
      *         available, or null if the index is out of range.
      * @see org.xml.sax.Attributes#getURI
      */
+    @DSSource({DSSourceKind.FILE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:45.016 -0500", hash_original_method = "1BF0AE5363A8618B6A71FCEE06881B7C", hash_generated_method = "0FFFF132B4642A83FB51F09E8A0805A7")
     
 public String getURI (int index)
@@ -91,6 +93,7 @@ public String getURI (int index)
      *         none is available, or null if the index if out of range.
      * @see org.xml.sax.Attributes#getLocalName
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:45.018 -0500", hash_original_method = "92B1686F7E458511CE45EC4DB3E3CE89", hash_generated_method = "1535CAF44B8EFA0A3C48A1C3BD66BF06")
     
 public String getLocalName (int index)
@@ -110,6 +113,7 @@ public String getLocalName (int index)
      *         none is available, or null if the index is out of bounds.
      * @see org.xml.sax.Attributes#getQName
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:45.021 -0500", hash_original_method = "32BD7D7FFA2C46007E9D534F2070D779", hash_generated_method = "E8383D48F2D53371D50DA725131EC7FB")
     
 public String getQName (int index)
@@ -129,6 +133,7 @@ public String getQName (int index)
      *         if the index is out of bounds.
      * @see org.xml.sax.Attributes#getType(int)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:45.023 -0500", hash_original_method = "CD55E4A1C2CBE3FE53B5A622E57F028C", hash_generated_method = "BF093253DB32009BC7EA7A29E1969D9E")
     
 public String getType (int index)
@@ -147,6 +152,7 @@ public String getType (int index)
      * @return The attribute's value or null if the index is out of bounds.
      * @see org.xml.sax.Attributes#getValue(int)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:45.025 -0500", hash_original_method = "7BC4C2655702EDFE2361F9F97C33BDBD", hash_generated_method = "5E1A71BD421981F5C4A3E55A52E5CBDB")
     
 public String getValue (int index)
@@ -171,6 +177,7 @@ public String getValue (int index)
      * @return The attribute's index, or -1 if none matches.
      * @see org.xml.sax.Attributes#getIndex(java.lang.String,java.lang.String)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:45.028 -0500", hash_original_method = "090A4B083F61ECB7CB7169BD1EF033DF", hash_generated_method = "34F4F14577D0E0B4F663B614D68BA077")
     
 public int getIndex (String uri, String localName)
@@ -191,6 +198,7 @@ public int getIndex (String uri, String localName)
      * @return The attribute's index, or -1 if none matches.
      * @see org.xml.sax.Attributes#getIndex(java.lang.String)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:45.030 -0500", hash_original_method = "EE3F059D65C038AB1F6CDD7302F8C95C", hash_generated_method = "213BD369DC01DBAC4203C3A74740F3CF")
     
 public int getIndex (String qName)
@@ -214,6 +222,7 @@ public int getIndex (String qName)
      *         matching attribute.
      * @see org.xml.sax.Attributes#getType(java.lang.String,java.lang.String)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:45.032 -0500", hash_original_method = "B693D2A452C34B3F63F46AE3F73B4CD6", hash_generated_method = "0E635E92BE81ABFAE39C45ED6E1AE126")
     
 public String getType (String uri, String localName)
@@ -235,6 +244,7 @@ public String getType (String uri, String localName)
      *         matching attribute.
      * @see org.xml.sax.Attributes#getType(java.lang.String)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:45.035 -0500", hash_original_method = "EC27C5C1CA5357EEA1E16E770BA20FA2", hash_generated_method = "02AB4DE7FBB7D8E73706EC1ED1F91DE7")
     
 public String getType (String qName)
@@ -258,6 +268,7 @@ public String getType (String qName)
      *         matching attribute.
      * @see org.xml.sax.Attributes#getValue(java.lang.String,java.lang.String)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:45.037 -0500", hash_original_method = "522BBD1273EB28D82A0CFFAB0B22501D", hash_generated_method = "5D3230EED6E41B8C7028094FAB1539DB")
     
 public String getValue (String uri, String localName)
@@ -279,6 +290,7 @@ public String getValue (String uri, String localName)
      *         matching attribute.
      * @see org.xml.sax.Attributes#getValue(java.lang.String)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:45.040 -0500", hash_original_method = "4282B0A2744D6B6FFA141D6FBFC4111A", hash_generated_method = "26C05066D63A3AF96C038D1448FD8999")
     
 public String getValue (String qName)

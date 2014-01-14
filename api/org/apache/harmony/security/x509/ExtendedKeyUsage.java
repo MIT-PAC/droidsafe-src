@@ -43,6 +43,7 @@ public ExtendedKeyUsage(byte[] encoding) {
      * Returns the list of string representation of OIDs corresponding
      * to key purpose IDs.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:59.267 -0500", hash_original_method = "EC4A736D051BE2AF82868DFFF88ACC79", hash_generated_method = "C08D8A14C95987A92F34DDD9738ABC4F")
     
 public List<String> getExtendedKeyUsage() throws IOException {
@@ -52,6 +53,7 @@ public List<String> getExtendedKeyUsage() throws IOException {
         return keys;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:59.269 -0500", hash_original_method = "63AFE39A4816AB8A1F7656BFDDDB680C", hash_generated_method = "C47EC007E48BAD93DD250D3352564B1E")
     
 @Override public byte[] getEncoded() {

@@ -31,6 +31,7 @@ public EditText(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:46.042 -0500", hash_original_method = "78689D8CF0BA47FA74C236553C6AEDBF", hash_generated_method = "25597A8E2CEB5B7E359C206F209D1756")
     
 @Override
@@ -38,6 +39,7 @@ public EditText(Context context, AttributeSet attrs, int defStyle) {
         return true;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:46.044 -0500", hash_original_method = "B69FA8267E3DCA70E8EEE3A6942BD033", hash_generated_method = "827C518ACE25A445E808B13E1896D522")
     
 @Override
@@ -45,6 +47,7 @@ public EditText(Context context, AttributeSet attrs, int defStyle) {
         return ArrowKeyMovementMethod.getInstance();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:46.047 -0500", hash_original_method = "7E84A3A8580CD7F3BD2A1E596441D1C1", hash_generated_method = "8266E1AA5ACD94F6F88AA30EBD01D147")
     
 @Override

@@ -130,6 +130,7 @@ public void setSummaryOn(int summaryResId) {
      * Returns the summary to be shown when checked.
      * @return The summary.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.367 -0500", hash_original_method = "53022197E36EDF9F1FD4F6F19ADFC277", hash_generated_method = "1BBE5CF26238E024D5A2941A62474B93")
     
 public CharSequence getSummaryOn() {
@@ -165,6 +166,7 @@ public void setSummaryOff(int summaryResId) {
      * Returns the summary to be shown when unchecked.
      * @return The summary.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.374 -0500", hash_original_method = "71CAEB9E0C109885D80E1240FC68BC2D", hash_generated_method = "1620D3A9C805C85EA5E74E56DD32733F")
     
 public CharSequence getSummaryOff() {
@@ -178,6 +180,7 @@ public CharSequence getSummaryOff() {
      * @return Whether dependents are disabled when this preference is on ({@code true})
      *         or when this preference is off ({@code false}).
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.376 -0500", hash_original_method = "3884E74D45C3003321F5E57E22265849", hash_generated_method = "DF82E5FF12077E56CA645577AFB253B0")
     
 public boolean getDisableDependentsState() {
@@ -266,6 +269,7 @@ void syncSummaryView(View view) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.390 -0500", hash_original_method = "128E228DA264F73B8973AB4629CC5B53", hash_generated_method = "0E47EB36BA3D571B10DE0502F108D59F")
     
 @Override

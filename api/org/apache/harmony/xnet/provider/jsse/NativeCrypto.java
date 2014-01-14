@@ -140,6 +140,7 @@ private static void add(String standard, String openssl) {
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_499904329;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:06.031 -0500", hash_original_method = "E992C3F3F90B62E0551244900B94B100", hash_generated_method = "3D7DFB78F17D70B3C235908641BBF2B4")
     
 public static String[] getDefaultCipherSuites() {
@@ -182,6 +183,7 @@ public static String[] getDefaultCipherSuites() {
         };
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:06.034 -0500", hash_original_method = "441F524A9CDEE2C4724FDD0DDA52219B", hash_generated_method = "E692D155C970F0CFDF25498C8BBE6DF9")
     
 public static String[] getSupportedCipherSuites() {
@@ -260,6 +262,7 @@ public static byte[][] encodeIssuerX509Principals(X509Certificate[] certificates
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1442836426;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:06.091 -0500", hash_original_method = "D5492E8CBB49F42F0984D673FB7ACE24", hash_generated_method = "D8B73AE8848BD17996252ED9294BA7A1")
     
 public static String[] getSupportedProtocols() {

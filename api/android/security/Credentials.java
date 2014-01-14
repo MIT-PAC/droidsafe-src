@@ -64,6 +64,7 @@ public static List<Object> convertFromPem(byte[] bytes) throws IOException {
         return result;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:57.389 -0500", hash_original_method = "9C858811BB4060B16ECD93FD3573ADC2", hash_generated_method = "516E05BB5789732D83B572D07C814C5C")
     
 public static Credentials getInstance() {

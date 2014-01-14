@@ -190,6 +190,7 @@ public boolean dispatchOnCreate() {
             mActionMode = null;
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:41.063 -0500", hash_original_method = "B2B8DF93D41CD214F77DE42BB625BB9F", hash_generated_method = "7AE22C739145027C00A176505D582411")
         
 @Override
@@ -197,6 +198,7 @@ public boolean dispatchOnCreate() {
             return mMenu;
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:41.065 -0500", hash_original_method = "CD9B990298CF856E49A643E530553914", hash_generated_method = "CDCEE9683F3E38FE42C9823826F1C1DE")
         
 @Override
@@ -204,6 +206,7 @@ public boolean dispatchOnCreate() {
             return null;
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:41.067 -0500", hash_original_method = "F475DA391A1931FE20FFD2579FFFF5AF", hash_generated_method = "C976D9440453D00E334CDABF0EC76D42")
         
 @Override
@@ -211,6 +214,7 @@ public boolean dispatchOnCreate() {
             return null;
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:41.069 -0500", hash_original_method = "7A49E6A1A0BF55D8D926541A71E4907E", hash_generated_method = "6F301B3473369A299AB6637D3DF3F9B8")
         
 @Override
@@ -218,6 +222,7 @@ public boolean dispatchOnCreate() {
             return null;
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:41.072 -0500", hash_original_method = "DECFD94D9899EA20C3E59178999FB9F7", hash_generated_method = "DC6F839317893A37089C9D33ED9980A8")
         
 @Override

@@ -100,6 +100,7 @@ public final PendingResult goAsync() {
      * @param service The Intent indicating the service you wish to use.  See {@link
      * Context#startService(Intent)} for more information.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:00.702 -0500", hash_original_method = "891D062EE6B5DF300B0D5F817EBA802C", hash_generated_method = "A37EB1F6A113B613535C93793351ED22")
     
 public IBinder peekService(Context myContext, Intent service) {
@@ -143,6 +144,7 @@ public final void setResultCode(int code) {
      * 
      * @return int The current result code.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:00.707 -0500", hash_original_method = "413D4442793CB2CD30088D833172245E", hash_generated_method = "880C511B5BE77BEBC42FD95480D19EEC")
     
 public final int getResultCode() {
@@ -177,6 +179,7 @@ public final void setResultData(String data) {
      * 
      * @return String The current result data; may be null.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:00.712 -0500", hash_original_method = "4500B5844C9E31997AA4128C2B631832", hash_generated_method = "F3267C287ABB4521B4DB8DAD802FFCAB")
     
 public final String getResultData() {
@@ -218,6 +221,7 @@ public final void setResultExtras(Bundle extras) {
      * 
      * @return Map The current extras map.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:00.716 -0500", hash_original_method = "4CB90710C7A856F1CF5FAF169A56650C", hash_generated_method = "F071904FD5E94C95688CCF90728424FC")
     
 public final Bundle getResultExtras(boolean makeMap) {
@@ -267,6 +271,7 @@ public final void setResult(int code, String data, Bundle extras) {
      * 
      * @return True if the broadcast should be aborted.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:00.721 -0500", hash_original_method = "AC60D9C3BD95277DA035DD6FF45A8CCB", hash_generated_method = "149DAF27069326FB25F67A39BB4A2D01")
     
 public final boolean getAbortBroadcast() {
@@ -376,6 +381,7 @@ public final void setDebugUnregister(boolean debug) {
     /**
      * Return the last value given to {@link #setDebugUnregister}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:00.742 -0500", hash_original_method = "19A67BCF6BEB94B2ECFD54D952C17B9D", hash_generated_method = "9DECD4B98E264D80CCBAA5A6F4CBE4AD")
     
 public final boolean getDebugUnregister() {
@@ -483,6 +489,7 @@ public final void setResultCode(int code) {
          * BroadcastReceiver.getResultCode()} for
          * asynchronous broadcast handling.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:00.656 -0500", hash_original_method = "DAC102A9F551BEDDEF83F16167EFAEA6", hash_generated_method = "465ACAC5613A6099E1AF6CE8D2EEE8B1")
         
 public final int getResultCode() {
@@ -506,6 +513,7 @@ public final void setResultData(String data) {
          * BroadcastReceiver.getResultData()} for
          * asynchronous broadcast handling.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:00.661 -0500", hash_original_method = "AF28EEAF3BA9B8705C009D1FCC834AB4", hash_generated_method = "5C6F3660000895054189DB24D79089B0")
         
 public final String getResultData() {
@@ -529,6 +537,7 @@ public final void setResultExtras(Bundle extras) {
          * BroadcastReceiver.getResultExtras(boolean)} for
          * asynchronous broadcast handling.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:00.666 -0500", hash_original_method = "48408ADF0828FD95531740A7B634349C", hash_generated_method = "9EE4A1D648D3CFF409DC710800479791")
         
 public final Bundle getResultExtras(boolean makeMap) {
@@ -557,6 +566,7 @@ public final void setResult(int code, String data, Bundle extras) {
          * BroadcastReceiver.getAbortBroadcast()} for
          * asynchronous broadcast handling.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:00.670 -0500", hash_original_method = "27570BF34E94ABF03E65F54A5F2272E5", hash_generated_method = "F83BD098FE1867AE62400EBE8D0FCBE8")
         
 public final boolean getAbortBroadcast() {

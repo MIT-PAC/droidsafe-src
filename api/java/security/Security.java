@@ -44,6 +44,7 @@ private static void registerDefaultProviders() {
      * @deprecated Use {@link AlgorithmParameters} and {@link KeyFactory}
      *             instead.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.361 -0500", hash_original_method = "D3DABD5C1A3E4046B634B4ABE7B41DC8", hash_generated_method = "348187D66E3458F2A5A813E68314E45F")
     
 @Deprecated
@@ -147,6 +148,7 @@ public static synchronized void removeProvider(String name) {
      *
      * @return an array containing all installed providers.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.371 -0500", hash_original_method = "EAE9285B08BB32BE2AF6653E79C9F615", hash_generated_method = "ED0B530D59AB27614637C6D2551CDFE9")
     
 public static synchronized Provider[] getProviders() {
@@ -162,6 +164,7 @@ public static synchronized Provider[] getProviders() {
      *            the name of the requested provider.
      * @return the provider with the specified name, maybe {@code null}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.374 -0500", hash_original_method = "129A779E3BBD24BC13650E637FDCE401", hash_generated_method = "FF9D7A73DBD193463FD11FA473E485B0")
     
 public static synchronized Provider getProvider(String name) {
@@ -191,6 +194,7 @@ public static synchronized Provider getProvider(String name) {
      * @throws NullPointerException
      *             if {@code filter} is {@code null}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.376 -0500", hash_original_method = "F6138CDF14D8D5962F697D1DAE8ACD56", hash_generated_method = "55A03477641E49547C5C0296E5D3979B")
     
 public static Provider[] getProviders(String filter) {
@@ -304,6 +308,7 @@ public static synchronized Provider[] getProviders(Map<String,String> filter) {
      *            the name of the requested security property.
      * @return the value of the security property.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.383 -0500", hash_original_method = "FBE94713485830A30BBD5079D4570A8E", hash_generated_method = "C17246BF3337C7E14B654907595AA70A")
     
 public static String getProperty(String key) {
@@ -339,6 +344,7 @@ public static void setProperty(String key, String value) {
      *         serviceName} is {@code null} or if no registered provider
      *         provides the requested service.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.389 -0500", hash_original_method = "D678C323A21AFC9C219F4C1FB9E8266D", hash_generated_method = "A6BA2A563EED770A921797C4C4690111")
     
 public static Set<String> getAlgorithms(String serviceName) {

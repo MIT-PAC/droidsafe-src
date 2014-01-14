@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class BitwiseInputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:44.734 -0500", hash_original_field = "CCCDB98A97C1303EEF1EDB8DB6C44807", hash_generated_field = "29FB82D1D2E75901C37B9EDD1B81BDDE")
 
@@ -74,6 +70,7 @@ public int read(int bits) throws AccessException {
      * @param bits the amount of data to read
      * @return newly allocated byte array of read data
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:44.754 -0500", hash_original_method = "6BC73F7388CF8F913A045B88BC2AD5D8", hash_generated_method = "02D1E84EDD88A1B1D8D962D865C80497")
     
 public byte[] readByteArray(int bits) throws AccessException {
@@ -100,7 +97,6 @@ public void skip(int bits) throws AccessException {
         }
         mPos += bits;
     }
-
     
     public static class AccessException extends Exception {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:44.742 -0500", hash_original_method = "52F4B42001DB417C9537E4FCBE00DA44", hash_generated_method = "E3D542A3BCC80436D82FFEC6A5EDB18E")
@@ -108,11 +104,8 @@ public void skip(int bits) throws AccessException {
 public AccessException(String s) {
             super("BitwiseInputStream access failed: " + s);
         }
-
         
     }
-
-
     
 }
 

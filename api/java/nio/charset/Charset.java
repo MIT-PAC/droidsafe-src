@@ -20,10 +20,6 @@ import java.util.TreeMap;
 
 import libcore.icu.NativeConverter;
 
-
-
-
-
 public abstract class Charset implements Comparable<Charset> {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.289 -0500", hash_original_method = "1B562419FBD56BE2B33ED98FD4ABE386", hash_generated_method = "A2F453F6E5C441B83EF70DACAF3D16D1")
@@ -214,14 +210,11 @@ private static Charset getDefaultCharset() {
     private static final HashMap<String, Charset> CACHED_CHARSETS = new HashMap<String, Charset>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.279 -0500", hash_original_field = "4B19164BB0D16E04460F0646F28D0382", hash_generated_field = "1A1C1C599D3935A97F31144300864BDF")
 
-
     private static final Charset DEFAULT_CHARSET = getDefaultCharset();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.281 -0500", hash_original_field = "232080F63068CCD875338225CCA78208", hash_generated_field = "4394C126BF71D5F3C3D84B833D0FB596")
 
-
     private  String canonicalName;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.283 -0500", hash_original_field = "90FA4A58C475317C95CCF8F7B07CCD67", hash_generated_field = "94A607030E0CCDFE52CAD878DD81F6F9")
-
 
     private  HashSet<String> aliasesSet;
 
@@ -298,6 +291,7 @@ public abstract CharsetDecoder newDecoder();
      *
      * @return this charset's name in canonical form.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.316 -0500", hash_original_method = "C591AF6945C669FCF4033528E86B2077", hash_generated_method = "F1A503D43EE7081C90FA96704A313AB1")
     
 public final String name() {
@@ -309,6 +303,7 @@ public final String name() {
      *
      * @return an unmodifiable set of this charset's aliases.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.319 -0500", hash_original_method = "9500673A94BC6D8C4BDA9785EBDB1148", hash_generated_method = "0ED77981E1A594D94B2465B8E5BD1417")
     
 public final Set<String> aliases() {
@@ -323,6 +318,7 @@ public final Set<String> aliases() {
      *
      * @return the name of this charset for the default locale.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.321 -0500", hash_original_method = "73ACF950C7885C6BB8F7DA98628525CE", hash_generated_method = "C81EFE7C54130562A9C7F28495E6FF33")
     
 public String displayName() {

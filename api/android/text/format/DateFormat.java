@@ -19,13 +19,7 @@ import android.text.SpannedString;
 
 import com.android.internal.R;
 
-
-
-
-
-
 public class DateFormat {
-
 
     /**
      * Returns true if user preference is set to 24-hour format.
@@ -80,6 +74,7 @@ public static boolean is24HourFormat(Context context) {
      * @param context the application context
      * @return the {@link java.text.DateFormat} object that properly formats the time.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.147 -0500", hash_original_method = "71FE993D45AFD9417B89B7CB5C26B27B", hash_generated_method = "CBEC912AD7610BF8D67E68424199304C")
     
 public static final java.text.DateFormat getTimeFormat(Context context) {
@@ -102,6 +97,7 @@ public static final java.text.DateFormat getTimeFormat(Context context) {
      * @param context the application context
      * @return the {@link java.text.DateFormat} object that properly formats the date.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.149 -0500", hash_original_method = "31DB25FCF5E17D5BA39D40A6AB758B79", hash_generated_method = "5AEC6419123B2A4BF329169CFA1989C5")
     
 public static final java.text.DateFormat getDateFormat(Context context) {
@@ -120,6 +116,7 @@ public static final java.text.DateFormat getDateFormat(Context context) {
      *              the current locale
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.152 -0500", hash_original_method = "E08C4A6180FCBAD756891AB6B54F23BC", hash_generated_method = "BCF21067BBFCE97B90A19D2C958E341B")
     
 public static java.text.DateFormat getDateFormatForSetting(Context context,
@@ -178,6 +175,7 @@ private static String getDateFormatStringForSetting(Context context, String valu
      * @param context the application context
      * @return the {@link java.text.DateFormat} object that formats the date in long form.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.160 -0500", hash_original_method = "2A3978E636FD74D0DA3D3D064C7B50BA", hash_generated_method = "383D75750E7492A1500CF3750B10302E")
     
 public static final java.text.DateFormat getLongDateFormat(Context context) {
@@ -190,6 +188,7 @@ public static final java.text.DateFormat getLongDateFormat(Context context) {
      * @param context the application context
      * @return the {@link java.text.DateFormat} object that formats the date in long form.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.162 -0500", hash_original_method = "AA9003CA5933631AE307343983461627", hash_generated_method = "EC5E4BF9F43BDF921F57A24485470A00")
     
 public static final java.text.DateFormat getMediumDateFormat(Context context) {
@@ -205,6 +204,7 @@ public static final java.text.DateFormat getMediumDateFormat(Context context) {
      * not just the day, month, and year, and not necessarily in the same
      * order returned here.
      */    
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.166 -0500", hash_original_method = "AFEFE08A10E9D5121F8D0F8F87F0469D", hash_generated_method = "C0D212969C3E423BDD19028625D38031")
     
 public static final char[] getDateFormatOrder(Context context) {
@@ -533,8 +533,6 @@ private static final String zeroPad(int inValue, int inMinDigits) {
 
     public  static final char    YEAR                   =    'y';
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.135 -0500", hash_original_field = "61DC592BCCEB048C6E6CACD1439CA4DE", hash_generated_field = "AAE447C6BB21DFB2195044EACE33BBDF")
-
-
 
     private static final Object sLocaleLock = new Object();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.137 -0500", hash_original_field = "0361EEF44E717D9DAF07EB1CAF9D07BF", hash_generated_field = "872809FA2AF3A2EA3BD5FBFC0313FA4E")

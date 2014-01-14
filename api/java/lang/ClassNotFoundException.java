@@ -5,17 +5,11 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class ClassNotFoundException extends Exception {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.326 -0500", hash_original_field = "D378D451C6A9AA75042E4C7DA0EA13BC", hash_generated_field = "FA7E6F5FBCB6CD253D61495BAEBC0CED")
 
-
     private static final long serialVersionUID = 9176873029745254542L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.328 -0500", hash_original_field = "1681A14450382F5ED1D23C2523918CE1", hash_generated_field = "F73E8300D821D42895FBD4F8215B8AE6")
-
 
     private Throwable ex;
 
@@ -64,6 +58,7 @@ public ClassNotFoundException(String detailMessage, Throwable exception) {
      *
      * @return Throwable the exception which occurred while loading the class.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.339 -0500", hash_original_method = "4088520C94C7E98A0F8384BC5CAC9A7D", hash_generated_method = "D473C62C475616E21991B01B54B563B2")
     
 public Throwable getException() {
@@ -76,6 +71,7 @@ public Throwable getException() {
      *
      * @return Throwable the receiver's cause.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.341 -0500", hash_original_method = "8471E555B70ADD40A898DC66BF7F4D1C", hash_generated_method = "A69F1A8789DE405322A53C635DA52F50")
     
 @Override

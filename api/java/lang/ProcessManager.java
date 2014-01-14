@@ -43,6 +43,7 @@ final class ProcessManager {
     }
 
     /** Gets the process manager. */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:17.615 -0500", hash_original_method = "B41DB4FA1120B721DD670DFD65EC3117", hash_generated_method = "2CC82AAB217E781A411AC5965F8714CD")
     
 public static ProcessManager getInstance() {
@@ -235,18 +236,21 @@ public int exitValue() {
             }
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:17.583 -0500", hash_original_method = "DCE7BF5109CA162BD54D93588001BD51", hash_generated_method = "35E01D63A5F5E2CB917B76EB06BCC5C1")
         
 public InputStream getErrorStream() {
             return this.errorStream;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:17.586 -0500", hash_original_method = "DC1F0F5A793D1EF64AF6C7DB099DCE34", hash_generated_method = "045B7D54BB0AFFCC2F40B43FACDF9DCC")
         
 public InputStream getInputStream() {
             return this.inputStream;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:17.588 -0500", hash_original_method = "94C3B255D73CD61583B0AC248BC392B9", hash_generated_method = "5B8B07E552425D28CAC88F79CCC9D958")
         
 public OutputStream getOutputStream() {

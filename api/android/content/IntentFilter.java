@@ -373,6 +373,7 @@ public final void setPriority(int priority) {
      *
      * @see #setPriority
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.781 -0500", hash_original_method = "4CF75B39A2F3F4074ED78E7B55CDB45C", hash_generated_method = "617FE6A07A964A96153B897AEDF65E42")
     
 public final int getPriority() {
@@ -406,6 +407,7 @@ public final int countActions() {
     /**
      * Return an action in the filter.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.788 -0500", hash_original_method = "50CEFE8EA652B37B9EBFC8EA367BBC71", hash_generated_method = "CCCD1EB514435FFA0F2B8D27E682ABE9")
     
 public final String getAction(int index) {
@@ -520,6 +522,7 @@ public final int countDataTypes() {
     /**
      * Return a data type in the filter.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.804 -0500", hash_original_method = "1020E9310C4CEB3D9A899FFC3406F498", hash_generated_method = "AEB722B002E6D0EA415047FB37870532")
     
 public final String getDataType(int index) {
@@ -572,6 +575,7 @@ public final int countDataSchemes() {
     /**
      * Return a data scheme in the filter.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.813 -0500", hash_original_method = "F55C42908F22C2BF6411521C019E1E71", hash_generated_method = "0C095C026EADCB33101C551367EFC85D")
     
 public final String getDataScheme(int index) {
@@ -648,12 +652,14 @@ void writeToParcel(Parcel dest) {
             dest.writeInt(mPort);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.838 -0500", hash_original_method = "56B964ED44110D4A8630C57ED8411A1C", hash_generated_method = "E3F78F3C1EFF67D365EA4D5381C38F05")
         
 public String getHost() {
             return mOrigHost;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.841 -0500", hash_original_method = "D8DAED2CD8A0984A9202198C71DA9D83", hash_generated_method = "33B8E8C1C43AC396F100852932189626")
         
 public int getPort() {
@@ -826,6 +832,7 @@ public final int countDataPaths() {
     /**
      * Return a data path in the filter.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.864 -0500", hash_original_method = "C7BC21A1B57BD5F3F08A1F8B8EBDB051", hash_generated_method = "9A44E84570673F2642B98CEA85FAB34B")
     
 public final PatternMatcher getDataPath(int index) {
@@ -1026,6 +1033,7 @@ public final int countCategories() {
     /**
      * Return a category in the filter.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.882 -0500", hash_original_method = "9221063C5ACD71C55B9DBC6F8D5B18B1", hash_generated_method = "EF4B1E71A6ECADCDD9F9EFFA609D8B9E")
     
 public final String getCategory(int index) {

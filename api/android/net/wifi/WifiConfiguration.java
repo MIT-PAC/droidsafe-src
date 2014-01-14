@@ -536,6 +536,7 @@ public WifiConfiguration(WifiConfiguration source) {
     }
 
     /** @hide */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:04.007 -0500", hash_original_method = "9AFA2ED3E118B7190C0E7E9D5FFF2220", hash_generated_method = "76ECF00D1675A34E05C62D6DA70DC7E5")
     
 public int getAuthType() {

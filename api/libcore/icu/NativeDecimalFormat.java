@@ -679,42 +679,49 @@ public Number parse(String string, ParsePosition position) {
 
     // start getter and setter
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:07.085 -0500", hash_original_method = "00B4402833BBD0AA4B8B3DAC69045BF5", hash_generated_method = "B2662FB8B99A8C5B38B89D73473B0BA5")
     
 public int getMaximumFractionDigits() {
         return getAttribute(this.address, UNUM_MAX_FRACTION_DIGITS);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:07.087 -0500", hash_original_method = "39458F699020062C4A2A7E5A13FEC803", hash_generated_method = "22B96A153816792B7A99EBF121EE662C")
     
 public int getMaximumIntegerDigits() {
         return getAttribute(this.address, UNUM_MAX_INTEGER_DIGITS);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:07.090 -0500", hash_original_method = "2493C2169723FB0932E2841ED5413767", hash_generated_method = "13310C94F2DFBF68121807003654C58E")
     
 public int getMinimumFractionDigits() {
         return getAttribute(this.address, UNUM_MIN_FRACTION_DIGITS);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:07.092 -0500", hash_original_method = "C287E89D9CA249987BAB41DA58A603BE", hash_generated_method = "B233C2DB383B5818E549A7A18C9E5900")
     
 public int getMinimumIntegerDigits() {
         return getAttribute(this.address, UNUM_MIN_INTEGER_DIGITS);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:07.094 -0500", hash_original_method = "C63E831A66DAEA25345E39BD0E8C902A", hash_generated_method = "30646B17E7411D8BCFEF92520FDEA587")
     
 public int getGroupingSize() {
         return getAttribute(this.address, UNUM_GROUPING_SIZE);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:07.096 -0500", hash_original_method = "195B15A30ECFDD2DA316EFD7F1135C74", hash_generated_method = "DAE7BEB0745C821EA6FAA80FAA1010E4")
     
 public int getMultiplier() {
         return getAttribute(this.address, UNUM_MULTIPLIER);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:07.099 -0500", hash_original_method = "6BE8F2BF8B3A5604EA6D6E250F279823", hash_generated_method = "C21FA945572C99B3FB2BD4406C13049B")
     
 public String getNegativePrefix() {
@@ -724,6 +731,7 @@ public String getNegativePrefix() {
         return getTextAttribute(this.address, UNUM_NEGATIVE_PREFIX);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:07.101 -0500", hash_original_method = "3B3EF8E26C12E3D51B48D0C30732D5F5", hash_generated_method = "9D83E94F8039F3F4C2AE361821E2AA0C")
     
 public String getNegativeSuffix() {
@@ -733,6 +741,7 @@ public String getNegativeSuffix() {
         return getTextAttribute(this.address, UNUM_NEGATIVE_SUFFIX);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:07.104 -0500", hash_original_method = "8D4D6B90A746E09AE36173ABA0AB4B15", hash_generated_method = "581950C2496A1A514954A3A78FA8B01C")
     
 public String getPositivePrefix() {
@@ -742,6 +751,7 @@ public String getPositivePrefix() {
         return getTextAttribute(this.address, UNUM_POSITIVE_PREFIX);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:07.106 -0500", hash_original_method = "6CFE84E5B71B94B0DE7447BA68FEA246", hash_generated_method = "3AD35C82D539F299DB02940C94F83D19")
     
 public String getPositiveSuffix() {

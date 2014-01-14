@@ -217,6 +217,7 @@ public void setRequestInterface(ServerRequestInterface newRequestOf) {
     /**
      * Returns this transaction.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:18.120 -0500", hash_original_method = "BE06A4E585FD9A272717267C4A83F5CF", hash_generated_method = "0F266B709485A4ED00FA7B8DDF20021C")
     
 public MessageChannel getResponseChannel() {
@@ -790,6 +791,7 @@ public void sendMessage(SIPMessage messageToSend) throws IOException {
 
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:18.146 -0500", hash_original_method = "57D57213185EECDD5D38603D59833E46", hash_generated_method = "A70FDC2F6464B9B3774E51CBE10C1AD0")
     
 public String getViaHost() {
@@ -798,6 +800,7 @@ public String getViaHost() {
 
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:18.149 -0500", hash_original_method = "AE83C408493AD4624CBF388A7C2A34C7", hash_generated_method = "4DE4E4B89E54F9033F5751611FA22907")
     
 public int getViaPort() {
@@ -922,6 +925,7 @@ protected void fireTimeoutTimer() {
     /**
      * Get the last response.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:18.162 -0500", hash_original_method = "025E14F038A1EDFF743C73F970E03870", hash_generated_method = "E4142FBCF67ABA0096A56A3990E0FF25")
     
 public SIPResponse getLastResponse() {
@@ -1144,6 +1148,7 @@ private TransactionState getRealState() {
      *
      * @return the state of the transaction.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:18.178 -0500", hash_original_method = "1CF9EDD0CC0B815CCCB8459FE319457E", hash_generated_method = "02478797440CC9523F07C2C49AB7D7EF")
     
 public TransactionState getState() {
@@ -1207,6 +1212,7 @@ public boolean equals(Object other) {
      *
      * @see gov.nist.javax.sip.stack.SIPTransaction#getDialog()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:18.189 -0500", hash_original_method = "BF9D0C52E87E80DCC85E6728CE121EFC", hash_generated_method = "D0A44FFD54D208F05147B22151E1B389")
     
 public Dialog getDialog() {
@@ -1310,6 +1316,7 @@ protected void sendReliableProvisionalResponse(Response relResponse) throws SipE
 
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:18.203 -0500", hash_original_method = "423AF4ABBE12E54C6351754EACC47E3E", hash_generated_method = "640C2177F8D62C23EBB70FAD97BBEF3B")
     
 public SIPResponse getReliableProvisionalResponse() {
@@ -1449,6 +1456,7 @@ public void setInviteTransaction(SIPServerTransaction st) {
      *
      * @return
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:18.234 -0500", hash_original_method = "3EE4598A64A5BA68559842E002FBD20B", hash_generated_method = "FE6249DD1F26D92474994C4EBED77908")
     
 public SIPServerTransaction getCanceledInviteTransaction() {

@@ -9,11 +9,6 @@ import org.apache.harmony.security.asn1.ASN1GeneralizedTime;
 import org.apache.harmony.security.asn1.ASN1Type;
 import org.apache.harmony.security.asn1.ASN1UTCTime;
 
-
-
-
-
-
 public final class Time {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:56.851 -0500", hash_original_field = "60242AE01E95CBC9C36412DAF548E178", hash_generated_field = "A147BD616196E23C70F2EDFA7D6297B4")
 
@@ -34,6 +29,7 @@ public int getIndex(java.lang.Object object) {
             }
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:56.857 -0500", hash_original_method = "75F68B3A16DBDA02F9B0A49BA52B584E", hash_generated_method = "636A79B73F9AB00153E188E5DD1C5DB2")
         
 public Object getObjectToEncode(Object object) {

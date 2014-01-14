@@ -271,6 +271,7 @@ public DatePicker(Context context, AttributeSet attrs, int defStyle) {
      *
      * @return The minimal supported date.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.327 -0500", hash_original_method = "B0CBF7B6208A95C236DA6913EAA0D341", hash_generated_method = "E6EDB6BEB6A737AFEA6A6EB9689DB7C4")
     
 public long getMinDate() {
@@ -312,6 +313,7 @@ public void setMinDate(long minDate) {
      *
      * @return The maximal supported date.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.331 -0500", hash_original_method = "DB8F47FF49EF5F4454748F1EF70370BC", hash_generated_method = "2B68E56D35161B8E854F850DC6340800")
     
 public long getMaxDate() {
@@ -399,6 +401,7 @@ public void setMaxDate(long maxDate) {
      * @return True if the calendar view is shown.
      * @see #getCalendarView()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.348 -0500", hash_original_method = "F626AAF3D88CF2708A3C00197CF02609", hash_generated_method = "83E5520CA1E3B082E0D21B26E73B6F1E")
     
 public boolean getCalendarViewShown() {
@@ -411,6 +414,7 @@ public boolean getCalendarViewShown() {
      * @return The calendar view.
      * @see #getCalendarViewShown()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.350 -0500", hash_original_method = "E5E91372452D81D0FC87710458852870", hash_generated_method = "4205A74B1C6BF3BD814050DEB01BD423")
     
 public CalendarView getCalendarView () {
@@ -434,6 +438,7 @@ public void setCalendarViewShown(boolean shown) {
      *
      * @return True if the spinners are shown.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.354 -0500", hash_original_method = "B5CFDF56FD0FFF53C840D3DAC615D008", hash_generated_method = "E9A20BB0225E814041A100B970631119")
     
 public boolean getSpinnersShown() {
@@ -757,6 +762,7 @@ private SavedState(Parcel in) {
     /**
      * @return The selected year.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.390 -0500", hash_original_method = "3B3D6844E7A836293DFA1A3CC86782AF", hash_generated_method = "DD341252CD551E4373C2459CBB155055")
     
 public int getYear() {
@@ -766,6 +772,7 @@ public int getYear() {
     /**
      * @return The selected month.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.392 -0500", hash_original_method = "38D3E39BF141F42FF09C6079CAB15EDC", hash_generated_method = "BCC5269CEB2B4BEF16D7C70CB3E9CE5C")
     
 public int getMonth() {
@@ -775,6 +782,7 @@ public int getMonth() {
     /**
      * @return The selected day of month.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.394 -0500", hash_original_method = "8FBF5DD56EFFBE6D332AE82BD8F4BBB9", hash_generated_method = "36944E655057A73626616DEC6406B85E")
     
 public int getDayOfMonth() {

@@ -147,6 +147,7 @@ public BaseInputConnection(View targetView, boolean fullEditor) {
      * subclasses that are real text editors should override this and
      * supply their own.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.442 -0500", hash_original_method = "A97F5DFC2840DF7B5D61C809FDCD4D64", hash_generated_method = "B9CC82C92617709D43E0C972CF5E0C75")
     
 public Editable getEditable() {
@@ -304,6 +305,7 @@ public boolean finishComposingText() {
      * cursor caps mode for the current selection position in the editable
      * text, unless in dummy mode in which case 0 is always returned.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.464 -0500", hash_original_method = "A12ABCD2EB4522E8FE53DB6299A361B5", hash_generated_method = "28DA2DF10A711F52B85FC424358C926F")
     
 public int getCursorCapsMode(int reqModes) {
@@ -327,6 +329,7 @@ public int getCursorCapsMode(int reqModes) {
     /**
      * The default implementation always returns null.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.466 -0500", hash_original_method = "A2A8D9B6A3DC6DA18051F8E023FD4A27", hash_generated_method = "8936794892555B759A66108240A3AB9A")
     
 public ExtractedText getExtractedText(ExtractedTextRequest request, int flags) {
@@ -337,6 +340,7 @@ public ExtractedText getExtractedText(ExtractedTextRequest request, int flags) {
      * The default implementation returns the given amount of text from the
      * current cursor position in the buffer.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.468 -0500", hash_original_method = "75E370B84589846A89A63AE625719BF1", hash_generated_method = "F628D16938A07EC3C2781BED6C630F56")
     
 public CharSequence getTextBeforeCursor(int length, int flags) {
@@ -370,6 +374,7 @@ public CharSequence getTextBeforeCursor(int length, int flags) {
      * The default implementation returns the text currently selected, or null if none is
      * selected.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.471 -0500", hash_original_method = "ED9D872BFDE8C5E26AC99155DBA149BF", hash_generated_method = "583DA0B7B71E8D58AB532743D3867F50")
     
 public CharSequence getSelectedText(int flags) {
@@ -397,6 +402,7 @@ public CharSequence getSelectedText(int flags) {
      * The default implementation returns the given amount of text from the
      * current cursor position in the buffer.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.474 -0500", hash_original_method = "08096EEE0873EB795CD58B469F10D5B2", hash_generated_method = "E93C8508EF64179E6A7155EB519D1CAB")
     
 public CharSequence getTextAfterCursor(int length, int flags) {

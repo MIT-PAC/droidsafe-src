@@ -342,6 +342,7 @@ private void initImageView() {
     /** Return the view's drawable, or null if no drawable has been
         assigned.
     */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.883 -0500", hash_original_method = "53D05784890C72350FD6879A6582F7F3", hash_generated_method = "DF96164158117DC7A0136AF51CE8F171")
     
 public Drawable getDrawable() {
@@ -523,6 +524,7 @@ public ScaleType getScaleType() {
         Do not change this matrix in place. If you want a different matrix
         applied to the drawable, be sure to call setImageMatrix().
     */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.914 -0500", hash_original_method = "5B9FD9A0A164EA90D695E910523F6E96", hash_generated_method = "963AEFA2CB190844C895D26ABA80C3B5")
     
 public Matrix getImageMatrix() {
@@ -950,6 +952,7 @@ private void configureBounds() {
      * @return the offset of the baseline within the widget's bounds or -1
      *         if baseline alignment is not supported.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.952 -0500", hash_original_method = "697E0DCA3A40ADA0E60547E8AD02CB08", hash_generated_method = "6EB491C14EA109A0AB1664B84B756DAF")
     
 @Override
@@ -1004,6 +1007,7 @@ public void setBaselineAlignBottom(boolean aligned) {
      *
      * @see #setBaselineAlignBottom(boolean)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.958 -0500", hash_original_method = "7D3365C5D6F47846F65EFD0480835D79", hash_generated_method = "2994E74552E351861F3CAEEAFD355B13")
     
 public boolean getBaselineAlignBottom() {

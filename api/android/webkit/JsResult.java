@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class JsResult {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:10.709 -0500", hash_original_field = "83914817B5695355805A1E02640480C2", hash_generated_field = "26A6070CDE592271AECF8680D22F56EE")
 
@@ -55,7 +51,8 @@ public final void confirm() {
         wakeUp();
     }
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:10.727 -0500", hash_original_method = "B19201A589B2161C860E375BCFC73111", hash_generated_method = "1BA024346F9531D85D136101E5D63312")
+    /*package*/ @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:10.727 -0500", hash_original_method = "B19201A589B2161C860E375BCFC73111", hash_generated_method = "1BA024346F9531D85D136101E5D63312")
     
 final boolean getResult() {
         return mResult;
@@ -90,7 +87,6 @@ protected final void wakeUp() {
             mTriedToNotifyBeforeReady = true;
         }
     }
-
     
 }
 

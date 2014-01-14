@@ -523,6 +523,7 @@ public static final HashMap readMapXml(InputStream in)
      * @see #readThisListXml
      * @see #writeListXml
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:46.571 -0500", hash_original_method = "19DDCF7A36CDD152C7A6B2FBD995EBB5", hash_generated_method = "9FD32910B0D0512DCF2D5BDEF96DEF28")
     
 public static final ArrayList readListXml(InputStream in)

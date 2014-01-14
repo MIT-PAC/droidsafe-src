@@ -613,6 +613,7 @@ private RemoteViews makeTickerView() {
          * Combine all of the options that have been set and return a new {@link Notification}
          * object.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:18.475 -0500", hash_original_method = "ACBCD2459BD592E66E9A1B94FF396B6B", hash_generated_method = "9E9159152B42F42893112012D9565859")
         
 public Notification getNotification() {

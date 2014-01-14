@@ -395,6 +395,7 @@ public FullScreenMediaController(Context context, View video) {
         return mCanSeekForward;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:17.524 -0500", hash_original_method = "5712A5AFCA7A8FC23B7D8D35D8488604", hash_generated_method = "0824E837C076630396EF937D98B2FDFD")
     
 @Override

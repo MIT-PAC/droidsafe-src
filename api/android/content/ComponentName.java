@@ -188,6 +188,7 @@ public ComponentName clone() {
     /**
      * Return the package name of this component.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:07.574 -0500", hash_original_method = "89B4378559F402BEFD7FD434E355C3B4", hash_generated_method = "63FE5FEFF39BF20BDF4A467B3EECCD22")
     
 public String getPackageName() {
@@ -197,6 +198,7 @@ public String getPackageName() {
     /**
      * Return the class name of this component.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:07.576 -0500", hash_original_method = "ABD4E1FA4C56F78B933D2E76ACF407D1", hash_generated_method = "7FDE699C4ACD1575C4F6A08F82280495")
     
 public String getClassName() {
@@ -207,6 +209,7 @@ public String getClassName() {
      * Return the class name, either fully qualified or in a shortened form
      * (with a leading '.') if it is a suffix of the package.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:07.578 -0500", hash_original_method = "1928B7DE815A138E651EC762B534B9EC", hash_generated_method = "26B2622A08D890C423EE473583404F0A")
     
 public String getShortClassName() {

@@ -767,6 +767,7 @@ public NumberPicker(Context context, AttributeSet attrs, int defStyle) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.159 -0500", hash_original_method = "A5D52728D322EA76B9FE19A001AC2619", hash_generated_method = "C018A36B3FBB8F24D1A26C1A669111FA")
     
 @Override
@@ -920,6 +921,7 @@ private void tryComputeMaxWidth() {
      * @see #getMinValue()
      * @see #getMaxValue()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.173 -0500", hash_original_method = "0DE9A61E4C9F0206942BD1BD5DBB2993", hash_generated_method = "0221C9177B13D161F2561604D228B1D0")
     
 public boolean getWrapSelectorWheel() {
@@ -971,6 +973,7 @@ public void setOnLongPressUpdateInterval(long intervalMillis) {
      *
      * @return The value.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.179 -0500", hash_original_method = "873C7D38131A035B7F6055170D432634", hash_generated_method = "612E588787E3A1FC08CE2E1A6D34D03A")
     
 public int getValue() {
@@ -982,6 +985,7 @@ public int getValue() {
      *
      * @return The min value
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.181 -0500", hash_original_method = "734B6103B2E180B236F243E5AD573634", hash_generated_method = "E14ACFAD17E885847B2037E16680637A")
     
 public int getMinValue() {
@@ -1018,6 +1022,7 @@ public void setMinValue(int minValue) {
      *
      * @return The max value.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.186 -0500", hash_original_method = "D9333690652DA8538B4523261E9BBD48", hash_generated_method = "DD027431AD01220BDC2FE04331979B71")
     
 public int getMaxValue() {
@@ -1054,6 +1059,7 @@ public void setMaxValue(int maxValue) {
      *
      * @return The displayed values.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.190 -0500", hash_original_method = "7D8D8A804F018648196BF68A974CA568", hash_generated_method = "B96951674B1895E71860C1345553F46F")
     
 public String[] getDisplayedValues() {
@@ -1084,6 +1090,7 @@ public void setDisplayedValues(String[] displayedValues) {
         tryComputeMaxWidth();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.195 -0500", hash_original_method = "26009EEE98735F9AF4C2D76E4A1AFAB0", hash_generated_method = "A03901498805A97FB2D760D2745E3B9F")
     
 @Override
@@ -1091,6 +1098,7 @@ public void setDisplayedValues(String[] displayedValues) {
         return TOP_AND_BOTTOM_FADING_EDGE_STRENGTH;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.197 -0500", hash_original_method = "A0CE61C0CAF5846D2D470684E7070854", hash_generated_method = "AEA22FDB25FBE08D00CEC16A202992CC")
     
 @Override
@@ -1438,12 +1446,14 @@ private void initializeFadingEdges() {
 
         // XXX This doesn't allow for range limits when controlled by a
         // soft input method!
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.288 -0500", hash_original_method = "5619839AC48FF521F5D3DA01ED2E4A22", hash_generated_method = "940AAB34C11FCB7F502A92348EEE42B0")
         
 public int getInputType() {
             return InputType.TYPE_CLASS_TEXT;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.290 -0500", hash_original_method = "42F7B3A0BEAF29BB6B3A7A3A6D3C7695", hash_generated_method = "E4A04209D0F261E6F67F991F41CD7354")
         
 @Override

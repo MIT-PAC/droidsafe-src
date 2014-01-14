@@ -169,6 +169,7 @@ public void sendIntent(Context context, int code, Intent intent,
      * @return The package name of the PendingIntent, or null if there is
      * none associated with it.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.921 -0500", hash_original_method = "1AE048A4984F76615C0EAE5393ABDA6D", hash_generated_method = "D3A6F32790B99E339D9B68926FE71FFC")
     
 public String getTargetPackage() {
@@ -308,6 +309,7 @@ public void run() {
     }
 
     /** @hide */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.947 -0500", hash_original_method = "5A73019C5B7699A011E114A766F68ECD", hash_generated_method = "147FBD3908885E3E49DD8E1224C6EDEA")
     
 public IIntentSender getTarget() {

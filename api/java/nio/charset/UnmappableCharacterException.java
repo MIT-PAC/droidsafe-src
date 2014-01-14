@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class UnmappableCharacterException extends CharacterCodingException {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.153 -0500", hash_original_field = "D6D1666FF6B36CEE9E191C47E93E3C6C", hash_generated_field = "F98718CE7644E1BAF8F83D1AD426E139")
 
@@ -32,12 +28,14 @@ public UnmappableCharacterException(int length) {
     /**
      * Returns the length of the unmappable character.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.161 -0500", hash_original_method = "99174ED6911F5F8CBB68A90343CD57CF", hash_generated_method = "FA812069F55585CBB369DCEB6C68F21E")
     
 public int getInputLength() {
         return this.inputLength;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.164 -0500", hash_original_method = "7D10807CFABB560A12F38675F46A3FF5", hash_generated_method = "1857012EE798A7AA3F53EF74BDA89DF6")
     
 @Override

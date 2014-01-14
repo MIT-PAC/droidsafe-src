@@ -48,12 +48,14 @@ public final class InputMethodManager {
      * doesn't already exist.
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.633 -0500", hash_original_method = "424A4B77F0AFDB65F3E66A3DDD55A926", hash_generated_method = "1687AC00C8A9CF972080C9248F12F34F")
     
 static public InputMethodManager getInstance(Context context) {
         return getInstance(context.getMainLooper());
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     static public InputMethodManager getInstance(Looper mainLooper) {
         synchronized (mInstanceSync) {
             if (mInstance != null) {
@@ -307,6 +309,7 @@ static public InputMethodManager peekInstance() {
     }
     
     /** @hide */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.641 -0500", hash_original_method = "3D9C93A013E7DC300254687B6593E9DE", hash_generated_method = "23009FC047CD86B82991D738FC080ED1")
     
 public IInputMethodClient getClient() {
@@ -314,12 +317,14 @@ public IInputMethodClient getClient() {
     }
     
     /** @hide */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.643 -0500", hash_original_method = "BB1CC2AA4E519DFF3D7BB1A17FAAA9A1", hash_generated_method = "574F1B58FB031FC8E0E4FE41A3FC2633")
     
 public IInputContext getInputContext() {
         return mIInputContext;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.645 -0500", hash_original_method = "4976C1493B414917938FA9CF9C859341", hash_generated_method = "A5D9227E6D133148150212A1FC22F8BB")
     
 public List<InputMethodInfo> getInputMethodList() {
@@ -330,6 +335,7 @@ public List<InputMethodInfo> getInputMethodList() {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.648 -0500", hash_original_method = "E8BA85FCD94534AA9F0D8586DC21C83A", hash_generated_method = "50223B28DCCF2DE4A8CD6995D00FCE60")
     
 public List<InputMethodInfo> getEnabledInputMethodList() {
@@ -347,6 +353,7 @@ public List<InputMethodInfo> getEnabledInputMethodList() {
      * selected subtypes. If an input method info doesn't have enabled subtypes, the framework
      * will implicitly enable subtypes according to the current system language.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.650 -0500", hash_original_method = "6701B30EF11ADDDCEFC97757F6DCE403", hash_generated_method = "B1FC0F4538A0653C57E850863F54776F")
     
 public List<InputMethodSubtype> getEnabledInputMethodSubtypeList(InputMethodInfo imi,
@@ -1488,6 +1495,7 @@ public void showInputMethodAndSubtypeEnabler(String imiId) {
      * the current input method. This method returns null when the current input method doesn't
      * have any input method subtype.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.798 -0500", hash_original_method = "FD9F276F6D40BEB379032073F0CE055D", hash_generated_method = "B0AAE5461AF9B5346EE89377D430A6FF")
     
 public InputMethodSubtype getCurrentInputMethodSubtype() {
@@ -1524,6 +1532,7 @@ public boolean setCurrentInputMethodSubtype(InputMethodSubtype subtype) {
     /**
      * Returns a map of all shortcut input method info and their subtypes.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.804 -0500", hash_original_method = "43A6DF9F5E808A92ECB1533408005E7F", hash_generated_method = "6B3036069590C808E6FF68E1FB3C361C")
     
 public Map<InputMethodInfo, List<InputMethodSubtype>> getShortcutInputMethodsAndSubtypes() {
@@ -1607,6 +1616,7 @@ public void setAdditionalInputMethodSubtypes(String imiId, InputMethodSubtype[] 
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.812 -0500", hash_original_method = "D92C08014C42A358F015C9B31552925A", hash_generated_method = "B4BE121955C3E0394B5BD04A3B1399AD")
     
 public InputMethodSubtype getLastInputMethodSubtype() {

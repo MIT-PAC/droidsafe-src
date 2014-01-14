@@ -463,7 +463,8 @@ void initializeSubwindow() {
 
     /* Get the BrowserFrame component. This is used for subwindow creation and
      * is called only from BrowserFrame in the WebCore thread. */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:06.959 -0500", hash_original_method = "49E2B5EDCA0AFC5006663CDC7A5CE915", hash_generated_method = "2A5B7221FD2A2F4D9CAD643D56D0C610")
+    /* package */ @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:06.959 -0500", hash_original_method = "49E2B5EDCA0AFC5006663CDC7A5CE915", hash_generated_method = "2A5B7221FD2A2F4D9CAD643D56D0C610")
     
 synchronized BrowserFrame getBrowserFrame() {
         return mBrowserFrame;
@@ -2065,6 +2066,7 @@ private void setWebTextViewAutoFillable(int queryId, String preview) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:07.845 -0500", hash_original_method = "4F4EBC54D108D66F416C93B46580E117", hash_generated_method = "4F4EBC54D108D66F416C93B46580E117")
     
 Context getContext() {
@@ -2254,6 +2256,7 @@ public void setMockDeviceOrientation(boolean canProvideAlpha, double alpha,
                 canProvideBeta, beta, canProvideGamma, gamma);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:07.903 -0500", hash_original_method = "2C35CA4A669368B8EA54C6F975558D19", hash_generated_method = "FAAAE4C8F054D6CFEE2EE4D0A044FABC")
     
 protected DeviceMotionService getDeviceMotionService() {
@@ -2264,6 +2267,7 @@ protected DeviceMotionService getDeviceMotionService() {
         return mDeviceMotionService;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:07.906 -0500", hash_original_method = "C07B296E9A86FE4EA87FDBAE8692F74E", hash_generated_method = "614538BACC3BA83A601CECDF38EABE63")
     
 protected DeviceOrientationService getDeviceOrientationService() {
@@ -2628,12 +2632,14 @@ public AutoFillData(int queryId, String preview) {
             mPreview = preview;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:07.313 -0500", hash_original_method = "7DF004F757D7E4F7320327B99689B65F", hash_generated_method = "07C2EE867F16D29710E88AB9C49E3D4E")
         
 public int getQueryId() {
             return mQueryId;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:07.315 -0500", hash_original_method = "E4F5699DB01CFB534A6B08E3CFDC42EF", hash_generated_method = "8A5955EDC0D2A0B15775585B43D49704")
         
 public String getPreviewString() {

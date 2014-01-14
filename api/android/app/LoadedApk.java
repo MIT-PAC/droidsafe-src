@@ -266,18 +266,21 @@ public LoadedApk(ActivityThread activityThread, String name,
         mCompatibilityInfo.set(compatInfo);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.695 -0500", hash_original_method = "510D23D8CF054FDAE1D1426C6A1A1500", hash_generated_method = "510D23D8CF054FDAE1D1426C6A1A1500")
     
 Application getApplication() {
         return mApplication;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.704 -0500", hash_original_method = "B3E128BBA0564CAE955B890D71B1CE7C", hash_generated_method = "BFA44CE53EBFEE02C805A4272C4E472E")
     
 public String getPackageName() {
         return mPackageName;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.706 -0500", hash_original_method = "69D4795DAE5563DBA773DE992713BBC9", hash_generated_method = "7F0398A41DC9BAAB9529D5DB0AEA6153")
     
 public ApplicationInfo getApplicationInfo() {
@@ -290,6 +293,7 @@ public boolean isSecurityViolation() {
         return mSecurityViolation;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.717 -0500", hash_original_method = "98BA13F46ABDF03C557DAF40D6E3FC88", hash_generated_method = "953337A0E00E54193CF6B112FED05300")
     
 public ClassLoader getClassLoader() {
@@ -420,36 +424,42 @@ private void initializeJavaContextClassLoader() {
         Thread.currentThread().setContextClassLoader(contextClassLoader);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.750 -0500", hash_original_method = "DDE558C6C52D26591497F8CCA19E2D11", hash_generated_method = "B0B211893A72839AF9558CA2B7715BD2")
     
 public String getAppDir() {
         return mAppDir;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.752 -0500", hash_original_method = "1158BD50BBC4E4D9C9B8EC24E43A83EF", hash_generated_method = "B2B372D7F52067CDFAB5B42374E9F643")
     
 public String getResDir() {
         return mResDir;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.755 -0500", hash_original_method = "5486D8CB07A0A494A33FE28373C3B14E", hash_generated_method = "4566CD0F3629082CC0B8982A9C307F5C")
     
 public String getDataDir() {
         return mDataDir;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.757 -0500", hash_original_method = "6FB19B7083E51C6FD4891C3DDE1600A5", hash_generated_method = "FC31E829E2B3954A92ADCBEDEC1CFD01")
     
 public File getDataDirFile() {
         return mDataDirFile;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.759 -0500", hash_original_method = "57B8CB1A3B484849D2245AC420407E2C", hash_generated_method = "BD4F7C1FC798493386F7E0FAB4CBE79C")
     
 public AssetManager getAssets(ActivityThread mainThread) {
         return getResources(mainThread).getAssets();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.762 -0500", hash_original_method = "5E7B55611C44695241E7EB924E051C95", hash_generated_method = "746F76282F50386A6927C163B3946BB7")
     
 public Resources getResources(ActivityThread mainThread) {
@@ -557,6 +567,7 @@ public void removeContextRegistrations(Context context,
         //Slog.i(TAG, "Service registrations: " + mServices);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.771 -0500", hash_original_method = "5954CD85EE6D69CD6AA4DB5D230A9DEB", hash_generated_method = "120226E1518DDD1EFEE5A31829FD13CF")
     
 public IIntentReceiver getReceiverDispatcher(BroadcastReceiver r,
@@ -642,6 +653,7 @@ public IIntentReceiver forgetReceiverDispatcher(Context context,
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.851 -0500", hash_original_method = "D12EDE6D51B318B0614D5C86220B1198", hash_generated_method = "758E1E806A8730AD611C0EC6EEFF3937")
     
 public final IServiceConnection getServiceDispatcher(ServiceConnection c,
@@ -746,6 +758,7 @@ private void warn(String methodName) {
                   "Thread.setContextClassLoader(getClass().getClassLoader());");
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.727 -0500", hash_original_method = "55A2C8B568742F6DD554B2AE8E06F675", hash_generated_method = "8BDA593388D375AFBD51C9221A43EB03")
         
 @Override public URL getResource(String resName) {
@@ -753,6 +766,7 @@ private void warn(String methodName) {
             return getParent().getResource(resName);
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.730 -0500", hash_original_method = "7DF26E5478EB621EA7136B5331588545", hash_generated_method = "53EAE112CC13812D1E1211C5DE531D2B")
         
 @Override public Enumeration<URL> getResources(String resName) throws IOException {
@@ -760,6 +774,7 @@ private void warn(String methodName) {
             return getParent().getResources(resName);
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.732 -0500", hash_original_method = "43C39FB9AB0F69E37F9176951B93B129", hash_generated_method = "1288CA50B3EDCE616E702D0DA3B2CBB0")
         
 @Override public InputStream getResourceAsStream(String resName) {
@@ -767,6 +782,7 @@ private void warn(String methodName) {
             return getParent().getResourceAsStream(resName);
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.736 -0500", hash_original_method = "8B4C21AC14EA436FB72A6381E557B850", hash_generated_method = "91FCE81986E2A452AC10D1CF8743BE2C")
         
 @Override public Class<?> loadClass(String className) throws ClassNotFoundException {
@@ -871,18 +887,21 @@ void validate(Context context, Handler activityThread) {
             }
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.833 -0500", hash_original_method = "7C4E5EC981022D2A84B36FB6D93F7965", hash_generated_method = "7C4E5EC981022D2A84B36FB6D93F7965")
         
 IntentReceiverLeaked getLocation() {
             return mLocation;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.835 -0500", hash_original_method = "3C5B1FBD8D9CF893CD5AE57A3692C218", hash_generated_method = "3C5B1FBD8D9CF893CD5AE57A3692C218")
         
 BroadcastReceiver getIntentReceiver() {
             return mReceiver;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.837 -0500", hash_original_method = "03FF6A1CE859C16292BB870D48D4B619", hash_generated_method = "03FF6A1CE859C16292BB870D48D4B619")
         
 IIntentReceiver getIIntentReceiver() {
@@ -895,6 +914,7 @@ void setUnregisterLocation(RuntimeException ex) {
             mUnregisterLocation = ex;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.841 -0500", hash_original_method = "BEFB4AE86DE2CF8202227FDF4968A841", hash_generated_method = "BEFB4AE86DE2CF8202227FDF4968A841")
         
 RuntimeException getUnregisterLocation() {
@@ -1121,24 +1141,28 @@ void doForget() {
             }
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.908 -0500", hash_original_method = "DB6C3DBDD9CEB1EED1EE508C536B0201", hash_generated_method = "DB6C3DBDD9CEB1EED1EE508C536B0201")
         
 ServiceConnectionLeaked getLocation() {
             return mLocation;
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.911 -0500", hash_original_method = "14318317B55D028C50F4E970D5AD5F89", hash_generated_method = "14318317B55D028C50F4E970D5AD5F89")
         
 ServiceConnection getServiceConnection() {
             return mConnection;
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.913 -0500", hash_original_method = "A871391E91E358F0260A3C41C2649BF6", hash_generated_method = "A871391E91E358F0260A3C41C2649BF6")
         
 IServiceConnection getIServiceConnection() {
             return mIServiceConnection;
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.915 -0500", hash_original_method = "CE8F8E5E4A30C515D6BD9049A49703B9", hash_generated_method = "CE8F8E5E4A30C515D6BD9049A49703B9")
         
 int getFlags() {
@@ -1151,6 +1175,7 @@ void setUnbindLocation(RuntimeException ex) {
             mUnbindLocation = ex;
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.919 -0500", hash_original_method = "8CFC5DB6BE83E965DCFCD58443A1D896", hash_generated_method = "8CFC5DB6BE83E965DCFCD58443A1D896")
         
 RuntimeException getUnbindLocation() {

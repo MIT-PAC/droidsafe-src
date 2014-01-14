@@ -16,6 +16,7 @@ public final class ASN1Any extends ASN1Type {
      *
      * @return ASN.1 ANY type default implementation
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:51.217 -0500", hash_original_method = "72EDD098C295AB4E95999AD610D0BDCD", hash_generated_method = "BFB854D83DA446B398DD7AAA04879B61")
     
 public static ASN1Any getInstance() {
@@ -70,6 +71,7 @@ public Object decode(BerInputStream in) throws IOException {
      * @param in BER input stream
      * @return array of bytes
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:51.224 -0500", hash_original_method = "7A8EAE0B0D15C25D8FE798817C72F0C1", hash_generated_method = "4CC008AE1262E230724FFD12B09E1197")
     
 public Object getDecodedObject(BerInputStream in) throws IOException {
@@ -98,6 +100,7 @@ public void setEncodingContent(BerOutputStream out) {
         out.length = ((byte[]) out.content).length;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:51.233 -0500", hash_original_method = "4E35D9A00930BDC0DD7D3944E7329986", hash_generated_method = "9E073544271BA4933CFD9922B4805DB6")
     
 public int getEncodedLength(BerOutputStream out) {

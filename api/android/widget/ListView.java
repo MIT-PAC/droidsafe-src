@@ -104,6 +104,7 @@ public class ListView extends AbsListView {
      * @return The maximum amount a list view will scroll in response to
      *   an arrow event.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.187 -0500", hash_original_method = "13CC3D3BB67006B8B223FEAA5CEB8AD3", hash_generated_method = "F4B27DCC3FC0D9E1A9D6D278F1CEE295")
     
 public int getMaxScrollAmount() {
@@ -211,6 +212,7 @@ public void addHeaderView(View v) {
         addHeaderView(v, null, true);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.196 -0500", hash_original_method = "9A198FE2F7DAA22CDFAB063EB95C8DFA", hash_generated_method = "0C98AA20D95365DB82AB3DF0F0DB74B0")
     
 @Override
@@ -306,6 +308,7 @@ public void addFooterView(View v) {
         addFooterView(v, null, true);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.209 -0500", hash_original_method = "83BE551B6778E6D258871D9949AEF538", hash_generated_method = "5756AE65BD0787102B02E288262B94F8")
     
 @Override
@@ -2912,6 +2915,7 @@ public void setItemsCanFocus(boolean itemsCanFocus) {
      * @return Whether the views created by the ListAdapter can contain focusable
      * items.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.422 -0500", hash_original_method = "1C95AE1007B5CDC38C9B3E3B2904F365", hash_generated_method = "F38108EEEA06E4A569997C4C6488F567")
     
 public boolean getItemsCanFocus() {
@@ -3186,6 +3190,7 @@ void drawDivider(Canvas canvas, Rect bounds, int childIndex) {
      *
      * @return the current drawable drawn between list elements
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.446 -0500", hash_original_method = "7B5403D1FD6AC98A776FCB41ADD8E487", hash_generated_method = "6D7015A0035B7E7E6FFBA1DFBEFC56D9")
     
 public Drawable getDivider() {
@@ -3215,6 +3220,7 @@ public void setDivider(Drawable divider) {
     /**
      * @return Returns the height of the divider that will be drawn between each item in the list.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.450 -0500", hash_original_method = "229663AAAB1BC0B50485AD0B5CC199F3", hash_generated_method = "2F62CF391761700AD78489304D8DCE6B")
     
 public int getDividerHeight() {
@@ -3283,6 +3289,7 @@ public void setOverscrollHeader(Drawable header) {
     /**
      * @return The drawable that will be drawn above all other list content
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.461 -0500", hash_original_method = "95FFBAE371294243FE9AD2355C3622A4", hash_generated_method = "A22E72392B75DCF7C5CEC5AE532DFBF7")
     
 public Drawable getOverscrollHeader() {
@@ -3306,6 +3313,7 @@ public void setOverscrollFooter(Drawable footer) {
     /**
      * @return The drawable that will be drawn below all other list content
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.465 -0500", hash_original_method = "C43851852530BF4773181DC349AD3704", hash_generated_method = "4A780287AA15E69E38B7937193AC5D03")
     
 public Drawable getOverscrollFooter() {
@@ -3557,12 +3565,14 @@ void populate(int selectedPosition, int amountToScroll) {
             mAmountToScroll = amountToScroll;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.389 -0500", hash_original_method = "57FF42983620727F309A47A5C295AFEC", hash_generated_method = "92A8B8896D91AD027F13B514D160C0A6")
         
 public int getSelectedPosition() {
             return mSelectedPosition;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.391 -0500", hash_original_method = "547539826ED165E8A574C9320A564E9F", hash_generated_method = "1B14DA9BD3209431A7A70E8EAAC3C44C")
         
 public int getAmountToScroll() {
@@ -3633,6 +3643,7 @@ View findViewByPredicateInHeadersOrFooters(ArrayList<FixedViewInfo> where,
      *         
      * @deprecated Use {@link #getCheckedItemIds()} instead.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.489 -0500", hash_original_method = "7376DB3A956D54D1A994EA4B9B95B8AF", hash_generated_method = "8846D03C949588374F3DF84CE285E00E")
     
 @Deprecated

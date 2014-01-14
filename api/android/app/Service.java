@@ -72,6 +72,7 @@ public Service() {
     }
 
     /** Return the application that owns this service. */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:43.396 -0500", hash_original_method = "510D23D8CF054FDAE1D1426C6A1A1500", hash_generated_method = "63791FE33C4BA47B317000A8E62CC095")
     
 public final Application getApplication() {
@@ -424,6 +425,7 @@ public final void attach(
                 < Build.VERSION_CODES.ECLAIR;
     }
     
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:43.459 -0500", hash_original_method = "8DA57A133C364DA0C4CA877026045103", hash_generated_method = "F6EF08CB09E5F3BCA9DE4EF151038199")
     
 final String getClassName() {

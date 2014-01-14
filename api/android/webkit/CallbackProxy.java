@@ -242,6 +242,7 @@ public void setWebViewClient(WebViewClient client) {
      * Get the WebViewClient.
      * @return the current WebViewClient instance.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:14.296 -0500", hash_original_method = "F1A871AF9A3B10055BFFA9DC06A940C2", hash_generated_method = "D26228EECBDC7C3D2A75E622BC477A13")
     
 public WebViewClient getWebViewClient() {
@@ -262,6 +263,7 @@ public void setWebChromeClient(WebChromeClient client) {
      * Get the WebChromeClient.
      * @return the current WebChromeClient instance.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:14.300 -0500", hash_original_method = "578C7E32D2B540B07E657C95C84E837C", hash_generated_method = "D67BF301DD22BF2DCE8377F5F37BD801")
     
 public WebChromeClient getWebChromeClient() {
@@ -294,6 +296,7 @@ void setWebBackForwardListClient(WebBackForwardListClient client) {
         mWebBackForwardListClient = client;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:14.308 -0500", hash_original_method = "32023A06CFA84B93B3A0030ADE6E4A41", hash_generated_method = "32023A06CFA84B93B3A0030ADE6E4A41")
     
 WebBackForwardListClient getWebBackForwardListClient() {
@@ -937,6 +940,7 @@ public boolean uiOverrideKeyEvent(KeyEvent event) {
     /**
      * Return the latest progress.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:14.363 -0500", hash_original_method = "F4FA55F4EB9CE414FB8C02AF96B11745", hash_generated_method = "886D759526B4E918F1D3A1B99474A1F3")
     
 public int getProgress() {
@@ -960,6 +964,7 @@ public synchronized void setResult(E result) {
             mResult = result;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:14.287 -0500", hash_original_method = "67EA7E4C242F8EF7A6CF084AEA447779", hash_generated_method = "F142C47FF8D1328273469DC02D7AEB01")
         
 public synchronized E getResult() {
@@ -989,6 +994,7 @@ public UploadFile getUploadFile() {
             return mCallback;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:14.477 -0500", hash_original_method = "EE5645A876B8829341B5E714F10E353A", hash_generated_method = "72D9D0D3A142378C12634BFC271DA866")
         
 public String getAcceptType() {
@@ -1015,6 +1021,7 @@ public void onReceiveValue(Uri value) {
                 CallbackProxy.this.notify();
             }
         }
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:14.487 -0500", hash_original_method = "546BF3EDB8840D5BF09D8B66103FFEC6", hash_generated_method = "B9C522A3A94306FE6506FA26199B9892")
         
 public Uri getResult() {

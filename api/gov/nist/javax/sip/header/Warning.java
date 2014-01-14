@@ -9,11 +9,6 @@ import java.text.ParseException;
 import javax.sip.InvalidArgumentException;
 import javax.sip.header.WarningHeader;
 
-
-
-
-
-
 public class Warning extends SIPHeader implements WarningHeader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:53.025 -0500", hash_original_field = "13C733BFEA236EA008D6227D3F43B47A", hash_generated_field = "04331AE451A81F964F3C29BAAEBC8E2A")
 
@@ -58,6 +53,7 @@ public String encodeBody() {
     * Gets code of WarningHeader
     * @return code of WarningHeader
     */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:53.054 -0500", hash_original_method = "0DCDBA7E30E559B2571A09070ED05380", hash_generated_method = "C09692D4176718241CABC568676928E7")
     
 public int getCode() {
@@ -68,6 +64,7 @@ public int getCode() {
     * Gets agent host of WarningHeader
     * @return agent host of WarningHeader
     */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:53.058 -0500", hash_original_method = "7B2F86C2E403FA4426A7AF0306AE1B67", hash_generated_method = "201CE4D5F161DDDAC2567AF68C206C18")
     
 public String getAgent() {
@@ -78,6 +75,7 @@ public String getAgent() {
     * Gets text of WarningHeader
     * @return text of WarningHeader
     */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:53.063 -0500", hash_original_method = "C0F9B3C9D6FFAEB2F99491C721442157", hash_generated_method = "7679CCF41FBD015A1D63786DE3E0121C")
     
 public String getText() {

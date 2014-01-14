@@ -56,7 +56,8 @@ public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:27.193 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:27.193 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
             
 public java.lang.String getInterfaceDescriptor()
 {
@@ -67,7 +68,8 @@ return DESCRIPTOR;
      *
      * @return the IP address of the local host
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:27.195 -0500", hash_original_method = "119AA0417FC14367E8644BD854E0663E", hash_generated_method = "DAD36025ED61F0EF17141DA6F3FD353E")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:27.195 -0500", hash_original_method = "119AA0417FC14367E8644BD854E0663E", hash_generated_method = "DAD36025ED61F0EF17141DA6F3FD353E")
             
 public java.lang.String getLocalIp() throws android.os.RemoteException
 {
@@ -91,7 +93,8 @@ return _result;
      *
      * @return the SIP profile that this session is associated with
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:27.198 -0500", hash_original_method = "CC2C3FF2B88274524049F3DA6FA6ABD7", hash_generated_method = "0F81B2F785EE524E3F881060C96E1B64")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:27.198 -0500", hash_original_method = "CC2C3FF2B88274524049F3DA6FA6ABD7", hash_generated_method = "0F81B2F785EE524E3F881060C96E1B64")
             
 public android.net.sip.SipProfile getLocalProfile() throws android.os.RemoteException
 {
@@ -121,7 +124,8 @@ return _result;
      *
      * @return the SIP profile that this session is connected to
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:27.201 -0500", hash_original_method = "7C1A0C491046BEBAC3253D510228C498", hash_generated_method = "C9C72E79EC74D027FE87B2ACEFE06CF3")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:27.201 -0500", hash_original_method = "7C1A0C491046BEBAC3253D510228C498", hash_generated_method = "C9C72E79EC74D027FE87B2ACEFE06CF3")
             
 public android.net.sip.SipProfile getPeerProfile() throws android.os.RemoteException
 {
@@ -151,7 +155,8 @@ return _result;
      *
      * @return the session state
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:27.204 -0500", hash_original_method = "34C8BE8866555A4E37FB3BE07D3804F6", hash_generated_method = "52D8D043CF1FF87ECD04698A0AB87331")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:27.204 -0500", hash_original_method = "34C8BE8866555A4E37FB3BE07D3804F6", hash_generated_method = "52D8D043CF1FF87ECD04698A0AB87331")
             
 public int getState() throws android.os.RemoteException
 {
@@ -199,7 +204,8 @@ return _result;
      *
      * @return the call ID
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:27.209 -0500", hash_original_method = "6A3B61D31FB5345A87B021271D682AE5", hash_generated_method = "25AAE56B4BD6FA75D674C873F311292F")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:27.209 -0500", hash_original_method = "6A3B61D31FB5345A87B021271D682AE5", hash_generated_method = "25AAE56B4BD6FA75D674C873F311292F")
             
 public java.lang.String getCallId() throws android.os.RemoteException
 {
@@ -449,7 +455,8 @@ public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:27.178 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:27.178 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
         
 public android.os.IBinder asBinder()
 {

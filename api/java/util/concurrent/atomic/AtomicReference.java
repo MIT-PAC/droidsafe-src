@@ -44,6 +44,7 @@ public AtomicReference() {
      *
      * @return the current value
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.205 -0500", hash_original_method = "479D74F52EAA9F8F31AB11658696490B", hash_generated_method = "48DC9DDD5B35A417180739369A87118B")
     
 public final V get() {
@@ -112,6 +113,7 @@ public final boolean weakCompareAndSet(V expect, V update) {
      * @param newValue the new value
      * @return the previous value
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.217 -0500", hash_original_method = "FD7BCDEFF552AB71FCB964A4983AD19B", hash_generated_method = "DEF91DF473EB9A1AA2087DFAFB68BC02")
     
 public final V getAndSet(V newValue) {

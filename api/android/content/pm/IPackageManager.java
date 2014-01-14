@@ -56,7 +56,8 @@ public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:46.955 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:46.955 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
             
 public java.lang.String getInterfaceDescriptor()
 {
@@ -108,7 +109,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:46.963 -0500", hash_original_method = "32EA0EAE836CC9529DE9DA450AA96C63", hash_generated_method = "A3EEAAABDDC14E64E3F6EED078D0B53A")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:46.963 -0500", hash_original_method = "32EA0EAE836CC9529DE9DA450AA96C63", hash_generated_method = "A3EEAAABDDC14E64E3F6EED078D0B53A")
             
 public int[] getPackageGids(java.lang.String packageName) throws android.os.RemoteException
 {
@@ -128,7 +130,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:46.966 -0500", hash_original_method = "01CC4D9AC63BA9A36B2EC1E5D0B4F6F3", hash_generated_method = "B09A1E2A1DA97135DA580B8793166412")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:46.966 -0500", hash_original_method = "01CC4D9AC63BA9A36B2EC1E5D0B4F6F3", hash_generated_method = "B09A1E2A1DA97135DA580B8793166412")
             
 public java.lang.String[] currentToCanonicalPackageNames(java.lang.String[] names) throws android.os.RemoteException
 {
@@ -148,7 +151,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:46.969 -0500", hash_original_method = "CED6A60F1084551B003E4E7993339C1A", hash_generated_method = "37969836495383F19DDCBDB25323965E")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:46.969 -0500", hash_original_method = "CED6A60F1084551B003E4E7993339C1A", hash_generated_method = "37969836495383F19DDCBDB25323965E")
             
 public java.lang.String[] canonicalToCurrentPackageNames(java.lang.String[] names) throws android.os.RemoteException
 {
@@ -168,7 +172,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:46.972 -0500", hash_original_method = "BF1E1CE03EF7F51C5BFCD403B774F17E", hash_generated_method = "EB7C6259E6AD8BCFDF523BEF7243A8A4")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:46.972 -0500", hash_original_method = "BF1E1CE03EF7F51C5BFCD403B774F17E", hash_generated_method = "EB7C6259E6AD8BCFDF523BEF7243A8A4")
             
 public android.content.pm.PermissionInfo getPermissionInfo(java.lang.String name, int flags) throws android.os.RemoteException
 {
@@ -194,7 +199,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:46.975 -0500", hash_original_method = "8CD21A48D4C2CFE43EBEF9B72BE15C21", hash_generated_method = "F50250F823CE3BB7CD04F03F2442C6FE")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:46.975 -0500", hash_original_method = "8CD21A48D4C2CFE43EBEF9B72BE15C21", hash_generated_method = "F50250F823CE3BB7CD04F03F2442C6FE")
             
 public java.util.List<android.content.pm.PermissionInfo> queryPermissionsByGroup(java.lang.String group, int flags) throws android.os.RemoteException
 {
@@ -215,7 +221,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:46.978 -0500", hash_original_method = "02E19EE3F6BDCD36E8AD077D742AC94F", hash_generated_method = "D577F8BDD457F1A050FFDF121C8439C3")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:46.978 -0500", hash_original_method = "02E19EE3F6BDCD36E8AD077D742AC94F", hash_generated_method = "D577F8BDD457F1A050FFDF121C8439C3")
             
 public android.content.pm.PermissionGroupInfo getPermissionGroupInfo(java.lang.String name, int flags) throws android.os.RemoteException
 {
@@ -241,7 +248,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:46.980 -0500", hash_original_method = "289B61F0B5F75BD2418D76EB8FAAD5EA", hash_generated_method = "BD04A003627E2032E3478EA0E7825DF1")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:46.980 -0500", hash_original_method = "289B61F0B5F75BD2418D76EB8FAAD5EA", hash_generated_method = "BD04A003627E2032E3478EA0E7825DF1")
             
 public java.util.List<android.content.pm.PermissionGroupInfo> getAllPermissionGroups(int flags) throws android.os.RemoteException
 {
@@ -568,7 +576,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:47.017 -0500", hash_original_method = "CFE5B6F4BC77F0B77FBFE4A88CEFF6AF", hash_generated_method = "3D24C9017EBA11245D64B02F57A875DD")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:47.017 -0500", hash_original_method = "CFE5B6F4BC77F0B77FBFE4A88CEFF6AF", hash_generated_method = "3D24C9017EBA11245D64B02F57A875DD")
             
 public java.lang.String[] getPackagesForUid(int uid) throws android.os.RemoteException
 {
@@ -588,7 +597,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:47.020 -0500", hash_original_method = "7BBB4D10C6E1668851AC4AE8EDFD652D", hash_generated_method = "CBB9446E6A219AF37C415B57119126B7")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:47.020 -0500", hash_original_method = "7BBB4D10C6E1668851AC4AE8EDFD652D", hash_generated_method = "CBB9446E6A219AF37C415B57119126B7")
             
 public java.lang.String getNameForUid(int uid) throws android.os.RemoteException
 {
@@ -608,7 +618,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:47.022 -0500", hash_original_method = "418A71B1B6331B4B823E10ADD8E0B000", hash_generated_method = "EAE211457A803B941F5F02BF37B2A988")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:47.022 -0500", hash_original_method = "418A71B1B6331B4B823E10ADD8E0B000", hash_generated_method = "EAE211457A803B941F5F02BF37B2A988")
             
 public int getUidForSharedUser(java.lang.String sharedUserName) throws android.os.RemoteException
 {
@@ -885,7 +896,8 @@ return _result;
      * @return A List&lt;applicationInfo> containing one entry for each persistent
      *         application.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:47.049 -0500", hash_original_method = "BD0A36BB5D985A95391979251ED30BD6", hash_generated_method = "EE18A9EEB75C0B19349F9AB7B441E8D8")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:47.049 -0500", hash_original_method = "BD0A36BB5D985A95391979251ED30BD6", hash_generated_method = "EE18A9EEB75C0B19349F9AB7B441E8D8")
             
 public java.util.List<android.content.pm.ApplicationInfo> getPersistentApplications(int flags) throws android.os.RemoteException
 {
@@ -959,7 +971,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:47.058 -0500", hash_original_method = "18CDE71419F1859750C078A99EFB168A", hash_generated_method = "36DBB73A393D0C95DCC955620CC0A575")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:47.058 -0500", hash_original_method = "18CDE71419F1859750C078A99EFB168A", hash_generated_method = "36DBB73A393D0C95DCC955620CC0A575")
             
 public java.util.List<android.content.pm.ProviderInfo> queryContentProviders(java.lang.String processName, int uid, int flags) throws android.os.RemoteException
 {
@@ -981,7 +994,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:47.061 -0500", hash_original_method = "435C3E9EAA9F4037EA5A0FB1AB0B62BB", hash_generated_method = "C8EFEB15061A429E317FAF1F8937CE57")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:47.061 -0500", hash_original_method = "435C3E9EAA9F4037EA5A0FB1AB0B62BB", hash_generated_method = "C8EFEB15061A429E317FAF1F8937CE57")
             
 public android.content.pm.InstrumentationInfo getInstrumentationInfo(android.content.ComponentName className, int flags) throws android.os.RemoteException
 {
@@ -1013,7 +1027,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:47.064 -0500", hash_original_method = "18F0317F4E0227DC2040EB6B4E407E43", hash_generated_method = "59EFE93DB454364649C4A5717D65F8D8")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:47.064 -0500", hash_original_method = "18F0317F4E0227DC2040EB6B4E407E43", hash_generated_method = "59EFE93DB454364649C4A5717D65F8D8")
             
 public java.util.List<android.content.pm.InstrumentationInfo> queryInstrumentation(java.lang.String targetPackage, int flags) throws android.os.RemoteException
 {
@@ -1135,7 +1150,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:47.082 -0500", hash_original_method = "9D4541403ADDA28864E30BA877492DD1", hash_generated_method = "620E563F6D935A8D4EB9C375388AF89D")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:47.082 -0500", hash_original_method = "9D4541403ADDA28864E30BA877492DD1", hash_generated_method = "620E563F6D935A8D4EB9C375388AF89D")
             
 public java.lang.String getInstallerPackageName(java.lang.String packageName) throws android.os.RemoteException
 {
@@ -1191,7 +1207,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:47.090 -0500", hash_original_method = "6D27A98BBB76D9E905538887D353A68A", hash_generated_method = "F735300BBCDDB64D74A2B3C875A5D497")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:47.090 -0500", hash_original_method = "6D27A98BBB76D9E905538887D353A68A", hash_generated_method = "F735300BBCDDB64D74A2B3C875A5D497")
             
 public java.util.List<android.content.pm.PackageInfo> getPreferredPackages(int flags) throws android.os.RemoteException
 {
@@ -1603,7 +1620,8 @@ _data.recycle();
      * Get a list of shared libraries that are available on the
      * system.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:47.131 -0500", hash_original_method = "73E1EE5C733FEE38A2D75272B8615722", hash_generated_method = "0634E0A965FF386191C245651009E894")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:47.131 -0500", hash_original_method = "73E1EE5C733FEE38A2D75272B8615722", hash_generated_method = "0634E0A965FF386191C245651009E894")
             
 public java.lang.String[] getSystemSharedLibraryNames() throws android.os.RemoteException
 {
@@ -1626,7 +1644,8 @@ return _result;
      * Get a list of features that are available on the
      * system.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:47.134 -0500", hash_original_method = "CC1D6B70DA8A274BF7A850F075A9E1BF", hash_generated_method = "15828D2BF84F6C605AB87BE463705C98")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:47.134 -0500", hash_original_method = "CC1D6B70DA8A274BF7A850F075A9E1BF", hash_generated_method = "15828D2BF84F6C605AB87BE463705C98")
             
 public android.content.pm.FeatureInfo[] getSystemAvailableFeatures() throws android.os.RemoteException
 {
@@ -1893,7 +1912,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:47.169 -0500", hash_original_method = "9F41FCAE0608706A8A890BEF27E46DCA", hash_generated_method = "86F6A6F70C58DBBF608542D238705360")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:47.169 -0500", hash_original_method = "9F41FCAE0608706A8A890BEF27E46DCA", hash_generated_method = "86F6A6F70C58DBBF608542D238705360")
             
 public int getInstallLocation() throws android.os.RemoteException
 {
@@ -2017,7 +2037,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:47.184 -0500", hash_original_method = "8283D4C75DD271EA4933EA3DBD9A7AE6", hash_generated_method = "6C8BA98C4CFF24A00D534205BEC7E7E7")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:47.184 -0500", hash_original_method = "8283D4C75DD271EA4933EA3DBD9A7AE6", hash_generated_method = "6C8BA98C4CFF24A00D534205BEC7E7E7")
             
 public android.content.pm.VerifierDeviceIdentity getVerifierDeviceIdentity() throws android.os.RemoteException
 {
@@ -2302,7 +2323,8 @@ public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:46.924 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:46.924 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
         
 public android.os.IBinder asBinder()
 {

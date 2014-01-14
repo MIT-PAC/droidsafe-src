@@ -79,54 +79,71 @@ public void ftruncate(FileDescriptor fd, long length) throws ErrnoException { os
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:28.397 -0500", hash_original_method = "4EDF3DB0839BDB5BB59D5BDCF6ED266B", hash_generated_method = "686F11EE60C5B7116BD54D9C34E1615E")
     
 public String gai_strerror(int error) { return os.gai_strerror(error); }
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:28.400 -0500", hash_original_method = "D134969B79309E2FFE6734562680F40F", hash_generated_method = "5B6FF426293EB9AD233C01B50B0152E5")
     
 public InetAddress[] getaddrinfo(String node, StructAddrinfo hints) throws GaiException { return os.getaddrinfo(node, hints); }
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:28.402 -0500", hash_original_method = "DA32E4A67BBB878517DC4C1F6AD2DE47", hash_generated_method = "B3798FC3BE783773F5A6E336FE8A0AC7")
     
 public int getegid() { return os.getegid(); }
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:28.404 -0500", hash_original_method = "FAD72A6DE2CC7E2DB1B9B6FC41642D5B", hash_generated_method = "3C80A309D1E87A326960E15F84BB68E1")
     
 public int geteuid() { return os.geteuid(); }
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:28.406 -0500", hash_original_method = "FADA5B6063E47C208AC2D0843F6EB847", hash_generated_method = "084475CB157E31F03D22E348B4446B9A")
     
 public int getgid() { return os.getgid(); }
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:28.408 -0500", hash_original_method = "E4B66B682B354EFDCC2A2307B9973162", hash_generated_method = "6E01A6F3C1BE73C1AE0AB39A6C085987")
     
 public String getenv(String name) { return os.getenv(name); }
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:28.411 -0500", hash_original_method = "95C6CCF446FE941364E9F3FC808640B5", hash_generated_method = "9FFF9217E91A309C45EB47FA3B6C5CBA")
     
 public String getnameinfo(InetAddress address, int flags) throws GaiException { return os.getnameinfo(address, flags); }
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:28.413 -0500", hash_original_method = "A3B371C9A268817901795576D0A04CF6", hash_generated_method = "E964E9B223F73D82BA6D6516ED51459C")
     
 public int getpid() { return os.getpid(); }
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:28.416 -0500", hash_original_method = "878D1FDE3DC9E3A460294EB2A78F5342", hash_generated_method = "2177D82BECBEBCDA8C75685C8B0FE414")
     
 public int getppid() { return os.getppid(); }
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:28.418 -0500", hash_original_method = "A3C50DDCB01897A6F2E46FE623EA65A2", hash_generated_method = "3AB586BA4305E0292F99FED321F07F93")
     
 public StructPasswd getpwnam(String name) throws ErrnoException { return os.getpwnam(name); }
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:28.420 -0500", hash_original_method = "F069BDB68A1BE69C49E58A44BE7A4944", hash_generated_method = "A7477AD25146288C4A39EF4C24A558A1")
     
 public StructPasswd getpwuid(int uid) throws ErrnoException { return os.getpwuid(uid); }
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:28.422 -0500", hash_original_method = "C71AB83C8CB24831B3B392DF1EFA2A55", hash_generated_method = "58F1A7A63E061F679A9EC3B1266068B5")
     
 public SocketAddress getsockname(FileDescriptor fd) throws ErrnoException { return os.getsockname(fd); }
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:28.424 -0500", hash_original_method = "E5D66E4A2B17F99E78F6B2E97C4D0018", hash_generated_method = "DEF6605C6797272AFA10F6CC601C2257")
     
 public int getsockoptByte(FileDescriptor fd, int level, int option) throws ErrnoException { return os.getsockoptByte(fd, level, option); }
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:28.426 -0500", hash_original_method = "0CBF6F7E2BE2FF171C45C7BCFC831012", hash_generated_method = "15AAC2950D4F4E03D3495C5CA0352C81")
     
 public InetAddress getsockoptInAddr(FileDescriptor fd, int level, int option) throws ErrnoException { return os.getsockoptInAddr(fd, level, option); }
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:28.428 -0500", hash_original_method = "946A87B9C2E87F4C961C36C4569A31BA", hash_generated_method = "8CF4C710880DEFBB57634CE6C182B591")
     
 public int getsockoptInt(FileDescriptor fd, int level, int option) throws ErrnoException { return os.getsockoptInt(fd, level, option); }
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:28.431 -0500", hash_original_method = "EBD2988D937DD58B5AD9697AEE85A0FB", hash_generated_method = "7E8BD4BB82FA74E82E30C97590B69AD6")
     
 public StructLinger getsockoptLinger(FileDescriptor fd, int level, int option) throws ErrnoException { return os.getsockoptLinger(fd, level, option); }
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:28.434 -0500", hash_original_method = "1C478D9E653EA1E4A0CA2442FA9E2156", hash_generated_method = "31E1AE1A036AD29693BF62D40C20EF69")
     
 public StructTimeval getsockoptTimeval(FileDescriptor fd, int level, int option) throws ErrnoException { return os.getsockoptTimeval(fd, level, option); }
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:28.437 -0500", hash_original_method = "2F11239B76600858937301E80656F86F", hash_generated_method = "71B4CCB4CEA37B2A191E88F16A87EC5D")
     
 public int getuid() { return os.getuid(); }
@@ -136,6 +153,7 @@ public String if_indextoname(int index) { return os.if_indextoname(index); }
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:28.441 -0500", hash_original_method = "244F6B5FD78AC80358A10468727F943C", hash_generated_method = "F016486049D5EF3ECCBA746DA1BFAE2A")
     
 public InetAddress inet_pton(int family, String address) { return os.inet_pton(family, address); }
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:28.443 -0500", hash_original_method = "81C548F366545C14DF26B9A5D253BEA5", hash_generated_method = "6051ECB7D67CF73EF2727886689C4F9C")
     
 public InetAddress ioctlInetAddress(FileDescriptor fd, int cmd, String interfaceName) throws ErrnoException { return os.ioctlInetAddress(fd, cmd, interfaceName); }

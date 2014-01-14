@@ -49,6 +49,7 @@ public class Transformation {
      * @return {@link #TYPE_ALPHA}, {@link #TYPE_MATRIX},
      *         {@link #TYPE_BOTH} or {@link #TYPE_IDENTITY}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:56.917 -0500", hash_original_method = "8DFDD7EF6072FC95D95C5176557C9475", hash_generated_method = "E83AF2E7467626B14B9AB2FDD1E3526F")
     
 public int getTransformationType() {
@@ -98,6 +99,7 @@ public void compose(Transformation t) {
      * @return The 3x3 Matrix representing the trnasformation to apply to the
      * coordinates of the object being animated
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:56.926 -0500", hash_original_method = "2E54F4327BDE93D0CE557FC100DEED67", hash_generated_method = "AC792DF5DA6D0C3559608A10F5A9B778")
     
 public Matrix getMatrix() {
@@ -117,6 +119,7 @@ public void setAlpha(float alpha) {
     /**
      * @return The degree of transparency
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:56.931 -0500", hash_original_method = "84CA63CC358414A9CD87B6516C604402", hash_generated_method = "BB0D60558DFDFA2BC395B22614DE6493")
     
 public float getAlpha() {

@@ -58,6 +58,7 @@ public void setAccessType(String accessTypeVal) {
     /**
      * @return String access type
      */
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:57.626 -0500", hash_original_method = "7B5E071ADED3A6B6E006FB21C0442CF7", hash_generated_method = "E2F83D396E3BFE6CFC04987A88BFC11D")
     
 public String getAccessType() {
@@ -88,6 +89,7 @@ public void setCGI3GPP(String cgi) throws ParseException {
      *
      * @return String CGI value
      */
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:57.633 -0500", hash_original_method = "DB7CBC31CF308121D9BAFEDB35CD4092", hash_generated_method = "A45E79A5DE4A5A8ADB82FF6DC04F08AD")
     
 public String getCGI3GPP() {
@@ -119,6 +121,7 @@ public void setUtranCellID3GPP(String utranCellID) throws ParseException {
      *
      * @return String UTRAN Cell ID value
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:57.639 -0500", hash_original_method = "0ADE7B7C3AF1E996E987AFD2A2268F3F", hash_generated_method = "560268C317D31311D398DE827FA21A6B")
     
 public String getUtranCellID3GPP() {
@@ -149,6 +152,7 @@ public void setDSLLocation(String dslLocation) throws ParseException {
      *
      * @return String DSL location value
      */
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:57.646 -0500", hash_original_method = "4D20CBE53C80D56010466434BFFF6884", hash_generated_method = "8AFE48D88FA34430BDED0B8C0DAB3FF5")
     
 public String getDSLLocation() {
@@ -177,6 +181,7 @@ public void setCI3GPP2(String ci3Gpp2) throws ParseException {
      *
      * @return String CI 3GPP2 value
      */
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:57.653 -0500", hash_original_method = "18AE63A32B787BFBE4E7AAC618BF3721", hash_generated_method = "3A19AE7BF16B224E9EBE1D5E5B558A55")
     
 public String getCI3GPP2() {
@@ -239,6 +244,7 @@ public void setExtensionAccessInfo(Object extendAccessInfo)
 
     }
 
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:57.664 -0500", hash_original_method = "1DDCE9F900020BBCC56ECC227A2A793D", hash_generated_method = "83AEFCD17FF33A85ECF496C6E47988A6")
     
 public Object getExtensionAccessInfo() {

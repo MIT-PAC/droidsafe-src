@@ -41,6 +41,7 @@ public void clear() {
      * about 'hostname'. Returns a String suitable for use as an UnknownHostException detail
      * message if 'hostname' is known not to exist.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:13.904 -0500", hash_original_method = "C8196E240B99FD0E66DB7F26CD4EF8D1", hash_generated_method = "93E1795ECF5D8B0742F3159E34FC6CC8")
     
 public Object get(String hostname) {

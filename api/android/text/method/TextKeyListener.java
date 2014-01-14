@@ -49,6 +49,7 @@ public static TextKeyListener getInstance(boolean autotext,
      * Returns a new or existing instance with no automatic capitalization
      * or correction.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:59.762 -0500", hash_original_method = "936D7D79BC1B2ACFC739513AECD7DAAE", hash_generated_method = "023E15A409E87AD8CED46DA23633F6B9")
     
 public static TextKeyListener getInstance() {
@@ -159,6 +160,7 @@ public TextKeyListener(Capitalize cap, boolean autotext) {
         mAutoText = autotext;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:59.768 -0500", hash_original_method = "77B762D33BA1CBC4DB995B196C907EDB", hash_generated_method = "514B58733981F5CADFDD316D670DD46D")
     
 public int getInputType() {
@@ -209,6 +211,7 @@ public static NullKeyListener getInstance() {
         {
             //Synthesized constructor
         }
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:59.799 -0500", hash_original_method = "579E66F4F4B0748C979BD80ED5F12401", hash_generated_method = "5D22ECBEF26F905AE3EDE3DE48227D32")
         
 public int getInputType() {
@@ -357,7 +360,8 @@ private void updatePrefs(ContentResolver resolver) {
                  (pw ? SHOW_PASSWORD : 0);
     }
 
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:59.841 -0500", hash_original_method = "27BF28A81EBEDB0A58E981BB8A0B8A16", hash_generated_method = "27BF28A81EBEDB0A58E981BB8A0B8A16")
+    /* package */ @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:59.841 -0500", hash_original_method = "27BF28A81EBEDB0A58E981BB8A0B8A16", hash_generated_method = "27BF28A81EBEDB0A58E981BB8A0B8A16")
     
 int getPrefs(Context context) {
         synchronized (this) {

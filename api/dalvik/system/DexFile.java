@@ -168,6 +168,7 @@ private DexFile(String sourceName, String outputName, int flags) throws IOExcept
      *
      * @return the file name
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:39.718 -0500", hash_original_method = "DFE26EB6CF2622DAE30C5BD1FDBCFEE9", hash_generated_method = "77F463454BDEE4385EB69987BB58F477")
     
 public String getName() {

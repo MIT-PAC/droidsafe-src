@@ -701,6 +701,7 @@ private ClonedAttributes(int parserPointer, int pointer, int length) {
             this.length = length;
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.323 -0500", hash_original_method = "81345E38E6C55A28DE606E0BCA6E5F93", hash_generated_method = "681017A548FEFA432FE739F64FA9E25D")
         
 @Override
@@ -708,6 +709,7 @@ private ClonedAttributes(int parserPointer, int pointer, int length) {
             return this.parserPointer;
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.325 -0500", hash_original_method = "8BF0A90E7356097362ADB7AB9898D2BC", hash_generated_method = "C6E9E158EB44C108284F5F33B4C4AA0F")
         
 @Override
@@ -715,6 +717,7 @@ private ClonedAttributes(int parserPointer, int pointer, int length) {
             return pointer;
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.328 -0500", hash_original_method = "A993727E7D5DC0CA2BB581135F7F678B", hash_generated_method = "10FC3BA0162E7D76668B0A5170B92D2D")
         
 @Override
@@ -744,24 +747,28 @@ private ClonedAttributes(int parserPointer, int pointer, int length) {
             //Synthesized constructor
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.335 -0500", hash_original_method = "C19BBE926A67132A1C6BC386100A3E69", hash_generated_method = "C2B64346C205A83C958059FEF62D1E97")
         
 public String getPublicId() {
             return publicId;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.337 -0500", hash_original_method = "8088708D8DEEE6054468B7FD77400E50", hash_generated_method = "6A03DC8D49FB90AC37FD320CD622E272")
         
 public String getSystemId() {
             return systemId;
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.340 -0500", hash_original_method = "9A9541F7496758CF9181B7D5DBEDC898", hash_generated_method = "7790210D08DC90491F85751219830EFB")
         
 public int getLineNumber() {
             return line();
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.343 -0500", hash_original_method = "4EEF522BB99544999D89F5949A6FB044", hash_generated_method = "9420ACC58BCBBC9CFF044EC9217F2F43")
         
 public int getColumnNumber() {
@@ -787,6 +794,7 @@ public int getColumnNumber() {
             //Synthesized constructor
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.350 -0500", hash_original_method = "A89638ADC5A1EBA87157983FC792900F", hash_generated_method = "F217EF76DE30015EAE3E935AEF47C123")
         
 @Override
@@ -794,6 +802,7 @@ public int getColumnNumber() {
             return pointer;
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.353 -0500", hash_original_method = "13948788E535A0F103A62D341F619BEF", hash_generated_method = "19A171051D6E81FFD2B0A6075AAD56E5")
         
 @Override
@@ -804,6 +813,7 @@ public int getColumnNumber() {
             return attributePointer;
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.355 -0500", hash_original_method = "27A61DE39F4EE665DACE4F17911F194F", hash_generated_method = "0EADB694A9EE889EDB586ABA927BD81E")
         
 @Override

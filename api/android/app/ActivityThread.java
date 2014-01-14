@@ -128,6 +128,7 @@ public static Application currentApplication() {
         return am != null ? am.mInitialApplication : null;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.904 -0500", hash_original_method = "7E3EB5C870116C74F7B4935A8BC43ADB", hash_generated_method = "27B1DCDC7C3AFDB4ACA86D0A0E179967")
     
 public static IPackageManager getPackageManager() {
@@ -160,6 +161,7 @@ static Configuration applyConfigCompat(Configuration config, CompatibilityInfo c
      * BroadcastReceiver on this thread, or null if none.
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:38.009 -0500", hash_original_method = "C612CA2769E27EDD7F2EF90666FE3AAF", hash_generated_method = "A4ECD6049017AA9A0EC6CBDFBC54F48B")
     
 public static Intent getIntentBeingBroadcast() {
@@ -524,12 +526,14 @@ Resources getTopLevelResources(String resDir, LoadedApk pkgInfo) {
         return getTopLevelResources(resDir, pkgInfo.mCompatibilityInfo.get());
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.920 -0500", hash_original_method = "F7A72EDCDC7800374FD6BBEAFCDB636B", hash_generated_method = "C44BA17ADD31F51332C6E8D0AD6960C9")
     
 final Handler getHandler() {
         return mH;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.923 -0500", hash_original_method = "FD6B2C09494E94CB4CF03F9000F967F2", hash_generated_method = "4081A83E22325FA3E792686D86F401C7")
     
 public final LoadedApk getPackageInfo(String packageName, CompatibilityInfo compatInfo,
@@ -574,6 +578,7 @@ public final LoadedApk getPackageInfo(String packageName, CompatibilityInfo comp
         return null;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.926 -0500", hash_original_method = "45FB4CD004B111E95D4C640E8F52184B", hash_generated_method = "ECA76357F40087124334EA76821AB59E")
     
 public final LoadedApk getPackageInfo(ApplicationInfo ai, CompatibilityInfo compatInfo,
@@ -599,6 +604,7 @@ public final LoadedApk getPackageInfo(ApplicationInfo ai, CompatibilityInfo comp
         return getPackageInfo(ai, compatInfo, null, securityViolation, includeCode);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.928 -0500", hash_original_method = "60B71579104EFF006D8A717508119428", hash_generated_method = "30D7A1DF7C4B62367B7FF8460196F60E")
     
 public final LoadedApk getPackageInfoNoCheck(ApplicationInfo ai,
@@ -662,6 +668,7 @@ public ApplicationThread getApplicationThread()
         return mAppThread;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.940 -0500", hash_original_method = "84F87CEBEDE5D31C88CD24E066F68A95", hash_generated_method = "952CE09D28EE4A9669353A5E94B20293")
     
 public Instrumentation getInstrumentation()
@@ -669,6 +676,7 @@ public Instrumentation getInstrumentation()
         return mInstrumentation;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.942 -0500", hash_original_method = "9032A5E826B7A6BB9A1848729A4BF06F", hash_generated_method = "F140C49CFA0AF22F2A2A6EE06C5B72E6")
     
 public Configuration getConfiguration() {
@@ -682,30 +690,35 @@ public boolean isProfiling() {
                 && mProfiler.profileFd == null;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.947 -0500", hash_original_method = "DE9E88BCF6C439479F5E5429ED790EB6", hash_generated_method = "91FB917F8BA3E683666A4D6986120126")
     
 public String getProfileFilePath() {
         return mProfiler.profileFile;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.949 -0500", hash_original_method = "6CA5860A95ACD9BB8C844ECC1E567192", hash_generated_method = "605540C7F38AD7A382EEE637D044DB4C")
     
 public Looper getLooper() {
         return mLooper;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.951 -0500", hash_original_method = "BED0801CDE1100B1F268B3031343DFA4", hash_generated_method = "5F3DC62E06F33D30E859631477CCF329")
     
 public Application getApplication() {
         return mInitialApplication;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.953 -0500", hash_original_method = "5878D065A1BC5C9B3897192B88F09BB5", hash_generated_method = "7E14195C0CDC5DF88FFB8B9574E90301")
     
 public String getProcessName() {
         return mBoundApplication.processName;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.955 -0500", hash_original_method = "67B7F6B98B8791421AA33911A41FCF20", hash_generated_method = "C264991D975B33EB14409F26AF27D130")
     
 public ContextImpl getSystemContext() {
@@ -851,6 +864,7 @@ public final Activity startActivityNow(Activity parent, String id,
         return performLaunchActivity(r, null);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.978 -0500", hash_original_method = "E4DB0C38EE0152F49C4586AFA6AD83D1", hash_generated_method = "0C96B85C3E3E03C5743EA5E30F7BC63C")
     
 public final Activity getActivity(IBinder token) {
@@ -5289,6 +5303,7 @@ public final void installSystemProviders(List<ProviderInfo> providers) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:38.216 -0500", hash_original_method = "A46DE63D351DE0CEA05BC700781E1C79", hash_generated_method = "5ADAD17E5B9A1E7BD4EA0E7A1320CA0F")
     
 public int getIntCoreSetting(String key, int defaultValue) {

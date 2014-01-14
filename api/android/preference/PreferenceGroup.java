@@ -90,6 +90,7 @@ public void addItemFromInflater(Preference preference) {
      * Returns the number of children {@link Preference}s.
      * @return The number of preference children in this group.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:25.983 -0500", hash_original_method = "389AB97985CD6F44D465D155E8399BE9", hash_generated_method = "E7DB08B274C9259DE3854E25D9D2A0CD")
     
 public int getPreferenceCount() {
@@ -102,6 +103,7 @@ public int getPreferenceCount() {
      * @param index The index of the {@link Preference} to retrieve.
      * @return The {@link Preference}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:25.985 -0500", hash_original_method = "109559B57B2B04AB981EEA935073C7C0", hash_generated_method = "996B696A80D0B5186DA171C96FE413E5")
     
 public Preference getPreference(int index) {

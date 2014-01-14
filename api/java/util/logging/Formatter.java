@@ -7,10 +7,6 @@ import droidsafe.annotations.*;
 import java.text.MessageFormat;
 import java.util.ResourceBundle;
 
-
-
-
-
 public abstract class Formatter {
 
     /**
@@ -88,6 +84,7 @@ public String formatMessage(LogRecord r) {
      * @return the head string used to wrap a set of log records, empty in this
      *         implementation.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.826 -0500", hash_original_method = "07107B089EAE5612AD155B7D9F923109", hash_generated_method = "101AC05BF274870B943BA199D7465EAE")
     
 public String getHead(Handler h) {
@@ -103,12 +100,12 @@ public String getHead(Handler h) {
      * @return the tail string used to wrap a set of log records, empty in this
      *         implementation.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.828 -0500", hash_original_method = "C189C1A511189A9AF799AA8C081148A1", hash_generated_method = "98F3E6FA5F9C1CD9F3A0ED244AD38C4E")
     
 public String getTail(Handler h) {
         return "";
     }
-
     
 }
 

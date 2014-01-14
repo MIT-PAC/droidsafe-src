@@ -5,14 +5,8 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public abstract class CountDownTimer {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.299 -0500", hash_original_field = "8557F663F2CA791045D2FF3466462D8B", hash_generated_field = "33207288B866F3DDE85211D1B4FA47BB")
-
-
 
     private static final int MSG = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.280 -0500", hash_original_field = "6DF1C9262208697CB00895711C8436E7", hash_generated_field = "55875BD3E9D866BEA2C437122061CD6E")
@@ -22,7 +16,6 @@ public abstract class CountDownTimer {
 
     private  long mCountdownInterval;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.285 -0500", hash_original_field = "BEE62FB3FBD7F45B8344325BC083E555", hash_generated_field = "6E03F58BFB699FC4A4C5B3CDD86B2F5D")
-
 
     private long mStopTimeInFuture;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:42.068 -0400", hash_original_field = "5ACB42150E6910CF60F8ACA03F3FCF2B", hash_generated_field = "42F1EE03623FE9A5876F5AA26D4DF01A")
@@ -52,9 +45,7 @@ public abstract class CountDownTimer {
             } 
             addTaint(msg.getTaint());
             
-            
         }
-
         
 };
 
@@ -84,6 +75,7 @@ public final void cancel() {
     /**
      * Start the countdown.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.293 -0500", hash_original_method = "9B88C24B384B8F4F3D5DCE994477E303", hash_generated_method = "CE7A286EC6CED7A9478DE9B4617AF590")
     
 public synchronized final CountDownTimer start() {
@@ -95,7 +87,6 @@ public synchronized final CountDownTimer start() {
         mHandler.sendMessage(mHandler.obtainMessage(MSG));
         return this;
     }
-
 
     /**
      * Callback fired on regular interval.

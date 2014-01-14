@@ -15,18 +15,11 @@ import java.util.ListIterator;
 import java.util.Map;
 import java.util.Set;
 
-
-
-
-
-
 public class AttributedString {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.095 -0500", hash_original_field = "9EF4B8A5DE4B8BD37EE465C3BB62CC6C", hash_generated_field = "9EF4B8A5DE4B8BD37EE465C3BB62CC6C")
 
-
     String text;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.097 -0500", hash_original_field = "EA3CF0028C57B0F0FB6C371B620465D1", hash_generated_field = "EA3CF0028C57B0F0FB6C371B620465D1")
-
 
     Map<AttributedCharacterIterator.Attribute, List<Range>> attributeMap;
 
@@ -392,6 +385,7 @@ public void addAttributes(
      *
      * @return the newly created {@code AttributedCharacterIterator}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.225 -0500", hash_original_method = "3C3A14639543169375B4E8491231683C", hash_generated_method = "70FF1D5C6DB97D8D9158233D5FA99D28")
     
 public AttributedCharacterIterator getIterator() {
@@ -438,7 +432,6 @@ public AttributedCharacterIterator getIterator(
             int end) {
         return new AttributedIterator(this, attributes, start, end);
     }
-
     
     static class Range {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.100 -0500", hash_original_field = "A420862623A673AB42FCEC90A616158F", hash_generated_field = "A420862623A673AB42FCEC90A616158F")
@@ -446,10 +439,8 @@ public AttributedCharacterIterator getIterator(
         int start;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.102 -0500", hash_original_field = "302E5A3147803830441A79AED31F4022", hash_generated_field = "302E5A3147803830441A79AED31F4022")
 
-
         int end;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.105 -0500", hash_original_field = "01495BEB834F5098BB0B06183674C819", hash_generated_field = "01495BEB834F5098BB0B06183674C819")
-
 
         Object value;
 
@@ -460,11 +451,8 @@ Range(int s, int e, Object v) {
             end = e;
             value = v;
         }
-
         
     }
-
-
     
     static class AttributedIterator implements AttributedCharacterIterator {
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:56.541 -0400", hash_original_field = "8D589AFA4DFAEEED85FFF5AA78E5FF6A", hash_generated_field = "D0C174A901D805EE41B6CF46156FC355")
@@ -478,10 +466,8 @@ Range(int s, int e, Object v) {
         private int offset;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.115 -0500", hash_original_field = "29952B3FB0A05E507FF36DA98D657172", hash_generated_field = "D02499DC7F8023F8CAFDC0A4B220FECC")
 
-
         private AttributedString attrString;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.117 -0500", hash_original_field = "02187A1DE7B3344886DF15C4DDE851BF", hash_generated_field = "8E1D222DFFE5F062ACF483541B60F0D5")
-
 
         private HashSet<Attribute> attributesAllowed;
 
@@ -564,6 +550,7 @@ public char first() {
          *
          * @return the index of the first character to iterate.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.134 -0500", hash_original_method = "1D4D2C19F23B97FE6ECF3D3284916FD4", hash_generated_method = "F7911960348415BFBAD397B847A674C7")
         
 public int getBeginIndex() {
@@ -575,6 +562,7 @@ public int getBeginIndex() {
          *
          * @return the index one past the last character to iterate.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.137 -0500", hash_original_method = "2693C2AA223CB37D0504CD257C6327BC", hash_generated_method = "ACC8D1B1439CA809AB08C45ABAB29DED")
         
 public int getEndIndex() {
@@ -586,6 +574,7 @@ public int getEndIndex() {
          *
          * @return the current index.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.139 -0500", hash_original_method = "0952456464DB8DF9DBB7507E3C2ED53C", hash_generated_method = "78C6B22E21CF81415ABD0C7B74926529")
         
 public int getIndex() {
@@ -625,6 +614,7 @@ private boolean inRange(List<Range> ranges) {
          *
          * @return a set of attribute keys that may be empty.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.148 -0500", hash_original_method = "1F90FC3406D3E88B418E6F5A05B249D4", hash_generated_method = "19BDE914DC09300083E2188F1CB3A53B")
         
 public Set<AttributedIterator.Attribute> getAllAttributeKeys() {
@@ -679,6 +669,7 @@ public Object getAttribute(
             return currentValue(ranges);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.157 -0500", hash_original_method = "AAAFE2E009783E25A93A8B590538D893", hash_generated_method = "B7CA3841E6FE08E8D490A5AF31260DAA")
         
 public Map<Attribute, Object> getAttributes() {
@@ -699,6 +690,7 @@ public Map<Attribute, Object> getAttributes() {
             return result;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.159 -0500", hash_original_method = "B67CDF67136100A9ADF2991D47BD9A14", hash_generated_method = "1143D87374631893A073C09129971673")
         
 public int getRunLimit() {
@@ -755,6 +747,7 @@ public int getRunLimit(Set<? extends Attribute> attributes) {
             return limit;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:03.169 -0500", hash_original_method = "FE3F08CD8D40BCC02EAAB9CF9D349F73", hash_generated_method = "8E2B58FDAD2633BA3E10448891A05BE2")
         
 public int getRunStart() {
@@ -852,11 +845,8 @@ public char setIndex(int location) {
             }
             return attrString.text.charAt(offset);
         }
-
         
     }
-
-
     
 }
 

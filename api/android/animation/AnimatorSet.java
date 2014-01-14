@@ -145,6 +145,7 @@ public void playSequentially(List<Animator> items) {
      *
      * @return ArrayList<Animator> The list of child animations of this AnimatorSet.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.665 -0500", hash_original_method = "BD23BC3E594C29615E84753B4F440C27", hash_generated_method = "2D4705973B2649AE7AAEC42728BA3D86")
     
 public ArrayList<Animator> getChildAnimations() {
@@ -339,6 +340,7 @@ public Builder play(Animator anim) {
      *
      * @return the number of milliseconds to delay running the animation
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.685 -0500", hash_original_method = "36807B48FC1321C96D3D559AECDD954B", hash_generated_method = "ADFAEA717F81E2F47389FF62E9B3E4EF")
     
 @Override
@@ -367,6 +369,7 @@ public Builder play(Animator anim) {
      * @return The length of the animation, in milliseconds, of each of the child
      * animations of this AnimatorSet.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.690 -0500", hash_original_method = "5E13B5E872677B59408FA3E6BB94A9F6", hash_generated_method = "D26D7CF613CC4D9C0140800DFCFE09CB")
     
 @Override

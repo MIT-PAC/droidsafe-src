@@ -175,6 +175,7 @@ private Searches() {}
         /**
          * @see android.provider.SyncStateContract.Helpers#get
          */
+        @DSSource({DSSourceKind.BROWSER_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:02.431 -0500", hash_original_method = "466578A19F0FCF2DD10FDB6DAFFC0887", hash_generated_method = "2968688090F0A89899005B639287D49D")
         
 public static byte[] get(ContentProviderClient provider, Account account)
@@ -185,6 +186,7 @@ public static byte[] get(ContentProviderClient provider, Account account)
         /**
          * @see android.provider.SyncStateContract.Helpers#get
          */
+        @DSSource({DSSourceKind.BROWSER_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:02.434 -0500", hash_original_method = "B9E8FB5AB055D4E1E45E9949F3C016CF", hash_generated_method = "6E822DD6634A9EBA8F5FA49F5EB38784")
         
 public static Pair<Uri, byte[]> getWithUri(ContentProviderClient provider, Account account)

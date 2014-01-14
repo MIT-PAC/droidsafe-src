@@ -91,6 +91,7 @@ public void setAssociatedURI(URI associatedURI) throws NullPointerException
      * <p>Get the address's URI</p>
      * @return URI set in the address of this header
      */
+    @DSSource({DSSourceKind.FILE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:58.860 -0500", hash_original_method = "D8B52B7CB92D047EA9436CA55D36407D", hash_generated_method = "A8DFFEEAB52A9C7E8B734E22C45C63EB")
     
 public URI getAssociatedURI() {

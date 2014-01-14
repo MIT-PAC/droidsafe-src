@@ -8,10 +8,6 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
 
-
-
-
-
 public class AnticipateInterpolator implements Interpolator {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:56.247 -0500", hash_original_field = "8768F20F89FEA365257D9CA7103B2BB5", hash_generated_field = "D99941F5581612BAF56000DD0A59C563")
 
@@ -46,13 +42,13 @@ public AnticipateInterpolator(Context context, AttributeSet attrs) {
         a.recycle();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:56.257 -0500", hash_original_method = "708C87963D95E01AE56D23D7408FFDE5", hash_generated_method = "AFF8D259EE2AC025B68E37A702DB5284")
     
 public float getInterpolation(float t) {
         // a(t) = t * t * ((tension + 1) * t - tension)
         return t * t * ((mTension + 1) * t - mTension);
     }
-
     
 }
 

@@ -73,6 +73,7 @@ protected StringBuffer encodeBody(StringBuffer buffer) {
     /** get the MediaRange field
      * @return MediaRange
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:52.342 -0500", hash_original_method = "95EC1B8E6B4FF94ADCA4E5294FD4A8E3", hash_generated_method = "0B6D6C1ABE19E2582C3C4BB50CA1EDFA")
     
 public MediaRange getMediaRange() {
@@ -82,6 +83,7 @@ public MediaRange getMediaRange() {
     /** get the contentType field
      * @return String
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:52.348 -0500", hash_original_method = "44E6E041E8AD4F7B067250B3E11E39C2", hash_generated_method = "5526F34FB55EE88D233E8D279417C8DB")
     
 public String getContentType() {
@@ -94,6 +96,7 @@ public String getContentType() {
     /** get the ContentSubType fiels
      * @return String
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:52.353 -0500", hash_original_method = "F0A4743083D481DF1A54A7DBA5F4C599", hash_generated_method = "78D502A69DEE34315F4EF09A8EFD8943")
     
 public String getContentSubType() {
@@ -107,6 +110,7 @@ public String getContentSubType() {
      * Get the q value.
      * @return float
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:52.358 -0500", hash_original_method = "2956E51B04B3FEA729EF44EFAC0B4B09", hash_generated_method = "A674CF04CE310C4A9C3031758821E0E9")
     
 public float getQValue() {

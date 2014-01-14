@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class UnsupportedCharsetException extends IllegalArgumentException {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.557 -0500", hash_original_field = "9843EE09562B3583D5D7BDAFF370AD63", hash_generated_field = "355A963C969FC3135246825E305C339D")
 
@@ -36,6 +32,7 @@ public UnsupportedCharsetException(String charsetName) {
      *
      * @return the encountered unsupported charset name.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.565 -0500", hash_original_method = "62D3F36CA78A6EC4185A2D1A05C169E6", hash_generated_method = "C3E3B8FCC038ED1DFB7C6F3AF5424FEA")
     
 public String getCharsetName() {

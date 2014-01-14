@@ -129,6 +129,7 @@ public static Uri addCall(CallerInfo ci, Context context, String number,
          * @return The last phone number dialed (outgoing) or an empty
          * string if none exist yet.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:55.871 -0500", hash_original_method = "1042605925515703D39AFE4A37293EE2", hash_generated_method = "5200EB6B67949FD50EC02D2AADD3B16C")
         
 public static String getLastOutgoingCall(Context context) {

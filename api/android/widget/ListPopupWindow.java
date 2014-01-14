@@ -233,6 +233,7 @@ public void setPromptPosition(int position) {
      * @see #POSITION_PROMPT_ABOVE
      * @see #POSITION_PROMPT_BELOW
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.012 -0500", hash_original_method = "DF9D97B46096A1E4CCF9033CE8B43A47", hash_generated_method = "ED70513AB0BFFA1311B014B32D36D7DC")
     
 public int getPromptPosition() {
@@ -331,6 +332,7 @@ public void setSoftInputMode(int mode) {
      * @see #setSoftInputMode(int)
      * @see android.view.WindowManager.LayoutParams#softInputMode
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.026 -0500", hash_original_method = "EF5235E70AE7C9521CFD0F4410B9073C", hash_generated_method = "34F28FB52B6DAFF7E76E087895AE72A9")
     
 public int getSoftInputMode() {
@@ -351,6 +353,7 @@ public void setListSelector(Drawable selector) {
     /**
      * @return The background drawable for the popup window.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.031 -0500", hash_original_method = "48A20BD7A1656DF8848E524613AD69C1", hash_generated_method = "8361F633C9EE2A209A5F0E8043587AC9")
     
 public Drawable getBackground() {
@@ -387,6 +390,7 @@ public void setAnimationStyle(int animationStyle) {
      * 
      * @return Animation style that will be used.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.037 -0500", hash_original_method = "A53F654A1BF514C432C9F43DB9ED5E7B", hash_generated_method = "1306DC89DF94081356E55A19EE8661CD")
     
 public int getAnimationStyle() {
@@ -398,6 +402,7 @@ public int getAnimationStyle() {
      * 
      * @return The popup's anchor view
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.040 -0500", hash_original_method = "875C75F19631B214BE64A011FD6A41E4", hash_generated_method = "018CCB43785B73150669A8D96162E023")
     
 public View getAnchorView() {
@@ -419,6 +424,7 @@ public void setAnchorView(View anchor) {
     /**
      * @return The horizontal offset of the popup from its anchor in pixels.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.044 -0500", hash_original_method = "2C5F7D64A15BDC64E0A7D1677E996184", hash_generated_method = "13EFA9158560F614588B8F5CF120A6A9")
     
 public int getHorizontalOffset() {
@@ -439,6 +445,7 @@ public void setHorizontalOffset(int offset) {
     /**
      * @return The vertical offset of the popup from its anchor in pixels.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.048 -0500", hash_original_method = "06BDE5646BE562A7D86252C676418C82", hash_generated_method = "DA7FAA8E025244FD39561BA6F341391F")
     
 public int getVerticalOffset() {
@@ -463,6 +470,7 @@ public void setVerticalOffset(int offset) {
     /**
      * @return The width of the popup window in pixels.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.052 -0500", hash_original_method = "6205F90E667ADE4444482E9AC195FB48", hash_generated_method = "52ADB8330CF1D99BDB9100B431908C2D")
     
 public int getWidth() {
@@ -503,6 +511,7 @@ public void setContentWidth(int width) {
     /**
      * @return The height of the popup window in pixels.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.059 -0500", hash_original_method = "2B0617362C23A2A1F29E0E83641579F9", hash_generated_method = "D37B95D83D167F9C4FBCCC7EF8DB8E0F")
     
 public int getHeight() {
@@ -725,6 +734,7 @@ public void setInputMethodMode(int mode) {
      * 
      * @see #setInputMethodMode(int)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.085 -0500", hash_original_method = "341CBB053B214C5E0FB1B54637325DA3", hash_generated_method = "E24A5236B5374EA3523D770364798036")
     
 public int getInputMethodMode() {
@@ -1013,6 +1023,7 @@ public void onScrollStateChanged(AbsListView view, int scrollState) {
     /**
      * @return The currently selected item or null if the popup is not showing.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.098 -0500", hash_original_method = "E481FD4B78A135BB1B6DC4E83167B196", hash_generated_method = "6A17B03FB9691569A1AE097B83BBAA4F")
     
 public Object getSelectedItem() {
@@ -1028,6 +1039,7 @@ public Object getSelectedItem() {
      * 
      * @see ListView#getSelectedItemPosition()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.101 -0500", hash_original_method = "055DCA84E8C7B3F34F7D7819C2CD5AC3", hash_generated_method = "8A3175CA69A3FA68DA6E161E8C3CEDF4")
     
 public int getSelectedItemPosition() {
@@ -1043,6 +1055,7 @@ public int getSelectedItemPosition() {
      * 
      * @see ListView#getSelectedItemId()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.103 -0500", hash_original_method = "4492784EC84C61BD8D41E43112FEBCD0", hash_generated_method = "D3EEC71A6116CC51874E3E01EAFBD952")
     
 public long getSelectedItemId() {
@@ -1058,6 +1071,7 @@ public long getSelectedItemId() {
      * 
      * @see ListView#getSelectedView()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.105 -0500", hash_original_method = "A94FEEC1ECDAC3555C21CB10FFC68C47", hash_generated_method = "892A145AB2B636C1047E11E5595197C0")
     
 public View getSelectedView() {
@@ -1071,6 +1085,7 @@ public View getSelectedView() {
      * @return The {@link ListView} displayed within the popup window.
      * Only valid when {@link #isShowing()} == {@code true}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.107 -0500", hash_original_method = "D21142DAF85C899FDAA3783E4BBEC12E", hash_generated_method = "7312C25846E6B9BBA3DB1F353BAB6BF7")
     
 public ListView getListView() {

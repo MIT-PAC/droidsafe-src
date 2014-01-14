@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class CatResponseMessage {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:05.378 -0500", hash_original_field = "05112D41676684E3E20082CD80AE4A57", hash_generated_field = "05112D41676684E3E20082CD80AE4A57")
 
@@ -65,12 +61,12 @@ public void setConfirmation(boolean confirm) {
             usersConfirm = confirm;
         }
 
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:05.414 -0500", hash_original_method = "09210AE6CE37D89E5644571273FE7BA3", hash_generated_method = "09210AE6CE37D89E5644571273FE7BA3")
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:05.414 -0500", hash_original_method = "09210AE6CE37D89E5644571273FE7BA3", hash_generated_method = "09210AE6CE37D89E5644571273FE7BA3")
     
 CommandDetails getCmdDetails() {
             return cmdDet;
         }
-
     
 }
 

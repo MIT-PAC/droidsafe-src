@@ -218,7 +218,6 @@ public static Element PROGRAM_STORE(RenderScript rs) {
         return rs.mElement_PROGRAM_STORE;
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:10.335 -0500", hash_original_method = "915CEB99F13762FDDB02D8453BFFDF26", hash_generated_method = "F6B48BCF68F8DE76276FEEFFCC829AC2")
     
 public static Element A_8(RenderScript rs) {
@@ -697,7 +696,6 @@ public static Element createPixel(RenderScript rs, DataType dt, DataKind dk) {
     int[] mOffsetInBytes;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:10.246 -0500", hash_original_field = "C0DAE69C302036895B5D54FD7E7F24F6", hash_generated_field = "C0DAE69C302036895B5D54FD7E7F24F6")
 
-
     DataType mType;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:10.248 -0500", hash_original_field = "8565922A5748730DA211092C23993311", hash_generated_field = "8565922A5748730DA211092C23993311")
 
@@ -779,6 +777,7 @@ public boolean isComplex() {
     * @hide
     * @return number of sub-elements in this element
     */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:10.275 -0500", hash_original_method = "D2C3182AD613A846205329B1E6C8F2DD", hash_generated_method = "DB56486F5355452E37DD4594905ABD8B")
     
 public int getSubElementCount() {
@@ -793,6 +792,7 @@ public int getSubElementCount() {
     * @param index index of the sub-element to return
     * @return sub-element in this element at given index
     */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:10.277 -0500", hash_original_method = "14503E907986F4FAF260BC78C8B9B60E", hash_generated_method = "5C96CD4D5EFD541E26ACF64F4D130D5A")
     
 public Element getSubElement(int index) {
@@ -810,6 +810,7 @@ public Element getSubElement(int index) {
     * @param index index of the sub-element
     * @return sub-element in this element at given index
     */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:10.280 -0500", hash_original_method = "E8F6A160EAF7D73719B978688CDD0426", hash_generated_method = "3E2F11EA663F68039EBA0AF10218249B")
     
 public String getSubElementName(int index) {
@@ -827,6 +828,7 @@ public String getSubElementName(int index) {
     * @param index index of the sub-element
     * @return array size of sub-element in this element at given index
     */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:10.282 -0500", hash_original_method = "19B70985107F13C23CD2C2D21B16BDB6", hash_generated_method = "58CEC8B8A0021BB58A119C0A6539BA41")
     
 public int getSubElementArraySize(int index) {
@@ -844,6 +846,7 @@ public int getSubElementArraySize(int index) {
     * @param index index of the sub-element
     * @return offset in bytes of sub-element in this element at given index
     */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:10.284 -0500", hash_original_method = "1AC48AE3A04EA0A2E41E968266E6585D", hash_generated_method = "1ABE7A909EA2AA9B6F771AB090296849")
     
 public int getSubElementOffsetBytes(int index) {
@@ -928,7 +931,6 @@ public boolean isCompatible(Element e) {
                 (mType == e.mType) &&
                 (mVectorSize == e.mVectorSize));
     }
-
     
     public enum DataType {
         FLOAT_32 (2, 4),
@@ -960,7 +962,6 @@ public boolean isCompatible(Element e) {
         RS_PROGRAM_STORE (1009, 4);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:10.257 -0500", hash_original_field = "0B53E374282B34FB268F3024A1E73BA5", hash_generated_field = "0B53E374282B34FB268F3024A1E73BA5")
 
-
         int mID;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:10.259 -0500", hash_original_field = "205262C28D2B190751535A4911B3B259", hash_generated_field = "205262C28D2B190751535A4911B3B259")
 
@@ -972,7 +973,6 @@ DataType(int id, int size) {
             mSize = size;
         }
     }
-
     
     public enum DataKind {
         USER (0),
@@ -984,7 +984,6 @@ DataType(int id, int size) {
         PIXEL_DEPTH (12);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:10.267 -0500", hash_original_field = "0B53E374282B34FB268F3024A1E73BA5", hash_generated_field = "0B53E374282B34FB268F3024A1E73BA5")
 
-
         int mID;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:10.269 -0500", hash_original_method = "5FF850D3ACAE392788630857D736F073", hash_generated_method = "5FF850D3ACAE392788630857D736F073")
             
@@ -992,7 +991,6 @@ DataKind(int id) {
             mID = id;
         }
     }
-
     
     public static class Builder {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:10.451 -0500", hash_original_field = "AD6E2452AD39DF3B497ED4B7E83C4E0C", hash_generated_field = "AD6E2452AD39DF3B497ED4B7E83C4E0C")
@@ -1093,11 +1091,8 @@ public Element create() {
             int id = mRS.nElementCreate2(ids, sin, asin);
             return new Element(id, mRS, ein, sin, asin);
         }
-
         
     }
-
-
     
 }
 

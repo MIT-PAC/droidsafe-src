@@ -37,6 +37,7 @@ public AlternativeName(boolean which, byte[] encoding) throws IOException {
     /**
      * Returns ASN.1 encoded form of this X.509 AlternativeName value.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:58.729 -0500", hash_original_method = "A70D2DB25ABF0E0F1A8BC79C0C161D91", hash_generated_method = "3C321A36632237FCFC346BED27B4846F")
     
 @Override public byte[] getEncoded() {

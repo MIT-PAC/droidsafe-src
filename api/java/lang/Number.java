@@ -5,13 +5,8 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public abstract class Number implements java.io.Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.880 -0500", hash_original_field = "8ED2AB1A1A8D8066F1DD92F6C2FA309A", hash_generated_field = "260B10B3E0C4A998D38D753F372E132A")
-
 
     private static final long serialVersionUID = -8742448824652078965L;
 
@@ -29,6 +24,7 @@ public Number() {
      *
      * @return the primitive byte value of this object.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.886 -0500", hash_original_method = "CE1931476457BE311793F2D350973D7B", hash_generated_method = "CB98D0F615F6DB83A9C991B104749D4A")
     
 public byte byteValue() {
@@ -79,6 +75,7 @@ public abstract long longValue();
      *
      * @return the primitive short value of this object.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.898 -0500", hash_original_method = "C1E7C69DF6DC74A923544E16C9C68CB8", hash_generated_method = "E060B506A3D8C38BFF0347DB2D1D55DB")
     
 public short shortValue() {

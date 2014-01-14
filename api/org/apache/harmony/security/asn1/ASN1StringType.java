@@ -42,6 +42,7 @@ public abstract class ASN1StringType extends ASN1Type {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.642 -0400", hash_original_field = "4C261A036B603BB0A966CDA0E25AA46C", hash_generated_field = "8325E7625E0332A172357D8E029897AE")
 
     public static final ASN1StringType UTF8STRING = new ASN1StringType(TAG_UTF8STRING) {
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:52.908 -0500", hash_original_method = "8F8B3D16DE176F56B0B78AD50FD6AF2B", hash_generated_method = "CAA4C189C585C3F94A2B1E85AD51AE97")
         
 @Override public Object getDecodedObject(BerInputStream in) throws IOException {
@@ -90,6 +91,7 @@ public Object decode(BerInputStream in) throws IOException {
     /**
      * Extracts String object from BER input stream.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:52.922 -0500", hash_original_method = "2F8FDB092DEF849FEC2EBC30268CC3AE", hash_generated_method = "498C7F4DEDB3DA422A8089786F26B7DF")
     
 public Object getDecodedObject(BerInputStream in) throws IOException {

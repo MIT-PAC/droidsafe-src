@@ -439,6 +439,7 @@ private void handleFormat(Format format, Object arg, int begin, List<FieldContai
      *
      * @return an array of {@code Format} instances.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.058 -0500", hash_original_method = "7EB79515AF02A4588C0D82DEFC2945FA", hash_generated_method = "7EFEE9D91FE14B594D203FA10FB1BCC1")
     
 public Format[] getFormats() {
@@ -452,6 +453,7 @@ public Format[] getFormats() {
      *
      * @return an array of formats, ordered by argument index.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.061 -0500", hash_original_method = "6305A24530517BEB5A0FB94704F4E840", hash_generated_method = "7256C96823D4554EB8A201ECE2978ADC")
     
 public Format[] getFormatsByArgumentIndex() {
@@ -507,6 +509,7 @@ public void setFormatsByArgumentIndex(Format[] formats) {
      *
      * @return the locale used to create formats.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.080 -0500", hash_original_method = "4C873AD5A0D4D89DBA836C1C6CEC9B8D", hash_generated_method = "424B5570E26DE121275BC9C58AD53C4D")
     
 public Locale getLocale() {

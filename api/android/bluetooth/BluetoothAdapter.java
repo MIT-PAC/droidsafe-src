@@ -37,6 +37,7 @@ public final class BluetoothAdapter {
      * @return the default local adapter, or null if Bluetooth is not supported
      *         on this hardware platform
      */
+    @DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:35.735 -0500", hash_original_method = "0EA032C93B9BB6C4C1D29146E96BABA8", hash_generated_method = "2A85D30D637B72EC36DE7AF12AA14DD7")
     
 public static synchronized BluetoothAdapter getDefaultAdapter() {
@@ -336,6 +337,7 @@ public BluetoothAdapter(IBluetooth service) {
      * @param address valid Bluetooth MAC address
      * @throws IllegalArgumentException if address is invalid
      */
+    @DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:35.740 -0500", hash_original_method = "BAA9CF7F2ACFCBAB9569C2DACFA96981", hash_generated_method = "1F9B813339B83D60C44F63FEA48A9FA1")
     
 public BluetoothDevice getRemoteDevice(String address) {
@@ -370,6 +372,7 @@ public boolean isEnabled() {
      *
      * @return current state of Bluetooth adapter
      */
+    @DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:35.745 -0500", hash_original_method = "FCF9C6106F07630DEF71CB873FCC3D8F", hash_generated_method = "2D88E30A9F2E10CEA5D3C897F991A4CB")
     
 public int getState() {
@@ -455,6 +458,7 @@ public boolean disable() {
      *
      * @return Bluetooth hardware address as string
      */
+    @DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:35.752 -0500", hash_original_method = "45FE79E8525553C566F03D519E5189F4", hash_generated_method = "626CD83604485177DC397D8A0A5F6A77")
     
 public String getAddress() {
@@ -471,6 +475,7 @@ public String getAddress() {
      *
      * @return the Bluetooth name, or null on error
      */
+    @DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:35.754 -0500", hash_original_method = "AA5C06C383156A346DC521053F89AB2B", hash_generated_method = "0D10205F1F5B2392B89D40CFF8F1A6B3")
     
 public String getName() {
@@ -488,6 +493,7 @@ public String getName() {
      * @return the UUIDs supported by the local Bluetooth Adapter.
      * @hide
      */
+    @DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:35.757 -0500", hash_original_method = "1404BBF93844A5B6047C7A268CEA1843", hash_generated_method = "ABCBF1EDB912A18A3423CC825D16A3FE")
     
 public ParcelUuid[] getUuids() {
@@ -539,6 +545,7 @@ public boolean setName(String name) {
      *
      * @return scan mode
      */
+    @DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:35.761 -0500", hash_original_method = "76CF52E29182798DA67FD15A9B155F30", hash_generated_method = "6BAD701C64E12D890B0CCFBF2CD1BC86")
     
 public int getScanMode() {
@@ -598,6 +605,7 @@ public boolean setScanMode(int mode) {
     }
 
     /** @hide */
+    @DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:35.768 -0500", hash_original_method = "9BECEF34E1AD2659C72AC1024F8DAE1C", hash_generated_method = "966E262C602EB7E00E678FFBDDAF49F1")
     
 public int getDiscoverableTimeout() {
@@ -726,6 +734,7 @@ public boolean isDiscovering() {
      *
      * @return unmodifiable set of {@link BluetoothDevice}, or null on error
      */
+    @DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:35.779 -0500", hash_original_method = "A20534464E90E0C8E439D633BB81432E", hash_generated_method = "8DFF70138B4700F7BF958EFE26D4B00D")
     
 public Set<BluetoothDevice> getBondedDevices() {
@@ -751,6 +760,7 @@ public Set<BluetoothDevice> getBondedDevices() {
      *
      * @hide
      */
+    @DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:35.782 -0500", hash_original_method = "456CF28BE83652F494DDCF30722C3BAD", hash_generated_method = "02C30F0CC577DAFC0D6C90F1C7112F7C")
     
 public int getConnectionState() {
@@ -776,6 +786,7 @@ public int getConnectionState() {
      * {@link BluetoothProfile#STATE_CONNECTED},
      * {@link BluetoothProfile#STATE_DISCONNECTING}
      */
+    @DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:35.785 -0500", hash_original_method = "0796F6753B11E4CA7CEE3403756A4526", hash_generated_method = "74F7080804FE0738DEFDF7779680E1A9")
     
 public int getProfileConnectionState(int profile) {
@@ -839,6 +850,7 @@ public BluetoothServerSocket listenUsingRfcommOn(int channel) throws IOException
      * @throws IOException on error, for example Bluetooth not available, or
      *                     insufficient permissions, or channel in use.
      */
+    @DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:35.810 -0500", hash_original_method = "89D65DC00BFA81C813C9155DE20CC833", hash_generated_method = "AA0B571615BD66A7221573AAB6D9A596")
     
 public BluetoothServerSocket listenUsingRfcommWithServiceRecord(String name, UUID uuid)
@@ -872,6 +884,7 @@ public BluetoothServerSocket listenUsingRfcommWithServiceRecord(String name, UUI
      * @throws IOException on error, for example Bluetooth not available, or
      *                     insufficient permissions, or channel in use.
      */
+    @DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:35.813 -0500", hash_original_method = "67A9DCDB5D1364F0197D124A8C117BDF", hash_generated_method = "90612B5446974B89F9A6D22C87E098DD")
     
 public BluetoothServerSocket listenUsingInsecureRfcommWithServiceRecord(String name, UUID uuid)
@@ -912,6 +925,7 @@ public BluetoothServerSocket listenUsingInsecureRfcommWithServiceRecord(String n
      *                     insufficient permissions, or channel in use.
      * @hide
      */
+    @DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:35.815 -0500", hash_original_method = "D75F65DB3EAF8C02EDFD121756834A36", hash_generated_method = "D613945F77AF014955830F1ADE0F04B3")
     
 public BluetoothServerSocket listenUsingEncryptedRfcommWithServiceRecord(

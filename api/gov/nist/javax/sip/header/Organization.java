@@ -8,11 +8,6 @@ import java.text.ParseException;
 
 import javax.sip.header.OrganizationHeader;
 
-
-
-
-
-
 public class Organization extends SIPHeader implements OrganizationHeader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:06.574 -0500", hash_original_field = "DD7DE6DAF2CCCB3596A2E5B031D9F680", hash_generated_field = "BF1069295545422BFA1A0647DDAC00E1")
 
@@ -44,6 +39,7 @@ public String encodeBody() {
      * Get the organization field.
      * @return String
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:06.587 -0500", hash_original_method = "9435FCCFD7C054307D934681F7070D26", hash_generated_method = "F2D3B499E982D449130D084429540356")
     
 public String getOrganization() {

@@ -58,6 +58,7 @@ public ServerHelloDone(HandshakeIODataStream in, int length)
      * Returns message type
      * @return
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.156 -0500", hash_original_method = "240B7202464892A2DF96B887945F5E1E", hash_generated_method = "A0E00FA3BA2BE0429305ED009F10FC4A")
     
 @Override

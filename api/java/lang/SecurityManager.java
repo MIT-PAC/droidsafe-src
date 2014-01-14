@@ -142,10 +142,12 @@ public void checkWrite(String file) { }
     /**
      * @deprecated Use {@link #checkPermission}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.860 -0500", hash_original_method = "866416E1EAC2C07A5E7D767D9B266DDC", hash_generated_method = "B47C617FC557D10AA2BC5A1A4A9B1341")
     
 @Deprecated public boolean getInCheck() { return inCheck; }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.862 -0500", hash_original_method = "A7EABFC12C747C29197C1D84213DA551", hash_generated_method = "022EBC092EEC0076ED14963000466946")
     
 protected Class[] getClassContext() { return null; }
@@ -153,6 +155,7 @@ protected Class[] getClassContext() { return null; }
     /**
      * @deprecated Use {@link #checkPermission}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.865 -0500", hash_original_method = "B5AF7ACC7C1515B2CC77D7C50B13C496", hash_generated_method = "2DB7B806D3298894313DA4F6C3111518")
     
 @Deprecated protected ClassLoader currentClassLoader() { return null; }
@@ -160,6 +163,7 @@ protected Class[] getClassContext() { return null; }
     /**
      * @deprecated Use {@link #checkPermission}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.867 -0500", hash_original_method = "2F5894A33E5089040E95C5A71AB1D464", hash_generated_method = "DA7FF1BA4007DAAF3D1B3828AC5DA350")
     
 @Deprecated protected int classLoaderDepth() {
@@ -169,6 +173,7 @@ protected Class[] getClassContext() { return null; }
     /**
      * @deprecated Use {@link #checkPermission}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.869 -0500", hash_original_method = "971A50644C25A1AA23F94C545B2EFE88", hash_generated_method = "613C6505EE676E070277BB2540CEC33F")
     
 @Deprecated protected Class<?> currentLoadedClass() { return null; }
@@ -197,12 +202,14 @@ protected Class[] getClassContext() { return null; }
     /**
      * Returns the current thread's thread group.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.879 -0500", hash_original_method = "036AF7AD226EFB7B513484DD9E6E1DD6", hash_generated_method = "A3B0CC4916D392EB38FD62EAC53EC8A5")
     
 public ThreadGroup getThreadGroup() {
         return Thread.currentThread().getThreadGroup();
     }
 
+    @DSSource({DSSourceKind.FILE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.881 -0500", hash_original_method = "9105FFA72B51771391C0727CF897942D", hash_generated_method = "2D0C20EEE67C4C727CDFAA93DDBC0406")
     
 public Object getSecurityContext() { return null; }

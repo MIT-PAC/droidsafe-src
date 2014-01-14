@@ -316,6 +316,7 @@ public void setUnselectedAlpha(float unselectedAlpha) {
         mInLayout = false;
     }
 
+    @DSSource({DSSourceKind.IMAGE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.667 -0500", hash_original_method = "44D3B1A6F440757321735895159CF3F5", hash_generated_method = "0BC0A54504E0107F1965D37EDEFEAF5D")
     
 @Override
@@ -368,6 +369,7 @@ void trackMotionScroll(int deltaX) {
         invalidate();
     }
 
+    @DSSource({DSSourceKind.IMAGE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.671 -0500", hash_original_method = "1E51C3862CE74D6B831F0305D11D86D1", hash_generated_method = "48A532ABC49B28429FF311906A9D4CBA")
     
 int getLimitedMotionScrollAmount(boolean motionToLeft, int deltaX) {
@@ -1512,6 +1514,7 @@ public void setGravity(int gravity)
         }
     }
 
+    @DSSource({DSSourceKind.IMAGE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.785 -0500", hash_original_method = "34F7E6D982F42148FE21035817D6C89A", hash_generated_method = "41F5743BA289E5E9B29F59B4FE53F3E8")
     
 @Override

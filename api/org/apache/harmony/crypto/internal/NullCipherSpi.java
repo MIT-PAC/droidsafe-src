@@ -55,6 +55,7 @@ public class NullCipherSpi extends CipherSpi {
         return inputLen;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:19.233 -0500", hash_original_method = "D58BACA19EEF36A04C3196887019A068", hash_generated_method = "BDB824DF00BD122FB17876D14A988FB5")
     
 @Override
@@ -95,6 +96,7 @@ public class NullCipherSpi extends CipherSpi {
         // Do nothing
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:19.246 -0500", hash_original_method = "09310CB0118160B29BD7A01C1B70DD45", hash_generated_method = "876B5C7D236A242654AFA7ACF557477B")
     
 @Override
@@ -137,6 +139,7 @@ public class NullCipherSpi extends CipherSpi {
         return result;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:19.254 -0500", hash_original_method = "BACBD39F75A04196004D2E06D99366CD", hash_generated_method = "1BDA81D1CD594544D674FD738AB71FF9")
     
 @Override
@@ -168,6 +171,7 @@ public class NullCipherSpi extends CipherSpi {
         return engineUpdate(input, output);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:19.262 -0500", hash_original_method = "39FE6C15BFF89C7EBC497DBB2542410E", hash_generated_method = "008ED380AABB6A09A57DAF2D0402DDAA")
     
 @Override

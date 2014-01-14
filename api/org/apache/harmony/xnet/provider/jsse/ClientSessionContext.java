@@ -9,18 +9,12 @@ import java.util.Map;
 
 import javax.net.ssl.SSLSession;
 
-
-
-
-
-
 public class ClientSessionContext extends AbstractSessionContext {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:14.895 -0500", hash_original_field = "8D4650520519101820222604BE50C58C", hash_generated_field = "6BBAB5CB7036A257BD0B8ECD839C9B02")
 
     final Map<HostAndPort, SSLSession> sessionsByHostAndPort
         = new HashMap<HostAndPort, SSLSession>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:14.897 -0500", hash_original_field = "68E3E9AE9EB24664C445AE1E81C958CE", hash_generated_field = "312837744C3EC509F2C946202771C82A")
-
 
     private SSLClientSessionCache persistentCache;
 
@@ -63,6 +57,7 @@ protected void sessionRemoved(SSLSession session) {
      * @param port of server
      * @return cached session or null if none found
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:14.909 -0500", hash_original_method = "B5A73604CB734A09BF7E857D2D91FD28", hash_generated_method = "4CDF88E1D034D8E1D3F30AD404190826")
     
 public SSLSession getSession(String host, int port) {
@@ -121,7 +116,6 @@ public SSLSession getSession(String host, int port) {
             }
         }
     }
-
     
     static class HostAndPort {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:14.915 -0500", hash_original_field = "3EBF9FC23C14AE1E55EAA4D77C46C987", hash_generated_field = "3EBF9FC23C14AE1E55EAA4D77C46C987")
@@ -153,11 +147,8 @@ HostAndPort(String host, int port) {
             HostAndPort lhs = (HostAndPort) o;
             return host.equals(lhs.host) && port == lhs.port;
         }
-
         
     }
-
-
     
 }
 

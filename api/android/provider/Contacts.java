@@ -31,6 +31,7 @@ public class Contacts {
         /**
          * @deprecated see {@link android.provider.ContactsContract}
          */
+        @DSSource({DSSourceKind.CONTACT_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:59.529 -0500", hash_original_method = "5973496923CC631047F98EE9B88FBD33", hash_generated_method = "7AF81ABDD0AF5532ECED969748843EC8")
         
 @Deprecated
@@ -134,6 +135,7 @@ private Settings() {}
          * @hide Used in vCard parser code.
          * @deprecated see {@link android.provider.ContactsContract}
          */
+        @DSSource({DSSourceKind.CONTACT_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:59.586 -0500", hash_original_method = "3CCBD42AC579830F9F873C0E8E0D59CE", hash_generated_method = "8218AD0872E037DC74692F26BB609A75")
         
 @Deprecated
@@ -183,6 +185,7 @@ private Settings() {}
          * @throws IllegalStateException if the group can't be found
          * @deprecated see {@link android.provider.ContactsContract}
          */
+        @DSSource({DSSourceKind.CONTACT_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:59.592 -0500", hash_original_method = "4B575D0B1951007B3070BB5D97839CB3", hash_generated_method = "98F0ABAF4C6F0C4447D99323EA8403DE")
         
 @Deprecated
@@ -256,6 +259,7 @@ private Settings() {}
         /**
          * @deprecated see {@link android.provider.ContactsContract}
          */
+        @DSSource({DSSourceKind.CONTACT_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:59.603 -0500", hash_original_method = "29F7E3FAB1A70735CD2895CF88304289", hash_generated_method = "1C4B13C4ECAF45161678185D3F4BCF2F")
         
 @Deprecated
@@ -503,6 +507,7 @@ private Groups() {}
         /**
          * @deprecated see {@link android.provider.ContactsContract}
          */
+        @DSSource({DSSourceKind.CONTACT_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:59.700 -0500", hash_original_method = "47C658D10C7FF6AFCE9B91D6C434ADDC", hash_generated_method = "27BB02CE86DEC990C9D56E4E3086F939")
         
 @Deprecated
@@ -530,6 +535,7 @@ private Groups() {}
         /**
          * @deprecated see {@link android.provider.ContactsContract}
          */
+        @DSSource({DSSourceKind.CONTACT_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:59.703 -0500", hash_original_method = "4BFBBB1A99B20F000C01E55DF4773309", hash_generated_method = "83A79B941A8054E2F7C92228A01B766E")
         
 @Deprecated
@@ -710,6 +716,7 @@ private GroupMembership() {}
         /**
          * @deprecated see {@link android.provider.ContactsContract}
          */
+        @DSSource({DSSourceKind.CONTACT_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:59.813 -0500", hash_original_method = "E53FDAD74C5D20D2E7D8CB826DDE0DF9", hash_generated_method = "273F9BDCB1E873F32D2A6734B118D960")
         
 @Deprecated
@@ -956,6 +963,7 @@ private GroupMembership() {}
         /**
          * @deprecated see {@link android.provider.ContactsContract}
          */
+        @DSSource({DSSourceKind.CONTACT_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:59.880 -0500", hash_original_method = "0F2FD9D44DD3D01797BBF65E808710CE", hash_generated_method = "26A7D404DEC02F7963E3CB73E48456F0")
         
 @Deprecated

@@ -80,6 +80,7 @@ public class ViewPager extends ViewGroup {
 
     private static final Interpolator sInterpolator = new Interpolator() {
         
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:05.096 -0400", hash_original_method = "11FE6ADED2EE7422CCA03C14DA065BC8", hash_generated_method = "53761C327FF8A4A7EA67EF20258337B8")
         public float getInterpolation(float t) {
             t -= 1.0f;
@@ -337,6 +338,7 @@ private void removeNonDecorViews() {
      *
      * @return The currently registered PagerAdapter
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:24.384 -0500", hash_original_method = "F7E052C477B11777DA7EBFEE8452F40F", hash_generated_method = "3DEA33F0B759DE6CB68DD18B15A50E8C")
     
 public PagerAdapter getAdapter() {
@@ -378,6 +380,7 @@ public void setCurrentItem(int item, boolean smoothScroll) {
         setCurrentItemInternal(item, smoothScroll, false);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:24.392 -0500", hash_original_method = "A82ABDE9609B8643904FAA59A05D3729", hash_generated_method = "4EA11EE08D6B462D16A2F7650D7279F1")
     
 public int getCurrentItem() {

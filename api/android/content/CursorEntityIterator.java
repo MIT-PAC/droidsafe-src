@@ -7,10 +7,6 @@ import droidsafe.annotations.*;
 import android.database.Cursor;
 import android.os.RemoteException;
 
-
-
-
-
 public abstract class CursorEntityIterator implements EntityIterator {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:42.270 -0500", hash_original_field = "4A85E902ED72E65A9AF8F6ED265E4F89", hash_generated_field = "6E649D5858461199DBD67FE0A0D43789")
 
@@ -69,6 +65,7 @@ public final boolean hasNext() {
      *             if there are no more elements.
      * @see EntityIterator#hasNext()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:42.282 -0500", hash_original_method = "D761CE40C9BF5BACB311C894FE3131D0", hash_generated_method = "CEC4763A0AD1E76D825251378A952EB1")
     
 public Entity next() {
@@ -114,7 +111,6 @@ public final void close() {
         mIsClosed = true;
         mCursor.close();
     }
-
     
 }
 

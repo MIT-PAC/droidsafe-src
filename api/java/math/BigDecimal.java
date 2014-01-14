@@ -1516,6 +1516,7 @@ public BigDecimal divideToIntegralValue(BigDecimal divisor) {
      *             if {@code mc.getPrecision() > 0} and the result requires more
      *             digits to be represented.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.283 -0500", hash_original_method = "15ECC758BA9BF5EB2D64CC984DE4A4C9", hash_generated_method = "011ACBACE693B1E02D307BCE345A0CFC")
     
 public BigDecimal divideToIntegralValue(BigDecimal divisor, MathContext mc) {

@@ -16,10 +16,6 @@ import android.provider.BaseColumns;
 import android.text.TextUtils;
 import android.util.Log;
 
-
-
-
-
 public class SQLiteQueryBuilder {
 
     /**
@@ -122,7 +118,6 @@ public static void appendColumns(StringBuilder s, String[] columns) {
             Pattern.compile("\\s*\\d+\\s*(,\\s*\\d+\\s*)?");
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.095 -0500", hash_original_field = "DD1007F99755848BE13ED87D9635B873", hash_generated_field = "769F77C34DE42382B188666E269E7701")
 
-
     private Map<String, String> mProjectionMap = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.097 -0500", hash_original_field = "F82DC55178AF9E82B2CF77FF772C5CD0", hash_generated_field = "8F885C16B9BDADDFD8C26FCD5BE5228C")
 
@@ -163,6 +158,7 @@ public void setDistinct(boolean distinct) {
      *
      * @return the list of tables being queried
      */
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.116 -0500", hash_original_method = "71A35CB8526DF402EA58F5074639A5D5", hash_generated_method = "13D8072364158B36631FA2ACBC56A17F")
     
 public String getTables() {
@@ -312,6 +308,7 @@ public void setStrict(boolean flag) {
      * @see android.content.ContentResolver#query(android.net.Uri, String[],
      *      String, String[], String)
      */
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.146 -0500", hash_original_method = "C851DFBDB6501381AF55260B14586647", hash_generated_method = "60B42FCF91B7DAFA84B5EEAB5AFFEF11")
     
 public Cursor query(SQLiteDatabase db, String[] projectionIn,
@@ -353,6 +350,7 @@ public Cursor query(SQLiteDatabase db, String[] projectionIn,
      * @see android.content.ContentResolver#query(android.net.Uri, String[],
      *      String, String[], String)
      */
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.149 -0500", hash_original_method = "A22563797EE8B98D8D2C96F4FC0F2C77", hash_generated_method = "EB9D53584F352AD6AC60DCC4EDA82399")
     
 public Cursor query(SQLiteDatabase db, String[] projectionIn,

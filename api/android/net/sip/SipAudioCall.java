@@ -218,6 +218,7 @@ private synchronized void close(boolean closeRtp) {
      *
      * @return the local SIP profile
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.836 -0500", hash_original_method = "A61765ACD427BC1BAFB034CDA7289AED", hash_generated_method = "CAF41BC7A8412FBE9764D57E21929224")
     
 public SipProfile getLocalProfile() {
@@ -231,6 +232,7 @@ public SipProfile getLocalProfile() {
      *
      * @return the peer's SIP profile
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.839 -0500", hash_original_method = "35C9BB243C8C9C83D8B1884AE3FDA6C7", hash_generated_method = "996CEED17CF24A8F2536B81E8CCF7F1A")
     
 public SipProfile getPeerProfile() {
@@ -245,6 +247,7 @@ public SipProfile getPeerProfile() {
      *
      * @return the session state
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.841 -0500", hash_original_method = "6859CB7872625AC40861B5EFD6D7E2DC", hash_generated_method = "45677BDFAFE85EF5E3629BFBD2D85BB6")
     
 public int getState() {
@@ -260,6 +263,7 @@ public int getState() {
      * @return the session object that carries this call
      * @hide
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.843 -0500", hash_original_method = "9DD9B38A5D2A310FA14C467CD9F0FD11", hash_generated_method = "55724D3251FACEE43B78680C366E936A")
     
 public SipSession getSipSession() {
@@ -917,6 +921,7 @@ public void sendDtmf(int code, Message result) {
      *      yet been set up
      * @hide
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.937 -0500", hash_original_method = "974213146461E5146ED1F54CFC83DFBA", hash_generated_method = "8AF3B686950FBA027647529ACC3A5140")
     
 public AudioStream getAudioStream() {
@@ -939,6 +944,7 @@ public AudioStream getAudioStream() {
      * @see #getAudioStream
      * @hide
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.939 -0500", hash_original_method = "BB542D10B17F9F4E162984482435ECE8", hash_generated_method = "D1AE3173CEFCA1C9440BFAAB128BFD82")
     
 public AudioGroup getAudioGroup() {

@@ -124,6 +124,7 @@ public synchronized boolean finished() {
      * Returns the {@link Adler32} checksum of the bytes inflated so far, or the
      * checksum of the preset dictionary if {@link #needsDictionary} returns true.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.325 -0500", hash_original_method = "DDE5644D46702B730F5378ABED0CC02C", hash_generated_method = "82F839CE56BEDC13EDBA911A4636B0D0")
     
 public synchronized int getAdler() {
@@ -144,6 +145,7 @@ public synchronized int getAdler() {
      * method is the same as {@link #getTotalIn} except that it returns a
      * {@code long} value instead of an integer.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.332 -0500", hash_original_method = "B419E0AF253F709FCCBF4031C175C3E0", hash_generated_method = "FCE91DCC2F170EFCCC587BDC96E02BDA")
     
 public synchronized long getBytesRead() {
@@ -156,6 +158,7 @@ public synchronized long getBytesRead() {
      * method is the same as {@code getTotalOut} except it returns a
      * {@code long} value instead of an integer.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.334 -0500", hash_original_method = "B14826F1D1678AA7FAF007D6D8541F5C", hash_generated_method = "6759B83D7E1BB8BF4188E4F21BEAB91C")
     
 public synchronized long getBytesWritten() {
@@ -167,6 +170,7 @@ public synchronized long getBytesWritten() {
      * Returns the number of bytes of current input remaining to be read by this
      * inflater.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.337 -0500", hash_original_method = "32C3A4ADD77E37876C3BDB6A1F021118", hash_generated_method = "9A84D4A4AEB0773F1C62663156C386B1")
     
 public synchronized int getRemaining() {
@@ -177,6 +181,7 @@ public synchronized int getRemaining() {
      * Returns the total number of bytes of input read by this {@code Inflater}. This
      * method is limited to 32 bits; use {@link #getBytesRead} instead.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.340 -0500", hash_original_method = "9AAB506621EC0609B7127649800D2F50", hash_generated_method = "1A53CA58166D1EB399DA650885596A85")
     
 public synchronized int getTotalIn() {
@@ -196,6 +201,7 @@ public synchronized int getTotalIn() {
      * Returns the total number of bytes written to the output buffer by this {@code
      * Inflater}. The method is limited to 32 bits; use {@link #getBytesWritten} instead.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.347 -0500", hash_original_method = "FABA8B5ADD5ED280AE5319590E5362F9", hash_generated_method = "A3D7A2E164A55A300A14496BC870B17F")
     
 public synchronized int getTotalOut() {

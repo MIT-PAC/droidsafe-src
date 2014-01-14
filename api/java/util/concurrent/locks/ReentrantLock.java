@@ -310,6 +310,7 @@ public Condition newCondition() {
      * @return the number of holds on this lock by the current thread,
      *         or zero if this lock is not held by the current thread
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.143 -0500", hash_original_method = "7FC57D6521874F49E1ACFD5770F280CF", hash_generated_method = "23450A0B964DC4287A7BC5121FF3D992")
     
 public int getHoldCount() {
@@ -403,6 +404,7 @@ public final boolean isFair() {
      *
      * @return the owner, or {@code null} if not owned
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.152 -0500", hash_original_method = "DB009A0944F572B5167ED6D51E109787", hash_generated_method = "7D809D9725AEBCF90CFF1BEB201EC3EB")
     
 protected Thread getOwner() {
@@ -452,6 +454,7 @@ public final boolean hasQueuedThread(Thread thread) {
      *
      * @return the estimated number of threads waiting for this lock
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.160 -0500", hash_original_method = "DFFF2C05339152644F00EC2FFC57EFB9", hash_generated_method = "EA91B63888B7C015D6A36669988D4E4A")
     
 public final int getQueueLength() {
@@ -469,6 +472,7 @@ public final int getQueueLength() {
      *
      * @return the collection of threads
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.163 -0500", hash_original_method = "4BC73C35668DA24636BE58FB68209032", hash_generated_method = "D67E7603910B1CF790C49F196A7D918E")
     
 protected Collection<Thread> getQueuedThreads() {
@@ -542,6 +546,7 @@ public int getWaitQueueLength(Condition condition) {
      *         not associated with this lock
      * @throws NullPointerException if the condition is null
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.170 -0500", hash_original_method = "29738EA386BFBB41E36C961DB4B1CBE5", hash_generated_method = "5F349F071ADC291E2ABB5B930AB4DBAB")
     
 protected Collection<Thread> getWaitingThreads(Condition condition) {
@@ -628,12 +633,14 @@ final ConditionObject newCondition() {
 
         // Methods relayed from outer class
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.089 -0500", hash_original_method = "24CA7AAFB844A1400E08D949A036E749", hash_generated_method = "C3C207B7C68025305022EA4618EEB56B")
         
 final Thread getOwner() {
             return getState() == 0 ? null : getExclusiveOwnerThread();
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.093 -0500", hash_original_method = "9566A514E32EED07D696F4866CA45F30", hash_generated_method = "A489F0CCF5FF04E581E437641418427E")
         
 final int getHoldCount() {

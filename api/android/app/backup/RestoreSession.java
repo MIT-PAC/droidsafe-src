@@ -45,6 +45,7 @@ RestoreSession(Context context, IRestoreSession binder) {
      * @return Zero on success, nonzero on error.  The observer's restoreSetsAvailable()
      *   method will only be called if this method returned zero.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:47.479 -0500", hash_original_method = "85E5CD06982622FBF40B882974335BE2", hash_generated_method = "F88AB1159CB48AD9123BACF633596C0B")
     
 public int getAvailableRestoreSets(RestoreObserver observer) {
@@ -71,6 +72,7 @@ public int getAvailableRestoreSets(RestoreObserver observer) {
      * @param observer If non-null, this binder points to an object that will receive
      *   progress callbacks during the restore operation.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:47.483 -0500", hash_original_method = "C8DAB2ADB788499C67FF0E8E9408ECE5", hash_generated_method = "643D65C3E0FADDCD503AC887A11DE305")
     
 public int restoreAll(long token, RestoreObserver observer) {

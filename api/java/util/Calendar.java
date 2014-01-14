@@ -21,6 +21,7 @@ public abstract class Calendar implements Serializable, Cloneable, Comparable<Ca
      * are available.
      * <p>Note that Android does not support user-supplied locale service providers.
      */
+    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.813 -0500", hash_original_method = "41105D11003C45662A0CC60EBB418302", hash_generated_method = "7EE9909FB376311AA4F87EC76340BBEE")
     
 public static synchronized Locale[] getAvailableLocales() {
@@ -34,6 +35,7 @@ public static synchronized Locale[] getAvailableLocales() {
      * @return a {@code Calendar} subclass instance set to the current date and time in
      *         the default {@code Timezone}.
      */
+    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.820 -0500", hash_original_method = "13DC520F4333E665034B03AB416FC5C0", hash_generated_method = "797174B25A8DDE1C62252B85466EB816")
     
 public static synchronized Calendar getInstance() {
@@ -48,6 +50,7 @@ public static synchronized Calendar getInstance() {
      *            the locale to use.
      * @return a {@code Calendar} subclass instance set to the current date and time.
      */
+    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.823 -0500", hash_original_method = "691484FDA756A7151BBC682C05DB892E", hash_generated_method = "D23801B3F583C8565835C978CAC9E4FD")
     
 public static synchronized Calendar getInstance(Locale locale) {
@@ -63,6 +66,7 @@ public static synchronized Calendar getInstance(Locale locale) {
      * @return a {@code Calendar} subclass instance set to the current date and time in
      *         the specified timezone.
      */
+    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.826 -0500", hash_original_method = "8659E4BE21B4ECA0C79A0D434746E08E", hash_generated_method = "8FB50815B1A4F787597CC8F8F4F87772")
     
 public static synchronized Calendar getInstance(TimeZone timezone) {
@@ -80,6 +84,7 @@ public static synchronized Calendar getInstance(TimeZone timezone) {
      * @return a {@code Calendar} subclass instance set to the current date and time in
      *         the specified timezone.
      */
+    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.829 -0500", hash_original_method = "1579030499B60D9EDE224A7FC4647CD2", hash_generated_method = "C8EA010EC7DFE5460AEC766482B2448D")
     
 public static synchronized Calendar getInstance(TimeZone timezone, Locale locale) {
@@ -425,6 +430,7 @@ public final void clear(int field) {
      *
      * @see java.lang.Cloneable
      */
+    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.792 -0500", hash_original_method = "84D98F75151E4961D0916EA8CB3E0C38", hash_generated_method = "9F925B1A9D8B19359C917CFA9357F831")
     
 @Override
@@ -523,6 +529,7 @@ protected abstract void computeTime();
      *                if the field is not inside the range of possible fields.
      *                The range is starting at 0 up to {@code FIELD_COUNT}.
      */
+    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.805 -0500", hash_original_method = "E826346499B559368BF751B42F34C786", hash_generated_method = "BFD89F8C941521842F808A630258D5A2")
     
 public int get(int field) {
@@ -537,6 +544,7 @@ public int get(int field) {
      *            the field.
      * @return the maximum value of the specified field.
      */
+    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.808 -0500", hash_original_method = "424E8E96F9A12B00FD5C6FDA146C325F", hash_generated_method = "EB24B22066B0F5278E4EF0DBD545A1BC")
     
 public int getActualMaximum(int field) {
@@ -564,6 +572,7 @@ public int getActualMaximum(int field) {
      *            the field.
      * @return the minimum value of the specified field.
      */
+    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.810 -0500", hash_original_method = "598A84D60F29BB97F62226BCCD8A7F9E", hash_generated_method = "3204F8E5882D21531F11D7461CBACF1A")
     
 public int getActualMinimum(int field) {
@@ -589,6 +598,7 @@ public int getActualMinimum(int field) {
      *
      * @return the first day of the week.
      */
+    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.815 -0500", hash_original_method = "2210DC8BCE617C61AD2F9503CE7923B1", hash_generated_method = "B7D3E606B6C61019423BEA5BE2438F0B")
     
 public int getFirstDayOfWeek() {
@@ -638,6 +648,7 @@ public abstract int getMaximum(int field);
      *
      * @return the minimal days in the first week of the year.
      */
+    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.836 -0500", hash_original_method = "104647FF062CF5167F06DB549E6DD4EB", hash_generated_method = "84FFD4E08543D1852F52CF39C905704A")
     
 public int getMinimalDaysInFirstWeek() {
@@ -665,6 +676,7 @@ public abstract int getMinimum(int field);
      *                if the time is not set and the time cannot be computed
      *                from the current field values.
      */
+    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.841 -0500", hash_original_method = "0D972793C1A81D3B5C0D23389B920FB5", hash_generated_method = "04B7220A597D699C98A15AA207DDB442")
     
 public final Date getTime() {
@@ -680,6 +692,7 @@ public final Date getTime() {
      *                if the time is not set and the time cannot be computed
      *                from the current field values.
      */
+    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.844 -0500", hash_original_method = "1B58DB6425011C7C1965B5C43056D530", hash_generated_method = "28EF64564E32533BE41A42298042EDE5")
     
 public long getTimeInMillis() {
@@ -695,6 +708,7 @@ public long getTimeInMillis() {
      *
      * @return the {@code TimeZone} used by this {@code Calendar}.
      */
+    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.846 -0500", hash_original_method = "A62BA7A8B3AE52F44B15929DB0809596", hash_generated_method = "524E7797970F542E897CBB3E44B0D9E1")
     
 public TimeZone getTimeZone() {
@@ -979,6 +993,7 @@ public void setTimeZone(TimeZone timezone) {
     /**
      * Returns the string representation of this {@code Calendar}.
      */
+    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.889 -0500", hash_original_method = "FE2881479678F103D2A9794655ED1F87", hash_generated_method = "A659789D7AE8DD5BFBBF07EE83CBBA9B")
     
 @Override
@@ -1052,6 +1067,7 @@ public int compareTo(Calendar anotherCalendar) {
      * @throws IllegalArgumentException if {@code field} or {@code style} is invalid
      * @since 1.6
      */
+    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.894 -0500", hash_original_method = "3943CE5519C03267AB2522359CAFDF8D", hash_generated_method = "E0B67D2751957E12D0908AF0B49A4D74")
     
 public String getDisplayName(int field, int style, Locale locale) {
@@ -1101,6 +1117,7 @@ private String[] getDisplayNameArray(int field, int style, Locale locale) {
      * @throws IllegalArgumentException if {@code field} or {@code style} is invalid
      * @since 1.6
      */
+    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.902 -0500", hash_original_method = "9C5842A520266160609E6030F348A85B", hash_generated_method = "C9AA05DC71F66EAFB20EC782FFDCC03C")
     
 public Map<String, Integer> getDisplayNames(int field, int style, Locale locale) {

@@ -51,6 +51,7 @@ public class AppWidgetHostView extends FrameLayout {
      *                returned
      * @return default padding for this widget
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:55.289 -0500", hash_original_method = "B8C74F371A57AFB639B19B5C3B488D27", hash_generated_method = "515FE23CFB2A00F84A98824E0CDC1225")
     
 public static Rect getDefaultPaddingForWidget(Context context, ComponentName component,
@@ -201,12 +202,14 @@ public void setAppWidget(int appWidgetId, AppWidgetProviderInfo info) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:55.292 -0500", hash_original_method = "523EC9820CA9D9B6EC1AAD0F0C3D4C58", hash_generated_method = "FC650BC77E07DB97B4FA15FA76A18E59")
     
 public int getAppWidgetId() {
         return mAppWidgetId;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:55.297 -0500", hash_original_method = "FF9792E81F5B9850F94285F82FEF7EB6", hash_generated_method = "0B72448D9371593290B2FC833C8312DB")
     
 public AppWidgetProviderInfo getAppWidgetInfo() {
@@ -542,6 +545,7 @@ protected void prepareView(View view) {
     /**
      * Inflate and return the default layout requested by AppWidget provider.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:55.333 -0500", hash_original_method = "7ABED6F7F1F9E200368B812F1C939889", hash_generated_method = "718C9FAB9FEED095A4025ABA05BE3400")
     
 protected View getDefaultView() {
@@ -585,6 +589,7 @@ protected View getDefaultView() {
     /**
      * Inflate and return a view that represents an error state.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:55.336 -0500", hash_original_method = "BCED01C90A318EA661B2B3B116D10B95", hash_generated_method = "BA35D9B9C456C174E063C5725DE72D03")
     
 protected View getErrorView() {

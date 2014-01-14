@@ -14,6 +14,7 @@ import android.os.Parcelable;
 
 public class VpnConfig implements Parcelable {
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:59.684 -0500", hash_original_method = "E2B4F190A55D7785794B0646C1BF8F7C", hash_generated_method = "26557B87479877086733CABEA875BFAE")
     
 public static Intent getIntentForConfirmation() {
@@ -22,6 +23,7 @@ public static Intent getIntentForConfirmation() {
         return intent;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:59.686 -0500", hash_original_method = "A6FDE7EDEB3EAB44B9B5F7A984EB3D92", hash_generated_method = "2B739E0228AA7A1F25D9878623F65BC9")
     
 public static PendingIntent getIntentForStatusPanel(Context context, VpnConfig config) {

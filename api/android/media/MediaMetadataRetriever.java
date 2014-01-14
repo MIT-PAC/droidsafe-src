@@ -328,6 +328,7 @@ public void setDataSource(Context context, Uri uri)
      * @return A Bitmap containing a representative video frame, which 
      *         can be null, if such a frame cannot be retrieved.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.103 -0500", hash_original_method = "D44D6BE7DFFCAE11832F13741FBDA1F8", hash_generated_method = "88A7311FAAC51426A11B97D0E886B5C4")
     
 public Bitmap getFrameAtTime(long timeUs, int option) {
@@ -359,6 +360,7 @@ public Bitmap getFrameAtTime(long timeUs, int option) {
      *
      * @see #getFrameAtTime(long, int)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.106 -0500", hash_original_method = "F77381ED452E3EC1B4D9E71ECA218C76", hash_generated_method = "0D811B8BE139B55E6C5E1B7CBDDBB175")
     
 public Bitmap getFrameAtTime(long timeUs) {
@@ -379,6 +381,7 @@ public Bitmap getFrameAtTime(long timeUs) {
      * @see #getFrameAtTime(long)
      * @see #getFrameAtTime(long, int)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.108 -0500", hash_original_method = "B076FDF9A15CA7321A3CFAECED9F7582", hash_generated_method = "D29ADFE2A05B3DF9B524058A151E3CB9")
     
 public Bitmap getFrameAtTime() {
@@ -400,6 +403,7 @@ public Bitmap getFrameAtTime() {
      * 
      * @return null if no such graphic is found.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.115 -0500", hash_original_method = "BD3973B389FE81CEA52266D9B68AE29D", hash_generated_method = "EACED70D609CB8312649627A912859FB")
     
 public byte[] getEmbeddedPicture() {

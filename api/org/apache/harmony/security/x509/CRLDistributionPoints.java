@@ -29,6 +29,7 @@ public static CRLDistributionPoints decode(byte[] encoding) throws IOException {
             return new CRLDistributionPoints((List<DistributionPoint>) in.content, in.getEncoded());
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:02.953 -0500", hash_original_method = "1B1D9906279467E5EA238A1FED425544", hash_generated_method = "09327B39B48E83579DE00714D3580663")
         
 @Override public Collection<?> getValues(Object object) {
@@ -53,6 +54,7 @@ private CRLDistributionPoints(List<DistributionPoint> distributionPoints, byte[]
         this.encoding = encoding;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:02.942 -0500", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "552F71A862C62513AAC32037F4D2FC1B")
     
 @Override public byte[] getEncoded() {

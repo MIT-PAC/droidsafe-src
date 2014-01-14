@@ -36,6 +36,7 @@ public class HttpEngine {
 
     private static final CacheResponse BAD_GATEWAY_RESPONSE = new CacheResponse() {
         
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.900 -0400", hash_original_method = "298484AFDF3A781562203CC307227E59", hash_generated_method = "4AC198B3799A4E6C153BB0E3767B570C")
         @Override
         public Map<String, List<String>> getHeaders() throws IOException {
@@ -48,6 +49,7 @@ public class HttpEngine {
             
         }
         
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:28.901 -0400", hash_original_method = "2EDDCBB89487588B780135D7543EF20D", hash_generated_method = "62660BC4776DC3DF42BA4F8532D0F964")
         @Override
         public InputStream getBody() throws IOException {
@@ -382,6 +384,7 @@ private boolean hasRequestBody() {
     /**
      * Returns the request body or null if this request doesn't have a body.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:32.853 -0500", hash_original_method = "C7FD66AD45D049BA30B9133E737F62A7", hash_generated_method = "53BF77AF6A8691BA92C8F88155595322")
     
 public final OutputStream getRequestBody() {
@@ -397,12 +400,14 @@ public final boolean hasResponse() {
         return responseHeaders != null;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:32.858 -0500", hash_original_method = "22C8454720634D9B77E5CFB8983F80A0", hash_generated_method = "02F41DF7F7A1858962FA13981BDAC846")
     
 public final RequestHeaders getRequestHeaders() {
         return requestHeaders;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:32.860 -0500", hash_original_method = "4093002B56979B81D9123217E2215EFB", hash_generated_method = "F9693C6061E36D95D0309B311F2ED75F")
     
 public final ResponseHeaders getResponseHeaders() {
@@ -412,6 +417,7 @@ public final ResponseHeaders getResponseHeaders() {
         return responseHeaders;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:32.863 -0500", hash_original_method = "6C8D632B120ECD201D125D0086576F82", hash_generated_method = "AAB82CAFB7994A6188AD7916C188EF54")
     
 public final int getResponseCode() {
@@ -421,6 +427,7 @@ public final int getResponseCode() {
         return responseHeaders.getHeaders().getResponseCode();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:32.866 -0500", hash_original_method = "FBE346C8B51CB8E76028C21E64D6BD0A", hash_generated_method = "47815E2B7D18C2A2B3BC3DE0A267E2F9")
     
 public final InputStream getResponseBody() {
@@ -430,6 +437,7 @@ public final InputStream getResponseBody() {
         return responseBodyIn;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:32.868 -0500", hash_original_method = "2250F4C87B4A22443F60D9654505E9D2", hash_generated_method = "22CE870DF0278216D05BA2DA1EB45DBA")
     
 public final CacheResponse getCacheResponse() {
@@ -439,6 +447,7 @@ public final CacheResponse getCacheResponse() {
         return cacheResponse;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:32.871 -0500", hash_original_method = "9105CAFA0117096F163A50885E7429CB", hash_generated_method = "6A520A14FC52B7C6F450740896192E16")
     
 public final HttpConnection getConnection() {
@@ -473,6 +482,7 @@ private void maybeCache() throws IOException {
         cacheRequest = responseCache.put(uri, getHttpConnectionToCache());
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:32.877 -0500", hash_original_method = "CA4844B1B3E4576C0EA18E04D34BB6CE", hash_generated_method = "0CB7E2BECC7A563C74D8F00B395779E9")
     
 protected HttpURLConnection getHttpConnectionToCache() {
@@ -688,6 +698,7 @@ private void writeRequestHeaders(int contentLength) throws IOException {
      * <p>It updates the status line, which may need to be fully qualified if
      * the connection is using a proxy.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:32.902 -0500", hash_original_method = "E663539B4C2FF814BF16D6A04E975935", hash_generated_method = "F94017F1AB6F0CC8453665762FC1862F")
     
 protected RawHeaders getNetworkRequestHeaders() throws IOException {
@@ -788,6 +799,7 @@ protected boolean includeAuthorityInRequestLine() {
         return policy.usingProxy();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:32.916 -0500", hash_original_method = "B0560F32D5938C3FB1E508A1DA2A4958", hash_generated_method = "F16995F29F854CF2B97D81F8D6D1923F")
     
 protected final String getDefaultUserAgent() {
@@ -802,6 +814,7 @@ private boolean hasConnectionCloseHeader() {
                 || requestHeaders.hasConnectionClose();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:32.921 -0500", hash_original_method = "71D2D2A43E6B9B2FCF0835DDEF471DCE", hash_generated_method = "3C387EC3CDF42DD90C8B366178B39E33")
     
 protected final String getOriginAddress(URL url) {

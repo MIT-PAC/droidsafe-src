@@ -46,6 +46,7 @@ protected String encodeBody() {
     /** get the LanguageRange field
      * @return String
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.730 -0500", hash_original_method = "BF687A0020C7B3DE806879972780BD44", hash_generated_method = "2B40F1802BB45A68DF20FF45A734E79A")
     
 public String getLanguageRange() {
@@ -57,6 +58,7 @@ public String getLanguageRange() {
      * @return float
      */
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.732 -0500", hash_original_method = "D0BC591A7E62F9425A070C3D9F39D285", hash_generated_method = "296ED7F62C4FA42CD9C41A04E8EA1248")
     
 public float getQValue() {
@@ -138,6 +140,7 @@ public void setQValue(float q) throws InvalidArgumentException {
      * @return the language Locale value of this AcceptLanguageHeader
      *
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.746 -0500", hash_original_method = "41F30A9CB15562B6E2AC4BEA100C59D1", hash_generated_method = "D38F845B33CA5C0C380E01B2CC1372CB")
     
 public Locale getAcceptLanguage() {

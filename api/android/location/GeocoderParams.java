@@ -10,12 +10,7 @@ import android.content.Context;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public class GeocoderParams implements Parcelable {
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:15.094 -0400", hash_original_field = "8570E1762A50A570C61281C2FF8E12DF", hash_generated_field = "155F5A7D3EEE4C94F4CF4E96BB87A9DD")
 
@@ -67,6 +62,7 @@ public GeocoderParams(Context context, Locale locale) {
     /**
      * returns the Geocoder's locale
      */
+    @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:00.637 -0500", hash_original_method = "95F8746C49CE2A7FBF7EA83DF206E003", hash_generated_method = "A1D784B67B002754E37DDB902EBC5ECA")
     
 public Locale getLocale() {
@@ -76,6 +72,7 @@ public Locale getLocale() {
     /**
      * returns the package name of the Geocoder's client
      */
+    @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:00.639 -0500", hash_original_method = "1D100AD0503AB463478DA14DEA58A5D8", hash_generated_method = "BB49A55CA21AD4F9D20F8C5BD4864262")
     
 public String getClientPackage() {

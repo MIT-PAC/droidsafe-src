@@ -128,6 +128,7 @@ public int size() {
      * @param key
      * @return the capability string
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:18.866 -0500", hash_original_method = "568005AD4EF2A886FBB9B820A5E2167C", hash_generated_method = "386973CB8BBD5465B8F7B1B19C249AA5")
     
 public String get(int key) {

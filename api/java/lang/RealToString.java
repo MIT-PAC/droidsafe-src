@@ -8,6 +8,7 @@ import libcore.math.MathUtils;
 
 final class RealToString {
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.672 -0500", hash_original_method = "30D5D492EADCC746F56566F6C51DBFB8", hash_generated_method = "6210D16B0A5F121D177C5A787BA02E44")
     
 public static RealToString getInstance() {

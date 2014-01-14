@@ -88,6 +88,7 @@ public int size() {
     }
 
     /** @hide */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:38.551 -0500", hash_original_method = "2BE27D9B96D07A7F769CE0AAEC8A3019", hash_generated_method = "7D5AEA3260FB38A576CE71FD6B892EB6")
     
 public int get(int index) {
@@ -195,6 +196,7 @@ public boolean add(WorkSource other) {
     }
 
     /** @hide */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:38.567 -0500", hash_original_method = "3C62D026004765F6E3FE84798605B705", hash_generated_method = "658CCB4AA1CDC494BFC6106BAAA40EE0")
     
 public WorkSource addReturningNewbs(WorkSource other) {

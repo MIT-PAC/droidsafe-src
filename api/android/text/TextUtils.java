@@ -434,6 +434,7 @@ public static boolean equals(CharSequence a, CharSequence b) {
     }
 
     // XXX currently this only reverses chars, not spans
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:05.911 -0500", hash_original_method = "98F930B270648698A021909A60BE17AD", hash_generated_method = "197399D3D66518E7F26D8A6C6C5A4650")
     
 public static CharSequence getReverse(CharSequence source,

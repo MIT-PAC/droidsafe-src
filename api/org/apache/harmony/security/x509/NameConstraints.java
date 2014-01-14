@@ -33,6 +33,7 @@ public static NameConstraints decode(byte[] encoding) throws IOException {
             setOptional(1);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:02.709 -0500", hash_original_method = "615B46BCF08688AF9BAEA542A898E560", hash_generated_method = "C5D66E25BE23E183811BA60FFFF77F65")
         
 @Override protected Object getDecodedObject(BerInputStream in) {
@@ -98,6 +99,7 @@ private NameConstraints(GeneralSubtrees permittedSubtrees,
         this.encoding = encoding;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:02.692 -0500", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "552F71A862C62513AAC32037F4D2FC1B")
     
 @Override public byte[] getEncoded() {

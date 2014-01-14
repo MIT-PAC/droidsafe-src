@@ -160,6 +160,7 @@ public class SensorManager {
      * @see #remapCoordinateSystem(float[], int, int, float[])
      */
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:53.037 -0500", hash_original_method = "80FFBDA32F1CA6FB68C3B24B9C01CA42", hash_generated_method = "C2361A9E50FB5E2540C47B2203847598")
     
 public static boolean getRotationMatrix(float[] R, float[] I,
@@ -239,6 +240,7 @@ public static boolean getRotationMatrix(float[] R, float[] I,
      * @see GeomagneticField
      *
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:53.040 -0500", hash_original_method = "FC0D372BF97A5B9BCD6915691825C261", hash_generated_method = "D5A70E08C36B24C4FBB1CE4753C03A9A")
     
 public static float getInclination(float[] I) {
@@ -445,6 +447,7 @@ private static boolean remapCoordinateSystemImpl(float[] inR, int X, int Y,
      * @see #getRotationMatrix(float[], float[], float[], float[])
      * @see GeomagneticField
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:53.051 -0500", hash_original_method = "48D1C344F1CE2628DE4C68ABB227A1F6", hash_generated_method = "5E0C14D6CF43554F17C02DEA9C8592AA")
     
 public static float[] getOrientation(float[] R, float values[]) {
@@ -502,7 +505,8 @@ public static float[] getOrientation(float[] R, float values[]) {
      * @param p atmospheric pressure
      * @return Altitude in meters
      */
-   @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:53.056 -0500", hash_original_method = "8E6E2A16641CB1071F07CC6C84B1A29D", hash_generated_method = "D7502A3FF04FED1BC8DD49FCBA47C0F0")
+   @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:53.056 -0500", hash_original_method = "8E6E2A16641CB1071F07CC6C84B1A29D", hash_generated_method = "D7502A3FF04FED1BC8DD49FCBA47C0F0")
     
 public static float getAltitude(float p0, float p) {
         final float coef = 1.0f / 5.255f;
@@ -543,6 +547,7 @@ static int getRotation() {
      * @param angleChange an array of floats in which the angle change is stored
      */
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:53.136 -0500", hash_original_method = "8B9F6F99770AC610A78817CE4E6CAD01", hash_generated_method = "DA05D51C781FC5B8E1C100A7D07F55C5")
     
 public static void getAngleChange( float[] angleChange, float[] R, float[] prevR) {
@@ -629,6 +634,7 @@ public static void getAngleChange( float[] angleChange, float[] R, float[] prevR
      *  @param rotationVector the rotation vector to convert
      *  @param R an array of floats in which to store the rotation matrix
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:53.141 -0500", hash_original_method = "3DB3B83767C3E6A9B01AB274AC444879", hash_generated_method = "E7F235E6710EC91A1B9F031414035CE8")
     
 public static void getRotationMatrixFromVector(float[] R, float[] rotationVector) {
@@ -694,6 +700,7 @@ public static void getRotationMatrixFromVector(float[] R, float[] rotationVector
      *  @param rv the rotation vector to convert
      *  @param Q an array of floats in which to store the computed quaternion
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:53.144 -0500", hash_original_method = "E42DD1F670DB7ECCA034D643DAC17008", hash_generated_method = "98D073E2E19CF9FB680FC2B559C5C6F5")
     
 public static void getQuaternionFromVector(float[] Q, float[] rv) {
@@ -850,6 +857,7 @@ private SensorEvent createSensorEvent() {
             return new SensorEvent(3);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:52.888 -0500", hash_original_method = "91BAA7B0EF8F8AB0DA2081F8E926B4FD", hash_generated_method = "CDF0E9A5B31422BAAA42CC13D50BE134")
         
 SensorEvent getFromPool() {
@@ -1593,6 +1601,7 @@ public void onRotationChanged(int rotation) {
      * @deprecated This method is deprecated, use
      *             {@link SensorManager#getSensorList(int)} instead
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:52.983 -0500", hash_original_method = "9387EF1577B9728CF6A87474164955A1", hash_generated_method = "DCEA3E6A9BE2244BFDB501B6A5CEBD04")
     
 @Deprecated
@@ -1630,6 +1639,7 @@ public void onRotationChanged(int rotation) {
      * @see #getDefaultSensor(int)
      * @see Sensor
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:52.987 -0500", hash_original_method = "D388F11CBE90143BC36FA3E001809013", hash_generated_method = "A24E18E8BD8A929CC1A4EAD97C533099")
     
 public List<Sensor> getSensorList(int type) {
@@ -2081,7 +2091,8 @@ private void unregisterListener(Object listener) {
     }
     // orphaned legacy method
     
-	public Sensor getDefaultSensor(int i) {
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    public Sensor getDefaultSensor(int i) {
 		return new Sensor(i);
 	}
     

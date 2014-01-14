@@ -171,6 +171,7 @@ public abstract void setValue(Object value);
      * @return The time associated with this keyframe, as a fraction of the overall animation
      * duration. This should be a value between 0 and 1.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.000 -0500", hash_original_method = "35C097CFF55F90D1886F0C54195244F1", hash_generated_method = "6C02CABAE06C246455B369035F54D142")
     
 public float getFraction() {
@@ -195,6 +196,7 @@ public void setFraction(float fraction) {
      *
      * @return The optional interpolator for this Keyframe.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.004 -0500", hash_original_method = "69CBD09EBE4A4B5ECD6AD8540DB7CFD0", hash_generated_method = "3B07035547B797301E020DE6A117B867")
     
 public TimeInterpolator getInterpolator() {
@@ -220,6 +222,7 @@ public void setInterpolator(TimeInterpolator interpolator) {
      *
      * @return The type of the value stored in the Keyframe.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.008 -0500", hash_original_method = "464D9B25E7EBB7EEA5039E323C745893", hash_generated_method = "373EA3C72E808356806B34A002DB0968")
     
 public Class getType() {
@@ -245,6 +248,7 @@ ObjectKeyframe(float fraction, Object value) {
             mValueType = mHasValue ? value.getClass() : Object.class;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.018 -0500", hash_original_method = "8110BFED38B99D4A69F8125D4CA46C20", hash_generated_method = "53C1D4B1B03560E5A7007A4513F340A4")
         
 public Object getValue() {
@@ -290,12 +294,14 @@ IntKeyframe(float fraction) {
             mValueType = int.class;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.035 -0500", hash_original_method = "7D27B9B7622273E5F87FD5AC6ACFC5AE", hash_generated_method = "F99D4F40655E264044BA01C8E4BDD2A0")
         
 public int getIntValue() {
             return mValue;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.037 -0500", hash_original_method = "8110BFED38B99D4A69F8125D4CA46C20", hash_generated_method = "53C1D4B1B03560E5A7007A4513F340A4")
         
 public Object getValue() {
@@ -344,12 +350,14 @@ FloatKeyframe(float fraction) {
             mValueType = float.class;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.053 -0500", hash_original_method = "4878123D1CBF5008E7E0955AB5FB61F2", hash_generated_method = "4BFAE8FB3F325F4DCE35DCA9CEF1E776")
         
 public float getFloatValue() {
             return mValue;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.056 -0500", hash_original_method = "8110BFED38B99D4A69F8125D4CA46C20", hash_generated_method = "53C1D4B1B03560E5A7007A4513F340A4")
         
 public Object getValue() {

@@ -75,6 +75,7 @@ public String encode() {
      * get the scheme field
      * @return String
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:10.130 -0500", hash_original_method = "C01635CAE84CEFF188CA85B1E841E2AF", hash_generated_method = "9D11AD0B611F352DC84C8E1A6B825617")
     
 public String getScheme() {
@@ -85,6 +86,7 @@ public String getScheme() {
      * get AuthParms list.
      * @return NameValueList
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:10.133 -0500", hash_original_method = "7AB044197F27131A6F832759E545093F", hash_generated_method = "C1FD56E0D2E1B81682E96E6A4B8CD473")
     
 public NameValueList getAuthParams() {
@@ -95,6 +97,7 @@ public NameValueList getAuthParams() {
      * get the domain
      * @return String
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:10.136 -0500", hash_original_method = "524CBE86F5CB0851551BD8D9CE41050E", hash_generated_method = "1EA3C88A55E5A077598E312EA3C50BB7")
     
 public String getDomain() {
@@ -105,6 +108,7 @@ public String getDomain() {
      * get the URI field
      * @return String
      */
+    @DSSource({DSSourceKind.FILE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:10.139 -0500", hash_original_method = "BE9B31EF9F34CC2717C92C00E671086A", hash_generated_method = "67A6F388027FD3637B2CA6F56A11C34D")
     
 public String getURI() {
@@ -115,6 +119,7 @@ public String getURI() {
      * get the Opaque field
      * @return String
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:10.142 -0500", hash_original_method = "E73B00719536CCDE494138AC7E39B883", hash_generated_method = "42D5851CE9BF45ADAB4C6BB93F2711B5")
     
 public String getOpaque() {
@@ -125,6 +130,7 @@ public String getOpaque() {
      * get QOP value
      * @return String
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:10.145 -0500", hash_original_method = "F3682063DCD7F1CD4155E38D853E5DBB", hash_generated_method = "2931F62047E1A25EB18E006BB685D5C1")
     
 public String getQOP() {
@@ -135,6 +141,7 @@ public String getQOP() {
      * get the Algorithm value.
      * @return String
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:10.148 -0500", hash_original_method = "CCB0E42EBD2B55CEF1C50D8E85A69BA0", hash_generated_method = "C6744E9AEEB88A43E76EE18CFDD5C2E1")
     
 public String getAlgorithm() {
@@ -145,6 +152,7 @@ public String getAlgorithm() {
      * get the State value.
      * @return String
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:10.150 -0500", hash_original_method = "1B871D910B9E0136E877D688BCC83CE6", hash_generated_method = "BED9D185F87CBB2FDCE3CBC784D0EE56")
     
 public String getStale() {
@@ -155,6 +163,7 @@ public String getStale() {
      * get the Signature value.
      * @return String
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:10.153 -0500", hash_original_method = "255DD7DBA22AF99FB411A52085D76836", hash_generated_method = "213D92964A459E6DCBA57ADFDCB1F16D")
     
 public String getSignature() {
@@ -165,6 +174,7 @@ public String getSignature() {
      * get the signedBy value.
      * @return String
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:10.155 -0500", hash_original_method = "FB9E11AAE433D181FA345FD8C6B7C434", hash_generated_method = "DE233CF3F39CE2F89F6714AF5F78D86F")
     
 public String getSignedBy() {
@@ -175,6 +185,7 @@ public String getSignedBy() {
      * get the Response value.
      * @return String
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:10.158 -0500", hash_original_method = "630101C0FEA93ACE37620C1431253BDE", hash_generated_method = "43292E585E78232846D6C52E5F03E8A8")
     
 public String getResponse() {
@@ -185,6 +196,7 @@ public String getResponse() {
      * get the realm value.
      * @return String.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:10.161 -0500", hash_original_method = "2BDBFC5CD9055A8A53440AACCEEECF63", hash_generated_method = "900D6497C19BC8F3CBA57E50AF7EDE57")
     
 public String getRealm() {
@@ -196,6 +208,7 @@ public String getRealm() {
      * @param name String to set
      * @return String to set
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:10.164 -0500", hash_original_method = "99F64D67B14B37266543A349C4B21B53", hash_generated_method = "C83A48FB8B528372A04C52C4DDDAB2DB")
     
 public String getParameter(String name) {

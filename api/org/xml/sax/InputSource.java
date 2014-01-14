@@ -7,11 +7,6 @@ import droidsafe.annotations.*;
 import java.io.InputStream;
 import java.io.Reader;
 
-
-
-
-
-
 public class InputSource {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:47.646 -0500", hash_original_field = "A787D4782D28CB658656F9CEA39140B8", hash_generated_field = "8C20C363CB97A5312B8A9E5F182DBDF4")
 
@@ -47,7 +42,6 @@ public InputSource ()
     {
     }
 
-
     /**
      * Create a new input source with a system identifier.
      *
@@ -72,7 +66,6 @@ public InputSource (String systemId)
     setSystemId(systemId);
     }
 
-
     /**
      * Create a new input source with a byte stream.
      *
@@ -94,7 +87,6 @@ public InputSource (InputStream byteStream)
     {
     setByteStream(byteStream);
     }
-
 
     /**
      * Create a new input source with a character stream.
@@ -118,7 +110,6 @@ public InputSource (Reader characterStream)
     setCharacterStream(characterStream);
     }
 
-
     /**
      * Set the public identifier for this input source.
      *
@@ -138,20 +129,19 @@ public void setPublicId (String publicId)
     this.publicId = publicId;
     }
 
-
     /**
      * Get the public identifier for this input source.
      *
      * @return The public identifier, or null if none was supplied.
      * @see #setPublicId
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:47.625 -0500", hash_original_method = "C19BBE926A67132A1C6BC386100A3E69", hash_generated_method = "C2B64346C205A83C958059FEF62D1E97")
     
 public String getPublicId ()
     {
     return publicId;
     }
-
 
     /**
      * Set the system identifier for this input source.
@@ -183,7 +173,6 @@ public void setSystemId (String systemId)
     this.systemId = systemId;
     }
 
-
     /**
      * Get the system identifier for this input source.
      *
@@ -196,13 +185,13 @@ public void setSystemId (String systemId)
      * @see #setSystemId
      * @see #getEncoding
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:47.630 -0500", hash_original_method = "8088708D8DEEE6054468B7FD77400E50", hash_generated_method = "6A03DC8D49FB90AC37FD320CD622E272")
     
 public String getSystemId ()
     {
     return systemId;
     }
-
 
     /**
      * Set the byte stream for this input source.
@@ -228,7 +217,6 @@ public void setByteStream (InputStream byteStream)
     this.byteStream = byteStream;
     }
 
-
     /**
      * Get the byte stream for this input source.
      *
@@ -239,13 +227,13 @@ public void setByteStream (InputStream byteStream)
      * @see #getEncoding
      * @see #setByteStream
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:47.635 -0500", hash_original_method = "831A861201E96F794D74C2B24BAB3555", hash_generated_method = "76EC79038C4C277B48D1CB1A365564C4")
     
 public InputStream getByteStream ()
     {
     return byteStream;
     }
-
 
     /**
      * Set the character encoding, if known.
@@ -269,7 +257,6 @@ public void setEncoding (String encoding)
     this.encoding = encoding;
     }
 
-
     /**
      * Get the character encoding for a byte stream or URI.
      * This value will be ignored when the application provides a
@@ -280,13 +267,13 @@ public void setEncoding (String encoding)
      * @see #getSystemId
      * @see #getByteStream
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:47.639 -0500", hash_original_method = "ECC6E581C26F132636CDCE9C9A5E5807", hash_generated_method = "AB48E45DF4593246DCA3A0BE40153818")
     
 public String getEncoding ()
     {
     return encoding;
     }
-
 
     /**
      * Set the character stream for this input source.
@@ -307,20 +294,19 @@ public void setCharacterStream (Reader characterStream)
     this.characterStream = characterStream;
     }
 
-
     /**
      * Get the character stream for this input source.
      *
      * @return The character stream, or null if none was supplied.
      * @see #setCharacterStream
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:47.644 -0500", hash_original_method = "420D22C3C623A59BA758E1AC6387B142", hash_generated_method = "EBA0998A74E28C27CEDA0CDD239F6CC3")
     
 public Reader getCharacterStream ()
     {
     return characterStream;
     }
-
     
 }
 

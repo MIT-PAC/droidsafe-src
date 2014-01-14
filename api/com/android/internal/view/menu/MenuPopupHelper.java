@@ -260,6 +260,7 @@ private int measureContentWidth(ListAdapter adapter) {
         // Don't need to do anything; we added as a presenter in the constructor.
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:34.086 -0500", hash_original_method = "763B49CF567916F2535D5913B399980B", hash_generated_method = "112BC26BB8F44D11AC63C56F0B91CD14")
     
 @Override
@@ -342,6 +343,7 @@ public boolean collapseItemActionView(MenuBuilder menu, MenuItemImpl item) {
         return false;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:34.106 -0500", hash_original_method = "B74F33F41EA76949D2B7FFC2C0C48D8F", hash_generated_method = "C0CB620CEC980AD85BC1EE1B6EA7B000")
     
 @Override
@@ -365,6 +367,7 @@ public MenuAdapter(MenuBuilder menu) {
             findExpandedIndex();
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:34.121 -0500", hash_original_method = "A184D01EFF77484135B24A56DB5CEE5C", hash_generated_method = "B04709EFD607D951E88284934D0100B3")
         
 public int getCount() {
@@ -376,6 +379,7 @@ public int getCount() {
             return items.size() - 1;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:34.123 -0500", hash_original_method = "007AF294AD9B69A523B4CB65CF7063F8", hash_generated_method = "63D8E35105523D7DD84EA799E9DF2A2A")
         
 public MenuItemImpl getItem(int position) {
@@ -387,6 +391,7 @@ public MenuItemImpl getItem(int position) {
             return items.get(position);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:34.125 -0500", hash_original_method = "7144EF990F660E75AA61001CF21A1CD5", hash_generated_method = "8CA03C062FFB619062E87AB7922D9645")
         
 public long getItemId(int position) {
@@ -395,6 +400,7 @@ public long getItemId(int position) {
             return position;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:34.128 -0500", hash_original_method = "D8FCA6D369D77459F33FFA03EFE73A9B", hash_generated_method = "50CABC5E5552B27DA5DB2D56AF34E85D")
         
 public View getView(int position, View convertView, ViewGroup parent) {

@@ -221,6 +221,7 @@ public void reset() {
         mRefreshCache = false;
     }
 
+    @DSSource({DSSourceKind.CONTACT_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:32.050 -0500", hash_original_method = "B81A15F32DE42ED7FA5FD76607998109", hash_generated_method = "72E3A9E53221461FE1E851CA9BE744D1")
     
 public ArrayList<AdnRecord> loadEfFilesFromUsim() {

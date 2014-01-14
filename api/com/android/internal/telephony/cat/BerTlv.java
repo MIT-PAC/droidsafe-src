@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.List;
 
-
-
-
-
-
 class BerTlv {
 
     /**
@@ -70,7 +65,6 @@ public static BerTlv decode(byte[] data) throws ResultException {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:07.202 -0500", hash_original_field = "E46564801AB3D6DC8660EAD1318E8D77", hash_generated_field = "51019AD6C5CC55D9C6AF4E6FA65C2CFC")
 
-
     public static final int BER_UNKNOWN_TAG             = 0x00;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:07.205 -0500", hash_original_field = "A5F484D7C9AC31A97C300F3A238CA40B", hash_generated_field = "849EF9FE5E783A4D18EB93EBEF07AF92")
 
@@ -100,6 +94,7 @@ private BerTlv(int tag, List<ComprehensionTlv> ctlvs) {
      *
      * @return A list of COMPREHENSION-TLV object
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:07.215 -0500", hash_original_method = "4DB54AB9F503DA894E5725BF1F0BC01C", hash_generated_method = "31036B0C79BC3AE7FC0A6AE828E11749")
     
 public List<ComprehensionTlv> getComprehensionTlvs() {
@@ -111,6 +106,7 @@ public List<ComprehensionTlv> getComprehensionTlvs() {
      *
      * @return A tag integer.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:07.217 -0500", hash_original_method = "F4331D0775C023B121D08D63B25AAACE", hash_generated_method = "92179372CE49E6423B644726BDCEE63E")
     
 public int getTag() {

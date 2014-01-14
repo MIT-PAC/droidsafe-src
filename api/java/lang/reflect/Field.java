@@ -142,6 +142,7 @@ private synchronized void initGenericType() {
     }
 
     /** {@inheritDoc} */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.256 -0500", hash_original_method = "1CDF5107AC443AA5F8C2E1DA9DF559A0", hash_generated_method = "5A7AC51370A528B541EFB40EFD81B606")
     
 @Override
@@ -222,6 +223,7 @@ public boolean isEnumConstant() {
      *             if the generic type points to a type that cannot be
      *             instantiated for some reason
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.271 -0500", hash_original_method = "963F10B2A4697E7A9ECC1BB94066D74F", hash_generated_method = "FD2CCB94E0B27938FC7C6CEA8DFA5A0E")
     
 public Type getGenericType() {
@@ -229,6 +231,7 @@ public Type getGenericType() {
         return Types.getType(genericType);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.273 -0500", hash_original_method = "4122EC91CDDE6FFD9DA08F5ADAF8DB5D", hash_generated_method = "29F60940673BD8877EB2DF97898FD3EA")
     
 @Override public Annotation[] getDeclaredAnnotations() {
@@ -308,6 +311,7 @@ A varD37D33C5EE02B81A7F8EF45A88B88039_1884546761 =         getAnnotation(declari
      * @throws IllegalAccessException
      *             if this field is not accessible
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.294 -0500", hash_original_method = "7AE3BC00249CC99885BB0445C93FB18A", hash_generated_method = "81AB090C4B0E06E8EAE64B54F604EA2C")
     
 public Object get(Object object) throws IllegalAccessException, IllegalArgumentException {
@@ -367,6 +371,7 @@ public boolean getBoolean(Object object) throws IllegalAccessException,
      * @throws IllegalAccessException
      *             if this field is not accessible
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.299 -0500", hash_original_method = "638C7C4918F4FDF5130555C74F583890", hash_generated_method = "F08EE7D873CB6C30199B36D5A03129A0")
     
 public byte getByte(Object object) throws IllegalAccessException, IllegalArgumentException {
@@ -396,6 +401,7 @@ public byte getByte(Object object) throws IllegalAccessException, IllegalArgumen
      * @throws IllegalAccessException
      *             if this field is not accessible
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.302 -0500", hash_original_method = "6648A25494EBFE26376F66DF9331BADB", hash_generated_method = "F2005E402570EBEB89A8181B3E933C42")
     
 public char getChar(Object object) throws IllegalAccessException, IllegalArgumentException {
@@ -407,6 +413,7 @@ public char getChar(Object object) throws IllegalAccessException, IllegalArgumen
      *
      * @return the declaring class
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.305 -0500", hash_original_method = "747BEFE9985C4AF4EE3D5630B62185EA", hash_generated_method = "574997FEB7F01E0808800855819F513A")
     
 public Class<?> getDeclaringClass() {
@@ -436,6 +443,7 @@ public Class<?> getDeclaringClass() {
      * @throws IllegalAccessException
      *             if this field is not accessible
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.307 -0500", hash_original_method = "B22A8667913C0820CACD3D8F78E3B803", hash_generated_method = "C81603E2D1BE2E53E3059A1EFD5E186F")
     
 public double getDouble(Object object) throws IllegalAccessException, IllegalArgumentException {
@@ -465,6 +473,7 @@ public double getDouble(Object object) throws IllegalAccessException, IllegalArg
      * @throws IllegalAccessException
      *             if this field is not accessible
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.310 -0500", hash_original_method = "BFF553DA1989441891013747E355F341", hash_generated_method = "F8F480A05C16CA6CB51B124F3B714944")
     
 public float getFloat(Object object) throws IllegalAccessException, IllegalArgumentException {
@@ -494,6 +503,7 @@ public float getFloat(Object object) throws IllegalAccessException, IllegalArgum
      * @throws IllegalAccessException
      *             if this field is not accessible
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.312 -0500", hash_original_method = "5CB83BC53ADA020FA0FD37C15AAD9E62", hash_generated_method = "9D7296B3392D54E0B4B59D734A1FEECF")
     
 public int getInt(Object object) throws IllegalAccessException, IllegalArgumentException {
@@ -523,6 +533,7 @@ public int getInt(Object object) throws IllegalAccessException, IllegalArgumentE
      * @throws IllegalAccessException
      *             if this field is not accessible
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.314 -0500", hash_original_method = "005A2557A921AA55BF8BDBCBDC639BE4", hash_generated_method = "7AFCB38C335290318905087FBA964B3A")
     
 public long getLong(Object object) throws IllegalAccessException, IllegalArgumentException {
@@ -536,6 +547,7 @@ public long getLong(Object object) throws IllegalAccessException, IllegalArgumen
      * @return the modifiers for this field
      * @see Modifier
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.317 -0500", hash_original_method = "5A676A538E8952F6729F0D8423178A33", hash_generated_method = "1327A747177D4EE276A0F6E14A311D56")
     
 public int getModifiers() {
@@ -556,6 +568,7 @@ public int getModifiers() {
      *
      * @return the name of this field
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.322 -0500", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "50860709F8CC9FE19B604881E59FBA54")
     
 public String getName() {
@@ -585,6 +598,7 @@ public String getName() {
      * @throws IllegalAccessException
      *             if this field is not accessible
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.325 -0500", hash_original_method = "0DDA5605A2464ED398902817D939E3F2", hash_generated_method = "C1F8C1DFD6141C567C3BF4B10E660C5B")
     
 public short getShort(Object object) throws IllegalAccessException, IllegalArgumentException {
@@ -610,6 +624,7 @@ public short getShort(Object object) throws IllegalAccessException, IllegalArgum
      *
      * @return the type of this field
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.330 -0500", hash_original_method = "21C93A7CC51FD6114C8D944747F943F4", hash_generated_method = "0EEEE4F02A27E714D03E663A59C6B204")
     
 public Class<?> getType() {

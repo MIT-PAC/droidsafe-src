@@ -736,6 +736,7 @@ private Date error(ParsePosition position, int offset, TimeZone zone) {
      * Returns the date which is the start of the one hundred year period for two-digit year values.
      * See {@link #set2DigitYearStart} for details.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.124 -0500", hash_original_method = "71AF220EE7B6857040DD249E69ABFBDC", hash_generated_method = "E74FAA143E85741BE4E1784A56BEBA05")
     
 public Date get2DigitYearStart() {
@@ -747,6 +748,7 @@ public Date get2DigitYearStart() {
      *
      * @return the {@code DateFormatSymbols} object.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.127 -0500", hash_original_method = "CB6B47612D51E0A5BF8CB9FEBD927C3E", hash_generated_method = "205D974A5D75894D76F8CEEF2351B5EF")
     
 public DateFormatSymbols getDateFormatSymbols() {
@@ -919,6 +921,7 @@ private int parseMonth(String string, int offset, int count, int absolute, Strin
      * @throws IllegalArgumentException
      *             if there are invalid characters in the pattern.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.144 -0500", hash_original_method = "7359DD4332D8271AC0BCC2D6C59D8B62", hash_generated_method = "EB55FA63405C87E1036FE69E8D3600F0")
     
 @Override

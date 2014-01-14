@@ -253,6 +253,7 @@ public Entry getValues(int i, Entry recycle) {
         return entry;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:30.625 -0500", hash_original_method = "F3360ADB8E6D37C5AD6714A1DBEA3C2C", hash_generated_method = "F44F4A0B4A98B76DEA0CDE08EBFF4E23")
     
 public long getElapsedRealtime() {
@@ -263,6 +264,7 @@ public long getElapsedRealtime() {
      * Return age of this {@link NetworkStats} object with respect to
      * {@link SystemClock#elapsedRealtime()}.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:30.627 -0500", hash_original_method = "A28F8D44EDD8B5977D1B4B03F62008BC", hash_generated_method = "B48C6C0687A68BA9FECD7017E68393C1")
     
 public long getElapsedRealtimeAge() {
@@ -397,6 +399,7 @@ public void spliceOperationsFrom(NetworkStats stats) {
     /**
      * Return list of unique interfaces known by this data structure.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:30.650 -0500", hash_original_method = "2B2C9B0B02A7A72C63A74815DF58D4A4", hash_generated_method = "D0A684448F4A184041D52DC630E31C37")
     
 public String[] getUniqueIfaces() {
@@ -412,6 +415,7 @@ public String[] getUniqueIfaces() {
     /**
      * Return list of unique UIDs known by this data structure.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:30.653 -0500", hash_original_method = "C948A3950E5BB6DBF87B62BBDA0B02C8", hash_generated_method = "289700DCF7DEB1D4337A3D8DA5CF897C")
     
 public int[] getUniqueUids() {
@@ -432,6 +436,7 @@ public int[] getUniqueUids() {
      * Return total bytes represented by this snapshot object, usually used when
      * checking if a {@link #subtract(NetworkStats)} delta passes a threshold.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:30.655 -0500", hash_original_method = "277B11F09A23B8E4B361A93BBF3584B2", hash_generated_method = "EA48C6FAC9BD27129C25513C89F6565F")
     
 public long getTotalBytes() {

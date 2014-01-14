@@ -17,6 +17,7 @@ public final class ASN1Integer extends ASN1Primitive {
      *
      * @return ASN.1 Integer type default implementation
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:52.185 -0500", hash_original_method = "1093EBA3DAE5D53DB178C4D59A8B2A14", hash_generated_method = "9E4F649F74B3B370F5B00505CE7D7E68")
     
 public static ASN1Integer getInstance() {
@@ -94,6 +95,7 @@ public Object decode(BerInputStream in) throws IOException {
      *
      * @return array of bytes
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:52.189 -0500", hash_original_method = "A63FF6180169FCDAA4D93BB2145B7594", hash_generated_method = "F8DB7E0AEEC1ADA176EAD89B6DA9EBBD")
     
 public Object getDecodedObject(BerInputStream in) throws IOException {

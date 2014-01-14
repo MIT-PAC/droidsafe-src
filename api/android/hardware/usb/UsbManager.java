@@ -117,6 +117,7 @@ public UsbManager(Context context, IUsbManager service) {
      *
      * @return HashMap containing all connected USB devices.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:50.824 -0500", hash_original_method = "0C4F9A912AC5BE14CB67FA981035B977", hash_generated_method = "C3819C284A1846A974ABF59020995526")
     
 public HashMap<String,UsbDevice> getDeviceList() {
@@ -141,6 +142,7 @@ public HashMap<String,UsbDevice> getDeviceList() {
      * @param device the device to open
      * @return true if we successfully opened the device
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:50.826 -0500", hash_original_method = "8D8483424EA0CFD952FF0A230CCAC549", hash_generated_method = "B53D5A9E8934D850302B0FEB181A8863")
     
 public UsbDeviceConnection openDevice(UsbDevice device) {
@@ -167,6 +169,7 @@ public UsbDeviceConnection openDevice(UsbDevice device) {
      *
      * @return list of USB accessories, or null if none are attached.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:50.829 -0500", hash_original_method = "1BBBF6CC2C81B72139C0D4C7AF3A1618", hash_generated_method = "8AE4C903E8B822CEB6B3A1FC83A6DA3B")
     
 public UsbAccessory[] getAccessoryList() {
@@ -189,6 +192,7 @@ public UsbAccessory[] getAccessoryList() {
      * @param accessory the USB accessory to open
      * @return file descriptor, or null if the accessor could not be opened.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:50.831 -0500", hash_original_method = "E613A4CA88B6248C79E5606341D1D797", hash_generated_method = "96BFC0D30548295B2B07F5B529143609")
     
 public ParcelFileDescriptor openAccessory(UsbAccessory accessory) {
@@ -317,6 +321,7 @@ public boolean isFunctionEnabled(String function) {
      *
      * {@hide}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:50.850 -0500", hash_original_method = "4ECB85B34540B5A01AD76105AF55C635", hash_generated_method = "E1BD1ECDEE3FC8FBA55FA007ED057722")
     
 public String getDefaultFunction() {

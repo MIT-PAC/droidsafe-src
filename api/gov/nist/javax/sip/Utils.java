@@ -12,6 +12,7 @@ import java.util.HashSet;
 
 public class Utils implements UtilsExt {
    
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:49.449 -0500", hash_original_method = "374DAC9ECD069BD80F1EF985F978C693", hash_generated_method = "D07E1DA751C02C51B488E18E42FF7C46")
     
 public static Utils getInstance() {
@@ -46,6 +47,7 @@ public static String toHexString(byte b[]) {
      * @param str
      *            string to be quoted
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:49.468 -0500", hash_original_method = "71A98D541624CF2F27EE7D084D0F14CB", hash_generated_method = "2415D683FF1EC39CD848F03436E4CDA9")
     
 public static String getQuotedString(String str) {
@@ -74,6 +76,7 @@ protected static String reduceString(String input) {
         return retval;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:49.537 -0500", hash_original_method = "91350AA934456C18675F81415E4BE737", hash_generated_method = "86C869EE06A24E640B4A51E22B6F3B54")
     
 public static String getSignature() {

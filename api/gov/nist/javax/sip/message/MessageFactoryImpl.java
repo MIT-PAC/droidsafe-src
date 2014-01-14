@@ -40,6 +40,7 @@ public class MessageFactoryImpl implements MessageFactory, MessageFactoryExt {
      *
      * @since 2.0
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:35.692 -0500", hash_original_method = "C89ABE013600473558BF14E3725A2CD0", hash_generated_method = "B0C40DB3A8237F2BE59F07DCF31CFDCD")
     
 public static UserAgentHeader getDefaultUserAgentHeader() {
@@ -51,12 +52,14 @@ public static UserAgentHeader getDefaultUserAgentHeader() {
      *
      * @return the server header.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:35.694 -0500", hash_original_method = "8E30377DD5EA58EE24E9DBB58EDE843C", hash_generated_method = "76BB6719BE01E20BAA78776A5DEBF512")
     
 public static ServerHeader getDefaultServerHeader() {
         return server;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:35.699 -0500", hash_original_method = "09F50F9145B26B5F9153A759802EF925", hash_generated_method = "7174EC97A2B0FEFE949F88B49B15845F")
     
 public static String getDefaultContentEncodingCharset() {
@@ -301,6 +304,7 @@ public Request createRequest(URI requestURI, String method,
      *             which signals that an error has been reached unexpectedly
      *             while parsing the statusCode or the body.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:35.650 -0500", hash_original_method = "ECF04A8977F592B6B34B54A1AB720125", hash_generated_method = "52AF108A6E18123F1928924A90B876C3")
     
 public Response createResponse(int statusCode, CallIdHeader callId,
@@ -360,6 +364,7 @@ public Response createResponse(int statusCode, CallIdHeader callId,
      *             which signals that an error has been reached unexpectedly
      *             while parsing the statusCode or the body.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:35.653 -0500", hash_original_method = "A629704DD43A1871A6A3CE469581E96B", hash_generated_method = "2B90D17DC577F0EEFB1B5F7D9D1D4021")
     
 public Response createResponse(int statusCode, CallIdHeader callId,
@@ -409,6 +414,7 @@ public Response createResponse(int statusCode, CallIdHeader callId,
      *             which signals that an error has been reached unexpectedly
      *             while parsing the statusCode.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:35.656 -0500", hash_original_method = "A7A78E739513CEBA7D925C6C5ED3F852", hash_generated_method = "592D2A350CB8CD8F3C1412A7AEBE5273")
     
 public Response createResponse(int statusCode, CallIdHeader callId,
@@ -454,6 +460,7 @@ public Response createResponse(int statusCode, CallIdHeader callId,
      *             which signals that an error has been reached unexpectedly
      *             while parsing the statusCode or the body.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:35.659 -0500", hash_original_method = "DD467BD39ED470F41EBF28C514D0DE9D", hash_generated_method = "14EE41019E4C43E3407A25417435EE5C")
     
 public Response createResponse(int statusCode, Request request,
@@ -489,6 +496,7 @@ public Response createResponse(int statusCode, Request request,
      *             which signals that an error has been reached unexpectedly
      *             while parsing the statusCode or the body.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:35.662 -0500", hash_original_method = "8BDEFE6980DC0197E43DC25D26C94143", hash_generated_method = "C5424F955C0A4BA4C1BE08A81A337C61")
     
 public Response createResponse(int statusCode, Request request,
@@ -520,6 +528,7 @@ public Response createResponse(int statusCode, Request request,
      *             which signals that an error has been reached unexpectedly
      *             while parsing the statusCode.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:35.665 -0500", hash_original_method = "C92B83B60B03C2CCAA2954674526918C", hash_generated_method = "C10A7094A82089B77B56F1557666283F")
     
 public Response createResponse(int statusCode, Request request)
@@ -627,6 +636,7 @@ public Request createRequest(javax.sip.address.URI requestURI,
      *             which signals that an error has been reached unexpectedly
      *             while parsing the statusCode or the body.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:35.671 -0500", hash_original_method = "F442F4A57014D62724BCC0FFB03CA549", hash_generated_method = "7CBF6AECDEAC88AF1032F8EF8101BFA7")
     
 public Response createResponse(int statusCode, CallIdHeader callId,
@@ -685,6 +695,7 @@ public Response createResponse(int statusCode, CallIdHeader callId,
      *             which signals that an error has been reached unexpectedly
      *             while parsing the statusCode or the body.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:35.674 -0500", hash_original_method = "6F9C1831E48382AD1DFACEE268167E8E", hash_generated_method = "D589AA3DC448C821179FDC12FF1C0570")
     
 public Response createResponse(int statusCode, CallIdHeader callId,

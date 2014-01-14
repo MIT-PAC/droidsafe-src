@@ -93,6 +93,7 @@ protected final void addState(State state, State parent) {
     /**
      * @return current message
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:47.475 -0500", hash_original_method = "E9B863EE3D8BE2542840411248513D5A", hash_generated_method = "835B5761B2AC064E490F75E706214CC5")
     
 protected final Message getCurrentMessage() {
@@ -102,6 +103,7 @@ protected final Message getCurrentMessage() {
     /**
      * @return current state
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:47.477 -0500", hash_original_method = "D598BDB56AFF58F966F9A8594C83023E", hash_generated_method = "2CE1E5E97AE24E2B81F6FA87D1175D10")
     
 protected final IState getCurrentState() {
@@ -222,6 +224,7 @@ protected void quitting() {
     /**
      * @return the name
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:47.502 -0500", hash_original_method = "9194A7433912D38B9A3F1171AC921C56", hash_generated_method = "180770248625D86846C6E10AC417237F")
     
 public final String getName() {
@@ -269,6 +272,7 @@ public final ProcessedMessageInfo getProcessedMessageInfo(int index) {
     /**
      * @return Handler
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:47.515 -0500", hash_original_method = "467C85CDF2FD06F7E6D6E1A3F89DC6AE", hash_generated_method = "C94C0ABD705AEB3CD982EC1F972C7C7B")
     
 public final Handler getHandler() {

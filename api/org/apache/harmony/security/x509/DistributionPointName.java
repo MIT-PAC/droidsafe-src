@@ -29,6 +29,7 @@ public int getIndex(java.lang.Object object) {
             return (dpn.fullName == null) ? 1 : 0;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:58.219 -0500", hash_original_method = "B70947C42A22D0E920DBED92C52DD304", hash_generated_method = "978DB3CF9D8D4F4B618C4CD99A928895")
         
 @Override protected Object getDecodedObject(BerInputStream in) throws IOException {
@@ -43,6 +44,7 @@ public int getIndex(java.lang.Object object) {
             return result;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:58.222 -0500", hash_original_method = "BCC068DF66100A597C835FC62DF6AFA1", hash_generated_method = "0627774CAAA840FA87FCE90359A4F9C2")
         
 public Object getObjectToEncode(Object object) {

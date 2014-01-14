@@ -270,6 +270,7 @@ public DrmRawContent(InputStream inRawdata, int len, String mimeTypeStr) throws 
      * @return the string of the rights issuer address,
      *         or null if no rights issuer.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:01.342 -0500", hash_original_method = "DA61D867171B37EBE3ABF3A7818C6279", hash_generated_method = "BAF945A948D601852002C1C4EF920F52")
     
 public String getRightsAddress() {
@@ -285,6 +286,7 @@ public String getRightsAddress() {
      *              #DRM_SEPARATE_DELIVERY
      *              #DRM_SEPARATE_DELIVERY_DM
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:01.344 -0500", hash_original_method = "D6292E91B10AADE74CDCC0EA78647873", hash_generated_method = "8C1C518EC52B312FC5111DD9711CC9DC")
     
 public int getRawType() {
@@ -298,6 +300,7 @@ public int getRawType() {
      *
      * @return the InputStream object of decrypted media content.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:01.346 -0500", hash_original_method = "3A81FD63CF04F4BFFAA8D4F0C3F30C0B", hash_generated_method = "2AE9C4F5192B4DE92A8493140C655329")
     
 public InputStream getContentInputStream(DrmRights rights) {
@@ -312,6 +315,7 @@ public InputStream getContentInputStream(DrmRights rights) {
      *
      * @return the decrypted media content type of this DRM content.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:01.349 -0500", hash_original_method = "B3F2608C469A4E7BAEFC0D100E327F2C", hash_generated_method = "778F2F03CD46113737D50AE1303EA88F")
     
 public String getContentType() {
@@ -326,6 +330,7 @@ public String getContentType() {
      * @return the length of the decrypted media content.
      *         #DRM_UNKNOWN_DATA_LEN if the length is unknown currently.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:01.351 -0500", hash_original_method = "1DD68310D2E0F74333AF2EE851C2CA4C", hash_generated_method = "C0DD457BF7036AEBC4EBBBFC588E6954")
     
 public int getContentLength(DrmRights rights) throws DrmException {

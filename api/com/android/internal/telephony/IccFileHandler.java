@@ -243,6 +243,7 @@ public void loadEFImgLinearFixed(int recordNum, Message onLoaded) {
      *        file int[3] is the number of records in the EF file So int[0] *
      *        int[3] = int[1]
      */
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:47.035 -0500", hash_original_method = "50E0C1880D1B176F78B29AB1FC2AC0F6", hash_generated_method = "7AEFFD11612E265524346318FFDB2510")
     
 public void getEFLinearRecordSize(int fileid, Message onLoaded) {
@@ -598,6 +599,7 @@ public void handleMessage(Message msg) {
      * @param efId
      * @return root path of the file.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:47.059 -0500", hash_original_method = "186CFCBD54A740D0E08382313B3D28EB", hash_generated_method = "CF5B8D360BCB350AC0A0BB5F6BDA0EA6")
     
 protected String getCommonIccEFPath(int efid) {

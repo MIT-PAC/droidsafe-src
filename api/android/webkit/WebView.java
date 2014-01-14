@@ -287,6 +287,7 @@ private static int computeDuration(int dx, int dy) {
     * @hide
     * @deprecated This was used for Gears, which has been deprecated.
     */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.936 -0500", hash_original_method = "DCC8025B0D65015CFA8097991E635157", hash_generated_method = "1ADD4122EC3C36802F56A241F84FF6AC")
     
 @Deprecated
@@ -1750,6 +1751,7 @@ protected int getTitleHeight() {
      *
      * @deprecated This method is now obsolete.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.484 -0500", hash_original_method = "1C2BE72B33EB5D6AC861291319186F00", hash_generated_method = "8FEF6CB4E4BB3A5D8F7D7506ECFF7D30")
     
 public int getVisibleTitleHeight() {
@@ -1804,6 +1806,7 @@ int getViewHeightWithTitle() {
      * @return The SSL certificate for the main top-level page or null if
      * there is no certificate (the site is not secure).
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.496 -0500", hash_original_method = "AD476A7428E3DA09ACFA510788381864", hash_generated_method = "D941CDE9C26B68DCB706441D31F03D27")
     
 public SslCertificate getCertificate() {
@@ -1872,6 +1875,7 @@ public void setHttpAuthUsernamePassword(String host, String realm,
      * @return String[] if found, String[0] is username, which can be null and
      *         String[1] is password. Return null if it can't find anything.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.506 -0500", hash_original_method = "ECF11FA1B5D29EA7B85A642A97A37762", hash_generated_method = "9D31C73646B1A70D9F25CA4D7C8FC1AC")
     
 public String[] getHttpAuthUsernamePassword(String host, String realm) {
@@ -2023,6 +2027,7 @@ public void setNetworkType(String type, String subtype) {
      * @see #savePicture
      * @see #restorePicture
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.533 -0500", hash_original_method = "D76FC1BD4962410EDA97F2F673ACB95E", hash_generated_method = "BE9ECAD12A01D1D3F1757D031FD2DCD0")
     
 public WebBackForwardList saveState(Bundle outState) {
@@ -2263,6 +2268,7 @@ public void clearViewState() {
      * @see #savePicture
      * @see #restorePicture
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.563 -0500", hash_original_method = "99FE452D222A3AA897B1F81F94FFC5BD", hash_generated_method = "54F47ABA8CB052ABA402D246AF43C583")
     
 public WebBackForwardList restoreState(Bundle inState) {
@@ -2796,6 +2802,7 @@ private void clearTextEntry() {
      * Return the current scale of the WebView
      * @return The current scale.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.646 -0500", hash_original_method = "7CCA6028A56577FC53B8EAA02010B4CB", hash_generated_method = "4DC5F3DA68044F56F453CE22567A3B36")
     
 public float getScale() {
@@ -3518,6 +3525,7 @@ private int computeRealVerticalScrollRange() {
      * that url has begun, the current page may not have changed.
      * @return The url for the current page.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.790 -0500", hash_original_method = "C4EBBFF9818941C5D5824E8B3F51971E", hash_generated_method = "F38C676B99E9ECCC987DAE6C3277ADF4")
     
 public String getUrl() {
@@ -3534,6 +3542,7 @@ public String getUrl() {
      * originally requested.
      * @return The url that was originally requested for the current page.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.792 -0500", hash_original_method = "FC3C6716276F1756949A9C3C5723F4FD", hash_generated_method = "424B9AB1E79C41732C4BF4BCE610F2EF")
     
 public String getOriginalUrl() {
@@ -3547,6 +3556,7 @@ public String getOriginalUrl() {
      * until WebViewClient.onReceivedTitle is called.
      * @return The title for the current page.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.794 -0500", hash_original_method = "D4595F49299490B58C966C4A02CB7245", hash_generated_method = "E7ECFF7699D3EBB5771FCAA8FB697708")
     
 public String getTitle() {
@@ -3560,6 +3570,7 @@ public String getTitle() {
      * page until WebViewClient.onReceivedIcon is called.
      * @return The favicon for the current page.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.796 -0500", hash_original_method = "A06DF5A940D8D02EBDDFDE57ABD78936", hash_generated_method = "9904D0BE4E94A746B828E528232FD56B")
     
 public Bitmap getFavicon() {
@@ -3574,6 +3585,7 @@ public Bitmap getFavicon() {
      * touch icon.
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.798 -0500", hash_original_method = "12FD5D0FD740156EA8AA35C005AD1672", hash_generated_method = "5EAE3AD6DA2B5ABB5FAAC467647CAF57")
     
 public String getTouchIconUrl() {
@@ -3585,6 +3597,7 @@ public String getTouchIconUrl() {
      * Get the progress for the current page.
      * @return The progress for the current page between 0 and 100.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.801 -0500", hash_original_method = "1FE22EBDB3E8C56C40A407C1A0E083D0", hash_generated_method = "74E145D876EA6155A260B96B198D0831")
     
 public int getProgress() {
@@ -3595,6 +3608,7 @@ public int getProgress() {
     /**
      * @return the height of the HTML content.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.803 -0500", hash_original_method = "9280AE473B4D22C8C4242E7098408E11", hash_generated_method = "D1270718E2C8F4E88C999AB896253809")
     
 public int getContentHeight() {
@@ -3606,6 +3620,7 @@ public int getContentHeight() {
      * @return the width of the HTML content.
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.805 -0500", hash_original_method = "CC08B3036F1FD603613A57F943902091", hash_generated_method = "D6A17C41237228432A494BE3184F037A")
     
 public int getContentWidth() {
@@ -4514,6 +4529,7 @@ public void removeJavascriptInterface(String interfaceName) {
      * @return A WebSettings object that can be used to control this WebView's
      *         settings.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.933 -0500", hash_original_method = "AE8854F55F54F48403D38F822FA4F88C", hash_generated_method = "A532D40D6A49AAE15F166EE8766438A8")
     
 public WebSettings getSettings() {
@@ -7735,6 +7751,7 @@ private void doFling() {
      * @deprecated The built-in zoom mechanism is preferred, see
      *             {@link WebSettings#setBuiltInZoomControls(boolean)}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:52.355 -0500", hash_original_method = "086CD418AC6EC8E39C422734998A48D8", hash_generated_method = "964523E253442494AEA3E70586655998")
     
 @Deprecated
@@ -8149,6 +8166,7 @@ public synchronized void setWebView(WebView webview) {
          * Return the WebView object.
          * @return WebView The transported WebView object.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:50.833 -0500", hash_original_method = "FCFE2F49718195B26DF12E8855D16060", hash_generated_method = "A0DB45617F9F631D03655490812037B3")
         
 public synchronized WebView getWebView() {
@@ -8259,12 +8277,14 @@ private void setExtra(String extra) {
             mExtra = extra;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.371 -0500", hash_original_method = "E9AD68D49398B2B9D86D12D221B14582", hash_generated_method = "32498FCDA3AC1E9A676800B51A331335")
         
 public int getType() {
             return mType;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.374 -0500", hash_original_method = "993DAEFB4C11E7BC5E9CBC52DC4B1BBC", hash_generated_method = "8AD83B51BD7C90F61A9349C76A343A68")
         
 public String getExtra() {

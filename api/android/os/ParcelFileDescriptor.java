@@ -279,6 +279,7 @@ public ParcelFileDescriptor dup() throws IOException {
      *
      * @return Returns the FileDescriptor associated with this object.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:29.061 -0500", hash_original_method = "949276D2764A2C9DACACDE44898698C8", hash_generated_method = "E5BF1F22A9EE48D78F7BADE5BB998512")
     
 public FileDescriptor getFileDescriptor() {
@@ -364,6 +365,7 @@ public AutoCloseOutputStream(ParcelFileDescriptor fd) {
      * ParcelFileDescriptor still owns the fd, and it still must be closed
      * through this API.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:29.070 -0500", hash_original_method = "C747587E89EFBC650597F209F149B598", hash_generated_method = "9486D8D458C93EF74D0AA526839B0ABE")
     
 public int getFd() {

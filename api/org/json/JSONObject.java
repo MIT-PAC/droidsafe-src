@@ -368,6 +368,7 @@ public boolean has(String name) {
      *
      * @throws JSONException if no such mapping exists.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:10.405 -0500", hash_original_method = "C38AAF9284AEE2A94970713BC651F263", hash_generated_method = "989F09A0F626ABF8850A0B3BD55B0EE1")
     
 public Object get(String name) throws JSONException {
@@ -435,6 +436,7 @@ public boolean optBoolean(String name, boolean fallback) {
      * @throws JSONException if the mapping doesn't exist or cannot be coerced
      *     to a double.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:10.417 -0500", hash_original_method = "0C60D6C72644A8965D87529BB9443348", hash_generated_method = "868253F442609340D6ABB43C2D6FF2A9")
     
 public double getDouble(String name) throws JSONException {
@@ -475,6 +477,7 @@ public double optDouble(String name, double fallback) {
      * @throws JSONException if the mapping doesn't exist or cannot be coerced
      *     to an int.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:10.424 -0500", hash_original_method = "06DD6202AFC58B0F1BA6F9DBAA37C5F3", hash_generated_method = "79D5758DF600F70E8745D09754786AE5")
     
 public int getInt(String name) throws JSONException {
@@ -515,6 +518,7 @@ public int optInt(String name, int fallback) {
      * @throws JSONException if the mapping doesn't exist or cannot be coerced
      *     to a long.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:10.431 -0500", hash_original_method = "55ABC1042FFC5D7EF9272460461F1426", hash_generated_method = "059F3F609EB1191C057F2BD5A86A3CE9")
     
 public long getLong(String name) throws JSONException {
@@ -554,6 +558,7 @@ public long optLong(String name, long fallback) {
      *
      * @throws JSONException if no such mapping exists.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:10.438 -0500", hash_original_method = "CC649536AC568087B4414076D420F027", hash_generated_method = "533903449603AC67C297A20E00AF22B2")
     
 public String getString(String name) throws JSONException {
@@ -594,6 +599,7 @@ public String optString(String name, String fallback) {
      * @throws JSONException if the mapping doesn't exist or is not a {@code
      *     JSONArray}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:10.446 -0500", hash_original_method = "1CE1CD2D1D65AA0859027B9575FA80C4", hash_generated_method = "BC318C84F4526F5E4A60A0591DB41663")
     
 public JSONArray getJSONArray(String name) throws JSONException {
@@ -623,6 +629,7 @@ public JSONArray optJSONArray(String name) {
      * @throws JSONException if the mapping doesn't exist or is not a {@code
      *     JSONObject}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:10.450 -0500", hash_original_method = "5326315C93466A3B1E8C695224A5B5FD", hash_generated_method = "B33196C99C5716D9B399C1894439B76D")
     
 public JSONObject getJSONObject(String name) throws JSONException {

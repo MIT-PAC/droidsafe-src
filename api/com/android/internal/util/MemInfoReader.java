@@ -103,18 +103,21 @@ public void readMemInfo() {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.253 -0500", hash_original_method = "3434AB33F130B66E857E66B11D583682", hash_generated_method = "9B29D867E46F40BDB379803D4131A9AA")
     
 public long getTotalSize() {
         return mTotalSize;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.255 -0500", hash_original_method = "FACB48AE3A5EF9A0F8A782DC112E6801", hash_generated_method = "468BB80E6307F748437203E2B7FEE575")
     
 public long getFreeSize() {
         return mFreeSize;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.257 -0500", hash_original_method = "67C7373745CA2083B77127FB7F7EF9BE", hash_generated_method = "F4400F45D0DD65E2B797051FE78FA6D2")
     
 public long getCachedSize() {

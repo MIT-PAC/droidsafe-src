@@ -77,12 +77,14 @@ public TrustedCertificateStore(File systemDir, File addedDir, File deletedDir) {
         this.deletedDir = deletedDir;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:18.135 -0500", hash_original_method = "DCFF226F6C2C4D0E26660E34EC9EC374", hash_generated_method = "80DAB13D18C0F0299AE527FFDDBCA6C8")
     
 public Certificate getCertificate(String alias) {
         return getCertificate(alias, false);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:18.137 -0500", hash_original_method = "5E5623CDAE6C2674E4A1581BA2487353", hash_generated_method = "10372BE868B27952F552BCB0D85BE0FA")
     
 public Certificate getCertificate(String alias, boolean includeDeletedSystem) {
@@ -173,6 +175,7 @@ private boolean isDeletedSystemCertificate(X509Certificate x) {
         return getCertificateFile(deletedDir, x).exists();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:18.151 -0500", hash_original_method = "CCEB88AE1C59EF9C3585E776EAD03DC2", hash_generated_method = "BB1CD994B45F8387544C37547817291B")
     
 public Date getCreationDate(String alias) {
@@ -253,6 +256,7 @@ private boolean containsAlias(String alias, boolean includeDeletedSystem) {
         return getCertificate(alias, includeDeletedSystem) != null;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:18.168 -0500", hash_original_method = "2147628C71E1D1C09BD2609FCF8F152B", hash_generated_method = "ED845C999F772E40D43E7C63FA21BA7E")
     
 public String getCertificateAlias(Certificate c) {

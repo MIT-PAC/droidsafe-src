@@ -857,7 +857,8 @@ void
         cm.setMute(desiredMute, null);
     }
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.797 -0500", hash_original_method = "11907D6A9C6D8F23B8C0FECA1425D0D1", hash_generated_method = "11907D6A9C6D8F23B8C0FECA1425D0D1")
+    /*package*/ @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.797 -0500", hash_original_method = "11907D6A9C6D8F23B8C0FECA1425D0D1", hash_generated_method = "11907D6A9C6D8F23B8C0FECA1425D0D1")
     
 boolean
     getMute() {
@@ -951,6 +952,7 @@ void hangupAllConnections(CdmaCall call) throws CallStateException{
     }
 
     /* package */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.812 -0500", hash_original_method = "DA3BA6D275DE18892F45915EBAE08DC8", hash_generated_method = "DA3BA6D275DE18892F45915EBAE08DC8")
     
 CdmaConnection getConnectionByIndex(CdmaCall call, int index)

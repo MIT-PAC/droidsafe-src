@@ -9,14 +9,8 @@ import java.lang.ref.SoftReference;
 import java.util.LinkedList;
 import java.util.ListIterator;
 
-
-
-
-
-
 class ByteArrayBuilder {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.020 -0500", hash_original_field = "D90E68022A4FB3270027D1F0FF67C191", hash_generated_field = "3DAEEFED1145BF3DC7E54720D7042881")
-
 
     private static final int DEFAULT_CAPACITY = 8192;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.023 -0500", hash_original_field = "EB9567C1FECB9A49841277DD0F3CDB82", hash_generated_field = "17FC8AB839DC2BF0E0AEEEE12FA31109")
@@ -28,7 +22,6 @@ class ByteArrayBuilder {
     private static final ReferenceQueue<Chunk> sQueue =
             new ReferenceQueue<Chunk>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.028 -0500", hash_original_field = "80AD2E8B287372A40D02DBBE7E931F01", hash_generated_field = "B776907C1A6A4E01FFB277D178950D86")
-
 
     private LinkedList<Chunk> mChunks;
 
@@ -80,6 +73,7 @@ public synchronized boolean isEmpty() {
         return mChunks.isEmpty();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.039 -0500", hash_original_method = "6BBE6D0629DEE9459E725081CE095168", hash_generated_method = "A894256BA5D1EA51D5D3B96D77AC722F")
     
 public synchronized int getByteSize() {
@@ -91,7 +85,6 @@ public synchronized int getByteSize() {
         }
         return total;
     }
-
     
     public static class Chunk {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.050 -0500", hash_original_field = "F421D8AFAAC1D792F938E23541530028", hash_generated_field = "0EDCDC8DA17864CD42594730EA96D957")
@@ -122,7 +115,6 @@ public void release() {
                 sPool.notifyAll();
             }
         }
-
         
     }
 

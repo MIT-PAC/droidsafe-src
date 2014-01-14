@@ -32,6 +32,7 @@ private synchronized static void setMainLooper(Looper looper) {
 
     /** Returns the application's main looper, which lives in the main thread of the application.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:29.966 -0500", hash_original_method = "B301D14AF486D9D7134940A0F1BF13CF", hash_generated_method = "7397F1AB5AB47E75F37A7B7BE4B27DD9")
     
 public synchronized static Looper getMainLooper() {
@@ -134,6 +135,7 @@ public void setMessageLogging(Printer printer) {
     /**
      * Return the Thread associated with this Looper.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:29.983 -0500", hash_original_method = "10A14FF061E08E67689F0F5686D6176F", hash_generated_method = "D402F1CFC3CD0CBF03882696518D38AC")
     
 public Thread getThread() {
@@ -141,6 +143,7 @@ public Thread getThread() {
     }
 
     /** @hide */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:29.984 -0500", hash_original_method = "9CC180E1B870A467FDD64311213EECB9", hash_generated_method = "00329067F61FEEBF263D62E8B22EAD26")
     
 public MessageQueue getQueue() {

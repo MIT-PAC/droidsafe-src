@@ -17,6 +17,7 @@ public final class Unsafe {
      * Gets the unique instance of this class. This is only allowed in
      * very limited situations.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:53.644 -0500", hash_original_method = "74628BAB8E81DC2A00A81F4FA9A646FA", hash_generated_method = "30A6F9D65DD593CFCEB395F60D4C296F")
     
 public static Unsafe getUnsafe() {

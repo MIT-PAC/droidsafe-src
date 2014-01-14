@@ -189,6 +189,7 @@ DeviceAdminInfo(Parcel source) {
     /**
      * Return the .apk package that implements this device admin.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.356 -0500", hash_original_method = "15D7F1C05476F5ABD61BE7FA06DD15FF", hash_generated_method = "B03B6C7AB7C74F5F2B6B2A6BF5024941")
     
 public String getPackageName() {
@@ -199,6 +200,7 @@ public String getPackageName() {
      * Return the class name of the receiver component that implements
      * this device admin.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.358 -0500", hash_original_method = "DA104755B25D83C27775D5E8DE9A1BBA", hash_generated_method = "1315B33408538A0F3BCEC0441C3BB0C9")
     
 public String getReceiverName() {
@@ -209,6 +211,7 @@ public String getReceiverName() {
      * Return the raw information about the receiver implementing this
      * device admin.  Do not modify the returned object.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.361 -0500", hash_original_method = "841DC64081A3A73FAF123BE852CFB557", hash_generated_method = "7FE6CA6A34D9C48885B628AF1D3E310A")
     
 public ActivityInfo getActivityInfo() {
@@ -243,6 +246,7 @@ public PolicyInfo(int identIn, String tagIn, int labelIn, int descriptionIn) {
     /**
      * Return the component of the receiver that implements this device admin.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.363 -0500", hash_original_method = "D8CD91DC98C1B02E60FA507EA4460E94", hash_generated_method = "A0DC67A908DBE8989A95916CA6E6CE19")
     
 public ComponentName getComponent() {
@@ -326,6 +330,7 @@ public boolean usesPolicy(int policyIdent) {
      * are as per {@link #usesPolicy(int)}.  If the given identifier is not
      * known, null is returned.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.377 -0500", hash_original_method = "535AB0E7EF604572B28232B709525301", hash_generated_method = "454DE004557814BE7724602F32BD3F3F")
     
 public String getTagForPolicy(int policyIdent) {
@@ -333,6 +338,7 @@ public String getTagForPolicy(int policyIdent) {
     }
     
     /** @hide */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.379 -0500", hash_original_method = "ED92B1C7E9AB1C3DE434E84362F61420", hash_generated_method = "4942C81192F83DF82F633E5FEB22759B")
     
 public ArrayList<PolicyInfo> getUsedPolicies() {

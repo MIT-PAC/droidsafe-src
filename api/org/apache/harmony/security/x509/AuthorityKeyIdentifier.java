@@ -39,6 +39,7 @@ public static AuthorityKeyIdentifier decode(byte[] encoding) throws IOException 
             setOptional(2);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:57.021 -0500", hash_original_method = "8440A55DE3509FBE8D7DFB533886663B", hash_generated_method = "E5290763EB1AD0F43939086843EA730B")
         
 @Override protected Object getDecodedObject(BerInputStream in) throws IOException {
@@ -85,6 +86,7 @@ public AuthorityKeyIdentifier(byte[] keyIdentifier,
         this.authorityCertSerialNumber = authorityCertSerialNumber;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:57.014 -0500", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "552F71A862C62513AAC32037F4D2FC1B")
     
 @Override public byte[] getEncoded() {

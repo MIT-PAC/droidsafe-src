@@ -9,10 +9,6 @@ import java.io.IOException;
 
 import libcore.io.IoBridge;
 
-
-
-
-
 public abstract class DatagramSocketImpl implements SocketOptions {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:15.705 -0500", hash_original_field = "DC35B29CA7114A0CAB311A30B93CBE5F", hash_generated_field = "22B1DDEE70BE0A6499271C452045F538")
 
@@ -70,6 +66,7 @@ protected abstract void create() throws SocketException;
      *
      * @return the current file descriptor of this socket.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:15.720 -0500", hash_original_method = "C1B4172ED9A628993584DE4384B8AF55", hash_generated_method = "C8664C638E6E7676776FC905B50F6CA8")
     
 protected FileDescriptor getFileDescriptor() {
@@ -79,6 +76,7 @@ protected FileDescriptor getFileDescriptor() {
     /**
      * Returns the local address to which the socket is bound.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:15.723 -0500", hash_original_method = "0E5E291FF84E111D5E99E4DCFA7BD180", hash_generated_method = "0E5E291FF84E111D5E99E4DCFA7BD180")
     
 InetAddress getLocalAddress() {
@@ -88,6 +86,7 @@ InetAddress getLocalAddress() {
     /**
      * Returns the local port to which this socket is bound.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:15.726 -0500", hash_original_method = "85505F9FF32DDEB1685867EF44676F61", hash_generated_method = "EF05AE2861ED9232B1E064D4A2DDDDC5")
     
 protected int getLocalPort() {
@@ -303,7 +302,6 @@ protected void disconnect() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:15.759 -0500", hash_original_method = "71AE8210735110F7C36210F87AF8E6BB", hash_generated_method = "29AEA3957A65597E5C2CC5DB836535F8")
     
 protected abstract int peekData(DatagramPacket pack) throws IOException;
-
     
 }
 

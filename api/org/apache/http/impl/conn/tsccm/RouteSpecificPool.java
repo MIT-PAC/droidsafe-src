@@ -15,14 +15,8 @@ import org.apache.http.conn.OperatedClientConnection;
 import org.apache.http.conn.routing.HttpRoute;
 import org.apache.http.util.LangUtils;
 
-
-
-
-
-
 public class RouteSpecificPool {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.765 -0500", hash_original_field = "0DA7E40E862C937570CA6B0D96D2555A", hash_generated_field = "3FCE5BFF671FE7B3BB3E2D744C5E5D2C")
-
 
     private final Log log = LogFactory.getLog(getClass());
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.767 -0500", hash_original_field = "8824947D446181E666F5CCE159788709", hash_generated_field = "082455967E4D3C7BAE7FAA337B8F6279")
@@ -41,7 +35,6 @@ public class RouteSpecificPool {
 
     protected int numEntries;
 
-
     /**
      * Creates a new route-specific pool.
      *
@@ -58,30 +51,29 @@ public RouteSpecificPool(HttpRoute route, int maxEntries) {
         this.numEntries = 0;
     }
 
-
     /**
      * Obtains the route for which this pool is specific.
      *
      * @return  the route
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.787 -0500", hash_original_method = "A51AC1237DD43D471744BBD4E881146C", hash_generated_method = "34C7DA051C58A0672C915D7D35F32FE9")
     
 public final HttpRoute getRoute() {
         return route;
     }
-
     
     /**
      * Obtains the maximum number of entries allowed for this pool.
      *
      * @return  the max entry number
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.789 -0500", hash_original_method = "3F262A29EAD0FCC787330E9B7CECC306", hash_generated_method = "29982F68BA84381BBC4A777EF5615517")
     
 public final int getMaxEntries() {
         return maxEntries;
     }
-    
     
     /**
      * Indicates whether this pool is unused.
@@ -97,18 +89,17 @@ public boolean isUnused() {
         return (numEntries < 1) && waitingThreads.isEmpty();
     }
 
-
     /**
      * Return remaining capacity of this pool
      * 
      * @return capacity
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.793 -0500", hash_original_method = "177416E45C86DBFDF7EC5AE9EA15CB02", hash_generated_method = "F0DFF1961BD32A1338C25D83E9AEA40C")
     
 public int getCapacity() {
         return maxEntries - numEntries;
     }
-    
     
     /**
      * Obtains the number of entries.
@@ -117,12 +108,12 @@ public int getCapacity() {
      *
      * @return  the number of entries for the route of this pool
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.796 -0500", hash_original_method = "3C2F8D494E1F1F56A9CA8A3544522ED0", hash_generated_method = "832ACF3C58DED2CDE81F031A3C668545")
     
 public final int getEntryCount() {
         return numEntries;
     }
-
 
     /**
      * Obtains a free entry from this pool, if one is available.
@@ -156,7 +147,6 @@ public BasicPoolEntry allocEntry(final Object state) {
         return null;
     }
 
-
     /**
      * Returns an allocated entry to this pool.
      *
@@ -177,7 +167,6 @@ public void freeEntry(BasicPoolEntry entry) {
         }
         freeEntries.add(entry);
     }
-
 
     /**
      * Indicates creation of an entry for this pool.
@@ -201,7 +190,6 @@ public void createdEntry(BasicPoolEntry entry) {
         numEntries++;
     }
 
-
     /**
      * Deletes an entry from this pool.
      * Only entries that are currently free in this pool can be deleted.
@@ -222,7 +210,6 @@ public boolean deleteEntry(BasicPoolEntry entry) {
         return found;
     }
 
-
     /**
      * Forgets about an entry from this pool.
      * This method is used to indicate that an entry
@@ -238,7 +225,6 @@ public void dropEntry() {
         }
         numEntries--;
     }
-
 
     /**
      * Adds a waiting thread.
@@ -258,7 +244,6 @@ public void queueThread(WaitingThread wt) {
         this.waitingThreads.add(wt);
     }
 
-
     /**
      * Checks whether there is a waiting thread in this pool.
      *
@@ -271,7 +256,6 @@ public boolean hasThread() {
         return !this.waitingThreads.isEmpty();
     }
 
-
     /**
      * Returns the next thread in the queue.
      *
@@ -282,7 +266,6 @@ public boolean hasThread() {
 public WaitingThread nextThread() {
         return this.waitingThreads.peek();
     }
-
 
     /**
      * Removes a waiting thread, if it is queued.
@@ -297,7 +280,6 @@ public void removeThread(WaitingThread wt) {
 
         this.waitingThreads.remove(wt);
     }
-
     
 }
 

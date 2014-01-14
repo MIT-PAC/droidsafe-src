@@ -81,6 +81,7 @@ public void setParameter(String name, String value) throws ParseException
 
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:58.035 -0500", hash_original_method = "6B925B5DF777A76390B5A8992D469F0E", hash_generated_method = "E8743000B71DCE0A96254AB18F9F716F")
     
 public String encodeBody()
@@ -257,6 +258,7 @@ public void setPreference(float q) throws InvalidArgumentException {
      * Get Security Mechanism
      * @return security mechanims value
      */
+    @DSSource({DSSourceKind.FILE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:58.073 -0500", hash_original_method = "B428180B0BF5EA600E8FA7F08EE496F8", hash_generated_method = "08E3C50D04C59E763C0E2324F9F021A3")
     
 public String getSecurityMechanism() {
@@ -266,6 +268,7 @@ public String getSecurityMechanism() {
      * Get Encryption Algorithm
      * @return ealg parameter value
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:58.076 -0500", hash_original_method = "E48981B0D788C9F15FB0701B5A5A9BFB", hash_generated_method = "B2D10D296E3BB5BCDD61B28712B05413")
     
 public String getEncryptionAlgorithm() {
@@ -276,6 +279,7 @@ public String getEncryptionAlgorithm() {
      * Get Algorithm
      * @return alg parameter value
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:58.078 -0500", hash_original_method = "10709FDAA4AFF85555E2A3D151185971", hash_generated_method = "9E2A7DCD89D789B50C8DC73E7EC8C211")
     
 public String getAlgorithm() {
@@ -286,6 +290,7 @@ public String getAlgorithm() {
      * Get Protocol
      * @return prot parameter value
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:58.081 -0500", hash_original_method = "D8F37ABD0A193610338515FA46330650", hash_generated_method = "BEFC7F9E21500C70B788DD59F64C617B")
     
 public String getProtocol() {
@@ -296,6 +301,7 @@ public String getProtocol() {
      * Get Mode
      * @return mod parameter value
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:58.084 -0500", hash_original_method = "F9C1DAC229A690F6459CC03AC622A5E3", hash_generated_method = "E5E8145A79C72E91AAEF606A81153385")
     
 public String getMode() {
@@ -306,6 +312,7 @@ public String getMode() {
      * Get Client SPI
      * @return spi-c parameter value
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:58.088 -0500", hash_original_method = "2AA9C7181C6D09D271CB928F8ADC4E6A", hash_generated_method = "85B7F6113F9760E0BBC4D6C25E2AF9F8")
     
 public int getSPIClient() {
@@ -316,6 +323,7 @@ public int getSPIClient() {
      * Get Server SPI
      * @return spi-s parameter value
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:58.091 -0500", hash_original_method = "87F3A8BE8E0310CD1D9EAD100DF812CC", hash_generated_method = "773DB7D4CF48A40FF9FAB994D05B91B4")
     
 public int getSPIServer() {
@@ -326,6 +334,7 @@ public int getSPIServer() {
      * Get Client Port
      * @return port-c parameter value
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:58.094 -0500", hash_original_method = "452A6BD881785C9FC11C999CB3A20207", hash_generated_method = "F8BA68C6EBAF287CBC3C697602023FA8")
     
 public int getPortClient() {
@@ -336,6 +345,7 @@ public int getPortClient() {
      * Get Server Port
      * @return port-s parameter value
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:58.097 -0500", hash_original_method = "107465724D48A961682620CCB1B6C016", hash_generated_method = "FD726AAAE6EFB21F021FD2A88C7CA200")
     
 public int getPortServer() {
@@ -346,6 +356,7 @@ public int getPortServer() {
      * Get Preference
      * @return q parameter value
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:58.100 -0500", hash_original_method = "618486245568CF743B7149F19C0097DE", hash_generated_method = "B178ED3BB3ABC7587D21AE20DA71CD50")
     
 public float getPreference() {
@@ -367,6 +378,7 @@ public boolean equals(Object other)
 
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:58.108 -0500", hash_original_method = "027A143FB16239A6EF6573784EA7EAA2", hash_generated_method = "9CDB4A26E1662D64A7562B06E580DD62")
     
 public Object clone() {

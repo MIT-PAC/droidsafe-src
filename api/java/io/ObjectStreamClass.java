@@ -437,6 +437,7 @@ public static ObjectStreamClass lookupAny(Class<?> cl) {
      *            descriptor
      * @return the corresponding descriptor
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.381 -0500", hash_original_method = "B7C56FB22E8F4B2B6633F52B26078E29", hash_generated_method = "DB71443E3123CE8B4711D6791B0D923F")
     
 static ObjectStreamClass lookupStreamClass(Class<?> cl) {
@@ -680,12 +681,14 @@ void setConstructor(long newConstructor) {
         constructor = newConstructor;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.243 -0500", hash_original_method = "AE977884038645FC18D9650C0686387C", hash_generated_method = "AE977884038645FC18D9650C0686387C")
     
 long getConstructor() {
         return constructor;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.246 -0500", hash_original_method = "592D0703821799AB937A99A67AB05B5C", hash_generated_method = "E84EEE9AF44D27FA2C13151A94F52D4C")
     
 Field getReflectionField(ObjectStreamField osf) {
@@ -904,6 +907,7 @@ private boolean inSamePackage(Class<?> c1, Class<?> c2) {
      * @return the field identified by {@code name} or {@code null} if there is
      *         no such field.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.312 -0500", hash_original_method = "58A307C728457592549C73808957655C", hash_generated_method = "2E47CEDE989772B0264F8C1B960F85F1")
     
 public ObjectStreamField getField(String name) {
@@ -924,6 +928,7 @@ public ObjectStreamField getField(String name) {
      * @return the receiver's collection of declared fields for the class it
      *         represents
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.315 -0500", hash_original_method = "3D80A7A04F3988E3E464D888981C4A01", hash_generated_method = "45D9D5658ADE04E7870C234E33A3805F")
     
 ObjectStreamField[] fields() {
@@ -946,6 +951,7 @@ ObjectStreamField[] fields() {
      * @return an array of field descriptors or an array of length zero if there
      *         are no fields in this descriptor's class.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.318 -0500", hash_original_method = "BA69DA3B5E6C7F20CA233B877CCB0384", hash_generated_method = "F03AA34DEFAAA8EB951500B4E2BD9627")
     
 public ObjectStreamField[] getFields() {
@@ -953,6 +959,7 @@ public ObjectStreamField[] getFields() {
         return loadFields == null ? fields().clone() : loadFields.clone();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.323 -0500", hash_original_method = "8AA71837DDE89491F51C878CBC8B38A5", hash_generated_method = "8AA71837DDE89491F51C878CBC8B38A5")
     
 List<ObjectStreamClass> getHierarchy() {
@@ -1008,6 +1015,7 @@ private void copyFieldAttributes() {
      * @return the receiver's collection of input fields for the class it
      *         represents
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.331 -0500", hash_original_method = "8F334CDB84C81A51C0419AAF322CA87A", hash_generated_method = "8F334CDB84C81A51C0419AAF322CA87A")
     
 ObjectStreamField[] getLoadFields() {
@@ -1023,6 +1031,7 @@ ObjectStreamField[] getLoadFields() {
      *
      * @return byte the receiver's flags for the class it represents
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.337 -0500", hash_original_method = "CB224A404D2A4A24CFF7504565CB22F2", hash_generated_method = "CB224A404D2A4A24CFF7504565CB22F2")
     
 byte getFlags() {
@@ -1034,6 +1043,7 @@ byte getFlags() {
      *
      * @return the fully qualified name of the class this descriptor represents.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.344 -0500", hash_original_method = "4A271A070FBC29EF826D1B50170E00D2", hash_generated_method = "A2E949B0EE53973533E1D165657305B6")
     
 public String getName() {
@@ -1046,6 +1056,7 @@ public String getName() {
      *
      * @return the SUID for the class represented by this descriptor.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.347 -0500", hash_original_method = "50DDDA79153910C7DDC4FA6D8AF3586E", hash_generated_method = "D492C3ED977B85A6545C4C78EDE2BD87")
     
 public long getSerialVersionUID() {
@@ -1059,6 +1070,7 @@ public long getSerialVersionUID() {
      * @return an ObjectStreamClass representing the superclass of the class
      *         represented by the receiver.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.349 -0500", hash_original_method = "B099B86A783D62A1B2FEC5CAB74CA2FF", hash_generated_method = "B099B86A783D62A1B2FEC5CAB74CA2FF")
     
 ObjectStreamClass getSuperclass() {
@@ -1118,6 +1130,7 @@ boolean hasMethodWriteReplace() {
         return (methodWriteReplace != null);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.401 -0500", hash_original_method = "42662B3DE24059CFD85E0D286320D7E3", hash_generated_method = "42662B3DE24059CFD85E0D286320D7E3")
     
 Method getMethodWriteReplace() {
@@ -1130,6 +1143,7 @@ boolean hasMethodReadResolve() {
         return (methodReadResolve != null);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.405 -0500", hash_original_method = "4E87A71E13632BD19F893729646A7048", hash_generated_method = "4E87A71E13632BD19F893729646A7048")
     
 Method getMethodReadResolve() {
@@ -1142,6 +1156,7 @@ boolean hasMethodWriteObject() {
         return (methodWriteObject != null);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.409 -0500", hash_original_method = "234967F1224E01D561A4A7AA93A723BD", hash_generated_method = "234967F1224E01D561A4A7AA93A723BD")
     
 Method getMethodWriteObject() {
@@ -1154,6 +1169,7 @@ boolean hasMethodReadObject() {
         return (methodReadObject != null);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.414 -0500", hash_original_method = "46960222BC0B63A6D59A57191BB77464", hash_generated_method = "46960222BC0B63A6D59A57191BB77464")
     
 Method getMethodReadObject() {
@@ -1166,6 +1182,7 @@ boolean hasMethodReadObjectNoData() {
         return (methodReadObjectNoData != null);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.419 -0500", hash_original_method = "04BED52E799E809DB8DD364039964962", hash_generated_method = "04BED52E799E809DB8DD364039964962")
     
 Method getMethodReadObjectNoData() {

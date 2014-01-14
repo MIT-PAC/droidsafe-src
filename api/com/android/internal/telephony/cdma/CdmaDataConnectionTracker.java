@@ -226,6 +226,7 @@ CdmaDataConnectionTracker(CDMAPhone p) {
         if(DBG) log("CdmaDataConnectionTracker finalized");
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:02.944 -0500", hash_original_method = "477FAE9A0F7056536F0C43A4344C1E00", hash_generated_method = "58DC5E0B547B76E3202A7DA74D639207")
     
 @Override
@@ -233,6 +234,7 @@ CdmaDataConnectionTracker(CDMAPhone p) {
         return INTENT_RECONNECT_ALARM;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:02.947 -0500", hash_original_method = "BBE23E9137760572C0B9E85F7DE2F87D", hash_generated_method = "CFB7B25A01C80653B18E3F8820B6F01C")
     
 @Override

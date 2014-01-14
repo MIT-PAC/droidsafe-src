@@ -158,6 +158,7 @@ public InputQueue(InputChannel channel) {
     }
     
     /** @hide */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.272 -0500", hash_original_method = "61914318E0BCFE3BB34C0890B61B6D95", hash_generated_method = "4041D8E4263F3B4F9618C753D89620DE")
     
 public InputChannel getInputChannel() {

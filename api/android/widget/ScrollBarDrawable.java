@@ -84,6 +84,7 @@ public void setAlwaysDrawVerticalTrack(boolean alwaysDrawTrack) {
      * Indicates whether the vertical scrollbar track should always be drawn regardless of the
      * extent.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.022 -0500", hash_original_method = "0A81522E62255950E42918FC464ECE8D", hash_generated_method = "3C038F9E1BEFE1BCD1973B3116667F56")
     
 public boolean getAlwaysDrawVerticalTrack() {
@@ -94,6 +95,7 @@ public boolean getAlwaysDrawVerticalTrack() {
      * Indicates whether the horizontal scrollbar track should always be drawn regardless of the
      * extent.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.024 -0500", hash_original_method = "58B8563B0AE3601908934E7BD6ECE0D9", hash_generated_method = "9A7E6921EC93CAEDE62AE6D58C2DBE77")
     
 public boolean getAlwaysDrawHorizontalTrack() {
@@ -239,6 +241,7 @@ public void setHorizontalTrackDrawable(Drawable track) {
         mHorizontalTrack = track;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.047 -0500", hash_original_method = "7E286D23B763C72717353421EFF3C480", hash_generated_method = "C37A85BF592FDB6C4CABAE6C2AAECD4B")
     
 public int getSize(boolean vertical) {
@@ -281,6 +284,7 @@ public int getSize(boolean vertical) {
         mHorizontalThumb.setColorFilter(cf);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.055 -0500", hash_original_method = "AB3D570DA2A917C408AB4F7D8FCD7103", hash_generated_method = "92E82009FE448BF0B4121CF0FFF496C7")
     
 @Override

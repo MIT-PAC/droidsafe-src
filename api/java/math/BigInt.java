@@ -232,6 +232,7 @@ static BigInt generatePrimeDefault(int bitLength) {
         return this.decString();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:38.472 -0500", hash_original_method = "5BE7FB396EC56810A84432A49B351D93", hash_generated_method = "5BE7FB396EC56810A84432A49B351D93")
     
 int getNativeBIGNUM() {
@@ -389,6 +390,7 @@ String hexString() {
         return NativeBN.BN_bn2hex(this.bignum);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:38.523 -0500", hash_original_method = "5BFAE0D787CB740802A929B95296D76B", hash_generated_method = "5BFAE0D787CB740802A929B95296D76B")
     
 byte[] bigEndianMagnitude() {

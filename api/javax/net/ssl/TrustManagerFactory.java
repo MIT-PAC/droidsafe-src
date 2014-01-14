@@ -14,11 +14,6 @@ import java.security.Security;
 
 import org.apache.harmony.security.fortress.Engine;
 
-
-
-
-
-
 public class TrustManagerFactory {
 
     /**
@@ -28,6 +23,7 @@ public class TrustManagerFactory {
      *
      * @return the default algorithm name.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:01.786 -0500", hash_original_method = "5F5D549BD7868B08A395443DE4B6DFCC", hash_generated_method = "406F76C43B4C94BE46DE98CB0AFCD063")
     
 public static final String getDefaultAlgorithm() {
@@ -165,6 +161,7 @@ protected TrustManagerFactory(TrustManagerFactorySpi factorySpi, Provider provid
      * @return the name of this {@code TrustManagerFactory} algorithm
      *         implementation.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:01.807 -0500", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "8A7AA6162519FFB2228039F3D6331CE9")
     
 public final String getAlgorithm() {
@@ -176,6 +173,7 @@ public final String getAlgorithm() {
      *
      * @return the provider for this {@code TrustManagerFactory} instance.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:01.809 -0500", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "443000CF13C77ABCABFC8B67E2DE556F")
     
 public final Provider getProvider() {
@@ -219,6 +217,7 @@ public final void init(ManagerFactoryParameters spec)
      *
      * @return the list of {@code TrustManager}s
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:01.816 -0500", hash_original_method = "9A37AD00FB926A5C41BF7A3778BB3A49", hash_generated_method = "70BBD1A6BDB47F34912027230F26DDDE")
     
 public final TrustManager[] getTrustManagers() {

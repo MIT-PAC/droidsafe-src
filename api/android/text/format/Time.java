@@ -46,6 +46,7 @@ public static int compare(Time a, Time b) {
     /**
      * Returns the timezone string that is currently set for the device.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.804 -0500", hash_original_method = "9C730CB6C697DB2A56C8E6FAE9E8F345", hash_generated_method = "DEB2074E7BB36BB0690F5D23D9C3701A")
     
 public static String getCurrentTimezone() {
@@ -82,6 +83,7 @@ public static boolean isEpoch(Time time) {
      * @param gmtoff the offset from UTC in seconds
      * @return the Julian day
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.850 -0500", hash_original_method = "D08E597819461A2ABCDA3ECFD890EA67", hash_generated_method = "ED2CB255FE1DAAC50CD2EFB1B5DF55C9")
     
 public static int getJulianDay(long millis, long gmtoff) {
@@ -102,6 +104,7 @@ public static int getJulianDay(long millis, long gmtoff) {
      *            {@link #SUNDAY}
      * @return Weeks since the epoch
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.856 -0500", hash_original_method = "38665BD593D83A76BE7E942EDFDF3356", hash_generated_method = "B2667088C9EA16944039F40AC1BA4A98")
     
 public static int getWeeksSinceEpochFromJulianDay(int julianDay, int firstDayOfWeek) {
@@ -123,6 +126,7 @@ public static int getWeeksSinceEpochFromJulianDay(int julianDay, int firstDayOfW
      * @param week Number of weeks since the epoch
      * @return The julian day for the Monday of the given week since the epoch
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.860 -0500", hash_original_method = "416CF5B8E045D66926F7C97658B32152", hash_generated_method = "83D4A15CD9D63C38AEC7654782EF38DD")
     
 public static int getJulianMondayFromWeeksSinceEpoch(int week) {
@@ -359,6 +363,7 @@ public Time(Time other) {
      * @param field one of the constants for HOUR, MINUTE, SECOND, etc.
      * @return the maximum value for the field.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.763 -0500", hash_original_method = "DF789B90859E8F04F5333F3487A99DFB", hash_generated_method = "414C0A84A438577DA829FE91C903F5D1")
     
 public int getActualMaximum(int field) {
@@ -830,6 +835,7 @@ public boolean after(Time that) {
      *
      * @return the ISO week number.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.841 -0500", hash_original_method = "9786C5AD526EBB88697D6E3283396468", hash_generated_method = "1B937AB060B37085837F082A0464B732")
     
 public int getWeekNumber() {

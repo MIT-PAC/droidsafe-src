@@ -161,6 +161,7 @@ public ServerKeyExchange(HandshakeIODataStream in, int length,
      *
      * @return
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:17.684 -0500", hash_original_method = "72FB1E0FC95B638A772EDD07E458B713", hash_generated_method = "5CC42133DB9D05A4256503D09C60F486")
     
 public RSAPublicKey getRSAPublicKey() {
@@ -181,6 +182,7 @@ public RSAPublicKey getRSAPublicKey() {
      * Returns message type
      * @return
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:17.687 -0500", hash_original_method = "620B9D3699DFA1CCAA0EB56AC40BC192", hash_generated_method = "5AF29C62290EC2907F6A69FAFE3ED111")
     
 @Override

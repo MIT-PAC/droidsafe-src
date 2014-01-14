@@ -313,6 +313,7 @@ private void checkBufferAndFieldPosition(StringBuffer buffer, FieldPosition posi
      * @return a copy of the {@code DecimalFormatSymbols} used by this decimal
      *         format.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.841 -0500", hash_original_method = "8DCCB340D185077EABFD1E6BFE3DB36F", hash_generated_method = "1433923B36B9154D97E82E9D22FE1CE7")
     
 public DecimalFormatSymbols getDecimalFormatSymbols() {
@@ -325,6 +326,7 @@ public DecimalFormatSymbols getDecimalFormatSymbols() {
      * @return the currency used by this decimal format.
      * @see DecimalFormatSymbols#getCurrency()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.843 -0500", hash_original_method = "58EEC1F79BF01CD73E1939B30FC9554A", hash_generated_method = "2A671B166B9C52E05AEA409008D31548")
     
 @Override
@@ -339,6 +341,7 @@ public DecimalFormatSymbols getDecimalFormatSymbols() {
      *
      * @return the number of digits grouped together.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.846 -0500", hash_original_method = "3224B3D9278B5F6729F4AC0FDDE7BC48", hash_generated_method = "7D3B4A6BB4FC8548C8F20EC568FF33BB")
     
 public int getGroupingSize() {
@@ -351,6 +354,7 @@ public int getGroupingSize() {
      *
      * @return the multiplier.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.848 -0500", hash_original_method = "20055FC91A272014560FDC07D160C285", hash_generated_method = "609694A207934005FBE331D55076A117")
     
 public int getMultiplier() {
@@ -362,6 +366,7 @@ public int getMultiplier() {
      *
      * @return the negative prefix.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.851 -0500", hash_original_method = "1F7C0591D1187101B5F5E6FCEBFE4BA7", hash_generated_method = "5C877E6936A26C55B8ED55C2EA134572")
     
 public String getNegativePrefix() {
@@ -373,6 +378,7 @@ public String getNegativePrefix() {
      *
      * @return the negative suffix.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.853 -0500", hash_original_method = "61D6D48706CC87AEEF19B015AC798361", hash_generated_method = "E98B91806F33E1C69FFBF95588EEA304")
     
 public String getNegativeSuffix() {
@@ -384,6 +390,7 @@ public String getNegativeSuffix() {
      *
      * @return the positive prefix.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.855 -0500", hash_original_method = "55B5FDB79399831D6973F7F1358A3E99", hash_generated_method = "6123F5F858C9E0A71F6C85B843802FDC")
     
 public String getPositivePrefix() {
@@ -395,6 +402,7 @@ public String getPositivePrefix() {
      *
      * @return the positive suffix.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.857 -0500", hash_original_method = "2B5CAE95AEB5D456BD3378DDAC8D9097", hash_generated_method = "A930653E4CD5FFE5AF01038AAEF4DDA8")
     
 public String getPositiveSuffix() {
@@ -887,6 +895,7 @@ private void readObject(ObjectInputStream stream) throws IOException, ClassNotFo
      * Returns the {@code RoundingMode} used by this {@code NumberFormat}.
      * @since 1.6
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.931 -0500", hash_original_method = "665DD451D3753ACD20842BCA4E3EB32E", hash_generated_method = "6D523F860AF5DA84DA6E20F0C7E0AAFA")
     
 public RoundingMode getRoundingMode() {

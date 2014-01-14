@@ -106,6 +106,7 @@ public Set<Map.Entry<Object, Object>> entrySet() {
      * @return Object associated with key, or {@code null} if key does not
      *         exist.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.770 -0500", hash_original_method = "C22494F044E1A5B9985D58D15AE531DA", hash_generated_method = "1CB4B722B2B786F4E05559507197B818")
     
 public Object get(Object key) {
@@ -285,6 +286,7 @@ public String getValue(Attributes.Name name) {
      * @return the string associated with name, or {@code null} if name is not a
      *         valid key.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.799 -0500", hash_original_method = "3C8D5071480DE8B5CA7E078D035D576F", hash_generated_method = "F9FC07771AE8D4BF487E5ACF93B0F2AB")
     
 public String getValue(String name) {
@@ -386,6 +388,7 @@ public Name(String name) {
             this.name = name;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.736 -0500", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "7070E6AABEDCBA653834DDC8CF79A47C")
         
 String getName() {

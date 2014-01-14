@@ -94,6 +94,7 @@ ReceiverRestrictedContext(Context base) {
         super(base);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.003 -0500", hash_original_method = "E79FC2581462A23AEE3B4180EBBDA608", hash_generated_method = "90430B4E7D776228913823B75B9973EF")
     
 @Override
@@ -131,6 +132,7 @@ ReceiverRestrictedContext(Context base) {
 
 public class ContextImpl extends Context {
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.187 -0500", hash_original_method = "374239E6E9AC9E3552D4A077D8744FFB", hash_generated_method = "B8FDDC39B13812FD0E23045E8DFF123F")
     
 static ContextImpl getImpl(Context context) {
@@ -293,33 +295,39 @@ public ContextImpl(ContextImpl context) {
         mOuterContext = this;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public AssetManager getAssets() {
         throw new UnsupportedOperationException();
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
     
     public Resources getResources() {
         return Resources.getSystem();
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public PackageManager getPackageManager() {
         throw new UnsupportedOperationException();
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
     
     public ContentResolver getContentResolver() {
         return contentResolver;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public Looper getMainLooper() {
     	return Looper.getMainLooper();
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public Context getApplicationContext() {
         throw new UnsupportedOperationException();
@@ -329,6 +337,7 @@ public ContextImpl(ContextImpl context) {
     public void setTheme(int resid) {
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.208 -0500", hash_original_method = "AE4733E1C9FA88CFC00EFC04FF1EA93F", hash_generated_method = "CE5A2BC266716375B637FA5870314F3E")
     
 @Override
@@ -341,36 +350,43 @@ public ContextImpl(ContextImpl context) {
         throw new UnsupportedOperationException();
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public ClassLoader getClassLoader() {
         throw new UnsupportedOperationException();
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public String getPackageName() {
         throw new UnsupportedOperationException();
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public ApplicationInfo getApplicationInfo() {
         throw new UnsupportedOperationException();
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public String getPackageResourcePath() {
         throw new UnsupportedOperationException();
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public String getPackageCodePath() {
         throw new UnsupportedOperationException();
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public File getSharedPrefsFile(String name) {
         throw new UnsupportedOperationException();
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public SharedPreferences getSharedPreferences(String name, int mode) {
         throw new UnsupportedOperationException();
@@ -404,31 +420,37 @@ private File getPreferencesDir() {
         throw new UnsupportedOperationException();
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public File getFilesDir() {
         throw new UnsupportedOperationException();
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public File getExternalFilesDir(String type) {
         throw new UnsupportedOperationException();
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public File getObbDir() {
         throw new UnsupportedOperationException();
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public File getCacheDir() {
         throw new UnsupportedOperationException();
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public File getExternalCacheDir() {
         throw new UnsupportedOperationException();
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public File getFileStreamPath(String name) {
         throw new UnsupportedOperationException();
@@ -465,6 +487,7 @@ private File getPreferencesDir() {
         throw new UnsupportedOperationException();
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public File getDatabasePath(String name) {
         throw new UnsupportedOperationException();
@@ -489,6 +512,7 @@ private File getDatabasesDir() {
         }
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public Drawable getWallpaper() {
         throw new UnsupportedOperationException();
@@ -499,11 +523,13 @@ private File getDatabasesDir() {
         throw new UnsupportedOperationException();
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public int getWallpaperDesiredMinimumWidth() {
         throw new UnsupportedOperationException();
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public int getWallpaperDesiredMinimumHeight() {
         throw new UnsupportedOperationException();
@@ -822,6 +848,7 @@ private void enforceForUri(
         throw new UnsupportedOperationException();
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public Context createPackageContext(String packageName, int flags)
             throws PackageManager.NameNotFoundException {
@@ -842,6 +869,7 @@ private File getDataDirFile() {
         throw new RuntimeException("Not supported in system context");
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public File getDir(String name, int mode) {
         throw new UnsupportedOperationException();
@@ -902,6 +930,7 @@ final void performFinalCleanup(String who, String what) {
         mPackageInfo.removeContextRegistrations(getOuterContext(), who, what);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.420 -0500", hash_original_method = "00E338AD03CD22E7A509C63ABE7257F4", hash_generated_method = "E1719FC9EAE97D56287081945234BDDE")
     
 final Context getReceiverRestrictedContext() {
@@ -957,12 +986,14 @@ final void setOuterContext(Context context) {
         mOuterContext = context;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.427 -0500", hash_original_method = "03C284D73757410812309249CAB76117", hash_generated_method = "4E683FF5A8BC97CB945DA2DFC7A929BE")
     
 final Context getOuterContext() {
         return mOuterContext;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.429 -0500", hash_original_method = "D32D1A589CFC02641AF8A3133A37BC7F", hash_generated_method = "D2B98033670730E13D8A5E06B011771E")
     
 final IBinder getActivityToken() {

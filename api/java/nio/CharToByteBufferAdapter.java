@@ -69,6 +69,7 @@ private CharToByteBufferAdapter(ByteBuffer byteBuffer) {
         return buf;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:04.528 -0500", hash_original_method = "E3B7C628ECBF1BA157CEBCB59E54138B", hash_generated_method = "FFACC0788C10DF37BEAB726CF2101594")
     
 @Override
@@ -79,6 +80,7 @@ private CharToByteBufferAdapter(ByteBuffer byteBuffer) {
         return byteBuffer.getChar(position++ * SizeOf.CHAR);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:04.530 -0500", hash_original_method = "2E9BB5D57AAEB3C216C710BA88C55EF9", hash_generated_method = "065EFE2C922136B5CAB51E31C8E365A1")
     
 @Override
@@ -87,6 +89,7 @@ private CharToByteBufferAdapter(ByteBuffer byteBuffer) {
         return byteBuffer.getChar(index * SizeOf.CHAR);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:04.533 -0500", hash_original_method = "CD7E402824D81A34C6B45148A4A0EA7C", hash_generated_method = "DA3518F2FF20A01D76B0A31A1C41F0B1")
     
 @Override

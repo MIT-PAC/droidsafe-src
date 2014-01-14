@@ -7,10 +7,6 @@ import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public class UsbAccessory implements Parcelable {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.616 -0500", hash_original_method = "D8D7DCC3B2A32D762DF452DE7CB7EB2F", hash_generated_method = "B3C5A47D500FA218ED91A35F692E94AD")
@@ -20,7 +16,6 @@ private static boolean compare(String s1, String s2) {
         return s1.equals(s2);
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.574 -0500", hash_original_field = "62629DFD2FD8B3C654386FF34BCC6F2B", hash_generated_field = "4B6F95A3D2EDF4F6797837364626E316")
-
 
     private static final String TAG = "UsbAccessory";
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.873 -0400", hash_original_field = "A3A2DE3014AFDD086B0F9108E7253288", hash_generated_field = "41EBB7534711D99912BB3375E9A3165A")
@@ -46,7 +41,6 @@ public UsbAccessory[] newArray(int size) {
         }
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.577 -0500", hash_original_field = "FAC2F85538315F855B4418F994096B5B", hash_generated_field = "FB8FA14B444DCDECB7E1F2DE256B790B")
-
 
     private  String mManufacturer;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.580 -0500", hash_original_field = "30F6FA923CB98DBE04C90A0F74F44429", hash_generated_field = "35458D5F083D1893A2F645F3B2CF5FC8")
@@ -101,6 +95,7 @@ public UsbAccessory(String[] strings) {
      *
      * @return the accessory manufacturer
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.599 -0500", hash_original_method = "EECC97019E28DA07B84EC558152DCFEE", hash_generated_method = "7CCE616C67D625A2F8B03A75DB370317")
     
 public String getManufacturer() {
@@ -112,6 +107,7 @@ public String getManufacturer() {
      *
      * @return the accessory model
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.602 -0500", hash_original_method = "375C14568C2F8D8E7E614D0D011D7B99", hash_generated_method = "752E2DA19C07CEE5F9299D0BA677AA36")
     
 public String getModel() {
@@ -123,6 +119,7 @@ public String getModel() {
      *
      * @return the accessory description
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.605 -0500", hash_original_method = "177DD147D2F75620FD2B154278EC57FA", hash_generated_method = "C24A704C1B7693A32CE618B690D2C768")
     
 public String getDescription() {
@@ -134,6 +131,7 @@ public String getDescription() {
      *
      * @return the accessory version
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.608 -0500", hash_original_method = "F243A33CF0A3D0D255225863927F4698", hash_generated_method = "B59C42D60FB8E974EFBE76E7358E83C9")
     
 public String getVersion() {
@@ -147,6 +145,7 @@ public String getVersion() {
      *
      * @return the accessory URI
      */
+    @DSSource({DSSourceKind.FILE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.611 -0500", hash_original_method = "8CFE2355A63AF986F8238800728B9A56", hash_generated_method = "A7E9854BF5F0A123051DDAB526B34F7B")
     
 public String getUri() {
@@ -160,6 +159,7 @@ public String getUri() {
      *
      * @return the unique serial number
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.613 -0500", hash_original_method = "E1067F8A99D04B6FDB11E19036F1F2CD", hash_generated_method = "3ADF45C3AD144FC96F44D18D05C2BBC0")
     
 public String getSerial() {

@@ -110,6 +110,7 @@ public LayoutAnimationController(Animation animation, float delay) {
      *
      * @attr ref android.R.styleable#LayoutAnimation_animationOrder
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:57.373 -0500", hash_original_method = "BE8C43C510B8AF8546FEBBAA3EF0F0B1", hash_generated_method = "1910514B82CFF79E9C692B005D1B90F5")
     
 public int getOrder() {
@@ -176,6 +177,7 @@ public void setAnimation(Animation animation) {
      * @see #setAnimation(android.content.Context, int)
      * @see #setAnimation(Animation)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:57.383 -0500", hash_original_method = "DAC4606AD5070B4B7D220BEE34A17978", hash_generated_method = "83A97390DABAB7D0A645F10764265A56")
     
 public Animation getAnimation() {
@@ -224,6 +226,7 @@ public void setInterpolator(Interpolator interpolator) {
      *
      * @return an {@link android.view.animation.Interpolator}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:57.390 -0500", hash_original_method = "8AA04851FFB5BE49EA5890940035B142", hash_generated_method = "680BC21A34AFF00E6707D9E25D0C0570")
     
 public Interpolator getInterpolator() {
@@ -238,6 +241,7 @@ public Interpolator getInterpolator() {
      *
      * @see #setDelay(float)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:57.392 -0500", hash_original_method = "55CD68136127075BB4939DEA602DB451", hash_generated_method = "CAC98EA714B5B10F9AF4D5A4E504278E")
     
 public float getDelay() {
@@ -301,6 +305,7 @@ public void start() {
      * @see #setDelay(float)
      * @see #getDelayForView(android.view.View)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:57.401 -0500", hash_original_method = "96F3EFCD32C49E23FCBCF1FC0105A7B0", hash_generated_method = "038197BB7DC2374258E67AB988B71238")
     
 public final Animation getAnimationForView(View view) {
@@ -369,6 +374,7 @@ public boolean isDone() {
      * @see #getTransformedIndex(android.view.animation.LayoutAnimationController.AnimationParameters)
      * @see android.view.ViewGroup.LayoutParams
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:57.406 -0500", hash_original_method = "C5014C66E1BA1577E6F39C7457247B02", hash_generated_method = "D885027E34C7C40BED5461F6A4AD0AFC")
     
 protected long getDelayForView(View view) {

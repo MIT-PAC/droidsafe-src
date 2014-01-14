@@ -105,6 +105,7 @@ public void onDateChanged(DatePicker view, int year,
      *
      * @return The calendar view.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:12.119 -0500", hash_original_method = "54FCA4CF326BECF6DDD25A8F55E4D660", hash_generated_method = "4FECB11BA435634CBC04D39C1DE3148C")
     
 public DatePicker getDatePicker() {

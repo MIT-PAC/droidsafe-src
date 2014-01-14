@@ -372,6 +372,7 @@ Canvas(int nativeCanvas) {
      * 
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.073 -0500", hash_original_method = "B940DF21824B9124E6B753106E553281", hash_generated_method = "5BB6D3440A25548E93896CEA426595C1")
     
 @Deprecated
@@ -467,7 +468,8 @@ public void setViewport(int width, int height) {
     	return getTaintInt();
     }
     
-	public int getDensity() {
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    public int getDensity() {
 		return getTaintInt();
 		//return mDensity;
     }
@@ -497,6 +499,7 @@ public void setScreenDensity(int density) {
      * 
      * @see #getMaximumBitmapHeight() 
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.099 -0500", hash_original_method = "E7FD28619D99C67895E6B54C83B12011", hash_generated_method = "5D274B8825E67B365D5115D71633CAE7")
     
 public int getMaximumBitmapWidth() {
@@ -510,6 +513,7 @@ public int getMaximumBitmapWidth() {
      * 
      * @see #getMaximumBitmapWidth() 
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.100 -0500", hash_original_method = "F4D5E7FCD71CC06030F3DF600D5A4E91", hash_generated_method = "9340C6DCC529E409677A2F3455B2243D")
     
 public int getMaximumBitmapHeight() {
@@ -747,6 +751,7 @@ public void getMatrix(Matrix ctm) {
      * Return a new matrix with a copy of the canvas' current transformation
      * matrix.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.171 -0500", hash_original_method = "677F0589CC9DCD49ED4AD9753284FD1D", hash_generated_method = "0EFEA3854D4D1A1427D490C733F4434D")
     
 public final Matrix getMatrix() {
@@ -947,6 +952,7 @@ public boolean clipRegion(Region region) {
         return clipRegion(region, Region.Op.INTERSECT);
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.203 -0500", hash_original_method = "7CFD876AAFB864AD7FF69DF25AA89EAD", hash_generated_method = "DB47B7D7BDB246B91136D3617D06EA7A")
     
 public DrawFilter getDrawFilter() {
@@ -1049,6 +1055,7 @@ public boolean getClipBounds(Rect bounds) {
      *
      * @return the clip bounds, or [0, 0, 0, 0] if the clip is empty.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.222 -0500", hash_original_method = "081EA481AF3998560C2A7BDAF7DC2D73", hash_generated_method = "C7F3C9DD4F71BE5FE3E931C0C7EA11E6")
     
 public final Rect getClipBounds() {

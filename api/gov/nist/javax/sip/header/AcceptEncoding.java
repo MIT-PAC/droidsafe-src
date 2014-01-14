@@ -54,6 +54,7 @@ protected StringBuffer encodeBody(StringBuffer buffer) {
      *
      * @return float
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.248 -0500", hash_original_method = "6B0931DE2FCF1641F5A5332B85279714", hash_generated_method = "A0A867CA28AD6FE1753111449C70A72C")
     
 public float getQValue() {
@@ -65,6 +66,7 @@ public float getQValue() {
      *
      * @return String
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.251 -0500", hash_original_method = "EF1274C134CEA0B72E03DC392C09F299", hash_generated_method = "D5E75F502117767332C80F541C2D5ACA")
     
 public String getEncoding() {

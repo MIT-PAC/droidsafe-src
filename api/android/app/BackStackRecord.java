@@ -361,24 +361,28 @@ public void dump(String prefix, FileDescriptor fd, PrintWriter writer, String[] 
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:16.208 -0500", hash_original_method = "15A4A4C5F4518D2E82F335984591D8BA", hash_generated_method = "61F8A923566CB1FFCD11590B8B252AA8")
     
 public int getId() {
         return mIndex;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:16.210 -0500", hash_original_method = "9339385C292A3B9874BA3EB436AA9056", hash_generated_method = "BB6598E4F43C0F22F9AE287ABAE34691")
     
 public int getBreadCrumbTitleRes() {
         return mBreadCrumbTitleRes;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:16.212 -0500", hash_original_method = "D139A03B61A4B83382000704FB0C1F23", hash_generated_method = "6D9F3ADFE832DBFDC8CBBC857D31495B")
     
 public int getBreadCrumbShortTitleRes() {
         return mBreadCrumbShortTitleRes;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:16.214 -0500", hash_original_method = "C2C5B49D77ECFC3F06C4280D5C67187D", hash_generated_method = "03FD63B4EAB83E5FF15A37B5A9879AC4")
     
 public CharSequence getBreadCrumbTitle() {
@@ -388,6 +392,7 @@ public CharSequence getBreadCrumbTitle() {
         return mBreadCrumbTitleText;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:16.216 -0500", hash_original_method = "CEC326312BE69049B0B2FA6420FE6494", hash_generated_method = "F40864F083533C9DA50190CE5A3F6DBD")
     
 public CharSequence getBreadCrumbShortTitle() {
@@ -884,18 +889,21 @@ public void popFromBackStack(boolean doStateMove) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:16.286 -0500", hash_original_method = "9194A7433912D38B9A3F1171AC921C56", hash_generated_method = "AD920925278DEAFAFBD283F9C2E39E5D")
     
 public String getName() {
         return mName;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:16.288 -0500", hash_original_method = "78EE7FB9A966094E1E15EEF50B50E3C9", hash_generated_method = "81712C69BBE6ED21857D0FD8B6B1B700")
     
 public int getTransition() {
         return mTransition;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:16.290 -0500", hash_original_method = "0B18827E69C997D5383C8EBB7663D372", hash_generated_method = "D3E37E6A3F5AB5DC1075D0735845027E")
     
 public int getTransitionStyle() {

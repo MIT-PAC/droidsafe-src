@@ -148,6 +148,7 @@ WallpaperInfo(Parcel source) {
     /**
      * Return the .apk package that implements this wallpaper.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.121 -0500", hash_original_method = "0C90B853C75D6A321E7BDA40C2595177", hash_generated_method = "6994E25AD1E96805A7C2A499125900C0")
     
 public String getPackageName() {
@@ -158,6 +159,7 @@ public String getPackageName() {
      * Return the class name of the service component that implements
      * this wallpaper.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.123 -0500", hash_original_method = "E07B8397F26D2C3A4747E56AC8F0D204", hash_generated_method = "41E20EE2BC25C2B6141BF6F906B02B30")
     
 public String getServiceName() {
@@ -168,6 +170,7 @@ public String getServiceName() {
      * Return the raw information about the Service implementing this
      * wallpaper.  Do not modify the returned object.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.125 -0500", hash_original_method = "543F99CB65CBDD66082E6D4B92910AC5", hash_generated_method = "1E6E8EA06F8EE7CE7231791DBE1C3740")
     
 public ServiceInfo getServiceInfo() {
@@ -177,6 +180,7 @@ public ServiceInfo getServiceInfo() {
     /**
      * Return the component of the service that implements this wallpaper.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.127 -0500", hash_original_method = "A035D08443F3F9853C50476F9CD3E50F", hash_generated_method = "2B97835D1618C71F40A014490410F857")
     
 public ComponentName getComponent() {
@@ -272,6 +276,7 @@ public CharSequence loadDescription(PackageManager pm) throws NotFoundException 
      * <p>A null will be returned if there is no settings activity associated
      * with the wallpaper.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.141 -0500", hash_original_method = "EE56873026FFE7A9D4435487CEBA8D19", hash_generated_method = "B6031419836B6E01A163B6457817552A")
     
 public String getSettingsActivity() {

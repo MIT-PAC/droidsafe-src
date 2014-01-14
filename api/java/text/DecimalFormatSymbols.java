@@ -24,6 +24,7 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
      * @return an instance of {@code DecimalFormatSymbols}
      * @since 1.6
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:06.781 -0500", hash_original_method = "A20804536D1BB58CF64F5D4344E1058E", hash_generated_method = "A0E365D64745B645D76306204BE1E035")
     
 public static DecimalFormatSymbols getInstance() {
@@ -38,6 +39,7 @@ public static DecimalFormatSymbols getInstance() {
      * @throws NullPointerException if {@code locale == null}
      * @since 1.6
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:06.784 -0500", hash_original_method = "AAE245E8122356AE5E986468622585C0", hash_generated_method = "B356C861F459952B5AA0BDB0997162C9")
     
 public static DecimalFormatSymbols getInstance(Locale locale) {
@@ -53,6 +55,7 @@ public static DecimalFormatSymbols getInstance(Locale locale) {
      * <p>Note that Android does not support user-supplied locale service providers.
      * @since 1.6
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:06.787 -0500", hash_original_method = "623079C002E398EE5B17BE6978E7428C", hash_generated_method = "01AF92D5F3A729A167059F795E08D11C")
     
 public static Locale[] getAvailableLocales() {
@@ -271,6 +274,7 @@ public DecimalFormatSymbols(Locale locale) {
      * @see #setCurrency(Currency)
      * @see #setInternationalCurrencySymbol(String)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:06.796 -0500", hash_original_method = "595F433D4A540AB9FD57454DFC2D00CA", hash_generated_method = "C108EADF2D86F77DBDD7939A80A9D62E")
     
 public Currency getCurrency() {
@@ -282,6 +286,7 @@ public Currency getCurrency() {
      *
      * @return the international currency symbol as string.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:06.799 -0500", hash_original_method = "9A7223B2A10801087A5753E160EB5AD9", hash_generated_method = "76F084A7B15F57C9EFBA142A75D537A6")
     
 public String getInternationalCurrencySymbol() {
@@ -293,6 +298,7 @@ public String getInternationalCurrencySymbol() {
      *
      * @return the currency symbol as string.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:06.802 -0500", hash_original_method = "44BA6DF186734A9129EE433C5393A649", hash_generated_method = "70DFB06488352B3435EF25CDCFB10A53")
     
 public String getCurrencySymbol() {
@@ -304,6 +310,7 @@ public String getCurrencySymbol() {
      *
      * @return the decimal separator character.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:06.804 -0500", hash_original_method = "C908C2BC77C07C5C3074706ADD440EBB", hash_generated_method = "E0DBE9B544DF8DC659ED0BE34920CF24")
     
 public char getDecimalSeparator() {
@@ -316,6 +323,7 @@ public char getDecimalSeparator() {
      *
      * @return the digit pattern character.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:06.807 -0500", hash_original_method = "4E80424FBB82914FDC63C744E843DFA5", hash_generated_method = "C49B1F0A349E4E8C7B596F16DD88DA0D")
     
 public char getDigit() {
@@ -327,6 +335,7 @@ public char getDigit() {
      *
      * @return the thousands separator character.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:06.809 -0500", hash_original_method = "0D8DAB63E4E740341CDDC10B95F6771D", hash_generated_method = "DEF4D752D3653A40ABE08847F5944803")
     
 public char getGroupingSeparator() {
@@ -338,6 +347,7 @@ public char getGroupingSeparator() {
      *
      * @return the infinity symbol as a string.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:06.811 -0500", hash_original_method = "195513F858098AF1B8C98F122DD853CE", hash_generated_method = "27AB5D9A5F597EF9618F1A7FEBBBBB87")
     
 public String getInfinity() {
@@ -349,6 +359,7 @@ public String getInfinity() {
      *
      * @return the minus sign as a character.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:06.813 -0500", hash_original_method = "B02DD985FFD3C706D5501C97C0FC9E68", hash_generated_method = "894B9783BEFD2D11F1FCB9633D1EB03A")
     
 public char getMinusSign() {
@@ -361,6 +372,7 @@ public char getMinusSign() {
      *
      * @return the monetary decimal point as a character.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:06.816 -0500", hash_original_method = "C02AEBD6916CB8991D4B6D1CCA4BA867", hash_generated_method = "40FC08D0C79CF6C8B7891E6A23FBF834")
     
 public char getMonetaryDecimalSeparator() {
@@ -372,6 +384,7 @@ public char getMonetaryDecimalSeparator() {
      *
      * @return the symbol NaN as a string.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:06.818 -0500", hash_original_method = "A7A5B5565C9E586C08E861055D3F830D", hash_generated_method = "50D88620192950A49432BD9A7F4D15AA")
     
 public String getNaN() {
@@ -384,6 +397,7 @@ public String getNaN() {
      *
      * @return the pattern separator character.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:06.820 -0500", hash_original_method = "D38F7AE8E1369570AEDB785398752C04", hash_generated_method = "ED7D742D64874057D70983B049FCE9CB")
     
 public char getPatternSeparator() {
@@ -395,6 +409,7 @@ public char getPatternSeparator() {
      *
      * @return the percent character.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:06.822 -0500", hash_original_method = "0F05A385A7483224A3B3B115F4941DEA", hash_generated_method = "191ACF0D69C3AF2B2A79760C31DE867C")
     
 public char getPercent() {
@@ -406,6 +421,7 @@ public char getPercent() {
      *
      * @return the per mill sign character.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:06.824 -0500", hash_original_method = "DDC83740D050E65F948D715CA46AA4E6", hash_generated_method = "9E510AF2F024D1B04872F06D70B8EB92")
     
 public char getPerMill() {
@@ -417,6 +433,7 @@ public char getPerMill() {
      *
      * @return the zero character.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:06.827 -0500", hash_original_method = "5E609E25361E12310E119A02851AA08C", hash_generated_method = "9F7AD0B6208757056B1FFF98A08C2042")
     
 public char getZeroDigit() {
@@ -427,6 +444,7 @@ public char getZeroDigit() {
      * Returns the string used to separate mantissa and exponent. Typically "E", as in "1.2E3".
      * @since 1.6
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:06.829 -0500", hash_original_method = "819A49232B9C4BF84239DF8CB1CAA3C1", hash_generated_method = "7A596710525270A6C7BAD0763C173D15")
     
 public String getExponentSeparator() {

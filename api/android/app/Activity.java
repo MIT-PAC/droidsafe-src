@@ -269,6 +269,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 	}
 
     /** Return the intent that started this activity. */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.433 -0500", hash_original_method = "AD027B7B58A4A2F151CC138FB7B23244", hash_generated_method = "7CE6D2E5920E17BB1B744A5090D635BC")
     
 public Intent getIntent() {
@@ -292,6 +293,7 @@ public void setIntent(Intent newIntent) {
     }
 
     /** Return the application that owns this activity. */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.444 -0500", hash_original_method = "510D23D8CF054FDAE1D1426C6A1A1500", hash_generated_method = "63791FE33C4BA47B317000A8E62CC095")
     
 public final Application getApplication() {
@@ -309,6 +311,7 @@ public final Application getApplication() {
 	}
     
     /** Return the parent activity if this view is an embedded child. */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.456 -0500", hash_original_method = "9F036901744EF56469FFF11C0925658F", hash_generated_method = "F6946DC3F22C892A127414944808F1FB")
     
 public final Activity getParent() {
@@ -316,6 +319,7 @@ public final Activity getParent() {
     }
 
     /** Retrieve the window manager for showing custom windows. */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.462 -0500", hash_original_method = "1DCFADD2C71F0E408EA049F81A8ACDED", hash_generated_method = "0C79B12DA4736ABBDC4EC55B1426644A")
     
 public WindowManager getWindowManager() {
@@ -330,12 +334,14 @@ public WindowManager getWindowManager() {
      * @return Window The current window, or null if the activity is not
      *         visual.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.468 -0500", hash_original_method = "51ACB33F24592F8ED3FAFF9D96DEAF2A", hash_generated_method = "331876D44C3CE896E388411794B32F6E")
     
 public Window getWindow() {
         return mWindow;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public LoaderManager getLoaderManager(){
 		mLoaderManager = getLoaderManager(-1, mLoadersStarted, true);
 		return mLoaderManager;
@@ -377,6 +383,7 @@ public Window getWindow() {
 		*/
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public View getCurrentFocus(){
 		return mWindow.getCurrentFocus();
 		// Original method
@@ -732,6 +739,7 @@ public CharSequence onCreateDescription() {
 		//Return nothing
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getChangingConfigurations(){
 		return getTaintInt();
 		// Original method
@@ -742,6 +750,7 @@ public CharSequence onCreateDescription() {
 		*/
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Deprecated public Object getLastNonConfigurationInstance(){
 		return mLastNonConfigurationInstances.activity;
 		// Original method
@@ -811,6 +820,7 @@ public Object onRetainNonConfigurationInstance() {
         return null;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     HashMap<String, Object> getLastNonConfigurationChildInstances(){
 		return mLastNonConfigurationInstances.children;
 		// Original method
@@ -869,6 +879,7 @@ HashMap<String,Object> onRetainNonConfigurationChildInstances() {
      * Return the FragmentManager for interacting with fragments associated
      * with this activity.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.686 -0500", hash_original_method = "C5EB33D6873EE026D87972F02E8EBD4B", hash_generated_method = "564609F83A847B122B44871EAAC2C081")
     
 public FragmentManager getFragmentManager() {
@@ -904,6 +915,7 @@ public FragmentManager getFragmentManager() {
 public void onAttachFragment(Fragment fragment) {
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Deprecated public final Cursor managedQuery(Uri uri, String[] projection, String selection,
             String sortOrder){
 		Cursor c = getContentResolver().query(uri, projection, selection, null, sortOrder);
@@ -921,6 +933,7 @@ public void onAttachFragment(Fragment fragment) {
 		*/
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Deprecated public final Cursor managedQuery(Uri uri, String[] projection, String selection,
             String[] selectionArgs, String sortOrder){
 		Cursor c = getContentResolver().query(uri, projection, selection, selectionArgs, sortOrder);
@@ -1000,6 +1013,7 @@ public View findViewById(int id) {
      *
      * @return The Activity's ActionBar, or null if it does not have one.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.736 -0500", hash_original_method = "EC6DC7C8BFDE6FF47CE21F97E3274EE5", hash_generated_method = "E5E94BEBC452D594395C0CA7D5A6B868")
     
 public ActionBar getActionBar() {
@@ -2147,12 +2161,14 @@ public final void setFeatureDrawableAlpha(int featureId, int alpha) {
      * Convenience for calling
      * {@link android.view.Window#getLayoutInflater}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.117 -0500", hash_original_method = "2F200E491A9F2CDC38C392035D21ED48", hash_generated_method = "3A16D6A7B6ED88109371E767B4893157")
     
 public LayoutInflater getLayoutInflater() {
         return getWindow().getLayoutInflater();
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public MenuInflater getMenuInflater(){
 		initActionBar();
 		mMenuInflater = new MenuInflater(mActionBar.getThemedContext()); //DSFIXME:  Look at underlying method to determine if this can be colapsed.
@@ -2484,6 +2500,7 @@ public void overridePendingTransition(int enterAnim, int exitAnim) {
      * @return The package of the activity that will receive your
      *         reply, or null if none.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.207 -0500", hash_original_method = "88476E01B039440C5805C3F210A00F20", hash_generated_method = "58BEC1DE13ECDF0590CAF7A4888B9BD6")
     
 public String getCallingPackage() {
@@ -2508,6 +2525,7 @@ public String getCallingPackage() {
      * @return String The full name of the activity that will receive your
      *         reply, or null if none.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.212 -0500", hash_original_method = "BA5844B2C9F3C6D12393731B7AECDFB9", hash_generated_method = "7A4424A9746EA476713AFC880E62344D")
     
 public ComponentName getCallingActivity() {
@@ -2773,6 +2791,7 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		//Return nothing
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getRequestedOrientation(){
 		int retval = 0;
 		try {
@@ -2803,6 +2822,7 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
      * 
      * @return Task identifier, an opaque integer.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.284 -0500", hash_original_method = "617D78E91C885EF783A85ACE788D978C", hash_generated_method = "68BFF31C59FC4A6126A189C753232C0A")
     
 public int getTaskId() {
@@ -2854,6 +2874,7 @@ public boolean moveTaskToBack(boolean nonRoot) {
         return false;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public String getLocalClassName(){
 		return mComponent.getClassName();
 		// Original method
@@ -2876,6 +2897,7 @@ public boolean moveTaskToBack(boolean nonRoot) {
      * 
      * @return Returns the complete component name for this activity
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.304 -0500", hash_original_method = "6C1D36E28C0C97736EA4779A7FB1715C", hash_generated_method = "0218C20A36476A71EF5D80D906810879")
     
 public ComponentName getComponentName()
@@ -2896,6 +2918,7 @@ public ComponentName getComponentName()
      * @return Returns the single SharedPreferences instance that can be used
      *         to retrieve and modify the preference values.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.308 -0500", hash_original_method = "8FF11253989B916424A8F19A417B9894", hash_generated_method = "6A7862010CB94E91BABA8CAE44E8E9B2")
     
 public SharedPreferences getPreferences(int mode) {
@@ -2916,7 +2939,8 @@ public SharedPreferences getPreferences(int mode) {
 		//Return nothing
 	}
     
-	@Override public Object getSystemService(String name){
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @Override public Object getSystemService(String name){
        
         if (DroidSafeAndroidRuntime.control || getBaseContext()==null) {
              IllegalStateException exception = new IllegalStateException(
@@ -2996,12 +3020,14 @@ public void setTitle(int titleId) {
 		//Return nothing
 	}
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.337 -0500", hash_original_method = "7D691BCB64236E7B5AF8F6CB0399C091", hash_generated_method = "8E68CAEF2DE68CDDD808B8D3534F95EE")
     
 public final CharSequence getTitle() {
         return mTitle;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public final int getTitleColor(){
 		return getTaintInt();
 		// Original method
@@ -3122,6 +3148,7 @@ protected void onChildTitleChanged(Activity childActivity, CharSequence title) {
      *         the hardware volume controls.
      * @see #setVolumeControlStream(int)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.385 -0500", hash_original_method = "03A841DC7655848901B3CE2C14084AAE", hash_generated_method = "0A136881DA0A667DEE6F55CE255E857C")
     
 public final int getVolumeControlStream() {
@@ -3154,6 +3181,7 @@ public final int getVolumeControlStream() {
 		return new View(context);
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public View onCreateView(View parent, String name, Context context, AttributeSet attrs){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -3376,6 +3404,7 @@ final void attach(Context context, ActivityThread aThread, Instrumentation instr
 		//Return nothing
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     final IBinder getActivityToken(){
 		return mParent.getActivityToken();
 		// Original method

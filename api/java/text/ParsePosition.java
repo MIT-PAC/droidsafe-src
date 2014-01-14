@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class ParsePosition {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.878 -0400", hash_original_field = "F92DCDD86E6BEEEA3E199F5D44A97241", hash_generated_field = "8A55CE2AEC9EB9B4FFBC5BD7C0750E33")
 
@@ -58,6 +54,7 @@ public ParsePosition(int index) {
      *
      * @return the index of the parse error or -1 if there is no error.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.831 -0500", hash_original_method = "251F29749A0D498AD09891D5409959A9", hash_generated_method = "8513B758071D7BF28FC97A139C41AD8C")
     
 public int getErrorIndex() {
@@ -69,6 +66,7 @@ public int getErrorIndex() {
      *
      * @return the current position.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.834 -0500", hash_original_method = "1CFE76DD95166F56A240763AD86BFFF6", hash_generated_method = "65114281D83995728CC54A5781A616A4")
     
 public int getIndex() {
@@ -118,7 +116,6 @@ public void setIndex(int index) {
         return getClass().getName() + "[index=" + currentPosition
                 + ", errorIndex=" + errorIndex + "]";
     }
-
     
 }
 

@@ -71,6 +71,7 @@ public static int enumerate(Thread[] threads) {
     /**
      * Returns a map of all the currently live threads to their stack traces.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.586 -0500", hash_original_method = "D98109DB19C89E6A58A3F60993E1DFAD", hash_generated_method = "33347C70C21C4214A33F263633907A41")
     
 public static Map<Thread, StackTraceElement[]> getAllStackTraces() {
@@ -563,6 +564,7 @@ public final void checkAccess() {
      * @see java.lang.ClassLoader
      * @see #getContextClassLoader()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.588 -0500", hash_original_method = "D65A36EB6AF7077545898D8D2274216D", hash_generated_method = "9633C94A47589C7321EE60A6609E480C")
     
 public ClassLoader getContextClassLoader() {
@@ -577,6 +579,7 @@ public ClassLoader getContextClassLoader() {
      *
      * @return the thread's ID.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.592 -0500", hash_original_method = "AC34FCBA00CFFBED3290FFC752B7D422", hash_generated_method = "50A1BB2B1F2164322D909F16E85CDE7D")
     
 public long getId() {
@@ -588,6 +591,7 @@ public long getId() {
      *
      * @return the Thread's name
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.595 -0500", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "CEAA3BC43A9BFF97F5638C3D9028D82D")
     
 public final String getName() {
@@ -600,6 +604,7 @@ public final String getName() {
      * @return the Thread's priority
      * @see Thread#setPriority
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.597 -0500", hash_original_method = "0FA6C5514FC3354D3A5FFA078FF2070D", hash_generated_method = "B4B45689BCD450DB4D8629E0D5D6C977")
     
 public final int getPriority() {
@@ -609,6 +614,7 @@ public final int getPriority() {
     /**
      * Returns an array of {@link StackTraceElement} representing the current thread's stack.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.601 -0500", hash_original_method = "105ECA4B48BD428C2A4BFADC722280E4", hash_generated_method = "8A75AE8A4C2C212F1BC7525D22936731")
     
 public StackTraceElement[] getStackTrace() {
@@ -647,6 +653,7 @@ public State getState() {
      *
      * @return the Thread's ThreadGroup
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.606 -0500", hash_original_method = "00D5D6D0C2A305848EB6704B96DA1F7A", hash_generated_method = "0B8E8EA57C4B96EC813031BA186E9BBC")
     
 public final ThreadGroup getThreadGroup() {

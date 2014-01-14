@@ -13,11 +13,6 @@ import java.lang.reflect.Modifier;
 import java.util.Enumeration;
 import java.util.Vector;
 
-
-
-
-
-
 public class TestSuite implements Test {
 
     /**
@@ -69,6 +64,7 @@ private static String exceptionToString(Throwable t) {
      * Gets a constructor which takes a single String as
      * its argument or a no arg constructor.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:44.736 -0500", hash_original_method = "61C725BE0AB392885BB31ED1BE0D6F18", hash_generated_method = "7C2279E28CBBC566D35ED236F401363C")
     
 public static Constructor getTestConstructor(Class theClass) throws NoSuchMethodException {
@@ -94,7 +90,6 @@ private static Test warning(final String message) {
         };
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:44.704 -0500", hash_original_field = "4BE4F79750EC1A3CE2F895EF0C0FDC74", hash_generated_field = "B0AB7F7DF848E16FC564E5B040C82D2A")
-
 
     private Vector fTests= new Vector(10);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:44.707 -0500", hash_original_field = "8B24F7B8CD3FDAC03422CA6338432D3D", hash_generated_field = "44478883D7DC475A853C092E4F2639C3")
@@ -298,12 +293,12 @@ public void setName(String name) {
      * test suites have a name and this method
      * can return null.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:44.759 -0500", hash_original_method = "2EA0F9602490A1D20696A18728516755", hash_generated_method = "9612DF40335A1D2D9A9BC76824AF292F")
     
 public String getName() {
         return fName;
     }
-
     
 }
 

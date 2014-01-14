@@ -12,15 +12,11 @@ import java.nio.channels.FileChannel.MapMode;
 import libcore.io.ErrnoException;
 import libcore.io.Libcore;
 
-
-
 public abstract class MappedByteBuffer extends ByteBuffer {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:54.976 -0500", hash_original_field = "D7679EF467A9ABFED1C67E3C246585AB", hash_generated_field = "D7679EF467A9ABFED1C67E3C246585AB")
 
-
      DirectByteBuffer wrapped;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:54.978 -0500", hash_original_field = "69A89BCA3281DEEA25D69F491FD7863B", hash_generated_field = "2A1F112DD9317D05E828544B748EF0B7")
-
 
     private  MapMode mapMode;
 
@@ -84,6 +80,7 @@ public final boolean isLoaded() {
      * Attempts to load every page of this buffer into RAM. See {@link #isLoaded}.
      * @return this buffer.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:54.990 -0500", hash_original_method = "61E403E118E1A4E788B2CC284AD4ABD1", hash_generated_method = "55C467158E827884BC44D98E25B16C6A")
     
 public final MappedByteBuffer load() {
@@ -103,6 +100,7 @@ public final MappedByteBuffer load() {
      *
      * @return this buffer.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:54.993 -0500", hash_original_method = "F84161825A8E4C54BC8547EBE9290572", hash_generated_method = "93A4FA549F2F63403E088CAD0E99EFFE")
     
 public final MappedByteBuffer force() {
@@ -117,7 +115,6 @@ public final MappedByteBuffer force() {
         }
         return this;
     }
-
     
 }
 

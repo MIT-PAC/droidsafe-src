@@ -36,6 +36,7 @@ public SchemeRegistry() {
      * @throws IllegalStateException
      *          if the scheme with the given name is not registered
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.029 -0500", hash_original_method = "C5B073CA8B29C4A4D0086C8D16427838", hash_generated_method = "5DA1E242E556E78D5BAC6BD8379CF45C")
     
 public synchronized final Scheme getScheme(String name) {
@@ -58,6 +59,7 @@ public synchronized final Scheme getScheme(String name) {
      * @throws IllegalStateException
      *          if a scheme with the respective name is not registered
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.033 -0500", hash_original_method = "1246E5540B6FD28C8D868D100FFA2CE0", hash_generated_method = "0E6533C6226F3121B59638BF815FC1FD")
     
 public synchronized final Scheme getScheme(HttpHost host) {
@@ -75,6 +77,7 @@ public synchronized final Scheme getScheme(HttpHost host) {
      * @return  the scheme, or
      *          <code>null</code> if there is none by this name
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.036 -0500", hash_original_method = "CF0C42ED0F9F87284AAED270A8C47522", hash_generated_method = "9456CAAD0798ECC1328B3429BF803965")
     
 public synchronized final Scheme get(String name) {
@@ -133,6 +136,7 @@ public synchronized final Scheme unregister(String name) {
      *
      * @return  List containing registered scheme names.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.043 -0500", hash_original_method = "AC70BADA49B0F71D218410F2BC1D1DD5", hash_generated_method = "60F1E62291485E559C9E3A6E4E1D94F2")
     
 public synchronized final List<String> getSchemeNames() {

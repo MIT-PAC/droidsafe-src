@@ -196,6 +196,7 @@ public abstract class PreferenceFragment extends Fragment implements PreferenceM
      * Returns the {@link PreferenceManager} used by this fragment.
      * @return The {@link PreferenceManager}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.214 -0500", hash_original_method = "002FC5CEE5BE5B5D1FE36CEDBC1DEB65", hash_generated_method = "382F54BC2EA5B48270515EF5C19C4292")
     
 public PreferenceManager getPreferenceManager() {
@@ -225,6 +226,7 @@ public void setPreferenceScreen(PreferenceScreen preferenceScreen) {
      * @return The {@link PreferenceScreen} that is the root of the preference
      *         hierarchy.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.219 -0500", hash_original_method = "9FBCEEF6D5AB95BCE1255F6B27DCC1FB", hash_generated_method = "1B301AA51B78EC4B5C4587A7F9E4BE2C")
     
 public PreferenceScreen getPreferenceScreen() {
@@ -320,6 +322,7 @@ private void bindPreferences() {
     }
 
     /** @hide */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.236 -0500", hash_original_method = "B9D8406BF510100833C8B83670824289", hash_generated_method = "F390A30877A55CE39C88D546BF9EAE07")
     
 public ListView getListView() {

@@ -215,6 +215,7 @@ private static int desired(Layout layout) {
      * from the TextView_textAppearance attribute, if TextView_textColor
      * was not set directly.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:19.660 -0500", hash_original_method = "610DF4562C72E9710D612FAA54D67DFE", hash_generated_method = "A75A6D7F80F1F0271AD4582D7821E552")
     
 public static ColorStateList getTextColors(Context context, TypedArray attrs) {
@@ -1499,6 +1500,7 @@ public void setTypeface(Typeface tf, int style) {
      * Subclasses override this to specify that they have a KeyListener
      * by default even if not specifically called for in the XML options.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.555 -0500", hash_original_method = "BFDF598F6F7CD4AFD7EB65F700EA9607", hash_generated_method = "D9C4C32C3532FBA603058E06C639E3BA")
     
 protected boolean getDefaultEditable() {
@@ -1508,6 +1510,7 @@ protected boolean getDefaultEditable() {
     /**
      * Subclasses override this to specify a default movement method.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.557 -0500", hash_original_method = "BBE0A92ADC5D9278A97962CE8941F1CB", hash_generated_method = "39B4E4940F13EF9E6E2B61E312107E0C")
     
 protected MovementMethod getDefaultMovementMethod() {
@@ -1522,6 +1525,7 @@ protected MovementMethod getDefaultMovementMethod() {
      * Note: The content of the return value should not be modified. If you want
      * a modifiable one, you should make your own copy first.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.559 -0500", hash_original_method = "D3D56665E0CC0B43413FBFB4C720E96C", hash_generated_method = "07E497F06FCA3C4F8CABDACFD16853C1")
     
 @ViewDebug.CapturedViewProperty
@@ -1544,6 +1548,7 @@ public int length() {
      *
      * @see #getText
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.563 -0500", hash_original_method = "7ED3A36B3A9686857AF495D746EF7144", hash_generated_method = "EE75B94FCCCA9A8B2BF2609EB9C259A6")
     
 public Editable getEditableText() {
@@ -1556,6 +1561,7 @@ public Editable getEditableText() {
      * than this height, and the layout may contain additional first-
      * or last-line padding.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.565 -0500", hash_original_method = "0FF7B2A5A4CF7321FA6B03810945EA51", hash_generated_method = "0002CF0C9D9916FDEEE5869841EEA9A7")
     
 public int getLineHeight() {
@@ -1566,6 +1572,7 @@ public int getLineHeight() {
      * @return the Layout that is currently being used to display the text.
      * This can be null if the text or width has recently changes.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.567 -0500", hash_original_method = "AA853122D8F66FE025B9AF375421C379", hash_generated_method = "ED3F5A3D1B36127BD7C8A4AEE1060989")
     
 public final Layout getLayout() {
@@ -1576,6 +1583,7 @@ public final Layout getLayout() {
      * @return the current key listener for this TextView.
      * This will frequently be null for non-EditText TextViews.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.569 -0500", hash_original_method = "16C14256413AD7EC2C071FEF64E5C315", hash_generated_method = "8E1962FA488BE42502AE603ACF2A0A9D")
     
 public final KeyListener getKeyListener() {
@@ -1646,6 +1654,7 @@ public void setKeyListener(KeyListener input) {
      * @return the movement method being used for this TextView.
      * This will frequently be null for non-EditText TextViews.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.577 -0500", hash_original_method = "48923BC0AD13C4CAAF5FC92105497B11", hash_generated_method = "0820B16E8A8197F6FEBF23693637C81F")
     
 public final MovementMethod getMovementMethod() {
@@ -1688,6 +1697,7 @@ private void fixFocusableAndClickableSettings() {
      * This will frequently be null except for single-line and password
      * fields.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.584 -0500", hash_original_method = "2CDC6DDF1029E76D6DBEC0602C28EC15", hash_generated_method = "CD8BD182961C287E2B549608478BC782")
     
 public final TransformationMethod getTransformationMethod() {
@@ -1743,6 +1753,7 @@ public final TransformationMethod getTransformationMethod() {
      * Returns the top padding of the view, plus space for the top
      * Drawable if any.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.590 -0500", hash_original_method = "CD4E87E17C71F6F36E69A30DF125A2EC", hash_generated_method = "435E87EB3854551FDB74945C36FF9A8E")
     
 public int getCompoundPaddingTop() {
@@ -1758,6 +1769,7 @@ public int getCompoundPaddingTop() {
      * Returns the bottom padding of the view, plus space for the bottom
      * Drawable if any.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.592 -0500", hash_original_method = "F8E73EA88ED50BD236713C6E1FD6275E", hash_generated_method = "66C7DFC5854FDFA910AA65CC31385341")
     
 public int getCompoundPaddingBottom() {
@@ -1773,6 +1785,7 @@ public int getCompoundPaddingBottom() {
      * Returns the left padding of the view, plus space for the left
      * Drawable if any.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.594 -0500", hash_original_method = "E37CE1C2FEDB3DD18FEE34DF2470D692", hash_generated_method = "E2C37DAA056C4CB748AB0AE971EE4586")
     
 public int getCompoundPaddingLeft() {
@@ -1788,6 +1801,7 @@ public int getCompoundPaddingLeft() {
      * Returns the right padding of the view, plus space for the right
      * Drawable if any.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.596 -0500", hash_original_method = "FA75E1802F0BBA6FD5DC7258A0FBEB3C", hash_generated_method = "AB29288C62020D6924B779D391C28A20")
     
 public int getCompoundPaddingRight() {
@@ -1805,6 +1819,7 @@ public int getCompoundPaddingRight() {
      *
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.599 -0500", hash_original_method = "045E56B45A145CD7B99AFA777E63AEB3", hash_generated_method = "E3A61FBF21DA951944CCF8044CE78DCC")
     
 public int getCompoundPaddingStart() {
@@ -1824,6 +1839,7 @@ public int getCompoundPaddingStart() {
      *
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.601 -0500", hash_original_method = "0C4A0FB6513BA7C283389B0C3E09BE68", hash_generated_method = "C23BC1AA95CDCEC51F9E31488B7BAE6C")
     
 public int getCompoundPaddingEnd() {
@@ -1842,6 +1858,7 @@ public int getCompoundPaddingEnd() {
      * top Drawable if any and any extra space to keep more than maxLines
      * of text from showing.  It is only valid to call this after measuring.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.603 -0500", hash_original_method = "363FF0B4BA7F59F6CC6EB59AE673A7C9", hash_generated_method = "C8EED0CA2B9DF5989501723DC3FB0497")
     
 public int getExtendedPaddingTop() {
@@ -1877,6 +1894,7 @@ public int getExtendedPaddingTop() {
      * bottom Drawable if any and any extra space to keep more than maxLines
      * of text from showing.  It is only valid to call this after measuring.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.606 -0500", hash_original_method = "7A2DB8BFB057F07CEDE0D120BE6FFB10", hash_generated_method = "68EB0183E36F352FA5C69DE11619572C")
     
 public int getExtendedPaddingBottom() {
@@ -1911,6 +1929,7 @@ public int getExtendedPaddingBottom() {
      * Returns the total left padding of the view, including the left
      * Drawable if any.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.608 -0500", hash_original_method = "5245DB1A490E586E6093F4BFC26117D1", hash_generated_method = "32E15931217A6CEE49BF00D4AEB6DC66")
     
 public int getTotalPaddingLeft() {
@@ -1921,6 +1940,7 @@ public int getTotalPaddingLeft() {
      * Returns the total right padding of the view, including the right
      * Drawable if any.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.610 -0500", hash_original_method = "A1EB6CC80DC85EDA662D4DD9C10BBDEB", hash_generated_method = "3769F6277A251519A18B24855F8E5F69")
     
 public int getTotalPaddingRight() {
@@ -1933,6 +1953,7 @@ public int getTotalPaddingRight() {
      *
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.612 -0500", hash_original_method = "DD9B038504EC66CC7FCB75AE1CB753E5", hash_generated_method = "0F8B01F0BAB2340E14E968E2E574AE79")
     
 public int getTotalPaddingStart() {
@@ -1945,6 +1966,7 @@ public int getTotalPaddingStart() {
      *
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.614 -0500", hash_original_method = "7924A3AF5CA0D716DAB0CFDF1EC0C456", hash_generated_method = "5C1CAD4D5A6B45D6061D84EE15C4D2FD")
     
 public int getTotalPaddingEnd() {
@@ -1956,6 +1978,7 @@ public int getTotalPaddingEnd() {
      * Drawable if any, the extra space to keep more than maxLines
      * from showing, and the vertical offset for gravity, if any.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.616 -0500", hash_original_method = "3FBB92A2EE65C62C674BD5E5A5FB2713", hash_generated_method = "FD290D38064F4BCF8AC2EE4A93E66F6B")
     
 public int getTotalPaddingTop() {
@@ -1967,6 +1990,7 @@ public int getTotalPaddingTop() {
      * Drawable if any, the extra space to keep more than maxLines
      * from showing, and the vertical offset for gravity, if any.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.618 -0500", hash_original_method = "DD0E7E66835F9F938ABD11A206F39F98", hash_generated_method = "CB232BB44DAA142F75F529801F04B46F")
     
 public int getTotalPaddingBottom() {
@@ -2339,6 +2363,7 @@ public void setCompoundDrawablesRelativeWithIntrinsicBounds(Drawable start, Draw
     /**
      * Returns drawables for the left, top, right, and bottom borders.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.639 -0500", hash_original_method = "06FDA6F654D58A3BC65C29C47124F71A", hash_generated_method = "ADB229B4533C834E76946EFEE29915EA")
     
 public Drawable[] getCompoundDrawables() {
@@ -2357,6 +2382,7 @@ public Drawable[] getCompoundDrawables() {
      *
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.642 -0500", hash_original_method = "7D536599368FF7E7773D59B2D0C7C092", hash_generated_method = "797EDDFB58B3712A8E08A704255AE3BD")
     
 public Drawable[] getCompoundDrawablesRelative() {
@@ -2398,6 +2424,7 @@ public void setCompoundDrawablePadding(int pad) {
     /**
      * Returns the padding between the compound drawables and the text.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.646 -0500", hash_original_method = "6B458DA6759E58857DA3CAF4E6D1B789", hash_generated_method = "090F1D2E56867401DC85DB95E3C8BCF8")
     
 public int getCompoundDrawablePadding() {
@@ -2429,6 +2456,7 @@ public int getCompoundDrawablePadding() {
      *
      * @attr ref android.R.styleable#TextView_autoLink
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.651 -0500", hash_original_method = "D796BA921A3359840CCD26FF0DD1CFB0", hash_generated_method = "D1CD23461D8086CABB7BD04AEEAAB198")
     
 public final int getAutoLinkMask() {
@@ -2500,6 +2528,7 @@ public void setTextAppearance(Context context, int resid) {
     /**
      * @return the size (in pixels) of the default text size in this TextView.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.656 -0500", hash_original_method = "5E6FE671862457C6BB25EDC2CEDE399B", hash_generated_method = "94450DCF9C4C7307EE77B37B73EA2C43")
     
 public float getTextSize() {
@@ -2566,6 +2595,7 @@ private void setRawTextSize(float size) {
      * @return the extent by which text is currently being stretched
      * horizontally.  This will usually be 1.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.665 -0500", hash_original_method = "8F71F8091E79DE5D49BC786B53F6B56F", hash_generated_method = "9A057D0C6F3A8C87D5D6EEBAAD8FB4E7")
     
 public float getTextScaleX() {
@@ -2623,6 +2653,7 @@ public void setTypeface(Typeface tf) {
      * @return the current typeface and style in which the text is being
      * displayed.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.673 -0500", hash_original_method = "6FFDE601A24D081BE5F9A52F7BB654E9", hash_generated_method = "1A3B4DE5628EDD5C3401E8C0E04E04DA")
     
 public Typeface getTypeface() {
@@ -2665,6 +2696,7 @@ public void setTextColor(ColorStateList colors) {
      *
      * @return Returns the set of text colors.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.679 -0500", hash_original_method = "E9708E6780595497A0F38B1A3DFD4921", hash_generated_method = "7370868768EEE725AC2F3C6CF89297D0")
     
 public final ColorStateList getTextColors() {
@@ -2676,6 +2708,7 @@ public final ColorStateList getTextColors() {
      *
      * @return Returns the current text color.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.681 -0500", hash_original_method = "69BC167CA8CC0024E4446D6ED57F972B", hash_generated_method = "898D05C80349DD6D3D99FB82A7141A2D")
     
 public final int getCurrentTextColor() {
@@ -2722,6 +2755,7 @@ public void setShadowLayer(float radius, float dx, float dy, int color) {
      * @return the base paint used for the text.  Please use this only to
      * consult the Paint's properties and not to change them.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.688 -0500", hash_original_method = "5B4E8CD3DF4A8D21F89EBB7BF27B30F6", hash_generated_method = "4953D3639DA9E295D920AA591AADA99B")
     
 public TextPaint getPaint() {
@@ -2805,6 +2839,7 @@ public final boolean getSoftInputShownOnFocus() {
      * or use {@link Spanned#getSpanStart} and {@link Spanned#getSpanEnd}
      * to find the region of the text they are attached to.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.702 -0500", hash_original_method = "7722BA5204257A1CDED1550384208856", hash_generated_method = "16D9C1AF637BC963D3AB4AEE56CAE387")
     
 public URLSpan[] getUrls() {
@@ -2846,6 +2881,7 @@ public final void setHintTextColor(ColorStateList colors) {
      *
      * @return Returns the list of hint text colors.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.708 -0500", hash_original_method = "475EC0453C7F74E6A779EAD7F8319059", hash_generated_method = "D5B803A9EB9B7CC4A713C401EE4AD557")
     
 public final ColorStateList getHintTextColors() {
@@ -2857,6 +2893,7 @@ public final ColorStateList getHintTextColors() {
      *
      * @return Returns the current hint text color.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.711 -0500", hash_original_method = "1826756F3CA2F0D97D555C81DC90D9D1", hash_generated_method = "38EDD1A900BDA63B4C18954FE58B5474")
     
 public final int getCurrentHintTextColor() {
@@ -2894,6 +2931,7 @@ public final void setLinkTextColor(ColorStateList colors) {
      *
      * @return Returns the list of link text colors.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.718 -0500", hash_original_method = "3A49B90BEACC4CBB32A44A5B9C48739C", hash_generated_method = "5981F761ADA030EEC832386D8D02EA29")
     
 public final ColorStateList getLinkTextColors() {
@@ -2949,6 +2987,7 @@ public void setGravity(int gravity) {
      * @see android.view.Gravity
      * @attr ref android.R.styleable#TextView_gravity
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.723 -0500", hash_original_method = "80A4065F7A7EA77AF4C4ADD19E36F9A5", hash_generated_method = "34250BBFB3A98B1274520CC4DAA66C94")
     
 public int getGravity() {
@@ -2959,6 +2998,7 @@ public int getGravity() {
      * @return the flags on the Paint being used to display the text.
      * @see Paint#getFlags
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.725 -0500", hash_original_method = "7C7AF1B698E75A76793B55FAC07B7AAB", hash_generated_method = "C7BEB0290B740CD26F8377E078D4D96A")
     
 public int getPaintFlags() {
@@ -3013,6 +3053,7 @@ public void setHorizontallyScrolling(boolean whether) {
      * @attr ref android.R.styleable#TextView_scrollHorizontally
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.732 -0500", hash_original_method = "7B94D421E91473A8A956329EBDF6A0E9", hash_generated_method = "7F5524A321700835AF38C6DB60B2B9B4")
     
 public boolean getHorizontallyScrolling() {
@@ -3502,6 +3543,7 @@ public void run() {
      *
      * @see #setFreezesText
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.820 -0500", hash_original_method = "8E3F839ECE8B91BC1C15216DAAE76890", hash_generated_method = "C8C8237A825C6C7A016CBC4939E4E58B")
     
 public boolean getFreezesText() {
@@ -3846,6 +3888,7 @@ public final void setText(int resid, BufferType type) {
      *
      * @attr ref android.R.styleable#TextView_hint
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.897 -0500", hash_original_method = "B545FCA8809064A694F5A37F99B0BBF1", hash_generated_method = "C9562F3D7BCAB1C591C4688BED076F67")
     
 @ViewDebug.CapturedViewProperty
@@ -3998,6 +4041,7 @@ private void setInputType(int type, boolean direct) {
      * @see #setInputType(int)
      * @see android.text.InputType
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.917 -0500", hash_original_method = "CC20F62DEC3871662808940856B4AD97", hash_generated_method = "21F93154F83E3D01EA5F5592942E4719")
     
 public int getInputType() {
@@ -4027,6 +4071,7 @@ public void setImeOptions(int imeOptions) {
      * @see #setImeOptions(int)
      * @see android.view.inputmethod.EditorInfo
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.921 -0500", hash_original_method = "2B64657558FBAC5C9C7E6BDC8C1A3258", hash_generated_method = "CABBC41593BB7D9C42C9C69272BDB7EC")
     
 public int getImeOptions() {
@@ -4060,6 +4105,7 @@ public void setImeActionLabel(CharSequence label, int actionId) {
      * @see #setImeActionLabel
      * @see android.view.inputmethod.EditorInfo
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.926 -0500", hash_original_method = "A4E3D8286D59E9D4715BBC467F3D8808", hash_generated_method = "122B7A7DAD7856768B6DFE10C14FDB00")
     
 public CharSequence getImeActionLabel() {
@@ -4073,6 +4119,7 @@ public CharSequence getImeActionLabel() {
      * @see #setImeActionLabel
      * @see android.view.inputmethod.EditorInfo
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.928 -0500", hash_original_method = "4B4E4CA7604BFFF08B66F520F2D9A667", hash_generated_method = "603A238874E875E78E97338A777A3A52")
     
 public int getImeActionId() {
@@ -4203,6 +4250,7 @@ public void setPrivateImeOptions(String type) {
      * @see #setPrivateImeOptions(String)
      * @see EditorInfo#privateImeOptions
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.939 -0500", hash_original_method = "92B56934BB38E74A857D4D87A23CFEBD", hash_generated_method = "2F5A1921D3DB438EAA306288C48113F2")
     
 public String getPrivateImeOptions() {
@@ -4242,6 +4290,7 @@ public void setInputExtras(int xmlResId)
      * @see EditorInfo#extras
      * @attr ref android.R.styleable#TextView_editorExtras
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.943 -0500", hash_original_method = "3CCBAE1ACA56EC727CC56362E5EC99DC", hash_generated_method = "F5BFBE58772702760E837C3DD55463D6")
     
 public Bundle getInputExtras(boolean create) {
@@ -4261,6 +4310,7 @@ public Bundle getInputExtras(boolean create) {
      * {@link #setError}, or <code>null</code> if no error was set
      * or if it the error was cleared by the widget after user input.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.945 -0500", hash_original_method = "9A980CBEBB946A11C624D95D8D1017B2", hash_generated_method = "E15DFD979F85DE1B2553570F80F86D46")
     
 public CharSequence getError() {
@@ -4517,6 +4567,7 @@ private void setFilters(Editable e, InputFilter[] filters) {
     /**
      * Returns the current list of input filters.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.998 -0500", hash_original_method = "E0010D0DD1DD8F03E408AEE972028B3D", hash_generated_method = "E525C716C16B680B8DF63B06A2EE86E7")
     
 public InputFilter[] getFilters() {
@@ -4525,6 +4576,7 @@ public InputFilter[] getFilters() {
 
     /////////////////////////////////////////////////////////////////////////
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:19.001 -0500", hash_original_method = "DAA92D774C652EE383E55D96FD59260D", hash_generated_method = "1185CC0C3A5098E801D81CCDEAB8BB9E")
     
 private int getVerticalOffset(boolean forceNormal) {
@@ -4869,6 +4921,7 @@ public boolean onPreDraw() {
         return mShadowRadius != 0 || mDrawables != null;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:19.030 -0500", hash_original_method = "7F5FAD56D372BFDBD8919382F1DF4F10", hash_generated_method = "C3191ADDD628FDA1B8DEBCD96354A303")
     
 @Override
@@ -4877,6 +4930,7 @@ public boolean onPreDraw() {
                 (int) Math.min(0, mShadowDx - mShadowRadius);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:19.032 -0500", hash_original_method = "BBBA34DDC8A574B01D58B3AC0235EEFE", hash_generated_method = "DC8D30190F2A0D828F1D3E12CDB9314A")
     
 @Override
@@ -4884,6 +4938,7 @@ public boolean onPreDraw() {
         return (int) Math.min(0, mShadowDy - mShadowRadius);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:19.035 -0500", hash_original_method = "2F5480661817CC97DFDD529692B7CB6A", hash_generated_method = "1289E3CDEB75064882194165A82DFCEC")
     
 @Override
@@ -4891,6 +4946,7 @@ public boolean onPreDraw() {
         return (int) Math.max(0, mShadowDy + mShadowRadius);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:19.037 -0500", hash_original_method = "03B94E40D261DCBBD1910980153D8E7A", hash_generated_method = "6B96C245B7D23B7DE14FBB5565A8763B")
     
 @Override
@@ -5522,6 +5578,7 @@ private void drawCursor(Canvas canvas, int cursorOffsetVertical) {
      * Return the number of lines of text, or 0 if the internal Layout has not
      * been built.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:19.081 -0500", hash_original_method = "97BE8C8E19AAF13DDBB7397BA8716CD7", hash_generated_method = "EEE1F02BCDA906005354077C760388E3")
     
 public int getLineCount() {
@@ -5537,6 +5594,7 @@ public int getLineCount() {
      * @param bounds Optional. If not null, it returns the extent of the line
      * @return the Y-coordinate of the baseline
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:19.083 -0500", hash_original_method = "C119BED798B9C2A141229B29A4C86BDD", hash_generated_method = "E7111F73FD05C0A44B77E6A7185BF326")
     
 public int getLineBounds(int line, Rect bounds) {
@@ -5560,6 +5618,7 @@ public int getLineBounds(int line, Rect bounds) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:19.085 -0500", hash_original_method = "3C56831CF91C4818C48A7DCC6043867F", hash_generated_method = "11AACCCD0BFDE6D0A18DC36C2E564BFA")
     
 @Override
@@ -5580,6 +5639,7 @@ public int getLineBounds(int line, Rect bounds) {
      * @hide
      * @param offsetRequired
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:19.088 -0500", hash_original_method = "9B40D92CA2D66C315619C6CA13460A4B", hash_generated_method = "33E039A897C6078CD645936949D53969")
     
 @Override
@@ -5600,6 +5660,7 @@ public int getLineBounds(int line, Rect bounds) {
      * @hide
      * @param offsetRequired
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:19.090 -0500", hash_original_method = "4B4E36AF8D516BA2309E720A4535DE33", hash_generated_method = "2DF5EDFD58C415612D02AB4D83DFE046")
     
 @Override
@@ -7514,6 +7575,7 @@ private int viewportToContentVerticalOffset() {
     /**
      * Convenience for {@link Selection#getSelectionStart}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:19.277 -0500", hash_original_method = "FC0380BF9D344F57087ADAA0F0C8C1E5", hash_generated_method = "94DF1973D25DC8C3AF2B4887D7ED182D")
     
 @ViewDebug.ExportedProperty(category = "text")
@@ -7524,6 +7586,7 @@ private int viewportToContentVerticalOffset() {
     /**
      * Convenience for {@link Selection#getSelectionEnd}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:19.279 -0500", hash_original_method = "59139061668C8515BDA5938230C2D233", hash_generated_method = "AFCDEB9A3371B824E147EB066362D511")
     
 @ViewDebug.ExportedProperty(category = "text")
@@ -8641,6 +8704,7 @@ private void makeBlink() {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:19.643 -0500", hash_original_method = "2371CC9F994A54DD5E29CBD2552784AA", hash_generated_method = "0EB7E1E6CEC5C13C9DA13E65FF82AD72")
     
 @Override
@@ -8673,6 +8737,7 @@ private void makeBlink() {
         return super.getLeftFadingEdgeStrength();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:19.646 -0500", hash_original_method = "7D05EA9E8579412E6DC4A8392EC7FDC2", hash_generated_method = "7BE323B0E966EB6654A907901522776F")
     
 @Override
@@ -8933,6 +8998,7 @@ private boolean selectCurrentWord() {
      * the current IME's locale, or the system default locale.
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:19.692 -0500", hash_original_method = "9DCEB61D4BC0794F06560CB12151C0AA", hash_generated_method = "5A15492509F59DC4E40A957A59037443")
     
 public Locale getTextServicesLocale() {
@@ -8956,6 +9022,7 @@ void onLocaleChanged() {
     /**
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:19.696 -0500", hash_original_method = "D7DB0153FBA43371270FE2DB428D268F", hash_generated_method = "C83C8F49D6DFE55F7EED53D9F0380230")
     
 public WordIterator getWordIterator() {
@@ -9065,6 +9132,7 @@ private long getLastTouchOffsets() {
      *
      * @return The accessibility text.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:19.713 -0500", hash_original_method = "8463B72D535FD98D84B93D99DA9D2B3A", hash_generated_method = "12AC6370544DEE1DB28AAC34FBAE43BD")
     
 private CharSequence getTextForAccessibility() {
@@ -9145,6 +9213,7 @@ public boolean onTextContextMenuItem(int id) {
         return false;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:19.733 -0500", hash_original_method = "FE79E6B9FD3BC9A3AB2F6DF9CAFCD48E", hash_generated_method = "42F51A2B20C917A07CF6190FBE54DEAD")
     
 private CharSequence getTransformedText(int start, int end) {
@@ -9743,6 +9812,7 @@ public int getTextWidths(int start, int end, float[] widths, Paint p) {
             return p.getTextWidths(mChars, start + mStart, end - start, widths);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.876 -0500", hash_original_method = "8AE304950D3C27A7D6E58BA388580EF8", hash_generated_method = "FE2955D9B1E8B9948C991A47B32E4EE1")
         
 public float getTextRunAdvances(int start, int end, int contextStart,
@@ -9755,6 +9825,7 @@ public float getTextRunAdvances(int start, int end, int contextStart,
                     advancesIndex);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.878 -0500", hash_original_method = "F8F49F104CF6E56864F062F013326F8E", hash_generated_method = "DD1556B4225F318A2ED9ECD69E6E0E0E")
         
 public float getTextRunAdvances(int start, int end, int contextStart,
@@ -10130,6 +10201,7 @@ void start(int repeatLimit) {
             }
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:19.439 -0500", hash_original_method = "8BEDD434588E893B08521C1E5E937982", hash_generated_method = "8BEDD434588E893B08521C1E5E937982")
         
 float getGhostOffset() {
@@ -12849,6 +12921,7 @@ private float convertToLocalHorizontalCoordinate(float x) {
         return x;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:20.332 -0500", hash_original_method = "69F0EDA2749521F4A39C0BEAC846F1E5", hash_generated_method = "E24324044857D124C817094DC42A7FB5")
     
 private int getLineAtCoordinate(float y) {

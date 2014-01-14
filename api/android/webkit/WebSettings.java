@@ -441,6 +441,7 @@ private synchronized String getCurrentUserAgent() {
      * Returns true if dumping the navigation cache is enabled.
      * @deprecated This method is now obsolete.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.308 -0500", hash_original_method = "8B24B3626FE4D070605B6C1E8E9774B6", hash_generated_method = "19E2DFBF582E3B8305E80F5E04625E02")
     
 @Deprecated
@@ -499,6 +500,7 @@ public void setBuiltInZoomControls(boolean enabled) {
     /**
      * Returns true if the zoom mechanism built into WebView is being used.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.319 -0500", hash_original_method = "9006048913C3ABECFF150ED9A10494B5", hash_generated_method = "7052AEF1DF079510771865F9C7B36911")
     
 public boolean getBuiltInZoomControls() {
@@ -522,6 +524,7 @@ public void setDisplayZoomControls(boolean enabled) {
     /**
      * Returns true if the on screen zoom buttons are being used.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.323 -0500", hash_original_method = "AE5780336410432FB6F983F3F828E46C", hash_generated_method = "A41E69B3DF2C09E91610E41004AA82BD")
     
 public boolean getDisplayZoomControls() {
@@ -544,6 +547,7 @@ public void setAllowFileAccess(boolean allow) {
     /**
      * Returns true if this WebView supports file access.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.328 -0500", hash_original_method = "ED281F9FC327C1DCA93656D122E60B6E", hash_generated_method = "30259FAD0B20AD9CA27FA6EF18E78CE4")
     
 public boolean getAllowFileAccess() {
@@ -565,6 +569,7 @@ public void setAllowContentAccess(boolean allow) {
     /**
      * Returns true if this WebView supports content url access.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.332 -0500", hash_original_method = "E20572D9D9FCBBCAC622C44A2D9C5369", hash_generated_method = "EF6D0A86AAB5DE9EAA850EFBB0225966")
     
 public boolean getAllowContentAccess() {
@@ -584,6 +589,7 @@ public void setLoadWithOverviewMode(boolean overview) {
     /**
      * Returns true if this WebView loads page with overview mode
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.337 -0500", hash_original_method = "0D409EAD2B46C91908C9804617827D1C", hash_generated_method = "F5C533330A8FCAA3E2FF0B9A80758961")
     
 public boolean getLoadWithOverviewMode() {
@@ -633,6 +639,7 @@ public boolean enableSmoothTransition() {
      * internal pattern for over scroll background.
      * @deprecated This method is now obsolete.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.345 -0500", hash_original_method = "FE1757AAD5E1DD702744237E901A55C8", hash_generated_method = "8289F9644AED63A7452D5290A5F174F9")
     
 @Deprecated
@@ -654,6 +661,7 @@ public void setSaveFormData(boolean save) {
      *  Return whether the WebView is saving form data and displaying prior
      *  entries/autofill++.  Always false in private browsing mode.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.350 -0500", hash_original_method = "4DFFD3713A8D682938D03E8713A587EF", hash_generated_method = "55BCA0F4D999A0DECEFC6DA3C4039B63")
     
 public boolean getSaveFormData() {
@@ -673,6 +681,7 @@ public void setSavePassword(boolean save) {
     /**
      *  Return whether the WebView is saving password.
      */
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.354 -0500", hash_original_method = "7EDF9AC2E1EDCCF642364DB0CD31765F", hash_generated_method = "DFDBCAE925F4C9D0FA74D873C0BB68DA")
     
 public boolean getSavePassword() {
@@ -702,6 +711,7 @@ public synchronized void setTextZoom(int textZoom) {
      * @return A percent value describing the text zoom.
      * @see setTextSizeZoom
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.360 -0500", hash_original_method = "570564B346A8D968406F236CA99E37F6", hash_generated_method = "3851039882C8F893E2B37DA735B5917D")
     
 public synchronized int getTextZoom() {
@@ -811,6 +821,7 @@ public void setLightTouchEnabled(boolean enabled) {
     /**
      * Returns true if light touches are enabled.
      */
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.377 -0500", hash_original_method = "02D840FF3CC8AE7A6DEC323EC455B33B", hash_generated_method = "97DEB8544A719CE299C898A07019007B")
     
 public boolean getLightTouchEnabled() {
@@ -833,6 +844,7 @@ public boolean getLightTouchEnabled() {
      * @deprecated This setting controlled a rendering optimization
      * that is no longer present. Setting it now has no effect.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.382 -0500", hash_original_method = "89BCC0409F823F147F01A4F485C1EC58", hash_generated_method = "042EB0942AD4C517C1F85FD13F3D4FD6")
     
 @Deprecated
@@ -879,6 +891,7 @@ public boolean getLightTouchEnabled() {
      *
      * @deprecated Please use getUserAgentString instead.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.388 -0500", hash_original_method = "622085E3817D576D67ED6E0D62241C79", hash_generated_method = "77F5F641BACFAC349810A793F99745D6")
     
 @Deprecated
@@ -909,6 +922,7 @@ public synchronized void setUseWideViewPort(boolean use) {
     /**
      * @return True if the WebView is using a wide viewport
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.392 -0500", hash_original_method = "B42FD143593B620F53C7027879473593", hash_generated_method = "A58A871EB2E941B1C191C2918F873456")
     
 public synchronized boolean getUseWideViewPort() {
@@ -988,6 +1002,7 @@ public synchronized void setStandardFontFamily(String font) {
      * Get the standard font family name. The default is "sans-serif".
      * @return The standard font family name as a string.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.407 -0500", hash_original_method = "D17418EAB461A3931F0EFDEA802C4808", hash_generated_method = "8AB0D7D50ECAE13000C532ACD7A083C0")
     
 public synchronized String getStandardFontFamily() {
@@ -1012,6 +1027,7 @@ public synchronized void setFixedFontFamily(String font) {
      * Get the fixed font family name. The default is "monospace".
      * @return The fixed font family name as a string.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.411 -0500", hash_original_method = "91A5D658AFF46E5675EE0251B0448A37", hash_generated_method = "EAC405FC7AE9DE5891C6EF323CCD9DB9")
     
 public synchronized String getFixedFontFamily() {
@@ -1036,6 +1052,7 @@ public synchronized void setSansSerifFontFamily(String font) {
      * Get the sans-serif font family name.
      * @return The sans-serif font family name as a string.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.416 -0500", hash_original_method = "E8B035ABC4C315E7FC00763BCE4B3101", hash_generated_method = "420A0256498ED8F222DA11E7A1F54653")
     
 public synchronized String getSansSerifFontFamily() {
@@ -1060,6 +1077,7 @@ public synchronized void setSerifFontFamily(String font) {
      * Get the serif font family name. The default is "serif".
      * @return The serif font family name as a string.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.421 -0500", hash_original_method = "AEE55B3207D2A837254BD0F18E5F431B", hash_generated_method = "EB212C4FC1BC412E275779077C20B9D0")
     
 public synchronized String getSerifFontFamily() {
@@ -1084,6 +1102,7 @@ public synchronized void setCursiveFontFamily(String font) {
      * Get the cursive font family name. The default is "cursive".
      * @return The cursive font family name as a string.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.425 -0500", hash_original_method = "A9100EF4E222FCE0DCE66A7BF6E9785C", hash_generated_method = "8EC87EE29FD2BA8526A5079960F56B49")
     
 public synchronized String getCursiveFontFamily() {
@@ -1108,6 +1127,7 @@ public synchronized void setFantasyFontFamily(String font) {
      * Get the fantasy font family name. The default is "fantasy".
      * @return The fantasy font family name as a string.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.430 -0500", hash_original_method = "3AB44712F248734E7DE5412E073462E0", hash_generated_method = "907EDD7E694853E4C8A8C8BADC6B3B62")
     
 public synchronized String getFantasyFontFamily() {
@@ -1134,6 +1154,7 @@ public synchronized void setMinimumFontSize(int size) {
      * Get the minimum font size. The default is 8.
      * @return A non-negative integer between 1 and 72.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.435 -0500", hash_original_method = "9F0281C9F2E3CE3701E30B7BA1EEFCDC", hash_generated_method = "F02F2F9D91896664EF85B09121C14133")
     
 public synchronized int getMinimumFontSize() {
@@ -1160,6 +1181,7 @@ public synchronized void setMinimumLogicalFontSize(int size) {
      * Get the minimum logical font size. The default is 8.
      * @return A non-negative integer between 1 and 72.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.439 -0500", hash_original_method = "4108641CDFB7F27DEA848BE579464C88", hash_generated_method = "240038214F0E411E6E2BC4567245104E")
     
 public synchronized int getMinimumLogicalFontSize() {
@@ -1186,6 +1208,7 @@ public synchronized void setDefaultFontSize(int size) {
      * Get the default font size. The default is 16.
      * @return A non-negative integer between 1 and 72.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.444 -0500", hash_original_method = "DC87CC6F42B19166FD6192BC9DCDB609", hash_generated_method = "DC76C3D3B64133542193793604A7FC78")
     
 public synchronized int getDefaultFontSize() {
@@ -1212,6 +1235,7 @@ public synchronized void setDefaultFixedFontSize(int size) {
      * Get the default fixed font size. The default is 16.
      * @return A non-negative integer between 1 and 72.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.449 -0500", hash_original_method = "32FF94F6134070C3A3BF7D6E4734C806", hash_generated_method = "292874B061AC5D054B89E83D989276F6")
     
 public synchronized int getDefaultFixedFontSize() {
@@ -1253,6 +1277,7 @@ public synchronized void setLoadsImagesAutomatically(boolean flag) {
      * The default is true.
      * @return True if the WebView loads images automatically.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.456 -0500", hash_original_method = "55A6CB81C4460FAFC4A6B0D4FAE1ED88", hash_generated_method = "22F860787F5E83D0008D0F2B13952CED")
     
 public synchronized boolean getLoadsImagesAutomatically() {
@@ -1282,6 +1307,7 @@ public synchronized void setBlockNetworkImage(boolean flag) {
      * false.
      * @return True if the WebView blocks network images.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.460 -0500", hash_original_method = "20F3224FE4B0DC8AEBED4FF3568A3BDD", hash_generated_method = "D33FDA00479132B2DD7020BEED6A24D5")
     
 public synchronized boolean getBlockNetworkImage() {
@@ -1312,6 +1338,7 @@ public synchronized void setBlockNetworkLoads(boolean flag) {
      * false.
      * @return True if the WebView blocks all network loads.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.466 -0500", hash_original_method = "8F98673864D7321D7FB7DE6793DC0EC8", hash_generated_method = "4DFA294954CD12EA459D621110C3B79F")
     
 public synchronized boolean getBlockNetworkLoads() {
@@ -1553,6 +1580,7 @@ public synchronized void setDomStorageEnabled(boolean flag) {
      * Returns true if the DOM Storage API's are enabled.
      * @return True if the DOM Storage API's are enabled.
      */
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.506 -0500", hash_original_method = "F0262AC32F151E97C7BD7687A4F30118", hash_generated_method = "F0B7FEC19CB269EF1165CD91E1037221")
     
 public synchronized boolean getDomStorageEnabled() {
@@ -1564,6 +1592,7 @@ public synchronized boolean getDomStorageEnabled() {
      * the current WebView.
      * @return the String path to the database storage API databases.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.508 -0500", hash_original_method = "B06914FF8620CDD00A7D2E76B4DC9F8E", hash_generated_method = "87EAC204CC6B68884686301E790E61BE")
     
 public synchronized String getDatabasePath() {
@@ -1574,6 +1603,7 @@ public synchronized String getDatabasePath() {
      * Returns true if database storage API is enabled.
      * @return True if the database storage API is enabled.
      */
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.511 -0500", hash_original_method = "B3A6EABACA6DB5DAD1BC523D1F7D938A", hash_generated_method = "D8850798C61D194F4B4610C39B780BFE")
     
 public synchronized boolean getDatabaseEnabled() {
@@ -1628,6 +1658,7 @@ public synchronized void setXSSAuditorEnabled(boolean flag) {
      * Return true if javascript is enabled. <b>Note: The default is false.</b>
      * @return True if javascript is enabled.
      */
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.521 -0500", hash_original_method = "0DFFCBD94870E084A8277321728F548A", hash_generated_method = "386B425E3B90586C8DF5805338BD8990")
     
 public synchronized boolean getJavaScriptEnabled() {
@@ -1639,6 +1670,7 @@ public synchronized boolean getJavaScriptEnabled() {
      * @return True if plugins are enabled.
      * @deprecated This method has been replaced by {@link #getPluginState}
      */
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.523 -0500", hash_original_method = "71CDB5FC63B182B87115D2DBE9F21219", hash_generated_method = "F718732ADC4B59F490F77276C39DE9D3")
     
 @Deprecated
@@ -1663,6 +1695,7 @@ public synchronized PluginState getPluginState() {
      * @deprecated This method is no longer used as plugins are loaded from
      * their own APK via the system's package manager.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.527 -0500", hash_original_method = "9447E36E214BB4441498CEE16910C171", hash_generated_method = "4F7D3498F2B65D34F73E7508D7F64997")
     
 @Deprecated
@@ -1692,6 +1725,7 @@ public synchronized void setJavaScriptCanOpenWindowsAutomatically(
      * @return True if javascript can open windows automatically during
      *         window.open().
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.532 -0500", hash_original_method = "79E98D32B2FE915E7B4CD55D0B1C896F", hash_generated_method = "F2BAB3EA3C17525E4E5FE18A98C4F5BA")
     
 public synchronized boolean getJavaScriptCanOpenWindowsAutomatically() {
@@ -1716,6 +1750,7 @@ public synchronized void setDefaultTextEncodingName(String encoding) {
      * Get the default text encoding name. The default is "Latin-1".
      * @return The default text encoding name as a string.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.537 -0500", hash_original_method = "C5F48A0B5AD67EA38BD640610E4387AC", hash_generated_method = "55178E81379757A32B62E01F5D3B5F12")
     
 public synchronized String getDefaultTextEncodingName() {
@@ -1753,6 +1788,7 @@ public synchronized void setUserAgentString(String ua) {
     /**
      * Return the WebView's user-agent string.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.542 -0500", hash_original_method = "2522780DB5B181D072BE72836FEE2179", hash_generated_method = "027D4F5D53C7319A45641E54E2216A79")
     
 public synchronized String getUserAgentString() {
@@ -1858,6 +1894,7 @@ public void setCacheMode(int mode) {
      * Return the current setting for overriding the cache mode. For a full
      * description, see the {@link #setCacheMode(int)} function.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.558 -0500", hash_original_method = "4A960A8ACA504F48F41DB237F9209DA9", hash_generated_method = "DC7D58DCD8AAF8B48A50D7CB64F57FB2")
     
 public int getCacheMode() {

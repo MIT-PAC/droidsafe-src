@@ -221,6 +221,7 @@ public JSONArray put(int index, long value) throws JSONException {
      *     infinities}.
      * @return this array.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.154 -0500", hash_original_method = "965F91AFDF1516EF58CC39AD3E1136B7", hash_generated_method = "FB88B16619C2545F5372C618D722FB65")
     
 public JSONArray put(int index, Object value) throws JSONException {
@@ -253,6 +254,7 @@ public boolean isNull(int index) {
      *     that value is the {@code null} reference. This method returns
      *     normally if the value is {@code JSONObject#NULL}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.159 -0500", hash_original_method = "2917FB45D7E32294FB2932AB5B08992C", hash_generated_method = "5EED0C1B528791A5B50CA8E6FBD90F09")
     
 public Object get(int index) throws JSONException {
@@ -327,6 +329,7 @@ public boolean optBoolean(int index, boolean fallback) {
      * @throws JSONException if the value at {@code index} doesn't exist or
      *     cannot be coerced to a double.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.170 -0500", hash_original_method = "6D74AEBF7F111E364BD2DB0E7727FAF6", hash_generated_method = "F5749A7B907974AF24E1731993E89C58")
     
 public double getDouble(int index) throws JSONException {
@@ -367,6 +370,7 @@ public double optDouble(int index, double fallback) {
      * @throws JSONException if the value at {@code index} doesn't exist or
      *     cannot be coerced to a int.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.177 -0500", hash_original_method = "853222C548896141F9D1D8AF0338F5C4", hash_generated_method = "4C51124504E2CD640D7DF46E1E1C6C76")
     
 public int getInt(int index) throws JSONException {
@@ -407,6 +411,7 @@ public int optInt(int index, int fallback) {
      * @throws JSONException if the value at {@code index} doesn't exist or
      *     cannot be coerced to a long.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.183 -0500", hash_original_method = "56F71130ADC070DD70D4CA02CA42F381", hash_generated_method = "48E18E91DB48E9BD0A5BFEC4E7D094C6")
     
 public long getLong(int index) throws JSONException {
@@ -446,6 +451,7 @@ public long optLong(int index, long fallback) {
      *
      * @throws JSONException if no such value exists.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.190 -0500", hash_original_method = "7F7D1138F84D636CF19BD9329533631C", hash_generated_method = "0365BDA66A795FC988F6F320537F1441")
     
 public String getString(int index) throws JSONException {
@@ -486,6 +492,7 @@ public String optString(int index, String fallback) {
      * @throws JSONException if the value doesn't exist or is not a {@code
      *     JSONArray}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.197 -0500", hash_original_method = "173A28EF43B750DEF6376D4E3E2F6DD2", hash_generated_method = "459C1ED143E63E9E494C51B86E927624")
     
 public JSONArray getJSONArray(int index) throws JSONException {
@@ -515,6 +522,7 @@ public JSONArray optJSONArray(int index) {
      * @throws JSONException if the value doesn't exist or is not a {@code
      *     JSONObject}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.202 -0500", hash_original_method = "EA5692C9D71198B472B917468564A78A", hash_generated_method = "41FD830A311E39BCE38061C86149FC0E")
     
 public JSONObject getJSONObject(int index) throws JSONException {

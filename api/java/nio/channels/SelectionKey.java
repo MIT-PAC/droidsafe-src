@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public abstract class SelectionKey {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.167 -0500", hash_original_field = "EBC0869EFF30D5C8BE613FC946BA1AD7", hash_generated_field = "C7033B07AB2380EEC61C6B834AFE8243")
 
@@ -23,7 +19,6 @@ public abstract class SelectionKey {
 
     public static final int OP_WRITE = 4;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.178 -0500", hash_original_field = "CD4901CD0ECA070EC6EEA4569BB6F20E", hash_generated_field = "7B0B71636F0A6FD9185511547501EE96")
-
 
     private volatile Object attachment = null;
 
@@ -59,6 +54,7 @@ public final Object attach(Object anObject) {
      * @return the attached object or {@code null} if no object has been
      *         attached.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.186 -0500", hash_original_method = "F29A40DBFBA770DAC2D3ED3DF7881B6F", hash_generated_method = "8BA2F3446477E1CEF6EBC6E7B1482BDB")
     
 public final Object attachment() {

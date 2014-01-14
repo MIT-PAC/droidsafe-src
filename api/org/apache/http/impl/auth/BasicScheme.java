@@ -16,11 +16,6 @@ import org.apache.http.message.BufferedHeader;
 import org.apache.http.util.CharArrayBuffer;
 import org.apache.http.util.EncodingUtils;
 
-
-
-
-
-
 public class BasicScheme extends RFC2617Scheme {
     
     /**
@@ -83,6 +78,7 @@ public BasicScheme() {
      * 
      * @return <code>basic</code>
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:35.893 -0500", hash_original_method = "456652B0A19A82DBC909302CFB2200F1", hash_generated_method = "219E61D29C3B60261ABA492391FC0B7D")
     
 public String getSchemeName() {
@@ -157,7 +153,6 @@ public Header authenticate(
         String charset = AuthParams.getCredentialCharset(request.getParams());
         return authenticate(credentials, charset, isProxy());
     }
-
     
 }
 

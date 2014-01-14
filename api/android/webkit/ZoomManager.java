@@ -251,36 +251,42 @@ private void setDefaultZoomScale(float defaultScale) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:00.039 -0500", hash_original_method = "E0A7D63CBE7BA22AE5FD1D2BCFACA30A", hash_generated_method = "A150440779A82C875482425F9B56B40A")
     
 public final float getScale() {
         return mActualScale;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:00.041 -0500", hash_original_method = "27B2B7D16269E37341CA9CE429E50BD4", hash_generated_method = "89378C275E408CFEB1DF41845265A487")
     
 public final float getInvScale() {
         return mInvActualScale;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:00.043 -0500", hash_original_method = "420B51415ADFBA4739EC66A8F732263C", hash_generated_method = "1B017D7B25B1B6CB821B0EA1E40C0848")
     
 public final float getTextWrapScale() {
         return mTextWrapScale;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:00.045 -0500", hash_original_method = "4D84680032231769C697659C881951E3", hash_generated_method = "E6E64462C7CEAC10AD605329F2675017")
     
 public final float getMaxZoomScale() {
         return mMaxZoomScale;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:00.047 -0500", hash_original_method = "EF101FB82D6E625D2F7286BB14442128", hash_generated_method = "0A97972A05CE1132406A8819E8619170")
     
 public final float getMinZoomScale() {
         return mMinZoomScale;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:00.050 -0500", hash_original_method = "C9287BA17A965D05EE45D11D20F2D047", hash_generated_method = "4B7AB3C2F8FE3AC00BBED1F7CFA9903B")
     
 public final float getDefaultScale() {
@@ -290,36 +296,42 @@ public final float getDefaultScale() {
     /**
      * Returns the zoom scale used for reading text on a double-tap.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:00.052 -0500", hash_original_method = "B68BBC34F3F5ADBA444AF11F55B159F2", hash_generated_method = "AABB77F48C85B30AE57D94FF12410459")
     
 public final float getReadingLevelScale() {
         return mDisplayDensity * mDoubleTapZoomFactor;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:00.054 -0500", hash_original_method = "150923628532607A08D5A6F81E7006FE", hash_generated_method = "B2E218CAD4490E737DAFA45232E83039")
     
 public final float getInvDefaultScale() {
         return mInvDefaultScale;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:00.056 -0500", hash_original_method = "86C1C61E20B5F864D06602058822F40B", hash_generated_method = "EDD8465E0486F28C5B7E4D2D23857EF2")
     
 public final float getDefaultMaxZoomScale() {
         return mDefaultMaxZoomScale;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:00.059 -0500", hash_original_method = "68697F997D536A00F27515B45D68169D", hash_generated_method = "362719130226A1DE15762B47DC7469B0")
     
 public final float getDefaultMinZoomScale() {
         return mDefaultMinZoomScale;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:00.061 -0500", hash_original_method = "0D1E90BA2B32E85CA9E1B47821E3129C", hash_generated_method = "D38368F1B0BBCD633B627409A1480B5F")
     
 public final int getDocumentAnchorX() {
         return mAnchorX;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:00.063 -0500", hash_original_method = "6F8EAB28E274BDE9903F29B52FA3CE08", hash_generated_method = "C78FDEEE83323ABF560CB87A50F26068")
     
 public final int getDocumentAnchorY() {
@@ -722,7 +734,8 @@ private void setZoomOverviewWidth(int width) {
         mInvZoomOverviewWidth = 1.0f / width;
     }
 
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:00.121 -0500", hash_original_method = "B42D229ABB1FC24C49B118C5D42DFED9", hash_generated_method = "B42D229ABB1FC24C49B118C5D42DFED9")
+    /* package */ @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:00.121 -0500", hash_original_method = "B42D229ABB1FC24C49B118C5D42DFED9", hash_generated_method = "B42D229ABB1FC24C49B118C5D42DFED9")
     
 float getZoomOverviewScale() {
         return mWebView.getViewWidth() * mInvZoomOverviewWidth;
@@ -1354,6 +1367,7 @@ public void keepZoomPickerVisible() {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:00.230 -0500", hash_original_method = "295B8076F41B8CC3FCA3F323BF66F29B", hash_generated_method = "D7F3BEDCC9BD4305BCADD478B9647280")
     
 public View getExternalZoomPicker() {

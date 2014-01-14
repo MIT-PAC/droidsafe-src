@@ -33,6 +33,7 @@ public final class HttpHandler extends URLStreamHandler {
         return new HttpURLConnectionImpl(url, getDefaultPort(), proxy);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:31.919 -0500", hash_original_method = "FEEAB6915C12BF9E3FEC7C9D98366E77", hash_generated_method = "5299DDB2FBD4BF18E13EF23AD2F5F20F")
     
 @Override protected int getDefaultPort() {

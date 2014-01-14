@@ -34,30 +34,35 @@ public void setTarget(InputConnection target) {
         mTarget = target;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.071 -0500", hash_original_method = "70D1E90906EDA66AADA5E9E7AF314024", hash_generated_method = "B461513FD88AC98BE482E876112D5202")
     
 public CharSequence getTextBeforeCursor(int n, int flags) {
         return mTarget.getTextBeforeCursor(n, flags);
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.073 -0500", hash_original_method = "511698C68B38701B7124628C33C2BDC9", hash_generated_method = "7598E78431D4AB1F9FF730CD883FFE61")
     
 public CharSequence getTextAfterCursor(int n, int flags) {
         return mTarget.getTextAfterCursor(n, flags);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.075 -0500", hash_original_method = "F94B155A1C8F9C791E6D9828C6F8114B", hash_generated_method = "3DE3851AF3CFFC905685B8AAFDBD7A82")
     
 public CharSequence getSelectedText(int flags) {
         return mTarget.getSelectedText(flags);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.077 -0500", hash_original_method = "FFC3D29E68F767E6DE7BA85D50A59F74", hash_generated_method = "0C0CBE9F677ADE2BBE3319D1F79DCAE3")
     
 public int getCursorCapsMode(int reqModes) {
         return mTarget.getCursorCapsMode(reqModes);
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.080 -0500", hash_original_method = "B46A0C14FE8C4BFCAB3863CCE2B487E1", hash_generated_method = "C2B8C6205BC7C225EE03F7B298CF6BC1")
     
 public ExtractedText getExtractedText(ExtractedTextRequest request, int flags) {

@@ -69,6 +69,7 @@ private IntToByteBufferAdapter(ByteBuffer byteBuffer) {
         return buf;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.133 -0500", hash_original_method = "B6C265DA3B3DAD372E7C00DDFF580FE2", hash_generated_method = "3F444A582DADF506D3312AFFF54778C4")
     
 @Override
@@ -87,6 +88,7 @@ private IntToByteBufferAdapter(ByteBuffer byteBuffer) {
         return byteBuffer.getInt(index * SizeOf.INT);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.138 -0500", hash_original_method = "C677A64CEDCCE4923055860B8C2E3944", hash_generated_method = "2C813DE2BA703BFACA19F862415C9419")
     
 @Override

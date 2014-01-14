@@ -27,6 +27,7 @@ public final class DistributionPoint {
             setOptional(2);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:00.106 -0500", hash_original_method = "074F2887793442CCAD72B944F0DE7380", hash_generated_method = "BF35355F573F820D12174E439F03035F")
         
 @Override protected Object getDecodedObject(BerInputStream in) throws IOException {

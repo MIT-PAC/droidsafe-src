@@ -405,7 +405,8 @@ public void setFeature (String name, boolean value)
 		else if (name.equals(CDATAElementsFeature)) CDATAElements = value;
 		}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:46.376 -0500", hash_original_method = "F750AD287EF0AB9FAAF84C1118421011", hash_generated_method = "AF0C5B36B2B426457099C57F26E384DC")
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:46.376 -0500", hash_original_method = "F750AD287EF0AB9FAAF84C1118421011", hash_generated_method = "AF0C5B36B2B426457099C57F26E384DC")
 	
 public Object getProperty (String name)
 	throws SAXNotRecognizedException, SAXNotSupportedException {
@@ -477,7 +478,8 @@ public void setEntityResolver (EntityResolver resolver) {
 		theEntityResolver = (resolver == null) ? this : resolver;
 		}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:46.384 -0500", hash_original_method = "4B11F09BEC63C73E852BF6819D5E17A6", hash_generated_method = "F874356932E7CE3C31553FC22A586F39")
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:46.384 -0500", hash_original_method = "4B11F09BEC63C73E852BF6819D5E17A6", hash_generated_method = "F874356932E7CE3C31553FC22A586F39")
 	
 public EntityResolver getEntityResolver () {
 		return (theEntityResolver == this) ? null : theEntityResolver;
@@ -489,7 +491,8 @@ public void setDTDHandler (DTDHandler handler) {
 		theDTDHandler = (handler == null) ? this : handler;
 		}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:46.388 -0500", hash_original_method = "338D21F6A8224B73088A08444EBB70F8", hash_generated_method = "2DD6CB2E7E0ABFF870070BBDDFD4BCFE")
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:46.388 -0500", hash_original_method = "338D21F6A8224B73088A08444EBB70F8", hash_generated_method = "2DD6CB2E7E0ABFF870070BBDDFD4BCFE")
 	
 public DTDHandler getDTDHandler () {
 		return (theDTDHandler == this) ? null : theDTDHandler;
@@ -501,7 +504,8 @@ public void setContentHandler (ContentHandler handler) {
 		theContentHandler = (handler == null) ? this : handler;
 		}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:46.393 -0500", hash_original_method = "E2D49645B9897F446183B1EC842A5B8C", hash_generated_method = "354352E113E11CBB448AD196C7A9156F")
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:46.393 -0500", hash_original_method = "E2D49645B9897F446183B1EC842A5B8C", hash_generated_method = "354352E113E11CBB448AD196C7A9156F")
 	
 public ContentHandler getContentHandler () {
 		return (theContentHandler == this) ? null : theContentHandler;
@@ -513,7 +517,8 @@ public void setErrorHandler (ErrorHandler handler) {
 		theErrorHandler = (handler == null) ? this : handler;
 		}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:46.397 -0500", hash_original_method = "662542919C9F3C78B54F5CA00EE88FD5", hash_generated_method = "A422E5865F4B44C8B09F9AA279A5E6E6")
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:46.397 -0500", hash_original_method = "662542919C9F3C78B54F5CA00EE88FD5", hash_generated_method = "A422E5865F4B44C8B09F9AA279A5E6E6")
 	
 public ErrorHandler getErrorHandler () {
 		return (theErrorHandler == this) ? null : theErrorHandler;
@@ -1131,7 +1136,8 @@ private void rectify(Element e) throws SAXException {
 		theNewElement = null;
 		}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:46.524 -0500", hash_original_method = "7F354BAD0D4521AB4E9BA9D90015CEBE", hash_generated_method = "9EBC038850B0A7321D3CD57E7025995F")
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:46.524 -0500", hash_original_method = "7F354BAD0D4521AB4E9BA9D90015CEBE", hash_generated_method = "9EBC038850B0A7321D3CD57E7025995F")
 	
 public int getEntity() {
 		return theEntity;

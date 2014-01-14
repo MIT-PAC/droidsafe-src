@@ -14,10 +14,6 @@ import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.util.Log;
 
-
-
-
-
 public final class BluetoothHealth implements BluetoothProfile {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:31.246 -0500", hash_original_method = "0EBF7673E44AF610ADC3AB53A65BD597", hash_generated_method = "12E4FDCE2D2661CC6DF9F077D2C0BB73")
@@ -79,7 +75,6 @@ private static void log(String msg) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:31.219 -0500", hash_original_field = "32AAAC1AF6CC456A03EF1CB1C96610C9", hash_generated_field = "8352EB26F7DA6E75D8A431459C669736")
 
     public static final int APP_CONFIG_REGISTRATION_SUCCESS = 0;
-
     
     private static class BluetoothHealthCallbackWrapper extends IBluetoothHealthCallback.Stub {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:31.198 -0500", hash_original_field = "C4048EE3E72C586036A0AED82D8A2F52", hash_generated_field = "3AC95B6D8598783F18892228E574790F")
@@ -109,7 +104,6 @@ public BluetoothHealthCallbackWrapper(BluetoothHealthCallback callback) {
             mCallback.onHealthChannelStateChange(config, device, prevState, newState, fd,
                                                  channelId);
         }
-
         
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:31.221 -0500", hash_original_field = "BCBE23CF7E4A41DA940A234DEB78A7D2", hash_generated_field = "E0F008A46B0265984580B5C0AD2705BA")
@@ -122,7 +116,6 @@ public BluetoothHealthCallbackWrapper(BluetoothHealthCallback callback) {
 
     public static final int APP_CONFIG_UNREGISTRATION_FAILURE = 3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:31.228 -0500", hash_original_field = "AD4810E1EAEE0B4F351A0550C3A3183B", hash_generated_field = "6FCEA0ED39BC377BA765F514A42DFCE9")
-
 
     private ServiceListener mServiceListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:31.229 -0500", hash_original_field = "E6C68E4A2725AB507547EA6B7D87DBDC", hash_generated_field = "40876FBB70C48F89ADB2F95E8DF8AB42")
@@ -154,7 +147,6 @@ BluetoothHealth(Context mContext, ServiceListener l) {
             mService = null;
         }
     }
-
 
     /**
      * Register an application configuration that acts as a Health SINK.
@@ -355,6 +347,7 @@ public boolean disconnectChannel(BluetoothDevice device,
      * @param config The application configuration
      * @return null on failure, ParcelFileDescriptor on success.
      */
+    @DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:31.187 -0500", hash_original_method = "56EA1CE9CB56305F9C3F6804737421F5", hash_generated_method = "50F3295D5E64036168BB55F626E52E18")
     
 public ParcelFileDescriptor getMainChannelFd(BluetoothDevice device,
@@ -388,6 +381,7 @@ public ParcelFileDescriptor getMainChannelFd(BluetoothDevice device,
      *               {@link #STATE_CONNECTED}, {@link #STATE_CONNECTING},
      *               {@link #STATE_DISCONNECTED}, {@link #STATE_DISCONNECTING}
      */
+    @DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:31.189 -0500", hash_original_method = "EF385FC85E116FE9230DC48DB39B0D5E", hash_generated_method = "3610C690206210CF20DBF6C3ADF5BB07")
     
 @Override
@@ -418,6 +412,7 @@ public ParcelFileDescriptor getMainChannelFd(BluetoothDevice device,
      * local adapter.
      * @return List of devices. The list will be empty on error.
      */
+    @DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:31.192 -0500", hash_original_method = "27E5D0D39947E94A7B208AD0BB996AC3", hash_generated_method = "3E7349ED66303EBEFE1F968E25171EDA")
     
 @Override
@@ -452,6 +447,7 @@ public ParcelFileDescriptor getMainChannelFd(BluetoothDevice device,
      *              {@link #STATE_DISCONNECTED}, {@link #STATE_DISCONNECTING},
      * @return List of devices. The list will be empty on error.
      */
+    @DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:31.195 -0500", hash_original_method = "D442D88CEFF8EB23E79F375C10E7E4FC", hash_generated_method = "816536CE48D37ABF20E37085B9E8BA1C")
     
 @Override

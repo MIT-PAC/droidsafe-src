@@ -49,6 +49,7 @@ public static IssuingDistributionPoint decode(byte[] encoding)
             setDefault(Boolean.FALSE, 5);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:02.395 -0500", hash_original_method = "F5189D21B9E9E64EECA520233F4C56C2", hash_generated_method = "05C4211F8BEB1A8FE9513910D1DB27C8")
         
 protected Object getDecodedObject(BerInputStream in) {
@@ -151,6 +152,7 @@ public void setOnlyContainsAttributeCerts(
         this.onlyContainsAttributeCerts = onlyContainsAttributeCerts;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:02.388 -0500", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "552F71A862C62513AAC32037F4D2FC1B")
     
 @Override public byte[] getEncoded() {

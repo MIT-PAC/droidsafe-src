@@ -390,6 +390,7 @@ public abstract byte get();
      * @exception BufferUnderflowException
      *                if {@code dst.length} is greater than {@code remaining()}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.830 -0500", hash_original_method = "9A475FF9B92E938C1B69F2A1BC2AE724", hash_generated_method = "988551F2BBB206BBDE3A8BA08F16DFB3")
     
 public ByteBuffer get(byte[] dst) {
@@ -413,6 +414,7 @@ public ByteBuffer get(byte[] dst) {
      * @exception IndexOutOfBoundsException if {@code dstOffset < 0 ||  byteCount < 0}
      * @exception BufferUnderflowException if {@code byteCount > remaining()}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.833 -0500", hash_original_method = "1D8E1FFC265A4E71218B8D81ECBD99D1", hash_generated_method = "A112D08E1771E5017BE9406DD1561DC0")
     
 public ByteBuffer get(byte[] dst, int dstOffset, int byteCount) {
@@ -676,6 +678,7 @@ public abstract boolean isDirect();
      * @return the byte order used by this buffer when converting bytes from/to
      *         other primitive types.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.876 -0500", hash_original_method = "65B1A3EBEA253AF86057FAE15F6D4DB5", hash_generated_method = "EE2ABE1DAA1B6458AFBD3971ED955F67")
     
 public final ByteOrder order() {

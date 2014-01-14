@@ -46,6 +46,7 @@ private void validateOffset(int offset) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:02.397 -0500", hash_original_method = "0709975D2E361F60AA4A842C629D2B9B", hash_generated_method = "AB6E4341DBCE2FE5ABA23D7BC63F2263")
     
 @Override public CharacterIterator getText() {

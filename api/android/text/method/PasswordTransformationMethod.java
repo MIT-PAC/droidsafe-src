@@ -21,6 +21,7 @@ import android.view.View;
 
 public class PasswordTransformationMethod implements TransformationMethod, TextWatcher {
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:01.836 -0500", hash_original_method = "AA586779493D0903CD5D98EFA63FCB15", hash_generated_method = "15A79EC119B711DE3CE66CEF2A96A5AC")
     
 public static PasswordTransformationMethod getInstance() {
@@ -51,6 +52,7 @@ private static void removeVisibleSpans(Spannable sp) {
     {
         //Synthesized constructor
     }
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:01.832 -0500", hash_original_method = "46C31F1840FDB44A1F40EC87B2DB5960", hash_generated_method = "6F5BB88E5202740C45B7E1BE13CC66A3")
     
 public CharSequence getTransformation(CharSequence source, View view) {

@@ -14,13 +14,8 @@ import android.text.ParcelableSpan;
 import android.text.Spanned;
 import android.text.TextUtils;
 
-
-
-
-
 public class BulletSpan implements LeadingMarginSpan, ParcelableSpan {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.423 -0500", hash_original_field = "B799CBAF58FA5A7B8039F0E1B5D4CA4E", hash_generated_field = "AE2FB42565AB6A2C235F3647E11BA323")
-
 
     private static final int BULLET_RADIUS = 3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.426 -0500", hash_original_field = "92D278066E13152546B8DDAAE07866FA", hash_generated_field = "F4B31C45F9E1D3EC191C9041DEBF8AA4")
@@ -71,6 +66,7 @@ public BulletSpan(Parcel src) {
         mColor = src.readInt();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.443 -0500", hash_original_method = "487ABDFFC7C87077FB337ABC7D22F575", hash_generated_method = "72B6C1A2A06ABE6402112AB29A8EF749")
     
 public int getSpanTypeId() {
@@ -91,6 +87,7 @@ public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(mColor);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.450 -0500", hash_original_method = "77C9B4F0913BD5D8F7E0CF3C61E7D063", hash_generated_method = "BB904BCEA193FDE2FC14A293DCAFC599")
     
 public int getLeadingMargin(boolean first) {

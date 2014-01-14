@@ -29,6 +29,7 @@ public class SecureRandom extends Random {
      * @throws NullPointerException
      *             if {@code algorithm} is {@code null}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:57.241 -0500", hash_original_method = "4857474807562CBFBD7813A9B58F56F0", hash_generated_method = "FDEBE827545D7E04D2A1C0D6CBDBD07B")
     
 public static SecureRandom getInstance(String algorithm) throws NoSuchAlgorithmException {
@@ -58,6 +59,7 @@ public static SecureRandom getInstance(String algorithm) throws NoSuchAlgorithmE
      *             if {@code algorithm} is {@code null}.
      * @throws IllegalArgumentException if {@code provider == null || provider.isEmpty()}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:57.244 -0500", hash_original_method = "DE97096A3B9FE3F043FDC55F6D0E2300", hash_generated_method = "6146C77DBE8442048A0AABE34E0AE58D")
     
 public static SecureRandom getInstance(String algorithm, String provider)
@@ -88,6 +90,7 @@ public static SecureRandom getInstance(String algorithm, String provider)
      *             if {@code algorithm} is {@code null}.
      * @throws IllegalArgumentException if {@code provider == null}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:57.247 -0500", hash_original_method = "AC11452CE9958E1D0E60D203EE825B8B", hash_generated_method = "3E3FB0A7C163821919ECD821587E5937")
     
 public static SecureRandom getInstance(String algorithm, Provider provider)
@@ -110,6 +113,7 @@ public static SecureRandom getInstance(String algorithm, Provider provider)
      *            the number of seed bytes.
      * @return the seed bytes
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:57.266 -0500", hash_original_method = "3FA575BF722059F581C0BCCB1A57BEED", hash_generated_method = "36C646621AEC0E6BFFBA681007B6F7FF")
     
 public static byte[] getSeed(int numBytes) {
@@ -211,6 +215,7 @@ private SecureRandom(SecureRandomSpi secureRandomSpi,
      *
      * @return the provider associated with this {@code SecureRandom}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:57.250 -0500", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "443000CF13C77ABCABFC8B67E2DE556F")
     
 public final Provider getProvider() {
@@ -222,6 +227,7 @@ public final Provider getProvider() {
      *
      * @return the name of the algorithm of this {@code SecureRandom}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:57.252 -0500", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "09B8CB0F05513E7BA5A386900D5BF6E6")
     
 public String getAlgorithm() {
@@ -312,6 +318,7 @@ public synchronized void setSeed(byte[] seed) {
      *            the number of seed bytes.
      * @return the seed bytes.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:57.268 -0500", hash_original_method = "D819275281A9132149A7C81B1EB64271", hash_generated_method = "A7B2C1EFA5C2C930FBA9FA88AC8C3587")
     
 public byte[] generateSeed(int numBytes) {

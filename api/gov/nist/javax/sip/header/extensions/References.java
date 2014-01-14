@@ -25,12 +25,14 @@ public References() {
         super(ReferencesHeader.NAME);
     }
   
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:59.100 -0500", hash_original_method = "EEE15C2182CFD7EA9CBDBFC60D7CEB59", hash_generated_method = "EB02B081C7AB467A549CA8E38E41CE27")
     
 public String getCallId() {
        return callId;
     }
    
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:59.103 -0500", hash_original_method = "91B139942A314EFB2C4BD7B21FDCB20D", hash_generated_method = "7C5859080605FC6164060D9F46FB703E")
     
 public String getRel() {
@@ -52,12 +54,14 @@ public void setRel(String rel) throws ParseException{
       }
     }
   
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:59.112 -0500", hash_original_method = "1C9EBF6FB53478B12B2F8D939C3DAA09", hash_generated_method = "B38238191E589CFAEF4BB037653484B0")
     
 public String getParameter(String name) {
         return super.getParameter(name);
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:59.115 -0500", hash_original_method = "5B135F944D95FEB85E76FF3C1A46B535", hash_generated_method = "7CFD2C15B08C6E9707C72FE644E43B7B")
     
 public Iterator getParameterNames() {
@@ -77,6 +81,7 @@ public void setParameter(String name, String value) throws ParseException {
        super.setParameter(name,value); 
     }
  
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:59.124 -0500", hash_original_method = "E46EA6665F0CD807BC3E748EE65E1EE2", hash_generated_method = "4D9D938D379CD0F657536DC58015AA16")
     
 public String getName() {

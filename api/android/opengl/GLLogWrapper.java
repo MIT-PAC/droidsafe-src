@@ -20,11 +20,6 @@ import java.util.Arrays;
 
 import javax.microedition.khronos.opengles.GL;
 
-
-
-
-
-
 class GLLogWrapper extends GLWrapperBase {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:06.644 -0500", hash_original_method = "1FA182FB3F670562E4832FF4C2B7A9B2", hash_generated_method = "2B68B6DC957DD24336BF67343B92A433")
@@ -66,7 +61,6 @@ public static String getErrorString(int error) {
     private static final int FORMAT_FIXED = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:07.435 -0500", hash_original_field = "C102688AB5147714BE034DF5762AF781", hash_generated_field = "EDE47FCB9653DA233FF2C90684B30260")
 
-
     private Writer mLog;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:07.437 -0500", hash_original_field = "623EC830790FA928BAEA6FB3AEF1E4BD", hash_generated_field = "16290804B51F21F78CA000CD0CBECA45")
 
@@ -75,7 +69,6 @@ public static String getErrorString(int error) {
 
     private int mArgCount;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:07.442 -0500", hash_original_field = "D4C0726347CA88625A8E4164605F465E", hash_generated_field = "A9DF68375B541DEE0AA44386877F50FB")
-
 
     private PointerInfo mColorPointer = new PointerInfo();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:07.445 -0500", hash_original_field = "EF3F1DFEEC4C35F2697095A8D22E036A", hash_generated_field = "87D4F61570DD8E7D4D301F37369FF34E")
@@ -89,7 +82,6 @@ public static String getErrorString(int error) {
     private PointerInfo mVertexPointer = new PointerInfo();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:07.452 -0500", hash_original_field = "1D813A80DF0D55B241736EF3E13F2BE1", hash_generated_field = "1D813A80DF0D55B241736EF3E13F2BE1")
 
-
     boolean mColorArrayEnabled;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:07.455 -0500", hash_original_field = "0EE9C70A9104622B1A8DAABD253D2C83", hash_generated_field = "0EE9C70A9104622B1A8DAABD253D2C83")
 
@@ -101,7 +93,6 @@ public static String getErrorString(int error) {
 
     boolean mVertexArrayEnabled;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:07.462 -0500", hash_original_field = "A4EAC03B43EBDC136945C29FC8E297E6", hash_generated_field = "A4EAC03B43EBDC136945C29FC8E297E6")
-
 
     StringBuilder mStringBuilder;
 
@@ -3900,7 +3891,6 @@ public void glTexParameterxv(int target, int pname, IntBuffer params) {
         checkError();
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:07.262 -0500", hash_original_method = "0B1AE3EA13B753BEF7CDDB7D4FDA419D", hash_generated_method = "ADD22148B34F627AD7614B2A8B0A1B81")
     
 public void glColorPointer(int size, int type, int stride, int offset) {
@@ -4516,7 +4506,6 @@ public void glWeightPointerOES(int size, int type, int stride, int offset) {
         mgl11ExtensionPack.glTexGeniv(coord, pname, params);
         checkError();
     }
-
     
     private class PointerInfo {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:07.404 -0500", hash_original_field = "205262C28D2B190751535A4911B3B259", hash_generated_field = "3EDC173302C44782B549729423A96285")
@@ -4568,6 +4557,7 @@ public int sizeof(int type) {
             }
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:07.426 -0500", hash_original_method = "026A802AC136EE8CA246416A4A83001B", hash_generated_method = "7831B3C867E9037D7BF5F51A54271C69")
         
 public int getStride() {
@@ -4585,7 +4575,6 @@ public void bindByteBuffer() {
 public void unbindByteBuffer() {
             mTempByteBuffer = null;
         }
-
         
     }
 

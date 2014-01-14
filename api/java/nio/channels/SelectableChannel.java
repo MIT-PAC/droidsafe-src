@@ -8,10 +8,6 @@ import java.io.IOException;
 import java.nio.channels.spi.AbstractInterruptibleChannel;
 import java.nio.channels.spi.SelectorProvider;
 
-
-
-
-
 public abstract class SelectableChannel extends AbstractInterruptibleChannel implements Channel {
 
     /**
@@ -132,6 +128,7 @@ public abstract SelectorProvider provider();
      * @throws IllegalArgumentException
      *             if the operation given is not supported by this channel.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.075 -0500", hash_original_method = "9EF0D8B0DC0E3104C0F2D3C59F2DDC24", hash_generated_method = "1C9A11BE9729A3914363B7EB05FAC26C")
     
 public final SelectionKey register(Selector selector, int operations)
@@ -186,7 +183,6 @@ public abstract SelectionKey register(Selector sel, int ops, Object att)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.081 -0500", hash_original_method = "33B79DBFF75C6C01F6D678C6A0E94BA6", hash_generated_method = "2ACF24C06FF02F12A8656ACBE4F244F6")
     
 public abstract int validOps();
-
     
 }
 

@@ -270,6 +270,7 @@ protected boolean finishUpdate() {
      *
      * @return list of SmsRawData of all sms on ICC
      */
+    @DSSource({DSSourceKind.CONTACT_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:28.778 -0500", hash_original_method = "D4D266DBBD67105329BC4DC8BFFFFEC2", hash_generated_method = "A59CD924AC83DF924A17F88575FABD38")
     
 public List<SmsRawData> getAllMessagesFromIccEf() {

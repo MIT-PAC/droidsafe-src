@@ -56,7 +56,8 @@ public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.119 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.119 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
             
 public java.lang.String getInterfaceDescriptor()
 {
@@ -193,7 +194,8 @@ _data.recycle();
      * @param providerName the provider whose setting we are querying
      * @return true if the provider should be synced when a network tickle is received
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.136 -0500", hash_original_method = "F0C8A9E30E3EFA370B71D9A762B582B2", hash_generated_method = "06FE476704AD454BAE87C09A88EAF415")
+@DSSource({DSSourceKind.SYNCHRONIZATION_DATA})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.136 -0500", hash_original_method = "F0C8A9E30E3EFA370B71D9A762B582B2", hash_generated_method = "06FE476704AD454BAE87C09A88EAF415")
             
 public boolean getSyncAutomatically(android.accounts.Account account, java.lang.String providerName) throws android.os.RemoteException
 {
@@ -258,7 +260,8 @@ _data.recycle();
      * @return the frequency of the periodic sync in seconds. If 0 then no periodic syncs
      * will take place.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.142 -0500", hash_original_method = "2C105B192D3709B9CAEE82874F186131", hash_generated_method = "FF7283CE430821F809359DA2CDB7B05B")
+@DSSource({DSSourceKind.SYNCHRONIZATION_DATA})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.142 -0500", hash_original_method = "2C105B192D3709B9CAEE82874F186131", hash_generated_method = "FF7283CE430821F809359DA2CDB7B05B")
             
 public java.util.List<android.content.PeriodicSync> getPeriodicSyncs(android.accounts.Account account, java.lang.String providerName) throws android.os.RemoteException
 {
@@ -368,7 +371,8 @@ _data.recycle();
      * Check if this account/provider is syncable.
      * @return >0 if it is syncable, 0 if not, and <0 if the state isn't known yet.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.151 -0500", hash_original_method = "C3E1300E3F395193B957E95D414A4830", hash_generated_method = "943CB9AFC242B5679B47FE07FF245956")
+@DSSource({DSSourceKind.SYNCHRONIZATION_DATA})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.151 -0500", hash_original_method = "C3E1300E3F395193B957E95D414A4830", hash_generated_method = "943CB9AFC242B5679B47FE07FF245956")
             
 public int getIsSyncable(android.accounts.Account account, java.lang.String providerName) throws android.os.RemoteException
 {
@@ -494,7 +498,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.164 -0500", hash_original_method = "EB7C6ADACD5DA97C34AEA66F1B0F503F", hash_generated_method = "1DD9501E56F291E232D61DE1F875410E")
+@DSSource({DSSourceKind.SYNCHRONIZATION_DATA})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.164 -0500", hash_original_method = "EB7C6ADACD5DA97C34AEA66F1B0F503F", hash_generated_method = "1DD9501E56F291E232D61DE1F875410E")
             
 public java.util.List<android.content.SyncInfo> getCurrentSyncs() throws android.os.RemoteException
 {
@@ -517,7 +522,8 @@ return _result;
      * Returns the types of the SyncAdapters that are registered with the system.
      * @return Returns the types of the SyncAdapters that are registered with the system.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.167 -0500", hash_original_method = "669780B96A1C2E39C10A25A6031BE642", hash_generated_method = "1FB2D8C44D3239C9A4E6D03BF8A43C05")
+@DSSource({DSSourceKind.SYNCHRONIZATION_DATA})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.167 -0500", hash_original_method = "669780B96A1C2E39C10A25A6031BE642", hash_generated_method = "1FB2D8C44D3239C9A4E6D03BF8A43C05")
             
 public android.content.SyncAdapterType[] getSyncAdapterTypes() throws android.os.RemoteException
 {
@@ -542,7 +548,8 @@ return _result;
      * @param authority the authority whose row should be selected
      * @return the SyncStatusInfo for the authority, or null if none exists
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.170 -0500", hash_original_method = "71F08B4B9B3705E4B2E23B818EAA58F1", hash_generated_method = "F09E51A590A2CFA2F0CFF9C0734F0F94")
+@DSSource({DSSourceKind.SYNCHRONIZATION_DATA})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.170 -0500", hash_original_method = "71F08B4B9B3705E4B2E23B818EAA58F1", hash_generated_method = "F09E51A590A2CFA2F0CFF9C0734F0F94")
             
 public android.content.SyncStatusInfo getSyncStatus(android.accounts.Account account, java.lang.String authority) throws android.os.RemoteException
 {
@@ -704,7 +711,8 @@ public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.101 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.101 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
         
 public android.os.IBinder asBinder()
 {

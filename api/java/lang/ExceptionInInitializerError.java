@@ -5,17 +5,11 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class ExceptionInInitializerError extends LinkageError {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.952 -0500", hash_original_field = "9AA47CA1643168E0CC856212190B376C", hash_generated_field = "7192C69596784210497884AC1F9F31E5")
 
-
     private static final long serialVersionUID = 1521711792217232256L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.954 -0500", hash_original_field = "ED6B643F1012B300A602DEA8C7E5C621", hash_generated_field = "3848780C3E4557B7B025FBB998A1DBF6")
-
 
     private Throwable exception;
 
@@ -63,6 +57,7 @@ public ExceptionInInitializerError(Throwable exception) {
      *
      * @return the exception that caused this error.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.965 -0500", hash_original_method = "7090E247F85246652792FDABBC14B51F", hash_generated_method = "DD2C1A468BBA098F8DCF17D1795200AE")
     
 public Throwable getException() {
@@ -74,6 +69,7 @@ public Throwable getException() {
      *
      * @return the exception that caused this error.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.968 -0500", hash_original_method = "28A8EFFB85C5CFA84BB4445EFA004CE6", hash_generated_method = "2841951C2FDE7E37DE442D29F3E6D125")
     
 @Override

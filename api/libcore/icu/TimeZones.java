@@ -17,6 +17,7 @@ public final class TimeZones {
     /**
      * Returns the appropriate string from 'zoneStrings'. Used with getZoneStrings.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:09.010 -0500", hash_original_method = "CC9A44865472DDCD46A6BDC9068D8F5A", hash_generated_method = "CF7986F68726128BC7A16E2366695758")
     
 public static String getDisplayName(String[][] zoneStrings, String id, boolean daylight, int style) {
@@ -36,6 +37,7 @@ public static String getDisplayName(String[][] zoneStrings, String id, boolean d
     /**
      * Returns an array of time zone strings, as used by DateFormatSymbols.getZoneStrings.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:09.013 -0500", hash_original_method = "DF8DCB122814848FD6878CF621D94106", hash_generated_method = "A808D0A1838322258219AB2F1848ED5E")
     
 public static String[][] getZoneStrings(Locale locale) {

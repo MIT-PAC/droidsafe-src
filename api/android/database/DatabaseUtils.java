@@ -386,6 +386,7 @@ public static String concatenateWhere(String a, String b) {
      * @param name
      * @return the collation key
      */
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.298 -0500", hash_original_method = "2277D1FB24406F696FA05FFD0730F1E8", hash_generated_method = "ADC942F1075E4624D53E8C7FC47A2431")
     
 public static String getCollationKey(String name) {
@@ -402,6 +403,7 @@ public static String getCollationKey(String name) {
      * @param name
      * @return the collation key in hex format
      */
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.301 -0500", hash_original_method = "3EFAF0E286C0E5ABBA5F444CC372591A", hash_generated_method = "95EF173F526EFF87C03956708A63348D")
     
 public static String getHexCollationKey(String name) {
@@ -1236,6 +1238,7 @@ private synchronized long insertInternal(ContentValues values, boolean allowRepl
          * @param key the column name
          * @return the index of the column
          */
+        @DSSource({DSSourceKind.DATABASE_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.437 -0500", hash_original_method = "2FE6EA3004F5838FAFB27DD4EF6900C7", hash_generated_method = "F083CAABF23AF09216F669BFCD72D367")
         
 public int getColumnIndex(String key) {

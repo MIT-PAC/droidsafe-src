@@ -110,6 +110,7 @@ private void initViewAnimator(Context context, AttributeSet attrs) {
     /**
      * Returns the index of the currently displayed child view.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:26.365 -0500", hash_original_method = "EEFA4D3ABF985412351A1BD0CB5D6161", hash_generated_method = "7CCCB2C258F137F09749CB31D2CA0D0D")
     
 public int getDisplayedChild() {
@@ -262,6 +263,7 @@ public void removeViewsInLayout(int start, int count) {
      *
      * @see #getDisplayedChild()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:26.393 -0500", hash_original_method = "844041B2553847C9CC4B36B79F20B7EC", hash_generated_method = "34E1EA694076F22BBF84C85C43E13FE8")
     
 public View getCurrentView() {
@@ -276,6 +278,7 @@ public View getCurrentView() {
      * @see #setInAnimation(android.view.animation.Animation)
      * @see #setInAnimation(android.content.Context, int)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:26.396 -0500", hash_original_method = "9649A93AAEAC388E07F52DE503C0F001", hash_generated_method = "FEC2C051AA60B017CF0DB36CB1BCC183")
     
 public Animation getInAnimation() {
@@ -304,6 +307,7 @@ public void setInAnimation(Animation inAnimation) {
      * @see #setOutAnimation(android.view.animation.Animation)
      * @see #setOutAnimation(android.content.Context, int)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:26.400 -0500", hash_original_method = "966AEDC04CB1C3738AA44B09B913030C", hash_generated_method = "0A77B9C7F911EA541864D2292977F9DB")
     
 public Animation getOutAnimation() {
@@ -369,6 +373,7 @@ public void setAnimateFirstView(boolean animate) {
         mAnimateFirstTime = animate;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:26.411 -0500", hash_original_method = "0B91CAAE76789C8A4B2B18C9D0AAF852", hash_generated_method = "BC44695AA42F588274CA96129EE3350B")
     
 @Override

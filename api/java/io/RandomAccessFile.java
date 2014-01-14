@@ -185,6 +185,7 @@ public void close() throws IOException {
      *
      * @return this file's file channel instance.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.194 -0500", hash_original_method = "C91B0C3B79D457313F842097EE5F90EE", hash_generated_method = "71023C0B035767FEDEF5C724C59A4BDF")
     
 public final synchronized FileChannel getChannel() {
@@ -203,6 +204,7 @@ public final synchronized FileChannel getChannel() {
      *             if an error occurs while getting the file descriptor of this
      *             file.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.196 -0500", hash_original_method = "7178DA6FA6DD367775EBAB657FD1BDA0", hash_generated_method = "BF99A80A25EF13693DBEFA2A53118A0A")
     
 public final FileDescriptor getFD() throws IOException {
@@ -219,6 +221,7 @@ public final FileDescriptor getFD() throws IOException {
      *             if an error occurs while getting the file pointer of this
      *             file.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.199 -0500", hash_original_method = "BF89D60C39AB56A10CD4BF202DEE6E59", hash_generated_method = "78E5DC27F44F7D2899D06F9452A20977")
     
 public long getFilePointer() throws IOException {

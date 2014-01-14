@@ -43,6 +43,7 @@ GLES20TextureLayer(boolean isOpaque) {
     void resize(int width, int height) {
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:48.633 -0500", hash_original_method = "FE3F18C4DF5FFEAAB94B6C71D2FF4AC1", hash_generated_method = "E1827AD236E6122B2580FCDDB65E8C53")
     
 @Override
@@ -63,6 +64,7 @@ GLES20TextureLayer(boolean isOpaque) {
     void end(Canvas currentCanvas) {
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:48.639 -0500", hash_original_method = "CDD23CBBC42E4C818DBF49A0C1C7FFA6", hash_generated_method = "CDD23CBBC42E4C818DBF49A0C1C7FFA6")
     
 SurfaceTexture getSurfaceTexture() {

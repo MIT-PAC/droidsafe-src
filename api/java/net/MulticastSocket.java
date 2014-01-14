@@ -58,6 +58,7 @@ public MulticastSocket(SocketAddress localAddress) throws IOException {
      *
      * @throws SocketException if an error occurs.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.596 -0500", hash_original_method = "467AD7DD9552F52C52E1B541B5F40FE0", hash_generated_method = "EA4814C5533FFA8A0F06701FD31762DC")
     
 public InetAddress getInterface() throws SocketException {
@@ -90,6 +91,7 @@ public InetAddress getInterface() throws SocketException {
      *
      * @throws SocketException if an error occurs.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.599 -0500", hash_original_method = "9619F0CC924DAE776456EC0CB550E95C", hash_generated_method = "F3F65DF4747873DB2B1D2EAF827AF55D")
     
 public NetworkInterface getNetworkInterface() throws SocketException {
@@ -106,6 +108,7 @@ public NetworkInterface getNetworkInterface() throws SocketException {
      *
      * @throws IOException if an error occurs.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.602 -0500", hash_original_method = "115D2F8953DD08E8766DFC64CC7C212D", hash_generated_method = "636822C75062B12E8A2C2D0B150F08B0")
     
 public int getTimeToLive() throws IOException {
@@ -119,6 +122,7 @@ public int getTimeToLive() throws IOException {
      * @throws IOException if an error occurs.
      * @deprecated Replaced by {@link #getTimeToLive}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.604 -0500", hash_original_method = "2ED04886DDF130567B09FF7DB10BF58C", hash_generated_method = "6487B674C1A308ACB7821CC5ABF9E624")
     
 @Deprecated
@@ -364,6 +368,7 @@ public void setTimeToLive(int ttl) throws IOException {
      *
      * @throws SocketException if an error occurs.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.639 -0500", hash_original_method = "DC4B33B8ADF09E78AF384B12E0911A9B", hash_generated_method = "681905D13265AB2174A0DFA3517D1DF8")
     
 public boolean getLoopbackMode() throws SocketException {

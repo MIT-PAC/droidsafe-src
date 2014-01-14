@@ -2039,6 +2039,7 @@ public void setStretchMode(int stretchMode) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:30.602 -0500", hash_original_method = "B323AFE5AE5939BBDA58166A4DF4B096", hash_generated_method = "8B261CCDF0ABD78D7C27D70E5708281B")
     
 public int getStretchMode() {
@@ -2085,6 +2086,7 @@ public void setNumColumns(int numColumns) {
      * 
      * @see #setNumColumns(int)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:30.609 -0500", hash_original_method = "B011FDCEBE38F0939F62249D6B5BC711", hash_generated_method = "D8CF91B9DE565DB32EB07EB1ECA367C7")
     
 @ViewDebug.ExportedProperty

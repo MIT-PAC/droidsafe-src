@@ -9,11 +9,6 @@ import android.os.Parcelable;
 
 import com.android.internal.util.ArrayUtils;
 
-
-
-
-
-
 public final class SuggestionsInfo implements Parcelable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:47.162 -0500", hash_original_field = "B114FB122CDA18833AD315AAF80FA513", hash_generated_field = "2D3D0D0351BF8AB635A0C02B8A36EDBE")
 
@@ -147,6 +142,7 @@ public void setCookieAndSequence(int cookie, int sequence) {
     /**
      * @return the cookie which may be set by a client application
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:47.197 -0500", hash_original_method = "AC1EDA43FC7023F4D4E1DFBFEFAF3924", hash_generated_method = "409946859A12F6C3A6BC121010CF938D")
     
 public int getCookie() {
@@ -156,6 +152,7 @@ public int getCookie() {
     /**
      * @return the sequence which may be set by a client application
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:47.200 -0500", hash_original_method = "FE2AB8ECE26FD7A4F1B7769F13B3F465", hash_generated_method = "9FB850F0F91CCC9108C608E4BE6ED809")
     
 public int getSequence() {
@@ -167,6 +164,7 @@ public int getSequence() {
      * in its dictionary or not and whether the spell checker has confident suggestions for the
      * word or not.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:47.202 -0500", hash_original_method = "CAB4876CFD4A091BA905BB4AD514BA41", hash_generated_method = "039C4751A7B69D68DB223D50D7C7FAFB")
     
 public int getSuggestionsAttributes() {
@@ -179,6 +177,7 @@ public int getSuggestionsAttributes() {
      * for the requested word. For instance, the caller could have been asked to limit the maximum
      * number of suggestions returned.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:47.204 -0500", hash_original_method = "F830DF6AFB67D9BA96245AE6E3B04D1C", hash_generated_method = "744E87FB2D3F19FD277BD61E6C441E3E")
     
 public int getSuggestionsCount() {
@@ -192,6 +191,7 @@ public int getSuggestionsCount() {
      * @param i the id of suggestions
      * @return the suggestion at the specified id
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:47.206 -0500", hash_original_method = "303722B2FF6B72DC10F6A88905A65E92", hash_generated_method = "F3918EED0601E77138200300D1DAAB04")
     
 public String getSuggestionAt(int i) {

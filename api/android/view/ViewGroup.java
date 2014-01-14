@@ -56,6 +56,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 		return false;
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public static int getChildMeasureSpec(int spec, int padding, int childDimension){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -371,6 +372,7 @@ public ViewGroup(Context context) {
 		//Return nothing
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @ViewDebug.ExportedProperty(category="focus",mapping={@ViewDebug.IntToString(from=FOCUS_BEFORE_DESCENDANTS,to="FOCUS_BEFORE_DESCENDANTS"),@ViewDebug.IntToString(from=FOCUS_AFTER_DESCENDANTS,to="FOCUS_AFTER_DESCENDANTS"),@ViewDebug.IntToString(from=FOCUS_BLOCK_DESCENDANTS,to="FOCUS_BLOCK_DESCENDANTS")}) public int getDescendantFocusability(){
 		// Original method
 		/*
@@ -475,6 +477,7 @@ public ViewGroup(Context context) {
 		return null;
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public View focusSearch(View focused, int direction){
 		// Original method
 		/*
@@ -604,6 +607,7 @@ public boolean requestChildRectangleOnScreen(View child, Rect rectangle, boolean
      *
      * @return the focused child or null.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:01.572 -0500", hash_original_method = "F6AEE91365C496A95D4F4B1572422CF5", hash_generated_method = "F3AEBDF30A52AEF2B82CAA1050A37F68")
     
 public View getFocusedChild() {
@@ -620,6 +624,7 @@ public View getFocusedChild() {
 		return false;
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override public View findFocus(){
 		// Original method
 		/*
@@ -702,6 +707,7 @@ public View getFocusedChild() {
 		//Return nothing
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override View findViewByAccessibilityIdTraversal(int accessibilityId){
 		// Original method
 		/*
@@ -874,6 +880,7 @@ public View getFocusedChild() {
 		return false;
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     View findFrontmostDroppableChildAt(float x, float y, PointF outLocalPoint){
 		// Original method
 		/*
@@ -1701,6 +1708,7 @@ public boolean onInterceptTouchEvent(MotionEvent ev) {
 		//Return nothing
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     protected int getChildDrawingOrder(int childCount, int i){
 		// Original method
 		/*
@@ -1863,6 +1871,7 @@ public boolean onInterceptTouchEvent(MotionEvent ev) {
      *
      * @see #setStaticTransformationsEnabled(boolean)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:01.805 -0500", hash_original_method = "767004ADA8C3853AF520B9D176A534BE", hash_generated_method = "297B5E541B315BB11D305E485C91D546")
     
 protected boolean getChildStaticTransformation(View child, Transformation t) {
@@ -2302,6 +2311,7 @@ public void setOnHierarchyChangeListener(OnHierarchyChangeListener listener) {
      * @return LayoutTranstion The LayoutTransition object that will animated changes in layout.
      * A value of <code>null</code> means no transition will run on layout changes.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:01.887 -0500", hash_original_method = "33E35321C94CA74A9D9819C2C9739D2F", hash_generated_method = "D32166C13817D13F0BE7A5DE2A5BC037")
     
 public LayoutTransition getLayoutTransition() {
@@ -2479,6 +2489,7 @@ public LayoutTransition getLayoutTransition() {
 		//Return nothing
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public boolean getChildVisibleRect(View child, Rect r, android.graphics.Point offset){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -2561,6 +2572,7 @@ public LayoutTransition getLayoutTransition() {
      *
      * @return the current animation controller
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:01.954 -0500", hash_original_method = "BD382B237F964A42E5B6E00A5B3A23FD", hash_generated_method = "37C50B8717E377EF6146E93415B76D99")
     
 public LayoutAnimationController getLayoutAnimation() {
@@ -2908,6 +2920,7 @@ public MarginLayoutParams(LayoutParams source) {
 			//Return nothing
 		}
         
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         public int getMarginStart(){
 			return getTaintInt();
 			// Original method
@@ -2918,6 +2931,7 @@ public MarginLayoutParams(LayoutParams source) {
 			*/
 		}
         
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         public int getMarginEnd(){
 			return getTaintInt();
 			// Original method
@@ -3108,6 +3122,7 @@ private HoverTarget() {
         void onChildViewRemoved(View parent, View child);
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @ViewDebug.ExportedProperty(category="drawing",mapping={@ViewDebug.IntToString(from=PERSISTENT_NO_CACHE,to="NONE"),@ViewDebug.IntToString(from=PERSISTENT_ANIMATION_CACHE,to="ANIMATION"),@ViewDebug.IntToString(from=PERSISTENT_SCROLLING_CACHE,to="SCROLLING"),@ViewDebug.IntToString(from=PERSISTENT_ALL_CACHES,to="ALL")}) public int getPersistentDrawingCache(){
 		return getTaintInt();
 		// Original method
@@ -3229,11 +3244,13 @@ private HoverTarget() {
 		return 0;
 	}
     
-	public int getChildCount(){
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    public int getChildCount(){
 		return getTaintInt();
 	}
     
-	public View getChildAt(int index){
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    public View getChildAt(int index){
 		return mChildren[0];
 	}
     

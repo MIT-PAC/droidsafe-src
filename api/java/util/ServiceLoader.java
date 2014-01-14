@@ -89,6 +89,7 @@ public void reload() {
      *
      * <p>The returned iterator does not support {@code remove}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:27.403 -0500", hash_original_method = "347C14FB6BD1E7714C96867577CC330D", hash_generated_method = "903E79232BB492D8486688E535217E3B")
     
 public Iterator<S> iterator() {

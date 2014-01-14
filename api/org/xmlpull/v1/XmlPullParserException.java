@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class XmlPullParserException extends Exception {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.936 -0500", hash_original_field = "01FF179A7E52E704AD95DCB4F9EF5587", hash_generated_field = "EDAD1988191BC8FE2A32ADF91A96320C")
 
@@ -56,13 +52,16 @@ public XmlPullParserException(String msg, XmlPullParser parser, Throwable chain)
         this.detail = chain;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.951 -0500", hash_original_method = "94BA5080D380911C58CAC3733D4C69AF", hash_generated_method = "05579720176758580DEFBDEEBD5A79BE")
     
 public Throwable getDetail() { return detail; }
     //    public void setDetail(Throwable cause) { this.detail = cause; }
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.953 -0500", hash_original_method = "0760FB4E162E5971E2E765B2D1FE0093", hash_generated_method = "F05B9A70C1A3CCB97B11F679BF5D30B0")
     
 public int getLineNumber() { return row; }
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.956 -0500", hash_original_method = "52272B3AE5723072E22E93854866B927", hash_generated_method = "BEB017487A76AB3AC679B50BE70C3FAB")
     
 public int getColumnNumber() { return column; }
@@ -90,7 +89,6 @@ public void printStackTrace() {
             }
         }
     }
-
     
 }
 

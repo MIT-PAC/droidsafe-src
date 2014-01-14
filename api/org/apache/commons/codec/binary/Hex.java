@@ -9,11 +9,6 @@ import org.apache.commons.codec.BinaryEncoder;
 import org.apache.commons.codec.DecoderException;
 import org.apache.commons.codec.EncoderException;
 
-
-
-
-
-
 public class Hex implements BinaryEncoder, BinaryDecoder {
 
     /**
@@ -123,6 +118,7 @@ public static char[] encodeHex(byte[] data) {
      *                   to this function
      * @see #decodeHex(char[])
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.746 -0500", hash_original_method = "A17636F69FEFB6DDDFC5F873DED10994", hash_generated_method = "60C8C0188F520A0E56A43B3C97B10639")
     
 public byte[] decode(byte[] array) throws DecoderException {
@@ -164,6 +160,7 @@ public Object decode(Object object) throws DecoderException {
      * @return A byte[] containing the bytes of the hexidecimal characters
      * @see #encodeHex(byte[])
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.752 -0500", hash_original_method = "50DBD5604B609ED94F02B18C89B60347", hash_generated_method = "117BABCF8A047303DF484347B3136DE9")
     
 public byte[] encode(byte[] array) {

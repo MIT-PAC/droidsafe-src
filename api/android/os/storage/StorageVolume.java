@@ -98,6 +98,7 @@ private StorageVolume(String path, String description, boolean removable,
      *
      * @return the mount path
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:32.738 -0500", hash_original_method = "F177C5B02553C0E0327F321BDDCEAFD5", hash_generated_method = "737CD89E9B5A7ABC855CEA2E5A098D56")
     
 public String getPath() {
@@ -143,6 +144,7 @@ public boolean isEmulated() {
      *
      * @return MTP storage ID
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:32.746 -0500", hash_original_method = "D91614A87EF069B6CB0CB580F9424F2A", hash_generated_method = "BE799C52A2343EA3BAB3B52148FF7170")
     
 public int getStorageId() {
@@ -173,6 +175,7 @@ public void setStorageId(int index) {
      *
      * @return MTP reserve space
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:32.751 -0500", hash_original_method = "AD5CC5267CED7BD79E23E2B3D995596D", hash_generated_method = "CF3C1925F85F93939C615ABA8073DC7E")
     
 public int getMtpReserveSpace() {
@@ -195,6 +198,7 @@ public boolean allowMassStorage() {
      *
      * @return maximum file size
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:32.756 -0500", hash_original_method = "F3A7583351778AC1576078A1D9F37684", hash_generated_method = "22342D3197EC7B5656813A600C785D5C")
     
 public long getMaxFileSize() {

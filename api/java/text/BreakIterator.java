@@ -16,6 +16,7 @@ public abstract class BreakIterator implements Cloneable {
      * are available.
      * <p>Note that Android does not support user-supplied locale service providers.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.463 -0500", hash_original_method = "CDAA22D1266CD653C7683C0E1E518399", hash_generated_method = "4A7E3E265648FAD4A4D4C73A60531487")
     
 public static Locale[] getAvailableLocales() {
@@ -28,6 +29,7 @@ public static Locale[] getAvailableLocales() {
      * See "<a href="../util/Locale.html#default_locale">Be wary of the default locale</a>".
      * @return a new instance of {@code BreakIterator} using the default locale.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.465 -0500", hash_original_method = "73C86D2B1E3949BDD4766F0D383D3313", hash_generated_method = "F8CD5D16899329BCB2A45FB5284273F8")
     
 public static BreakIterator getCharacterInstance() {
@@ -42,6 +44,7 @@ public static BreakIterator getCharacterInstance() {
      *            the given locale.
      * @return a new instance of {@code BreakIterator} using the given locale.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.468 -0500", hash_original_method = "15D8F31D878C030C879D418D3EFBB94E", hash_generated_method = "D3C21E59704B982039AA1B36F85311CB")
     
 public static BreakIterator getCharacterInstance(Locale where) {
@@ -54,6 +57,7 @@ public static BreakIterator getCharacterInstance(Locale where) {
      * See "<a href="../util/Locale.html#default_locale">Be wary of the default locale</a>".
      * @return a new instance of {@code BreakIterator} using the default locale.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.470 -0500", hash_original_method = "D6748027A113A968D41DBB54A60AFFCE", hash_generated_method = "029C393C3C27442C6813834BB5B5E2FF")
     
 public static BreakIterator getLineInstance() {
@@ -69,6 +73,7 @@ public static BreakIterator getLineInstance() {
      * @return a new instance of {@code BreakIterator} using the given locale.
      * @throws NullPointerException if {@code where} is {@code null}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.473 -0500", hash_original_method = "16F89AC74F07F2A2F95C59850320FE25", hash_generated_method = "74869C542C2ED5F6A71360831B4A52AB")
     
 public static BreakIterator getLineInstance(Locale where) {
@@ -81,6 +86,7 @@ public static BreakIterator getLineInstance(Locale where) {
      * See "<a href="../util/Locale.html#default_locale">Be wary of the default locale</a>".
      * @return a new instance of {@code BreakIterator} using the default locale.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.475 -0500", hash_original_method = "18F9B58B267F0FC6B05A987F728E2486", hash_generated_method = "FE8BC1913425CF5CB06065188DBD7884")
     
 public static BreakIterator getSentenceInstance() {
@@ -96,6 +102,7 @@ public static BreakIterator getSentenceInstance() {
      * @return a new instance of {@code BreakIterator} using the given locale.
      * @throws NullPointerException if {@code where} is {@code null}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.478 -0500", hash_original_method = "E0F8AFB08F46A12DF5C8B687A76303D7", hash_generated_method = "401FE9D38CCB10DFA08D8030C15E8A49")
     
 public static BreakIterator getSentenceInstance(Locale where) {
@@ -108,6 +115,7 @@ public static BreakIterator getSentenceInstance(Locale where) {
      * See "<a href="../util/Locale.html#default_locale">Be wary of the default locale</a>".
      * @return a new instance of {@code BreakIterator} using the default locale.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.480 -0500", hash_original_method = "C28E169051A38A771BB05D3E97AC5645", hash_generated_method = "8CBFC3EF1976FDA6BB220E934E80BE9E")
     
 public static BreakIterator getWordInstance() {
@@ -123,6 +131,7 @@ public static BreakIterator getWordInstance() {
      * @return a new instance of {@code BreakIterator} using the given locale.
      * @throws NullPointerException if {@code where} is {@code null}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.483 -0500", hash_original_method = "57DB03753EEC66F7371A042EE0F78B09", hash_generated_method = "50A97362922152B394FB859081A73890")
     
 public static BreakIterator getWordInstance(Locale where) {
@@ -310,6 +319,7 @@ public abstract void setText(CharacterIterator newText);
     /**
      * Returns a copy of this iterator.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.515 -0500", hash_original_method = "29575A5512234CDD5AA778EC4509422E", hash_generated_method = "730672366B2427216F76C389D81D10B3")
     
 @Override

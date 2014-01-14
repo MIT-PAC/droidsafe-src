@@ -13,14 +13,8 @@ import java.util.regex.Pattern;
 import com.android.i18n.phonenumbers.Phonemetadata.NumberFormat;
 import com.android.i18n.phonenumbers.Phonemetadata.PhoneMetadata;
 
-
-
-
-
-
 public class AsYouTypeFormatter {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:05.600 -0500", hash_original_field = "4F610ABD91CFC9CA631369F0C9531122", hash_generated_field = "5B7D0B52CB21DA6A99C67E3BE1997092")
-
 
   private static final PhoneMetadata EMPTY_METADATA =
       new PhoneMetadata().setInternationalPrefix("NA");
@@ -408,7 +402,8 @@ String attemptToFormatAccruedDigits() {
    * Returns the current position in the partially formatted phone number of the character which was
    * previously passed in as the parameter of {@link #inputDigitAndRememberPosition}.
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:05.672 -0500", hash_original_method = "454614081331C76956AF09B40EA354E2", hash_generated_method = "41B9680BFC0E76DDEC68BF055BC1426D")
+  @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:05.672 -0500", hash_original_method = "454614081331C76956AF09B40EA354E2", hash_generated_method = "41B9680BFC0E76DDEC68BF055BC1426D")
     
 public int getRememberedPosition() {
     if (!ableToFormat) {

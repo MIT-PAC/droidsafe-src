@@ -100,6 +100,7 @@ public static void setupDiskCache(File cacheDir) {
      * 
      * @return A hardware renderer backed by OpenGL.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.218 -0500", hash_original_method = "6EE96EBC477B77879F9A873960F8548A", hash_generated_method = "0502D06F1B00937FAD8B3C20BDF1D18F")
     
 static HardwareRenderer createGlRenderer(int glVersion, boolean translucent) {
@@ -747,6 +748,7 @@ private boolean createSurface(SurfaceHolder holder) {
             }
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.353 -0500", hash_original_method = "AA9BA105372BFC95AFBABED408315F5C", hash_generated_method = "651DCBA9FACC62304A60971F8F89CCBC")
         
 @Override
@@ -754,6 +756,7 @@ private boolean createSurface(SurfaceHolder holder) {
             return mWidth;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.356 -0500", hash_original_method = "0304EDCF78FF45B68A7EB91BFEAAA2CD", hash_generated_method = "ED21678AEB517A389B8FE90A798E5728")
         
 @Override
@@ -761,6 +764,7 @@ private boolean createSurface(SurfaceHolder holder) {
             return mHeight;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.358 -0500", hash_original_method = "03525402B3DC937D128A720724E320B3", hash_generated_method = "8DFF870ACAE374B016A5345B9168DC2B")
         
 @Override
@@ -1003,6 +1007,7 @@ Gl20Renderer(boolean translucent) {
             return mGlCanvas = new GLES20Canvas(mTranslucent);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.411 -0500", hash_original_method = "F0C99ACF7C56841B3F486F5BFE1F4C1E", hash_generated_method = "FE63F231BD975606BA4D3DDD3D04FB36")
         
 @Override

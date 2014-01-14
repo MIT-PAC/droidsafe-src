@@ -53,6 +53,7 @@ public PreferenceScreen(Context context, AttributeSet attrs) {
      * @return An adapter that provides the {@link Preference} contained in this
      *         {@link PreferenceScreen}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.206 -0500", hash_original_method = "452CFBAB5DCB1913FE2E0341A07BD40C", hash_generated_method = "65B49CE4E94CDE3F291232E69AC612B2")
     
 public ListAdapter getRootAdapter() {
@@ -144,6 +145,7 @@ public void onDismiss(DialogInterface dialog) {
      * This is useful for cases where we want to manipulate the dialog
      * as we would with any other activity or view.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.220 -0500", hash_original_method = "BFDF5D83CE787BE21817622D7064532F", hash_generated_method = "C71E5AB7F1A8C6EFC64CAA7F76F42BA5")
     
 public Dialog getDialog() {

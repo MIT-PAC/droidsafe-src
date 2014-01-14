@@ -484,6 +484,7 @@ private synchronized void writeObject(ObjectOutputStream stream)
         stream.defaultWriteObject();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
     
     public E get(int location) {

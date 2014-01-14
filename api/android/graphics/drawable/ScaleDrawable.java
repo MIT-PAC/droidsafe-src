@@ -71,6 +71,7 @@ private ScaleDrawable(ScaleState state, Resources res) {
     /**
      * Returns the drawable scaled by this ScaleDrawable.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:14.363 -0500", hash_original_method = "AEF970ED5616036B7E8018EB225E392F", hash_generated_method = "7E60DA76D5AE2F7F190E0BCA10AD03F3")
     
 public Drawable getDrawable() {
@@ -156,6 +157,7 @@ public void unscheduleDrawable(Drawable who, Runnable what) {
             mScaleState.mDrawable.draw(canvas);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:14.381 -0500", hash_original_method = "E88B2D3506B9FB1C95A0FECA8D5B6D9F", hash_generated_method = "4A95099F8292E13BD75B67DDE273D589")
     
 @Override
@@ -198,6 +200,7 @@ public void unscheduleDrawable(Drawable who, Runnable what) {
         mScaleState.mDrawable.setColorFilter(cf);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:14.393 -0500", hash_original_method = "80BFCB126A2061429F3FFA03D49A8EF5", hash_generated_method = "8D11BFA8153DDCE9FE644013635B8861")
     
 @Override
@@ -256,6 +259,7 @@ public void unscheduleDrawable(Drawable who, Runnable what) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:14.405 -0500", hash_original_method = "707D1CC9562C9896640A756558D656DB", hash_generated_method = "E5F2CE83E03BA71AE99934E4508AF9F1")
     
 @Override
@@ -263,6 +267,7 @@ public void unscheduleDrawable(Drawable who, Runnable what) {
         return mScaleState.mDrawable.getIntrinsicWidth();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:14.407 -0500", hash_original_method = "974D81B98CAEE5C460DF640DA8AD364B", hash_generated_method = "633893E83533A99A7C444E930976D52E")
     
 @Override
@@ -350,6 +355,7 @@ ScaleState(ScaleState orig, ScaleDrawable owner, Resources res) {
             return new ScaleDrawable(this, res);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:14.440 -0500", hash_original_method = "9E7D7C67EAC365FF19BD4971762612A5", hash_generated_method = "3AB30668ED270F2EDF2E0129C706FE4D")
         
 @Override

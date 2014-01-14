@@ -59,6 +59,7 @@ public class FtpHandler extends URLStreamHandler {
     /**
      * Return the default port.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.669 -0500", hash_original_method = "EEF2A707E6AE293A2B045747E5BC7948", hash_generated_method = "837E1A89ED5DEE7DBC3C424F105290DF")
     
 @Override

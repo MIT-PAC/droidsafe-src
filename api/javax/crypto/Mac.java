@@ -16,11 +16,6 @@ import java.security.spec.AlgorithmParameterSpec;
 
 import org.apache.harmony.security.fortress.Engine;
 
-
-
-
-
-
 public class Mac implements Cloneable {
 
     /**
@@ -152,6 +147,7 @@ protected Mac(MacSpi macSpi, Provider provider, String algorithm) {
      *
      * @return the name of the MAC algorithm.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.661 -0500", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "8A7AA6162519FFB2228039F3D6331CE9")
     
 public final String getAlgorithm() {
@@ -163,6 +159,7 @@ public final String getAlgorithm() {
      *
      * @return the provider of this {@code Mac} instance.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.663 -0500", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "443000CF13C77ABCABFC8B67E2DE556F")
     
 public final Provider getProvider() {
@@ -174,6 +171,7 @@ public final Provider getProvider() {
      *
      * @return the length of this MAC (in bytes).
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.673 -0500", hash_original_method = "02AEE303A4D099BA107FB2CB7C60A1E3", hash_generated_method = "656E9EB0E4DD43379A7E6E6A9ECA9FA5")
     
 public final int getMacLength() {
@@ -334,6 +332,7 @@ public final void update(ByteBuffer input) {
      * @throws IllegalStateException
      *             if this MAC is not initialized.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.692 -0500", hash_original_method = "09A7E9E8BA2AA06F6A3808F7BB018D3B", hash_generated_method = "BBBC3271E7BF877707A76B4510A43D2F")
     
 public final byte[] doFinal() throws IllegalStateException {
@@ -401,6 +400,7 @@ public final void doFinal(byte[] output, int outOffset)
      * @throws IllegalStateException
      *             if this MAC is not initialized.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.697 -0500", hash_original_method = "D317760A96395810E5039143278FB4E4", hash_generated_method = "397FF92AD1E3086CF78C1865ECC76522")
     
 public final byte[] doFinal(byte[] input) throws IllegalStateException {

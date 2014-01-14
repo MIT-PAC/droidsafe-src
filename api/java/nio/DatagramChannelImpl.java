@@ -95,6 +95,7 @@ protected DatagramChannelImpl(SelectorProvider selectorProvider) throws IOExcept
     /**
      * Returns the local address to which the socket is bound.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:05.515 -0500", hash_original_method = "0E5E291FF84E111D5E99E4DCFA7BD180", hash_generated_method = "0E5E291FF84E111D5E99E4DCFA7BD180")
     
 InetAddress getLocalAddress() {
@@ -492,6 +493,7 @@ private void checkNotNull(ByteBuffer source) {
     /*
      * Get the fd for internal use.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:05.568 -0500", hash_original_method = "A16D8AC033B12AF5E337D988C94AB7BA", hash_generated_method = "8F9C1BA6B62D105E8F557BE8D56765AF")
     
 public FileDescriptor getFD() {
@@ -517,6 +519,7 @@ DatagramSocketAdapter(DatagramSocketImpl socketimpl,
         /*
          * Get the internal datagramChannelImpl
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:05.576 -0500", hash_original_method = "272F2E718E0C10B582849935E6BE168A", hash_generated_method = "31C0789BB33587652F910DE10BC9BD7A")
         
 @Override
@@ -547,6 +550,7 @@ DatagramSocketAdapter(DatagramSocketImpl socketimpl,
         /**
          * @see java.net.DatagramSocket#getInetAddress()
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:05.584 -0500", hash_original_method = "F2E78E937EC010AD3CD73E7409B0139F", hash_generated_method = "5A482560394A4E6B937ED0FE76489C8D")
         
 @Override
@@ -560,6 +564,7 @@ DatagramSocketAdapter(DatagramSocketImpl socketimpl,
         /**
          * @see java.net.DatagramSocket#getLocalAddress()
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:05.587 -0500", hash_original_method = "2C69EB670D32F39C986C933D03BF3A1E", hash_generated_method = "AC7E91C09BE523AD83D9353ACFE886DA")
         
 @Override
@@ -570,6 +575,7 @@ DatagramSocketAdapter(DatagramSocketImpl socketimpl,
         /**
          * @see java.net.DatagramSocket#getPort()
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:05.590 -0500", hash_original_method = "4B98C51C8664AA9BAB8C98CDD2BAB4FB", hash_generated_method = "E9D457126D528101B6F5F871B2C5CC52")
         
 @Override

@@ -8,13 +8,8 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
 
-
-
-
-
 public class TwoLineListItem extends RelativeLayout {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.956 -0500", hash_original_field = "1A08D4AF3119810748DCC283DD7E10BC", hash_generated_field = "F5573217E3FB17E4C2E05B5A614A374B")
-
 
     private TextView mText1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.958 -0500", hash_original_field = "F98229843AEA245C72D2087EAA96F6DB", hash_generated_field = "9C503E03972B02D8593F75DB4A48C018")
@@ -58,6 +53,7 @@ public TwoLineListItem(Context context, AttributeSet attrs, int defStyle) {
      * Returns a handle to the item with ID text1.
      * @return A handle to the item with ID text1.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.972 -0500", hash_original_method = "6D31016C3EFADAD00849C6FB753C3139", hash_generated_method = "94B57183344FE551C5A82AD82F7E846A")
     
 public TextView getText1() {
@@ -68,12 +64,12 @@ public TextView getText1() {
      * Returns a handle to the item with ID text2.
      * @return A handle to the item with ID text2.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.973 -0500", hash_original_method = "3E15133DBF34E1DA0E6FF67809AEAC81", hash_generated_method = "68589246CEB40B35E20815867173DA1D")
     
 public TextView getText2() {
         return mText2;
     }
-
     
 }
 

@@ -11,9 +11,6 @@ import android.util.Log;
 
 import com.android.internal.telephony.IccPhoneBookInterfaceManager;
 
-
-
-
 public class SimPhoneBookInterfaceManager extends IccPhoneBookInterfaceManager {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:31.783 -0500", hash_original_field = "28DECCA9F494133CD6F61BCA99A50ECA", hash_generated_field = "B8386CD6D900777C9D6A0A5CA1D0B217")
 
@@ -44,6 +41,7 @@ protected void finalize() {
         if(DBG) Log.d(LOG_TAG, "SimPhoneBookInterfaceManager finalized");
     }
 
+    @DSSource({DSSourceKind.CONTACT_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:31.794 -0500", hash_original_method = "F8C8B1EC8901BE31BE40309AF8515A8A", hash_generated_method = "728E874A7499D07407E9660978E51BD0")
     
 public int[] getAdnRecordsSize(int efid) {

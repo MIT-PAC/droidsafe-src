@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public abstract class Buffer {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:53.624 -0500", hash_original_field = "EE1E1D1DCBD45F5386724204A7B9858F", hash_generated_field = "4FD98D60CF309FB8A0BDD7D63A79939A")
 
@@ -189,6 +185,7 @@ public final Buffer clear() {
      *
      * @return this buffer.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:53.668 -0500", hash_original_method = "A8519E3C9C4A5F3DEEC9F7CACEDF020E", hash_generated_method = "3784C4CB883262D841A3EF3660F3F0E4")
     
 public final Buffer flip() {
@@ -306,6 +303,7 @@ void limitImpl(int newLimit) {
      *
      * @return this buffer.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:53.690 -0500", hash_original_method = "A81425374E4EA5264849380D40913956", hash_generated_method = "36C5BE3A97F8DB052DA4FDAF2129DECE")
     
 public final Buffer mark() {
@@ -376,6 +374,7 @@ public final int remaining() {
      * @exception InvalidMarkException
      *                if the mark is not set.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:53.702 -0500", hash_original_method = "2BE1864DF6C90B2A62411C9F7C095DEC", hash_generated_method = "1D2AB15880A52D66321090C37B5864C5")
     
 public final Buffer reset() {
@@ -394,6 +393,7 @@ public final Buffer reset() {
      *
      * @return this buffer.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:53.705 -0500", hash_original_method = "533909B48B402AC142AA1672CC89D5CC", hash_generated_method = "87393F25F4D0CCA65B5273B24AF8B1D0")
     
 public final Buffer rewind() {
@@ -402,6 +402,7 @@ public final Buffer rewind() {
         return this;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:53.708 -0500", hash_original_method = "E469E128CB7197E7BD730454D1CDC172", hash_generated_method = "FEA4BAD8EA8B5C084A519DD34D080B25")
     
 @Override public String toString() {

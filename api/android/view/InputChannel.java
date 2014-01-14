@@ -124,6 +124,7 @@ public InputChannel() {
      * Gets the name of the input channel.
      * @return The input channel name.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:04.388 -0500", hash_original_method = "DD120B8650E4DAC77C83EEDB526B0BAD", hash_generated_method = "2E7B6BF32866DEF297339CCFE34F1FFA")
     
 public String getName() {

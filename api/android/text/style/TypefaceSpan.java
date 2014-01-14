@@ -11,10 +11,6 @@ import android.text.ParcelableSpan;
 import android.text.TextPaint;
 import android.text.TextUtils;
 
-
-
-
-
 public class TypefaceSpan extends MetricAffectingSpan implements ParcelableSpan {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.019 -0500", hash_original_method = "ED714DD63FC851B11BFBFDFA48AE4364", hash_generated_method = "E7F430CA5C43CD544BC69EB7E39A9817")
@@ -62,6 +58,7 @@ public TypefaceSpan(Parcel src) {
         mFamily = src.readString();
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.004 -0500", hash_original_method = "07DD5A556D8AFD5FB18137B3F1261BE3", hash_generated_method = "6C7395228F840CFAF5B7706030813A2A")
     
 public int getSpanTypeId() {
@@ -83,6 +80,7 @@ public void writeToParcel(Parcel dest, int flags) {
     /**
      * Returns the font family name.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.011 -0500", hash_original_method = "A22822B6578A7051FA8E71732705B93C", hash_generated_method = "FBA6554ECC41D538C8462DBE55F6F7DF")
     
 public String getFamily() {
@@ -102,7 +100,6 @@ public String getFamily() {
     public void updateMeasureState(TextPaint paint) {
         apply(paint, mFamily);
     }
-
     
 }
 

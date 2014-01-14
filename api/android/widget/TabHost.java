@@ -258,18 +258,21 @@ public void clearAllTabs() {
         invalidate();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.602 -0500", hash_original_method = "43D996FE1B0AF9FB74C6533DD719F381", hash_generated_method = "1500F7CDDAB81EE80C1A4BEEAAC5FB07")
     
 public TabWidget getTabWidget() {
         return mTabWidget;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.604 -0500", hash_original_method = "715443AB3E5984F89EAA89C58AA4B1A0", hash_generated_method = "17F33289529B0E89B7B16D65A713E3E1")
     
 public int getCurrentTab() {
         return mCurrentTab;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.606 -0500", hash_original_method = "4BF4FAE03E9E8C0B1DA1E933710D00F0", hash_generated_method = "A6FB86ECEB48E046478F1C51BFB94634")
     
 public String getCurrentTabTag() {
@@ -279,6 +282,7 @@ public String getCurrentTabTag() {
         return null;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.608 -0500", hash_original_method = "42AE505B98E20EE6CD2716BFC7687421", hash_generated_method = "C527EC015A9F0DEAD429CF82FD09D1E8")
     
 public View getCurrentTabView() {
@@ -288,6 +292,7 @@ public View getCurrentTabView() {
         return null;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.610 -0500", hash_original_method = "EEE501665EA90FABC7BF921A8CA32190", hash_generated_method = "02BE3B7229DE1654F2F7D5C6FFE9334F")
     
 public View getCurrentView() {
@@ -310,6 +315,7 @@ public void setCurrentTabByTag(String tag) {
     /**
      * Get the FrameLayout which holds tab content
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.614 -0500", hash_original_method = "14B19444D2789515B31F45C4D21A2D48", hash_generated_method = "C37F4FCE614239D54240897980162ECE")
     
 public FrameLayout getTabContentView() {
@@ -491,6 +497,7 @@ public TabSpec setContent(Intent intent) {
             return this;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.657 -0500", hash_original_method = "ED26754F6A82B43F30EAE698B7941323", hash_generated_method = "0B538D6B7E10340EACEB66882A3752E4")
         
 public String getTag() {
@@ -620,6 +627,7 @@ private ViewIdContentStrategy(int viewId) {
             }
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.704 -0500", hash_original_method = "FAF9C6C424D99CBF1D87945750D97718", hash_generated_method = "8F6BBD0D58C50FC93A6B0F73FC034728")
         
 public View getContentView() {
@@ -653,6 +661,7 @@ public FactoryContentStrategy(CharSequence tag, TabContentFactory factory) {
             mFactory = factory;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.721 -0500", hash_original_method = "ED11D1341C028F4F2DA686CA9100CB0F", hash_generated_method = "D3E27D5F5789C8EFBB4F418168A8FD30")
         
 public View getContentView() {
@@ -689,6 +698,7 @@ private IntentContentStrategy(String tag, Intent intent) {
             mIntent = intent;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.737 -0500", hash_original_method = "FE3CC83835F910E93083BF6BA67BB115", hash_generated_method = "EE601A01F8FEDE25BB02740BFCAF76FE")
         
 public View getContentView() {

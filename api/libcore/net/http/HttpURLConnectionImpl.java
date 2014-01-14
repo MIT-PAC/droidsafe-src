@@ -84,6 +84,7 @@ protected HttpURLConnectionImpl(URL url, int port, Proxy proxy) {
      * Returns an input stream from the server in the case of error such as the
      * requested file (txt, htm, html) is not found on the remote server.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.502 -0500", hash_original_method = "1368F0D99A95C3E16EFCFEF5107A78C1", hash_generated_method = "1B71739BD68938AC170DF5E2779ED614")
     
 @Override public final InputStream getErrorStream() {
@@ -141,6 +142,7 @@ protected HttpURLConnectionImpl(URL url, int port, Proxy proxy) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.513 -0500", hash_original_method = "D21D6124D988B0F314746165ED1B208D", hash_generated_method = "BDCA0198F73E91F2C4C60ADD544DC1AE")
     
 @Override public final Map<String, List<String>> getHeaderFields() {
@@ -151,6 +153,7 @@ protected HttpURLConnectionImpl(URL url, int port, Proxy proxy) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.516 -0500", hash_original_method = "AC69DF55837DC027461A6B3E8E60D121", hash_generated_method = "25DC35D916AF1079C8F909E7064F1A2B")
     
 @Override public final Map<String, List<String>> getRequestProperties() {
@@ -161,6 +164,7 @@ protected HttpURLConnectionImpl(URL url, int port, Proxy proxy) {
         return rawRequestHeaders.toMultimap();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.519 -0500", hash_original_method = "45F412B75FA838EAF632FEA7E5AD9CE7", hash_generated_method = "1471DC304138D06A38141012D0B8ABF1")
     
 @Override public final InputStream getInputStream() throws IOException {
@@ -187,6 +191,7 @@ protected HttpURLConnectionImpl(URL url, int port, Proxy proxy) {
         return result;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.521 -0500", hash_original_method = "37EC8C214191B016BC801CEDA20A2C80", hash_generated_method = "90A3BD13B64C0D5D9A78F0CA7D768269")
     
 @Override public final OutputStream getOutputStream() throws IOException {
@@ -202,6 +207,7 @@ protected HttpURLConnectionImpl(URL url, int port, Proxy proxy) {
         return result;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.524 -0500", hash_original_method = "E4EEF5ABFFEA53BFCAB2562386B86E28", hash_generated_method = "0E17726F952DBEA475F530E2B61086B6")
     
 @Override public final Permission getPermission() throws IOException {
@@ -337,6 +343,7 @@ private HttpEngine getResponse() throws IOException {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.542 -0500", hash_original_method = "1D777298E2B9DEBB3E2DB7ADA4E2C95B", hash_generated_method = "1D777298E2B9DEBB3E2DB7ADA4E2C95B")
     
 HttpEngine getHttpEngine() {
@@ -468,6 +475,7 @@ private InetAddress getConnectToInetAddress() throws IOException {
                 : InetAddress.getByName(getURL().getHost());
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.557 -0500", hash_original_method = "CA86BB3AB3ACF92C5C19618DD925F5A0", hash_generated_method = "431F6F7E489BFBF7FB4816405A638734")
     
 final int getDefaultPort() {
@@ -475,6 +483,7 @@ final int getDefaultPort() {
     }
 
     /** @see HttpURLConnection#setFixedLengthStreamingMode(int) */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.560 -0500", hash_original_method = "3D0FB6F793A38CF78094814B08E28C50", hash_generated_method = "2A9DBFC0881B3259DBC4AD6354DE3A0C")
     
 final int getFixedContentLength() {
@@ -482,12 +491,14 @@ final int getFixedContentLength() {
     }
 
     /** @see HttpURLConnection#setChunkedStreamingMode(int) */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.562 -0500", hash_original_method = "4A001CCB8DCF47A598AF69D3AEEFDD47", hash_generated_method = "1011AF34A3D83F6E28A597C3774FCCF9")
     
 final int getChunkLength() {
         return chunkLength;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.564 -0500", hash_original_method = "19AE87D83FEEE8E799F844F8A7A84495", hash_generated_method = "571B5CF73C69A11B0F3ACD2ECA862227")
     
 final Proxy getProxy() {
@@ -506,6 +517,7 @@ final void setProxy(Proxy proxy) {
         return (proxy != null && proxy.type() != Proxy.Type.DIRECT);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.571 -0500", hash_original_method = "9D8B4374AC98844408DFFFE370FDA266", hash_generated_method = "0B499DF550BA661FCA1181BB7DFA6E19")
     
 @Override public String getResponseMessage() throws IOException {

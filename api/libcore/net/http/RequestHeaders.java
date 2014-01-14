@@ -180,12 +180,14 @@ public boolean hasConnectionClose() {
         return "close".equalsIgnoreCase(connection);
     }
 
+    @DSSource({DSSourceKind.FILE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:34.184 -0500", hash_original_method = "F8E205165DB0FFA5BCD89362DFA95E13", hash_generated_method = "60830F5EFD10217EDDCE0C85CD9D74A2")
     
 public URI getUri() {
         return uri;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:34.186 -0500", hash_original_method = "8B8008667EA7E940C84B2A1E4AADF211", hash_generated_method = "6022E25C4F7FF0168ED06357F484B603")
     
 public RawHeaders getHeaders() {
@@ -198,18 +200,21 @@ public boolean isNoCache() {
         return noCache;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:34.191 -0500", hash_original_method = "A8F2E8C976B81B2FCD2E37C57E26B8BC", hash_generated_method = "F01A0136F83C79BFF39A10D41A61EBE7")
     
 public int getMaxAgeSeconds() {
         return maxAgeSeconds;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:34.193 -0500", hash_original_method = "1283AA8CCC67672D62DEF88994766C86", hash_generated_method = "86A83DB39FF22D5ADDA6C2BCC93CE878")
     
 public int getMaxStaleSeconds() {
         return maxStaleSeconds;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:34.195 -0500", hash_original_method = "4A1D928FA98CACC97BCF438ADC331E21", hash_generated_method = "A61F2369E63AED5C6F4FDECF9D52FCF3")
     
 public int getMinFreshSeconds() {
@@ -228,60 +233,70 @@ public boolean hasAuthorization() {
         return hasAuthorization;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:34.202 -0500", hash_original_method = "1B52BDD2BF1D0E488CD60B58C0023743", hash_generated_method = "3EA641A4B2840232F93FE75B9CA26F40")
     
 public int getContentLength() {
         return contentLength;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:34.205 -0500", hash_original_method = "0DD6BAEEA01532BD95CE2FFB6DF498BA", hash_generated_method = "66B23E5D844DF1240B1DC45BCF36C41A")
     
 public String getTransferEncoding() {
         return transferEncoding;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:34.207 -0500", hash_original_method = "3896A2F0D61044E6B048D62FF1831396", hash_generated_method = "28A0963E8AF0ECB01F681AB64F696163")
     
 public String getUserAgent() {
         return userAgent;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:34.209 -0500", hash_original_method = "2F2AEDD17A97DC05E80343AAC323BA28", hash_generated_method = "1B655222E0C0F88C57DF58BCA9BFA498")
     
 public String getHost() {
         return host;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:34.211 -0500", hash_original_method = "B2D78684E046945E6BE853B24B15E901", hash_generated_method = "78E1AA902D6B9D44AB023C3342795437")
     
 public String getConnection() {
         return connection;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:34.213 -0500", hash_original_method = "410EE1417DB3FF49910D59AA9DB70C64", hash_generated_method = "D81BB03FB5555355719FC5ED97C7A976")
     
 public String getAcceptEncoding() {
         return acceptEncoding;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:34.215 -0500", hash_original_method = "4B51DEA5FB62A221AFC62E38AC96F76E", hash_generated_method = "EEA92DBFF9A08C9297BF00D5675DE8A3")
     
 public String getContentType() {
         return contentType;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:34.218 -0500", hash_original_method = "1155C704429D96DA13DD63BD82AA2AE1", hash_generated_method = "63DD434B7E2F37A7FAB057677D72D1DF")
     
 public String getIfModifiedSince() {
         return ifModifiedSince;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:34.220 -0500", hash_original_method = "94547B6348D449CB198230E7B6BBA258", hash_generated_method = "31DD42931F72EEF7C1E22FE1E0A92867")
     
 public String getIfNoneMatch() {
         return ifNoneMatch;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:34.222 -0500", hash_original_method = "0FC6BE3D1567DA200B4FD09DB67F8721", hash_generated_method = "C61EB23F27BDDD3E8F08F1B27D521313")
     
 public String getProxyAuthorization() {

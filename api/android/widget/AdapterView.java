@@ -360,6 +360,7 @@ public abstract void setAdapter(T adapter);
      *
      * @return int Position (starting at 0), or {@link #INVALID_POSITION} if there is nothing selected.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:13.027 -0500", hash_original_method = "40CA9E4E71293F3BC1D33E874AD305A1", hash_generated_method = "EC81B80CFE8ACA8738EA07C9D9C967BD")
     
 @ViewDebug.CapturedViewProperty
@@ -371,6 +372,7 @@ public abstract void setAdapter(T adapter);
      * @return The id corresponding to the currently selected item, or {@link #INVALID_ROW_ID}
      * if nothing is selected.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:13.029 -0500", hash_original_method = "52C80BDBAB2E8D6D945028E83F843260", hash_generated_method = "820C39987DD95F59D5D3BE333149B927")
     
 @ViewDebug.CapturedViewProperty
@@ -390,6 +392,7 @@ public abstract View getSelectedView();
      * @return The data corresponding to the currently selected item, or
      * null if there is nothing selected.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:13.034 -0500", hash_original_method = "F45E40D646583F63F7A00B28C1D0B4AE", hash_generated_method = "D019C759994956F18259D1889D97E428")
     
 public Object getSelectedItem() {
@@ -407,6 +410,7 @@ public Object getSelectedItem() {
      *         AdapterView. (This is the number of data items, which may be
      *         larger than the number of visible views.)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:13.036 -0500", hash_original_method = "C515244CDC30F9529A71B0CAA70231C3", hash_generated_method = "97987607FBFB8B0BEEB59451C0C41C97")
     
 @ViewDebug.CapturedViewProperty
@@ -423,6 +427,7 @@ public Object getSelectedItem() {
      * @return the position within the adapter's data set of the view, or {@link #INVALID_POSITION}
      *         if the view does not correspond to a list item (or it is not currently visible).
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:13.038 -0500", hash_original_method = "7F8A3609232C6E4C7447DF803294CB0C", hash_generated_method = "59055F050B01ED29E469F7608FF65FCC")
     
 public int getPositionForView(View view) {
@@ -455,6 +460,7 @@ public int getPositionForView(View view) {
      *
      * @return The position within the adapter's data set
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:13.041 -0500", hash_original_method = "3F582E36FEB434C42F8F2A7A83CA506D", hash_generated_method = "4C661882740384910ED3AFB6B02BB431")
     
 public int getFirstVisiblePosition() {
@@ -467,6 +473,7 @@ public int getFirstVisiblePosition() {
      *
      * @return The position within the adapter's data set
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:13.043 -0500", hash_original_method = "E5B0A16A7A6C9870BA6F980F2DB39BC0", hash_generated_method = "7E8296BB544C7048CCEA7F5EF15E6D5A")
     
 public int getLastVisiblePosition() {
@@ -504,6 +511,7 @@ public abstract void setSelection(int position);
      *
      * @return The view to show if the adapter is empty.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:13.049 -0500", hash_original_method = "1914B98508B1C21B71F42F5D07F0BF47", hash_generated_method = "BE7F29BDB6E79277FA84306F608F9634")
     
 public View getEmptyView() {
@@ -607,6 +615,7 @@ private void updateEmptyStatus(boolean empty) {
      * @param position Which data to get
      * @return The data associated with the specified position in the list
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:13.064 -0500", hash_original_method = "D3C6D351E34AE1C5D83960F098A550AE", hash_generated_method = "0AFA26C7A541A584DF50322067FC59B2")
     
 public Object getItemAtPosition(int position) {
@@ -614,6 +623,7 @@ public Object getItemAtPosition(int position) {
         return (adapter == null || position < 0) ? null : adapter.getItem(position);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:13.066 -0500", hash_original_method = "1B8B19ED8D728A74BB7DD4694FA31397", hash_generated_method = "A9E50CF165C723153601F5212FDC6C34")
     
 public long getItemIdAtPosition(int position) {

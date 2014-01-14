@@ -112,6 +112,7 @@ protected AlertDialog(Context context, boolean cancelable, OnCancelListener canc
      *            {@link DialogInterface#BUTTON_POSITIVE}.
      * @return The button from the dialog, or null if a button does not exist.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.003 -0500", hash_original_method = "2277A8C194577CB499FB53C1370D61D1", hash_generated_method = "B085ED52457D458E48F09C261A47BA82")
     
 public Button getButton(int whichButton) {
@@ -123,6 +124,7 @@ public Button getButton(int whichButton) {
      *  
      * @return The {@link ListView} from the dialog.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.006 -0500", hash_original_method = "ECC410A91FC6F30B82508F44C93EA39B", hash_generated_method = "C83DDCA0D5A4BE40169F1EE6BE034F63")
     
 public ListView getListView() {
@@ -356,6 +358,7 @@ public Builder(Context context, int theme) {
          *
          * @return A Context for built Dialogs.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.064 -0500", hash_original_method = "D1A12C2F09D145663A4318954DC7CD00", hash_generated_method = "5AE1219313A917C064B5760C49E9B59F")
         
 public Context getContext() {
@@ -968,6 +971,7 @@ public AlertDialog create() {
          * Creates a {@link AlertDialog} with the arguments supplied to this builder and
          * {@link Dialog#show()}'s the dialog.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.147 -0500", hash_original_method = "9ED881995B2EAB3CB90B8129D2705377", hash_generated_method = "FECC0B8CEF43AB35AB1E1B32C0D7658C")
         
 public AlertDialog show() {

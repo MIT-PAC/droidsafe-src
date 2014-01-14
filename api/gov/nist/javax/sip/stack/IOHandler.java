@@ -62,6 +62,7 @@ protected void putSocket(String key, Socket sock) {
 
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:16.059 -0500", hash_original_method = "89115ADF83703D7A5E1F215A0319659A", hash_generated_method = "263EA2C66CEBA537DDB2AB15A23D13F5")
     
 protected Socket getSocket(String key) {
@@ -110,6 +111,7 @@ private void writeChunks(OutputStream outputStream, byte[] bytes, int length)
      * 
      * @throws IOException
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:16.069 -0500", hash_original_method = "175D748D3B44D56B75F881FF6379A368", hash_generated_method = "0662F4A3A7CAF843B9C43E85E8EEC9A3")
     
 public SocketAddress obtainLocalAddress(InetAddress dst, int dstPort,

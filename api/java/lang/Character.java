@@ -897,6 +897,7 @@ public static char forDigit(int digit, int radix) {
      * @since 1.7
      * @hide 1.7
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:23.168 -0500", hash_original_method = "80CBCF21777696C5A7AD973BF83A0B43", hash_generated_method = "8200EE38F7E81468A3DFC3D4AC2B222F")
     
 public static String getName(int codePoint) {
@@ -1024,6 +1025,7 @@ public static int getType(int codePoint) {
      *            the character to get the directionality of.
      * @return the Unicode directionality of {@code c}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:23.194 -0500", hash_original_method = "BAAC4031CE67ACBF5435C0572C9451C4", hash_generated_method = "B52A40EC5B7F7D5A95A5416ED7B666B9")
     
 public static byte getDirectionality(char c) {
@@ -1037,6 +1039,7 @@ public static byte getDirectionality(char c) {
      *            the Unicode code point to get the directionality of.
      * @return the Unicode directionality of {@code codePoint}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:23.196 -0500", hash_original_method = "B9E955EF2712E02C1EDBC21B558449AF", hash_generated_method = "EEF8D7AA68CE492EFDDA0E97E21487CA")
     
 public static byte getDirectionality(int codePoint) {

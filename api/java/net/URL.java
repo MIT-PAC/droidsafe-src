@@ -437,6 +437,7 @@ void setupStreamHandler() {
      * default this returns an {@code InputStream}, or null if the content type
      * of the response is unknown.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.809 -0500", hash_original_method = "D20F85DA45DCC6A1B9E0395104EBE2B6", hash_generated_method = "87CD5158EDA208789878ECB26921E749")
     
 public final Object getContent() throws IOException {
@@ -446,6 +447,7 @@ public final Object getContent() throws IOException {
     /**
      * Equivalent to {@code openConnection().getContent(types)}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.811 -0500", hash_original_method = "D92AC8AC4808B4044341B9D346CCCA3C", hash_generated_method = "2449522D744084AA01B4B412F82BEEE0")
     
 @SuppressWarnings("unchecked") // Param not generic in spec
@@ -585,6 +587,7 @@ private void writeObject(ObjectOutputStream s) throws IOException {
     }
 
     /** @hide */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.836 -0500", hash_original_method = "89A7E9DBD8F7AF35FA9A39C4922A8C55", hash_generated_method = "6213020F1E5035EB15F334A843DC1554")
     
 public int getEffectivePort() {
@@ -595,6 +598,7 @@ public int getEffectivePort() {
      * Returns the protocol of this URL like "http" or "file". This is also
      * known as the scheme. The returned string is lower case.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.839 -0500", hash_original_method = "A74773FBD6292704847794FB8A3C1AB0", hash_generated_method = "777D707579F7653F7954BDBD83E0BBF8")
     
 public String getProtocol() {
@@ -605,6 +609,7 @@ public String getProtocol() {
      * Returns the authority part of this URL, or null if this URL has no
      * authority.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.841 -0500", hash_original_method = "36971585CF0AC7121D34C5DBA5E7B5AD", hash_generated_method = "E75FA61151DC0C76513A5196E9624AC4")
     
 public String getAuthority() {
@@ -614,6 +619,7 @@ public String getAuthority() {
     /**
      * Returns the user info of this URL, or null if this URL has no user info.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.844 -0500", hash_original_method = "C7599F6C2A9D16B1F9E84177D4C93D75", hash_generated_method = "17BDDCE7A19516BB15D091E4C2A176CA")
     
 public String getUserInfo() {
@@ -623,6 +629,7 @@ public String getUserInfo() {
     /**
      * Returns the host name or IP address of this URL.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.846 -0500", hash_original_method = "2F2AEDD17A97DC05E80343AAC323BA28", hash_generated_method = "1B655222E0C0F88C57DF58BCA9BFA498")
     
 public String getHost() {
@@ -636,6 +643,7 @@ public String getHost() {
      * <p>If this URL has no explicit port, connections opened using this URL
      * will use its {@link #getDefaultPort() default port}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.848 -0500", hash_original_method = "A5F7344FAECBE0D6DB15D1F6E7BEBC6E", hash_generated_method = "8D4984D37D0017078DF4701090E35F25")
     
 public int getPort() {
@@ -649,6 +657,7 @@ public int getPort() {
      *
      * @see URLStreamHandler#getDefaultPort
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.851 -0500", hash_original_method = "7E7EF83BCD62492BD0A03823F89518D0", hash_generated_method = "0A09D8AE5151E369189C0C7B0C29D562")
     
 public int getDefaultPort() {
@@ -658,6 +667,7 @@ public int getDefaultPort() {
     /**
      * Returns the file of this URL.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.853 -0500", hash_original_method = "D4C7450F6A022BC4DF89D66487C9A55A", hash_generated_method = "D8CD1E2528FA75545C0B44B1301B41F0")
     
 public String getFile() {
@@ -667,6 +677,7 @@ public String getFile() {
     /**
      * Returns the path part of this URL.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.855 -0500", hash_original_method = "F862A3BA81BCB206C83E79C3BEB01336", hash_generated_method = "685DA06B3205BF0988B63E7E0C7CEB6C")
     
 public String getPath() {
@@ -676,6 +687,7 @@ public String getPath() {
     /**
      * Returns the query part of this URL, or null if this URL has no query.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.857 -0500", hash_original_method = "1E279BC97111B7B33A732EF157351512", hash_generated_method = "2AAA8449DD21269C5BC425219F6CEB5A")
     
 public String getQuery() {
@@ -686,6 +698,7 @@ public String getQuery() {
      * Returns the value of the reference part of this URL, or null if this URL
      * has no reference part. This is also known as the fragment.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.859 -0500", hash_original_method = "3AAC0179CDFA195C747754E7ED20A392", hash_generated_method = "348A7746E1620891E45DA4B06A2F61A1")
     
 public String getRef() {

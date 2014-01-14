@@ -8,6 +8,7 @@ import droidsafe.annotations.*;
 import droidsafe.helpers.DSUtils;
 
 public class AudioSystem {
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:31.744 -0500", hash_original_method = "2786D5971392BD395FA0BE76E8A7A088", hash_generated_method = "1E0EA87DE076318BBA62FD552AF198AF")
     
 public static final int getNumStreamTypes() { return NUM_STREAM_TYPES; }

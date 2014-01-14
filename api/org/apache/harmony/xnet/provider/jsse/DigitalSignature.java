@@ -153,6 +153,7 @@ public void setSHA(byte[] data) {
      * Sign hash
      * @return Signature bytes
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:15.109 -0500", hash_original_method = "15C049C524B86A812CBA705875D88ECC", hash_generated_method = "BD32B7EA335E67CCD4B57B00481C37AC")
     
 public byte[] sign() {

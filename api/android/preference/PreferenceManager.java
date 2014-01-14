@@ -31,6 +31,7 @@ public class PreferenceManager {
      * @return A SharedPreferences instance that can be used to retrieve and
      *         listen to values of the preferences.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.726 -0500", hash_original_method = "DEE839A83C4B35ACEA8CCC2B71E2B5D1", hash_generated_method = "2B16C131215B04C3D72C14303B6B379E")
     
 public static SharedPreferences getDefaultSharedPreferences(Context context) {
@@ -216,6 +217,7 @@ void setFragment(PreferenceFragment fragment) {
     /**
      * Returns the owning preference fragment, if any.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.701 -0500", hash_original_method = "11BC570017448843B9A9A22E52E0E479", hash_generated_method = "11BC570017448843B9A9A22E52E0E479")
     
 PreferenceFragment getFragment() {
@@ -252,6 +254,7 @@ private List<ResolveInfo> queryIntentActivities(Intent queryIntent) {
      * @return The root hierarchy (if one was not provided, the new hierarchy's
      *         root).
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.707 -0500", hash_original_method = "96A93C80BB9070BDED20D9AB85FFA8E8", hash_generated_method = "DBE5D9014245D9646FD40A2413C6069E")
     
 PreferenceScreen inflateFromIntent(Intent queryIntent, PreferenceScreen rootPreferences) {
@@ -309,6 +312,7 @@ PreferenceScreen inflateFromIntent(Intent queryIntent, PreferenceScreen rootPref
      *         root).
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.709 -0500", hash_original_method = "94F9DF66CFF516C2DE1B651AB9A3388E", hash_generated_method = "F0AFDC09FF8BB70BC36CA61F47DEE655")
     
 public PreferenceScreen inflateFromResource(Context context, int resId,
@@ -326,6 +330,7 @@ public PreferenceScreen inflateFromResource(Context context, int resId,
         return rootPreferences;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.711 -0500", hash_original_method = "AE92D4BACEE41B351C64A7E59B1B4342", hash_generated_method = "E2CDEBF8828B208E67A9E92B6039C90D")
     
 public PreferenceScreen createPreferenceScreen(Context context) {
@@ -339,6 +344,7 @@ public PreferenceScreen createPreferenceScreen(Context context) {
      * 
      * @return A unique ID.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.713 -0500", hash_original_method = "D904EAF0B6D90BB52E1F8594EC3F4D15", hash_generated_method = "D904EAF0B6D90BB52E1F8594EC3F4D15")
     
 long getNextId() {
@@ -354,6 +360,7 @@ long getNextId() {
      * @return The name that can be passed to {@link Context#getSharedPreferences(String, int)}.
      * @see Context#getSharedPreferences(String, int)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.715 -0500", hash_original_method = "BDB110631059975A566BD4AA87A106E8", hash_generated_method = "D7DFCD75F95FBE67D23A3991103EABD7")
     
 public String getSharedPreferencesName() {
@@ -381,6 +388,7 @@ public void setSharedPreferencesName(String sharedPreferencesName) {
      * @return The mode that can be passed to {@link Context#getSharedPreferences(String, int)}.
      * @see Context#getSharedPreferences(String, int)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.719 -0500", hash_original_method = "D2CF6E8640E20A030077A21285843C05", hash_generated_method = "B34187E4A80B6C182ADA869B95EED2EC")
     
 public int getSharedPreferencesMode() {
@@ -408,6 +416,7 @@ public void setSharedPreferencesMode(int sharedPreferencesMode) {
      * @return A SharedPreferences instance pointing to the file that contains
      *         the values of preferences that are managed by this.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.724 -0500", hash_original_method = "B901A30CD0A7131EC29E8BD072ADC21D", hash_generated_method = "9CA9AF2288C06BC076812E1B81D8C766")
     
 public SharedPreferences getSharedPreferences() {
@@ -424,6 +433,7 @@ public SharedPreferences getSharedPreferences() {
      *  
      * @return The {@link PreferenceScreen} object that is at the root of the hierarchy.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.732 -0500", hash_original_method = "60967B21FA602EB86E9B5EB647B08AF2", hash_generated_method = "60967B21FA602EB86E9B5EB647B08AF2")
     
 PreferenceScreen getPreferenceScreen() {
@@ -527,6 +537,7 @@ private void setNoCommit(boolean noCommit) {
      * @return The activity that shows the preferences.
      * @see #mContext
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.751 -0500", hash_original_method = "3F17133E8D63AE8C7414DC58966291E3", hash_generated_method = "3F17133E8D63AE8C7414DC58966291E3")
     
 Activity getActivity() {
@@ -539,6 +550,7 @@ Activity getActivity() {
      * 
      * @return The context.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.753 -0500", hash_original_method = "4F4EBC54D108D66F416C93B46580E117", hash_generated_method = "4F4EBC54D108D66F416C93B46580E117")
     
 Context getContext() {
@@ -721,6 +733,7 @@ void dispatchActivityDestroy() {
      * @return A unique request code that will never be used by anyone other
      *         than the caller of this method.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.775 -0500", hash_original_method = "74A43F7F50012109C1C50A128DECA709", hash_generated_method = "74A43F7F50012109C1C50A128DECA709")
     
 int getNextRequestCode() {

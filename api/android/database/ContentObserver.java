@@ -6,13 +6,8 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.os.Handler;
 
-
-
-
-
 public abstract class ContentObserver {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:45.908 -0500", hash_original_field = "55CDE48ED826D490911359FD32438430", hash_generated_field = "02AF804D48FC2EFA36319D85B176604C")
-
 
     private Transport mTransport;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:45.910 -0500", hash_original_field = "DA2A3FDBCC0B9B91674644DF55F373AF", hash_generated_field = "B291AA80E80AF2EADD13F4FAD6374324")
@@ -37,6 +32,7 @@ public ContentObserver(Handler handler) {
      *
      * {@hide}
      */
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:45.942 -0500", hash_original_method = "01F21475A40B0383A9D17C9A77564941", hash_generated_method = "DB4CC7E8014E0DE29303CEFFD312ACB6")
     
 public IContentObserver getContentObserver() {
@@ -54,6 +50,7 @@ public IContentObserver getContentObserver() {
      *
      * {@hide}
      */
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:45.944 -0500", hash_original_method = "0CB42947C64AC2776A7D9A6FF8C462FE", hash_generated_method = "BAE187CEFEEBAE04D4B82A7608401DFA")
     
 public IContentObserver releaseContentObserver() {
@@ -97,11 +94,9 @@ public final void dispatchChange(boolean selfChange) {
             mHandler.post(new NotificationRunnable(selfChange));
         }
     }
-
     
     private final class NotificationRunnable implements Runnable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:45.915 -0500", hash_original_field = "6EE53A62AE3754C46DDF47EC57171BFA", hash_generated_field = "7939677200C76A653999F1C89FF176B1")
-
 
         private boolean mSelf;
 
@@ -116,11 +111,8 @@ public NotificationRunnable(boolean self) {
 public void run() {
             ContentObserver.this.onChange(mSelf);
         }
-
         
     }
-
-
     
     private static final class Transport extends IContentObserver.Stub {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:45.925 -0500", hash_original_field = "9DAED586938CBB73A279F50F5ECBF202", hash_generated_field = "9DAED586938CBB73A279F50F5ECBF202")
@@ -157,11 +149,8 @@ public void onChange(boolean selfChange) {
 public void releaseContentObserver() {
             mContentObserver = null;
         }
-
         
     }
-
-
     
 }
 

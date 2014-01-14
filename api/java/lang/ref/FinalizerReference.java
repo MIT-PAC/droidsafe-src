@@ -100,6 +100,7 @@ synchronized void awaitFinalization() throws InterruptedException {
         
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:32.850 -0500", hash_original_method = "832B7710CFA0BEA3E25E81BFE41C7B96", hash_generated_method = "0952BA6CBF47F9BAD62AEB744FFFEA47")
     
 @Override

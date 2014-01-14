@@ -8,15 +8,12 @@ import android.text.InputType;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
 
-
-
-
-
 public class DigitsKeyListener extends NumberKeyListener {
 
     /**
      * Returns a DigitsKeyListener that accepts the digits 0 through 9.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:03.064 -0500", hash_original_method = "196C44AF0E4E6E9F7A5ABEBEF1B89855", hash_generated_method = "9C92B0FB155A6AF9255A3D0C67209ECD")
     
 public static DigitsKeyListener getInstance() {
@@ -28,6 +25,7 @@ public static DigitsKeyListener getInstance() {
      * plus the minus sign (only at the beginning) and/or decimal point
      * (only one per field) if specified.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:03.067 -0500", hash_original_method = "0786C44C9A5E0C02A12CFA1A471595DB", hash_generated_method = "6FCA8A80FB5020CEFEDD5BE1AA9953D2")
     
 public static DigitsKeyListener getInstance(boolean sign, boolean decimal) {
@@ -45,6 +43,7 @@ public static DigitsKeyListener getInstance(boolean sign, boolean decimal) {
      * that appear in the specified String.  Note that not all characters
      * may be available on every keyboard.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:03.069 -0500", hash_original_method = "D4B3324806FC820344ACA4BE2085B64A", hash_generated_method = "CB6490F312BEAB801C2FE7B3717C0434")
     
 public static DigitsKeyListener getInstance(String accepted) {
@@ -59,7 +58,6 @@ public static DigitsKeyListener getInstance(String accepted) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:03.045 -0500", hash_original_field = "26C819AD0AC0298FBBAF22CC065792D1", hash_generated_field = "27720FB293DC4FF4123D0C85E570BCB6")
 
-
     private static final int SIGN = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:03.047 -0500", hash_original_field = "5B4C9F8D8182368E2B1C92E75CCDD2AD", hash_generated_field = "8E68DEC11AA5EEACCC41D4855066C73A")
 
@@ -73,7 +71,6 @@ public static DigitsKeyListener getInstance(String accepted) {
         new char[] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '-', '.' },
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:03.079 -0500", hash_original_field = "2517427D5C179918BF3F7BDE6AE51CA4", hash_generated_field = "B8F590F34DFCDBF52CF3AEE279594740")
-
 
     private static DigitsKeyListener[] sInstance = new DigitsKeyListener[4];
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:03.037 -0500", hash_original_field = "5949F186B38D5E325C001127867D6388", hash_generated_field = "FBD332757CDFEDE23B2BA55765028B23")
@@ -110,6 +107,7 @@ public DigitsKeyListener(boolean sign, boolean decimal) {
         mAccepted = CHARACTERS[kind];
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:03.050 -0500", hash_original_method = "699568E4919BD4E82DA190E9B839182F", hash_generated_method = "BB10730938C682CF3230557C3C82F212")
     
 @Override
@@ -117,6 +115,7 @@ public DigitsKeyListener(boolean sign, boolean decimal) {
         return mAccepted;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:03.072 -0500", hash_original_method = "C58B63A603B7A45CFB1185F323DD143F", hash_generated_method = "239130D815D3C5858622EA90F9E5EE4E")
     
 public int getInputType() {

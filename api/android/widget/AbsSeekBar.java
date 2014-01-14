@@ -133,6 +133,7 @@ public void setThumb(Drawable thumb) {
     /**
      * @see #setThumbOffset(int)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.418 -0500", hash_original_method = "55BCE64F6AB8A7FA94D80EC71DE6965C", hash_generated_method = "F79543ECA2A92AB64764C5A2B1FACA32")
     
 public int getThumbOffset() {
@@ -172,6 +173,7 @@ public void setKeyProgressIncrement(int increment) {
      * @return The amount to increment or decrement when the user presses the
      *         arrow keys. This will be positive.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.425 -0500", hash_original_method = "1305A27F8447A6D05AC7D82E2D035BB9", hash_generated_method = "77282FCD0571741C2B935EB5C9168980")
     
 public int getKeyProgressIncrement() {

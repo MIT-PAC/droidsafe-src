@@ -124,6 +124,7 @@ public StackTraceElement(String cls, String method, String file, int line) {
      *
      * @return the fully qualified type name of the class
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.887 -0500", hash_original_method = "BE14A042BD1289020FF0D183A63A0F88", hash_generated_method = "515F10678B5E0C1375183D39EA13494A")
     
 public String getClassName() {
@@ -137,6 +138,7 @@ public String getClassName() {
      * @return the name of the file, or {@code null} if this information is not
      *         available.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.890 -0500", hash_original_method = "0038085273B4122A69DA20E0B00D2EF2", hash_generated_method = "4A6B215A61D7F266A13F22833A21DA8B")
     
 public String getFileName() {
@@ -150,6 +152,7 @@ public String getFileName() {
      * @return the line number, or a negative number if this information is not
      *         available.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.892 -0500", hash_original_method = "0B737233CC5342C14C595BEE1A87604B", hash_generated_method = "CF4B4A3CBEDDB2EC6C0EA97DADAE4C2D")
     
 public int getLineNumber() {
@@ -163,6 +166,7 @@ public int getLineNumber() {
      * @return the name of the method, or "<unknown method>" if this information
      *         is not available.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.895 -0500", hash_original_method = "B15DF5174FD0E5C814CD72B1EE2ECDA2", hash_generated_method = "D7274D8666EBE92A154778213D7C33F4")
     
 public String getMethodName() {

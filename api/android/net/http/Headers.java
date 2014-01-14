@@ -421,108 +421,126 @@ public void parseHeader(CharArrayBuffer buffer) {
         }
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:15.485 -0500", hash_original_method = "839965513DF286AFAE2E56076E19ADBF", hash_generated_method = "10D0713054B009C9560591953B0DC3A0")
     
 public long getTransferEncoding() {
         return transferEncoding;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:15.487 -0500", hash_original_method = "043A311B0C55CC2C0E7ED635C15C25FD", hash_generated_method = "64E0C789E764D7FD18A4925FDDA762C8")
     
 public long getContentLength() {
         return contentLength;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:15.489 -0500", hash_original_method = "16A8DC2EF1F4EBF751AEB83B8F69222E", hash_generated_method = "9D4EC4E428DADAF3D1AA6A9C9413C6A5")
     
 public int getConnectionType() {
         return connectionType;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:15.491 -0500", hash_original_method = "0358D0D4AEFF84195277AB782B3FFDE2", hash_generated_method = "B41EA4DFDB24D74504B98FDA3AC90952")
     
 public String getContentType() {
         return mHeaders[IDX_CONTENT_TYPE];
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:15.493 -0500", hash_original_method = "DC3B5CC0DA80597E20563D04CDFF5783", hash_generated_method = "6FC7F8A976DC02A369D31E2FD74A3D76")
     
 public String getContentEncoding() {
         return mHeaders[IDX_CONTENT_ENCODING];
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:15.495 -0500", hash_original_method = "3BEB5C295081F99F7A9897994B243966", hash_generated_method = "D9B277F1A1B22E3A221A4F4D47E66AE4")
     
 public String getLocation() {
         return mHeaders[IDX_LOCATION];
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:15.496 -0500", hash_original_method = "2ABA1BEE8C50AB0C1324E3514B439A3C", hash_generated_method = "CD9B5117E79ACBD56746F133BD6EF904")
     
 public String getWwwAuthenticate() {
         return mHeaders[IDX_WWW_AUTHENTICATE];
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:15.498 -0500", hash_original_method = "2251D004613BB9CDF5BB072ECCA1B196", hash_generated_method = "C00CA8B0E39A26AF0677AFBA3C71CB6A")
     
 public String getProxyAuthenticate() {
         return mHeaders[IDX_PROXY_AUTHENTICATE];
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:15.501 -0500", hash_original_method = "B3734B1B2E8291E968F6C56DD5A68AFD", hash_generated_method = "222968148F1F6D3AF21A6EC47455054B")
     
 public String getContentDisposition() {
         return mHeaders[IDX_CONTENT_DISPOSITION];
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:15.504 -0500", hash_original_method = "56F3083ED56642A8109311F7B75978CE", hash_generated_method = "4D2B60C4467F5961F16944E2EC8F1F9B")
     
 public String getAcceptRanges() {
         return mHeaders[IDX_ACCEPT_RANGES];
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:15.506 -0500", hash_original_method = "AD48730753A27EE5F83CD5FBE4AD4C5B", hash_generated_method = "27732696F849CC450F482F2BC43392CD")
     
 public String getExpires() {
         return mHeaders[IDX_EXPIRES];
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:15.508 -0500", hash_original_method = "FAE5B14F1D1AF7F7C5B34799287CB96B", hash_generated_method = "B5BCE87079F3C4E9972DED4CC3C9A3BB")
     
 public String getCacheControl() {
         return mHeaders[IDX_CACHE_CONTROL];
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:15.511 -0500", hash_original_method = "5FC9B5DD06D10DB2F99A11CF11E84611", hash_generated_method = "C2E78F939B996DD9D0D6EC9BCA1E6130")
     
 public String getLastModified() {
         return mHeaders[IDX_LAST_MODIFIED];
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:15.514 -0500", hash_original_method = "2356D85AA5974933778FA07340E360AB", hash_generated_method = "BDD7EA7B76E842C1EA7E4D0136A9577F")
     
 public String getEtag() {
         return mHeaders[IDX_ETAG];
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:15.516 -0500", hash_original_method = "30BF89B95A4B495DCD1A87F8054AFEC5", hash_generated_method = "78347F50E160B424874C3D13E94C82B9")
     
 public ArrayList<String> getSetCookie() {
         return this.cookies;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:15.518 -0500", hash_original_method = "A30AE7605FF81FB95FDA5AAF057C022D", hash_generated_method = "90747065C2D96D117D33212CC2A8FECA")
     
 public String getPragma() {
         return mHeaders[IDX_PRAGMA];
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:15.520 -0500", hash_original_method = "847E30EC42ECB16F3B862D5A0C1778F0", hash_generated_method = "D793C626E73A782DB92CA5A13C89A8F2")
     
 public String getRefresh() {
         return mHeaders[IDX_REFRESH];
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:15.522 -0500", hash_original_method = "120DF6C7E530068F21D41A0CCD884530", hash_generated_method = "242402B2488782EE98670C4387AC9ECE")
     
 public String getXPermittedCrossDomainPolicies() {

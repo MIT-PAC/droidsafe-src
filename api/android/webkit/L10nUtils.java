@@ -10,10 +10,6 @@ import java.util.Map;
 
 import android.content.Context;
 
-
-
-
-
 public class L10nUtils {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.945 -0500", hash_original_method = "F62E536510651D3E5359B74369537C8D", hash_generated_method = "A13D8D4B208EC763D6B9400340BF3C86")
@@ -34,6 +30,7 @@ private static String loadString(int id) {
         return localisedString;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.951 -0500", hash_original_method = "0B4EB84B53BCA9595476DD3AEDE5C6DC", hash_generated_method = "D7DF9CF57E63246D823FD6115B6B86EC")
     
 public static String getLocalisedString(int id) {
@@ -110,7 +107,6 @@ public static String getLocalisedString(int id) {
         com.android.internal.R.string.autofill_emirate                      // IDS_AUTOFILL_DIALOG_EMIRATE
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.941 -0500", hash_original_field = "84B225E4BC68B4F650B6DB7632FCB17C", hash_generated_field = "5F3084FB57196F92DB8F6420AA6F05A0")
-
 
     private static Context mApplicationContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.943 -0500", hash_original_field = "B3EE038AA4B382F368453F90F212C77B", hash_generated_field = "03A40345C7339DC0F9BFF7212E392A68")

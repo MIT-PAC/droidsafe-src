@@ -8,23 +8,17 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Matrix;
 
-
-
-
-
 abstract class HardwareLayer {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:12.518 -0500", hash_original_field = "896F9809B12CD6B33EC4B8CC7EEE5DC9", hash_generated_field = "D9DDBF776703AC435E6910725BF95A3E")
 
     static final int DIMENSION_UNDEFINED = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:12.520 -0500", hash_original_field = "AF6410B200BC05DCA2CF0BE65165448A", hash_generated_field = "AF6410B200BC05DCA2CF0BE65165448A")
-
     
     int mWidth;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:12.522 -0500", hash_original_field = "7DDAE255893B528E7BEBEC203BC2D9F3", hash_generated_field = "7DDAE255893B528E7BEBEC203BC2D9F3")
 
     int mHeight;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:12.524 -0500", hash_original_field = "1A5E1BEFDB0DF6CE4A573A377262DC5D", hash_generated_field = "1A5E1BEFDB0DF6CE4A573A377262DC5D")
-
 
     boolean mOpaque;
 
@@ -58,6 +52,7 @@ HardwareLayer(int width, int height, boolean isOpaque) {
      * 
      * @return The minimum desired width of the hardware layer 
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:12.531 -0500", hash_original_method = "AA9BA105372BFC95AFBABED408315F5C", hash_generated_method = "AA9BA105372BFC95AFBABED408315F5C")
     
 int getWidth() {
@@ -69,6 +64,7 @@ int getWidth() {
      * 
      * @return The minimum desired height of the hardware layer 
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:12.533 -0500", hash_original_method = "0304EDCF78FF45B68A7EB91BFEAAA2CD", hash_generated_method = "0304EDCF78FF45B68A7EB91BFEAAA2CD")
     
 int getHeight() {

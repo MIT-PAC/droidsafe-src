@@ -177,6 +177,7 @@ public void setDebugFlags(int debugFlags) {
      * Get the current value of the debug flags.
      * @return the current value of the debug flags.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.492 -0500", hash_original_method = "6993850204A95232CAB55D0CCC1BAFCE", hash_generated_method = "5B8569C0D13F507F30A669044C905414")
     
 public int getDebugFlags() {
@@ -210,6 +211,7 @@ public void setPreserveEGLContextOnPause(boolean preserveOnPause) {
     /**
      * @return true if the EGL context will be preserved when paused
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.496 -0500", hash_original_method = "60238A7236A689DEF9712C11E43803DE", hash_generated_method = "10C6F477746D24D894FB8556AED5D14D")
     
 public boolean getPreserveEGLContextOnPause() {
@@ -1179,6 +1181,7 @@ public void setRenderMode(int renderMode) {
             }
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.692 -0500", hash_original_method = "FE0099A91432BFCACE7C52B0FC1032B6", hash_generated_method = "7EE3F7FE94B63E26C6FCF8CCB2CE038E")
         
 public int getRenderMode() {
@@ -1663,6 +1666,7 @@ public void setRenderMode(int renderMode) {
      * @see #RENDERMODE_CONTINUOUSLY
      * @see #RENDERMODE_WHEN_DIRTY
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.519 -0500", hash_original_method = "A90B80ACC894289C502B7717EBA7E101", hash_generated_method = "513590CAC4C4ABCB2A8A546DFCEA97AA")
     
 public int getRenderMode() {

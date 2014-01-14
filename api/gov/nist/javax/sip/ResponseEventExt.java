@@ -8,11 +8,6 @@ import javax.sip.Dialog;
 import javax.sip.ResponseEvent;
 import javax.sip.message.Response;
 
-
-
-
-
-
 public class ResponseEventExt extends ResponseEvent {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:42.015 -0500", hash_original_field = "86C5799144120E8B100BB36A047E8D99", hash_generated_field = "F64A30969C6A648637B3D7A003D6815C")
 
@@ -53,12 +48,12 @@ public void setOriginalTransaction(ClientTransactionExt originalTransaction ) {
      * 
      * @return the original clientTx for which this is a forked response.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:42.026 -0500", hash_original_method = "BC8FBC0426D6766D3BE2845167DC7794", hash_generated_method = "A38DCC48FDF9A2BF99FFB6B1509FA8F5")
     
 public ClientTransactionExt getOriginalTransaction() {
         return this.m_originalTransaction;
     }
-
     
 }
 

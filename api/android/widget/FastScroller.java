@@ -272,6 +272,7 @@ public void setScrollbarPosition(int position) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:12.052 -0500", hash_original_method = "B47561E95C2F1E64B16085B75AB60280", hash_generated_method = "A5BE265953E237C34F68583E708A4BB3")
     
 public int getWidth() {
@@ -303,6 +304,7 @@ public void setState(int state) {
         refreshDrawableState();
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:12.056 -0500", hash_original_method = "10E9373648D5DF4EE43B4904732E3886", hash_generated_method = "4C50D1866B5E804CF0B05EFBD6788B97")
     
 public int getState() {
@@ -370,6 +372,7 @@ void startFade() {
             setState(STATE_EXIT);
         }
         
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:12.126 -0500", hash_original_method = "AFB48DA784BE880095A4465F927D06A4", hash_generated_method = "AFB48DA784BE880095A4465F927D06A4")
         
 int getAlpha() {
@@ -637,12 +640,14 @@ void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount,
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:12.082 -0500", hash_original_method = "AD42D97439FFEC71F76D9E9B9EF1920A", hash_generated_method = "AD42D97439FFEC71F76D9E9B9EF1920A")
     
 SectionIndexer getSectionIndexer() {
         return mSectionIndexer;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:12.084 -0500", hash_original_method = "0CD968054794DA4AF55762FEAC06E707", hash_generated_method = "0CD968054794DA4AF55762FEAC06E707")
     
 Object[] getSections() {

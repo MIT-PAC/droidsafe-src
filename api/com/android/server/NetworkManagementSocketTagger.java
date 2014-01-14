@@ -27,6 +27,7 @@ public static void setThreadSocketStatsTag(int tag) {
         threadSocketTags.get().statsTag = tag;
     }
 
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:07.115 -0500", hash_original_method = "E3B9F3D38B5A7D8684CDC2CE855F9E57", hash_generated_method = "463BE219C5E8223B05731235CE2DA5A3")
     
 public static int getThreadSocketStatsTag() {

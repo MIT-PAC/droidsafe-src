@@ -723,6 +723,7 @@ static RunQueue getRunQueue() {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.021 -0400", hash_original_field = "09A95A1FC3FF30F6E7CF942F1FC6A265", hash_generated_field = "99F32DA5E56A393932E6EDF801E99038")
 
     private SurfaceHolder mHolder = new SurfaceHolder() {        
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.017 -0400", hash_original_method = "FB03EEF08A419E6F5E4B7D4C32AA13C8", hash_generated_method = "13BADEA14E6A49BCC17141EB1CC9ABAB")
         public Surface getSurface() {
             Surface varB4EAC82CA7396A68D541C85D26508E83_1564047814 = null; 
@@ -806,6 +807,7 @@ static RunQueue getRunQueue() {
             
         }
         
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.021 -0400", hash_original_method = "0458ACEC2C801E19AE11DF373ED70BEE", hash_generated_method = "C1182B7EEE68E099E2C5404841EDF4EE")
         public Rect getSurfaceFrame() {
             Rect varB4EAC82CA7396A68D541C85D26508E83_1346833247 = null; 
@@ -1126,12 +1128,14 @@ private void enableHardwareAcceleration(WindowManager.LayoutParams attrs) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.975 -0500", hash_original_method = "23562CAF30DEA91689886E5D0DFB3D0F", hash_generated_method = "08E70AA8D2F1647EC2EEAF8AC8218386")
     
 public View getView() {
         return mView;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.977 -0500", hash_original_method = "6C3085A5B27688C16B5F48D71E61D048", hash_generated_method = "4D88FED1FAE2FE688EFF93CB94610127")
     
 final WindowLeaked getLocation() {
@@ -1254,6 +1258,7 @@ void setStopped(boolean stopped) {
         }
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.998 -0500", hash_original_method = "DCC308262D5800610A000228CF8970A4", hash_generated_method = "B63E6487D1CD4BEC29A92A9071D59DCB")
     
 public ViewParent getParent() {
@@ -1310,6 +1315,7 @@ public void unscheduleTraversals() {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.013 -0500", hash_original_method = "27A276950AD49DC3B2BCAC57214867E1", hash_generated_method = "27A276950AD49DC3B2BCAC57214867E1")
     
 int getHostVisibility() {
@@ -5223,6 +5229,7 @@ private AudioManager getAudioManager() {
         return mAudioManager;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.272 -0500", hash_original_method = "C22EE439EF1C63381F42BE80F34ED0C5", hash_generated_method = "B893A28442E5CDB7E26D9A570432816A")
     
 public AccessibilityInteractionController getAccessibilityInteractionController() {

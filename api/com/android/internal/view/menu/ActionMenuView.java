@@ -532,6 +532,7 @@ public boolean invokeItem(MenuItemImpl item) {
         return mMenu.performItemAction(item, 0);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:37.824 -0500", hash_original_method = "DC1BDB1B98459EBD06B93B75A5D0D038", hash_generated_method = "7D099F9FB44E7521834F67AB97BE9EAC")
     
 public int getWindowAnimations() {

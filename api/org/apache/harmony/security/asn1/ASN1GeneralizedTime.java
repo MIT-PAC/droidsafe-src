@@ -19,6 +19,7 @@ public final class ASN1GeneralizedTime extends ASN1Time {
      *
      * @return ASN.1 GeneralizedTime type default implementation
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.047 -0500", hash_original_method = "8C714A8F61C5AA4D080377A3ECF44F36", hash_generated_method = "23CB860EA884CD854F12985D41D3CDB1")
     
 public static ASN1GeneralizedTime getInstance() {

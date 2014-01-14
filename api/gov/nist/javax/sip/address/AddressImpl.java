@@ -68,6 +68,7 @@ public boolean match(Object other) {
     /** Get the host port portion of the address spec.
      *@return host:port in a HostPort structure.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:34.459 -0500", hash_original_method = "A988603BA6459B5E85F0C286224314DC", hash_generated_method = "9D8413F7EEAD8DC50B7F65B47DE691E3")
     
 public HostPort getHostPort() {
@@ -83,6 +84,7 @@ public HostPort getHostPort() {
      *@return the port from the address.
      *
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:34.461 -0500", hash_original_method = "D8DDF6A069BBACCEBB239C4EC58E5A27", hash_generated_method = "2658FFBAB8512477B02D434A2BC07C6A")
     
 public int getPort() {
@@ -98,6 +100,7 @@ public int getPort() {
      *
      *@return string containing user@host:port.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:34.464 -0500", hash_original_method = "172515F4F60E1E2B63F4DF9418CB15A7", hash_generated_method = "48F095971EC03451A590E7C3D51DAAD7")
     
 public String getUserAtHostPort() {
@@ -112,6 +115,7 @@ public String getUserAtHostPort() {
      *
      *@return the host name.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:34.466 -0500", hash_original_method = "C2899C61B0488A683F191A3E8A7E482B", hash_generated_method = "228E50EBFAA930F23EF6E50703924DFB")
     
 public String getHost() {
@@ -172,6 +176,7 @@ public StringBuffer encode(StringBuffer buffer) {
      * Get the address type;
      * @return int
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:34.480 -0500", hash_original_method = "93137A429171577005AC852AA3CBD92B", hash_generated_method = "9FE7D25FEEBA724876BC9521E4BF81F7")
     
 public int getAddressType() {
@@ -197,6 +202,7 @@ public void setAddressType(int atype) {
      * @return String
      *
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:34.484 -0500", hash_original_method = "050EB531E383683E34CFFBB41EC12665", hash_generated_method = "545FD95471F8EB7D6B0B64FDF9222FB3")
     
 public String getDisplayName() {
@@ -295,6 +301,7 @@ public boolean isSIPAddress() {
      *
      * @return address parmater of the Address object
      */
+    @DSSource({DSSourceKind.FILE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:34.504 -0500", hash_original_method = "1CCD793210D749E7DAD6ED996CE553FC", hash_generated_method = "DA30A205B7EC59B99C8E39DB930E9DAB")
     
 public URI getURI() {

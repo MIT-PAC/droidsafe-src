@@ -34,6 +34,7 @@ public PUserDatabase() {
         super(P_USER_DATABASE);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:57.860 -0500", hash_original_method = "1786B1376B4CD3FEAEBCAB28A560C6C6", hash_generated_method = "670AFE2F9B8340580BECCDB06D8BB4C6")
     
 public String getDatabaseName() {

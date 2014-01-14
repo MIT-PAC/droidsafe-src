@@ -281,6 +281,7 @@ public void addAnimation(Animation a) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:57.825 -0500", hash_original_method = "1DB17F128BC07A7BFF2B0ED14844511C", hash_generated_method = "11AA6E9972AFB317CC8D09DAA10DD04F")
     
 @Override
@@ -318,6 +319,7 @@ public void addAnimation(Animation a) {
      * 
      * @see android.view.animation.Animation#getDuration()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:57.832 -0500", hash_original_method = "0C51A5B794999BCAB9F83D60602DBD5A", hash_generated_method = "E2BFC944BDADC3FFEC7434699CEC2D18")
     
 @Override
@@ -544,6 +546,7 @@ void restoreChildrenStartOffset() {
      * @return All the child animations in this AnimationSet. Note that
      * this may include other AnimationSets, which are not expanded.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:57.853 -0500", hash_original_method = "EC73055689DC3CDB2DE15C42C77CE8EF", hash_generated_method = "8FF4FC1611CE4FC4FB5098A0E6C00EF7")
     
 public List<Animation> getAnimations() {

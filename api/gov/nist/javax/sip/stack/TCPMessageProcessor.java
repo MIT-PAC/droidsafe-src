@@ -131,6 +131,7 @@ public void run() {
      * 
      * @return the transport string
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:27.899 -0500", hash_original_method = "8ED81941CDC62D91B3E3601661099BB4", hash_generated_method = "C34EF21A0D0D7DE117709E967556F61E")
     
 public String getTransport() {
@@ -142,6 +143,7 @@ public String getTransport() {
      * 
      * @return my sip stack.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:27.902 -0500", hash_original_method = "4789C177AC8ECE60B231BA8A866F9D66", hash_generated_method = "7DFF2B9EFB272B5F349D68AD73E9A18C")
     
 public SIPTransactionStack getSIPStack() {
@@ -259,6 +261,7 @@ public synchronized MessageChannel createMessageChannel(InetAddress host, int po
     /**
      * TCP can handle an unlimited number of bytes.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:27.920 -0500", hash_original_method = "248B80D43EBE2633D052A5A2C5B180CB", hash_generated_method = "CA9A4BABAD31A74E1D32220278B56EB2")
     
 public int getMaximumMessageSize() {
@@ -274,6 +277,7 @@ public boolean inUse() {
     /**
      * Default target port for TCP
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:27.925 -0500", hash_original_method = "549BD73BE1E8477C39668DF3AD0A0CF5", hash_generated_method = "A974BC08491FBE134376CBCCEE27369D")
     
 public int getDefaultTargetPort() {

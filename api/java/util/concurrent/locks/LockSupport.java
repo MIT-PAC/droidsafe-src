@@ -6,10 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import sun.misc.Unsafe;
 
-
-
-
-
 public class LockSupport {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:20.572 -0500", hash_original_method = "B37B20CE5AE81715492B6FE029FE8BBA", hash_generated_method = "F385C516BD0EEC0CC8753BCB27F84462")
@@ -169,6 +165,7 @@ public static void parkUntil(Object blocker, long deadline) {
      * @return the blocker
      * @since 1.6
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:20.584 -0500", hash_original_method = "FABD15B84248DFA8DB8C445A813A4A9A", hash_generated_method = "4F6363ECE549B2E0BC08A0B1D4BB7E94")
     
 public static Object getBlocker(Thread t) {
@@ -278,7 +275,6 @@ public static void parkUntil(long deadline) {
         unsafe.park(true, deadline);
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:20.566 -0500", hash_original_field = "888B3F05664BAF88334D2C14A4DA8138", hash_generated_field = "4A946894549DA1F8D40B85B66FD5EA02")
-
 
     // Hotspot implementation via intrinsics API
     private static final Unsafe unsafe = UnsafeAccess.THE_ONE;

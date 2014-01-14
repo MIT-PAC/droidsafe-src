@@ -136,6 +136,7 @@ public static DevicePolicyManager create(Context context, Handler handler) {
      * Return true if the given administrator component is currently
      * active (enabled) in the system.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.678 -0500", hash_original_method = "DEBAA688BC0765F8640468141F520924", hash_generated_method = "27BF5B51AAA4CF65F3AECBF647F40D39")
     
 public boolean isAdminActive(ComponentName who) {
@@ -154,6 +155,7 @@ public boolean isAdminActive(ComponentName who) {
      * names.  Note that if there are no administrators than null may be
      * returned.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.680 -0500", hash_original_method = "304202BD61CAAFAF35BBB8D3C8BC6AB8", hash_generated_method = "D03CA4F02C9F9CBC5C13F43C507A75A3")
     
 public List<ComponentName> getActiveAdmins() {
@@ -266,6 +268,7 @@ public void setPasswordQuality(ComponentName admin, int quality) {
      * @param admin The name of the admin component to check, or null to aggregate
      * all admins.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.708 -0500", hash_original_method = "953DAEE8D36D414E1ED2EDA688583D7B", hash_generated_method = "2C6B293E9B7AB9983F9B16E1AD95E00A")
     
 public int getPasswordQuality(ComponentName admin) {
@@ -319,6 +322,7 @@ public void setPasswordMinimumLength(ComponentName admin, int length) {
      * @param admin The name of the admin component to check, or null to aggregate
      * all admins.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.713 -0500", hash_original_method = "0BF67C005C50195D588980E6F78FE344", hash_generated_method = "DBCE40106A43C0201EFDB697938390EF")
     
 public int getPasswordMinimumLength(ComponentName admin) {
@@ -379,6 +383,7 @@ public void setPasswordMinimumUpperCase(ComponentName admin, int length) {
      * @return The minimum number of upper case letters required in the
      *         password.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.717 -0500", hash_original_method = "42E8A5AFC85991E9FFA780A53F7AB6A7", hash_generated_method = "EB6FB860F38272C8D5E477319E563294")
     
 public int getPasswordMinimumUpperCase(ComponentName admin) {
@@ -439,6 +444,7 @@ public void setPasswordMinimumLowerCase(ComponentName admin, int length) {
      * @return The minimum number of lower case letters required in the
      *         password.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.722 -0500", hash_original_method = "115CC4F3CDF24178A32FCDB4FA3C0CE3", hash_generated_method = "79DFB16A6010C875B95F508E4F4ECA00")
     
 public int getPasswordMinimumLowerCase(ComponentName admin) {
@@ -497,6 +503,7 @@ public void setPasswordMinimumLetters(ComponentName admin, int length) {
      *            aggregate all admins.
      * @return The minimum number of letters required in the password.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.726 -0500", hash_original_method = "B7290C5B6AA0AFA6598FFFCBACAFA85A", hash_generated_method = "64429EBBF24BA57FD0661F530EA473CF")
     
 public int getPasswordMinimumLetters(ComponentName admin) {
@@ -555,6 +562,7 @@ public void setPasswordMinimumNumeric(ComponentName admin, int length) {
      *            aggregate all admins.
      * @return The minimum number of numerical digits required in the password.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.731 -0500", hash_original_method = "55CECC6BB4262687B1FECD13F88E35AB", hash_generated_method = "9D9515B58E2E504EBEDA6D7C6359ABE2")
     
 public int getPasswordMinimumNumeric(ComponentName admin) {
@@ -613,6 +621,7 @@ public void setPasswordMinimumSymbols(ComponentName admin, int length) {
      *            aggregate all admins.
      * @return The minimum number of symbols required in the password.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.735 -0500", hash_original_method = "97C1C4934ACB04DD5927B31B09CB55B5", hash_generated_method = "E861BE5402ABF5F6E67D4341563B3C14")
     
 public int getPasswordMinimumSymbols(ComponentName admin) {
@@ -671,6 +680,7 @@ public void setPasswordMinimumNonLetter(ComponentName admin, int length) {
      *            aggregate all admins.
      * @return The minimum number of letters required in the password.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.739 -0500", hash_original_method = "8ED1E73D193F12CF2F8CF85176FE9B97", hash_generated_method = "6C66EF3A44A86EC3057D1B7A99F3E408")
     
 public int getPasswordMinimumNonLetter(ComponentName admin) {
@@ -760,6 +770,7 @@ public void setPasswordExpirationTimeout(ComponentName admin, long timeout) {
      * @param admin The name of the admin component to check, or null to aggregate all admins.
      * @return The timeout for the given admin or the minimum of all timeouts
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.751 -0500", hash_original_method = "31D7885DD1B838E718F93D593801E489", hash_generated_method = "72E49514A1125DF1E3AA246A2F2C4630")
     
 public long getPasswordExpirationTimeout(ComponentName admin) {
@@ -782,6 +793,7 @@ public long getPasswordExpirationTimeout(ComponentName admin) {
      * @param admin The name of the admin component to check, or null to aggregate all admins.
      * @return The password expiration time, in ms.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.754 -0500", hash_original_method = "F850BD1F4A684FFED232083DC78EC214", hash_generated_method = "F7B766CEAE434CB2D25557BF953CA8C2")
     
 public long getPasswordExpiration(ComponentName admin) {
@@ -802,6 +814,7 @@ public long getPasswordExpiration(ComponentName admin) {
      * all admins.
      * @return The length of the password history
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.756 -0500", hash_original_method = "6A25C50AEC7E714C844A4ACF270DA0EA", hash_generated_method = "C9B53D524D3260BE8DAC4587A13D27D3")
     
 public int getPasswordHistoryLength(ComponentName admin) {
@@ -821,6 +834,7 @@ public int getPasswordHistoryLength(ComponentName admin) {
      * @param quality The quality being interrogated.
      * @return Returns the maximum length that the user can enter.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.758 -0500", hash_original_method = "B720364465717C512AF715245037D814", hash_generated_method = "A603C0BCB8D2995657F7D0CDB142F54F")
     
 public int getPasswordMaximumLength(int quality) {
@@ -861,6 +875,7 @@ public boolean isActivePasswordSufficient() {
      * {@link DeviceAdminInfo#USES_POLICY_WATCH_LOGIN} to be able to call
      * this method; if it has not, a security exception will be thrown.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.762 -0500", hash_original_method = "EACD63B4064B49538F5A848510A5F41A", hash_generated_method = "734273F3588C3554C5D91D6700B000CD")
     
 public int getCurrentFailedPasswordAttempts() {
@@ -913,6 +928,7 @@ public void setMaximumFailedPasswordsForWipe(ComponentName admin, int num) {
      * @param admin The name of the admin component to check, or null to aggregate
      * all admins.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.767 -0500", hash_original_method = "2F7102BE4460977EBBF2224AD7A1647D", hash_generated_method = "8D68097D66C86010F25314B086CF6646")
     
 public int getMaximumFailedPasswordsForWipe(ComponentName admin) {
@@ -993,6 +1009,7 @@ public void setMaximumTimeToLock(ComponentName admin, long timeMs) {
      * @param admin The name of the admin component to check, or null to aggregate
      * all admins.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.776 -0500", hash_original_method = "236548EEF0B27F3ADB5D68074D378910", hash_generated_method = "B0D3A36DEAA47BFDC76EA4DEA2B2D379")
     
 public long getMaximumTimeToLock(ComponentName admin) {
@@ -1072,6 +1089,7 @@ public void wipeData(int flags) {
      *            of the device admin that sets thew proxy otherwise.
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.786 -0500", hash_original_method = "53AB2A6BFBDB5E04C8F47C30215E30C2", hash_generated_method = "1A54A3744E388310941FC928A9C9529B")
     
 public ComponentName setGlobalProxy(ComponentName admin, Proxy proxySpec,
@@ -1127,6 +1145,7 @@ public ComponentName setGlobalProxy(ComponentName admin, Proxy proxySpec,
      *            null if no admin has set the proxy.
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.788 -0500", hash_original_method = "46A87FF58FD44FDC19B7F90436F7E978", hash_generated_method = "E3475CCE3B89C08A65BDEFD91857C79A")
     
 public ComponentName getGlobalProxyAdmin() {
@@ -1195,6 +1214,7 @@ public int setStorageEncryption(ComponentName admin, boolean encrypt) {
      * administrators.
      * @return true if the admin(s) are requesting encryption, false if not.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.805 -0500", hash_original_method = "9A4BD9BB365A613657C962C51C854645", hash_generated_method = "7D1FB93BDFD53D72AA0F1FB67290A1E5")
     
 public boolean getStorageEncryption(ComponentName admin) {
@@ -1224,6 +1244,7 @@ public boolean getStorageEncryption(ComponentName admin) {
      * {@link #ENCRYPTION_STATUS_UNSUPPORTED}, {@link #ENCRYPTION_STATUS_INACTIVE},
      * {@link #ENCRYPTION_STATUS_ACTIVATING}, or{@link #ENCRYPTION_STATUS_ACTIVE}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.808 -0500", hash_original_method = "6CEE42CBFD4B02D7CAAADEA83FCF3486", hash_generated_method = "9AF9993874F734D8E3EC27D86C8753E8")
     
 public int getStorageEncryptionStatus() {
@@ -1268,6 +1289,7 @@ public void setCameraDisabled(ComponentName admin, boolean disabled) {
      * @param admin The name of the admin component to check, or null to check if any admins
      * have disabled the camera
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.812 -0500", hash_original_method = "8D92C22AE776D4D287A7DAE7D5749852", hash_generated_method = "0B32DCBC7D85201363DCD17D0283A104")
     
 public boolean getCameraDisabled(ComponentName admin) {
@@ -1301,6 +1323,7 @@ public void setActiveAdmin(ComponentName policyReceiver, boolean refreshing) {
      * Returns the DeviceAdminInfo as defined by the administrator's package info & meta-data
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.817 -0500", hash_original_method = "6B96BC98EC991BA4501EAC59D3A81719", hash_generated_method = "38D02163D17B96BBBAB39FCE2E56FEA2")
     
 public DeviceAdminInfo getAdminInfo(ComponentName cn) {
@@ -1330,6 +1353,7 @@ public DeviceAdminInfo getAdminInfo(ComponentName cn) {
     /**
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.819 -0500", hash_original_method = "B78826B0ABC7DA178D8BC699F76B9B76", hash_generated_method = "1241EBD154ABFF3242B6A44433F7AF8C")
     
 public void getRemoveWarning(ComponentName admin, RemoteCallback result) {

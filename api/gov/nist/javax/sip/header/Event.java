@@ -46,6 +46,7 @@ public void setEventType(String eventType) throws ParseException {
      *
      * @return the string object identifing the eventType of EventHeader.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:52.871 -0500", hash_original_method = "801AF3F6658A2A453A4D4DA9830DAF46", hash_generated_method = "0EA18A09E98FC5671017BB747A3A08BC")
     
 public String getEventType() {
@@ -73,6 +74,7 @@ public void setEventId(String eventId) throws ParseException {
      * "eventId" is not set.
      * @return the string object identifing the eventId of EventHeader.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:52.881 -0500", hash_original_method = "19BA40738893C0C7644CB14978576CB8", hash_generated_method = "15EB387290D0A8B14FD17B7B631A33F1")
     
 public String getEventId() {

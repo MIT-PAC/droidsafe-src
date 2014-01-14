@@ -17,10 +17,6 @@ import android.util.Poolable;
 import android.util.PoolableManager;
 import android.util.Pools;
 
-
-
-
-
 class GLES20RecordingCanvas extends GLES20Canvas implements Poolable<GLES20RecordingCanvas> {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:43.385 -0500", hash_original_method = "53E5FDBF859A33AAC863847F6B788FBD", hash_generated_method = "F5137FE27A1F74CD3EEAAE1E925C67FF")
@@ -56,13 +52,11 @@ public GLES20RecordingCanvas newInstance() {
             }, POOL_LIMIT));
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:43.375 -0500", hash_original_field = "A7AAA227AE246DD3E532BAF09A0425DB", hash_generated_field = "35E28CCA15868A28E16FD08ECC45E14C")
 
-
     private GLES20RecordingCanvas mNextPoolable;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:43.377 -0500", hash_original_field = "016073DCFA93DD0305C42C8759ED2078", hash_generated_field = "BD952C5DD2D86B34B4D5F4AFE196E837")
 
     private boolean mIsPooled;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:43.380 -0500", hash_original_field = "538DA6A02CD4CBF9836B7D9AEFA242B3", hash_generated_field = "7DDFDE83419DEB0EF4C1B68E8EB5EE96")
-
 
     private GLES20DisplayList mDisplayList;
 
@@ -383,6 +377,7 @@ private void recordShaderBitmap(Paint paint) {
         recordShaderBitmap(paint);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:43.481 -0500", hash_original_method = "9CAF97A102D33FFCF9C056A4D55F3569", hash_generated_method = "F2D59CF926F40D5152D2709AA01F0C2A")
     
 @Override

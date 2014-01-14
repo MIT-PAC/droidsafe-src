@@ -100,6 +100,7 @@ public ServerHello(HandshakeIODataStream in, int length) throws IOException {
      * Returns server random
      * @return
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:13.243 -0500", hash_original_method = "EDD7E5211887C4E217154E276BC2B61E", hash_generated_method = "AD106D7FEAE26F7078E90292C4E75999")
     
 public byte[] getRandom() {
@@ -110,6 +111,7 @@ public byte[] getRandom() {
      * Returns message type
      * @return
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:13.245 -0500", hash_original_method = "51302607A7CDE0350AA8DCA604C2ADD7", hash_generated_method = "2841712EA3AB027EFC548258BB4CDAA4")
     
 @Override

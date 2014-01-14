@@ -204,6 +204,7 @@ public ZipEntry nextElement() {
      *         exist in the ZIP file.
      * @throws IllegalStateException if this ZIP file has been closed.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.354 -0500", hash_original_method = "D382D29E599C910662BB0F89A97F218A", hash_generated_method = "955202DE1AF533EEDFC3BBFC49E0D4E8")
     
 public ZipEntry getEntry(String entryName) {
@@ -332,6 +333,7 @@ public ZipInflaterInputStream(InputStream is, Inflater inf, int bsize, ZipEntry 
      *             if an {@code IOException} occurs.
      * @throws IllegalStateException if this ZIP file has been closed.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.358 -0500", hash_original_method = "B69421FB9318C1ABE9ECEEB1DD311069", hash_generated_method = "8EAC736ACC17C5ECCFFF65C0A3EE6FFC")
     
 public InputStream getInputStream(ZipEntry entry) throws IOException {
@@ -370,6 +372,7 @@ public InputStream getInputStream(ZipEntry entry) throws IOException {
      *
      * @return the file name of this {@code ZipFile}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.360 -0500", hash_original_method = "16A0E81CED7078E4D61B7DA2166E122D", hash_generated_method = "61220CBF47CC3FDA292F55A4F9600680")
     
 public String getName() {

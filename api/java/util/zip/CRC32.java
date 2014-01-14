@@ -25,6 +25,7 @@ public class CRC32 implements Checksum {
      *
      * @return The checksum for this instance.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.163 -0500", hash_original_method = "854FE5E27AD17353F420BE5FB492E27A", hash_generated_method = "B19B471301649942B63964C318AED819")
     
 public long getValue() {

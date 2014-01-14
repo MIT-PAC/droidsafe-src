@@ -249,6 +249,7 @@ public void setSource(View source) {
      *
      * @return The window id.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:50.256 -0500", hash_original_method = "6C41AAD35FD64A253FB83D406AD6C88C", hash_generated_method = "7FA239C11065357F8BE2BF8E10A8B6DC")
     
 public int getWindowId() {
@@ -260,6 +261,7 @@ public int getWindowId() {
      *
      * @return The child count.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:50.258 -0500", hash_original_method = "7C8926FBBCF561C891F2F5FFEAFED8AF", hash_generated_method = "7336BD0E8C8F2AD3910E9826485E3136")
     
 public int getChildCount() {
@@ -280,6 +282,7 @@ public int getChildCount() {
      * @throws IllegalStateException If called outside of an AccessibilityService.
      *
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:50.260 -0500", hash_original_method = "E9093B8E79E0C35ACECC8F5F72DA0B71", hash_generated_method = "7C1F662C65428D59AF8FE6D0094E79E7")
     
 public AccessibilityNodeInfo getChild(int index) {
@@ -324,6 +327,7 @@ public void addChild(View child) {
      * @see AccessibilityNodeInfo#ACTION_SELECT
      * @see AccessibilityNodeInfo#ACTION_CLEAR_SELECTION
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:50.265 -0500", hash_original_method = "60E376BAD814E27A83B622ADA78DD695", hash_generated_method = "B97242529A14D415A2C43E774342A447")
     
 public int getActions() {
@@ -410,6 +414,7 @@ public List<AccessibilityNodeInfo> findAccessibilityNodeInfosByText(String text)
      *
      * @return The parent.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:50.275 -0500", hash_original_method = "F4DB109D13E56E0D98A6319CC588873D", hash_generated_method = "EA071BCDC57E94EA0FBFC36A75B68395")
     
 public AccessibilityNodeInfo getParent() {
@@ -812,6 +817,7 @@ public void setScrollable(boolean scrollable) {
      *
      * @return The package name.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:50.336 -0500", hash_original_method = "6D18CADAD3BE855C953B6A82043EA347", hash_generated_method = "62E16594ED1E4D773FC387EB5B07A489")
     
 public CharSequence getPackageName() {
@@ -842,6 +848,7 @@ public void setPackageName(CharSequence packageName) {
      *
      * @return The class name.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:50.340 -0500", hash_original_method = "3625856433EBE1C9C9A90132A3C58D3F", hash_generated_method = "26599164AEA75289AA6AEFE666301F84")
     
 public CharSequence getClassName() {
@@ -872,6 +879,7 @@ public void setClassName(CharSequence className) {
      *
      * @return The text.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:50.345 -0500", hash_original_method = "D3D56665E0CC0B43413FBFB4C720E96C", hash_generated_method = "3C5AE00E10DCE5E04049FCC58EEF7C48")
     
 public CharSequence getText() {
@@ -902,6 +910,7 @@ public void setText(CharSequence text) {
      *
      * @return The content description.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:50.349 -0500", hash_original_method = "6DAFF86A43A6BABA543C66C7DDAE7D00", hash_generated_method = "F956064663F9FEBB2E9D4DEF23399995")
     
 public CharSequence getContentDescription() {

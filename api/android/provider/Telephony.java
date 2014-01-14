@@ -29,12 +29,14 @@ public final class Telephony {
     private static final String TAG = "Telephony";
     
     public static final class Sms implements BaseColumns, TextBasedSmsColumns {
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:03.524 -0500", hash_original_method = "91491FADEEC62466B0F9FF75744CEEB2", hash_generated_method = "4116C537EA1E1C0A55E8CE52971B78AD")
         
 public static final Cursor query(ContentResolver cr, String[] projection) {
             return cr.query(CONTENT_URI, projection, null, null, DEFAULT_SORT_ORDER);
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:03.527 -0500", hash_original_method = "B0F13298A0CBF5A4AA63780A1FEDFE05", hash_generated_method = "FB43394C3A2ED7C0643EFD2496CAF1D5")
         
 public static final Cursor query(ContentResolver cr, String[] projection,
@@ -357,6 +359,7 @@ public static Uri addMessage(ContentResolver resolver,
              * @param intent the intent to read from
              * @return an array of SmsMessages for the PDUs
              */
+            @DSSource({DSSourceKind.NETWORK_INFORMATION})
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:03.637 -0500", hash_original_method = "30B8C5FF17840C780307DC9CA4EA96D5", hash_generated_method = "B4D9EFA98711619F8882196BFB843AEA")
             
 public static SmsMessage[] getMessagesFromIntent(
@@ -448,6 +451,7 @@ private Intents() {
          * getOrCreateThreadId.  It's convenient for use with SMS
          * messages.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:03.719 -0500", hash_original_method = "D36339876722268ADD72D9390788DF4A", hash_generated_method = "E3AC7FDC3914C3AABCD9217339F48988")
         
 public static long getOrCreateThreadId(Context context, String recipient) {
@@ -467,6 +471,7 @@ public static long getOrCreateThreadId(Context context, String recipient) {
          * any order, without any additions). If one
          * is found, return it.  Otherwise, return a unique thread ID.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:03.722 -0500", hash_original_method = "D4D7C19F5599D44D3DC4D465F273833D", hash_generated_method = "F073065A5E56CF2C2917959E759B6817")
         
 public static long getOrCreateThreadId(
@@ -535,6 +540,7 @@ private Threads() {
     
     public static final class Mms implements BaseMmsColumns {
 
+        @DSSource({DSSourceKind.SMS_MMS})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:03.743 -0500", hash_original_method = "91491FADEEC62466B0F9FF75744CEEB2", hash_generated_method = "4116C537EA1E1C0A55E8CE52971B78AD")
         
 public static final Cursor query(
@@ -542,6 +548,7 @@ public static final Cursor query(
             return cr.query(CONTENT_URI, projection, null, null, DEFAULT_SORT_ORDER);
         }
 
+        @DSSource({DSSourceKind.SMS_MMS})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:03.746 -0500", hash_original_method = "B0F13298A0CBF5A4AA63780A1FEDFE05", hash_generated_method = "FB43394C3A2ED7C0643EFD2496CAF1D5")
         
 public static final Cursor query(
@@ -551,6 +558,7 @@ public static final Cursor query(
                     where, null, orderBy == null ? DEFAULT_SORT_ORDER : orderBy);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:03.749 -0500", hash_original_method = "6DB13AD38B4DC3E9CBC9DA281EEB426F", hash_generated_method = "4652DF285AB1742B5F40F80951719A49")
         
 public static final String getMessageBoxName(int msgBox) {

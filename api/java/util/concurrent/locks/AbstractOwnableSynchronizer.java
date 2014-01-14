@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public abstract class AbstractOwnableSynchronizer implements java.io.Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.959 -0500", hash_original_field = "57384E69ACC4D85F20AFA905BC1CC919", hash_generated_field = "F2F59C783D5C1305604BF875D65980D6")
 
@@ -43,6 +39,7 @@ protected final void setExclusiveOwnerThread(Thread t) {
      * or <tt>volatile</tt> field accesses.
      * @return the owner thread
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.969 -0500", hash_original_method = "B27D03344136636BB9AA0892188CCAE3", hash_generated_method = "00E8F599BB6FB5931DFFDB7FA6FB10B1")
     
 protected final Thread getExclusiveOwnerThread() {

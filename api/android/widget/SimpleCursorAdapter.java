@@ -219,6 +219,7 @@ public void setViewText(TextView v, String text) {
      * @see #setCursorToStringConverter(android.widget.SimpleCursorAdapter.CursorToStringConverter)
      * @see #getCursorToStringConverter()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:16.909 -0500", hash_original_method = "505C15BD7A524BAA123874B0B6BE7D4B", hash_generated_method = "4748C86A8A294C786E42F1CAB875D0E2")
     
 public int getStringConversionColumn() {

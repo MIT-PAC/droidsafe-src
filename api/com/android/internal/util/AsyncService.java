@@ -12,16 +12,11 @@ import android.os.Message;
 import android.os.Messenger;
 import android.util.Slog;
 
-
-
-
-
 abstract public class AsyncService extends Service {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:48.417 -0500", hash_original_field = "9994E9646940FD614A51DE0FA27C1D07", hash_generated_field = "5B5C7021874431C98C58C6AADA02BFF7")
 
     private static final String TAG = "AsyncService";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:48.420 -0500", hash_original_field = "95D5733A0C83DB3D047D109C028C9F02", hash_generated_field = "5F5E7D64B04175B8FA820B2440F700FC")
-
 
     protected static final boolean DBG = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:48.422 -0500", hash_original_field = "13C4037422CBEFFA478513C14E27E11F", hash_generated_field = "5FA30C16C799029D741F47D3EB9013C0")
@@ -37,7 +32,6 @@ abstract public class AsyncService extends Service {
 
     Handler mHandler;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:48.438 -0500", hash_original_field = "A7D79D621CC3D20A47995C9B9F25283E", hash_generated_field = "A7D79D621CC3D20A47995C9B9F25283E")
-
 
     AsyncServiceInfo mAsyncServiceInfo;
     
@@ -59,12 +53,12 @@ abstract public AsyncServiceInfo createHandler();
     /**
      * Get the handler
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:48.443 -0500", hash_original_method = "10E7D4FA7AE5C5A4DFE91478AE111D01", hash_generated_method = "5553470799CBD6C40F98FB733AE4E7EA")
     
 public Handler getHandler() {
         return mHandler;
     }
-
     
     public static final class AsyncServiceInfo {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:48.433 -0500", hash_original_field = "A163099B522120C606A3CA562F90E927", hash_generated_field = "6DF93AB74F06096C50D0F8467E97684D")
@@ -79,7 +73,6 @@ public Handler getHandler() {
         {
             //Synthesized constructor
         }
-
 
     }
 

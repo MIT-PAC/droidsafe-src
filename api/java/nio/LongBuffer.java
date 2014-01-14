@@ -229,6 +229,7 @@ public abstract long get();
      * @exception BufferUnderflowException
      *                if {@code dst.length} is greater than {@code remaining()}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.413 -0500", hash_original_method = "D4B2A0425DC120EC01BAEA51D6880E08", hash_generated_method = "FB57FEAA659B88E7B68C17793F0541F1")
     
 public LongBuffer get(long[] dst) {
@@ -254,6 +255,7 @@ public LongBuffer get(long[] dst) {
      * @exception BufferUnderflowException
      *                if {@code longCount} is greater than {@code remaining()}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.416 -0500", hash_original_method = "22F3DDD60BBBE627A1DDE8F148E9CD33", hash_generated_method = "E4E1AB0551FD8F7547378AA85A60AA0C")
     
 public LongBuffer get(long[] dst, int dstOffset, int longCount) {

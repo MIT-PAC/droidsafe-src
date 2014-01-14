@@ -112,6 +112,7 @@ public void handleMessage(Message msg) {
 		//Return nothing
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public String getMessageName(Message message){
 		// Original method
 		/*
@@ -463,6 +464,7 @@ public final Message obtainMessage()
 
     // if we can get rid of this method, the handler need not remember its loop
     // we could instead export a getMessageQueue() method... 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:39.087 -0500", hash_original_method = "6CA5860A95ACD9BB8C844ECC1E567192", hash_generated_method = "98064444349E07D7BAA3C9B4FAC15DC7")
     
 public final Looper getLooper() {
@@ -509,6 +511,7 @@ public final Looper getLooper() {
 		return retVal;
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     final IMessenger getIMessenger(){
 		// Original method
 		/*

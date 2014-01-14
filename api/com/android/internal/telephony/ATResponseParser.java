@@ -5,13 +5,8 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class ATResponseParser {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.764 -0500", hash_original_field = "3627E23FB85D13386D00E9B32A363F83", hash_generated_field = "D67826549E3D41E5CE98380D120E6CF5")
-
 
     private String line;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.766 -0500", hash_original_field = "87EB6EAD268EF2EF71FED639D7336DA6", hash_generated_field = "AEA186324829F814A60F0A9E76E33097")
@@ -54,7 +49,6 @@ public boolean
         throw new ATParseEx();
     }
 
-
     /** positive int only */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.776 -0500", hash_original_method = "D8B8577219277F33EAE3DA6AB88F25AB", hash_generated_method = "E8E2B6FBE224BAA7C30E7FAF5E2CD4A6")
     
@@ -81,6 +75,7 @@ public int
         return ret;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.778 -0500", hash_original_method = "098AF12FD324D863E13EA52B5E17698D", hash_generated_method = "166CB708896172395E3726729E517306")
     
 public String
@@ -156,7 +151,6 @@ private void
         }
     }
 
-
     /** Throws ATParseEx if whitespace extends to the end of string */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.786 -0500", hash_original_method = "418256DED150EC59875240044DA6104A", hash_generated_method = "8D968F93EAB2D7A400AB6776E32FE6E3")
     
@@ -174,7 +168,6 @@ private char
         }
         return c;
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.789 -0500", hash_original_method = "1D94A267F6B395134932A5B3B0C0A195", hash_generated_method = "FE611489707CC77209F852F7A49C603B")
     
@@ -195,7 +188,6 @@ private void
 
         throw new ATParseEx("missing prefix");
     }
-
     
 }
 

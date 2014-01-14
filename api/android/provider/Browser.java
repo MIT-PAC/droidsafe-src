@@ -110,6 +110,7 @@ public static final Cursor getAllBookmarks(ContentResolver cr) throws
      *
      *  @param cr   The ContentResolver used to access the database.
      */
+    @DSSource({DSSourceKind.BROWSER_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:01.647 -0500", hash_original_method = "1C34E1025D9BC4CE20E5F812E4CB7964", hash_generated_method = "066798A98A0074B24CF48F0C0D8D8823")
     
 public static final Cursor getAllVisitedUrls(ContentResolver cr) throws
@@ -229,6 +230,7 @@ public static final void updateVisitedHistory(ContentResolver cr,
      *  @param cr   The ContentResolver used to access the database.
      *  @hide pending API council approval
      */
+    @DSSource({DSSourceKind.BROWSER_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:01.659 -0500", hash_original_method = "26718D5F7CBBEBA2A18502A7EAB90E54", hash_generated_method = "A62CC9FC8896E9F46A9A6269E28A1C3E")
     
 public static final String[] getVisitedHistory(ContentResolver cr) {

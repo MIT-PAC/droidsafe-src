@@ -118,6 +118,7 @@ void setColumnCollapsed(int columnIndex, boolean collapsed) {
     /**
      * {@inheritDoc}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.218 -0500", hash_original_method = "76BF09C7D97AC336E0857E346F87F26E", hash_generated_method = "7D1CB5FC6CF166D1F0E729DAB78863A0")
     
 @Override
@@ -137,6 +138,7 @@ void setColumnCollapsed(int columnIndex, boolean collapsed) {
     /**
      * {@inheritDoc}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.220 -0500", hash_original_method = "C68DDC21BA155D9A2863642050B804BE", hash_generated_method = "7F15477204B9A6B1B666EC6C6EEC217D")
     
 @Override
@@ -254,6 +256,7 @@ private void mapIndexAndColumns() {
     /**
      * {@inheritDoc}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.229 -0500", hash_original_method = "B06729C46F9CA4132172A65B967C7D51", hash_generated_method = "8B4B16F1A36E00DE95FD8BF455304A45")
     
 @Override
@@ -267,6 +270,7 @@ private void mapIndexAndColumns() {
     /**
      * {@inheritDoc}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.232 -0500", hash_original_method = "B1A714BE7A14CFDA42294606652D195E", hash_generated_method = "4E3221E81CD33F380ABC3106BBCBA2B1")
     
 @Override
@@ -277,6 +281,7 @@ private void mapIndexAndColumns() {
     /**
      * {@inheritDoc}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.234 -0500", hash_original_method = "6629CED69C690D63986C2D59A68F69D3", hash_generated_method = "43E0A45AA2476578E7C6D610F769282D")
     
 @Override
@@ -293,6 +298,7 @@ private void mapIndexAndColumns() {
      *         column, in this row
      * {@hide}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.237 -0500", hash_original_method = "F97D9B3BAD7BE3BFEC03988909D08EE2", hash_generated_method = "F97D9B3BAD7BE3BFEC03988909D08EE2")
     
 int[] getColumnsWidths(int widthMeasureSpec) {

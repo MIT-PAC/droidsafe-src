@@ -221,6 +221,7 @@ public Writer append(CharSequence csq) throws IOException {
      *             either {@code start} or {@code end} are greater or equal than
      *             the length of {@code csq}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.008 -0500", hash_original_method = "44B7413EC481F793F1919C886AE2AD0E", hash_generated_method = "A43CF055AB530ECD1E514ED408FF5339")
     
 public Writer append(CharSequence csq, int start, int end) throws IOException {

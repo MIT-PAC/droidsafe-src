@@ -24,6 +24,7 @@ public abstract class Shape implements Cloneable {
     /**
      * Returns the width of the Shape.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.797 -0500", hash_original_method = "AE68E159D936DCF4407D65307DCA00BB", hash_generated_method = "2EBC100F8EEA435FCFB1D71DF02003DC")
     
 public final float getWidth() {
@@ -33,6 +34,7 @@ public final float getWidth() {
     /**
      * Returns the height of the Shape.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.799 -0500", hash_original_method = "DE764EE6028A1B0E9211313F1870FFB9", hash_generated_method = "CE68295D107697A1A2FEF1CEA5826C51")
     
 public final float getHeight() {
@@ -95,6 +97,7 @@ public boolean hasAlpha() {
     
 protected void onResize(float width, float height) {}
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.810 -0500", hash_original_method = "581DCFE006AA020FE949D9FFE91E7EA5", hash_generated_method = "9FCC5714555E11C6EA6BBEBB14179B05")
     
 @Override

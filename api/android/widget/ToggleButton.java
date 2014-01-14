@@ -83,6 +83,7 @@ private void syncTextState() {
      * 
      * @return The text.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.769 -0500", hash_original_method = "5C0E5388314CF71485B1BF56327EECD2", hash_generated_method = "88C8DD18DC57878BA442223FAB42DEBF")
     
 public CharSequence getTextOn() {
@@ -105,6 +106,7 @@ public void setTextOn(CharSequence textOn) {
      * 
      * @return The text.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.773 -0500", hash_original_method = "EAEA80D56F502C97F845DE2B9DA853EF", hash_generated_method = "849DDC2D49CECB6A57382D582199C99E")
     
 public CharSequence getTextOff() {

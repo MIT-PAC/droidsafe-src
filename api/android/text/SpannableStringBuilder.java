@@ -673,6 +673,7 @@ private void setSpan(boolean send, Object what, int start, int end, int flags) {
      * Return the buffer offset of the beginning of the specified
      * markup object, or -1 if it is not attached to this buffer.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.839 -0500", hash_original_method = "DD4C166AC7D5C475EE46AC767DBD33EB", hash_generated_method = "D57039BB89705C38EEC76A5F0188763A")
     
 public int getSpanStart(Object what) {
@@ -697,6 +698,7 @@ public int getSpanStart(Object what) {
      * Return the buffer offset of the end of the specified
      * markup object, or -1 if it is not attached to this buffer.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.842 -0500", hash_original_method = "1CAC5A6045B202B1FC928510B17AEEDD", hash_generated_method = "37B0998B57691BB4CF884757474F4BED")
     
 public int getSpanEnd(Object what) {
@@ -721,6 +723,7 @@ public int getSpanEnd(Object what) {
      * Return the flags of the end of the specified
      * markup object, or 0 if it is not attached to this buffer.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.844 -0500", hash_original_method = "DA0589F2510DDCCEED97B90C9189C1B9", hash_generated_method = "373D3AB510B3D543F644EE8A3B45B838")
     
 public int getSpanFlags(Object what) {
@@ -736,6 +739,7 @@ public int getSpanFlags(Object what) {
         return 0; 
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.053 -0400", hash_original_method = "5CF7F75C8FAF8266A003E04C7C47A211", hash_generated_method = "F368E210A8A158B84C6EA5269A715CDD")
     @SuppressWarnings("unchecked")
     public <T> T[] getSpans(int queryStart, int queryEnd, Class<T> kind) {
@@ -1024,6 +1028,7 @@ private void checkRange(final String operation, int start, int end) {
 		return 0;
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
 	public int getTextWidths(int start, int end, float[] widths, Paint p) {
 		// TODO Auto-generated method stub
@@ -1034,6 +1039,7 @@ private void checkRange(final String operation, int start, int end) {
      * Don't call this yourself -- exists for Paint to use internally.
      * {@hide}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.898 -0500", hash_original_method = "FE2235DDEA2C6A2285ED2D1196CDD9B2", hash_generated_method = "4E70B087F887AB1B09F50C3199F56F78")
     
 public float getTextRunAdvances(int start, int end, int contextStart, int contextEnd, int flags,
@@ -1065,6 +1071,7 @@ public float getTextRunAdvances(int start, int end, int contextStart, int contex
      * Don't call this yourself -- exists for Paint to use internally.
      * {@hide}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.901 -0500", hash_original_method = "C231D32FAB37A7BF2DFD000F849A602C", hash_generated_method = "FA844BE046CE27D6A5F085CBB05D4797")
     
 public float getTextRunAdvances(int start, int end, int contextStart, int contextEnd, int flags,
@@ -1092,6 +1099,7 @@ public float getTextRunAdvances(int start, int end, int contextStart, int contex
         return ret;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
 	public int getTextRunCursor(int contextStart, int contextEnd, int flags,
 			int offset, int cursorOpt, Paint p) {
@@ -1104,6 +1112,7 @@ public float getTextRunAdvances(int start, int end, int contextStart, int contex
 		// TODO Auto-generated method stub
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
 	public InputFilter[] getFilters() {
 		// TODO Auto-generated method stub

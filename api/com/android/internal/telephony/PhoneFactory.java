@@ -16,9 +16,6 @@ import com.android.internal.telephony.gsm.GSMPhone;
 import com.android.internal.telephony.sip.SipPhone;
 import com.android.internal.telephony.sip.SipPhoneFactory;
 
-
-
-
 public class PhoneFactory {
 
     //***** Class Methods
@@ -176,6 +173,7 @@ public static int getPhoneType(int networkMode) {
         }
     }
 
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:08.868 -0500", hash_original_method = "E0E640EABAC4777B910C56F03DFB97E3", hash_generated_method = "AF440F5EC61D362F245508B2E93D2847")
     
 public static Phone getDefaultPhone() {
@@ -190,6 +188,7 @@ public static Phone getDefaultPhone() {
        return sProxyPhone;
     }
 
+    @DSSource({DSSourceKind.CONTACT_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:08.870 -0500", hash_original_method = "3914D022DA63364ED06A0A76AA75F742", hash_generated_method = "C3AD0A4549895A2281873672BB52AEDE")
     
 public static Phone getCdmaPhone() {
@@ -211,6 +210,7 @@ public static Phone getCdmaPhone() {
         return phone;
     }
 
+    @DSSource({DSSourceKind.CONTACT_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:08.873 -0500", hash_original_method = "D21324550B0D208FEBE5EE2A4FB6D6A5", hash_generated_method = "30715F2D0DF0026F0D876CE7EC5B115B")
     
 public static Phone getGsmPhone() {
@@ -241,13 +241,11 @@ public static SipPhone makeSipPhone(String sipUri) {
     static final int SOCKET_OPEN_MAX_RETRY = 3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:08.841 -0500", hash_original_field = "E40B43EECEFF894B61232068FF4B6452", hash_generated_field = "FFD48797B24EE6D7B6E4F727582D4861")
 
-
     static private Phone sProxyPhone = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:08.843 -0500", hash_original_field = "4CEBC247DDA6403F22746931A1D46857", hash_generated_field = "948633D0D5C93BC4F71449321A821594")
 
     static private CommandsInterface sCommandsInterface = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:08.846 -0500", hash_original_field = "72293D3627C82681D2739C24FC972587", hash_generated_field = "02E9DB57BA34902E9B630E9F37D0663A")
-
 
     static private boolean sMadeDefaults = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:08.848 -0500", hash_original_field = "229EFF098D4EE5A4D864A34ADA836109", hash_generated_field = "C04DE785FB2B397C6D68F5F32B6C5018")
@@ -260,7 +258,6 @@ public static SipPhone makeSipPhone(String sipUri) {
 
     static private Context sContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:08.855 -0500", hash_original_field = "3D13FFAC931996EA14B80B41398A0178", hash_generated_field = "DCF8A1C5D546D28BD0D7A720AA48C565")
-
 
     static final int preferredCdmaSubscription = RILConstants.PREFERRED_CDMA_SUBSCRIPTION;
     

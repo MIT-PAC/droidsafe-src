@@ -107,6 +107,7 @@ protected Provider(String name, double version, String info) {
      *
      * @return the name of this provider.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:55.540 -0500", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "50860709F8CC9FE19B604881E59FBA54")
     
 public String getName() {
@@ -118,6 +119,7 @@ public String getName() {
      *
      * @return the version number for the services being provided.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:55.542 -0500", hash_original_method = "849DADC9512AC29CFF5A5EB4D1517425", hash_generated_method = "5EFC4F4078A0B69A60E0F371FF683665")
     
 public double getVersion() {
@@ -129,6 +131,7 @@ public double getVersion() {
      *
      * @return a description of the services being provided.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:55.545 -0500", hash_original_method = "90F1C2C1B854E8544A3CF05D4B3BD6E7", hash_generated_method = "68C60099DFA11F525DDAC7E8AE6EF591")
     
 public String getInfo() {
@@ -141,6 +144,7 @@ public String getInfo() {
      *
      * @return a printable representation for this {@code Provider}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:55.547 -0500", hash_original_method = "58EC0A1A07497E3FA377B5366380E5E3", hash_generated_method = "2E9E37CD5E99D8AC5B8D1686DFC4A9EA")
     
 @Override
@@ -228,6 +232,7 @@ private void myPutAll(Map<?,?> t) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:55.562 -0500", hash_original_method = "70D9A28808783B7E2708BCE915ECB209", hash_generated_method = "00AC6EA0A2E9E856DCBCB219E7BA4E7A")
     
 @Override
@@ -235,6 +240,7 @@ private void myPutAll(Map<?,?> t) {
         return Collections.unmodifiableSet(super.entrySet());
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:55.565 -0500", hash_original_method = "45BA03BABBCEC97C3CDEDDFAAD34C546", hash_generated_method = "78AAE48FC6E3F7D30B2CB0FBCF935512")
     
 @Override
@@ -242,6 +248,7 @@ private void myPutAll(Map<?,?> t) {
         return Collections.unmodifiableSet(super.keySet());
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:55.567 -0500", hash_original_method = "4FF8F6E11AAD8FB860F173913A5840CE", hash_generated_method = "DD2756C9DCC3289C75E65E3EF0924EDF")
     
 @Override
@@ -389,6 +396,7 @@ void setProviderNumber(int n) {
      *
      * @return
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:55.583 -0500", hash_original_method = "6209D7B36FBC76163C52BAAF1CE53C35", hash_generated_method = "6209D7B36FBC76163C52BAAF1CE53C35")
     
 int getProviderNumber() {
@@ -480,6 +488,7 @@ public synchronized Provider.Service getService(String type,
      * @return an unmodifiable {@code Set} of all services registered by this
      *         provider
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:55.591 -0500", hash_original_method = "8008CDA805FE131E4E7ECE670E22E200", hash_generated_method = "B64E4CFF7AEDEFCDD558FB1844E14BEF")
     
 public synchronized Set<Provider.Service> getServices() {
@@ -950,6 +959,7 @@ void putAttribute(String name, String value) {
          *
          * @return the type of this {@code Service}.
          */
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:55.651 -0500", hash_original_method = "0E0B07C7C3039087C9D268CAF8DACC19", hash_generated_method = "B5025B3379E65F477B29B0C5C8B783DF")
         
 public final String getType() {
@@ -963,6 +973,7 @@ public final String getType() {
          * @return the name of the algorithm implemented by this {@code
          *         Service}.
          */
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:55.654 -0500", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "8A7AA6162519FFB2228039F3D6331CE9")
         
 public final String getAlgorithm() {
@@ -974,6 +985,7 @@ public final String getAlgorithm() {
          *
          * @return the {@code Provider} this {@code Service} belongs to.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:55.657 -0500", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "443000CF13C77ABCABFC8B67E2DE556F")
         
 public final Provider getProvider() {
@@ -985,6 +997,7 @@ public final Provider getProvider() {
          *
          * @return the name of the class implementing this {@code Service}.
          */
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:55.659 -0500", hash_original_method = "8415940D3A1E5651F883E391EC68DA41", hash_generated_method = "6F8397AF6B6307E3E16D7AA5343B4357")
         
 public final String getClassName() {
@@ -1001,6 +1014,7 @@ public final String getClassName() {
          * @throws NullPointerException
          *             if {@code name} is {@code null}.
          */
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:55.662 -0500", hash_original_method = "0C10317D01C11D1034B9356679E58CA0", hash_generated_method = "C0E670EE7DC6D3A2B10A0AC8916D30AF")
         
 public final String getAttribute(String name) {
@@ -1013,6 +1027,7 @@ public final String getAttribute(String name) {
             return attributes.get(name);
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:55.664 -0500", hash_original_method = "7A6F8F40D5019A1C644CF7CAD3518923", hash_generated_method = "7A6F8F40D5019A1C644CF7CAD3518923")
         
 List<String> getAliases() {

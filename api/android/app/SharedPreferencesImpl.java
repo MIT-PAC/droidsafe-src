@@ -243,6 +243,7 @@ private void awaitLoadedLocked() {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.851 -0500", hash_original_method = "BA8526BB1455076706AECC9BAC06F7D3", hash_generated_method = "ECB33FC46975FA69CE8C28BBBA3C60BB")
     
 public Map<String, ?> getAll() {
@@ -253,6 +254,7 @@ public Map<String, ?> getAll() {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.853 -0500", hash_original_method = "4363C372EF13513A221D5D74A24EBA33", hash_generated_method = "17A5DE3268095F5141810B524316C349")
     
 public String getString(String key, String defValue) {
@@ -263,6 +265,7 @@ public String getString(String key, String defValue) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.856 -0500", hash_original_method = "66BFB743F0303E06F65F01D81F24C82B", hash_generated_method = "3257449D6FCC49EACC659EEDC81B8928")
     
 public Set<String> getStringSet(String key, Set<String> defValues) {
@@ -273,6 +276,7 @@ public Set<String> getStringSet(String key, Set<String> defValues) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.858 -0500", hash_original_method = "ACC29E9B287DA38F520685100499E9BD", hash_generated_method = "793DD6153732330EE594C05370693AC7")
     
 public int getInt(String key, int defValue) {
@@ -282,6 +286,7 @@ public int getInt(String key, int defValue) {
             return v != null ? v : defValue;
         }
     }
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.860 -0500", hash_original_method = "44BE6AE8D3AB2ABE731A78B854B12E07", hash_generated_method = "16DF23A599684AF0C176C7762E0FC2B2")
     
 public long getLong(String key, long defValue) {
@@ -291,6 +296,7 @@ public long getLong(String key, long defValue) {
             return v != null ? v : defValue;
         }
     }
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.862 -0500", hash_original_method = "E216C3CDDFA2EB08E1EA436EA866244B", hash_generated_method = "DC658E8543868358F6E8FDF0101D67FC")
     
 public float getFloat(String key, float defValue) {

@@ -109,6 +109,7 @@ public void setDefaultPackage(String defaultPackage) {
      * @see #setDefaultPackage(String)
      * @return The default package.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:23.644 -0500", hash_original_method = "46E608B0485504B383BE067A0BD6622F", hash_generated_method = "112D4FD4D5CFE92EC720DB3E3063547B")
     
 public String getDefaultPackage() {
@@ -119,6 +120,7 @@ public String getDefaultPackage() {
      * Return the context we are running in, for access to resources, class
      * loader, etc.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:23.646 -0500", hash_original_method = "4F4EBC54D108D66F416C93B46580E117", hash_generated_method = "BA026F6873AF9B17E96AB49AFB6CEE03")
     
 public Context getContext() {
@@ -387,6 +389,7 @@ public final T createItem(String name, String prefix, AttributeSet attrs)
      * @param attrs An AttributeSet of attributes to apply to the item.
      * @return The item created.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:23.666 -0500", hash_original_method = "4FBBE2487A51D08C4064228D927262EC", hash_generated_method = "91547C1BBC30592555132F7586DE28F6")
     
 protected T onCreateItem(String name, AttributeSet attrs) throws ClassNotFoundException {

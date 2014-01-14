@@ -41,7 +41,8 @@ public static Tag createMockTag(byte[] id, int[] techList, Bundle[] techListExtr
         return new Tag(id, techList, techListExtras, 0, null);
     }
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.181 -0500", hash_original_method = "C242347B550488411F3501E51C751C46", hash_generated_method = "F876007B92E5D134943B17B413426925")
+    /*package*/ @DSSource({DSSourceKind.NFC})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.181 -0500", hash_original_method = "C242347B550488411F3501E51C751C46", hash_generated_method = "F876007B92E5D134943B17B413426925")
     
 static byte[] readBytesWithNull(Parcel in) {
         int len = in.readInt();
@@ -181,6 +182,7 @@ private String[] generateTechStringList(int[] techList) {
      * For use by NfcService only.
      * @hide
      */
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.161 -0500", hash_original_method = "89421ECB0C954DB9BA373A13BA3FAA83", hash_generated_method = "DFA2B11000CECA897C63467870C7FB77")
     
 public int getServiceHandle() {
@@ -199,6 +201,7 @@ public int getServiceHandle() {
      * perform any further RF communication or block.
      * @return ID as byte array, never null
      */
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.164 -0500", hash_original_method = "119449B9FCBA8EB72735DF05D41F23E7", hash_generated_method = "FD0A4E2319898FFF940A45412E87A7D1")
     
 public byte[] getId() {
@@ -221,6 +224,7 @@ public byte[] getId() {
      * The ordering of the returned array is undefined and should not be relied upon.
      * @return an array of fully-qualified {@link TagTechnology} class-names.
      */
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.167 -0500", hash_original_method = "ED11FAFB07CA3B90E3FEDDA21BAFA279", hash_generated_method = "377B8620F029252A423DDAF8AEB3C6EB")
     
 public String[] getTechList() {
@@ -283,6 +287,7 @@ public boolean hasTech(int techType) {
     }
 
     /** @hide */
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.173 -0500", hash_original_method = "31360E4A8CC1CC354A13744DCF6ABA65", hash_generated_method = "15CC7ED32290C9D9A38A33F4C04E361E")
     
 public Bundle getTechExtras(int tech) {
@@ -301,6 +306,7 @@ public Bundle getTechExtras(int tech) {
     }
 
     /** @hide */
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.175 -0500", hash_original_method = "67284B405524DECAA6F6D36DFD293E76", hash_generated_method = "B758E777D2688E4E4599BE219B7969AA")
     
 public INfcTag getTagService() {
@@ -373,6 +379,7 @@ public synchronized void setConnectedTechnology(int technology) {
      *
      * @hide
      */
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.211 -0500", hash_original_method = "B7538F13EF8EEF4B4D475104909015D7", hash_generated_method = "AAFB7BA0116C4622C7944A48C6ABD11B")
     
 public int getConnectedTechnology() {

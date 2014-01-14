@@ -251,6 +251,7 @@ protected void rewriteRequestURI(
     }
     
     // non-javadoc, see interface ClientRequestDirector
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.921 -0500", hash_original_method = "FF11182248C158BE9943CC5E99D59AB1", hash_generated_method = "FADA447509B07675118E8E4872FBFA31")
     
 public HttpResponse execute(HttpHost target, HttpRequest request,
@@ -536,6 +537,7 @@ protected void releaseConnection() {
      *
      * @throws HttpException    in case of a problem
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.926 -0500", hash_original_method = "855E342C251EB2356D381DD4230A53C3", hash_generated_method = "A332452DAA3A752D6FC6722C5C72039F")
     
 protected HttpRoute determineRoute(HttpHost    target,

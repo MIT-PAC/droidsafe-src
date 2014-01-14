@@ -15,6 +15,7 @@ public class ASN1OctetString extends ASN1StringType {
      * The default implementation works with encoding
      * that is represented as byte array.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.965 -0500", hash_original_method = "F77C5F3582B223C2ECF09C45F802AA0C", hash_generated_method = "374FB482A9F4BD4CF808640CD919DEF5")
     
 public static ASN1OctetString getInstance() {
@@ -54,6 +55,7 @@ public ASN1OctetString() {
      *
      * @return array of bytes
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.971 -0500", hash_original_method = "82D4C6A7EA2B5E6BF0228FD44BF29A31", hash_generated_method = "97033F5FC3E52425F6CF50D667821545")
     
 @Override public Object getDecodedObject(BerInputStream in) throws IOException {

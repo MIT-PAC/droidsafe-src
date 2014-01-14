@@ -97,6 +97,7 @@ public void addProvider(String name, ContentProvider provider) {
     }
 
     /** @hide */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:45.020 -0500", hash_original_method = "62AC33657D9355178DB566B04AB4A5F7", hash_generated_method = "F2351185E03BC113DE4789A75FEE332B")
     
 @Override

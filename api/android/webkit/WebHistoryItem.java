@@ -9,10 +9,6 @@ import java.net.URL;
 
 import android.graphics.Bitmap;
 
-
-
-
-
 public class WebHistoryItem implements Cloneable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:10.413 -0500", hash_original_field = "7D9BA8971037273938C6D6A780D8A05D", hash_generated_field = "28B46CAA21BCA317460A0F4BEDDA0B57")
 
@@ -94,6 +90,7 @@ private WebHistoryItem(WebHistoryItem item) {
      * @return The id for this item.
      * @deprecated This method is now obsolete.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:10.441 -0500", hash_original_method = "849E83C6BA01C72387E236CA4FAA38B9", hash_generated_method = "A076F4C3B25084C6852596EF6A184811")
     
 @Deprecated
@@ -109,6 +106,7 @@ private WebHistoryItem(WebHistoryItem item) {
      * Note: The VM ensures 32-bit atomic read/write operations so we don't have
      * to synchronize this method.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:10.444 -0500", hash_original_method = "13CE30FBE362EA44FDCE282CA01E7BBC", hash_generated_method = "B64A7CF604F22C84E5CFF07E83B9389F")
     
 public String getUrl() {
@@ -121,6 +119,7 @@ public String getUrl() {
      * redirects while loading the site.
      * @return The original url of this history item.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:10.446 -0500", hash_original_method = "DDE089EE8228BAF5D6A93FF1955EAFD7", hash_generated_method = "3D97A37CD60FAA89B245FDA02B14AE2C")
     
 public String getOriginalUrl() {
@@ -133,6 +132,7 @@ public String getOriginalUrl() {
      * Note: The VM ensures 32-bit atomic read/write operations so we don't have
      * to synchronize this method.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:10.448 -0500", hash_original_method = "B92C3DBC46CE7C1B39B851F67F02433E", hash_generated_method = "7A49241FF95B67AE902DCB5B5FAF0F39")
     
 public String getTitle() {
@@ -145,6 +145,7 @@ public String getTitle() {
      * Note: The VM ensures 32-bit atomic read/write operations so we don't have
      * to synchronize this method.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:10.450 -0500", hash_original_method = "41724C0C6385C3C7BA168B7F37B3B669", hash_generated_method = "B59DA24A0FBB414B4F54FF834260230B")
     
 public Bitmap getFavicon() {
@@ -255,6 +256,7 @@ void inflate(int nativeFrame) {
     /**
      * Clone the history item for use by clients of WebView.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:10.468 -0500", hash_original_method = "F79252569D56DBC251BCABE120CFDF67", hash_generated_method = "27F535B0484E36F77F11DB98C117FE82")
     
 protected synchronized WebHistoryItem clone() {
@@ -270,7 +272,6 @@ protected synchronized WebHistoryItem clone() {
     	addTaint(nativeFrame);
     	addTaint(data[0]);
     }
-
 
     /* Called by jni when the item is updated */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:10.474 -0500", hash_original_method = "54E9940C94044B5E33255DF6DC9264D1", hash_generated_method = "3AE23423858EC3A5755AC72248F0B78A")

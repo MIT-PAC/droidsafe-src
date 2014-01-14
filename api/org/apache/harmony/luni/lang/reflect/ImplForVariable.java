@@ -10,11 +10,6 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Type;
 import java.lang.reflect.TypeVariable;
 
-
-
-
-
-
 public final class ImplForVariable<D extends GenericDeclaration> implements TypeVariable<D> {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.231 -0500", hash_original_method = "D221C8A1B569E1806838DFC95ACABA4D", hash_generated_method = "62BA4A52D51025362248E21AAD3D7B07")
@@ -107,7 +102,6 @@ ImplForVariable(D genericDecl, String name) {
                 getGenericDeclaration().equals(that.getGenericDeclaration());
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.223 -0500", hash_original_method = "7D0F85484BF18E8882B18922DC61C5E2", hash_generated_method = "23EB5A1B17C6903E249FA43F8F4A367D")
     
 @Override
@@ -134,6 +128,7 @@ void resolve() {
         this.bounds = formalVar.bounds;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.238 -0500", hash_original_method = "234813F4553928C427D0DF90A4217999", hash_generated_method = "C56F23EB4401D7687760D536E5D5C3A8")
     
 public Type[] getBounds() {
@@ -148,6 +143,7 @@ public D getGenericDeclaration() {
         return genericDeclaration;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.243 -0500", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "50860709F8CC9FE19B604881E59FBA54")
     
 public String getName() {
@@ -160,7 +156,6 @@ public String getName() {
     public String toString() {
         return name;
     }
-
     
 }
 

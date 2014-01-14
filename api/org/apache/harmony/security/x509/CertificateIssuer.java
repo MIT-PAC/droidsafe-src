@@ -44,6 +44,7 @@ public CertificateIssuer(byte[] encoding) {
         super(encoding);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:56.667 -0500", hash_original_method = "A624F7DB93A0D045C3602F26988D09C5", hash_generated_method = "71D4683950BC980DAB492FDD9601ACCC")
     
 public X500Principal getIssuer() throws IOException {

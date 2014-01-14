@@ -77,7 +77,8 @@ public void aval(char[] buff, int offset, int length) throws SAXException {
 	
 public void entity(char[] buff, int offset, int length) throws SAXException { }
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.307 -0500", hash_original_method = "3C08B6E043A6E028BC79049543201CA8", hash_generated_method = "7477A79F9C1C54C788DB94DD5E638D18")
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.307 -0500", hash_original_method = "3C08B6E043A6E028BC79049543201CA8", hash_generated_method = "7477A79F9C1C54C788DB94DD5E638D18")
 	
 public int getEntity() { return 0; }
 

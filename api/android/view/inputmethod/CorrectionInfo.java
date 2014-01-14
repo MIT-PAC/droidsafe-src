@@ -62,6 +62,7 @@ private CorrectionInfo(Parcel source) {
      * Return the offset position of this correction in the text. Both the {@link #getOldText()} and
      * {@link #getNewText()} start at this offset.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.778 -0500", hash_original_method = "FB2FFBF84EFDF3FAC1DB07E1BCD653F5", hash_generated_method = "6F0A4A5FCF19E7C347B9315FF86C0189")
     
 public int getOffset() {
@@ -71,6 +72,7 @@ public int getOffset() {
     /**
      * Return the text that has actually been typed by the user, and which has been corrected.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.780 -0500", hash_original_method = "B5F6375A5B3C1F7513E2C762D0A387DE", hash_generated_method = "120CF55EBB2F568B5E24FB54C3274BD2")
     
 public CharSequence getOldText() {
@@ -80,6 +82,7 @@ public CharSequence getOldText() {
     /**
      * Return the new text that corrects what was typed by the user.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.782 -0500", hash_original_method = "A44877BB52BDCF0EDD87983832FB9E30", hash_generated_method = "161EFAB57732DEAC597AF92B819C9B2C")
     
 public CharSequence getNewText() {

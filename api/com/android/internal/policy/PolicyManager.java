@@ -17,12 +17,14 @@ import droidsafe.annotations.DSModeled;
 
 public final class PolicyManager {
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public static Window makeNewWindow(Context context) {
     	return new WindowImpl(context);
     	//return new PhoneWindow(context);
         //return sPolicy.makeNewWindow(context);
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public static LayoutInflater makeNewLayoutInflater(Context context) {
         return new MyLayoutInflater(context);
         /*
@@ -36,6 +38,7 @@ public static WindowManagerPolicy makeNewWindowManager() {
         return sPolicy.makeNewWindowManager();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:39.940 -0500", hash_original_method = "2FC59449732FB8F4271558BE9548F773", hash_generated_method = "2F685FEDCD500870706279D01512C43E")
     
 public static FallbackEventHandler makeNewFallbackEventHandler(Context context) {

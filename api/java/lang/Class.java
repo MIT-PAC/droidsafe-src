@@ -230,6 +230,7 @@ private String getSignatureAttribute() {
      *
      * @return the public class members of the class represented by this object.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.881 -0500", hash_original_method = "0A5E0D64FA55612B299C6956628C149D", hash_generated_method = "D7203C509B77A1072C11ED193F651546")
     
 public Class<?>[] getClasses() {
@@ -295,6 +296,7 @@ A var540C13E9E156B687226421B24F2DF178_936883154 =         null;
      * @return a copy of the array containing this class' annotations.
      * @see #getDeclaredAnnotations()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.887 -0500", hash_original_method = "214E042C121A5AA68E2A99AA55DE15AA", hash_generated_method = "6FD3E304A8DF098A20CB6436606F5062")
     
 public Annotation[] getAnnotations() {
@@ -338,6 +340,7 @@ public Annotation[] getAnnotations() {
      * @return this class' canonical name, or {@code null} if it does not have a
      *         canonical name.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.889 -0500", hash_original_method = "79C3FAE0B22F6799153600E0BD41AE53", hash_generated_method = "D53A66E2D95F9FCB432551D2F3BDDC4D")
     
 public String getCanonicalName() {
@@ -386,6 +389,7 @@ public String getCanonicalName() {
      * @return the class loader for the represented class.
      * @see ClassLoader
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.892 -0500", hash_original_method = "3030130FFB93A0C1BBA3E92339DE84EE", hash_generated_method = "B0FEF2208E9859EF6D970383264412F7")
     
 public ClassLoader getClassLoader() {
@@ -411,6 +415,7 @@ public ClassLoader getClassLoader() {
      *
      * @return the ClassLoader
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.894 -0500", hash_original_method = "CA71AD82665CF5FC19F2861C6018C612", hash_generated_method = "CA71AD82665CF5FC19F2861C6018C612")
     
 ClassLoader getClassLoaderImpl() {
@@ -437,6 +442,7 @@ ClassLoader getClassLoaderImpl() {
      *             if the constructor can not be found.
      * @see #getDeclaredConstructor(Class[])
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.905 -0500", hash_original_method = "F0845B6DA735A4C36F51E7CB08D1D9A7", hash_generated_method = "2060266FA2D0F6DCF32A8D8414835B9B")
     
 @SuppressWarnings("unchecked")
@@ -511,6 +517,7 @@ private Member getPublicConstructorOrMethodRecursive(String name, Class<?>[] par
      *         this {@code Class}.
      * @see #getDeclaredConstructors()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.914 -0500", hash_original_method = "A702CB469FC49B7BFA8C73D523E80DBC", hash_generated_method = "C6285A2293FC0FC9E24ABE031CAEAF52")
     
 public Constructor<?>[] getConstructors() {
@@ -551,6 +558,7 @@ public Constructor<?>[] getConstructors() {
      * @return an array with {@code Class} objects for all the classes and
      *         interfaces that are used in member declarations.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.928 -0500", hash_original_method = "0C6BF22DB8EB38DEB860C0E90FF64AEC", hash_generated_method = "7AE1F5EBD013B58268EBCB9E63397A2E")
     
 public Class<?>[] getDeclaredClasses() {
@@ -597,6 +605,7 @@ private Class<?>[] getFullListOfClasses(boolean publicOnly) {
      *             if the requested constructor can not be found.
      * @see #getConstructor(Class[])
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.937 -0500", hash_original_method = "BE852690AE0E27D0B9CC0DDC2FD443E4", hash_generated_method = "D0D731FB6821D6C0AB12837A56C6FE11")
     
 @SuppressWarnings("unchecked")
@@ -615,6 +624,7 @@ private Class<?>[] getFullListOfClasses(boolean publicOnly) {
      *         by this {@code Class}.
      * @see #getConstructors()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.939 -0500", hash_original_method = "689106DC2122D9CD807ABDF15BAA670D", hash_generated_method = "A5160AEFF05AA595A8F6FC2468B59CF6")
     
 public Constructor<?>[] getDeclaredConstructors() {
@@ -630,6 +640,7 @@ public Constructor<?>[] getDeclaredConstructors() {
      * @throws NoSuchFieldException if the requested field can not be found.
      * @see #getField(String)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.945 -0500", hash_original_method = "8A682798BA4F3E7A7CABB0F16EFFEE4D", hash_generated_method = "C66D19B472FEF5D13D7F4877F2BBF29A")
     
 public Field getDeclaredField(String name) throws NoSuchFieldException {
@@ -653,6 +664,7 @@ public Field getDeclaredField(String name) throws NoSuchFieldException {
      *         this class.
      * @see #getFields()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.948 -0500", hash_original_method = "AA99B76B619CDC6E346F586A8911140C", hash_generated_method = "28B58F0009A6BCAB227105536EC99296")
     
 public Field[] getDeclaredFields() {
@@ -676,6 +688,7 @@ public Field[] getDeclaredFields() {
      *             if {@code name} is {@code null}.
      * @see #getMethod(String, Class[])
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.959 -0500", hash_original_method = "03F26499B4401EE2D953FCB368DE68F4", hash_generated_method = "D43A7411BC634182976F9568E4280AC1")
     
 public Method getDeclaredMethod(String name, Class<?>... parameterTypes)
@@ -697,6 +710,7 @@ public Method getDeclaredMethod(String name, Class<?>... parameterTypes)
      *         this {@code Class}.
      * @see #getMethods()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.961 -0500", hash_original_method = "76B8AECB3C8722E0C9050BEEFD88DA1C", hash_generated_method = "C0886B96300C43CFB5185B9FE17032D3")
     
 public Method[] getDeclaredMethods() {
@@ -734,6 +748,7 @@ public Method[] getDeclaredMethods() {
      *
      * @return an array with the {@code enum} constants or {@code null}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.987 -0500", hash_original_method = "4BAB4756A542B5987CFE5A9EBB7771C0", hash_generated_method = "501C2BA0B65CD7CC10B3624A12BF9703")
     
 @SuppressWarnings("unchecked") // we only cast after confirming that this class is an enum
@@ -757,6 +772,7 @@ public Method[] getDeclaredMethods() {
      *             if the field can not be found.
      * @see #getDeclaredField(String)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.990 -0500", hash_original_method = "FA8DAD805A6C401E4747A9C743D605D2", hash_generated_method = "DFB95ADC3E3E5C8B3666944FA264C214")
     
 public Field getField(String name) throws NoSuchFieldException {
@@ -807,6 +823,7 @@ private Field getPublicFieldRecursive(String name) {
      *         {@code Class}.
      * @see #getDeclaredFields()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.995 -0500", hash_original_method = "EE852D72665161D6434FA53D37832A51", hash_generated_method = "B8AF57BF684DA5AEB97D474BC198A0CA")
     
 public Field[] getFields() {
@@ -851,6 +868,7 @@ private void getPublicFieldsRecursive(List<Field> result) {
      * @return an array of {@link Type} instances directly implemented by the
      *         class represented by this {@code class}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.001 -0500", hash_original_method = "A82263350C71E60DCD37A3953DD0C780", hash_generated_method = "A29F8C52D29EEC64FFAED8E112A51280")
     
 public Type[] getGenericInterfaces() {
@@ -865,6 +883,7 @@ public Type[] getGenericInterfaces() {
      *
      * @return an instance of {@code Type} representing the superclass.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.003 -0500", hash_original_method = "F49B4034A49DCE93E76B5D95ACE6523A", hash_generated_method = "F60C4EB1F233218BED00254491D8F23F")
     
 public Type getGenericSuperclass() {
@@ -896,6 +915,7 @@ public Type getGenericSuperclass() {
      *             if the method can not be found.
      * @see #getDeclaredMethod(String, Class[])
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.010 -0500", hash_original_method = "8DB3D81F35D9B25D91AF567693EFE9FF", hash_generated_method = "F6FE7925D7C8D66FCFBB28D88158DAE4")
     
 public Method getMethod(String name, Class<?>... parameterTypes) throws NoSuchMethodException {
@@ -920,6 +940,7 @@ public Method getMethod(String name, Class<?>... parameterTypes) throws NoSuchMe
      *         {@code Class}.
      * @see #getDeclaredMethods()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.012 -0500", hash_original_method = "C97EB7E8DB296134D4BC8E9F9CBD0F21", hash_generated_method = "16F5EFC638AA638137B136FC5EE069E5")
     
 public Method[] getMethods() {
@@ -963,6 +984,7 @@ private void getPublicMethodsRecursive(List<Method> result) {
      *
      * @return the modifiers of the class represented by this {@code Class}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.018 -0500", hash_original_method = "49C2E28E402D8BB5DB2322E2416CA9ED", hash_generated_method = "41DF567D91CEAD08F40DC4816EDC53B5")
     
 public int getModifiers() {
@@ -976,6 +998,7 @@ public int getModifiers() {
      *
      * @return the name of the class represented by this {@code Class}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.024 -0500", hash_original_method = "187913D585B2E6CDD83B5D111AE83BCF", hash_generated_method = "17A7776BBC6BDB5FF5C2292D74566F63")
     
 public String getName() {
@@ -998,6 +1021,7 @@ public String getName() {
      *
      * @return the simple name of the class represented by this {@code Class}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.030 -0500", hash_original_method = "74B632DBB542B67A6D43387B2BA8D973", hash_generated_method = "5F5DA6A35D4A0CEBE565D4944B684DD0")
     
 public String getSimpleName() {
@@ -1032,6 +1056,7 @@ public String getSimpleName() {
     /**
      * Returns null.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.036 -0500", hash_original_method = "82F23D377D0B35BD25A884E70716090D", hash_generated_method = "8028A3F866A0CBD6BC2B22F8EEDAE4A1")
     
 public ProtectionDomain getProtectionDomain() {
@@ -1049,6 +1074,7 @@ public ProtectionDomain getProtectionDomain() {
      *         the resource can not be found.
      * @see ClassLoader
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.040 -0500", hash_original_method = "98759567E5146872E262AEC3A30D35ED", hash_generated_method = "473C6F76FA3F6B45C570D7E720A53585")
     
 public URL getResource(String resName) {
@@ -1087,6 +1113,7 @@ public URL getResource(String resName) {
      *         resource with the specified name can be found.
      * @see ClassLoader
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.042 -0500", hash_original_method = "A39605B8A15ACAEBE8FD794856699A1B", hash_generated_method = "86CEEF39D17B80ED6EB9C612DF444F82")
     
 public InputStream getResourceAsStream(String resName) {
@@ -1122,6 +1149,7 @@ public InputStream getResourceAsStream(String resName) {
      *
      * @return null.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.045 -0500", hash_original_method = "23E1DD471F041FCBD863FD07CDFD9C50", hash_generated_method = "0FEDCEA57B2FDA4E2741434B8D686EE1")
     
 public Object[] getSigners() {
@@ -1143,6 +1171,7 @@ public Object[] getSigners() {
      * @return an array with the type variables of the class represented by this
      *         class.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.051 -0500", hash_original_method = "6787AAB5FB05E26F36F8582CB719E4B5", hash_generated_method = "FB368A623C43001AF0F281EC8C9BB200")
     
 @SuppressWarnings("unchecked")
@@ -1383,6 +1412,7 @@ public T newInstance() throws InstantiationException, IllegalAccessException {
      * @return Package the {@code Package} of which this {@code Class} is a
      *         member or {@code null}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.099 -0500", hash_original_method = "AFC08E4F788A8A715582FE5BCDA4146B", hash_generated_method = "99264132046FF3CADEE61A42634D3476")
     
 public Package getPackage() {

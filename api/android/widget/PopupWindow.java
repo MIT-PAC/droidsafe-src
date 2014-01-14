@@ -372,6 +372,7 @@ public PopupWindow(View contentView, int width, int height, boolean focusable) {
      *
      * @return the background drawable or null
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.969 -0500", hash_original_method = "63340AE07D2726BC056EFE5BE3E2FF29", hash_generated_method = "9FB8C8C54E4BA0866CDF1D4CECF45471")
     
 public Drawable getBackground() {
@@ -395,6 +396,7 @@ public void setBackgroundDrawable(Drawable background) {
      *
      * @return the animation style to use the popup appears and disappears
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.973 -0500", hash_original_method = "41CA7DA63F7D92402D2B673FD03355D6", hash_generated_method = "CB1996CA776F9ADD4773CB78ECAEDAB9")
     
 public int getAnimationStyle() {
@@ -444,6 +446,7 @@ public void setAnimationStyle(int animationStyle) {
      *
      * @see #setContentView(android.view.View)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.980 -0500", hash_original_method = "1FBDC8A7B1B2CCF1CAFCE9F94E1B072D", hash_generated_method = "0FD10DCF7ED5F1F6B15F07AF1CED9A3A")
     
 public View getContentView() {
@@ -529,6 +532,7 @@ public void setFocusable(boolean focusable) {
      * 
      * @see #setInputMethodMode(int)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.991 -0500", hash_original_method = "01F2BFCF39394BA4008813FFB1127C10", hash_generated_method = "EFBEC74DA9D23332CBF484E30669D202")
     
 public int getInputMethodMode() {
@@ -576,6 +580,7 @@ public void setSoftInputMode(int mode) {
      * @see #setSoftInputMode(int)
      * @see android.view.WindowManager.LayoutParams#softInputMode
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.997 -0500", hash_original_method = "76888AB414E08DF2E7D12678F406D7A5", hash_generated_method = "988402AC1498A99620921C5855E6C891")
     
 public int getSoftInputMode() {
@@ -809,6 +814,7 @@ public void setWindowLayoutType(int layoutType) {
      * @return The layout type for this window.
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:08.029 -0500", hash_original_method = "B0A202A53A476A9F6F2E7DEE1AC7BFD5", hash_generated_method = "502C134A193F17AF9D07CE99CBEE5CA6")
     
 public int getWindowLayoutType() {
@@ -863,6 +869,7 @@ public void setWindowLayoutMode(int widthSpec, int heightSpec) {
      *
      * @see #setHeight(int)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:08.035 -0500", hash_original_method = "0304EDCF78FF45B68A7EB91BFEAAA2CD", hash_generated_method = "7B60B7C518DA05BF980E6A0812F1B814")
     
 public int getHeight() {
@@ -893,6 +900,7 @@ public void setHeight(int height) {
      *
      * @see #setWidth(int) 
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:08.039 -0500", hash_original_method = "AA9BA105372BFC95AFBABED408315F5C", hash_generated_method = "76288D230877FA0A2BAF233CBE4CB19E")
     
 public int getWidth() {
@@ -1338,6 +1346,7 @@ private boolean findDropDownPosition(View anchor, WindowManager.LayoutParams p,
      * @return The maximum available height for the popup to be completely
      *         shown.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:08.077 -0500", hash_original_method = "023150F59911D5483F51543A59288631", hash_generated_method = "7A444F5743BCCEE72E893C3DA5F59A87")
     
 public int getMaxAvailableHeight(View anchor) {
@@ -1355,6 +1364,7 @@ public int getMaxAvailableHeight(View anchor) {
      * @return The maximum available height for the popup to be completely
      *         shown.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:08.079 -0500", hash_original_method = "782C0234D711C16ED6DF402CCEC14809", hash_generated_method = "D60B23B7F82B50B7961D9F761C3A96EA")
     
 public int getMaxAvailableHeight(View anchor, int yOffset) {
@@ -1378,6 +1388,7 @@ public int getMaxAvailableHeight(View anchor, int yOffset) {
      *         
      * @hide Pending API council approval.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:08.082 -0500", hash_original_method = "6127242297D2005B4B3434B0EF072B4C", hash_generated_method = "2880ACC0CCC6B66901713FDEAF235DBC")
     
 public int getMaxAvailableHeight(View anchor, int yOffset, boolean ignoreBottomDecorations) {

@@ -40,6 +40,7 @@ protected abstract char[] getReplacement();
      * source CharSequence but with the characters in {@link #getOriginal}
      * replaced by ones from {@link #getReplacement}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:59.405 -0500", hash_original_method = "194DC730C60A1F45F368AD90A104F0FE", hash_generated_method = "95203B0678B88F2740A8A7DD052AC2B5")
     
 public CharSequence getTransformation(CharSequence source, View v) {
@@ -197,6 +198,7 @@ public CharSequence subSequence(int start, int end) {
             return new SpannedString(this).subSequence(start, end);
         }
         
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.694 -0400", hash_original_method = "E8AB479016A2E00AFF48AA43F345FA2A", hash_generated_method = "758D85525E0EBDD586EED24B4A89DE1C")
         public <T> T[] getSpans(int start, int end, Class<T> type) {
             addTaint(type.getTaint());
@@ -209,18 +211,21 @@ T[] varF03F51B4D510CEB709FCAEAB771CF011_117357119 =             mSpanned.getSpan
             //return mSpanned.getSpans(start, end, type);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:59.449 -0500", hash_original_method = "2071284CDE64572D4D3F80F80EB4C823", hash_generated_method = "2F1F23BF4970036AFC2624FBD0A76667")
         
 public int getSpanStart(Object tag) {
             return mSpanned.getSpanStart(tag);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:59.452 -0500", hash_original_method = "B1DC38D90632AE4EB220020E4C5B16DF", hash_generated_method = "352085C78F363920AB38A9623804477C")
         
 public int getSpanEnd(Object tag) {
             return mSpanned.getSpanEnd(tag);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:59.455 -0500", hash_original_method = "A386D5CC8A9C15386840381A75E4D6FD", hash_generated_method = "94AA2E2AFBFE0A83C771FF66CD53D9D5")
         
 public int getSpanFlags(Object tag) {

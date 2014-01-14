@@ -56,7 +56,8 @@ public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:24.590 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:24.590 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
             
 public java.lang.String getInterfaceDescriptor()
 {
@@ -181,7 +182,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:24.611 -0500", hash_original_method = "8A12BA5F2259F93C000C4D33EB560515", hash_generated_method = "8D8D313C0A25D16E755C9C4720CA1541")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:24.611 -0500", hash_original_method = "8A12BA5F2259F93C000C4D33EB560515", hash_generated_method = "8D8D313C0A25D16E755C9C4720CA1541")
             
 public boolean isStreamMute(int streamType) throws android.os.RemoteException
 {
@@ -201,7 +203,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:24.614 -0500", hash_original_method = "6BB666BAA5D514514F70E581C53584FE", hash_generated_method = "D1746A8B73142426BEF168AB885265C2")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:24.614 -0500", hash_original_method = "6BB666BAA5D514514F70E581C53584FE", hash_generated_method = "D1746A8B73142426BEF168AB885265C2")
             
 public int getStreamVolume(int streamType) throws android.os.RemoteException
 {
@@ -221,7 +224,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:24.617 -0500", hash_original_method = "1DFA7811C0DF1CF337C4215AEFA7EE4C", hash_generated_method = "42C1207451A6EB576E728D0CC491A54B")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:24.617 -0500", hash_original_method = "1DFA7811C0DF1CF337C4215AEFA7EE4C", hash_generated_method = "42C1207451A6EB576E728D0CC491A54B")
             
 public int getStreamMaxVolume(int streamType) throws android.os.RemoteException
 {
@@ -241,7 +245,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:24.620 -0500", hash_original_method = "F0FEA90A0B4938F9831E8655A28BBCF9", hash_generated_method = "7B70202D1E02B872335B6A29C3C88A40")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:24.620 -0500", hash_original_method = "F0FEA90A0B4938F9831E8655A28BBCF9", hash_generated_method = "7B70202D1E02B872335B6A29C3C88A40")
             
 public int getLastAudibleStreamVolume(int streamType) throws android.os.RemoteException
 {
@@ -279,7 +284,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:24.626 -0500", hash_original_method = "D4918ADEC983C541F86F45757BFE2A14", hash_generated_method = "AB793618AF7293AE5A6F3C6872ADB567")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:24.626 -0500", hash_original_method = "D4918ADEC983C541F86F45757BFE2A14", hash_generated_method = "AB793618AF7293AE5A6F3C6872ADB567")
             
 public int getRingerMode() throws android.os.RemoteException
 {
@@ -317,7 +323,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:24.631 -0500", hash_original_method = "9CBD4F0CDD9454D11A5849FE9C8ABB28", hash_generated_method = "CEB74E831530278406277CE8B75DCA64")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:24.631 -0500", hash_original_method = "9CBD4F0CDD9454D11A5849FE9C8ABB28", hash_generated_method = "CEB74E831530278406277CE8B75DCA64")
             
 public int getVibrateSetting(int vibrateType) throws android.os.RemoteException
 {
@@ -377,7 +384,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:24.640 -0500", hash_original_method = "D205ADA44388A46C6268935B51398C4C", hash_generated_method = "E740D159FC1A0D2A9C119FB49A76C30F")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:24.640 -0500", hash_original_method = "D205ADA44388A46C6268935B51398C4C", hash_generated_method = "E740D159FC1A0D2A9C119FB49A76C30F")
             
 public int getMode() throws android.os.RemoteException
 {
@@ -906,7 +914,8 @@ public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:24.570 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:24.570 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
         
 public android.os.IBinder asBinder()
 {

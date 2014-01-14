@@ -175,6 +175,7 @@ private Object readResolve() {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.943 -0500", hash_original_method = "3A8DA3E34FE3E13C123721386FD31559", hash_generated_method = "4102122C8CA6BFB91A0AAFAE0AD38EAD")
     
 @SuppressWarnings("unchecked")

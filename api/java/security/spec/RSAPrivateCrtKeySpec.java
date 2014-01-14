@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.math.BigInteger;
 
-
-
-
-
-
 public class RSAPrivateCrtKeySpec extends RSAPrivateKeySpec {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.103 -0500", hash_original_field = "DB6D44C8A44BDBF62F098CD0EF0F38F6", hash_generated_field = "79B82A8776BB04757B8A80F0464419F4")
 
@@ -79,6 +74,7 @@ public RSAPrivateCrtKeySpec(BigInteger modulus,
      *
      * @return the CRT coefficient, {@code q^-1 mod p}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.121 -0500", hash_original_method = "ACBFCDB81BF18ABF0A77938A5EED41BC", hash_generated_method = "97EDEC99BD89F3C3B898907864A5969A")
     
 public BigInteger getCrtCoefficient() {
@@ -90,6 +86,7 @@ public BigInteger getCrtCoefficient() {
      *
      * @return the exponent of the prime {@code p}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.123 -0500", hash_original_method = "F0E07FFA226AFDFA80184533230F10C0", hash_generated_method = "B8F125E28DD971AB2A14227701C3ACA8")
     
 public BigInteger getPrimeExponentP() {
@@ -101,6 +98,7 @@ public BigInteger getPrimeExponentP() {
      *
      * @return the exponent of the prime {@code q}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.125 -0500", hash_original_method = "E723F3703FB87A9BEB77BD8EB83B9C01", hash_generated_method = "DB4AA43C17AF6D85BD5E97574992AC14")
     
 public BigInteger getPrimeExponentQ() {
@@ -112,6 +110,7 @@ public BigInteger getPrimeExponentQ() {
      *
      * @return the prime factor {@code p}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.128 -0500", hash_original_method = "6B317E4DBB0CE4C27ED249BB287307E9", hash_generated_method = "C754147F7132081FF985241C8123FDC5")
     
 public BigInteger getPrimeP() {
@@ -123,6 +122,7 @@ public BigInteger getPrimeP() {
      *
      * @return the prime factor {@code q}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.130 -0500", hash_original_method = "A63916054BB1CFBFE5DBD277F62696D2", hash_generated_method = "A67CBA40F2C5DB2C9FE6FFCCBCB86CBC")
     
 public BigInteger getPrimeQ() {
@@ -134,12 +134,12 @@ public BigInteger getPrimeQ() {
      *
      * @return the public exponent {@code e}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.133 -0500", hash_original_method = "32183112217BF048572A8B0F43293474", hash_generated_method = "CDD9969A60E00BAEF22FCCEA56318047")
     
 public BigInteger getPublicExponent() {
         return publicExponent;
     }
-
     
 }
 

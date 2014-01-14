@@ -23,11 +23,6 @@ import org.apache.http.conn.scheme.Scheme;
 import org.apache.http.conn.scheme.SchemeRegistry;
 import org.apache.http.protocol.HttpContext;
 
-
-
-
-
-
 public class ProxySelectorRoutePlanner implements HttpRoutePlanner {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:33.702 -0500", hash_original_field = "FFCBB3FF9A8B5221F5621A7A590508B0", hash_generated_field = "262A27B6B6B1CBF25439CFECC3909997")
 
@@ -35,7 +30,6 @@ public class ProxySelectorRoutePlanner implements HttpRoutePlanner {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:33.704 -0500", hash_original_field = "BD8907878A7DA3B0E5B8AF7E66FD6133", hash_generated_field = "B499B9C301A586D28A25B3CD3E9E47FC")
 
     protected ProxySelector proxySelector;
-
 
     /**
      * Creates a new proxy selector route planner.
@@ -57,18 +51,17 @@ public ProxySelectorRoutePlanner(SchemeRegistry schreg,
         proxySelector  = prosel;
     }
 
-
     /**
      * Obtains the proxy selector to use.
      *
      * @return the proxy selector, or <code>null</code> for the system default
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:33.709 -0500", hash_original_method = "7BFDCA23B0C60DE048DC61BFB74DD1F2", hash_generated_method = "F39972908F6A56C4ED115C3866308504")
     
 public ProxySelector getProxySelector() {
         return this.proxySelector;
     }
-
 
     /**
      * Sets the proxy selector to use.
@@ -81,8 +74,6 @@ public ProxySelector getProxySelector() {
 public void setProxySelector(ProxySelector prosel) {
         this.proxySelector = prosel;
     }
-
-
 
     // non-javadoc, see interface HttpRoutePlanner
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:33.714 -0500", hash_original_method = "B16751A21C345B7821B79B349C2D4F51", hash_generated_method = "084FA6E885FE7584185FAF481605ED19")
@@ -140,7 +131,6 @@ public HttpRoute determineRoute(HttpHost target,
         return route;
     }
 
-
     /**
      * Determines a proxy for the given target.
      *
@@ -193,7 +183,6 @@ protected HttpHost determineProxy(HttpHost    target,
         return result;
     }
 
-
     /**
      * Obtains a host from an {@link InetSocketAddress}.
      *
@@ -204,6 +193,7 @@ protected HttpHost determineProxy(HttpHost    target,
      * <br/>
      * (TODO: determine format for IPv6 addresses, with or without [brackets])
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:33.719 -0500", hash_original_method = "E71E40B42A0A74E659F7570AD29A596D", hash_generated_method = "D753955B088170EDBEF92362EF8B671E")
     
 protected String getHost(InetSocketAddress isa) {
@@ -215,7 +205,6 @@ protected String getHost(InetSocketAddress isa) {
             isa.getHostName() : isa.getAddress().getHostAddress();
  
     }
-
 
     /*
      * Chooses a proxy from a list of available proxies.
@@ -275,7 +264,6 @@ protected Proxy chooseProxy(List<Proxy> proxies,
 
         return result;
     }
-
     
 }
 

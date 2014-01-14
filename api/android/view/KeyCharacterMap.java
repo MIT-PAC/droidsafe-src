@@ -297,6 +297,7 @@ private KeyCharacterMap(int deviceId, int ptr) {
      * @param metaState The meta key modifier state.
      * @return The associated character or combining accent, or 0 if none.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.796 -0500", hash_original_method = "9130955DF84228D9EE103102BFA3B17A", hash_generated_method = "95DBC8174377B728E7B9CD47D1EE7503")
     
 public int get(int keyCode, int metaState) {
@@ -362,6 +363,7 @@ public boolean getFallbackAction(int keyCode, int metaState,
      * @param keyCode The key code.
      * @return The associated numeric or symbolic character, or 0 if none.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.801 -0500", hash_original_method = "6DABCB0117446A751E56C996ECEF0096", hash_generated_method = "5F76969C0A8A0FCEADEFDE23621138C4")
     
 public char getNumber(int keyCode) {
@@ -380,6 +382,7 @@ public char getNumber(int keyCode) {
      * @param chars The array of matching characters to consider.
      * @return The matching associated character, or 0 if none.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.804 -0500", hash_original_method = "BB5B7EBB644AED6B3730BD9151F78F69", hash_generated_method = "1E3A1D349365A4F4AD6D1A185C63C70D")
     
 public char getMatch(int keyCode, char[] chars) {
@@ -396,6 +399,7 @@ public char getMatch(int keyCode, char[] chars) {
      * @param metaState The preferred meta key modifier state.
      * @return The matching associated character, or 0 if none.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.807 -0500", hash_original_method = "41D073D91107291EA05310027D49190C", hash_generated_method = "864F7C53F01A376E8CC647D468667FDF")
     
 public char getMatch(int keyCode, char[] chars, int metaState) {
@@ -414,6 +418,7 @@ public char getMatch(int keyCode, char[] chars, int metaState) {
      * @param keyCode The key code.
      * @return The display label character, or 0 if none (eg. for non-printing keys).
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.809 -0500", hash_original_method = "6DD5621B8D7662BB0D5EEF29B875BDA1", hash_generated_method = "D5B10648A10DEBE7C9F0083D1A39CEE2")
     
 public char getDisplayLabel(int keyCode) {
@@ -475,6 +480,7 @@ public char getDisplayLabel(int keyCode) {
      * @return An array of {@link KeyEvent} objects, or null if the given char array
      *         can not be generated using the current key character map.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.830 -0500", hash_original_method = "75C550EBD18DF5C6523832F5B0CC290D", hash_generated_method = "394B6C4094D20194266ECC24C5A8F978")
     
 public KeyEvent[] getEvents(char[] chars) {
@@ -518,6 +524,7 @@ public boolean isPrintingKey(int keyCode) {
      *
      * @return The keyboard type.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.835 -0500", hash_original_method = "BA716E54E3F5777C121637287957F9E5", hash_generated_method = "FE100288A2D20E0D214B24C766084AAA")
     
 public int getKeyboardType() {
@@ -556,6 +563,7 @@ public int getKeyboardType() {
      * @see {@link #MODIFIER_BEHAVIOR_CHORDED}
      * @see {@link #MODIFIER_BEHAVIOR_CHORDED_OR_TOGGLED}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.837 -0500", hash_original_method = "1B54B22E072CCA54689C03A0F5698E81", hash_generated_method = "C0C6529640A4872EA7A78E5ACE87222F")
     
 public int getModifierBehavior() {

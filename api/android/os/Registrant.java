@@ -118,6 +118,7 @@ public Message
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.118 -0500", hash_original_method = "7FEDB520AB82A5F00001E1B2C02807FF", hash_generated_method = "BAF4D643CA1CD68E776D5FD3B9B103E0")
     
 public Handler

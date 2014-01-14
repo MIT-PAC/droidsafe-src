@@ -12,10 +12,6 @@ import android.net.Uri;
 import android.util.Log;
 import android.widget.Toast;
 
-
-
-
-
 public final class SqliteWrapper {
 
     // FIXME: need to optimize this method.
@@ -36,6 +32,7 @@ public static void checkSQLiteException(Context context, SQLiteException e) {
         }
     }
 
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.619 -0500", hash_original_method = "28F6C2098BB23ED205ECF1E1CF2C7EF8", hash_generated_method = "E2F664B6D5B16A5EDFE3AC20C704D6A0")
     
 public static Cursor query(Context context, ContentResolver resolver, Uri uri,
@@ -86,6 +83,7 @@ public static int delete(Context context, ContentResolver resolver, Uri uri,
         }
     }
 
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.632 -0500", hash_original_method = "5C6932B23CF54246FCBC69F0B1787A10", hash_generated_method = "033BCF3796C657E5663BE2A203C22E9D")
     
 public static Uri insert(Context context, ContentResolver resolver,

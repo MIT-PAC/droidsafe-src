@@ -18,13 +18,8 @@ import libcore.io.Libcore;
 import libcore.io.Streams;
 import dalvik.system.CloseGuard;
 
-
-
-
-
 public class FileInputStream extends InputStream implements Closeable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.101 -0500", hash_original_field = "DC35B29CA7114A0CAB311A30B93CBE5F", hash_generated_field = "B11DAE17AB1D35227E8CB61CED7BC01D")
-
 
     private FileDescriptor fd;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.103 -0500", hash_original_field = "58BD5E983B42D5DA1EAF3358ED6D6916", hash_generated_field = "84D2D8F04948CA1C168D3A3584462F87")
@@ -34,7 +29,6 @@ public class FileInputStream extends InputStream implements Closeable {
 
     private FileChannel channel;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.108 -0500", hash_original_field = "759D7885648499D4F341C13F7C4AA861", hash_generated_field = "E7FAF2CA4E8E292A9B5FAAE3D4817EEC")
-
 
     private final CloseGuard guard = CloseGuard.get();
 
@@ -142,6 +136,7 @@ public FileInputStream(String path) throws FileNotFoundException {
      * Returns a read-only {@link FileChannel} that shares its position with
      * this stream.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.127 -0500", hash_original_method = "BB4E25A77FBA5E31003F6019B5643EE2", hash_generated_method = "2FB2F921FF08661F63F300CEEF489872")
     
 public FileChannel getChannel() {
@@ -156,6 +151,7 @@ public FileChannel getChannel() {
     /**
      * Returns the underlying file descriptor.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.129 -0500", hash_original_method = "7178DA6FA6DD367775EBAB657FD1BDA0", hash_generated_method = "BF99A80A25EF13693DBEFA2A53118A0A")
     
 public final FileDescriptor getFD() throws IOException {
@@ -194,7 +190,6 @@ public final FileDescriptor getFD() throws IOException {
             throw errnoException.rethrowAsIOException();
         }
     }
-
     
 }
 

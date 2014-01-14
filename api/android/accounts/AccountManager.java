@@ -65,6 +65,7 @@ public static Bundle sanitizeResult(Bundle result) {
      * @param context The {@link Context} to use when necessary
      * @return An {@link AccountManager} instance
      */
+    @DSSource({DSSourceKind.ACCOUNT_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:47.973 -0500", hash_original_method = "5160F1A7A4EC859C57D4D0FFF150F671", hash_generated_method = "5EF3D5664AA350D0DC486554FEE23BDB")
     
 public static AccountManager get(Context context) {
@@ -385,6 +386,7 @@ private Bundle internalGetResult(Long timeout, TimeUnit unit)
             throw new OperationCanceledException();
         }
 
+        @DSSource({DSSourceKind.ACCOUNT_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.129 -0500", hash_original_method = "7428E8716809F4A01AF7F726F040DE64", hash_generated_method = "00F9263FEFCB2E71541C4C0C76EA7412")
         
 public Bundle getResult()
@@ -392,6 +394,7 @@ public Bundle getResult()
             return internalGetResult(null, null);
         }
 
+        @DSSource({DSSourceKind.ACCOUNT_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.132 -0500", hash_original_method = "2DB61FA3CF370F8EAC405A022C9CA553", hash_generated_method = "9D7E637B2597AAA6B0B651988F82E2BB")
         
 public Bundle getResult(long timeout, TimeUnit unit)
@@ -614,6 +617,7 @@ private T internalGetResult(Long timeout, TimeUnit unit)
             throw new OperationCanceledException();
         }
 
+        @DSSource({DSSourceKind.ACCOUNT_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.197 -0500", hash_original_method = "F09B519E265A8A66FE763E800742348B", hash_generated_method = "9EBD0039162A8275DDAC5AE2D3DEF838")
         
 public T getResult()
@@ -621,6 +625,7 @@ public T getResult()
             return internalGetResult(null, null);
         }
 
+        @DSSource({DSSourceKind.ACCOUNT_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.200 -0500", hash_original_method = "50CBD7888960B26C4BF28EA57E206BB1", hash_generated_method = "02AF5BFF6F8E1D6BEF4E55776C8ECD52")
         
 public T getResult(long timeout, TimeUnit unit)
@@ -865,6 +870,7 @@ public String getUserData(final Account account, final String key) {
      *     authenticator known to the AccountManager service.  Empty (never
      *     null) if no authenticators are known.
      */
+    @DSSource({DSSourceKind.ACCOUNT_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:47.982 -0500", hash_original_method = "CE81752A69974A848970631715E35659", hash_generated_method = "748F931D39A4440F0C9729C8E4947ADB")
     
 public AuthenticatorDescription[] getAuthenticatorTypes() {
@@ -888,6 +894,7 @@ public AuthenticatorDescription[] getAuthenticatorTypes() {
      * @return An array of {@link Account}, one for each account.  Empty
      *     (never null) if no accounts have been added.
      */
+    @DSSource({DSSourceKind.ACCOUNT_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:47.984 -0500", hash_original_method = "CBAE32CDB06D92C44980C30430EF1CC0", hash_generated_method = "3C8716EFC8BE771BB2ED9E3800837556")
     
 public Account[] getAccounts() {
@@ -915,6 +922,7 @@ public Account[] getAccounts() {
      * @return An array of {@link Account}, one per matching account.  Empty
      *     (never null) if no accounts of the specified type have been added.
      */
+    @DSSource({DSSourceKind.ACCOUNT_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:47.987 -0500", hash_original_method = "182706774272102452F63339D769DBB2", hash_generated_method = "3E5A9E7DA6686259CE7A37D9087EAE06")
     
 public Account[] getAccountsByType(String type) {
@@ -1281,6 +1289,7 @@ public void setAuthToken(Account account, final String authTokenType, final Stri
      * @throws java.io.IOException if the authenticator experienced an I/O problem
      *     creating a new auth token, usually because of network trouble
      */
+    @DSSource({DSSourceKind.ACCOUNT_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.034 -0500", hash_original_method = "51CDD8704FBB21791536BE5C26E3F85E", hash_generated_method = "88EFABDB4E4E86089ADFDC19C5A43689")
     
 public String blockingGetAuthToken(Account account, String authTokenType,

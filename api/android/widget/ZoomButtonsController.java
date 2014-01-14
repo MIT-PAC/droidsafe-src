@@ -400,6 +400,7 @@ public void setVisible(boolean visible) {
      * @return The container of the zoom controls. It will be a layout that
      *         respects the gravity of a child's layout parameters.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:26.855 -0500", hash_original_method = "5F28A319C2D73660C6EEE12017C9EFC5", hash_generated_method = "FD6439A5E132E5A8EF11E18C5B1D675F")
     
 public ViewGroup getContainer() {
@@ -411,6 +412,7 @@ public ViewGroup getContainer() {
      *
      * @return The zoom controls view.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:26.857 -0500", hash_original_method = "7C1C4B956CF0AB08A097C4C4837C0B3D", hash_generated_method = "A076B1E7AAD5DD479A122098DC2C9293")
     
 public View getZoomControls() {

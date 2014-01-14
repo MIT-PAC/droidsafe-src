@@ -6,10 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.graphics.Rect;
 
-
-
-
-
 public class Gravity {
 
     /**
@@ -254,6 +250,7 @@ public static boolean isHorizontal(int gravity) {
      * @param layoutDirection The layout direction.
      * @return gravity converted to absolute (horizontal) values.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.357 -0500", hash_original_method = "37EF9EE7320B485FC2AA136E992B8620", hash_generated_method = "436CE65F63BDA46BD9A23D7B3143408A")
     
 public static int getAbsoluteGravity(int gravity, int layoutDirection) {

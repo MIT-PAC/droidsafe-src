@@ -5,13 +5,8 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class InvalidClassException extends ObjectStreamException {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.095 -0500", hash_original_field = "CE9324389034A94C9C02CEA22CFA031E", hash_generated_field = "D4E2FCFAAD906D95CB6BCEB015D3083F")
-
 
     private static final long serialVersionUID = -4333316296251054416L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.097 -0500", hash_original_field = "837D2AD61CB6DC3091BDAA053A2A4BD3", hash_generated_field = "B0C75E444ABFD30811DA4022885A4FE7")
@@ -57,6 +52,7 @@ public InvalidClassException(String className, String detailMessage) {
      * @return the detail message, possibly concatenated with the name of the
      *         class that caused the problem.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.106 -0500", hash_original_method = "F4D165DC6F6D9B89EF49B0E2E4445877", hash_generated_method = "C3EFF5E4545BA4F4FBD2F58729C9703A")
     
 @Override

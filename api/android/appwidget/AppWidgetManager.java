@@ -26,6 +26,7 @@ public class AppWidgetManager {
      * Get the AppWidgetManager instance to use for the supplied {@link android.content.Context
      * Context} object.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:55.836 -0500", hash_original_method = "B3DF940F92A954D76F9893B692CC4E1A", hash_generated_method = "FBD8819BDCBC06F139EF4AD791BDB899")
     
 public static AppWidgetManager getInstance(Context context) {
@@ -274,6 +275,7 @@ public void notifyAppWidgetViewDataChanged(int appWidgetId, int viewId) {
     /**
      * Return a list of the AppWidget providers that are currently installed.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:55.863 -0500", hash_original_method = "3DBC7B8000EA7185811CAD52683B35D0", hash_generated_method = "112169541D7F940EBE8A4B72359681AA")
     
 public List<AppWidgetProviderInfo> getInstalledProviders() {
@@ -303,6 +305,7 @@ public List<AppWidgetProviderInfo> getInstalledProviders() {
      * @return A appWidgetId.  If the appWidgetId has not been bound to a provider yet, or
      * you don't have access to that appWidgetId, null is returned.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:55.867 -0500", hash_original_method = "57B0FB21059F64A76489662CF361FBD9", hash_generated_method = "187662D62236692025123F6003B36470")
     
 public AppWidgetProviderInfo getAppWidgetInfo(int appWidgetId) {
@@ -400,6 +403,7 @@ public void unbindRemoteViewsService(int appWidgetId, Intent intent) {
      * @param provider The {@link android.content.BroadcastReceiver} that is the
      *            AppWidget provider to find appWidgetIds for.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:55.879 -0500", hash_original_method = "A8A608804967C37EB91DAF26AED4E71B", hash_generated_method = "EBB6C66BAE2A4CCABAEDA2DBEF6D8A88")
     
 public int[] getAppWidgetIds(ComponentName provider) {

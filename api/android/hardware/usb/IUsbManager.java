@@ -56,7 +56,8 @@ public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:50.069 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:50.069 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
             
 public java.lang.String getInterfaceDescriptor()
 {
@@ -112,7 +113,8 @@ _data.recycle();
 return _result;
 }
 /* Returns the currently attached USB accessory */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:50.079 -0500", hash_original_method = "ED1A2E11D50840822A2B7466F050282E", hash_generated_method = "5C7B3F33F40A64F5805C3C52E16313AF")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:50.079 -0500", hash_original_method = "ED1A2E11D50840822A2B7466F050282E", hash_generated_method = "5C7B3F33F40A64F5805C3C52E16313AF")
             
 public android.hardware.usb.UsbAccessory getCurrentAccessory() throws android.os.RemoteException
 {
@@ -139,7 +141,8 @@ return _result;
 /* Returns a file descriptor for communicating with the USB accessory.
      * This file descriptor can be used with standard Java file operations.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:50.082 -0500", hash_original_method = "E2A714CC6F90168343671E5DE8E2FBA3", hash_generated_method = "BEA9900ABDD828F788F45EFA6FF8AADC")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:50.082 -0500", hash_original_method = "E2A714CC6F90168343671E5DE8E2FBA3", hash_generated_method = "BEA9900ABDD828F788F45EFA6FF8AADC")
             
 public android.os.ParcelFileDescriptor openAccessory(android.hardware.usb.UsbAccessory accessory) throws android.os.RemoteException
 {
@@ -527,7 +530,8 @@ public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:50.048 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:50.048 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
         
 public android.os.IBinder asBinder()
 {

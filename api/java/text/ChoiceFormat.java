@@ -295,6 +295,7 @@ public void applyPattern(String template) {
      *
      * @return an array of format strings.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.829 -0500", hash_original_method = "989D9CABCA800EE4DFA0CFCD3DE77FA9", hash_generated_method = "5957C9D2934F4D28458980FA43F21FBD")
     
 public Object[] getFormats() {
@@ -307,6 +308,7 @@ public Object[] getFormats() {
      * @return the array of doubles which make up the limits of this {@code
      *         ChoiceFormat}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.832 -0500", hash_original_method = "290809530CC76A10C33738C53A5176B9", hash_generated_method = "4462B4ADD3CBA8B48052A73F3EA65136")
     
 public double[] getLimits() {

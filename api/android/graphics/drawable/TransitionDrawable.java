@@ -8,10 +8,6 @@ import android.content.res.Resources;
 import android.graphics.Canvas;
 import android.os.SystemClock;
 
-
-
-
-
 public class TransitionDrawable extends LayerDrawable implements Drawable.Callback {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:13.001 -0500", hash_original_field = "75C926C83BBFDB17FFBF28EC90F80F69", hash_generated_field = "1A633D536EE3F439C073F10EBA919A97")
 
@@ -26,7 +22,6 @@ public class TransitionDrawable extends LayerDrawable implements Drawable.Callba
 
     private int mTransitionState = TRANSITION_NONE;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:13.011 -0500", hash_original_field = "CAEDC7360129F326D2D0FC7BDB4F9CC0", hash_generated_field = "589AC6E67EEDC8ABFD20242996FB9ED2")
-
 
     private boolean mReverse;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:13.013 -0500", hash_original_field = "509D3898CD21540946E17C915247FD75", hash_generated_field = "B83C8955E1DA3FA0CE0799F8A1CE7B42")
@@ -158,7 +153,6 @@ public void reverseTransition(int duration) {
                 mOriginalDuration - (time - mStartTimeMillis));
         mTransitionState = TRANSITION_STARTING;
     }
-
     
     static class TransitionState extends LayerState {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:13.055 -0500", hash_original_method = "F1D0B45B3E25602A3478E0025FE64518", hash_generated_method = "F1D0B45B3E25602A3478E0025FE64518")
@@ -182,13 +176,13 @@ TransitionState(TransitionState orig, TransitionDrawable owner,
             return new TransitionDrawable(this, res);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:13.062 -0500", hash_original_method = "9E7D7C67EAC365FF19BD4971762612A5", hash_generated_method = "3AB30668ED270F2EDF2E0129C706FE4D")
         
 @Override
         public int getChangingConfigurations() {
             return mChangingConfigurations;
         }
-
         
     }
 

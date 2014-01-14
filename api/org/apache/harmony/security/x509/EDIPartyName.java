@@ -10,13 +10,7 @@ import org.apache.harmony.security.asn1.ASN1Type;
 import org.apache.harmony.security.asn1.BerInputStream;
 import org.apache.harmony.security.x501.DirectoryString;
 
-
-
-
-
-
 public final class EDIPartyName {
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.081 -0400", hash_original_field = "F09E30973AEF91130C504D57F6F7184E", hash_generated_field = "69033EAAAFF984476D66802FF78AA0DF")
 
@@ -29,6 +23,7 @@ public final class EDIPartyName {
             setOptional(0);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:02.135 -0500", hash_original_method = "80CB811341E4F5308AB1A53211E096F1", hash_generated_method = "66598F07319BC5B0DCB1BBFB0D72392B")
         
 @Override protected Object getDecodedObject(BerInputStream in) {
@@ -66,6 +61,7 @@ private EDIPartyName(String nameAssigner, String partyName, byte[] encoding) {
     /**
      * Returns ASN.1 encoded form of this X.509 EDIPartyName value.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:02.131 -0500", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "5349B65E746CD014BDA35ADFF927FD5B")
     
 public byte[] getEncoded() {

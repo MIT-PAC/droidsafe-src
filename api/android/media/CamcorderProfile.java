@@ -18,6 +18,7 @@ public class CamcorderProfile {
      * @param quality the target quality level for the camcorder profile
      * @see #get(int, int)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.192 -0500", hash_original_method = "5E5331AEC013D39A506E19EAE2F37AD8", hash_generated_method = "579756CAB675A5F5EA6467434B34CB80")
     
 public static CamcorderProfile get(int quality) {
@@ -71,6 +72,7 @@ public static CamcorderProfile get(int quality) {
      * @see #QUALITY_TIME_LAPSE_720P
      * @see #QUALITY_TIME_LAPSE_1080P
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.194 -0500", hash_original_method = "6B9D019B026CD2FEEBB04778D01FE79E", hash_generated_method = "568DB9C14F83B5F9D1AE11EA1CCBCFFC")
     
 public static CamcorderProfile get(int cameraId, int quality) {

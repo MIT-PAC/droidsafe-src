@@ -517,6 +517,7 @@ public int compareTo(Date date) {
      *
      * @deprecated use {@code Calendar.get(Calendar.DATE)}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:30.939 -0500", hash_original_method = "9CDBB71B4B3C803B1AA8EE69EFD3E0ED", hash_generated_method = "935712F01B21C8301B5FB1FE1C7B864C")
     
 @Deprecated
@@ -531,6 +532,7 @@ public int compareTo(Date date) {
      *
      * @deprecated use {@code Calendar.get(Calendar.DAY_OF_WEEK)}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:30.941 -0500", hash_original_method = "A7B9A9C37FFBE4D61CB1113163F9DEB3", hash_generated_method = "F6601B512E3AFB999150BC732806EE09")
     
 @Deprecated
@@ -545,6 +547,7 @@ public int compareTo(Date date) {
      *
      * @deprecated use {@code Calendar.get(Calendar.HOUR_OF_DAY)}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:30.943 -0500", hash_original_method = "E9FAB79941832FB5BB28A56A75132611", hash_generated_method = "C7916E717A7AB29533C2BB1C1C15BB2D")
     
 @Deprecated
@@ -559,6 +562,7 @@ public int compareTo(Date date) {
      *
      * @deprecated use {@code Calendar.get(Calendar.MINUTE)}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:30.946 -0500", hash_original_method = "905F61D3BDD6A004D6695A8C4C0A588F", hash_generated_method = "EF947D8DA80AAE9230D7A14A9CE6DA79")
     
 @Deprecated
@@ -573,6 +577,7 @@ public int compareTo(Date date) {
      *
      * @deprecated use {@code Calendar.get(Calendar.MONTH)}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:30.948 -0500", hash_original_method = "62BF86AE189F2A0680B405E29E252A59", hash_generated_method = "2D9B630B310E5C85500AB72FB2439BBC")
     
 @Deprecated
@@ -587,6 +592,7 @@ public int compareTo(Date date) {
      *
      * @deprecated use {@code Calendar.get(Calendar.SECOND)}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:30.950 -0500", hash_original_method = "21461173A59BCEF943A6FBABC454A724", hash_generated_method = "173D562C297A6F7392DE10703F167650")
     
 @Deprecated
@@ -600,6 +606,7 @@ public int compareTo(Date date) {
      *
      * @return the number of milliseconds since Jan. 1, 1970, midnight GMT.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:30.953 -0500", hash_original_method = "6634404A1A66BE1A7302C8A8E427A289", hash_generated_method = "7F40D28ACFD573A56785C7EF4B951249")
     
 public long getTime() {
@@ -614,6 +621,7 @@ public long getTime() {
      * @deprecated use
      *             {@code (Calendar.get(Calendar.ZONE_OFFSET) + Calendar.get(Calendar.DST_OFFSET)) / 60000}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:30.956 -0500", hash_original_method = "1B1108BADA7A1EB96631D5AF2C5C5E87", hash_generated_method = "F130D9FEDBA95D152E755077CD51E862")
     
 @Deprecated
@@ -629,6 +637,7 @@ public long getTime() {
      *
      * @deprecated use {@code Calendar.get(Calendar.YEAR) - 1900}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:30.959 -0500", hash_original_method = "C799A54F09693A95BB69288113BB6509", hash_generated_method = "601F96662502A243831F5D4144DFCA44")
     
 @Deprecated

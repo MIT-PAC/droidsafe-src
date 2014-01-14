@@ -31,6 +31,7 @@ public IBinder asBinder() {
                 return mRemote;
             }
 
+            @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:34.311 -0500", hash_original_method = "93FCABDFBB24901E6298DD02204BB971", hash_generated_method = "CF508C7C95AE462F1450A60346FD4C18")
             
 public String getInterfaceDescriptor() {
@@ -219,6 +220,7 @@ public int formatVolume(String mountPoint) throws RemoteException {
             /**
              * Returns an array of pids with open files on the specified path.
              */
+            @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:34.335 -0500", hash_original_method = "EF80E67EBD23D96C475A053A3A7D5616", hash_generated_method = "E92E9747B7D5F2BDAED70BEB80E268EC")
             
 public int[] getStorageUsers(String path) throws RemoteException {
@@ -241,6 +243,7 @@ public int[] getStorageUsers(String path) throws RemoteException {
             /**
              * Gets the state of a volume via its mountpoint.
              */
+            @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:34.338 -0500", hash_original_method = "17ED92B23E19B6A37033A4B1459E27D0", hash_generated_method = "C7FB1AF0CD559A71100F5026795AFAED")
             
 public String getVolumeState(String mountPoint) throws RemoteException {
@@ -442,6 +445,7 @@ public int renameSecureContainer(String oldId, String newId) throws RemoteExcept
             /*
              * Returns the filesystem path of a mounted secure container.
              */
+            @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:34.359 -0500", hash_original_method = "BDB886652E9A432DB3B2E893E4B41734", hash_generated_method = "BA2EE16EBFF6B4A8AA3F3E3C15EA098C")
             
 public String getSecureContainerPath(String id) throws RemoteException {
@@ -464,6 +468,7 @@ public String getSecureContainerPath(String id) throws RemoteException {
             /**
              * Gets an Array of currently known secure container IDs
              */
+            @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:34.361 -0500", hash_original_method = "567890A8612D287E24312EFA9D0BF1EA", hash_generated_method = "8899C08C252D1BF00161208617A55885")
             
 public String[] getSecureContainerList() throws RemoteException {
@@ -605,6 +610,7 @@ public boolean isObbMounted(String filename) throws RemoteException {
             /**
              * Gets the path to the mounted Opaque Binary Blob (OBB).
              */
+            @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:34.378 -0500", hash_original_method = "C39211C64ADEB0A0D9BA593373386E8B", hash_generated_method = "50AEC4E4B3ADC2C34C549A11EE93DCB7")
             
 public String getMountedObbPath(String filename) throws RemoteException {
@@ -645,6 +651,7 @@ public boolean isExternalStorageEmulated() throws RemoteException {
                 return _result;
             }
 
+            @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:34.384 -0500", hash_original_method = "ED1E0407894A7EB5D0D0E56D6C14BE92", hash_generated_method = "47F0800E663632789B8D6D2CB79FFC6F")
             
 public int getEncryptionState() throws RemoteException {
@@ -765,6 +772,7 @@ public Parcelable[] getVolumeList() throws RemoteException {
             /*
              * Returns the filesystem path of a mounted secure container.
              */
+            @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:34.400 -0500", hash_original_method = "25AEC33191B8CCE7D20A608F91457F74", hash_generated_method = "15006C2E10D6DEBD21717D7A5831DA33")
             
 public String getSecureContainerFilesystemPath(String id) throws RemoteException {
@@ -911,6 +919,7 @@ public Stub() {
             attachInterface(this, DESCRIPTOR);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:34.498 -0500", hash_original_method = "2E6ED031FA2AB47CC2982E0232E351E2", hash_generated_method = "5E3B69CCD103133228ACADBBDEF1CE7E")
         
 public IBinder asBinder() {

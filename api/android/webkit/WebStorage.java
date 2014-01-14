@@ -21,6 +21,7 @@ public final class WebStorage {
      * Get the global instance of WebStorage.
      * @return A single instance of WebStorage.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.312 -0500", hash_original_method = "13124F4F94E405768D8E20607A9780AD", hash_generated_method = "E3D9650EA7BD47A9BD42127B636C3AC6")
     
 public static WebStorage getInstance() {
@@ -150,6 +151,7 @@ private Origin(String origin) {
          * of 0 and hence toString() == 'http://www.google.com' for both.
          * @return The origin string.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.266 -0500", hash_original_method = "1C35B3C80693DCFAD3BBB071D3FEEF91", hash_generated_method = "FE80DFECDAB4568B003CCA3FED55809C")
         
 public String getOrigin() {
@@ -160,6 +162,7 @@ public String getOrigin() {
          * Returns the quota for this origin's HTML5 database.
          * @return The quota in bytes.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.268 -0500", hash_original_method = "85A4ADA77B01EE5A270890AB8ED69D00", hash_generated_method = "6FE1683C4FD2FD1286558D60FB46A1DE")
         
 public long getQuota() {
@@ -170,6 +173,7 @@ public long getQuota() {
          * Returns the usage for this origin's HTML5 database.
          * @return The usage in bytes.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.270 -0500", hash_original_method = "9EBBDD3C0652D213E94F799A53008143", hash_generated_method = "7B22B0A723E985BC0449B81BAB103C25")
         
 public long getUsage() {

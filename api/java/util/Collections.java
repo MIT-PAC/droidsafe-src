@@ -885,6 +885,7 @@ CopiesList(int length, E object) {
             return n;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:49.806 -0500", hash_original_method = "857A70B35DA7146CF7ADC484EC4AABC8", hash_generated_method = "479F877B0ABD29E428BD444AFA701F75")
         
 @Override public E get(int location) {
@@ -919,6 +920,7 @@ CopiesList(int length, E object) {
             return 0;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:49.819 -0500", hash_original_method = "F59F44D1664BC2EE59D5A9B30D144285", hash_generated_method = "6E068D6033E2420F6FF38CC2D9FCD252")
         
 @Override public Object get(int location) {
@@ -999,6 +1001,7 @@ private Object readResolve() {
             return EMPTY_SET;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:49.855 -0500", hash_original_method = "59A1188DDD48CFFB749850DC2DA09C1D", hash_generated_method = "570E7ABE6D948578647E0FFAB87A1F36")
         
 @Override public Object get(Object key) {
@@ -1185,6 +1188,7 @@ SingletonList(E object) {
             return element == null ? object == null : element.equals(object);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:49.952 -0500", hash_original_method = "1C6E7D1EB082158D5E00EA29E883A612", hash_generated_method = "265E1E0AA2C90FA02DBC1C66E1F2328A")
         
 @Override public E get(int location) {
@@ -1231,6 +1235,7 @@ SingletonMap(K key, V value) {
             return v == null ? value == null : v.equals(value);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:49.977 -0500", hash_original_method = "8C587096F5E6029DBB187C58CF22D158", hash_generated_method = "29AFCEA63D7956479E67380AE46882D5")
         
 @Override public V get(Object key) {
@@ -1561,6 +1566,7 @@ SynchronizedList(List<E> l, Object mutex) {
             }
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.111 -0500", hash_original_method = "5B64BB89A58DED71DBA9907C06BC2CBB", hash_generated_method = "58A747A9DBAF35C7C2B775792AB429D5")
         
 @Override public E get(int location) {
@@ -1767,6 +1773,7 @@ SynchronizedMap(Map<K, V> map, Object mutex) {
             }
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.172 -0500", hash_original_method = "80DF7D6FED6980DF61457325CD64503D", hash_generated_method = "50815093A04A580D31E8858D3FC6BAC6")
         
 @Override public V get(Object key) {
@@ -2270,6 +2277,7 @@ UnmodifiableList(List<E> l) {
             return list.equals(object);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.383 -0500", hash_original_method = "DFB24286AA0C5C6BF58031CA4ED7CDCB", hash_generated_method = "1C2B1EC2CEC6DEB1BF019184469848C5")
         
 @Override public E get(int location) {
@@ -2457,6 +2465,7 @@ UnmodifiableMap(Map<K, V> map) {
             return m.equals(object);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.537 -0500", hash_original_method = "B8FE254B61C57EC3A6DCE539976DA268", hash_generated_method = "AE77720B4866A0DA3BC89EC52150A652")
         
 @Override public V get(Object key) {
@@ -2594,12 +2603,14 @@ UnmodifiableMapEntry(Map.Entry<K, V> entry) {
                     return mapEntry.equals(object);
                 }
 
+                @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.475 -0500", hash_original_method = "4DDB57034C15C2636BC5A8AFB2B3C75A", hash_generated_method = "225457706CF0CB433F1F801AF96865CE")
                 
 @Override public K getKey() {
                     return mapEntry.getKey();
                 }
 
+                @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.478 -0500", hash_original_method = "EA1063FCD9D2F699A9610E0A7FDC81FD", hash_generated_method = "A0772F3488EAF611EED535B5C2598DB3")
                 
 @Override public V getValue() {
@@ -3276,6 +3287,7 @@ public CheckedList(List<E> l, Class<E> type) {
             return l.addAll(index, (List<E>) Arrays.asList(array));
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.999 -0500", hash_original_method = "12BB9FAB0B921E0E98205977740A217D", hash_generated_method = "0020BDB86965DE10A3879CEF40A14187")
         
 @Override public E get(int index) {
@@ -3429,6 +3441,7 @@ private CheckedMap(Map<K, V> m, Class<K> keyType, Class<V> valueType) {
             return m.containsValue(value);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:51.077 -0500", hash_original_method = "B8FE254B61C57EC3A6DCE539976DA268", hash_generated_method = "AE77720B4866A0DA3BC89EC52150A652")
         
 @Override public V get(Object key) {
@@ -3524,12 +3537,14 @@ public CheckedEntry(Map.Entry<K, V> e, Class<V> valueType) {
                 this.valueType = valueType;
             }
 
+            @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:51.117 -0500", hash_original_method = "10D87C621F2656D3DA7DCE234A4C3FAC", hash_generated_method = "8702435EE7714DABAA0C679E20A72854")
             
 @Override public K getKey() {
                 return e.getKey();
             }
 
+            @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:51.120 -0500", hash_original_method = "8EF21B2292AA31AAE181B3282F3F0262", hash_generated_method = "237F2C01626B61F21501FB012D289ABA")
             
 @Override public V getValue() {

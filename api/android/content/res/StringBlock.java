@@ -168,6 +168,7 @@ StringBlock(int obj, boolean useSparse) {
                 + ": " + nativeGetSize(mNative));
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:04.492 -0500", hash_original_method = "CA0D40E41A55E0E3360E62E713B76B88", hash_generated_method = "805F196009A2372027DB8FB8150F7D6F")
     
 public CharSequence get(int idx) {

@@ -179,6 +179,7 @@ public boolean copyMessageToIccEf(int status, byte[] pdu, byte[] smsc) {
     /**
      * Retrieves all messages currently stored on RUIM.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:02.506 -0500", hash_original_method = "2942961FDF8C69DB3912CFC67A52E698", hash_generated_method = "564225517A7967A3A00485EC8C906EB8")
     
 public List<SmsRawData> getAllMessagesFromIccEf() {

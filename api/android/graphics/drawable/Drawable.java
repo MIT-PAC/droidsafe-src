@@ -69,6 +69,7 @@ public static int resolveOpacity(int op1, int op2) {
     /**
      * Create a drawable from an inputstream
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.996 -0500", hash_original_method = "F698992CDA7CE4CFA6270F08869E33EB", hash_generated_method = "EA31CB41043D98187A4334DCA5BDDCB4")
     
 public static Drawable createFromStream(InputStream is, String srcName) {
@@ -79,6 +80,7 @@ public static Drawable createFromStream(InputStream is, String srcName) {
      * Create a drawable from an inputstream, using the given resources and
      * value to determine density information.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.998 -0500", hash_original_method = "6539199B7E5EF78E3B150794D858A2C9", hash_generated_method = "D8B91DF7BE5D083150AB363B8A4B7E47")
     
 public static Drawable createFromResourceStream(Resources res, TypedValue value,
@@ -133,6 +135,7 @@ public static Drawable createFromResourceStream(Resources res, TypedValue value,
      * create resources in XML, see
      * <a href="{@docRoot}guide/topics/resources/drawable-resource.html">Drawable Resources</a>.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.003 -0500", hash_original_method = "86675DFFF0A0A811727E3034212032EE", hash_generated_method = "1C83BEE8B00F8FC24EADC94BA921020F")
     
 public static Drawable createFromXml(Resources r, XmlPullParser parser)
@@ -339,6 +342,7 @@ public final void copyBounds(Rect bounds) {
      *
      * @return A copy of the drawable's bounds
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.909 -0500", hash_original_method = "A623AF26CC98262C126F58F99B918C3F", hash_generated_method = "8398153568D8B0C1C8AE601AF1652DDD")
     
 public final Rect copyBounds() {
@@ -360,6 +364,7 @@ public final Rect copyBounds() {
      * @see #copyBounds()
      * @see #copyBounds(android.graphics.Rect) 
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.912 -0500", hash_original_method = "F9C4E095C08A855B9547E5FC046C50BF", hash_generated_method = "BB0D4C947EFB311B6298FBD3B2491C35")
     
 public final Rect getBounds() {
@@ -398,6 +403,7 @@ public void setChangingConfigurations(int configs) {
      *
      * @see android.content.res.Configuration
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.917 -0500", hash_original_method = "9E7D7C67EAC365FF19BD4971762612A5", hash_generated_method = "1EFD981CB6D64D2240E5805425A8136B")
     
 public int getChangingConfigurations() {
@@ -614,6 +620,7 @@ public boolean setState(final int[] stateSet) {
      * Some drawables may modify their imagery based on the selected state.
      * @return An array of resource Ids describing the current state.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.954 -0500", hash_original_method = "2C3685292135F2FEA5B926C5A0764B84", hash_generated_method = "D1403FC1339289634B9EBC210DF55847")
     
 public int[] getState() {
@@ -635,6 +642,7 @@ public void jumpToCurrentState() {
      *         {@link StateListDrawable} and {@link LevelListDrawable} this will be the child drawable
      *         currently in use.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.958 -0500", hash_original_method = "00D08FCE0657F40CBD93DF1CB810B766", hash_generated_method = "A9832292CF51056A0946F9B8A2FBC09B")
     
 public Drawable getCurrent() {
@@ -672,6 +680,7 @@ public final boolean setLevel(int level) {
      *
      * @return int Current level, from 0 (minimum) to 10000 (maximum).
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.964 -0500", hash_original_method = "3688C6710C4CB9729612AA02E692BC0A", hash_generated_method = "920139CD38512EC2764B3D291ADD9FB8")
     
 public final int getLevel() {
@@ -750,6 +759,7 @@ public abstract int getOpacity();
      * report, else a Region holding the parts of the Drawable's bounds that
      * are transparent.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.975 -0500", hash_original_method = "6885EC41EEEA48BF379C9186E23112DE", hash_generated_method = "0957E709FBCC66345B992BB3BA42C3DF")
     
 public Region getTransparentRegion() {
@@ -790,6 +800,7 @@ protected void onBoundsChange(Rect bounds) {}
      * Return the intrinsic width of the underlying drawable object.  Returns
      * -1 if it has no intrinsic width, such as with a solid color.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.983 -0500", hash_original_method = "EB5466611B82CCCED48E9C76B5992F82", hash_generated_method = "5707369824F06C6C8C5FEA2B9FD95BE8")
     
 public int getIntrinsicWidth() {
@@ -800,6 +811,7 @@ public int getIntrinsicWidth() {
      * Return the intrinsic height of the underlying drawable object. Returns
      * -1 if it has no intrinsic height, such as with a solid color.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.985 -0500", hash_original_method = "4249F2736881F978DCEB3B683D79E5C9", hash_generated_method = "6747FB53BFD3B8723F7B12E72210E2E9")
     
 public int getIntrinsicHeight() {
@@ -815,6 +827,7 @@ public int getIntrinsicHeight() {
      * @return The minimum width suggested by this Drawable. If this Drawable
      *         doesn't have a suggested minimum width, 0 is returned.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.987 -0500", hash_original_method = "5035EEEA88B512A7AC30F75048C2F85A", hash_generated_method = "183DCB9F3F0F8DF0D0212348E7E9BD2A")
     
 public int getMinimumWidth() {
@@ -831,6 +844,7 @@ public int getMinimumWidth() {
      * @return The minimum height suggested by this Drawable. If this Drawable
      *         doesn't have a suggested minimum height, 0 is returned.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.990 -0500", hash_original_method = "FB4CD88D7DE1F0713A1472841A364838", hash_generated_method = "5B123336F6C1DD1678925B456108326F")
     
 public int getMinimumHeight() {
@@ -845,6 +859,7 @@ public int getMinimumHeight() {
      * actually has a padding, else false. When false is returned, the padding
      * is always set to 0.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.992 -0500", hash_original_method = "3EEC3E25F33F4D98A0E1482CE3BAC48C", hash_generated_method = "E4E30BC5A2B586C28356FBCCF2EDD2FC")
     
 public boolean getPadding(Rect padding) {
@@ -866,6 +881,7 @@ public boolean getPadding(Rect padding) {
      * @see ConstantState
      * @see #getConstantState()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.994 -0500", hash_original_method = "4655CA169BE542FE87BF20A0D63A5DAC", hash_generated_method = "EA3B8D5BED8B8DA7D11E65B56B105C84")
     
 public Drawable mutate() {

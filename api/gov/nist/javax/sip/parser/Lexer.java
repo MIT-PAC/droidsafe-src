@@ -88,10 +88,6 @@ import javax.sip.header.ViaHeader;
 import javax.sip.header.WWWAuthenticateHeader;
 import javax.sip.header.WarningHeader;
 
-
-
-
-
 public class Lexer extends LexerCore {
     /**
      * get the header name of the line
@@ -99,6 +95,7 @@ public class Lexer extends LexerCore {
      * @return the header name (stuff before the :) bug fix submitted by
      *         zvali@dev.java.net
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:42.281 -0500", hash_original_method = "C8B6FD99710F2449ED076653B227A774", hash_generated_method = "27808AE9787F598DA386D98DA07F8065")
     
 public static String getHeaderName(String line) {
@@ -121,6 +118,7 @@ public static String getHeaderName(String line) {
      *
      * @return String
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:42.287 -0500", hash_original_method = "9DC8857911D30E58533B35728C0E3879", hash_generated_method = "93373B7369FD85B2C55A89B22F981DB3")
     
 public static String getHeaderValue(String line) {
@@ -365,7 +363,6 @@ public void selectLexer(String lexerName) {
 
                     // end //
 
-
                 } else if (lexerName.equals("status_lineLexer")) {
                     addKeyword(TokenNames.SIP.toUpperCase(), TokenTypes.SIP);
                 } else if (lexerName.equals("request_lineLexer")) {
@@ -378,7 +375,6 @@ public void selectLexer(String lexerName) {
             }
         }
     }
-
     
 }
 

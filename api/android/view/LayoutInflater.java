@@ -143,6 +143,7 @@ public abstract LayoutInflater cloneInContext(Context newContext);
      * Return the context we are running in, for access to resources, class
      * loader, etc.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.772 -0500", hash_original_method = "4F4EBC54D108D66F416C93B46580E117", hash_generated_method = "BA026F6873AF9B17E96AB49AFB6CEE03")
     
 public Context getContext() {
@@ -323,6 +324,7 @@ public View inflate(XmlPullParser parser, ViewGroup root) {
      *         attachToRoot is true, this is root; otherwise it is the root of
      *         the inflated XML file.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.802 -0500", hash_original_method = "9DFC9AE5F080C22C20FBC66EE3D8715B", hash_generated_method = "61A1FCF5FE21DE83BA36DB488F2EE8AC")
     
 public View inflate(XmlPullParser parser, ViewGroup root, boolean attachToRoot) {
@@ -677,6 +679,7 @@ private void failNotAllowed(String name, String prefix, AttributeSet attrs) {
      * 
      * @return View The View created.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.811 -0500", hash_original_method = "9A9783E7AF685525083052EAFC6937D8", hash_generated_method = "EA4AB360C7AC099C3A013E5CC0638751")
     
 protected View onCreateView(String name, AttributeSet attrs)
@@ -696,6 +699,7 @@ protected View onCreateView(String name, AttributeSet attrs)
      *
      * @return View The View created.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.813 -0500", hash_original_method = "EEF2BD4B979EFD4F0FBDCDB52C08D7B2", hash_generated_method = "9848BD8BC8DA93C4C1B59E99FB34666B")
     
 protected View onCreateView(View parent, String name, AttributeSet attrs)
@@ -706,6 +710,7 @@ protected View onCreateView(View parent, String name, AttributeSet attrs)
     /*
      * default visibility so the BridgeInflater can override it.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.816 -0500", hash_original_method = "42E00CE52BE01D0BF7040FF60139A865", hash_generated_method = "42E00CE52BE01D0BF7040FF60139A865")
     
 View createViewFromTag(View parent, String name, AttributeSet attrs) {

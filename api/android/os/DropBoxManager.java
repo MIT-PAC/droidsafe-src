@@ -167,16 +167,19 @@ public void close() {
         }
 
         /** @return the tag originally attached to the entry. */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.389 -0500", hash_original_method = "ED26754F6A82B43F30EAE698B7941323", hash_generated_method = "0B538D6B7E10340EACEB66882A3752E4")
         
 public String getTag() { return mTag; }
 
         /** @return time when the entry was originally created. */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.392 -0500", hash_original_method = "6C399926D10F83AEDA9A5ADCC6A5D3A1", hash_generated_method = "4EEBC7115EF2483FED0898219C32EC53")
         
 public long getTimeMillis() { return mTimeMillis; }
 
         /** @return flags describing the content returned by {@link #getInputStream()}. */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.394 -0500", hash_original_method = "DEBA147F1626153ABBF4AEA4FEEBC80F", hash_generated_method = "A232C7C0C5207087EB20025BE13ADFF2")
         
 public int getFlags() { return mFlags & ~IS_GZIPPED; }  // getInputStream() decompresses.
@@ -185,6 +188,7 @@ public int getFlags() { return mFlags & ~IS_GZIPPED; }  // getInputStream() deco
          * @param maxBytes of string to return (will truncate at this length).
          * @return the uncompressed text contents of the entry, null if the entry is not text.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.397 -0500", hash_original_method = "5115D4296A1E9A49B9B7627B57AD3F2E", hash_generated_method = "0AE4E31616817EE423844A6965610297")
         
 public String getText(int maxBytes) {
@@ -210,6 +214,7 @@ public String getText(int maxBytes) {
         }
 
         /** @return the uncompressed contents of the entry, or null if the contents were lost */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.399 -0500", hash_original_method = "1138A2AC2CDA63F5FD2C1DAD635BB1B0", hash_generated_method = "4C74AC11C608A83FA2239CD66FDB48B6")
         
 public InputStream getInputStream() throws IOException {
@@ -339,6 +344,7 @@ public void addFile(String tag, File file, int flags) throws IOException {
      * @param tag that would be used in {@link #addText} or {@link #addFile}
      * @return whether events with that tag would be accepted
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.431 -0500", hash_original_method = "0FE06F2CE6966672337D3755F0FF0CD0", hash_generated_method = "8B784C203CC3281453FD048DD2F4F71B")
     
 public boolean isTagEnabled(String tag) {

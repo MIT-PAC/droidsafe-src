@@ -341,6 +341,7 @@ public CalendarView(Context context, AttributeSet attrs, int defStyle) {
      *
      * @return The minimal supported date.
      */
+    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.030 -0500", hash_original_method = "967B291ED0BCED68F7E3E5A0CEF03695", hash_generated_method = "6734926BF8983D647D6BC30605DCDB84")
     
 public long getMinDate() {
@@ -394,6 +395,7 @@ public void setMinDate(long minDate) {
      *
      * @return The maximal supported date.
      */
+    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.035 -0500", hash_original_method = "4B53E128D2B815FDD1432B3F6B079B5B", hash_generated_method = "E5060BEB16EBF1E8166F59AFB57105AB")
     
 public long getMaxDate() {
@@ -547,12 +549,14 @@ public void setSelectedDay(Calendar selectedDay) {
         /**
          * @return The selected day of month.
          */
+        @DSSource({DSSourceKind.CALENDAR_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.128 -0500", hash_original_method = "B5E95894B654555C190BA20C07877305", hash_generated_method = "739A34B9EED51934F039D48AA8C8863E")
         
 public Calendar getSelectedDay() {
             return mSelectedDate;
         }
 
+        @DSSource({DSSourceKind.CALENDAR_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.130 -0500", hash_original_method = "F04F5B9FBE7B2AAA41BE9F0558597E2D", hash_generated_method = "438C76CA078274D90EF9AA238DA13862")
         
 @Override
@@ -560,6 +564,7 @@ public Calendar getSelectedDay() {
             return mTotalWeekCount;
         }
 
+        @DSSource({DSSourceKind.CALENDAR_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.132 -0500", hash_original_method = "AE0D3BF5CEF608E0D2B9C47624E8B8EC", hash_generated_method = "5E5284BEBB44E47AB169D2002D85C125")
         
 @Override
@@ -567,6 +572,7 @@ public Calendar getSelectedDay() {
             return null;
         }
 
+        @DSSource({DSSourceKind.CALENDAR_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.135 -0500", hash_original_method = "7144EF990F660E75AA61001CF21A1CD5", hash_generated_method = "82702E9A3501EE6841B2C5A334199C16")
         
 @Override
@@ -574,6 +580,7 @@ public Calendar getSelectedDay() {
             return position;
         }
 
+        @DSSource({DSSourceKind.CALENDAR_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.137 -0500", hash_original_method = "381E4A6A7165FC308D77C676467DC158", hash_generated_method = "93B5972012CD113CFA78BF5FC05A9452")
         
 @Override
@@ -812,6 +819,7 @@ private void setPaintProperties() {
          *
          * @return The month the first day of this view is in.
          */
+        @DSSource({DSSourceKind.CALENDAR_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.201 -0500", hash_original_method = "132ACA3161A5E95F30BDE89FA7E699D9", hash_generated_method = "7B6C4B1ADFDF2C8DF8618B843E0B8BA4")
         
 public int getMonthOfFirstWeekDay() {
@@ -823,6 +831,7 @@ public int getMonthOfFirstWeekDay() {
          *
          * @return The month the last day of this view is in
          */
+        @DSSource({DSSourceKind.CALENDAR_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.203 -0500", hash_original_method = "CD3B8D9B4D0AF03A28010706DE17FBAB", hash_generated_method = "120C57C35D375E7A4AD5875E48287763")
         
 public int getMonthOfLastWeekDay() {
@@ -834,6 +843,7 @@ public int getMonthOfLastWeekDay() {
          *
          * @return The first day in the view.
          */
+        @DSSource({DSSourceKind.CALENDAR_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.205 -0500", hash_original_method = "58CF666CFDF77BB5B426C92097C0AA79", hash_generated_method = "8AEDB2B9678B564C11FA5D3B9011E488")
         
 public Calendar getFirstDay() {
@@ -1031,6 +1041,7 @@ public void setShowWeekNumber(boolean showWeekNumber) {
      *
      * @return True if showing the week number.
      */
+    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.041 -0500", hash_original_method = "466B93651CABC20F69979D67C7EC6971", hash_generated_method = "DEBCA43DE40AE5AA3E93CB98D5FCCA55")
     
 public boolean getShowWeekNumber() {
@@ -1050,6 +1061,7 @@ public boolean getShowWeekNumber() {
      * @see Calendar#SATURDAY
      * @see Calendar#SUNDAY
      */
+    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.043 -0500", hash_original_method = "13AE9B7D254FD4442860EE49493A72AE", hash_generated_method = "09B80B36285D088C093DCBE570293DA9")
     
 public int getFirstDayOfWeek() {
@@ -1098,6 +1110,7 @@ public void setOnDateChangeListener(OnDateChangeListener listener) {
      *
      * @return The selected date.
      */
+    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.050 -0500", hash_original_method = "1C8908BABBBBE904441B712A0F71BAD8", hash_generated_method = "79AEBEC017161384AB6FF18EC851F2B0")
     
 public long getDate() {

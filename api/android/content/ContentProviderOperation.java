@@ -210,6 +210,7 @@ public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(mYieldAllowed ? 1 : 0);
     }
 
+    @DSSource({DSSourceKind.FILE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.133 -0500", hash_original_method = "225259AA593B6A59F476A2C569F1B075", hash_generated_method = "A1B996311564AA1668AF8C1FC49818A0")
     
 public Uri getUri() {
@@ -223,6 +224,7 @@ public boolean isYieldAllowed() {
     }
 
     /** @hide exposed for unit tests */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.137 -0500", hash_original_method = "E9AD68D49398B2B9D86D12D221B14582", hash_generated_method = "32498FCDA3AC1E9A676800B51A331335")
     
 public int getType() {
@@ -492,6 +494,7 @@ public Builder withYieldAllowed(boolean yieldAllowed) {
      * @throws OperationApplicationException thrown if either the insert fails or
      * if the number of rows affected didn't match the expected count
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.145 -0500", hash_original_method = "2009EEC78D1FCDD51A500D4742040E7C", hash_generated_method = "C3DC8B45984359AE4D4E99DAEB3740CA")
     
 public ContentProviderResult apply(ContentProvider provider, ContentProviderResult[] backRefs,

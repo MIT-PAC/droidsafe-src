@@ -18,11 +18,6 @@ import libcore.io.MemoryMappedFile;
 
 import org.apache.harmony.luni.internal.util.TimezoneGetter;
 
-
-
-
-
-
 public final class ZoneInfoDB {
 
     /**
@@ -174,12 +169,14 @@ private static TimeZone makeTimeZone(String id) throws IOException {
         return new ZoneInfo(id, transitions, type, gmtOffsets, isDsts);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.750 -0500", hash_original_method = "659D0293BDF51E54E117CD011B6D5569", hash_generated_method = "4E4D93DDC3024AC09E6B60611D266549")
     
 public static String[] getAvailableIDs() {
         return ids.clone();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.752 -0500", hash_original_method = "91B44B1DD587FF59D37E00614C5C4739", hash_generated_method = "B9911AE44E980EDBB56D169BD081B9A3")
     
 public static String[] getAvailableIDs(int rawOffset) {
@@ -192,6 +189,7 @@ public static String[] getAvailableIDs(int rawOffset) {
         return matches.toArray(new String[matches.size()]);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.755 -0500", hash_original_method = "AF44A55E6688F7315D6A27422073E89E", hash_generated_method = "FDDDE13339454F68759F52C88F9D59B8")
     
 public static TimeZone getSystemDefault() {
@@ -223,6 +221,7 @@ public static TimeZone getTimeZone(String id) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.760 -0500", hash_original_method = "6B53A6B84DE76124A7D6E4541A96BDC2", hash_generated_method = "C17ED04FA3DE2D235A10F84B36CF8827")
     
 public static String getVersion() {
@@ -240,10 +239,8 @@ public static String getVersion() {
     private static final String INDEX_FILE_NAME = ZONE_DIRECTORY_NAME + "zoneinfo.idx";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.716 -0500", hash_original_field = "D74064F1D3C26A0EAAF918907141DE73", hash_generated_field = "74DA88035CA3F88FC209C28C65A412F9")
 
-
     private static final Object LOCK = new Object();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.719 -0500", hash_original_field = "4DD44DF12EC46BFBF873E89F996D361D", hash_generated_field = "14C7FABB4A49B8997B9A7A85BB588B5F")
-
 
     private static final String VERSION = readVersion();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.722 -0500", hash_original_field = "904CF02D60C2F852BA2909B4024131BC", hash_generated_field = "8F51E99D7858B694EBA77A8D099C5E8A")

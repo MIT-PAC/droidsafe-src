@@ -253,6 +253,7 @@ public abstract int[] getAdnRecordsSize(int efid);
      * @param efid the EF id of a ADN-like ICC
      * @return List of AdnRecord
      */
+    @DSSource({DSSourceKind.CONTACT_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:34.164 -0500", hash_original_method = "2EC5B47F5C71460FB1C246E071649E17", hash_generated_method = "14818A383B7131A42ED5AE36C068F8A8")
     
 public List<AdnRecord> getAdnRecordsInEf(int efid) {

@@ -124,6 +124,7 @@ public int size() {
         return elements.length;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:17.942 -0500", hash_original_method = "07C72EA93D8BC7AB1EE5326762E05E69", hash_generated_method = "B8501BC5823BDF19EB13EA69078CA5AF")
     
 @SuppressWarnings("unchecked")
@@ -503,6 +504,7 @@ private void removeRange(int from, int to) {
         elements = newElements;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:18.029 -0500", hash_original_method = "223CD20A6350F975434ED49A9EB8E646", hash_generated_method = "1C0E5B506CC6D74BA562E67AA4D5265F")
     
 final Object[] getArray() {
@@ -546,6 +548,7 @@ public CowSubList(Object[] expectedElements, int from, int to) {
             return slice.from == slice.to;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:18.044 -0500", hash_original_method = "E9398BCB1605EBC5A566CA332DEC078B", hash_generated_method = "DBC29EA8CCFF76F6BD9D84C497AB8BE7")
         
 @SuppressWarnings("unchecked")

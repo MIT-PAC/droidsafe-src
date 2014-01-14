@@ -73,6 +73,7 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:19.129 -0500", hash_original_method = "91A12202891A2BC9DA6AA80DC6DB676A", hash_generated_method = "4566B9A48CC006709F4BC578A29D61F9")
     
 @Override
@@ -232,6 +233,7 @@ public void setExitFadeDuration(int ms) {
         return false;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:19.158 -0500", hash_original_method = "DE0AA10FF6502448C6D350B4086CE53A", hash_generated_method = "B156F18E6F1E5931B390C1C93F008391")
     
 @Override
@@ -242,6 +244,7 @@ public void setExitFadeDuration(int ms) {
         return mCurrDrawable != null ? mCurrDrawable.getIntrinsicWidth() : -1;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:19.160 -0500", hash_original_method = "FA2E61AFB9D6236C0B64D53932A9175C", hash_generated_method = "4C1235EC697D9AD248FCF617EDC4122E")
     
 @Override
@@ -252,6 +255,7 @@ public void setExitFadeDuration(int ms) {
         return mCurrDrawable != null ? mCurrDrawable.getIntrinsicHeight() : -1;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:19.162 -0500", hash_original_method = "758162C9EFC5A9F0A72A174E63E68436", hash_generated_method = "2324F511816189E9A57F602972DCFA6C")
     
 @Override
@@ -262,6 +266,7 @@ public void setExitFadeDuration(int ms) {
         return mCurrDrawable != null ? mCurrDrawable.getMinimumWidth() : 0;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:19.165 -0500", hash_original_method = "4272F469B4A869660F9BDAF1177E3127", hash_generated_method = "947E790C315A4B6E575DBB6F9FBD61C8")
     
 @Override
@@ -311,6 +316,7 @@ public void unscheduleDrawable(Drawable who, Runnable what) {
         return changed;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:19.176 -0500", hash_original_method = "1234F5DF929258DFDBB23F3D48CB2B3B", hash_generated_method = "DBAE457F7B48E7BCA3A150147A003E5C")
     
 @Override
@@ -433,6 +439,7 @@ void animate(boolean schedule) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:19.191 -0500", hash_original_method = "2271215EA07D061295E4A17A597D4C85", hash_generated_method = "126755277D71E0490A3F397762C59936")
     
 @Override
@@ -563,6 +570,7 @@ DrawableContainerState(DrawableContainerState orig, DrawableContainer owner,
             }
         }
         
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:19.252 -0500", hash_original_method = "9E7D7C67EAC365FF19BD4971762612A5", hash_generated_method = "3AB30668ED270F2EDF2E0129C706FE4D")
         
 @Override
@@ -595,12 +603,14 @@ public final int addChild(Drawable dr) {
             return pos;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:19.256 -0500", hash_original_method = "58D23B7CD1BBD3B06877382B700017CE", hash_generated_method = "99346163EDEA0A590B3D1ECB64377912")
         
 public final int getChildCount() {
             return mNumChildren;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:19.259 -0500", hash_original_method = "F5C2CB0FAF6BF41EBD2EF1D322F89AD5", hash_generated_method = "93B65BE9D4D86C2AD3DCDDFB60120D99")
         
 public final Drawable[] getChildren() {
@@ -617,6 +627,7 @@ public final void setVariablePadding(boolean variable) {
             mVariablePadding = variable;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:19.263 -0500", hash_original_method = "F49D2F39EC6FEC96BF9263C8B9281632", hash_generated_method = "6C737EF730426680299707B735E65EBB")
         
 public final Rect getConstantPadding() {
@@ -656,6 +667,7 @@ public final boolean isConstantSize() {
             return mConstantSize;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:19.272 -0500", hash_original_method = "AEDD9F8F931AA0310C6AB599B9490E0C", hash_generated_method = "4F9C5A5D36C1931BA22C7946B3E8A54C")
         
 public final int getConstantWidth() {
@@ -666,6 +678,7 @@ public final int getConstantWidth() {
             return mConstantWidth;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:19.274 -0500", hash_original_method = "A117A0F50DACA3E076E36F6E0FD5A697", hash_generated_method = "C19160CF0D0633BBBA192E60EE3D8F5D")
         
 public final int getConstantHeight() {
@@ -676,6 +689,7 @@ public final int getConstantHeight() {
             return mConstantHeight;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:19.277 -0500", hash_original_method = "DA23CD9C0D969BCBC5A31F19CEBA2FA0", hash_generated_method = "32227548FEAB207CB2D1291A1B454A25")
         
 public final int getConstantMinimumWidth() {
@@ -686,6 +700,7 @@ public final int getConstantMinimumWidth() {
             return mConstantMinimumWidth;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:19.279 -0500", hash_original_method = "9AAB9DC0F579B2E57159CF0852B151D2", hash_generated_method = "A95C6D5DE7716AB5B40A0985C3857467")
         
 public final int getConstantMinimumHeight() {
@@ -724,6 +739,7 @@ public final void setEnterFadeDuration(int duration) {
             mEnterFadeDuration = duration;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:19.286 -0500", hash_original_method = "47A305314E1265D4F19BD4B53B739910", hash_generated_method = "D9B585838712E5DCFF8C8E558708551B")
         
 public final int getEnterFadeDuration() {
@@ -736,12 +752,14 @@ public final void setExitFadeDuration(int duration) {
             mExitFadeDuration = duration;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:19.291 -0500", hash_original_method = "8AF957428721C92A0DFF9444CB2E7B41", hash_generated_method = "AFC680F591B1A978680A99B8219044D9")
         
 public final int getExitFadeDuration() {
             return mExitFadeDuration;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:19.294 -0500", hash_original_method = "C3CEC4829800E9DBA4286BAEED120A24", hash_generated_method = "29E10069C41BCBEFC4CE0473D31C3D88")
         
 public final int getOpacity() {

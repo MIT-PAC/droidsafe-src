@@ -344,6 +344,7 @@ public void unregisterComponentCallbacks(ComponentCallbacks callback) {
         getApplicationContext().unregisterComponentCallbacks(callback);
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public final CharSequence getText(int resId) {
         String str = new String();
         str.addTaint(resId);
@@ -363,6 +364,7 @@ public void unregisterComponentCallbacks(ComponentCallbacks callback) {
      *
      * @param resId Resource id for the string
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.875 -0500", hash_original_method = "6096F9B7D678CAFA7D67C1784ABCB9A7", hash_generated_method = "D37D9DF864413A58CE69AFC7CD44E2C7")
     
 public final String getString(int resId) {
@@ -378,6 +380,7 @@ public final String getString(int resId) {
      * @param formatArgs The format arguments that will be used for substitution.
      */
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.877 -0500", hash_original_method = "524F00C5C13CBD3BD0D5C512A4C12294", hash_generated_method = "D6859AF8D80E850EE17858448765ABE4")
     
 public final String getString(int resId, Object... formatArgs) {
@@ -398,6 +401,7 @@ public abstract void setTheme(int resid);
 
     /** @hide Needed for some internal implementation...  not public because
      * you can't assume this actually means anything. */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.881 -0500", hash_original_method = "50CDF7EE4EA4E2BC75FC99DEA1DDCB11", hash_generated_method = "1272D7E9D68672649ADFD8FAF1BD64C2")
     
 public int getThemeResId() {

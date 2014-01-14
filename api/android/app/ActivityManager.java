@@ -197,6 +197,7 @@ public static boolean isRunningInTestHarness() {
     }
 
     /** @hide */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.512 -0500", hash_original_method = "BCFF8F5D8C51374E31DC49464CB803A5", hash_generated_method = "7147E5D063D453632BAA10DFE32BD995")
     
 public int getFrontActivityScreenCompatMode() {
@@ -221,6 +222,7 @@ public void setFrontActivityScreenCompatMode(int mode) {
     }
 
     /** @hide */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.517 -0500", hash_original_method = "08DE0842CE89FB88CEE40B6F1F1D5D8A", hash_generated_method = "FC34AB39A4DB3E8277789D547942BC21")
     
 public int getPackageScreenCompatMode(String packageName) {
@@ -245,6 +247,7 @@ public void setPackageScreenCompatMode(String packageName, int mode) {
     }
 
     /** @hide */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.521 -0500", hash_original_method = "43CD4547C63AA5BA08A4BB7431262A61", hash_generated_method = "C8218C0A35214662E3CB614E20A24E22")
     
 public boolean getPackageAskScreenCompat(String packageName) {
@@ -276,6 +279,7 @@ public void setPackageAskScreenCompat(String packageName, boolean ask) {
      * 16 (which happens to be the Java heap limit of those devices); some
      * device with more memory may return 24 or even higher numbers.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.526 -0500", hash_original_method = "B7DBD08AF6CFCEAABC628A74B78E8B6F", hash_generated_method = "2A65ECED72771E6A999F1DB95B197E00")
     
 public int getMemoryClass() {
@@ -295,6 +299,7 @@ public int getMemoryClass() {
      * <p>The is the size of the application's Dalvik heap if it has
      * specified <code>android:largeHeap="true"</code> in its manifest.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.531 -0500", hash_original_method = "50F084ADAAFF8EB942A9D9EB0C93D87F", hash_generated_method = "52BB61958CE79139C1D107CBBC67DD7B")
     
 public int getLargeMemoryClass() {
@@ -317,6 +322,7 @@ public int getLargeMemoryClass() {
      * @throws SecurityException Throws SecurityException if the caller does
      * not hold the {@link android.Manifest.permission#GET_TASKS} permission.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.580 -0500", hash_original_method = "F8BE7228FE8A06DB7E3F7EC0517EBE16", hash_generated_method = "9400E85ACDB142B0C8BF5AC206C1533C")
     
 public List<RecentTaskInfo> getRecentTasks(int maxNum, int flags)
@@ -356,6 +362,7 @@ public List<RecentTaskInfo> getRecentTasks(int maxNum, int flags)
      *
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.622 -0500", hash_original_method = "324273237D89470A473FD6EC5C103A40", hash_generated_method = "4CC0E1DB103FC85AF064A4B9351776BF")
     
 public List<RunningTaskInfo> getRunningTasks(int maxNum, int flags, IThumbnailReceiver receiver)
@@ -386,6 +393,7 @@ public List<RunningTaskInfo> getRunningTasks(int maxNum, int flags, IThumbnailRe
      * @throws SecurityException Throws SecurityException if the caller does
      * not hold the {@link android.Manifest.permission#GET_TASKS} permission.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.624 -0500", hash_original_method = "048E08D6499B0F81FA41B243F96225CE", hash_generated_method = "9EA36A3CB742AACDBA1BFA26BA5542A6")
     
 public List<RunningTaskInfo> getRunningTasks(int maxNum)
@@ -482,6 +490,7 @@ public void moveTaskToFront(int taskId, int flags) {
      * @return Returns a list of RunningServiceInfo records describing each of
      * the running tasks.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.741 -0500", hash_original_method = "93643A575557EDD801C5647B318BA97A", hash_generated_method = "730538D1525354C0CB955120CEF75E1F")
     
 public List<RunningServiceInfo> getRunningServices(int maxNum)
@@ -500,6 +509,7 @@ public List<RunningServiceInfo> getRunningServices(int maxNum)
      * given running service.  If the service does not have a control panel,
      * null is returned.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.743 -0500", hash_original_method = "3F37B5EEA2E0ADFF7012B4DB8D3BC71C", hash_generated_method = "905C130F701F2C78078A137D52E4A68A")
     
 public PendingIntent getRunningServiceControlPanel(ComponentName service)
@@ -761,6 +771,7 @@ private TaskThumbnails(Parcel source) {
             readFromParcel(source);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.643 -0500", hash_original_method = "C8A1C6791C443D43BB18F989CA6219B6", hash_generated_method = "A682F3C0E63282513A4027F898482BFD")
         
 public Bitmap getSubThumbnail(int index) {
@@ -1306,6 +1317,7 @@ public void readFromParcel(Parcel source) {
      * current error conditions (it will not return an empty list).  This list ordering is not
      * specified.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.840 -0500", hash_original_method = "F53E97F522CAE83DA0CBCF957085AF2C", hash_generated_method = "E3595DD9BF7FB62750F6222551E2A07E")
     
 public List<ProcessErrorStateInfo> getProcessesInErrorState() {
@@ -1324,6 +1336,7 @@ public List<ProcessErrorStateInfo> getProcessesInErrorState() {
      * This list ordering is not specified.
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.926 -0500", hash_original_method = "5737B6241A3389A78D86162B5C5BDB02", hash_generated_method = "3F3F5E427564E12662B6A5EA495C0309")
     
 public List<ApplicationInfo> getRunningExternalApplications() {
@@ -1341,6 +1354,7 @@ public List<ApplicationInfo> getRunningExternalApplications() {
      * running processes (it will not return an empty list).  This list ordering is not
      * specified.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.928 -0500", hash_original_method = "BB41AA7EC02A452F0653300FBA1EFF8A", hash_generated_method = "9EC32489CD95F6B4ED507EAF40FA8F6E")
     
 public List<RunningAppProcessInfo> getRunningAppProcesses() {
@@ -1435,6 +1449,7 @@ public void forceStopPackage(String packageName) {
     /**
      * Get the device configuration attributes.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.939 -0500", hash_original_method = "002CA49339A7476A8E8EF41ECCC37BDD", hash_generated_method = "B98F41EE884ECD470B7FFFD2442DC678")
     
 public ConfigurationInfo getDeviceConfigurationInfo() {
@@ -1451,6 +1466,7 @@ public ConfigurationInfo getDeviceConfigurationInfo() {
      *
      * @return density in terms of DPI
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.942 -0500", hash_original_method = "E6A8DEADBC97DC6A083D1FDDD3BF2E4E", hash_generated_method = "E42C12E45B8F008EFA277E1635B3A100")
     
 public int getLauncherLargeIconDensity() {
@@ -1482,6 +1498,7 @@ public int getLauncherLargeIconDensity() {
      *
      * @return dimensions of square icons in terms of pixels
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.944 -0500", hash_original_method = "1ABECD33DDCEDD9654A62357CF29D109", hash_generated_method = "EBB978165087C19E26C36D61882BC16F")
     
 public int getLauncherLargeIconSize() {
@@ -1514,6 +1531,7 @@ public int getLauncherLargeIconSize() {
      *
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.952 -0500", hash_original_method = "2575FA7FD2518D90A93FBC6E066D35C1", hash_generated_method = "45F620370F10841A9529E9278FB76218")
     
 public Map<String, Integer> getAllPackageLaunchCounts() {
@@ -1546,6 +1564,7 @@ public Map<String, Integer> getAllPackageLaunchCounts() {
      *
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.954 -0500", hash_original_method = "97D195D4FE7E8BCA1AFB9969B53F0E5E", hash_generated_method = "6926BB531D1845BB835A389339F5ADD4")
     
 public PkgUsageStats[] getAllPackageUsageStats() {

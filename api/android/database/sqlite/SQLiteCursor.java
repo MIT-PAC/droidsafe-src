@@ -122,6 +122,7 @@ public SQLiteCursor(SQLiteCursorDriver driver, String editTable, SQLiteQuery que
     /**
      * @return the SQLiteDatabase that this cursor is associated with.
      */
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.031 -0500", hash_original_method = "AF759727D3C973E194D48B5E653874F6", hash_generated_method = "D01FE6FFC520D1360670F278B0363796")
     
 public SQLiteDatabase getDatabase() {
@@ -143,6 +144,7 @@ public SQLiteDatabase getDatabase() {
         return true;
     }
 
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.036 -0500", hash_original_method = "D7810D185EEBB48990AE6D5077F6CEAD", hash_generated_method = "E2C9ABE586EE9B6644157D6DF551AE43")
     
 @Override
@@ -176,6 +178,7 @@ private synchronized SQLiteQuery getQuery() {
         return mQuery;
     }
 
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.045 -0500", hash_original_method = "96C3F6AE90641303728CA2622AC00A1C", hash_generated_method = "B8802CA6B8E38FE4EB87568ADFC00A2E")
     
 @Override
@@ -207,6 +210,7 @@ private synchronized SQLiteQuery getQuery() {
         }
     }
 
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.047 -0500", hash_original_method = "6996FDAE7F544E3AE18BC0C5BC1EECAC", hash_generated_method = "ED979C997B8D7B0EAFCF8DA1443034CC")
     
 @Override

@@ -118,6 +118,7 @@ Display(int display, CompatibilityInfoHolder compatInfo) {
      * Returns the index of this display.  This is currently undefined; do
      * not use.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:15.246 -0500", hash_original_method = "107F25776C4AB2DB96852EDD25D31975", hash_generated_method = "1C8EF4CE2343D615351A4D0090FBFC7B")
     
 public int getDisplayId() {
@@ -206,6 +207,7 @@ public void getRectSize(Rect outSize) {
      * mostly for wallpapers.
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:15.260 -0500", hash_original_method = "404C4EF6FA3AD3B9975B754C597D6C0E", hash_generated_method = "A34A4080F73EE8B2B7760D3F3BCC074C")
     
 public int getMaximumSizeDimension() {
@@ -221,6 +223,7 @@ public int getMaximumSizeDimension() {
     /**
      * @deprecated Use {@link #getSize(Point)} instead.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:15.263 -0500", hash_original_method = "2F7FD849240377F4AD58DDE704C1CFAA", hash_generated_method = "BA73A9C9C8FCBA8528451F8212BABE9D")
     
 @Deprecated
@@ -238,6 +241,7 @@ public int getMaximumSizeDimension() {
     /**
      * @deprecated Use {@link #getSize(Point)} instead.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:15.265 -0500", hash_original_method = "60FBCC92DE8F9EC729264DB15D46C4E8", hash_generated_method = "5643E07DE3A1DF429C96D173AA292F28")
     
 @Deprecated
@@ -344,6 +348,7 @@ public int getRawHeight() {
      * 90 degrees clockwise and thus the returned value here will be
      * {@link Surface#ROTATION_90 Surface.ROTATION_90}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:15.283 -0500", hash_original_method = "0627945D4A6FEA5F8EF1880CC4DB952B", hash_generated_method = "9F82DC778CFEFA13C888B6C1F98A1C59")
     
 public int getRotation() {
@@ -354,6 +359,7 @@ public int getRotation() {
      * @deprecated use {@link #getRotation}
      * @return orientation of this display.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:15.287 -0500", hash_original_method = "6E125A4EC20477CEC647612C37C0ECFE", hash_generated_method = "579A0203D6236D81664B553F26B2711E")
     
     @Deprecated
@@ -366,6 +372,7 @@ public int getRotation() {
      * Return the native pixel format of the display.  The returned value
      * may be one of the constants int {@link android.graphics.PixelFormat}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:15.289 -0500", hash_original_method = "441029F9FCB9AB0438A81D4AE48234F0", hash_generated_method = "113D6BD2144B8B471B058272F811664F")
     
 public int getPixelFormat() {
@@ -375,6 +382,7 @@ public int getPixelFormat() {
     /**
      * Return the refresh rate of this display in frames per second.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:15.292 -0500", hash_original_method = "79009E426290AE6AA1C61D7B07738692", hash_generated_method = "915A0C2921F8E445C8BBB81C6178EFF8")
     
 public float getRefreshRate() {

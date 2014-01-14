@@ -7,11 +7,6 @@ import droidsafe.annotations.*;
 import java.lang.reflect.GenericArrayType;
 import java.lang.reflect.Type;
 
-
-
-
-
-
 public final class ImplForArray implements GenericArrayType {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.091 -0500", hash_original_field = "F00973532948845018B52A37FE021D3D", hash_generated_field = "E5C2178136BA4F8025942E6B948C4074")
 
@@ -23,6 +18,7 @@ public ImplForArray(Type componentType) {
         this.componentType = componentType;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.096 -0500", hash_original_method = "DF2F4D0FDA59F8B376BF76172F429ABC", hash_generated_method = "F54BF30A1F49AEE5A1AF09CA296E86D0")
     
 public Type getGenericComponentType() {
@@ -38,7 +34,6 @@ public Type getGenericComponentType() {
 public String toString() {
         return componentType.toString() + "[]";
     }
-
     
 }
 

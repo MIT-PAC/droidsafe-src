@@ -217,6 +217,7 @@ public void close() throws IOException {
      * Get the remote device this socket is connecting, or connected, to.
      * @return remote device
      */
+    @DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:30.666 -0500", hash_original_method = "B5CADD9AEDAFC7D30E54D77C9BCE6C15", hash_generated_method = "2DA2BB7F6FA41B5740E2FEDAC863C333")
     
 public BluetoothDevice getRemoteDevice() {
@@ -230,6 +231,7 @@ public BluetoothDevice getRemoteDevice() {
      * the associated socket is connected.
      * @return InputStream
      */
+    @DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:30.668 -0500", hash_original_method = "3F2C344C79BB6AAED73F7DEF9A9B7E79", hash_generated_method = "FF8D6E9A010C0CA34745F6CB0FCC8D8D")
     
 public InputStream getInputStream() throws IOException {
@@ -243,6 +245,7 @@ public InputStream getInputStream() throws IOException {
      * the associated socket is connected.
      * @return OutputStream
      */
+    @DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:30.670 -0500", hash_original_method = "650B33031816EC89B8DA91268C4339E3", hash_generated_method = "25C899671F89D3D1A419C73ABBD6875A")
     
 public OutputStream getOutputStream() throws IOException {
@@ -277,7 +280,8 @@ int bindListen() {
         }
     }
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:30.677 -0500", hash_original_method = "7D6884496E175BC1959E5AD456C9EDAE", hash_generated_method = "7D6884496E175BC1959E5AD456C9EDAE")
+    /*package*/ @DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:30.677 -0500", hash_original_method = "7D6884496E175BC1959E5AD456C9EDAE", hash_generated_method = "7D6884496E175BC1959E5AD456C9EDAE")
     
 BluetoothSocket accept(int timeout) throws IOException {
         mLock.readLock().lock();

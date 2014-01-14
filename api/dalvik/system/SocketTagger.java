@@ -25,6 +25,7 @@ public static synchronized void set(SocketTagger tagger) {
     /**
      * Returns this process socket tagger.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:41.453 -0500", hash_original_method = "87B6FC7B35B939DE64706833D2FA396B", hash_generated_method = "9C72E2DCC2A6309C30FA4649268C0529")
     
 public static synchronized SocketTagger get() {

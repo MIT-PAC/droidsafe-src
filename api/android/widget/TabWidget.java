@@ -84,6 +84,7 @@ public TabWidget(Context context, AttributeSet attrs, int defStyle) {
         super.onSizeChanged(w, h, oldw, oldh);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.809 -0500", hash_original_method = "6DB375E1DD97C7DB4A0C01A394FBBB39", hash_generated_method = "86FCA3A335595F67361B20C120CCC7C7")
     
 @Override
@@ -212,6 +213,7 @@ private void initTabWidget() {
      * @param index the zero-based index of the tab indicator view to return
      * @return the tab indicator view at the given index
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.819 -0500", hash_original_method = "1AFF25E962A9B2EDADD57BD725ECCAB1", hash_generated_method = "EDA347D92CD3A217B27F5FAF7390EAB5")
     
 public View getChildTabViewAt(int index) {
@@ -222,6 +224,7 @@ public View getChildTabViewAt(int index) {
      * Returns the number of tab indicator views.
      * @return the number of tab indicator views.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.822 -0500", hash_original_method = "FE2CEC591CEC0077A02A9DEA200F51F9", hash_generated_method = "6D43FC4346EAA4BAFDCB8F9604AFC353")
     
 public int getTabCount() {

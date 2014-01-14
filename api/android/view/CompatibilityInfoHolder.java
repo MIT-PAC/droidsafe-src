@@ -28,12 +28,14 @@ public void set(CompatibilityInfo compatInfo) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:53.844 -0500", hash_original_method = "2844201B11A6D03D93C5B2DA2F70B8EA", hash_generated_method = "972BCA8FA8DA67067CC9D73237125234")
     
 public CompatibilityInfo get() {
         return mCompatInfo;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:53.846 -0500", hash_original_method = "1E806FB90B93A5B9B671B556A0C9FEA7", hash_generated_method = "A2ED4AD7815C5D418E93D7C3AA5E4870")
     
 public CompatibilityInfo getIfNeeded() {

@@ -14,6 +14,7 @@ import android.os.ServiceManager;
 public class NotificationManager {
 
     /** @hide */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.189 -0500", hash_original_method = "8C9794E934F900D55FFF5E23F579E814", hash_generated_method = "F053B00216AF2D6058566E132404B134")
     
 static public INotificationManager getService()

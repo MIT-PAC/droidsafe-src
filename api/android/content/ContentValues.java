@@ -294,6 +294,7 @@ public boolean containsKey(String key) {
      * @param key the value to get
      * @return the data for the value
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.437 -0500", hash_original_method = "F0AF95EE9AB5B022FDA3C4DAA44F68C1", hash_generated_method = "90455CF295F390F2AAF28D8F1514C03B")
     
 public Object get(String key) {
@@ -306,6 +307,7 @@ public Object get(String key) {
      * @param key the value to get
      * @return the String for the value
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.439 -0500", hash_original_method = "FD6B0B33BC77B5F3D2D2C6DE92834A83", hash_generated_method = "7199169D6D2219FAEE1D4C15DF024A82")
     
 public String getAsString(String key) {
@@ -319,6 +321,7 @@ public String getAsString(String key) {
      * @param key the value to get
      * @return the Long value, or null if the value is missing or cannot be converted
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.442 -0500", hash_original_method = "50D64D5E49DC2F013CFC471F23AA3A1E", hash_generated_method = "90B4436A7B4E83B6B4974647F5D4E892")
     
 public Long getAsLong(String key) {
@@ -346,6 +349,7 @@ public Long getAsLong(String key) {
      * @param key the value to get
      * @return the Integer value, or null if the value is missing or cannot be converted
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.444 -0500", hash_original_method = "C11C55EBF0D230069C8558AD456DF6B2", hash_generated_method = "BC9A5C1FBC18FEA67B7B9944B7CC111E")
     
 public Integer getAsInteger(String key) {
@@ -373,6 +377,7 @@ public Integer getAsInteger(String key) {
      * @param key the value to get
      * @return the Short value, or null if the value is missing or cannot be converted
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.447 -0500", hash_original_method = "20021B08C31B81AF996FD4C57E428DFB", hash_generated_method = "084F1A93407BB3F10DFA05ACD68140DA")
     
 public Short getAsShort(String key) {
@@ -400,6 +405,7 @@ public Short getAsShort(String key) {
      * @param key the value to get
      * @return the Byte value, or null if the value is missing or cannot be converted
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.449 -0500", hash_original_method = "10A45AB5E2B4A25109E88A986B8ABD1E", hash_generated_method = "ED03B4A9267748BD386793EE3BAD47CE")
     
 public Byte getAsByte(String key) {
@@ -427,6 +433,7 @@ public Byte getAsByte(String key) {
      * @param key the value to get
      * @return the Double value, or null if the value is missing or cannot be converted
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.451 -0500", hash_original_method = "43D54EF438725B45BE89593CD2466062", hash_generated_method = "9087EB4791921E8CA3FA63C865DF0C3B")
     
 public Double getAsDouble(String key) {
@@ -454,6 +461,7 @@ public Double getAsDouble(String key) {
      * @param key the value to get
      * @return the Float value, or null if the value is missing or cannot be converted
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.454 -0500", hash_original_method = "72E58B472E78C1EB7239E330F6CA9313", hash_generated_method = "1A6A710378117929D6B8B9AF9163C405")
     
 public Float getAsFloat(String key) {
@@ -481,6 +489,7 @@ public Float getAsFloat(String key) {
      * @param key the value to get
      * @return the Boolean value, or null if the value is missing or cannot be converted
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.456 -0500", hash_original_method = "26BA447DF201321FA24067450431D916", hash_generated_method = "C83DDB57478ED2772F3D0A5353558170")
     
 public Boolean getAsBoolean(String key) {
@@ -506,6 +515,7 @@ public Boolean getAsBoolean(String key) {
      * @param key the value to get
      * @return the byte[] value, or null is the value is missing or not a byte[]
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.458 -0500", hash_original_method = "A780551E0EA49FF2BF74805BA852B981", hash_generated_method = "E1A8731A3C9ABAE4601BA2A77AFB6F0D")
     
 public byte[] getAsByteArray(String key) {
@@ -568,6 +578,7 @@ public int describeContents() {
      * Unsupported, here until we get proper bulk insert APIs.
      * {@hide}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.481 -0500", hash_original_method = "F231C09776862BE2F464FBA056529E22", hash_generated_method = "F471723AB710D2C54B4BF56C2AE02468")
     
 @SuppressWarnings("unchecked")

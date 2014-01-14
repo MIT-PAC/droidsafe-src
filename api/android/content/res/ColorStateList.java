@@ -47,6 +47,7 @@ public static ColorStateList valueOf(int color) {
     /**
      * Create a ColorStateList from an XML document, given a set of {@link Resources}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:01.578 -0500", hash_original_method = "5986A0E2205D2782A4018155A452F4C2", hash_generated_method = "B6AA7295315B18C55E48EAB77A84A116")
     
 public static ColorStateList createFromXml(Resources r, XmlPullParser parser)
@@ -277,6 +278,7 @@ public boolean isStateful() {
      *
      * @return the color associated with that set of states in this {@link ColorStateList}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:01.592 -0500", hash_original_method = "4327A241B2C451B5F5DDB6DF79352F03", hash_generated_method = "AF80748142B2E1C3FDE33ED320874FF5")
     
 public int getColorForState(int[] stateSet, int defaultColor) {
@@ -295,6 +297,7 @@ public int getColorForState(int[] stateSet, int defaultColor) {
      *
      * @return the default color in this {@link ColorStateList}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:01.594 -0500", hash_original_method = "28A9CB761E85FC98D00C67A51FDC0266", hash_generated_method = "BD5C97F2F8B496BA1D776C974B2636D0")
     
 public int getDefaultColor() {

@@ -11,14 +11,8 @@ import java.io.Serializable;
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 
-
-
-
-
-
 public class LogRecord implements Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.842 -0500", hash_original_field = "05F7C212D1892772FFC8D57E127D6A8A", hash_generated_field = "CAE9E558857FCF7C7C7CECCC5AA0F51B")
-
 
     private static final long serialVersionUID = 5372048053134512534L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.845 -0500", hash_original_field = "6328632054321DC0BA9988891FDD2E4C", hash_generated_field = "39FDEF400FCCABBE75040FB1511C9506")
@@ -125,6 +119,7 @@ public LogRecord(Level level, String msg) {
      *
      * @return the logging level.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.890 -0500", hash_original_method = "0FEEFD0C4767A5B5B477CADC6D101FDE", hash_generated_method = "6B045C8FB7F9440E56BF0B5D84422425")
     
 public Level getLevel() {
@@ -153,6 +148,7 @@ public void setLevel(Level level) {
      *
      * @return the logger name.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.895 -0500", hash_original_method = "F91ED8A8026304D4EB26E347DCDA5498", hash_generated_method = "DEE9478D801FF8FA0DD8BF46B374164F")
     
 public String getLoggerName() {
@@ -176,6 +172,7 @@ public void setLoggerName(String loggerName) {
      *
      * @return the raw message, may be {@code null}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.899 -0500", hash_original_method = "AF20B727F6E1F2FE1F73E3107355CAA7", hash_generated_method = "90D22C2CF9BCEC06A37161C90B3C0462")
     
 public String getMessage() {
@@ -201,6 +198,7 @@ public void setMessage(String message) {
      *
      * @return the time when this event occurred, in milliseconds since 1970.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.904 -0500", hash_original_method = "06B95E2D5570D6B3A84011B34076B5C7", hash_generated_method = "6278E2044DFF930CA79D820F6FB572A6")
     
 public long getMillis() {
@@ -225,6 +223,7 @@ public void setMillis(long millis) {
      * @return the array of parameters or {@code null} if there are no
      *         parameters.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.908 -0500", hash_original_method = "7E2CB3B3486574EE0A68176991A0ECCF", hash_generated_method = "00E48544FD6A064CD391B423EF593E68")
     
 public Object[] getParameters() {
@@ -250,6 +249,7 @@ public void setParameters(Object[] parameters) {
      * @return the associated resource bundle, {@code null} if none is
      *         available or the message is not localizable.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.913 -0500", hash_original_method = "A55D46251237391AC4070653DF8FD1F0", hash_generated_method = "C671A99A9F1C793089F11BD332FD5CEB")
     
 public ResourceBundle getResourceBundle() {
@@ -275,6 +275,7 @@ public void setResourceBundle(ResourceBundle resourceBundle) {
      * @return the name of the resource bundle, {@code null} if none is
      *         available or the message is not localizable.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.917 -0500", hash_original_method = "73FB3843FBEEE5F85EEE27DAD4E6665A", hash_generated_method = "3308BAB56A2FF7F9677DD915FE00D96F")
     
 public String getResourceBundleName() {
@@ -298,6 +299,7 @@ public void setResourceBundleName(String resourceBundleName) {
      *
      * @return the sequence number.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.922 -0500", hash_original_method = "5B99D7AA47A1BEEC3DF03D05A32BB6DB", hash_generated_method = "1ED8E4C497B5D0169EC3BE45595B3CE9")
     
 public long getSequenceNumber() {
@@ -324,6 +326,7 @@ public void setSequenceNumber(long sequenceNumber) {
      *
      * @return the name of the source class of this log record (possiblity {@code null})
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.927 -0500", hash_original_method = "17474CC4607EF1F80968125D954E4F2F", hash_generated_method = "6C63A0D50FCF19DA20A9825678436CE7")
     
 public String getSourceClassName() {
@@ -375,6 +378,7 @@ public void setSourceClassName(String sourceClassName) {
      *
      * @return the name of the source method of this log record.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.934 -0500", hash_original_method = "997894DE44F9E4C217C990670A2096CD", hash_generated_method = "9698EBFC106E5DC19687DE1B388A8E24")
     
 public String getSourceMethodName() {
@@ -405,6 +409,7 @@ public void setSourceMethodName(String sourceMethodName) {
      *
      * @return the ID of the thread originating this log record.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.939 -0500", hash_original_method = "23D166A70BC333A13745104EBA97F318", hash_generated_method = "087792ED180246341333D8A3A8470BCE")
     
 public int getThreadID() {
@@ -428,6 +433,7 @@ public void setThreadID(int threadID) {
      *
      * @return the {@code Throwable} object associated with this log record.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.944 -0500", hash_original_method = "9281C9177DD0647B668ECFF1744AEA20", hash_generated_method = "9B4404C7FE2B7BD8EC0FC6B71C6E9BBE")
     
 public Throwable getThrown() {

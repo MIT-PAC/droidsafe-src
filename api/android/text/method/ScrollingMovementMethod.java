@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 public class ScrollingMovementMethod extends BaseMovementMethod implements MovementMethod {
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:02.839 -0500", hash_original_method = "B3F3A19A7208089C7C1F22732FD8EEF0", hash_generated_method = "4FDB8BE771FAEF096FBF571BB07474FD")
     
 public static MovementMethod getInstance() {

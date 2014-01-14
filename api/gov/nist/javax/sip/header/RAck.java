@@ -50,6 +50,7 @@ protected String encodeBody() {
      * @deprecated
      * @return the integer value of the cSeq number of the RAckHeader
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:01.631 -0500", hash_original_method = "717B64217AB1BDBD09BA8111F0B019A1", hash_generated_method = "CB776960DFF39BBEB9C58CD15DEDF34C")
     
 public int getCSeqNumber() {
@@ -61,6 +62,7 @@ public int getCSeqNumber() {
      *
      * @return the integer value of the cSeq number of the RAckHeader
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:01.635 -0500", hash_original_method = "718B34DE34C00921F3D0FF08E153D08E", hash_generated_method = "913FDE8A56429D9E6964F9B28CE36D63")
     
 public long getCSeqNumberLong() {
@@ -72,6 +74,7 @@ public long getCSeqNumberLong() {
      *
      * @return method of RAckHeader
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:01.638 -0500", hash_original_method = "691C5451C67574E660997BC2056A5F23", hash_generated_method = "7472B5026828D1D5EB47237766CBDA14")
     
 public String getMethod() {
@@ -84,6 +87,7 @@ public String getMethod() {
      * @deprecated
      * @return the integer value of the RSeq number of the RAckHeader
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:01.641 -0500", hash_original_method = "F18C054E96BBFC72C2FB4D9E194B171A", hash_generated_method = "39322FB794AAC42317FD41F3205BFECD")
     
 public int getRSeqNumber() {
@@ -107,12 +111,14 @@ public void setMethod(String method) throws ParseException {
         this.method = method;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:01.650 -0500", hash_original_method = "BF53D6931E1144BDB37994BD814B2F3D", hash_generated_method = "937408AF82E736FDDC8219757C0C3EEE")
     
 public long getCSequenceNumber() {
         return this.cSeqNumber;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:01.652 -0500", hash_original_method = "5B686B97AD60967CB1F8F2531F7AE87D", hash_generated_method = "D3CB01A69CDF260BF92C8A70EC14267D")
     
 public long getRSequenceNumber() {

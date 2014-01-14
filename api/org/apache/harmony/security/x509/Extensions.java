@@ -28,12 +28,14 @@ public final class Extensions {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.224 -0400", hash_original_field = "9F138981CD4E842F83065885738EAA09", hash_generated_field = "325D4B839B8846AF06D5B6C75FEBE62A")
 
     public static final ASN1Type ASN1 = new ASN1SequenceOf(Extension.ASN1) {
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:58.423 -0500", hash_original_method = "399B7E2ADEDD12A1185F1F94F953221A", hash_generated_method = "8EBA7B1700E9CE82481AB4E2B800D147")
         
 @Override public Object getDecodedObject(BerInputStream in) {
             return new Extensions((List<Extension>) in.content);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:58.426 -0500", hash_original_method = "29E9E68732A3D4A733046F4BF43E6588", hash_generated_method = "8F7256B1AB4AE15FFAE0D995FBABF310")
         
 @Override public Collection getValues(Object object) {
@@ -84,6 +86,7 @@ public int size() {
     /**
      * Returns the list of critical extensions.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:58.387 -0500", hash_original_method = "6A8A6C791C17F1564EF710302C5F6E38", hash_generated_method = "2618D6CEEEEAB1746A31376F537663D4")
     
 public Set<String> getCriticalExtensions() {
@@ -96,6 +99,7 @@ public Set<String> getCriticalExtensions() {
     /**
      * Returns the list of critical extensions.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:58.389 -0500", hash_original_method = "A9814A684588F34F98E6563F2443DAA6", hash_generated_method = "F280E54F7326C27F28047DE0D8A2A979")
     
 public Set<String> getNonCriticalExtensions() {
@@ -143,6 +147,7 @@ private void makeOidsLists() {
     /**
      * Returns the values of extensions.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:58.396 -0500", hash_original_method = "44703E9781E0014C266798D0DB277AFC", hash_generated_method = "3B94A6E4CD2397F51FCDBC63DC21E49A")
     
 public Extension getExtensionByOID(String oid) {
@@ -326,6 +331,7 @@ public X500Principal valueOfCertificateIssuerExtension() throws IOException {
     /**
      * Returns ASN.1 encoded form of this X.509 Extensions value.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:58.412 -0500", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "5349B65E746CD014BDA35ADFF927FD5B")
     
 public byte[] getEncoded() {

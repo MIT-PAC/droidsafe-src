@@ -19,6 +19,7 @@ public final class ASN1UTCTime extends ASN1Time {
      *
      * @return ASN.1 UTCTime type default implementation
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:52.569 -0500", hash_original_method = "88789DA35EC0F29C4ECE5348C3C6879B", hash_generated_method = "92C7BBDA37B2445AD79175E4A83E872F")
     
 public static ASN1UTCTime getInstance() {

@@ -9,12 +9,8 @@ import org.apache.http.ProtocolVersion;
 import org.apache.http.RequestLine;
 import org.apache.http.params.HttpProtocolParams;
 
-
-
-
 public class BasicHttpRequest extends AbstractHttpMessage implements HttpRequest {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:49.543 -0500", hash_original_field = "BB7A5ADC85895E8229C34E0A6FE732F6", hash_generated_field = "1A948EEF4738D8B68129911C16DED26C")
-
     
     private  RequestLine requestline;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:49.546 -0500", hash_original_field = "842C170402669AC7A74293BBBFD3BC5D", hash_generated_field = "F42F15CDE806BBAD7F26F7952D68FCE2")
@@ -57,6 +53,7 @@ public BasicHttpRequest(final RequestLine requestline) {
         this.uri = requestline.getUri();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:49.560 -0500", hash_original_method = "6D74E90047F33871E1F46E26807064EE", hash_generated_method = "A8CF03EA6002AD71099B37468C7ADB19")
     
 public ProtocolVersion getProtocolVersion() {
@@ -67,6 +64,7 @@ public ProtocolVersion getProtocolVersion() {
         }
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:49.563 -0500", hash_original_method = "C42D62E680F5FCF6E09789DDCB998F05", hash_generated_method = "B9BB611E2F486CBE5BAF525A101C1752")
     
 public RequestLine getRequestLine() {
@@ -77,7 +75,6 @@ public RequestLine getRequestLine() {
             return new BasicRequestLine(this.method, this.uri, ver);
         }
     }
-
     
 }
 

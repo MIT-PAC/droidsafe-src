@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class PatternMatcher implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:35.381 -0500", hash_original_method = "0DACC851FA271C064A5A12BE9D7B9A0B", hash_generated_method = "E4A178A455D5F4EC8C76C9D0D71455CB")
@@ -127,7 +123,6 @@ public PatternMatcher[] newArray(int size) {
         }
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:35.349 -0500", hash_original_field = "321647A6112621E87F809E4508D12401", hash_generated_field = "3CD87C11C7A58085FB84E25F889274B8")
-
     
     private  String mPattern;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:35.352 -0500", hash_original_field = "B93BF1EFA6B57CC598632E54B97CD147", hash_generated_field = "E6B4AC7A48E0E54E09A504C828AF50C5")
@@ -148,12 +143,14 @@ public PatternMatcher(Parcel src) {
         mType = src.readInt();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:35.356 -0500", hash_original_method = "05EB8C992FD149B44BBE0FC11E651762", hash_generated_method = "CD24450B41F8C51C8EDB097A7D2BA07A")
     
 public final String getPath() {
         return mPattern;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:35.359 -0500", hash_original_method = "E9AD68D49398B2B9D86D12D221B14582", hash_generated_method = "C3B6FFD7CB013DE0A3DF1A9A4C66A54A")
     
 public final int getType() {

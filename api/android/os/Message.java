@@ -266,6 +266,7 @@ public void copyFrom(Message o) {
     /**
      * Return the targeted delivery time of this message, in milliseconds.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:32.338 -0500", hash_original_method = "003296F505672677447BEB837B373395", hash_generated_method = "02D49CA56ECAA0D2FBAA9CCB74889B76")
     
 public long getWhen() {
@@ -286,6 +287,7 @@ public void setTarget(Handler target) {
      * message codes, so you do not need to
      * worry about yours conflicting with other handlers.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:32.342 -0500", hash_original_method = "71A342D68A16A50B25BC4BF2093BFF62", hash_generated_method = "DB4CE288ABA8CC2FF8E21FD5CD6A260A")
     
 public Handler getTarget() {
@@ -300,13 +302,15 @@ public Handler getTarget() {
      * not set, the message will be dispatched to the receiving Handler's
      * {@link Handler#handleMessage(Message Handler.handleMessage())}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:32.344 -0500", hash_original_method = "BE120AA50B796443E57F262EC015813E", hash_generated_method = "F3037125B1FF2FF11986F79F6A898A18")
     
 public Runnable getCallback() {
         return callback;
     }
     
-	public Bundle getData(){
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    public Bundle getData(){
         return data = new Bundle();
 	}
 

@@ -87,6 +87,7 @@ public void setEntries(int entriesResId) {
      * 
      * @return The list as an array.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:23.274 -0500", hash_original_method = "F69A5267D165BB7292A2F7B29A70DF84", hash_generated_method = "AD714FB946096D4173F39D089447A889")
     
 public CharSequence[] getEntries() {
@@ -122,6 +123,7 @@ public void setEntryValues(int entryValuesResId) {
      * 
      * @return The array of values.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:23.281 -0500", hash_original_method = "4077A49F0088F4F9F53375DFF9727B97", hash_generated_method = "6ACEC0A2332CD82A4012F7701E2D45F0")
     
 public CharSequence[] getEntryValues() {
@@ -150,6 +152,7 @@ public void setValue(String value) {
      *
      * @return the summary with appropriate string substitution
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:23.286 -0500", hash_original_method = "C91AC61B4049FB662B529C1D1FF98F02", hash_generated_method = "1ADDD367AAA1A08308E8609EB30FA51B")
     
 @Override
@@ -203,6 +206,7 @@ public void setValueIndex(int index) {
      * 
      * @return The value of the key.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:23.292 -0500", hash_original_method = "20F1B7D715A473C2ABE076C27B2A3109", hash_generated_method = "A248978541C494C9EDC5F8C81B52BA84")
     
 public String getValue() {
@@ -214,6 +218,7 @@ public String getValue() {
      * 
      * @return The entry corresponding to the current value, or null.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:23.294 -0500", hash_original_method = "70FF40F71A0C525EB8753661CD710EE3", hash_generated_method = "02453E38705146C3F0DF2115880BE813")
     
 public CharSequence getEntry() {

@@ -24,6 +24,7 @@ public class DocumentBuilderFactoryImpl extends DocumentBuilderFactory {
         //Synthesized constructor
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:23.848 -0500", hash_original_method = "ACE2451F013C7800286FF5717C2987CD", hash_generated_method = "94A100F42D06FDF28D7136E08CEBA4E6")
     
 @Override
@@ -31,6 +32,7 @@ public class DocumentBuilderFactoryImpl extends DocumentBuilderFactory {
         throw new IllegalArgumentException(name);
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:23.850 -0500", hash_original_method = "64128D577B53B34B78055B7B7FC0B66E", hash_generated_method = "3A576862299EFB58E6FD019B8640EDB8")
     
 @Override

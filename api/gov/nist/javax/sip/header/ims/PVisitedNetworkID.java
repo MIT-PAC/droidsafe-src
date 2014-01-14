@@ -103,6 +103,7 @@ public void setVisitedNetworkID(Token networkID) {
     /**
      * Get the visited network ID value of this header
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:58.683 -0500", hash_original_method = "C32CBAC6FBA17FDD7866AA432385EFB6", hash_generated_method = "E0560C2B1685F867A676C9812F01B0AE")
     
 public String getVisitedNetworkID() {

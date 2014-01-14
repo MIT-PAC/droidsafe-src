@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public final class Integer extends Number implements Comparable<Integer> {
 
     /**
@@ -93,6 +89,7 @@ public static Integer decode(String string) throws NumberFormatException {
      * @return the requested property's value as an {@code Integer} or
      *         {@code null}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.180 -0500", hash_original_method = "F01C30BD973BCE191A7284E98D1A303E", hash_generated_method = "C1DAAE89FBE184F5C7F6A97080859E37")
     
 public static Integer getInteger(String string) {
@@ -124,6 +121,7 @@ public static Integer getInteger(String string) {
      * @return the requested property's value as an {@code Integer} or the
      *         default value.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.182 -0500", hash_original_method = "B43E44D829289B070CF83BC460D06D24", hash_generated_method = "A056FC57C20DB105CD700CA7A32403BB")
     
 public static Integer getInteger(String string, int defaultValue) {
@@ -155,6 +153,7 @@ public static Integer getInteger(String string, int defaultValue) {
      * @return the requested property's value as an {@code Integer} or the
      *         default value.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.185 -0500", hash_original_method = "1037DE5287EEBEFE56735B40DF7AE5DF", hash_generated_method = "CE137B705D1095FFD41C9C3C5AC33FD8")
     
 public static Integer getInteger(String string, Integer defaultValue) {
@@ -593,7 +592,6 @@ public static Integer valueOf(int i) {
         return  i >= 128 || i < -128 ? new Integer(i) : SMALL_VALUES[i + 128];
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.135 -0500", hash_original_field = "3D10FD4F0E8697EBDBC88B99D7AC38DA", hash_generated_field = "88D0C92B83B1D40D76F4FBB954A2A9E5")
-
 
     private static final long serialVersionUID = 1360826667806852920L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.139 -0500", hash_original_field = "6A8627387400A06C9777F47AFC91409F", hash_generated_field = "3BDA0DF3C86CD680ACE62390D2B524ED")

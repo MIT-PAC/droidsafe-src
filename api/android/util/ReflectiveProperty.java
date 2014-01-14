@@ -135,6 +135,7 @@ private boolean typesMatch(Class<V> valueType, Class getterType) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:24.314 -0500", hash_original_method = "4070872B48CA952F40E8D9AD673A26AA", hash_generated_method = "CFEA08AC56501D6F20CDB2B045F6A76A")
     
 @Override

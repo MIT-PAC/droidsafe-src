@@ -637,6 +637,7 @@ public void setTransportControlFlags(int transportControlFlags) {
      * @hide
      * Accessor to media button intent description (includes target component)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:30.073 -0500", hash_original_method = "2C35ADA55DC65E9D8CCC19BDAA7D2B4B", hash_generated_method = "BBC7396E72B1D443036DEB203F92FE1D")
     
 public PendingIntent getRcMediaIntent() {
@@ -646,6 +647,7 @@ public PendingIntent getRcMediaIntent() {
      * @hide
      * Accessor to IRemoteControlClient
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:30.076 -0500", hash_original_method = "6031DEC176ACCB06C28473E7885E0907", hash_generated_method = "007775DBD88021AF731B42BCC3999D7F")
     
 public IRemoteControlClient getIRemoteControlClient() {

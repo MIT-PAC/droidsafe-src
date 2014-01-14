@@ -7,10 +7,6 @@ import droidsafe.annotations.*;
 import android.os.Bundle;
 import android.telephony.CellLocation;
 
-
-
-
-
 public class GsmCellLocation extends CellLocation {
 
     /**
@@ -60,6 +56,7 @@ public GsmCellLocation(Bundle bundle) {
     /**
      * @return gsm location area code, -1 if unknown, 0xffff max legal value
      */
+    @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:43.617 -0500", hash_original_method = "9D27DA83295DE88E54D1A14DE01D13B2", hash_generated_method = "A18DED515734753DC64C50C9F3494A83")
     
 public int getLac() {
@@ -69,6 +66,7 @@ public int getLac() {
     /**
      * @return gsm cell id, -1 if unknown, 0xffff max legal value
      */
+    @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:43.634 -0500", hash_original_method = "03F3B6133F275A943C2D43BD3469FDB7", hash_generated_method = "ED491AA69C7D5EA58049D948836E075E")
     
 public int getCid() {
@@ -81,6 +79,7 @@ public int getCid() {
      *
      * @return primary scrambling code for UMTS, -1 if unknown or GSM
      */
+    @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:43.643 -0500", hash_original_method = "0E29DC7205E312820087B8B417C09B13", hash_generated_method = "27709C0F99A78EF49BB7521467E3693E")
     
 public int getPsc() {
@@ -173,7 +172,6 @@ public void fillInNotifierBundle(Bundle m) {
 public boolean isEmpty() {
         return (mLac == -1 && mCid == -1 && mPsc == -1);
     }
-
     
 }
 

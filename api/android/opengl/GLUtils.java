@@ -18,6 +18,7 @@ public final class GLUtils {
      * @param bitmap
      * @return the internal format of the bitmap.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:09.449 -0500", hash_original_method = "B6B481F20C06158B7B2683399A01F45A", hash_generated_method = "B083C1A85AF000F8EF87832B426CA4F2")
     
 public static int getInternalFormat(Bitmap bitmap) {
@@ -42,6 +43,7 @@ public static int getInternalFormat(Bitmap bitmap) {
      * @param bitmap
      * @return the OpenGL ES type of the bitmap.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:09.452 -0500", hash_original_method = "7F321909DE884C965D7AD4908EC024EC", hash_generated_method = "7DDAAEF9A95CA0DF572BAAB7A4A70EC5")
     
 public static int getType(Bitmap bitmap) {
@@ -219,6 +221,7 @@ public static void texSubImage2D(int target, int level, int xoffset, int yoffset
      * 
      * @return An error string corresponding to the EGL error code.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:09.469 -0500", hash_original_method = "4A75296C27DF89363E5071AFCCE0DA22", hash_generated_method = "94E82E0D7C757E1E539FE45B49C33D8E")
     
 public static String getEGLErrorString(int error) {

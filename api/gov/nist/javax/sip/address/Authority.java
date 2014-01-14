@@ -75,6 +75,7 @@ public StringBuffer encode(StringBuffer buffer) {
      * get the hostPort member.
      * @return HostPort
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:33.355 -0500", hash_original_method = "96FAFC3A7A03957C239B3F2891116715", hash_generated_method = "66B95A06BB6FD14A22EE11841A58A7BA")
     
 public HostPort getHostPort() {
@@ -85,6 +86,7 @@ public HostPort getHostPort() {
      * get the userInfo memnber.
      * @return UserInfo
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:33.358 -0500", hash_original_method = "7432173A73E0C28FDB3243D392049BFB", hash_generated_method = "8BCB92082FFA243AA7AABD710317BC1C")
     
 public UserInfo getUserInfo() {
@@ -95,6 +97,7 @@ public UserInfo getUserInfo() {
          * Get password from the user info.
          * @return String
          */
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:33.361 -0500", hash_original_method = "0D75875975A37063C0158825ECC49152", hash_generated_method = "BCCE8CAF7F5F6EBEAEBBD075A79310D1")
     
 public String getPassword() {
@@ -108,6 +111,7 @@ public String getPassword() {
      * Get the user name if it exists.
      * @return String user or null if not set.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:33.364 -0500", hash_original_method = "A937EFB3E6E8C8E07C44A0CAF1D94D2D", hash_generated_method = "AB2FC18E4D16E447486CDBD6A095E445")
     
 public String getUser() {
@@ -118,6 +122,7 @@ public String getUser() {
      * Get the host name.
      * @return Host (null if not set)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:33.366 -0500", hash_original_method = "36AABAF7F60E6F4B05DBAF6E2BFF1DAC", hash_generated_method = "EC9DA0703D9972DC95DD1470FBB68F79")
     
 public Host getHost() {
@@ -131,6 +136,7 @@ public Host getHost() {
      * Get the port.
      * @return int port (-1) if port is not set.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:33.369 -0500", hash_original_method = "94F38CD1718C7E4E03E245C5A4A2F71A", hash_generated_method = "C0DC8F0E1ADEB5F2A8C17E7DECC3518E")
     
 public int getPort() {

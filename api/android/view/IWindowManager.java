@@ -57,7 +57,8 @@ public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:05.430 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:05.430 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
             
 public java.lang.String getInterfaceDescriptor()
 {
@@ -550,7 +551,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:05.500 -0500", hash_original_method = "A11FFC266EE072C5C7AD92E69CF04007", hash_generated_method = "A1D45582FD81D69581CF39014CFC433E")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:05.500 -0500", hash_original_method = "A11FFC266EE072C5C7AD92E69CF04007", hash_generated_method = "A1D45582FD81D69581CF39014CFC433E")
             
 public int getAppOrientation(android.view.IApplicationToken token) throws android.os.RemoteException
 {
@@ -608,7 +610,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:05.508 -0500", hash_original_method = "827F78035E4BB828CF8DB31EF60CDD69", hash_generated_method = "54B1AD297D7867D6A57EE56A1B54FB12")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:05.508 -0500", hash_original_method = "827F78035E4BB828CF8DB31EF60CDD69", hash_generated_method = "54B1AD297D7867D6A57EE56A1B54FB12")
             
 public int getPendingAppTransition() throws android.os.RemoteException
 {
@@ -1057,7 +1060,8 @@ _data.recycle();
 }
 // These can only be called with the SET_ANIMATON_SCALE permission.
 
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:05.585 -0500", hash_original_method = "306ABE9311EAC00183520FD5E1774028", hash_generated_method = "24174B4B3416F2B43785EFE67532C1CC")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:05.585 -0500", hash_original_method = "306ABE9311EAC00183520FD5E1774028", hash_generated_method = "24174B4B3416F2B43785EFE67532C1CC")
             
 public float getAnimationScale(int which) throws android.os.RemoteException
 {
@@ -1077,7 +1081,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:05.589 -0500", hash_original_method = "F3EFC97EB84AF55A83797873A51A87DA", hash_generated_method = "98980DC4E25570EBEFD8DCC47FCDF6B7")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:05.589 -0500", hash_original_method = "F3EFC97EB84AF55A83797873A51A87DA", hash_generated_method = "98980DC4E25570EBEFD8DCC47FCDF6B7")
             
 public float[] getAnimationScales() throws android.os.RemoteException
 {
@@ -1521,7 +1526,8 @@ _data.recycle();
      * Retrieve the current screen orientation, constants as per
      * {@link android.view.Surface}.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:05.650 -0500", hash_original_method = "398A53213006E05BB71DCA5D7BCD23A7", hash_generated_method = "083DB7210165873C863A46409AF9534B")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:05.650 -0500", hash_original_method = "398A53213006E05BB71DCA5D7BCD23A7", hash_generated_method = "083DB7210165873C863A46409AF9534B")
             
 public int getRotation() throws android.os.RemoteException
 {
@@ -1570,7 +1576,8 @@ return _result;
      * @return a Gravity value for the options menu panel
      * @hide
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:05.656 -0500", hash_original_method = "AAC8116C8A90DF67AF7EDCE07F828F65", hash_generated_method = "2ECCCF000CC425CFE1DBF8B3AE61DB07")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:05.656 -0500", hash_original_method = "AAC8116C8A90DF67AF7EDCE07F828F65", hash_generated_method = "2ECCCF000CC425CFE1DBF8B3AE61DB07")
             
 public int getPreferredOptionsPanelGravity() throws android.os.RemoteException
 {
@@ -1983,7 +1990,8 @@ public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:05.400 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:05.400 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
         
 public android.os.IBinder asBinder()
 {

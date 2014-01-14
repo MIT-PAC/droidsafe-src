@@ -224,6 +224,7 @@ T varDB8B1C04F589A22E27B8623D8C9F7420_1843617302 =         doInvokeAny(tasks, tr
         //return doInvokeAny(tasks, true, unit.toNanos(timeout));
     }
     
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.228 -0400", hash_original_method = "B24747B6507D912BAB1561A4B1530E75", hash_generated_method = "6B88AB56D4FD3FC6D38846EDFAB2944E")
     public <T> List<Future<T>> invokeAll(Collection<? extends Callable<T>> tasks) throws InterruptedException {
         addTaint(tasks.getTaint());
@@ -274,6 +275,7 @@ for(Future<T> f : futures)
         // Original Method Too Long, Refer to Original Implementation
     }
     
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.229 -0400", hash_original_method = "14FC4B905592A585E278FFB06E2B3922", hash_generated_method = "04CB5139E2DA7EC87D98241F5D35EC88")
     public <T> List<Future<T>> invokeAll(Collection<? extends Callable<T>> tasks,
                                          long timeout, TimeUnit unit) throws InterruptedException {

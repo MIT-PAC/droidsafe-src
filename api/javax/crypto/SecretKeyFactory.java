@@ -14,11 +14,6 @@ import java.security.spec.KeySpec;
 
 import org.apache.harmony.security.fortress.Engine;
 
-
-
-
-
-
 public class SecretKeyFactory {
 
     /**
@@ -146,6 +141,7 @@ protected SecretKeyFactory(SecretKeyFactorySpi keyFacSpi,
      *
      * @return the name of the secret key algorithm.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.790 -0500", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "8A7AA6162519FFB2228039F3D6331CE9")
     
 public final String getAlgorithm() {
@@ -157,6 +153,7 @@ public final String getAlgorithm() {
      *
      * @return the provider for this {@code SecretKeyFactory} instance.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.794 -0500", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "443000CF13C77ABCABFC8B67E2DE556F")
     
 public final Provider getProvider() {
@@ -192,6 +189,7 @@ public final SecretKey generateSecret(KeySpec keySpec)
      *             if the specified secret key cannot be transformed into the
      *             requested key specification.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.815 -0500", hash_original_method = "A1C05AB5848F28D95DBE9FF597A00F29", hash_generated_method = "8AE1E6D967D743794FCA493FB3DB98CA")
     
 @SuppressWarnings("unchecked")

@@ -24,10 +24,6 @@ import android.util.AttributeSet;
 import android.util.Xml;
 import android.view.accessibility.AccessibilityEvent;
 
-
-
-
-
 public class AccessibilityServiceInfo implements Parcelable {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:00.300 -0500", hash_original_method = "CD1EB6EF0A8B00F8CC3A1C44C2784273", hash_generated_method = "FFD56650C98DD483EB919248719D2800")
@@ -153,7 +149,6 @@ public static String flagToString(int flag) {
         }
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:00.224 -0500", hash_original_field = "05B74B66B3FB0AC5B2B968C51E6B6893", hash_generated_field = "2C523776EC0C9005124059FD690CA3B4")
-
 
     private static final String TAG_ACCESSIBILITY_SERVICE = "accessibility-service";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:00.227 -0500", hash_original_field = "AB4E0F69BE775299838A5A1574301F95", hash_generated_field = "71D96296190DC21E199DC14E475F746B")
@@ -337,6 +332,7 @@ public void updateDynamicallyConfigurableProperties(AccessibilityServiceInfo oth
      * </p>
      * @return The id.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:00.278 -0500", hash_original_method = "89A68E81BC93C5F428177630DB2A624A", hash_generated_method = "8F9FC8944DF69B66CB8D7A8B6ABB6416")
     
 public String getId() {
@@ -350,6 +346,7 @@ public String getId() {
      * </p>
      * @return The info.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:00.280 -0500", hash_original_method = "CD70F9B024F94168959F7F67ECCC2D46", hash_generated_method = "C9D0D45F7969AB2459018B24DB336946")
     
 public ResolveInfo getResolveInfo() {
@@ -364,6 +361,7 @@ public ResolveInfo getResolveInfo() {
      * </p>
      * @return The settings activity name.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:00.283 -0500", hash_original_method = "193585B262D581003491A72A585CC7AB", hash_generated_method = "4412660C2BE872F360536E29B777FE85")
     
 public String getSettingsActivityName() {
@@ -378,6 +376,7 @@ public String getSettingsActivityName() {
      * </p>
      * @return True window content can be retrieved.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:00.285 -0500", hash_original_method = "E6B94BCDAE7DB4F02CCDA58E176F7C09", hash_generated_method = "97B8477AF04EA26C388EF92B9525C33D")
     
 public boolean getCanRetrieveWindowContent() {
@@ -392,6 +391,7 @@ public boolean getCanRetrieveWindowContent() {
      * </p>
      * @return The description.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:00.288 -0500", hash_original_method = "177DD147D2F75620FD2B154278EC57FA", hash_generated_method = "C24A704C1B7693A32CE618B690D2C768")
     
 public String getDescription() {

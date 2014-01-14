@@ -198,12 +198,14 @@ void dismissInternal(boolean allowStateLoss) {
         }
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:26.498 -0500", hash_original_method = "BFDF5D83CE787BE21817622D7064532F", hash_generated_method = "C71E5AB7F1A8C6EFC64CAA7F76F42BA5")
     
 public Dialog getDialog() {
         return mDialog;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:26.500 -0500", hash_original_method = "EDA2E352252479FB515DBD558139BFDA", hash_generated_method = "70C10CD453A270D9A3D6BB0351C256D5")
     
 public int getTheme() {
@@ -261,6 +263,7 @@ public void setShowsDialog(boolean showsDialog) {
     /**
      * Return the current value of {@link #setShowsDialog(boolean)}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:26.508 -0500", hash_original_method = "A66E43B75AC73A59CB0304F6142C6A81", hash_generated_method = "B9101F7AA44C7E8C87EF62912DF1DDE6")
     
 public boolean getShowsDialog() {
@@ -311,6 +314,7 @@ public boolean getShowsDialog() {
     }
 
     /** @hide */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:26.519 -0500", hash_original_method = "EC067D1F5D74A2844592729119AA0EAB", hash_generated_method = "E54FE9B80EB98CF6B0844591E9573EA1")
     
 @Override

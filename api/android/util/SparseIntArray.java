@@ -83,6 +83,7 @@ public SparseIntArray(int initialCapacity) {
      * Gets the int mapped from the specified key, or <code>0</code>
      * if no such mapping has been made.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.166 -0500", hash_original_method = "31C2EB74F838DC49D6A7CCB91DEC9730", hash_generated_method = "0009355E1DCADF1D2A0438880AEE0DD0")
     
 public int get(int key) {
@@ -93,6 +94,7 @@ public int get(int key) {
      * Gets the int mapped from the specified key, or the specified value
      * if no such mapping has been made.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.169 -0500", hash_original_method = "F09A11123BBC4B0EABD4FD786A922B87", hash_generated_method = "CB5A811FBDE1C43FEE04881EC2F4929F")
     
 public int get(int key, int valueIfKeyNotFound) {

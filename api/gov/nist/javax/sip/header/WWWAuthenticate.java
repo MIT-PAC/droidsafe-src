@@ -9,11 +9,6 @@ import gov.nist.javax.sip.header.ims.WWWAuthenticateHeaderIms;
 import javax.sip.address.URI;
 import javax.sip.header.WWWAuthenticateHeader;
 
-
-
-
-
-
 public class WWWAuthenticate extends AuthenticationHeader implements WWWAuthenticateHeader, WWWAuthenticateHeaderIms {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:11.606 -0500", hash_original_field = "6F5A2526EE94A9827536BD8029A62CE8", hash_generated_field = "DB4C47D141CA98A5189ECDA08C3E0BC7")
 
@@ -34,6 +29,7 @@ public WWWAuthenticate() {
      * @since 1.2 this method is deprecated, uri is not a valid paramter for this header
      * Fail silently for backwards compatibility
      */
+    @DSSource({DSSourceKind.FILE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:11.612 -0500", hash_original_method = "415F36F94D5D5AF0B0B417563353646C", hash_generated_method = "9CD9E8CBB3E8DE9C3106F82ACE4168F0")
     
 public URI getURI() {

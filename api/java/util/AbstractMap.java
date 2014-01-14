@@ -102,6 +102,7 @@ public abstract Set<Map.Entry<K, V>> entrySet();
         // Original Method Too Long, Refer to Original Implementation
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.579 -0400", hash_original_method = "80DED5B1493F4175A64A94324F6ABF01", hash_generated_method = "DE4E462DDFAD080821E1F2FDD12CBB2F")
     public V get(Object key) {
         addTaint(key.getTaint());
@@ -151,6 +152,7 @@ public abstract Set<Map.Entry<K, V>> entrySet();
         //return size() == 0;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.240 -0400", hash_original_method = "F40A232B51CF144805B23E3A97CCF7A5", hash_generated_method = "9A0B801A8CE9D5D944144F6F2D5118B9")
     public Set<K> keySet() {
         return keySet;
@@ -307,6 +309,7 @@ public void putAll(Map<? extends K, ? extends V> map) {
      * this map contains itself as a key or a value, the string "(this Map)"
      * will appear in its place.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:03.293 -0500", hash_original_method = "03506E32B26B17661064F3FFDE4F185F", hash_generated_method = "FE18E3871177E49857452EE0E11F67D8")
     
 @Override public String toString() {
@@ -340,6 +343,7 @@ public void putAll(Map<? extends K, ? extends V> map) {
         return buffer.toString();
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.248 -0400", hash_original_method = "BE68DB72EA44A9864EFB8085A73DD13D", hash_generated_method = "FFF60DD0BB73731BB57AABB5E433364A")
     public Collection<V> values() {
         Collection<V> var60B0A8A6E555943126A18D312F8E04FB_154168766 =         valuesCollection;
@@ -349,7 +353,8 @@ public void putAll(Map<? extends K, ? extends V> map) {
         // Original Method Too Long, Refer to Original Implementation
     }
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.589 -0400", hash_original_method = "DEDBEBF1A9DF717B6A61BCEAEE5EB8FF", hash_generated_method = "CF2AA62163C630C7B78B734803415A96")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.589 -0400", hash_original_method = "DEDBEBF1A9DF717B6A61BCEAEE5EB8FF", hash_generated_method = "CF2AA62163C630C7B78B734803415A96")
     @SuppressWarnings("unchecked")
     @Override
     protected Object clone() throws CloneNotSupportedException {
@@ -400,12 +405,14 @@ public SimpleImmutableEntry(Map.Entry<? extends K, ? extends V> copyFrom) {
             value = copyFrom.getValue();
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:03.184 -0500", hash_original_method = "5E645FD309BBB0570D297FB3EAF41FB1", hash_generated_method = "70BBB2F2B97930263570BF1F94F8248D")
         
 public K getKey() {
             return key;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:03.187 -0500", hash_original_method = "A9984A6F88B588952649E3649EC43975", hash_generated_method = "95D4F56CA118DD7517C6CA2E4A00FE92")
         
 public V getValue() {
@@ -499,13 +506,15 @@ public SimpleEntry(Map.Entry<? extends K, ? extends V> copyFrom) {
             value = copyFrom.getValue();
         }
                 
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.593 -0400", hash_original_method = "5E645FD309BBB0570D297FB3EAF41FB1", hash_generated_method = "DED2DCB7D9AC2A45C93F999F67F3F5F9")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.593 -0400", hash_original_method = "5E645FD309BBB0570D297FB3EAF41FB1", hash_generated_method = "DED2DCB7D9AC2A45C93F999F67F3F5F9")
         public K getKey() {
              key.addTaint(getTaint());
              return key;
             //return key;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:03.219 -0500", hash_original_method = "A9984A6F88B588952649E3649EC43975", hash_generated_method = "95D4F56CA118DD7517C6CA2E4A00FE92")
         
 public V getValue() {

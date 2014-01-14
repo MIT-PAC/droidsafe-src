@@ -146,7 +146,6 @@ public static Sampler WRAP_LINEAR_MIP_LINEAR(RenderScript rs) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:04.303 -0500", hash_original_field = "78D865F0F8FE6DB954DFD52729EF4192", hash_generated_field = "78D865F0F8FE6DB954DFD52729EF4192")
 
-
     Value mMin;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:04.305 -0500", hash_original_field = "F56E0D8DE09D3E0C2674A9D00D532766", hash_generated_field = "F56E0D8DE09D3E0C2674A9D00D532766")
 
@@ -214,12 +213,12 @@ public Value getWrapT() {
      * @hide
      * @return anisotropy setting for the sampler
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:04.326 -0500", hash_original_method = "93EB2299B93AC8C5EEC3466170C1832C", hash_generated_method = "BB82B63AF00CC0AB82F2B014F71CD9D8")
     
 public float getAnisotropy() {
         return mAniso;
     }
-
     
     public enum Value {
         NEAREST (0),
@@ -230,7 +229,6 @@ public float getAnisotropy() {
         CLAMP (4);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:04.297 -0500", hash_original_field = "0B53E374282B34FB268F3024A1E73BA5", hash_generated_field = "0B53E374282B34FB268F3024A1E73BA5")
 
-
         int mID;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:04.299 -0500", hash_original_method = "D95229092961F4EF9A4C0D9F3629FAB8", hash_generated_method = "D95229092961F4EF9A4C0D9F3629FAB8")
             
@@ -238,7 +236,6 @@ Value(int id) {
             mID = id;
         }
     }
-
     
     public static class Builder {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:04.344 -0500", hash_original_field = "AD6E2452AD39DF3B497ED4B7E83C4E0C", hash_generated_field = "AD6E2452AD39DF3B497ED4B7E83C4E0C")
@@ -343,11 +340,8 @@ public Sampler create() {
             sampler.mAniso = mAniso;
             return sampler;
         }
-
         
     }
-
-
     
 }
 

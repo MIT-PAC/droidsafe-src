@@ -32,6 +32,7 @@ static int getTargetSdkVersion(Context ctx) {
      * @param ctx The context.
      * @return RenderScript
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:05.754 -0500", hash_original_method = "367BB2C71096BB3ED82A8E67F24F8287", hash_generated_method = "6490A68CD298D02C6E158AABC49A54BE")
     
 public static RenderScript create(Context ctx) {
@@ -1920,6 +1921,7 @@ public void setPriority(Priority p) {
      *
      * @return The application context.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:05.750 -0500", hash_original_method = "212FB98379B009D6F1B7FAC8BEC777BD", hash_generated_method = "0A29D3217A584B8E36429BDFA749F13D")
     
 public final Context getApplicationContext() {

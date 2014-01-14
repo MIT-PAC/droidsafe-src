@@ -143,12 +143,14 @@ private void addPreferenceClassName(Preference preference) {
         }
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.977 -0500", hash_original_method = "146D9A3F8F2485F6100744DF28993915", hash_generated_method = "AD8CAB718C0FC746435AF32937C54F39")
     
 public int getCount() {
         return mPreferenceList.size();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.980 -0500", hash_original_method = "B1551AF468D615637FECD6277399376D", hash_generated_method = "62EAC07E967E95133E6C020078002A17")
     
 public Preference getItem(int position) {
@@ -156,6 +158,7 @@ public Preference getItem(int position) {
         return mPreferenceList.get(position);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.982 -0500", hash_original_method = "C2BB649F8AE8B2BA22DD6170BF8090F3", hash_generated_method = "B317745E077FD87242E11208AD60B283")
     
 public long getItemId(int position) {
@@ -163,6 +166,7 @@ public long getItemId(int position) {
         return this.getItem(position).getId();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.984 -0500", hash_original_method = "0A6038B272F94F277CAFD95B96B15A1A", hash_generated_method = "00420607D26EA9F45F57848A403F038D")
     
 public View getView(int position, View convertView, ViewGroup parent) {
@@ -216,6 +220,7 @@ public void onPreferenceHierarchyChange(Preference preference) {
         return true;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.998 -0500", hash_original_method = "95969FB891958AA0335CF8E62A1ABF37", hash_generated_method = "5744C1606356E29F6DA1DD97DE5D24FC")
     
 @Override
@@ -279,6 +284,7 @@ public int compareTo(PreferenceLayout other) {
         
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:23.001 -0500", hash_original_method = "C26A2133E7F568EC0AF4EC87BB082A79", hash_generated_method = "D20532B94EECFDE24658552508F2E0FA")
     
 @Override

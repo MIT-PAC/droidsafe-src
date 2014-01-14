@@ -20,6 +20,7 @@ public abstract class HttpURLConnection extends URLConnection {
      * @return the value of the flag.
      * @see #setFollowRedirects
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:09.611 -0500", hash_original_method = "195F46AAAC627D752197C2F5D2FE5BA7", hash_generated_method = "9A6235A6549370F6AEF343DDA467E4AF")
     
 public static boolean getFollowRedirects() {
@@ -219,6 +220,7 @@ public abstract void disconnect();
      *
      * @return the error input stream returned by the server.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:09.608 -0500", hash_original_method = "6640096D2D877ED3E740627246DA5AF9", hash_generated_method = "58330C89C9E2E008813741E1516603AD")
     
 public InputStream getErrorStream() {
@@ -236,6 +238,7 @@ public InputStream getErrorStream() {
      *             if an IO exception occurs during the creation of the
      *             permission object.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:09.614 -0500", hash_original_method = "ED24FB1ED5E1E919D525362B14A80DB6", hash_generated_method = "CCDEB11B4A1F8430376C08884DDDC178")
     
 @Override
@@ -257,6 +260,7 @@ public InputStream getErrorStream() {
      * @see #method
      * @see #setRequestMethod
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:09.616 -0500", hash_original_method = "0D9C6E3C645DAD49E763E30DD315D3EF", hash_generated_method = "856E62238850A66AFEBF25CCB07FCBB8")
     
 public String getRequestMethod() {
@@ -271,6 +275,7 @@ public String getRequestMethod() {
      *             if there is an IO error during the retrieval.
      * @see #getResponseMessage
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:09.619 -0500", hash_original_method = "7D3B203196D55AEFB0033919830A54D2", hash_generated_method = "E5CEF15CCA918C333D4C4BE375BE6761")
     
 public int getResponseCode() throws IOException {
@@ -305,6 +310,7 @@ public int getResponseCode() throws IOException {
      *             if there is an error during the retrieval.
      * @see #getResponseCode()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:09.621 -0500", hash_original_method = "2B517AE93F70715BB09FC42E79EE9551", hash_generated_method = "268A72CA5053EB689B330389DCC43810")
     
 public String getResponseMessage() throws IOException {
@@ -364,6 +370,7 @@ public abstract boolean usingProxy();
      * {@link #getContentType() content type}, which may also include the
      * content's character encoding.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:09.632 -0500", hash_original_method = "17A4A6C99056147BEFFA252CAD4737D6", hash_generated_method = "75271B8463D26A418CBC1CC9FFE3090D")
     
 @Override public String getContentEncoding() {
@@ -376,6 +383,7 @@ public abstract boolean usingProxy();
      * @return {@code true} if this connection follows redirects, false
      *         otherwise.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:09.634 -0500", hash_original_method = "881D26516B84F6D6EEADB518A168ADE5", hash_generated_method = "3D08967BCB3267899294E27181F97478")
     
 public boolean getInstanceFollowRedirects() {
@@ -408,6 +416,7 @@ public void setInstanceFollowRedirects(boolean followRedirects) {
      * @return the header field represented in milliseconds since January 1,
      *         1970 GMT.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:09.639 -0500", hash_original_method = "6E2F3B7733832056F416A461A3655623", hash_generated_method = "ADB9DD8D1AD768A58E2F31808B608AE5")
     
 @Override

@@ -14,6 +14,7 @@ import java.util.Set;
 
 public abstract class GenericObject implements Serializable, Cloneable {
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.773 -0500", hash_original_method = "3ADC87FD7E0CE83F45EDE92BAF50BA02", hash_generated_method = "3AAAF751889C9C699791AFC88073E877")
     
 public static Class<?> getClassFromName(String className) {
@@ -214,6 +215,7 @@ public void setMatcher(Match matchExpression) {
     /** Return the match expression.
      *@return the match expression that has previously been set.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.770 -0500", hash_original_method = "5F1EBA3A7EC51605C965562331E40E61", hash_generated_method = "2A30BE8BED95C7D68E8EE546CC02F42B")
     
 public Match getMatcher() {
@@ -222,6 +224,7 @@ public Match getMatcher() {
 
     /** Clones this object.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.782 -0500", hash_original_method = "2321A1A51988B1008E8A21E8D40DF48D", hash_generated_method = "CC1B934CC7175FE37AA368A3286E9D4F")
     
 public Object clone() {
@@ -319,6 +322,7 @@ public void merge(Object mergeObject) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.791 -0500", hash_original_method = "F608522BE2D902628C253AAC05B9941D", hash_generated_method = "BDD6C135FB07D8AC261FA4D2B4D2AE55")
     
 protected String getIndentation() {
@@ -644,6 +648,7 @@ public boolean match(Object other) {
      *(we never use circular linked structures).
      */
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.831 -0500", hash_original_method = "9A2585B996B0A77325ECBDA944C7F6EB", hash_generated_method = "DDF6FCE2F5659819DBDB244DBC4187E6")
     
 public String debugDump() {

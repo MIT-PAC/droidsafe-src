@@ -13,10 +13,6 @@ import android.os.Handler;
 import android.view.View;
 import android.view.ViewGroup;
 
-
-
-
-
 public abstract class CursorAdapter extends BaseAdapter implements Filterable, CursorFilter.CursorFilterClient {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:47.892 -0500", hash_original_field = "EA16372B4C1173D920973EDB21B112D9", hash_generated_field = "D9CAE4B2CBE505B43F3EFB7D2BDDB501")
 
@@ -147,6 +143,7 @@ void init(Context context, Cursor c, int flags) {
      * Returns the cursor.
      * @return the cursor.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:47.909 -0500", hash_original_method = "ED4C67C6B1C11ED6A644F86CCA800916", hash_generated_method = "C2683DC62F0FF2A1098E741198B98052")
     
 public Cursor getCursor() {
@@ -156,6 +153,7 @@ public Cursor getCursor() {
     /**
      * @see android.widget.ListAdapter#getCount()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:47.911 -0500", hash_original_method = "F232C8AA0135C20BD5AF7ACB0020E9DD", hash_generated_method = "C69E75834B9D32F830A7C80BCB4D4998")
     
 public int getCount() {
@@ -169,6 +167,7 @@ public int getCount() {
     /**
      * @see android.widget.ListAdapter#getItem(int)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:47.914 -0500", hash_original_method = "0491DE82927D7739F3937D1F88D16ECE", hash_generated_method = "2B83690C2B24F7C2A5847C0FD57AC51D")
     
 public Object getItem(int position) {
@@ -183,6 +182,7 @@ public Object getItem(int position) {
     /**
      * @see android.widget.ListAdapter#getItemId(int)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:47.916 -0500", hash_original_method = "34FC88027666F3EEA6FC8DBB36C510AF", hash_generated_method = "D7B5335648F010B9AF2FEB739B203066")
     
 public long getItemId(int position) {
@@ -207,6 +207,7 @@ public long getItemId(int position) {
     /**
      * @see android.widget.ListAdapter#getView(int, View, ViewGroup)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:47.921 -0500", hash_original_method = "04641394EE9B89BDCE0805D3C5BEBDA5", hash_generated_method = "DE47E3A9E8938A879091E0DCD9DCBB47")
     
 public View getView(int position, View convertView, ViewGroup parent) {
@@ -226,6 +227,7 @@ public View getView(int position, View convertView, ViewGroup parent) {
         return v;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:47.923 -0500", hash_original_method = "8987F0888A94923BAC3C282546957FFA", hash_generated_method = "AA71827E42827321A45A0050ADDEB24F")
     
 @Override
@@ -265,6 +267,7 @@ public abstract View newView(Context context, Cursor cursor, ViewGroup parent);
      * @param parent The parent to which the new view is attached to
      * @return the newly created view.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:47.927 -0500", hash_original_method = "4EAF37DD2AC2B68CF9F2E847E9D5C2B4", hash_generated_method = "5AE8A92A3E307F742AA8A763AF9271C1")
     
 public View newDropDownView(Context context, Cursor cursor, ViewGroup parent) {
@@ -307,6 +310,7 @@ public void changeCursor(Cursor cursor) {
      * If the given new Cursor is the same instance is the previously set
      * Cursor, null is also returned.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:47.935 -0500", hash_original_method = "3AE932C7E61F472FB82D7B0D8E632CE6", hash_generated_method = "CE2E8D958EB4A03214BB0FCF770CFC17")
     
 public Cursor swapCursor(Cursor newCursor) {
@@ -375,6 +379,7 @@ public CharSequence convertToString(Cursor cursor) {
      * @see #getFilterQueryProvider()
      * @see #setFilterQueryProvider(android.widget.FilterQueryProvider)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:47.939 -0500", hash_original_method = "0F9BE7C57911E33C85760ED7E36C9D33", hash_generated_method = "5F7BE9B3FD55D8757F5D41047CD6CB7C")
     
 public Cursor runQueryOnBackgroundThread(CharSequence constraint) {
@@ -385,6 +390,7 @@ public Cursor runQueryOnBackgroundThread(CharSequence constraint) {
         return mCursor;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:47.941 -0500", hash_original_method = "847708A1CBB9CABD379CEB5384747381", hash_generated_method = "0192CB7998F4F8D0B8576F5328585468")
     
 public Filter getFilter() {
@@ -403,12 +409,12 @@ public Filter getFilter() {
      * @see #setFilterQueryProvider(android.widget.FilterQueryProvider)
      * @see #runQueryOnBackgroundThread(CharSequence)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:47.943 -0500", hash_original_method = "67EA54121BE0FFEF70F7156625E7E3CE", hash_generated_method = "5E9D53977A28C53BC6F0A075B9601152")
     
 public FilterQueryProvider getFilterQueryProvider() {
         return mFilterQueryProvider;
     }
-
     
     private class ChangeObserver extends ContentObserver {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:47.952 -0500", hash_original_method = "E9F5B54480B866367BA64F4A5A962E11", hash_generated_method = "E23CF0978D3E04ECD9968CA70095A877")
@@ -430,11 +436,8 @@ public ChangeObserver() {
         public void onChange(boolean selfChange) {
             onContentChanged();
         }
-
         
     }
-
-
     
     private class MyDataSetObserver extends DataSetObserver {
         
@@ -458,7 +461,6 @@ public ChangeObserver() {
             mDataValid = false;
             notifyDataSetInvalidated();
         }
-
         
     }
 

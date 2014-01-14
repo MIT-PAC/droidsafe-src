@@ -239,6 +239,7 @@ public abstract double get();
      * @exception BufferUnderflowException
      *                if {@code dst.length} is greater than {@code remaining()}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.509 -0500", hash_original_method = "9BEB92FAE64B1253EE6CA9009E99F3B4", hash_generated_method = "B2C1AFE0F8659736164D0D822A275DAE")
     
 public DoubleBuffer get(double[] dst) {
@@ -264,6 +265,7 @@ public DoubleBuffer get(double[] dst) {
      * @exception BufferUnderflowException
      *                if {@code doubleCount} is greater than {@code remaining()}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.512 -0500", hash_original_method = "38134BA6A99F502238B51F3879F810C3", hash_generated_method = "EAC8151AE9324153277E4F151BA8F7BE")
     
 public DoubleBuffer get(double[] dst, int dstOffset, int doubleCount) {

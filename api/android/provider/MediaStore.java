@@ -34,6 +34,7 @@ public final class MediaStore {
     /**
      * Uri for querying the state of the media scanner.
      */
+    @DSSource({DSSourceKind.FILE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:57.901 -0500", hash_original_method = "2AB61FF2E7140B128AA8E0CB2E9AAED9", hash_generated_method = "4ED1F31638B10772A3D991934AC9340B")
     
 public static Uri getMediaScannerUri() {
@@ -48,6 +49,7 @@ public static Uri getMediaScannerUri() {
      * @param context Context to use for performing the query.
      * @return A version string, or null if the version could not be determined.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:57.908 -0500", hash_original_method = "AE38216E99DAE811D25BA0107413939D", hash_generated_method = "A5E3282E23260DB91E9A5D82657E9B69")
     
 public static String getVersion(Context context) {
@@ -78,6 +80,7 @@ public static String getVersion(Context context) {
          * @param volumeName the name of the volume to get the URI for
          * @return the URI to the files table on the given volume
          */
+        @DSSource({DSSourceKind.FILE_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:57.433 -0500", hash_original_method = "409759DEA77E6C649AE2EA692A3554B8", hash_generated_method = "A280A2BA0F4395634F272135FE1EBA34")
         
 public static Uri getContentUri(String volumeName) {
@@ -93,6 +96,7 @@ public static Uri getContentUri(String volumeName) {
          * @param rowId the file to get the URI for
          * @return the URI to the files table on the given volume
          */
+        @DSSource({DSSourceKind.FILE_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:57.436 -0500", hash_original_method = "093C2982E064F68E36812413D73335AF", hash_generated_method = "F02C710E69F22870280DA8940CF6B34E")
         
 public static final Uri getContentUri(String volumeName,
@@ -105,6 +109,7 @@ public static final Uri getContentUri(String volumeName,
          * For use only by the MTP implementation.
          * @hide
          */
+        @DSSource({DSSourceKind.FILE_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:57.438 -0500", hash_original_method = "2FA8FCD7E4B4B360F21FD1B576A95B66", hash_generated_method = "0F65AACC551D6280680A5F4F5034162B")
         
 public static Uri getMtpObjectsUri(String volumeName) {
@@ -116,6 +121,7 @@ public static Uri getMtpObjectsUri(String volumeName) {
          * For use only by the MTP implementation.
          * @hide
          */
+        @DSSource({DSSourceKind.FILE_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:57.441 -0500", hash_original_method = "4D06DA2298DFF5AAAB3A88C1D51AE35B", hash_generated_method = "79359F0971EFBA5ABE8627030F660389")
         
 public static final Uri getMtpObjectsUri(String volumeName,
@@ -128,6 +134,7 @@ public static final Uri getMtpObjectsUri(String volumeName,
          * Used to implement the MTP GetObjectReferences and SetObjectReferences commands.
          * @hide
          */
+        @DSSource({DSSourceKind.FILE_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:57.443 -0500", hash_original_method = "156D6BD07D5B040A2C58E7948D6F92A6", hash_generated_method = "53A9AF6975906E0F395058EF2299221C")
         
 public static final Uri getMtpReferencesUri(String volumeName,
@@ -373,12 +380,14 @@ static Bitmap getThumbnail(ContentResolver cr, long origId, long groupId, int ki
         }
 
         public static final class Media implements ImageColumns {
+            @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:57.497 -0500", hash_original_method = "D33973CFD3614E757CA6971FCFC77D62", hash_generated_method = "522FA5EC19DCD037B3DD1291CCDDFA1F")
             
 public static final Cursor query(ContentResolver cr, Uri uri, String[] projection) {
                 return cr.query(uri, projection, null, null, DEFAULT_SORT_ORDER);
             }
 
+            @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:57.501 -0500", hash_original_method = "53C3E712D0BE7622019DC7632C44AEC5", hash_generated_method = "9710B946F5D5EAAE3323EA0EEB6309D5")
             
 public static final Cursor query(ContentResolver cr, Uri uri, String[] projection,
@@ -387,6 +396,7 @@ public static final Cursor query(ContentResolver cr, Uri uri, String[] projectio
                                              null, orderBy == null ? DEFAULT_SORT_ORDER : orderBy);
             }
 
+            @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:57.504 -0500", hash_original_method = "021F54ACE26AA0D28BD6812D454BB821", hash_generated_method = "C0CA4DFB37E599E4AFBBDA5E7B4ACF4F")
             
 public static final Cursor query(ContentResolver cr, Uri uri, String[] projection,
@@ -403,6 +413,7 @@ public static final Cursor query(ContentResolver cr, Uri uri, String[] projectio
              * @throws FileNotFoundException
              * @throws IOException
              */
+            @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:57.507 -0500", hash_original_method = "5ACE4CC33982008EF7E75DDF8CDA73C1", hash_generated_method = "DEAC5D332371380082BED66FBEC35502")
             
 public static final Bitmap getBitmap(ContentResolver cr, Uri url)
@@ -553,6 +564,7 @@ public static final String insertImage(ContentResolver cr, Bitmap source,
              * @param volumeName the name of the volume to get the URI for
              * @return the URI to the image media table on the given volume
              */
+            @DSSource({DSSourceKind.FILE_INFORMATION})
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:57.520 -0500", hash_original_method = "D25E6866BAFE283BBBEC1A86738374B0", hash_generated_method = "E0194B654B4D913F989AC78CE4F389A6")
             
 public static Uri getContentUri(String volumeName) {
@@ -582,12 +594,14 @@ public static Uri getContentUri(String volumeName) {
         }
         
         public static class Thumbnails implements BaseColumns {
+            @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:57.538 -0500", hash_original_method = "D33973CFD3614E757CA6971FCFC77D62", hash_generated_method = "522FA5EC19DCD037B3DD1291CCDDFA1F")
             
 public static final Cursor query(ContentResolver cr, Uri uri, String[] projection) {
                 return cr.query(uri, projection, null, null, DEFAULT_SORT_ORDER);
             }
 
+            @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:57.541 -0500", hash_original_method = "D2C6FBB7BEB4CEA6BEF0854A82D35C79", hash_generated_method = "3EC21CDA307390D0BBE9F235AE4A64E3")
             
 public static final Cursor queryMiniThumbnails(ContentResolver cr, Uri uri, int kind,
@@ -595,6 +609,7 @@ public static final Cursor queryMiniThumbnails(ContentResolver cr, Uri uri, int 
                 return cr.query(uri, projection, "kind = " + kind, null, DEFAULT_SORT_ORDER);
             }
 
+            @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:57.544 -0500", hash_original_method = "BE9254821AC284A8AB44D13688ACA7DE", hash_generated_method = "E5ADCA2D02DCA0BD2BD1E6467DD1DEF8")
             
 public static final Cursor queryMiniThumbnail(ContentResolver cr, long origId, int kind,
@@ -680,6 +695,7 @@ public static Bitmap getThumbnail(ContentResolver cr, long origId, long groupId,
              * @param volumeName the name of the volume to get the URI for
              * @return the URI to the image media table on the given volume
              */
+            @DSSource({DSSourceKind.FILE_INFORMATION})
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:57.557 -0500", hash_original_method = "30E2B09E332E4F02ED1ADF0B393967EF", hash_generated_method = "7C81AAFED814529EAF49F67E334DB91E")
             
 public static Uri getContentUri(String volumeName) {
@@ -841,6 +857,7 @@ public static String keyFor(String name) {
              * @param volumeName the name of the volume to get the URI for
              * @return the URI to the audio media table on the given volume
              */
+            @DSSource({DSSourceKind.FILE_INFORMATION})
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:57.619 -0500", hash_original_method = "7BC2F03DF14329F6FE08C0A58CBF1643", hash_generated_method = "A992774CE618273FBFB6557783752FC3")
             
 public static Uri getContentUri(String volumeName) {
@@ -848,6 +865,7 @@ public static Uri getContentUri(String volumeName) {
                         "/audio/media");
             }
 
+            @DSSource({DSSourceKind.FILE_INFORMATION})
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:57.622 -0500", hash_original_method = "3C6A6D60A779BAAF3BF8B77D7DFF40A3", hash_generated_method = "7B99D09EDD1ACB797F0D5DF0AB7533A2")
             
 public static Uri getContentUriForPath(String path) {
@@ -893,6 +911,7 @@ public static Uri getContentUriForPath(String path) {
              * @param volumeName the name of the volume to get the URI for
              * @return the URI to the audio genres table on the given volume
              */
+            @DSSource({DSSourceKind.FILE_INFORMATION})
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:57.646 -0500", hash_original_method = "1CF6BD090DABA01652B1DE33E8033EFA", hash_generated_method = "89E9B7287F9A9CFB4DB23910AE63589F")
             
 public static Uri getContentUri(String volumeName) {
@@ -908,6 +927,7 @@ public static Uri getContentUri(String volumeName) {
              * @return the URI to for querying the genres for the audio file
              * with the given the volume and audioID
              */
+            @DSSource({DSSourceKind.FILE_INFORMATION})
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:57.649 -0500", hash_original_method = "41F194A6497C33D9B998B598C479E322", hash_generated_method = "C4F80A0D540BD4402723086A758E6E80")
             
 public static Uri getContentUriForAudioId(String volumeName, int audioId) {
@@ -921,6 +941,7 @@ public static Uri getContentUriForAudioId(String volumeName, int audioId) {
             
             public static final class Members implements AudioColumns {
 
+                @DSSource({DSSourceKind.FILE_INFORMATION})
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:57.667 -0500", hash_original_method = "55CF68002905D503AB205A6C04930549", hash_generated_method = "31826974FF95BF68DC8C7EDB78615960")
                 
 public static final Uri getContentUri(String volumeName,
@@ -976,6 +997,7 @@ public static final Uri getContentUri(String volumeName,
              * @param volumeName the name of the volume to get the URI for
              * @return the URI to the audio playlists table on the given volume
              */
+            @DSSource({DSSourceKind.FILE_INFORMATION})
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:57.691 -0500", hash_original_method = "645770BE430EC26F3820C55E3B33E2DF", hash_generated_method = "381C3C055A0109C1EF249AEA5FF2E149")
             
 public static Uri getContentUri(String volumeName) {
@@ -988,6 +1010,7 @@ public static Uri getContentUri(String volumeName) {
                     getContentUri("internal");
             
             public static final class Members implements AudioColumns {
+                @DSSource({DSSourceKind.FILE_INFORMATION})
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:57.707 -0500", hash_original_method = "96BDCFD6E7CB52F7223465A2D6EE9A74", hash_generated_method = "9010678E8195591DFDC953DE2DED9116")
                 
 public static final Uri getContentUri(String volumeName,
@@ -1072,6 +1095,7 @@ public static final boolean moveItem(ContentResolver res,
              * @param volumeName the name of the volume to get the URI for
              * @return the URI to the audio artists table on the given volume
              */
+            @DSSource({DSSourceKind.FILE_INFORMATION})
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:57.741 -0500", hash_original_method = "FD66489C6245EC419D305AD593BAF7F8", hash_generated_method = "1694B6CD5E48801661ACBEE648621070")
             
 public static Uri getContentUri(String volumeName) {
@@ -1084,6 +1108,7 @@ public static Uri getContentUri(String volumeName) {
                     getContentUri("internal");
             
             public static final class Albums implements AlbumColumns {
+                @DSSource({DSSourceKind.FILE_INFORMATION})
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:57.759 -0500", hash_original_method = "C95690BA5A28FE2CD2430F02E3EC9539", hash_generated_method = "A56894B0FDB584F61C28239BC0137602")
                 
 public static final Uri getContentUri(String volumeName,
@@ -1128,6 +1153,7 @@ public static final Uri getContentUri(String volumeName,
              * @param volumeName the name of the volume to get the URI for
              * @return the URI to the audio albums table on the given volume
              */
+            @DSSource({DSSourceKind.FILE_INFORMATION})
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:57.773 -0500", hash_original_method = "4BBBF90040E52C1783C62EF76D7CBADD", hash_generated_method = "6BE0A51081C5362D4920B43F3116DAF1")
             
 public static Uri getContentUri(String volumeName) {
@@ -1254,6 +1280,7 @@ public static Uri getContentUri(String volumeName) {
     
     public static final class Video {
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:57.803 -0500", hash_original_method = "D33973CFD3614E757CA6971FCFC77D62", hash_generated_method = "522FA5EC19DCD037B3DD1291CCDDFA1F")
         
 public static final Cursor query(ContentResolver cr, Uri uri, String[] projection) {
@@ -1271,6 +1298,7 @@ public static final Cursor query(ContentResolver cr, Uri uri, String[] projectio
              * @param volumeName the name of the volume to get the URI for
              * @return the URI to the video media table on the given volume
              */
+            @DSSource({DSSourceKind.FILE_INFORMATION})
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:57.815 -0500", hash_original_method = "62F44913137B8C4A13A1C32E412D06B5", hash_generated_method = "C4FC987BE0CBD99859AFF3DB34B45299")
             
 public static Uri getContentUri(String volumeName) {
@@ -1358,6 +1386,7 @@ public static Bitmap getThumbnail(ContentResolver cr, long origId, long groupId,
              * @param volumeName the name of the volume to get the URI for
              * @return the URI to the image media table on the given volume
              */
+            @DSSource({DSSourceKind.FILE_INFORMATION})
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:57.842 -0500", hash_original_method = "15FBBC3EA73486A6D659DC0927D4EC42", hash_generated_method = "BAAF5B7DAD7F5A3186DA6B6DBF384D60")
             
 public static Uri getContentUri(String volumeName) {

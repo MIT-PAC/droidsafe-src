@@ -152,6 +152,7 @@ public boolean equals(Object otherObject) {
     /**
      * Do a lookup on a given name and return value associated with it.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:49.321 -0500", hash_original_method = "DE074F80660571F2D9A0EA59E951198A", hash_generated_method = "6A6C1DBE91B9E3540B369E66CE2E9391")
     
 public Object getValue(String name) {
@@ -167,6 +168,7 @@ public Object getValue(String name) {
      *
      * @since 1.0
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:49.323 -0500", hash_original_method = "5A90B099A8628E34F647DE9E37BC52D0", hash_generated_method = "FBA1238742EC29980D23943F7A0488BE")
     
 public NameValue getNameValue(String name) {
@@ -249,6 +251,7 @@ public Iterator<NameValue> iterator() {
      *
      * @return a list iterator that has the names of the parameters.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:49.340 -0500", hash_original_method = "7A59F5DB1186413E79C951C76908BFDC", hash_generated_method = "592B62A6A46FF1A6CFD16C9BE8F1C302")
     
 public Iterator<String> getNames() {
@@ -261,6 +264,7 @@ public Iterator<String> getNames() {
      *
      * @return the parameter as a string.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:49.343 -0500", hash_original_method = "6D3851F46197204C176DAB6DC4EAB5DB", hash_generated_method = "228EAA2490CB2DA9DF62B4CB85A003A6")
     
 public String getParameter(String name) {
@@ -318,6 +322,7 @@ public Set<java.util.Map.Entry<String, NameValue>> entrySet() {
      * (non-Javadoc)
      * @see java.util.Map#get(java.lang.Object)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:49.355 -0500", hash_original_method = "EA67EE9A45F5352AADEB9693E72F1050", hash_generated_method = "C5651D9A2CDBEA25F713AF6A1C5B7D9D")
     
 public NameValue get(Object key) {

@@ -13,21 +13,14 @@ import org.apache.http.cookie.CookieOrigin;
 import org.apache.http.cookie.CookieSpec;
 import org.apache.http.cookie.MalformedCookieException;
 
-
-
-
-
-
 public class BestMatchSpec implements CookieSpec {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:38.419 -0500", hash_original_field = "6ECCC683F151EE6CE57F2B5BB3F18FF6", hash_generated_field = "41DF6CEE83D74A6FDB1FAB0DD1A4D526")
-
 
     private  String[] datepatterns;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:38.421 -0500", hash_original_field = "9FF87D24DBC0DA1B27533708A63D8684", hash_generated_field = "E82ADEB303AC7BD75F069F4A1A160C67")
 
     private  boolean oneHeader;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:38.424 -0500", hash_original_field = "2BAFAED536256D8B65C349DC3041690E", hash_generated_field = "5F8A86FC9473ADC174C31D624DCA621C")
-
     
     private RFC2965Spec strict;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:38.426 -0500", hash_original_field = "AE84E39EEC737A72A300D1B6C77E5FB6", hash_generated_field = "3F2E5D6C469AB40A87A13CDDD8535A4F")
@@ -173,18 +166,19 @@ public List<Header> formatCookies(final List<Cookie> cookies) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:38.452 -0500", hash_original_method = "812B69FBF27003910CA721BA7B572F16", hash_generated_method = "0C08EBE7DDE45A14800DBEAD81605967")
     
 public int getVersion() {
         return getStrict().getVersion();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:38.455 -0500", hash_original_method = "B06045A369F60BC64D5D46F6D34F8F3E", hash_generated_method = "9A6C7E6C6D167B0B85A4DFF880CA777C")
     
 public Header getVersionHeader() {
         return getStrict().getVersionHeader();
     }
-
     
 }
 

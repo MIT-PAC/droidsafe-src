@@ -246,6 +246,7 @@ public void writeToParcel(Parcel dest, int parcelableFlags) {
      * 
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:49.347 -0500", hash_original_method = "3C095FBE28E1D0A5D79820831D5573F9", hash_generated_method = "F2E8493838D7C31F6FA4B5446F237F21")
     
 protected ApplicationInfo getApplicationInfo() {

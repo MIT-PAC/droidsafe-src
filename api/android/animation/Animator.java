@@ -184,6 +184,7 @@ public void removeListener(AnimatorListener listener) {
      *
      * @return ArrayList<AnimatorListener> The set of listeners.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.297 -0500", hash_original_method = "A0C570F4990D85172FF1B2594590DE80", hash_generated_method = "44544A80D5F91B2783A66E5247A2E8B1")
     
 public ArrayList<AnimatorListener> getListeners() {
@@ -204,6 +205,7 @@ public void removeAllListeners() {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.302 -0500", hash_original_method = "D34181C2AB04F8825A2BE8661E83342B", hash_generated_method = "B7F66985686932E1DF636764C91CD1BA")
     
 @Override

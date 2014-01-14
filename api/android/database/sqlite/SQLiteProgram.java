@@ -159,6 +159,7 @@ void release() {
      * @deprecated do not use this method. it is not guaranteed to be the same across executions of
      * the SQL statement contained in this object.
      */
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:39.173 -0500", hash_original_method = "E07CAA4B1BF262B61B70604363CAC3E9", hash_generated_method = "C2177A142C34EFB222F16867D284DCC2")
     
 @Deprecated

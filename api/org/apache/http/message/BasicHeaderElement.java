@@ -9,14 +9,8 @@ import org.apache.http.NameValuePair;
 import org.apache.http.util.CharArrayBuffer;
 import org.apache.http.util.LangUtils;
 
-
-
-
-
-
 public class BasicHeaderElement implements HeaderElement, Cloneable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:49.399 -0500", hash_original_field = "BF45F7481B8091DE3CBF80E94F7F940B", hash_generated_field = "531F96E2AEBFB44CD229EC4CB1F012B0")
-
 
     private  String name;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:49.401 -0500", hash_original_field = "EE6B270D979EDA88DA18EA680B9EE570", hash_generated_field = "424F4435B9052E77589D30873B9A7D2B")
@@ -70,6 +64,7 @@ public BasicHeaderElement(final String name, final String value) {
      *
      * @return String name The name
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:49.413 -0500", hash_original_method = "6F5A80252F54E883F3837DA0C6833E69", hash_generated_method = "10AFD575EA26BE807F18801FAC02C531")
     
 public String getName() {
@@ -81,6 +76,7 @@ public String getName() {
      *
      * @return String value The current value.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:49.416 -0500", hash_original_method = "ADE49245CA79B6D6B3F4663E953C8CD9", hash_generated_method = "FC2353DBE9194DE53203DA3AB851288B")
     
 public String getValue() {
@@ -94,24 +90,24 @@ public String getValue() {
      *
      * @return parameters as an array of {@link NameValuePair}s
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:49.418 -0500", hash_original_method = "3731305FA78433D69AC55713BB946E12", hash_generated_method = "B7C67BDA96821C2F9B3F0B75E1343D18")
     
 public NameValuePair[] getParameters() {
         return (NameValuePair[])this.parameters.clone();
     }
 
-
     /**
      * Obtains the number of parameters.
      *
      * @return  the number of parameters
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:49.420 -0500", hash_original_method = "D96148994A6BB50642F5897F1E874B9E", hash_generated_method = "B00651AC76B47D2ADD963896D88D7747")
     
 public int getParameterCount() {
         return this.parameters.length;
     }
-
 
     /**
      * Obtains the parameter with the given index.
@@ -120,13 +116,13 @@ public int getParameterCount() {
      *
      * @return  the parameter with the given index
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:49.423 -0500", hash_original_method = "7A51C396EF547B19A00C38AEE513A356", hash_generated_method = "B0BDC4F089A0CD13C111C927BE2F26EB")
     
 public NameValuePair getParameter(int index) {
         // ArrayIndexOutOfBoundsException is appropriate
         return this.parameters[index];
     }
-
 
     /**
      * Returns parameter with the given name, if found. Otherwise null 
@@ -202,7 +198,6 @@ public Object clone() throws CloneNotSupportedException {
         // no need to make a copy of it
         return super.clone();
     }
-
     
 }
 

@@ -122,6 +122,7 @@ public ClientKeyExchange(HandshakeIODataStream in, int length, boolean isTLS, bo
      * Returns message type
      * @return
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:14.462 -0500", hash_original_method = "689E42FE01D543BF62D87A0EDA5093F1", hash_generated_method = "226C47994395815B489D9CA228F6ACD0")
     
 @Override

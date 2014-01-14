@@ -39,6 +39,7 @@ public void setTelephoneNumber(TelephoneNumber telephoneNumber) {
      *
      * @return  the value of the <code>isdnSubAddress</code> parameter
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:33.558 -0500", hash_original_method = "7749933BE9F1A8F770924BE8E0DD80B2", hash_generated_method = "0D99869AB8EBAD9A6878E75CDEE2C742")
     
 public String getIsdnSubAddress() {
@@ -50,6 +51,7 @@ public String getIsdnSubAddress() {
      *
      * @return  the value of the <code>postDial</code> parameter
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:33.561 -0500", hash_original_method = "A07C64D3F1CC8848A39F332213EC7E5C", hash_generated_method = "8B732813DC52AEE3FC41F4F80C8C915A")
     
 public String getPostDial() {
@@ -61,6 +63,7 @@ public String getPostDial() {
      *
      * @return the scheme paramter of the URI
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:33.563 -0500", hash_original_method = "76031D31C1CA528B8F038117D6808811", hash_generated_method = "8C187E31064D5FC7E4CBD4735C1E35F0")
     
 public String getScheme() {
@@ -142,6 +145,7 @@ public void setPhoneNumber(String telephoneNumber) {
      *
      *@return -- the telephone number.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:33.581 -0500", hash_original_method = "9932D29BF514A34CC6953B51ADDD0B1C", hash_generated_method = "27C04231D84C1A5AA2A04949D711189B")
     
 public String getPhoneNumber() {
@@ -185,6 +189,7 @@ public Object clone() {
         return retval;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:33.593 -0500", hash_original_method = "7FADC9FB5FA5B5E8B9D3FF343952F7D6", hash_generated_method = "0D73B0CC779BAA6F00BAEFCB0842C08B")
     
 public String getParameter(String parameterName) {
@@ -198,12 +203,14 @@ public void setParameter(String name, String value) {
         telephoneNumber.setParameter(name, value);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:33.597 -0500", hash_original_method = "9F3A3B5343A94A5C27FE8CB7C132960C", hash_generated_method = "E0BC0A9EC821D49125AFA1A6AE4DAD69")
     
 public Iterator<String> getParameterNames() {
         return telephoneNumber.getParameterNames();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:33.599 -0500", hash_original_method = "9F42A8DF83D29C58CCE55D9B05B30108", hash_generated_method = "9783BBC2E2B8A803EF52324A0248BF3B")
     
 public NameValueList getParameters() {
@@ -235,6 +242,7 @@ public void setPhoneContext(String phoneContext) throws ParseException {
     /* (non-Javadoc)
      * @see javax.sip.address.TelURL#getPhoneContext()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:33.607 -0500", hash_original_method = "E99D05466523D70C189436EBEEC64347", hash_generated_method = "9C868F482C0254EEDAFB0985997199CF")
     
 public String getPhoneContext() {

@@ -412,6 +412,7 @@ public boolean isShowingPopup() {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.897 -0500", hash_original_method = "5EF19A4E1889AB1FC4A984C090B7713C", hash_generated_method = "78F3FD24DEDB33DAFFEC7DBCFD7398C8")
     
 public ActivityChooserModel getDataModel() {
@@ -663,6 +664,7 @@ public void setDataModel(ActivityChooserModel dataModel) {
             notifyDataSetChanged();
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.955 -0500", hash_original_method = "39EE4EFF86EDF87DA80E694DA09810EF", hash_generated_method = "AFFE9FD217FBC5DC418B59F0EDC2003B")
         
 @Override
@@ -674,6 +676,7 @@ public void setDataModel(ActivityChooserModel dataModel) {
             }
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.957 -0500", hash_original_method = "A69A431394F21E5FD61198963B3D5202", hash_generated_method = "20AE410B16A1786EC19C6948092E52B9")
         
 @Override
@@ -681,6 +684,7 @@ public void setDataModel(ActivityChooserModel dataModel) {
             return ITEM_VIEW_TYPE_COUNT;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.959 -0500", hash_original_method = "1BE11BD9F55247D049566CF39D6E3C60", hash_generated_method = "3F1664B2F078CC0C835E0AA6CD11DA20")
         
 public int getCount() {
@@ -696,6 +700,7 @@ public int getCount() {
             return count;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.962 -0500", hash_original_method = "F3D4BDC985376DF5677372C13824236A", hash_generated_method = "BB8CF48BFC2A326C1F085E177B2C4AC4")
         
 public Object getItem(int position) {
@@ -713,12 +718,14 @@ public Object getItem(int position) {
             }
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.964 -0500", hash_original_method = "7144EF990F660E75AA61001CF21A1CD5", hash_generated_method = "86EF76D6295D66F6DBBE39DCDBA9A1C9")
         
 public long getItemId(int position) {
             return position;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.968 -0500", hash_original_method = "6D38E6A963432D636038206F8FE6305D", hash_generated_method = "72FAC188CB494C428DA4BE64066D15F1")
         
 public View getView(int position, View convertView, ViewGroup parent) {
@@ -794,6 +801,7 @@ public void setMaxActivityCount(int maxActivityCount) {
             }
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.975 -0500", hash_original_method = "D919FDFCC3B420966F5D4C74A721F1BF", hash_generated_method = "7F765F26FE94A734EA8E9C715E1C66E7")
         
 public ResolveInfo getDefaultActivity() {
@@ -809,24 +817,28 @@ public void setShowFooterView(boolean showFooterView) {
             }
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.979 -0500", hash_original_method = "31736EA607A445202315EB7B50B5EA80", hash_generated_method = "5E3784ADE901B7AD8BE9FD82E60E244A")
         
 public int getActivityCount() {
             return mDataModel.getActivityCount();
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.981 -0500", hash_original_method = "1D0D91D46AAECCD7C2767CF25FDA64BD", hash_generated_method = "5020D9D3163C0DDB1CAD86A4F375AC44")
         
 public int getHistorySize() {
             return mDataModel.getHistorySize();
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.983 -0500", hash_original_method = "3E4531A24528D01DAB939C9C71B2C3DE", hash_generated_method = "392495D86C791FE80270745B8217253A")
         
 public int getMaxActivityCount() {
             return mMaxActivityCount;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.985 -0500", hash_original_method = "5525C6AC91C9709046E305FD9A15863B", hash_generated_method = "5EF3A5B97BCC3C6483416DFFF51C45B6")
         
 public ActivityChooserModel getDataModel() {

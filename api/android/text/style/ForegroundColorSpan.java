@@ -9,13 +9,8 @@ import android.text.ParcelableSpan;
 import android.text.TextPaint;
 import android.text.TextUtils;
 
-
-
-
-
 public class ForegroundColorSpan extends CharacterStyle implements UpdateAppearance, ParcelableSpan {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.722 -0500", hash_original_field = "CF1046E2EF6F9B2B63BE18A3B2BC71FD", hash_generated_field = "118704B52DA650C4DCD23A9FC0B970FC")
-
 
     private  int mColor;
 
@@ -31,6 +26,7 @@ public ForegroundColorSpan(Parcel src) {
         mColor = src.readInt();
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.731 -0500", hash_original_method = "8155995CA89F113B2E7BEC17CF09D49D", hash_generated_method = "1E333E0A391913A39029DA1ECAA4C4C3")
     
 public int getSpanTypeId() {
@@ -49,7 +45,8 @@ public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(mColor);
     }
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.739 -0500", hash_original_method = "7DE99734F4F039B37C58D21552D08DBC", hash_generated_method = "B912D85C9C793468EB70215DAAB63BD1")
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.739 -0500", hash_original_method = "7DE99734F4F039B37C58D21552D08DBC", hash_generated_method = "B912D85C9C793468EB70215DAAB63BD1")
     
 public int getForegroundColor() {
 		return mColor;
@@ -61,7 +58,6 @@ public int getForegroundColor() {
 	public void updateDrawState(TextPaint ds) {
 		ds.setColor(mColor);
 	}
-
     
 }
 

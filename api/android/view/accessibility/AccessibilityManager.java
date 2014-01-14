@@ -26,6 +26,7 @@ import android.view.View;
 
 public final class AccessibilityManager {
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public static AccessibilityManager getInstance(Context context) {
         synchronized (sInstanceSync) {
             if (sInstance == null) {
@@ -150,6 +151,7 @@ public boolean isTouchExplorationEnabled() {
      *
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.018 -0500", hash_original_method = "D3FF4CE091F652B646DDDB1D1AF726B0", hash_generated_method = "375BBA472B129BBB4312C8CF8687327F")
     
 public IAccessibilityManagerClient getClient() {
@@ -217,6 +219,7 @@ public void interrupt() {
      *
      * @deprecated Use {@link #getInstalledAccessibilityServiceList()}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.027 -0500", hash_original_method = "E2D6992D14607757295701B76C880C8C", hash_generated_method = "D61CF7B1D236D6FF1A3DE7EBF6566E1D")
     
 @Deprecated
@@ -236,6 +239,7 @@ public void interrupt() {
      *
      * @return An unmodifiable list with {@link AccessibilityServiceInfo}s.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.030 -0500", hash_original_method = "4069133ECADF858B249C4B9AC03C2D2A", hash_generated_method = "BEC0F9CC527984268D14449285115DD1")
     
 public List<AccessibilityServiceInfo> getInstalledAccessibilityServiceList() {
@@ -264,6 +268,7 @@ public List<AccessibilityServiceInfo> getInstalledAccessibilityServiceList() {
      * @see AccessibilityServiceInfo#FEEDBACK_SPOKEN
      * @see AccessibilityServiceInfo#FEEDBACK_VISUAL
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.033 -0500", hash_original_method = "0B36972F320E6D77C70DA2DE64F6CDA9", hash_generated_method = "DC96427724681BD4AFE1360F7CC3ED88")
     
 public List<AccessibilityServiceInfo> getEnabledAccessibilityServiceList(

@@ -74,6 +74,7 @@ CollationElementIterator(CollationElementIteratorICU iterator) {
      * @return the maximum length of any expansion sequence ending with the
      *         specified collation element.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:10.261 -0500", hash_original_method = "3D8662E172DF94DE766C937C706B5067", hash_generated_method = "5364E5A27E3DF6E0EF2FBFD834D7184C")
     
 public int getMaxExpansion(int order) {
@@ -103,6 +104,7 @@ public int getMaxExpansion(int order) {
      *         will be returned by the next invocation of the {@link #next()}
      *         method.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:10.264 -0500", hash_original_method = "86FFE9FC429F590289C595CEB48BC74B", hash_generated_method = "C1B3A53EF650EBA442EDBFDD333BC45F")
     
 public int getOffset() {

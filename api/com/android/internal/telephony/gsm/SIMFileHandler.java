@@ -13,9 +13,6 @@ import com.android.internal.telephony.IccConstants;
 import com.android.internal.telephony.IccFileHandler;
 import com.android.internal.telephony.Phone;
 
-
-
-
 public final class SIMFileHandler extends IccFileHandler implements IccConstants {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:32.433 -0500", hash_original_field = "28DECCA9F494133CD6F61BCA99A50ECA", hash_generated_field = "B8386CD6D900777C9D6A0A5CA1D0B217")
 
@@ -56,6 +53,7 @@ protected void finalize() {
         super.handleMessage(msg);
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:32.448 -0500", hash_original_method = "10EDEC4C0ACD70E5A3D3B2572E081074", hash_generated_method = "A975ADA1F6A29A037B0FBD288EE9391A")
     
 protected String getEFPath(int efid) {

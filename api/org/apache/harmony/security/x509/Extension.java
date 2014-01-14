@@ -118,6 +118,7 @@ public final class Extension {
             setDefault(Boolean.FALSE, 1);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:01.791 -0500", hash_original_method = "76E4451FF0478DD5E12D05D308694266", hash_generated_method = "B3CCB6A9D32760E1688D393F38CABA3A")
         
 @Override protected Object getDecodedObject(BerInputStream in) throws IOException {
@@ -229,6 +230,7 @@ private Extension(int[] extnID, boolean critical, byte[] extnValue,
     /**
      * Returns the value of extnID field of the structure.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:01.754 -0500", hash_original_method = "E60578C52DB7CB76AFDFFD6E54EB94BA", hash_generated_method = "879A197B07BE53D02BAF788515AAAC62")
     
 public String getExtnID() {
@@ -241,6 +243,7 @@ public String getExtnID() {
     /**
      * Returns the value of critical field of the structure.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:01.756 -0500", hash_original_method = "369AB9F41A626798BB3BCC89236BACDA", hash_generated_method = "3BB7B547EE2D857299CCD1B3DA45A26D")
     
 public boolean getCritical() {
@@ -250,6 +253,7 @@ public boolean getCritical() {
     /**
      * Returns the value of extnValue field of the structure.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:01.759 -0500", hash_original_method = "F9C60F4D31E709EEBAC29B8CD2952B48", hash_generated_method = "F24142DF133F3BE1BC9CF1237512A28B")
     
 public byte[] getExtnValue() {
@@ -260,6 +264,7 @@ public byte[] getExtnValue() {
      * Returns the raw (undecoded octet string) value of extnValue
      * field of the structure.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:01.761 -0500", hash_original_method = "B972EB2ABEF1534D23452658D280F82C", hash_generated_method = "FB39DDF990F499AE3B49C1A964AFAFF9")
     
 public byte[] getRawExtnValue() {
@@ -272,6 +277,7 @@ public byte[] getRawExtnValue() {
     /**
      * Returns ASN.1 encoded form of this X.509 Extension value.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:01.764 -0500", hash_original_method = "289715FCA6A05E78591BCAEFF536AB92", hash_generated_method = "B744F9E58D4CCB3856A5C56E8EA60B00")
     
 public byte[] getEncoded() {
@@ -299,6 +305,7 @@ public byte[] getEncoded() {
         return (Arrays.hashCode(extnID) * 37 + (critical ? 1 : 0)) * 37 + Arrays.hashCode(extnValue);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:01.771 -0500", hash_original_method = "95AE85BA4B02CE08CCFC1E936A7A9C52", hash_generated_method = "DEB6A9F36C83D65D7093C1FEB022FDB7")
     
 public ExtensionValue getDecodedExtensionValue() throws IOException {
@@ -308,6 +315,7 @@ public ExtensionValue getDecodedExtensionValue() throws IOException {
         return extnValueObject;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:01.773 -0500", hash_original_method = "E99A050D2989B02D8A38B58525424B82", hash_generated_method = "540B1C8059C95F428EDBBFD08E17B945")
     
 public KeyUsage getKeyUsageValue() {
@@ -324,6 +332,7 @@ public KeyUsage getKeyUsageValue() {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:01.776 -0500", hash_original_method = "685788692D49D3921B7D2E066C2897C4", hash_generated_method = "05A909585D96DF12EB997558B334ACAC")
     
 public BasicConstraints getBasicConstraintsValue() {

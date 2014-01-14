@@ -12,24 +12,28 @@ import droidsafe.helpers.DSUtils;
 
 public final class NativeBreakIterator implements Cloneable {
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:04.798 -0500", hash_original_method = "2691A66B9F7121FF4E1F4C3AAB3B115E", hash_generated_method = "42DDEB519612D2FBBAFC815CFE4746A1")
     
 public static NativeBreakIterator getCharacterInstance(Locale where) {
         return new NativeBreakIterator(getCharacterInstanceImpl(where.toString()), BI_CHAR_INSTANCE);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:04.801 -0500", hash_original_method = "A5068826AB61508C73B826D13F7802F6", hash_generated_method = "3142643C43E8C30F5636F1C02DB42E99")
     
 public static NativeBreakIterator getLineInstance(Locale where) {
         return new NativeBreakIterator(getLineInstanceImpl(where.toString()), BI_LINE_INSTANCE);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:04.803 -0500", hash_original_method = "7BCD2471A17EE3261A84DEB3E7F32F40", hash_generated_method = "09110D6D10CDC69E97F8B5E85128125F")
     
 public static NativeBreakIterator getSentenceInstance(Locale where) {
         return new NativeBreakIterator(getSentenceInstanceImpl(where.toString()), BI_SENT_INSTANCE);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:04.806 -0500", hash_original_method = "DDEBBF67963FA6D0A8324F874358024D", hash_generated_method = "7BCFC0C2A8877C4BE69A837A07D110A2")
     
 public static NativeBreakIterator getWordInstance(Locale where) {
@@ -184,6 +188,7 @@ public int following(int offset) {
         return followingImpl(this.address, offset);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:04.771 -0500", hash_original_method = "9A8EEEA70A76B239B3603BC6AAF004E0", hash_generated_method = "2A1698EBD92E4433C10E5F9A7EBAB96B")
     
 public CharacterIterator getText() {

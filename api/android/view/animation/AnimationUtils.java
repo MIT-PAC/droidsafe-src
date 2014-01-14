@@ -42,6 +42,7 @@ public static long currentAnimationTimeMillis() {
      * @return The animation object reference by the specified id
      * @throws NotFoundException when the animation cannot be loaded
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:59.806 -0500", hash_original_method = "6C4C15BBA350A59BA813AA1FCD4C13A9", hash_generated_method = "964AEB68764DEFC476CB3B91239FBE82")
     
 public static Animation loadAnimation(Context context, int id)
@@ -118,6 +119,7 @@ private static Animation createAnimationFromXml(Context c, XmlPullParser parser,
 
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:59.814 -0500", hash_original_method = "964443399E2AD1454EB45E33276D0BAE", hash_generated_method = "33527BDB58F8A855DA6F244F1B62FF41")
     
 public static LayoutAnimationController loadLayoutAnimation(Context context, int id)
@@ -252,6 +254,7 @@ public static Animation makeInChildBottomAnimation(Context c) {
      * @return The animation object reference by the specified id
      * @throws NotFoundException
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:59.830 -0500", hash_original_method = "BDF8B873A1CA7BFCFC39306793FA91B3", hash_generated_method = "2826F5F26A01425B8BA48E1AC8D3ABDF")
     
 public static Interpolator loadInterpolator(Context context, int id) throws NotFoundException {

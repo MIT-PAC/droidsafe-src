@@ -66,6 +66,7 @@ public synchronized int
         return registrants.size();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.676 -0500", hash_original_method = "8E803949D880002FCD2B174D60AAE952", hash_generated_method = "201473706323896C6EAFA6D338812DA9")
     
 public synchronized Object

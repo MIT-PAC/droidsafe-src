@@ -17,10 +17,6 @@ import android.view.inputmethod.ExtractedText;
 import android.view.inputmethod.ExtractedTextRequest;
 import android.widget.TextView;
 
-
-
-
-
 public class EditableInputConnection extends BaseInputConnection {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:44.601 -0500", hash_original_field = "81DD852ECBE07BA98A61C8F3D0C85F01", hash_generated_field = "58EDF43BA541A4D47EECFEC3901C7AED")
 
@@ -29,7 +25,6 @@ public class EditableInputConnection extends BaseInputConnection {
 
     private static final String TAG = "EditableInputConnection";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:44.605 -0500", hash_original_field = "49AF0A2A014C0E7F98E27CA30429A8B6", hash_generated_field = "B044D5C32398EDC8D922234EFA4F1DF3")
-
 
     private  TextView mTextView;
 
@@ -40,6 +35,7 @@ public EditableInputConnection(TextView textview) {
         mTextView = textview;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:44.611 -0500", hash_original_method = "79431EAAD385E82AA03E24E6CD9A3769", hash_generated_method = "7935515E12FD97D1BDB3547472C93F41")
     
 @Override
@@ -130,6 +126,7 @@ public EditableInputConnection(TextView textview) {
         return true;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:44.631 -0500", hash_original_method = "1D36BC67F0D3E0E821622DAE101B8DA4", hash_generated_method = "2E76C79910E20053FDD65673A972F600")
     
 @Override

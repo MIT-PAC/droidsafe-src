@@ -16,6 +16,7 @@ public final class Console implements Flushable {
      * Secret accessor for {@code System.console}.
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.426 -0500", hash_original_method = "E042DF20162499E05BE37E1E3B35DC0F", hash_generated_method = "CE2F8AC88C532DF19218B2E8BBEFE4BE")
     
 public static Console getConsole() {

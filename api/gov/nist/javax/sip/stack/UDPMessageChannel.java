@@ -739,6 +739,7 @@ protected void sendMessage(byte[] msg, InetAddress peerAddress,
      *
      * @return The sip stack for this channel.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:15.462 -0500", hash_original_method = "4789C177AC8ECE60B231BA8A866F9D66", hash_generated_method = "7DFF2B9EFB272B5F349D68AD73E9A18C")
     
 public SIPTransactionStack getSIPStack() {
@@ -750,6 +751,7 @@ public SIPTransactionStack getSIPStack() {
      *
      * @return the string "udp" in this case.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:15.464 -0500", hash_original_method = "B7A5D479C43293000A9EAFE6F93DF6D0", hash_generated_method = "B57FF53F26536E4C501842CE5287A618")
     
 public String getTransport() {
@@ -761,6 +763,7 @@ public String getTransport() {
      *
      * @return The stack address for our sipStack.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:15.467 -0500", hash_original_method = "EA072AA1AE1B409D48E6BC6990EBDEC5", hash_generated_method = "EE16D1D8C9AE581ED2CCA97AC6535DF6")
     
 public String getHost() {
@@ -772,6 +775,7 @@ public String getHost() {
      *
      * @return Our port (on which we are getting datagram packets).
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:15.469 -0500", hash_original_method = "891FD85C4A46ECEDCCE8E5933BDC3ADD", hash_generated_method = "DCC1945BA7447A8694B492C43AC047C1")
     
 public int getPort() {
@@ -783,6 +787,7 @@ public int getPort() {
      *
      * @return The name of the sender (from the datagram packet).
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:15.473 -0500", hash_original_method = "86CAA293F63DFC3CC87A4ACD6BC27DDA", hash_generated_method = "CEEABD187B992E552A2F75ABEE69FD52")
     
 public String getPeerName() {
@@ -794,12 +799,14 @@ public String getPeerName() {
      *
      * @return The senders ip address.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:15.476 -0500", hash_original_method = "A07C7EAAB254DF7A2A64ECDA7F650470", hash_generated_method = "85684F6812C32531656E4D13F9F6C173")
     
 public String getPeerAddress() {
         return peerAddress.getHostAddress();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:15.479 -0500", hash_original_method = "1F29EC3BC94C3E0863F530FCD37A61F3", hash_generated_method = "5D52F16A6CD419A72363BEE2FA3651BF")
     
 protected InetAddress getPeerInetAddress() {
@@ -829,18 +836,21 @@ public boolean equals(Object other) {
         return retval;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:15.484 -0500", hash_original_method = "8A0A97143B2090B701AABAA2A97E73FB", hash_generated_method = "59F690BF8E95F42C1CA01C43B567E0DD")
     
 public String getKey() {
         return getKey(peerAddress, peerPort, "UDP");
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:15.487 -0500", hash_original_method = "66F44212C04D4B032E5D57BC9126F4FF", hash_generated_method = "F40B7BBDADE2EDD9E4FFD8062E730749")
     
 public int getPeerPacketSourcePort() {
         return peerPacketSourcePort;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:15.490 -0500", hash_original_method = "DC065FB3DE06142DBC04F100FD01BCF3", hash_generated_method = "701FF88A1C843AC53C75CCA208A2C7BF")
     
 public InetAddress getPeerPacketSourceAddress() {
@@ -852,6 +862,7 @@ public InetAddress getPeerPacketSourceAddress() {
      *
      * @return topmost via header sentby field
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:15.493 -0500", hash_original_method = "B7C8CBECE48532207EA3107C3752BABB", hash_generated_method = "23B273ABD579FDAD40680D771CF63201")
     
 public String getViaHost() {
@@ -863,6 +874,7 @@ public String getViaHost() {
      *
      * @return the via port from the topmost via header.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:15.495 -0500", hash_original_method = "F69C682C43E3A7CF8FCB14E212CB7049", hash_generated_method = "98003D137B978019D797CBA84B76EDD8")
     
 public int getViaPort() {
@@ -887,12 +899,14 @@ public boolean isSecure() {
         return false;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:15.504 -0500", hash_original_method = "356711D154A2D021F9E9DF4BCD609AF2", hash_generated_method = "0A13911FE5FD34A377B4DEB23C492969")
     
 public int getPeerPort() {
         return peerPort;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:15.507 -0500", hash_original_method = "DB79607DA3ACB5FA2D24428DF2713F98", hash_generated_method = "9EF71D175A0EFE47AE567BEC7BFAC16F")
     
 public String getPeerProtocol() {

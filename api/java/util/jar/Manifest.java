@@ -233,6 +233,7 @@ public void clear() {
      * @return the Attributes for the entry or {@code null} if the entry does
      *         not exist.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:58.199 -0500", hash_original_method = "78C1F2A094121E0A509E66806BC04C36", hash_generated_method = "E4DE14DB9621A9D657B46207A017F464")
     
 public Attributes getAttributes(String name) {
@@ -245,6 +246,7 @@ public Attributes getAttributes(String name) {
      *
      * @return the map of entry attributes.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:58.201 -0500", hash_original_method = "AD5E8B028D2F33E921C50CB4C1BDCE39", hash_generated_method = "E1F6C9A8CB2009128564CD77B4042B46")
     
 public Map<String, Attributes> getEntries() {
@@ -257,6 +259,7 @@ public Map<String, Attributes> getEntries() {
      * @return main {@code Attributes} associated with the source {@code
      *         JarFile}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:58.204 -0500", hash_original_method = "E50165B574B80B3A6D479CE79F6197B1", hash_generated_method = "C4BF8381294FCDC1FAB64ADD93A2235A")
     
 public Attributes getMainAttributes() {
@@ -395,6 +398,7 @@ void removeChunks() {
         chunks = null;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:58.227 -0500", hash_original_method = "4F9436521007A1D33F6CF267D74BE295", hash_generated_method = "4F9436521007A1D33F6CF267D74BE295")
     
 int getMainAttributesEnd() {

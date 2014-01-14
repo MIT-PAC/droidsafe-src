@@ -73,6 +73,7 @@ protected AbsSavedState(Parcel source) {
         mSuperState = superState != null ? superState : EMPTY_STATE;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:12.418 -0500", hash_original_method = "D1776F094204A2E68E2669C5D33A32E2", hash_generated_method = "AF464EED3716AECE0A66502BB0592F8F")
     
 final public Parcelable getSuperState() {

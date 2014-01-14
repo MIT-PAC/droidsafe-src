@@ -295,6 +295,7 @@ public boolean unmountObb(String filename, boolean force, OnObbStateChangeListen
      * @param filename path to OBB image
      * @return true if OBB is mounted; false if not mounted or on error
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.153 -0500", hash_original_method = "4111120C74906E4EF74CC0B96E5C85EA", hash_generated_method = "5CE4857D25FF91B9771ACE3CA8E56D49")
     
 public boolean isObbMounted(String filename) {
@@ -320,6 +321,7 @@ public boolean isObbMounted(String filename) {
      * @return absolute path to mounted OBB image data or <code>null</code> if
      *         not mounted or exception encountered trying to read status
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.156 -0500", hash_original_method = "4524FA5E45068B5E619708F061E65DAB", hash_generated_method = "0F4BAE3ECC3FDE074D70F5170D657C41")
     
 public String getMountedObbPath(String filename) {
@@ -340,6 +342,7 @@ public String getMountedObbPath(String filename) {
      * Gets the state of a volume via its mountpoint.
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.158 -0500", hash_original_method = "9BA3F19D0DE55EC9B6B86E9B817FE10B", hash_generated_method = "D81876DE63D0AD390F244C6C56BDEE91")
     
 public String getVolumeState(String mountPoint) {
@@ -355,6 +358,7 @@ public String getVolumeState(String mountPoint) {
      * Returns list of all mountable volumes.
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.160 -0500", hash_original_method = "7E321C52EE616E46A0C899410949AC4D", hash_generated_method = "A4186C0F929126F46AA2F6469447BA79")
     
 public StorageVolume[] getVolumeList() {
@@ -482,6 +486,7 @@ ObbListenerDelegate(OnObbStateChangeListener listener) {
             };
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.061 -0500", hash_original_method = "834954D068AF2864C85CCAD9D321B725", hash_generated_method = "834954D068AF2864C85CCAD9D321B725")
         
 OnObbStateChangeListener getListener() {
@@ -541,6 +546,7 @@ public StorageEvent(int what) {
             mMessage.obj = this;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.090 -0500", hash_original_method = "237083C18B821DBF98088C4FF8F2E015", hash_generated_method = "5056BEB71FDB17C74971DA0D39E93C75")
         
 public Message getMessage() {
@@ -614,6 +620,7 @@ ListenerDelegate(StorageEventListener listener) {
             };
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.123 -0500", hash_original_method = "DA2EC644741ABB32C38C92FF70A87DA0", hash_generated_method = "DA2EC644741ABB32C38C92FF70A87DA0")
         
 StorageEventListener getListener() {
@@ -642,6 +649,7 @@ void sendStorageStateChanged(String path, String oldState, String newState) {
      * Returns list of paths for all mountable volumes.
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.163 -0500", hash_original_method = "32FCB28C74C473CB8B8088CF6B7B3DD3", hash_generated_method = "0482A7B4132D28A95CDD142BB4ACF07C")
     
 public String[] getVolumePaths() {

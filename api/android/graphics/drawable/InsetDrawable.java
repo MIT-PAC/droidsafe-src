@@ -158,6 +158,7 @@ public void unscheduleDrawable(Drawable who, Runnable what) {
         mInsetState.mDrawable.draw(canvas);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:13.929 -0500", hash_original_method = "5E6B5E9F59EDAB724B1161E1868DCBF2", hash_generated_method = "A5E94C52FBA1EA9E7C6C96F0844AC16A")
     
 @Override
@@ -211,6 +212,7 @@ public void unscheduleDrawable(Drawable who, Runnable what) {
         mInsetState.mDrawable.setColorFilter(cf);
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:13.940 -0500", hash_original_method = "84C32146675D5EBE47A9CF2427DBDE28", hash_generated_method = "536CDDC75C5B7F134CE8566472B9408B")
     
 @Override
@@ -249,6 +251,7 @@ public void unscheduleDrawable(Drawable who, Runnable what) {
         mInsetState.mDrawable.setBounds(r.left, r.top, r.right, r.bottom);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:13.949 -0500", hash_original_method = "AB4853FCC2E61C4308CEBFB5AE69B700", hash_generated_method = "474DB5BDE1F8B547F65CC9A0E464316B")
     
 @Override
@@ -256,6 +259,7 @@ public void unscheduleDrawable(Drawable who, Runnable what) {
         return mInsetState.mDrawable.getIntrinsicWidth();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:13.951 -0500", hash_original_method = "29FF5B29153AE16681DB19A374B63115", hash_generated_method = "9B3C0C9A781973B63CC53E902FBFA47F")
     
 @Override
@@ -343,6 +347,7 @@ InsetState(InsetState orig, InsetDrawable owner, Resources res) {
             return new InsetDrawable(this, res);
         }
         
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:13.983 -0500", hash_original_method = "9E7D7C67EAC365FF19BD4971762612A5", hash_generated_method = "3AB30668ED270F2EDF2E0129C706FE4D")
         
 @Override

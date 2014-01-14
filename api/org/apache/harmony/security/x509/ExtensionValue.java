@@ -24,6 +24,7 @@ public ExtensionValue(byte[] encoding) {
     }
 
     /** Returns encoded form of the object. */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:56.599 -0500", hash_original_method = "377D44A9A27BF814250295098F20477B", hash_generated_method = "1FAC514B8B58DEE35114AACC993B54AF")
     
 public byte[] getEncoded() {

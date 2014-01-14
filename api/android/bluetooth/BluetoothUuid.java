@@ -10,8 +10,6 @@ import java.util.UUID;
 
 import android.os.ParcelUuid;
 
-
-
 public final class BluetoothUuid {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:36.366 -0500", hash_original_method = "B5DFCB7F3755C1609FBC5A2E72C4D96E", hash_generated_method = "0F52FBEB0F30E2998B7486896D61EC4B")
@@ -160,6 +158,7 @@ public static boolean containsAllUuids(ParcelUuid[] uuidA, ParcelUuid[] uuidB) {
      * @param parcelUuid
      * @return the service identifier.
      */
+    @DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:36.398 -0500", hash_original_method = "F016C5A5F194C2EC56E874A5CB01C8BA", hash_generated_method = "19EF59BC210E96E879B3DBC348B4AD2E")
     
 public static int getServiceIdentifierFromParcelUuid(ParcelUuid parcelUuid) {
@@ -228,7 +227,6 @@ public static int getServiceIdentifierFromParcelUuid(ParcelUuid parcelUuid) {
     public static final ParcelUuid PBAP_PSE =
             ParcelUuid.fromString("0000112f-0000-1000-8000-00805F9B34FB");
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:36.364 -0500", hash_original_field = "DB67FFC3270C4399FCF0A259E4C7ECD9", hash_generated_field = "21C8273B00AA1A7F9C975686F7D4F5C5")
-
 
     public static final ParcelUuid[] RESERVED_UUIDS = {
         AudioSink, AudioSource, AdvAudioDist, HSP, Handsfree, AvrcpController, AvrcpTarget,

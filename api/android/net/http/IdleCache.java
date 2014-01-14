@@ -9,13 +9,8 @@ import org.apache.http.HttpHost;
 
 import android.os.SystemClock;
 
-
-
-
-
 class IdleCache {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.008 -0500", hash_original_field = "7B2144BEEC0414B7B620CCBFC36930F5", hash_generated_field = "844D05329852E8C591AB6BCD91CF4039")
-
 
     private final static int IDLE_CACHE_MAX = 8;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.010 -0500", hash_original_field = "5D4BE83937850A1A05D60BAFB8354CFD", hash_generated_field = "B31C9FE229293E94ED98B7862DD3C494")
@@ -32,10 +27,8 @@ class IdleCache {
     private Entry[] mEntries = new Entry[IDLE_CACHE_MAX];
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.019 -0500", hash_original_field = "D01C96038701D525501067476D6E20FD", hash_generated_field = "FF64F9A7A53D85DAFE355CC940E3F92D")
 
-
     private int mCount = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.021 -0500", hash_original_field = "823D5CC7A6FBE6E7E207151FFC739A3B", hash_generated_field = "E1D81FFF9FA8DBF8F061A478C1B8E12A")
-
 
     private IdleReaper mThread = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.023 -0500", hash_original_field = "39077C14E378039D1D2674EB097F2854", hash_generated_field = "5F06A5363A8AD1B70971804573712105")
@@ -52,7 +45,6 @@ IdleCache() {
             mEntries[i] = new Entry();
         }
     }
-
     
     class Entry {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.999 -0500", hash_original_field = "BB62408D38B8CFFE64423F7A37FB51DF", hash_generated_field = "BB62408D38B8CFFE64423F7A37FB51DF")
@@ -71,10 +63,7 @@ IdleCache() {
             //Synthesized constructor
         }
 
-
     }
-
-
     
     private class IdleReaper extends Thread {
         
@@ -114,7 +103,6 @@ public void run() {
                 mReused = 0;
             }
         }
-
         
     }
 
@@ -155,6 +143,7 @@ synchronized boolean cacheConnection(
         return ret;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.034 -0500", hash_original_method = "84A867D5F5B3563DFEB3ADE540AAE988", hash_generated_method = "8D515E030AE7DD404198E0F4C7514E84")
     
 synchronized Connection getConnection(HttpHost host) {

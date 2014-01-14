@@ -63,6 +63,7 @@ public void setDate(Calendar dat) {
      *
      * @return the Calendar object representing the date of DateHeader
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:03.199 -0500", hash_original_method = "8348440FA7E2BF46CE5F14E959934430", hash_generated_method = "8D897808B9E217D79B1C7FE59F59028A")
     
 public Calendar getDate() {

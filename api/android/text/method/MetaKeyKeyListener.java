@@ -220,6 +220,7 @@ public static long resetLockedMeta(long state) {
      * @return an integer in which each bit set to one represents a pressed
      *         or locked meta key.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:58.557 -0500", hash_original_method = "8759945C5194DF9FDA8684974019087A", hash_generated_method = "C6021809A3234588E9A91CEFDF648670")
     
 public static final int getMetaState(long state) {
@@ -254,6 +255,7 @@ public static final int getMetaState(long state) {
      *
      * @return 0 if inactive, 1 if active, 2 if locked.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:58.561 -0500", hash_original_method = "9198ADB45CCF6407614EAE29C1436072", hash_generated_method = "6CB187D36897895866179D6DBBA7DC2E")
     
 public static final int getMetaState(long state, int meta) {

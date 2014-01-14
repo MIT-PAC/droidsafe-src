@@ -134,7 +134,8 @@ protected String elapsedTimeAsString(long runTime) {
 	    return Double.toString((double)runTime/1000);
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:42.712 -0500", hash_original_method = "E39F1A78CDD5A4CC126B77217AA8CF1F", hash_generated_method = "5BCCDE690011F2BA809001DBBEE7B089")
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:42.712 -0500", hash_original_method = "E39F1A78CDD5A4CC126B77217AA8CF1F", hash_generated_method = "5BCCDE690011F2BA809001DBBEE7B089")
     
 public PrintStream getWriter() {
 		return fWriter;

@@ -13,13 +13,7 @@ import org.apache.harmony.security.asn1.ASN1Sequence;
 import org.apache.harmony.security.asn1.ASN1Type;
 import org.apache.harmony.security.asn1.BerInputStream;
 
-
-
-
-
-
 public final class BasicConstraints extends ExtensionValue {
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.845 -0400", hash_original_field = "08F29BA7DFA287FEFE128BE2F01D2233", hash_generated_field = "8C6491AD1E19D1D98E0A71A1D7A0B4B0")
 
@@ -30,6 +24,7 @@ public final class BasicConstraints extends ExtensionValue {
             setOptional(1);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:57.477 -0500", hash_original_method = "C98349FCBC509D9B5E2186CE1C87C57F", hash_generated_method = "B66EE4A4596F6ED85DA04FC094547D35")
         
 public Object getDecodedObject(BerInputStream in) throws IOException {
@@ -65,6 +60,7 @@ public BasicConstraints(byte[] encoding) throws IOException {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:57.468 -0500", hash_original_method = "BA19E2BECC620F0A37756A3C3C0D942D", hash_generated_method = "71593070597BC1EB6C5B74063E78A764")
     
 public int getPathLenConstraint() {
@@ -74,6 +70,7 @@ public int getPathLenConstraint() {
     /**
      * Returns the encoded form of the object.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:57.470 -0500", hash_original_method = "946B6F20121D8D093231FCFBEB08839B", hash_generated_method = "8461DBA1A5D45C67C79BFC47B35D2B2F")
     
 public byte[] getEncoded() {

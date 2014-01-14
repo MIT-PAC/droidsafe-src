@@ -67,6 +67,7 @@ protected String encodeBody() {
      *
      * @return the value of the icid-value parameter
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:56.302 -0500", hash_original_method = "B80431D54E690B860FD3339F406AB025", hash_generated_method = "C4EF68B293DA907A161EAA6E8768C520")
     
 public String getICID() {
@@ -104,6 +105,7 @@ public void setICID(String icid) throws ParseException {
      *
      * @return the icid-generated-at parameter value
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:56.309 -0500", hash_original_method = "E03F1FEEE570AA8D71D705B8C23619DF", hash_generated_method = "D28F8919292C0854C480D364C88F012C")
     
 public String getICIDGeneratedAt() {
@@ -142,6 +144,7 @@ public void setICIDGeneratedAt(String host) throws ParseException {
      *
      * @return the orig-ioi parameter value
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:56.316 -0500", hash_original_method = "9C58F34D8EC32A5F098899E01B3677E3", hash_generated_method = "743D4A1C1C0F5C6A2C4B198A38D1C279")
     
 public String getOriginatingIOI() {
@@ -178,6 +181,7 @@ public void setOriginatingIOI(String origIOI) throws ParseException {
      *
      * @return the term-ioi parameter value
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:56.323 -0500", hash_original_method = "D0795F3899C65FBD8AF4B39D420CBFCA", hash_generated_method = "664D9EC3B3C9B493DA4EE303E31BE1BB")
     
 public String getTerminatingIOI() {

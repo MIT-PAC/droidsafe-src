@@ -148,6 +148,7 @@ public void run() {
      * 
      * @return my sip stack.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:26.829 -0500", hash_original_method = "4789C177AC8ECE60B231BA8A866F9D66", hash_generated_method = "7DFF2B9EFB272B5F349D68AD73E9A18C")
     
 public SIPTransactionStack getSIPStack() {
@@ -265,6 +266,7 @@ public synchronized MessageChannel createMessageChannel(InetAddress host, int po
     /**
      * TLS can handle an unlimited number of bytes.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:26.848 -0500", hash_original_method = "248B80D43EBE2633D052A5A2C5B180CB", hash_generated_method = "CA9A4BABAD31A74E1D32220278B56EB2")
     
 public int getMaximumMessageSize() {
@@ -280,6 +282,7 @@ public boolean inUse() {
     /**
      * Default target port for TLS
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:26.853 -0500", hash_original_method = "B951ECFC8A9F13621942685951F4919F", hash_generated_method = "504286D67C4B3F7559AF77DEEA329DAA")
     
 public int getDefaultTargetPort() {

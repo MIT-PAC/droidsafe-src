@@ -17,10 +17,6 @@ import android.provider.DrmStore;
 import android.provider.MediaStore;
 import android.provider.Settings;
 
-
-
-
-
 public class Ringtone {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:26.964 -0500", hash_original_method = "7C7E876780A603240D42A5BB96522037", hash_generated_method = "EAAD1702E472810FAA2CF3F810517246")
@@ -81,14 +77,12 @@ private static String getTitle(Context context, Uri uri, boolean followSettingsU
     private static String TAG = "Ringtone";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:26.929 -0500", hash_original_field = "560B665A142B68230F4465A1C59C24C9", hash_generated_field = "9C933AC05E3167A254DFD7049D6C5A3D")
 
-
     private static final String[] MEDIA_COLUMNS = new String[] {
         MediaStore.Audio.Media._ID,
         MediaStore.Audio.Media.DATA,
         MediaStore.Audio.Media.TITLE
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:26.932 -0500", hash_original_field = "49CF46E8760538BC04BCF36CF117C555", hash_generated_field = "12C48621F14CD9EBFF2B9F5D2C5B747B")
-
 
     private static final String[] DRM_COLUMNS = new String[] {
         DrmStore.Audio._ID,
@@ -97,10 +91,8 @@ private static String getTitle(Context context, Uri uri, boolean followSettingsU
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:26.934 -0500", hash_original_field = "114D6930502EB051599FDF53068B5EF9", hash_generated_field = "29CF01719F6820D08330DF490C891644")
 
-
     private MediaPlayer mAudio;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:26.936 -0500", hash_original_field = "49226456B4CE4E55A779249DE3DC63D4", hash_generated_field = "04FA8EB5D9FB8AC4AAE6453BCF1BBF82")
-
 
     private Uri mUri;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:26.938 -0500", hash_original_field = "16E0C5A3FE98D2D22AD69EC7A123442F", hash_generated_field = "F874AFA927FA7D19042AF93F53067D66")
@@ -114,13 +106,11 @@ private static String getTitle(Context context, Uri uri, boolean followSettingsU
     private AssetFileDescriptor mAssetFileDescriptor;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:26.946 -0500", hash_original_field = "60852FBB34E58AF261BF32523C542C38", hash_generated_field = "6500983E788303EA2D93C21805BCE618")
 
-
     private int mStreamType = AudioManager.STREAM_RING;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:26.948 -0500", hash_original_field = "81931559493F052ED78BA000FD1BC717", hash_generated_field = "B52B11818937F27E927A20CDEBA27654")
 
     private AudioManager mAudioManager;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:26.950 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
-
 
     private Context mContext;
 
@@ -159,6 +149,7 @@ public void setStreamType(int streamType) {
      * 
      * @return The stream type, see {@link AudioManager}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:26.958 -0500", hash_original_method = "216E9F6C8E5136791318AC3D24F88326", hash_generated_method = "F7BEAF5998981A9DDFFDF515BD2883C7")
     
 public int getStreamType() {
@@ -171,6 +162,7 @@ public int getStreamType() {
      * 
      * @param context A context used for querying. 
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:26.960 -0500", hash_original_method = "9AA0FF99679830890209304DA3B8D69B", hash_generated_method = "6E3AD98B144BB627B392050A53FFE9BE")
     
 public String getTitle(Context context) {

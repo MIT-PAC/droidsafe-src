@@ -215,6 +215,7 @@ public final void forceFinished(boolean finished) {
      * 
      * @return The duration of the scroll in milliseconds.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.159 -0500", hash_original_method = "C5CB9F23218BD0303C05492AF6E52DA2", hash_generated_method = "435A63AD7A59A60E85ECBFA35C286957")
     
 public final int getDuration() {
@@ -226,6 +227,7 @@ public final int getDuration() {
      * 
      * @return The new X offset as an absolute distance from the origin.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.162 -0500", hash_original_method = "BBE38D2570F755B77B8BCEE3883878A8", hash_generated_method = "4E41D36F526AAF68C1E1DC2FBC513434")
     
 public final int getCurrX() {
@@ -237,6 +239,7 @@ public final int getCurrX() {
      * 
      * @return The new Y offset as an absolute distance from the origin.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.164 -0500", hash_original_method = "F6ADC6344D48E201FCE3042AD823C1E1", hash_generated_method = "0FA9E998037FCAAD2F3E776A3158CAED")
     
 public final int getCurrY() {
@@ -249,6 +252,7 @@ public final int getCurrY() {
      * @return The original velocity less the deceleration. Result may be
      * negative.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.166 -0500", hash_original_method = "B027DED22A5B5763CA61B11517344C6D", hash_generated_method = "FBD30219A263B76C72919EC369B7C1FE")
     
 public float getCurrVelocity() {
@@ -260,6 +264,7 @@ public float getCurrVelocity() {
      * 
      * @return The start X offset as an absolute distance from the origin.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.168 -0500", hash_original_method = "E9E5B4E6E70EEEC71B101472B8ED332D", hash_generated_method = "F4D774EE2D7DC7B6AC7D4A359A10AB9E")
     
 public final int getStartX() {
@@ -271,6 +276,7 @@ public final int getStartX() {
      * 
      * @return The start Y offset as an absolute distance from the origin.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.170 -0500", hash_original_method = "96DB239ADDDE6565887119C487206B3B", hash_generated_method = "EA10829488B72BE8CDA25C0F10795591")
     
 public final int getStartY() {
@@ -282,6 +288,7 @@ public final int getStartY() {
      * 
      * @return The final X offset as an absolute distance from the origin.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.172 -0500", hash_original_method = "FA811E85285FC4A5EAEC6F3CADDA829D", hash_generated_method = "BDFA12568F79C06B41890291C1FF1C7E")
     
 public final int getFinalX() {
@@ -293,6 +300,7 @@ public final int getFinalX() {
      * 
      * @return The final Y offset as an absolute distance from the origin.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.175 -0500", hash_original_method = "39F49202EF2D412808D46FE4B1B455BA", hash_generated_method = "B4E63B164A6B85616E03240C535C53EE")
     
 public final int getFinalY() {

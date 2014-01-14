@@ -429,6 +429,7 @@ public void setCompatibilityScaling(float factor) {
      * @return the bidi flags on the paint
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.583 -0500", hash_original_method = "35E33B2836010FD893C5DC650465B2C6", hash_generated_method = "24ACE0E2E8F936C34622C6467C2500A2")
     
 public int getBidiFlags() {
@@ -878,6 +879,7 @@ public boolean getFillPath(Path src, Path dst) {
      *
      * @return the paint's shader (or null)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.693 -0500", hash_original_method = "F14F830C87873216E173BB3B6F2D71DE", hash_generated_method = "8DBF73334FEE6AE360C318B464AF95B2")
     
 public Shader getShader() {
@@ -909,6 +911,7 @@ public Shader setShader(Shader shader) {
      *
      * @return the paint's colorfilter (maybe be null)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.698 -0500", hash_original_method = "0F313F2FF8A981B6076CED0DBA25A8DB", hash_generated_method = "98CE345F8B786633A4EDF27D229B40E9")
     
 public ColorFilter getColorFilter() {
@@ -937,6 +940,7 @@ public ColorFilter setColorFilter(ColorFilter filter) {
      *
      * @return the paint's xfermode (or null)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.702 -0500", hash_original_method = "DC5D89A34795E2A5122BF3B6DBF85AE6", hash_generated_method = "898FFC2A2B526990BEACBF8A9EEE0A3E")
     
 public Xfermode getXfermode() {
@@ -968,6 +972,7 @@ public Xfermode setXfermode(Xfermode xfermode) {
      *
      * @return the paint's patheffect (or null)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.706 -0500", hash_original_method = "D81D17C09FBA25719A586CCEA3F0BEFE", hash_generated_method = "2B2DC4C7D93AD4562516B56B7B85DC1C")
     
 public PathEffect getPathEffect() {
@@ -1000,6 +1005,7 @@ public PathEffect setPathEffect(PathEffect effect) {
      *
      * @return the paint's maskfilter (or null)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.710 -0500", hash_original_method = "E1DE139FF20646B82CF42CE75E145566", hash_generated_method = "096E64BB945D1D21BA427E43A696EC12")
     
 public MaskFilter getMaskFilter() {
@@ -1036,6 +1042,7 @@ public MaskFilter setMaskFilter(MaskFilter maskfilter) {
      *
      * @return the paint's typeface (or null)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.715 -0500", hash_original_method = "E402FEB0FEC812E5128501C647697EA3", hash_generated_method = "A909A7BCB28345CA256D5D547C6649A7")
     
 public Typeface getTypeface() {
@@ -1070,6 +1077,7 @@ public Typeface setTypeface(Typeface typeface) {
      *
      * @return         the paint's rasterizer (or null)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.719 -0500", hash_original_method = "7F563E2B82AAC612FD94925F2ADE0503", hash_generated_method = "49FE51D89199AC53E31BBEC2F8863CD7")
     
 public Rasterizer getRasterizer() {
@@ -1329,6 +1337,7 @@ public FontMetricsInt getFontMetricsInt() {
      * @return  recommend line spacing based on the current typeface and
      *          text size.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.805 -0500", hash_original_method = "EF0ED40E419F51E9B426A955B42CA854", hash_generated_method = "A211A2E60986B3B18A11FCCE8BD4B225")
     
 public float getFontSpacing() {
@@ -1761,6 +1770,7 @@ public int breakText(String text, boolean measureForwards,
      *                 Must be at least a large as count.
      * @return         the actual number of widths returned.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.848 -0500", hash_original_method = "83C574DC73479463FE44C1F2988A5F29", hash_generated_method = "50516D8BBE96DB9F908C6DE143BC79A9")
     
 public int getTextWidths(char[] text, int index, int count,
@@ -1800,6 +1810,7 @@ public int getTextWidths(char[] text, int index, int count,
      *                 Must be at least a large as (end - start).
      * @return         the actual number of widths returned.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.851 -0500", hash_original_method = "F14F0812F33DADA5D35A1216285E517E", hash_generated_method = "246C897DE6D5D577D1D20E9AF6330553")
     
 public int getTextWidths(CharSequence text, int start, int end,
@@ -1846,6 +1857,7 @@ public int getTextWidths(CharSequence text, int start, int end,
      *               Must be at least a large as the text.
      * @return       the number of unichars in the specified text.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.854 -0500", hash_original_method = "FC7E920984BEE100F69A523319264731", hash_generated_method = "1B49049F244B032D77853D87FA3EC6AF")
     
 public int getTextWidths(String text, int start, int end, float[] widths) {
@@ -1884,6 +1896,7 @@ public int getTextWidths(String text, int start, int end, float[] widths) {
      *               Must be at least a large as the text.
      * @return       the number of unichars in the specified text.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.856 -0500", hash_original_method = "2A3DC3984F2D039C4252250086EEE48E", hash_generated_method = "794598FE398532B0C077C928931E3786")
     
 public int getTextWidths(String text, float[] widths) {
@@ -1910,6 +1923,7 @@ public int getTextWidths(String text, float[] widths) {
      *
      * Used only for BiDi / RTL Tests
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.859 -0500", hash_original_method = "FA2DB9E943D72A496CC6A996B7086F15", hash_generated_method = "28EB7EDCECC8D8A088EF984C2DAAC8D2")
     
 public int getTextGlyphs(String text, int start, int end, int contextStart, int contextEnd,
@@ -1939,6 +1953,7 @@ public int getTextGlyphs(String text, int start, int end, int contextStart, int 
      * @see #getTextRunAdvances(String, int, int, int, int, int, float[], int)
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.861 -0500", hash_original_method = "CEF06EAF1F3995907C189C9C72603DEF", hash_generated_method = "2DB76DDEEBDD745C7F13A8FAF97AE832")
     
 public float getTextRunAdvances(char[] chars, int index, int count,
@@ -1955,6 +1970,7 @@ public float getTextRunAdvances(char[] chars, int index, int count,
      * @see #getTextRunAdvances(String, int, int, int, int, int, float[], int, int)
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.865 -0500", hash_original_method = "5F3C708402843653E3430F9E58C46380", hash_generated_method = "F20615AC409BA917F8152DD3F7DEA57A")
     
 public float getTextRunAdvances(char[] chars, int index, int count,
@@ -2005,6 +2021,7 @@ public float getTextRunAdvances(char[] chars, int index, int count,
      * @see #getTextRunAdvances(String, int, int, int, int, int, float[], int)
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.867 -0500", hash_original_method = "2F009E21E693FAD74101A2B25EBDF10B", hash_generated_method = "798B1EEBF7E4C58936C41E161A769408")
     
 public float getTextRunAdvances(CharSequence text, int start, int end,
@@ -2021,6 +2038,7 @@ public float getTextRunAdvances(CharSequence text, int start, int end,
      * @see #getTextRunAdvances(String, int, int, int, int, int, float[], int)
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.870 -0500", hash_original_method = "4EFF4F6D396021295344678FBB8A998E", hash_generated_method = "71EE7B958B85EFD41CFB60F9C232922B")
     
 public float getTextRunAdvances(CharSequence text, int start, int end,
@@ -2107,6 +2125,7 @@ public float getTextRunAdvances(CharSequence text, int start, int end,
      *
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.872 -0500", hash_original_method = "1581EA555CC5336BCB2DDF38747B9672", hash_generated_method = "DF9DCFAFE6CC13EAB18DAFFF09AE7CD7")
     
 public float getTextRunAdvances(String text, int start, int end, int contextStart,
@@ -2158,6 +2177,7 @@ public float getTextRunAdvances(String text, int start, int end, int contextStar
      *
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.875 -0500", hash_original_method = "1C46AF2D403F5DA84F25080DCEA69AA0", hash_generated_method = "0CA4AF8A04EC9FA24F298682F3160AB6")
     
 public float getTextRunAdvances(String text, int start, int end, int contextStart,
@@ -2226,6 +2246,7 @@ public float getTextRunAdvances(String text, int start, int end, int contextStar
      * @return the offset of the next position, or -1
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.878 -0500", hash_original_method = "EB6D9B15E4067DFED9B2A74E5C744A1F", hash_generated_method = "E7164CE72F146396B722F3F4CFB90AF1")
     
 public int getTextRunCursor(char[] text, int contextStart, int contextLength,
@@ -2268,6 +2289,7 @@ public int getTextRunCursor(char[] text, int contextStart, int contextLength,
      * @return the offset of the next position, or -1
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.881 -0500", hash_original_method = "34AAA4A164F43F1E201745A1F65B4411", hash_generated_method = "BD4E80FC28625BAC35C44C40EC9A00DF")
     
 public int getTextRunCursor(CharSequence text, int contextStart,
@@ -2317,6 +2339,7 @@ public int getTextRunCursor(CharSequence text, int contextStart,
      * @return the offset of the next position, or -1
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.883 -0500", hash_original_method = "D546CDC2181E95744AE417A48EFCB65E", hash_generated_method = "3D450E6D0680EE513BA96C6E3160C2CC")
     
 public int getTextRunCursor(String text, int contextStart, int contextEnd,

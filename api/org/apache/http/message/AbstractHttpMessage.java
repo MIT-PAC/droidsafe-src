@@ -60,6 +60,7 @@ public Header getLastHeader(final String name) {
         return this.headergroup.getLastHeader(name);
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
 	public Header[] getAllHeaders() {
 		// TODO Auto-generated method stub
@@ -129,6 +130,7 @@ public void removeHeaders(final String name) {
         }
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
     
 	public HeaderIterator headerIterator() {
@@ -143,6 +145,7 @@ public HeaderIterator headerIterator(String name) {
         return this.headergroup.iterator(name);
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
 	public HttpParams getParams() {
 		// TODO Auto-generated method stub

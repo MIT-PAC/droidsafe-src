@@ -7,16 +7,13 @@ import droidsafe.annotations.*;
 import android.content.Context;
 import android.util.Log;
 
-
-
-
-
 public class ErrorStrings {
 
     /**
      * Get the localized error message resource for the given error code.
      * If the code is unknown, we'll return a generic error message.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:16.092 -0500", hash_original_method = "620302E9CD7FB340599AB59B48404262", hash_generated_method = "B3670E43A8B7EF586CE3BC31E856416A")
     
 public static String getString(int errorCode, Context context) {
@@ -85,7 +82,6 @@ public static int getResource(int errorCode) {
         }
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:16.089 -0500", hash_original_field = "7E068549854EC7B659EE876AD356FB52", hash_generated_field = "26F6F5D2EF35FA86B8698978CE2FD0C9")
-
 
     private static final String LOGTAG = "Http";
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:16.087 -0500", hash_original_method = "15196F3BFA8B9637883B8AE296FFF8F2", hash_generated_method = "FDB5E9D3AC187BF874E9B6432C969220")

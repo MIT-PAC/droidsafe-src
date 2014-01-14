@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.text.ParseException;
 
-
-
-
-
-
 public class Unsupported extends SIPHeader implements javax.sip.header.UnsupportedHeader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.549 -0500", hash_original_field = "63FC33D91B036DDB5D1EE03493BC37C8", hash_generated_field = "E6F62805C9FB301CFBA40BB42552946D")
 
@@ -50,6 +45,7 @@ public String encodeBody() {
     /** get the option tag field
      * @return option Tag field
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.564 -0500", hash_original_method = "CE304AE728C556B979775346D4C5B456", hash_generated_method = "3633D701492785C9119138C7D9BDC157")
     
 public String getOptionTag() {

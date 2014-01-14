@@ -10,11 +10,6 @@ import java.net.Socket;
 import java.net.SocketException;
 import java.net.UnknownHostException;
 
-
-
-
-
-
 public abstract class SocketFactory {
 
     /**
@@ -23,6 +18,7 @@ public abstract class SocketFactory {
      *
      * @return the system default socket factory.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:02.805 -0500", hash_original_method = "94A92FA9F3862BBC2F949BB5EF556892", hash_generated_method = "77B5BFA33B79EE4E2EC4F32DFDC5EB44")
     
 public static synchronized SocketFactory getDefault() {
@@ -32,7 +28,6 @@ public static synchronized SocketFactory getDefault() {
         return defaultFactory;
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:02.803 -0500", hash_original_field = "7E3B37F826EA75D27C247D416E7C0D99", hash_generated_field = "56F0D4B4CAC1522C61207F4CDB9A2E1E")
-
 
     private static SocketFactory defaultFactory;
 
@@ -53,6 +48,7 @@ protected SocketFactory() {
      * @throws IOException
      *             if an error occurs while creating a new socket.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:02.810 -0500", hash_original_method = "237BDA73790E5091959E59275734231E", hash_generated_method = "3223CC07973034D16BC112F67CE7D73F")
     
 public Socket createSocket() throws IOException {
@@ -127,7 +123,6 @@ public abstract Socket createSocket(String host, int port, InetAddress localHost
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:02.817 -0500", hash_original_method = "B9B39D1CB99FF18D629D38672F44F910", hash_generated_method = "66B94998F53DC6534AACD9B3518B694E")
     
 public abstract Socket createSocket(InetAddress host, int port) throws IOException;
-
 
     /**
      * Creates a new socket which is connected to the remote host specified by

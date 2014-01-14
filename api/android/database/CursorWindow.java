@@ -105,6 +105,7 @@ public class CursorWindow extends SQLiteClosable implements Parcelable {
         	return ret;
     }
 
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.238 -0500", hash_original_method = "82A0D8881224A345C7D71889E82FF712", hash_generated_method = "A1F37DF171B5E56C3C2502ADC2995201")
     
 public static CursorWindow newFromParcel(Parcel p) {
@@ -237,6 +238,7 @@ private void dispose() {
      * Gets the name of this cursor window.
      * @hide
      */
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.159 -0500", hash_original_method = "9194A7433912D38B9A3F1171AC921C56", hash_generated_method = "AD920925278DEAFAFBD283F9C2E39E5D")
     
 public String getName() {
@@ -282,6 +284,7 @@ public void clear() {
      *
      * @return The zero-based start position.
      */
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.166 -0500", hash_original_method = "E83B1D6D3C97BD3B3A2AA134F51457E7", hash_generated_method = "90B665CEA1F698FF9104B3B82D080E5C")
     
 public int getStartPosition() {
@@ -308,6 +311,7 @@ public void setStartPosition(int pos) {
      *
      * @return The number of rows in this cursor window.
      */
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.172 -0500", hash_original_method = "FEBAC209BE2E731A41AC61FC29EF2631", hash_generated_method = "ABE8F052F2CDECAAA7EACF9221905F35")
     
 public int getNumRows() {
@@ -473,6 +477,7 @@ public void freeLastRow(){
      * @param column The zero-based column index.
      * @return The field type.
      */
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.194 -0500", hash_original_method = "8E937452D8006A30B303869F5FCBB330", hash_generated_method = "E84D4E711B7A7E0C26A351CFC528A2C3")
     
 public int getType(int row, int column) {
@@ -505,6 +510,7 @@ public int getType(int row, int column) {
      * @param column The zero-based column index.
      * @return The value of the field as a byte array.
      */
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.197 -0500", hash_original_method = "369AEBF74D7711C2C086D87D281ECBA3", hash_generated_method = "8D17084AD2B218959D95C83ACA25D445")
     
 public byte[] getBlob(int row, int column) {
@@ -542,6 +548,7 @@ public byte[] getBlob(int row, int column) {
      * @param column The zero-based column index.
      * @return The value of the field as a string.
      */
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.199 -0500", hash_original_method = "91E1480DC9AA77B4570FAB2ABB8DFF8A", hash_generated_method = "BD448898E1CEB8E1E549F06CCB9BA5AC")
     
 public String getString(int row, int column) {
@@ -619,6 +626,7 @@ public void copyStringToBuffer(int row, int column, CharArrayBuffer buffer) {
      * @param column The zero-based column index.
      * @return The value of the field as a <code>long</code>.
      */
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.204 -0500", hash_original_method = "AD6EFD172162F129E252A5B000066DBD", hash_generated_method = "12E72993EFAA287809AB53C55B85206A")
     
 public long getLong(int row, int column) {
@@ -653,6 +661,7 @@ public long getLong(int row, int column) {
      * @param column The zero-based column index.
      * @return The value of the field as a <code>double</code>.
      */
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.207 -0500", hash_original_method = "8A6F3264B03417AA20925F57716C63D9", hash_generated_method = "E3C98321222A0CC78973A9C9956891EF")
     
 public double getDouble(int row, int column) {
@@ -676,6 +685,7 @@ public double getDouble(int row, int column) {
      * @param column The zero-based column index.
      * @return The value of the field as a <code>short</code>.
      */
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.209 -0500", hash_original_method = "A20DC76A6D7B2E924E48673418BA5751", hash_generated_method = "20741C48C3CED6CC130906E2D7A2DD54")
     
 public short getShort(int row, int column) {
@@ -694,6 +704,7 @@ public short getShort(int row, int column) {
      * @param column The zero-based column index.
      * @return The value of the field as an <code>int</code>.
      */
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.212 -0500", hash_original_method = "551A86F714BE24A79B828A8B72E1E568", hash_generated_method = "5AF1AFE5D5C51ED3AF661655CB96E7C4")
     
 public int getInt(int row, int column) {
@@ -712,6 +723,7 @@ public int getInt(int row, int column) {
      * @param column The zero-based column index.
      * @return The value of the field as an <code>float</code>.
      */
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.215 -0500", hash_original_method = "27DD398413CBDB3B58DB63ADFF69899A", hash_generated_method = "618BED85ED74CEF91EFDC8511C41C6F3")
     
 public float getFloat(int row, int column) {

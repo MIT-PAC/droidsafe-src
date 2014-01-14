@@ -86,6 +86,7 @@ public void writeLine(final String s) throws IOException {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:33.326 -0500", hash_original_method = "1A01B276520F9BEAE357611B160DD712", hash_generated_method = "BCB4EB370DA947F14A04A6E26D17DDAD")
     
 public HttpTransportMetrics getMetrics() {

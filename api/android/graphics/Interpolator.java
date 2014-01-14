@@ -79,12 +79,14 @@ public void reset(int valueCount, int frameCount) {
         nativeReset(native_instance, valueCount, frameCount);
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:10.792 -0500", hash_original_method = "89BB77AE086853608E25F99A94348DC0", hash_generated_method = "1CB4F11CFA2991257AEC8A9AE99A491A")
     
 public final int getKeyFrameCount() {
         return mFrameCount;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:10.795 -0500", hash_original_method = "776BE84F4731B9CD4E842330007BED2A", hash_generated_method = "DD489F639A9250C746DDDF3722535E08")
     
 public final int getValueCount() {

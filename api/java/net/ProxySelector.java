@@ -12,6 +12,7 @@ public abstract class ProxySelector {
     /**
      * Returns the default proxy selector, or null if none exists.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:16.082 -0500", hash_original_method = "DD013215750A3DC82326FF22860EEE8C", hash_generated_method = "50A3CC6494504D4CDCD2267DC2EDDE2D")
     
 public static ProxySelector getDefault() {

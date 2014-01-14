@@ -89,6 +89,7 @@ private void initialize(Context context) {
      * @see #setInflatedId(int)
      * @attr ref android.R.styleable#ViewStub_inflatedId
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:55.948 -0500", hash_original_method = "DD261735D727F86389B5178B589BDC0E", hash_generated_method = "1A746281F6C14FA67AE838E4653C504D")
     
 public int getInflatedId() {
@@ -123,6 +124,7 @@ public void setInflatedId(int inflatedId) {
      * @see #inflate()
      * @attr ref android.R.styleable#ViewStub_layout
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:55.953 -0500", hash_original_method = "027E5859DCA96FAAAAB58CE710A8870F", hash_generated_method = "472A3EA0671274E1B92DB17D195FE7E9")
     
 public int getLayoutResource() {

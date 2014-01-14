@@ -21,6 +21,7 @@ public final class AccessibilityInteractionClient extends IAccessibilityInteract
     /**
      * @return The singleton of this class.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:53.103 -0500", hash_original_method = "AC9C8E6AFA4BD19860E3B01D77CE7140", hash_generated_method = "0E252EFFE9F6AA2CE9503B245466CB85")
     
 public static AccessibilityInteractionClient getInstance() {
@@ -530,6 +531,7 @@ private Message getSameProcessMessageAndClear() {
      * @param connectionId The connection id.
      * @return The cached connection if such.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:53.152 -0500", hash_original_method = "C30C93509C0684283448214BFA9D8225", hash_generated_method = "DCD8487BB5A66A8CCEE4E4D160170CF8")
     
 public IAccessibilityServiceConnection getConnection(int connectionId) {

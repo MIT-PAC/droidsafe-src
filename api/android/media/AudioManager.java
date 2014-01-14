@@ -367,6 +367,7 @@ FocusEventHandlerDelegate() {
             }
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:22.300 -0500", hash_original_method = "10E7D4FA7AE5C5A4DFE91478AE111D01", hash_generated_method = "10E7D4FA7AE5C5A4DFE91478AE111D01")
         
 Handler getHandler() {
@@ -746,6 +747,7 @@ public void adjustSuggestedStreamVolume(int direction, int suggestedStreamType, 
      *         {@link #RINGER_MODE_SILENT}, or {@link #RINGER_MODE_VIBRATE}.
      * @see #setRingerMode(int)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:22.039 -0500", hash_original_method = "A5416468537A862277C3CD80415076F6", hash_generated_method = "5508A15A9CD18629BD82A5D09E2BE0FC")
     
 public int getRingerMode() {
@@ -765,6 +767,7 @@ public int getRingerMode() {
      * @return The maximum valid volume index for the stream.
      * @see #getStreamVolume(int)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:22.044 -0500", hash_original_method = "87CF12BF10581D3FEA634AA8128A64C7", hash_generated_method = "D1A410D383D783C0D9ECE5ABB503CCAC")
     
 public int getStreamMaxVolume(int streamType) {
@@ -785,6 +788,7 @@ public int getStreamMaxVolume(int streamType) {
      * @see #getStreamMaxVolume(int)
      * @see #setStreamVolume(int, int, int)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:22.047 -0500", hash_original_method = "E78E6899167FF196E0675E8746CEB32F", hash_generated_method = "E3E7BF2BF3BF4D619324530229989FA7")
     
 public int getStreamVolume(int streamType) {
@@ -802,6 +806,7 @@ public int getStreamVolume(int streamType) {
      *
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:22.049 -0500", hash_original_method = "16B6103C3931EF2B68A7F288EB86CE17", hash_generated_method = "F8414039E19C3249B75280A911E5EA4D")
     
 public int getLastAudibleStreamVolume(int streamType) {
@@ -997,6 +1002,7 @@ public boolean shouldVibrate(int vibrateType) {
      * @see #setVibrateSetting(int, int)
      * @see #shouldVibrate(int)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:22.071 -0500", hash_original_method = "8D15AC5DC8AF10C8514FCDAE7CA188DE", hash_generated_method = "7C4DCB2CA5105643EB611B5B1EC0F03D")
     
 public int getVibrateSetting(int vibrateType) {
@@ -1285,6 +1291,7 @@ public void setMicrophoneMute(boolean on){
      *
      * @return true if microphone is muted, false if it's not
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:22.140 -0500", hash_original_method = "82EFB94D4DB567BF9AF21B9F2B827F69", hash_generated_method = "3B8CA7A03DE36C7844164E70C7E27715")
     
 public boolean isMicrophoneMute() {
@@ -1325,6 +1332,7 @@ public void setMode(int mode) {
      *              {@link #MODE_IN_CALL} or {@link #MODE_IN_COMMUNICATION}).
      *              Returns the current current audio state from the HAL.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:22.149 -0500", hash_original_method = "F6FC0C8FF20094842E05491DBD00A26F", hash_generated_method = "E888A19FEC2A5C84E6E8B23167B4189A")
     
 public int getMode() {
@@ -1365,6 +1373,7 @@ public int getMode() {
      * @deprecated   Do not query audio routing directly, use isSpeakerphoneOn(),
      * isBluetoothScoOn(), isBluetoothA2dpOn() and isWiredHeadsetOn() methods instead.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:22.203 -0500", hash_original_method = "6C4959DBE0B2C4B0BA15108AAD8EE45D", hash_generated_method = "B42A0EAEB2162061F1B63BDCBF19275A")
     
 @Deprecated
@@ -1377,6 +1386,7 @@ public int getMode() {
      *
      * @return true if any music tracks are active.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:22.206 -0500", hash_original_method = "AF4716567EA0644FB4FB307583193A2C", hash_generated_method = "4517CA27CFD8EF82FE32EB42CBB9AF39")
     
 public boolean isMusicActive() {
@@ -1426,6 +1436,7 @@ public void setParameters(String keyValuePairs) {
      * @return list of parameters key value pairs in the form:
      *    key1=value1;key2=value2;...
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:22.213 -0500", hash_original_method = "9B4E69B0951CD7555E74053B3F2A7F5E", hash_generated_method = "8DB2EFAC6FD3C2DFB5450609F9EFCE50")
     
 public String getParameters(String keys) {
@@ -1905,6 +1916,7 @@ public boolean isSilentMode() {
      *
      * {@hide}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:22.416 -0500", hash_original_method = "039E984EE545D8462E074EC6768B62D9", hash_generated_method = "10A5D5FCC997CCA92895D4640CEB8888")
     
 public int getDevicesForStream(int streamType) {

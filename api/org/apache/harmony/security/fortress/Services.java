@@ -45,6 +45,7 @@ private static void loadProviders() {
      *
      * @return
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:03.262 -0500", hash_original_method = "316A561AC6A6B1BE39036A1BA836B78A", hash_generated_method = "AB42ED3D2A856B9D6A3D21F7F01825F6")
     
 public static Provider[] getProviders() {
@@ -56,6 +57,7 @@ public static Provider[] getProviders() {
      *
      * @return
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:03.265 -0500", hash_original_method = "E9F15408456B4B906E1451AF6A460DE1", hash_generated_method = "43FB744537E358777386D316C4A40FAB")
     
 public static List<Provider> getProvidersList() {
@@ -68,6 +70,7 @@ public static List<Provider> getProvidersList() {
      * @param name
      * @return
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:03.267 -0500", hash_original_method = "3B239853BF5B7759ACB9C53292AFCEB4", hash_generated_method = "59DF82634FC8DCAA263D93F71F68ED7A")
     
 public static Provider getProvider(String name) {

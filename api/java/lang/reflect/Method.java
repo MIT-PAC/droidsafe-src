@@ -190,6 +190,7 @@ private synchronized void initGenericTypes() {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.483 -0500", hash_original_method = "0F068F731FE610BBACFD836E6A61AACF", hash_generated_method = "7CE5B759EE56284BB83AD91C7E51B619")
     
 public TypeVariable<Method>[] getTypeParameters() {
@@ -198,6 +199,7 @@ public TypeVariable<Method>[] getTypeParameters() {
     }
 
     /** {@inheritDoc} */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.486 -0500", hash_original_method = "1CDF5107AC443AA5F8C2E1DA9DF559A0", hash_generated_method = "5A7AC51370A528B541EFB40EFD81B606")
     
 @Override /*package*/ String getSignatureAttribute() {
@@ -276,6 +278,7 @@ public String toGenericString() {
      *             if any parameter type points to a type that cannot be
      *             instantiated for some reason
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.496 -0500", hash_original_method = "A9CCE739D5419EE3EB1324AC76C431BA", hash_generated_method = "597DE9D598A5006361DA519667FA4A87")
     
 public Type[] getGenericParameterTypes() {
@@ -297,6 +300,7 @@ public Type[] getGenericParameterTypes() {
      *             if any exception type points to a type that cannot be
      *             instantiated for some reason
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.499 -0500", hash_original_method = "D98F12BC8A74E89DDBE36E53E80FD275", hash_generated_method = "789F7B04AD124F733C6FAD0CF66E18E1")
     
 public Type[] getGenericExceptionTypes() {
@@ -317,6 +321,7 @@ public Type[] getGenericExceptionTypes() {
      *             if the return type points to a type that cannot be
      *             instantiated for some reason
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.501 -0500", hash_original_method = "83125796E1541F4C47F8F2176AE50053", hash_generated_method = "C08643DE90FFCB58BAFBA77559D06E81")
     
 public Type getGenericReturnType() {
@@ -324,6 +329,7 @@ public Type getGenericReturnType() {
         return Types.getType(genericReturnType);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.504 -0500", hash_original_method = "4122EC91CDDE6FFD9DA08F5ADAF8DB5D", hash_generated_method = "29F60940673BD8877EB2DF97898FD3EA")
     
 @Override
@@ -368,6 +374,7 @@ A varD37D33C5EE02B81A7F8EF45A88B88039_629409244 =         getAnnotation(declarin
      *
      * @return an array of arrays of {@code Annotation} instances
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.530 -0500", hash_original_method = "72FC508AEB582DBA9794440813C3A8B1", hash_generated_method = "4F085A2B43CC3DCF944C4B690441A4C1")
     
 public Annotation[][] getParameterAnnotations() {
@@ -425,6 +432,7 @@ public boolean isSynthetic() {
      *             if this annotation member is of type {@code Class} and no
      *             definition can be found
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.544 -0500", hash_original_method = "3DF570DF2B22E4E433BE61FA4A3252FF", hash_generated_method = "C232B80D92ADA1B117D87BC36DA104DD")
     
 public Object getDefaultValue() {
@@ -464,6 +472,7 @@ public Object getDefaultValue() {
      *
      * @return the declaring class
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.553 -0500", hash_original_method = "747BEFE9985C4AF4EE3D5630B62185EA", hash_generated_method = "574997FEB7F01E0808800855819F513A")
     
 public Class<?> getDeclaringClass() {
@@ -476,6 +485,7 @@ public Class<?> getDeclaringClass() {
      *
      * @return the declared exception classes
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.556 -0500", hash_original_method = "0803D161ECCDE8E4916E8597C31C5EAF", hash_generated_method = "1AD8748424F084736A9DD63261A66A14")
     
 public Class<?>[] getExceptionTypes() {
@@ -493,6 +503,7 @@ public Class<?>[] getExceptionTypes() {
      *
      * @see Modifier
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.559 -0500", hash_original_method = "D61CFE217686483C8FB69E9FFDF592A9", hash_generated_method = "48830EE19AB9C2BBC366A2463FB5A641")
     
 public int getModifiers() {
@@ -505,6 +516,7 @@ public int getModifiers() {
      *
      * @return the name of this method
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.566 -0500", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "50860709F8CC9FE19B604881E59FBA54")
     
 public String getName() {
@@ -518,6 +530,7 @@ public String getName() {
      *
      * @return the parameter types
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.568 -0500", hash_original_method = "860AC8CD4E2F5F390A65618A1941DEDE", hash_generated_method = "0845E4F05C4F8FB178489C01FC4EE8B5")
     
 public Class<?>[] getParameterTypes() {
@@ -530,6 +543,7 @@ public Class<?>[] getParameterTypes() {
      *
      * @return the return type
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.571 -0500", hash_original_method = "952CC59854183D9751F85A9597A378CE", hash_generated_method = "F8F970361961EA482B13AE142C333181")
     
 public Class<?> getReturnType() {

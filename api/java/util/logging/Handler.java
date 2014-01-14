@@ -172,6 +172,7 @@ public abstract void publish(LogRecord record);
      *
      * @return the character encoding used by this handler.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:37.061 -0500", hash_original_method = "B6DA448E779CA9929D0D7B4D988D1AFB", hash_generated_method = "02D9BCCBCE42910B6D70E5623FC29FB4")
     
 public String getEncoding() {
@@ -184,6 +185,7 @@ public String getEncoding() {
      *
      * @return the error manager used by this handler.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:37.063 -0500", hash_original_method = "E0C8CBFEDB627F2BA4CE76D0A71E633A", hash_generated_method = "D8B7A1DEB706CB487E14D805DE3F2076")
     
 public ErrorManager getErrorManager() {
@@ -196,6 +198,7 @@ public ErrorManager getErrorManager() {
      *
      * @return the filter used by this handler (possibly {@code null}).
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:37.066 -0500", hash_original_method = "D58C134707557B2D24085330800528E0", hash_generated_method = "CD9F61EC2D214FA63221AF047D239731")
     
 public Filter getFilter() {
@@ -207,6 +210,7 @@ public Filter getFilter() {
      *
      * @return the formatter used by this handler (possibly {@code null}).
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:37.069 -0500", hash_original_method = "A74BB1584114C9889E52E1E2254AF36C", hash_generated_method = "AE8DA20E0234AF39099B197B83CA28A1")
     
 public Formatter getFormatter() {
@@ -219,6 +223,7 @@ public Formatter getFormatter() {
      *
      * @return the logging level of this handler.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:37.071 -0500", hash_original_method = "56C01E3C36F1CAAB6EC71D0FEE2F8D34", hash_generated_method = "54336132241FEE82935A7AC62C7D03B8")
     
 public Level getLevel() {

@@ -103,6 +103,7 @@ public static int getPackedPositionChild(long packedPosition) {
      * @param childPosition The child position within the group.
      * @return The packed position representation of the child (and parent group).
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.876 -0500", hash_original_method = "5B4CC69588F0ACA613873ADA235651BB", hash_generated_method = "38B1A9B54F6D94D6249EFBCEA3BFBEAE")
     
 public static long getPackedPositionForChild(int groupPosition, int childPosition) {
@@ -119,6 +120,7 @@ public static long getPackedPositionForChild(int groupPosition, int childPositio
      * @param groupPosition The child's parent group's position.
      * @return The packed position representation of the group.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.879 -0500", hash_original_method = "27360F23AD3CB4DC8767FCC2C52E81C8", hash_generated_method = "5C2F47FE0AEEA9081AF102D91E7B3CEF")
     
 public static long getPackedPositionForGroup(int groupPosition) {
@@ -539,6 +541,7 @@ public void setAdapter(ExpandableListAdapter adapter) {
      * Gets the adapter that provides data to this view.
      * @return The adapter that provides data to this view.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.805 -0500", hash_original_method = "0DEBB462BC2A68BA86FC192DC719C116", hash_generated_method = "72DC64E495E44B4040054743218614A1")
     
 public ExpandableListAdapter getExpandableListAdapter() {
@@ -876,6 +879,7 @@ public void setOnChildClickListener(OnChildClickListener onChildClickListener) {
      *         in packed position representation. #PACKED_POSITION_VALUE_NULL if
      *         the position corresponds to a header or a footer item.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.853 -0500", hash_original_method = "6797E267DF9CCDAD7E03E9610CE356DD", hash_generated_method = "AE18A2934C271EE4255C042017CEC9B1")
     
 public long getExpandableListPosition(int flatListPosition) {
@@ -901,6 +905,7 @@ public long getExpandableListPosition(int flatListPosition) {
      *            {@link #getPackedPositionForGroup(int)}.
      * @return The flat list position for the given child or group.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.855 -0500", hash_original_method = "C3C2613158D48075F4D80761E996AC8D", hash_generated_method = "48A2E76816F4860724AD3D129C27FAEC")
     
 public int getFlatListPosition(long packedPosition) {
@@ -919,6 +924,7 @@ public int getFlatListPosition(long packedPosition) {
      *         child's position and type. #PACKED_POSITION_VALUE_NULL if no selection
      *         or if selection is on a header or a footer item.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.857 -0500", hash_original_method = "249AE284AF367E3E33266910F561E468", hash_generated_method = "8AC1384AD48FD830DFD341409F22EADB")
     
 public long getSelectedPosition() {
@@ -935,6 +941,7 @@ public long getSelectedPosition() {
      * @return The ID of the currently selected group or child. -1 if no
      *         selection.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.859 -0500", hash_original_method = "0F549A577DA8ED79E79C3134155D319B", hash_generated_method = "C40FF77BB392610F0DF40101A5BAB794")
     
 public long getSelectedId() {

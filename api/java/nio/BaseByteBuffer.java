@@ -55,6 +55,7 @@ protected BaseByteBuffer(int capacity, MemoryBlock block) {
         return ShortToByteBufferAdapter.asShortBuffer(this);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.098 -0500", hash_original_method = "306435823B7F4BDA0B79FE4AAC38458D", hash_generated_method = "0D8064FA180AF944DF7C552568B33D2A")
     
 @Override
@@ -62,6 +63,7 @@ protected BaseByteBuffer(int capacity, MemoryBlock block) {
         return (char) getShort();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.101 -0500", hash_original_method = "DB5974BF42C2F1DAF0453A45ABD3A97B", hash_generated_method = "7FB28C5ADDAC33ED7A773252D79D32D1")
     
 @Override

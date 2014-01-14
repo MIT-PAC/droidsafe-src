@@ -16,21 +16,17 @@ extends ParagraphStyle
 {
     
     public int getLeadingMargin(boolean first);
-
     
     public void drawLeadingMargin(Canvas c, Paint p,
                                   int x, int dir,
                                   int top, int baseline, int bottom,
                                   CharSequence text, int start, int end,
                                   boolean first, Layout layout);
-
-
     
     public interface LeadingMarginSpan2 extends LeadingMarginSpan, WrapTogetherSpan {
         
         public int getLeadingMarginLineCount();
     };
-
     
     public static class Standard implements LeadingMarginSpan, ParcelableSpan {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:10.251 -0500", hash_original_field = "95AB0A3DB664B7AFA487CCFB4C4CEFA4", hash_generated_field = "5FC7CAD03BEE7042F9F94E256ECA3936")
@@ -68,6 +64,7 @@ public Standard(Parcel src) {
             mRest = src.readInt();
         }
         
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:10.263 -0500", hash_original_method = "E4A248EAEF7F5505BB63EF903EE82A9C", hash_generated_method = "2CCDBBD91D2A7FB14559B406D0998734")
         
 public int getSpanTypeId() {
@@ -87,6 +84,7 @@ public void writeToParcel(Parcel dest, int flags) {
             dest.writeInt(mRest);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:10.271 -0500", hash_original_method = "C031E4EC1BEA687C1A76A6F271C64683", hash_generated_method = "73D1C024547E7D82C890EC308EE6F5E3")
         
 public int getLeadingMargin(boolean first) {

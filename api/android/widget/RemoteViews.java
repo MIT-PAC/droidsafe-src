@@ -161,12 +161,14 @@ public RemoteViews(Parcel parcel) {
         return that;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:51.004 -0500", hash_original_method = "D6B19F05A1BF219922EA06A43EF822A3", hash_generated_method = "E8E7BB1D5101EA7BCE0E9136023EF604")
     
 public String getPackage() {
         return mPackage;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:51.007 -0500", hash_original_method = "613C00C60CA896BC5001BD5561015459", hash_generated_method = "2A8D7E72D3595B0AF66976D61F3F9022")
     
 public int getLayoutId() {

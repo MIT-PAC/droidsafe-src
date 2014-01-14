@@ -80,6 +80,7 @@ protected ListeningPointImpl(
      * Get the key for this strucut
      * @return  get the host
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:34.720 -0500", hash_original_method = "7B5051E336F9DA4D6C5FA2A2C5289297", hash_generated_method = "D09B47B9C7C7D97856A2D296D9052899")
     
 protected String getKey() {
@@ -132,6 +133,7 @@ public Object clone() {
      *
      * @return port of ListeningPoint
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:34.732 -0500", hash_original_method = "9099990124C6005A8102A71CBA5F7A65", hash_generated_method = "4F204B5ED45BB548CF28AFE7C57565EB")
     
 public int getPort() {
@@ -143,6 +145,7 @@ public int getPort() {
      *
      * @return transport of ListeningPoint
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:34.735 -0500", hash_original_method = "2F70021F53E5650B4EE9A2F614549153", hash_generated_method = "A5A7D93E396D80685398EF17B6B67763")
     
 public String getTransport() {
@@ -154,6 +157,7 @@ public String getTransport() {
      *
      * @return the provider.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:34.737 -0500", hash_original_method = "AAD8E25C27C8721BC0F29D01F90B95A6", hash_generated_method = "821A72F7EE986C8E1FD4966D903C9078")
     
 public SipProviderImpl getProvider() {
@@ -163,6 +167,7 @@ public SipProviderImpl getProvider() {
     /* (non-Javadoc)
      * @see javax.sip.ListeningPoint#getIPAddress()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:34.739 -0500", hash_original_method = "C8FDA759281B0540F1A01A50A8584E49", hash_generated_method = "8B1F4D14E2CD6874D8D55B931387805D")
     
 public String getIPAddress() {
@@ -184,6 +189,7 @@ public void setSentBy(String sentBy) throws ParseException {
     /* (non-Javadoc)
      * @see javax.sip.ListeningPoint#getSentBy()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:34.743 -0500", hash_original_method = "0F3CBDA4EFE78BE80FA7EB48D9C543C3", hash_generated_method = "A1EEE7F0166B76121B736334C10CFFC5")
     
 public String getSentBy() {
@@ -196,12 +202,14 @@ public String getSentBy() {
 public boolean isSentBySet() {
         return this.messageProcessor.isSentBySet();
     }
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:34.749 -0500", hash_original_method = "98E0FDFAA28F1C7110EA27D9E468A7B1", hash_generated_method = "9097EC0BA2C457452C5627F4DE507B5C")
     
 public Via getViaHeader() {
         return this.messageProcessor.getViaHeader();
      }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:34.751 -0500", hash_original_method = "B369445AF3BB32430CE637694E76219B", hash_generated_method = "4B0F0A9B7F50969861BE18EA82A66E74")
     
 public MessageProcessor getMessageProcessor() {

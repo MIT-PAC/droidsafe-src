@@ -1229,6 +1229,7 @@ public void processResponse(SIPResponse response, MessageChannel incomingMessage
      * @return auxiliary information that we may have generated during the message processing
      *         which is retrieved by the message logger.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:31.019 -0500", hash_original_method = "45F8896428832201E8BC8983A22C5151", hash_generated_method = "E358815487E38934DAFD8737DF516416")
     
 public String getProcessingInfo() {

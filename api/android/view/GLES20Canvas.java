@@ -537,6 +537,7 @@ protected void resetDisplayListRenderer() {
         return mOpaque;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:44.142 -0500", hash_original_method = "AA9BA105372BFC95AFBABED408315F5C", hash_generated_method = "544DCA524D5A67C6D05071F3100B5B3C")
     
 @Override
@@ -544,6 +545,7 @@ protected void resetDisplayListRenderer() {
         return mWidth;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:44.145 -0500", hash_original_method = "0304EDCF78FF45B68A7EB91BFEAAA2CD", hash_generated_method = "E76548EEA445A2E9D8F83F5D972E0669")
     
 @Override
@@ -551,6 +553,7 @@ protected void resetDisplayListRenderer() {
         return mHeight;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:44.147 -0500", hash_original_method = "10F69D1300E55A44C724BA9496871588", hash_generated_method = "65D18FF7E8486F50C37E7AD31D6D07F6")
     
 @Override
@@ -558,6 +561,7 @@ protected void resetDisplayListRenderer() {
         return nGetMaximumTextureWidth();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:44.149 -0500", hash_original_method = "A5ADDC40BA4D92830B9288340B890F82", hash_generated_method = "53BB15B9BD2CFEFAEBBACF64DDD1AB32")
     
 @Override
@@ -608,6 +612,7 @@ protected void resetDisplayListRenderer() {
     // Display list
     ///////////////////////////////////////////////////////////////////////////
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:44.232 -0500", hash_original_method = "B6A785707CFBE1E38AD4FE8A1D6625FF", hash_generated_method = "B6A785707CFBE1E38AD4FE8A1D6625FF")
     
 int getDisplayList(int displayList) {
@@ -870,6 +875,7 @@ void resume() {
         return save(saveFlags);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:44.403 -0500", hash_original_method = "E4AB6B80C5EF0D5B797D753415FED0BE", hash_generated_method = "CFDBAE483E8CD313DC1DB9DB500F6346")
     
 @Override
@@ -881,6 +887,7 @@ void resume() {
         return nSaveLayerAlpha(mRenderer, alpha, saveFlags);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:44.409 -0500", hash_original_method = "B4AB4565F10B041D742F1796C47ECB95", hash_generated_method = "3D76D7C8F728830E6940716B15976C7E")
     
 @Override
@@ -907,6 +914,7 @@ void resume() {
         nRestoreToCount(mRenderer, saveCount);
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:44.428 -0500", hash_original_method = "5171A9EFFCF2464453072A29F0BC817F", hash_generated_method = "BDD837002E564B51F46CB8A72B2FE5D6")
     
 @Override
@@ -925,6 +933,7 @@ void resume() {
         mFilter = filter;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:44.437 -0500", hash_original_method = "00C808EC6F25CC6E1FA57C10F69CA13D", hash_generated_method = "A09D80A22C969C496AD901F52849B6ED")
     
 @Override

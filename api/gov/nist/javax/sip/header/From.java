@@ -69,6 +69,7 @@ protected StringBuffer encodeBody(StringBuffer buffer) {
      *
      * @return hostport field
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:01.060 -0500", hash_original_method = "44C2A950FA90F046EF96B0A5F25DEA38", hash_generated_method = "F596BC5BA68B5CC2EC3CBFF9B1755A33")
     
 public HostPort getHostPort() {
@@ -79,6 +80,7 @@ public HostPort getHostPort() {
      * Get the display name from the address.
      * @return Display name
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:01.064 -0500", hash_original_method = "0AF5B36A8F5D506032669B65B9CFDD39", hash_generated_method = "00EBF039D8E78F649651183BA6D3C490")
     
 public String getDisplayName() {
@@ -89,6 +91,7 @@ public String getDisplayName() {
      * Get the tag parameter from the address parm list.
      * @return tag field
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:01.067 -0500", hash_original_method = "2057D1C8F1E8BB8C55512212A4FDB01D", hash_generated_method = "9945763A633BC90164CA1E50733EA0E1")
     
 public String getTag() {
@@ -139,6 +142,7 @@ public void setTag(String t) throws ParseException {
 
     /** Get the user@host port string.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:01.082 -0500", hash_original_method = "37555C718EB6A285C8BC30DC0A9F7E97", hash_generated_method = "FF62FFC9174490B7EC3222717FBC762B")
     
 public String getUserAtHostPort() {

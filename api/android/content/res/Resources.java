@@ -63,7 +63,8 @@ public class Resources {
 		return 0;
 	}
     
-	public static Resources getSystem(){
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    public static Resources getSystem(){
 	    if (mSystem == null)
 	        mSystem = new Resources();
 	    return mSystem;
@@ -249,19 +250,22 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 	    mAssets = null;
 	}
 	
-	public final String getString(int resId) {
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    public final String getString(int resId) {
 		String str = new String();
         str.addTaint(resId);
         return str;
 	}
 	
-	public final CharSequence getText(int resId) {
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    public final CharSequence getText(int resId) {
         String str = new String();
         str.addTaint(resId);
         return str;
 	}
 	 
-	public CharSequence getQuantityText(int id, int quantity){
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    public CharSequence getQuantityText(int id, int quantity){
 		
 		String str = new String();
 		str.addTaint(id);
@@ -285,14 +289,16 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 		return null;
 	}
 	
-	public String getString(int id, Object... formatArgs){
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    public String getString(int id, Object... formatArgs){
 		String str = new String();
 		str.addTaint(id);
 		//str.addTaint(formatArgs[0]);
 		return str;
 	}
     
-	public String getQuantityString(int id, int quantity, Object... formatArgs){
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    public String getQuantityString(int id, int quantity, Object... formatArgs){
     	String str = new String();
 		str.addTaint(id);
 		str.addTaint(quantity);
@@ -300,7 +306,8 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 		return str;
 	}
     
-	public String getQuantityString(int id, int quantity){
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    public String getQuantityString(int id, int quantity){
     	String str = new String();
 		str.addTaint(id);
 		str.addTaint(quantity);
@@ -308,7 +315,8 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 		return str;
 	}
     
-	public CharSequence getText(int id, CharSequence def){
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    public CharSequence getText(int id, CharSequence def){
     	String str = new String();
 		str.addTaint(id);
 		str.addTaint(def.taint);
@@ -316,7 +324,8 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 		return str;
 	}
     
-	public CharSequence[] getTextArray(int id){
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    public CharSequence[] getTextArray(int id){
 		// Original method
 		/*
 		{
@@ -331,7 +340,8 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 		return null;
 	}
     
-	public String[] getStringArray(int id){
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    public String[] getStringArray(int id){
 		// Original method
 		/*
 		{
@@ -346,7 +356,8 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 		return null;
 	}
     
-	public int[] getIntArray(int id){
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    public int[] getIntArray(int id){
 		// Original method
 		/*
 		{
@@ -361,7 +372,8 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 		return null;
 	}
     
-	public TypedArray obtainTypedArray(int id){
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    public TypedArray obtainTypedArray(int id){
 		// Original method
 		/*
 		{
@@ -379,7 +391,8 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 		return null;
 	}
     
-	public float getDimension(int id){
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    public float getDimension(int id){
 		// Original method
 		/*
 		{
@@ -398,7 +411,8 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 		return 0;
 	}
     
-	public int getDimensionPixelOffset(int id){
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    public int getDimensionPixelOffset(int id){
 		// Original method
 		/*
 		{
@@ -418,7 +432,8 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 		return 0;
 	}
     
-	public int getDimensionPixelSize(int id){
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    public int getDimensionPixelSize(int id){
 		// Original method
 		/*
 		{
@@ -438,7 +453,8 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 		return 0;
 	}
     
-	public float getFraction(int id, int base, int pbase){
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    public float getFraction(int id, int base, int pbase){
 		// Original method
 		/*
 		{
@@ -457,11 +473,13 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 		return 0;
 	}
     
-	public Drawable getDrawable(int id){
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    public Drawable getDrawable(int id){
         return loadDrawable(null, id);
 	}
     
-	public Drawable getDrawableForDensity(int id, int density){
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    public Drawable getDrawableForDensity(int id, int density){
 		// Original method
 		/*
 		{
@@ -482,7 +500,8 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 		return null;
 	}
     
-	public Movie getMovie(int id){
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    public Movie getMovie(int id){
 		// Original method
 		/*
 		{
@@ -499,7 +518,8 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 		return null;
 	}
     
-	public int getColor(int id){
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    public int getColor(int id){
 		// Original method
 		/*
 		{
@@ -522,7 +542,8 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 		return 0;
 	}
     
-	public ColorStateList getColorStateList(int id){
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    public ColorStateList getColorStateList(int id){
 		// Original method
 		/*
 		{
@@ -556,7 +577,8 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 		return false;
 	}
     
-	public int getInteger(int id){
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    public int getInteger(int id){
 		// Original method
 		/*
 		{
@@ -576,7 +598,8 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 		return 0;
 	}
     
-	public XmlResourceParser getLayout(int id){
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    public XmlResourceParser getLayout(int id){
 		// Original method
 		/*
 		{
@@ -586,7 +609,8 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 		return null;
 	}
     
-	public XmlResourceParser getAnimation(int id){
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    public XmlResourceParser getAnimation(int id){
 		// Original method
 		/*
 		{
@@ -596,7 +620,8 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 		return null;
 	}
     
-	public XmlResourceParser getXml(int id){
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    public XmlResourceParser getXml(int id){
 		// Original method
 		/*
 		{
@@ -759,6 +784,7 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 		//Return nothing
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public DisplayMetrics getDisplayMetrics(){
 		return mMetrics;
 		// Original method
@@ -777,12 +803,14 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
      * 
      * @return The resource's current configuration. 
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:06.440 -0500", hash_original_method = "11CE3ED49D23B920A1DF6398548CD42B", hash_generated_method = "EE9863339B6D3DC9E206378BA342F32D")
     
 public Configuration getConfiguration() {
         return mConfiguration;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public CompatibilityInfo getCompatibilityInfo(){
 		// Original method
 		/*
@@ -807,6 +835,7 @@ public Configuration getConfiguration() {
 		//Return nothing
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getIdentifier(String name, String defType, String defPackage){
 		// Original method
 		/*
@@ -821,6 +850,7 @@ public Configuration getConfiguration() {
 		return 0;
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public String getResourceName(int resid){
 		// Original method
 		/*
@@ -834,6 +864,7 @@ public Configuration getConfiguration() {
 		return "";
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public String getResourcePackageName(int resid){
 		// Original method
 		/*
@@ -847,6 +878,7 @@ public Configuration getConfiguration() {
 		return "";
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public String getResourceTypeName(int resid){
 		// Original method
 		/*
@@ -975,6 +1007,7 @@ public NotFoundException(String name) {
         
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public String getResourceEntryName(int resid){
 		// Original method
 		/*
@@ -1022,6 +1055,7 @@ public NotFoundException(String name) {
     /**
      * Retrieve underlying AssetManager storage for these resources.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:06.464 -0500", hash_original_method = "B655DEE21C3816C25C0AC2AC9EDD1950", hash_generated_method = "8214F1367B54F9887420B22D5E3D96C5")
     
 public final AssetManager getAssets() {
@@ -1077,6 +1111,7 @@ public final AssetManager getAssets() {
 		//Return nothing
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     Drawable loadDrawable(TypedValue value, int id){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -1109,6 +1144,7 @@ public final AssetManager getAssets() {
 		return null;
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     ColorStateList loadColorStateList(TypedValue value, int id){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -1137,6 +1173,7 @@ public final AssetManager getAssets() {
 		return null;
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     XmlResourceParser loadXmlResourceParser(int id, String type){
 		// Original method
 		/*
@@ -1157,6 +1194,7 @@ public final AssetManager getAssets() {
 		return null;
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     XmlResourceParser loadXmlResourceParser(String file, int id,
             int assetCookie, String type){
 		// Original method

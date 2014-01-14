@@ -1607,6 +1607,7 @@ boolean isPrecisionSet() {
             return precision != UNSET;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:44.989 -0500", hash_original_method = "3A74106121887CCA509F985D60DB5637", hash_generated_method = "3A74106121887CCA509F985D60DB5637")
         
 int getArgIndex() {
@@ -1619,6 +1620,7 @@ void setArgIndex(int index) {
             argIndex = index;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:44.994 -0500", hash_original_method = "40140C97EC91863535630C305615FEC1", hash_generated_method = "40140C97EC91863535630C305615FEC1")
         
 int getWidth() {
@@ -1631,6 +1633,7 @@ void setWidth(int width) {
             this.width = width;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:44.998 -0500", hash_original_method = "71BCDCF9E73C85D95AB18BEF6635FA18", hash_generated_method = "71BCDCF9E73C85D95AB18BEF6635FA18")
         
 int getPrecision() {
@@ -1643,6 +1646,7 @@ void setPrecision(int precise) {
             this.precision = precise;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:45.003 -0500", hash_original_method = "837A02C50E03265F058B23775F6F6197", hash_generated_method = "837A02C50E03265F058B23775F6F6197")
         
 String getStrFlags() {
@@ -1702,6 +1706,7 @@ boolean setFlag(int ch) {
             return true;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:45.008 -0500", hash_original_method = "563B5213711441DEFA9BB3355CD61032", hash_generated_method = "563B5213711441DEFA9BB3355CD61032")
         
 char getConversionType() {
@@ -1714,6 +1719,7 @@ void setConversionType(char c) {
             conversionType = c;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:45.012 -0500", hash_original_method = "EE45DA1AFAF958B13872135C146745E9", hash_generated_method = "EE45DA1AFAF958B13872135C146745E9")
         
 char getDateSuffix() {
@@ -1915,6 +1921,7 @@ FormatToken parseFormatToken(int offset) {
          * Returns a string corresponding to the last format specifier that was parsed.
          * Used to construct error messages.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:45.120 -0500", hash_original_method = "7C388C74117CDF3E7844B526DC734D8C", hash_generated_method = "7C388C74117CDF3E7844B526DC734D8C")
         
 String getFormatSpecifierText() {

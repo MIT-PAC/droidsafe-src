@@ -127,6 +127,7 @@ SyncStatusInfo(Parcel parcel) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:38.632 -0500", hash_original_method = "7E33E8226B73A02621B31754517607B3", hash_generated_method = "FAAF24998EAF5A6F374E088CFC265A72")
     
 public int getLastFailureMesgAsInt(int def) {
@@ -198,6 +199,7 @@ private void ensurePeriodicSyncTimeSize(int index) {
         }
     }
 
+    @DSSource({DSSourceKind.SYNCHRONIZATION_DATA})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:38.647 -0500", hash_original_method = "E0266DD4F289B692F6E7B79E10E75B20", hash_generated_method = "251C49A55B5191AE5B17ED4632F8B629")
     
 public long getPeriodicSyncTime(int index) {

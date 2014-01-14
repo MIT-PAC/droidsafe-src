@@ -267,6 +267,7 @@ public static boolean isConnected(FileDescriptor fd, InetAddress inetAddress, in
      * java.net has its own socket options similar to the underlying Unix ones. We paper over the
      * differences here.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:27.748 -0500", hash_original_method = "74DA8B934B42DF1434422A79C632FDCA", hash_generated_method = "B62EE3B4242D7FAA79A003F0B21082F4")
     
 public static Object getSocketOption(FileDescriptor fd, int option) throws SocketException {
@@ -650,6 +651,7 @@ public static FileDescriptor socket(boolean stream) throws SocketException {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:27.797 -0500", hash_original_method = "BF91E659ADCCEA5E83B593E3412077DF", hash_generated_method = "ACE4CC37C7327B704B665A55B9FBFBDF")
     
 public static InetAddress getSocketLocalAddress(FileDescriptor fd) {
@@ -662,6 +664,7 @@ public static InetAddress getSocketLocalAddress(FileDescriptor fd) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:27.800 -0500", hash_original_method = "935731650AFF466956FA2EB59931508E", hash_generated_method = "AE1F49FB6A56778B936D57D0C7372D6F")
     
 public static int getSocketLocalPort(FileDescriptor fd) {

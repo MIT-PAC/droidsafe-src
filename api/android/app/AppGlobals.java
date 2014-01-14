@@ -6,12 +6,12 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.content.pm.IPackageManager;
 
-
 public class AppGlobals {
     /**
      * Return the first Application object made in the process.
      * NOTE: Only works on the main thread.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:43.310 -0500", hash_original_method = "615B30682586F952B352C593B075DF62", hash_generated_method = "0CCF50F7AC209376FC1F99820D1A05AE")
     
 public static Application getInitialApplication() {
@@ -22,6 +22,7 @@ public static Application getInitialApplication() {
      * Return the package name of the first .apk loaded into the process.
      * NOTE: Only works on the main thread.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:43.312 -0500", hash_original_method = "A3B1FB3314BAC71CAE100390DD0225EF", hash_generated_method = "76990655FC40378EC60498AA9203ABC8")
     
 public static String getInitialPackage() {
@@ -32,6 +33,7 @@ public static String getInitialPackage() {
      * Return the raw interface to the package manager.
      * @return The package manager.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:43.315 -0500", hash_original_method = "03A658BC1E4842F8DA4AD0A4A85FFB8B", hash_generated_method = "4D144CDA5376A1CCF5ECBDA8BE74F503")
     
 public static IPackageManager getPackageManager() {
@@ -61,7 +63,6 @@ public static int getIntCoreSetting(String key, int defaultValue) {
     {
         //Synthesized constructor
     }
-
     
 }
 

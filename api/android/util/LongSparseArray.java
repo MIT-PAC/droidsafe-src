@@ -100,6 +100,7 @@ public void setValues(long[] keys, E uniqueValue) {
      * Gets the Object mapped from the specified key, or <code>null</code>
      * if no such mapping has been made.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.438 -0500", hash_original_method = "4371A69A3700205284573EEAA3E6B17F", hash_generated_method = "32538B9F100C37D1DA2550D390ED9059")
     
 public E get(long key) {
@@ -110,6 +111,7 @@ public E get(long key) {
      * Gets the Object mapped from the specified key, or the specified Object
      * if no such mapping has been made.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.441 -0500", hash_original_method = "E2D85B672251F3A6432F3D64B14D09C9", hash_generated_method = "686647A208F500FFED9220521975E6B3")
     
 public E get(long key, E valueIfKeyNotFound) {

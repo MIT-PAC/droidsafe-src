@@ -301,6 +301,7 @@ private void updateMatchesString() {
     public void afterTextChanged(Editable s) {
         // Does nothing.  Needed to implement TextWatcher.
     }
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:03.307 -0500", hash_original_method = "B54267537E703324F4E153FA58838A53", hash_generated_method = "EA08B2D78BAF275FDB507535D4FA9EAF")
     
 public int getActionModeGlobalBottom() {

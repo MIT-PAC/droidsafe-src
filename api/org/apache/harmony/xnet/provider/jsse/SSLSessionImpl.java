@@ -103,42 +103,49 @@ public SSLSessionImpl(SecureRandom secureRandom) {
         this(null, secureRandom);
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:12.239 -0500", hash_original_method = "A8B8393BBD8B21276043F8F436BCE41F", hash_generated_method = "E81B1F1B3E4F15AAEFD04FB4DC689CD7")
     
 public int getApplicationBufferSize() {
         return SSLRecordProtocol.MAX_DATA_LENGTH;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:12.242 -0500", hash_original_method = "745D2790D3F85591FE85537A877B7167", hash_generated_method = "8891BB909A2665C5100EE699C9A3740E")
     
 public String getCipherSuite() {
         return cipherSuite.getName();
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:12.245 -0500", hash_original_method = "09A0842085DDEEEFFBE4843237FA7655", hash_generated_method = "7DEB74E1D764C57E44EE034B9B835D12")
     
 public long getCreationTime() {
         return creationTime;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:12.247 -0500", hash_original_method = "6FF1AD4C2D68C6B37F5B643FEDAC8BE4", hash_generated_method = "B223273CBB754C3FB9FBC8DEC4A4206A")
     
 public byte[] getId() {
         return id;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:12.249 -0500", hash_original_method = "79FEA1654BACC0D1C8F52D94037731AA", hash_generated_method = "6DFC80835F49DDA5791AE8053CB92D87")
     
 public long getLastAccessedTime() {
         return lastAccessedTime;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:12.251 -0500", hash_original_method = "00176E7E524F828990985588910F48EC", hash_generated_method = "DCB7B96357BAC93BE08BBFECA9CC1109")
     
 public Certificate[] getLocalCertificates() {
         return localCertificates;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:12.253 -0500", hash_original_method = "458F509C66510A71C33EE842436FD9CE", hash_generated_method = "2B6E9DADD5D6D7C75712693A8A512635")
     
 public Principal getLocalPrincipal() {
@@ -148,12 +155,14 @@ public Principal getLocalPrincipal() {
         return null;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:12.255 -0500", hash_original_method = "D48FD6D531D6586277314A5CB11C610B", hash_generated_method = "49066EE1ED41F2667BDAEB4A3668CF26")
     
 public int getPacketBufferSize() {
         return SSLRecordProtocol.MAX_SSL_PACKET_SIZE;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:12.258 -0500", hash_original_method = "671707B73FC0A29660C8CE2F332B40EC", hash_generated_method = "288E7D4E06864EE860F887F0A880D2AB")
     
 public javax.security.cert.X509Certificate[] getPeerCertificateChain()
@@ -173,6 +182,7 @@ public javax.security.cert.X509Certificate[] getPeerCertificateChain()
         return certs;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:12.261 -0500", hash_original_method = "3CCB3131DE484F2F007F820172400088", hash_generated_method = "E59CD2B0702118D0F4B0D2F8423212E5")
     
 public Certificate[] getPeerCertificates() throws SSLPeerUnverifiedException {
@@ -182,18 +192,21 @@ public Certificate[] getPeerCertificates() throws SSLPeerUnverifiedException {
         return peerCertificates;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:12.263 -0500", hash_original_method = "686621F471AF14AF505B60419214318E", hash_generated_method = "B884ECED502456841527EC5FB85A2015")
     
 public String getPeerHost() {
         return peerHost;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:12.265 -0500", hash_original_method = "356711D154A2D021F9E9DF4BCD609AF2", hash_generated_method = "0A13911FE5FD34A377B4DEB23C492969")
     
 public int getPeerPort() {
         return peerPort;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:12.268 -0500", hash_original_method = "B290FEA54ECCBD8C8D1AB720544591AB", hash_generated_method = "D1BE035341DD91FC202CAF4DF4D271BD")
     
 public Principal getPeerPrincipal() throws SSLPeerUnverifiedException {
@@ -203,18 +216,21 @@ public Principal getPeerPrincipal() throws SSLPeerUnverifiedException {
         return peerCertificates[0].getSubjectX500Principal();
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:12.270 -0500", hash_original_method = "70FFC4864CFD3FC7BC69978E71944D24", hash_generated_method = "71F58FEB7D20DFC654CB9FACA0B6120B")
     
 public String getProtocol() {
         return (protocol == null) ? "NONE" : protocol.name;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:12.272 -0500", hash_original_method = "E54F5411F9B3E4DD60F47670618D45C7", hash_generated_method = "54AA719FEBF681696927ED26D7C9E3D3")
     
 public SSLSessionContext getSessionContext() {
         return context;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:12.274 -0500", hash_original_method = "AC1FF55FABC34CC9974A294171A954DF", hash_generated_method = "482A1EBBD4ADC2D29BC2576BF219C8BF")
     
 public Object getValue(String name) {
@@ -224,6 +240,7 @@ public Object getValue(String name) {
         return values.get(name);
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:12.277 -0500", hash_original_method = "94A4765ACA5D7A784EB5749EBA86107C", hash_generated_method = "212BEDE870CA0A8C4B9BA72912F392CA")
     
 public String[] getValueNames() {

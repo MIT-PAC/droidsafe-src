@@ -32,6 +32,7 @@ public final class CookieManager {
      * 
      * @return CookieManager
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.569 -0500", hash_original_method = "320195B5814A82CDAD5D188DBD73B8D9", hash_generated_method = "041F3F39198BFF3134D422820E8011E0")
     
 public static synchronized CookieManager getInstance() {
@@ -367,6 +368,7 @@ public int compare(Cookie cookie1, Cookie cookie2) {
 private CookieManager() {
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.567 -0500", hash_original_method = "192983167FE22E48CC26A3CAFDDD8D6B", hash_generated_method = "6D3F334E8E934FE8B33726A6E75490EE")
     
 protected Object clone() throws CloneNotSupportedException {
@@ -580,6 +582,7 @@ public synchronized void setCookie(WebAddress uri, String value) {
      * @param url The url needs cookie
      * @return The cookies in the format of NAME=VALUE [; NAME=VALUE]
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.586 -0500", hash_original_method = "CFFC2606C8B97641601C2B54714068BC", hash_generated_method = "830F33A2CDAF3F84C95EBE9D142A6A26")
     
 public String getCookie(String url) {
@@ -606,6 +609,7 @@ public String getCookie(String url) {
      * @return The cookies in the format of NAME=VALUE [; NAME=VALUE]
      * @hide Private mode is not very well exposed for now
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.588 -0500", hash_original_method = "5ACC35EE5D78B03ACC91967E6F456E58", hash_generated_method = "4D5DBE5CE059E56BD529F447878E5099")
     
 public String getCookie(String url, boolean privateBrowsing) {
@@ -633,6 +637,7 @@ public String getCookie(String url, boolean privateBrowsing) {
      * @hide - hide this because it has a parameter of type WebAddress, which
      * is a system private class.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.593 -0500", hash_original_method = "BE3F143473537E9CE993D89B685428CF", hash_generated_method = "AA990C1922C046F320802845178EDD5E")
     
 public synchronized String getCookie(WebAddress uri) {

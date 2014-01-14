@@ -668,6 +668,7 @@ public void setOnSearchClickListener(OnClickListener listener) {
      *
      * @return the query string
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:27.778 -0500", hash_original_method = "BDCF19F1BD9841AC2C41BDBA087D55A0", hash_generated_method = "6AB3F6E16C358175AE4C893210CE3A7A")
     
 public CharSequence getQuery() {
@@ -855,6 +856,7 @@ public void setSuggestionsAdapter(CursorAdapter adapter) {
      * Returns the adapter used for suggestions, if any.
      * @return the suggestions adapter
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:27.804 -0500", hash_original_method = "D43CFDAE734651DCDEBEEE22CB7FB2A7", hash_generated_method = "AA1D3A38C42022ACB4D7A2264775BA6D")
     
 public CursorAdapter getSuggestionsAdapter() {

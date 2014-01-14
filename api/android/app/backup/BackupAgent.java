@@ -539,6 +539,7 @@ protected void onRestoreFile(ParcelFileDescriptor data, long size,
     // ----- Core implementation -----
 
     /** @hide */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.410 -0500", hash_original_method = "2EA8D194620A11CB2853C240391D2146", hash_generated_method = "2322775DBA6D1BBD8A29F3CB4D39A778")
     
 public final IBinder onBind() {

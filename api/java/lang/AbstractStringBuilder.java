@@ -50,6 +50,7 @@ AbstractStringBuilder(String string) {
     /*
      * Returns the character array.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:27.711 -0500", hash_original_method = "CA36BDE7C01AB0B5E4CF30DF6E006183", hash_generated_method = "2BE9E3503687526A3D670895B26B03C2")
     
 final char[] getValue() {

@@ -299,6 +299,7 @@ public abstract char get();
      * @exception BufferUnderflowException
      *                if {@code dst.length} is greater than {@code remaining()}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.762 -0500", hash_original_method = "CCEA164926296D5352A245D12A0C46F5", hash_generated_method = "191FA0F1A1725B2094DF30D3780BBD15")
     
 public CharBuffer get(char[] dst) {
@@ -324,6 +325,7 @@ public CharBuffer get(char[] dst) {
      * @exception BufferUnderflowException
      *                if {@code charCount} is greater than {@code remaining()}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.765 -0500", hash_original_method = "098FD190C217FD14B547D1BC38021C90", hash_generated_method = "4E65E0F49D964022501BB9659D732E79")
     
 public CharBuffer get(char[] dst, int dstOffset, int charCount) {
@@ -675,6 +677,7 @@ public abstract CharSequence subSequence(int start, int end);
     /**
      * Returns a string representing the current remaining chars of this buffer.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.812 -0500", hash_original_method = "7C6B898DBE310393A5687B676A637050", hash_generated_method = "00B4A448AFB77E5525AA5B006C3CEB6D")
     
 @Override

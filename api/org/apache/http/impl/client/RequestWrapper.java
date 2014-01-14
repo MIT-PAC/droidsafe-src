@@ -16,18 +16,11 @@ import org.apache.http.message.AbstractHttpMessage;
 import org.apache.http.message.BasicRequestLine;
 import org.apache.http.params.HttpProtocolParams;
 
-
-
-
-
-
 public class RequestWrapper extends AbstractHttpMessage implements HttpUriRequest {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:38.959 -0500", hash_original_field = "37C1D0302B013586291E425BC45727A2", hash_generated_field = "3C457E45ADB86FDABE11A23A4F2DF029")
-
     
     private  HttpRequest original;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:38.961 -0500", hash_original_field = "1154143EF3A042E6515BD6D5B42C64B6", hash_generated_field = "DDFAECCF21F90F28142F5C866534A5C3")
-
 
     private URI uri;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:38.964 -0500", hash_original_field = "842C170402669AC7A74293BBBFD3BC5D", hash_generated_field = "F42F15CDE806BBAD7F26F7952D68FCE2")
@@ -76,6 +69,7 @@ public void resetHeaders() {
         setHeaders(this.original.getAllHeaders());
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:38.976 -0500", hash_original_method = "691C5451C67574E660997BC2056A5F23", hash_generated_method = "7472B5026828D1D5EB47237766CBDA14")
     
 public String getMethod() {
@@ -91,6 +85,7 @@ public void setMethod(final String method) {
         this.method = method;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:38.981 -0500", hash_original_method = "F281AE1963E10543B4B6C15DF00211F7", hash_generated_method = "B29FD2F4F0EB6836EED105620AE7A6F7")
     
 public ProtocolVersion getProtocolVersion() {
@@ -107,7 +102,7 @@ public void setProtocolVersion(final ProtocolVersion version) {
         this.version = version;
     }
 
-
+    @DSSource({DSSourceKind.FILE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:38.985 -0500", hash_original_method = "548D933490D1B58733888D02043A11B0", hash_generated_method = "FE9C67AB573105BAB4263EEFA9A78DCB")
     
 public URI getURI() {
@@ -120,6 +115,7 @@ public void setURI(final URI uri) {
         this.uri = uri;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:38.989 -0500", hash_original_method = "ED6274B1F39BF31330A4BAC92EA0A101", hash_generated_method = "39924B4D6F1E6AA189C69E0FFF0425F6")
     
 public RequestLine getRequestLine() {
@@ -147,6 +143,7 @@ public boolean isAborted() {
         return false;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:38.996 -0500", hash_original_method = "031DFDACC38ED516BF6F8D68C4847FFF", hash_generated_method = "C19BDFC727DCC2D2C04301CACF2B6D60")
     
 public HttpRequest getOriginal() {
@@ -159,6 +156,7 @@ public boolean isRepeatable() {
         return true;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.001 -0500", hash_original_method = "CF6A18341EACE9B23200B44E9109C775", hash_generated_method = "D012534975EA1936A0C53E346FD27CD9")
     
 public int getExecCount() {
@@ -170,7 +168,6 @@ public int getExecCount() {
 public void incrementExecCount() {
         this.execCount++;
     }
-
     
 }
 

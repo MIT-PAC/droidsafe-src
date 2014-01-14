@@ -141,6 +141,7 @@ protected void alert(byte level, byte description) {
      * Returns the description code of alert or -100 if there
      * is no alert.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:11.404 -0500", hash_original_method = "5D3BF0EC0666EBF860C9DC61576F480B", hash_generated_method = "7A8EE9706552E0ED056BC1BB7074D029")
     
 protected byte getDescriptionCode() {
@@ -183,6 +184,7 @@ protected boolean isFatalAlert() {
      * Returns the string representation of occured alert.
      * If no alert has occured null is returned.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:11.414 -0500", hash_original_method = "4ED335C5479EFEAB65BE48D985C7B953", hash_generated_method = "BC1AF47FCFB0A90853760EB213117316")
     
 protected String getAlertDescription() {
@@ -244,6 +246,7 @@ protected String getAlertDescription() {
      * protocol in "no alert" state, so after wrapping the method setProcessed
      * should be called.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:11.416 -0500", hash_original_method = "124BFC00035B67AF657D6336BEA07CC5", hash_generated_method = "2823AFE6AA2CFFB4F440BE1D573A853D")
     
 protected byte[] wrap() {

@@ -29,6 +29,7 @@ public PServedUser()
         super(NAME);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:56.084 -0500", hash_original_method = "060F42FFBCCB73E6969A6CFC80051047", hash_generated_method = "3EDCBB4A0986777CC326DD7386B37CA4")
     
 public String getRegistrationState() {
@@ -36,6 +37,7 @@ public String getRegistrationState() {
         return getParameter(ParameterNamesIms.REGISTRATION_STATE);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:56.088 -0500", hash_original_method = "86F2D3309EA08C107052AE36BBC425BC", hash_generated_method = "4C67BA0A73478BE61CD4959EE1C4A1C9")
     
 public String getSessionCase() {

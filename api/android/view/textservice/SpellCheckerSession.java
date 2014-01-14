@@ -100,6 +100,7 @@ public boolean isSessionDisconnected() {
      * Get the spell checker service info this spell checker session has.
      * @return SpellCheckerInfo for the specified locale.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:47.660 -0500", hash_original_method = "DA550B703A137477375C51611DE4E664", hash_generated_method = "AD892B14616F1FA3808075B163F413AB")
     
 public SpellCheckerInfo getSpellChecker() {
@@ -442,6 +443,7 @@ private void handleOnGetSuggestionsMultiple(SuggestionsInfo[] suggestionInfos) {
     /**
      * @hide
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:47.764 -0500", hash_original_method = "EB5F65A578EB2CF49F3B6FAEDD6A03A1", hash_generated_method = "D8602A56238F43257D3C114807D82BC9")
     
 public ITextServicesSessionListener getTextServicesSessionListener() {
@@ -451,6 +453,7 @@ public ITextServicesSessionListener getTextServicesSessionListener() {
     /**
      * @hide
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:47.767 -0500", hash_original_method = "49E439EC4CF52AA024CAA5A403E07C82", hash_generated_method = "BCF3460FB9CFA65F48B614AF05CB3502")
     
 public ISpellCheckerSessionListener getSpellCheckerSessionListener() {

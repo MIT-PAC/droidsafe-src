@@ -5,7 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
 public class CrossProcessCursorWrapper extends CursorWrapper implements CrossProcessCursor {
     /**
      * Creates a cross process cursor wrapper.
@@ -30,6 +29,7 @@ public CrossProcessCursorWrapper(Cursor cursor) {
         DatabaseUtils.cursorFillWindow(mCursor, position, window);
     }
 
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.992 -0500", hash_original_method = "D510FEC99A9AF46DE1EA010D6828DD6E", hash_generated_method = "B274170C8BD2FA2D26833AA62279DD73")
     
 @Override
@@ -53,7 +53,6 @@ public CrossProcessCursorWrapper(Cursor cursor) {
 
         return true;
     }
-
     
 }
 

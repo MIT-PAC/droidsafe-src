@@ -316,6 +316,7 @@ public void setOnTimeChangedListener(OnTimeChangedListener onTimeChangedListener
     /**
      * @return The current hour in the range (0-23).
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.128 -0500", hash_original_method = "AE73BE8706F17DAEE1FF393F333C1E75", hash_generated_method = "F008939409E801B970BC0D0D87C95588")
     
 public Integer getCurrentHour() {
@@ -392,6 +393,7 @@ public boolean is24HourView() {
     /**
      * @return The current minute.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.136 -0500", hash_original_method = "A85A8F7AA6E48BE779272D70D71211B4", hash_generated_method = "F0211D9F8029EFFFC8877A7E3437CBF0")
     
 public Integer getCurrentMinute() {
@@ -412,6 +414,7 @@ public void setCurrentMinute(Integer currentMinute) {
         onTimeChanged();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.141 -0500", hash_original_method = "6E8B0AA5C49A67CA109B25D465668749", hash_generated_method = "00EAD357991374866B7CA67A42364C44")
     
 @Override
@@ -518,12 +521,14 @@ private SavedState(Parcel in) {
             mMinute = in.readInt();
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.104 -0500", hash_original_method = "E8F47E3750239DF4EC2B02FDC3043C0E", hash_generated_method = "8C0112869DB37B91D479B99A1CB77744")
         
 public int getHour() {
             return mHour;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.106 -0500", hash_original_method = "3E9A445CD5F3D9118D6AF471987F3B8F", hash_generated_method = "E33585B4E5B55B12E02D8CE1BC4EDD12")
         
 public int getMinute() {

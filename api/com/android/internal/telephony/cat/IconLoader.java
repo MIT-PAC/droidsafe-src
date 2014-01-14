@@ -17,13 +17,9 @@ import android.os.Message;
 
 import com.android.internal.telephony.IccFileHandler;
 
-
-
-
-
-
 class IconLoader extends Handler {
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:05.645 -0500", hash_original_method = "10E76DA53BC66F7E84AC913A1A382A5D", hash_generated_method = "3CA2F1EE9B38A7F66535F31F612C0A2B")
     
 static IconLoader getInstance(Handler caller, IccFileHandler fh) {
@@ -44,6 +40,7 @@ static IconLoader getInstance(Handler caller, IccFileHandler fh) {
      * @param length The length of image body
      * @return The bitmap
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:05.673 -0500", hash_original_method = "2A78BD7C43C6EA7A88473349A445518E", hash_generated_method = "F02845359F6B6044975DC5E98AE8CF68")
     
 public static Bitmap parseToBnW(byte[] data, int length){
@@ -98,6 +95,7 @@ private static int bitToBnW(int bit){
      * @param clut coulor lookup table
      * @return The color bitmap
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:05.679 -0500", hash_original_method = "9AF939262FB3DB6E45968B076173B00B", hash_generated_method = "11463A3BFE88B5F071F1874A4BF48D6F")
     
 public static Bitmap parseToRGB(byte[] data, int length,
@@ -180,7 +178,6 @@ private static int getMask(int numOfBits) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:05.620 -0500", hash_original_field = "0C75363FDA7A50E0EE7CA86AD7A1C31F", hash_generated_field = "81EC33A739284D15A326AED6A69F224E")
 
-
     private static IconLoader sLoader = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:05.622 -0500", hash_original_field = "568E7457E2BF61A996A0F4781B0DF6B9", hash_generated_field = "D01A6F849D09BA82DD97BA1D8717EC58")
 
@@ -236,7 +233,6 @@ private static int getMask(int numOfBits) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:05.617 -0500", hash_original_field = "CCED152393512228C41C20A9EC9E4A8A", hash_generated_field = "8961889328AF5E677CB9B441A72BB954")
 
     private HashMap<Integer, Bitmap> mIconsCache = null;
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:05.642 -0500", hash_original_method = "FC71F40EA342EA47A36AF8D952C946AD", hash_generated_method = "5B9E9596C4A2E6E80977BF6867A3B575")
     

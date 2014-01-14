@@ -125,6 +125,7 @@ public boolean equals(Object obj) {
     /** get the HostName field
      * @return String
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:53.109 -0500", hash_original_method = "01D438C7CBE6320DFE75C4BCB8CCFBCD", hash_generated_method = "4277FADEC361BC1DBEF941BCB6F85214")
     
 public String getHostname() {
@@ -134,6 +135,7 @@ public String getHostname() {
     /** get the Address field
      * @return String
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:53.111 -0500", hash_original_method = "4A9CAFF1CF2BA97BC04195E67D0EDAE7", hash_generated_method = "7E0763923BEDBB9E8CCF39F1BED51224")
     
 public String getAddress() {
@@ -145,6 +147,7 @@ public String getAddress() {
      * of a SIP message as a String.
      * @return String
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:53.114 -0500", hash_original_method = "217AB83550ED2E15188C82C367958B30", hash_generated_method = "CFB0C442581C5DC2E6C02DD12F3E3D89")
     
 public String getIpAddress() {
@@ -261,6 +264,7 @@ public boolean isIPAddress() {
      *
      *@throws UnkownHostexception when the host name cannot be resolved.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:53.131 -0500", hash_original_method = "0FE7E7513DCC8527F5BCCDE13498B6DC", hash_generated_method = "622B241C8F3A66290D0E87F3F36442E5")
     
 public InetAddress getInetAddress() throws java.net.UnknownHostException {

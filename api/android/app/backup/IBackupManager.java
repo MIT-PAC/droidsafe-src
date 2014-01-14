@@ -56,7 +56,8 @@ public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.400 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.400 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
             
 public java.lang.String getInterfaceDescriptor()
 {
@@ -490,7 +491,8 @@ _data.recycle();
      * Identify the currently selected transport.  Callers must hold the
      * android.permission.BACKUP permission to use this method.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.443 -0500", hash_original_method = "E6BEF60268F9B787EF84D6AA81C4800E", hash_generated_method = "989A63C854AF4A9BBB7DB6176ABAE99F")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.443 -0500", hash_original_method = "E6BEF60268F9B787EF84D6AA81C4800E", hash_generated_method = "989A63C854AF4A9BBB7DB6176ABAE99F")
             
 public java.lang.String getCurrentTransport() throws android.os.RemoteException
 {
@@ -513,7 +515,8 @@ return _result;
      * Request a list of all available backup transports' names.  Callers must
      * hold the android.permission.BACKUP permission to use this method.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.446 -0500", hash_original_method = "7381354AF1E93FF8E17E3709ED2490B1", hash_generated_method = "63031197FBB2D5B0E2ACEDB2225C8A4A")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.446 -0500", hash_original_method = "7381354AF1E93FF8E17E3709ED2490B1", hash_generated_method = "63031197FBB2D5B0E2ACEDB2225C8A4A")
             
 public java.lang.String[] listAllTransports() throws android.os.RemoteException
 {
@@ -572,7 +575,8 @@ return _result;
      *   UI supplied by the transport.  If the transport has no configuration UI, it should
      *   return {@code null} here.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.451 -0500", hash_original_method = "BA19851F6D06D18DC0B278533C6E94E2", hash_generated_method = "F79C558F140F5688F1EB644F2734766B")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.451 -0500", hash_original_method = "BA19851F6D06D18DC0B278533C6E94E2", hash_generated_method = "F79C558F140F5688F1EB644F2734766B")
             
 public android.content.Intent getConfigurationIntent(java.lang.String transport) throws android.os.RemoteException
 {
@@ -605,7 +609,8 @@ return _result;
      * @return A string describing the current backup destination.  This string is used
      *   verbatim by the Settings UI as the summary text of the "configure..." item.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.454 -0500", hash_original_method = "17F9B82413A8349C579407FE79FB69FF", hash_generated_method = "72B8AE52626B17CA690E220F1DE49543")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.454 -0500", hash_original_method = "17F9B82413A8349C579407FE79FB69FF", hash_generated_method = "72B8AE52626B17CA690E220F1DE49543")
             
 public java.lang.String getDestinationString(java.lang.String transport) throws android.os.RemoteException
 {
@@ -757,7 +762,8 @@ public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.383 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.383 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
         
 public android.os.IBinder asBinder()
 {

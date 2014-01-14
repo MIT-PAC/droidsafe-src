@@ -7,11 +7,6 @@ import droidsafe.annotations.*;
 import java.util.Collection;
 import java.util.concurrent.locks.AbstractQueuedSynchronizer;
 
-
-
-
-
-
 public class Semaphore implements java.io.Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:23.433 -0500", hash_original_field = "166E94449C29806B2B13C7F250519C8B", hash_generated_field = "B51BFB8167C0871125DF74AE3E8AFF72")
 
@@ -478,6 +473,7 @@ public final boolean hasQueuedThreads() {
      *
      * @return the estimated number of threads waiting for this lock
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:23.531 -0500", hash_original_method = "DFFF2C05339152644F00EC2FFC57EFB9", hash_generated_method = "EA91B63888B7C015D6A36669988D4E4A")
     
 public final int getQueueLength() {
@@ -494,12 +490,12 @@ public final int getQueueLength() {
      *
      * @return the collection of threads
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:23.533 -0500", hash_original_method = "4BC73C35668DA24636BE58FB68209032", hash_generated_method = "D67E7603910B1CF790C49F196A7D918E")
     
 protected Collection<Thread> getQueuedThreads() {
         return sync.getQueuedThreads();
     }
-
     
     abstract static class Sync extends AbstractQueuedSynchronizer {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:23.438 -0500", hash_original_field = "09459329E159C1C425A38C58E358F421", hash_generated_field = "A656A5C20233C00BCDB91774C38EC514")
@@ -512,6 +508,7 @@ Sync(int permits) {
             setState(permits);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:23.444 -0500", hash_original_method = "932F869D56214E546755CFC45FDC49E6", hash_generated_method = "D0FD346268DF6B23252F8754EA5A64ED")
         
 final int getPermits() {
@@ -566,8 +563,6 @@ final int drainPermits() {
             }
         }
     }
-
-
     
     static final class NonfairSync extends Sync {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:23.460 -0500", hash_original_field = "049C97470894859EC090BCA877D76DE9", hash_generated_field = "AF8D9D2DFF309778F150C3E144D5488E")
@@ -586,8 +581,6 @@ protected int tryAcquireShared(int acquires) {
             return nonfairTryAcquireShared(acquires);
         }
     }
-
-
     
     static final class FairSync extends Sync {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:23.471 -0500", hash_original_field = "1DD078BB5E5059FF630B3049C620347E", hash_generated_field = "7955A4226A8EE675254DC7AB4392270B")

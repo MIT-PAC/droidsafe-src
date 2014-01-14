@@ -5,13 +5,8 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class SimTlv {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:29.828 -0500", hash_original_field = "86A3D06170A107D6E7EB13AB011FB99A", hash_generated_field = "86A3D06170A107D6E7EB13AB011FB99A")
-
 
     byte record[];
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:29.830 -0500", hash_original_field = "D147F0D478C2342F201DCEE95A03F836", hash_generated_field = "D147F0D478C2342F201DCEE95A03F836")
@@ -66,6 +61,7 @@ public boolean isValidObject() {
      * 0 and 0xff are invalid tag values
      * valid tags range from 1 - 0xfe
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:29.850 -0500", hash_original_method = "6A87500957D7F16920BD9A3282060AAA", hash_generated_method = "73856AB5111A8AF2E54409EBBA60D4D7")
     
 public int getTag() {
@@ -78,6 +74,7 @@ public int getTag() {
      * returns null if !isValidObject()
      */
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:29.853 -0500", hash_original_method = "0617D6165A26B8CE55A8A8181EBF929A", hash_generated_method = "CE2F089CF59F88F6A9421DF63DB16F20")
     
 public byte[] getData() {
@@ -124,7 +121,6 @@ private boolean parseCurrentTlvObject() {
 
         return true;
     }
-
     
 }
 

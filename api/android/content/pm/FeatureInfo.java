@@ -7,10 +7,6 @@ import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public class FeatureInfo implements Parcelable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:50.219 -0500", hash_original_field = "F48EAB296ADF6CE662F7CDF5F130714D", hash_generated_field = "783C36C8508F1DD83B69876DC88244AC")
 
@@ -99,6 +95,7 @@ public void writeToParcel(Parcel dest, int parcelableFlags) {
      * as 1.2
      * @return String representation of the reqGlEsVersion attribute
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:50.250 -0500", hash_original_method = "6B16AB9E297007D3C91B331171401C71", hash_generated_method = "303984A3946A6AB415F5805F75FB0A51")
     
 public String getGlEsVersion() {

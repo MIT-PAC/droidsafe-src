@@ -94,6 +94,7 @@ public boolean isEnabled() {
      * 
      * @return The icon associated with this component.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:49.133 -0500", hash_original_method = "39BF66743A5A058B0728A86B3B731327", hash_generated_method = "2063D75F4BECC5EC9C4AE3DBCB9FC602")
     
 public final int getIconResource() {
@@ -159,6 +160,7 @@ public void writeToParcel(Parcel dest, int parcelableFlags) {
     /**
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:49.150 -0500", hash_original_method = "6586F246687FA42890C123804417F38B", hash_generated_method = "005A1C2B4309D356346549BE409C61D5")
     
 @Override protected ApplicationInfo getApplicationInfo() {

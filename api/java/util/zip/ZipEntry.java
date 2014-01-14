@@ -162,6 +162,7 @@ ZipEntry(byte[] hdrBuf, InputStream in) throws IOException {
      *         is no comment. If we're reading an archive with
      *         {@code ZipInputStream} the comment is not available.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.312 -0500", hash_original_method = "D7C1F8AAD3D2F40DD04B72C74A7D0B69", hash_generated_method = "E40F10878D62F1009133973700BC0B5C")
     
 public String getComment() {
@@ -174,6 +175,7 @@ public String getComment() {
      * @return the compressed size, or -1 if the compressed size has not been
      *         set.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.314 -0500", hash_original_method = "BD185E24018FAED136FF653216A88FC6", hash_generated_method = "618115E6AFA25933753DDB659E8201D9")
     
 public long getCompressedSize() {
@@ -185,6 +187,7 @@ public long getCompressedSize() {
      *
      * @return the checksum, or -1 if the checksum has not been set.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.318 -0500", hash_original_method = "9F9CC7112652CAA1DD447640E3933AED", hash_generated_method = "5096DC92A02BC3D5F3C9C04FCC34F0DB")
     
 public long getCrc() {
@@ -197,6 +200,7 @@ public long getCrc() {
      * @return a byte array containing the extra information, or {@code null} if
      *         there is none.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.320 -0500", hash_original_method = "12884DA1C8E953155933C9EDA5E5913F", hash_generated_method = "D75852F09EA6AE77443AF8398BA9726E")
     
 public byte[] getExtra() {
@@ -209,6 +213,7 @@ public byte[] getExtra() {
      * @return the compression method, either {@code DEFLATED}, {@code STORED}
      *         or -1 if the compression method has not been set.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.322 -0500", hash_original_method = "5D6E0D5CF72121589416F8E200760163", hash_generated_method = "2814E00E387AF31379BCB7F27E4D2902")
     
 public int getMethod() {
@@ -220,6 +225,7 @@ public int getMethod() {
      *
      * @return the entry name.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.325 -0500", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "50860709F8CC9FE19B604881E59FBA54")
     
 public String getName() {
@@ -232,6 +238,7 @@ public String getName() {
      * @return the uncompressed size, or {@code -1} if the size has not been
      *         set.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.327 -0500", hash_original_method = "25EF411BA02CBCB0F772C5374653B5E7", hash_generated_method = "EB3DBFDE453A5D88801767E17B680EEE")
     
 public long getSize() {
@@ -244,6 +251,7 @@ public long getSize() {
      * @return the last modification time as the number of milliseconds since
      *         Jan. 1, 1970.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.330 -0500", hash_original_method = "56915B75BB1F78598E38415E47FB9273", hash_generated_method = "DCBFB3FD066C705D17A8774B0FD308D7")
     
 public long getTime() {

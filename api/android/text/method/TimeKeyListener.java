@@ -8,6 +8,7 @@ import android.text.InputType;
 
 public class TimeKeyListener extends NumberKeyListener {
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:02.708 -0500", hash_original_method = "E3D1D19A4F0AD3BF112656171BB40F7B", hash_generated_method = "775E9E8EEAE8BFB1441E2E40A07E5EA3")
     
 public static TimeKeyListener getInstance() {
@@ -32,6 +33,7 @@ public static TimeKeyListener getInstance() {
     {
         //Synthesized constructor
     }
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:02.701 -0500", hash_original_method = "F4BD69BECB4A0F93AC68BF98F9909696", hash_generated_method = "A25476C7DC4D7F01A57A4FA58B212E1E")
     
 public int getInputType() {
@@ -39,6 +41,7 @@ public int getInputType() {
         | InputType.TYPE_DATETIME_VARIATION_TIME;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:02.704 -0500", hash_original_method = "EEC77EA89700D9A449D9FC8461D61396", hash_generated_method = "C8829E311180669DC917FA428AC766DB")
     
 @Override

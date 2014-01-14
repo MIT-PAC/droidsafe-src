@@ -399,6 +399,7 @@ public String[] newArray(int size) {
 		addTaint(lastValue);
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public final byte[] marshall(){
 		//Formerly a native function
 		return mData;
@@ -1435,6 +1436,7 @@ public String[] newArray(int size) {
 		return mValueString;
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public final CharSequence readCharSequence(){
 		return mValueCharSequence;
 		// Original method
@@ -1547,6 +1549,7 @@ public String[] newArray(int size) {
 		*/
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public final byte[] createByteArray(){
 		//Formerly a native function
 		return mValueByteArray;
@@ -1879,6 +1882,7 @@ public String[] newArray(int size) {
 		//Return nothing
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public final Object readValue(ClassLoader loader){
 		return mValueObject;
 		// Original method
@@ -1909,6 +1913,7 @@ public String[] newArray(int size) {
 		*/
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public final Serializable readSerializable(){
 		return mValueSerializable;
 		// Original method

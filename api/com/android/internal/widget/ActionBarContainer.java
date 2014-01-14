@@ -16,10 +16,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
-
-
-
-
 public class ActionBarContainer extends FrameLayout {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:40.332 -0500", hash_original_field = "1B51005004680B9C24C44A86A45D5340", hash_generated_field = "527C228A5C97714BAF48C0C499097913")
 
@@ -31,7 +27,6 @@ public class ActionBarContainer extends FrameLayout {
 
     private ActionBarView mActionBarView;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:40.338 -0500", hash_original_field = "1414D97CE5ED674A74A05A07F83AE3BF", hash_generated_field = "0925F2C91F8CBA797C183309FA7634C5")
-
 
     private Drawable mBackground;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:40.341 -0500", hash_original_field = "01D1EECBDE92194373C425872A155AF7", hash_generated_field = "BE3C8909DD0F859198FF64AA78C3183B")
@@ -165,6 +160,7 @@ public void setTabContainer(ScrollingTabContainerView tabView) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:40.379 -0500", hash_original_method = "1563ACF140881C9576C37880F51665C0", hash_generated_method = "CB6FA5FF71485D38A9EA11D975A94D6F")
     
 public View getTabContainer() {
@@ -275,7 +271,6 @@ public View getTabContainer() {
             invalidate();
         }
     }
-
     
 }
 

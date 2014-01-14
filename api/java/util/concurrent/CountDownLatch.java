@@ -6,11 +6,8 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.concurrent.locks.AbstractQueuedSynchronizer;
 
-
-
 public class CountDownLatch {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:19.179 -0500", hash_original_field = "791C2888A6F5CDC158445182FD1E3538", hash_generated_field = "A4B34EF3CE38520839B34A2F06599243")
-
 
     private  Sync sync;
 
@@ -132,6 +129,7 @@ public void countDown() {
      *
      * @return the current count
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:19.192 -0500", hash_original_method = "ABE42AE497B23B643FDF7DC2348A1AF5", hash_generated_method = "A790BC05DE38C8C5892565B190DA5B88")
     
 public long getCount() {
@@ -150,7 +148,6 @@ public long getCount() {
 public String toString() {
         return super.toString() + "[Count = " + sync.getCount() + "]";
     }
-
     
     private static final class Sync extends AbstractQueuedSynchronizer {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:19.165 -0500", hash_original_field = "7D8247BB2ABAC952D1BFA8DC7E09642F", hash_generated_field = "CC4AEE6AD5E042E09631015E4C8CF188")
@@ -163,6 +160,7 @@ Sync(int count) {
             setState(count);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:19.170 -0500", hash_original_method = "192D38E698A214D58DA93C3298AD6AD3", hash_generated_method = "192D38E698A214D58DA93C3298AD6AD3")
         
 int getCount() {
@@ -189,8 +187,6 @@ protected boolean tryReleaseShared(int releases) {
             }
         }
     }
-
-
     
 }
 

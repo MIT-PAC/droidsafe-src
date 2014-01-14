@@ -190,6 +190,7 @@ public int rspCid(Message response) {
     /**
      * @return connection id or -1 if an error
      */
+    @DSSource({DSSourceKind.SYNCHRONIZATION_DATA})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:26.685 -0500", hash_original_method = "88FA920EA2D54F9DC82F8A70E10A6416", hash_generated_method = "B672B987749AA82984557368333C8C0A")
     
 public int getCidSync() {
@@ -248,6 +249,7 @@ public static LinkPropertyChangeAction fromInt(int value) {
     /**
      * @return connection id or -1 if an error
      */
+    @DSSource({DSSourceKind.SYNCHRONIZATION_DATA})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:26.692 -0500", hash_original_method = "82303217C6F0F47E549DB7B210318471", hash_generated_method = "6355F190B7933E0AAAE4C30E4F407F7B")
     
 public int getRefCountSync() {
@@ -290,6 +292,7 @@ public ApnSetting rspApnSetting(Message response) {
      *
      * @return ApnSetting or null if an error
      */
+    @DSSource({DSSourceKind.SYNCHRONIZATION_DATA})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:26.700 -0500", hash_original_method = "DD32FEB19DC77901F346EA49C4C70BF1", hash_generated_method = "26FCD65C22B3708A586C438DCE030E63")
     
 public ApnSetting getApnSettingSync() {
@@ -332,6 +335,7 @@ public LinkProperties rspLinkProperties(Message response) {
      *
      * @return LinkProperties or null if an error
      */
+    @DSSource({DSSourceKind.SYNCHRONIZATION_DATA})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:26.707 -0500", hash_original_method = "3F7712F482B5EE0C4EC3A4DBA0BA8D32", hash_generated_method = "FF79B0AD65617CB5A1186B97CD35A7DF")
     
 public LinkProperties getLinkPropertiesSync() {
@@ -441,6 +445,7 @@ public LinkCapabilities rspLinkCapabilities(Message response) {
      *
      * @return LinkCapabilities or null if an error
      */
+    @DSSource({DSSourceKind.SYNCHRONIZATION_DATA})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:26.726 -0500", hash_original_method = "C1F7B964512DA39EF105AA8C4B5198E6", hash_generated_method = "1F458C9E78F24005EDFA86A34F295F62")
     
 public LinkCapabilities getLinkCapabilitiesSync() {
@@ -567,6 +572,7 @@ public Collection<ApnContext> rspApnList(Message response) {
      *
      * @return Collection of ApnContext
      */
+    @DSSource({DSSourceKind.SYNCHRONIZATION_DATA})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:26.749 -0500", hash_original_method = "498EAD8B319A2A3996C6AC846ACD4BE2", hash_generated_method = "502F83993D3FC6EE0D18D20C357FD78D")
     
 public Collection<ApnContext> getApnListSync() {
@@ -639,6 +645,7 @@ public PendingIntent rspReconnectIntent(Message response) {
      *
      * @return PendingIntent reconnect intent current ly set in DC
      */
+    @DSSource({DSSourceKind.SYNCHRONIZATION_DATA})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:26.761 -0500", hash_original_method = "D70777E4A1678D0EF0C2B7C3D53ADD58", hash_generated_method = "DFC029D22F6A96D11B2F13A4E1E1A35B")
     
 public PendingIntent getReconnectIntentSync() {

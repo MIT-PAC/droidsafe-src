@@ -138,6 +138,7 @@ public static InetAddress numericToInetAddress(String addrString)
      * @param IP address which will be masked with specified prefixLength
      * @param prefixLength the prefixLength used to mask the IP
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:21.622 -0500", hash_original_method = "65C7A9BF428499CDC3CDD8BE5BFA9B7C", hash_generated_method = "95520860E69A928A2FA7A3D43EA79CF1")
     
 public static InetAddress getNetworkPart(InetAddress address, int prefixLength) {

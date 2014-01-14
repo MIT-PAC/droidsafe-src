@@ -9,10 +9,6 @@ import java.util.EnumMap;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public class NetworkInfo implements Parcelable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:16.878 -0500", hash_original_field = "EACD41AB63A4037588D1A4AEABDB3BF8", hash_generated_field = "2F62E12883E62B29FD64F8F884A9218D")
 
@@ -48,7 +44,6 @@ public NetworkInfo[] newArray(int size) {
             }
         };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:16.880 -0500", hash_original_field = "DA9EFA3C01E2AE9028200C499AD621FC", hash_generated_field = "60BE94F590B2B55E7F16606AE64523A2")
-
 
     private int mNetworkType;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:16.883 -0500", hash_original_field = "87044EEB61F52059EE0F0B5DBC4059CD", hash_generated_field = "298DC32990AD7D1E2E5F1AB561C62F4A")
@@ -135,6 +130,7 @@ public NetworkInfo(NetworkInfo source) {
      * info in this object pertains.
      * @return the network type
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:16.911 -0500", hash_original_method = "96E8498F657AF6E41693B86C8B8439F4", hash_generated_method = "12140614F0FA586F324EFC620CF61C60")
     
 public int getType() {
@@ -148,6 +144,7 @@ public int getType() {
      * of the network.
      * @return the network subtype
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:16.913 -0500", hash_original_method = "9F9664F87EC47D562C2DFD7EF2768060", hash_generated_method = "F7EDDADCEDAFB936492F75E6A9C474D6")
     
 public int getSubtype() {
@@ -170,6 +167,7 @@ void setSubtype(int subtype, String subtypeName) {
      * for example "WIFI" or "MOBILE".
      * @return the name of the network type
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:16.917 -0500", hash_original_method = "55AF35A663CF7527013DF4B2AE75FC8F", hash_generated_method = "AC133991089D02159E3531697222933A")
     
 public String getTypeName() {
@@ -182,6 +180,7 @@ public String getTypeName() {
      * Return a human-readable name describing the subtype of the network.
      * @return the name of the network subtype
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:16.920 -0500", hash_original_method = "0043E0CF1F933E5EC5CD97392CA0E5B0", hash_generated_method = "F6F74B76F3FBAEECF2D7DD5FDACFDAC7")
     
 public String getSubtypeName() {
@@ -354,6 +353,7 @@ public void setDetailedState(DetailedState detailedState, String reason, String 
      * if one is available.
      * @return the reason for failure, or null if not available
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:16.945 -0500", hash_original_method = "788F68C9DAC18237AEDF0C4BED188B0D", hash_generated_method = "B6A9CC282648BE1583E2C5365A01C4FF")
     
 public String getReason() {
@@ -368,6 +368,7 @@ public String getReason() {
      * if one is available.
      * @return the extra information, or null if not available
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:16.947 -0500", hash_original_method = "74D0311B373A7BB37462D7229B3CD3F9", hash_generated_method = "9CB31D64DF097D60A610ACE07788F4CD")
     
 public String getExtraInfo() {
@@ -392,12 +393,10 @@ public String getExtraInfo() {
             return builder.toString();
         }
     }
-
     
     public enum State {
         CONNECTING, CONNECTED, SUSPENDED, DISCONNECTING, DISCONNECTED, UNKNOWN
     }
-
     
     public enum DetailedState {
         IDLE,

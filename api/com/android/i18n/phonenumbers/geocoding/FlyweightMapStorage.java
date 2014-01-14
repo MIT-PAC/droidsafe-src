@@ -143,14 +143,16 @@ public FlyweightMapStorage() {}
     return true;
   }
 
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.795 -0500", hash_original_method = "2F4ECD8A243390FA1987AE315BD02BED", hash_generated_method = "59BF6591498625BC0E2D9B52CCE13C19")
+  @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.795 -0500", hash_original_method = "2F4ECD8A243390FA1987AE315BD02BED", hash_generated_method = "59BF6591498625BC0E2D9B52CCE13C19")
     
 @Override
   public int getPrefix(int index) {
     return readWordFromBuffer(phoneNumberPrefixes, prefixSizeInBytes, index);
   }
 
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.798 -0500", hash_original_method = "22178ADBDB18A4450F9D0DCE4A5B21CB", hash_generated_method = "C4C63EF05A7A12E0C1D2E42BED612D85")
+  @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.798 -0500", hash_original_method = "22178ADBDB18A4450F9D0DCE4A5B21CB", hash_generated_method = "C4C63EF05A7A12E0C1D2E42BED612D85")
     
 @Override
   public String getDescription(int index) {

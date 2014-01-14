@@ -16,10 +16,6 @@ import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.util.StateSet;
 
-
-
-
-
 public class StateListDrawable extends DrawableContainer {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.095 -0500", hash_original_field = "81DD852ECBE07BA98A61C8F3D0C85F01", hash_generated_field = "58EDF43BA541A4D47EECFEC3901C7AED")
 
@@ -188,6 +184,7 @@ StateListState getStateListState() {
      * @see #getStateSet(int)
      * @see #getStateDrawable(int)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.122 -0500", hash_original_method = "D9E3394F970F5413D258086831B5CB36", hash_generated_method = "0078239649DED5D4DAD52FF650246FE7")
     
 public int getStateCount() {
@@ -203,12 +200,12 @@ public int getStateCount() {
      * @see #getStateCount()
      * @see #getStateDrawable(int)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.124 -0500", hash_original_method = "55D68A9E9C260DCF60D1CBBC77B3FC0F", hash_generated_method = "66AB8B6A85B55405B13EB6F1DBA41E83")
     
 public int[] getStateSet(int index) {
         return mStateListState.mStateSets[index];
     }
-
     
     static final class StateListState extends DrawableContainerState {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.133 -0500", hash_original_field = "108E8057EC0E2571E1A7E53C160D9BCF", hash_generated_field = "108E8057EC0E2571E1A7E53C160D9BCF")
@@ -271,7 +268,6 @@ private int indexOfStateSet(int[] stateSet) {
             System.arraycopy(mStateSets, 0, newStateSets, 0, oldSize);
             mStateSets = newStateSets;
         }
-
         
     }
 
@@ -284,6 +280,7 @@ private int indexOfStateSet(int[] stateSet) {
      * @see #getStateCount()
      * @see #getStateSet(int)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.126 -0500", hash_original_method = "266BB2A523416F0BDAD03984AE85B606", hash_generated_method = "9D08CC0A657EEDE0C0474D4E388F1A07")
     
 public Drawable getStateDrawable(int index) {
@@ -299,6 +296,7 @@ public Drawable getStateDrawable(int index) {
      * @see #getStateDrawable(int)
      * @see #getStateSet(int)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.128 -0500", hash_original_method = "410013485164C1DC2E995A85C1D3348C", hash_generated_method = "A49D72CF031B64EEE2017098206BB732")
     
 public int getStateDrawableIndex(int[] stateSet) {

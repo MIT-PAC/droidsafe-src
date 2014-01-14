@@ -233,6 +233,7 @@ private void connect(InetAddress anAddr, int aPort, int timeout) throws IOExcept
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:12.963 -0500", hash_original_method = "2248E71A4E4A8097B0C4AD58D0A7C2D1", hash_generated_method = "548791816B3337E9919C1CB035D36CDB")
     
 @Override protected synchronized InputStream getInputStream() throws IOException {
@@ -240,12 +241,14 @@ private void connect(InetAddress anAddr, int aPort, int timeout) throws IOExcept
         return new PlainSocketInputStream(this);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:12.985 -0500", hash_original_method = "2F19BF683B55893709E7099E07E46044", hash_generated_method = "E4022F8103EB1A999EF7210C13D3EA7F")
     
 @Override public Object getOption(int option) throws SocketException {
         return IoBridge.getSocketOption(fd, option);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:12.987 -0500", hash_original_method = "A64D8FD75C66D0E7EE62C06614C117E8", hash_generated_method = "95A988AFC46708A91DEB05109869926B")
     
 @Override protected synchronized OutputStream getOutputStream() throws IOException {

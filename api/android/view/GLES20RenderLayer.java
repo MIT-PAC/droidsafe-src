@@ -63,6 +63,7 @@ GLES20RenderLayer(int width, int height, boolean isOpaque) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.044 -0500", hash_original_method = "03525402B3DC937D128A720724E320B3", hash_generated_method = "8DFF870ACAE374B016A5345B9168DC2B")
     
 @Override

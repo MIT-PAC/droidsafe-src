@@ -53,6 +53,7 @@ public void deleteParm(String name) {
     /** get the PhoneNumber field
      * @return String
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:34.004 -0500", hash_original_method = "52800C2C905EEB817404225ADBC057C1", hash_generated_method = "C5F3A0B43CCDF32B57638463AE04B6FD")
     
 public String getPhoneNumber() {
@@ -62,6 +63,7 @@ public String getPhoneNumber() {
     /** get the PostDial field
      * @return String
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:34.007 -0500", hash_original_method = "46AF8366350CE91B864B76E1571FD560", hash_generated_method = "4758906A5493DFDD06C61F8D199C8AC2")
     
 public String getPostDial() {
@@ -72,6 +74,7 @@ public String getPostDial() {
      * Get the isdn subaddress for this number.
      * @return String
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:34.009 -0500", hash_original_method = "E5D57B503B0E16A000773FA057D6B1B7", hash_generated_method = "A1EF2097DB4348ADD75838AEFAC59440")
     
 public String getIsdnSubaddress() {
@@ -224,6 +227,7 @@ public StringBuffer encode(StringBuffer buffer) {
      * @return the value of specified parameter
      *
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:34.046 -0500", hash_original_method = "6A189D1F37381970473560C000F9F148", hash_generated_method = "CAAB1790A22E8E2F0E1916C17126B8EF")
     
 public String getParameter(String name) {
@@ -243,6 +247,7 @@ public String getParameter(String name) {
      * @return an Iterator over all the parameter names
      *
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:34.048 -0500", hash_original_method = "CB48E75FADF5A296C71C66E8605F8AA2", hash_generated_method = "EA8343FF79F148A5D8DAEE1F865A3E68")
     
 public Iterator<String> getParameterNames() {
@@ -272,6 +277,7 @@ public Object clone() {
         return retval;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:34.058 -0500", hash_original_method = "3F9E254F8A6DAF7B33BDD77A0CAB2530", hash_generated_method = "EBF708559E4879AB7699F55874776EE2")
     
 public NameValueList getParameters() {

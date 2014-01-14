@@ -28,6 +28,7 @@ public abstract class ResourceBundle {
      * @throws MissingResourceException
      *                if the {@code ResourceBundle} cannot be found.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.230 -0500", hash_original_method = "255590496454807E7D85BE3C53A0967E", hash_generated_method = "61CA38109D3BF90DCB66AE6B7CA98079")
     
 public static ResourceBundle getBundle(String bundleName) throws MissingResourceException {
@@ -50,6 +51,7 @@ public static ResourceBundle getBundle(String bundleName) throws MissingResource
      * @throws MissingResourceException
      *                if the resource bundle cannot be found.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.233 -0500", hash_original_method = "04CC2E12096D8B439249FDE366F3564E", hash_generated_method = "462C3465B2894C59D0D7298104991FD4")
     
 public static ResourceBundle getBundle(String bundleName, Locale locale) {
@@ -109,6 +111,7 @@ public static ResourceBundle getBundle(String bundleName, Locale locale) {
      * @throws MissingResourceException
      *                if the {@code ResourceBundle} cannot be found.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.237 -0500", hash_original_method = "707AE527CA40E5BB5EF1C5E52774D069", hash_generated_method = "24872AF2D206003D769F00C7DF80C5E7")
     
 public static ResourceBundle getBundle(String bundleName, Locale locale,
@@ -492,6 +495,7 @@ public abstract Enumeration<String> getKeys();
      *
      * @return the {@code Locale} of this {@code ResourceBundle}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.258 -0500", hash_original_method = "4C873AD5A0D4D89DBA836C1C6CEC9B8D", hash_generated_method = "424B5570E26DE121275BC9C58AD53C4D")
     
 public Locale getLocale() {
@@ -510,6 +514,7 @@ public Locale getLocale() {
      * @throws MissingResourceException
      *                if the resource is not found.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.261 -0500", hash_original_method = "5F9FE4637FD5B65A8B96E90EE5158818", hash_generated_method = "49CE3461BF0C507900DBE7FCE2F2CFE6")
     
 public final Object getObject(String key) {
@@ -537,6 +542,7 @@ public final Object getObject(String key) {
      *                if the resource found is not a string.
      * @see #getObject(String)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.263 -0500", hash_original_method = "BF93FB2083E0950C32E8F3481E34A9FB", hash_generated_method = "5A6EDD64E7AC080B92BCD0179FDDA64F")
     
 public final String getString(String key) {
@@ -555,6 +561,7 @@ public final String getString(String key) {
      *                if the resource found is not an array of strings.
      * @see #getObject(String)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.266 -0500", hash_original_method = "D1E41ED4E95B94C38D8DBD0F59139218", hash_generated_method = "4E8EF81D6CCA817C884A518106011035")
     
 public final String[] getStringArray(String key) {
@@ -568,6 +575,7 @@ public final String[] getStringArray(String key) {
         {
             //Synthesized constructor
         }
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.211 -0500", hash_original_method = "FAC6F24BFEFF063353B4F824D489D5CA", hash_generated_method = "F748CF453B8DC8A57A1C86D2BE093A7F")
         
 @Override
@@ -612,6 +620,7 @@ public NoFallbackControl(List<String> list) {
             super.format = list;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.311 -0500", hash_original_method = "BF31820043735E3E2FECA9848CEFC17E", hash_generated_method = "C6D824F0BF68E51D6DD30832FA203A6B")
         
 @Override
@@ -755,6 +764,7 @@ protected Control() {
          * Returns a list of candidate locales according to {@code baseName} in
          * {@code locale}.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.367 -0500", hash_original_method = "45631C4F246F185145A9ED45ADEA49D4", hash_generated_method = "CFBC15A47B6FB40331F76E13DAA04B9F")
         
 public List<Locale> getCandidateLocales(String baseName, Locale locale) {
@@ -781,6 +791,7 @@ public List<Locale> getCandidateLocales(String baseName, Locale locale) {
         /**
          * Returns a list of strings of formats according to {@code baseName}.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.369 -0500", hash_original_method = "84F7301A6175FB80884F0D8355AEA589", hash_generated_method = "55872B23568283CF508B5749F092B84E")
         
 public List<String> getFormats(String baseName) {
@@ -793,6 +804,7 @@ public List<String> getFormats(String baseName) {
         /**
          * Returns the fallback locale for {@code baseName} in {@code locale}.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.372 -0500", hash_original_method = "42195BC54E9E8857F62CE9C9CCBB8A2E", hash_generated_method = "F7DC944A1E44D0AC487740F54AB8A87A")
         
 public Locale getFallbackLocale(String baseName, Locale locale) {
@@ -897,6 +909,7 @@ public ResourceBundle newBundle(String baseName, Locale locale,
          * Returns the time to live of the ResourceBundle {@code baseName} in {@code locale},
          * default is TTL_NO_EXPIRATION_CONTROL.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.379 -0500", hash_original_method = "7BA29E8DE065D9912A86853D625E45B1", hash_generated_method = "FF5032CCDA52F0841AD52F4113FC3C20")
         
 public long getTimeToLive(String baseName, Locale locale) {
@@ -1061,6 +1074,7 @@ public boolean containsKey(String key) {
         return keySet().contains(key);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.292 -0500", hash_original_method = "D187399FB44FEACCB04758A5D261BC63", hash_generated_method = "522BE43B30B4B5E774F8E09B7A0718BA")
     
 public Set<String> keySet() {
@@ -1072,6 +1086,7 @@ public Set<String> keySet() {
         return ret;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.295 -0500", hash_original_method = "DE22A4C1E400841A42E2FCE258F58109", hash_generated_method = "84172BFA1B5529140AFB3C07BDF2FBF5")
     
 protected Set<String> handleKeySet() {

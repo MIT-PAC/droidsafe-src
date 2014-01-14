@@ -164,6 +164,7 @@ Bundle(Parcel parcelledData, int length) {
         //mClassLoader = b.mClassLoader;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.101 -0400", hash_original_method = "B3609B2F52C0BA6BE21E26730F76FD99", hash_generated_method = "9C90301FB89A3A9EB402F91B96770480")
     public String getPairValue() {
         unparcel();
@@ -203,6 +204,7 @@ Bundle(Parcel parcelledData, int length) {
     /**
      * Return the ClassLoader currently associated with this Bundle.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.427 -0500", hash_original_method = "DF35DB07DA97BBA7096331B39E871560", hash_generated_method = "666A56A90106E4EA1164F12E6967534C")
     
 public ClassLoader getClassLoader() {
@@ -309,6 +311,7 @@ public boolean containsKey(String key) {
      * @param key a String key
      * @return an Object, or null
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.444 -0500", hash_original_method = "E6C9158A697ED4C4296ED4A1595BA584", hash_generated_method = "E7E26841E84A6B6A9D5EC9D7CD01763B")
     
 public Object get(String key) {
@@ -868,6 +871,7 @@ private void typeWarning(String key, Object value, String className,
         typeWarning(key, value, className, "<null>", e);
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.445 -0400", hash_original_method = "62E0EA051DB8CF7BEF8CA2ACB88171F1", hash_generated_method = "85B0E924776CDCBCD46F75FE8DDED70C")
     public boolean getBoolean(String key, boolean defaultValue) {
         addTaint(defaultValue);
@@ -890,6 +894,7 @@ private void typeWarning(String key, Object value, String className,
         //}
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.453 -0400", hash_original_method = "E9711B4A318F78DD358F0F07FAB02724", hash_generated_method = "7CDE4B3DA7CC5151B6E1EE322F54DDC4")
     public byte getByte(String key) {
         addTaint(key.getTaint());
@@ -901,6 +906,7 @@ private void typeWarning(String key, Object value, String className,
         //return getByte(key, (byte) 0);
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.459 -0400", hash_original_method = "44660F005C21F1E59A8F3EDCC4F5A0ED", hash_generated_method = "8AC1CB1AEF35009035F9F39AE8DF8133")
     public Byte getByte(String key, byte defaultValue) {
         addTaint(defaultValue);
@@ -922,6 +928,7 @@ private void typeWarning(String key, Object value, String className,
         //}
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.466 -0400", hash_original_method = "82E77139364787BB6587747BA780C45B", hash_generated_method = "F494331CB0DEE0D6602E45E444A2F6C1")
     public char getChar(String key) {
         addTaint(key.getTaint());
@@ -940,6 +947,7 @@ private void typeWarning(String key, Object value, String className,
      * @param key a String
      * @return a char value
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.538 -0500", hash_original_method = "1B86701C5E776F178851B3C57F1F092F", hash_generated_method = "403F5ABCD0D6ACA6E4A4CCE1CF295BA6")
     
 public char getChar(String key, char defaultValue) {
@@ -963,6 +971,7 @@ public char getChar(String key, char defaultValue) {
      * @param key a String
      * @return a short value
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.540 -0500", hash_original_method = "949AF94B781EE8B084883F15F1BA2BF2", hash_generated_method = "B7E5A4C7DFC4E2524881B79F707A82AF")
     
 public short getShort(String key) {
@@ -977,6 +986,7 @@ public short getShort(String key) {
      * @param key a String
      * @return a short value
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.542 -0500", hash_original_method = "CB97516320C4B19AFFFFC9855DAD2391", hash_generated_method = "25C0AAB0DC2B2D54D36CE0993C8D6EA4")
     
 public short getShort(String key, short defaultValue) {
@@ -1000,6 +1010,7 @@ public short getShort(String key, short defaultValue) {
      * @param key a String
      * @return an int value
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.545 -0500", hash_original_method = "E147114FE6EABC6FAB98EAC3907FD421", hash_generated_method = "CB945A82DA2C8ED3356E82972EDE1C4A")
     
 public int getInt(String key) {
@@ -1014,6 +1025,7 @@ public int getInt(String key) {
      * @param key a String
      * @return an int value
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.547 -0500", hash_original_method = "83073F806AC00C1E2EC4E710A5472BFA", hash_generated_method = "B4328D17C93F2CA0559B5562F5AC19F6")
     
 public int getInt(String key, int defaultValue) {
@@ -1037,6 +1049,7 @@ public int getInt(String key, int defaultValue) {
      * @param key a String
      * @return a long value
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.549 -0500", hash_original_method = "0CFFDE7713416A17E206C69E138AC0FF", hash_generated_method = "280B3B770C86AAD43B0180F3944619B2")
     
 public long getLong(String key) {
@@ -1051,6 +1064,7 @@ public long getLong(String key) {
      * @param key a String
      * @return a long value
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.552 -0500", hash_original_method = "84BBB1371E3F4460B78F31822950EAAA", hash_generated_method = "C6EB7F9E11C719D6CA244BE7991CFEB6")
     
 public long getLong(String key, long defaultValue) {
@@ -1074,6 +1088,7 @@ public long getLong(String key, long defaultValue) {
      * @param key a String
      * @return a float value
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.555 -0500", hash_original_method = "0D69D7EB25C8E886B27D28B7A30E217C", hash_generated_method = "5DA71DD50FB35EB08C4A643AD592C4BA")
     
 public float getFloat(String key) {
@@ -1088,6 +1103,7 @@ public float getFloat(String key) {
      * @param key a String
      * @return a float value
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.557 -0500", hash_original_method = "8162EC4F2AE30557D489C5C6263EB256", hash_generated_method = "F13375F497615D6D9855025B2EA4E90E")
     
 public float getFloat(String key, float defaultValue) {
@@ -1111,6 +1127,7 @@ public float getFloat(String key, float defaultValue) {
      * @param key a String
      * @return a double value
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.559 -0500", hash_original_method = "F5086ED2941BC7C3CB9930D22842FA44", hash_generated_method = "6B14D80610B6A994D1F454669DF16088")
     
 public double getDouble(String key) {
@@ -1125,6 +1142,7 @@ public double getDouble(String key) {
      * @param key a String
      * @return a double value
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.561 -0500", hash_original_method = "172C416958EF64BBE0F98CDA39B416EB", hash_generated_method = "131757E610E53BD9778C8E13104DB84B")
     
 public double getDouble(String key, double defaultValue) {
@@ -1149,6 +1167,7 @@ public double getDouble(String key, double defaultValue) {
      * @param key a String, or null
      * @return a String value, or null
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.563 -0500", hash_original_method = "51BC83F6E10D252B7C417A14343A53BE", hash_generated_method = "DC94B211C8F775E38F2099A496DDDDAB")
     
 public String getString(String key) {
@@ -1173,6 +1192,7 @@ public String getString(String key) {
      * @param defaultValue Value to return if key does not exist
      * @return a String value, or null
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.566 -0500", hash_original_method = "BC80281EBAB10986EFB226B5D89A6368", hash_generated_method = "17A1039E666A7650DA2AF0A5672C697D")
     
 public String getString(String key, String defaultValue) {
@@ -1197,6 +1217,7 @@ public String getString(String key, String defaultValue) {
      * @param key a String, or null
      * @return a CharSequence value, or null
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.568 -0500", hash_original_method = "4D51A99620432005EDE9794C44D49E24", hash_generated_method = "C749D871CDC137BBDCB4798223006DD3")
     
 public CharSequence getCharSequence(String key) {
@@ -1221,6 +1242,7 @@ public CharSequence getCharSequence(String key) {
      * @param defaultValue Value to return if key does not exist
      * @return a CharSequence value, or null
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.570 -0500", hash_original_method = "C5E593A01F019636F8A087C171F20745", hash_generated_method = "40CE78F334294202BE659BFDFA1F54A4")
     
 public CharSequence getCharSequence(String key, CharSequence defaultValue) {
@@ -1245,6 +1267,7 @@ public CharSequence getCharSequence(String key, CharSequence defaultValue) {
      * @param key a String, or null
      * @return a Bundle value, or null
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.572 -0500", hash_original_method = "7BDB21170493B124DD321ED35C766BAB", hash_generated_method = "C59829BF8BA797DC02E79C321DAD4ECD")
     
 public Bundle getBundle(String key) {
@@ -1307,6 +1330,7 @@ T var540C13E9E156B687226421B24F2DF178_1182490752 =             null;
      * @param key a String, or null
      * @return a Parcelable[] value, or null
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.577 -0500", hash_original_method = "ACB5B2AD81C8600B2F6954C0DE15936B", hash_generated_method = "45FD4581CE7E9024FA7FADC100EE838C")
     
 public Parcelable[] getParcelableArray(String key) {
@@ -1323,6 +1347,7 @@ public Parcelable[] getParcelableArray(String key) {
         }
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.604 -0400", hash_original_method = "4066E862ACF29CBEB786556AAFBFC58D", hash_generated_method = "000888949C0E1171C26D37E7DD90846A")
     public <T extends Parcelable> ArrayList<T> getParcelableArrayList(String key) {
         addTaint(key.getTaint());
@@ -1361,6 +1386,7 @@ ArrayList<T> var540C13E9E156B687226421B24F2DF178_763858156 =             null;
         //}
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.611 -0400", hash_original_method = "F3D4EB475C3465E3892E6091F83F5D92", hash_generated_method = "BCE849B03B3DED85ECE99E857AB69DEB")
     public <T extends Parcelable> SparseArray<T> getSparseParcelableArray(String key) {
         addTaint(key.getTaint());
@@ -1407,6 +1433,7 @@ SparseArray<T> var540C13E9E156B687226421B24F2DF178_1931449992 =             null
      * @param key a String, or null
      * @return a Serializable value, or null
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.583 -0500", hash_original_method = "3E1FB271E8FDF7CD375ECA97D496DB8C", hash_generated_method = "B0217288359245D82FE428677F8F5FF2")
     
 public Serializable getSerializable(String key) {
@@ -1431,6 +1458,7 @@ public Serializable getSerializable(String key) {
      * @param key a String, or null
      * @return an ArrayList<String> value, or null
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.585 -0500", hash_original_method = "129B869D98875CE72FDC17E4CC2A1579", hash_generated_method = "4A0476877431153D04CBCEC5C6DA6A8B")
     
 public ArrayList<Integer> getIntegerArrayList(String key) {
@@ -1455,6 +1483,7 @@ public ArrayList<Integer> getIntegerArrayList(String key) {
      * @param key a String, or null
      * @return an ArrayList<String> value, or null
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.588 -0500", hash_original_method = "2869BDF5623DD5162F6A69DFD2D1F8AB", hash_generated_method = "A38B3BACEDB6F26ECC5AC23BAEDFF3E0")
     
 public ArrayList<String> getStringArrayList(String key) {
@@ -1479,6 +1508,7 @@ public ArrayList<String> getStringArrayList(String key) {
      * @param key a String, or null
      * @return an ArrayList<CharSequence> value, or null
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.590 -0500", hash_original_method = "9A13BDFEA4BB8512D10DFA31FFDE883A", hash_generated_method = "23BAEC3568AD3BF79C3FA060C6272547")
     
 public ArrayList<CharSequence> getCharSequenceArrayList(String key) {
@@ -1503,6 +1533,7 @@ public ArrayList<CharSequence> getCharSequenceArrayList(String key) {
      * @param key a String, or null
      * @return a boolean[] value, or null
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.593 -0500", hash_original_method = "2242EDC01DC8898E91E207F436901294", hash_generated_method = "C4BC1E97D5F4531CF91DD4A2C1D48C93")
     
 public boolean[] getBooleanArray(String key) {
@@ -1527,6 +1558,7 @@ public boolean[] getBooleanArray(String key) {
      * @param key a String, or null
      * @return a byte[] value, or null
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.595 -0500", hash_original_method = "61BA553FC99180BEC5D34878EFD2124D", hash_generated_method = "E14823F73517A05703F9457CFF4AF591")
     
 public byte[] getByteArray(String key) {
@@ -1551,6 +1583,7 @@ public byte[] getByteArray(String key) {
      * @param key a String, or null
      * @return a short[] value, or null
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.597 -0500", hash_original_method = "7BB50DA07B268F9685287E0D939131D4", hash_generated_method = "E67BE2F4F77612B930FFDC65AF7DB704")
     
 public short[] getShortArray(String key) {
@@ -1575,6 +1608,7 @@ public short[] getShortArray(String key) {
      * @param key a String, or null
      * @return a char[] value, or null
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.600 -0500", hash_original_method = "E77DD9D06089068562F2943DA73C8461", hash_generated_method = "E77932C571C2A9C6D0161CA918963F21")
     
 public char[] getCharArray(String key) {
@@ -1599,6 +1633,7 @@ public char[] getCharArray(String key) {
      * @param key a String, or null
      * @return an int[] value, or null
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.602 -0500", hash_original_method = "85622F3A5EF64119863AB7B7CCBF9703", hash_generated_method = "31EEEB18F7D9BB9C51649185024522F8")
     
 public int[] getIntArray(String key) {
@@ -1623,6 +1658,7 @@ public int[] getIntArray(String key) {
      * @param key a String, or null
      * @return a long[] value, or null
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.605 -0500", hash_original_method = "27B2CD54F5F69E8E74D59A821000C81A", hash_generated_method = "BE88D5C92732324A1681CD39A146DC06")
     
 public long[] getLongArray(String key) {
@@ -1647,6 +1683,7 @@ public long[] getLongArray(String key) {
      * @param key a String, or null
      * @return a float[] value, or null
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.607 -0500", hash_original_method = "CF7D6838E0F23E6456879FF35A2AC714", hash_generated_method = "5F8D8A65D252D6C8AF09A7E22DB0F191")
     
 public float[] getFloatArray(String key) {
@@ -1671,6 +1708,7 @@ public float[] getFloatArray(String key) {
      * @param key a String, or null
      * @return a double[] value, or null
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.609 -0500", hash_original_method = "3231DDBB4D17868FEAA7FF4365CACCDA", hash_generated_method = "E83E31F4EFDA6E6B782F4ADCE29DB2C8")
     
 public double[] getDoubleArray(String key) {
@@ -1695,6 +1733,7 @@ public double[] getDoubleArray(String key) {
      * @param key a String, or null
      * @return a String[] value, or null
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.612 -0500", hash_original_method = "00D6B9CB5DC261567748885D1CE89780", hash_generated_method = "A5D3472959DEE1DD04513F9A01144F61")
     
 public String[] getStringArray(String key) {
@@ -1719,6 +1758,7 @@ public String[] getStringArray(String key) {
      * @param key a String, or null
      * @return a CharSequence[] value, or null
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.614 -0500", hash_original_method = "E55D822FE040164347A1371A3EEFE758", hash_generated_method = "7EB06F33C6319D9FE03593E24CDED0ED")
     
 public CharSequence[] getCharSequenceArray(String key) {
@@ -1746,6 +1786,7 @@ public CharSequence[] getCharSequenceArray(String key) {
      * @deprecated
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.616 -0500", hash_original_method = "D295BFB1D3C25A7A56AF1D8267856D3B", hash_generated_method = "E7CA20643940928A7E9217CDBAEC3E7D")
     
 @Deprecated

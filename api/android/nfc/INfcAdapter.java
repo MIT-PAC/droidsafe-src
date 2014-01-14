@@ -56,13 +56,15 @@ public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:51.043 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
+@DSSource({DSSourceKind.NFC})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:51.043 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
             
 public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:51.046 -0500", hash_original_method = "C383684F87B1D9B063C4D9022F69F6DA", hash_generated_method = "34102C60B9905F0D548B4DE6442DF83F")
+@DSSource({DSSourceKind.NFC})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:51.046 -0500", hash_original_method = "C383684F87B1D9B063C4D9022F69F6DA", hash_generated_method = "34102C60B9905F0D548B4DE6442DF83F")
             
 public android.nfc.INfcTag getNfcTagInterface() throws android.os.RemoteException
 {
@@ -81,7 +83,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:51.049 -0500", hash_original_method = "419333D359381B04978A7F0245F6D40D", hash_generated_method = "FD1AC2A14ABE87E4B48264117197B8D2")
+@DSSource({DSSourceKind.NFC})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:51.049 -0500", hash_original_method = "419333D359381B04978A7F0245F6D40D", hash_generated_method = "FD1AC2A14ABE87E4B48264117197B8D2")
             
 public android.nfc.INfcAdapterExtras getNfcAdapterExtrasInterface(java.lang.String pkg) throws android.os.RemoteException
 {
@@ -101,7 +104,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:51.051 -0500", hash_original_method = "34C8BE8866555A4E37FB3BE07D3804F6", hash_generated_method = "52D8D043CF1FF87ECD04698A0AB87331")
+@DSSource({DSSourceKind.NFC})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:51.051 -0500", hash_original_method = "34C8BE8866555A4E37FB3BE07D3804F6", hash_generated_method = "52D8D043CF1FF87ECD04698A0AB87331")
             
 public int getState() throws android.os.RemoteException
 {
@@ -300,7 +304,8 @@ public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:51.028 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
+@DSSource({DSSourceKind.NFC})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:51.028 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
         
 public android.os.IBinder asBinder()
 {

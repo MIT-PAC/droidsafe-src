@@ -79,24 +79,28 @@ public abstract void onRelayoutContainer();
     
 public abstract boolean onAllowLockCanvas();
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:31.896 -0500", hash_original_method = "3AF431EE7D6883EB1B4141BFAE213C2E", hash_generated_method = "B67C3BF256340C15E666623C5D80BD7B")
     
 public int getRequestedWidth() {
         return mRequestedWidth;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:31.899 -0500", hash_original_method = "2ED2833D03220673A510D00698E2D0FF", hash_generated_method = "842BAD34755AF8AB84A088EE9F34B280")
     
 public int getRequestedHeight() {
         return mRequestedHeight;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:31.902 -0500", hash_original_method = "E655118A2C284546E2D290C1F5BE4CAA", hash_generated_method = "B260BF7E77F89DAAEA13BEBD7024D418")
     
 public int getRequestedFormat() {
         return mRequestedFormat;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:31.904 -0500", hash_original_method = "1ADEF52CA934B4124985C64931FCC871", hash_generated_method = "DA9E1D51DB5406E1A4891383D6B91A6A")
     
 public int getRequestedType() {
@@ -201,6 +205,7 @@ public void setType(int type) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:31.927 -0500", hash_original_method = "62E11A68BFE49B76328D9C868319D907", hash_generated_method = "4C0E121027D4B5F23A9CF38E716D9DA7")
     
 public Canvas lockCanvas() {
@@ -272,12 +277,14 @@ public void unlockCanvasAndPost(Canvas canvas) {
         mSurfaceLock.unlock();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:31.938 -0500", hash_original_method = "FB03EEF08A419E6F5E4B7D4C32AA13C8", hash_generated_method = "2AAD7E290BC377BCEC98E2821A948720")
     
 public Surface getSurface() {
         return mSurface;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:31.941 -0500", hash_original_method = "BE643F9C45A14CE663214357E2B511D8", hash_generated_method = "952442CC0A609055D8F20CD44FE8CA9F")
     
 public Rect getSurfaceFrame() {

@@ -69,6 +69,7 @@ protected Set<String> handleKeySet(){
         return (Enumeration<String>) resources.propertyNames();
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.509 -0400", hash_original_method = "8070DEE7B7CBE3EB8E3AF8AF6FE9DBC6", hash_generated_method = "3D01932958A4F18257C01F21A74B1E7B")
     @Override
     public Enumeration<String> getKeys() {

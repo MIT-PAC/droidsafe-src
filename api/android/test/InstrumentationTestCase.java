@@ -60,6 +60,7 @@ public void injectInstrumentation(Instrumentation instrumentation) {
      * Inheritors can access the instrumentation using this.
      * @return instrumentation
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.657 -0500", hash_original_method = "84F87CEBEDE5D31C88CD24E066F68A95", hash_generated_method = "952CE09D28EE4A9669353A5E94B20293")
     
 public Instrumentation getInstrumentation() {

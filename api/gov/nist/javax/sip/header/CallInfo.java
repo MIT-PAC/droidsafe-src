@@ -54,6 +54,7 @@ protected StringBuffer encodeBody(StringBuffer buffer) {
      * get the purpose field
      * @return String
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:54.584 -0500", hash_original_method = "5AE253F427E5A28ACB58F8121152C53D", hash_generated_method = "C9AF8286A3A66FEDDBCA27281DEBEFEA")
     
 public String getPurpose() {
@@ -64,6 +65,7 @@ public String getPurpose() {
      * get the URI field
      * @return URI
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:54.602 -0500", hash_original_method = "EF1B9495763809E09B57BAE8A2B95EE3", hash_generated_method = "08BCE0CA97E1FDEE68837D588A916CA6")
     
 public javax.sip.address.URI getInfo() {

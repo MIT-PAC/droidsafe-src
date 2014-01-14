@@ -61,6 +61,7 @@ public PopupMenu(Context context, View anchor) {
      * @see #show()
      * @see #getMenuInflater()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:36.865 -0500", hash_original_method = "B2B8DF93D41CD214F77DE42BB625BB9F", hash_generated_method = "DCDBC063D5B5258CB417C095AA16E240")
     
 public Menu getMenu() {
@@ -73,6 +74,7 @@ public Menu getMenu() {
      *
      * @see #getMenu()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:36.867 -0500", hash_original_method = "2A6E49189DE888CD2A1EA8645E922DD3", hash_generated_method = "8B59BD3ACAAFE27A11209CD7DFB743D4")
     
 public MenuInflater getMenuInflater() {
@@ -187,7 +189,6 @@ public void onCloseSubMenu(SubMenuBuilder menu) {
     
 public void onMenuModeChange(MenuBuilder menu) {
     }
-
     
     public interface OnDismissListener {
         

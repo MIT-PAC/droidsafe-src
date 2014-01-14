@@ -17,14 +17,8 @@ import org.xml.sax.ErrorHandler;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
-
-
-
-
-
 public abstract class DocumentBuilder {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.089 -0500", hash_original_field = "81DD852ECBE07BA98A61C8F3D0C85F01", hash_generated_field = "58EDF43BA541A4D47EECFEC3901C7AED")
-
 
     private static final boolean DEBUG = false;
 
@@ -74,6 +68,7 @@ public void reset() {
      * @see org.xml.sax.DocumentHandler
      */
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.097 -0500", hash_original_method = "95E59CF6F0A1DFE242840282B735E195", hash_generated_method = "D801F974BA0202307AC902C635182E61")
     
 public Document parse(InputStream is)
@@ -100,6 +95,7 @@ public Document parse(InputStream is)
      * @see org.xml.sax.DocumentHandler
      */
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.100 -0500", hash_original_method = "EA811CE95A08B04D15381504F667910C", hash_generated_method = "70C97B542BC1EB5B9903552A3D2ED761")
     
 public Document parse(InputStream is, String systemId)
@@ -126,6 +122,7 @@ public Document parse(InputStream is, String systemId)
      * @see org.xml.sax.DocumentHandler
      */
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.103 -0500", hash_original_method = "595BF8AC63AB584AD723E5F0FBAE035E", hash_generated_method = "70E399953BEC569388820A7375896695")
     
 public Document parse(String uri)
@@ -151,6 +148,7 @@ public Document parse(String uri)
      * @return A new DOM Document object.
      */
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.105 -0500", hash_original_method = "F95298F4448DE156B1C85F49780E514D", hash_generated_method = "BD38C4001589DF85E06DF2B6CFF70AAF")
     
 public Document parse(File f) throws SAXException, IOException {
@@ -185,7 +183,6 @@ public Document parse(File f) throws SAXException, IOException {
     
 public abstract Document parse(InputSource is)
         throws  SAXException, IOException;
-
 
     /**
      * Indicates whether or not this parser is configured to
@@ -275,6 +272,7 @@ public abstract DOMImplementation getDOMImplementation();
      *
      * @since 1.5
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.123 -0500", hash_original_method = "0EC7A1CF3FE0EA75043A7D33C5A41123", hash_generated_method = "C60ED8DAAB20A1D1EE8BC81FA5C06DA4")
     
 public Schema getSchema() {
@@ -286,7 +284,6 @@ public Schema getSchema() {
             + "\""
             );
     }
-
 
     /**
      * <p>Get the XInclude processing mode for this parser.</p>

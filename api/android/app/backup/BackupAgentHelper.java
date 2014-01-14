@@ -47,6 +47,7 @@ public class BackupAgentHelper extends BackupAgent {
     }
 
     /** @hide */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.133 -0500", hash_original_method = "846FCA7C7B95F7683BAEC473D9697583", hash_generated_method = "B1CF8ABC069741BD2E7D239784E01135")
     
 public BackupHelperDispatcher getDispatcher() {

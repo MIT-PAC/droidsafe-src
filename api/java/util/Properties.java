@@ -144,6 +144,7 @@ private void dumpString(StringBuilder buffer, String string, boolean key) {
      *            the name of the property to find.
      * @return the named property value, or {@code null} if it can't be found.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.666 -0500", hash_original_method = "B2B08C7B9AD3334D72416F92376E272C", hash_generated_method = "FE43F53EBFA7D65B5C53EC5509BBE58A")
     
 public String getProperty(String name) {
@@ -167,6 +168,7 @@ public String getProperty(String name) {
      *            the default value.
      * @return the named property value.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.668 -0500", hash_original_method = "3601550743DD7ED6E54F365D9B667C39", hash_generated_method = "C6113C6A35092CBD196D8546F6153BFC")
     
 public String getProperty(String name, String defaultValue) {

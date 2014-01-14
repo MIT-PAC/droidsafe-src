@@ -22,12 +22,14 @@ public class BasicNameValuePair implements NameValuePair, Cloneable {
 		addTaint(value.getTaint());
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
 	public String getName() {
 		// TODO Auto-generated method stub
 		return null;
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
 	public String getValue() {
 		// TODO Auto-generated method stub

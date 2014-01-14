@@ -12,10 +12,6 @@ import java.io.Serializable;
 
 import libcore.icu.ICU;
 
-
-
-
-
 public final class Locale implements Cloneable, Serializable {
 
     /**
@@ -32,6 +28,7 @@ public final class Locale implements Cloneable, Serializable {
      * @see java.text.NumberFormat#getAvailableLocales()
      * @see java.util.Calendar#getAvailableLocales()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.117 -0500", hash_original_method = "5568C13FBF0303E2B45FB831CBD412FF", hash_generated_method = "2AC3CF3C68E65229DEC68E9B7601D499")
     
 public static Locale[] getAvailableLocales() {
@@ -45,6 +42,7 @@ public static Locale[] getAvailableLocales() {
      * <p>Since the user's locale changes dynamically, avoid caching this value.
      * Instead, use this method to look it up for each use.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.122 -0500", hash_original_method = "78E4BA42BD949FF8F2A8F4719503FD6E", hash_generated_method = "5528E88B167B739C2F2D3F547188BFC8")
     
 public static Locale getDefault() {
@@ -55,6 +53,7 @@ public static Locale getDefault() {
      * Returns an array of strings containing all the two-letter ISO country codes that can be
      * used as the country code when constructing a {@code Locale}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.150 -0500", hash_original_method = "6E640F85727BC14FFB8FEB6DDFDDAA44", hash_generated_method = "644E99B2E902F685DEF0A21C0788EAF5")
     
 public static String[] getISOCountries() {
@@ -65,6 +64,7 @@ public static String[] getISOCountries() {
      * Returns an array of strings containing all the two-letter ISO language codes that can be
      * used as the language code when constructing a {@code Locale}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.153 -0500", hash_original_method = "38678B2D63B6657916CA4EA5FB99FCD8", hash_generated_method = "7930F48054954457DDF5223CDA0A04E7")
     
 public static String[] getISOLanguages() {
@@ -88,7 +88,6 @@ public synchronized static void setDefault(Locale locale) {
         defaultLocale = locale;
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.024 -0500", hash_original_field = "75325B1AEF77849963EDF5AD27B5FB72", hash_generated_field = "3C249CD2C44FDE2FABB9E6465C331B47")
-
 
     private static final long serialVersionUID = 9149081749638150636L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.027 -0500", hash_original_field = "4E07D5DE5586A2168CAEE87877AFF20F", hash_generated_field = "7BDD40E7897A0B20ED68158A0E65F590")
@@ -162,7 +161,6 @@ public synchronized static void setDefault(Locale locale) {
     private static Locale defaultLocale = US;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.172 -0500", hash_original_field = "D72DC702417B99C2480B964EF605EB9C", hash_generated_field = "E179BF6620C821162D69DC2C844B9C9A")
 
-
     private static final ObjectStreamField[] serialPersistentFields = {
         new ObjectStreamField("country", String.class),
         new ObjectStreamField("hashcode", int.class),
@@ -170,7 +168,6 @@ public synchronized static void setDefault(Locale locale) {
         new ObjectStreamField("variant", String.class),
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.088 -0500", hash_original_field = "2CFCD35AE5EBE44FCC49AEAE457101C5", hash_generated_field = "19B779CD8189BCE485C226E9C90F5F3B")
-
 
     private transient String countryCode;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.091 -0500", hash_original_field = "9C842E52F27BB00B1A6CFB32E4460F3D", hash_generated_field = "2ECB9A2070EAE3399DFD4B61935BB4AA")
@@ -283,6 +280,7 @@ public Locale(String language, String country, String variant) {
      * Returns the country code for this locale, or {@code ""} if this locale
      * doesn't correspond to a specific country.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.119 -0500", hash_original_method = "40EA1D1DD90B3BAB3C58BE2B6A46A98D", hash_generated_method = "7C96061093369960A16CB5146C11B315")
     
 public String getCountry() {
@@ -292,6 +290,7 @@ public String getCountry() {
     /**
      * Equivalent to {@code getDisplayCountry(Locale.getDefault())}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.124 -0500", hash_original_method = "6B1507A0394E6A6AE91AAA3FFF27DCC6", hash_generated_method = "13A619631B30CDC22750A0591C2C1458")
     
 public final String getDisplayCountry() {
@@ -303,6 +302,7 @@ public final String getDisplayCountry() {
      * Returns the empty string if this locale does not correspond to a specific
      * country.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.126 -0500", hash_original_method = "6391C14D02F936975118F82A1E774FAD", hash_generated_method = "C5EC02FFA47546FEB98228CD410406C6")
     
 public String getDisplayCountry(Locale locale) {
@@ -319,6 +319,7 @@ public String getDisplayCountry(Locale locale) {
     /**
      * Equivalent to {@code getDisplayLanguage(Locale.getDefault())}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.129 -0500", hash_original_method = "8536CE63A6B8A68C05EDBD72A683988E", hash_generated_method = "936FBC2851159DA15FCBF0993A46BF28")
     
 public final String getDisplayLanguage() {
@@ -329,6 +330,7 @@ public final String getDisplayLanguage() {
      * Returns the name of this locale's language, localized to {@code locale}.
      * If the language name is unknown, the language code is returned.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.131 -0500", hash_original_method = "C0028041B7C295EE912CA1345544B282", hash_generated_method = "C843849C9B24E9CAC4912723FA1AEEEA")
     
 public String getDisplayLanguage(Locale locale) {
@@ -345,6 +347,7 @@ public String getDisplayLanguage(Locale locale) {
     /**
      * Equivalent to {@code getDisplayName(Locale.getDefault())}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.133 -0500", hash_original_method = "CBF375FE343ED989DA3B5B8CCC8BE7E0", hash_generated_method = "07D062CF9B5F1AE1AE52E8FEE2B14627")
     
 public final String getDisplayName() {
@@ -366,6 +369,7 @@ public final String getDisplayName() {
      * <li>{@code new Locale("en", "US", "POSIX").getDisplayName(Locale.FRANCE)} -> {@code anglais (États-Unis,informatique)}.
      * </ul>
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.138 -0500", hash_original_method = "82746EC2958D563F59B7A18594C66ADB", hash_generated_method = "F5F53BDA6F01586D674632BB6399238C")
     
 public String getDisplayName(Locale locale) {
@@ -405,6 +409,7 @@ public String getDisplayName(Locale locale) {
      * this {@code Locale}. If there is no matching variant name, the variant code is
      * returned.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.141 -0500", hash_original_method = "A8FFA206A883AC51133D493CCCB1ED67", hash_generated_method = "AA8C28D44205C67A7BAF0605809C7AF2")
     
 public final String getDisplayVariant() {
@@ -416,6 +421,7 @@ public final String getDisplayVariant() {
      * of this {@code Locale}. If there is no matching variant name, the variant code is
      * returned.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.143 -0500", hash_original_method = "4A12574A7D5205BB7F7224B1AB3BA842", hash_generated_method = "EBFBA9D34FB2B066F4AC862B60DC0A90")
     
 public String getDisplayVariant(Locale locale) {
@@ -433,6 +439,7 @@ public String getDisplayVariant(Locale locale) {
      * Returns the three letter ISO country code which corresponds to the country
      * code for this {@code Locale}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.146 -0500", hash_original_method = "E7148683E6358C89AEF160E990AAEE93", hash_generated_method = "2B1D44748D1C9707685AE61223BC5491")
     
 public String getISO3Country() {
@@ -446,6 +453,7 @@ public String getISO3Country() {
      * Returns the three letter ISO language code which corresponds to the language
      * code for this {@code Locale}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.148 -0500", hash_original_method = "10ED62717CAC900A278627831D37EC4E", hash_generated_method = "765849CC445801D43C222FC8ED6C6A47")
     
 public String getISO3Language() {
@@ -459,6 +467,7 @@ public String getISO3Language() {
      * Returns the language code for this {@code Locale} or the empty string if no language
      * was set.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.155 -0500", hash_original_method = "1C720E5AEB210852D4C515195DCC49D3", hash_generated_method = "139391AFF317C1270C7570989BBC8F6D")
     
 public String getLanguage() {
@@ -469,6 +478,7 @@ public String getLanguage() {
      * Returns the variant code for this {@code Locale} or an empty {@code String} if no variant
      * was set.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.157 -0500", hash_original_method = "A8C86ADBDB8FE1FD75DA90D3A9B92BDE", hash_generated_method = "DF1B458B9A1CE362841A5DD6F2CA96A3")
     
 public String getVariant() {

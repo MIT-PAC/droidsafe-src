@@ -246,13 +246,15 @@ protected void setURL(URL u, String protocol, String host, int port,
      * @see #parseURL
      * @see URL#toExternalForm()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:13.490 -0500", hash_original_method = "D96D9FB5C1BC6194BEC4A07D1C2B48A4", hash_generated_method = "CA11A05DE26BB29DA87518A02206BA27")
     
 protected String toExternalForm(URL url) {
         return toExternalForm(url, false);
     }
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.153 -0400", hash_original_method = "629852CED0E76D3D83A14B3CB57F0652", hash_generated_method = "EB3AD88B67334820582162A57C895ACB")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.153 -0400", hash_original_method = "629852CED0E76D3D83A14B3CB57F0652", hash_generated_method = "EB3AD88B67334820582162A57C895ACB")
      String toExternalForm(URL url, boolean escapeIllegalCharacters) {
         addTaint(escapeIllegalCharacters);
         addTaint(url.getTaint());
@@ -320,6 +322,7 @@ protected boolean equals(URL a, URL b) {
      * Returns the default port of the protocol used by the handled URL. The
      * default implementation always returns {@code -1}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:13.499 -0500", hash_original_method = "8D2F4C3352F1FCC45C0A9BA0F2D59609", hash_generated_method = "205C6723B425D54E9B5A8C1AA4C8FA2F")
     
 protected int getDefaultPort() {
@@ -329,6 +332,7 @@ protected int getDefaultPort() {
     /**
      * Returns the host address of {@code url}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:13.501 -0500", hash_original_method = "788D5B882334646F933829D465387DFF", hash_generated_method = "2215DE521BAD2D6AFEF78F79F87E6D9A")
     
 protected InetAddress getHostAddress(URL url) {

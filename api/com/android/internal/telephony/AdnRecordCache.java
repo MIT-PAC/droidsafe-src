@@ -90,6 +90,7 @@ private void clearUserWriters() {
      * @return List of AdnRecords for efid if we've already loaded them this
      * radio session, or null if we haven't
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.160 -0500", hash_original_method = "F416E740ABBE99926C901CF2ED82B3B0", hash_generated_method = "3434F06B990D108D54718EE3DA7E652C")
     
 public ArrayList<AdnRecord>

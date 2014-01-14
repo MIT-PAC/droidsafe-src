@@ -273,6 +273,7 @@ void init(AccessibilityEvent event) {
      *
      * @return The number of records.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.441 -0500", hash_original_method = "E3578B8B8EBF3C6DE3B4CEB5DF2FD3A0", hash_generated_method = "45AE797C926A97FF4238FE89EE498366")
     
 public int getRecordCount() {
@@ -299,6 +300,7 @@ public void appendRecord(AccessibilityRecord record) {
      * @param index The index.
      * @return The record at the specified index.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.445 -0500", hash_original_method = "9E2314A76EC6019735F4372CBF34D41F", hash_generated_method = "16B8C87E554CC89ED26CAC1F3B820131")
     
 public AccessibilityRecord getRecord(int index) {
@@ -310,6 +312,7 @@ public AccessibilityRecord getRecord(int index) {
      *
      * @return The event type.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.447 -0500", hash_original_method = "4F017DE4F3DB5F93E271E04CA9550DB1", hash_generated_method = "01F97DA7B4B424BFB276760D3ABE3C6A")
     
 public int getEventType() {
@@ -335,6 +338,7 @@ public void setEventType(int eventType) {
      *
      * @return The event time.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.452 -0500", hash_original_method = "9909149D86C7172035BFD4D31C880F99", hash_generated_method = "F653F6EE78E4EF60FE34AEBC3CD5060E")
     
 public long getEventTime() {
@@ -360,6 +364,7 @@ public void setEventTime(long eventTime) {
      *
      * @return The package name.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.457 -0500", hash_original_method = "6D18CADAD3BE855C953B6A82043EA347", hash_generated_method = "62E16594ED1E4D773FC387EB5B07A489")
     
 public CharSequence getPackageName() {

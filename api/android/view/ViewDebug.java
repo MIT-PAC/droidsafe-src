@@ -59,6 +59,7 @@ public class ViewDebug {
      *
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:08.607 -0500", hash_original_method = "CCEE31E4C5D51FDD46E34DBD2A6B75D9", hash_generated_method = "0B1C13CA86AF922803546494A9B1F0CE")
     
 public static long getViewInstanceCount() {
@@ -72,6 +73,7 @@ public static long getViewInstanceCount() {
      *
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:08.609 -0500", hash_original_method = "C636D1AA1C9C73737089BE8BB62EDBEC", hash_generated_method = "B270B1B674743876C74554C6FEE6F70B")
     
 public static long getViewRootImplCount() {

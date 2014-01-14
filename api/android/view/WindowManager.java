@@ -692,6 +692,7 @@ public final void setTitle(CharSequence title) {
             mTitle = TextUtils.stringOrSpannedString(title);
         }
     
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:00.037 -0500", hash_original_method = "7D691BCB64236E7B5AF8F6CB0399C091", hash_generated_method = "8E68CAEF2DE68CDDD808B8D3534F95EE")
         
 public final CharSequence getTitle() {

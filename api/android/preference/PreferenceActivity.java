@@ -959,6 +959,7 @@ public HeaderAdapter(Context context, List<Header> objects) {
             mInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         }
         
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.639 -0400", hash_original_method = "BD15B4EB453F2C74F6031A45FD2B76C2", hash_generated_method = "26757578C3FCD43F8FF32C3523B6A317")
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
@@ -1099,6 +1100,7 @@ Header(Parcel in) {
          * this resource is loaded from <var>res</var> and returned.  Otherwise
          * {@link #title} is returned.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.536 -0500", hash_original_method = "334D1E94CC98A584AC982CEC8D5C3813", hash_generated_method = "558119F0346FC33D66232F3AB2F54893")
         
 public CharSequence getTitle(Resources res) {
@@ -1113,6 +1115,7 @@ public CharSequence getTitle(Resources res) {
          * this resource is loaded from <var>res</var> and returned.  Otherwise
          * {@link #summary} is returned.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.538 -0500", hash_original_method = "817FA0FA7A0D92830E14FE64024CE8CC", hash_generated_method = "6B1B3BF94A66A564864764F49C732AC0")
         
 public CharSequence getSummary(Resources res) {
@@ -1127,6 +1130,7 @@ public CharSequence getSummary(Resources res) {
          * this resource is loaded from <var>res</var> and returned.  Otherwise
          * {@link #breadCrumbTitle} is returned.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.540 -0500", hash_original_method = "AB517FA9C1DC5B1E62910A1ABDCECDD0", hash_generated_method = "5419ED962D99E0BA9669C14FE8FF3315")
         
 public CharSequence getBreadCrumbTitle(Resources res) {
@@ -1142,6 +1146,7 @@ public CharSequence getBreadCrumbTitle(Resources res) {
          * this resource is loaded from <var>res</var> and returned.  Otherwise
          * {@link #breadCrumbShortTitle} is returned.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.543 -0500", hash_original_method = "F11776C7591643DD9CB4C4ECCD867732", hash_generated_method = "E4501D960841694B287DBBF69FFD5A42")
         
 public CharSequence getBreadCrumbShortTitle(Resources res) {
@@ -1341,6 +1346,7 @@ private void bindPreferences() {
      * @deprecated This function is not relevant for a modern fragment-based
      * PreferenceActivity.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.667 -0500", hash_original_method = "002FC5CEE5BE5B5D1FE36CEDBC1DEB65", hash_generated_method = "606CF70C7776240D74182A497A612E24")
     
 @Deprecated
@@ -1394,6 +1400,7 @@ private void requirePreferenceManager() {
      * @deprecated This function is not relevant for a modern fragment-based
      * PreferenceActivity.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.674 -0500", hash_original_method = "7CC03E7D3EBAF4E1E382E9E7A55EF0AE", hash_generated_method = "FA685498E0CC32F1C045DBDEE416C01B")
     
 @Deprecated
@@ -1492,6 +1499,7 @@ protected boolean hasNextButton() {
         return mNextButton != null;
     }
     /** @hide */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.689 -0500", hash_original_method = "CC6F0F14612F322772A46478BA75E81F", hash_generated_method = "469B44BBEFA1C18D487E69314CE28ED4")
     
 protected Button getNextButton() {

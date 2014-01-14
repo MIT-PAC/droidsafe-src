@@ -85,6 +85,7 @@ public void setToken(IBinder token) {
      *         left or right of the screen, the return value is the width of the
      *         DockWindow, and its height is equal to the height of the screen.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:38.306 -0500", hash_original_method = "9B0D08AECE95E0C5A74220E56FAF5BBC", hash_generated_method = "84D9F3DE530E5E1790C30F09F0BAF092")
     
 public int getSize() {

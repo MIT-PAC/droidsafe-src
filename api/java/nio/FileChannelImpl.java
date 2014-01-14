@@ -440,6 +440,7 @@ public long transferFrom(ReadableByteChannel src, long position, long count) thr
         return write(buffer, position);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.566 -0500", hash_original_method = "66697B5A4B32B4AD2132D8B7D53DF0CD", hash_generated_method = "E6AFCDF6EC62C6E6A2C6ED051A91F89E")
     
 public long transferTo(long position, long count, WritableByteChannel target) throws IOException {
@@ -570,6 +571,7 @@ public long write(ByteBuffer[] buffers, int offset, int length) throws IOExcepti
         return transferIoVec(new IoVec(buffers, offset, length, IoVec.Direction.WRITEV));
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.589 -0500", hash_original_method = "A16D8AC033B12AF5E337D988C94AB7BA", hash_generated_method = "8F9C1BA6B62D105E8F557BE8D56765AF")
     
 public FileDescriptor getFD() {

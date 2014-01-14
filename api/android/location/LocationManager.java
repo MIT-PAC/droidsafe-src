@@ -109,6 +109,7 @@ private LocationProvider createProvider(String name, Bundle info) {
      *
      * @return list of Strings containing names of the providers
      */
+    @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.058 -0500", hash_original_method = "4EC410201344BFF6367B3FC4DEB2ECDD", hash_generated_method = "743109C465594858F9765AFB2A2594A5")
     
 public List<String> getAllProviders() {
@@ -131,6 +132,7 @@ public List<String> getAllProviders() {
      * enabled are returned.
      * @return list of Strings containing names of the providers
      */
+    @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.060 -0500", hash_original_method = "229C505A2DE7B350090013A910A6BB48", hash_generated_method = "6058E4EB9E5B3F4B8E8A47C61C812AB9")
     
 public List<String> getProviders(boolean enabledOnly) {
@@ -153,6 +155,7 @@ public List<String> getProviders(boolean enabledOnly) {
      * @throws SecurityException if the caller is not permitted to access the
      * given provider.
      */
+    @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.063 -0500", hash_original_method = "14AFABFCECA2A03E46C22CB46D5D2D56", hash_generated_method = "41A2E1B2987ECA2E0DAA7270E6282C9B")
     
 public LocationProvider getProvider(String name) {
@@ -181,6 +184,7 @@ public LocationProvider getProvider(String name) {
      * enabled are returned.
      * @return list of Strings containing names of the providers
      */
+    @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.065 -0500", hash_original_method = "03CC9524D6FEF78A1BD79E07965ADEF5", hash_generated_method = "DFE1C66868BC9C2BD5DC8900BED2442F")
     
 public List<String> getProviders(Criteria criteria, boolean enabledOnly) {
@@ -217,6 +221,7 @@ public List<String> getProviders(Criteria criteria, boolean enabledOnly) {
      * @param enabledOnly if true then only a provider that is currently enabled is returned
      * @return name of the provider that best matches the requirements
      */
+    @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.067 -0500", hash_original_method = "E63BBD2716EE0B4343F6D6F30C802349", hash_generated_method = "530A21AD4FE12EA44349E10E88F47DC1")
     
 public String getBestProvider(Criteria criteria, boolean enabledOnly) {
@@ -897,6 +902,7 @@ public void removeProximityAlert(PendingIntent intent) {
      * @throws SecurityException if no suitable permission is present for the provider.
      * @throws IllegalArgumentException if provider is null
      */
+    @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.108 -0500", hash_original_method = "A73A17F882D5C0CB78BFCF12E6BF5D56", hash_generated_method = "661252561785095187961056FE5269CA")
     
 public boolean isProviderEnabled(String provider) {
@@ -911,6 +917,7 @@ public boolean isProviderEnabled(String provider) {
         }
     }
     
+    @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:36.993 -0400", hash_original_method = "C11453A15D8C96574C829BE27A4B0DFD", hash_generated_method = "7B70CBDE081B95E75A69268514229255")
     
     public Location getLastKnownLocation(String provider) {
@@ -1494,6 +1501,7 @@ public void removeNmeaListener(GpsStatus.NmeaListener listener) {
      * @param status object containing GPS status details, or null.
      * @return status object containing updated GPS status.
      */
+    @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.193 -0500", hash_original_method = "58632EF952FC4DB3D625E7340D0B4D49", hash_generated_method = "946F1B5F569EDD5FFF9500D0E41B562A")
     
 public GpsStatus getGpsStatus(GpsStatus status) {

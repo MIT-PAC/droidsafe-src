@@ -7,11 +7,6 @@ import droidsafe.annotations.*;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-
-
-
-
-
 public class LruCache<K, V> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:21.233 -0500", hash_original_field = "C1EA1E037942401E0AF0EDC51327A696", hash_generated_field = "008FED306747468EE2384D75A989933A")
 
@@ -23,7 +18,6 @@ public class LruCache<K, V> {
 
     private int maxSize;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:21.239 -0500", hash_original_field = "B1E5BEE9659097DCF237F8BA067DB04D", hash_generated_field = "19F4FFEE16EDFF5AE45C5FE9A1BFB8DE")
-
 
     private int putCount;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:21.241 -0500", hash_original_field = "1EE7D4A33EF6B95A69235617BE51276B", hash_generated_field = "E17BC39B90B7FC1868ABCF5E868DC1F0")
@@ -60,6 +54,7 @@ public LruCache(int maxSize) {
      * head of the queue. This returns null if a value is not cached and cannot
      * be created.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:21.253 -0500", hash_original_method = "E5DC52D3C4EAEBC9C86A603CE5606C4A", hash_generated_method = "DF0EFD5D6877CFCED8EDA9D52C3D1B08")
     
 public final V get(K key) {
@@ -363,7 +358,6 @@ public synchronized final Map<K, V> snapshot() {
         return String.format("LruCache[maxSize=%d,hits=%d,misses=%d,hitRate=%d%%]",
                 maxSize, hitCount, missCount, hitPercent);
     }
-
     
 }
 

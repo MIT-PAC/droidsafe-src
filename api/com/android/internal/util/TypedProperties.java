@@ -11,11 +11,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-
-
-
-
-
 public class TypedProperties extends HashMap<String, Object> {
     /**
      * Instantiates a {@link java.io.StreamTokenizer} and sets its syntax tables
@@ -115,7 +110,6 @@ static void parse(Reader r, Map<String, Object> map) throws ParseException, IOEx
         final String identifierPattern = "[a-zA-Z_$][0-9a-zA-Z_$]*";
         final Pattern propertyNamePattern =
             Pattern.compile("(" + identifierPattern + "\\.)*" + identifierPattern);
-
 
         while (true) {
             int token;
@@ -350,7 +344,6 @@ static Object parseValue(StreamTokenizer st, final int type) throws IOException 
 
     public static final int STRING_SET = 1;
 
-
     /**
      * Creates an empty TypedProperties instance.
      */
@@ -417,6 +410,7 @@ public void load(Reader r) throws IOException {
         parse(r, this);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:48.751 -0500", hash_original_method = "47BA0B831F55080B235C21EE87FA94B0", hash_generated_method = "7E6F6864129E3619C7A395D090949649")
     
 @Override
@@ -459,6 +453,7 @@ public boolean getBoolean(String property, boolean def) {
      * @return the value of the property
      * @throws TypeException if the property is set and is not a byte
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:48.761 -0500", hash_original_method = "C59AE35C77F78F452B75D7268F0F89E8", hash_generated_method = "F48D17D591B37A291A2FD3FEF954B6CC")
     
 public byte getByte(String property, byte def) {
@@ -471,7 +466,6 @@ public byte getByte(String property, byte def) {
         }
         throw new TypeException(property, value, "byte");
     }
-
     
     public static class ParseException extends IllegalArgumentException {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:48.700 -0500", hash_original_method = "443E7125F6059ABCC086317CFCE0D16A", hash_generated_method = "443E7125F6059ABCC086317CFCE0D16A")
@@ -479,11 +473,8 @@ public byte getByte(String property, byte def) {
 ParseException(StreamTokenizer state, String expected) {
             super("expected " + expected + ", saw " + state.toString());
         }
-
         
     }
-
-
     
     public static class TypeException extends IllegalArgumentException {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:48.754 -0500", hash_original_method = "869ADEB9A2A381133512C58E64F92EC9", hash_generated_method = "869ADEB9A2A381133512C58E64F92EC9")
@@ -492,7 +483,6 @@ TypeException(String property, Object value, String requestedType) {
             super(property + " has type " + value.getClass().getName() +
                 ", not " + requestedType);
         }
-
         
     }
 
@@ -505,6 +495,7 @@ TypeException(String property, Object value, String requestedType) {
      * @return the value of the property
      * @throws TypeException if the property is set and is not a short
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:48.763 -0500", hash_original_method = "B3F410F783F41DCDA5B135E26EFE8189", hash_generated_method = "95ACE46283015B5C4161F8ED8B323BF8")
     
 public short getShort(String property, short def) {
@@ -527,6 +518,7 @@ public short getShort(String property, short def) {
      * @return the value of the property
      * @throws TypeException if the property is set and is not an integer
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:48.766 -0500", hash_original_method = "81A20114A7AF0172426C6E77D3C9CCF3", hash_generated_method = "813800DAF504431A6C4DB016EE2CFEC7")
     
 public int getInt(String property, int def) {
@@ -549,6 +541,7 @@ public int getInt(String property, int def) {
      * @return the value of the property
      * @throws TypeException if the property is set and is not a long
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:48.768 -0500", hash_original_method = "4BF2AEC507B97708CFEE1BE095F3CD54", hash_generated_method = "518122D4AC009D946AD402F1A71E5C56")
     
 public long getLong(String property, long def) {
@@ -571,6 +564,7 @@ public long getLong(String property, long def) {
      * @return the value of the property
      * @throws TypeException if the property is set and is not a float
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:48.770 -0500", hash_original_method = "173DB4357D41B8C372C6266493A88C42", hash_generated_method = "3D53D42D01882F252FD2A09ED435CC5F")
     
 public float getFloat(String property, float def) {
@@ -593,6 +587,7 @@ public float getFloat(String property, float def) {
      * @return the value of the property
      * @throws TypeException if the property is set and is not a double
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:48.773 -0500", hash_original_method = "319F68DA9A588357DEFC3D0ED78EA71B", hash_generated_method = "6DE1AD5DC9BC4336ED2D4F96E52D8609")
     
 public double getDouble(String property, double def) {
@@ -615,6 +610,7 @@ public double getDouble(String property, double def) {
      * @return the value of the property
      * @throws TypeException if the property is set and is not a string
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:48.775 -0500", hash_original_method = "3AAFD700C2ABAD81E6BE42DE7BFF48B2", hash_generated_method = "442710D781AD5436D2122443A85B1927")
     
 public String getString(String property, String def) {
@@ -656,6 +652,7 @@ public boolean getBoolean(String property) {
      * @return the value of the property
      * @throws TypeException if the property is set and is not a byte
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:48.779 -0500", hash_original_method = "370EA3A899989D3F86644B48EA45FC9B", hash_generated_method = "4D787A05FE11834CB82EF826866951E9")
     
 public byte getByte(String property) {
@@ -670,6 +667,7 @@ public byte getByte(String property) {
      * @return the value of the property
      * @throws TypeException if the property is set and is not a short
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:48.781 -0500", hash_original_method = "FA3A5E6826A1DDB74D3D7C867E30B692", hash_generated_method = "A397C983820E16571B0B1864A6FD9268")
     
 public short getShort(String property) {
@@ -684,6 +682,7 @@ public short getShort(String property) {
      * @return the value of the property
      * @throws TypeException if the property is set and is not an integer
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:48.783 -0500", hash_original_method = "01591AA36D981ABFF3C80720671DB519", hash_generated_method = "67BBA209E780D4E3F5E394ABCC864F34")
     
 public int getInt(String property) {
@@ -698,6 +697,7 @@ public int getInt(String property) {
      * @return the value of the property
      * @throws TypeException if the property is set and is not a long
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:48.786 -0500", hash_original_method = "6768A5BD1563E9807D6B08281CAC66B5", hash_generated_method = "77CABAE825635C5706319A38C4ADEBF1")
     
 public long getLong(String property) {
@@ -712,6 +712,7 @@ public long getLong(String property) {
      * @return the value of the property
      * @throws TypeException if the property is set and is not a float
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:48.788 -0500", hash_original_method = "EF3DC0C356750228212346284358116F", hash_generated_method = "82049ADB2D02932124B3F707B8345E3A")
     
 public float getFloat(String property) {
@@ -726,6 +727,7 @@ public float getFloat(String property) {
      * @return the value of the property
      * @throws TypeException if the property is set and is not a double
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:48.790 -0500", hash_original_method = "C54C18DE732B31DF63D9F3187CBED443", hash_generated_method = "B742E02AE5919C5763B4E71CF79FAFFC")
     
 public double getDouble(String property) {
@@ -740,6 +742,7 @@ public double getDouble(String property) {
      * @return the value of the property
      * @throws TypeException if the property is set and is not a string
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:48.792 -0500", hash_original_method = "1EC3769C452BFA246F7089382554F763", hash_generated_method = "6DADE53C8C1BC629F7568A082D24587F")
     
 public String getString(String property) {
@@ -755,6 +758,7 @@ public String getString(String property) {
      *         STRING_NOT_SET if the property is not set (no type or value).
      *         STRING_TYPE_MISMATCH if the property is set but is not a string.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:48.805 -0500", hash_original_method = "56B937E7FCE24CC3D04453B96CCA1E2A", hash_generated_method = "B5606C01AA154A9D1B45F35A230EB182")
     
 public int getStringInfo(String property) {

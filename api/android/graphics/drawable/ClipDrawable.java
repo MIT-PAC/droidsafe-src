@@ -130,6 +130,7 @@ public void unscheduleDrawable(Drawable who, Runnable what) {
 
     // overrides from Drawable
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.850 -0500", hash_original_method = "67F829CCE512EF7E67F091FC7A5204DA", hash_generated_method = "8A256D9F79B6BAEB843B0FCF12982054")
     
 @Override
@@ -172,6 +173,7 @@ public void unscheduleDrawable(Drawable who, Runnable what) {
         mClipState.mDrawable.setColorFilter(cf);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.862 -0500", hash_original_method = "D50D875832F26A4F5A2E593F0458B980", hash_generated_method = "72B579365ACCAD695F2BC30D27BC5ABF")
     
 @Override
@@ -242,6 +244,7 @@ public void unscheduleDrawable(Drawable who, Runnable what) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.876 -0500", hash_original_method = "042D8C5B60AD594AE3EBCE13D95C97E6", hash_generated_method = "7E230DF2E11C7F8B00C95E2275E9A6D2")
     
 @Override
@@ -299,6 +302,7 @@ ClipState(ClipState orig, ClipDrawable owner, Resources res) {
             return new ClipDrawable(this, res);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.904 -0500", hash_original_method = "9E7D7C67EAC365FF19BD4971762612A5", hash_generated_method = "3AB30668ED270F2EDF2E0129C706FE4D")
         
 @Override
@@ -319,6 +323,7 @@ boolean canConstantState() {
         
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.878 -0500", hash_original_method = "2200041BC151EB15073098E0A2FD1970", hash_generated_method = "CE5AA58D714843DA41C50DA832F1880F")
     
 @Override

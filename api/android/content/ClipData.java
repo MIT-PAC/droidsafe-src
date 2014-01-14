@@ -205,6 +205,7 @@ ClipData(Parcel in) {
      * Return the {@link ClipDescription} associated with this data, describing
      * what it contains.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.677 -0500", hash_original_method = "8475A7793CA47249207DFD30E601781C", hash_generated_method = "E6CC842A9FBA72E929DACF15D1422EBF")
     
 public ClipDescription getDescription() {
@@ -224,6 +225,7 @@ public void addItem(Item item) {
     }
 
     /** @hide */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.680 -0500", hash_original_method = "229D9D1026C0301FD9A4AD50AC984F17", hash_generated_method = "61B9B78324D83593E0914ECCCBD6EC01")
     
 public Bitmap getIcon() {
@@ -289,6 +291,7 @@ public Item(CharSequence text, Intent intent, Uri uri) {
         /**
          * Retrieve the raw text contained in this Item.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.649 -0500", hash_original_method = "D3D56665E0CC0B43413FBFB4C720E96C", hash_generated_method = "3C5AE00E10DCE5E04049FCC58EEF7C48")
         
 public CharSequence getText() {
@@ -298,6 +301,7 @@ public CharSequence getText() {
         /**
          * Retrieve the raw Intent contained in this Item.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.651 -0500", hash_original_method = "AD027B7B58A4A2F151CC138FB7B23244", hash_generated_method = "7CE6D2E5920E17BB1B744A5090D635BC")
         
 public Intent getIntent() {
@@ -307,6 +311,7 @@ public Intent getIntent() {
         /**
          * Retrieve the raw URI contained in this Item.
          */
+        @DSSource({DSSourceKind.FILE_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.654 -0500", hash_original_method = "225259AA593B6A59F476A2C569F1B075", hash_generated_method = "A1B996311564AA1668AF8C1FC49818A0")
         
 public Uri getUri() {
@@ -404,6 +409,7 @@ public CharSequence coerceToText(Context context) {
     /**
      * Return the number of items in the clip data.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.683 -0500", hash_original_method = "2908203B9FEFAA3035EA88685E6DC23A", hash_generated_method = "5D1AD865251A7873FAFBCD6D25363BA0")
     
 public int getItemCount() {

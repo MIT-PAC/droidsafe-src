@@ -5,13 +5,8 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class StatFs {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.557 -0500", hash_original_field = "A4A4998D7B0D1DA56BE7F415CF4F3BBD", hash_generated_field = "0A3F8EE607897645EB2EE30B6939205B")
-    
     
     private int mNativeContext;
     /**
@@ -44,6 +39,7 @@ public void restat(String path) { native_restat(path); }
      * The size, in bytes, of a block on the file system.  This corresponds
      * to the Unix statfs.f_bsize field.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.544 -0500", hash_original_method = "69F794FD342F65559C8B48F7A39B3D6D", hash_generated_method = "8E7CCFFD2FA6E7FB69A5A7BE6844BA60")
     
     public int getBlockSize(){
@@ -51,11 +47,11 @@ public void restat(String path) { native_restat(path); }
     	return getTaintInt();
     }
 
-
     /**
      * The total number of blocks on the file system.  This corresponds
      * to the Unix statfs.f_blocks field.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.548 -0500", hash_original_method = "AA8CC1613F4A2D3F7308C06B4F7C4105", hash_generated_method = "5AF378737BF63484FB9003BC51DDFC51")
     
     public int getBlockCount(){
@@ -63,13 +59,13 @@ public void restat(String path) { native_restat(path); }
     	return getTaintInt();
     }
 
-
     /**
      * The total number of blocks that are free on the file system, including
      * reserved blocks (that are not available to normal applications).  This
      * corresponds to the Unix statfs.f_bfree field.  Most applications will
      * want to use {@link #getAvailableBlocks()} instead.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.551 -0500", hash_original_method = "F279B1780F1BAD71D18F3CF49F704643", hash_generated_method = "AD228BC1F272084639AC4280257EEE22")
     
     public int getFreeBlocks(){
@@ -77,11 +73,11 @@ public void restat(String path) { native_restat(path); }
     	return getTaintInt();
     }
 
-
     /**
      * The number of blocks that are free on the file system and available to
      * applications.  This corresponds to the Unix statfs.f_bavail field.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.555 -0500", hash_original_method = "39AF4947A221201A3EFDFD20EE46EF90", hash_generated_method = "38BE51800A896E4B2DA019C69D1F4A23")
     
     public int getAvailableBlocks(){
@@ -108,8 +104,6 @@ public void restat(String path) { native_restat(path); }
     private void native_finalize(){
     	//Formerly a native method
     }
-
-
     
 }
 

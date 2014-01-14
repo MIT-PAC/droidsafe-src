@@ -260,6 +260,7 @@ public E pollLast() {
     /**
      * @throws NoSuchElementException {@inheritDoc}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:43.438 -0500", hash_original_method = "969C370DEEB1254D835EA60A850D9474", hash_generated_method = "BAE6C0F205BAEF2617D0EA50ACC9C5B1")
     
 public E getFirst() {
@@ -272,6 +273,7 @@ public E getFirst() {
     /**
      * @throws NoSuchElementException {@inheritDoc}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:43.440 -0500", hash_original_method = "609D7D9752B1EA7B409577881D715ECB", hash_generated_method = "7736EF3A646AF2E7EFE23EC6AD7231AB")
     
 public E getLast() {

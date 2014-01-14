@@ -7,10 +7,6 @@ import droidsafe.annotations.*;
 import android.database.DataSetObservable;
 import android.database.DataSetObserver;
 
-
-
-
-
 public abstract class BaseExpandableListAdapter implements ExpandableListAdapter, HeterogeneousExpandableList {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.173 -0500", hash_original_field = "6D0681B9CC29887CCBA4001347A5783B", hash_generated_field = "1CDD3690953D684D62F0461546A52041")
 
@@ -79,6 +75,7 @@ public void onGroupExpanded(int groupPosition) {
      * <p> 
      * {@inheritDoc}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.190 -0500", hash_original_method = "62D751D6B99293BC12E6D4807928381F", hash_generated_method = "6465D2056D8597E0CC2C9B9CA2758AFB")
     
 public long getCombinedChildId(long groupId, long childId) {
@@ -96,6 +93,7 @@ public long getCombinedChildId(long groupId, long childId) {
      * <p> 
      * {@inheritDoc}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.192 -0500", hash_original_method = "EB7194051A92C01EF508538BB57C4064", hash_generated_method = "A6B5948E4CFC2A70DFA565DAE5B3E394")
     
 public long getCombinedGroupId(long groupId) {
@@ -111,11 +109,11 @@ public boolean isEmpty() {
         return getGroupCount() == 0;
     }
 
-
     /**
      * {@inheritDoc}
      * @return 0 for any group or child position, since only one child type count is declared.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.196 -0500", hash_original_method = "3976CE9E755202E3C931B6278940CC72", hash_generated_method = "999FBDAE3197B42FB3EC8F719EE6CD8F")
     
 public int getChildType(int groupPosition, int childPosition) {
@@ -126,6 +124,7 @@ public int getChildType(int groupPosition, int childPosition) {
      * {@inheritDoc}
      * @return 1 as a default value in BaseExpandableListAdapter.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.199 -0500", hash_original_method = "CBF60407A4D820C72FB94E8B743C23B8", hash_generated_method = "B1A8E554B1853B1951395EE4A522DDA0")
     
 public int getChildTypeCount() {
@@ -136,6 +135,7 @@ public int getChildTypeCount() {
      * {@inheritDoc}
      * @return 0 for any groupPosition, since only one group type count is declared.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.202 -0500", hash_original_method = "386488F689E9AEDF8DF1CAB1FEBD53FC", hash_generated_method = "01866240BF10528F9C91DC25EC86B254")
     
 public int getGroupType(int groupPosition) {
@@ -146,12 +146,12 @@ public int getGroupType(int groupPosition) {
      * {@inheritDoc}
      * @return 1 as a default value in BaseExpandableListAdapter.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.204 -0500", hash_original_method = "BE48BAFD668175AB338E2F1890BDC5F9", hash_generated_method = "AFFDBFBE921B50F3ADD3AF9A710A785F")
     
 public int getGroupTypeCount() {
         return 1;
     }
-
     
 }
 

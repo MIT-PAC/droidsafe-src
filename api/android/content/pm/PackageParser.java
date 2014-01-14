@@ -1204,6 +1204,7 @@ public Component(Component<II> clone) {
             componentShortName = clone.componentShortName;
         }
         
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.753 -0500", hash_original_method = "BF1ED0A6C0ACE1EE7610EB0D74F5C800", hash_generated_method = "853DE9A1A7830A59FF04A72BC4DF77DA")
         
 public ComponentName getComponentName() {
@@ -1217,6 +1218,7 @@ public ComponentName getComponentName() {
             return componentName;
         }
         
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.755 -0500", hash_original_method = "3A4D7499A9518F3ABB20BEBAE6816B9D", hash_generated_method = "66AA47B485B4E3BFCC20DAE6203B219A")
         
 public String getComponentShortName() {
@@ -1552,6 +1554,7 @@ private Certificate[] loadCertificates(JarFile jarFile, JarEntry je,
         return null;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.507 -0500", hash_original_method = "043AC7F11A9C5FD11FB43AEF955AD87D", hash_generated_method = "DE8BF7F7DCE49FE7538FB3BCFB426F39")
     
 public int getParseError() {

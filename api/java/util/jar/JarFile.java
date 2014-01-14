@@ -198,6 +198,7 @@ Enumeration<JarEntry> varFD6D5513D1E96AE9B20DD26D8EAB087D_1778760700 =         n
      *            the name of the entry in the JAR file.
      * @return the JAR entry defined by the name.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.854 -0500", hash_original_method = "C114B7C700B8AEF8B2BF9DB9E2302906", hash_generated_method = "19C6AF12965401ECFC9DBB2954A47690")
     
 public JarEntry getJarEntry(String name) {
@@ -215,6 +216,7 @@ public JarEntry getJarEntry(String name) {
      *             if the jar file is closed.
      * @see Manifest
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.857 -0500", hash_original_method = "E67D102DBF269AEACB3865BB39A89C99", hash_generated_method = "FCEBD4860DC6B0A79CDC7C64D2944AFA")
     
 public Manifest getManifest() throws IOException {
@@ -301,6 +303,7 @@ private void readMetaEntries() throws IOException {
      * @throws IOException
      *             if an error occurred while creating the input stream.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.865 -0500", hash_original_method = "53CBE19CD54AC9FA27355C4D3916E5DE", hash_generated_method = "1E6B8FB4461758A643AFA1262535B726")
     
 @Override
@@ -345,6 +348,7 @@ private void readMetaEntries() throws IOException {
      *            the name of the entry in the JAR file.
      * @return the ZIP entry extracted.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.868 -0500", hash_original_method = "B825DECF198E8D2309850EFFE99C9789", hash_generated_method = "A5294FCC7223B631CD447911468CFD91")
     
 @Override

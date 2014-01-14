@@ -30,6 +30,7 @@ public class AnimatorInflater {
      * @return The animator object reference by the specified id
      * @throws android.content.res.Resources.NotFoundException when the animation cannot be loaded
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:33.801 -0500", hash_original_method = "867C489934B793819C9588902A365D13", hash_generated_method = "EEB112F6BC658F8BBAC093C2FF604E3F")
     
 public static Animator loadAnimator(Context context, int id)

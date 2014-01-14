@@ -35,6 +35,7 @@ protected AbstractSequentialList() {
         return next != it.nextIndex();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:43.110 -0500", hash_original_method = "B5F59D8654788FE80539C2042F9F3DA0", hash_generated_method = "B64B7ED54C32A134E892BDDE7873952A")
     
 @Override
@@ -46,6 +47,7 @@ protected AbstractSequentialList() {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:43.113 -0500", hash_original_method = "1D00ECD22B3575A885077212162F97B2", hash_generated_method = "F8A35E883987D86B173CE6E6651B4120")
     
 @Override
@@ -58,6 +60,7 @@ protected AbstractSequentialList() {
 @Override
     public abstract ListIterator<E> listIterator(int location);
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:43.117 -0500", hash_original_method = "F4326C1F9DDC82196649CFA76C7956BB", hash_generated_method = "A2F888213920404B25010F9F3D5F5D32")
     
 @Override

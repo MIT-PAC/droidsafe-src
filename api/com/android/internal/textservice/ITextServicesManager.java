@@ -56,13 +56,15 @@ public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:49.391 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:49.391 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
             
 public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:49.394 -0500", hash_original_method = "E9E2F907D96A6259126861462530DD30", hash_generated_method = "2BC8F75DA527CCEF36A6BA57BD3A4393")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:49.394 -0500", hash_original_method = "E9E2F907D96A6259126861462530DD30", hash_generated_method = "2BC8F75DA527CCEF36A6BA57BD3A4393")
             
 public android.view.textservice.SpellCheckerInfo getCurrentSpellChecker(java.lang.String locale) throws android.os.RemoteException
 {
@@ -87,7 +89,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:49.396 -0500", hash_original_method = "66EDCFEE66E59B401130A1F390C7D72A", hash_generated_method = "B45604AEF2CC84F47672E9995443C407")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:49.396 -0500", hash_original_method = "66EDCFEE66E59B401130A1F390C7D72A", hash_generated_method = "B45604AEF2CC84F47672E9995443C407")
             
 public android.view.textservice.SpellCheckerSubtype getCurrentSpellCheckerSubtype(java.lang.String locale, boolean allowImplicitlySelectedSubtype) throws android.os.RemoteException
 {
@@ -113,7 +116,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:49.399 -0500", hash_original_method = "72CBEF1DB1631CDEC2BAEB5039D5A9E5", hash_generated_method = "87F9B71116617EC0F33210DCC8F5EFA4")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:49.399 -0500", hash_original_method = "72CBEF1DB1631CDEC2BAEB5039D5A9E5", hash_generated_method = "87F9B71116617EC0F33210DCC8F5EFA4")
             
 public void getSpellCheckerService(java.lang.String sciId, java.lang.String locale, com.android.internal.textservice.ITextServicesSessionListener tsListener, com.android.internal.textservice.ISpellCheckerSessionListener scListener, android.os.Bundle bundle) throws android.os.RemoteException
 {
@@ -218,7 +222,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:49.421 -0500", hash_original_method = "05E66A3B75941E801798B518C613B457", hash_generated_method = "1C7C87DD71B43525901AB30B189CDE89")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:49.421 -0500", hash_original_method = "05E66A3B75941E801798B518C613B457", hash_generated_method = "1C7C87DD71B43525901AB30B189CDE89")
             
 public android.view.textservice.SpellCheckerInfo[] getEnabledSpellCheckers() throws android.os.RemoteException
 {
@@ -263,7 +268,8 @@ public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:49.375 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:49.375 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
         
 public android.os.IBinder asBinder()
 {

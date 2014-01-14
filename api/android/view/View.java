@@ -1447,6 +1447,7 @@ public View(Context context, AttributeSet attrs) {
         computeVerticalScrollRange();
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getVerticalFadingEdgeLength(){
 		// Original method
 		/*
@@ -1474,6 +1475,7 @@ public View(Context context, AttributeSet attrs) {
 		//Return nothing
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getHorizontalFadingEdgeLength(){
 		// Original method
 		/*
@@ -1490,6 +1492,7 @@ public View(Context context, AttributeSet attrs) {
 		return 0;
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getVerticalScrollbarWidth(){
 		// Original method
 		/*
@@ -1512,6 +1515,7 @@ public View(Context context, AttributeSet attrs) {
 		return 0;
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     protected int getHorizontalScrollbarHeight(){
 		// Original method
 		/*
@@ -1566,6 +1570,7 @@ public View(Context context, AttributeSet attrs) {
 		//Return nothing
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getVerticalScrollbarPosition(){
 		return getTaintInt();
 		// Original method
@@ -2144,6 +2149,7 @@ void onPopulateAccessibilityEventInternal(AccessibilityEvent event) {
 		//Return nothing
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public AccessibilityNodeInfo createAccessibilityNodeInfo(){
 		// Original method
 		/*
@@ -2191,6 +2197,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
         mAccessibilityDelegate = delegate;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getAccessibilityViewId(){
 		return getTaintInt();
 		// Original method
@@ -2204,6 +2211,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
 		*/
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getAccessibilityWindowId(){
 		// Original method
 		/*
@@ -2214,6 +2222,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
 		return 0;
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public CharSequence getContentDescription(){
 		return (CharSequence)getTaint();
 		// Original method
@@ -2312,6 +2321,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
 		//Return nothing
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getDrawingCacheQuality(){
 		// Original method
 		/*
@@ -2354,6 +2364,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
 		//Return nothing
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getNextFocusLeftId(){
 		return getTaintInt();
 		// Original method
@@ -2375,6 +2386,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
 		//Return nothing
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getNextFocusRightId(){
 		return getTaintInt();
 		// Original method
@@ -2396,6 +2408,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
 		//Return nothing
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getNextFocusUpId(){
 		return getTaintInt();
 		// Original method
@@ -2417,6 +2430,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
 		//Return nothing
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getNextFocusDownId(){
 		return getTaintInt();
 		// Original method
@@ -2438,6 +2452,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
 		//Return nothing
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getNextFocusForwardId(){
 		return getTaintInt();
 		// Original method
@@ -2522,6 +2537,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
 		return false;
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @ViewDebug.ExportedProperty(mapping={@ViewDebug.IntToString(from=VISIBLE,to="VISIBLE"),@ViewDebug.IntToString(from=INVISIBLE,to="INVISIBLE"),@ViewDebug.IntToString(from=GONE,to="GONE")}) 
 	public int getVisibility(){
 		// Original method
@@ -2645,6 +2661,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
 		return false;
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @ViewDebug.ExportedProperty(category="layout",mapping={@ViewDebug.IntToString(from=LAYOUT_DIRECTION_LTR,to="LTR"),@ViewDebug.IntToString(from=LAYOUT_DIRECTION_RTL,to="RTL"),@ViewDebug.IntToString(from=LAYOUT_DIRECTION_INHERIT,to="INHERIT"),@ViewDebug.IntToString(from=LAYOUT_DIRECTION_LOCALE,to="LOCALE")}) 
 	public int getLayoutDirection(){
 		// Original method
@@ -2965,6 +2982,7 @@ public boolean dispatchUnhandledMove(View focused, int direction) {
 		return null;
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public ArrayList<View> getFocusables(int direction){
 		// Original method
 		/*
@@ -3023,6 +3041,7 @@ public boolean dispatchUnhandledMove(View focused, int direction) {
 		//Return nothing
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public ArrayList<View> getTouchables(){
 		// Original method
 		/*
@@ -3091,6 +3110,7 @@ public boolean dispatchUnhandledMove(View focused, int direction) {
 		return false;
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     ViewRootImpl getViewRootImpl(){
 		// Original method
 		/*
@@ -3503,6 +3523,7 @@ protected void onDisplayHint(int hint) {
 		//Return nothing
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getWindowVisibility(){
 		// Original method
 		/*
@@ -3628,6 +3649,7 @@ protected void onConfigurationChanged(Configuration newConfig) {
      *
      * @return The view's Context.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:38.137 -0500", hash_original_method = "4F4EBC54D108D66F416C93B46580E117", hash_generated_method = "2565E6BAF7209C441ED7A2A85B82D51F")
     
 @ViewDebug.CapturedViewProperty
@@ -4096,6 +4118,7 @@ public void setTouchDelegate(TouchDelegate delegate) {
     /**
      * Gets the TouchDelegate for this View.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:38.208 -0500", hash_original_method = "C13C756E7E3DD9AFF35525DE74B6A0AE", hash_generated_method = "F5C3D8B17B1D24D29BC2FCFBDD2A2FC4")
     
 public TouchDelegate getTouchDelegate() {
@@ -4163,6 +4186,7 @@ protected void onSizeChanged(int w, int h, int oldw, int oldh) {
 protected void dispatchDraw(Canvas canvas) {
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public final ViewParent getParent(){
 		return (ViewParent)getTaint();
 		// Original method
@@ -4196,7 +4220,8 @@ protected void dispatchDraw(Canvas canvas) {
 		//Return nothing
 	}
     
-	public final int getScrollX(){
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    public final int getScrollX(){
 		return getTaintInt();
 		// Original method
 		/*
@@ -4206,7 +4231,8 @@ protected void dispatchDraw(Canvas canvas) {
 		*/
 	}
     
-	public final int getScrollY(){
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    public final int getScrollY(){
 		return getTaintInt();
 		// Original method
 		/*
@@ -4216,7 +4242,8 @@ protected void dispatchDraw(Canvas canvas) {
 		*/
 	}
     
-	@ViewDebug.ExportedProperty(category="layout") 
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @ViewDebug.ExportedProperty(category="layout") 
 	public final int getWidth(){
 		// Original method
 		/*
@@ -4227,7 +4254,8 @@ protected void dispatchDraw(Canvas canvas) {
 		return 0;
 	}
     
-	@ViewDebug.ExportedProperty(category="layout") 
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @ViewDebug.ExportedProperty(category="layout") 
 	public final int getHeight(){
 		// Original method
 		/*
@@ -4251,10 +4279,12 @@ protected void dispatchDraw(Canvas canvas) {
 		//Return nothing
 	}
     
-	public final int getMeasuredWidth(){
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    public final int getMeasuredWidth(){
 		return getTaintInt();
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public final int getMeasuredWidthAndState(){
 		return getTaintInt();
 		// Original method
@@ -4265,6 +4295,7 @@ protected void dispatchDraw(Canvas canvas) {
 		*/
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public final int getMeasuredHeight(){
 		// Original method
 		/*
@@ -4275,6 +4306,7 @@ protected void dispatchDraw(Canvas canvas) {
 		return 0;
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public final int getMeasuredHeightAndState(){
 		return getTaintInt();
 		// Original method
@@ -4285,6 +4317,7 @@ protected void dispatchDraw(Canvas canvas) {
 		*/
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public final int getMeasuredState(){
 		// Original method
 		/*
@@ -4297,6 +4330,7 @@ protected void dispatchDraw(Canvas canvas) {
 		return 0;
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public Matrix getMatrix(){
 		// Original method
 		/*
@@ -4343,6 +4377,7 @@ protected void dispatchDraw(Canvas canvas) {
 		//Return nothing
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     final Matrix getInverseMatrix(){
 		// Original method
 		/*
@@ -4387,6 +4422,7 @@ protected void dispatchDraw(Canvas canvas) {
 		//Return nothing
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public float getRotation(){
 		// Original method
 		/*
@@ -4416,6 +4452,7 @@ protected void dispatchDraw(Canvas canvas) {
 		//Return nothing
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public float getRotationY(){
 		// Original method
 		/*
@@ -4445,6 +4482,7 @@ protected void dispatchDraw(Canvas canvas) {
 		//Return nothing
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public float getRotationX(){
 		// Original method
 		/*
@@ -4474,6 +4512,7 @@ protected void dispatchDraw(Canvas canvas) {
 		//Return nothing
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public float getScaleX(){
 		// Original method
 		/*
@@ -4503,6 +4542,7 @@ protected void dispatchDraw(Canvas canvas) {
 		//Return nothing
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public float getScaleY(){
 		// Original method
 		/*
@@ -4532,6 +4572,7 @@ protected void dispatchDraw(Canvas canvas) {
 		//Return nothing
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public float getPivotX(){
 		// Original method
 		/*
@@ -4562,6 +4603,7 @@ protected void dispatchDraw(Canvas canvas) {
 		//Return nothing
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public float getPivotY(){
 		// Original method
 		/*
@@ -4592,6 +4634,7 @@ protected void dispatchDraw(Canvas canvas) {
 		//Return nothing
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public float getAlpha(){
 		// Original method
 		/*
@@ -4639,6 +4682,7 @@ protected void dispatchDraw(Canvas canvas) {
 		return false;
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @ViewDebug.CapturedViewProperty 
 	public final int getTop(){
 		return getTaintInt();
@@ -4656,6 +4700,7 @@ protected void dispatchDraw(Canvas canvas) {
 		//Return nothing
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @ViewDebug.CapturedViewProperty 
 	public final int getBottom(){
 		return getTaintInt();
@@ -4683,6 +4728,7 @@ protected void dispatchDraw(Canvas canvas) {
 		//Return nothing
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @ViewDebug.CapturedViewProperty 
 	public final int getLeft(){
 		return getTaintInt();
@@ -4700,6 +4746,7 @@ protected void dispatchDraw(Canvas canvas) {
 		//Return nothing
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @ViewDebug.CapturedViewProperty 
 	public final int getRight(){
 		return getTaintInt();
@@ -4717,6 +4764,7 @@ protected void dispatchDraw(Canvas canvas) {
 		//Return nothing
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public float getX(){
 		// Original method
 		/*
@@ -4738,6 +4786,7 @@ protected void dispatchDraw(Canvas canvas) {
 		//Return nothing
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public float getY(){
 		// Original method
 		/*
@@ -4759,6 +4808,7 @@ protected void dispatchDraw(Canvas canvas) {
 		//Return nothing
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public float getTranslationX(){
 		// Original method
 		/*
@@ -4788,6 +4838,7 @@ protected void dispatchDraw(Canvas canvas) {
 		//Return nothing
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public float getTranslationY(){
 		// Original method
 		/*
@@ -4972,6 +5023,7 @@ protected void dispatchDraw(Canvas canvas) {
 		//Return nothing
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public boolean getGlobalVisibleRect(Rect r, Point globalOffset){
 		// Original method
 		/*
@@ -5250,6 +5302,7 @@ public void invalidate() {
 		return false;
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public Handler getHandler(){
 		// Original method
 		/*
@@ -5417,6 +5470,7 @@ public DragShadowBuilder() {
             mView = new WeakReference<View>(null);
         }
         
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @SuppressWarnings({"JavadocReference"}) 
 		final public View getView(){
 			// Original method
@@ -5473,6 +5527,7 @@ public DragShadowBuilder() {
 			return 0;
 		}
         
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         public static int getMode(int measureSpec){
 			// Original method
 			/*
@@ -5483,6 +5538,7 @@ public DragShadowBuilder() {
 			return 0;
 		}
         
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         public static int getSize(int measureSpec){
 			// Original method
 			/*
@@ -6458,6 +6514,7 @@ public void computeScroll() {
 		//Return nothing
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     protected float getTopFadingEdgeStrength(){
 		// Original method
 		/*
@@ -6468,6 +6525,7 @@ public void computeScroll() {
 		return 0;
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     protected float getBottomFadingEdgeStrength(){
 		// Original method
 		/*
@@ -6479,6 +6537,7 @@ public void computeScroll() {
 		return 0;
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     protected float getLeftFadingEdgeStrength(){
 		// Original method
 		/*
@@ -6489,6 +6548,7 @@ public void computeScroll() {
 		return 0;
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     protected float getRightFadingEdgeStrength(){
 		// Original method
 		/*
@@ -6602,6 +6662,7 @@ public void computeScroll() {
 		//Return nothing
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @ViewDebug.ExportedProperty(mapping={@ViewDebug.IntToString(from=SCROLLBARS_INSIDE_OVERLAY,to="INSIDE_OVERLAY"),@ViewDebug.IntToString(from=SCROLLBARS_INSIDE_INSET,to="INSIDE_INSET"),@ViewDebug.IntToString(from=SCROLLBARS_OUTSIDE_OVERLAY,to="OUTSIDE_OVERLAY"),@ViewDebug.IntToString(from=SCROLLBARS_OUTSIDE_INSET,to="OUTSIDE_INSET")}) public int getScrollBarStyle(){
 		// Original method
 		/*
@@ -6861,6 +6922,7 @@ protected void onDraw(Canvas canvas) {
 		//Return nothing
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     protected int getWindowAttachCount(){
 		return getTaintInt();
 		// Original method
@@ -6871,6 +6933,7 @@ protected void onDraw(Canvas canvas) {
 		*/
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public IBinder getWindowToken(){
 		// Original method
 		/*
@@ -6881,6 +6944,7 @@ protected void onDraw(Canvas canvas) {
 		return null;
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public IBinder getApplicationWindowToken(){
 		// Original method
 		/*
@@ -6899,6 +6963,7 @@ protected void onDraw(Canvas canvas) {
 		return null;
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     IWindowSession getWindowSession(){
 		// Original method
 		/*
@@ -7023,6 +7088,7 @@ protected void onDraw(Canvas canvas) {
 		//Return nothing
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public long getDrawingTime(){
 		// Original method
 		/*
@@ -7071,6 +7137,7 @@ protected void onDraw(Canvas canvas) {
 		return false;
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getLayerType(){
 		return getTaintInt();
 		// Original method
@@ -7106,6 +7173,7 @@ protected void onDraw(Canvas canvas) {
 		//Return nothing
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     HardwareLayer getHardwareLayer(){
 		return mHardwareLayer;
 		// Original method
@@ -7209,12 +7277,14 @@ protected void dispatchGetDisplayList() {}
 		return false;
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public DisplayList getDisplayList(){
 		return mDisplayList;
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public Bitmap getDrawingCache(){
 		// Original method
 		/*
@@ -7225,6 +7295,7 @@ protected void dispatchGetDisplayList() {}
 		return null;
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public Bitmap getDrawingCache(boolean autoScale){
 		// Original method
 		/*
@@ -7271,6 +7342,7 @@ protected void dispatchGetDisplayList() {}
 		//Return nothing
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getDrawingCacheBackgroundColor(){
 		return getTaintInt();
 		// Original method
@@ -7358,6 +7430,7 @@ protected boolean isPaddingOffsetRequired() {
      *
      * @since CURRENT
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:38.668 -0500", hash_original_method = "4C949B81A8DC7FEE598CF97986A5D947", hash_generated_method = "C991B347824CE7D62ADD5D514755DD0E")
     
 protected int getLeftPaddingOffset() {
@@ -7374,6 +7447,7 @@ protected int getLeftPaddingOffset() {
      *
      * @since CURRENT
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:38.670 -0500", hash_original_method = "074FFDE548FCC46FA1E9A30627AB8A7C", hash_generated_method = "0556BE88216168855C2D91C58A83CA48")
     
 protected int getRightPaddingOffset() {
@@ -7390,6 +7464,7 @@ protected int getRightPaddingOffset() {
      *
      * @since CURRENT
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:38.672 -0500", hash_original_method = "A9CEAAEF3075A726E0EAEBF5F9AFAFB2", hash_generated_method = "FC80B881609FC42261B3B51AF76E5DAE")
     
 protected int getTopPaddingOffset() {
@@ -7406,12 +7481,14 @@ protected int getTopPaddingOffset() {
      *
      * @since CURRENT
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:38.676 -0500", hash_original_method = "8428DF91FD33A9244C31B60F9D34D200", hash_generated_method = "FF53ED5A195D47D16AE6F721868227F3")
     
 protected int getBottomPaddingOffset() {
         return 0;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     protected int getFadeTop(boolean offsetRequired){
 		// Original method
 		/*
@@ -7424,6 +7501,7 @@ protected int getBottomPaddingOffset() {
 		return 0;
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     protected int getFadeHeight(boolean offsetRequired){
 		// Original method
 		/*
@@ -7464,6 +7542,7 @@ protected int getBottomPaddingOffset() {
      *
      * @return The known solid color background for this view, or 0 if the color may vary
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:38.691 -0500", hash_original_method = "6ABCD0F86C11EBC98FE78FD55BB4B1CF", hash_generated_method = "106888BB941B9E9A76CD7DB736B7CCA4")
     
 @ViewDebug.ExportedProperty(category = "drawing")
@@ -7528,6 +7607,7 @@ protected void onFinishInflate() {
      *
      * @return Resources object.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:38.712 -0500", hash_original_method = "9FEC9CB1792EB215E49CBF732B0DBF5B", hash_generated_method = "05B1D2D3E0E7E913183B96A460337403")
     
 public Resources getResources() {
@@ -7652,6 +7732,7 @@ public Resources getResources() {
      * @see #drawableStateChanged() 
      * @see #onCreateDrawableState(int) 
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:38.733 -0500", hash_original_method = "7B628D8EF95C580B0BB9FD927C61FF3F", hash_generated_method = "59083194AD43A498D67A0E3A4346D522")
     
 public final int[] getDrawableState() {
@@ -7729,6 +7810,7 @@ public final int[] getDrawableState() {
      * Gets the background drawable
      * @return The drawable used as the background for this view, if any.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:38.768 -0500", hash_original_method = "80971671F36DCDE8D8060A8575F1E0DF", hash_generated_method = "F2BD5CE67A49674BC981C81EA9A10491")
     
 public Drawable getBackground() {
@@ -7870,7 +7952,8 @@ public Drawable getBackground() {
 		//Return nothing
 	}
     
-	public int getPaddingTop(){
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    public int getPaddingTop(){
 		return getTaintInt();
 		// Original method
 		/*
@@ -7880,7 +7963,8 @@ public Drawable getBackground() {
 		*/
 	}
     
-	public int getPaddingBottom(){
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    public int getPaddingBottom(){
 		return getTaintInt();
 		// Original method
 		/*
@@ -7890,7 +7974,8 @@ public Drawable getBackground() {
 		*/
 	}
     
-	public int getPaddingLeft(){
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    public int getPaddingLeft(){
 		return getTaintInt();
 		// Original method
 		/*
@@ -7900,7 +7985,8 @@ public Drawable getBackground() {
 		*/
 	}
     
-	public int getPaddingStart(){
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    public int getPaddingStart(){
 		// Original method
 		/*
 		{
@@ -7911,7 +7997,8 @@ public Drawable getBackground() {
 		return 0;
 	}
     
-	public int getPaddingRight(){
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    public int getPaddingRight(){
 		return getTaintInt();
 		// Original method
 		/*
@@ -7921,7 +8008,8 @@ public Drawable getBackground() {
 		*/
 	}
     
-	public int getPaddingEnd(){
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    public int getPaddingEnd(){
 		// Original method
 		/*
 		{
@@ -8011,6 +8099,7 @@ protected void dispatchSetActivated(boolean activated) {
 		return getTaintBoolean();
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public ViewTreeObserver getViewTreeObserver(){
 		return mFloatingTreeObserver;
 		// Original method
@@ -8027,6 +8116,7 @@ protected void dispatchSetActivated(boolean activated) {
 		*/
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public View getRootView(){
 		// Original method
 		/*
@@ -8227,7 +8317,8 @@ protected void dispatchSetActivated(boolean activated) {
 		return false;
 	}
     
-	@ViewDebug.CapturedViewProperty 
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @ViewDebug.CapturedViewProperty 
 	public int getId(){
 		return getTaintInt();
 		// Original method
@@ -8238,7 +8329,8 @@ protected void dispatchSetActivated(boolean activated) {
 		*/
 	}
     
-	@ViewDebug.ExportedProperty 
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @ViewDebug.ExportedProperty 
 	public Object getTag(){
 		return (Object)getTaint();
 		// Original method
@@ -8266,7 +8358,8 @@ public void setTag(final Object tag) {
         mTag = tag;
     }
     
-	public Object getTag(int key){
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    public Object getTag(int key){
 		return mKeyedTags.get(key);
 		// Original method
 		/*
@@ -8354,6 +8447,7 @@ public void setTag(final Object tag) {
 		//Return nothing
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @ViewDebug.ExportedProperty(category="layout") 
 	public int getBaseline(){
 		// Original method
@@ -8434,6 +8528,7 @@ public void requestLayout() {
 		//Return nothing
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     protected int getSuggestedMinimumHeight(){
 		// Original method
 		/*
@@ -8451,6 +8546,7 @@ public void requestLayout() {
 		return 0;
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     protected int getSuggestedMinimumWidth(){
 		// Original method
 		/*
@@ -8496,6 +8592,7 @@ public void requestLayout() {
      * @return The animation that is currently playing or
      *         scheduled to play for this view.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:38.913 -0500", hash_original_method = "CDBB00D26F9C60D5F3E6B97847853936", hash_generated_method = "30138526EE085CE6CE5369F7E6EB3D4B")
     
 public Animation getAnimation() {
@@ -8661,6 +8758,7 @@ protected boolean onSetAlpha(int alpha) {
 		//Return nothing
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getSystemUiVisibility(){
 		return getTaintInt();
 		// Original method
@@ -8834,6 +8932,7 @@ protected void onOverScrolled(int scrollX, int scrollY,
         // Intentionally empty.
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getOverScrollMode(){
 		return getTaintInt();
 		// Original method
@@ -8871,6 +8970,7 @@ protected void onOverScrolled(int scrollX, int scrollY,
 		//Return nothing
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     protected float getVerticalScrollFactor(){
 		return getTaintFloat();
 		// Original method
@@ -8891,6 +8991,7 @@ protected void onOverScrolled(int scrollX, int scrollY,
 		*/
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     protected float getHorizontalScrollFactor(){
 		// Original method
 		/*
@@ -8901,6 +9002,7 @@ protected void onOverScrolled(int scrollX, int scrollY,
 		return 0;
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getTextDirection(){
 		return getTaintInt();
 		// Original method

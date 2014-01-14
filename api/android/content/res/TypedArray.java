@@ -48,6 +48,7 @@ public class TypedArray {
 		*/
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getIndexCount(){
 		// Original method
 		/*
@@ -58,6 +59,7 @@ public class TypedArray {
 		return getTaintInt();
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getIndex(int at){
 		// Original method
 		/*
@@ -71,12 +73,14 @@ public class TypedArray {
     /**
      * Return the Resources object this array was loaded from.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:01.160 -0500", hash_original_method = "9FEC9CB1792EB215E49CBF732B0DBF5B", hash_generated_method = "05B1D2D3E0E7E913183B96A460337403")
     
 public Resources getResources() {
         return mResources;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public CharSequence getText(int index){
         String str = new String();
         str.addTaint(getTaint());
@@ -104,7 +108,8 @@ public Resources getResources() {
 		*/
 	}
     
-	public String getString(int index){
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    public String getString(int index){
         String str = new String();
         str.addTaint(getTaint());
         return str;
@@ -132,6 +137,7 @@ public Resources getResources() {
 		*/
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public String getNonResourceString(int index){
         String str = new String();
         str.addTaint(getTaint());
@@ -154,6 +160,7 @@ public Resources getResources() {
 		*/
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public String getNonConfigurationString(int index, int allowedChangingConfigs){
         String str = new String();
         str.addTaint(getTaint());
@@ -189,6 +196,7 @@ public Resources getResources() {
 		*/
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getInt(int index, int defValue){
 		return getTaintInt();
 		// Original method
@@ -216,18 +224,21 @@ public Resources getResources() {
 		*/
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public float getFloat(int index, float defValue){
 		return getTaintFloat();
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getColor(int index, int defValue){
 		return getTaintInt();
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public ColorStateList getColorStateList(int index){
 		return mResources.loadColorStateList(mValue, mValue.resourceId);
 		// Original method
@@ -242,6 +253,7 @@ public Resources getResources() {
 		*/
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getInteger(int index, int defValue){
 		return getTaintInt();
 		// Original method
@@ -262,6 +274,7 @@ public Resources getResources() {
 		*/
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public float getDimension(int index, float defValue){
 		return getTaintFloat();
 		// Original method
@@ -282,6 +295,7 @@ public Resources getResources() {
 		*/
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getDimensionPixelOffset(int index, int defValue){
 		return getTaintInt();
 		// Original method
@@ -302,6 +316,7 @@ public Resources getResources() {
 		*/
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getDimensionPixelSize(int index, int defValue){
 		return getTaintInt();
 		// Original method
@@ -322,6 +337,7 @@ public Resources getResources() {
 		*/
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getLayoutDimension(int index, String name){
 		return getTaintInt();
 		// Original method
@@ -343,6 +359,7 @@ public Resources getResources() {
 		*/
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getLayoutDimension(int index, int defValue){
 		return getTaintInt();
 		// Original method
@@ -363,6 +380,7 @@ public Resources getResources() {
 		*/
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public float getFraction(int index, int base, int pbase, float defValue){
 		return getTaintFloat();
 		// Original method
@@ -383,7 +401,8 @@ public Resources getResources() {
 		*/
 	}
     
-	public int getResourceId(int index, int defValue){
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    public int getResourceId(int index, int defValue){
 		return getTaintInt();
 		// Original method
 		/*
@@ -401,6 +420,7 @@ public Resources getResources() {
 		*/
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public Drawable getDrawable(int index){
 		return mResources.loadDrawable(mValue, mValue.resourceId);
 		// Original method
@@ -424,6 +444,7 @@ public Resources getResources() {
 		*/
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public CharSequence[] getTextArray(int index){
 		return mResources.getTextArray(mValue.resourceId);
 		// Original method
@@ -489,6 +510,7 @@ public boolean getValue(int index, TypedValue outValue) {
 		*/
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public String getPositionDescription(){
         String str = new String();
         str.addTaint(getTaint());

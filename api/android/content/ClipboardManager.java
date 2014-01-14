@@ -102,6 +102,7 @@ public void setPrimaryClip(ClipData clip) {
     /**
      * Returns the current primary clip on the clipboard.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:38.361 -0500", hash_original_method = "50B348CB23C6EF42B3CBE9B194465F2B", hash_generated_method = "7DDDA0056751537DC044752D3DE1A34C")
     
 public ClipData getPrimaryClip() {
@@ -116,6 +117,7 @@ public ClipData getPrimaryClip() {
      * Returns a description of the current primary clip on the clipboard
      * but not a copy of its data.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:38.363 -0500", hash_original_method = "678ECBBFE5F09A43CDAAF81F6FD5AC97", hash_generated_method = "CA11E7B1CBE4EC33585AD3095A9223D3")
     
 public ClipDescription getPrimaryClipDescription() {
@@ -173,6 +175,7 @@ public void removePrimaryClipChangedListener(OnPrimaryClipChangedListener what) 
      * @deprecated Use {@link #getPrimaryClip()} instead.  This retrieves
      * the primary clip and tries to coerce it to a string.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:38.372 -0500", hash_original_method = "D9D561BF0732BC43D4A46DB226A10D9C", hash_generated_method = "15ABA5238E08C544D4AF67B8DC71CA77")
     
 public CharSequence getText() {

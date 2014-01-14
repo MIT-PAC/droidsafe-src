@@ -39,6 +39,7 @@ public abstract Object getContent(URLConnection uConn) throws IOException;
      *             if an error occurred while obtaining the content.
      */
     // Class arg not generified in the spec.
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:15.864 -0500", hash_original_method = "8659195BC6B56411F2DC6C9C918B5FC3", hash_generated_method = "1AD0408A977EABBE121234307AE2FBAD")
     
 @SuppressWarnings("unchecked")

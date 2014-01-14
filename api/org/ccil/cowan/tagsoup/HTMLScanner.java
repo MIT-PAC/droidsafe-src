@@ -454,22 +454,26 @@ private void unread(PushbackReader r, int c) throws IOException {
 
 	// Locator implementation
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:43.373 -0500", hash_original_method = "17D8C6B884298309CDBB8C115CEF45AD", hash_generated_method = "279B434579FFA4459D3046F7F45DAFB9")
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:43.373 -0500", hash_original_method = "17D8C6B884298309CDBB8C115CEF45AD", hash_generated_method = "279B434579FFA4459D3046F7F45DAFB9")
 	
 public int getLineNumber() {
 		return theLastLine;
 		}
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:43.375 -0500", hash_original_method = "CC76CCC6A19838EC65870F98307D39F4", hash_generated_method = "1A30DEA5198B61D0D33235193B0CF6FB")
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:43.375 -0500", hash_original_method = "CC76CCC6A19838EC65870F98307D39F4", hash_generated_method = "1A30DEA5198B61D0D33235193B0CF6FB")
 	
 public int getColumnNumber() {
 		return theLastColumn;
 		}
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:43.377 -0500", hash_original_method = "EE9557AC8121925813378C18555B01E0", hash_generated_method = "06235A262FCF60358C59DC0A29A6CC50")
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:43.377 -0500", hash_original_method = "EE9557AC8121925813378C18555B01E0", hash_generated_method = "06235A262FCF60358C59DC0A29A6CC50")
 	
 public String getPublicId() {
 		return thePublicid;
 		}
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:43.379 -0500", hash_original_method = "B52DC32D5FB92F39EE1C6D62A566FA39", hash_generated_method = "DABDB33649964195ACD2BAF147D39707")
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:43.379 -0500", hash_original_method = "B52DC32D5FB92F39EE1C6D62A566FA39", hash_generated_method = "DABDB33649964195ACD2BAF147D39707")
 	
 public String getSystemId() {
 		return theSystemid;

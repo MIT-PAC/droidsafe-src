@@ -57,6 +57,7 @@ public void setDispositionType(String dispositionType)
      * Get the disposition type.
      * @return Disposition Type
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:52.622 -0500", hash_original_method = "D3ED1AFB699417969621FE1884F8C7FE", hash_generated_method = "A74AD48002A48C108D26F19F589610F9")
     
 public String getDispositionType() {
@@ -67,6 +68,7 @@ public String getDispositionType() {
      * Get the dispositionType field.
      * @return String
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:52.626 -0500", hash_original_method = "0297698DA62A584BC408978A78677ED8", hash_generated_method = "D88B00DAB3631BE3634C337963FCDB38")
     
 public String getHandling() {
@@ -93,6 +95,7 @@ public void setHandling(String handling) throws ParseException {
      *
      * @return interpretation of the message body or message body part
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:52.636 -0500", hash_original_method = "C2FDE3A2DBDC43C0B4279ABCAA53BEFB", hash_generated_method = "F2C27927045A66DB71E910B6DC8BF382")
     
 public String getContentDisposition() {

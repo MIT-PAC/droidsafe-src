@@ -118,6 +118,7 @@ public void setContentHeight(int height) {
         requestLayout();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:41.257 -0500", hash_original_method = "AB5D9AC478BBA1C6AA700AA7486698D8", hash_generated_method = "ACB213AC2A4D5DA4279E6F97171C16BE")
     
 public int getContentHeight() {
@@ -133,6 +134,7 @@ public void setSplitView(ActionBarContainer splitView) {
     /**
      * @return Current visibility or if animating, the visibility being animated to.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:41.261 -0500", hash_original_method = "460E6C1B19245DB35832909D719B5D88", hash_generated_method = "C8B9BA432328D87A81F412D3E44DA7C8")
     
 public int getAnimatedVisibility() {

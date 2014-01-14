@@ -44,6 +44,7 @@ public AtomicInteger() {
      *
      * @return the current value
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.330 -0500", hash_original_method = "2C5A1089E8025181868581E48D922F38", hash_generated_method = "703E0755BD925C4D70E557B53D2BF771")
     
 public final int get() {
@@ -80,6 +81,7 @@ public final void lazySet(int newValue) {
      * @param newValue the new value
      * @return the previous value
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.338 -0500", hash_original_method = "EFF79965BA8CD7578F2A5616273687C7", hash_generated_method = "459912E78FA47DBEC8F8D999BA2FBD0D")
     
 public final int getAndSet(int newValue) {
@@ -128,6 +130,7 @@ public final boolean weakCompareAndSet(int expect, int update) {
      *
      * @return the previous value
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.345 -0500", hash_original_method = "621C33BC86CD3122044A53600F895B29", hash_generated_method = "425725E2DE13479856F360A7F13BBBA6")
     
 public final int getAndIncrement() {
@@ -144,6 +147,7 @@ public final int getAndIncrement() {
      *
      * @return the previous value
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.348 -0500", hash_original_method = "D5257E8A410056D1BB1DB7447390EAE5", hash_generated_method = "8C7CA472D5F813D9D0A3E6E453CD9E55")
     
 public final int getAndDecrement() {
@@ -161,6 +165,7 @@ public final int getAndDecrement() {
      * @param delta the value to add
      * @return the previous value
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.351 -0500", hash_original_method = "4B803B85C89B0C062A735FA86D4518AE", hash_generated_method = "95C75EF25F3A5B40B217926C833417D1")
     
 public final int getAndAdd(int delta) {

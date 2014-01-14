@@ -19,6 +19,7 @@ public class ASN1BitString extends ASN1StringType {
      * @return ASN.1 Bitstring type default implementation
      * @see org.apache.harmony.security.asn1.BitString
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:53.099 -0500", hash_original_method = "66B1F67B2E4924691687068C01957881", hash_generated_method = "09FC42AAA2010F0F571B2693B7BFC711")
     
 public static ASN1BitString getInstance() {
@@ -59,6 +60,7 @@ public ASN1BitString() {
      * @param in - BER input stream
      * @return BitString object
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:53.104 -0500", hash_original_method = "E5B2C829F55FF77DE885EB0182CA875F", hash_generated_method = "24C5744267DF28523A463FE89F8C323F")
     
 @Override public Object getDecodedObject(BerInputStream in) throws IOException {
@@ -98,6 +100,7 @@ public ASN1NamedBitList(int minBits) {
             this.maxBits = INDEFINITE_SIZE;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:53.128 -0500", hash_original_method = "039CEFCC208866EAEA17CE6A32A74892", hash_generated_method = "3210BEC7C6D0E61D358F2617AB453BEF")
         
 @Override public Object getDecodedObject(BerInputStream in) throws IOException {

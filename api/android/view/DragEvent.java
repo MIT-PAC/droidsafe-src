@@ -171,6 +171,7 @@ private void init(int action, float x, float y, ClipDescription description, Cli
      *  <li>{@link #ACTION_DRAG_ENDED}</li>
      * </ul>
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:14.783 -0500", hash_original_method = "96C17C1FB3A34A2A0AFECF0EC83B48C2", hash_generated_method = "3FD23346F621B19DABA981ADACA3C8BB")
     
 public int getAction() {
@@ -182,6 +183,7 @@ public int getAction() {
      * {@link #ACTION_DRAG_LOCATION} or {@link #ACTION_DROP}.
      * @return The current drag point's Y coordinate
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:14.786 -0500", hash_original_method = "331663EFF3E2EE62701FDAFEDB013F35", hash_generated_method = "6E92D0D3651A85CBFB76060D665CCF84")
     
 public float getX() {
@@ -194,6 +196,7 @@ public float getX() {
      * {@link #ACTION_DROP}, or {@link #ACTION_DRAG_EXITED}.
      * @return The current drag point's Y coordinate
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:14.788 -0500", hash_original_method = "ABC228174E672AD41349CE6D52652626", hash_generated_method = "DF84925D9DB2351D8A1C69C6893F85C9")
     
 public float getY() {
@@ -207,6 +210,7 @@ public float getY() {
      * This method only returns valid data if the event action is {@link #ACTION_DROP}.
      * @return The ClipData sent to the system by startDrag().
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:14.790 -0500", hash_original_method = "933F7F307168902744E3973968DC1B74", hash_generated_method = "06C0D9C1185621E3FE0DD17871D02B3B")
     
 public ClipData getClipData() {
@@ -223,6 +227,7 @@ public ClipData getClipData() {
      * This method returns valid data for all event actions.
      * @return The ClipDescription that was part of the ClipData sent to the system by startDrag().
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:14.793 -0500", hash_original_method = "314798A5FB9D41875D673F25B7EDBA77", hash_generated_method = "B7BCB37D3E0A9F6D191656EC8A72E30C")
     
 public ClipDescription getClipDescription() {
@@ -239,6 +244,7 @@ public ClipDescription getClipDescription() {
      * </p>
      * @return The local state object sent to the system by startDrag().
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:14.796 -0500", hash_original_method = "37C7BCFB2F6F270ABDBD12EAE79514EC", hash_generated_method = "2C5442DD0A47910756BBEFB3CA8E58E7")
     
 public Object getLocalState() {
@@ -268,6 +274,7 @@ public Object getLocalState() {
      * {@link #ACTION_DRAG_ENDED}, or if the listener returned {@code false} in response to
      * {@link #ACTION_DROP}, then {@code false} is returned.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:14.798 -0500", hash_original_method = "137903529BA54F55A1080182FA7064FC", hash_generated_method = "97F7442FD18FEB387A847718DE981C8E")
     
 public boolean getResult() {

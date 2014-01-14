@@ -91,12 +91,14 @@ public SparseArray() {
      * Gets the Object mapped from the specified key, or <code>null</code>
      * if no such mapping has been made.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.760 -0500", hash_original_method = "63029C5D60DB5A1F0C43DA1A71993094", hash_generated_method = "A7652660538AB6B2764F0F7687491E4B")
     
 public E get(int key) {
         return get(key, null);
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @SuppressWarnings("unchecked") public E get(int key, E valueIfKeyNotFound){
 		return (E) mValues[0];
 		// Original method

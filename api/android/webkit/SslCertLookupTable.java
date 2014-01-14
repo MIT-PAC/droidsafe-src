@@ -12,6 +12,7 @@ import android.os.Bundle;
 
 final class SslCertLookupTable {
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.931 -0500", hash_original_method = "CD6DF52A90A28734AE0DB5D95ED8CB7E", hash_generated_method = "7710C9504BE0F8C0A11727C58728E8B2")
     
 public static SslCertLookupTable getInstance() {

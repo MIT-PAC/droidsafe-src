@@ -56,7 +56,8 @@ public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:37.518 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
+@DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:37.518 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
             
 public java.lang.String getInterfaceDescriptor()
 {
@@ -139,7 +140,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:37.532 -0500", hash_original_method = "2B6D7896390E0E591A4D24FED4FCDDCD", hash_generated_method = "E1F6CB617432FE2B9BF8B49A3D3C07AE")
+@DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:37.532 -0500", hash_original_method = "2B6D7896390E0E591A4D24FED4FCDDCD", hash_generated_method = "E1F6CB617432FE2B9BF8B49A3D3C07AE")
             
 public java.lang.String getAddress() throws android.os.RemoteException
 {
@@ -158,7 +160,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:37.535 -0500", hash_original_method = "A67828AD51D979CC6F8946A01285E84F", hash_generated_method = "25DAF405E323107535B9AE95A16E9694")
+@DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:37.535 -0500", hash_original_method = "A67828AD51D979CC6F8946A01285E84F", hash_generated_method = "25DAF405E323107535B9AE95A16E9694")
             
 public java.lang.String getName() throws android.os.RemoteException
 {
@@ -198,7 +201,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:37.540 -0500", hash_original_method = "6B348B78D645B1D6FD4755C05799839B", hash_generated_method = "BE54EF7317507BF019486008D151B3FC")
+@DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:37.540 -0500", hash_original_method = "6B348B78D645B1D6FD4755C05799839B", hash_generated_method = "BE54EF7317507BF019486008D151B3FC")
             
 public android.os.ParcelUuid[] getUuids() throws android.os.RemoteException
 {
@@ -217,7 +221,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:37.543 -0500", hash_original_method = "BED317E54AA36D826AA486D7B3FE1704", hash_generated_method = "4A601F8D21E067216E97FE006E21B4EC")
+@DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:37.543 -0500", hash_original_method = "BED317E54AA36D826AA486D7B3FE1704", hash_generated_method = "4A601F8D21E067216E97FE006E21B4EC")
             
 public int getScanMode() throws android.os.RemoteException
 {
@@ -258,7 +263,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:37.548 -0500", hash_original_method = "1ABD785BBAEC60CBDB187114D2CFC410", hash_generated_method = "60FC0FEC66519202A44A32D83E04F19C")
+@DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:37.548 -0500", hash_original_method = "1ABD785BBAEC60CBDB187114D2CFC410", hash_generated_method = "60FC0FEC66519202A44A32D83E04F19C")
             
 public int getDiscoverableTimeout() throws android.os.RemoteException
 {
@@ -374,7 +380,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:37.563 -0500", hash_original_method = "5AA710B1CBDAA77C26BE243C8B5F50D5", hash_generated_method = "6145EFEC4947B21D6A3FD5707BC4A221")
+@DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:37.563 -0500", hash_original_method = "5AA710B1CBDAA77C26BE243C8B5F50D5", hash_generated_method = "6145EFEC4947B21D6A3FD5707BC4A221")
             
 public int getAdapterConnectionState() throws android.os.RemoteException
 {
@@ -393,7 +400,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:37.566 -0500", hash_original_method = "29BFD22E3A57E196A17CAB6325A68CDB", hash_generated_method = "0FA3CCE9ACC1972E194B85FBC4335540")
+@DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:37.566 -0500", hash_original_method = "29BFD22E3A57E196A17CAB6325A68CDB", hash_generated_method = "0FA3CCE9ACC1972E194B85FBC4335540")
             
 public int getProfileConnectionState(int profile) throws android.os.RemoteException
 {
@@ -1855,7 +1863,8 @@ public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:37.492 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
+@DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:37.492 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
         
 public android.os.IBinder asBinder()
 {

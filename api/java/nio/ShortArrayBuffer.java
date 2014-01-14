@@ -5,17 +5,11 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 abstract class ShortArrayBuffer extends ShortBuffer {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.167 -0500", hash_original_field = "0A4ECA1B121A47F10A1E5DF0E41F62BB", hash_generated_field = "D6BFE43B0E3E7A05E4F673EAC5DBB347")
 
-
     protected  short[] backingArray;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.170 -0500", hash_original_field = "B7E810BF01B52122CB927525A0CA4721", hash_generated_field = "22BBBB3BDBDCD622FED3EBF1A70B4EC5")
-
 
     protected  int offset;
 
@@ -39,6 +33,7 @@ ShortArrayBuffer(int capacity, short[] backingArray, int offset) {
         this.offset = offset;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.181 -0500", hash_original_method = "3107E6B251B23EDC44F5CD8DFDAAC4B8", hash_generated_method = "F7338196DDF3BCF4AFFAA49FC8877C1A")
     
 @Override
@@ -49,6 +44,7 @@ ShortArrayBuffer(int capacity, short[] backingArray, int offset) {
         return backingArray[offset + position++];
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.183 -0500", hash_original_method = "C45D95B915B8493973D4F3C69BA81F93", hash_generated_method = "3BCAD0461455FD40D24DEBDFD2035C9F")
     
 @Override
@@ -57,6 +53,7 @@ ShortArrayBuffer(int capacity, short[] backingArray, int offset) {
         return backingArray[offset + index];
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.186 -0500", hash_original_method = "89DFF38986FFC53F43866053D7635804", hash_generated_method = "370F6D6D8D95A5BEF0188E22EEEF8FCD")
     
 @Override
@@ -82,7 +79,6 @@ ShortArrayBuffer(int capacity, short[] backingArray, int offset) {
     public final ByteOrder order() {
         return ByteOrder.nativeOrder();
     }
-
     
 }
 

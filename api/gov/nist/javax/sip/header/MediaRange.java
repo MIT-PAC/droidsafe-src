@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class MediaRange extends SIPObject {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:54.978 -0500", hash_original_field = "9B445054D3DA4317BA4EC07ED3B61EBC", hash_generated_field = "3BDB1FA41CCA61D52855E12BDAC970C8")
 
@@ -30,6 +26,7 @@ public MediaRange() {
     /** get type field
      * @return String
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:54.992 -0500", hash_original_method = "0E0B07C7C3039087C9D268CAF8DACC19", hash_generated_method = "375DB45064AFC367CAD6F27C4CB89612")
     
 public String getType() {
@@ -39,6 +36,7 @@ public String getType() {
     /** get the subType field.
      * @return String
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:54.996 -0500", hash_original_method = "F553636983A7698A0C67E9F36C861E72", hash_generated_method = "50ACC84C398159867407D12731DDC0B0")
     
 public String getSubtype() {

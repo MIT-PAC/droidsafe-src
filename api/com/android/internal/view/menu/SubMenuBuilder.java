@@ -58,12 +58,14 @@ public SubMenuBuilder(Context context, MenuBuilder parentMenu, MenuItemImpl item
         return mParentMenu.isShortcutsVisible();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:37.436 -0500", hash_original_method = "EFEC7F93A39736AF8130A49104B9A895", hash_generated_method = "BADFAFE7FDF3B109F8FE3CCBDC2044F6")
     
 public Menu getParentMenu() {
         return mParentMenu;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:37.438 -0500", hash_original_method = "B68A5ADECB21212250B72B1DD0399FE9", hash_generated_method = "43CA31BE056BF0396EECC4F3C98EA30D")
     
 public MenuItem getItem() {
@@ -77,6 +79,7 @@ public MenuItem getItem() {
         mParentMenu.setCallback(callback);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:37.443 -0500", hash_original_method = "DFDE0312E92BA6118839C252C79690F8", hash_generated_method = "338894C3870D784FD07E2677216A32BF")
     
 @Override
@@ -156,6 +159,7 @@ public SubMenu setHeaderView(View view) {
         return mParentMenu.collapseItemActionView(item);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:37.469 -0500", hash_original_method = "2F8B587BD2C060C35373EC0A47CA21D2", hash_generated_method = "5D200AD62DBA2121F59437217C1DCDCE")
     
 @Override

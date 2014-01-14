@@ -39,6 +39,7 @@ public class MediaPlayer {
      * @param uri the Uri from which to get the datasource
      * @return a MediaPlayer object, or null if creation failed
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.637 -0500", hash_original_method = "88A45C64C97A87F55B3C35AEDBC4AEE9", hash_generated_method = "54928E1D9B77BF22D6A2D9FC63E0FB4A")
     
 public static MediaPlayer create(Context context, Uri uri) {
@@ -1337,6 +1338,7 @@ public boolean setParameter(int key, int value) {
      * @return value of the parameter.
      * {@hide}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.794 -0500", hash_original_method = "5EBE9A62BAE86EE2E5C065958EFCD9CF", hash_generated_method = "A628E7F322598BE5B924C7FD36DB3FD5")
     
 public Parcel getParcelParameter(int key) {
@@ -1351,6 +1353,7 @@ public Parcel getParcelParameter(int key) {
      * @return value of the parameter.
      * {@hide}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.796 -0500", hash_original_method = "E362F946FCE7F90CCCD629666B73E43A", hash_generated_method = "CDC35BE7FB4BB10283A6011E5EE96090")
     
 public String getStringParameter(int key) {
@@ -1367,6 +1370,7 @@ public String getStringParameter(int key) {
      * @return value of the parameter.
      * {@hide}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.798 -0500", hash_original_method = "6CEECAB43DB86BAC5EC65D39A3A924D5", hash_generated_method = "FE648F3532CBCB21B22D30390105E7D4")
     
 public int getIntParameter(int key) {

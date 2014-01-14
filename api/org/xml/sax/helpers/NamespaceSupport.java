@@ -301,6 +301,7 @@ public String [] processName (String qName, String parts[],
      * @see #getPrefix
      * @see #getPrefixes
      */
+    @DSSource({DSSourceKind.FILE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.376 -0500", hash_original_method = "AC6673E983BE229DBE393CCBB4A72E75", hash_generated_method = "03FD0CE5F473571E708DB9317FA1B856")
     
 public String getURI (String prefix)
@@ -322,6 +323,7 @@ public String getURI (String prefix)
      * @see #getDeclaredPrefixes
      * @see #getURI
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.379 -0500", hash_original_method = "A5B18FED447546E052ABC48FA9E4C291", hash_generated_method = "13E9351D9FFB02163EC2102FAB7D1318")
     
 public Enumeration getPrefixes ()
@@ -348,6 +350,7 @@ public Enumeration getPrefixes ()
      * @see #getPrefixes(java.lang.String)
      * @see #getURI
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.381 -0500", hash_original_method = "EEA9ABC8ACBC17B2454F5F5D40E93A34", hash_generated_method = "1B0C362F53E442DD756F1F73E397C763")
     
 public String getPrefix (String uri)
@@ -378,6 +381,7 @@ public String getPrefix (String uri)
      * @see #getDeclaredPrefixes
      * @see #getURI
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.384 -0500", hash_original_method = "E9FAC6924E2013A13EA977C97AEA2AF7", hash_generated_method = "2916EBF06540C1330069ED9DE88433E1")
     
 public Enumeration getPrefixes(String uri) {
@@ -525,7 +529,8 @@ void declarePrefix(String prefix, String uri) {
      *         if there is an undeclared prefix.
      * @see org.xml.sax.helpers.NamespaceSupport#processName
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.414 -0500", hash_original_method = "33259345EBD99FFF49F4E1AAD2529013", hash_generated_method = "296CADF2DCFE4D340DC221E4F2AE1D69")
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.414 -0500", hash_original_method = "33259345EBD99FFF49F4E1AAD2529013", hash_generated_method = "296CADF2DCFE4D340DC221E4F2AE1D69")
         
 String [] processName (String qName, boolean isAttribute)
     {
@@ -605,7 +610,8 @@ String [] processName (String qName, boolean isAttribute)
      *         declared.
      * @see org.xml.sax.helpers.NamespaceSupport#getURI
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.417 -0500", hash_original_method = "33F968ABABCEBD2BA0661937EB8377F0", hash_generated_method = "33F968ABABCEBD2BA0661937EB8377F0")
+    @DSSource({DSSourceKind.FILE_INFORMATION})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.417 -0500", hash_original_method = "33F968ABABCEBD2BA0661937EB8377F0", hash_generated_method = "33F968ABABCEBD2BA0661937EB8377F0")
         
 String getURI (String prefix)
     {
@@ -628,7 +634,8 @@ String getURI (String prefix)
      * @return The associated prefix, or null if none is declared.
      * @see org.xml.sax.helpers.NamespaceSupport#getPrefix
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.419 -0500", hash_original_method = "62121EA4CFF0891BFB2032F7AF8FE7A1", hash_generated_method = "62121EA4CFF0891BFB2032F7AF8FE7A1")
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.419 -0500", hash_original_method = "62121EA4CFF0891BFB2032F7AF8FE7A1", hash_generated_method = "62121EA4CFF0891BFB2032F7AF8FE7A1")
         
 String getPrefix (String uri)
     {
@@ -645,7 +652,8 @@ String getPrefix (String uri)
      * @return An enumeration of prefixes (possibly empty).
      * @see org.xml.sax.helpers.NamespaceSupport#getDeclaredPrefixes
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.421 -0500", hash_original_method = "B116CF358C1D0DA8CF46DFF106939FC0", hash_generated_method = "B116CF358C1D0DA8CF46DFF106939FC0")
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.421 -0500", hash_original_method = "B116CF358C1D0DA8CF46DFF106939FC0", hash_generated_method = "B116CF358C1D0DA8CF46DFF106939FC0")
         
 Enumeration getDeclaredPrefixes() {
         return (declarations == null) ? EMPTY_ENUMERATION : Collections.enumeration(declarations);
@@ -660,7 +668,8 @@ Enumeration getDeclaredPrefixes() {
      * @return An enumeration of prefixes (never empty).
      * @see org.xml.sax.helpers.NamespaceSupport#getPrefixes
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.423 -0500", hash_original_method = "D02303EBFA8DB4A97AF291339C2FB52B", hash_generated_method = "D02303EBFA8DB4A97AF291339C2FB52B")
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.423 -0500", hash_original_method = "D02303EBFA8DB4A97AF291339C2FB52B", hash_generated_method = "D02303EBFA8DB4A97AF291339C2FB52B")
         
 Enumeration getPrefixes ()
     {
@@ -714,6 +723,7 @@ private void copyTables ()
      * @see #getPrefixes
      * @see #getURI
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.386 -0500", hash_original_method = "410BA98433560BB4462E66EC18960649", hash_generated_method = "4A7CDE4864CE969CC5C614E3BC067989")
     
 public Enumeration getDeclaredPrefixes ()

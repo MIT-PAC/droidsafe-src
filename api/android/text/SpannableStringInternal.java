@@ -192,6 +192,7 @@ void removeSpan(Object what) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:07.088 -0500", hash_original_method = "2C34546685C4DD853C66A09CEFBD0C65", hash_generated_method = "49A5A83F9D601DCC21A804366460C069")
     
 public int getSpanStart(Object what) {
@@ -208,6 +209,7 @@ public int getSpanStart(Object what) {
         return -1;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:07.091 -0500", hash_original_method = "D299E1841C6A6AC66FA9181AA7F112ED", hash_generated_method = "5F80416C7EB9B0125A02073DF204AAD9")
     
 public int getSpanEnd(Object what) {
@@ -224,6 +226,7 @@ public int getSpanEnd(Object what) {
         return -1;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:07.093 -0500", hash_original_method = "0BC2A6452DDDFB33D1E74093A43A22EC", hash_generated_method = "6EB8AB2A3F9A018CE5A37968A4FC11D4")
     
 public int getSpanFlags(Object what) {
@@ -240,6 +243,7 @@ public int getSpanFlags(Object what) {
         return 0; 
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:37.792 -0400", hash_original_method = "A79E5C3938B902091EA5DB757C342E2D", hash_generated_method = "8B11A1D83B40723E850120BF22A1B3F9")
     public <T> T[] getSpans(int queryStart, int queryEnd, Class<T> kind) {
         addTaint(kind.getTaint());

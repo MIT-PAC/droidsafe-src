@@ -202,6 +202,7 @@ public void reset() throws IOException {
      * @see #markSupported()
      * @see #reset()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.853 -0500", hash_original_method = "7E8A2F73FB8EAE936D216E90BE91676B", hash_generated_method = "7AD957B0F0168F7BE1674D0299966610")
     
 public long skip(long charCount) throws IOException {

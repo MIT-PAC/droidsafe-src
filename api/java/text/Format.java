@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.Serializable;
 
-
-
-
-
-
 public abstract class Format implements Serializable, Cloneable {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.562 -0500", hash_original_method = "342F58D58D7CDE61587D20CC55F1BF65", hash_generated_method = "E40E3DF50A129A615CEDF26F12F19796")
@@ -68,7 +63,6 @@ static boolean upToWithQuotes(String string, ParsePosition position,
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.541 -0500", hash_original_field = "0DB40A090DF073D3D23310F63EA8393F", hash_generated_field = "F20B0022FF8D3E84304897148427AD29")
 
-
     private static final long serialVersionUID = -299282585814624189L;
 
     /**
@@ -86,6 +80,7 @@ protected Format() {
      *
      * @see java.lang.Cloneable
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.547 -0500", hash_original_method = "0B6FE6D01B20019581445CB40F5DED3F", hash_generated_method = "88F588A1F8F1E65DC62D9CB72E24BF48")
     
 @Override
@@ -106,6 +101,7 @@ protected Format() {
      * @throws IllegalArgumentException
      *         if the object cannot be formatted by this format.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.549 -0500", hash_original_method = "37693C41F5C0477FFE14A538377AD1D2", hash_generated_method = "D6FF871E879357E151D2BDB709C4FF98")
     
 public final String format(Object object) {
@@ -168,6 +164,7 @@ public AttributedCharacterIterator formatToCharacterIterator(Object object) {
      * @throws ParseException
      *            if an error occurs during parsing.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.557 -0500", hash_original_method = "6F2C2FABFB0232DE8BE4D0269373F5D5", hash_generated_method = "4599B9C84ED9B8144980A818CAE01834")
     
 public Object parseObject(String string) throws ParseException {
@@ -178,11 +175,9 @@ public Object parseObject(String string) throws ParseException {
         }
         return result;
     }
-
     
     public static class Field extends AttributedCharacterIterator.Attribute {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.568 -0500", hash_original_field = "7B33E614D84C5CC7F14E8DA120EFE29B", hash_generated_field = "DE61A40CF1E88A2D4F1C7CBD694BE984")
-
 
         private static final long serialVersionUID = 276966692217360283L;
 

@@ -52,6 +52,7 @@ public String encodeBody()
      * Get privacy type
      * @return privacy type
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:57.312 -0500", hash_original_method = "1BCFC01DA9502F608C910A07D4A75A00", hash_generated_method = "6E0D8104C1D1B7065C7E83F581681107")
     
 public String getPrivacy()

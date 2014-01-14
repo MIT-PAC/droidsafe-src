@@ -45,6 +45,7 @@ protected String encodeBody() {
      *  list.
      */
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:00.262 -0500", hash_original_method = "4557281A63D104D6DD73401BFDDD37E4", hash_generated_method = "6162C1372B345C99FCD729BDF4A871F0")
     
 public NameValue getAuthInfo(String name) {
@@ -61,6 +62,7 @@ public NameValue getAuthInfo(String name) {
      *
      *
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:00.266 -0500", hash_original_method = "45703CBA192DB8FE97E8CE6B0DE011B6", hash_generated_method = "1EB28D1C34F82AD38B09D4E2ED3CEB8D")
     
 public String getAuthenticationInfo() {
@@ -73,6 +75,7 @@ public String getAuthenticationInfo() {
      * not set.
      * @since v1.1
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:00.269 -0500", hash_original_method = "78E06BA6093F7AA3C4C2CE903F3FED26", hash_generated_method = "37FEE7B5E119C76CD60400CB0A3D0EDF")
     
 public String getCNonce() {
@@ -85,6 +88,7 @@ public String getCNonce() {
      * information, null if value is not set.
      * @since v1.1
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:00.272 -0500", hash_original_method = "4856BE956C44217C60CB87D76847AFE4", hash_generated_method = "796BF8E5CFD9EA81AC46DBCF52C2EB0E")
     
 public String getNextNonce() {
@@ -97,6 +101,7 @@ public String getNextNonce() {
      * not set.
      * @since v1.1
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:00.276 -0500", hash_original_method = "F46B5447262611FA3819A20578A12025", hash_generated_method = "77BBBF52428C3BF1C01D276EF9A4D250")
     
 public int getNonceCount() {
@@ -109,6 +114,7 @@ public int getNonceCount() {
      * value is not set.
      * @since v1.1
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:00.279 -0500", hash_original_method = "2EA7D13FA74BC0F4D2935AE8D437DBD8", hash_generated_method = "B5E86F61504F5985CB67A6B8707229C7")
     
 public String getQop() {
@@ -120,6 +126,7 @@ public String getQop() {
      * @return the String representing the Response information.
      * @since v1.1
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:00.282 -0500", hash_original_method = "B75013AB6AA69C35681E13DE4A7E264C", hash_generated_method = "47DF677BEA36CBAFD816670154B1BBF1")
     
 public String getResponse() {

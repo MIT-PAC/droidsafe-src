@@ -22,11 +22,6 @@ import android.widget.TextView;
 
 import com.android.internal.R;
 
-
-
-
-
-
 public class ProgressDialog extends AlertDialog {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.857 -0500", hash_original_method = "735A07E8EA3FECB061EA4EDEB18A0EB9", hash_generated_method = "F5477D72941826039516E31C68F358E3")
@@ -71,14 +66,12 @@ public static ProgressDialog show(Context context, CharSequence title,
 
     public static final int STYLE_HORIZONTAL = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.812 -0500", hash_original_field = "789276011B0B73E01A12C7020EDE82A8", hash_generated_field = "77244E1CDBA901DF4A72F7384A95707A")
-
     
     private ProgressBar mProgress;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.814 -0500", hash_original_field = "3C68F58819B50F04C23C7889C2B27482", hash_generated_field = "461DDCE97AF551A1C6803EBC4533C15B")
 
     private TextView mMessageView;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.816 -0500", hash_original_field = "17435A0667B0477AB6458FA502C7EEB2", hash_generated_field = "D606E8AD4CB2138AB3E23AD40FAEF122")
-
     
     private int mProgressStyle = STYLE_SPINNER;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.817 -0500", hash_original_field = "22CE0B9FB494D1B757AFDD8529E500F4", hash_generated_field = "B144E5A12AFBB6F4D43B9925DE81C337")
@@ -94,7 +87,6 @@ public static ProgressDialog show(Context context, CharSequence title,
 
     private NumberFormat mProgressPercentFormat;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.826 -0500", hash_original_field = "643806E929E292CCE314B6AD18027C00", hash_generated_field = "A1BFCC57A6BC96010A1D330EF07F3F34")
-
     
     private int mMax;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.828 -0500", hash_original_field = "FD853BE2FA795215E14D487AB843805D", hash_generated_field = "24EC69CEF56B680AD8D4A6ABB0E5F818")
@@ -122,7 +114,6 @@ public static ProgressDialog show(Context context, CharSequence title,
 
     private boolean mIndeterminate;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.846 -0500", hash_original_field = "3B1E9196D0E5D604CF53F2AD1EEEAD8A", hash_generated_field = "62FBA97BE9733493DCEE6CDD41719180")
-
     
     private boolean mHasStarted;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.848 -0500", hash_original_field = "DE0E53A68D9E53536021C1D2CAC9B7DB", hash_generated_field = "9C96B0DBEEFCF0BF24069370A43F6E2A")
@@ -272,6 +263,7 @@ public void setSecondaryProgress(int secondaryProgress) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.882 -0500", hash_original_method = "4D0AEB75C79AE0306A009E89E85077BB", hash_generated_method = "D749C979527826D47398AAA8CF2F0759")
     
 public int getProgress() {
@@ -281,6 +273,7 @@ public int getProgress() {
         return mProgressVal;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.884 -0500", hash_original_method = "58FB68124F7103A7657A430EF8D5C27D", hash_generated_method = "99B5F21139D4F0C1E13667229A1A1C30")
     
 public int getSecondaryProgress() {
@@ -290,6 +283,7 @@ public int getSecondaryProgress() {
         return mSecondaryProgressVal;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.887 -0500", hash_original_method = "B2C91689E392BFA0100BFE7CD7CBCF9A", hash_generated_method = "0BA0955C8639A19AC37233F767D112C4")
     
 public int getMax() {

@@ -34,6 +34,7 @@ public class DownloadManager {
      * @return maximum size, in bytes, of downloads that may go over a mobile connection; or null if
      * there's no limit
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:27.322 -0500", hash_original_method = "40957C5003DF164899899BBA93624DC8", hash_generated_method = "2259D576AF4DBF3460D15E09CA681E98")
     
 public static Long getMaxBytesOverMobile(Context context) {
@@ -54,6 +55,7 @@ public static Long getMaxBytesOverMobile(Context context) {
      * @return recommended maximum size, in bytes, of downloads that may go over a mobile
      * connection; or null if there's no recommended limit.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:27.324 -0500", hash_original_method = "09D101EEE583F1F428ABFAC2A3E1C48B", hash_generated_method = "785E14E7905676E9853C42E4BF4DFE9B")
     
 public static Long getRecommendedMaxBytesOverMobile(Context context) {
@@ -76,6 +78,7 @@ private static void validateArgumentIsNonEmpty(String paramName, String val) {
     /**
      * Get a parameterized SQL WHERE clause to select a bunch of IDs.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:27.337 -0500", hash_original_method = "58FA33488269F1928D1ACA78136BAF7B", hash_generated_method = "220415491416EE285B2042B34738A83B")
     
 static String getWhereClauseForIds(long[] ids) {
@@ -95,6 +98,7 @@ static String getWhereClauseForIds(long[] ids) {
     /**
      * Get the selection args for a clause returned by {@link #getWhereClauseForIds(long[])}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:27.339 -0500", hash_original_method = "18769EFB7E28EF76AE4BA41FDCD2B58B", hash_generated_method = "7DB914CCE4DB3334C6CA4853316B3678")
     
 static String[] getWhereArgsForIds(long[] ids) {
@@ -659,6 +663,7 @@ public Query orderBy(String column, int direction) {
          * @param projection the projection to pass to ContentResolver.query()
          * @return the Cursor returned by ContentResolver.query()
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:27.281 -0500", hash_original_method = "3E117BB34A8C7FFA67D17AB4CC250832", hash_generated_method = "DAA7599D89038CFF9301BC5C895B0144")
         
 Cursor runQuery(ContentResolver resolver, String[] projection, Uri baseUri) {
@@ -750,6 +755,7 @@ public CursorTranslator(Cursor cursor, Uri baseUri) {
             return (int) getLong(columnIndex);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:27.349 -0500", hash_original_method = "744FA54C78DD5C7B6737C741AD0EB8F1", hash_generated_method = "0D6EDC1E2F6C5CBF721F5287DD1EEAD1")
         
 @Override
@@ -763,6 +769,7 @@ public CursorTranslator(Cursor cursor, Uri baseUri) {
             }
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:27.352 -0500", hash_original_method = "2A6CC35BB4DF843267A861B5828C6994", hash_generated_method = "929012F2E107068061EF91058A6E83D5")
         
 @Override
@@ -1052,6 +1059,7 @@ public long enqueue(Request request) {
      * @return the number of downloads actually updated
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:27.305 -0500", hash_original_method = "6A912115CBBE4D263FCD27B2696D5371", hash_generated_method = "064D786D7C16F2FBA0BDD430C5FF9CA7")
     
 public int markRowDeleted(long... ids) {
@@ -1126,6 +1134,7 @@ public ParcelFileDescriptor openDownloadedFile(long id) throws FileNotFoundExcep
      * @return the {@link Uri} for the given downloaded file id, if download was successful. null
      * otherwise.
      */
+    @DSSource({DSSourceKind.FILE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:27.314 -0500", hash_original_method = "82FD0DABBA6B80B8B4BA3DF76B66A3D1", hash_generated_method = "5267155AA394E91A4D5F97C5C7CD51C4")
     
 public Uri getUriForDownloadedFile(long id) {
@@ -1181,6 +1190,7 @@ public Uri getUriForDownloadedFile(long id) {
      * @return the {@link Uri} for the given downloaded file id, if download was successful. null
      * otherwise.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:27.317 -0500", hash_original_method = "EC65E8932FA161BF4DAEC74FC802F48D", hash_generated_method = "EB14CD0D70CA24E0BB9121EAFEC0367A")
     
 public String getMimeTypeForDownloadedFile(long id) {
@@ -1297,6 +1307,7 @@ public long addCompletedDownload(String title, String description,
     /**
      * Get the DownloadProvider URI for the download with the given ID.
      */
+    @DSSource({DSSourceKind.FILE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:27.334 -0500", hash_original_method = "D1EE950396677328804F68406B4587AE", hash_generated_method = "D1EE950396677328804F68406B4587AE")
     
 Uri getDownloadUri(long id) {

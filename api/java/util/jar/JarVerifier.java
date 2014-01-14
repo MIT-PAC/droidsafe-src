@@ -44,6 +44,7 @@ class JarVerifier {
      * @return all of the {@code Certificate} entries for the signer of the JAR
      *         whose actions led to the creation of the named signature file.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.414 -0500", hash_original_method = "7076E38A2129A6111F64A5E586BC8201", hash_generated_method = "A3ACF8B97210B63D516427CC61673029")
     
 public static Vector<Certificate> getSignerCertificates(
@@ -393,6 +394,7 @@ private boolean verify(Attributes attributes, String entry, byte[] data,
      *            the name of a JAR entry.
      * @return an array of {@link java.security.cert.Certificate}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.408 -0500", hash_original_method = "4AB9D8996D4C7F856FC4CD4DD096303E", hash_generated_method = "4AB9D8996D4C7F856FC4CD4DD096303E")
     
 Certificate[] getCertificates(String name) {

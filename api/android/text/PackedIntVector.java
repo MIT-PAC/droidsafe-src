@@ -57,6 +57,7 @@ public PackedIntVector(int columns) {
      *         (row &lt; 0 || row >= size()) or the column is out of range
      *         (column &lt; 0 || column >= width()).
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:03.270 -0500", hash_original_method = "127603F69B46B56B0057C44974C5D0F5", hash_generated_method = "25992ED288C0F37472A84C3C142CBF49")
     
 public int getValue(int row, int column) {

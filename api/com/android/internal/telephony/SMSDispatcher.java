@@ -49,6 +49,7 @@ import com.android.internal.util.HexDump;
 
 public abstract class SMSDispatcher extends Handler {
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:40.588 -0500", hash_original_method = "23BBEF031B4226A8BE31016B2CB24EC1", hash_generated_method = "B8BFDD45A56DFE9CF819B972090B44BF")
     
 protected static int getNextConcatenatedRef() {

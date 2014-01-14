@@ -455,6 +455,7 @@ public void setColor(int argb) {
         invalidateSelf();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:16.642 -0500", hash_original_method = "3865DA4989774EEF9AAAD48E0098B1D2", hash_generated_method = "5B7992AAC4E5AF1260016B3CFFEBE3C4")
     
 @Override
@@ -493,6 +494,7 @@ public void setColor(int argb) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:16.651 -0500", hash_original_method = "AB3D570DA2A917C408AB4F7D8FCD7103", hash_generated_method = "10DE806C6642B5F0CD513CB0E3A17B5D")
     
 @Override
@@ -685,6 +687,7 @@ public GradientState(GradientState state) {
             return new GradientDrawable(this);
         }
         
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:16.760 -0500", hash_original_method = "9E7D7C67EAC365FF19BD4971762612A5", hash_generated_method = "3AB30668ED270F2EDF2E0129C706FE4D")
         
 @Override
@@ -1118,6 +1121,7 @@ private boolean ensureValidRect() {
         }
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:16.673 -0500", hash_original_method = "312782D78F9C32949C3B038C307C5C9C", hash_generated_method = "BF3E96399D536081C4FE7FF3F644DEBA")
     
 @Override
@@ -1125,6 +1129,7 @@ private boolean ensureValidRect() {
         return mGradientState.mWidth;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:16.675 -0500", hash_original_method = "A19A1B01925414A773BB5AE9FBB4894A", hash_generated_method = "414190BA159EB48B9D4905B397A68CAB")
     
 @Override

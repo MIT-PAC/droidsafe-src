@@ -1064,6 +1064,7 @@ public void copyFrom(PointerCoords other) {
          * @see MotionEvent#AXIS_X
          * @see MotionEvent#AXIS_Y
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:11.065 -0500", hash_original_method = "566631CFDB34A411EF93513211D62594", hash_generated_method = "4014B2633E4A2564CAC6F8E8D55F4E95")
         
 public float getAxisValue(int axis) {
@@ -1346,6 +1347,7 @@ public final void scale(float scale) {
     }
 
     /** {@inheritDoc} */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.785 -0500", hash_original_method = "E51EA2AB032E4C79CC226174E2601818", hash_generated_method = "43DDD167B696D69CB02F56285723C2A8")
     
 @Override
@@ -1354,6 +1356,7 @@ public final void scale(float scale) {
     }
 
     /** {@inheritDoc} */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.789 -0500", hash_original_method = "44501F684180CAB98F3511C2614C7994", hash_generated_method = "DBFA389EA5B22236C2B11758801E944C")
     
 @Override
@@ -1377,6 +1380,7 @@ public final void scale(float scale) {
      * @return The action, such as {@link #ACTION_DOWN} or
      * the combination of {@link #ACTION_POINTER_DOWN} with a shifted pointer index.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.794 -0500", hash_original_method = "FA5880EB8F61D955AC5922ACE620FCE2", hash_generated_method = "0179DCDBED0C80F6D103A239F3884634")
     
 public final int getAction() {
@@ -1388,6 +1392,7 @@ public final int getAction() {
      * Use {@link #getActionIndex} to return the index associated with pointer actions.
      * @return The action, such as {@link #ACTION_DOWN} or {@link #ACTION_POINTER_DOWN}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.796 -0500", hash_original_method = "268411790684740D49A019DF59E1FFBB", hash_generated_method = "0EF47299C1014B42203BA87354C5061B")
     
 public final int getActionMasked() {
@@ -1404,6 +1409,7 @@ public final int getActionMasked() {
      * gone down or up.
      * @return The index associated with the action.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.798 -0500", hash_original_method = "464EE1689B645958C6F5E17990D5ECA4", hash_generated_method = "64BFF9A86656A73B6BA09A7FE09FC84E")
     
 public final int getActionIndex() {
@@ -1432,6 +1438,7 @@ public final boolean isTouchEvent() {
      *
      * @see #FLAG_WINDOW_IS_OBSCURED
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.803 -0500", hash_original_method = "A25E485C356A262F519C0A5841CFA47B", hash_generated_method = "1C68C36437F1E1C7170D0450041CAF77")
     
 public final int getFlags() {
@@ -1461,6 +1468,7 @@ public final int getFlags() {
      * Returns the time (in ms) when the user originally pressed down to start
      * a stream of position events.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.811 -0500", hash_original_method = "5F4C05CD4E223E38846D15A6EA0DF305", hash_generated_method = "BFCB5E2E7AFD8EDA5624FBFBB70790A2")
     
 public final long getDownTime() {
@@ -1483,6 +1491,7 @@ public final void setDownTime(long downTime) {
     /**
      * Returns the time (in ms) when this specific event was generated.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.816 -0500", hash_original_method = "CCF6A1C7FFBA398090457272FB07E7C9", hash_generated_method = "88BA2C3FDA0F218BB6D1E6E0DAFA6CAD")
     
 public final long getEventTime() {
@@ -1495,6 +1504,7 @@ public final long getEventTime() {
      *
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.818 -0500", hash_original_method = "9EB1FC24DA069289850F91A3F8734D9A", hash_generated_method = "9D15A455BC25443573C56D33AA58B456")
     
 public final long getEventTimeNano() {
@@ -1507,6 +1517,7 @@ public final long getEventTimeNano() {
      *
      * @see #AXIS_X
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.820 -0500", hash_original_method = "4BF6642E766343B332FD98949BC6C582", hash_generated_method = "E774E1D7846DB35D7F1CB7A3E088FA67")
     
 public final float getX() {
@@ -1519,6 +1530,7 @@ public final float getX() {
      *
      * @see #AXIS_Y
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.823 -0500", hash_original_method = "91A63DEAB3A8AC7438EA04466792BD82", hash_generated_method = "EC2C2BD98A3263DC8F891D4B3BDEE4E1")
     
 public final float getY() {
@@ -1531,6 +1543,7 @@ public final float getY() {
      *
      * @see #AXIS_PRESSURE
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.825 -0500", hash_original_method = "6675B94FFDE5461AE8829AF0934758CB", hash_generated_method = "F4CF8F33390FF62B43DB408D2165DE41")
     
 public final float getPressure() {
@@ -1543,6 +1556,7 @@ public final float getPressure() {
      *
      * @see #AXIS_SIZE
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.827 -0500", hash_original_method = "04BA234B263118C319F9FB3039E4C966", hash_generated_method = "734F822408016FA0FD4B36330FA71B0D")
     
 public final float getSize() {
@@ -1555,6 +1569,7 @@ public final float getSize() {
      *
      * @see #AXIS_TOUCH_MAJOR
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.830 -0500", hash_original_method = "7EDCA08C9EC8F904EE9855CC249509CB", hash_generated_method = "C33CF46FE6EABF5C716975FF67534A4D")
     
 public final float getTouchMajor() {
@@ -1567,6 +1582,7 @@ public final float getTouchMajor() {
      *
      * @see #AXIS_TOUCH_MINOR
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.832 -0500", hash_original_method = "0D1B5526DE02F52B1563B7D7F6F58090", hash_generated_method = "6EFD631375D85949D7EA33EAEF2A3D7F")
     
 public final float getTouchMinor() {
@@ -1579,6 +1595,7 @@ public final float getTouchMinor() {
      *
      * @see #AXIS_TOOL_MAJOR
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.835 -0500", hash_original_method = "88DA06A5CC2E8F8456F3789E8A68ED44", hash_generated_method = "C625BE07D0902B515405BF35DF7A9F6F")
     
 public final float getToolMajor() {
@@ -1591,6 +1608,7 @@ public final float getToolMajor() {
      *
      * @see #AXIS_TOOL_MINOR
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.838 -0500", hash_original_method = "68541C2106990EEA679DCE03A62D7FCC", hash_generated_method = "F654819131CCA1E948DF3700EF9B2780")
     
 public final float getToolMinor() {
@@ -1603,6 +1621,7 @@ public final float getToolMinor() {
      *
      * @see #AXIS_ORIENTATION
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.840 -0500", hash_original_method = "6DB87F8256212E2B4D49883D1C47D372", hash_generated_method = "02856AC1B9C5A948D1871240562CAF19")
     
 public final float getOrientation() {
@@ -1618,6 +1637,7 @@ public final float getOrientation() {
      * @see #AXIS_X
      * @see #AXIS_Y
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.843 -0500", hash_original_method = "630AA047225B25427528E4D32F567B17", hash_generated_method = "0A62A911682857734069A577612DF675")
     
 public final float getAxisValue(int axis) {
@@ -1628,6 +1648,7 @@ public final float getAxisValue(int axis) {
      * The number of pointers of data contained in this event.  Always
      * >= 1.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.845 -0500", hash_original_method = "2050CCC0293D52B162C880AD9BC3C6F6", hash_generated_method = "47EC7AB67BCA05539C0F93193D87B8C3")
     
 public final int getPointerCount() {
@@ -1642,6 +1663,7 @@ public final int getPointerCount() {
      * @param pointerIndex Raw index of pointer to retrieve.  Value may be from 0
      * (the first pointer that is down) to {@link #getPointerCount()}-1.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.847 -0500", hash_original_method = "43D465AFB7AC0153BC6ACD556C5FF613", hash_generated_method = "B99662569C98F0E25C05C1CC7A03F83D")
     
 public final int getPointerId(int pointerIndex) {
@@ -1664,6 +1686,7 @@ public final int getPointerId(int pointerIndex) {
      * @see #TOOL_TYPE_INDIRECT_FINGER
      * @see #TOOL_TYPE_INDIRECT_STYLUS
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.849 -0500", hash_original_method = "4F4E823E6A973C2A4D85C86C0A6A2D9D", hash_generated_method = "04D0FEBBB14D5C63A270CA193E393052")
     
 public final int getToolType(int pointerIndex) {
@@ -1695,6 +1718,7 @@ public final int findPointerIndex(int pointerId) {
      *
      * @see #AXIS_X
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.855 -0500", hash_original_method = "13E56CEAC1D2714A9A1790EF5117F935", hash_generated_method = "D7BF3F326723077266BC957BEF7B8FFD")
     
 public final float getX(int pointerIndex) {
@@ -1712,6 +1736,7 @@ public final float getX(int pointerIndex) {
      *
      * @see #AXIS_Y
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.857 -0500", hash_original_method = "9A0C47F653E064961B232F3274CD29C9", hash_generated_method = "71BE84DA9B597D86FE06FCA23AC26688")
     
 public final float getY(int pointerIndex) {
@@ -1731,6 +1756,7 @@ public final float getY(int pointerIndex) {
      *
      * @see #AXIS_PRESSURE
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.859 -0500", hash_original_method = "36E2BAC74F4F826870F428D93CA1D371", hash_generated_method = "853627536A376AE6FC7AA9CE30E14A34")
     
 public final float getPressure(int pointerIndex) {
@@ -1751,6 +1777,7 @@ public final float getPressure(int pointerIndex) {
      *
      * @see #AXIS_SIZE
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.862 -0500", hash_original_method = "50DE00A69645B3335E8383A50AB1EB05", hash_generated_method = "DF62F281166AEBA6756CB5BC80308CA9")
     
 public final float getSize(int pointerIndex) {
@@ -1767,6 +1794,7 @@ public final float getSize(int pointerIndex) {
      *
      * @see #AXIS_TOUCH_MAJOR
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.865 -0500", hash_original_method = "28BED69B39230D6E2E593658DA262948", hash_generated_method = "CB44CEA9AFDE439E2F1E70E386850A13")
     
 public final float getTouchMajor(int pointerIndex) {
@@ -1783,6 +1811,7 @@ public final float getTouchMajor(int pointerIndex) {
      *
      * @see #AXIS_TOUCH_MINOR
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.867 -0500", hash_original_method = "2C1FBE2BFEFC6BD6A6EFC25F55DD94B0", hash_generated_method = "0B2BD74B55548160B531E0B33B45A0C2")
     
 public final float getTouchMinor(int pointerIndex) {
@@ -1801,6 +1830,7 @@ public final float getTouchMinor(int pointerIndex) {
      *
      * @see #AXIS_TOOL_MAJOR
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.869 -0500", hash_original_method = "66B849A9DC257EF38185AFB935434C46", hash_generated_method = "F95037957A3376E9DFB6CECA49D01614")
     
 public final float getToolMajor(int pointerIndex) {
@@ -1819,6 +1849,7 @@ public final float getToolMajor(int pointerIndex) {
      *
      * @see #AXIS_TOOL_MINOR
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.872 -0500", hash_original_method = "F39564D767A71A1EAACBC920B100E436", hash_generated_method = "E5F85E9290E57191951525C54417B524")
     
 public final float getToolMinor(int pointerIndex) {
@@ -1840,6 +1871,7 @@ public final float getToolMinor(int pointerIndex) {
      *
      * @see #AXIS_ORIENTATION
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.874 -0500", hash_original_method = "A9038F286A5A1470BB26B4145360A2CC", hash_generated_method = "9BF3D41FE79DAC91CCF823B7928B0869")
     
 public final float getOrientation(int pointerIndex) {
@@ -1858,6 +1890,7 @@ public final float getOrientation(int pointerIndex) {
      * @see #AXIS_X
      * @see #AXIS_Y
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.877 -0500", hash_original_method = "3434CDF166CDB98F83BC4BA0F4722E7E", hash_generated_method = "E23B47FAC3D22052576FF15C6803046E")
     
 public final float getAxisValue(int axis, int pointerIndex) {
@@ -1907,6 +1940,7 @@ public final void getPointerProperties(int pointerIndex,
      *
      * @see KeyEvent#getMetaState()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.884 -0500", hash_original_method = "38A68962B5CFD92D43EE16A436EABCF2", hash_generated_method = "BA821D623441C0FC4B843BFB023046EF")
     
 public final int getMetaState() {
@@ -1924,6 +1958,7 @@ public final int getMetaState() {
      * @see #BUTTON_FORWARD
      * @see #BUTTON_BACK
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.886 -0500", hash_original_method = "C8458CE15D5B2817F47A4FD377CE1968", hash_generated_method = "1B458AB47B3A019583FCC3093E276097")
     
 public final int getButtonState() {
@@ -1939,6 +1974,7 @@ public final int getButtonState() {
      * @see getX()
      * @see #AXIS_X
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.888 -0500", hash_original_method = "6E457CC599C66DF6B9AC57A3DF3B8E7E", hash_generated_method = "597CB69258293954DEE2444596EE378C")
     
 public final float getRawX() {
@@ -1954,6 +1990,7 @@ public final float getRawX() {
      * @see getY()
      * @see #AXIS_Y
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.891 -0500", hash_original_method = "C18C1837908CE668DE325D32328DA600", hash_generated_method = "8E785BFC8053CFC68155ADB53AB44608")
     
 public final float getRawY() {
@@ -1968,6 +2005,7 @@ public final float getRawY() {
      *
      * @see #AXIS_X
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.893 -0500", hash_original_method = "32503B0D7203271814D12FFB8906664F", hash_generated_method = "14EDB92E48A1FE2A6848192BF9462171")
     
 public final float getXPrecision() {
@@ -1982,6 +2020,7 @@ public final float getXPrecision() {
      *
      * @see #AXIS_Y
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.897 -0500", hash_original_method = "77B44C5CFF493101D20AF55AA249AFB4", hash_generated_method = "2C1783A2FC429C6490226761633705BE")
     
 public final float getYPrecision() {
@@ -1996,6 +2035,7 @@ public final float getYPrecision() {
      *
      * @return Returns the number of historical points in the event.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.899 -0500", hash_original_method = "B4D273F4D2084C890DE19B631E3ED869", hash_generated_method = "7FDD08FA1737D3C8FF76FE80EEAFAB72")
     
 public final int getHistorySize() {
@@ -2012,6 +2052,7 @@ public final int getHistorySize() {
      * @see #getHistorySize
      * @see #getEventTime
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.902 -0500", hash_original_method = "4F37DFE9294EB232F86D1F83C2ADDC74", hash_generated_method = "A851AF9B1BB802307F420B87ED8B7DBC")
     
 public final long getHistoricalEventTime(int pos) {
@@ -2029,6 +2070,7 @@ public final long getHistoricalEventTime(int pos) {
      * @see #getX()
      * @see #AXIS_X
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.904 -0500", hash_original_method = "52641DCD8C1505610834B8CDD1492B06", hash_generated_method = "19AAD43E5A94488E256744F678A25D41")
     
 public final float getHistoricalX(int pos) {
@@ -2046,6 +2088,7 @@ public final float getHistoricalX(int pos) {
      * @see #getY()
      * @see #AXIS_Y
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.906 -0500", hash_original_method = "456D8725235AB4DBC45E47B4ADD23013", hash_generated_method = "D1C5BB213D8A282F9C2588371E83EE1E")
     
 public final float getHistoricalY(int pos) {
@@ -2063,6 +2106,7 @@ public final float getHistoricalY(int pos) {
      * @see #getPressure()
      * @see #AXIS_PRESSURE
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.909 -0500", hash_original_method = "E822398D8AD69E2A637D6F0BC07F61D8", hash_generated_method = "D51D0A816F48D35B65CD1BA1D510DAAF")
     
 public final float getHistoricalPressure(int pos) {
@@ -2080,6 +2124,7 @@ public final float getHistoricalPressure(int pos) {
      * @see #getSize()
      * @see #AXIS_SIZE
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.911 -0500", hash_original_method = "A43A8374A73078EDB84358D609B2C354", hash_generated_method = "5415F12F402061F5522BCA4D6AC33764")
     
 public final float getHistoricalSize(int pos) {
@@ -2097,6 +2142,7 @@ public final float getHistoricalSize(int pos) {
      * @see #getTouchMajor()
      * @see #AXIS_TOUCH_MAJOR
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.914 -0500", hash_original_method = "192AC6C55C0D7020BB0EA3AE5DE4FD65", hash_generated_method = "853B3A38656CEF199E13D7E6BCD1182A")
     
 public final float getHistoricalTouchMajor(int pos) {
@@ -2114,6 +2160,7 @@ public final float getHistoricalTouchMajor(int pos) {
      * @see #getTouchMinor()
      * @see #AXIS_TOUCH_MINOR
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.916 -0500", hash_original_method = "122C0ECAA119AC26B3F087E871FFA312", hash_generated_method = "D3CCDC95B1B9DAA4FDF306D58254673B")
     
 public final float getHistoricalTouchMinor(int pos) {
@@ -2131,6 +2178,7 @@ public final float getHistoricalTouchMinor(int pos) {
      * @see #getToolMajor()
      * @see #AXIS_TOOL_MAJOR
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.919 -0500", hash_original_method = "8097CEA35B3273816C6109CC76A9BC74", hash_generated_method = "6D9E65A18430A11AD52F88DB056755CC")
     
 public final float getHistoricalToolMajor(int pos) {
@@ -2148,6 +2196,7 @@ public final float getHistoricalToolMajor(int pos) {
      * @see #getToolMinor()
      * @see #AXIS_TOOL_MINOR
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.921 -0500", hash_original_method = "E0365AAE3D6BF704A796F5D4E7964FB9", hash_generated_method = "587D5AADFF69DF8E262EF1405C88E0C9")
     
 public final float getHistoricalToolMinor(int pos) {
@@ -2165,6 +2214,7 @@ public final float getHistoricalToolMinor(int pos) {
      * @see #getOrientation()
      * @see #AXIS_ORIENTATION
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.923 -0500", hash_original_method = "DC8FCE9CD404D08D0BFF0CC77CEE87C1", hash_generated_method = "DF7B472583F560FEA6FD9ED7C0853162")
     
 public final float getHistoricalOrientation(int pos) {
@@ -2184,6 +2234,7 @@ public final float getHistoricalOrientation(int pos) {
      * @see #AXIS_X
      * @see #AXIS_Y
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.926 -0500", hash_original_method = "697532A0192D8868F2E3AE618301BF20", hash_generated_method = "B22E498FF9732924826164858518B846")
     
 public final float getHistoricalAxisValue(int axis, int pos) {
@@ -2204,6 +2255,7 @@ public final float getHistoricalAxisValue(int axis, int pos) {
      * @see #getX(int)
      * @see #AXIS_X
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.928 -0500", hash_original_method = "8BFA09569623FF1F941D2134C3D47F02", hash_generated_method = "BCA1A9401C71FD53E79AA19C35D77354")
     
 public final float getHistoricalX(int pointerIndex, int pos) {
@@ -2224,6 +2276,7 @@ public final float getHistoricalX(int pointerIndex, int pos) {
      * @see #getY(int)
      * @see #AXIS_Y
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.930 -0500", hash_original_method = "9787FE8A43AC5153EC8D7EC463FC985B", hash_generated_method = "93E1612CB6D311B03E5FD0703ACC49DD")
     
 public final float getHistoricalY(int pointerIndex, int pos) {
@@ -2244,6 +2297,7 @@ public final float getHistoricalY(int pointerIndex, int pos) {
      * @see #getPressure(int)
      * @see #AXIS_PRESSURE
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.933 -0500", hash_original_method = "A8F703E0BCBA29F53C62C25AACD436ED", hash_generated_method = "252C97CE72516A9BCA7EE5DABB7C62A2")
     
 public final float getHistoricalPressure(int pointerIndex, int pos) {
@@ -2309,6 +2363,7 @@ public final float getHistoricalPressure(int pointerIndex, int pos) {
      * @see #getSize(int)
      * @see #AXIS_SIZE
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.935 -0500", hash_original_method = "66A9DA10859CF6933D658F61BE53F70F", hash_generated_method = "7BE64C47B3D0E881DBD3A3FFD89B1986")
     
 public final float getHistoricalSize(int pointerIndex, int pos) {
@@ -2329,6 +2384,7 @@ public final float getHistoricalSize(int pointerIndex, int pos) {
      * @see #getTouchMajor(int)
      * @see #AXIS_TOUCH_MAJOR
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.937 -0500", hash_original_method = "38D72D2E0F00AE5C39667CDDD41B271D", hash_generated_method = "E421D1DB97E5D29D03E0A0D4836E4B04")
     
 public final float getHistoricalTouchMajor(int pointerIndex, int pos) {
@@ -2349,6 +2405,7 @@ public final float getHistoricalTouchMajor(int pointerIndex, int pos) {
      * @see #getTouchMinor(int)
      * @see #AXIS_TOUCH_MINOR
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.941 -0500", hash_original_method = "F3D94A1F01A3ECEF6DEDEA9361640BF9", hash_generated_method = "795E7B6E16D3523E5612604E3F6C8F43")
     
 public final float getHistoricalTouchMinor(int pointerIndex, int pos) {
@@ -2369,6 +2426,7 @@ public final float getHistoricalTouchMinor(int pointerIndex, int pos) {
      * @see #getToolMajor(int)
      * @see #AXIS_TOOL_MAJOR
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.943 -0500", hash_original_method = "78FB77773CB43A5420D0F24849B540AD", hash_generated_method = "81999468B6025EB7D723C2F852E97B52")
     
 public final float getHistoricalToolMajor(int pointerIndex, int pos) {
@@ -2389,6 +2447,7 @@ public final float getHistoricalToolMajor(int pointerIndex, int pos) {
      * @see #getToolMinor(int)
      * @see #AXIS_TOOL_MINOR
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.946 -0500", hash_original_method = "4AB7745853006A3796DAD0E637CCA598", hash_generated_method = "F81E9736A5EC52512FB5ED93CA8E48AC")
     
 public final float getHistoricalToolMinor(int pointerIndex, int pos) {
@@ -2409,6 +2468,7 @@ public final float getHistoricalToolMinor(int pointerIndex, int pos) {
      * @see #getOrientation(int)
      * @see #AXIS_ORIENTATION
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.948 -0500", hash_original_method = "160C0106DB8A4C6FBAA9569ABA0D68E8", hash_generated_method = "8452C59FE1D08A00B23AC6FAFA75C375")
     
 public final float getHistoricalOrientation(int pointerIndex, int pos) {
@@ -2430,6 +2490,7 @@ public final float getHistoricalOrientation(int pointerIndex, int pos) {
      * @see #AXIS_X
      * @see #AXIS_Y
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.951 -0500", hash_original_method = "F645AABE3B2CF14D2790BA051F9F3FF1", hash_generated_method = "951370EAFA3AD7108D5C55E23D9CF0A7")
     
 public final float getHistoricalAxisValue(int axis, int pointerIndex, int pos) {
@@ -2471,6 +2532,7 @@ public final void getHistoricalPointerCoords(int pointerIndex, int pos,
      * @see #EDGE_RIGHT
      * @see #EDGE_BOTTOM
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.956 -0500", hash_original_method = "26EA400A9751805DFF1D4CEEB005645B", hash_generated_method = "07DFB8FE2306569E4B60247444B66A8A")
     
 public final int getEdgeFlags() {
@@ -2656,6 +2718,7 @@ public final MotionEvent clampNoHistory(float left, float top, float right, floa
      * Gets an integer where each pointer id present in the event is marked as a bit.
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.983 -0500", hash_original_method = "FBF170B15B2FFBEE1AB1D4E32A8773CA", hash_generated_method = "93AA0F25D200E62716740C67CCFEC35F")
     
 public final int getPointerIdBits() {

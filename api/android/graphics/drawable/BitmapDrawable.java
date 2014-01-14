@@ -175,6 +175,7 @@ private BitmapDrawable(BitmapState state, Resources res) {
     /**
      * Returns the paint used to render this drawable.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.043 -0500", hash_original_method = "29B9C66D2E3FF8CE986D27E62D842E86", hash_generated_method = "C3B46D1777DCA21FDF6977CF73B91FC6")
     
 public final Paint getPaint() {
@@ -184,6 +185,7 @@ public final Paint getPaint() {
     /**
      * Returns the bitmap used by this drawable to render. May be null.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.045 -0500", hash_original_method = "CDEEA354B6732B0C95C918F7ECA77F64", hash_generated_method = "6FC2F538D34A5C21D9536C0D23FAE615")
     
 public final Bitmap getBitmap() {
@@ -267,6 +269,7 @@ public void setTargetDensity(int density) {
      * See android.view.Gravity
      * @return the gravity applied to the bitmap
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.059 -0500", hash_original_method = "35E95FC787F9F24A49C5DE1ED0297F4C", hash_generated_method = "32A95249308553D39F2B55B97EB69838")
     
 public int getGravity() {
@@ -401,6 +404,7 @@ public void setTileModeXY(Shader.TileMode xmode, Shader.TileMode ymode) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.082 -0500", hash_original_method = "10D38B42FB036E8B57E4A209AB7F4ADC", hash_generated_method = "B88743EDE3AAAF7E3863625464132403")
     
 @Override
@@ -544,6 +548,7 @@ public void setTileModeXY(Shader.TileMode xmode, Shader.TileMode ymode) {
         a.recycle();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.100 -0500", hash_original_method = "6DB114FB8E950C38C4587167EE2392DA", hash_generated_method = "21AB0A052F6EA6AC14C0E8AE68C8FF19")
     
 @Override
@@ -551,6 +556,7 @@ public void setTileModeXY(Shader.TileMode xmode, Shader.TileMode ymode) {
         return mBitmapWidth;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.102 -0500", hash_original_method = "391FEC77F059693D96A6B7B3AE926494", hash_generated_method = "4C6E95AD1C54FB0FB2042DE89349F724")
     
 @Override
@@ -558,6 +564,7 @@ public void setTileModeXY(Shader.TileMode xmode, Shader.TileMode ymode) {
         return mBitmapHeight;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.105 -0500", hash_original_method = "9571905A182C10BB0B86009E34DE8EF4", hash_generated_method = "B97E52E400811FB0B91121E4F2CCB5CC")
     
 @Override
@@ -629,6 +636,7 @@ BitmapState(BitmapState bitmapState) {
             return new BitmapDrawable(this, res);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.138 -0500", hash_original_method = "9E7D7C67EAC365FF19BD4971762612A5", hash_generated_method = "3AB30668ED270F2EDF2E0129C706FE4D")
         
 @Override

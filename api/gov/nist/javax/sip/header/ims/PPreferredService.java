@@ -31,6 +31,7 @@ public PPreferredService()
         super(P_PREFERRED_SERVICE);
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:57.006 -0500", hash_original_method = "13CD5B55BBBCA0548D99A959291FFE7D", hash_generated_method = "6B6D27B1CD38111B325EFBAF0BC00AC3")
     
 @Override
@@ -64,6 +65,7 @@ public void setValue(String value) throws ParseException {
 
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:57.013 -0500", hash_original_method = "C9711D50FDDAB1BC6FA9D8BEA3306598", hash_generated_method = "2842ECCF63E9B5B0D67C0A2BA561F8D8")
     
 public String getApplicationIdentifiers() {
@@ -74,6 +76,7 @@ public String getApplicationIdentifiers() {
         return this.subAppIds;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:57.017 -0500", hash_original_method = "A7D1F6103283AF549702A3BD8A97DA85", hash_generated_method = "27F97AB6043CB4E046CD52AE7285A1C0")
     
 public String getSubserviceIdentifiers() {

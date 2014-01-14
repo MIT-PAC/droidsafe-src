@@ -151,6 +151,7 @@ public synchronized void deactivate() {
 
     // Get the magic number for the specified id in the mini-thumb file.
     // Returns 0 if the magic is not available.
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:26.653 -0500", hash_original_method = "30677CE09F50871FBAF560D52310B443", hash_generated_method = "8AEC188DF61CA3E360164AAD85C9F391")
     
 public synchronized long getMagic(long id) {
@@ -236,6 +237,7 @@ public synchronized void saveMiniThumbToFile(byte[] data, long id, long magic)
         }
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.497 -0400", hash_original_method = "782DC08BC67342494C7FCB80E02F8475", hash_generated_method = "7C8D42E961B65A1320F67311EEB7BE11")
     public synchronized byte [] getMiniThumbFromFile(long id, byte [] data) {
         addTaint(data[0]);

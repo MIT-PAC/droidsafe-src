@@ -9,11 +9,6 @@ import java.nio.BufferUnderflowException;
 import java.nio.ByteBuffer;
 import java.nio.CharBuffer;
 
-
-
-
-
-
 public abstract class CharsetDecoder {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.836 -0500", hash_original_field = "B0FB523B648357C2D209F8AF6CA69E55", hash_generated_field = "9EA234AF8E19378FF28F64776BC1B1AC")
 
@@ -29,17 +24,14 @@ public abstract class CharsetDecoder {
     private static final int FLUSH = 3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.847 -0500", hash_original_field = "A5A0742DE1C607C5AFC2D6D8C6DE846C", hash_generated_field = "529EF1EB47EC503C08AD8590AE0F62F5")
 
-
     private  float averageCharsPerByte;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.849 -0500", hash_original_field = "335B73EC7EF8375CB4CA97A0379D4E5D", hash_generated_field = "2DF37DC2E87CE8D294B5CF2F013FD634")
 
     private  float maxCharsPerByte;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.851 -0500", hash_original_field = "071AD032827EC07DCD0193396C176EE2", hash_generated_field = "220BF257D2CCF23A35C6D1D35FB3F79C")
 
-
     private  Charset cs;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.854 -0500", hash_original_field = "321407B0D07B357A2C1E6B0BC805BF74", hash_generated_field = "1214F64762553AD2B0BE51AAC36B64DE")
-
 
     private CodingErrorAction malformedInputAction;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.857 -0500", hash_original_field = "27CE0B153219039850616F66BE87462B", hash_generated_field = "60F320659477DF0A50B0661AEB74E53F")
@@ -47,10 +39,8 @@ public abstract class CharsetDecoder {
     private CodingErrorAction unmappableCharacterAction;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.859 -0500", hash_original_field = "C61D54B61607D94E0EEB3AC6825C82E9", hash_generated_field = "4FB9354D4FC1B3B8FECFC231454ED4BC")
 
-
     private String replacementChars;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.861 -0500", hash_original_field = "72D62D1933050B7AC2D9DFC43782C64E", hash_generated_field = "4BAC49709EDEAEFDD9E07400E0F02406")
-
 
     private int status;
 
@@ -94,6 +84,7 @@ protected CharsetDecoder(Charset charset, float averageCharsPerByte, float maxCh
      * Returns the average number of characters created by this decoder for a
      * single input byte.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.867 -0500", hash_original_method = "835453458CD254EFEDF140BA3E3A0055", hash_generated_method = "FEB808B4E51BFBC31EDC37607902D59D")
     
 public final float averageCharsPerByte() {
@@ -103,6 +94,7 @@ public final float averageCharsPerByte() {
     /**
      * Returns the {@link Charset} which this decoder uses.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.869 -0500", hash_original_method = "B98730A31745049759B27FC27542555A", hash_generated_method = "1B3A1A60F8135EF363B08F511D4AE81E")
     
 public final Charset charset() {
@@ -270,6 +262,7 @@ private CharBuffer allocateMore(CharBuffer output) {
      *             method threw an <code>BufferUnderflowException</code> or
      *             <code>BufferOverflowException</code>.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.881 -0500", hash_original_method = "40037F62CA1EB410AEAF236C6BDF7EBA", hash_generated_method = "8696A9EA77812DC900E306EDA0974CF9")
     
 public final CoderResult decode(ByteBuffer in, CharBuffer out,
@@ -388,6 +381,7 @@ protected abstract CoderResult decodeLoop(ByteBuffer in, CharBuffer out);
      *             if insufficient bytes have been read to determine the
      *             charset.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.886 -0500", hash_original_method = "FA8F0AC80549BCE47D29C328C4E0F049", hash_generated_method = "E29F4E85BA1EF1A3A600E3063251DEF9")
     
 public Charset detectedCharset() {
@@ -449,6 +443,7 @@ public final CoderResult flush(CharBuffer out) {
      * @return <code>CoderResult.UNDERFLOW</code> or
      *         <code>CoderResult.OVERFLOW</code>.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.891 -0500", hash_original_method = "6025E36E88B99911562F9F8AEE21E28F", hash_generated_method = "1E04149446A6B36F49CA84A2DCCB87EA")
     
 protected CoderResult implFlush(CharBuffer out) {
@@ -552,6 +547,7 @@ public boolean isCharsetDetected() {
      * Returns this decoder's <code>CodingErrorAction</code> when malformed input
      * occurred during the decoding process.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.907 -0500", hash_original_method = "14FFD5293B4145E0D4BC6D81F9598816", hash_generated_method = "B62894BCE731B87F0E58598D87803EE2")
     
 public CodingErrorAction malformedInputAction() {
@@ -562,6 +558,7 @@ public CodingErrorAction malformedInputAction() {
      * Returns the maximum number of characters which can be created by this
      * decoder for one input byte, must be positive.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.909 -0500", hash_original_method = "1F4ECBF7B137C80889EF1BC2E2A0CCD1", hash_generated_method = "DC866DD1CE1C44A848F8CB588384E580")
     
 public final float maxCharsPerByte() {
@@ -619,6 +616,7 @@ public final CharsetDecoder onUnmappableCharacter(CodingErrorAction newAction) {
     /**
      * Returns the replacement string, which is never null or empty.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.918 -0500", hash_original_method = "30CB7E3F60490326C9B63C38EC65670E", hash_generated_method = "818A655877260D9ED8122E58AFE6F930")
     
 public final String replacement() {
@@ -666,6 +664,7 @@ public final CharsetDecoder replaceWith(String replacement) {
      *
      * @return this decoder.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.923 -0500", hash_original_method = "81D7771694F65FD718A9EEA5159D0F76", hash_generated_method = "948F67A0BEFA3B942C2F6F1786ADF726")
     
 public final CharsetDecoder reset() {
@@ -678,6 +677,7 @@ public final CharsetDecoder reset() {
      * Returns this decoder's <code>CodingErrorAction</code> when an unmappable
      * character error occurred during the decoding process.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.925 -0500", hash_original_method = "01254405DC3888434A269A87FF2AF4FB", hash_generated_method = "1F078C226DD272E4C9A8DABC7770CFCF")
     
 public CodingErrorAction unmappableCharacterAction() {

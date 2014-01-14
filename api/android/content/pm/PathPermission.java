@@ -50,12 +50,14 @@ public PathPermission(Parcel src) {
         mWritePermission = src.readString();
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:44.988 -0500", hash_original_method = "5C94FD95ADD3C0054247C1BF6F500E4F", hash_generated_method = "51517C7BA362FC46CE56AE764CAB5F71")
     
 public String getReadPermission() {
         return mReadPermission;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:44.990 -0500", hash_original_method = "7A0A16A9FA1EB10AD9D087C65A3EFFB1", hash_generated_method = "CC80FDFE5D30AF8A14D1012901637902")
     
 public String getWritePermission() {

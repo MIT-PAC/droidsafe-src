@@ -266,6 +266,7 @@ protected SIPTransaction(SIPTransactionStack newParentStack,
 
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:13.797 -0500", hash_original_method = "F0D7866FE2BBCD680DCAF285C3141724", hash_generated_method = "C76B605087214C261BD34AB52FA97DDC")
     
 public String getBranchId() {
@@ -333,6 +334,7 @@ public void setOriginalRequest(SIPRequest newOriginalRequest) {
      *
      * @return -- the original Request associated with this transaction.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:13.817 -0500", hash_original_method = "E55FA929D44B8592CC293995403E5C80", hash_generated_method = "3445A4A5351164C7D07F1537CFB52FCC")
     
 public SIPRequest getOriginalRequest() {
@@ -344,6 +346,7 @@ public SIPRequest getOriginalRequest() {
      *
      * @return the request that generated this transaction.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:13.822 -0500", hash_original_method = "77DF64C3C6C54874FB57EB6F51047938", hash_generated_method = "147BA6BC6D1679C5064134534BAD968E")
     
 public Request getRequest() {
@@ -391,6 +394,7 @@ public final boolean isByeTransaction() {
      * @return Encapsulated MessageChannel.
      *
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:13.833 -0500", hash_original_method = "4873376BBCB3E7C4172E860864FE5E6F", hash_generated_method = "823E4EAD675179C9669F4BB534D4B0A6")
     
 public MessageChannel getMessageChannel() {
@@ -414,6 +418,7 @@ public final void setBranch(String newBranch) {
      *
      * @return Branch parameter for this transaction.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:13.839 -0500", hash_original_method = "8CF2A0009E9AA335F31D8DE930BE32FD", hash_generated_method = "27B91CDA7AFC2B6991BA8D593E23ECA5")
     
 public final String getBranch() {
@@ -428,6 +433,7 @@ public final String getBranch() {
      *
      * @return the method of the request for the transaction.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:13.842 -0500", hash_original_method = "691C5451C67574E660997BC2056A5F23", hash_generated_method = "911549658842C84FE5B5B31D8B5FB4F0")
     
 public final String getMethod() {
@@ -439,6 +445,7 @@ public final String getMethod() {
      *
      * @return the cseq of the request used to create the transaction.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:13.846 -0500", hash_original_method = "01D6A6E462A394F38C502658C03C7A92", hash_generated_method = "252059D8C2090BC4C66DE3866B8C6CFF")
     
 public final long getCSeq() {
@@ -482,6 +489,7 @@ public void setState(TransactionState newState) {
      *
      * @return Current state of this transaction.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:13.853 -0500", hash_original_method = "61525F5D630175E526789474B6CFB85F", hash_generated_method = "09130B50D1C08D40C47796C8BF125D24")
     
 public TransactionState getState() {
@@ -597,36 +605,42 @@ public final boolean isTerminated() {
         return getState() == TERMINATED_STATE;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:13.878 -0500", hash_original_method = "DAE59CB64F6674AD8098A54E7D2B1281", hash_generated_method = "4DC8F0ECD3E3CACF50E47B2D810C8F1C")
     
 public String getHost() {
         return encapsulatedChannel.getHost();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:13.880 -0500", hash_original_method = "20977D5C5AB9D45A39447595F1157FC6", hash_generated_method = "507FC82E65356DC65BA9C23BE4E5CBED")
     
 public String getKey() {
         return encapsulatedChannel.getKey();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:13.883 -0500", hash_original_method = "6EB6BE0A65CE407282FBCFAA26A62D3F", hash_generated_method = "D9CF932B519D9E316816E8CDD0051E9E")
     
 public int getPort() {
         return encapsulatedChannel.getPort();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:13.886 -0500", hash_original_method = "28698FFA104E0D8C500A173E95CB7CFA", hash_generated_method = "12CE0678EAEEBAD384CCFE5DA73F66F3")
     
 public SIPTransactionStack getSIPStack() {
         return (SIPTransactionStack) sipStack;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:13.889 -0500", hash_original_method = "4D24925E393EE43229BBE6696196C496", hash_generated_method = "59A6C2DC2C88854B5657B22B48B044AB")
     
 public String getPeerAddress() {
         return this.peerAddress;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:13.891 -0500", hash_original_method = "A1F90D00B31019C3C4E0EAACEB8565BB", hash_generated_method = "313ACA6848B1E3FDD2DB6D73F242E097")
     
 public int getPeerPort() {
@@ -634,30 +648,35 @@ public int getPeerPort() {
     }
 
     // @@@ hagai
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:13.894 -0500", hash_original_method = "D72195827AEF451FEF473FAF2B8F43B1", hash_generated_method = "E18AA1E8DED399938A6D9ACF00727C62")
     
 public int getPeerPacketSourcePort() {
         return this.peerPacketSourcePort;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:13.897 -0500", hash_original_method = "46454A41BD800FBE664B92E119C6A2FF", hash_generated_method = "3FBEE0ABD8642BA205D32D30763BAD49")
     
 public InetAddress getPeerPacketSourceAddress() {
         return this.peerPacketSourceAddress;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:13.900 -0500", hash_original_method = "DE04102C176E73364B597E64B8D5F233", hash_generated_method = "DAEEF4226C7FC077515EE39E4DE21C84")
     
 protected InetAddress getPeerInetAddress() {
         return this.peerInetAddress;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:13.903 -0500", hash_original_method = "DB79607DA3ACB5FA2D24428DF2713F98", hash_generated_method = "810EC1C4B25C89BA8602B83249B3FE8D")
     
 protected String getPeerProtocol() {
         return this.peerProtocol;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:13.905 -0500", hash_original_method = "AEF0860991248E9299E1C6DDE1EF560C", hash_generated_method = "ABB95C087721D69D5578A647213128EC")
     
 public String getTransport() {
@@ -675,6 +694,7 @@ public boolean isReliable() {
      * underlying message channel, and adds a branch parameter to it for this
      * transaction.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:13.912 -0500", hash_original_method = "088E950799411477D094809B385ED56E", hash_generated_method = "242F3F79AEC11F050B31F9FA00D3F037")
     
 public Via getViaHeader() {
@@ -851,6 +871,7 @@ public abstract void setDialog(SIPDialog sipDialog, String dialogId);
      *
      * @return the integer value of the retransmit timer in milliseconds.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:13.940 -0500", hash_original_method = "A1D654E2B8EB18DBD9E2FBE3DBA84F3D", hash_generated_method = "9691FC9CA98E17379AA2D0F96C500679")
     
 public int getRetransmitTimer() {
@@ -860,6 +881,7 @@ public int getRetransmitTimer() {
     /**
      * Get the host to assign for an outgoing Request via header.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:13.943 -0500", hash_original_method = "310B5DE4F217FB57953AC74F889ED704", hash_generated_method = "5EB53C68514BA8932BC6A346F16B5F85")
     
 public String getViaHost() {
@@ -874,6 +896,7 @@ public String getViaHost() {
      * @return the last response received (for client transactions) or sent (for
      *         server transactions).
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:13.945 -0500", hash_original_method = "025E14F038A1EDFF743C73F970E03870", hash_generated_method = "E4142FBCF67ABA0096A56A3990E0FF25")
     
 public SIPResponse getLastResponse() {
@@ -883,6 +906,7 @@ public SIPResponse getLastResponse() {
     /**
      * Get the JAIN interface response
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:13.948 -0500", hash_original_method = "260B447AD36FE2CA2411AAAD920B4F1F", hash_generated_method = "E443F8A4E116BCEC0B4534869B57F21C")
     
 public Response getResponse() {
@@ -892,6 +916,7 @@ public Response getResponse() {
     /**
      * Get the transaction Id.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:13.951 -0500", hash_original_method = "AB08BB44F7439305FB61E3E9EFAC9224", hash_generated_method = "4EDF50967268A6A4DFEC18CA675CB679")
     
 public String getTransactionId() {
@@ -913,6 +938,7 @@ public int hashCode() {
     /**
      * Get the port to assign for the via header of an outgoing message.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:13.957 -0500", hash_original_method = "F3BD37ECEE52D7438ECD340DC4DAF3CA", hash_generated_method = "44A0ECDA3D2FEB42E8E92142A5BE3B2B")
     
 public int getViaPort() {
@@ -1073,6 +1099,7 @@ public boolean isSecure() {
         return encapsulatedChannel.isSecure();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:13.973 -0500", hash_original_method = "9C4DCEACA96616F074242810B487B970", hash_generated_method = "9264F5348D3D863E4D16EA3CF66D3FA7")
     
 public MessageProcessor getMessageProcessor() {
@@ -1102,6 +1129,7 @@ public void setApplicationData(Object applicationData) {
      *
      * @return stored application data.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:13.979 -0500", hash_original_method = "5F924FC61375970A4DC758380BEBFF0F", hash_generated_method = "65575224A94F45AA5C180B0ED3AF02CA")
     
 public Object getApplicationData() {
@@ -1125,6 +1153,7 @@ public void setEncapsulatedChannel(MessageChannel messageChannel) {
      *
      * @return the SipProvider for the transaction.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:13.986 -0500", hash_original_method = "38ECF920BD32EC6B95BB00C4AAD637BA", hash_generated_method = "98E3B41A1F0F54C8AE425DB5D236C1B3")
     
 public SipProviderImpl getSipProvider() {
@@ -1306,6 +1335,7 @@ protected synchronized boolean testAndSetTransactionTerminatedEvent() {
         return retval;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:14.010 -0500", hash_original_method = "0D2015A100DFE7954256C577DAEBD143", hash_generated_method = "0BD975F8A4F112F040060C58FDC61C03")
     
 public String getCipherSuite() throws UnsupportedOperationException {
@@ -1319,6 +1349,7 @@ public String getCipherSuite() throws UnsupportedOperationException {
 
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:14.013 -0500", hash_original_method = "1BD353D03C47A7F0291FB8AF92EA1899", hash_generated_method = "576EC9E1E6349C16601A0DC1EA2A1E3A")
     
 public java.security.cert.Certificate[] getLocalCertificates() throws UnsupportedOperationException {
@@ -1331,6 +1362,7 @@ public java.security.cert.Certificate[] getLocalCertificates() throws Unsupporte
         } else throw new UnsupportedOperationException("Not a TLS channel");
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:14.016 -0500", hash_original_method = "425975E25339AF497E9130895A1F6EC3", hash_generated_method = "2E9B9EA9638D1ECE5B87DF892DC873BF")
     
 public java.security.cert.Certificate[] getPeerCertificates() throws SSLPeerUnverifiedException {

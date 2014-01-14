@@ -91,6 +91,7 @@ Sensor() {
     	addTaint(type);
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public String getName() {
         String str = new String();
         str.addTaint(getTaint());
@@ -98,6 +99,7 @@ Sensor() {
         //return mName;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public String getVendor() {
         String str = new String();
         str.addTaint(getTaint());
@@ -105,36 +107,43 @@ Sensor() {
         //return mVendor;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getType() {
     	return getTaintInt();
         //return mType;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getVersion() {
     	return getTaintInt();
         //return mVersion;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public float getMaximumRange() {
     	return getTaintFloat();
         //return mMaxRange;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public float getResolution() {
     	return getTaintInt();
         //return mResolution;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public float getPower() {
     	return getTaintFloat();
         //return mPower;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getMinDelay() {
     	return getTaintInt();
         //return mMinDelay;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     int getHandle() {
     	return getTaintInt();
         //return mHandle;

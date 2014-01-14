@@ -225,6 +225,7 @@ synchronized void createSocket(int aPort, InetAddress addr) throws SocketExcepti
      * @return the remote address this socket is connected to or {@code null} if
      *         this socket is not connected.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.623 -0500", hash_original_method = "9059089CB1C35AC3C53D636B58746A1E", hash_generated_method = "496B242BE9E9241FCB1317169287B698")
     
 public InetAddress getInetAddress() {
@@ -238,6 +239,7 @@ public InetAddress getInetAddress() {
      * @return the local address to which this socket is bound to or {@code
      *         null} if this socket is closed.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.626 -0500", hash_original_method = "120EDBD12BFFA2CD78689E1CCCEFC0A6", hash_generated_method = "A531F469508AA52D412D092323D2C43A")
     
 public InetAddress getLocalAddress() {
@@ -256,6 +258,7 @@ public InetAddress getLocalAddress() {
      * @return the local port of this socket or {@code -1} if this socket is
      *         closed and {@code 0} if it is unbound.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.628 -0500", hash_original_method = "C20A7438B6018D8C8B6C316459831E1B", hash_generated_method = "E91F065498979E799788353E3516CE74")
     
 public int getLocalPort() {
@@ -274,6 +277,7 @@ public int getLocalPort() {
      * @return the remote port of this socket. The return value {@code -1}
      *         indicates that this socket is not connected.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.631 -0500", hash_original_method = "A5F7344FAECBE0D6DB15D1F6E7BEBC6E", hash_generated_method = "8D4984D37D0017078DF4701090E35F25")
     
 public int getPort() {
@@ -294,6 +298,7 @@ boolean isMulticastSocket() {
     /**
      * Returns this socket's {@link SocketOptions#SO_RCVBUF receive buffer size}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.635 -0500", hash_original_method = "1025A74ACDCA065D38BE1D18813D43DB", hash_generated_method = "32F366297DF71FA9F0B2AF234AADD73F")
     
 public synchronized int getReceiveBufferSize() throws SocketException {
@@ -304,6 +309,7 @@ public synchronized int getReceiveBufferSize() throws SocketException {
     /**
      * Returns this socket's {@link SocketOptions#SO_SNDBUF send buffer size}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.638 -0500", hash_original_method = "D220B9D2C157A98A9F2FC338F369BDAA", hash_generated_method = "86CA95F852B8B49D0A81653B692ADA34")
     
 public synchronized int getSendBufferSize() throws SocketException {
@@ -317,6 +323,7 @@ public synchronized int getSendBufferSize() throws SocketException {
      * @throws SocketException
      *                if an error occurs while getting the option value.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.642 -0500", hash_original_method = "E87267C7B03A68795BE159270DE33B7D", hash_generated_method = "9F7A1F60E76959A75DD2FB96D8E81523")
     
 public synchronized int getSoTimeout() throws SocketException {
@@ -594,6 +601,7 @@ public boolean isConnected() {
      * Returns the {@code SocketAddress} this socket is connected to, or null for an unconnected
      * socket.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.687 -0500", hash_original_method = "7C698472BF26D61A7917F4B5238C5FF7", hash_generated_method = "C1CDFAAC803588FC140B6196FA164411")
     
 public SocketAddress getRemoteSocketAddress() {
@@ -606,6 +614,7 @@ public SocketAddress getRemoteSocketAddress() {
     /**
      * Returns the {@code SocketAddress} this socket is bound to, or null for an unbound socket.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.689 -0500", hash_original_method = "AE126A441E32CF7358FEDD7A95BAD391", hash_generated_method = "67B8A39634FC3A72D60F6B588EC9B04B")
     
 public SocketAddress getLocalSocketAddress() {
@@ -643,6 +652,7 @@ public void setReuseAddress(boolean reuse) throws SocketException {
      * @throws SocketException
      *             if the socket is closed or the option is invalid.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.695 -0500", hash_original_method = "8920D58954E3583481E89192EF874E86", hash_generated_method = "4750294BF903E7A0F86FCB8F7F2519DE")
     
 public boolean getReuseAddress() throws SocketException {
@@ -674,6 +684,7 @@ public void setBroadcast(boolean broadcast) throws SocketException {
      * @throws SocketException
      *             if the socket is closed or the option is invalid.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.700 -0500", hash_original_method = "2CF01D838FE277D7A2E75EEBFE7DA27F", hash_generated_method = "5364AA70FB3448070A099B225DE96FAD")
     
 public boolean getBroadcast() throws SocketException {
@@ -704,6 +715,7 @@ public void setTrafficClass(int value) throws SocketException {
      * @throws SocketException
      *             if the socket is closed or the option is invalid.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.704 -0500", hash_original_method = "2A65749565A2F95D7C49F3E7C9DCBDEC", hash_generated_method = "4001FCD91A647FD0257B69CE326B93A5")
     
 public int getTrafficClass() throws SocketException {
@@ -729,6 +741,7 @@ public boolean isClosed() {
      * In practice, this means that the socket must have been created by
      * {@link java.nio.channels.DatagramChannel#open}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.709 -0500", hash_original_method = "4DA7A00C8A23C7197F09A02190FE9E45", hash_generated_method = "7BD33AE19ADB871FFFC7F122EDF8FC59")
     
 public DatagramChannel getChannel() {
@@ -738,6 +751,7 @@ public DatagramChannel getChannel() {
     /**
      * @hide internal use only
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.712 -0500", hash_original_method = "90C19CEBA6BBC20B430C1F399D6443A6", hash_generated_method = "703D6C341A8C148AF2135A8461C15924")
     
 public final FileDescriptor getFileDescriptor$() {

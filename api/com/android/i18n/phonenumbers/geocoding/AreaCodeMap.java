@@ -56,7 +56,8 @@ private static int getSizeOfAreaCodeMapStorage(AreaCodeMapStorageStrategy mapSto
 public AreaCodeMap() {}
 
   // @VisibleForTesting
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.569 -0500", hash_original_method = "2F443A9F7F25B3F1F0013A418F926218", hash_generated_method = "2F443A9F7F25B3F1F0013A418F926218")
+  @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.569 -0500", hash_original_method = "2F443A9F7F25B3F1F0013A418F926218", hash_generated_method = "2F443A9F7F25B3F1F0013A418F926218")
     
 AreaCodeMapStorageStrategy getAreaCodeMapStorage() {
     return areaCodeMapStorage;
@@ -80,7 +81,8 @@ private AreaCodeMapStorageStrategy createFlyweightMapStorage() {
    * make this method quite expensive.
    */
   // @VisibleForTesting
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.581 -0500", hash_original_method = "F7090ADB0D57C526EAAF391F3C19F58E", hash_generated_method = "F7090ADB0D57C526EAAF391F3C19F58E")
+  @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.581 -0500", hash_original_method = "F7090ADB0D57C526EAAF391F3C19F58E", hash_generated_method = "F7090ADB0D57C526EAAF391F3C19F58E")
     
 AreaCodeMapStorageStrategy getSmallerMapStorage(SortedMap<Integer, String> areaCodeMap) {
     try {

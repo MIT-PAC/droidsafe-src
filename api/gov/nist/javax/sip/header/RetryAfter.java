@@ -105,6 +105,7 @@ public void setRetryAfter(int retryAfter) throws InvalidArgumentException {
      *
      */
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.921 -0500", hash_original_method = "2986C3BA8F6864799163ED0F6663DF18", hash_generated_method = "1C3CDEEF56F10DD210E8B5582AD6DC07")
     
 public int getRetryAfter() {
@@ -118,6 +119,7 @@ public int getRetryAfter() {
      * is available.
      */
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.924 -0500", hash_original_method = "D7C1F8AAD3D2F40DD04B72C74A7D0B69", hash_generated_method = "E40F10878D62F1009133973700BC0B5C")
     
 public String getComment() {
@@ -167,6 +169,7 @@ public void setDuration(int duration) throws InvalidArgumentException {
      *
      */
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.933 -0500", hash_original_method = "B3E153B821BFB44B99CC6101FC6E67A6", hash_generated_method = "2D478A4C5720BF8E8855ACA86DB46240")
     
 public int getDuration() {

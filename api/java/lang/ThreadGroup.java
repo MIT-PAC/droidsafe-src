@@ -387,6 +387,7 @@ private int enumerateGeneric(Object[] enumeration, boolean recurse, int enumerat
      *
      * @see #setMaxPriority
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.741 -0500", hash_original_method = "DB664BE89D62AA134945B6EEF3A0CB00", hash_generated_method = "C38123077310F5EA1712336BF4D3A048")
     
 public final int getMaxPriority() {
@@ -398,6 +399,7 @@ public final int getMaxPriority() {
      *
      * @return the group's name
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.743 -0500", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "CEAA3BC43A9BFF97F5638C3D9028D82D")
     
 public final String getName() {
@@ -410,6 +412,7 @@ public final String getName() {
      *
      * @return the parent
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.746 -0500", hash_original_method = "8A85A1BC7F9CDC3D0187C50787EE4700", hash_generated_method = "AE4706C9EC29F10794934D03E51214FB")
     
 public final ThreadGroup getParent() {

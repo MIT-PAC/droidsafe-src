@@ -29,7 +29,8 @@ public static void setDefaultDensity(int density) {
         sDefaultDensity = density;
     }
     
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:22.724 -0500", hash_original_method = "E8FCDB013EBE57EEE864D06A44E64265", hash_generated_method = "B3DA9FCCEA9F2AB0232A3F5C8CDBC9F7")
+    /*package*/ @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:22.724 -0500", hash_original_method = "E8FCDB013EBE57EEE864D06A44E64265", hash_generated_method = "B3DA9FCCEA9F2AB0232A3F5C8CDBC9F7")
     
 static int getDefaultDensity() {
         if (sDefaultDensity >= 0) {
@@ -137,6 +138,7 @@ public static Bitmap createBitmap(Bitmap src) {
      * @param width    The number of pixels in each row
      * @param height   The number of rows
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:22.789 -0500", hash_original_method = "FDCB5D0AAFA9E01A4FEEBED763708DF4", hash_generated_method = "0310C45601B1271997169FB3A2B77AE7")
     
 public static Bitmap createBitmap(Bitmap source, int x, int y, int width, int height) {
@@ -161,6 +163,7 @@ public static Bitmap createBitmap(Bitmap source, int x, int y, int width, int he
      * @throws IllegalArgumentException if the x, y, width, height values are
      *         outside of the dimensions of the source bitmap.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:22.792 -0500", hash_original_method = "2890F109635B7BA47A6C3B31AD4C0C33", hash_generated_method = "5E5AAE5AD4DB8799AE28E84D198E7FB9")
     
 public static Bitmap createBitmap(Bitmap source, int x, int y, int width, int height,
@@ -585,7 +588,8 @@ Bitmap(int nativeBitmap, byte[] buffer, boolean isMutable, byte[] ninePatchChunk
 		//Doesn't exist in the real class but was showing up in specdump
 	}
     
-	public int getDensity() {
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    public int getDensity() {
 		return getTaintInt();
         //return mDensity;
     }
@@ -649,6 +653,7 @@ public final boolean isRecycled() {
      * 
      * @return The current generation ID for this bitmap.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:22.741 -0500", hash_original_method = "9DF0E31331C580F9A696941C282E8CDA", hash_generated_method = "85760E95A75AA3C421422E07B28E3124")
     
 public int getGenerationId() {
@@ -765,6 +770,7 @@ Bitmap var73F89FAC8F369DF0913D10C37C1E0EA1_36661561 =         b;
      * Returns an optional array of private data, used by the UI system for
      * some bitmaps. Not intended to be called by applications.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:22.804 -0500", hash_original_method = "FE9BA3F148B3AC85DF389A396D130B66", hash_generated_method = "97032EFFCF25517FA2368B748F52B616")
     
 public byte[] getNinePatchChunk() {
@@ -812,12 +818,14 @@ public final boolean isMutable() {
         return mIsMutable;
     }
     
-	public int getWidth() {
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    public int getWidth() {
 		//Synthetic method in order to track width taints, which are managed in native code
 		return getTaintInt();
 	}
     
-	public int getHeight() {
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    public int getHeight() {
 		//Synthetic method in order to track height taints, which are managed in native code
 		return getTaintInt();
 	}
@@ -826,6 +834,7 @@ public final boolean isMutable() {
      * Convenience for calling {@link #getScaledWidth(int)} with the target
      * density of the given {@link Canvas}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:22.825 -0500", hash_original_method = "7233800DBE61288AC88E6F84763631F6", hash_generated_method = "ACC16BEE4B4E788185BD7EA076BF51AA")
     
 public int getScaledWidth(Canvas canvas) {
@@ -836,6 +845,7 @@ public int getScaledWidth(Canvas canvas) {
      * Convenience for calling {@link #getScaledHeight(int)} with the target
      * density of the given {@link Canvas}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:22.828 -0500", hash_original_method = "25E674A6C63D1170FDA7E606406CA68F", hash_generated_method = "11AC57182B11926AAE99738B571306AD")
     
 public int getScaledHeight(Canvas canvas) {
@@ -846,6 +856,7 @@ public int getScaledHeight(Canvas canvas) {
      * Convenience for calling {@link #getScaledWidth(int)} with the target
      * density of the given {@link DisplayMetrics}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:22.830 -0500", hash_original_method = "1717C0FEBD5DCA9C8E6AC6E449CF9117", hash_generated_method = "6CCE0902C57801B6AB082F09CC1E5582")
     
 public int getScaledWidth(DisplayMetrics metrics) {
@@ -856,6 +867,7 @@ public int getScaledWidth(DisplayMetrics metrics) {
      * Convenience for calling {@link #getScaledHeight(int)} with the target
      * density of the given {@link DisplayMetrics}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:22.832 -0500", hash_original_method = "2419686B3EB221BCF5B58D4D017B048F", hash_generated_method = "6CF8E9503B1268E64CA3310E5FE67B18")
     
 public int getScaledHeight(DisplayMetrics metrics) {
@@ -869,6 +881,7 @@ public int getScaledHeight(DisplayMetrics metrics) {
      * @param targetDensity The density of the target canvas of the bitmap.
      * @return The scaled width of this bitmap, according to the density scale factor.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:22.834 -0500", hash_original_method = "8DEB28B38EE84627DD4FE42858F9882C", hash_generated_method = "0E36F2EEED524BD0FBB360B323E5C9D3")
     
 public int getScaledWidth(int targetDensity) {
@@ -882,6 +895,7 @@ public int getScaledWidth(int targetDensity) {
      * @param targetDensity The density of the target canvas of the bitmap.
      * @return The scaled height of this bitmap, according to the density scale factor.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:22.837 -0500", hash_original_method = "936A1164B3B30000BDF78CB4ABE6FDD9", hash_generated_method = "F67900B636697F1C70C9A3A00376CBD4")
     
 public int getScaledHeight(int targetDensity) {
@@ -896,6 +910,7 @@ public int getScaledHeight(int targetDensity) {
      *
      * @return number of bytes between rows of the native bitmap pixels.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:22.841 -0500", hash_original_method = "12640FDEC394A62871A05E7C4EB570D4", hash_generated_method = "BBFD07EE1F9CFA496DF11A915661C176")
     
 public final int getRowBytes() {
@@ -905,6 +920,7 @@ public final int getRowBytes() {
     /**
      * Returns the number of bytes used to store this bitmap's pixels.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:22.843 -0500", hash_original_method = "64813EB6D6A92E85FDB72E109CDAF838", hash_generated_method = "CF9E6B9E7EE252B92066038619B7CDBF")
     
 public final int getByteCount() {
@@ -958,6 +974,7 @@ public void eraseColor(int c) {
      * @return     The argb {@link Color} at the specified coordinate
      * @throws IllegalArgumentException if x, y exceed the bitmap's bounds
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:22.854 -0500", hash_original_method = "C5A0202C662F7E6C05A2B74C54AEFFD9", hash_generated_method = "EFFA5266C3DD741088C782B66E1F1119")
     
 public int getPixel(int x, int y) {

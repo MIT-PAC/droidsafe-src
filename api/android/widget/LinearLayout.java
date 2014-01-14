@@ -183,6 +183,7 @@ public LinearLayout(Context context, AttributeSet attrs) {
         return getTaintBoolean();
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getShowDividers() {
         return getTaintInt();
     }
@@ -202,10 +203,12 @@ public LinearLayout(Context context, AttributeSet attrs) {
         addTaint(padding);
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getDividerPadding() {
         return getTaintInt();
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getDividerWidth() {
         return getTaintInt();
     }
@@ -294,6 +297,7 @@ public boolean isMeasureWithLargestChildEnabled() {
         mUseLargestChild = enabled;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:04.913 -0500", hash_original_method = "8677A7AE77B37457B2CE24BC40A0B2AA", hash_generated_method = "5FF2804CC39F25A1046DE4EB2474B683")
     
 @Override
@@ -354,6 +358,7 @@ public boolean isMeasureWithLargestChildEnabled() {
      *   part of a larger layout that is baseline aligned, or -1 if none has
      *   been set.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:04.915 -0500", hash_original_method = "90F550BFDC49A6587A7A8440E339A132", hash_generated_method = "60E71E80EA1054765A7B4F72AC229618")
     
 public int getBaselineAlignedChildIndex() {
@@ -386,6 +391,7 @@ public int getBaselineAlignedChildIndex() {
      * @param index the child's index
      * @return the child at the specified index
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:04.919 -0500", hash_original_method = "87FE8C209A68A97BDFF0666E4CF673D3", hash_generated_method = "87FE8C209A68A97BDFF0666E4CF673D3")
     
 View getVirtualChildAt(int index) {
@@ -401,6 +407,7 @@ View getVirtualChildAt(int index) {
      *
      * @return the virtual number of children
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:04.921 -0500", hash_original_method = "04A766EF9FA40CCD4344368D3178C5E7", hash_generated_method = "04A766EF9FA40CCD4344368D3178C5E7")
     
 int getVirtualChildCount() {
@@ -414,6 +421,7 @@ int getVirtualChildCount() {
      *         a number lower than or equals to 0.0f if not weight sum is
      *         to be used.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:04.923 -0500", hash_original_method = "131E7E20664E8B649BC33F0915A0DE0D", hash_generated_method = "D9E3D512993B2A8EFED07BD9D9494601")
     
 public float getWeightSum() {
@@ -1239,6 +1247,7 @@ private void forceUniformHeight(int count, int widthMeasureSpec) {
      * @param index the index of the child after which we want to skip children
      * @return the number of children to skip, 0 by default
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:04.956 -0500", hash_original_method = "64CDF538399E47C38C21DACEFC8C1E08", hash_generated_method = "64CDF538399E47C38C21DACEFC8C1E08")
     
 int getChildrenSkipCount(View child, int index) {
@@ -1287,6 +1296,7 @@ void measureChildBeforeLayout(View child, int childIndex,
      * @param child the child for which to obtain the location offset
      * @return the location offset in pixels
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:04.962 -0500", hash_original_method = "BA69BAE2E1D7A163D53D02D47016A6D7", hash_generated_method = "BA69BAE2E1D7A163D53D02D47016A6D7")
     
 int getLocationOffset(View child) {
@@ -1301,6 +1311,7 @@ int getLocationOffset(View child) {
      * @param child the child whose next sibling will be moved
      * @return the location offset of the next child in pixels
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:04.964 -0500", hash_original_method = "6D7A4F846C7E828D32B84605EE3B545F", hash_generated_method = "6D7A4F846C7E828D32B84605EE3B545F")
     
 int getNextLocationOffset(View child) {
@@ -1667,6 +1678,7 @@ public void setOrientation(int orientation) {
      * 
      * @return either {@link #HORIZONTAL} or {@link #VERTICAL}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:04.981 -0500", hash_original_method = "6BA82D6B625174A8AC80664141F0D361", hash_generated_method = "BD403A9700920A99F22D5BAAE290999D")
     
 public int getOrientation() {

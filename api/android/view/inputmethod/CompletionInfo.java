@@ -76,6 +76,7 @@ private CompletionInfo(Parcel source) {
      * Return the abstract identifier for this completion, typically
      * corresponding to the id associated with it in the original adapter.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.117 -0500", hash_original_method = "6AF16C815DE6FE4144432EF99CDC825B", hash_generated_method = "2AC5D8EEAADC6329A2ECEA8ACD04E2AF")
     
 public long getId() {
@@ -86,6 +87,7 @@ public long getId() {
      * Return the original position of this completion, typically
      * corresponding to its position in the original adapter.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.120 -0500", hash_original_method = "88750DD9C7394A9CF6B657A7AF77F3EB", hash_generated_method = "3D08F75A7598BA1F4BA734B82B3D54E3")
     
 public int getPosition() {
@@ -96,6 +98,7 @@ public int getPosition() {
      * Return the actual text associated with this completion.  This is the
      * real text that will be inserted into the editor if the user selects it.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.122 -0500", hash_original_method = "D3D56665E0CC0B43413FBFB4C720E96C", hash_generated_method = "3C5AE00E10DCE5E04049FCC58EEF7C48")
     
 public CharSequence getText() {
@@ -107,6 +110,7 @@ public CharSequence getText() {
      * text should be shown.  If non-null, this will be what the user sees as
      * the completion option instead of the actual text.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.124 -0500", hash_original_method = "4A1E1E1996A16BAAC783C4D4608DA412", hash_generated_method = "BF2D8CE2895BA065BC033E2D2EA0072E")
     
 public CharSequence getLabel() {

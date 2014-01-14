@@ -148,7 +148,8 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
         //return size;
     }
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.352 -0400", hash_original_method = "0D498A226869DEB0F3920DC31F67162F", hash_generated_method = "D037CE715676A07C60713D1D613B4CA4")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.352 -0400", hash_original_method = "0D498A226869DEB0F3920DC31F67162F", hash_generated_method = "D037CE715676A07C60713D1D613B4CA4")
     public synchronized V get(Object key) {
         V value = backingMap.get(key);
         value.addTaint(getTaint());
@@ -384,12 +385,14 @@ HashtableEntry(K key, V value, int hash, HashtableEntry<K, V> next) {
             this.next = next;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:25.384 -0500", hash_original_method = "5E645FD309BBB0570D297FB3EAF41FB1", hash_generated_method = "9EABD2522EB9D2E4218C9F5D70610D46")
         
 public final K getKey() {
             return key;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:25.387 -0500", hash_original_method = "A9984A6F88B588952649E3649EC43975", hash_generated_method = "F012337EC034D28D12FEB60EC691650B")
         
 public final V getValue() {

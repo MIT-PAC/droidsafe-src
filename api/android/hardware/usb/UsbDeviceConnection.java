@@ -56,6 +56,7 @@ public void close() {
      *
      * @return the native file descriptor
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.086 -0500", hash_original_method = "60A97EE86A4E90019B43CF20671154F6", hash_generated_method = "D1AFDC3E572AC08C800BDCCFD464C4B5")
     
 public int getFileDescriptor() {
@@ -69,6 +70,7 @@ public int getFileDescriptor() {
      *
      * @return raw USB descriptors
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.088 -0500", hash_original_method = "C038534F3EE98DEDE0B2FBB8841C177D", hash_generated_method = "E506C17EE9482F4A7FEE53DA20E123B8")
     
 public byte[] getRawDescriptors() {
@@ -170,6 +172,7 @@ public UsbRequest requestWait() {
      *
      * @return the device serial number
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.107 -0500", hash_original_method = "4F2DA9C2985F5A00889FEF441508C01D", hash_generated_method = "F9BAFD5263D02D037A5EBA14281ADB38")
     
 public String getSerial() {

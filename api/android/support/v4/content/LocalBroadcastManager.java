@@ -19,6 +19,7 @@ import android.os.Message;
 
 public class LocalBroadcastManager {
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:29.523 -0500", hash_original_method = "3CB1B74AD53F3369E7790EFD811F3D13", hash_generated_method = "47819F899C9500AFBEECAF5945D64459")
     
 public static LocalBroadcastManager getInstance(Context context) {

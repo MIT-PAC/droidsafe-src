@@ -65,18 +65,21 @@ public BlockGuardPolicyException(int policyState, int policyViolated, String mes
             fillInStackTrace();
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:39.473 -0500", hash_original_method = "7E4A409F6FF395255A09FF646F59C182", hash_generated_method = "4235463EF38A6E5A53221C97F7B2FC3E")
         
 public int getPolicy() {
             return mPolicyState;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:39.475 -0500", hash_original_method = "51330C8A3B9EAC192FDD6907E318F7AB", hash_generated_method = "0772710AB37BA670733FC3EE2AFCB5AF")
         
 public int getPolicyViolation() {
             return mPolicyViolated;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:39.478 -0500", hash_original_method = "AA2ABAF31AA2D7A8C7A88450DEB5E574", hash_generated_method = "115A7BE97D13DB5D0A3713B9F0FA2346")
         
 public String getMessage() {

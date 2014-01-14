@@ -11,12 +11,14 @@ import droidsafe.helpers.DSUtils;
 
 public class UsbDevice implements Parcelable {
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:49.392 -0500", hash_original_method = "7F8EF1C27C5AE21AB1088F14F434A92C", hash_generated_method = "A7BF8DD9C7306154D5B028F33AA15BF7")
     
 public static int getDeviceId(String name) {
         return native_get_device_id(name);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:49.394 -0500", hash_original_method = "0B1D8D7119DB0F719A696608105FBEDD", hash_generated_method = "756AC1269842843CDE20F5642049F998")
     
 public static String getDeviceName(int id) {
@@ -102,6 +104,7 @@ public UsbDevice(String name, int vendorId, int productId,
      *
      * @return the device name
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:49.348 -0500", hash_original_method = "271D12AC1725A6D768ED59A731E22C7D", hash_generated_method = "3EE741987A434FDB0854AEB95B80D98F")
     
 public String getDeviceName() {
@@ -116,6 +119,7 @@ public String getDeviceName() {
      *
      * @return the device ID
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:49.351 -0500", hash_original_method = "0EB91F28C0A2FB6299B3C615FC2DAB8F", hash_generated_method = "4108A2652D872038C575F5727F42E5E7")
     
 public int getDeviceId() {
@@ -127,6 +131,7 @@ public int getDeviceId() {
      *
      * @return the device vendor ID
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:49.353 -0500", hash_original_method = "D8945A991BD9144132914298D2B7FC76", hash_generated_method = "98EA9FF5FF332A765E686BECCB6371AA")
     
 public int getVendorId() {
@@ -138,6 +143,7 @@ public int getVendorId() {
      *
      * @return the device product ID
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:49.356 -0500", hash_original_method = "A32B17A7DCA377FC904869E22B60DAE0", hash_generated_method = "DF28FBA234EC28068AA4BD8D0CAC7C02")
     
 public int getProductId() {
@@ -150,6 +156,7 @@ public int getProductId() {
      *
      * @return the devices's class
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:49.358 -0500", hash_original_method = "45BD51C898E5D7F479BD37DC16F7713C", hash_generated_method = "325BDE3ADCAFFADE7A1A58C2634CE183")
     
 public int getDeviceClass() {
@@ -161,6 +168,7 @@ public int getDeviceClass() {
      *
      * @return the device's subclass
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:49.360 -0500", hash_original_method = "13162F24DC75BB4BAAF33D909DA8EE5C", hash_generated_method = "268A6215797FD156D76520DB1E1FF73B")
     
 public int getDeviceSubclass() {
@@ -172,6 +180,7 @@ public int getDeviceSubclass() {
      *
      * @return the device's protocol
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:49.362 -0500", hash_original_method = "5B59FED3FAC8826DFB249AE836C6A83B", hash_generated_method = "6E1CE4ED99CE4D43CFEBB08FAA436587")
     
 public int getDeviceProtocol() {
@@ -183,6 +192,7 @@ public int getDeviceProtocol() {
      *
      * @return the number of interfaces
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:49.364 -0500", hash_original_method = "3245218866A20CE01DF5327E310A1077", hash_generated_method = "E8A6CBD2B612FD9DC1216D9B94D13985")
     
 public int getInterfaceCount() {
@@ -194,6 +204,7 @@ public int getInterfaceCount() {
      *
      * @return the interface
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:49.367 -0500", hash_original_method = "CB4E75DEC838C411BA866F14CD6483BC", hash_generated_method = "2D5A2E543EB86D5F4B6053F3764CC764")
     
 public UsbInterface getInterface(int index) {

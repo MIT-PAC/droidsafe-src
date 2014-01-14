@@ -69,6 +69,7 @@ public Socks4Message() {
     /**
      * Get the request's command or result.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:09.136 -0500", hash_original_method = "A4884809092D405A6CA5F6BEFDF8445C", hash_generated_method = "4E8203CF55E7FB63242C7B8C74633D90")
     
 public int getCommandOrResult() {
@@ -88,6 +89,7 @@ public void setCommandOrResult(int command) {
     /**
      * Returns the request's port number.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:09.141 -0500", hash_original_method = "469B36103954E60DA4EDBA1638A3DCA3", hash_generated_method = "76C424240E08A46CC1EE6A45AE9C085A")
     
 public int getPort() {
@@ -107,6 +109,7 @@ public void setPort(int port) {
     /**
      * Returns the IP address of the request as an integer.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:09.145 -0500", hash_original_method = "2791CEFF5B7A34F564852C42E861A745", hash_generated_method = "AC75FE22CBD6C1F8C5CCE73ECD7F5A27")
     
 public int getIP() {
@@ -129,6 +132,7 @@ public void setIP(byte[] ip) {
     /**
      * Returns the user id for authentication.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:09.151 -0500", hash_original_method = "6684A79AEF4191DE9F243F196998CD91", hash_generated_method = "6E223FEB5AC83C17D6E8366011750445")
     
 public String getUserId() {
@@ -168,6 +172,7 @@ public void setUserId(String id) {
      * searches for the end of the user id, then searches for the end of the
      * password and returns the final index as the requests length.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:09.159 -0500", hash_original_method = "C6D8DA97966902AB2F65AB6185B0BF06", hash_generated_method = "4B4B63163B597BA31E6E88BEDB40EF21")
     
 public int getLength() {
@@ -189,6 +194,7 @@ public int getLength() {
     /**
      * Returns an error string corresponding to the given error value.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:09.161 -0500", hash_original_method = "B4F98C9F9790743D28172709107A8C07", hash_generated_method = "464E7A654B675E12FF8C2C67A3B8CA2C")
     
 public String getErrorString(int error) {
@@ -207,6 +213,7 @@ public String getErrorString(int error) {
     /**
      * Returns the message's byte buffer.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:09.163 -0500", hash_original_method = "3E8202366775B7F03BFD8ECC0DED5E39", hash_generated_method = "8CEA774D71F4BAB32DE7A1AD137FE077")
     
 public byte[] getBytes() {

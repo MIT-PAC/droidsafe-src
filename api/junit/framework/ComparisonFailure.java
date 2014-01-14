@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class ComparisonFailure extends AssertionFailedError {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.973 -0500", hash_original_field = "904995AF31FA2F991D9B35D398A40C45", hash_generated_field = "194DC4631B521844DC7E733F29E17760")
 
@@ -37,6 +33,7 @@ public ComparisonFailure (String message, String expected, String actual) {
      *
      * @see java.lang.Throwable#getMessage()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.982 -0500", hash_original_method = "1EFB8D5295B5347F7A8CE202919A7B5C", hash_generated_method = "2CB3B48A443EC9374104A447461A8683")
     
 public String getMessage() {
@@ -77,7 +74,6 @@ public String getMessage() {
         }
         return Assert.format(super.getMessage(), expected, actual);
     }
-
     
 }
 

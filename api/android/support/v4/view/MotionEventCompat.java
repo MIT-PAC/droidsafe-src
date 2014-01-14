@@ -22,6 +22,7 @@ public static int getActionMasked(MotionEvent event) {
      * Call {@link MotionEvent#getAction}, returning only the pointer index
      * portion
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:20.131 -0500", hash_original_method = "78466E0DF0FE78667216774839ACB2D1", hash_generated_method = "30BB8E3E501C2C944F9121D10C447A7C")
     
 public static int getActionIndex(MotionEvent event) {
@@ -45,6 +46,7 @@ public static int findPointerIndex(MotionEvent event, int pointerId) {
      * If running on a pre-{@link android.os.Build.VERSION_CODES#ECLAIR} device,
      * {@link IndexOutOfBoundsException} is thrown.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:20.137 -0500", hash_original_method = "B1540D1BC1A1FC10A324E41A4C3A2405", hash_generated_method = "382EB163A990682DFAB09CD958D65566")
     
 public static int getPointerId(MotionEvent event, int pointerIndex) {
@@ -56,6 +58,7 @@ public static int getPointerId(MotionEvent event, int pointerIndex) {
      * If running on a pre-{@link android.os.Build.VERSION_CODES#ECLAIR} device,
      * {@link IndexOutOfBoundsException} is thrown.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:20.139 -0500", hash_original_method = "1C14F481F0BFBC3447CC457FAD37D977", hash_generated_method = "55EFB08BBE706DCE92C726173C6752EE")
     
 public static float getX(MotionEvent event, int pointerIndex) {
@@ -67,6 +70,7 @@ public static float getX(MotionEvent event, int pointerIndex) {
      * If running on a pre-{@link android.os.Build.VERSION_CODES#ECLAIR} device,
      * {@link IndexOutOfBoundsException} is thrown.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:20.142 -0500", hash_original_method = "1E91C7B0F2EEFBADAE6B674321FBDEE0", hash_generated_method = "23F58386A7E2C4F6F13B47C0C6EEADE2")
     
 public static float getY(MotionEvent event, int pointerIndex) {
@@ -77,6 +81,7 @@ public static float getY(MotionEvent event, int pointerIndex) {
      * The number of pointers of data contained in this event.  Always
      * >= 1.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:20.144 -0500", hash_original_method = "A9B2A5B4740C128E6AAD1EC58C9079ED", hash_generated_method = "F73457934A29BBFED6EBA081EB6DBF0E")
     
 public static int getPointerCount(MotionEvent event) {
@@ -103,6 +108,7 @@ public static int getPointerCount(MotionEvent event) {
             }
             return -1;
         }
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:20.077 -0500", hash_original_method = "9E7B122BF9BB453BF7E85C1115C02518", hash_generated_method = "F152F02751C2E7D7863B3B04B3FDBE31")
         
 @Override
@@ -113,6 +119,7 @@ public static int getPointerCount(MotionEvent event) {
             }
             throw new IndexOutOfBoundsException("Pre-Eclair does not support multiple pointers");
         }
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:20.079 -0500", hash_original_method = "46B436EF23A4E7BD3E33198488E751EA", hash_generated_method = "0A2573A4B1DE5086E58AE54C66458173")
         
 @Override
@@ -122,6 +129,7 @@ public static int getPointerCount(MotionEvent event) {
             }
             throw new IndexOutOfBoundsException("Pre-Eclair does not support multiple pointers");
         }
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:20.082 -0500", hash_original_method = "71D40AC5F4F710155978216341C47632", hash_generated_method = "D45EA97749AE8F1AC4EDA839E7CB9729")
         
 @Override
@@ -131,6 +139,7 @@ public static int getPointerCount(MotionEvent event) {
             }
             throw new IndexOutOfBoundsException("Pre-Eclair does not support multiple pointers");
         }
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:20.084 -0500", hash_original_method = "F1B2637001FBFFCBD7AA64840D270091", hash_generated_method = "A877E8BC25517DB8FF994556EB2F4D41")
         
 @Override
@@ -159,12 +168,14 @@ public static int getPointerCount(MotionEvent event) {
         public int getPointerId(MotionEvent event, int pointerIndex) {
             return MotionEventCompatEclair.getPointerId(event, pointerIndex);
         }
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:20.094 -0500", hash_original_method = "CC9227E21CD6D287D30FF5F6779E2A13", hash_generated_method = "6390123E90E7ED3C9C419A6E139ADC53")
         
 @Override
         public float getX(MotionEvent event, int pointerIndex) {
             return MotionEventCompatEclair.getX(event, pointerIndex);
         }
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:20.097 -0500", hash_original_method = "F1D4241FA671175201C1D58741E0B6B9", hash_generated_method = "84FD1ED546F874D63C449DD2DCE71C97")
         
 @Override

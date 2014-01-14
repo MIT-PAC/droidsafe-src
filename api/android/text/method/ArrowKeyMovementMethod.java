@@ -37,6 +37,7 @@ private static int getPageHeight(TextView widget) {
         return widget.getGlobalVisibleRect(rect) ? rect.height() : 0;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:01.056 -0500", hash_original_method = "1DB0A35A4E73C95F823446362F035621", hash_generated_method = "7D06961535B06F9469B80E24BBEF2437")
     
 public static MovementMethod getInstance() {

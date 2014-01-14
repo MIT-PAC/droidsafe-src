@@ -25,6 +25,7 @@ public final class MifareUltralight extends BasicTagTechnology {
      * @param tag an MIFARE Ultralight compatible tag
      * @return MIFARE Ultralight object
      */
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.854 -0500", hash_original_method = "B741E02638FF439D209E74D661416E0D", hash_generated_method = "95D4598C43B29F141BCF1F77CD261FC9")
     
 public static MifareUltralight get(Tag tag) {
@@ -108,6 +109,7 @@ public MifareUltralight(Tag tag) throws RemoteException {
      *
      * @return the type
      */
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.859 -0500", hash_original_method = "E9AD68D49398B2B9D86D12D221B14582", hash_generated_method = "32498FCDA3AC1E9A676800B51A331335")
     
 public int getType() {
@@ -137,6 +139,7 @@ public int getType() {
      * @throws TagLostException if the tag leaves the field
      * @throws IOException if there is an I/O failure, or the operation is canceled
      */
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.861 -0500", hash_original_method = "E6849E923D0A9327C443A073C34E8740", hash_generated_method = "76E54949ED74B79C16944A57E8832D49")
     
 public byte[] readPages(int pageOffset) throws IOException {
@@ -196,6 +199,7 @@ public void writePage(int pageOffset, byte[] data) throws IOException {
      *
      * @see NfcA#transceive
      */
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.866 -0500", hash_original_method = "E43990821CE38E04B46B3E901EFDFA24", hash_generated_method = "CC13A29AED45E04C4807822531800242")
     
 public byte[] transceive(byte[] data) throws IOException {
@@ -206,6 +210,7 @@ public byte[] transceive(byte[] data) throws IOException {
      * Return the maximum number of bytes that can be sent with {@link #transceive}.
      * @return the maximum number of bytes that can be sent with {@link #transceive}.
      */
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.868 -0500", hash_original_method = "CF96EF3BF3FCE4DA3D9E7FBB541AEB70", hash_generated_method = "ECC61C711C2C081CEFB91A790D67A4A8")
     
 public int getMaxTransceiveLength() {
@@ -248,6 +253,7 @@ public void setTimeout(int timeout) {
      *
      * @return timeout value in milliseconds
      */
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.873 -0500", hash_original_method = "849E2A68F4F80A968E68483D2D0B1744", hash_generated_method = "4E9626CABB0D93E29B9B4E60B529B09D")
     
 public int getTimeout() {

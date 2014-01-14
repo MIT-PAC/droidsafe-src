@@ -56,12 +56,14 @@ public StringEntity(final String s, String charset)
 		return false;
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
 	public long getContentLength() {
 		// TODO Auto-generated method stub
 		return 0;
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
 	public InputStream getContent() throws IOException, IllegalStateException {
 		// TODO Auto-generated method stub

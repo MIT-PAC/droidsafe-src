@@ -21,6 +21,7 @@ public class Package implements AnnotatedElement {
      * @return the requested package, or {@code null}.
      * @see ClassLoader#getPackage(java.lang.String)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.159 -0500", hash_original_method = "10159562E7C8BDDC782B1B1B486A12DE", hash_generated_method = "2F903CA5C20B82E314630C58709650B7")
     
 public static Package getPackage(String packageName) {
@@ -37,6 +38,7 @@ public static Package getPackage(String packageName) {
      * @return all the packages known to the caller's class loader.
      * @see ClassLoader#getPackages
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.162 -0500", hash_original_method = "E96D25DC605E56517EDAA8421D2114F6", hash_generated_method = "47BBFCFD51DD607E08A11B0100E37F4D")
     
 public static Package[] getPackages() {
@@ -116,6 +118,7 @@ A var540C13E9E156B687226421B24F2DF178_1222859646 =         null;
     /**
      * Returns an empty array. Package annotations are not supported on Android.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.141 -0500", hash_original_method = "CE9406711F7ECFD943F53415A91A4AFB", hash_generated_method = "CB29FE8C680345CB2328C2BD219C5B28")
     
 public Annotation[] getAnnotations() {
@@ -125,6 +128,7 @@ public Annotation[] getAnnotations() {
     /**
      * Returns an empty array. Package annotations are not supported on Android.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.143 -0500", hash_original_method = "85F9B8C255479693ABE2E35CFE49FA4D", hash_generated_method = "6CBAC098254AA46C825713EB23ADAD70")
     
 public Annotation[] getDeclaredAnnotations() {
@@ -152,6 +156,7 @@ public boolean isAnnotationPresent(Class<? extends Annotation> annotationType) {
      *
      * @return the implementation title, may be {@code null}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.148 -0500", hash_original_method = "E42A840611E51BD44AB9A8F4763E49C9", hash_generated_method = "0FC7754DFEEEEFD9AE99629F95509E10")
     
 public String getImplementationTitle() {
@@ -165,6 +170,7 @@ public String getImplementationTitle() {
      *
      * @return the implementation vendor name, may be {@code null}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.151 -0500", hash_original_method = "D69197AE643082D750CA7D47C00F7B92", hash_generated_method = "CF0E3C9C03130A8D32D2CC9215AE7B81")
     
 public String getImplementationVendor() {
@@ -177,6 +183,7 @@ public String getImplementationVendor() {
      *
      * @return the implementation version, may be {@code null}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.154 -0500", hash_original_method = "B250FD1AF223F79726E50E96D0BA0340", hash_generated_method = "55329D98772649FAC10085F7E5A19C24")
     
 public String getImplementationVersion() {
@@ -189,6 +196,7 @@ public String getImplementationVersion() {
      *
      * @return the name of this package.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.156 -0500", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "50860709F8CC9FE19B604881E59FBA54")
     
 public String getName() {
@@ -201,6 +209,7 @@ public String getName() {
      *
      * @return the specification title, may be {@code null}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.164 -0500", hash_original_method = "C2759232E597756D73053EF3F23A361A", hash_generated_method = "EEEBBADB40D376E8C7074DF9EB541A94")
     
 public String getSpecificationTitle() {
@@ -214,6 +223,7 @@ public String getSpecificationTitle() {
      *
      * @return the specification vendor name, may be {@code null}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.167 -0500", hash_original_method = "973AEF12B2769D423D9BB1FEC4D6C13E", hash_generated_method = "65DAAC27E879FA1D2D5E4C65B67E4EB8")
     
 public String getSpecificationVendor() {
@@ -227,6 +237,7 @@ public String getSpecificationVendor() {
      *
      * @return the specification version string, may be {@code null}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.169 -0500", hash_original_method = "1669663C0689EAEF8399B71C607499D9", hash_generated_method = "F88B4A3035BA3CCD1ED01E8E42B8326D")
     
 public String getSpecificationVersion() {

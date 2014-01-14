@@ -690,6 +690,7 @@ private boolean escapedEquals(String first, String second) {
      * Returns the scheme of this URI, or null if this URI has no scheme. This
      * is also known as the protocol.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:14.868 -0500", hash_original_method = "C01635CAE84CEFF188CA85B1E841E2AF", hash_generated_method = "9D11AD0B611F352DC84C8E1A6B825617")
     
 public String getScheme() {
@@ -700,6 +701,7 @@ public String getScheme() {
      * Returns the decoded scheme-specific part of this URI, or null if this URI
      * has no scheme-specific part.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:14.870 -0500", hash_original_method = "38320513FEDFF9F58DEA1E075C778208", hash_generated_method = "38815444E27955D92D1ECC864169EFFB")
     
 public String getSchemeSpecificPart() {
@@ -710,6 +712,7 @@ public String getSchemeSpecificPart() {
      * Returns the encoded scheme-specific part of this URI, or null if this URI
      * has no scheme-specific part.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:14.873 -0500", hash_original_method = "86531F78EA1B0DD0E474B0280C353B39", hash_generated_method = "9E9EB7CDAC25885B08CC44A5BBEE7762")
     
 public String getRawSchemeSpecificPart() {
@@ -720,6 +723,7 @@ public String getRawSchemeSpecificPart() {
      * Returns the decoded authority part of this URI, or null if this URI has
      * no authority.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:14.875 -0500", hash_original_method = "4FA84E8B57858A7AED973819C0FBFA33", hash_generated_method = "FBBDD060B77EAC76E5B14CFDB0CEC4C8")
     
 public String getAuthority() {
@@ -730,6 +734,7 @@ public String getAuthority() {
      * Returns the encoded authority of this URI, or null if this URI has no
      * authority.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:14.877 -0500", hash_original_method = "D7819D822B599F6322BA89A8602769F8", hash_generated_method = "6F0A90091BEA2A0248D6310DCFBD4A25")
     
 public String getRawAuthority() {
@@ -740,6 +745,7 @@ public String getRawAuthority() {
      * Returns the decoded user info of this URI, or null if this URI has no
      * user info.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:14.879 -0500", hash_original_method = "A9FAB4D519B7225CD37F806FC9DB8527", hash_generated_method = "532249EA71A87CA78C7C326ACC4A1357")
     
 public String getUserInfo() {
@@ -750,6 +756,7 @@ public String getUserInfo() {
      * Returns the encoded user info of this URI, or null if this URI has no
      * user info.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:14.881 -0500", hash_original_method = "DAA16275F755FA7272E7A6BF143307B3", hash_generated_method = "58C0D75C1A5C7F1EB00F10A6C966B380")
     
 public String getRawUserInfo() {
@@ -759,6 +766,7 @@ public String getRawUserInfo() {
     /**
      * Returns the host of this URI, or null if this URI has no host.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:14.884 -0500", hash_original_method = "2F2AEDD17A97DC05E80343AAC323BA28", hash_generated_method = "1B655222E0C0F88C57DF58BCA9BFA498")
     
 public String getHost() {
@@ -769,6 +777,7 @@ public String getHost() {
      * Returns the port number of this URI, or {@code -1} if this URI has no
      * explicit port.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:14.887 -0500", hash_original_method = "A5F7344FAECBE0D6DB15D1F6E7BEBC6E", hash_generated_method = "8D4984D37D0017078DF4701090E35F25")
     
 public int getPort() {
@@ -776,6 +785,7 @@ public int getPort() {
     }
 
     /** @hide */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:14.889 -0500", hash_original_method = "06FADD20E42E3EC8160E0651D1C1C356", hash_generated_method = "897C9AD6910952C18BE3A8651DD7E36A")
     
 public int getEffectivePort() {
@@ -785,6 +795,7 @@ public int getEffectivePort() {
     /**
      * Returns the decoded path of this URI, or null if this URI has no path.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:14.894 -0500", hash_original_method = "69A276867D65FB87E2E914A462B7AF91", hash_generated_method = "6E21F7B60172D61B590581CB1F93CE0D")
     
 public String getPath() {
@@ -794,6 +805,7 @@ public String getPath() {
     /**
      * Returns the encoded path of this URI, or null if this URI has no path.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:14.896 -0500", hash_original_method = "C60E164890B13C98164350819EFAF732", hash_generated_method = "91FC1951C11DED3DB62B8464EAFEE386")
     
 public String getRawPath() {
@@ -803,6 +815,7 @@ public String getRawPath() {
     /**
      * Returns the decoded query of this URI, or null if this URI has no query.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:14.898 -0500", hash_original_method = "630FC8264E2AC16B7C7C1CF5EE4E7165", hash_generated_method = "FA638F1C89104675473C43ECCFFED70F")
     
 public String getQuery() {
@@ -812,6 +825,7 @@ public String getQuery() {
     /**
      * Returns the encoded query of this URI, or null if this URI has no query.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:14.900 -0500", hash_original_method = "1B73FD5BF97DE0B30570BEC9088948AD", hash_generated_method = "F9D24AD4BFFCA3BEDF79DDA7F06DE0E0")
     
 public String getRawQuery() {
@@ -822,6 +836,7 @@ public String getRawQuery() {
      * Returns the decoded fragment of this URI, or null if this URI has no
      * fragment.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:14.903 -0500", hash_original_method = "997A8F1DE06A015557806F06709A8E7B", hash_generated_method = "223D497BDC1D4ADD98DB0C413A60448B")
     
 public String getFragment() {
@@ -832,6 +847,7 @@ public String getFragment() {
      * Gets the encoded fragment of this URI, or null if this URI has no
      * fragment.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:14.905 -0500", hash_original_method = "7B682CDC9E7215B6CAB5B55C992B88A5", hash_generated_method = "3C47879D55462CE0E125B568D982E5B7")
     
 public String getRawFragment() {

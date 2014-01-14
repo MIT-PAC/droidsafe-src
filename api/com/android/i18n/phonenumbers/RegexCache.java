@@ -19,7 +19,8 @@ public RegexCache(int size) {
     cache = new LRUCache<String, Pattern>(size);
   }
 
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:00.410 -0500", hash_original_method = "625FF0438C87362FF750355AAC8DD91B", hash_generated_method = "28FD5363EB582F4464A14A70E6688480")
+  @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:00.410 -0500", hash_original_method = "625FF0438C87362FF750355AAC8DD91B", hash_generated_method = "28FD5363EB582F4464A14A70E6688480")
     
 public Pattern getPatternForRegex(String regex) {
     Pattern pattern = cache.get(regex);
@@ -58,7 +59,8 @@ boolean containsRegex(String regex) {
       };
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:00.428 -0500", hash_original_method = "EEC311F1C8E6E4405BF9A97AEC3D11BF", hash_generated_method = "13505DC3C354D45318E31EF8B60DDE7F")
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:00.428 -0500", hash_original_method = "EEC311F1C8E6E4405BF9A97AEC3D11BF", hash_generated_method = "13505DC3C354D45318E31EF8B60DDE7F")
         
 public synchronized V get(K key) {
       return map.get(key);

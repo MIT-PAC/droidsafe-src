@@ -93,6 +93,7 @@ protected SSLRecordProtocol(HandshakeProtocol handshakeProtocol,
      * If the handshake process was not completed, method returns null.
      * @return the session in effect.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:15.355 -0500", hash_original_method = "19D70A4F8DD7A34083C18DBEE5C3AF9E", hash_generated_method = "6ACDA15C77445167050F19A88935BFFD")
     
 protected SSLSessionImpl getSession() {
@@ -103,6 +104,7 @@ protected SSLSessionImpl getSession() {
      * Returns the minimum possible length of the SSL record.
      * @return
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:15.357 -0500", hash_original_method = "68629F3A6781EB04D799B3D741A0C393", hash_generated_method = "300582CE1BC2A29F6E2CB9BFCDAC5EA5")
     
 protected int getMinRecordSize() {
@@ -116,6 +118,7 @@ protected int getMinRecordSize() {
      * If actual resulting record length is greater than
      * MAX_CIPHERED_DATA_LENGTH, MAX_CIPHERED_DATA_LENGTH is returned.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:15.359 -0500", hash_original_method = "96A9B5266C66AFA94D8E0CC291B5F152", hash_generated_method = "2244CC45EFEE7C43C8834B306750DAE2")
     
 protected int getRecordSize(int data_size) {
@@ -139,6 +142,7 @@ protected int getRecordSize(int data_size) {
      * counted as for data with
      * MAX_CIPHERED_DATA_LENGTH length.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:15.361 -0500", hash_original_method = "CC13DBD4825E3C45756D9062D61E5D58", hash_generated_method = "CCC6B5502CDF657DF9F718141A9013EF")
     
 protected int getDataSize(int record_size) {
@@ -159,6 +163,7 @@ protected int getDataSize(int record_size) {
      * @param   content_type: int
      * @return  ssl packet created over the current connection state
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:15.363 -0500", hash_original_method = "5F7DF598938706B482CEEA679EFAD91B", hash_generated_method = "DDB4886C9569A5BFEA0E41041AB2060E")
     
 protected byte[] wrap(byte content_type, DataStream dataStream) {
@@ -260,6 +265,7 @@ private void setSession(SSLSessionImpl session) {
      * be active.
      * @return ssl record containing the "change cipher spec" message.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:15.374 -0500", hash_original_method = "D4A06B5E6BD10843CEED9C48A36D68A3", hash_generated_method = "8A3F8C123134B8F25AA00E0B5C6AA559")
     
 protected byte[] getChangeCipherSpecMesage(SSLSessionImpl session) {

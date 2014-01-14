@@ -82,6 +82,7 @@ public boolean readNextHeader() throws IOException {
      * @return the current entity's key string
      * @throws IllegalStateException if the next record header has not yet been read
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.909 -0500", hash_original_method = "32914A2DCD27EDE5CD7416010D683812", hash_generated_method = "94A49A84F5FA78DF906CF35F12E563B5")
     
 public String getKey() {
@@ -99,6 +100,7 @@ public String getKey() {
      * @return The size of the record's raw data, in bytes
      * @throws IllegalStateException if the next record header has not yet been read
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.911 -0500", hash_original_method = "98B39A84BCE4F82002DB111D375A2105", hash_generated_method = "B05050FF734E888147555784F56BEBCB")
     
 public int getDataSize() {

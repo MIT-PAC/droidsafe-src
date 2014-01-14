@@ -9,10 +9,6 @@ import java.util.Locale;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public class Country implements Parcelable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:57.520 -0500", hash_original_field = "AEC0DD2E1091B824A6C9D8C63E13BCDD", hash_generated_field = "92DDDD9D36EEE5E4A82A6D2A8125DA06")
 
@@ -49,7 +45,6 @@ public Country[] newArray(int size) {
     private  int mSource;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:57.535 -0500", hash_original_field = "A13152B9FE22A291FA8BF7E71C005049", hash_generated_field = "A977E573260D0E2786C71BC0961278A2")
 
-
     private int mHashCode;
     /**
      *
@@ -85,6 +80,7 @@ public Country(Country country) {
     /**
      * @return the ISO 3166-1 two letters country code
      */
+    @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:57.542 -0500", hash_original_method = "5F3223376651F8BE6A8AF3345618A060", hash_generated_method = "FE03559B487B253CD88FB05A6271FD9E")
     
 public final String getCountryIso() {
@@ -101,6 +97,7 @@ public final String getCountryIso() {
      *         <li>{@link #COUNTRY_SOURCE_LOCALE}</li>
      *         </ul>
      */
+    @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:57.544 -0500", hash_original_method = "7037355E864C633C32E117AF9FFED93E", hash_generated_method = "140E77934072FF233DC1E12178DC3B39")
     
 public final int getSource() {

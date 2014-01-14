@@ -91,6 +91,7 @@ public GsmSMSDispatcher(PhoneBase phone, SmsStorageMonitor storageMonitor,
         mCm.unSetOnNewGsmBroadcastSms(this);
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.865 -0500", hash_original_method = "1D516C6BB697A8ECCBFC751AA141CC3E", hash_generated_method = "650E0DB5BC6A30E56AA546FF5DC34AD3")
     
 @Override

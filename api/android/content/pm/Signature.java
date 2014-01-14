@@ -15,10 +15,6 @@ import java.util.Arrays;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public class Signature implements Parcelable {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:44.800 -0500", hash_original_method = "2EFDF66421CB71AEE738679CD64484B1", hash_generated_method = "2CC9D14C5DECE3F63B13E21D77780F06")
@@ -34,7 +30,6 @@ private static final int parseHexDigit(int nibble) {
             throw new IllegalArgumentException("Invalid character " + nibble + " in hex string");
         }
     }
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.791 -0400", hash_original_field = "EF6321A08F8C07F931351347C004EC46", hash_generated_field = "D433CA4E2BE6EFC6C045D2BE6C7AFF6B")
 
@@ -166,6 +161,7 @@ public String toCharsString() {
     /**
      * @return the contents of this signature as a byte array.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:44.812 -0500", hash_original_method = "4CD6431E4EA3D105FB97D345441783A7", hash_generated_method = "06EEAF99EBA8544F9705EB43B42F11CC")
     
 public byte[] toByteArray() {
@@ -181,6 +177,7 @@ public byte[] toByteArray() {
      *             certificate; shouldn't happen.
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:44.815 -0500", hash_original_method = "E5DE629FEFDBE513EC2140BEFF8592A6", hash_generated_method = "CAEEC1672220C2BD4280F7D0DA8400F4")
     
 public PublicKey getPublicKey() throws CertificateException {

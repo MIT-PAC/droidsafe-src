@@ -47,7 +47,8 @@ public class HttpsConnection extends Connection {
             OpenSSLContextImpl sslContext = new OpenSSLContextImpl();
             TrustManager[] trustManagers = new TrustManager[] {
                 new X509TrustManager() {
-                    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:13.698 -0500", hash_original_method = "26F2D3EE02564BFED1F63E8224D261E2", hash_generated_method = "4B421804C4196085705F57A169F61AAF")
+                    @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:13.698 -0500", hash_original_method = "26F2D3EE02564BFED1F63E8224D261E2", hash_generated_method = "4B421804C4196085705F57A169F61AAF")
                 
 public X509Certificate[] getAcceptedIssuers() {
                         return null;
@@ -389,6 +390,7 @@ void restartConnection(boolean proceed) {
         }
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:13.735 -0500", hash_original_method = "369703D22EBB0B4280A990A7CBC1073E", hash_generated_method = "C7BD68F4A3F52626B3EE16BC0A450363")
     
 @Override

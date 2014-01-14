@@ -114,6 +114,7 @@ public ServerSocket(int port, int backlog, InetAddress localAddress) throws IOEx
     /**
      * @hide internal use only
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.820 -0500", hash_original_method = "847F07D140851DC7DF04F3DA230B7EED", hash_generated_method = "FAB0479ECF5F05048C7FE7B9B50808FC")
     
 public SocketImpl getImpl$() {
@@ -175,6 +176,7 @@ public void close() throws IOException {
      *
      * @return the local address of this server socket.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.850 -0500", hash_original_method = "0AAA019638F2B2CC41FFEEEB4E260F6C", hash_generated_method = "AD67A3BCA0927F812C6A2C52711C2948")
     
 public InetAddress getInetAddress() {
@@ -190,6 +192,7 @@ public InetAddress getInetAddress() {
      *
      * @return the local port this server is listening on.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.852 -0500", hash_original_method = "F5BB694DF3469EBFBD82064FFB1FEAE0", hash_generated_method = "7757875108A58B1E253356DE798623DA")
     
 public int getLocalPort() {
@@ -205,6 +208,7 @@ public int getLocalPort() {
      * @throws IOException
      *             if the option cannot be retrieved.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.855 -0500", hash_original_method = "37BE74568AC5DDD629C634B42E81BFFA", hash_generated_method = "405F927B58C98C88965016EB5176B58B")
     
 public synchronized int getSoTimeout() throws IOException {
@@ -351,6 +355,7 @@ public void bind(SocketAddress localAddr, int backlog) throws IOException {
      *
      * @return the local socket address and port this socket is bound to.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.874 -0500", hash_original_method = "7AD76537AA5A3220834213189640F2E9", hash_generated_method = "B6F6BE40480DB6FDE227D19A9E29325B")
     
 public SocketAddress getLocalSocketAddress() {
@@ -414,6 +419,7 @@ public void setReuseAddress(boolean reuse) throws SocketException {
      * @throws SocketException
      *             if an error occurs while reading the option value.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.886 -0500", hash_original_method = "8920D58954E3583481E89192EF874E86", hash_generated_method = "4750294BF903E7A0F86FCB8F7F2519DE")
     
 public boolean getReuseAddress() throws SocketException {
@@ -438,6 +444,7 @@ public void setReceiveBufferSize(int size) throws SocketException {
     /**
      * Returns this socket's {@link SocketOptions#SO_RCVBUF receive buffer size}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.890 -0500", hash_original_method = "1025A74ACDCA065D38BE1D18813D43DB", hash_generated_method = "E0D1E6777755F89A592BB6B477403B32")
     
 public int getReceiveBufferSize() throws SocketException {
@@ -452,6 +459,7 @@ public int getReceiveBufferSize() throws SocketException {
      * In practice, this means that the socket must have been created by
      * {@link java.nio.channels.ServerSocketChannel#open}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.893 -0500", hash_original_method = "3D28E6253835634FC7711C1CE3F0C48B", hash_generated_method = "C5E30506A370D3B8F16D8419FD259FD0")
     
 public ServerSocketChannel getChannel() {

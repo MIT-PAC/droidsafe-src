@@ -78,6 +78,7 @@ protected StringBuffer encodeBody(StringBuffer buffer) {
      * encodeBody
      * @return String the encoded body part of the
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:53.867 -0500", hash_original_method = "E18AC147BDD8255E722D716AAB46B0FD", hash_generated_method = "4E663843DA892E10C352B3ED8EA40396")
     
 public String getCallId() {
@@ -88,6 +89,7 @@ public String getCallId() {
      * get the call Identifer member.
      * @return CallIdentifier
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:53.871 -0500", hash_original_method = "B5581A57A5C5C2AEBCF8449C03245AE9", hash_generated_method = "C8B313DEC7DDBD2EFB9A879CEC727321")
     
 public CallIdentifier getCallIdentifer() {

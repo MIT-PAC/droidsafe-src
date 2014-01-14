@@ -5,17 +5,11 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class AccessControlException extends SecurityException {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:57.396 -0500", hash_original_field = "54E8C24FCF6CFD54FFC5B6B6120A79FC", hash_generated_field = "4AA6B8D54659D529BB431D0B0283E12C")
 
-
     private static final long serialVersionUID = 5138225684096988535L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:57.398 -0500", hash_original_field = "57D305BA6D64CF4ACA3634A44615AA8A", hash_generated_field = "0D97B5BAB4B6DEEFD11C532A3D968D06")
-
 
     private Permission perm; // Named as demanded by Serialized Form.
 
@@ -54,6 +48,7 @@ public AccessControlException(String message, Permission perm) {
      *
      * @return the requested permission that caused this Exception, maybe {@code null}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:57.406 -0500", hash_original_method = "DFDCEBDA71EECDB1948D7EAD61470F05", hash_generated_method = "BA2AFF3DF53689AE5557C64D56724207")
     
 public Permission getPermission() {

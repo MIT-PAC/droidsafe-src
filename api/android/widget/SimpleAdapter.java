@@ -72,6 +72,7 @@ public SimpleAdapter(Context context, List<? extends Map<String, ?>> data,
     /**
      * @see android.widget.Adapter#getCount()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:44.333 -0500", hash_original_method = "42219B54C0DE57D9E8EFCE349042BDFC", hash_generated_method = "9501D47462738A6B2D02A04C78529276")
     
 public int getCount() {
@@ -81,6 +82,7 @@ public int getCount() {
     /**
      * @see android.widget.Adapter#getItem(int)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:44.335 -0500", hash_original_method = "DCE185E9FC70557F4514C683017F4175", hash_generated_method = "8D686EFAA64456725DD2FB6EC7806F01")
     
 public Object getItem(int position) {
@@ -90,6 +92,7 @@ public Object getItem(int position) {
     /**
      * @see android.widget.Adapter#getItemId(int)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:44.337 -0500", hash_original_method = "7144EF990F660E75AA61001CF21A1CD5", hash_generated_method = "86EF76D6295D66F6DBBE39DCDBA9A1C9")
     
 public long getItemId(int position) {
@@ -99,6 +102,7 @@ public long getItemId(int position) {
     /**
      * @see android.widget.Adapter#getView(int, View, ViewGroup)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:44.339 -0500", hash_original_method = "180EEF863853B86A02E5E476168E516D", hash_generated_method = "A5B1D9C00E70EDAFF5DE72AD387583B6")
     
 public View getView(int position, View convertView, ViewGroup parent) {
@@ -133,6 +137,7 @@ public void setDropDownViewResource(int resource) {
         this.mDropDownResource = resource;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:44.346 -0500", hash_original_method = "55A24C3FF57565648C18AD1B34A1D191", hash_generated_method = "354A608CAB67E58C0C02915FF74A2A17")
     
 @Override
@@ -289,6 +294,7 @@ public void setViewText(TextView v, String text) {
         v.setText(text);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:44.363 -0500", hash_original_method = "D6072B8C53AE1E6461A6E29F4F69F458", hash_generated_method = "81A78CF776B05410DF2F67E3FD3F3B53")
     
 public Filter getFilter() {

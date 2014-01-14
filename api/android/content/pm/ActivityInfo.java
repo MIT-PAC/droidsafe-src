@@ -249,6 +249,7 @@ public ActivityInfo() {
         addTaint(source.readInt()); //uiOptions
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getRealConfigChanged(){
 		// Original method
 		/*
@@ -262,6 +263,7 @@ public ActivityInfo() {
 		return 0;
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public final int getThemeResource() {
         return getTaintInt();
     }

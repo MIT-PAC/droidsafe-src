@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public abstract class EncodedKeySpec implements KeySpec {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:57.675 -0500", hash_original_field = "946CEA61F16F102AC83919F94FFB7B9D", hash_generated_field = "3144F97D80A45FCBB127B551D71851A1")
 
@@ -35,6 +31,7 @@ public EncodedKeySpec(byte[] encodedKey) {
      *
      * @return the encoded key bytes.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:57.681 -0500", hash_original_method = "F8B261F87BF90DD753274675BF9DA222", hash_generated_method = "37C9E1C39B1D282064DBB6F77791FC6D")
     
 public byte[] getEncoded() {
@@ -55,7 +52,6 @@ public byte[] getEncoded() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:57.684 -0500", hash_original_method = "CA7EFC56395807F5B08C2CDFF0DEE77B", hash_generated_method = "090623DDECB8BCC454E2F65967F71FC5")
     
 public abstract String getFormat();
-
     
 }
 

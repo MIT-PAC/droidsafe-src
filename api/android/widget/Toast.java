@@ -141,6 +141,7 @@ public void setView(View view) {
      * Return the view.
      * @see #setView
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:44.673 -0500", hash_original_method = "2CED2C577EBE287B42B9009F6CFBB820", hash_generated_method = "ED02319FD8C55BBBE02C9D62576886C6")
     
 public View getView() {
@@ -162,6 +163,7 @@ public void setDuration(int duration) {
      * Return the duration.
      * @see #setDuration
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:44.678 -0500", hash_original_method = "C5CB9F23218BD0303C05492AF6E52DA2", hash_generated_method = "80F84565BFC7764AF82A57198D1B3547")
     
 public int getDuration() {
@@ -176,10 +178,12 @@ public int getDuration() {
         //mTN.mVerticalMargin = verticalMargin;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public float getHorizontalMargin() {
         return getTaintFloat();
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public float getVerticalMargin() {
     	 return getTaintFloat();
     }
@@ -351,14 +355,17 @@ public void handleHide() {
         
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getGravity() {
         return getTaintInt();
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getXOffset() {
     	return getTaintInt();
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getYOffset() {
     	return getTaintInt();
     }

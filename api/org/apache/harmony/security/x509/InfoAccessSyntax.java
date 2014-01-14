@@ -12,11 +12,6 @@ import org.apache.harmony.security.asn1.ASN1SequenceOf;
 import org.apache.harmony.security.asn1.ASN1Type;
 import org.apache.harmony.security.asn1.BerInputStream;
 
-
-
-
-
-
 public final class InfoAccessSyntax extends ExtensionValue {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:56.076 -0500", hash_original_method = "A1A286E994DF633FF07FDB3976ABD65A", hash_generated_method = "5445AE814B2EA0430DC5726319443538")
@@ -24,7 +19,6 @@ public final class InfoAccessSyntax extends ExtensionValue {
 public static InfoAccessSyntax decode(byte[] encoding) throws IOException {
         return ((InfoAccessSyntax) ASN1.decode(encoding));
     }
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.403 -0400", hash_original_field = "E611BBC850EAC486F3CEF9633B2E6F73", hash_generated_field = "5FA1DEAA374D887C0615B0A6E5AC612B")
 
@@ -35,6 +29,7 @@ public static InfoAccessSyntax decode(byte[] encoding) throws IOException {
             return new InfoAccessSyntax((List<?>) in.content, in.getEncoded());
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:56.087 -0500", hash_original_method = "138F8598CC0F155B5334CA1116D2BA97", hash_generated_method = "D6EBE0F5BDD303E9296F74797AD7C04D")
         
 @Override public Collection getValues(Object object) {
@@ -58,6 +53,7 @@ private InfoAccessSyntax(List<?> accessDescriptions, byte[] encoding) throws IOE
     /**
      * Returns ASN.1 encoded form of this X.509 InfoAccessSyntax.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:56.073 -0500", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "552F71A862C62513AAC32037F4D2FC1B")
     
 @Override public byte[] getEncoded() {

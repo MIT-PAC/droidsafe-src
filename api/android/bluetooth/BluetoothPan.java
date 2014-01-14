@@ -179,6 +179,7 @@ public boolean disconnect(BluetoothDevice device) {
     /**
      * {@inheritDoc}
      */
+    @DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:35.332 -0500", hash_original_method = "3A75F2671749E4DA82D0904A245178B4", hash_generated_method = "071E4EA07C0F7B5F8425A48AB65FC5A7")
     
 public List<BluetoothDevice> getConnectedDevices() {
@@ -198,6 +199,7 @@ public List<BluetoothDevice> getConnectedDevices() {
     /**
      * {@inheritDoc}
      */
+    @DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:35.334 -0500", hash_original_method = "CD9A3890717E8AE347E129B1BA75DECC", hash_generated_method = "E7F8747CB2085556A0ED8D637B108660")
     
 public List<BluetoothDevice> getDevicesMatchingConnectionStates(int[] states) {
@@ -217,6 +219,7 @@ public List<BluetoothDevice> getDevicesMatchingConnectionStates(int[] states) {
     /**
      * {@inheritDoc}
      */
+    @DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:35.336 -0500", hash_original_method = "1530C5B663866D4821DCE21DA5245DE9", hash_generated_method = "7901E2C55D7557B790416818EFF16781")
     
 public int getConnectionState(BluetoothDevice device) {
@@ -246,6 +249,7 @@ public void setBluetoothTethering(boolean value) {
         }
     }
 
+    @DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:35.341 -0500", hash_original_method = "5B6C4C5F18FB71C4124F888F30713582", hash_generated_method = "F05E2A8D3F2A044C1DD827C182AE62C6")
     
 public boolean isTetheringOn() {

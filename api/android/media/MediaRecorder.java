@@ -22,6 +22,7 @@ public class MediaRecorder {
      * Gets the maximum value for audio sources.
      * @see android.media.MediaRecorder.AudioSource
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.695 -0500", hash_original_method = "AE8B9D0BAF1949AC0D1E2F329A15E5A4", hash_generated_method = "7423A75675172FE805FDDCBC7C47DDDA")
     
 public static final int getAudioSourceMax() { return AudioSource.VOICE_COMMUNICATION; }

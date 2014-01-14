@@ -14,10 +14,6 @@ import android.os.SystemClock;
 import android.view.View;
 import android.view.ViewGroup;
 
-
-
-
-
 class ExpandableListConnector extends BaseAdapter implements Filterable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.753 -0500", hash_original_field = "F740C7542DC629DE756D7957303B1D05", hash_generated_field = "18A81DFA989CC3FAA8A107E272992504")
 
@@ -85,7 +81,7 @@ PositionMetadata getUnflattenedPos(final int flPos) {
         int leftExpGroupIndex = 0;
         int rightExpGroupIndex = numExpGroups - 1;
         int midExpGroupIndex = 0;
-        GroupMetadata midExpGm; 
+        GroupMetadata midExpGm;
         
         if (numExpGroups == 0) {
             /*
@@ -156,7 +152,6 @@ PositionMetadata getUnflattenedPos(final int flPos) {
          * in the above search.
          */
 
-
         /**
          * If we are to expand this group later, where would it go in the
          * mExpGroupMetadataList ?
@@ -179,7 +174,7 @@ PositionMetadata getUnflattenedPos(final int flPos) {
              * leftGroupPos is one more than it should be (since that broke out
              * of our binary search), so we decrement it.
              */  
-            final GroupMetadata leftExpGm = egml.get(leftExpGroupIndex-1);            
+            final GroupMetadata leftExpGm = egml.get(leftExpGroupIndex-1);
 
             insertPosition = leftExpGroupIndex;
 
@@ -196,7 +191,7 @@ PositionMetadata getUnflattenedPos(final int flPos) {
              * insertion position is before the right group. Also, the
              * rightGroupPos is one less than it should be, so increment it.
              */
-            final GroupMetadata rightExpGm = egml.get(++rightExpGroupIndex);            
+            final GroupMetadata rightExpGm = egml.get(++rightExpGroupIndex);
 
             insertPosition = rightExpGroupIndex;
             
@@ -237,7 +232,7 @@ PositionMetadata getFlattenedPos(final ExpandableListPosition pos) {
         int leftExpGroupIndex = 0;
         int rightExpGroupIndex = numExpGroups - 1;
         int midExpGroupIndex = 0;
-        GroupMetadata midExpGm; 
+        GroupMetadata midExpGm;
         
         if (numExpGroups == 0) {
             /*
@@ -365,6 +360,7 @@ PositionMetadata getFlattenedPos(final ExpandableListPosition pos) {
         return retValue;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.782 -0500", hash_original_method = "E43CB6EF7F0706DB8CAE1E4EB2A6AE3E", hash_generated_method = "47DB55305C8A6796D86224A1FE93B0AA")
     
 public int getCount() {
@@ -376,6 +372,7 @@ public int getCount() {
         return mExpandableListAdapter.getGroupCount() + mTotalExpChildrenCount;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.784 -0500", hash_original_method = "06B72D417088BC3B17164CA741049075", hash_generated_method = "AB9F9881D27F80592D3E7BA9E009E48F")
     
 public Object getItem(int flatListPos) {
@@ -398,6 +395,7 @@ public Object getItem(int flatListPos) {
         return retValue;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.787 -0500", hash_original_method = "4AC16A8A6C46491D50BE7E30F75A3576", hash_generated_method = "9C1FA81FA45FB4F67BB0BA95A8E37A70")
     
 public long getItemId(int flatListPos) {
@@ -421,6 +419,7 @@ public long getItemId(int flatListPos) {
         return retValue;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.790 -0500", hash_original_method = "E8F063B04C087445609A9E5E66DA0C8E", hash_generated_method = "278DAC0FDBB3963CE3BC73B3B7D74A5B")
     
 public View getView(int flatListPos, View convertView, ViewGroup parent) {
@@ -445,6 +444,7 @@ public View getView(int flatListPos, View convertView, ViewGroup parent) {
         return retValue;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.792 -0500", hash_original_method = "99547DA2855DBC2792C3AF02654A4FE0", hash_generated_method = "C3666CABD146D7E0B72B8235EAFF3D01")
     
 @Override
@@ -474,6 +474,7 @@ public View getView(int flatListPos, View convertView, ViewGroup parent) {
         return retValue;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.794 -0500", hash_original_method = "CE0634CAEF6413BEB2C07851873B554E", hash_generated_method = "A5F3735927BB5E300DA60480B75908FF")
     
 @Override
@@ -719,14 +720,16 @@ public boolean isGroupExpanded(int groupPosition) {
     
 public void setMaxExpGroupCount(int maxExpGroupCount) {
         mMaxExpGroupCount = maxExpGroupCount;
-    }    
+    }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.817 -0500", hash_original_method = "473155659E1950E1738B6CCA8650B997", hash_generated_method = "473155659E1950E1738B6CCA8650B997")
     
 ExpandableListAdapter getAdapter() {
         return mExpandableListAdapter;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.819 -0500", hash_original_method = "D7C89EA0D9DD591B12578E8793100CE2", hash_generated_method = "D406C3BE28EC3D0684B6ED6E2E370ED0")
     
 public Filter getFilter() {
@@ -738,6 +741,7 @@ public Filter getFilter() {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.821 -0500", hash_original_method = "740752E96AF2B266538C6125F8E79937", hash_generated_method = "740752E96AF2B266538C6125F8E79937")
     
 ArrayList<GroupMetadata> getExpandedGroupMetadataList() {
@@ -862,7 +866,6 @@ int findGroupPosition(long groupIdToMatch, int seedGroupPosition) {
 
         return AdapterView.INVALID_POSITION;
     }
-
     
     protected class MyDataSetObserver extends DataSetObserver {
         
@@ -888,11 +891,8 @@ int findGroupPosition(long groupIdToMatch, int seedGroupPosition) {
             
             notifyDataSetInvalidated();
         }
-
         
     }
-
-
     
     static class GroupMetadata implements Parcelable, Comparable<GroupMetadata> {
 
@@ -935,7 +935,6 @@ public GroupMetadata[] newArray(int size) {
 
         int flPos;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.843 -0500", hash_original_field = "1D206009A6034643761BC2A5FF4F958A", hash_generated_field = "CA711A65235C080BF7996DBB0A1BD502")
-
         
         /**
          * This group's last child's flat list position, so basically
@@ -994,8 +993,6 @@ public void writeToParcel(Parcel dest, int flags) {
             }
         
     }
-
-
     
     static public class PositionMetadata {
         
@@ -1025,7 +1022,6 @@ private static PositionMetadata getRecycledOrCreate() {
             return pm;
         }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.873 -0500", hash_original_field = "73A7DB4BA52C41C46FF2526949A8CECE", hash_generated_field = "7127A67374BF405D0F01EEB2429B1D48")
-
         
         private static final int MAX_POOL_SIZE = 5;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.876 -0500", hash_original_field = "E5612D1F77D6B8D6ECF15E38DB9451F9", hash_generated_field = "8C9EE594696DB4880353F853B50DD5E0")
@@ -1080,8 +1076,6 @@ public boolean isExpanded() {
             return groupMetadata != null;
         }
     }
-
-
     
 }
 

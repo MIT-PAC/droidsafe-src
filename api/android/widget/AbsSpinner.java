@@ -246,12 +246,14 @@ void resetList() {
         mWidthMeasureSpec = widthMeasureSpec;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:31.359 -0500", hash_original_method = "44D3B1A6F440757321735895159CF3F5", hash_generated_method = "44D3B1A6F440757321735895159CF3F5")
     
 int getChildHeight(View child) {
         return child.getMeasuredHeight();
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:31.360 -0500", hash_original_method = "3D627342594CC491E8B9982EF63DBDD8", hash_generated_method = "3D627342594CC491E8B9982EF63DBDD8")
     
 int getChildWidth(View child) {
@@ -329,6 +331,7 @@ void setSelectionInt(int position, boolean animate) {
     
 abstract void layout(int delta, boolean animate);
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:31.376 -0500", hash_original_method = "B9D708BD110913DD38C752A46A05BBB4", hash_generated_method = "513703D89AB4B12AE4736D2F5E964FD5")
     
 @Override
@@ -362,6 +365,7 @@ abstract void layout(int delta, boolean animate);
         return mAdapter;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:31.383 -0500", hash_original_method = "C515244CDC30F9529A71B0CAA70231C3", hash_generated_method = "01AD3C9DE5F33E89331C2C38A4EFAE12")
     
 @Override
@@ -399,6 +403,7 @@ public int pointToPosition(int x, int y) {
         return INVALID_POSITION;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:31.413 -0500", hash_original_method = "2B2E0178AF4521152109C90D1424ECD0", hash_generated_method = "0F01E07DD73E3F973CD57D0A62D38B74")
     
 @Override
@@ -526,6 +531,7 @@ public void put(int position, View v) {
             mScrapHeap.put(position, v);
         }
         
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:31.423 -0500", hash_original_method = "13D5A4FF59BF1643EBD5228E429384EA", hash_generated_method = "2636315F7184771A1F6940DBD366307F")
         
 View get(int position) {

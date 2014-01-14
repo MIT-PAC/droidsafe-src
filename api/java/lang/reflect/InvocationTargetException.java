@@ -5,17 +5,11 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class InvocationTargetException extends Exception {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.222 -0500", hash_original_field = "3FB1F19F5ECFA9B61FF3BEB74A0E3882", hash_generated_field = "8B92C691B9FF42AF75BC4B807D727C71")
 
-
     private static final long serialVersionUID = 4085088731926701167L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.225 -0500", hash_original_field = "BAE956BCC966588A9550DF065F923336", hash_generated_field = "5298B1A2336EAF80BB6B016828DD3384")
-
 
     private Throwable target;
 
@@ -66,6 +60,7 @@ public InvocationTargetException(Throwable exception, String detailMessage) {
      *
      * @return the target exception
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.236 -0500", hash_original_method = "F1F2316177C546F546EA483459CFF30B", hash_generated_method = "2207DC53F6302AF64B36ABA7BEE1FE70")
     
 public Throwable getTargetException() {
@@ -77,6 +72,7 @@ public Throwable getTargetException() {
      *
      * @return the cause of this exception
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.239 -0500", hash_original_method = "D8C22D14C73496EF517FF8FC6C6B2CD8", hash_generated_method = "99CD47B0697B3B8C9C0B34299EA01FAB")
     
 @Override

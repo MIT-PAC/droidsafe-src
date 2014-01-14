@@ -282,6 +282,7 @@ public void setProperty (String name, Object value)
      *            value is not currently readable.
      * @see org.xml.sax.XMLReader#getProperty
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.289 -0500", hash_original_method = "C44A70A290987077F2BE17BCA485ED98", hash_generated_method = "CC2ADCA125CB5A6D2AD99DB025EEB530")
     
 public Object getProperty (String name)
@@ -309,6 +310,7 @@ public void setEntityResolver (EntityResolver resolver)
      * @return The current entity resolver, or null if none was supplied.
      * @see org.xml.sax.XMLReader#getEntityResolver
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.294 -0500", hash_original_method = "3D81AADF9B7990F38C11DFC7B847459D", hash_generated_method = "21235A3EAE7DB933DABF4A20E9939299")
     
 public EntityResolver getEntityResolver ()
@@ -335,6 +337,7 @@ public void setDTDHandler (DTDHandler handler)
      * @return the current DTD handler, or null if none was supplied
      * @see org.xml.sax.XMLReader#getEntityResolver
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.298 -0500", hash_original_method = "0F3DB0A89C47F7E5E68CDAECBE47BDA3", hash_generated_method = "59B05D24F37BFA393F25F99590382F55")
     
 public DTDHandler getDTDHandler ()
@@ -361,6 +364,7 @@ public void setContentHandler (ContentHandler handler)
      * @return The current content handler, or null if none was supplied.
      * @see org.xml.sax.XMLReader#getEntityResolver
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.303 -0500", hash_original_method = "0648A0EF88EB44B7C03930DFF59893AE", hash_generated_method = "1D002E4F644B3971DAC0310E795E4A0B")
     
 public ContentHandler getContentHandler ()
@@ -387,6 +391,7 @@ public void setErrorHandler (ErrorHandler handler)
      * @return The current error handler, or null if none was supplied.
      * @see org.xml.sax.XMLReader#getEntityResolver
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.307 -0500", hash_original_method = "96333264931FDEA89262C2A3168E5DDE", hash_generated_method = "DB848F72598F990979C28BB722D11B1F")
     
 public ErrorHandler getErrorHandler ()
@@ -797,7 +802,8 @@ void setAttributeList (AttributeList qAtts)
      * @return The number of attributes in the list.
      * @see org.xml.sax.Attributes#getLength
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.382 -0500", hash_original_method = "B156048BB95084F4BF5D28EF31B66C03", hash_generated_method = "BB20AE79DB45D67F0F3D2CAAE7AB4AF8")
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.382 -0500", hash_original_method = "B156048BB95084F4BF5D28EF31B66C03", hash_generated_method = "BB20AE79DB45D67F0F3D2CAAE7AB4AF8")
         
 public int getLength ()
     {
@@ -811,7 +817,8 @@ public int getLength ()
      * @return Always the empty string.
      * @see org.xml.sax.Attributes#getURI
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.385 -0500", hash_original_method = "20CEB246971EBBCECBF2ACA441CBBECD", hash_generated_method = "12493DA6D8A53DEB8E0C0336711DA59E")
+    @DSSource({DSSourceKind.FILE_INFORMATION})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.385 -0500", hash_original_method = "20CEB246971EBBCECBF2ACA441CBBECD", hash_generated_method = "12493DA6D8A53DEB8E0C0336711DA59E")
         
 public String getURI (int i)
     {
@@ -825,7 +832,8 @@ public String getURI (int i)
      * @return Always the empty string.
      * @see org.xml.sax.Attributes#getLocalName
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.387 -0500", hash_original_method = "FEDFFD9A667A49103BC32EE7ED61A0BB", hash_generated_method = "653E3788236731D8C6F4042D9D754641")
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.387 -0500", hash_original_method = "FEDFFD9A667A49103BC32EE7ED61A0BB", hash_generated_method = "653E3788236731D8C6F4042D9D754641")
         
 public String getLocalName (int i)
     {
@@ -838,7 +846,8 @@ public String getLocalName (int i)
      * @param The attribute's index.
      * @return The attribute's qualified name, internalized.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.390 -0500", hash_original_method = "A764D8ED68137C2EBCBCEF1CD153F6C1", hash_generated_method = "5AB18488028B84E4036A93C3452EE29A")
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.390 -0500", hash_original_method = "A764D8ED68137C2EBCBCEF1CD153F6C1", hash_generated_method = "5AB18488028B84E4036A93C3452EE29A")
         
 public String getQName (int i)
     {
@@ -851,7 +860,8 @@ public String getQName (int i)
      * @param The attribute's index.
      * @return The attribute's type as an internalized string.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.392 -0500", hash_original_method = "27E76BA5C0D6AD663690DDCFFED2A8A3", hash_generated_method = "193D661C4E791CE613D2F492C39B89C9")
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.392 -0500", hash_original_method = "27E76BA5C0D6AD663690DDCFFED2A8A3", hash_generated_method = "193D661C4E791CE613D2F492C39B89C9")
         
 public String getType (int i)
     {
@@ -864,7 +874,8 @@ public String getType (int i)
      * @param The attribute's index.
      * @return The attribute's value.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.394 -0500", hash_original_method = "F0679796EDFA7C65CB4AD5C7F9CBE1FC", hash_generated_method = "59CFC8024232ED8BA11D0FF2A002F6A6")
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.394 -0500", hash_original_method = "F0679796EDFA7C65CB4AD5C7F9CBE1FC", hash_generated_method = "59CFC8024232ED8BA11D0FF2A002F6A6")
         
 public String getValue (int i)
     {
@@ -913,7 +924,8 @@ public int getIndex (String qName)
      * @param localName The local name.
      * @return The attribute's type as an internalized string.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.401 -0500", hash_original_method = "DB45F41F9C44849C439912CF28FC6F39", hash_generated_method = "880C294A7EAE6D836392E2BE5ECC821A")
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.401 -0500", hash_original_method = "DB45F41F9C44849C439912CF28FC6F39", hash_generated_method = "880C294A7EAE6D836392E2BE5ECC821A")
         
 public String getType (String uri, String localName)
     {
@@ -926,7 +938,8 @@ public String getType (String uri, String localName)
      * @param qName The qualified name.
      * @return The attribute's type as an internalized string.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.403 -0500", hash_original_method = "20D0A7881E2746A3B90C82673591E46C", hash_generated_method = "7FAD01855AFB4E51EBA5E4D04C5795C8")
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.403 -0500", hash_original_method = "20D0A7881E2746A3B90C82673591E46C", hash_generated_method = "7FAD01855AFB4E51EBA5E4D04C5795C8")
         
 public String getType (String qName)
     {
@@ -940,7 +953,8 @@ public String getType (String qName)
      * @param localName The local name.
      * @return The attribute's value.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.406 -0500", hash_original_method = "A923F17E07DEE910B88DBEE5B2421501", hash_generated_method = "F23C4745139D5FB53F0FBCBD0566CDFA")
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.406 -0500", hash_original_method = "A923F17E07DEE910B88DBEE5B2421501", hash_generated_method = "F23C4745139D5FB53F0FBCBD0566CDFA")
         
 public String getValue (String uri, String localName)
     {
@@ -953,7 +967,8 @@ public String getValue (String uri, String localName)
      * @param qName The qualified name.
      * @return The attribute's value.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.408 -0500", hash_original_method = "E305D94D7DAD816250B349D4183FD8D8", hash_generated_method = "D9A2660789A3C908966C2DA35937C9E0")
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.408 -0500", hash_original_method = "E305D94D7DAD816250B349D4183FD8D8", hash_generated_method = "D9A2660789A3C908966C2DA35937C9E0")
         
 public String getValue (String qName)
     {

@@ -17,6 +17,7 @@ public final class ASN1Enumerated extends ASN1Primitive {
      *
      * @return ASN.1 Enumerated type default implementation
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:51.935 -0500", hash_original_method = "C7BD5DF5B4492E50E2ACB81AC88D2AB0", hash_generated_method = "E42EF75BE538682AC0C1CB8F32E8FDAF")
     
 public static ASN1Enumerated getInstance() {
@@ -56,6 +57,7 @@ public Object decode(BerInputStream in) throws IOException {
      *
      * @return array of bytes
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:51.939 -0500", hash_original_method = "82D4C6A7EA2B5E6BF0228FD44BF29A31", hash_generated_method = "21F4F02DB154DFF96D7B1CD27CD88D68")
     
 public Object getDecodedObject(BerInputStream in) throws IOException {

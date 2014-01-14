@@ -177,7 +177,8 @@ void setConnection(Connection connection) {
         mConnection = connection;
     }
 
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.673 -0500", hash_original_method = "1AA9C40DC41DAB952A0E5EA6B233F2D0", hash_generated_method = "1AA9C40DC41DAB952A0E5EA6B233F2D0")
+    /* package */ @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.673 -0500", hash_original_method = "1AA9C40DC41DAB952A0E5EA6B233F2D0", hash_generated_method = "1AA9C40DC41DAB952A0E5EA6B233F2D0")
     
 EventHandler getEventHandler() {
         return mEventHandler;
@@ -411,6 +412,7 @@ synchronized void cancel() {
         }
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.689 -0500", hash_original_method = "512B3E32AEE990D1477AF1DD14A214E5", hash_generated_method = "632932A86D9A8B15AC1DAA7F9BBDA079")
     
 String getHostPort() {
@@ -426,6 +428,7 @@ String getHostPort() {
         }
     }
     
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.386 -0400", hash_original_method = "2DF65EB3016FC9C1BCED4852586E67B2", hash_generated_method = "1CD07FD701792A8833A6C0A8D18BE133")
      String getUri() {
         if(mProxyHost == null ||

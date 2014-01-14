@@ -59,6 +59,7 @@ public void setCallId(String callId) throws ParseException {
      *
      * @return the String value of the Call-Id of this InReplyToHeader
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:05.035 -0500", hash_original_method = "EA32F9E304DDFDAAFD9F10122A085C03", hash_generated_method = "A952B60519D5B869F2A62588038F424D")
     
 public String getCallId() {

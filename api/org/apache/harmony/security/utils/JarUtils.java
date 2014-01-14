@@ -29,11 +29,6 @@ import org.apache.harmony.security.provider.cert.X509CertImpl;
 import org.apache.harmony.security.x501.AttributeTypeAndValue;
 import org.apache.harmony.xnet.provider.jsse.OpenSSLSignature;
 
-
-
-
-
-
 public class JarUtils {
 
     /**
@@ -47,6 +42,7 @@ public class JarUtils {
      * @throws IOException - if some errors occurs during reading from the stream
      * @throws GeneralSecurityException - if signature verification process fails
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.564 -0500", hash_original_method = "BD120DD25E8222693A9ADBDDB2DA9384", hash_generated_method = "65442D82859A19E4CC821E815E314D2D")
     
 public static Certificate[] verifySignature(InputStream signature, InputStream

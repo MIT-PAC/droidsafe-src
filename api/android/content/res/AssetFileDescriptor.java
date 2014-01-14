@@ -76,6 +76,7 @@ AssetFileDescriptor(Parcel src) {
      * in addition to the normal FileDescriptor object also allows you to close
      * the descriptor when you are done with it.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.739 -0500", hash_original_method = "9E61752120AEDC1582A5E495568F317A", hash_generated_method = "4296F37385ABE7D8D01D65FDFB3669B1")
     
 public ParcelFileDescriptor getParcelFileDescriptor() {
@@ -86,6 +87,7 @@ public ParcelFileDescriptor getParcelFileDescriptor() {
      * Returns the FileDescriptor that can be used to read the data in the
      * file.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.741 -0500", hash_original_method = "44C1CE26DE6098783D46BD5B3EB1BDD6", hash_generated_method = "AAD5723250B4FD2A2C783AFDFFD1F5F0")
     
 public FileDescriptor getFileDescriptor() {
@@ -95,6 +97,7 @@ public FileDescriptor getFileDescriptor() {
     /**
      * Returns the byte offset where this asset entry's data starts.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.743 -0500", hash_original_method = "F15F7E68559FE94D65E8E77E2E4D8AE9", hash_generated_method = "8D97620EF9AD25B7CC0B648BD738E0E0")
     
 public long getStartOffset() {
@@ -112,6 +115,7 @@ public long getStartOffset() {
      * 
      * @see #getDeclaredLength()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.745 -0500", hash_original_method = "CF0C8205090CB57B9B1EACE80CFEFFE6", hash_generated_method = "F1D872A0D86B7EF8F27AE8B5C27ED7A5")
     
 public long getLength() {
@@ -130,6 +134,7 @@ public long getLength() {
      * 
      * @see #getDeclaredLength()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.748 -0500", hash_original_method = "017FD707368B4170A32A7494D8D576FE", hash_generated_method = "F6014B19B06A61282754490289EFC536")
     
 public long getDeclaredLength() {

@@ -57,6 +57,7 @@ class RILRequest {
      * @param result sent when operation completes
      * @return a RILRequest instance from the pool.
      */
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.037 -0500", hash_original_method = "6A7FA32ED0AD9506923594ED32C4601A", hash_generated_method = "A7F67091EA6B158F41DE9930ED9770EF")
     
 static RILRequest obtain(int request, Message result) {
@@ -2092,6 +2093,7 @@ public void setLocationUpdates(boolean enable, Message response) {
     /**
      * {@inheritDoc}
      */
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:14.383 -0500", hash_original_method = "7C3C5691348423704F3F89A5A1253262", hash_generated_method = "D96A012163224A327084C400AF00B85A")
     
 public void getSmscAddress(Message result) {

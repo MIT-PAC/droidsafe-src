@@ -8,10 +8,6 @@ import android.os.IBinder;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public final class InputBinding implements Parcelable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:18.553 -0500", hash_original_field = "10E7E5AF6C6AF740D1052F1C07849A7D", hash_generated_field = "DF35411D6228553D984D7F58714BB9BE")
 
@@ -90,6 +86,7 @@ InputBinding(Parcel source) {
     /**
      * Return the connection for interacting back with the application.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:18.572 -0500", hash_original_method = "EE079552217D9D3D337BCB42A3B90EF3", hash_generated_method = "603B560A64FA3C4E896B6DF055986DB0")
     
 public InputConnection getConnection() {
@@ -101,6 +98,7 @@ public InputConnection getConnection() {
      * not use this directly, it must be converted to a {@link InputConnection}
      * for you.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:18.575 -0500", hash_original_method = "A8756053877C567C0ECF2796084552D6", hash_generated_method = "DFB937A89F30E37D74F138397648DB60")
     
 public IBinder getConnectionToken() {
@@ -110,6 +108,7 @@ public IBinder getConnectionToken() {
     /**
      * Return the user id of the client associated with this binding.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:18.577 -0500", hash_original_method = "96C0ECA451126B748CCA2D62D6264E79", hash_generated_method = "D9609F2B40F50FBC7A5ECB5FB52ADD98")
     
 public int getUid() {
@@ -119,6 +118,7 @@ public int getUid() {
     /**
      * Return the process id where this binding came from.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:18.579 -0500", hash_original_method = "30E9EE034B82B89E2430B9CA08B3CDF3", hash_generated_method = "5F3F7EBF84C647ECA8CD37811F6AB2C1")
     
 public int getPid() {

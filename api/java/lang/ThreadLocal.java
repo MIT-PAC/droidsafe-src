@@ -37,6 +37,7 @@ public ThreadLocal() {}
      *
      * @return the current value of the variable for the calling thread.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.327 -0500", hash_original_method = "17AB1D63AD8B7EADE4880D6FD1744965", hash_generated_method = "487B38E97D772D8EDC85719FC3E88B3F")
     
 @SuppressWarnings("unchecked")
@@ -404,6 +405,7 @@ void put(ThreadLocal<?> key, Object value) {
          * Gets value for given ThreadLocal after not finding it in the first
          * slot.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.395 -0500", hash_original_method = "27C70593962E283B71D24D73AE4C9368", hash_generated_method = "CB49CB1736028974189EF007283FC22C")
         
 Object getAfterMiss(ThreadLocal<?> key) {

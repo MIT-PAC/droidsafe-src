@@ -8,11 +8,6 @@ import java.nio.ByteBuffer;
 
 import org.apache.harmony.security.fortress.Engine;
 
-
-
-
-
-
 public abstract class MessageDigest extends MessageDigestSpi {
 
     /**
@@ -28,6 +23,7 @@ public abstract class MessageDigest extends MessageDigestSpi {
      * @throws NullPointerException
      *             if {@code algorithm} is {@code null}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.388 -0500", hash_original_method = "5C601ADA1D2E18CF500EF6D66253600E", hash_generated_method = "7136D7DF10FBBCC2A23B2BFE80B5FAB3")
     
 public static MessageDigest getInstance(String algorithm)
@@ -65,6 +61,7 @@ public static MessageDigest getInstance(String algorithm)
      *             if {@code algorithm} is {@code null}
      * @throws IllegalArgumentException if {@code provider == null || provider.isEmpty()}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.391 -0500", hash_original_method = "4A47CCCAB9E7CA50F3AD4953C61AD60D", hash_generated_method = "E109005BEF06DBB9107F58DD5DA16131")
     
 public static MessageDigest getInstance(String algorithm, String provider)
@@ -95,6 +92,7 @@ public static MessageDigest getInstance(String algorithm, String provider)
      *             if {@code algorithm} is {@code null}
      * @throws IllegalArgumentException if {@code provider == null}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.393 -0500", hash_original_method = "723C5C1CC0AC6B47325C4EFD63C83CA5", hash_generated_method = "FB6253B2AEE8F1F7762F8C00D3303C27")
     
 public static MessageDigest getInstance(String algorithm, Provider provider)
@@ -234,6 +232,7 @@ public void update(byte[] input) {
      * @return the computed one way hash value
      * @see #reset
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.405 -0500", hash_original_method = "BFC8812962D9635EA2DD9DD3F9DF8CCE", hash_generated_method = "D12C891E70E59E44A3EA8AAE84399358")
     
 public byte[] digest() {
@@ -281,6 +280,7 @@ public int digest(byte[] buf, int offset, int len) throws DigestException {
      * @return the computed one way hash value
      * @see #reset()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.410 -0500", hash_original_method = "C04191B06E52578EA4C996F47114224E", hash_generated_method = "7A58DB51A97D433F63CE5548A9BE7778")
     
 public byte[] digest(byte[] input) {
@@ -294,6 +294,7 @@ public byte[] digest(byte[] input) {
      *
      * @return a printable representation for this {@code MessageDigest}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.413 -0500", hash_original_method = "67B827C914C444116C889B9B936D23D1", hash_generated_method = "CB63A8F85874C335D55E50A42A6C113B")
     
 @Override
@@ -306,6 +307,7 @@ public byte[] digest(byte[] input) {
      *
      * @return the name of the algorithm of this {@code MessageDigest}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.419 -0500", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "8A7AA6162519FFB2228039F3D6331CE9")
     
 public final String getAlgorithm() {
@@ -317,6 +319,7 @@ public final String getAlgorithm() {
      *
      * @return the provider associated with this {@code MessageDigest}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.421 -0500", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "443000CF13C77ABCABFC8B67E2DE556F")
     
 public final Provider getProvider() {
@@ -330,6 +333,7 @@ public final Provider getProvider() {
      *
      * @return the digest length in bytes, or {@code 0}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.424 -0500", hash_original_method = "CB1E3F95FB76C6289C61CD25B71DC6B2", hash_generated_method = "88911DEE53843AD051BBEE6C556BB1DD")
     
 public final int getDigestLength() {
@@ -348,6 +352,7 @@ public final int getDigestLength() {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.426 -0500", hash_original_method = "31D01322C9910F836DA03F7FCF4D6261", hash_generated_method = "3129F61A1AC4738DC9444626172FE7E6")
     
 @Override
@@ -357,7 +362,6 @@ public final int getDigestLength() {
         }
         throw new CloneNotSupportedException();
     }
-
     
     private static class MessageDigestImpl extends MessageDigest {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.432 -0500", hash_original_field = "E6E12CFDFE440D94658B0BABDE3D1B1F", hash_generated_field = "13EF455E6884522AF3C11AFF102361CB")
@@ -383,6 +387,7 @@ private MessageDigestImpl(MessageDigestSpi messageDigestSpi,
         }
 
         // engineDigest() implementation
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.440 -0500", hash_original_method = "F90FDD38A509FFE526728E64881BF6E1", hash_generated_method = "EFB143DA3D4BFC5CF135EA88531A82EE")
         
 @Override
@@ -426,7 +431,6 @@ private MessageDigestImpl(MessageDigestSpi messageDigestSpi,
 
             throw new CloneNotSupportedException();
         }
-
         
     }
 

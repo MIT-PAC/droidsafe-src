@@ -91,6 +91,7 @@ public ClientParamsStack(ClientParamsStack stack,
      *
      * @return  the application parameters, or <code>null</code>
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:40.631 -0500", hash_original_method = "411C2E82696B2A098C8F744317385115", hash_generated_method = "909EF3DFF82EE1B83E4BF4D734BA39A7")
     
 public final HttpParams getApplicationParams() {
@@ -102,6 +103,7 @@ public final HttpParams getApplicationParams() {
      *
      * @return  the client parameters, or <code>null</code>
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:40.634 -0500", hash_original_method = "15DA57CD4E641FF95D2F8640F98E0183", hash_generated_method = "D7328670B646B0FBBA50CBB6250EAA77")
     
 public final HttpParams getClientParams() {
@@ -113,6 +115,7 @@ public final HttpParams getClientParams() {
      *
      * @return  the request parameters, or <code>null</code>
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:40.636 -0500", hash_original_method = "93598125634F09E7FC66E3A21BBB5179", hash_generated_method = "E4ABB26903311610D97CC681F0C51655")
     
 public final HttpParams getRequestParams() {
@@ -124,6 +127,7 @@ public final HttpParams getRequestParams() {
      *
      * @return  the override parameters, or <code>null</code>
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:40.638 -0500", hash_original_method = "571781B35D1F87CE8D980CD8A67BB691", hash_generated_method = "E9959B1DB27920CF93E4D4B4A13D037C")
     
 public final HttpParams getOverrideParams() {
@@ -139,6 +143,7 @@ public final HttpParams getOverrideParams() {
      * @return  the highest-priority value for that parameter, or
      *          <code>null</code> if it is not set anywhere in this stack
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:40.642 -0500", hash_original_method = "4085DCEEB969FCACB974F3F758D65674", hash_generated_method = "3B60B51B2857886AD1ED76AD74C35A76")
     
 public Object getParameter(String name) {

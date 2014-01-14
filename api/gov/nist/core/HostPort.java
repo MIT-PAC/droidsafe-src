@@ -6,15 +6,8 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.net.InetAddress;
 
-
-
-
-
-
 public final class HostPort extends GenericObject {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:51.497 -0500", hash_original_field = "B6E681907C040B7EF7D33B2A253A060B", hash_generated_field = "7CD9CF316407E65EA07641A462BD6002")
-
-
 
     private static final long serialVersionUID = -7103412227431884523L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:51.500 -0500", hash_original_field = "A363FAEC1547C26806CDCFD82B7C056A", hash_generated_field = "8605987B023B37FAF2F8A47F30F9F11E")
@@ -75,6 +68,7 @@ public boolean equals(Object other) {
     /** get the Host field
      * @return host field
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:51.514 -0500", hash_original_method = "46CD61CB12D2C2108CCC2BF62B36641B", hash_generated_method = "5379DCB35524413734142E611B5B78DE")
     
 public Host getHost() {
@@ -84,6 +78,7 @@ public Host getHost() {
     /** get the port field
      * @return int
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:51.518 -0500", hash_original_method = "A5F7344FAECBE0D6DB15D1F6E7BEBC6E", hash_generated_method = "8D4984D37D0017078DF4701090E35F25")
     
 public int getPort() {
@@ -132,6 +127,7 @@ public void setPort(int p) {
      *@throws java.net.UnkownHostException if host name cannot be resolved.
      *@return the inet address for the host.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:51.529 -0500", hash_original_method = "1454562F409CD451F70F3E17F975E5B5", hash_generated_method = "E075F8A89FA6E570386CA142FD7370B1")
     
 public InetAddress getInetAddress() throws java.net.UnknownHostException {

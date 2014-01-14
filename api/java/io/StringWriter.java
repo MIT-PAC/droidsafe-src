@@ -74,6 +74,7 @@ public StringWriter(int initialSize) {
      *
      * @return a reference to this writer's internal {@code StringBuffer}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.101 -0500", hash_original_method = "A7A377F1952FAEFB7BC2FB8A1C51454F", hash_generated_method = "9DACA42F3BBA428D705F71B19D733A93")
     
 public StringBuffer getBuffer() {

@@ -247,6 +247,7 @@ public void setButtonDrawable(Drawable d) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:39.530 -0500", hash_original_method = "E661308564BAD0BE96E34DA026589671", hash_generated_method = "5E8E36BFCD9C1913662CF74C63EBB21F")
     
 @Override
@@ -289,6 +290,7 @@ public void setButtonDrawable(Drawable d) {
         if (mButtonDrawable != null) mButtonDrawable.jumpToCurrentState();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:39.563 -0500", hash_original_method = "C906A6F68E532E790B1685DD63ECE7DE", hash_generated_method = "46FED10CEEBE0245DEE3DC6ADC684074")
     
 @Override

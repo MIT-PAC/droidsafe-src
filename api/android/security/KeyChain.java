@@ -148,6 +148,7 @@ public static void choosePrivateKeyAlias(Activity activity, KeyChainAliasCallbac
      * returned via {@link KeyChainAliasCallback#alias}.
      * @throws KeyChainException if the alias was valid but there was some problem accessing it.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:56.669 -0500", hash_original_method = "DF062E6FA636775439DA598053BC2C74", hash_generated_method = "2D9A8B83BCA9D73C008133748AF8F217")
     
 public static PrivateKey getPrivateKey(Context context, String alias)
@@ -181,6 +182,7 @@ public static PrivateKey getPrivateKey(Context context, String alias)
      * returned via {@link KeyChainAliasCallback#alias}.
      * @throws KeyChainException if the alias was valid but there was some problem accessing it.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:56.672 -0500", hash_original_method = "E3D944E68CC612365472BFA8499DA506", hash_generated_method = "84ACC2912769A26659673923B13D8A9A")
     
 public static X509Certificate[] getCertificateChain(Context context, String alias)
@@ -335,6 +337,7 @@ private KeyChainConnection(Context context,
 @Override public void close() {
             context.unbindService(serviceConnection);
         }
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:56.698 -0500", hash_original_method = "954EE7241574324971051CDC9EEAAD50", hash_generated_method = "53CF2DA78B8B234F9251222D09CDC4A6")
         
 public IKeyChainService getService() {

@@ -45,6 +45,7 @@ public static int tertiaryOrder(int order) {
         return order & TERTIARY_ORDER_MASK_;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:08.803 -0500", hash_original_method = "9D7C1BE8632666257030DFBB7F00B98F", hash_generated_method = "984D242F77E775048B2EF4A4E9388C4A")
     
 public static CollationElementIteratorICU getInstance(int collatorAddress, String source) {
@@ -136,6 +137,7 @@ public int previous() {
      *              any expansion sequence
      * @stable ICU 2.4
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:08.785 -0500", hash_original_method = "8640B8389DB00731AE9D5E817F73B27B", hash_generated_method = "0628E3D5845565FB79602EB8D7925034")
     
 public int getMaxExpansion(int order) {
@@ -167,6 +169,7 @@ public void setText(CharacterIterator source) {
      * @return offset of the current source character.
      * @stable ICU 2.4
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:08.792 -0500", hash_original_method = "1F41E721FB3FAE28539A76645F583C29", hash_generated_method = "1D7DCE433012CC11E054B8D080E6B9AE")
     
 public int getOffset() {

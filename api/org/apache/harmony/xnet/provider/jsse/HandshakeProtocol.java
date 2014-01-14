@@ -224,6 +224,7 @@ public SSLEngineResult.HandshakeStatus getStatus() {
      * Returns pending session
      * @return session
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:05.412 -0500", hash_original_method = "19D70A4F8DD7A34083C18DBEE5C3AF9E", hash_generated_method = "629850FA49FD101BEC165A6DAF84CE06")
     
 public SSLSessionImpl getSession() {
@@ -276,6 +277,7 @@ public abstract void unwrapSSLv2(byte[] bytes);
      * Proceses outbound handshake messages
      * @return
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:05.428 -0500", hash_original_method = "086592130010ECCB1C6429039BD6D57C", hash_generated_method = "2158E90FA8CF495C7349DE9CB8A3B094")
     
 public byte[] wrap() {
@@ -511,6 +513,7 @@ public void computerMasterSecret() {
      * Returns a delegated task.
      * @return Delegated task or null
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:05.471 -0500", hash_original_method = "CE5478587DF2FFE8F2A4389A21077FB6", hash_generated_method = "76519B8D7CE9A665A89BA0194B92C1FA")
     
 public Runnable getTask() {

@@ -15,14 +15,8 @@ import gov.nist.javax.sip.stack.StackMessageFactory;
 
 import javax.sip.TransactionState;
 
-
-
-
-
-
 class NistSipMessageFactoryImpl implements StackMessageFactory {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:34.918 -0500", hash_original_field = "03821C4D777C0A4AB8577E0C5F2371D6", hash_generated_field = "B028268F85C87F49A0E45B93954BF938")
-
 
     private SipStackImpl sipStack;
 
@@ -42,6 +36,7 @@ public NistSipMessageFactoryImpl(SipStackImpl sipStackImpl) {
      * @param messageChannel
      *            is the MessageChannel abstraction for this SIPServerRequest.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:34.921 -0500", hash_original_method = "05D11288A97D40A10A9E1FF4BB412446", hash_generated_method = "E7183459344DDC1F8F41F20C87AC3E8F")
     
 public ServerRequestInterface newSIPServerRequest(SIPRequest sipRequest,
@@ -123,7 +118,6 @@ public ServerResponseInterface newSIPServerResponse(
                 .getListeningPoint();
         return retval;
     }
-
     
 }
 

@@ -206,6 +206,7 @@ synchronized void updateNfcService(NfcActivityState state) {
     /**
      * Callback from NFC service
      */
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:52.196 -0500", hash_original_method = "3FF4E80952B14CA972EE064B02088076", hash_generated_method = "7379EDC1F9BB3C30C3B32834E48C5384")
     
 @Override

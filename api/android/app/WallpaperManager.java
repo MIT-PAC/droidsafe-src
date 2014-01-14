@@ -48,6 +48,7 @@ static void initGlobals(Looper looper) {
     /**
      * Retrieve a WallpaperManager associated with the given Context.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.165 -0500", hash_original_method = "97C230F92BF2EA74D74E57D6E151F317", hash_generated_method = "E122D877CAEF7F74721B46251971E070")
     
 public static WallpaperManager getInstance(Context context) {
@@ -157,6 +158,7 @@ WallpaperManager(Context context, Handler handler) {
     }
     
     /** @hide */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.167 -0500", hash_original_method = "6F9497943DE7A2ADCF716329D67D9BA7", hash_generated_method = "B314011C435ED4886132C5E44A8576FD")
     
 public IWallpaperManager getIWallpaperManager() {
@@ -172,6 +174,7 @@ public IWallpaperManager getIWallpaperManager() {
      *
      * @return Returns a Drawable object that will draw the wallpaper.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.169 -0500", hash_original_method = "983E953189104E5D3E1EF4C33892C5EB", hash_generated_method = "6DE9679FD9FBB6EEEC4F39D6EC1D951A")
     
 public Drawable getDrawable() {
@@ -193,6 +196,7 @@ public Drawable getDrawable() {
      * @return Returns a Drawable object that will draw the wallpaper or a
      * null pointer if these is none.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.172 -0500", hash_original_method = "EA4956080FAF0CF8E371329CB76D5A40", hash_generated_method = "4BD624D90F73EF099C6F4BC3376B0CB8")
     
 public Drawable peekDrawable() {
@@ -218,6 +222,7 @@ public Drawable peekDrawable() {
      *
      * @return Returns a Drawable object that will draw the wallpaper.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.174 -0500", hash_original_method = "8FF7C2E7F253EDCD7E0E3FAE36FB4E5D", hash_generated_method = "A6D743C421A5C86C17A201B614B9B698")
     
 public Drawable getFastDrawable() {
@@ -235,6 +240,7 @@ public Drawable getFastDrawable() {
      * @return Returns an optimized Drawable object that will draw the
      * wallpaper or a null pointer if these is none.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.176 -0500", hash_original_method = "8A28F31302CE106CFE820B9CBC0915AE", hash_generated_method = "1B034DBE7C2BC82F8D04A47A0A347A32")
     
 public Drawable peekFastDrawable() {
@@ -250,6 +256,7 @@ public Drawable peekFastDrawable() {
      * 
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.178 -0500", hash_original_method = "214C7E80807DBED0084465B1D80DE965", hash_generated_method = "9CD8850D0BA7D5EE6B1F7F7301A72EF5")
     
 public Bitmap getBitmap() {
@@ -273,6 +280,7 @@ public void forgetLoadedWallpaper() {
      * information about that wallpaper.  Otherwise, if it is a static image,
      * simply return null.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.182 -0500", hash_original_method = "BFBEA651CA003E449BAD7FB6481A127E", hash_generated_method = "F709B650601FE8788463DDA118E96837")
     
 public WallpaperInfo getWallpaperInfo() {
@@ -427,6 +435,7 @@ private FastBitmapDrawable(Bitmap bitmap) {
             canvas.drawBitmap(mBitmap, mDrawLeft, mDrawTop, mPaint);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.094 -0500", hash_original_method = "20937ACEFD1116260A9689661466F3F7", hash_generated_method = "6905288CC17C7D82D00D5533E4517C30")
         
 @Override
@@ -475,6 +484,7 @@ private FastBitmapDrawable(Bitmap bitmap) {
             throw new UnsupportedOperationException("Not supported with this drawable");
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.108 -0500", hash_original_method = "7C6E7C05DAF2C7C11CBD631A19BA11F2", hash_generated_method = "39278CB6B9C6547F27484D81F3EDE677")
         
 @Override
@@ -482,6 +492,7 @@ private FastBitmapDrawable(Bitmap bitmap) {
             return mWidth;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.110 -0500", hash_original_method = "3C735D6B09C7947D1D4F4735F7E16410", hash_generated_method = "0269A8752CCD1CA35B4E1D43155EB161")
         
 @Override
@@ -489,6 +500,7 @@ private FastBitmapDrawable(Bitmap bitmap) {
             return mHeight;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.113 -0500", hash_original_method = "6C36D8FD6C4DA506CC2056E38D29BDE3", hash_generated_method = "47EC8A0025261E6AF82A087E108CE991")
         
 @Override
@@ -496,6 +508,7 @@ private FastBitmapDrawable(Bitmap bitmap) {
             return mWidth;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.116 -0500", hash_original_method = "F7F1B37FEC841079758C9B817D6DD4F6", hash_generated_method = "8343B0F17FD22297CF3F42DBD8628A43")
         
 @Override
@@ -683,6 +696,7 @@ private void setWallpaper(InputStream data, FileOutputStream fos)
      * be honored by applications that set the wallpaper but it is not
      * mandatory.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.195 -0500", hash_original_method = "D1A5F81505B1F3B03FABBA4410A80898", hash_generated_method = "74541DCCB60B34A5B4B5411867669D39")
     
 public int getDesiredMinimumWidth() {
@@ -708,6 +722,7 @@ public int getDesiredMinimumWidth() {
      * be honored by applications that set the wallpaper but it is not
      * mandatory.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.197 -0500", hash_original_method = "B18A5C89DB794D80A7E1B5CE60755D7A", hash_generated_method = "78B9329E0F1A91388BB9BC78870E3688")
     
 public int getDesiredMinimumHeight() {

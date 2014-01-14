@@ -10,14 +10,8 @@ import android.content.DialogInterface;
 
 import com.android.internal.R;
 
-
-
-
-
-
 public class Plugin {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:39.446 -0500", hash_original_field = "ED29A5CAC2A4A14894CD28BA3B1CE29C", hash_generated_field = "886C24C67739C97CF77B8DD239E412F9")
-
 
     private String mName;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:39.448 -0500", hash_original_field = "1D4D0FAE668EECF10ED75DDC284FFC16", hash_generated_field = "6FACC3B41470C8330B5F0BB43FA7FD9F")
@@ -69,6 +63,7 @@ public class Plugin {
      * @deprecated This interface was intended to be used by Gears. Since Gears was
      * deprecated, so is this class.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:39.461 -0500", hash_original_method = "9194A7433912D38B9A3F1171AC921C56", hash_generated_method = "F288CD0DA0B9FE2CF53EC1E6FE93C324")
     
 @Deprecated
@@ -81,6 +76,7 @@ public class Plugin {
      * @deprecated This interface was intended to be used by Gears. Since Gears was
      * deprecated, so is this class.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:39.463 -0500", hash_original_method = "F177C5B02553C0E0327F321BDDCEAFD5", hash_generated_method = "524CB7EEAE26D205257D996B6D82198A")
     
 @Deprecated
@@ -93,6 +89,7 @@ public class Plugin {
      * @deprecated This interface was intended to be used by Gears. Since Gears was
      * deprecated, so is this class.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:39.466 -0500", hash_original_method = "893C26134B08FF7C2100195EAF1C3901", hash_generated_method = "4003283A41A803B2C71BA0FE143C85AB")
     
 @Deprecated
@@ -105,6 +102,7 @@ public class Plugin {
      * @deprecated This interface was intended to be used by Gears. Since Gears was
      * deprecated, so is this class.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:39.468 -0500", hash_original_method = "177DD147D2F75620FD2B154278EC57FA", hash_generated_method = "978AAD7FDADAB8F9A67DF8A8E45462A6")
     
 @Deprecated
@@ -187,7 +185,6 @@ public class Plugin {
             mHandler.handleClickEvent(context);
         }
     }
-
     
     private class DefaultClickHandler implements PreferencesClickHandler, DialogInterface.OnClickListener {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:39.484 -0500", hash_original_field = "E9678224249A33E904175F62AC8914F6", hash_generated_field = "F83602A20E99C2560EE913CF62B217D5")
@@ -226,11 +223,8 @@ public class Plugin {
             mDialog.dismiss();
             mDialog = null;
         }
-
         
     }
-
-
     
     public interface PreferencesClickHandler {
         

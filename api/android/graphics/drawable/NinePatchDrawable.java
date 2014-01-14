@@ -217,6 +217,7 @@ private void computeBitmapSize() {
         mNinePatch.draw(canvas, getBounds(), mPaint);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.462 -0500", hash_original_method = "F3B5E1AA8DCA42FBC0209DF5DE34A528", hash_generated_method = "820FEF23DD9AF5206EFEB9F420EC84B9")
     
 @Override
@@ -334,6 +335,7 @@ private void computeBitmapSize() {
         a.recycle();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.478 -0500", hash_original_method = "075C514CB6C74FC258CE8B3440B31BB9", hash_generated_method = "8DB18E39C4FDB6B84FF1968236215A69")
     
 public Paint getPaint() {
@@ -347,6 +349,7 @@ public Paint getPaint() {
     /**
      * Retrieves the width of the source .png file (before resizing).
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.482 -0500", hash_original_method = "6DB114FB8E950C38C4587167EE2392DA", hash_generated_method = "21AB0A052F6EA6AC14C0E8AE68C8FF19")
     
 @Override
@@ -357,6 +360,7 @@ public Paint getPaint() {
     /**
      * Retrieves the height of the source .png file (before resizing).
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.484 -0500", hash_original_method = "391FEC77F059693D96A6B7B3AE926494", hash_generated_method = "4C6E95AD1C54FB0FB2042DE89349F724")
     
 @Override
@@ -364,6 +368,7 @@ public Paint getPaint() {
         return mBitmapHeight;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.486 -0500", hash_original_method = "F677AE1ECA1CBA7AB5A76B8BE368A72F", hash_generated_method = "6D0F8344968A9B3DC34906DAEE0028B6")
     
 @Override
@@ -371,6 +376,7 @@ public Paint getPaint() {
         return mBitmapWidth;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.488 -0500", hash_original_method = "0C368C2268B0130C3ACD75434C6C4889", hash_generated_method = "EFB08363CF0F22C2547E118B51A588FD")
     
 @Override
@@ -382,6 +388,7 @@ public Paint getPaint() {
      * Returns a {@link android.graphics.PixelFormat graphics.PixelFormat}
      * value of OPAQUE or TRANSLUCENT.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.491 -0500", hash_original_method = "B22FBB09C864D64632C83D9F48FAF25E", hash_generated_method = "26A019198189533DB68C958BCD194B3E")
     
 @Override
@@ -390,6 +397,7 @@ public Paint getPaint() {
                 PixelFormat.TRANSLUCENT : PixelFormat.OPAQUE;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.493 -0500", hash_original_method = "015B10918498A51630C2035B52469361", hash_generated_method = "640199D0185C3012747587975300B093")
     
 @Override
@@ -461,6 +469,7 @@ NinePatchState(NinePatchState state) {
             return new NinePatchDrawable(this, res);
         }
         
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.524 -0500", hash_original_method = "9E7D7C67EAC365FF19BD4971762612A5", hash_generated_method = "3AB30668ED270F2EDF2E0129C706FE4D")
         
 @Override

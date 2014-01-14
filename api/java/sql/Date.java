@@ -107,6 +107,7 @@ public Date(long theDate) {
      * @throws IllegalArgumentException
      *             if this method is called.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.259 -0500", hash_original_method = "9D3BFA18991740345E9C4B50C3BC1C7B", hash_generated_method = "B6CC43AFE75FBF41D2D4659E1E0D1F48")
     
 @Deprecated
@@ -122,6 +123,7 @@ public Date(long theDate) {
      * @throws IllegalArgumentException
      *             if this method is called.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.262 -0500", hash_original_method = "20D35DA199D26861EF3B1850BF9B2C7B", hash_generated_method = "58BF9117E986858BF62F057055FD3040")
     
 @Deprecated
@@ -137,6 +139,7 @@ public Date(long theDate) {
      * @throws IllegalArgumentException
      *             if this method is called.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.264 -0500", hash_original_method = "5B3A8174ABF60BC4DD674AADB526CA5F", hash_generated_method = "7D47E178A24671905EFC2BF8A7641B44")
     
 @Deprecated

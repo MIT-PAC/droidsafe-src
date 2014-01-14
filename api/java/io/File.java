@@ -153,6 +153,7 @@ public static File[] listRoots() {
      * @throws IOException
      *             if an error occurs when writing the file.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.575 -0500", hash_original_method = "F35DD4D2E6395DF1DE5627BA1147A02F", hash_generated_method = "1887394672DF3A2517963CDA02015A8E")
     
 public static File createTempFile(String prefix, String suffix) throws IOException {
@@ -437,6 +438,7 @@ public boolean exists() {
         return doAccess(F_OK);
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.822 -0400", hash_original_method = "8F2B41FC4DF09EBF8497AC74B170E125", hash_generated_method = "C12A6EDB79539AA71068DD1E144D2E98")
     public String getAbsolutePath() {
         if(isAbsolute())        
@@ -461,6 +463,7 @@ String var535F4D9720F3B0C96D8143873CE0638C_1405753140 =             path;
      * Returns a new file constructed using the absolute path of this file.
      * Equivalent to {@code new File(this.getAbsolutePath())}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.478 -0500", hash_original_method = "C817D7800025B01E09F67B96128B6FD2", hash_generated_method = "762253F33B1D9B859BA14BD84E373A66")
     
 public File getAbsoluteFile() {
@@ -490,6 +493,7 @@ public File getAbsoluteFile() {
      * @throws IOException
      *             if an I/O error occurs.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.482 -0500", hash_original_method = "2353D6268FF62C4AA3E4D2A85DA0DDFF", hash_generated_method = "3D68E5C98B6F0441D9B8857E875066A3")
     
 public String getCanonicalPath() throws IOException {
@@ -504,6 +508,7 @@ public String getCanonicalPath() throws IOException {
      * @throws IOException
      *             if an I/O error occurs.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.492 -0500", hash_original_method = "703FA6965000EF35DC5F6EF68FCCB383", hash_generated_method = "607D769DE09E9975A9BD8FE6BF604C70")
     
 public File getCanonicalFile() throws IOException {
@@ -516,6 +521,7 @@ public File getCanonicalFile() throws IOException {
      * @return this file's name or an empty string if there is no name part in
      *         the file's path.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.495 -0500", hash_original_method = "6E20F332F3C7773E9502AE9F2437B5A6", hash_generated_method = "AB4E3BAE59DBA2943E712F2F58B340A9")
     
 public String getName() {
@@ -530,6 +536,7 @@ public String getName() {
      *
      * @return this file's parent pathname or {@code null}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.497 -0500", hash_original_method = "160BE3FD42E1931950E2200B6303D787", hash_generated_method = "D19EE6AE71A6B9F0A19C9A50867DF716")
     
 public String getParent() {
@@ -558,6 +565,7 @@ public String getParent() {
      *
      * @return a new file representing this file's parent or {@code null}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.500 -0500", hash_original_method = "05B6D7D4A7E04D12316D2DAB95CF61C6", hash_generated_method = "87CB15FAAF0F4CE298C7CD4BD98EF741")
     
 public File getParentFile() {
@@ -573,6 +581,7 @@ public File getParentFile() {
      *
      * @return this file's path.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.502 -0500", hash_original_method = "F862A3BA81BCB206C83E79C3BEB01336", hash_generated_method = "685DA06B3205BF0988B63E7E0C7CEB6C")
     
 public String getPath() {
@@ -1233,6 +1242,7 @@ private void readObject(ObjectInputStream stream) throws IOException, ClassNotFo
      *
      * @since 1.6
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.598 -0500", hash_original_method = "585308EC98C018F35D8810C372CB8328", hash_generated_method = "885E67B6330987DB56125FD6BBFE1E2D")
     
 public long getTotalSpace() {
@@ -1257,6 +1267,7 @@ public long getTotalSpace() {
      *
      * @since 1.6
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.601 -0500", hash_original_method = "14D64E7B25BCE5C0F5FB20D43EB644E7", hash_generated_method = "6CD8F121B9E4CDF5CEAEFF89549D249C")
     
 public long getUsableSpace() {
@@ -1277,6 +1288,7 @@ public long getUsableSpace() {
      *
      * @since 1.6
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.603 -0500", hash_original_method = "23B4E27185BC412B65C1DC7422116A5E", hash_generated_method = "F52E291AFDE778BA59DB069A0EF655E5")
     
 public long getFreeSpace() {

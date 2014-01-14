@@ -11,10 +11,6 @@ import android.opengl.GLES20;
 import android.os.PowerManager;
 import android.view.Surface;
 
-
-
-
-
 public class HTML5VideoInline extends HTML5VideoView {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:03.610 -0500", hash_original_field = "1C21384017FD7B8B1159EDD33E4F9317", hash_generated_field = "54CA08CDDD6B8113BA2A66342BADB90D")
 
@@ -84,6 +80,7 @@ HTML5VideoInline(int videoLayerId, int position,
 
     // Inline Video specific FUNCTIONS:
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:03.628 -0500", hash_original_method = "DAEA7A8CB1E990B0D919DD9331E6C437", hash_generated_method = "9FB9644FD0852D40C24FE479072D032F")
     
 @Override
@@ -118,6 +115,7 @@ public boolean surfaceTextureDeleted() {
         return;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:03.636 -0500", hash_original_method = "B622F7D686DE5D5F2F53BAC4F4685738", hash_generated_method = "D33C606A51A2E450678C902B31353458")
     
 @Override

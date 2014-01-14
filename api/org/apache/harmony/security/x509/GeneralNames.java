@@ -12,13 +12,7 @@ import org.apache.harmony.security.asn1.ASN1SequenceOf;
 import org.apache.harmony.security.asn1.ASN1Type;
 import org.apache.harmony.security.asn1.BerInputStream;
 
-
-
-
-
-
 public final class GeneralNames {
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.352 -0400", hash_original_field = "F9F6263E38C505EB7173C59BEEA7DE3D", hash_generated_field = "D64C2D3B9F619417B7A91D4BDC12D942")
 
@@ -29,6 +23,7 @@ public final class GeneralNames {
             return new GeneralNames((List<GeneralName>) in.content, in.getEncoded());
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:57.597 -0500", hash_original_method = "0E3B702024D2ADCD7756F36AE80C73BB", hash_generated_method = "534AF2DE55B88D3C0C66F15FB7D37CBA")
         
 @Override public Collection getValues(Object object) {
@@ -65,6 +60,7 @@ private GeneralNames(List<GeneralName> generalNames, byte[] encoding) {
     /**
      * Returns the list of values.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:57.582 -0500", hash_original_method = "0BE5F893124FC75916B0920319238607", hash_generated_method = "E469072D7EA24D4FA1AB52D8E4E1E3D7")
     
 public List<GeneralName> getNames() {
@@ -77,6 +73,7 @@ public List<GeneralName> getNames() {
     /**
      * Returns the collection of pairs: (Integer (tag), Object (name value))*
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:57.585 -0500", hash_original_method = "393D0968412D8AD2DE170EB074DB113A", hash_generated_method = "5703127E086E9DCCAAFA514DF4493212")
     
 public Collection<List<?>> getPairsList() {
@@ -103,6 +100,7 @@ public void addName(GeneralName name) {
     /**
      * Returns ASN.1 encoded form of this X.509 GeneralNames value.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:57.589 -0500", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "5349B65E746CD014BDA35ADFF927FD5B")
     
 public byte[] getEncoded() {

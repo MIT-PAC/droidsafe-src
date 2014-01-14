@@ -75,12 +75,14 @@ protected void detach() {
         duration = Long.MAX_VALUE;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:33.443 -0500", hash_original_method = "6A8409740777F9B554371FD5CA23B84B", hash_generated_method = "6C654E86E20140E0ABF98E328BA36F13")
     
 protected OperatedClientConnection getWrappedConnection() {
         return wrappedConnection;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:33.445 -0500", hash_original_method = "D124AA8CBEEBBCAB0459F467E40DD04B", hash_generated_method = "133BA87A5E90C8491B5153DEC7BEC184")
     
 protected ClientConnectionManager getManager() {
@@ -150,6 +152,7 @@ public void setSocketTimeout(int timeout) {
     }
 
     // non-javadoc, see interface HttpConnection
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:33.459 -0500", hash_original_method = "BE23B10B196A5676F79C60CBBEA5CE71", hash_generated_method = "A7C1AB0296F79AAC48830049CF6E19F8")
     
 public int getSocketTimeout() {
@@ -159,6 +162,7 @@ public int getSocketTimeout() {
     }
 
     // non-javadoc, see interface HttpConnection
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:33.462 -0500", hash_original_method = "E00A8936DFAA9158B267C15F614D75D2", hash_generated_method = "8314BE72AA1ADEC5A22ABB176CE76672")
     
 public HttpConnectionMetrics getMetrics() {
@@ -208,6 +212,7 @@ public void receiveResponseEntity(HttpResponse response)
     }
 
     // non-javadoc, see interface HttpClientConnection
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:33.471 -0500", hash_original_method = "DE944D48C7CF4AE77CB8336F5E9ECC2B", hash_generated_method = "BF986F6456DE99062AC4DD51D794143A")
     
 public HttpResponse receiveResponseHeader()
@@ -250,6 +255,7 @@ public void sendRequestHeader(HttpRequest request)
     }
 
     // non-javadoc, see interface HttpInetConnection
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:33.478 -0500", hash_original_method = "24C66DF3AC644AC2F2EBA8DCA3FC4629", hash_generated_method = "CB15477C669233D9C5E8AD9E9A542EB7")
     
 public InetAddress getLocalAddress() {
@@ -259,6 +265,7 @@ public InetAddress getLocalAddress() {
     }
 
     // non-javadoc, see interface HttpInetConnection
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:33.481 -0500", hash_original_method = "CFFC28C49AC23EFEB6812E81E4BB886D", hash_generated_method = "EF27723DF665D396C1A7AC25EE90DBA0")
     
 public int getLocalPort() {
@@ -268,6 +275,7 @@ public int getLocalPort() {
     }
 
     // non-javadoc, see interface HttpInetConnection
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:33.483 -0500", hash_original_method = "600F3FFEA838B52DB2FC8A00D0FD1454", hash_generated_method = "6F67633A1CE13E3F434C06255A40D727")
     
 public InetAddress getRemoteAddress() {
@@ -277,6 +285,7 @@ public InetAddress getRemoteAddress() {
     }
 
     // non-javadoc, see interface HttpInetConnection
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:33.485 -0500", hash_original_method = "8BDC367E1BB67504AED838B12612BDA6", hash_generated_method = "A700C69947294E647BAFB16D435A6E0A")
     
 public int getRemotePort() {
@@ -295,6 +304,7 @@ public boolean isSecure() {
     }
 
     // non-javadoc, see interface ManagedClientConnection
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:33.489 -0500", hash_original_method = "08E9B3DBCD970FB9C319F7E659C9D167", hash_generated_method = "68CE9245CAAE3EAD9D28CA0EFCB9F937")
     
 public SSLSession getSSLSession() {

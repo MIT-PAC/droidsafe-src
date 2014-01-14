@@ -13,10 +13,6 @@ import android.view.MotionEvent;
 import android.view.ViewConfiguration;
 import android.widget.TextView;
 
-
-
-
-
 public class Touch {
 
     /**
@@ -173,6 +169,7 @@ public static boolean onTouchEvent(TextView widget, Spannable buffer,
      * @param widget The text view.
      * @param buffer The text buffer.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:02.249 -0500", hash_original_method = "21A6B0AF92D8F3153406023AEF6A8E5C", hash_generated_method = "38BBC942F6E38D4DAD65AAA76E1BB6FD")
     
 public static int getInitialScrollX(TextView widget, Spannable buffer) {
@@ -184,6 +181,7 @@ public static int getInitialScrollX(TextView widget, Spannable buffer) {
      * @param widget The text view.
      * @param buffer The text buffer.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:02.252 -0500", hash_original_method = "B84AB2EF8D3990EF6883032B7F14AD49", hash_generated_method = "2A017FF43FB8FC7FA2D6AFC9762F0C6F")
     
 public static int getInitialScrollY(TextView widget, Spannable buffer) {
@@ -193,7 +191,6 @@ public static int getInitialScrollY(TextView widget, Spannable buffer) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:02.236 -0500", hash_original_method = "FF7FAE7578041B972B60FFE115691062", hash_generated_method = "D97CEA10EC28BE39D0E9D5E928FAA2FF")
     
 private Touch() { }
-
     
     private static class DragState implements NoCopySpan {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:02.256 -0500", hash_original_field = "8174733DF249E326666A04F4BE58CCC8", hash_generated_field = "73D3ED258D648D8615BEDE47CCF51A6E")
@@ -223,11 +220,8 @@ public DragState(float x, float y, int scrollX, int scrollY) {
             mScrollX = scrollX;
             mScrollY = scrollY;
         }
-
         
     }
-
-
     
 }
 

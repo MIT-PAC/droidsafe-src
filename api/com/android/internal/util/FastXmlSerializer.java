@@ -273,6 +273,7 @@ public void flush() throws IOException {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:44.956 -0500", hash_original_method = "06A4B22AA2E8AAA8ED4F22B001D0D1FC", hash_generated_method = "AD1977A95A92321CD3381376A1D9747F")
     
 public int getDepth() {
@@ -285,18 +286,21 @@ public boolean getFeature(String name) {
         throw new UnsupportedOperationException();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:44.960 -0500", hash_original_method = "6A642C9EEC23AC32ED606658DA110E38", hash_generated_method = "8E60C110A76AD76E4BB807BBEC76B8C2")
     
 public String getName() {
         throw new UnsupportedOperationException();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:44.963 -0500", hash_original_method = "8F74E2B7FCD796BC320C8C37775EA11E", hash_generated_method = "CAC7F68CA509D5D9B9EC7821A14D85B3")
     
 public String getNamespace() {
         throw new UnsupportedOperationException();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:44.965 -0500", hash_original_method = "1ADA26C4B32C10D168CE4DC5A8DC35EC", hash_generated_method = "7029907997E81993C4095770C0BDD6ED")
     
 public String getPrefix(String namespace, boolean generatePrefix)
@@ -304,6 +308,7 @@ public String getPrefix(String namespace, boolean generatePrefix)
         throw new UnsupportedOperationException();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:44.968 -0500", hash_original_method = "DA8A49250701B8FD4E3C9A3CEF97A891", hash_generated_method = "91167A8B9249FDB989D95C065C15ECAD")
     
 public Object getProperty(String name) {

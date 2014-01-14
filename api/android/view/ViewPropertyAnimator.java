@@ -138,6 +138,7 @@ public ViewPropertyAnimator setDuration(long duration) {
      * @see #setDuration(long)
      * @return The duration of animations, in milliseconds.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:27.881 -0500", hash_original_method = "BFD4BDEC4492EF4D0AE1BFA285B3702C", hash_generated_method = "61ADAD11A07D7EE009448328FC58F753")
     
 public long getDuration() {
@@ -158,6 +159,7 @@ public long getDuration() {
      * @see #setStartDelay(long)
      * @return The startDelay of animations, in milliseconds.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:27.884 -0500", hash_original_method = "137A1F44FEDEF7DBAEA1EE8251F82E1F", hash_generated_method = "86DE1BBA23FB944616559989A9C60C16")
     
 public long getStartDelay() {

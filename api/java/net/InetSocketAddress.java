@@ -7,11 +7,6 @@ import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 
-
-
-
-
-
 public class InetSocketAddress extends SocketAddress {
 
     /**
@@ -34,7 +29,6 @@ public static InetSocketAddress createUnresolved(String host, int port) {
         return new InetSocketAddress(host, port, false);
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.617 -0500", hash_original_field = "7F743DE8058FB2755DC0C37C7CC9A08D", hash_generated_field = "CA65D985F490176D565176BDD0E73685")
-
 
     private static final long serialVersionUID = 5076001401234631237L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.619 -0500", hash_original_field = "AD87F1710B0BBE13E418BD36FE4E24C7", hash_generated_field = "0B6CE69CF925D6E46B22FFB8B45B7F59")
@@ -144,6 +138,7 @@ InetSocketAddress(String hostname, int port, boolean needResolved) {
      *
      * @return the socket endpoint port number.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.643 -0500", hash_original_method = "A5F7344FAECBE0D6DB15D1F6E7BEBC6E", hash_generated_method = "E126B6DCEFD20BABFE67A5DF1C3260B4")
     
 public final int getPort() {
@@ -155,6 +150,7 @@ public final int getPort() {
      *
      * @return the socket endpoint address.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.646 -0500", hash_original_method = "EBC0D8AF364C08270D1E1C0275ACCE70", hash_generated_method = "58EFD60573CF340F0B118334D4223CC2")
     
 public final InetAddress getAddress() {
@@ -165,6 +161,7 @@ public final InetAddress getAddress() {
      * Returns the hostname, doing a reverse lookup on the {@code InetAddress} if no
      * hostname string was provided at construction time.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.648 -0500", hash_original_method = "6B2BE268DC286B10AABA01E5C61B1025", hash_generated_method = "47DBD0EB47A52E31FF9344CBBA2DA06B")
     
 public final String getHostName() {
@@ -177,6 +174,7 @@ public final String getHostName() {
      * @since 1.7
      * @hide 1.7 - remember to add a link in the getHostName documentation!
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.650 -0500", hash_original_method = "152FB4941FA191CB3163ABC6AAB86F6D", hash_generated_method = "B696DAEE59E1EF2DF1031EFD69771561")
     
 public final String getHostString() {

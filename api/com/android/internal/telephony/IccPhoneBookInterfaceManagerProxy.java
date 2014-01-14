@@ -52,12 +52,14 @@ public boolean
                 newTag, newPhoneNumber, index, pin2);
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:10.366 -0500", hash_original_method = "1CAFC4CE677429A2AF90987C4E8DEFFE", hash_generated_method = "3BE8329F69EE86FDEEB3C00B73CC018F")
     
 public int[] getAdnRecordsSize(int efid) throws android.os.RemoteException {
         return mIccPhoneBookInterfaceManager.getAdnRecordsSize(efid);
     }
 
+    @DSSource({DSSourceKind.CONTACT_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:10.368 -0500", hash_original_method = "B2C428BBF650EA5A57A68B0456CE8B82", hash_generated_method = "5BAF5E056CADE4584F4027E591CB3155")
     
 public List<AdnRecord> getAdnRecordsInEf(int efid) throws android.os.RemoteException {

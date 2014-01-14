@@ -95,6 +95,7 @@ public static CatService getInstance(CommandsInterface ci, IccRecords ir,
      *
      * @return The only Service object in the system
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:08.100 -0500", hash_original_method = "CE3A18A059C769DBE5E6B1AF2557EC84", hash_generated_method = "E009B1658E081AF7F9A5E9B3AF4BF887")
     
 public static AppInterface getInstance() {

@@ -272,6 +272,7 @@ private Drawable tileify(Drawable drawable, boolean clip) {
         return drawable;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.764 -0500", hash_original_method = "066FEFD8810FD39B2288696E8912725B", hash_generated_method = "066FEFD8810FD39B2288696E8912725B")
     
 Shape getDrawableShape() {
@@ -381,6 +382,7 @@ private void initProgressBar() {
      * @see #setIndeterminateDrawable(android.graphics.drawable.Drawable)
      * @see #setIndeterminate(boolean)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.776 -0500", hash_original_method = "460B65565106BA0615FD22E30B040519", hash_generated_method = "1D0B7B0BC2B00D07FF81B79AC8D11B88")
     
 public Drawable getIndeterminateDrawable() {
@@ -418,6 +420,7 @@ public void setIndeterminateDrawable(Drawable d) {
      * @see #setProgressDrawable(android.graphics.drawable.Drawable)
      * @see #setIndeterminate(boolean)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.781 -0500", hash_original_method = "6C8C8D805DC88A29293BE605923D5590", hash_generated_method = "4BA7DC49F21214973C9ECF5C6BFE263B")
     
 public Drawable getProgressDrawable() {
@@ -471,6 +474,7 @@ public void setProgressDrawable(Drawable d) {
     /**
      * @return The drawable currently used to draw the progress bar
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.785 -0500", hash_original_method = "BC108B758414D6B13292C41A47E0F703", hash_generated_method = "BC108B758414D6B13292C41A47E0F703")
     
 Drawable getCurrentDrawable() {
@@ -643,6 +647,7 @@ private synchronized void refreshProgress(int id, int progress, boolean fromUser
      * @see #setMax(int)
      * @see #getMax()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.826 -0500", hash_original_method = "BF818051FE207A57D09CC2C24E2066F6", hash_generated_method = "7CF8711369421702779707E12BB7463A")
     
 @ViewDebug.ExportedProperty(category = "progress")
@@ -662,6 +667,7 @@ private synchronized void refreshProgress(int id, int progress, boolean fromUser
      * @see #setMax(int)
      * @see #getMax()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.828 -0500", hash_original_method = "0E2189FB3CB300C00977FC2C3BDB4D4B", hash_generated_method = "58E4C1CCFC1DD27C3F9337CD2BA5B461")
     
 @ViewDebug.ExportedProperty(category = "progress")
@@ -678,6 +684,7 @@ private synchronized void refreshProgress(int id, int progress, boolean fromUser
      * @see #getProgress()
      * @see #getSecondaryProgress()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.830 -0500", hash_original_method = "6E6A982D82D781B4C4E0B14E6160A2E7", hash_generated_method = "34A3B480BE2CC3F8D98489B2C60467E0")
     
 @ViewDebug.ExportedProperty(category = "progress")
@@ -813,6 +820,7 @@ public void setInterpolator(Interpolator interpolator) {
      *
      * @return the {@link Interpolator} associated to this animation
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.848 -0500", hash_original_method = "8AA04851FFB5BE49EA5890940035B142", hash_generated_method = "680BC21A34AFF00E6707D9E25D0C0570")
     
 public Interpolator getInterpolator() {

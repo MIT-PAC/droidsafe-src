@@ -17,7 +17,8 @@ private static final java.lang.String DESCRIPTOR = "com.android.internal.telepho
  * Cast an IBinder object into an com.android.internal.telephony.ISms interface,
  * generating a proxy if needed.
  */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.106 -0500", hash_original_method = "BF398C098787FFE2BA3E7FE22D3B8121", hash_generated_method = "C2ECE4B7C2DCB02552440642AAD9EA8B")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.106 -0500", hash_original_method = "BF398C098787FFE2BA3E7FE22D3B8121", hash_generated_method = "C2ECE4B7C2DCB02552440642AAD9EA8B")
         
 public static com.android.internal.telephony.ISms asInterface(android.os.IBinder obj)
 {
@@ -56,7 +57,8 @@ public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.125 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.125 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
             
 public java.lang.String getInterfaceDescriptor()
 {
@@ -67,7 +69,8 @@ return DESCRIPTOR;
      *
      * @return list of SmsRawData of all sms on ICC
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.128 -0500", hash_original_method = "6A1170C1A1E461159C242116F02E5FBC", hash_generated_method = "5EE2A4367D213EAA6951402FE8102D25")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.128 -0500", hash_original_method = "6A1170C1A1E461159C242116F02E5FBC", hash_generated_method = "5EE2A4367D213EAA6951402FE8102D25")
             
 public java.util.List<com.android.internal.telephony.SmsRawData> getAllMessagesFromIccEf() throws android.os.RemoteException
 {
@@ -471,7 +474,8 @@ public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.108 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.108 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
         
 public android.os.IBinder asBinder()
 {

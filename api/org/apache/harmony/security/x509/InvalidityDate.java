@@ -10,11 +10,6 @@ import java.util.Date;
 import org.apache.harmony.security.asn1.ASN1GeneralizedTime;
 import org.apache.harmony.security.asn1.ASN1Type;
 
-
-
-
-
-
 public final class InvalidityDate extends ExtensionValue {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:56.167 -0500", hash_original_field = "CBF43A96A52318A1BBCC94C5214D4B0B", hash_generated_field = "9BCF15C1FFDD11FFF02BAB5AC5C1860B")
 
@@ -36,6 +31,7 @@ public InvalidityDate(byte[] encoding) throws IOException {
     /**
      * Returns the invalidity date.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:56.160 -0500", hash_original_method = "0B806974B94533A41261B38C9B34792D", hash_generated_method = "1C02A6F22AD8A4FEC8E92C05548B2359")
     
 public Date getDate() {
@@ -45,6 +41,7 @@ public Date getDate() {
     /**
      * Returns ASN.1 encoded form of this X.509 InvalidityDate value.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:56.162 -0500", hash_original_method = "B06BF934ECBF90D26364500F0540AD98", hash_generated_method = "D1A6F2820AB92464F78A483D0DF198D2")
     
 @Override public byte[] getEncoded() {

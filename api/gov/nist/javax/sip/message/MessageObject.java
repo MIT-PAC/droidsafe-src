@@ -10,12 +10,7 @@ import gov.nist.core.GenericObjectList;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 
-
-
-
-
 public abstract class MessageObject extends GenericObject {
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:36.224 -0500", hash_original_method = "FC3F0C40EB43CAA923D6D6A1BF0E3847", hash_generated_method = "1DCA3CCA8E6E09BBA7F86CAD1E1D5F4C")
     
@@ -38,6 +33,7 @@ public void dbgPrint() {
      * the superclass) because it needs to access the protected members
      * of the other objects in this class.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:36.221 -0500", hash_original_method = "0442EC30A54A551F3B539049CBAE5178", hash_generated_method = "6D0150B112E54A3DB0A66FCA25337600")
     
 public String debugDump() {
@@ -148,7 +144,6 @@ public String dbgPrint(int indent) {
         indentation = save;
         return retval;
     }
-
     
 }
 

@@ -8,11 +8,6 @@ import java.text.ParseException;
 
 import javax.sip.header.PriorityHeader;
 
-
-
-
-
-
 public class Priority extends SIPHeader implements PriorityHeader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:55.450 -0500", hash_original_field = "848E2B3143C5F231FA6514A1307BC5FE", hash_generated_field = "08C77E58ECE13B5F92FDDB2CA5776347")
 
@@ -55,6 +50,7 @@ public String encodeBody() {
      * get the priority value.
      * @return String
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:55.481 -0500", hash_original_method = "6DFC1BDF5FFE5EB6A183C3674CCE0974", hash_generated_method = "53896D5026D00DD79FACC76A82BCC15D")
     
 public String getPriority() {

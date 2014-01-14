@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.nio.charset.Charset;
 
-
-
-
-
-
 public class UnsafeByteSequence {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.444 -0500", hash_original_field = "AB97A4156FC1CC1DAF26375194010FF1", hash_generated_field = "4E58ABB9D5068B90ACC1157BF07E4EBB")
 
@@ -64,6 +59,7 @@ public void write(int b) {
         bytes[count++] = (byte) b;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.461 -0500", hash_original_method = "6A961C2A026EF073EA4353A09C4F8B0B", hash_generated_method = "981B3831D2E46865BBD892784E85F418")
     
 @FindBugsSuppressWarnings("EI_EXPOSE_REP")
@@ -81,7 +77,6 @@ public void write(int b) {
 public String toString(Charset cs) {
         return new String(bytes, 0, count, cs);
     }
-
     
 }
 

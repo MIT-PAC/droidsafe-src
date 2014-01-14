@@ -110,6 +110,7 @@ public void send(Message message) throws RemoteException {
      * 
      * @return Returns the IBinder backing this Messenger.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.407 -0500", hash_original_method = "4371CC0F380F9E28159928FBC65693A0", hash_generated_method = "CF424504EFFD31AD8ED006BBB939C76F")
     
 public IBinder getBinder() {

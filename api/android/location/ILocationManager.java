@@ -56,13 +56,15 @@ public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:59.827 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
+@DSSource({DSSourceKind.LOCATION_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:59.827 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
             
 public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:59.830 -0500", hash_original_method = "C0821E6A5255491206B2EFC6C4EB022C", hash_generated_method = "FC719B38411B7367D58109BD0843C9C8")
+@DSSource({DSSourceKind.LOCATION_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:59.830 -0500", hash_original_method = "C0821E6A5255491206B2EFC6C4EB022C", hash_generated_method = "FC719B38411B7367D58109BD0843C9C8")
             
 public java.util.List<java.lang.String> getAllProviders() throws android.os.RemoteException
 {
@@ -81,7 +83,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:59.833 -0500", hash_original_method = "2397F212ABA8C21D905B6D7D8B121F1E", hash_generated_method = "87ECD498E2CF942F2C50F7E62FF80036")
+@DSSource({DSSourceKind.LOCATION_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:59.833 -0500", hash_original_method = "2397F212ABA8C21D905B6D7D8B121F1E", hash_generated_method = "87ECD498E2CF942F2C50F7E62FF80036")
             
 public java.util.List<java.lang.String> getProviders(android.location.Criteria criteria, boolean enabledOnly) throws android.os.RemoteException
 {
@@ -108,7 +111,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:59.836 -0500", hash_original_method = "5D9097856CC334CCD4DD2A2D4A212E00", hash_generated_method = "DD6A4EC3335D5406EEF613ABB3A0ABB4")
+@DSSource({DSSourceKind.LOCATION_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:59.836 -0500", hash_original_method = "5D9097856CC334CCD4DD2A2D4A212E00", hash_generated_method = "DD6A4EC3335D5406EEF613ABB3A0ABB4")
             
 public java.lang.String getBestProvider(android.location.Criteria criteria, boolean enabledOnly) throws android.os.RemoteException
 {
@@ -524,7 +528,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:59.884 -0500", hash_original_method = "2DF226641C501E2DF3982B08ACBDFB2C", hash_generated_method = "CB0AED64C2E34BE831C7A0EF05EAA592")
+@DSSource({DSSourceKind.LOCATION_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:59.884 -0500", hash_original_method = "2DF226641C501E2DF3982B08ACBDFB2C", hash_generated_method = "CB0AED64C2E34BE831C7A0EF05EAA592")
             
 public java.lang.String getFromLocation(double latitude, double longitude, int maxResults, android.location.GeocoderParams params, java.util.List<android.location.Address> addrs) throws android.os.RemoteException
 {
@@ -554,7 +559,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:59.888 -0500", hash_original_method = "5DADE8908487DDF7E2BA674715DF38C6", hash_generated_method = "3654563F6847250746726F6AB6CFCC74")
+@DSSource({DSSourceKind.LOCATION_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:59.888 -0500", hash_original_method = "5DADE8908487DDF7E2BA674715DF38C6", hash_generated_method = "3654563F6847250746726F6AB6CFCC74")
             
 public java.lang.String getFromLocationName(java.lang.String locationName, double lowerLeftLatitude, double lowerLeftLongitude, double upperRightLatitude, double upperRightLongitude, int maxResults, android.location.GeocoderParams params, java.util.List<android.location.Address> addrs) throws android.os.RemoteException
 {
@@ -869,7 +875,8 @@ public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:59.789 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
+@DSSource({DSSourceKind.LOCATION_INFORMATION})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:59.789 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
         
 public android.os.IBinder asBinder()
 {

@@ -69,6 +69,7 @@ public String encodeBody() {
      *
      * @return String the encoded body part of the
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:59.806 -0500", hash_original_method = "EEE15C2182CFD7EA9CBDBFC60D7CEB59", hash_generated_method = "EB02B081C7AB467A549CA8E38E41CE27")
     
 public String getCallId() {
@@ -79,6 +80,7 @@ public String getCallId() {
      * get the call Identifer member.
      * @return CallIdentifier
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:59.809 -0500", hash_original_method = "B5581A57A5C5C2AEBCF8449C03245AE9", hash_generated_method = "C8B313DEC7DDBD2EFB9A879CEC727321")
     
 public CallIdentifier getCallIdentifer() {
@@ -112,6 +114,7 @@ public void setCallIdentifier(CallIdentifier cid) {
      * Get the to-tag parameter from the address parm list.
      * @return tag field
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:59.818 -0500", hash_original_method = "B211B6A9EDFBB72196EA1C1405552E2E", hash_generated_method = "9B46F74E8C8C30CE21AE359FB62FDCB3")
     
 public String getToTag() {
@@ -153,6 +156,7 @@ public void removeToTag() {
      * Get the from-tag parameter from the address parm list.
      * @return tag field
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:59.831 -0500", hash_original_method = "31D6F2518E32939467AAA449E3B07BF0", hash_generated_method = "413B2174881AB8CE80D6FB02F74DDF67")
     
 public String getFromTag() {

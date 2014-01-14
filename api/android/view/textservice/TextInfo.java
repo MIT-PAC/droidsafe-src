@@ -8,12 +8,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
 
-
-
-
-
 public final class TextInfo implements Parcelable {
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.025 -0400", hash_original_field = "6EEA547074FA6FFA43F36F5BBA63B9C1", hash_generated_field = "E3059B89E044EFFFEE81FFCBFDB37D6F")
 
@@ -96,6 +91,7 @@ public TextInfo(Parcel source) {
     /**
      * @return the text which is an input of a text service
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.976 -0500", hash_original_method = "2FFFCC59A442EF1196B854805331F3A7", hash_generated_method = "7675B56A832FA6E1A4872CB2A7C75222")
     
 public String getText() {
@@ -105,6 +101,7 @@ public String getText() {
     /**
      * @return the cookie of TextInfo
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.978 -0500", hash_original_method = "AC1EDA43FC7023F4D4E1DFBFEFAF3924", hash_generated_method = "409946859A12F6C3A6BC121010CF938D")
     
 public int getCookie() {
@@ -114,6 +111,7 @@ public int getCookie() {
     /**
      * @return the sequence of TextInfo
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.981 -0500", hash_original_method = "FE2AB8ECE26FD7A4F1B7769F13B3F465", hash_generated_method = "9FB850F0F91CCC9108C608E4BE6ED809")
     
 public int getSequence() {

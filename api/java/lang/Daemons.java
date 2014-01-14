@@ -107,6 +107,7 @@ public void stop() {
          * Returns the current stack trace of the thread, or an empty stack trace
          * if the thread is not currently running.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:17.219 -0500", hash_original_method = "71D841FC79E6E388CBA40EED62E5BA4E", hash_generated_method = "105C2CE68BDD769E05A16DDB9C0E0A27")
         
 public synchronized StackTraceElement[] getStackTrace() {

@@ -29,6 +29,7 @@ public InputConnectionWrapper(IInputContext inputContext) {
         mIInputContext = inputContext;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:32.252 -0500", hash_original_method = "E5D9808718D85F214F56B5C74559D92A", hash_generated_method = "EA3159883AB88ED7C0D6815D39259AEB")
     
 public CharSequence getTextAfterCursor(int length, int flags) {
@@ -49,6 +50,7 @@ public CharSequence getTextAfterCursor(int length, int flags) {
         return value;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:32.255 -0500", hash_original_method = "161B1891DB80E123B2A48225941EF408", hash_generated_method = "6BE8A5259EA2E2E80550F974C27611CE")
     
 public CharSequence getTextBeforeCursor(int length, int flags) {
@@ -69,6 +71,7 @@ public CharSequence getTextBeforeCursor(int length, int flags) {
         return value;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:32.258 -0500", hash_original_method = "07C2D6CA43F82EBF9A41822F1A0D86D8", hash_generated_method = "3CACE0803BD1CF02DE5BBC803DB93A38")
     
 public CharSequence getSelectedText(int flags) {
@@ -89,6 +92,7 @@ public CharSequence getSelectedText(int flags) {
         return value;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:32.260 -0500", hash_original_method = "42EA416764DB4DFF051E9040CF49BB73", hash_generated_method = "74FDE82B8EAB8AE4D6B3595F8DB25806")
     
 public int getCursorCapsMode(int reqModes) {
@@ -109,6 +113,7 @@ public int getCursorCapsMode(int reqModes) {
         return value;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:32.262 -0500", hash_original_method = "305E28329FA220003F7366DA2A6BF238", hash_generated_method = "DC40C86ECBA41B8BD9AF2656F892886F")
     
 public ExtractedText getExtractedText(ExtractedTextRequest request, int flags) {

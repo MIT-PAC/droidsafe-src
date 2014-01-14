@@ -37,6 +37,7 @@ public
         mValues = new Object[mRows * mColumns];
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:04.146 -0500", hash_original_method = "1C46B70362A26F7DECFFAE89D2DE52CF", hash_generated_method = "D5383D59D2326962D80334249643A70A")
     
 public E

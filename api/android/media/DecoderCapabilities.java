@@ -15,6 +15,7 @@ public class DecoderCapabilities {
      * Returns the list of video decoder types
      * @see android.media.DecoderCapabilities.VideoDecoder
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:26.788 -0500", hash_original_method = "334155FFC3E4A7CB7C7D0CBEA471B4F4", hash_generated_method = "BAEC771B0BCA77724CFD1995660C47BE")
     
 public static List<VideoDecoder> getVideoDecoders() {
@@ -30,6 +31,7 @@ public static List<VideoDecoder> getVideoDecoders() {
      * Returns the list of audio decoder types
      * @see android.media.DecoderCapabilities.AudioDecoder
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:26.791 -0500", hash_original_method = "9C119221D85202C4EA1DCEF893071B70", hash_generated_method = "B70CA09FCB71C8BFDB0B87116BDF5A45")
     
 public static List<AudioDecoder> getAudioDecoders() {

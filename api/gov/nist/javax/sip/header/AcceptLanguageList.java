@@ -6,15 +6,8 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import javax.sip.header.AcceptLanguageHeader;
 
-
-
-
-
-
 public class AcceptLanguageList extends SIPHeaderList<AcceptLanguage> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:03.384 -0500", hash_original_field = "3B88016CC39BABB27158BD84AEED3A23", hash_generated_field = "7EA90335ABAD53EEB534CFBDFF1F0433")
-
-
 
     private static final long serialVersionUID = -3289606805203488840L;
 
@@ -33,6 +26,7 @@ public AcceptLanguageList() {
         return retval;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:03.394 -0500", hash_original_method = "4EAA649C6A43B8603903A57164247286", hash_generated_method = "1F7DE68755099C27F78E58477863060F")
     
 public AcceptLanguage getFirst() {
@@ -43,6 +37,7 @@ public AcceptLanguage getFirst() {
             return new AcceptLanguage();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:03.397 -0500", hash_original_method = "D3074C13DEFE0D00E21551F82106E50D", hash_generated_method = "2658A3B001939B556FD5F0B5A223EB5E")
     
 public AcceptLanguage getLast() {

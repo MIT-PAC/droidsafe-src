@@ -9,13 +9,8 @@ import android.text.ParcelableSpan;
 import android.text.TextPaint;
 import android.text.TextUtils;
 
-
-
-
-
 public class AbsoluteSizeSpan extends MetricAffectingSpan implements ParcelableSpan {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.883 -0500", hash_original_field = "205262C28D2B190751535A4911B3B259", hash_generated_field = "1ADF00AF1A5D84662F00519BAA6EB9C0")
-
 
     private  int mSize;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.885 -0500", hash_original_field = "9E4EA6749E436A4CDB41A8DF2E48BA64", hash_generated_field = "2907C85C29B7CCA19FB98273C79A6D33")
@@ -50,6 +45,7 @@ public AbsoluteSizeSpan(Parcel src) {
         mDip = src.readInt() != 0;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.896 -0500", hash_original_method = "8ECE4916687DC9B660DB4531FCB16044", hash_generated_method = "8B8FD8107EAC0D44DB88652626E9054C")
     
 public int getSpanTypeId() {
@@ -69,12 +65,14 @@ public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(mDip ? 1 : 0);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.904 -0500", hash_original_method = "2098B918320D3D5229820CAB47C60E59", hash_generated_method = "5C0A5CB4DD3116647C99AA4ADB19626C")
     
 public int getSize() {
         return mSize;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.907 -0500", hash_original_method = "E1A5B960016F06729A9EBA9A98D5F008", hash_generated_method = "EF7075792C061613644F3FB25C32CBD8")
     
 public boolean getDip() {
@@ -102,7 +100,6 @@ public boolean getDip() {
             ds.setTextSize(mSize);
         }
     }
-
     
 }
 

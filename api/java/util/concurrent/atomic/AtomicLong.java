@@ -53,6 +53,7 @@ public AtomicLong() {
      *
      * @return the current value
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.526 -0500", hash_original_method = "558225EAA1BF82052D6B969C16747B7A", hash_generated_method = "0DA3986B795EBED7D70FCF24B2FF399B")
     
 public final long get() {
@@ -89,6 +90,7 @@ public final void lazySet(long newValue) {
      * @param newValue the new value
      * @return the previous value
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.534 -0500", hash_original_method = "390AAB13B16AF188378473BA59BB98BA", hash_generated_method = "4DB366D00B730F399166E828BE3ABDB1")
     
 public final long getAndSet(long newValue) {
@@ -137,6 +139,7 @@ public final boolean weakCompareAndSet(long expect, long update) {
      *
      * @return the previous value
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.542 -0500", hash_original_method = "0FB09453B9C7F7E3674DED4A168E8FE2", hash_generated_method = "3E6BAA9B4DE447110E896CD61AC2ACE1")
     
 public final long getAndIncrement() {
@@ -153,6 +156,7 @@ public final long getAndIncrement() {
      *
      * @return the previous value
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.544 -0500", hash_original_method = "B338EF04AC352C769CAB7069B279216B", hash_generated_method = "6552A10E0051DDC92382F8CAC7DF24C1")
     
 public final long getAndDecrement() {
@@ -170,6 +174,7 @@ public final long getAndDecrement() {
      * @param delta the value to add
      * @return the previous value
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.547 -0500", hash_original_method = "F13F3FE7BE5ED16E2943CEEE9739382A", hash_generated_method = "77B18165BA1EBE3546A7B43EEE7209E2")
     
 public final long getAndAdd(long delta) {

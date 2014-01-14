@@ -536,6 +536,7 @@ public void requestGroupInfo(Channel c, GroupInfoListener listener) {
      * @return Messenger pointing to the WifiP2pService handler
      * @hide
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:01.814 -0500", hash_original_method = "A358F8361C96DABE1A63B04B5804B3F5", hash_generated_method = "DA6144D34D1ABFD0D2380EC6E44B953A")
     
 public Messenger getMessenger() {

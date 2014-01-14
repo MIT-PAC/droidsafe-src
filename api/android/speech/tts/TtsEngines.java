@@ -109,6 +109,7 @@ public TtsEngines(Context ctx) {
      *         is available on the device, the default is returned. Otherwise,
      *         the highest ranked engine is returned as per {@link EngineInfoComparator}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:55.319 -0500", hash_original_method = "F86D04A99B76CBDE409709AB3B031B49", hash_generated_method = "4BA4F2F70C1D0F3413201B1629743251")
     
 public String getDefaultEngine() {
@@ -121,6 +122,7 @@ public String getDefaultEngine() {
      * @return the package name of the highest ranked system engine, {@code null}
      *         if no TTS engines were present in the system image.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:55.321 -0500", hash_original_method = "19A7DAF08EA8F2C03F3D1884DA46504A", hash_generated_method = "A0A5C91EB98676D24A30E75581A275B5")
     
 public String getHighestRankedEngineName() {
@@ -160,6 +162,7 @@ public EngineInfo getEngineInfo(String packageName) {
      *
      * @return A list of engine info objects. The list can be empty, but never {@code null}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:55.326 -0500", hash_original_method = "DACAAA1F42C7CE1B11C8FF369696D83F", hash_generated_method = "D5ED98CF1D32E4C22E8559F1DE73DABF")
     
 public List<EngineInfo> getEngines() {
@@ -205,6 +208,7 @@ public boolean isEngineInstalled(String engine) {
     /**
      * @return an intent that can launch the settings activity for a given tts engine.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:55.332 -0500", hash_original_method = "081B98AA3A6A550A7C51DCB59AD3D4CC", hash_generated_method = "BC93E349D01BD4E6582A8A24E1D8D6CE")
     
 public Intent getSettingsIntent(String engine) {
@@ -311,6 +315,7 @@ private EngineInfo getEngineInfo(ResolveInfo resolve, PackageManager pm) {
      * @return the locale string preference for this engine. Will be non null
      *         and non empty.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:55.353 -0500", hash_original_method = "18ECF8DE6689127C36214444D644F0A3", hash_generated_method = "ECB39A856209F10C9247485E724483BD")
     
 public String getLocalePrefForEngine(String engineName) {

@@ -41,6 +41,7 @@ public final class Settings {
      * @return The device ID that should be used when connecting to the mobile gtalk server.
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:52.665 -0500", hash_original_method = "8B3803D6F4B33CAB905DD137BF81E092", hash_generated_method = "241E6E8D94A86CBDA619EC3D24D550FE")
     
 public static String getGTalkDeviceId(long androidId) {
@@ -86,6 +87,7 @@ protected static boolean putString(ContentResolver resolver, Uri uri,
             }
         }
 
+        @DSSource({DSSourceKind.FILE_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:51.469 -0500", hash_original_method = "C630C296F5C357D60AA0A465458F1635", hash_generated_method = "EBD10A190A45E97629EFAC370345EAD4")
         
 public static Uri getUriFor(Uri uri, String name) {
@@ -227,6 +229,7 @@ public String getString(ContentResolver cr, String name) {
          * @param name to look up in the table
          * @return the corresponding value, or null if not present
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:51.512 -0500", hash_original_method = "BCE17AD551131F3C5B0199F6E8D71A65", hash_generated_method = "0E3882E2540A80A5533039D724BE4002")
         
 public synchronized static String getString(ContentResolver resolver, String name) {
@@ -266,6 +269,7 @@ public static boolean putString(ContentResolver resolver, String name, String va
          * @param name to look up in the table
          * @return the corresponding content URI, or null if not present
          */
+        @DSSource({DSSourceKind.FILE_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:51.517 -0500", hash_original_method = "B4A26DD7AFB6F0356A37068D3E87F288", hash_generated_method = "4DF70A8ABC36243ABA00FC2E52415B98")
         
 public static Uri getUriFor(String name) {
@@ -291,6 +295,7 @@ public static Uri getUriFor(String name) {
          * @return The setting's current value, or 'def' if it is not defined
          * or not a valid integer.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:51.520 -0500", hash_original_method = "DBD93DA0568D4E47C40E6BFA100A1EF2", hash_generated_method = "6431710C35E8CCD460BB62DB2BBC4A9B")
         
 public static int getInt(ContentResolver cr, String name, int def) {
@@ -320,6 +325,7 @@ public static int getInt(ContentResolver cr, String name, int def) {
          *
          * @return The setting's current value.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:51.522 -0500", hash_original_method = "BC1F410DCF7E88197DA27D0D425DD822", hash_generated_method = "65A02ED2DBB08389547A19AA8589B1B4")
         
 public static int getInt(ContentResolver cr, String name)
@@ -365,6 +371,7 @@ public static boolean putInt(ContentResolver cr, String name, int value) {
          * @return The setting's current value, or 'def' if it is not defined
          * or not a valid {@code long}.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:51.527 -0500", hash_original_method = "2986E5629421403DA55C169D77194DCA", hash_generated_method = "334B1526468744A2753D53DD17327221")
         
 public static long getLong(ContentResolver cr, String name, long def) {
@@ -395,6 +402,7 @@ public static long getLong(ContentResolver cr, String name, long def) {
          * @throws SettingNotFoundException Thrown if a setting by the given
          * name can't be found or the setting value is not an integer.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:51.530 -0500", hash_original_method = "69C00B9492B59345A478AD340BB82560", hash_generated_method = "DEF6F194A9786A3EC928CD0D3E9ABD57")
         
 public static long getLong(ContentResolver cr, String name)
@@ -440,6 +448,7 @@ public static boolean putLong(ContentResolver cr, String name, long value) {
          * @return The setting's current value, or 'def' if it is not defined
          * or not a valid float.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:51.535 -0500", hash_original_method = "0D9E7A4535CB773913AB18AAD472FAE3", hash_generated_method = "3B5A88E4A2869809F140DF533B38E22D")
         
 public static float getFloat(ContentResolver cr, String name, float def) {
@@ -469,6 +478,7 @@ public static float getFloat(ContentResolver cr, String name, float def) {
          *
          * @return The setting's current value.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:51.537 -0500", hash_original_method = "8F942018F858810492E264878914C1E0", hash_generated_method = "B4F108BE0DBD2F067C9CEB071B929767")
         
 public static float getFloat(ContentResolver cr, String name)
@@ -1187,6 +1197,7 @@ public static void setShowGTalkServiceStatus(ContentResolver cr, boolean flag) {
          * @param name to look up in the table
          * @return the corresponding value, or null if not present
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:51.966 -0500", hash_original_method = "673ACF52738B2550EB82A63F524A794C", hash_generated_method = "DF23D5CD90F7627E0234D522B83FB549")
         
 public synchronized static String getString(ContentResolver resolver, String name) {
@@ -1217,6 +1228,7 @@ public static boolean putString(ContentResolver resolver,
          * @param name to look up in the table
          * @return the corresponding content URI, or null if not present
          */
+        @DSSource({DSSourceKind.FILE_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:51.971 -0500", hash_original_method = "6094EDC02DB67FDF86E7659AB564A860", hash_generated_method = "D066004669828715526BC70324C79D5D")
         
 public static Uri getUriFor(String name) {
@@ -1237,6 +1249,7 @@ public static Uri getUriFor(String name) {
          * @return The setting's current value, or 'def' if it is not defined
          * or not a valid integer.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:51.974 -0500", hash_original_method = "DBD93DA0568D4E47C40E6BFA100A1EF2", hash_generated_method = "6431710C35E8CCD460BB62DB2BBC4A9B")
         
 public static int getInt(ContentResolver cr, String name, int def) {
@@ -1266,6 +1279,7 @@ public static int getInt(ContentResolver cr, String name, int def) {
          *
          * @return The setting's current value.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:51.976 -0500", hash_original_method = "BC1F410DCF7E88197DA27D0D425DD822", hash_generated_method = "65A02ED2DBB08389547A19AA8589B1B4")
         
 public static int getInt(ContentResolver cr, String name)
@@ -1311,6 +1325,7 @@ public static boolean putInt(ContentResolver cr, String name, int value) {
          * @return The setting's current value, or 'def' if it is not defined
          * or not a valid {@code long}.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:51.982 -0500", hash_original_method = "2986E5629421403DA55C169D77194DCA", hash_generated_method = "334B1526468744A2753D53DD17327221")
         
 public static long getLong(ContentResolver cr, String name, long def) {
@@ -1341,6 +1356,7 @@ public static long getLong(ContentResolver cr, String name, long def) {
          * @throws SettingNotFoundException Thrown if a setting by the given
          * name can't be found or the setting value is not an integer.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:51.984 -0500", hash_original_method = "69C00B9492B59345A478AD340BB82560", hash_generated_method = "DEF6F194A9786A3EC928CD0D3E9ABD57")
         
 public static long getLong(ContentResolver cr, String name)
@@ -1386,6 +1402,7 @@ public static boolean putLong(ContentResolver cr, String name, long value) {
          * @return The setting's current value, or 'def' if it is not defined
          * or not a valid float.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:51.989 -0500", hash_original_method = "0D9E7A4535CB773913AB18AAD472FAE3", hash_generated_method = "3B5A88E4A2869809F140DF533B38E22D")
         
 public static float getFloat(ContentResolver cr, String name, float def) {
@@ -1415,6 +1432,7 @@ public static float getFloat(ContentResolver cr, String name, float def) {
          *
          * @return The setting's current value.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:51.992 -0500", hash_original_method = "8F942018F858810492E264878914C1E0", hash_generated_method = "B4F108BE0DBD2F067C9CEB071B929767")
         
 public static float getFloat(ContentResolver cr, String name)
@@ -2348,6 +2366,7 @@ public static final void setLocationProviderEnabled(ContentResolver cr,
          * @return Intent The bookmarked URL, or null if there is no bookmark
          *         matching the given shortcut.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:52.650 -0500", hash_original_method = "54DB2A6B806A611A983C56EA34B7AD6A", hash_generated_method = "30C2F07D42C3C54B446D679FEC53B969")
         
 public static Intent getIntentForShortcut(ContentResolver cr, char shortcut)
@@ -2427,6 +2446,7 @@ public static Uri add(ContentResolver cr,
          * @return CharSequence The label for this folder that should be shown
          *         to the user.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:52.656 -0500", hash_original_method = "906E03827D89C4CEA0BE70B198F9463B", hash_generated_method = "DEF88F8284054F8954D22926A5EADC81")
         
 public static CharSequence getLabelForFolder(Resources r, String folder) {
@@ -2444,6 +2464,7 @@ public static CharSequence getLabelForFolder(Resources r, String folder) {
          * @return A title that is localized and can be displayed to the user,
          *         or the empty string if one could not be found.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:52.659 -0500", hash_original_method = "CEF1D2F717830086ECA4871334F6B001", hash_generated_method = "3EC304D62692B33131B3CA88A5083CAF")
         
 public static CharSequence getTitle(Context context, Cursor cursor) {

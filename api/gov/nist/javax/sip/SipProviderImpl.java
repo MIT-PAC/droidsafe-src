@@ -127,6 +127,7 @@ protected void stop() {
      *
      * @see javax.sip.SipProvider#getListeningPoint(java.lang.String)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:51.038 -0500", hash_original_method = "1158BA9F135FC60D78E0B26F09E9CC9C", hash_generated_method = "22044A55A5B0AA8D7A3677D2BBCA407D")
     
 public ListeningPoint getListeningPoint(String transport) {
@@ -216,6 +217,7 @@ public void addSipListener(SipListener sipListener)
      * @see javax.sip.SipProvider#getListeningPoint()
      */
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:51.075 -0500", hash_original_method = "8DF1BB234AEAFA11A00A3BD7891CCE00", hash_generated_method = "29FE15CADA6080A17855346458206CD8")
     
 public ListeningPoint getListeningPoint() {
@@ -231,6 +233,7 @@ public ListeningPoint getListeningPoint() {
      *
      * @see javax.sip.SipProvider#getNewCallId()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:51.081 -0500", hash_original_method = "19C35F549E02B2BEFD4FB9F187DBEB25", hash_generated_method = "FEE66A32001703430883B15495289672")
     
 public CallIdHeader getNewCallId() {
@@ -250,6 +253,7 @@ public CallIdHeader getNewCallId() {
      *
      * @see javax.sip.SipProvider#getNewClientTransaction(javax.sip.message.Request)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:51.103 -0500", hash_original_method = "7DCA30FF9D29B59AA737512D4B93FBF9", hash_generated_method = "09763518167D4E3A08794CCFDAFCE0FF")
     
 public ClientTransaction getNewClientTransaction(Request request)
@@ -426,6 +430,7 @@ public ClientTransaction getNewClientTransaction(Request request)
      *
      * @see javax.sip.SipProvider#getNewServerTransaction(javax.sip.message.Request)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:51.119 -0500", hash_original_method = "569DCDD9EB405C75F83E1325FE87C1D4", hash_generated_method = "D4AE432BCE6911AAF7A80133104C49A8")
     
 public ServerTransaction getNewServerTransaction(Request request)
@@ -611,6 +616,7 @@ public ServerTransaction getNewServerTransaction(Request request)
      *
      * @see javax.sip.SipProvider#getSipStack()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:51.125 -0500", hash_original_method = "4583BF79BF08EE358F0E8CEF923996E7", hash_generated_method = "03B2AEE7BB20A805683F9C9DA4FC446F")
     
 public SipStack getSipStack() {
@@ -812,6 +818,7 @@ public synchronized void setListeningPoint(ListeningPoint listeningPoint) {
      * @see javax.sip.SipProvider#getNewDialog(javax.sip.Transaction)
      */
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:51.164 -0500", hash_original_method = "9D9F76163655F94EC324A9002FE39206", hash_generated_method = "C0E009CEDD2051D6DF5FD1FAC9672DB4")
     
 public Dialog getNewDialog(Transaction transaction) throws SipException {
@@ -999,6 +1006,7 @@ public synchronized void dialogErrorEvent(SIPDialogErrorEvent dialogErrorEvent) 
      *
      * @see javax.sip.SipProvider#getListeningPoints()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:51.186 -0500", hash_original_method = "B3C6AC6D2F49AD76B9521CC6B14816A0", hash_generated_method = "602CF623065E16E5882FF510A060AF1F")
     
 public synchronized ListeningPoint[] getListeningPoints() {
@@ -1122,6 +1130,7 @@ public boolean isDialogErrorsAutomaticallyHandled() {
     /**
      * @return the sipListener
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:51.233 -0500", hash_original_method = "C4DC38CCAB12B1686E686A836D3DE2C4", hash_generated_method = "086556FE3F0D45B914ADD7D51C2AE693")
     
 public SipListener getSipListener() {

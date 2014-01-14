@@ -119,6 +119,7 @@ private void rebindWapPushManager() {
         /**
          * Returns interface to WapPushManager
          */
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:34.806 -0500", hash_original_method = "12BA8034F310D7C3159CADAC53085388", hash_generated_method = "0978255B4A9C6F66D3DBBD2273DF1954")
         
 public IWapPushManager getWapPushManager() {

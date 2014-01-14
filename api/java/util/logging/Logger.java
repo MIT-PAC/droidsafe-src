@@ -61,6 +61,7 @@ static ResourceBundle loadResourceBundle(String resourceBundleName) {
      *
      * @return a new instance of anonymous logger.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.307 -0500", hash_original_method = "33E35DAF5713B97A634B9F1AE8BF6A88", hash_generated_method = "4F3F4A4ED61E1528BB083EE36635ECD1")
     
 public static Logger getAnonymousLogger() {
@@ -81,6 +82,7 @@ public static Logger getAnonymousLogger() {
      * @throws MissingResourceException
      *             if the specified resource bundle can not be loaded.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.309 -0500", hash_original_method = "B4C3A3B0A9BA44ADFC2BA61E72362AA6", hash_generated_method = "4C65D3BC21A9BB37FE27523143F7A8B5")
     
 public static Logger getAnonymousLogger(String resourceBundleName) {
@@ -102,6 +104,7 @@ public static Logger getAnonymousLogger(String resourceBundleName) {
      * @throws MissingResourceException
      *             If the specified resource bundle can not be loaded.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.314 -0500", hash_original_method = "CCC6971033B3E92E36973DF1CB62F316", hash_generated_method = "809F3C4D6A84AB87A94C2B953B2694E5")
     
 public static Logger getLogger(String name) {
@@ -124,6 +127,7 @@ public static Logger getLogger(String name) {
      *             if the name of the resource bundle cannot be found.
      * @return a named logger.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.318 -0500", hash_original_method = "FF215F56C3D4087B17E522721EB89987", hash_generated_method = "42AB9F239C505B8562FF36527980C955")
     
 public static Logger getLogger(String name, String resourceBundleName) {
@@ -138,6 +142,7 @@ public static Logger getLogger(String name, String resourceBundleName) {
      * @since 1.7
      * @hide 1.7
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.320 -0500", hash_original_method = "2D16380526A24256011C5D09E6CFA82F", hash_generated_method = "856042E979E1555090872CCD036A3CC4")
     
 public static Logger getGlobal() {
@@ -407,6 +412,7 @@ void setManager(LogManager manager) {
      *
      * @return an array of all the handlers associated with this logger.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.328 -0500", hash_original_method = "D35F92CFE982311DBD9E9FEE03E15B2B", hash_generated_method = "F7A31CC804749BB05D259E4FAECE2289")
     
 public Handler[] getHandlers() {
@@ -439,6 +445,7 @@ public void removeHandler(Handler handler) {
      *
      * @return the filter used by this logger, may be {@code null}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.333 -0500", hash_original_method = "D58C134707557B2D24085330800528E0", hash_generated_method = "CD9F61EC2D214FA63221AF047D239731")
     
 public Filter getFilter() {
@@ -467,6 +474,7 @@ public void setFilter(Filter newFilter) {
      *
      * @return the logging level of this logger.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.337 -0500", hash_original_method = "3F355CE89E0EE57A0DB84D006A07C845", hash_generated_method = "552FC699EA15320EF56F63B06C2CACBB")
     
 public Level getLevel() {
@@ -500,6 +508,7 @@ public void setLevel(Level newLevel) {
      * @return {@code true} if set to use parent's handlers, {@code false}
      *         otherwise.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.342 -0500", hash_original_method = "CCA5825C72A21AC8149EE8CEDF71F9CA", hash_generated_method = "C561E0E1E246A77F3490EECF473989B9")
     
 public boolean getUseParentHandlers() {
@@ -530,6 +539,7 @@ public void setUseParentHandlers(boolean notifyParentHandlers) {
      *
      * @return the parent of this logger in the namespace.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.347 -0500", hash_original_method = "D6DD5625D7FB63425531FBDC14C2C588", hash_generated_method = "4536912723E5EC23E0F45E7EFCBD7C1F")
     
 public Logger getParent() {
@@ -562,6 +572,7 @@ public void setParent(Logger parent) {
      *
      * @return the name of this logger.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.351 -0500", hash_original_method = "6F5A80252F54E883F3837DA0C6833E69", hash_generated_method = "10AFD575EA26BE807F18801FAC02C531")
     
 public String getName() {
@@ -575,6 +586,7 @@ public String getName() {
      *
      * @return the loaded resource bundle used by this logger.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.354 -0500", hash_original_method = "F4E0ADD33B644C89C9AC3464A381F4B1", hash_generated_method = "A5A8685F8C95A7C086DCDBE13C1DFA7A")
     
 public ResourceBundle getResourceBundle() {
@@ -588,6 +600,7 @@ public ResourceBundle getResourceBundle() {
      *
      * @return the name of the loaded resource bundle used by this logger.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.356 -0500", hash_original_method = "6DEDF515FC3DFB06F00973FF806B7B79", hash_generated_method = "795ECC4106B798264DC061D44D617BDB")
     
 public String getResourceBundleName() {

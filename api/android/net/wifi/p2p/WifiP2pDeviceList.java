@@ -104,6 +104,7 @@ public boolean remove(WifiP2pDevice device) {
     }
 
     /** Get the list of devices */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:02.244 -0500", hash_original_method = "AF7D82D1BB8BCC5F50496B9C85783B3A", hash_generated_method = "0F8BB0ABBD0D8970C766D67373DAF414")
     
 public Collection<WifiP2pDevice> getDeviceList() {

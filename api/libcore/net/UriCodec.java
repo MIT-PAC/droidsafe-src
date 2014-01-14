@@ -126,6 +126,7 @@ protected abstract boolean isRetained(char c);
     /**
      * Throws if {@code s} is invalid according to this encoder.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:30.376 -0500", hash_original_method = "F141B1647AA9A55C59B7CEA66DF70E00", hash_generated_method = "BE4A58F776D7DEFE3035FA9B3E9D24D3")
     
 public final String validate(String uri, int start, int end, String name)

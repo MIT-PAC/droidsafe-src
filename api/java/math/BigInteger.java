@@ -376,6 +376,7 @@ public BigInteger(byte[] value) {
      * Returns the internal native representation of this big integer, computing
      * it if necessary.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.042 -0500", hash_original_method = "7B92331634E6E3BE19D048B912B09B7F", hash_generated_method = "7B92331634E6E3BE19D048B912B09B7F")
     
 BigInt getBigInt() {
@@ -439,6 +440,7 @@ void prepareJavaRepresentation() {
      * Returns the two's complement representation of this {@code BigInteger} in
      * a byte array.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.054 -0500", hash_original_method = "F45D943577A758DE4A75A5CD2DF6D206", hash_generated_method = "892F82226DA47F44D2E09C61D62E2B3B")
     
 public byte[] toByteArray() {
@@ -574,6 +576,7 @@ public BigInteger shiftLeft(int n) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.073 -0500", hash_original_method = "3F948826829C47AB028976261F4B8D55", hash_generated_method = "3F948826829C47AB028976261F4B8D55")
     
 BigInteger shiftLeftOneBit() {
@@ -725,6 +728,7 @@ public BigInteger flipBit(int n) {
      * <p><b>Implementation Note:</b> Usage of this method is not recommended as
      * the current implementation is not efficient.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.089 -0500", hash_original_method = "8383F139074E92B6BF621C4AC408CB05", hash_generated_method = "0240D4D544EB0AB147B86F0291658CBB")
     
 public int getLowestSetBit() {
@@ -1269,6 +1273,7 @@ private byte[] twosComplement() {
         return bytes;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.179 -0500", hash_original_method = "4BA60B28A036933466CC713B9C7854B3", hash_generated_method = "4BA60B28A036933466CC713B9C7854B3")
     
 int getFirstNonzeroDigit() {
@@ -1289,6 +1294,7 @@ int getFirstNonzeroDigit() {
     /**
      * Returns a copy of the current instance to achieve immutability
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.182 -0500", hash_original_method = "FABC86F56C336DE2152BE8F133BAAD74", hash_generated_method = "FABC86F56C336DE2152BE8F133BAAD74")
     
 BigInteger copy() {

@@ -198,12 +198,14 @@ public void setSubtitle(CharSequence subtitle) {
         initTitle();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:42.133 -0500", hash_original_method = "7D691BCB64236E7B5AF8F6CB0399C091", hash_generated_method = "E948C46F1704FC1F24545ED5A725BEE6")
     
 public CharSequence getTitle() {
         return mTitle;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:42.135 -0500", hash_original_method = "8334E54E49A430BB5E2CB9D01857CDC7", hash_generated_method = "3773E52DB2B3822F51D6A3F2CB66D7C2")
     
 public CharSequence getSubtitle() {

@@ -86,6 +86,7 @@ public void setParameter(String name, Object value) throws DOMException {
         }
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:22.004 -0500", hash_original_method = "4C81A8ACD622F0BCFE1551B59FC6CCCF", hash_generated_method = "A4C90376F2D5A414FFA1AD6995970380")
     
 public Object getParameter(String name) throws DOMException {
@@ -96,6 +97,7 @@ public Object getParameter(String name) throws DOMException {
         return parameter.get(this);
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:22.014 -0500", hash_original_method = "95541708528899B2117FFEEED54CDAAC", hash_generated_method = "F9099A47125D0D267BAFB3DACE7898C0")
     
 public DOMStringList getParameterNames() {
@@ -237,6 +239,7 @@ private boolean isValid(CharSequence text) {
 FixedParameter(Object onlyValue) {
             this.onlyValue = onlyValue;
         }
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:21.986 -0500", hash_original_method = "580583282F0D57EA1D5F8BCC7DFB7226", hash_generated_method = "A9037462912764062385D01826C899CD")
         
 public Object get(DOMConfigurationImpl config) {
@@ -291,7 +294,8 @@ private void report(short severity, String type) {
     static {
         PARAMETERS.put("canonical-form", new FixedParameter(false));
         PARAMETERS.put("cdata-sections", new BooleanParameter() {
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:21.880 -0500", hash_original_method = "3A5A96B3676E66B330A45A840239BDBA", hash_generated_method = "FCE7FB127BBFDBF34B86B850311D629E")
+            @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:21.880 -0500", hash_original_method = "3A5A96B3676E66B330A45A840239BDBA", hash_generated_method = "FCE7FB127BBFDBF34B86B850311D629E")
             
 public Object get(DOMConfigurationImpl config) {
                 return config.cdataSections;
@@ -304,7 +308,8 @@ public void set(DOMConfigurationImpl config, Object value) {
         });
         PARAMETERS.put("check-character-normalization", new FixedParameter(false));
         PARAMETERS.put("comments", new BooleanParameter() {
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:21.886 -0500", hash_original_method = "F1D18B11117E62CFC92C9244E52B282C", hash_generated_method = "6FC3D419796F85ABA4EAB25EFBF2F91D")
+            @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:21.886 -0500", hash_original_method = "F1D18B11117E62CFC92C9244E52B282C", hash_generated_method = "6FC3D419796F85ABA4EAB25EFBF2F91D")
             
 public Object get(DOMConfigurationImpl config) {
                 return config.comments;
@@ -316,7 +321,8 @@ public void set(DOMConfigurationImpl config, Object value) {
             }
         });
         PARAMETERS.put("datatype-normalization", new BooleanParameter() {
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:21.892 -0500", hash_original_method = "985EBF949571B479B04193AF03B2FA4B", hash_generated_method = "8B0087742455AB7C66A46DC10A6B0B50")
+            @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:21.892 -0500", hash_original_method = "985EBF949571B479B04193AF03B2FA4B", hash_generated_method = "8B0087742455AB7C66A46DC10A6B0B50")
             
 public Object get(DOMConfigurationImpl config) {
                 return config.datatypeNormalization;
@@ -334,7 +340,8 @@ public void set(DOMConfigurationImpl config, Object value) {
         });
         PARAMETERS.put("element-content-whitespace", new FixedParameter(true));
         PARAMETERS.put("entities", new BooleanParameter() {
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:21.897 -0500", hash_original_method = "91B7377EC53FF18E752558FB4BB5DBB6", hash_generated_method = "E00B437A851AEC04C9FAB022369A9A34")
+            @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:21.897 -0500", hash_original_method = "91B7377EC53FF18E752558FB4BB5DBB6", hash_generated_method = "E00B437A851AEC04C9FAB022369A9A34")
             
 public Object get(DOMConfigurationImpl config) {
                 return config.entities;
@@ -346,7 +353,8 @@ public void set(DOMConfigurationImpl config, Object value) {
             }
         });
         PARAMETERS.put("error-handler", new Parameter() {
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:21.902 -0500", hash_original_method = "AF89E3F1787F195BB4752172071B5443", hash_generated_method = "B944C71D454E35F5317AE8EC5FD98317")
+            @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:21.902 -0500", hash_original_method = "AF89E3F1787F195BB4752172071B5443", hash_generated_method = "B944C71D454E35F5317AE8EC5FD98317")
             
 public Object get(DOMConfigurationImpl config) {
                 return config.errorHandler;
@@ -363,7 +371,8 @@ public boolean canSet(DOMConfigurationImpl config, Object value) {
             }
         });
         PARAMETERS.put("infoset", new BooleanParameter() {
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:21.911 -0500", hash_original_method = "D8FC0D342AC511619314A2885BA15CD2", hash_generated_method = "A563320C0AE48D44AE75AF4D78BAF62E")
+            @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:21.911 -0500", hash_original_method = "D8FC0D342AC511619314A2885BA15CD2", hash_generated_method = "A563320C0AE48D44AE75AF4D78BAF62E")
             
 public Object get(DOMConfigurationImpl config) {
                 // validate-if-schema is always false
@@ -393,7 +402,8 @@ public void set(DOMConfigurationImpl config, Object value) {
             }
         });
         PARAMETERS.put("namespaces", new BooleanParameter() {
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:21.916 -0500", hash_original_method = "8234F9A67307B7D8DCBE95F53CE7FB8B", hash_generated_method = "81687DFF70F2A2E37F41E3917247A21C")
+            @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:21.916 -0500", hash_original_method = "8234F9A67307B7D8DCBE95F53CE7FB8B", hash_generated_method = "81687DFF70F2A2E37F41E3917247A21C")
             
 public Object get(DOMConfigurationImpl config) {
                 return config.namespaces;
@@ -407,7 +417,8 @@ public void set(DOMConfigurationImpl config, Object value) {
         PARAMETERS.put("namespace-declarations", new FixedParameter(true));
         PARAMETERS.put("normalize-characters", new FixedParameter(false));
         PARAMETERS.put("schema-location", new Parameter() {
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:21.923 -0500", hash_original_method = "6764E060CDCE24D9CAC3796C82C3113E", hash_generated_method = "796A20EDB714F52A6619AC961DBE220B")
+            @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:21.923 -0500", hash_original_method = "6764E060CDCE24D9CAC3796C82C3113E", hash_generated_method = "796A20EDB714F52A6619AC961DBE220B")
             
 public Object get(DOMConfigurationImpl config) {
                 return config.schemaLocation;
@@ -424,7 +435,8 @@ public boolean canSet(DOMConfigurationImpl config, Object value) {
             }
         });
         PARAMETERS.put("schema-type", new Parameter() {
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:21.930 -0500", hash_original_method = "FF3D5FCDAC75FADA9A828C13A57700D1", hash_generated_method = "6222E651613B0AAEBDC6FF5B96DCB506")
+            @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:21.930 -0500", hash_original_method = "FF3D5FCDAC75FADA9A828C13A57700D1", hash_generated_method = "6222E651613B0AAEBDC6FF5B96DCB506")
             
 public Object get(DOMConfigurationImpl config) {
                 return config.schemaType;
@@ -440,7 +452,8 @@ public void set(DOMConfigurationImpl config, Object value) {
             }
         });
         PARAMETERS.put("split-cdata-sections", new BooleanParameter() {
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:21.938 -0500", hash_original_method = "DC04461ABC77629550A95C612A79F3EF", hash_generated_method = "868B8F62E5B114808488C7F8A64A1303")
+            @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:21.938 -0500", hash_original_method = "DC04461ABC77629550A95C612A79F3EF", hash_generated_method = "868B8F62E5B114808488C7F8A64A1303")
             
 public Object get(DOMConfigurationImpl config) {
                 return config.splitCdataSections;
@@ -452,7 +465,8 @@ public void set(DOMConfigurationImpl config, Object value) {
             }
         });
         PARAMETERS.put("validate", new BooleanParameter() {
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:21.944 -0500", hash_original_method = "AEEFEBC0123142901425D13D61687371", hash_generated_method = "3FF707EC2939E05B9C4F3D8F33D33939")
+            @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:21.944 -0500", hash_original_method = "AEEFEBC0123142901425D13D61687371", hash_generated_method = "3FF707EC2939E05B9C4F3D8F33D33939")
             
 public Object get(DOMConfigurationImpl config) {
                 return config.validate;

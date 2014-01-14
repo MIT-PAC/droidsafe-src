@@ -230,6 +230,7 @@ public abstract short get();
      * @exception BufferUnderflowException
      *                if {@code dst.length} is greater than {@code remaining()}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:53.396 -0500", hash_original_method = "68406DA953A1F3530F74FC6FE1C452A7", hash_generated_method = "2F943CD8BE97273C95D613084C8175C9")
     
 public ShortBuffer get(short[] dst) {
@@ -255,6 +256,7 @@ public ShortBuffer get(short[] dst) {
      * @exception BufferUnderflowException
      *                if {@code shortCount} is greater than {@code remaining()}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:53.399 -0500", hash_original_method = "DE4C5284FF189AE8B07194EE8C193F03", hash_generated_method = "FE9700AF6413630B2C83C799F4D60421")
     
 public ShortBuffer get(short[] dst, int dstOffset, int shortCount) {

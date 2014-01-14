@@ -9,9 +9,6 @@ import android.text.ParcelableSpan;
 import android.text.TextPaint;
 import android.text.TextUtils;
 
-
-
-
 public class SubscriptSpan extends MetricAffectingSpan implements ParcelableSpan {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:07.639 -0500", hash_original_method = "416865739F2C1ABBE61451113480FAB4", hash_generated_method = "0CB790850FD74946AAEC04BCE4135935")
     
@@ -23,6 +20,7 @@ public SubscriptSpan() {
 public SubscriptSpan(Parcel src) {
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:07.645 -0500", hash_original_method = "CB8400634E0A005DFA226D39FFA147D9", hash_generated_method = "550460EB366598CA0BA56CCC3EA2B074")
     
 public int getSpanTypeId() {
@@ -53,7 +51,6 @@ public void writeToParcel(Parcel dest, int flags) {
     public void updateMeasureState(TextPaint tp) {
         tp.baselineShift -= (int) (tp.ascent() / 2);
     }
-
     
 }
 

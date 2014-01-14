@@ -61,6 +61,7 @@ import com.google.android.collect.Maps;
 
 public class SyncManager implements OnAccountsUpdateListener {
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.938 -0500", hash_original_method = "868C4665098C5E1E551E069914A3869C", hash_generated_method = "962E00FF9753425DE0943B5B1EB5482A")
     
 static String formatTime(long time) {
@@ -461,6 +462,7 @@ private long jitterize(long minValue, long maxValue) {
         return minValue + random.nextInt((int)spread);
     }
 
+    @DSSource({DSSourceKind.SYNCHRONIZATION_DATA})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.799 -0500", hash_original_method = "BC7A6B22ABBE0EBF148B37C3B72645F0", hash_generated_method = "8A53332D37684B50F04247CD91A254AD")
     
 public SyncStorageEngine getSyncStorageEngine() {

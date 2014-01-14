@@ -146,6 +146,7 @@ public BulkCursorNative()
         return super.onTransact(code, data, reply, flags);
     }
 
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.543 -0500", hash_original_method = "2E6ED031FA2AB47CC2982E0232E351E2", hash_generated_method = "5E3B69CCD103133228ACADBBDEF1CE7E")
     
 public IBinder asBinder()
@@ -178,6 +179,7 @@ public IBinder asBinder()
         return mRemote;
     }
 
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.556 -0500", hash_original_method = "7540C72731403A44B035590E58ED3901", hash_generated_method = "EA78ADB97DFC3B522B8A78141E40B1BC")
     
 public CursorWindow getWindow(int startPos) throws RemoteException
@@ -350,6 +352,7 @@ public boolean getWantsAllOnMoveCalls() throws RemoteException {
         }
     }
 
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.576 -0500", hash_original_method = "0BFE1C1B4E3A75686DCBF1FFC3B2E52B", hash_generated_method = "8534442E1A57371CEB797D84E718FD6F")
     
 public Bundle getExtras() throws RemoteException {

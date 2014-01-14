@@ -35,6 +35,7 @@ import javax.sip.message.Request;
 
 public final class SIPResponse extends SIPMessage implements javax.sip.message.Response, ResponseExt {
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:36.541 -0500", hash_original_method = "AB9A03C3951275E5A2E90FE8CAAD0800", hash_generated_method = "99B6F14DC1A55F1EE64DD39F2BDF3CAE")
     
 public static String getReasonPhrase(int rc) {
@@ -306,6 +307,7 @@ public void setStatusCode(int statusCode) throws ParseException {
      * Get the status line of the response.
      *@return StatusLine
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:36.546 -0500", hash_original_method = "A01A6E14359F44471B36FBE20B7B7D3C", hash_generated_method = "8D01BFD6FB20FFC92D2B0CFDA8D009AD")
     
 public StatusLine getStatusLine() {
@@ -315,6 +317,7 @@ public StatusLine getStatusLine() {
     /** Get the staus code (conveniance function).
      *@return the status code of the status line.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:36.548 -0500", hash_original_method = "83A312D9FCEFB6DCEE53922D19363429", hash_generated_method = "0F50982A111B92FF491D67F5F040FCB0")
     
 public int getStatusCode() {
@@ -339,6 +342,7 @@ public void setReasonPhrase(String reasonPhrase) {
     /** Get the reason phrase.
      *@return the reason phrase.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:36.553 -0500", hash_original_method = "116CF5266E081CFEF1340E67E2A6CB5B", hash_generated_method = "5CBEEDBC580502FB2FE58E3A7234B866")
     
 public String getReasonPhrase() {
@@ -455,6 +459,7 @@ public String encodeMessage() {
      *   the message.
      */
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:36.577 -0500", hash_original_method = "6F0C3DD571A294E8DFD4F72BBB3CCE7B", hash_generated_method = "36DBBAB33213CA4ABBCFABAB2C048017")
     
 public LinkedList getMessageAsEncodedStrings() {
@@ -529,6 +534,7 @@ public boolean match(Object matchObj) {
      *  array.
      */
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:36.587 -0500", hash_original_method = "8A95B6782662E6180E39BCA19FEC79A2", hash_generated_method = "E705090A3E61239D7EFB0BC96276E719")
     
 public byte[] encodeAsBytes( String transport ) {
@@ -554,6 +560,7 @@ public byte[] encodeAsBytes( String transport ) {
      * @param isServer is set to true if this is the UAS
      * and set to false if this is the UAC
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:36.590 -0500", hash_original_method = "9D2127AEC1E1548A62DA89BBBF00D215", hash_generated_method = "51E5F20A832E54757FADCF8D0C90486D")
     
 public String getDialogId(boolean isServer) {
@@ -587,6 +594,7 @@ public String getDialogId(boolean isServer) {
         return retval.toString().toLowerCase();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:36.593 -0500", hash_original_method = "6DAE45694664AE2CF5B3EB0BCA54E49B", hash_generated_method = "9F2ADF6A1C0256C2AF3ACE84B6B62376")
     
 public String getDialogId(boolean isServer, String toTag) {
@@ -653,6 +661,7 @@ private final void setBranch( Via via, String method ) {
      *@return the status line encoded.
      *
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:36.599 -0500", hash_original_method = "EE95455CDB90A9B95BEE72161BE1B5B8", hash_generated_method = "139389A587B9ABCED5D44A5482056AB1")
     
 public String getFirstLine() {
@@ -669,6 +678,7 @@ public void setSIPVersion(String sipVersion) {
         this.statusLine.setSipVersion(sipVersion);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:36.604 -0500", hash_original_method = "81E4A3A86ED8E9389A222C77FFC4E212", hash_generated_method = "5291D37196CFDE6336F38A2E2209772D")
     
 public String getSIPVersion() {
@@ -692,6 +702,7 @@ public String toString() {
      * @param to -- the To header to assign to the request
      * @return -- the newly generated sip request.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:36.610 -0500", hash_original_method = "B6A6DA92002B5EA057CE082C91930B65", hash_generated_method = "A603441423DB3EB7274980FF307DAD07")
     
 public SIPRequest createRequest(SipUri requestURI, Via via, CSeq cseq, From from, To to) {

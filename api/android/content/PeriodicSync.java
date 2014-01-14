@@ -14,6 +14,7 @@ public class PeriodicSync implements Parcelable {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.713 -0400", hash_original_field = "D1D66675233804683D3FB5AA9833457F", hash_generated_field = "476BDAB47FF19722C7E6C835502904C2")
 
     public static final Creator<PeriodicSync> CREATOR = new Creator<PeriodicSync>() {
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:28.588 -0500", hash_original_method = "1DDDAEB0A3936D38ABA192522EF53B01", hash_generated_method = "1942E7F4F3EEE1F864E20D1D637617B6")
         
 public PeriodicSync createFromParcel(Parcel source) {

@@ -99,6 +99,7 @@ synchronized protected void implCloseSelectableChannel() throws IOException {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:04.880 -0500", hash_original_method = "6D4849F20A76F796E10F0B815FB14502", hash_generated_method = "1CB94873602BD4448AD10C4D54C431E7")
     
 public FileDescriptor getFD() {
@@ -158,6 +159,7 @@ public Socket implAccept(SocketChannelImpl clientSocketChannel) throws IOExcepti
             return clientSocket;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:04.897 -0500", hash_original_method = "9062324EB68516522A00021BE06AA12D", hash_generated_method = "4980814ED7F3FC6EF04272E197591CD0")
         
 @Override public ServerSocketChannel getChannel() {

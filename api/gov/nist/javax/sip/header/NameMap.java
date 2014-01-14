@@ -37,6 +37,7 @@ protected static void putNameMap(String headerName, String className) {
             className);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:00.942 -0500", hash_original_method = "B248307A8F9E50DFEF49B17C8E17D951", hash_generated_method = "E563A0A86173E21089A84293AA15A801")
     
 public static Class getClassFromName(String headerName) {

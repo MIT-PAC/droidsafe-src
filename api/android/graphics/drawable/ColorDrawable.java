@@ -52,6 +52,7 @@ private ColorDrawable(ColorState state) {
         mState = new ColorState(state);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.372 -0500", hash_original_method = "CCB9F44E02BA506AC13DF4A6CD3FA45F", hash_generated_method = "79A1C10E5A48365D8B9978537D00AB08")
     
 @Override
@@ -74,6 +75,7 @@ private ColorDrawable(ColorState state) {
      *
      * @return int The color to draw.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.377 -0500", hash_original_method = "12CB188AAA441342DA340C647E5F4CB8", hash_generated_method = "B0AA492B9D8833FB6DBD1E2EE33781FD")
     
 public int getColor() {
@@ -100,6 +102,7 @@ public void setColor(int color) {
      *
      * @return A value between 0 and 255.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.381 -0500", hash_original_method = "5CD88AD7EDD59028127023DB7F8765AB", hash_generated_method = "60FD9929B15A1D916703D0B6F5F8B120")
     
 public int getAlpha() {
@@ -136,6 +139,7 @@ public void setAlpha(int alpha) {
 public void setColorFilter(ColorFilter colorFilter) {
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.387 -0500", hash_original_method = "B5DEC9C614B60B544E3B9333F2490C35", hash_generated_method = "24344A1D81C73B8A7DBBD6DCA997AFDC")
     
 public int getOpacity() {
@@ -206,6 +210,7 @@ ColorState(ColorState state) {
             return new ColorDrawable(this);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.409 -0500", hash_original_method = "9E7D7C67EAC365FF19BD4971762612A5", hash_generated_method = "3AB30668ED270F2EDF2E0129C706FE4D")
         
 @Override

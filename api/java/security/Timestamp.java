@@ -8,22 +8,14 @@ import java.io.Serializable;
 import java.security.cert.CertPath;
 import java.util.Date;
 
-
-
-
-
-
 public final class Timestamp implements Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:57.463 -0500", hash_original_field = "529AC4FFFAC5DC689D83B9A3B7E7FD73", hash_generated_field = "E7A91C55874DE95C878CDAFEDEEC7D72")
-
 
     private static final long serialVersionUID = -5502683707821851294L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:57.465 -0500", hash_original_field = "5125D667CFD62C509F415BF608A962E5", hash_generated_field = "19EEE56AC3C62FACD5625A14E692FA43")
 
-
     private Date timestamp;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:57.468 -0500", hash_original_field = "C6569135C27F1E6021BDE7485FB065B4", hash_generated_field = "FC883EA50AB2FDD2C3073E407E6CEA66")
-
 
     private CertPath signerCertPath;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:57.471 -0500", hash_original_field = "5ED776CD81502BA181156D7F28EBC9C8", hash_generated_field = "0316D82713F1CE4A6BE9BC97E8C831C1")
@@ -90,6 +82,7 @@ public Timestamp(Date timestamp, CertPath signerCertPath) {
      *
      * @return the certificate path of this {@code Timestamp}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:57.479 -0500", hash_original_method = "30F2DDB76579221F80A186A0F4D6B0C1", hash_generated_method = "01A5353F5016822816912028EB92BCE2")
     
 public CertPath getSignerCertPath() {
@@ -101,6 +94,7 @@ public CertPath getSignerCertPath() {
      *
      * @return the date and time of this {@code Timestamp}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:57.481 -0500", hash_original_method = "9F5E9DF58C2165A57C2B03C2ABFACB32", hash_generated_method = "B93722C6E04275D49478F0FBC17C1C88")
     
 public Date getTimestamp() {

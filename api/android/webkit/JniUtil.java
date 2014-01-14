@@ -35,6 +35,7 @@ protected static synchronized void setContext(Context context) {
         sContext = context.getApplicationContext();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:10.854 -0500", hash_original_method = "71DD9FA52CE59CC40EEE95C3BDF1AEDE", hash_generated_method = "EE27CEA95F159D07E0109EDDC7E481D6")
     
 protected static synchronized Context getContext() {

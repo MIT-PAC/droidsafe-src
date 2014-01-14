@@ -10,14 +10,8 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 import java.security.KeyManagementException;
 
-
-
-
-
-
 public class OpenSSLSocketFactoryImpl extends javax.net.ssl.SSLSocketFactory {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.863 -0500", hash_original_field = "8EC89ADA2574F1DBC3DD4508F1BBC0BF", hash_generated_field = "D3BEC3280BC0116C55BDEA33933A255E")
-
 
     private  SSLParametersImpl sslParameters;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.866 -0500", hash_original_field = "4B271BE77FE082BAEDB0CC3C06D67CEA", hash_generated_field = "2D5C9847E3AA9248107E9F6E4986B2D4")
@@ -46,12 +40,14 @@ public OpenSSLSocketFactoryImpl(SSLParametersImpl sslParameters) {
         this.instantiationException = null;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.873 -0500", hash_original_method = "0281EF5D8B3BC852A1CC14F175899740", hash_generated_method = "9FD76030E98DF5EC3E130ABDB050FF21")
     
 public String[] getDefaultCipherSuites() {
         return NativeCrypto.getDefaultCipherSuites();
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.875 -0500", hash_original_method = "1B8AAFC0DA0BD632205C9BB94F36BE40", hash_generated_method = "F00706CA72F49A75DCD594C7E421B0AE")
     
 public String[] getSupportedCipherSuites() {
@@ -114,7 +110,6 @@ public Socket createSocket(Socket s, String host, int port, boolean autoClose)
                                             autoClose,
                                             (SSLParametersImpl) sslParameters.clone());
     }
-
     
 }
 

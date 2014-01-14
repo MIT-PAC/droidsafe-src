@@ -177,6 +177,7 @@ private void setCheckedStateForView(int viewId, boolean checked) {
      * @see #check(int)
      * @see #clearCheck()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.185 -0500", hash_original_method = "037226FCADAD9E6B157688A3599D3985", hash_generated_method = "CA799BFEF6959DBCC5E4B26BE6AA9F99")
     
 public int getCheckedRadioButtonId() {

@@ -20,10 +20,6 @@ import android.net.Uri;
 import android.util.AndroidException;
 import android.util.DisplayMetrics;
 
-
-
-
-
 public abstract class PackageManager {
 
     /**
@@ -330,7 +326,6 @@ public static int getAppId(int uid) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.463 -0500", hash_original_field = "9D8C65A65DFB11EB5F1C8D95F9EBB76C", hash_generated_field = "02264E29EDDF21634896C526056CF6FC")
 
     public static final int VERIFICATION_ALLOW_WITHOUT_SUFFICIENT = 2;
-
     
     public static class NameNotFoundException extends AndroidException {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.247 -0500", hash_original_method = "4C893FF4D2386A2E528254CA81C36065", hash_generated_method = "A4B7D83CF9C65DC78B0AB4E6C5EB168F")
@@ -343,7 +338,6 @@ public NameNotFoundException() {
 public NameNotFoundException(String name) {
             super(name);
         }
-
         
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.465 -0500", hash_original_field = "CCFBFC745ABB7C2724340B47DF729BDB", hash_generated_field = "AFA7425051348D7B510D3069205362D3")
@@ -1654,6 +1648,7 @@ public abstract Resources getResourcesForApplication(String appPackageName)
      * @see #GET_SIGNATURES
      *
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.709 -0500", hash_original_method = "DBC2C646566E0B22A2FF91F44F8D10B2", hash_generated_method = "EE2A120389E314C8CE9A5487ED80AEB5")
     
 public PackageInfo getPackageArchiveInfo(String archiveFilePath, int flags) {
@@ -1901,6 +1896,7 @@ public abstract void freeStorage(long freeStorageSize, IntentSender pi);
      *
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.735 -0500", hash_original_method = "A38939ED73318CA6F17E3B37317BE946", hash_generated_method = "86C2BCA14B7A84F49DE215D13AAF3C1D")
     
 public abstract void getPackageSizeInfo(String packageName,
@@ -2066,7 +2062,6 @@ public abstract int getPreferredActivities(List<IntentFilter> outFilters,
     
 public abstract void setComponentEnabledSetting(ComponentName componentName,
             int newState, int flags);
-
 
     /**
      * Return the the enabled setting for a package component (activity,

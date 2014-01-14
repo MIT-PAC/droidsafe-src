@@ -8,14 +8,8 @@ import java.io.Serializable;
 
 import org.apache.http.util.CharArrayBuffer;
 
-
-
-
-
-
 public class ProtocolVersion implements Serializable, Cloneable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:51.439 -0500", hash_original_field = "5E85D215BFAA18FC64FC27988D1D0AFA", hash_generated_field = "2E5C9D3BADDF86EB2D1874D5612C1631")
-
 
     private static final long serialVersionUID = 8950662842175091068L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:51.441 -0500", hash_original_field = "DE3F28962485CE99CA97D0A480B93596", hash_generated_field = "8ECC40219F1A47A496A00A4256414BFE")
@@ -27,7 +21,6 @@ public class ProtocolVersion implements Serializable, Cloneable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:51.446 -0500", hash_original_field = "D7BC9E20147A52C3B5DEF2B2E1296DB1", hash_generated_field = "8AE4F35AB0D6332ACFC096368CCFD796")
 
     protected  int minor;
-
     
     /**
      * Create a protocol version designator.
@@ -61,6 +54,7 @@ public ProtocolVersion(String protocol, int major, int minor) {
      * 
      * @return the protocol name
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:51.451 -0500", hash_original_method = "A74773FBD6292704847794FB8A3C1AB0", hash_generated_method = "4DF996DD4ED6E38DFDC56EAB9AE5D939")
     
 public final String getProtocol() {
@@ -72,6 +66,7 @@ public final String getProtocol() {
      * 
      * @return the major version number.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:51.453 -0500", hash_original_method = "6CE35F73F8CF79D6A880BDE227F0BCAD", hash_generated_method = "08886D75F019C3803FA9A61CFB99DF38")
     
 public final int getMajor() {
@@ -83,12 +78,12 @@ public final int getMajor() {
      * 
      * @return the minor version number.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:51.456 -0500", hash_original_method = "413E8CB9D527E60B72E0CF611B418433", hash_generated_method = "CAC469D5D6AF87D1E5BC56D62AE1D0E5")
     
 public final int getMinor() {
         return minor;
     }
-
 
     /**
      * Obtains a specific version of this protocol.
@@ -117,7 +112,6 @@ public ProtocolVersion forVersion(int major, int minor) {
         return new ProtocolVersion(this.protocol, major, minor);
     }
 
-
     /**
      * Obtains a hash code consistent with {@link #equals}.
      *
@@ -128,7 +122,6 @@ public ProtocolVersion forVersion(int major, int minor) {
 public final int hashCode() {
         return this.protocol.hashCode() ^ (this.major * 100000) ^ this.minor;
     }
-
         
     /**
      * Checks equality of this protocol version with an object.
@@ -159,7 +152,6 @@ public final boolean equals(Object obj) {
                 (this.minor == that.minor));
     }
 
-
     /**
      * Checks whether this protocol can be compared to another one.
      * Only protocol versions with the same protocol name can be
@@ -175,7 +167,6 @@ public final boolean equals(Object obj) {
 public boolean isComparable(ProtocolVersion that) {
         return (that != null) && this.protocol.equals(that.protocol);
     }
-
 
     /**
      * Compares this protocol version with another one.
@@ -213,7 +204,6 @@ public int compareToVersion(ProtocolVersion that) {
         return delta;
     }
 
-
     /**
      * Tests if this protocol version is greater or equal to the given one.
      *
@@ -230,7 +220,6 @@ public final boolean greaterEquals(ProtocolVersion version) {
         return isComparable(version) && (compareToVersion(version) >= 0);
     }
 
-
     /**
      * Tests if this protocol version is less or equal to the given one.
      *
@@ -246,7 +235,6 @@ public final boolean greaterEquals(ProtocolVersion version) {
 public final boolean lessEquals(ProtocolVersion version) {
         return isComparable(version) && (compareToVersion(version) <= 0);
     }
-
 
     /**
      * Converts this protocol version to a string.

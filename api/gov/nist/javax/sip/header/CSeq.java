@@ -94,6 +94,7 @@ protected StringBuffer encodeBody(StringBuffer buffer) {
      * Get the method.
      * @return String the method.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:06.136 -0500", hash_original_method = "A65B682B0B822D8527FBE88A2FCA60FC", hash_generated_method = "BC38B478E0AED2517A3460750CABA307")
     
 public String getMethod() {
@@ -150,6 +151,7 @@ public void setMethod(String meth) throws ParseException {
      * (non-Javadoc)
      * @see javax.sip.header.CSeqHeader#getSequenceNumber()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:06.147 -0500", hash_original_method = "C444FE335840CD646F9A52EE546690DB", hash_generated_method = "C2243BD144024DC88366725A24D8FF2E")
     
 public int getSequenceNumber() {
@@ -159,6 +161,7 @@ public int getSequenceNumber() {
             return this.seqno.intValue();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:06.150 -0500", hash_original_method = "6A4C94B16343774E5C3F1252C6DA6DFA", hash_generated_method = "768B4BA1E0575D104C97AF9DDDA811B4")
     
 public long getSeqNumber() {

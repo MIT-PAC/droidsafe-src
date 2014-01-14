@@ -94,6 +94,7 @@ public HttpHost (final HttpHost httphost) {
      * 
      * @return the host name (IP or DNS name)
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.915 -0500", hash_original_method = "FF0006634ABBE2C97788D559B23C884A", hash_generated_method = "1990813A386F67A8FC0A02079ED98F7E")
     
 public String getHostName() {
@@ -105,6 +106,7 @@ public String getHostName() {
      * 
      * @return the host port, or <code>-1</code> if not set
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.917 -0500", hash_original_method = "1804D4B8ED6914D43C8BF926A65BA4F9", hash_generated_method = "2827709310D4A6354CC4E0B95B5C1D5F")
     
 public int getPort() {
@@ -116,6 +118,7 @@ public int getPort() {
      *
      * @return the scheme name
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.919 -0500", hash_original_method = "C6F0B2E3DB0F6FEAB7513E486FF6DA80", hash_generated_method = "CCEA0EC5D17487D4524965A686A7ACE2")
     
 public String getSchemeName() {

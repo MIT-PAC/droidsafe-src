@@ -38,6 +38,7 @@ private static Uri getUriFromCursor(Cursor cursor) {
      * @param context The context to use for querying.
      * @return A ringtone URI, or null if one cannot be found.
      */
+    @DSSource({DSSourceKind.FILE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:27.343 -0500", hash_original_method = "1192D831CE26227FD11FFFE1931A718B", hash_generated_method = "466760483F9E9AACC037C910489C8077")
     
 public static Uri getValidRingtoneUri(Context context) {
@@ -170,6 +171,7 @@ private static Ringtone getRingtone(final Context context, Uri ringtoneUri, int 
      * @return A {@link Uri} pointing to the default sound for the sound type.
      * @see #setActualDefaultRingtoneUri(Context, int, Uri)
      */
+    @DSSource({DSSourceKind.FILE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:27.370 -0500", hash_original_method = "ADF1ADA5ADFEAE953CF8C758A8A3E876", hash_generated_method = "432781D47D54B0365C059BF27B31EDE0")
     
 public static Uri getActualDefaultRingtoneUri(Context context, int type) {
@@ -234,6 +236,7 @@ public static boolean isDefault(Uri ringtoneUri) {
      *            {@link System#DEFAULT_ALARM_ALERT_URI}.
      * @return The type of the defaultRingtoneUri, or -1.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:27.380 -0500", hash_original_method = "7F2381BA185DA4A8E1D41167C61F9114", hash_generated_method = "5440D566E4F3C1ADAE4D1F50416CC394")
     
 public static int getDefaultType(Uri defaultRingtoneUri) {
@@ -259,6 +262,7 @@ public static int getDefaultType(Uri defaultRingtoneUri) {
      * @param type The ringtone type whose default should be returned.
      * @return The {@link Uri} of the default ringtone for the given type.
      */
+    @DSSource({DSSourceKind.FILE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:27.383 -0500", hash_original_method = "C50204A078065E3CC44987C7DD4E9366", hash_generated_method = "BA0EBD10CA93FA259E6B3A424544ABA1")
     
 public static Uri getDefaultUri(int type) {
@@ -481,6 +485,7 @@ public void setStopPreviousRingtone(boolean stopPreviousRingtone) {
     /**
      * @see #setStopPreviousRingtone(boolean)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:27.319 -0500", hash_original_method = "0B3E7FCD199769A7D560D3943A8B1B23", hash_generated_method = "BD04C7E52D3775E40DE50778E120D21E")
     
 public boolean getStopPreviousRingtone() {
@@ -504,6 +509,7 @@ public void stopPreviousRingtone() {
      * @return Whether DRM ringtones will be included.
      * @see #setIncludeDrm(boolean)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:27.324 -0500", hash_original_method = "9F2D30C6202871DC182E5AD2A88B91B1", hash_generated_method = "50B7702E8B0768961F49CDEB977D0E20")
     
 public boolean getIncludeDrm() {
@@ -536,6 +542,7 @@ public void setIncludeDrm(boolean includeDrm) {
      * @see #TITLE_COLUMN_INDEX
      * @see #URI_COLUMN_INDEX
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:27.328 -0500", hash_original_method = "890985AD9BCFC1049E02A6DFBECAA43E", hash_generated_method = "01D12EE6863EF1A9F2C9EC5DF6350F08")
     
 public Cursor getCursor() {
@@ -558,6 +565,7 @@ public Cursor getCursor() {
      * @param position The position (in the {@link Cursor}) of the ringtone.
      * @return A {@link Ringtone} pointing to the ringtone.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:27.331 -0500", hash_original_method = "6FCC5829E72C1DEF0426E1D999C80198", hash_generated_method = "3F229D3D7475261BB36BA8A3EEDCD4D4")
     
 public Ringtone getRingtone(int position) {
@@ -575,6 +583,7 @@ public Ringtone getRingtone(int position) {
      * @param position The position (in the {@link Cursor}) of the ringtone.
      * @return A {@link Uri} pointing to the ringtone.
      */
+    @DSSource({DSSourceKind.FILE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:27.333 -0500", hash_original_method = "4D2A1FDA5FCE10764EC2653DD3811CF2", hash_generated_method = "C12BEE11A955513EE74FBA26EC70500E")
     
 public Uri getRingtoneUri(int position) {
@@ -593,6 +602,7 @@ public Uri getRingtoneUri(int position) {
      * @param ringtoneUri The {@link Uri} to retreive the position of.
      * @return The position of the {@link Uri}, or -1 if it cannot be found.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:27.339 -0500", hash_original_method = "ED1F9D5C280AF9E93D506709043225B3", hash_generated_method = "734274D4215FD5B433A7CE87ECCB5FA2")
     
 public int getRingtonePosition(Uri ringtoneUri) {

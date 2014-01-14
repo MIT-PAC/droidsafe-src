@@ -110,6 +110,7 @@ protected void dbg_leave(String rule) {
         nesting_level --;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:51.662 -0500", hash_original_method = "96EC2DBFF0EC1BA1DEDB704D9ED6E4AE", hash_generated_method = "BCA2F6BCA05A0FC34FC25E41E0AE28C7")
     
 protected NameValue nameValue() throws ParseException  {

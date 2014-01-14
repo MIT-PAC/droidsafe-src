@@ -6,18 +6,11 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.Serializable;
 
-
-
-
-
-
 public class EventObject implements Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.341 -0500", hash_original_field = "FCFD693445D5C91823A585314B80016E", hash_generated_field = "7EDA1B54A84BB88DBCC9E4ADB18207F4")
 
-
     private static final long serialVersionUID = 5516075349620653480L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.343 -0500", hash_original_field = "B1F1A09178B285CE5A5A0F0FA17DB436", hash_generated_field = "B89FD14140C3D96FD5EE1AB3347DDB03")
-
 
     @FindBugsSuppressWarnings("SE_TRANSIENT_FIELD_NOT_RESTORED")
     protected transient Object source;
@@ -40,6 +33,7 @@ public EventObject(Object source) {
     /**
      * Returns the object which fired the event.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.348 -0500", hash_original_method = "9C6E9403B2BCB843296731DEDAEEBBC7", hash_generated_method = "3D28168EFE76736511F32DF40C7D247E")
     
 public Object getSource() {

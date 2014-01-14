@@ -14,9 +14,6 @@ import org.apache.http.params.HttpConnectionParams;
 
 import android.content.Context;
 
-
-
-
 class HttpConnection extends Connection {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.413 -0500", hash_original_method = "8B0FF76444F6FD4A7628D73D943DE9DB", hash_generated_method = "8B0FF76444F6FD4A7628D73D943DE9DB")
@@ -82,12 +79,12 @@ void restartConnection(boolean abort) {
         // not required for plain http connections
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.421 -0500", hash_original_method = "28A13316B46B35CCB565BDA96B57339B", hash_generated_method = "28A13316B46B35CCB565BDA96B57339B")
     
 String getScheme() {
         return "http";
     }
-
     
 }
 

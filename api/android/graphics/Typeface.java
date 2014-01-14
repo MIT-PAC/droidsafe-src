@@ -166,6 +166,7 @@ private Typeface(int ni) {
     }
 
     /** Returns the typeface's intrinsic style attributes */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.652 -0500", hash_original_method = "49E10597FC0BC827A75ECB0B721408FD", hash_generated_method = "B1A319B88CE99D3D37B0A0D49A11FA23")
     
 public int getStyle() {

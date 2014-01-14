@@ -53,6 +53,7 @@ public DefaultClientConnection() {
     }
 
     // non-javadoc, see interface OperatedClientConnection
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:31.965 -0500", hash_original_method = "00F8E4422BF57DE6758D681F4A99BDB6", hash_generated_method = "3CF09B50D9FFB38E80EC0DF2754F3C7C")
     
 public final HttpHost getTargetHost() {
@@ -66,6 +67,7 @@ public final boolean isSecure() {
         return this.connSecure;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:31.970 -0500", hash_original_method = "B12AAA9EA995C0C9BE2466476E8BAC96", hash_generated_method = "3D8353C63A7C48193173CB46F79167E0")
     
 @Override

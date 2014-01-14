@@ -291,6 +291,7 @@ public void onDestroy() {
      * 
      * @see #getTargetContext
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:44.061 -0500", hash_original_method = "0612F59C08E6EE31E243F52D2CCB68AA", hash_generated_method = "CED92F4D868F4EE82F3F4B62AE9813BA")
     
 public Context getContext() {
@@ -302,6 +303,7 @@ public Context getContext() {
      * 
      * @return Returns the complete component name for this instrumentation.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:44.063 -0500", hash_original_method = "6C1D36E28C0C97736EA4779A7FB1715C", hash_generated_method = "0218C20A36476A71EF5D80D906810879")
     
 public ComponentName getComponentName() {
@@ -319,6 +321,7 @@ public ComponentName getComponentName() {
      * 
      * @see #getContext
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:44.065 -0500", hash_original_method = "D1026223DF11B7056861FB0AA4B64828", hash_generated_method = "4B2320D69B2781FFCE4561936A920812")
     
 public Context getTargetContext() {
@@ -1222,6 +1225,7 @@ private void addValue(String key, int value, Bundle results) {
     /**
      * Returns a bundle with the current results from the allocation counting.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:44.241 -0500", hash_original_method = "733DA96DDB5CBA410EC33155388CAA51", hash_generated_method = "D1EB78DE0220B18E485959E42814D16A")
     
 public Bundle getAllocCounts() {
@@ -1238,6 +1242,7 @@ public Bundle getAllocCounts() {
      * Returns a bundle with the counts for various binder counts for this process. Currently the only two that are
      * reported are the number of send and the number of received transactions.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:44.244 -0500", hash_original_method = "C29A199041D930C7B60D186159DABF9F", hash_generated_method = "9779A2A3D8077F781D01772052366265")
     
 public Bundle getBinderCounts() {
@@ -1434,6 +1439,7 @@ public ActivityMonitor(
         /**
          * Retrieve the filter associated with this ActivityMonitor.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:44.106 -0500", hash_original_method = "5CEC767AFA0B77CA42139688DDFFE7D0", hash_generated_method = "EEB89DB80307814A28C25480A6DDC5DE")
         
 public final IntentFilter getFilter() {
@@ -1463,6 +1469,7 @@ public final boolean isBlocking() {
         /**
          * Retrieve the number of times the monitor has been hit so far.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:44.113 -0500", hash_original_method = "6A2B57F4CCAF664CD709CE454AF8AF4E", hash_generated_method = "3A06AB8C5E844F44218627C35EB91D88")
         
 public final int getHits() {
@@ -1473,6 +1480,7 @@ public final int getHits() {
          * Retrieve the most recent activity class that was seen by this 
          * monitor. 
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:44.115 -0500", hash_original_method = "1AD813C5DE346D876C42D8A64F1E0FB4", hash_generated_method = "E5FD8926AB241950AE5A04CCCD6C1785")
         
 public final Activity getLastActivity() {
@@ -1588,6 +1596,7 @@ public ActivityResult(int resultCode, Intent resultData) {
         /**
          * Retrieve the result code contained in this result.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:44.249 -0500", hash_original_method = "DAC102A9F551BEDDEF83F16167EFAEA6", hash_generated_method = "BAB089F9DACBDE2D78C92F55EB927359")
         
 public int getResultCode() {
@@ -1597,6 +1606,7 @@ public int getResultCode() {
         /**
          * Retrieve the data contained in this result.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:44.252 -0500", hash_original_method = "230B95D397C0359A2CE808B90BABA149", hash_generated_method = "2A136C66111909BAFC222981163E4C89")
         
 public Intent getResultData() {

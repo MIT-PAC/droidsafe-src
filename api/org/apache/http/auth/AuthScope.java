@@ -8,11 +8,6 @@ import java.util.Locale;
 
 import org.apache.http.util.LangUtils;
 
-
-
-
-
-
 public class AuthScope {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.568 -0500", hash_original_field = "A5EEF3672EE4AEEBEA87D2F88BB57B57", hash_generated_field = "D702123867AF990F6D94A9795015E375")
 
@@ -126,6 +121,7 @@ public AuthScope(final AuthScope authscope) {
     /**
      * @return the host
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.603 -0500", hash_original_method = "052AA62CF2AFB76178CB036EF4B7BAB4", hash_generated_method = "C50FCE23852EDA3AF845FEC4AC445DA3")
     
 public String getHost() {
@@ -135,6 +131,7 @@ public String getHost() {
     /**
      * @return the port
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.605 -0500", hash_original_method = "1804D4B8ED6914D43C8BF926A65BA4F9", hash_generated_method = "2827709310D4A6354CC4E0B95B5C1D5F")
     
 public int getPort() {
@@ -144,6 +141,7 @@ public int getPort() {
     /**
      * @return the realm name
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.607 -0500", hash_original_method = "5D06D5B53E6C13036F29936602C7EB58", hash_generated_method = "06A1CF67AE4C3AB70EB62E8D95F7D3D9")
     
 public String getRealm() {
@@ -153,6 +151,7 @@ public String getRealm() {
     /**
      * @return the scheme type
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.609 -0500", hash_original_method = "76031D31C1CA528B8F038117D6808811", hash_generated_method = "8C187E31064D5FC7E4CBD4735C1E35F0")
     
 public String getScheme() {

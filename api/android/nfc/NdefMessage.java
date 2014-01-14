@@ -69,6 +69,7 @@ public NdefMessage(NdefRecord[] records) {
      *
      * @return array of zero or more NDEF records.
      */
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.060 -0500", hash_original_method = "482F2AD23FF4C5B364DE9FB97EDDBB64", hash_generated_method = "C7BB5CEF292B3E7C1A8B4DC36219E098")
     
 public NdefRecord[] getRecords() {
@@ -78,6 +79,7 @@ public NdefRecord[] getRecords() {
     /**
      * Returns a byte array representation of this entire NDEF message.
      */
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.063 -0500", hash_original_method = "8C1624491EC0DD58CFD007740FE405D8", hash_generated_method = "21C9C13EC9FAEFA5F55B3DC8AAE9AA07")
     
 public byte[] toByteArray() {

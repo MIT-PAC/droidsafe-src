@@ -176,6 +176,7 @@ public Throwable fillInStackTrace() {
      *
      * @return this {@code Throwable}'s detail message.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.597 -0500", hash_original_method = "DB11282615D634E343F956A1D91DEDE9", hash_generated_method = "DFAFD5BFED23A5DC115EDF0B4FB19888")
     
 public String getMessage() {
@@ -190,6 +191,7 @@ public String getMessage() {
      *
      * @return this {@code Throwable}'s localized detail message.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.600 -0500", hash_original_method = "A2EE7B7852887DFBE3A27B61B4F72974", hash_generated_method = "9A2C4BFFE86AF7C1B43429C9DF39A332")
     
 public String getLocalizedMessage() {
@@ -207,6 +209,7 @@ public String getLocalizedMessage() {
      *         not change the call stack stored in this {@code Throwable}.
      * @see #printStackTrace()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.602 -0500", hash_original_method = "45FE0FF583AFF2392C672B8C003FC38F", hash_generated_method = "335BD883E150835B2792DDB4AA7898D9")
     
 public StackTraceElement[] getStackTrace() {
@@ -399,6 +402,7 @@ public Throwable initCause(Throwable throwable) {
      *
      * @return Throwable this {@code Throwable}'s cause.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.628 -0500", hash_original_method = "22464C579A8BDBBA630699F5CFE21CE6", hash_generated_method = "EC6E1F32E2206A3C3ED13D06EC6500B3")
     
 public Throwable getCause() {
@@ -437,6 +441,7 @@ public final void addSuppressed(Throwable throwable) {
      * @since 1.7
      * @hide 1.7
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.637 -0500", hash_original_method = "8B184B5B883F2271AE4A6DCD97FDDD74", hash_generated_method = "3FEE70597C3C89C502CEED679EDD4D15")
     
 public final Throwable[] getSuppressed() {

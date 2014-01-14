@@ -18,53 +18,41 @@ import android.view.View;
 import android.view.ViewDebug;
 import android.view.ViewGroup;
 
-
-
-
-
 public class FrameLayout extends ViewGroup {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.196 -0500", hash_original_field = "69CB3F187311FBAD10FED23A88C41309", hash_generated_field = "CA0D915EE28CB56486F6429E0B657866")
 
     private static final int DEFAULT_CHILD_GRAVITY = Gravity.TOP | Gravity.LEFT;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.199 -0500", hash_original_field = "44AFCD8DDBB37631367557976155DF2E", hash_generated_field = "CB728A1909AFA591F1BDDDA61ED16AE9")
 
-
     @ViewDebug.ExportedProperty(category = "measurement")
     boolean mMeasureAllChildren = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.201 -0500", hash_original_field = "FFE475FB338E6871288D478F63360C0F", hash_generated_field = "A72F2658D002524E6BC635CECCB7A486")
-
 
     @ViewDebug.ExportedProperty(category = "drawing")
     private Drawable mForeground;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.203 -0500", hash_original_field = "962E045788D6DC5F92A15F09B0CC6F0B", hash_generated_field = "953C36407EBD0C47819218A9CD301BFA")
 
-
     @ViewDebug.ExportedProperty(category = "padding")
     private int mForegroundPaddingLeft = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.205 -0500", hash_original_field = "DC7468BD1BED53E7991ECA6F4B14DF55", hash_generated_field = "79EB2E4D0FF51658B0F50685CFDA1E31")
-
 
     @ViewDebug.ExportedProperty(category = "padding")
     private int mForegroundPaddingTop = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.207 -0500", hash_original_field = "66DE0B6225EF6FCC278B367BF785A480", hash_generated_field = "41B6F60E8078397FAD791043A7BFAB92")
 
-
     @ViewDebug.ExportedProperty(category = "padding")
     private int mForegroundPaddingRight = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.210 -0500", hash_original_field = "E5A2A0CEF6709EB3DDB658289269DD4B", hash_generated_field = "309B58BFECE3A3BF4BE0489CD3C93C7D")
 
-
     @ViewDebug.ExportedProperty(category = "padding")
     private int mForegroundPaddingBottom = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.212 -0500", hash_original_field = "AEBFB1CC0E9149E5984F190C14B99AED", hash_generated_field = "3B16C2D681BFC370000C0D459ADC9C55")
-
 
     private final Rect mSelfBounds = new Rect();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.215 -0500", hash_original_field = "474A43DE222740BF8AAFC880A3B17B07", hash_generated_field = "4286A209A554CAE5005A36CB62FE41EF")
 
     private final Rect mOverlayBounds = new Rect();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.217 -0500", hash_original_field = "D61B405209C6A46304F72DCFEA2F02A5", hash_generated_field = "59774B948EFD2881A9D01560DFF26466")
-
 
     @ViewDebug.ExportedProperty(category = "drawing")
     private int mForegroundGravity = Gravity.FILL;
@@ -74,10 +62,8 @@ public class FrameLayout extends ViewGroup {
     protected boolean mForegroundInPadding = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.221 -0500", hash_original_field = "706D65F3F8C11FED0C0076CC57F566C1", hash_generated_field = "706D65F3F8C11FED0C0076CC57F566C1")
 
-
     boolean mForegroundBoundsChanged = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.223 -0500", hash_original_field = "6EECA1C29EFD760FEA6C8BD1FE393EDA", hash_generated_field = "FB43AE3265D5C9BEBAAE4EDDB542A554")
-
     
     private final ArrayList<View> mMatchParentChildren = new ArrayList<View>(1);
     
@@ -140,7 +126,6 @@ public FrameLayout(Context context, AttributeSet attrs, int defStyle) {
             }
 
             mForegroundGravity = foregroundGravity;
-
 
             if (mForegroundGravity == Gravity.FILL && mForeground != null) {
                 Rect padding = new Rect();
@@ -258,6 +243,7 @@ public void setForeground(Drawable drawable) {
      *
      * @return A Drawable or null if no foreground was set.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.248 -0500", hash_original_method = "8DDBBCB9F2E6942D000521EEF66C0D86", hash_generated_method = "B8836093CA85C1BE27579C5E3631457B")
     
 public Drawable getForeground() {
@@ -291,7 +277,6 @@ private int getPaddingBottomWithForeground() {
         return mForegroundInPadding ? Math.max(mPaddingBottom, mForegroundPaddingBottom) :
             mPaddingBottom + mForegroundPaddingBottom;
     }
-
 
     /**
      * {@inheritDoc}
@@ -548,6 +533,7 @@ private int getPaddingBottomWithForeground() {
      * renamed for consistency with
      * {@link #setMeasureAllChildren(boolean) setMeasureAllChildren()}.
      */
+    @DSSource({DSSourceKind.FILE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.277 -0500", hash_original_method = "E2FDB5CCBB08727222AD77E37CF74AF8", hash_generated_method = "B5055E338253FEF06E8446C66C57834E")
     
 @Deprecated
@@ -561,6 +547,7 @@ private int getPaddingBottomWithForeground() {
      *
      * @return Whether all children are considered when measuring.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.279 -0500", hash_original_method = "52ECFF8459DAA24A15017A3D3C6FE0BF", hash_generated_method = "EEFAB5EBB55BEF305B915C7C7FF71CCE")
     
 public boolean getMeasureAllChildren() {
@@ -593,7 +580,6 @@ public boolean getMeasureAllChildren() {
     protected boolean checkLayoutParams(ViewGroup.LayoutParams p) {
         return p instanceof LayoutParams;
     }
-
     
     public static class LayoutParams extends MarginLayoutParams {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.291 -0500", hash_original_field = "017EB0E7305475871AC6C45F0E01F5D9", hash_generated_field = "5DA573F10ADDA42A543DD86752A07C7B")
@@ -658,7 +644,6 @@ public LayoutParams(ViewGroup.LayoutParams source) {
 public LayoutParams(ViewGroup.MarginLayoutParams source) {
             super(source);
         }
-
         
     }
 

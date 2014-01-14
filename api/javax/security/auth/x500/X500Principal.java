@@ -14,14 +14,8 @@ import java.util.Map;
 
 import org.apache.harmony.security.x501.Name;
 
-
-
-
-
-
 public final class X500Principal implements Serializable, Principal {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.456 -0500", hash_original_field = "00E4E4A5959D860DD5AF1B3E3F0EC680", hash_generated_field = "26CAD3B6FC0EACF2E9B47D2D50E32979")
-
 
     private static final long serialVersionUID = -500463348111345721L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.458 -0500", hash_original_field = "8E3026356C6F229C5422E761DC5AFAC7", hash_generated_field = "82CE65EBAABC70666F50B8A10883BA7F")
@@ -37,7 +31,6 @@ public final class X500Principal implements Serializable, Principal {
 
     private transient Name dn;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.483 -0500", hash_original_field = "232080F63068CCD875338225CCA78208", hash_generated_field = "6B8880E941EC803BC6CC2DFD6A5E024B")
-
 
     private transient String canonicalName;
 
@@ -171,6 +164,7 @@ private synchronized String getCanonicalName() {
      *
      * @return the ASN.1 DER-encoded representation
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.491 -0500", hash_original_method = "0D44433D57FF4BE42B367E2D93A9CEDF", hash_generated_method = "96B69107316F2A8A7D472BC1D950A6AE")
     
 public byte[] getEncoded() {
@@ -186,6 +180,7 @@ public byte[] getEncoded() {
      *
      * @return the string representation
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.493 -0500", hash_original_method = "2BCB4CFF6EEF485C6E2E6569B64BAD8B", hash_generated_method = "116942470DF5577D36E8CF2EA652C6BB")
     
 public String getName() {
@@ -211,6 +206,7 @@ public String getName() {
      *             if the {@code format} argument is not one of the three
      *             mentioned above
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.495 -0500", hash_original_method = "DC6B95F939C1817F13ECF66B400795F1", hash_generated_method = "E5CA5985425CFE5E803F2C51ECF2A19A")
     
 public String getName(String format) {
@@ -221,6 +217,7 @@ public String getName(String format) {
         return dn.getName(format);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.499 -0500", hash_original_method = "F26EAC27584EEA69A397CAF64D802897", hash_generated_method = "94B75119BBA3F618CC044E59DBDD08DE")
     
 public String getName(String format, Map<String, String> oidMap) {

@@ -9,10 +9,6 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.TimeZone;
 
-
-
-
-
 public abstract class ASN1Time extends ASN1StringType {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.544 -0500", hash_original_method = "82E49EA5DBBF8DF43E60D041D8EADCBA", hash_generated_method = "CAF48723FCBF29B116EFEA04AB7A8424")
@@ -21,6 +17,7 @@ public ASN1Time(int tagNumber) {
         super(tagNumber);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.546 -0500", hash_original_method = "A8543817917479A67ACF72269E42F301", hash_generated_method = "57D628B029E551897A68C605BC923CD0")
     
 @Override public Object getDecodedObject(BerInputStream in) throws IOException {
@@ -34,7 +31,6 @@ public ASN1Time(int tagNumber) {
         c.set(Calendar.MILLISECOND, in.times[6]);
         return c.getTime();
     }
-
     
 }
 

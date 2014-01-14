@@ -308,6 +308,7 @@ private void checkRange(int fromIndex, int toIndex) {
      *             if {@code fromIndex} or {@code toIndex} is negative, or if
      *             {@code toIndex} is smaller than {@code fromIndex}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.901 -0500", hash_original_method = "5C76FE7FFACA682F8E2DA192826E5D27", hash_generated_method = "BE536BDE2E3E2A89FF121B98ADC0FD25")
     
 public BitSet get(int fromIndex, int toIndex) {
@@ -792,6 +793,7 @@ public long[] toLongArray() {
      * this {@code BitSet}.
      * @hide 1.7
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.972 -0500", hash_original_method = "BCE80AE7073A25796C80405F8FB14636", hash_generated_method = "F8B61DA0FCB0C79B27726A5133092BC9")
     
 public byte[] toByteArray() {

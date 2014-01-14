@@ -175,6 +175,7 @@ public Animation(Context context, AttributeSet attrs) {
         ensureInterpolator();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.814 -0500", hash_original_method = "7BC58C079EA752AD7803A7DE0B66531B", hash_generated_method = "A46C39E528811DD8F50726DDD0E7B5CA")
     
 @Override
@@ -566,6 +567,7 @@ public void setBackgroundColor(int bg) {
      * @return float The scale factor that should be applied to pre-scaled values in
      * an Animation such as the pivot points in {@link ScaleAnimation} and {@link RotateAnimation}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.868 -0500", hash_original_method = "209B3580CB795CD8B9886E8B498D1959", hash_generated_method = "FD28421A9844C6509E5A8CA8EAC32ED5")
     
 protected float getScaleFactor() {
@@ -593,6 +595,7 @@ public void setDetachWallpaper(boolean detachWallpaper) {
      * @return the {@link Interpolator} associated to this animation
      * @attr ref android.R.styleable#Animation_interpolator
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.872 -0500", hash_original_method = "8AA04851FFB5BE49EA5890940035B142", hash_generated_method = "680BC21A34AFF00E6707D9E25D0C0570")
     
 public Interpolator getInterpolator() {
@@ -606,6 +609,7 @@ public Interpolator getInterpolator() {
      * @return the time in milliseconds when the animation should start or
      *         {@link #START_ON_FIRST_FRAME}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.874 -0500", hash_original_method = "62DE33F2E1C7C51F234B4CE29FC5DCED", hash_generated_method = "3A12FD646648836565EFD0DB4DBB60DF")
     
 public long getStartTime() {
@@ -618,6 +622,7 @@ public long getStartTime() {
      * @return the duration in milliseconds of the animation
      * @attr ref android.R.styleable#Animation_duration
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.876 -0500", hash_original_method = "5E13B5E872677B59408FA3E6BB94A9F6", hash_generated_method = "5F80C859A9364DABCB96E2B8240D7C36")
     
 public long getDuration() {
@@ -630,6 +635,7 @@ public long getDuration() {
      * @return the start offset in milliseconds
      * @attr ref android.R.styleable#Animation_startOffset
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.879 -0500", hash_original_method = "F15F7E68559FE94D65E8E77E2E4D8AE9", hash_generated_method = "8D97620EF9AD25B7CC0B648BD738E0E0")
     
 public long getStartOffset() {
@@ -642,6 +648,7 @@ public long getStartOffset() {
      * @return either one of {@link #REVERSE} or {@link #RESTART}
      * @attr ref android.R.styleable#Animation_repeatMode
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.881 -0500", hash_original_method = "081205714C0DCBE8DC8471C6BC7C6458", hash_generated_method = "B3061FB54C6BA1A7788D9CDF2AC798B1")
     
 public int getRepeatMode() {
@@ -655,6 +662,7 @@ public int getRepeatMode() {
      * @return the number of times the animation should repeat, or {@link #INFINITE}
      * @attr ref android.R.styleable#Animation_repeatCount
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.884 -0500", hash_original_method = "4FE747AC8B0667617AE307ECFC6ED74A", hash_generated_method = "33DEC8850621553CE5D2A9983998E6CF")
     
 public int getRepeatCount() {
@@ -670,6 +678,7 @@ public int getRepeatCount() {
      * @return true if the animation applies its transformation before it starts
      * @attr ref android.R.styleable#Animation_fillBefore
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.886 -0500", hash_original_method = "EC25BC6D19EE141C12788801543B6178", hash_generated_method = "AA4F011708BF42AAAC91ECB3A2807F6A")
     
 public boolean getFillBefore() {
@@ -683,6 +692,7 @@ public boolean getFillBefore() {
      * @return true if the animation applies its transformation after it ends
      * @attr ref android.R.styleable#Animation_fillAfter
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.888 -0500", hash_original_method = "6D667DA3C62337EC4E4606350728AE89", hash_generated_method = "09BE84B4A2936B8492F14C8FC369C28A")
     
 public boolean getFillAfter() {
@@ -697,6 +707,7 @@ public boolean getFillAfter() {
      * {@link #ZORDER_TOP}, or {@link #ZORDER_BOTTOM}.
      * @attr ref android.R.styleable#Animation_zAdjustment
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.890 -0500", hash_original_method = "409F6F7832CADDC17E7E5231CAA22AC6", hash_generated_method = "484852A752A0545CAD7E76341CAA55FA")
     
 public int getZAdjustment() {
@@ -706,6 +717,7 @@ public int getZAdjustment() {
     /**
      * Returns the background color behind the animation.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.893 -0500", hash_original_method = "FAF00526A7BA7C979C907792653A05BB", hash_generated_method = "93FF3504BCECBF572F60FE0FB71AC3CF")
     
 public int getBackgroundColor() {
@@ -716,6 +728,7 @@ public int getBackgroundColor() {
      * Return value of {@link #setDetachWallpaper(boolean)}.
      * @attr ref android.R.styleable#Animation_detachWallpaper
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.895 -0500", hash_original_method = "E6A00B836A83DBDC739846B44941121A", hash_generated_method = "000C6EE266D749B0DBB8211EE32D19DF")
     
 public boolean getDetachWallpaper() {
@@ -850,6 +863,7 @@ static Description parseValue(TypedValue value) {
      * duration than what is computed here, but generally this should be
      * accurate.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.906 -0500", hash_original_method = "B3F1AB6DDEFF92B122293B4363A1C456", hash_generated_method = "218F4F0D841E83DDCED3770CA4EF235B")
     
 public long computeDurationHint() {
@@ -866,6 +880,7 @@ public long computeDurationHint() {
      *        caller and will be filled in by the animation.
      * @return True if the animation is still running
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.910 -0500", hash_original_method = "1D66EEFFAD10DF7675973FFD0CA72C11", hash_generated_method = "AF8652057DAD4A8F9C8E0866DE608D21")
     
 public boolean getTransformation(long currentTime, Transformation outTransformation) {
@@ -958,6 +973,7 @@ public boolean getTransformation(long currentTime, Transformation outTransformat
      *        pivot points being rotated or scaled around.
      * @return True if the animation is still running
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.912 -0500", hash_original_method = "2D55A6E78A3D329DDFA1835011833D50", hash_generated_method = "BEF4999254C104668FDB8CAEBDD04900")
     
 public boolean getTransformation(long currentTime, Transformation outTransformation,
@@ -1015,6 +1031,7 @@ protected void applyTransformation(float interpolatedTime, Transformation t) {
      * @param parentSize The size of the parent of the object being animated
      * @return The dimension to use for the animation
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.921 -0500", hash_original_method = "51B92BC0266A1C2F3581A8B430ACF6F7", hash_generated_method = "84FF2D70821B019127875CE5A1E6B242")
     
 protected float resolveSize(int type, float value, int size, int parentSize) {
@@ -1040,6 +1057,7 @@ protected float resolveSize(int type, float value, int size, int parentSize) {
      * 
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.924 -0500", hash_original_method = "CF5E77120A30A36E6B295FA946811571", hash_generated_method = "233BA7BD76EDC6766C0EF1C270B9C185")
     
 public void getInvalidateRegion(int left, int top, int right, int bottom,

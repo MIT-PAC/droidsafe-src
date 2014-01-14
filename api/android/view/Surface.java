@@ -354,6 +354,7 @@ public int describeContents() {
     }
 
     /** @hide */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:28.571 -0500", hash_original_method = "4CE5C8D563EAB7D0D818407349F1750B", hash_generated_method = "CB5C5102ADE60B37D98C7F6F69F9726C")
     
 public int getGenerationId() {
@@ -398,6 +399,7 @@ public OutOfResourcesException(String name) {
             //Synthesized constructor
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:28.576 -0500", hash_original_method = "4436A903F00C274285C5C4A8B9E9A836", hash_generated_method = "7E4FCA6940233D2ACFDD830B11A7EB5E")
         
 @Override
@@ -409,6 +411,7 @@ public OutOfResourcesException(String name) {
             return w;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:28.578 -0500", hash_original_method = "F355CB2C14EBD84D4AE7E0F5ECAE6C3D", hash_generated_method = "1F36206BE99414248829BD77B2AE6B44")
         
 @Override

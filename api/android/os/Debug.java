@@ -117,6 +117,7 @@ public static boolean isDebuggerConnected() {
      *
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.816 -0500", hash_original_method = "FFB4A2F605289FFD397797E4EBEF85C7", hash_generated_method = "6F8C6CA9D595FB40E367304EAD914129")
     
 public static String[] getVmFeatureList() {
@@ -412,32 +413,38 @@ public static void stopAllocCounting() {
         VMDebug.stopAllocCounting();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.856 -0500", hash_original_method = "0CF7D3D48014743A078F7BFCBD6298DE", hash_generated_method = "D9F3A2CCF72B8A4BCA8453F6712D4DB1")
     
 public static int getGlobalAllocCount() {
         return VMDebug.getAllocCount(VMDebug.KIND_GLOBAL_ALLOCATED_OBJECTS);
     }
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.858 -0500", hash_original_method = "AB2C9148E9F1B83B66C21E6CC3E51A13", hash_generated_method = "02D99DB7A9663636BFBE755FD4DD333F")
     
 public static int getGlobalAllocSize() {
         return VMDebug.getAllocCount(VMDebug.KIND_GLOBAL_ALLOCATED_BYTES);
     }
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.861 -0500", hash_original_method = "695F0DB4ABA2FAA4C6B686848E90FF0F", hash_generated_method = "EAAAB54DD80923CFAE24C991C512E3E3")
     
 public static int getGlobalFreedCount() {
         return VMDebug.getAllocCount(VMDebug.KIND_GLOBAL_FREED_OBJECTS);
     }
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.863 -0500", hash_original_method = "167D8B8030FE85DEE4E9128668E87890", hash_generated_method = "5458D4E3440616456AF582C1FCE5DEF0")
     
 public static int getGlobalFreedSize() {
         return VMDebug.getAllocCount(VMDebug.KIND_GLOBAL_FREED_BYTES);
     }
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.865 -0500", hash_original_method = "A1554EC06EC5FA1CE0C2F7B8F7C86655", hash_generated_method = "05D39D78AC99F1261CA1B5219A33B6ED")
     
 public static int getGlobalClassInitCount() {
         /* number of classes that have been successfully initialized */
         return VMDebug.getAllocCount(VMDebug.KIND_GLOBAL_CLASS_INIT_COUNT);
     }
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.867 -0500", hash_original_method = "D8F4BF635EDBD9713AC07FFF59B892D1", hash_generated_method = "3BBBCA76E92029714E7F6FF2A8142A75")
     
 public static int getGlobalClassInitTime() {
@@ -452,6 +459,7 @@ public static int getGlobalClassInitTime() {
      *
      * @deprecated This method is now obsolete.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.869 -0500", hash_original_method = "F2D18F66BA7892EA39FFE9A4C7182C57", hash_generated_method = "8E41A67517EDC8B45C0604F7354C26F2")
     
 @Deprecated
@@ -466,6 +474,7 @@ public static int getGlobalClassInitTime() {
      *
      * @deprecated This method is now obsolete.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.872 -0500", hash_original_method = "BCF934C0F5752FA43CB9DC1202287FDA", hash_generated_method = "50DAC282E4E56543A7A53A9DF5F0DED4")
     
 @Deprecated
@@ -481,6 +490,7 @@ public static int getGlobalClassInitTime() {
      *
      * @deprecated This method is now obsolete.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.874 -0500", hash_original_method = "4A5BBCA63642DD598E8706B0BEEF7F9E", hash_generated_method = "D985CDFBBC815D8F9E59300B6E25B4F4")
     
 @Deprecated
@@ -496,6 +506,7 @@ public static int getGlobalClassInitTime() {
      *
      * @deprecated This method is now obsolete.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.877 -0500", hash_original_method = "8A757D7E3E99170A3143AA9AAED5C840", hash_generated_method = "BD46BE82D7D19E9A1B6DE6548841198B")
     
 @Deprecated
@@ -503,16 +514,19 @@ public static int getGlobalClassInitTime() {
         return 0;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.880 -0500", hash_original_method = "E91AEF6C526C86D6DBB3BCEF7A1DA830", hash_generated_method = "EDC8CB4194150EB9B6EB04765C818221")
     
 public static int getGlobalGcInvocationCount() {
         return VMDebug.getAllocCount(VMDebug.KIND_GLOBAL_GC_INVOCATIONS);
     }
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.882 -0500", hash_original_method = "CA10B26CEE93A2257F7F6779A0040536", hash_generated_method = "AB9E528145CB5E5CDAEF9E07883D1C56")
     
 public static int getThreadAllocCount() {
         return VMDebug.getAllocCount(VMDebug.KIND_THREAD_ALLOCATED_OBJECTS);
     }
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.884 -0500", hash_original_method = "8264EDD15D9FAF32E2528125F01D0F6F", hash_generated_method = "88F8F3580516C2BB35ABA4341A3DC4CD")
     
 public static int getThreadAllocSize() {
@@ -527,6 +541,7 @@ public static int getThreadAllocSize() {
      *
      * @deprecated This method is now obsolete.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.887 -0500", hash_original_method = "D21B5890D75CBE04EB2929052BCCDC27", hash_generated_method = "E31019E7ECCECD0065D4989A90D44190")
     
 @Deprecated
@@ -541,6 +556,7 @@ public static int getThreadAllocSize() {
      *
      * @deprecated This method is now obsolete.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.889 -0500", hash_original_method = "744BA3A1F669786FA7A6C57459411C28", hash_generated_method = "301BACF451298F9C68DB241CC2598604")
     
 @Deprecated
@@ -548,6 +564,7 @@ public static int getThreadAllocSize() {
         return 0;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.891 -0500", hash_original_method = "CD0D21FD4D9C27BDC3E490AC92DD3B6B", hash_generated_method = "773DE6E199405CDBC0A333A2582DC1BA")
     
 public static int getThreadGcInvocationCount() {
@@ -759,6 +776,7 @@ public static void printLoadedClasses(int flags) {
      * Get the number of loaded classes.
      * @return the number of loaded classes.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.967 -0500", hash_original_method = "3C278506FF5D85E033BC2B8A5DB9B449", hash_generated_method = "AB67D939E843289669569BEFABFB07D8")
     
 public static int getLoadedClassCount() {
@@ -1090,6 +1108,7 @@ public static boolean dumpService(String name, FileDescriptor fd, String[] args)
     public static class MemoryInfo implements Parcelable {
 
         /* @hide */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.784 -0500", hash_original_method = "7725E7152BF27C491568D120E3EC44B3", hash_generated_method = "743B72EA0B657CDE2933D000A204229E")
         
 public static String getOtherLabel(int which) {
@@ -1168,6 +1187,7 @@ private MemoryInfo(Parcel source) {
         /**
          * Return total PSS memory usage in kB.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.771 -0500", hash_original_method = "0F7876D4F39A60F2060DE34A3D4B321B", hash_generated_method = "E979F826C435A84C613AC04A1613046C")
         
 public int getTotalPss() {
@@ -1177,6 +1197,7 @@ public int getTotalPss() {
         /**
          * Return total private dirty memory usage in kB.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.773 -0500", hash_original_method = "5F6AFDC3B733846B095E6E612D37EF25", hash_generated_method = "834F29CD5DF07BC34B95AA6055F5D491")
         
 public int getTotalPrivateDirty() {
@@ -1186,6 +1207,7 @@ public int getTotalPrivateDirty() {
         /**
          * Return total shared dirty memory usage in kB.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.775 -0500", hash_original_method = "DD332BDFA0A32D6562D4D066F36B1807", hash_generated_method = "D96914902B24EF94F9FF6BAE4D374D80")
         
 public int getTotalSharedDirty() {
@@ -1193,6 +1215,7 @@ public int getTotalSharedDirty() {
         }
 
         /* @hide */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.777 -0500", hash_original_method = "8C545D479EA5CCAA2D5CE5956250CE73", hash_generated_method = "39A94549975A96885A2DB0293ADCC235")
         
 public int getOtherPss(int which) {
@@ -1200,6 +1223,7 @@ public int getOtherPss(int which) {
         }
 
         /* @hide */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.779 -0500", hash_original_method = "45A31C2AA910C3CDA42EF94E68B5E963", hash_generated_method = "ECA9BB976EEED7906E27CEC1CA539E47")
         
 public int getOtherPrivateDirty(int which) {
@@ -1207,6 +1231,7 @@ public int getOtherPrivateDirty(int which) {
         }
 
         /* @hide */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.781 -0500", hash_original_method = "1FF35BC5D0D80C168B4EDFE5B23B6F0A", hash_generated_method = "6DA3E9FE6AD8CAF05434CC2032A56E23")
         
 public int getOtherSharedDirty(int which) {

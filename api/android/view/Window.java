@@ -167,6 +167,7 @@ public Window(Context context) {
      *
      * @return Context The Context that was supplied to the constructor.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.643 -0500", hash_original_method = "4F4EBC54D108D66F416C93B46580E117", hash_generated_method = "DDB999668EFCAD36DFA58D5D665B592E")
     
 public final Context getContext() {
@@ -177,6 +178,7 @@ public final Context getContext() {
      * Return the {@link android.R.styleable#Window} attributes from this
      * window's theme.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.645 -0500", hash_original_method = "F2F0D9C02E357CB8D6CDE50C6B929622", hash_generated_method = "95D02BA30E4563A49977A7C5D6C3433D")
     
 public final TypedArray getWindowStyle() {
@@ -214,6 +216,7 @@ public void setContainer(Window container) {
      * @return Window The containing window, or null if this is a
      *         top-level window.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.650 -0500", hash_original_method = "DCCDF946CE22DD9064205FD95E96DECD", hash_generated_method = "E5037941C1C854578D58E7795830D99D")
     
 public final Window getContainer() {
@@ -278,6 +281,7 @@ public void setWindowManager(WindowManager wm, IBinder appToken, String appName,
      *
      * @return WindowManager The ViewManager.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.692 -0500", hash_original_method = "1DCFADD2C71F0E408EA049F81A8ACDED", hash_generated_method = "0C79B12DA4736ABBDC4EC55B1426644A")
     
 public WindowManager getWindowManager() {
@@ -571,6 +575,7 @@ public final WindowManager.LayoutParams getAttributes() {
      * Return the window flags that have been explicitly set by the client,
      * so will not be modified by {@link #getDecorView}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.739 -0500", hash_original_method = "78D10AE7087B6FEDF7B8FA7D71B4D366", hash_generated_method = "F6432753592495ABBD8F1BB553FC4ACD")
     
 protected final int getForcedWindowFlags() {
@@ -1156,6 +1161,7 @@ protected abstract void onActive();
      *
      * @return int The feature bits.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.869 -0500", hash_original_method = "201C8696C96B5CE4C022F78574069483", hash_generated_method = "DDB7798DC1EBDAB25A85981689E14E5A")
     
 protected final int getFeatures()
@@ -1182,6 +1188,7 @@ public boolean hasFeature(int feature) {
      *
      * @return int The feature bits.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.874 -0500", hash_original_method = "D46E90B97B876B97E16E92A5FEA18EB3", hash_generated_method = "9647CC1BF49BEB42DD8E7D5AC4D811EA")
     
 protected final int getLocalFeatures()

@@ -155,6 +155,7 @@ public static void cancelSync(Account account, String authority) {
      * Get information about the SyncAdapters that are known to the system.
      * @return an array of SyncAdapters that have registered with the system
      */
+    @DSSource({DSSourceKind.SYNCHRONIZATION_DATA})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.236 -0500", hash_original_method = "73E621DB5CBC41567953829AD086C09E", hash_generated_method = "6CB02123789FCFB0C1AA6EADC4A389C1")
     
 public static SyncAdapterType[] getSyncAdapterTypes() {
@@ -172,6 +173,7 @@ public static SyncAdapterType[] getSyncAdapterTypes() {
      * @param authority the provider whose setting we are querying
      * @return true if the provider should be synced when a network tickle is received
      */
+    @DSSource({DSSourceKind.SYNCHRONIZATION_DATA})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.238 -0500", hash_original_method = "40F680882F51B8DF93B91B007EA34DFA", hash_generated_method = "6D4A4B5F83D81A6EAACA1A139F403C60")
     
 public static boolean getSyncAutomatically(Account account, String authority) {
@@ -285,6 +287,7 @@ public static void removePeriodicSync(Account account, String authority, Bundle 
      * @param authority the provider whose periodic syncs we are querying
      * @return a list of PeriodicSync objects. This list may be empty but will never be null.
      */
+    @DSSource({DSSourceKind.SYNCHRONIZATION_DATA})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.249 -0500", hash_original_method = "342780EDBB61BA70D8F5407D611A17AB", hash_generated_method = "4ED998824EC22AEC37082CE05FFB7907")
     
 public static List<PeriodicSync> getPeriodicSyncs(Account account, String authority) {
@@ -305,6 +308,7 @@ public static List<PeriodicSync> getPeriodicSyncs(Account account, String author
      * Check if this account/provider is syncable.
      * @return >0 if it is syncable, 0 if not, and <0 if the state isn't known yet.
      */
+    @DSSource({DSSourceKind.SYNCHRONIZATION_DATA})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.251 -0500", hash_original_method = "12469DB36272456EC96DBBF2A0C7F6DB", hash_generated_method = "0F2DD104B1307481A16FF088FB86B16E")
     
 public static int getIsSyncable(Account account, String authority) {
@@ -391,6 +395,7 @@ public static boolean isSyncActive(Account account, String authority) {
      * This method returns the first item from the list of current syncs
      * or null if there are none.
      */
+    @DSSource({DSSourceKind.SYNCHRONIZATION_DATA})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.263 -0500", hash_original_method = "F46B20DF4060F21E0B5F9B4A6CDDD1B7", hash_generated_method = "438C07BD1AB0B1A7E7F9DA735814947B")
     
 @Deprecated
@@ -411,6 +416,7 @@ public static boolean isSyncActive(Account account, String authority) {
      * if there are no active syncs.
      * @return a List of SyncInfo objects for the currently active syncs.
      */
+    @DSSource({DSSourceKind.SYNCHRONIZATION_DATA})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.265 -0500", hash_original_method = "B8247507BA2F9E261470E53F362E3C80", hash_generated_method = "91FE7808D34F770BA2D170DA428F9642")
     
 public static List<SyncInfo> getCurrentSyncs() {
@@ -428,6 +434,7 @@ public static List<SyncInfo> getCurrentSyncs() {
      * @return the SyncStatusInfo for the authority, or null if none exists
      * @hide
      */
+    @DSSource({DSSourceKind.SYNCHRONIZATION_DATA})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.267 -0500", hash_original_method = "3CA3ACEA0F64C037745D2946B86898D9", hash_generated_method = "29F098BA53F2425AC9A06059ABC44C85")
     
 public static SyncStatusInfo getSyncStatus(Account account, String authority) {
@@ -506,6 +513,7 @@ public static void removeStatusChangeListener(Object handle) {
     }
 
     /** @hide */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.326 -0500", hash_original_method = "B848004A8469BC74A9D0115209F67BC2", hash_generated_method = "94DF7311AC3C0B57DE0F1EDB7F4E1C27")
     
 public static IContentService getContentService() {
@@ -751,6 +759,7 @@ protected abstract IContentProvider acquireProvider(Context c, String name);
     /** Providing a default implementation of this, to avoid having to change
      * a lot of other things, but implementations of ContentResolver should
      * implement it. @hide */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.146 -0500", hash_original_method = "4AF2A0465BC3B713C9C8E0417552AB76", hash_generated_method = "B46372EB146110E7FBF4F78FF4A12DF1")
     
 protected IContentProvider acquireExistingProvider(Context c, String name) {
@@ -768,6 +777,7 @@ public abstract boolean releaseProvider(IContentProvider icp);
      * using the content:// scheme.
      * @return A MIME type for the content, or null if the URL is invalid or the type is unknown
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.151 -0500", hash_original_method = "045596B6E0367AC7BED26FC054AD1E2B", hash_generated_method = "DF9E0D2B16441944892EBA418FBCD08C")
     
 public final String getType(Uri url) {
@@ -819,6 +829,7 @@ public final String getType(Uri url) {
      * data streams that match the given mimeTypeFilter.  If there are none,
      * null is returned.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.154 -0500", hash_original_method = "BFD7301BBEDEF32538E97E3FEFB31C63", hash_generated_method = "E74D022B8DC4284C8D15C672FCE79E03")
     
 public String[] getStreamTypes(Uri url, String mimeTypeFilter) {
@@ -843,6 +854,7 @@ public String[] getStreamTypes(Uri url, String mimeTypeFilter) {
     * query call to the underlying cursor.  So just create a cursor and return it.
     * The DSCursor will take care of propagating the information flow.
     */
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     public final Cursor query(Uri uri, String[] projection,
             String selection, String[] selectionArgs, String sortOrder) {
        Cursor dsCursor = new DSCursor(uri, projection, selection, selectionArgs, sortOrder);
@@ -868,6 +880,7 @@ public String[] getStreamTypes(Uri url, String mimeTypeFilter) {
      * @throws FileNotFoundException if the provided URI could not be opened.
      * @see #openAssetFileDescriptor(Uri, String)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.159 -0500", hash_original_method = "741F25E5E9079F60798D64718B03495A", hash_generated_method = "FF40C3A8319AD1636D47F56A713B2AB4")
     
 public final InputStream openInputStream(Uri uri)
@@ -928,6 +941,7 @@ public final OutputStream openOutputStream(Uri uri)
      * @throws FileNotFoundException if the provided URI could not be opened.
      * @see #openAssetFileDescriptor(Uri, String)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.164 -0500", hash_original_method = "99597D87D82436F243497E22352BC980", hash_generated_method = "8F2E08C0EC957DE4DCAAEA83F2EB3AAB")
     
 public final OutputStream openOutputStream(Uri uri, String mode)
@@ -1214,6 +1228,7 @@ public OpenResourceIdResult getResourceId(Uri uri) throws FileNotFoundException 
      *               the field. Passing an empty ContentValues will create an empty row.
      * @return the URL of the newly created row.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.187 -0500", hash_original_method = "21049B5CF31214AC69662F00A8291DA2", hash_generated_method = "30E6A8AA7791982EDB0C2593C57C1825")
     
 public final Uri insert(Uri url, ContentValues values)
@@ -1385,6 +1400,7 @@ public final int update(Uri uri, ContentValues values, String where,
      * @throws NullPointerException if uri or method is null
      * @throws IllegalArgumentException if uri is not known
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.201 -0500", hash_original_method = "7B97BF1D704BA5CFE2C56D2F21EF49E5", hash_generated_method = "75489650A20C25CB2C47805C67362FCF")
     
 public final Bundle call(Uri uri, String method, String arg, Bundle extras) {
@@ -1416,6 +1432,7 @@ public final Bundle call(Uri uri, String method, String arg, Bundle extras) {
      * @return The ContentProvider for the given URI, or null if no content provider is found.
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.203 -0500", hash_original_method = "337E4492D27C715A525AA87619808C6B", hash_generated_method = "D3E5A9E03B3D395306466B5F9C7636EE")
     
 public final IContentProvider acquireProvider(Uri uri) {

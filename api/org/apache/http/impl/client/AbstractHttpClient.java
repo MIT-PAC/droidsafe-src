@@ -187,6 +187,7 @@ protected abstract HttpRoutePlanner createHttpRoutePlanner();
     
 protected abstract UserTokenHandler createUserTokenHandler();
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
 	public HttpParams getParams() {
 		// TODO Auto-generated method stub
@@ -205,12 +206,14 @@ public synchronized void setParams(HttpParams params) {
         defaultParams = params;
     }
     
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @Override
 	public ClientConnectionManager getConnectionManager() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:41.050 -0500", hash_original_method = "E135DC176345D99818B1545EC3559BB7", hash_generated_method = "12FA2C9D13042C54DC7ACEFAB72A6410")
     
 public synchronized final HttpRequestExecutor getRequestExecutor() {
@@ -220,6 +223,7 @@ public synchronized final HttpRequestExecutor getRequestExecutor() {
         return requestExec;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:41.052 -0500", hash_original_method = "B64B8CBD2A41A037238B1FA9106B9C55", hash_generated_method = "DE0C0E52202EBF0A019684533A5AF8D0")
     
 public synchronized final AuthSchemeRegistry getAuthSchemes() {
@@ -235,6 +239,7 @@ public synchronized void setAuthSchemes(final AuthSchemeRegistry authSchemeRegis
         supportedAuthSchemes = authSchemeRegistry;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:41.056 -0500", hash_original_method = "13CF1774C0163AC97C4FE09A957F51BE", hash_generated_method = "1F43A612B0062B4AF6DA658DA49B5648")
     
 public synchronized final CookieSpecRegistry getCookieSpecs() {
@@ -250,6 +255,7 @@ public synchronized void setCookieSpecs(final CookieSpecRegistry cookieSpecRegis
         supportedCookieSpecs = cookieSpecRegistry;
     }
     
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:41.063 -0500", hash_original_method = "280140DA9BF4BB510F1D77AFF1FE6E38", hash_generated_method = "023482637699E150EE17E22E584E16C7")
     
 public synchronized final ConnectionReuseStrategy getConnectionReuseStrategy() {
@@ -265,6 +271,7 @@ public synchronized void setReuseStrategy(final ConnectionReuseStrategy reuseStr
         this.reuseStrategy = reuseStrategy;
     }
     
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:41.067 -0500", hash_original_method = "0109C95DAAF90D45512D49D44811C1BC", hash_generated_method = "D27F30C4281AB71C25EAC4B28E5A4B47")
     
 public synchronized final ConnectionKeepAliveStrategy getConnectionKeepAliveStrategy() {
@@ -280,6 +287,7 @@ public synchronized void setKeepAliveStrategy(final ConnectionKeepAliveStrategy 
         this.keepAliveStrategy = keepAliveStrategy;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:41.072 -0500", hash_original_method = "EDC64C630F8C9BB9424AE860B2C098D2", hash_generated_method = "4BD62B1DA5735E60D87E570ADAA2CAD0")
     
 public synchronized final HttpRequestRetryHandler getHttpRequestRetryHandler() {
@@ -295,6 +303,7 @@ public synchronized void setHttpRequestRetryHandler(final HttpRequestRetryHandle
         this.retryHandler = retryHandler;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:41.077 -0500", hash_original_method = "33F9D2B028213B54FFCD534F34C4B977", hash_generated_method = "F966672BFC28ACC01AD6E35AD4530584")
     
 public synchronized final RedirectHandler getRedirectHandler() {
@@ -310,6 +319,7 @@ public synchronized void setRedirectHandler(final RedirectHandler redirectHandle
         this.redirectHandler = redirectHandler;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:41.081 -0500", hash_original_method = "DCBE39367A729541D3366A866F88A6B5", hash_generated_method = "85F532D7BDE9D58E86C8C50E31549B75")
     
 public synchronized final AuthenticationHandler getTargetAuthenticationHandler() {
@@ -326,6 +336,7 @@ public synchronized void setTargetAuthenticationHandler(
         this.targetAuthHandler = targetAuthHandler;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:41.086 -0500", hash_original_method = "FE6A31C4BC47B922AE7100411D6D3962", hash_generated_method = "43DD12DADE37C132CD496217AFE74A82")
     
 public synchronized final AuthenticationHandler getProxyAuthenticationHandler() {
@@ -342,6 +353,7 @@ public synchronized void setProxyAuthenticationHandler(
         this.proxyAuthHandler = proxyAuthHandler;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:41.091 -0500", hash_original_method = "CED19DC63F5DFF3B80D2B1F10482E892", hash_generated_method = "A0C40B75230CB05B51D0EA80B4D8BB46")
     
 public synchronized final CookieStore getCookieStore() {
@@ -357,6 +369,7 @@ public synchronized void setCookieStore(final CookieStore cookieStore) {
         this.cookieStore = cookieStore;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:41.096 -0500", hash_original_method = "98E8D6F59FD454CB3C7069127AA5844B", hash_generated_method = "2F6355DE373428EEE930FF676F6316CB")
     
 public synchronized final CredentialsProvider getCredentialsProvider() {
@@ -372,6 +385,7 @@ public synchronized void setCredentialsProvider(final CredentialsProvider credsP
         this.credsProvider = credsProvider;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:41.101 -0500", hash_original_method = "70B10D4ECA33F90F2399EBBBDBCB28FD", hash_generated_method = "C88CA5FD05E2451A95E192EDFFF22348")
     
 public synchronized final HttpRoutePlanner getRoutePlanner() {
@@ -387,6 +401,7 @@ public synchronized void setRoutePlanner(final HttpRoutePlanner routePlanner) {
         this.routePlanner = routePlanner;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:41.106 -0500", hash_original_method = "7975319476225B5506DDD068000CD697", hash_generated_method = "AA811A03F7A30B4BAECD127E751D6310")
     
 public synchronized final UserTokenHandler getUserTokenHandler() {
@@ -402,6 +417,7 @@ public synchronized void setUserTokenHandler(final UserTokenHandler userTokenHan
         this.userTokenHandler = userTokenHandler;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:41.111 -0500", hash_original_method = "A054071B5C703A0BBBB93F177E316F94", hash_generated_method = "45F415AA3B5DB732F68EBD30E5F6BFC5")
     
 protected synchronized final BasicHttpProcessor getHttpProcessor() {
@@ -423,12 +439,14 @@ public synchronized void addResponseInterceptor(final HttpResponseInterceptor it
         getHttpProcessor().addInterceptor(itcp, index);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:41.117 -0500", hash_original_method = "42A1BB66B3595540F9652B515180E4CB", hash_generated_method = "6D041B3ECC91CE3E5229BB73DE3A5412")
     
 public synchronized HttpResponseInterceptor getResponseInterceptor(int index) {
         return getHttpProcessor().getResponseInterceptor(index);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:41.120 -0500", hash_original_method = "5AA44E0EBC7669E8C12BB7D18976B6A3", hash_generated_method = "54F2A90D75054E8BCE43B996AE9646F6")
     
 public synchronized int getResponseInterceptorCount() {
@@ -459,12 +477,14 @@ public synchronized void addRequestInterceptor(final HttpRequestInterceptor itcp
         getHttpProcessor().addInterceptor(itcp, index);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:41.131 -0500", hash_original_method = "3B8965152373170CD1AE42DF74FC23C9", hash_generated_method = "9FAAE41482B98D1747C5FCA4A2EFD757")
     
 public synchronized HttpRequestInterceptor getRequestInterceptor(int index) {
         return getHttpProcessor().getRequestInterceptor(index);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:41.133 -0500", hash_original_method = "F968E9F4352A234FB330890874D0E8D3", hash_generated_method = "15A972BE37569D526CFB0817F611FD12")
     
 public synchronized int getRequestInterceptorCount() {
@@ -544,7 +564,8 @@ public final HttpResponse execute(HttpHost target, HttpRequest request)
         return execute(target, request, (HttpContext) null);
     }
     
-	@DSSink({DSSinkKind.NETWORK})
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSSink({DSSinkKind.NETWORK})
     @Override
 	public final HttpResponse execute(HttpHost target, HttpRequest request,
 			HttpContext context) throws IOException, ClientProtocolException {

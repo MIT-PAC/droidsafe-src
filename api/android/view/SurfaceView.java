@@ -376,6 +376,7 @@ public class SurfaceView extends View {
             
         }
         
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.961 -0400", hash_original_method = "FB03EEF08A419E6F5E4B7D4C32AA13C8", hash_generated_method = "EAE603A661341677B1E1442890212909")
         public Surface getSurface() {
             Surface varB4EAC82CA7396A68D541C85D26508E83_993699055 = null; 
@@ -385,6 +386,7 @@ public class SurfaceView extends View {
             
         }
         
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.962 -0400", hash_original_method = "BE643F9C45A14CE663214357E2B511D8", hash_generated_method = "E910481C9324FAFBE5C38994E3533063")
         public Rect getSurfaceFrame() {
             Rect varB4EAC82CA7396A68D541C85D26508E83_1622396157 = null; 
@@ -431,6 +433,7 @@ private void init() {
      * 
      * @return SurfaceHolder The holder of the surface.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:49.325 -0500", hash_original_method = "11B3726B61DA4E45A86A0978E3D5B1EE", hash_generated_method = "58FC46A9E0D6EACC68242F9E95DD21CD")
     
 public SurfaceHolder getHolder() {

@@ -46,6 +46,7 @@ public String encodeBody() {
      * get the priority value.
      * @return String
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:54.184 -0500", hash_original_method = "3D6890113704CA3A689BE5D16088DA64", hash_generated_method = "2E0243F57B8C17B52D83C43235A21586")
     
 public String getETag() {

@@ -10,10 +10,6 @@ import static libcore.io.OsConstants.STDOUT_FILENO;
 import libcore.io.ErrnoException;
 import libcore.io.Libcore;
 
-
-
-
-
 public final class FileDescriptor {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.698 -0500", hash_original_field = "E31A4FF56F84766C5B153015E99E676F", hash_generated_field = "C19A0692982848458993186E6FD00EBE")
 
@@ -67,6 +63,7 @@ public boolean valid() {
      * your needs with a libcore maintainer before using this method.
      * @hide internal use only
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.716 -0500", hash_original_method = "4727A8983DC634F09BFA44F7F7F1F8B5", hash_generated_method = "6A3135E10972A8FF55936DA0CD4FC4B8")
     
 public final int getInt$() {

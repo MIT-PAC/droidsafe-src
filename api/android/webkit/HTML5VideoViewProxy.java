@@ -328,6 +328,7 @@ private void sendTimeupdate() {
         mWebCoreHandler.sendMessage(msg);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:58.382 -0500", hash_original_method = "87AB58F6C80364970DB0BE0C32B4800B", hash_generated_method = "D1B10AE60E10911944870A6A2EA17821")
     
 public Context getContext() {

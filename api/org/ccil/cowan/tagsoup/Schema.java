@@ -73,7 +73,8 @@ public void elementType(String name, int model, int memberOf, int flags) {
 	Get the root element of this schema
 	**/
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.588 -0500", hash_original_method = "7A084406CC3B18F733E08ECB30CF0A86", hash_generated_method = "891CC4941D384D14DFB199FC6400C0E7")
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.588 -0500", hash_original_method = "7A084406CC3B18F733E08ECB30CF0A86", hash_generated_method = "891CC4941D384D14DFB199FC6400C0E7")
     
 public ElementType rootElementType() {
 		return theRoot;
@@ -139,7 +140,8 @@ public void entity(String name, int value) {
 	@return The corresponding ElementType
 	**/
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.597 -0500", hash_original_method = "15E50FC94B256079445190BC5C208F0A", hash_generated_method = "4E04A29951EB496FE7F2B795EC7E466D")
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.597 -0500", hash_original_method = "15E50FC94B256079445190BC5C208F0A", hash_generated_method = "4E04A29951EB496FE7F2B795EC7E466D")
     
 public ElementType getElementType(String name) {
 		return (ElementType)(theElementTypes.get(name.toLowerCase()));
@@ -151,7 +153,8 @@ public ElementType getElementType(String name) {
 	@return The corresponding character, or 0 if none
 	**/
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.600 -0500", hash_original_method = "5590AE9B6B63818372EC6D8DB973BC8E", hash_generated_method = "8C9D062CFD681C3CA2422E23264E9428")
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.600 -0500", hash_original_method = "5590AE9B6B63818372EC6D8DB973BC8E", hash_generated_method = "8C9D062CFD681C3CA2422E23264E9428")
     
 public int getEntity(String name) {
 //		System.err.println("%% Looking up entity " + name);
@@ -164,7 +167,8 @@ public int getEntity(String name) {
 	Return the URI (namespace name) of this schema.
 	**/
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.603 -0500", hash_original_method = "1798242D281A34B11A86AFDBABA0D18C", hash_generated_method = "69FBDCE49E0C226DD39EC32B98FA96A7")
+	@DSSource({DSSourceKind.FILE_INFORMATION})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.603 -0500", hash_original_method = "1798242D281A34B11A86AFDBABA0D18C", hash_generated_method = "69FBDCE49E0C226DD39EC32B98FA96A7")
     
 public String getURI() {
 		return theURI;
@@ -174,7 +178,8 @@ public String getURI() {
 	Return the prefix of this schema.
 	**/
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.605 -0500", hash_original_method = "ED82F113C378B68FF5FAC6A19F5F47F3", hash_generated_method = "6BEFFAE6DB4AFA006FAA151DE7EA718E")
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.605 -0500", hash_original_method = "ED82F113C378B68FF5FAC6A19F5F47F3", hash_generated_method = "6BEFFAE6DB4AFA006FAA151DE7EA718E")
     
 public String getPrefix() {
 		return thePrefix;

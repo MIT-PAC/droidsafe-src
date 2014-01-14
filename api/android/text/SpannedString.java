@@ -34,16 +34,19 @@ public CharSequence subSequence(int start, int end) {
         return new SpannedString(this, start, end);
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getSpanEnd(Object what) {
     	addTaint(what.getTaint());
     	return super.getSpanEnd(what);
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getSpanFlags(Object what) {
     	addTaint(what.getTaint());
     	return super.getSpanFlags(what);
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getSpanStart(Object what) {
     	addTaint(what.getTaint());
     	return super.getSpanStart(what);
@@ -56,6 +59,7 @@ public CharSequence subSequence(int start, int end) {
     	return super.nextSpanTransition(start, limit, kind);
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public <T> T[] getSpans(int queryStart, int queryEnd, Class<T> kind) {
     	addTaint(queryStart);
     	addTaint(queryEnd);

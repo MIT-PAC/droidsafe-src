@@ -15,6 +15,7 @@ public class FocusFinder {
     /**
      * Get the focus finder for this thread.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.077 -0500", hash_original_method = "0A266F2F30A26FB4FFDB8BE1FD52ABAB", hash_generated_method = "794ADD475B07C31945BF5DC360FCCB11")
     
 public static FocusFinder getInstance() {
@@ -195,6 +196,7 @@ public final View findNextFocus(ViewGroup root, View focused, int direction) {
      * @param direction Direction to look.
      * @return The next focusable view, or null if none exists.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.094 -0500", hash_original_method = "56193535E50A3F40F9A982269CAB09AB", hash_generated_method = "C1C767320A8926BE0D8A6C4125075685")
     
 public View findNextFocusFromRect(ViewGroup root, Rect focusedRect, int direction) {
@@ -376,6 +378,7 @@ boolean beamBeats(int direction, Rect source, Rect rect1, Rect rect2) {
      * axis distances.  Warning: this fudge factor is finely tuned, be sure to
      * run all focus tests if you dare tweak it.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.107 -0500", hash_original_method = "1AC6C27686DF7285B59CAB56ADBB9696", hash_generated_method = "1AC6C27686DF7285B59CAB56ADBB9696")
     
 int getWeightedDistanceFor(int majorAxisDistance, int minorAxisDistance) {

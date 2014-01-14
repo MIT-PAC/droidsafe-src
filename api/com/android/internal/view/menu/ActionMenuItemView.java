@@ -88,6 +88,7 @@ public ActionMenuItemView(Context context, AttributeSet attrs, int defStyle) {
         setOnLongClickListener(this);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:37.164 -0500", hash_original_method = "F39E0849ABCF707480ABC0B9D2EE2311", hash_generated_method = "B0B9AF9FA2DDD827E4877533896893E2")
     
 public MenuItemImpl getItemData() {

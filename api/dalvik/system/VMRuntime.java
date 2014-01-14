@@ -13,6 +13,7 @@ public final class VMRuntime {
      *
      * @return the runtime object
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:39.059 -0500", hash_original_method = "CBA2B68727D1F6F9168A66453269BED7", hash_generated_method = "B3FF717E7D00C98A9C1EB7ECEBF6367C")
     
 public static VMRuntime getRuntime() {
@@ -116,6 +117,7 @@ public float setTargetHeapUtilization(float newTarget) {
      * This method exists for binary compatibility.  It was part of a
      * heap sizing API which was removed in Honeycomb.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:39.088 -0500", hash_original_method = "923B1334376C4F437A073246F9A10510", hash_generated_method = "744B0BA307BEFA7C92952F34F23E8D69")
     
 @Deprecated
@@ -192,6 +194,7 @@ public float setTargetHeapUtilization(float newTarget) {
      * This method exists for binary compatibility.  It was part of
      * the external allocation API which was removed in Honeycomb.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:39.106 -0500", hash_original_method = "A946C3EA36CF5D407B19BD7EB5F84EAB", hash_generated_method = "AE5DF6FFEE4F14850B5D5B2EDB525C5E")
     
 @Deprecated

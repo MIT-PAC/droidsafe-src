@@ -10,11 +10,6 @@ import java.math.BigInteger;
 import org.apache.harmony.security.asn1.ASN1Integer;
 import org.apache.harmony.security.asn1.ASN1Type;
 
-
-
-
-
-
 public final class CRLNumber extends ExtensionValue {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:59.355 -0500", hash_original_field = "CC5D8764BBAD99198237F31D02B97898", hash_generated_field = "7B920D394449223FD2E6E364A4B27926")
 
@@ -36,6 +31,7 @@ public CRLNumber(byte[] encoding) throws IOException {
     /**
      * Returns the invalidity date.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:59.348 -0500", hash_original_method = "ABBA63B4278019F3F838A8B1357B04F0", hash_generated_method = "E37AC206F1FC9EAF282C8DCD0787C41D")
     
 public BigInteger getNumber() {
@@ -45,6 +41,7 @@ public BigInteger getNumber() {
     /**
      * Returns ASN.1 encoded form of this X.509 CRLNumber value.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:59.350 -0500", hash_original_method = "264373D11CB6B7A95DC9A45E336ACDCB", hash_generated_method = "06E3593BD04818F66D486922BDEB8794")
     
 @Override public byte[] getEncoded() {

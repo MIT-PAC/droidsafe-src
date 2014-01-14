@@ -182,6 +182,7 @@ public static PropertyValuesHolder ofKeyframe(Property property, Keyframe... val
      * @return String the property name converted to a method name according to the conventions
      * specified above.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:31.773 -0500", hash_original_method = "82F5D656CE1D2806336A89B52A0194E7", hash_generated_method = "A922753D6323B195319892BF99C7313B")
     
 static String getMethodName(String prefix, String propertyName) {
@@ -740,6 +741,7 @@ public IntPropertyValuesHolder(Property property, int... values) {
             mIntAnimatedValue = mIntKeyframeSet.getIntValue(fraction);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:31.804 -0500", hash_original_method = "CE13DB8914BA3896479030C59B8EB5EA", hash_generated_method = "E0C63FD811BC259B825A918D50DE5EDF")
         
 @Override
@@ -906,6 +908,7 @@ public FloatPropertyValuesHolder(Property property, float... values) {
             mFloatAnimatedValue = mFloatKeyframeSet.getFloatValue(fraction);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:31.845 -0500", hash_original_method = "56F77D961BC82461152CD24C144983C0", hash_generated_method = "932BE8033097A3E0DD0F0777F6D73A1F")
         
 @Override
@@ -1072,6 +1075,7 @@ public void setProperty(Property property) {
      * <code>valueFrom</code> or <code>valueTo</code> is null, then a getter function will
      * also be derived and called.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:31.766 -0500", hash_original_method = "53B20749B4CEAC5C134A85897865D0FE", hash_generated_method = "4494B660E2F9A3D639720AD3F41DECE4")
     
 public String getPropertyName() {
@@ -1083,6 +1087,7 @@ public String getPropertyName() {
      * most recently calculated in calculateValue().
      * @return
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:31.769 -0500", hash_original_method = "7EED53883B814F7F8B112CE8FF982C26", hash_generated_method = "7EED53883B814F7F8B112CE8FF982C26")
     
 Object getAnimatedValue() {

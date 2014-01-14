@@ -8,6 +8,7 @@ import javax.microedition.khronos.opengles.GL;
 
 public abstract class EGLContext {
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:57.229 -0500", hash_original_method = "A38BB8AE655083CDE71FC7D7CD4EC6EF", hash_generated_method = "C154498B914B890373921455D4329D8F")
     
 public static EGL getEGL() {

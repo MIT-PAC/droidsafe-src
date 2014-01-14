@@ -69,18 +69,21 @@ public boolean isEnabled(int position) {
         return true;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:58.493 -0500", hash_original_method = "CB37ABFEFF70AAB623ABE3C5C5654EBA", hash_generated_method = "C130B06C5541CF8B289B8F49334D09CE")
     
 public View getDropDownView(int position, View convertView, ViewGroup parent) {
         return getView(position, convertView, parent);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:58.495 -0500", hash_original_method = "EE97D094FF23924861F9B1BB9874462B", hash_generated_method = "3610CA007643502BCB5C59065F70D2D6")
     
 public int getItemViewType(int position) {
         return 0;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:58.498 -0500", hash_original_method = "A6079B88B18082AA3C7D7E460D2C3B87", hash_generated_method = "2577B8C4DED14F5EF8C0214DED9A780B")
     
 public int getViewTypeCount() {

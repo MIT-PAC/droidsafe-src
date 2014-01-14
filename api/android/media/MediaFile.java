@@ -116,6 +116,7 @@ public static boolean isMimeTypeMedia(String mimeType) {
     }
 
     // generates a title based on file name
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:28.007 -0500", hash_original_method = "3F19F8DD2C222D6218E9AC3506AA6F51", hash_generated_method = "A9D2E1840AFF4FF6459802D242982C4D")
     
 public static String getFileTitle(String path) {
@@ -142,6 +143,7 @@ public static int getFileTypeForMimeType(String mimeType) {
         return (value == null ? 0 : value.intValue());
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:28.013 -0500", hash_original_method = "B740F3517DEF0D033D718183586443F5", hash_generated_method = "E2DA79676DB455181597BC59A9868F6D")
     
 public static String getMimeTypeForFile(String path) {
@@ -169,6 +171,7 @@ public static int getFormatCode(String fileName, String mimeType) {
         return MtpConstants.FORMAT_UNDEFINED;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:28.019 -0500", hash_original_method = "774B4347757F4357102FC259B06A2804", hash_generated_method = "0F7D4A858D5392B2441FC5552BAC51E7")
     
 public static String getMimeTypeForFormatCode(int formatCode) {

@@ -59,6 +59,7 @@ public static void init(Context context) {
         sSyncStorageEngine = new SyncStorageEngine(context, dataDir);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.519 -0500", hash_original_method = "E2F0FAC5335BB0B002405F98A0EEA0BD", hash_generated_method = "F225F658250CC0F7524E05D424C8A732")
     
 public static SyncStorageEngine getSingleton() {
@@ -88,12 +89,14 @@ public static boolean equals(Bundle b1, Bundle b2) {
         return true;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.675 -0500", hash_original_method = "95C75DD941065204D1878F796AFB73D9", hash_generated_method = "CD380022A9599053C9AF20CB78C98BFE")
     
 static int getIntColumn(Cursor c, String name) {
         return c.getInt(c.getColumnIndex(name));
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.677 -0500", hash_original_method = "D31304425BE62241852A05C2DAD11520", hash_generated_method = "5F169179EE73BEA2E150DCB74EA70AD0")
     
 static long getLongColumn(Cursor c, String name) {
@@ -890,6 +893,7 @@ public int clearPending() {
      * PendingOperation objects are the real objects stored inside, so that
      * they can be used with deleteFromPending().
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.587 -0500", hash_original_method = "C927FD207EDF022EE536945570AA8499", hash_generated_method = "706553CB9B319F44717E52996C412A21")
     
 public ArrayList<PendingOperation> getPendingOperations() {
@@ -901,6 +905,7 @@ public ArrayList<PendingOperation> getPendingOperations() {
     /**
      * Return the number of currently pending operations.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.589 -0500", hash_original_method = "CC9059641F127440F6B10F04341F5D1E", hash_generated_method = "0A023AC0E3C8066DD3006B4129461C8C")
     
 public int getPendingOperationCount() {
@@ -1357,6 +1362,7 @@ public List<SyncInfo> getCurrentSyncs() {
      * that the objects inside the array are the real, live status objects,
      * so be careful what you do with them.
      */
+    @DSSource({DSSourceKind.SYNCHRONIZATION_DATA})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.613 -0500", hash_original_method = "337F005F5350F3BD5177B0B27AD2E944", hash_generated_method = "88CFC6F2E81E7B9C1E45342372C662D3")
     
 public ArrayList<SyncStatusInfo> getSyncStatus() {
@@ -1375,6 +1381,7 @@ public ArrayList<SyncStatusInfo> getSyncStatus() {
      * that the objects inside the array are the real, live objects,
      * so be careful what you do with them.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.615 -0500", hash_original_method = "AEA28BD7AFFA3D47C607E69E1C170D48", hash_generated_method = "C2CAC7104824FF45BABF5B70D20F844E")
     
 public ArrayList<AuthorityInfo> getAuthorities() {
@@ -1446,6 +1453,7 @@ public boolean isSyncPending(Account account, String authority) {
      * that the objects inside the array are the real, live status objects,
      * so be careful what you do with them.
      */
+    @DSSource({DSSourceKind.SYNCHRONIZATION_DATA})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.624 -0500", hash_original_method = "B27CDDFFB9BAFF7BFEA0365E872FDD46", hash_generated_method = "14A2BEDBE7661F28E8CCD09FFF9DAD5C")
     
 public ArrayList<SyncHistoryItem> getSyncHistory() {

@@ -26,6 +26,7 @@ public class Runtime {
      *
      * @return the {@code Runtime} object for the current application.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.119 -0500", hash_original_method = "CF79B4C7AE45CC6197E4369ECF161253", hash_generated_method = "7F8C2B8A85E75003A22377212FF0E3F4")
     
 public static Runtime getRuntime() {
@@ -160,6 +161,7 @@ public Process exec(String[] progArray, String[] envp) throws java.io.IOExceptio
      * @throws IOException
      *             if the requested program can not be executed.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.097 -0500", hash_original_method = "CA3870F83BC3F7A92215C18375ED76A3", hash_generated_method = "221BC57B8B66088A1C3F3396280CB7B6")
     
 public Process exec(String[] progArray, String[] envp, File directory) throws IOException {
@@ -479,6 +481,7 @@ public void traceMethodCalls(boolean enable) {
      * @return the localized input stream.
      * @deprecated Use {@link InputStreamReader}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.154 -0500", hash_original_method = "4DD488C3A0CAA7F2473CD0DE597FBF5E", hash_generated_method = "6B953C9928DDF293F7CA3841743D37B9")
     
 @Deprecated
@@ -501,6 +504,7 @@ public void traceMethodCalls(boolean enable) {
      * @return the localized output stream.
      * @deprecated Use {@link OutputStreamWriter}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.157 -0500", hash_original_method = "E706425DACD57D6DD3EDF96DBA8FB92E", hash_generated_method = "5B2EE3BA978AE131C6801B8B781364A3")
     
 @Deprecated

@@ -142,6 +142,7 @@ Impl(File directory) throws IOException {
             this.directory = directory;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:14.676 -0500", hash_original_method = "6735B81487DB1A41BA0188585FC9CDB0", hash_generated_method = "FFDD09C226A3DECE8B07C0E621B21081")
         
 public synchronized byte[] getSessionData(String host, int port) {

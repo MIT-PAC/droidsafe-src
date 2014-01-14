@@ -186,6 +186,7 @@ public Drawable loadIcon(PackageManager pm) {
      * 
      * @return The icon associated with this match.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.600 -0500", hash_original_method = "A025A0B4AEE2574644D8C11C73D3261F", hash_generated_method = "83F53CEDFC4E582C85161F5611B1829E")
     
 public final int getIconResource() {

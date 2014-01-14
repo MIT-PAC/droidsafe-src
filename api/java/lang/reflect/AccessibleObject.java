@@ -39,7 +39,8 @@ public static void setAccessible(AccessibleObject[] objects, boolean flag) {
      * the same as Class.getSignatureAttribute(), but it can be used from
      * the java.lang.reflect package.
      */
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.363 -0500", hash_original_method = "0EA85850CAF8D26BF10D52C824A0CA19", hash_generated_method = "48B4ABE2E7323E428D11CA7F6309669D")
+    /*package*/ @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.363 -0500", hash_original_method = "0EA85850CAF8D26BF10D52C824A0CA19", hash_generated_method = "48B4ABE2E7323E428D11CA7F6309669D")
     
 static String getClassSignatureAttribute(Class clazz) {
         Object[] annotation = getClassSignatureAnnotation(clazz);
@@ -106,12 +107,14 @@ public boolean isAnnotationPresent(Class<? extends Annotation> annotationType) {
         throw new UnsupportedOperationException();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.348 -0500", hash_original_method = "0B7DCEEC0F2643B54E5B168F87B9CE3A", hash_generated_method = "3681CD33362442788F51F5CB97E8F924")
     
 public Annotation[] getDeclaredAnnotations() {
         throw new UnsupportedOperationException();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.351 -0500", hash_original_method = "CDE5472758ACF6CE75A2FF7BF6EF0F38", hash_generated_method = "2BE97EAB30C93D24E30DEBAEA5394C7F")
     
 public Annotation[] getAnnotations() {
@@ -139,6 +142,7 @@ public Annotation[] getAnnotations() {
      *
      * @return The signature as a string
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.356 -0500", hash_original_method = "AFCD123A6E616CB6E7A6F8CAEE33C533", hash_generated_method = "AFCD123A6E616CB6E7A6F8CAEE33C533")
     
 String getSignature(Class<?> clazz) {
@@ -188,7 +192,8 @@ String toString(Class<?>[] types) {
      * Gets the Signature attribute for this instance. Returns {@code null}
      * if not found.
      */
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.360 -0500", hash_original_method = "595C9CE9F234EEA7E3334962F2566B38", hash_generated_method = "F0B9CD63B24B94657C1ECA3D3E5E02CA")
+    /*package*/ @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.360 -0500", hash_original_method = "595C9CE9F234EEA7E3334962F2566B38", hash_generated_method = "F0B9CD63B24B94657C1ECA3D3E5E02CA")
     
 String getSignatureAttribute() {
         /*

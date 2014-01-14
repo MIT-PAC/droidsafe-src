@@ -25,6 +25,7 @@ public final class WebIconDatabase {
      *         instance for the current process each time this method is
      *         called.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.376 -0500", hash_original_method = "4E10B7DC211B271410E858DC486E4F74", hash_generated_method = "C7F34D0C15F050226015FFD7AF608759")
     
 public static WebIconDatabase getInstance() {

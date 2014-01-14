@@ -42,6 +42,7 @@ public ColorMatrix(ColorMatrix src) {
     /**
      * Return the array of floats representing this colormatrix.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:10.560 -0500", hash_original_method = "C51050FB528280ED78B19148B7D68B9E", hash_generated_method = "63C6B2BBD63D99F1D2FEFB03B9401E16")
     
 public final float[] getArray() { return mArray; }

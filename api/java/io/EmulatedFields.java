@@ -5,16 +5,11 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 class EmulatedFields {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.332 -0500", hash_original_field = "222F5CB81DB85F57268DF6B32981793A", hash_generated_field = "A5B1B9594264127836B75E232C6A005F")
 
     private ObjectSlot[] slotsToSerialize;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.334 -0500", hash_original_field = "2F6659C7191D511B5899958D504FFA90", hash_generated_field = "BA97D77EB4E493202875178557881AFD")
-
 
     private ObjectStreamField[] declaredFields;
 
@@ -167,6 +162,7 @@ private ObjectSlot findMandatorySlot(String name, Class<?> type) {
      * @throws IllegalArgumentException
      *             if the corresponding field can not be found.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.351 -0500", hash_original_method = "ACF5260920B1F0F677513369F3D8C323", hash_generated_method = "FA85D814085DAD11ADE86C720E780382")
     
 public byte get(String name, byte defaultValue) throws IllegalArgumentException {
@@ -189,6 +185,7 @@ public byte get(String name, byte defaultValue) throws IllegalArgumentException 
      * @throws IllegalArgumentException
      *             if the corresponding field can not be found.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.353 -0500", hash_original_method = "97CAA651EBA3FEB1DEF47882147E3EE9", hash_generated_method = "ABC4DDC48A4C3E4860FA731C267CE734")
     
 public char get(String name, char defaultValue) throws IllegalArgumentException {
@@ -211,6 +208,7 @@ public char get(String name, char defaultValue) throws IllegalArgumentException 
      * @throws IllegalArgumentException
      *             if the corresponding field can not be found.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.356 -0500", hash_original_method = "8A61E03E38631E405F30500DFE3A2EED", hash_generated_method = "5D2E57B72234CE4834B332937E5A71F0")
     
 public double get(String name, double defaultValue) throws IllegalArgumentException {
@@ -233,6 +231,7 @@ public double get(String name, double defaultValue) throws IllegalArgumentExcept
      * @throws IllegalArgumentException
      *             if the corresponding field can not be found.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.359 -0500", hash_original_method = "2A99383382827F229576C5D7E3624FBA", hash_generated_method = "300C102DED120EFE1542EC4497249BC9")
     
 public float get(String name, float defaultValue) throws IllegalArgumentException {
@@ -255,6 +254,7 @@ public float get(String name, float defaultValue) throws IllegalArgumentExceptio
      * @throws IllegalArgumentException
      *             if the corresponding field can not be found.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.361 -0500", hash_original_method = "348173917C5323C10E5D8A71A480A22F", hash_generated_method = "3D80573FCFAE249D640CF65CA2996E9D")
     
 public int get(String name, int defaultValue) throws IllegalArgumentException {
@@ -277,6 +277,7 @@ public int get(String name, int defaultValue) throws IllegalArgumentException {
      * @throws IllegalArgumentException
      *             if the corresponding field can not be found.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.365 -0500", hash_original_method = "57601B1EFC99CB5F2500857C9C4A7300", hash_generated_method = "B45160688894E7014BAC0471705F7CEF")
     
 public long get(String name, long defaultValue) throws IllegalArgumentException {
@@ -299,6 +300,7 @@ public long get(String name, long defaultValue) throws IllegalArgumentException 
      * @throws IllegalArgumentException
      *             if the corresponding field can not be found.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.367 -0500", hash_original_method = "47E293617D5F89E0481B6C58D6863D6B", hash_generated_method = "DC4860BFA6E22B22392B0F27A7C5EABF")
     
 public Object get(String name, Object defaultValue) throws IllegalArgumentException {
@@ -321,6 +323,7 @@ public Object get(String name, Object defaultValue) throws IllegalArgumentExcept
      * @throws IllegalArgumentException
      *             if the corresponding field can not be found.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.370 -0500", hash_original_method = "EA3C9F151A3984D516E6CE85AC2BDF4D", hash_generated_method = "5280274D84D932A4E2B3E0CEAE755431")
     
 public short get(String name, short defaultValue) throws IllegalArgumentException {
@@ -544,7 +547,6 @@ public void put(String name, boolean value) throws IllegalArgumentException {
 public ObjectSlot[] slots() {
         return slotsToSerialize;
     }
-
     
     static class ObjectSlot {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.318 -0500", hash_original_field = "666B1AF45B3BB88D7A1E85239BC45DDE", hash_generated_field = "666B1AF45B3BB88D7A1E85239BC45DDE")
@@ -569,6 +571,7 @@ public ObjectSlot[] slots() {
          *
          * @return the field descriptor
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.326 -0500", hash_original_method = "59E78F3DAFAB25C124D589BA3544A531", hash_generated_method = "61079A71E6B9F2C95C9CF2C13733BC54")
         
 public ObjectStreamField getField() {
@@ -580,16 +583,14 @@ public ObjectStreamField getField() {
          *
          * @return the field value
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.328 -0500", hash_original_method = "31B3B47C28245F569D31AEBE619B4C79", hash_generated_method = "CF3F818E93DF238F8CE6742FE2AD3BA3")
         
 public Object getFieldValue() {
             return fieldValue;
         }
-
         
     }
-
-
     
 }
 

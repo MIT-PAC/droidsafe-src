@@ -10,13 +10,7 @@ import org.apache.harmony.security.asn1.ASN1SetOf;
 import org.apache.harmony.security.asn1.BerInputStream;
 import org.apache.harmony.security.x501.AttributeTypeAndValue;
 
-
-
-
-
-
 final class AuthenticatedAttributes {
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.042 -0400", hash_original_field = "2611A8BAF0FBA182E1D618DBDEE9F51B", hash_generated_field = "F0C53D8DBCC45A640193D6CD74C62FBF")
 
@@ -44,6 +38,7 @@ private AuthenticatedAttributes(byte[] encoding,
         this.authenticatedAttributes = authenticatedAttributes;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:53.743 -0500", hash_original_method = "17512B9B260049DCE667B4C278AB32BC", hash_generated_method = "AEB7DC2CF68F5A1815EA77C7E602B19B")
     
 public List<AttributeTypeAndValue> getAttributes() {
@@ -53,6 +48,7 @@ public List<AttributeTypeAndValue> getAttributes() {
     /**
      * Returns ASN.1 encoded form of this authenticatedAttributes.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:53.746 -0500", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "5349B65E746CD014BDA35ADFF927FD5B")
     
 public byte[] getEncoded() {

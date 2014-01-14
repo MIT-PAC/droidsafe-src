@@ -35,6 +35,7 @@ private static void ensureSystemAssets() {
      * system assets (no application assets).
      * {@hide}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.874 -0500", hash_original_method = "2E03DF1E56EAF45D52AE236031E99A60", hash_generated_method = "F2D62EEBC23D93EF792674B4D7052CF7")
     
 public static AssetManager getSystem() {
@@ -197,7 +198,8 @@ public void close() {
      * Retrieve the string value associated with a particular resource
      * identifier for the current configuration / skin.
      */
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.878 -0500", hash_original_method = "CB81F9A1A3C0416B5CF420A3F62514E3", hash_generated_method = "566D02F833DEB90675A04751BE80B06E")
+    /*package*/ @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.878 -0500", hash_original_method = "CB81F9A1A3C0416B5CF420A3F62514E3", hash_generated_method = "566D02F833DEB90675A04751BE80B06E")
     
 final CharSequence getResourceText(int ident) {
         synchronized (this) {
@@ -217,7 +219,8 @@ final CharSequence getResourceText(int ident) {
      * Retrieve the string value associated with a particular resource
      * identifier for the current configuration / skin.
      */
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.880 -0500", hash_original_method = "2C5FA72B5D3C88AECCC2C4639A2FC63C", hash_generated_method = "5990EC8BFC2A29BA9FF2C6D7D17ECF89")
+    /*package*/ @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.880 -0500", hash_original_method = "2C5FA72B5D3C88AECCC2C4639A2FC63C", hash_generated_method = "5990EC8BFC2A29BA9FF2C6D7D17ECF89")
     
 final CharSequence getResourceBagText(int ident, int bagEntryId) {
         synchronized (this) {
@@ -245,7 +248,8 @@ final String[] getResourceStringArray(final int id) {
         return retArray;
     }
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.885 -0500", hash_original_method = "880DADF9021E8E0236DAC9AB890DE1A9", hash_generated_method = "6635CC9A9B1559C72E90550A8A0A4FE6")
+    /*package*/ @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.885 -0500", hash_original_method = "880DADF9021E8E0236DAC9AB890DE1A9", hash_generated_method = "6635CC9A9B1559C72E90550A8A0A4FE6")
     
 final boolean getResourceValue(int ident,
                                                int density,
@@ -285,7 +289,8 @@ final CharSequence[] getResourceTextArray(final int id) {
         return retArray;
     }
     
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.890 -0500", hash_original_method = "257E397E5CF934BBA53C0ACDE849DFE1", hash_generated_method = "158919A99B960BE9FE30781401A26982")
+    /*package*/ @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.890 -0500", hash_original_method = "257E397E5CF934BBA53C0ACDE849DFE1", hash_generated_method = "158919A99B960BE9FE30781401A26982")
     
 final boolean getThemeValue(int theme, int ident,
             TypedValue outValue, boolean resolveRefs) {
@@ -334,7 +339,8 @@ final void makeStringBlocks(boolean copyFromSystem) {
         }
     }
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.897 -0500", hash_original_method = "148EA8945A31568904B22E1C4951294F", hash_generated_method = "39CF31C4D46770A3EC28E345B4DC4F39")
+    /*package*/ @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.897 -0500", hash_original_method = "148EA8945A31568904B22E1C4951294F", hash_generated_method = "39CF31C4D46770A3EC28E345B4DC4F39")
     
 final CharSequence getPooledString(int block, int id) {
         //System.out.println("Get pooled: block=" + block
@@ -600,7 +606,8 @@ void xmlBlockGone(int id) {
         }
     }
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.935 -0500", hash_original_method = "9AD5347899C2D862F4815C023E5977D1", hash_generated_method = "78A9B8EF59C085FBB43CBAAE822870BF")
+    /*package*/ @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.935 -0500", hash_original_method = "9AD5347899C2D862F4815C023E5977D1", hash_generated_method = "78A9B8EF59C085FBB43CBAAE822870BF")
     
 final int createTheme() {
         synchronized (this) {
@@ -907,6 +914,7 @@ private AssetInputStream(int asset)
             mAsset = asset;
             mLength = getAssetLength(asset);
         }
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.944 -0500", hash_original_method = "E464EBBB8C3DAC741E7C7914FE6096F4", hash_generated_method = "B70B280650FCD4984CEBBA2C295631C2")
         
 public final int getAssetInt() {

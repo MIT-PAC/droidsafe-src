@@ -49,7 +49,8 @@ private static final void commonInit() {
          * Install a TimezoneGetter subclass for ZoneInfo.db
          */
         TimezoneGetter.setInstance(new TimezoneGetter() {
-            @Override
+            @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @Override
             public String getId() {
                 return SystemProperties.get("persist.sys.timezone");
             }
@@ -323,6 +324,7 @@ public static final void setApplicationObject(IBinder app) {
         mApplicationObject = app;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:51.267 -0500", hash_original_method = "E901955560D4A31547FD724447878F67", hash_generated_method = "22E2E5155AECEAD3EABB5DFA20E1CD96")
     
 public static final IBinder getApplicationObject() {

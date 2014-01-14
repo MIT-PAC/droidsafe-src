@@ -16,6 +16,7 @@ public class ASN1Oid extends ASN1Primitive {
      *
      * @return ASN.1 Object Identifier type default implementation
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.205 -0500", hash_original_method = "5E65A7295BE5D2F9170BAE5522B68E33", hash_generated_method = "1F1BE41A3621422B13C5D1294D1E6378")
     
 public static ASN1Oid getInstance() {
@@ -30,6 +31,7 @@ public static ASN1Oid getInstance() {
      *
      * @return ASN.1 Object Identifier type implementation
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.228 -0500", hash_original_method = "DE949297883E398E1EB4558C161D2578", hash_generated_method = "393C765E8DA9FA6B1298E887F199D60F")
     
 public static ASN1Oid getInstanceForString() {
@@ -42,7 +44,8 @@ public static ASN1Oid getInstanceForString() {
 
     private static final ASN1Oid STRING_OID = new ASN1Oid() {
         
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.596 -0400", hash_original_method = "EDD14D755051A488C2BFB6BEA216DB71", hash_generated_method = "AC1548FB73DFF4CDEBD6C8414C8C66BC")
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.596 -0400", hash_original_method = "EDD14D755051A488C2BFB6BEA216DB71", hash_generated_method = "AC1548FB73DFF4CDEBD6C8414C8C66BC")
         @Override
         public Object getDecodedObject(BerInputStream in) throws IOException {
             Object varB4EAC82CA7396A68D541C85D26508E83_1332120319 = null; 
@@ -126,6 +129,7 @@ public Object decode(BerInputStream in) throws IOException {
      *
      * @return array of integers
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.210 -0500", hash_original_method = "F2E30F5A7FF0BD89B1DBA25737A1DD6D", hash_generated_method = "2DECE60E03D737615DA7DCAC4AF316F8")
     
 @Override public Object getDecodedObject(BerInputStream in) throws IOException {

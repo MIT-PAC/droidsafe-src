@@ -5,14 +5,8 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public final class UserInfo extends NetObject {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:33.753 -0500", hash_original_field = "9304317C14889A351A8EA0D9F9C6C8E9", hash_generated_field = "E4DBADE234AE16A77F53FEF34BDC568F")
-
-
 
     private static final long serialVersionUID = 7268593273924256144L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:33.763 -0500", hash_original_field = "EE92A15F686F0E035A7FE1AC53752059", hash_generated_field = "2961967C21DF0AFF555C9722B216BAA2")
@@ -102,6 +96,7 @@ public void clearPassword() {
      * Gets the user type (which can be set to TELEPHONE_SUBSCRIBER or USER)
      * @return the type of user.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:33.780 -0500", hash_original_method = "0304D4B17F9026D87C6633B5EFA54170", hash_generated_method = "43C35D644C6F5C43F0C728653BB5D839")
     
 public int getUserType() {
@@ -111,6 +106,7 @@ public int getUserType() {
     /** get the user field.
      * @return String
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:33.782 -0500", hash_original_method = "067A1216625EE4AD320B5B1536FC853E", hash_generated_method = "768A7D1D5D0FCDDB7735C26A1B322FA4")
     
 public String getUser() {
@@ -120,6 +116,7 @@ public String getUser() {
     /** get the password field.
      * @return String
      */
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:33.785 -0500", hash_original_method = "9DBD0BEF507048073F2256BD69D03A45", hash_generated_method = "3422D16EB2EB2FA3C8F125F717D7CA7E")
     
 public String getPassword() {

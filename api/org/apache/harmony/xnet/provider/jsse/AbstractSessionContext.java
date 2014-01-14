@@ -85,6 +85,7 @@ private Iterator<SSLSession> sessionIterator() {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:11.712 -0500", hash_original_method = "106825D731C9327C3D7A99A6486CA67E", hash_generated_method = "CC9DF34A26927DEAD2570F68D3C37643")
     
 public final Enumeration getIds() {
@@ -116,12 +117,14 @@ public final Enumeration getIds() {
         };
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:11.714 -0500", hash_original_method = "D0015EDFECCAD43C3752A19176DA2F6D", hash_generated_method = "F0EBFE5E7F902D90C766F622695BC03B")
     
 public final int getSessionCacheSize() {
         return maximumSize;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:11.717 -0500", hash_original_method = "4FB73E0AB538272543472A54EAEE75CD", hash_generated_method = "C50CE6E687111402FF4DE12D51A55364")
     
 public final int getSessionTimeout() {
@@ -281,6 +284,7 @@ SSLSession toSession(byte[] data, String host, int port) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:11.735 -0500", hash_original_method = "C269704A4F254C894FBE48E4ADC3F7DA", hash_generated_method = "D03819EE9B926AF234C3C351F04BB654")
     
 public SSLSession getSession(byte[] sessionId) {

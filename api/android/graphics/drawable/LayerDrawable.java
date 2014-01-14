@@ -245,6 +245,7 @@ public void setId(int index, int id) {
      * Returns the number of layers contained within this.
      * @return The number of layers.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.152 -0500", hash_original_method = "A86CD78FFBAB297497BF089506C91B59", hash_generated_method = "6075AA902777F095317F3A14EA5716F3")
     
 public int getNumberOfLayers() {
@@ -258,6 +259,7 @@ public int getNumberOfLayers() {
      *
      * @return The {@link android.graphics.drawable.Drawable} at the specified layer index.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.154 -0500", hash_original_method = "34EED4495029B4FCBDB042C377184EB5", hash_generated_method = "63F0399A05DCC998434F64635EAB029F")
     
 public Drawable getDrawable(int index) {
@@ -271,6 +273,7 @@ public Drawable getDrawable(int index) {
      *
      * @return The id of the layer or {@link android.view.View#NO_ID} if the layer has no id. 
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.157 -0500", hash_original_method = "AA527FDBA3D8F60360C6FC80FEEC74D7", hash_generated_method = "AB61A0021DDDEA00578315114A44755B")
     
 public int getId(int index) {
@@ -368,6 +371,7 @@ public void unscheduleDrawable(Drawable who, Runnable what) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.173 -0500", hash_original_method = "DA9EE8A6D973B1FAC6E24B2DB8F8E9C8", hash_generated_method = "AB968D1D931439AC785AFD120BEC45F2")
     
 @Override
@@ -468,6 +472,7 @@ public void setOpacity(int opacity) {
         mOpacityOverride = opacity;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.190 -0500", hash_original_method = "0508714C8593107EE12E4CBB1654E530", hash_generated_method = "B07E04571C348AF9B4DB483345715476")
     
 @Override
@@ -551,6 +556,7 @@ public void setOpacity(int opacity) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.203 -0500", hash_original_method = "3C77AAA6434E318933C50BFE3151E79D", hash_generated_method = "259B620EE8AED33DFA3925B1BB46060E")
     
 @Override
@@ -572,6 +578,7 @@ public void setOpacity(int opacity) {
         return width;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.205 -0500", hash_original_method = "74944E4C19D1A88AACA0D7D60A83587A", hash_generated_method = "BE4B2C547B0406AC0266150D9096942D")
     
 @Override
@@ -761,6 +768,7 @@ LayerState(LayerState orig, LayerDrawable owner, Resources res) {
             return new LayerDrawable(this, res);
         }
         
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.257 -0500", hash_original_method = "9E7D7C67EAC365FF19BD4971762612A5", hash_generated_method = "3AB30668ED270F2EDF2E0129C706FE4D")
         
 @Override

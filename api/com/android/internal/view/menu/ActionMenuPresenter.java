@@ -170,6 +170,7 @@ public void setExpandedActionViewsExclusive(boolean isExclusive) {
         mExpandedActionViewsExclusive = isExclusive;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:35.187 -0500", hash_original_method = "AD0B74E3B833D08F8481D15CB97EDB86", hash_generated_method = "4EB992F1843AEE2E970782E0DD05D572")
     
 @Override
@@ -179,6 +180,7 @@ public void setExpandedActionViewsExclusive(boolean isExclusive) {
         return result;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:35.189 -0500", hash_original_method = "59BA3C56A8058A32CF9B2FCB0A0B5507", hash_generated_method = "684116B23E2F855BA7843E02D5E266D1")
     
 @Override

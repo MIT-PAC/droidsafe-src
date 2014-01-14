@@ -562,6 +562,7 @@ public void setCustomNavigationView(View view) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:43.509 -0500", hash_original_method = "7D691BCB64236E7B5AF8F6CB0399C091", hash_generated_method = "E948C46F1704FC1F24545ED5A725BEE6")
     
 public CharSequence getTitle() {
@@ -611,6 +612,7 @@ private void setTitleImpl(CharSequence title) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:43.517 -0500", hash_original_method = "8334E54E49A430BB5E2CB9D01857CDC7", hash_generated_method = "3773E52DB2B3822F51D6A3F2CB66D7C2")
     
 public CharSequence getSubtitle() {
@@ -806,6 +808,7 @@ public void setDropdownAdapter(SpinnerAdapter adapter) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:43.545 -0500", hash_original_method = "1A4098174F41A05D8E016C60876697BD", hash_generated_method = "55894F49F5FBF6100CC1C53E38147B3E")
     
 public SpinnerAdapter getDropdownAdapter() {
@@ -819,24 +822,28 @@ public void setDropdownSelectedPosition(int position) {
         mSpinner.setSelection(position);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:43.549 -0500", hash_original_method = "434984419C6BB9581BBBAD71AB1CA07D", hash_generated_method = "E9F16265F8BF68A09309130DBF94145D")
     
 public int getDropdownSelectedPosition() {
         return mSpinner.getSelectedItemPosition();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:43.552 -0500", hash_original_method = "1544DDF36E6082443A2EF4ED7A4DF538", hash_generated_method = "0A8612C69308687D2CD30E6730C0871D")
     
 public View getCustomNavigationView() {
         return mCustomNavView;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:43.554 -0500", hash_original_method = "14AA191B691A51A87445A62103C542CB", hash_generated_method = "D8E6902A052246660ED32E8D40DCF853")
     
 public int getNavigationMode() {
         return mNavigationMode;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:43.556 -0500", hash_original_method = "7126F05C057CF7F499EBFF9A1F4C4A02", hash_generated_method = "B4E83287FE3A0B3A2131F7F64F8A178F")
     
 public int getDisplayOptions() {
@@ -1492,6 +1499,7 @@ public int getLeftOffset() {
             mMenu = menu;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:43.670 -0500", hash_original_method = "C60404B6CC35B9780D9F9822482B710D", hash_generated_method = "4C9D9B351543FAFD07AC3385F3D5E31F")
         
 @Override
@@ -1619,6 +1627,7 @@ public int getLeftOffset() {
             return true;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:43.691 -0500", hash_original_method = "B74F33F41EA76949D2B7FFC2C0C48D8F", hash_generated_method = "C0CB620CEC980AD85BC1EE1B6EA7B000")
         
 @Override

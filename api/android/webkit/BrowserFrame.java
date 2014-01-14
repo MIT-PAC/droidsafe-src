@@ -43,7 +43,8 @@ import android.view.ViewRootImpl;
 import android.view.WindowManager;
 
 class BrowserFrame extends Handler {
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.218 -0500", hash_original_method = "50372AB6BB6BBC5DF6CA1B50375B707C", hash_generated_method = "5692FCEFB6C8D382EA8E9E6F92A30F1B")
+    /* package */ @DSSource({DSSourceKind.BROWSER_INFORMATION})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.218 -0500", hash_original_method = "50372AB6BB6BBC5DF6CA1B50375B707C", hash_generated_method = "5692FCEFB6C8D382EA8E9E6F92A30F1B")
     
 static String getRawResFilename(int id, Context context) {
         int resid;
@@ -1171,7 +1172,8 @@ private void updateVisitedHistory(String url, boolean isReload) {
     /**
      * Get the CallbackProxy for sending messages to the UI thread.
      */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.194 -0500", hash_original_method = "D3ED977A3BCAC48329E24D7D69689852", hash_generated_method = "D3ED977A3BCAC48329E24D7D69689852")
+    /* package */ @DSSource({DSSourceKind.BROWSER_INFORMATION})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.194 -0500", hash_original_method = "D3ED977A3BCAC48329E24D7D69689852", hash_generated_method = "D3ED977A3BCAC48329E24D7D69689852")
     
 CallbackProxy getCallbackProxy() {
         return mCallbackProxy;
@@ -1180,6 +1182,7 @@ CallbackProxy getCallbackProxy() {
     /**
      * Returns the User Agent used by this frame
      */
+    @DSSource({DSSourceKind.BROWSER_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.197 -0500", hash_original_method = "F09A8DE53C03EAD5D6B2D7442C92246E", hash_generated_method = "F09A8DE53C03EAD5D6B2D7442C92246E")
     
 String getUserAgentString() {
@@ -1751,7 +1754,8 @@ public void stopLoading() {
      * @return true when the frame should be initially scrolled right-most
      * based on the text direction and writing mode.
      */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.357 -0500", hash_original_method = "154F1DF98163CFE18EB2585F133E4CD5", hash_generated_method = "154F1DF98163CFE18EB2585F133E4CD5")
+    /* package */ @DSSource({DSSourceKind.BROWSER_INFORMATION})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.357 -0500", hash_original_method = "154F1DF98163CFE18EB2585F133E4CD5", hash_generated_method = "154F1DF98163CFE18EB2585F133E4CD5")
     
 boolean getShouldStartScrolledRight() {
         return nativeGetShouldStartScrolledRight(mNativeFrame);

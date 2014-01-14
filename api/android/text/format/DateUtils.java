@@ -31,6 +31,7 @@ public class DateUtils {
      *               but may return something different in the future.
      * @throws IndexOutOfBoundsException if the dayOfWeek is out of bounds.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:17.052 -0500", hash_original_method = "2B2F84D2FC68A393309EA6006B51C303", hash_generated_method = "09A03706A02E74A4C4BE59D52AC288E7")
     
 public static String getDayOfWeekString(int dayOfWeek, int abbrev) {
@@ -54,6 +55,7 @@ public static String getDayOfWeekString(int dayOfWeek, int abbrev) {
      * @throws IndexOutOfBoundsException if the ampm is out of bounds.
      * @return Localized version of "AM" or "PM".
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:17.055 -0500", hash_original_method = "6F85B36BD6291771C5AD197E0780281E", hash_generated_method = "57683F9CB095B5840113EBA0DEE32F21")
     
 public static String getAMPMString(int ampm) {
@@ -71,6 +73,7 @@ public static String getAMPMString(int ampm) {
      *               but may return something different in the future.
      * @return Localized month of the year.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:17.058 -0500", hash_original_method = "1AFCB2614025096248397B0D897A2A57", hash_generated_method = "C084D88BDC7E2FE5D770222936EC6397")
     
 public static String getMonthString(int month, int abbrev) {
@@ -106,6 +109,7 @@ public static String getMonthString(int month, int abbrev) {
      * @return Localized month of the year.
      * @hide Pending API council approval
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:17.061 -0500", hash_original_method = "C99BC873D7A17CFA79867BFC91539165", hash_generated_method = "8360518FFACE4B67B13818239D69B65B")
     
 public static String getStandaloneMonthString(int month, int abbrev) {
@@ -134,6 +138,7 @@ public static String getStandaloneMonthString(int month, int abbrev) {
      * @return a String object containing the elapsed time.
      * @see #getRelativeTimeSpanString(long, long, long)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:17.064 -0500", hash_original_method = "1D17ACCAF111CCE023230DB7131552E6", hash_generated_method = "2204A65B4D68212F67FC36D2B19D485F")
     
 public static CharSequence getRelativeTimeSpanString(long startTime) {
@@ -152,6 +157,7 @@ public static CharSequence getRelativeTimeSpanString(long startTime) {
      *     past will be reported as "0 minutes ago" if this is set to MINUTE_IN_MILLIS. Pass one of
      *     0, MINUTE_IN_MILLIS, HOUR_IN_MILLIS, DAY_IN_MILLIS, WEEK_IN_MILLIS
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:17.067 -0500", hash_original_method = "810BA8C34FC43DE5C93F9EBCCB482C4D", hash_generated_method = "30A52CBE7651B433FAA8CCFB9E744B38")
     
 public static CharSequence getRelativeTimeSpanString(long time, long now, long minResolution) {
@@ -179,6 +185,7 @@ public static CharSequence getRelativeTimeSpanString(long time, long now, long m
      *            {@link #FORMAT_NUMERIC_DATE} or
      *            {@link #FORMAT_ABBREV_RELATIVE}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:17.071 -0500", hash_original_method = "02D2E61DA71B792A06715C5A90574A1F", hash_generated_method = "9C9BB65D8B7DBDB873F13DB77E6C20D6")
     
 public static CharSequence getRelativeTimeSpanString(long time, long now, long minResolution,
@@ -304,6 +311,7 @@ private synchronized static long getNumberOfDaysPassed(long date1, long date2) {
      *            For example, will transition from "6 days ago" to "Dec 12"
      *            when using {@link #WEEK_IN_MILLIS}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:17.077 -0500", hash_original_method = "CBEBBC0C0AA9B5B5A899405D0F8BAC67", hash_generated_method = "8C0B50B9CFF672641830D045EEDD5D18")
     
 public static CharSequence getRelativeDateTimeString(Context c, long time, long minResolution,
@@ -1398,6 +1406,7 @@ public static String formatDateTime(Context context, long millis, int flags) {
      * @param withPreposition If true, the string returned will include the correct 
      * preposition ("at 9:20am", "on 10/12/2008" or "on May 29").
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:17.156 -0500", hash_original_method = "B98A7B20DE64F8A0743D9F388930FDE8", hash_generated_method = "5CCF661DE6AB443130309C4C6F8DFBD4")
     
 public static CharSequence getRelativeTimeSpanString(Context c, long millis,
@@ -1453,6 +1462,7 @@ public static CharSequence getRelativeTimeSpanString(Context c, long millis,
      * @return {@link CharSequence} containing relative time.
      * @see #getRelativeTimeSpanString(Context, long, boolean)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:17.158 -0500", hash_original_method = "362BB89AE30E2B1620FB7746D71D6A23", hash_generated_method = "7F279C628C2CE3542A823A9ABCB8A086")
     
 public static CharSequence getRelativeTimeSpanString(Context c, long millis) {

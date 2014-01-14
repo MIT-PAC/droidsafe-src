@@ -77,6 +77,7 @@ public boolean equals(Object other) {
     /** get the Protocol Version
      * @return String
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.079 -0500", hash_original_method = "F03A2761E3B9AF6DF371EC359829DB1F", hash_generated_method = "32895BC1C079DC20DE78B350609DB20B")
     
 public String getProtocolVersion() {
@@ -90,6 +91,7 @@ public String getProtocolVersion() {
      * Accessor for the sentProtocol field.
      * @return Protocol field
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.082 -0500", hash_original_method = "07C91BB13E357235D0646F9B1302A813", hash_generated_method = "3A0F2EC46C83142EFE37885BF3789ABB")
     
 public Protocol getSentProtocol() {
@@ -101,6 +103,7 @@ public Protocol getSentProtocol() {
      * Accessor for the sentBy field
      *@return SentBy field
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.085 -0500", hash_original_method = "834E4BBD7298D05AE3719FD543779099", hash_generated_method = "7E9F36EDB6B8F7DEC4550BD2B30D1B4B")
     
 public HostPort getSentBy() {
@@ -112,6 +115,7 @@ public HostPort getSentBy() {
      * useful for the stack to avoid duplication of code.
      *
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.088 -0500", hash_original_method = "D671032CD8E13BB36667C287933AFA1D", hash_generated_method = "63F29EFA98759442F1A8B24A62C4F969")
     
 public Hop getHop() {
@@ -124,6 +128,7 @@ public Hop getHop() {
      * Accessor for the parameters field
      * @return parameters field
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.091 -0500", hash_original_method = "50080B5B5AC1614DCB7B006B51F53E3F", hash_generated_method = "DFE8C46845B2BF694E1F9DF7A36DD65A")
     
 public NameValueList getViaParms() {
@@ -135,6 +140,7 @@ public NameValueList getViaParms() {
      * @return comment field.
      * @deprecated RFC 2543 support feature.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.094 -0500", hash_original_method = "D7C1F8AAD3D2F40DD04B72C74A7D0B69", hash_generated_method = "E40F10878D62F1009133973700BC0B5C")
     
 public String getComment() {
@@ -284,6 +290,7 @@ public void setHost(String host) throws ParseException {
     *
     * @return  the string value of the host
     */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.134 -0500", hash_original_method = "C40590C8092ADD61F2FE2F813826D182", hash_generated_method = "D2C361D4C23F32BB17AC6E8CCEE36372")
     
 public String getHost() {
@@ -332,6 +339,7 @@ public void setRPort(){
      *
      * @return the integer value of the port
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.144 -0500", hash_original_method = "E4A7E9B0C37CC00BF245A9AEF6038FD8", hash_generated_method = "906A1F3A5691CFDC4DDC6C1A571AB8A3")
     
 public int getPort() {
@@ -345,7 +353,8 @@ public int getPort() {
     *
     *@return the rport parameter or -1.
     */
-       @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.147 -0500", hash_original_method = "8F51D2BD996E5077EFE382EF5CCB28F7", hash_generated_method = "3511351E0D0FE8826264B6C3334B3AAF")
+       @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.147 -0500", hash_original_method = "8F51D2BD996E5077EFE382EF5CCB28F7", hash_generated_method = "3511351E0D0FE8826264B6C3334B3AAF")
     
 public int getRPort() {
          String strRport = getParameter(ParameterNames.RPORT);
@@ -360,6 +369,7 @@ public int getRPort() {
      *
      * @return the string value of the transport paramter of the ViaHeader
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.151 -0500", hash_original_method = "2C7D6CB162F307BBDEA3C529EA37600B", hash_generated_method = "278AEA19B837E1396BDED40458AA0DF4")
     
 public String getTransport() {
@@ -396,6 +406,7 @@ public void setTransport(String transport) throws ParseException {
      *
      * @return the string value of the protocol paramter of the ViaHeader
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.157 -0500", hash_original_method = "076253ECD4074E0CF94E6CAE84ACD031", hash_generated_method = "AE3F914C1F385E80EBD7FC351D7FF964")
     
 public String getProtocol() {
@@ -432,6 +443,7 @@ public void setProtocol(String protocol) throws ParseException {
      *
      * @return the integer value of the <code>ttl</code> parameter
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.163 -0500", hash_original_method = "AB2BF7863E6929FA549276BF1FCB8F41", hash_generated_method = "FC6220DDEB7B2F642A5C176519D4A5FD")
     
 public int getTTL() {
@@ -464,6 +476,7 @@ public void setTTL(int ttl) throws InvalidArgumentException {
      *
      * @return the string value of the maddr parameter
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.170 -0500", hash_original_method = "BA8497BF19C86E6498457C19F33C2BB1", hash_generated_method = "1F148048371B6A738FC40E49494DF6D1")
     
 public String getMAddr() {
@@ -501,6 +514,7 @@ public void setMAddr(String mAddr) throws ParseException {
      *
      * @return the string received value of ViaHeader
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.175 -0500", hash_original_method = "25AF7C33721E5D780684174C5845DEAD", hash_generated_method = "4E8FCF5656D0BCA0C0FBDE4F491C238B")
     
 public String getReceived() {
@@ -533,6 +547,7 @@ public void setReceived(String received) throws ParseException {
      *
      * @return the string branch value of ViaHeader
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.182 -0500", hash_original_method = "9A958EF7B290CF5A27A4EB96F15158F0", hash_generated_method = "0018E0512B32E4AA454DEB730D48FE1D")
     
 public String getBranch() {
@@ -576,6 +591,7 @@ public Object clone() {
      * (non-Javadoc)
      * @see gov.nist.javax.sip.header.ViaHeaderExt#getSentByField()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.192 -0500", hash_original_method = "5347FDDA2C7AAC95D7D1D2F666800B71", hash_generated_method = "7741DB56E64F64615C969A6462982567")
     
 public String getSentByField() {
@@ -587,6 +603,7 @@ public String getSentByField() {
      * (non-Javadoc)
      * @see gov.nist.javax.sip.header.ViaHeaderExt#getSentProtocolField()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.195 -0500", hash_original_method = "128FFEF5D307451BA5388B5193A6BF26", hash_generated_method = "58427536C6610BFA4C3467698B755DC0")
     
 public String getSentProtocolField() {

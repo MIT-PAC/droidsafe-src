@@ -213,7 +213,8 @@ public static String findEditTable(String tables) {
      * this method is used to collect data about ALL open databases in the current process.
      * bugreport is a user of this data.
      */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.347 -0500", hash_original_method = "3A113450ED12D158C4D0FCF20D70CF45", hash_generated_method = "0B529B82E97155F413BEA91A60BA3599")
+    /* package */ @DSSource({DSSourceKind.DATABASE_INFORMATION})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.347 -0500", hash_original_method = "3A113450ED12D158C4D0FCF20D70CF45", hash_generated_method = "0B529B82E97155F413BEA91A60BA3599")
     
 static ArrayList<DbStats> getDbStats() {
         ArrayList<DbStats> dbStatsList = new ArrayList<DbStats>();
@@ -1219,6 +1220,7 @@ private boolean yieldIfContendedHelper(boolean checkFullyYielded, long sleepAfte
     /**
      * @deprecated This method no longer serves any useful purpose and has been deprecated.
      */
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.133 -0500", hash_original_method = "2BF74CD6834BBADBF27F65464DB83499", hash_generated_method = "EDAA1ED8B82EF6EA1775DE16E5368175")
     
 @Deprecated
@@ -1410,6 +1412,7 @@ private void releaseCustomFunctions() {
      *
      * @return the database version
      */
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.189 -0500", hash_original_method = "8BA60C4A4A322F100A535BB125C59B40", hash_generated_method = "FD87B3D9476E471A679FC3178AB42567")
     
 public int getVersion() {
@@ -1433,6 +1436,7 @@ public void setVersion(int version) {
      *
      * @return the new maximum database size
      */
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.194 -0500", hash_original_method = "01DC63CC6FF3C1462DC7069F3072C18D", hash_generated_method = "DBE61E60C36C6E1676AA9BD36B643859")
     
 public long getMaximumSize() {
@@ -1467,6 +1471,7 @@ public long setMaximumSize(long numBytes) {
      *
      * @return the database page size, in bytes
      */
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.199 -0500", hash_original_method = "677D214086B645E86B85D4E2A88CD9F6", hash_generated_method = "FC8EC710D99A626FB83F1A44578212FE")
     
 public long getPageSize() {
@@ -1572,6 +1577,7 @@ public SQLiteStatement compileStatement(String sql) throws SQLException {
      * {@link Cursor}s are not synchronized, see the documentation for more details.
      * @see Cursor
      */
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.214 -0500", hash_original_method = "5E1B6C3D7A97420E0A4D0244321FA1D0", hash_generated_method = "929CBBED5277B13A2B69F28022B581F4")
     
 public Cursor query(boolean distinct, String table, String[] columns,
@@ -1655,6 +1661,7 @@ public Cursor queryWithFactory(CursorFactory cursorFactory,
      * {@link Cursor}s are not synchronized, see the documentation for more details.
      * @see Cursor
      */
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.219 -0500", hash_original_method = "823CC97B8BCC24B1EEF8A14CAC46F9D2", hash_generated_method = "33B19BE5321EBE883516789006AFBE2B")
     
 public Cursor query(String table, String[] columns, String selection,
@@ -1695,6 +1702,7 @@ public Cursor query(String table, String[] columns, String selection,
      * {@link Cursor}s are not synchronized, see the documentation for more details.
      * @see Cursor
      */
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.221 -0500", hash_original_method = "C821013CE8C43126ED02ADCC7264C8CF", hash_generated_method = "AED839395EA89BCFAD47AF44D0DAF931")
     
 public Cursor query(String table, String[] columns, String selection,
@@ -1715,6 +1723,7 @@ public Cursor query(String table, String[] columns, String selection,
      * @return A {@link Cursor} object, which is positioned before the first entry. Note that
      * {@link Cursor}s are not synchronized, see the documentation for more details.
      */
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.224 -0500", hash_original_method = "76B8F97A589187A4837E14E72F2396A8", hash_generated_method = "65A12FD6153DC4A6ABBCE28A6BA06DA3")
     
 public Cursor rawQuery(String sql, String[] selectionArgs) {
@@ -2178,6 +2187,7 @@ public boolean needUpgrade(int newVersion) {
      *
      * @return the path to our database file.
      */
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.271 -0500", hash_original_method = "F177C5B02553C0E0327F321BDDCEAFD5", hash_generated_method = "571136F21505319981CAF88E560329CE")
     
 public final String getPath() {
@@ -2737,6 +2747,7 @@ private void releaseDbConnection(SQLiteDatabase db) {
      * @return ArrayList of pairs of (database name, database file path) or null if the database
      * is not open.
      */
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.356 -0500", hash_original_method = "40C4DE1C4808AAF54B97D30ED440E3DF", hash_generated_method = "19BC31D447084B5C7128C3C8CECEEB5C")
     
 public List<Pair<String, String>> getAttachedDbs() {

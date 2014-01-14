@@ -6,14 +6,8 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.HashMap;
 
-
-
-
-
-
 public class WspTypeDecoder {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.522 -0500", hash_original_field = "737486A8B0400610DB3B9B68519E2368", hash_generated_field = "4F6BB777BDC875F4310534E9146342C6")
-
 
     private static final int WAP_PDU_SHORT_LENGTH_MAX = 30;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.524 -0500", hash_original_field = "88D3C32E1E4A3284B0997AAAF15399D1", hash_generated_field = "46631EBD41809AE082E75C1CC8779D4E")
@@ -21,30 +15,25 @@ public class WspTypeDecoder {
     private static final int WAP_PDU_LENGTH_QUOTE = 31;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.528 -0500", hash_original_field = "E4D95AA773739B7024BA2FFC4086E4AC", hash_generated_field = "F67180C752D65206BDD9E13836C7D7DA")
 
-
     public static final int PDU_TYPE_PUSH = 0x06;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.530 -0500", hash_original_field = "E9DDFB52C3378A97044BB3F1F85F604E", hash_generated_field = "8B50E6D79FF4EAAE11A4EAFF8CB9C391")
 
     public static final int PDU_TYPE_CONFIRMED_PUSH = 0x07;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.533 -0500", hash_original_field = "DBCDD39ABEEF6F2F5891FB7B82AF1A7F", hash_generated_field = "74BC2112327D6DF2EED1706E173921EA")
 
-
     private final static HashMap<Integer, String> WELL_KNOWN_MIME_TYPES =
             new HashMap<Integer, String>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.535 -0500", hash_original_field = "88994EF51CCC3960392A8C20028A8D26", hash_generated_field = "D895CB481798D1C8E4ED40299841B480")
 
-
     private final static HashMap<Integer, String> WELL_KNOWN_PARAMETERS =
             new HashMap<Integer, String>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.538 -0500", hash_original_field = "9E09D4415292D41724E07C4096349A66", hash_generated_field = "BC518E54BB1177BA8736BADC7A57ED44")
-
 
     public static final int PARAMETER_ID_X_WAP_APPLICATION_ID = 0x2f;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.540 -0500", hash_original_field = "307B2CE28D7704E7E09432614B17877C", hash_generated_field = "64F5379E14B56A016C5EE441C8ABE3C3")
 
     private static final int Q_VALUE = 0x00;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.544 -0500", hash_original_field = "F97EFCA811D8DB37C1EAFBD9041DAA74", hash_generated_field = "14E991E823DE7ACB83EEE5DC7F027D18")
-
 
     public static final String CONTENT_TYPE_B_PUSH_CO = "application/vnd.wap.coc";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.547 -0500", hash_original_field = "30E4373950A64E1C033B12557F4B7189", hash_generated_field = "5F0B8A7CFD7D9E331890C88C73AA57E8")
@@ -54,7 +43,6 @@ public class WspTypeDecoder {
 
     public static final String CONTENT_TYPE_B_PUSH_SYNCML_NOTI = "application/vnd.syncml.notification";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.551 -0500", hash_original_field = "8290EB0F02CFA38CB47A5B024440BD48", hash_generated_field = "8290EB0F02CFA38CB47A5B024440BD48")
-
 
     byte[] wspData;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.553 -0500", hash_original_field = "C2C63300DBA8596D9F7506F440BE0C4D", hash_generated_field = "C2C63300DBA8596D9F7506F440BE0C4D")
@@ -67,7 +55,6 @@ public class WspTypeDecoder {
 
     String stringValue;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.560 -0500", hash_original_field = "99E7FB2AD756216059D191866E496D5B", hash_generated_field = "99E7FB2AD756216059D191866E496D5B")
-
 
     HashMap<String, String> contentParameters;
 
@@ -605,6 +592,7 @@ public boolean decodeXWapInitiatorURI(int startIndex) {
     /**
      * The data length of latest operation.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.614 -0500", hash_original_method = "097EE97643EAEF3891CA5DC97464AC94", hash_generated_method = "EC9F5ADC14F341FBC07C2F35981FE3DF")
     
 public int getDecodedDataLength() {
@@ -763,6 +751,7 @@ public int getDecodedDataLength() {
     /**
      * The 32-bits result of latest operation.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.617 -0500", hash_original_method = "222353B4CE9A8EDC30DC1C12168B96BB", hash_generated_method = "AC69C7C36273AF6F057F89D981224EAB")
     
 public long getValue32() {
@@ -772,6 +761,7 @@ public long getValue32() {
     /**
      * The String result of latest operation.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.619 -0500", hash_original_method = "8109E4DB1588BAB17F9AEE1B35CA6B07", hash_generated_method = "98A308431A618363FBF44E7348C16BD5")
     
 public String getValueString() {
@@ -788,6 +778,7 @@ public String getValueString() {
      *         unassigned parameter.  If a parameter has No-Value the value will be null.
      *
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.621 -0500", hash_original_method = "F1FCA07D8088CB011EA83E53B391A96C", hash_generated_method = "935124A4CF397E53F7FFD7156B3259CA")
     
 public HashMap<String, String> getContentParameters() {

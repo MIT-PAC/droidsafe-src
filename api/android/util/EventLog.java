@@ -45,6 +45,7 @@ public class EventLog {
      * @param tag code to look up
      * @return the name of the tag, or null if no tag has that number
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:22.125 -0500", hash_original_method = "0174D1EFCDD533F8825A3612A3EF7C46", hash_generated_method = "D3EC0610E6DAE7C7CAA4131645980B8D")
     
 public static String getTagName(int tag) {
@@ -162,6 +163,7 @@ Event(byte[] data) {
         }
 
         /** @return the process ID which wrote the log entry */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:22.088 -0500", hash_original_method = "C727D17C1ABE4CA2F41D8D2314B99577", hash_generated_method = "FDD1482CDC79BC1B40E4331B4D7E9867")
         
 public int getProcessId() {
@@ -169,6 +171,7 @@ public int getProcessId() {
         }
 
         /** @return the thread ID which wrote the log entry */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:22.090 -0500", hash_original_method = "5C1055DF8325BC493282A721B537C094", hash_generated_method = "08F8DF8CC740175CED8E1D8B0FDA240C")
         
 public int getThreadId() {
@@ -176,6 +179,7 @@ public int getThreadId() {
         }
 
         /** @return the wall clock time when the entry was written */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:22.093 -0500", hash_original_method = "8DE4962A92E5344AF237DA513A746866", hash_generated_method = "5B0DCDF8FE42BF1B397F4D82DDFB0A1E")
         
 public long getTimeNanos() {
@@ -184,6 +188,7 @@ public long getTimeNanos() {
         }
 
         /** @return the type tag code of the entry */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:22.096 -0500", hash_original_method = "E731C73BB2559185B3FCAA3365113EC6", hash_generated_method = "FFCDF33F86204EE3A499675592AC033F")
         
 public int getTag() {
@@ -191,6 +196,7 @@ public int getTag() {
         }
 
         /** @return one of Integer, Long, String, null, or Object[] of same. */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:22.098 -0500", hash_original_method = "87D859F946E538D2E12E387EABE85774", hash_generated_method = "EC5AEE6DEFB579A24EA8C831D0FD9321")
         
 public synchronized Object getData() {

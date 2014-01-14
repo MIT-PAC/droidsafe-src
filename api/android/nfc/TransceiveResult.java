@@ -9,10 +9,6 @@ import java.io.IOException;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public final class TransceiveResult implements Parcelable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:50.785 -0500", hash_original_field = "3D2A0A46A17A176E4787361ED7109E90", hash_generated_field = "93D71095BCD71B4D4475A608C17F7F57")
 
@@ -56,7 +52,6 @@ public final class TransceiveResult implements Parcelable {
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:50.794 -0500", hash_original_field = "898029569E5207542E445F1B5791BBF2", hash_generated_field = "898029569E5207542E445F1B5791BBF2")
 
-
      int mResult;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:50.796 -0500", hash_original_field = "9B327001CAAE073009DBABE5CADFA298", hash_generated_field = "9B327001CAAE073009DBABE5CADFA298")
 
@@ -69,6 +64,7 @@ public TransceiveResult(final int result, final byte[] data) {
         mResponseData = data;
     }
 
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:50.800 -0500", hash_original_method = "B3157A12430DB97B40C44B33A50DEAC2", hash_generated_method = "EA8B9E9A0510ED2206C50A315DFD6B75")
     
 public byte[] getResponseOrThrow() throws IOException {

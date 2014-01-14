@@ -150,6 +150,7 @@ public void setScheme(String scheme) {
       mScheme = scheme;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:06.484 -0500", hash_original_method = "631B0276BE6088C8DB198A5E8698D898", hash_generated_method = "D8EB606C83E382B42BD568ABEA134902")
     
 public String getScheme() {
@@ -162,6 +163,7 @@ public void setHost(String host) {
       mHost = host;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:06.488 -0500", hash_original_method = "B21C2297C1E60D4D2D92DDE75D931874", hash_generated_method = "6A355E9CFD8CF295DC08D3692B6B0773")
     
 public String getHost() {
@@ -174,6 +176,7 @@ public void setPort(int port) {
       mPort = port;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:06.493 -0500", hash_original_method = "D8DAED2CD8A0984A9202198C71DA9D83", hash_generated_method = "33B8E8C1C43AC396F100852932189626")
     
 public int getPort() {
@@ -186,6 +189,7 @@ public void setPath(String path) {
       mPath = path;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:06.497 -0500", hash_original_method = "F177C5B02553C0E0327F321BDDCEAFD5", hash_generated_method = "737CD89E9B5A7ABC855CEA2E5A098D56")
     
 public String getPath() {
@@ -198,6 +202,7 @@ public void setAuthInfo(String authInfo) {
       mAuthInfo = authInfo;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:06.501 -0500", hash_original_method = "C7467B6BC58B66FEF459E374D8052C25", hash_generated_method = "43D3EDDE322033F0418552A916AA2A4F")
     
 public String getAuthInfo() {

@@ -241,6 +241,7 @@ public abstract float get();
      * @exception BufferUnderflowException
      *                if {@code dst.length} is greater than {@code remaining()}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.911 -0500", hash_original_method = "5C1BC742B784E1F54201A6BFE04FB3C1", hash_generated_method = "A25DC9A0C575B997CCD28575DD9FA6AF")
     
 public FloatBuffer get(float[] dst) {
@@ -266,6 +267,7 @@ public FloatBuffer get(float[] dst) {
      * @exception BufferUnderflowException
      *                if {@code floatCount} is greater than {@code remaining()}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.914 -0500", hash_original_method = "62E3FD5BE0E5A19BF5F39022D7154217", hash_generated_method = "CFEDBCC4F65A19B096EA2EB2DAE7FBC4")
     
 public FloatBuffer get(float[] dst, int dstOffset, int floatCount) {

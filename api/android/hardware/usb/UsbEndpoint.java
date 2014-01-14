@@ -7,12 +7,7 @@ import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public class UsbEndpoint implements Parcelable {
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.975 -0400", hash_original_field = "1F925C8BDC204DFBE1A9F1D995B6F52C", hash_generated_field = "438080ABC723F019CBF0CEFAFA519D03")
 
@@ -35,7 +30,6 @@ public UsbEndpoint[] newArray(int size) {
         }
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:49.572 -0500", hash_original_field = "C6748DE6B660DCB404EDCE764B192848", hash_generated_field = "1BE2BFB4A5E404FE17164B090FF85336")
-
 
     private  int mAddress;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:49.574 -0500", hash_original_field = "618475F66B903113A1196A9C310B4562", hash_generated_field = "38E582B0031888860D19E53B65089433")
@@ -70,6 +64,7 @@ public UsbEndpoint(int address, int attributes, int maxPacketSize, int interval)
      *
      * @return the endpoint's address
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:49.584 -0500", hash_original_method = "1ACE37C7AEF4979E99CF3DA88C3DB9F0", hash_generated_method = "28CCA00BE74BC393741988210C125FFA")
     
 public int getAddress() {
@@ -81,6 +76,7 @@ public int getAddress() {
      *
      * @return the endpoint's endpoint number
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:49.586 -0500", hash_original_method = "530E1C5174A47AC9C94137EACF355AFA", hash_generated_method = "7D4D27C38834323CA2543A986FCC32C1")
     
 public int getEndpointNumber() {
@@ -98,6 +94,7 @@ public int getEndpointNumber() {
      *
      * @return the endpoint's direction
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:49.589 -0500", hash_original_method = "5E2273EF2E39AF02B90546F0D57EC6D9", hash_generated_method = "A1FA6ABD86A2E814DA6C5A9F8B4D0E15")
     
 public int getDirection() {
@@ -109,6 +106,7 @@ public int getDirection() {
      *
      * @return the endpoint's attributes
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:49.591 -0500", hash_original_method = "36DAD0B9D253F08C19BBEFC651F6D4C9", hash_generated_method = "52C6D23851DC7FAA7602943CDF2520C5")
     
 public int getAttributes() {
@@ -127,6 +125,7 @@ public int getAttributes() {
      *
      * @return the endpoint's type
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:49.593 -0500", hash_original_method = "ED0BDC5BE5FF0D5E260DB90C1E62D731", hash_generated_method = "662A8CEFE36E97D50AA6ACD7AB54FAD3")
     
 public int getType() {
@@ -138,6 +137,7 @@ public int getType() {
      *
      * @return the endpoint's maximum packet size
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:49.596 -0500", hash_original_method = "E96412E34BF386D230BE1BA24C763C9C", hash_generated_method = "934C9BF7293BED5FEDD7D180EF63ECD2")
     
 public int getMaxPacketSize() {
@@ -149,6 +149,7 @@ public int getMaxPacketSize() {
      *
      * @return the endpoint's interval
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:49.598 -0500", hash_original_method = "C237023D57B3F5BEEDC74CA45F45E95A", hash_generated_method = "72B739C4D3EAC363EFDB462B8A990D23")
     
 public int getInterval() {

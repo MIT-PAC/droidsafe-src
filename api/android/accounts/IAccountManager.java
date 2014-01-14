@@ -17,7 +17,8 @@ private static final java.lang.String DESCRIPTOR = "android.accounts.IAccountMan
  * Cast an IBinder object into an android.accounts.IAccountManager interface,
  * generating a proxy if needed.
  */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:46.758 -0500", hash_original_method = "070C6DDC88ED014883E5B71B36D3A9EE", hash_generated_method = "AF427E403C371A5E56F3973FB6E3AF25")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:46.758 -0500", hash_original_method = "070C6DDC88ED014883E5B71B36D3A9EE", hash_generated_method = "AF427E403C371A5E56F3973FB6E3AF25")
         
 public static android.accounts.IAccountManager asInterface(android.os.IBinder obj)
 {
@@ -56,13 +57,15 @@ public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:46.782 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:46.782 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
             
 public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:46.785 -0500", hash_original_method = "613F5AA8B2BF31EC9130873BA11619C0", hash_generated_method = "5385C0A2CC4FEA5417E82C2F32B2A9A3")
+@DSSource({DSSourceKind.ACCOUNT_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:46.785 -0500", hash_original_method = "613F5AA8B2BF31EC9130873BA11619C0", hash_generated_method = "5385C0A2CC4FEA5417E82C2F32B2A9A3")
             
 public java.lang.String getPassword(android.accounts.Account account) throws android.os.RemoteException
 {
@@ -88,7 +91,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:46.788 -0500", hash_original_method = "1369827228C2F9DDBAA4B6ECA2E8F6A7", hash_generated_method = "85BC745FE5C53AE9EF039EBE94EA18E3")
+@DSSource({DSSourceKind.ACCOUNT_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:46.788 -0500", hash_original_method = "1369827228C2F9DDBAA4B6ECA2E8F6A7", hash_generated_method = "85BC745FE5C53AE9EF039EBE94EA18E3")
             
 public java.lang.String getUserData(android.accounts.Account account, java.lang.String key) throws android.os.RemoteException
 {
@@ -115,7 +119,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:46.790 -0500", hash_original_method = "455B780F5DB92F774B23366EC2E886B7", hash_generated_method = "BC34F2933FF17CE05D1948FA94463C8E")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:46.790 -0500", hash_original_method = "455B780F5DB92F774B23366EC2E886B7", hash_generated_method = "BC34F2933FF17CE05D1948FA94463C8E")
             
 public android.accounts.AuthenticatorDescription[] getAuthenticatorTypes() throws android.os.RemoteException
 {
@@ -134,7 +139,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:46.793 -0500", hash_original_method = "AA0D02F193C8C1E99102BFE98B5DD2D8", hash_generated_method = "BE210932322F2C92E4D6DD575675852F")
+@DSSource({DSSourceKind.ACCOUNT_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:46.793 -0500", hash_original_method = "AA0D02F193C8C1E99102BFE98B5DD2D8", hash_generated_method = "BE210932322F2C92E4D6DD575675852F")
             
 public android.accounts.Account[] getAccounts(java.lang.String accountType) throws android.os.RemoteException
 {
@@ -613,7 +619,8 @@ public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:46.761 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:46.761 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
         
 public android.os.IBinder asBinder()
 {

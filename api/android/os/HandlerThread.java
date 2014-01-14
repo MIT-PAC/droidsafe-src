@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class HandlerThread extends Thread {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.197 -0500", hash_original_field = "1D8CA7654CC48BAF402334392A1619BF", hash_generated_field = "1D8CA7654CC48BAF402334392A1619BF")
 
@@ -70,6 +66,7 @@ public void run() {
      * has been started, this method will block until the looper has been initialized.  
      * @return The looper.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.214 -0500", hash_original_method = "0FC13809696BA2D6DC441C842770D0F1", hash_generated_method = "4B1708DC77C7D7E3B2BA2EC8692FAEBE")
     
 public Looper getLooper() {
@@ -109,12 +106,12 @@ public boolean quit() {
     /**
      * Returns the identifier of this thread. See Process.myTid().
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.219 -0500", hash_original_method = "EC4E0EE5AEE6B394A49A3FA195776A82", hash_generated_method = "8D563438E811E72E71A9B78483890840")
     
 public int getThreadId() {
         return mTid;
     }
-
     
 }
 

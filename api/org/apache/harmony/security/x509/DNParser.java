@@ -11,11 +11,6 @@ import java.util.List;
 import org.apache.harmony.security.x501.AttributeTypeAndValue;
 import org.apache.harmony.security.x501.AttributeValue;
 
-
-
-
-
-
 public final class DNParser {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:59.059 -0500", hash_original_field = "5780BC7BCF265A6425A5A90F1AD9B24E", hash_generated_field = "74B29150B9CA7F1725D53FF286BFBC4B")
 
@@ -288,6 +283,7 @@ private char getEscaped() throws IOException {
     /**
      * Decodes a UTF-8 char.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:59.091 -0500", hash_original_method = "12C3774F0261E7D12FCB54FD470B78E6", hash_generated_method = "588B076DFA49A30C4009835A440F9A60")
     
 protected char getUTF8() throws IOException {
@@ -379,6 +375,7 @@ private int getByte(int position) throws IOException {
      * @return a list of Relative Distinguished Names(RND),
      *         each RDN is represented as a list of AttributeTypeAndValue objects
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:59.097 -0500", hash_original_method = "17512CE00D4450F012CF195B2D29239B", hash_generated_method = "0D8D59A4B9A117C6EE0DA6D251D5C754")
     
 public List<List<AttributeTypeAndValue>> parse() throws IOException {
@@ -435,7 +432,6 @@ public List<List<AttributeTypeAndValue>> parse() throws IOException {
             }
         }
     }
-
     
 }
 

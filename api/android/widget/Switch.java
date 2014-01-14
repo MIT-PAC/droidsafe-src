@@ -324,6 +324,7 @@ public void setSwitchTypeface(Typeface tf) {
     /**
      * Returns the text displayed when the button is in the checked state.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.973 -0500", hash_original_method = "5C0E5388314CF71485B1BF56327EECD2", hash_generated_method = "88C8DD18DC57878BA442223FAB42DEBF")
     
 public CharSequence getTextOn() {
@@ -343,6 +344,7 @@ public void setTextOn(CharSequence textOn) {
     /**
      * Returns the text displayed when the button is not in the checked state.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.977 -0500", hash_original_method = "EAEA80D56F502C97F845DE2B9DA853EF", hash_generated_method = "849DDC2D49CECB6A57382D582199C99E")
     
 public CharSequence getTextOff() {
@@ -681,6 +683,7 @@ private boolean getTargetCheckedState() {
         canvas.restore();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:39.014 -0500", hash_original_method = "C22AF595E85F3FD93263583BC3DF92ED", hash_generated_method = "23C197D675F68CF79053E814C001C6B3")
     
 @Override

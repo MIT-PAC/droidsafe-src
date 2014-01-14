@@ -32,6 +32,7 @@ protected static void setPreferences(Properties preferences) {
         fPreferences= preferences;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.275 -0500", hash_original_method = "DA69842FD3F27114EEF071F656F6196E", hash_generated_method = "CCE0E07084E93354B0C43B02C7F1A420")
     
 protected static Properties getPreferences() {
@@ -90,13 +91,15 @@ private static void readPreferences() {
         }
      }
 
-     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.327 -0500", hash_original_method = "546188EB296FF182165775D30DBEF8CB", hash_generated_method = "1658F68DC450829BB9529B34BC9A99D9")
+     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.327 -0500", hash_original_method = "546188EB296FF182165775D30DBEF8CB", hash_generated_method = "1658F68DC450829BB9529B34BC9A99D9")
     
 public static String getPreference(String key) {
          return getPreferences().getProperty(key);
      }
 
-     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.330 -0500", hash_original_method = "C73546D208D255842EFDD569FA86F2C2", hash_generated_method = "538B073E44FFEA94405F6CF68B473E99")
+     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.330 -0500", hash_original_method = "C73546D208D255842EFDD569FA86F2C2", hash_generated_method = "538B073E44FFEA94405F6CF68B473E99")
     
 public static int getPreference(String key, int dflt) {
          String value= getPreference(key);
@@ -125,6 +128,7 @@ public static boolean inVAJava() {
     /**
      * Returns a filtered stack trace
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.334 -0500", hash_original_method = "28E46636FF437AE43E291479AD98B04F", hash_generated_method = "7EA05E5751D122DF450E346687039F72")
     
 public static String getFilteredTrace(Throwable t) {
@@ -139,6 +143,7 @@ public static String getFilteredTrace(Throwable t) {
     /**
      * Filters stack frames from internal JUnit classes
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.337 -0500", hash_original_method = "1F34B54C4F8B49B6E8A9867036CAC259", hash_generated_method = "2FC5714F1808D39C77E289339760C400")
     
 public static String getFilteredTrace(String stack) {
@@ -264,6 +269,7 @@ public abstract void testFailed(int status, Test test, Throwable t);
      * Returns the Test corresponding to the given suite. This is
      * a template method, subclasses override runFailed(), clearStatus().
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.296 -0500", hash_original_method = "2E093CF05CBCDB737F05E1D7A4FAF338", hash_generated_method = "21985FE09E0154339DAA04095503B9C7")
     
 public Test getTest(String suiteClassName) {
@@ -328,6 +334,7 @@ public String elapsedTimeAsString(long runTime) {
      * Processes the command line arguments and
      * returns the name of the suite class to run or null
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.301 -0500", hash_original_method = "BE11435DC4AA3D9B45D704504FF19D7A", hash_generated_method = "AA0602983C75C80BAEE178CCDC64A524")
     
 protected String processArguments(String[] args) {
@@ -380,6 +387,7 @@ protected abstract void runFailed(String message);
     /**
      * Returns the loaded Class for a suite name.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.313 -0500", hash_original_method = "53378ECE171D61BBF4EFB0D39916FCCF", hash_generated_method = "555C7DE432743A36059FF02274863774")
     
 protected Class loadSuiteClass(String suiteClassName) throws ClassNotFoundException {
@@ -397,6 +405,7 @@ protected void clearStatus() { // Belongs in the GUI TestRunner class
     /**
      * Returns the loader to be used.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.317 -0500", hash_original_method = "E9EF8772E071281B9CB71EDD599F1B7C", hash_generated_method = "FADD03C3DE3629526FC468468334415D")
     
 public TestSuiteLoader getLoader() {

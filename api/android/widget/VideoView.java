@@ -686,6 +686,7 @@ public void resume() {
     }
 
     // cache duration as mDuration for faster access
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:55.814 -0500", hash_original_method = "C1F40EE967CAE2C17948E71A2C41731D", hash_generated_method = "A649601A52D505DD00BC0F60E29669E4")
     
 public int getDuration() {
@@ -700,6 +701,7 @@ public int getDuration() {
         return mDuration;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:55.816 -0500", hash_original_method = "0795537A6D4F5DB67695C2A0F229C436", hash_generated_method = "2CB25376E75EBBD3D5C7ED29508C8590")
     
 public int getCurrentPosition() {
@@ -726,6 +728,7 @@ public boolean isPlaying() {
         return isInPlaybackState() && mMediaPlayer.isPlaying();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:55.823 -0500", hash_original_method = "FEBDDA350C03AAA5C15557B944427C9D", hash_generated_method = "58A79B210E234FAED8A0D28C0D1B6B1E")
     
 public int getBufferPercentage() {

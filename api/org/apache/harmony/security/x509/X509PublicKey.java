@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.security.PublicKey;
 
-
-
-
-
-
 public final class X509PublicKey implements PublicKey {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.987 -0500", hash_original_field = "1DDAED4286CC7F9A2BC49502885440CE", hash_generated_field = "40E4722A302366B2A43F1CD6C99E2454")
 
@@ -30,18 +25,21 @@ public X509PublicKey(String algorithm, byte[] encoded, byte[] keyBytes) {
         this.keyBytes = keyBytes;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.996 -0500", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "09B8CB0F05513E7BA5A386900D5BF6E6")
     
 public String getAlgorithm() {
         return algorithm;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.998 -0500", hash_original_method = "52CFE6084CDA819966418EDF944DBC96", hash_generated_method = "7238AE3F6AC2664EEF973F2CB2EA7A49")
     
 public String getFormat() {
         return "X.509";
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:56.001 -0500", hash_original_method = "4EC4E5E78B7F57FB746895217115C4A0", hash_generated_method = "D6850C5A9F5DEB5E23D686FE3D53149E")
     
 public byte[] getEncoded() {
@@ -59,7 +57,6 @@ public byte[] getEncoded() {
         // buf.append(Arrays.toString(keyBytes));
         return buf.toString();
     }
-
     
 }
 

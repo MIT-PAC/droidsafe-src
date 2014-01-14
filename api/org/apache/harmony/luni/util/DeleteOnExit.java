@@ -13,6 +13,7 @@ public class DeleteOnExit extends Thread {
     /**
      * Returns our singleton instance, creating it if necessary.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:27.371 -0500", hash_original_method = "5F2B916DEBE9B88C4D0351AB645CF666", hash_generated_method = "D55E2D40C001CB12E806F853D6224C5F")
     
 public static synchronized DeleteOnExit getInstance() {

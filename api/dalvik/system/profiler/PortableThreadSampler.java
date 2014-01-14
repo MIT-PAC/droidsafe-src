@@ -23,6 +23,7 @@ class PortableThreadSampler implements ThreadSampler {
         this.depth = depth;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:40.353 -0500", hash_original_method = "E8C7A5DFD07B28248405DFC9E0C75853", hash_generated_method = "EE73165FFF9E91AF146444B307784C44")
     
 @Override public StackTraceElement[] getStackTrace(Thread thread) {

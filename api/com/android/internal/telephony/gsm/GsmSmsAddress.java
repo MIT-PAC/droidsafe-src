@@ -9,22 +9,14 @@ import android.telephony.PhoneNumberUtils;
 import com.android.internal.telephony.GsmAlphabet;
 import com.android.internal.telephony.SmsAddress;
 
-
-
-
-
-
 public class GsmSmsAddress extends SmsAddress {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:21.633 -0500", hash_original_field = "18DA9B883CBAF7214F059A4E280D4E9A", hash_generated_field = "BAEAAA3B1617171D1C1E99BC0FAB1BFC")
-
 
     static final int OFFSET_ADDRESS_LENGTH = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:21.636 -0500", hash_original_field = "9E47FBBB53AF74FDF2F28F097B14D2E3", hash_generated_field = "7FDA3A692BC2298A10BEE7791ED6AD24")
 
-
     static final int OFFSET_TOA = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:21.638 -0500", hash_original_field = "E8F4F7484EB3F156514A17792BA2EDD6", hash_generated_field = "E0E5804158D85D8E1B3FA048EFDDDD90")
-
 
     static final int OFFSET_ADDRESS_VALUE = 2;
 
@@ -78,6 +70,7 @@ public GsmSmsAddress(byte[] data, int offset, int length) {
         }
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:21.644 -0500", hash_original_method = "EAD8B5BB0DBAF5034E5C9FE6C7B0909A", hash_generated_method = "16A98D98BF22E2226CA4E552EBC9B9DF")
     
 public String getAddressString() {

@@ -299,6 +299,7 @@ public abstract String getProviderName();
         return super.onTransact(code, data, reply, flags);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:36.822 -0500", hash_original_method = "2E6ED031FA2AB47CC2982E0232E351E2", hash_generated_method = "5E3B69CCD103133228ACADBBDEF1CE7E")
     
 public IBinder asBinder()
@@ -384,6 +385,7 @@ public Cursor query(Uri url, String[] projection, String selection,
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:36.833 -0500", hash_original_method = "53511528A81FA80D8FEA51649EBDE31C", hash_generated_method = "6B2DA9A83FE3405C85B6102340C33B28")
     
 public String getType(Uri url) throws RemoteException
@@ -406,6 +408,7 @@ public String getType(Uri url) throws RemoteException
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:36.836 -0500", hash_original_method = "357B46C024ADAE1E71A2CDEC64307714", hash_generated_method = "3B83266DA31C149887F8F13E7C2A007D")
     
 public Uri insert(Uri url, ContentValues values) throws RemoteException
@@ -604,6 +607,7 @@ public Bundle call(String method, String request, Bundle args)
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:36.856 -0500", hash_original_method = "395B2F944828CBA26EF4C9D4B93255E5", hash_generated_method = "6315E62F42A8D61198E1B399829F2B9B")
     
 public String[] getStreamTypes(Uri url, String mimeTypeFilter) throws RemoteException

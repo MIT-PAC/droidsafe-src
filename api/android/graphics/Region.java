@@ -236,6 +236,7 @@ public boolean setPath(Path path, Region clip) {
      * Return a new Rect set to the bounds of the region. If the region is
      * empty, the Rect will be set to [0, 0, 0, 0]
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.226 -0500", hash_original_method = "EBA477C7AF945181ADA3A9B8177742BE", hash_generated_method = "91F82C3A1BDD393CBC9AC4F6E285E45C")
     
 public Rect getBounds() {
@@ -261,6 +262,7 @@ public boolean getBounds(Rect r) {
      * Return the boundary of the region as a new Path. If the region is empty,
      * the path will also be empty.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.231 -0500", hash_original_method = "378316FE7952FD732F90591AB3699DE2", hash_generated_method = "D31D11F12DD46AB8DDBF7582ACF4373A")
     
 public Path getBoundaryPath() {

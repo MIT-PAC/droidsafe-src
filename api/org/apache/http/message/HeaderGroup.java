@@ -118,6 +118,7 @@ public void setHeaders(Header[] headers) {
      * @return a header with a condensed value or <code>null</code> if no
      * headers by the given name are present
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:49.703 -0500", hash_original_method = "401EFCB61975E058185EEB3D46A8D6DB", hash_generated_method = "17F3700C3F9D9282BC3E697F5474C783")
     
 public Header getCondensedHeader(String name) {
@@ -149,6 +150,7 @@ public Header getCondensedHeader(String name) {
      * 
      * @return an array of length >= 0
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:49.706 -0500", hash_original_method = "C3B2FF3CCB5B189FEFC22CBF4687F83D", hash_generated_method = "A9F2B5A82F6968B911F5F0EBD08FBDDB")
     
 public Header[] getHeaders(String name) {
@@ -172,6 +174,7 @@ public Header[] getHeaders(String name) {
      * @param name the name of the header to get
      * @return the first header or <code>null</code>
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:49.709 -0500", hash_original_method = "1B5D001D749637B235D3368FA2C6DC92", hash_generated_method = "F35F2A4913636C76F8DC70536FD5AF2B")
     
 public Header getFirstHeader(String name) {
@@ -192,6 +195,7 @@ public Header getFirstHeader(String name) {
      * @param name the name of the header to get
      * @return the last header or <code>null</code>
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:49.712 -0500", hash_original_method = "F097824BB9F324FCD125DCECBE8EB60F", hash_generated_method = "534C6B0FE21792E4C5117DE7A0A24EFB")
     
 public Header getLastHeader(String name) {
@@ -211,6 +215,7 @@ public Header getLastHeader(String name) {
      * 
      * @return an array of length >= 0
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:49.715 -0500", hash_original_method = "51A146DC1B834742F5A648A6C7C2FBE7", hash_generated_method = "3FBF8A33AF0B807B8E3CE9C8312BD52A")
     
 public Header[] getAllHeaders() {

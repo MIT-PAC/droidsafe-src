@@ -20,6 +20,7 @@ public abstract class Singleton<T> {
     
 protected abstract T create();
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:21.145 -0500", hash_original_method = "CF8212F11D8E5F22A25C4FBFDDF16383", hash_generated_method = "62CFCE0241BE7E6153D0BE1DAA53363E")
     
 public final T get() {

@@ -174,6 +174,7 @@ public void setSelection(int position) {
     /**
      * Get the position of the currently selected list item.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:35.087 -0500", hash_original_method = "602C73B7F7242D55D7B4B399409B7E51", hash_generated_method = "EF2F15FACD5AFD8A602B2895872995B7")
     
 public int getSelectedItemPosition() {
@@ -184,6 +185,7 @@ public int getSelectedItemPosition() {
     /**
      * Get the cursor row ID of the currently selected list item.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:35.089 -0500", hash_original_method = "7FA8F631361DB814AF49E068AB6A3A01", hash_generated_method = "B331E878633D89AE3581D2EE05D8FA23")
     
 public long getSelectedItemId() {
@@ -194,6 +196,7 @@ public long getSelectedItemId() {
     /**
      * Get the activity's list view widget.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:35.092 -0500", hash_original_method = "B9D8406BF510100833C8B83670824289", hash_generated_method = "F390A30877A55CE39C88D546BF9EAE07")
     
 public ListView getListView() {
@@ -303,6 +306,7 @@ private void setListShown(boolean shown, boolean animate) {
     /**
      * Get the ListAdapter associated with this activity's ListView.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:35.104 -0500", hash_original_method = "6C199B6FBEC38BDF6D031387113C1DD5", hash_generated_method = "F0392D746E5256DD5E352F87E4AB1051")
     
 public ListAdapter getListAdapter() {

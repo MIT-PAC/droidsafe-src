@@ -237,6 +237,7 @@ public InputMethodInfo(String packageName, String className,
      * Return a unique ID for this input method.  The ID is generated from
      * the package and class name implementing the method.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:18.849 -0500", hash_original_method = "89A68E81BC93C5F428177630DB2A624A", hash_generated_method = "8F9FC8944DF69B66CB8D7A8B6ABB6416")
     
 public String getId() {
@@ -246,6 +247,7 @@ public String getId() {
     /**
      * Return the .apk package that implements this input method.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:18.851 -0500", hash_original_method = "0C90B853C75D6A321E7BDA40C2595177", hash_generated_method = "6994E25AD1E96805A7C2A499125900C0")
     
 public String getPackageName() {
@@ -256,6 +258,7 @@ public String getPackageName() {
      * Return the class name of the service component that implements
      * this input method.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:18.854 -0500", hash_original_method = "E07B8397F26D2C3A4747E56AC8F0D204", hash_generated_method = "41E20EE2BC25C2B6141BF6F906B02B30")
     
 public String getServiceName() {
@@ -266,6 +269,7 @@ public String getServiceName() {
      * Return the raw information about the Service implementing this
      * input method.  Do not modify the returned object.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:18.856 -0500", hash_original_method = "543F99CB65CBDD66082E6D4B92910AC5", hash_generated_method = "1E6E8EA06F8EE7CE7231791DBE1C3740")
     
 public ServiceInfo getServiceInfo() {
@@ -276,6 +280,7 @@ public ServiceInfo getServiceInfo() {
      * Return the component of the service that implements this input
      * method.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:18.858 -0500", hash_original_method = "A035D08443F3F9853C50476F9CD3E50F", hash_generated_method = "2B97835D1618C71F40A014490410F857")
     
 public ComponentName getComponent() {
@@ -317,6 +322,7 @@ public Drawable loadIcon(PackageManager pm) {
      * <p>A null will be returned if there is no settings activity associated
      * with the input method.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:18.866 -0500", hash_original_method = "EE56873026FFE7A9D4435487CEBA8D19", hash_generated_method = "B6031419836B6E01A163B6457817552A")
     
 public String getSettingsActivity() {
@@ -326,6 +332,7 @@ public String getSettingsActivity() {
     /**
      * Return the count of the subtypes of Input Method.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:18.868 -0500", hash_original_method = "CC228A570F36729F1778728092FDBD7B", hash_generated_method = "BF3C4168A920856FD17636F2E32450ED")
     
 public int getSubtypeCount() {
@@ -337,6 +344,7 @@ public int getSubtypeCount() {
      *
      * @param index the index of the subtype to return.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:18.871 -0500", hash_original_method = "8DB3E81066DAFF6D6FC518E613D3324D", hash_generated_method = "807F31B73B8D3E51E45512DA80BDAA5E")
     
 public InputMethodSubtype getSubtypeAt(int index) {
@@ -348,6 +356,7 @@ public InputMethodSubtype getSubtypeAt(int index) {
      * method's .apk that determines whether it should be considered a
      * default input method for the system.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:18.873 -0500", hash_original_method = "D40E950149CD5654CB7133AFB587F871", hash_generated_method = "B5C8A54E71077A04975F58760FA22EF8")
     
 public int getIsDefaultResourceId() {

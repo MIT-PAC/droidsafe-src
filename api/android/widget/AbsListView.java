@@ -39,6 +39,7 @@ import android.view.inputmethod.InputConnectionWrapper;
 
 public abstract class AbsListView extends AdapterView<ListAdapter> implements TextWatcher, ViewTreeObserver.OnGlobalLayoutListener, Filter.FilterListener, ViewTreeObserver.OnTouchModeChangeListener, RemoteViewsAdapter.RemoteAdapterConnectionCallback {
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     static int getDistance(Rect source, Rect dest, int direction){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -525,6 +526,7 @@ public AbsListView(Context context, AttributeSet attrs) {
 		//Return nothing
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getCheckedItemCount(){
 		return getTaintInt();
 		// Original method
@@ -548,6 +550,7 @@ public AbsListView(Context context, AttributeSet attrs) {
 		return false;
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getCheckedItemPosition(){
 		// Original method
 		/*
@@ -561,6 +564,7 @@ public AbsListView(Context context, AttributeSet attrs) {
 		return 0;
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public SparseBooleanArray getCheckedItemPositions(){
 		// Original method
 		/*
@@ -574,6 +578,7 @@ public AbsListView(Context context, AttributeSet attrs) {
 		return null;
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public long[] getCheckedItemIds(){
 		// Original method
 		/*
@@ -623,6 +628,7 @@ public AbsListView(Context context, AttributeSet attrs) {
 		return false;
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getChoiceMode(){
 		return getTaintInt();
 		// Original method
@@ -738,6 +744,7 @@ public AbsListView(Context context, AttributeSet attrs) {
 		return false;
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override public int getVerticalScrollbarWidth(){
 		// Original method
 		/*
@@ -970,6 +977,7 @@ public AbsListView(Context context, AttributeSet attrs) {
 		//Return nothing
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override public Parcelable onSaveInstanceState(){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -1016,6 +1024,7 @@ public AbsListView(Context context, AttributeSet attrs) {
 		//Return nothing
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public CharSequence getTextFilter(){
 		// Original method
 		/*
@@ -1136,6 +1145,7 @@ public AbsListView(Context context, AttributeSet attrs) {
 		return 0;
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override protected float getTopFadingEdgeStrength(){
 		// Original method
 		/*
@@ -1157,6 +1167,7 @@ public AbsListView(Context context, AttributeSet attrs) {
 		return 0;
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override protected float getBottomFadingEdgeStrength(){
 		// Original method
 		/*
@@ -1242,6 +1253,7 @@ protected void layoutChildren() {
 		//Return nothing
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override @ViewDebug.ExportedProperty public View getSelectedView(){
 		// Original method
 		/*
@@ -1256,6 +1268,7 @@ protected void layoutChildren() {
 		return null;
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getListPaddingTop(){
 		// Original method
 		/*
@@ -1266,6 +1279,7 @@ protected void layoutChildren() {
 		return 0;
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getListPaddingBottom(){
 		// Original method
 		/*
@@ -1276,6 +1290,7 @@ protected void layoutChildren() {
 		return 0;
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getListPaddingLeft(){
 		// Original method
 		/*
@@ -1286,6 +1301,7 @@ protected void layoutChildren() {
 		return 0;
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getListPaddingRight(){
 		// Original method
 		/*
@@ -1296,6 +1312,7 @@ protected void layoutChildren() {
 		return 0;
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     View obtainView(int position, boolean[] isScrap){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -1336,6 +1353,7 @@ protected void layoutChildren() {
 		return false;
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override protected int getLeftPaddingOffset(){
 		// Original method
 		/*
@@ -1346,6 +1364,7 @@ protected void layoutChildren() {
 		return 0;
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override protected int getTopPaddingOffset(){
 		// Original method
 		/*
@@ -1356,6 +1375,7 @@ protected void layoutChildren() {
 		return 0;
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override protected int getRightPaddingOffset(){
 		// Original method
 		/*
@@ -1366,6 +1386,7 @@ protected void layoutChildren() {
 		return 0;
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override protected int getBottomPaddingOffset(){
 		// Original method
 		/*
@@ -1484,6 +1505,7 @@ protected void layoutChildren() {
      *
      * @return the drawable used to display the selector
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:53.291 -0500", hash_original_method = "021D90A72F3883D0847A93B24BC54541", hash_generated_method = "5B9462028C894E57F330D82415EC1E27")
     
 public Drawable getSelector() {
@@ -2089,6 +2111,7 @@ public void setScrollIndicators(View up, View down) {
      *
      * @return The number of header views, 0 in the default implementation.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:53.563 -0500", hash_original_method = "D1E5D38495D64541AC6B328A03DDBBE5", hash_generated_method = "D1E5D38495D64541AC6B328A03DDBBE5")
     
 int getHeaderViewsCount() {
@@ -2101,6 +2124,7 @@ int getHeaderViewsCount() {
      *
      * @return The number of footer views, 0 in the default implementation.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:53.565 -0500", hash_original_method = "0C261F26A2F08E82991D35E703E8BFEF", hash_generated_method = "0C261F26A2F08E82991D35E703E8BFEF")
     
 int getFooterViewsCount() {
@@ -2165,6 +2189,7 @@ abstract void fillGap(boolean down);
     
 abstract int findMotionRow(int y);
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     int findClosestMotionRow(int y){
 		// Original method
 		/*
@@ -3113,6 +3138,7 @@ public LayoutParams(ViewGroup.LayoutParams source) {
 			//Return nothing
 		}
         
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         View getActiveView(int position){
 			// Original method
 			/*
@@ -3130,6 +3156,7 @@ public LayoutParams(ViewGroup.LayoutParams source) {
 			return null;
 		}
         
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         View getScrapView(int position){
 			// Original method
 			/*
@@ -3420,6 +3447,7 @@ public void afterTextChanged(Editable s) {
 		//Return nothing
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getTranscriptMode(){
 		return getTaintInt();
 		// Original method
@@ -3430,6 +3458,7 @@ public void afterTextChanged(Editable s) {
 		*/
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override public int getSolidColor(){
 		return getTaintInt();
 		// Original method
@@ -3457,6 +3486,7 @@ public void afterTextChanged(Editable s) {
 		//Return nothing
 	}
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @ViewDebug.ExportedProperty(category="drawing") public int getCacheColorHint(){
 		return getTaintInt();
 		// Original method

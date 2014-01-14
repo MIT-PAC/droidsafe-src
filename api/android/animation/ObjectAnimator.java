@@ -260,6 +260,7 @@ public void setProperty(Property property) {
      * <code>valueFrom</code> or <code>valueTo</code> is null, then a getter function will
      * also be derived and called.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:35.549 -0500", hash_original_method = "53B20749B4CEAC5C134A85897865D0FE", hash_generated_method = "4494B660E2F9A3D639720AD3F41DECE4")
     
 public String getPropertyName() {
@@ -386,6 +387,7 @@ public String getPropertyName() {
      *
      * @return The object being animated
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:35.590 -0500", hash_original_method = "AF1F3CF2C666AC410BA38EDE7AFA44BA", hash_generated_method = "5B4D93ECA8837590455F546455CF6241")
     
 public Object getTarget() {

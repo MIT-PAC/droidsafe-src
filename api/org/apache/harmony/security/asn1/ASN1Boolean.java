@@ -16,6 +16,7 @@ public final class ASN1Boolean extends ASN1Primitive {
      *
      * @return ASN.1 Boolean type default implementation
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:51.514 -0500", hash_original_method = "D432504F1C834D9908D88CC415EEDF53", hash_generated_method = "90B125D538BA019B71FDE7D679B840FD")
     
 public static ASN1Boolean getInstance() {
@@ -56,6 +57,7 @@ public Object decode(BerInputStream in) throws IOException {
      * @param in - BER input stream
      * @return java.lang.Boolean object
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:51.519 -0500", hash_original_method = "61E80FB6E60B72FAF41ECC8283C8390E", hash_generated_method = "68FD17F8CA2219EA7226BC974AB34363")
     
 @Override public Object getDecodedObject(BerInputStream in) throws IOException {

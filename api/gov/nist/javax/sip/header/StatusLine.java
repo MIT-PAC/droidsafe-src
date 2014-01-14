@@ -6,16 +6,11 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import gov.nist.javax.sip.SIPConstants;
 
-
-
-
-
 public final class StatusLine extends SIPObject implements SipStatusLine {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.872 -0500", hash_original_field = "79365C69CBC5A241E22A20696C1E9E79", hash_generated_field = "8EFFA514AA9B40DA5920D5D322D825C6")
 
     private static final long serialVersionUID = -4738092215519950414L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.874 -0500", hash_original_field = "4B44DB64F7D6DC216D1F0EB2F476593E", hash_generated_field = "B8EAB804E3725A6DD3531CF15A699005")
-
 
     protected boolean matchStatusClass;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.878 -0500", hash_original_field = "CE1553CBFC9C6BF901CA3EFBFD71C841", hash_generated_field = "0E22CDA9223E852519CAF5EA7723F865")
@@ -99,6 +94,7 @@ public String encode() {
     /* (non-Javadoc)
      * @see gov.nist.javax.sip.header.SipStatusLine#getSipVersion()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.899 -0500", hash_original_method = "756FD7B4E35B001597A1BAB462C97AFC", hash_generated_method = "7635A3ADA2875913277DA776A6504B01")
     
 public String getSipVersion() {
@@ -108,6 +104,7 @@ public String getSipVersion() {
     /* (non-Javadoc)
      * @see gov.nist.javax.sip.header.SipStatusLine#getStatusCode()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.902 -0500", hash_original_method = "08273B061292A48923EC30EEEA581059", hash_generated_method = "0AA4D52406821AA7CD81148A6B2FA4E2")
     
 public int getStatusCode() {
@@ -117,6 +114,7 @@ public int getStatusCode() {
     /* (non-Javadoc)
      * @see gov.nist.javax.sip.header.SipStatusLine#getReasonPhrase()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.905 -0500", hash_original_method = "CA4528A98316683C1F54E337727EA693", hash_generated_method = "7C91752073E4881A461B47118BAF05BE")
     
 public String getReasonPhrase() {
@@ -153,6 +151,7 @@ public void setReasonPhrase(String reasonPhrase) {
     /* (non-Javadoc)
      * @see gov.nist.javax.sip.header.SipStatusLine#getVersionMajor()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.916 -0500", hash_original_method = "4A94C9174C4923F8D67F5FDBFAEBA922", hash_generated_method = "CEFDE4BE8BC2C1A5D1E79833698FCCE6")
     
 public String getVersionMajor() {
@@ -178,6 +177,7 @@ public String getVersionMajor() {
     /* (non-Javadoc)
      * @see gov.nist.javax.sip.header.SipStatusLine#getVersionMinor()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.919 -0500", hash_original_method = "4EF04355E0E174C22FDE9BF5C4BD4B3D", hash_generated_method = "6EA6974F2F8CEB1964A391173266EFF2")
     
 public String getVersionMinor() {

@@ -98,6 +98,7 @@ public void attachInterface(IInterface owner, String descriptor) {
     /**
      * Default implementation returns an empty interface name.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:38.153 -0500", hash_original_method = "D3E904DAC6E3F35A0A15305E093649D7", hash_generated_method = "851E22E704239ADEFBCD1E61F06C7294")
     
 public String getInterfaceDescriptor() {

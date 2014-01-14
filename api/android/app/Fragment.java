@@ -463,6 +463,7 @@ final boolean isInBackStack() {
      * the android:id value supplied in a layout or the container view ID
      * supplied when adding the fragment.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.015 -0500", hash_original_method = "0D814DEC27C2F0AC661487D8C7B38979", hash_generated_method = "4DF581DD9B3C5EA1E609EFD2DFCBA011")
     
 final public int getId() {
@@ -472,6 +473,7 @@ final public int getId() {
     /**
      * Get the tag name of the fragment, if specified.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.017 -0500", hash_original_method = "ED26754F6A82B43F30EAE698B7941323", hash_generated_method = "CE21FCC1BEE20268D2EE36272C97D74D")
     
 final public String getTag() {
@@ -498,6 +500,7 @@ public void setArguments(Bundle args) {
      * Return the arguments supplied when the fragment was instantiated,
      * if any.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.022 -0500", hash_original_method = "AD916C2ECBF1A5C9327A86449330505D", hash_generated_method = "41574A398FEEB791A1D529AFBDB0AB63")
     
 final public Bundle getArguments() {
@@ -543,6 +546,7 @@ public void setTargetFragment(Fragment fragment, int requestCode) {
     /**
      * Return the target fragment set by {@link #setTargetFragment}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.029 -0500", hash_original_method = "CBC4FCF13CA2895C8D01438D1D6F6EE8", hash_generated_method = "5BEA96F81F4105162E7617ED10DFC1D2")
     
 final public Fragment getTargetFragment() {
@@ -552,6 +556,7 @@ final public Fragment getTargetFragment() {
     /**
      * Return the target request code set by {@link #setTargetFragment}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.031 -0500", hash_original_method = "A4CEFC2C477EE57B614F4504E74127CE", hash_generated_method = "8A962B3F6144966F3684142CE1E156AF")
     
 final public int getTargetRequestCode() {
@@ -561,6 +566,7 @@ final public int getTargetRequestCode() {
     /**
      * Return the Activity this fragment is currently associated with.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.033 -0500", hash_original_method = "3F17133E8D63AE8C7414DC58966291E3", hash_generated_method = "325AD2BF1D0A0B24371BA04573D4605C")
     
 final public Activity getActivity() {
@@ -570,6 +576,7 @@ final public Activity getActivity() {
     /**
      * Return <code>getActivity().getResources()</code>.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.036 -0500", hash_original_method = "A8E18DB36BC334E1CF5901C727187C18", hash_generated_method = "E4C0928E700635ED038F7599AF52D3F4")
     
 final public Resources getResources() {
@@ -585,6 +592,7 @@ final public Resources getResources() {
      *
      * @param resId Resource id for the CharSequence text
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.038 -0500", hash_original_method = "3F649A13E84C6501035126B3FEE231F4", hash_generated_method = "E2B566B00FA2AC61E50317149C5BCECD")
     
 public final CharSequence getText(int resId) {
@@ -597,6 +605,7 @@ public final CharSequence getText(int resId) {
      *
      * @param resId Resource id for the string
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.040 -0500", hash_original_method = "6096F9B7D678CAFA7D67C1784ABCB9A7", hash_generated_method = "D37D9DF864413A58CE69AFC7CD44E2C7")
     
 public final String getString(int resId) {
@@ -612,6 +621,7 @@ public final String getString(int resId) {
      * @param formatArgs The format arguments that will be used for substitution.
      */
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.042 -0500", hash_original_method = "524F00C5C13CBD3BD0D5C512A4C12294", hash_generated_method = "D6859AF8D80E850EE17858448765ABE4")
     
 public final String getString(int resId, Object... formatArgs) {
@@ -625,6 +635,7 @@ public final String getString(int resId, Object... formatArgs) {
      * placed in a {@link FragmentTransaction} until it is committed and
      * attached to its activity.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.044 -0500", hash_original_method = "ED1BD18F392C2062694622C1FF4A3A44", hash_generated_method = "9FB618358C5CDB15EFE3334E40CE4E04")
     
 final public FragmentManager getFragmentManager() {
@@ -742,6 +753,7 @@ public void setRetainInstance(boolean retain) {
         mRetainInstance = retain;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.067 -0500", hash_original_method = "82A17104D5864E2285E97283523AA6C5", hash_generated_method = "D11F75A97102EB6791F32EF78D9550B7")
     
 final public boolean getRetainInstance() {
@@ -813,6 +825,7 @@ public void setUserVisibleHint(boolean isVisibleToUser) {
      * @return The current value of the user-visible hint on this fragment.
      * @see #setUserVisibleHint(boolean)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.075 -0500", hash_original_method = "16570E728AF342CDACA5E18099682804", hash_generated_method = "6AB5C01BD00C9F5856A51813221F3FCB")
     
 public boolean getUserVisibleHint() {
@@ -822,6 +835,7 @@ public boolean getUserVisibleHint() {
     /**
      * Return the LoaderManager for this fragment, creating it if needed.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.077 -0500", hash_original_method = "71C5851113530E9E497DE6FFC60D128C", hash_generated_method = "D633F92B490ADBE12B8C6B78AA25CB20")
     
 public LoaderManager getLoaderManager() {
@@ -888,6 +902,7 @@ public void onActivityResult(int requestCode, int resultCode, Intent data) {
      * its views, and the view construction can use the dialog's context for
      * inflation.  Maybe this should become a public API. Note sure.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.086 -0500", hash_original_method = "8FF008E86C71DF2CF57F1B9E3E9D8CD9", hash_generated_method = "215582C096358607BAA8172CADB219C2")
     
 public LayoutInflater getLayoutInflater(Bundle savedInstanceState) {
@@ -1019,6 +1034,7 @@ public void onViewCreated(View view, Bundle savedInstanceState) {
      * 
      * @return The fragment's root view, or null if it has no layout.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.103 -0500", hash_original_method = "23562CAF30DEA91689886E5D0DFB3D0F", hash_generated_method = "08E70AA8D2F1647EC2EEAF8AC8218386")
     
 public View getView() {

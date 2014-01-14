@@ -1105,6 +1105,7 @@ for(int i = offset + start;i < end;i++)
      * is unspecified. In practice, when the default charset is UTF-8 (as it is on Android),
      * all strings can be encoded.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.883 -0500", hash_original_method = "2E4CA200D3933E45C3FC02936B120C89", hash_generated_method = "0A6A6039C4B3B9F2FADF6ED1F57152BB")
     
 public byte[] getBytes() {
@@ -1120,6 +1121,7 @@ public byte[] getBytes() {
      *
      * @throws UnsupportedEncodingException if the charset is not supported
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.886 -0500", hash_original_method = "D1476A765D84241818C22751CEBD7DE3", hash_generated_method = "DC158139A24E25D529425729D16D0CBF")
     
 public byte[] getBytes(String charsetName) throws UnsupportedEncodingException {
@@ -1136,6 +1138,7 @@ public byte[] getBytes(String charsetName) throws UnsupportedEncodingException {
      *
      * @since 1.6
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.888 -0500", hash_original_method = "56FDAE3B6641018546E6C6674268142D", hash_generated_method = "B122503E334C5D64C92FAC8F5D7C7C64")
     
 public byte[] getBytes(Charset charset) {

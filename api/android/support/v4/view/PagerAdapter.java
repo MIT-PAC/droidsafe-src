@@ -208,6 +208,7 @@ public abstract boolean isViewFromObject(View view, Object object);
      *
      * @return Saved state for this adapter
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:19.025 -0500", hash_original_method = "9C10790C9B509FF6855ECD7BB4443BBC", hash_generated_method = "91C2053613060471C9409FE37D8C4973")
     
 public Parcelable saveState() {
@@ -241,6 +242,7 @@ public void restoreState(Parcelable state, ClassLoader loader) {
      *         {@link #POSITION_UNCHANGED} if the object's position has not changed,
      *         or {@link #POSITION_NONE} if the item is no longer present.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:19.029 -0500", hash_original_method = "A005A760A98AF47FB8E2DAD0B5F81664", hash_generated_method = "01A7DA51C41C27400438FC1069B22549")
     
 public int getItemPosition(Object object) {
@@ -278,6 +280,7 @@ void unregisterDataSetObserver(DataSetObserver observer) {
      * @param position The position of the title requested
      * @return A title for the requested page
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:19.037 -0500", hash_original_method = "D33F5CC8812E682744289E753AD4C997", hash_generated_method = "479873DFF9A60410744CFFB89F78C5F6")
     
 public CharSequence getPageTitle(int position) {

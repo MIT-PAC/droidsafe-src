@@ -238,6 +238,7 @@ private void initFromAttributes(Context context, AttributeSet attrs) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:46.842 -0500", hash_original_method = "73585EFBB2973430E05667E2654BAD3F", hash_generated_method = "1B31E1BC181531E4C927179CADD06337")
     
 @Override
@@ -517,6 +518,7 @@ public void addRule(int verb, int anchor) {
          * @return the supported rules
          * @see #addRule(int, int)
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:46.939 -0500", hash_original_method = "42AF2398E9BA5CDF378E196E0674D4AF", hash_generated_method = "070C893267A247F6E4018633C24E9BB0")
         
 public int[] getRules() {

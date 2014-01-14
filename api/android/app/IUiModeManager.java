@@ -56,7 +56,8 @@ public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:21.709 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:21.709 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
             
 public java.lang.String getInterfaceDescriptor()
 {
@@ -108,7 +109,8 @@ _data.recycle();
 /**
      * Return the current running mode.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:21.717 -0500", hash_original_method = "6CB427398EC24BA8943FAF32B2C558EE", hash_generated_method = "FAEBB14967F9AA8C25730570EA84BF88")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:21.717 -0500", hash_original_method = "6CB427398EC24BA8943FAF32B2C558EE", hash_generated_method = "FAEBB14967F9AA8C25730570EA84BF88")
             
 public int getCurrentModeType() throws android.os.RemoteException
 {
@@ -156,7 +158,8 @@ _data.recycle();
      * Gets the currently configured night mode.  Return 1 for notnight,
      * 2 for night, and 3 for automatic mode switching.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:21.722 -0500", hash_original_method = "45038D1123405D8086E583C427BCDE5E", hash_generated_method = "D333D579A4B5B126CDFEB1204176352E")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:21.722 -0500", hash_original_method = "45038D1123405D8086E583C427BCDE5E", hash_generated_method = "D333D579A4B5B126CDFEB1204176352E")
             
 public int getNightMode() throws android.os.RemoteException
 {
@@ -189,7 +192,8 @@ public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:21.696 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:21.696 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
         
 public android.os.IBinder asBinder()
 {

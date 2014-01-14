@@ -7,11 +7,6 @@ import droidsafe.annotations.*;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 
-
-
-
-
-
 public abstract class ChunkHandler {
 
     /**
@@ -46,13 +41,13 @@ public static ByteBuffer wrapChunk(Chunk request) {
         return in;
     }
 
-
     /**
      * Utility function to copy a String out of a ByteBuffer.
      *
      * This is here because multiple chunk handlers can make use of it,
      * and there's nowhere better to put it.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:25.498 -0500", hash_original_method = "FA7A7F05DB2FE31EEF2BA4F265625DB1", hash_generated_method = "280A70AC481DC324250E99E3A8171D50")
     
 public static String getString(ByteBuffer buf, int len) {
@@ -107,13 +102,10 @@ public static String name(int type)
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:25.478 -0500", hash_original_field = "2496B3C5135989F3D2ADF2C4C881E55D", hash_generated_field = "A2C17307B2D961989393A7361B1B3146")
 
-
     public static final ByteOrder CHUNK_ORDER = ByteOrder.BIG_ENDIAN;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:25.480 -0500", hash_original_field = "07EA4913F42C7E451CF1F131F0F5E47E", hash_generated_field = "87F77568F8CFE33172C27D380CE00E97")
 
-
     public static final int CHUNK_FAIL = type("FAIL");
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:25.483 -0500", hash_original_method = "0BD4350C5F4AC480382F0B830C677606", hash_generated_method = "8C7D92051A6E50910F5A66858FFA4A09")
     

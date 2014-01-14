@@ -13,6 +13,7 @@ public final class CloseGuard {
      * failure to close. If CloseGuard is disabled, a non-null no-op
      * instance is returned.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:38.908 -0500", hash_original_method = "60AA5991C5D5BFE19992192180646E81", hash_generated_method = "D63DC4D9AAA49649EDA1206BE665E8CE")
     
 public static CloseGuard get() {

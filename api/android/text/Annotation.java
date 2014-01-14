@@ -6,10 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.os.Parcel;
 
-
-
-
-
 public class Annotation implements ParcelableSpan {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.064 -0500", hash_original_field = "4666685C3669B68C1BDAE5D25D295D9D", hash_generated_field = "C36B21320914DA8259201FF07A2C068D")
 
@@ -32,6 +28,7 @@ public Annotation(Parcel src) {
         mValue = src.readString();
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.076 -0500", hash_original_method = "4B5D387D9B07EBC2B6CC4E1F3474D3AE", hash_generated_method = "A700127CFF2C5288EB40F7C71DF026B6")
     
 public int getSpanTypeId() {
@@ -51,18 +48,19 @@ public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(mValue);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.084 -0500", hash_original_method = "E0CEA0C6ABDC55C32B991C1D155B5E3E", hash_generated_method = "514BD3D6C2A52F2979AA1634D452B51C")
     
 public String getKey() {
         return mKey;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.086 -0500", hash_original_method = "20F1B7D715A473C2ABE076C27B2A3109", hash_generated_method = "A248978541C494C9EDC5F8C81B52BA84")
     
 public String getValue() {
         return mValue;
     }
-
     
 }
 

@@ -11,11 +11,6 @@ import java.util.ListIterator;
 
 import javax.sip.header.UserAgentHeader;
 
-
-
-
-
-
 public class UserAgent extends SIPHeader implements UserAgentHeader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:11.733 -0500", hash_original_field = "B8CCD547FBEB7B061170555E48F0C532", hash_generated_field = "2C0F80EC4F90746F4C9912D192AB89F6")
 
@@ -75,6 +70,7 @@ public String encodeBody() {
     *
     * @return the software of this UserAgentHeader
     */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:11.750 -0500", hash_original_method = "FCFEA9A6A04C032A17913D323F8D82A6", hash_generated_method = "C9C3D2F5F5748D4E71625F3B55C13941")
     
 public ListIterator getProduct() {

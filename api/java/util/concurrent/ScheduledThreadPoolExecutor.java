@@ -463,6 +463,7 @@ public void setContinueExistingPeriodicTasksAfterShutdownPolicy(boolean value) {
      * @return {@code true} if will continue after shutdown
      * @see #setContinueExistingPeriodicTasksAfterShutdownPolicy
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.077 -0500", hash_original_method = "23365684DD383694198E6F21D088C23A", hash_generated_method = "3948A3ACE4F6203C67D666D3E68B424A")
     
 public boolean getContinueExistingPeriodicTasksAfterShutdownPolicy() {
@@ -499,6 +500,7 @@ public void setExecuteExistingDelayedTasksAfterShutdownPolicy(boolean value) {
      * @return {@code true} if will execute after shutdown
      * @see #setExecuteExistingDelayedTasksAfterShutdownPolicy
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.081 -0500", hash_original_method = "691F6AED1700735267010AB69287CBB5", hash_generated_method = "D15EDED9EC9A06D04D037B40461AB525")
     
 public boolean getExecuteExistingDelayedTasksAfterShutdownPolicy() {
@@ -530,7 +532,8 @@ void setRemoveOnCancelPolicy(boolean value) { // android-changed
      * @see #setRemoveOnCancelPolicy
      * @since 1.7
      */
-    /*public*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.086 -0500", hash_original_method = "3215CF4E7E81ACD4FCE62CEA9B692D35", hash_generated_method = "5620BD1526ADD0251D340D253A9E0017")
+    /*public*/ @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.086 -0500", hash_original_method = "3215CF4E7E81ACD4FCE62CEA9B692D35", hash_generated_method = "5620BD1526ADD0251D340D253A9E0017")
     
 boolean getRemoveOnCancelPolicy() { // android-changed
         return removeOnCancel;
@@ -581,6 +584,7 @@ public void shutdown() {
      *         zero-delay {@code ScheduledFuture}.
      * @throws SecurityException {@inheritDoc}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.091 -0500", hash_original_method = "58CAE4CD18062B6710EA14E24E67D3BE", hash_generated_method = "4310F6E0C68CEDEE4A0BB22C75A7B842")
     
 public List<Runnable> shutdownNow() {
@@ -640,6 +644,7 @@ ScheduledFutureTask(Callable<V> callable, long ns) {
             this.sequenceNumber = sequencer.getAndIncrement();
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.002 -0500", hash_original_method = "EA844DF3AD76AAE2032057524EEDD497", hash_generated_method = "47A643D671F395286C05C1E1DFD7C686")
         
 public long getDelay(TimeUnit unit) {
@@ -1258,6 +1263,7 @@ public Iterator<Runnable> iterator() {
      *
      * @return the task queue
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.093 -0500", hash_original_method = "161D6A52B7D27778B4A9C4AAA82FE7A8", hash_generated_method = "14F2FC0C0EDEB99502501B879860D8E2")
     
 public BlockingQueue<Runnable> getQueue() {

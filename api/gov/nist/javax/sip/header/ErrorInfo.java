@@ -74,6 +74,7 @@ public void setErrorInfo(javax.sip.address.URI errorInfo) {
      *
      * @return the URI representing the ErrorInfo.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:11.847 -0500", hash_original_method = "4A04B5BB24A371C2D4F0F24F47A1F48A", hash_generated_method = "A2C85436611C1E6C971751A5AE9C48FD")
     
 public URI getErrorInfo() {
@@ -104,6 +105,7 @@ public void setErrorMessage(String message) throws ParseException {
      *
      * @return the stringified version of the ErrorInfo header.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:11.852 -0500", hash_original_method = "9D1A3E324FFC9C131D1ACF2EBA93FC69", hash_generated_method = "D8BBA929BDD3DFB34137BEC9E30DBE62")
     
 public String getErrorMessage() {

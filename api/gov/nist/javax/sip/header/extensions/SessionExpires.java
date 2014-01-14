@@ -43,6 +43,7 @@ public SessionExpires() {
      * @since JAIN SIP v1.1
      *
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:59.320 -0500", hash_original_method = "47881175D7C463BCCB25030D767AD658", hash_generated_method = "C2DB0E96C56A45B14BA4BCD03EAE8F48")
     
 public int getExpires() {
@@ -94,6 +95,7 @@ protected String encodeBody() {
         return retval;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:59.333 -0500", hash_original_method = "5E6D9C5D9628C8E8194658511D516C38", hash_generated_method = "BB8DC8EBE538A7A7DEF77BD5D772D77B")
     
 public String getRefresher() {

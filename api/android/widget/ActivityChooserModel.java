@@ -60,6 +60,7 @@ public class ActivityChooserModel extends DataSetObservable {
      *
      * @return The model.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.074 -0500", hash_original_method = "0D01D180802F00CC7597C044D40D73D9", hash_generated_method = "7ED2145194E106168FE2AECBB4D19FC3")
     
 public static ActivityChooserModel get(Context context, String historyFileName) {
@@ -208,6 +209,7 @@ public void setIntent(Intent intent) {
      *
      * @return The intent.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.081 -0500", hash_original_method = "27A17A1D87D77EAA50C2FB6DFA94EC7A", hash_generated_method = "932C480F63E4BDC434E715C77D01BFED")
     
 public Intent getIntent() {
@@ -223,6 +225,7 @@ public Intent getIntent() {
      *
      * @see #setIntent(Intent)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.084 -0500", hash_original_method = "D90428775A0762F0AD6636514EC58022", hash_generated_method = "C8E98811FE0D02D590564D80187E3373")
     
 public int getActivityCount() {
@@ -239,6 +242,7 @@ public int getActivityCount() {
      * @see ActivityResolveInfo
      * @see #setIntent(Intent)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.086 -0500", hash_original_method = "032146065CC1BA2D79ECD4CB63DFEC7F", hash_generated_method = "D66592B3152CE0A00F052A67217D4190")
     
 public ResolveInfo getActivity(int index) {
@@ -254,6 +258,7 @@ public ResolveInfo getActivity(int index) {
      *
      * @return The index if found, -1 otherwise.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.088 -0500", hash_original_method = "1C6D65F5A71D312AA7F7882C56EDED0B", hash_generated_method = "B36B5CE7AFCADB83D2A6AD0AD42303BC")
     
 public int getActivityIndex(ResolveInfo activity) {
@@ -285,6 +290,7 @@ public int getActivityIndex(ResolveInfo activity) {
      * @see HistoricalRecord
      * @see OnChooseActivityListener
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.091 -0500", hash_original_method = "2E1571A22B1C1279902BA9C2D35CCDAC", hash_generated_method = "F99960AA35438CC484296F5D7EE4AB95")
     
 public Intent chooseActivity(int index) {
@@ -803,6 +809,7 @@ public void setOnChooseActivityListener(OnChooseActivityListener listener) {
      *
      * @see #getActivity(int)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.095 -0500", hash_original_method = "8C412D794940DE98F4AAE841092A3BC7", hash_generated_method = "859CC40CECCD9B28B10704F18902B672")
     
 public ResolveInfo getDefaultActivity() {
@@ -969,6 +976,7 @@ public void setHistoryMaxSize(int historyMaxSize) {
      *
      * @return The history max size.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.112 -0500", hash_original_method = "EBCBD4C754CE0391425067ED25453667", hash_generated_method = "2801A2704E59069A32759C53A4F30CA7")
     
 public int getHistoryMaxSize() {
@@ -982,6 +990,7 @@ public int getHistoryMaxSize() {
      *
      * @return The history size.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.114 -0500", hash_original_method = "9F4BBC1AE7ECE6B5427CA6E0430F86F9", hash_generated_method = "D4A939CE607C80DAD95FC7EE090209EA")
     
 public int getHistorySize() {

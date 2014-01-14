@@ -14,10 +14,6 @@ import java.security.SecureRandom;
 
 import libcore.io.Memory;
 
-
-
-
-
 public final class UUID implements Serializable, Comparable<UUID> {
 
     /**
@@ -128,21 +124,17 @@ public static UUID fromString(String uuid) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.008 -0500", hash_original_field = "5CDDBC3B8FA8D7F612FD471D9CFE74D5", hash_generated_field = "091C22832E79DC74DEA4ADB3F391327C")
 
-
     private static final long serialVersionUID = -4856846361193249489L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.011 -0500", hash_original_field = "21F405F8CC9F93FAD1F4753A00726900", hash_generated_field = "A9867F7F1BA5EDFF98FD827A1CEF8FD3")
 
-
     private static SecureRandom rng;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.013 -0500", hash_original_field = "0F762932F80AC8DAB307969FF1CE2B08", hash_generated_field = "E05311E58F38272D7C9B90EC864288E6")
-
 
     private long mostSigBits;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.016 -0500", hash_original_field = "0835F98F890E38C6CF15225FB4DA9AC1", hash_generated_field = "76D70F6EAB49CBC32F6DF9DF520746D2")
 
     private long leastSigBits;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.018 -0500", hash_original_field = "47DF7A5E2AD811615D5B7885C50AD7F1", hash_generated_field = "ED6112CF1FA2DA1876E57F9A6D2E2836")
-
 
     private transient int variant;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.021 -0500", hash_original_field = "971D53A5DDB5A515B8A18CE48C276387", hash_generated_field = "BAD42B86A408081FE78996E122739899")
@@ -229,6 +221,7 @@ private void init() {
      *
      * @return the 64 least significant bits.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.050 -0500", hash_original_method = "A0E7F1AB7FAB66E1A72A040241F18680", hash_generated_method = "0F5FC44ACDB839899508AF1E5C082750")
     
 public long getLeastSignificantBits() {
@@ -241,6 +234,7 @@ public long getLeastSignificantBits() {
      *
      * @return the 64 most significant bits.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.053 -0500", hash_original_method = "6EF0A7C64F608CC6275528428E67572B", hash_generated_method = "4BCCED70E8636580E4C52D6A665113BF")
     
 public long getMostSignificantBits() {

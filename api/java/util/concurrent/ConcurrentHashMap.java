@@ -322,6 +322,7 @@ public int size() {
      *
      * @throws NullPointerException if the specified key is null
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:14.278 -0500", hash_original_method = "332CB84E85FBD8A2CB62BBB184B280CA", hash_generated_method = "7EE66C4B254D275ACADB7E36512FEADD")
     
 public V get(Object key) {

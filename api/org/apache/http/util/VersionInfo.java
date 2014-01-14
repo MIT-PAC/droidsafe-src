@@ -10,13 +10,7 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.Properties;
 
-
-
-
-
-
 public class VersionInfo {
-
 
     /**
      * Loads version information for a list of packages.
@@ -46,7 +40,6 @@ public final static VersionInfo[] loadVersionInfo(String[] pckgs,
 
         return (VersionInfo[]) vil.toArray(new VersionInfo[vil.size()]);
     }
-
 
     /**
      * Loads version information for a package.
@@ -97,7 +90,6 @@ public final static VersionInfo loadVersionInfo(final String pckg,
 
         return result;
     }
-
 
     /**
      * Instantiates version information from properties.
@@ -177,7 +169,6 @@ protected final static VersionInfo fromMap(String pckg, Map info,
 
     private  String infoClassloader;
 
-
     /**
      * Instantiates version information.
      *
@@ -203,13 +194,13 @@ protected VersionInfo(String pckg, String module,
         infoClassloader = (clsldr  != null) ? clsldr  : UNAVAILABLE;
     }
 
-
     /**
      * Obtains the package name.
      * The package name identifies the module or informal unit.
      *
      * @return  the package name, never <code>null</code>
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:51.205 -0500", hash_original_method = "252EB5EFBA4DF288F0FE3B9299593BCD", hash_generated_method = "22F39F471E7BA917155E3ABEDD21124D")
     
 public final String getPackage() {
@@ -222,6 +213,7 @@ public final String getPackage() {
      *
      * @return  the module name, never <code>null</code>
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:51.208 -0500", hash_original_method = "817D4ED1C3BFE1B9928E002CE96AD55A", hash_generated_method = "9FA70497A0B568272C22E2D7D1465604")
     
 public final String getModule() {
@@ -234,6 +226,7 @@ public final String getModule() {
      *
      * @return  the release version, never <code>null</code>
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:51.210 -0500", hash_original_method = "DAD9A741167B359FF642D16AB5684AA5", hash_generated_method = "6625A1159AB2C732AF45A1AD0A5184FE")
     
 public final String getRelease() {
@@ -246,6 +239,7 @@ public final String getRelease() {
      *
      * @return  the timestamp, never <code>null</code>
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:51.212 -0500", hash_original_method = "02D289A8C155EDCB8F2FF743050BA3A2", hash_generated_method = "BB0926950B351A88284E2CEE066CD9E2")
     
 public final String getTimestamp() {
@@ -260,12 +254,12 @@ public final String getTimestamp() {
      *
      * @return  the classloader description, never <code>null</code>
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:51.214 -0500", hash_original_method = "8670EE78560EBB156BF6A930F22A1F67", hash_generated_method = "6B971157873DE5616535678624C164ED")
     
 public final String getClassloader() {
         return infoClassloader;
     }
-
 
     /**
      * Provides the version information in human-readable format.

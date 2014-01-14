@@ -27,6 +27,7 @@ public class BinderInternal {
      * @return Returns the time as per {@link SystemClock#uptimeMillis
      * SystemClock.uptimeMillis()} of the last garbage collection.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:51.469 -0500", hash_original_method = "97EE1367F7D21A2061B5C261F1E7F987", hash_generated_method = "93E1464CFF71D32450A26A70F1E8933A")
     
 public static long getLastGcTime() {

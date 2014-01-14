@@ -34,6 +34,7 @@ public class Proxy implements Serializable {
      *                if either {@code interfaces} or any of its elements are
      *                {@code null}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.184 -0500", hash_original_method = "4E746CE0495D3DB0FF249BFCBD025F6A", hash_generated_method = "A1DE847C342E34996B3F50A48F205721")
     
 public static Class<?> getProxyClass(ClassLoader loader,
@@ -212,6 +213,7 @@ public static boolean isProxyClass(Class<?> cl) {
      * @throws IllegalArgumentException
      *                if the supplied {@code proxy} is not a proxy object
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.193 -0500", hash_original_method = "BDB130E146D4EEE1EE2A0139344DF6E4", hash_generated_method = "53B5EC9ED5B48FB9ADC94ECB944BF755")
     
 public static InvocationHandler getInvocationHandler(Object proxy)

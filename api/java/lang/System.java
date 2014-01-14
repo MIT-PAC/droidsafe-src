@@ -121,6 +121,7 @@ public static void gc() {
      * @return the value of the specified environment variable or {@code null}
      *         if no variable exists with the given name.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.636 -0500", hash_original_method = "79FB251DA8E670830D531170B8BBF153", hash_generated_method = "B7888C30425F3830863039B13886263D")
     
 public static String getenv(String name) {
@@ -146,6 +147,7 @@ private static String getenv(String name, String defaultValue) {
      *
      * @return the map representing all environment variables.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.646 -0500", hash_original_method = "79B521B2EFD03E1D43F79EA09E867985", hash_generated_method = "14CE62E06E734A72D9890256F415124A")
     
 public static Map<String, String> getenv() {
@@ -182,6 +184,7 @@ public static Channel inheritedChannel() throws IOException {
      *
      * @return the system properties.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.652 -0500", hash_original_method = "3FDC8784D1C5F7E5946B08E486E63909", hash_generated_method = "1C947DC75EF01852C48A7D3F1ACB061A")
     
 public static Properties getProperties() {
@@ -333,6 +336,7 @@ private static void parsePropertyAssignments(Properties p, String[] assignments)
      * @return the value of the specified system property or {@code null} if the
      *         property doesn't exist.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.664 -0500", hash_original_method = "06C945E6AB6193665AD35FBCA9AFCB6D", hash_generated_method = "766C443FD74124DA91FB9FB0825E934E")
     
 public static String getProperty(String propertyName) {
@@ -351,6 +355,7 @@ public static String getProperty(String propertyName) {
      * @return the value of the specified system property or the {@code
      *         defaultValue} if the property does not exist.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.667 -0500", hash_original_method = "0AD78573C84AE39631B832983C262457", hash_generated_method = "01672AFEB4169F8733E9B7130C897E0E")
     
 public static String getProperty(String prop, String defaultValue) {
@@ -421,6 +426,7 @@ public static Console console() {
      *
      * @return null
      */
+    @DSSource({DSSourceKind.FILE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.678 -0500", hash_original_method = "C8F7CB4F1804392B0063D92E89423E1A", hash_generated_method = "4FDF597B2D74E6DD9D48FFB24DE4E3C9")
     
 public static SecurityManager getSecurityManager() {

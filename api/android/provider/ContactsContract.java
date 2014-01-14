@@ -333,6 +333,7 @@ private Directory() {
         /**
          * @see android.provider.SyncStateContract.Helpers#get
          */
+        @DSSource({DSSourceKind.CONTACT_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:45.687 -0500", hash_original_method = "466578A19F0FCF2DD10FDB6DAFFC0887", hash_generated_method = "2968688090F0A89899005B639287D49D")
         
 public static byte[] get(ContentProviderClient provider, Account account)
@@ -343,6 +344,7 @@ public static byte[] get(ContentProviderClient provider, Account account)
         /**
          * @see android.provider.SyncStateContract.Helpers#get
          */
+        @DSSource({DSSourceKind.CONTACT_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:45.689 -0500", hash_original_method = "B9E8FB5AB055D4E1E45E9949F3C016CF", hash_generated_method = "6E822DD6634A9EBA8F5FA49F5EB38784")
         
 public static Pair<Uri, byte[]> getWithUri(ContentProviderClient provider, Account account)
@@ -390,6 +392,7 @@ private SyncState() {}
         /**
          * @see android.provider.SyncStateContract.Helpers#get
          */
+        @DSSource({DSSourceKind.CONTACT_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:45.707 -0500", hash_original_method = "466578A19F0FCF2DD10FDB6DAFFC0887", hash_generated_method = "2968688090F0A89899005B639287D49D")
         
 public static byte[] get(ContentProviderClient provider, Account account)
@@ -400,6 +403,7 @@ public static byte[] get(ContentProviderClient provider, Account account)
         /**
          * @see android.provider.SyncStateContract.Helpers#get
          */
+        @DSSource({DSSourceKind.CONTACT_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:45.710 -0500", hash_original_method = "B9E8FB5AB055D4E1E45E9949F3C016CF", hash_generated_method = "6E822DD6634A9EBA8F5FA49F5EB38784")
         
 public static Pair<Uri, byte[]> getWithUri(ContentProviderClient provider, Account account)
@@ -469,6 +473,7 @@ private ProfileSyncState() {}
          * @param contactUri A {@link #CONTENT_URI} row, or an existing
          *            {@link #CONTENT_LOOKUP_URI} to attempt refreshing.
          */
+        @DSSource({DSSourceKind.CONTACT_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:45.803 -0500", hash_original_method = "297CD8052D16F966DA20463FE5C9F18D", hash_generated_method = "E132A7F36CE1995AD84D3CA4E748E1F1")
         
 public static Uri getLookupUri(ContentResolver resolver, Uri contactUri) {
@@ -495,6 +500,7 @@ public static Uri getLookupUri(ContentResolver resolver, Uri contactUri) {
          * Build a {@link #CONTENT_LOOKUP_URI} lookup {@link Uri} using the
          * given {@link ContactsContract.Contacts#_ID} and {@link #LOOKUP_KEY}.
          */
+        @DSSource({DSSourceKind.CONTACT_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:45.805 -0500", hash_original_method = "0E35577C3A2634FAB6CE2A7C0110A8D4", hash_generated_method = "7A2D838CE8D4D565E159F4336E306008")
         
 public static Uri getLookupUri(long contactId, String lookupKey) {
@@ -507,6 +513,7 @@ public static Uri getLookupUri(long contactId, String lookupKey) {
          * <p>
          * Returns null if the contact cannot be found.
          */
+        @DSSource({DSSourceKind.CONTACT_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:45.808 -0500", hash_original_method = "4F238AFCA9F990B01002B079DB33FCDE", hash_generated_method = "6BC905CC6054CBBC02A4C6C4B960B080")
         
 public static Uri lookupContact(ContentResolver resolver, Uri lookupUri) {
@@ -559,6 +566,7 @@ public static void markAsContacted(ContentResolver resolver, long contactId) {
          * available, it is returned. If false, this function always tries to get the thumbnail
          * @return an InputStream of the photo, or null if no photo is present
          */
+        @DSSource({DSSourceKind.CONTACT_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:45.930 -0500", hash_original_method = "39CCF57C11710ED9D7B06C24BDE6652B", hash_generated_method = "81B22971803C149D0C82E0B6074B8933")
         
 public static InputStream openContactPhotoInputStream(ContentResolver cr, Uri contactUri,
@@ -876,6 +884,7 @@ private Profile() {
          * style {@link Uri} for the parent {@link android.provider.ContactsContract.Contacts}
          * entry of the given {@link RawContacts} entry.
          */
+        @DSSource({DSSourceKind.CONTACT_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:45.985 -0500", hash_original_method = "4F63AD3366CF1143E7246464BD728917", hash_generated_method = "D0392F095AF9CF97B1A8AB2473A67AA2")
         
 public static Uri getContactLookupUri(ContentResolver resolver, Uri rawContactUri) {
@@ -991,6 +1000,7 @@ public EntityIteratorImpl(Cursor cursor) {
                 super(cursor);
             }
 
+            @DSSource({DSSourceKind.CONTACT_INFORMATION})
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.032 -0500", hash_original_method = "BE255AFD270DEBC5451268E05A1F1326", hash_generated_method = "A78D291A6706DAC674FEB344952A0C31")
             
 @Override
@@ -1173,6 +1183,7 @@ private PhotoFiles() {
          * results, silently returns null.
          * </p>
          */
+        @DSSource({DSSourceKind.CONTACT_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.139 -0500", hash_original_method = "0B01F4FFA9092B5AD574B1F239B48F30", hash_generated_method = "AEC79E50439816765945FD5849DA7650")
         
 public static Uri getContactLookupUri(ContentResolver resolver, Uri dataUri) {
@@ -1430,6 +1441,7 @@ private Nickname() {}
              * @deprecated use {@link #getTypeLabel(Resources, int, CharSequence)} instead.
              * @hide
              */
+            @DSSource({DSSourceKind.CONTACT_INFORMATION})
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.368 -0500", hash_original_method = "EDF764EB0E7CD97EABC22A940CB89180", hash_generated_method = "E36ABE3BDA6AAD825A671925C6585D0B")
             
 @Deprecated
@@ -1442,6 +1454,7 @@ private Nickname() {}
              * @deprecated use {@link #getTypeLabel(Resources, int, CharSequence)} instead.
              * @hide
              */
+            @DSSource({DSSourceKind.CONTACT_INFORMATION})
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.372 -0500", hash_original_method = "9A10A12FCE02DEF77AEA0F0D7AE31554", hash_generated_method = "94E05A3692E1861476EF4BD15F819DAD")
             
 @Deprecated
@@ -2298,6 +2311,7 @@ public static EntityIterator newEntityIterator(Cursor cursor) {
                 // ---------- Original Method ----------
             }
 
+            @DSSource({DSSourceKind.CONTACT_INFORMATION})
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.806 -0500", hash_original_method = "DDAF6836AC46D694049E3DD971FAB2B5", hash_generated_method = "D472863B645BE527138C3AD1B126EDD6")
             
 @Override

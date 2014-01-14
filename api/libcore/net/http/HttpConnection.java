@@ -145,6 +145,7 @@ public void setSoTimeout(int readTimeout) throws SocketException {
         socket.setSoTimeout(readTimeout);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:30.699 -0500", hash_original_method = "97D9B93978E46D1095C2BFB6FD92F6AE", hash_generated_method = "43F3FA3241C577367335938E6D9AF5C7")
     
 public OutputStream getOutputStream() throws IOException {
@@ -159,6 +160,7 @@ public OutputStream getOutputStream() throws IOException {
         return outputStream;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:30.702 -0500", hash_original_method = "1360CB9715FEE0D075363C3EF21DD92C", hash_generated_method = "6F7E230249AD89C9E65BB768166689ED")
     
 public InputStream getInputStream() throws IOException {
@@ -182,6 +184,7 @@ public InputStream getInputStream() throws IOException {
         return inputStream;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:30.704 -0500", hash_original_method = "EA9CBC15CAAA468AF10BBF1CD02918CF", hash_generated_method = "25CEAAC7C1D353A197B84844D34FA4E6")
     
 protected Socket getSocket() {
@@ -247,6 +250,7 @@ public SSLSocket verifySecureSocketHostname(HostnameVerifier hostnameVerifier)
     /**
      * Return an {@code SSLSocket} if already connected, otherwise null.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:30.713 -0500", hash_original_method = "0390CC00C23D2289E08AFB9047DDDB88", hash_generated_method = "84DEC4F76B1FE416005685F168F0560A")
     
 public SSLSocket getSecureSocketIfConnected() {
@@ -357,6 +361,7 @@ public Address(URI uri, Proxy proxy, boolean requiresTunnel) {
             this.socketPort = proxySocketAddress.getPort();
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:30.744 -0500", hash_original_method = "19AE87D83FEEE8E799F844F8A7A84495", hash_generated_method = "1834A10F1CD4537F2A71DE81C5EBDAE9")
         
 public Proxy getProxy() {

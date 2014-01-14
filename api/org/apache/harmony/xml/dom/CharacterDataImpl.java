@@ -31,6 +31,7 @@ public void deleteData(int offset, int count) throws DOMException {
         buffer.delete(offset, offset + count);
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:22.447 -0500", hash_original_method = "0E5A18340A236774C2757554A3CD1C3E", hash_generated_method = "E88571BC406AD60D137504BDC277894D")
     
 public String getData() throws DOMException {
@@ -46,12 +47,14 @@ public void appendDataTo(StringBuilder stringBuilder) {
         stringBuilder.append(buffer);
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:22.451 -0500", hash_original_method = "106EC06D9039E5E9A5A139C346DB10D2", hash_generated_method = "6982BC3E7A3243A8899A15B8AA18E2B7")
     
 public int getLength() {
         return buffer.length();
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:22.453 -0500", hash_original_method = "25D9FE8F6D2D11968D5C5576BFCDE9E9", hash_generated_method = "355DC249A20997EE2DDDEF00945A93EB")
     
 @Override

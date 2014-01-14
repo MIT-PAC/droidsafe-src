@@ -7,14 +7,8 @@ import droidsafe.annotations.*;
 import java.math.BigInteger;
 import java.security.spec.KeySpec;
 
-
-
-
-
-
 public class DHPublicKeySpec implements KeySpec {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.040 -0500", hash_original_field = "7C667BA619B926582BFC8401F882439D", hash_generated_field = "E87E2F8BC9A92B0C676B9ECF48E707BE")
-
 
     private  BigInteger y;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.043 -0500", hash_original_field = "36A2346422FAB1A0484079E02615C501", hash_generated_field = "0E1745DDBCB8E3192EFA76F952746D75")
@@ -49,6 +43,7 @@ public DHPublicKeySpec(BigInteger y, BigInteger p, BigInteger g) {
      *
      * @return the public value <code>y</code>.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.050 -0500", hash_original_method = "E902D6151D4FD6CFB5C854DFA08B0568", hash_generated_method = "DFB59F5A3C2E9D3EBF4F764FC762B9D4")
     
 public BigInteger getY() {
@@ -60,6 +55,7 @@ public BigInteger getY() {
      *
      * @return the prime modulus <code>p</code>.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.052 -0500", hash_original_method = "451C630A2F5A52BD2AE63729BE355876", hash_generated_method = "FA39994F0F567A64C38613032682F7D7")
     
 public BigInteger getP() {
@@ -71,12 +67,12 @@ public BigInteger getP() {
      *
      * @return the base generator <code>g</code>;
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.055 -0500", hash_original_method = "8C38F55FA5DB902C3D9409517AA217E2", hash_generated_method = "FBDB40C3059FF68266098ECF54AD2FB6")
     
 public BigInteger getG() {
         return g;
     }
-
     
 }
 

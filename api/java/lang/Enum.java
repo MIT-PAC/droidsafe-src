@@ -96,6 +96,7 @@ protected Enum(String name, int ordinal) {
      * @return the name of this enum constant.
      * @see #toString()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.924 -0500", hash_original_method = "B829A2DCF2B6B038F9421827E4B40BDF", hash_generated_method = "45DBC829FBEEC28B377967506702788C")
     
 public final String name() {
@@ -120,6 +121,7 @@ public final int ordinal() {
      *
      * @return a printable representation of this object.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.930 -0500", hash_original_method = "0EB66BA5E965B83E191719250E0A82FF", hash_generated_method = "0D841C721535905DD0E9F7FAE6757EB9")
     
 @Override
@@ -159,6 +161,7 @@ public final int ordinal() {
      * @throws CloneNotSupportedException
      *             is always thrown.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.938 -0500", hash_original_method = "E819DB208756D0A4B5DFB72B3A772B65", hash_generated_method = "720A1100071FDC468D6438DAE71A3A05")
     
 @Override
@@ -191,6 +194,7 @@ public final int compareTo(E o) {
      *
      * @return the class object representing the constant's enum type.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.943 -0500", hash_original_method = "0D462A5B0CC7E5E79CA20DB4952DBB5B", hash_generated_method = "762014D63804DB3D4D80E909CA7FDE71")
     
 @SuppressWarnings("unchecked")

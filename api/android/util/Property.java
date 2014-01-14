@@ -41,6 +41,7 @@ public abstract V get(T object);
     /**
      * Returns the name for this property.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:24.532 -0500", hash_original_method = "9194A7433912D38B9A3F1171AC921C56", hash_generated_method = "AD920925278DEAFAFBD283F9C2E39E5D")
     
 public String getName() {
@@ -50,6 +51,7 @@ public String getName() {
     /**
      * Returns the type for this property.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:24.534 -0500", hash_original_method = "016782D9983A30CCA54FD921B5345587", hash_generated_method = "AEADE2CE4339C26821488FD91ADB8EEE")
     
 public Class<V> getType() {

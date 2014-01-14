@@ -268,6 +268,7 @@ public void putRecoveryAction(int action) {
         if(DBG) log("finalize");
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:24.323 -0500", hash_original_method = "477FAE9A0F7056536F0C43A4344C1E00", hash_generated_method = "58DC5E0B547B76E3202A7DA74D639207")
     
 @Override
@@ -275,6 +276,7 @@ public void putRecoveryAction(int action) {
         return INTENT_RECONNECT_ALARM;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:24.326 -0500", hash_original_method = "BBE23E9137760572C0B9E85F7DE2F87D", hash_generated_method = "CFB7B25A01C80653B18E3F8820B6F01C")
     
 @Override
@@ -346,6 +348,7 @@ protected void initApnContextsAndDataConnection() {
         }
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:24.335 -0500", hash_original_method = "C5F45AE4298273442B50BBFD614E8417", hash_generated_method = "CDDDCFCAC18F106C1CD8E224690E2CAA")
     
 @Override
@@ -362,6 +365,7 @@ protected void initApnContextsAndDataConnection() {
         return new LinkProperties();
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:24.338 -0500", hash_original_method = "94651B427B7F42F00ED4B45503EF287D", hash_generated_method = "2662BFFB264F3686489C711DBA1D6988")
     
 @Override
@@ -378,6 +382,7 @@ protected void initApnContextsAndDataConnection() {
         return new LinkCapabilities();
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:24.341 -0500", hash_original_method = "BFF203ED461E9185DBA7A58AF111F0F3", hash_generated_method = "F8DDC8A9E3D31A5200BCC078890D3309")
     
 @Override
@@ -395,6 +400,7 @@ protected void initApnContextsAndDataConnection() {
         return (String[])result.toArray(new String[0]);
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:24.344 -0500", hash_original_method = "8D1CDDA6C04920E256FCAAE007846C5E", hash_generated_method = "6DA70545AF43A8FDE04454996FA47281")
     
 @Override
@@ -590,6 +596,7 @@ private void notifyApnIdUpToCurrent(String reason, ApnContext apnContext, String
      * @return {@code false} if data connectivity has been explicitly disabled,
      * {@code true} otherwise.
      */
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:24.371 -0500", hash_original_method = "C851438642EDA5AB3134873854010685", hash_generated_method = "BF9AA5E9B289454189B71C8F78AFCEB5")
     
 @Override
@@ -2627,6 +2634,7 @@ private ApnSetting getPreferredApn() {
         }
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:24.616 -0500", hash_original_method = "46AFDD0964E9004EF08AD58B2795A021", hash_generated_method = "C508FDF04104DD6BFFA574041A143375")
     
 protected int getApnProfileID(String apnType) {

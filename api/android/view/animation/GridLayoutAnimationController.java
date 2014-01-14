@@ -12,10 +12,6 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
 
-
-
-
-
 public class GridLayoutAnimationController extends LayoutAnimationController {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:56.499 -0500", hash_original_field = "DEC2532CC0C05FCC16238C9C4AB1C58A", hash_generated_field = "81A390036EC25AAFFB1697DEC594D207")
 
@@ -46,13 +42,11 @@ public class GridLayoutAnimationController extends LayoutAnimationController {
     public static final int PRIORITY_ROW    = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:56.523 -0500", hash_original_field = "37D207F3CAE882D11B8F6E7BCE823045", hash_generated_field = "629BDB9D286507ADB5AC44CEFC58428A")
 
-
     private float mColumnDelay;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:56.526 -0500", hash_original_field = "861D8E5D822B3420AA42D6CDB68677F8", hash_generated_field = "4721784781D2BCA01C8500DB42882C15")
 
     private float mRowDelay;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:56.528 -0500", hash_original_field = "CCADC966D479FDECD819C1B63381D3A8", hash_generated_field = "1745FCE9A11C63A8CCC7883651828226")
-
 
     private int mDirection;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:56.531 -0500", hash_original_field = "A22F98545368697E7BFA796CDFF9A17B", hash_generated_field = "8864A96EB28D62DC4D579E581BD7D010")
@@ -129,6 +123,7 @@ public GridLayoutAnimationController(Animation animation, float columnDelay, flo
      * @see #getRowDelay()
      * @see #setRowDelay(float)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:56.541 -0500", hash_original_method = "3717FF744AD9B352598BB020F584214F", hash_generated_method = "686C96EB1CFC717BF80C2B8C831FA563")
     
 public float getColumnDelay() {
@@ -162,12 +157,12 @@ public void setColumnDelay(float columnDelay) {
      * @see #getColumnDelay()
      * @see #setColumnDelay(float)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:56.547 -0500", hash_original_method = "4A1DF1219341ECD3C219976F02BC50A3", hash_generated_method = "A878D630753AEC0F4DFB501460B6714D")
     
 public float getRowDelay() {
         return mRowDelay;
     }
-
     
     public static class AnimationParameters extends LayoutAnimationController.AnimationParameters {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:56.572 -0500", hash_original_field = "90576625319AB666908247B08CE7D656", hash_generated_field = "1A00D99B7D583B1BE415D4D1EFC674C4")
@@ -188,7 +183,6 @@ public float getRowDelay() {
         {
             //Synthesized constructor
         }
-
 
     }
 
@@ -223,6 +217,7 @@ public void setRowDelay(float rowDelay) {
      * @see #DIRECTION_HORIZONTAL_MASK
      * @see #DIRECTION_VERTICAL_MASK
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:56.551 -0500", hash_original_method = "41E7A7956AF2C8AD22DB281BF2D1824C", hash_generated_method = "5763099F5F441B75270C6CF5B82F5F4E")
     
 public int getDirection() {
@@ -262,6 +257,7 @@ public void setDirection(int direction) {
      * @see #PRIORITY_NONE
      * @see #PRIORITY_ROW
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:56.556 -0500", hash_original_method = "B1015DE18826455B040F95A300414206", hash_generated_method = "B1BE19AC72E8376C827DD493B3403771")
     
 public int getDirectionPriority() {
@@ -299,6 +295,7 @@ public void setDirectionPriority(int directionPriority) {
     /**
      * {@inheritDoc}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:56.564 -0500", hash_original_method = "13A2BFBB43D7D8280701088FA02E8C51", hash_generated_method = "11ECC44E3060B8F2953E7D5362E3CAF2")
     
 @Override

@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class ApnSetting {
 
     /**
@@ -91,10 +87,8 @@ public static ApnSetting fromString(String data) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:19.521 -0500", hash_original_field = "80A51A39B5DD360D5F7ABA7E9CE088FD", hash_generated_field = "98446639026B9F4F206499ECD891F44B")
 
-
     static final String V2_FORMAT_REGEX = "^\\[ApnSettingV2\\]\\s*";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:19.524 -0500", hash_original_field = "912D2DCE1116AD3027D0823B814A3825", hash_generated_field = "1B56B32F4BBBFCB07F306A0886B2F6DD")
-
 
     public  String carrier;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:19.526 -0500", hash_original_field = "CF66D996D363C4130678F1A5558A2B30", hash_generated_field = "43C67387F9D911D56E54C3F641D51852")
@@ -172,6 +166,7 @@ public ApnSetting(int id, String numeric, String carrier, String apn,
         this.bearer = bearer;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:19.576 -0500", hash_original_method = "A2933E4E94FCB15D27495600AE7ECB36", hash_generated_method = "B90D3A1B8CDDD45FECAA4AF9318F6404")
     
 public String toString() {

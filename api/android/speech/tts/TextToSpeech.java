@@ -675,6 +675,7 @@ public int setPitch(float pitch) {
      * @return the engine currently in use by this TextToSpeech instance.
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:53.870 -0500", hash_original_method = "6F277B1B16E884F81974EA73065A64D8", hash_generated_method = "7B3DE1D09317EEFD1148729DA273942E")
     
 public String getCurrentEngine() {
@@ -734,6 +735,7 @@ public int setLanguage(final Locale loc) {
      * @return language, country (if any) and variant (if any) used by the engine stored in a Locale
      *     instance, or {@code null} on error.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:53.882 -0500", hash_original_method = "BC427E909E00C5BE5A5F111E336651C0", hash_generated_method = "610B9C13B54862D2C4CEF2D05C24FBA7")
     
 public Locale getLanguage() {
@@ -1284,6 +1286,7 @@ public int setOnUtteranceProgressListener(UtteranceProgressListener listener) {
      * @return Package name of the TTS engine that the user has chosen
      *        as their default.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:53.913 -0500", hash_original_method = "AAA28EF74B57D47AEDCF93243FD04D81", hash_generated_method = "772EF1D56C94BAFF878FA584C4BDBE7A")
     
 public String getDefaultEngine() {
@@ -1306,6 +1309,7 @@ public boolean areDefaultsEnforced() {
      *
      * @return A list of engine info objects. The list can be empty, but never {@code null}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:53.917 -0500", hash_original_method = "C282EF17EB1B4600865CB51DA0934709", hash_generated_method = "7941E360898875DDF37668F270DFE3F5")
     
 public List<EngineInfo> getEngines() {

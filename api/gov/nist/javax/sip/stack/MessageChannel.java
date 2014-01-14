@@ -37,6 +37,7 @@ public abstract class MessageChannel {
     /**
      * generate a key given the inet address port and transport.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:26.447 -0500", hash_original_method = "846DF853619BEDF1EEA7976F91CB26E5", hash_generated_method = "0F7F6100DD11D9A006C5A2CBCFA80CA1")
     
 public static String getKey(InetAddress inetAddr, int port, String transport) {
@@ -46,6 +47,7 @@ public static String getKey(InetAddress inetAddr, int port, String transport) {
     /**
      * Generate a key given host and port.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:26.449 -0500", hash_original_method = "7E056F650A5C33E8E0BFC2C195483B34", hash_generated_method = "A7F73DE8F0070D54CC5E10AAA2BC3388")
     
 public static String getKey(HostPort hostPort, String transport) {
@@ -251,6 +253,7 @@ protected abstract void sendMessage(byte[] message, InetAddress receiverAddress,
      * 
      * @return host of this messsage channel.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:26.431 -0500", hash_original_method = "CA1BACEAFC0549F0AA4E82303BA5F480", hash_generated_method = "E2ED1FC5C7CAEBA67EDAA2DB9C0D6E4E")
     
 public String getHost() {
@@ -262,6 +265,7 @@ public String getHost() {
      * 
      * @return Port of this message channel.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:26.433 -0500", hash_original_method = "D12E0B39D0A0A3DBD8096F94437302A2", hash_generated_method = "0C20C5FBA7CBC21223438E53D56E4085")
     
 public int getPort() {
@@ -342,6 +346,7 @@ public void sendMessage(SIPMessage sipMessage, InetAddress receiverAddress, int 
     /**
      * Convenience function to get the raw IP source address of a SIP message as a String.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:26.444 -0500", hash_original_method = "BC100C85F7EEF6C9116B6E540185BCE8", hash_generated_method = "5934AC6ECFB9531EEB4FDD8E1EBD3717")
     
 public String getRawIpSourceAddress() {
@@ -359,6 +364,7 @@ public String getRawIpSourceAddress() {
     /**
      * Get the hostport structure of this message channel.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:26.453 -0500", hash_original_method = "A44FE176AC0185A0737BBEE3031992DB", hash_generated_method = "EB79704D147D1C6B4FBBBAF57EB273B3")
     
 public HostPort getHostPort() {
@@ -373,6 +379,7 @@ public HostPort getHostPort() {
      * 
      * @return a HostPort structure for the peer.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:26.455 -0500", hash_original_method = "B86C07836DB50334479A6BD4BF7381CC", hash_generated_method = "E206406A536DAE8CDB7C90FC2BF5C367")
     
 public HostPort getPeerHostPort() {
@@ -387,6 +394,7 @@ public HostPort getPeerHostPort() {
      * 
      * @return a via header for outgoing messages sent from this channel.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:26.457 -0500", hash_original_method = "31F63348466D8C31B05195508CA771AE", hash_generated_method = "96814D86743CF9D8E60C2ECE7580AEF8")
     
 public Via getViaHeader() {
@@ -407,6 +415,7 @@ public Via getViaHeader() {
      * 
      * @return a host:port structure
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:26.460 -0500", hash_original_method = "8AF1560686CCA72CFE111D9FA9C1ECDE", hash_generated_method = "74E673E076433DD4973390B7FA041989")
     
 public HostPort getViaHostPort() {
@@ -520,6 +529,7 @@ protected final String createBadReqRes(String badReq, ParseException pe) {
     /**
      * Get the message processor.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:26.478 -0500", hash_original_method = "B369445AF3BB32430CE637694E76219B", hash_generated_method = "4B0F0A9B7F50969861BE18EA82A66E74")
     
 public MessageProcessor getMessageProcessor() {

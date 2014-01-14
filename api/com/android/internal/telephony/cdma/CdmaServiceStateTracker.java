@@ -577,6 +577,7 @@ public void unregisterForSubscriptionInfoReady(Handler h) {
         mCurPlmn = plmn;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:53.540 -0500", hash_original_method = "A0DE0F5E4F4D4787509D60C270D17835", hash_generated_method = "7FA214E5FB8E9E7053C952EA5299E35F")
     
 @Override
@@ -1250,6 +1251,7 @@ protected int
         }
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:53.584 -0500", hash_original_method = "2F7466C178280C26D6BC47DE1AFB7432", hash_generated_method = "217989B846BC1E6D9596FA84326A7747")
     
 public int getCurrentDataConnectionState() {
@@ -1645,12 +1647,14 @@ public boolean isConcurrentVoiceAndDataAllowed() {
         return false;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:53.631 -0500", hash_original_method = "A5028D79B927656E45CDFA536F16F5AB", hash_generated_method = "CE380CEB9E020089119AC26C1416B42D")
     
 public String getMdnNumber() {
         return mMdn;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:53.634 -0500", hash_original_method = "133C132C72A1734541959456CF27FF0A", hash_generated_method = "8F59A7ACCE96A294389A5DCD933FC017")
     
 public String getCdmaMin() {
@@ -1658,6 +1662,7 @@ public String getCdmaMin() {
     }
 
     /** Returns null if NV is not yet ready */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:53.636 -0500", hash_original_method = "B5AD5686CB21B47DB5A2223CCDBB4F42", hash_generated_method = "7DD390FA72255EC2B3B0362AC1AB9654")
     
 public String getPrlVersion() {
@@ -1667,6 +1672,7 @@ public String getPrlVersion() {
     /**
      * Returns IMSI as MCC + MNC + MIN
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:53.640 -0500", hash_original_method = "B26D3610EF4478BB5ED2ADA9EDE43E3B", hash_generated_method = "8C7D47A97C60077F792C3402BD9CD63E")
     
 String getImsi() {
@@ -1695,6 +1701,7 @@ public boolean isMinInfoReady() {
     /**
      * Returns OTASP_UNKNOWN, OTASP_NEEDED or OTASP_NOT_NEEDED
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:53.648 -0500", hash_original_method = "0E452BF490F5457F3887197BA13C1AF4", hash_generated_method = "0E452BF490F5457F3887197BA13C1AF4")
     
 int getOtasp() {

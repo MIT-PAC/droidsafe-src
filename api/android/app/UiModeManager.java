@@ -102,6 +102,7 @@ public void disableCarMode(int flags) {
      * {@link Configuration#UI_MODE_TYPE_CAR Configuration.UI_MODE_TYPE_CAR}, or
      * {@link Configuration#UI_MODE_TYPE_TELEVISION Configuration.UI_MODE_TYPE_TV}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:14.326 -0500", hash_original_method = "0CD456741A85C32EF5CC7E71365FBB20", hash_generated_method = "D4DE81443170D2B9821E2F6BCEEA8330")
     
 public int getCurrentModeType() {
@@ -148,6 +149,7 @@ public void setNightMode(int mode) {
      * @return {@link #MODE_NIGHT_NO}, {@link #MODE_NIGHT_YES}, or
      *  {@link #MODE_NIGHT_AUTO}.  When an error occurred -1 is returned.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:14.332 -0500", hash_original_method = "9AFE4882A5DD35A0B7234D31EDC0BDFC", hash_generated_method = "1959474A613E71E942C1471438107391")
     
 public int getNightMode() {

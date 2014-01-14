@@ -13,13 +13,7 @@ import org.apache.harmony.security.asn1.ASN1Sequence;
 import org.apache.harmony.security.asn1.ASN1Type;
 import org.apache.harmony.security.asn1.BerInputStream;
 
-
-
-
-
-
 public final class PolicyConstraints extends ExtensionValue {
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.587 -0400", hash_original_field = "307B8D8F9C29D819EC11FEDBAB6DC908", hash_generated_field = "8A9CB549AEF7F48FC2047943BFC2C1B5")
 
@@ -31,6 +25,7 @@ public final class PolicyConstraints extends ExtensionValue {
             setOptional(1);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:57.205 -0500", hash_original_method = "52D1944AB6FBE2391120949CCC85415F", hash_generated_method = "D3C2E1B26692743AF261231E393897B1")
         
 @Override protected Object getDecodedObject(BerInputStream in) {
@@ -94,6 +89,7 @@ private PolicyConstraints(BigInteger requireExplicitPolicy,
     /**
      * Returns ASN.1 encoded form of this X.509 PolicyConstraints value.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:57.198 -0500", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "552F71A862C62513AAC32037F4D2FC1B")
     
 @Override public byte[] getEncoded() {

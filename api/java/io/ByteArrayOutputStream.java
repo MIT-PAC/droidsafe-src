@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Arrays;
 
-
-
-
-
-
 public class ByteArrayOutputStream extends OutputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.326 -0500", hash_original_field = "001DD3820C6A6A544AB42831C6F17A05", hash_generated_field = "083037218D1B4F9535944A48D3FD1BCA")
 
@@ -111,6 +106,7 @@ public int size() {
      *
      * @return this stream's current contents as a byte array.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.347 -0500", hash_original_method = "F52D84F15F793E7D52B479C7891604F2", hash_generated_method = "5951B27DBA1F36D666752B978F5E613C")
     
 public synchronized byte[] toByteArray() {
@@ -237,7 +233,6 @@ public String toString(String enc) throws UnsupportedEncodingException {
 public synchronized void writeTo(OutputStream out) throws IOException {
         out.write(buf, 0, count);
     }
-
     
 }
 

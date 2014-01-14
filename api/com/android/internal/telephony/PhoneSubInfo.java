@@ -64,6 +64,7 @@ protected void finalize() {
     /**
      * Retrieves the unique device ID, e.g., IMEI for GSM phones and MEID for CDMA phones.
      */
+    @DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:12.194 -0500", hash_original_method = "7FB2911E415BAC248B6F7C00F0AD8580", hash_generated_method = "3944B4EB833697DD333BEE15BB48B5BD")
     
 public String getDeviceId() {
@@ -75,6 +76,7 @@ public String getDeviceId() {
      * Retrieves the software version number for the device, e.g., IMEI/SV
      * for GSM phones.
      */
+    @DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:12.196 -0500", hash_original_method = "47A65D652880A955D13092E25ED0BFA3", hash_generated_method = "2D00E8ADDFBF6F25EE30419E8DA5D635")
     
 public String getDeviceSvn() {
@@ -85,6 +87,7 @@ public String getDeviceSvn() {
     /**
      * Retrieves the unique subscriber ID, e.g., IMSI for GSM phones.
      */
+    @DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:12.199 -0500", hash_original_method = "31029AA63C15ED3BEB918EA2DF9C53C8", hash_generated_method = "C46560B09E4462F3633D28178B011C9B")
     
 public String getSubscriberId() {
@@ -95,6 +98,7 @@ public String getSubscriberId() {
     /**
      * Retrieves the serial number of the ICC, if applicable.
      */
+    @DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:12.202 -0500", hash_original_method = "F715A558C290BD14ABDE5817D87243CF", hash_generated_method = "A217EFAEA665691640D486F5F1F5BC3F")
     
 public String getIccSerialNumber() {
@@ -105,6 +109,7 @@ public String getIccSerialNumber() {
     /**
      * Retrieves the phone number string for line 1.
      */
+    @DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:12.204 -0500", hash_original_method = "128FE2451356AD093E7C4FB6D31CED7B", hash_generated_method = "A8A0124513046143F29674ACF0366E8E")
     
 public String getLine1Number() {
@@ -115,6 +120,7 @@ public String getLine1Number() {
     /**
      * Retrieves the alpha identifier for line 1.
      */
+    @DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:12.206 -0500", hash_original_method = "3100EE5C09A183E0C52EA30DD2C38FCE", hash_generated_method = "6EB2846CA87D90839D777E52A4D00589")
     
 public String getLine1AlphaTag() {
@@ -125,6 +131,7 @@ public String getLine1AlphaTag() {
     /**
      * Retrieves the MSISDN string.
      */
+    @DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:12.209 -0500", hash_original_method = "486D3990E5DF065E80D4F34954E57792", hash_generated_method = "7BFCC5AF5CC06F7C14C9C24B088F9A18")
     
 public String getMsisdn() {
@@ -135,6 +142,7 @@ public String getMsisdn() {
     /**
      * Retrieves the voice mail number.
      */
+    @DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:12.211 -0500", hash_original_method = "D6964CF0DD97089F5666548710C28DF3", hash_generated_method = "338688FE1AD8A648CE8D6D66CE97A979")
     
 public String getVoiceMailNumber() {
@@ -149,6 +157,7 @@ public String getVoiceMailNumber() {
      *
      * @hide
      */
+    @DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:12.213 -0500", hash_original_method = "E9A6A2984EA72CED9E5DEFCEFCC9AE08", hash_generated_method = "57CD8C581264035B9D6DF0494E40E518")
     
 public String getCompleteVoiceMailNumber() {
@@ -162,6 +171,7 @@ public String getCompleteVoiceMailNumber() {
     /**
      * Retrieves the alpha identifier associated with the voice mail number.
      */
+    @DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:12.216 -0500", hash_original_method = "D600B0CF58C0E649216D70FCBA15089F", hash_generated_method = "331CF1735E15EA1180693FBB3E5A5A35")
     
 public String getVoiceMailAlphaTag() {
@@ -173,6 +183,7 @@ public String getVoiceMailAlphaTag() {
      * Returns the IMS private user identity (IMPI) that was loaded from the ISIM.
      * @return the IMPI, or null if not present or not loaded
      */
+    @DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:12.219 -0500", hash_original_method = "9F475DD57EA6DFA50165E234C6E8C4F9", hash_generated_method = "C0737A2CAF643EBEBB8E93980B460BCB")
     
 public String getIsimImpi() {
@@ -190,6 +201,7 @@ public String getIsimImpi() {
      * Returns the IMS home network domain name that was loaded from the ISIM.
      * @return the IMS domain name, or null if not present or not loaded
      */
+    @DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:12.221 -0500", hash_original_method = "F4E0E1121A78A263259E537EC507AC3C", hash_generated_method = "63DDD82099367C54020331F89E79EFCF")
     
 public String getIsimDomain() {
@@ -208,6 +220,7 @@ public String getIsimDomain() {
      * @return an array of IMPU strings, with one IMPU per string, or null if
      *      not present or not loaded
      */
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:12.224 -0500", hash_original_method = "88204E3B8EE4ABDC3556103F74BFEFC3", hash_generated_method = "CB015DE12E85963C3B229512B06B4983")
     
 public String[] getIsimImpu() {

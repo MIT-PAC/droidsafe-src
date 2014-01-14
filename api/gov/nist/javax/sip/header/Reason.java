@@ -34,6 +34,7 @@ public Reason() {
     /** Get the cause token.
      *@return the cause code.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:52.053 -0500", hash_original_method = "8E10C2A6776CBAA32EF7257A8A62ADDC", hash_generated_method = "7F13B56B54E84BA2BA32D8FECC0D0785")
     
 public int getCause() {
@@ -67,6 +68,7 @@ public void setProtocol(String protocol) throws ParseException {
      *
      *@return the protocol.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:52.067 -0500", hash_original_method = "5EF709A41590C5E9760EDEDCACA5AD40", hash_generated_method = "044A2D0CFF5B1F22FCBA9304F70D399F")
     
 public String getProtocol() {
@@ -93,6 +95,7 @@ public void setText(String text) throws ParseException {
      *@return text parameter.
      *
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:52.078 -0500", hash_original_method = "E868EA376D386565EBAAF11DC1F8D010", hash_generated_method = "DDBD8B65122C2D957E4C8DC3AB8F432C")
     
 public String getText() {
@@ -104,6 +107,7 @@ public String getText() {
      *
      * @return the name of this specific Header
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:52.089 -0500", hash_original_method = "58D1ADCDFA9509486623D4E556DE8E64", hash_generated_method = "5A2D2B592CEBD7762F5C6B85CBD1BD89")
     
 public String getName() {

@@ -46,6 +46,7 @@ public class ContextThemeWrapper extends ContextWrapper {
     @Override public void setTheme(int resid) {
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public int getThemeResId() {
         return -1;
@@ -55,6 +56,7 @@ public class ContextThemeWrapper extends ContextWrapper {
         return null;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
     
     public Object getSystemService(String name) {

@@ -157,6 +157,7 @@ protected GenericObjectList(String lname, Class objclass) {
         myClass = objclass;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.252 -0500", hash_original_method = "F608522BE2D902628C253AAC05B9941D", hash_generated_method = "BDD6C135FB07D8AC261FA4D2B4D2AE55")
     
 protected String getIndentation() {
@@ -168,6 +169,7 @@ protected String getIndentation() {
     /**
      * Makes a deep clone of this list.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.260 -0500", hash_original_method = "6368B146C50DA8D7E84E7623E4D72233", hash_generated_method = "B7D1CA39FA0521F03A0F238F949058BF")
     
 public Object clone() {
@@ -203,6 +205,7 @@ protected GenericObject next(ListIterator iterator) {
      * This is the default list iterator.This will not handle nested list
      * traversal.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.278 -0500", hash_original_method = "0C810F8EA313238CAFFD85BD22D89FC5", hash_generated_method = "AFD6F572F23AF378CFA4C5B1328320AA")
     
 protected GenericObject first() {
@@ -217,6 +220,7 @@ protected GenericObject first() {
     /**
      * Fetch the next object from the list based on the default list iterator
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.280 -0500", hash_original_method = "F8FE3E2E9328224EF7348B82C4E16D5E", hash_generated_method = "AFAE8ADCD6DB00463035671A4D87ECE4")
     
 protected GenericObject next() {
@@ -292,6 +296,7 @@ private void sprint(String s) {
      * Convert this list of headers to a formatted string.
      */
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.291 -0500", hash_original_method = "373CBEDF2A2DC4BB05F4307048ABF6D6", hash_generated_method = "5BD5F6C67C2B829D72164C4552A43708")
     
 public String debugDump() {
@@ -373,6 +378,7 @@ public void mergeObjects(GenericObjectList mergeList) {
      * @return an encoded string containing the objects in this list.
      * @since v1.0
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.301 -0500", hash_original_method = "CDD824836834585D009706CA2D2AF418", hash_generated_method = "6D4D32194769A9F3D2B691D031B40991")
     
 public String encode() {
@@ -401,6 +407,7 @@ public String encode() {
     /**
      * Alias for the encode function above.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.304 -0500", hash_original_method = "9121421793EC5D37F14A312213FF0274", hash_generated_method = "0E38B803B5F7EA7FC3B7A952B8C48B78")
     
 public String toString() {

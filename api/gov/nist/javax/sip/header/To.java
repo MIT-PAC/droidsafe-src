@@ -86,6 +86,7 @@ protected StringBuffer encodeBody(StringBuffer buffer) {
      *
      * @return hostport field
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:53.658 -0500", hash_original_method = "465066D205BCB0CD35C4F9A4E5087389", hash_generated_method = "90E5A59A06C0924D7B9CB5E9EC6FC0CB")
     
 public HostPort getHostPort() {
@@ -99,6 +100,7 @@ public HostPort getHostPort() {
      *
      * @return Display name
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:53.662 -0500", hash_original_method = "3C83E52D0C85786FBC54CBD0510A4886", hash_generated_method = "6818546234C420EFC6B2CAD2241ADBCC")
     
 public String getDisplayName() {
@@ -112,6 +114,7 @@ public String getDisplayName() {
      *
      * @return tag field
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:53.666 -0500", hash_original_method = "2057D1C8F1E8BB8C55512212A4FDB01D", hash_generated_method = "9945763A633BC90164CA1E50733EA0E1")
     
 public String getTag() {
@@ -164,6 +167,7 @@ public void setTag(String t) throws ParseException {
     /**
      * Get the user@host port string.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:53.684 -0500", hash_original_method = "ED5A65C9FFE9E87462C7980633990418", hash_generated_method = "4769D39B7038AC11EDF2E88B688F79BE")
     
 public String getUserAtHostPort() {

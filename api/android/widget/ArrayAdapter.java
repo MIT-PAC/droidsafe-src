@@ -313,18 +313,21 @@ private void init(Context context, int resource, int textViewResourceId, List<T>
      *
      * @return The Context associated with this adapter.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.995 -0500", hash_original_method = "4F4EBC54D108D66F416C93B46580E117", hash_generated_method = "BA026F6873AF9B17E96AB49AFB6CEE03")
     
 public Context getContext() {
         return mContext;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
 	public int getCount() {
 		return 0;
         //return mObjects.size();
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
 	public Object getItem(int position) {
 		return getTaint();
@@ -338,6 +341,7 @@ public Context getContext() {
      *
      * @return The position of the specified item.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:13.001 -0500", hash_original_method = "4B52B65CCBAD37C22D6FCF1BE4A30381", hash_generated_method = "9F0BAE87F4E89FF7FF8FCDB2DA5566FE")
     
 public int getPosition(T item) {
@@ -347,6 +351,7 @@ public int getPosition(T item) {
     /**
      * {@inheritDoc}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:13.003 -0500", hash_original_method = "7144EF990F660E75AA61001CF21A1CD5", hash_generated_method = "86EF76D6295D66F6DBBE39DCDBA9A1C9")
     
 public long getItemId(int position) {
@@ -356,6 +361,7 @@ public long getItemId(int position) {
     /**
      * {@inheritDoc}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:13.005 -0500", hash_original_method = "180EEF863853B86A02E5E476168E516D", hash_generated_method = "A5B1D9C00E70EDAFF5DE72AD387583B6")
     
 public View getView(int position, View convertView, ViewGroup parent) {
@@ -408,6 +414,7 @@ public void setDropDownViewResource(int resource) {
     /**
      * {@inheritDoc}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:13.013 -0500", hash_original_method = "55A24C3FF57565648C18AD1B34A1D191", hash_generated_method = "354A608CAB67E58C0C02915FF74A2A17")
     
 @Override
@@ -415,6 +422,7 @@ public void setDropDownViewResource(int resource) {
         return createViewFromResource(position, convertView, parent, mDropDownResource);
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
 	public Filter getFilter() {
 		return new ArrayFilter();

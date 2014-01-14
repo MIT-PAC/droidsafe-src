@@ -7,12 +7,6 @@ import droidsafe.annotations.*;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-
-
-
-
-
-
 public class BasicLruCache<K, V> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.899 -0500", hash_original_field = "C1EA1E037942401E0AF0EDC51327A696", hash_generated_field = "008FED306747468EE2384D75A989933A")
 
@@ -37,6 +31,7 @@ public BasicLruCache(int maxSize) {
      * head of the queue. This returns null if a value is not cached and cannot
      * be created.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.907 -0500", hash_original_method = "FDCF7F376F479E894B67671F9DF4B51A", hash_generated_method = "BF6E3499977854564B236E0D4C323B6F")
     
 public synchronized final V get(K key) {
@@ -128,7 +123,6 @@ public synchronized final Map<K, V> snapshot() {
 public synchronized final void evictAll() {
         trimToSize(0);
     }
-
     
 }
 

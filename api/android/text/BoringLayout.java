@@ -347,6 +347,7 @@ void init(CharSequence source,
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:10.483 -0500", hash_original_method = "9C145AF64C7D263F1721F68F7FF83F17", hash_generated_method = "1A5EDB7C78561E1B6A3CA9296B022CEA")
     
 @Override
@@ -354,6 +355,7 @@ void init(CharSequence source,
         return mBottom;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:10.485 -0500", hash_original_method = "2D16E05C4EC39BC67C8A172C64094881", hash_generated_method = "1DE24C63CB0697E8870329A5E24CC12B")
     
 @Override
@@ -361,6 +363,7 @@ void init(CharSequence source,
         return 1;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:10.488 -0500", hash_original_method = "FC2E2A347EB554C00B43E510002C6FE3", hash_generated_method = "990E12A6FCB4160DA287EE4A98074680")
     
 @Override
@@ -371,6 +374,7 @@ void init(CharSequence source,
             return mBottom;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:10.491 -0500", hash_original_method = "CEFD06A93AC917501D80ABE3ADC321FA", hash_generated_method = "C46B9B5899C49F0AB130E8988688C51E")
     
 @Override
@@ -378,6 +382,7 @@ void init(CharSequence source,
         return mDesc;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:10.494 -0500", hash_original_method = "01507A0D62D72F853366982B51A08E39", hash_generated_method = "D7C20105564F43ADECD0C10972D21858")
     
 @Override
@@ -388,6 +393,7 @@ void init(CharSequence source,
             return getText().length();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:10.497 -0500", hash_original_method = "C13A8C90111FE51B6C5C9E4F734C2F1E", hash_generated_method = "834AF7DF658E88CC4B9C6FB7AFC51B75")
     
 @Override
@@ -402,6 +408,7 @@ void init(CharSequence source,
         return false;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:10.501 -0500", hash_original_method = "B75E83FBFEF77E240A9CDC2AC2A1C8A4", hash_generated_method = "17CABB93B65AC003BC199153051E2372")
     
 @Override
@@ -416,6 +423,7 @@ void init(CharSequence source,
         return Layout.DIRS_ALL_LEFT_TO_RIGHT;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:10.507 -0500", hash_original_method = "0410F05B3F48387C42DB277B8067D4A9", hash_generated_method = "C9A37F9D7E53BC032BE1989D8B7F43F3")
     
 @Override
@@ -423,6 +431,7 @@ void init(CharSequence source,
         return mTopPadding;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:10.511 -0500", hash_original_method = "A7597317BC8A3102F80AD4E9AD038652", hash_generated_method = "F0B9D53486F44C4D9B5E36E2D1B1C62A")
     
 @Override
@@ -430,6 +439,7 @@ void init(CharSequence source,
         return mBottomPadding;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:10.513 -0500", hash_original_method = "BD15B39FEBBFBBCAB07017E8474F5CA3", hash_generated_method = "0B170560F878D4D3FBE864A3634D2C9B")
     
 @Override
@@ -437,6 +447,7 @@ void init(CharSequence source,
         return mEllipsizedCount;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:10.516 -0500", hash_original_method = "414A86D89277DC065BB670E3078E25DD", hash_generated_method = "B386686EB6F85D1C517661821B85FFDB")
     
 @Override
@@ -444,6 +455,7 @@ void init(CharSequence source,
         return mEllipsizedStart;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:10.519 -0500", hash_original_method = "5CA9F8625BABB74DD57E485BAAAC3103", hash_generated_method = "466A36682DB1C1AD0B2234723777A380")
     
 @Override

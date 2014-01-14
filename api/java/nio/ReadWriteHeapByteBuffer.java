@@ -70,6 +70,7 @@ ReadWriteHeapByteBuffer(byte[] backingArray, int capacity, int arrayOffset) {
         return false;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.779 -0500", hash_original_method = "DFA49F6DA30AF833A3263BE3EE9CD5BB", hash_generated_method = "C841D45CC1FB04924EA78669A55EFC77")
     
 @Override

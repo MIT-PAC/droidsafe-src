@@ -46,6 +46,7 @@ public class SyncStateContract {
          * @throws RemoteException if there is a failure communicating with the remote
          * {@link android.content.ContentProvider}
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:55.590 -0500", hash_original_method = "5BAEEA9617C0AA3B35E4E6BB2B33ED19", hash_generated_method = "6A48469F02BB96E63D13AB49D1B5431B")
         
 public static byte[] get(ContentProviderClient provider, Uri uri,
@@ -111,6 +112,7 @@ public static void update(ContentProviderClient provider, Uri uri, byte[] data)
             provider.update(uri, values, null, null);
         }
 
+        @DSSource({DSSourceKind.FILE_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:55.600 -0500", hash_original_method = "59C36C2A4187FE21080DCE61B12EC2C5", hash_generated_method = "0FCB2EFB8728B15169BFE14097E5AA6A")
         
 public static Pair<Uri, byte[]> getWithUri(ContentProviderClient provider, Uri uri,

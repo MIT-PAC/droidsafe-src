@@ -6,14 +6,8 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import org.apache.http.io.HttpTransportMetrics;
 
-
-
-
-
-
 public class HttpTransportMetricsImpl implements HttpTransportMetrics {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.380 -0500", hash_original_field = "E8E208568B2733C138CF9FA3514C2C0C", hash_generated_field = "758177ECF64D712D2723B646394F959F")
-
 
     private long bytesTransferred = 0;
     
@@ -23,6 +17,7 @@ public HttpTransportMetricsImpl() {
         super();
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.384 -0500", hash_original_method = "7E49696C17D36DF48010DE39377AB681", hash_generated_method = "D9CEDD25462C13008374B8527E38B9BA")
     
 public long getBytesTransferred() {
@@ -46,7 +41,6 @@ public void incrementBytesTransferred(long count) {
 public void reset() {
         this.bytesTransferred = 0;
     }
-
     
 }
 

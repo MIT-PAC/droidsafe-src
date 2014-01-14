@@ -206,6 +206,7 @@ protected Dialog(Context context, boolean cancelable,
      * 
      * @return Context The Context used by the Dialog.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.059 -0500", hash_original_method = "4F4EBC54D108D66F416C93B46580E117", hash_generated_method = "DDB999668EFCAD36DFA58D5D665B592E")
     
 public final Context getContext() {
@@ -217,6 +218,7 @@ public final Context getContext() {
      *
      * @return The ActionBar attached to the dialog or null if no ActionBar is present.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.061 -0500", hash_original_method = "624FE63EC935EE8F7C5CD37954EA0AEA", hash_generated_method = "33D66BF8FD53038F6F7DC0896F5CE635")
     
 public ActionBar getActionBar() {
@@ -245,6 +247,7 @@ public final void setOwnerActivity(Activity activity) {
      * 
      * @return The Activity that owns this Dialog.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.066 -0500", hash_original_method = "D833D4731703AD671D7AED3C45CAE756", hash_generated_method = "7B9A6CA941CAE2C4730333AA7BFF9AEB")
     
 public final Activity getOwnerActivity() {
@@ -479,6 +482,7 @@ public void onRestoreInstanceState(Bundle savedInstanceState) {
      * @return Window The current window, or null if the activity is not
      *         visual.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.103 -0500", hash_original_method = "51ACB33F24592F8ED3FAFF9D96DEAF2A", hash_generated_method = "331876D44C3CE896E388411794B32F6E")
     
 public Window getWindow() {
@@ -494,6 +498,7 @@ public Window getWindow() {
      * @see #getWindow
      * @see android.view.Window#getCurrentFocus
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.105 -0500", hash_original_method = "44957F5326E5A87B91E438DCD3C71232", hash_generated_method = "09E1957E53D3994EE33E68D897FC3623")
     
 public View getCurrentFocus() {
@@ -1236,6 +1241,7 @@ public final void setFeatureDrawableAlpha(int featureId, int alpha) {
         getWindow().setFeatureDrawableAlpha(featureId, alpha);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.233 -0500", hash_original_method = "2F200E491A9F2CDC38C392035D21ED48", hash_generated_method = "3A16D6A7B6ED88109371E767B4893157")
     
 public LayoutInflater getLayoutInflater() {
@@ -1428,6 +1434,7 @@ public final void setVolumeControlStream(int streamType) {
     /**
      * @see Activity#getVolumeControlStream()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.259 -0500", hash_original_method = "03A841DC7655848901B3CE2C14084AAE", hash_generated_method = "0A136881DA0A667DEE6F55CE255E857C")
     
 public final int getVolumeControlStream() {

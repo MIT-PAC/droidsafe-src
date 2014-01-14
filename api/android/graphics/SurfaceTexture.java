@@ -170,6 +170,7 @@ public void getTransformMatrix(float[] mtx) {
      * invocations. It is mostly useful for determining time offsets between subsequent frames.
      */
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:24.209 -0500", hash_original_method = "1E06887ADD0CA49D5969AE26836E85A4", hash_generated_method = "36978C2484E3480C52E7A3E8D343B4CB")
     
 public long getTimestamp() {

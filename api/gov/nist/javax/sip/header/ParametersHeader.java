@@ -54,6 +54,7 @@ protected ParametersHeader(String hdrName, boolean sync) {
      * @return the value of specified parameter
      */
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:04.681 -0500", hash_original_method = "26B228E241B115E8361AA59B6E98DF15", hash_generated_method = "31EFF6210CF37131C11D083B7519391C")
     
 public String getParameter(String name) {
@@ -67,6 +68,7 @@ public String getParameter(String name) {
      * @param name is the name of the parameter to get.
      * @return the object associated with the name.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:04.685 -0500", hash_original_method = "950E84B179C4A06D00A5F96F379F35ED", hash_generated_method = "E7BC0F66294219D683B38F0CDBF3EC75")
     
 public Object getParameterValue(String name) {
@@ -80,6 +82,7 @@ public Object getParameterValue(String name) {
      * @return an Iterator over all the parameter names
      */
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:04.688 -0500", hash_original_method = "73DEE1BD3D15BA621CE057B5FCA7616C", hash_generated_method = "031CF79A9E4C2FEE480AFEEAF1A2F5BE")
     
 public Iterator<String> getParameterNames() {
@@ -302,6 +305,7 @@ public void removeParameters() {
      * get the parameter list.
      * @return parameter list
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:04.721 -0500", hash_original_method = "49747860C8C48A5B3F7CFA7B7258A693", hash_generated_method = "C29AE1FE64FECC89D737FDDB367A0855")
     
 public NameValueList getParameters() {
@@ -337,6 +341,7 @@ public void setParameters(NameValueList parameters) {
      *
      * @return -1 if the parameter is not defined in the header.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:04.730 -0500", hash_original_method = "65FA1152003E641D893D3A6B303652A1", hash_generated_method = "C949BE3D1C7809C46595142264C62F0A")
     
 protected int getParameterAsInt(String parameterName) {
@@ -361,6 +366,7 @@ protected int getParameterAsInt(String parameterName) {
      *
      *@return -1 if the parameter is not defined in the header.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:04.733 -0500", hash_original_method = "9C527B386FBBF95319BB18882D2DDAF1", hash_generated_method = "08B2339A2E7F1E6C305DC750B48660FF")
     
 protected int getParameterAsHexInt(String parameterName) {
@@ -387,6 +393,7 @@ protected int getParameterAsHexInt(String parameterName) {
      *
      *@return -1 if the parameter is not defined or the parameter as a float.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:04.736 -0500", hash_original_method = "B4454BBF4B067318BED7FA4306F23669", hash_generated_method = "36EF1C098CABD38F973CFAF33B0DC073")
     
 protected float getParameterAsFloat(String parameterName) {
@@ -413,6 +420,7 @@ protected float getParameterAsFloat(String parameterName) {
      *
      * @return -1 if the parameter is not defined or the parameter as a long.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:04.739 -0500", hash_original_method = "82A00B489AC355D0514D4F867ADC7246", hash_generated_method = "9BF42E6BACFACF05A2BBB756983582E0")
     
 protected long getParameterAsLong(String parameterName) {
@@ -439,6 +447,7 @@ protected long getParameterAsLong(String parameterName) {
      * @return value of the parameter as a URI or null if the parameter
      *  not present.
      */
+    @DSSource({DSSourceKind.FILE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:04.742 -0500", hash_original_method = "2454B831ED2FA559675B54C9AA305ADF", hash_generated_method = "1A543E6EE869FA57023DD015B7F804AB")
     
 protected GenericURI getParameterAsURI(String parameterName) {
@@ -461,6 +470,7 @@ protected GenericURI getParameterAsURI(String parameterName) {
      * @param parameterName -- the parameter name
      * @return boolean value of the parameter.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:04.745 -0500", hash_original_method = "1DB3A708311EDCC43D7A461B84D39940", hash_generated_method = "D2480EA822512FE505A1020F99874388")
     
 protected boolean getParameterAsBoolean(String parameterName) {
@@ -480,12 +490,14 @@ protected boolean getParameterAsBoolean(String parameterName) {
      *
      * @return the name value pair for the given parameter name.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:04.748 -0500", hash_original_method = "E1D4D51519E24D2E630FAA93B019FD38", hash_generated_method = "077DA06C42B11F06351811EC2A8B27D8")
     
 public NameValue getNameValue(String parameterName) {
         return parameters.getNameValue(parameterName);
     }
  
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:04.752 -0500", hash_original_method = "F88B366B00368248D268BF74B5E64B34", hash_generated_method = "47E75B2A211C27917A050BCF7BCF4612")
     
 public Object clone() {
@@ -533,6 +545,7 @@ public void setMultiParameter(NameValue nameValue) {
      * @param name
      * @return
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:04.761 -0500", hash_original_method = "AA35E6B35A009A15DE022941ACB0B490", hash_generated_method = "8921DA316EB3F30B6AE8F1585F335385")
     
 public String getMultiParameter(String name) {
@@ -540,6 +553,7 @@ public String getMultiParameter(String name) {
 
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:04.763 -0500", hash_original_method = "5A021F5792300443FECC73E0DD310EC6", hash_generated_method = "E56CD5221D22EA2D809209CA392371E4")
     
 public DuplicateNameValueList getMultiParameters() {
@@ -552,6 +566,7 @@ public DuplicateNameValueList getMultiParameters() {
      * @param name is the name of the parameter to get.
      * @return the object associated with the name.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:04.766 -0500", hash_original_method = "19E7E271B86B1511C96CA4313B229FF4", hash_generated_method = "5F03D3C93B87358A0264993FA39DE8ED")
     
 public Object getMultiParameterValue(String name) {
@@ -565,6 +580,7 @@ public Object getMultiParameterValue(String name) {
      * @return an Iterator over all the parameter names
      */
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:04.770 -0500", hash_original_method = "66D882806A955FACE11E379F1822F80D", hash_generated_method = "BE27918254B85DAF20CE42FC0F6812E9")
     
 public Iterator<String> getMultiParameterNames() {

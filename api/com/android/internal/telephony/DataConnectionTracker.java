@@ -465,6 +465,7 @@ public void reset() {
             rxPkts = -1;
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:43.806 -0500", hash_original_method = "1CA3D86B2E80A8520E2DD65A646FFF96", hash_generated_method = "F4BC7C3DD0DC1F5D553327EA4D599FD6")
         
 public String toString() {
@@ -719,6 +720,7 @@ public boolean isApnTypeActive(String type) {
         return mActiveApn != null && mActiveApn.canHandleType(type);
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:43.835 -0500", hash_original_method = "616B5B126FC289B3EB6BE1030B710468", hash_generated_method = "299CCFAA2BEFF1DFA7967A06BC92135D")
     
 protected ApnSetting fetchDunApn() {
@@ -732,6 +734,7 @@ protected ApnSetting fetchDunApn() {
         return ApnSetting.fromString(apnData);
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:43.838 -0500", hash_original_method = "F0E40F922DBB5D19CCBEC497FB284EC5", hash_generated_method = "3C8630F9C9501F1AB2804AB7F541036B")
     
 public String[] getActiveApnTypes() {
@@ -746,6 +749,7 @@ public String[] getActiveApnTypes() {
     }
 
     /** TODO: See if we can remove */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:43.840 -0500", hash_original_method = "8A278F7563F3F2CC899D3E200DD135CD", hash_generated_method = "FB991663E13AFA443E16119C0A065FA9")
     
 public String getActiveApnString(String apnType) {
@@ -773,6 +777,7 @@ public void setDataOnRoamingEnabled(boolean enabled) {
     /**
      * Return current {@link Settings.Secure#DATA_ROAMING} value.
      */
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:43.846 -0500", hash_original_method = "CA847DB1E96260749F912EC65B12A685", hash_generated_method = "1E692CEF67BA5E81F641FF67AFC4C082")
     
 public boolean getDataOnRoamingEnabled() {
@@ -995,6 +1000,7 @@ protected void onDataStallAlarm(int tag) {
      * @return {@code false} if data connectivity has been explicitly disabled,
      *         {@code true} otherwise.
      */
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:43.917 -0500", hash_original_method = "8F4FE806494E709DA803471FC4054850", hash_generated_method = "F16624BDA1D8D1C06F3D63584DD8A331")
     
 public boolean getAnyDataEnabled() {
@@ -1042,6 +1048,7 @@ protected int apnTypeToId(String type) {
         }
     }
 
+    @DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:43.925 -0500", hash_original_method = "C8FDA5A0B2174A5D621C26D6E6AEF75F", hash_generated_method = "A6AB7D90EA889D37DD9A9B62722F5640")
     
 protected String apnIdToType(int id) {
@@ -1068,6 +1075,7 @@ protected String apnIdToType(int id) {
         }
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:43.927 -0500", hash_original_method = "C93C3112872052D96A1B607494195947", hash_generated_method = "DF4A3F4258C880868F1D9CBAD1C757A3")
     
 protected LinkProperties getLinkProperties(String apnType) {
@@ -1082,6 +1090,7 @@ protected LinkProperties getLinkProperties(String apnType) {
         }
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:43.930 -0500", hash_original_method = "8B34AF8E1FD52F7524E0692F560388F1", hash_generated_method = "A8F5DB61D1D001922CBFEA75CF730C31")
     
 protected LinkCapabilities getLinkCapabilities(String apnType) {
@@ -1178,6 +1187,7 @@ protected synchronized boolean isApnIdEnabled(int id) {
      *         broadcast will be sent by the ConnectivityManager when a
      *         connection to the APN has been established.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:43.948 -0500", hash_original_method = "B518CE0EFC616BFFCBE5135F2BCA33B7", hash_generated_method = "F23C0276FD7C81D8145BD4E7D03B13AE")
     
 public synchronized int enableApnType(String type) {
@@ -1218,6 +1228,7 @@ public synchronized int enableApnType(String type) {
      *         Phone.APN_REQUEST_FAILED} is returned if the type parameter is
      *         invalid or if the apn wasn't enabled.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:43.951 -0500", hash_original_method = "A5E4EE0A9C6812357B5B6B8F3C042D82", hash_generated_method = "0FD9713F86DC4B2F192AEF2B9CD40B8A")
     
 public synchronized int disableApnType(String type) {
@@ -1431,6 +1442,7 @@ protected void onSetPolicyDataEnabled(boolean enabled) {
         }
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:43.982 -0500", hash_original_method = "E5EFA23236CE13ACC69B88C6F16F1B0C", hash_generated_method = "CBDD5A06106BF60AA4986B2114C5BD24")
     
 protected String getReryConfig(boolean forDefault) {

@@ -183,6 +183,7 @@ public void setSource(View source) {
      * </p>
      * @return The info of the source.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.982 -0500", hash_original_method = "D6229F18D386359B7D2ED64A724CE545", hash_generated_method = "E3F4DD62F8EC4943796CD11E7138B5E7")
     
 public AccessibilityNodeInfo getSource() {
@@ -201,6 +202,7 @@ public AccessibilityNodeInfo getSource() {
      *
      * @return The window id.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.984 -0500", hash_original_method = "0167B817243C7300A3E7B07356FC6F77", hash_generated_method = "1970707F9305C75751844A4DD97577B4")
     
 public int getWindowId() {
@@ -342,6 +344,7 @@ public void setScrollable(boolean scrollable) {
      *
      * @return The number of items.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:52.009 -0500", hash_original_method = "5653D3A6C559AE9B846DF6E2B5CE39F8", hash_generated_method = "5ECD654FB9BAD57A8D73E391C83C3123")
     
 public int getItemCount() {
@@ -367,6 +370,7 @@ public void setItemCount(int itemCount) {
      *
      * @return The current item index.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:52.014 -0500", hash_original_method = "C835140CBE8B50DDD89D13B9DB62A1BF", hash_generated_method = "D5D998EF569924DC3C010FBED5F40CBB")
     
 public int getCurrentItemIndex() {
@@ -395,6 +399,7 @@ public void setCurrentItemIndex(int currentItemIndex) {
      * @return The index of the first character or selection
      *        start or the first visible item.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:52.018 -0500", hash_original_method = "67718C1B588EB57EF05CD90DC3F200D7", hash_generated_method = "4E7F112F58B3AE1475FFA92EB92ECD13")
     
 public int getFromIndex() {
@@ -424,6 +429,7 @@ public void setFromIndex(int fromIndex) {
      *
      * @return The index of selection end or last item index.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:52.022 -0500", hash_original_method = "579D16111E248F454AD7B48F20E18451", hash_generated_method = "2D826AB68D0EEE2CE59753918C365117")
     
 public int getToIndex() {
@@ -448,6 +454,7 @@ public void setToIndex(int toIndex) {
      *
      * @return The scroll.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:52.027 -0500", hash_original_method = "37E422003D62C4BD4746E9CFAAF79E84", hash_generated_method = "2966D4C64459925C83CB122456D7422D")
     
 public int getScrollX() {
@@ -471,6 +478,7 @@ public void setScrollX(int scrollX) {
      *
      * @return The scroll.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:52.031 -0500", hash_original_method = "1E7AE64F8D32210A6E2C97F4869FB31A", hash_generated_method = "783DF9D98F417D8B625FF8CC53D68860")
     
 public int getScrollY() {
@@ -494,6 +502,7 @@ public void setScrollY(int scrollY) {
      *
      * @return The max scroll.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:52.036 -0500", hash_original_method = "C4A2F5E4142D8D5EA688446E7513363C", hash_generated_method = "FC8C8B13FB9786F06B237F79CC9DE44D")
     
 public int getMaxScrollX() {
@@ -516,6 +525,7 @@ public void setMaxScrollX(int maxScrollX) {
      *
      * @return The max scroll.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:52.041 -0500", hash_original_method = "A3ECA44A0D4150097FAA989997DF13C5", hash_generated_method = "CEFA4C74AA3CC80669494263F97F0A86")
     
 public int getMaxScrollY() {
@@ -539,6 +549,7 @@ public void setMaxScrollY(int maxScrollY) {
      *
      * @return The number of added characters.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:52.045 -0500", hash_original_method = "49E2E44D8419AC51B09A77AC8668D279", hash_generated_method = "97DEE091452250D9492F94DE1B9CB7EB")
     
 public int getAddedCount() {
@@ -564,6 +575,7 @@ public void setAddedCount(int addedCount) {
      *
      * @return The number of removed characters.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:52.050 -0500", hash_original_method = "EBD9E1156BBECE10FD62678D5B5AE958", hash_generated_method = "18F3685DDB7CC812F66D38EC4E0ACA55")
     
 public int getRemovedCount() {
@@ -589,6 +601,7 @@ public void setRemovedCount(int removedCount) {
      *
      * @return The class name.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:52.054 -0500", hash_original_method = "3625856433EBE1C9C9A90132A3C58D3F", hash_generated_method = "26599164AEA75289AA6AEFE666301F84")
     
 public CharSequence getClassName() {
@@ -615,6 +628,7 @@ public void setClassName(CharSequence className) {
      *
      * @return The text.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:52.059 -0500", hash_original_method = "DC632160826FC3F04AF23253967928B9", hash_generated_method = "379A6D4AD7B63386276D4CACD9E2EDDC")
     
 public List<CharSequence> getText() {
@@ -626,6 +640,7 @@ public List<CharSequence> getText() {
      *
      * @return The text before the change.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:52.061 -0500", hash_original_method = "FE2FD614296585A25D259709588FAD5E", hash_generated_method = "A052B70B6CA03CBA54AC63E969604818")
     
 public CharSequence getBeforeText() {
@@ -651,6 +666,7 @@ public void setBeforeText(CharSequence beforeText) {
      *
      * @return The description.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:52.065 -0500", hash_original_method = "6DAFF86A43A6BABA543C66C7DDAE7D00", hash_generated_method = "F956064663F9FEBB2E9D4DEF23399995")
     
 public CharSequence getContentDescription() {
@@ -676,6 +692,7 @@ public void setContentDescription(CharSequence contentDescription) {
      *
      * @return The parcelable data.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:52.069 -0500", hash_original_method = "336F04D02E102717408E8DD7ED329D8E", hash_generated_method = "0D4F1F165FBD3575FEEFEB96DD34A0B0")
     
 public Parcelable getParcelableData() {

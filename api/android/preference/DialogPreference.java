@@ -105,6 +105,7 @@ public void setDialogTitle(int dialogTitleResId) {
      * Returns the title to be shown on subsequent dialogs.
      * @return The title.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:25.533 -0500", hash_original_method = "883D8EFBB9B8BAD9BC22F78B210BA75B", hash_generated_method = "789B2BB66A051D6AFD7B079CFAFACE50")
     
 public CharSequence getDialogTitle() {
@@ -142,6 +143,7 @@ public void setDialogMessage(int dialogMessageResId) {
      * Returns the message to be shown on subsequent dialogs.
      * @return The message.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:25.539 -0500", hash_original_method = "1C9FE66F99F199ED8416C6E4CD3A4269", hash_generated_method = "7C0298DBAC939CDE7DE164ADCA75E342")
     
 public CharSequence getDialogMessage() {
@@ -176,6 +178,7 @@ public void setDialogIcon(int dialogIconRes) {
      * Returns the icon to be shown on subsequent dialogs.
      * @return The icon, as a {@link Drawable}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:25.545 -0500", hash_original_method = "03DB966CB140533ECF1D4BDC15FA7B76", hash_generated_method = "A831F8DF920DAF30CD778C9659DD617D")
     
 public Drawable getDialogIcon() {
@@ -211,6 +214,7 @@ public void setPositiveButtonText(int positiveButtonTextResId) {
      * 
      * @return The text of the positive button.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:25.552 -0500", hash_original_method = "82AFC23D5F7BC4989211310BE2784E8E", hash_generated_method = "9570F08916148C6D1E6AA2B557AAA692")
     
 public CharSequence getPositiveButtonText() {
@@ -246,6 +250,7 @@ public void setNegativeButtonText(int negativeButtonTextResId) {
      * 
      * @return The text of the negative button.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:25.558 -0500", hash_original_method = "AAC926564B2F61079BFED9FEE51EB7E4", hash_generated_method = "E912C00F40FCBB5603CDEF2B9B7448FD")
     
 public CharSequence getNegativeButtonText() {
@@ -271,6 +276,7 @@ public void setDialogLayoutResource(int dialogLayoutResId) {
      * 
      * @return The layout resource.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:25.562 -0500", hash_original_method = "6161E3D2B6291A2C05BBD55D42C3AED0", hash_generated_method = "80628F2AAEC739610AA687F4E15FD287")
     
 public int getDialogLayoutResource() {
@@ -370,6 +376,7 @@ private void requestInputMethod(Dialog dialog) {
      * @return The content View for the dialog.
      * @see #setLayoutResource(int)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:25.576 -0500", hash_original_method = "30915DC6B0C7508CE694D92B8515D200", hash_generated_method = "4BBF0EB04B922814511B8C574D43549F")
     
 protected View onCreateDialogView() {
@@ -444,6 +451,7 @@ protected void onDialogClosed(boolean positiveResult) {
      * 
      * @return The dialog, or null if a dialog is not being shown.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:25.591 -0500", hash_original_method = "BFDF5D83CE787BE21817622D7064532F", hash_generated_method = "C71E5AB7F1A8C6EFC64CAA7F76F42BA5")
     
 public Dialog getDialog() {
@@ -464,6 +472,7 @@ public void onActivityDestroy() {
         mDialog.dismiss();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:25.596 -0500", hash_original_method = "690D860013A43623DC1BE14E616673FB", hash_generated_method = "A36474BF7EB3EF505FDD40FD5D98B014")
     
 @Override

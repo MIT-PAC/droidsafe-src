@@ -46,24 +46,28 @@ public boolean isChunked() {
         return wrappedEntity.isChunked();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:45.825 -0500", hash_original_method = "0FBEEBE2CCF30C86364D7AFCA680099F", hash_generated_method = "7E046C22E149DB121AF317DB8766BFCA")
     
 public long getContentLength() {
         return wrappedEntity.getContentLength();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:45.828 -0500", hash_original_method = "FA7C53183DDD1E469C3D069CC9C24FBF", hash_generated_method = "95948A8A1C15106D85E087E36E1A5E3E")
     
 public Header getContentType() {
         return wrappedEntity.getContentType();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:45.830 -0500", hash_original_method = "09414FECE5ABE9B3537B6C0C8466B754", hash_generated_method = "BAC98E383F19DD74C4235118AB581A0B")
     
 public Header getContentEncoding() {
         return wrappedEntity.getContentEncoding();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:45.832 -0500", hash_original_method = "DDB93A3EE1E007696449240BA2D658FB", hash_generated_method = "49F44DDDCF30859499FEBA5D2E51B47E")
     
 public InputStream getContent()

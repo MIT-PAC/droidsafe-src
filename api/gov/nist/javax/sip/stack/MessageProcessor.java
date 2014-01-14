@@ -16,13 +16,7 @@ import java.text.ParseException;
 
 import javax.sip.InvalidArgumentException;
 
-
-
-
-
-
 public abstract class MessageProcessor implements Runnable {
-
 
     /**
      * Get the defalt port for the message processor.
@@ -31,6 +25,7 @@ public abstract class MessageProcessor implements Runnable {
      * @return -- the default port for the message processor.
      */
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:16.340 -0500", hash_original_method = "CEB44D65B48928437F2F9165DF46B2EE", hash_generated_method = "52AC30657166B77505FDDD66C3BBEB30")
     
 public static int getDefaultPort(String transport) {
@@ -48,10 +43,8 @@ public static int getDefaultPort(String transport) {
     private  String sentBy;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:16.246 -0500", hash_original_field = "AA28DDF9D08AB1F93F93F5CFD4ACD412", hash_generated_field = "0389863D34D171A4FDB6F6AEC7FB1BFE")
 
-
     private HostPort sentByHostPort;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:16.249 -0500", hash_original_field = "39D45BA15FCBEA8F598563FEEBD46668", hash_generated_field = "D4689216E9776FCD51A7A7F5BD10FEB0")
-
 
     private String savedIpAddress;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:16.252 -0500", hash_original_field = "BC151397D94B861E0C2BD62E73C6EFD9", hash_generated_field = "1D1E2A819197300B0531B8BCDEEDBEFB")
@@ -67,7 +60,6 @@ public static int getDefaultPort(String transport) {
 
     private ListeningPointImpl listeningPoint;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:16.263 -0500", hash_original_field = "C4FB79304611630FA5226732F4B73A23", hash_generated_field = "050A6FCEE8F9152C4D50D2695C900579")
-
 
     private boolean sentBySet;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:16.266 -0500", hash_original_field = "A4B05DD1A2BDFAA2E8FCD10E8D1815B6", hash_generated_field = "3233C5012C49C796F9D6BBC8E02EAB41")
@@ -122,6 +114,7 @@ public final void initialize( InetAddress ipAddress, int port,
      *
      * @return A string that indicates the transport. (i.e. "tcp" or "udp")
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:16.278 -0500", hash_original_method = "22854860B4C916CC2FA65D60880C8F3F", hash_generated_method = "C7D1390C22AED7EDC4ABACA60A1EB850")
     
 public String getTransport() {
@@ -134,6 +127,7 @@ public String getTransport() {
      * @return the port for this message processor. This is where you receive
      *         messages.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:16.281 -0500", hash_original_method = "1804D4B8ED6914D43C8BF926A65BA4F9", hash_generated_method = "2827709310D4A6354CC4E0B95B5C1D5F")
     
 public int getPort() {
@@ -146,6 +140,7 @@ public int getPort() {
      *
      * @return the ViaHeader to be used by the messages sent via this message processor.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:16.284 -0500", hash_original_method = "AEC88A1D2F84DB1C070CC4830A163BA9", hash_generated_method = "0B76E0D1C27BE633B3BAB70BC1580C7F")
     
 public Via getViaHeader() {
@@ -170,6 +165,7 @@ public Via getViaHeader() {
             return null;
         }
     }
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:16.287 -0500", hash_original_method = "07B7078D968B938E9AAFF4E32CB3E487", hash_generated_method = "CAF6A0E6AC7FE8490CA9689348E13F17")
     
 public ListeningPointImpl getListeningPoint() {
@@ -201,6 +197,7 @@ public void setListeningPoint(ListeningPointImpl lp) {
     /**
      * Get the saved IP Address.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:16.293 -0500", hash_original_method = "63BE272C790EA048A7B52BA4EDD2764B", hash_generated_method = "06F54A15A50154BFDA2C4FEF9307261E")
     
 public String getSavedIpAddress() {
@@ -209,6 +206,7 @@ public String getSavedIpAddress() {
     /**
      * @return the ip address for this message processor.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:16.296 -0500", hash_original_method = "884B07577FCFC9DD806F4641FDB0A38E", hash_generated_method = "C966304EEF88C7E37832487A5C9F8F88")
     
 public InetAddress getIpAddress() {
@@ -258,6 +256,7 @@ public void setSentBy(String sentBy) throws ParseException {
      * Get the sentby string.
      *
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:16.305 -0500", hash_original_method = "F9F985C0AF39EB878B850CABB152BA50", hash_generated_method = "884018CDB2BC8CA6D89CD8F3B98FAB32")
     
 public String getSentBy() {
@@ -298,7 +297,6 @@ public abstract MessageChannel createMessageChannel(HostPort targetHostPort)
     
 public abstract MessageChannel createMessageChannel(InetAddress targetHost,
             int port) throws IOException;
-
 
     /**
      * Start our thread.
@@ -342,8 +340,6 @@ public abstract int getMaximumMessageSize();
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:16.331 -0500", hash_original_method = "FB9F59146EEE6CC40C0613775AE45CBB", hash_generated_method = "3617B8DFC66E3EDDAD2C17D7560F8126")
     
 public abstract boolean inUse();
-
-
 
     /**
      * Run method.

@@ -226,6 +226,7 @@ public void setCompletionHint(CharSequence hint) {
      * 
      * @attr ref android.R.styleable#AutoCompleteTextView_dropDownWidth
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.044 -0500", hash_original_method = "0FF617112E6940852CA340238B035B28", hash_generated_method = "247259A32CDB55B911557833DCE6FDAC")
     
 public int getDropDownWidth() {
@@ -258,6 +259,7 @@ public void setDropDownWidth(int width) {
      *
      * @attr ref android.R.styleable#AutoCompleteTextView_dropDownHeight
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.049 -0500", hash_original_method = "ED81905DF1626AD5BC656BEBB27BE880", hash_generated_method = "2A536E1053D7425939D8951FC2FDBAD3")
     
 public int getDropDownHeight() {
@@ -288,6 +290,7 @@ public void setDropDownHeight(int height) {
      * 
      * @attr ref android.R.styleable#AutoCompleteTextView_dropDownAnchor
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.053 -0500", hash_original_method = "983C379A49D6519E05BB04A2322E89F2", hash_generated_method = "47B37E22C0C8134B5DD2F1C2D09AD204")
     
 public int getDropDownAnchor() {
@@ -317,6 +320,7 @@ public void setDropDownAnchor(int id) {
      * 
      * @attr ref android.R.styleable#PopupWindow_popupBackground
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.058 -0500", hash_original_method = "AF968841F9ADA345DD97E068FA7BD610", hash_generated_method = "B9F5A4E86C16A1269D847E12A60592B2")
     
 public Drawable getDropDownBackground() {
@@ -368,6 +372,7 @@ public void setDropDownVerticalOffset(int offset) {
      * 
      * @return the vertical offset
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.067 -0500", hash_original_method = "CD8747B9F2476A0A6006DC41A664E503", hash_generated_method = "DE383788E4FDCB2B215C3C806573CB68")
     
 public int getDropDownVerticalOffset() {
@@ -391,6 +396,7 @@ public void setDropDownHorizontalOffset(int offset) {
      * 
      * @return the horizontal offset
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.071 -0500", hash_original_method = "A7584484859282D74A751422BD935CE2", hash_generated_method = "7E8C8CA6329EF47BA0A3EA2027EC0765")
     
 public int getDropDownHorizontalOffset() {
@@ -424,6 +430,7 @@ public void setDropDownAnimationStyle(int animationStyle) {
      *
      * @hide Pending API council approval
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.075 -0500", hash_original_method = "348942C9B29D455789FBCF016CC929C3", hash_generated_method = "3EE54AD2789BC1F54D5F2D236311658A")
     
 public int getDropDownAnimationStyle() {
@@ -494,6 +501,7 @@ public void setDropDownDismissedOnCompletion(boolean dropDownDismissedOnCompleti
      *
      * @see #setThreshold(int)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.085 -0500", hash_original_method = "D355B3B251BB91FAED293791929579AC", hash_generated_method = "3394DC2838DC305525F1033F25137CAE")
     
 public int getThreshold() {
@@ -607,6 +615,7 @@ public AdapterView.OnItemSelectedListener getOnItemSelectedListener() {
      *
      * @return a data adapter used for auto completion
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.103 -0500", hash_original_method = "0E1A05724C497F45D7FB6AC34C501814", hash_generated_method = "A4011003FD32FA617AD815FC289B0759")
     
 public ListAdapter getAdapter() {
@@ -854,6 +863,7 @@ public void setListSelection(int position) {
      * 
      * @see ListView#getSelectedItemPosition()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.140 -0500", hash_original_method = "FACA63936D6E82D9A31B7F667F19A5C4", hash_generated_method = "494BAF6C10428ED1B29905126FB73382")
     
 public int getListSelection() {
@@ -1350,6 +1360,7 @@ public void performValidation() {
      * or <code>null</code> if {@link #setAdapter} was not called with
      * a Filterable.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.201 -0500", hash_original_method = "A182F1708C145D57F0135D6BE7F61F0B", hash_generated_method = "20C2962FE0F60E0FBED755951BC8FDD8")
     
 protected Filter getFilter() {

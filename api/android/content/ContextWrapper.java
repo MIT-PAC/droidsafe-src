@@ -91,12 +91,14 @@ public ContextWrapper(Context base) {
     /**
      * @return the base context as set by the constructor or setBaseContext
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.099 -0500", hash_original_method = "348D9A1AC27363C49C4D9EF878F36A33", hash_generated_method = "DA754C99DA3B20091EE22A3809569BE4")
     
 public Context getBaseContext() {
         return mBase;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.102 -0500", hash_original_method = "207324BD2179C2BB1CD4C22794703A9D", hash_generated_method = "6CB5F06DB234C725609449A49F465CA2")
     
 @Override
@@ -104,6 +106,7 @@ public Context getBaseContext() {
         return mBase.getAssets();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.104 -0500", hash_original_method = "47F2A94B0203C279563273E1E0895D4D", hash_generated_method = "B4F0C829CD4F5F2C97CA8904752E4CF8")
     
 @Override
@@ -112,6 +115,7 @@ public Context getBaseContext() {
         return mBase.getResources();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.106 -0500", hash_original_method = "D7F633AF602934F61160FEA442625239", hash_generated_method = "8F16F9223B72E9B17F9B501EDFC09857")
     
 @Override
@@ -119,6 +123,7 @@ public Context getBaseContext() {
         return mBase.getPackageManager();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.109 -0500", hash_original_method = "8EDC66E2D77BCDC119853EA41EA3296B", hash_generated_method = "139D612C99B54783A4962502799FFB5A")
     
 @Override
@@ -126,6 +131,7 @@ public Context getBaseContext() {
         return mBase.getContentResolver();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.111 -0500", hash_original_method = "7DA68BFFD90B5B26D8702419E8D7FC4A", hash_generated_method = "6EEAF27F90D1C6317E7721349FF9813F")
     
 @Override
@@ -133,6 +139,7 @@ public Context getBaseContext() {
         return mBase.getMainLooper();
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.113 -0500", hash_original_method = "78E13438476D4B526B3AB7AB982B9A37", hash_generated_method = "A6D0C1903DCB48BCDDC31B2E575E3D5A")
     
 @Override
@@ -149,6 +156,7 @@ public Context getBaseContext() {
     }
 
     /** @hide */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.117 -0500", hash_original_method = "735F7E922A6884F691E7980C19D30ED9", hash_generated_method = "AFA0D21A0F3F2A89A23FF54022E56F46")
     
 @Override
@@ -163,6 +171,7 @@ public Context getBaseContext() {
         return mBase.getTheme();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.122 -0500", hash_original_method = "325690D530E21A0AB255EE9D69D84488", hash_generated_method = "CD16D25F5FDB5376B6D65A38DAD451DB")
     
 @Override
@@ -170,6 +179,7 @@ public Context getBaseContext() {
         return mBase.getClassLoader();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.124 -0500", hash_original_method = "FC1F671DB2DE2D2F1C64463A96604F21", hash_generated_method = "981E8FCA373F2235FD0793073F84BFB1")
     
 @Override
@@ -177,6 +187,7 @@ public Context getBaseContext() {
         return mBase.getPackageName();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.126 -0500", hash_original_method = "12EA4F448AA17744DA817E2FDC985059", hash_generated_method = "FE296D16B1CFFEEEDB18114E3BAD0956")
     
 @Override
@@ -184,6 +195,7 @@ public Context getBaseContext() {
         return mBase.getApplicationInfo();
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.128 -0500", hash_original_method = "1456FB2C70424875587B348EBED7BEBD", hash_generated_method = "817366513C6780B3AFAB65AEECFDEB91")
     
 @Override
@@ -191,6 +203,7 @@ public Context getBaseContext() {
         return mBase.getPackageResourcePath();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.131 -0500", hash_original_method = "90ECA4CEE907B9CC4828D0F1EDEE17EB", hash_generated_method = "C796F4FD1D22BA33BA9F69A37BB8C39E")
     
 @Override
@@ -199,6 +212,7 @@ public Context getBaseContext() {
     }
 
     /** @hide */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.133 -0500", hash_original_method = "49CEDB82FC58CDF70EFA8B7A21272CFA", hash_generated_method = "2A0C250F3A35574A6093B36A1F4A4320")
     
 @Override
@@ -206,6 +220,7 @@ public Context getBaseContext() {
         return mBase.getSharedPrefsFile(name);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.136 -0500", hash_original_method = "51168DD8811589A8A44258F7BDA9D1F0", hash_generated_method = "BB704DA8F5AC55B97A278F82E1650118")
     
 @Override
@@ -238,6 +253,7 @@ public Context getBaseContext() {
         return mBase.deleteFile(name);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.145 -0500", hash_original_method = "41C51E2648C5FE16B28D046D5B54DAAA", hash_generated_method = "DD85A67E109B3B87717E895779708082")
     
 @Override
@@ -252,6 +268,7 @@ public Context getBaseContext() {
         return mBase.fileList();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.150 -0500", hash_original_method = "14B449BDD79B281009CCC9DF0F75EC6B", hash_generated_method = "58D9BF1BB0E543D2ED8CF780E3EDB5A5")
     
 @Override
@@ -259,6 +276,7 @@ public Context getBaseContext() {
         return mBase.getFilesDir();
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.152 -0500", hash_original_method = "BC309698CECF9063C5A4ADDF6C6EC7AF", hash_generated_method = "74788A6B35EEC28097DFD9AF92A3AD42")
     
 @Override
@@ -266,6 +284,7 @@ public Context getBaseContext() {
         return mBase.getExternalFilesDir(type);
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.154 -0500", hash_original_method = "068174B051BB78F57C468F648940D142", hash_generated_method = "4E58085C8DDCC2BDAF8530221C73DDA2")
     
 @Override
@@ -273,6 +292,7 @@ public Context getBaseContext() {
         return mBase.getObbDir();
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.156 -0500", hash_original_method = "44DE59125179A0BDED11E57B810BFAF1", hash_generated_method = "0F6E27ED3C39786F554597D2572B5FD9")
     
 @Override
@@ -280,6 +300,7 @@ public Context getBaseContext() {
         return mBase.getCacheDir();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.159 -0500", hash_original_method = "7C2D809316E637C52FE8D4DE0AE386A3", hash_generated_method = "5907DC0B3DDB4625833A1540D8CFA11E")
     
 @Override
@@ -287,6 +308,7 @@ public Context getBaseContext() {
         return mBase.getExternalCacheDir();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.161 -0500", hash_original_method = "A1FD69F0E118B7CAF1C496338AAD4B07", hash_generated_method = "6C7C58FB9AB46404091EC495CF6EE142")
     
 @Override
@@ -316,6 +338,7 @@ public Context getBaseContext() {
         return mBase.deleteDatabase(name);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.170 -0500", hash_original_method = "A01E89BA0EE5F5DE805AF38A996A2059", hash_generated_method = "C3D6263238BAE1469C805D6EC8E52340")
     
 @Override
@@ -330,6 +353,7 @@ public Context getBaseContext() {
         return mBase.databaseList();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.174 -0500", hash_original_method = "F9E6827CCB2CDD46111FB10DB307E9AE", hash_generated_method = "BD27CE5E9792B8BF942573B95F3A8F87")
     
 @Override
@@ -344,6 +368,7 @@ public Context getBaseContext() {
         return mBase.peekWallpaper();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.179 -0500", hash_original_method = "19E21BC09381D0D00BEBE6A5DFBF3F3C", hash_generated_method = "2DE9382B5DE3CE5219A7232D48C0CB14")
     
 @Override
@@ -351,6 +376,7 @@ public Context getBaseContext() {
         return mBase.getWallpaperDesiredMinimumWidth();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.182 -0500", hash_original_method = "3C43E61226EF3145DD8AB1F12075339B", hash_generated_method = "A92765679C906390CE7CA9E4DBD06D06")
     
 @Override
@@ -660,6 +686,7 @@ public Context getBaseContext() {
                 message);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.273 -0500", hash_original_method = "B027173E51D2D8A4B1BA8F51741454A2", hash_generated_method = "480E359F080974DFAA38904C4A23473E")
     
 @Override

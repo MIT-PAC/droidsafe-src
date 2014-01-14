@@ -197,6 +197,7 @@ boolean isPukRequired() {
         }
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:45.151 -0500", hash_original_method = "29E2CBB78335356F6993D73415A74DA6", hash_generated_method = "9A6D439BF5D1A644B4B35621E9133986")
     
 @Override

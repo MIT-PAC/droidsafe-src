@@ -18,18 +18,16 @@ import android.security.Credentials;
 import android.security.KeyChain;
 import android.util.Log;
 
-
-
-
-
 final class CertTool {
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:47.011 -0500", hash_original_method = "CB2D35D966CD710A64E9BD9F45549511", hash_generated_method = "16A514B58BB4148859FC4ED301091CD7")
     
 static String[] getKeyStrengthList() {
         return new String[] {"High Grade", "Medium Grade"};
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:47.014 -0500", hash_original_method = "0C31F22EE5605896C042A9554E5E2F85", hash_generated_method = "D56FBDE3293A63C7B233422532D7DC04")
     
 static String getSignedPublicKey(Context context, int index, String challenge) {
@@ -57,6 +55,7 @@ static void addCertificate(Context context, String type, byte[] value) {
         Credentials.getInstance().install(context, type, value);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:47.018 -0500", hash_original_method = "D4AF6F68FC296225D479C322C857B353", hash_generated_method = "1491190F75D0EB25846273129E9B3152")
     
 static String getCertType(String mimeType) {
@@ -67,11 +66,9 @@ static String getCertType(String mimeType) {
     private static final String LOGTAG = "CertTool";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:47.006 -0500", hash_original_field = "C922C1E0E587BAE42337D813D01973D3", hash_generated_field = "CD5933C3A9B5A26C387D6522BB21C57D")
 
-
     private static final AlgorithmIdentifier MD5_WITH_RSA =
             new AlgorithmIdentifier(PKCSObjectIdentifiers.md5WithRSAEncryption);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:47.009 -0500", hash_original_field = "38906D82A9901FB743C573D20E88064E", hash_generated_field = "4B6102789B0D3F567AE83CB481B398FF")
-
 
     private static HashMap<String, String> sCertificateTypeMap;
 

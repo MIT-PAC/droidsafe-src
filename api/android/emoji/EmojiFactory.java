@@ -77,6 +77,7 @@ public String name() {
      * @return Bitmap object when this factory knows the Bitmap relevant to the codepoint.
      * Otherwise null is returned.  
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:25.915 -0500", hash_original_method = "51D3837892087BC1526F97486EB96A82", hash_generated_method = "31DE90672EEB09E659C8B6C245AD3C5D")
     
 public synchronized Bitmap getBitmapFromAndroidPua(int pua) {
@@ -111,6 +112,7 @@ public synchronized Bitmap getBitmapFromAndroidPua(int pua) {
      * @return Bitmap object when this factory knows the Bitmap relevant to the code. Otherwise
      * null is returned.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:25.917 -0500", hash_original_method = "9A7284FF37A5214E9B7F9311E2EF3E6C", hash_generated_method = "8758B57401D2A7362DDAD3B9AF892FA5")
     
 public synchronized Bitmap getBitmapFromVendorSpecificSjis(char sjis) {
@@ -126,6 +128,7 @@ public synchronized Bitmap getBitmapFromVendorSpecificSjis(char sjis) {
      * @return Bitmap object when this factory knows the Bitmap relevant to the code. Otherwise
      * null is returned.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:25.919 -0500", hash_original_method = "F5F3B81D8E941B288B2A41FCC9367619", hash_generated_method = "02FCB5B09C95BFB34E0B3D4A1C86BACD")
     
 public synchronized Bitmap getBitmapFromVendorSpecificPua(int vsp) {
@@ -138,6 +141,7 @@ public synchronized Bitmap getBitmapFromVendorSpecificPua(int vsp) {
      * @param sjis vendor specific sjis
      * @return Unicode PUA for Android, or -1 if there's no map for the sjis.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:25.921 -0500", hash_original_method = "5E0818C254D368AF2876C64915580604", hash_generated_method = "40282940B9EC925ED3F1E6FCD9570564")
     
 public int getAndroidPuaFromVendorSpecificSjis(char sjis) {
@@ -150,6 +154,7 @@ public int getAndroidPuaFromVendorSpecificSjis(char sjis) {
      * @param pua Unicode PUA for Android,
      * @return vendor specific sjis, or -1 if there's no map for the AndroidPua.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:25.923 -0500", hash_original_method = "CAA9928E1DDFC9E6AF0D5DC613844580", hash_generated_method = "6825ADAC1FFDD121E6CFB037EFD3E46D")
     
 public int getVendorSpecificSjisFromAndroidPua(int pua) {
@@ -163,12 +168,14 @@ public int getVendorSpecificSjisFromAndroidPua(int pua) {
      * @return Unicode PUA for Android, or -1 if there's no map for the
      * Unicode.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:25.926 -0500", hash_original_method = "BF155C8450604BCD58870D68939F5C48", hash_generated_method = "CC812665B631AA676D90401606774D14")
     
 public int getAndroidPuaFromVendorSpecificPua(int vsp) {
         return nativeGetAndroidPuaFromVendorSpecificPua(mNativeEmojiFactory, vsp);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:25.928 -0500", hash_original_method = "332632D7825438D0B8DBF43F7E76A339", hash_generated_method = "8CD3921A434071F3F5D856ECC35439D0")
     
 public String getAndroidPuaFromVendorSpecificPua(String vspString) {
@@ -201,12 +208,14 @@ public String getAndroidPuaFromVendorSpecificPua(String vspString) {
      * @param pua Unicode PUA for Android,
      * @return vendor specific sjis, or -1 if there's no map for the AndroidPua.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:25.930 -0500", hash_original_method = "B08EB100AB82E54ADADC386CF8B33D33", hash_generated_method = "8A5063C7C4112249E268668B66B0AE67")
     
 public int getVendorSpecificPuaFromAndroidPua(int pua) {
         return nativeGetVendorSpecificPuaFromAndroidPua(mNativeEmojiFactory, pua);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:25.933 -0500", hash_original_method = "6085ED2713FAD0096DF7C4BD4C86F8DD", hash_generated_method = "19D394CC7FFEE219C930C99726B3C910")
     
 public String getVendorSpecificPuaFromAndroidPua(String puaString) {
@@ -237,6 +246,7 @@ public String getVendorSpecificPuaFromAndroidPua(String puaString) {
      * Returns the lowest code point corresponding to an Android
      * emoji character.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:25.943 -0500", hash_original_method = "E94B589829434939D487652724460608", hash_generated_method = "6C3A76D47CF3A2F33CF7F3C57B0DBB1D")
     
 public int getMinimumAndroidPua() {
@@ -247,6 +257,7 @@ public int getMinimumAndroidPua() {
      * Returns the highest code point corresponding to an Android
      * emoji character.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:25.945 -0500", hash_original_method = "84EA08D07D32F9FA087FFC75B38A56E8", hash_generated_method = "DA6C0FA2F7D45A06E6AABC5C2F964F64")
     
 public int getMaximumAndroidPua() {

@@ -34,6 +34,7 @@ public PMediaAuthorization()
      *
      * @return token
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:56.489 -0500", hash_original_method = "F23C2C2B4085CBC596D4F9DFFD38C718", hash_generated_method = "438276A336E04D9381C3BC15180EBF44")
     
 public String getToken()

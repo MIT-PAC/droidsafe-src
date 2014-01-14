@@ -150,6 +150,7 @@ public FileOutputStream(String path, boolean append) throws FileNotFoundExceptio
      * Returns a write-only {@link FileChannel} that shares its position with
      * this stream.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.271 -0500", hash_original_method = "ED8CC62185555A958270FAF77C7A0E38", hash_generated_method = "9A812DB1A2B8287B9416C38AD1DB0488")
     
 public FileChannel getChannel() {
@@ -164,6 +165,7 @@ public FileChannel getChannel() {
     /**
      * Returns the underlying file descriptor.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.273 -0500", hash_original_method = "7178DA6FA6DD367775EBAB657FD1BDA0", hash_generated_method = "BF99A80A25EF13693DBEFA2A53118A0A")
     
 public final FileDescriptor getFD() throws IOException {

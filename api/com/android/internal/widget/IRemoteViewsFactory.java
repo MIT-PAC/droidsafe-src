@@ -56,7 +56,8 @@ public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:41.640 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:41.640 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
             
 public java.lang.String getInterfaceDescriptor()
 {
@@ -111,7 +112,8 @@ finally {
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:41.652 -0500", hash_original_method = "8F75DEE90D77050C4310F7910F15DF05", hash_generated_method = "CF1DD4C68CEEEF2CEBCC892B1AD60B7C")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:41.652 -0500", hash_original_method = "8F75DEE90D77050C4310F7910F15DF05", hash_generated_method = "CF1DD4C68CEEEF2CEBCC892B1AD60B7C")
             
 public int getCount() throws android.os.RemoteException
 {
@@ -130,7 +132,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:41.655 -0500", hash_original_method = "BA333F7F5D07AC2A58CE75793633866C", hash_generated_method = "54EA236C4F3EAF26C18D7E76CADC8DA7")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:41.655 -0500", hash_original_method = "BA333F7F5D07AC2A58CE75793633866C", hash_generated_method = "54EA236C4F3EAF26C18D7E76CADC8DA7")
             
 public android.widget.RemoteViews getViewAt(int position) throws android.os.RemoteException
 {
@@ -155,7 +158,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:41.658 -0500", hash_original_method = "F702B727011CDFB63BDFB32B1FE7B2A5", hash_generated_method = "C266DDE36430753EF06153C0F080D4F3")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:41.658 -0500", hash_original_method = "F702B727011CDFB63BDFB32B1FE7B2A5", hash_generated_method = "C266DDE36430753EF06153C0F080D4F3")
             
 public android.widget.RemoteViews getLoadingView() throws android.os.RemoteException
 {
@@ -179,7 +183,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:41.661 -0500", hash_original_method = "E651AF580573ED5B04D1A5927CC9A606", hash_generated_method = "CF42F48DB461484CA63EAFA55B72754E")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:41.661 -0500", hash_original_method = "E651AF580573ED5B04D1A5927CC9A606", hash_generated_method = "CF42F48DB461484CA63EAFA55B72754E")
             
 public int getViewTypeCount() throws android.os.RemoteException
 {
@@ -198,7 +203,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:41.663 -0500", hash_original_method = "ACF825C65D44E45C2D369BEBD643C7EE", hash_generated_method = "A1EA02CF79818EACBA2C21B1FE09B56F")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:41.663 -0500", hash_original_method = "ACF825C65D44E45C2D369BEBD643C7EE", hash_generated_method = "A1EA02CF79818EACBA2C21B1FE09B56F")
             
 public long getItemId(int position) throws android.os.RemoteException
 {
@@ -285,7 +291,8 @@ public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:41.624 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:41.624 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
         
 public android.os.IBinder asBinder()
 {

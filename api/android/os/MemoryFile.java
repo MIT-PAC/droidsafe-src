@@ -53,6 +53,7 @@ public class MemoryFile {
      *
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:41.854 -0500", hash_original_method = "BCE66A712337B4BBAF82A3F870F7581D", hash_generated_method = "E41D856AAE4A158A39C51FE95963F1DC")
     
 public static int getSize(FileDescriptor fd) throws IOException {
@@ -205,6 +206,7 @@ synchronized public boolean allowPurging(boolean allowPurging) throws IOExceptio
      *
      @return InputStream
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:41.843 -0500", hash_original_method = "1F9A300CE55BE9E69C06FFD4C6B98E29", hash_generated_method = "7C05402E53936EEE4CFFB07B0AF6F015")
     
 public InputStream getInputStream() {
@@ -216,7 +218,8 @@ public InputStream getInputStream() {
      *
      @return OutputStream
      */
-     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:41.845 -0500", hash_original_method = "0A8C4757301CE72EF10D99AE7CF53794", hash_generated_method = "76B516386E2DCA79240512F75CF04B3F")
+     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:41.845 -0500", hash_original_method = "0A8C4757301CE72EF10D99AE7CF53794", hash_generated_method = "76B516386E2DCA79240512F75CF04B3F")
     
 public OutputStream getOutputStream() {
         return new MemoryOutputStream();
@@ -415,6 +418,7 @@ public void writeBytes(byte[] buffer, int srcOffset, int destOffset, int count)
      *
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:41.851 -0500", hash_original_method = "2D6523548F3A6408618EC64E9280F841", hash_generated_method = "02AF995FD91DFE52837F24EDA124C08D")
     
 public FileDescriptor getFileDescriptor() throws IOException {

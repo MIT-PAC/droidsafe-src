@@ -268,6 +268,7 @@ public String peekNextId() {
 
     /** Get the next id.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.948 -0500", hash_original_method = "7F6D0FFBB3DD0E896E18057F7DC876B2", hash_generated_method = "4EEC32D944698BE420AF830EEFAD8040")
     
 public String getNextId() {
@@ -275,6 +276,7 @@ public String getNextId() {
     }
 
     // call this after you call match
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.951 -0500", hash_original_method = "DD3F66B83694243DF059D5B5621ADB54", hash_generated_method = "AC958D60942083B4834D606B96511C69")
     
 public Token getNextToken() {
@@ -326,6 +328,7 @@ public Token[] peekNextToken(int ntokens) throws ParseException {
     /** Match the given token or throw an exception if no such token
      * can be matched.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.959 -0500", hash_original_method = "EF527252962F704D7452C6B99500917D", hash_generated_method = "BE7655C07E1329CD326693E64EB0674A")
     
 public Token match(int tok) throws ParseException {
@@ -815,6 +818,7 @@ public void rewindInputPosition(int position) {
     /** Get the rest of the String
      * @return rest of the buffer.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:51.015 -0500", hash_original_method = "2FDB8C189AB11331619907255B1EC94B", hash_generated_method = "0CC817560D3FA6FCA66A4B885D665582")
     
 public String getRest() {
@@ -828,6 +832,7 @@ public String getRest() {
      * @param c the character to match
      * @return the substring that matches.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:51.018 -0500", hash_original_method = "720A9C8698AD8EBEF63DE1F048944846", hash_generated_method = "280573BDFBE88FEAE20614843D1D4CAB")
     
 public String getString(char c) throws ParseException {
@@ -869,6 +874,7 @@ public String getString(char c) throws ParseException {
 
     /** Get the read pointer.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:51.021 -0500", hash_original_method = "976AE9BCD44A20D9CC809F6C91A5525F", hash_generated_method = "82AF28238265DE1776FC37087FB0B53F")
     
 public int getPtr() {
@@ -877,6 +883,7 @@ public int getPtr() {
 
     /** Get the buffer.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:51.023 -0500", hash_original_method = "E132864DD50CA73C29855C29E535CA90", hash_generated_method = "6E3441502EEC01C275EF7EB724A104D2")
     
 public String getBuffer() {

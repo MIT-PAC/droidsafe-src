@@ -48,6 +48,7 @@ static NetworkInterface forUnboundMulticastSocket() {
      * @throws SocketException if an error occurs.
      * @throws NullPointerException if {@code interfaceName == null}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:05.641 -0500", hash_original_method = "EC81104C8006573D0B5015A0AF9F06F0", hash_generated_method = "EF8E107A0F265E928EBACFC41E9A3312")
     
 public static NetworkInterface getByName(String interfaceName) throws SocketException {
@@ -178,6 +179,7 @@ private static SocketException rethrowAsSocketException(Exception ex) throws Soc
      * @throws SocketException if an error occurs.
      * @throws NullPointerException if {@code address == null}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:05.659 -0500", hash_original_method = "C5BED01285EEC8C891B8D4941E84B7EA", hash_generated_method = "442F63E2864AF74B9727B2ACEF63732A")
     
 public static NetworkInterface getByInetAddress(InetAddress address) throws SocketException {
@@ -199,6 +201,7 @@ public static NetworkInterface getByInetAddress(InetAddress address) throws Sock
      * @throws SocketException if an error occurs.
      * @hide 1.7
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:05.662 -0500", hash_original_method = "41AD8406050560C493DEC740B62499BB", hash_generated_method = "F8DC51E5076697007446F2CCEEAE6E70")
     
 public static NetworkInterface getByIndex(int index) throws SocketException {
@@ -219,6 +222,7 @@ public static NetworkInterface getByIndex(int index) throws SocketException {
      *             if an error occurs while getting the network interface
      *             information.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:05.664 -0500", hash_original_method = "5454C5CAD241A70EC9EE91DB383A2F54", hash_generated_method = "0CEDC7EDC80F26805703027D51D30853")
     
 public static Enumeration<NetworkInterface> getNetworkInterfaces() throws SocketException {
@@ -296,6 +300,7 @@ private NetworkInterface(String name, int interfaceIndex,
      *
      * @hide 1.7
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:05.632 -0500", hash_original_method = "BFC291A64FD07504405088442BFF58AA", hash_generated_method = "7BA355BCFC6851EF3611E71767DEDEFE")
     
 public int getIndex() {
@@ -305,6 +310,7 @@ public int getIndex() {
     /**
      * Returns the name of this network interface (such as "eth0" or "lo").
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:05.634 -0500", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "50860709F8CC9FE19B604881E59FBA54")
     
 public String getName() {
@@ -314,6 +320,7 @@ public String getName() {
     /**
      * Returns an enumeration of the addresses bound to this network interface.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:05.636 -0500", hash_original_method = "8FEC8BEDC3DD9B76E3DD04718D2DB944", hash_generated_method = "30C46E758838E31C55A96F50F7CEE90F")
     
 public Enumeration<InetAddress> getInetAddresses() {
@@ -324,6 +331,7 @@ public Enumeration<InetAddress> getInetAddresses() {
      * Returns a human-readable name for this network interface. On Android, this is the same
      * string as returned by {@link #getName}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:05.638 -0500", hash_original_method = "8EA44302895F236212D41E0DDEBDF9A7", hash_generated_method = "338C1CAD35E4DEB5DCEAB0CFAAB84764")
     
 public String getDisplayName() {
@@ -391,6 +399,7 @@ public String getDisplayName() {
      * Returns a List of the InterfaceAddresses for this network interface.
      * @since 1.6
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:05.678 -0500", hash_original_method = "C190D1700F991379DD6B6FA0B56D9271", hash_generated_method = "E524A373F799AAA0A73DBE7C320C18D1")
     
 public List<InterfaceAddress> getInterfaceAddresses() {
@@ -406,6 +415,7 @@ public List<InterfaceAddress> getInterfaceAddresses() {
      * @return an Enumeration of all the sub-interfaces of this network interface
      * @since 1.6
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:05.680 -0500", hash_original_method = "8E4C110AD3B43FE2BF8CD3BA4F006B61", hash_generated_method = "29C145CCCEEF98941035E6551C64ED30")
     
 public Enumeration<NetworkInterface> getSubInterfaces() {
@@ -419,6 +429,7 @@ public Enumeration<NetworkInterface> getSubInterfaces() {
      * @return the NetworkInterface this interface is attached to.
      * @since 1.6
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:05.683 -0500", hash_original_method = "0171D836B0B5DAF8B2EBF67B786C53D8", hash_generated_method = "AF6C158B0323BC64441ED5AB255DC36A")
     
 public NetworkInterface getParent() {
@@ -484,6 +495,7 @@ private boolean hasFlag(int mask) throws SocketException {
         return (flags & mask) != 0;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.939 -0400", hash_original_method = "38A6C5A0C86B6ED6858EFB47D652704B", hash_generated_method = "03D3756D0CCE283A6BBA95B14F88554B")
     public byte[] getHardwareAddress() throws SocketException {
         try 
@@ -538,6 +550,7 @@ for(int i = 0;i < result.length;++i)
      * @throws SocketException if an I/O error occurs.
      * @since 1.6
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:05.700 -0500", hash_original_method = "57A1E5A45121F464D5D64A55053B7665", hash_generated_method = "D889655AAC62B736100BE7BE6B8BE0AD")
     
 public int getMTU() throws SocketException {

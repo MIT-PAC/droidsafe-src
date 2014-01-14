@@ -26,6 +26,7 @@ public HttpEntityEnclosingRequestBase() {
         super();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:44.274 -0500", hash_original_method = "FCFC1A07171F7DE920C85D2DD77008FA", hash_generated_method = "F26E442D152B9CF496C6F072484628AD")
     
 public HttpEntity getEntity() {
@@ -44,6 +45,7 @@ public void setEntity(final HttpEntity entity) {
 		return false;
 	}
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:44.281 -0500", hash_original_method = "E7A680A098600990FE1B80B7489E8A9A", hash_generated_method = "A02B4AE2B32DDDCA85245A69D05B6DB7")
     
 @Override

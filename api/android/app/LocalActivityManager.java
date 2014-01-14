@@ -372,6 +372,7 @@ private Window performDestroy(LocalActivityRecord r, boolean finish) {
      * @return Returns the window that was used to display the activity, or
      * null if there was none.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:24.410 -0500", hash_original_method = "BE481800D6C8FAA522EB6457C475667B", hash_generated_method = "F44233FB347E5FD4543E20B51FB6AAAB")
     
 public Window destroyActivity(String id, boolean finish) {
@@ -396,6 +397,7 @@ public Window destroyActivity(String id, boolean finish) {
      * @see #startActivity
      * @see #getCurrentId
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:24.412 -0500", hash_original_method = "DDB5384220B4A60C69552CE8336AA299", hash_generated_method = "FF1F9ECE6E3D1BD66D6645D262D06434")
     
 public Activity getCurrentActivity() {
@@ -411,6 +413,7 @@ public Activity getCurrentActivity() {
      * @see #startActivity
      * @see #getCurrentActivity
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:24.415 -0500", hash_original_method = "4729520AC64C6CA5B20AE92550B34CDA", hash_generated_method = "4DDCC0BF080D774312C1898D964EC6C2")
     
 public String getCurrentId() {
@@ -425,6 +428,7 @@ public String getCurrentId() {
      * @return the associated Activity object, or null if the id is unknown or
      *         its activity is not currently instantiated
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:24.417 -0500", hash_original_method = "AAFBFF7BB86A9D1FFB973CDC0860D37E", hash_generated_method = "5B68D0E1E88D3BA99DAC8D301ECEEEED")
     
 public Activity getActivity(String id) {
@@ -514,6 +518,7 @@ public void dispatchCreate(Bundle state) {
      * 
      * @see #dispatchCreate
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:24.422 -0500", hash_original_method = "5298101F1EDBDE2B5A84C3EFF961D34B", hash_generated_method = "380788475216D0A335556FD30738A77D")
     
 public Bundle saveInstanceState() {
@@ -626,6 +631,7 @@ public void dispatchStop() {
      * 
      * {@hide}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:24.431 -0500", hash_original_method = "070B049D0EB630832F296616C02C666D", hash_generated_method = "6B03AD255CDDCAC63500D38F4490A1FD")
     
 public HashMap<String,Object> dispatchRetainNonConfigurationInstance() {

@@ -22,6 +22,7 @@ public class KeyFactory {
      * @throws NoSuchAlgorithmException
      *             if no provider provides the requested algorithm.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.721 -0500", hash_original_method = "882DD4EE2378CFA4943241FF4B933992", hash_generated_method = "10B19BA66738F202BDDE27A56E3667FC")
     
 public static KeyFactory getInstance(String algorithm)
@@ -49,6 +50,7 @@ public static KeyFactory getInstance(String algorithm)
      *             if the requested provider is not available.
      * @throws IllegalArgumentException if {@code provider == null || provider.isEmpty()}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.724 -0500", hash_original_method = "264444E5DC777949A2E14EADBD48C9C0", hash_generated_method = "3883A5E8F99BAA5F25879D71D842A529")
     
 public static KeyFactory getInstance(String algorithm, String provider)
@@ -77,6 +79,7 @@ public static KeyFactory getInstance(String algorithm, String provider)
      *             if the provider does not provide the requested algorithm.
      * @throws IllegalArgumentException if {@code provider == null}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.727 -0500", hash_original_method = "9DE9D482115D17A2D144E89EDB9BAAF8", hash_generated_method = "CAC24CAF03C2D579F076AF77F0988A41")
     
 public static KeyFactory getInstance(String algorithm, Provider provider)
@@ -132,6 +135,7 @@ protected KeyFactory(KeyFactorySpi keyFacSpi,
      *
      * @return the provider associated with this {@code KeyFactory}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.729 -0500", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "443000CF13C77ABCABFC8B67E2DE556F")
     
 public final Provider getProvider() {
@@ -145,6 +149,7 @@ public final Provider getProvider() {
      * @return the name of the algorithm associated with this {@code
      *         KeyFactory}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.731 -0500", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "8A7AA6162519FFB2228039F3D6331CE9")
     
 public final String getAlgorithm() {

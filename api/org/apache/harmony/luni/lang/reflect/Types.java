@@ -6,10 +6,9 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.lang.reflect.Type;
 
-
-
 public class Types {
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.334 -0500", hash_original_method = "FE711A690BFEA310062513D9F7BBC1B7", hash_generated_method = "791549CCA3F40BCAC475218C2EE092DE")
     
 public static Type[] getClonedTypeArray(ListOfTypes types) {
@@ -31,7 +30,6 @@ public static Type getType(Type type) {
     {
         //Synthesized constructor
     }
-
     
 }
 

@@ -13,23 +13,17 @@ import android.content.ContentResolver;
 import android.net.Uri;
 import android.os.Bundle;
 
-
-
-
-
 public abstract class AbstractCursor implements CrossProcessCursor {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.990 -0500", hash_original_field = "185286679E98DDBA5FF230438EB0F181", hash_generated_field = "C0008393E22A94FFD078F5CB06D7EC35")
 
     private static final String TAG = "Cursor";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.993 -0500", hash_original_field = "6D0681B9CC29887CCBA4001347A5783B", hash_generated_field = "6D0681B9CC29887CCBA4001347A5783B")
 
-
     DataSetObservable mDataSetObservable = new DataSetObservable();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.995 -0500", hash_original_field = "6BF9678DA09BCADC073486531F473877", hash_generated_field = "6BF9678DA09BCADC073486531F473877")
 
     ContentObservable mContentObservable = new ContentObservable();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.998 -0500", hash_original_field = "C259FC89DCF7616DD34FCE80BA674482", hash_generated_field = "C259FC89DCF7616DD34FCE80BA674482")
-
 
     Bundle mExtras = Bundle.EMPTY;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.140 -0500", hash_original_field = "1E4BEC7621C0E009A0425DF8C3E14CAB", hash_generated_field = "3262CD6FF716DCC93EF350DE915E82F7")
@@ -40,7 +34,6 @@ public abstract class AbstractCursor implements CrossProcessCursor {
 
     protected int mRowIdColumnIndex;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.144 -0500", hash_original_field = "25A5DEAC26D49039381CEC3AC02D8D8E", hash_generated_field = "2D6A6141DF728852DF640B9043726CFE")
-
 
     protected int mPos;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.147 -0500", hash_original_field = "2E5FDB535F2F56C11257295004C37CB1", hash_generated_field = "E8ADE6CE335E3FD73301A59B91CA2D26")
@@ -108,6 +101,7 @@ abstract public double getDouble(int column);
     
 abstract public boolean isNull(int column);
 
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.021 -0500", hash_original_method = "DA5F8C1E79CBE35B90A3C92DA2B8F28D", hash_generated_method = "79F7307668FDED21FDAAA83FC83D8C99")
     
 public int getType(int column) {
@@ -118,6 +112,7 @@ public int getType(int column) {
     }
 
     // TODO implement getBlob in all cursor types
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.024 -0500", hash_original_method = "5BC3F93BAD50F14F34AFA39612F89CC6", hash_generated_method = "84E6BBD2B54F22A58E16CCA0093F8782")
     
 public byte[] getBlob(int column) {
@@ -132,12 +127,14 @@ public byte[] getBlob(int column) {
      *
      * @return The pre-filled window that backs this cursor, or null if none.
      */
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.026 -0500", hash_original_method = "DD0E28415E6C930BA9DBA04095F3A7EA", hash_generated_method = "8CFD6C9A1970077B3C8167CFDBB21E00")
     
 public CursorWindow getWindow() {
         return null;
     }
 
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.029 -0500", hash_original_method = "97CA757ED7462ACFFD2DF70EB3327BE9", hash_generated_method = "B1652FECE7015FB212D1DA5F4D149783")
     
 public int getColumnCount() {
@@ -202,7 +199,6 @@ public boolean onMove(int oldPosition, int newPosition) {
         return true;
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.045 -0500", hash_original_method = "8CF2CB9941A08AAA09DBF5869325E31C", hash_generated_method = "D7F7F774DFCE7E863DF9E42DF9144F6C")
     
 public void copyStringToBuffer(int columnIndex, CharArrayBuffer buffer) {
@@ -221,6 +217,7 @@ public void copyStringToBuffer(int columnIndex, CharArrayBuffer buffer) {
         }
     }
 
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.050 -0500", hash_original_method = "EC88CAE72DCB37222F19A173793DEE6F", hash_generated_method = "05B956A71986D13FCD03FEF4B8480048")
     
 public final int getPosition() {
@@ -329,6 +326,7 @@ public final boolean isAfterLast() {
         return mPos == getCount();
     }
 
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.080 -0500", hash_original_method = "1BC2DDCF2F027B280B5593E829676223", hash_generated_method = "0A09D916ED2733D761E94B2C43245915")
     
 public int getColumnIndex(String columnName) {
@@ -356,6 +354,7 @@ public int getColumnIndex(String columnName) {
         return -1;
     }
 
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.083 -0500", hash_original_method = "7BAA81DCDF7699C82AB2A31918E9C0C1", hash_generated_method = "9FE618F7F92C63699B5B2F9D16A7F8EF")
     
 public int getColumnIndexOrThrow(String columnName) {
@@ -366,6 +365,7 @@ public int getColumnIndexOrThrow(String columnName) {
         return index;
     }
 
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.085 -0500", hash_original_method = "2C8B9F57D7BABEC67595057D4A416343", hash_generated_method = "8D1521F58744E794012D38E9DF858A59")
     
 public String getColumnName(int columnIndex) {
@@ -459,12 +459,14 @@ public void setNotificationUri(ContentResolver cr, Uri notifyUri) {
         }
     }
 
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.106 -0500", hash_original_method = "DDB9421669E815EA51C0F68469B23471", hash_generated_method = "0D843E4E09494A285DEF52C0B9966F34")
     
 public Uri getNotificationUri() {
         return mNotifyUri;
     }
 
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.108 -0500", hash_original_method = "95EB5F956072F4428350A5713DB4F16C", hash_generated_method = "93337760FDB4B0073A27BD8E5852735D")
     
 public boolean getWantsAllOnMoveCalls() {
@@ -484,6 +486,7 @@ public void setExtras(Bundle extras) {
         mExtras = (extras == null) ? Bundle.EMPTY : extras;
     }
 
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.113 -0500", hash_original_method = "CF33C86C13BFD55DE499066ECC955562", hash_generated_method = "4808B2FAD06A275B25AB6F7116EE8421")
     
 public Bundle getExtras() {
@@ -509,6 +512,7 @@ public Bundle respond(Bundle extras) {
     /**
      * @deprecated Always returns null since Cursors do not support updating rows
      */
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.120 -0500", hash_original_method = "C12342D6451FF7A0A51B2EFC9932FDFD", hash_generated_method = "554F2E91B694D8CFA51B4512A1BB1F14")
     
 @Deprecated
@@ -531,7 +535,6 @@ protected void checkPosition() {
             throw new CursorIndexOutOfBoundsException(mPos, getCount());
         }
     }
-
     
     protected static class SelfContentObserver extends ContentObserver {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.127 -0500", hash_original_field = "703A671C4ACC07BD23149F0A5FD18BB7", hash_generated_field = "703A671C4ACC07BD23149F0A5FD18BB7")
@@ -561,7 +564,6 @@ public SelfContentObserver(AbstractCursor cursor) {
                 cursor.onChange(false);
             }
         }
-
         
     }
 

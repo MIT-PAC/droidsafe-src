@@ -13,11 +13,6 @@ import java.util.GregorianCalendar;
 import java.util.Locale;
 import java.util.TimeZone;
 
-
-
-
-
-
 public class SIPDate implements Cloneable, Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:10.870 -0500", hash_original_field = "526C029BED3197AA2313CE0C8E30D713", hash_generated_field = "9AD574E6092CE8903697183A4F17A37E")
 
@@ -298,6 +293,7 @@ public String encode() {
      * All other fields are for this package only.
      * @return Calendar
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:10.981 -0500", hash_original_method = "AA358655086B2D4E31F8BC09FB299576", hash_generated_method = "5EDBD0906F60C65F22784211163D0ABB")
     
 public java.util.Calendar getJavaCal() {
@@ -309,6 +305,7 @@ public java.util.Calendar getJavaCal() {
     /** get the WkDay field
      * @return String
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:10.983 -0500", hash_original_method = "457D7CE469867FC10EBD436F0D51643B", hash_generated_method = "8998CC9BA5D098C6473AA8918E4D9328")
     
 public String getWkday() {
@@ -318,6 +315,7 @@ public String getWkday() {
     /** get the month
      * @return String
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:10.987 -0500", hash_original_method = "A22F3A31D7F5863E790748C0D0AB40F6", hash_generated_method = "57B0669886903D03FF0699FBDD3E38C0")
     
 public String getMonth() {
@@ -327,6 +325,7 @@ public String getMonth() {
     /** get the hour
      * @return int
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:10.989 -0500", hash_original_method = "4346EB52B1E97382E292AD2394C76CAA", hash_generated_method = "A194E1C992B75D4090BBB66E32375345")
     
 public int getHour() {
@@ -336,6 +335,7 @@ public int getHour() {
     /** get the minute
      * @return int
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:10.992 -0500", hash_original_method = "ADC91C6D58A75EA1079C93B22A777A18", hash_generated_method = "CF49E8A6A214CF4A858F7AB8E9FFF007")
     
 public int getMinute() {
@@ -345,6 +345,7 @@ public int getMinute() {
     /** get the second
      *  @return int
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:10.996 -0500", hash_original_method = "033202145FC9480CAEE9B3FD508F85AB", hash_generated_method = "689D20C84E5FD4B8743042815D0E5131")
     
 public int getSecond() {
@@ -476,6 +477,7 @@ public void setYear(int y) throws IllegalArgumentException {
     /**
     * Get the year member.
     */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:11.015 -0500", hash_original_method = "685E9F12E07BC44AEFABA3E87A7BA88C", hash_generated_method = "AB2E34C40AC19F4A97DAF5C4A789B7FF")
     
 public int getYear() {
@@ -530,6 +532,7 @@ public void setSecond(int s) throws IllegalArgumentException {
      *
      *@return offset from the current time.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:11.026 -0500", hash_original_method = "2F4F469E30C2F586A40940F33F0E1586", hash_generated_method = "66492B98EA48DC7248B81F0EF8DBD816")
     
 public int getDeltaSeconds() {

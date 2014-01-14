@@ -20,7 +20,8 @@ import android.util.Log;
 
 public final class BluetoothDevice implements Parcelable {
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:31.730 -0500", hash_original_method = "B0796CDCCC198F5133D1C780F27F0FFA", hash_generated_method = "A33AAC12BB252B20DAA5E7A5619BAA78")
+    /*package*/ @DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:31.730 -0500", hash_original_method = "B0796CDCCC198F5133D1C780F27F0FFA", hash_generated_method = "A33AAC12BB252B20DAA5E7A5619BAA78")
     
 static IBluetooth getService() {
         synchronized (BluetoothDevice.class) {
@@ -360,6 +361,7 @@ public void writeToParcel(Parcel out, int flags) {
      * <p> For example, "00:11:22:AA:BB:CC".
      * @return Bluetooth hardware address as string
      */
+    @DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:31.753 -0500", hash_original_method = "BD85A48E5B7DC741C80D75F9CC9D3A4A", hash_generated_method = "B33AAC87BF1F03A01C58BBB4B9D198BA")
     
 public String getAddress() {
@@ -376,6 +378,7 @@ public String getAddress() {
      *
      * @return the Bluetooth name, or null if there was a problem.
      */
+    @DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:31.756 -0500", hash_original_method = "027728A71FD2E55E5703A638CB89EB2E", hash_generated_method = "03266511763C6208D924449D71AFD630")
     
 public String getName() {
@@ -392,6 +395,7 @@ public String getName() {
      * @return the Bluetooth alias, or null if no alias or there was a problem
      * @hide
      */
+    @DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:31.758 -0500", hash_original_method = "3D31424D7A0639D60E5B5097A46F207C", hash_generated_method = "2EE8E3E90EC1E2E0F61A5525062E4CF3")
     
 public String getAlias() {
@@ -430,6 +434,7 @@ public boolean setAlias(String alias) {
      * @return the Bluetooth alias, or null if no alias or there was a problem
      * @hide
      */
+    @DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:31.763 -0500", hash_original_method = "0C2F081FEB58CFB1BA7C24E91B419B7D", hash_generated_method = "DB72A4F603C952981DE2BFF87D6EED47")
     
 public String getAliasName() {
@@ -557,6 +562,7 @@ public boolean removeBond() {
      *
      * @return the bond state
      */
+    @DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:31.776 -0500", hash_original_method = "D50E996B702CE09ED98935B433818740", hash_generated_method = "47677619F8047B60B331881D889DB095")
     
 public int getBondState() {
@@ -572,6 +578,7 @@ public int getBondState() {
      *
      * @return Bluetooth class object, or null on error
      */
+    @DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:31.778 -0500", hash_original_method = "EF524B188F92A45A25D7F167D0B007CD", hash_generated_method = "606BE01F26AE57DF7424D259FE021A15")
     
 public BluetoothClass getBluetoothClass() {
@@ -588,6 +595,7 @@ public BluetoothClass getBluetoothClass() {
      * <p>Requires {@link android.Manifest.permission#BLUETOOTH}.
      * @hide
      */
+    @DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:31.780 -0500", hash_original_method = "31D115AB32A31FB0B9AF4C26A4E47F46", hash_generated_method = "4B587BBBC66E72ED4F4AB596316D99DA")
     
 public boolean getTrustState() {
@@ -629,7 +637,8 @@ public boolean setTrust(boolean value) {
      * @return the supported features (UUIDs) of the remote device,
      *         or null on error
      */
-     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:31.784 -0500", hash_original_method = "E2768C133840A39718DB537E54814CD2", hash_generated_method = "B12153184F9917E4F49FD19D65566AED")
+     @DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:31.784 -0500", hash_original_method = "E2768C133840A39718DB537E54814CD2", hash_generated_method = "B12153184F9917E4F49FD19D65566AED")
     
 public ParcelUuid[] getUuids() {
         try {
@@ -663,6 +672,7 @@ public boolean fetchUuidsWithSdp() {
     }
 
     /** @hide */
+    @DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:31.789 -0500", hash_original_method = "3159A609DA44BB79D68A9974B9B6A655", hash_generated_method = "5FD4CD50B43F54C95F3BCF9051C672A2")
     
 public int getServiceChannel(ParcelUuid uuid) {

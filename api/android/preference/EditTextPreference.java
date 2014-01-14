@@ -81,6 +81,7 @@ public void setText(String text) {
      * 
      * @return The current preference value.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.698 -0500", hash_original_method = "2FFFCC59A442EF1196B854805331F3A7", hash_generated_method = "7675B56A832FA6E1A4872CB2A7C75222")
     
 public String getText() {
@@ -161,6 +162,7 @@ protected void onAddEditTextToDialogView(View dialogView, EditText editText) {
      * 
      * @return The {@link EditText} widget that will be shown in the dialog.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.714 -0500", hash_original_method = "25F3ADCBABEE77EF933107206F4A63FB", hash_generated_method = "599AA86E6466590D2AF3F8CF2247EF7E")
     
 public EditText getEditText() {

@@ -14,6 +14,7 @@ import javax.sip.message.MessageFactory;
 
 public class SipFactory {
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:04.006 -0500", hash_original_method = "F7F2D55AC38114BCE4E789F1EDF2BA17", hash_generated_method = "EECE14B7DA555E1BBD62271ECC62ECE1")
     
 public static synchronized SipFactory getInstance() {

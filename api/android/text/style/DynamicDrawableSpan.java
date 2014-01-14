@@ -11,10 +11,6 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 
-
-
-
-
 public abstract class DynamicDrawableSpan extends ReplacementSpan {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.125 -0500", hash_original_field = "56F35BBCC1FA1116F768C6A5AC9A74AB", hash_generated_field = "A47BFC49D3DFA51412A4721B935ED380")
 
@@ -26,11 +22,9 @@ public abstract class DynamicDrawableSpan extends ReplacementSpan {
 
     public static final int ALIGN_BASELINE = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.133 -0500", hash_original_field = "EBBD40EF7B2AC897D0C3172D0FE7C4AC", hash_generated_field = "D68ADB86A975A9AE5050DE7500A9318A")
-
     
     protected  int mVerticalAlignment;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.155 -0500", hash_original_field = "ED75FAB2DB1FB4241E447355C9E64AAD", hash_generated_field = "6E7F288327E5F719EDD09C1387A42733")
-
 
     private WeakReference<Drawable> mDrawableRef;
     
@@ -53,6 +47,7 @@ protected DynamicDrawableSpan(int verticalAlignment) {
      * Returns the vertical alignment of this span, one of {@link #ALIGN_BOTTOM} or
      * {@link #ALIGN_BASELINE}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.141 -0500", hash_original_method = "613CAAD12B2914F4036D9034966EEECA", hash_generated_method = "BA3D48C58348343E6A2D35E66B5517B0")
     
 public int getVerticalAlignment() {
@@ -79,7 +74,7 @@ public abstract Drawable getDrawable();
 
         if (fm != null) {
             fm.ascent = -rect.bottom; 
-            fm.descent = 0; 
+            fm.descent = 0;
 
             fm.top = fm.ascent;
             fm.bottom = 0;

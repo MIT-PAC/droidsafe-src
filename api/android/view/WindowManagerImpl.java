@@ -628,6 +628,7 @@ public void closeAll() {
         closeAll(null, null, null);
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:07.259 -0500", hash_original_method = "6421FA4950C786DB3C3137628B8417F4", hash_generated_method = "E636F017B2EEA4737868391A38E0EB2C")
     
 public Display getDefaultDisplay() {

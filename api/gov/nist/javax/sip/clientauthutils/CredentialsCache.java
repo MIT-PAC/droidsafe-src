@@ -80,6 +80,7 @@ void cacheAuthorizationHeader(String callId,
      * @return authorization header corresponding to that user for the given
      *         proxy domain.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:41.124 -0500", hash_original_method = "0B5572B5CD4E87519D0DA5EDF97CD6AB", hash_generated_method = "0B5572B5CD4E87519D0DA5EDF97CD6AB")
     
 Collection<AuthorizationHeader> getCachedAuthorizationHeaders(

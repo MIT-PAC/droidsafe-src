@@ -205,6 +205,7 @@ public void setQueryRefinement(int refineWhat) {
      * Returns the current query refinement preference.
      * @return value of query refinement preference
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:19.745 -0500", hash_original_method = "986E9EFF340372ED6B6AF1389D87F9A0", hash_generated_method = "8FEA08FFD485B597F21E8838992C3BFE")
     
 public int getQueryRefinement() {
@@ -571,6 +572,7 @@ public ChildViewCache(View v) {
      *
      * @see android.widget.ListAdapter#getView(int, View, ViewGroup)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:19.805 -0500", hash_original_method = "EC9A6ABF4CBFA211B4EDA728AA0B1D68", hash_generated_method = "6F756B9030C9DE6578298DBB4587359F")
     
 @Override

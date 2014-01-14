@@ -117,6 +117,7 @@ public HorizontalScrollView(Context context, AttributeSet attrs, int defStyle) {
         a.recycle();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:00.284 -0500", hash_original_method = "041555434146A9B8485461655BD1A318", hash_generated_method = "336DE90073D98B769C28AFCA6BC51D35")
     
 @Override
@@ -133,6 +134,7 @@ public HorizontalScrollView(Context context, AttributeSet attrs, int defStyle) {
         return 1.0f;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:00.287 -0500", hash_original_method = "AC1CCEB780F155A105BA88465002385B", hash_generated_method = "3BFAA2C78CD446355B6C0774F9BC879B")
     
 @Override
@@ -155,6 +157,7 @@ public HorizontalScrollView(Context context, AttributeSet attrs, int defStyle) {
      * @return The maximum amount this scroll view will scroll in response to
      *   an arrow event.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:00.289 -0500", hash_original_method = "F72D9B4700B8FCB550AB26E9792E603C", hash_generated_method = "9F4D0E6F3D1198C699BE79EBF1321D8D")
     
 public int getMaxScrollAmount() {

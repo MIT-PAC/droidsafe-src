@@ -466,6 +466,7 @@ PlainSocketImpl socketImpl() {
             return socketImpl;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.643 -0500", hash_original_method = "379CE4067399395F02052517F4DCE995", hash_generated_method = "6A27C1E95BC16D7FF7CBB98FB1BD6E05")
         
 @Override
@@ -487,6 +488,7 @@ PlainSocketImpl socketImpl() {
             return channel.isConnected();
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.651 -0500", hash_original_method = "B0018340FF02F226576061EFB596D2DE", hash_generated_method = "73ECBDB77D7E6EE5FEEFF702462CB2D8")
         
 @Override
@@ -546,6 +548,7 @@ PlainSocketImpl socketImpl() {
             }
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.662 -0500", hash_original_method = "33C0B42780F1E273103B5BBAE79F7408", hash_generated_method = "F092860FCBE6F007E971FB6662A9E26E")
         
 @Override
@@ -557,6 +560,7 @@ PlainSocketImpl socketImpl() {
             return new SocketChannelOutputStream(channel);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.665 -0500", hash_original_method = "84598A158E9BC4BA9724B2EC04F9ADAB", hash_generated_method = "AA831EBE9B2E8B2D763E53B6D1EC4BC8")
         
 @Override
@@ -579,6 +583,7 @@ private void checkOpenAndConnected() throws SocketException {
             }
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.670 -0500", hash_original_method = "7907395A2BDEF0093C42980D22D2F1FF", hash_generated_method = "7EBFBEFAFB8F26F143BEF760FDE7A089")
         
 @Override
@@ -705,6 +710,7 @@ synchronized private void checkUnconnected() throws IOException {
     /*
      * Get local address.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.620 -0500", hash_original_method = "C580647FE4D156BB3A20DD6B3069A7D0", hash_generated_method = "73F0C9573BC5C9680B1EEB1DF5D743D4")
     
 public InetAddress getLocalAddress() throws UnknownHostException {
@@ -739,6 +745,7 @@ public InetAddress getLocalAddress() throws UnknownHostException {
     /*
      * Get the fd.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.627 -0500", hash_original_method = "A16D8AC033B12AF5E337D988C94AB7BA", hash_generated_method = "8F9C1BA6B62D105E8F557BE8D56765AF")
     
 public FileDescriptor getFD() {

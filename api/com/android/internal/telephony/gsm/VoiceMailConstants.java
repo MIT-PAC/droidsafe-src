@@ -19,20 +19,14 @@ import android.util.Xml;
 
 import com.android.internal.util.XmlUtils;
 
-
-
-
 class VoiceMailConstants {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:19.784 -0500", hash_original_field = "28DECCA9F494133CD6F61BCA99A50ECA", hash_generated_field = "B8386CD6D900777C9D6A0A5CA1D0B217")
-
-
 
     static final String LOG_TAG = "GSM";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:19.787 -0500", hash_original_field = "0513B7789E51497CD0356920E7614BAC", hash_generated_field = "A7A20C99E1F7A8DBB390A0410D443AA6")
 
     static final String PARTNER_VOICEMAIL_PATH ="etc/voicemail-conf.xml";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:19.789 -0500", hash_original_field = "2F7927E48A6353CDCE816CBD49EED4A9", hash_generated_field = "94F97F389D569D864E35EB506D54B128")
-
 
     static final int NAME = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:19.792 -0500", hash_original_field = "FDCF7DABCA0423FE97E346C00BD48BDF", hash_generated_field = "45400B6CCA1D90FC5844A6FD59A74995")
@@ -61,6 +55,7 @@ boolean containsCarrier(String carrier) {
         return CarrierVmMap.containsKey(carrier);
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:19.805 -0500", hash_original_method = "50C2E249A143A488875B9940B1F1FDE1", hash_generated_method = "50C2E249A143A488875B9940B1F1FDE1")
     
 String getCarrierName(String carrier) {
@@ -68,6 +63,7 @@ String getCarrierName(String carrier) {
         return data[NAME];
     }
 
+    @DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:19.807 -0500", hash_original_method = "0EE8F97DB48267A64D2C0726286D2A1F", hash_generated_method = "0EE8F97DB48267A64D2C0726286D2A1F")
     
 String getVoiceMailNumber(String carrier) {
@@ -75,6 +71,7 @@ String getVoiceMailNumber(String carrier) {
         return data[NUMBER];
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:19.809 -0500", hash_original_method = "DE969177752DBF24A725FEF909B2130D", hash_generated_method = "DE969177752DBF24A725FEF909B2130D")
     
 String getVoiceMailTag(String carrier) {

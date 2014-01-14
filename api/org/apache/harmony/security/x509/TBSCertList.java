@@ -40,6 +40,7 @@ public final class TBSCertList {
             setOptional(6);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:00.753 -0500", hash_original_method = "4CB52480148187F41511219623E7C6F5", hash_generated_method = "65DC9EEE6AB515127FFFE0747DB533FA")
         
 @Override protected Object getDecodedObject(BerInputStream in) throws IOException {
@@ -117,6 +118,7 @@ private TBSCertList(int version, AlgorithmIdentifier signature,
     /**
      * Returns the value of version field of the structure.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:00.726 -0500", hash_original_method = "00A0A81AB162D0816192A8848BD6F0D6", hash_generated_method = "0A6C4E4591BB9051C220BECC5445085D")
     
 public int getVersion() {
@@ -126,6 +128,7 @@ public int getVersion() {
     /**
      * Returns the value of signature field of the structure.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:00.729 -0500", hash_original_method = "DD6542667BFDE70B879F723105C92A71", hash_generated_method = "8983DBF8FD7CF97E2F3DB5F36F4DEF72")
     
 public AlgorithmIdentifier getSignature() {
@@ -135,6 +138,7 @@ public AlgorithmIdentifier getSignature() {
     /**
      * Returns the value of issuer field of the structure.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:00.731 -0500", hash_original_method = "EBC299B5141657B108909E991892F54F", hash_generated_method = "F7EB58F964146EE4A9CA8F4132036285")
     
 public Name getIssuer() {
@@ -144,6 +148,7 @@ public Name getIssuer() {
     /**
      * Returns the value of thisUpdate field of the structure.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:00.733 -0500", hash_original_method = "3F952D48E5C3F549E0CF72E297E1768F", hash_generated_method = "1053BFE347B5CFC1BE2FF0B4CC330728")
     
 public Date getThisUpdate() {
@@ -153,6 +158,7 @@ public Date getThisUpdate() {
     /**
      * Returns the value of nextUpdate field of the structure.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:00.735 -0500", hash_original_method = "F86AAF1D9B4DCB96185947A392CE29B0", hash_generated_method = "8EF2916DDD649B4F1DFF7C02C2674301")
     
 public Date getNextUpdate() {
@@ -162,6 +168,7 @@ public Date getNextUpdate() {
     /**
      * Returns the value of revokedCertificates field of the structure.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:00.737 -0500", hash_original_method = "6BD535137A0D7C6092BE90399C5AC4FA", hash_generated_method = "1096C09891762694EB90B4F4773A1B9C")
     
 public List<RevokedCertificate> getRevokedCertificates() {
@@ -171,6 +178,7 @@ public List<RevokedCertificate> getRevokedCertificates() {
     /**
      * Returns the value of crlExtensions field of the structure.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:00.739 -0500", hash_original_method = "24898D069ADDF2B72D4CC75EC979A933", hash_generated_method = "9A36BF4F3DDD7564B5B684465C6CD3F8")
     
 public Extensions getCrlExtensions() {
@@ -180,6 +188,7 @@ public Extensions getCrlExtensions() {
     /**
      * Returns ASN.1 encoded form of this X.509 TBSCertList value.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:00.742 -0500", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "5349B65E746CD014BDA35ADFF927FD5B")
     
 public byte[] getEncoded() {
@@ -232,6 +241,7 @@ public byte[] getEncoded() {
                 setOptional(2);
             }
 
+            @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:00.713 -0500", hash_original_method = "4BFBD5E87B68F249B53912C5A95A2356", hash_generated_method = "CDE79C389EF9D3528526BD3FCC32A22F")
             
 @Override protected Object getDecodedObject(BerInputStream in) {
@@ -280,18 +290,21 @@ public RevokedCertificate(BigInteger userCertificate,
             this.crlEntryExtensions = crlEntryExtensions;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:00.692 -0500", hash_original_method = "235B3774752183ABFC67FCFEA882E536", hash_generated_method = "E97581963AB4C23AA46D49F00F863D28")
         
 public Extensions getCrlEntryExtensions() {
             return crlEntryExtensions;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:00.694 -0500", hash_original_method = "95F3FA234A9F19C0F47C92249F7AFDCC", hash_generated_method = "B0C170F3DE50B654A431FB57711AA78E")
         
 public BigInteger getUserCertificate() {
             return userCertificate;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:00.697 -0500", hash_original_method = "0C5E7D843026F709B3652BD32A196980", hash_generated_method = "6219B0A2F8FC49FBB88B4F220F69CBE0")
         
 public Date getRevocationDate() {
@@ -302,6 +315,7 @@ public Date getRevocationDate() {
          * Returns the value of Certificate Issuer Extension, if it is
          * presented.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:00.699 -0500", hash_original_method = "CDE119A341F8D25B9AE6819B0711631F", hash_generated_method = "18505ECB9BD225B125A5B43CEC20B6D4")
         
 public X500Principal getIssuer() {
@@ -320,6 +334,7 @@ public X500Principal getIssuer() {
             return issuer;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:00.701 -0500", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "5349B65E746CD014BDA35ADFF927FD5B")
         
 public byte[] getEncoded() {

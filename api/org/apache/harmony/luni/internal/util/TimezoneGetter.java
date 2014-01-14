@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public abstract class TimezoneGetter {
 
     /**
@@ -16,6 +12,7 @@ public abstract class TimezoneGetter {
      *
      * @return TimezoneGetter the single instance of this class.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:25.577 -0500", hash_original_method = "C0F8B0F9DC6033715F5A9B5877DEC568", hash_generated_method = "8EA34018244D32BE4282BD0D1EC39A7B")
     
 public static TimezoneGetter getInstance() {
@@ -37,7 +34,6 @@ public static void setInstance(TimezoneGetter getter) {
         instance = getter;
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:25.575 -0500", hash_original_field = "30EB9F14C9B72E9925AF245C6CEF294C", hash_generated_field = "D3AAD2C19E68DBB13BF532AFF4D3C58C")
-
 
     private static TimezoneGetter instance;
     

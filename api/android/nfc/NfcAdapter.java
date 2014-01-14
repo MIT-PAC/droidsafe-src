@@ -47,6 +47,7 @@ private static boolean hasNfcFeature() {
         }
     }
     
+    @DSSource({DSSourceKind.NFC})
     public static synchronized NfcAdapter getNfcAdapter(Context context) {
         if (DroidSafeAndroidRuntime.control) {
            UnsupportedOperationException exc = new UnsupportedOperationException();
@@ -92,6 +93,7 @@ private static INfcAdapter getServiceInterface() {
      *
      * @return the default NFC adapter, or null if no NFC adapter exists
      */
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.659 -0500", hash_original_method = "BBAF054E3A572AA64409457A2C6BC138", hash_generated_method = "5115AE9CECB46ACBA915434EDC27859F")
     
 public static NfcAdapter getDefaultAdapter(Context context) {
@@ -116,6 +118,7 @@ public static NfcAdapter getDefaultAdapter(Context context) {
      * object created from this method.<p>
      * @deprecated use {@link #getDefaultAdapter(Context)}
      */
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.662 -0500", hash_original_method = "48A7691839F3163BD41DEB5028DF54C7", hash_generated_method = "00D355938CBC4A736CD55F3604C3ECCB")
     
 @Deprecated
@@ -224,6 +227,7 @@ NfcAdapter(Context context) {
     /**
      * @hide
      */
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.668 -0500", hash_original_method = "4F4EBC54D108D66F416C93B46580E117", hash_generated_method = "BA026F6873AF9B17E96AB49AFB6CEE03")
     
 public Context getContext() {
@@ -234,6 +238,7 @@ public Context getContext() {
      * Returns the binder interface to the service.
      * @hide
      */
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.670 -0500", hash_original_method = "5DC17A5CA100E57D93FCA0A10242D110", hash_generated_method = "67BDEEAF74AD8E7AA4D695CD3950CDFF")
     
 public INfcAdapter getService() {
@@ -245,6 +250,7 @@ public INfcAdapter getService() {
      * Returns the binder interface to the tag service.
      * @hide
      */
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.672 -0500", hash_original_method = "1AA3314EB2D88084AC95E9F76A714199", hash_generated_method = "9F6A59069E733103F62E8135C7AA16B9")
     
 public INfcTag getTagService() {
@@ -358,6 +364,7 @@ public boolean isEnabled() {
      *
      * @hide
      */
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.679 -0500", hash_original_method = "928B269965D2C98169E42755C4D77176", hash_generated_method = "333AE0A5C2E08ACB07CD764088133ED1")
     
 public int getAdapterState() {
@@ -777,6 +784,7 @@ public boolean isNdefPushEnabled() {
     /**
      * @hide
      */
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.736 -0500", hash_original_method = "AC9BE1816495D76DB77DE4C0C93B101E", hash_generated_method = "FA2152B5FBA646DF6DD8C402D9DDB792")
     
 public INfcAdapterExtras getNfcAdapterExtrasInterface() {

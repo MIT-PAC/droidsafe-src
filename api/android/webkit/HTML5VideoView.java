@@ -143,6 +143,7 @@ public void pause() {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:59.004 -0500", hash_original_method = "439630F284E895C4A0EC26592582E769", hash_generated_method = "31B194CEA9661BDF123265EB135F9BBC")
     
 public int getDuration() {
@@ -153,6 +154,7 @@ public int getDuration() {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:59.007 -0500", hash_original_method = "5E9270330E1DC98C2EF1834461EFA6AE", hash_generated_method = "69019C8C603E48EF4B4E30A539264224")
     
 public int getCurrentPosition() {
@@ -204,6 +206,7 @@ public boolean getAutostart() {
         return mAutostart;
     }
 
+    @DSSource({DSSourceKind.FILE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:59.020 -0500", hash_original_method = "83FF2150FEBE6917B81E8E4D5EFDEDB8", hash_generated_method = "DD0F1269AEF34CBF589CA6EF265D115D")
     
 public boolean getPauseDuringPreparing() {
@@ -290,12 +293,14 @@ public void prepareDataAndDisplayMode(HTML5VideoViewProxy proxy) {
     }
 
     // Common code
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:59.044 -0500", hash_original_method = "4F2E24A50F82208E59877C3E2625C348", hash_generated_method = "59CEAAB3DF0B6642DCB3E5A015706848")
     
 public int getVideoLayerId() {
         return mVideoLayerId;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:59.046 -0500", hash_original_method = "90E098B5ED1DEFDE8C60551334D6CBD4", hash_generated_method = "E94138417590464CF75C0CE756A08C7B")
     
 public int getCurrentState() {
@@ -371,6 +376,7 @@ public TimeupdateTask(HTML5VideoViewProxy proxy) {
 public void decideDisplayMode() {
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:59.068 -0500", hash_original_method = "C9A7CF84D371C51EADC63585245E2DF8", hash_generated_method = "A85EED1F77D2020994DEDE6CC5F6187A")
     
 public boolean getReadyToUseSurfTex() {
@@ -388,12 +394,14 @@ public SurfaceTexture getSurfaceTexture(int videoLayerId) {
 public void deleteSurfaceTexture() {
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:59.073 -0500", hash_original_method = "4BDE667A00FC91D9C95E5191E09A54C3", hash_generated_method = "5FAB636108D0BD3392863D59FF29FEAB")
     
 public int getTextureName() {
         return 0;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:59.078 -0500", hash_original_method = "BA6BA92F877820EFB4A7324F8FF815C7", hash_generated_method = "A091967EDDAB6E8CE97607BCF97D50CC")
     
 public boolean getPlayerBuffering() {

@@ -50,6 +50,7 @@ public IsolatedContext(
     }
 
     /** Returns the list of intents that were broadcast since the last call to this method. */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.922 -0500", hash_original_method = "8549CC856014937B713ABF96571E7E0A", hash_generated_method = "2A73FC172E200058108D33F3AE070A5C")
     
 public List<Intent> getAndClearBroadcastIntents() {
@@ -58,6 +59,7 @@ public List<Intent> getAndClearBroadcastIntents() {
         return intents;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.924 -0500", hash_original_method = "DB3EFD57F21462C44953D7817E2D1D0B", hash_generated_method = "B6347C1215DB4B2D838F5B1C3CDF3164")
     
 @Override
@@ -121,6 +123,7 @@ public List<Intent> getAndClearBroadcastIntents() {
         return PackageManager.PERMISSION_GRANTED;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.943 -0500", hash_original_method = "97D70C3E7E76864AF838B3F545C2E8EF", hash_generated_method = "2440E6E5B376D731C082D22B5AF4A5C1")
     
 @Override
@@ -132,6 +135,7 @@ public List<Intent> getAndClearBroadcastIntents() {
         return null;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.980 -0500", hash_original_method = "FE53204BB45F48ED45638BEC1B5AA1BA", hash_generated_method = "9CC56171776AE352EA27048C719E9A1D")
     
 @Override
@@ -153,6 +157,7 @@ public void addOnAccountsUpdatedListener(OnAccountsUpdateListener listener,
             // do nothing
         }
 
+        @DSSource({DSSourceKind.ACCOUNT_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.950 -0500", hash_original_method = "C22581F9BCE56EDC1300FA008A2943C3", hash_generated_method = "0ECA21841551971F4B68C27DD6CEE018")
         
 public Account[] getAccounts() {
@@ -204,6 +209,7 @@ public boolean isDone() {
                 return true;
             }
 
+            @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.971 -0500", hash_original_method = "8CB724F1A3943B1995566F000F10E5F3", hash_generated_method = "669DF37826357FA0574D9A752FC1A20A")
             
 public T getResult()
@@ -211,6 +217,7 @@ public T getResult()
                 return mResult;
             }
 
+            @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.973 -0500", hash_original_method = "810ADDF52164EBC63263CE769016F2A6", hash_generated_method = "33B1608B6E41D6AC01A736F8B51EA5EE")
             
 public T getResult(long timeout, TimeUnit unit)

@@ -298,6 +298,7 @@ public void destroyLoader(int id) {
         }
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:55.029 -0400", hash_original_method = "01DF8472A2697DF2BC7C6D580583CD7C", hash_generated_method = "9DDF16B53974A9BC9240A98B4EEAB066")
     @SuppressWarnings("unchecked")
     public <D> Loader<D> getLoader(int id) {

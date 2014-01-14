@@ -71,6 +71,7 @@ public static void enableDebugLogging(boolean enabled) {
 public abstract FragmentTransaction beginTransaction();
 
     /** @hide -- remove once prebuilts are in. */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.285 -0500", hash_original_method = "0DA67415D41DB3C4C9D7AB80CD2D78FE", hash_generated_method = "7B5BD006136DB217141D24C35BA0CCDB")
     
 @Deprecated
@@ -603,6 +604,7 @@ public static int transitToStyleIndex(int transit, boolean enter) {
         return popBackStackState(mActivity.mHandler, null, id, flags);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.443 -0500", hash_original_method = "81448DC3AD62196301F3A4A762AB09A8", hash_generated_method = "87FA987464062DB67C94A14CF163F8A8")
     
 @Override
@@ -648,6 +650,7 @@ public static int transitToStyleIndex(int transit, boolean enter) {
         bundle.putInt(key, fragment.mIndex);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.455 -0500", hash_original_method = "D08899B1EE8437F622E0D7F7BA40A91F", hash_generated_method = "E72D7A82F24A2DF001B4EAF81636EED9")
     
 @Override
@@ -1722,6 +1725,7 @@ boolean popBackStackState(Handler handler, String name, int id, int flags) {
         return true;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.557 -0500", hash_original_method = "C4579656BDDD252D61818FF4E8F19896", hash_generated_method = "C4579656BDDD252D61818FF4E8F19896")
     
 ArrayList<Fragment> retainNonConfig() {

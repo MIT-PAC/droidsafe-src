@@ -15,10 +15,6 @@ import android.nfc.Tag;
 import android.os.Bundle;
 import android.os.RemoteException;
 
-
-
-
-
 public final class Ndef extends BasicTagTechnology {
 
     /**
@@ -34,6 +30,7 @@ public final class Ndef extends BasicTagTechnology {
      * @param tag an MIFARE Classic compatible tag
      * @return MIFARE Classic object
      */
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.593 -0500", hash_original_method = "9C172D84504D1F2289AFEC693534C0B9", hash_generated_method = "024D199E5AEB40D6B24B47FD7F5756CC")
     
 public static Ndef get(Tag tag) {
@@ -112,7 +109,6 @@ public static Ndef get(Tag tag) {
     public static final String ICODE_SLI = "com.nxp.ndef.icodesli";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.583 -0500", hash_original_field = "B1DE6940067A7C84363ACF537BBCBD90", hash_generated_field = "147ADCC633068E8F332A302E1540AD62")
 
-
     private  int mMaxNdefSize;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.585 -0500", hash_original_field = "F58E8BDA745BE7AC53444E6577F99279", hash_generated_field = "C0E8A71CC004D481AAC21A06997161CB")
 
@@ -153,6 +149,7 @@ public Ndef(Tag tag) throws RemoteException {
      * <p>Does not cause any RF activity and does not block.
      * @return NDEF Message read from the tag at discovery time
      */
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.598 -0500", hash_original_method = "522E1BD05C0F58597909DF2D37B1E51E", hash_generated_method = "F1DF6067C43D5254D241015A7A75412F")
     
 public NdefMessage getCachedNdefMessage() {
@@ -171,6 +168,7 @@ public NdefMessage getCachedNdefMessage() {
      *
      * @return a string representing the NDEF tag type
      */
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.601 -0500", hash_original_method = "A8A4A8CA63E3E206537FB1A4A1A58DE6", hash_generated_method = "18140176E54F0B04A8E6EB5AE9FC9F42")
     
 public String getType() {
@@ -199,6 +197,7 @@ public String getType() {
      *
      * @return size in bytes
      */
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.603 -0500", hash_original_method = "4EADEE4A8AA14EA957D69BF1EB117D34", hash_generated_method = "8AD1B4AB2226C24E86A76755BED7B340")
     
 public int getMaxSize() {
@@ -236,6 +235,7 @@ public boolean isWritable() {
      * @throws IOException if there is an I/O failure, or the operation is canceled
      * @throws FormatException if the NDEF Message on the tag is malformed
      */
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.608 -0500", hash_original_method = "A26F5401571035886FCD1ABC90F65CF6", hash_generated_method = "3E9B41F787B3B94129FA786342DE001E")
     
 public NdefMessage getNdefMessage() throws IOException, FormatException {

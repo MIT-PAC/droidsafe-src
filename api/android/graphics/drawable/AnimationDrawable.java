@@ -122,6 +122,7 @@ public void run() {
     /**
      * @return The number of frames in the animation
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.532 -0500", hash_original_method = "078F231D1E4DEE307E947B896715B9FA", hash_generated_method = "5025FEE6B92BF88A77E6F8353AA4EAD6")
     
 public int getNumberOfFrames() {
@@ -131,6 +132,7 @@ public int getNumberOfFrames() {
     /**
      * @return The Drawable at the specified frame index
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.534 -0500", hash_original_method = "924497ADC8C942C05D9D7A5BCA11BCAD", hash_generated_method = "8BA7E4E455DA62781E9BC042F465DB3A")
     
 public Drawable getFrame(int index) {
@@ -141,6 +143,7 @@ public Drawable getFrame(int index) {
      * @return The duration in milliseconds of the frame at the 
      * specified index
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.537 -0500", hash_original_method = "F1980307C7F7FBBB813440E411F73714", hash_generated_method = "2059BCCA67A341C5AD3C2C8972CC3936")
     
 public int getDuration(int i) {

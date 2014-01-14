@@ -31,6 +31,7 @@ public abstract class AbstractHttpEntity implements HttpEntity {
      *
      * @return  the Content-Type header, or <code>null</code>
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:45.918 -0500", hash_original_method = "DA5232C01B88DD776A78D6C1E0EF7DB4", hash_generated_method = "33852E0EBCD1B1F03B200DF158C6DE03")
     
 public Header getContentType() {
@@ -44,6 +45,7 @@ public Header getContentType() {
      *
      * @return  the Content-Encoding header, or <code>null</code>
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:45.921 -0500", hash_original_method = "0300179EF34C28254565E1D29B0088D9", hash_generated_method = "0F715B6D0D7D905C0D822E970B6614D5")
     
 public Header getContentEncoding() {

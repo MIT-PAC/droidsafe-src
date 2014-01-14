@@ -137,6 +137,7 @@ public boolean equals(Object otherObject) {
     /**
      * Do a lookup on a given name and return value associated with it.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:49.655 -0500", hash_original_method = "C612873C096C9BEC2FEAD8B66B09FEED", hash_generated_method = "223CA02349F8A25B55FE556718350AB1")
     
 public Object getValue(String name) {
@@ -151,6 +152,7 @@ public Object getValue(String name) {
      * Get the NameValue record given a name.
      * 
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:49.657 -0500", hash_original_method = "3B6BB1718C2A9A54E5BA1FF364B56717", hash_generated_method = "F8A7E8C27E8294879A92DC08BC132470")
     
 public Collection getNameValue(String name) {
@@ -210,6 +212,7 @@ public Iterator<NameValue> iterator() {
      * 
      * @return a list iterator that has the names of the parameters.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:49.670 -0500", hash_original_method = "3A38488A38C81B5FE756BBBB95D22DE2", hash_generated_method = "E900327DA2454F6D418A61E12EDA9F00")
     
 public Iterator<String> getNames() {
@@ -222,6 +225,7 @@ public Iterator<String> getNames() {
      * 
      * @return the parameter as a string.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:49.673 -0500", hash_original_method = "6D3851F46197204C176DAB6DC4EAB5DB", hash_generated_method = "228EAA2490CB2DA9DF62B4CB85A003A6")
     
 public String getParameter(String name) {

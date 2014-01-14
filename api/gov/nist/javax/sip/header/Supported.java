@@ -8,11 +8,6 @@ import java.text.ParseException;
 
 import javax.sip.header.SupportedHeader;
 
-
-
-
-
-
 public class Supported extends SIPHeader implements SupportedHeader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:55.094 -0500", hash_original_field = "7197556C98CD7192E6A00806270D0BD9", hash_generated_field = "D3D7272B6F01E32B817268E9A8B320BF")
 
@@ -89,6 +84,7 @@ public void setOptionTag(String optionTag) throws ParseException {
      *
      * @return the string that identifies the option tag value.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:55.119 -0500", hash_original_method = "CE304AE728C556B979775346D4C5B456", hash_generated_method = "3633D701492785C9119138C7D9BDC157")
     
 public String getOptionTag() {

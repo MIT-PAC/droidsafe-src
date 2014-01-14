@@ -220,6 +220,7 @@ public void startActivities() {
      *              intent that can be supplied when the actual send happens.
      * @return The obtained PendingIntent
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:36.029 -0500", hash_original_method = "FE33C851237F987FCB25B803437FFC5D", hash_generated_method = "0A082087623AB090B12B8EB856C90EF0")
     
 public PendingIntent getPendingIntent(int requestCode, int flags) {

@@ -219,6 +219,7 @@ private void handleSetSelectNetwork(AsyncResult ar) {
     }
 
     // return IMSI from USIM as subscriber ID.
+    @DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:52.667 -0500", hash_original_method = "418ED398A6A3FF53B03B4C5008FE3F90", hash_generated_method = "61DF0D8CEEED037CC4021D8AFBCFEC9E")
     
 @Override
@@ -226,6 +227,7 @@ private void handleSetSelectNetwork(AsyncResult ar) {
         return mIccRecords.getIMSI();
     }
 
+    @DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:52.670 -0500", hash_original_method = "2BFB931234EFCBDA06B75AE314A70B6B", hash_generated_method = "F2ACFCEBB390ABDC4340F05E7FFDBB5C")
     
 @Override
@@ -233,6 +235,7 @@ private void handleSetSelectNetwork(AsyncResult ar) {
         return mImei;
     }
 
+    @DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:52.672 -0500", hash_original_method = "14B7BB34E0FC203F73344BD326AAB989", hash_generated_method = "F74607AC6D3291B5D40293274DA80CCB")
     
 @Override
@@ -240,6 +243,7 @@ private void handleSetSelectNetwork(AsyncResult ar) {
         return mImeiSv;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:52.675 -0500", hash_original_method = "9816ECED47475DB23BCECA20DA4E2B5A", hash_generated_method = "78B92215C2B85EF5F14717FCDA18017C")
     
 @Override
@@ -247,6 +251,7 @@ private void handleSetSelectNetwork(AsyncResult ar) {
         return mIccRecords.getIsimRecords();
     }
 
+    @DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:52.677 -0500", hash_original_method = "0F1A42666FEB7039E59CE38A804A2571", hash_generated_method = "C643750F6EC44E71120807E5FC6FB0C0")
     
 @Override
@@ -254,6 +259,7 @@ private void handleSetSelectNetwork(AsyncResult ar) {
         return mIccRecords.getMsisdnNumber();
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:52.680 -0500", hash_original_method = "4DC55439AC7C450EEFD22BFFC07D3CE9", hash_generated_method = "4B89959CC41D0CB5D374F11DBE99A97A")
     
 @Override

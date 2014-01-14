@@ -100,12 +100,14 @@ public PlainDatagramSocketImpl() {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.868 -0500", hash_original_method = "2F19BF683B55893709E7099E07E46044", hash_generated_method = "E4022F8103EB1A999EF7210C13D3EA7F")
     
 @Override public Object getOption(int option) throws SocketException {
         return IoBridge.getSocketOption(fd, option);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.871 -0500", hash_original_method = "BF2D1BB0C5E1E015F3FE4931092FD89F", hash_generated_method = "1F5574FA71AF89814F0AD998499522EC")
     
 @Override
@@ -113,6 +115,7 @@ public PlainDatagramSocketImpl() {
         return (Integer) getOption(IoBridge.JAVA_IP_MULTICAST_TTL);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.874 -0500", hash_original_method = "C71063A9367F37A3CEDAA8D1B842628A", hash_generated_method = "17861E7107997E722492B2BD561FB223")
     
 @Override

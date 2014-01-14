@@ -7,12 +7,7 @@ import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public class TechListParcel implements Parcelable {
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.415 -0400", hash_original_field = "3EF1D37F275B16491C644A6C6C17DFAE", hash_generated_field = "26E56EC2A9AB9ADBEAAD9C9C0A9E8ECF")
 
@@ -38,7 +33,6 @@ public class TechListParcel implements Parcelable {
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.988 -0500", hash_original_field = "81C0628C8277BC5186C8301B61FFEA4A", hash_generated_field = "C36B9D5CB222403FE3E00F43AA3D1F77")
 
-
     private String[][] mTechLists;
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.991 -0500", hash_original_method = "6AB5FDB623A6EE108E2E4847F2947558", hash_generated_method = "54EBEA92C4E134A3E6AB63DC48C4CBDE")
@@ -47,6 +41,7 @@ public TechListParcel(String[]... strings) {
         mTechLists = strings;
     }
 
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.993 -0500", hash_original_method = "6EF67533858F398D5EC0425F1D475F89", hash_generated_method = "CA9DE982BE5A725ED2BD4675F167914B")
     
 public String[][] getTechLists() {

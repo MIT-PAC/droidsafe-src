@@ -106,6 +106,7 @@ public static ValueAnimator ofObject(TypeEvaluator evaluator, Object... values) 
      *
      * @return the requested time between frames, in milliseconds
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:32.718 -0500", hash_original_method = "07F990A9818D41589C4C2DC1FA0032A4", hash_generated_method = "2E8CE722FBAD7FDECF44ADD41AB08358")
     
 public static long getFrameDelay() {
@@ -128,6 +129,7 @@ public static void setFrameDelay(long frameDelay) {
         sFrameDelay = frameDelay;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public static int getCurrentAnimationsCount() {
     	return sAnimations.get().getTaintInt();
         //return sAnimations.get().size();
@@ -490,6 +492,7 @@ public void setValues(PropertyValuesHolder... values) {
      * @return PropertyValuesHolder[] An array of PropertyValuesHolder objects which hold the
      * values, per property, that define the animation.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:32.693 -0500", hash_original_method = "78A6AA7AD01513781B120BCE5DC9E156", hash_generated_method = "0ED27C04CA12EC75461931DE572EA825")
     
 public PropertyValuesHolder[] getValues() {
@@ -543,6 +546,7 @@ public ValueAnimator setDuration(long duration) {
      *
      * @return The length of the animation, in milliseconds.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:32.699 -0500", hash_original_method = "5E13B5E872677B59408FA3E6BB94A9F6", hash_generated_method = "5F80C859A9364DABCB96E2B8240D7C36")
     
 public long getDuration() {
@@ -579,6 +583,7 @@ public void setCurrentPlayTime(long playTime) {
      *
      * @return The current position in time of the animation.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:32.703 -0500", hash_original_method = "68655250B160F78BB8C6212DC5765131", hash_generated_method = "2ED63A7A69813FF8D882DC0B76531FB2")
     
 public long getCurrentPlayTime() {
@@ -594,6 +599,7 @@ public long getCurrentPlayTime() {
      *
      * @return the number of milliseconds to delay running the animation
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:32.714 -0500", hash_original_method = "36807B48FC1321C96D3D559AECDD954B", hash_generated_method = "4D709D86A18578D417DD0AD639F777B7")
     
 public long getStartDelay() {
@@ -624,6 +630,7 @@ public void setStartDelay(long startDelay) {
      * (specified by several PropertyValuesHolder objects in the constructor), this function
      * returns the animated value for the first of those objects.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:32.723 -0500", hash_original_method = "3CBE561BBB42AB3DB3CAF9B67D05776D", hash_generated_method = "22EFA6777EB43E5292C2006CE8F88BB9")
     
 public Object getAnimatedValue() {
@@ -644,6 +651,7 @@ public Object getAnimatedValue() {
      * @return animatedValue The value most recently calculated for the named property
      * by this <code>ValueAnimator</code>.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:32.725 -0500", hash_original_method = "2B530B2B81FC1FAD77C53EC8863AE50E", hash_generated_method = "95B3D48F1C938385295CA1DFB484BC29")
     
 public Object getAnimatedValue(String propertyName) {
@@ -675,6 +683,7 @@ public void setRepeatCount(int value) {
      *
      * @return the number of times the animation should repeat, or {@link #INFINITE}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:32.729 -0500", hash_original_method = "4FE747AC8B0667617AE307ECFC6ED74A", hash_generated_method = "33DEC8850621553CE5D2A9983998E6CF")
     
 public int getRepeatCount() {
@@ -699,6 +708,7 @@ public void setRepeatMode(int value) {
      *
      * @return either one of {@link #REVERSE} or {@link #RESTART}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:32.734 -0500", hash_original_method = "081205714C0DCBE8DC8471C6BC7C6458", hash_generated_method = "B3061FB54C6BA1A7788D9CDF2AC798B1")
     
 public int getRepeatMode() {
@@ -907,6 +917,7 @@ public void removeUpdateListener(AnimatorUpdateListener listener) {
      *
      * @return The timing interpolator for this ValueAnimator.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:32.745 -0500", hash_original_method = "69CBD09EBE4A4B5ECD6AD8540DB7CFD0", hash_generated_method = "3B07035547B797301E020DE6A117B867")
     
 public TimeInterpolator getInterpolator() {
@@ -1208,6 +1219,7 @@ boolean animationFrame(long currentTime) {
      *
      * @return Elapsed/interpolated fraction of the animation.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:32.777 -0500", hash_original_method = "7C3735DD08F0E37DA76BAA97A1C3802E", hash_generated_method = "9CA407F8FE8A401ACEE9B1F5D77BFBEC")
     
 public float getAnimatedFraction() {

@@ -95,6 +95,7 @@ private static void setCloseGuardEnabled(boolean enabled) {
      *
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.120 -0500", hash_original_method = "846C0C89D35574B87DE239A886F76A3A", hash_generated_method = "DC71E2C046BD1C5E6C2EF35BD28B7815")
     
 public static int getThreadPolicyMask() {
@@ -1318,6 +1319,7 @@ public AndroidBlockGuardPolicy(final int policyMask) {
         }
 
         // Part of BlockGuard.Policy interface:
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.166 -0500", hash_original_method = "BDAE35F9BC36FEF12DCB9013D520032B", hash_generated_method = "8DB41D24CE713E7FAE656DFD19F5AD6E")
         
 public int getPolicyMask() {

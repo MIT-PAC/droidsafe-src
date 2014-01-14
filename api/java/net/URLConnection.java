@@ -23,6 +23,7 @@ public abstract class URLConnection {
      *         defaultAllowUserInteraction}.
      * @see #allowUserInteraction
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.098 -0500", hash_original_method = "67F858C73BD58BCF0CAF80EEB7D73D90", hash_generated_method = "3936BBC1DD5171A6137F084FBB8158D1")
     
 public static boolean getDefaultAllowUserInteraction() {
@@ -34,6 +35,7 @@ public static boolean getDefaultAllowUserInteraction() {
      *
      * @deprecated Use {@link #getRequestProperty}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.100 -0500", hash_original_method = "B76126F7836136C8351610A389F2D654", hash_generated_method = "9C6117325CB6ACFF0010235F1E3C8499")
     
 @Deprecated
@@ -47,6 +49,7 @@ public static boolean getDefaultAllowUserInteraction() {
      *
      * @return the file name map to determine the MIME-type.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.113 -0500", hash_original_method = "29BA6BC9F5073139C26133751F95172D", hash_generated_method = "D75F508274D26B048BDA05E713F099FA")
     
 public static FileNameMap getFileNameMap() {
@@ -314,6 +317,7 @@ public abstract void connect() throws IOException;
      * @return the value of the option {@code allowUserInteraction}.
      * @see #allowUserInteraction
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.077 -0500", hash_original_method = "C67DC5C525139049127B216E3212E5BD", hash_generated_method = "44B6C2B29A0D072811939A56A423B9EC")
     
 public boolean getAllowUserInteraction() {
@@ -332,6 +336,7 @@ public boolean getAllowUserInteraction() {
      * @throws IOException
      *             if an error occurs obtaining the content.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.079 -0500", hash_original_method = "2189DFB0457B899A3D415AD1ACECB1AB", hash_generated_method = "A8A625F791F192870378364A2A1B015F")
     
 public Object getContent() throws java.io.IOException {
@@ -367,6 +372,7 @@ public Object getContent() throws java.io.IOException {
      *             if an error occurs obtaining the content.
      */
     // Param is not generic in spec
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.082 -0500", hash_original_method = "4564C020E5F3A695F95559B726D59F50", hash_generated_method = "17D6F8DB36F781EAF39BC1A6AA530256")
     
 @SuppressWarnings("unchecked")
@@ -392,6 +398,7 @@ public Object getContent() throws java.io.IOException {
      *
      * @return the value of the response header field {@code content-encoding}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.085 -0500", hash_original_method = "F034FCCBCF276A401A79AE9D47D45859", hash_generated_method = "3DF4F3807A495B21CCDCE63CA735C4E0")
     
 public String getContentEncoding() {
@@ -467,6 +474,7 @@ private ContentHandler getContentHandler(String type) throws IOException {
      *
      * @return the value of the response header field {@code content-length}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.091 -0500", hash_original_method = "D3CB748394BDEDD2AA4B807728EDFBEF", hash_generated_method = "BB7604B8A1EBFBF17EA9C09701967F37")
     
 public int getContentLength() {
@@ -479,6 +487,7 @@ public int getContentLength() {
      *
      * @return the value of the response header field {@code content-type}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.093 -0500", hash_original_method = "7440B54E7BE94AE7F9BB4349A25246D4", hash_generated_method = "C174C05C0D4687BFF9AF1A822C8B8A7E")
     
 public String getContentType() {
@@ -492,6 +501,7 @@ public String getContentType() {
      *
      * @return the sending timestamp of the current response.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.095 -0500", hash_original_method = "4C9F7702471FFCF16C0BDF48E7BD6750", hash_generated_method = "63BB99B520751EBD3E6EFACEF2F7AAEF")
     
 public long getDate() {
@@ -504,6 +514,7 @@ public long getDate() {
      * @return the value of the default setting {@code defaultUseCaches}.
      * @see #useCaches
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.103 -0500", hash_original_method = "08FC81CB612F586F4ABF44BAE872E3A8", hash_generated_method = "5272C3CEDB838F947AAD09BDA1864ED0")
     
 public boolean getDefaultUseCaches() {
@@ -518,6 +529,7 @@ public boolean getDefaultUseCaches() {
      *         otherwise.
      * @see #doInput
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.105 -0500", hash_original_method = "CCCD690FEDEDD1DE3F70C92A661DD993", hash_generated_method = "3419749DF1D1BE0D2DECCE4E860C3DCC")
     
 public boolean getDoInput() {
@@ -532,6 +544,7 @@ public boolean getDoInput() {
      *         otherwise.
      * @see #doOutput
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.107 -0500", hash_original_method = "15D6FCAAE0989BD58186FF458E57106D", hash_generated_method = "0363EA39333AA06ACFDF3AA0E4328239")
     
 public boolean getDoOutput() {
@@ -544,6 +557,7 @@ public boolean getDoOutput() {
      *
      * @return the value of the response header field {@code expires}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.110 -0500", hash_original_method = "C717C195610527A15AE106EB78FD0F84", hash_generated_method = "49B16C01CD07FB3DBBA04ADEB40B87DF")
     
 public long getExpiration() {
@@ -563,6 +577,7 @@ public long getExpiration() {
      *            the field position of the response header.
      * @return the value of the field at position {@code pos}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.115 -0500", hash_original_method = "4AACA905FA1278AAB35ED38439896081", hash_generated_method = "C41CD50CE2AC5FE72F79E6188B82872F")
     
 public String getHeaderField(int pos) {
@@ -581,6 +596,7 @@ public String getHeaderField(int pos) {
      * @return the response-header representing generic map.
      * @since 1.4
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.117 -0500", hash_original_method = "C458EE5373FC7B6169E37A6DC44512AF", hash_generated_method = "773CAA9A39027054ACE0F93654886696")
     
 public Map<String, List<String>> getHeaderFields() {
@@ -595,6 +611,7 @@ public Map<String, List<String>> getHeaderFields() {
      * @return the request-property representing generic map.
      * @since 1.4
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.119 -0500", hash_original_method = "04A4D958E6B53818E212E56DBBF1EB38", hash_generated_method = "0D7D1552A0D2D3F788EBC7C63F6318E0")
     
 public Map<String, List<String>> getRequestProperties() {
@@ -646,6 +663,7 @@ public void addRequestProperty(String field, String newValue) {
      *            the name of the header field.
      * @return the value of the header field.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.127 -0500", hash_original_method = "565CBD8C4BDCB5C201FDE1F2CB76B55D", hash_generated_method = "C805EF3131A22E118686C0E6E02FD1F4")
     
 public String getHeaderField(String key) {
@@ -664,6 +682,7 @@ public String getHeaderField(String key) {
      * @return the value of the specified header field as a date in
      *         milliseconds.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.129 -0500", hash_original_method = "3BD57BE7E93B8CCFBCD5DB800D789765", hash_generated_method = "A700C7920290D5AF1FF380E36E6B74F0")
     
 @SuppressWarnings("deprecation")
@@ -690,6 +709,7 @@ public String getHeaderField(String key) {
      *            the default value if no field has been found.
      * @return the value of the specified header field as a number.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.131 -0500", hash_original_method = "13117EC346BE33DF62C37EDAC186E83F", hash_generated_method = "24946A8539774F65FB494A2158B313F1")
     
 public int getHeaderFieldInt(String field, int defaultValue) {
@@ -713,6 +733,7 @@ public int getHeaderFieldInt(String field, int defaultValue) {
      *            the position of the header field which has to be returned.
      * @return the header field name at the given position.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.134 -0500", hash_original_method = "2E9FACF1BA93288E38DBB8CED1C2CF00", hash_generated_method = "59B95771F021B58797A1E53CC441ABF2")
     
 public String getHeaderFieldKey(int posn) {
@@ -727,6 +748,7 @@ public String getHeaderFieldKey(int posn) {
      * @return the time in milliseconds since January 1, 1970 GMT.
      * @see #ifModifiedSince
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.136 -0500", hash_original_method = "3D630E318477F0341CC679CD7D029C3F", hash_generated_method = "A1F3BA8299293D7B6248E15B5535090E")
     
 public long getIfModifiedSince() {
@@ -742,6 +764,7 @@ public long getIfModifiedSince() {
      * @throws IOException
      *             if no InputStream could be created.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.138 -0500", hash_original_method = "AC7495DD6573AA12A9CB49C509EE6FD0", hash_generated_method = "FAAEE0050218252D181324FD0AF4D174")
     
 public InputStream getInputStream() throws IOException {
@@ -754,6 +777,7 @@ public InputStream getInputStream() throws IOException {
      *
      * @return the value of the {@code last-modified} header field.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.141 -0500", hash_original_method = "1B346D840CFCEDE13531D2A642CD424D", hash_generated_method = "6B3EA3444C599FCE98F9EC8766BA6312")
     
 public long getLastModified() {
@@ -772,6 +796,7 @@ public long getLastModified() {
      * @throws IOException
      *             if no OutputStream could be created.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.143 -0500", hash_original_method = "F613A2AA87619B352A0F7C7CAB39D3F5", hash_generated_method = "2FA7EE7D9906A5BB0CDD13F5908662C8")
     
 public OutputStream getOutputStream() throws IOException {
@@ -791,6 +816,7 @@ public OutputStream getOutputStream() throws IOException {
      * @throws IOException
      *             if an I/O error occurs while creating the permission object.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.145 -0500", hash_original_method = "0312DFF81C6978A2908F9B8EFDA3EFD4", hash_generated_method = "3CE789F348ADA18776DC3737EA60F646")
     
 public java.security.Permission getPermission() throws IOException {
@@ -808,6 +834,7 @@ public java.security.Permission getPermission() throws IOException {
      * @throws IllegalStateException
      *             if the connection has been already established.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.148 -0500", hash_original_method = "9BF81D9E57E4C63EDA2E82E6CB1EEED2", hash_generated_method = "9C401C33868B07256EDDDAC1474F61D8")
     
 public String getRequestProperty(String field) {
@@ -820,6 +847,7 @@ public String getRequestProperty(String field) {
      *
      * @return the URL of this connection.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.150 -0500", hash_original_method = "2F8DA67F8DE7FED0345BBAE8C82F68E5", hash_generated_method = "D6D7197D0CF613F7A230574C15135383")
     
 public URL getURL() {
@@ -832,6 +860,7 @@ public URL getURL() {
      *
      * @return {@code true} if using caches is allowed, {@code false} otherwise.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.152 -0500", hash_original_method = "2F69889B76EEFF99FBB9977BF19C64FC", hash_generated_method = "0BA3962F71E7EB9DB05E960AA948F4F3")
     
 public boolean getUseCaches() {
@@ -999,6 +1028,7 @@ public void setUseCaches(boolean newValue) {
         {
             //Synthesized constructor
         }
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.204 -0500", hash_original_method = "AE84E807F7FC8D1C4CC894407353562A", hash_generated_method = "7EB331B63AA77A45D6BC981A306722BD")
         
 @Override
@@ -1034,6 +1064,7 @@ public void setConnectTimeout(int timeout) {
      *
      * @return the connecting timeout value in milliseconds.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.194 -0500", hash_original_method = "70B18BFD6BA7B76980125453BE48C7D1", hash_generated_method = "B550ADD65BE4B42202500743AF55FB65")
     
 public int getConnectTimeout() {
@@ -1067,6 +1098,7 @@ public void setReadTimeout(int timeout) {
      *
      * @return the reading timeout value in milliseconds.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.198 -0500", hash_original_method = "D3F0467D6BAB1E0CB8F37756E837EDFD", hash_generated_method = "646B3E34ABF58EF7DAFEE9727765DDFF")
     
 public int getReadTimeout() {
@@ -1079,6 +1111,7 @@ public int getReadTimeout() {
      *
      * @return the string representation of this {@code URLConnection} instance.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.201 -0500", hash_original_method = "C85D603FFD624A90EAB88172CE67727C", hash_generated_method = "00A4330AEE9AE3EEEA21DC02C53F22B7")
     
 @Override

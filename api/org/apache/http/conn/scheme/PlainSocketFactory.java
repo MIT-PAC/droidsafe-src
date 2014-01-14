@@ -14,17 +14,13 @@ import org.apache.http.conn.ConnectTimeoutException;
 import org.apache.http.params.HttpConnectionParams;
 import org.apache.http.params.HttpParams;
 
-
-
-
-
-
 public final class PlainSocketFactory implements SocketFactory {
     
     /**
      * Gets the singleton instance of this class.
      * @return the one and only plain socket factory
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:29.923 -0500", hash_original_method = "6DB12A6CB7CE4518D36C52EAD158CA98", hash_generated_method = "A70FFEFA7A5819874C872C5173FBAA64")
     
 public static PlainSocketFactory getSocketFactory() {
@@ -36,7 +32,6 @@ public static PlainSocketFactory getSocketFactory() {
         PlainSocketFactory DEFAULT_FACTORY = new PlainSocketFactory();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:29.921 -0500", hash_original_field = "98B8869502CC5FF944B6B408CA137F17", hash_generated_field = "81E302E459F079F5FBE4C1ED4F82BD8C")
 
-
     private  HostNameResolver nameResolver;
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:29.926 -0500", hash_original_method = "0E5BF5873ABF9DF43E8A566F0715555C", hash_generated_method = "221ABB32C60F37DF9135EB5A170910A5")
@@ -45,7 +40,6 @@ public PlainSocketFactory(final HostNameResolver nameResolver) {
         super();
         this.nameResolver = nameResolver;
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:29.928 -0500", hash_original_method = "CB0B0698D5F49CD73D676E27B7E3296D", hash_generated_method = "FCDA984BC8BEAD58F07418DB0D7C98DD")
     
@@ -61,6 +55,7 @@ public Socket createSocket() {
     }
 
     // non-javadoc, see interface org.apache.http.conn.SocketFactory
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:29.933 -0500", hash_original_method = "3F8F2095BF15D67174F7BEAF65F7911A", hash_generated_method = "3F546C76425FC49B179A7D932399EDBC")
     
 public Socket connectSocket(Socket sock, String host, int port, 
@@ -106,7 +101,6 @@ public Socket connectSocket(Socket sock, String host, int port,
 
     } // connectSocket
 
-
     /**
      * Checks whether a socket connection is secure.
      * This factory creates plain socket connections
@@ -142,7 +136,6 @@ public final boolean isSecure(Socket sock)
         return false;
 
     } // isSecure
-
 
     /**
      * Compares this factory with an object.

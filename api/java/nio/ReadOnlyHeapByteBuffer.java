@@ -5,9 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
 final class ReadOnlyHeapByteBuffer extends HeapByteBuffer {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.685 -0500", hash_original_method = "F87692C45C0A8D0A5A75D4739DA65D10", hash_generated_method = "7B0FE031CEBD49E576F2A1EE4DB3CEC6")
@@ -55,6 +52,7 @@ ReadOnlyHeapByteBuffer(byte[] backingArray, int capacity, int arrayOffset) {
         return true;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.700 -0500", hash_original_method = "722C56C70277A2AF29EF09DE3FC2E957", hash_generated_method = "2DB086672856E18F41212E7A3F2DAB23")
     
 @Override
@@ -180,7 +178,6 @@ ReadOnlyHeapByteBuffer(byte[] backingArray, int capacity, int arrayOffset) {
     public ByteBuffer slice() {
         return new ReadOnlyHeapByteBuffer(backingArray, remaining(), offset + position);
     }
-
     
 }
 

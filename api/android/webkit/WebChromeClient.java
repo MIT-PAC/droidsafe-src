@@ -332,6 +332,7 @@ public boolean onConsoleMessage(ConsoleMessage consoleMessage) {
      * @return Bitmap The image to use as a default poster, or null if no such image is
      * available.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:57.848 -0500", hash_original_method = "B12C654EAF6D1EF1BD2CB65AEE47A82B", hash_generated_method = "70527A5E20D719C3A209832D5B5500F1")
     
 public Bitmap getDefaultVideoPoster() {
@@ -346,6 +347,7 @@ public Bitmap getDefaultVideoPoster() {
      *
      * @return View The View to be displayed whilst the video is loading.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:57.850 -0500", hash_original_method = "72F535BEAD962B4F42D879A83B63BF5A", hash_generated_method = "BB4FDE2E472D0D28BB1092AD2DBC70AA")
     
 public View getVideoLoadingProgressView() {

@@ -406,6 +406,7 @@ public static final String coerceToString(int type, int data)
 
     /** Return the data for this value as a float.  Only use for values
      *  whose type is {@link #TYPE_FLOAT}. */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:21.665 -0500", hash_original_method = "A056539A8D172DAECD87700505289EB4", hash_generated_method = "327F456DBCCF2519D55F7061179FB0F9")
     
 public final float getFloat() {
@@ -422,6 +423,7 @@ public final float getFloat() {
      * @return The complex floating point value multiplied by the appropriate 
      * metrics depending on its unit. 
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:21.687 -0500", hash_original_method = "4E6E7F41B76F4FD15549F58DC569C010", hash_generated_method = "0DC9794378F16736B8B6E505EC7B7681")
     
 public float getDimension(DisplayMetrics metrics)
@@ -442,6 +444,7 @@ public float getDimension(DisplayMetrics metrics)
      * @return The complex floating point value multiplied by the appropriate 
      * base value depending on its unit. 
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:21.692 -0500", hash_original_method = "293ADCB2B20AD2D3C2E6AE6F03ECAE91", hash_generated_method = "2B399FDA82D9AF66EA1BEBB4A65D4087")
     
 public float getFraction(float base, float pbase)

@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.Serializable;
 
-
-
-
-
-
 public final class HopImpl extends Object implements javax.sip.address.Hop, Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.500 -0500", hash_original_field = "3EBF9FC23C14AE1E55EAA4D77C46C987", hash_generated_field = "B7178EBD81D0CF23E79BD79FD4385F5A")
 
@@ -22,7 +17,6 @@ public final class HopImpl extends Object implements javax.sip.address.Hop, Seri
 
     protected String transport;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.508 -0500", hash_original_field = "F3E57CC0F4AB52C671E49FF0AA34F97D", hash_generated_field = "507947F99EFE636A32340E3AA843BB3D")
-
 
     protected boolean defaultRoute;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.511 -0500", hash_original_field = "23977287DDC38735EB863B08ABDBBD4E", hash_generated_field = "F6D3A083A27E3AA80C885284DEF016AB")
@@ -49,7 +43,6 @@ public HopImpl(String hostName, int portNumber, String trans) {
         port = portNumber;
         transport = trans;
     }
-
 
     /**
      * Creates new Hop
@@ -128,6 +121,7 @@ public String toString() {
      * Retruns the host string.
      * @return host String
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.524 -0500", hash_original_method = "2F2AEDD17A97DC05E80343AAC323BA28", hash_generated_method = "1B655222E0C0F88C57DF58BCA9BFA498")
     
 public String getHost() {
@@ -138,6 +132,7 @@ public String getHost() {
      * Returns the port.
      * @return port integer.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.528 -0500", hash_original_method = "A5F7344FAECBE0D6DB15D1F6E7BEBC6E", hash_generated_method = "8D4984D37D0017078DF4701090E35F25")
     
 public int getPort() {
@@ -146,13 +141,12 @@ public int getPort() {
 
     /** returns the transport string.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.530 -0500", hash_original_method = "43848E528F960D9C1F3B13D7D65AA4A4", hash_generated_method = "00BA105A025E226F3C987987A5F86CDE")
     
 public String getTransport() {
         return transport;
     }
-
-
 
     /** Return true if this is uriRoute
      */
@@ -169,7 +163,6 @@ public boolean isURIRoute() {
 public void setURIRouteFlag() {
         uriRoute = true;
     }
-
     
 }
 

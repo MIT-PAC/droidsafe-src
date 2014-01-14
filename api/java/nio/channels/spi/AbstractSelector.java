@@ -74,6 +74,7 @@ protected abstract void implCloseSelector() throws IOException;
     /**
      * Returns this selector's provider.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.959 -0500", hash_original_method = "B098D2E33834ACCBC46AD074E583FD9B", hash_generated_method = "B1D05E577565AFAE7DA83FF4AD307897")
     
 @Override
@@ -84,6 +85,7 @@ protected abstract void implCloseSelector() throws IOException;
     /**
      * Returns this channel's set of canceled selection keys.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.962 -0500", hash_original_method = "DC10B929A0DF63912817926BA3679882", hash_generated_method = "79FB30E575A87660AD930CAE78043B1A")
     
 protected final Set<SelectionKey> cancelledKeys() {
