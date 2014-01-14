@@ -8,10 +8,6 @@ import java.util.Arrays;
 
 import libcore.io.Memory;
 
-
-
-
-
 public abstract class ByteBuffer extends Buffer implements Comparable<ByteBuffer> {
 
     /**
@@ -799,6 +795,7 @@ public final ByteBuffer put(byte[] src) {
      * @exception ReadOnlyBufferException
      *                if no changes may be made to the contents of this buffer.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.896 -0500", hash_original_method = "D0316A3A41AD4E9576A2DF2983507374", hash_generated_method = "242B2D84BCF2BAED8FD10923575F609F")
     
 public ByteBuffer put(byte[] src, int srcOffset, int byteCount) {
@@ -1129,7 +1126,6 @@ public abstract ByteBuffer putShort(int index, short value);
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.934 -0500", hash_original_method = "A8BD672FEFA2ADBF23B3E18AD8770B59", hash_generated_method = "3EBFFC9669B52A8EEDB07E9A812B2532")
     
 public abstract ByteBuffer slice();
-
     
 }
 

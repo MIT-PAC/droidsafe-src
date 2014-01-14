@@ -46,7 +46,8 @@ public void adup(char[] buff, int offset, int length) throws SAXException {
 		attrName = null;
 		}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.298 -0500", hash_original_method = "7D20D176BBEC71DA76C0647D5C25D5A3", hash_generated_method = "0A0CC9AABA223BDFFBA4E47C65FABF55")
+	@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.298 -0500", hash_original_method = "7D20D176BBEC71DA76C0647D5C25D5A3", hash_generated_method = "0A0CC9AABA223BDFFBA4E47C65FABF55")
 	
 public void aname(char[] buff, int offset, int length) throws SAXException {
 		theWriter.print('A');
@@ -55,7 +56,8 @@ public void aname(char[] buff, int offset, int length) throws SAXException {
 		attrName = new String(buff, offset, length);
 		}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.300 -0500", hash_original_method = "0B592E26491ABBF6D6340D0C31CDF40A", hash_generated_method = "87B3B6FDF477986BC213B0731D31D3A1")
+	@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.300 -0500", hash_original_method = "0B592E26491ABBF6D6340D0C31CDF40A", hash_generated_method = "87B3B6FDF477986BC213B0731D31D3A1")
 	
 public void aval(char[] buff, int offset, int length) throws SAXException {
 		theWriter.write(buff, offset, length);
@@ -85,7 +87,8 @@ public void eof(char[] buff, int offset, int length) throws SAXException {
 		theWriter.close();
 		}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.311 -0500", hash_original_method = "26BADE83A21B645404502BDE9A94D5D0", hash_generated_method = "04A34FF66493AE97B9A8CBA326163A07")
+	@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.311 -0500", hash_original_method = "26BADE83A21B645404502BDE9A94D5D0", hash_generated_method = "04A34FF66493AE97B9A8CBA326163A07")
 	
 public void etag(char[] buff, int offset, int length) throws SAXException {
 		theWriter.print(')');
@@ -98,7 +101,8 @@ public void etag(char[] buff, int offset, int length) throws SAXException {
 public void decl(char[] buff, int offset, int length) throws SAXException {
         }
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.316 -0500", hash_original_method = "F17CC0C0B50085C85B2E9F440AE2C746", hash_generated_method = "D9BCBC4A4EB1DD3688875513E155308E")
+	@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.316 -0500", hash_original_method = "F17CC0C0B50085C85B2E9F440AE2C746", hash_generated_method = "D9BCBC4A4EB1DD3688875513E155308E")
 	
 public void gi(char[] buff, int offset, int length) throws SAXException {
 		theWriter.print('(');
@@ -148,7 +152,8 @@ public void pcdata(char[] buff, int offset, int length) throws SAXException {
 			}
 		}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.323 -0500", hash_original_method = "434533230F3CD22E7AA0C553CAF97C2F", hash_generated_method = "00595BAD87DA24F670D148B39B40FCE3")
+	@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.323 -0500", hash_original_method = "434533230F3CD22E7AA0C553CAF97C2F", hash_generated_method = "00595BAD87DA24F670D148B39B40FCE3")
 	
 public void pitarget(char[] buff, int offset, int length) throws SAXException {
 		theWriter.print('?');
@@ -156,7 +161,8 @@ public void pitarget(char[] buff, int offset, int length) throws SAXException {
 		theWriter.write(' ');
 		}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.325 -0500", hash_original_method = "ED46B5C6DF2EC4C94179D535403EEAEA", hash_generated_method = "16A09E2E3785805AED518BEEFD81EE58")
+	@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.325 -0500", hash_original_method = "ED46B5C6DF2EC4C94179D535403EEAEA", hash_generated_method = "16A09E2E3785805AED518BEEFD81EE58")
 	
 public void pi(char[] buff, int offset, int length) throws SAXException {
 		theWriter.write(buff, offset, length);
@@ -189,7 +195,8 @@ public void endDocument() throws SAXException {
 		theWriter.close();
 		}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.337 -0500", hash_original_method = "52900B9FEFC9FE65D64402526E52F683", hash_generated_method = "277B755B6BF5F1804CA28F1D80841AFA")
+	@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.337 -0500", hash_original_method = "52900B9FEFC9FE65D64402526E52F683", hash_generated_method = "277B755B6BF5F1804CA28F1D80841AFA")
 	
 public void endElement(String uri, String localname, String qname) throws SAXException {
 		if (qname.length() == 0) qname = localname;
@@ -207,7 +214,8 @@ public void ignorableWhitespace(char[] buff, int offset, int length) throws SAXE
 		characters(buff, offset, length);
 		}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.343 -0500", hash_original_method = "53BDE4B1E3F8AE32ABB1D442EEBC1FC0", hash_generated_method = "E07BCA12D8BCF1FA30BC32D0C3D20BF0")
+	@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.343 -0500", hash_original_method = "53BDE4B1E3F8AE32ABB1D442EEBC1FC0", hash_generated_method = "E07BCA12D8BCF1FA30BC32D0C3D20BF0")
 	
 public void processingInstruction(String target, String data) throws SAXException {
 		theWriter.print('?');
@@ -228,7 +236,8 @@ public void skippedEntity(String name) throws SAXException { }
 	
 public void startDocument() throws SAXException { }
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.353 -0500", hash_original_method = "3DE0561ECA4CEE2171786A759675C078", hash_generated_method = "FD5B3B997BBFF5DDDFE462A6DE1A898D")
+	@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.353 -0500", hash_original_method = "3DE0561ECA4CEE2171786A759675C078", hash_generated_method = "FD5B3B997BBFF5DDDFE462A6DE1A898D")
 	
 public void startElement(String uri, String localname, String qname,
 			Attributes atts) throws SAXException {

@@ -285,6 +285,7 @@ public void showPrevious(int viewId) {
      * @param viewId The id of the view on which to call
      *               {@link AdapterViewAnimator#setDisplayedChild(int)}
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:51.026 -0500", hash_original_method = "D726270A4D4DC2D53B195715D168181D", hash_generated_method = "681FBA6691958B49B5276151E20D3578")
     
 public void setDisplayedChild(int viewId, int childIndex) {
@@ -297,6 +298,7 @@ public void setDisplayedChild(int viewId, int childIndex) {
      * @param viewId The id of the view whose visibility should change
      * @param visibility The new visibility for the view
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:51.028 -0500", hash_original_method = "DEE52A50DF8AF905161D8440F9C7FD6B", hash_generated_method = "D35680D2C11D87B825D492B72945A47A")
     
 public void setViewVisibility(int viewId, int visibility) {
@@ -309,6 +311,7 @@ public void setViewVisibility(int viewId, int visibility) {
      * @param viewId The id of the view whose text should change
      * @param text The new text for the view
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:51.030 -0500", hash_original_method = "5F8A789C1791A65B082D971694A97107", hash_generated_method = "775D8E18D63705C8DCFC41111F9CBAE4")
     
 public void setTextViewText(int viewId, CharSequence text) {
@@ -321,6 +324,7 @@ public void setTextViewText(int viewId, CharSequence text) {
      * @param viewId The id of the view whose drawable should change
      * @param srcId The new resource id for the drawable
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:51.032 -0500", hash_original_method = "BA7406E13895A91025A0507F41BF6313", hash_generated_method = "DBB6736C78776F4BCF9F89E2FEF0F799")
     
 public void setImageViewResource(int viewId, int srcId) {   
@@ -333,6 +337,7 @@ public void setImageViewResource(int viewId, int srcId) {
      * @param viewId The id of the view whose drawable should change
      * @param uri The Uri for the image
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:51.036 -0500", hash_original_method = "433DFD276FBB02E0D7A2B8DA3B0F08D8", hash_generated_method = "94D346594F571696B4CA207279C9B47E")
     
 public void setImageViewUri(int viewId, Uri uri) {
@@ -345,6 +350,7 @@ public void setImageViewUri(int viewId, Uri uri) {
      * @param viewId The id of the view whose drawable should change
      * @param bitmap The new Bitmap for the drawable
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:51.038 -0500", hash_original_method = "957E8B822330AC731DF30A1543908B02", hash_generated_method = "2339F9736A2AA7B946C7F32C608E9209")
     
 public void setImageViewBitmap(int viewId, Bitmap bitmap) {
@@ -357,6 +363,7 @@ public void setImageViewBitmap(int viewId, Bitmap bitmap) {
      * @param viewId The id of the view on which to set the empty view
      * @param emptyViewId The view id of the empty view
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:51.040 -0500", hash_original_method = "4F3E7FFD56A31D2F2A8813C161A91D32", hash_generated_method = "555A8322A72B254BF8C8DD9363F42F69")
     
 public void setEmptyView(int viewId, int emptyViewId) {
@@ -377,6 +384,7 @@ public void setEmptyView(int viewId, int emptyViewId) {
      *               simply display the timer value.
      * @param started True if you want the clock to be started, false if not.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:51.042 -0500", hash_original_method = "47E59AC623A4BD9BB48A3F2CB501DFB4", hash_generated_method = "038C89AFF2AE81D33E5C1C22F992CDE3")
     
 public void setChronometer(int viewId, long base, String format, boolean started) {
@@ -398,6 +406,7 @@ public void setChronometer(int viewId, long base, String format, boolean started
      * @param indeterminate True if the progress bar is indeterminate, 
      *                false if not.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:51.045 -0500", hash_original_method = "A929EFC8DD62C6A3F9A2F8FB0663D928", hash_generated_method = "46BB40528ECA49B60180D5C9534CCFF3")
     
 public void setProgressBar(int viewId, int max, int progress, 
@@ -422,6 +431,7 @@ public void setProgressBar(int viewId, int max, int progress,
      * @param viewId The id of the view that will trigger the {@link PendingIntent} when clicked
      * @param pendingIntent The {@link PendingIntent} to send when user clicks
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:51.047 -0500", hash_original_method = "84C6A4280B6852D03015FA2AE8D65E64", hash_generated_method = "927278201C3266DF8CCC1D5611BF65BC")
     
 public void setOnClickPendingIntent(int viewId, PendingIntent pendingIntent) {
@@ -440,6 +450,7 @@ public void setOnClickPendingIntent(int viewId, PendingIntent pendingIntent) {
      * @param pendingIntentTemplate The {@link PendingIntent} to be combined with extras specified
      *          by a child of viewId and executed when that child is clicked
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:51.049 -0500", hash_original_method = "A434A09AC636025A142B2CC781D07FF1", hash_generated_method = "62AEF8C61235BF66F98E3B9994F4C2BD")
     
 public void setPendingIntentTemplate(int viewId, PendingIntent pendingIntentTemplate) {
@@ -465,6 +476,7 @@ public void setPendingIntentTemplate(int viewId, PendingIntent pendingIntentTemp
      * @param fillInIntent The intent which will be combined with the parent's PendingIntent
      *        in order to determine the on-click behavior of the view specified by viewId
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:51.051 -0500", hash_original_method = "899E714C9944265097024FA544BB7AC2", hash_generated_method = "9A048ADC9E7E85148529F6949A853C6E")
     
 public void setOnClickFillInIntent(int viewId, Intent fillInIntent) {
@@ -512,6 +524,7 @@ public void setDrawableParameters(int viewId, boolean targetBackground, int alph
      * @param color Sets the text color for all the states (normal, selected,
      *            focused) to be this color.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:51.056 -0500", hash_original_method = "F51B3B3FB58685A967056786739D5D5A", hash_generated_method = "58D578553E8BA2ACCE636D9C5DD9CE31")
     
 public void setTextColor(int viewId, int color) {
@@ -529,6 +542,7 @@ public void setTextColor(int viewId, int color) {
      * @deprecated This method has been deprecated. See
      *      {@link android.widget.RemoteViews#setRemoteAdapter(int, Intent)}
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:51.058 -0500", hash_original_method = "F3196C5DB537F18A0B70CAAF74A09A0A", hash_generated_method = "089DAFB52C583E0734174327DA38E35B")
     
 @Deprecated
@@ -544,6 +558,7 @@ public void setTextColor(int viewId, int color) {
      * @param intent The intent of the service which will be
      *            providing data to the RemoteViewsAdapter
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:51.060 -0500", hash_original_method = "9F000F17F0336123DB5D1DD3E4F67BE6", hash_generated_method = "E059781CE94A62858243349EABE200B1")
     
 public void setRemoteAdapter(int viewId, Intent intent) {
@@ -556,6 +571,7 @@ public void setRemoteAdapter(int viewId, Intent intent) {
      * @param viewId The id of the view whose text should change
      * @param position Scroll to this adapter position
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:51.062 -0500", hash_original_method = "15753F5F29C6091CCB595496C38B1963", hash_generated_method = "D8A17A8E9EE28D2DE545E341066CC8A7")
     
 public void setScrollPosition(int viewId, int position) {
@@ -568,6 +584,7 @@ public void setScrollPosition(int viewId, int position) {
      * @param viewId The id of the view whose text should change
      * @param offset Scroll by this adapter position offset
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:51.064 -0500", hash_original_method = "62C951046FF905CA4D61721F847C4DC5", hash_generated_method = "0D6A1882C006E5CF530376BB1A746B15")
     
 public void setRelativeScrollPosition(int viewId, int offset) {
@@ -581,6 +598,7 @@ public void setRelativeScrollPosition(int viewId, int offset) {
      * @param methodName The name of the method to call.
      * @param value The value to pass to the method.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:51.067 -0500", hash_original_method = "ACF50C9E2E7A3E77B399A3E9AD77138B", hash_generated_method = "C9D9B91F1903061D62B5A83C6F736DF6")
     
 public void setBoolean(int viewId, String methodName, boolean value) {
@@ -594,6 +612,7 @@ public void setBoolean(int viewId, String methodName, boolean value) {
      * @param methodName The name of the method to call.
      * @param value The value to pass to the method.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:51.069 -0500", hash_original_method = "6577642D84CE42EC3FAE93CD4A676A48", hash_generated_method = "355AF5262A1C5FD33C4E538DBAF5C1B8")
     
 public void setByte(int viewId, String methodName, byte value) {
@@ -607,6 +626,7 @@ public void setByte(int viewId, String methodName, byte value) {
      * @param methodName The name of the method to call.
      * @param value The value to pass to the method.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:51.071 -0500", hash_original_method = "1EF837BE87322E5A782B07EBE8F017ED", hash_generated_method = "FC2D62CF4DC4B97AE9D821CAA3BE3C62")
     
 public void setShort(int viewId, String methodName, short value) {
@@ -620,6 +640,7 @@ public void setShort(int viewId, String methodName, short value) {
      * @param methodName The name of the method to call.
      * @param value The value to pass to the method.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:51.073 -0500", hash_original_method = "2BA2097F7597ED476DFE96444FF2B47B", hash_generated_method = "F9D14C9D9162D6EA5023E288E9A57F79")
     
 public void setInt(int viewId, String methodName, int value) {
@@ -633,6 +654,7 @@ public void setInt(int viewId, String methodName, int value) {
      * @param methodName The name of the method to call.
      * @param value The value to pass to the method.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:51.075 -0500", hash_original_method = "7BBB498795ABAEC2FC5C9E80D1FF1F8F", hash_generated_method = "5377C596437CB2A823F7DBF2916577D3")
     
 public void setLong(int viewId, String methodName, long value) {
@@ -646,6 +668,7 @@ public void setLong(int viewId, String methodName, long value) {
      * @param methodName The name of the method to call.
      * @param value The value to pass to the method.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:51.077 -0500", hash_original_method = "877DFBEE5EFFB4333EA4E3E01D628209", hash_generated_method = "2F879AF8958A0C5F804EA32CE29BAACD")
     
 public void setFloat(int viewId, String methodName, float value) {
@@ -659,6 +682,7 @@ public void setFloat(int viewId, String methodName, float value) {
      * @param methodName The name of the method to call.
      * @param value The value to pass to the method.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:51.079 -0500", hash_original_method = "36511416C0ED3D737A57750DB7E0C821", hash_generated_method = "D25AD84884C60A69ECC45BFA6CB51927")
     
 public void setDouble(int viewId, String methodName, double value) {
@@ -672,6 +696,7 @@ public void setDouble(int viewId, String methodName, double value) {
      * @param methodName The name of the method to call.
      * @param value The value to pass to the method.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:51.083 -0500", hash_original_method = "E7DFE8EB27DC5DF6C76291F003DE876E", hash_generated_method = "EF1F3FF6144F881FBED8F807E27A148B")
     
 public void setChar(int viewId, String methodName, char value) {
@@ -685,6 +710,7 @@ public void setChar(int viewId, String methodName, char value) {
      * @param methodName The name of the method to call.
      * @param value The value to pass to the method.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:51.085 -0500", hash_original_method = "12B33E0B58F238F52279DFEB1871046D", hash_generated_method = "B0939EAF9A451EA1148D9F675F7DF006")
     
 public void setString(int viewId, String methodName, String value) {
@@ -698,6 +724,7 @@ public void setString(int viewId, String methodName, String value) {
      * @param methodName The name of the method to call.
      * @param value The value to pass to the method.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:51.087 -0500", hash_original_method = "93A93353A27881B93F029E1CB8E38561", hash_generated_method = "37941E36DE67B6565FB4643DD8504BFA")
     
 public void setCharSequence(int viewId, String methodName, CharSequence value) {
@@ -711,6 +738,7 @@ public void setCharSequence(int viewId, String methodName, CharSequence value) {
      * @param methodName The name of the method to call.
      * @param value The value to pass to the method.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:51.089 -0500", hash_original_method = "33EE202B45F16FA5012E7C802B1E1162", hash_generated_method = "1C40B88D3F4C67D6EB0B3302C4593F86")
     
 public void setUri(int viewId, String methodName, Uri value) {
@@ -727,6 +755,7 @@ public void setUri(int viewId, String methodName, Uri value) {
      * @param methodName The name of the method to call.
      * @param value The value to pass to the method.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:51.092 -0500", hash_original_method = "BE18885A2548A0B5EB1C1E6420A7D63A", hash_generated_method = "39F07A653CD5ACEDB7C38B1F50F30C86")
     
 public void setBitmap(int viewId, String methodName, Bitmap value) {
@@ -740,6 +769,7 @@ public void setBitmap(int viewId, String methodName, Bitmap value) {
      * @param methodName The name of the method to call.
      * @param value The value to pass to the method.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:51.094 -0500", hash_original_method = "0BCEFBE1ECC6F937E30E64CCDC160671", hash_generated_method = "7C9DCB523FF6B3B2EDE8EA967EA188BD")
     
 public void setBundle(int viewId, String methodName, Bundle value) {
@@ -752,6 +782,7 @@ public void setBundle(int viewId, String methodName, Bundle value) {
      * @param methodName
      * @param value
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:51.096 -0500", hash_original_method = "1536FDACAD3B90F5944D61240D2247D6", hash_generated_method = "C8963E827DB2E3DE023A2918BE3A65B9")
     
 public void setIntent(int viewId, String methodName, Intent value) {
@@ -764,6 +795,7 @@ public void setIntent(int viewId, String methodName, Intent value) {
      * @param viewId The id of the view whose content description should change
      * @param contentDescription The new content description for the view
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:51.098 -0500", hash_original_method = "DAF30AB9823DD59C17B2FD226E498806", hash_generated_method = "6AD680900996DB50FC4A18CB0E27A3D5")
     
 public void setContentDescription(int viewId, CharSequence contentDescription) {
@@ -986,6 +1018,7 @@ public SetOnClickFillInIntent(Parcel parcel) {
             fillInIntent = Intent.CREATOR.createFromParcel(parcel);
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:50.756 -0500", hash_original_method = "4A68D926F0B47E5C592025763C57CD49", hash_generated_method = "ACC7BFF44F22149E7887ACA9580365E2")
         
 public void writeToParcel(Parcel dest, int flags) {
@@ -1109,6 +1142,7 @@ public SetPendingIntentTemplate(Parcel parcel) {
             pendingIntentTemplate = PendingIntent.readPendingIntentOrNullFromParcel(parcel);
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:50.782 -0500", hash_original_method = "2DE56D1052D41AEA85684029786EA581", hash_generated_method = "F0F77F5D14E4FBC0E30B4AA606DAA5AA")
         
 public void writeToParcel(Parcel dest, int flags) {
@@ -1238,6 +1272,7 @@ public SetRemoteViewsAdapterIntent(Parcel parcel) {
             intent = Intent.CREATOR.createFromParcel(parcel);
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:50.807 -0500", hash_original_method = "F580FE61025C5DC81DFB7BB9EA905954", hash_generated_method = "AC4556E640C6EE512599A4790A90BDBC")
         
 public void writeToParcel(Parcel dest, int flags) {
@@ -1304,6 +1339,7 @@ public SetOnClickPendingIntent(Parcel parcel) {
             pendingIntent = PendingIntent.readPendingIntentOrNullFromParcel(parcel);
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:50.827 -0500", hash_original_method = "7CEF806B95F0881A888E5DFCE712AF4A", hash_generated_method = "BBFCADFE2B4C1116E5EDD48598D95180")
         
 public void writeToParcel(Parcel dest, int flags) {
@@ -1662,6 +1698,7 @@ ReflectionAction(Parcel in) {
             }
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:50.947 -0500", hash_original_method = "F759DD8CB1A89B34D073177D219BFFB9", hash_generated_method = "710C59AE631B393DF2B2E9EFA5906642")
         
 public void writeToParcel(Parcel out, int flags) {
@@ -1860,6 +1897,7 @@ public ViewGroupAction(Parcel parcel) {
             nestedViews = parcel.readParcelable(null);
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:50.968 -0500", hash_original_method = "BEE1FD608BE154882376BC772CDB35A0", hash_generated_method = "4624A0ADDC40194455DF34D80EB6D94C")
         
 public void writeToParcel(Parcel dest, int flags) {
@@ -1944,6 +1982,7 @@ public int describeContents() {
         return 0;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:51.114 -0500", hash_original_method = "E42048CF3CAA5A680CE684B09E27CD46", hash_generated_method = "87D3D1F357377E776CD4DC626F4BF5D0")
     
 public void writeToParcel(Parcel dest, int flags) {

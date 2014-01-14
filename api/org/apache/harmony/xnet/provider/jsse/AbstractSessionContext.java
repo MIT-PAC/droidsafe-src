@@ -148,6 +148,7 @@ protected void trimToSize() {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:11.722 -0500", hash_original_method = "39A7527C252FC67E9B785D11757CBC70", hash_generated_method = "9D88FD2BEFA99FD748CE0F874EC83014")
     
 public void setSessionTimeout(int seconds)
@@ -201,6 +202,7 @@ public final void setSessionCacheSize(int size)
      *
      * @return session data as bytes or null if the session can't be converted
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:11.729 -0500", hash_original_method = "B42ED13DCD08C26044D05FD9CDF469CF", hash_generated_method = "352FEDC8FDC2993B8AFE5D3AE0423841")
     
 byte[] toBytes(SSLSession session) {

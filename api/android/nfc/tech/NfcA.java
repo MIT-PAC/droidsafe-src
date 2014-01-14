@@ -12,10 +12,6 @@ import android.nfc.Tag;
 import android.os.Bundle;
 import android.os.RemoteException;
 
-
-
-
-
 public final class NfcA extends BasicTagTechnology {
 
     /**
@@ -47,7 +43,6 @@ public static NfcA get(Tag tag) {
 
     public static final String EXTRA_ATQA = "atqa";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.267 -0500", hash_original_field = "0925D0697AA3C3DB845341236C79150E", hash_generated_field = "84C03AB800CA76624FDACC0FE5253451")
-
 
     private short mSak;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.269 -0500", hash_original_field = "420539DFF13F5D44245F242194872800", hash_generated_field = "C3ED3C2F9CAB5980376F9374631262D3")
@@ -143,6 +138,7 @@ public int getMaxTransceiveLength() {
      *
      * @param timeout timeout value in milliseconds
      */
+    @DSSink({DSSinkKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.285 -0500", hash_original_method = "63D5F2163C0B5751BB93B998E089091B", hash_generated_method = "E77492272970D597221E47D7B03DAC67")
     
 public void setTimeout(int timeout) {

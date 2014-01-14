@@ -332,6 +332,7 @@ public Integer getCurrentHour() {
     /**
      * Set the current hour.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.130 -0500", hash_original_method = "51BF76EB890889B8164A1C36DDF3660C", hash_generated_method = "5FFDEA0FFFFD2EE3195E1B4F83E97B5C")
     
 public void setCurrentHour(Integer currentHour) {
@@ -363,6 +364,7 @@ public void setCurrentHour(Integer currentHour) {
      *
      * @param is24HourView True = 24 hour mode. False = AM/PM.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.132 -0500", hash_original_method = "241FCC8F6454A30E36E3EC76C851E3F2", hash_generated_method = "D9D0439E1B3E4FCC3AD3D9DB109E9B54")
     
 public void setIs24HourView(Boolean is24HourView) {
@@ -399,6 +401,7 @@ public Integer getCurrentMinute() {
     /**
      * Set the current minute (0-59).
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.139 -0500", hash_original_method = "E5914CBE4C3F7152CD4D96804AFB4FF4", hash_generated_method = "379BEE9B0E1DBD75619021B07302B3DA")
     
 public void setCurrentMinute(Integer currentMinute) {
@@ -527,6 +530,7 @@ public int getMinute() {
             return mMinute;
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.108 -0500", hash_original_method = "3D8FA0B7CDDD47E4194304B24B1FFDDB", hash_generated_method = "8C1022A79C10BEED0E8CD0093ACAE570")
         
 @Override

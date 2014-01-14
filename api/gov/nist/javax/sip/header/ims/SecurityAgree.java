@@ -13,11 +13,6 @@ import java.text.ParseException;
 import javax.sip.InvalidArgumentException;
 import javax.sip.header.Parameters;
 
-
-
-
-
-
 public abstract class SecurityAgree extends ParametersHeader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:58.021 -0500", hash_original_field = "146F3AF228A8EBD016754C7327503614", hash_generated_field = "B86FF84E39A7B19F8887BD2615927536")
 
@@ -30,7 +25,6 @@ public abstract class SecurityAgree extends ParametersHeader {
      * Security Mechanism value
      */
     private String secMechanism;
-
 
     /**
      * Constructor
@@ -55,7 +49,7 @@ public SecurityAgree()
         parameters.setSeparator(Separators.SEMICOLON);
     }
 
-
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:58.032 -0500", hash_original_method = "9AC5B140B15B11CFD450C965DE3EDCEF", hash_generated_method = "509F056BBA9BF53BB895A98CBBED4B13")
     
 public void setParameter(String name, String value) throws ParseException
@@ -94,8 +88,6 @@ public String encodeBody()
         return this.secMechanism + SEMICOLON + SP + parameters.encode();
     }
 
-
-
     /**
      * Set security mechanism.
      * <p>eg: Security-Client: ipsec-3gpp</p>
@@ -116,6 +108,7 @@ public void setSecurityMechanism(String secMech) throws ParseException {
      * @param ealg - encryption algorithm value
      * @throws ParseException
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:58.042 -0500", hash_original_method = "C9B1596896385C915B9F0E305B24E414", hash_generated_method = "A7BC29347A4C5F2DAF8B701BCD310E61")
     
 public void setEncryptionAlgorithm(String ealg) throws ParseException {
@@ -132,6 +125,7 @@ public void setEncryptionAlgorithm(String ealg) throws ParseException {
      * @param alg - algorithm value
      * @throws ParseException
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:58.045 -0500", hash_original_method = "1034CB07B31AD4B972026DDB8CD1CF5A", hash_generated_method = "C920D9C9E3FE7CDEFA1D3C472F9B1DC6")
     
 public void setAlgorithm(String alg) throws ParseException {
@@ -147,6 +141,7 @@ public void setAlgorithm(String alg) throws ParseException {
      * @param prot - protocol value
      * @throws ParseException
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:58.049 -0500", hash_original_method = "445CF41DA92D45C4C84C6BEE36D36BF6", hash_generated_method = "FEC21688D4F5371392F82FE61B7B8A33")
     
 public void setProtocol(String prot) throws ParseException {
@@ -162,6 +157,7 @@ public void setProtocol(String prot) throws ParseException {
      * @param mod - mode value
      * @throws ParseException
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:58.053 -0500", hash_original_method = "E016DD00F9E773B1BC74C49DD038424A", hash_generated_method = "C3F52653412DE6FCEE61CD6387FBC022")
     
 public void setMode(String mod) throws ParseException {
@@ -177,6 +173,7 @@ public void setMode(String mod) throws ParseException {
      * @param spic - spi-c value
      * @throws InvalidArgumentException
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:58.056 -0500", hash_original_method = "75DD86B518B8282C26250CE6A2B99A28", hash_generated_method = "7D8F4FFF7186646051C5F590F244443B")
     
 public void setSPIClient(int spic) throws InvalidArgumentException {
@@ -192,6 +189,7 @@ public void setSPIClient(int spic) throws InvalidArgumentException {
      * @param spis - spi-s value
      * @throws InvalidArgumentException - when value is not valid
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:58.059 -0500", hash_original_method = "3C648084DC1BE07708C4C0C2C0242BDB", hash_generated_method = "F98FBC535BCCC8DE19CF23EEAFFAF03F")
     
 public void setSPIServer(int spis) throws InvalidArgumentException {
@@ -207,6 +205,7 @@ public void setSPIServer(int spis) throws InvalidArgumentException {
      * @param portC - port-c value
      * @throws InvalidArgumentException - when value is not valid
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:58.062 -0500", hash_original_method = "EF3E10E5EB6E9ADB9B0EAA61EFC25272", hash_generated_method = "6147B4C6C251244A98982B41B9231BD8")
     
 public void setPortClient(int portC) throws InvalidArgumentException {
@@ -222,6 +221,7 @@ public void setPortClient(int portC) throws InvalidArgumentException {
      * @param portS - port-s value
      * @throws InvalidArgumentException - when value is not valid
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:58.065 -0500", hash_original_method = "AE705CDEF098778FC0F68E357BFDF4CB", hash_generated_method = "58E743C3D0089E7D6277EED06FC15B27")
     
 public void setPortServer(int portS) throws InvalidArgumentException {
@@ -240,6 +240,7 @@ public void setPortServer(int portS) throws InvalidArgumentException {
      * @param q - q parameter value
      * @throws InvalidArgumentException - when value is not valid
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:58.069 -0500", hash_original_method = "6E802E2384BCAE9DA923A1C36DFE2987", hash_generated_method = "B2481C956D269AD79A3718B0A369DCA5")
     
 public void setPreference(float q) throws InvalidArgumentException {
@@ -249,8 +250,6 @@ public void setPreference(float q) throws InvalidArgumentException {
                     + "Exception, SecurityClient, setPreference(), the preference (q) parameter is <0");
         setParameter(ParameterNamesIms.Q, q);
     }
-
-
 
     // get param
 
@@ -353,7 +352,6 @@ public float getPreference() {
         return (Float.parseFloat(getParameter(ParameterNamesIms.Q)));
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:58.104 -0500", hash_original_method = "AD0CCA4E33EB4C4CCEB107F65F233D48", hash_generated_method = "D2864490D9915CAB3F7DC7D092E6E822")
     
 public boolean equals(Object other)
@@ -369,7 +367,6 @@ public boolean equals(Object other)
 
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:58.108 -0500", hash_original_method = "027A143FB16239A6EF6573784EA7EAA2", hash_generated_method = "9CDB4A26E1662D64A7562B06E580DD62")
     
 public Object clone() {
@@ -378,7 +375,6 @@ public Object clone() {
             retval.secMechanism = this.secMechanism;
         return retval;
     }
-
     
 }
 

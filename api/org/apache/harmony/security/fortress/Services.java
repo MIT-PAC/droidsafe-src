@@ -12,11 +12,6 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
-
-
-
-
-
 public class Services {
 
     // Load statically registered providers and init Services Info
@@ -121,6 +116,7 @@ public static void removeProvider(int providerNumber) {
      *
      * @param p
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:03.276 -0500", hash_original_method = "629F9E9D083C69E26E5C0357350415B2", hash_generated_method = "291727BD3F0B05D608031EFD37FB6747")
     
 public static void initServiceInfo(Provider p) {
@@ -228,7 +224,6 @@ public static void refresh() {
 
     private static boolean needRefresh;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:03.251 -0500", hash_original_field = "33329666B7458C1FCD4202C64BAC1133", hash_generated_field = "E94679F4103D0BF5B61FE8ECDFCF85FA")
-
 
     /**
      * Refresh number

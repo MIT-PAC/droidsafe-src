@@ -154,7 +154,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:46.797 -0500", hash_original_method = "A9E821901FB4179F1E8E39F793D99A69", hash_generated_method = "49C46A958AEFD343FB063421A871761B")
+@DSSink({DSSinkKind.ACCOUNT_SETTINGS})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:46.797 -0500", hash_original_method = "A9E821901FB4179F1E8E39F793D99A69", hash_generated_method = "49C46A958AEFD343FB063421A871761B")
             
 public void hasFeatures(android.accounts.IAccountManagerResponse response, android.accounts.Account account, java.lang.String[] features) throws android.os.RemoteException
 {
@@ -179,7 +180,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:46.800 -0500", hash_original_method = "2B24D9044E5459ED3A8D3B367A9BD3A5", hash_generated_method = "51FAD87001A03414159DEFC7C1CF2733")
+@DSSink({DSSinkKind.ACCOUNT_SETTINGS})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:46.800 -0500", hash_original_method = "2B24D9044E5459ED3A8D3B367A9BD3A5", hash_generated_method = "51FAD87001A03414159DEFC7C1CF2733")
             
 public void getAccountsByFeatures(android.accounts.IAccountManagerResponse response, java.lang.String accountType, java.lang.String[] features) throws android.os.RemoteException
 {
@@ -198,7 +200,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:46.803 -0500", hash_original_method = "3447C83D5FF9E2A34BDC066D70D40F18", hash_generated_method = "1A90A24AE1EC465A81D643C151E9B66B")
+@DSSink({DSSinkKind.ACCOUNT_SETTINGS})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:46.803 -0500", hash_original_method = "3447C83D5FF9E2A34BDC066D70D40F18", hash_generated_method = "1A90A24AE1EC465A81D643C151E9B66B")
             
 public boolean addAccount(android.accounts.Account account, java.lang.String password, android.os.Bundle extras) throws android.os.RemoteException
 {
@@ -232,7 +235,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:46.806 -0500", hash_original_method = "87D03907FE58C4A795A58E4764F89BCF", hash_generated_method = "CE32848C866C07387B6D1F02F695B344")
+@DSSink({DSSinkKind.ACCOUNT_SETTINGS})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:46.806 -0500", hash_original_method = "87D03907FE58C4A795A58E4764F89BCF", hash_generated_method = "CE32848C866C07387B6D1F02F695B344")
             
 public void removeAccount(android.accounts.IAccountManagerResponse response, android.accounts.Account account) throws android.os.RemoteException
 {
@@ -256,7 +260,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:46.809 -0500", hash_original_method = "25B3D598F21607F54B9DB93F25E141D7", hash_generated_method = "E93F74B2EF08E3C88241D0F70A6431F7")
+@DSSink({DSSinkKind.ACCOUNT_SETTINGS})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:46.809 -0500", hash_original_method = "25B3D598F21607F54B9DB93F25E141D7", hash_generated_method = "E93F74B2EF08E3C88241D0F70A6431F7")
             
 public void invalidateAuthToken(java.lang.String accountType, java.lang.String authToken) throws android.os.RemoteException
 {
@@ -274,7 +279,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:46.812 -0500", hash_original_method = "0A43DB28AA286DFBE326B78C77E32713", hash_generated_method = "D807BFD87488A7BDD51EAB1D2744ED36")
+@DSSink({DSSinkKind.ACCOUNT_SETTINGS})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:46.812 -0500", hash_original_method = "0A43DB28AA286DFBE326B78C77E32713", hash_generated_method = "D807BFD87488A7BDD51EAB1D2744ED36")
             
 public java.lang.String peekAuthToken(android.accounts.Account account, java.lang.String authTokenType) throws android.os.RemoteException
 {
@@ -301,7 +307,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:46.815 -0500", hash_original_method = "27041E59A46441704B9D4A554720EC3C", hash_generated_method = "B3CCB3BFE353BA9CD13018154D18AFA1")
+@DSSink({DSSinkKind.ACCOUNT_SETTINGS})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:46.815 -0500", hash_original_method = "27041E59A46441704B9D4A554720EC3C", hash_generated_method = "B3CCB3BFE353BA9CD13018154D18AFA1")
             
 public void setAuthToken(android.accounts.Account account, java.lang.String authTokenType, java.lang.String authToken) throws android.os.RemoteException
 {
@@ -326,7 +333,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:46.819 -0500", hash_original_method = "92BB79506A20C63BB46CDF586DE01885", hash_generated_method = "1EE4F9E1ABC05750B703966504F185BE")
+@DSSink({DSSinkKind.ACCOUNT_SETTINGS})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:46.819 -0500", hash_original_method = "92BB79506A20C63BB46CDF586DE01885", hash_generated_method = "1EE4F9E1ABC05750B703966504F185BE")
             
 public void setPassword(android.accounts.Account account, java.lang.String password) throws android.os.RemoteException
 {
@@ -373,7 +381,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:46.825 -0500", hash_original_method = "04059C959DA954E966F758AEC50BF3D6", hash_generated_method = "0F9C7743AE7194EED09EC9DD2894D010")
+@DSSink({DSSinkKind.ACCOUNT_SETTINGS})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:46.825 -0500", hash_original_method = "04059C959DA954E966F758AEC50BF3D6", hash_generated_method = "0F9C7743AE7194EED09EC9DD2894D010")
             
 public void setUserData(android.accounts.Account account, java.lang.String key, java.lang.String value) throws android.os.RemoteException
 {
@@ -398,7 +407,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:46.828 -0500", hash_original_method = "B9A2318B03DF05E45E47C824A09686C8", hash_generated_method = "A36B512D08F94486FB6C0142ED87B8E4")
+@DSSink({DSSinkKind.ACCOUNT_SETTINGS})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:46.828 -0500", hash_original_method = "B9A2318B03DF05E45E47C824A09686C8", hash_generated_method = "A36B512D08F94486FB6C0142ED87B8E4")
             
 public void getAuthToken(android.accounts.IAccountManagerResponse response, android.accounts.Account account, java.lang.String authTokenType, boolean notifyOnAuthFailure, boolean expectActivityLaunch, android.os.Bundle options) throws android.os.RemoteException
 {
@@ -432,7 +442,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:46.831 -0500", hash_original_method = "1B37A3F0E37B46B007FC3287EB1CE330", hash_generated_method = "3AEEDC481306286B303A4705EA6C2B9C")
+@DSSink({DSSinkKind.ACCOUNT_SETTINGS})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:46.831 -0500", hash_original_method = "1B37A3F0E37B46B007FC3287EB1CE330", hash_generated_method = "3AEEDC481306286B303A4705EA6C2B9C")
             
 public void addAcount(android.accounts.IAccountManagerResponse response, java.lang.String accountType, java.lang.String authTokenType, java.lang.String[] requiredFeatures, boolean expectActivityLaunch, android.os.Bundle options) throws android.os.RemoteException
 {
@@ -460,7 +471,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:46.834 -0500", hash_original_method = "AF8787AF92F55CE5961C029851B37584", hash_generated_method = "F08613930EB91BB8950E30D49F2989A7")
+@DSSink({DSSinkKind.ACCOUNT_SETTINGS})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:46.834 -0500", hash_original_method = "AF8787AF92F55CE5961C029851B37584", hash_generated_method = "F08613930EB91BB8950E30D49F2989A7")
             
 public void updateCredentials(android.accounts.IAccountManagerResponse response, android.accounts.Account account, java.lang.String authTokenType, boolean expectActivityLaunch, android.os.Bundle options) throws android.os.RemoteException
 {
@@ -493,7 +505,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:46.837 -0500", hash_original_method = "80777DBA5B20CC21D3AB40B19DCCB919", hash_generated_method = "A00C4390D4B55CD35C42FE9D38DE79FE")
+@DSSink({DSSinkKind.ACCOUNT_SETTINGS})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:46.837 -0500", hash_original_method = "80777DBA5B20CC21D3AB40B19DCCB919", hash_generated_method = "A00C4390D4B55CD35C42FE9D38DE79FE")
             
 public void editProperties(android.accounts.IAccountManagerResponse response, java.lang.String accountType, boolean expectActivityLaunch) throws android.os.RemoteException
 {
@@ -606,7 +619,8 @@ public android.os.IBinder asBinder()
 {
 return this;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:46.769 -0500", hash_original_method = "256E9B458D549132DE7A1253180A65FA", hash_generated_method = "79EF2D7BC2A5C7161352E9AE426E3272")
+@DSSink({DSSinkKind.ACCOUNT_SETTINGS})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:46.769 -0500", hash_original_method = "256E9B458D549132DE7A1253180A65FA", hash_generated_method = "79EF2D7BC2A5C7161352E9AE426E3272")
         
 @Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
 {

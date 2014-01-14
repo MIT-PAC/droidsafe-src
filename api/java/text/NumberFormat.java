@@ -17,10 +17,6 @@ import java.util.Locale;
 import libcore.icu.ICU;
 import libcore.icu.LocaleData;
 
-
-
-
-
 public abstract class NumberFormat extends Format {
 
     /**
@@ -181,7 +177,6 @@ public static NumberFormat getPercentInstance(Locale locale) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.804 -0500", hash_original_field = "B0493B31618B50A4C91C77CBDFBA8B6D", hash_generated_field = "F09073C8D8AE7A807304B7452EAEF8B1")
 
-
     private static final long serialVersionUID = -2308460125733713944L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.807 -0500", hash_original_field = "AEF70CABBD9DC0B6B474123AFBEA68D1", hash_generated_field = "8E8C994FB7A9C648CA5248364548DF14")
 
@@ -190,7 +185,6 @@ public static NumberFormat getPercentInstance(Locale locale) {
 
     public static final int FRACTION_FIELD = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.913 -0500", hash_original_field = "F54C791EFF1ABDF72C23022B8083E49E", hash_generated_field = "BAD9E2169D2150C1AD558C00FC601059")
-
 
     private static final ObjectStreamField[] serialPersistentFields = {
         new ObjectStreamField("groupingUsed", boolean.class),
@@ -562,6 +556,7 @@ public abstract Number parse(String string, ParsePosition position);
      *            the new currency.
      * @throws UnsupportedOperationException
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.896 -0500", hash_original_method = "840FE994670C453CCC1032B9649CFF03", hash_generated_method = "A169631953653E16CCEEAB40C02C1FD8")
     
 public void setCurrency(Currency currency) {
@@ -663,11 +658,9 @@ public void setMinimumIntegerDigits(int value) {
 public void setParseIntegerOnly(boolean value) {
         parseIntegerOnly = value;
     }
-
     
     public static class Field extends Format.Field {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.922 -0500", hash_original_field = "0678BF01D3765E8C9254F90EF25B33B0", hash_generated_field = "E6808DCA2B613BACD85F5DF8A49842E5")
-
 
         private static final long serialVersionUID = 7494728892700160890L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.925 -0500", hash_original_field = "45E9A99C7A10B5137F72C9362AD46E33", hash_generated_field = "E67CF04835E7440B3B8255401771C5CD")
@@ -789,6 +782,7 @@ public RoundingMode getRoundingMode() {
      * Subclasses for which a rounding mode is meaningful are expected to override this method.
      * @since 1.6
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.963 -0500", hash_original_method = "0C28590135419FD8FADCC2330801FC90", hash_generated_method = "059A5AEB4BFAC19B3AF46F11B93919BE")
     
 public void setRoundingMode(RoundingMode roundingMode) {

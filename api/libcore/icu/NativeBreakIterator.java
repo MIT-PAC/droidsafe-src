@@ -226,6 +226,7 @@ public void setText(CharacterIterator newText) {
         setText(sb.toString(), newText);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:04.785 -0500", hash_original_method = "67F081416AECF904EEC9E927DC093231", hash_generated_method = "BE99923ADC4BB691C54634CED28CF931")
     
 public void setText(String newText) {

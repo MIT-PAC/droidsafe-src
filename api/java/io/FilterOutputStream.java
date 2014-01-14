@@ -8,10 +8,6 @@ import java.util.Arrays;
 
 import libcore.util.SneakyThrow;
 
-
-
-
-
 public class FilterOutputStream extends OutputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.165 -0500", hash_original_field = "045D3F20D319391451B40CE63253C516", hash_generated_field = "F5E376611CAAF4EE829F9CD268525BC2")
 
@@ -91,6 +87,7 @@ public FilterOutputStream(OutputStream out) {
      * @throws IOException
      *             if an I/O error occurs while writing to this stream.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.177 -0500", hash_original_method = "6F432F0CBACFD3E73C2E675DFA6BA23C", hash_generated_method = "498B074A2C195BA232A7D0D68326D9CB")
     
 @Override
@@ -112,13 +109,13 @@ public FilterOutputStream(OutputStream out) {
      * @throws IOException
      *             if an I/O error occurs while writing to this stream.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.179 -0500", hash_original_method = "10EC24027333F66A6325D4B91084AA70", hash_generated_method = "72256F3E593320096EE1351175BB4E9C")
     
 @Override
     public void write(int oneByte) throws IOException {
         out.write(oneByte);
     }
-
     
 }
 

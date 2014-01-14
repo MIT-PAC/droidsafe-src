@@ -9,10 +9,6 @@ import java.io.PrintWriter;
 
 import android.os.ServiceManager;
 
-
-
-
-
 public class PhoneSubInfoProxy extends IPhoneSubInfo.Stub {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:21.775 -0500", hash_original_field = "A26E2776DC4F810939DFB51028079AFA", hash_generated_field = "977885D72E5C857855A5A55FBD61054C")
 
@@ -148,12 +144,12 @@ public String[] getIsimImpu() {
         return mPhoneSubInfo.getIsimImpu();
     }
 
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:21.817 -0500", hash_original_method = "BD901838E03164DC084863FAEEA45A76", hash_generated_method = "DCA7F7C16BDA8A448EE0D5AEC839F0E9")
     
 protected void dump(FileDescriptor fd, PrintWriter pw, String[] args) {
         mPhoneSubInfo.dump(fd, pw, args);
     }
-
     
 }
 

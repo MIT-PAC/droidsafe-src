@@ -17,25 +17,18 @@ import android.util.AttributeSet;
 import android.util.Xml;
 import android.view.InflateException;
 
-
-
-
-
 abstract class GenericInflater<T, P extends GenericInflater.Parent> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:23.614 -0500", hash_original_field = "C2CE271B9176DC90609E3CB2F2410951", hash_generated_field = "DA025B3CEA9F6DF229E9360E35C80379")
-
 
     private static final Class[] mConstructorSignature = new Class[] {
             Context.class, AttributeSet.class};
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:23.616 -0500", hash_original_field = "1D2BE8CD178DF0B2A55E88131CB5C0BD", hash_generated_field = "61C67D80619B2C9C71EFD304BA972A02")
-
 
     private static final HashMap sConstructorMap = new HashMap();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:23.603 -0500", hash_original_field = "81DD852ECBE07BA98A61C8F3D0C85F01", hash_generated_field = "40AF400BA8F86FA9C9E428F903D03FF5")
 
     private final boolean DEBUG = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:23.605 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "B3359F86E29A965BC1436888E98C55A8")
-
 
     protected  Context mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:23.607 -0500", hash_original_field = "ABBF88F2FF66E1F410D2E6FD81CC8AE8", hash_generated_field = "AED919A3A7191A7906DCEFFE6A0831DA")
@@ -46,10 +39,8 @@ abstract class GenericInflater<T, P extends GenericInflater.Parent> {
     private Factory<T> mFactory;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:23.611 -0500", hash_original_field = "D62709ECD69C2FFB452C5E25B014B17D", hash_generated_field = "BAC245513231B6A4CDBDF61862A69933")
 
-
     private final Object[] mConstructorArgs = new Object[2];
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:23.619 -0500", hash_original_field = "519963041C1A7EDF0E04C4D6835A8254", hash_generated_field = "6581AC575AE1E4EEB60567A9B3808F54")
-
 
     private String mDefaultPackage;
     
@@ -176,7 +167,6 @@ public void setFactory(Factory<T> factory) {
             mFactory = new FactoryMerger<T>(factory, mFactory);
         }
     }
-
 
     /**
      * Inflate a new item hierarchy from the specified xml resource. Throws
@@ -345,6 +335,7 @@ public T inflate(XmlPullParser parser, P root,
      * 
      * @return The newly instantied item, or null.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:23.664 -0500", hash_original_method = "AB0D32CECCD43C7D0F0360210FD11363", hash_generated_method = "7919B56F6EAD7F837ED945AED21B5B41")
     
 public final T createItem(String name, String prefix, AttributeSet attrs)
@@ -486,7 +477,6 @@ private void rInflate(XmlPullParser parser, T parent, final AttributeSet attrs)
         }
 
     }
-
     
     private static class FactoryMerger<T> implements Factory<T> {
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.272 -0400", hash_original_field = "B388ED792FF72DF72B1BCDB08C954A34", hash_generated_field = "C926E99D17BAF92FDF4D7BA2DC2DD9F0")
@@ -510,11 +500,8 @@ public T onCreateItem(String name, Context context, AttributeSet attrs) {
             if (v != null) return v;
             return mF2.onCreateItem(name, context, attrs);
         }
-
         
     }
-
-
     
     public interface Parent<T> {
         public void addItemFromInflater(T child);

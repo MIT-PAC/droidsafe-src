@@ -14,21 +14,14 @@ import android.util.SparseArray;
 
 import com.android.internal.telephony.gsm.UsimPhoneBookManager;
 
-
-
-
-
-
 public final class AdnRecordCache extends Handler implements IccConstants {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.145 -0500", hash_original_field = "58C35920BB9EEC54F36704BA92C2B62F", hash_generated_field = "EF915D97284F3936495B1375E22F8448")
-
 
     static final int EVENT_LOAD_ALL_ADN_LIKE_DONE = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.148 -0500", hash_original_field = "8636740F228703349EB36F95F48B8AA4", hash_generated_field = "45468B5879EA75ECFA4CD728BEBE82F1")
 
     static final int EVENT_UPDATE_ADN_DONE = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.133 -0500", hash_original_field = "4D74BFF297E0DF8FA98FF6D8A8DBA78C", hash_generated_field = "4D74BFF297E0DF8FA98FF6D8A8DBA78C")
-
 
     PhoneBase phone;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.136 -0500", hash_original_field = "44C3A056F88AA48C0061C052FE90C8A4", hash_generated_field = "E3717E9C9DFB544AEE98C8317196D94A")
@@ -47,8 +40,6 @@ public final class AdnRecordCache extends Handler implements IccConstants {
     SparseArray<Message> userWriteResponse = new SparseArray<Message>();
 
     //***** Constructor
-
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.151 -0500", hash_original_method = "778B025D62231C2A3FAD8914E2C62313", hash_generated_method = "899D4F1EB5E1708A9D125A588619F16C")
     
@@ -146,6 +137,7 @@ private void sendErrorResponse(Message response, String errString) {
      * @param response message to be posted when done
      *        response.exception hold the exception in error
      */
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.168 -0500", hash_original_method = "92DB73E806C3C282A27A1468C26BF7B3", hash_generated_method = "838908A3C418F7AAF40CF8FDA53D821C")
     
 public void updateAdnByIndex(int efid, AdnRecord adn, int recordIndex, String pin2,
@@ -184,6 +176,7 @@ public void updateAdnByIndex(int efid, AdnRecord adn, int recordIndex, String pi
      * @param response message to be posted when done
      *        response.exception hold the exception in error
      */
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.172 -0500", hash_original_method = "71F49E0E0C93DA66D27CAD14CA0014CE", hash_generated_method = "B3A9CD05CC2F14B6D5F7C24F5DF8CD8A")
     
 public void updateAdnBySearch(int efid, AdnRecord oldAdn, AdnRecord newAdn,
@@ -250,11 +243,11 @@ public void updateAdnBySearch(int efid, AdnRecord oldAdn, AdnRecord newAdn,
                 obtainMessage(EVENT_UPDATE_ADN_DONE, efid, index, newAdn));
     }
 
-
     /**
      * Responds with exception (in response) if efid is not a known ADN-like
      * record
      */
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.176 -0500", hash_original_method = "05810E0F51AA47EAC0C24CA3CBEDF0F7", hash_generated_method = "7BC5647D4EF2E8DD9FF8E8D0590C562D")
     
 public void
@@ -297,7 +290,6 @@ public void
 
         adnLikeWaiters.put(efid, waiters);
 
-
         if (extensionEf < 0) {
             // respond with error if not known ADN-like record
 
@@ -335,6 +327,7 @@ private void
 
     //***** Overridden from Handler
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.188 -0500", hash_original_method = "EDA0843A3B437B2415185CC41779F06F", hash_generated_method = "4256A8F1CA7BF019ADF4DAF7DBE8D765")
     
 public void

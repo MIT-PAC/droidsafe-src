@@ -78,6 +78,7 @@ public TreeSet(SortedSet<E> set) {
         }
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @Override
     
     public boolean add(E object) {

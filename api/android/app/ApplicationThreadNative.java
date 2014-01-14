@@ -28,10 +28,6 @@ import android.os.ParcelFileDescriptor;
 import android.os.Parcelable;
 import android.os.RemoteException;
 
-
-
-
-
 public abstract class ApplicationThreadNative extends Binder implements IApplicationThread {
     /**
      * Cast a Binder object into an application thread interface, generating
@@ -58,6 +54,7 @@ public ApplicationThreadNative() {
         attachInterface(this, descriptor);
     }
     
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:32.942 -0500", hash_original_method = "B17DF3ED953946DC6FB6C3E82DF1C3B7", hash_generated_method = "6DCB879D2EBBA74EF430AE5BD6A63908")
     
 @Override
@@ -546,7 +543,6 @@ public IBinder asBinder()
     {
         return this;
     }
-
     
 }
 
@@ -567,6 +563,7 @@ public final IBinder asBinder() {
         return mRemote;
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:32.954 -0500", hash_original_method = "F385294CE3D6AC21F25405F7E688DF1E", hash_generated_method = "CBF0A1AFB674AE5BA1CA1826E5AE2835")
     
 public final void schedulePauseActivity(IBinder token, boolean finished,
@@ -582,6 +579,7 @@ public final void schedulePauseActivity(IBinder token, boolean finished,
         data.recycle();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:32.957 -0500", hash_original_method = "8D9A120B7A56CEA8B7726147C17D07B9", hash_generated_method = "0A9533EA0293AAF82BB79426513B0A81")
     
 public final void scheduleStopActivity(IBinder token, boolean showWindow,
@@ -596,6 +594,7 @@ public final void scheduleStopActivity(IBinder token, boolean showWindow,
         data.recycle();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:32.959 -0500", hash_original_method = "5CD7B361184ED9060554C6A3DFD958DC", hash_generated_method = "B5DEEDBF6FA66341DEF01C3AF443B80A")
     
 public final void scheduleWindowVisibility(IBinder token,
@@ -609,6 +608,7 @@ public final void scheduleWindowVisibility(IBinder token,
         data.recycle();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:32.962 -0500", hash_original_method = "037CA20E3B4BFBAB7FFA0954AEB6461B", hash_generated_method = "DF373665954C0746BD82B703AF1D6917")
     
 public final void scheduleSleeping(IBinder token,
@@ -622,6 +622,7 @@ public final void scheduleSleeping(IBinder token,
         data.recycle();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:32.964 -0500", hash_original_method = "3B8EDF2F01C1C03EA4B1D6DE44BA40A1", hash_generated_method = "CD10572F94195DA5F8791AE33358E55F")
     
 public final void scheduleResumeActivity(IBinder token, boolean isForward)
@@ -635,6 +636,7 @@ public final void scheduleResumeActivity(IBinder token, boolean isForward)
         data.recycle();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:32.967 -0500", hash_original_method = "DF66BA9A5FFE4BEC7C06F9E22C0B5667", hash_generated_method = "33D4E89A4A541307DD512AE7B9D63EAE")
     
 public final void scheduleSendResult(IBinder token, List<ResultInfo> results)
@@ -706,6 +708,7 @@ public final void scheduleRelaunchActivity(IBinder token,
         data.recycle();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:32.976 -0500", hash_original_method = "C9991D806FA54B06B2907086AD0FF677", hash_generated_method = "3CCF467753F3966284C8520DFAC2C903")
     
 public void scheduleNewIntent(List<Intent> intents, IBinder token)
@@ -719,6 +722,7 @@ public void scheduleNewIntent(List<Intent> intents, IBinder token)
         data.recycle();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:32.978 -0500", hash_original_method = "30A44B425A4D374BA87F220BE9EBE9B7", hash_generated_method = "7C10FF8E99432EB62A17B52FDB771AEE")
     
 public final void scheduleDestroyActivity(IBinder token, boolean finishing,
@@ -752,6 +756,7 @@ public final void scheduleReceiver(Intent intent, ActivityInfo info,
         data.recycle();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:32.983 -0500", hash_original_method = "FBCEE90A351EFB6AE922D66BDA990D49", hash_generated_method = "645091E863567C7A8F794C896EC31910")
     
 public final void scheduleCreateBackupAgent(ApplicationInfo app,
@@ -779,6 +784,7 @@ public final void scheduleDestroyBackupAgent(ApplicationInfo app,
         data.recycle();
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:32.988 -0500", hash_original_method = "6404222A540CAF1DD9DE4C2FFFFCFFEA", hash_generated_method = "04ABC0E9B46B2AD2BF42A8B660CBC355")
     
 public final void scheduleCreateService(IBinder token, ServiceInfo info,
@@ -793,6 +799,7 @@ public final void scheduleCreateService(IBinder token, ServiceInfo info,
         data.recycle();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:32.991 -0500", hash_original_method = "B7457DD503BA4FDF2022DE2BEF8A4AE7", hash_generated_method = "26BEC1CEA392937A526B3E1AD93184AD")
     
 public final void scheduleBindService(IBinder token, Intent intent, boolean rebind)
@@ -807,6 +814,7 @@ public final void scheduleBindService(IBinder token, Intent intent, boolean rebi
         data.recycle();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:32.993 -0500", hash_original_method = "015A697DF0B7313A5A91440BE749BA70", hash_generated_method = "5C06BFA5B54D2BC16CF66E108F7A6091")
     
 public final void scheduleUnbindService(IBinder token, Intent intent)
@@ -820,6 +828,7 @@ public final void scheduleUnbindService(IBinder token, Intent intent)
         data.recycle();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:32.996 -0500", hash_original_method = "9440CDA1B00A67ECA4131E9DDBFF94BE", hash_generated_method = "C80BF5F302BC309D95DE0391EB3DEA3B")
     
 public final void scheduleServiceArgs(IBinder token, boolean taskRemoved, int startId,
@@ -841,6 +850,7 @@ public final void scheduleServiceArgs(IBinder token, boolean taskRemoved, int st
         data.recycle();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:32.998 -0500", hash_original_method = "C0CB5C15E3301223B23F08D2A5944F63", hash_generated_method = "FA8FFAA1903B1AAAD650ADB275F3799E")
     
 public final void scheduleStopService(IBinder token)
@@ -914,6 +924,7 @@ public final void scheduleSuicide() throws RemoteException {
         data.recycle();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.008 -0500", hash_original_method = "D665A0E549B16E7CA815762264938E1F", hash_generated_method = "0326CC7D3D96DEDBCD74512EA57668DF")
     
 public final void requestThumbnail(IBinder token)
@@ -958,6 +969,7 @@ public void clearDnsCache() throws RemoteException {
         data.recycle();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.017 -0500", hash_original_method = "B79CFB3A109E11AF1583EBEB0497855B", hash_generated_method = "ACAE0709FAB9A7B1C4FA7A24E51F242B")
     
 public void setHttpProxy(String proxy, String port, String exclList) throws RemoteException {
@@ -980,6 +992,7 @@ public void processInBackground() throws RemoteException {
         data.recycle();
     }
 
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.022 -0500", hash_original_method = "E161C2DD10689877C1DFEA4F44C5B49B", hash_generated_method = "874F1D2DCBFF80A10B2F0F45B0FF183F")
     
 public void dumpService(FileDescriptor fd, IBinder token, String[] args)
@@ -1022,6 +1035,7 @@ public final void scheduleLowMemory() throws RemoteException {
         data.recycle();
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.030 -0500", hash_original_method = "17DBD33C1569C467FA5E9849A4B7DAA5", hash_generated_method = "668A5DB86925B19AC1DE4B9A49D27346")
     
 public final void scheduleActivityConfigurationChanged(
@@ -1034,6 +1048,7 @@ public final void scheduleActivityConfigurationChanged(
         data.recycle();
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.032 -0500", hash_original_method = "727EEF540008C4D098D698BFCF8CD3C2", hash_generated_method = "047BC902781895D8A6398BFA6B3534BA")
     
 public void profilerControl(boolean start, String path,
@@ -1054,6 +1069,7 @@ public void profilerControl(boolean start, String path,
         data.recycle();
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.034 -0500", hash_original_method = "732323D2FE13A948B7BB2E76176A6F90", hash_generated_method = "9BFFA9D36155A3CF53FFA3E8588A53F2")
     
 public void setSchedulingGroup(int group) throws RemoteException {
@@ -1078,6 +1094,7 @@ public void getMemoryInfo(Debug.MemoryInfo outInfo) throws RemoteException {
         reply.recycle();
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.039 -0500", hash_original_method = "ACFC9FA9BBB19958DCB9CD2CDA3432BC", hash_generated_method = "9F13079B67E1B340A910C2841C5A58D9")
     
 public void dispatchPackageBroadcast(int cmd, String[] packages) throws RemoteException {
@@ -1091,6 +1108,7 @@ public void dispatchPackageBroadcast(int cmd, String[] packages) throws RemoteEx
         
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.041 -0500", hash_original_method = "0DA34150FDE2C37709AA14FDDE4D7856", hash_generated_method = "F1B656A08AFA9BD1E791AEB210967BBF")
     
 public void scheduleCrash(String msg) throws RemoteException {
@@ -1103,6 +1121,7 @@ public void scheduleCrash(String msg) throws RemoteException {
         
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.043 -0500", hash_original_method = "14C0866A00E3EF07677471FCFBE5006D", hash_generated_method = "7C23DB5F40EDFC3138299924DC08C338")
     
 public void dumpHeap(boolean managed, String path,
@@ -1122,6 +1141,7 @@ public void dumpHeap(boolean managed, String path,
         data.recycle();
     }
 
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.045 -0500", hash_original_method = "7214E8ED977AF65264275D69BD7546BC", hash_generated_method = "C1AE6E651A598938A33575C23A351361")
     
 public void dumpActivity(FileDescriptor fd, IBinder token, String prefix, String[] args)
@@ -1136,6 +1156,7 @@ public void dumpActivity(FileDescriptor fd, IBinder token, String prefix, String
         data.recycle();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.048 -0500", hash_original_method = "A6BD18E7AC0ECE0599305450F757BFCE", hash_generated_method = "3DE2C4A7538826C2FD90ABB22B8B6B1D")
     
 public void setCoreSettings(Bundle coreSettings) throws RemoteException {
@@ -1145,6 +1166,7 @@ public void setCoreSettings(Bundle coreSettings) throws RemoteException {
         mRemote.transact(SET_CORE_SETTINGS_TRANSACTION, data, null, IBinder.FLAG_ONEWAY);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.050 -0500", hash_original_method = "D2FA44681587FB29A159697C062E818E", hash_generated_method = "0A1BF5EC6EA1F3BA65EE3CF9CDFBEEB7")
     
 public void updatePackageCompatibilityInfo(String pkg, CompatibilityInfo info)
@@ -1157,6 +1179,7 @@ public void updatePackageCompatibilityInfo(String pkg, CompatibilityInfo info)
                 IBinder.FLAG_ONEWAY);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.053 -0500", hash_original_method = "2D27841853A53E2CEBF025C44DD03509", hash_generated_method = "DFC13A93B430963CDA63C0FB28972FDC")
     
 public void scheduleTrimMemory(int level) throws RemoteException {
@@ -1187,6 +1210,7 @@ public Debug.MemoryInfo dumpMemInfo(FileDescriptor fd, boolean checkin, boolean 
         return info;
     }
 
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.057 -0500", hash_original_method = "A649B6B1FE51F3F8AC43A3FCCC575DB3", hash_generated_method = "FADE2085EA0A408B02D104A90E30C3BF")
     
 public void dumpGfxInfo(FileDescriptor fd, String[] args) throws RemoteException {
@@ -1197,7 +1221,6 @@ public void dumpGfxInfo(FileDescriptor fd, String[] args) throws RemoteException
         mRemote.transact(DUMP_GFX_INFO_TRANSACTION, data, null, IBinder.FLAG_ONEWAY);
         data.recycle();
     }
-
     
 }
 

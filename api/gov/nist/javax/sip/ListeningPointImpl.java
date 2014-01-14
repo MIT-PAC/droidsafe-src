@@ -23,15 +23,7 @@ import javax.sip.address.SipURI;
 import javax.sip.header.ContactHeader;
 import javax.sip.header.ViaHeader;
 
-
-
-
-
-
 public class ListeningPointImpl implements javax.sip.ListeningPoint, gov.nist.javax.sip.ListeningPointExt {
-
-
-
 
     /**
      * Construct a key to refer to this structure from the SIP stack
@@ -53,11 +45,8 @@ public static String makeKey(String host, int port, String transport) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:34.705 -0500", hash_original_field = "852FD1938B4FCA59C0635E9D670A8D0B", hash_generated_field = "B1CF55BB145913C3C7A70130704FABEE")
 
-
-
     protected String transport;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:34.707 -0500", hash_original_field = "5A948EF636511EF149269A68FE278AED", hash_generated_field = "5A948EF636511EF149269A68FE278AED")
-
 
     int port;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:34.709 -0500", hash_original_field = "E4941A6D5D11F7097BE49F2BB415489B", hash_generated_field = "9E12CC740EB4D514DEBB557E6BE577E6")
@@ -130,8 +119,6 @@ public Object clone() {
         return lip;
     }
 
-
-
     /**
      * Gets the port of the ListeningPoint. The default port of a ListeningPoint
      * is dependent on the scheme and transport.  For example:
@@ -183,11 +170,10 @@ public String getIPAddress() {
         return this.messageProcessor.getIpAddress().getHostAddress();
     }
 
-
-
     /* (non-Javadoc)
      * @see javax.sip.ListeningPoint#setSentBy(java.lang.String)
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:34.741 -0500", hash_original_method = "C988C19E7315430B0087298232CBBC55", hash_generated_method = "3CCBE29524C9A3DA0F3FAC24EB19BCCC")
     
 public void setSentBy(String sentBy) throws ParseException {
@@ -244,7 +230,7 @@ public ContactHeader createContactHeader() {
         }
     }
 
-
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:34.756 -0500", hash_original_method = "5402C8EE79A7BEF74C3B072587BA8FD1", hash_generated_method = "3B731FBDEBF9C67A94F3246A288D24D6")
     
 public void sendHeartbeat(String ipAddress, int port) throws IOException {
@@ -258,14 +244,12 @@ public void sendHeartbeat(String ipAddress, int port) throws IOException {
         messageChannel.sendMessage(siprequest);
 
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:34.759 -0500", hash_original_method = "463489B426580FC1D58885BA81FC3706", hash_generated_method = "C421309420FE90F81E0D183CBADD17D7")
     
 public ViaHeader createViaHeader() {
            return this.getViaHeader();
     }
-
     
 }
 

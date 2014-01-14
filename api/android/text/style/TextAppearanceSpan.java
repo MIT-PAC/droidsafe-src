@@ -13,10 +13,6 @@ import android.text.ParcelableSpan;
 import android.text.TextPaint;
 import android.text.TextUtils;
 
-
-
-
-
 public class TextAppearanceSpan extends MetricAffectingSpan implements ParcelableSpan {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.544 -0500", hash_original_field = "09F52ED154F9A85ECF27E5DE83FC66E9", hash_generated_field = "5282170AD2743DECEA0FF0876CABC714")
 
@@ -148,6 +144,7 @@ public int describeContents() {
         return 0;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.576 -0500", hash_original_method = "5C4A27F4DE181F367842F0367978AD5D", hash_generated_method = "C6D466EB680329C8888856F55D33E7A0")
     
 public void writeToParcel(Parcel dest, int flags) {
@@ -218,6 +215,7 @@ public int getTextStyle() {
         return mStyle;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.592 -0500", hash_original_method = "91F606F0F4AED8EEECD78BF397028020", hash_generated_method = "8D3D05CD6A573AE4E201562175EA137B")
     
 @Override
@@ -272,7 +270,6 @@ public int getTextStyle() {
             ds.setTextSize(mTextSize);
         }
     }
-
     
 }
 

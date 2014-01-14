@@ -25,10 +25,6 @@ import android.os.Parcelable;
 import android.util.AttributeSet;
 import android.util.Xml;
 
-
-
-
-
 public final class SpellCheckerInfo implements Parcelable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.760 -0500", hash_original_field = "CAFE3ED6B053B310C3D2FEEBC0BE5344", hash_generated_field = "B9C780B55162E0EEA102B93C8BE1103A")
 
@@ -168,7 +164,6 @@ public String getId() {
         return mId;
     }
 
-
     /**
      * Return the component of the service that implements.
      */
@@ -194,6 +189,7 @@ public String getPackageName() {
      * @param dest The {@link Parcel} to be written.
      * @param flags The flags used for parceling.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.788 -0500", hash_original_method = "2F472510FA9E87ADC65F29887FB84501", hash_generated_method = "D4D43B62E449729D0528B748A3BE6CB3")
     
 @Override
@@ -227,7 +223,6 @@ public CharSequence loadLabel(PackageManager pm) {
 public Drawable loadIcon(PackageManager pm) {
         return mService.loadIcon(pm);
     }
-
 
     /**
      * Return the raw information about the Service implementing this

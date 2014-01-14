@@ -6,10 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import sun.misc.Unsafe;
 
-
-
-
-
 public class AtomicInteger extends Number implements java.io.Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.314 -0500", hash_original_field = "EDA2AEC613B19DD5D3B8D8B483F792BA", hash_generated_field = "BC575BADA52C64A5C5C6ADD1B81BACA0")
 
@@ -21,7 +17,6 @@ public class AtomicInteger extends Number implements java.io.Serializable {
 
     private static  long valueOffset;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.323 -0500", hash_original_field = "2A5EA2B60261C751D318C2CB32BF7CEC", hash_generated_field = "AACF1191CE0421BEFC63226B2561E15D")
-
 
     private volatile int value;
 
@@ -72,6 +67,7 @@ public final void set(int newValue) {
      * @param newValue the new value
      * @since 1.6
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.336 -0500", hash_original_method = "77EB9E59BE67AA43485FF3A0F0492CB7", hash_generated_method = "4CD52BDA532FC5AB7C0B2B2E1A0C3792")
     
 public final void lazySet(int newValue) {
@@ -234,7 +230,6 @@ public final int addAndGet(int delta) {
 public String toString() {
         return Integer.toString(get());
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.363 -0500", hash_original_method = "B90EC926C8275C97256DF1E0AD9FC076", hash_generated_method = "78E09736EA0B907CA81C02E14B9D2D57")
     

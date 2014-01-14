@@ -16,10 +16,6 @@ import libcore.io.StructGroupReq;
 import libcore.util.EmptyArray;
 import dalvik.system.CloseGuard;
 
-
-
-
-
 public class PlainDatagramSocketImpl extends DatagramSocketImpl {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.877 -0500", hash_original_method = "E20F53A6F68C893F54FE6F4EDC3A37F7", hash_generated_method = "C644F8A0EF4D10717D34427B0C7526D8")
@@ -30,17 +26,14 @@ private static StructGroupReq makeGroupReq(InetAddress gr_group, NetworkInterfac
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.844 -0500", hash_original_field = "A2C06E7ABDE0E3F9668B442F14231C44", hash_generated_field = "9D4B2046F6FC3648B8B879B96386B204")
 
-
     private volatile boolean isNativeConnected;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.846 -0500", hash_original_field = "759D7885648499D4F341C13F7C4AA861", hash_generated_field = "E7FAF2CA4E8E292A9B5FAAE3D4817EEC")
-
 
     private final CloseGuard guard = CloseGuard.get();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.849 -0500", hash_original_field = "10D0D7C38A3D62029C9AC38CB273BC17", hash_generated_field = "73847774F9DA64C0A8E371069748C949")
 
     private InetAddress connectedAddress;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.851 -0500", hash_original_field = "F885AFC27512D26CA5ACC3CB5E7EF1C6", hash_generated_field = "CEF230CAFEA932CF90A6DBC1FA0FEB98")
-
 
     private int connectedPort = -1;
 
@@ -60,6 +53,7 @@ public PlainDatagramSocketImpl() {
         fd = new FileDescriptor();
     }
 
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.859 -0500", hash_original_method = "B1D68F8F8FBA849D5DC5627B8806817B", hash_generated_method = "5DA1DF467FE12E447F3EA339A88EA704")
     
 @Override public void bind(int port, InetAddress address) throws SocketException {
@@ -196,6 +190,7 @@ private void doRecv(DatagramPacket pack, int flags) throws IOException {
         return pack.getPort();
     }
 
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.899 -0500", hash_original_method = "7ACBDBE2565DC623BE65BEE0D3657AD7", hash_generated_method = "0BFCA5B9E8610196A8781683A57C6233")
     
 @Override
@@ -205,12 +200,14 @@ private void doRecv(DatagramPacket pack, int flags) throws IOException {
         IoBridge.sendto(fd, packet.getData(), packet.getOffset(), packet.getLength(), 0, address, port);
     }
 
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.902 -0500", hash_original_method = "F61FA251C1FD1E3875B2C69F1E04AD45", hash_generated_method = "AE27391CD17E1D58FFCEB5C4E4CAE6A8")
     
 public void setOption(int option, Object value) throws SocketException {
         IoBridge.setSocketOption(fd, option, value);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.904 -0500", hash_original_method = "DDE567B7B25A07BB14A31131F0762C29", hash_generated_method = "5C3E2943F69E515E3612C32D8E04FB94")
     
 @Override
@@ -218,6 +215,7 @@ public void setOption(int option, Object value) throws SocketException {
         setOption(IoBridge.JAVA_IP_MULTICAST_TTL, Integer.valueOf(ttl));
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.907 -0500", hash_original_method = "AF63162F005FE2D131203598170CD418", hash_generated_method = "BAF0960B9E2027329CA8EFAE2F0A80A8")
     
 @Override
@@ -270,7 +268,6 @@ private void updatePacketRecvAddress(DatagramPacket packet) {
         packet.setAddress(connectedAddress);
         packet.setPort(connectedPort);
     }
-
     
 }
 

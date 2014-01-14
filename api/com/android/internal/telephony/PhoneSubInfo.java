@@ -15,11 +15,6 @@ import android.util.Log;
 
 import com.android.internal.telephony.ims.IsimRecords;
 
-
-
-
-
-
 public class PhoneSubInfo extends IPhoneSubInfo.Stub {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:12.172 -0500", hash_original_field = "F4446E751DD7D5E85FE650192A5E7AE4", hash_generated_field = "90DFE6F4299DB554E753A7D7707C6EC5")
 
@@ -226,6 +221,7 @@ public String[] getIsimImpu() {
         }
     }
 
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:12.226 -0500", hash_original_method = "4DB3773BD9844F1658383FB3EDE03C78", hash_generated_method = "610A8ADDF63FC5624B4D86E2D36101A5")
     
 protected void dump(FileDescriptor fd, PrintWriter pw, String[] args) {

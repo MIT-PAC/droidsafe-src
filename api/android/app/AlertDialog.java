@@ -21,11 +21,6 @@ import android.widget.ListView;
 
 import com.android.internal.app.AlertController;
 
-
-
-
-
-
 public class AlertDialog extends Dialog implements DialogInterface {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.001 -0500", hash_original_method = "B16DF712FADBC6F763054B9AFC3C54C8", hash_generated_method = "25D3EA26FBF1141D80814F97B62D6ECC")
@@ -145,6 +140,7 @@ public ListView getListView() {
     /**
      * @see Builder#setCustomTitle(View)
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.010 -0500", hash_original_method = "0AAF0E3192DB53DCF899ECF927301A42", hash_generated_method = "25D57FD691BD0F556687B6AEB5E48BBF")
     
 public void setCustomTitle(View customTitleView) {
@@ -160,6 +156,7 @@ public void setMessage(CharSequence message) {
     /**
      * Set the view to display in that dialog.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.015 -0500", hash_original_method = "588C26275F4E62D9742C7DBB082EE340", hash_generated_method = "7D1301105820BDDE7285DE576977D3BF")
     
 public void setView(View view) {
@@ -176,6 +173,7 @@ public void setView(View view) {
      * @param viewSpacingRight Extra space to appear to the right of {@code view}
      * @param viewSpacingBottom Extra space to appear below {@code view}
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.017 -0500", hash_original_method = "399D46DD3D86F04F15AA9836309BED7E", hash_generated_method = "AF0B58B488D79D0F8E3CA214011A0CEC")
     
 public void setView(View view, int viewSpacingLeft, int viewSpacingTop, int viewSpacingRight,
@@ -193,6 +191,7 @@ public void setView(View view, int viewSpacingLeft, int viewSpacingTop, int view
      * @param text The text to display in positive button.
      * @param msg The {@link Message} to be sent when clicked.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.019 -0500", hash_original_method = "CFE09EBA63F60A6BEEDA0ECE4DBD2BBE", hash_generated_method = "0046613B36C60BA64ACC9976D324A9E9")
     
 public void setButton(int whichButton, CharSequence text, Message msg) {
@@ -299,18 +298,19 @@ public void setButton(int whichButton, CharSequence text, OnClickListener listen
      * @param resId the resourceId of the drawable to use as the icon or 0
      * if you don't want an icon.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.037 -0500", hash_original_method = "B742B976A105323EE27DB344109D47DF", hash_generated_method = "473496E8EFD550346F20C86156F373DF")
     
 public void setIcon(int resId) {
         mAlert.setIcon(resId);
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.039 -0500", hash_original_method = "58CB6A167EA4E7B84F26608014843ADF", hash_generated_method = "6B370B792F8AA46DE34678423A94EE2C")
     
 public void setIcon(Drawable icon) {
         mAlert.setIcon(icon);
     }
-
     
     public static class Builder {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.054 -0500", hash_original_field = "1DC78937194A9EA3900107777E6924E5", hash_generated_field = "A137DC00364323BBFDABBB1A415FA549")
@@ -825,7 +825,7 @@ public Builder setSingleChoiceItems(CharSequence[] items, int checkedItem, final
             P.mCheckedItem = checkedItem;
             P.mIsSingleChoice = true;
             return this;
-        } 
+        }
         
         /**
          * Set a list of items to be displayed in the dialog as the content, you will be notified of
@@ -942,7 +942,6 @@ public Builder setRecycleOnMeasureEnabled(boolean enabled) {
             return this;
         }
 
-
         /**
          * Creates a {@link AlertDialog} with the arguments supplied to this builder. It does not
          * {@link Dialog#show()} the dialog. This allows the user to do any extra processing
@@ -976,7 +975,6 @@ public AlertDialog show() {
             dialog.show();
             return dialog;
         }
-
         
     }
 
@@ -985,6 +983,7 @@ public AlertDialog show() {
      *
      * @param attrId ID of a theme attribute that points to a drawable resource.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.042 -0500", hash_original_method = "1B8133F4D68862D013C951EDD0C82832", hash_generated_method = "6E400D4EB3C46F271936899BA09F853E")
     
 public void setIconAttribute(int attrId) {
@@ -993,6 +992,7 @@ public void setIconAttribute(int attrId) {
         mAlert.setIcon(out.resourceId);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.044 -0500", hash_original_method = "21C74C630736CECBD7AD6F509C2AA5D7", hash_generated_method = "22B6B58432E30210C8CBE76AA4BB4DEB")
     
 public void setInverseBackgroundForced(boolean forceInverseBackground) {

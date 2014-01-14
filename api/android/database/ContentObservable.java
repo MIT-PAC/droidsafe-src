@@ -41,6 +41,7 @@ public void dispatchChange(boolean selfChange) {
      * invokes onChange on each observer
      * @param selfChange
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:45.834 -0500", hash_original_method = "6E785AECA168F3220756C0C7D730B7FB", hash_generated_method = "EEEAAD5A170D7CCE5625A72FA61DF131")
     
 public void notifyChange(boolean selfChange) {

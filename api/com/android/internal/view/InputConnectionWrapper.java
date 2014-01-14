@@ -162,6 +162,7 @@ public boolean commitCorrection(CorrectionInfo correctionInfo) {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:32.272 -0500", hash_original_method = "7022EC7ED2F239685C7BD3195B6CEAE9", hash_generated_method = "C0273145DEAAAF5E483FE20E58A6EBA3")
     
 public boolean setSelection(int start, int end) {
@@ -173,6 +174,7 @@ public boolean setSelection(int start, int end) {
         }
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:32.275 -0500", hash_original_method = "67A8A8F86F1AE5123A01275D8828212B", hash_generated_method = "480A689AD84DA7FBAFED9A0B904DAC65")
     
 public boolean performEditorAction(int actionCode) {
@@ -184,6 +186,7 @@ public boolean performEditorAction(int actionCode) {
         }
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:32.277 -0500", hash_original_method = "F7AEA38F9035D01924C8EE6C58DE4221", hash_generated_method = "BE59FAC1E7EBE7A91B6F09A9FE24E9C7")
     
 public boolean performContextMenuAction(int id) {
@@ -195,6 +198,7 @@ public boolean performContextMenuAction(int id) {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:32.280 -0500", hash_original_method = "D57326DB6E974535AC174E0CB4F4F72D", hash_generated_method = "DBE40ED179C98BEF3FE80DBB5AC8D3A3")
     
 public boolean setComposingRegion(int start, int end) {
@@ -250,6 +254,7 @@ public boolean endBatchEdit() {
         }
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:32.293 -0500", hash_original_method = "BDB80433761F466B2EC1080474660009", hash_generated_method = "976159EF6C227ED01611A9ABE8A82929")
     
 public boolean sendKeyEvent(KeyEvent event) {
@@ -479,6 +484,7 @@ void waitForResultLocked() {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:32.308 -0500", hash_original_method = "C4A420F599BD094A8850BEFF4D3FF18D", hash_generated_method = "75255E3CF5D2BCA179DE66E8C41D080F")
     
 public boolean performPrivateCommand(String action, Bundle data) {

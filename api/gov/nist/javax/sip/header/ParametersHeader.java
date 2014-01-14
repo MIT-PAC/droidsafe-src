@@ -15,17 +15,11 @@ import java.util.Iterator;
 
 import javax.sip.header.Parameters;
 
-
-
-
-
-
 public abstract class ParametersHeader extends SIPHeader implements javax.sip.header.Parameters, Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:04.665 -0500", hash_original_field = "C664820D6996E8B6AE3D3EE9831870E4", hash_generated_field = "B548841E6A98CD05129EEE1E20049B8B")
 
     protected NameValueList parameters;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:04.668 -0500", hash_original_field = "B025CE6F0FCD256B20032C6DF23F4DBA", hash_generated_field = "2A6C410AA135B90D8494B5D88641CA12")
-
     
     protected DuplicateNameValueList duplicates;
     
@@ -135,6 +129,7 @@ public void removeParameter(String name) {
      * unexpectedly while parsing the parameter name or value.
      *
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:04.697 -0500", hash_original_method = "DC6AABD6CB8C91F923D2D5F7703B6CF1", hash_generated_method = "8417AC290EAECFB45642310E36775B2F")
     
 public void setParameter(String name, String value) throws ParseException {
@@ -165,6 +160,7 @@ public void setParameter(String name, String value) throws ParseException {
      * unexpectedly while parsing the parameter name or value.
      *
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:04.700 -0500", hash_original_method = "982C7BF5F52C5CB066896B5A4FF02FB5", hash_generated_method = "8F4A6F3FE6F1FD8A29C2BD76F253CD44")
     
 public void setQuotedParameter(String name, String value)
@@ -195,6 +191,7 @@ public void setQuotedParameter(String name, String value)
      * unexpectedly while parsing the parameter name or value.
      *
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:04.703 -0500", hash_original_method = "8F6FACDCF2BE80409FBAB3E7E4602B1E", hash_generated_method = "A9C0399F6FA043C3E09831D594342EA9")
     
 protected void setParameter(String name, int value) {
@@ -218,6 +215,7 @@ protected void setParameter(String name, int value) {
      * unexpectedly while parsing the parameter name or value.
      *
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:04.705 -0500", hash_original_method = "A43053EB8AE25416B5AFA5C2C0F13D2F", hash_generated_method = "366BE33E21F4621C8CE2C0209C1FD4A9")
     
 protected void setParameter(String name, boolean value) {
@@ -239,6 +237,7 @@ protected void setParameter(String name, boolean value) {
      * unexpectedly while parsing the parameter name or value.
      *
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:04.708 -0500", hash_original_method = "9588AB5C73A4CC192FA4DE06D052A58D", hash_generated_method = "DFD33741AD27187D5646FFCF41923255")
     
 protected void setParameter(String name, float value) {
@@ -270,6 +269,7 @@ protected void setParameter(String name, float value) {
      * unexpectedly while parsing the parameter name or value.
      *
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:04.711 -0500", hash_original_method = "69DF71CB140C2C1EC9DCD8B4F4E0A5EC", hash_generated_method = "E73066686DDAFDAEC1E193249D3CE259")
     
 protected void setParameter(String name, Object value) {
@@ -312,6 +312,7 @@ public NameValueList getParameters() {
      *
      * @param nameValue - the name value of the parameter to set.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:04.724 -0500", hash_original_method = "D7D233790E2C90411F60E8102439D486", hash_generated_method = "F56D1A4B7D39B03A6600C9ACED254E2F")
     
 public void setParameter(NameValue nameValue) {
@@ -484,7 +485,6 @@ protected boolean getParameterAsBoolean(String parameterName) {
 public NameValue getNameValue(String parameterName) {
         return parameters.getNameValue(parameterName);
     }
-
  
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:04.752 -0500", hash_original_method = "F88B366B00368248D268BF74B5E64B34", hash_generated_method = "47E75B2A211C27917A050BCF7BCF4612")
     
@@ -506,6 +506,7 @@ public Object clone() {
      * @param name of the parameter
      * @param value of the parameter
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:04.755 -0500", hash_original_method = "386D6A280C48B0DE53357DBAEAE91419", hash_generated_method = "71CB24B84DF255AA1F7CFCE56DFE598A")
     
 public void setMultiParameter(String name, String value)
@@ -520,7 +521,8 @@ public void setMultiParameter(String name, String value)
     *
     * @param nameValue - the name value of the parameter to set.
     */
-   @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:04.757 -0500", hash_original_method = "7EC6FF3874184BDFD4677A471AD4F84B", hash_generated_method = "32F76180954C621FEA4A01FE9A15C460")
+   @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:04.757 -0500", hash_original_method = "7EC6FF3874184BDFD4677A471AD4F84B", hash_generated_method = "32F76180954C621FEA4A01FE9A15C460")
     
 public void setMultiParameter(NameValue nameValue) {
        this.duplicates.set(nameValue);
@@ -537,14 +539,12 @@ public String getMultiParameter(String name) {
         return this.duplicates.getParameter(name);
 
     }
-    
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:04.763 -0500", hash_original_method = "5A021F5792300443FECC73E0DD310EC6", hash_generated_method = "E56CD5221D22EA2D809209CA392371E4")
     
 public DuplicateNameValueList getMultiParameters() {
         return duplicates;
     }
-    
     
     /**
      * Return the parameter as an object (dont convert to string).
@@ -659,12 +659,10 @@ public void removeMultiParameters() {
         return true;
     }
     
-    
     // ----------- Abstract methods --------------
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:04.788 -0500", hash_original_method = "174EBB1808D17B56AB5E004277B62194", hash_generated_method = "67C6A1D41F49045B75F8C639C65C4404")
     
 protected abstract String encodeBody();
-
     
 }
 

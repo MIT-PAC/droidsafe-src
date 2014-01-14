@@ -108,7 +108,8 @@ _data.recycle();
      *
      * @param rmsdB the new RMS dB value
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:52.789 -0500", hash_original_method = "71C2BFF0E1966BE0EF8D22A45A735233", hash_generated_method = "DD6879E938E842E8089D37E832B1C290")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:52.789 -0500", hash_original_method = "71C2BFF0E1966BE0EF8D22A45A735233", hash_generated_method = "DD6879E938E842E8089D37E832B1C290")
             
 public void onRmsChanged(float rmsdB) throws android.os.RemoteException
 {
@@ -127,7 +128,8 @@ _data.recycle();
      *
      * @param buffer the byte buffer containing a sequence of 16-bit shorts.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:52.792 -0500", hash_original_method = "2FFAE6EB8C686BD7BF73B7E86E010813", hash_generated_method = "FED694D3E6A2DB4881CD5ED340232FBB")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:52.792 -0500", hash_original_method = "2FFAE6EB8C686BD7BF73B7E86E010813", hash_generated_method = "FED694D3E6A2DB4881CD5ED340232FBB")
             
 public void onBufferReceived(byte[] buffer) throws android.os.RemoteException
 {
@@ -162,7 +164,8 @@ _data.recycle();
      *
      * @param error code is defined in {@link SpeechRecognizer}
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:52.797 -0500", hash_original_method = "29F2C870F0FAEAE413D33E34A846A6EC", hash_generated_method = "8C731C839539E3C3A18A5198EA61756D")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:52.797 -0500", hash_original_method = "29F2C870F0FAEAE413D33E34A846A6EC", hash_generated_method = "8C731C839539E3C3A18A5198EA61756D")
             
 public void onError(int error) throws android.os.RemoteException
 {
@@ -232,7 +235,8 @@ _data.recycle();
      * @param eventType the type of the occurred event
      * @param params a Bundle containing the passed parameters
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:52.806 -0500", hash_original_method = "A8A951D6FA1FC7584016F7BD230C84F6", hash_generated_method = "7DED5097D189863FE6BCE5E36FE95E64")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:52.806 -0500", hash_original_method = "A8A951D6FA1FC7584016F7BD230C84F6", hash_generated_method = "7DED5097D189863FE6BCE5E36FE95E64")
             
 public void onEvent(int eventType, android.os.Bundle params) throws android.os.RemoteException
 {

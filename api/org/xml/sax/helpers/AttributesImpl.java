@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import org.xml.sax.Attributes;
 
-
-
-
-
-
 public class AttributesImpl implements Attributes {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.969 -0500", hash_original_field = "136C4DD872F8065EECD33F6CD4E7556E", hash_generated_field = "F8DDE62EA42266C7FC49FC2E2B951350")
 
@@ -21,12 +16,10 @@ public class AttributesImpl implements Attributes {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.971 -0500", hash_original_field = "FF698A9C75F799EB4FE98C16A723AC90", hash_generated_field = "FF698A9C75F799EB4FE98C16A723AC90")
 
     String data [];
-
 
     ////////////////////////////////////////////////////////////////////
     // Constructors.
     ////////////////////////////////////////////////////////////////////
-
 
     /**
      * Construct a new, empty AttributesImpl object.
@@ -38,7 +31,6 @@ public AttributesImpl ()
     length = 0;
     data = null;
     }
-
 
     /**
      * Copy an existing Attributes object.
@@ -54,13 +46,10 @@ public AttributesImpl (Attributes atts)
     {
     setAttributes(atts);
     }
-
-
 
     ////////////////////////////////////////////////////////////////////
     // Implementation of org.xml.sax.Attributes.
     ////////////////////////////////////////////////////////////////////
-
 
     /**
      * Return the number of attributes in the list.
@@ -74,7 +63,6 @@ public int getLength ()
     {
     return length;
     }
-
 
     /**
      * Return an attribute's Namespace URI.
@@ -95,7 +83,6 @@ public String getURI (int index)
     }
     }
 
-
     /**
      * Return an attribute's local name.
      *
@@ -114,7 +101,6 @@ public String getLocalName (int index)
         return null;
     }
     }
-
 
     /**
      * Return an attribute's qualified (prefixed) name.
@@ -135,7 +121,6 @@ public String getQName (int index)
     }
     }
 
-
     /**
      * Return an attribute's type by index.
      *
@@ -155,7 +140,6 @@ public String getType (int index)
     }
     }
 
-
     /**
      * Return an attribute's value by index.
      *
@@ -173,7 +157,6 @@ public String getValue (int index)
         return null;
     }
     }
-
 
     /**
      * Look up an attribute's index by Namespace name.
@@ -201,7 +184,6 @@ public int getIndex (String uri, String localName)
     return -1;
     }
 
-
     /**
      * Look up an attribute's index by qualified (prefixed) name.
      *
@@ -221,7 +203,6 @@ public int getIndex (String qName)
     }
     return -1;
     }
-
 
     /**
      * Look up an attribute's type by Namespace-qualified name.
@@ -246,7 +227,6 @@ public String getType (String uri, String localName)
     return null;
     }
 
-
     /**
      * Look up an attribute's type by qualified (prefixed) name.
      *
@@ -267,7 +247,6 @@ public String getType (String qName)
     }
     return null;
     }
-
 
     /**
      * Look up an attribute's value by Namespace-qualified name.
@@ -292,7 +271,6 @@ public String getValue (String uri, String localName)
     return null;
     }
 
-
     /**
      * Look up an attribute's value by qualified (prefixed) name.
      *
@@ -313,13 +291,10 @@ public String getValue (String qName)
     }
     return null;
     }
-
-
 
     ////////////////////////////////////////////////////////////////////
     // Manipulators.
     ////////////////////////////////////////////////////////////////////
-
 
     /**
      * Clear the attribute list for reuse.
@@ -338,7 +313,6 @@ public void clear ()
     }
     length = 0;
     }
-
 
     /**
      * Copy an entire Attributes object.
@@ -365,7 +339,6 @@ public void setAttributes (Attributes atts)
             }
     }
     }
-
 
     /**
      * Add an attribute to the end of the list.
@@ -398,7 +371,6 @@ public void addAttribute (String uri, String localName, String qName,
     length++;
     }
 
-
     /**
      * Set an attribute in the list.
      *
@@ -420,6 +392,7 @@ public void addAttribute (String uri, String localName, String qName,
      *            supplied index does not point to an attribute
      *            in the list.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.949 -0500", hash_original_method = "FF1F65C71EB4DEEB1CAA0E424ECEBB91", hash_generated_method = "E75C58011C3AC49D1DB796D4AC6CFEF7")
     
 public void setAttribute (int index, String uri, String localName,
@@ -435,7 +408,6 @@ public void setAttribute (int index, String uri, String localName,
         badIndex(index);
     }
     }
-
 
     /**
      * Remove an attribute from the list.
@@ -466,7 +438,6 @@ public void removeAttribute (int index)
     }
     }
 
-
     /**
      * Set the Namespace URI of a specific attribute.
      *
@@ -477,6 +448,7 @@ public void removeAttribute (int index)
      *            supplied index does not point to an attribute
      *            in the list.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.953 -0500", hash_original_method = "50F4EE4994BD814C254566A0C91A3159", hash_generated_method = "9E5A6592D779AEB45A0A53187A650A27")
     
 public void setURI (int index, String uri)
@@ -488,7 +460,6 @@ public void setURI (int index, String uri)
     }
     }
 
-
     /**
      * Set the local name of a specific attribute.
      *
@@ -499,6 +470,7 @@ public void setURI (int index, String uri)
      *            supplied index does not point to an attribute
      *            in the list.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.956 -0500", hash_original_method = "752FFE3C27BC55D6B126D5816B29C527", hash_generated_method = "8F327B8D22B2655EB2D407571922F410")
     
 public void setLocalName (int index, String localName)
@@ -510,7 +482,6 @@ public void setLocalName (int index, String localName)
     }
     }
 
-
     /**
      * Set the qualified name of a specific attribute.
      *
@@ -521,6 +492,7 @@ public void setLocalName (int index, String localName)
      *            supplied index does not point to an attribute
      *            in the list.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.958 -0500", hash_original_method = "092FB5C36230E9F885C6748AEF4243E2", hash_generated_method = "15C7BA345DCAC8559E44C9DC72DD41DC")
     
 public void setQName (int index, String qName)
@@ -532,7 +504,6 @@ public void setQName (int index, String qName)
     }
     }
 
-
     /**
      * Set the type of a specific attribute.
      *
@@ -542,6 +513,7 @@ public void setQName (int index, String qName)
      *            supplied index does not point to an attribute
      *            in the list.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.960 -0500", hash_original_method = "C2C16165C0A88812FD10B2DCA3F19338", hash_generated_method = "A51849AD3FE121726F738C6D42279E30")
     
 public void setType (int index, String type)
@@ -553,7 +525,6 @@ public void setType (int index, String type)
     }
     }
 
-
     /**
      * Set the value of a specific attribute.
      *
@@ -563,6 +534,7 @@ public void setType (int index, String type)
      *            supplied index does not point to an attribute
      *            in the list.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.962 -0500", hash_original_method = "384311AE4C6374A489D3CC7FA620C40E", hash_generated_method = "0C574FEAF85E06C61F8C9F4F84AF928D")
     
 public void setValue (int index, String value)
@@ -573,13 +545,10 @@ public void setValue (int index, String value)
         badIndex(index);
     }
     }
-
-
 
     ////////////////////////////////////////////////////////////////////
     // Internal methods.
     ////////////////////////////////////////////////////////////////////
-
 
     /**
      * Ensure the internal array's capacity.
@@ -614,7 +583,6 @@ private void ensureCapacity (int n)    {
         data = newData;
     }
 
-
     /**
      * Report a bad array index in a manipulator.
      *
@@ -630,7 +598,6 @@ private void badIndex (int index)
         "Attempt to modify attribute at illegal index: " + index;
     throw new ArrayIndexOutOfBoundsException(msg);
     }
-
     
 }
 

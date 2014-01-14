@@ -15,10 +15,6 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-
-
-
-
 public class ListFragment extends Fragment {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:35.044 -0500", hash_original_field = "AD9C3D1E48D73BF1547D53C4C62401B2", hash_generated_field = "ED5BAD7C7A1EC83F341419B29A267C9F")
 
@@ -30,9 +26,7 @@ public class ListFragment extends Fragment {
         public void run() {
             mList.focusableViewAvailable(mList);
             
-            
         }
-
         
 };
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:19.106 -0400", hash_original_field = "9B3F30A71979D6623D111E114AFFBE5E", hash_generated_field = "42C04E77E3D60E8D569E30C744D85151")
@@ -47,13 +41,10 @@ public class ListFragment extends Fragment {
             addTaint(position);
             addTaint(id);
             
-            
         }
-
         
 };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:35.055 -0500", hash_original_field = "CBDD62EF585589E92C0E00AE9F4F22E2", hash_generated_field = "CBDD62EF585589E92C0E00AE9F4F22E2")
-
 
     ListAdapter mAdapter;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:35.057 -0500", hash_original_field = "A5B73AC2B922200A8C47FEAA8C3EB07A", hash_generated_field = "A5B73AC2B922200A8C47FEAA8C3EB07A")
@@ -172,6 +163,7 @@ public void setListAdapter(ListAdapter adapter) {
      *
      * @param position
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:35.085 -0500", hash_original_method = "6FC4BB7AE2BE523C1207DDD3222220F6", hash_generated_method = "A599FCBC7D48F26EB5D7B2F3DE51785A")
     
 public void setSelection(int position) {
@@ -242,6 +234,7 @@ public void setEmptyText(CharSequence text) {
      * @param shown If true, the list view is shown; if false, the progress
      * indicator.  The initial value is true.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:35.097 -0500", hash_original_method = "58A7D31C5F755970E32BD1449250481A", hash_generated_method = "4472EC2324E425D9EB5857C25B77A122")
     
 public void setListShown(boolean shown) {
@@ -252,6 +245,7 @@ public void setListShown(boolean shown) {
      * Like {@link #setListShown(boolean)}, but no animation is used when
      * transitioning from the previous state.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:35.099 -0500", hash_original_method = "9A20C5F20729EB8F1D1E26962B6A5257", hash_generated_method = "DB7E0C9414E9CD473D33ECCDC493220B")
     
 public void setListShownNoAnimation(boolean shown) {
@@ -371,7 +365,6 @@ private void ensureList() {
         }
         mHandler.post(mRequestFocus);
     }
-
     
 }
 

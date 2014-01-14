@@ -8,18 +8,11 @@ import java.io.Serializable;
 import java.util.Collection;
 import java.util.Iterator;
 
-
-
-
-
-
 public class DuplicateNameValueList implements Serializable, Cloneable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:49.633 -0500", hash_original_field = "46A2E2709A942C98D11003053AA89B2B", hash_generated_field = "549B3ABEAD7830A28E925E7D8255A93A")
 
-
     private static final long serialVersionUID = -5611332957903796952L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:49.628 -0500", hash_original_field = "16956788616DBA937E1AD74D5F19F2F8", hash_generated_field = "6BB90EA38890EB2F7E772ABE1764102D")
-
 
     private MultiValueMapImpl<NameValue> nameValueMap = new MultiValueMapImpl<NameValue>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:49.630 -0500", hash_original_field = "9B5B4672FF037607BB8CCE0F5B6469A8", hash_generated_field = "A55DB8D30D61AD070DC11E077713D1B8")
@@ -88,6 +81,7 @@ public String toString() {
      * Set a namevalue object in this list.
      */
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:49.648 -0500", hash_original_method = "D5C6BB3BFBC83A4D51FBDE2E52B7ACF4", hash_generated_method = "4616BD6EAB14C5A645541D670FFD9E5D")
     
 public void set(NameValue nv) {
@@ -97,6 +91,7 @@ public void set(NameValue nv) {
     /**
      * Set a namevalue object in this list.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:49.650 -0500", hash_original_method = "89FDC30721EFC0C6F270B8D9CF8001D0", hash_generated_method = "4F9B5F897615227E6655D9686BDA5DAE")
     
 public void set(String name, Object value) {
@@ -252,6 +247,7 @@ public boolean isEmpty() {
         return this.nameValueMap.isEmpty();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:49.680 -0500", hash_original_method = "3AC71B082E8AAC37EBD928C6A35A39AB", hash_generated_method = "CDA6E93D91E253B2EA4DB5B2498A2FF9")
     
 public NameValue put(String key, NameValue value) {

@@ -455,6 +455,7 @@ public Bundle onSaveInstanceState() {
      * @param savedInstanceState The state of the dialog previously saved by
      *     {@link #onSaveInstanceState()}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.100 -0500", hash_original_method = "EE5C9B4EF0AAEC8AB3AF49A30F3FD2D3", hash_generated_method = "BEE22EB7A0FCFB296E957648A81A3257")
     
 public void onRestoreInstanceState(Bundle savedInstanceState) {
@@ -518,6 +519,7 @@ public View findViewById(int id) {
      * 
      * @param layoutResID Resource ID to be inflated.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.110 -0500", hash_original_method = "A6A8A3E553FD4B026D939E9AE3AC9985", hash_generated_method = "34F06CEA5B574E84E31D5E5187CA0961")
     
 public void setContentView(int layoutResID) {
@@ -531,6 +533,7 @@ public void setContentView(int layoutResID) {
      * 
      * @param view The desired content to display.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.112 -0500", hash_original_method = "64A976C0ECE03B8AD97B801012E7B71B", hash_generated_method = "8505878B7681F77E00CE8368877013C5")
     
 public void setContentView(View view) {
@@ -582,6 +585,7 @@ public void setTitle(CharSequence title) {
      *
      * @param titleId the title's text resource identifier
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.121 -0500", hash_original_method = "0D914ED2883864B655DBF2629252A595", hash_generated_method = "7E20A4D7759EB3A7DD02C09CD2AF955C")
     
 public void setTitle(int titleId) {
@@ -1193,6 +1197,7 @@ public final boolean requestWindowFeature(int featureId) {
      * Convenience for calling
      * {@link android.view.Window#setFeatureDrawableResource}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.224 -0500", hash_original_method = "E7AFD534CB1DF8060614ED36111B2407", hash_generated_method = "77462D4BD7A21F99BAD57C59CACE9BF5")
     
 public final void setFeatureDrawableResource(int featureId, int resId) {
@@ -1213,6 +1218,7 @@ public final void setFeatureDrawableUri(int featureId, Uri uri) {
      * Convenience for calling
      * {@link android.view.Window#setFeatureDrawable(int, Drawable)}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.229 -0500", hash_original_method = "D3FA0A5870730A6F3C959B16FC004BCD", hash_generated_method = "845589EF459B40468B119030F6839003")
     
 public final void setFeatureDrawable(int featureId, Drawable drawable) {
@@ -1223,6 +1229,7 @@ public final void setFeatureDrawable(int featureId, Drawable drawable) {
      * Convenience for calling
      * {@link android.view.Window#setFeatureDrawableAlpha}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.231 -0500", hash_original_method = "4D2A81FF8C2C83F47460DEB3120C04CB", hash_generated_method = "42B6BECB117F777AFB6F11B60A38D749")
     
 public final void setFeatureDrawableAlpha(int featureId, int alpha) {
@@ -1253,6 +1260,7 @@ public void setCancelable(boolean flag) {
      * @param cancel Whether the dialog should be canceled when touched outside
      *            the window.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.238 -0500", hash_original_method = "BD7DFECDBEA3F81451B9076CEFC17564", hash_generated_method = "FFDB8DA5023282815789B2E8846CC855")
     
 public void setCanceledOnTouchOutside(boolean cancel) {
@@ -1410,6 +1418,7 @@ public boolean takeCancelAndDismissListeners(String msg, final OnCancelListener 
      * @see Activity#setVolumeControlStream(int)
      * @see #setOwnerActivity(Activity)
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.257 -0500", hash_original_method = "70729F29EB37CCBEC739A5986214C32F", hash_generated_method = "3084C39BB70D3B6F524464E54969131C")
     
 public final void setVolumeControlStream(int streamType) {

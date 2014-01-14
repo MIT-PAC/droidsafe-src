@@ -357,6 +357,7 @@ public void addHandler(Handler handler) {
      * Set the logger's manager and initializes its configuration from the
      * manager's properties.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.326 -0500", hash_original_method = "4498A4914B339ECC6C0CA41B926DD713", hash_generated_method = "4498A4914B339ECC6C0CA41B926DD713")
     
 void setManager(LogManager manager) {
@@ -479,6 +480,7 @@ public Level getLevel() {
      * @param newLevel
      *            the logging level to set.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.340 -0500", hash_original_method = "A22BCABA235F652C19E494DC3670D961", hash_generated_method = "BB800794C64A092D7968A0D67731F40E")
     
 public void setLevel(Level newLevel) {
@@ -541,6 +543,7 @@ public Logger getParent() {
      * @param parent
      *            the parent logger to set.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.349 -0500", hash_original_method = "CA5B70091ADA98C1F80949A654E9C997", hash_generated_method = "8386C5C2C579667FB5FC433143DD6487")
     
 public void setParent(Logger parent) {

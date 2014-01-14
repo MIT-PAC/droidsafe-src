@@ -18,21 +18,14 @@ import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
-
-
-
-
 public final class PreferenceScreen extends PreferenceGroup implements AdapterView.OnItemClickListener, DialogInterface.OnDismissListener {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.197 -0500", hash_original_field = "38ED67B5E11523BFFC80771D205161CE", hash_generated_field = "4B36ACD05D99FE341A50201EADA8B6CA")
 
-
     private ListAdapter mRootAdapter;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.199 -0500", hash_original_field = "0C87BCBAF0D95855709E5BEE2BDBA46D", hash_generated_field = "D9FAD0C1386FC50E3C837906841C2A70")
-
     
     private Dialog mDialog;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.201 -0500", hash_original_field = "564994122F8B404810DDCD714146F030", hash_generated_field = "7E41BBAA7AC45D61F96A7CC2A5AFF94F")
-
 
     private ListView mListView;
     
@@ -210,10 +203,8 @@ public void onItemClick(AdapterView parent, View view, int position, long id) {
             showDialog(myState.dialogBundle);
         }
     }
-
     
     private static class SavedState extends BaseSavedState {
-
         
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.844 -0400", hash_original_field = "7DF6FB2587CB67E9544A859A8F6E8FF3", hash_generated_field = "263FCDD65C2156B1D1E1B4D9AE8D7FFA")
 
@@ -252,6 +243,7 @@ public SavedState(Parcelable superState) {
             super(superState);
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.239 -0500", hash_original_method = "85259FDDC0FCC1496FED09E1FEFE0DC2", hash_generated_method = "380749B2211E5B849DBB04E0D2BF9D8D")
         
 @Override
@@ -271,8 +263,6 @@ public SavedState(Parcelable superState) {
             }
         
     }
-
-
     
 }
 

@@ -12,9 +12,6 @@ import org.apache.http.Header;
 import org.apache.http.HeaderIterator;
 import org.apache.http.util.CharArrayBuffer;
 
-
-
-
 public class HeaderGroup implements Cloneable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:49.684 -0500", hash_original_field = "2E4A517DF74BC5A5A497BA92F88228C9", hash_generated_field = "144EBE63A318E4E8C50ABA547D9431E1")
 
@@ -97,6 +94,7 @@ public void updateHeader(Header header) {
      * 
      * @param headers the headers to set
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:49.700 -0500", hash_original_method = "21A092A9E4BD805516734B366EB966A8", hash_generated_method = "1983362DCCA6E8EF783A08E5B3EAA075")
     
 public void setHeaders(Header[] headers) {
@@ -290,7 +288,6 @@ public Object clone() throws CloneNotSupportedException {
         clone.headers = new ArrayList(this.headers);
         return clone;
     }
-
     
 }
 

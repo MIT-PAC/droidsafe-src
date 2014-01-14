@@ -27,10 +27,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
 
-
-
-
-
 public class SslCertificate {
 
     /**
@@ -38,6 +34,7 @@ public class SslCertificate {
      * @param certificate The SSL certificate to store
      * @return A bundle with the certificate stored in it or null if fails
      */
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.438 -0500", hash_original_method = "880873CE7B63CF2F24561F719FB04003", hash_generated_method = "C0608A76EC65887A30B994AFF34FBFF5")
     
 public static Bundle saveState(SslCertificate certificate) {
@@ -307,7 +304,6 @@ public Date getValidNotBeforeDate() {
 public Date getValidNotAfterDate() {
         return cloneDate(mValidNotAfter);
     }
-
     
     public class DName {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.484 -0500", hash_original_field = "0A1AE598F4DE402F5AB1E2786E227934", hash_generated_field = "3BD097ADC1AABD13C2B47840D547843E")
@@ -395,7 +391,6 @@ public String getOName() {
 public String getUName() {
             return mUName != null ? mUName : "";
         }
-
         
     }
 

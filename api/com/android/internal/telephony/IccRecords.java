@@ -13,18 +13,11 @@ import android.os.RegistrantList;
 import com.android.internal.telephony.gsm.UsimServiceTable;
 import com.android.internal.telephony.ims.IsimRecords;
 
-
-
-
-
-
 public abstract class IccRecords extends Handler implements IccConstants {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.907 -0500", hash_original_field = "95D5733A0C83DB3D047D109C028C9F02", hash_generated_field = "5F5E7D64B04175B8FA820B2440F700FC")
 
-
     protected static final boolean DBG = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.949 -0500", hash_original_field = "21299C5686260F13B1BCE2AC27E847C9", hash_generated_field = "AE900C33DD6B641C78C31FABD997315E")
-
 
     // Markers for mncLength
     protected static final int UNINITIALIZED = -1;
@@ -42,10 +35,8 @@ public abstract class IccRecords extends Handler implements IccConstants {
     protected static final int EVENT_SET_MSISDN_DONE = 30;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.962 -0500", hash_original_field = "BBE09FB0A1384394EA660A33F8763578", hash_generated_field = "CA143425A6D690BC70A39E8E55BD298C")
 
-
     public static final int EVENT_GET_ICC_RECORD_DONE = 100;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.910 -0500", hash_original_field = "4D74BFF297E0DF8FA98FF6D8A8DBA78C", hash_generated_field = "4FEA837943E73EF5CB83661843F1AD15")
-
 
     protected PhoneBase phone;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.912 -0500", hash_original_field = "D5A7E97BE96C9C8F7D963EEFD36476DC", hash_generated_field = "22088B3C6368949A409041586EB96D9E")
@@ -53,18 +44,14 @@ public abstract class IccRecords extends Handler implements IccConstants {
     protected RegistrantList recordsLoadedRegistrants = new RegistrantList();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.914 -0500", hash_original_field = "77AFF45EACBE77E644F0B845E350E857", hash_generated_field = "09A069789AB8CC5E0817A1B6DEEBBCC0")
 
-
     protected int recordsToLoad;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.917 -0500", hash_original_field = "55862F1A6AE254D83723842B05A3358C", hash_generated_field = "A9FC3B8D9025A6D655B1A245F81835AF")
-
 
     protected AdnRecordCache adnCache;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.920 -0500", hash_original_field = "922737CBA319CC7B88DDC3491D8C5F7F", hash_generated_field = "E4CF9D2DBB2C21800A07826757FEB9B0")
 
-
     protected boolean recordsRequested = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.922 -0500", hash_original_field = "750890BB0A587A24B8DD9EFF3E2AE9E2", hash_generated_field = "F5E4A116DF27CA0BDE1E4A1CB0E22F6A")
-
 
     public String iccid;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.924 -0500", hash_original_field = "0A3790B148FA29FB87F103B4FA7603FD", hash_generated_field = "5C261783F0E29513E72DA191E0CBD1DB")
@@ -93,13 +80,11 @@ public abstract class IccRecords extends Handler implements IccConstants {
     protected int countVoiceMessages = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.942 -0500", hash_original_field = "69D87A38626ACB608E08F8AA53D800C1", hash_generated_field = "2C7829D7768AD355C84D545BEB2749F8")
 
-
     protected int mncLength = UNINITIALIZED;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.944 -0500", hash_original_field = "CE889CE639595760DFC112B752E6B3A6", hash_generated_field = "66E6641F6EA793F9A67124859D71DFA8")
 
     protected int mailboxIndex = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.947 -0500", hash_original_field = "8C2775E85580ECA14E3C8FA11932EA8B", hash_generated_field = "614AE5456A5CBA179622A79E1C91F21D")
-
 
     protected String spn;
 
@@ -180,6 +165,7 @@ public String getMsisdnNumber() {
      *        ((AsyncResult)onComplete.obj).exception == null on success
      *        ((AsyncResult)onComplete.obj).exception != null on fail
      */
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.986 -0500", hash_original_method = "6AA4F1E114DCD6F9D0799C96D9A882F0", hash_generated_method = "F9884145EEFFA59931DF15AC99970FF3")
     
 public void setMsisdnNumber(String alphaTag, String number,
@@ -189,7 +175,6 @@ public void setMsisdnNumber(String alphaTag, String number,
         msisdnTag = alphaTag;
 
         if(DBG) log("Set MSISDN: " + msisdnTag +" " + msisdn);
-
 
         AdnRecord adn = new AdnRecord(msisdnTag, msisdn);
 
@@ -292,7 +277,6 @@ public int getVoiceMessageCount() {
     
 public abstract void onRefresh(boolean fileChanged, int[] fileList);
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:19.009 -0500", hash_original_method = "4C58BD1C1A36FD4BA9D906F07C4CE729", hash_generated_method = "2DE8597787F0514D4E7C8099C0FD095B")
     
 public boolean getRecordsLoaded() {
@@ -376,7 +360,6 @@ public boolean isCspPlmnEnabled() {
 public String getOperatorNumeric() {
         return null;
     }
-
     
     public interface IccRecordLoaded {
         String getEfName();
@@ -400,6 +383,7 @@ public boolean getVoiceCallForwardingFlag() {
      * @param line to enable/disable
      * @param enable
      */
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:19.028 -0500", hash_original_method = "C3DD6C998A7A28E21EC84968A9C4D811", hash_generated_method = "913FDB8F1314674327D57E1E312DE543")
     
 public void setVoiceCallForwardingFlag(int line, boolean enable) {

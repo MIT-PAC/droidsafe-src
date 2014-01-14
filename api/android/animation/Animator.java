@@ -260,6 +260,7 @@ public void setupEndValues() {
      *
      * @param target The object being animated
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.308 -0500", hash_original_method = "0B5C67CA62B433384E1BDDE3EB79AFB5", hash_generated_method = "F29AFE070434CC410DBB0B279E1F6376")
     
 public void setTarget(Object target) {

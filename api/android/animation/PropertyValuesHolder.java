@@ -309,6 +309,7 @@ private PropertyValuesHolder(Property property) {
      *
      * @param values One or more values that the animation will animate between.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:31.722 -0500", hash_original_method = "5ACB1BF4CE1DE924456A446D3AE6F5AC", hash_generated_method = "B36B90076B3E296AD7B1ECB44517F9CD")
     
 public void setIntValues(int... values) {
@@ -329,6 +330,7 @@ public void setIntValues(int... values) {
      *
      * @param values One or more values that the animation will animate between.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:31.724 -0500", hash_original_method = "E55475A51A76C9AF68CEE5048B067603", hash_generated_method = "FDEA3CCFA4BDEFC0E5289215CF6964BE")
     
 public void setFloatValues(float... values) {
@@ -341,6 +343,7 @@ public void setFloatValues(float... values) {
      *
      * @param values One or more values that the animation will animate between.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:31.726 -0500", hash_original_method = "A7BBAF2A9B12EBB30CB57DBA83B6B7FC", hash_generated_method = "C3C99AC520CD3926BEF98A996A980935")
     
 public void setKeyframes(Keyframe... values) {
@@ -366,6 +369,7 @@ public void setKeyframes(Keyframe... values) {
      * 
      * @param values One or more values that the animation will animate between.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:31.728 -0500", hash_original_method = "8EF0800B602558BC1B6F05E6446D461B", hash_generated_method = "514648C91566CCE1DE0795DC4948A0DD")
     
 public void setObjectValues(Object... values) {
@@ -478,6 +482,7 @@ private Method setupSetterOrGetter(Class targetClass,
      * Utility function to get the setter from targetClass
      * @param targetClass The Class on which the requested method should exist.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:31.737 -0500", hash_original_method = "1E4C95A3F0C35809E96A1D77677A320B", hash_generated_method = "1E4C95A3F0C35809E96A1D77677A320B")
     
 void setupSetter(Class targetClass) {
@@ -503,6 +508,7 @@ private void setupGetter(Class targetClass) {
      * on the target object.
      * @param target The object on which the setter (and possibly getter) exist.
      */
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:31.741 -0500", hash_original_method = "0087C9C0C21400747AF8DC614F234C65", hash_generated_method = "A1154521EE1E5D30840F449F0BA0CB0D")
     
 void setupSetterAndGetter(Object target) {
@@ -576,6 +582,7 @@ private void setupValue(Object target, Keyframe kf) {
      *
      * @param target The object which holds the start values that should be set.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:31.746 -0500", hash_original_method = "981ED4D0B23A22C5ED7F7AF0C37F067E", hash_generated_method = "981ED4D0B23A22C5ED7F7AF0C37F067E")
     
 void setupStartValue(Object target) {
@@ -590,6 +597,7 @@ void setupStartValue(Object target) {
      *
      * @param target The object which holds the start values that should be set.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:31.748 -0500", hash_original_method = "387F5EDF2150EE198B0BBE4A1C97CF48", hash_generated_method = "387F5EDF2150EE198B0BBE4A1C97CF48")
     
 void setupEndValue(Object target) {
@@ -620,6 +628,7 @@ void setupEndValue(Object target) {
      * according to the name of the property.
      * @param target The target object on which the value is set
      */
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:31.753 -0500", hash_original_method = "BBF3202CC4B8C1713A46E96DE0EE5426", hash_generated_method = "BBF3202CC4B8C1713A46E96DE0EE5426")
     
 void setAnimatedValue(Object target) {
@@ -715,6 +724,7 @@ public IntPropertyValuesHolder(Property property, int... values) {
             }
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:31.800 -0500", hash_original_method = "36FED796688BFE2861C8D1DF18289634", hash_generated_method = "30ADE19B7D80FC234461DAE0E6D3E58C")
         
 @Override
@@ -753,6 +763,7 @@ public IntPropertyValuesHolder(Property property, int... values) {
          * according to the name of the property.
          * @param target The target object on which the value is set
          */
+        @DSSink({DSSinkKind.LOG})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:31.809 -0500", hash_original_method = "774DCA711497C815C6106461263A2AF3", hash_generated_method = "7306EFD2C435A31B28DA158F855893E7")
         
 @Override
@@ -781,6 +792,7 @@ public IntPropertyValuesHolder(Property property, int... values) {
             }
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:31.812 -0500", hash_original_method = "E5FCCB47E07ECB03BE2F278E504281F8", hash_generated_method = "4A89B7134AF1D568189DFDD1FEA1CF13")
         
 @Override
@@ -878,6 +890,7 @@ public FloatPropertyValuesHolder(Property property, float... values) {
             }
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:31.841 -0500", hash_original_method = "4C7839391C0E614BE090BEA208DAADC2", hash_generated_method = "2208DFD28687205E39ADC139771DB70B")
         
 @Override
@@ -916,6 +929,7 @@ public FloatPropertyValuesHolder(Property property, float... values) {
          * according to the name of the property.
          * @param target The target object on which the value is set
          */
+        @DSSink({DSSinkKind.LOG})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:31.850 -0500", hash_original_method = "727C6F3DB059985E066E102AF679E2D9", hash_generated_method = "0BF299EE2EE1BE08B279BB046D43F5A8")
         
 @Override
@@ -944,6 +958,7 @@ public FloatPropertyValuesHolder(Property property, float... values) {
             }
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:31.853 -0500", hash_original_method = "2E99CF7209AB7743339028E8A9433227", hash_generated_method = "166A6D1C15BBA9368BF93C2728AD3F35")
         
 @Override

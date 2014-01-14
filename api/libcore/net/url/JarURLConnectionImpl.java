@@ -24,10 +24,6 @@ import java.util.zip.ZipFile;
 
 import libcore.net.UriCodec;
 
-
-
-
-
 public class JarURLConnectionImpl extends JarURLConnection {
 
     /**
@@ -53,26 +49,20 @@ public static void closeCachedFiles() {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.463 -0500", hash_original_field = "EEE6F212560803EB63561C5DB4EDC791", hash_generated_field = "DAFAEFD0112EA423D0DE3AF30FA2DDE9")
 
-
     static HashMap<URL, JarFile> jarCache = new HashMap<URL, JarFile>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.465 -0500", hash_original_field = "B621CEFFF1CE60AB7ED145CDC7D8A502", hash_generated_field = "07485ED06E2A407A7D38E89DF7EA433B")
-
 
     private URL jarFileURL;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.468 -0500", hash_original_field = "73CA466E3034481085B5947266F7234C", hash_generated_field = "2FDA65A94865AD8BD0FCF44E4CEE7E9C")
 
-
     private InputStream jarInput;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.470 -0500", hash_original_field = "B339322987345D78E0B630D63AE8DAC1", hash_generated_field = "A1544DC796279D75E8EFE7D422D11F29")
-
 
     private JarFile jarFile;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.472 -0500", hash_original_field = "243A80CC36D36456031E60F78531B9C5", hash_generated_field = "AC8BC8520BF86140D134B22CF6FB9C16")
 
-
     private JarEntry jarEntry;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.474 -0500", hash_original_field = "0B6D06FC66AB1A3316E7702989E3F923", hash_generated_field = "52C99699A476D9ED1506978946DA0E51")
-
 
     private boolean closed;
 
@@ -374,6 +364,7 @@ private void findJarEntry() throws IOException {
         return jarFileURLConnection.getUseCaches();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.509 -0500", hash_original_method = "B4491CDE2E10F000A5909671FFF7BF11", hash_generated_method = "5678194492AA9FFBBE1580289BE105B5")
     
 @Override
@@ -387,7 +378,6 @@ private void findJarEntry() throws IOException {
     public boolean getDefaultUseCaches() {
         return jarFileURLConnection.getDefaultUseCaches();
     }
-
     
     private class JarURLConnectionInputStream extends FilterInputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.519 -0500", hash_original_field = "B339322987345D78E0B630D63AE8DAC1", hash_generated_field = "B339322987345D78E0B630D63AE8DAC1")
@@ -411,10 +401,10 @@ protected JarURLConnectionInputStream(InputStream in, JarFile file) {
                 jarFile.close();
             }
         }
-
         
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.514 -0500", hash_original_method = "9B53AD37225976042371B5DBF82602F6", hash_generated_method = "26621973421190D65594FDF72B3AA5BA")
     
 @Override

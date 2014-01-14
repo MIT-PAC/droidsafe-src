@@ -19,10 +19,6 @@ import android.os.SystemProperties;
 import android.provider.Settings;
 import android.util.Printer;
 
-
-
-
-
 public class ApplicationErrorReport implements Parcelable {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.788 -0500", hash_original_method = "113BB55A947D145420F5CC219A4706D7", hash_generated_method = "8DF0B455A56F04F688B9B0BB6A4F184E")
@@ -151,7 +147,6 @@ public ApplicationErrorReport[] newArray(int size) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.777 -0500", hash_original_field = "88861DEC679D8E0AAF7F42901B7B5B5A", hash_generated_field = "6A45BBBCA030DD2B3FFD7329E23B5D3C")
 
     public AnrInfo anrInfo;
-
     
     public static class CrashInfo {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.800 -0500", hash_original_field = "DE781DE5EA111ED3AAA482F422BD246D", hash_generated_field = "64A4CFC776584F31DADD8ED1088FC67C")
@@ -256,6 +251,7 @@ public void writeToParcel(Parcel dest, int flags) {
         /**
          * Dump a CrashInfo instance to a Printer.
          */
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.827 -0500", hash_original_method = "12CDDF08CF66932EC00C47C0F2860F33", hash_generated_method = "11A2E6CBF0E0777D3F44E46ECBDC07EF")
         
 public void dump(Printer pw, String prefix) {
@@ -267,11 +263,8 @@ public void dump(Printer pw, String prefix) {
             pw.println(prefix + "throwLineNumber: " + throwLineNumber);
             pw.println(prefix + "stackTrace: " + stackTrace);
         }
-
         
     }
-
-
     
     public static class AnrInfo {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.832 -0500", hash_original_field = "04A79E076EA612F90C72BFBF18A4C4BA", hash_generated_field = "2C31FC32EDD5FD275BDF859DF788A1AB")
@@ -317,6 +310,7 @@ public void writeToParcel(Parcel dest, int flags) {
         /**
          * Dump an AnrInfo instance to a Printer.
          */
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.847 -0500", hash_original_method = "B28573F62D1F3D7B120AF5A59DF14509", hash_generated_method = "5A20277F73B401E0A3A0B01C0673AEFE")
         
 public void dump(Printer pw, String prefix) {
@@ -324,11 +318,8 @@ public void dump(Printer pw, String prefix) {
             pw.println(prefix + "cause: " + cause);
             pw.println(prefix + "info: " + info);
         }
-
         
     }
-
-
     
     public static class BatteryInfo {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.852 -0500", hash_original_field = "91A3EF4482A5F3F1C098F0A15E356363", hash_generated_field = "9E192676C8B3F13371C5042FED59D2D3")
@@ -379,6 +370,7 @@ public void writeToParcel(Parcel dest, int flags) {
         /**
          * Dump a BatteryInfo instance to a Printer.
          */
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.868 -0500", hash_original_method = "A13E8F561D1454805516846C4F2ACB3F", hash_generated_method = "7AFB85B6ED9D1B4895FE3646E7F116A7")
         
 public void dump(Printer pw, String prefix) {
@@ -387,11 +379,8 @@ public void dump(Printer pw, String prefix) {
             pw.println(prefix + "usageDetails: " + usageDetails);
             pw.println(prefix + "checkinDetails: " + checkinDetails);
         }
-
         
     }
-
-
     
     public static class RunningServiceInfo {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.873 -0500", hash_original_field = "B03A6C1817AF920FFB4158E2B54A5112", hash_generated_field = "341FEBE1083E0F8DC34C2C2DD3BFBFF4")
@@ -432,13 +421,13 @@ public void writeToParcel(Parcel dest, int flags) {
         /**
          * Dump a BatteryInfo instance to a Printer.
          */
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.885 -0500", hash_original_method = "BA9B01A70699F7EA70070719DF8ACE84", hash_generated_method = "A9B20A2F30412BBB4B42DB4B59A89726")
         
 public void dump(Printer pw, String prefix) {
             pw.println(prefix + "durationMillis: " + durationMillis);
             pw.println(prefix + "serviceDetails: " + serviceDetails);
         }
-
         
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.779 -0500", hash_original_field = "91881ED66BBCA81F66903BD702E3AD39", hash_generated_field = "0F63A0DB674D6731E0337B045B7EB045")
@@ -466,6 +455,7 @@ ApplicationErrorReport(Parcel in) {
         readFromParcel(in);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.794 -0500", hash_original_method = "A097CEBB0222A4C65AC186DA78BE4FCB", hash_generated_method = "A5ED89D679C1DAB1EA9E7D8237256851")
     
 public void writeToParcel(Parcel dest, int flags) {
@@ -539,6 +529,7 @@ public int describeContents() {
     /**
      * Dump the report to a Printer.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.899 -0500", hash_original_method = "EB05E0A242CB818854C5BC92B57FA752", hash_generated_method = "E915A8BE7FBA81DC7C0DB04A0C473549")
     
 public void dump(Printer pw, String prefix) {

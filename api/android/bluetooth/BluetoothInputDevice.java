@@ -15,10 +15,6 @@ import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.util.Log;
 
-
-
-
-
 public final class BluetoothInputDevice implements BluetoothProfile {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:32.403 -0500", hash_original_method = "0EBF7673E44AF610ADC3AB53A65BD597", hash_generated_method = "12E4FDCE2D2661CC6DF9F077D2C0BB73")
@@ -53,7 +49,6 @@ private static void log(String msg) {
 
     public static final int INPUT_OPERATION_SUCCESS = 5004;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:32.367 -0500", hash_original_field = "AD4810E1EAEE0B4F351A0550C3A3183B", hash_generated_field = "6FCEA0ED39BC377BA765F514A42DFCE9")
-
 
     private ServiceListener mServiceListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:32.369 -0500", hash_original_field = "367F0BC6BC216C571A7E906A286477DF", hash_generated_field = "6EAF57CC559AB78B0231BFFF469261B9")
@@ -247,6 +242,7 @@ public int getConnectionState(BluetoothDevice device) {
      * @return true if priority is set, false on error
      * @hide
      */
+    @DSSink({DSSinkKind.BLUETOOTH})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:32.391 -0500", hash_original_method = "9373326E4AC064A071DC5CD973E0011C", hash_generated_method = "8E8F921B7B28BA6EBCCAD2894B168149")
     
 public boolean setPriority(BluetoothDevice device, int priority) {

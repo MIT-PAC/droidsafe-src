@@ -13,10 +13,6 @@ import java.util.TimeZone;
 import libcore.icu.ICU;
 import libcore.icu.LocaleData;
 
-
-
-
-
 public abstract class DateFormat extends Format {
 
     /**
@@ -226,7 +222,6 @@ private static void checkTimeStyle(int style) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.957 -0500", hash_original_field = "C72F49E2EAC6CD60C0BECB525FDA777D", hash_generated_field = "AEAB9195175D475D5D3748DEE868C0A6")
 
-
     private static final long serialVersionUID = 7218322306649953788L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.965 -0500", hash_original_field = "43E6EB368450F9D826E5B6A71A7E402C", hash_generated_field = "2B49C232BC4EF47D298ED64FBB983234")
 
@@ -285,7 +280,6 @@ private static void checkTimeStyle(int style) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.018 -0500", hash_original_field = "5FA0AB6D53CC2911F1569A8FC4192DB5", hash_generated_field = "A7EDBC4832D76350B823AF51773A9332")
 
     public static final int WEEK_OF_MONTH_FIELD = 13;
-
     
     public static class Field extends Format.Field {
 
@@ -312,10 +306,8 @@ public static Field ofCalendarField(int calendarField) {
         }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.116 -0500", hash_original_field = "B1C9975224CA0CC58869567B36A249AA", hash_generated_field = "1D13173B04DB328F0B582E6E67347BD1")
 
-
         private static final long serialVersionUID = 7441350119349544720L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.119 -0500", hash_original_field = "0F1A76081B8229E3B0746E0D5A816278", hash_generated_field = "314E7CADFD609ED986410B07259D6A40")
-
 
         private static Hashtable<Integer, Field> table = new Hashtable<Integer, Field>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.122 -0500", hash_original_field = "29AAEC0F78F4DC06FD249C597476D118", hash_generated_field = "1ABC5D4C99C93DBFEB91C8AADB60D48C")
@@ -716,6 +708,7 @@ public void setCalendar(Calendar cal) {
      *            {@code true} to set the calendar to be lenient, {@code false}
      *            otherwise.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.107 -0500", hash_original_method = "C0CD4ED6DB9107DF0F000BE04B2DBCDB", hash_generated_method = "77C364A8166B57DB585E631363560368")
     
 public void setLenient(boolean value) {
@@ -740,6 +733,7 @@ public void setNumberFormat(NumberFormat format) {
      * @param timezone
      *            the new time zone.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.112 -0500", hash_original_method = "21956223404148B0DA41DA5118D6AFF3", hash_generated_method = "7D12735F5FACD641C52739A935BD1364")
     
 public void setTimeZone(TimeZone timezone) {

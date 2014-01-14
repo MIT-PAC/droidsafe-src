@@ -162,6 +162,7 @@ public ArrayList<Animator> getChildAnimations() {
      *
      * @param target The object being animated
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.668 -0500", hash_original_method = "41A215E076D4B9AE460EA29EBF85AEE2", hash_generated_method = "27AD7CDF9DD5695E6D47CA2D34A747AD")
     
 @Override
@@ -708,6 +709,7 @@ public void onAnimationCancel(Animator animation) {
         /**
          * An end event is received - see if this is an event we are listening for
          */
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.728 -0500", hash_original_method = "E0F66F3A2F7DEFA05E43170D7FDC6E81", hash_generated_method = "42514359CDD00951D89B9ED5670B7B09")
         
 public void onAnimationEnd(Animator animation) {
@@ -727,6 +729,7 @@ public void onAnimationRepeat(Animator animation) {
         /**
          * A start event is received - see if this is an event we are listening for
          */
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.732 -0500", hash_original_method = "C319AA8CE810AC3271C178BB34DF8E30", hash_generated_method = "2E86170B59EB6BEEE710D4737E27B5A4")
         
 public void onAnimationStart(Animator animation) {

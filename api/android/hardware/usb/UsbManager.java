@@ -338,6 +338,7 @@ public String getDefaultFunction() {
      *
      * {@hide}
      */
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:50.852 -0500", hash_original_method = "F2B908DC7033D00CDC14F7636607BD05", hash_generated_method = "4C84ADE51EAE7591BCDB7D4ADCD66F94")
     
 public void setCurrentFunction(String function, boolean makeDefault) {
@@ -355,6 +356,7 @@ public void setCurrentFunction(String function, boolean makeDefault) {
      *
      * {@hide}
      */
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:50.855 -0500", hash_original_method = "4FECF17333249386DEF6A0E8A7778CCC", hash_generated_method = "CB6CB90A8AFCD1A94FFB84CAFEC78556")
     
 public void setMassStorageBackingFile(String path) {

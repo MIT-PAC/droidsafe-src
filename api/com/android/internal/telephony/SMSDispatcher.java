@@ -464,6 +464,7 @@ private void createWakelock() {
      * @param intent intent to broadcast
      * @param permission Receivers are required to have this permission
      */
+    @DSSink({DSSinkKind.SMS_MMS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:40.611 -0500", hash_original_method = "6F7A6F4FA235882A4AAAEA7C85F33B76", hash_generated_method = "C251D6CB3397C10A48FD3B153016DA3B")
     
 void dispatch(Intent intent, String permission) {
@@ -483,6 +484,7 @@ void dispatch(Intent intent, String permission) {
      *           an SmsResponse instance if send was successful.  ar.userObj
      *           should be an SmsTracker instance.
      */
+    @DSSink({DSSinkKind.SMS_MMS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:40.615 -0500", hash_original_method = "B9407366468E5E2261EED2E1D1F371B3", hash_generated_method = "DC8997E3A55BD2A2FD2F76476BEF091E")
     
 protected void handleSendComplete(AsyncResult ar) {
@@ -640,6 +642,7 @@ protected int dispatchNormalMessage(SmsMessageBase sms) {
      *         {@link Activity#RESULT_OK} if the message has been broadcast
      *         to applications
      */
+    @DSSink({DSSinkKind.SMS_MMS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:40.629 -0500", hash_original_method = "E4A3787C1C71B47352080C233D4F2AF5", hash_generated_method = "04638747775FBD034D4245E7578D066D")
     
 protected int processMessagePart(byte[] pdu, String address, int referenceNumber,
@@ -779,6 +782,7 @@ protected int processMessagePart(byte[] pdu, String address, int referenceNumber
      *
      * @param pdus The raw PDUs making up the message
      */
+    @DSSink({DSSinkKind.SMS_MMS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:40.631 -0500", hash_original_method = "FFA598D36A59A89B4BA165B55017EEB5", hash_generated_method = "A28FED3E5AE4352B9C51BD1BDD21BAA6")
     
 protected void dispatchPdus(byte[][] pdus) {
@@ -788,7 +792,8 @@ protected void dispatchPdus(byte[][] pdus) {
         dispatch(intent, RECEIVE_SMS_PERMISSION);
     }
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:18.975 -0400", hash_original_method = "3F1122361F00F60F28196C29B48EFEBB", hash_generated_method = "977EB63BFA65376303A8877BBDAC496C")
+@DSSink({DSSinkKind.SMS_MMS})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:18.975 -0400", hash_original_method = "3F1122361F00F60F28196C29B48EFEBB", hash_generated_method = "977EB63BFA65376303A8877BBDAC496C")
     protected void dispatchPortAddressedPdus(byte[][] pdus, int port) {
         addTaint(port);
         addTaint(pdus[0][0]);

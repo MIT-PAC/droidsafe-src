@@ -9,11 +9,6 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-
-
-
-
-
 public class JSONObject {
 
     /**
@@ -70,7 +65,6 @@ public static String quote(String data) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:10.342 -0500", hash_original_field = "A6DB63616B9247B564C5D7181273FC7D", hash_generated_field = "1DBE8D3C6A9A7131154428322A8B1823")
 
-
     private static final Double NEGATIVE_ZERO = -0d;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:48.299 -0400", hash_original_field = "69D6A2BFA9970459DEF9916A4A819505", hash_generated_field = "3F3D3946D0FBB086C49E80D158F100D9")
 
@@ -87,7 +81,6 @@ public static String quote(String data) {
         }
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:10.353 -0500", hash_original_field = "57EC091A260F7D60766E2E433D329B4D", hash_generated_field = "4AEF8EB90733274F8DF38365152EB324")
-
 
     private  Map<String, Object> nameValuePairs;
 
@@ -197,6 +190,7 @@ public int length() {
      *
      * @return this object.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:10.377 -0500", hash_original_method = "43A124AF3EF8B2736A46103CC8729DE3", hash_generated_method = "2D8FDC3BDDE11901BE6BDBA44C0A6DDE")
     
 public JSONObject put(String name, boolean value) throws JSONException {
@@ -212,6 +206,7 @@ public JSONObject put(String name, boolean value) throws JSONException {
      *     {@link Double#isInfinite() infinities}.
      * @return this object.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:10.379 -0500", hash_original_method = "FF23ECF2F7B3A424BD0CA2B446E9E0DB", hash_generated_method = "A8CF02341257AB189DB0DD273F097E91")
     
 public JSONObject put(String name, double value) throws JSONException {
@@ -225,6 +220,7 @@ public JSONObject put(String name, double value) throws JSONException {
      *
      * @return this object.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:10.382 -0500", hash_original_method = "14B3109A64A28D2764163C4077CDC45D", hash_generated_method = "4A49F6F026199A14A96931DDB451468E")
     
 public JSONObject put(String name, int value) throws JSONException {
@@ -238,6 +234,7 @@ public JSONObject put(String name, int value) throws JSONException {
      *
      * @return this object.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:10.384 -0500", hash_original_method = "0E78BCAD739042DC347A7959C52D188A", hash_generated_method = "52002C976EFF172F842E649C92F9A7AB")
     
 public JSONObject put(String name, long value) throws JSONException {
@@ -256,6 +253,7 @@ public JSONObject put(String name, long value) throws JSONException {
      *     infinities}.
      * @return this object.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:10.387 -0500", hash_original_method = "8B4C0C01745202135A0373E57DFB791E", hash_generated_method = "2AB8BC2C7AA0FCD846B0A90F8EE2FDC3")
     
 public JSONObject put(String name, Object value) throws JSONException {
@@ -275,6 +273,7 @@ public JSONObject put(String name, Object value) throws JSONException {
      * Equivalent to {@code put(name, value)} when both parameters are non-null;
      * does nothing otherwise.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:10.390 -0500", hash_original_method = "D9589667A2509A719F9DF68E891B85DD", hash_generated_method = "213508B3CB132802B111EB473893D74C")
     
 public JSONObject putOpt(String name, Object value) throws JSONException {
@@ -296,6 +295,7 @@ public JSONObject putOpt(String name, Object value) throws JSONException {
      *     Integer, Long, Double, {@link #NULL} or null. May not be {@link
      *     Double#isNaN() NaNs} or {@link Double#isInfinite() infinities}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:10.393 -0500", hash_original_method = "5A758AD2B70A18447D6617A35807B03B", hash_generated_method = "F2929DD2BE4B2CF0A8B81B1A28EFBEDB")
     
 public JSONObject accumulate(String name, Object value) throws JSONException {
@@ -725,6 +725,7 @@ public JSONArray names() {
      * @param indentSpaces the number of spaces to indent for each level of
      *     nesting.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:10.465 -0500", hash_original_method = "161CBAA0F7E505CC65BF62A9F4C8490E", hash_generated_method = "89736320EFA9E85B06F0454670E154AA")
     
 public String toString(int indentSpaces) throws JSONException {

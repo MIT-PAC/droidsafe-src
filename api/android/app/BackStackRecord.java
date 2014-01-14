@@ -13,12 +13,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
 
-
-
-
-
 final class BackStackState implements Parcelable {
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.997 -0400", hash_original_field = "8B8CFB1C8824B4F8DAC46E032DB231EE", hash_generated_field = "FC56B3496DF6C62063CE25DEA3B38012")
 
@@ -170,6 +165,7 @@ public int describeContents() {
         return 0;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:16.111 -0500", hash_original_method = "541B83E53D4985674BDE186AC23E769C", hash_generated_method = "82A9F86696450899D7638E9FF59F623F")
     
 public void writeToParcel(Parcel dest, int flags) {
@@ -201,7 +197,6 @@ final class BackStackRecord extends FragmentTransaction implements FragmentManag
     static final String TAG = "BackStackEntry";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:16.126 -0500", hash_original_field = "5906708AA0EC9FEEEECEE01C65ADF637", hash_generated_field = "3C725A5D9DEF53B7FBA369B6031C0114")
 
-
     static final int OP_NULL = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:16.128 -0500", hash_original_field = "1A368FE2DF1C3A737687BEA9477073B0", hash_generated_field = "D476F834444990BAEEB054A4C302249A")
 
@@ -226,10 +221,8 @@ final class BackStackRecord extends FragmentTransaction implements FragmentManag
     static final int OP_ATTACH = 7;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:16.124 -0500", hash_original_field = "B6E40031C2D8257644CECE00AFE40458", hash_generated_field = "B6E40031C2D8257644CECE00AFE40458")
 
-
      FragmentManagerImpl mManager;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:16.165 -0500", hash_original_field = "CAA200DE64F101586FA95F4FEC8429B1", hash_generated_field = "CAA200DE64F101586FA95F4FEC8429B1")
-
 
     Op mHead;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:16.167 -0500", hash_original_field = "1DBFB57BC3C0C58F1CA989515A3C11B2", hash_generated_field = "1DBFB57BC3C0C58F1CA989515A3C11B2")
@@ -273,7 +266,6 @@ final class BackStackRecord extends FragmentTransaction implements FragmentManag
     int mIndex;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:16.193 -0500", hash_original_field = "E7A56D2F2469DB150849BCC5ECFF6194", hash_generated_field = "E7A56D2F2469DB150849BCC5ECFF6194")
 
-
     int mBreadCrumbTitleRes;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:16.195 -0500", hash_original_field = "CD8B3A4957F7DDF6AC7443892C1BE613", hash_generated_field = "CD8B3A4957F7DDF6AC7443892C1BE613")
 
@@ -291,6 +283,7 @@ public BackStackRecord(FragmentManagerImpl manager) {
         mManager = manager;
     }
 
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:16.203 -0500", hash_original_method = "D2AEC534E855FE50C82F3A186CF8CD83", hash_generated_method = "B0CD556182DAF729BD1E10F2B597B1A1")
     
 public void dump(String prefix, FileDescriptor fd, PrintWriter writer, String[] args) {
@@ -543,6 +536,7 @@ public FragmentTransaction attach(Fragment fragment) {
         return this;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:16.245 -0500", hash_original_method = "E8FBC41447C7F5B20E8F08F3A2F7FD58", hash_generated_method = "1AB90CDE86714F166EBB833F0518E7AA")
     
 public FragmentTransaction setCustomAnimations(int enter, int exit) {
@@ -659,7 +653,6 @@ void bumpBackStackNesting(int amt) {
             op = op.next;
         }
     }
-
     
     static final class Op {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:16.145 -0500", hash_original_field = "19BBD1601EBAF334D6AA33231EED0715", hash_generated_field = "19BBD1601EBAF334D6AA33231EED0715")
@@ -695,7 +688,6 @@ void bumpBackStackNesting(int amt) {
         {
             //Synthesized constructor
         }
-
 
     }
 

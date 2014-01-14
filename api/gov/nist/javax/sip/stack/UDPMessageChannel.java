@@ -35,11 +35,6 @@ import java.util.TimerTask;
 
 import javax.sip.address.Hop;
 
-
-
-
-
-
 public class UDPMessageChannel extends MessageChannel implements ParseExceptionListener, Runnable, RawMessageChannel {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:15.368 -0500", hash_original_field = "A4B05DD1A2BDFAA2E8FCD10E8D1815B6", hash_generated_field = "3233C5012C49C796F9D6BBC8E02EAB41")
 
@@ -52,14 +47,11 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
     private InetAddress peerAddress;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:15.377 -0500", hash_original_field = "95EABD5ABD88E35E559B3906991D12AE", hash_generated_field = "DEE18A414D72F7D580E73EF519B5B75F")
 
-
     private String myAddress;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:15.380 -0500", hash_original_field = "8AEBC2998B5E75EE998FC822539710AC", hash_generated_field = "917EBAB90EE3EF0904EF1CC7129F7C3B")
 
-
     private int peerPacketSourcePort;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:15.383 -0500", hash_original_field = "21FBD1F3C626244BE5AA333519378971", hash_generated_field = "31AFBD6F92700654B3E6CD25C4BAE79B")
-
 
     private InetAddress peerPacketSourceAddress;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:15.386 -0500", hash_original_field = "A714E58FF483C2E33F156CBA7BFCD38B", hash_generated_field = "FE74A5BA5CFBB5B6DC2B68FEFA76ECFC")
@@ -70,14 +62,11 @@ public class UDPMessageChannel extends MessageChannel implements ParseExceptionL
     private String peerProtocol;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:15.391 -0500", hash_original_field = "05A0D771A4A24E58EF91191716865F5C", hash_generated_field = "AD61806C610E09EDA888D5EC477B22F2")
 
-
     protected int myPort;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:15.394 -0500", hash_original_field = "E54462E997B322B09DD0125AB641B35D", hash_generated_field = "5DCE0469450ABB74FDB5A37D9DFDF23A")
 
-
     private DatagramPacket incomingPacket;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:15.398 -0500", hash_original_field = "F237DE63057BE39BEE7D4F09606ACEC6", hash_generated_field = "FDC149166FA9FE14388FB5695DD3C00D")
-
 
     private long receptionTime;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:15.401 -0500", hash_original_field = "29BFA636248D06F96C75EB4382FADC8E", hash_generated_field = "DE4903FFD06AF3966ED05EEB79D4D38C")
@@ -281,7 +270,6 @@ private void processIncomingDataPacket(DatagramPacket packet)
                 this.sipStack.getStackLogger().logException(ex);
             }
 
-
             // JvB: send a 400 response for requests (except ACK)
             // Currently only UDP, @todo also other transports
             String msgString = new String(msgBytes, 0, packetLength);
@@ -363,7 +351,6 @@ private void processIncomingDataPacket(DatagramPacket packet)
                 // Check to see if the received parameter matches
                 // the peer address and tag it appropriately.
 
-
                 boolean hasRPort = v.hasParameter(Via.RPORT);
                 if (hasRPort
                         || !hop.getHost().equals(
@@ -423,7 +410,6 @@ public void processMessage(SIPMessage sipMessage) {
                     this.sipStack.getStackLogger()
                             .logWarning("Null request interface returned -- dropping request");
                 }
-
 
                 return;
             }
@@ -549,6 +535,7 @@ public void handleException(ParseException ex, SIPMessage sipMessage,
      * @throws IOException
      *             If there is a problem with sending the message.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:15.450 -0500", hash_original_method = "5949601888B92CAB7F6BB9E6373E9083", hash_generated_method = "CA5DED15EEDBEE2F93349DDF45384D85")
     
 public void sendMessage(SIPMessage sipMessage) throws IOException {
@@ -620,6 +607,7 @@ public void sendMessage(SIPMessage sipMessage) throws IOException {
      * @throws IOException
      *             If there is trouble sending this message.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:15.455 -0500", hash_original_method = "E29573D85212414C15B5600ED44221C0", hash_generated_method = "45AB3E76A33739E95CE9CE6CD6FCDA89")
     
 protected void sendMessage(byte[] msg, InetAddress peerAddress,
@@ -688,6 +676,7 @@ protected void sendMessage(byte[] msg, InetAddress peerAddress,
      * @throws IOException
      *             If there is trouble sending this message.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:15.459 -0500", hash_original_method = "38908DF8BAD797C5C3B9904DFAB1ABDF", hash_generated_method = "59B899B6291A4C7B230D2ED5A9CCDA94")
     
 protected void sendMessage(byte[] msg, InetAddress peerAddress,
@@ -917,7 +906,6 @@ public String getPeerProtocol() {
     
 public void close() {
     }
-
     
     class PingBackTimerTask extends TimerTask {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:15.404 -0500", hash_original_field = "902291576A6EA4536D6C9669E1B1BFD7", hash_generated_field = "902291576A6EA4536D6C9669E1B1BFD7")
@@ -946,11 +934,8 @@ public PingBackTimerTask(String ipAddress, int port) {
         public int hashCode() {
             return (ipAddress + ":" + port).hashCode();
         }
-
         
     }
-
-
     
 }
 

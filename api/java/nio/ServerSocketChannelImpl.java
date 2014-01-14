@@ -20,13 +20,8 @@ import java.nio.channels.spi.SelectorProvider;
 
 import libcore.io.IoUtils;
 
-
-
-
-
 final class ServerSocketChannelImpl extends ServerSocketChannel implements FileDescriptorChannel {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:04.857 -0500", hash_original_field = "B9326D07C7CCEC3D3BE5D47F067FF85C", hash_generated_field = "6A9FD930739602076044D5E8A08C62AF")
-
 
     private  ServerSocketAdapter socket;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:04.860 -0500", hash_original_field = "76382137C184A183F2BF2D8583A90AEC", hash_generated_field = "E5435F593B4B4C544AAC5D578CFF6639")
@@ -34,10 +29,8 @@ final class ServerSocketChannelImpl extends ServerSocketChannel implements FileD
     private  SocketImpl impl;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:04.862 -0500", hash_original_field = "F9AB7682F64A4F93F6F4A7A435A5AA53", hash_generated_field = "AD4F2B698EC37BEC9EEE873CE57E921D")
 
-
     private boolean isBound = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:04.864 -0500", hash_original_field = "FE9DA13376C8E122CBD408138D03A83A", hash_generated_field = "867B564705311576908006F0E51C1B9C")
-
 
     private final Object acceptLock = new Object();
 
@@ -111,7 +104,6 @@ synchronized protected void implCloseSelectableChannel() throws IOException {
 public FileDescriptor getFD() {
         return impl.getFD$();
     }
-
     
     private static class ServerSocketAdapter extends ServerSocket {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:04.883 -0500", hash_original_field = "C548543758C2853BFD2557E575767A3A", hash_generated_field = "4409938A65C53F969FE8732C261D10D0")
@@ -124,6 +116,7 @@ ServerSocketAdapter(ServerSocketChannelImpl aChannelImpl) throws IOException {
             this.channelImpl = aChannelImpl;
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:04.888 -0500", hash_original_method = "BBE5EDFC9B689589BC654E0B103C84FF", hash_generated_method = "6472E83582D11020EDED4E443A0844E9")
         
 @Override public void bind(SocketAddress localAddress, int backlog) throws IOException {
@@ -177,6 +170,7 @@ public Socket implAccept(SocketChannelImpl clientSocketChannel) throws IOExcepti
             return channelImpl.isBound;
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:04.902 -0500", hash_original_method = "67582FB1AEE3F050543A066EF39FFBDB", hash_generated_method = "F85C03ACA27C169AA390BCAC4E84C4F8")
         
 @Override public void bind(SocketAddress localAddress) throws IOException {
@@ -195,11 +189,8 @@ public Socket implAccept(SocketChannelImpl clientSocketChannel) throws IOExcepti
                 }
             }
         }
-
         
     }
-
-
     
 }
 

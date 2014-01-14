@@ -693,6 +693,7 @@ public long lastModified() {
      * @throws IllegalArgumentException
      *             if {@code time < 0}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.519 -0500", hash_original_method = "9B75702C13A04EF9D2AD1E246C28DD45", hash_generated_method = "E25510CB69644BCC9EDEFC03E361A7CC")
     
 public boolean setLastModified(long time) {
@@ -734,6 +735,7 @@ public boolean setReadOnly() {
      *         is false, this operation will fail.
      * @since 1.6
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.529 -0500", hash_original_method = "6BD52A034BD79C942DD6922B1E4C88BF", hash_generated_method = "846DAA1FE59B7D0BD8818911AEF86CE4")
     
 public boolean setExecutable(boolean executable, boolean ownerOnly) {
@@ -745,6 +747,7 @@ public boolean setExecutable(boolean executable, boolean ownerOnly) {
      * @see #setExecutable(boolean, boolean)
      * @since 1.6
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.531 -0500", hash_original_method = "C14362B21605A10B0FC1769762B4B7C4", hash_generated_method = "76EA56D136285A936DF78C3CC7F031FE")
     
 public boolean setExecutable(boolean executable) {
@@ -769,6 +772,7 @@ public boolean setExecutable(boolean executable) {
      *         false, this operation will fail.
      * @since 1.6
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.533 -0500", hash_original_method = "4618439ECB899A21431C9885F3874F0C", hash_generated_method = "F6CA3ED75EE2D9A55AE6FE511CEE0C49")
     
 public boolean setReadable(boolean readable, boolean ownerOnly) {
@@ -780,6 +784,7 @@ public boolean setReadable(boolean readable, boolean ownerOnly) {
      * @see #setReadable(boolean, boolean)
      * @since 1.6
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.536 -0500", hash_original_method = "25CECE784879D9A6F63C12E2E495084D", hash_generated_method = "CB831F961B92F1F53F258BE584B5B45A")
     
 public boolean setReadable(boolean readable) {
@@ -802,6 +807,7 @@ public boolean setReadable(boolean readable) {
      *         pathname the operation will fail.
      * @since 1.6
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.538 -0500", hash_original_method = "C7C84CA2ADD923BB8D9E9EBE2B4AA50C", hash_generated_method = "34D07E994BAF6ACE4C2A8B4FD73AA63E")
     
 public boolean setWritable(boolean writable, boolean ownerOnly) {
@@ -813,6 +819,7 @@ public boolean setWritable(boolean writable, boolean ownerOnly) {
      * @see #setWritable(boolean, boolean)
      * @since 1.6
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.540 -0500", hash_original_method = "0112F87387A0225E67147890BEDE5131", hash_generated_method = "2CE16D26B0CD2AB7F814C2524F473F43")
     
 public boolean setWritable(boolean writable) {

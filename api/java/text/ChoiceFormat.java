@@ -11,10 +11,6 @@ import java.util.Locale;
 
 import libcore.util.EmptyArray;
 
-
-
-
-
 public class ChoiceFormat extends NumberFormat {
 
     /**
@@ -83,14 +79,11 @@ public static final double previousDouble(double value) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.801 -0500", hash_original_field = "3BF89E88CB72DE7A21FABBE3E2E23DE7", hash_generated_field = "74F3624CBC64496D38F62E5EDD514F89")
 
-
     private static final long serialVersionUID = 1795184449645032964L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.803 -0500", hash_original_field = "385C660A7438388F4AAC0F402F17E811", hash_generated_field = "ED2D30C35903F5702DFA6B6B053F7D87")
 
-
     private double[] choiceLimits;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.806 -0500", hash_original_field = "CDF517F27851927B5C5ADD8084AE9F33", hash_generated_field = "05C2A4AC24967E0A070ABD8FDE0D9A95")
-
 
     private String[] choiceFormats;
 
@@ -372,6 +365,7 @@ public double[] getLimits() {
      * @return a Double resulting from the parse, or Double.NaN if there is an
      *         error
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.845 -0500", hash_original_method = "609F300632C6A9AB79113AF961C366BC", hash_generated_method = "6E603FA1F2D9295D5AD0EFE6E369A8C2")
     
 @Override

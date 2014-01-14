@@ -5,9 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
 public abstract class AbstractSequentialList<E> extends AbstractList<E> {
 
     /**
@@ -75,6 +72,7 @@ protected AbstractSequentialList() {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:43.120 -0500", hash_original_method = "A0691253183890C7E0DBA0D74DD52EDC", hash_generated_method = "6F75963FFA57E8B5B5D8C57390534586")
     
 @Override
@@ -87,7 +85,6 @@ protected AbstractSequentialList() {
         it.set(object);
         return result;
     }
-
     
 }
 

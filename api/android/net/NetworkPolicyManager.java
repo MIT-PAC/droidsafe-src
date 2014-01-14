@@ -207,6 +207,7 @@ public NetworkPolicyManager(INetworkPolicyManager service) {
     }
 
     /** {@hide} */
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:20.933 -0500", hash_original_method = "6C9718C45778137F76C2603939413095", hash_generated_method = "19F3AF4D19ABDB345C0834A328796127")
     
 public void setNetworkPolicies(NetworkPolicy[] policies) {
@@ -233,6 +234,7 @@ public NetworkPolicy[] getNetworkPolicies() {
      * @param policy {@link #POLICY_NONE} or combination of flags like
      *            {@link #POLICY_REJECT_METERED_BACKGROUND}.
      */
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:20.937 -0500", hash_original_method = "A06EA8E312C1B7FA5C4AC7FF7B993ED4", hash_generated_method = "3F0CBF10B537FF703B9F9E71A619BCFB")
     
 public void setUidPolicy(int uid, int policy) {

@@ -10,10 +10,6 @@ import java.util.Arrays;
 
 import libcore.net.http.HttpEngine;
 
-
-
-
-
 public abstract class HttpURLConnection extends URLConnection {
 
     /**
@@ -55,7 +51,6 @@ public static void setFollowRedirects(boolean auto) {
             // Note: we don't allow users to specify "CONNECT"
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:09.500 -0500", hash_original_field = "7FD13A00311AD6500193BCCAFBA702CB", hash_generated_field = "B6B148D800DA01B94858FBCF1FB7DA47")
-
 
     private static boolean followRedirects = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:09.507 -0500", hash_original_field = "08C33CBFB7734EF961E47B48359F521B", hash_generated_field = "96A78475A787D0B276307F183EB23F54")
@@ -332,6 +327,7 @@ public String getResponseMessage() throws IOException {
      * @see #getRequestMethod()
      * @see #method
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:09.627 -0500", hash_original_method = "3B5EB6833E70FFDCB063E860A5177AF6", hash_generated_method = "CB9578508F0DA92FBC57641C0CFBE1C1")
     
 public void setRequestMethod(String method) throws ProtocolException {

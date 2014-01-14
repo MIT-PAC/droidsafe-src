@@ -89,7 +89,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:46.209 -0500", hash_original_method = "CAA0AED8626F51640A0BB092514C1C12", hash_generated_method = "588A826851E5E73D37BF02487D43A026")
+@DSSink({DSSinkKind.ACCOUNT_SETTINGS})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:46.209 -0500", hash_original_method = "CAA0AED8626F51640A0BB092514C1C12", hash_generated_method = "588A826851E5E73D37BF02487D43A026")
             
 public void onError(int errorCode, java.lang.String errorMessage) throws android.os.RemoteException
 {

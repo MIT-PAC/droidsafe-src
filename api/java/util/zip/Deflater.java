@@ -9,10 +9,6 @@ import java.util.Arrays;
 import libcore.util.EmptyArray;
 import dalvik.system.CloseGuard;
 
-
-
-
-
 public class Deflater {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.723 -0500", hash_original_field = "E85D7D547BCB2C42E7F038B26BC9B1EE", hash_generated_field = "13698D975E7B2387C4A72B340600110B")
 
@@ -55,34 +51,26 @@ public class Deflater {
     private int flushParm = NO_FLUSH;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.757 -0500", hash_original_field = "59CD61E3A383ACAD01F8F1AA33285180", hash_generated_field = "3E2B0E3E2E572DECE0B20D77E19B79CF")
 
-
     private boolean finished;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.760 -0500", hash_original_field = "9DD4FCAC72A22ADDE5A5D47CF9140D77", hash_generated_field = "27139595293C7DFAFE0E0E3302C66E6F")
-
 
     private int compressLevel = DEFAULT_COMPRESSION;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.762 -0500", hash_original_field = "F148B82EE930A7E4F67D330C395EAAAC", hash_generated_field = "BB7C60E9AAF3128E30F80132DBC518E3")
 
-
     private int strategy = DEFAULT_STRATEGY;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.764 -0500", hash_original_field = "29B64591123A903836B90C66F6149507", hash_generated_field = "96E9A434433050A3F1202A32F9BF2C55")
-
 
     private long streamHandle = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.767 -0500", hash_original_field = "F1446DCAD6A059A865BF8D29770BBE1A", hash_generated_field = "97F892FF664C2B7167B136A4B04D7E33")
 
-
     private byte[] inputBuffer;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.769 -0500", hash_original_field = "26AE1163BD027CE87ED65D36070B90DA", hash_generated_field = "04384C2608AA53E3C7DB2B14F64353DB")
-
 
     private int inRead;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.771 -0500", hash_original_field = "A2FC62482F8FC5A7B00D9127EAC6F44C", hash_generated_field = "0E7AF8D739309A330EB7DABC780C6592")
 
-
     private int inLength;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.775 -0500", hash_original_field = "759D7885648499D4F341C13F7C4AA861", hash_generated_field = "E7FAF2CA4E8E292A9B5FAAE3D4817EEC")
-
 
     private final CloseGuard guard = CloseGuard.get();
 
@@ -204,7 +192,6 @@ private synchronized int deflateImpl(byte[] buf, int offset, int byteCount, int 
     	return getTaintInt();
     }
 
-
     /**
      * Frees all resources held onto by this deflating algorithm. Any unused
      * input or output is discarded. This method should be called explicitly in
@@ -234,7 +221,6 @@ private void endImpl() {
     	//Formerly a native method
     	addTaint(handle);
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.810 -0500", hash_original_method = "FC32DF56978CE95FA2CC2CA96409152E", hash_generated_method = "09E00EA73277F9B2AD883CD1303F9264")
     
@@ -297,7 +283,6 @@ public synchronized int getAdler() {
     	return getTaintInt();
     }
 
-
     /**
      * Returns the total number of bytes of input read by this {@code Deflater}. This
      * method is limited to 32 bits; use {@link #getBytesRead} instead.
@@ -317,7 +302,6 @@ public synchronized int getTotalIn() {
     	return getTaintLong();
     }
 
-
     /**
      * Returns the total number of bytes written to the output buffer by this {@code
      * Deflater}. The method is limited to 32 bits; use {@link #getBytesWritten} instead.
@@ -336,7 +320,6 @@ public synchronized int getTotalOut() {
     	addTaint(handle);
     	return getTaintLong();
     }
-
 
     /**
      * Returns true if {@link #setInput setInput} must be called before deflation can continue.
@@ -375,13 +358,13 @@ public synchronized void reset() {
     	addTaint(handle);
     }
 
-
     /**
      * Sets the dictionary to be used for compression by this {@code Deflater}.
      * This method can only be called if this {@code Deflater} supports the writing
      * of ZLIB headers. This is the default, but can be overridden
      * using {@link #Deflater(int, boolean)}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.847 -0500", hash_original_method = "49DAD22714BA16C1AC9D80CF714D4798", hash_generated_method = "086990A774EFC7D1A36FF93572821569")
     
 public void setDictionary(byte[] dictionary) {
@@ -394,6 +377,7 @@ public void setDictionary(byte[] dictionary) {
      * of ZLIB headers. This is the default, but can be overridden
      * using {@link #Deflater(int, boolean)}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.851 -0500", hash_original_method = "7FB505FB7F1826F86B368368EBDBCA40", hash_generated_method = "4AF53AB1FC1CD1B06CB20B6F4E90756C")
     
 public synchronized void setDictionary(byte[] buf, int offset, int byteCount) {
@@ -412,11 +396,11 @@ public synchronized void setDictionary(byte[] buf, int offset, int byteCount) {
     	addTaint(handle);
     }
 
-
     /**
      * Sets the input buffer the {@code Deflater} will use to extract uncompressed bytes
      * for later compression.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.857 -0500", hash_original_method = "76E6701B8618856CEE42A14EB071C689", hash_generated_method = "19B3B4D9BFCD113AADCC6DB794F536DA")
     
 public void setInput(byte[] buf) {
@@ -450,7 +434,6 @@ public synchronized void setInput(byte[] buf, int offset, int byteCount) {
     	addTaint(handle);
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.868 -0500", hash_original_method = "CFB5087A7D9EFE706B98C4EB08838FDC", hash_generated_method = "1FA97F53D7ABD85282CFAE0F1076CEA3")
     
     private void setInputImpl(byte[] buf, int offset, int byteCount, long handle){
@@ -460,7 +443,6 @@ public synchronized void setInput(byte[] buf, int offset, int byteCount) {
     	addTaint(byteCount);
     	addTaint(handle);
     }
-
 
     /**
      * Sets the compression level to be used when compressing data. The
@@ -535,7 +517,6 @@ public synchronized long getBytesWritten() {
     	addTaint(noHeader1);
     	return getTaintLong();
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.885 -0500", hash_original_method = "367A42A5784C609E2D8E37BE922AB4A4", hash_generated_method = "6E548EC6D5D2EE4AE8DEE8BBBE547265")
     

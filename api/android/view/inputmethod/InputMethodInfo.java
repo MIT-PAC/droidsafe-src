@@ -29,10 +29,6 @@ import android.util.AttributeSet;
 import android.util.Printer;
 import android.util.Xml;
 
-
-
-
-
 public final class InputMethodInfo implements Parcelable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:18.816 -0500", hash_original_field = "62F67574D8C9259CD42961B61108D9EF", hash_generated_field = "0D3F383A8AE37AD4A1E896720B0C8651")
 
@@ -71,7 +67,6 @@ public final class InputMethodInfo implements Parcelable {
 
     private final ArrayList<InputMethodSubtype> mSubtypes = new ArrayList<InputMethodSubtype>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:18.831 -0500", hash_original_field = "D369A816C7F82094E9D0F8D580327CDB", hash_generated_field = "EB108F753B89051896699C9D79AA6EB9")
-
 
     private boolean mIsAuxIme;
 
@@ -359,6 +354,7 @@ public int getIsDefaultResourceId() {
         return mIsDefaultResId;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:18.875 -0500", hash_original_method = "117DA0E6EED582D5768D87F87FE31C9D", hash_generated_method = "DF96D1CAC5BB279D1DF7727A972DF059")
     
 public void dump(Printer pw, String prefix) {
@@ -421,6 +417,7 @@ public boolean isAuxiliaryIme() {
      * @param dest The {@link Parcel} to be written.
      * @param flags The flags used for parceling.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:18.889 -0500", hash_original_method = "A776E868EB44985D1E2E0042801983B1", hash_generated_method = "C2DE9E0F9A9BD8C2FF912B558DAB160B")
     
 @Override

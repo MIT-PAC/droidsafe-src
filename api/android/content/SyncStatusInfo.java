@@ -10,16 +10,11 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Log;
 
-
-
-
-
 public class SyncStatusInfo implements Parcelable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:38.589 -0500", hash_original_field = "F6DDD389535BD862127788159866DF12", hash_generated_field = "78D7348159FCA08FC47896DADC9A6ECC")
 
     static final int VERSION = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:38.627 -0500", hash_original_field = "A5C7BE17890DC342F3396758FD0DD22D", hash_generated_field = "4CCB2F73BD98045FB7A49DC531F6A5B0")
-
 
     private static final String TAG = "Sync";
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:02.818 -0400", hash_original_field = "4B380E2AA31D16D86BF89F8EE0A58282", hash_generated_field = "34F7BA97EC5F779445C9A58D21D7DF7D")
@@ -38,7 +33,6 @@ public SyncStatusInfo[] newArray(int size) {
         }
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:38.591 -0500", hash_original_field = "B11D0145EE299937169261FF5464F8E6", hash_generated_field = "A9902B6EC2628AF68CD4117B511E65F0")
-
 
     public  int authorityId;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:38.593 -0500", hash_original_field = "1B9B3FB2A9D2F8EA7767FA1AE420A5B4", hash_generated_field = "5D7384269F724CBADC7F9E403A55C48C")
@@ -181,6 +175,7 @@ public void writeToParcel(Parcel parcel, int flags) {
         }
     }
 
+    @DSSink({DSSinkKind.SYNCHRONIZATION_DATA})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:38.642 -0500", hash_original_method = "BB3C22BCE01837AA4BAC40A0B35F8BC2", hash_generated_method = "E6DF29A0C803CBABCAB30F4C265C5317")
     
 public void setPeriodicSyncTime(int index, long when) {

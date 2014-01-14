@@ -353,6 +353,7 @@ public static Pair<Uri, byte[]> getWithUri(ContentProviderClient provider, Accou
         /**
          * @see android.provider.SyncStateContract.Helpers#set
          */
+        @DSSink({DSSinkKind.CONTACT_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:45.692 -0500", hash_original_method = "579F427E12689D3799FB7240CB2CED7E", hash_generated_method = "0929C6A0E720D5E2073DF205F65D7551")
         
 public static void set(ContentProviderClient provider, Account account, byte[] data)
@@ -409,6 +410,7 @@ public static Pair<Uri, byte[]> getWithUri(ContentProviderClient provider, Accou
         /**
          * @see android.provider.SyncStateContract.Helpers#set
          */
+        @DSSink({DSSinkKind.CONTACT_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:45.713 -0500", hash_original_method = "579F427E12689D3799FB7240CB2CED7E", hash_generated_method = "0929C6A0E720D5E2073DF205F65D7551")
         
 public static void set(ContentProviderClient provider, Account account, byte[] data)

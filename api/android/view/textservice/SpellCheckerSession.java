@@ -379,6 +379,7 @@ private void processOrEnqueueTask(SpellCheckerParams scp) {
             processTask(session, scp, false);
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:47.743 -0500", hash_original_method = "DF368CC1EE007FCF3291FF75FA752896", hash_generated_method = "4F6FFE216588456B2B09F1553A03F3A6")
         
 @Override

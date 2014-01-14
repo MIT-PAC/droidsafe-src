@@ -9,72 +9,53 @@ import java.nio.charset.Charsets;
 
 import libcore.io.Memory;
 
-
-
-
-
 class Socks4Message {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:09.093 -0500", hash_original_field = "F942E69E6A8BA58B931D09F44410DEF4", hash_generated_field = "BD6A3E366ABE51C7B3F08250983C2F91")
 
     static final int COMMAND_CONNECT = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:09.095 -0500", hash_original_field = "32F34E85DB27926C1E4275B1F765DB8B", hash_generated_field = "F735423BCF52759E7B7A45F0E32AC8FD")
 
-
     static final int COMMAND_BIND = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:09.098 -0500", hash_original_field = "34039F1F39B46B54F75114D7B6D9B729", hash_generated_field = "26BFE3379A1A1AE8BAEB428717D32786")
-
 
     static final int RETURN_SUCCESS = 90;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:09.100 -0500", hash_original_field = "3B34F0EC6027FBF06B3E478D1AD5BB6A", hash_generated_field = "5F609D15A27ECDAC5A62734391BA0F59")
 
-
     static final int RETURN_FAILURE = 91;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:09.103 -0500", hash_original_field = "B14E1EF1E5F85072CF1FB6BE0CF1B111", hash_generated_field = "8F1AAE4D86AAC8AB92A2F0E1D6BA1104")
-
 
     static final int RETURN_CANNOT_CONNECT_TO_IDENTD = 92;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:09.106 -0500", hash_original_field = "525BB2D5FB0C1DCB48E29ADD5096200A", hash_generated_field = "72BB404C9089606F3DE1ADF1E7C23EE6")
 
-
     static final int RETURN_DIFFERENT_USER_IDS = 93;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:09.108 -0500", hash_original_field = "8B3AE064F3661FED413E16F9D0C5A9E0", hash_generated_field = "64BC989AFEFF38DC56D1E542C05D9CB5")
-
 
     static final int REPLY_LENGTH = 8;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:09.111 -0500", hash_original_field = "ED87EFBB6A569C322D6AB42C7F907C68", hash_generated_field = "961D1E6487A898D5A36F43E5BD69FEC6")
 
-
     static final int INDEX_VERSION = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:09.114 -0500", hash_original_field = "ABD6AADD7FF0CEB229D742B5138A0831", hash_generated_field = "B16117D7B56E6971EC3B5C27919F21AB")
-
 
     private static final int SOCKS_VERSION = 4;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:09.116 -0500", hash_original_field = "4BB4489821CBA3E2CFA08569340AC135", hash_generated_field = "03D47C24378A3D5475059C87E820B634")
 
-
     private static final int INDEX_COMMAND = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:09.118 -0500", hash_original_field = "456C561D14749B63219BE92F50143BE5", hash_generated_field = "D9AEF46DB7567A3082AD47C4A819E6F9")
-
 
     private static final int INDEX_PORT = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:09.121 -0500", hash_original_field = "3E51893C0BFEA93A28B2481B20D5DE15", hash_generated_field = "4BCA5D8E515996ECD4311F972DC3FF6F")
 
-
     private static final int INDEX_IP = 4;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:09.123 -0500", hash_original_field = "2298604F41A9EFCB82D26029C90E2044", hash_generated_field = "10C7D7F212FA8E6718A232CE1F343D59")
-
 
     private static final int INDEX_USER_ID = 8;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:09.126 -0500", hash_original_field = "ECB6902F20BF16ABF2629AE5CF6D52D9", hash_generated_field = "20DDA2E0F060AAFB5D2D76BE9092D1A1")
 
-
     private static final int BUFFER_LENGTH = 256;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:09.129 -0500", hash_original_field = "280E7D156975C27DEA7C4CD9FBA53FC1", hash_generated_field = "C1A9FB57B28C3ABA9BF2F497C036436F")
 
-
     private static final int MAX_USER_ID_LENGTH = BUFFER_LENGTH - INDEX_USER_ID;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:09.131 -0500", hash_original_field = "3923F3F9F9ECABE8D28493E863FC2CD8", hash_generated_field = "FBA3E90E1AEF84B9DE40F7F93AE8B84B")
-
 
     protected byte[] buffer;
 
@@ -97,6 +78,7 @@ public int getCommandOrResult() {
     /**
      * Set the request's command or result.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:09.138 -0500", hash_original_method = "338C1B26BFB9D7C284F2A4F94981D480", hash_generated_method = "D80606DA24E639FE7952CC5B9CA3011D")
     
 public void setCommandOrResult(int command) {
@@ -115,6 +97,7 @@ public int getPort() {
     /**
      * Set the request's port number.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:09.143 -0500", hash_original_method = "5ADD361358F9B7D845CC4C6A0E6C787A", hash_generated_method = "07543520C712DD8A6BC7E728EC01D32C")
     
 public void setPort(int port) {
@@ -133,6 +116,7 @@ public int getIP() {
     /**
      * Set the IP address. This expects an array of four bytes in host order.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:09.148 -0500", hash_original_method = "CD63C26544B74E77AC58BA3597D39036", hash_generated_method = "2F69A5313A94A6570E4DB5DF218D11EC")
     
 public void setIP(byte[] ip) {
@@ -154,6 +138,7 @@ public String getUserId() {
     /**
      * Set the user id for authentication.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:09.153 -0500", hash_original_method = "D89FFAAC0CE83481287E79A931367547", hash_generated_method = "78E3906F8963A66447ABED40A0D4BF91")
     
 public void setUserId(String id) {

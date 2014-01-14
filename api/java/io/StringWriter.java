@@ -6,14 +6,8 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Arrays;
 
-
-
-
-
-
 public class StringWriter extends Writer {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.088 -0500", hash_original_field = "AE723DBE63A0A007DD0888E4AE2CF636", hash_generated_field = "EB9E5A2DAF0C9C70707F8B833E05E535")
-
 
     private StringBuffer buf;
 
@@ -181,6 +175,7 @@ public StringBuffer getBuffer() {
      *            the character to append to the target stream.
      * @return this writer.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.116 -0500", hash_original_method = "15F384D8A1FFEEB0786C49990EC18DEC", hash_generated_method = "245948B56E5876E69D845B1347DB8EB8")
     
 @Override
@@ -242,7 +237,6 @@ public StringBuffer getBuffer() {
         write(output, 0, output.length());
         return this;
     }
-
     
 }
 

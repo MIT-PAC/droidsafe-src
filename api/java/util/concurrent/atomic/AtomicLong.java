@@ -76,6 +76,7 @@ public final void set(long newValue) {
      * @param newValue the new value
      * @since 1.6
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.531 -0500", hash_original_method = "5F840B47C39798AC1AA2E3C6DCFC9B43", hash_generated_method = "83A9877A95611BF082C2348B8392889A")
     
 public final void lazySet(long newValue) {

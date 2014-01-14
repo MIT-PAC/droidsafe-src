@@ -40,11 +40,6 @@ import android.view.animation.Transformation;
 
 import com.android.internal.R;
 
-
-
-
-
-
 public class ProgressBar extends View {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.687 -0500", hash_original_field = "1496E1C556157C5FD3FDE79598CDF532", hash_generated_field = "CC7511334507B624E41735D194F6E4E0")
 
@@ -56,7 +51,6 @@ public class ProgressBar extends View {
 
     private static final int TIMEOUT_SEND_ACCESSIBILITY_EVENT = 200;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.693 -0500", hash_original_field = "B5D566AA92521F570066E8773A24B0C0", hash_generated_field = "B5D566AA92521F570066E8773A24B0C0")
-
 
     int mMinWidth;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.695 -0500", hash_original_field = "DE6F7D0025A7518849324A9E1601224A", hash_generated_field = "DE6F7D0025A7518849324A9E1601224A")
@@ -70,7 +64,6 @@ public class ProgressBar extends View {
     int mMaxHeight;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.702 -0500", hash_original_field = "7CDF5A45863735DC45D655DB7E365343", hash_generated_field = "1CA7BE0C4831604F244183A43ACB7282")
 
-
     private int mProgress;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.704 -0500", hash_original_field = "58F48CA09A1DEC274EE2E349256BF813", hash_generated_field = "015CFC0D453C8DA6A402F32079F8A6A4")
 
@@ -79,7 +72,6 @@ public class ProgressBar extends View {
 
     private int mMax;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.709 -0500", hash_original_field = "C0FAA889F27EDA16D523267D3E01AF97", hash_generated_field = "7AB98B3DA8DC606CB1698898E1D5910B")
-
 
     private int mBehavior;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.711 -0500", hash_original_field = "BC345057CF9CBE8611DA24E477E3EC27", hash_generated_field = "A658ABE5235D82E385D992CF2A9ACD3B")
@@ -129,14 +121,11 @@ public class ProgressBar extends View {
     private long mLastDrawTime;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.742 -0500", hash_original_field = "46DA55E63CE38C818116D2946753B27E", hash_generated_field = "9E34047AEA414B2399121C937D10E14B")
 
-
     private boolean mInDrawing;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.744 -0500", hash_original_field = "40BD7E4A5CEBC9065C6EF2B4B6EBD7EB", hash_generated_field = "8CB5D4845E1FC7F9C65B298EDDE9F5B1")
 
-
     private int mAnimationResolution;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.747 -0500", hash_original_field = "180082D26693BAEDD31E26CC6F43AC12", hash_generated_field = "F465CD63B02941FD3A08D3CC1E47AC81")
-
 
     private AccessibilityEventSender mAccessibilityEventSender;
 
@@ -185,7 +174,6 @@ public ProgressBar(Context context, AttributeSet attrs, int defStyle, int styleR
             setProgressDrawable(drawable);
         }
 
-
         mDuration = a.getInt(R.styleable.ProgressBar_indeterminateDuration, mDuration);
 
         mMinWidth = a.getDimensionPixelSize(R.styleable.ProgressBar_minWidth, mMinWidth);
@@ -200,7 +188,7 @@ public ProgressBar(Context context, AttributeSet attrs, int defStyle, int styleR
                 android.R.anim.linear_interpolator); // default to linear interpolator
         if (resID > 0) {
             setInterpolator(context, resID);
-        } 
+        }
 
         setMax(a.getInt(R.styleable.ProgressBar_max, mMax));
 
@@ -579,6 +567,7 @@ private synchronized void refreshProgress(int id, int progress, boolean fromUser
      * @see #getProgress()
      * @see #incrementProgressBy(int) 
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.817 -0500", hash_original_method = "E60A634EF77869D698E2255CD3404933", hash_generated_method = "B35794BD35CFE2DAE884F434C5E52CD1")
     
 @android.view.RemotableViewMethod
@@ -800,6 +789,7 @@ void stopAnimation() {
      * @param context The application environment
      * @param resID The resource identifier of the interpolator to load
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.844 -0500", hash_original_method = "2C6481DDCCEAC913795356C9BF1AF628", hash_generated_method = "BE3242216311F89FBBEC5A97D66A30C9")
     
 public void setInterpolator(Context context, int resID) {
@@ -829,6 +819,7 @@ public Interpolator getInterpolator() {
         return mInterpolator;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.852 -0500", hash_original_method = "EC8B18EE88EE8E09369A36DBF52DF684", hash_generated_method = "39E0006847B6ED0F90C17C5E24442D20")
     
 @Override
@@ -1052,11 +1043,9 @@ private void updateDrawableState() {
             startAnimation();
         }
     }
-
     
     private class RefreshProgressRunnable implements Runnable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.795 -0500", hash_original_field = "9F66E723E60E4F10157FDA7C23C67293", hash_generated_field = "9AA2EA3A2433F5D6F841BEFD54A673B4")
-
 
         private int mId;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.797 -0500", hash_original_field = "7CDF5A45863735DC45D655DB7E365343", hash_generated_field = "1CA7BE0C4831604F244183A43ACB7282")
@@ -1089,14 +1078,10 @@ public void setup(int id, int progress, boolean fromUser) {
             mProgress = progress;
             mFromUser = fromUser;
         }
-
         
     }
-
-
     
     static class SavedState extends BaseSavedState {
-
         
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.097 -0400", hash_original_field = "7DF6FB2587CB67E9544A859A8F6E8FF3", hash_generated_field = "263FCDD65C2156B1D1E1B4D9AE8D7FFA")
 
@@ -1141,6 +1126,7 @@ private SavedState(Parcel in) {
             secondaryProgress = in.readInt();
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.886 -0500", hash_original_method = "47949C0C27B3FB6F61C4F76D6E851E0A", hash_generated_method = "9A232E27C99C90AF353AD363FA55D1D0")
         
 @Override
@@ -1160,8 +1146,6 @@ private SavedState(Parcel in) {
             }
         
     }
-
-
     
     private class AccessibilityEventSender implements Runnable {
         
@@ -1175,7 +1159,6 @@ private SavedState(Parcel in) {
 public void run() {
             sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_SELECTED);
         }
-
         
     }
 

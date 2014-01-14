@@ -8,19 +8,12 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
-
-
-
-
-
 public class DocumentBuilderFactoryImpl extends DocumentBuilderFactory {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:23.843 -0500", hash_original_field = "23D5E90A009660027D8004B0865026CF", hash_generated_field = "BE5F1192FB3C2F3EED9964DA7D958C23")
-
 
     private static final String NAMESPACES =
             "http://xml.org/sax/features/namespaces";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:23.845 -0500", hash_original_field = "82AE1762CE90A109938E89B1ADAFE1BF", hash_generated_field = "70ED57CE87CAB83D17A94161FFE3B368")
-
 
     private static final String VALIDATION =
             "http://xml.org/sax/features/validation";
@@ -83,6 +76,7 @@ public class DocumentBuilderFactoryImpl extends DocumentBuilderFactory {
         return builder;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:23.856 -0500", hash_original_method = "0A4757F3D6B7A1DEAD03596DF47811E0", hash_generated_method = "9C5651C53ABB07401270D50D49C77988")
     
 @Override
@@ -91,6 +85,7 @@ public class DocumentBuilderFactoryImpl extends DocumentBuilderFactory {
         throw new IllegalArgumentException(name);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:23.858 -0500", hash_original_method = "C59D3A431C1BE604F6A4E910499EE08A", hash_generated_method = "43B3009D588EFE907D35B79A85C8E7BE")
     
 @Override

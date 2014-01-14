@@ -494,6 +494,7 @@ public static Object newInstance(Class<?> componentType, int size)
      * @throws ArrayIndexOutOfBoundsException
      *             if {@code  index < 0 || index >= array.length}
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.939 -0500", hash_original_method = "FADDAEE666A0FA8B6A8804C4360DADA9", hash_generated_method = "B34412158113A1AF647DBD12A67F2D85")
     
 public static void set(Object array, int index, Object value)

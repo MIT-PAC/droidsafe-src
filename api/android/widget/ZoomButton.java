@@ -93,6 +93,7 @@ public boolean onLongClick(View v) {
         return super.onKeyUp(keyCode, event);
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.869 -0500", hash_original_method = "46BB6036120D403ECAC10DF2C7F6C840", hash_generated_method = "90A762EBF729F2A2FBD688B6994E6F19")
     
 @Override

@@ -6,10 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Arrays;
 
-
-
-
-
 public abstract class LongBuffer extends Buffer implements Comparable<LongBuffer> {
 
     /**
@@ -423,6 +419,7 @@ public final LongBuffer put(long[] src) {
      * @exception ReadOnlyBufferException
      *                if no changes may be made to the contents of this buffer.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.444 -0500", hash_original_method = "B57657AA1D79DC46C889A6E8179D7A18", hash_generated_method = "A42CE20F6CCDAFADB828534D5EAB68CB")
     
 public LongBuffer put(long[] src, int srcOffset, int longCount) {
@@ -503,7 +500,6 @@ public abstract LongBuffer put(int index, long l);
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.451 -0500", hash_original_method = "9887614DC21CB1EE57B05B261C33E0E7", hash_generated_method = "133C5A8A8A658D91F61868C12755449D")
     
 public abstract LongBuffer slice();
-
     
 }
 

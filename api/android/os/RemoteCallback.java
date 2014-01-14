@@ -5,13 +5,7 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public abstract class RemoteCallback implements Parcelable {
-
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.482 -0400", hash_original_field = "342F5DC731DC7D0C10BC6BF67EBBAD67", hash_generated_field = "0FA4B7A723E7C659BF3C80CC594308CD")
 
@@ -52,6 +46,7 @@ RemoteCallback(IRemoteCallback target) {
         mTarget = target;
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.339 -0500", hash_original_method = "AAFA6B317F34ECAA46BF4F3A7ADBE4F2", hash_generated_method = "4C30EB20716F13BBAC725C6C51144497")
     
 public void sendResult(Bundle bundle) throws RemoteException {
@@ -87,7 +82,6 @@ public int hashCode() {
 public int describeContents() {
         return 0;
     }
-
     
     class DeliverResult implements Runnable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.314 -0500", hash_original_field = "2517D973108B732BC287D585B503B92F", hash_generated_field = "2517D973108B732BC287D585B503B92F")
@@ -105,11 +99,8 @@ DeliverResult(Bundle result) {
 public void run() {
             onResult(mResult);
         }
-
         
     }
-
-
     
     class LocalCallback extends IRemoteCallback.Stub {
         
@@ -118,16 +109,14 @@ public void run() {
         {
             //Synthesized constructor
         }
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.323 -0500", hash_original_method = "FF1279923A180340D1364807D3537EE5", hash_generated_method = "9AC77E0AF70A947EE512BC888F0D69F2")
         
 public void sendResult(Bundle bundle) {
             mHandler.post(new DeliverResult(bundle));
         }
-
         
     }
-
-
     
     static class RemoteCallbackProxy extends RemoteCallback {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.328 -0500", hash_original_method = "883FA11D61E159E4AB8658B2E38FCD52", hash_generated_method = "883FA11D61E159E4AB8658B2E38FCD52")
@@ -140,7 +129,6 @@ RemoteCallbackProxy(IRemoteCallback target) {
         
 protected void onResult(Bundle bundle) {
         }
-
         
     }
 

@@ -330,6 +330,7 @@ public int getNumRows() {
      * @param columnNum The new number of columns.
      * @return True if successful.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.174 -0500", hash_original_method = "06070130EC2CA13555B4890F162F9E48", hash_generated_method = "19738671DDFC7425E8FF5F7C79B2DFEF")
     
 public boolean setNumColumns(int columnNum) {

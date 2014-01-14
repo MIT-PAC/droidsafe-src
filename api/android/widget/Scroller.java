@@ -12,10 +12,6 @@ import android.view.ViewConfiguration;
 import android.view.animation.AnimationUtils;
 import android.view.animation.Interpolator;
 
-
-
-
-
 public class Scroller {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.189 -0500", hash_original_method = "CF44D29393F8CF17D456596D4EDD821D", hash_generated_method = "610DC32ACEA41D734955CF13C80E48E5")
@@ -35,7 +31,6 @@ static float viscousFluid(float x)
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.112 -0500", hash_original_field = "582653CA594E9011AB41A4FCE5484EDB", hash_generated_field = "71A034DCC41856FE859BC1F065FC4DA6")
 
-
     private static final int DEFAULT_DURATION = 250;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.116 -0500", hash_original_field = "3D6FED5899F5F015C1131133F50D0489", hash_generated_field = "A767E7A0CD4C56577AF1FE7F420CA686")
 
@@ -44,7 +39,6 @@ static float viscousFluid(float x)
 
     private static final int FLING_MODE = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.120 -0500", hash_original_field = "7C81A121BF1E57C28684452243FEDE29", hash_generated_field = "2564FD12FAC96B1440815F377BD8C411")
-
 
     private static float DECELERATION_RATE = (float) (Math.log(0.75) / Math.log(0.9));
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.123 -0500", hash_original_field = "E9FCD93A41F4EF4635D4415113CCF888", hash_generated_field = "D1E55FA511AC8DBB15DE29964200AC6B")
@@ -64,7 +58,6 @@ static float viscousFluid(float x)
     private static final float[] SPLINE = new float[NB_SAMPLES + 1];
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.139 -0500", hash_original_field = "CFDDA46428719A93C3DE7EB47B4CA167", hash_generated_field = "1C432C24B5FBB274ECE9C0B14CF36243")
 
-
     private static float sViscousFluidScale;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.141 -0500", hash_original_field = "EA276757CC0DADEE519A4E9CDE52A6B2", hash_generated_field = "4E11B8A84F2C6FEABC4146BC9CB98208")
 
@@ -73,7 +66,6 @@ static float viscousFluid(float x)
 
     private int mMode;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.072 -0500", hash_original_field = "7F2FA150F8D8A76C750DD698B8BF6CB5", hash_generated_field = "28E51E686EEF26C8A77C03ED820E724F")
-
 
     private int mStartX;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.074 -0500", hash_original_field = "81022B59B7942B83F7EE5FF6915DB938", hash_generated_field = "2C4FD2F4594E993A1C0AA896A5F50971")
@@ -87,7 +79,6 @@ static float viscousFluid(float x)
     private int mFinalY;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.081 -0500", hash_original_field = "2AF40A235D5BECD19E81C37ACF5040F4", hash_generated_field = "AD8B01E82643B27CD370F8D831F238C1")
 
-
     private int mMinX;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.083 -0500", hash_original_field = "58ADC8006C6A2C2CFC185F4EA3589EFB", hash_generated_field = "B2C478BEE6C183081971A9B0A8AE4922")
 
@@ -99,7 +90,6 @@ static float viscousFluid(float x)
 
     private int mMaxY;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.090 -0500", hash_original_field = "9CD3C946F3F5B3EE742F6639B7C05CBB", hash_generated_field = "060DFB2652993DA63F3C736F2D32C4A0")
-
 
     private int mCurrX;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.092 -0500", hash_original_field = "B99C14A83C470C2345E5C37F1F3D5B47", hash_generated_field = "DBCFB0FF1F686A6075CBC61640B46359")
@@ -131,10 +121,8 @@ static float viscousFluid(float x)
     private boolean mFlywheel;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.110 -0500", hash_original_field = "42B50432F3F5C6ABEA6F4A8A32D47427", hash_generated_field = "4B9AC7BF5E01DBE21607C260ED737A0D")
 
-
     private float mVelocity;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.134 -0500", hash_original_field = "94A6EE72E23F9750788C83A9DEAFE695", hash_generated_field = "C2BDDF1F4D015B5A70949ADE337CCAA9")
-
 
     private float mDeceleration;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.136 -0500", hash_original_field = "69EFFC925D6B4105436F7B705DD526A1", hash_generated_field = "C099BB189EED7BFC70ED32FE3657313E")
@@ -386,6 +374,7 @@ public boolean computeScrollOffset() {
      * @param dy Vertical distance to travel. Positive numbers will scroll the
      *        content up.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.181 -0500", hash_original_method = "2558578E34A043045AE1AF32A3800D82", hash_generated_method = "F9CD515A4E2C5B16D0DE692CF1A61742")
     
 public void startScroll(int startX, int startY, int dx, int dy) {

@@ -6,10 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.graphics.Paint;
 
-
-
-
-
 public class TextPaint extends Paint {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.466 -0500", hash_original_field = "0910FC77EF934A081A1665762C691AA7", hash_generated_field = "EB7BBC6E5D9DF7183393887C906C4F9C")
 
@@ -55,6 +51,7 @@ public TextPaint(Paint p) {
      * Copy the fields from tp into this TextPaint, including the
      * fields inherited from Paint.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.491 -0500", hash_original_method = "1430CF075B6F082AE7C06C83102C116C", hash_generated_method = "A4C11FF678332E47FFA1D2F56710455A")
     
 public void set(TextPaint tp) {
@@ -81,7 +78,6 @@ public void setUnderlineText(int color, float thickness) {
         underlineColor = color;
         underlineThickness = thickness;
     }
-
     
 }
 

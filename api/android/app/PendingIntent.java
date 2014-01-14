@@ -17,10 +17,6 @@ import android.os.Parcelable;
 import android.os.RemoteException;
 import android.util.AndroidException;
 
-
-
-
-
 public final class PendingIntent implements Parcelable {
 
     /**
@@ -214,6 +210,7 @@ public static PendingIntent getService(Context context, int requestCode,
      * @param sender The PendingIntent to write, or null.
      * @param out Where to write the PendingIntent.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.472 -0500", hash_original_method = "22B62015BE969BA5F8FF4277748534BD", hash_generated_method = "9C4F52F75D02CD3BE3C38AA5172500C5")
     
 public static void writePendingIntentOrNullToParcel(PendingIntent sender,
@@ -332,6 +329,7 @@ public void send() throws CanceledException {
      * @throws CanceledException Throws CanceledException if the PendingIntent
      * is no longer allowing more intents to be sent through it.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.437 -0500", hash_original_method = "46F134C18EE926B408E7E9C21011E590", hash_generated_method = "CB8910838B2370E2E3A768D7BF8F1FFE")
     
 public void send(int code) throws CanceledException {
@@ -353,6 +351,7 @@ public void send(int code) throws CanceledException {
      * @throws CanceledException Throws CanceledException if the PendingIntent
      * is no longer allowing more intents to be sent through it.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.439 -0500", hash_original_method = "43E1DC288109C397E82F23215BE8AF8A", hash_generated_method = "6A32A838B0D449ABCB7226D14EC8E406")
     
 public void send(Context context, int code, Intent intent)
@@ -535,7 +534,6 @@ public boolean isTargetedToPackage() {
         }
         return false;
     }
-
     
     public static class CanceledException extends AndroidException {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.382 -0500", hash_original_method = "6C791280BC05C3F7B11A7004B8EB7BE8", hash_generated_method = "76984C31773ED74269A80CE848B3D28D")
@@ -554,11 +552,8 @@ public CanceledException(String name) {
 public CanceledException(Exception cause) {
             super(cause);
         }
-
         
     }
-
-
     
     private static class FinishedDispatcher extends IIntentReceiver.Stub implements Runnable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.395 -0500", hash_original_field = "7B47F6D668EAC8B29A4C2C64F0EA44AC", hash_generated_field = "094D5D79D03F65D4515938385B22FFF9")
@@ -609,11 +604,8 @@ public void run() {
             mWho.onSendFinished(mPendingIntent, mIntent, mResultCode,
                     mResultData, mResultExtras);
         }
-
         
     }
-
-
     
     public interface OnFinished {
         

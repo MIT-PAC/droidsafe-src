@@ -354,6 +354,7 @@ final CharSequence getPooledString(int block, int id) {
      * @see #open(String, int)
      * @see #list
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.900 -0500", hash_original_method = "7E1B14522C484E4F1B470AEA16F877D6", hash_generated_method = "30526FA7EE5BA7ADC855EA97F46AE7D4")
     
 public final InputStream open(String fileName) throws IOException {
@@ -377,6 +378,7 @@ public final InputStream open(String fileName) throws IOException {
      * @see #open(String)
      * @see #list
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.902 -0500", hash_original_method = "EB9FEA0B2CEADB65FF0921C2B52A13F4", hash_generated_method = "4BBF30831C3143B01679ADF8D444356C")
     
 public final InputStream open(String fileName, int accessMode)
@@ -395,6 +397,7 @@ public final InputStream open(String fileName, int accessMode)
         throw new FileNotFoundException("Asset file: " + fileName);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.904 -0500", hash_original_method = "66D3D468B1706A8E526F268E61D6D3C7", hash_generated_method = "ECB3AB95CCCC59180AB77038F82E2B1F")
     
 public final AssetFileDescriptor openFd(String fileName)
@@ -427,6 +430,7 @@ public final AssetFileDescriptor openFd(String fileName)
      * 
      * @see #open(String)
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.910 -0500", hash_original_method = "B416CA2D934FFC444AFFEA95F80C0673", hash_generated_method = "4BF8A2093F77A1D39FA6B70B0C2DDF96")
     
 public final InputStream openNonAsset(String fileName) throws IOException {
@@ -442,6 +446,7 @@ public final InputStream openNonAsset(String fileName) throws IOException {
      * 
      * @see #open(String, int)
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.913 -0500", hash_original_method = "6F98937B657C3DF287FD2A6608D5C403", hash_generated_method = "3CACD2BAF29F24FC8DFDD7EA79EBF8CA")
     
 public final InputStream openNonAsset(String fileName, int accessMode)
@@ -456,6 +461,7 @@ public final InputStream openNonAsset(String fileName, int accessMode)
      * @param cookie Identifier of the package to be opened.
      * @param fileName Name of the asset to retrieve.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.915 -0500", hash_original_method = "DECD09E6B1808DA43562160A03482F49", hash_generated_method = "E997C8EDB8BCF44311D659E44193E10E")
     
 public final InputStream openNonAsset(int cookie, String fileName)
@@ -471,6 +477,7 @@ public final InputStream openNonAsset(int cookie, String fileName)
      * @param fileName Name of the asset to retrieve.
      * @param accessMode Desired access mode for retrieving the data.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.918 -0500", hash_original_method = "5BC280B3003CA7B8CFB3A2FB67C4E385", hash_generated_method = "25718FA436B166B9973DFAB37FE16B1B")
     
 public final InputStream openNonAsset(int cookie, String fileName, int accessMode)
@@ -489,6 +496,7 @@ public final InputStream openNonAsset(int cookie, String fileName, int accessMod
         throw new FileNotFoundException("Asset absolute file: " + fileName);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.920 -0500", hash_original_method = "E6C638BB28F04E787E5711BF8F421102", hash_generated_method = "E3DA2407F76513DC937ED3FC52F924CB")
     
 public final AssetFileDescriptor openNonAssetFd(String fileName)
@@ -496,6 +504,7 @@ public final AssetFileDescriptor openNonAssetFd(String fileName)
         return openNonAssetFd(0, fileName);
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.922 -0500", hash_original_method = "A0DC944B46306DDC2CA1031D9C43AC47", hash_generated_method = "8E660ED09152CAF6A634784FAF881D7E")
     
 public final AssetFileDescriptor openNonAssetFd(int cookie,
@@ -518,6 +527,7 @@ public final AssetFileDescriptor openNonAssetFd(int cookie,
      * 
      * @param fileName The name of the file to retrieve.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.924 -0500", hash_original_method = "602B0A8D272774ACD0101F14F2575F17", hash_generated_method = "24AC78525D5C95BFCD6A262F72B1E55A")
     
 public final XmlResourceParser openXmlResourceParser(String fileName)
@@ -531,6 +541,7 @@ public final XmlResourceParser openXmlResourceParser(String fileName)
      * @param cookie Identifier of the package to be opened.
      * @param fileName The name of the file to retrieve.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.926 -0500", hash_original_method = "06F5CBF51BDA69D9C47BB01131F079C4", hash_generated_method = "2B96438F6D4AB5642FC14F03C275F180")
     
 public final XmlResourceParser openXmlResourceParser(int cookie,

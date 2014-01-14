@@ -35,10 +35,8 @@ public static IMountServiceListener asInterface(IBinder obj) {
         }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.703 -0500", hash_original_field = "079AAB84EC132B5F469E490AFE5009EC", hash_generated_field = "455F90DA2DF35AD2740FCBDC8F824EF3")
 
-
         static final int TRANSACTION_onUsbMassStorageConnectionChanged = (IBinder.FIRST_CALL_TRANSACTION + 0);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.705 -0500", hash_original_field = "317AE559BB7FE082ADE3BECC6920D55F", hash_generated_field = "4BBA30AB1DD0FF7A055CBE89BF595DA2")
-
 
         static final int TRANSACTION_onStorageStateChanged = (IBinder.FIRST_CALL_TRANSACTION + 1);
 
@@ -103,6 +101,7 @@ public void onUsbMassStorageConnectionChanged(boolean connected) throws RemoteEx
              *            of the values returned by
              *            Environment.getExternalStorageState()
              */
+            @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.698 -0500", hash_original_method = "CD00AB00D1A83361B186C7E93BBCCA09", hash_generated_method = "DCA2DD7C0CA9EAE17499F050A7939D80")
             
 public void onStorageStateChanged(String path, String oldState, String newState)
@@ -163,10 +162,8 @@ public IBinder asBinder() {
             return super.onTransact(code, data, reply, flags);
         }
     }
-
     
     public void onUsbMassStorageConnectionChanged(boolean connected) throws RemoteException;
-
     
     public void onStorageStateChanged(String path, String oldState, String newState)
             throws RemoteException;

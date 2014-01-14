@@ -23,28 +23,20 @@ import java.util.Set;
 import org.apache.harmony.luni.util.TwoKeyHashMap;
 import org.apache.harmony.security.fortress.Services;
 
-
-
-
-
-
 public abstract class Provider extends Properties {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:55.495 -0500", hash_original_field = "38A3EA133D52C6E6AAE27ABA3FE0A21A", hash_generated_field = "6AA3DBE008BE39E45A084DC1795F57FB")
 
     private static final long serialVersionUID = -4298000515446427739L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:55.497 -0500", hash_original_field = "BF45F7481B8091DE3CBF80E94F7F940B", hash_generated_field = "531F96E2AEBFB44CD229EC4CB1F012B0")
 
-
     private String name;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:55.499 -0500", hash_original_field = "CB072D85BF854AC8B162DD5974AED1AE", hash_generated_field = "F3CA80FC5F7B3B542DC8B1C8FD91731C")
-
 
     private double version;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:55.502 -0500", hash_original_field = "01281B0159A804B14C349FAF09113D36", hash_generated_field = "AEF8D804C6A6E39F2A136B97DEDD88CA")
 
     private transient String versionString;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:55.504 -0500", hash_original_field = "51A3ED67E300F80A591B74C6FCA4A0D2", hash_generated_field = "1F50CB615F8F0AB19DCF28D9BAFF4DD4")
-
 
     private String info;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:55.508 -0500", hash_original_field = "4050B7CF42930BF2195CFAD5FCC370DF", hash_generated_field = "16EB2A91BC3F969A9F3D8BB99C39D6E7")
@@ -853,7 +845,6 @@ private String getPropertyIgnoreCase(String key) {
         }
         return null;
     }
-
     
     public static class Service {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:55.623 -0500", hash_original_field = "70389BF55D92237F4948951640719A18", hash_generated_field = "2D84320E029EBF537A8555BC820086EF")
@@ -943,7 +934,8 @@ void addAlias(String alias) {
          * @param name the attribute name.
          * @param value the attribute value.
          */
-        /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:55.649 -0500", hash_original_method = "2623207C72797F9950DF9980B680F416", hash_generated_method = "2623207C72797F9950DF9980B680F416")
+        /*package*/ @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:55.649 -0500", hash_original_method = "2623207C72797F9950DF9980B680F416", hash_generated_method = "2623207C72797F9950DF9980B680F416")
         
 void putAttribute(String name, String value) {
             if ((attributes == null) || (attributes.size() == 0)) {
@@ -1124,7 +1116,6 @@ public boolean supportsParameter(Object parameter) {
             }
             return result;
         }
-
         
     }
 

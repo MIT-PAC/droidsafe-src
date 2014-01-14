@@ -478,6 +478,7 @@ public boolean setComposingText(CharSequence text, int newCursorPosition) {
         return true;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.487 -0500", hash_original_method = "683D72CF1BBC9E7A391F140A2B9406BC", hash_generated_method = "67636B152BB6AA30875B1B52F7C79368")
     
 public boolean setComposingRegion(int start, int end) {
@@ -520,6 +521,7 @@ public boolean setComposingRegion(int start, int end) {
      * The default implementation changes the selection position in the
      * current editable text.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.490 -0500", hash_original_method = "06BE1F921CCFEC5EE49CD2FF18114BBC", hash_generated_method = "FC8D5B5B840DE79CFC20DD26643C979E")
     
 public boolean setSelection(int start, int end) {

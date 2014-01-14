@@ -314,6 +314,7 @@ protected abstract void sendUrgentData(int value) throws IOException;
      * @param bandwidth
      *            the importance of bandwidth.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.333 -0500", hash_original_method = "EE4DCDA11944F25F3B6AAA6A92D8AD2F", hash_generated_method = "8007148E8E33A2E2AD01814FEF5B1086")
     
 protected void setPerformancePreferences(int connectionTime, int latency, int bandwidth) {

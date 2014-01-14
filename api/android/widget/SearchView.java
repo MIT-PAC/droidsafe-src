@@ -549,6 +549,7 @@ public void setAppSearchData(Bundle appSearchData) {
      *
      * @attr ref android.R.styleable#SearchView_imeOptions
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:27.758 -0500", hash_original_method = "A9C55FF5F962662498ECAD2C137876AF", hash_generated_method = "CD89AF8E515C0184BE23683937420891")
     
 public void setImeOptions(int imeOptions) {
@@ -563,6 +564,7 @@ public void setImeOptions(int imeOptions) {
      *
      * @attr ref android.R.styleable#SearchView_inputType
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:27.760 -0500", hash_original_method = "48CC06180C89621288EE9E924CBC5764", hash_generated_method = "346C2C21BCF3B3A413D45389660087CA")
     
 public void setInputType(int inputType) {
@@ -722,6 +724,7 @@ public void setQueryHint(CharSequence hint) {
      *
      * @attr ref android.R.styleable#SearchView_iconifiedByDefault
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:27.785 -0500", hash_original_method = "ACA6D63CA1F64B4CD762BEE0367B8A15", hash_generated_method = "37460F3A41A1EEC6E2E27D431FF93FA6")
     
 public void setIconifiedByDefault(boolean iconified) {
@@ -751,6 +754,7 @@ public boolean isIconfiedByDefault() {
      * @param iconify a true value will collapse the SearchView to an icon, while a false will
      * expand it.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:27.789 -0500", hash_original_method = "1D615B467973354655EE36C4E6E1B780", hash_generated_method = "C09A92E6147C8CBBBE9D074799B9E1A8")
     
 public void setIconified(boolean iconify) {

@@ -32,11 +32,6 @@ import javax.sip.message.MessageFactory;
 import javax.sip.message.Request;
 import javax.sip.message.Response;
 
-
-
-
-
-
 public class MessageFactoryImpl implements MessageFactory, MessageFactoryExt {
     /**
      * Get the default common UserAgentHeader.
@@ -50,7 +45,6 @@ public class MessageFactoryImpl implements MessageFactory, MessageFactoryExt {
 public static UserAgentHeader getDefaultUserAgentHeader() {
         return userAgent;
     }
-
 
     /**
      * Get the default common server header.
@@ -70,7 +64,6 @@ public static String getDefaultContentEncodingCharset() {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:35.625 -0500", hash_original_field = "7A0FDE982719C7AE0EADC20730BAA3A9", hash_generated_field = "790B4B09B170A9194D25942ACCB3ACEB")
 
-
     private static String defaultContentEncodingCharset = "UTF-8";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:35.628 -0500", hash_original_field = "D5E000297A9E09754C3FCD741F248C73", hash_generated_field = "52E17AB48D222AC2268208CD5EE77BA5")
 
@@ -80,10 +73,8 @@ public static String getDefaultContentEncodingCharset() {
     private static ServerHeader server;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:35.620 -0500", hash_original_field = "42C8CC112359A643E3AEC6584A18C02E", hash_generated_field = "2C7FA1926E1866F2BD0E0444E5B75063")
 
-
     private boolean testing = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:35.623 -0500", hash_original_field = "3A05141681835043707EF1785E49D1A7", hash_generated_field = "99E1394EBF258394BF69F9B0CF058AC0")
-
     
     private boolean strict  = true;
 
@@ -95,14 +86,11 @@ public static String getDefaultContentEncodingCharset() {
 public MessageFactoryImpl() {
     }
     
-    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:35.632 -0500", hash_original_method = "EC510198678EBDAFC45D82B058FF4015", hash_generated_method = "A576CD55F5552CD6C33C357CE066752B")
     
 public void setStrict(boolean strict) {
         this.strict = strict;
     }
-
-
 
     /**
      * This is for testing -- allows you to generate invalid requests
@@ -847,11 +835,11 @@ public void setDefaultServerHeader(ServerHeader server) {
         MessageFactoryImpl.server = server;
     }
 
-
     /**
      * Set default charset used for encoding String content.
      * @param charset
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:35.696 -0500", hash_original_method = "7A37B9B6512C6512FDCFFA4B5CE85073", hash_generated_method = "7823BC126FCEC5FEA79BE7FF64141AC1")
     
 public  void setDefaultContentEncodingCharset(String charset) throws NullPointerException,
@@ -860,7 +848,6 @@ public  void setDefaultContentEncodingCharset(String charset) throws NullPointer
         MessageFactoryImpl.defaultContentEncodingCharset = charset;
 
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:35.701 -0500", hash_original_method = "86E485BB3E030FD77D4D70ABB6598D25", hash_generated_method = "BA29B266289A492235B2F750E3C5807F")
     

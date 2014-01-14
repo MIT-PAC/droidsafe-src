@@ -14,13 +14,8 @@ import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityManager;
 import android.widget.TextView;
 
-
-
-
-
 public abstract class TwoStatePreference extends Preference {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.335 -0500", hash_original_field = "79F956D2046D3349120E2925E931AB04", hash_generated_field = "0A63C4508093BBBDC63A916183312B21")
-
 
     private CharSequence mSummaryOn;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.337 -0500", hash_original_field = "C9C703DAFAF0CC0824DEBF823C9E9923", hash_generated_field = "7936F2388E5FECE5D26263562952AF1C")
@@ -35,7 +30,6 @@ public abstract class TwoStatePreference extends Preference {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.344 -0500", hash_original_field = "6DE548F910A03AB37C1AA22EC9C7CFC6", hash_generated_field = "A45150049825FDCDA3DE269C67272345")
 
     private boolean mDisableDependentsState;
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.346 -0500", hash_original_method = "9308B3B15F4DE8F7508C8EA50D56D8AD", hash_generated_method = "258A6CAC93AAD14C03652E28A1D45CF7")
     
@@ -125,6 +119,7 @@ public void setSummaryOn(CharSequence summary) {
      * @see #setSummaryOn(CharSequence)
      * @param summaryResId The summary as a resource.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.365 -0500", hash_original_method = "840A2DF332BCD4D47FC113ECD5767E5E", hash_generated_method = "2AD79D3C20A788609781E3D3765ED605")
     
 public void setSummaryOn(int summaryResId) {
@@ -159,6 +154,7 @@ public void setSummaryOff(CharSequence summary) {
      * @see #setSummaryOff(CharSequence)
      * @param summaryResId The summary as a resource.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.372 -0500", hash_original_method = "A777E36B9565634072F09AB599AD44D9", hash_generated_method = "76D16EE5D58E9509BE497B7372C08656")
     
 public void setSummaryOff(int summaryResId) {
@@ -299,10 +295,8 @@ void syncSummaryView(View view) {
         super.onRestoreInstanceState(myState.getSuperState());
         setChecked(myState.checked);
     }
-
     
     static class SavedState extends BaseSavedState {
-
         
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.937 -0400", hash_original_field = "7DF6FB2587CB67E9544A859A8F6E8FF3", hash_generated_field = "263FCDD65C2156B1D1E1B4D9AE8D7FFA")
 
@@ -337,6 +331,7 @@ public SavedState(Parcelable superState) {
             super(superState);
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.400 -0500", hash_original_method = "5F0C2D7310332C4BBDEFEA2518DC2D5F", hash_generated_method = "D7BCD3CA61BA8DBE593392F304F188F0")
         
 @Override
@@ -355,8 +350,6 @@ public SavedState(Parcelable superState) {
             }
         
     }
-
-
     
 }
 

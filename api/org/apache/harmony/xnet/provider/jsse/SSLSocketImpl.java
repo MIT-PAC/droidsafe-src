@@ -20,11 +20,6 @@ import javax.net.ssl.SSLException;
 import javax.net.ssl.SSLSession;
 import javax.net.ssl.SSLSocket;
 
-
-
-
-
-
 public class SSLSocketImpl extends SSLSocket {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.521 -0500", hash_original_field = "DD39B534563266F04E2B935538054204", hash_generated_field = "43A471CC626A390C3F42C96A293CE4F3")
 
@@ -50,7 +45,6 @@ public class SSLSocketImpl extends SSLSocket {
 
     private SSLSessionImpl session;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.537 -0500", hash_original_field = "E750AD196A1678C76301EB87A36D17D5", hash_generated_field = "45E3FC29C212ED74F873A281D50900AB")
-
 
     private boolean socket_was_closed = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.539 -0500", hash_original_field = "8EC89ADA2574F1DBC3DD4508F1BBC0BF", hash_generated_field = "04F8E3EB3EE7E0CB408AFC33E7A72359")
@@ -241,6 +235,7 @@ protected void closeTransportLayer() throws IOException {
      * @see javax.net.ssl.SSLSocket#setEnabledCipherSuites(String[])
      * method documentation for more information
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.576 -0500", hash_original_method = "7C4ABDE66C2DD67AB299013913F9BF06", hash_generated_method = "C5557FA44AA989E23B0178177369FD5D")
     
 @Override
@@ -277,6 +272,7 @@ protected void closeTransportLayer() throws IOException {
      * @see javax.net.ssl.SSLSocket#setEnabledProtocols(String[])
      * method documentation for more information
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.583 -0500", hash_original_method = "1CAC4BB68A222585D834DF0E7DBBD0B9", hash_generated_method = "5199FC3D60A4E4583B057C0623C822F9")
     
 @Override
@@ -289,6 +285,7 @@ protected void closeTransportLayer() throws IOException {
      * @see javax.net.ssl.SSLSocket#setUseClientMode(boolean)
      * method documentation for more information
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.585 -0500", hash_original_method = "3BB959BD0875F4D150E69C54372A8DCB", hash_generated_method = "9CA8AE73464BF134D0D3AFC6623315FF")
     
 @Override
@@ -317,6 +314,7 @@ protected void closeTransportLayer() throws IOException {
      * @see javax.net.ssl.SSLSocket#setNeedClientAuth(boolean)
      * method documentation for more information
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.590 -0500", hash_original_method = "87B99BB5E16802D75B8230FD21E2413F", hash_generated_method = "C446CA4D04BF46EBA63D06A750C2C8C1")
     
 @Override
@@ -341,6 +339,7 @@ protected void closeTransportLayer() throws IOException {
      * @see javax.net.ssl.SSLSocket#setWantClientAuth(boolean)
      * method documentation for more information
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.594 -0500", hash_original_method = "C4BE9213AE4AE3AE8B3FD470CA7DBEA1", hash_generated_method = "21E8FF7B7CE0E4FB146B4F3F0EE91E86")
     
 @Override
@@ -365,6 +364,7 @@ protected void closeTransportLayer() throws IOException {
      * @see javax.net.ssl.SSLSocket#setEnableSessionCreation(boolean)
      * method documentation for more information
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.598 -0500", hash_original_method = "CCC6382646A49B02E626A26467D69493", hash_generated_method = "3DEA9628617E70F67E1471694350041C")
     
 @Override
@@ -589,6 +589,7 @@ protected void closeTransportLayer() throws IOException {
     /**
      * This method is not supported for SSLSocket implementation.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.627 -0500", hash_original_method = "76A321423E9827230577FC78A6A38E86", hash_generated_method = "B7DDBD1D342472346CC4D037D1CE3585")
     
 @Override
@@ -600,6 +601,7 @@ protected void closeTransportLayer() throws IOException {
     /**
      * This method is not supported for SSLSocket implementation.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.629 -0500", hash_original_method = "274CE2EF30305C6385D88E550D3E79A6", hash_generated_method = "B9FF049CD8864259C2E7D0184D2DD414")
     
 @Override
@@ -703,6 +705,7 @@ protected void needAppData() throws IOException {
      * This method is called by SSLSocketOutputStream when a client application
      * tries to send the data over ssl protocol.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.637 -0500", hash_original_method = "BD84CA3E70E7330B95C89C209BCE2D56", hash_generated_method = "73DFF748A323543548830A7D2DB94C80")
     
 protected void writeAppData(byte[] data, int offset, int len) throws IOException {
@@ -886,7 +889,6 @@ private void reportFatalAlert(byte description_code,
         shutdown();
         throw reason;
     }
-
     
 }
 

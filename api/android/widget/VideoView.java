@@ -27,10 +27,6 @@ import android.view.SurfaceView;
 import android.view.View;
 import android.widget.MediaController.MediaPlayerControl;
 
-
-
-
-
 public class VideoView extends SurfaceView implements MediaPlayerControl {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:55.657 -0500", hash_original_field = "AA32BA63E0527427A516BA30E06A641F", hash_generated_field = "6B005C8EBE8994279368951B4E210396")
 
@@ -132,7 +128,6 @@ public void onVideoSizeChanged(MediaPlayer mp, int width, int height) {
                     getHolder().setFixedSize(mVideoWidth, mVideoHeight);
                 }
             }
-
         
 };
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.146 -0400", hash_original_field = "6FA998399DAAAB96682C792379375439", hash_generated_field = "A6C46A6F86887F5A8FF30D809BE323AE")
@@ -199,7 +194,6 @@ public void onPrepared(MediaPlayer mp) {
                 }
             }
         }
-
         
 };
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.148 -0400", hash_original_field = "ED3CF789A31884E6ADAFA1D223558FAA", hash_generated_field = "2F31C8D08A7A8EEB4881A3B657E505CB")
@@ -217,7 +211,6 @@ public void onCompletion(MediaPlayer mp) {
                 mOnCompletionListener.onCompletion(mMediaPlayer);
             }
         }
-
         
 };
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.151 -0400", hash_original_field = "3E68D0EC14257091AA025E7697E4D6A5", hash_generated_field = "363D54F68F59F0A0A38E0ABC176EF573")
@@ -274,7 +267,6 @@ public boolean onError(MediaPlayer mp, int framework_err, int impl_err) {
             }
             return true;
         }
-
         
 };
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.152 -0400", hash_original_field = "586F4A1CD959A521D8527F9D0DB7C837", hash_generated_field = "C6CDD3D40A42176310D2EA261BFD0698")
@@ -285,7 +277,6 @@ public boolean onError(MediaPlayer mp, int framework_err, int impl_err) {
 public void onBufferingUpdate(MediaPlayer mp, int percent) {
             mCurrentBufferPercentage = percent;
         }
-
         
 };
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.155 -0400", hash_original_field = "95FF723B307E523297040401AEF7D7E6", hash_generated_field = "0369BDB4F6FE064FC2DACE8B422983D1")
@@ -325,7 +316,6 @@ public void surfaceDestroyed(SurfaceHolder holder)
             if (mMediaController != null) mMediaController.hide();
             release(true);
         }
-
         
 };
 
@@ -419,6 +409,7 @@ private void initVideoView() {
         mTargetState  = STATE_IDLE;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:55.724 -0500", hash_original_method = "FF7D3C0BAB1201EED63B4915116CA68A", hash_generated_method = "F35268F14E7AFAC02756F635A19682C9")
     
 public void setVideoPath(String path) {

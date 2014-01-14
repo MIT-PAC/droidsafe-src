@@ -14,10 +14,6 @@ import android.net.NetworkUtils;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public class WifiInfo implements Parcelable {
 
    /**
@@ -83,7 +79,6 @@ public WifiInfo[] newArray(int size) {
         };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:04.669 -0500", hash_original_field = "71E5F11C6C6A357B17335AC29ACEB806", hash_generated_field = "53C0C50586977D30F50A38A02FF5AA68")
 
-
     private SupplicantState mSupplicantState;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:04.671 -0500", hash_original_field = "BA4C35C052E8004F528E30414F0190E7", hash_generated_field = "8B037BB299AA86EC9205CCC26093C407")
 
@@ -105,10 +100,8 @@ public WifiInfo[] newArray(int size) {
     private int mLinkSpeed;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:04.687 -0500", hash_original_field = "E9098950DB44B340A14FFBDC4B14A5D7", hash_generated_field = "8748C1AB2EADB5D1897B9503B257BEA4")
 
-
     private InetAddress mIpAddress;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:04.689 -0500", hash_original_field = "682CA38497F79919D68D1CB6E724CEC5", hash_generated_field = "3901352E95CA91998F9C2F8294C84B42")
-
 
     private String mMacAddress;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:04.691 -0500", hash_original_field = "1C7D754ADACBB7D4690B7B15CB851C7B", hash_generated_field = "8A066F33F6CB5BC95F526BC987310751")
@@ -244,7 +237,6 @@ void setNetworkId(int id) {
         mNetworkId = id;
     }
 
-
     /**
      * @hide
      */
@@ -262,7 +254,6 @@ public boolean isExplicitConnect() {
 public void setExplicitConnect(boolean explicitConnect) {
         this.mExplicitConnect = explicitConnect;
     }
-
 
     /**
      * Each configured network has a unique small integer ID, used to identify
@@ -329,6 +320,7 @@ public void setHiddenSSID(boolean hiddenSSID) {
      * @param stateName the name of the state, as a <code>String</code> returned
      * in an event sent by {@code wpa_supplicant}.
      */
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:04.742 -0500", hash_original_method = "C2C24AA87816421D7C3613D024B55B7F", hash_generated_method = "C2C24AA87816421D7C3613D024B55B7F")
     
 void setSupplicantState(String stateName) {
@@ -378,6 +370,7 @@ public int describeContents() {
     }
 
     /** Implement the Parcelable interface {@hide} */
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:04.752 -0500", hash_original_method = "D24857F81D2FD5D48ED12D74EE96B85F", hash_generated_method = "944E3B9651FC8E61BF18728C60B359E3")
     
 public void writeToParcel(Parcel dest, int flags) {

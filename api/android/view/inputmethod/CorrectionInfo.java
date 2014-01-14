@@ -99,6 +99,7 @@ public CharSequence getNewText() {
      * @param dest The {@link Parcel} to be written.
      * @param flags The flags used for parceling.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.788 -0500", hash_original_method = "4D2AAA8E4AD44FCBAED8BA48A77A4AE0", hash_generated_method = "C7C6E988E3C15E289C9FB58447E14EBA")
     
 public void writeToParcel(Parcel dest, int flags) {

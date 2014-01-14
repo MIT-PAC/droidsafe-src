@@ -8,11 +8,6 @@ import java.lang.ref.Reference;
 import java.lang.ref.WeakReference;
 import java.util.concurrent.atomic.AtomicInteger;
 
-
-
-
-
-
 public class ThreadLocal<T> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.344 -0500", hash_original_field = "65EF0C9DFC0E92D7EED5F56DE419D25E", hash_generated_field = "D0904C715877D79D507857C3DBB2EE5E")
 
@@ -81,6 +76,7 @@ protected T initialValue() {
      *
      * @param value the new value of the variable for the caller thread.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.332 -0500", hash_original_method = "93D51722B7CB3C8EF0C38EE234F866B9", hash_generated_method = "F4573C2031B961898558E7070BE21319")
     
 public void set(T value) {
@@ -118,7 +114,6 @@ public void remove() {
 Values initializeValues(Thread current) {
         return current.localValues = new Values();
     }
-
     
     static class Values {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.349 -0500", hash_original_field = "5815EB4F0C5C8D237058EB34C5FEE776", hash_generated_field = "FC71C8361E3E0D880F15510AF5EACDF8")

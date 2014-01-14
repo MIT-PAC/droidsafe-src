@@ -562,6 +562,7 @@ public SpannableStringBuilder replace(final int start, final int end,
         return this; 
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @Override
 	public void setSpan(Object what, int start, int end, int flags) {
 		// TODO Auto-generated method stub

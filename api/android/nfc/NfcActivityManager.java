@@ -10,8 +10,6 @@ import android.app.Activity;
 import android.os.RemoteException;
 import android.util.Log;
 
-
-
 public final class NfcActivityManager extends INdefPushCallback.Stub {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:52.146 -0500", hash_original_field = "F831CF2D478CE232979B41DE04931C42", hash_generated_field = "1CCFC0E09744FE65F20D7FAA18F3A6FD")
 
@@ -20,7 +18,6 @@ public final class NfcActivityManager extends INdefPushCallback.Stub {
 
     static final Boolean DBG = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:52.150 -0500", hash_original_field = "278F7851F6317C51C418D85323A63D34", hash_generated_field = "278F7851F6317C51C418D85323A63D34")
-
 
      NfcAdapter mAdapter;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:52.152 -0500", hash_original_field = "5469BB6F258042FA572F1AF012C94830", hash_generated_field = "5469BB6F258042FA572F1AF012C94830")
@@ -75,6 +72,7 @@ public void onDestroy(Activity activity) {
         mNfcState.remove(activity);
     }
 
+    @DSSink({DSSinkKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:52.181 -0500", hash_original_method = "571064E533016906493F5781A338B8A8", hash_generated_method = "6D9502B2812F579BD22C4F0E4DF93B59")
     
 public synchronized void setNdefPushMessage(Activity activity, NdefMessage message) {
@@ -173,7 +171,6 @@ synchronized void updateNfcService(NfcActivityState state) {
             mAdapter.attemptDeadServiceRecovery(e);
         }
     }
-
     
     class NfcActivityState {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:52.157 -0500", hash_original_field = "FC09BA0B5D237866CCDEC966434CCE0D", hash_generated_field = "FC09BA0B5D237866CCDEC966434CCE0D")
@@ -203,7 +200,6 @@ synchronized void updateNfcService(NfcActivityState state) {
             s.append(onNdefPushCompleteCallback).append("]");
             return s.toString();
         }
-
         
     }
 

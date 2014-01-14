@@ -164,6 +164,7 @@ public void setEmpty() {
 
     /** Set the region to the specified region.
     */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.206 -0500", hash_original_method = "4FCDB3DC16FC27229A4383057FFC976C", hash_generated_method = "DF74DC22025304EEB4E1BBC240C829FA")
     
 public boolean set(Region region) {
@@ -172,6 +173,7 @@ public boolean set(Region region) {
 
     /** Set the region to the specified rectangle
     */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.208 -0500", hash_original_method = "C2513170875A2D5A2EB27E891206577A", hash_generated_method = "1EE701CCE5E602E8F86BFFEA5C6A52FA")
     
 public boolean set(Rect r) {
@@ -180,6 +182,7 @@ public boolean set(Rect r) {
     
     /** Set the region to the specified rectangle
     */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.210 -0500", hash_original_method = "D06421CD512172DCB28D2F3E0620053E", hash_generated_method = "A6370D0256D51227732DADCCC0838A83")
     
 public boolean set(int left, int top, int right, int bottom) {
@@ -192,6 +195,7 @@ public boolean set(int left, int top, int right, int bottom) {
      * that is identical to the pixels that would be drawn by the path
      * (with no antialiasing).
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.212 -0500", hash_original_method = "E058C8FF714DCD6DC5C3B199CE291ABB", hash_generated_method = "0E8BAC49241220EF5972DCAD88426D86")
     
 public boolean setPath(Path path, Region clip) {

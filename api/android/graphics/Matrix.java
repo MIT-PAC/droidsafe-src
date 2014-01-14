@@ -327,6 +327,7 @@ public class Matrix {
 		return false;
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void set(Matrix src){
 		// Original method
 		/*
@@ -363,6 +364,7 @@ public class Matrix {
 		//Return nothing
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setTranslate(float dx, float dy){
 		// Original method
 		/*
@@ -373,6 +375,7 @@ public class Matrix {
 		//Return nothing
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setScale(float sx, float sy, float px, float py){
 		// Original method
 		/*
@@ -383,6 +386,7 @@ public class Matrix {
 		//Return nothing
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setScale(float sx, float sy){
 		// Original method
 		/*
@@ -393,6 +397,7 @@ public class Matrix {
 		//Return nothing
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setRotate(float degrees, float px, float py){
 		// Original method
 		/*
@@ -403,6 +408,7 @@ public class Matrix {
 		//Return nothing
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setRotate(float degrees){
 		// Original method
 		/*
@@ -413,6 +419,7 @@ public class Matrix {
 		//Return nothing
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setSinCos(float sinValue, float cosValue, float px, float py){
 		// Original method
 		/*
@@ -423,6 +430,7 @@ public class Matrix {
 		//Return nothing
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setSinCos(float sinValue, float cosValue){
 		// Original method
 		/*
@@ -433,6 +441,7 @@ public class Matrix {
 		//Return nothing
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setSkew(float kx, float ky, float px, float py){
 		// Original method
 		/*
@@ -443,6 +452,7 @@ public class Matrix {
 		//Return nothing
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setSkew(float kx, float ky){
 		// Original method
 		/*
@@ -453,6 +463,7 @@ public class Matrix {
 		//Return nothing
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public boolean setConcat(Matrix a, Matrix b){
 		// Original method
 		/*
@@ -637,6 +648,7 @@ public class Matrix {
 		return false;
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public boolean setPolyToPoly(float[] src, int srcIndex,
                                  float[] dst, int dstIndex,
                                  int pointCount){
@@ -799,6 +811,7 @@ ScaleToFit(int nativeInt) {
 		//Return nothing
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setValues(float[] values){
 		// Original method
 		/*

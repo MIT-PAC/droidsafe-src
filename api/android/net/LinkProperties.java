@@ -14,13 +14,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
 
-
-
-
-
 public class LinkProperties implements Parcelable {
-
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.187 -0400", hash_original_field = "AD9F190960A42BD6F0B1EE16B7E966B8", hash_generated_field = "24691869BF8BBA8F28BDB834441D45F0")
 
@@ -65,7 +59,6 @@ public LinkProperties[] newArray(int size) {
             }
         };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:16.435 -0500", hash_original_field = "6D2C834A0EA52BA031060A9E0AEE620E", hash_generated_field = "6D2C834A0EA52BA031060A9E0AEE620E")
-
 
     String mIfaceName;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:16.437 -0500", hash_original_field = "6771322879F7906B3F7AD27229E85E95", hash_generated_field = "00DE8BD688F501E4FB5528A63461C364")
@@ -407,7 +400,6 @@ public CompareResult<RouteInfo> compareRoutes(LinkProperties target) {
         return result;
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:16.511 -0500", hash_original_method = "28ECE8095E829F4615B9B35514C29B36", hash_generated_method = "1267DE3E5DC0277251D36AC5E4F91E41")
     
 @Override
@@ -423,7 +415,6 @@ public CompareResult<RouteInfo> compareRoutes(LinkProperties target) {
                 + mRoutes.size() * 41
                 + ((null == mHttpProxy) ? 0 : mHttpProxy.hashCode()));
     }
-
     
     public static class CompareResult<T> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:16.446 -0500", hash_original_field = "89FDD408958B41DE9635DC5B20E2173D", hash_generated_field = "656FE863E184B8E40AE962362C5E65EA")
@@ -450,7 +441,6 @@ public CompareResult<RouteInfo> compareRoutes(LinkProperties target) {
             retVal += "]";
             return retVal;
         }
-
         
     }
 
@@ -458,6 +448,7 @@ public CompareResult<RouteInfo> compareRoutes(LinkProperties target) {
      * Implement the Parcelable interface.
      * @hide
      */
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:16.514 -0500", hash_original_method = "FA484CCA03B27F5C12EABAE629DE360A", hash_generated_method = "1F987581421EDEB082D3EE8ADDC317DA")
     
 public void writeToParcel(Parcel dest, int flags) {

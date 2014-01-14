@@ -498,6 +498,7 @@ public CdmaCall getRingingCall() {
         return mCT.ringingCall;
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:01.303 -0500", hash_original_method = "E892EC268DCFDF5C9C27A7DDC7E00573", hash_generated_method = "6702E37291BD1A4A6BCF74E7D5962B7E")
     
 public void setMute(boolean muted) {
@@ -517,6 +518,7 @@ public void conference() throws CallStateException {
         Log.e(LOG_TAG, "conference: not possible in CDMA");
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:01.310 -0500", hash_original_method = "F90799FAE99EB431CF7F205DFD6DDD5D", hash_generated_method = "6055537918F17796B50CB3C83FD7F646")
     
 public void enableEnhancedVoicePrivacy(boolean enable, Message onComplete) {
@@ -570,6 +572,7 @@ void
         mNotifier.notifySignalStrength(this);
     }
 
+    @DSSink({DSSinkKind.VOIP})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:01.322 -0500", hash_original_method = "3B6D00BA5404778271A196326B2492C1", hash_generated_method = "CAA95CA07251672ED466FAC9893CC7A5")
     
 public Connection
@@ -579,6 +582,7 @@ public Connection
         return mCT.dial(newDialString);
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:01.324 -0500", hash_original_method = "C4CAEF0C07F27C620A5D9B835D3227D9", hash_generated_method = "CEF32D41440CAE236C10FE1F88ABD641")
     
 public Connection dial(String dialString, UUSInfo uusInfo) throws CallStateException {
@@ -636,6 +640,7 @@ boolean isInCall() {
                 .isAlive());
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:01.342 -0500", hash_original_method = "573D1DDDB474C2914324D2DBB21AD4BF", hash_generated_method = "AAD0237C8CD407660AE46C519726D826")
     
 public void
@@ -700,6 +705,7 @@ public void getCallWaiting(Message onComplete) {
         mCM.queryCallWaiting(CommandsInterface.SERVICE_CLASS_VOICE, onComplete);
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:01.365 -0500", hash_original_method = "6583EBFAAE11F5B271B0C202AB11C3E9", hash_generated_method = "80FF770A1CF7676AE7FE5F84ACA216E2")
     
 public void
@@ -778,12 +784,14 @@ public void
         Log.e(LOG_TAG, "selectNetworkManually: not possible in CDMA");
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:01.389 -0500", hash_original_method = "A54F4B18F21B3A39961648F4BDA2F061", hash_generated_method = "95390C406E6E2FA690715623B2F3AA59")
     
 public void setOnPostDialCharacter(Handler h, int what, Object obj) {
         mPostDialHandler = new Registrant(h, what, obj);
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:01.391 -0500", hash_original_method = "3D832E28FC020C3451E1ECD577F7705D", hash_generated_method = "255B7B846A2B7030BCDC2D90A2156DB1")
     
 public boolean handlePinMmi(String dialString) {
@@ -820,12 +828,14 @@ void onMMIDone(CdmaMmiCode mmi) {
         }
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:01.397 -0500", hash_original_method = "8885A01E1E8D54116E470B45B5958287", hash_generated_method = "41D10830F5B49D2FC803108757C8E33B")
     
 public void setLine1Number(String alphaTag, String number, Message onComplete) {
         Log.e(LOG_TAG, "setLine1Number: not possible in CDMA");
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:01.399 -0500", hash_original_method = "9F48D83DEE90081423E43167EA0B9F32", hash_generated_method = "F937F6BCEBC9FA9F744B3A73B1E865C9")
     
 public void setCallWaiting(boolean enable, Message onComplete) {
@@ -838,6 +848,7 @@ public void updateServiceLocation() {
         mSST.enableSingleLocationUpdate();
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:01.403 -0500", hash_original_method = "910AE5D7D70CC37EC2511A21C3761E3A", hash_generated_method = "9007A6C5DAD94BD2A91DDACD886335AD")
     
 public void setDataRoamingEnabled(boolean enable) {
@@ -868,6 +879,7 @@ public void unregisterForSubscriptionInfoReady(Handler h) {
         mSST.unregisterForSubscriptionInfoReady(h);
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:01.414 -0500", hash_original_method = "9CC75D31629A3B23A63ED4AF8AC1CC3C", hash_generated_method = "B58336EB31033A3C650483BCF44A81E3")
     
 public void setOnEcbModeExitResponse(Handler h, int what, Object obj) {
@@ -958,12 +970,14 @@ public DataState getDataConnectionState(String apnType) {
         return ret;
     }
 
+    @DSSink({DSSinkKind.SMS_MMS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:01.428 -0500", hash_original_method = "F7E968145C01057A311E794FEA9BAA95", hash_generated_method = "0496708406A10D9C0A87EFD82D6C5053")
     
 public void sendUssdResponse(String ussdMessge) {
         Log.e(LOG_TAG, "sendUssdResponse: not possible in CDMA");
     }
 
+    @DSSink({DSSinkKind.PHONE_CONNECTION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:01.431 -0500", hash_original_method = "98607162C44D8873925496654D522BF8", hash_generated_method = "A80C5B09DA17CC16D06DE98B01BF320A")
     
 public void sendDtmf(char c) {
@@ -977,6 +991,7 @@ public void sendDtmf(char c) {
         }
     }
 
+    @DSSink({DSSinkKind.PHONE_CONNECTION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:01.433 -0500", hash_original_method = "3FBA1333099AE68AF02019D712D23AB2", hash_generated_method = "D9801C8D2F605F56D81343C15291222C")
     
 public void startDtmf(char c) {
@@ -994,6 +1009,7 @@ public void stopDtmf() {
         mCM.stopDtmf(null);
     }
 
+    @DSSink({DSSinkKind.PHONE_CONNECTION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:01.439 -0500", hash_original_method = "E3E7B97B548DE87ECFE3195659B23FF9", hash_generated_method = "53401FBA49ACD52054DF4F051D4AA9B3")
     
 public void sendBurstDtmf(String dtmfString, int on, int off, Message onComplete) {
@@ -1017,6 +1033,7 @@ public void getAvailableNetworks(Message response) {
         Log.e(LOG_TAG, "getAvailableNetworks: not possible in CDMA");
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:01.443 -0500", hash_original_method = "9C1B6A588127C991585EBB349A2379DB", hash_generated_method = "0B054564AF5D2E3BB4E0559DFBB599B9")
     
 public void setOutgoingCallerIdDisplay(int commandInterfaceCLIRMode, Message onComplete) {
@@ -1114,6 +1131,7 @@ public void getCallForwardingOption(int commandInterfaceCFReason, Message onComp
         Log.e(LOG_TAG, "getCallForwardingOption: not possible in CDMA");
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:01.466 -0500", hash_original_method = "A636525DAEF6D9A554C143CAF44D5772", hash_generated_method = "D8B0FE2CAD8BE1BE781773E841633A21")
     
 public void setCallForwardingOption(int commandInterfaceCFAction,
@@ -1172,7 +1190,8 @@ void notifyPreciseCallStateChanged() {
         super.notifyPreciseCallStateChangedP();
     }
 
-     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:01.481 -0500", hash_original_method = "73E7BFF04E4E9785E6146409272926BA", hash_generated_method = "73E7BFF04E4E9785E6146409272926BA")
+     @DSSink({DSSinkKind.SYSTEM_SETTINGS})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:01.481 -0500", hash_original_method = "73E7BFF04E4E9785E6146409272926BA", hash_generated_method = "73E7BFF04E4E9785E6146409272926BA")
     
 void notifyServiceStateChanged(ServiceState ss) {
          super.notifyServiceStateChangedP(ss);
@@ -1184,14 +1203,16 @@ void notifyLocationChanged() {
          mNotifier.notifyCellLocation(this);
      }
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:01.486 -0500", hash_original_method = "292444BE96E352C8E8312B338E19EF02", hash_generated_method = "990C97FD08BF8064CCDF498BC93F23E9")
+    /*package*/ @DSSink({DSSinkKind.PHONE_STATE})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:01.486 -0500", hash_original_method = "292444BE96E352C8E8312B338E19EF02", hash_generated_method = "990C97FD08BF8064CCDF498BC93F23E9")
     
 void notifyNewRingingConnection(Connection c) {
         /* we'd love it if this was package-scoped*/
         super.notifyNewRingingConnectionP(c);
     }
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:01.488 -0500", hash_original_method = "1858091673D3A4B62C058FCC91892C36", hash_generated_method = "1858091673D3A4B62C058FCC91892C36")
+    /*package*/ @DSSink({DSSinkKind.PHONE_STATE})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:01.488 -0500", hash_original_method = "1858091673D3A4B62C058FCC91892C36", hash_generated_method = "1858091673D3A4B62C058FCC91892C36")
     
 void notifyDisconnect(Connection cn) {
         mDisconnectRegistrants.notifyResult(cn);
@@ -1491,6 +1512,7 @@ public void unregisterForEriFileLoaded(Handler h) {
     /**
      * {@inheritDoc}
      */
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:01.535 -0500", hash_original_method = "C4157CB043EC8B3384F8270EB7DCD5BB", hash_generated_method = "A23F33679D922B6A305F95FDA36AFC9C")
     
 public final void setSystemProperty(String property, String value) {
@@ -1536,6 +1558,7 @@ public void getCellBroadcastSmsConfig(Message response) {
      *
      * @param response Callback message is empty on completion
      */
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:01.544 -0500", hash_original_method = "718A796BA1FEFA7B8760E97D0CFF0F71", hash_generated_method = "287414991E365A4CF383918E8322DCED")
     
 public void setCellBroadcastSmsConfig(int[] configValuesArray, Message response) {
@@ -1719,6 +1742,7 @@ private void setIsoCountryProperty(String operatorNumeric) {
      *
      * @return true for success; false otherwise.
      */
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:01.611 -0500", hash_original_method = "B076A318D7F3CB7E259ECDC99FDB3D0D", hash_generated_method = "0A44E08571681D07EC93C75BDC2D40E8")
     
 boolean updateCurrentCarrierInProvider(String operatorNumeric) {

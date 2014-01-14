@@ -12,10 +12,6 @@ import android.database.CursorWindow;
 import android.os.StrictMode;
 import android.util.Log;
 
-
-
-
-
 public class SQLiteCursor extends AbstractWindowedCursor {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.001 -0500", hash_original_field = "3A0C7CEFD5D785775A84ED015B93C1D0", hash_generated_field = "BF7B5B2F2106B38369133C49B98E70AF")
 
@@ -315,6 +311,7 @@ private synchronized SQLiteQuery getQuery() {
         return result;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.059 -0500", hash_original_method = "5E8FFACADD72707A480415823E5A0DF8", hash_generated_method = "0FEFDF0AF3FD942ADF49C6291434BC82")
     
 @Override
@@ -326,6 +323,7 @@ private synchronized SQLiteQuery getQuery() {
     /**
      * Changes the selection arguments. The new values take effect after a call to requery().
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.061 -0500", hash_original_method = "F2A62A4628FC6852210F2ED0EED8C7EA", hash_generated_method = "0FA948D4E0ED78418E3872CE76C7197D")
     
 public void setSelectionArguments(String[] selectionArgs) {

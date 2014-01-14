@@ -28,17 +28,11 @@ import android.widget.TextView;
 
 import com.android.internal.util.CharSequences;
 
-
-
-
-
-
 public class Preference implements Comparable<Preference>, OnDependencyChangeListener {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.720 -0500", hash_original_field = "4E4404212112BADDA1CC62CB0E3D8ABF", hash_generated_field = "2E41574F494D78468755ADDE8E4C30A4")
 
     public static final int DEFAULT_ORDER = Integer.MAX_VALUE;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.722 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
-
 
     private Context mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.724 -0500", hash_original_field = "F44A9B2F698C7B96C36DE45B8F61794D", hash_generated_field = "13262EB3751B753EEB3302EF75D8B1E5")
@@ -48,14 +42,12 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
 
     private long mId;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.728 -0500", hash_original_field = "109327E014DA9E51667A6D43C3A98441", hash_generated_field = "B2CD75E86D570A2CCE7E2BC973BD4ACD")
-
     
     private OnPreferenceChangeListener mOnChangeListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.730 -0500", hash_original_field = "F4FC708BB66F0FF2E3CCB64DA416E3AE", hash_generated_field = "03339AEC23A0F6C8C8113E6F7DC55FB5")
 
     private OnPreferenceClickListener mOnClickListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.732 -0500", hash_original_field = "97665F9B90D8994894F926AD6A1AFAE9", hash_generated_field = "4DBBABE4B5343924D877A673E4358521")
-
 
     private int mOrder = DEFAULT_ORDER;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.734 -0500", hash_original_field = "8C445459F9A68BF8713F87AC9D695E47", hash_generated_field = "ECAB18871B55104BACD4283C12B1074D")
@@ -110,7 +102,6 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
 
     private boolean mShouldDisableView = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.770 -0500", hash_original_field = "E4558ED1225E38531819A9EC48B8C136", hash_generated_field = "2628AFC967B4980D202AAA14C9F08E6C")
-
     
     private int mLayoutResId = com.android.internal.R.layout.preference;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.772 -0500", hash_original_field = "4AC3CA97CE19C44928B883B97A51E139", hash_generated_field = "03CE89F32EE4B5097448BE77263408B4")
@@ -120,15 +111,12 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
 
     private boolean mHasSpecifiedLayout = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.776 -0500", hash_original_field = "211CC0C05C9CD7BEB76E30B2F3EE9682", hash_generated_field = "AC60A661DDD5C1ADBF7F01BD463F7E24")
-
     
     private OnPreferenceChangeInternalListener mListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.778 -0500", hash_original_field = "C5F654B79522D99E090B49A6FA824C31", hash_generated_field = "B4077C41DC030C953102067792AA61E0")
-
     
     private List<Preference> mDependents;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.780 -0500", hash_original_field = "9D46E1ABF6612B5F9CED8668A15F4930", hash_generated_field = "5E4C3692572C298E63D6463802841D4E")
-
     
     private boolean mBaseMethodCalled;
 
@@ -457,7 +445,7 @@ protected View onCreateView(ViewGroup parent) {
         final LayoutInflater layoutInflater =
             (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         
-        final View layout = layoutInflater.inflate(mLayoutResId, parent, false); 
+        final View layout = layoutInflater.inflate(mLayoutResId, parent, false);
         
         final ViewGroup widgetFrame = (ViewGroup) layout
                 .findViewById(com.android.internal.R.id.widget_frame);
@@ -601,6 +589,7 @@ public void setTitle(CharSequence title) {
      * @see #setTitle(CharSequence)
      * @param titleResId The title as a resource ID.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.839 -0500", hash_original_method = "4E4A93A9A53A92BE0779D6D57BF6863D", hash_generated_method = "33703268DB5598045A51C7BA745C2ABE")
     
 public void setTitle(int titleResId) {
@@ -708,6 +697,7 @@ public void setSummary(CharSequence summary) {
      * @see #setSummary(CharSequence)
      * @param summaryResId The summary as a resource.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.856 -0500", hash_original_method = "7AEFEE5A5E2C81392912FC13D133C130", hash_generated_method = "5E42DB8EFDCE67E38657239ACF0C48B4")
     
 public void setSummary(int summaryResId) {
@@ -1306,6 +1296,7 @@ private void unregisterDependent(Preference dependent) {
      * @param disableDependents Whether this Preference should disable
      *            its dependents.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.942 -0500", hash_original_method = "02C347ADE8272FB6E630575816981A99", hash_generated_method = "3CD58C0767C66BB2C78AE785B9A4A21B")
     
 public void notifyDependencyChange(boolean disableDependents) {
@@ -1469,6 +1460,7 @@ private void tryCommit(SharedPreferences.Editor editor) {
      *         will be a batch commit later.)
      * @see #getPersistedString(String)
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.964 -0500", hash_original_method = "386F50F42D6EB5DC2DA2887FAD5D9C7B", hash_generated_method = "9B5C087D3CC87E17EBE1A4FFD846B271")
     
 protected boolean persistString(String value) {
@@ -1579,6 +1571,7 @@ protected Set<String> getPersistedStringSet(Set<String> defaultReturnValue) {
      * @see #persistString(String)
      * @see #getPersistedInt(int)
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.974 -0500", hash_original_method = "EDA708B947224EBF19ED1E56671C9A01", hash_generated_method = "C6CF3BE0CD44CFED540A3FE2F6F1B49E")
     
 protected boolean persistInt(int value) {
@@ -1627,6 +1620,7 @@ protected int getPersistedInt(int defaultReturnValue) {
      * @see #persistString(String)
      * @see #getPersistedFloat(float)
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.978 -0500", hash_original_method = "554687CB7FDF3E22A2095D4942A8012F", hash_generated_method = "8D8B99361E8FBA88C3FBCC687A73E535")
     
 protected boolean persistFloat(float value) {
@@ -1675,6 +1669,7 @@ protected float getPersistedFloat(float defaultReturnValue) {
      * @see #persistString(String)
      * @see #getPersistedLong(long)
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.982 -0500", hash_original_method = "C10CC879E3FA9306B83F34EDB87FCEA5", hash_generated_method = "066C0693A0144A1C9EA7DFD81EDA5690")
     
 protected boolean persistLong(long value) {
@@ -1723,6 +1718,7 @@ protected long getPersistedLong(long defaultReturnValue) {
      * @see #persistString(String)
      * @see #getPersistedBoolean(boolean)
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.987 -0500", hash_original_method = "D20BDAFE65F5D54A08F0A9EE0DEAC992", hash_generated_method = "2B56D21A4DDF4A28AB2E22C2FCE4645A")
     
 protected boolean persistBoolean(boolean value) {
@@ -1902,11 +1898,9 @@ void dispatchRestoreInstanceState(Bundle container) {
             }
         }
     }
-
     
     public static class BaseSavedState extends AbsSavedState {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:28.029 -0500", hash_original_field = "36945CEB7F71B305AA42039BECC3DF22", hash_generated_field = "1603EC57FF7A24DE0B9CE75D44794F2A")
-
         
         public static final Parcelable.Creator<BaseSavedState> CREATOR =
                 new Parcelable.Creator<BaseSavedState>() {
@@ -1940,8 +1934,6 @@ public BaseSavedState(Parcelable superState) {
             }
         
     }
-
-
     
     public interface OnPreferenceChangeListener {
         
@@ -1956,7 +1948,6 @@ public BaseSavedState(Parcelable superState) {
     interface OnPreferenceChangeInternalListener {
         
         void onPreferenceChange(Preference preference);
-        
         
         void onPreferenceHierarchyChange(Preference preference);
     }

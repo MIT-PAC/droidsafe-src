@@ -7,11 +7,6 @@ import android.util.Log;
 import droidsafe.annotations.*;
 import com.android.internal.util.ArrayUtils;
 
-
-
-
-
-
 public class SparseIntArray implements Cloneable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.195 -0500", hash_original_method = "7DB5AA23E16883217822FBC6D13669D2", hash_generated_method = "FEB35469F5B9E3BA231D8C8D51EF0135")
@@ -36,7 +31,6 @@ private static int binarySearch(int[] a, int start, int len, int key) {
             return ~high;
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.152 -0500", hash_original_field = "904D0E6EB4847EA02E1703FDE76AE0FF", hash_generated_field = "61AC896AB2732D0B3CF0262159DAE2AD")
-
 
     private int[] mKeys;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.154 -0500", hash_original_field = "AF95716C8E1CC9A8A1F58D24EE9BA3AC", hash_generated_field = "99CDF6DB2A492E619A6F25FAC593741C")
@@ -250,6 +244,7 @@ public void clear() {
      * Puts a key/value pair into the array, optimizing for the case where
      * the key is greater than all existing keys in the array.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.191 -0500", hash_original_method = "582360498D222FA3AC7FD1DD315CF583", hash_generated_method = "4075642C1E9904B5D7C576D7607FAE56")
     
 public void append(int key, int value) {
@@ -277,7 +272,6 @@ public void append(int key, int value) {
         mValues[pos] = value;
         mSize = pos + 1;
     }
-
     
 }
 

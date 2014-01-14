@@ -62,6 +62,7 @@ public Passthrough(CharacterStyle cs) {
         /**
          * Passes updateDrawState through to the underlying CharacterStyle.
          */
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.037 -0500", hash_original_method = "813F80F60D9F0493A35140828DCD41CA", hash_generated_method = "6A424092A6CF9170B611DF2FD945343C")
         
 @Override

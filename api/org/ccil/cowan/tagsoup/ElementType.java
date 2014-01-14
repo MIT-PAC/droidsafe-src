@@ -255,7 +255,8 @@ public boolean canContain(ElementType other) {
 	@param value The value of the attribute
 	*/
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.082 -0500", hash_original_method = "704A404E71DCE2FCDA4DFB645734E42D", hash_generated_method = "A4CB3D824D3358C4B0FDC3DF58D30A92")
+	@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.082 -0500", hash_original_method = "704A404E71DCE2FCDA4DFB645734E42D", hash_generated_method = "A4CB3D824D3358C4B0FDC3DF58D30A92")
     
 public void setAttribute(AttributesImpl atts, String name, String type, String value) {
 		if (name.equals("xmlns") || name.startsWith("xmlns:")) {
@@ -285,7 +286,8 @@ public void setAttribute(AttributesImpl atts, String name, String type, String v
 	@param value The value of the attribute
 	*/
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.087 -0500", hash_original_method = "EA247B977CB57294BB68422F3AC78185", hash_generated_method = "DB609339BB276B926F59AF9100DC19FD")
+	@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.087 -0500", hash_original_method = "EA247B977CB57294BB68422F3AC78185", hash_generated_method = "DB609339BB276B926F59AF9100DC19FD")
     
 public void setAttribute(String name, String type, String value) {
 		setAttribute(theAtts, name, type, value);

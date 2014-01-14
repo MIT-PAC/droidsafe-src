@@ -10,20 +10,14 @@ import java.util.regex.Pattern;
 
 import android.net.Uri;
 
-
-
-
-
 public class UriMatcher {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:39.363 -0500", hash_original_field = "0CD2043130D9B745DF163CF91A6417B5", hash_generated_field = "EC83DD3596C16D8C7F528F9C8BD122E7")
 
     public static final int NO_MATCH = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:39.373 -0500", hash_original_field = "0218AA22E7302220E9E4D01109DA344B", hash_generated_field = "74E03DBA734BDB2408CC928ABAC31EB9")
 
-
     static final Pattern PATH_SPLIT_PATTERN = Pattern.compile("/");
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:39.378 -0500", hash_original_field = "0203DA6F49D4E349D41CD1166EA19E90", hash_generated_field = "B743019AE27D261938D2BCF0DA9454CE")
-
 
     private static final int EXACT = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:39.381 -0500", hash_original_field = "FDCF7DABCA0423FE97E346C00BD48BDF", hash_generated_field = "4679523F8C31D64A95ADAB50A513AABD")
@@ -33,7 +27,6 @@ public class UriMatcher {
 
     private static final int TEXT = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:39.386 -0500", hash_original_field = "72DDC44E3DCFD57F1A99143C6BCFD37C", hash_generated_field = "814428A5309A583B3B018643DB7956B1")
-
 
     private int mCode;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:39.388 -0500", hash_original_field = "536F29789198CD68E543D8DC79CDC71E", hash_generated_field = "D99A25611C9835F538CE42B4D7286035")
@@ -82,6 +75,7 @@ private UriMatcher()
      * @param code the code that is returned when a URI is matched
      * against the given components. Must be positive.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:39.371 -0500", hash_original_method = "2E3898492678127443A40FFAA44913F1", hash_generated_method = "A56B1FF934AE2286266D1A896140FC75")
     
 public void addURI(String authority, String path, int code)

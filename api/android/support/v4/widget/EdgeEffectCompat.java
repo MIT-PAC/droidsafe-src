@@ -36,6 +36,7 @@ public EdgeEffectCompat(Context context) {
      * @param width Effect width in pixels
      * @param height Effect height in pixels
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:25.926 -0500", hash_original_method = "D4DAEE1A405642168AB096E0B8E2EAD2", hash_generated_method = "B498A43726E29C2CDF3B80ECFCEDD032")
     
 public void setSize(int width, int height) {
@@ -126,6 +127,7 @@ public Object newEdgeEffect(Context context) {
             return null;
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:25.884 -0500", hash_original_method = "7AB0823D4C5E0A56EB104E764A6EE643", hash_generated_method = "2A3F2A3644496ACB1CF1EDA0A2938943")
         
 public void setSize(Object edgeEffect, int width, int height) {
@@ -181,6 +183,7 @@ public Object newEdgeEffect(Context context) {
             return EdgeEffectCompatIcs.newEdgeEffect(context);
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:25.904 -0500", hash_original_method = "7828FC66149E7A8F26ACE38B475CC37B", hash_generated_method = "12A358F1E0CC70FBC6CB0DC94F3A42EC")
         
 public void setSize(Object edgeEffect, int width, int height) {

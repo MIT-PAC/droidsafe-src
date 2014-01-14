@@ -20,11 +20,6 @@ import javax.net.ssl.SSLEngineResult;
 import javax.net.ssl.SSLException;
 import javax.net.ssl.SSLHandshakeException;
 
-
-
-
-
-
 public abstract class HandshakeProtocol {
 
     /**
@@ -476,6 +471,7 @@ protected void unexpectedMessage() {
      *
      * @param message
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:05.463 -0500", hash_original_method = "0009DED469C26D41942AD89710EE0C01", hash_generated_method = "2225A3335F1D8E53AB255168629B865D")
     
 public void send(Message message) {

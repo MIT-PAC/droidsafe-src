@@ -12,13 +12,8 @@ import android.view.ViewConfiguration;
 import android.view.animation.AnimationUtils;
 import android.view.animation.Interpolator;
 
-
-
-
-
 public class OverScroller {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.481 -0500", hash_original_field = "582653CA594E9011AB41A4FCE5484EDB", hash_generated_field = "71A034DCC41856FE859BC1F065FC4DA6")
-
 
     private static final int DEFAULT_DURATION = 250;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.483 -0500", hash_original_field = "3D6FED5899F5F015C1131133F50D0489", hash_generated_field = "A767E7A0CD4C56577AF1FE7F420CA686")
@@ -32,17 +27,14 @@ public class OverScroller {
     private int mMode;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.472 -0500", hash_original_field = "5B7884ABC551A98832C6BB808D3C0618", hash_generated_field = "9FFB811B26F4EA1D9264A27559A21A04")
 
-
     private  SplineOverScroller mScrollerX;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.475 -0500", hash_original_field = "3F3890F0379851679E99EC14AB8BC162", hash_generated_field = "2EB0A894343F6510CC074954C4F3CB9E")
 
     private  SplineOverScroller mScrollerY;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.477 -0500", hash_original_field = "A1326AE9004157E0812422F0F20CD6F9", hash_generated_field = "67BF1E9EFEC019D28BF77934CF035B72")
 
-
     private  Interpolator mInterpolator;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.479 -0500", hash_original_field = "3C6C48AF201FFC06BDC466551DBF9587", hash_generated_field = "DB496AACF49E477CC5F54743876A46FF")
-
 
     private  boolean mFlywheel;
 
@@ -133,6 +125,7 @@ public OverScroller(Context context, Interpolator interpolator,
      * @param friction A scalar dimension-less value representing the coefficient of
      *         friction.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.501 -0500", hash_original_method = "E258F8966760114615A66C59C43DDBF7", hash_generated_method = "3CFBAE51894E2D9511478844B8926820")
     
 public final void setFriction(float friction) {
@@ -296,6 +289,7 @@ public final int getFinalY() {
      *             the duration of an existing scroll, use startScroll
      *             to begin a new animation.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.530 -0500", hash_original_method = "21D9AD21BF731806972ABE02338AD0C0", hash_generated_method = "6C037DB2831E3C142E831FB0859472BC")
     
 @Deprecated
@@ -316,6 +310,7 @@ public final int getFinalY() {
      *             the duration of an existing scroll, use startScroll
      *             to begin a new animation.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.532 -0500", hash_original_method = "300115417BC2D028444CA0676224C129", hash_generated_method = "C37EF6DCA29E32742DF32959251A87F2")
     
 @Deprecated
@@ -395,6 +390,7 @@ public boolean computeScrollOffset() {
      * @param dy Vertical distance to travel. Positive numbers will scroll the
      *        content up.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.537 -0500", hash_original_method = "2558578E34A043045AE1AF32A3800D82", hash_generated_method = "F9CD515A4E2C5B16D0DE692CF1A61742")
     
 public void startScroll(int startX, int startY, int dx, int dy) {
@@ -414,6 +410,7 @@ public void startScroll(int startX, int startY, int dx, int dy) {
      *        content up.
      * @param duration Duration of the scroll in milliseconds.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.540 -0500", hash_original_method = "C7C9FE1639F9BA6211C746BC2E590EF8", hash_generated_method = "B751B33CC0BF2EE6E2C7273D514854B1")
     
 public void startScroll(int startX, int startY, int dx, int dy, int duration) {
@@ -512,6 +509,7 @@ public void fling(int startX, int startY, int velocityX, int velocityY,
      * @param overX Magnitude of overscroll allowed. This should be the maximum
      *              desired distance from finalX. Absolute value - must be positive.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.549 -0500", hash_original_method = "B9132D3CC6E7407A65F178898D94F282", hash_generated_method = "6D02779E22897C5CCC1B61B4DC8471C5")
     
 public void notifyHorizontalEdgeReached(int startX, int finalX, int overX) {
@@ -531,6 +529,7 @@ public void notifyHorizontalEdgeReached(int startX, int finalX, int overX) {
      * @param overY Magnitude of overscroll allowed. This should be the maximum
      *              desired distance from finalY. Absolute value - must be positive.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.551 -0500", hash_original_method = "EAACB5866396964CA4004FBBF9350F29", hash_generated_method = "85C49A64CA88551D9AB324C5AED2C0C3")
     
 public void notifyVerticalEdgeReached(int startY, int finalY, int overY) {
@@ -558,7 +557,6 @@ public boolean isOverScrolled() {
                 (!mScrollerY.mFinished &&
                         mScrollerY.mState != SplineOverScroller.SPLINE));
     }
-
     
     static class SplineOverScroller {
 
@@ -588,7 +586,6 @@ static private float getDeceleration(int velocity) {
         private static float PHYSICAL_COEF;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.599 -0500", hash_original_field = "8F0E0EB5930111BEE5FFC6FA463D9E6B", hash_generated_field = "D7A6A768456D7CA540BA35C2F5F4CAF3")
 
-
         private static float DECELERATION_RATE = (float) (Math.log(0.78) / Math.log(0.9));
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.602 -0500", hash_original_field = "5DC89CFBA6CBEFC71D069F06CB7B8F6C", hash_generated_field = "F5AF9FD0335D28F24C02B98871C19D36")
 
@@ -607,7 +604,6 @@ static private float getDeceleration(int velocity) {
         private static final float P2 = 1.0f - END_TENSION * (1.0f - INFLEXION);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.616 -0500", hash_original_field = "58559D9CC258992DAA0836486C11E2A8", hash_generated_field = "3B6A479A94E023469276FA3773CA8C8D")
 
-
         private static final int NB_SAMPLES = 100;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.618 -0500", hash_original_field = "CEF7546ED3EE941FD6A49F0FE374EEA9", hash_generated_field = "AFB1C8ECA979DA21163AB6B7EDBBE826")
 
@@ -616,7 +612,6 @@ static private float getDeceleration(int velocity) {
 
         private static final float[] SPLINE_TIME = new float[NB_SAMPLES + 1];
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.623 -0500", hash_original_field = "42AB573D0C776462DA61CB0E5CC70B9A", hash_generated_field = "AA9C489F36CD6D35B08E97A0F1D114BF")
-
 
         private static final int SPLINE = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.626 -0500", hash_original_field = "787F2A741668196101DEED5B4184D849", hash_generated_field = "C623FEAD42C4A32B51D627806375CF8A")
@@ -893,6 +888,7 @@ private void startAfterEdge(int start, int min, int max, int velocity) {
             }
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:43.677 -0500", hash_original_method = "D032297ACDC9C65A50161DCB548F10DC", hash_generated_method = "C5CBAA8CCD9CF5490686919E71322F50")
         
 void notifyEdgeReached(int start, int end, int over) {

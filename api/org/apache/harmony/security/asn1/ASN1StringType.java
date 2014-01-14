@@ -111,7 +111,8 @@ public void encodeContent(BerOutputStream out) {
         out.encodeString();
     }
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.425 -0400", hash_original_method = "138CA2E3F6E6A00430513A77732291AD", hash_generated_method = "BFBE76DFFA47FA40E7E1BFB51B23707F")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.425 -0400", hash_original_method = "138CA2E3F6E6A00430513A77732291AD", hash_generated_method = "BFBE76DFFA47FA40E7E1BFB51B23707F")
     public void setEncodingContent(BerOutputStream out) {
         addTaint(out.getTaint());
         byte[] bytes = ((String) out.content).getBytes(Charsets.UTF_8);

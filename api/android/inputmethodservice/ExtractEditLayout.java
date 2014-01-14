@@ -18,11 +18,6 @@ import android.widget.LinearLayout;
 import com.android.internal.view.menu.MenuBuilder;
 import com.android.internal.view.menu.MenuPopupHelper;
 
-
-
-
-
-
 public class ExtractEditLayout extends LinearLayout {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:41.011 -0500", hash_original_field = "84372CBE17BCE552A035CEA7A14F295A", hash_generated_field = "84372CBE17BCE552A035CEA7A14F295A")
 
@@ -97,7 +92,6 @@ public void finishActionMode() {
             }
         });
     }
-
     
     private class ExtractActionMode extends ActionMode implements MenuBuilder.Callback {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:41.035 -0500", hash_original_field = "E2F920D760DEB2BCDAE7988D1DB3FA5A", hash_generated_field = "8F251D8FB2618CB877D06AB4E966D630")
@@ -122,6 +116,7 @@ public ExtractActionMode(Callback cb) {
             // Title will not be shown.
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:41.046 -0500", hash_original_method = "B30C6763E9E5F305FC4AC0CFECBEE869", hash_generated_method = "71ED5D641D68012971096394B0729D5E")
         
 @Override
@@ -136,6 +131,7 @@ public ExtractActionMode(Callback cb) {
             // Subtitle will not be shown.
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:41.050 -0500", hash_original_method = "1F86E8EB25240C47EC24308D126D97B9", hash_generated_method = "E1F78E11DA67FB56A35C9961A0795BA1")
         
 @Override
@@ -143,6 +139,7 @@ public ExtractActionMode(Callback cb) {
             // Subtitle will not be shown.
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:41.053 -0500", hash_original_method = "3E94F533B6F67EA66D83CADA4353AF33", hash_generated_method = "2E318619E408B8AB7D6A959A732BA147")
         
 @Override
@@ -243,11 +240,8 @@ public boolean dispatchOnCreate() {
 @Override
         public void onMenuModeChange(MenuBuilder menu) {
         }
-
         
     }
-
-
     
 }
 

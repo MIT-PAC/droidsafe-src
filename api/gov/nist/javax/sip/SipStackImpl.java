@@ -47,25 +47,17 @@ import javax.sip.address.Router;
 import javax.sip.header.HeaderFactory;
 import javax.sip.message.Request;
 
-
-
-
-
-
 public class SipStackImpl extends SIPTransactionStack implements javax.sip.SipStack, SipStackExt {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:41.587 -0500", hash_original_field = "37FD84666920824F7C1E8C2BF1715713", hash_generated_field = "DC1BA291E655CE21E8210560B23E074D")
 
 	public static final Integer MAX_DATAGRAM_SIZE = 8 * 1024;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:41.579 -0500", hash_original_field = "69E36DC2AAFBF80C0D45C129628BD358", hash_generated_field = "B13D933CCB9027F950F0F782A6866769")
 
-
 	private EventScanner eventScanner;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:41.581 -0500", hash_original_field = "D78D26E4029046D32144DBB64200532C", hash_generated_field = "3AEF05BEBD52A17EF95A5D808F4FFFA4")
 
-
 	private Hashtable<String, ListeningPointImpl> listeningPoints;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:41.584 -0500", hash_original_field = "6BEBC7E786F8A9BD33EB606A20200A7E", hash_generated_field = "4D9EE92C5E84922DC5B8DC3AD8BDEAEF")
-
 
 	private LinkedList<SipProviderImpl> sipProviders;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:41.589 -0500", hash_original_field = "C05D7B5683B60CB11426E6CCECD30C55", hash_generated_field = "4A9068D8EC31DF0150BC24FF654DE497")
@@ -73,7 +65,6 @@ public class SipStackImpl extends SIPTransactionStack implements javax.sip.SipSt
 	// Use this flag with caution.
 	boolean reEntrantListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:41.591 -0500", hash_original_field = "B9D95CF1DDB3EF5E2FB32454D5FBE60B", hash_generated_field = "B9D95CF1DDB3EF5E2FB32454D5FBE60B")
-
 
 	SipListener sipListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:41.594 -0500", hash_original_field = "14BC1D7F6107A47B988CB81CBFA69682", hash_generated_field = "36858158C63585F0CA9C60A9D20D534C")
@@ -134,7 +125,8 @@ protected SipStackImpl() {
 	 *            extensions.
 	 * @throws PeerUnavailableException
 	 */
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:41.624 -0500", hash_original_method = "31E9570F9C2C0C73DA51527B7C89A7AA", hash_generated_method = "6758CD25A3623EADF6671D563F37C326")
+	@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:41.624 -0500", hash_original_method = "31E9570F9C2C0C73DA51527B7C89A7AA", hash_generated_method = "6758CD25A3623EADF6671D563F37C326")
 	
 public SipStackImpl(Properties configurationProperties)
 			throws PeerUnavailableException {
@@ -331,8 +323,6 @@ public SipStackImpl(Properties configurationProperties)
 		} else {
 			super.maxListenerResponseTime = -1;
 		}
-
-		
 
 		this.deliverTerminatedEventForAck = configurationProperties
 				.getProperty(
@@ -653,7 +643,6 @@ public SipStackImpl(Properties configurationProperties)
 		super.isDialogTerminatedEventDeliveredForNullDialog = (Boolean.parseBoolean(configurationProperties.getProperty("gov.nist.javax.sip.DELIVER_TERMINATED_EVENT_FOR_NULL_DIALOG",
 		        Boolean.FALSE.toString())));
 		
-		
 		super.maxForkTime = Integer.parseInt(
 		        configurationProperties.getProperty("gov.nist.javax.sip.MAX_FORK_TIME_SECONDS","0"));
 		
@@ -691,7 +680,8 @@ boolean isAutomaticDialogSupportEnabled() {
 	 * @see javax.sip.SipStack#createListeningPoint(java.lang.String, int,
 	 * java.lang.String)
 	 */
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:41.628 -0500", hash_original_method = "20194A28F7CD206898B50945BA95F1CA", hash_generated_method = "669CAF6AD7E3C887112FB3DF071280FE")
+	@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:41.628 -0500", hash_original_method = "20194A28F7CD206898B50945BA95F1CA", hash_generated_method = "669CAF6AD7E3C887112FB3DF071280FE")
 	
 public synchronized ListeningPoint createListeningPoint(String address,
 			int port, String transport) throws TransportNotSupportedException,

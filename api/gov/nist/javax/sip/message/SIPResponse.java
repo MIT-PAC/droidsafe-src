@@ -33,11 +33,6 @@ import javax.sip.header.ReasonHeader;
 import javax.sip.header.ServerHeader;
 import javax.sip.message.Request;
 
-
-
-
-
-
 public final class SIPResponse extends SIPMessage implements javax.sip.message.Response, ResponseExt {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:36.541 -0500", hash_original_method = "AB9A03C3951275E5A2E90FE8CAAD0800", hash_generated_method = "99B6F14DC1A55F1EE64DD39F2BDF3CAE")
@@ -292,6 +287,7 @@ public SIPResponse() {
      *@param statusCode is the status code to set.
      *@throws IlegalArgumentException if invalid status code.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:36.544 -0500", hash_original_method = "13FB64FAC5CAB193CAEE311D629E27B6", hash_generated_method = "C71EF0C8945C9FB319B5902C7D75D3A3")
     
 public void setStatusCode(int statusCode) throws ParseException {
@@ -329,6 +325,7 @@ public int getStatusCode() {
      *@param reasonPhrase the reason phrase.
      *@throws IllegalArgumentException if null string
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:36.551 -0500", hash_original_method = "1E99C1E53099DAE9563D2AD677513193", hash_generated_method = "AFADAB15DF93F0FDD8E7665A24397D5F")
     
 public void setReasonPhrase(String reasonPhrase) {
@@ -415,7 +412,6 @@ public void checkHeaders() throws ParseException {
             throw new ParseException(CallID.NAME + " Is missing ", 0);
         }
 
-
         if (getStatusCode() > 699) {
             throw new ParseException("Unknown error code!" + getStatusCode(), 0);
         }
@@ -454,8 +450,6 @@ public String encodeMessage() {
         return retval ;
     }
 
-
-
     /** Get this message as a list of encoded strings.
      *@return LinkedList containing encoded strings for each header in
      *   the message.
@@ -485,7 +479,6 @@ public Object clone() {
             retval.statusLine = (StatusLine) this.statusLine.clone();
         return retval;
     }
-
 
     /**
      * Compare for equality.
@@ -554,8 +547,6 @@ public byte[] encodeAsBytes( String transport ) {
                 superbytes.length);
         return retval;
     }
-
-
 
     /** Get a dialog identifier.
      * Generates a string that can be used as a dialog identifier.
@@ -656,7 +647,6 @@ private final void setBranch( Via via, String method ) {
         }
     }
 
-
     /**
      * Get the encoded first line.
      *
@@ -672,6 +662,7 @@ public String getFirstLine() {
             return this.statusLine.encode();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:36.601 -0500", hash_original_method = "7AF9DBED68BFE70E00218B8B8B8BF082", hash_generated_method = "B2D1D2CE38A3F32F163109DB8658AF4A")
     
 public void setSIPVersion(String sipVersion) {
@@ -756,7 +747,6 @@ public SIPRequest createRequest(SipUri requestURI, Via via, CSeq cseq, From from
         return newRequest;
 
     }
-
     
 }
 

@@ -72,7 +72,8 @@ return DESCRIPTOR;
      *        client. For more information see {@link RecognizerIntent}.
      * @param listener to receive callbacks, note that this must be non-null
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:56.288 -0500", hash_original_method = "DE379CA29EFD7E81E11BB0B1B68633AA", hash_generated_method = "C7AE5FF5A7A9058DC14CBAD708D34655")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:56.288 -0500", hash_original_method = "DE379CA29EFD7E81E11BB0B1B68633AA", hash_generated_method = "C7AE5FF5A7A9058DC14CBAD708D34655")
             
 public void startListening(android.content.Intent recognizerIntent, android.speech.IRecognitionListener listener) throws android.os.RemoteException
 {
@@ -100,7 +101,8 @@ _data.recycle();
      *
      * @param listener to receive callbacks, note that this must be non-null
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:56.291 -0500", hash_original_method = "BA3FEE0D9892C9FD7CAD03BDAB3E05F6", hash_generated_method = "42785CA42533B079B27C7A80078C0B94")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:56.291 -0500", hash_original_method = "BA3FEE0D9892C9FD7CAD03BDAB3E05F6", hash_generated_method = "42785CA42533B079B27C7A80078C0B94")
             
 public void stopListening(android.speech.IRecognitionListener listener) throws android.os.RemoteException
 {
@@ -119,7 +121,8 @@ _data.recycle();
      *
      * @param listener to receive callbacks, note that this must be non-null
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:56.293 -0500", hash_original_method = "A2F7F58746A0C28F190269909AE8BB60", hash_generated_method = "73DFD95CC991692B314E6581668ED8C1")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:56.293 -0500", hash_original_method = "A2F7F58746A0C28F190269909AE8BB60", hash_generated_method = "73DFD95CC991692B314E6581668ED8C1")
             
 public void cancel(android.speech.IRecognitionListener listener) throws android.os.RemoteException
 {
@@ -147,7 +150,8 @@ public android.os.IBinder asBinder()
 {
 return this;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:56.275 -0500", hash_original_method = "CCAA3BD7E9084293A1EEE659178CAAB8", hash_generated_method = "712FBA910335E5C01553E15AF67DFF8C")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:56.275 -0500", hash_original_method = "CCAA3BD7E9084293A1EEE659178CAAB8", hash_generated_method = "712FBA910335E5C01553E15AF67DFF8C")
         
 @Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
 {

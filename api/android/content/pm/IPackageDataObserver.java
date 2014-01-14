@@ -69,7 +69,8 @@ public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.022 -0500", hash_original_method = "BECDDDC11FB87B50208550FA35A39342", hash_generated_method = "0E20733882BCFEF4DD66C55F770F6D3F")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.022 -0500", hash_original_method = "BECDDDC11FB87B50208550FA35A39342", hash_generated_method = "0E20733882BCFEF4DD66C55F770F6D3F")
             
 public void onRemoveCompleted(java.lang.String packageName, boolean succeeded) throws android.os.RemoteException
 {

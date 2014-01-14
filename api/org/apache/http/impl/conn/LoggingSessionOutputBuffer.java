@@ -10,11 +10,6 @@ import org.apache.http.io.HttpTransportMetrics;
 import org.apache.http.io.SessionOutputBuffer;
 import org.apache.http.util.CharArrayBuffer;
 
-
-
-
-
-
 public class LoggingSessionOutputBuffer implements SessionOutputBuffer {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:33.304 -0500", hash_original_field = "862CD4E306AB155A980F18A7EE0A0BF8", hash_generated_field = "77BC14A656F9BA385AF4199F8E7C3C1D")
 
@@ -36,6 +31,7 @@ public LoggingSessionOutputBuffer(final SessionOutputBuffer out, final Wire wire
         this.wire = wire;
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:33.312 -0500", hash_original_method = "E8AA091506E0C7EDCD0C7636A9C3BA76", hash_generated_method = "685CEA91AE2D7C9D55774E87F0B4E30E")
     
 public void write(byte[] b, int off, int len) throws IOException {
@@ -45,6 +41,7 @@ public void write(byte[] b, int off, int len) throws IOException {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:33.314 -0500", hash_original_method = "5AAEA6F1D5C12B4807525C7221D2D4F0", hash_generated_method = "0DAECBF183D91D68466895A42D30F395")
     
 public void write(int b) throws IOException {
@@ -54,6 +51,7 @@ public void write(int b) throws IOException {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:33.317 -0500", hash_original_method = "398DA088D4360963F630B5E740A28F5B", hash_generated_method = "EC4BFA0F2A516CD031BE559FFCC0AE53")
     
 public void write(byte[] b) throws IOException {
@@ -93,7 +91,6 @@ public void writeLine(final String s) throws IOException {
 public HttpTransportMetrics getMetrics() {
         return this.out.getMetrics();
     }
-
     
 }
 

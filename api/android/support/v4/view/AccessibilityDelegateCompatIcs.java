@@ -10,7 +10,6 @@ import android.view.ViewGroup;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
 
-
 class AccessibilityDelegateCompatIcs {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:20.520 -0500", hash_original_method = "0BF56F5CCF17BE32C048833B45062308", hash_generated_method = "1A92348F7C81313FDF77DB294C42542D")
@@ -49,7 +48,8 @@ public static Object newAccessibilityDelegateBridge(final AccessibilityDelegateB
                 return bridge.onRequestSendAccessibilityEvent(host, child, event);
             }
 
-            @Override
+            @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @Override
             public void sendAccessibilityEvent(View host, int eventType) {
                 bridge.sendAccessibilityEvent(host, eventType);
             }
@@ -97,12 +97,14 @@ public static boolean onRequestSendAccessibilityEvent(Object delegate, ViewGroup
                 event);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:20.577 -0500", hash_original_method = "0E2E4FD873FADD6CC8321BEC0F0E2131", hash_generated_method = "E288C785080EFFAE26BA9A31A63AAA5D")
     
 public static void sendAccessibilityEvent(Object delegate, View host, int eventType) {
         ((AccessibilityDelegate) delegate).sendAccessibilityEvent(host, eventType);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:20.580 -0500", hash_original_method = "E3BFE62BC8A651C1280DE3E362953B84", hash_generated_method = "1FB6409CB33356FA4859B470C498B48B")
     
 public static void sendAccessibilityEventUnchecked(Object delegate, View host,
@@ -115,7 +117,6 @@ public static void sendAccessibilityEventUnchecked(Object delegate, View host,
     {
         //Synthesized constructor
     }
-
     
     public interface AccessibilityDelegateBridge {
         public boolean dispatchPopulateAccessibilityEvent(View host, AccessibilityEvent event);

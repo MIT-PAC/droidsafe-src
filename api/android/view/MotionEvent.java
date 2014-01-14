@@ -1362,6 +1362,7 @@ public final void scale(float scale) {
     }
 
     /** {@inheritDoc} */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.791 -0500", hash_original_method = "1502AF3F26B6DD95879512031D9FB73E", hash_generated_method = "A0EBDC00C5620E0317B7BE91C53E9F81")
     
 @Override
@@ -1447,6 +1448,7 @@ public final int getFlags() {
     }
 
     /** @hide */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.808 -0500", hash_original_method = "96C1138F844BE852B50B0529E539E061", hash_generated_method = "CFA34516CBE0CB108AA68C4A881709C2")
     
 @Override
@@ -1471,6 +1473,7 @@ public final long getDownTime() {
      *
      * @hide
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.813 -0500", hash_original_method = "97B3432DE604A4A8C3339017F5056697", hash_generated_method = "CF95B389CACF294F138E0DCA405EF125")
     
 public final void setDownTime(long downTime) {
@@ -2480,6 +2483,7 @@ public final int getEdgeFlags() {
      *
      * @see #getEdgeFlags()
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.958 -0500", hash_original_method = "348B6A1C5666102E94291FA4791C249A", hash_generated_method = "4C920985B6852D8B05DFC1AE4199ADC7")
     
 public final void setEdgeFlags(int flags) {
@@ -2489,6 +2493,7 @@ public final void setEdgeFlags(int flags) {
     /**
      * Sets this event's action.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.960 -0500", hash_original_method = "34CE363FC32882BC3BBCF2E8ABF2B5B0", hash_generated_method = "E5501ABDBC35788D58647DEA4B566E2A")
     
 public final void setAction(int action) {
@@ -2521,6 +2526,7 @@ public final void offsetLocation(float deltaX, float deltaY) {
      * @param x New absolute X location.
      * @param y New absolute Y location.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.965 -0500", hash_original_method = "D9D9F7662138ADF2F9591F7DFAEB3F74", hash_generated_method = "BE9399C2E35FFF89AD55B3C33C31552D")
     
 public final void setLocation(float x, float y) {

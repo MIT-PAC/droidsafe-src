@@ -379,6 +379,7 @@ public void hideStatusIcon(IBinder imeToken) {
     }
 
     /** @hide */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.658 -0500", hash_original_method = "7375BD73E964162AE893F10DF6DE4659", hash_generated_method = "318B4F18EE0F7E3AA06671365F6ECEC3")
     
 public void setImeWindowStatus(IBinder imeToken, int vis, int backDisposition) {
@@ -408,6 +409,7 @@ public void registerSuggestionSpansForNotification(SuggestionSpan[] spans) {
     }
 
     /** @hide */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.666 -0500", hash_original_method = "67AB3FB4ECE37955692BC451DD457E24", hash_generated_method = "8A649CE463E3FB6B3BEA7AD02D9CB5EB")
     
 public void notifySuggestionPicked(SuggestionSpan span, String originalString, int index) {
@@ -561,6 +563,7 @@ public void displayCompletions(View view, CompletionInfo[] completions) {
         }
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.690 -0500", hash_original_method = "51F483359287A71D0F033A0D1668F291", hash_generated_method = "C567B52DE9443B581691DE694A93798F")
     
 public void updateExtractedText(View view, int token, ExtractedText text) {
@@ -1011,6 +1014,7 @@ void closeCurrentInput() {
      * Called by ViewAncestor when its window gets input focus.
      * @hide
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.758 -0500", hash_original_method = "4893EC862C01D5D2A6E85A7017E94B9B", hash_generated_method = "349D9D12DF3A6DA1D0A30BA63321958C")
     
 public void onWindowFocus(View rootView, View focusedView, int softInputMode,
@@ -1054,6 +1058,7 @@ public void startGettingWindowFocus(View rootView) {
     /**
      * Report the current selection range.
      */
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.763 -0500", hash_original_method = "6EC728E52174DF43F39F15D376B96D59", hash_generated_method = "741763FA91FB3B125F4D311FC2F6B63E")
     
 public void updateSelection(View view, int selStart, int selEnd,
@@ -1122,6 +1127,7 @@ public boolean isWatchingCursor(View view) {
     /**
      * Report the current cursor location in its window.
      */
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.771 -0500", hash_original_method = "06AF2B97EC9C8BBE1303A237FE727449", hash_generated_method = "103A7E1B02C228D1981B721CBC7DAC4C")
     
 public void updateCursor(View view, int left, int top, int right, int bottom) {
@@ -1273,6 +1279,7 @@ public ControlledInputConnectionWrapper(final Looper mainLooper, final InputConn
      * different developers will not create conflicting commands.
      * @param data Any data to include with the command.
      */
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.774 -0500", hash_original_method = "42E6E13C0C5606029CE59DAABCC4FEF4", hash_generated_method = "637CE227C95F20FE5A9F9CD169CDF76B")
     
 public void sendAppPrivateCommand(View view, String action, Bundle data) {
@@ -1300,6 +1307,7 @@ public void sendAppPrivateCommand(View view, String action, Bundle data) {
      * itself.
      * @param id The unique identifier for the new input method to be switched to.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.777 -0500", hash_original_method = "BA3360E0078151C4E77F69CD0F708AC2", hash_generated_method = "A5938D513A91511C2DFF9742F3A37CA1")
     
 public void setInputMethod(IBinder token, String id) {
@@ -1319,6 +1327,7 @@ public void setInputMethod(IBinder token, String id) {
      * @param id The unique identifier for the new input method to be switched to.
      * @param subtype The new subtype of the new input method to be switched to.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.779 -0500", hash_original_method = "6B5F7BD4B9987D792262BC3FA22B0356", hash_generated_method = "2423AB9E571221589831B1F4A89E7E3B")
     
 public void setInputMethodAndSubtype(IBinder token, String id, InputMethodSubtype subtype) {
@@ -1498,6 +1507,7 @@ public InputMethodSubtype getCurrentInputMethodSubtype() {
      * @return true if the current subtype was successfully switched. When the specified subtype is
      * null, this method returns false.
      */
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.800 -0500", hash_original_method = "3CA77773C45BE29D3C7CB419603994A1", hash_generated_method = "EBCF77961B85338AAB227CD051845F15")
     
 public boolean setCurrentInputMethodSubtype(InputMethodSubtype subtype) {
@@ -1584,6 +1594,7 @@ public boolean switchToLastInputMethod(IBinder imeToken) {
      * @param imiId Id of InputMethodInfo which additional input method subtypes will be added to.
      * @param subtypes subtypes will be added as additional subtypes of the current input method.
      */
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.809 -0500", hash_original_method = "E3938A1614AA74CBD638A5A0682603ED", hash_generated_method = "D34D9596D75C1D779B74100477243A36")
     
 public void setAdditionalInputMethodSubtypes(String imiId, InputMethodSubtype[] subtypes) {
@@ -1609,6 +1620,7 @@ public InputMethodSubtype getLastInputMethodSubtype() {
         }
     }
 
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.815 -0500", hash_original_method = "A669FCC83173C60A2ED2B3C5020338A1", hash_generated_method = "A669FCC83173C60A2ED2B3C5020338A1")
     
 void doDump(FileDescriptor fd, PrintWriter fout, String[] args) {

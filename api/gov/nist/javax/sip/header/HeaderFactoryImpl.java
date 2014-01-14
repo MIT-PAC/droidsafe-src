@@ -125,18 +125,10 @@ import javax.sip.header.ViaHeader;
 import javax.sip.header.WWWAuthenticateHeader;
 import javax.sip.header.WarningHeader;
 
-
-
-
-
-
 public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.119 -0500", hash_original_field = "8C10C55A9BEAD35C9C3822ED5A78B55A", hash_generated_field = "0D2878F1D6B0CD805C869443DA7FE75E")
 
     private boolean stripAddressScopeZones = false;
-    
-    
-
 
     //////////////////////////////////////////////////////////
     // Constructor
@@ -157,6 +149,7 @@ public HeaderFactoryImpl() {
      * debugging ).
      *
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.122 -0500", hash_original_method = "9BEACA878DCF694953AD8141227DB60F", hash_generated_method = "F632BF1452A4CEE092D75156519D0C5E")
     
 public void setPrettyEncoding(boolean flag) {
@@ -919,7 +912,6 @@ public RAckHeader createRAckHeader(int rSeqNumber, int cSeqNumber, String method
         return createRAckHeader((long)rSeqNumber, (long)cSeqNumber, method);
     }
 
-
     /**
      * @deprecated
      * @see javax.sip.header.HeaderFactory#createRSeqHeader(int)
@@ -1510,7 +1502,6 @@ public JoinHeader createJoinHeader(String callId, String toTag,
         return join;
     }
 
-
     /*
      * (non-Javadoc)
      * @see javax.sip.header.HeaderFactory#createSIPETagHeader(java.lang.String)
@@ -1550,7 +1541,6 @@ public PAccessNetworkInfoHeader createPAccessNetworkInfoHeader()
         return accessNetworkInfo;
     }
 
-
     /**
      * P-Asserted-Identity header
      * @param address - Address
@@ -1571,9 +1561,7 @@ public PAssertedIdentityHeader createPAssertedIdentityHeader(Address address)
 
         return assertedIdentity;
 
-
     }
-
 
     /**
      * Creates a new P-Associated-URI header based on the supplied address
@@ -1595,9 +1583,6 @@ public PAssociatedURIHeader createPAssociatedURIHeader(Address assocURI)
         return associatedURI;
     }
 
-
-
-
     /**
      * P-Called-Party-ID header
      * @param address - Address
@@ -1618,8 +1603,6 @@ public PCalledPartyIDHeader createPCalledPartyIDHeader(Address address)
         return calledPartyID;
     }
 
-
-
     /**
      * P-Charging-Function-Addresses header
      * @return newly created P-Charging-Function-Addresses header
@@ -1632,7 +1615,6 @@ public PChargingFunctionAddressesHeader createPChargingFunctionAddressesHeader()
 
         return cfa;
     }
-
 
     /**
      * P-Charging-Vector header
@@ -1656,7 +1638,6 @@ public PChargingVectorHeader createChargingVectorHeader(String icid)
 
     }
 
-
     /**
      * P-Media-Authorization header
      * @param token - token string
@@ -1672,13 +1653,11 @@ public PMediaAuthorizationHeader createPMediaAuthorizationHeader(String token)
         if (token == null || token == "")
             throw new InvalidArgumentException("The Media-Authorization-Token parameter is null or empty");
 
-
         PMediaAuthorization mediaAuthorization = new PMediaAuthorization();
         mediaAuthorization.setMediaAuthorizationToken(token);
 
         return mediaAuthorization;
     }
-
 
     /**
      * P-Preferred-Identity header
@@ -1713,8 +1692,6 @@ public PVisitedNetworkIDHeader createPVisitedNetworkIDHeader()
         return visitedNetworkID;
     }
 
-
-
     /**
      * PATH header
      * @param address - Address
@@ -1729,13 +1706,11 @@ public PathHeader createPathHeader(Address address)
         if (address == null)
             throw new NullPointerException("null address!");
 
-
         Path path = new Path();
         path.setAddress(address);
 
         return path;
     }
-
 
     /**
      * Privacy header
@@ -1755,7 +1730,6 @@ public PrivacyHeader createPrivacyHeader(String privacyType)
         return privacy;
 
     }
-
 
     /**
      * Service-Route header
@@ -1830,7 +1804,6 @@ public PUserDatabaseHeader createPUserDatabaseHeader(String databaseName)
 
         return pUserDatabase;
     }
-
 
     /**
      * 
@@ -1908,7 +1881,6 @@ public SessionExpiresHeader createSessionExpiresHeader(int expires)
         return s;
     }
     
-    
     /**
      * Create a new Request Line from a String.
      * 
@@ -1930,8 +1902,6 @@ public SipStatusLine createStatusLine(String statusLine) throws ParseException {
         StatusLineParser statusLineParser = new StatusLineParser(statusLine);
         return (SipStatusLine) statusLineParser.parse();
     }
-
-
     
     /**
      * Create and return a references header.
@@ -1950,7 +1920,6 @@ public ReferencesHeader createReferencesHeader(String callId, String rel) throws
         retval.setRel(rel);
         return retval;
     }
-
     
 }
 

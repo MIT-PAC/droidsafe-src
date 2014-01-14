@@ -8,8 +8,6 @@ import java.text.ParseException;
 
 import javax.sip.header.ExtensionHeader;
 
-
-
 public class PChargingVector extends gov.nist.javax.sip.header.ParametersHeader implements PChargingVectorHeader, SIPHeaderNamesIms, ExtensionHeader {
 
     /**
@@ -85,6 +83,7 @@ public String getICID() {
      *            value to set in the icid-value parameter
      * @throws ParseException
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:56.306 -0500", hash_original_method = "EBEB68B63CE22995F9427EDD0E4E07CA", hash_generated_method = "02390D1820BB56DDAC79879517E5B1A4")
     
 public void setICID(String icid) throws ParseException {
@@ -122,6 +121,7 @@ public String getICIDGeneratedAt() {
      *            value to set in the icid-generated-at parameter
      * @throws ParseException
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:56.313 -0500", hash_original_method = "F4508B4C04B9B92ED2D0B6FD3FCDD70F", hash_generated_method = "6A8BBA420E866100D843E5FA8F95F57A")
     
 public void setICIDGeneratedAt(String host) throws ParseException {
@@ -159,6 +159,7 @@ public String getOriginatingIOI() {
      *            empty, the parameter is removed
      * @throws ParseException
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:56.320 -0500", hash_original_method = "4D1174A0C4FD1D4621AAA8C5BA456558", hash_generated_method = "401969D016B5DB1EF735E9701F54C2A1")
     
 public void setOriginatingIOI(String origIOI) throws ParseException {
@@ -194,6 +195,7 @@ public String getTerminatingIOI() {
      *            empty, the parameter is removed
      * @throws ParseException
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:56.328 -0500", hash_original_method = "9F4DF1C8B170A0213F28AE6F8C15C36E", hash_generated_method = "43BA1EA4D60B466AD13D8EE393DC0F4D")
     
 public void setTerminatingIOI(String termIOI) throws ParseException {
@@ -205,13 +207,13 @@ public void setTerminatingIOI(String termIOI) throws ParseException {
 
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:56.331 -0500", hash_original_method = "4B92A49D74A1215E0C3EC12D290AF61B", hash_generated_method = "014FE50D8A9A4F50DCF1C9E31F934432")
     
 public void setValue(String value) throws ParseException {
         throw new ParseException(value, 0);
 
     }
-
     
 }
 

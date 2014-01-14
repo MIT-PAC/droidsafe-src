@@ -14,10 +14,6 @@ import java.nio.channels.DatagramChannel;
 import libcore.io.ErrnoException;
 import libcore.io.Libcore;
 
-
-
-
-
 public class DatagramSocket {
 
     /**
@@ -42,38 +38,29 @@ public static synchronized void setDatagramSocketImplFactory(DatagramSocketImplF
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.590 -0500", hash_original_field = "8C151F5CDE68CF92C1CEDCEB9BAA4B33", hash_generated_field = "E43EB19BC3390384071AA64E51712EB7")
 
-
     static DatagramSocketImplFactory factory;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.584 -0500", hash_original_field = "0E47AFFF5CC1F2155F99BECA6A70C2D2", hash_generated_field = "0E47AFFF5CC1F2155F99BECA6A70C2D2")
-
 
     DatagramSocketImpl impl;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.586 -0500", hash_original_field = "FDCE7272CFC91A6374FBF7F54D5CC8E4", hash_generated_field = "FDCE7272CFC91A6374FBF7F54D5CC8E4")
 
-
     InetAddress address;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.588 -0500", hash_original_field = "BAF684EECB20D799A434AFCF1B13F01D", hash_generated_field = "BAF684EECB20D799A434AFCF1B13F01D")
-
 
     int port = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.592 -0500", hash_original_field = "F9AB7682F64A4F93F6F4A7A435A5AA53", hash_generated_field = "F9AB7682F64A4F93F6F4A7A435A5AA53")
 
-
     boolean isBound = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.595 -0500", hash_original_field = "B48043272C25E776A9FBEC8A0B198F87", hash_generated_field = "058DE1E699A3B3D187FC9E15DB7EC3B5")
-
 
     private boolean isConnected = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.598 -0500", hash_original_field = "C893CD23B6DA0F4ED6ABF661D11E983F", hash_generated_field = "BBB4D111812AF32431191097BEE30ACB")
 
-
     private SocketException pendingConnectException;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.600 -0500", hash_original_field = "79ECB5C84997278EAA42676EDFBD1FF8", hash_generated_field = "2CBEAC942D14DA48C324142BCB214C18")
 
-
     private boolean isClosed = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.603 -0500", hash_original_field = "DA2A3FDBCC0B9B91674644DF55F373AF", hash_generated_field = "B291AA80E80AF2EADD13F4FAD6374324")
-
 
     private Object lock = new Object();
 
@@ -375,6 +362,7 @@ public synchronized void receive(DatagramPacket pack) throws IOException {
      * @throws IOException
      *                if an error occurs while sending the packet.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.648 -0500", hash_original_method = "F0676E3BCA654DF56D2BFA1EDDBDFD76", hash_generated_method = "2353F46655A0E31C5FAD87BE14A59420")
     
 public void send(DatagramPacket pack) throws IOException {
@@ -409,6 +397,7 @@ public void send(DatagramPacket pack) throws IOException {
      *
      * @hide used by GoogleTV for DHCP
      */
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.650 -0500", hash_original_method = "3874DFBADA775207309D591B6CC4D492", hash_generated_method = "8FB0E84BB5395FA662620CCDEE80F727")
     
 public void setNetworkInterface(NetworkInterface netInterface) throws SocketException {
@@ -425,6 +414,7 @@ public void setNetworkInterface(NetworkInterface netInterface) throws SocketExce
     /**
      * Sets this socket's {@link SocketOptions#SO_SNDBUF send buffer size}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.653 -0500", hash_original_method = "6C822EF02E72BD5A5151B1066B41A106", hash_generated_method = "968F8F3749FDB53669BF0331D9F4DA54")
     
 public synchronized void setSendBufferSize(int size) throws SocketException {
@@ -438,6 +428,7 @@ public synchronized void setSendBufferSize(int size) throws SocketException {
     /**
      * Sets this socket's {@link SocketOptions#SO_SNDBUF receive buffer size}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.655 -0500", hash_original_method = "568C48DC36A6A663E7303E35F30B9F65", hash_generated_method = "07C9AAD9A4FF8CDB059155C8F2EBFE5C")
     
 public synchronized void setReceiveBufferSize(int size) throws SocketException {
@@ -459,6 +450,7 @@ public synchronized void setReceiveBufferSize(int size) throws SocketException {
      * @throws SocketException
      *                if an error occurs while setting the option.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.658 -0500", hash_original_method = "FEB39AD74968ADEBB5E7B7804953C3DE", hash_generated_method = "50EB82C7A51A39A5708F4D2AE00058D5")
     
 public synchronized void setSoTimeout(int timeout) throws SocketException {
@@ -499,6 +491,7 @@ private void ensureBound() throws SocketException {
      *             if the socket is already bound or a problem occurs during
      *             binding.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.674 -0500", hash_original_method = "3D56D66452A7B2D7ED073824CEA46ED8", hash_generated_method = "D83CB0F9F290C713E52F36169140C93D")
     
 public void bind(SocketAddress localAddr) throws SocketException {
@@ -635,6 +628,7 @@ public SocketAddress getLocalSocketAddress() {
      * @throws SocketException
      *             if the socket is closed or the option could not be set.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.692 -0500", hash_original_method = "D6CD69E67882E49578E557811A0FC457", hash_generated_method = "F94F3DC09B3E131C2F7D5BA39FFC9336")
     
 public void setReuseAddress(boolean reuse) throws SocketException {
@@ -665,6 +659,7 @@ public boolean getReuseAddress() throws SocketException {
      * @throws SocketException
      *             if the socket is closed or the option could not be set.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.697 -0500", hash_original_method = "16BACAE92585B22CC8D47D482CFB74B4", hash_generated_method = "80E17E7313B16739DDEA9982B0678291")
     
 public void setBroadcast(boolean broadcast) throws SocketException {
@@ -692,6 +687,7 @@ public boolean getBroadcast() throws SocketException {
      * @throws SocketException
      *             if the socket is closed or the option could not be set.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.702 -0500", hash_original_method = "2EC80086B0B75FB75EFBAAF12E210751", hash_generated_method = "9A2E1BE643CE564177B5B1FFEBB6DDD9")
     
 public void setTrafficClass(int value) throws SocketException {

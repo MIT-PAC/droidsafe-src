@@ -12,13 +12,8 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
-
-
-
-
 public class ViewAnimator extends FrameLayout {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:26.344 -0500", hash_original_field = "A4199CA8B30F98AAF67F6FDF10E09266", hash_generated_field = "A4199CA8B30F98AAF67F6FDF10E09266")
-
 
     int mWhichChild = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:26.346 -0500", hash_original_field = "319BF9E49F2FBE9453A9508A3A60521D", hash_generated_field = "319BF9E49F2FBE9453A9508A3A60521D")
@@ -26,10 +21,8 @@ public class ViewAnimator extends FrameLayout {
     boolean mFirstTime = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:26.348 -0500", hash_original_field = "11022FC94DBD000AF0F23EE6D44DA07A", hash_generated_field = "11022FC94DBD000AF0F23EE6D44DA07A")
 
-
     boolean mAnimateFirstTime = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:26.350 -0500", hash_original_field = "29299F27489816D586AD948F6D96C9C1", hash_generated_field = "29299F27489816D586AD948F6D96C9C1")
-
 
     Animation mInAnimation;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:26.352 -0500", hash_original_field = "9E3A714F1340062D6D1C605D96F85572", hash_generated_field = "9E3A714F1340062D6D1C605D96F85572")
@@ -340,6 +333,7 @@ public void setOutAnimation(Animation outAnimation) {
      * @see #getInAnimation()
      * @see #setInAnimation(android.view.animation.Animation)
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:26.404 -0500", hash_original_method = "4B14A90FDB2491821F3B7183A1AB7EB4", hash_generated_method = "025FDCC5D184A99FE1DAAE365D5613F7")
     
 public void setInAnimation(Context context, int resourceID) {
@@ -355,6 +349,7 @@ public void setInAnimation(Context context, int resourceID) {
      * @see #getOutAnimation()
      * @see #setOutAnimation(android.view.animation.Animation)
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:26.407 -0500", hash_original_method = "C68FA8DD73709498CDF74B32AA0794E0", hash_generated_method = "285D28BB5F2C5F362294AE0F5AA17676")
     
 public void setOutAnimation(Context context, int resourceID) {
@@ -380,7 +375,6 @@ public void setAnimateFirstView(boolean animate) {
     public int getBaseline() {
         return (getCurrentView() != null) ? getCurrentView().getBaseline() : super.getBaseline();
     }
-
     
 }
 

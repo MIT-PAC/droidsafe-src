@@ -715,6 +715,7 @@ protected void onNVReady() {
     /**
      * @override com.android.internal.telephony.DataConnectionTracker
      */
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.027 -0500", hash_original_method = "F38E677B8F89E946D32F2D1EC6556506", hash_generated_method = "EA8D515A427E4949045167C284AF051B")
     
 @Override
@@ -743,6 +744,7 @@ protected void onNVReady() {
     /**
      * Called when EVENT_DISCONNECT_DONE is received.
      */
+    @DSSink({DSSinkKind.PHONE_CONNECTION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.030 -0500", hash_original_method = "B64AD173877EB61F2BA995A6B9586953", hash_generated_method = "3BEC82F339A99D67F7E9DDFDF498F7D3")
     
 @Override

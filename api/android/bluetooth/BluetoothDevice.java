@@ -18,10 +18,6 @@ import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.util.Log;
 
-
-
-
-
 public final class BluetoothDevice implements Parcelable {
 
     /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:31.730 -0500", hash_original_method = "B0796CDCCC198F5133D1C780F27F0FFA", hash_generated_method = "A33AAC12BB252B20DAA5E7A5619BAA78")
@@ -293,7 +289,6 @@ public BluetoothDevice[] newArray(int size) {
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:31.728 -0500", hash_original_field = "64574F15B680D9134BA948BCFB67DAB8", hash_generated_field = "C679AE506A0300BA50CA43522D6BE5D0")
 
-
     private  String mAddress;
 
     /**
@@ -416,6 +411,7 @@ public String getAlias() {
      * @return true on success, false on error
      * @hide
      */
+    @DSSink({DSSinkKind.BLUETOOTH})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:31.761 -0500", hash_original_method = "49B51B4B037A5C39323EEFF06458ED35", hash_generated_method = "D3810794ECDDB2BC914673A78C4946E4")
     
 public boolean setAlias(String alias) {
@@ -506,6 +502,7 @@ public boolean createBondOutOfBand(byte[] hash, byte[] randomizer) {
      *
      * @hide
      */
+    @DSSink({DSSinkKind.BLUETOOTH})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:31.769 -0500", hash_original_method = "575E29F4E8B829BD0D23FAC1ADF3E1AA", hash_generated_method = "0FD91C76CC239AE9D325C5A16A1AC0EA")
     
 public boolean setDeviceOutOfBandData(byte[] hash, byte[] randomizer) {
@@ -608,6 +605,7 @@ public boolean getTrustState() {
      * @param value the trust state value (true or false)
      * @hide
      */
+    @DSSink({DSSinkKind.BLUETOOTH})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:31.782 -0500", hash_original_method = "9D6C6E6815AA7950FF362F094CFFC963", hash_generated_method = "AD53A2C49882C6ABA4958F8AC4CE81C3")
     
 public boolean setTrust(boolean value) {
@@ -675,6 +673,7 @@ public int getServiceChannel(ParcelUuid uuid) {
     }
 
     /** @hide */
+    @DSSink({DSSinkKind.BLUETOOTH})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:31.792 -0500", hash_original_method = "0C2B72A87477D43DC574495BFD9C1EAD", hash_generated_method = "816AD6BBB0E8282107AFC008EE067402")
     
 public boolean setPin(byte[] pin) {
@@ -685,6 +684,7 @@ public boolean setPin(byte[] pin) {
     }
 
     /** @hide */
+    @DSSink({DSSinkKind.BLUETOOTH})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:31.794 -0500", hash_original_method = "3609F7C358721757CCD34D699F0B8CE9", hash_generated_method = "0C9973A558CCA5B990771D2A1F4AB0B9")
     
 public boolean setPasskey(int passkey) {
@@ -695,6 +695,7 @@ public boolean setPasskey(int passkey) {
     }
 
     /** @hide */
+    @DSSink({DSSinkKind.BLUETOOTH})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:31.796 -0500", hash_original_method = "C6032CF5D33EF2ED9DD2C95EBB11B5A2", hash_generated_method = "3931AE93EDEE42FE0690EC92CE6549A3")
     
 public boolean setPairingConfirmation(boolean confirm) {

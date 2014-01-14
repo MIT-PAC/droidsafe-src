@@ -209,6 +209,7 @@ public int getFrontActivityScreenCompatMode() {
     }
 
     /** @hide */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.514 -0500", hash_original_method = "1AD781893C5FA74DDB5BF5981AAFC282", hash_generated_method = "1BCE96E8EEF6FC4B3C89D0A6B176B773")
     
 public void setFrontActivityScreenCompatMode(int mode) {
@@ -232,6 +233,7 @@ public int getPackageScreenCompatMode(String packageName) {
     }
 
     /** @hide */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.519 -0500", hash_original_method = "6272BC343B5B54EAA927E2C6A7A229FA", hash_generated_method = "C6A9A04F5260B1F4DBB8EDAE25A389F8")
     
 public void setPackageScreenCompatMode(String packageName, int mode) {
@@ -255,6 +257,7 @@ public boolean getPackageAskScreenCompat(String packageName) {
     }
 
     /** @hide */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.524 -0500", hash_original_method = "3BC1D3C0234B303E106B1ACB51D8D800", hash_generated_method = "BFDF5B5127E7B8E1B3922B52FBADDAB7")
     
 public void setPackageAskScreenCompat(String packageName, boolean ask) {
@@ -583,6 +586,7 @@ public int describeContents() {
             return 0;
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.556 -0500", hash_original_method = "A024AE935060D48D15B6110668C59DDF", hash_generated_method = "5FC8B5C660AB23A97C6AACE082FD0EFC")
         
 public void writeToParcel(Parcel dest, int flags) {
@@ -679,6 +683,7 @@ public int describeContents() {
             return 0;
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.604 -0500", hash_original_method = "224D236A6A210D9CABF5D7D423C96E97", hash_generated_method = "D157A3711B1E2F0974BC1BEEAF5EEB2F")
         
 public void writeToParcel(Parcel dest, int flags) {
@@ -772,6 +777,7 @@ public int describeContents() {
             return 0;
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.647 -0500", hash_original_method = "1641949793D35FD49D0AD46DB3E00603", hash_generated_method = "E0DBFE1F972950FDB8CBE569DDEF98B8")
         
 public void writeToParcel(Parcel dest, int flags) {
@@ -895,6 +901,7 @@ public int describeContents() {
             return 0;
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.723 -0500", hash_original_method = "048D37EC670A88D2663FCC084087D5E3", hash_generated_method = "21251E31D432B92AD733BA2F789EAB8E")
         
 public void writeToParcel(Parcel dest, int flags) {
@@ -1247,6 +1254,7 @@ public int describeContents() {
             return 0;
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.907 -0500", hash_original_method = "DDF0D3D0D0B3E35B68DDE155F98679B3", hash_generated_method = "DE83D9B8BD94E1616547A0FAEA49FAEC")
         
 public void writeToParcel(Parcel dest, int flags) {

@@ -28,6 +28,7 @@ private SpannableString(CharSequence source, int start, int end) {
         super(source, start, end);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:14.069 -0500", hash_original_method = "703A4E3A5DC432A077E52C12DF31C39D", hash_generated_method = "981E2E06E7D4115A0BFC2D189CC2436C")
     
 public void setSpan(Object what, int start, int end, int flags) {

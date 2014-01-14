@@ -145,6 +145,7 @@ public void remove() {
      * Since this method is only used within {@link LocationManager#getGpsStatus},
      * it does not need to be synchronized.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.865 -0500", hash_original_method = "C95E5E3E266CC24D44E0C8A907AC47BF", hash_generated_method = "C95E5E3E266CC24D44E0C8A907AC47BF")
     
 void setStatus(GpsStatus status) {

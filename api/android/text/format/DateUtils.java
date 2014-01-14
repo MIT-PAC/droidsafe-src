@@ -17,11 +17,6 @@ import android.content.res.Resources;
 
 import com.android.internal.R;
 
-
-
-
-
-
 public class DateUtils {
 
     /**
@@ -660,6 +655,7 @@ public static String writeDateTime(Calendar cal)
      * @hide
      * @deprecated use {@link android.text.format.Time}
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:17.127 -0500", hash_original_method = "F5B26D6CEA03C69B6056609DE60A7792", hash_generated_method = "AE416BA4BB2E6B01C869A36E21DEDEE2")
     
 public static String writeDateTime(Calendar cal, boolean zulu)
@@ -1592,7 +1588,6 @@ public static CharSequence getRelativeTimeSpanString(Context c, long millis) {
 
     private static String sElapsedFormatHMMSS;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:16.919 -0500", hash_original_field = "5886D4FC76C55F77396ED00292E48799", hash_generated_field = "FF305F482E500D435B4D697A0A89A3B1")
-
     
     private static final String FAST_FORMAT_HMMSS = "%1$d:%2$02d:%3$02d";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:16.922 -0500", hash_original_field = "121C8096C10396F9CA53B21724378E03", hash_generated_field = "427596CFBDAE0F72F1DCA7731E4535A3")
@@ -1605,8 +1600,6 @@ public static CharSequence getRelativeTimeSpanString(Context c, long millis) {
 
     private static final char TIME_SEPARATOR = ':';
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:16.930 -0500", hash_original_field = "56BE4EFCFEFF0C5DA945B3A6C115D395", hash_generated_field = "79393C5109653A6A95A2D0A9A64DDFB7")
-
-    
 
     public static final long SECOND_IN_MILLIS = 1000;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:16.933 -0500", hash_original_field = "E37B0A9DC8D2A173C46FD7C52EC101E2", hash_generated_field = "BBDDAEF6073B4DDF1ACD1C13CB027102")
@@ -1790,7 +1783,6 @@ public static CharSequence getRelativeTimeSpanString(Context c, long millis) {
 
     public static final int LENGTH_SHORTEST = 50;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:17.160 -0500", hash_original_field = "EC651D5336C532B18D3F0FE5F80FAF43", hash_generated_field = "C8423BFDB99E2148E6FA387DE029FB84")
-
     
     private static Time sNowTime;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:17.163 -0500", hash_original_field = "32456A67436C9849145D5D40CF2E32F5", hash_generated_field = "210393CA853056B78316AD7FC7D5F3A4")

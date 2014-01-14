@@ -49,6 +49,7 @@ public class FullBackup {
      *    to a location that is writeable by the caller, prefereably using an absolute path.
      * @throws IOException
      */
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.889 -0500", hash_original_method = "F9DFB08D12B24563CC8422B4E7125730", hash_generated_method = "961888451F126DE9730D91AC31697FB8")
     
 static public void restoreFile(ParcelFileDescriptor data,

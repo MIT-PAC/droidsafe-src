@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 
-
-
-
-
-
 public final class AlternativeName extends ExtensionValue {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:58.717 -0500", hash_original_field = "CBB1706FA59C7E15342C93018C8CFC52", hash_generated_field = "FD153840F9D7B8B665F7ED602C76121F")
 
@@ -51,6 +46,7 @@ public AlternativeName(boolean which, byte[] encoding) throws IOException {
         return encoding;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:58.731 -0500", hash_original_method = "62E9965B6B09CF0D2F916BAB455CC9AA", hash_generated_method = "A849C735DE47F0D40BB4C8459BD22AED")
     
 @Override public void dumpValue(StringBuilder sb, String prefix) {

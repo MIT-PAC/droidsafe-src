@@ -8,10 +8,6 @@ import java.io.PrintStream;
 
 import libcore.util.EmptyArray;
 
-
-
-
-
 public class Logger {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.194 -0500", hash_original_method = "D4B2CBF47D8E9A1B445D77283A531F6E", hash_generated_method = "7EAFF6B3B6EDB4B9629F65757D303AD2")
@@ -26,9 +22,7 @@ public static Stream getStream(String name) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.191 -0500", hash_original_field = "111AE7964AF24B253E7924F33761BE69", hash_generated_field = "8B709FD8D963B8653EBAE16DA6B1F60B")
 
-
     private static String[] names;
-
     
     public static class Stream extends PrintStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.163 -0500", hash_original_field = "472440F4277CF14A117E9F03066DCFEC", hash_generated_field = "CC16B6CC34CB003B39D25C6316DD75BD")
@@ -67,6 +61,7 @@ public void endIndent() {
             indent --;
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.176 -0500", hash_original_method = "9FCCAC1E0D29D125BE9308EF391306A0", hash_generated_method = "66209703A73C9C9B32D7E53D6814B02B")
         
 @Override

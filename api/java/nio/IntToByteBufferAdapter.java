@@ -6,10 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import libcore.io.SizeOf;
 
-
-
-
-
 final class IntToByteBufferAdapter extends IntBuffer {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.118 -0500", hash_original_method = "C26DFF1CB2F90F920ECE6C3095E8A671", hash_generated_method = "C4015C0AB13DA38B2DCE397C7B94B6F4")
@@ -20,7 +16,6 @@ static IntBuffer asIntBuffer(ByteBuffer byteBuffer) {
         return new IntToByteBufferAdapter(slice);
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.115 -0500", hash_original_field = "1550DCB87D4D50D3727BEA306C5BDDD3", hash_generated_field = "34B9235D8E87AE2A76AC711395EEC0EB")
-
 
     private  ByteBuffer byteBuffer;
 
@@ -149,6 +144,7 @@ private IntToByteBufferAdapter(ByteBuffer byteBuffer) {
         return false;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.157 -0500", hash_original_method = "3F86EA2C1F796EC91605CF34A16A44E5", hash_generated_method = "F52CC257E42DD231D1D53FCD304AA380")
     
 @Override
@@ -160,6 +156,7 @@ private IntToByteBufferAdapter(ByteBuffer byteBuffer) {
         return this;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.159 -0500", hash_original_method = "3231AAB5D18FCEA9F424FA8559AECE08", hash_generated_method = "8B1C17B0CC0DCFCD5A4FFC8A44361AF3")
     
 @Override
@@ -169,6 +166,7 @@ private IntToByteBufferAdapter(ByteBuffer byteBuffer) {
         return this;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.162 -0500", hash_original_method = "DC03F153D09213907F9D5CD0A27C6001", hash_generated_method = "57EDD4028952E1175784D5B5DE4995C1")
     
 @Override
@@ -195,7 +193,6 @@ private IntToByteBufferAdapter(ByteBuffer byteBuffer) {
         byteBuffer.clear();
         return result;
     }
-
     
 }
 

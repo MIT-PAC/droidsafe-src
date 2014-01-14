@@ -6,10 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Arrays;
 
-
-
-
-
 public abstract class IntBuffer extends Buffer implements Comparable<IntBuffer> {
 
     /**
@@ -421,6 +417,7 @@ public final IntBuffer put(int[] src) {
      * @exception ReadOnlyBufferException
      *                if no changes may be made to the contents of this buffer.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.170 -0500", hash_original_method = "E12C5DD5606B4F94202BB1F980DCA32C", hash_generated_method = "D8E8482E479EA8A948E3AD114397F08C")
     
 public IntBuffer put(int[] src, int srcOffset, int intCount) {
@@ -501,7 +498,6 @@ public abstract IntBuffer put(int index, int i);
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.178 -0500", hash_original_method = "B9F3B2A9702898038CC25336B74676C0", hash_generated_method = "3B6DA994D8723384D96B2E09D6E6434C")
     
 public abstract IntBuffer slice();
-
     
 }
 

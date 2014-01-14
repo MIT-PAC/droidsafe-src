@@ -134,6 +134,7 @@ private HTML5VideoViewProxy(WebView webView, int nativePtr) {
 
     // A bunch event listeners for our VideoView
     // MediaPlayer.OnPreparedListener
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:58.286 -0500", hash_original_method = "CDB2DD287D3DEEC004B192544DE39644", hash_generated_method = "3D38B6910450B1E26B8136079DEAD9F4")
     
 public void onPrepared(MediaPlayer mp) {
@@ -653,6 +654,7 @@ public void headers(Headers headers) {
             mHeaders = headers;
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:58.342 -0500", hash_original_method = "859FCB672305C2E845A33390ED99DE51", hash_generated_method = "D1988A59F45B2D875C1CE0D127A12B49")
         
 public void data(byte[] data, int len) {
@@ -795,6 +797,7 @@ public void loadPoster(String url) {
     }
 
     // These three function are called from UI thread only by WebView.
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:58.396 -0500", hash_original_method = "6B4B481A9DF2B25B735CB7B52B3C6386", hash_generated_method = "D63A1B66E7826EC9A738812D459F59CC")
     
 public void setBaseLayer(int layer) {

@@ -11,9 +11,6 @@ import java.io.OutputStream;
 import org.apache.http.Header;
 import org.apache.http.HttpEntity;
 
-
-
-
 public class HttpEntityWrapper implements HttpEntity {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:45.816 -0500", hash_original_field = "DAC198C5909CCB54353BED3B9E4CBA7E", hash_generated_field = "6CE3FA3FF9DD066356D6790411FF1D54")
 
@@ -36,7 +33,6 @@ public HttpEntityWrapper(HttpEntity wrapped) {
         wrappedEntity = wrapped;
 
     } // constructor
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:45.821 -0500", hash_original_method = "66A5D6AE1E6AB86EE56321AB2307DFBE", hash_generated_method = "A7869F408064539376386BA11273444E")
     
@@ -75,6 +71,7 @@ public InputStream getContent()
         return wrappedEntity.getContent();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:45.834 -0500", hash_original_method = "AB7D45D5A15CAF2F20DF541B4637AB99", hash_generated_method = "7177975BE493E9B969B7CF7EB1DD7476")
     
 public void writeTo(OutputStream outstream)
@@ -94,7 +91,6 @@ public void consumeContent()
         throws IOException {
         wrappedEntity.consumeContent();
     }
-
     
 }
 

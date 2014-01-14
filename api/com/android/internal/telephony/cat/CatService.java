@@ -22,11 +22,6 @@ import com.android.internal.telephony.IccFileHandler;
 import com.android.internal.telephony.IccRecords;
 import com.android.internal.telephony.IccUtils;
 
-
-
-
-
-
 class RilMessage {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:07.984 -0500", hash_original_field = "9F66E723E60E4F10157FDA7C23C67293", hash_generated_field = "9F66E723E60E4F10157FDA7C23C67293")
 
@@ -52,7 +47,6 @@ RilMessage(RilMessage other) {
         this.mData = other.mData;
         this.mResCode = other.mResCode;
     }
-
     
 }
 
@@ -139,13 +133,11 @@ public static AppInterface getInstance() {
     static final int MSG_ID_SIM_READY                = 7;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:08.034 -0500", hash_original_field = "5A40F401F5388F12ACA3333D951FF343", hash_generated_field = "1D8CED9AB3530F764CD1A10878740D1E")
 
-
     static final int MSG_ID_RIL_MSG_DECODED          = 10;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:08.037 -0500", hash_original_field = "B1CEA0BE46E514989BE09579BD34C779", hash_generated_field = "24237C7CDD07AE1193E4425BC5293C07")
 
     private static final int MSG_ID_ICC_RECORDS_LOADED       = 20;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:08.040 -0500", hash_original_field = "5316FCB0E43FA46D0C9E26373A151EE3", hash_generated_field = "FAAA5F069799BFDB7A4455FCFA51B1D0")
-
 
     private static final int DEV_ID_KEYPAD      = 0x01;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:08.043 -0500", hash_original_field = "9896CC2EF26F5A411A86CE42D43972B5", hash_generated_field = "FEDDF3242ED03B4066CCB4E86D6CA64E")
@@ -165,7 +157,6 @@ public static AppInterface getInstance() {
     private static final int DEV_ID_NETWORK     = 0x83;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:08.055 -0500", hash_original_field = "7945B2C23E1EE06BDCBF5D27E8A88446", hash_generated_field = "F948D801B519250F532E826B09C5CF11")
 
-
     static final String STK_DEFAULT = "Defualt Message";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:08.005 -0500", hash_original_field = "964B9B3CAEE98BE74AD9E74C2B357672", hash_generated_field = "6EBA8BBFB850EB64C843C5863723C1B3")
 
@@ -180,7 +171,6 @@ public static AppInterface getInstance() {
 
     private CatCmdMessage mMenuCmd = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:08.014 -0500", hash_original_field = "4BE7780ADB6072B07188254F689A2900", hash_generated_field = "5581F8294B4A44B480C12D4CDCF45252")
-
 
     private RilMessageDecoder mMsgDecoder = null;
 
@@ -611,6 +601,7 @@ private void eventDownload(int event, int sourceId, int destinationId,
         mCmdIf.sendEnvelope(hexString, null);
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:08.103 -0500", hash_original_method = "08AB5E16EBCD81DA8811894A2C2969C7", hash_generated_method = "1FCCDA9D24D3D7DF806F50D3DAC87D4D")
     
 @Override

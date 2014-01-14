@@ -127,6 +127,7 @@ void setCertificate(SslCertificate certificate) {
      * @return the opened low level connection
      * @throws IOException if the connection fails for any reason.
      */
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:13.727 -0500", hash_original_method = "F14CEFDDF6A25D53C3E36A1E481088F2", hash_generated_method = "622D4DB076F02438468DE4A4417A69A2")
     
 @Override

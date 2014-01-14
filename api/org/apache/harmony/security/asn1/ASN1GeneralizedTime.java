@@ -9,11 +9,6 @@ import java.nio.charset.Charsets;
 import java.text.SimpleDateFormat;
 import java.util.TimeZone;
 
-
-
-
-
-
 public final class ASN1GeneralizedTime extends ASN1Time {
 
     /**
@@ -72,6 +67,7 @@ public void encodeContent(BerOutputStream out) {
         out.encodeGeneralizedTime();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.057 -0500", hash_original_method = "D33B8806BE3331999BE0A247A6FB02E4", hash_generated_method = "339EC8F2E12EB153158245B8A7C0B1E2")
     
 public void setEncodingContent(BerOutputStream out) {

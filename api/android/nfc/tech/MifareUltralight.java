@@ -12,10 +12,6 @@ import android.nfc.Tag;
 import android.os.Bundle;
 import android.os.RemoteException;
 
-
-
-
-
 public final class MifareUltralight extends BasicTagTechnology {
 
     /**
@@ -69,7 +65,6 @@ private static void validatePageIndex(int pageIndex) {
     public static final int PAGE_SIZE = 4;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.844 -0500", hash_original_field = "245FCB02BF0BCBA4E578CD836AA35AFC", hash_generated_field = "06570E4E13E0E5C4F5DAEA0BCB6353F6")
 
-
     private static final int NXP_MANUFACTURER_ID = 0x04;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.847 -0500", hash_original_field = "BA1CE31014F375EFEA7C95068A1C75AD", hash_generated_field = "712A7209011F6BE783946B2F4E26F18C")
 
@@ -78,7 +73,6 @@ private static void validatePageIndex(int pageIndex) {
 
     public static final String EXTRA_IS_UL_C = "isulc";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.852 -0500", hash_original_field = "B93BF1EFA6B57CC598632E54B97CD147", hash_generated_field = "E6B4AC7A48E0E54E09A504C828AF50C5")
-
 
     private int mType;
 
@@ -232,6 +226,7 @@ public int getMaxTransceiveLength() {
      *
      * @param timeout timeout value in milliseconds
      */
+    @DSSink({DSSinkKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.871 -0500", hash_original_method = "D282B40A7C0A3209AA4502B842BB4FB3", hash_generated_method = "0FC1DEF997C3DBC8A64B326219E90D10")
     
 public void setTimeout(int timeout) {

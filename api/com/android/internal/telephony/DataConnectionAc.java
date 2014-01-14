@@ -18,21 +18,14 @@ import com.android.internal.telephony.DataConnection.UpdateLinkPropertyResult;
 import com.android.internal.util.AsyncChannel;
 import com.android.internal.util.Protocol;
 
-
-
-
-
-
 public class DataConnectionAc extends AsyncChannel {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:26.576 -0500", hash_original_field = "B2601CA7445F6BA19FA7884763D82281", hash_generated_field = "1A61763F9CABC9206BB5AE6E570AB8AE")
 
     private static final boolean DBG = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:26.583 -0500", hash_original_field = "D31676FE673D1865F5666E81617F1FF5", hash_generated_field = "6BCB0AA355104F156D0A2B3A91BB070E")
 
-
     public static final int BASE = Protocol.BASE_DATA_CONNECTION_AC;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:26.586 -0500", hash_original_field = "1700B4348A7ED5B60D6517535BE794D2", hash_generated_field = "1475D2F355264F68EEAD5DE0DC64E4C1")
-
 
     public static final int REQ_IS_INACTIVE = BASE + 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:26.589 -0500", hash_original_field = "26AAA288AF99CD263D38F405C783E26C", hash_generated_field = "4EF0EE195500EDBC396F404FB857CFCE")
@@ -40,13 +33,11 @@ public class DataConnectionAc extends AsyncChannel {
     public static final int RSP_IS_INACTIVE = BASE + 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:26.591 -0500", hash_original_field = "1383E5283886D0BC9DE3CD544957A335", hash_generated_field = "100ADE81533B5A145526EE17F8BCF7F6")
 
-
     public static final int REQ_GET_CID = BASE + 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:26.594 -0500", hash_original_field = "E05F7B841877276FA2EDD6C7301D7B89", hash_generated_field = "4AADBE311B5CBD53B22C258FD0BC5894")
 
     public static final int RSP_GET_CID = BASE + 3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:26.597 -0500", hash_original_field = "7F3BEECA97CAEE5D62F2FD2124DEAAC9", hash_generated_field = "4556E2B1BBE8565148BB1897F4F1FFF2")
-
 
     public static final int REQ_GET_APNSETTING = BASE + 4;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:26.600 -0500", hash_original_field = "4931E5115CCBF0DD6FB4074AAD2A8E1E", hash_generated_field = "075D97CF7AE01BA14B82937FAB85E17C")
@@ -54,13 +45,11 @@ public class DataConnectionAc extends AsyncChannel {
     public static final int RSP_GET_APNSETTING = BASE + 5;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:26.603 -0500", hash_original_field = "63321D058EBFEC84A0CA8AEE55AEA493", hash_generated_field = "6B2177B63C14A3D8C4A0465DF7EDA57B")
 
-
     public static final int REQ_GET_LINK_PROPERTIES = BASE + 6;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:26.606 -0500", hash_original_field = "5462F0C5952138C701356C42D1A993D9", hash_generated_field = "B073222C67C8387DA84D52E09C649C5B")
 
     public static final int RSP_GET_LINK_PROPERTIES = BASE + 7;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:26.609 -0500", hash_original_field = "06A43CF922D828804D9B33274427735A", hash_generated_field = "AA7EDD6DEA7FBE6E6DEDC341AE2566AA")
-
 
     public static final int REQ_SET_LINK_PROPERTIES_HTTP_PROXY = BASE + 8;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:26.612 -0500", hash_original_field = "5FE5402C1087F7C581B0E62C08F1B5A7", hash_generated_field = "2BD71056213661FD69459E151EB320F2")
@@ -68,13 +57,11 @@ public class DataConnectionAc extends AsyncChannel {
     public static final int RSP_SET_LINK_PROPERTIES_HTTP_PROXY = BASE + 9;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:26.615 -0500", hash_original_field = "AEABFAFB2C90D2D9286557D2457F5850", hash_generated_field = "42BC94DC23936D5550B2F12E94B801F3")
 
-
     public static final int REQ_GET_LINK_CAPABILITIES = BASE + 10;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:26.617 -0500", hash_original_field = "5B6E86890023216E8DD573CA0C0C3E87", hash_generated_field = "7C871C282AED07B5AFD51BB60DC58B87")
 
     public static final int RSP_GET_LINK_CAPABILITIES = BASE + 11;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:26.620 -0500", hash_original_field = "82B8D198F883A0F4AD6604E501823CCC", hash_generated_field = "410DC65F191E667E05E1C26996344ED6")
-
 
     public static final int REQ_UPDATE_LINK_PROPERTIES_DATA_CALL_STATE = BASE + 12;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:26.623 -0500", hash_original_field = "3F3690029483CC32E7B4E0090D52A2A4", hash_generated_field = "EABD1A19ECDA7C315E74E3BB10C8AA34")
@@ -82,13 +69,11 @@ public class DataConnectionAc extends AsyncChannel {
     public static final int RSP_UPDATE_LINK_PROPERTIES_DATA_CALL_STATE = BASE + 13;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:26.625 -0500", hash_original_field = "4B0ABB76CDCC45AFD2ED74F48231D4F1", hash_generated_field = "FA6D9E30AD45F04695E898045922860A")
 
-
     public static final int REQ_RESET = BASE + 14;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:26.629 -0500", hash_original_field = "F81F8CB703087E008BC355FA53614617", hash_generated_field = "669F769EC139E98CB3AFB220D6A1C9FE")
 
     public static final int RSP_RESET = BASE + 15;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:26.632 -0500", hash_original_field = "34A19474B7CB3D1DC82A4D73A31ADFD5", hash_generated_field = "76D19A23EEE2DE297833D58F70073A84")
-
 
     public static final int REQ_GET_REFCOUNT = BASE + 16;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:26.635 -0500", hash_original_field = "0F28FF5E756876BBBB5A77EF5408C996", hash_generated_field = "BD8C38909076EDBB350F0534D3158B5A")
@@ -96,13 +81,11 @@ public class DataConnectionAc extends AsyncChannel {
     public static final int RSP_GET_REFCOUNT = BASE + 17;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:26.638 -0500", hash_original_field = "DCBBD47A8604015D0BE0A4B4F4D7842C", hash_generated_field = "8F3EC990CEC19BF924C0C83E473DF703")
 
-
     public static final int REQ_ADD_APNCONTEXT = BASE + 18;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:26.640 -0500", hash_original_field = "6078F599BF45E794D68B34E1FCC8C2CC", hash_generated_field = "D05330977465F7AF4E384E150213096A")
 
     public static final int RSP_ADD_APNCONTEXT = BASE + 19;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:26.643 -0500", hash_original_field = "6AC512B87ABE61987F54F2AAB70D3619", hash_generated_field = "FC2140507E1C1E4A862E984C6536D33F")
-
 
     public static final int REQ_REMOVE_APNCONTEXT = BASE + 20;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:26.646 -0500", hash_original_field = "0D26313506058C52001F8E3DC26A4D5B", hash_generated_field = "F6C5D6966EFACD969BB347661AD8098A")
@@ -110,20 +93,17 @@ public class DataConnectionAc extends AsyncChannel {
     public static final int RSP_REMOVE_APNCONTEXT = BASE + 21;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:26.649 -0500", hash_original_field = "FEBFD1CAE3F0913E35DCB066204AA33B", hash_generated_field = "7CADBAFCB6C4D553E00439A92A77399A")
 
-
     public static final int REQ_GET_APNCONTEXT_LIST = BASE + 22;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:26.652 -0500", hash_original_field = "3BF712C1870C6CB1C802B1350AA6F31F", hash_generated_field = "08CEE76E523CBFA9615E63AE42E97282")
 
     public static final int RSP_GET_APNCONTEXT_LIST = BASE + 23;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:26.654 -0500", hash_original_field = "9F6A93F261CB5989F2E28F2D395D4C92", hash_generated_field = "AEDC94BDC63CFCBD1EE247E113E0B2BD")
 
-
     public static final int REQ_SET_RECONNECT_INTENT = BASE + 24;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:26.657 -0500", hash_original_field = "0210A72B483C5D5172C09EA9B02CB0CD", hash_generated_field = "50977DA17634FA6287626111506AF1F5")
 
     public static final int RSP_SET_RECONNECT_INTENT = BASE + 25;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:26.659 -0500", hash_original_field = "7FC85EF22C48D4FFF5FBC50B081F79CD", hash_generated_field = "E050F9150348EB87E92AA17BEF7AA6F1")
-
 
     public static final int REQ_GET_RECONNECT_INTENT = BASE + 26;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:26.662 -0500", hash_original_field = "3C1FE5EAB0B817661803531EC738C5A6", hash_generated_field = "B47C4AB7C8CEFA3E66A64CE4AF15F148")
@@ -133,7 +113,6 @@ public class DataConnectionAc extends AsyncChannel {
 
     private String mLogTag;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:26.580 -0500", hash_original_field = "2BA7EB3E16C6C8284C07A8382AC85F57", hash_generated_field = "4C14AF3C02F6F482DB5C38C18F17056F")
-
 
     public DataConnection dataConnection;
 
@@ -247,7 +226,6 @@ public int rspRefCount(Message response) {
         if (DBG) log("rspRefCount=" + retVal);
         return retVal;
     }
-
     
     public enum LinkPropertyChangeAction {
         NONE, CHANGED, RESET;
@@ -370,6 +348,7 @@ public LinkProperties getLinkPropertiesSync() {
      * Request setting the connections LinkProperties.HttpProxy.
      * Response RSP_SET_LINK_PROPERTIES when complete.
      */
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:26.709 -0500", hash_original_method = "52664ABA5522CB5FFA9E0304A7C81F50", hash_generated_method = "220CCCBBDAD09D90895077D5898F7F38")
     
 public void reqSetLinkPropertiesHttpProxy(ProxyProperties proxy) {
@@ -380,6 +359,7 @@ public void reqSetLinkPropertiesHttpProxy(ProxyProperties proxy) {
     /**
      * Set the connections LinkProperties.HttpProxy
      */
+    @DSSink({DSSinkKind.PHONE_CONNECTION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:26.712 -0500", hash_original_method = "71F35538546E3DD45C021DEA145F6AFD", hash_generated_method = "048577F0A15DAE88F58A3B40BBA571E1")
     
 public void setLinkPropertiesHttpProxySync(ProxyProperties proxy) {
@@ -396,6 +376,7 @@ public void setLinkPropertiesHttpProxySync(ProxyProperties proxy) {
      * Request update LinkProperties from DataCallState
      * Response {@link #rspUpdateLinkPropertiesDataCallState}
      */
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:26.714 -0500", hash_original_method = "1137FFCD79265DC595F1B5AA40674EF5", hash_generated_method = "1BA3EAC15E6072C7645043939C73FD4C")
     
 public void reqUpdateLinkPropertiesDataCallState(DataCallState newState) {
@@ -501,6 +482,7 @@ public void resetSync() {
      * Request to add ApnContext association.
      * Response RSP_ADD_APNCONTEXT when complete.
      */
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:26.733 -0500", hash_original_method = "F3233E69134CF9902E31FB14516EC03E", hash_generated_method = "3BDA4F3791893CE28474E7EF4881A9B8")
     
 public void reqAddApnContext(ApnContext apnContext) {
@@ -513,6 +495,7 @@ public void reqAddApnContext(ApnContext apnContext) {
      *
      * @param ApnContext to associate
      */
+    @DSSink({DSSinkKind.PHONE_CONNECTION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:26.736 -0500", hash_original_method = "29B8FEA7830E2BBE9C7BBFD69E48646E", hash_generated_method = "34B3C845585366C8DB83B5DC6D722767")
     
 public void addApnContextSync(ApnContext apnContext) {
@@ -528,6 +511,7 @@ public void addApnContextSync(ApnContext apnContext) {
      * Request to remove ApnContext association.
      * Response RSP_REMOVE_APNCONTEXT when complete.
      */
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:26.738 -0500", hash_original_method = "51B2CCF2735E77C63E82DEC17109A5B1", hash_generated_method = "00D5E1A38930FCC8E9B47A738DBEB5B5")
     
 public void reqRemomveApnContext(ApnContext apnContext) {
@@ -540,6 +524,7 @@ public void reqRemomveApnContext(ApnContext apnContext) {
      *
      * @param ApnContext to dissociate
      */
+    @DSSink({DSSinkKind.PHONE_CONNECTION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:26.741 -0500", hash_original_method = "62E31991C2E3FEB9590AC2302F444FDA", hash_generated_method = "06B122E6D993D7E683ED8C9B5FC895A8")
     
 public void removeApnContextSync(ApnContext apnContext) {
@@ -600,6 +585,7 @@ public Collection<ApnContext> getApnListSync() {
      * Request to set Pending ReconnectIntent to DC.
      * Response RSP_SET_RECONNECT_INTENT when complete.
      */
+    @DSSink({DSSinkKind.PHONE_CONNECTION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:26.752 -0500", hash_original_method = "408D11B7A3DFC98C0728A70ED62F0EEA", hash_generated_method = "B88DF5F3CAE8626407681D6E71BCC297")
     
 public void reqSetReconnectIntent(PendingIntent intent) {
@@ -612,6 +598,7 @@ public void reqSetReconnectIntent(PendingIntent intent) {
      *
      * @param PendingIntent to set.
      */
+    @DSSink({DSSinkKind.PHONE_CONNECTION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:26.754 -0500", hash_original_method = "D99BC1BEF330D90F2BC64CDBA6E6105B", hash_generated_method = "AD6B542286D1442E604FB85C79D02B3B")
     
 public void setReconnectIntentSync(PendingIntent intent) {

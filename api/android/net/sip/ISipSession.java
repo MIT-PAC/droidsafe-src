@@ -225,7 +225,8 @@ return _result;
      *
      * @param listener to listen to the session events of this object
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:27.212 -0500", hash_original_method = "CAC49524625F4FDECB475043789F4BED", hash_generated_method = "06B254359AD8CA0CDAF8B36D2F0A2343")
+@DSSink({DSSinkKind.VOIP})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:27.212 -0500", hash_original_method = "CAC49524625F4FDECB475043789F4BED", hash_generated_method = "06B254359AD8CA0CDAF8B36D2F0A2343")
             
 public void setListener(android.net.sip.ISipSessionListener listener) throws android.os.RemoteException
 {
@@ -251,7 +252,8 @@ _data.recycle();
      * @param duration duration in second before the registration expires
      * @see ISipSessionListener
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:27.215 -0500", hash_original_method = "A811318D1751CC81FC786BFC7E548294", hash_generated_method = "1351984165F7E631428C88A3C60F36B3")
+@DSSink({DSSinkKind.NETWORK})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:27.215 -0500", hash_original_method = "A811318D1751CC81FC786BFC7E548294", hash_generated_method = "1351984165F7E631428C88A3C60F36B3")
             
 public void register(int duration) throws android.os.RemoteException
 {
@@ -304,7 +306,8 @@ _data.recycle();
      *        established within {@code timeout} seconds
      * @see ISipSessionListener
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:27.220 -0500", hash_original_method = "E3C247DE01EC088A9EADA01D5EC0727D", hash_generated_method = "F4921C433BB35758318E30C50E362FEA")
+@DSSink({DSSinkKind.VOIP})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:27.220 -0500", hash_original_method = "E3C247DE01EC088A9EADA01D5EC0727D", hash_generated_method = "F4921C433BB35758318E30C50E362FEA")
             
 public void makeCall(android.net.sip.SipProfile callee, java.lang.String sessionDescription, int timeout) throws android.os.RemoteException
 {
@@ -338,7 +341,8 @@ _data.recycle();
      * @param timeout the session will be timed out if the call is not
      *        established within {@code timeout} seconds
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:27.223 -0500", hash_original_method = "5F49DB427B632074EB62B1752EFF7457", hash_generated_method = "37692A33C7F32A440FCE534AF3E86D9B")
+@DSSink({DSSinkKind.NETWORK})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:27.223 -0500", hash_original_method = "5F49DB427B632074EB62B1752EFF7457", hash_generated_method = "37692A33C7F32A440FCE534AF3E86D9B")
             
 public void answerCall(java.lang.String sessionDescription, int timeout) throws android.os.RemoteException
 {
@@ -388,7 +392,8 @@ _data.recycle();
      * @param timeout the session will be timed out if the call is not
      *        established within {@code timeout} seconds
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:27.228 -0500", hash_original_method = "5A1C81426FAE5FAF6600D0CBE3ED07E8", hash_generated_method = "21679CD7A422C1952E62708EB178E789")
+@DSSink({DSSinkKind.NETWORK})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:27.228 -0500", hash_original_method = "5A1C81426FAE5FAF6600D0CBE3ED07E8", hash_generated_method = "21679CD7A422C1952E62708EB178E789")
             
 public void changeCall(java.lang.String sessionDescription, int timeout) throws android.os.RemoteException
 {
@@ -450,7 +455,8 @@ public android.os.IBinder asBinder()
 {
 return this;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:27.183 -0500", hash_original_method = "B1BB77ABF74A2B9698B38716C4A15335", hash_generated_method = "0CA791B213115D8A2FEC259D75D91F10")
+@DSSink({DSSinkKind.NETWORK})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:27.183 -0500", hash_original_method = "B1BB77ABF74A2B9698B38716C4A15335", hash_generated_method = "0CA791B213115D8A2FEC259D75D91F10")
         
 @Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
 {

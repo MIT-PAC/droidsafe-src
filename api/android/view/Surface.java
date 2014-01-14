@@ -420,6 +420,7 @@ public OutOfResourcesException(String name) {
             return h;
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:28.582 -0500", hash_original_method = "50EBC9F34A364763AC7C9602053D9FF8", hash_generated_method = "E13F6E0B43D4925111FCC2FA8313E7C6")
         
 @Override
@@ -461,6 +462,7 @@ public OutOfResourcesException(String name) {
     	return new Canvas();
     }
     /** @hide */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:28.630 -0500", hash_original_method = "428DEA65454197BAB1AB2F833BF39B55", hash_generated_method = "3973914188D9E8A75AE1D0CAB388FB31")
     
     public void setLayer(int zorder){
@@ -469,10 +471,12 @@ public OutOfResourcesException(String name) {
     }
 
     /** @hide */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:28.632 -0500", hash_original_method = "7F99A19F828A289B6FD343EC8CB65512", hash_generated_method = "F7A531A9713D9363D5D964629569CBF2")
     
 public void setPosition(int x, int y) { setPosition((float)x, (float)y); }
     /** @hide */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:28.636 -0500", hash_original_method = "D556E449F3DAE9E225E5655A6439B288", hash_generated_method = "5B49816C9A76A1146C5474049DD5AD0E")
     
     public void setPosition(float x, float y){
@@ -505,6 +509,7 @@ public void setPosition(int x, int y) { setPosition((float)x, (float)y); }
     }
 
     /** @hide */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:28.651 -0500", hash_original_method = "8BC3F7928D017996CA20E3AD22A58A3C", hash_generated_method = "45E31633C18F4BE22F3BCE924F3F1CBC")
     
     public void setTransparentRegionHint(Region region){
@@ -513,6 +518,7 @@ public void setPosition(int x, int y) { setPosition((float)x, (float)y); }
     }
 
     /** @hide */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:28.655 -0500", hash_original_method = "021CC1A8FCE5777EEDC941EBD3709765", hash_generated_method = "C6ADA6909290E34EC9B200156B8B755B")
     
     public void setAlpha(float alpha){
@@ -521,6 +527,7 @@ public void setPosition(int x, int y) { setPosition((float)x, (float)y); }
     }
 
     /** @hide */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:28.659 -0500", hash_original_method = "C221BDABC27AE9327206947389DE8DAC", hash_generated_method = "7DD4E0A546DD083805A228D1E4AB950C")
     
     public void setMatrix(float dsdx, float dtdx, float dsdy, float dtdy){
@@ -554,6 +561,7 @@ public void setPosition(int x, int y) { setPosition((float)x, (float)y); }
     }
 
     /** @hide */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:28.673 -0500", hash_original_method = "C7085AACC0EA197CCDBEBDC91CFFCA9E", hash_generated_method = "F413B4B81653EEC8936D451A1C78ED50")
     
     public void setFlags(int flags, int mask){

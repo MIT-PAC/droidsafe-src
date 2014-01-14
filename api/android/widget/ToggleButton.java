@@ -13,14 +13,8 @@ import android.view.accessibility.AccessibilityEvent;
 
 import com.android.internal.R;
 
-
-
-
-
-
 public class ToggleButton extends CompoundButton {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.753 -0500", hash_original_field = "F40A65A0161E245EB9410D7A796FE9B3", hash_generated_field = "0FC0F1E74EFFD499D7E9EC90666C1A5B")
-
 
     private static final int NO_ALPHA = 0xFF;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.746 -0500", hash_original_field = "769F2C0D0F3768558E3E71BB28929F11", hash_generated_field = "88910E09C0D7EF0865C6C6AF2A30F920")
@@ -30,7 +24,6 @@ public class ToggleButton extends CompoundButton {
 
     private CharSequence mTextOff;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.750 -0500", hash_original_field = "8C8087D1BF7BFC2034B3FD41A46BB4E1", hash_generated_field = "449BA91A8DE7F6C81175BD28E091D104")
-
     
     private Drawable mIndicatorDrawable;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.755 -0500", hash_original_field = "C7A330BE7142327056539F5ED284903D", hash_generated_field = "BE45430B4E582ECC76FDAE96B324FF18")
@@ -64,6 +57,7 @@ public ToggleButton(Context context) {
         this(context, null);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.765 -0500", hash_original_method = "114EA4FC41B05DCC13D832240123F1AB", hash_generated_method = "2032E16A48DAE7A8FAA1E2F794EDFD08")
     
 @Override
@@ -137,6 +131,7 @@ public void setTextOff(CharSequence textOff) {
         updateReferenceToIndicatorDrawable(getBackground());
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.781 -0500", hash_original_method = "4BCD6E00FF1D8992B4CBE123EFCE4218", hash_generated_method = "A7CB598DCD8B54B83BCEAA154034CAE7")
     
 @Override

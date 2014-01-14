@@ -25,10 +25,6 @@ import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
 
-
-
-
-
 public class NinePatchDrawable extends Drawable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.416 -0500", hash_original_field = "338D1FBCBD429EAFEF0B800F32A31DDD", hash_generated_field = "17A3499D3AE1DB6784657D5E8AE3951F")
 
@@ -49,7 +45,6 @@ public class NinePatchDrawable extends Drawable {
 
     private boolean mMutated;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.428 -0500", hash_original_field = "80AC771C22191FC983474A6CF039F227", hash_generated_field = "1860FF555EBFEAEB762501C3F409202A")
-
 
     private int mTargetDensity = DisplayMetrics.DENSITY_DEFAULT;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.430 -0500", hash_original_field = "4C687A097BDE0B0C2EC2AE8D7A5DB502", hash_generated_field = "568275F41A7E61D900F9F414E799383D")
@@ -146,6 +141,7 @@ private void setNinePatchState(NinePatchState state, Resources res) {
      * @see android.graphics.Bitmap#setDensity(int)
      * @see android.graphics.Bitmap#getDensity()
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.450 -0500", hash_original_method = "82585E992AABF5984A06ED90552A1C77", hash_generated_method = "61CFDB38788DB3DF61DD296AC5E20393")
     
 public void setTargetDensity(Canvas canvas) {
@@ -160,6 +156,7 @@ public void setTargetDensity(Canvas canvas) {
      * @see android.graphics.Bitmap#setDensity(int)
      * @see android.graphics.Bitmap#getDensity()
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.453 -0500", hash_original_method = "4AE49AE83EF2F62C9A584A758B5178F3", hash_generated_method = "5DB2A771EE175C3701864DA1F5B543BF")
     
 public void setTargetDensity(DisplayMetrics metrics) {
@@ -235,6 +232,7 @@ private void computeBitmapSize() {
         return true;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.467 -0500", hash_original_method = "DDA2062A293BD75777B2540266427F8E", hash_generated_method = "304F8A5C1600DCBD8E288A0C143EEE23")
     
 @Override
@@ -247,6 +245,7 @@ private void computeBitmapSize() {
         invalidateSelf();
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.469 -0500", hash_original_method = "D5833F804B1FB713A7DF2F016B869F27", hash_generated_method = "4C3398F7DECFA1CCA5537AB3423663CA")
     
 @Override
@@ -259,6 +258,7 @@ private void computeBitmapSize() {
         invalidateSelf();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.471 -0500", hash_original_method = "CFE043442F57EFE9659FF8A6FEAF97CC", hash_generated_method = "5B33D46B2087D5819378F713C42245C1")
     
 @Override
@@ -271,6 +271,7 @@ private void computeBitmapSize() {
         invalidateSelf();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.473 -0500", hash_original_method = "49680E18787729BA4FD04D8979679DC0", hash_generated_method = "469E9828616F02FFA321DFA7F4094E8F")
     
 @Override
@@ -403,7 +404,6 @@ public Paint getPaint() {
         mNinePatchState.mChangingConfigurations = getChangingConfigurations();
         return mNinePatchState;
     }
-
     
     final static class NinePatchState extends ConstantState {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.501 -0500", hash_original_field = "C0E1C53C4D030D6E494BA74829B1D5B8", hash_generated_field = "C0E1C53C4D030D6E494BA74829B1D5B8")
@@ -467,7 +467,6 @@ NinePatchState(NinePatchState state) {
         public int getChangingConfigurations() {
             return mChangingConfigurations;
         }
-
         
     }
 

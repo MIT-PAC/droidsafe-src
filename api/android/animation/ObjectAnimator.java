@@ -9,10 +9,6 @@ import java.util.ArrayList;
 import android.util.Log;
 import android.util.Property;
 
-
-
-
-
 public final class ObjectAnimator extends ValueAnimator {
 
     /**
@@ -36,7 +32,6 @@ public static ObjectAnimator ofInt(Object target, String propertyName, int... va
         anim.setIntValues(values);
         return anim;
     }
-
     
     public static <T> ObjectAnimator ofInt(T target, Property<T, Integer> property, int... values) {
         ObjectAnimator anim = new ObjectAnimator(target, property);
@@ -65,7 +60,6 @@ public static ObjectAnimator ofFloat(Object target, String propertyName, float..
         anim.setFloatValues(values);
         return anim;
     }
-
     
     public static <T> ObjectAnimator ofFloat(T target, Property<T, Float> property,
             float... values) {
@@ -100,7 +94,6 @@ public static ObjectAnimator ofObject(Object target, String propertyName,
         anim.setEvaluator(evaluator);
         return anim;
     }
-
     
     public static <T, V> ObjectAnimator ofObject(T target, Property<T, V> property,
             TypeEvaluator<V> evaluator, V... values) {
@@ -144,10 +137,8 @@ public static ObjectAnimator ofPropertyValuesHolder(Object target,
     private Object mTarget;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:35.539 -0500", hash_original_field = "3E0E605326E1698CDE7903701811F2C0", hash_generated_field = "A5D083978DF1D40FFF516AEB84BBF3F8")
 
-
     private String mPropertyName;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:35.542 -0500", hash_original_field = "359373B7AA050F75C4B02BC22FC64F0E", hash_generated_field = "17ADCF9554A0CCEDE828D4C3909FCAFB")
-
 
     private Property mProperty;
 
@@ -216,6 +207,7 @@ private <T> ObjectAnimator(T target, Property<T, ?> property) {
      *
      * @param propertyName The name of the property being animated. Should not be null.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:35.544 -0500", hash_original_method = "9BD9C177E2BB2F7D9011362061D59F72", hash_generated_method = "E389D8E1CC4E9E98DE01EC491A9987DA")
     
 public void setPropertyName(String propertyName) {
@@ -274,6 +266,7 @@ public String getPropertyName() {
         return mPropertyName;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:35.575 -0500", hash_original_method = "5C1AD477A95BE17D3D6636E100CB747E", hash_generated_method = "C720D38E7C916822D5CFDE05787FD478")
     
 @Override
@@ -291,6 +284,7 @@ public String getPropertyName() {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:35.577 -0500", hash_original_method = "BECFA01C089C05BCDFA6C4149CD77C82", hash_generated_method = "354B37464F207855D597208AE6CB62A5")
     
 @Override
@@ -308,6 +302,7 @@ public String getPropertyName() {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:35.581 -0500", hash_original_method = "B3827B31EA19B66EB767F4A848C1D3E5", hash_generated_method = "C092E58D2D5FF285F659DCBC36DB8BEF")
     
 @Override
@@ -385,7 +380,6 @@ public String getPropertyName() {
         super.setDuration(duration);
         return this;
     }
-
 
     /**
      * The target object whose property will be animated by this animation

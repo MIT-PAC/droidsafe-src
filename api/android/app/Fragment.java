@@ -191,6 +191,7 @@ public static Fragment instantiate(Context context, String fname) {
      * the given fragment class.  This is a runtime exception; it is not
      * normally expected to happen.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:14.999 -0500", hash_original_method = "DD532F08670F8F66F3144923B381A393", hash_generated_method = "502B97B751650EA555BDAFC8D8187866")
     
 public static Fragment instantiate(Context context, String fname, Bundle args) {
@@ -839,6 +840,7 @@ public LoaderManager getLoaderManager() {
      * Call {@link Activity#startActivity(Intent)} on the fragment's
      * containing Activity.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.079 -0500", hash_original_method = "B68B30EDC5AB3BE8EF657FB7051C7F7E", hash_generated_method = "2653C537061CAA70FE618F1495F7C4F1")
     
 public void startActivity(Intent intent) {
@@ -852,6 +854,7 @@ public void startActivity(Intent intent) {
      * Call {@link Activity#startActivityForResult(Intent, int)} on the fragment's
      * containing Activity.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.083 -0500", hash_original_method = "849399EB62F8B6EE6A6E550D7989B87C", hash_generated_method = "8768E2B6EA85361E6FA51CBF490464A9")
     
 public void startActivityForResult(Intent intent, int requestCode) {
@@ -1432,6 +1435,7 @@ public boolean onContextItemSelected(MenuItem item) {
      * closed for you after you return.
      * @param args additional arguments to the dump request.
      */
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.155 -0500", hash_original_method = "C78D4ECAA9BAFBCD9E78657D4224F582", hash_generated_method = "5206F4499E6E026B2252E75571BF0242")
     
 public void dump(String prefix, FileDescriptor fd, PrintWriter writer, String[] args) {

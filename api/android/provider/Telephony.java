@@ -110,6 +110,7 @@ public static Uri addMessageToUri(ContentResolver resolver,
          * @param folder the folder to move to
          * @return true if the operation succeeded
          */
+        @DSSink({DSSinkKind.SMS_MMS})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:03.540 -0500", hash_original_method = "0C99D40A04CE0C54D0586AC5BB676809", hash_generated_method = "FABA5607187BC6A04AE4466752028609")
         
 public static boolean moveMessageToFolder(Context context,

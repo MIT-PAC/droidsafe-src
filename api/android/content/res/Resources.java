@@ -732,6 +732,7 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 		return null;
 	}
     
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     public void updateConfiguration(Configuration config,
             DisplayMetrics metrics){
 		// Original method
@@ -950,6 +951,7 @@ public NotFoundException(String name) {
 			return false;
 		}
         
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         public void dump(int priority, String tag, String prefix){
 			// Original method
 			/*

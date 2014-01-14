@@ -107,7 +107,8 @@ return _result;
      * @param pin2 required to update EF_FDN, otherwise must be null
      * @return true for success
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:45.660 -0500", hash_original_method = "57C77BA299B396EE0E106B99D9516114", hash_generated_method = "9E50DC52BDEAA2B0B9C46A46D9320CB8")
+@DSSink({DSSinkKind.CONTACT_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:45.660 -0500", hash_original_method = "57C77BA299B396EE0E106B99D9516114", hash_generated_method = "9E50DC52BDEAA2B0B9C46A46D9320CB8")
             
 public boolean updateAdnRecordsInEfBySearch(int efid, java.lang.String oldTag, java.lang.String oldPhoneNumber, java.lang.String newTag, java.lang.String newPhoneNumber, java.lang.String pin2) throws android.os.RemoteException
 {
@@ -147,7 +148,8 @@ return _result;
      * @param pin2 required to update EF_FDN, otherwise must be null
      * @return true for success
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:45.663 -0500", hash_original_method = "91281558576364C85BE46F0079CA820C", hash_generated_method = "BCDF32329AFCC1C932F143E93CF11FA9")
+@DSSink({DSSinkKind.CONTACT_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:45.663 -0500", hash_original_method = "91281558576364C85BE46F0079CA820C", hash_generated_method = "BCDF32329AFCC1C932F143E93CF11FA9")
             
 public boolean updateAdnRecordsInEfByIndex(int efid, java.lang.String newTag, java.lang.String newPhoneNumber, int index, java.lang.String pin2) throws android.os.RemoteException
 {
@@ -217,7 +219,8 @@ public android.os.IBinder asBinder()
 {
 return this;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:45.641 -0500", hash_original_method = "11BCFDA3CD5B05CDBD41BE36B711C193", hash_generated_method = "40A9B7703A04A44038037C58907FE8E2")
+@DSSink({DSSinkKind.CONTACT_INFORMATION})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:45.641 -0500", hash_original_method = "11BCFDA3CD5B05CDBD41BE36B711C193", hash_generated_method = "40A9B7703A04A44038037C58907FE8E2")
         
 @Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
 {

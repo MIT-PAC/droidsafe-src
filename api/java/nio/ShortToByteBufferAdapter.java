@@ -6,10 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import libcore.io.SizeOf;
 
-
-
-
-
 final class ShortToByteBufferAdapter extends ShortBuffer {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:04.697 -0500", hash_original_method = "AC3AEFC35B29F87F354D845C3C24C9D6", hash_generated_method = "93E5B98A7AB0E8CAA7473DBE88CBAADB")
@@ -20,7 +16,6 @@ static ShortBuffer asShortBuffer(ByteBuffer byteBuffer) {
         return new ShortToByteBufferAdapter(slice);
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:04.694 -0500", hash_original_field = "1550DCB87D4D50D3727BEA306C5BDDD3", hash_generated_field = "34B9235D8E87AE2A76AC711395EEC0EB")
-
 
     private  ByteBuffer byteBuffer;
 
@@ -149,6 +144,7 @@ private ShortToByteBufferAdapter(ByteBuffer byteBuffer) {
         return false;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:04.733 -0500", hash_original_method = "BED9261A5E47204D4C26D68EDDB52578", hash_generated_method = "BC5FE641074BA04388BC580BEC4CA545")
     
 @Override
@@ -160,6 +156,7 @@ private ShortToByteBufferAdapter(ByteBuffer byteBuffer) {
         return this;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:04.735 -0500", hash_original_method = "81BB381464177DAD01780ED6CBAA4133", hash_generated_method = "E5438BAB7AC34A2EABC0845B6F608ECE")
     
 @Override
@@ -169,6 +166,7 @@ private ShortToByteBufferAdapter(ByteBuffer byteBuffer) {
         return this;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:04.738 -0500", hash_original_method = "513A20FF10AFB87C25A95801BCBD1A6B", hash_generated_method = "012438AB66A7A9226BEAD40C75801244")
     
 @Override
@@ -195,7 +193,6 @@ private ShortToByteBufferAdapter(ByteBuffer byteBuffer) {
         byteBuffer.clear();
         return result;
     }
-
     
 }
 

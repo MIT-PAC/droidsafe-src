@@ -192,6 +192,7 @@ public static void onInitializeAccessibilityNodeInfo(View v, AccessibilityNodeIn
      *
      * @see android.view.View.AccessibilityDelegate
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:19.247 -0500", hash_original_method = "4280E8CA0A8375D977DD927F0A6FE108", hash_generated_method = "FDC098EF58DE2FA81B05DBE4DBC3A2B4")
     
 public static void setAccessibilityDelegate(View v, AccessibilityDelegateCompat delegate) {
@@ -228,6 +229,7 @@ public int getOverScrollMode(View v) {
 public void setOverScrollMode(View v, int mode) {
             // Do nothing; API doesn't exist
         }
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:19.191 -0500", hash_original_method = "122EA5B596C8B5B38E62AE02215B1570", hash_generated_method = "6A75086B4569BF9320FFF3DCBB097973")
         
 public void setAccessibilityDelegate(View v, AccessibilityDelegateCompat delegate) {
@@ -310,6 +312,7 @@ public void onInitializeAccessibilityNodeInfo(View v, AccessibilityNodeInfoCompa
         public void onInitializeAccessibilityNodeInfo(View v, AccessibilityNodeInfoCompat info) {
             ViewCompatICS.onInitializeAccessibilityNodeInfo(v, info.getImpl());
         }
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:19.224 -0500", hash_original_method = "256253E870D0A3AB828902545E88A8B8", hash_generated_method = "F1CD4EE679299C08237982AF52A9291D")
         
 @Override

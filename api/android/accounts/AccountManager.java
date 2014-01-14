@@ -104,6 +104,7 @@ public static AccountManager get(Context context) {
      * parameter
      * @return an {@link Intent} that can be used to launch the ChooseAccount activity flow.
      */
+    @DSSink({DSSinkKind.ACCOUNT_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.257 -0500", hash_original_method = "8106C3BE6C75982E692D742A84DC4CF5", hash_generated_method = "BAB723D4B0B362AA257356D33B802776")
     
 static public Intent newChooseAccountIntent(Account selectedAccount,
@@ -327,6 +328,7 @@ public final AccountManagerFuture<Bundle> start() {
             return this;
         }
 
+        @DSSink({DSSinkKind.ACCOUNT_SETTINGS})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.120 -0500", hash_original_method = "127E02577FE14DDB30AB934EB38A0588", hash_generated_method = "4BC6487A229BD836DB45687EBF9E02A9")
         
 protected void set(Bundle bundle) {
@@ -412,6 +414,7 @@ protected void done() {
             {
                 //Synthesized constructor
             }
+            @DSSink({DSSinkKind.ACCOUNT_SETTINGS})
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.138 -0500", hash_original_method = "BC11F9A6ED106794CC5C9152E9BD3B43", hash_generated_method = "3F87B4BC1804003A7DAC7BA8131AFE99")
             
 public void onResult(Bundle bundle) {
@@ -433,6 +436,7 @@ public void onResult(Bundle bundle) {
                 }
             }
 
+            @DSSink({DSSinkKind.ACCOUNT_SETTINGS})
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.173 -0500", hash_original_method = "DD61FDBEB518045420249589A7AE75D2", hash_generated_method = "E9A25AD74E531D0CA5E7898168BA1F21")
             
 public void onError(int code, String message) {
@@ -672,7 +676,8 @@ GetAuthTokenByTypeAndFeaturesTask(final String accountType, final String authTok
 public void doWork() throws RemoteException {
             getAccountsByTypeAndFeatures(mAccountType, mFeatures,
                     new AccountManagerCallback<Account[]>() {
-                        public void run(AccountManagerFuture<Account[]> future) {
+                        @DSSink({DSSinkKind.ACCOUNT_SETTINGS})
+            public void run(AccountManagerFuture<Account[]> future) {
                             Account[] accounts;
                             try {
                                 accounts = future.getResult();
@@ -1031,6 +1036,7 @@ public AccountManagerFuture<Account[]> getAccountsByTypeAndFeatures(
      * @return True if the account was successfully added, false if the account
      *     already exists, the account is null, or another error occurs.
      */
+    @DSSink({DSSinkKind.ACCOUNT_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.008 -0500", hash_original_method = "757D4D500E44E3A8DF2EF3DE74D56199", hash_generated_method = "3DCE731003B6465DC675805C3C9DBC38")
     
 public boolean addAccountExplicitly(Account account, String password, Bundle userdata) {

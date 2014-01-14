@@ -247,6 +247,7 @@ public boolean hasGrantedPolicy(ComponentName admin, int usesPolicy) {
      * {@link #PASSWORD_QUALITY_NUMERIC}, {@link #PASSWORD_QUALITY_ALPHABETIC},
      * {@link #PASSWORD_QUALITY_ALPHANUMERIC} or {@link #PASSWORD_QUALITY_COMPLEX}.
      */
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.706 -0500", hash_original_method = "59F8BF318650672CABE968E5789C79B4", hash_generated_method = "E4FDC421A930C78ABB10B0F505610904")
     
 public void setPasswordQuality(ComponentName admin, int quality) {
@@ -299,6 +300,7 @@ public int getPasswordQuality(ComponentName admin) {
      * @param length The new desired minimum password length.  A value of 0
      * means there is no restriction.
      */
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.711 -0500", hash_original_method = "F270559FB103FDDF70DB07978E6CE793", hash_generated_method = "8BAE076C0FA25459742B0C469F0B4148")
     
 public void setPasswordMinimumLength(ComponentName admin, int length) {
@@ -352,6 +354,7 @@ public int getPasswordMinimumLength(ComponentName admin) {
      *            required in the password. A value of 0 means there is no
      *            restriction.
      */
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.715 -0500", hash_original_method = "B0A7D811F24F382978794CAD91B66775", hash_generated_method = "475B1508F81885AACD1750F17D3741B5")
     
 public void setPasswordMinimumUpperCase(ComponentName admin, int length) {
@@ -411,6 +414,7 @@ public int getPasswordMinimumUpperCase(ComponentName admin) {
      *            required in the password. A value of 0 means there is no
      *            restriction.
      */
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.719 -0500", hash_original_method = "411E57E6ADFDEF4CCE60FF315FF9330B", hash_generated_method = "D0A36400D0E336E48CE052EE786103DC")
     
 public void setPasswordMinimumLowerCase(ComponentName admin, int length) {
@@ -469,6 +473,7 @@ public int getPasswordMinimumLowerCase(ComponentName admin) {
      * @param length The new desired minimum number of letters required in the
      *            password. A value of 0 means there is no restriction.
      */
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.724 -0500", hash_original_method = "14047A2F7D126C90FC5B2063BAF2E4A1", hash_generated_method = "D8C1F0AAAC2A113877CE35A3AB13ADD9")
     
 public void setPasswordMinimumLetters(ComponentName admin, int length) {
@@ -526,6 +531,7 @@ public int getPasswordMinimumLetters(ComponentName admin) {
      * @param length The new desired minimum number of numerical digits required
      *            in the password. A value of 0 means there is no restriction.
      */
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.728 -0500", hash_original_method = "33FACE9A88EEFFC907427A4DE2511E88", hash_generated_method = "9EA2C9368E33C29479AF22723F246866")
     
 public void setPasswordMinimumNumeric(ComponentName admin, int length) {
@@ -583,6 +589,7 @@ public int getPasswordMinimumNumeric(ComponentName admin) {
      * @param length The new desired minimum number of symbols required in the
      *            password. A value of 0 means there is no restriction.
      */
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.733 -0500", hash_original_method = "D86720687DC7C5B971FF240E5ADCEB58", hash_generated_method = "110913DA2CB88B38CEC0609BC70AB910")
     
 public void setPasswordMinimumSymbols(ComponentName admin, int length) {
@@ -640,6 +647,7 @@ public int getPasswordMinimumSymbols(ComponentName admin) {
      * @param length The new desired minimum number of letters required in the
      *            password. A value of 0 means there is no restriction.
      */
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.737 -0500", hash_original_method = "8F226B24E69D209379BEE3195F22A7DC", hash_generated_method = "E615574F9EF7ADEA63048ED12239348A")
     
 public void setPasswordMinimumNonLetter(ComponentName admin, int length) {
@@ -698,6 +706,7 @@ public int getPasswordMinimumNonLetter(ComponentName admin) {
    * @param length The new desired length of password history. A value of 0
    *        means there is no restriction.
    */
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.741 -0500", hash_original_method = "56A45FF24A713BC35886C94CD936741A", hash_generated_method = "35DE2A00AA0D79BCB282660E1DEA9EB5")
     
 public void setPasswordHistoryLength(ComponentName admin, int length) {
@@ -729,6 +738,7 @@ public void setPasswordHistoryLength(ComponentName admin, int length) {
      * @param timeout The limit (in ms) that a password can remain in effect. A value of 0
      *        means there is no restriction (unlimited).
      */
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.749 -0500", hash_original_method = "A2F840E60969344CDBBA08F42E12EB97", hash_generated_method = "F1271CF92F6B3701D8E992F7EB492240")
     
 public void setPasswordExpirationTimeout(ComponentName admin, long timeout) {
@@ -883,6 +893,7 @@ public int getCurrentFailedPasswordAttempts() {
      * @param num The number of failed password attempts at which point the
      * device will wipe its data.
      */
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.764 -0500", hash_original_method = "386BE05045BF9977A6E5636AA6860E45", hash_generated_method = "7775E01C31B93481B29EE4669F2F1C05")
     
 public void setMaximumFailedPasswordsForWipe(ComponentName admin, int num) {
@@ -963,6 +974,7 @@ public boolean resetPassword(String password, int flags) {
      * @param timeMs The new desired maximum time to lock in milliseconds.
      * A value of 0 means there is no restriction.
      */
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.774 -0500", hash_original_method = "063F6779A334FCBA41EF649C9EC5AECE", hash_generated_method = "CEAAC32104FE0682CFE5F6C6BB3F4B31")
     
 public void setMaximumTimeToLock(ComponentName admin, long timeMs) {
@@ -1160,6 +1172,7 @@ public ComponentName getGlobalProxyAdmin() {
      * {@link #ENCRYPTION_STATUS_ACTIVE}.  This is the value of the requests;  Use
      * {@link #getStorageEncryptionStatus()} to query the actual device state.
      */
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.802 -0500", hash_original_method = "17B73A4F954CB746271DADF07BB03245", hash_generated_method = "CB378D4C16DB2D05CDD662574A6FD08A")
     
 public int setStorageEncryption(ComponentName admin, boolean encrypt) {
@@ -1236,6 +1249,7 @@ public int getStorageEncryptionStatus() {
      * @param admin Which {@link DeviceAdminReceiver} this request is associated with.
      * @param disabled Whether or not the camera should be disabled.
      */
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.810 -0500", hash_original_method = "A5F298BC4842F29AB6F496D6FD4E07FD", hash_generated_method = "552B6290202768CA177AFF2BF574D8EB")
     
 public void setCameraDisabled(ComponentName admin, boolean disabled) {
@@ -1270,6 +1284,7 @@ public boolean getCameraDisabled(ComponentName admin) {
     /**
      * @hide
      */
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.814 -0500", hash_original_method = "2E5C17164A00D32AA17FC960DDB2A30B", hash_generated_method = "E5F5AAA88F8BE1EE6ADEA4E3148EB40D")
     
 public void setActiveAdmin(ComponentName policyReceiver, boolean refreshing) {

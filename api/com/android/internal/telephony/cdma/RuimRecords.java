@@ -18,21 +18,14 @@ import com.android.internal.telephony.IccRecords;
 import com.android.internal.telephony.IccUtils;
 import com.android.internal.telephony.MccTable;
 
-
-
-
-
-
 public final class RuimRecords extends IccRecords {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:54.791 -0500", hash_original_field = "DB10E3AE28CC9996A816C3CCD7216A83", hash_generated_field = "37C2AB96DD7CCDC96FF809DAC1A6D712")
 
     static final String LOG_TAG = "CDMA";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:54.795 -0500", hash_original_field = "95D5733A0C83DB3D047D109C028C9F02", hash_generated_field = "B7707D757F0604821CCAF673B2122320")
 
-
     private static final boolean DBG = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:54.821 -0500", hash_original_field = "A88C050A83C379002F09ADE7F352B15C", hash_generated_field = "70C0002A03DDB0315C52D7F0E8B395A2")
-
 
     private static final int EVENT_RUIM_READY = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:54.826 -0500", hash_original_field = "10087FBC454048F6857D29E457AA7109", hash_generated_field = "C65DF4AD1462685EBC499AE583280BAA")
@@ -64,20 +57,17 @@ public final class RuimRecords extends IccRecords {
     private static final int EVENT_MARK_SMS_READ_DONE = 19;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:54.873 -0500", hash_original_field = "AC194F73E7CAF89EFF9CBFC050252D04", hash_generated_field = "ED99436836464B30EF1636FCBA09D78C")
 
-
     private static final int EVENT_SMS_ON_RUIM = 21;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:54.877 -0500", hash_original_field = "7516B891086644A58E10A683B9447161", hash_generated_field = "18FB3B701347968BBB3DB68B7D9FA9E0")
 
     private static final int EVENT_GET_SMS_DONE = 22;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:54.880 -0500", hash_original_field = "536A3FC3FB67D05319628F09EE9F4929", hash_generated_field = "AA66F54A711788ECF4FB24747995AEB7")
 
-
     private static final int EVENT_RUIM_REFRESH = 31;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:54.799 -0500", hash_original_field = "A6EF9B025F5BC5CE66C6F9063E4E7AAC", hash_generated_field = "37183B293BAF9977D813A0D8B999B0F9")
 
     private boolean  m_ota_commited=false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:54.803 -0500", hash_original_field = "A688A6E77F37F45C7343129CF3ED455E", hash_generated_field = "A49B5B8A3936B1A215B30A4E9A5841DC")
-
 
     private String mImsi;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:54.807 -0500", hash_original_field = "345C15D7247E4D2871A1A2B9E9B1DF8A", hash_generated_field = "07024A0AF2A22C972FCABAB2E680DB0C")
@@ -88,9 +78,7 @@ public final class RuimRecords extends IccRecords {
     private String mMin2Min1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:54.817 -0500", hash_original_field = "775B97E2DA5E3B7BF3E02721DEBBB726", hash_generated_field = "B5278138A8F074DD973D122E731F6E34")
 
-
     private String mPrlVersion;
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:54.884 -0500", hash_original_method = "44C32614C87F88FAB25838E2BB007C1E", hash_generated_method = "EC81493D94E9D08B109BE97233341FAA")
     
@@ -103,7 +91,6 @@ RuimRecords(CDMAPhone p) {
 
         // recordsToLoad is set to 0 because no requests are made yet
         recordsToLoad = 0;
-
 
         p.mCM.registerForRUIMReady(this, EVENT_RUIM_READY, null);
         p.mCM.registerForOffOrNotAvailable(this, EVENT_RADIO_OFF_OR_NOT_AVAILABLE, null);
@@ -173,6 +160,7 @@ public String getPrlVersion() {
         return mPrlVersion;
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:54.905 -0500", hash_original_method = "42127C0CAB9B1B50FC97B071B6934168", hash_generated_method = "FA0D28A8DD25C86A8B02A8AA37DD5257")
     
 @Override
@@ -398,7 +386,6 @@ private void onRuimReady() {
         phone.mCM.getCDMASubscription(obtainMessage(EVENT_GET_CDMA_SUBSCRIPTION_DONE));
 
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:54.926 -0500", hash_original_method = "618248758DCBCE1B082F10F6590C51C4", hash_generated_method = "8318C6B5FF0AE1AB0C980F08EC53F50F")
     

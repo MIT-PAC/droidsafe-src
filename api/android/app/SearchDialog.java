@@ -419,6 +419,7 @@ private boolean show(ComponentName componentName, Bundle appSearchData) {
      * 
      * @param working true to show spinner, false to hide spinner
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:20.752 -0500", hash_original_method = "25F8B16486236BF1FAF351BB43EBD4A7", hash_generated_method = "46D7396215703DE3106C4959C01FD235")
     
 public void setWorking(boolean working) {
@@ -728,6 +729,7 @@ private void launchIntent(Intent intent) {
     /**
      * Sets the list item selection in the AutoCompleteTextView's ListView.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:20.810 -0500", hash_original_method = "A7D428EF1EDEF778DF6A68394BD0B0D0", hash_generated_method = "E9D1A5A5D96575CA1EA78178C89B0FAA")
     
 public void setListSelection(int index) {

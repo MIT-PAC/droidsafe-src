@@ -189,6 +189,7 @@ public static boolean getSyncAutomatically(Account account, String authority) {
      * @param authority the provider whose behavior is being controlled
      * @param sync true if the provider should be synced when tickles are received for it
      */
+    @DSSink({DSSinkKind.SYNCHRONIZATION_DATA})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.240 -0500", hash_original_method = "C45393365DF55DBBF34D87F9DFB07A0E", hash_generated_method = "4064BAE8FA6519AFCF28B0D7EC6499F5")
     
 public static void setSyncAutomatically(Account account, String authority, boolean sync) {
@@ -318,6 +319,7 @@ public static int getIsSyncable(Account account, String authority) {
      * Set whether this account/provider is syncable.
      * @param syncable >0 denotes syncable, 0 means not syncable, <0 means unknown
      */
+    @DSSink({DSSinkKind.SYNCHRONIZATION_DATA})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.253 -0500", hash_original_method = "0A00860601B883D5D57C7B4B58CC648B", hash_generated_method = "C164D7E46A59E1610414F7A95B602BAA")
     
 public static void setIsSyncable(Account account, String authority, int syncable) {
@@ -1551,6 +1553,7 @@ public final void unregisterContentObserver(ContentObserver observer) {
      * @param uri
      * @param observer The observer that originated the change, may be <code>null</null>
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.219 -0500", hash_original_method = "E76834C8ABF23847CEBC5965503FC8D5", hash_generated_method = "3A5872C192B574229FFFA2AFF9004DE8")
     
 public void notifyChange(Uri uri, ContentObserver observer) {
@@ -1566,6 +1569,7 @@ public void notifyChange(Uri uri, ContentObserver observer) {
      * @param observer The observer that originated the change, may be <code>null</null>
      * @param syncToNetwork If true, attempt to sync the change to the network.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.222 -0500", hash_original_method = "F301FE1DDD6CC7648C7F98CD4F863542", hash_generated_method = "D4B7A5BA283E58792D86DBEA8A8D8DD8")
     
 public void notifyChange(Uri uri, ContentObserver observer, boolean syncToNetwork) {

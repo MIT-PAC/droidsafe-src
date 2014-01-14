@@ -705,6 +705,7 @@ private void doPauseResume() {
         boolean canSeekForward();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:56.885 -0500", hash_original_method = "E14B391343AAAAC9B9A5DC8FE6A0AD92", hash_generated_method = "0B071800A736A98EA4E171A302438D8B")
     
 @Override

@@ -27,11 +27,6 @@ import android.view.ViewGroup;
 import com.android.internal.widget.IRemoteViewsAdapterConnection;
 import com.android.internal.widget.IRemoteViewsFactory;
 
-
-
-
-
-
 public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.541 -0500", hash_original_field = "9015949F6F6D68CEB48F73FC8B9DBBF1", hash_generated_field = "911EBCEFE4CCEB1A8C54FB61D7AB0AD9")
 
@@ -54,7 +49,6 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
 
     private static final int sUnbindServiceMessageType = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.555 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
-
 
     private  Context mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.557 -0500", hash_original_field = "1811495D939DB843870F6315E04555CC", hash_generated_field = "5782C825DA3F61D408DF2DCA63E7F54A")
@@ -83,7 +77,6 @@ public class RemoteViewsAdapter extends BaseAdapter implements Handler.Callback 
     // loaded.
     private RemoteViewsFrameLayoutRefSet mRequestedViews;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.575 -0500", hash_original_field = "B475099F40B00216D4FB8409F5914925", hash_generated_field = "F80515F1CBDC27AC738FAA2D73C57FAC")
-
 
     private HandlerThread mWorkerThread;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.577 -0500", hash_original_field = "CDE5657076443D1F482368B4D67E4492", hash_generated_field = "117A70523E02BF403FE90D6FEB3CF957")
@@ -448,7 +441,6 @@ public boolean hasStableIds() {
 public boolean isEmpty() {
         return getCount() <= 0;
     }
-
     
     private static class RemoteViewsAdapterServiceConnection extends IRemoteViewsAdapterConnection.Stub {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.585 -0500", hash_original_field = "C55D9286978463BA48249377B65E8F9B", hash_generated_field = "76A19B81A43EEDF4AF3BF911EC3960E9")
@@ -470,6 +462,7 @@ public RemoteViewsAdapterServiceConnection(RemoteViewsAdapter adapter) {
             mAdapter = new WeakReference<RemoteViewsAdapter>(adapter);
         }
 
+        @DSSink({DSSinkKind.LOG})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.597 -0500", hash_original_method = "8522D247C3B96C2C6A0E0A6DFCD61958", hash_generated_method = "903EDC1D988BB3540A404E98688F0AF3")
         
 public synchronized void bind(Context context, int appWidgetId, Intent intent) {
@@ -602,11 +595,8 @@ public synchronized IRemoteViewsFactory getRemoteViewsFactory() {
 public synchronized boolean isConnected() {
             return mIsConnected;
         }
-
         
     }
-
-
     
     private class RemoteViewsFrameLayout extends FrameLayout {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.629 -0500", hash_original_method = "15F65CD5E3BE0169B47C7BF19C42CB6A", hash_generated_method = "ABFCA66BFA93CA4D32BE7A9879BA7490")
@@ -631,11 +621,8 @@ public void onRemoteViewsLoaded(RemoteViews view) {
                 Log.e(TAG, "Failed to apply RemoteViews.");
             }
         }
-
         
     }
-
-
     
     private class RemoteViewsFrameLayoutRefSet {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.635 -0500", hash_original_field = "C91012CBE89A7E6646719176F59C71F4", hash_generated_field = "0DDDAE295C285660CD7FE8EBB6DC5F4A")
@@ -702,11 +689,8 @@ public void clear() {
             // in their default state of the loading view.
             mReferences.clear();
         }
-
         
     }
-
-
     
     private class RemoteViewsMetaData {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.649 -0500", hash_original_field = "B83BF7ED7F5719DA923E1BC0AC69952B", hash_generated_field = "B83BF7ED7F5719DA923E1BC0AC69952B")
@@ -845,11 +829,8 @@ private RemoteViewsFrameLayout createLoadingView(int position, View convertView,
 
             return layout;
         }
-
         
     }
-
-
     
     private class RemoteViewsIndexMetaData {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.684 -0500", hash_original_field = "76F76148F5071AE6285A6BC57B0ADE91", hash_generated_field = "76F76148F5071AE6285A6BC57B0ADE91")
@@ -878,11 +859,8 @@ public void set(RemoteViews v, long id, boolean requested) {
                 typeId = 0;
             isRequested = requested;
         }
-
         
     }
-
-
     
     private class FixedSizeRemoteViewsCache {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:57.699 -0500", hash_original_field = "A29FD7555FE4F655CC762981664D87C7", hash_generated_field = "E4C58D7C8C895509DA92BEC5943A1E34")
@@ -1165,15 +1143,12 @@ public void reset() {
             }
         }
     }
-
-
     
     public interface RemoteAdapterConnectionCallback {
         
         public boolean onRemoteAdapterConnected();
 
         public void onRemoteAdapterDisconnected();
-
         
         public void deferNotifyDataSetChanged();
     }

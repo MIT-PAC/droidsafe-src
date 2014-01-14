@@ -66,6 +66,7 @@ public class UiModeManager {
      * the mode switch.
      * @param flags Must be 0.
      */
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:14.319 -0500", hash_original_method = "A4DA8672EE11B64C720877911E862CCA", hash_generated_method = "DD466E571F8813B6A90B31373C9D4E21")
     
 public void enableCarMode(int flags) {
@@ -128,6 +129,7 @@ public int getCurrentModeType() {
      *       depending on the location and certain other sensors.</li>
      * </ul>
      */
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:14.328 -0500", hash_original_method = "D2225F0EDD53710765C544C38EED4B1C", hash_generated_method = "42638A30BD8F188BC6646A1676028C8E")
     
 public void setNightMode(int mode) {

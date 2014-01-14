@@ -110,6 +110,7 @@ public void setOnFrameAvailableListener(OnFrameAvailableListener l) {
      * An error due to invalid dimensions might not be reported until
      * updateTexImage() is called.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:24.203 -0500", hash_original_method = "73040EC5A717DD03B1E2713EBAC256DF", hash_generated_method = "2D2F3EB45AF1663225A76358B63576B4")
     
 public void setDefaultBufferSize(int width, int height) {

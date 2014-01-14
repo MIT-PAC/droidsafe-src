@@ -740,6 +740,7 @@ public boolean isSplitTouchEnabled() {
      * @param enabled true if the split touches should be enabled, false otherwise
      * @see #isSplitTouchEnabled()
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:08.019 -0500", hash_original_method = "8E279F2F2689369B00326EC855CADBF3", hash_generated_method = "BF1D833D1DD6753529547824DAB73425")
     
 public void setSplitTouchEnabled(boolean enabled) {
@@ -819,6 +820,7 @@ public int getWindowLayoutType() {
      * other windows behind it.
      * @hide
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:08.032 -0500", hash_original_method = "B8930E34962345C50EA9D19D5D77CFE8", hash_generated_method = "EDD8C4CCC83997A190BF0831DB56D22D")
     
 public void setTouchModal(boolean touchModal) {
@@ -1488,6 +1490,7 @@ public void update() {
      * @param width the new width
      * @param height the new height
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:08.091 -0500", hash_original_method = "99E415F6DCFBC1202511EEF5D071A55C", hash_generated_method = "B106EB6DEF9A73C69777BA1DD9BE350D")
     
 public void update(int width, int height) {
@@ -1507,6 +1510,7 @@ public void update(int width, int height) {
      * @param width the new width, can be -1 to ignore
      * @param height the new height, can be -1 to ignore
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:08.093 -0500", hash_original_method = "848B641343A16858C863B802CDF64CDF", hash_generated_method = "373ECA42D8F8D00000AD71E7C9CBB0B2")
     
 public void update(int x, int y, int width, int height) {
@@ -1526,6 +1530,7 @@ public void update(int x, int y, int width, int height) {
      * @param force reposition the window even if the specified position
      *              already seems to correspond to the LayoutParams
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:08.096 -0500", hash_original_method = "7F49F99468193710A8807FDE38269850", hash_generated_method = "397758BA0068FB838F5FDD2B9449A418")
     
 public void update(int x, int y, int width, int height, boolean force) {
@@ -1595,6 +1600,7 @@ public void update(int x, int y, int width, int height, boolean force) {
      * @param width the new width, can be -1 to ignore
      * @param height the new height, can be -1 to ignore
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:08.099 -0500", hash_original_method = "2E7624B1CB6DF9766B6E25C708FAA465", hash_generated_method = "4463EF16B0B7E42074A9ADB20C25917B")
     
 public void update(View anchor, int width, int height) {
@@ -1626,6 +1632,7 @@ public PopupViewContainer(Context context) {
             }
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:08.122 -0500", hash_original_method = "A2DD55E78C6B8B19849AEC8708A214E9", hash_generated_method = "664BD3635A69F63DA63D458E4E589915")
         
 @Override
@@ -1684,6 +1691,7 @@ public PopupViewContainer(Context context) {
             }
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:08.129 -0500", hash_original_method = "EB4F4EE30B31AEB9BDFF308A3D2D5CAC", hash_generated_method = "92046F7B9DC15AB1762CE271BC620B7E")
         
 @Override
@@ -1717,6 +1725,7 @@ public PopupViewContainer(Context context) {
      * @param width the new width, can be -1 to ignore
      * @param height the new height, can be -1 to ignore
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:08.101 -0500", hash_original_method = "B8D2EE4CAAF22B5FC8CA5A06E5BF0669", hash_generated_method = "91609FE96C86FFA6D74A85BF08411CD6")
     
 public void update(View anchor, int xoff, int yoff, int width, int height) {

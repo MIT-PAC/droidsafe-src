@@ -6,9 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Arrays;
 
-
-
-
 public class BufferedOutputStream extends FilterOutputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.484 -0500", hash_original_field = "001DD3820C6A6A544AB42831C6F17A05", hash_generated_field = "083037218D1B4F9535944A48D3FD1BCA")
 
@@ -96,6 +93,7 @@ private void checkNotClosed() throws IOException {
      * @throws ArrayIndexOutOfBoundsException
      *             If offset or count is outside of bounds.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.500 -0500", hash_original_method = "EC14898AF1C6D500DEF61C098384315C", hash_generated_method = "0A30862E0D81C221231B60E443A2F762")
     
 @Override
@@ -173,7 +171,6 @@ private void flushInternal() throws IOException {
             count = 0;
         }
     }
-
     
 }
 

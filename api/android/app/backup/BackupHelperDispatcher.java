@@ -43,6 +43,7 @@ public class BackupHelperDispatcher {
 public BackupHelperDispatcher() {
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.674 -0500", hash_original_method = "A8E840254EBF3392B798809BE9F9086F", hash_generated_method = "79730BB33F60087E0AEB7F734D673C2E")
     
 public void addHelper(String keyPrefix, BackupHelper helper) {
@@ -129,6 +130,7 @@ private void doOneBackup(ParcelFileDescriptor oldState, BackupDataOutput data,
 
     }
 
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.683 -0500", hash_original_method = "5D2E23956580E2A3306D4050F8218E29", hash_generated_method = "C8CBD5B804A52AAF69F30F351ED21240")
     
 public void performRestore(BackupDataInput input, int appVersionCode,

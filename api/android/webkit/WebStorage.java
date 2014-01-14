@@ -402,6 +402,7 @@ public void getQuotaForOrigin(String origin, ValueCallback<Long> callback) {
     /**
      * Set the quota for a given origin
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.298 -0500", hash_original_method = "567046E45B1707841AB709B2994EB872", hash_generated_method = "9F7FAAF1F324A758693C53AFB4A3A0EF")
     
 public void setQuotaForOrigin(String origin, long quota) {

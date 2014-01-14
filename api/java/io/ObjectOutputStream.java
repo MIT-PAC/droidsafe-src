@@ -500,6 +500,7 @@ public void useProtocolVersion(int version) throws IOException {
      * @throws IOException
      *             if an error occurs while writing to the target stream.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.043 -0500", hash_original_method = "4335176A8BF0CB76C8983C14BE755AB0", hash_generated_method = "2396E7855518FCB39100A578F5EF0B6D")
     
 @Override
@@ -518,6 +519,7 @@ public void useProtocolVersion(int version) throws IOException {
      * @throws IOException
      *             if an error occurs while writing to the target stream.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.045 -0500", hash_original_method = "890E7ADC76A0934752F791BA928637BD", hash_generated_method = "76EC2FE8B111D6EFD0C5161A9F8E6AE5")
     
 @Override
@@ -534,6 +536,7 @@ public void useProtocolVersion(int version) throws IOException {
      * @throws IOException
      *             if an error occurs while writing to the target stream.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.047 -0500", hash_original_method = "253E21281D84BB4AEC7BC00A39E22928", hash_generated_method = "029F21A115C14D88BF09E962FA8E82B1")
     
 public void writeBoolean(boolean value) throws IOException {
@@ -549,6 +552,7 @@ public void writeBoolean(boolean value) throws IOException {
      * @throws IOException
      *             if an error occurs while writing to the target stream.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.049 -0500", hash_original_method = "DCBF5513EE5F9BB37CF570D282A66C5E", hash_generated_method = "B50D824F31325598242CF2A68080FEDA")
     
 public void writeByte(int value) throws IOException {
@@ -566,6 +570,7 @@ public void writeByte(int value) throws IOException {
      * @throws IOException
      *             if an error occurs while writing to the target stream.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.052 -0500", hash_original_method = "2FD9E25E34EBC831C98FBB1774A09056", hash_generated_method = "3FC5B8F8F72A713B2C0960DBC8B0282B")
     
 public void writeBytes(String value) throws IOException {
@@ -581,6 +586,7 @@ public void writeBytes(String value) throws IOException {
      * @throws IOException
      *             if an error occurs while writing to the target stream.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.054 -0500", hash_original_method = "A70BC61472A0A40B7DA1B300459E269C", hash_generated_method = "3194C3B1826DCE69B6DA63887D9F90F5")
     
 public void writeChar(int value) throws IOException {
@@ -597,6 +603,7 @@ public void writeChar(int value) throws IOException {
      * @throws IOException
      *             if an error occurs while writing to the target stream.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.057 -0500", hash_original_method = "2819E1113D5EFA42F2CF8A185C5FE232", hash_generated_method = "B8C53EDFE2427B81C0D7CC5F8B84A55F")
     
 public void writeChars(String value) throws IOException {
@@ -699,6 +706,7 @@ private void writeCyclicReference(int handle) throws IOException {
      * @throws IOException
      *             if an error occurs while writing to the target stream.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.065 -0500", hash_original_method = "02DC35912BAFF16550D8FBDB82DDCD50", hash_generated_method = "B0839B5ACE77F3E590FC761BCFCBBA2A")
     
 public void writeDouble(double value) throws IOException {
@@ -888,6 +896,7 @@ private void writeFieldValues(Object obj, ObjectStreamClass classDesc) throws IO
      * @throws IOException
      *             if an error occurs while writing to the target stream.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.080 -0500", hash_original_method = "2F0CF28A5E4A8655D2779BA683FB03E5", hash_generated_method = "97206FF0F5149E705B689D6DF50FE57D")
     
 public void writeFloat(float value) throws IOException {
@@ -984,6 +993,7 @@ private void writeHierarchy(Object object, ObjectStreamClass classDesc)
      * @throws IOException
      *             if an error occurs while writing to the target stream.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.086 -0500", hash_original_method = "4D560E72502C61E130F3258421731401", hash_generated_method = "DB98D19071CCC9064BAB18D4DCD03CE1")
     
 public void writeInt(int value) throws IOException {
@@ -999,6 +1009,7 @@ public void writeInt(int value) throws IOException {
      * @throws IOException
      *             if an error occurs while writing to the target stream.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.089 -0500", hash_original_method = "1C4CA2BE4C70907161A2CF485CB22A3E", hash_generated_method = "159023B26ABF7EB4239CF31CE78EA5AF")
     
 public void writeLong(long value) throws IOException {
@@ -1197,6 +1208,7 @@ private void writeNewClassDesc(ObjectStreamClass classDesc)
      * @throws IOException
      *             if an error occurs while writing to the target stream.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.101 -0500", hash_original_method = "641338D73905B8D6D3FE171A8894AADC", hash_generated_method = "9B1C0A79BFA0C4084EB7D72A72E7C5EC")
     
 protected void writeClassDescriptor(ObjectStreamClass classDesc)
@@ -1390,6 +1402,7 @@ private void writeNull() throws IOException {
      *             if an error occurs while writing to the target stream.
      * @see ObjectInputStream#readObject()
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.115 -0500", hash_original_method = "D65EE5B0FE82553B53FE321A403242DE", hash_generated_method = "0F7F1300E84E4CF37EC57773C07CEC2E")
     
 public final void writeObject(Object object) throws IOException {
@@ -1408,6 +1421,7 @@ public final void writeObject(Object object) throws IOException {
      *             if an error occurs while writing to the target stream.
      * @see ObjectInputStream#readUnshared()
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.117 -0500", hash_original_method = "21591331F2C6632F1308070B9A9FAC52", hash_generated_method = "6217E9B52C34975907A5890969EFD0B0")
     
 public void writeUnshared(Object object) throws IOException {
@@ -1727,6 +1741,7 @@ protected void writeObjectOverride(Object object) throws IOException {
      * @throws IOException
      *             if an error occurs while writing to the target stream.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.136 -0500", hash_original_method = "F969E0C742AA855339F3D16852D29508", hash_generated_method = "56ACD159CD8C7DEAAF4C2A7416345641")
     
 public void writeShort(int value) throws IOException {
@@ -1897,6 +1912,7 @@ protected void writeStreamHeader() throws IOException {
      * @throws IOException
      *             if an error occurs while writing to the target stream.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.141 -0500", hash_original_method = "BDFE9F98A4288C3F1994A443E4A70C5E", hash_generated_method = "CA676E9C31D6BA3A4A1446EAAB71FA96")
     
 public void writeUTF(String value) throws IOException {

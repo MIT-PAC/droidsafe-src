@@ -19,10 +19,6 @@ import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
 import javax.crypto.ShortBufferException;
 
-
-
-
-
 public class NullCipherSpi extends CipherSpi {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.842 -0400", hash_original_method = "FDE7F108401C679AA53E658D57386CA0", hash_generated_method = "FDE7F108401C679AA53E658D57386CA0")
@@ -123,6 +119,7 @@ public class NullCipherSpi extends CipherSpi {
         return inputLen;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:19.252 -0500", hash_original_method = "52F18BDADF6C5DE31B16AD29ECF185DD", hash_generated_method = "18A7508DDC7A7B6B35593399C308F05B")
     
 @Override
@@ -193,7 +190,6 @@ public class NullCipherSpi extends CipherSpi {
     public int engineGetKeySize(Key key) throws InvalidKeyException {
         throw new UnsupportedOperationException();
     }
-
     
 }
 

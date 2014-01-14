@@ -20,16 +20,11 @@ import javax.net.ssl.SSLSessionContext;
 
 import libcore.util.EmptyArray;
 
-
-
-
-
 public final class SSLSessionImpl implements SSLSession, Cloneable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:12.196 -0500", hash_original_field = "5BCA2038B74699E0EF29DA83147E23C8", hash_generated_field = "4097B493A1663D0BA471C72A0F0B7465")
 
     public static final SSLSessionImpl NULL_SESSION = new SSLSessionImpl(null);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:12.198 -0500", hash_original_field = "9D5259E44721BAC80FAB5E719998510B", hash_generated_field = "8A4271AF76CEF8B5667B49A4D9A7868D")
-
 
     private long creationTime;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:12.201 -0500", hash_original_field = "FFFCC50D3A278EF95DEB022E99DE2B21", hash_generated_field = "5738630542C71F34716CA340A1982FCB")
@@ -39,7 +34,6 @@ public final class SSLSessionImpl implements SSLSession, Cloneable {
 
     private final Map<String, Object> values = new HashMap<String, Object>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:12.205 -0500", hash_original_field = "90A5D328FD00C6FE5EBB6109B912317E", hash_generated_field = "90A5D328FD00C6FE5EBB6109B912317E")
-
 
     byte[] id;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:12.207 -0500", hash_original_field = "C69F06F47E4978627AC3DF239BEBA6F7", hash_generated_field = "C69F06F47E4978627AC3DF239BEBA6F7")
@@ -253,6 +247,7 @@ public boolean isValid() {
         return isValid;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:12.285 -0500", hash_original_method = "306FE04DD14403034511108312788846", hash_generated_method = "3D28D4DAA15DA59E1E198C43B216F883")
     
 public void putValue(String name, Object value) {

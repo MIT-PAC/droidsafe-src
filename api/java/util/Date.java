@@ -14,10 +14,6 @@ import java.text.SimpleDateFormat;
 
 import libcore.icu.LocaleData;
 
-
-
-
-
 public class Date implements Serializable, Cloneable, Comparable<Date> {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:30.963 -0500", hash_original_method = "000F0F69BA8739697FCA4FE0C538316B", hash_generated_method = "4CAA8F423C86610AB9A4DC527B436221")
@@ -302,13 +298,11 @@ private static int zone(String text) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:30.901 -0500", hash_original_field = "F854CC3110F1DC417C8120C26CD53E56", hash_generated_field = "CD3049977F52AE47136F3048623BF2B1")
 
-
     private static final long serialVersionUID = 7523967970034938905L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:30.904 -0500", hash_original_field = "E9D2CE86AF0A20FBF638F53C3AFC3F0D", hash_generated_field = "86DAAEAAB92B64CADF16DC4975B9F626")
 
     private static int creationYear = new Date().getYear();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:30.906 -0500", hash_original_field = "12E73FABB6840CD953EDD926E801F037", hash_generated_field = "6BC5295E2736F8077860853450F996C9")
-
 
     private transient long milliseconds;
 
@@ -665,6 +659,7 @@ public long getTime() {
      *
      * @deprecated use {@code Calendar.set(Calendar.DATE, day)}
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:30.972 -0500", hash_original_method = "CA2D09B2D9B2F9BDCD2321E1B3353343", hash_generated_method = "58E37E4CD8BC78802E2E5556022896DD")
     
 @Deprecated
@@ -682,6 +677,7 @@ public long getTime() {
      *
      * @deprecated use {@code Calendar.set(Calendar.HOUR_OF_DAY, hour)}
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:30.975 -0500", hash_original_method = "DAB8B4072C80F91D1F54942852D0B029", hash_generated_method = "A30237EE5E24E594D496E0990A18671D")
     
 @Deprecated
@@ -699,6 +695,7 @@ public long getTime() {
      *
      * @deprecated use {@code Calendar.set(Calendar.MINUTE, minute)}
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:30.978 -0500", hash_original_method = "9DC7826FE54BE20D0703E6C2CC9AB71D", hash_generated_method = "054AC6CBA487676DDBCA8DA2A89B1C62")
     
 @Deprecated
@@ -716,6 +713,7 @@ public long getTime() {
      *
      * @deprecated use {@code Calendar.set(Calendar.MONTH, month)}
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:30.980 -0500", hash_original_method = "CBC4CDF52C0128D6B57913B17A16C753", hash_generated_method = "066957CB9807A22F9CD08EF1FDF7533B")
     
 @Deprecated
@@ -733,6 +731,7 @@ public long getTime() {
      *
      * @deprecated use {@code Calendar.set(Calendar.SECOND, second)}
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:30.983 -0500", hash_original_method = "2FB8CB70BDB70CDBCF22A1F179F9FAD0", hash_generated_method = "8A30E26DA5FB65CBDE7224776A66E58B")
     
 @Deprecated
@@ -763,6 +762,7 @@ public void setTime(long milliseconds) {
      *
      * @deprecated use {@code Calendar.set(Calendar.YEAR, year + 1900)}
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:30.987 -0500", hash_original_method = "6618142CAD2C334ADC07B7799C053111", hash_generated_method = "5E208FC292A30DB77B1DD9A3E4CA2AE1")
     
 @Deprecated

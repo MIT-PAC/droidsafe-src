@@ -20,6 +20,7 @@ public final class Log {
      *        the class or activity where the log call occurs.
      * @param msg The message you would like logged.
      */
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.085 -0500", hash_original_method = "3D050B3246ABFA92814436071545CB13", hash_generated_method = "A1B3C1896BBBEB497B7178CE2AB2F833")
     
 public static int v(String tag, String msg) {
@@ -33,6 +34,7 @@ public static int v(String tag, String msg) {
      * @param msg The message you would like logged.
      * @param tr An exception to log
      */
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.088 -0500", hash_original_method = "6371CCA1AACEE15A82F0B64483CB973F", hash_generated_method = "A2C9957C0FB31C6DFA21C0116F594BB3")
     
 public static int v(String tag, String msg, Throwable tr) {
@@ -45,6 +47,7 @@ public static int v(String tag, String msg, Throwable tr) {
      *        the class or activity where the log call occurs.
      * @param msg The message you would like logged.
      */
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.091 -0500", hash_original_method = "AFD39BBB2869311A4545E6AF5E18494B", hash_generated_method = "0C5D5AC5212DF40B5E19C863CBCB39D4")
     
 public static int d(String tag, String msg) {
@@ -58,6 +61,7 @@ public static int d(String tag, String msg) {
      * @param msg The message you would like logged.
      * @param tr An exception to log
      */
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.093 -0500", hash_original_method = "4492C71DA07A18BB6C5A18B63CA7FEE4", hash_generated_method = "1A551339626D67B9608E3578A9C1C58D")
     
 public static int d(String tag, String msg, Throwable tr) {
@@ -70,6 +74,7 @@ public static int d(String tag, String msg, Throwable tr) {
      *        the class or activity where the log call occurs.
      * @param msg The message you would like logged.
      */
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.095 -0500", hash_original_method = "90D3F6175B896C0304A3EF3A595CA2C2", hash_generated_method = "738EAED8F13FB872BEC6302B30228D6D")
     
 public static int i(String tag, String msg) {
@@ -83,6 +88,7 @@ public static int i(String tag, String msg) {
      * @param msg The message you would like logged.
      * @param tr An exception to log
      */
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.097 -0500", hash_original_method = "D380393FD3C099B2671AFD42E854EB56", hash_generated_method = "5C503D9C65E03A67736F030C07E440ED")
     
 public static int i(String tag, String msg, Throwable tr) {
@@ -95,6 +101,7 @@ public static int i(String tag, String msg, Throwable tr) {
      *        the class or activity where the log call occurs.
      * @param msg The message you would like logged.
      */
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.100 -0500", hash_original_method = "BB8A0F0F374EC19DB78F36BE9CB1080F", hash_generated_method = "7631A992905D8C63EED62786A2C0603F")
     
 public static int w(String tag, String msg) {
@@ -108,6 +115,7 @@ public static int w(String tag, String msg) {
      * @param msg The message you would like logged.
      * @param tr An exception to log
      */
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.102 -0500", hash_original_method = "56EF6624BA8DC40BA895131478A46CEE", hash_generated_method = "B9EE69E711B13C584EF8EBF2A38ED5F5")
     
 public static int w(String tag, String msg, Throwable tr) {
@@ -124,6 +132,7 @@ public static int w(String tag, String msg, Throwable tr) {
      *        the class or activity where the log call occurs.
      * @param tr An exception to log
      */
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.108 -0500", hash_original_method = "FC76D95DCCFE80C9D53EB09BCEAF8146", hash_generated_method = "3E09D34AC66462E0DA241E5B3631A611")
     
 public static int w(String tag, Throwable tr) {
@@ -136,6 +145,7 @@ public static int w(String tag, Throwable tr) {
      *        the class or activity where the log call occurs.
      * @param msg The message you would like logged.
      */
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.110 -0500", hash_original_method = "CCAD4AAF1B926E5A09DC6FEC20772811", hash_generated_method = "CDD9A8498CAE7BCCD00E7EBAC1BC7B11")
     
 public static int e(String tag, String msg) {
@@ -149,6 +159,7 @@ public static int e(String tag, String msg) {
      * @param msg The message you would like logged.
      * @param tr An exception to log
      */
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.112 -0500", hash_original_method = "0E0F39B47315805DA235DB6910E951BD", hash_generated_method = "E9C2958DD82B5B86E3A87143494051BA")
     
 public static int e(String tag, String msg, Throwable tr) {
@@ -189,6 +200,7 @@ public static int wtf(String tag, Throwable tr) {
      * @param msg The message you would like logged.
      * @param tr An exception to log.  May be null.
      */
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.119 -0500", hash_original_method = "181C11BE6032133F9C5410C68DB86F4F", hash_generated_method = "9436003A1F0DDF141A169F89BD484EDA")
     
 public static int wtf(String tag, String msg, Throwable tr) {
@@ -251,6 +263,7 @@ public static String getStackTraceString(Throwable tr) {
      * @param msg The message you would like logged.
      * @return The number of bytes written.
      */
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.127 -0500", hash_original_method = "5FBBD39B6D46109F46B6F9786F21DE2B", hash_generated_method = "BA41CA312351027D578A271A03AF5AC6")
     
 public static int println(int priority, String tag, String msg) {

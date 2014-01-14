@@ -45,10 +45,6 @@ import android.net.Uri;
 import android.os.Process;
 import android.os.RemoteException;
 
-
-
-
-
 final class ApplicationPackageManager extends PackageManager {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.953 -0500", hash_original_method = "CAEBB17CBA604CB35D365427B4123BDD", hash_generated_method = "9AE8A061D889EA13448450E238E2CB9A")
@@ -116,7 +112,6 @@ static void handlePackageBroadcast(int cmd, String[] pkgList, boolean hasPkgInfo
     private final static boolean DEBUG_ICONS = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:23.078 -0500", hash_original_field = "C9A89FF9952633C3C99E6CECFFFB823C", hash_generated_field = "589A8BDF0C7416090F474EA4E832C9BC")
 
-
     private static final Object sSync = new Object();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:23.080 -0500", hash_original_field = "2C092D064C487286968C29223F0F5DE7", hash_generated_field = "4B02A68E27DCF1DC814B05F533A46F39")
 
@@ -128,10 +123,8 @@ static void handlePackageBroadcast(int cmd, String[] pkgList, boolean hasPkgInfo
             = new HashMap<ResourceName, WeakReference<CharSequence>>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.949 -0500", hash_original_field = "BB74ADCE9FCE390733990F175981A8B2", hash_generated_field = "BB74ADCE9FCE390733990F175981A8B2")
 
-
     int mCachedSafeMode = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:23.073 -0500", hash_original_field = "C67ABEFF4281FAC71DDED1D793D767D7", hash_generated_field = "9848C26EA3B1FE04FDB0411428C18F0B")
-
 
     private  ContextImpl mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:23.076 -0500", hash_original_field = "4239121FA32DDE5798881A4F98EFD0C1", hash_generated_field = "7F4B9DC825AA12542DFD4F441E873557")
@@ -401,6 +394,7 @@ ApplicationPackageManager(ContextImpl context,
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.855 -0500", hash_original_method = "8E2B8D0B6C29BED8B3E866F74247B636", hash_generated_method = "CC33BF759FE731ABB18CEC609CA75C91")
     
 @Override
@@ -423,6 +417,7 @@ ApplicationPackageManager(ContextImpl context,
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.859 -0500", hash_original_method = "7DE747A31A0FDE2C95A03117CF8EC1E2", hash_generated_method = "53CF0ECC0A5A4312544A6B02F4DDAD73")
     
 @Override
@@ -434,6 +429,7 @@ ApplicationPackageManager(ContextImpl context,
         }
     }
 
+    @DSSink({DSSinkKind.SYNCHRONIZATION_DATA})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.861 -0500", hash_original_method = "BE955F868C92CCDF8275E95FFE2C44B3", hash_generated_method = "63E0759278BCA2935C34D2B0DB2DBB1F")
     
 @Override
@@ -1067,6 +1063,7 @@ private void putCachedString(ResourceName name, CharSequence cs) {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:23.012 -0500", hash_original_method = "A168A8E169316429D31E261AD639AED4", hash_generated_method = "3F7C412AAA1A062643D750EAC32C2DBC")
     
 @Override
@@ -1167,6 +1164,7 @@ private void putCachedString(ResourceName name, CharSequence cs) {
             // Should never happen!
         }
     }
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:23.033 -0500", hash_original_method = "A9291C102B2FAAEF4C90A57E1B6DE098", hash_generated_method = "D62EBB54E3FC927C0386831AD69D9B62")
     
 @Override
@@ -1249,6 +1247,7 @@ private void putCachedString(ResourceName name, CharSequence cs) {
         return 0;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:23.050 -0500", hash_original_method = "324289EEBFA692363CEA9B4C548C82A7", hash_generated_method = "34EBF4153AE405446EB1EAF65F614875")
     
 @Override
@@ -1273,6 +1272,7 @@ private void putCachedString(ResourceName name, CharSequence cs) {
         return PackageManager.COMPONENT_ENABLED_STATE_DEFAULT;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:23.054 -0500", hash_original_method = "893989AE0F295A10184FE7AD874B7991", hash_generated_method = "2EB016FFA899F3C51681142789C41B3A")
     
 @Override
@@ -1296,7 +1296,6 @@ private void putCachedString(ResourceName name, CharSequence cs) {
         }
         return PackageManager.COMPONENT_ENABLED_STATE_DEFAULT;
     }
-
     
     private static final class ResourceName {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.968 -0500", hash_original_field = "6F92EE1B3BCDC0C4179CF5FD998BE046", hash_generated_field = "6F92EE1B3BCDC0C4179CF5FD998BE046")
@@ -1362,7 +1361,6 @@ ResourceName(ResolveInfo rInfo, int _iconId) {
         public String toString() {
             return "{ResourceName " + packageName + " / " + iconId + "}";
         }
-
         
     }
 

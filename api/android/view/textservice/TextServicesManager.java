@@ -178,6 +178,7 @@ public SpellCheckerInfo getCurrentSpellChecker() {
     /**
      * @hide
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.523 -0500", hash_original_method = "4E93A8413D33E514F2933033BBA9E9C6", hash_generated_method = "C22F703830145D2CEBC318C7C98D180F")
     
 public void setCurrentSpellChecker(SpellCheckerInfo sci) {
@@ -210,6 +211,7 @@ public SpellCheckerSubtype getCurrentSpellCheckerSubtype(
     /**
      * @hide
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.528 -0500", hash_original_method = "CBCFCEE50800407BA5D76453EB5E1B5E", hash_generated_method = "0FCAD81A9A40E76F63E30EB4A07EA36C")
     
 public void setSpellCheckerSubtype(SpellCheckerSubtype subtype) {
@@ -229,6 +231,7 @@ public void setSpellCheckerSubtype(SpellCheckerSubtype subtype) {
     /**
      * @hide
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.531 -0500", hash_original_method = "61F4D400D4BC8B241A007E9AEF488847", hash_generated_method = "3E27938A1621CB00828E5E8511D5EE35")
     
 public void setSpellCheckerEnabled(boolean enabled) {

@@ -6,17 +6,11 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.ArrayList;
 
-
-
-
-
-
 public class IccCardStatus {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:45.085 -0500", hash_original_field = "9B7CCCE86F0546A7C4260731F2365F35", hash_generated_field = "F5DEB270E27E9EBAAF4255B1D38C3900")
 
     static final int CARD_MAX_APPS = 8;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:45.100 -0500", hash_original_field = "BED51697F82CEBB8492E19EE3627BC61", hash_generated_field = "9AED67EEE170BD9DAD5D65F0CE4452F9")
-
 
     private CardState  mCardState;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:45.103 -0500", hash_original_field = "73AECB2D1668DD8A37A4C38D956200C2", hash_generated_field = "1DDE8EC46673F45F99B09063FF5B571E")
@@ -36,7 +30,6 @@ public class IccCardStatus {
     private int        mNumApplications;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:45.115 -0500", hash_original_field = "EBA8018819FCCB7F3AEA367EBD79D850", hash_generated_field = "03B1A6FBCA9A9355A5688EA97989AA4B")
 
-
     private ArrayList<IccCardApplication> mApplications =
             new ArrayList<IccCardApplication>(CARD_MAX_APPS);
     
@@ -52,6 +45,7 @@ public CardState getCardState() {
         return mCardState;
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:45.119 -0500", hash_original_method = "DF1BA1B7D815247B6DDD09A8150ACB8E", hash_generated_method = "1ED07E489D5A14D4581E28CB0D51784B")
     
 public void setCardState(int state) {
@@ -76,6 +70,7 @@ public PinState getUniversalPinState() {
         return mUniversalPinState;
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:45.124 -0500", hash_original_method = "B5D48B53E99405CE8B767A81E3B60FC3", hash_generated_method = "04DC853202C5C40144085AF39F739EC4")
     
 public void setUniversalPinState(int state) {
@@ -162,7 +157,6 @@ public void addApplication(IccCardApplication application) {
 public IccCardApplication getApplication(int index) {
         return mApplications.get(index);
     }
-
     
     public enum CardState {
         CARDSTATE_ABSENT,
@@ -175,7 +169,6 @@ boolean isCardPresent() {
             return this == CARDSTATE_PRESENT;
         }
     }
-
     
     public enum PinState {
         PINSTATE_UNKNOWN,

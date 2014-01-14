@@ -627,6 +627,7 @@ public final void finish() {
         }
         
         /** @hide */
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:00.684 -0500", hash_original_method = "09CFE321AB9E3444E3559F2B522AB2BE", hash_generated_method = "270A7467DBBC424A0346BC1B0BEB0CE4")
         
 public void setExtrasClassLoader(ClassLoader cl) {

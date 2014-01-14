@@ -271,7 +271,8 @@ public final Message obtainMessage()
     	mQueue.removeMessages(this, r, token);
 	}
     
-	public final boolean sendMessage(Message msg){
+	@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    public final boolean sendMessage(Message msg){
 		// Original method
 		/*
 		{
@@ -282,7 +283,8 @@ public final Message obtainMessage()
         return sendMessageDelayed(msg, 0);
 	}
     
-	public final boolean sendEmptyMessage(int what){
+	@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    public final boolean sendEmptyMessage(int what){
 		// Original method
 		/*
 		{
@@ -293,7 +295,8 @@ public final Message obtainMessage()
         return sendEmptyMessageDelayed(what, 0);
 	}
     
-	public final boolean sendEmptyMessageDelayed(int what, long delayMillis){
+	@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    public final boolean sendEmptyMessageDelayed(int what, long delayMillis){
 		// Original method
 		/*
 		{
@@ -309,7 +312,8 @@ public final Message obtainMessage()
         return sendMessageDelayed(msg, delayMillis);
 	}
     
-	public final boolean sendEmptyMessageAtTime(int what, long uptimeMillis){
+	@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    public final boolean sendEmptyMessageAtTime(int what, long uptimeMillis){
 		// Original method
 		/*
 		{
@@ -325,7 +329,8 @@ public final Message obtainMessage()
         return sendMessageAtTime(msg, uptimeMillis);
 	}
     
-	public final boolean sendMessageDelayed(Message msg, long delayMillis){
+	@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    public final boolean sendMessageDelayed(Message msg, long delayMillis){
 		// Original method
 		/*
 		{
@@ -464,6 +469,7 @@ public final Looper getLooper() {
         return mLooper;
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public final void dump(Printer pw, String prefix){
 		// Original method
 		/*
@@ -543,6 +549,7 @@ public final Looper getLooper() {
         {
             //Synthesized constructor
         }
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:39.097 -0500", hash_original_method = "CF11BADC884B068E4FC98150B23E5EB1", hash_generated_method = "F786300E27C986F542B94E2D484AD33A")
         
 public void send(Message msg) {

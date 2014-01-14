@@ -182,7 +182,8 @@ private ExpatParser(String encoding, ExpatReader xmlReader, int pointer,
      *  a separate pointer so we can detach it from the parser instance
      * @param attributeCount number of attributes
      */
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.198 -0500", hash_original_method = "6539B8063CABFAD0D8EBA84883A1CF66", hash_generated_method = "6539B8063CABFAD0D8EBA84883A1CF66")
+    /*package*/ @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.198 -0500", hash_original_method = "6539B8063CABFAD0D8EBA84883A1CF66", hash_generated_method = "6539B8063CABFAD0D8EBA84883A1CF66")
     
 void startElement(String uri, String localName, String qName,
             int attributePointer, int attributeCount) throws SAXException {
@@ -251,7 +252,8 @@ void endCdata() throws SAXException {
         }
     }
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.210 -0500", hash_original_method = "C8BFB5467C9B61347AC273E622412632", hash_generated_method = "C8BFB5467C9B61347AC273E622412632")
+    /*package*/ @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.210 -0500", hash_original_method = "C8BFB5467C9B61347AC273E622412632", hash_generated_method = "C8BFB5467C9B61347AC273E622412632")
     
 void startNamespace(String prefix, String uri)
             throws SAXException {
@@ -270,7 +272,8 @@ void endNamespace(String prefix) throws SAXException {
         }
     }
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.215 -0500", hash_original_method = "08337DADA79B09679000AC18FB47E35A", hash_generated_method = "08337DADA79B09679000AC18FB47E35A")
+    /*package*/ @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.215 -0500", hash_original_method = "08337DADA79B09679000AC18FB47E35A", hash_generated_method = "08337DADA79B09679000AC18FB47E35A")
     
 void startDtd(String name, String publicId, String systemId)
             throws SAXException {
@@ -850,6 +853,7 @@ private EntityParser(String encoding, ExpatReader xmlReader,
             super(encoding, xmlReader, pointer, publicId, systemId);
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.377 -0500", hash_original_method = "046BB8109CA52E8AB8C918C4992DC8E2", hash_generated_method = "8096A34B427AF4FCCD3AC387A564BBB1")
         
 @Override

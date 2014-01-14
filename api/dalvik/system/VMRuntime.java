@@ -79,6 +79,7 @@ private VMRuntime() {
      * @return the previous ideal heap utilization
      * @throws IllegalArgumentException if newTarget is &lt;= 0.0 or &gt;= 1.0
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:39.081 -0500", hash_original_method = "F170D2A35A1238A4622F6C568D71821B", hash_generated_method = "63D4DE5166AF6144484EDCE804D08415")
     
 public float setTargetHeapUtilization(float newTarget) {
@@ -126,6 +127,7 @@ public float setTargetHeapUtilization(float newTarget) {
      * This method exists for binary compatibility.  It was part of a
      * heap sizing API which was removed in Honeycomb.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:39.091 -0500", hash_original_method = "CEB5420B7859E2786C7813E3E643E566", hash_generated_method = "F536C31D9AE833438A6B6BE8C37140D4")
     
 @Deprecated

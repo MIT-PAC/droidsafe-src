@@ -7,10 +7,6 @@ import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public final class NdefMessage implements Parcelable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.048 -0500", hash_original_field = "43AA9F6BBA9861FD41265D3FF45443F3", hash_generated_field = "3835A2DFF1178D58B5296641A8C4E94F")
 
@@ -39,7 +35,6 @@ public final class NdefMessage implements Parcelable {
         }
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.053 -0500", hash_original_field = "F30AC1B8BF0B03F942659453F390F3D3", hash_generated_field = "E68F4FE3D834F8AC778DFF66AE2BFB1B")
-
 
     private  NdefRecord[] mRecords;
 
@@ -127,6 +122,7 @@ public byte[] toByteArray() {
         return 0;
     }
 
+    @DSSink({DSSinkKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.068 -0500", hash_original_method = "C32A271878CC7CE5578073C85AE449D6", hash_generated_method = "F8DAC8176BF50F813F7DB70698DD1DD1")
     
 @Override

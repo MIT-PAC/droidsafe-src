@@ -163,6 +163,7 @@ public IAccessibilityManagerClient getClient() {
      *
      * @throws IllegalStateException if accessibility is not enabled.
      */
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.021 -0500", hash_original_method = "ECD9D39E5E16C36757C6B1E94F274A8A", hash_generated_method = "CA5BF0D0ADC7B8C240FD07115789791C")
     
 public void sendAccessibilityEvent(AccessibilityEvent event) {

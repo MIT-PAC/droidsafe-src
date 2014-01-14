@@ -484,6 +484,7 @@ public void removeRequestInterceptorByClass(Class<? extends HttpRequestIntercept
     }
 
     // non-javadoc, see interface HttpClient
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:41.140 -0500", hash_original_method = "8C5414A352E96D69F8672C617A799B3F", hash_generated_method = "8579099BD17E76C7F736CB1EA0112BCF")
     
 public final HttpResponse execute(HttpUriRequest request)
@@ -501,6 +502,7 @@ public final HttpResponse execute(HttpUriRequest request)
      * @param context   the request-specific execution context,
      *                  or <code>null</code> to use a default context
      */
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:41.143 -0500", hash_original_method = "DFABA59EDA546A2813170916E96DC886", hash_generated_method = "57BC04C174DD1EA3921BF968322BD923")
     
 public final HttpResponse execute(HttpUriRequest request,
@@ -533,6 +535,7 @@ private HttpHost determineTarget(HttpUriRequest request) {
     }
 
     // non-javadoc, see interface HttpClient
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:41.148 -0500", hash_original_method = "7C51BA6300B6898AA66ADB20A5FEE58B", hash_generated_method = "7FE66F54B6C880ACCAD2A8A6C1C24EB0")
     
 public final HttpResponse execute(HttpHost target, HttpRequest request)
@@ -541,7 +544,8 @@ public final HttpResponse execute(HttpHost target, HttpRequest request)
         return execute(target, request, (HttpContext) null);
     }
     
-	@Override
+	@DSSink({DSSinkKind.NETWORK})
+    @Override
 	public final HttpResponse execute(HttpHost target, HttpRequest request,
 			HttpContext context) throws IOException, ClientProtocolException {
 		//DSFIXME - Need to determine if short circuiting this method here

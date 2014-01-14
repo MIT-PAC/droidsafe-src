@@ -412,7 +412,8 @@ public V getValue() {
             return value;
         }
                 
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.591 -0400", hash_original_method = "3526712C126765AF36CB8D920CBD3B1B", hash_generated_method = "EB9F930298727FE038FD0E2F1F331E96")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.591 -0400", hash_original_method = "3526712C126765AF36CB8D920CBD3B1B", hash_generated_method = "EB9F930298727FE038FD0E2F1F331E96")
         public V setValue(V object) {
             if (DroidSafeAndroidRuntime.control) {
                 UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_2054359486 = new UnsupportedOperationException();

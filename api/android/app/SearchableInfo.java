@@ -25,10 +25,6 @@ import android.util.Log;
 import android.util.Xml;
 import android.view.inputmethod.EditorInfo;
 
-
-
-
-
 public final class SearchableInfo implements Parcelable {
 
     /**
@@ -707,11 +703,9 @@ public boolean getVoiceSearchEnabled() {
 public boolean getVoiceSearchLaunchWebSearch() {
         return 0 != (mVoiceSearchMode & VOICE_SEARCH_LAUNCH_WEB_SEARCH);
     }
-
     
     public static class ActionKeyInfo implements Parcelable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:19.669 -0500", hash_original_field = "775BFC50F46781234F24C3F19B2FA89F", hash_generated_field = "6029AC817F6EE7A2286BA05155E91FE2")
-
 
         private  int mKeyCode;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:19.671 -0500", hash_original_field = "72B443606CC2E63F536A89200ACE59AE", hash_generated_field = "3B81F8E38011672647005EC28AB6705D")
@@ -828,7 +822,6 @@ public void writeToParcel(Parcel dest, int flags) {
             dest.writeString(mSuggestActionMsg);
             dest.writeString(mSuggestActionMsgColumn);
         }
-
         
     }
 
@@ -975,6 +968,7 @@ public int describeContents() {
         return 0;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:19.759 -0500", hash_original_method = "72AC80AD69CAD17D9DB571EFE399D945", hash_generated_method = "73F0CEB5436EF5538F6DDFBF17FD1F30")
     
 public void writeToParcel(Parcel dest, int flags) {

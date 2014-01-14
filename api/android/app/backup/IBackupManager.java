@@ -70,7 +70,8 @@ return DESCRIPTOR;
      * only callers who hold the android.permission.BACKUP permission
      * may invoke it for arbitrary packages.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.402 -0500", hash_original_method = "18BE60F292FCF675BADDD27D49A225A7", hash_generated_method = "9A9A1EFF4CFCBA85172CBAA885FC50FC")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.402 -0500", hash_original_method = "18BE60F292FCF675BADDD27D49A225A7", hash_generated_method = "9A9A1EFF4CFCBA85172CBAA885FC50FC")
             
 public void dataChanged(java.lang.String packageName) throws android.os.RemoteException
 {
@@ -95,7 +96,8 @@ _data.recycle();
      * only callers who hold the android.permission.BACKUP permission
      * may invoke it for arbitrary packages.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.405 -0500", hash_original_method = "BFE969117C6C9413340434F6942C991A", hash_generated_method = "69831E4420E6F023FE5F77A4F1EAD212")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.405 -0500", hash_original_method = "BFE969117C6C9413340434F6942C991A", hash_generated_method = "69831E4420E6F023FE5F77A4F1EAD212")
             
 public void clearBackupData(java.lang.String packageName) throws android.os.RemoteException
 {
@@ -116,7 +118,8 @@ _data.recycle();
      * Notifies the Backup Manager Service that an agent has become available.  This
      * method is only invoked by the Activity Manager.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.407 -0500", hash_original_method = "EF46CF74562230DAF571268DE698C169", hash_generated_method = "0D415A9D85E8A5AEA79C64383C3FE050")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.407 -0500", hash_original_method = "EF46CF74562230DAF571268DE698C169", hash_generated_method = "0D415A9D85E8A5AEA79C64383C3FE050")
             
 public void agentConnected(java.lang.String packageName, android.os.IBinder agent) throws android.os.RemoteException
 {
@@ -138,7 +141,8 @@ _data.recycle();
      * Notify the Backup Manager Service that an agent has unexpectedly gone away.
      * This method is only invoked by the Activity Manager.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.410 -0500", hash_original_method = "79DD87326CB0F083542B55A92241E0EE", hash_generated_method = "4E18127C5E492029832F0636F75D60F6")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.410 -0500", hash_original_method = "79DD87326CB0F083542B55A92241E0EE", hash_generated_method = "4E18127C5E492029832F0636F75D60F6")
             
 public void agentDisconnected(java.lang.String packageName) throws android.os.RemoteException
 {
@@ -159,7 +163,8 @@ _data.recycle();
      * Notify the Backup Manager Service that an application being installed will
      * need a data-restore pass.  This method is only invoked by the Package Manager.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.413 -0500", hash_original_method = "4363D4D6F1C5E17E83A281115201A491", hash_generated_method = "65966835C9899AC34AA7F677FDCB051C")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.413 -0500", hash_original_method = "4363D4D6F1C5E17E83A281115201A491", hash_generated_method = "65966835C9899AC34AA7F677FDCB051C")
             
 public void restoreAtInstall(java.lang.String packageName, int token) throws android.os.RemoteException
 {
@@ -186,7 +191,8 @@ _data.recycle();
      *
      * <p>Callers must hold the android.permission.BACKUP permission to use this method.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.416 -0500", hash_original_method = "0AEDE126CAFEBAF41FE8F99E5E992A0A", hash_generated_method = "A0A4745C52F3706F1CFBB71A340208A9")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.416 -0500", hash_original_method = "0AEDE126CAFEBAF41FE8F99E5E992A0A", hash_generated_method = "A0A4745C52F3706F1CFBB71A340208A9")
             
 public void setBackupEnabled(boolean isEnabled) throws android.os.RemoteException
 {
@@ -216,7 +222,8 @@ _data.recycle();
      * @param doAutoRestore When true, enables the automatic app-data restore facility.  When
      *   false, this facility will be disabled.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.418 -0500", hash_original_method = "B245B0B2519FD27C96527833CDEDD540", hash_generated_method = "C410B96C01EA99C6B554A4B78651380A")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.418 -0500", hash_original_method = "B245B0B2519FD27C96527833CDEDD540", hash_generated_method = "C410B96C01EA99C6B554A4B78651380A")
             
 public void setAutoRestore(boolean doAutoRestore) throws android.os.RemoteException
 {
@@ -238,7 +245,8 @@ _data.recycle();
      *
      * <p>Callers must hold the android.permission.BACKUP permission to use this method.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.421 -0500", hash_original_method = "171D395EB68162B6953EA057D5E4B3B4", hash_generated_method = "D35BCFBC33B7CA7F7EC0EB1974315563")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.421 -0500", hash_original_method = "171D395EB68162B6953EA057D5E4B3B4", hash_generated_method = "D35BCFBC33B7CA7F7EC0EB1974315563")
             
 public void setBackupProvisioned(boolean isProvisioned) throws android.os.RemoteException
 {
@@ -286,7 +294,8 @@ return _result;
      *
      * <p>Callers must hold the android.permission.BACKUP permission to use this method.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.426 -0500", hash_original_method = "298C32D82EC8238149BA9E41FBCF1BEB", hash_generated_method = "3F6A457AFD669779C206E93E39BD37DC")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.426 -0500", hash_original_method = "298C32D82EC8238149BA9E41FBCF1BEB", hash_generated_method = "3F6A457AFD669779C206E93E39BD37DC")
             
 public boolean setBackupPassword(java.lang.String currentPw, java.lang.String newPw) throws android.os.RemoteException
 {
@@ -383,7 +392,8 @@ _data.recycle();
      * @param packageNames The package names of the apps whose data (and optionally .apk files)
      *     are to be backed up.  The <code>allApps</code> parameter supersedes this.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.435 -0500", hash_original_method = "B085B15808BB89C263DEC4695E36D6FF", hash_generated_method = "B0D4305787E551C697B0B0ABED1D7514")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.435 -0500", hash_original_method = "B085B15808BB89C263DEC4695E36D6FF", hash_generated_method = "B0D4305787E551C697B0B0ABED1D7514")
             
 public void fullBackup(android.os.ParcelFileDescriptor fd, boolean includeApks, boolean includeShared, boolean allApps, boolean allIncludesSystem, java.lang.String[] packageNames) throws android.os.RemoteException
 {
@@ -454,7 +464,8 @@ _data.recycle();
      *
      * <p>Callers must hold the android.permission.BACKUP permission to use this method.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.441 -0500", hash_original_method = "D22D08573CE9B47E8ABB517223739945", hash_generated_method = "E8D7D426F8FEF735709DBD471B4B888F")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.441 -0500", hash_original_method = "D22D08573CE9B47E8ABB517223739945", hash_generated_method = "E8D7D426F8FEF735709DBD471B4B888F")
             
 public void acknowledgeFullBackupOrRestore(int token, boolean allow, java.lang.String curPassword, java.lang.String encryptionPassword, android.app.backup.IFullBackupRestoreObserver observer) throws android.os.RemoteException
 {
@@ -531,7 +542,8 @@ return _result;
      *   name is not one of the currently available transports, no change is made to
      *   the current transport setting and the method returns null.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.448 -0500", hash_original_method = "E51351C2829E900ED71C1941D72EB81E", hash_generated_method = "784FA7290B29488CF9A3889C87F8EBF7")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.448 -0500", hash_original_method = "E51351C2829E900ED71C1941D72EB81E", hash_generated_method = "784FA7290B29488CF9A3889C87F8EBF7")
             
 public java.lang.String selectBackupTransport(java.lang.String transport) throws android.os.RemoteException
 {
@@ -632,7 +644,8 @@ return _result;
      *        May be null, in which case the current active transport is used.
      * @return An interface to the restore session, or null on error.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.457 -0500", hash_original_method = "259FC444CDACE3FDF209755A3B095F42", hash_generated_method = "40A34159BBC266A24A4F6909B3F70D64")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.457 -0500", hash_original_method = "259FC444CDACE3FDF209755A3B095F42", hash_generated_method = "40A34159BBC266A24A4F6909B3F70D64")
             
 public android.app.backup.IRestoreSession beginRestoreSession(java.lang.String packageName, java.lang.String transportID) throws android.os.RemoteException
 {
@@ -661,7 +674,8 @@ return _result;
      *        doRestore() method.
      * {@hide}
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.460 -0500", hash_original_method = "22E957B296D0F1EA85120A706CE841EA", hash_generated_method = "B2993E67E0688FBE9E4BA03617041409")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.460 -0500", hash_original_method = "22E957B296D0F1EA85120A706CE841EA", hash_generated_method = "B2993E67E0688FBE9E4BA03617041409")
             
 public void opComplete(int token) throws android.os.RemoteException
 {
@@ -749,7 +763,8 @@ public android.os.IBinder asBinder()
 {
 return this;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.390 -0500", hash_original_method = "18AFB37077DC14752C6C154F188A82B6", hash_generated_method = "E9EC155D58D8BC0956C2121D4CD6626A")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.390 -0500", hash_original_method = "18AFB37077DC14752C6C154F188A82B6", hash_generated_method = "E9EC155D58D8BC0956C2121D4CD6626A")
         
 @Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
 {

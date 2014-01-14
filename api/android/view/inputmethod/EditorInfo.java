@@ -179,6 +179,7 @@ public final void makeCompatible(int targetSdkVersion) {
     /**
      * Write debug output of this object.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:20.650 -0500", hash_original_method = "52E48D457BDB05F3C0DFF77F15A840F2", hash_generated_method = "FB07D72B8069FE0A14A3A9637B87ABED")
     
 public void dump(Printer pw, String prefix) {
@@ -205,6 +206,7 @@ public void dump(Printer pw, String prefix) {
      * @param dest The {@link Parcel} to be written.
      * @param flags The flags used for parceling.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:20.654 -0500", hash_original_method = "0DCEB67BA2166B08F017930A62049273", hash_generated_method = "51094617EEA2A8D3BBFA055E5F321769")
     
 public void writeToParcel(Parcel dest, int flags) {

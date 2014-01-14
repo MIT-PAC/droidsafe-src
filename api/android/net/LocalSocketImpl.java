@@ -248,6 +248,7 @@ protected void connect(LocalSocketAddress address, int timeout)
      * @param endpoint endpoint address
      * @throws IOException
      */
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.371 -0500", hash_original_method = "D301FBD428349B466ACCB27339A08D2F", hash_generated_method = "1EF36E0E81A21E092BB79644E67D0F14")
     
 public void bind(LocalSocketAddress endpoint) throws IOException
@@ -424,6 +425,7 @@ public Object getOption(int optID) throws IOException
         }
     }
 
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.398 -0500", hash_original_method = "A0313708A2FB484B7104FAC62F0E39B4", hash_generated_method = "88D277497D8007967B2FDCAA44913C24")
     
 public void setOption(int optID, Object value)
@@ -461,6 +463,7 @@ public void setOption(int optID, Object value)
      * @param fds non-null; file descriptors to send.
      * @throws IOException
      */
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.400 -0500", hash_original_method = "AEC4AD692525702323537BC369199B7F", hash_generated_method = "4A891BE68D75308B131997586EE23B05")
     
 public void setFileDescriptorsForSend(FileDescriptor[] fds) {
@@ -609,6 +612,7 @@ public LocalSocketAddress getSockAddress() throws IOException
         }
 
         /** {@inheritDoc} */
+        @DSSink({DSSinkKind.NETWORK})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.294 -0500", hash_original_method = "E1D4EA7BC5A1A039095C078064FA6BD5", hash_generated_method = "7D09861B37E141F39BE351A56688C45A")
         
 @Override

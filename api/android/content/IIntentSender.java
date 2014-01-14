@@ -69,7 +69,8 @@ public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:32.182 -0500", hash_original_method = "E630EB1DDC4CFC2AE226C005A5E9FCFB", hash_generated_method = "C67EC575FBE66FA93FE1B3524EFAD705")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:32.182 -0500", hash_original_method = "E630EB1DDC4CFC2AE226C005A5E9FCFB", hash_generated_method = "C67EC575FBE66FA93FE1B3524EFAD705")
             
 public int send(int code, android.content.Intent intent, java.lang.String resolvedType, android.content.IIntentReceiver finishedReceiver, java.lang.String requiredPermission) throws android.os.RemoteException
 {
@@ -100,7 +101,8 @@ _data.recycle();
 return _result;
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:32.168 -0500", hash_original_method = "E31851C649D163E7C22CA1F5F0C09D4A", hash_generated_method = "034D71EA3846C16FDB91CD1686F6FD57")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:32.168 -0500", hash_original_method = "E31851C649D163E7C22CA1F5F0C09D4A", hash_generated_method = "034D71EA3846C16FDB91CD1686F6FD57")
         
 @Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
 {

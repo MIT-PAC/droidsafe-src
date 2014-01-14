@@ -9,10 +9,6 @@ import android.content.ClipDescription;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public class DragEvent implements Parcelable {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:14.776 -0500", hash_original_method = "569150DCDE5FF4A4307956D9929DFF84", hash_generated_method = "F6882FAE21622A725E57F29349956DDE")
@@ -57,7 +53,6 @@ public static DragEvent obtain(DragEvent source) {
 
     private static final boolean TRACK_RECYCLED_LOCATION = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:14.745 -0500", hash_original_field = "F593DBD4ACC5DC484D76C0656C0FB27F", hash_generated_field = "632CD138CDBCADE9A63F9B23105E1648")
-
 
     private static final int MAX_RECYCLED = 10;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:14.748 -0500", hash_original_field = "383C33CA63B8C16F39C24669AA7A3D08", hash_generated_field = "4D2E3DEDF37103D77BF3BB46692742C8")
@@ -116,7 +111,6 @@ public DragEvent[] newArray(int size) {
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:14.725 -0500", hash_original_field = "87F72266090A426F9B25050359B17309", hash_generated_field = "87F72266090A426F9B25050359B17309")
 
-
     int mAction;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.608 -0400", hash_original_field = "E47D03BC59EE2C8B3B45870BE85294FB", hash_generated_field = "8174733DF249E326666A04F4BE58CCC8")
 
@@ -137,7 +131,6 @@ public DragEvent[] newArray(int size) {
 
     boolean mDragResult;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:14.737 -0500", hash_original_field = "B7DB7C2351C1C66A5154246A77C78368", hash_generated_field = "71F519A9ECC78DE41D5510BA422E0931")
-
 
     private DragEvent mNext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:14.739 -0500", hash_original_field = "7CE140D407E955711B40F90DD17F57EA", hash_generated_field = "4E4D5EFD76E218484C8A2F86B097FF08")
@@ -349,6 +342,7 @@ public int describeContents() {
      * @param dest A {@link android.os.Parcel} object in which to put the DragEvent object.
      * @param flags Flags to store in the Parcel.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:14.808 -0500", hash_original_method = "76A8906A7EAF6555F7630460CE48F340", hash_generated_method = "1EC937095A5650F0EC457B2A4B4DEA3C")
     
 public void writeToParcel(Parcel dest, int flags) {

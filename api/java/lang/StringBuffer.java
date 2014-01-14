@@ -10,18 +10,11 @@ import java.io.ObjectOutputStream;
 import java.io.ObjectStreamField;
 import java.io.Serializable;
 
-
-
-
-
-
 public final class StringBuffer extends AbstractStringBuilder implements Appendable, Serializable, CharSequence {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.038 -0500", hash_original_field = "337C95B1FDC499D5049FB3E7C13B23CE", hash_generated_field = "FC0674932C46ABA4FCCDFE0606287381")
 
-
     private static final long serialVersionUID = 3388685877147921107L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.041 -0500", hash_original_field = "BCD371E8115631B09AC41219DD5C15C0", hash_generated_field = "B99DBA28D5BC805935B08D57FFE80361")
-
 
     private static final ObjectStreamField[] serialPersistentFields = {
         new ObjectStreamField("count", int.class),
@@ -755,6 +748,7 @@ public synchronized StringBuffer reverse() {
         return this;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.153 -0500", hash_original_method = "5E8E344457E07DCAD9D3AB0618D1D4EE", hash_generated_method = "AF499A2A33AF6CDF77B7FE0D2F4F7363")
     
 @Override
@@ -762,6 +756,7 @@ public synchronized StringBuffer reverse() {
         super.setCharAt(index, ch);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.155 -0500", hash_original_method = "384C5D925F648A6C0E5C9532F172E2E9", hash_generated_method = "7BB60A3B3EEDEFEE6B324D309879F75D")
     
 @Override

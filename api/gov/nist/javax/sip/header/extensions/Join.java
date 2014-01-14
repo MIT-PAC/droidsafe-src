@@ -12,17 +12,11 @@ import java.text.ParseException;
 
 import javax.sip.header.ExtensionHeader;
 
-
-
-
-
-
 public class Join extends ParametersHeader implements ExtensionHeader, JoinHeader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:59.557 -0500", hash_original_field = "E6B96B7B2E8CADE387321F27BACCAA93", hash_generated_field = "6CB5FD5185865CE37770D9CE36F56865")
 
     private static final long serialVersionUID = -840116548918120056L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:59.560 -0500", hash_original_field = "CDBFF050B2B67BB7CC5B9089286D87C5", hash_generated_field = "13095D8F107AFC77A4F003D089C600F0")
-
 
     public static final String NAME = "Join";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:59.563 -0500", hash_original_field = "C3E358E95D23A99C47CBD56EDD5BB931", hash_generated_field = "64120D09C2B0721B310316A22E4103F4")
@@ -129,6 +123,7 @@ public String getToTag() {
      * Set the to-tag member
      * @param t tag to set. From tags are mandatory.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:59.596 -0500", hash_original_method = "11B74AD04734B3C61566E9250AEBA382", hash_generated_method = "8DE719DBE9EC1F07E605730C5C1B3F28")
     
 public void setToTag(String t) throws ParseException {
@@ -169,6 +164,7 @@ public String getFromTag() {
      * Set the to-tag member
      * @param t tag to set. From tags are mandatory.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:59.608 -0500", hash_original_method = "06D289B84B93DB0101D64879F61C1049", hash_generated_method = "ADF7723D3D721310CAD4F8EE5F6AA9F1")
     
 public void setFromTag(String t) throws ParseException {
@@ -195,8 +191,7 @@ public void removeFromTag() {
         parameters.delete(ParameterNames.FROM_TAG);
     }
 
-
-
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:59.617 -0500", hash_original_method = "4B92A49D74A1215E0C3EC12D290AF61B", hash_generated_method = "01B37E653FE76FEB916567082AAEE1D8")
     
 public void setValue(String value) throws ParseException {

@@ -62,7 +62,8 @@ public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:55.009 -0500", hash_original_method = "B4BCC3F7E76F55EC817E2AE2186167B3", hash_generated_method = "FF2D40B56F30281480E115735DA1EEC4")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:55.009 -0500", hash_original_method = "B4BCC3F7E76F55EC817E2AE2186167B3", hash_generated_method = "FF2D40B56F30281480E115735DA1EEC4")
             
 public void setIcon(int index, com.android.internal.statusbar.StatusBarIcon icon) throws android.os.RemoteException
 {
@@ -83,7 +84,8 @@ finally {
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:55.012 -0500", hash_original_method = "AFC9F2D85E244CC584C3B222D50E711B", hash_generated_method = "989960112D53A58EC75462BD75E37AFA")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:55.012 -0500", hash_original_method = "AFC9F2D85E244CC584C3B222D50E711B", hash_generated_method = "989960112D53A58EC75462BD75E37AFA")
             
 public void removeIcon(int index) throws android.os.RemoteException
 {
@@ -97,7 +99,8 @@ finally {
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:55.015 -0500", hash_original_method = "7369BD7BBFBCC50A18B7720E89EDFF76", hash_generated_method = "AF131A612E1EBE329F99995FB6C6E3A5")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:55.015 -0500", hash_original_method = "7369BD7BBFBCC50A18B7720E89EDFF76", hash_generated_method = "AF131A612E1EBE329F99995FB6C6E3A5")
             
 public void addNotification(android.os.IBinder key, com.android.internal.statusbar.StatusBarNotification notification) throws android.os.RemoteException
 {
@@ -118,7 +121,8 @@ finally {
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:55.017 -0500", hash_original_method = "973004AC37A497E4ED157A0C682B0B45", hash_generated_method = "DF2125A0B69A03EF14C370C9264E0C11")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:55.017 -0500", hash_original_method = "973004AC37A497E4ED157A0C682B0B45", hash_generated_method = "DF2125A0B69A03EF14C370C9264E0C11")
             
 public void updateNotification(android.os.IBinder key, com.android.internal.statusbar.StatusBarNotification notification) throws android.os.RemoteException
 {
@@ -139,7 +143,8 @@ finally {
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:55.020 -0500", hash_original_method = "619026D0F5B28063A3AC080905D9E7A3", hash_generated_method = "D1B8FAA70306B400993478B043A223D5")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:55.020 -0500", hash_original_method = "619026D0F5B28063A3AC080905D9E7A3", hash_generated_method = "D1B8FAA70306B400993478B043A223D5")
             
 public void removeNotification(android.os.IBinder key) throws android.os.RemoteException
 {
@@ -153,7 +158,8 @@ finally {
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:55.022 -0500", hash_original_method = "F231306D662FDD9E12FF73FE30E9D6DE", hash_generated_method = "BCF0CE8246889357FF65D1B7CC1A80DD")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:55.022 -0500", hash_original_method = "F231306D662FDD9E12FF73FE30E9D6DE", hash_generated_method = "BCF0CE8246889357FF65D1B7CC1A80DD")
             
 public void disable(int state) throws android.os.RemoteException
 {
@@ -221,7 +227,8 @@ finally {
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:55.036 -0500", hash_original_method = "4F4708ED66E0166C018C6AD96B485D94", hash_generated_method = "14EF219DAA20B008EB1BDF43A4B3C94F")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:55.036 -0500", hash_original_method = "4F4708ED66E0166C018C6AD96B485D94", hash_generated_method = "14EF219DAA20B008EB1BDF43A4B3C94F")
             
 public void setImeWindowStatus(android.os.IBinder token, int vis, int backDisposition) throws android.os.RemoteException
 {
@@ -237,7 +244,8 @@ finally {
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:55.039 -0500", hash_original_method = "94C5BD4CBCB3B6B5B2F3618C3DBF1EE5", hash_generated_method = "4FBF898C28092F3DB136B1DE5B491A59")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:55.039 -0500", hash_original_method = "94C5BD4CBCB3B6B5B2F3618C3DBF1EE5", hash_generated_method = "4FBF898C28092F3DB136B1DE5B491A59")
             
 public void setHardKeyboardStatus(boolean available, boolean enabled) throws android.os.RemoteException
 {
@@ -309,7 +317,8 @@ public android.os.IBinder asBinder()
 {
 return this;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:54.995 -0500", hash_original_method = "DCABE9BD3E641080DC0F0407EE7CA6A1", hash_generated_method = "5C238B84F58BF9162168D303D6CC9B4F")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:54.995 -0500", hash_original_method = "DCABE9BD3E641080DC0F0407EE7CA6A1", hash_generated_method = "5C238B84F58BF9162168D303D6CC9B4F")
         
 @Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
 {

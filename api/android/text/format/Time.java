@@ -721,6 +721,7 @@ public boolean parse3339(String s) {
     /**
      * Copy the value of that to this Time object. No normalization happens.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.824 -0500", hash_original_method = "F960E973DC6F4E791CEC3120624756A7", hash_generated_method = "4509CB793883F76F83FC9ADE0AE82EDA")
     
 public void set(Time that) {
@@ -896,6 +897,7 @@ public String format3339(boolean allDay) {
      * @param julianDay the Julian day in the timezone for this Time object
      * @return the UTC milliseconds for the beginning of the Julian day
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.853 -0500", hash_original_method = "D0FEABA86A68FA32A36FDA48979CCD03", hash_generated_method = "BB3981764C056CDB01D2B20973E9B989")
     
 public long setJulianDay(int julianDay) {

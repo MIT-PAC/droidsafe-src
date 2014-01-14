@@ -15,10 +15,6 @@ import android.os.Binder;
 import android.os.Bundle;
 import android.view.Window;
 
-
-
-
-
 public class LocalActivityManager {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:24.339 -0500", hash_original_field = "CE8ADB3DD1644E5C152ADB17DBF734F0", hash_generated_field = "51C71CC685F225C3ECFF2ACB9029A01F")
 
@@ -27,7 +23,6 @@ public class LocalActivityManager {
 
     private static final boolean localLOGV = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:24.363 -0500", hash_original_field = "732E0C842B1B09236CA82DB3232F02AF", hash_generated_field = "FB094120D71B6E47F4CCD5880F183955")
-
 
     static final int RESTORED = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:24.365 -0500", hash_original_field = "C4D8D1583E3D0B4649E95F837328E9BE", hash_generated_field = "482EFBA42C6E2CFF17C7C88620EE2AE7")
@@ -46,7 +41,6 @@ public class LocalActivityManager {
 
     static final int DESTROYED = 5;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:24.376 -0500", hash_original_field = "B78253FB0F6A8AE9C3434DD384D8A838", hash_generated_field = "59A25D5EA94D9575239D0D207B005E37")
-
     
     /** Thread our activities are running in. */
     private  ActivityThread mActivityThread;
@@ -248,6 +242,7 @@ private void performPause(LocalActivityRecord r, boolean finishing) {
      * 
      * @throws android.content.ActivityNotFoundException
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:24.405 -0500", hash_original_method = "0A59627F0C289533278C9C6F1CF55EF3", hash_generated_method = "B78CB55B0AD280C73F4ADD02A9AABA0F")
     
 public Window startActivity(String id, Intent intent) {
@@ -436,11 +431,9 @@ public Activity getActivity(String id) {
         LocalActivityRecord r = mActivities.get(id);
         return r != null ? r.activity : null;
     }
-
     
     private static class LocalActivityRecord extends Binder {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:24.346 -0500", hash_original_field = "960D0AAB4FA1CF92AEC1F360608BDEE3", hash_generated_field = "960D0AAB4FA1CF92AEC1F360608BDEE3")
-
 
          String id;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:24.348 -0500", hash_original_field = "170FCA7A98A65D8003A3D20D5B3C245D", hash_generated_field = "170FCA7A98A65D8003A3D20D5B3C245D")
@@ -467,7 +460,6 @@ LocalActivityRecord(String _id, Intent _intent) {
             id = _id;
             intent = _intent;
         }
-
         
     }
 
@@ -485,6 +477,7 @@ LocalActivityRecord(String _id, Intent _intent) {
      * 
      * @see #saveInstanceState
      */
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:24.419 -0500", hash_original_method = "012D05327CF4F67BB20181F9A8D8EBE2", hash_generated_method = "DE4C485033BE39BACB098EE622F21137")
     
 public void dispatchCreate(Bundle state) {
@@ -585,6 +578,7 @@ public void dispatchResume() {
      * @see Activity#onPause
      * @see Activity#isFinishing
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:24.427 -0500", hash_original_method = "85A6F8844A81DEE3E47CADEC5BC4757D", hash_generated_method = "028D48D2A242341C4CED30A3C5B7667D")
     
 public void dispatchPause(boolean finishing) {
@@ -670,6 +664,7 @@ public void removeAllActivities() {
      * 
      * @see Activity#onDestroy
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:24.435 -0500", hash_original_method = "B2B8D2770115DF4D7579D9F1CB00CAA2", hash_generated_method = "1331549BB05532D676BF427989AB8847")
     
 public void dispatchDestroy(boolean finishing) {

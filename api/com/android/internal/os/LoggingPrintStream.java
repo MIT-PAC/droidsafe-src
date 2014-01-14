@@ -98,6 +98,7 @@ public void write(int oneByte) {
         write(new byte[] { (byte) oneByte }, 0, 1);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:52.914 -0500", hash_original_method = "DD74A1A5E8F3C8FBA0F2CF6C71691621", hash_generated_method = "323A36545569C28FBC957EC749B4FCA5")
     
 @Override
@@ -105,6 +106,7 @@ public void write(int oneByte) {
         write(buffer, 0, buffer.length);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:52.917 -0500", hash_original_method = "3A82678B6E3902D5ED4B1D00D7245300", hash_generated_method = "7FEA4F5F33498E356C4F3504F428EE3E")
     
 @Override

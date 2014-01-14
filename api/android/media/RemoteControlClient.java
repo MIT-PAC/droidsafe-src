@@ -17,10 +17,6 @@ import android.os.Message;
 import android.os.RemoteException;
 import android.os.SystemClock;
 
-
-
-
-
 public class RemoteControlClient {
 
     /**
@@ -117,7 +113,6 @@ private static boolean validTypeForKey(int key, int[] validKeys) {
     public final static int FLAG_INFORMATION_REQUEST_ALBUM_ART = 1 << 3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:29.986 -0500", hash_original_field = "C601146C90701E3A7B0C92D4A446C090", hash_generated_field = "0FD52E847D577969F790EF01F30CA0E3")
 
-
     private static final int[] METADATA_KEYS_TYPE_STRING = {
         MediaMetadataRetriever.METADATA_KEY_ALBUM,
         MediaMetadataRetriever.METADATA_KEY_ALBUMARTIST,
@@ -160,7 +155,6 @@ private static boolean validTypeForKey(int key, int[] validKeys) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:30.114 -0500", hash_original_field = "6CAD6F879E7686E071B2F1BE0DF47AE3", hash_generated_field = "9A2D676D79FDA0EEDBD63F1D0F038755")
 
     private final static int MSG_UNPLUG_DISPLAY = 8;
-
     
     public class MetadataEditor {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:30.010 -0500", hash_original_field = "798C73B48C1720DC8E87ACAC7237A8A4", hash_generated_field = "483347541B59F8DFA8B12B3C1A84C12D")
@@ -348,8 +342,6 @@ public synchronized void apply() {
             }
         }
     }
-
-
     
     private class EventHandler extends Handler {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:30.117 -0500", hash_original_method = "E835DA7FA2605C7661321C420AF4C36C", hash_generated_method = "A8646DD88D641F31D499C91D3ED39A40")
@@ -399,7 +391,6 @@ public EventHandler(RemoteControlClient rcc, Looper looper) {
                     Log.e(TAG, "Unknown event " + msg.what + " in RemoteControlClient handler");
             }
         }
-
         
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:30.041 -0500", hash_original_field = "D67B76FEB675AA6CF283F5022BA1C7D3", hash_generated_field = "84304313B5BE2FAF3B60D13295A73C77")
@@ -474,9 +465,7 @@ public EventHandler(RemoteControlClient rcc, Looper looper) {
             addTaint(artWidth);
             addTaint(artHeight);
             
-            
         }
-
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.460 -0400", hash_original_method = "A6F81BEED91E1311AA2FA5D9223AC5BE", hash_generated_method = "E5B81C889298B648C8569F4E46541402")
         public void setCurrentClientGenerationId(int clientGeneration) {
@@ -487,13 +476,7 @@ public EventHandler(RemoteControlClient rcc, Looper looper) {
             } 
             addTaint(clientGeneration);
             
-            
-                
-                
-                        
-            
         }
-
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.461 -0400", hash_original_method = "858E8A6EB1AEED0E033B6B24928ADF7F", hash_generated_method = "9B0B6DA7FE58DDEC0A074C40B80AD176")
         public void plugRemoteControlDisplay(IRemoteControlDisplay rcd) {
@@ -503,12 +486,7 @@ public EventHandler(RemoteControlClient rcc, Looper looper) {
             } 
             addTaint(rcd.getTaint());
             
-            
-                
-                        
-            
         }
-
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.461 -0400", hash_original_method = "E2F436516A1B085C4A3368B079EC9835", hash_generated_method = "302035D7C66A014A0FC1946F6AD67D32")
         public void unplugRemoteControlDisplay(IRemoteControlDisplay rcd) {
@@ -518,16 +496,10 @@ public EventHandler(RemoteControlClient rcc, Looper looper) {
             } 
             addTaint(rcd.getTaint());
             
-            
-                
-                        
-            
         }
-
         
 };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:30.093 -0500", hash_original_field = "48DBEFEB1D57D7425F34775E3B0822FD", hash_generated_field = "04D6DC37F0EF901EF71A528809491D49")
-
 
     private EventHandler mEventHandler;
 
@@ -620,6 +592,7 @@ public MetadataEditor editMetadata(boolean startEmpty) {
      *       {@link #PLAYSTATE_BUFFERING},
      *       {@link #PLAYSTATE_ERROR}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:30.036 -0500", hash_original_method = "1B4A5A7A2B9348E61A1F8DBEDB05B350", hash_generated_method = "A64D9665EAAEA37E6C534597A949D6BF")
     
 public void setPlaybackState(int state) {

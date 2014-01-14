@@ -14,11 +14,6 @@ import org.apache.harmony.security.fortress.Engine;
 import org.apache.harmony.security.fortress.Services;
 import org.apache.harmony.security.provider.crypto.SHA1PRNG_SecureRandomImpl;
 
-
-
-
-
-
 public class SecureRandom extends Random {
 
     /**
@@ -127,7 +122,6 @@ public static byte[] getSeed(int numBytes) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:57.211 -0500", hash_original_field = "0F8DF6F7D5A29B785D719D0DF577DFCC", hash_generated_field = "F54DA2B97CCF38D28060376DCA270C3F")
 
-
     private static final long serialVersionUID = 4940670005562187L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:57.214 -0500", hash_original_field = "DF770A67945C1861EE188A90255B7E65", hash_generated_field = "C89A6BFB64905EC5F61459987A032A82")
 
@@ -140,14 +134,11 @@ public static byte[] getSeed(int numBytes) {
     private static volatile SecureRandom internalSecureRandom;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:57.219 -0500", hash_original_field = "70389BF55D92237F4948951640719A18", hash_generated_field = "2D84320E029EBF537A8555BC820086EF")
 
-
     private  Provider provider;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:57.221 -0500", hash_original_field = "342C842580F0D9FD4A327B49B64AE3CF", hash_generated_field = "3A956A531DB9FE4A5E154E058CE99C7C")
 
-
     private  SecureRandomSpi secureRandomSpi;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:57.224 -0500", hash_original_field = "1DDAED4286CC7F9A2BC49502885440CE", hash_generated_field = "40E4722A302366B2A43F1CD6C99E2454")
-
 
     private  String algorithm;
 
@@ -242,6 +233,7 @@ public String getAlgorithm() {
      * seed}. <a href="#insecure_seed">Seeding {@code SecureRandom} may be
      * insecure</a>.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:57.255 -0500", hash_original_method = "8CEEFEAA85939144164B3CD7D68FA666", hash_generated_method = "6FF2926EB5B9780E8AC4BC4B5C744C2E")
     
 public synchronized void setSeed(byte[] seed) {
@@ -253,6 +245,7 @@ public synchronized void setSeed(byte[] seed) {
      * {@code seed}. <a href="#insecure_seed">Seeding {@code SecureRandom} may
      * be insecure</a>.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:57.258 -0500", hash_original_method = "9FF68F20EA17830E094095398C2F5999", hash_generated_method = "AF8EB673506CC4F044372F33AC110FA0")
     
 @Override

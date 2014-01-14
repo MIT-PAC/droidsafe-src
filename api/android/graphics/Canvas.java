@@ -424,6 +424,7 @@ public boolean isHardwareAccelerated() {
      * 
      * @hide
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.079 -0500", hash_original_method = "85F5D8C713E0C3D78EE01CE144D393CD", hash_generated_method = "F813A2ECD65AA49F40CA21327D7699A1")
     
 public void setViewport(int width, int height) {
@@ -724,6 +725,7 @@ public final void rotate(float degrees, float px, float py) {
      * @param matrix The matrix to replace the current matrix with. If it is
      *               null, set the current matrix to identity.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.166 -0500", hash_original_method = "ABA89A91C9E394A5196A87FF36F2A069", hash_generated_method = "2D41CB2D2ED1123789F114F9CE5C1F8F")
     
 public void setMatrix(Matrix matrix) {

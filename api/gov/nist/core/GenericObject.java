@@ -12,11 +12,6 @@ import java.lang.reflect.Modifier;
 import java.util.HashSet;
 import java.util.Set;
 
-
-
-
-
-
 public abstract class GenericObject implements Serializable, Cloneable {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.773 -0500", hash_original_method = "3ADC87FD7E0CE83F45EDE92BAF50BA02", hash_generated_method = "3AAAF751889C9C699791AFC88073E877")
@@ -164,7 +159,6 @@ public static Object makeClone(Object obj) {
     protected static final String PERCENT = Separators.PERCENT;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.756 -0500", hash_original_field = "46B4BE6B9B17663D91BE0CBD6FC895ED", hash_generated_field = "23DD3DB933D01AADE0B2C40AA464AC9C")
 
-
     protected static final Set<Class<?>> immutableClasses = new HashSet<Class<?>> (10);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.758 -0500", hash_original_field = "7F6677E0154CDB5B80D151A3901979D8", hash_generated_field = "06A0F0FA7C3AA2D1A0C9419E5DAE1A94")
 
@@ -174,7 +168,6 @@ public static Object makeClone(Object obj) {
         "Float", "Double"
         };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.760 -0500", hash_original_field = "286452610CAD998336F0009181E4D242", hash_generated_field = "3BB4EF50B1D217FA88F0841635612381")
-
 
     protected int indentation;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.762 -0500", hash_original_field = "D8755CDD7F030BEFEB89CB6F60C5B2A3", hash_generated_field = "9E5739E35654F3700B4DC02E1276C03E")
@@ -451,6 +444,7 @@ protected void dbgPrint() {
     /**
      * Debug printing function.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.819 -0500", hash_original_method = "F3C9E7E4BCD0D7ECC989FFC8CBCF37DF", hash_generated_method = "F59F8E3ABDC9B0D727646709B1D5D654")
     
 protected void dbgPrint(String s) {
@@ -759,7 +753,6 @@ public String debugDump(int indent) {
         indentation = 0;
         return retval;
     }
-
 
     /**
      *  Get the string encoded version of this object

@@ -11,10 +11,6 @@ import android.database.ContentObserver;
 import android.os.Handler;
 import android.util.DebugUtils;
 
-
-
-
-
 public class Loader<D> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.622 -0500", hash_original_field = "9F66E723E60E4F10157FDA7C23C67293", hash_generated_field = "9F66E723E60E4F10157FDA7C23C67293")
 
@@ -393,6 +389,7 @@ public String dataToString(D data) {
      * @param writer A PrintWriter to which the dump is to be set.
      * @param args Additional arguments to the dump request.
      */
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.699 -0500", hash_original_method = "DC77AF55A2A9006E9EA4E79F1D0E0673", hash_generated_method = "96B5713FB4F642D42FB97E334FFFFC83")
     
 public void dump(String prefix, FileDescriptor fd, PrintWriter writer, String[] args) {
@@ -403,7 +400,6 @@ public void dump(String prefix, FileDescriptor fd, PrintWriter writer, String[] 
                 writer.print(" mAbandoned="); writer.print(mAbandoned);
                 writer.print(" mReset="); writer.println(mReset);
     }
-
     
     public final class ForceLoadContentObserver extends ContentObserver {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.637 -0500", hash_original_method = "B9E73A5B4B60A8E0702AD317D1848844", hash_generated_method = "D97E27512932796789D4DE052DC12583")
@@ -425,11 +421,8 @@ public ForceLoadContentObserver() {
         public void onChange(boolean selfChange) {
             onContentChanged();
         }
-
         
     }
-
-
     
     public interface OnLoadCompleteListener<D> {
         

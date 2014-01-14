@@ -7,10 +7,6 @@ import droidsafe.annotations.*;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
 
-
-
-
-
 public class SQLiteDirectCursorDriver implements SQLiteCursorDriver {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:42.442 -0500", hash_original_field = "B57E8E3291FA3DC45C2E06A85E7B1ACA", hash_generated_field = "973CDCF4620458EDC8DC04989EC9D73D")
 
@@ -70,6 +66,7 @@ public void cursorClosed() {
         mCursor = null;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:42.461 -0500", hash_original_method = "68EB12D8E06A2397F473CCCC0FA3CBC1", hash_generated_method = "B153325C800447267AAA96AB737A3B1C")
     
 public void setBindArguments(String[] bindArgs) {
@@ -94,7 +91,6 @@ public void cursorRequeried(Cursor cursor) {
     public String toString() {
         return "SQLiteDirectCursorDriver: " + mSql;
     }
-
     
 }
 

@@ -380,6 +380,7 @@ public StorageVolume[] getVolumeList() {
         {
             //Synthesized constructor
         }
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.026 -0500", hash_original_method = "3247F72E228BC8CA6CB0EFFDE0587175", hash_generated_method = "B6CDF41B8392D00636461509E8ACBF35")
         
 public void onUsbMassStorageConnectionChanged(boolean available) {
@@ -389,6 +390,7 @@ public void onUsbMassStorageConnectionChanged(boolean available) {
             }
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.028 -0500", hash_original_method = "3412F22C5256750E7F040A232BDF8730", hash_generated_method = "750426AD55B9B0F2E3D1F3F0958781E9")
         
 public void onStorageStateChanged(String path, String oldState, String newState) {
@@ -429,6 +431,7 @@ public void onStorageStateChanged(String path, String oldState, String newState)
             }
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.040 -0500", hash_original_method = "8B6662593D8FF2E95312263F2E6C8A4E", hash_generated_method = "E26E5F1ED0096FD7B4E0D244EF6DF5EA")
         
 public int addListener(OnObbStateChangeListener listener) {
@@ -488,6 +491,7 @@ OnObbStateChangeListener getListener() {
             return mObbEventListenerRef.get();
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.063 -0500", hash_original_method = "E278FF9F38CD6580E6FCEF436B6AB830", hash_generated_method = "E278FF9F38CD6580E6FCEF436B6AB830")
         
 void sendObbStateChanged(String path, int state) {
@@ -616,6 +620,7 @@ StorageEventListener getListener() {
             return mStorageEventListener;
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.125 -0500", hash_original_method = "2B1B76FC8373F60078A15952F701EC30", hash_generated_method = "2B1B76FC8373F60078A15952F701EC30")
         
 void sendShareAvailabilityChanged(boolean available) {
@@ -623,6 +628,7 @@ void sendShareAvailabilityChanged(boolean available) {
             mHandler.sendMessage(e.getMessage());
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.128 -0500", hash_original_method = "6996CC17777F13485A3BD31F01C08054", hash_generated_method = "6996CC17777F13485A3BD31F01C08054")
         
 void sendStorageStateChanged(String path, String oldState, String newState) {

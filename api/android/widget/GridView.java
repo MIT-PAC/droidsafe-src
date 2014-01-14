@@ -17,10 +17,6 @@ import android.view.ViewDebug;
 import android.view.ViewGroup;
 import android.view.animation.GridLayoutAnimationController;
 
-
-
-
-
 public class GridView extends AbsListView {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:30.373 -0500", hash_original_field = "AA9505FB63AC8A6E04FA498825632C58", hash_generated_field = "9591D43DFDB00D3CA815C6412336BEEB")
 
@@ -39,10 +35,8 @@ public class GridView extends AbsListView {
     public static final int AUTO_FIT = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:30.384 -0500", hash_original_field = "FF954460C058F9850B071838DB89D777", hash_generated_field = "CAA46A02DF073835D5C8346AD9A9CB63")
 
-
     private int mNumColumns = AUTO_FIT;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:30.386 -0500", hash_original_field = "36532247BB66EBCEC9C2909C8C214F9A", hash_generated_field = "E9FAC14F36FB56A0DCAB954B62C2DF2B")
-
 
     private int mHorizontalSpacing = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:30.388 -0500", hash_original_field = "CC8BFE99FA435C599B5CE534CA3668C2", hash_generated_field = "A39AD23AD5FCB84AB23C237FC706C8F3")
@@ -65,17 +59,14 @@ public class GridView extends AbsListView {
     private int mRequestedNumColumns;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:30.401 -0500", hash_original_field = "6F0C9DF59CFE2519A9B8815AD263A61C", hash_generated_field = "7823B4B6322E0EBEB34297B0E440B23B")
 
-
     private View mReferenceView = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:30.404 -0500", hash_original_field = "1B403D9B6056B08D3947AD2750BD356A", hash_generated_field = "E909A7C80DCAC01F178BEF4C30386FF5")
 
     private View mReferenceViewInSelectedRow = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:30.405 -0500", hash_original_field = "355EDF65F5C1DDC97F67C7157FA2BE28", hash_generated_field = "B1F879D1C3141C34182BB7A64318C608")
 
-
     private int mGravity = Gravity.LEFT;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:30.408 -0500", hash_original_field = "1732EB32F2D77CCA26590AEEA670A175", hash_generated_field = "A498F2A4744F31D22F9C4ABEBB254F2F")
-
 
     private final Rect mTempRect = new Rect();
 
@@ -140,6 +131,7 @@ public GridView(Context context, AttributeSet attrs, int defStyle) {
      * through the specified intent.
      * @param intent the intent used to identify the RemoteViewsService for the adapter to connect to.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:30.420 -0500", hash_original_method = "8AB2C6958FD7CEC3A8A71FE59763D6A4", hash_generated_method = "06FC87714B69CEC8209EE3A8D52302FA")
     
 @android.view.RemotableViewMethod
@@ -491,7 +483,7 @@ private void pinToBottom(int childrenBottom) {
                 offsetChildrenTopAndBottom(offset);
             }
         }
-    }    
+    }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:30.506 -0500", hash_original_method = "584D06EE6653E11D28AE97D7ADF4C3E4", hash_generated_method = "8861CD9CEAD89E19D16DF2CF0D1962F3")
     
@@ -606,7 +598,7 @@ private void correctTooHigh(int numColumns, int verticalSpacing, int childCount)
 
             // This is how far the bottom edge of the last view is from the bottom of the
             // drawable area
-            int bottomOffset = end - lastBottom;        
+            int bottomOffset = end - lastBottom;
 
             final View firstChild = getChildAt(0);
             final int firstTop = firstChild.getTop();
@@ -732,7 +724,6 @@ private View fillFromSelection(int selectedTop, int childrenTop, int childrenBot
             adjustViewsUpOrDown();
             fillUp(rowStart - 1, referenceView.getTop() - verticalSpacing);
         }
-
 
         return sel;
     }
@@ -1335,7 +1326,6 @@ private boolean determineColumns(int availableSpace) {
         }
     }
 
-
     /**
      * Obtain the view and add it to our list of children. The view can be made
      * fresh, converted from an unused view, or used as is if it was in the
@@ -1521,6 +1511,7 @@ private void setupChild(View child, int position, int y, boolean flow, int child
      *
      * @param position the position of the new selection
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:30.564 -0500", hash_original_method = "BFD03D39F54176AB600127B7C1132704", hash_generated_method = "1AE311F3CCE236E32F6E093104CBDC91")
     
 @Override
@@ -2012,7 +2003,6 @@ public void setHorizontalSpacing(int horizontalSpacing) {
             requestLayoutIfNecessary();
         }
     }
-
 
     /**
      * Set the amount of vertical (y) spacing to place between each item

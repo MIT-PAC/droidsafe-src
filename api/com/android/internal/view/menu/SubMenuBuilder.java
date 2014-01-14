@@ -11,10 +11,6 @@ import android.view.MenuItem;
 import android.view.SubMenu;
 import android.view.View;
 
-
-
-
-
 public class SubMenuBuilder extends MenuBuilder implements SubMenu {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:37.420 -0500", hash_original_field = "A1B556EFE7B4A9C39F3C01959441E825", hash_generated_field = "4E1BCCB50336F81563C7D93F9E630BE3")
 
@@ -32,6 +28,7 @@ public SubMenuBuilder(Context context, MenuBuilder parentMenu, MenuItemImpl item
         mItem = item;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:37.427 -0500", hash_original_method = "CFA2D90FFED13BED8AFF4C56CD396197", hash_generated_method = "214A4A0BEECAA855BF8893A7BC43AA5F")
     
 @Override
@@ -46,6 +43,7 @@ public SubMenuBuilder(Context context, MenuBuilder parentMenu, MenuItemImpl item
         return mParentMenu.isQwertyMode();
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:37.432 -0500", hash_original_method = "A904D66AD1D8E748B65C9C8C5EEC3261", hash_generated_method = "DE4DB4020B11B8060FC36965A36F4DF3")
     
 @Override
@@ -94,6 +92,7 @@ public MenuItem getItem() {
                 mParentMenu.dispatchMenuItemSelected(menu, item);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:37.448 -0500", hash_original_method = "0AF009FB156FDD26BF7D5688EA94EA96", hash_generated_method = "D7322054920069DFF5993DABFEBA6752")
     
 public SubMenu setIcon(Drawable icon) {
@@ -101,6 +100,7 @@ public SubMenu setIcon(Drawable icon) {
         return this;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:37.450 -0500", hash_original_method = "8258AA953D162B52749278DD498F9224", hash_generated_method = "5FFC0CDB5513BAD85BDE95858B206E03")
     
 public SubMenu setIcon(int iconRes) {
@@ -108,12 +108,14 @@ public SubMenu setIcon(int iconRes) {
         return this;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:37.452 -0500", hash_original_method = "56E209FCA945BF27944112A810A882F0", hash_generated_method = "3889A18346855BA29F159AC8A97223A4")
     
 public SubMenu setHeaderIcon(Drawable icon) {
         return (SubMenu) super.setHeaderIconInt(icon);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:37.454 -0500", hash_original_method = "B3CB9177AFB254AB1F0E1AAE3F32477D", hash_generated_method = "C6AB0FF7011012BE87A798C809EF3628")
     
 public SubMenu setHeaderIcon(int iconRes) {
@@ -126,12 +128,14 @@ public SubMenu setHeaderTitle(CharSequence title) {
         return (SubMenu) super.setHeaderTitleInt(title);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:37.458 -0500", hash_original_method = "E2D8E4BE5C0093B8E518BA6E44543D65", hash_generated_method = "1E8A5AB78A631F6FFC0F4A5D089FE1A1")
     
 public SubMenu setHeaderTitle(int titleRes) {
         return (SubMenu) super.setHeaderTitleInt(titleRes);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:37.461 -0500", hash_original_method = "3CB652CBB5FA246B423F36AF77586ECC", hash_generated_method = "E2DDF82B6832C5A3E8DE5ADD8C859DAA")
     
 public SubMenu setHeaderView(View view) {
@@ -162,7 +166,6 @@ public SubMenu setHeaderView(View view) {
         }
         return super.getActionViewStatesKey() + ":" + itemId;
     }
-
     
 }
 

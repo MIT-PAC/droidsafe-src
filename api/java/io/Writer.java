@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public abstract class Writer implements Appendable, Closeable, Flushable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.977 -0500", hash_original_field = "5E7C45D6B25B1E31F92C48548080E9E3", hash_generated_field = "AB852390F41C8C6739EA01C427D6BB51")
 
@@ -72,6 +68,7 @@ public abstract void flush() throws IOException;
      * @throws IOException
      *             if this writer is closed or another I/O error occurs.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.991 -0500", hash_original_method = "3613EF644BBA13BB917F4671227467C0", hash_generated_method = "2208C03B9A25BFF9A5B9BAA905622943")
     
 public void write(char[] buf) throws IOException {
@@ -125,6 +122,7 @@ public void write(int oneChar) throws IOException {
      * @throws IOException
      *             if this writer is closed or another I/O error occurs.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.998 -0500", hash_original_method = "2CB0ACB6DB74A20D3FAA9874B0AAEB97", hash_generated_method = "56B10BCA62907989A5623B6EAB45E393")
     
 public void write(String str) throws IOException {
@@ -170,6 +168,7 @@ public void write(String str, int offset, int count) throws IOException {
      * @throws IOException
      *             if this writer is closed or another I/O error occurs.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.003 -0500", hash_original_method = "9D99658000F160BDAECAED91EC9BFB5D", hash_generated_method = "022A80F08D04342A5DF811349E2DCDBA")
     
 public Writer append(char c) throws IOException {
@@ -241,7 +240,6 @@ public Writer append(CharSequence csq, int start, int end) throws IOException {
 boolean checkError() {
         return false;
     }
-
     
 }
 

@@ -9,25 +9,17 @@ import java.io.OutputStream;
 
 import org.apache.http.io.SessionOutputBuffer;
 
-
-
-
-
-
 public class ChunkedOutputStream extends OutputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.498 -0500", hash_original_field = "862CD4E306AB155A980F18A7EE0A0BF8", hash_generated_field = "77BC14A656F9BA385AF4199F8E7C3C1D")
 
     private  SessionOutputBuffer out;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.500 -0500", hash_original_field = "0C211D26B312EE2C89BEFF712202C7AE", hash_generated_field = "EBA08CF4C3E674FAE289C26AD80951B3")
 
-
     private byte[] cache;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.502 -0500", hash_original_field = "01F113117CDB8E17A401EB9369CF51E3", hash_generated_field = "8AF6C10D15ADA8AC990219FA73C4C6FF")
 
-
     private int cachePosition = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.504 -0500", hash_original_field = "862858CDE54366C6091E0A52DAD048AD", hash_generated_field = "079555C6CADEB50B1BB49A96B89EAB4C")
-
 
     private boolean wroteLastChunk = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.506 -0500", hash_original_field = "3AA5C7F0C9D40E3C1B48B8404423A098", hash_generated_field = "AA98B16E301073717D23E903C6D6286D")
@@ -88,6 +80,7 @@ protected void flushCache() throws IOException {
      * @param len
      * @throws IOException
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.516 -0500", hash_original_method = "B6A1CB3240895E2E2F127D1796BCAECF", hash_generated_method = "A30ADD53DA444FC89EBE3A6591604ECF")
     
 protected void flushCacheWithAppend(byte bufferToAppend[], int off, int len) throws IOException {
@@ -139,6 +132,7 @@ public void write(int b) throws IOException {
      * @param b
      * @throws IOException
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.525 -0500", hash_original_method = "3A39FD94F4678FF92F02222292608085", hash_generated_method = "F6C81F6D58C1DBA8A32360C2D4037BF3")
     
 public void write(byte b[]) throws IOException {
@@ -183,7 +177,6 @@ public void close() throws IOException {
             this.out.flush();
         }
     }
-
     
 }
 

@@ -122,6 +122,7 @@ public Paint getPaint() {
      * @param right   padding for the right side (in pixels)
      * @param bottom  padding for the bottom (in pixels)
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.648 -0500", hash_original_method = "B421F82679CD23EB7F3D507B70942FAD", hash_generated_method = "1ED0A641FD2E298BCD9FC4061CDBEB04")
     
 public void setPadding(int left, int top, int right, int bottom) {
@@ -140,6 +141,7 @@ public void setPadding(int left, int top, int right, int bottom) {
      * Sets padding for this shape, defined by a Rect object.
      * Define the padding in the Rect object as: left, top, right, bottom.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.651 -0500", hash_original_method = "416AA9F2AA0561BA0C5710C29E641860", hash_generated_method = "266E91202B7A5EBA0F38729A240A61C7")
     
 public void setPadding(Rect padding) {
@@ -215,6 +217,7 @@ protected void onDraw(Shape shape, Canvas canvas, Paint paint) {
         shape.draw(canvas, paint);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.668 -0500", hash_original_method = "2D289F2C5870F3B95565E05840E163B8", hash_generated_method = "1364F2E2B8E64B241E35587E8A217814")
     
 @Override
@@ -262,6 +265,7 @@ protected void onDraw(Shape shape, Canvas canvas, Paint paint) {
         invalidateSelf();
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.675 -0500", hash_original_method = "DD3A0AA7864766F7FA9D12D24B53719B", hash_generated_method = "7C9304B642C9456EC60FCF7238F96B88")
     
 @Override
@@ -290,6 +294,7 @@ protected void onDraw(Shape shape, Canvas canvas, Paint paint) {
         return PixelFormat.TRANSLUCENT;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.680 -0500", hash_original_method = "3955BCB5252FAD61A7FDF156B0C32957", hash_generated_method = "9B1560AF942AE9072A6473BDBCEFDE3B")
     
 @Override

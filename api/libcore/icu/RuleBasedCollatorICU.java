@@ -9,11 +9,6 @@ import java.text.CollationKey;
 import java.text.ParseException;
 import java.util.Locale;
 
-
-
-
-
-
 public final class RuleBasedCollatorICU implements Cloneable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:09.659 -0500", hash_original_field = "FC10F1D5DB77A59DC74DAA5810C2B00D", hash_generated_field = "728743DB6612B436D24CE07F9E0E578D")
 
@@ -121,6 +116,7 @@ public int getDecomposition() {
         return NativeCollation.getAttribute(address, DECOMPOSITION_MODE);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:09.728 -0500", hash_original_method = "44F9BFBEB06030096990BB2E8C89DED9", hash_generated_method = "E22C8178512FBFC4504685CCC2EF34FE")
     
 public void setDecomposition(int mode) {
@@ -133,12 +129,14 @@ public int getStrength() {
         return NativeCollation.getAttribute(address, STRENGTH);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:09.732 -0500", hash_original_method = "B780FC0CB29AFE09B6EA92E53FEFCCC0", hash_generated_method = "F52C3CEEC67196E29042FC398EA590D2")
     
 public void setStrength(int strength) {
         NativeCollation.setAttribute(address, STRENGTH, strength);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:09.735 -0500", hash_original_method = "EE4A6867E88BF501B4AF7B7DE8C48A39", hash_generated_method = "D6B769959F9ECB8E45A318DE808C190C")
     
 public void setAttribute(int type, int value) {

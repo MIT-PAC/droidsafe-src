@@ -283,6 +283,7 @@ public Rect() {}
 		//Return nothing
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void set(Rect src){
 		// Original method
 		/*
@@ -410,6 +411,7 @@ public Rect() {}
 		return false;
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public boolean setIntersect(Rect a, Rect b){
 		// Original method
 		/*

@@ -11,10 +11,6 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.RemoteException;
 
-
-
-
-
 public abstract class BulkCursorNative extends Binder implements IBulkCursor {
 
     /**
@@ -42,6 +38,7 @@ public BulkCursorNative()
         attachInterface(this, descriptor);
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.541 -0500", hash_original_method = "974E69C0AD1811D8FB0AF6277EF80D39", hash_generated_method = "44B1EE5FABD9FB2B1CCC833898555361")
     
 @Override
@@ -155,7 +152,6 @@ public IBinder asBinder()
     {
         return this;
     }
-
     
 }
 
@@ -206,6 +202,7 @@ public CursorWindow getWindow(int startPos) throws RemoteException
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.559 -0500", hash_original_method = "874529548DF9EED6A9EA45E2FAC51D8E", hash_generated_method = "2B91D016CC7D59F3D4E24662B92CAD90")
     
 public void onMove(int position) throws RemoteException {
@@ -307,6 +304,7 @@ public void close() throws RemoteException
         }
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.572 -0500", hash_original_method = "1C7F55EE59A84877DC54C93F1BEC1640", hash_generated_method = "0B3B0CAAE1F340B6EED5FBD38F88B290")
     
 public int requery(IContentObserver observer) throws RemoteException {
@@ -373,6 +371,7 @@ public Bundle getExtras() throws RemoteException {
         return mExtras;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.579 -0500", hash_original_method = "482AF4EBF0254C22A07B37919043D33E", hash_generated_method = "6120D436D6E46640E40F529D865E95F5")
     
 public Bundle respond(Bundle extras) throws RemoteException {
@@ -392,7 +391,6 @@ public Bundle respond(Bundle extras) throws RemoteException {
             reply.recycle();
         }
     }
-
     
 }
 

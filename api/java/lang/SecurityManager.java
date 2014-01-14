@@ -8,11 +8,6 @@ import java.io.FileDescriptor;
 import java.net.InetAddress;
 import java.security.Permission;
 
-
-
-
-
-
 public class SecurityManager {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.788 -0500", hash_original_field = "DE939C5B9522574898036292C1D8C875", hash_generated_field = "9E5AF9E744782F4ACD2178CD4DBD0985")
 
@@ -98,6 +93,7 @@ public void checkPropertiesAccess() { }
     
 public void checkPropertyAccess(String key) { }
 
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.834 -0500", hash_original_method = "3B0F34A9B39090E476EB90B81040C7D1", hash_generated_method = "5249B501FEA70236029DBC4BE67F7BAD")
     
 public void checkRead(FileDescriptor fd) { }
@@ -134,6 +130,7 @@ public void checkAwtEventQueueAccess() { }
     
 public void checkPrintJobAccess() { }
 
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.855 -0500", hash_original_method = "5C84ACAAF82CCDAC7FC44A08CB5F593D", hash_generated_method = "4D65D7CBB4340374CB91A8205EFCC224")
     
 public void checkWrite(FileDescriptor fd) { }
@@ -217,7 +214,6 @@ public void checkPermission(Permission permission) { }
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.887 -0500", hash_original_method = "9F219EE7931C25AFA3551D0D45001223", hash_generated_method = "7789DD97CAD92F94AB9F6E5930AD892C")
     
 public void checkPermission(Permission permission, Object context) { }
-
     
 }
 

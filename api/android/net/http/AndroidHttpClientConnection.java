@@ -41,14 +41,8 @@ import org.apache.http.params.HttpConnectionParams;
 import org.apache.http.params.HttpParams;
 import org.apache.http.util.CharArrayBuffer;
 
-
-
-
-
-
 public class AndroidHttpClientConnection implements HttpInetConnection, HttpConnection {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.901 -0500", hash_original_field = "51AEA610F55961E2DEAE8E33F14CC584", hash_generated_field = "B0D6D00F71FC030A17C26A2601F3BE87")
-
 
     private SessionInputBuffer inbuffer = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.903 -0500", hash_original_field = "D37E01EB8D7F3CC9AD7133D08AB04720", hash_generated_field = "10B58CBE3BBA8B7201F396357A83D45E")
@@ -62,10 +56,8 @@ public class AndroidHttpClientConnection implements HttpInetConnection, HttpConn
     private int maxLineLength;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.909 -0500", hash_original_field = "FDB5A9B9AD2A7A41FA2463863E97E07B", hash_generated_field = "AB3FDC91331A5753EE17C338AC9D0381")
 
-
     private  EntitySerializer entityserializer;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.911 -0500", hash_original_field = "C92B1D7A604A0991F570C5C22AE92582", hash_generated_field = "F323E9D16DC81146FC2969062D7F8C7E")
-
 
     private HttpMessageWriter requestWriter = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.913 -0500", hash_original_field = "10648022F55E6D4D6A7E5414064AE29D", hash_generated_field = "EE4B08A08CEE9A462065794CA86E6F61")
@@ -145,7 +137,6 @@ public void bind(
         return buffer.toString();
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.928 -0500", hash_original_method = "BD86A908767A86776B5DCBFC714C696F", hash_generated_method = "FA059EA16C6BD439D56873736FDE28AE")
     
 private void assertNotOpen() {
@@ -209,6 +200,7 @@ public int getRemotePort() {
         }
     }
 
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.943 -0500", hash_original_method = "1060FB10CE7965802AECEE442A1DB6DF", hash_generated_method = "A990F9F152705D0F8E5F26717A2CA640")
     
 public void setSocketTimeout(int timeout) {
@@ -505,7 +497,6 @@ public boolean isStale() {
 public HttpConnectionMetrics getMetrics() {
         return this.metrics;
     }
-
     
 }
 

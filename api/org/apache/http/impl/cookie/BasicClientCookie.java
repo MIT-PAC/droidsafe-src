@@ -12,14 +12,8 @@ import java.util.Map;
 import org.apache.http.cookie.ClientCookie;
 import org.apache.http.cookie.SetCookie;
 
-
-
-
-
-
 public class BasicClientCookie implements SetCookie, ClientCookie, Cloneable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:36.780 -0500", hash_original_field = "BF45F7481B8091DE3CBF80E94F7F940B", hash_generated_field = "C8D0DAE3C1F33EF1956D4324C7266C1E")
-
 
     /** Cookie name */
     private  String name;
@@ -126,7 +120,6 @@ public String getComment() {
 public void setComment(String comment) {
         cookieComment = comment;
     }
-
     
     /**
      * Returns null. Cookies prior to RFC2965 do not set this attribute
@@ -136,7 +129,6 @@ public void setComment(String comment) {
 public String getCommentURL() {
         return null;
     }
-
     
     /**
      * Returns the expiration {@link Date} of the cookie, or <tt>null</tt>
@@ -172,7 +164,6 @@ public void setExpiryDate (Date expiryDate) {
         cookieExpiryDate = expiryDate;
     }
 
-
     /**
      * Returns <tt>false</tt> if the cookie should be discarded at the end
      * of the "session"; <tt>true</tt> otherwise.
@@ -185,7 +176,6 @@ public void setExpiryDate (Date expiryDate) {
 public boolean isPersistent() {
         return (null != cookieExpiryDate);
     }
-
 
     /**
      * Returns domain attribute of the cookie.
@@ -207,6 +197,7 @@ public String getDomain() {
      *
      * @see #getDomain
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:36.748 -0500", hash_original_method = "9546A6CFEBFFD917E6EED03BE1DAE2AE", hash_generated_method = "C6FBD4B37EEB28CB002FD9A82B308549")
     
 public void setDomain(String domain) {
@@ -216,7 +207,6 @@ public void setDomain(String domain) {
             cookieDomain = null;
         }
     }
-
 
     /**
      * Returns the path attribute of the cookie
@@ -273,7 +263,6 @@ public void setSecure (boolean secure) {
         isSecure = secure;
     }
 
-
     /**
      * Returns null. Cookies prior to RFC2965 do not set this attribute
      */
@@ -282,7 +271,6 @@ public void setSecure (boolean secure) {
 public int[] getPorts() {
         return null;
     }
-
     
     /**
      * Returns the version of the cookie specification to which this
@@ -381,7 +369,6 @@ public boolean containsAttribute(final String name) {
         buffer.append("]");
         return buffer.toString();
     }
-
     
 }
 

@@ -8,10 +8,6 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Printer;
 
-
-
-
-
 public class ServiceInfo extends ComponentInfo implements Parcelable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.873 -0500", hash_original_field = "C7C0637C46F344602F3BBA0296ACE08D", hash_generated_field = "BCFC88EA4A2C840BDC8017A6371C1D0B")
 
@@ -59,6 +55,7 @@ private ServiceInfo(Parcel source) {
         flags = source.readInt();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.881 -0500", hash_original_method = "DA4A80B9AC3442B8DFBCD8315889AD94", hash_generated_method = "EB15B241B0E3029C6BA03D8227806BD3")
     
 public void dump(Printer pw, String prefix) {
@@ -81,6 +78,7 @@ public int describeContents() {
         return 0;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.888 -0500", hash_original_method = "0D65CECC76E553C003E9EF65F2ADA018", hash_generated_method = "FBE9D1BF041597956272BE112BB8DFFD")
     
 public void writeToParcel(Parcel dest, int parcelableFlags) {

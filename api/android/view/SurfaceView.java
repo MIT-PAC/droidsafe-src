@@ -466,6 +466,7 @@ public SurfaceHolder getHolder() {
         updateWindow(false, false);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:49.333 -0500", hash_original_method = "644621127059D6B23356D81576DC6A8B", hash_generated_method = "62E82B7696931E2AE444CFAC3B347A50")
     
 @Override
@@ -518,6 +519,7 @@ public SurfaceHolder getHolder() {
     }
     
     /** @hide */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:49.342 -0500", hash_original_method = "F99ED41FE6B39B12C38A6C99019A5F97", hash_generated_method = "D2F449C5B196FDE027BF0D856E4D6600")
     
 @Override
@@ -595,6 +597,7 @@ public SurfaceHolder getHolder() {
      * 
      * <p>Calling this overrides any previous call to {@link #setZOrderOnTop}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:49.351 -0500", hash_original_method = "FB26E6D2AB831E35DDA7A9ED4DEF2DCC", hash_generated_method = "DBA5C15CDD3EF8CF9CB4AA861D493175")
     
 public void setZOrderMediaOverlay(boolean isMediaOverlay) {
@@ -616,6 +619,7 @@ public void setZOrderMediaOverlay(boolean isMediaOverlay) {
      * 
      * <p>Calling this overrides any previous call to {@link #setZOrderMediaOverlay}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:49.354 -0500", hash_original_method = "001C3D591DD99644CBE6444F60EBCCA2", hash_generated_method = "BD86D3EEB2C88766840B4730D205088A")
     
 public void setZOrderOnTop(boolean onTop) {

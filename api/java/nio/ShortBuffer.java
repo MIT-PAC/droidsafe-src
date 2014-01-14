@@ -6,10 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Arrays;
 
-
-
-
-
 public abstract class ShortBuffer extends Buffer implements Comparable<ShortBuffer> {
 
     /**
@@ -422,6 +418,7 @@ public final ShortBuffer put(short[] src) {
      * @exception ReadOnlyBufferException
      *                if no changes may be made to the contents of this buffer.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:53.425 -0500", hash_original_method = "F4EA1FDC39DA95E004DECB204CC15A47", hash_generated_method = "AF72556D5279A124D49614DCE6B0133C")
     
 public ShortBuffer put(short[] src, int srcOffset, int shortCount) {
@@ -502,7 +499,6 @@ public abstract ShortBuffer put(int index, short s);
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:53.433 -0500", hash_original_method = "5A4FD88E954DBDA74D41F1E3D86F73D1", hash_generated_method = "72EF6F8F265AB024F008383B6BE0397F")
     
 public abstract ShortBuffer slice();
-
     
 }
 

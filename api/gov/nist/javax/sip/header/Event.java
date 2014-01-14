@@ -8,17 +8,11 @@ import java.text.ParseException;
 
 import javax.sip.header.EventHeader;
 
-
-
-
-
-
 public class Event extends ParametersHeader implements EventHeader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:52.852 -0500", hash_original_field = "36F7AB18CF9D759821771C54779BA5E9", hash_generated_field = "63F6460E52154D5BD98308ED4780F1F5")
 
     private static final long serialVersionUID = -6458387810431874841L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:52.857 -0500", hash_original_field = "1BD057D2E2E93DC292EFB1B66D4C32FA", hash_generated_field = "8B4AE3944FE26E1E3D2F161694AF8E90")
-
 
     protected String eventType;
 
@@ -65,6 +59,7 @@ public String getEventType() {
      * @throws ParseException which signals that an error has been reached
      * unexpectedly while parsing the eventId value.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:52.876 -0500", hash_original_method = "4973DD9F7CE5F7FF3C7544616AFD9DF0", hash_generated_method = "85005A61E68972AB85960F4D176DA017")
     
 public void setEventId(String eventId) throws ParseException {

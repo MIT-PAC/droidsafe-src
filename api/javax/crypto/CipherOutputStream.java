@@ -10,11 +10,8 @@ import java.io.OutputStream;
 
 import libcore.io.Streams;
 
-
-
 public class CipherOutputStream extends FilterOutputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.306 -0500", hash_original_field = "250DADA90730C7EEAE534A8757581875", hash_generated_field = "2FF9F58B969F4213F59ABA296D3A8FC3")
-
 
     private  Cipher cipher;
 
@@ -57,6 +54,7 @@ protected CipherOutputStream(OutputStream os) {
      * @throws IOException
      *             if an error occurs.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.319 -0500", hash_original_method = "C558B2B88CBF261C0FBBE5741F96019C", hash_generated_method = "23C1BFB0F79EE3063A60285E2CC71033")
     
 @Override public void write(int b) throws IOException {
@@ -136,7 +134,6 @@ protected CipherOutputStream(OutputStream os) {
             }
         }
     }
-
     
 }
 

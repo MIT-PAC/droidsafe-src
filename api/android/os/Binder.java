@@ -182,6 +182,7 @@ protected boolean onTransact(int code, Parcel data, Parcel reply,
      * Implemented to call the more convenient version
      * {@link #dump(FileDescriptor, PrintWriter, String[])}.
      */
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:38.164 -0500", hash_original_method = "062423BD3F619586ADD6FBBF398B1A78", hash_generated_method = "A93C1D716934E3F725A1746D785E8C4E")
     
 public void dump(FileDescriptor fd, String[] args) {
@@ -223,6 +224,7 @@ public void dumpAsync(final FileDescriptor fd, final String[] args) {
      * closed for you after you return.
      * @param args additional arguments to the dump request.
      */
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:38.172 -0500", hash_original_method = "8E1D6FEDF1AFEDBCDCF9E63EFF23CA00", hash_generated_method = "F6D7C174AEA7671EB5A5529CC69A276B")
     
 protected void dump(FileDescriptor fd, PrintWriter fout, String[] args) {

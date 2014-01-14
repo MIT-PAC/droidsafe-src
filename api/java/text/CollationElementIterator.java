@@ -6,10 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import libcore.icu.CollationElementIteratorICU;
 
-
-
-
-
 public final class CollationElementIterator {
 
     /**
@@ -57,7 +53,6 @@ public static final short tertiaryOrder(int order) {
 
     public static final int NULLORDER = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:10.256 -0500", hash_original_field = "B7EFCAE5DB7AA8E0B6EF62900BCC115F", hash_generated_field = "84C6F5065A9015D8FD721C1742E21463")
-
 
     private CollationElementIteratorICU icuIterator;
 
@@ -175,6 +170,7 @@ public void reset() {
      *            Note that this is not an offset into the corresponding
      *            sequence of collation elements.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:10.278 -0500", hash_original_method = "B5159E04ADD34F8792FC76901FA3C75B", hash_generated_method = "D0D4C87AF30D64D3B685B8EA0A6AAE44")
     
 public void setOffset(int newOffset) {
@@ -201,6 +197,7 @@ public void setText(CharacterIterator source) {
      * @param source
      *            the new source string for iteration.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:10.283 -0500", hash_original_method = "5641B3FAAAA5E41E8D2876C4B877177C", hash_generated_method = "01E9C99A0F71D53E6F2BC83AE127E043")
     
 public void setText(String source) {

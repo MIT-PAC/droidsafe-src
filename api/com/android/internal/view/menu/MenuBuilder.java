@@ -29,10 +29,6 @@ import android.view.MenuItem;
 import android.view.SubMenu;
 import android.view.View;
 
-
-
-
-
 public class MenuBuilder implements Menu {
 
     /**
@@ -75,7 +71,6 @@ private static int findInsertIndex(ArrayList<MenuItemImpl> items, int ordering) 
     private static final String TAG = "MenuBuilder";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:36.168 -0500", hash_original_field = "988B00FA75BE60B28470E3561592BB66", hash_generated_field = "FAB6E9F72A015338D850F86B06EED585")
 
-
     private static final String PRESENTER_KEY = "android:menu:presenters";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:36.171 -0500", hash_original_field = "B1339C8C444716D52ABC8AE8B49B2B00", hash_generated_field = "59CB259DC04AF6A04E6B27242510F0F4")
 
@@ -84,7 +79,6 @@ private static int findInsertIndex(ArrayList<MenuItemImpl> items, int ordering) 
 
     private static final String EXPANDED_ACTION_VIEW_ID = "android:menu:expandedactionview";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:36.177 -0500", hash_original_field = "49EC880223B98573B4C42ED0487AD41C", hash_generated_field = "8C6B059AB28D1ED398AA9094CC2817C5")
-
 
     private static final int[]  sCategoryToOrder = new int[] {
         1, /* No category */
@@ -95,7 +89,6 @@ private static int findInsertIndex(ArrayList<MenuItemImpl> items, int ordering) 
         0, /* SELECTED_ALTERNATIVE */
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:36.179 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
-
 
     private  Context mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:36.182 -0500", hash_original_field = "8C221FB485568FEFC5ABDDF092AD743A", hash_generated_field = "8872E9F5EB468B447DB47434F2C2FEC9")
@@ -153,19 +146,15 @@ private static int findInsertIndex(ArrayList<MenuItemImpl> items, int ordering) 
 
     private boolean mItemsChangedWhileDispatchPrevented = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:36.233 -0500", hash_original_field = "ED3FC13AC0D4AD6DD100D365A6D47297", hash_generated_field = "726E83C5EC3729E7BB3D264007C90B65")
-
     
     private boolean mOptionalIconsVisible = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:36.235 -0500", hash_original_field = "81FDF82A7F114B07DA6345D2295B16E7", hash_generated_field = "BCD7139A79D8D9F3133E20DC6D3F207A")
 
-
     private boolean mIsClosing = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:36.238 -0500", hash_original_field = "112BE6FD20171B89FC965EBA7D30760E", hash_generated_field = "42C64CF6E53F14390A86902028B317E2")
 
-
     private ArrayList<MenuItemImpl> mTempShortcutItemList = new ArrayList<MenuItemImpl>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:36.241 -0500", hash_original_field = "1852CECD5CE8910E5BBD86A0AF88A964", hash_generated_field = "AFD9B193D2ECD6C8B664F5067DC23F76")
-
 
     private CopyOnWriteArrayList<WeakReference<MenuPresenter>> mPresenters =
             new CopyOnWriteArrayList<WeakReference<MenuPresenter>>();
@@ -325,6 +314,7 @@ public void restorePresenterStates(Bundle state) {
         dispatchRestoreInstanceState(state);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:36.283 -0500", hash_original_method = "A8F0361C85125DA8A38A18412990521E", hash_generated_method = "5B4BD681FC3DA93D0AEC9C0C2D2AF2B5")
     
 public void saveActionViewStates(Bundle outStates) {
@@ -354,6 +344,7 @@ public void saveActionViewStates(Bundle outStates) {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:36.286 -0500", hash_original_method = "B3A4CB3CCE0DD38C30DBEC80F125B14F", hash_generated_method = "F63AAFD8295050B319BEDBBAD223555D")
     
 public void restoreActionViewStates(Bundle states) {
@@ -593,6 +584,7 @@ void setExclusiveItemChecked(MenuItem item) {
         }
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:36.340 -0500", hash_original_method = "617F901519AF5A780BAA79B1FC3B9265", hash_generated_method = "83965EA1C3D8BC3C6ED8244E961092ED")
     
 public void setGroupCheckable(int group, boolean checkable, boolean exclusive) {
@@ -607,6 +599,7 @@ public void setGroupCheckable(int group, boolean checkable, boolean exclusive) {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:36.344 -0500", hash_original_method = "4EDC76E82EDC17A472BC69BB1B6E7C6A", hash_generated_method = "3E44BFF79A1B2D25C56BE88EF657D691")
     
 public void setGroupVisible(int group, boolean visible) {
@@ -626,6 +619,7 @@ public void setGroupVisible(int group, boolean visible) {
         if (changedAtLeastOneItem) onItemsChanged(true);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:36.346 -0500", hash_original_method = "7EF09E6D8E231FEB2B973547EA11426B", hash_generated_method = "FCF043D94AF61D6A4EEB39472DC73998")
     
 public void setGroupEnabled(int group, boolean enabled) {
@@ -759,6 +753,7 @@ boolean isQwertyMode() {
      *            menu item does not have a shortcut defined, that item will
      *            still NOT show a shortcut)
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:36.377 -0500", hash_original_method = "5CCA4A69E642C22AB6858AA5EF093CEB", hash_generated_method = "178F4A12ED278BC5FB552551392B7A33")
     
 public void setShortcutsVisible(boolean shortcutsVisible) {
@@ -925,6 +920,7 @@ MenuItemImpl findItemWithShortcutForKey(int keyCode, KeyEvent event) {
         return null;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:36.404 -0500", hash_original_method = "75DB357B621A78C2320053E458E89B31", hash_generated_method = "2F6A4720A1CA007EBCA1A7580A2401C2")
     
 public boolean performIdentifierAction(int id, int flags) {
@@ -1233,6 +1229,7 @@ protected MenuBuilder setHeaderTitleInt(CharSequence title) {
      * @param titleRes The new title (as a resource ID).
      * @return This MenuBuilder so additional setters can be called.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:36.444 -0500", hash_original_method = "6FC715913E3FD5981F9DD3E7E4AF3852", hash_generated_method = "1D147CC8A2A32A42BF2325E3C8A6710C")
     
 protected MenuBuilder setHeaderTitleInt(int titleRes) {
@@ -1247,6 +1244,7 @@ protected MenuBuilder setHeaderTitleInt(int titleRes) {
      * @param icon The new icon.
      * @return This MenuBuilder so additional setters can be called.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:36.446 -0500", hash_original_method = "0C83E3BE30A13663CEC9D94BD8944336", hash_generated_method = "D590294212DB66D75A31666770D0F68B")
     
 protected MenuBuilder setHeaderIconInt(Drawable icon) {
@@ -1261,6 +1259,7 @@ protected MenuBuilder setHeaderIconInt(Drawable icon) {
      * @param iconRes The new icon (as a resource ID).
      * @return This MenuBuilder so additional setters can be called.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:36.448 -0500", hash_original_method = "253F3D7FA62779562611B9B2A33B995B", hash_generated_method = "C85E93E0AB88405DDF9B79047F9F0BDF")
     
 protected MenuBuilder setHeaderIconInt(int iconRes) {
@@ -1275,6 +1274,7 @@ protected MenuBuilder setHeaderIconInt(int iconRes) {
      * @param view The new view.
      * @return This MenuBuilder so additional setters can be called.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:36.450 -0500", hash_original_method = "9212C1843EBD5F59A89AA2755EC31F21", hash_generated_method = "069FA8DC507DEE97E9170C7B4812D0F5")
     
 protected MenuBuilder setHeaderViewInt(View view) {
@@ -1322,12 +1322,10 @@ public MenuBuilder getRootMenu() {
 public void setCurrentMenuInfo(ContextMenuInfo menuInfo) {
         mCurrentMenuInfo = menuInfo;
     }
-
     
     public interface Callback {
         
         public boolean onMenuItemSelected(MenuBuilder menu, MenuItem item);
-        
         
         public void onMenuModeChange(MenuBuilder menu);
     }

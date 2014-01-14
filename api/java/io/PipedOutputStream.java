@@ -5,8 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
 public class PipedOutputStream extends OutputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.402 -0500", hash_original_field = "C5F37FC8F219C9036D7EDF0FA7D29973", hash_generated_field = "FFCF22CBA6829D46F4F004A31261042A")
 
@@ -133,6 +131,7 @@ public void connect(PipedInputStream stream) throws IOException {
      *             closed or if the thread reading from the target stream is no
      *             longer alive. This case is currently not handled correctly.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.418 -0500", hash_original_method = "2AED6D37E619AA85421BF0C9628FA8FE", hash_generated_method = "D6706B0027B05DB7EDA828B6EAA50110")
     
 @Override
@@ -170,7 +169,6 @@ public void connect(PipedInputStream stream) throws IOException {
         }
         stream.receive(oneByte);
     }
-
     
 }
 

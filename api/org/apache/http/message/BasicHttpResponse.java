@@ -12,14 +12,8 @@ import org.apache.http.ProtocolVersion;
 import org.apache.http.ReasonPhraseCatalog;
 import org.apache.http.StatusLine;
 
-
-
-
-
-
 public class BasicHttpResponse extends AbstractHttpMessage implements HttpResponse {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.869 -0500", hash_original_field = "D9859D2DC4F9E5867AA6A26BB559533E", hash_generated_field = "4CCD72942F5376DF30647BDBD097E9E4")
-
 
     private StatusLine          statusline;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.871 -0500", hash_original_field = "84BEE3610D6DA557FD534AD24775E93F", hash_generated_field = "1845537B516494D16BEEE561F2E771CF")
@@ -31,7 +25,6 @@ public class BasicHttpResponse extends AbstractHttpMessage implements HttpRespon
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.878 -0500", hash_original_field = "A25411C3C357716626A9185E220A5EAA", hash_generated_field = "3C599F5969C756C105E47474D7BCB663")
 
     private Locale              locale;
-
 
     /**
      * Creates a new response.
@@ -89,7 +82,6 @@ public BasicHttpResponse(final ProtocolVersion ver,
         this(new BasicStatusLine(ver, code, reason), null, null);
     }
 
-
     // non-javadoc, see interface HttpMessage
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.889 -0500", hash_original_method = "90208803F02F793AFF747002BC8D1B69", hash_generated_method = "116490FDB9CFC58F547476EB349C29C7")
     
@@ -146,6 +138,7 @@ public void setStatusLine(final ProtocolVersion ver, final int code,
     }
 
     // non-javadoc, see interface HttpResponse
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.905 -0500", hash_original_method = "7D42455A6D5293330CE36AB0F03AF641", hash_generated_method = "2CD76105C8047D9A893926BAC0F9255A")
     
 public void setStatusCode(int code) {
@@ -155,6 +148,7 @@ public void setStatusCode(int code) {
     }
 
     // non-javadoc, see interface HttpResponse
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.908 -0500", hash_original_method = "8A9577D3FB93048CF250DA10DB0B55E0", hash_generated_method = "83FA437DE0BA59FFEC73B29FD04AB860")
     
 public void setReasonPhrase(String reason) {
@@ -204,7 +198,6 @@ protected String getReason(int code) {
         return (this.reasonCatalog == null) ?
             null : this.reasonCatalog.getReason(code, this.locale);
     }
-
     
 }
 

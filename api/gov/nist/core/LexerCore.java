@@ -7,11 +7,6 @@ import droidsafe.annotations.*;
 import java.text.ParseException;
 import java.util.Hashtable;
 
-
-
-
-
-
 public class LexerCore extends StringTokenizer {
 
     /**
@@ -176,13 +171,11 @@ public static String charAsString(char ch) {
     public static final int UNDERSCORE = (int) '_';
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.917 -0500", hash_original_field = "4E15CDF1BE145AF026EDAE66A7BF1576", hash_generated_field = "9A4439847AD02C063A85CA312E27B5B7")
 
-
     protected static  Hashtable globalSymbolTable;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.919 -0500", hash_original_field = "0BECC17D64220268F84BA0A9601234A5", hash_generated_field = "94CD673D75FBEC685CA66860DE29769A")
 
     protected static  Hashtable lexerTables;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.979 -0500", hash_original_field = "64B71AE2BB908DE3B11B125428D25665", hash_generated_field = "98DA5713B8CB9625620DDB4ECDE10877")
-
 
     static final char ALPHA_VALID_CHARS = Character.MAX_VALUE;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.981 -0500", hash_original_field = "8F8DB3D35C099F222E2F7337A7CCB09A", hash_generated_field = "A91B938778BCC54CB153A8DC19B91D12")
@@ -217,6 +210,7 @@ public LexerCore(String lexerName, String buffer) {
         this.currentLexerName = lexerName;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.929 -0500", hash_original_method = "AD96F60DA08AE9E896CB042D3CC5B1A1", hash_generated_method = "C3B1C2FA4A45B4AC89017279AA382D37")
     
 protected void addKeyword(String name, int value) {
@@ -239,6 +233,7 @@ public String lookupToken(int value) {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.936 -0500", hash_original_method = "A9968CF51D1D67FF8D3FB6DE23BFC8AA", hash_generated_method = "0CD7688F819297B2CE7E4487B70146ED")
     
 protected Hashtable addLexer(String lexerName) {
@@ -419,7 +414,6 @@ public void SPorHT() {
             // Ignore
         }
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.968 -0500", hash_original_method = "F58976B32EA8A9502EE0AC2AF2B6A7AB", hash_generated_method = "3059BECAC29D045BDFC2F07B221013DA")
     

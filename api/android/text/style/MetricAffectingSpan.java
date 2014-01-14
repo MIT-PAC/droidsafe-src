@@ -47,6 +47,7 @@ public Passthrough(MetricAffectingSpan cs) {
         /**
          * Passes updateDrawState through to the underlying MetricAffectingSpan.
          */
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:07.571 -0500", hash_original_method = "813F80F60D9F0493A35140828DCD41CA", hash_generated_method = "6A424092A6CF9170B611DF2FD945343C")
         
 @Override
@@ -57,6 +58,7 @@ public Passthrough(MetricAffectingSpan cs) {
         /**
          * Passes updateMeasureState through to the underlying MetricAffectingSpan.
          */
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:07.574 -0500", hash_original_method = "9605D4D5DDCA8BDD205A07667048DFB8", hash_generated_method = "11A6672E131FD63B9302B23E1FF74E41")
         
 @Override

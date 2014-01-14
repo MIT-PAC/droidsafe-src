@@ -15,10 +15,6 @@ import android.os.IBinder;
 import android.os.RemoteException;
 import android.os.ServiceManager;
 
-
-
-
-
 public class SipManager {
 
     /**
@@ -112,6 +108,7 @@ public static String getOfferSessionDescription(Intent incomingCallIntent) {
      * @return the incoming call intent
      * @hide
      */
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.218 -0500", hash_original_method = "7A0B7FD710461D3DD9E5460070BF3AA7", hash_generated_method = "19C5A33FDFC1B63C0DB8E261167CC24C")
     
 public static Intent createIncomingCallBroadcast(String callId,
@@ -158,10 +155,8 @@ private static ISipSessionListener createRelay(
     public static final String EXTRA_LOCAL_URI = "android:localSipUri";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.170 -0500", hash_original_field = "BDE96822EFEC6D46922749BEFC449993", hash_generated_field = "645CBB8801570ECCBC5A4AC3D588F8A8")
 
-
     private static final String TAG = "SipManager";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.172 -0500", hash_original_field = "8E592A1294885FA358EB764D496D8A65", hash_generated_field = "E6ACD78799E84217EB210D7F6F326F7C")
-
 
     private ISipService mSipService;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.174 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
@@ -193,6 +188,7 @@ private void createSipService() {
      * @throws SipException if the profile contains incorrect settings or
      *      calling the SIP service results in an error
      */
+    @DSSink({DSSinkKind.VOIP})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.191 -0500", hash_original_method = "52C02C16281ED39358E05D7A6D2BF025", hash_generated_method = "47F673D7A9CAF1E4FA89ADF370804CB6")
     
 public void open(SipProfile localProfile) throws SipException {
@@ -232,6 +228,7 @@ public void open(SipProfile localProfile) throws SipException {
      * @see #getCallId
      * @see #getOfferSessionDescription
      */
+    @DSSink({DSSinkKind.VOIP})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.193 -0500", hash_original_method = "BDC8C921966B306282AD779760136C05", hash_generated_method = "8527A1D79853591CE7E52EC29C824448")
     
 public void open(SipProfile localProfile,
@@ -258,6 +255,7 @@ public void open(SipProfile localProfile,
      * @param listener to listen to registration events; can be null
      * @throws SipException if calling the SIP service results in an error
      */
+    @DSSink({DSSinkKind.VOIP})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.195 -0500", hash_original_method = "CFF28AE1062695240C0119F8DCC4A5F5", hash_generated_method = "F1C8ECE543E5B0202CFE7BEF1EEE182D")
     
 public void setRegistrationListener(String localProfileUri,
@@ -304,7 +302,6 @@ public boolean isOpened(String localProfileUri) throws SipException {
             throw new SipException("isOpened()", e);
         }
     }
-
     
     private static class ListenerRelay extends SipSessionAdapter {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.236 -0500", hash_original_field = "3E77454322C6C2E6AA2D3642EC2D93DA", hash_generated_field = "7B60FB898E2E2088859D7AE43BC26B1C")
@@ -367,7 +364,6 @@ private String getUri(ISipSession session) {
             mListener.onRegistrationFailed(getUri(session),
                     SipErrorCode.TIME_OUT, "registration timed out");
         }
-
         
     }
 

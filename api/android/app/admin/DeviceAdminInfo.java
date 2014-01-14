@@ -32,10 +32,6 @@ import android.util.Printer;
 import android.util.SparseArray;
 import android.util.Xml;
 
-
-
-
-
 public final class DeviceAdminInfo implements Parcelable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.298 -0500", hash_original_field = "1D0B73C8A1604964DC268CCF29F3B3AC", hash_generated_field = "EF54ADA6F74B065C52190993EC3B85DD")
 
@@ -68,7 +64,6 @@ public final class DeviceAdminInfo implements Parcelable {
 
     public static final int USES_POLICY_DISABLE_CAMERA = 8;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.337 -0500", hash_original_field = "008E81DBF25DA74651DE3A1DD0D235AD", hash_generated_field = "5BE1EFEEF690A563A986877DACAE99BD")
-
     
     static ArrayList<PolicyInfo> sPoliciesDisplayOrder = new ArrayList<PolicyInfo>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.339 -0500", hash_original_field = "DB782502208588BCE8856E6D63253BCF", hash_generated_field = "33B4C32B2D5C5AE03E24E067E342238A")
@@ -219,7 +214,6 @@ public String getReceiverName() {
 public ActivityInfo getActivityInfo() {
         return mReceiver.activityInfo;
     }
-
     
     public static class PolicyInfo {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.322 -0500", hash_original_field = "D6522CF0EB0B8A28ECDAD3A7DBFFD747", hash_generated_field = "3ED5BE6AB29FB35B15159E9F367B83D4")
@@ -243,7 +237,6 @@ public PolicyInfo(int identIn, String tagIn, int labelIn, int descriptionIn) {
             label = labelIn;
             description = descriptionIn;
         }
-
         
     }
 
@@ -370,6 +363,7 @@ public void readPoliciesFromXml(XmlPullParser parser)
                 parser.getAttributeValue(null, "flags"));
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.386 -0500", hash_original_method = "B6CA0FCEADAF7A26300AC5E399081259", hash_generated_method = "93FD6697C6D46EE7253F14E9BE51F139")
     
 public void dump(Printer pw, String prefix) {
@@ -390,6 +384,7 @@ public void dump(Printer pw, String prefix) {
      * @param dest The {@link Parcel} to be written.
      * @param flags The flags used for parceling.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.391 -0500", hash_original_method = "3425AE1C08CE1294933DDD04C3D7531A", hash_generated_method = "24A3BE9083E34B5DADE32B816241C040")
     
 public void writeToParcel(Parcel dest, int flags) {

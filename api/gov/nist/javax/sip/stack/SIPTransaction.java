@@ -35,14 +35,8 @@ import javax.sip.TransactionState;
 import javax.sip.message.Request;
 import javax.sip.message.Response;
 
-
-
-
-
-
 public abstract class SIPTransaction extends MessageChannel implements javax.sip.Transaction, gov.nist.javax.sip.TransactionExt {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:13.652 -0500", hash_original_field = "C48E128D2D995ECD355B667DB9DC7865", hash_generated_field = "115540986CC405054C766E7CD52F37AE")
-
 
     /**
      * One timer tick.
@@ -56,14 +50,11 @@ public abstract class SIPTransaction extends MessageChannel implements javax.sip
     protected static final int TIMER_B = 64;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:13.661 -0500", hash_original_field = "7C8240DF42B3EF9F24013B95BCDBFB1D", hash_generated_field = "C6478F3FDDFCC7A5866A29DA158AC357")
 
-
     protected static final int TIMER_J = 64;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:13.665 -0500", hash_original_field = "631676DFE4B8570701C17A5CEF0CB3E2", hash_generated_field = "A9B44A5318402784FF69AC6DA430A9D6")
 
-
     protected static final int TIMER_F = 64;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:13.669 -0500", hash_original_field = "FF12C6903D72287F3A749EF15CEEC191", hash_generated_field = "3DE8E426A4F01136C7ECA20307DAE43A")
-
 
     protected static final int TIMER_H = 64;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:13.692 -0500", hash_original_field = "4471FE1B07D942C7EC5CFFABD9EC2C78", hash_generated_field = "8BA3A0ADBD6ABEEE2C128AA938AC9DE1")
@@ -92,10 +83,8 @@ public abstract class SIPTransaction extends MessageChannel implements javax.sip
     protected static final int MAXIMUM_RETRANSMISSION_TICK_COUNT = 8;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:13.631 -0500", hash_original_field = "60589DB47E64126DB50F2DE120378B21", hash_generated_field = "E1D4E9B3AAF496FD813808775B58AFF8")
 
-
     protected boolean toListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:13.634 -0500", hash_original_field = "02AE635AE3A9EF05DA6A2314A26493C6", hash_generated_field = "FDF4F4F2AA2747767646A2DD5D5D03CF")
-
 
     // to see the event.
 
@@ -111,10 +100,8 @@ public abstract class SIPTransaction extends MessageChannel implements javax.sip
     protected int TIMER_I = T4;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:13.646 -0500", hash_original_field = "E6098CA7D6D7E3673D3864DA3BE9CA49", hash_generated_field = "CA8408AC31A4B160960A20C24156B7EC")
 
-
     protected int TIMER_K = T4;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:13.649 -0500", hash_original_field = "D34273A598627E74D049234838654274", hash_generated_field = "46098F3DF9CF80FB6A2FF1FF700C1E30")
-
 
     protected int TIMER_D = 32000 / BASE_TIMER_INTERVAL;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:13.672 -0500", hash_original_field = "324CFAE3E8224AEDE88E789E229FDCE3", hash_generated_field = "B1A8E011179EF40B9DAC21E1148B1B78")
@@ -122,18 +109,14 @@ public abstract class SIPTransaction extends MessageChannel implements javax.sip
     protected transient Object applicationData;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:13.675 -0500", hash_original_field = "1512DDEB34EA4DFEA7B165ECD6EE2EE0", hash_generated_field = "8CE24F874A42F410B23EF4851613017C")
 
-
     protected SIPResponse lastResponse;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:13.678 -0500", hash_original_field = "6CD30DCE01D3C4ED7016B14B9A35419D", hash_generated_field = "77FEBEAA4AF79617A8B0CBB244F26247")
-
 
     protected boolean isMapped;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:13.680 -0500", hash_original_field = "CC86BA0F6C88FCD5858CE5B76B3292DC", hash_generated_field = "3F41BA6F3B911D0AFE0A127EF365871F")
 
-
     private Semaphore semaphore;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:13.683 -0500", hash_original_field = "8FB3D491B16783705CA8935697DACBBC", hash_generated_field = "30E9188AD86CBF24A584DD99B37E6A4C")
-
 
     protected boolean isSemaphoreAquired;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:13.686 -0500", hash_original_field = "FA725AFE9A3B4550941F34A1204CD790", hash_generated_field = "CF0800764F7E78B484B9CDAF42BF922A")
@@ -142,7 +125,6 @@ public abstract class SIPTransaction extends MessageChannel implements javax.sip
 
     protected String transactionId;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:13.689 -0500", hash_original_field = "89446EA928FF624F1565F240BCD58AD7", hash_generated_field = "DC083CBA87D0EF543E9ADBF7A1B3A2FC")
-
 
     // Audit tag used by the SIP Stack audit
     public long auditTag = 0;
@@ -173,10 +155,8 @@ public abstract class SIPTransaction extends MessageChannel implements javax.sip
     protected int peerPacketSourcePort;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:13.744 -0500", hash_original_field = "21FBD1F3C626244BE5AA333519378971", hash_generated_field = "AA48B9901BA1D417BEAE6C24D398429E")
 
-
     protected InetAddress peerPacketSourceAddress;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:13.747 -0500", hash_original_field = "55EB381772C2F51E6AE0B4E72716ECCB", hash_generated_field = "C48464462DE8239144ADA7BDEA8A5336")
-
 
     protected AtomicBoolean transactionTimerStarted = new AtomicBoolean(false);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:13.750 -0500", hash_original_field = "E640BAC0D5E1BB8E3B462245AF7CD5BE", hash_generated_field = "30E846F477E8815819D75224F8F894EA")
@@ -211,14 +191,11 @@ public abstract class SIPTransaction extends MessageChannel implements javax.sip
     protected From from;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:13.776 -0500", hash_original_field = "7646C5980A36BBF590201AE6FBC89CC1", hash_generated_field = "C448E6A4D656FF8991A12FB1F342B81A")
 
-
     protected To to;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:13.780 -0500", hash_original_field = "2F9DAAEB69CE1FC612F0199E6F2A4208", hash_generated_field = "45474E5168B474ED8B347CB237DE65F5")
 
-
     protected Event event;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:13.783 -0500", hash_original_field = "BF6182748B12F70AD82E571FD6959612", hash_generated_field = "A097F8113589FE8B954AAE5C2A8185B4")
-
 
     protected CallID callId;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:13.786 -0500", hash_original_field = "23890D939F407637C863FECA5D2CD4A9", hash_generated_field = "6C7364C609E4DB2515878536D7BF2D7C")
@@ -231,14 +208,11 @@ public abstract class SIPTransaction extends MessageChannel implements javax.sip
     protected int collectionTime;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:13.789 -0500", hash_original_field = "3AAC19D3AAD98771FCD7661531696519", hash_generated_field = "2548F380843EE93CEFA1182D7B7D4CAB")
 
-
     protected String toTag;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:13.791 -0500", hash_original_field = "DA9D0D47666E1A771165DC0266C76E6D", hash_generated_field = "2473B4AA5FDBB54683BF7F1A7022AFDB")
 
-
     protected String fromTag;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:13.794 -0500", hash_original_field = "ADF7394CBDB72B8EF693EB823F6A872D", hash_generated_field = "A7AFFE900DA148C693A4DA5C908804C1")
-
 
     private boolean terminatedEventDelivered;
 
@@ -724,6 +698,7 @@ public Via getViaHeader() {
      * @param messageToSend
      *            Message to send to the SIP peer.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:13.915 -0500", hash_original_method = "937EBFADC181BFE1D9D7AD4237E3287B", hash_generated_method = "579A073B7C99C3F02BB10835CC79ED97")
     
 public void sendMessage(SIPMessage messageToSend) throws IOException {
@@ -1156,7 +1131,6 @@ public SipProviderImpl getSipProvider() {
 
         return this.getMessageProcessor().getListeningPoint().getProvider();
     }
-
     
     class LingerTimer extends SIPStackTimerTask {
 
@@ -1207,7 +1181,6 @@ protected void runTask() {
             }
 
         }
-
         
     }
 
@@ -1345,7 +1318,6 @@ public String getCipherSuite() throws UnsupportedOperationException {
         } else throw new UnsupportedOperationException("Not a TLS channel");
 
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:14.013 -0500", hash_original_method = "1BD353D03C47A7F0291FB8AF92EA1899", hash_generated_method = "576EC9E1E6349C16601A0DC1EA2A1E3A")
     
@@ -1358,7 +1330,6 @@ public java.security.cert.Certificate[] getLocalCertificates() throws Unsupporte
             else return ((TLSMessageChannel) this.getMessageChannel()).getHandshakeCompletedListener().getHandshakeCompletedEvent().getLocalCertificates();
         } else throw new UnsupportedOperationException("Not a TLS channel");
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:14.016 -0500", hash_original_method = "425975E25339AF497E9130895A1F6EC3", hash_generated_method = "2E9B9EA9638D1ECE5B87DF892DC873BF")
     
@@ -1372,7 +1343,6 @@ public java.security.cert.Certificate[] getPeerCertificates() throws SSLPeerUnve
         } else throw new UnsupportedOperationException("Not a TLS channel");
 
     }
-
 
     /**
      * Start the timer that runs the transaction state machine.

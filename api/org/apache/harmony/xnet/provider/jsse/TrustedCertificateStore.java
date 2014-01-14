@@ -445,6 +445,7 @@ private File file(File dir, String hash, int index) {
      * silently ignores the certificate if it already exists in the
      * store.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:18.197 -0500", hash_original_method = "895D177FC3F042016815EFE0F89E89FF", hash_generated_method = "BA65781A5D71CB269E48C49B20458D7A")
     
 public void installCertificate(X509Certificate cert) throws IOException, CertificateException {

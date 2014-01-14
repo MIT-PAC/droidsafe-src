@@ -7,11 +7,6 @@ import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-
-
-
-
-
 public abstract class IntRangeManager {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:47.591 -0500", hash_original_field = "424DA09941B427078B77E1C5B651D6D1", hash_generated_field = "755EBFB204022DB38615C127DE53EE61")
 
@@ -34,6 +29,7 @@ protected IntRangeManager() {}
      * @param client the client requesting the enabled range
      * @return true if successful, false otherwise
      */
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:47.657 -0500", hash_original_method = "6ED59671D51F9C9BA7262BED5BB50C74", hash_generated_method = "D914C78F1D3000FFA3A5A9EC9CB7022D")
     
 public synchronized boolean enableRange(int startId, int endId, String client) {
@@ -222,6 +218,7 @@ public synchronized boolean enableRange(int startId, int endId, String client) {
      * @param client the client requesting to disable the range
      * @return true if successful, false otherwise
      */
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:47.663 -0500", hash_original_method = "3E9B5A2BDD46323741EF7C361F65FFEC", hash_generated_method = "1F60D8A5ED2F45A9A9BCDB5D9DDF2ECB")
     
 public synchronized boolean disableRange(int startId, int endId, String client) {
@@ -440,7 +437,6 @@ protected abstract void startUpdate();
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:47.683 -0500", hash_original_method = "F3A93B80CF184574F1C80995545F3790", hash_generated_method = "0ED64598EA827C0BEDDFD4FA8733DA59")
     
 protected abstract void addRange(int startId, int endId, boolean selected);
-
     
     private class IntRange {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:47.594 -0500", hash_original_field = "B575BF041CFA248D715BE93778A966DC", hash_generated_field = "B575BF041CFA248D715BE93778A966DC")
@@ -527,11 +523,8 @@ void insert(ClientRange range) {
             }
             clients.add(range);    // append to end of list
         }
-
         
     }
-
-
     
     private class ClientRange {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:47.625 -0500", hash_original_field = "B575BF041CFA248D715BE93778A966DC", hash_generated_field = "B575BF041CFA248D715BE93778A966DC")
@@ -572,7 +565,6 @@ ClientRange(int startId, int endId, String client) {
         public int hashCode() {
             return (startId * 31 + endId) * 31 + client.hashCode();
         }
-
         
     }
 

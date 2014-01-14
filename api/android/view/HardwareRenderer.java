@@ -82,6 +82,7 @@ public static boolean isAvailable() {
      * 
      * @param cacheDir A directory the current process can write to
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.195 -0500", hash_original_method = "4D6DA7709E03DD958DC246E9D34F1611", hash_generated_method = "659680C38E48DF38D5BD90BD48E8C1D2")
     
 public static void setupDiskCache(File cacheDir) {
@@ -1061,6 +1062,7 @@ Gl20Renderer(boolean translucent) {
             }
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.425 -0500", hash_original_method = "E63C13501979998737C0E9B67210D488", hash_generated_method = "CD9DC1D3314A700E2BB6D5376E6F3967")
         
 @Override

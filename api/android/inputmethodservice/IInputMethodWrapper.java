@@ -32,9 +32,6 @@ import com.android.internal.view.IInputMethodCallback;
 import com.android.internal.view.IInputMethodSession;
 import com.android.internal.view.InputConnectionWrapper;
 
-
-
-
 class IInputMethodWrapper extends IInputMethod.Stub implements HandlerCaller.Callback {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:37.936 -0500", hash_original_field = "C78C0AF3A280B526CE72F80B5C668B56", hash_generated_field = "7B184F0C0152E5E9C735D79B852D0D03")
 
@@ -43,7 +40,6 @@ class IInputMethodWrapper extends IInputMethod.Stub implements HandlerCaller.Cal
 
     private static final boolean DEBUG = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:37.942 -0500", hash_original_field = "B19D81C909D8258C8683F85F63582959", hash_generated_field = "B6060526BB66630D1590E7BBD3CA1E8B")
-
     
     private static final int DO_DUMP = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:37.944 -0500", hash_original_field = "55B0D14DA71B49ACD473DAE16C275A32", hash_generated_field = "99EF2DDB01ABCC97E225ADD52E2047CC")
@@ -80,7 +76,6 @@ class IInputMethodWrapper extends IInputMethod.Stub implements HandlerCaller.Cal
 
     private static final int DO_CHANGE_INPUTMETHOD_SUBTYPE = 80;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:37.971 -0500", hash_original_field = "2E2648297276C861114A30927FA43363", hash_generated_field = "2E2648297276C861114A30927FA43363")
-
    
      WeakReference<AbstractInputMethodService> mTarget;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:37.973 -0500", hash_original_field = "B57F12AA48E3204FC249B7683181CCD8", hash_generated_field = "B57F12AA48E3204FC249B7683181CCD8")
@@ -102,7 +97,6 @@ public IInputMethodWrapper(AbstractInputMethodService context,
         mInputMethod = new WeakReference<InputMethod>(inputMethod);
         mTargetSdkVersion = context.getApplicationInfo().targetSdkVersion;
     }
-
     
     static class Notifier {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:37.980 -0500", hash_original_field = "40E30856FA4358AF33733196E7A5FB3C", hash_generated_field = "40E30856FA4358AF33733196E7A5FB3C")
@@ -115,10 +109,7 @@ public IInputMethodWrapper(AbstractInputMethodService context,
             //Synthesized constructor
         }
 
-
     }
-
-
     
     static class InputMethodSessionCallbackWrapper implements InputMethod.SessionCallback {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:37.985 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "B997E37019471EC8FC5B98148C7A8AD7")
@@ -147,7 +138,6 @@ public void sessionCreated(InputMethodSession session) {
             } catch (RemoteException e) {
             }
         }
-
         
     }
 
@@ -157,6 +147,7 @@ public InputMethod getInternalInputMethod() {
         return mInputMethod.get();
     }
 
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:38.004 -0500", hash_original_method = "B32BF45DBAE9C0B66E1E8649B58C9B6E", hash_generated_method = "EF6B92070B6A1A2D760FFE13B4656436")
     
 public void executeMessage(Message msg) {
@@ -242,6 +233,7 @@ public void executeMessage(Message msg) {
         Log.w(TAG, "Unhandled message code: " + msg.what);
     }
     
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:38.007 -0500", hash_original_method = "0C6C3794FFF9A28E4B4CC38855176730", hash_generated_method = "A75778FEB5D169E7C44C230EA74F9DEB")
     
 @Override protected void dump(FileDescriptor fd, PrintWriter fout, String[] args) {

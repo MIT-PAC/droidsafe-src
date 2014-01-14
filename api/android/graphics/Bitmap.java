@@ -927,7 +927,8 @@ public final Config getConfig() {
 		return getTaintBoolean();
 	}
     
-	private void setHasAlpha(boolean hasAlpha) {
+	@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    private void setHasAlpha(boolean hasAlpha) {
 		//Synthetic method in order to track hasAlpha taints, which are managed in native code
 		addTaint(hasAlpha);
 	}
@@ -1071,6 +1072,7 @@ private void checkPixelsAccess(int x, int y, int width, int height,
      * @throws IllegalArgumentException if x, y are outside of the bitmap's
      *         bounds.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:22.864 -0500", hash_original_method = "85459627EEB2B6C6AD7EB511C3D7B6BB", hash_generated_method = "E77E619233DD0365AE14DA47202B7F88")
     
 public void setPixel(int x, int y, int color) {
@@ -1103,6 +1105,7 @@ public void setPixel(int x, int y, int color) {
      * @throws ArrayIndexOutOfBoundsException if the pixels array is too small
      *         to receive the specified number of pixels.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:22.866 -0500", hash_original_method = "ABE133BC8F623C77CA2A0241C4DBE1C8", hash_generated_method = "BBB287CED8F2686E5B8688A7E1E36429")
     
 public void setPixels(int[] pixels, int offset, int stride,

@@ -67,6 +67,7 @@ public boolean canSetParameter(String name, Object value) {
         return parameter != null && parameter.canSet(this, value);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:22.002 -0500", hash_original_method = "F200B80DD8F3D3ABFAA5C6CAA3AC3079", hash_generated_method = "D1142CCE466E66D11DBB2DEA53862560")
     
 public void setParameter(String name, Object value) throws DOMException {
@@ -241,6 +242,7 @@ FixedParameter(Object onlyValue) {
 public Object get(DOMConfigurationImpl config) {
             return onlyValue;
         }
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:21.988 -0500", hash_original_method = "403AFB4EBDC51E40E976B1F523409C3A", hash_generated_method = "70A654478E166BE7FFDBA600188660B7")
         
 public void set(DOMConfigurationImpl config, Object value) {

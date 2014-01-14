@@ -16,13 +16,8 @@ import libcore.io.IoBridge;
 import libcore.io.IoUtils;
 import dalvik.system.CloseGuard;
 
-
-
-
-
 public class FileOutputStream extends OutputStream implements Closeable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.237 -0500", hash_original_field = "DC35B29CA7114A0CAB311A30B93CBE5F", hash_generated_field = "B11DAE17AB1D35227E8CB61CED7BC01D")
-
 
     private FileDescriptor fd;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.240 -0500", hash_original_field = "58BD5E983B42D5DA1EAF3358ED6D6916", hash_generated_field = "84D2D8F04948CA1C168D3A3584462F87")
@@ -35,7 +30,6 @@ public class FileOutputStream extends OutputStream implements Closeable {
 
     private  int mode;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.247 -0500", hash_original_field = "759D7885648499D4F341C13F7C4AA861", hash_generated_field = "E7FAF2CA4E8E292A9B5FAAE3D4817EEC")
-
 
     private final CloseGuard guard = CloseGuard.get();
 
@@ -176,6 +170,7 @@ public final FileDescriptor getFD() throws IOException {
         return fd;
     }
 
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.276 -0500", hash_original_method = "F915AF116DBABF662C85674FE9C75DD1", hash_generated_method = "3276381B087865C1654194DB26559861")
     
 @Override
@@ -183,13 +178,13 @@ public final FileDescriptor getFD() throws IOException {
         IoBridge.write(fd, buffer, byteOffset, byteCount);
     }
 
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.278 -0500", hash_original_method = "36E798E1E7EB95F42CDB9DAEDA0C8547", hash_generated_method = "B2300D19D772DA5EE64EF342E1F6E879")
     
 @Override
     public void write(int oneByte) throws IOException {
         write(new byte[] { (byte) oneByte }, 0, 1);
     }
-
     
 }
 

@@ -15,10 +15,6 @@ import java.util.Locale;
 import libcore.icu.ICU;
 import libcore.icu.LocaleData;
 
-
-
-
-
 public class DecimalFormatSymbols implements Cloneable, Serializable {
 
     /**
@@ -64,10 +60,8 @@ public static Locale[] getAvailableLocales() {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:06.743 -0500", hash_original_field = "DEC7F81DBB7C8E8A2129C36644CFB821", hash_generated_field = "87839485C41D69D54758762801BECCB5")
 
-
     private static final long serialVersionUID = 5772796243397350300L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:06.872 -0500", hash_original_field = "AAEC829649AFAD53E27ED73916572C13", hash_generated_field = "EBF01AA379088E4ACAF6533F65E738B5")
-
 
     private static final ObjectStreamField[] serialPersistentFields = {
         new ObjectStreamField("currencySymbol", String.class),
@@ -89,7 +83,6 @@ public static Locale[] getAvailableLocales() {
         new ObjectStreamField("locale", Locale.class),
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:06.745 -0500", hash_original_field = "17DFD5FF22509500C57E1B2A7C4E9225", hash_generated_field = "182114D634E44B2F9FF8FA9BEA6A2670")
-
 
     private char zeroDigit;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:06.747 -0500", hash_original_field = "1D18153132F04D5683051E104D9B8317", hash_generated_field = "6CB8DCB59FFD8713E9C1C344A13F088C")
@@ -129,7 +122,6 @@ public static Locale[] getAvailableLocales() {
 
     private String intlCurrencySymbol;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:06.768 -0500", hash_original_field = "4824C6AE0AB3D4E6EAB349F40A4DF6DC", hash_generated_field = "E59704290C574597EDF0C1232CAFF8C9")
-
 
     private transient Currency currency;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:06.770 -0500", hash_original_field = "A25411C3C357716626A9185E220A5EAA", hash_generated_field = "28E42E34FE73475FADA137DE37E55757")
@@ -500,6 +492,7 @@ public void setCurrency(Currency currency) {
      * @param value
      *            the currency code.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:06.838 -0500", hash_original_method = "207176AE532CCEDF88793D675BD5BB7E", hash_generated_method = "8411A01250F847572708E3CAF71DA871")
     
 public void setInternationalCurrencySymbol(String value) {

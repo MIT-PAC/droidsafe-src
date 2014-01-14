@@ -12,11 +12,6 @@ import android.view.ViewGroup;
 
 import com.android.internal.R;
 
-
-
-
-
-
 public class RadioGroup extends LinearLayout {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.152 -0500", hash_original_field = "C47AF993A50B19E53756FB24F9912A08", hash_generated_field = "0E60C492BFE4F917273C3792086EBFC2")
 
@@ -240,7 +235,6 @@ public void setOnCheckedChangeListener(OnCheckedChangeListener listener) {
     protected LinearLayout.LayoutParams generateDefaultLayoutParams() {
         return new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
     }
-
     
     public static class LayoutParams extends LinearLayout.LayoutParams {
         /**
@@ -298,6 +292,7 @@ public LayoutParams(MarginLayoutParams source) {
          * @param widthAttr the width attribute to fetch
          * @param heightAttr the height attribute to fetch
          */
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.213 -0500", hash_original_method = "B48B8CC58D894F8848FAA9A802B21490", hash_generated_method = "2926E02E4D8CFF91F30DF8B86F4F32D9")
         
 @Override
@@ -316,11 +311,8 @@ public LayoutParams(MarginLayoutParams source) {
                 height = WRAP_CONTENT;
             }
         }
-
         
     }
-
-
     
     private class CheckedStateTracker implements CompoundButton.OnCheckedChangeListener {
         
@@ -346,11 +338,8 @@ public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
             int id = buttonView.getId();
             setCheckedId(id);
         }
-
         
     }
-
-
     
     private class PassThroughHierarchyChangeListener implements ViewGroup.OnHierarchyChangeListener {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.225 -0500", hash_original_field = "D01F937FCB17217561DE5F8FD1984593", hash_generated_field = "ADB5398B42E06BDFAAB3C7B984E67131")
@@ -399,11 +388,8 @@ public void onChildViewRemoved(View parent, View child) {
                 mOnHierarchyChangeListener.onChildViewRemoved(parent, child);
             }
         }
-
         
     }
-
-
     
     public interface OnCheckedChangeListener {
         

@@ -10,11 +10,6 @@ import android.os.Parcelable;
 
 import com.android.internal.util.Objects;
 
-
-
-
-
-
 public class NetworkPolicy implements Parcelable, Comparable<NetworkPolicy> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.665 -0500", hash_original_field = "35BC11FA8A4A0884AFC216BBB557E617", hash_generated_field = "634F6779245E33ED26E2ECD8D3DDBED9")
 
@@ -26,7 +21,6 @@ public class NetworkPolicy implements Parcelable, Comparable<NetworkPolicy> {
 
     public static final long SNOOZE_NEVER = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.683 -0500", hash_original_field = "73322C3A2022BDF2DC3A04396C3D6D44", hash_generated_field = "682CA4B7512FEB9C83A8E9BE89FFD46E")
-
 
     private static final long DEFAULT_MTU = 1500;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.457 -0400", hash_original_field = "C2409146E6E4B9061F56D86265B2F3B2", hash_generated_field = "180EDC3370D1E5C9B6946B64927B3249")
@@ -45,7 +39,6 @@ public NetworkPolicy[] newArray(int size) {
         }
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.673 -0500", hash_original_field = "84A4D3911A021A3ED65FC1EBB53BD5D3", hash_generated_field = "B2CDC330F0BAA1352530D58D900DD1BE")
-
 
     public  NetworkTemplate template;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.675 -0500", hash_original_field = "6D31B241F1975D97AB78663E7460590C", hash_generated_field = "86C8E914F72A9427F577707623E56D85")
@@ -83,6 +76,7 @@ public NetworkPolicy(Parcel in) {
     }
 
     /** {@inheritDoc} */
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.691 -0500", hash_original_method = "A386F04ADA8A00FB5A1B1E46AA17FE85", hash_generated_method = "B77001EC2FC9FBD90B3E10CD533C8DB0")
     
 public void writeToParcel(Parcel dest, int flags) {

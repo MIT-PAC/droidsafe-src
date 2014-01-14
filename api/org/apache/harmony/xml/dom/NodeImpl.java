@@ -361,6 +361,7 @@ public Node replaceChild(Node newChild, Node oldChild) throws DOMException {
         throw new DOMException(DOMException.HIERARCHY_REQUEST_ERR, null);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.216 -0500", hash_original_method = "DD460B5BCEAE1CB09CE08B91E621DF7E", hash_generated_method = "F6F04EBC749ACC85C9CF4AD58B8585EC")
     
 public final void setNodeValue(String nodeValue) throws DOMException {
@@ -394,6 +395,7 @@ public final void setNodeValue(String nodeValue) throws DOMException {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.218 -0500", hash_original_method = "534A727E4FDB6CDBB5DC8BBEFB80CC50", hash_generated_method = "72AD63D8257DD9AB99E10151EF5554C8")
     
 public void setPrefix(String prefix) throws DOMException {
@@ -518,6 +520,7 @@ void getTextContent(StringBuilder buf) throws DOMException {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.243 -0500", hash_original_method = "B267D49587C3D1DB842740F077498528", hash_generated_method = "2A4DF2AEBDA5F75AFB0FB707C6C12713")
     
 public final void setTextContent(String textContent) throws DOMException {
@@ -830,6 +833,7 @@ UserData(Object value, UserDataHandler handler) {
         
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.275 -0500", hash_original_method = "9F34FDEA3DB7CC58B5A8B86C5F6353A5", hash_generated_method = "A0D2DF0527CEACAD6243FA01D61FF7BE")
     
 public final Object setUserData(String key, Object data, UserDataHandler handler) {

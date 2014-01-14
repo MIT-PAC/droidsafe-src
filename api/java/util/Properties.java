@@ -538,6 +538,7 @@ public Set<String> stringPropertyNames() {
      *            the value.
      * @return the old value mapped to the key, or {@code null}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.696 -0500", hash_original_method = "B5A66BBC4F63569C92BD357B6A0BCEAB", hash_generated_method = "56F4E85497B4F5EC660B941BA40CCE46")
     
 public Object setProperty(String name, String value) {
@@ -569,6 +570,7 @@ public synchronized void store(OutputStream out, String comment) throws IOExcept
      * @throws ClassCastException if a key or value is not a string
      * @since 1.6
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.702 -0500", hash_original_method = "8076CC1A9EBA7B35E4BEA25CCAC41B73", hash_generated_method = "525ADF1180D463C4ACA782A1639904CB")
     
 public synchronized void store(Writer writer, String comment) throws IOException {
@@ -725,6 +727,7 @@ public void storeToXML(OutputStream os, String comment) throws IOException {
      *            write into the {@code OutputStream}.
      * @throws IOException if an error occurs during writing to the output.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.724 -0500", hash_original_method = "88C35F171CF08E9C818A3957B761A932", hash_generated_method = "314055A6A376FFCBC591266AF54683BD")
     
 public synchronized void storeToXML(OutputStream os, String comment,

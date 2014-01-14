@@ -21,34 +21,23 @@ import java.util.Iterator;
 import javax.net.ssl.SSLException;
 import javax.net.ssl.SSLServerSocket;
 
-
-
-
-
-
 public class TLSMessageProcessor extends MessageProcessor {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:26.803 -0500", hash_original_field = "3E7D136CB50987E965906415399DB0D1", hash_generated_field = "D720E7EA87A425C9C359604A7CD3BB49")
-
 
     protected int nConnections;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:26.806 -0500", hash_original_field = "5EBE085FDB38216257993802E75ABBBF", hash_generated_field = "CE50F8CB2D618D5E2ED1602B4F1188A5")
 
-
     private boolean isRunning;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:26.809 -0500", hash_original_field = "959CE6BF0A6F182DD9867A432238FC87", hash_generated_field = "F9EEBC64CC7E0970F5BCA104E833B093")
-
 
     private Hashtable<String, TLSMessageChannel> tlsMessageChannels;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:26.812 -0500", hash_original_field = "F87D5147B4D201968440828D580BDC80", hash_generated_field = "FB56C66DB0DF522F5632D1532BCC403B")
 
-
     private ServerSocket sock;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:26.814 -0500", hash_original_field = "1FB513CCC6764195350E057EABA09B44", hash_generated_field = "1DC0791E679E20EB98C16DB302A56E6D")
 
-
     protected int useCount = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:26.817 -0500", hash_original_field = "C5DB6D818E0B7BCA91032FDFDE928C68", hash_generated_field = "93B52B6ED94104F7CA5FDE37F83993D5")
-
 
     private ArrayList<TLSMessageChannel> incomingTlsMessageChannels;
 
@@ -90,7 +79,6 @@ public void start() throws IOException {
         ((SSLServerSocket) this.sock).setEnabledCipherSuites(enabledCiphers);
         ((SSLServerSocket)this.sock).setWantClientAuth(true);
 
-
         this.isRunning = true;
         thread.start();
 
@@ -128,7 +116,6 @@ public void run() {
                
                 if (sipStack.isLoggingEnabled())
                     sipStack.getStackLogger().logDebug("Accepting new connection!");
-
                 
                // Note that for an incoming message channel, the
                // thread is already running
@@ -213,6 +200,7 @@ protected synchronized void remove(TLSMessageChannel tlsMessageChannel) {
         incomingTlsMessageChannels.remove(tlsMessageChannel);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:26.840 -0500", hash_original_method = "E2A4A9C2C749BC9ACAA11AC1B54DE26B", hash_generated_method = "ADD2B33F2771244593947CEFF0B26842")
     
 public synchronized MessageChannel createMessageChannel(HostPort targetHostPort)
@@ -233,6 +221,7 @@ public synchronized MessageChannel createMessageChannel(HostPort targetHostPort)
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:26.843 -0500", hash_original_method = "EAE2407B3CE4BB7D6FC77F5E6B72F7C1", hash_generated_method = "0A338B0A736847EB50D535119659EAEC")
     
 protected synchronized void cacheMessageChannel(TLSMessageChannel messageChannel) {
@@ -249,6 +238,7 @@ protected synchronized void cacheMessageChannel(TLSMessageChannel messageChannel
 
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:26.846 -0500", hash_original_method = "E42B1ACE44C65E212B4362CBBBBFF2DD", hash_generated_method = "33241DE227631787DE49E3F122CAB7D3")
     
 public synchronized MessageChannel createMessageChannel(InetAddress host, int port)
@@ -304,7 +294,6 @@ public int getDefaultTargetPort() {
 public boolean isSecure() {
         return true;
     }
-
     
 }
 

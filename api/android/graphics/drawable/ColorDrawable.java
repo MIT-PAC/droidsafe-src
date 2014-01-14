@@ -17,10 +17,6 @@ import android.graphics.Paint;
 import android.graphics.PixelFormat;
 import android.util.AttributeSet;
 
-
-
-
-
 public class ColorDrawable extends Drawable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.360 -0500", hash_original_field = "A405993723FCD61240CC265F058545AB", hash_generated_field = "FD7347C3EC0F5B546B9EA73CCF0BC637")
 
@@ -115,6 +111,7 @@ public int getAlpha() {
      *
      * @param alpha The alpha value to set, between 0 and 255.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.383 -0500", hash_original_method = "459E9D088A35A829F6316FAAD661A311", hash_generated_method = "76FD3359CB81794BC431052CE211C471")
     
 public void setAlpha(int alpha) {
@@ -133,6 +130,7 @@ public void setAlpha(int alpha) {
      *
      * @param colorFilter Ignore.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.385 -0500", hash_original_method = "A617079D3CF57FB47B0EF9E1F05040EF", hash_generated_method = "4F96E60EF79CC62633E15FD9F37728CA")
     
 public void setColorFilter(ColorFilter colorFilter) {
@@ -173,7 +171,6 @@ public int getOpacity() {
         mState.mChangingConfigurations = getChangingConfigurations();
         return mState;
     }
-
     
     final static class ColorState extends ConstantState {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.395 -0500", hash_original_field = "5AE93BCE3A5CA0AC335BC45A61DD8BC4", hash_generated_field = "5AE93BCE3A5CA0AC335BC45A61DD8BC4")
@@ -215,11 +212,8 @@ ColorState(ColorState state) {
         public int getChangingConfigurations() {
             return mChangingConfigurations;
         }
-
         
     }
-
-
     
 }
 

@@ -12,10 +12,7 @@ import java.text.ParseException;
 import javax.sip.InvalidArgumentException;
 import javax.sip.header.ExtensionHeader;
 
-
-
 public class PServedUser extends AddressParametersHeader implements PServedUserHeader, SIPHeaderNamesIms, ExtensionHeader {
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:56.077 -0500", hash_original_method = "CE4E031625CF531C1B85FA453494B504", hash_generated_method = "B48AD27966E1B7DFFE9B9527CA54130B")
     
@@ -46,6 +43,7 @@ public String getSessionCase() {
         return getParameter(ParameterNamesIms.SESSION_CASE);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:56.092 -0500", hash_original_method = "8A05E91630AB7D0557A40B65641F2C82", hash_generated_method = "9379BA2EE62D17A86403365445475E84")
     
 public void setRegistrationState(String registrationState) {
@@ -78,6 +76,7 @@ public void setRegistrationState(String registrationState) {
 
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:56.096 -0500", hash_original_method = "B96D543F72B1B5850C059C4E8A513320", hash_generated_method = "6A89C6E9836237AB0C7C99F13AEF7E83")
     
 public void setSessionCase(String sessionCase) {
@@ -129,6 +128,7 @@ public void setSessionCase(String sessionCase) {
         return retval.toString();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:56.104 -0500", hash_original_method = "4B92A49D74A1215E0C3EC12D290AF61B", hash_generated_method = "014FE50D8A9A4F50DCF1C9E31F934432")
     
 public void setValue(String value) throws ParseException {
@@ -148,14 +148,12 @@ public boolean equals(Object other)
         return false;
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:56.112 -0500", hash_original_method = "E31F82669EB953245AD29DB03C98C513", hash_generated_method = "82762806E627604FD622076C83B6858B")
     
 public Object clone() {
         PServedUser retval = (PServedUser) super.clone();
         return retval;
     }
-
     
 }
 

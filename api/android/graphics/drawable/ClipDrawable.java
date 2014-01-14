@@ -17,13 +17,8 @@ import android.graphics.Rect;
 import android.util.AttributeSet;
 import android.view.Gravity;
 
-
-
-
-
 public class ClipDrawable extends Drawable implements Drawable.Callback {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.831 -0500", hash_original_field = "0020CD8DE9DFD5D0CFED10065302AB91", hash_generated_field = "EACA224B8385161B605A2E64A4D16B8A")
-
 
     public static final int HORIZONTAL = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.833 -0500", hash_original_field = "7966AE174603303B802964D7ABB3D5E8", hash_generated_field = "D756A470A2986330BFAB916722475532")
@@ -152,6 +147,7 @@ public void unscheduleDrawable(Drawable who, Runnable what) {
         return mClipState.mDrawable.getPadding(padding);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.855 -0500", hash_original_method = "BCB1CA235EA7FE91BD623275B8F06E4E", hash_generated_method = "F0935F9585B83C7BD0CE2361BAD62EDF")
     
 @Override
@@ -160,6 +156,7 @@ public void unscheduleDrawable(Drawable who, Runnable what) {
         return super.setVisible(visible, restart);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.858 -0500", hash_original_method = "8A8063C7E15313BD8D8740621EFCD055", hash_generated_method = "7C6ADA654B631B11FD4F0798B18AB8FD")
     
 @Override
@@ -167,6 +164,7 @@ public void unscheduleDrawable(Drawable who, Runnable what) {
         mClipState.mDrawable.setAlpha(alpha);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.860 -0500", hash_original_method = "4805CD50FD09C28529E6873146205090", hash_generated_method = "3D00BC1A221472AD6CD0382F594FE967")
     
 @Override
@@ -250,7 +248,6 @@ public void unscheduleDrawable(Drawable who, Runnable what) {
     public int getIntrinsicWidth() {
         return mClipState.mDrawable.getIntrinsicWidth();
     }
-
     
     final static class ClipState extends ConstantState {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.883 -0500", hash_original_field = "38BA53DD394F85639C99ED8E666FF8FB", hash_generated_field = "38BA53DD394F85639C99ED8E666FF8FB")
@@ -266,7 +263,6 @@ public void unscheduleDrawable(Drawable who, Runnable what) {
 
         int mGravity;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.892 -0500", hash_original_field = "04605894B57F7B3414AF620BF4AC040E", hash_generated_field = "63D49323436A33301C0DA6EDF88627FF")
-
 
         private boolean mCheckedConstantState;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.894 -0500", hash_original_field = "09212A3A30B7E6D48DEECC4F4639CCBC", hash_generated_field = "F62F8D22C4EDE8B8E63C376677BD915C")
@@ -320,7 +316,6 @@ boolean canConstantState() {
 
             return mCanConstantState;
         }
-
         
     }
 

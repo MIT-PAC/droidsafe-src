@@ -7,13 +7,8 @@ import droidsafe.annotations.*;
 import gov.nist.core.Host;
 import gov.nist.core.HostPort;
 
-
-
-
-
 public class Authority extends NetObject {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:33.332 -0500", hash_original_field = "2808D63A626D8F55CDB4D64A62CA28FD", hash_generated_field = "392436036450DA670DF3C59C429C18F7")
-
 
     private static final long serialVersionUID = -3570349777347017894L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:33.335 -0500", hash_original_field = "9B4A41D1F947DB93B1E0620B59F0E903", hash_generated_field = "E3D0876BE26B08994B6482E2303E79F8")
@@ -158,6 +153,7 @@ public void removePort() {
      * set the password.
      * @param passwd String to set
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:33.374 -0500", hash_original_method = "8346E0D819EDE7DDC699DC8693996508", hash_generated_method = "E6592F8D679A0E97A10A91F11304BAA9")
     
 public void setPassword(String passwd) {
@@ -170,6 +166,7 @@ public void setPassword(String passwd) {
      * Set the user name of the userInfo member.
      * @param user String to set
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:33.377 -0500", hash_original_method = "0EF31135B34CFA44FF4FE8878DF2C9B5", hash_generated_method = "7C57FEA32B240121A672CFCAD2ACEA13")
     
 public void setUser(String user) {
@@ -182,6 +179,7 @@ public void setUser(String user) {
      * set the host.
      * @param host Host to set
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:33.379 -0500", hash_original_method = "201068C9F082E3325F0A6DFD9E3C4A4F", hash_generated_method = "69D3791AA41772A1BBF629F95249F05E")
     
 public void setHost(Host host) {
@@ -194,6 +192,7 @@ public void setHost(Host host) {
      * Set the port.
      * @param port int to set
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:33.382 -0500", hash_original_method = "3BD3C551AB75CBED14D6B43386D78BE7", hash_generated_method = "F0320919A80AD45DDC258DBC49E73887")
     
 public void setPort(int port) {

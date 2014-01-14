@@ -501,6 +501,7 @@ private static void writeWhere(Parcel p, Spanned sp, Object o) {
      * be printed one span per line.  If the CharSequence is not a Spanned,
      * then the entire string will be printed on a single line.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:06.024 -0500", hash_original_method = "BE480EAEA78D9AC942A5A115EAA0FF97", hash_generated_method = "9366628B164F37B7BDE9EACCD00BDE22")
     
 public static void dumpSpans(CharSequence cs, Printer printer, String prefix) {

@@ -221,6 +221,7 @@ public synchronized void startTest(Test test) {
         testStarted(test.toString());
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.280 -0500", hash_original_method = "B502D6F69F239856B740542829A9775D", hash_generated_method = "756D6C20A02790ED152BAF5653874406")
     
 public void setPreference(String key, String value) {

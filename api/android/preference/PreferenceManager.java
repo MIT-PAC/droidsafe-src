@@ -21,10 +21,6 @@ import android.content.pm.ResolveInfo;
 import android.content.res.XmlResourceParser;
 import android.os.Bundle;
 
-
-
-
-
 public class PreferenceManager {
     
     /**
@@ -74,6 +70,7 @@ private static int getDefaultSharedPreferencesMode() {
      *            and clear it followed by a call to this method with this
      *            parameter set to true.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.739 -0500", hash_original_method = "1B08E289995C6C21F5C2BC4F9B6F5187", hash_generated_method = "3DC84A33A3C2DB62DE5115DFA6B9F88B")
     
 public static void setDefaultValues(Context context, int resId, boolean readAgain) {
@@ -92,6 +89,7 @@ public static void setDefaultValues(Context context, int resId, boolean readAgai
      * @see #setSharedPreferencesName(String)
      * @see #setSharedPreferencesMode(int)
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.741 -0500", hash_original_method = "9646A9372ECC55871733A680E62A72CA", hash_generated_method = "2F9BBD3261B2D934E006F58101CB7E9C")
     
 public static void setDefaultValues(Context context, String sharedPreferencesName,
@@ -118,14 +116,12 @@ public static void setDefaultValues(Context context, String sharedPreferencesNam
         }
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.652 -0500", hash_original_field = "3A3BD45FA93DD50F7F6C52D2CEF15DB2", hash_generated_field = "7AAEA04E4548D5AB6EC8143F21A30EA9")
-
     
     private static final String TAG = "PreferenceManager";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.654 -0500", hash_original_field = "F86CBB3D5E7D46D5EC5C061B27A4EB7F", hash_generated_field = "6C182C497B18AE33867D48A4D7F5655E")
 
     public static final String METADATA_KEY_PREFERENCES = "android.preference";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.656 -0500", hash_original_field = "A25C8F9EA6A0FB10147CB42E8AE48EF6", hash_generated_field = "99247B06873D9B62D5B8F33E5FB96366")
-
     
     public static final String KEY_HAS_SET_DEFAULT_VALUES = "_has_set_default_values";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.658 -0500", hash_original_field = "3895D7E6DB5042DA7856DC78E391C7B9", hash_generated_field = "B0D69375984D6EE7DC93AC12DB4DFC55")
@@ -174,7 +170,6 @@ public static void setDefaultValues(Context context, String sharedPreferencesNam
 
     private List<DialogInterface> mPreferencesScreens;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.690 -0500", hash_original_field = "7B1980F7CD2856B99E6CF8987DD8E986", hash_generated_field = "420F1647C8F11E826C9DE0A838CD7533")
-
     
     private OnPreferenceTreeClickListener mOnPreferenceTreeClickListener;
     
@@ -770,7 +765,6 @@ void removePreferencesScreen(DialogInterface screen) {
 void dispatchNewIntent(Intent intent) {
         dismissAllScreens();
     }
-
     
     interface OnPreferenceTreeClickListener {
         
@@ -779,18 +773,15 @@ void dispatchNewIntent(Intent intent) {
     
     public interface OnActivityResultListener {
         
-        
         boolean onActivityResult(int requestCode, int resultCode, Intent data);
     }
     
     public interface OnActivityStopListener {
         
-        
         void onActivityStop();
     }
     
     public interface OnActivityDestroyListener {
-        
         
         void onActivityDestroy();
     }

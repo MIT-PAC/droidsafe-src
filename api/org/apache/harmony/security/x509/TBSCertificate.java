@@ -18,13 +18,7 @@ import org.apache.harmony.security.asn1.BerInputStream;
 import org.apache.harmony.security.asn1.BitString;
 import org.apache.harmony.security.x501.Name;
 
-
-
-
-
-
 public final class TBSCertificate {
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.941 -0400", hash_original_field = "D7092AE3833E81A8348A8B7AF5B1AF9D", hash_generated_field = "6BC34EFC4439CF1F892B81CC2E73528B")
 
@@ -255,6 +249,7 @@ public byte[] getEncoded() {
         return encoding;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:56.325 -0500", hash_original_method = "20BC4358EC88862A49105AF5BBCC5ECB", hash_generated_method = "9E9A44C75B538FF763D0750FB902A026")
     
 public void dumpValue(StringBuilder sb) {

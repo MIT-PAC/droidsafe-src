@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 
-
-
-
-
-
 public final class ASN1Boolean extends ASN1Primitive {
 
     /**
@@ -76,6 +71,7 @@ public void encodeContent(BerOutputStream out) {
         out.encodeBoolean();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:51.523 -0500", hash_original_method = "E10D3150F01479FE85EBF9E119EE1844", hash_generated_method = "0BF1AD8908E90553E0B28989C8772B96")
     
 public void setEncodingContent(BerOutputStream out) {

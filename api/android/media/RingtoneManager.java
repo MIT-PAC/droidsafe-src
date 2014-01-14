@@ -22,11 +22,6 @@ import android.util.Log;
 
 import com.android.internal.database.SortCursor;
 
-
-
-
-
-
 public class RingtoneManager {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:27.336 -0500", hash_original_method = "DBC47BF2F28DE087272A0362AE49A9BD", hash_generated_method = "39659D7CC381EF0219D84A11D816E499")
@@ -114,7 +109,6 @@ private static String constructBooleanTrueWhereClause(List<String> columns, bool
             sb.append("=0");
         }
 
-
         return sb.toString();
     }
     
@@ -195,6 +189,7 @@ public static Uri getActualDefaultRingtoneUri(Context context, int type) {
      * @param ringtoneUri A {@link Uri} pointing to the default sound to set.
      * @see #getActualDefaultRingtoneUri(Context, int)
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:27.372 -0500", hash_original_method = "7F35A6FA4FCD4A3BDBAD3E9C2A20C1FB", hash_generated_method = "D114430764B3B3ED4C9F3C4F7A8FBEC1")
     
 public static void setActualDefaultRingtoneUri(Context context, int type, Uri ringtoneUri) {
@@ -279,7 +274,6 @@ public static Uri getDefaultUri(int type) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:27.233 -0500", hash_original_field = "CF3A29214B268588C30A010731798E63", hash_generated_field = "3A6444404274E3DC8241965FB9932525")
 
-
     private static final String TAG = "RingtoneManager";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:27.235 -0500", hash_original_field = "3FB811A7D0CCDFC02A5B3095502526BA", hash_generated_field = "ED16E3EF92CA085FB457B680BC7372FC")
 
@@ -299,7 +293,6 @@ public static Uri getDefaultUri(int type) {
 
     public static final int TYPE_ALL = TYPE_RINGTONE | TYPE_NOTIFICATION | TYPE_ALARM;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:27.246 -0500", hash_original_field = "BDDA04ADABDE1F6E37A528F589F5B2F4", hash_generated_field = "F443B0EE39D1E5BC7443C958DEB66F3C")
-
     
     /**
      * Activity Action: Shows a ringtone picker.
@@ -345,7 +338,6 @@ public static Uri getDefaultUri(int type) {
     public static final String EXTRA_RINGTONE_PICKED_URI =
             "android.intent.extra.ringtone.PICKED_URI";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:27.271 -0500", hash_original_field = "232989824C1729EBE820A74194A20DFC", hash_generated_field = "61278DEB030EFDDB9C797A60BD51DDC9")
-
     
     private static final String[] INTERNAL_COLUMNS = new String[] {
         MediaStore.Audio.Media._ID, MediaStore.Audio.Media.TITLE,
@@ -354,14 +346,12 @@ public static Uri getDefaultUri(int type) {
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:27.274 -0500", hash_original_field = "0BBBAD30787C1B0E2D9FBDE8BBEBEF64", hash_generated_field = "F0072927626BA463B81C1FE14BA8DBE2")
 
-
     private static final String[] DRM_COLUMNS = new String[] {
         DrmStore.Audio._ID, DrmStore.Audio.TITLE,
         "\"" + DrmStore.Audio.CONTENT_URI + "\"",
         DrmStore.Audio.TITLE + " AS " + MediaStore.Audio.Media.TITLE_KEY
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:27.277 -0500", hash_original_field = "AEC603840D900D0D5EC535D1E1246812", hash_generated_field = "A46619D87F6A6621C78234992B75AC16")
-
 
     private static final String[] MEDIA_COLUMNS = new String[] {
         MediaStore.Audio.Media._ID, MediaStore.Audio.Media.TITLE,
@@ -379,31 +369,26 @@ public static Uri getDefaultUri(int type) {
     public static final int URI_COLUMN_INDEX = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:27.286 -0500", hash_original_field = "3895D7E6DB5042DA7856DC78E391C7B9", hash_generated_field = "B0D69375984D6EE7DC93AC12DB4DFC55")
 
-
     private Activity mActivity;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:27.288 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
 
     private Context mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:27.291 -0500", hash_original_field = "4A85E902ED72E65A9AF8F6ED265E4F89", hash_generated_field = "6E649D5858461199DBD67FE0A0D43789")
-
     
     private Cursor mCursor;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:27.293 -0500", hash_original_field = "3FEDBD167A89E4A9EF4D78179D24AFFB", hash_generated_field = "4CBCEBAF01C88051929B10818FF66937")
-
 
     private int mType = TYPE_RINGTONE;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:27.296 -0500", hash_original_field = "DB6D4AD6F2DC525EBC1671AC782D526E", hash_generated_field = "2E1F7E6AFE9515754C5EDB99981F24C8")
 
     private List<String> mFilterColumns = new ArrayList<String>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:27.299 -0500", hash_original_field = "E4F0349F57F6613CBBCC70F387F9E1D2", hash_generated_field = "F30049F1DB4460139DD5C5858E52950F")
-
     
     private boolean mStopPreviousRingtone = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:27.301 -0500", hash_original_field = "82B37309BC5F9BE0A4160E5CB5E6F9BB", hash_generated_field = "C4ECD4547B5F1082232499A5FFF0E4E3")
 
     private Ringtone mPreviousRingtone;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:27.303 -0500", hash_original_field = "139BB2F98F570EA7E9B7557E6F3A0F84", hash_generated_field = "BB569023441C69981692423BFE009466")
-
 
     private boolean mIncludeDrm;
     

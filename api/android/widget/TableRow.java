@@ -13,10 +13,6 @@ import android.view.View;
 import android.view.ViewDebug;
 import android.view.ViewGroup;
 
-
-
-
-
 public class TableRow extends LinearLayout {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.190 -0500", hash_original_field = "4F99705C597554B60A40432D34971E06", hash_generated_field = "D9A8A35CE61AAB048FD0AED37F8CBEEB")
 
@@ -31,7 +27,6 @@ public class TableRow extends LinearLayout {
 
     private SparseIntArray mColumnToChildIndex;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.199 -0500", hash_original_field = "EE323A239439596821454B5BF2429A31", hash_generated_field = "3A88AE8C6C11D29E8EFD9BC29F67E7FE")
-
 
     private ChildrenTracker mChildrenTracker;
 
@@ -403,11 +398,9 @@ void setColumnsWidthConstraints(int[] columnWidths) {
     protected LinearLayout.LayoutParams generateLayoutParams(ViewGroup.LayoutParams p) {
         return new LayoutParams(p);
     }
-
     
     public static class LayoutParams extends LinearLayout.LayoutParams {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.257 -0500", hash_original_field = "8BA20F97D7D5048A0CED725277D7DEE1", hash_generated_field = "E13ED3209622FEE16C7BB9C191FE8F66")
-
 
         private static final int LOCATION = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.259 -0500", hash_original_field = "79DB5C8358138861828FD4EC33AFEA6B", hash_generated_field = "934A445C55E10BBDBE903F1BA35DFAF1")
@@ -422,7 +415,6 @@ void setColumnsWidthConstraints(int[] columnWidths) {
         @ViewDebug.ExportedProperty(category = "layout")
         public int span;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.262 -0500", hash_original_field = "3C2DEFF19A8D7D46FCA4C9F95995BF89", hash_generated_field = "3B010DF7096DEB2A022337BFA1B1C1A7")
-
 
         private int[] mOffset = new int[2];
 
@@ -523,6 +515,7 @@ public LayoutParams(MarginLayoutParams source) {
             super(source);
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.283 -0500", hash_original_method = "FC68734AF1365F8395009E059E8FEC81", hash_generated_method = "80473F0F3A43FF430B3E85F14B0F118D")
         
 @Override
@@ -542,8 +535,6 @@ public LayoutParams(MarginLayoutParams source) {
             }
         }
     }
-
-
     
     private class ChildrenTracker implements OnHierarchyChangeListener {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.287 -0500", hash_original_field = "6ECCFF5CC14CBAE58C62A781C6A9F170", hash_generated_field = "F5EA6A3A542BD0A280910BBDD59E219A")
@@ -583,11 +574,8 @@ public void onChildViewRemoved(View parent, View child) {
                 this.listener.onChildViewRemoved(parent, child);
             }
         }
-
         
     }
-
-
     
 }
 

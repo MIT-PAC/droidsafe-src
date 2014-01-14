@@ -248,6 +248,7 @@ public int getPromptPosition() {
      * 
      * @param modal {@code true} if the popup window should be modal, {@code false} otherwise.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.014 -0500", hash_original_method = "320A57FA9129485B3F1A01EDA8808ED5", hash_generated_method = "6C2C1410866D1D61A1A62A8C0391C92E")
     
 public void setModal(boolean modal) {
@@ -317,6 +318,7 @@ public boolean isDropDownAlwaysVisible() {
      * @see android.view.WindowManager.LayoutParams#softInputMode
      * @see #getSoftInputMode()
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.024 -0500", hash_original_method = "E80B835CA17A4D3E815EC079FA1EE953", hash_generated_method = "6F33DB8F703DFF6D3352DF67AA4D9723")
     
 public void setSoftInputMode(int mode) {
@@ -360,6 +362,7 @@ public Drawable getBackground() {
      * 
      * @param d A drawable to set as the background.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.033 -0500", hash_original_method = "53EE8E67A046C4A20122C0C008F8CCAA", hash_generated_method = "3F2D5FAE7B7F15768348E05BF53B40CD")
     
 public void setBackgroundDrawable(Drawable d) {
@@ -371,6 +374,7 @@ public void setBackgroundDrawable(Drawable d) {
      * 
      * @param animationStyle Animation style to use.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.035 -0500", hash_original_method = "CF4F09D135A7A5849055A447382D076E", hash_generated_method = "51C2A0238784BAF4CD2E35C1C31D1F1C")
     
 public void setAnimationStyle(int animationStyle) {
@@ -483,6 +487,7 @@ public void setWidth(int width) {
      *
      * @param width Desired width of content in pixels.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.057 -0500", hash_original_method = "1CC81B1489D8EBDAA358E87EA72284F9", hash_generated_method = "B7561C3A7CA7F311BEEA8084196A7B42")
     
 public void setContentWidth(int width) {
@@ -708,6 +713,7 @@ private void removePromptView() {
      * @see #getInputMethodMode()
      * @see #show()
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.082 -0500", hash_original_method = "288B7DB6446AD4FA82AB3ACE9506A35B", hash_generated_method = "664404492444FE4EDB8C9EF235897445")
     
 public void setInputMethodMode(int mode) {
@@ -731,6 +737,7 @@ public int getInputMethodMode() {
      * 
      * @param position List position to set as selected.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.087 -0500", hash_original_method = "119CA9359C56E2DDD442B9A05EFE812C", hash_generated_method = "3B3BC52D181D5841E7CE1A55B23BB93A")
     
 public void setSelection(int position) {

@@ -8,10 +8,6 @@ import android.app.PendingIntent;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public class LegacyVpnInfo implements Parcelable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:58.899 -0500", hash_original_field = "1D68C8F7C30276313FF74EEBEDEBB1AC", hash_generated_field = "84173E1866F23EE943EF8008ED8CFAFC")
 
@@ -55,7 +51,6 @@ public class LegacyVpnInfo implements Parcelable {
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:58.916 -0500", hash_original_field = "FFE7EE17DFA37A68070A0F0495753B29", hash_generated_field = "9594FABAACFBD659AE1FC0B0C9AAFC8C")
 
-
     public String key;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:58.919 -0500", hash_original_field = "17C36326B9683FA933B8773DE02D4EFE", hash_generated_field = "924108B50A94C58AFBCA8A5C60C836A0")
 
@@ -77,6 +72,7 @@ public class LegacyVpnInfo implements Parcelable {
         return 0;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:58.926 -0500", hash_original_method = "25107BEE45DBA0B67087A892F5280105", hash_generated_method = "06B4553160E8C5D16029F506EF5B23BD")
     
 @Override

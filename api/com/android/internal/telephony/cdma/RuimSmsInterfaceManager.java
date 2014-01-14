@@ -22,11 +22,6 @@ import com.android.internal.telephony.IccUtils;
 import com.android.internal.telephony.SMSDispatcher;
 import com.android.internal.telephony.SmsRawData;
 
-
-
-
-
-
 public class RuimSmsInterfaceManager extends IccSmsInterfaceManager {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:02.470 -0500", hash_original_field = "DB10E3AE28CC9996A816C3CCD7216A83", hash_generated_field = "37C2AB96DD7CCDC96FF809DAC1A6D712")
 
@@ -36,13 +31,11 @@ public class RuimSmsInterfaceManager extends IccSmsInterfaceManager {
     static final boolean DBG = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:02.482 -0500", hash_original_field = "CB2C30527400449D368083C9A417745F", hash_generated_field = "77BC6FD0DC199252047A7F7B64B6060D")
 
-
     private static final int EVENT_LOAD_DONE = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:02.484 -0500", hash_original_field = "5409277739A12236F0DB56D6F1D6490F", hash_generated_field = "15C9033C6CF121B938E3ED8FAF5BE197")
 
     private static final int EVENT_UPDATE_DONE = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:02.475 -0500", hash_original_field = "83DB9DCBBD2D99A708D9A1934D5CD5AB", hash_generated_field = "E59081251AD157907AA4CE8B3D8E654E")
-
 
     private final Object mLock = new Object();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:02.477 -0500", hash_original_field = "8DB7F83EC06955504CF74A8D7DB183AB", hash_generated_field = "E5C2960DEEDF8FDAD07F7DFD4E59E129")
@@ -61,15 +54,12 @@ public class RuimSmsInterfaceManager extends IccSmsInterfaceManager {
             
             ar = (AsyncResult) msg.obj;
             
-            
             {
                 mSuccess = (ar.exception == null);
                 mLock.notifyAll();
-            } 
-            
+            }
             
             ar = (AsyncResult)msg.obj;
-            
             
             {
                 {
@@ -80,13 +70,11 @@ public class RuimSmsInterfaceManager extends IccSmsInterfaceManager {
                     mSms.clear();
                 } 
                 mLock.notifyAll();
-            } 
+            }
             
             addTaint(msg.getTaint());
             
-            
         }
-
         
 };
 
@@ -124,6 +112,7 @@ protected void finalize() {
      * @return success or not
      *
      */
+    @DSSink({DSSinkKind.SMS_MMS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:02.500 -0500", hash_original_method = "4E34C2A3F0747FC60FF3AABB1F75DE9B", hash_generated_method = "20C79CB174C727D459AFA4D98687B9EC")
     
 public boolean
@@ -163,6 +152,7 @@ public boolean
      * @return success or not
      *
      */
+    @DSSink({DSSinkKind.SMS_MMS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:02.503 -0500", hash_original_method = "F615398128ECEE16BD7E7D5E7CEBDFE4", hash_generated_method = "7EE087A2F1F7A7223DBED2AE012727B8")
     
 public boolean copyMessageToIccEf(int status, byte[] pdu, byte[] smsc) {
@@ -212,6 +202,7 @@ public List<SmsRawData> getAllMessagesFromIccEf() {
         return mSms;
     }
 
+    @DSSink({DSSinkKind.SMS_MMS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:02.509 -0500", hash_original_method = "B36353E8C6494764B604BA61C09FD3A9", hash_generated_method = "98F57DD28C7372BBB2240111A6C0413C")
     
 public boolean enableCellBroadcast(int messageIdentifier) {
@@ -228,6 +219,7 @@ public boolean disableCellBroadcast(int messageIdentifier) {
         return false;
     }
 
+    @DSSink({DSSinkKind.SMS_MMS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:02.514 -0500", hash_original_method = "AEDCAF6C3B71A6FB2E26AFF2BA601D09", hash_generated_method = "0A79394AA2E9134C43EF0BCCB3C9425E")
     
 public boolean enableCellBroadcastRange(int startMessageId, int endMessageId) {

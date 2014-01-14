@@ -76,6 +76,7 @@ public class DisplayMetrics {
 public DisplayMetrics() {
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setTo(DisplayMetrics o) {
         addTaint(o.getTaint());
     }

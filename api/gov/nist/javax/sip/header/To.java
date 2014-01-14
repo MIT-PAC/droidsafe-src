@@ -12,11 +12,6 @@ import java.text.ParseException;
 
 import javax.sip.header.ToHeader;
 
-
-
-
-
-
 public final class To extends AddressParametersHeader implements javax.sip.header.ToHeader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:53.629 -0500", hash_original_field = "BCB305DCC140369E76ADF6A37B48EF9D", hash_generated_field = "4A9712AFAA43552733CBA4D2014F2688")
 
@@ -157,6 +152,7 @@ public void removeTag() {
      *
      * @param t - tag String to set.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:53.680 -0500", hash_original_method = "8317B37B8D85C50DB928305D5320BE87", hash_generated_method = "0C6257D2CFC36163BA311F48058932FF")
     
 public void setTag(String t) throws ParseException {

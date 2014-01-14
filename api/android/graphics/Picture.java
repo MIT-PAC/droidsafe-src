@@ -187,6 +187,7 @@ public RecordingCanvas(Picture pict, int nativeCanvas) {
             mPicture = pict;
         }
         
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:26.375 -0500", hash_original_method = "6CF0BDC754DD98C47DAA94E49A23367D", hash_generated_method = "AFB1E851686B7B4C837A7226FC3C7F45")
         
 @Override

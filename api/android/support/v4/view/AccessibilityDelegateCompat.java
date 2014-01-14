@@ -53,6 +53,7 @@ Object getBridge() {
      *
      * @see View#sendAccessibilityEvent(int) View#sendAccessibilityEvent(int)
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:22.634 -0500", hash_original_method = "AF292CC2C422FC35BC5B564D13D2EFD0", hash_generated_method = "F4DE4730815B36F8B2C48D1F87C14F30")
     
 public void sendAccessibilityEvent(View host, int eventType) {
@@ -77,6 +78,7 @@ public void sendAccessibilityEvent(View host, int eventType) {
      * @see View#sendAccessibilityEventUnchecked(AccessibilityEvent)
      *      View#sendAccessibilityEventUnchecked(AccessibilityEvent)
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:22.637 -0500", hash_original_method = "B8A02114F1FBE7409787CB3469B3FB8D", hash_generated_method = "80CA7DA1CBEE9E99E743A4DFFB64F5AC")
     
 public void sendAccessibilityEventUnchecked(View host, AccessibilityEvent event) {
@@ -204,6 +206,7 @@ public boolean onRequestSendAccessibilityEvent(Object delegate, ViewGroup host, 
             return true;
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:22.563 -0500", hash_original_method = "62BC6D1148E35F68F64E7D17E3EF0845", hash_generated_method = "EDA1B8FF043A974CBE273BD76451E8D5")
         
 public void sendAccessibilityEvent(Object delegate, View host, int eventType) {
@@ -267,7 +270,8 @@ public void sendAccessibilityEventUnchecked(Object delegate, View host,
                     return compat.onRequestSendAccessibilityEvent(host, child, event);
                 }
 
-                @Override
+                @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @Override
                 public void sendAccessibilityEvent(View host, int eventType) {
                     compat.sendAccessibilityEvent(host, eventType);
                 }
@@ -322,6 +326,7 @@ public void sendAccessibilityEventUnchecked(Object delegate, View host,
                     child, event);
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:22.614 -0500", hash_original_method = "C594616778EB2064149441C8178D2CA3", hash_generated_method = "720594E9722D42226DFC1FF95CBA9BAC")
         
 @Override
@@ -329,6 +334,7 @@ public void sendAccessibilityEventUnchecked(Object delegate, View host,
             AccessibilityDelegateCompatIcs.sendAccessibilityEvent(delegate, host, eventType);
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:22.616 -0500", hash_original_method = "BF4ECD99B5AA5C3F0A34771E612A54CE", hash_generated_method = "AA4307EB8FE419CB9413477B5204FA3B")
         
 @Override

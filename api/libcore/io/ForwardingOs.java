@@ -13,10 +13,6 @@ import java.nio.ByteBuffer;
 import libcore.util.MutableInt;
 import libcore.util.MutableLong;
 
-
-
-
-
 public class ForwardingOs implements Os {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:28.352 -0500", hash_original_field = "93DD8FF2BD0970E1C11B15D0D608CCBC", hash_generated_field = "AD741EF2B519FC3080D4269DB2BABC3A")
 
@@ -34,6 +30,7 @@ public FileDescriptor accept(FileDescriptor fd, InetSocketAddress peerAddress) t
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:28.360 -0500", hash_original_method = "FFD94E7AFE1E3B1F76A2D696707B6857", hash_generated_method = "0A96B3396472D438726415ECF4473437")
     
 public boolean access(String path, int mode) throws ErrnoException { return os.access(path, mode); }
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:28.363 -0500", hash_original_method = "743422D2EB39F172C4245C8DC993624F", hash_generated_method = "71C4EAA407989047BBF56418D8AE5E61")
     
 public void bind(FileDescriptor fd, InetAddress address, int port) throws ErrnoException { os.bind(fd, address, port); }
@@ -181,6 +178,7 @@ public void munlock(long address, long byteCount) throws ErrnoException { os.mun
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:28.472 -0500", hash_original_method = "93EF25630433342C6922044F58653EDA", hash_generated_method = "AFE532C958C1007298D1DE3EE3BB5F5C")
     
 public void munmap(long address, long byteCount) throws ErrnoException { os.munmap(address, byteCount); }
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:28.475 -0500", hash_original_method = "3A1C8AE14DFE6F094F17065084A852DA", hash_generated_method = "9F7883779F0088C33462F189FBB0058F")
     
 public FileDescriptor open(String path, int flags, int mode) throws ErrnoException { return os.open(path, flags, mode); }
@@ -223,45 +221,59 @@ public void remove(String path) throws ErrnoException { os.remove(path); }
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:28.505 -0500", hash_original_method = "91C997D77FC3A21A4E5692674F9BE11B", hash_generated_method = "E5FB73D16505D8B2B19A895F812629FF")
     
 public void rename(String oldPath, String newPath) throws ErrnoException { os.rename(oldPath, newPath); }
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:28.507 -0500", hash_original_method = "C572D6E07635A5094C687364A5671672", hash_generated_method = "9210DAC481869179E325D412403D65FF")
     
 public long sendfile(FileDescriptor outFd, FileDescriptor inFd, MutableLong inOffset, long byteCount) throws ErrnoException { return os.sendfile(outFd, inFd, inOffset, byteCount); }
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:28.510 -0500", hash_original_method = "88066FF66E9BA638CFCEFABD2B423922", hash_generated_method = "210D71E5A64D693EF323FE13DF114FBB")
     
 public int sendto(FileDescriptor fd, ByteBuffer buffer, int flags, InetAddress inetAddress, int port) throws ErrnoException { return os.sendto(fd, buffer, flags, inetAddress, port); }
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:28.512 -0500", hash_original_method = "BC2321A87F2222D5681A88900983F12D", hash_generated_method = "30E7ED50918659019E777D297A4F027B")
     
 public int sendto(FileDescriptor fd, byte[] bytes, int byteOffset, int byteCount, int flags, InetAddress inetAddress, int port) throws ErrnoException { return os.sendto(fd, bytes, byteOffset, byteCount, flags, inetAddress, port); }
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:28.515 -0500", hash_original_method = "D0978EE2EC25CFB475F603941EE6E321", hash_generated_method = "4766E0245DFD1B5F6CACB45D5B1CE9AD")
     
 public void setegid(int egid) throws ErrnoException { os.setegid(egid); }
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:28.517 -0500", hash_original_method = "0B3E20A1D3AFC99676F4A67D4967A4C5", hash_generated_method = "CEFD4AAFE47A6AB86C2AB48192C6F628")
     
 public void seteuid(int euid) throws ErrnoException { os.seteuid(euid); }
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:28.519 -0500", hash_original_method = "5A836F22DA1ADF6236109717B09FFB11", hash_generated_method = "ED95594EAAE4DF50A855B838BBCFA5F9")
     
 public void setgid(int gid) throws ErrnoException { os.setgid(gid); }
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:28.522 -0500", hash_original_method = "02713B5D8B1D9FC1829D645D7EE01360", hash_generated_method = "C1C18650652E19BAA1AF14BE22F74BFC")
     
 public void setsockoptByte(FileDescriptor fd, int level, int option, int value) throws ErrnoException { os.setsockoptByte(fd, level, option, value); }
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:28.524 -0500", hash_original_method = "859AD73B12F1FCBFB785F9C03E57780C", hash_generated_method = "E99886C0DEF8A685FFA3A626D457CD51")
     
 public void setsockoptIfreq(FileDescriptor fd, int level, int option, String value) throws ErrnoException { os.setsockoptIfreq(fd, level, option, value); }
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:28.527 -0500", hash_original_method = "5882A7C612198E8B1D9CBF2EDBCD6FE7", hash_generated_method = "9DA655902BF199DA7AAB0C56600A2421")
     
 public void setsockoptInt(FileDescriptor fd, int level, int option, int value) throws ErrnoException { os.setsockoptInt(fd, level, option, value); }
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:28.529 -0500", hash_original_method = "3A8741E8D07270D7E757C05217AEFD39", hash_generated_method = "1FE3AE74050FEE6FA5034CC807271044")
     
 public void setsockoptIpMreqn(FileDescriptor fd, int level, int option, int value) throws ErrnoException { os.setsockoptIpMreqn(fd, level, option, value); }
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:28.531 -0500", hash_original_method = "4E1D080A99B5B2F06B7A0201A27B3E99", hash_generated_method = "DA83831D05C715F7B422EF47CF0A412B")
     
 public void setsockoptGroupReq(FileDescriptor fd, int level, int option, StructGroupReq value) throws ErrnoException { os.setsockoptGroupReq(fd, level, option, value); }
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:28.533 -0500", hash_original_method = "A1EC25C1EA10D3E94DA65D129945BE62", hash_generated_method = "D113D834368DE9DE282D238E1C043E88")
     
 public void setsockoptLinger(FileDescriptor fd, int level, int option, StructLinger value) throws ErrnoException { os.setsockoptLinger(fd, level, option, value); }
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:28.536 -0500", hash_original_method = "B0DC8E18521874709C24B9B37D89D87C", hash_generated_method = "89AE5AC6DABF61A935158397B14314EA")
     
 public void setsockoptTimeval(FileDescriptor fd, int level, int option, StructTimeval value) throws ErrnoException { os.setsockoptTimeval(fd, level, option, value); }
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:28.538 -0500", hash_original_method = "554251AE1D031EE7BA07BC4F696C724A", hash_generated_method = "AAB537F3F4A4527FEDB885DB035F3177")
     
 public void setuid(int uid) throws ErrnoException { os.setuid(uid); }
@@ -292,16 +304,18 @@ public StructUtsname uname() { return os.uname(); }
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:28.559 -0500", hash_original_method = "EC4C2322F336992223E3CB1B21022BF9", hash_generated_method = "E9E819FAFB8845664878B6CD1C32DE4B")
     
 public int waitpid(int pid, MutableInt status, int options) throws ErrnoException { return os.waitpid(pid, status, options); }
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:28.561 -0500", hash_original_method = "844A22BF74026B79E5C643696D2A0D2B", hash_generated_method = "8D350D3F70A91350AA725031C4B66D18")
     
 public int write(FileDescriptor fd, ByteBuffer buffer) throws ErrnoException { return os.write(fd, buffer); }
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:28.563 -0500", hash_original_method = "437BEB04F87A5AE656D8F235B16E36DF", hash_generated_method = "C1CD7E6CEFBA9362229C67090E7CAE3B")
     
 public int write(FileDescriptor fd, byte[] bytes, int byteOffset, int byteCount) throws ErrnoException { return os.write(fd, bytes, byteOffset, byteCount); }
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:28.565 -0500", hash_original_method = "8BC1FDC02B601F3DB4DB2A70967C7CDC", hash_generated_method = "603839B5332CB7FB6407521AC7E56C38")
     
 public int writev(FileDescriptor fd, Object[] buffers, int[] offsets, int[] byteCounts) throws ErrnoException { return os.writev(fd, buffers, offsets, byteCounts); }
-
     
 }
 

@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Arrays;
 
-
-
-
-
-
 public class CharArrayWriter extends Writer {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.947 -0500", hash_original_field = "40514AFF00B14ABD40D54C723F22A0B4", hash_generated_field = "F3184E7FC423A3DB65CA949884DB59BD")
 
@@ -246,6 +241,7 @@ public void writeTo(Writer out) throws IOException {
      *            the character appended to the CharArrayWriter.
      * @return this CharArrayWriter.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.986 -0500", hash_original_method = "98F1E9A8C1E20678242580E2421D983C", hash_generated_method = "DBB08E576F65CCCD5C3E9BE56838F079")
     
 @Override
@@ -309,7 +305,6 @@ public void writeTo(Writer out) throws IOException {
         write(output, 0, output.length());
         return this;
     }
-
     
 }
 

@@ -17,10 +17,6 @@ import android.net.Uri;
 import android.os.Handler;
 import android.os.Message;
 
-
-
-
-
 public class LocalBroadcastManager {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:29.523 -0500", hash_original_method = "3CB1B74AD53F3369E7790EFD811F3D13", hash_generated_method = "47819F899C9500AFBEECAF5945D64459")
@@ -35,17 +31,14 @@ public static LocalBroadcastManager getInstance(Context context) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:29.488 -0500", hash_original_field = "95EA59689DB3F23B3D542ECA81CE7023", hash_generated_field = "BF4C210169D9CD8EE4EB7FDFBA8151D6")
 
-
     private static final String TAG = "LocalBroadcastManager";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:29.491 -0500", hash_original_field = "81DD852ECBE07BA98A61C8F3D0C85F01", hash_generated_field = "58EDF43BA541A4D47EECFEC3901C7AED")
 
     private static final boolean DEBUG = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:29.513 -0500", hash_original_field = "9DD71F6CE060E1F83CB2095757C4FFB6", hash_generated_field = "62F64C7DBF4C8EA8DBEAB2C0BCF66703")
 
-
     static final int MSG_EXEC_PENDING_BROADCASTS = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:29.518 -0500", hash_original_field = "83DB9DCBBD2D99A708D9A1934D5CD5AB", hash_generated_field = "CA3747CC2EC4B1C7DB6ABC7879C88A34")
-
 
     private static final Object mLock = new Object();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:29.521 -0500", hash_original_field = "FD097A25508999963B21983D4882C2B3", hash_generated_field = "C42A5AFEF5DDC3EB8FF2FCB322675454")
@@ -53,10 +46,8 @@ public static LocalBroadcastManager getInstance(Context context) {
     private static LocalBroadcastManager mInstance;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:29.502 -0500", hash_original_field = "EA4750DA6687DD56CD040978206975ED", hash_generated_field = "722D46A23A9E453AC7AC6D5797C29418")
 
-
     private  Context mAppContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:29.505 -0500", hash_original_field = "9C55A75C7EE57F61960730AE42681320", hash_generated_field = "07FFA70DD32DFA27A9E1E6FAA73F1FDA")
-
 
     private final HashMap<BroadcastReceiver, ArrayList<IntentFilter>> mReceivers
             = new HashMap<BroadcastReceiver, ArrayList<IntentFilter>>();
@@ -66,11 +57,9 @@ public static LocalBroadcastManager getInstance(Context context) {
             = new HashMap<String, ArrayList<ReceiverRecord>>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:29.510 -0500", hash_original_field = "F0822C225C2440DE5445C05A068B4566", hash_generated_field = "64369177E49D20F3A922FD3B9CC9E74F")
 
-
     private final ArrayList<BroadcastRecord> mPendingBroadcasts
             = new ArrayList<BroadcastRecord>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:29.515 -0500", hash_original_field = "A163099B522120C606A3CA562F90E927", hash_generated_field = "03E47BA0CE42772601F0A13D178B12B5")
-
 
     private  Handler mHandler;
 
@@ -92,7 +81,6 @@ private LocalBroadcastManager(Context context) {
             }
         };
     }
-
     
     private static class ReceiverRecord {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:29.459 -0500", hash_original_field = "7DA86C636503E600C04786FD252B8201", hash_generated_field = "7DA86C636503E600C04786FD252B8201")
@@ -124,11 +112,8 @@ ReceiverRecord(IntentFilter _filter, BroadcastReceiver _receiver) {
             builder.append("}");
             return builder.toString();
         }
-
         
     }
-
-
     
     private static class BroadcastRecord {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:29.475 -0500", hash_original_field = "170FCA7A98A65D8003A3D20D5B3C245D", hash_generated_field = "170FCA7A98A65D8003A3D20D5B3C245D")
@@ -144,7 +129,6 @@ BroadcastRecord(Intent _intent, ArrayList<ReceiverRecord> _receivers) {
             intent = _intent;
             receivers = _receivers;
         }
-
         
     }
 
@@ -156,6 +140,7 @@ BroadcastRecord(Intent _intent, ArrayList<ReceiverRecord> _receivers) {
      *
      * @see #unregisterReceiver
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:29.534 -0500", hash_original_method = "D32BC0D25E86F605EE68EB4056334640", hash_generated_method = "828E2E55CD6766C364D07FA88A5CE8D5")
     
 public void registerReceiver(BroadcastReceiver receiver, IntentFilter filter) {
@@ -227,6 +212,7 @@ public void unregisterReceiver(BroadcastReceiver receiver) {
      *
      * @see #registerReceiver
      */
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:29.542 -0500", hash_original_method = "D242868C7C53E8784BBDECD4F038DC32", hash_generated_method = "C889A277772E7F5A7183DAD0C616AEDF")
     
 public boolean sendBroadcast(Intent intent) {

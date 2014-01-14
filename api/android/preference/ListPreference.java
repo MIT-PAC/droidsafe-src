@@ -12,10 +12,6 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.AttributeSet;
 
-
-
-
-
 public class ListPreference extends DialogPreference {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:23.255 -0500", hash_original_field = "9DDB32C07C355CC1743DA55671D8927A", hash_generated_field = "4FC648754770C3205F9446C9F7605834")
 
@@ -79,6 +75,7 @@ public void setEntries(CharSequence[] entries) {
      * @see #setEntries(CharSequence[])
      * @param entriesResId The entries array as a resource.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:23.272 -0500", hash_original_method = "F8AB6256811E3BA7AD610D04605DBEC4", hash_generated_method = "7BA5761937675BD0B0EC2B67C45A8475")
     
 public void setEntries(int entriesResId) {
@@ -113,6 +110,7 @@ public void setEntryValues(CharSequence[] entryValues) {
      * @see #setEntryValues(CharSequence[])
      * @param entryValuesResId The entry values array as a resource.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:23.278 -0500", hash_original_method = "7F861B3AE1A834F9F6742B52B4830C35", hash_generated_method = "3F6606757B98ACF0AA1E729E6A5C13C6")
     
 public void setEntryValues(int entryValuesResId) {
@@ -190,6 +188,7 @@ public void setValue(String value) {
      * 
      * @param index The index of the value to set.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:23.290 -0500", hash_original_method = "BCD9DE4E5FC7BA2AD13976209DEB6B06", hash_generated_method = "8CFE42693252720D86102FC0820AEB8D")
     
 public void setValueIndex(int index) {
@@ -338,11 +337,9 @@ private int getValueIndex() {
         super.onRestoreInstanceState(myState.getSuperState());
         setValue(myState.value);
     }
-
     
     private static class SavedState extends BaseSavedState {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:23.335 -0500", hash_original_field = "AD99978CDC5E698C2A4DD1DC3100EFC5", hash_generated_field = "263FCDD65C2156B1D1E1B4D9AE8D7FFA")
-
 
         public static final Parcelable.Creator<SavedState> CREATOR =
                 new Parcelable.Creator<SavedState>() {
@@ -371,6 +368,7 @@ public SavedState(Parcelable superState) {
             super(superState);
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:23.325 -0500", hash_original_method = "8DFCA3C36BA7A53489D20A0BA4FD0CC0", hash_generated_method = "C1C6F47B2086812F826D2D3D1657D081")
         
 @Override
@@ -379,8 +377,6 @@ public SavedState(Parcelable superState) {
             dest.writeString(value);
         }
     }
-
-
     
 }
 

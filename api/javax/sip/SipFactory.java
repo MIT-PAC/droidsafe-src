@@ -12,11 +12,6 @@ import javax.sip.address.AddressFactory;
 import javax.sip.header.HeaderFactory;
 import javax.sip.message.MessageFactory;
 
-
-
-
-
-
 public class SipFactory {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:04.006 -0500", hash_original_method = "F7F2D55AC38114BCE4E789F1EDF2BA17", hash_generated_method = "EECE14B7DA555E1BBD62271ECC62ECE1")
@@ -32,7 +27,6 @@ public static synchronized SipFactory getInstance() {
 
     private static final String STACK_NAME_PROP = "javax.sip.STACK_NAME";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:04.003 -0500", hash_original_field = "C1D3320A3B9CD7CCA3CA3B3E0A0995AB", hash_generated_field = "72CBBA349D76B2D2024E1DEDE9F885E4")
-
 
     private static SipFactory sSipFactory = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:04.009 -0500", hash_original_field = "A0AB8B39EB9CE7959A4CAB9B6C1D8CB4", hash_generated_field = "0A333A66907627CDEDE0F61BF2FFB75E")
@@ -51,6 +45,7 @@ public synchronized void resetFactory() {
         mNameSipStackMap.clear();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:04.017 -0500", hash_original_method = "46ABB390CF7D9D4CDAF3E704A7985B1B", hash_generated_method = "CE3ADE3EE0A4168935FB54A7B5D7BFD8")
     
 public synchronized SipStack createSipStack(Properties properties)

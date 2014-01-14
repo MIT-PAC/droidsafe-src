@@ -24,8 +24,6 @@ import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 
-
-
 public class Credentials {
 
     /**
@@ -79,10 +77,8 @@ public static Credentials getInstance() {
     private static final String LOGTAG = "Credentials";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:57.339 -0500", hash_original_field = "9DB20F28D7CAD388159300B983B19C79", hash_generated_field = "1709FA3F0025860464A5F5DF644178F7")
 
-
     public static final String INSTALL_ACTION = "android.credentials.INSTALL";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:57.342 -0500", hash_original_field = "1ACB4F4FF682688F8CE6789F1C6B162B", hash_generated_field = "BDFDB7B0C73DAC00B7E889E660EF4662")
-
 
     public static final String UNLOCK_ACTION = "com.android.credentials.UNLOCK";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:57.345 -0500", hash_original_field = "36832B061A6CC16993E3E13026EC81F8", hash_generated_field = "50F5C06806AB125569FB6AEF6E7A0321")
@@ -120,7 +116,6 @@ public static Credentials getInstance() {
     public static final String EXTENSION_PFX = ".pfx";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:57.386 -0500", hash_original_field = "64F7F9694387CFA20D388BACB931FFAC", hash_generated_field = "1E5765EE035DA8F60280ACCF0416ACD1")
 
-
     private static Credentials singleton;
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.930 -0400", hash_original_method = "1F7275C8DACF289F4D2AEA7102114D3A", hash_generated_method = "1F7275C8DACF289F4D2AEA7102114D3A")
@@ -151,6 +146,7 @@ public void install(Context context) {
         }
     }
 
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:57.398 -0500", hash_original_method = "37483F7105DB6C05B518E1F3D82A6DB5", hash_generated_method = "5CDE2431698DF60FACB0144E4C7BC591")
     
 public void install(Context context, KeyPair pair) {
@@ -164,6 +160,7 @@ public void install(Context context, KeyPair pair) {
         }
     }
 
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:57.401 -0500", hash_original_method = "CC15ACCAB16387C45A58B01F639D7908", hash_generated_method = "6DFE9697E4DAE2437A3BF86C64F8DA4E")
     
 public void install(Context context, String type, byte[] value) {

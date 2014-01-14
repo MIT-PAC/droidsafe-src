@@ -129,6 +129,7 @@ public void checkAccess() {
      * @return true if the given logger is added into the namespace
      *         successfully, false if the given logger exists in the namespace.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.321 -0500", hash_original_method = "9E275E191101B6346DE13876068F41E1", hash_generated_method = "377F62B00AC3CF147EA10A2C9C5B5B0E")
     
 public synchronized boolean addLogger(Logger logger) {

@@ -23,11 +23,6 @@ import android.view.animation.Transformation;
 
 import com.android.internal.R;
 
-
-
-
-
-
 public class Gallery extends AbsSpinner implements GestureDetector.OnGestureListener {
     
     /**
@@ -40,10 +35,8 @@ private static int getCenterOfView(View view) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.575 -0500", hash_original_field = "99B681AEE1A9575269905F6967720DCD", hash_generated_field = "86E3B6121245E31C4D677E593D737E58")
 
-
     private static final String TAG = "Gallery";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.577 -0500", hash_original_field = "7A06C0A50B73200DDC70097F2AFFF800", hash_generated_field = "761D2619615A389BF902F171CC86D6A4")
-
 
     private static final boolean localLOGV = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.579 -0500", hash_original_field = "551B75520263D4E4E845E37C828D00A5", hash_generated_field = "F9ED17A16043F2269968A297C3B5536A")
@@ -65,7 +58,6 @@ private static int getCenterOfView(View view) {
 
     private int mRightMost;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.592 -0500", hash_original_field = "E8D24DE70DE8CB945622B4CE486A90EA", hash_generated_field = "ACF14A395FB2702990553CD0EFA1BDCC")
-
 
     private int mGravity;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.595 -0500", hash_original_field = "AB20CE05616A647AECFCD053AA0A7A3C", hash_generated_field = "DA7C2146C29AB67A18FA4519D8BF6725")
@@ -90,7 +82,6 @@ private static int getCenterOfView(View view) {
             mSuppressSelectionChanged = false;
             selectionChanged();
         }
-
         
 };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.608 -0500", hash_original_field = "7B60D2C103BF6688B37159D200FDF777", hash_generated_field = "4F33C08AF070CABF3FDDD85E87BAE951")
@@ -112,7 +103,6 @@ private static int getCenterOfView(View view) {
 
     private boolean mReceivedInvokeKeyDown;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.621 -0500", hash_original_field = "C94522091847EFE024AFBF98B499E629", hash_generated_field = "66F1ED7DD74887E9F376183A8E9DD9C2")
-
     
     private AdapterContextMenuInfo mContextMenuInfo;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.624 -0500", hash_original_field = "E78AEB5AB1838B9A5CFCE72673CD417E", hash_generated_field = "853C1D061612824EBF4A0E2663C313BA")
@@ -347,7 +337,7 @@ void trackMotionScroll(int deltaX) {
             return;
         }
         
-        boolean toLeft = deltaX < 0; 
+        boolean toLeft = deltaX < 0;
         
         int limitedDeltaX = getLimitedMotionScrollAmount(toLeft, deltaX);
         if (limitedDeltaX != deltaX) {
@@ -922,7 +912,7 @@ private void setUpChild(View child, int offset, int x, boolean fromLeft) {
     
 private int calculateTop(View child, boolean duringLayout) {
         int myHeight = duringLayout ? getMeasuredHeight() : getHeight();
-        int childHeight = duringLayout ? child.getMeasuredHeight() : child.getHeight(); 
+        int childHeight = duringLayout ? child.getMeasuredHeight() : child.getHeight();
         
         int childTop = 0;
 
@@ -1189,7 +1179,7 @@ private void dispatchUnpress() {
             int index = mSelectedPosition - mFirstPosition;
             View v = getChildAt(index);
             return dispatchLongPress(v, mSelectedPosition, mSelectedRowId);
-        }        
+        }
         
         return false;
     }
@@ -1326,6 +1316,7 @@ private boolean scrollToChild(int childPosition) {
         return false;
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.777 -0500", hash_original_method = "82657633CA542FCF70C69B7A0BF2796A", hash_generated_method = "5883635F027EAC83B7089E6761FD3333")
     
 @Override
@@ -1367,7 +1358,6 @@ private void updateSelectedItemMetadata() {
         }
         
     }
-
     
     private class FlingRunnable implements Runnable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.791 -0500", hash_original_field = "16226695B3E75E1B75AD8C16FE7698DB", hash_generated_field = "AB39B37744A8B63C82246C1F6FE6730F")
@@ -1482,11 +1472,8 @@ private void endFling(boolean scrollIntoSlots) {
                endFling(true);
             }
         }
-
         
     }
-
-
     
     public static class LayoutParams extends ViewGroup.LayoutParams {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.816 -0500", hash_original_method = "35869249D2D5BC08819A8507F87D33FD", hash_generated_method = "72A2ECA2CF4C647C2D28F670D4DC27E1")
@@ -1506,7 +1493,6 @@ public LayoutParams(int w, int h) {
 public LayoutParams(ViewGroup.LayoutParams source) {
             super(source);
         }
-
         
     }
     

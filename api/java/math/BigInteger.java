@@ -10,11 +10,6 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.Random;
 
-
-
-
-
-
 public class BigInteger extends Number implements Comparable<BigInteger>, Serializable {
 
     /** Returns a {@code BigInteger} whose value is equal to {@code value}. */
@@ -50,7 +45,6 @@ public static BigInteger valueOf(long value) {
 public static BigInteger probablePrime(int bitLength, Random unused) {
         return new BigInteger(bitLength, 100, unused);
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.171 -0500", hash_original_method = "C7B24549F3F38126668B66F80A32808B", hash_generated_method = "D8C015B8260638A2E20D10D80BC5B8F4")
     
@@ -151,14 +145,11 @@ private static void parseFromString(BigInteger bi, String value, int radix) {
             new BigInteger(1, 9), TEN };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:38.979 -0500", hash_original_field = "8B1F11A189C33308C17EAC9DE1D9EB40", hash_generated_field = "1B931597CE47BECC94315E7FDFB3AE18")
 
-
     private transient BigInt bigInt;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:38.981 -0500", hash_original_field = "30712829ABEB3E05826E08646BCD372A", hash_generated_field = "B1CF9FA5CC5896A14634587A7438CDD0")
 
-
     private transient boolean nativeIsValid = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:38.983 -0500", hash_original_field = "7D97B0F2E07AB4DED8E5B5C3EBD340B7", hash_generated_field = "36EDDB91E81C2B3A992259BBDA560C8D")
-
 
     private transient boolean javaIsValid = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:38.985 -0500", hash_original_field = "F3BACA7431BCD9B2A0C7C12B903D5C71", hash_generated_field = "EF92B8843E3664BCE02DEF9DAE8B81D8")
@@ -171,7 +162,6 @@ private static void parseFromString(BigInteger bi, String value, int radix) {
 
     transient int sign;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.006 -0500", hash_original_field = "75D237340EE54C075A6ACF28486040A5", hash_generated_field = "6063015DEF6F532F83AE577B35CA2F93")
-
 
     private transient int firstNonzeroDigit = -2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.009 -0500", hash_original_field = "E1768AECDAE6AFB2AD0365352B89B842", hash_generated_field = "9E963B134F5112D99A51A8B2403DC06B")
@@ -672,6 +662,7 @@ public boolean testBit(int n) {
      * @param n position where the bit in {@code this} has to be set.
      * @throws ArithmeticException if {@code n < 0}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.082 -0500", hash_original_method = "0A60006224C30F0C8DC4E0C8D16895AE", hash_generated_method = "ACAC396F94B806A4371B9CBF03A7E39C")
     
 public BigInteger setBit(int n) {

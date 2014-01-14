@@ -8,11 +8,6 @@ import java.io.IOException;
 
 import javax.net.ssl.SSLProtocolException;
 
-
-
-
-
-
 public class SSLRecordProtocol {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:15.319 -0500", hash_original_field = "739A2DA6AFC09041ECD05E453896E8F2", hash_generated_field = "87E646BD1D684A2CC2BBDDF46C3B3825")
 
@@ -178,6 +173,7 @@ protected byte[] wrap(byte content_type, DataStream dataStream) {
      * @param   fragment: byte[]
      * @return  ssl packet created over the current connection state
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:15.367 -0500", hash_original_method = "55B5DE87A88F61771BAABFB22C57BC6F", hash_generated_method = "36B9F0D7A47193C22EA48CF954978E17")
     
 protected byte[] wrap(byte content_type,
@@ -428,6 +424,7 @@ protected int unwrap() throws IOException {
      * @param   level:  byte
      * @param   description:    byte
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:15.381 -0500", hash_original_method = "23FCA30C77438F833B36A8A9B6CBC6CC", hash_generated_method = "5BF51B9D756AC66CA74ED0E535DA5717")
     
 protected void alert(byte level, byte description) {

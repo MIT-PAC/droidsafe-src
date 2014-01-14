@@ -22,7 +22,6 @@ public class EditTextPreference extends DialogPreference {
 
     private EditText mEditText;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.686 -0500", hash_original_field = "5C1E1D7AA24FFCA320ADE83B66FB0AC4", hash_generated_field = "2EBA23F479A3FA4159B4CC40D57E4F25")
-
     
     private String mText;
     
@@ -206,10 +205,8 @@ public EditText getEditText() {
         super.onRestoreInstanceState(myState.getSuperState());
         setText(myState.text);
     }
-
     
     private static class SavedState extends BaseSavedState {
-
         
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.159 -0400", hash_original_field = "7DF6FB2587CB67E9544A859A8F6E8FF3", hash_generated_field = "263FCDD65C2156B1D1E1B4D9AE8D7FFA")
 
@@ -244,6 +241,7 @@ public SavedState(Parcelable superState) {
             super(superState);
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.729 -0500", hash_original_method = "A36EF7056AEE816C6C1E1134145BD2DB", hash_generated_method = "EFD6D0E27E147449B122E38ED1F2DF1C")
         
 @Override
@@ -252,8 +250,6 @@ public SavedState(Parcelable superState) {
             dest.writeString(text);
         }
     }
-
-
     
 }
 

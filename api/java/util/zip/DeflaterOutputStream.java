@@ -11,10 +11,6 @@ import java.util.Arrays;
 
 import libcore.io.Streams;
 
-
-
-
-
 public class DeflaterOutputStream extends FilterOutputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.790 -0500", hash_original_field = "86AF9D144AB13FC6B685B7332D58DC58", hash_generated_field = "A60956B00A99CF9DF92AF09280C120E9")
 
@@ -27,10 +23,8 @@ public class DeflaterOutputStream extends FilterOutputStream {
     protected Deflater def;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.797 -0500", hash_original_field = "B3F4B9FB7F6E266775B1E500C6C15A46", hash_generated_field = "B3F4B9FB7F6E266775B1E500C6C15A46")
 
-
     boolean done = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.800 -0500", hash_original_field = "7A3702D094F8E8154BE6F2EF131F2AA3", hash_generated_field = "2E2C89D90D8FD13D5246794A60DDA967")
-
 
     private  boolean syncFlush;
 
@@ -183,6 +177,7 @@ public void finish() throws IOException {
         done = true;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.827 -0500", hash_original_method = "DD8DF91486AFD685531F1A8944310E80", hash_generated_method = "8F716C7D080C02AB7834C5B17E78CDC1")
     
 @Override public void write(int i) throws IOException {

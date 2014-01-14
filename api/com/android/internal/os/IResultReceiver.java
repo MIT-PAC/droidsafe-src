@@ -69,7 +69,8 @@ public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:52.510 -0500", hash_original_method = "CA0A3B5DDF25FA2B39177A204F54BB81", hash_generated_method = "7647920793B04E1271193D1BA5114B65")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:52.510 -0500", hash_original_method = "CA0A3B5DDF25FA2B39177A204F54BB81", hash_generated_method = "7647920793B04E1271193D1BA5114B65")
             
 public void send(int resultCode, android.os.Bundle resultData) throws android.os.RemoteException
 {
@@ -91,7 +92,8 @@ _data.recycle();
 }
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:52.496 -0500", hash_original_method = "7DA6D42A7F216D94D717DBC3B120FF6A", hash_generated_method = "FD32F0FC6931D92F5C46C37C59E35051")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:52.496 -0500", hash_original_method = "7DA6D42A7F216D94D717DBC3B120FF6A", hash_generated_method = "FD32F0FC6931D92F5C46C37C59E35051")
         
 @Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
 {

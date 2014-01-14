@@ -16,11 +16,6 @@ import org.apache.harmony.security.asn1.BerInputStream;
 import org.apache.harmony.security.asn1.ObjectIdentifier;
 import org.apache.harmony.security.utils.Array;
 
-
-
-
-
-
 public final class Extension {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:01.658 -0500", hash_original_field = "FF027F407105D541B6A80387FB1B5606", hash_generated_field = "6E31BBAF500C1070EE1FFA080111393F")
 
@@ -397,6 +392,7 @@ private void decodeExtensionValue() throws IOException {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:01.783 -0500", hash_original_method = "42AE8F5966FF1390F79700B69123055B", hash_generated_method = "2E4585C7E761E0A433EABDAF778748AB")
     
 public void dumpValue(StringBuilder sb, String prefix) {

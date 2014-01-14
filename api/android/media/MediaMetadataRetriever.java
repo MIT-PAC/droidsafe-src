@@ -147,6 +147,7 @@ public MediaMetadataRetriever() {
      * @param path The path of the input media file.
      * @throws IllegalArgumentException If the path is invalid.
      */
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.079 -0500", hash_original_method = "D47DF3C9D755BEB92AD11CA5A5487AA8", hash_generated_method = "318ADC299ACB0CF5EA529B8905847333")
     
     public void setDataSource(String path) throws IllegalArgumentException{
@@ -163,6 +164,7 @@ public MediaMetadataRetriever() {
      * @param headers the headers to be sent together with the request for the data
      * @throws IllegalArgumentException If the URI is invalid.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.082 -0500", hash_original_method = "75031631EDBDF61877DE8EFD8981A88D", hash_generated_method = "A5C7CBE8EC0A57C100FDAE4D70C4CF29")
     
 public void setDataSource(String uri,  Map<String, String> headers)
@@ -221,6 +223,7 @@ public void setDataSource(String uri,  Map<String, String> headers)
      * @param fd the FileDescriptor for the file you want to play
      * @throws IllegalArgumentException if the FileDescriptor is invalid
      */
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.093 -0500", hash_original_method = "EF1A32438BC38F472DA718584B5867D9", hash_generated_method = "4280F20F6A6FA29E01FA62C8646B8359")
     
 public void setDataSource(FileDescriptor fd)

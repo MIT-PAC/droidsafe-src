@@ -98,6 +98,7 @@ public static Intent createInstallIntent() {
      * @param alias The alias to preselect if available, or null if
      *     unavailable.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:56.653 -0500", hash_original_method = "E907821151711095569DC644B61BB753", hash_generated_method = "7C98775AC542C6D186951CA07D4D010A")
     
 public static void choosePrivateKeyAlias(Activity activity, KeyChainAliasCallback response,

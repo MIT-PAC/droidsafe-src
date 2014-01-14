@@ -79,11 +79,6 @@ import javax.sip.header.ToHeader;
 import javax.sip.header.ViaHeader;
 import javax.sip.message.Request;
 
-
-
-
-
-
 public abstract class SIPMessage extends MessageObject implements javax.sip.message.Message, MessageExt {
 
     /**
@@ -119,55 +114,44 @@ public static boolean isResponseHeader(SIPHeader sipHeader) {
 
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.233 -0500", hash_original_field = "140583C7D6A7B27A3D80E3A8BB7B4A11", hash_generated_field = "3904126BA9BA221FEEB83EA7E49FDA36")
-
     
     private static final String CONTENT_TYPE_LOWERCASE = SIPHeaderNamesCache
     .toLowerCase(ContentTypeHeader.NAME);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.243 -0500", hash_original_field = "384ED9F5B65FDBCDF82E256C2C50F502", hash_generated_field = "2A8E8F0E3F29FFFF710437740FFE07B1")
 
-
     private static final String ERROR_LOWERCASE = SIPHeaderNamesCache.toLowerCase(ErrorInfo.NAME);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.249 -0500", hash_original_field = "299D40657FFB8B99846F35F69FA2E500", hash_generated_field = "3BB82B473CACCC793FC18D6F0CF9300E")
-
 
     private static final String CONTACT_LOWERCASE = SIPHeaderNamesCache
             .toLowerCase(ContactHeader.NAME);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.257 -0500", hash_original_field = "6E58821CED9BEE0C59F73F9B976F84BA", hash_generated_field = "51278ECFB8FC893D338CBD35C1B5F8F7")
 
-
     private static final String VIA_LOWERCASE = SIPHeaderNamesCache.toLowerCase(ViaHeader.NAME);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.272 -0500", hash_original_field = "FF64FB72636E61DBB702ED5DFB0CDB84", hash_generated_field = "F10B3CAD8FB507F5BDFF22A8AD4FFF13")
-
 
     private static final String AUTHORIZATION_LOWERCASE = SIPHeaderNamesCache
             .toLowerCase(AuthorizationHeader.NAME);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.282 -0500", hash_original_field = "963D5153C1D1D6789130333CC984AFFD", hash_generated_field = "BE5A48849228660E6DA6589746E7D093")
 
-
     private static final String ROUTE_LOWERCASE = SIPHeaderNamesCache
             .toLowerCase(RouteHeader.NAME);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.294 -0500", hash_original_field = "06B08B687FBFA0767CC49D4A92CF5D51", hash_generated_field = "0F29B176C2B3A3AA106F93F963532E79")
-
 
     private static final String RECORDROUTE_LOWERCASE = SIPHeaderNamesCache
             .toLowerCase(RecordRouteHeader.NAME);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.388 -0500", hash_original_field = "3F8F8E2298F923B771AA7F2562571228", hash_generated_field = "6AF602A3153F2C32B93DA6F98A935DA5")
 
-
     private static final String CONTENT_DISPOSITION_LOWERCASE = SIPHeaderNamesCache
             .toLowerCase(ContentDispositionHeader.NAME);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.393 -0500", hash_original_field = "CBA9C5B72E09132A26484FA584259563", hash_generated_field = "6D27C3CBA91F0C290360A638D7DF519E")
-
 
     private static final String CONTENT_ENCODING_LOWERCASE = SIPHeaderNamesCache
             .toLowerCase(ContentEncodingHeader.NAME);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.398 -0500", hash_original_field = "0CCD9469DD923818AEB820184FACC25E", hash_generated_field = "376511CEFEB33BD270D266CD58BF159F")
 
-
     private static final String CONTENT_LANGUAGE_LOWERCASE = SIPHeaderNamesCache
             .toLowerCase(ContentLanguageHeader.NAME);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.403 -0500", hash_original_field = "B4F2ABE961D0018E20A8A6602766205A", hash_generated_field = "5C2E81EB8278F47B64608EF8A7BB04DF")
-
 
     private static final String EXPIRES_LOWERCASE = SIPHeaderNamesCache
             .toLowerCase(ExpiresHeader.NAME);
@@ -188,22 +172,17 @@ public static boolean isResponseHeader(SIPHeader sipHeader) {
     protected From fromHeader;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.128 -0500", hash_original_field = "0EC70AF0BA3CF671255C069BE1EF5A29", hash_generated_field = "386FEF496B2D00FF2AEEA4F647EAA2EC")
 
-
     protected To toHeader;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.130 -0500", hash_original_field = "97F2621E58544EB5857FA617766383AF", hash_generated_field = "9243D81B8C37269C34D9BD3D6292835A")
-
 
     protected CSeq cSeqHeader;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.133 -0500", hash_original_field = "19B8FB08B553EF9A4349BACE86FA8AAE", hash_generated_field = "471E372FA6B60996CC5D5DA482544660")
 
-
     protected CallID callIdHeader;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.135 -0500", hash_original_field = "DC087804B6A332FFEF3AAFD8FA219B42", hash_generated_field = "BD2FD117E706370D42DF61B188BF8940")
 
-
     protected ContentLength contentLengthHeader;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.137 -0500", hash_original_field = "6239D14961A7E96DEC4801ABA1461276", hash_generated_field = "19F23DC4282A0EF2D6622C8B0C1149E7")
-
 
     protected MaxForwards maxForwardsHeader;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.139 -0500", hash_original_field = "673BDAEBF4FBC900963E210E042549D6", hash_generated_field = "BEC7808019D8AD57BF06A5469459FF0A")
@@ -214,10 +193,8 @@ public static boolean isResponseHeader(SIPHeader sipHeader) {
     private String messageContent;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.144 -0500", hash_original_field = "95F7D92AA7E61DA15548358D0500E443", hash_generated_field = "3E3D2657E47D4DE2C783823CF246BBAB")
 
-
     private byte[] messageContentBytes;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.147 -0500", hash_original_field = "E06771BF0AF78CC5FF2D374B53AB4258", hash_generated_field = "1560325BE0E32978EBE2ECDE71A6C345")
-
 
     private Object messageContentObject;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.149 -0500", hash_original_field = "A38DB47C89E5187A9BF8ECB115A68CA2", hash_generated_field = "1C03D389CB46F0B01812A6FDFBD5DD7D")
@@ -686,6 +663,7 @@ public void attachHeader(SIPHeader h, boolean replaceflag) throws SIPDuplicateHe
      *         headers that are in this message.
      */
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.204 -0500", hash_original_method = "7BE2AED7224623BF9774680F8F08FE9F", hash_generated_method = "F69412DD175DEC64229D6EA1510505DB")
     
 public void attachHeader(SIPHeader header, boolean replaceFlag, boolean top)
@@ -1002,7 +980,6 @@ private Header getHeaderLowerCase(String lowerCaseHeaderName) {
 public ContentType getContentTypeHeader() {
         return (ContentType) getHeaderLowerCase(CONTENT_TYPE_LOWERCASE);
     }
-
     
     /**
      * Get the contentLength header.
@@ -1012,7 +989,6 @@ public ContentType getContentTypeHeader() {
 public ContentLengthHeader getContentLengthHeader() {
         return this.getContentLength();
     }
-
   
     /**
      * Get the from header.
@@ -1097,6 +1073,7 @@ public void setVia(java.util.List viaList) {
      * @param sipHeaderList a headerList to set
      */
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.262 -0500", hash_original_method = "458FFC69EFF172F74B60E661629859D7", hash_generated_method = "C64029C85E2CF2EE28CB0520C141718E")
     
 public void setHeader(SIPHeaderList<Via> sipHeaderList) {
@@ -1200,6 +1177,7 @@ public void setCallId(CallIdHeader callId) {
      * 
      * @param callId -- the call identifier to be assigned to the call id header
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.289 -0500", hash_original_method = "16037BFD4917B839A558D81FBF251209", hash_generated_method = "40F37147C0A24EBFED7983181C26D53B")
     
 public void setCallId(String callId) throws java.text.ParseException {
@@ -1377,6 +1355,7 @@ public Object getContent() {
      * @param subType is the message subType.
      * @param messageContent is the message content as a byte array.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.321 -0500", hash_original_method = "567464035ABE474ACDCFF614F9D534B5", hash_generated_method = "D820D8BA2A766F41CE770386C33A80DA")
     
 public void setMessageContent(String type, String subType, byte[] messageContent) {
@@ -1615,6 +1594,7 @@ public String getFromTag() {
      * 
      * @param tag -- tag to set in the from header.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.358 -0500", hash_original_method = "2974ECBC3FF627B3CB2268B4D90C9E07", hash_generated_method = "7B59FEFAE51EE1B0B71318055116B426")
     
 public void setFromTag(String tag) {
@@ -1629,6 +1609,7 @@ public void setFromTag(String tag) {
      * 
      * @param tag -- tag to set.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.360 -0500", hash_original_method = "7DFC8A6205B3CBC36E5183721A30EB01", hash_generated_method = "B33E6523870B8F39F6874EFBE0A8D113")
     
 public void setToTag(String tag) {
@@ -2018,21 +1999,18 @@ public MultipartMimeContent getMultipartMimeContent() throws ParseException {
 public CallIdHeader getCallIdHeader() {
         return this.callIdHeader;
     }
-
    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.446 -0500", hash_original_method = "616E19996CDDFB660618161B80D5BB27", hash_generated_method = "75138080FA03089EA328657F10891A94")
     
 public FromHeader getFromHeader() {
         return this.fromHeader;
     }
-
    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.448 -0500", hash_original_method = "9C43D5663CBD78C15545690BFB01C4BF", hash_generated_method = "8B12838DAE69E8373A6B87B8293CB511")
     
 public ToHeader getToHeader() {
         return this.toHeader;
     }
-
   
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.451 -0500", hash_original_method = "FE98900B9C779953579B6764E7283FC2", hash_generated_method = "FDFAC33C949167265F43186BA98D4FD7")
     
@@ -2079,7 +2057,6 @@ public boolean isNullRequest() {
 public void setNullRequest() {
         this.nullRequest = true;
     }
-    
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.463 -0500", hash_original_method = "CFE860B19AD3D57A0F1F7E2F8E62600E", hash_generated_method = "35F6989AA4DE4044BBBF57E6D95A0E43")
     

@@ -9,11 +9,6 @@ import java.text.ParseException;
 import javax.sip.InvalidArgumentException;
 import javax.sip.header.AcceptEncodingHeader;
 
-
-
-
-
-
 public final class AcceptEncoding extends ParametersHeader implements AcceptEncodingHeader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.234 -0500", hash_original_field = "6EAE0317E22E23A400E78CD4BC4E325D", hash_generated_field = "4930A84A156D9023318126D844288C58")
 
@@ -82,6 +77,7 @@ public String getEncoding() {
      * @param q
      *            double to set
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.253 -0500", hash_original_method = "76C27BE10969A23E1C16A937029760DA", hash_generated_method = "D2DFEF4188403CE62B3FDEC5F1DC109A")
     
 public void setQValue(float q) throws InvalidArgumentException {

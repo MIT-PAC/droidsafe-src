@@ -308,6 +308,7 @@ public CalendarView(Context context, AttributeSet attrs, int defStyle) {
         invalidate();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.024 -0500", hash_original_method = "1D9E2CC40134FA188645AC8C7A8FADC7", hash_generated_method = "61E305833BB432899A9B803A8835CCD1")
     
 @Override
@@ -353,6 +354,7 @@ public long getMinDate() {
      *
      * @param minDate The minimal supported date.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.033 -0500", hash_original_method = "FF5386D03D60B1076A84367A6FF3DA28", hash_generated_method = "0CA393BF01715101B3C44C1134F1E962")
     
 public void setMinDate(long minDate) {
@@ -405,6 +407,7 @@ public long getMaxDate() {
      *
      * @param maxDate The maximal supported date.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.037 -0500", hash_original_method = "A06814E3E9CB43249648A0F0C1DE0D5D", hash_generated_method = "55697005F4FEDCBCBFEF47B83D2827A6")
     
 public void setMaxDate(long maxDate) {
@@ -527,6 +530,7 @@ private void init() {
          *
          * @param selectedDay The time to highlight
          */
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.126 -0500", hash_original_method = "D3DE83E2185E4ADE498D767CEB2FBE21", hash_generated_method = "EF998B721EE3434670F30C438825BA9D")
         
 public void setSelectedDay(Calendar selectedDay) {
@@ -1113,6 +1117,7 @@ public long getDate() {
      * @see #setMinDate(long)
      * @see #setMaxDate(long)
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.052 -0500", hash_original_method = "D6F29E7F63D0C42CAD60620E4D2FC504", hash_generated_method = "67F63F051C489D8BDFA248BF789E172F")
     
 public void setDate(long date) {
@@ -1133,6 +1138,7 @@ public void setDate(long date) {
      * @see #setMinDate(long)
      * @see #setMaxDate(long)
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.054 -0500", hash_original_method = "7D056A885692AA64348F6515B99D8688", hash_generated_method = "E6D9A5BB464122C30397F13FAB60F0E4")
     
 public void setDate(long date, boolean animate, boolean center) {

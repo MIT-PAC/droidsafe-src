@@ -407,6 +407,7 @@ int sign() {
         return NativeBN.sign(this.bignum);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:38.529 -0500", hash_original_method = "D1EC3F455E1B2B87D60E54F4D60552ED", hash_generated_method = "D1EC3F455E1B2B87D60E54F4D60552ED")
     
 void setSign(int val) {

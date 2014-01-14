@@ -13,11 +13,6 @@ import org.apache.harmony.security.asn1.ASN1SequenceOf;
 import org.apache.harmony.security.asn1.ASN1Type;
 import org.apache.harmony.security.asn1.BerInputStream;
 
-
-
-
-
-
 public final class CertificatePolicies extends ExtensionValue {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:02.218 -0500", hash_original_method = "DC44CF52860484CAD2DBA77AF7318FF9", hash_generated_method = "BE5F1D718329979E0707634D244A77A5")
@@ -27,7 +22,6 @@ public static CertificatePolicies decode(byte[] encoding) throws IOException {
         cps.encoding = encoding;
         return cps;
     }
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.952 -0400", hash_original_field = "513989838E566B722E0AE48FE445DE0C", hash_generated_field = "C5B8ADE8005B79F0446643932F6EFA0A")
 
@@ -98,6 +92,7 @@ public CertificatePolicies addPolicyInformation(PolicyInformation policyInformat
         return encoding;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:02.230 -0500", hash_original_method = "B37538291358B4289176EF26A3BFC720", hash_generated_method = "11675135B8D5FD981EE6CBC6E3BF12F5")
     
 @Override public void dumpValue(StringBuilder sb, String prefix) {

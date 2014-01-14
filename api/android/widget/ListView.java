@@ -348,6 +348,7 @@ public boolean removeFooterView(View v) {
      * through the specified intent.
      * @param intent the intent used to identify the RemoteViewsService for the adapter to connect to.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.216 -0500", hash_original_method = "8AB2C6958FD7CEC3A8A71FE59763D6A4", hash_generated_method = "06FC87714B69CEC8209EE3A8D52302FA")
     
 @android.view.RemotableViewMethod
@@ -1794,6 +1795,7 @@ private void setupChild(View child, int position, int y, boolean flowDown, int c
         return super.canAnimate() && mItemCount > 0;
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @Override
 	public void setSelection(int position) {
 		// TODO Auto-generated method stub
@@ -1837,6 +1839,7 @@ public void setSelectionFromTop(int position, int y) {
         }
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @Override
 	void setSelectionInt(int position) {
 		// TODO Auto-generated method stub
@@ -2938,6 +2941,7 @@ public boolean getItemsCanFocus() {
         return retValue;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.428 -0500", hash_original_method = "465D449366429949FD8ADA654918A0E2", hash_generated_method = "342E58F6677C3BA7760B7791A690FB25")
     
 @Override

@@ -62,6 +62,7 @@ public abstract AbstractInputMethodSessionImpl onCreateInputMethodSessionInterfa
      * Implement this to handle {@link android.os.Binder#dump Binder.dump()}
      * calls on your input method.
      */
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:38.459 -0500", hash_original_method = "8E1D6FEDF1AFEDBCDCF9E63EFF23CA00", hash_generated_method = "FED34E6D5793CA7ED70004622D90B9F6")
     
 @Override

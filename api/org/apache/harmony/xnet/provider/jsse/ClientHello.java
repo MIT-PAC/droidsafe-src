@@ -11,10 +11,6 @@ import java.util.Arrays;
 import libcore.io.Streams;
 import libcore.util.EmptyArray;
 
-
-
-
-
 public class ClientHello extends Message {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.679 -0500", hash_original_field = "87AFE8194BC492AFC7167BB3A54122B9", hash_generated_field = "87AFE8194BC492AFC7167BB3A54122B9")
 
@@ -154,6 +150,7 @@ public ClientHello(HandshakeIODataStream in) throws IOException {
      * Sends message
      * @param out
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.701 -0500", hash_original_method = "89F344582D255D48D3BC56CB8686027C", hash_generated_method = "F559B8261FD2194AE0F350904CF8D9A2")
     
 @Override
@@ -193,7 +190,6 @@ public byte[] getRandom() {
     public int getType() {
         return Handshake.CLIENT_HELLO;
     }
-
     
 }
 

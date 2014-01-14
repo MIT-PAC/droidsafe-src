@@ -308,6 +308,7 @@ public boolean isLayoutSizeAtLeast(int size) {
         return cur >= size;
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setTo(Configuration o) {
 	    addTaint(o.getTaint());
     }

@@ -72,7 +72,8 @@ return DESCRIPTOR;
      * @param account the account that should be synced
      * @param extras SyncAdapter-specific parameters
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:38.997 -0500", hash_original_method = "AFE3E35F715C728989C1A49E4DBE62B4", hash_generated_method = "3A973945D953AD09204643E42A5623F6")
+@DSSink({DSSinkKind.SYNCHRONIZATION_DATA})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:38.997 -0500", hash_original_method = "AFE3E35F715C728989C1A49E4DBE62B4", hash_generated_method = "3A973945D953AD09204643E42A5623F6")
             
 public void startSync(android.content.ISyncContext syncContext, java.lang.String authority, android.accounts.Account account, android.os.Bundle extras) throws android.os.RemoteException
 {
@@ -106,7 +107,8 @@ _data.recycle();
      * after the ISyncContext.onFinished() for that sync was called.
      * @param syncContext the ISyncContext that was passed to {@link #startSync}
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:39.000 -0500", hash_original_method = "5042A6AAF50A45B707F79CF440A8564D", hash_generated_method = "36B6404DA82B72439366B84A7927FDB5")
+@DSSink({DSSinkKind.SYNCHRONIZATION_DATA})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:39.000 -0500", hash_original_method = "5042A6AAF50A45B707F79CF440A8564D", hash_generated_method = "36B6404DA82B72439366B84A7927FDB5")
             
 public void cancelSync(android.content.ISyncContext syncContext) throws android.os.RemoteException
 {
@@ -126,7 +128,8 @@ _data.recycle();
      * @param account the account that should be synced
      * @param authority the authority that should be synced
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:39.003 -0500", hash_original_method = "37FEB73D5689D3FED93EDB27406C9B51", hash_generated_method = "1F3CBD82E89B62E3C2E1AFBEF77A0FDC")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:39.003 -0500", hash_original_method = "37FEB73D5689D3FED93EDB27406C9B51", hash_generated_method = "1F3CBD82E89B62E3C2E1AFBEF77A0FDC")
             
 public void initialize(android.accounts.Account account, java.lang.String authority) throws android.os.RemoteException
 {
@@ -161,7 +164,8 @@ public android.os.IBinder asBinder()
 {
 return this;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:38.983 -0500", hash_original_method = "68790805D1FD10475DD26765EBD2C9D9", hash_generated_method = "F1FB1EB8ECC47852461C434874262171")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:38.983 -0500", hash_original_method = "68790805D1FD10475DD26765EBD2C9D9", hash_generated_method = "F1FB1EB8ECC47852461C434874262171")
         
 @Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
 {

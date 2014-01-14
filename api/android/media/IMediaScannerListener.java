@@ -75,7 +75,8 @@ return DESCRIPTOR;
      * @param uri the Uri for the file if the scanning operation succeeded 
      * and the file was added to the media database, or null if scanning failed. 
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:30.679 -0500", hash_original_method = "657FC88ED2F4371BF2FB50026348A78B", hash_generated_method = "3E675EB9C1687F8DDF211B695A37E67C")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:30.679 -0500", hash_original_method = "657FC88ED2F4371BF2FB50026348A78B", hash_generated_method = "3E675EB9C1687F8DDF211B695A37E67C")
             
 public void scanCompleted(java.lang.String path, android.net.Uri uri) throws android.os.RemoteException
 {

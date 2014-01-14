@@ -9,14 +9,8 @@ import org.apache.commons.logging.LogFactory;
 import org.apache.http.params.AbstractHttpParams;
 import org.apache.http.params.HttpParams;
 
-
-
-
-
-
 public class ClientParamsStack extends AbstractHttpParams {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:40.611 -0500", hash_original_field = "0DA7E40E862C937570CA6B0D96D2555A", hash_generated_field = "3FCE5BFF671FE7B3BB3E2D744C5E5D2C")
-
 
     private final Log log = LogFactory.getLog(getClass());
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:40.614 -0500", hash_original_field = "9066914C0B371C99A27A479B399ED204", hash_generated_field = "32F39C15B73E9C028569FCAD17E48131")
@@ -31,7 +25,6 @@ public class ClientParamsStack extends AbstractHttpParams {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:40.621 -0500", hash_original_field = "4C35D80FDBD0E6A9EB04CFC579F3F39E", hash_generated_field = "0F3FDC4D6C99FE0F422F50FAC4EC37BE")
 
     protected  HttpParams overrideParams;
-
 
     /**
      * Creates a new parameter stack from elements.
@@ -53,7 +46,6 @@ public ClientParamsStack(HttpParams aparams, HttpParams cparams,
         overrideParams    = oparams;
     }
 
-
     /**
      * Creates a copy of a parameter stack.
      * The new stack will have the exact same entries as the argument stack.
@@ -69,7 +61,6 @@ public ClientParamsStack(ClientParamsStack stack) {
              stack.getRequestParams(),
              stack.getOverrideParams());
     }
-
 
     /**
      * Creates a modified copy of a parameter stack.
@@ -94,7 +85,6 @@ public ClientParamsStack(ClientParamsStack stack,
              (rparams != null) ? rparams : stack.getRequestParams(),
              (oparams != null) ? oparams : stack.getOverrideParams());
     }
-
 
     /**
      * Obtains the application parameters of this stack.
@@ -139,7 +129,6 @@ public final HttpParams getRequestParams() {
 public final HttpParams getOverrideParams() {
         return overrideParams;
     }
-
 
     /**
      * Obtains a parameter from this stack.
@@ -192,6 +181,7 @@ public Object getParameter(String name) {
      *
      * @throws UnsupportedOperationException    always
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:40.644 -0500", hash_original_method = "2A511DFE1F081488F4D79D3E78FD00A2", hash_generated_method = "77532EA3067990EF30FF1BCA5CE9C991")
     
 public HttpParams setParameter(String name, Object value)
@@ -200,7 +190,6 @@ public HttpParams setParameter(String name, Object value)
         throw new UnsupportedOperationException
             ("Setting parameters in a stack is not supported.");
     }
-
 
     /**
      * Does <i>not</i> remove a parameter.
@@ -221,7 +210,6 @@ public boolean removeParameter(String name) {
         ("Removing parameters in a stack is not supported.");
     }
 
-
     /**
      * Does <i>not</i> copy parameters.
      * Parameter stacks are lightweight objects, expected to be instantiated
@@ -240,7 +228,6 @@ public boolean removeParameter(String name) {
 public HttpParams copy() {
         return this;
     }
-
     
 }
 

@@ -7,10 +7,6 @@ import droidsafe.annotations.*;
 import java.io.IOException;
 import java.util.Arrays;
 
-
-
-
-
 public abstract class CharBuffer extends Buffer implements Comparable<CharBuffer>, CharSequence, Appendable, Readable {
 
     /**
@@ -502,6 +498,7 @@ public final CharBuffer put(char[] src) {
      * @exception ReadOnlyBufferException
      *                if no changes may be made to the contents of this buffer.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.794 -0500", hash_original_method = "022BE284F152CDC3C1FB1410D39A7C9D", hash_generated_method = "02D3786322E03C26806C036B38D25D9E")
     
 public CharBuffer put(char[] src, int srcOffset, int charCount) {
@@ -580,6 +577,7 @@ public abstract CharBuffer put(int index, char c);
      * @exception ReadOnlyBufferException
      *                if no changes may be made to the contents of this buffer.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.802 -0500", hash_original_method = "E7006B831E6768B620311924466DB7A4", hash_generated_method = "4B9B6ED275EF14DF7F13CE8DBE9C44E1")
     
 public final CharBuffer put(String str) {
@@ -606,6 +604,7 @@ public final CharBuffer put(String str) {
      * @exception ReadOnlyBufferException
      *                if no changes may be made to the contents of this buffer.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.804 -0500", hash_original_method = "D2CD34EAF4E6074C289823E8F75291E2", hash_generated_method = "BEBCA007E3E0477D10B11131B9FB7D27")
     
 public CharBuffer put(String str, int start, int end) {
@@ -802,7 +801,6 @@ public int read(CharBuffer target) throws IOException {
         }
         return remaining;
     }
-
     
 }
 

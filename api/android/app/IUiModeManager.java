@@ -66,7 +66,8 @@ return DESCRIPTOR;
      * Enables the car mode. Only the system can do this.
      * @hide
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:21.712 -0500", hash_original_method = "C5F323F16AD98C6B60C43FBA98426CE6", hash_generated_method = "FBC5AD9B5D38FB6CD90C2D245EB01064")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:21.712 -0500", hash_original_method = "C5F323F16AD98C6B60C43FBA98426CE6", hash_generated_method = "FBC5AD9B5D38FB6CD90C2D245EB01064")
             
 public void enableCarMode(int flags) throws android.os.RemoteException
 {
@@ -86,7 +87,8 @@ _data.recycle();
 /**
      * Disables the car mode.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:21.715 -0500", hash_original_method = "8E48413C20FA7567364234C5AD4D4EE1", hash_generated_method = "67FE653ACA3EECD472CA32D33626C58B")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:21.715 -0500", hash_original_method = "8E48413C20FA7567364234C5AD4D4EE1", hash_generated_method = "67FE653ACA3EECD472CA32D33626C58B")
             
 public void disableCarMode(int flags) throws android.os.RemoteException
 {
@@ -132,7 +134,8 @@ return _result;
      *   2 - night mode
      *   3 - automatic mode switching
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:21.720 -0500", hash_original_method = "71E3D78902EFCE6D5A4990D7C4EC6D3B", hash_generated_method = "EB3E2DD796B54ED74912A343EC8C9258")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:21.720 -0500", hash_original_method = "71E3D78902EFCE6D5A4990D7C4EC6D3B", hash_generated_method = "EB3E2DD796B54ED74912A343EC8C9258")
             
 public void setNightMode(int mode) throws android.os.RemoteException
 {
@@ -192,7 +195,8 @@ public android.os.IBinder asBinder()
 {
 return this;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:21.699 -0500", hash_original_method = "878788D6966E17A37BB51D4EDC515904", hash_generated_method = "B70CE9B195CF2D7909F9EB0226C9E693")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:21.699 -0500", hash_original_method = "878788D6966E17A37BB51D4EDC515904", hash_generated_method = "B70CE9B195CF2D7909F9EB0226C9E693")
         
 @Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
 {

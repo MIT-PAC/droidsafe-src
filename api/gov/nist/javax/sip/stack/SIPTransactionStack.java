@@ -57,11 +57,6 @@ import javax.sip.header.EventHeader;
 import javax.sip.message.Request;
 import javax.sip.message.Response;
 
-
-
-
-
-
 public abstract class SIPTransactionStack implements SIPTransactionEventListener, SIPDialogEventListener {
 
     /**
@@ -94,7 +89,6 @@ public static boolean isDialogCreated(String method) {
     protected ConcurrentHashMap<String, SIPDialog> dialogTable;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:20.170 -0500", hash_original_field = "738C3D18449F14F8BF2AE2302B0A1011", hash_generated_field = "02D2240A23798B540E9F3183DC11EA33")
 
-
     private Timer timer;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:20.172 -0500", hash_original_field = "EDB6FB65E564164218125DE3EF635033", hash_generated_field = "32E72097D41FA2F9AA2F04A4F6D94614")
 
@@ -126,7 +120,6 @@ public static boolean isDialogCreated(String method) {
     protected int clientTransactionTableLowaterMark = 800;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:20.195 -0500", hash_original_field = "6E1CCA4652B2ED673A0EC365B7862F60", hash_generated_field = "EF538D5EF9F88F93E351A9F5CBDE10BE")
 
-
     private AtomicInteger activeClientTransactionCount = new AtomicInteger(0);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:20.199 -0500", hash_original_field = "532D49C905A8101F8E2F554E2195A1B3", hash_generated_field = "17FBAB4D0971040901BD780F89591315")
 
@@ -136,11 +129,9 @@ public static boolean isDialogCreated(String method) {
     // requests.
     private ConcurrentHashMap<String, SIPServerTransaction> mergeTable;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:20.205 -0500", hash_original_field = "82C9185A7E16A6A59F92B43200DC06C3", hash_generated_field = "811B28F45DE9105A274B1DBADE0F6CC9")
-
     
     private ConcurrentHashMap<String,SIPServerTransaction> terminatedServerTransactionsPendingAck;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:20.207 -0500", hash_original_field = "CDCBF1CE8F6BA688490996181003FE73", hash_generated_field = "71F6115AE3CDEA5C8D231C9BD5ACFE37")
-
     
     private ConcurrentHashMap<String,SIPClientTransaction> forkedClientTransactionTable;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:20.210 -0500", hash_original_field = "2D0C8423C59960E3E35FFD59E5DE02BE", hash_generated_field = "1D505020FB0AD1A554D62BDC6FA8297B")
@@ -211,13 +202,11 @@ public static boolean isDialogCreated(String method) {
     protected int readTimeout;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:20.274 -0500", hash_original_field = "A03208BE3485B5E0C912721B0049FEB7", hash_generated_field = "F280B3067DE1A528C7BB767557FE00A0")
 
-
     protected NetworkLayer networkLayer;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:20.277 -0500", hash_original_field = "C22F3254E5704F00A018DEF249EF9C5F", hash_generated_field = "2DDBEDAE711DD575D314D6FB0824162C")
 
     protected String outboundProxy;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:20.280 -0500", hash_original_field = "AB341CB2ADF3D6AFFFDFFB9107DE3154", hash_generated_field = "E23BB81A391AC77E4B947A6531D7CFF7")
-
 
     protected String routerPath;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:20.283 -0500", hash_original_field = "CFBB34BE1495D6DF2007561A07AD27E7", hash_generated_field = "D8B07380FC751DD31F22EE149C2225BE")
@@ -226,13 +215,11 @@ public static boolean isDialogCreated(String method) {
     protected boolean isAutomaticDialogSupportEnabled;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:20.286 -0500", hash_original_field = "D506A51E1569A2AE901D4625E2BF6790", hash_generated_field = "758951DC734FED546F5FA46D0CD9E244")
 
-
     protected HashSet<String> forkedEvents;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:20.289 -0500", hash_original_field = "C7BE2149C988DC0B68F8980D9CEF3162", hash_generated_field = "E3C6781710F35866C48FB724B6E9B0A5")
 
     protected boolean generateTimeStampHeader;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:20.292 -0500", hash_original_field = "74F6A9BDF4B72193921A899D3F189485", hash_generated_field = "921A218F1E68F36119322B4C0375D302")
-
 
     protected AddressResolver addressResolver;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:20.295 -0500", hash_original_field = "E3ED477FF2A77D9DB463FB2B537CF5AC", hash_generated_field = "3888550D44F5E861BA85B642CF2C6F45")
@@ -252,7 +239,6 @@ public static boolean isDialogCreated(String method) {
     protected ThreadAuditor threadAuditor = new ThreadAuditor();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:20.304 -0500", hash_original_field = "3307441A1054D448E7A6134AD145150D", hash_generated_field = "F94964197FE0E44E12A6BA7E03E51754")
 
-
     protected LogRecordFactory logRecordFactory;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:20.306 -0500", hash_original_field = "0E8FDE2FBAE1EFEE734BBDEFC5A8A6EA", hash_generated_field = "542419080B2B3EDAD3ED15F97E9B7DA1")
 
@@ -263,7 +249,6 @@ public static boolean isDialogCreated(String method) {
     protected boolean remoteTagReassignmentAllowed = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:20.312 -0500", hash_original_field = "58111BB2FDEB7463664F942D1AE9824C", hash_generated_field = "046122FB4660CF86569D7745FB6062FC")
 
-
     protected boolean logStackTraceOnMessageSend = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:20.316 -0500", hash_original_field = "01E62941BAB768C310619671F2300CB3", hash_generated_field = "533CF057F33E79CEE3F6C6762D967990")
 
@@ -273,22 +258,17 @@ public static boolean isDialogCreated(String method) {
     protected int sendUdpBufferSize;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:20.321 -0500", hash_original_field = "3341013F18ACE2BB8AA5357DA23E5F25", hash_generated_field = "D2F44B156E2C7DA4668C7D5F665DAB5F")
 
-
     protected boolean stackDoesCongestionControl = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:20.324 -0500", hash_original_field = "EBB3F9DF34B491C04F616208E7ACD0F6", hash_generated_field = "C468B3795A40E24BFA5E22186F8BD92C")
-
 
     protected boolean isBackToBackUserAgent = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:20.327 -0500", hash_original_field = "429A3001BEDE9B2B2DCC6DC2087EF8BA", hash_generated_field = "30B91514890DCCCE1053BFD830B93F8D")
 
-
     protected boolean checkBranchId;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:20.330 -0500", hash_original_field = "897DFDEC0B0C97CCDC9046BD387C803D", hash_generated_field = "2CEA2AC21B7A7C73026A335F4F3A56EB")
 
-
 	protected boolean isAutomaticDialogErrorHandlingEnabled = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:20.332 -0500", hash_original_field = "110A0B37735EF4E95CA694CEFE644BD2", hash_generated_field = "8D5939440DC97D0AD4D778E8F452B5A4")
-
 	
 	protected boolean isDialogTerminatedEventDeliveredForNullDialog = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:20.335 -0500", hash_original_field = "F81AF70FBD391317C0CE03E247905C36", hash_generated_field = "2F246E676C0E44CC01DDEB1AFF1CE632")
@@ -348,7 +328,6 @@ protected SIPTransactionStack() {
 
         this.timer = new Timer();
         this.pendingTransactions = new ConcurrentHashMap<String, SIPServerTransaction>();
-        
         
         this.forkedClientTransactionTable = new ConcurrentHashMap<String,SIPClientTransaction>();
 
@@ -500,6 +479,7 @@ public void addExtensionMethod(String extensionMethod) {
      * @param dialog -- dialog to put into the dialog table.
      *
      */
+    @DSSink({DSSinkKind.VOIP})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:20.391 -0500", hash_original_method = "3AD47119D9E3B66FC61FF1D5407F3E89", hash_generated_method = "D86A3365F924BC5296466B4C2E2757C9")
     
 public void putDialog(SIPDialog dialog) {
@@ -527,6 +507,7 @@ public void putDialog(SIPDialog dialog) {
      * @param transaction -- tx to add to the dialog.
      * @return the newly created Dialog.
      */
+    @DSSink({DSSinkKind.VOIP})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:20.394 -0500", hash_original_method = "E7A6CF8B50F165B49D6E8637D9CBF9BD", hash_generated_method = "47F6C28109893F14B315FAA6E19D4D88")
     
 public SIPDialog createDialog(SIPTransaction transaction) {
@@ -763,6 +744,7 @@ public SIPClientTransaction findSubscribeTransaction(SIPRequest notifyMessage,
      * 
      * @param serverTransaction
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:20.415 -0500", hash_original_method = "D49C9B94E89B7FEA3320280273306438", hash_generated_method = "F4B1FA9EAC4475E2ABA1C7D1DF88A643")
     
 public void addTransactionPendingAck(SIPServerTransaction serverTransaction) {
@@ -1035,6 +1017,7 @@ public void removeFromMergeTable(SIPServerTransaction tr) {
      * @param sipTransaction -- transaction to put into the merge table.
      *
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:20.448 -0500", hash_original_method = "4DF3A9A601EFF55EEB4CCC4D0E1A4382", hash_generated_method = "13E408CCF65C1FF11D071DDA160B148B")
     
 public void putInMergeTable(SIPServerTransaction sipTransaction, SIPRequest sipRequest) {
@@ -1643,6 +1626,7 @@ public void stopStack() {
      * duplicate may arrive when the application is deciding whether to create a transaction or
      * not.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:20.506 -0500", hash_original_method = "CEE88C8969112A140A79BE7502F1A5FB", hash_generated_method = "B2F1E1C5DB311B07C47A34E4E860BCF2")
     
 public void putPendingTransaction(SIPServerTransaction tr) {
@@ -1787,13 +1771,12 @@ public void setStackName(String stackName) {
         this.stackName = stackName;
     }
 
-
-
     /**
      * Set my address.
      *
      * @param stackAddress -- A string containing the stack address.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:20.537 -0500", hash_original_method = "A8237A45131D19EE871BFED3E7A5AA19", hash_generated_method = "FAE0A9BE518DEB5DDE06A8982129E328")
     
 protected void setHostAddress(String stackAddress) throws UnknownHostException {
@@ -2452,7 +2435,6 @@ public void setTimer(Timer timer) {
 public Timer getTimer() {
         return timer;
     }
-
     
     /**
      * Size of the receive UDP buffer. This property affects performance under load. Bigger buffer
@@ -2539,7 +2521,6 @@ public void setLogStackTraceOnMessageSend(boolean logStackTraceOnMessageSend) {
 public boolean isLogStackTraceOnMessageSend() {
         return logStackTraceOnMessageSend;
     }
-
     
     class PingTimer extends SIPStackTimerTask {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:20.338 -0500", hash_original_field = "3AE84B2399BFC1B1844D24A06D20C249", hash_generated_field = "3AE84B2399BFC1B1844D24A06D20C249")
@@ -2573,15 +2554,11 @@ protected void runTask() {
                         threadHandle.getPingIntervalInMillisecs());
             }
         }
-
         
     }
-
-
     
     class RemoveForkedTransactionTimerTask extends SIPStackTimerTask {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:20.351 -0500", hash_original_field = "9CD5311870B0235CB989809E66CE6801", hash_generated_field = "346E85BD6DDF8042B729A2408B44CDD3")
-
         
         private SIPClientTransaction clientTransaction;
 
@@ -2597,7 +2574,6 @@ public RemoveForkedTransactionTimerTask(SIPClientTransaction sipClientTransactio
         protected void runTask() {
            forkedClientTransactionTable.remove(clientTransaction.getTransactionId()); 
         }
-
         
     }
     
@@ -2607,6 +2583,7 @@ public void setDeliverDialogTerminatedEventForNullDialog() {
         this.isDialogTerminatedEventDeliveredForNullDialog = true;
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:20.656 -0500", hash_original_method = "C791CC7BC6998146618C651EB49E3406", hash_generated_method = "6A0E3D4431CEC3AD32F3CF9CD12C01BC")
     
 public void addForkedClientTransaction(SIPClientTransaction clientTransaction) {

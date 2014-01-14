@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import com.android.internal.util.ArrayUtils;
 
-
-
-
-
-
 class PackedObjectVector<E> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:04.129 -0500", hash_original_field = "5D305AA3AFBCC646419732255616147E", hash_generated_field = "75F4039C98FB52077D38E34F530EB3FF")
 
@@ -20,13 +15,11 @@ class PackedObjectVector<E> {
     private int mRows;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:04.134 -0500", hash_original_field = "9828EB158F3AF7FD600C6FEB32A01FE4", hash_generated_field = "EA98696F1B775619308B0863F513F9F1")
 
-
     private int mRowGapStart;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:04.137 -0500", hash_original_field = "4E829280F69229C952DC0CF8B0968F13", hash_generated_field = "EB5D193EB3BD0BD6791276EC10232CBE")
 
     private int mRowGapLength;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:04.139 -0500", hash_original_field = "D3F28F3EBFA7D0D8D614CF293C7CCCA8", hash_generated_field = "8F96A7DD3A8AA044003D4A42FBE80825")
-
 
     private Object[] mValues;
 
@@ -57,6 +50,7 @@ public E
         return (E) value;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:04.149 -0500", hash_original_method = "C9FAD217A876C18081065D61EE309BF7", hash_generated_method = "1C4CB6B3B88542BAF5B5FF7F7C41CEA4")
     
 public void
@@ -207,7 +201,6 @@ public void // XXX
 
         System.out.print("-----\n\n");
     }
-
     
 }
 

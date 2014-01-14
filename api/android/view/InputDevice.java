@@ -11,10 +11,6 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.RemoteException;
 
-
-
-
-
 public final class InputDevice implements Parcelable {
 
     /**
@@ -120,7 +116,6 @@ public static int[] getDeviceIds() {
 
     @Deprecated
     public static final int MOTION_RANGE_TOUCH_MAJOR = MotionEvent.AXIS_TOUCH_MAJOR;
-
     
     public static final class MotionRange {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.397 -0500", hash_original_field = "DE6B5F8A8E01B01D6955CFF5AC6A1196", hash_generated_field = "291186BF7CD64560031686367E49FDA6")
@@ -230,7 +225,6 @@ public float getFlat() {
 public float getFuzz() {
             return mFuzz;
         }
-
         
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.343 -0500", hash_original_field = "7182ADA3CE1BFB2D7797DE987827A330", hash_generated_field = "D4E5B4D1F104C8CA42C6BF23E778DEB1")
@@ -292,7 +286,6 @@ public InputDevice[] newArray(int size) {
 
     private String mKeyCharacterMapFile;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.283 -0500", hash_original_field = "2F49349C025260EF41839D257CCFC6D8", hash_generated_field = "3D9ACF5B843900F5B90A6C764A13538C")
-
 
     private final ArrayList<MotionRange> mMotionRanges = new ArrayList<MotionRange>();
 
@@ -452,6 +445,7 @@ private void readFromParcel(Parcel in) {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.444 -0500", hash_original_method = "91853B6BABA9CBC4F027C3C314DDF153", hash_generated_method = "44644FE9A20EECDBA3A08DD54B874281")
     
 @Override

@@ -8,11 +8,6 @@ import java.nio.BufferOverflowException;
 import java.nio.BufferUnderflowException;
 import java.util.WeakHashMap;
 
-
-
-
-
-
 public class CoderResult {
 
     /**
@@ -26,6 +21,7 @@ public class CoderResult {
      * @throws IllegalArgumentException
      *             if <code>length</code> is non-positive.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.573 -0500", hash_original_method = "32B9309C5888D5D441E10DB420683F91", hash_generated_method = "EA5ABC13387F1533A05FEB74F9C87F72")
     
 public static synchronized CoderResult malformedForLength(int length)
@@ -56,6 +52,7 @@ public static synchronized CoderResult malformedForLength(int length)
      * @throws IllegalArgumentException
      *             if <code>length</code> is non-positive.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.576 -0500", hash_original_method = "BBA6EC87D4C3AA6AD9F0D4B623871AE8", hash_generated_method = "D790B3ABAD493C64B831394CF1B5AB81")
     
 public static synchronized CoderResult unmappableForLength(int length)

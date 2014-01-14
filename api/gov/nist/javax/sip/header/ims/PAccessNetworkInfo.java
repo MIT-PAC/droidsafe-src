@@ -10,18 +10,11 @@ import java.text.ParseException;
 
 import javax.sip.header.ExtensionHeader;
 
-
-
-
-
-
 public class PAccessNetworkInfo extends ParametersHeader implements PAccessNetworkInfoHeader, ExtensionHeader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:57.608 -0500", hash_original_field = "A696923051D2A58D159F9B39FEED0908", hash_generated_field = "4265F4D4355352003752ED1DA82667CD")
 
-
     private String accessType;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:57.611 -0500", hash_original_field = "4C41B3A690BCB5C2F6D884B522B300D9", hash_generated_field = "0CDE7F70FD33947CCE71E89D96DB001C")
-
 
     private Object extendAccessInfo;
 
@@ -77,6 +70,7 @@ public String getAccessType() {
      * @throws NullPointerException -- if null argument passed in
      * @throws ParseException -- if bad argument passed in.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:57.629 -0500", hash_original_method = "E9F3B4E9864C75E8FFBFA10460D6CC15", hash_generated_method = "DBA07E921634B6E5EF99F72BAFEB3F17")
     
 public void setCGI3GPP(String cgi) throws ParseException {
@@ -107,6 +101,7 @@ public String getCGI3GPP() {
      * @throws NullPointerException
      * @throws ParseException
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:57.636 -0500", hash_original_method = "3441B9130B7E2309E30E20A20941366E", hash_generated_method = "AC3F246D3C80B124CB121536F0AFE125")
     
 public void setUtranCellID3GPP(String utranCellID) throws ParseException {
@@ -136,6 +131,7 @@ public String getUtranCellID3GPP() {
      * @throws NullPointerException
      * @throws ParseException
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:57.643 -0500", hash_original_method = "36CD4D2ED6BE8C30DC84C656A727D43F", hash_generated_method = "FECD0A87B992F78D5B01A99C33F2F827")
     
 public void setDSLLocation(String dslLocation) throws ParseException {
@@ -165,6 +161,7 @@ public String getDSLLocation() {
      * @throws NullPointerException -- if arg is null
      * @throws ParseException -- if arg is bad.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:57.649 -0500", hash_original_method = "8FAF3F13595D3CEC54730D14353CA65A", hash_generated_method = "7367414E6177A4D7A1FB06400BC54EE2")
     
 public void setCI3GPP2(String ci3Gpp2) throws ParseException {
@@ -193,6 +190,7 @@ public String getCI3GPP2() {
      * @param value --
      *            value of parameter
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:57.657 -0500", hash_original_method = "EBE4690A0158C298C62212A7BC5E46A3", hash_generated_method = "F4734D6D56C72B0F7F9D658A9C8DAAD5")
     
 public void setParameter(String name, Object value) {
@@ -270,13 +268,13 @@ protected String encodeBody() {
 
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:57.671 -0500", hash_original_method = "4B92A49D74A1215E0C3EC12D290AF61B", hash_generated_method = "014FE50D8A9A4F50DCF1C9E31F934432")
     
 public void setValue(String value) throws ParseException {
         throw new ParseException(value, 0);
 
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:57.674 -0500", hash_original_method = "3C3E67AEA43A987A78987E8A7C9369D7", hash_generated_method = "A711518DD1BAB8F3F40B030EBFCB607A")
     
@@ -293,7 +291,6 @@ public Object clone() {
         PAccessNetworkInfo retval = (PAccessNetworkInfo) super.clone();
         return retval;
     }
-
     
 }
 

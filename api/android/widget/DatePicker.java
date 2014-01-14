@@ -30,110 +30,80 @@ import android.widget.NumberPicker.OnValueChangeListener;
 
 import com.android.internal.R;
 
-
-
-
-
-
 public class DatePicker extends FrameLayout {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.252 -0500", hash_original_field = "DB5F358B7F4754051F12CE812D849E52", hash_generated_field = "9AEACC319D08BF18BF3DF5EC9A62E42B")
-
 
     private static final String LOG_TAG = DatePicker.class.getSimpleName();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.255 -0500", hash_original_field = "4A21EFC12B8A7D00AD012663E0282367", hash_generated_field = "92A4E472511D5AB0B2A3BE852088B3B7")
 
-
     private static final String DATE_FORMAT = "MM/dd/yyyy";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.257 -0500", hash_original_field = "E4CBC45686354E459FE7052D14166371", hash_generated_field = "3D715F707E83C4D5095B646047A5B1CE")
-
 
     private static final int DEFAULT_START_YEAR = 1900;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.259 -0500", hash_original_field = "49393752A631FB46ABBE7A334B482664", hash_generated_field = "9BC7705443E7BEBF66658C145A361562")
 
-
     private static final int DEFAULT_END_YEAR = 2100;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.261 -0500", hash_original_field = "51CFCD28C1044BC7D7DB0D32DD5C788F", hash_generated_field = "7B3A1EBBF4899FDB67AECAC357D65551")
-
 
     private static final boolean DEFAULT_CALENDAR_VIEW_SHOWN = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.264 -0500", hash_original_field = "258C59A405D8D93C11B1B8284E5247BD", hash_generated_field = "42113FF0020FE8EE0346E7E82FAD2CC1")
 
-
     private static final boolean DEFAULT_SPINNERS_SHOWN = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.266 -0500", hash_original_field = "898BA2CFB8E606FE0E662F55EA307C06", hash_generated_field = "C8A8F0463DBF19CC5664F198B037CB59")
-
 
     private static final boolean DEFAULT_ENABLED_STATE = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.268 -0500", hash_original_field = "F7D3783360870E5ADC7E3C95446CAB72", hash_generated_field = "57FC055B6C9771133CE6C857A7DABDD2")
 
-
     private  LinearLayout mSpinners;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.271 -0500", hash_original_field = "2787E2D8252B04673FC0F959DE7D3E60", hash_generated_field = "E9AD14BD1E7C73448246017F61A6910F")
-
 
     private  NumberPicker mDaySpinner;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.273 -0500", hash_original_field = "67D3C0D8C44FB19EB3B5DC42BB019D9E", hash_generated_field = "936D6FFF762C4ACBFCB2790E745CF627")
 
-
     private  NumberPicker mMonthSpinner;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.275 -0500", hash_original_field = "B556D34CCAECD56310F9101F5A71D934", hash_generated_field = "0D7C6882B7118BD566A5477609D98248")
-
 
     private  NumberPicker mYearSpinner;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.277 -0500", hash_original_field = "1C31E9FE7637575499D36341EC2352A0", hash_generated_field = "78DBE8E04B70C89A720FD198AB154490")
 
-
     private  EditText mDaySpinnerInput;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.280 -0500", hash_original_field = "70900D4A1BA58F6BC104684B69530718", hash_generated_field = "714D9147EB1533807E28758F3821E7DC")
-
 
     private  EditText mMonthSpinnerInput;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.282 -0500", hash_original_field = "2CB5CEA19E6932650FEA9AC1A93B81BC", hash_generated_field = "2F520BDB0A7FFE00F22D9FBE511FE790")
 
-
     private  EditText mYearSpinnerInput;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.284 -0500", hash_original_field = "1B0EE231C37DFD1440974793432E7287", hash_generated_field = "C49C583656EEC355FE817D0FB30D86B9")
-
 
     private  CalendarView mCalendarView;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.286 -0500", hash_original_field = "0400C5C553DC4CBF37271C21855854A7", hash_generated_field = "88175FFB524B6CC60F82A34D8C4EC643")
 
-
     private Locale mCurrentLocale;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.288 -0500", hash_original_field = "72C84DF3DA4BA4A970D606A9E6CEFE1D", hash_generated_field = "62B8B5E7AE7E284B45C195AD700263A4")
-
 
     private OnDateChangedListener mOnDateChangedListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.291 -0500", hash_original_field = "796E8CED1101DF2EF5A5164772240BBA", hash_generated_field = "7C0E3CE4CDD41145783D01A374740E69")
 
-
     private String[] mShortMonths;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.293 -0500", hash_original_field = "14347A98AF9CE70FD1B6F60D5AA3ADC1", hash_generated_field = "B406C1F86E2B5C90127E71BBD6EC950B")
-
 
     private final java.text.DateFormat mDateFormat = new SimpleDateFormat(DATE_FORMAT);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.295 -0500", hash_original_field = "DEB2F8CBCD9DA8EF1D6F144BAF9623D4", hash_generated_field = "FC72141C7BE09CB007FDA2A11DEAADED")
 
-
     private int mNumberOfMonths;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.297 -0500", hash_original_field = "83B9DD6E7508BD94D813D2BBAE835A2C", hash_generated_field = "915400C77BD703DACB8E97CD72BFFD5E")
-
 
     private Calendar mTempDate;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.299 -0500", hash_original_field = "3DB37928D9BCCB809A9FC162964B0E42", hash_generated_field = "681C6D172B5A021A54543F6E6ED5BD03")
 
-
     private Calendar mMinDate;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.301 -0500", hash_original_field = "E3F10F4404115CF847283246E14AF324", hash_generated_field = "4C58BCC5BEA466149D70675257F2009F")
-
 
     private Calendar mMaxDate;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.303 -0500", hash_original_field = "9358DBF3EFD1E42380289ED1C04ECC53", hash_generated_field = "B33BB7B8B2F898A7B6FA7A6FCFAB9ED0")
 
-
     private Calendar mCurrentDate;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.305 -0500", hash_original_field = "D4A6DCF8382D9EC800648673F5DFADA3", hash_generated_field = "0D83C9894006124680A4C4A755D8D1E4")
-
 
     private boolean mIsEnabled = DEFAULT_ENABLED_STATE;
 
@@ -314,6 +284,7 @@ public long getMinDate() {
      *
      * @param minDate The minimal supported date.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.329 -0500", hash_original_method = "E09B6ABF429EE8C7F43BA1D2176E3476", hash_generated_method = "A5E0C3CAF077EE78809E6F9EE5AB6BC6")
     
 public void setMinDate(long minDate) {
@@ -354,6 +325,7 @@ public long getMaxDate() {
      *
      * @param maxDate The maximal supported date.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.334 -0500", hash_original_method = "2F38894A8B9E3D925CDD9D98E5823853", hash_generated_method = "962D5C7AB3F1FBE5665262D118A0BDA7")
     
 public void setMaxDate(long maxDate) {
@@ -450,6 +422,7 @@ public CalendarView getCalendarView () {
      *
      * @param shown True if the calendar view is to be shown.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.352 -0500", hash_original_method = "A6F7D559BB2BFC23B5A4662DCD0F1C14", hash_generated_method = "6C31E4096210697EF421BEBE5F364620")
     
 public void setCalendarViewShown(boolean shown) {
@@ -472,6 +445,7 @@ public boolean getSpinnersShown() {
      *
      * @param shown True if the spinners are to be shown.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.356 -0500", hash_original_method = "754F8D4BE212034B7CC0AFCD20BC9A92", hash_generated_method = "B23BC79C99E594F98A0EBC6F1119D81F")
     
 public void setSpinnersShown(boolean shown) {
@@ -713,11 +687,9 @@ private void updateSpinners() {
 private void updateCalendarView() {
          mCalendarView.setDate(mCurrentDate.getTimeInMillis(), false, false);
     }
-
     
     private static class SavedState extends BaseSavedState {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.428 -0500", hash_original_field = "D724CFA73A53A978E951AE6569BF2FF0", hash_generated_field = "E9DCCAD55CAF4E4BE430D6B8D40B045B")
-
 
         @SuppressWarnings("all")
         // suppress unused and hiding
@@ -733,14 +705,11 @@ private void updateCalendarView() {
         };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.407 -0500", hash_original_field = "5823940FC0F93D8457936B751136F711", hash_generated_field = "0FB397B5159C15D66CFFB31661F31030")
 
-
         private  int mYear;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.409 -0500", hash_original_field = "C8A7514A4847C04CDF3D704147F35825", hash_generated_field = "B60DEE2EFD4F8FC07E416B8343AFCB00")
 
-
         private  int mMonth;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.412 -0500", hash_original_field = "D90999CE70AC00E5087855F56B6B00E2", hash_generated_field = "084BEC9B9077623100292A9AB444BB6A")
-
 
         private  int mDay;
 
@@ -768,6 +737,7 @@ private SavedState(Parcel in) {
             mDay = in.readInt();
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.420 -0500", hash_original_method = "AFDD7CDA63529FFA8C3C3C99BF58C7E4", hash_generated_method = "4BF429ADDEA05A36328475A0268C9ED7")
         
 @Override
@@ -778,11 +748,8 @@ private SavedState(Parcel in) {
             dest.writeInt(mDay);
         }
     }
-
-
     
     public interface OnDateChangedListener {
-
         
         void onDateChanged(DatePicker view, int year, int monthOfYear, int dayOfMonth);
     }

@@ -52,6 +52,7 @@ AlarmManager(IAlarmManager service) {
         
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:50.886 -0400", hash_original_method = "62DAF5BCFF42E7C3B71DA4EC3FF03273", hash_generated_method = "00637051DDD716CB394E09B323080F9C")
     public void set(int type, long triggerAtTime, PendingIntent operation) {
         addTaint(operation.getTaint());
@@ -79,6 +80,7 @@ AlarmManager(IAlarmManager service) {
         //}
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:50.887 -0400", hash_original_method = "B76B6BC989D8817E7D8138A521E8EB08", hash_generated_method = "1F883AD2D5B31B8D04A551F102467DCA")
     public void setRepeating(int type, long triggerAtTime, long interval,
             PendingIntent operation) {
@@ -108,6 +110,7 @@ AlarmManager(IAlarmManager service) {
         //}
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:50.888 -0400", hash_original_method = "BA6CD3CD848F31D3C4801F13BE104684", hash_generated_method = "40BDCE1F7737607563795EC245C2DF50")
     public void setInexactRepeating(int type, long triggerAtTime, long interval,
             PendingIntent operation) {
@@ -152,6 +155,7 @@ AlarmManager(IAlarmManager service) {
         //}
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:50.890 -0400", hash_original_method = "3A70CE6E172EDC0255F255C60401C6D7", hash_generated_method = "4D8770A8C859AEC78E4AD69D8F646E10")
     
     public void setTime(long millis) {
@@ -163,6 +167,7 @@ AlarmManager(IAlarmManager service) {
         //}
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:50.891 -0400", hash_original_method = "7328E8391AD5750BAC4B3B8A138446CC", hash_generated_method = "5BAF798F717A2B1B1FCDA60799BC94BA")
     public void setTimeZone(String timeZone) {
         addTaint(timeZone.getTaint());

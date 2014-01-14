@@ -121,6 +121,7 @@ public static long getFrameDelay() {
      *
      * @param frameDelay the requested time between frames, in milliseconds
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:32.720 -0500", hash_original_method = "56E659663FF9E21EC6A56D4CA3D996C8", hash_generated_method = "8B1F52E4B1315ECE809AFB72E1A30C96")
     
 public static void setFrameDelay(long frameDelay) {
@@ -374,6 +375,7 @@ public ValueAnimator() {
      *
      * @param values A set of values that the animation will animate between over time.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:32.682 -0500", hash_original_method = "67525E8968A6999074D725B8947CD2FE", hash_generated_method = "DB329D58162139E7A672A0EE6F29D0EC")
     
 public void setIntValues(int... values) {
@@ -404,6 +406,7 @@ public void setIntValues(int... values) {
      *
      * @param values A set of values that the animation will animate between over time.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:32.685 -0500", hash_original_method = "D733778AA31410A94B9571EEAAECBB30", hash_generated_method = "F487C20DB97F67728A0918F3D8B4E574")
     
 public void setFloatValues(float... values) {
@@ -438,6 +441,7 @@ public void setFloatValues(float... values) {
      *
      * @param values The set of values to animate between.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:32.688 -0500", hash_original_method = "AAE460ECCCBF6E694CF45A2F7BA85BA5", hash_generated_method = "9E8FCF94E86099572B79FBB5BAAE5BEC")
     
 public void setObjectValues(Object... values) {
@@ -463,6 +467,7 @@ public void setObjectValues(Object... values) {
      *
      * @param values The set of values, per property, being animated between.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:32.690 -0500", hash_original_method = "D9E3FD9EEAA02CD647DC7AEFD5007E3A", hash_generated_method = "A0871840F9FEDB3CA31219E464E5A2A6")
     
 public void setValues(PropertyValuesHolder... values) {

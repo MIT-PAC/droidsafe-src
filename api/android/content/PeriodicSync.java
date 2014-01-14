@@ -9,12 +9,7 @@ import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public class PeriodicSync implements Parcelable {
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.713 -0400", hash_original_field = "D1D66675233804683D3FB5AA9833457F", hash_generated_field = "476BDAB47FF19722C7E6C835502904C2")
 
@@ -61,6 +56,7 @@ public int describeContents() {
         return 0;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:28.585 -0500", hash_original_method = "D77F1A5B85A714E7D78D3A9001CC9547", hash_generated_method = "F16843460B395BC9C7C565520BFD6119")
     
 public void writeToParcel(Parcel dest, int flags) {

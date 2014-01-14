@@ -10,16 +10,11 @@ import android.os.Message;
 import android.os.RemoteException;
 import android.util.Log;
 
-
-
-
-
 public class RestoreSession {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:47.470 -0500", hash_original_field = "572DB331C1E9E94335EF137CE4D9301B", hash_generated_field = "95A135350987A8A35D57A3465B636A5F")
 
     static final String TAG = "RestoreSession";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:47.472 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "B997E37019471EC8FC5B98148C7A8AD7")
-
 
      Context mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:47.475 -0500", hash_original_field = "7A6145C040AB8C4767279CC3AE6AB5D4", hash_generated_field = "7A6145C040AB8C4767279CC3AE6AB5D4")
@@ -112,6 +107,7 @@ public int restoreAll(long token, RestoreObserver observer) {
      *
      * @hide
      */
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:47.486 -0500", hash_original_method = "F5EFDD74303F049C8AACBA4BE897E134", hash_generated_method = "11A6EA209A7DC274BF9B69BE19754CAD")
     
 public int restoreSome(long token, RestoreObserver observer, String[] packages) {
@@ -144,6 +140,7 @@ public int restoreSome(long token, RestoreObserver observer, String[] packages) 
      * @param observer If non-null, this binder points to an object that will receive
      *   progress callbacks during the restore operation.
      */
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:47.488 -0500", hash_original_method = "45656BEA7940AC3102C43782877B83F7", hash_generated_method = "14B8BD2AD5AE0301F8239686BB8B06C7")
     
 public int restorePackage(String packageName, RestoreObserver observer) {
@@ -160,10 +157,8 @@ public int restorePackage(String packageName, RestoreObserver observer) {
         }
         return err;
     }
-
     
     private class RestoreObserverWrapper extends IRestoreObserver.Stub {
-
         
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:57.814 -0400", hash_original_field = "E422503876A122A2D1B32BFB63C3D499", hash_generated_field = "C35743E6236412F066B6205E54E8EA22")
 
@@ -210,6 +205,7 @@ RestoreObserverWrapper(Context context, RestoreObserver appObserver) {
         }
 
         // Binder calls into this object just enqueue on the main-thread handler
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:47.521 -0500", hash_original_method = "856BC446A8E3590AAA97D30784AFC7AF", hash_generated_method = "4B63F674D5A1AABC1043935E5ED2D796")
         
 public void restoreSetsAvailable(RestoreSet[] result) {
@@ -217,6 +213,7 @@ public void restoreSetsAvailable(RestoreSet[] result) {
                     mHandler.obtainMessage(MSG_RESTORE_SETS_AVAILABLE, result));
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:47.524 -0500", hash_original_method = "09B9DD73C3E4A1439A279C7C4D1CFC03", hash_generated_method = "02EBF0481B3FA6FA91C2DAACE271B53E")
         
 public void restoreStarting(int numPackages) {
@@ -231,6 +228,7 @@ public void onUpdate(int nowBeingRestored, String currentPackage) {
                     mHandler.obtainMessage(MSG_UPDATE, nowBeingRestored, 0, currentPackage));
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:47.529 -0500", hash_original_method = "9021095FD560CADBADD83E17671DA995", hash_generated_method = "3E5ABAB0B146B5775FA89C324FCFBDA6")
         
 public void restoreFinished(int error) {

@@ -66,7 +66,8 @@ public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:42.524 -0500", hash_original_method = "556A8A343D84FF8594D48950C217CBA7", hash_generated_method = "29FFB28C12E7BAE1A20FA334276D55DD")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:42.524 -0500", hash_original_method = "556A8A343D84FF8594D48950C217CBA7", hash_generated_method = "29FFB28C12E7BAE1A20FA334276D55DD")
             
 public void onServiceConnected(android.os.IBinder service) throws android.os.RemoteException
 {

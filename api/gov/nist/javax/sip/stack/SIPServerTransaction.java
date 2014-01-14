@@ -39,27 +39,18 @@ import javax.sip.header.RSeqHeader;
 import javax.sip.message.Request;
 import javax.sip.message.Response;
 
-
-
-
-
-
 public class SIPServerTransaction extends SIPTransaction implements ServerRequestInterface, javax.sip.ServerTransaction, ServerTransactionExt {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:18.015 -0500", hash_original_field = "963497B974E6F672E401E618EFCAAE43", hash_generated_field = "28502708C76D5DD6019AE19DD6820CAF")
 
-
     private int rseqNumber;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:18.018 -0500", hash_original_field = "C983F8C9ADEED1FC926FE34D21877C06", hash_generated_field = "A6B60CB65DFBA45F2F3BF0217AB058D0")
-
 
     // Real RequestInterface to pass messages to
     private transient ServerRequestInterface requestOf;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:18.021 -0500", hash_original_field = "02FEFC12EE952EA6E5826E0F4F66B973", hash_generated_field = "EB87748E422C08A91C21F30B889B25BC")
 
-
     private SIPDialog dialog;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:18.024 -0500", hash_original_field = "F4C36CF5FA2B60E34573E3239C723E95", hash_generated_field = "1B65F4A63DBF291C8551F347E58C0645")
-
 
     private SIPResponse pendingReliableResponse;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:18.027 -0500", hash_original_field = "D35D7575941299C7F53E9C3E2A8E299F", hash_generated_field = "F641CCD030A30F9AE3D3689D9113DD0E")
@@ -67,26 +58,20 @@ public class SIPServerTransaction extends SIPTransaction implements ServerReques
     private ProvisionalResponseTask provisionalResponseTask;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:18.030 -0500", hash_original_field = "A447BBE13E6CCA100D3DC92F9F2AB00F", hash_generated_field = "098BFE37ADED63A73A471007C93A0B9D")
 
-
     private boolean retransmissionAlertEnabled;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:18.033 -0500", hash_original_field = "9C5097851259C440BEA556FB875E2231", hash_generated_field = "8C7266D76A37BFC3977933B6EEA4448F")
-
 
     private RetransmissionAlertTimerTask retransmissionAlertTimerTask;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:18.036 -0500", hash_original_field = "275A7326232C7A15DA899690557CC9F0", hash_generated_field = "E5126B373C1F848FEA63F5658E5B5C6A")
 
-
     protected boolean isAckSeen;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:18.038 -0500", hash_original_field = "1D32B297FCB0B06AB5588805F05D2EE8", hash_generated_field = "7878146F4B75217C90AD253031C2AB2F")
-
 
     private SIPClientTransaction pendingSubscribeTransaction;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:18.041 -0500", hash_original_field = "E2F0CD0E25F7FD599B21D877A1759BD5", hash_generated_field = "BE6AC6CBDC82F6C7D74085E5CA0E7140")
 
-
     private SIPServerTransaction inviteTransaction;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:18.043 -0500", hash_original_field = "8FC152EF8C5F0FAF2AE9577CAE28AD60", hash_generated_field = "D0DC33FA09DF277419E9D78A6DADBDC8")
-
     
     private Semaphore provisionalResponseSem = new Semaphore(1);
 
@@ -239,8 +224,6 @@ public MessageChannel getResponseChannel() {
         return this;
 
     }
-
-    
     
     /**
      * Determines if the message is a part of this transaction.
@@ -415,6 +398,7 @@ public boolean isTransactionMapped() {
      * @param transactionRequest Request to process.
      * @param sourceChannel Channel that received this message.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:18.136 -0500", hash_original_method = "56FAA78069677544853324F6F2B799B6", hash_generated_method = "216A2132B4FB2F46B568765550051767")
     
 public void processRequest(SIPRequest transactionRequest, MessageChannel sourceChannel) {
@@ -584,6 +568,7 @@ public void processRequest(SIPRequest transactionRequest, MessageChannel sourceC
      *
      * @param messageToSend Response to process and send.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:18.143 -0500", hash_original_method = "2B73C982341966F86ADBEA04AC7851BC", hash_generated_method = "63B9ABBDB20CA604885970E2FA4A29CD")
     
 public void sendMessage(SIPMessage messageToSend) throws IOException {
@@ -946,6 +931,7 @@ public SIPResponse getLastResponse() {
     /**
      * Set the original request.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:18.165 -0500", hash_original_method = "2F3F0F5B57F408B788FCEFEE82B8B33E", hash_generated_method = "52D59F136EE7C17FD840FC7C5147670D")
     
 public void setOriginalRequest(SIPRequest originalRequest) {
@@ -958,6 +944,7 @@ public void setOriginalRequest(SIPRequest originalRequest) {
      *
      * @see javax.sip.ServerTransaction#sendResponse(javax.sip.message.Response)
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:18.171 -0500", hash_original_method = "2923FE4F478A1D65305B36AFA83919C7", hash_generated_method = "EF7B6FD11206A1F77F99601E63442206")
     
 public void sendResponse(Response response) throws SipException {
@@ -1075,8 +1062,6 @@ public void sendResponse(Response response) throws SipException {
                 }
             }
 
-
-
             // Backward compatibility slippery slope....
             // Only set the from tag in the response when the
             // incoming request has a from tag.
@@ -1090,8 +1075,6 @@ public void sendResponse(Response response) throws SipException {
                 if (sipStack.isLoggingEnabled())
                     sipStack.getStackLogger().logDebug("WARNING -- Null From tag in request!!");
             }
-
-
 
             // See if the dialog needs to be inserted into the dialog table
             // or if the state of the dialog needs to be changed.
@@ -1176,6 +1159,7 @@ public TransactionState getState() {
      * connection for outgoing requests in this time period) and calls the superclass to set
      * state.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:18.181 -0500", hash_original_method = "64016F2524A7B9A8D94F9FFA297FAA00", hash_generated_method = "A0D4BF22970D80FC6420EF04646B0688")
     
 public void setState(TransactionState newState) {
@@ -1319,7 +1303,6 @@ protected void sendReliableProvisionalResponse(Response relResponse) throws SipE
             this.provisionalResponseTask = new ProvisionalResponseTask();
             this.sipStack.getTimer().schedule(provisionalResponseTask, 0,
                     SIPTransactionStack.BASE_TIMER_INTERVAL);
-            
 
         } catch (Exception ex) {
             InternalErrorHandler.handleException(ex);
@@ -1415,6 +1398,7 @@ public boolean ackSeen() {
         return this.isAckSeen;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:18.223 -0500", hash_original_method = "6AEC262895B13A63B164E8F6877168F2", hash_generated_method = "49B5B16EC88CC002895E5A6ED9D73028")
     
 public void setMapped(boolean b) {
@@ -1481,19 +1465,15 @@ public void scheduleAckRemoval() throws IllegalStateException {
 
         this.startTransactionTimer();
     }
-
     
     class RetransmissionAlertTimerTask extends SIPStackTimerTask {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:18.047 -0500", hash_original_field = "6D266ECB4501DB72D6B336432EF66FBE", hash_generated_field = "6D266ECB4501DB72D6B336432EF66FBE")
 
-
         String dialogId;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:18.050 -0500", hash_original_field = "3C1309F344AFB4C7FE9A836B7928DA16", hash_generated_field = "3C1309F344AFB4C7FE9A836B7928DA16")
 
-
         int ticks;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:18.053 -0500", hash_original_field = "6753930BED6039429702ABCC2D7DEDDB", hash_generated_field = "6753930BED6039429702ABCC2D7DEDDB")
-
 
         int ticksLeft;
 
@@ -1516,19 +1496,14 @@ protected void runTask() {
             }
 
         }
-
         
     }
-
-
     
     class ProvisionalResponseTask extends SIPStackTimerTask {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:18.064 -0500", hash_original_field = "3C1309F344AFB4C7FE9A836B7928DA16", hash_generated_field = "3C1309F344AFB4C7FE9A836B7928DA16")
 
-
         int ticks;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:18.067 -0500", hash_original_field = "6753930BED6039429702ABCC2D7DEDDB", hash_generated_field = "6753930BED6039429702ABCC2D7DEDDB")
-
 
         int ticksLeft;
 
@@ -1578,11 +1553,8 @@ protected void runTask() {
             }
 
         }
-
         
     }
-
-
     
     class ListenerExecutionMaxTimer extends SIPStackTimerTask {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:18.080 -0500", hash_original_field = "5A6CDDF85083E892D7A9B40C9781E270", hash_generated_field = "5A6CDDF85083E892D7A9B40C9781E270")
@@ -1609,11 +1581,8 @@ protected void runTask() {
                 sipStack.getStackLogger().logError("unexpected exception", ex);
             }
         }
-
         
     }
-
-
     
     class SendTrying extends SIPStackTimerTask {
 
@@ -1649,11 +1618,8 @@ protected void runTask() {
             }
 
         }
-
         
     }
-
-
     
     class TransactionTimer extends SIPStackTimerTask {
 
@@ -1700,11 +1666,8 @@ protected void runTask() {
 
             }
         }
-
         
     }
-
-
     
 }
 

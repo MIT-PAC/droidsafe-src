@@ -9,15 +9,8 @@ import gov.nist.core.HostPort;
 import javax.sip.address.Address;
 import javax.sip.address.URI;
 
-
-
-
-
-
 public final class AddressImpl extends NetObject implements javax.sip.address.Address {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:34.438 -0500", hash_original_field = "D3862CE7BD5E2E0EB6C4FD16D8FA0E41", hash_generated_field = "2326BD2A1EC89625540C772C74ACDC21")
-
-
 
     private static final long serialVersionUID = 429592779568617259L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:34.441 -0500", hash_original_field = "3E30F676CECF94C9F304EF86BAF61685", hash_generated_field = "222B3DF6AA7EC58590F0AE49E8EC6A9D")
@@ -30,7 +23,6 @@ public final class AddressImpl extends NetObject implements javax.sip.address.Ad
 
     public static final int WILD_CARD = 3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:34.449 -0500", hash_original_field = "4869FD8940D9617B6A2FA4DD94896EC8", hash_generated_field = "86D11EC31389BCB4DD7EA8E060BE2214")
-
 
     protected int addressType;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:34.451 -0500", hash_original_field = "BB0F3128C925598F592DB9E6926FCA25", hash_generated_field = "1A7036061B9FC3789F96C7F5C73AF8A8")
@@ -335,6 +327,7 @@ public void setURI(URI address) {
      *
      *@param user -- user name to set for the imbedded URI.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:34.512 -0500", hash_original_method = "0E80639575489DB45C2F9AFF28620E23", hash_generated_method = "481C4F2252C802944F1F6CF0C5BCB8B1")
     
 public void setUser(String user) {

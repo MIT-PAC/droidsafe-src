@@ -11,11 +11,6 @@ import java.text.ParseException;
 import javax.sip.InvalidArgumentException;
 import javax.sip.header.ExtensionHeader;
 
-
-
-
-
-
 public class PMediaAuthorization extends SIPHeader implements PMediaAuthorizationHeader, SIPHeaderNamesIms, ExtensionHeader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:56.477 -0500", hash_original_field = "43CA5A3D590A5DF8FAFBBD5DCA9D0320", hash_generated_field = "C8D1FC4D9437199DDCE4D93F76EFB759")
 
@@ -23,7 +18,6 @@ public class PMediaAuthorization extends SIPHeader implements PMediaAuthorizatio
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:56.481 -0500", hash_original_field = "D62A227FC11FEBF54000A08B450667DF", hash_generated_field = "630027C1E843254DD22AA3F89157CD43")
 
     private String token;
-
 
     /**
      * Constructor
@@ -34,7 +28,6 @@ public PMediaAuthorization()
     {
         super(P_MEDIA_AUTHORIZATION);
     }
-
 
     /**
      * Get the media authorization token.
@@ -47,7 +40,6 @@ public String getToken()
     {
         return token;
     }
-
 
     /**
      * Set the media authorization token.
@@ -76,14 +68,13 @@ protected String encodeBody()
         return token;
     }
 
-
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:56.499 -0500", hash_original_method = "4B92A49D74A1215E0C3EC12D290AF61B", hash_generated_method = "014FE50D8A9A4F50DCF1C9E31F934432")
     
 public void setValue(String value) throws ParseException {
         throw new ParseException (value,0);
 
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:56.503 -0500", hash_original_method = "5CA94E0EC768C322B947B50479A5582B", hash_generated_method = "EEF2157BE89A4D7754C29C6E8430EA4A")
     
@@ -97,7 +88,6 @@ public boolean equals(Object other)
         return false;
 
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:56.506 -0500", hash_original_method = "8A557E19577FD47CE8C49FDC6C46D11C", hash_generated_method = "13CC34B5541E09E525D4D041AA7E9180")
     

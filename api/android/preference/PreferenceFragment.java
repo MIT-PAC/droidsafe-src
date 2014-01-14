@@ -207,6 +207,7 @@ public PreferenceManager getPreferenceManager() {
      *
      * @param preferenceScreen The root {@link PreferenceScreen} of the preference hierarchy.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.217 -0500", hash_original_method = "B9D9F1216249E53073B37D7754117BEA", hash_generated_method = "1560A01C5804717A3CDC2A32967D7954")
     
 public void setPreferenceScreen(PreferenceScreen preferenceScreen) {

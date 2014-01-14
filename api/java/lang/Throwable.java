@@ -228,6 +228,7 @@ public StackTraceElement[] getStackTrace() {
      *             if any element in {@code trace} is {@code null}.
      * @see #printStackTrace()
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:18.604 -0500", hash_original_method = "5E6079B0EA3605E8298E1D15C30F6678", hash_generated_method = "4D79DCEB4761ABFCF09895C59AE81452")
     
 public void setStackTrace(StackTraceElement[] trace) {

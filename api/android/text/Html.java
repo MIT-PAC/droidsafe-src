@@ -1002,6 +1002,7 @@ public Header(int level) {
         
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.581 -0500", hash_original_method = "D7C64873BD0FC0A0449628F53B089507", hash_generated_method = "45AC10770063FD8AACDBA2638FD23FD0")
     
 public void processingInstruction(String target, String data) throws SAXException {

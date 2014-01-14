@@ -95,6 +95,7 @@ public static boolean copyFile(File srcFile, File destFile) {
      * Copy data from a source stream to destFile.
      * Return true if succeed, return false if failed.
      */
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:28.086 -0500", hash_original_method = "75A6708119FD051685C400EDBE70E7B1", hash_generated_method = "FA5E98C53996F1C8C9BECBAA845B2245")
     
 public static boolean copyToFile(InputStream inputStream, File destFile) {
@@ -144,6 +145,7 @@ public static boolean isFilenameSafe(File file) {
      * @return the contents of the file, possibly truncated
      * @throws IOException if something goes wrong reading the file
      */
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:28.091 -0500", hash_original_method = "E16E904B564260AEFFEF8BC8F6F4E16A", hash_generated_method = "311465B2200E7484981B486871B50005")
     
 public static String readTextFile(File file, int max, String ellipsis) throws IOException {
@@ -200,6 +202,7 @@ public static String readTextFile(File file, int max, String ellipsis) throws IO
      * @param string
      * @throws IOException
      */
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:28.094 -0500", hash_original_method = "F847A87F54B2C1AF9220E117BEF97E96", hash_generated_method = "D3453BFCD0BC9D1F554A950B1C0DBA5D")
     
 public static void stringToFile(String filename, String string) throws IOException {

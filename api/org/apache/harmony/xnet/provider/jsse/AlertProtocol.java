@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class AlertProtocol {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:11.328 -0500", hash_original_field = "C114C8B6EE3E6323E92E3A30FCD7CECF", hash_generated_field = "54614161E21C0136DB540001945D62B9")
 
@@ -99,7 +95,6 @@ public class AlertProtocol {
     private SSLRecordProtocol recordProtocol;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:11.395 -0500", hash_original_field = "04CD57BDDB684030B8129F1C565F7967", hash_generated_field = "586593FC273B16FB55D0AB5F86D137A2")
 
-
     private Logger.Stream logger = Logger.getStream("alert");
 
     /**
@@ -131,6 +126,7 @@ protected void setRecordProtocol(SSLRecordProtocol recordProtocol) {
      * @param   description: alert description code
      * @return
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:11.402 -0500", hash_original_method = "F413EBA539C7D7D57656EE1032BAAF7C", hash_generated_method = "086EE2DCEAFC1A5826481261194B1DF7")
     
 protected void alert(byte level, byte description) {

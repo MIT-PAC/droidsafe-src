@@ -6,10 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.graphics.Bitmap;
 
-
-
-
-
 class CommandParams {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:04.508 -0500", hash_original_field = "ADD54520BA0629F0A763D04B0B24DD10", hash_generated_field = "ADD54520BA0629F0A763D04B0B24DD10")
 
@@ -27,10 +23,10 @@ AppInterface.CommandType getCommandType() {
         return AppInterface.CommandType.fromInt(cmdDet.typeOfCommand);
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:04.515 -0500", hash_original_method = "A8568713BEFC46F9EECE865CBC0E3B85", hash_generated_method = "A8568713BEFC46F9EECE865CBC0E3B85")
     
 boolean setIcon(Bitmap icon) { return true; }
-
     
 }
 
@@ -55,7 +51,6 @@ boolean setIcon(Bitmap icon) {
         }
         return false;
     }
-
     
 }
 
@@ -89,7 +84,6 @@ boolean setIcon(Bitmap icon) {
         }
         return false;
     }
-
     
 }
 
@@ -119,7 +113,6 @@ boolean setIcon(Bitmap icon) {
         }
         return false;
     }
-
     
 }
 
@@ -155,7 +148,6 @@ boolean setIcon(Bitmap icon) {
         }
         return false;
     }
-
     
 }
 
@@ -194,7 +186,6 @@ boolean setIcon(Bitmap icon) {
         }
         return false;
     }
-
     
 }
 
@@ -218,7 +209,6 @@ boolean setIcon(Bitmap icon) {
         }
         return true;
     }
-
     
 }
 

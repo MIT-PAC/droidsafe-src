@@ -363,6 +363,7 @@ public int describeContents() {
         return 0;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.346 -0500", hash_original_method = "B6654BF7A24842DC15E6AD3A5F27203C", hash_generated_method = "EE219290863A0576BAFED6B568C39258")
     
 public void writeToParcel(Parcel dest, int flags) {
@@ -635,6 +636,7 @@ public static int transitToStyleIndex(int transit, boolean enter) {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.453 -0500", hash_original_method = "28A5058460B6EF16DD9CEE59F403CB5D", hash_generated_method = "6409864029149BCCB09C4BA39AC6D910")
     
 @Override
@@ -694,6 +696,7 @@ public static int transitToStyleIndex(int transit, boolean enter) {
         return sb.toString();
     }
 
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.464 -0500", hash_original_method = "0EF991BB6A19DFA56B66936C5498080A", hash_generated_method = "1C833A54848E055F0F7D8ACE291CCE84")
     
 @Override
@@ -1535,6 +1538,7 @@ public int allocBackStackIndex(BackStackRecord bse) {
         }
     }
 
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.532 -0500", hash_original_method = "F0AF804A23A686630C8F5E2012EB99F7", hash_generated_method = "4E2FDC94FAD3569E5524DEE3B958EFF6")
     
 public void setBackStackIndex(int index, BackStackRecord bse) {
@@ -1756,6 +1760,7 @@ void saveFragmentViewState(Fragment f) {
         }
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.562 -0500", hash_original_method = "DCA5B6BB14B617A2A3ED4183EF745130", hash_generated_method = "17444C25358CBBFD26D40A84158EE0F8")
     
 Bundle saveFragmentBasicState(Fragment f) {
@@ -2056,6 +2061,7 @@ public void dispatchDestroy() {
         mActivity = null;
     }
     
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.592 -0500", hash_original_method = "5117E19429D94CDE29C750CF70651BE9", hash_generated_method = "AE630A01B20C5802C555F656A054747D")
     
 public void dispatchConfigurationChanged(Configuration newConfig) {
@@ -2082,6 +2088,7 @@ public void dispatchLowMemory() {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.596 -0500", hash_original_method = "81FEC8A34B79BC0E01F9FFFE05F1478B", hash_generated_method = "14CA1C7F24A34843C11EC1D88DFA5370")
     
 public void dispatchTrimMemory(int level) {
@@ -2095,6 +2102,7 @@ public void dispatchTrimMemory(int level) {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.599 -0500", hash_original_method = "059A23578A0DB56C84349E8F783E9AC3", hash_generated_method = "75E6340F244539A764DD64732C96ED9E")
     
 public boolean dispatchCreateOptionsMenu(Menu menu, MenuInflater inflater) {
@@ -2128,6 +2136,7 @@ public boolean dispatchCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         return show;
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.601 -0500", hash_original_method = "3C4E4DD19A75168CEF9873DFBC1B4179", hash_generated_method = "C119226AFAE3661F60FEA4F7676F6DB4")
     
 public boolean dispatchPrepareOptionsMenu(Menu menu) {
@@ -2144,6 +2153,7 @@ public boolean dispatchPrepareOptionsMenu(Menu menu) {
         return show;
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.604 -0500", hash_original_method = "16456DF238276E24923F6AD552304983", hash_generated_method = "18AA798D96E1C2674A800C23C72C887D")
     
 public boolean dispatchOptionsItemSelected(MenuItem item) {
@@ -2160,6 +2170,7 @@ public boolean dispatchOptionsItemSelected(MenuItem item) {
         return false;
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.606 -0500", hash_original_method = "F1ECF21855715BC93D4867D907434D91", hash_generated_method = "06C8F576CD5204BA8BEA691F18F57A00")
     
 public boolean dispatchContextItemSelected(MenuItem item) {
@@ -2176,6 +2187,7 @@ public boolean dispatchContextItemSelected(MenuItem item) {
         return false;
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.608 -0500", hash_original_method = "EA4F9A660842285D75622DB2DA97E1AE", hash_generated_method = "4AFFAEAAD26C507E1A33312308C49EAA")
     
 public void dispatchOptionsMenuClosed(Menu menu) {

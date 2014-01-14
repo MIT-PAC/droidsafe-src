@@ -34,11 +34,6 @@ import android.util.Xml;
 
 import com.android.internal.content.PackageMonitor;
 
-
-
-
-
-
 public class ActivityChooserModel extends DataSetObservable {
 
     /**
@@ -318,7 +313,6 @@ public Intent chooseActivity(int index) {
 
         return choiceIntent;
     }
-
     
     public final static class HistoricalRecord {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.129 -0500", hash_original_field = "349BDCF162FD3E438C6A758EBB153707", hash_generated_field = "E9F78AFB95D47915FCC3FF74E33CC6C3")
@@ -413,11 +407,8 @@ public HistoricalRecord(ComponentName activityName, long time, float weight) {
             builder.append("]");
             return builder.toString();
         }
-
         
     }
-
-
     
     public final class ActivityResolveInfo implements Comparable<ActivityResolveInfo> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.154 -0500", hash_original_field = "388E10A296BB39658E74C632FC6834F9", hash_generated_field = "42ACA7D028AD018D3FE2BFC3E32F6A75")
@@ -482,18 +473,14 @@ public int compareTo(ActivityResolveInfo another) {
             builder.append("]");
             return builder.toString();
         }
-
         
     }
-
-
     
     private final class DefaultSorter implements ActivitySorter {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.173 -0500", hash_original_field = "291DD62C8381C760FAE106954F174503", hash_generated_field = "80DD4E6EDFEAE82BDC0A595B5F72F371")
 
         private static final float WEIGHT_DECAY_COEFFICIENT = 0.95f;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.176 -0500", hash_original_field = "4E416A09671288BBCB5BA49D39FD40A0", hash_generated_field = "36A2609728A36E5BA82D7C988AE5AE60")
-
 
         private final Map<String, ActivityResolveInfo> mPackageNameToActivityMap =
             new HashMap<String, ActivityResolveInfo>();
@@ -541,8 +528,6 @@ public void sort(Intent intent, List<ActivityResolveInfo> activities,
             }
         }
     }
-
-
     
     private final class HistoryLoader implements Runnable {
         
@@ -661,11 +646,8 @@ public void run() {
                 }
             }
         }
-
         
     }
-
-
     
     private final class HistoryPersister implements Runnable {
         
@@ -734,11 +716,8 @@ public void run() {
                 }
             }
         }
-
         
     }
-
-
     
     private final class DataModelPackageMonitor extends PackageMonitor {
         
@@ -785,29 +764,21 @@ public void run() {
                 loadActivitiesLocked();
             }
         }
-
         
     }
-
-
     
     public interface ActivityChooserModelClient {
-
         
         public void setActivityChooserModel(ActivityChooserModel dataModel);
     }
     
     public interface ActivitySorter {
-
-        
-        
         
         public void sort(Intent intent, List<ActivityResolveInfo> activities,
                 List<HistoricalRecord> historicalRecords);
     }
     
     public interface OnChooseActivityListener {
-
         
         public boolean onChooseActivity(ActivityChooserModel host, Intent intent);
     }
@@ -853,6 +824,7 @@ public ResolveInfo getDefaultActivity() {
      *
      * @param index The index of the activity to set as default.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.098 -0500", hash_original_method = "6293689B582FC8E5AF147BEE230A1B37", hash_generated_method = "E2FB95F92E3F33CB38D9AFC1C9D3C591")
     
 public void setDefaultActivity(int index) {

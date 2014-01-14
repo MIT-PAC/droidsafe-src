@@ -25,29 +25,20 @@ import java.util.Map;
 
 import libcore.io.Base64;
 
-
-
-
-
 class HttpURLConnectionImpl extends HttpURLConnection {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.477 -0500", hash_original_field = "47331465E462A0CF223A67E4F658AFC0", hash_generated_field = "FC0F8278C90053902D318AF538EA40AF")
-
 
     private  int defaultPort;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.479 -0500", hash_original_field = "CA775536D3A7F4013C2E9C464BE24463", hash_generated_field = "EE0BB8F1739D62A5A5C8EDF7D478A66B")
 
-
     private Proxy proxy;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.482 -0500", hash_original_field = "EEFFD738A722C43ED09048A0C45C67C3", hash_generated_field = "8901C38E8957C4A2EFEC6534B9EB9BEE")
-
 
     private final RawHeaders rawRequestHeaders = new RawHeaders();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.484 -0500", hash_original_field = "9A432EFC6EA3EB58D5A662A405B8695B", hash_generated_field = "EC2EBB12D4ECEAB53DC00655B16FEA0F")
 
-
     private int redirectionCount;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.487 -0500", hash_original_field = "75250CF3B6F9AA5DD6EB86C7BAD77367", hash_generated_field = "7A97BD477901CB40BE3809D713545FCF")
-
 
     protected IOException httpEngineFailure;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.489 -0500", hash_original_field = "04E98FAE9CC901E38788E48C2AC65903", hash_generated_field = "A09A97FB50D803FD23447464F21563B5")
@@ -527,6 +518,7 @@ final void setProxy(Proxy proxy) {
         return getResponse().getResponseCode();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.576 -0500", hash_original_method = "7F130ED52470D904C9FF4F495D6529EB", hash_generated_method = "403D82FE89DCF2C5B341CE7EB21CF163")
     
 @Override public final void setRequestProperty(String field, String newValue) {
@@ -550,14 +542,12 @@ final void setProxy(Proxy proxy) {
         }
         rawRequestHeaders.add(field, value);
     }
-
     
     enum Retry {
         NONE,
         SAME_CONNECTION,
         DIFFERENT_CONNECTION
     }
-
     
 }
 

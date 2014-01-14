@@ -1653,6 +1653,7 @@ SynchronizedList(List<E> l, Object mutex) {
             }
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.131 -0500", hash_original_method = "D9730991663FB8C206D80781B7E02750", hash_generated_method = "F8D877BF206629AEF738AF4CD20A042F")
         
 @Override public E set(int location, E object) {
@@ -1798,6 +1799,7 @@ SynchronizedMap(Map<K, V> map, Object mutex) {
             }
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.183 -0500", hash_original_method = "4BBBC2EF3E646AB7C0C1BFCAE8571FAF", hash_generated_method = "2834B9F60F50527FDA0558DE796BF617")
         
 @Override public V put(K key, V value) {
@@ -2373,6 +2375,7 @@ ListIterator<E> var69CB1B11F3ED0B0F805A4D48ECD2D84F_44794926 =             new L
             throw new UnsupportedOperationException();
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.433 -0500", hash_original_method = "8830E2F07CC294339D5D496574BCFA5E", hash_generated_method = "8291D01CC6A59A73201902EAF8AA4D02")
         
 @Override public E set(int location, E object) {
@@ -2609,6 +2612,7 @@ UnmodifiableMapEntry(Map.Entry<K, V> entry) {
                     return mapEntry.hashCode();
                 }
 
+                @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.486 -0500", hash_original_method = "3526712C126765AF36CB8D920CBD3B1B", hash_generated_method = "1A70B5EC05C2DF7DBCDADBB5D8559CD6")
                 
 @Override public V setValue(V object) {
@@ -2830,6 +2834,7 @@ SetFromMap(final Map<E, Boolean> map) {
             return backingSet.hashCode();
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.803 -0500", hash_original_method = "FC84A6CABB16433CF1488E03DF7636C8", hash_generated_method = "8DDDA451C4CCCFEA8D0F2746F31A2BBB")
         
 @Override public boolean add(E object) {
@@ -3230,6 +3235,7 @@ public CheckedListIterator(ListIterator<E> i, Class<E> type) {
             return i.previousIndex();
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.979 -0500", hash_original_method = "F06067E5C50A33BA33028ACBB7E94E5C", hash_generated_method = "43CADCC7D4B2D49DCBA57BFB83FA1235")
         
 @Override public void set(E obj) {
@@ -3276,6 +3282,7 @@ public CheckedList(List<E> l, Class<E> type) {
             return l.get(index);
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:51.002 -0500", hash_original_method = "B15A1B3ABEAB19644273A7FDAFDFF4C3", hash_generated_method = "1D3F1C6A064289EB39E10C16A4F32349")
         
 @Override public E set(int index, E obj) {
@@ -3428,6 +3435,7 @@ private CheckedMap(Map<K, V> m, Class<K> keyType, Class<V> valueType) {
             return m.get(key);
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:51.080 -0500", hash_original_method = "98010DFF1DD51631676FCAC604C1B694", hash_generated_method = "3041DFD14364761680A5739E13C9123D")
         
 @Override public V put(K key, V value) {
@@ -3528,6 +3536,7 @@ public CheckedEntry(Map.Entry<K, V> e, Class<V> valueType) {
                 return e.getValue();
             }
 
+            @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:51.123 -0500", hash_original_method = "22C63BC622BE9DF4D2BED624BDB5B6B5", hash_generated_method = "12D804BAA825C981C93D02C83F7B5DE8")
             
 @Override public V setValue(V obj) {

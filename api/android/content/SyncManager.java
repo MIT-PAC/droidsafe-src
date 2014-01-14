@@ -884,6 +884,7 @@ public ActiveSyncContext(SyncOperation syncOperation, long historyRowId,
             mSyncWakeLock.acquire();
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.912 -0500", hash_original_method = "7456DA1EA096E82DD762DA299B1797D3", hash_generated_method = "E0C9C354D05D8480CC9CFF615B9EE283")
         
 public void sendHeartbeat() {
@@ -900,6 +901,7 @@ public void onFinished(SyncResult result) {
             sendSyncFinishedOrCanceledMessage(this, result);
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.916 -0500", hash_original_method = "EB9B131EDBEF0858B3038B79ABC0948E", hash_generated_method = "65BC9C6CBDCC89E2ACB2A1A5A760883B")
         
 public void toString(StringBuilder sb) {
@@ -909,6 +911,7 @@ public void toString(StringBuilder sb) {
                     .append(", syncOperation ").append(mSyncOperation);
         }
 
+        @DSSink({DSSinkKind.SYNCHRONIZATION_DATA})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.919 -0500", hash_original_method = "CBDE36ABE821F23EF1CFAFB665E67134", hash_generated_method = "6DDC1D2CCCB7A9F82CC7F0BA854617A5")
         
 public void onServiceConnected(ComponentName name, IBinder service) {
@@ -2295,6 +2298,7 @@ void maybeRescheduleSync(SyncResult syncResult, SyncOperation operation) {
         }
     }
 
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.936 -0500", hash_original_method = "E59AB1EB4C672AE41E3C994B41A259B0", hash_generated_method = "460F19F4401C3E3FB1BFC2014B5B1EA3")
     
 protected void dump(FileDescriptor fd, PrintWriter pw) {
@@ -2308,6 +2312,7 @@ protected void dump(FileDescriptor fd, PrintWriter pw) {
         }
     }
 
+    @DSSink({DSSinkKind.SYNCHRONIZATION_DATA})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.944 -0500", hash_original_method = "A56698FB2481C281E3929C7135D64B8A", hash_generated_method = "E5C4EEF1BE5D0F7704B3D7B1C6A63106")
     
 protected void dumpSyncState(PrintWriter pw) {
@@ -2497,6 +2502,7 @@ private void dumpDayStatistic(PrintWriter pw, SyncStorageEngine.DayStats ds) {
         pw.println(")");
     }
 
+    @DSSink({DSSinkKind.SYNCHRONIZATION_DATA})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:33.953 -0500", hash_original_method = "47B1A67BEBB64EEFEE0789183294D0B7", hash_generated_method = "3DB271269F52E76FC8904419210514A5")
     
 protected void dumpSyncHistory(PrintWriter pw) {

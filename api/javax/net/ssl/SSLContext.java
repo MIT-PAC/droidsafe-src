@@ -13,11 +13,6 @@ import java.security.Security;
 
 import org.apache.harmony.security.fortress.Engine;
 
-
-
-
-
-
 public class SSLContext {
 
     /**
@@ -50,6 +45,7 @@ public static SSLContext getDefault() throws NoSuchAlgorithmException {
      * @throws NullPointerException on a null argument
      * @since 1.6
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.937 -0500", hash_original_method = "CD249DA83A6553D8042C3D056F14877E", hash_generated_method = "E1C154430A8D6939BA6AF42965804786")
     
 public static void setDefault(SSLContext sslContext) {
@@ -158,14 +154,11 @@ public static SSLContext getInstance(String protocol, Provider provider)
     private static SSLContext DEFAULT;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.947 -0500", hash_original_field = "70389BF55D92237F4948951640719A18", hash_generated_field = "2D84320E029EBF537A8555BC820086EF")
 
-
     private  Provider provider;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.950 -0500", hash_original_field = "CFEE11B24DA2F4BBB4EF246AF4DA8F53", hash_generated_field = "35670434E65BDBAFCC16200249E01B00")
 
-
     private  SSLContextSpi spiImpl;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.952 -0500", hash_original_field = "DE3F28962485CE99CA97D0A480B93596", hash_generated_field = "512C13BA7A4120A610964F395EA31E91")
-
 
     private  String protocol;
 

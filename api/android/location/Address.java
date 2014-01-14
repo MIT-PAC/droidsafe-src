@@ -13,17 +13,13 @@ import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public class Address implements Parcelable {
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.894 -0400", hash_original_field = "34AF13FB5BC8BAFBEC9B029562C77C94", hash_generated_field = "B4FB2F104B558E1CA23D02F180C08BB7")
 
     public static final Parcelable.Creator<Address> CREATOR =
         new Parcelable.Creator<Address>() {
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:57.040 -0500", hash_original_method = "9DD3D24D0AAD4627E69FB2E9DF778B8A", hash_generated_method = "9D04A4E818D392AFC2DFE4BD73D09C8E")
         
 public Address createFromParcel(Parcel in) {
@@ -81,10 +77,8 @@ public Address[] newArray(int size) {
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:56.897 -0500", hash_original_field = "D959780368C6CA232CF8C3906CDDEDF3", hash_generated_field = "1A21143DB168F6FB0629A178DF0F089E")
 
-
     private Locale mLocale;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:56.899 -0500", hash_original_field = "3AC35F1DC6C865760AE25027C922FC5A", hash_generated_field = "885B87E22D2EF7CC7C342A420B72EF3E")
-
 
     private String mFeatureName;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:56.902 -0500", hash_original_field = "945C593342AC1D9FF615087D26726968", hash_generated_field = "267F6B9285B603FF477C20775D29AA60")
@@ -195,6 +189,7 @@ public String getAddressLine(int index) {
      *
      * @throws IllegalArgumentException if index < 0
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:56.953 -0500", hash_original_method = "5C23144E8A22EAB5D8930884A1255DAC", hash_generated_method = "4D3DF28EF6A597356077D2CF7605F2A4")
     
 public void setAddressLine(int index, String line) {
@@ -583,6 +578,7 @@ public Bundle getExtras() {
      * Sets the extra information associated with this fix to the
      * given Bundle.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:57.033 -0500", hash_original_method = "0A734FEAEEC80691783BCF1D3384CC6B", hash_generated_method = "7B33C94C8485B596F89F9E6A5A10A83A")
     
 public void setExtras(Bundle extras) {

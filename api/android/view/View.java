@@ -898,6 +898,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:34.677 -0400", hash_original_field = "7ABCFD2CD0D4C099DC453E558FE85F44", hash_generated_field = "9AE8BCB9ADF5964753832A0E9C82085F")
 
     public static Property<View, Float> X = new FloatProperty<View>("x") {
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:39.049 -0500", hash_original_method = "942D12A2907E436F9DD2D5A3BB599D1C", hash_generated_method = "58EEA29A52AB55FD0A319AC1A4981BB0")
         
 @Override
@@ -916,6 +917,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:34.678 -0400", hash_original_field = "CFD3CAFD4126436BCB87BFC085957E57", hash_generated_field = "D23D2D01DF692E441C62FAF9235D2C1B")
 
     public static Property<View, Float> Y = new FloatProperty<View>("y") {
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:39.057 -0500", hash_original_method = "F66C6BF603238C3B745DBF80CCB68E15", hash_generated_method = "30D52918494E5F6F3D18D98456F775F0")
         
 @Override
@@ -934,6 +936,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:34.679 -0400", hash_original_field = "E56D0E5046417B3F74FFC7B03E80BE5C", hash_generated_field = "FB557AFE67B470E71F7C64EE24F6E3BE")
 
     public static Property<View, Float> ROTATION = new FloatProperty<View>("rotation") {
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:39.066 -0500", hash_original_method = "E4DD5C8F5E4B6A35D65B3372F3D8BFBA", hash_generated_method = "AE4BA9E4AFBBC3C25A5FEC6E2FF542B1")
         
 @Override
@@ -952,6 +955,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:34.679 -0400", hash_original_field = "E6B3F0C9E4238E32ABB7463CE9AD008B", hash_generated_field = "325BD964137AF15B5513B111B09E57AF")
 
     public static Property<View, Float> ROTATION_X = new FloatProperty<View>("rotationX") {
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:39.073 -0500", hash_original_method = "D8E97A391BF9703940D7A06280ABBB3F", hash_generated_method = "9FA0E5C33CB78B8A32D5F8047ADBF5BE")
         
 @Override
@@ -970,6 +974,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:34.681 -0400", hash_original_field = "E871DD5638C4B35E145FF614A448D053", hash_generated_field = "BA1634E8F9B2BA862DD6DB1E36053562")
 
     public static Property<View, Float> ROTATION_Y = new FloatProperty<View>("rotationY") {
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:39.082 -0500", hash_original_method = "CDE80AB2A44D5B173DB76AD6CA4559A4", hash_generated_method = "E3DBBF196E297FCB88541F466BEF0EAF")
         
 @Override
@@ -988,6 +993,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:34.682 -0400", hash_original_field = "D10E65978F70513DFF3F1897F968D4D2", hash_generated_field = "5F4C99EEC421BEF559C61A599C6B6AA3")
 
     public static Property<View, Float> SCALE_X = new FloatProperty<View>("scaleX") {
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:39.090 -0500", hash_original_method = "1B653DA1FDE36CFBF0835E42B933826F", hash_generated_method = "2AD70CF60BA8806F442FC59EDA433D46")
         
 @Override
@@ -1006,6 +1012,7 @@ public class View implements Drawable.Callback, Drawable.Callback2, KeyEvent.Cal
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:34.690 -0400", hash_original_field = "5ABACA635607E234A6DDA7D7BAA57212", hash_generated_field = "F34310CAD52C1DF136CCDA6F7447C004")
 
     public static Property<View, Float> SCALE_Y = new FloatProperty<View>("scaleY") {
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:39.100 -0500", hash_original_method = "1D5FE7CAB5F43F92B9050D214C28178E", hash_generated_method = "6084E431D1414DCAABED371757EA914A")
         
 @Override
@@ -1991,6 +1998,7 @@ ListenerInfo getListenerInfo() {
 		//Return nothing
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void sendAccessibilityEvent(int eventType){
 		// Original method
 		/*
@@ -2005,6 +2013,7 @@ ListenerInfo getListenerInfo() {
 		//Return nothing
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     void sendAccessibilityEventInternal(int eventType){
 		// Original method
 		/*
@@ -2017,6 +2026,7 @@ ListenerInfo getListenerInfo() {
 		//Return nothing
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void sendAccessibilityEventUnchecked(AccessibilityEvent event){
 		// Original method
 		/*
@@ -2280,6 +2290,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
 		return null;
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setScrollContainer(boolean isScrollContainer){
 		// Original method
 		/*
@@ -2311,6 +2322,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
 		return 0;
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setDrawingCacheQuality(int quality){
 		// Original method
 		/*
@@ -2331,6 +2343,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
 		return false;
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setKeepScreenOn(boolean keepScreenOn){
 		// Original method
 		/*
@@ -2488,6 +2501,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
 		return false;
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setFitsSystemWindows(boolean fitSystemWindows){
 		// Original method
 		/*
@@ -2519,7 +2533,8 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
 		return 0;
 	}
     
-	@RemotableViewMethod 
+	@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @RemotableViewMethod 
 	public void setVisibility(int visibility){
 		addTaint(visibility);
 		// Original method
@@ -2543,6 +2558,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
 		return false;
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @RemotableViewMethod 
 	public void setEnabled(boolean enabled){
 		// Original method
@@ -2557,6 +2573,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
 		//Return nothing
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setFocusable(boolean focusable){
 		// Original method
 		/*
@@ -2570,6 +2587,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
 		//Return nothing
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setFocusableInTouchMode(boolean focusableInTouchMode){
 		// Original method
 		/*
@@ -2583,6 +2601,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
 		//Return nothing
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setSoundEffectsEnabled(boolean soundEffectsEnabled){
 		// Original method
 		/*
@@ -2604,6 +2623,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
 		return false;
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setHapticFeedbackEnabled(boolean hapticFeedbackEnabled){
 		// Original method
 		/*
@@ -2636,6 +2656,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
 		return 0;
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @RemotableViewMethod 
 	public void setLayoutDirection(int layoutDirection){
 		// Original method
@@ -2674,6 +2695,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
 		return false;
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setWillNotDraw(boolean willNotDraw){
 		// Original method
 		/*
@@ -2695,6 +2717,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
 		return false;
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setWillNotCacheDrawing(boolean willNotCacheDrawing){
 		// Original method
 		/*
@@ -2727,6 +2750,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
 		return false;
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setClickable(boolean clickable){
 		// Original method
 		/*
@@ -2747,6 +2771,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
 		return false;
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setLongClickable(boolean longClickable){
 		// Original method
 		/*
@@ -2757,6 +2782,7 @@ public void setAccessibilityDelegate(AccessibilityDelegate delegate) {
 		//Return nothing
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setPressed(boolean pressed){
 		// Original method
 		/*
@@ -2805,6 +2831,7 @@ protected void dispatchSetPressed(boolean pressed) {
 		return false;
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setSaveEnabled(boolean enabled){
 		// Original method
 		/*
@@ -2826,6 +2853,7 @@ protected void dispatchSetPressed(boolean pressed) {
 		return false;
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setFilterTouchesWhenObscured(boolean enabled){
 		// Original method
 		/*
@@ -2847,6 +2875,7 @@ protected void dispatchSetPressed(boolean pressed) {
 		return false;
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setSaveFromParentEnabled(boolean enabled){
 		// Original method
 		/*
@@ -3919,6 +3948,7 @@ public boolean onGenericMotionEvent(MotionEvent event) {
 		return false;
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setHovered(boolean hovered){
 		// Original method
 		/*
@@ -4143,7 +4173,8 @@ protected void dispatchDraw(Canvas canvas) {
 		*/
 	}
     
-	public void setScrollX(int value){
+	@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    public void setScrollX(int value){
 	    addTaint(value);
 		// Original method
 		/*
@@ -4154,7 +4185,8 @@ protected void dispatchDraw(Canvas canvas) {
 		//Return nothing
 	}
     
-	public void setScrollY(int value){
+	@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    public void setScrollY(int value){
 		// Original method
 		/*
 		{
@@ -4333,6 +4365,7 @@ protected void dispatchDraw(Canvas canvas) {
 		return null;
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setCameraDistance(float distance){
 		// Original method
 		/*
@@ -4694,6 +4727,7 @@ protected void dispatchDraw(Canvas canvas) {
 		return 0;
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setX(float x){
 		// Original method
 		/*
@@ -4714,6 +4748,7 @@ protected void dispatchDraw(Canvas canvas) {
 		return 0;
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setY(float y){
 		// Original method
 		/*
@@ -6065,6 +6100,7 @@ AttachInfo(IWindowSession session, IWindow window,
             //Synthesized constructor
         }
         
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         public void sendAccessibilityEvent(View host, int eventType){
 			// Original method
 			/*
@@ -6075,6 +6111,7 @@ AttachInfo(IWindowSession session, IWindow window,
 			//Return nothing
 		}
         
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         public void sendAccessibilityEventUnchecked(View host, AccessibilityEvent event){
 			// Original method
 			/*
@@ -6372,6 +6409,7 @@ public void computeScroll() {
 		return false;
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setHorizontalFadingEdgeEnabled(boolean horizontalFadingEdgeEnabled){
 		// Original method
 		/*
@@ -6404,6 +6442,7 @@ public void computeScroll() {
 		return false;
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setVerticalFadingEdgeEnabled(boolean verticalFadingEdgeEnabled){
 		// Original method
 		/*
@@ -6471,6 +6510,7 @@ public void computeScroll() {
 		return false;
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setHorizontalScrollBarEnabled(boolean horizontalScrollBarEnabled){
 		// Original method
 		/*
@@ -6495,6 +6535,7 @@ public void computeScroll() {
 		return false;
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setVerticalScrollBarEnabled(boolean verticalScrollBarEnabled){
 		// Original method
 		/*
@@ -6546,6 +6587,7 @@ public void computeScroll() {
 		return false;
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setScrollBarStyle(int style){
 		// Original method
 		/*
@@ -6991,6 +7033,7 @@ protected void onDraw(Canvas canvas) {
 		return 0;
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setDuplicateParentStateEnabled(boolean enabled){
 		// Original method
 		/*
@@ -7096,6 +7139,7 @@ protected void onDraw(Canvas canvas) {
 		//Return nothing
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setDrawingCacheEnabled(boolean enabled){
 		// Original method
 		/*
@@ -7402,6 +7446,7 @@ protected int getBottomPaddingOffset() {
 		return false;
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void draw(Canvas canvas){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -7637,6 +7682,7 @@ public final int[] getDrawableState() {
 		//Return nothing
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @RemotableViewMethod 
 	public void setBackgroundColor(int color){
 		// Original method
@@ -7652,6 +7698,7 @@ public final int[] getDrawableState() {
 		//Return nothing
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @RemotableViewMethod 
 	public void setBackgroundResource(int resid){
 		addTaint(resid);
@@ -7895,7 +7942,8 @@ public Drawable getBackground() {
 		*/
 	}
     
-	public void setSelected(boolean selected){
+	@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    public void setSelected(boolean selected){
 	    addTaint(selected); 
 		// Original method
 		/*
@@ -7934,7 +7982,8 @@ protected void dispatchSetSelected(boolean selected) {
 		return false;
 	}
     
-	public void setActivated(boolean activated){
+	@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    public void setActivated(boolean activated){
 	    addTaint(activated);
 	}
 
@@ -8153,6 +8202,7 @@ protected void dispatchSetActivated(boolean activated) {
 		//Return nothing
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setIsRootNamespace(boolean isRoot){
 		// Original method
 		/*
@@ -8242,6 +8292,7 @@ public void setTag(final Object tag) {
 		//Return nothing
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setTagInternal(int key, Object tag){
 		setKeyedTag(key, tag);
 		// Original method
@@ -8565,6 +8616,7 @@ protected boolean onSetAlpha(int alpha) {
 		//Return nothing
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public boolean performHapticFeedback(int feedbackConstant){
 		// Original method
 		/*
@@ -8575,6 +8627,7 @@ protected boolean onSetAlpha(int alpha) {
 		return false;
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public boolean performHapticFeedback(int feedbackConstant, int flags){
 		// Original method
 		/*
@@ -8858,6 +8911,7 @@ protected void onOverScrolled(int scrollX, int scrollY,
 		*/
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setTextDirection(int textDirection){
 		// Original method
 		/*

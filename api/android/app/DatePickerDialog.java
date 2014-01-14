@@ -15,14 +15,8 @@ import android.widget.DatePicker.OnDateChangedListener;
 
 import com.android.internal.R;
 
-
-
-
-
-
 public class DatePickerDialog extends AlertDialog implements OnClickListener, OnDateChangedListener {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:12.096 -0500", hash_original_field = "B7AA87D32B28FE478384212C097AD19C", hash_generated_field = "715BF2B6EED4C3FE3E86E3A39D84F985")
-
 
     private static final String YEAR = "year";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:12.098 -0500", hash_original_field = "9F0A6B6AAD4D53826F6C9703A75F40C4", hash_generated_field = "C2C6B9A79A0675D8FE71673F79432CD1")
@@ -32,7 +26,6 @@ public class DatePickerDialog extends AlertDialog implements OnClickListener, On
 
     private static final String DAY = "day";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:12.103 -0500", hash_original_field = "20EE245A73140962C286D6A7892043E8", hash_generated_field = "05F9D0F5474453E7C5E8E716C553678E")
-
 
     private  DatePicker mDatePicker;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:12.105 -0500", hash_original_field = "48507B2C122CE1DA71AAD77532BFB39C", hash_generated_field = "931F1F97D88ABEED90A7F56976F06E7A")
@@ -117,10 +110,8 @@ public void onDateChanged(DatePicker view, int year,
 public DatePicker getDatePicker() {
         return mDatePicker;
     }
-
     
     public interface OnDateSetListener {
-
         
         void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth);
     }
@@ -132,6 +123,7 @@ public DatePicker getDatePicker() {
      * @param monthOfYear The date month.
      * @param dayOfMonth The date day of month.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:12.121 -0500", hash_original_method = "4D6EF653FEC320B1F3AFFECE700796E5", hash_generated_method = "C64DE5D357B4A8FF089E462A3F4CCD17")
     
 public void updateDate(int year, int monthOfYear, int dayOfMonth) {

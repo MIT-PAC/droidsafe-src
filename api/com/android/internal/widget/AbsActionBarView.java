@@ -20,18 +20,11 @@ import com.android.internal.R;
 import com.android.internal.view.menu.ActionMenuPresenter;
 import com.android.internal.view.menu.ActionMenuView;
 
-
-
-
-
-
 public abstract class AbsActionBarView extends ViewGroup {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:41.235 -0500", hash_original_field = "D03B4416DFABD1105B6C0533A6AC7D12", hash_generated_field = "8547110952636D9B94C38943E41DDC94")
 
-
     private static final TimeInterpolator sAlphaInterpolator = new DecelerateInterpolator();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:41.238 -0500", hash_original_field = "0217F77CCFC1C8AF37A39627A6C46858", hash_generated_field = "2297CD97C5AD861EDC516998785F45D4")
-
 
     private static final int FADE_DURATION = 200;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:41.216 -0500", hash_original_field = "C5D24CAE9D499645E662279CCDBCBFED", hash_generated_field = "7B14B552DB0C79CBA209909A2B52BF74")
@@ -53,7 +46,6 @@ public abstract class AbsActionBarView extends ViewGroup {
 
     protected int mContentHeight;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:41.230 -0500", hash_original_field = "45C08F827C667A6DCF7969318A42238E", hash_generated_field = "9B230B482D363407A6E2031086F40952")
-
 
     protected Animator mVisibilityAnim;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:41.233 -0500", hash_original_field = "90445405F42A5D20F9DDEB82807E1550", hash_generated_field = "2572558D73FCEA5CB5F54CEC528FD58F")
@@ -195,6 +187,7 @@ public void animateToVisibility(int visibility) {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:41.267 -0500", hash_original_method = "E3FDA7CA05E815669691C5C9F461C174", hash_generated_method = "7507F82342AEE21992A70367745836D1")
     
 @Override
@@ -268,7 +261,6 @@ protected int measureChildView(View child, int availableWidth, int childSpecHeig
 
         return Math.max(0, availableWidth);
     }
-
     
     protected class VisibilityAnimListener implements Animator.AnimatorListener {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:41.293 -0500", hash_original_field = "88E0F93494857DA513393E07912CD8CE", hash_generated_field = "67D6DA73468F2D6E84B945FD38F1CC1D")
@@ -325,7 +317,6 @@ public VisibilityAnimListener withFinalVisibility(int visibility) {
 @Override
         public void onAnimationRepeat(Animator animation) {
         }
-
         
     }
 

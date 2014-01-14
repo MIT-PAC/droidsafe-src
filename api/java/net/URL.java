@@ -456,6 +456,7 @@ public final Object getContent() throws IOException {
     /**
      * Equivalent to {@code openConnection().getInputStream(types)}.
      */
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.814 -0500", hash_original_method = "EA6B256CF4DB87F83CFE1379BEA78831", hash_generated_method = "20204A59BCA9CBCE334EE2309DE1C2D7")
     
 public final InputStream openStream() throws IOException {
@@ -467,6 +468,7 @@ public final InputStream openStream() throws IOException {
      *
      * @throws IOException if an error occurs while opening the connection.
      */
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.817 -0500", hash_original_method = "DDCF57687ACF51357E563F1083DC4261", hash_generated_method = "28C15B77EC7816C10902E4F13397C53B")
     
 public URLConnection openConnection() throws IOException {

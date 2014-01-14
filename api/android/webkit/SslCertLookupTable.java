@@ -10,10 +10,6 @@ import java.net.URL;
 import android.net.http.SslError;
 import android.os.Bundle;
 
-
-
-
-
 final class SslCertLookupTable {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.931 -0500", hash_original_method = "CD6DF52A90A28734AE0DB5D95ED8CB7E", hash_generated_method = "7710C9504BE0F8C0A11727C58728E8B2")
@@ -37,6 +33,7 @@ private SslCertLookupTable() {
         table = new Bundle();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.936 -0500", hash_original_method = "D1D349299054A2A05843F53D2271E3F3", hash_generated_method = "E561224C57EB1B8CF63C7D6BC20B2C9C")
     
 public void setIsAllowed(SslError sslError) {

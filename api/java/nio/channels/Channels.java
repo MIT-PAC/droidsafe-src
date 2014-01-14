@@ -19,10 +19,6 @@ import java.nio.charset.CharsetEncoder;
 
 import libcore.io.Streams;
 
-
-
-
-
 public final class Channels {
 
     /**
@@ -212,11 +208,9 @@ static void checkBlocking(Channel channel) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.581 -0500", hash_original_method = "E5756BC98BED6794F2A2668CF27D9D40", hash_generated_method = "660D69849027ABCF1F216F5B02F3F5DA")
     
 private Channels() {}
-
     
     private static class ChannelInputStream extends InputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.606 -0500", hash_original_field = "55F1DC48D55A0A6FC4EA670FAAD152FE", hash_generated_field = "CAD34F506A7F52021B790F3A2404CE8C")
-
 
         private  ReadableByteChannel channel;
 
@@ -261,15 +255,11 @@ ChannelInputStream(ReadableByteChannel channel) {
         public synchronized void close() throws IOException {
             channel.close();
         }
-
         
     }
-
-
     
     private static class ChannelOutputStream extends OutputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.628 -0500", hash_original_field = "4CFEECC14753EB27873B0258AB92EF63", hash_generated_field = "F18845F3B98BBBDA823B047CD34AFB03")
-
 
         private  WritableByteChannel channel;
 
@@ -290,6 +280,7 @@ ChannelOutputStream(WritableByteChannel channel) {
             write(wrappedByte);
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.637 -0500", hash_original_method = "BF3010B4A99B9EE523BF774883EC19AF", hash_generated_method = "4D16EB7F001ED787EAEAEADF10DB0A28")
         
 @Override
@@ -308,11 +299,8 @@ ChannelOutputStream(WritableByteChannel channel) {
         public synchronized void close() throws IOException {
             channel.close();
         }
-
         
     }
-
-
     
     private static class InputStreamChannel extends AbstractInterruptibleChannel implements ReadableByteChannel {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.647 -0500", hash_original_field = "219F81106B069BE15533E4B7BAC5527C", hash_generated_field = "92444C781A1F5D159CDAA9528EFB69D8")
@@ -355,11 +343,8 @@ public synchronized int read(ByteBuffer target) throws IOException {
         protected void implCloseChannel() throws IOException {
             inputStream.close();
         }
-
         
     }
-
-
     
     private static class OutputStreamChannel extends AbstractInterruptibleChannel implements WritableByteChannel {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.661 -0500", hash_original_field = "661AC26F0CF33AB40D90D727DEB87E17", hash_generated_field = "765C7DA707EC84D85188E77508C6D245")
@@ -375,6 +360,7 @@ OutputStreamChannel(OutputStream outputStream) {
             this.outputStream = outputStream;
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.667 -0500", hash_original_method = "F8CFBFA38C000301E03B217F2F97CA8F", hash_generated_method = "4AF989810D5B85B30F3380D1C2BB8FCA")
         
 public synchronized int write(ByteBuffer source) throws IOException {
@@ -402,11 +388,8 @@ public synchronized int write(ByteBuffer source) throws IOException {
         protected void implCloseChannel() throws IOException {
             outputStream.close();
         }
-
         
     }
-
-
     
 }
 

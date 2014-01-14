@@ -62,7 +62,8 @@ public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:27.931 -0500", hash_original_method = "02C6507D074497BF089DBAA331A24342", hash_generated_method = "3F1BE24B973E1941CBE8ACB290B88E74")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:27.931 -0500", hash_original_method = "02C6507D074497BF089DBAA331A24342", hash_generated_method = "3F1BE24B973E1941CBE8ACB290B88E74")
             
 public void updateAppWidget(int appWidgetId, android.widget.RemoteViews views) throws android.os.RemoteException
 {
@@ -83,7 +84,8 @@ finally {
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:27.935 -0500", hash_original_method = "F49E6ECAC7A22BF94D71C102CF2E2AA9", hash_generated_method = "E35BEC16CF8F2F023013AA6F7320BC54")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:27.935 -0500", hash_original_method = "F49E6ECAC7A22BF94D71C102CF2E2AA9", hash_generated_method = "E35BEC16CF8F2F023013AA6F7320BC54")
             
 public void providerChanged(int appWidgetId, android.appwidget.AppWidgetProviderInfo info) throws android.os.RemoteException
 {
@@ -104,7 +106,8 @@ finally {
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:27.938 -0500", hash_original_method = "3620FD325E02E952B3478FFE0DA55A21", hash_generated_method = "677E08CB6361B22A04D03C98EEA91683")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:27.938 -0500", hash_original_method = "3620FD325E02E952B3478FFE0DA55A21", hash_generated_method = "677E08CB6361B22A04D03C98EEA91683")
             
 public void viewDataChanged(int appWidgetId, int viewId) throws android.os.RemoteException
 {

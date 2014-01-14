@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 
-
-
-
-
-
 public class Finished extends Message {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:13.973 -0500", hash_original_field = "B330DF564CD90A5498A9E4F0AB344BB9", hash_generated_field = "BCB00A81B11593F3A75239028B6E65B9")
 
@@ -45,6 +40,7 @@ public Finished(HandshakeIODataStream in, int length)
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:13.981 -0500", hash_original_method = "E175A61E2BD704850DF6197D24D9CB45", hash_generated_method = "A1FF488ACA6CA47BF13EC1B0997CD8ED")
     
 @Override
@@ -72,7 +68,6 @@ public Finished(HandshakeIODataStream in, int length)
 public byte[] getData() {
         return data;
     }
-
     
 }
 

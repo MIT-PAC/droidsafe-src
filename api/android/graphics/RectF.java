@@ -148,10 +148,12 @@ public RectF() {}
     	addTaint(bottom);  
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void set(RectF src) {
     	addTaint(src.getTaint());
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void set(Rect src) {
     	addTaint(src.left);
     	addTaint(src.top);
@@ -336,6 +338,7 @@ public boolean intersect(RectF r) {
      *              this rectangle to that intersection. If they do not, return
      *              false and do not change this rectangle.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.921 -0500", hash_original_method = "798EF6BEBDE27EE5C0F4552CB6C0BADF", hash_generated_method = "2AF3213ACBAE2E61B84DD66231F68225")
     
 public boolean setIntersect(RectF a, RectF b) {

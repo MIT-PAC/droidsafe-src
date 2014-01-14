@@ -13,10 +13,7 @@ import java.util.ListIterator;
 
 import javax.sip.header.ExtensionHeader;
 
-
-
 public class PChargingFunctionAddresses extends gov.nist.javax.sip.header.ParametersHeader implements PChargingFunctionAddressesHeader, SIPHeaderNamesIms, ExtensionHeader {
-
 
     // TODO: serialVersionUID
 
@@ -55,6 +52,7 @@ protected String encodeBody() {
      * @param ccfAddress - the address to set in the CCF parameter
      * @throws ParseException
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:58.508 -0500", hash_original_method = "04146A3594153EB2EF0E88997B90AD38", hash_generated_method = "C700A3AD4CD92E6DEBD6737A1995ACE4")
     
 public void setChargingCollectionFunctionAddress(String ccfAddress) throws ParseException {
@@ -146,6 +144,7 @@ public ListIterator getChargingCollectionFunctionAddresses() {
      * @param ecfAddress - the address to set in the ECF parameter
      * @throws ParseException
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:58.522 -0500", hash_original_method = "E0FB708D70424943E5DFB76554EEFAC9", hash_generated_method = "6F808E4ECFAF495ADBC0E2678B1E7E9E")
     
 public void setEventChargingFunctionAddress(String ecfAddress) throws ParseException {
@@ -259,13 +258,13 @@ public boolean delete(String value, String name) {
 
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:58.540 -0500", hash_original_method = "4B92A49D74A1215E0C3EC12D290AF61B", hash_generated_method = "014FE50D8A9A4F50DCF1C9E31F934432")
     
 public void setValue(String value) throws ParseException {
         throw new ParseException ( value,0);
 
     }
-
     
 }
 

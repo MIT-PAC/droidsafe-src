@@ -14,10 +14,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-
-
-
-
 public class SimpleAdapter extends BaseAdapter implements Filterable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:44.310 -0500", hash_original_field = "51C70736F499787D82D1093BC908680A", hash_generated_field = "4C75B27E9A59CA7EBF688E20590B2441")
 
@@ -30,10 +26,8 @@ public class SimpleAdapter extends BaseAdapter implements Filterable {
     private ViewBinder mViewBinder;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:44.317 -0500", hash_original_field = "97A1765CFE78F9833BEBE08C51CB5132", hash_generated_field = "6074598C0E32C4907A625F2379246095")
 
-
     private List<? extends Map<String, ?>> mData;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:44.320 -0500", hash_original_field = "803A97A9A69A64DC7CFAABA01F910CD8", hash_generated_field = "6ED56B37E58621AEB8D63CC1C5EA1E67")
-
 
     private int mResource;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:44.322 -0500", hash_original_field = "20C2241273ABB539644EF14C80A7B539", hash_generated_field = "605FFB4549B20BAE4E7EBD72916F9C8F")
@@ -43,7 +37,6 @@ public class SimpleAdapter extends BaseAdapter implements Filterable {
 
     private LayoutInflater mInflater;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:44.326 -0500", hash_original_field = "649E243894B5316B03CC65ACB768B90D", hash_generated_field = "E07CA12DC71BDAAC40179802990B419F")
-
 
     private SimpleFilter mFilter;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:44.328 -0500", hash_original_field = "532C0ED5F1519CD4ACF3A7742BC36137", hash_generated_field = "4184788CAB453C820B908EB1BFD2CAF1")
@@ -75,7 +68,6 @@ public SimpleAdapter(Context context, List<? extends Map<String, ?>> data,
         mTo = to;
         mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
-
     
     /**
      * @see android.widget.Adapter#getCount()
@@ -247,6 +239,7 @@ public void setViewBinder(ViewBinder viewBinder) {
      *
      * @see #setViewImage(ImageView, String)
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:44.355 -0500", hash_original_method = "8236568D142C0CAA775378341E7BB8F7", hash_generated_method = "F0D35AB2B8AAE27CA82AD7D7A545D22D")
     
 public void setViewImage(ImageView v, int value) {
@@ -270,6 +263,7 @@ public void setViewImage(ImageView v, int value) {
      *
      * @see #setViewImage(ImageView, int) 
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:44.357 -0500", hash_original_method = "31A5526470C992FDAE212BFFA88B0730", hash_generated_method = "A3BA9232B932A48C4241116FDADFE82E")
     
 public void setViewImage(ImageView v, String value) {
@@ -288,6 +282,7 @@ public void setViewImage(ImageView v, String value) {
      * @param v TextView to receive text
      * @param text the text to be set for the TextView
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:44.360 -0500", hash_original_method = "5AA8DD17AC94ADB8D267F5D4267EA13E", hash_generated_method = "78A796D1AAAB9527A328641E2AF2A0ED")
     
 public void setViewText(TextView v, String text) {
@@ -302,7 +297,6 @@ public Filter getFilter() {
         }
         return mFilter;
     }
-
     
     private class SimpleFilter extends Filter {
         
@@ -377,11 +371,8 @@ public Filter getFilter() {
                 notifyDataSetInvalidated();
             }
         }
-
         
     }
-
-
     
     public static interface ViewBinder {
         

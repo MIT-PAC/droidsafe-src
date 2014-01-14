@@ -17,14 +17,8 @@ import org.apache.http.io.SessionOutputBuffer;
 import org.apache.http.params.HttpConnectionParams;
 import org.apache.http.params.HttpParams;
 
-
-
-
-
-
 public class SocketHttpClientConnection extends AbstractHttpClientConnection implements HttpInetConnection {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.684 -0500", hash_original_field = "B4185B849AB8251A0F1052DF377DB9A2", hash_generated_field = "F8642D5396CC441E503E603D20259781")
-
 
     private volatile boolean open;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.686 -0500", hash_original_field = "E7F90F41B90C8A055F53F64B106EF2DC", hash_generated_field = "9FD10C539AD3B0FAAA147E92379F8AC8")
@@ -146,6 +140,7 @@ public int getRemotePort() {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.718 -0500", hash_original_method = "1060FB10CE7965802AECEE442A1DB6DF", hash_generated_method = "EE9131719BF4079CA96A25DB7FDB04A8")
     
 public void setSocketTimeout(int timeout) {
@@ -207,7 +202,6 @@ public void close() throws IOException {
         }
         this.socket.close();
     }
-
     
 }
 

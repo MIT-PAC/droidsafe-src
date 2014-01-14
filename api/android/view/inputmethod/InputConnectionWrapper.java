@@ -7,7 +7,6 @@ import droidsafe.annotations.*;
 import android.os.Bundle;
 import android.view.KeyEvent;
 
-
 public class InputConnectionWrapper implements InputConnection {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.061 -0500", hash_original_field = "8E3195515492BEAAB35BF3AB9AAAADC5", hash_generated_field = "151AD6A9E57045A4F9C7E4BD9FA7D17C")
 
@@ -77,6 +76,7 @@ public boolean setComposingText(CharSequence text, int newCursorPosition) {
         return mTarget.setComposingText(text, newCursorPosition);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.088 -0500", hash_original_method = "EB3F6672BEE71C12075AAA6BA4DB02F1", hash_generated_method = "6831CD4CB1CA4BCA457784819D25BE93")
     
 public boolean setComposingRegion(int start, int end) {
@@ -107,18 +107,21 @@ public boolean commitCorrection(CorrectionInfo correctionInfo) {
         return mTarget.commitCorrection(correctionInfo);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.101 -0500", hash_original_method = "E434BE133364C8C6947501760AA1AA25", hash_generated_method = "73BAC84DD77B212DB9DF8D8A206712C1")
     
 public boolean setSelection(int start, int end) {
         return mTarget.setSelection(start, end);
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.103 -0500", hash_original_method = "557B358548051EB41CD67FF4BAC9B39C", hash_generated_method = "F2DCE21E89D66883ED3205B6E14F9F15")
     
 public boolean performEditorAction(int editorAction) {
         return mTarget.performEditorAction(editorAction);
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.105 -0500", hash_original_method = "7FAFD46A8306525DB41EEE6E5B575235", hash_generated_method = "53A7C69D7D45FBC5EEDAE3424F060D0A")
     
 public boolean performContextMenuAction(int id) {
@@ -137,6 +140,7 @@ public boolean endBatchEdit() {
         return mTarget.endBatchEdit();
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.113 -0500", hash_original_method = "9D024620F1B53C75FE915B021E654688", hash_generated_method = "420AC69BA51E4382179CE23BC1D8364F")
     
 public boolean sendKeyEvent(KeyEvent event) {
@@ -155,12 +159,12 @@ public boolean reportFullscreenMode(boolean enabled) {
         return mTarget.reportFullscreenMode(enabled);
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.120 -0500", hash_original_method = "E30515F5F44630827F2EF8B8A6D02C04", hash_generated_method = "813CC442176AC2FCDF5D27D20ECA5D63")
     
 public boolean performPrivateCommand(String action, Bundle data) {
         return mTarget.performPrivateCommand(action, data);
     }
-
     
 }
 

@@ -19,11 +19,6 @@ import org.apache.harmony.security.asn1.ASN1SequenceOf;
 import org.apache.harmony.security.asn1.ASN1Type;
 import org.apache.harmony.security.asn1.BerInputStream;
 
-
-
-
-
-
 public final class Extensions {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:58.363 -0500", hash_original_field = "42FA37BFAF84C72CF9A38391C49666CB", hash_generated_field = "2D002C30AF2816E4CD220F420C40FBAD")
 
@@ -162,7 +157,6 @@ public Extension getExtensionByOID(String oid) {
         }
         return oidMap.get(oid);
     }
-
 
     /**
      * Returns the value of Key Usage extension (OID == 2.5.29.15).
@@ -363,6 +357,7 @@ public byte[] getEncoded() {
         return hashCode;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:58.420 -0500", hash_original_method = "F4C0EB00BC61B6C3C716F9B41C861C66", hash_generated_method = "7B715A5ACF42267C6A1209C88309010A")
     
 public void dumpValue(StringBuilder sb, String prefix) {

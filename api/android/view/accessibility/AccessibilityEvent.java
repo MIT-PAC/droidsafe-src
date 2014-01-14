@@ -254,6 +254,7 @@ void init(AccessibilityEvent event) {
      *
      * @hide
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.438 -0500", hash_original_method = "86DBA4ADDEC94CD24AE35AA90BF3A59E", hash_generated_method = "D50929EA929BCFE290769089BEBD4ACA")
     
 @Override
@@ -483,6 +484,7 @@ private void readAccessibilityRecordFromParcel(AccessibilityRecord record,
     /**
      * {@inheritDoc}
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.480 -0500", hash_original_method = "B3703ED8E89F0F725D62C7A182783343", hash_generated_method = "BCC25B3EEEEC0FB4DC4379EC2C8F6FEC")
     
 public void writeToParcel(Parcel parcel, int flags) {

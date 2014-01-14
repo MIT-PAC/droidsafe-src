@@ -208,6 +208,7 @@ public ActivityChooserView(Context context, AttributeSet attrs, int defStyle) {
     /**
      * {@inheritDoc}
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.870 -0500", hash_original_method = "200277448D26D5459B7D9186C5FC6866", hash_generated_method = "7CA8C25435FCB0A49E836568E8AAB8C5")
     
 public void setActivityChooserModel(ActivityChooserModel dataModel) {
@@ -229,6 +230,7 @@ public void setActivityChooserModel(ActivityChooserModel dataModel) {
      *
      * @param drawable The drawable.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.872 -0500", hash_original_method = "40C8CFBBBEC7CE8C6DC800BBA1A8260F", hash_generated_method = "7E55EEEF5F724AD763B80D49887231E9")
     
 public void setExpandActivityOverflowButtonDrawable(Drawable drawable) {
@@ -245,6 +247,7 @@ public void setExpandActivityOverflowButtonDrawable(Drawable drawable) {
      *
      * @param resourceId The content description resource id.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.874 -0500", hash_original_method = "0A5827A88A56386A8A69EC0550F49C43", hash_generated_method = "2828483A0CF08B7BEA13658480E18851")
     
 public void setExpandActivityOverflowButtonContentDescription(int resourceId) {

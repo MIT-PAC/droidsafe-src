@@ -11,12 +11,7 @@ import java.util.Collections;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public class WifiP2pDeviceList implements Parcelable {
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.656 -0400", hash_original_field = "4A218AAA8D9C30DA3D56C41E5779AA21", hash_generated_field = "028C774B60D3FC71D12C3B348A35124D")
 
@@ -41,7 +36,6 @@ public WifiP2pDeviceList[] newArray(int size) {
             }
         };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:02.228 -0500", hash_original_field = "0B43936F54F5CCBEECBA55FA194F2046", hash_generated_field = "DD90A9525404352AE853B3D0A4AC59A5")
-
 
     private Collection<WifiP2pDevice> mDevices;
 
@@ -80,6 +74,7 @@ public boolean clear() {
     }
 
     /** @hide */
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:02.240 -0500", hash_original_method = "FB31C2BA18EF767553E65099D683D802", hash_generated_method = "3CEA99DED796B4CF76FEBC133686A879")
     
 public void update(WifiP2pDevice device) {
@@ -133,6 +128,7 @@ public int describeContents() {
     }
 
     /** Implement the Parcelable interface */
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:02.250 -0500", hash_original_method = "55D2541614C0B12A14CA5FB457FCECCC", hash_generated_method = "E3296A84D34378A59883AF21A1FFDE05")
     
 public void writeToParcel(Parcel dest, int flags) {

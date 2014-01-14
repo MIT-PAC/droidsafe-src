@@ -7,12 +7,7 @@ import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public class ScanResult implements Parcelable {
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:21.924 -0400", hash_original_field = "680517245A246D643DCA76FD0591B0C1", hash_generated_field = "0B6E8115881E2F7154B7AD5C086C74FA")
 
@@ -99,6 +94,7 @@ public int describeContents() {
     }
 
     /** Implement the Parcelable interface {@hide} */
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:06.199 -0500", hash_original_method = "8ED27770F672F68987FCE9C19DB9995F", hash_generated_method = "CAFE51F751BF21DDDEB9DF3276CB258D")
     
 public void writeToParcel(Parcel dest, int flags) {

@@ -7,11 +7,6 @@ import droidsafe.annotations.*;
 import java.io.IOException;
 import java.nio.channels.ServerSocketChannel;
 
-
-
-
-
-
 public class ServerSocket {
 
     /**
@@ -38,18 +33,14 @@ public static synchronized void setSocketFactory(SocketImplFactory aFactory) thr
     private static final int DEFAULT_BACKLOG = 50;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.823 -0500", hash_original_field = "D13BB32EBB2361D82290016DAD496DC0", hash_generated_field = "10D4EEC45D11B59A6B6543CD9427385B")
 
-
     static SocketImplFactory factory;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.818 -0500", hash_original_field = "76382137C184A183F2BF2D8583A90AEC", hash_generated_field = "E5435F593B4B4C544AAC5D578CFF6639")
-
 
     private  SocketImpl impl;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.825 -0500", hash_original_field = "B2E2EDC9404AD10BB9AF0AC0088343DD", hash_generated_field = "C0B93BC213B673FF2E47783C561E2823")
 
-
     private boolean isBound;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.828 -0500", hash_original_field = "FF1318BD7B381B7887A6EEC627EFEF6C", hash_generated_field = "61C76B683BBEFCB5006250611D355A94")
-
 
     private boolean isClosed;
 
@@ -251,6 +242,7 @@ protected final void implAccept(Socket aSocket) throws IOException {
      * @throws SocketException
      *             if an error occurs while setting the option.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.863 -0500", hash_original_method = "E2A5F03981AB4BF932E59A553E83FA6F", hash_generated_method = "D11FFBB6E24AFF767E7A4AB1B4A07FDB")
     
 public synchronized void setSoTimeout(int timeout) throws SocketException {
@@ -299,6 +291,7 @@ public synchronized void setSoTimeout(int timeout) throws SocketException {
      *             if the socket is already bound or a problem occurs during
      *             binding.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.868 -0500", hash_original_method = "AB1F91AE5F8F2B3C00C4EDCF73D5B4D1", hash_generated_method = "6D8A600A2BA5C00245EE3BF986AC0850")
     
 public void bind(SocketAddress localAddr) throws IOException {
@@ -318,6 +311,7 @@ public void bind(SocketAddress localAddr) throws IOException {
      * @throws IOException if the socket is already bound or a problem occurs
      *     during binding.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.871 -0500", hash_original_method = "684D242B2EA0BE4D55F437B908E9CC5D", hash_generated_method = "EAC39C6E1A8A8AE1A6C52CDDCAC68D6A")
     
 public void bind(SocketAddress localAddr, int backlog) throws IOException {
@@ -405,6 +399,7 @@ private void checkOpen() throws SocketException {
      * @throws SocketException
      *             if an error occurs while setting the option value.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.883 -0500", hash_original_method = "D6CD69E67882E49578E557811A0FC457", hash_generated_method = "F94F3DC09B3E131C2F7D5BA39FFC9336")
     
 public void setReuseAddress(boolean reuse) throws SocketException {
@@ -429,6 +424,7 @@ public boolean getReuseAddress() throws SocketException {
     /**
      * Sets this socket's {@link SocketOptions#SO_SNDBUF receive buffer size}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.888 -0500", hash_original_method = "4A5F0E88940F2B7162C81724AB1FDFE4", hash_generated_method = "C87F3412CD4ADAA1F2B4D2E022D7A397")
     
 public void setReceiveBufferSize(int size) throws SocketException {
@@ -475,6 +471,7 @@ public ServerSocketChannel getChannel() {
      * @param bandwidth
      *            the value representing the importance of high bandwidth.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.896 -0500", hash_original_method = "EE4DCDA11944F25F3B6AAA6A92D8AD2F", hash_generated_method = "F246F8DA4A0CBB54D188217F5E7B1DB3")
     
 public void setPerformancePreferences(int connectionTime, int latency, int bandwidth) {

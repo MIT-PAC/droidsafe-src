@@ -14,13 +14,8 @@ import android.os.Looper;
 import android.os.Message;
 import android.util.Log;
 
-
-
-
-
 public class StateMachine {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:47.233 -0500", hash_original_field = "9FD3B607C2F334E98D8FA0A2E04D6217", hash_generated_field = "CAD0D1AF78117508D5FE12695CB44B34")
-
 
     private static final String TAG = "StateMachine";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:47.238 -0500", hash_original_field = "D48849132123F15BD2EBE411A629A314", hash_generated_field = "2DF10E3674476E7DE2945B0A711F8281")
@@ -39,7 +34,6 @@ public class StateMachine {
 
     private String mName;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:47.459 -0500", hash_original_field = "5E9C641411F0CE80B07D05D82577ED91", hash_generated_field = "8DC42536419669DDCF0A80F5D8F0EF49")
-
 
     private SmHandler mSmHandler;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:47.462 -0500", hash_original_field = "C68060FB502E47D48982B3171A8CC95B", hash_generated_field = "60795A86AEB0DA28C5A6A37DF9379911")
@@ -183,7 +177,6 @@ protected final void transitionToHaltingState() {
 protected final void deferMessage(Message msg) {
         mSmHandler.deferMessage(msg);
     }
-
 
     /**
      * Called when message wasn't handled
@@ -393,6 +386,7 @@ public final void sendMessage(int what, Object obj) {
     /**
      * Enqueue a message to this state machine.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:47.536 -0500", hash_original_method = "6E13019DC70D12278C5C1075A86F8BFE", hash_generated_method = "7D47522DE1396B44E04041823D17AA3A")
     
 public final void sendMessage(Message msg) {
@@ -405,6 +399,7 @@ public final void sendMessage(Message msg) {
     /**
      * Enqueue a message to this state machine after a delay.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:47.538 -0500", hash_original_method = "6F45F99BF67AD2AF5583C8727970AA91", hash_generated_method = "97A13C5DA159D3B479CB785539ED33E8")
     
 public final void sendMessageDelayed(int what, long delayMillis) {
@@ -417,6 +412,7 @@ public final void sendMessageDelayed(int what, long delayMillis) {
     /**
      * Enqueue a message to this state machine after a delay.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:47.541 -0500", hash_original_method = "39A6E49D71A514B448DAD14BF952A265", hash_generated_method = "04E6AC5DE73619CBEFDA60351FDE1B9C")
     
 public final void sendMessageDelayed(int what, Object obj, long delayMillis) {
@@ -429,6 +425,7 @@ public final void sendMessageDelayed(int what, Object obj, long delayMillis) {
     /**
      * Enqueue a message to this state machine after a delay.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:47.544 -0500", hash_original_method = "9D9110C540430F2A7712B1C42CF073E5", hash_generated_method = "4ADF8EF58038DBFAB17BE2712E47AC52")
     
 public final void sendMessageDelayed(Message msg, long delayMillis) {
@@ -462,6 +459,7 @@ protected final void sendMessageAtFrontOfQueue(int what) {
      * Enqueue a message to the front of the queue for this state machine.
      * Protected, may only be called by instances of StateMachine.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:47.552 -0500", hash_original_method = "DAD8B3BB967F6D568CBDEF14E7D7FC31", hash_generated_method = "9B11EFCAF424D0D01AAEA8CED2C46F16")
     
 protected final void sendMessageAtFrontOfQueue(Message msg) {
@@ -477,7 +475,6 @@ protected final void sendMessageAtFrontOfQueue(Message msg) {
 protected final void removeMessages(int what) {
         mSmHandler.removeMessages(what);
     }
-
     
     public static class ProcessedMessageInfo {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:47.249 -0500", hash_original_field = "6100FAC75E91CAC232945E82029A9682", hash_generated_field = "A000BD07D4DBA654B5ACE4EC76BBFFA1")
@@ -575,19 +572,14 @@ private String cn(Object n) {
                 return name.substring(lastDollar + 1);
             }
         }
-
         
     }
-
-
     
     private static class ProcessedMessages {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:47.277 -0500", hash_original_field = "44F7CCFF2EFD94D896EEBE71FDD95C96", hash_generated_field = "D046EB83567C8AE65CE2B140E78656A6")
 
-
         private static final int DEFAULT_SIZE = 20;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:47.280 -0500", hash_original_field = "03A50413291C355D0F9AB94053EAC4FB", hash_generated_field = "E3B7DBE08CEF79947D2C5DA6C5D670A8")
-
 
         private Vector<ProcessedMessageInfo> mMessages = new Vector<ProcessedMessageInfo>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:47.282 -0500", hash_original_field = "571AC8C77FA2A6993129ACA5C1312B57", hash_generated_field = "706F44912DCFEA7F4271168A8A5FEC7F")
@@ -691,8 +683,6 @@ void add(Message message, State state, State orgState) {
             }
         }
     }
-
-
     
     private static class SmHandler extends Handler {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:47.313 -0500", hash_original_field = "D2C6479312C41E6B834286106428CBAE", hash_generated_field = "79B0F5D3D1C26EC177F0047971DE5AB2")
@@ -825,7 +815,6 @@ private void performTransitions() {
                 invokeExitMethods(commonStateInfo);
                 int stateStackEnteringIndex = moveTempStateStackToStateStack();
                 invokeEnterMethods(stateStackEnteringIndex);
-
 
                 /**
                  * Since we have transitioned to a new state we need to have
@@ -1241,7 +1230,6 @@ private final int getProcessedMessagesSize() {
 private final int getProcessedMessagesCount() {
             return mProcessedMessages.count();
         }
-
         
         private class StateInfo {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:47.340 -0500", hash_original_field = "05D925C5BEC5275A59607FB5FAF72E84", hash_generated_field = "05D925C5BEC5275A59607FB5FAF72E84")
@@ -1271,11 +1259,8 @@ private final int getProcessedMessagesCount() {
                         + ",parent=" + ((parentStateInfo == null) ?
                                         "null" : parentStateInfo.state.getName());
             }
-
             
         }
-
-
         
         private class HaltingState extends State {
             
@@ -1284,6 +1269,7 @@ private final int getProcessedMessagesCount() {
             {
                 //Synthesized constructor
             }
+            @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:47.365 -0500", hash_original_method = "58076C952A23C34E44D31450392EEB12", hash_generated_method = "5BFEC8F08DDD3EEEAF66BF91518E8C31")
             
 @Override
@@ -1291,11 +1277,8 @@ private final int getProcessedMessagesCount() {
                 mSm.haltedProcessMessage(msg);
                 return true;
             }
-
             
         }
-
-
         
         private class QuittingState extends State {
             
@@ -1304,13 +1287,13 @@ private final int getProcessedMessagesCount() {
             {
                 //Synthesized constructor
             }
+            @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:47.370 -0500", hash_original_method = "5D2BC087464A61E35A06899EEE03AD06", hash_generated_method = "03FB4DC820C20817E37684C2A0755084")
             
 @Override
             public boolean processMessage(Message msg) {
                 return NOT_HANDLED;
             }
-
             
         }
 
@@ -1365,6 +1348,7 @@ public boolean isDbg() {
      *
      * @param dbg is true to enable debugging.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:47.565 -0500", hash_original_method = "DD47B988861B3BEC7B551FD48507E8F0", hash_generated_method = "E7D502168A1AF4F46C67480D562CF126")
     
 public void setDbg(boolean dbg) {

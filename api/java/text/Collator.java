@@ -10,10 +10,6 @@ import java.util.Locale;
 import libcore.icu.ICU;
 import libcore.icu.RuleBasedCollatorICU;
 
-
-
-
-
 public abstract class Collator implements Comparator<Object>, Cloneable {
 
     /**
@@ -71,7 +67,6 @@ public static Collator getInstance(Locale locale) {
 
     public static final int IDENTICAL = 3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:02.133 -0500", hash_original_field = "571EB1F8C774D603CEDE0C031FD66C11", hash_generated_field = "571EB1F8C774D603CEDE0C031FD66C11")
-
 
     RuleBasedCollatorICU icuColl;
 
@@ -237,6 +232,7 @@ public int getStrength() {
      *            if the provided decomposition rule is not valid. This includes
      *            {@code FULL_DECOMPOSITION}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:02.174 -0500", hash_original_method = "B72BC12BA62E721E78973B8AD1CD75B5", hash_generated_method = "F1C2AFE44575D612EDDFFF43B6540109")
     
 public void setDecomposition(int value) {
@@ -252,6 +248,7 @@ public void setDecomposition(int value) {
      * @throws IllegalArgumentException
      *            if the provided strength value is not valid.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:02.176 -0500", hash_original_method = "EE6B9836B69B72CAEC3F00255CD1C53E", hash_generated_method = "70C8E85EC36DDE7A493D9EF302947660")
     
 public void setStrength(int value) {

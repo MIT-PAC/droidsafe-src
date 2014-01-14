@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.ArrayList;
 
-
-
-
-
-
 public class RegistrantList {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.662 -0500", hash_original_field = "7F96807E8A5E86FE107A4EDE006647AC", hash_generated_field = "7F96807E8A5E86FE107A4EDE006647AC")
 
@@ -98,6 +93,7 @@ public /*synchronized*/ void
         internalNotifyRegistrants(null, null);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.683 -0500", hash_original_method = "E10B485B8A4459DFBA6D5822C64B9581", hash_generated_method = "8331705687F4623D77424E3082BC1906")
     
 public /*synchronized*/ void
@@ -106,6 +102,7 @@ public /*synchronized*/ void
         internalNotifyRegistrants (null, exception);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.685 -0500", hash_original_method = "42A5B1B813660DAC9459B35E8E550912", hash_generated_method = "B2AD814C21E22A6C0235EE6EA59EABFD")
     
 public /*synchronized*/ void
@@ -113,8 +110,8 @@ public /*synchronized*/ void
     {
         internalNotifyRegistrants (result, null);
     }
-
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.687 -0500", hash_original_method = "3908519F6CDCE90B78E1C606E34FED53", hash_generated_method = "9BD6B76420A710DC1D39A85652D2D37A")
     
 public /*synchronized*/ void
@@ -144,7 +141,6 @@ public synchronized void
 
         removeCleared();
     }
-
     
 }
 

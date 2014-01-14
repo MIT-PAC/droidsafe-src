@@ -11,11 +11,6 @@ import java.text.ParseException;
 import javax.sip.InvalidArgumentException;
 import javax.sip.header.ExtensionHeader;
 
-
-
-
-
-
 public final class SessionExpires extends ParametersHeader implements ExtensionHeader, SessionExpiresHeader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:59.303 -0500", hash_original_field = "CEB119FCACDF4D481F20CDDF5652D7FC", hash_generated_field = "F2330FF32F2F9FA993B883D22A1E4D56")
 
@@ -25,10 +20,8 @@ public final class SessionExpires extends ParametersHeader implements ExtensionH
     public static final String NAME = "Session-Expires";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:59.314 -0500", hash_original_field = "6E7627EDCB50E34DBA9497D1A292DDEE", hash_generated_field = "D51D2CDCC34D9E34598982CCDA37DCD7")
 
-
     public static final String REFRESHER = "refresher";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:59.310 -0500", hash_original_field = "7DE0A8851440A5B5DF3C8E9357224077", hash_generated_field = "C13B9F005337F50619E5092E1337E1D0")
-
 
     public int expires;
     /** default Constructor.
@@ -76,6 +69,7 @@ public void setExpires(int expires) throws InvalidArgumentException {
         this.expires = expires;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:59.327 -0500", hash_original_method = "4B92A49D74A1215E0C3EC12D290AF61B", hash_generated_method = "01B37E653FE76FEB916567082AAEE1D8")
     
 public void setValue(String value) throws ParseException {
@@ -106,6 +100,7 @@ public String getRefresher() {
        return parameters.getParameter(REFRESHER);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:59.336 -0500", hash_original_method = "B765158B109DFF1FFF87124C5A68F884", hash_generated_method = "5CECA0706DCAF95C84A4F5B129D5278D")
     
 public void setRefresher(String refresher) {

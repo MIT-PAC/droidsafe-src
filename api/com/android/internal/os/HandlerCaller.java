@@ -9,10 +9,6 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 
-
-
-
-
 public class HandlerCaller {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:53.242 -0500", hash_original_field = "5337AB2544F40575E26AE97B0BEEB191", hash_generated_field = "0E1C08BBBBDD5ED1C472D14EF0FD5ED7")
 
@@ -21,22 +17,18 @@ public class HandlerCaller {
 
     private static final boolean DEBUG = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:53.286 -0500", hash_original_field = "34377742E5970721907410D9B607AD0A", hash_generated_field = "BCD6C0D163D104E26E069F7BB45809FA")
-
     
     static final int ARGS_POOL_MAX_SIZE = 10;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:53.247 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "DE8577C1C990964647332D172A1FAC00")
-
     
     public  Context mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:53.249 -0500", hash_original_field = "22AA67C96F8F7AD7DFD89E53DF216F9A", hash_generated_field = "22AA67C96F8F7AD7DFD89E53DF216F9A")
-
     
      Looper mMainLooper;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:53.252 -0500", hash_original_field = "CE7101CE6F8628D8EDF694C2A9A74F21", hash_generated_field = "CE7101CE6F8628D8EDF694C2A9A74F21")
 
      Handler mH;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:53.254 -0500", hash_original_field = "1A99E72B6409E38FBCC780D1BAB4898D", hash_generated_field = "1A99E72B6409E38FBCC780D1BAB4898D")
-
 
      Callback mCallback;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:53.289 -0500", hash_original_field = "1C9F48D10ECE38E6D9CD4E1243016544", hash_generated_field = "1C9F48D10ECE38E6D9CD4E1243016544")
@@ -124,6 +116,7 @@ public void removeMessages(int what, Object obj) {
         mH.removeMessages(what, obj);
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:53.323 -0500", hash_original_method = "89209D6CF250959A1CD788CD1CB7EB84", hash_generated_method = "8B544D39D3E5715B3ECDDB1D5C7F3654")
     
 public void sendMessage(Message msg) {
@@ -230,14 +223,12 @@ public Message obtainMessageOOOO(int what, Object arg1, Object arg2,
         args.arg4 = arg4;
         return mH.obtainMessage(what, 0, 0, args);
     }
-
     
     public static class SomeArgs {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:53.257 -0500", hash_original_field = "11484F719FF74608D959420C9A963381", hash_generated_field = "11484F719FF74608D959420C9A963381")
 
         SomeArgs next;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:53.259 -0500", hash_original_field = "524E284308787C3B27AB4CD560A816CF", hash_generated_field = "F8BED0DABC2D7EE357C5667A5634389E")
-
         
         public Object arg1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:53.262 -0500", hash_original_field = "2CC0C93F38D97721E695C73C9F8BA144", hash_generated_field = "1AFBA2F52DF215183028C3B28AF50E99")
@@ -274,10 +265,7 @@ public Message obtainMessageOOOO(int what, Object arg1, Object arg2,
             //Synthesized constructor
         }
 
-
     }
-
-
     
     class MyHandler extends Handler {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:53.294 -0500", hash_original_method = "761ACCB2E72A1319CE4B08F794806580", hash_generated_method = "761ACCB2E72A1319CE4B08F794806580")
@@ -292,11 +280,8 @@ MyHandler(Looper looper) {
         public void handleMessage(Message msg) {
             mCallback.executeMessage(msg);
         }
-
         
     }
-
-
     
     public interface Callback {
         public void executeMessage(Message msg);

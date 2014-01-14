@@ -6,10 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Arrays;
 
-
-
-
-
 public abstract class OutputStream implements Closeable, Flushable {
 
     /**
@@ -49,6 +45,7 @@ public void flush() throws IOException {
     /**
      * Equivalent to {@code write(buffer, 0, buffer.length)}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.829 -0500", hash_original_method = "773CDFC941DB5BD8F51FCC7460E1F3ED", hash_generated_method = "227B669FDA8AD574341B08A5DD95557F")
     
 public void write(byte[] buffer) throws IOException {
@@ -73,6 +70,7 @@ public void write(byte[] buffer) throws IOException {
      *             {@code offset + count} is bigger than the length of
      *             {@code buffer}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.832 -0500", hash_original_method = "F6CDEA64748F80FE862CBAFFE4725DDE", hash_generated_method = "CDD044E99B9A9B3DC054F6D500C9D2DA")
     
 public void write(byte[] buffer, int offset, int count) throws IOException {
@@ -104,7 +102,6 @@ public abstract void write(int oneByte) throws IOException;
 boolean checkError() {
         return false;
     }
-
     
 }
 

@@ -31,66 +31,47 @@ import java.util.TimerTask;
 
 import javax.sip.address.Hop;
 
-
-
-
-
-
 public class TCPMessageChannel extends MessageChannel implements SIPMessageListener, Runnable, RawMessageChannel {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:22.037 -0500", hash_original_field = "006AACAB5CA0A59B60C0698E11256579", hash_generated_field = "F3B00F7E70704D963CC4197CD003FB94")
-
 
     private Socket mySock;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:22.039 -0500", hash_original_field = "EE9A4E61A45003F22C7BC5B410BBB21B", hash_generated_field = "152EC54D2111EF26096DF65FC2003536")
 
-
     private PipelinedMsgParser myParser;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:22.042 -0500", hash_original_field = "C33F72CD488CC5F94B8A9826AF3A10FA", hash_generated_field = "5631DED65C3B5D9167CB9D9A47D5D03A")
-
 
     protected InputStream myClientInputStream;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:22.045 -0500", hash_original_field = "4B28321D1FF1639C509C56A90A4999E3", hash_generated_field = "7FAB60C2DCAEF3BF5FBD0260A9FAB955")
 
-
     protected OutputStream myClientOutputStream;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:22.047 -0500", hash_original_field = "FFE7EE17DFA37A68070A0F0495753B29", hash_generated_field = "32361AD5112AD88D374E45078833A152")
-
 
     protected String key;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:22.051 -0500", hash_original_field = "BD96B1F139C8EA198B3A1B2CA97B93E5", hash_generated_field = "F8E96F7362B3E7CD3DE3A2778DC87A58")
 
-
     protected boolean isCached;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:22.053 -0500", hash_original_field = "5EBE085FDB38216257993802E75ABBBF", hash_generated_field = "911E18F9BE05473489F5F21C894DF579")
-
 
     protected boolean isRunning;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:22.056 -0500", hash_original_field = "4AB983356694FB1E44D4AE16E3897B0E", hash_generated_field = "8890F3B68DD2F65EEDEBEEF6284B3EE1")
 
-
     private Thread mythread;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:22.059 -0500", hash_original_field = "A4B05DD1A2BDFAA2E8FCD10E8D1815B6", hash_generated_field = "3233C5012C49C796F9D6BBC8E02EAB41")
-
 
     protected SIPTransactionStack sipStack;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:22.062 -0500", hash_original_field = "95EABD5ABD88E35E559B3906991D12AE", hash_generated_field = "52302EBB56B387342DED9EB749307DE1")
 
-
     protected String myAddress;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:22.065 -0500", hash_original_field = "05A0D771A4A24E58EF91191716865F5C", hash_generated_field = "AD61806C610E09EDA888D5EC477B22F2")
-
 
     protected int myPort;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:22.067 -0500", hash_original_field = "366B1D4629185E73902FFD7D04A7B174", hash_generated_field = "5F6E05F1C4EB951C3527127A288505CA")
 
-
     protected InetAddress peerAddress;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:22.070 -0500", hash_original_field = "A714E58FF483C2E33F156CBA7BFCD38B", hash_generated_field = "6A69B321E52130622ADD35A2A3F00BA6")
 
-
     protected int peerPort;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:22.073 -0500", hash_original_field = "D89E736D3DD25A80B53E476FF3F84027", hash_generated_field = "FBF73E4EC3FC246E9E63B41E9D9708E4")
-
 
     protected String peerProtocol;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:22.076 -0500", hash_original_field = "2A83245B93DFA8ECE7918F284096BA09", hash_generated_field = "DD392AF0D4972ACB9F10857C1DDE0D47")
@@ -306,6 +287,7 @@ private void sendMessage(byte[] msg, boolean retry) throws IOException {
      * @param sipMessage Message to send.
      * @throws IOException If there is an error sending the message
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:22.112 -0500", hash_original_method = "05F3A695AC32E3040A89EFF8F81F947F", hash_generated_method = "44C4EAF8F805AD8A16BDEAF474184EDB")
     
 public void sendMessage(SIPMessage sipMessage) throws IOException {
@@ -329,6 +311,7 @@ public void sendMessage(SIPMessage sipMessage) throws IOException {
      * @param receiverPort Receiver port.
      * @throws IOException If there is a problem connecting or sending.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:22.123 -0500", hash_original_method = "089EEE36759D74C41252D6311E4E6671", hash_generated_method = "09F8F18F1FA7D8ABABDB67B36C91C51D")
     
 public void sendMessage(byte message[], InetAddress receiverAddress, int receiverPort,
@@ -441,6 +424,7 @@ public void handleException(ParseException ex, SIPMessage sipMessage, Class hdrC
      * @param sipMessage Mesage to process (this calls the application for processing the
      *        message).
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:22.133 -0500", hash_original_method = "688E2F52AD2D71AD93C4E5B7CEC68AD5", hash_generated_method = "EC38FB290B862CD0782E2581BAE78C9F")
     
 public void processMessage(SIPMessage sipMessage) throws Exception {
@@ -501,7 +485,6 @@ public void processMessage(SIPMessage sipMessage) throws Exception {
                     sipStack.ioHandler.putSocket(key, mySock);
                 }
             }
-
          
             // Foreach part of the request header, fetch it and process it
 
@@ -796,7 +779,6 @@ public InetAddress getPeerPacketSourceAddress() {
 public boolean isSecure() {
         return false;
     }
-
     
 }
 

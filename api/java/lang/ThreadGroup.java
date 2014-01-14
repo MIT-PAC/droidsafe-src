@@ -11,10 +11,6 @@ import java.util.List;
 
 import libcore.util.CollectionUtils;
 
-
-
-
-
 public class ThreadGroup implements Thread.UncaughtExceptionHandler {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.697 -0500", hash_original_field = "2F6F6F53954BBF04ADF16268DBF28916", hash_generated_field = "C469F1CA0F9CB15DC605ADF2C779CB30")
 
@@ -614,6 +610,7 @@ public final void setDaemon(boolean isDaemon) {
      *
      * @see #getMaxPriority
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.774 -0500", hash_original_method = "271C3F89CA43821F381115CC8E2996B2", hash_generated_method = "A3A7B44DACC9313045DB1F06D47411A5")
     
 public final void setMaxPriority(int newMax) {

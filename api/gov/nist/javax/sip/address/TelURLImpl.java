@@ -9,19 +9,11 @@ import gov.nist.core.NameValueList;
 import java.text.ParseException;
 import java.util.Iterator;
 
-
-
-
-
-
 public class TelURLImpl extends GenericURI implements javax.sip.address.TelURL {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:33.549 -0500", hash_original_field = "EB98B2C1C5DDDB070B9763C0642166F4", hash_generated_field = "F6119FF81BCE9EC280E1CB921273774A")
 
-
-
     private static final long serialVersionUID = 5873527320305915954L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:33.551 -0500", hash_original_field = "8D5BD0E8A4B4FC2B44A628B6466E0222", hash_generated_field = "A24B43E0CC935DC17A1CF71DA4A58F34")
-
 
     protected TelephoneNumber telephoneNumber;
 
@@ -103,6 +95,7 @@ public boolean isSipURI() {
      * @param global - the boolean value indicating if the TelURL has a global
      * phone user.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:33.571 -0500", hash_original_method = "EE86C87982E4E6CE462C2F1CF12245F2", hash_generated_method = "F2045C78708A88088EB7B549BAC9C6F3")
     
 public void setGlobal(boolean global) {
@@ -115,6 +108,7 @@ public void setGlobal(boolean global) {
      * @param isdnSubAddress - new value of the <code>isdnSubAddress</code>
      * parameter
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:33.573 -0500", hash_original_method = "122F825A7097C68E3CD71E8CD7DD2208", hash_generated_method = "4C6A96F5ED0C04C2B520A6E6426968B4")
     
 public void setIsdnSubAddress(String isdnSubAddress) {
@@ -126,6 +120,7 @@ public void setIsdnSubAddress(String isdnSubAddress) {
      *
      * @param postDial - new value of the <code>postDial</code> parameter
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:33.575 -0500", hash_original_method = "19BDC1422936CE8CD2446692653D846C", hash_generated_method = "B3D5FCF602B8B3CF113C4A5EEFDAB725")
     
 public void setPostDial(String postDial) {
@@ -136,6 +131,7 @@ public void setPostDial(String postDial) {
      * Set the telephone number.
      * @param telephoneNumber long phone number to set.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:33.577 -0500", hash_original_method = "57F725D8D07902BEB47C996DF34801CB", hash_generated_method = "7015548877C01D0F312E56ADA53A4EF0")
     
 public void setPhoneNumber(String telephoneNumber) {
@@ -195,6 +191,7 @@ public String getParameter(String parameterName) {
         return telephoneNumber.getParameter(parameterName);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:33.595 -0500", hash_original_method = "7B12A3BFEAC170D72CC4E531FEDC5259", hash_generated_method = "0A74B085FD912C24F491E0EAE4369AE3")
     
 public void setParameter(String name, String value) {
@@ -222,6 +219,7 @@ public void removeParameter(String name) {
     /* (non-Javadoc)
      * @see javax.sip.address.TelURL#setPhoneContext(java.lang.String)
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:33.604 -0500", hash_original_method = "601A60F168280AF8DB609489286F142F", hash_generated_method = "2AC3C30BD53425EA85184E84C79BDC78")
     
 public void setPhoneContext(String phoneContext) throws ParseException {

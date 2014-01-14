@@ -97,7 +97,8 @@ public final void getChars(int start, int end, char[] dest, int off) {
         mText.getChars(start, end, dest, off);
     }
 
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:07.082 -0500", hash_original_method = "7B198AB61B6B726FF2E2996AF3FF95CD", hash_generated_method = "7B198AB61B6B726FF2E2996AF3FF95CD")
+    /* package */ @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:07.082 -0500", hash_original_method = "7B198AB61B6B726FF2E2996AF3FF95CD", hash_generated_method = "7B198AB61B6B726FF2E2996AF3FF95CD")
     
 void setSpan(Object what, int start, int end, int flags) {
         int nstart = start;

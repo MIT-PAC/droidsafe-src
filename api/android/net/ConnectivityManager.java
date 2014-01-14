@@ -237,6 +237,7 @@ public ConnectivityManager(IConnectivityManager service) {
         
     }
 
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:19.982 -0500", hash_original_method = "20C5B9DE2E49D07D506F0D5479D46C57", hash_generated_method = "705016F11B9CF1B00FA6D0B84A4A127D")
     
 public void setNetworkPreference(int preference) {
@@ -320,6 +321,7 @@ public LinkProperties getLinkProperties(int networkType) {
     }
 
     /** {@hide} */
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:19.999 -0500", hash_original_method = "8773F3976862F74C7E8795673CF57A3F", hash_generated_method = "81730442DE198C93F00AD5357E15482A")
     
 public boolean setRadios(boolean turnOn) {
@@ -331,6 +333,7 @@ public boolean setRadios(boolean turnOn) {
     }
 
     /** {@hide} */
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:20.002 -0500", hash_original_method = "F4DEFED01E737220B0A84C9B3C165EA1", hash_generated_method = "514001308D74667C857CA35F320B4989")
     
 public boolean setRadio(int networkType, boolean turnOn) {
@@ -352,6 +355,7 @@ public boolean setRadio(int networkType, boolean turnOn) {
      * implementation+feature combination, except that the value {@code -1}
      * always indicates failure.
      */
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:20.004 -0500", hash_original_method = "709E7052A14C2A0D29C9219C00073F31", hash_generated_method = "B8D07777FB958A74015C5CF7BC03DA3C")
     
 public int startUsingNetworkFeature(int networkType, String feature) {
@@ -461,6 +465,7 @@ public boolean requestRouteToHostAddress(int networkType, InetAddress hostAddres
      * @see #getBackgroundDataSetting()
      * @hide
      */
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:20.016 -0500", hash_original_method = "C7D66D7319A6F772837F5FAC4582BCF2", hash_generated_method = "AC4F316907C6A856C123A7790060ED3D")
     
 @Deprecated
@@ -508,6 +513,7 @@ public boolean getMobileDataEnabled() {
      *            used or not.
      * @hide
      */
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:20.023 -0500", hash_original_method = "03BF638942F758314C38E6E89D590F06", hash_generated_method = "261DF7B0ED76F52E39B217245232E798")
     
 public void setMobileDataEnabled(boolean enabled) {
@@ -639,6 +645,7 @@ public String[] getTetherableBluetoothRegexs() {
     /**
      * {@hide}
      */
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:20.048 -0500", hash_original_method = "952ADB6A2A3AEF46E275F5FA17E284ED", hash_generated_method = "2C41EFBAB494353AB09ACFCBFAE7765F")
     
 public int setUsbTethering(boolean enable) {
@@ -700,6 +707,7 @@ public void reportInetCondition(int networkType, int percentage) {
      * @param proxyProperties The definition for the new global http proxy
      * {@hide}
      */
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:20.083 -0500", hash_original_method = "0F41E571577973AB5A169120A0CDA859", hash_generated_method = "E1760C896E349F468C2A1BB16793804D")
     
 public void setGlobalProxy(ProxyProperties p) {
@@ -742,6 +750,7 @@ public ProxyProperties getProxy() {
      * @param met Boolean - true if network use is ok, false if not
      * {@hide}
      */
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:20.089 -0500", hash_original_method = "9D2F7B8AE7DD2651562BD08E17F617DF", hash_generated_method = "46CF3D7367153193ED8E5B3A5F3ECEAE")
     
 public void setDataDependency(int networkType, boolean met) {

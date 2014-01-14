@@ -210,6 +210,7 @@ public boolean isHeld()
             }
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:28.674 -0500", hash_original_method = "413F4C2C0B188BB0515F7A7D15C1E054", hash_generated_method = "AF637D4A4057E12E7AE0BBDDB3080BBD")
         
 public void setWorkSource(WorkSource ws) {
@@ -390,6 +391,7 @@ public void goToSleep(long time)
      *
      * {@hide}
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:28.691 -0500", hash_original_method = "1657059AF219261DAAA3A6D217AB2CFE", hash_generated_method = "E9D76F6E04F1B6EDEA6885C3A8F0A9D0")
     
 public void setBacklightBrightness(int brightness)

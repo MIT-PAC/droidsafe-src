@@ -11,11 +11,6 @@ import java.text.ParseException;
 
 import javax.sip.header.ExtensionHeader;
 
-
-
-
-
-
 public final class ReferredBy extends AddressParametersHeader implements ExtensionHeader, ReferredByHeader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:59.228 -0500", hash_original_field = "7AEDC9BC4CFFED95927680DB7DC3DADB", hash_generated_field = "C1F49009315AF076AF05EE2867D3FDEF")
 
@@ -32,6 +27,7 @@ public ReferredBy() {
         super(NAME);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:59.238 -0500", hash_original_method = "4B92A49D74A1215E0C3EC12D290AF61B", hash_generated_method = "01B37E653FE76FEB916567082AAEE1D8")
     
 public void setValue(String value) throws ParseException {

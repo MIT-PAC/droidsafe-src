@@ -8,25 +8,17 @@ import java.text.ParseException;
 
 import javax.sip.InvalidArgumentException;
 
-
-
-
-
-
 public class RAck extends SIPHeader implements javax.sip.header.RAckHeader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:01.609 -0500", hash_original_field = "21224DB2CEFA4FDB2588A5AB9FA52719", hash_generated_field = "7D32B1C47FED303719E2DC0EBD9FC96B")
 
     private static final long serialVersionUID = 743999286077404118L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:01.613 -0500", hash_original_field = "8D723CA62ACF0900470804DB2E8B3A1B", hash_generated_field = "90A1DBDECBC94B16131E7EAFCA83250F")
 
-
     protected long cSeqNumber;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:01.617 -0500", hash_original_field = "3501CEA861DDA8807A9A2CC4BD51D6A6", hash_generated_field = "0BFA342B8453938DE41E6CA4A7186CA9")
 
-
     protected long rSeqNumber;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:01.620 -0500", hash_original_field = "842C170402669AC7A74293BBBFD3BC5D", hash_generated_field = "7A7B3881B98B4FAF9D2BB4D0900875E7")
-
 
     protected String method;
 
@@ -102,6 +94,7 @@ public int getRSeqNumber() {
      * @deprecated
      * @see javax.sip.header.RAckHeader#setCSeqNumber(int)
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:01.644 -0500", hash_original_method = "C47555692F5984E7397D2D721232A447", hash_generated_method = "27C70ABF257DD14AF80C3700BAD9D706")
     
 public void setCSeqNumber(int cSeqNumber) throws InvalidArgumentException {
@@ -113,7 +106,6 @@ public void setCSeqNumber(int cSeqNumber) throws InvalidArgumentException {
 public void setMethod(String method) throws ParseException {
         this.method = method;
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:01.650 -0500", hash_original_method = "BF53D6931E1144BDB37994BD814B2F3D", hash_generated_method = "937408AF82E736FDDC8219757C0C3EEE")
     
@@ -141,12 +133,12 @@ public void setCSequenceNumber(long cSeqNumber)
      *@deprecated
      * @see javax.sip.header.RAckHeader#setRSeqNumber(int)
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:01.659 -0500", hash_original_method = "CBE5EB0602C16E16F46451A7279E3ED5", hash_generated_method = "8154CF7C849DD1D5F768861BB73E3795")
     
 public void setRSeqNumber(int rSeqNumber) throws InvalidArgumentException {
         this.setRSequenceNumber(rSeqNumber);
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:01.662 -0500", hash_original_method = "31F5BB280EB4BE3CAFCEE8170222695A", hash_generated_method = "FB3601C864F6E96416230F46B1ADB83B")
     

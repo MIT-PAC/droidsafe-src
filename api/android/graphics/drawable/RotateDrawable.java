@@ -18,16 +18,11 @@ import android.graphics.Rect;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 
-
-
-
-
 public class RotateDrawable extends Drawable implements Drawable.Callback {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:13.469 -0500", hash_original_field = "A209AB65EA72C034A89A158B6D35D299", hash_generated_field = "AF6B537CBDB90B8253BE1615E87A6B32")
 
     private static final float MAX_LEVEL = 10000.0f;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:13.471 -0500", hash_original_field = "D6053E1DDDD41C87BBF71E97400B36C4", hash_generated_field = "6525A0317A729C6A21603F930B262102")
-
 
     private RotateState mState;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:13.473 -0500", hash_original_field = "B15C308E96D0EEBD27CFE369FA349C15", hash_generated_field = "5CA5A1EF3CAA45117BCACBC34EF05952")
@@ -56,6 +51,7 @@ private RotateDrawable(RotateState rotateState, Resources res) {
         mState = new RotateState(rotateState, this, res);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:13.481 -0500", hash_original_method = "66E42D309847A2E591E14284403E0AD8", hash_generated_method = "BBAFF2BE6C50F34BCF2B8BBCCFBA7E9B")
     
 public void draw(Canvas canvas) {
@@ -96,12 +92,14 @@ public Drawable getDrawable() {
                 | mState.mDrawable.getChangingConfigurations();
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:13.488 -0500", hash_original_method = "E07BF10440452C45B5D504184A6B58C8", hash_generated_method = "C0ECD2624D6CA10CD38C92A17BD6B8AC")
     
 public void setAlpha(int alpha) {
         mState.mDrawable.setAlpha(alpha);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:13.490 -0500", hash_original_method = "6C570D1758B788EA390E83E99A76EB36", hash_generated_method = "57E12D7F67277B3DA8CEB2F6EEEB7C12")
     
 public void setColorFilter(ColorFilter cf) {
@@ -148,6 +146,7 @@ public void unscheduleDrawable(Drawable who, Runnable what) {
         return mState.mDrawable.getPadding(padding);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:13.504 -0500", hash_original_method = "BD39509C4CE6111239623166AC9A09DC", hash_generated_method = "E4769A7F6CE43D19F0D91F896E2EF83B")
     
 @Override
@@ -299,7 +298,6 @@ public void unscheduleDrawable(Drawable who, Runnable what) {
             drawable.setCallback(this);
         }
     }
-
     
     final static class RotateState extends Drawable.ConstantState {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:13.530 -0500", hash_original_field = "38BA53DD394F85639C99ED8E666FF8FB", hash_generated_field = "38BA53DD394F85639C99ED8E666FF8FB")
@@ -307,10 +305,8 @@ public void unscheduleDrawable(Drawable who, Runnable what) {
         Drawable mDrawable;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:13.532 -0500", hash_original_field = "9BFAF00848476277D36D9BA586984BA7", hash_generated_field = "9BFAF00848476277D36D9BA586984BA7")
 
-
         int mChangingConfigurations;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:13.534 -0500", hash_original_field = "C85378C704A40C3EFC15605BD9C2CCB0", hash_generated_field = "C85378C704A40C3EFC15605BD9C2CCB0")
-
         
         boolean mPivotXRel;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:13.536 -0500", hash_original_field = "5936761CCB9106C6D82A6436A57EC343", hash_generated_field = "5936761CCB9106C6D82A6436A57EC343")
@@ -324,22 +320,19 @@ public void unscheduleDrawable(Drawable who, Runnable what) {
         float mPivotY;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:13.543 -0500", hash_original_field = "179D120EA21717CC6A9EB6675A09E18B", hash_generated_field = "179D120EA21717CC6A9EB6675A09E18B")
 
-
         float mFromDegrees;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:13.545 -0500", hash_original_field = "D04BBDA5B46FF274C82326C147187C72", hash_generated_field = "D04BBDA5B46FF274C82326C147187C72")
 
         float mToDegrees;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:13.547 -0500", hash_original_field = "EF0BD8ADAC303B1287CF1584E5AA1EDB", hash_generated_field = "EF0BD8ADAC303B1287CF1584E5AA1EDB")
 
-
         float mCurrentDegrees;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:13.549 -0500", hash_original_field = "09212A3A30B7E6D48DEECC4F4639CCBC", hash_generated_field = "F62F8D22C4EDE8B8E63C376677BD915C")
-
 
         private boolean mCanConstantState;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:13.552 -0500", hash_original_field = "04605894B57F7B3414AF620BF4AC040E", hash_generated_field = "63D49323436A33301C0DA6EDF88627FF")
 
-        private boolean mCheckedConstantState;        
+        private boolean mCheckedConstantState;
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:13.555 -0500", hash_original_method = "E49363C9B9277E418FC0CB021F74A645", hash_generated_method = "F01A71C2D6927072D466EECA361C56C7")
         
@@ -392,7 +385,6 @@ public boolean canConstantState() {
 
             return mCanConstantState;
         }
-
         
     }
 

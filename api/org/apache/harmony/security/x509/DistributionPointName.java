@@ -14,13 +14,7 @@ import org.apache.harmony.security.asn1.ASN1Type;
 import org.apache.harmony.security.asn1.BerInputStream;
 import org.apache.harmony.security.x501.Name;
 
-
-
-
-
-
 public final class DistributionPointName {
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.067 -0400", hash_original_field = "6AB95919FF6969F19A1F57D938CE073E", hash_generated_field = "E1D3EB61AA41EF10FB1A477FAFE3C6A4")
 
@@ -81,6 +75,7 @@ public DistributionPointName(Name nameRelativeToCRLIssuer) {
         this.nameRelativeToCRLIssuer = nameRelativeToCRLIssuer;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:58.213 -0500", hash_original_method = "F96CAEAAF8BF6CA887E583CF87D57244", hash_generated_method = "DCB5BF0C860615A312844CC7823C8602")
     
 public void dumpValue(StringBuilder sb, String prefix) {

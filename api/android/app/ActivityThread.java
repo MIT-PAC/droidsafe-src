@@ -782,6 +782,7 @@ void doGcIfNeeded() {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.968 -0500", hash_original_method = "BC7C90866968540D7B885FF1F76E8E09", hash_generated_method = "A8C66234CFA566C6051E4B27E80A2CFA")
     
 public void registerOnActivityPausedListener(Activity activity,
@@ -3577,6 +3578,7 @@ public void requestThumbnail(IBinder token) {
             queueOrSendMessage(H.REQUEST_THUMBNAIL, token);
         }
 
+        @DSSink({DSSinkKind.SYSTEM_SETTINGS})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.679 -0500", hash_original_method = "06772B0545F1E3E199A400C07A7C465B", hash_generated_method = "1C428B7FF53CB77563B0266DC5CD5373")
         
 public void scheduleConfigurationChanged(Configuration config) {
@@ -3597,6 +3599,7 @@ public void clearDnsCache() {
             InetAddress.clearDnsCache();
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.686 -0500", hash_original_method = "B8887413EF343DBD56A367F4C57F614A", hash_generated_method = "F43C73B1104CF338406949FC30940236")
         
 public void setHttpProxy(String host, String port, String exclList) {
@@ -3610,6 +3613,7 @@ public void processInBackground() {
             mH.sendMessage(mH.obtainMessage(H.GC_WHEN_IDLE));
         }
 
+        @DSSink({DSSinkKind.FILE})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.691 -0500", hash_original_method = "876C8E0D071CEA83F82D96AA48344FA4", hash_generated_method = "A733EE0B105326C900C147E87A118702")
         
 public void dumpService(FileDescriptor fd, IBinder servicetoken, String[] args) {
@@ -3666,6 +3670,7 @@ public void dumpHeap(boolean managed, String path, ParcelFileDescriptor fd) {
             queueOrSendMessage(H.DUMP_HEAP, dhd, managed ? 1 : 0);
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.705 -0500", hash_original_method = "31DFA590CF69650795082863A4038E1E", hash_generated_method = "0797AD09879C786C4C419F6D4346890F")
         
 public void setSchedulingGroup(int group) {
@@ -3686,6 +3691,7 @@ public void getMemoryInfo(Debug.MemoryInfo outInfo) {
             Debug.getMemoryInfo(outInfo);
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.710 -0500", hash_original_method = "779EC3818AE8FA9E2AC523D128FB5D87", hash_generated_method = "A39FC27AF6201D9BD9865D8F817CC172")
         
 public void dispatchPackageBroadcast(int cmd, String[] packages) {
@@ -3698,6 +3704,7 @@ public void scheduleCrash(String msg) {
             queueOrSendMessage(H.SCHEDULE_CRASH, msg);
         }
 
+        @DSSink({DSSinkKind.FILE})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.715 -0500", hash_original_method = "D7BE3A9B3D448EC9431A34B711555765", hash_generated_method = "C1F371A36CBFBCD64F60167EA049C32D")
         
 public void dumpActivity(FileDescriptor fd, IBinder activitytoken,
@@ -3925,6 +3932,7 @@ private Debug.MemoryInfo dumpMemInfo(PrintWriter pw, boolean checkin, boolean al
             return memInfo;
         }
 
+        @DSSink({DSSinkKind.FILE})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.727 -0500", hash_original_method = "DBE19F37C980DCB637B8E3CCE0C6D7AE", hash_generated_method = "2C1C331A8A8049F89316ACCD2681AC35")
         
 @Override
@@ -3939,6 +3947,7 @@ private void printRow(PrintWriter pw, String format, Object...objs) {
             pw.println(String.format(format, objs));
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.732 -0500", hash_original_method = "5D81A3C132332FC039C36D652A159D52", hash_generated_method = "6493D12C56A79B55F65A864AF7FA3F0F")
         
 public void setCoreSettings(Bundle coreSettings) {
@@ -4141,6 +4150,7 @@ String codeToString(int code) {
             }
             return "(unknown)";
         }
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.859 -0500", hash_original_method = "DC9C3E5B703CFDFA18C27F800AA1CA40", hash_generated_method = "9160A9FD77CE7966181670D62A44FC6B")
         
 public void handleMessage(Message msg) {

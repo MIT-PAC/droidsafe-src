@@ -815,6 +815,7 @@ private boolean trySetupData(ApnContext apnContext) {
         }
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:24.396 -0500", hash_original_method = "9CD870BA8C542E1D80FC2F2D725750C0", hash_generated_method = "C6C6E4C15CDB257E8F082BAAF3388C25")
     
 @Override
@@ -1971,6 +1972,7 @@ protected boolean onTrySetupData(ApnContext apnContext) {
         notifyOffApnsOfAvailability(null);
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:24.555 -0500", hash_original_method = "31196134743B1AB9B97F59AB7F4DD6B0", hash_generated_method = "C870D80AF9AB55A2E03CDE276B2D189D")
     
 @Override
@@ -2101,6 +2103,7 @@ protected boolean onTrySetupData(ApnContext apnContext) {
     /**
      * Called when EVENT_DISCONNECT_DONE is received.
      */
+    @DSSink({DSSinkKind.PHONE_CONNECTION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:24.558 -0500", hash_original_method = "D4180B029AFCA66C11673889FF654292", hash_generated_method = "0CFCD8979FEB552E8BECCD6E367673FE")
     
 @Override
@@ -2227,6 +2230,7 @@ protected boolean isConnected() {
         return true;
     }
 
+    @DSSink({DSSinkKind.PHONE_STATE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:24.581 -0500", hash_original_method = "85B9B626BCFF754F4C98AF3615661037", hash_generated_method = "64393B861CF6A8AAA352323D18D6F93D")
     
 @Override

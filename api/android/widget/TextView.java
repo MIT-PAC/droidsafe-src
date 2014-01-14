@@ -1434,6 +1434,7 @@ private void setRelativeDrawablesIfNeeded(Drawable start, Drawable end) {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.550 -0500", hash_original_method = "224789FFA5DBD63B17185276A15DADF0", hash_generated_method = "756550E254590B5801A7246265A40FA0")
     
 @Override
@@ -1470,6 +1471,7 @@ private void setRelativeDrawablesIfNeeded(Drawable start, Drawable end) {
      * @attr ref android.R.styleable#TextView_typeface
      * @attr ref android.R.styleable#TextView_textStyle
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.553 -0500", hash_original_method = "6CE73F981984CDCC5004358BB070DFC0", hash_generated_method = "3E90EBA10091B15BB3C4DBAFB3CF7D7F")
     
 public void setTypeface(Typeface tf, int style) {
@@ -2104,6 +2106,7 @@ public void setCompoundDrawables(Drawable left, Drawable top,
      * @attr ref android.R.styleable#TextView_drawableRight
      * @attr ref android.R.styleable#TextView_drawableBottom
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.625 -0500", hash_original_method = "4DA9B29500DC46492C6684BECC05C749", hash_generated_method = "9B9BC0F73DD37625634172AB556EC2D7")
     
 public void setCompoundDrawablesWithIntrinsicBounds(int left, int top, int right, int bottom) {
@@ -2125,6 +2128,7 @@ public void setCompoundDrawablesWithIntrinsicBounds(int left, int top, int right
      * @attr ref android.R.styleable#TextView_drawableRight
      * @attr ref android.R.styleable#TextView_drawableBottom
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.627 -0500", hash_original_method = "19E536EC7FD9E8E0EBEABA79F37A1C35", hash_generated_method = "3651805090A0EB48DBE5889BE23DEB11")
     
 public void setCompoundDrawablesWithIntrinsicBounds(Drawable left, Drawable top,
@@ -2283,6 +2287,7 @@ public void setCompoundDrawablesRelative(Drawable start, Drawable top,
      *
      * @hide
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.634 -0500", hash_original_method = "08DFFEC64B0A3553E53B210C6E8B4F5B", hash_generated_method = "72EBD4C2521F6306F13066BE513B5F5C")
     
 public void setCompoundDrawablesRelativeWithIntrinsicBounds(int start, int top, int end,
@@ -2309,6 +2314,7 @@ public void setCompoundDrawablesRelativeWithIntrinsicBounds(int start, int top, 
      *
      * @hide
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.637 -0500", hash_original_method = "BA79780015035B80B72E7A4B08D0D299", hash_generated_method = "908C3B521766163169408505546967E0")
     
 public void setCompoundDrawablesRelativeWithIntrinsicBounds(Drawable start, Drawable top,
@@ -2399,6 +2405,7 @@ public int getCompoundDrawablePadding() {
         return dr != null ? dr.mDrawablePadding : 0;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.649 -0500", hash_original_method = "4C42E9479946D6D8F38619DA66232863", hash_generated_method = "FA118EB41CF7D8B2AE88A6737B993C6A")
     
 @Override
@@ -2432,6 +2439,7 @@ public final int getAutoLinkMask() {
      * Sets the text color, size, style, hint color, and highlight color
      * from the specified TextAppearance resource.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.654 -0500", hash_original_method = "FFEF779179433D30901B486DA8C4C9D0", hash_generated_method = "47F0432AEA180ACF38ECBDDDB45C9850")
     
 public void setTextAppearance(Context context, int resid) {
@@ -2507,6 +2515,7 @@ public float getTextSize() {
      *
      * @attr ref android.R.styleable#TextView_textSize
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.658 -0500", hash_original_method = "7DB2A551583349AB1C418E0528006365", hash_generated_method = "B390E22B85EE4C4563DD2C9B1E564055")
     
 @android.view.RemotableViewMethod
@@ -2523,6 +2532,7 @@ public float getTextSize() {
      *
      * @attr ref android.R.styleable#TextView_textSize
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.660 -0500", hash_original_method = "487975E6A0CF72E721F7BDECB44E1312", hash_generated_method = "4B39AC24B650C96ECA78ECD296D29BD0")
     
 public void setTextSize(int unit, float size) {
@@ -2567,6 +2577,7 @@ public float getTextScaleX() {
      *
      * @attr ref android.R.styleable#TextView_textScaleX
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.668 -0500", hash_original_method = "32FC23A8E8D24759E03CF98EE692BD3E", hash_generated_method = "64688DEE4444BF4E1365AA667E3031F4")
     
 @android.view.RemotableViewMethod
@@ -2593,6 +2604,7 @@ public float getTextScaleX() {
      * @attr ref android.R.styleable#TextView_typeface
      * @attr ref android.R.styleable#TextView_textStyle
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.671 -0500", hash_original_method = "780D15535FA403FCFD3F32D6E7303769", hash_generated_method = "6847AC35599A30DFD5FF0D7ECC908CC0")
     
 public void setTypeface(Typeface tf) {
@@ -2623,6 +2635,7 @@ public Typeface getTypeface() {
      *
      * @attr ref android.R.styleable#TextView_textColor
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.675 -0500", hash_original_method = "7D6C422943C1CBA6B222D2B0CA531386", hash_generated_method = "5D82075A69C90ECDFAAB52071D154026")
     
 @android.view.RemotableViewMethod
@@ -2807,6 +2820,7 @@ public URLSpan[] getUrls() {
      *
      * @attr ref android.R.styleable#TextView_textColorHint
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.704 -0500", hash_original_method = "E9B4A1B921938A82A5322DAF3992AE5D", hash_generated_method = "120A062D047149D3E557DDFB3EF653A8")
     
 @android.view.RemotableViewMethod
@@ -2854,6 +2868,7 @@ public final int getCurrentHintTextColor() {
      *
      * @attr ref android.R.styleable#TextView_textColorLink
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.713 -0500", hash_original_method = "9463279339C3C6EB304729CC6A96FD58", hash_generated_method = "CB446DABA47884E309A73BEDA5242760")
     
 @android.view.RemotableViewMethod
@@ -2955,6 +2970,7 @@ public int getPaintFlags() {
      * reflows the text if they are different from the old flags.
      * @see Paint#setFlags
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.727 -0500", hash_original_method = "8002046373E96371B4D25FE3E547C1A2", hash_generated_method = "9B52C2B1C6E75FA8158063D2828BC0CF")
     
 @android.view.RemotableViewMethod
@@ -3719,6 +3735,7 @@ for(int i = 0;i < n;i++)
      * since the TextView has no way to know that the text
      * has changed and that it needs to invalidate and re-layout.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.841 -0500", hash_original_method = "36BFF315CD4AAC9D68E14477979C2AB5", hash_generated_method = "C07655603B1C7698549A580EC59D382A")
     
 public final void setText(char[] text, int start, int len) {
@@ -3773,6 +3790,7 @@ public final void setTextKeepState(CharSequence text, BufferType type) {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.887 -0500", hash_original_method = "F67FB9F700F5516CACC8B84E46FAB678", hash_generated_method = "929DBDF02CD46CB45E799900F9F11CB3")
     
 @android.view.RemotableViewMethod
@@ -3814,6 +3832,7 @@ public final void setText(int resid, BufferType type) {
      *
      * @attr ref android.R.styleable#TextView_hint
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.895 -0500", hash_original_method = "38FC4DBAEFB265C97233FE4F28F668E7", hash_generated_method = "C1B1E4FC4A9A8576B3FF0CC12072DD46")
     
 @android.view.RemotableViewMethod
@@ -3849,6 +3868,7 @@ public final void setText(int resid, BufferType type) {
      * @see android.text.InputType
      * @attr ref android.R.styleable#TextView_inputType
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.903 -0500", hash_original_method = "49514C27E12484581D1021562BB6B56C", hash_generated_method = "CA49E890B8FA1C48882750F052EE89CC")
     
 public void setInputType(int type) {
@@ -4201,6 +4221,7 @@ public String getPrivateImeOptions() {
      * @see EditorInfo#extras
      * @attr ref android.R.styleable#TextView_editorExtras
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.941 -0500", hash_original_method = "4D2957EAEB6AF33B1C49D1AAB860E441", hash_generated_method = "30CBCB631ED5E63FC350B6B2B257F3B5")
     
 public void setInputExtras(int xmlResId)
@@ -4426,6 +4447,7 @@ private void chooseSize(PopupWindow pop, CharSequence text, TextView tv) {
         pop.setHeight(ht + l.getHeight());
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.988 -0500", hash_original_method = "5914A6C90CD99156CDEB55240C7F0CC3", hash_generated_method = "3D426D23DE36E37F9564B19DAFC764BD")
     
 @Override
@@ -6158,6 +6180,7 @@ boolean reportExtractedText() {
      * Apply to this text view the given extracted text, as previously
      * returned by {@link #extractText(ExtractedTextRequest, ExtractedText)}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:19.140 -0500", hash_original_method = "BCA6F941081EC35E5D75ECC5825A5773", hash_generated_method = "4B9ECFE035B9A32E9E537C3BE7FDBBE9")
     
 public void setExtractedText(ExtractedText text) {
@@ -7544,6 +7567,7 @@ public void setSingleLine() {
      * @see #setTransformationMethod(TransformationMethod)
      * @attr ref android.R.styleable#TextView_textAllCaps
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:19.286 -0500", hash_original_method = "02E25EABD0939EA349140FD704ABC4B2", hash_generated_method = "6B71C346F5C24DC1875AFF80C4A4ACC5")
     
 public void setAllCaps(boolean allCaps) {
@@ -7564,6 +7588,7 @@ public void setAllCaps(boolean allCaps) {
      *
      * @attr ref android.R.styleable#TextView_singleLine
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:19.288 -0500", hash_original_method = "F67AECEDD15B73EEA4C7246A27A881B1", hash_generated_method = "A632A942888A523DC93F0E9011802DB2")
     
 @android.view.RemotableViewMethod
@@ -8308,6 +8333,7 @@ public void clearComposingText() {
         }
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:19.588 -0500", hash_original_method = "D9A75FFCA0200824B6C25D7D7E778114", hash_generated_method = "C40C539386AB87890ED322944C97A618")
     
 @Override
@@ -9019,6 +9045,7 @@ private long getLastTouchOffsets() {
         info.setPassword(isPassword);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:19.711 -0500", hash_original_method = "69E83CE4CD48DE4ECD21620922EFCC1A", hash_generated_method = "88A1CAE2B46ADFC63A0B34C8A7607E31")
     
 @Override
@@ -9588,6 +9615,7 @@ private SavedState(Parcel in) {
             }
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:18.789 -0500", hash_original_method = "0917C7384BCC053D7DFEC5346FB5EF0D", hash_generated_method = "0B3837D9E0CF04BF562262CFBE4CBCAE")
         
 @Override
@@ -13142,6 +13170,7 @@ protected void replaceText_internal(int start, int end, CharSequence text) {
      * Sets a span on the specified range of text
      * @hide
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:20.370 -0500", hash_original_method = "80E41DC8CAFBEBBFCDBF175A54ED075C", hash_generated_method = "3C66F8CD003E455B8DB2DE2732278824")
     
 protected void setSpan_internal(Object span, int start, int end, int flags) {
@@ -13152,6 +13181,7 @@ protected void setSpan_internal(Object span, int start, int end, int flags) {
      * Moves the cursor to the specified offset position in text
      * @hide
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:20.372 -0500", hash_original_method = "ED942619162EB0C0AFB16CB348D15185", hash_generated_method = "0B25625E0F9511BCA177109D2E50D45B")
     
 protected void setCursorPosition_internal(int start, int end) {

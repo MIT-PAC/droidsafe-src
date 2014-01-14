@@ -26,13 +26,10 @@ public BadTokenException(String name) {
             super(name);
         }
     }
-
     
     public Display getDefaultDisplay();
     
-    
     public void removeViewImmediate(View view);
-    
     
     public boolean isHardwareAccelerated();
     
@@ -375,7 +372,6 @@ public LayoutParams[] newArray(int size) {
             }
         };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:00.058 -0500", hash_original_field = "934C6F83F9CBAFC440BDA7FC35662FF3", hash_generated_field = "19E8A37771A577590A042CF511B68063")
-
     
         @SuppressWarnings({"PointlessBitwiseExpression"})
         public static final int LAYOUT_CHANGED = 1<<0;
@@ -600,7 +596,6 @@ public LayoutParams[] newArray(int size) {
         private int[] mCompatibilityParamsBackup = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:00.131 -0500", hash_original_field = "6CA2DE735E52FAEE758B1481C458DACF", hash_generated_field = "A00E74CB12D339049C537B70593F23C0")
 
-
         private CharSequence mTitle = "";
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:00.016 -0500", hash_original_method = "AA9FD1851747B2F0FD665FC7C8D0CF51", hash_generated_method = "A9F78AD53FB6B4BDA0D0F95D5A5E1AA6")
@@ -658,7 +653,6 @@ public LayoutParams(int w, int h, int xpos, int ypos, int _type,
             format = _format;
         }
     
-    
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:00.055 -0500", hash_original_method = "144F58EFD16271AC6CDC4218D153EBC0", hash_generated_method = "DC64F1A548E1D3D85FEC50C41E854365")
         
 public LayoutParams(Parcel in) {
@@ -710,6 +704,7 @@ public int describeContents() {
             return 0;
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:00.042 -0500", hash_original_method = "F62CAA063B4E8718ABD5334B90851BE5", hash_generated_method = "6EA7B9E229C90CF417100CB4BF01F77F")
         
 public void writeToParcel(Parcel out, int parcelableFlags) {

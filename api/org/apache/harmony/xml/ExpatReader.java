@@ -135,6 +135,7 @@ public Object getProperty(String name)
         throw new SAXNotRecognizedException(name);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.940 -0500", hash_original_method = "77A0661FD735F31D3304DC28B022498D", hash_generated_method = "2F14B85BCBD4C184AFD8D71AE577AE76")
     
 public void setProperty(String name, Object value)

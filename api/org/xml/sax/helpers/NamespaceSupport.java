@@ -10,17 +10,11 @@ import java.util.EmptyStackException;
 import java.util.Enumeration;
 import java.util.Hashtable;
 
-
-
-
-
-
 public class NamespaceSupport {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.354 -0500", hash_original_field = "8DE519BED5914C49639CE7F2987B16A9", hash_generated_field = "8DEE82483ED300797D3AA22429D118FC")
 
     // Constants.
     ////////////////////////////////////////////////////////////////////
-
 
     /**
      * The XML Namespace URI as a constant.
@@ -54,12 +48,10 @@ public class NamespaceSupport {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.401 -0500", hash_original_field = "7ADEFCE56A5E80EE0DB8462716E759B4", hash_generated_field = "93D47AA8737E27469EC5299DD6FB86D0")
 
     private boolean namespaceDeclUris;
-
 
     ////////////////////////////////////////////////////////////////////
     // Constructor.
     ////////////////////////////////////////////////////////////////////
-
 
     /**
      * Create a new Namespace support object.
@@ -70,13 +62,10 @@ public NamespaceSupport ()
     {
     reset();
     }
-
-
 
     ////////////////////////////////////////////////////////////////////
     // Context management.
     ////////////////////////////////////////////////////////////////////
-
 
     /**
      * Reset this Namespace support object for reuse.
@@ -99,7 +88,6 @@ public void reset ()
     contexts[contextPos] = currentContext = new Context();
     currentContext.declarePrefix("xml", XMLNS);
     }
-
 
     /**
      * Start a new Namespace context.
@@ -166,7 +154,6 @@ public void pushContext ()
     }
     }
 
-
     /**
      * Revert to the previous Namespace context.
      *
@@ -191,13 +178,10 @@ public void popContext ()
     }
     currentContext = contexts[contextPos];
     }
-
-
 
     ////////////////////////////////////////////////////////////////////
     // Operations within a context.
     ////////////////////////////////////////////////////////////////////
-
 
     /**
      * Declare a Namespace prefix.  All prefixes must be declared
@@ -248,7 +232,6 @@ public boolean declarePrefix (String prefix, String uri)
         return true;
     }
     }
-
 
     /**
      * Process a raw XML qualified name, after all declarations in the
@@ -306,7 +289,6 @@ public String [] processName (String qName, String parts[],
     }
     }
 
-
     /**
      * Look up a prefix and get the currently-mapped Namespace URI.
      *
@@ -325,7 +307,6 @@ public String getURI (String prefix)
     {
     return currentContext.getURI(prefix);
     }
-
 
     /**
      * Return an enumeration of all prefixes whose declarations are
@@ -347,7 +328,6 @@ public Enumeration getPrefixes ()
     {
     return currentContext.getPrefixes();
     }
-
 
     /**
      * Return one of the prefixes mapped to a Namespace URI.
@@ -374,7 +354,6 @@ public String getPrefix (String uri)
     {
     return currentContext.getPrefix(uri);
     }
-
 
     /**
      * Return an enumeration of all prefixes for a given URI whose
@@ -412,7 +391,6 @@ public Enumeration getPrefixes(String uri) {
         }
         return Collections.enumeration(prefixes);
     }
-
     
     final class Context {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.428 -0500", hash_original_field = "CF0B92985AF9DC8DD4202061605E7021", hash_generated_field = "D4510924EB225588E6B0EC7DDBD1B6B6")
@@ -459,7 +437,6 @@ Context ()
         copyTables();
     }
 
-
     /**
      * (Re)set the parent of this Namespace context.
      * The context must either have been freshly constructed,
@@ -500,7 +477,6 @@ void clear ()
         defaultNS = null;
     }
 
-
     /**
      * Declare a Namespace prefix for this context.
      *
@@ -508,7 +484,8 @@ void clear ()
      * @param uri The associated Namespace URI.
      * @see org.xml.sax.helpers.NamespaceSupport#declarePrefix
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.411 -0500", hash_original_method = "4549801F41C68E0A6A490696C062C72D", hash_generated_method = "8B62B5695F36760CAD8EDCDC235C2C64")
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.411 -0500", hash_original_method = "4549801F41C68E0A6A490696C062C72D", hash_generated_method = "8B62B5695F36760CAD8EDCDC235C2C64")
         
 void declarePrefix(String prefix, String uri) {
         // Lazy processing...
@@ -536,7 +513,6 @@ void declarePrefix(String prefix, String uri) {
         }
         declarations.add(prefix);
     }
-
 
     /**
      * Process an XML qualified name in this context.
@@ -582,7 +558,6 @@ String [] processName (String qName, boolean isAttribute)
         name[2] = qName.intern();
         int index = qName.indexOf(':');
 
-
                 // No prefix.
         if (index == -1) {
         if (isAttribute) {
@@ -622,7 +597,6 @@ String [] processName (String qName, boolean isAttribute)
         return name;
     }
 
-
     /**
      * Look up the URI associated with a prefix in this context.
      *
@@ -643,7 +617,6 @@ String getURI (String prefix)
         return (String)prefixTable.get(prefix);
         }
     }
-
 
     /**
      * Look up one of the prefixes associated with a URI in this context.
@@ -666,7 +639,6 @@ String getPrefix (String uri)
         }
     }
 
-
     /**
      * Return an enumeration of prefixes declared in this context.
      *
@@ -678,7 +650,6 @@ String getPrefix (String uri)
 Enumeration getDeclaredPrefixes() {
         return (declarations == null) ? EMPTY_ENUMERATION : Collections.enumeration(declarations);
     }
-
 
     /**
      * Return an enumeration of all prefixes currently in force.
@@ -699,13 +670,10 @@ Enumeration getPrefixes ()
         return prefixTable.keys();
         }
     }
-
-
 
     ////////////////////////////////////////////////////////////////
     // Internal methods.
     ////////////////////////////////////////////////////////////////
-
 
     /**
      * Copy on write for the internal tables in this context.
@@ -731,10 +699,8 @@ private void copyTables ()
         attributeNameTable = new Hashtable();
         declSeen = true;
     }
-
         
     }
-
 
     /**
      * Return an enumeration of all prefixes declared in this context.

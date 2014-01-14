@@ -17,10 +17,6 @@ import android.graphics.Rect;
 import android.util.AttributeSet;
 import android.view.Gravity;
 
-
-
-
-
 public class ScaleDrawable extends Drawable implements Drawable.Callback {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:14.365 -0500", hash_original_method = "AD555C970189F0219863B034E1D9DD68", hash_generated_method = "44EAFCBF6EA8C70DBF376DA93B1BF15C")
@@ -177,6 +173,7 @@ public void unscheduleDrawable(Drawable who, Runnable what) {
         return mScaleState.mDrawable.getPadding(padding);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:14.386 -0500", hash_original_method = "DF926DDC801D2CA5859468C5FAF6E2DB", hash_generated_method = "C7BCD75D907E572B272042986EF02446")
     
 @Override
@@ -185,6 +182,7 @@ public void unscheduleDrawable(Drawable who, Runnable what) {
         return super.setVisible(visible, restart);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:14.388 -0500", hash_original_method = "A9094AF2E7BD2624EE02834D750BE346", hash_generated_method = "C53765E7BE2C3EA82D3F84A3FD491B95")
     
 @Override
@@ -192,6 +190,7 @@ public void unscheduleDrawable(Drawable who, Runnable what) {
         mScaleState.mDrawable.setAlpha(alpha);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:14.390 -0500", hash_original_method = "2F836B47975A4E15DB5892CD09923112", hash_generated_method = "650BBE805AC3F8933A5C66BDBA414AC0")
     
 @Override
@@ -292,7 +291,6 @@ public void unscheduleDrawable(Drawable who, Runnable what) {
         }
         return this;
     }
-
     
     final static class ScaleState extends ConstantState {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:14.415 -0500", hash_original_field = "38BA53DD394F85639C99ED8E666FF8FB", hash_generated_field = "38BA53DD394F85639C99ED8E666FF8FB")
@@ -314,7 +312,6 @@ public void unscheduleDrawable(Drawable who, Runnable what) {
 
         boolean mUseIntrinsicSizeAsMin;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:14.427 -0500", hash_original_field = "04605894B57F7B3414AF620BF4AC040E", hash_generated_field = "63D49323436A33301C0DA6EDF88627FF")
-
 
         private boolean mCheckedConstantState;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:14.429 -0500", hash_original_field = "09212A3A30B7E6D48DEECC4F4639CCBC", hash_generated_field = "F62F8D22C4EDE8B8E63C376677BD915C")
@@ -370,11 +367,8 @@ boolean canConstantState() {
 
             return mCanConstantState;
         }
-
         
     }
-
-
     
 }
 

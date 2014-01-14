@@ -15,11 +15,6 @@ import android.util.Log;
 
 import com.android.internal.util.HexDump;
 
-
-
-
-
-
 public abstract class IccSmsInterfaceManager extends ISms.Stub {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:21.937 -0500", hash_original_field = "B504049739EC0253F0006BF183324917", hash_generated_field = "C5284483C4CF8ED630A2E2607ED30E12")
 
@@ -72,6 +67,7 @@ protected void enforceReceiveAndSend(String message) {
      *  broadcast when the message is delivered to the recipient.  The
      *  raw pdu of the status report is in the extended data ("pdu").
      */
+    @DSSink({DSSinkKind.SMS_MMS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:21.950 -0500", hash_original_method = "2CBD208E09A1050F1D8C833305F8E60D", hash_generated_method = "214E2FF2E20EF4CC247E30C5B4CF7CDF")
     
 public void sendData(String destAddr, String scAddr, int destPort,
@@ -111,6 +107,7 @@ public void sendData(String destAddr, String scAddr, int destPort,
      *  broadcast when the message is delivered to the recipient.  The
      *  raw pdu of the status report is in the extended data ("pdu").
      */
+    @DSSink({DSSinkKind.SMS_MMS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:21.952 -0500", hash_original_method = "9F601681CEADDF9DEDCDA3A25A2BC5E0", hash_generated_method = "1C7F1D7499FD133B353290818F55D85D")
     
 public void sendText(String destAddr, String scAddr,
@@ -224,7 +221,6 @@ protected byte[] makeSmsRecordData(int status, byte[] pdu) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:21.964 -0500", hash_original_method = "1B0CB576F4EF5F2EF28DA50D10DF2025", hash_generated_method = "4B0D139DF3381DCA5257214505F38057")
     
 protected abstract void log(String msg);
-
     
 }
 

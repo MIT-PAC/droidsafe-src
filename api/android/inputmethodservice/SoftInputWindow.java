@@ -13,8 +13,6 @@ import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.WindowManager;
 
-
-
 class SoftInputWindow extends Dialog {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:38.292 -0500", hash_original_field = "9399A9196ADA53199056D05EEBB238C5", hash_generated_field = "9399A9196ADA53199056D05EEBB238C5")
 
@@ -108,6 +106,7 @@ public int getSize() {
      *        left or right of the screen, <var>size</var> is the width of the
      *        DockWindow, and its height is equal to the height of the screen.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:38.308 -0500", hash_original_method = "32B4C6FEAFD2BF15DEEB55504FF34518", hash_generated_method = "CE4ACDFC593561B0DC6143C8CA390B37")
     
 public void setSize(int size) {
@@ -131,6 +130,7 @@ public void setSize(int size) {
      *        {#link android.view.Gravity.BOTTOM}, {#link
      *        android.view.Gravity.RIGHT}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:38.310 -0500", hash_original_method = "E3269318E29BDA61BD7E82E14CD77997", hash_generated_method = "744CD09F96B73C6C3E8D64B184A2F315")
     
 public void setGravity(int gravity) {
@@ -172,7 +172,6 @@ private void initDockWindow() {
                 WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE |
                 WindowManager.LayoutParams.FLAG_DIM_BEHIND);
     }
-
     
 }
 

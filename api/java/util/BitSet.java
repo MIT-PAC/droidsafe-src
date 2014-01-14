@@ -13,10 +13,6 @@ import java.nio.LongBuffer;
 
 import libcore.io.SizeOf;
 
-
-
-
-
 public class BitSet implements Serializable, Cloneable {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.872 -0500", hash_original_method = "1111A64C23DDCF149E99F7B137B1F799", hash_generated_method = "4E8F03DCF07A0DF56E510F9082D72E34")
@@ -88,7 +84,6 @@ public static BitSet valueOf(ByteBuffer byteBuffer) {
 
     private static final long serialVersionUID = 7997698588986878753L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.854 -0500", hash_original_field = "DEEECB9191B71C4C2B4B619251057097", hash_generated_field = "BC830E41BA8334B8E98728347067D4B9")
-
 
     private static final long ALL_ONES = ~0L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.857 -0500", hash_original_field = "92F775DED5CE5142CEEF7075890CCFCE", hash_generated_field = "487233F7143B18DBA481DB90C8ACD8D3")
@@ -234,6 +229,7 @@ public boolean get(int index) {
      *
      * @throws IndexOutOfBoundsException if {@code index < 0}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.888 -0500", hash_original_method = "3D2EC51930163E4AB4304E4F9059CB5F", hash_generated_method = "8185EA4AEDBA7BDE7BA26A57910FD132")
     
 public void set(int index) {
@@ -376,6 +372,7 @@ public BitSet get(int fromIndex, int toIndex) {
      *
      * @throws IndexOutOfBoundsException if {@code index < 0}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.903 -0500", hash_original_method = "74386BE28B96B2445F889AFAD9F88AFA", hash_generated_method = "5075AF5A9DA1126BC989D385BF14419D")
     
 public void set(int index, boolean state) {
@@ -393,6 +390,7 @@ public void set(int index, boolean state) {
      *             if {@code fromIndex} or {@code toIndex} is negative, or if
      *             {@code toIndex} is smaller than {@code fromIndex}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.905 -0500", hash_original_method = "9EFB812AD22830556B4E1C754018229D", hash_generated_method = "C684743A61A6FE7B85D098BB851F13D6")
     
 public void set(int fromIndex, int toIndex, boolean state) {
@@ -422,6 +420,7 @@ public void clear() {
      *             if {@code fromIndex} or {@code toIndex} is negative, or if
      *             {@code toIndex} is smaller than {@code fromIndex}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.911 -0500", hash_original_method = "A26503DA159C46EB79782AEABE473F9D", hash_generated_method = "31C8795A099AF909AD3221B0BD5FAA64")
     
 public void set(int fromIndex, int toIndex) {

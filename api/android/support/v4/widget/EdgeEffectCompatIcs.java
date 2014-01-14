@@ -8,7 +8,6 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.widget.EdgeEffect;
 
-
 class EdgeEffectCompatIcs {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:26.517 -0500", hash_original_method = "FE7C168140AD8ADACBA678C699C8B9C7", hash_generated_method = "D8D640B8513DF2E8A431C37EFC64193F")
     
@@ -16,6 +15,7 @@ public static Object newEdgeEffect(Context context) {
         return new EdgeEffect(context);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:26.520 -0500", hash_original_method = "59C32030E05BAB886BB1775F9282077E", hash_generated_method = "33C28CB498571CAC039E443BF30DEBD1")
     
 public static void setSize(Object edgeEffect, int width, int height) {
@@ -67,7 +67,6 @@ public static boolean draw(Object edgeEffect, Canvas canvas) {
     {
         //Synthesized constructor
     }
-
     
 }
 

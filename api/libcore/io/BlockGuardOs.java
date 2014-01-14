@@ -20,9 +20,6 @@ import java.nio.ByteBuffer;
 import dalvik.system.BlockGuard;
 import dalvik.system.SocketTagger;
 
-
-
-
 public class BlockGuardOs extends ForwardingOs {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.004 -0500", hash_original_method = "FD2393C99E08832136F507440F02147C", hash_generated_method = "1AB8A2AC20313109B0C2BB709BF2CB1D")
@@ -117,6 +114,7 @@ private void untagSocket(FileDescriptor fd) throws ErrnoException {
         os.ftruncate(fd, length);
     }
 
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.016 -0500", hash_original_method = "60BB804A04FED2996BE622E8EB3C8C72", hash_generated_method = "F446F92771498FCF38175E929E12FE3A")
     
 @Override public FileDescriptor open(String path, int flags, int mode) throws ErrnoException {
@@ -201,6 +199,7 @@ private void untagSocket(FileDescriptor fd) throws ErrnoException {
         return os.recvfrom(fd, bytes, byteOffset, byteCount, flags, srcAddress);
     }
 
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.044 -0500", hash_original_method = "712364CE21E2D97A52399AF047375669", hash_generated_method = "4DA969E3E5A443B776A9E7AB46CEB6A3")
     
 @Override public int sendto(FileDescriptor fd, ByteBuffer buffer, int flags, InetAddress inetAddress, int port) throws ErrnoException {
@@ -208,6 +207,7 @@ private void untagSocket(FileDescriptor fd) throws ErrnoException {
         return os.sendto(fd, buffer, flags, inetAddress, port);
     }
 
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.047 -0500", hash_original_method = "55701E5A28F22D42DFE5E9BDB107BB3B", hash_generated_method = "9480915A84663E6433B2E655B1945871")
     
 @Override public int sendto(FileDescriptor fd, byte[] bytes, int byteOffset, int byteCount, int flags, InetAddress inetAddress, int port) throws ErrnoException {
@@ -224,6 +224,7 @@ private void untagSocket(FileDescriptor fd) throws ErrnoException {
         return tagSocket(os.socket(domain, type, protocol));
     }
 
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.052 -0500", hash_original_method = "5EE10271D9A1F133950EEC82FBA5FE84", hash_generated_method = "A922184F30CA8EF7B62403EDC1532BE2")
     
 @Override public int write(FileDescriptor fd, ByteBuffer buffer) throws ErrnoException {
@@ -231,6 +232,7 @@ private void untagSocket(FileDescriptor fd) throws ErrnoException {
         return os.write(fd, buffer);
     }
 
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.054 -0500", hash_original_method = "45958860FE67213CB5E2A0FF79C39AE3", hash_generated_method = "6FCD5F9B8387FC975BAFCD03CD8F1A87")
     
 @Override public int write(FileDescriptor fd, byte[] bytes, int byteOffset, int byteCount) throws ErrnoException {
@@ -238,13 +240,13 @@ private void untagSocket(FileDescriptor fd) throws ErrnoException {
         return os.write(fd, bytes, byteOffset, byteCount);
     }
 
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.056 -0500", hash_original_method = "5DBA61950559A586673FCC47110213A7", hash_generated_method = "0766A999D4E29DB4A88DDC2CD139381A")
     
 @Override public int writev(FileDescriptor fd, Object[] buffers, int[] offsets, int[] byteCounts) throws ErrnoException {
         BlockGuard.getThreadPolicy().onWriteToDisk();
         return os.writev(fd, buffers, offsets, byteCounts);
     }
-
     
 }
 

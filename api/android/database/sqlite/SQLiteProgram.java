@@ -9,13 +9,8 @@ import java.util.HashMap;
 import android.database.Cursor;
 import android.database.DatabaseUtils;
 
-
-
-
-
 public abstract class SQLiteProgram extends SQLiteClosable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:39.128 -0500", hash_original_field = "4E3C985F8E8E62B8A187507B4B66A01F", hash_generated_field = "816508A07B46D824F7128BA5AE03ED0D")
-
 
     private static final String TAG = "SQLiteProgram";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:39.147 -0500", hash_original_field = "BB03963FBF2C631FE73030710811F0A6", hash_generated_field = "0F075AA00FFEB378FEE9A066ECB987E5")
@@ -241,6 +236,7 @@ private void bind(int type, int index, Object value) {
      *
      * @param index The 1-based index to the parameter to bind null to
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:39.184 -0500", hash_original_method = "3480FC3F53F060D0AF87F13A57EE020E", hash_generated_method = "288D9EF026F891E54B9DEA3637806146")
     
 public void bindNull(int index) {
@@ -254,6 +250,7 @@ public void bindNull(int index) {
      * @param index The 1-based index to the parameter to bind
      * @param value The value to bind
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:39.187 -0500", hash_original_method = "DDFF1311EF84C79E9F0283B8959C214A", hash_generated_method = "3388891A13AB586E95F3639121D7334F")
     
 public void bindLong(int index, long value) {
@@ -267,6 +264,7 @@ public void bindLong(int index, long value) {
      * @param index The 1-based index to the parameter to bind
      * @param value The value to bind
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:39.190 -0500", hash_original_method = "D271F20EDF0F2BB1E84FEE6A8DFAF59F", hash_generated_method = "DBAB89804C01133DD327EEB8DE0A3F99")
     
 public void bindDouble(int index, double value) {
@@ -280,6 +278,7 @@ public void bindDouble(int index, double value) {
      * @param index The 1-based index to the parameter to bind
      * @param value The value to bind
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:39.192 -0500", hash_original_method = "963A4C4D7269247053E24419DAA13FC1", hash_generated_method = "8F5D6A2064655E7863E1E3363920F842")
     
 public void bindString(int index, String value) {
@@ -296,6 +295,7 @@ public void bindString(int index, String value) {
      * @param index The 1-based index to the parameter to bind
      * @param value The value to bind
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:39.194 -0500", hash_original_method = "C702C9CEB9955A1F1B2C6A119BC67F74", hash_generated_method = "77B2F25594F8497354A2A69D1ECE43E7")
     
 public void bindBlob(int index, byte[] value) {
@@ -392,6 +392,7 @@ void compileAndbindAllArgs() {
      *
      * @param bindArgs the String array of bind args.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:39.207 -0500", hash_original_method = "7568906165FD370FD5C4296CB4D5FD76", hash_generated_method = "B6E6EC8992C1CCA1FC7F07E623B0F6A7")
     
 public void bindAllArgsAsStrings(String[] bindArgs) {
@@ -425,7 +426,6 @@ synchronized final void setNativeHandle(int nHandle) {
     	addTaint(sql.getTaint());
     }
 
-
     /**
      * @deprecated This method is deprecated and must not be used.
      */
@@ -435,7 +435,6 @@ synchronized final void setNativeHandle(int nHandle) {
     protected final void native_finalize(){
     	//Formerly a native method
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:39.222 -0500", hash_original_method = "AB3FC56412EB6E1517BB8960DA14A39F", hash_generated_method = "59B4517C68ED14E1D11D071AD9B6ABA5")
     

@@ -356,6 +356,7 @@ void setOnAdapterChangeListener(OnAdapterChangeListener listener) {
      *
      * @param item Item index to select
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:24.388 -0500", hash_original_method = "7A2B970E4C717952A0CD3574FF0FD69D", hash_generated_method = "CAE1F099F051C01C04F4000A5C2C344D")
     
 public void setCurrentItem(int item) {
@@ -369,6 +370,7 @@ public void setCurrentItem(int item) {
      * @param item Item index to select
      * @param smoothScroll True to smoothly scroll to the new item, false to transition immediately
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:24.390 -0500", hash_original_method = "F21F60BCB144D38A5AE0B59AB369F197", hash_generated_method = "D8A9430462F114E8441CF903A905C8FD")
     
 public void setCurrentItem(int item, boolean smoothScroll) {
@@ -382,12 +384,14 @@ public int getCurrentItem() {
         return mCurItem;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:24.396 -0500", hash_original_method = "975AAD75311F294CDFC8362C48B3CCF3", hash_generated_method = "975AAD75311F294CDFC8362C48B3CCF3")
     
 void setCurrentItemInternal(int item, boolean smoothScroll, boolean always) {
         setCurrentItemInternal(item, smoothScroll, always, 0);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:24.398 -0500", hash_original_method = "4CC7A0E676B55FB5E3215627D71CB3FB", hash_generated_method = "93C4D53BA7971D7DDF2253FE4C7E19E6")
     
 void setCurrentItemInternal(int item, boolean smoothScroll, boolean always, int velocity) {
@@ -1568,6 +1572,7 @@ private int determineTargetPage(int currentPage, float pageOffset, int velocity,
         return targetPage;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:24.521 -0500", hash_original_method = "EFAFFAB02B49B744BACD5A955538775F", hash_generated_method = "8B7FC5A1044602225D772E160FC533C6")
     
 @Override
@@ -1936,6 +1941,7 @@ SavedState(Parcel in, ClassLoader loader) {
             this.loader = loader;
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:24.449 -0500", hash_original_method = "F4CAF3A56784E52DEBA10017E225034C", hash_generated_method = "0EB1DEBE12C67421D4CFACF28CE6FD65")
         
 @Override

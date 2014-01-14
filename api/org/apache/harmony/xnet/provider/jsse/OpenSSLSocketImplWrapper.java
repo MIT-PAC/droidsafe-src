@@ -10,14 +10,8 @@ import java.net.Socket;
 import java.net.SocketAddress;
 import java.net.SocketException;
 
-
-
-
-
-
 public class OpenSSLSocketImplWrapper extends OpenSSLSocketImpl {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.921 -0500", hash_original_field = "5019B3EE05D6098E4ECE32F00F7F88CA", hash_generated_field = "8626E3C3C4BFCB66E8863775B28E01CC")
-
 
     private Socket socket;
 
@@ -89,6 +83,7 @@ protected OpenSSLSocketImplWrapper(Socket socket, String host, int port,
         return "SSL socket over " + socket.toString();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.945 -0500", hash_original_method = "BA6A863821CC6E272D69FAD304054330", hash_generated_method = "CF295742065C95EF4C2291A2441BD2F4")
     
 @Override
@@ -96,6 +91,7 @@ protected OpenSSLSocketImplWrapper(Socket socket, String host, int port,
         socket.setSoLinger(on, linger);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.947 -0500", hash_original_method = "6AD7B97F2FA9AF7B8D3F27597107B2BF", hash_generated_method = "E38CDAC51F0AE0D04C06CC4C93C73513")
     
 @Override
@@ -103,6 +99,7 @@ protected OpenSSLSocketImplWrapper(Socket socket, String host, int port,
         socket.setTcpNoDelay(on);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.949 -0500", hash_original_method = "D83D710E6441AF70333DBDC9EA6830A9", hash_generated_method = "35FC2FB42C15753AC682F54F0D8B59D0")
     
 @Override
@@ -110,6 +107,7 @@ protected OpenSSLSocketImplWrapper(Socket socket, String host, int port,
         socket.setReuseAddress(on);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.952 -0500", hash_original_method = "42F0A197FBCF742A135D89D6FE12DB15", hash_generated_method = "9371CDAA7E0118D8AB30BE4A5C849E31")
     
 @Override
@@ -117,6 +115,7 @@ protected OpenSSLSocketImplWrapper(Socket socket, String host, int port,
         socket.setKeepAlive(on);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.954 -0500", hash_original_method = "F7B57673F6A99B49112F94E152729E53", hash_generated_method = "22708E19EE5AF8B482DC858685469DC3")
     
 @Override
@@ -124,6 +123,7 @@ protected OpenSSLSocketImplWrapper(Socket socket, String host, int port,
         socket.setTrafficClass(tos);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.956 -0500", hash_original_method = "C6CB523E9BEBBF3CF2CBCDA94ED50C2A", hash_generated_method = "6BA461BD87F4524E979F9BB5555D0B75")
     
 @Override
@@ -132,6 +132,7 @@ protected OpenSSLSocketImplWrapper(Socket socket, String host, int port,
         super.setSoTimeout(to);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.958 -0500", hash_original_method = "A6ECFC0810DB8197115B82176EC6BB66", hash_generated_method = "354E312C641E673D0E268A306BF64632")
     
 @Override
@@ -139,6 +140,7 @@ protected OpenSSLSocketImplWrapper(Socket socket, String host, int port,
         socket.setSendBufferSize(size);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.961 -0500", hash_original_method = "D35B240A928EE0976B61520D6F633EA5", hash_generated_method = "E5A4E7DE32456ABBE48BA105746391DD")
     
 @Override
@@ -257,7 +259,6 @@ protected OpenSSLSocketImplWrapper(Socket socket, String host, int port,
     public int getLocalPort() {
         return socket.getLocalPort();
     }
-
     
 }
 

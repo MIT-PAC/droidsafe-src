@@ -13,14 +13,8 @@ import android.view.animation.AlphaAnimation;
 
 import com.android.internal.R;
 
-
-
-
-
-
 public class ZoomControls extends LinearLayout {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:39.774 -0500", hash_original_field = "590BB0711F9F5F376B267E11F07C4EA2", hash_generated_field = "7116DE4A12D2EB2034E69BBBF12212DA")
-
 
     private  ZoomButton mZoomIn;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:39.776 -0500", hash_original_field = "1C1355247C11A55FE6AE148525E68936", hash_generated_field = "E64AF7300F8D4E214346AF3EA47CF57E")
@@ -64,6 +58,7 @@ public void setOnZoomOutClickListener(OnClickListener listener) {
      * Sets how fast you get zoom events when the user holds down the
      * zoom in/out buttons.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:39.788 -0500", hash_original_method = "A6640A96361603BAC2F17D8F8F5DC89E", hash_generated_method = "198C61133DF94E746FFAB5EED3434EB1")
     
 public void setZoomSpeed(long speed) {
@@ -103,12 +98,14 @@ private void fade(int visibility, float startAlpha, float endAlpha) {
         setVisibility(visibility);
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:39.799 -0500", hash_original_method = "2126F62859134DF2EBC550B9718A317B", hash_generated_method = "3D5477A5B89E3921BCC086840A1575C3")
     
 public void setIsZoomInEnabled(boolean isEnabled) {
         mZoomIn.setEnabled(isEnabled);
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:39.801 -0500", hash_original_method = "45416B0BE009A28B7DBB8DCE0047833B", hash_generated_method = "2E12C64FF756D73EC359C4F86A395936")
     
 public void setIsZoomOutEnabled(boolean isEnabled) {
@@ -121,7 +118,6 @@ public void setIsZoomOutEnabled(boolean isEnabled) {
     public boolean hasFocus() {
         return mZoomIn.hasFocus() || mZoomOut.hasFocus();
     }
-
     
 }
 

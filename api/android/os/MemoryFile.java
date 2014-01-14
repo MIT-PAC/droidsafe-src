@@ -331,6 +331,7 @@ public OutputStream getOutputStream() {
             //Synthesized constructor
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:41.890 -0500", hash_original_method = "E169D47904A982CBC090A3E5EE81FFA1", hash_generated_method = "DED4AF55CF5E1B977A8F79686FB9F7EE")
         
 @Override

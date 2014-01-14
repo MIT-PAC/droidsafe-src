@@ -7,11 +7,6 @@ import android.util.Log;
 import droidsafe.annotations.*;
 import com.android.internal.util.ArrayUtils;
 
-
-
-
-
-
 public class LongSparseArray<E> {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.477 -0500", hash_original_method = "5D31A3D7A0E67E45752AFCF3D2F00D3F", hash_generated_method = "5EFDA50F3246D2A60070817B5CA38C18")
@@ -42,7 +37,6 @@ private static int binarySearch(long[] a, int start, int len, long key) {
 
     private boolean mGarbage = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.482 -0500", hash_original_field = "7F71001B36E5A98550DE3229F909BE4A", hash_generated_field = "10A03D33DDA7196CABEC9D15EF00ADBE")
-
 
     private long[] mKeys;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.484 -0500", hash_original_field = "D3F28F3EBFA7D0D8D614CF293C7CCCA8", hash_generated_field = "8F96A7DD3A8AA044003D4A42FBE80825")
@@ -285,6 +279,7 @@ public E valueAt(int index) {
      * value for the <code>index</code>th key-value mapping that this
      * SparseArray stores.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.462 -0500", hash_original_method = "7F2F6916ED61673EAF8E91642A81797D", hash_generated_method = "7A845630E6D6556C2A9509C60FAF897D")
     
 public void setValueAt(int index, E value) {
@@ -353,6 +348,7 @@ public void clear() {
      * Puts a key/value pair into the array, optimizing for the case where
      * the key is greater than all existing keys in the array.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.473 -0500", hash_original_method = "0B04A70E2C13FA00A3C14F0564BE387C", hash_generated_method = "CD28D606709EB3935A41ED96F79479D8")
     
 public void append(long key, E value) {

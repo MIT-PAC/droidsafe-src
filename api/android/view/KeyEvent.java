@@ -2139,6 +2139,7 @@ public final void recycle() {
     }
 
     /** @hide */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.164 -0500", hash_original_method = "BF13334B6C13BDDF4754612AD733986A", hash_generated_method = "85F9A34EFE22DA19FEBE1D016802192E")
     
 @Override

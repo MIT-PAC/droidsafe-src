@@ -266,6 +266,7 @@ public static String[] getSupportedProtocols() {
         return new String[] { SUPPORTED_PROTOCOL_SSLV3, SUPPORTED_PROTOCOL_TLSV1 };
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:06.094 -0500", hash_original_method = "88EB0A02E9253501CDB639C0011C0E5E", hash_generated_method = "FE667197C3A8E42ADF2EB3B663665CBD")
     
 public static void setEnabledProtocols(int ssl, String[] protocols) {
@@ -316,6 +317,7 @@ public static String[] checkEnabledProtocols(String[] protocols) {
     public static void SSL_set_cipher_lists(int ssl, String[] ciphers) {
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:06.103 -0500", hash_original_method = "590A1411A3915B3F10784B0A83240A94", hash_generated_method = "CA52C070E1F786A7670C7D42B30B4F53")
     
 public static void setEnabledCipherSuites(int ssl, String[] cipherSuites) {

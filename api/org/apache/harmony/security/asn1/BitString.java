@@ -5,17 +5,11 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public final class BitString {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:51.845 -0500", hash_original_field = "B8CA03B1D4CC2487E29E89EEB5EF2F9B", hash_generated_field = "AEC1F0C6EBA822C84ED8236810752976")
 
-
     private static final byte[] SET_MASK = { (byte) 128, 64, 32, 16, 8, 4, 2, 1 };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:51.848 -0500", hash_original_field = "B7965366C621DE185175E5DCDFC59D5B", hash_generated_field = "3E26BC5C80F6AADE58A6D4789BE0B931")
-
 
     private static final byte[] RESET_MASK = { 0x7f, (byte) 0xbf, (byte) 0xdf,
             (byte) 0xef, (byte) 0xf7, (byte) 0xfb, (byte) 0xfd, (byte) 0xfe, };
@@ -70,6 +64,7 @@ public boolean getBit(int bit) {
         return (bytes[index] & SET_MASK[offset]) != 0;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:51.862 -0500", hash_original_method = "64B37589A76FCD4AF41D04B8A51CCBFB", hash_generated_method = "61747BB9A7962BDC40FA5FD7DA9E3CB4")
     
 public void setBit(int bit, boolean value) {

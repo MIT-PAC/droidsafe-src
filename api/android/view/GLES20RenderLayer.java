@@ -7,10 +7,6 @@ import droidsafe.annotations.*;
 import android.graphics.Canvas;
 import android.graphics.Matrix;
 
-
-
-
-
 class GLES20RenderLayer extends GLES20Layer {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.028 -0500", hash_original_field = "C23E57C45D6013374D81287F280959A0", hash_generated_field = "6CE69E33D331522DEEDAAE7DFC370CEC")
 
@@ -19,7 +15,6 @@ class GLES20RenderLayer extends GLES20Layer {
 
     private int mLayerHeight;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.034 -0500", hash_original_field = "2E009C2898BBCB66E6B9427FBFE1DA4A", hash_generated_field = "16F4A35E0CD1838DD1F95EE11EDB2D11")
-
 
     private  GLES20Canvas mCanvas;
 
@@ -97,12 +92,12 @@ GLES20RenderLayer(int width, int height, boolean isOpaque) {
     /**
      * Ignored
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.051 -0500", hash_original_method = "4B8F7BEEB4E6A31727A7AE50B1045BA3", hash_generated_method = "99B3D29A8479A3433C4A5438CAC4D62B")
     
 @Override
     void setTransform(Matrix matrix) {
     }
-
     
 }
 

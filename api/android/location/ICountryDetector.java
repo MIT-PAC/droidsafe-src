@@ -93,7 +93,8 @@ return _result;
 /**
      * Add a listener to receive the notification when the country is detected or changed.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.672 -0500", hash_original_method = "8F996812D865A186315B11FBCF63DE94", hash_generated_method = "B314187CA280C74F936719D706C7C324")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.672 -0500", hash_original_method = "8F996812D865A186315B11FBCF63DE94", hash_generated_method = "B314187CA280C74F936719D706C7C324")
             
 public void addCountryListener(android.location.ICountryListener listener) throws android.os.RemoteException
 {
@@ -113,7 +114,8 @@ _data.recycle();
 /**
      * Remove the listener
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.675 -0500", hash_original_method = "3968F00607CE708B05B6A78B24E24EF2", hash_generated_method = "63E558D8B91587BBE7A3E123372D3D62")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.675 -0500", hash_original_method = "3968F00607CE708B05B6A78B24E24EF2", hash_generated_method = "63E558D8B91587BBE7A3E123372D3D62")
             
 public void removeCountryListener(android.location.ICountryListener listener) throws android.os.RemoteException
 {
@@ -144,7 +146,8 @@ public android.os.IBinder asBinder()
 {
 return this;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.656 -0500", hash_original_method = "B11C88C3F3B9A7F3F2701DE3F49022D6", hash_generated_method = "C621D8D79FC4C410691483F0ACCC1C40")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.656 -0500", hash_original_method = "B11C88C3F3B9A7F3F2701DE3F49022D6", hash_generated_method = "C621D8D79FC4C410691483F0ACCC1C40")
         
 @Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
 {

@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import javax.sip.InvalidArgumentException;
 
-
-
-
-
-
 public final class Accept extends ParametersHeader implements javax.sip.header.AcceptHeader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:52.305 -0500", hash_original_field = "9CA43EB522B57DE385352AFF69D13D0C", hash_generated_field = "67A05C878CFE3A4D19A95E223075CE16")
 
@@ -141,6 +136,7 @@ public void removeQValue() {
     /** set the ContentSubType field
      * @param subtype String to set
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:52.373 -0500", hash_original_method = "812F213530DE805FDEF52FE413B9F204", hash_generated_method = "280BE184A9827645A0C8A419ED01940A")
     
 public void setContentSubType(String subtype) {
@@ -152,6 +148,7 @@ public void setContentSubType(String subtype) {
     /** set the ContentType field
      * @param type String to set
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:52.379 -0500", hash_original_method = "6381E85A55588E15B8DC137B6EE66A93", hash_generated_method = "951C349FF591FAA1EC8B98ABA1746915")
     
 public void setContentType(String type) {
@@ -165,6 +162,7 @@ public void setContentType(String type) {
      * @param qValue float to set
      * @throws IllegalArgumentException if qValue is <0.0 or >1.0
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:52.385 -0500", hash_original_method = "E4B2DA5B904DBFAB5481CDBAB5D46DBA", hash_generated_method = "E3351F72E0F3E28B1B33EE6EA95F978D")
     
 public void setQValue(float qValue) throws InvalidArgumentException {

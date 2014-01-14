@@ -222,6 +222,7 @@ public double getAttributeDouble(String tag, double defaultValue) {
      * @param tag the name of the tag.
      * @param value the value of the tag.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.731 -0500", hash_original_method = "B68A317BC0B14013541CB1D016F585DF", hash_generated_method = "E5B7A4C2160F0B1762C23311F5766F9A")
     
 public void setAttribute(String tag, String value) {

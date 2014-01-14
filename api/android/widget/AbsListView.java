@@ -483,6 +483,7 @@ public AbsListView(Context context, AttributeSet attrs) {
 		//Return nothing
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @Override public void setOverScrollMode(int mode){
 		// Original method
 		/*
@@ -608,12 +609,14 @@ public AbsListView(Context context, AttributeSet attrs) {
 		//Return nothing
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setItemChecked(int position, boolean value){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @Override public boolean performItemClick(View view, int position, long id){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -707,6 +710,7 @@ public AbsListView(Context context, AttributeSet attrs) {
 		//Return nothing
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setFastScrollAlwaysVisible(boolean alwaysShow){
 		// Original method
 		/*
@@ -757,6 +761,7 @@ public AbsListView(Context context, AttributeSet attrs) {
 		*/
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @Override public void setVerticalScrollbarPosition(int position){
 		// Original method
 		/*
@@ -832,6 +837,7 @@ public AbsListView(Context context, AttributeSet attrs) {
 		//Return nothing
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @Override public void sendAccessibilityEvent(int eventType){
 		// Original method
 		/*
@@ -987,6 +993,7 @@ public AbsListView(Context context, AttributeSet attrs) {
 		return false;
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setFilterText(String filterText){
 		// Original method
 		/*
@@ -1203,6 +1210,7 @@ public AbsListView(Context context, AttributeSet attrs) {
 		//Return nothing
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @Override protected boolean setFrame(int left, int top, int right, int bottom){
 		// Original method
 		/*
@@ -1311,6 +1319,7 @@ protected void layoutChildren() {
 		//Return nothing
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @Override protected void dispatchDraw(Canvas canvas){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -1435,6 +1444,7 @@ protected void layoutChildren() {
 		//Return nothing
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setSelector(int resID){
 		// Original method
 		/*
@@ -1755,6 +1765,7 @@ public void setScrollIndicators(View up, View down) {
 		//Return nothing
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @Override public boolean onTouchEvent(MotionEvent ev){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -1936,6 +1947,7 @@ public void setScrollIndicators(View up, View down) {
 		//Return nothing
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setFriction(float friction){
 		// Original method
 		/*
@@ -2348,6 +2360,7 @@ SavedState(Parcelable superState) {
 			*/
 		}
         
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @Override public void writeToParcel(Parcel out, int flags){
 			// Original method
 			/*
@@ -2754,6 +2767,7 @@ PositionScroller() {
 			//Return nothing
 		}
         
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         void start(int position, int boundPosition){
 			addTaint(position);
 			mTargetPos = position;  //Preserved
@@ -2764,6 +2778,7 @@ PositionScroller() {
 			//Return nothing
 		}
         
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         void startWithOffset(int position, int offset){
 			// Original method
 			/*
@@ -3133,6 +3148,7 @@ public LayoutParams(ViewGroup.LayoutParams source) {
 			return null;
 		}
         
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         void addScrapView(View scrap, int position){
 			// Original method
 			/* Original Method Too Long, Refer to Original Implementation */
@@ -3185,6 +3201,7 @@ public LayoutParams(ViewGroup.LayoutParams source) {
 			//Return nothing
 		}
         
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         void setCacheColorHint(int color){
 			// Original method
 			/* Original Method Too Long, Refer to Original Implementation */
@@ -3518,6 +3535,7 @@ public void afterTextChanged(Editable s) {
 		//Return nothing
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setRemoteViewsAdapter(Intent intent){
 		// Original method
 		/*

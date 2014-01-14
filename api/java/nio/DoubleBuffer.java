@@ -6,10 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Arrays;
 
-
-
-
-
 public abstract class DoubleBuffer extends Buffer implements Comparable<DoubleBuffer> {
 
     /**
@@ -433,6 +429,7 @@ public final DoubleBuffer put(double[] src) {
      * @exception ReadOnlyBufferException
      *                if no changes may be made to the contents of this buffer.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.539 -0500", hash_original_method = "3E73039BF6DB142176253DE2263B83AD", hash_generated_method = "4F015A29746EB1C0C69EB5D48214782E")
     
 public DoubleBuffer put(double[] src, int srcOffset, int doubleCount) {
@@ -513,7 +510,6 @@ public abstract DoubleBuffer put(int index, double d);
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.547 -0500", hash_original_method = "77285C0B11D6FAF3123027CAFA126E55", hash_generated_method = "FFE5DDEBAB752CC87926AAAD15D2E4AA")
     
 public abstract DoubleBuffer slice();
-
     
 }
 

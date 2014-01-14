@@ -159,6 +159,7 @@ public void commitCorrection(CorrectionInfo info) {
         dispatchMessage(obtainMessageO(DO_COMMIT_CORRECTION, info));
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:31.418 -0500", hash_original_method = "E49BA2D7A7A069DD200E49150DD829D6", hash_generated_method = "0A2A73D1AC263571E477FBD705AEE81E")
     
 public void setSelection(int start, int end) {
@@ -215,6 +216,7 @@ public void performContextMenuAction(int id) {
         dispatchMessage(obtainMessageII(DO_PERFORM_CONTEXT_MENU_ACTION, id, 0));
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:31.425 -0500", hash_original_method = "D0BDE81E935635A3C1E1A2527338BB18", hash_generated_method = "6B55485338A16ED636CB5438779EF798")
     
 public void setComposingRegion(int start, int end) {
@@ -276,6 +278,7 @@ public void performPrivateCommand(String action, Bundle data) {
         dispatchMessage(obtainMessageOO(DO_PERFORM_PRIVATE_COMMAND, action, data));
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:31.448 -0500", hash_original_method = "F5A5E3786D2DDCB2FEFEBA688154C5D7", hash_generated_method = "A1BBFB8562CE1F2873E7B8F06FF3267A")
     
 void dispatchMessage(Message msg) {

@@ -40,6 +40,7 @@ public static Typeface create(String familyName, int style) {
      *               e.g. NORMAL, BOLD, ITALIC, BOLD_ITALIC
      * @return The best matching typeface.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.661 -0500", hash_original_method = "440330E00D63CA8C46C2D2C8DF2C6AC6", hash_generated_method = "6ADE5CB6ADC5D7A39E399D5D4E6783C5")
     
 public static Typeface create(Typeface family, int style) {

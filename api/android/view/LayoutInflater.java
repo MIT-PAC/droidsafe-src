@@ -445,6 +445,7 @@ public View inflate(XmlPullParser parser, ViewGroup root, boolean attachToRoot) 
      * 
      * @return View The newly instantiated view, or null.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.806 -0500", hash_original_method = "9249249C6DEB7757C8882D406CD78B4B", hash_generated_method = "D9DD31C509C78EF24376145F9807B128")
     
 public final View createView(String name, String prefix, AttributeSet attrs)

@@ -12,12 +12,7 @@ import java.util.List;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public class WifiP2pGroup implements Parcelable {
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.700 -0400", hash_original_field = "2D4DFD124864C66F2F83797BE326D45F", hash_generated_field = "32E89BB9B9BA18A350DF4B63B27D02B5")
 
@@ -61,7 +56,6 @@ public WifiP2pGroup[] newArray(int size) {
 
     private String mPassphrase;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.743 -0500", hash_original_field = "184B1D198467B8AE4B7F05E082D0D094", hash_generated_field = "5F89B7D413C8E14947C0E11B080C408D")
-
 
     private String mInterface;
 
@@ -290,6 +284,7 @@ public int describeContents() {
     }
 
     /** Implement the Parcelable interface */
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.792 -0500", hash_original_method = "1E901056DDD7FF66FB9A75FE788910FD", hash_generated_method = "DDFCE07975622A7FED462B730D2753CC")
     
 public void writeToParcel(Parcel dest, int flags) {

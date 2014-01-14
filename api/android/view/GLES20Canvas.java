@@ -798,6 +798,7 @@ void resume() {
         nScale(mRenderer, sx, sy);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:44.361 -0500", hash_original_method = "F6D59AD1FAE97EC22EF86A1DF6443B3F", hash_generated_method = "842B4D0D1DA321F39C333F1F49A9D447")
     
 @Override
@@ -837,6 +838,7 @@ void resume() {
         return nSave(mRenderer, saveFlags);
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:44.389 -0500", hash_original_method = "9DF5A937336C76576E5F634C144FC48D", hash_generated_method = "5874F23B7ACE8895C1D7BAA60010B41A")
     
 @Override
@@ -852,6 +854,7 @@ void resume() {
         return count;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:44.396 -0500", hash_original_method = "E794596E5060868E9256D6234D184C09", hash_generated_method = "C049EBA06670DC13A938785626378E55")
     
 @Override
@@ -896,6 +899,7 @@ void resume() {
         nRestore(mRenderer);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:44.422 -0500", hash_original_method = "03029795119CF4F7F4374FF9CDD913F1", hash_generated_method = "47865D29D08961405F5E34856C49A3E1")
     
 @Override

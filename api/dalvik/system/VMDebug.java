@@ -62,6 +62,7 @@ public final class VMDebug {
      * @param flags flags to control method tracing. The only one that
      * is currently defined is {@link #TRACE_COUNT_ALLOCS}.
      */
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:41.679 -0500", hash_original_method = "FCB90ED5C4F694A91B5F73A6370D7475", hash_generated_method = "D9E3D381FDB97F35571E3CB3F0A7D758")
     
 public static void startMethodTracing(String traceFileName,
@@ -79,6 +80,7 @@ public static void startMethodTracing(String traceFileName,
      * FileDescriptor in which the trace is written.  The file name is also
      * supplied simply for logging.  Makes a dup of the file descriptor.
      */
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:41.681 -0500", hash_original_method = "97B591DF3562D946C70A1ECBD633B498", hash_generated_method = "D7F2004FFCF007261665F99CF411A189")
     
 public static void startMethodTracing(String traceFileName,

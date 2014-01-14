@@ -181,7 +181,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:29.893 -0500", hash_original_method = "C1A1631DACE23D93B0E5A8788BE0B1E6", hash_generated_method = "5E3C92A879F021E3D08BD1312A8C2F2B")
+@DSSink({DSSinkKind.BLUETOOTH})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:29.893 -0500", hash_original_method = "C1A1631DACE23D93B0E5A8788BE0B1E6", hash_generated_method = "5E3C92A879F021E3D08BD1312A8C2F2B")
             
 public boolean setPriority(android.bluetooth.BluetoothDevice device, int priority) throws android.os.RemoteException
 {
@@ -664,7 +665,8 @@ public android.os.IBinder asBinder()
 {
 return this;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:29.865 -0500", hash_original_method = "907C2C6FECC340C41ECC091B1C95CDE7", hash_generated_method = "AF0A33314B3281D5089FD8935A7291E4")
+@DSSink({DSSinkKind.BLUETOOTH})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:29.865 -0500", hash_original_method = "907C2C6FECC340C41ECC091B1C95CDE7", hash_generated_method = "AF0A33314B3281D5089FD8935A7291E4")
         
 @Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
 {
@@ -980,7 +982,6 @@ return super.onTransact(code, data, reply, flags);
 }
 }
 
-
 public boolean connect(android.bluetooth.BluetoothDevice device) throws android.os.RemoteException;
 public boolean disconnect(android.bluetooth.BluetoothDevice device) throws android.os.RemoteException;
 public java.util.List<android.bluetooth.BluetoothDevice> getConnectedDevices() throws android.os.RemoteException;
@@ -992,9 +993,7 @@ public boolean startVoiceRecognition(android.bluetooth.BluetoothDevice device) t
 public boolean stopVoiceRecognition(android.bluetooth.BluetoothDevice device) throws android.os.RemoteException;
 public boolean isAudioConnected(android.bluetooth.BluetoothDevice device) throws android.os.RemoteException;
 
-
 public int getBatteryUsageHint(android.bluetooth.BluetoothDevice device) throws android.os.RemoteException;
-
 
 public boolean createIncomingConnect(android.bluetooth.BluetoothDevice device) throws android.os.RemoteException;
 public boolean acceptIncomingConnect(android.bluetooth.BluetoothDevice device) throws android.os.RemoteException;

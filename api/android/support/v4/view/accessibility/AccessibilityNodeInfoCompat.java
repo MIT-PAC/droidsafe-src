@@ -264,6 +264,7 @@ public AccessibilityNodeInfoCompat getParent() {
      * @param parent The parent.
      * @throws IllegalStateException If called from an AccessibilityService.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:21.677 -0500", hash_original_method = "86518FC5D5AE3E2BA199BEEAA088933F", hash_generated_method = "A9CC7F035545F94FB6F4921F709546B9")
     
 public void setParent(View parent) {
@@ -292,6 +293,7 @@ public void getBoundsInParent(Rect outBounds) {
      * @param bounds The node bounds.
      *@throws IllegalStateException If called from an AccessibilityService.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:21.681 -0500", hash_original_method = "3D18F1D3A722CB931F3C0EA8FCAAFCB7", hash_generated_method = "4800FFEAA8FE374D7F76DD508373AD10")
     
 public void setBoundsInParent(Rect bounds) {
@@ -320,6 +322,7 @@ public void getBoundsInScreen(Rect outBounds) {
      * @param bounds The node bounds.
      * @throws IllegalStateException If called from an AccessibilityService.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:21.686 -0500", hash_original_method = "59EABEF98A7E138E1AB24AE8A708DBC4", hash_generated_method = "BD71A64F0D3604B386EE96EB08AD35D1")
     
 public void setBoundsInScreen(Rect bounds) {
@@ -544,6 +547,7 @@ public boolean isEnabled() {
      * @param enabled True if the node is enabled.
      * @throws IllegalStateException If called from an AccessibilityService.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:21.722 -0500", hash_original_method = "38B56F1A12BFB4B4EFFD2BC2116AF996", hash_generated_method = "6CE97DBF8734F261892A971A7D8BDF52")
     
 public void setEnabled(boolean enabled) {
@@ -865,12 +869,14 @@ public boolean performAction(Object info, int action) {
             return false;
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:21.454 -0500", hash_original_method = "6311EA40C38D5B6B34E9E1F7C3DBB879", hash_generated_method = "A26B4E2A7BDD2FA71BC9BAAB08E4C552")
         
 public void setBoundsInParent(Object info, Rect bounds) {
 
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:21.456 -0500", hash_original_method = "D2C9C693466BA3A7E4B14036D2B17A5B", hash_generated_method = "0FC111DB7DE6058E7083B0209F29310E")
         
 public void setBoundsInScreen(Object info, Rect bounds) {
@@ -889,6 +895,7 @@ public void setChecked(Object info, boolean checked) {
 
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:21.463 -0500", hash_original_method = "82032763AB44B88BDF6C3C4AC2ABB1CF", hash_generated_method = "AFE296A61CCEE4D84EF0872398D9733C")
         
 public void setClassName(Object info, CharSequence className) {
@@ -901,12 +908,14 @@ public void setClickable(Object info, boolean clickable) {
 
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:21.468 -0500", hash_original_method = "B500330A66D743DBA7E460FD212D7744", hash_generated_method = "EB7B5797CB096E840BA1BF48B7980B6C")
         
 public void setContentDescription(Object info, CharSequence contentDescription) {
 
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:21.471 -0500", hash_original_method = "2E8A30481E49B666D7564B714DFA8A28", hash_generated_method = "D814BFEA204A885E830BD4627DD5B8E2")
         
 public void setEnabled(Object info, boolean enabled) {
@@ -931,12 +940,14 @@ public void setLongClickable(Object info, boolean longClickable) {
 
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:21.480 -0500", hash_original_method = "7ACCCA5C650FD61E0E741AE4759FF12D", hash_generated_method = "52138046DAE4B6428E3CA6B1062E96F8")
         
 public void setPackageName(Object info, CharSequence packageName) {
 
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:21.482 -0500", hash_original_method = "69043B1B7F4EB8EB9BDC8511E4B08BEE", hash_generated_method = "8F59DCA4A71FFC66B6C4776E8B8E43FC")
         
 public void setParent(Object info, View parent) {
@@ -1184,6 +1195,7 @@ public void recycle(Object info) {
             return AccessibilityNodeInfoCompatIcs.performAction(info, action);
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:21.573 -0500", hash_original_method = "B83B9E944F82D8AD27FBEADECC6E7EF2", hash_generated_method = "2647F3478ED17B710ACBA53542B4D843")
         
 @Override
@@ -1191,6 +1203,7 @@ public void recycle(Object info) {
             AccessibilityNodeInfoCompatIcs.setBoundsInParent(info, bounds);
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:21.576 -0500", hash_original_method = "AA193C796629869323B4C215F767EF10", hash_generated_method = "4D9981938FF2DF453C3B1DA339874E4F")
         
 @Override
@@ -1212,6 +1225,7 @@ public void recycle(Object info) {
             AccessibilityNodeInfoCompatIcs.setChecked(info, checked);
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:21.584 -0500", hash_original_method = "7A94FF987D45DDACFD0402C8FB7DDE97", hash_generated_method = "82F21377F35F8C3A6FAB50E56122B5EE")
         
 @Override
@@ -1226,6 +1240,7 @@ public void recycle(Object info) {
             AccessibilityNodeInfoCompatIcs.setClickable(info, clickable);
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:21.589 -0500", hash_original_method = "0169AC239075ED7B4C4FDF21404839A2", hash_generated_method = "3696DA6EEEAE2402D0D48EF468736B52")
         
 @Override
@@ -1233,6 +1248,7 @@ public void recycle(Object info) {
             AccessibilityNodeInfoCompatIcs.setContentDescription(info, contentDescription);
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:21.592 -0500", hash_original_method = "E3468D53BBC641A160F74004C61B3122", hash_generated_method = "8E2BC90C970B0AE37CE8A8CFBCC7C2E8")
         
 @Override
@@ -1261,6 +1277,7 @@ public void recycle(Object info) {
             AccessibilityNodeInfoCompatIcs.setLongClickable(info, longClickable);
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:21.602 -0500", hash_original_method = "7DAB17659A9A31AE8995C1EE54CC3933", hash_generated_method = "27ED886B166104585F6E9E4357A853D0")
         
 @Override
@@ -1268,6 +1285,7 @@ public void recycle(Object info) {
             AccessibilityNodeInfoCompatIcs.setPackageName(info, packageName);
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:21.605 -0500", hash_original_method = "DDE950F8FB9AD10FE97D3324E7FA0C0C", hash_generated_method = "96ECE2EB2E2BD04EA7D069BA191E8613")
         
 @Override

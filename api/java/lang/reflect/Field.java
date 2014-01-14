@@ -663,6 +663,7 @@ public Class<?> getType() {
      * @throws IllegalAccessException
      *             if this field is not accessible
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.335 -0500", hash_original_method = "6D24AA0F6B01F01D922DBBA93FD91F81", hash_generated_method = "30D8F62F862AD3637A8B07C21E9E5524")
     
 public void set(Object object, Object value) throws IllegalAccessException,
@@ -698,6 +699,7 @@ public void set(Object object, Object value) throws IllegalAccessException,
      * @throws IllegalAccessException
      *             if this field is not accessible
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.337 -0500", hash_original_method = "25FFB4639E444F2A9FD12AF0E909B7A5", hash_generated_method = "50D46A62976E2A32D29DFB63C6D79FD9")
     
 public void setBoolean(Object object, boolean value) throws IllegalAccessException,
@@ -732,6 +734,7 @@ public void setBoolean(Object object, boolean value) throws IllegalAccessExcepti
      * @throws IllegalAccessException
      *             if this field is not accessible
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.340 -0500", hash_original_method = "AD912B9A4F5D11756FF2F9AE3FC4D6E6", hash_generated_method = "93A31D3D90D062DC6036124FE7AB93E4")
     
 public void setByte(Object object, byte value) throws IllegalAccessException,
@@ -766,6 +769,7 @@ public void setByte(Object object, byte value) throws IllegalAccessException,
      * @throws IllegalAccessException
      *             if this field is not accessible
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.342 -0500", hash_original_method = "97D79EA86FEBB11A4E8B5CD3EFF3DEF5", hash_generated_method = "27D7E83AF7256E0E15F6688E1952724B")
     
 public void setChar(Object object, char value) throws IllegalAccessException,
@@ -800,6 +804,7 @@ public void setChar(Object object, char value) throws IllegalAccessException,
      * @throws IllegalAccessException
      *             if this field is not accessible
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.344 -0500", hash_original_method = "5E12E36ACBA66ADB7DF4FF63170F60C3", hash_generated_method = "C021E230FDFB0E83C2A3E76BB8D4B05D")
     
 public void setDouble(Object object, double value) throws IllegalAccessException,
@@ -834,6 +839,7 @@ public void setDouble(Object object, double value) throws IllegalAccessException
      * @throws IllegalAccessException
      *             if this field is not accessible
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.347 -0500", hash_original_method = "4860783C5B567E2FC646E7FC5AE81E3C", hash_generated_method = "447B5BAB277B3C4B348F36DA3728A9A7")
     
 public void setFloat(Object object, float value) throws IllegalAccessException,
@@ -868,6 +874,7 @@ public void setFloat(Object object, float value) throws IllegalAccessException,
      * @throws IllegalAccessException
      *             if this field is not accessible
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.350 -0500", hash_original_method = "DA13B1330D08A636280F51E51FF711B2", hash_generated_method = "6392FEF2EBBE8D70E43184E3B192A066")
     
 public void setInt(Object object, int value) throws IllegalAccessException,
@@ -902,6 +909,7 @@ public void setInt(Object object, int value) throws IllegalAccessException,
      * @throws IllegalAccessException
      *             if this field is not accessible
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.353 -0500", hash_original_method = "F703AA23CA1EF460C68B245887B2C6B7", hash_generated_method = "0439D90727AC1452C935573F5082E145")
     
 public void setLong(Object object, long value) throws IllegalAccessException,
@@ -936,6 +944,7 @@ public void setLong(Object object, long value) throws IllegalAccessException,
      * @throws IllegalAccessException
      *             if this field is not accessible
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.355 -0500", hash_original_method = "DEE843BD220F8992FC80A23844FC7C06", hash_generated_method = "E2D3FCC56BE5130B880BE3CC56366F7D")
     
 public void setShort(Object object, short value) throws IllegalAccessException,

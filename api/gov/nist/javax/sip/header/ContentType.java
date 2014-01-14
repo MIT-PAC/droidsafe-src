@@ -8,11 +8,6 @@ import java.text.ParseException;
 
 import javax.sip.header.ContentTypeHeader;
 
-
-
-
-
-
 public class ContentType extends ParametersHeader implements javax.sip.header.ContentTypeHeader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.391 -0500", hash_original_field = "7BA0516880DD2AA311344E5EDF675622", hash_generated_field = "F8C109B71FF1A33F443977543E5F5F99")
 
@@ -142,6 +137,7 @@ public void setMediaRange(MediaRange m) {
     *@param contentType Content type string.
     *@param contentSubType content subtype string
     */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.431 -0500", hash_original_method = "255C5DEA7C1BA0115D227FF364F117E1", hash_generated_method = "83ADF05B5CD8F5BA8564FED874B6DDF0")
     
 public void setContentType(String contentType, String contentSubType) {
@@ -156,6 +152,7 @@ public void setContentType(String contentType, String contentSubType) {
     *@param contentType Content type string.
     */
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.434 -0500", hash_original_method = "D590DDC03635869B8BF7D8A74B8AFC87", hash_generated_method = "82AB572602AB8E73BDB47CF09B09CDDF")
     
 public void setContentType(String contentType) throws ParseException {
@@ -170,6 +167,7 @@ public void setContentType(String contentType) throws ParseException {
     /** Set the content subtype.
          * @param contentType String to set
          */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.437 -0500", hash_original_method = "0B1F5B2677CEADEDD2A1902A7B2F0CE3", hash_generated_method = "99E05A0D8012EB75DD0FFFA0A8B4971A")
     
 public void setContentSubType(String contentType) throws ParseException {

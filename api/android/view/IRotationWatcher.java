@@ -69,7 +69,8 @@ public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:48.509 -0500", hash_original_method = "B00F56AA70C3843936485225FE817D71", hash_generated_method = "FDF6C23CBAE09B5C8CAD9ABE9491B308")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:48.509 -0500", hash_original_method = "B00F56AA70C3843936485225FE817D71", hash_generated_method = "FDF6C23CBAE09B5C8CAD9ABE9491B308")
             
 public void onRotationChanged(int rotation) throws android.os.RemoteException
 {

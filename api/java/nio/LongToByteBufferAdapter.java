@@ -6,10 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import libcore.io.SizeOf;
 
-
-
-
-
 final class LongToByteBufferAdapter extends LongBuffer {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:05.176 -0500", hash_original_method = "D932C9FB81190BBA2222EE830AEAF465", hash_generated_method = "9C539DAB3D1A86AFAC4F6478C3DB9947")
@@ -20,7 +16,6 @@ static LongBuffer asLongBuffer(ByteBuffer byteBuffer) {
         return new LongToByteBufferAdapter(slice);
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:05.174 -0500", hash_original_field = "1550DCB87D4D50D3727BEA306C5BDDD3", hash_generated_field = "34B9235D8E87AE2A76AC711395EEC0EB")
-
 
     private  ByteBuffer byteBuffer;
 
@@ -149,6 +144,7 @@ private LongToByteBufferAdapter(ByteBuffer byteBuffer) {
         return false;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:05.212 -0500", hash_original_method = "87F5FD3E4F89C8080D5C7CCD57D2DD50", hash_generated_method = "791FAA1EB501CB85267F780D792086C2")
     
 @Override
@@ -160,6 +156,7 @@ private LongToByteBufferAdapter(ByteBuffer byteBuffer) {
         return this;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:05.214 -0500", hash_original_method = "CF44390369F77E5D846E6D2329A6B3BC", hash_generated_method = "E2131AD4E5C9E469729672ECCFFA08DE")
     
 @Override
@@ -169,6 +166,7 @@ private LongToByteBufferAdapter(ByteBuffer byteBuffer) {
         return this;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:05.217 -0500", hash_original_method = "95A4CBB7FC306D23EF877E74124EDB15", hash_generated_method = "112CA108D904D1D1E5F8A43C2EE5F21E")
     
 @Override
@@ -195,7 +193,6 @@ private LongToByteBufferAdapter(ByteBuffer byteBuffer) {
         byteBuffer.clear();
         return result;
     }
-
     
 }
 

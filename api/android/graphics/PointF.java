@@ -71,6 +71,7 @@ public PointF() {}
         addTaint(y);
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public final void set(PointF p){
         addTaint(p.getTaint());
     }

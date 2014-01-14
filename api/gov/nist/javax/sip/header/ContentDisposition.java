@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.text.ParseException;
 
-
-
-
-
-
 public final class ContentDisposition extends ParametersHeader implements javax.sip.header.ContentDispositionHeader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:52.596 -0500", hash_original_field = "6D30F97CF92ABC307F883ACFB9E10475", hash_generated_field = "1A47D47195A65F4F581EF3E849861302")
 
@@ -81,6 +76,7 @@ public String getHandling() {
     /** set the dispositionType field.
      * @param handling String to set.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:52.631 -0500", hash_original_method = "B6C4C36D7665EDCFABC9BF782D2AADE0", hash_generated_method = "72746B0C8E6F50381A740846901C041A")
     
 public void setHandling(String handling) throws ParseException {

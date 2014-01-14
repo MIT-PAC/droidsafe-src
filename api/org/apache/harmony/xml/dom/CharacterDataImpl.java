@@ -7,14 +7,8 @@ import droidsafe.annotations.*;
 import org.w3c.dom.CharacterData;
 import org.w3c.dom.DOMException;
 
-
-
-
-
-
 public abstract class CharacterDataImpl extends LeafNodeImpl implements CharacterData {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:22.438 -0500", hash_original_field = "A9CAEEE2FF165AC333A62258118495FF", hash_generated_field = "8AF0FC6820B1A3CAE77FB8E492E96A1F")
-
 
     protected StringBuffer buffer;
 
@@ -86,6 +80,7 @@ public void replaceData(int offset, int count, String arg)
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:22.461 -0500", hash_original_method = "5BA6B073B626BFB26050E72E23806022", hash_generated_method = "D119B080B48318E2AA7109BC0FDFCB03")
     
 public void setData(String data) throws DOMException {
@@ -101,7 +96,6 @@ public String substringData(int offset, int count) throws DOMException {
             throw new DOMException(DOMException.INDEX_SIZE_ERR, null);
         }
     }
-
     
 }
 

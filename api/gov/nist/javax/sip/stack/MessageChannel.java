@@ -32,11 +32,6 @@ import javax.sip.header.ServerHeader;
 import javax.sip.header.ToHeader;
 import javax.sip.header.ViaHeader;
 
-
-
-
-
-
 public abstract class MessageChannel {
 
     /**
@@ -283,6 +278,7 @@ public int getPort() {
      * @param hop hop to send it to.
      * @throws IOException If there is an error sending the message
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:26.437 -0500", hash_original_method = "6965EB337B784D47DD1B6D5165D2FBD3", hash_generated_method = "49C0500EDAB2421417EBD8E5E986BA4B")
     
 public void sendMessage(SIPMessage sipMessage, Hop hop) throws IOException {
@@ -332,6 +328,7 @@ public void sendMessage(SIPMessage sipMessage, Hop hop) throws IOException {
      * @param receiverAddress is the address to which we want to send
      * @param receiverPort is the port to which we want to send
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:26.441 -0500", hash_original_method = "4AF33D1C82235ED60B6E3DD0D1967C25", hash_generated_method = "B1FD74C7B598A73CE43B5AD1FC17421B")
     
 public void sendMessage(SIPMessage sipMessage, InetAddress receiverAddress, int receiverPort)
@@ -502,7 +499,7 @@ protected final String createBadReqRes(String badReq, ParseException pe) {
         if (! (this instanceof UDPMessageChannel) ||
                 clength + buf.length() + ContentTypeHeader.NAME.length()
                 + ": message/sipfrag\r\n".length() +
-                ContentLengthHeader.NAME.length()  < 1300) { 
+                ContentLengthHeader.NAME.length()  < 1300) {
             
             /*
              * Check to see we are within one UDP packet.
@@ -528,7 +525,6 @@ protected final String createBadReqRes(String badReq, ParseException pe) {
 public MessageProcessor getMessageProcessor() {
         return this.messageProcessor;
     }
-
     
 }
 

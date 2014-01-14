@@ -10,10 +10,6 @@ import java.math.BigInteger;
 import libcore.io.Streams;
 import libcore.util.EmptyArray;
 
-
-
-
-
 public class ClientKeyExchange extends Message {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:14.442 -0500", hash_original_field = "A8EC1747D3C20FCA9F3B799F3E21511E", hash_generated_field = "A8EC1747D3C20FCA9F3B799F3E21511E")
 
@@ -109,6 +105,7 @@ public ClientKeyExchange(HandshakeIODataStream in, int length, boolean isTLS, bo
      * Sends message
      * @param out
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:14.459 -0500", hash_original_method = "355F47F7AE472993E3A2C68F4F83F8CB", hash_generated_method = "7DAE11C94B3B5FFEA81184E8A7CC2D91")
     
 @Override
@@ -141,7 +138,6 @@ public ClientKeyExchange(HandshakeIODataStream in, int length, boolean isTLS, bo
 public boolean isEmpty() {
         return (exchange_keys.length == 0);
     }
-
     
 }
 

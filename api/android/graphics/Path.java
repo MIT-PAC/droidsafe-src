@@ -208,6 +208,7 @@ public void rewind() {
 
     /** Replace the contents of this with the contents of src.
     */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:09.172 -0500", hash_original_method = "B685542335E97A84BA9D0A3AD0CEB866", hash_generated_method = "90F1B9EE81732DFF84414BAF401516D8")
     
 public void set(Path src) {
@@ -695,6 +696,7 @@ public void offset(float dx, float dy) {
      * @param dx The new X coordinate for the last point
      * @param dy The new Y coordinate for the last point
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:09.265 -0500", hash_original_method = "DE0F6A19984A9351DC908B14944CEA04", hash_generated_method = "24EFCFC7818241CE2618509261F697F1")
     
 public void setLastPoint(float dx, float dy) {

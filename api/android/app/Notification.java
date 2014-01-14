@@ -18,11 +18,6 @@ import android.widget.RemoteViews;
 
 import com.android.internal.R;
 
-
-
-
-
-
 public class Notification implements Parcelable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:18.239 -0500", hash_original_field = "5BB1F14B760B289DD56199D40503C3B2", hash_generated_field = "493D0EBDAE7097F899550C884AC22A2C")
 
@@ -124,14 +119,12 @@ public Notification[] newArray(int size)
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:18.279 -0500", hash_original_field = "D33E756C2D5F750C5D34904C059EE8D3", hash_generated_field = "F2FF83B6EA1500EB5B3B8FD769168619")
 
     public long[] vibrate;
-
     
     public static class Builder {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:18.347 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
 
         private Context mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:18.349 -0500", hash_original_field = "DC3C02B3B86774AA049529AB7BA1456D", hash_generated_field = "844ECA1D47A3C505C7DE80048E6071EA")
-
 
         private long mWhen;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:18.351 -0500", hash_original_field = "1ECA0A39CA494F6BEDC60572E1607E75", hash_generated_field = "45C49A5EA6EC401F6D3EFC525CE84A58")
@@ -651,7 +644,6 @@ public Notification getNotification() {
             }
             return n;
         }
-
         
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:18.282 -0500", hash_original_field = "128E38791619DBDCD60954601A40EDB1", hash_generated_field = "057E0BFB613A5D660FB5738277981EFF")
@@ -667,7 +659,6 @@ public Notification getNotification() {
 
     public int defaults;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:18.310 -0500", hash_original_field = "E0CDE1A38A40425C446F52269E5723DC", hash_generated_field = "06C062A47B4E980AE7B4928732A7AB14")
-
 
     public int flags;
 
@@ -824,6 +815,7 @@ public int describeContents() {
     /**
      * Flatten this notification from a parcel.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:18.329 -0500", hash_original_method = "2E97C8DA884DBA934FB3E6EBE25C30F5", hash_generated_method = "26BFF04B04901CA06B5B471C37A88912")
     
 public void writeToParcel(Parcel parcel, int flags)

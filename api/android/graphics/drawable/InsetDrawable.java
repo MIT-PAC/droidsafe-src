@@ -17,10 +17,6 @@ import android.graphics.ColorFilter;
 import android.graphics.Rect;
 import android.util.AttributeSet;
 
-
-
-
-
 public class InsetDrawable extends Drawable implements Drawable.Callback {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:13.901 -0500", hash_original_field = "9579D92D104C8EB77E7F2AEAD01651CF", hash_generated_field = "3AE2C9F0AA2C9F1010956C331820EBD8")
 
@@ -190,6 +186,7 @@ public void unscheduleDrawable(Drawable who, Runnable what) {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:13.934 -0500", hash_original_method = "EFF30D1C1A84058D8C292EB91F9472BE", hash_generated_method = "9ED10647082E06E9753799E94D347860")
     
 @Override
@@ -198,6 +195,7 @@ public void unscheduleDrawable(Drawable who, Runnable what) {
         return super.setVisible(visible, restart);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:13.936 -0500", hash_original_method = "B23A5809007626F95D6E0E75FACEBCF9", hash_generated_method = "CD442C7F76CD5BA02659E66FC4BB1BD1")
     
 @Override
@@ -205,6 +203,7 @@ public void unscheduleDrawable(Drawable who, Runnable what) {
         mInsetState.mDrawable.setAlpha(alpha);
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:13.938 -0500", hash_original_method = "06DFACBA6F5F88BE2848B90C2DE93101", hash_generated_method = "403ED5464F72B5720F66D941673BEB49")
     
 @Override
@@ -285,7 +284,6 @@ public void unscheduleDrawable(Drawable who, Runnable what) {
         }
         return this;
     }
-
     
     final static class InsetState extends ConstantState {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:13.959 -0500", hash_original_field = "38BA53DD394F85639C99ED8E666FF8FB", hash_generated_field = "38BA53DD394F85639C99ED8E666FF8FB")
@@ -295,7 +293,6 @@ public void unscheduleDrawable(Drawable who, Runnable what) {
 
         int mChangingConfigurations;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:13.963 -0500", hash_original_field = "E2BE4EAC7479E12B8AD15F8A1DC878B0", hash_generated_field = "E2BE4EAC7479E12B8AD15F8A1DC878B0")
-
 
         int mInsetLeft;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:13.965 -0500", hash_original_field = "BDC766ACBEF4E33A22B4884B070885A7", hash_generated_field = "BDC766ACBEF4E33A22B4884B070885A7")
@@ -308,7 +305,6 @@ public void unscheduleDrawable(Drawable who, Runnable what) {
 
         int mInsetBottom;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:13.971 -0500", hash_original_field = "04605894B57F7B3414AF620BF4AC040E", hash_generated_field = "04605894B57F7B3414AF620BF4AC040E")
-
 
         boolean mCheckedConstantState;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:13.973 -0500", hash_original_field = "09212A3A30B7E6D48DEECC4F4639CCBC", hash_generated_field = "09212A3A30B7E6D48DEECC4F4639CCBC")
@@ -364,11 +360,8 @@ boolean canConstantState() {
 
             return mCanConstantState;
         }
-
         
     }
-
-
     
 }
 

@@ -7,16 +7,11 @@ import droidsafe.annotations.*;
 import gov.nist.core.NameValue;
 import gov.nist.core.NameValueList;
 
-
-
-
-
 public class Challenge extends SIPObject {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:10.086 -0500", hash_original_field = "8C93F8B08E4F462465A8F640E0762DB0", hash_generated_field = "11864689FB5A61F36957C7AFB5C2B569")
 
     private static final long serialVersionUID = 5944455875924336L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:10.089 -0500", hash_original_field = "0C44A58709479306B86B0611FCABFC25", hash_generated_field = "78E11EC5EB66AE64A2B95E2463577A76")
-
 
     private static String DOMAIN = ParameterNames.DOMAIN;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:10.092 -0500", hash_original_field = "1275ADD4899A05374E4917DEB3E85A56", hash_generated_field = "E9916446BFADB0600378FB202B20EF35")
@@ -253,6 +248,7 @@ public void removeParameters() {
      * set the specified parameter
      * @param nv NameValue to set
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:10.178 -0500", hash_original_method = "6C2AF9C154AE46C371A5DD84DFA39C4F", hash_generated_method = "473250599EF6A4799E91A6251FF744AE")
     
 public void setParameter(NameValue nv) {

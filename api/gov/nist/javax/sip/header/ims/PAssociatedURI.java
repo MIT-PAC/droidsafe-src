@@ -12,11 +12,8 @@ import java.text.ParseException;
 import javax.sip.address.URI;
 import javax.sip.header.ExtensionHeader;
 
-
-
 public class PAssociatedURI extends gov.nist.javax.sip.header.AddressParametersHeader implements PAssociatedURIHeader, SIPHeaderNamesIms, ExtensionHeader {
     // TODO: Need a unique UID
-
 
     /**
      * Default Constructor
@@ -53,9 +50,6 @@ public PAssociatedURI(GenericURI associatedURI)
         this.address.setURI(associatedURI);
     }
 
-
-
-
     /**
      * Encode into canonical form.
      * @return String containing the canonicaly encoded header.
@@ -73,12 +67,10 @@ public String encodeBody()
             retval.append(GREATER_THAN);
         }
 
-
         if (!parameters.isEmpty())
             retval.append(SEMICOLON + this.parameters.encode());
         return retval.toString();
     }
-
 
     /**
      * <p>Set the URI on this address</p>
@@ -105,7 +97,6 @@ public URI getAssociatedURI() {
         return this.address.getURI();
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:58.863 -0500", hash_original_method = "58EA9D2DAC0517F3416AFEEB738C5473", hash_generated_method = "0322E510B605B1362C67E8B7107DDDB0")
     
 public Object clone() {
@@ -115,7 +106,7 @@ public Object clone() {
         return retval;
     }
 
-
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:58.867 -0500", hash_original_method = "4B92A49D74A1215E0C3EC12D290AF61B", hash_generated_method = "163D19EF420D7A42ACC60EDFB9E60BB8")
     
 public void setValue(String value) throws ParseException{
@@ -123,7 +114,6 @@ public void setValue(String value) throws ParseException{
         throw new ParseException(value,0);
 
     }
-
     
 }
 

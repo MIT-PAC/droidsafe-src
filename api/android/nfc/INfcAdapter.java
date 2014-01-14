@@ -215,7 +215,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:51.068 -0500", hash_original_method = "963B00C49BF76B5FB197C27DBFB2DA14", hash_generated_method = "CE561BFD205180CC9F8943265321B728")
+@DSSink({DSSinkKind.NFC})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:51.068 -0500", hash_original_method = "963B00C49BF76B5FB197C27DBFB2DA14", hash_generated_method = "CE561BFD205180CC9F8943265321B728")
             
 public void setForegroundDispatch(android.app.PendingIntent intent, android.content.IntentFilter[] filters, android.nfc.TechListParcel techLists) throws android.os.RemoteException
 {
@@ -305,7 +306,8 @@ public android.os.IBinder asBinder()
 {
 return this;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:51.032 -0500", hash_original_method = "1FD1100E12B9908106A1C9A4D9992784", hash_generated_method = "E4ECFD2DB0324DFD26ADF75E986DE45D")
+@DSSink({DSSinkKind.NFC})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:51.032 -0500", hash_original_method = "1FD1100E12B9908106A1C9A4D9992784", hash_generated_method = "E4ECFD2DB0324DFD26ADF75E986DE45D")
         
 @Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
 {

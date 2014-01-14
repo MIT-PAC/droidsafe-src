@@ -6,18 +6,11 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.Serializable;
 
-
-
-
-
-
 public class Random implements Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.524 -0500", hash_original_field = "645BBA5F6E052EA6F8DB46F041512967", hash_generated_field = "63446CA233A38FF14BDAECA22D4F71C5")
 
-
     private static final long serialVersionUID = 3905348978240129619L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.527 -0500", hash_original_field = "2C764257CF60FD56D7C31603D487D669", hash_generated_field = "4AD8AC8BB1A82B02783A527C57BED92C")
-
 
     private static final long multiplier = 0x5deece66dL;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.530 -0500", hash_original_field = "B180422C5850693466917F0C904BA80C", hash_generated_field = "A0E7DD206941887D2E6CA8DF3E4D9ABA")
@@ -195,6 +188,7 @@ public long nextLong() {
      * Modifies the seed using a linear congruential formula presented in <i>The
      * Art of Computer Programming, Volume 2</i>, Section 3.2.1.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.565 -0500", hash_original_method = "7BB21D33F15BE2B6645BBF6EE498410D", hash_generated_method = "958B70DFEDEAC53E8F47EC09205A4BC7")
     
 public synchronized void setSeed(long seed) {

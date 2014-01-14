@@ -12,11 +12,6 @@ import java.text.ParseException;
 
 import javax.sip.header.FromHeader;
 
-
-
-
-
-
 public final class From extends AddressParametersHeader implements javax.sip.header.FromHeader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:01.044 -0500", hash_original_field = "A6DB7A44F7E7A7BE19A33A449E86AF2D", hash_generated_field = "7ED5DA8E48C4652B9F8E070E997B9D31")
 
@@ -133,6 +128,7 @@ public void setAddress(javax.sip.address.Address address) {
      * Set the tag member
      * @param t tag to set. From tags are mandatory.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:01.079 -0500", hash_original_method = "8317B37B8D85C50DB928305D5320BE87", hash_generated_method = "0C6257D2CFC36163BA311F48058932FF")
     
 public void setTag(String t) throws ParseException {

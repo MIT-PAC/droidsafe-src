@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Locale;
 
-
-
-
-
-
 public class ContentLanguage extends SIPHeader implements javax.sip.header.ContentLanguageHeader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:55.720 -0500", hash_original_field = "54EA45B077AD6285DC89BC0113FB6B5B", hash_generated_field = "51CDCD95970F98C01DA5ED4493E40EC1")
 
@@ -63,6 +58,7 @@ public String getLanguageTag() {
     /** set the languageTag field
      * @param languageTag -- language tag to set.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:55.742 -0500", hash_original_method = "0029980C0556452F57A726D089728FB9", hash_generated_method = "FC3B28B9C6A9A9F36B41B9B87D38F212")
     
 public void setLanguageTag(String languageTag) {

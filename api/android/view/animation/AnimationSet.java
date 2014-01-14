@@ -13,10 +13,6 @@ import android.graphics.RectF;
 import android.os.Build;
 import android.util.AttributeSet;
 
-
-
-
-
 public class AnimationSet extends Animation {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:57.754 -0500", hash_original_field = "098C09D8EE99C82F678BC0CC99301385", hash_generated_field = "4E6A2393E3A41FF00CBD8150E755D9D3")
 
@@ -44,7 +40,6 @@ public class AnimationSet extends Animation {
     private static final int PROPERTY_CHANGE_BOUNDS_MASK      = 0x80;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:57.775 -0500", hash_original_field = "8E743C742F89AB1EF43FB68AB7D0544D", hash_generated_field = "F8991A4D76FA7127497F697B241FE789")
 
-
     private int mFlags = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:57.777 -0500", hash_original_field = "937A58EDA819AF8EFC516AEF82EA03FD", hash_generated_field = "8EC03BE3CD289D6F418E2CF7DC6F95E4")
 
@@ -54,18 +49,14 @@ public class AnimationSet extends Animation {
     private boolean mHasAlpha;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:57.781 -0500", hash_original_field = "851F35B8E77E128DAB737AF5E6F8582D", hash_generated_field = "73E0F51E2ECCC5C0D56C337BEBD9E384")
 
-
     private ArrayList<Animation> mAnimations = new ArrayList<Animation>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:57.783 -0500", hash_original_field = "0D034AC9673356F70D8070C2206FFC6D", hash_generated_field = "7C9616BD413863FD9A0B9027C75DAE9A")
-
 
     private Transformation mTempTransformation = new Transformation();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:57.786 -0500", hash_original_field = "35958363EF4ACA127C901937BD0C9DCA", hash_generated_field = "AF3B01ACE4EBE7EDEF6A14863051F362")
 
-
     private long mLastEnd;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:57.788 -0500", hash_original_field = "EE026D6DD4C4CEEC9F3DD90E36088B3A", hash_generated_field = "4D3BA52AA4D41C4D38A585BCDB7160A1")
-
 
     private long[] mStoredOffsets;
 
@@ -108,7 +99,6 @@ public AnimationSet(Context context, AttributeSet attrs) {
 
         a.recycle();
     }
-    
     
     /**
      * Constructor to use when building an AnimationSet from code
@@ -158,6 +148,7 @@ private void init() {
         mStartTime = 0;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:57.804 -0500", hash_original_method = "346D63116043912E4EE20FDCAED3D0BD", hash_generated_method = "7436D8398CE17BA81A0ABFB2B79B88C4")
     
 @Override
@@ -166,6 +157,7 @@ private void init() {
         super.setFillAfter(fillAfter);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:57.807 -0500", hash_original_method = "08C3166F3D09017C7ECB4F829DA334D1", hash_generated_method = "8AE67956F5C529B66EBFA44A82107535")
     
 @Override
@@ -174,6 +166,7 @@ private void init() {
         super.setFillBefore(fillBefore);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:57.809 -0500", hash_original_method = "777D14C93CE8BFF50BC39E2E3CDE2663", hash_generated_method = "3FFCDB5E695C17CE7FEE74623942B0FC")
     
 @Override
@@ -182,6 +175,7 @@ private void init() {
         super.setRepeatMode(repeatMode);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:57.811 -0500", hash_original_method = "3C61E6DAB3DDF346757DEBEA1DAB7005", hash_generated_method = "B003ABC2F33AEA7F00993CB4B0253BD5")
     
 @Override
@@ -220,6 +214,7 @@ private void init() {
      * @param durationMillis the duration of the animation, in milliseconds, for
      *        every child in this set
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:57.817 -0500", hash_original_method = "638E0400F0B782F58F566825CD0FEEA0", hash_generated_method = "B62706F06C31766D5E9CB6CCD160509F")
     
 @Override
@@ -270,6 +265,7 @@ public void addAnimation(Animation a) {
      * 
      * @see android.view.animation.Animation#setStartTime(long)
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:57.823 -0500", hash_original_method = "ED7478CCB671993C959207E062C9FA4F", hash_generated_method = "C0F7D456301E3CE187BF24BFEC7EE750")
     
 @Override
@@ -483,7 +479,6 @@ public void initializeInvalidateRegion(int left, int top, int right, int bottom)
         final int repeatMode = mRepeatMode;
         final Interpolator interpolator = mInterpolator;
         final long startOffset = mStartOffset;
-
 
         long[] storedOffsets = mStoredOffsets;
         if (startOffsetSet) {

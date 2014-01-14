@@ -395,6 +395,7 @@ public abstract void setBackgroundDrawable(Drawable d);
      *
      * @param d Background drawable for the stacked row
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.454 -0500", hash_original_method = "1C087D5A46FF67AB400586D7FD9EC5DB", hash_generated_method = "FD8BDE63083DE44785779942FF8E47A4")
     
 public void setStackedBackgroundDrawable(Drawable d) { }
@@ -407,6 +408,7 @@ public void setStackedBackgroundDrawable(Drawable d) { }
      *
      * @param d Background drawable for the split bar
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.456 -0500", hash_original_method = "195D6A86B8711735C7C3591D31E1AD73", hash_generated_method = "B27F4574AF521C2990817845AE4C0044")
     
 public void setSplitBackgroundDrawable(Drawable d) { }
@@ -941,6 +943,7 @@ public abstract void removeOnMenuVisibilityListener(OnMenuVisibilityListener lis
      *
      * @param enabled true to enable the home button, false to disable the home button.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.511 -0500", hash_original_method = "B663ADC8583DEAC97152A4FAD7E4AA4D", hash_generated_method = "624E1920DC02D43F6969E9B91FAA838A")
     
 public void setHomeButtonEnabled(boolean enabled) { }

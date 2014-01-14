@@ -209,6 +209,7 @@ Parser(int parseState, XmlBlock block) {
             block.mOpenCount++;
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:01.934 -0500", hash_original_method = "C272D7923F75EBE1BE9678831233D06B", hash_generated_method = "347E0F4AC94E8FB49862343388323565")
         
 public void setFeature(String name, boolean state) throws XmlPullParserException {
@@ -231,6 +232,7 @@ public boolean getFeature(String name) {
             }
             return false;
         }
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:01.939 -0500", hash_original_method = "B8013E7A09E481D305959C445CAA259A", hash_generated_method = "79FBDEE46157A1E3B2501218DF73F95D")
         
 public void setProperty(String name, Object value) throws XmlPullParserException {
@@ -241,11 +243,13 @@ public void setProperty(String name, Object value) throws XmlPullParserException
 public Object getProperty(String name) {
             return null;
         }
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:01.944 -0500", hash_original_method = "C407C4DE5B4382B09BED3CBFBB5B2FE9", hash_generated_method = "BE9B98117489DC0B0FC94AF87CC96769")
         
 public void setInput(Reader in) throws XmlPullParserException {
             throw new XmlPullParserException("setInput() not supported");
         }
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:01.946 -0500", hash_original_method = "2056A33FA2E1F0F175E1EBF8A8F56238", hash_generated_method = "7892456EC600809972DBF35FD32BB3C6")
         
 public void setInput(InputStream inputStream, String inputEncoding) throws XmlPullParserException {

@@ -188,6 +188,7 @@ VerifierEntry initEntry(String name) {
      *            the file bytes for the file called {@code name}.
      * @see #removeMetaEntries()
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.390 -0500", hash_original_method = "B24E46A89F6B78A5F74DC1F8899F1D36", hash_generated_method = "B24E46A89F6B78A5F74DC1F8899F1D36")
     
 void addMetaEntry(String name, byte[] buf) {
@@ -441,6 +442,7 @@ VerifierEntry(String name, MessageDigest digest, byte[] hash,
         /**
          * Updates a digest with one byte.
          */
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.369 -0500", hash_original_method = "977E904E5666EA1924971461B3999364", hash_generated_method = "30B825BE9CB2E300173C549DFAB6AC4A")
         
 @Override
@@ -451,6 +453,7 @@ VerifierEntry(String name, MessageDigest digest, byte[] hash,
         /**
          * Updates a digest with byte array.
          */
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.372 -0500", hash_original_method = "8BB7D0A84FCC70584CF33970C6F95BDA", hash_generated_method = "49397E41D8BCC7E685ABB904DB99146B")
         
 @Override

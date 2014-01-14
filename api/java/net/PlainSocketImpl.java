@@ -24,10 +24,6 @@ import libcore.io.Memory;
 import libcore.io.Streams;
 import dalvik.system.CloseGuard;
 
-
-
-
-
 public class PlainSocketImpl extends SocketImpl {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:12.513 -0500", hash_original_field = "F0CA0B6A36CA244BB1CC0FFC0B728C8A", hash_generated_field = "6D9FFDACEA318C6C72BAD824AA432EA6")
 
@@ -35,22 +31,17 @@ public class PlainSocketImpl extends SocketImpl {
     private static InetAddress lastConnectedAddress;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:12.516 -0500", hash_original_field = "13ABAE85F4A0A7717045A563DB3039CB", hash_generated_field = "0C17CA5E0BC8EA30C7FC6175AC3AE9C2")
 
-
     private static int lastConnectedPort;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:12.518 -0500", hash_original_field = "A337E277329F6DC1C9EA7E279642F199", hash_generated_field = "6A8CCB2C47D2D8E132EF5F76D32DB937")
-
 
     private boolean streaming = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:12.911 -0500", hash_original_field = "840EE78A334019BDE73FFECFB6C31FB6", hash_generated_field = "3A0B3C0A8DEC4D2F6AA0372C4FB59EF4")
 
-
     private boolean shutdownInput;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:12.913 -0500", hash_original_field = "CA775536D3A7F4013C2E9C464BE24463", hash_generated_field = "EE0BB8F1739D62A5A5C8EDF7D478A66B")
 
-
     private Proxy proxy;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:12.916 -0500", hash_original_field = "759D7885648499D4F341C13F7C4AA861", hash_generated_field = "E7FAF2CA4E8E292A9B5FAAE3D4817EEC")
-
 
     private final CloseGuard guard = CloseGuard.get();
 
@@ -161,6 +152,7 @@ private void checkNotClosed() throws IOException {
         return IoBridge.available(fd);
     }
 
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:12.945 -0500", hash_original_method = "9F1E5C79CA0AA6C434B736E50E58B125", hash_generated_method = "F10A380BD5E024D88F6FD6F1D854DF90")
     
 @Override protected void bind(InetAddress address, int port) throws IOException {
@@ -277,6 +269,7 @@ private void connect(InetAddress anAddr, int aPort, int timeout) throws IOExcept
         }
     }
 
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:13.008 -0500", hash_original_method = "F61FA251C1FD1E3875B2C69F1E04AD45", hash_generated_method = "9BF9637567DA8570E7C18AF8C3E21269")
     
 @Override
@@ -494,7 +487,6 @@ private Socks4Message socksReadReply() throws IOException {
             throw errnoException.rethrowAsSocketException();
         }
     }
-
     
     private static class PlainSocketInputStream extends InputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:12.967 -0500", hash_original_field = "C92DD3B7F09F6096C227812F0F4031CF", hash_generated_field = "16CEE3972B12A3C5752670B7FF7939A7")
@@ -530,11 +522,8 @@ public PlainSocketInputStream(PlainSocketImpl socketImpl) {
 @Override public int read(byte[] buffer, int offset, int byteCount) throws IOException {
             return socketImpl.read(buffer, offset, byteCount);
         }
-
         
     }
-
-
     
     private static class PlainSocketOutputStream extends OutputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:12.991 -0500", hash_original_field = "C92DD3B7F09F6096C227812F0F4031CF", hash_generated_field = "16CEE3972B12A3C5752670B7FF7939A7")
@@ -553,6 +542,7 @@ public PlainSocketOutputStream(PlainSocketImpl socketImpl) {
             socketImpl.close();
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:12.999 -0500", hash_original_method = "C7F824EB5C9CE82C3E815BE1E94821BC", hash_generated_method = "2F6F8FCE8DC2AA447CE6E550ABE70F33")
         
 @Override public void write(int oneByte) throws IOException {
@@ -564,7 +554,6 @@ public PlainSocketOutputStream(PlainSocketImpl socketImpl) {
 @Override public void write(byte[] buffer, int offset, int byteCount) throws IOException {
             socketImpl.write(buffer, offset, byteCount);
         }
-
         
     }
 

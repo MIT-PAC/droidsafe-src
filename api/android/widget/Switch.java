@@ -47,12 +47,10 @@ public class Switch extends CompoundButton {
     private static final int MONOSPACE = 3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.952 -0500", hash_original_field = "73791D998AED7A27216E6912B00269F9", hash_generated_field = "648B080756031EA789B9ECD9F36CC170")
 
-
     private static final int[] CHECKED_STATE_SET = {
         R.attr.state_checked
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.897 -0500", hash_original_field = "CC35B65C4DF6EB37FFE598AD0E85776D", hash_generated_field = "723113CD58F6B081A7D304DE131200C0")
-
 
     private Drawable mThumbDrawable;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.899 -0500", hash_original_field = "A90D7BED756182929175B8B430BA5712", hash_generated_field = "95BC711301E78A9ECDB61E242B32BBFC")
@@ -75,7 +73,6 @@ public class Switch extends CompoundButton {
     private CharSequence mTextOff;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.911 -0500", hash_original_field = "0166621EFA26326BDA100AD828233350", hash_generated_field = "05391D3E5A92F1F9C57B26577E93BB8A")
 
-
     private int mTouchMode;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.913 -0500", hash_original_field = "D11C33EFD56B37B918E01A200C446C59", hash_generated_field = "3B323323DD6A6BF972666D993592C670")
 
@@ -94,7 +91,6 @@ public class Switch extends CompoundButton {
     private int mMinFlingVelocity;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.924 -0500", hash_original_field = "C04626F5E88EAACF501FEF71DF86A502", hash_generated_field = "F988D54F9B1F33137D2E224F4C0D3687")
 
-
     private float mThumbPosition;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.926 -0500", hash_original_field = "ADC31869EAFD9B237AE6DC2EB7E363E5", hash_generated_field = "E445BAA52D3DABA04B0C4E748520EC39")
 
@@ -106,7 +102,6 @@ public class Switch extends CompoundButton {
 
     private int mThumbWidth;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.933 -0500", hash_original_field = "0CE159F0F431A6020F50CDE4F638B5A4", hash_generated_field = "27A13FA81AC36C1C7B7A455273DF1B68")
-
 
     private int mSwitchLeft;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.935 -0500", hash_original_field = "B8B2530C649DAD44D23C1920D9585B5F", hash_generated_field = "ECDF185842EB33043CD213F2E4D31DD2")
@@ -120,7 +115,6 @@ public class Switch extends CompoundButton {
     private int mSwitchBottom;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.941 -0500", hash_original_field = "0A19A1954ABA26FA39E555FE892A4ABD", hash_generated_field = "6AD5EFC1421B741B1A8F78A5B815BBFE")
 
-
     private TextPaint mTextPaint;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.943 -0500", hash_original_field = "436AA1E4B034214040D84D3E7144D335", hash_generated_field = "06CA2F66604DADF822AA39C486035A89")
 
@@ -132,7 +126,6 @@ public class Switch extends CompoundButton {
 
     private Layout mOffLayout;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.950 -0500", hash_original_field = "1732EB32F2D77CCA26590AEEA670A175", hash_generated_field = "AEB9EF736E47F0CD4747F7C2B6703936")
-
 
     @SuppressWarnings("hiding")
     private final Rect mTempRect = new Rect();
@@ -214,6 +207,7 @@ public Switch(Context context, AttributeSet attrs, int defStyle) {
      * Sets the switch text color, size, style, hint color, and highlight color
      * from the specified TextAppearance resource.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.964 -0500", hash_original_method = "D688751389B30165717277DD9DF1E478", hash_generated_method = "73E1EB1B05696ABE6E61B4459E7367C0")
     
 public void setSwitchTextAppearance(Context context, int resid) {
@@ -281,6 +275,7 @@ private void setSwitchTypefaceByIndex(int typefaceIndex, int styleIndex) {
      * Typeface that you provided does not have all the bits in the
      * style that you specified.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.969 -0500", hash_original_method = "C023070590A87D2CA3EA267526ED6F0D", hash_generated_method = "F82FC8B41E25F3BB3EF7EE112D71DCB5")
     
 public void setSwitchTypeface(Typeface tf, int style) {
@@ -314,6 +309,7 @@ public void setSwitchTypeface(Typeface tf, int style) {
      * @attr ref android.R.styleable#TextView_typeface
      * @attr ref android.R.styleable#TextView_textStyle
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.971 -0500", hash_original_method = "543DA1ECFCDDAA3B3698B41BEC9D49BA", hash_generated_method = "0BCBDD8F56261AD4228B03AE6ADEBAA3")
     
 public void setSwitchTypeface(Typeface tf) {
@@ -371,7 +367,6 @@ public void setTextOff(CharSequence textOff) {
         final int heightMode = MeasureSpec.getMode(heightMeasureSpec);
         int widthSize = MeasureSpec.getSize(widthMeasureSpec);
         int heightSize = MeasureSpec.getSize(heightMeasureSpec);
-
 
         if (mOnLayout == null) {
             mOnLayout = makeLayout(mTextOn);
@@ -591,6 +586,7 @@ private boolean getTargetCheckedState() {
         return mThumbPosition >= getThumbScrollRange() / 2;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:39.005 -0500", hash_original_method = "523B4C6A0F0C2AD264BC263A9EEF64F2", hash_generated_method = "FDD4E576576EBC4CBE518A8A70E671CF")
     
 @Override

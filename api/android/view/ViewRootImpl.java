@@ -3833,12 +3833,14 @@ public void recycle() {
             // Not currently interesting -- from changing between fixed and layout size.
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.415 -0500", hash_original_method = "E07C2927AF02C0614ECCFDEAF72047C2", hash_generated_method = "6D23CB0D78B1D93FF14D1303BE528EE1")
         
 public void setFormat(int format) {
             ((RootViewSurfaceTaker)mView).setSurfaceFormat(format);
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.417 -0500", hash_original_method = "EE34E0B82BE2B114D60991753727E9A6", hash_generated_method = "5D83BAA8B38B494ACB639C1B18C6C59C")
         
 public void setType(int type) {
@@ -3859,6 +3861,7 @@ public boolean isCreating() {
             return mIsCreating;
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.425 -0500", hash_original_method = "DFAAE278D74727ACF1AA5508094F804D", hash_generated_method = "84AB21DCAB4D19CE1C040E40DEDE3BD0")
         
 @Override
@@ -3867,6 +3870,7 @@ public boolean isCreating() {
                     "Currently only support sizing from layout");
         }
         
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.428 -0500", hash_original_method = "21F6CF6D8B53BD856057ED05ABC33177", hash_generated_method = "85AFB2D0337BC8298CA8AFC8C1EB3A0D")
         
 public void setKeepScreenOn(boolean screenOn) {
@@ -3936,6 +3940,7 @@ public void resized(int w, int h, Rect coveredInsets, Rect visibleInsets,
             }
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.453 -0500", hash_original_method = "EB98E21C67C8D9A44F58CD671F491CDA", hash_generated_method = "1AA5B0E3B90059952EB2E33BF602E2DD")
         
 public void dispatchAppVisibility(boolean visible) {
@@ -4017,6 +4022,7 @@ public void dispatchWallpaperOffsets(float x, float y, float xStep, float yStep,
             }
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.472 -0500", hash_original_method = "084CB00632E8F4F79253F4CBB0703969", hash_generated_method = "92756D8FB0326E7357CC798315ACE1D5")
         
 public void dispatchWallpaperCommand(String action, int x, int y,
@@ -4039,6 +4045,7 @@ public void dispatchDragEvent(DragEvent event) {
             }
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.477 -0500", hash_original_method = "0BC30404A661769E03F23017D2DE8196", hash_generated_method = "236E1F5FB1F72E71A81D18D8C086CDA0")
         
 public void dispatchSystemUiVisibilityChanged(int seq, int globalVisibility,
@@ -5315,6 +5322,7 @@ public void playSoundEffect(int effectId) {
     /**
      * {@inheritDoc}
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.280 -0500", hash_original_method = "B8D922B767BD06C4283BB3EF0BFA3172", hash_generated_method = "FAF2F69C5B351D77F913414E28CD64E0")
     
 public boolean performHapticFeedback(int effectId, boolean always) {

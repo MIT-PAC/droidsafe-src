@@ -326,6 +326,7 @@ public void setEGLConfigChooser(EGLConfigChooser configChooser) {
      *
      * @param needDepth
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.509 -0500", hash_original_method = "226B740D6DC98E22518E0EAB23B55B9E", hash_generated_method = "A3548541304921EF9B9451C8624E09B4")
     
 public void setEGLConfigChooser(boolean needDepth) {
@@ -1590,6 +1591,7 @@ private void checkGLESVersion() {
      * at least 16 bits.
      *
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.512 -0500", hash_original_method = "091BCCF8C091A3C39DC981548CC7F874", hash_generated_method = "DE1CE08963BE100CB3B0C5C0C11035D5")
     
 public void setEGLConfigChooser(int redSize, int greenSize, int blueSize,
@@ -1647,6 +1649,7 @@ public void setEGLContextClientVersion(int version) {
      * @see #RENDERMODE_CONTINUOUSLY
      * @see #RENDERMODE_WHEN_DIRTY
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.517 -0500", hash_original_method = "F401D8CE2ED637FA8D91B0F6CF1DA9F1", hash_generated_method = "2D988EB6111E0CA99DC5A816C3D4AB0C")
     
 public void setRenderMode(int renderMode) {

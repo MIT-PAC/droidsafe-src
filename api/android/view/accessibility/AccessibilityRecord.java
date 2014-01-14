@@ -10,10 +10,6 @@ import java.util.List;
 import android.os.Parcelable;
 import android.view.View;
 
-
-
-
-
 public class AccessibilityRecord {
 
     /**
@@ -54,10 +50,8 @@ public static AccessibilityRecord obtain() {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.907 -0500", hash_original_field = "8BF5B7BB2C741E6F51882B1E85E5F169", hash_generated_field = "1E642CC81E6D04170ACE577F1365D5E0")
 
-
     private static final int UNDEFINED = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.909 -0500", hash_original_field = "C0F91523AF6FACADA47007AC27ECA341", hash_generated_field = "727FEBC84A7763294879AC67CE69F107")
-
 
     private static final int PROPERTY_CHECKED = 0x00000001;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.912 -0500", hash_original_field = "93DBDCFAD69E463227DC2E570C5602BF", hash_generated_field = "BF6BC93B5E6FD2F1AFC97468EC9F79A2")
@@ -92,7 +86,6 @@ public static AccessibilityRecord obtain() {
     private boolean mIsInPool;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.936 -0500", hash_original_field = "4B6C132CC4E1DABC021AFE92BC996668", hash_generated_field = "4B6C132CC4E1DABC021AFE92BC996668")
 
-
     boolean mSealed;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.938 -0500", hash_original_field = "16EB928A608E490EDABD6C313699F6E2", hash_generated_field = "16EB928A608E490EDABD6C313699F6E2")
 
@@ -123,7 +116,6 @@ public static AccessibilityRecord obtain() {
     int mMaxScrollY = UNDEFINED;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.956 -0500", hash_original_field = "D24F8B9BED9E4999FEFD1D6BDD0A4524", hash_generated_field = "D24F8B9BED9E4999FEFD1D6BDD0A4524")
 
-
     int mAddedCount= UNDEFINED;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.958 -0500", hash_original_field = "A726B2E71548B632DFBFAFCC74F6ADEA", hash_generated_field = "A726B2E71548B632DFBFAFCC74F6ADEA")
 
@@ -135,7 +127,6 @@ public static AccessibilityRecord obtain() {
 
     int mSourceWindowId = UNDEFINED;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.964 -0500", hash_original_field = "607E22FB74B4A9750077B62E99C7097B", hash_generated_field = "607E22FB74B4A9750077B62E99C7097B")
-
 
     CharSequence mClassName;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.967 -0500", hash_original_field = "1D344C00C8D6A0BCC2A3B840B08C53BD", hash_generated_field = "1D344C00C8D6A0BCC2A3B840B08C53BD")
@@ -149,10 +140,8 @@ public static AccessibilityRecord obtain() {
     Parcelable mParcelableData;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.973 -0500", hash_original_field = "138B9E96AA00DB5CE70BF8BD81DA37C5", hash_generated_field = "868BA7C98D63B508230C0EC76DFD4DD7")
 
-
     final List<CharSequence> mText = new ArrayList<CharSequence>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.975 -0500", hash_original_field = "8B5A4110581AEE7B543A400E2F63419C", hash_generated_field = "8B5A4110581AEE7B543A400E2F63419C")
-
 
     int mConnectionId = UNDEFINED;
 
@@ -171,6 +160,7 @@ AccessibilityRecord() {
      *
      * @throws IllegalStateException If called from an AccessibilityService.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.979 -0500", hash_original_method = "948A1D8CF51CA12DCE9E50B8B6FDE838", hash_generated_method = "99A3EBFCDD6EA24818F3FC9C5AE08CD8")
     
 public void setSource(View source) {
@@ -235,6 +225,7 @@ public boolean isChecked() {
      *
      * @throws IllegalStateException If called from an AccessibilityService.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.988 -0500", hash_original_method = "EF363FCE51C9C9A497BD6E689D39B09F", hash_generated_method = "024065D6DB32E5E4B39EDBB43CA9EC86")
     
 public void setChecked(boolean isChecked) {
@@ -260,6 +251,7 @@ public boolean isEnabled() {
      *
      * @throws IllegalStateException If called from an AccessibilityService.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.993 -0500", hash_original_method = "0EAAA686E8658459FDC66C98C4B45340", hash_generated_method = "39F43A8EBABC7BA4E0751BB77CB14027")
     
 public void setEnabled(boolean isEnabled) {
@@ -285,6 +277,7 @@ public boolean isPassword() {
      *
      * @throws IllegalStateException If called from an AccessibilityService.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.998 -0500", hash_original_method = "8EDA15203F993D6B021832D12354DB70", hash_generated_method = "3E5EE04693246BC59D57449808EA771D")
     
 public void setPassword(boolean isPassword) {
@@ -310,6 +303,7 @@ public boolean isFullScreen() {
      *
      * @throws IllegalStateException If called from an AccessibilityService.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:52.002 -0500", hash_original_method = "8C2BD0FA889006F174A45F3038D20EAE", hash_generated_method = "76FB1ED5F32B5037A395E7539EA6DA2B")
     
 public void setFullScreen(boolean isFullScreen) {
@@ -335,6 +329,7 @@ public boolean isScrollable() {
      *
      * @throws IllegalStateException If called from an AccessibilityService.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:52.007 -0500", hash_original_method = "C8E19EB47E895659C0D234F60CD63E87", hash_generated_method = "12E034E4311AAEA337DF8A82E5AB3864")
     
 public void setScrollable(boolean scrollable) {

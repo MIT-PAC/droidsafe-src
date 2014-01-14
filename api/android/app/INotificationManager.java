@@ -126,7 +126,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:32.488 -0500", hash_original_method = "AD1EABA3C21FE71ED272798EDC69B623", hash_generated_method = "B86959C267D2FE7A50BEF6744198F583")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:32.488 -0500", hash_original_method = "AD1EABA3C21FE71ED272798EDC69B623", hash_generated_method = "B86959C267D2FE7A50BEF6744198F583")
             
 public void enqueueToast(java.lang.String pkg, android.app.ITransientNotification callback, int duration) throws android.os.RemoteException
 {
@@ -145,7 +146,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:32.491 -0500", hash_original_method = "C18424A4BB62C8A931EB7D8805E114DA", hash_generated_method = "5A2D3DC2A6B06F3B2EB746A6642AFEE1")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:32.491 -0500", hash_original_method = "C18424A4BB62C8A931EB7D8805E114DA", hash_generated_method = "5A2D3DC2A6B06F3B2EB746A6642AFEE1")
             
 public void cancelToast(java.lang.String pkg, android.app.ITransientNotification callback) throws android.os.RemoteException
 {
@@ -268,7 +270,8 @@ public android.os.IBinder asBinder()
 {
 return this;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:32.467 -0500", hash_original_method = "65DAC76CE3F1217EFA35781F4D365657", hash_generated_method = "82A4857FAFBFEF118EFA0E1E8D68F330")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:32.467 -0500", hash_original_method = "65DAC76CE3F1217EFA35781F4D365657", hash_generated_method = "82A4857FAFBFEF118EFA0E1E8D68F330")
         
 @Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
 {

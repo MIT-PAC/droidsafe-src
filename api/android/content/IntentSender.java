@@ -13,10 +13,6 @@ import android.os.Parcelable;
 import android.os.RemoteException;
 import android.util.AndroidException;
 
-
-
-
-
 public class IntentSender implements Parcelable {
 
     /**
@@ -27,6 +23,7 @@ public class IntentSender implements Parcelable {
      * @param sender The IntentSender to write, or null.
      * @param out Where to write the IntentSender.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.942 -0500", hash_original_method = "6C963751BCEA889F1738E724FB60F335", hash_generated_method = "271504758360ECB23D4E9B8D700F4D5D")
     
 public static void writeIntentSenderOrNullToParcel(IntentSender sender,
@@ -231,7 +228,6 @@ public int describeContents() {
 public void writeToParcel(Parcel out, int flags) {
         out.writeStrongBinder(mTarget.asBinder());
     }
-
     
     public static class SendIntentException extends AndroidException {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.880 -0500", hash_original_method = "3CCB3E3C6E6C65C0BEBBCAEF78CD6FBE", hash_generated_method = "77AA74C5FFB490F5242AC52254BDA8F7")
@@ -250,11 +246,8 @@ public SendIntentException(String name) {
 public SendIntentException(Exception cause) {
             super(cause);
         }
-
         
     }
-
-
     
     private static class FinishedDispatcher extends IIntentReceiver.Stub implements Runnable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.891 -0500", hash_original_field = "C2EA9A43743358A3C998801FA614EA9F", hash_generated_field = "84BD9A0534D27174DCB55615309E820B")
@@ -305,11 +298,8 @@ public void run() {
             mWho.onSendFinished(mIntentSender, mIntent, mResultCode,
                     mResultData, mResultExtras);
         }
-
         
     }
-
-
     
     public interface OnFinished {
         

@@ -13,11 +13,6 @@ import android.util.AttributeSet;
 
 import com.android.internal.R;
 
-
-
-
-
-
 public final class ViewStub extends View {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:55.926 -0500", hash_original_field = "F027C8324C9EA544A6DEF6F0954ED652", hash_generated_field = "BFA3E80188244F67D086E6C1264D1920")
 
@@ -27,10 +22,8 @@ public final class ViewStub extends View {
     private int mInflatedId;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:55.930 -0500", hash_original_field = "F19710BC255E7367DD68F653C2AC6F4E", hash_generated_field = "925A912F414D892ECDB1D6C3C53B2B5D")
 
-
     private WeakReference<View> mInflatedViewRef;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:55.932 -0500", hash_original_field = "7E90D4FB095EBE65153FCE42EE9ED5C8", hash_generated_field = "C8623B9EF6EC871725D2916E9875638C")
-
 
     private OnInflateListener mInflateListener;
 
@@ -182,6 +175,7 @@ public void setLayoutResource(int layoutResource) {
      *
      * @see #inflate() 
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:55.965 -0500", hash_original_method = "8020455B6FCF7D6831D6E164290A9878", hash_generated_method = "D8DF3125A2A570AD87322216145036E2")
     
 @Override
@@ -262,7 +256,6 @@ public View inflate() {
 public void setOnInflateListener(OnInflateListener inflateListener) {
         mInflateListener = inflateListener;
     }
-
     
     public static interface OnInflateListener {
         

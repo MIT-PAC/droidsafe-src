@@ -2245,6 +2245,7 @@ private void useMockDeviceOrientation() {
         mDeviceMotionAndOrientationManager.useMock();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:07.901 -0500", hash_original_method = "F3DDD41A8D23B4AE9E9585A561AEE4C2", hash_generated_method = "BFD16E4F0B03C0C55E44476F6ACE2D33")
     
 public void setMockDeviceOrientation(boolean canProvideAlpha, double alpha,

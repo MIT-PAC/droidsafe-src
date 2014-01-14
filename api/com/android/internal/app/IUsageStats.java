@@ -108,7 +108,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:55.958 -0500", hash_original_method = "A8479B9C64D676EB96B3BEF7D379D0F7", hash_generated_method = "3B699A953803CE506CEC259555DDA8D4")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:55.958 -0500", hash_original_method = "A8479B9C64D676EB96B3BEF7D379D0F7", hash_generated_method = "3B699A953803CE506CEC259555DDA8D4")
             
 public void noteLaunchTime(android.content.ComponentName componentName, int millis) throws android.os.RemoteException
 {
@@ -202,7 +203,8 @@ public android.os.IBinder asBinder()
 {
 return this;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:55.937 -0500", hash_original_method = "9F794B00884D1ED62630ADA17103CEA8", hash_generated_method = "0DDBBC48224D866FFDDE04DBC3F4E83B")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:55.937 -0500", hash_original_method = "9F794B00884D1ED62630ADA17103CEA8", hash_generated_method = "0DDBBC48224D866FFDDE04DBC3F4E83B")
         
 @Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
 {

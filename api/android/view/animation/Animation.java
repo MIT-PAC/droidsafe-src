@@ -12,10 +12,6 @@ import android.util.AttributeSet;
 import android.util.TypedValue;
 import dalvik.system.CloseGuard;
 
-
-
-
-
 public abstract class Animation implements Cloneable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.724 -0500", hash_original_field = "417F8E2CBC513720508F8C102EA05FF0", hash_generated_field = "285D35A4B336A34C53955AE44424AC64")
 
@@ -48,7 +44,6 @@ public abstract class Animation implements Cloneable {
 
     public static final int ZORDER_BOTTOM = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.749 -0500", hash_original_field = "FC18F37F6CE202E9BF34901468BC437A", hash_generated_field = "5160DD832DA627994F79F0E39BF3B141")
-
 
     private static final boolean USE_CLOSEGUARD
             = SystemProperties.getBoolean("log.closeguard.Animation", false);
@@ -111,13 +106,11 @@ public abstract class Animation implements Cloneable {
     private boolean mDetachWallpaper = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.792 -0500", hash_original_field = "34F0803CBA0D1BF93F53C9B7DF44DAB6", hash_generated_field = "EB7123F1E56B8FC7DB4670361B61F3BB")
 
-
     private boolean mMore = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.794 -0500", hash_original_field = "784A4D6001260A3DDDB7D9385099EDBA", hash_generated_field = "1A1B781F58C47FD588A3C25DEC073F2E")
 
     private boolean mOneMoreTime = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.796 -0500", hash_original_field = "1281DD848D4CAC286B7C56B469674D23", hash_generated_field = "1281DD848D4CAC286B7C56B469674D23")
-
 
     RectF mPreviousRegion = new RectF();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.799 -0500", hash_original_field = "B8EF1E9F1F3FA3BF5EA38E9CC57EEE1D", hash_generated_field = "B8EF1E9F1F3FA3BF5EA38E9CC57EEE1D")
@@ -130,7 +123,6 @@ public abstract class Animation implements Cloneable {
 
     Transformation mPreviousTransformation = new Transformation();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.805 -0500", hash_original_field = "759D7885648499D4F341C13F7C4AA861", hash_generated_field = "E7FAF2CA4E8E292A9B5FAAE3D4817EEC")
-
 
     private final CloseGuard guard = CloseGuard.get();
 
@@ -291,6 +283,7 @@ public void initialize(int width, int height, int parentWidth, int parentHeight)
      * @param resID The resource identifier of the interpolator to load
      * @attr ref android.R.styleable#Animation_interpolator
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.828 -0500", hash_original_method = "2C6481DDCCEAC913795356C9BF1AF628", hash_generated_method = "BE3242216311F89FBBEC5A97D66A30C9")
     
 public void setInterpolator(Context context, int resID) {
@@ -781,7 +774,6 @@ protected void ensureInterpolator() {
             mInterpolator = new AccelerateDecelerateInterpolator();
         }
     }
-
     
     protected static class Description {
 
@@ -840,19 +832,14 @@ static Description parseValue(TypedValue value) {
         {
             //Synthesized constructor
         }
-
         
     }
-
-
     
     public static interface AnimationListener {
         
         void onAnimationStart(Animation animation);
-
         
         void onAnimationEnd(Animation animation);
-
         
         void onAnimationRepeat(Animation animation);
     }

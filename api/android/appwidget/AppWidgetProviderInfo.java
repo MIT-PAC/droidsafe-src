@@ -8,10 +8,6 @@ import android.content.ComponentName;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public class AppWidgetProviderInfo implements Parcelable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:56.148 -0500", hash_original_field = "8966F04F3441BA555C3A470D4262D50F", hash_generated_field = "5E95298B54F00B76D69F1540A6AB4F69")
 
@@ -114,6 +110,7 @@ public AppWidgetProviderInfo(Parcel in) {
         this.resizeMode = in.readInt();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:56.206 -0500", hash_original_method = "7CC4DB09B3683A39C68E5073BD221953", hash_generated_method = "F89991952A92DEFD6A2EEDE81A03A135")
     
 public void writeToParcel(android.os.Parcel out, int flags) {

@@ -775,6 +775,7 @@ public boolean isGroupingUsed() {
         return getAttribute(this.address, UNUM_GROUPING_USED) != 0;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:07.118 -0500", hash_original_method = "4515EB7BD614742B3D0DDD5748BC74D6", hash_generated_method = "F824E4C2B31DD3ADDC931DE4B5A5DE6D")
     
 public void setDecimalSeparatorAlwaysShown(boolean value) {
@@ -782,6 +783,7 @@ public void setDecimalSeparatorAlwaysShown(boolean value) {
         setAttribute(this.address, UNUM_DECIMAL_ALWAYS_SHOWN, i);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:07.120 -0500", hash_original_method = "27959CC6793546F59976E7DBD15119DA", hash_generated_method = "572864D753B150107BBD826FF9D38DA4")
     
 public void setCurrency(Currency currency) {
@@ -789,12 +791,14 @@ public void setCurrency(Currency currency) {
         setSymbol(this.address, UNUM_INTL_CURRENCY_SYMBOL, currency.getCurrencyCode());
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:07.122 -0500", hash_original_method = "49FEA0DFBB56F17CB90E68E0F78CE577", hash_generated_method = "A2A66CC1A7A2CC0DE057B28E019594C0")
     
 public void setGroupingSize(int value) {
         setAttribute(this.address, UNUM_GROUPING_SIZE, value);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:07.125 -0500", hash_original_method = "E302CDF79A67421C2D7FEEF4C305D93F", hash_generated_method = "4801CF0DC25F5324D492D79B75A42453")
     
 public void setGroupingUsed(boolean value) {
@@ -802,30 +806,35 @@ public void setGroupingUsed(boolean value) {
         setAttribute(this.address, UNUM_GROUPING_USED, i);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:07.127 -0500", hash_original_method = "758C6DB93C92764527C1135AD7160507", hash_generated_method = "659F9EA029DD1061E016733E46211287")
     
 public void setMaximumFractionDigits(int value) {
         setAttribute(this.address, UNUM_MAX_FRACTION_DIGITS, value);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:07.129 -0500", hash_original_method = "89C5389B02F633081323A23C8FB84870", hash_generated_method = "E5D10E3F9F635E6536CEAE0003121469")
     
 public void setMaximumIntegerDigits(int value) {
         setAttribute(this.address, UNUM_MAX_INTEGER_DIGITS, value);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:07.131 -0500", hash_original_method = "62DF7CF1343955ADCD931CBCC029C545", hash_generated_method = "59E8792979AB2E0BA077A717839DA237")
     
 public void setMinimumFractionDigits(int value) {
         setAttribute(this.address, UNUM_MIN_FRACTION_DIGITS, value);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:07.134 -0500", hash_original_method = "5D466EF26E9A120396C63069DE20CEB4", hash_generated_method = "7D321FFF357990AE690771749696B2A5")
     
 public void setMinimumIntegerDigits(int value) {
         setAttribute(this.address, UNUM_MIN_INTEGER_DIGITS, value);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:07.136 -0500", hash_original_method = "B169BA3B31B9F8AB850C7AD451D65C7F", hash_generated_method = "4E50AB491F58A05AC782B00F0C2877BD")
     
 public void setMultiplier(int value) {
@@ -834,6 +843,7 @@ public void setMultiplier(int value) {
         multiplierBigDecimal = BigDecimal.valueOf(value);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:07.138 -0500", hash_original_method = "74BB5921C2CC61F7BCF8D1B8841FD51E", hash_generated_method = "D0A979A926B677EB433F5025ED5E068A")
     
 public void setNegativePrefix(String value) {
@@ -843,6 +853,7 @@ public void setNegativePrefix(String value) {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:07.140 -0500", hash_original_method = "0FF0A51DFB17D23D2B0F182081F1472B", hash_generated_method = "C8A4F5BCBFD0EFE22965E3DAA359544E")
     
 public void setNegativeSuffix(String value) {
@@ -852,6 +863,7 @@ public void setNegativeSuffix(String value) {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:07.143 -0500", hash_original_method = "FC20737C410620F82F4CED74F1142CF3", hash_generated_method = "0C309F46A1CB233E54484CF6A12D35B4")
     
 public void setPositivePrefix(String value) {
@@ -861,6 +873,7 @@ public void setPositivePrefix(String value) {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:07.145 -0500", hash_original_method = "48A175BA83D370BA86128EC6BAC61CB5", hash_generated_method = "811D97BA9744150A93D023AE3F4D2A87")
     
 public void setPositiveSuffix(String value) {
@@ -876,6 +889,7 @@ public void setParseBigDecimal(boolean value) {
         parseBigDecimal = value;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:07.150 -0500", hash_original_method = "7FF47C5BC2EFAEE27B26A852A846EAFB", hash_generated_method = "3DDC9E84EC911D2A8519173C58E82CB0")
     
 public void setParseIntegerOnly(boolean value) {
@@ -883,6 +897,7 @@ public void setParseIntegerOnly(boolean value) {
         setAttribute(this.address, UNUM_PARSE_INT_ONLY, i);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:07.155 -0500", hash_original_method = "D542BB733096020C1E39876D678697A7", hash_generated_method = "D2C92D9CC4C42E1B94E73107ED7B1DC9")
     
 public void setRoundingMode(RoundingMode roundingMode, double roundingIncrement) {

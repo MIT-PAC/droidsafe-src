@@ -13,11 +13,7 @@ import org.apache.harmony.security.asn1.ASN1Type;
 import org.apache.harmony.security.asn1.BerInputStream;
 import org.apache.harmony.security.x501.Name;
 
-
-
-
 public final class CertificateIssuer extends ExtensionValue {
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.907 -0400", hash_original_field = "26467BCE56C2E2E5052FBB838762A5FF", hash_generated_field = "FE3BF8D4A6349EB434E9E8BE6B183663")
 
@@ -57,6 +53,7 @@ public X500Principal getIssuer() throws IOException {
         return issuer;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:56.669 -0500", hash_original_method = "50826A9F4B6111EEE8495EBA7ED178B7", hash_generated_method = "31B66B38912D363E4867D0FC5B57864C")
     
 @Override public void dumpValue(StringBuilder sb, String prefix) {

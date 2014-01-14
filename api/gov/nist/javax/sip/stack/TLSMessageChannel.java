@@ -33,58 +33,41 @@ import javax.net.ssl.SSLSocket;
 import javax.sip.address.Hop;
 import javax.sip.message.Response;
 
-
-
-
-
-
 public final class TLSMessageChannel extends MessageChannel implements SIPMessageListener, Runnable, RawMessageChannel {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:27.326 -0500", hash_original_field = "006AACAB5CA0A59B60C0698E11256579", hash_generated_field = "F3B00F7E70704D963CC4197CD003FB94")
-
 
     private Socket mySock;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:27.328 -0500", hash_original_field = "EE9A4E61A45003F22C7BC5B410BBB21B", hash_generated_field = "152EC54D2111EF26096DF65FC2003536")
 
-
     private PipelinedMsgParser myParser;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:27.330 -0500", hash_original_field = "C33F72CD488CC5F94B8A9826AF3A10FA", hash_generated_field = "E9FA88EF5BFDD4D9156AADE5BC087A4C")
-
 
     private InputStream myClientInputStream;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:27.333 -0500", hash_original_field = "FFE7EE17DFA37A68070A0F0495753B29", hash_generated_field = "2E3018221E30480EB0F957E72002C7D8")
 
-
     private String key;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:27.336 -0500", hash_original_field = "BD96B1F139C8EA198B3A1B2CA97B93E5", hash_generated_field = "F8E96F7362B3E7CD3DE3A2778DC87A58")
-
 
     protected boolean isCached;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:27.339 -0500", hash_original_field = "5EBE085FDB38216257993802E75ABBBF", hash_generated_field = "911E18F9BE05473489F5F21C894DF579")
 
-
     protected boolean isRunning;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:27.341 -0500", hash_original_field = "4AB983356694FB1E44D4AE16E3897B0E", hash_generated_field = "8890F3B68DD2F65EEDEBEEF6284B3EE1")
-
 
     private Thread mythread;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:27.344 -0500", hash_original_field = "95EABD5ABD88E35E559B3906991D12AE", hash_generated_field = "DEE18A414D72F7D580E73EF519B5B75F")
 
-
     private String myAddress;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:27.346 -0500", hash_original_field = "05A0D771A4A24E58EF91191716865F5C", hash_generated_field = "1FBEE69CBCB5E71F900C5C964DA7ADBD")
-
 
     private int myPort;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:27.349 -0500", hash_original_field = "366B1D4629185E73902FFD7D04A7B174", hash_generated_field = "DB2440387A41D5016778DA700632E003")
 
-
     private InetAddress peerAddress;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:27.351 -0500", hash_original_field = "A714E58FF483C2E33F156CBA7BFCD38B", hash_generated_field = "FE74A5BA5CFBB5B6DC2B68FEFA76ECFC")
 
-
     private int peerPort;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:27.354 -0500", hash_original_field = "D89E736D3DD25A80B53E476FF3F84027", hash_generated_field = "EB665B7537D07145A6FCAD2DB460EADC")
-
 
     private String peerProtocol;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:27.357 -0500", hash_original_field = "8C9C66875AA77DCCEA8FD6E102FFE9B0", hash_generated_field = "22DB078A43570EA85ED1A7B10A8E17F9")
@@ -96,10 +79,8 @@ public final class TLSMessageChannel extends MessageChannel implements SIPMessag
     private TLSMessageProcessor tlsMessageProcessor;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:27.359 -0500", hash_original_field = "A4B05DD1A2BDFAA2E8FCD10E8D1815B6", hash_generated_field = "ABE627693A01BDDC6597F9AB66B3018E")
 
-
     private SIPTransactionStack sipStack;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:27.362 -0500", hash_original_field = "F04B5F27AF029E00FAA2AA5974D7257C", hash_generated_field = "12E7910E7EDE55EAF4A3D89EE23A6BC7")
-
 
     private HandshakeCompletedListener handshakeCompletedListener;
 
@@ -298,6 +279,7 @@ private void sendMessage(byte[] msg, boolean retry) throws IOException {
      * @param sipMessage Message to send.
      * @throws IOException If there is an error sending the message
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:27.393 -0500", hash_original_method = "99193C77E68A5ABE715A7A9AC8040C34", hash_generated_method = "78FECFA4560A366D127A1848EDF5547E")
     
 public void sendMessage(SIPMessage sipMessage) throws IOException {
@@ -319,6 +301,7 @@ public void sendMessage(SIPMessage sipMessage) throws IOException {
      * @param receiverPort Receiver port.
      * @throws IOException If there is a problem connecting or sending.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:27.397 -0500", hash_original_method = "C6D6B3579ACFAA2466286D67BFFE3003", hash_generated_method = "3EA9DA78911A0C5DA2BC654CEF310065")
     
 public void sendMessage(byte message[], InetAddress receiverAddress, int receiverPort,
@@ -410,6 +393,7 @@ public void handleException(ParseException ex, SIPMessage sipMessage, Class hdrC
      *
      * Jvb: note that this code is identical to TCPMessageChannel, refactor some day
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:27.407 -0500", hash_original_method = "0B661C1775BD5742177C9AA146CAD19A", hash_generated_method = "91A6F2C697F8646D37959F5B88D7E471")
     
 public void processMessage(SIPMessage sipMessage) throws Exception {
@@ -783,7 +767,6 @@ public void setHandshakeCompletedListener(
 public HandshakeCompletedListenerImpl getHandshakeCompletedListener() {
         return (HandshakeCompletedListenerImpl) handshakeCompletedListener;
     }
-
     
 }
 

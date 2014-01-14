@@ -19,6 +19,7 @@ public class Patterns { // <digit><digit|sdd>+<digit>
      *  @return             A String comprising all of the non-null matched
      *                      groups concatenated together
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:22.483 -0500", hash_original_method = "E4620A6545EAD8C2EF58B04DD910C84A", hash_generated_method = "ECD42CB2BC0D3CF90D60C6906B14E163")
     
 public static final String concatGroups(Matcher matcher) {

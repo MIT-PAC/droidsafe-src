@@ -20,10 +20,6 @@ import android.net.ParseException;
 import android.net.WebAddress;
 import android.webkit.CookieManager;
 
-
-
-
-
 public class RequestHandle {
 
     /**
@@ -53,17 +49,14 @@ public static String authorizationHeader(boolean isProxy) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:12.811 -0500", hash_original_field = "2E052F0F119F8F6EB96E81E0404AA563", hash_generated_field = "C106D8C9CFB6EC8EB119C4D4A3AE867D")
 
-
     private final static String AUTHORIZATION_HEADER = "Authorization";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:12.813 -0500", hash_original_field = "E17CE4D19274DA0D144FDCA5E151B960", hash_generated_field = "A4D8BBCAAE6782867BB51DD0431CE773")
 
     private final static String PROXY_AUTHORIZATION_HEADER = "Proxy-Authorization";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:12.815 -0500", hash_original_field = "E5E5DA09768657A7E46E1F11EF68CBB2", hash_generated_field = "10E8B936E7F026B41A9464F94DC77E7F")
 
-
     public final static int MAX_REDIRECT_COUNT = 16;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:12.789 -0500", hash_original_field = "CA88DB4A75B79130313A74537195706C", hash_generated_field = "9C2E85EC79E8F8349BF2E81BA4AC7991")
-
 
     private String        mUrl;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:12.791 -0500", hash_original_field = "DB3D2BD1CF0785D6513DCE03F6FD6846", hash_generated_field = "93793E19832E1B2CEA9B3AE18495201F")
@@ -199,6 +192,7 @@ public void setRedirectCount(int count) {
      * @return true if setup succeeds, false otherwise (redirect loop
      * count exceeded, body provider unable to rewind on 307 redirect)
      */
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:12.838 -0500", hash_original_method = "44F47D5B04481BCE428881C329B8D0F8", hash_generated_method = "645616829187BBBB8CF50F5BD2423D58")
     
 public boolean setupRedirect(String redirectTo, int statusCode,
@@ -277,6 +271,7 @@ public boolean setupRedirect(String redirectTo, int statusCode,
     /**
      * Create and queue an HTTP authentication-response (basic) request.
      */
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:12.840 -0500", hash_original_method = "38ABF845B1FE2E62FC6D2FD8DBFFE504", hash_generated_method = "B1BADAF3DE0D065DA4CB1870CFCB432C")
     
 public void setupBasicAuthResponse(boolean isProxy, String username, String password) {
@@ -291,6 +286,7 @@ public void setupBasicAuthResponse(boolean isProxy, String username, String pass
     /**
      * Create and queue an HTTP authentication-response (digest) request.
      */
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:12.842 -0500", hash_original_method = "B5A5838E4BCFB5CBC22C9A029CA123B8", hash_generated_method = "124878F8C78541F5A906608C9EA29D04")
     
 public void setupDigestAuthResponse(boolean isProxy,

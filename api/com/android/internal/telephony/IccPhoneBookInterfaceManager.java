@@ -151,6 +151,7 @@ protected abstract void loge(String msg);
      * @param pin2 required to update EF_FDN, otherwise must be null
      * @return true for success
      */
+    @DSSink({DSSinkKind.CONTACT_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:34.156 -0500", hash_original_method = "6BE84EAB1F25CDC10E8188E3A1C3A959", hash_generated_method = "7746946CCF90ACBA13801870D8B07536")
     
 public boolean
@@ -201,6 +202,7 @@ public boolean
      * @param pin2 required to update EF_FDN, otherwise must be null
      * @return true for success
      */
+    @DSSink({DSSinkKind.CONTACT_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:34.158 -0500", hash_original_method = "102FC1C0583C00426ED85686CB9EA64E", hash_generated_method = "AD9ECC5986896ECA7D0ABA0605CAB7EB")
     
 public boolean

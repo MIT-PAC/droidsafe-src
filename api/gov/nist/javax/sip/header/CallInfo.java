@@ -8,17 +8,11 @@ import gov.nist.javax.sip.address.GenericURI;
 
 import java.text.ParseException;
 
-
-
-
-
-
 public final class CallInfo extends ParametersHeader implements javax.sip.header.CallInfoHeader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:54.519 -0500", hash_original_field = "ED4DDD16B2A29876422E00CB4936E7AF", hash_generated_field = "2D62DF7E0A2A79C01356DE01B010437F")
 
     private static final long serialVersionUID = -8179246487696752928L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:54.527 -0500", hash_original_field = "6698CBE12F148EEFF557B63CC4CD3669", hash_generated_field = "CFBF7E2410210225F23571A6DEE68EDE")
-
 
     protected GenericURI info;
 
@@ -80,6 +74,7 @@ public javax.sip.address.URI getInfo() {
      * set the purpose field
      * @param purpose is the purpose field.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:54.615 -0500", hash_original_method = "02434F47BE675094B3D64F5516EB6DB6", hash_generated_method = "DA44A599564C6163C0B577B015D1679E")
     
 public void setPurpose(String purpose) {

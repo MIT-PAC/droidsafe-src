@@ -18,16 +18,11 @@ import android.graphics.Rect;
 import android.util.AttributeSet;
 import android.view.View;
 
-
-
-
-
 public class LayerDrawable extends Drawable implements Drawable.Callback {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.112 -0500", hash_original_field = "053037057B7FC4B2D43393B0DA597B94", hash_generated_field = "053037057B7FC4B2D43393B0DA597B94")
 
     LayerState mLayerState;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.114 -0500", hash_original_field = "01AD0D43DD2C09AE8BD7BD5731AC2A88", hash_generated_field = "DBD2988EAF133D76032F3EAD1CE10F00")
-
 
     private int mOpacityOverride = PixelFormat.UNKNOWN;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.116 -0500", hash_original_field = "C204BABD636FCC7C56D0C24D74A6DA64", hash_generated_field = "7D03B5A878C9FF91EB46A7111D526D76")
@@ -43,7 +38,6 @@ public class LayerDrawable extends Drawable implements Drawable.Callback {
 
     private int[] mPaddingB;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.125 -0500", hash_original_field = "C53D3ED3F7CBB30122A6D714A9203A7D", hash_generated_field = "570061BA9CB059462550E9BCCD2A0735")
-
 
     private final Rect mTmpRect = new Rect();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.128 -0500", hash_original_field = "B15C308E96D0EEBD27CFE369FA349C15", hash_generated_field = "5CA5A1EF3CAA45117BCACBC34EF05952")
@@ -406,6 +400,7 @@ public void unscheduleDrawable(Drawable who, Runnable what) {
         return true;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.178 -0500", hash_original_method = "DD7D852A8B2359532D654CFF5E5A109F", hash_generated_method = "EF98C94492141DB8F0E1AA82D29618F2")
     
 @Override
@@ -419,6 +414,7 @@ public void unscheduleDrawable(Drawable who, Runnable what) {
         return changed;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.180 -0500", hash_original_method = "8B5179F0E6CCC56A1CD26C355EB4BEE6", hash_generated_method = "D71EE13E8525C4D8EBCE0262ED861040")
     
 @Override
@@ -430,6 +426,7 @@ public void unscheduleDrawable(Drawable who, Runnable what) {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.182 -0500", hash_original_method = "A4F4B2E3C1F4B490E6EEA73C8E0E0B9C", hash_generated_method = "DE414C820E3FF847AA7572254924F770")
     
 @Override
@@ -441,6 +438,7 @@ public void unscheduleDrawable(Drawable who, Runnable what) {
         }
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.185 -0500", hash_original_method = "6285AEA72EA88CCBF849BD62BDD654E0", hash_generated_method = "45EDCCBE76A45D8343D86DD3B2A6885E")
     
 @Override
@@ -648,7 +646,6 @@ private void ensurePadding() {
         }
         return this;
     }
-
     
     static class ChildDrawable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.218 -0500", hash_original_field = "38BA53DD394F85639C99ED8E666FF8FB", hash_generated_field = "36D39E5803890ED250A80FAD100C4ED7")
@@ -676,10 +673,7 @@ private void ensurePadding() {
             //Synthesized constructor
         }
 
-
     }
-
-
     
     static class LayerState extends ConstantState {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.225 -0500", hash_original_field = "95F99CF2E70DB79AD069A36B506646F2", hash_generated_field = "95F99CF2E70DB79AD069A36B506646F2")
@@ -690,13 +684,11 @@ private void ensurePadding() {
         ChildDrawable[] mChildren;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.230 -0500", hash_original_field = "9BFAF00848476277D36D9BA586984BA7", hash_generated_field = "9BFAF00848476277D36D9BA586984BA7")
 
-
         int mChangingConfigurations;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.232 -0500", hash_original_field = "E8F7332658D4B8911B8427F9E33AC9BD", hash_generated_field = "E8F7332658D4B8911B8427F9E33AC9BD")
 
         int mChildrenChangingConfigurations;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.234 -0500", hash_original_field = "0E129F2B3EAED33E8435CEB0AF66A927", hash_generated_field = "A98F79115AB3FA98F1F7245A604A5EC2")
-
         
         private boolean mHaveOpacity = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.236 -0500", hash_original_field = "F94EB6B55A1DFE34A922350D13706418", hash_generated_field = "05E7E4BE80B060037CF88AC66652FF58")
@@ -704,13 +696,11 @@ private void ensurePadding() {
         private int mOpacity;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.239 -0500", hash_original_field = "788B667F97461387E15CDD9C2D78DA89", hash_generated_field = "C74F5EDB4E2A4B07698A864146958E40")
 
-
         private boolean mHaveStateful = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.241 -0500", hash_original_field = "6CBAA9F8E31FD09725242CB8EF367A38", hash_generated_field = "6747C1011A591FA368B1D4C99D94E670")
 
         private boolean mStateful;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.243 -0500", hash_original_field = "04605894B57F7B3414AF620BF4AC040E", hash_generated_field = "63D49323436A33301C0DA6EDF88627FF")
-
 
         private boolean mCheckedConstantState;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.245 -0500", hash_original_field = "09212A3A30B7E6D48DEECC4F4639CCBC", hash_generated_field = "F62F8D22C4EDE8B8E63C376677BD915C")
@@ -833,11 +823,8 @@ public synchronized boolean canConstantState() {
 
             return mCanConstantState;
         }
-
         
     }
-
-
     
 }
 

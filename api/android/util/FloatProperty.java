@@ -25,6 +25,7 @@ public FloatProperty(String name) {
         addTaint(value);
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @Override
     final public void set(T object, Float value) {
         //setValue(object, value);

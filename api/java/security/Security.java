@@ -320,6 +320,7 @@ public static String getProperty(String key) {
     /**
      * Sets the value of the specified security property.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.386 -0500", hash_original_method = "E9A275F23060DA3D5E42FE19B6245D55", hash_generated_method = "EE34367337CA9748B635C6659AE4E420")
     
 public static void setProperty(String key, String value) {

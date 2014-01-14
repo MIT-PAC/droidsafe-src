@@ -6,10 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import libcore.io.SizeOf;
 
-
-
-
-
 final class FloatToByteBufferAdapter extends FloatBuffer {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:05.889 -0500", hash_original_method = "4E320B5A4FC28FA956032ED554AE256C", hash_generated_method = "1C7AD486528B62D4E17062BD36B4E068")
@@ -20,7 +16,6 @@ static FloatBuffer asFloatBuffer(ByteBuffer byteBuffer) {
         return new FloatToByteBufferAdapter(slice);
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:05.887 -0500", hash_original_field = "1550DCB87D4D50D3727BEA306C5BDDD3", hash_generated_field = "34B9235D8E87AE2A76AC711395EEC0EB")
-
 
     private  ByteBuffer byteBuffer;
 
@@ -149,6 +144,7 @@ FloatToByteBufferAdapter(ByteBuffer byteBuffer) {
         return false;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:05.925 -0500", hash_original_method = "BFCE73D0BEC9C4C5044FD718D90FCD3E", hash_generated_method = "2C22A5CECD7A431F9A6C682E7EED3514")
     
 @Override
@@ -160,6 +156,7 @@ FloatToByteBufferAdapter(ByteBuffer byteBuffer) {
         return this;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:05.927 -0500", hash_original_method = "031128B9243B4CE1487F7A32DBB76678", hash_generated_method = "415AE599113D8030A5477E6609FDA17C")
     
 @Override
@@ -169,6 +166,7 @@ FloatToByteBufferAdapter(ByteBuffer byteBuffer) {
         return this;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:05.930 -0500", hash_original_method = "3BDFA2137C718F8287015587FF612D27", hash_generated_method = "1634EED238CF0274F5688F2EA179E5E4")
     
 @Override
@@ -195,7 +193,6 @@ FloatToByteBufferAdapter(ByteBuffer byteBuffer) {
         byteBuffer.clear();
         return result;
     }
-
     
 }
 

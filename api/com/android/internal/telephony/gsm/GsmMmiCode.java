@@ -32,11 +32,6 @@ import com.android.internal.telephony.CommandException;
 import com.android.internal.telephony.CommandsInterface;
 import com.android.internal.telephony.MmiCode;
 
-
-
-
-
-
 public final class GsmMmiCode extends Handler implements MmiCode {
 
     //***** Public Class methods
@@ -150,7 +145,6 @@ private static boolean
     isEmptyOrNull(CharSequence s) {
         return s == null || (s.length() == 0);
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:27.804 -0500", hash_original_method = "B6A5C1E21C62418D5B30EDC2AB73589C", hash_generated_method = "7EF02D02CD4DEA0B338E59111A74239C")
     
@@ -383,7 +377,6 @@ static private boolean isShortCodeUSSD(String dialString, GSMPhone phone) {
     static final String LOG_TAG = "GSM";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:27.645 -0500", hash_original_field = "387E66CAC1433A4CC248AE5093674573", hash_generated_field = "CD257D5D924AB184D1C0DDA10D6CB542")
 
-
     // Max Size of the Short Code (aka Short String from TS 22.030 6.5.2)
     static final int MAX_LENGTH_SHORT_CODE = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:27.647 -0500", hash_original_field = "5EC657818EA4AC9F301C143FF601487F", hash_generated_field = "0C36A7337276036614EF5E0CA17164B6")
@@ -407,7 +400,6 @@ static private boolean isShortCodeUSSD(String dialString, GSMPhone phone) {
     static final String ACTION_ERASURE = "##";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:27.663 -0500", hash_original_field = "C426B7759EE9F55423F727A1FFAA1002", hash_generated_field = "91D50570B5A7B080C473D2A0C4A496C9")
 
-
     //Called line presentation
     static final String SC_CLIP    = "30";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:27.665 -0500", hash_original_field = "B86FCA89322683298DF59970D5E4D321", hash_generated_field = "E644B736CD2A9C2179B5ADA66B2BD371")
@@ -426,7 +418,6 @@ static private boolean isShortCodeUSSD(String dialString, GSMPhone phone) {
 
     static final String SC_CFNR    = "62";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:27.677 -0500", hash_original_field = "FF7497471F1B5A557C4C19DD9E2245DC", hash_generated_field = "AAACA7CABEBB58D4DBEDA093B2CDF4C5")
-
 
     static final String SC_CF_All = "002";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:27.680 -0500", hash_original_field = "C74998AAED687220B9385B5E68CC3412", hash_generated_field = "E97209C1CAD929CA0DC97B53BB34B72F")
@@ -452,7 +443,6 @@ static private boolean isShortCodeUSSD(String dialString, GSMPhone phone) {
     static final String SC_BAICr        = "351";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:27.699 -0500", hash_original_field = "F314116652F12F4B6221B71A81DF7815", hash_generated_field = "2118AEBDF2A411624DDAA38436B55831")
 
-
     static final String SC_BA_ALL       = "330";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:27.701 -0500", hash_original_field = "058A0029485C4CC97F1C0932DE814BDE", hash_generated_field = "78090C0D99EB492E8EA3B970D8545B61")
 
@@ -477,7 +467,6 @@ static private boolean isShortCodeUSSD(String dialString, GSMPhone phone) {
     static final String SC_PUK2         = "052";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:27.718 -0500", hash_original_field = "EAC576E559D59F0C7D0950B0EFCE6458", hash_generated_field = "A94BA604FE3CDE84F64462E973B833FB")
 
-
     static final int EVENT_SET_COMPLETE         = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:27.721 -0500", hash_original_field = "E003AE4E424E78C273CC71EA849159FA", hash_generated_field = "9829C51898ECEEF688DC24D5C6D88094")
 
@@ -499,22 +488,17 @@ static private boolean isShortCodeUSSD(String dialString, GSMPhone phone) {
     static final int EVENT_USSD_CANCEL_COMPLETE = 7;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:27.764 -0500", hash_original_field = "28E607B4DA054BDAA834BD0FF0CEFF04", hash_generated_field = "A4C35E6D22BA5C03878070B5B0777BAC")
 
-
-
     // See TS 22.030 6.5.2 "Structure of the MMI"
 
     static Pattern sPatternSuppService = Pattern.compile(
         "((\\*|#|\\*#|\\*\\*|##)(\\d{2,3})(\\*([^*#]*)(\\*([^*#]*)(\\*([^*#]*)(\\*([^*#]*))?)?)?)?#)([^#]*)");
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:27.767 -0500", hash_original_field = "B70DD7A805C09DAF4B85DF3F2AA1E1D2", hash_generated_field = "7CA15DFCD577D5C84BA78A4189BC0E2C")
 
-
     static final int MATCH_GROUP_POUND_STRING = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:27.770 -0500", hash_original_field = "3A1ADB951719F3F4638A18B5533A24F9", hash_generated_field = "F4DF33F7D8D6D17C4F4FEA7F8C1A94D0")
 
-
     static final int MATCH_GROUP_ACTION = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:27.772 -0500", hash_original_field = "60DFF95A3FBFA52E5839032FA5DAE64A", hash_generated_field = "A024C419F83A9F642C010C9489DE8C1A")
-
 
     static final int MATCH_GROUP_SERVICE_CODE = 3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:27.775 -0500", hash_original_field = "EC2B3FF25577BFAE4A7B9A3F0F49F4FE", hash_generated_field = "EF421560D72C37CDE6066BA9C31D6755")
@@ -537,13 +521,11 @@ static private boolean isShortCodeUSSD(String dialString, GSMPhone phone) {
     static private String[] sTwoDigitNumberPattern;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:27.736 -0500", hash_original_field = "690DC9441FA6BD04E0472B4DF9E035F8", hash_generated_field = "690DC9441FA6BD04E0472B4DF9E035F8")
 
-
     GSMPhone phone;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:27.738 -0500", hash_original_field = "571FE4403DDA9BF54693EBF4F0D6639D", hash_generated_field = "571FE4403DDA9BF54693EBF4F0D6639D")
 
     Context context;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:27.740 -0500", hash_original_field = "F0D53334D1D58D4E79746838A9C851E9", hash_generated_field = "F0D53334D1D58D4E79746838A9C851E9")
-
 
     String action;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:27.742 -0500", hash_original_field = "1F12170F3EB5D5C8E81971C7E7A70DEB", hash_generated_field = "1F12170F3EB5D5C8E81971C7E7A70DEB")
@@ -569,15 +551,12 @@ static private boolean isShortCodeUSSD(String dialString, GSMPhone phone) {
     String pwd;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:27.753 -0500", hash_original_field = "496E26F99587CBF2F8FF7AB1D21C3B65", hash_generated_field = "FD36BB7FA9FBFFEC127B7CBE3DF124C1")
 
-
     /** Set to true in processCode, not at newFromDialString time */
     private boolean isPendingUSSD;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:27.757 -0500", hash_original_field = "73DC0F18CBA621540B9C94D28696A483", hash_generated_field = "A601B09474CCCD19D7EF905D10ED4B31")
 
-
     private boolean isUssdRequest;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:27.759 -0500", hash_original_field = "1C260AF567CCE39E2DADC6C6A5D564F0", hash_generated_field = "1C260AF567CCE39E2DADC6C6A5D564F0")
-
 
     State state = State.PENDING;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:27.762 -0500", hash_original_field = "422FD4BFD34A850AED895188AD7E511B", hash_generated_field = "422FD4BFD34A850AED895188AD7E511B")
@@ -1008,6 +987,7 @@ void
         }
     }
 
+    @DSSink({DSSinkKind.PHONE_CONNECTION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:27.885 -0500", hash_original_method = "91A2759A8D20AD291EA9305932FA3032", hash_generated_method = "E5DC71336FFD98159B30588C53B82F38")
     
 void sendUssd(String ussdMessage) {
@@ -1322,7 +1302,6 @@ private CharSequence
         }
     }
 
-
     /** one CallForwardInfo + serviceClassMask -> one line of text */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:27.909 -0500", hash_original_method = "ECAE8AA4EBDE1134552CC635B1F3D0F6", hash_generated_method = "E0291B4EB05BB6C8E09669CB5621340B")
     
@@ -1381,7 +1360,6 @@ private CharSequence
 
         return TextUtils.replace(template, sources, destinations);
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:27.912 -0500", hash_original_method = "5082D13BAC647DFAEF8F3236E64BC951", hash_generated_method = "A27594460A6FCEB5A9A6650E3CFE7B6D")
     

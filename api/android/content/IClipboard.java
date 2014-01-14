@@ -62,7 +62,8 @@ public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.187 -0500", hash_original_method = "89164314925687D2BAC37DD0B7018B00", hash_generated_method = "806DB3D73C40C144DBC2E3A528753C5D")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.187 -0500", hash_original_method = "89164314925687D2BAC37DD0B7018B00", hash_generated_method = "806DB3D73C40C144DBC2E3A528753C5D")
             
 public void setPrimaryClip(android.content.ClipData clip) throws android.os.RemoteException
 {
@@ -153,7 +154,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.197 -0500", hash_original_method = "9138B26F27B1F8B83EFEF10FAB38C356", hash_generated_method = "F3F2B858FD08EC97F3A2B0CDAD5DE993")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.197 -0500", hash_original_method = "9138B26F27B1F8B83EFEF10FAB38C356", hash_generated_method = "F3F2B858FD08EC97F3A2B0CDAD5DE993")
             
 public void addPrimaryClipChangedListener(android.content.IOnPrimaryClipChangedListener listener) throws android.os.RemoteException
 {
@@ -170,7 +172,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.201 -0500", hash_original_method = "174226EB91B34C5C162050C23F224EF1", hash_generated_method = "8088055AB580F205E75D6FE0CE77C4A4")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.201 -0500", hash_original_method = "174226EB91B34C5C162050C23F224EF1", hash_generated_method = "8088055AB580F205E75D6FE0CE77C4A4")
             
 public void removePrimaryClipChangedListener(android.content.IOnPrimaryClipChangedListener listener) throws android.os.RemoteException
 {
@@ -235,7 +238,8 @@ public android.os.IBinder asBinder()
 {
 return this;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.174 -0500", hash_original_method = "F0C3D1B61F44F2CE9FE63DCA4F1A013E", hash_generated_method = "7C5FDCDBADFF6AD481C644554AFD6788")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.174 -0500", hash_original_method = "F0C3D1B61F44F2CE9FE63DCA4F1A013E", hash_generated_method = "7C5FDCDBADFF6AD481C644554AFD6788")
         
 @Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
 {

@@ -10,11 +10,6 @@ import gov.nist.core.NameValueList;
 
 import java.util.Iterator;
 
-
-
-
-
-
 public class TelephoneNumber extends NetObject {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:33.981 -0500", hash_original_field = "D104C1337470F36AA025365EB957B7D6", hash_generated_field = "33B083E54AD9AB28718C43BD92A5BF45")
 
@@ -161,6 +156,7 @@ public void setGlobal(boolean g) {
     /** set the PostDial field
      * @param p String to set
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:34.031 -0500", hash_original_method = "3187783A98FD3EF3CF221F591C928162", hash_generated_method = "4F0C1AF4598E1C7F778653C94336D06A")
     
 public void setPostDial(String p) {
@@ -172,6 +168,7 @@ public void setPostDial(String p) {
      * @param name String to set
      * @param value Object to set
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:34.033 -0500", hash_original_method = "1017383CE0C4E09E719151FC1E532DF6", hash_generated_method = "706B69033C1ACCBFE93063D1B4901BB8")
     
 public void setParm(String name, Object value) {
@@ -183,6 +180,7 @@ public void setParm(String name, Object value) {
      * set the isdn subaddress for this structure.
      * @param isub String to set
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:34.035 -0500", hash_original_method = "2C7FD6CD1F9BBF926548B29323136AA0", hash_generated_method = "D817A7F7C9104170242DD5B80D1DEF8E")
     
 public void setIsdnSubaddress(String isub) {
@@ -257,6 +255,7 @@ public void removeParameter(String parameter) {
         this.parameters.delete(parameter);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:34.054 -0500", hash_original_method = "EF9A54632618F205C3C318D3100361E8", hash_generated_method = "6DD1F73AFDBFE5DDAF2ADFBD44A4E230")
     
 public void setParameter(String name, String value) {

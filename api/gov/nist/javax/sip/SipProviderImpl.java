@@ -53,18 +53,11 @@ import javax.sip.header.CallIdHeader;
 import javax.sip.message.Request;
 import javax.sip.message.Response;
 
-
-
-
-
-
 public class SipProviderImpl implements javax.sip.SipProvider, gov.nist.javax.sip.SipProviderExt, SIPTransactionEventListener, SIPDialogEventListener {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:50.960 -0500", hash_original_field = "B9D95CF1DDB3EF5E2FB32454D5FBE60B", hash_generated_field = "C372B5B3448581C0F5822346BC5BF6B5")
 
-
     private SipListener sipListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:50.966 -0500", hash_original_field = "03821C4D777C0A4AB8577E0C5F2371D6", hash_generated_field = "4DAF551644AC41AE30E26F4ABCF55488")
-
 
     protected SipStackImpl sipStack;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:50.972 -0500", hash_original_field = "64D824175F631C1CEFB3DB99DA126E21", hash_generated_field = "2A53AF8663A42FF261DC56019ACC7569")
@@ -72,18 +65,14 @@ public class SipProviderImpl implements javax.sip.SipProvider, gov.nist.javax.si
     private ConcurrentHashMap listeningPoints;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:50.979 -0500", hash_original_field = "69E36DC2AAFBF80C0D45C129628BD358", hash_generated_field = "B13D933CCB9027F950F0F782A6866769")
 
-
     private EventScanner eventScanner;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:50.985 -0500", hash_original_field = "815EECE17AF4BC840D4544A9ECB9EACD", hash_generated_field = "27AA4AB7415706F85D71A67C2AA547CB")
-
 
     private String address;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:50.991 -0500", hash_original_field = "5A948EF636511EF149269A68FE278AED", hash_generated_field = "D40522EE9D0571A9162D4F847D658065")
 
-
     private int port;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:50.997 -0500", hash_original_field = "EEFD20A4B220EA43D7E15846D826C1C4", hash_generated_field = "524F32CD9808C18576213A6E5A9B572D")
-
 
     private boolean automaticDialogSupportEnabled ;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:51.004 -0500", hash_original_field = "E77F599D412730F7E89A35BDDF26B766", hash_generated_field = "5CCA946576EE027FCC33A16438A5DE7B")
@@ -93,7 +82,6 @@ public class SipProviderImpl implements javax.sip.SipProvider, gov.nist.javax.si
 
     private String IN6_ADDR_ANY = "::0";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:51.017 -0500", hash_original_field = "E4B03D037AFD27C6BADB312F81498772", hash_generated_field = "51E780BD632743E190A61DB4A1929A94")
-
 
     private boolean dialogErrorsAutomaticallyHandled = true;
     
@@ -198,7 +186,6 @@ public void handleEvent(EventObject sipEvent, SIPTransaction transaction) {
 protected Object clone() throws java.lang.CloneNotSupportedException {
         throw new java.lang.CloneNotSupportedException();
     }
-
     
     /*
      * (non-Javadoc)
@@ -305,9 +292,6 @@ public ClientTransaction getNewClientTransaction(Request request)
             throw new TransactionUnavailableException(
                     "Transaction already exists!");
         }
-
-
-
 
         if (request.getMethod().equalsIgnoreCase(Request.CANCEL)) {
             SIPClientTransaction ct = (SIPClientTransaction) sipStack
@@ -662,6 +646,7 @@ public void removeSipListener(SipListener sipListener) {
      *
      * @see javax.sip.SipProvider#sendRequest(javax.sip.message.Request)
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:51.141 -0500", hash_original_method = "5A8CC74B0BB93A3DC57DF48200955F60", hash_generated_method = "2E408275F70173CC7D59A248892E4394")
     
 public void sendRequest(Request request) throws SipException {
@@ -739,6 +724,7 @@ public void sendRequest(Request request) throws SipException {
      *
      * @see javax.sip.SipProvider#sendResponse(javax.sip.message.Response)
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:51.149 -0500", hash_original_method = "9E6954B352C971BA2053951D5F8763C5", hash_generated_method = "0AFE29529090E52A4E689799FF387BD7")
     
 public void sendResponse(Response response) throws SipException {
@@ -803,6 +789,7 @@ public void sendResponse(Response response) throws SipException {
      *
      * @see javax.sip.SipProvider#setListeningPoint(javax.sip.ListeningPoint)
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:51.156 -0500", hash_original_method = "0E16D45CFEA7D246360E28B311FFB756", hash_generated_method = "D148AF43F204DF140483F579E8C3B172")
     
 public synchronized void setListeningPoint(ListeningPoint listeningPoint) {
@@ -1132,7 +1119,6 @@ public boolean isDialogErrorsAutomaticallyHandled() {
         return this.dialogErrorsAutomaticallyHandled;
     }
 
-
     /**
      * @return the sipListener
      */
@@ -1141,7 +1127,6 @@ public boolean isDialogErrorsAutomaticallyHandled() {
 public SipListener getSipListener() {
         return sipListener;
     }
-
     
 }
 

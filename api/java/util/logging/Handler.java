@@ -7,14 +7,8 @@ import droidsafe.annotations.*;
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.Charset;
 
-
-
-
-
-
 public abstract class Handler {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:37.025 -0500", hash_original_field = "90F05FE1DFDC4E0068180F3B43B847AB", hash_generated_field = "0B783B0E3115CE13A6D1488431F3D781")
-
 
     private static final Level DEFAULT_LEVEL = Level.ALL;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:37.027 -0500", hash_original_field = "9DE2E78F384201F0ED6502B37413B1FB", hash_generated_field = "DEE7EAAE0C2AC4A8B1FAFE0F9E9DFB7A")
@@ -307,6 +301,7 @@ void internalSetEncoding(String newEncoding) throws UnsupportedEncodingException
      * @throws UnsupportedEncodingException
      *             if the specified encoding is not supported by the runtime.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:37.080 -0500", hash_original_method = "E46261745C62E25D2001A68F77BA37B9", hash_generated_method = "C449DC42DC06A7608BA35E63FC20EE16")
     
 public void setEncoding(String encoding) throws UnsupportedEncodingException {

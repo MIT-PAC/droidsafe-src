@@ -11,11 +11,6 @@ import java.util.Locale;
 import javax.sip.InvalidArgumentException;
 import javax.sip.header.AcceptLanguageHeader;
 
-
-
-
-
-
 public final class AcceptLanguage extends ParametersHeader implements AcceptLanguageHeader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.718 -0500", hash_original_field = "BD398B476901B90179098026BF8A891E", hash_generated_field = "C41AD91D885B8E07AB1CF99FE8C6F646")
 
@@ -97,6 +92,7 @@ public void removeQValue() {
      * @param languageRange is the language range to set.
      *
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.740 -0500", hash_original_method = "666F2ACD9F04A9B6B16D40C4651940A3", hash_generated_method = "85ACB49AB3896D56486FF4BD0EA90AAD")
     
 public void setLanguageRange(String languageRange) {
@@ -122,6 +118,7 @@ public void setLanguageRange(String languageRange) {
      * <code>-1</code> or between <code>0 and 1</code>.
      *
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.743 -0500", hash_original_method = "F0104C17C209B83128CEAC547B311B2B", hash_generated_method = "BBDE959A717E51F1373821850302CC48")
     
 public void setQValue(float q) throws InvalidArgumentException {
@@ -165,6 +162,7 @@ public Locale getAcceptLanguage() {
      *
      *
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.749 -0500", hash_original_method = "8278D8A1AED5A953C4AF44E8C829B9C4", hash_generated_method = "36357FB207208F3B507E411C58699198")
     
 public void setAcceptLanguage(Locale language) {

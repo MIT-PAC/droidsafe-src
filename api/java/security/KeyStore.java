@@ -25,12 +25,6 @@ import libcore.io.IoUtils;
 
 import org.apache.harmony.security.fortress.Engine;
 
-
-
-
-
-
-
 public class KeyStore {
 
     /**
@@ -333,6 +327,7 @@ public final Date getCreationDate(String alias) throws KeyStoreException {
      * @throws NullPointerException
      *             if {@code alias} is {@code null}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:56.359 -0500", hash_original_method = "7F7563B0251ACD30AE23F02FDE0285F3", hash_generated_method = "53825E022FE210A109204949934C0C15")
     
 public final void setKeyEntry(String alias, Key key, char[] password,
@@ -372,6 +367,7 @@ public final void setKeyEntry(String alias, Key key, char[] password,
      * @throws NullPointerException
      *             if {@code alias} is {@code null}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:56.362 -0500", hash_original_method = "E913EA9574669F2A71A3CC096B53E0CC", hash_generated_method = "BD4405CB0CF9146652DBA2800A88FAD8")
     
 public final void setKeyEntry(String alias, byte[] key, Certificate[] chain)
@@ -398,6 +394,7 @@ public final void setKeyEntry(String alias, byte[] key, Certificate[] chain)
      * @throws NullPointerException
      *             if {@code alias} is {@code null}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:56.364 -0500", hash_original_method = "219C504E98378892F0A1CF69789298BA", hash_generated_method = "6CFC1B4D6B237639B2C802EB0DBEFCF1")
     
 public final void setCertificateEntry(String alias, Certificate cert) throws KeyStoreException {
@@ -624,7 +621,6 @@ public final void load(InputStream stream, char[] password)
         implSpi.engineLoad(stream, password);
         isInit = true;
     }
-
     
     public abstract static class Builder {
 
@@ -803,7 +799,6 @@ public abstract KeyStore getKeyStore() throws KeyStoreException;
         
 public abstract ProtectionParameter getProtectionParameter(String alias)
                 throws KeyStoreException;
-
         
         private static class BuilderImpl extends Builder {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:56.423 -0500", hash_original_field = "4D31A7EB6B508C097C6B9FC4902A8B77", hash_generated_field = "A7031BA8689424ABC672EAE318A6BC51")
@@ -940,11 +935,8 @@ BuilderImpl(KeyStore ks, ProtectionParameter pp, File file,
                 }
                 return protParameter;
             }
-
             
         }
-
-
         
         private static class TmpLSParameter implements LoadStoreParameter {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:56.457 -0500", hash_original_field = "3D0A85BC445BB33BD2E720ECDB112CD0", hash_generated_field = "1BB0FC91976F0354B54BD7DD6D315784")
@@ -969,15 +961,10 @@ public TmpLSParameter(ProtectionParameter protPar) {
 public ProtectionParameter getProtectionParameter() {
                 return protPar;
             }
-
             
         }
-
-
         
     }
-
-
     
     public static class CallbackHandlerProtection implements ProtectionParameter {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:56.473 -0500", hash_original_field = "FE40C24C8725B2D4EE000B726D3ACB84", hash_generated_field = "30CF87E450CC91F7899E85CF6B0C3092")
@@ -1012,18 +999,14 @@ public CallbackHandlerProtection(CallbackHandler handler) {
 public CallbackHandler getCallbackHandler() {
             return callbackHandler;
         }
-
         
     }
-
-
     
     public static class PasswordProtection implements ProtectionParameter, Destroyable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:56.488 -0500", hash_original_field = "21BCD293DE862031F898430214E88677", hash_generated_field = "E9D3F141738563A4D1D32A99D6434F98")
 
         private char[] password;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:56.491 -0500", hash_original_field = "4213EC5657A5F1A8B33184629C524032", hash_generated_field = "4E9B5F95BF3CB214CC7936EEE230143C")
-
 
         private boolean isDestroyed = false;
 
@@ -1086,11 +1069,8 @@ public synchronized void destroy() throws DestroyFailedException {
 public synchronized boolean isDestroyed() {
             return isDestroyed;
         }
-
         
     }
-
-
     
     public static final class PrivateKeyEntry implements Entry {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:56.510 -0500", hash_original_field = "182559F848516BAE32412B11539EE461", hash_generated_field = "FE25B04A839309E9F85BB11D3AB28CB0")
@@ -1217,11 +1197,8 @@ public Certificate getCertificate() {
             }
             return sb.toString();
         }
-
         
     }
-
-
     
     public static final class SecretKeyEntry implements Entry {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:56.534 -0500", hash_original_field = "29947246607A38D09D44A9B15E11C9E0", hash_generated_field = "A5F456CD49483E3B0CB368BDF388AD8F")
@@ -1272,11 +1249,8 @@ public SecretKey getSecretKey() {
             sb.append(secretKey.getAlgorithm());
             return sb.toString();
         }
-
         
     }
-
-
     
     public static final class TrustedCertificateEntry implements Entry {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:56.548 -0500", hash_original_field = "455D0E3424E3FE17007671D2CCAF5B36", hash_generated_field = "39224D52D2F645BDA1C3AA5572035EB1")
@@ -1325,11 +1299,8 @@ public Certificate getTrustedCertificate() {
         public String toString() {
             return "Trusted certificate entry:\n" + trustCertificate;
         }
-
         
     }
-
-
     
     public static interface Entry {
     }

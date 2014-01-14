@@ -49,11 +49,6 @@ import android.util.TypedValue;
 
 import com.android.internal.util.XmlUtils;
 
-
-
-
-
-
 public class PackageParser {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.480 -0500", hash_original_method = "72C97BC0A6F7F87BCA4FBB5B5356EA82", hash_generated_method = "F68BEDE219F72447698AE74F287EF92B")
@@ -755,13 +750,11 @@ public static void setCompatibilityModeEnabled(boolean compatibilityModeEnabled)
             ? null : Build.VERSION.CODENAME;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.394 -0500", hash_original_field = "349D1EAD6A3DD6EDFBBB76E7AC55FC2F", hash_generated_field = "F668D47897E28620543685D1E68BB2A5")
 
-
     private static final Object mSync = new Object();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.396 -0500", hash_original_field = "AA4CA85B0A9FDAAA8AA5E18A1DAB542E", hash_generated_field = "C91A03D8C0281FD6FE8F7562B14775C4")
 
     private static WeakReference<byte[]> mReadBuffer;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.399 -0500", hash_original_field = "F7CDB5046ED291FCCD30C88E8D784F10", hash_generated_field = "23A0E0B3C74959CD54FEA5BC7440ADA6")
-
 
     private static boolean sCompatibilityModeEnabled = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.401 -0500", hash_original_field = "1F051C1B338C25A1719CB53D59B339BE", hash_generated_field = "1FDCA6654F70EEBFD65FBF1AF519E5AA")
@@ -772,10 +765,8 @@ public static void setCompatibilityModeEnabled(boolean compatibilityModeEnabled)
     private static final boolean RIGID_PARSER = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.470 -0500", hash_original_field = "932DCC841B95F57B0DA182694B3E0EE9", hash_generated_field = "DD8609BA0B76A819C8573C819B7348A6")
 
-
     private static final String TAG = "PackageParser";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.490 -0500", hash_original_field = "E7BAC5E9490EC58238EC4C79E12B07D1", hash_generated_field = "4B52CDD8E5ADCA354868822A64689A48")
-
 
     public final static int PARSE_IS_SYSTEM = 1<<0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.492 -0500", hash_original_field = "2913D5634054C90EA1807E9EFA77B6CF", hash_generated_field = "D16481D6B9C894AA8F9AD72D6FF3BE41")
@@ -798,11 +789,9 @@ public static void setCompatibilityModeEnabled(boolean compatibilityModeEnabled)
     public final static int PARSE_IS_SYSTEM_DIR = 1<<6;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.621 -0500", hash_original_field = "59A90DB5D87AFDE3F77EBA16A5271315", hash_generated_field = "1E8F77612F2ACC70744F2BEF9D03FB1E")
 
-
     private static final String ANDROID_RESOURCES
             = "http://schemas.android.com/apk/res/android";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.379 -0500", hash_original_field = "5E985BE30D34F2E0FE7988CAAB75FF22", hash_generated_field = "57425F83C121F61E241FD46B0ED62373")
-
 
     private String mArchiveSourcePath;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.382 -0500", hash_original_field = "E6B9EAEA02C9911B8AFDEDB52C3E24D9", hash_generated_field = "642D094C7AB0E1931029DBA1482587AA")
@@ -813,10 +802,8 @@ public static void setCompatibilityModeEnabled(boolean compatibilityModeEnabled)
     private boolean mOnlyCoreApps;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.392 -0500", hash_original_field = "1787F62A32F37AC744CB4C7C3DE0D384", hash_generated_field = "809C28E1E054CBEE627F51452F62162E")
 
-
     private int mParseError = PackageManager.INSTALL_SUCCEEDED;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.456 -0500", hash_original_field = "0865FE81994682067F2D744C146263FF", hash_generated_field = "5C8F41F6CF659609357D809C60CDDF3A")
-
 
     private ParsePackageItemArgs mParseInstrumentationArgs;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.459 -0500", hash_original_field = "EF8B3B9722DB40E9C36202B3E409B82A", hash_generated_field = "65DE09F18AF72BEAF7CDD76662D74019")
@@ -837,7 +824,6 @@ public static void setCompatibilityModeEnabled(boolean compatibilityModeEnabled)
 public PackageParser(String archiveSourcePath) {
         mArchiveSourcePath = archiveSourcePath;
     }
-
     
     public static class NewPermissionInfo {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.365 -0500", hash_original_field = "BF45F7481B8091DE3CBF80E94F7F940B", hash_generated_field = "D29EB809CD7E712070B86A449A5F2E82")
@@ -857,11 +843,8 @@ public NewPermissionInfo(String name, int sdkVersion, int fileVersion) {
             this.sdkVersion = sdkVersion;
             this.fileVersion = fileVersion;
         }
-
         
     }
-
-
     
     static class ParsePackageItemArgs {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.403 -0500", hash_original_field = "63E7E49220BEC65CFB906D3D26FF5320", hash_generated_field = "63E7E49220BEC65CFB906D3D26FF5320")
@@ -883,7 +866,6 @@ public NewPermissionInfo(String name, int sdkVersion, int fileVersion) {
 
          int logoRes;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.418 -0500", hash_original_field = "FFCA994A2F44B678330E924D8C87385D", hash_generated_field = "FFCA994A2F44B678330E924D8C87385D")
-
         
         String tag;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.420 -0500", hash_original_field = "F31D05FD6AB3B23194ACB45C1F7F8DB9", hash_generated_field = "F31D05FD6AB3B23194ACB45C1F7F8DB9")
@@ -901,11 +883,8 @@ ParsePackageItemArgs(Package _owner, String[] _outError,
             iconRes = _iconRes;
             logoRes = _logoRes;
         }
-
         
     }
-
-
     
     static class ParseComponentArgs extends ParsePackageItemArgs {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.427 -0500", hash_original_field = "52628BA19847DEC6DD967DC512B6341E", hash_generated_field = "52628BA19847DEC6DD967DC512B6341E")
@@ -936,11 +915,8 @@ ParseComponentArgs(Package _owner, String[] _outError,
             descriptionRes = _descriptionRes;
             enabledRes = _enabledRes;
         }
-
         
     }
-
-
     
     public static class PackageLite {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.444 -0500", hash_original_field = "6F92EE1B3BCDC0C4179CF5FD998BE046", hash_generated_field = "AEA3D3739F492530AF8FD6582FAACBD9")
@@ -960,11 +936,8 @@ public PackageLite(String packageName, int installLocation, List<VerifierInfo> v
             this.installLocation = installLocation;
             this.verifiers = verifiers.toArray(new VerifierInfo[verifiers.size()]);
         }
-
         
     }
-
-
     
     public final static class Package {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.630 -0500", hash_original_field = "6F92EE1B3BCDC0C4179CF5FD998BE046", hash_generated_field = "AEA3D3739F492530AF8FD6582FAACBD9")
@@ -974,7 +947,6 @@ public PackageLite(String packageName, int installLocation, List<VerifierInfo> v
 
         public final ApplicationInfo applicationInfo = new ApplicationInfo();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.635 -0500", hash_original_field = "47B4A3B931CA77844EF31DD547DFA859", hash_generated_field = "9F287DA06540EF72A4AA2C12FCA47D9D")
-
 
         public final ArrayList<Permission> permissions = new ArrayList<Permission>(0);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.638 -0500", hash_original_field = "DCE1DFEDDABF7519DDB7D8448576BC07", hash_generated_field = "44F464774678F54DEC4F24FE42619000")
@@ -997,14 +969,11 @@ public PackageLite(String packageName, int installLocation, List<VerifierInfo> v
         public final ArrayList<Instrumentation> instrumentation = new ArrayList<Instrumentation>(0);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.652 -0500", hash_original_field = "63327953C5F8F95F591E69BA4245C045", hash_generated_field = "7D1FBB8E91439EB14277D7D8BA33F0DA")
 
-
         public final ArrayList<String> requestedPermissions = new ArrayList<String>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.655 -0500", hash_original_field = "59AA6FD5BD3953B1A109F5899F927F46", hash_generated_field = "08EEF0A6E1D22D736BF2E545A29D8138")
 
-
         public ArrayList<String> protectedBroadcasts;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.657 -0500", hash_original_field = "2104ADE4423C190CC2AB868FB34DAD86", hash_generated_field = "38B8DDE984ADCEFBD679BD148096C90B")
-
         
         public ArrayList<String> usesLibraries = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.659 -0500", hash_original_field = "5A0FEAB2E786609C044623E4050A7E13", hash_generated_field = "B4E5B43916326236F7AC60FB6AA30ED0")
@@ -1014,7 +983,6 @@ public PackageLite(String packageName, int installLocation, List<VerifierInfo> v
 
         public String[] usesLibraryFiles = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.664 -0500", hash_original_field = "B54303611DA8B5FCAE76312932648A79", hash_generated_field = "E6599044F06DEA0FBD755EB8BE240A8E")
-
 
         public ArrayList<String> mOriginalPackages = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.667 -0500", hash_original_field = "31396CEB1467C7077D0CD3C972D994B3", hash_generated_field = "04EBB67E52CE8E75294355C009EB60C1")
@@ -1076,7 +1044,6 @@ public PackageLite(String packageName, int installLocation, List<VerifierInfo> v
         public ArrayList<FeatureInfo> reqFeatures = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.709 -0500", hash_original_field = "BF693F839564E9279728D50BEF7E118B", hash_generated_field = "30578A504DDEAA8F4E71E08EEE4589B5")
 
-
         public int installLocation;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.712 -0500", hash_original_field = "F09F502EBB949BAD3574E5F6C55E02A2", hash_generated_field = "7CE719961EFE13A323B2F3853261CD27")
 
@@ -1125,11 +1092,8 @@ public String toString() {
                 + Integer.toHexString(System.identityHashCode(this))
                 + " " + packageName + "}";
         }
-
         
     }
-
-
     
     public static class Component<II extends IntentInfo> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.726 -0500", hash_original_field = "63E7E49220BEC65CFB906D3D26FF5320", hash_generated_field = "B7B17A6D136295F4EF656A6C2B786D1E")
@@ -1145,7 +1109,6 @@ public String toString() {
 
         public Bundle metaData;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.736 -0500", hash_original_field = "E3D849549355C126FFF6430112CFAA0A", hash_generated_field = "E3D849549355C126FFF6430112CFAA0A")
-
 
         ComponentName componentName;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.738 -0500", hash_original_field = "A35E7838F783416409F7A19252F30415", hash_generated_field = "A35E7838F783416409F7A19252F30415")
@@ -1267,17 +1230,15 @@ public String getComponentShortName() {
             return componentShortName;
         }
         
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.759 -0500", hash_original_method = "AFFE8B7215C15E45738BCB365FA520F8", hash_generated_method = "6CE8DD4518E7BC84467932004B12946D")
         
 public void setPackageName(String packageName) {
             componentName = null;
             componentShortName = null;
         }
-
         
     }
-
-
     
     public final static class Permission extends Component<IntentInfo> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.765 -0500", hash_original_field = "4241C73A320D988CEDA8D0AE82D7ADA4", hash_generated_field = "44FAE9A36D6EBA187A54E941C96BA855")
@@ -1318,11 +1279,8 @@ public String toString() {
                 + Integer.toHexString(System.identityHashCode(this))
                 + " " + info.name + "}";
         }
-
         
     }
-
-
     
     public final static class PermissionGroup extends Component<IntentInfo> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.785 -0500", hash_original_field = "8CC233C9F6CFC43C7F4E1C98E681317A", hash_generated_field = "4AEC0127E51446670A8F6715545F2FFD")
@@ -1357,11 +1315,8 @@ public String toString() {
                 + Integer.toHexString(System.identityHashCode(this))
                 + " " + info.name + "}";
         }
-
         
     }
-
-
     
     public final static class Activity extends Component<ActivityIntentInfo> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.812 -0500", hash_original_field = "D6562EB0A3FC9B94476A16D5F303F058", hash_generated_field = "31C563E0B9BB4DA4F801727DD7960E99")
@@ -1390,11 +1345,8 @@ public String toString() {
                 + Integer.toHexString(System.identityHashCode(this))
                 + " " + getComponentShortName() + "}";
         }
-
         
     }
-
-
     
     public final static class Service extends Component<ServiceIntentInfo> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.831 -0500", hash_original_field = "4AEE41877C99C71A9296A5C433E71F7C", hash_generated_field = "44442782625E786E51B742A3D7D5DE80")
@@ -1409,6 +1361,7 @@ public Service(final ParseComponentArgs args, final ServiceInfo _info) {
             info.applicationInfo = args.owner.applicationInfo;
         }
         
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.835 -0500", hash_original_method = "A1B5C71CB6AEE57E256089FBBB6F3210", hash_generated_method = "9889EAAFF7D9E6E2D0F0F02C8308AF2A")
         
 public void setPackageName(String packageName) {
@@ -1423,11 +1376,8 @@ public String toString() {
                 + Integer.toHexString(System.identityHashCode(this))
                 + " " + getComponentShortName() + "}";
         }
-
         
     }
-
-
     
     public final static class Provider extends Component {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.846 -0500", hash_original_field = "5CDA2FBF2554178EE653F2BC5EB08EC7", hash_generated_field = "BF776B364C73D31E6B3B31185D6DF955")
@@ -1468,11 +1418,8 @@ public String toString() {
                 + Integer.toHexString(System.identityHashCode(this))
                 + " " + info.name + "}";
         }
-
         
     }
-
-
     
     public final static class Instrumentation extends Component {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.867 -0500", hash_original_field = "AC2380494E7629FC05F61CD5269FE09A", hash_generated_field = "9E4A99D8D40782E1B858164167767C21")
@@ -1500,11 +1447,8 @@ public String toString() {
                 + Integer.toHexString(System.identityHashCode(this))
                 + " " + getComponentShortName() + "}";
         }
-
         
     }
-
-
     
     public static class IntentInfo extends IntentFilter {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.882 -0500", hash_original_field = "FE46C49B5E51D32E88C8BD46819E9489", hash_generated_field = "27741E2F90129BA4D13424CA3120F0CA")
@@ -1529,10 +1473,7 @@ public String toString() {
             //Synthesized constructor
         }
 
-
     }
-
-
     
     public final static class ActivityIntentInfo extends IntentInfo {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.896 -0500", hash_original_field = "A63B0916BD4AC2611D1AF746A2DF045C", hash_generated_field = "8EB481EDAD2FDE318A05890E655F5C10")
@@ -1552,11 +1493,8 @@ public String toString() {
                 + Integer.toHexString(System.identityHashCode(this))
                 + " " + activity.info.name + "}";
         }
-
         
     }
-
-
     
     public final static class ServiceIntentInfo extends IntentInfo {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:53.906 -0500", hash_original_field = "DAF7782A22985FD2AACE76C8B2915B0A", hash_generated_field = "6630E432AFBDE1086EB9C8736D3C1E75")
@@ -1576,7 +1514,6 @@ public String toString() {
                 + Integer.toHexString(System.identityHashCode(this))
                 + " " + service.info.name + "}";
         }
-
         
     }
 
@@ -1682,7 +1619,6 @@ public Package parsePackage(File sourceFile, String destCodePath,
             errorException = e;
             mParseError = PackageManager.INSTALL_PARSE_FAILED_UNEXPECTED_EXCEPTION;
         }
-
 
         if (pkg == null) {
             // If we are only parsing core apps, then a null with INSTALL_SUCCEEDED

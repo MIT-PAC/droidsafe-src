@@ -20,6 +20,7 @@ public final class Bundle implements Parcelable, Cloneable {
      *
      * @hide
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.420 -0500", hash_original_method = "7228E76FDB53607D003E8E811CE36961", hash_generated_method = "5750746718A1E8C6C2CA1F87F40A83F9")
     
 public static Bundle forPair(String key, String value) {
@@ -332,6 +333,7 @@ public void remove(String key) {
      *
      * @param map a Bundle
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.448 -0500", hash_original_method = "F30E47B42E381C2413B1100E1A47D1F8", hash_generated_method = "C674B3B3DD0691391001B45F0CE3A9E5")
     
 public void putAll(Bundle map) {
@@ -370,6 +372,7 @@ public Set<String> keySet() {
      * @param key a String, or null
      * @param value a Boolean, or null
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.457 -0500", hash_original_method = "94490DFEC498722DA435B9597CF0EDDE", hash_generated_method = "D06CBF81F2867BB687F3C98679973161")
     
 public void putBoolean(String key, boolean value) {
@@ -384,6 +387,7 @@ public void putBoolean(String key, boolean value) {
      * @param key a String, or null
      * @param value a byte
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.459 -0500", hash_original_method = "60D945D31D7D04981E268C4CC855B009", hash_generated_method = "240CCC45A5DAEB561D1B1CD9883B6407")
     
 public void putByte(String key, byte value) {
@@ -398,6 +402,7 @@ public void putByte(String key, byte value) {
      * @param key a String, or null
      * @param value a char, or null
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.461 -0500", hash_original_method = "C6C3CAC58AEE8EB92E7D233D1233B510", hash_generated_method = "69802445E72FE1E207C3697FD4610E2E")
     
 public void putChar(String key, char value) {
@@ -412,6 +417,7 @@ public void putChar(String key, char value) {
      * @param key a String, or null
      * @param value a short
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.463 -0500", hash_original_method = "48338BC49C4A94D5C3F73368CEF11822", hash_generated_method = "40E5D56C660E674AEAC1983F06C125A3")
     
 public void putShort(String key, short value) {
@@ -426,6 +432,7 @@ public void putShort(String key, short value) {
      * @param key a String, or null
      * @param value an int, or null
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.465 -0500", hash_original_method = "C2DD503B984E96C46288CB6F7C364E09", hash_generated_method = "4AC8318C015B20964426413A31217551")
     
 public void putInt(String key, int value) {
@@ -440,6 +447,7 @@ public void putInt(String key, int value) {
      * @param key a String, or null
      * @param value a long
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.467 -0500", hash_original_method = "32D4E331D0F655A9205640C19ABF2B58", hash_generated_method = "8F57D9890D036571C1D1866F6CF386C5")
     
 public void putLong(String key, long value) {
@@ -454,6 +462,7 @@ public void putLong(String key, long value) {
      * @param key a String, or null
      * @param value a float
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.469 -0500", hash_original_method = "292C24CEC676EE3F6A373A1AE7371B82", hash_generated_method = "2FACA41C84A2478691CF5236461898B1")
     
 public void putFloat(String key, float value) {
@@ -468,6 +477,7 @@ public void putFloat(String key, float value) {
      * @param key a String, or null
      * @param value a double
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.471 -0500", hash_original_method = "1F6C5CEB9374270482ED4835594D6EF1", hash_generated_method = "877978322BA244A0BEA7112AEE13C2F5")
     
 public void putDouble(String key, double value) {
@@ -482,6 +492,7 @@ public void putDouble(String key, double value) {
      * @param key a String, or null
      * @param value a String, or null
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.474 -0500", hash_original_method = "E7336EB9055C9F862A0B8D336BB5AE0F", hash_generated_method = "9B77596588C53FA62A7F6A9D3F01E4F8")
     
 public void putString(String key, String value) {
@@ -496,6 +507,7 @@ public void putString(String key, String value) {
      * @param key a String, or null
      * @param value a CharSequence, or null
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.476 -0500", hash_original_method = "23A8E01E039C76712F2C134222EAC45B", hash_generated_method = "EA68455D0713862A2AE3E437A935F177")
     
 public void putCharSequence(String key, CharSequence value) {
@@ -510,6 +522,7 @@ public void putCharSequence(String key, CharSequence value) {
      * @param key a String, or null
      * @param value a Parcelable object, or null
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.478 -0500", hash_original_method = "F17082A305780CE778B93F20A20D0318", hash_generated_method = "328E649DB95D7BCD75AD520B7DB513E8")
     
 public void putParcelable(String key, Parcelable value) {
@@ -526,6 +539,7 @@ public void putParcelable(String key, Parcelable value) {
      * @param key a String, or null
      * @param value an array of Parcelable objects, or null
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.480 -0500", hash_original_method = "1666E21FDEAC3D0C57D8E38C022A7AD2", hash_generated_method = "2400F64B7D1A1D47FB478A0CEC8DD502")
     
 public void putParcelableArray(String key, Parcelable[] value) {
@@ -542,6 +556,7 @@ public void putParcelableArray(String key, Parcelable[] value) {
      * @param key a String, or null
      * @param value an ArrayList of Parcelable objects, or null
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.482 -0500", hash_original_method = "C07428EAC6D62CA3DF6F67489B512A7E", hash_generated_method = "D4F0BB866FF91AE238790A8A6EE5AF88")
     
 public void putParcelableArrayList(String key,
@@ -559,6 +574,7 @@ public void putParcelableArrayList(String key,
      * @param key a String, or null
      * @param value a SparseArray of Parcelable objects, or null
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.485 -0500", hash_original_method = "93FD4CBDA1682EAF0E9F2535BF397F65", hash_generated_method = "650875F4F65C3A61BA4CCCBEFD84BCF5")
     
 public void putSparseParcelableArray(String key,
@@ -575,6 +591,7 @@ public void putSparseParcelableArray(String key,
      * @param key a String, or null
      * @param value an ArrayList<Integer> object, or null
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.487 -0500", hash_original_method = "6C90B1571D2A36769CB59FB958C842F7", hash_generated_method = "427819B9974AD331D76B1095B8CA7023")
     
 public void putIntegerArrayList(String key, ArrayList<Integer> value) {
@@ -589,6 +606,7 @@ public void putIntegerArrayList(String key, ArrayList<Integer> value) {
      * @param key a String, or null
      * @param value an ArrayList<String> object, or null
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.489 -0500", hash_original_method = "ABD9DF23A5A8A0A83F11C474E2CAFB17", hash_generated_method = "196266A25FB1B61B7E293883A2B18682")
     
 public void putStringArrayList(String key, ArrayList<String> value) {
@@ -603,6 +621,7 @@ public void putStringArrayList(String key, ArrayList<String> value) {
      * @param key a String, or null
      * @param value an ArrayList<CharSequence> object, or null
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.492 -0500", hash_original_method = "C0F2E9DF48888A828D6640DBBB8ADDE5", hash_generated_method = "D3ABD393302D2F8BD59B3AC7E2DC782D")
     
 public void putCharSequenceArrayList(String key, ArrayList<CharSequence> value) {
@@ -617,6 +636,7 @@ public void putCharSequenceArrayList(String key, ArrayList<CharSequence> value) 
      * @param key a String, or null
      * @param value a Serializable object, or null
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.494 -0500", hash_original_method = "C647C81034119067E2383CA02CF65D5F", hash_generated_method = "4BA2962153220EE5043BE8A4597C831E")
     
 public void putSerializable(String key, Serializable value) {
@@ -631,6 +651,7 @@ public void putSerializable(String key, Serializable value) {
      * @param key a String, or null
      * @param value a boolean array object, or null
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.496 -0500", hash_original_method = "8E721A4E4DD3EA40820BFACA50BE3D1C", hash_generated_method = "58BD281F5835739A9176EEFBD8CF5219")
     
 public void putBooleanArray(String key, boolean[] value) {
@@ -645,6 +666,7 @@ public void putBooleanArray(String key, boolean[] value) {
      * @param key a String, or null
      * @param value a byte array object, or null
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.498 -0500", hash_original_method = "1C56E40FECAB1AC7C31C1D64DCBF74F0", hash_generated_method = "0206D8B9EEFAE3F5D1FE5F44A497BC16")
     
 public void putByteArray(String key, byte[] value) {
@@ -659,6 +681,7 @@ public void putByteArray(String key, byte[] value) {
      * @param key a String, or null
      * @param value a short array object, or null
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.501 -0500", hash_original_method = "2FF709A9E88600F14AEB34FA372FB7A3", hash_generated_method = "BEF718C3C1F07F62E8C1D81C8B2729AD")
     
 public void putShortArray(String key, short[] value) {
@@ -673,6 +696,7 @@ public void putShortArray(String key, short[] value) {
      * @param key a String, or null
      * @param value a char array object, or null
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.503 -0500", hash_original_method = "5BBE3077A529F887080D848A31F1E40F", hash_generated_method = "3192B333EC6E5C498F80E759DA81C637")
     
 public void putCharArray(String key, char[] value) {
@@ -687,6 +711,7 @@ public void putCharArray(String key, char[] value) {
      * @param key a String, or null
      * @param value an int array object, or null
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.505 -0500", hash_original_method = "6E03156089AB80D54004D251F8CBA9A8", hash_generated_method = "C0C3A6D4334E11C7E7E55FB20260433D")
     
 public void putIntArray(String key, int[] value) {
@@ -701,6 +726,7 @@ public void putIntArray(String key, int[] value) {
      * @param key a String, or null
      * @param value a long array object, or null
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.507 -0500", hash_original_method = "749D6A41C446C63F668941511653896B", hash_generated_method = "55879D13B87CD3A5D8B928E5CF1696FB")
     
 public void putLongArray(String key, long[] value) {
@@ -715,6 +741,7 @@ public void putLongArray(String key, long[] value) {
      * @param key a String, or null
      * @param value a float array object, or null
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.509 -0500", hash_original_method = "6C49285A06086C4B176330EBC83C2D3B", hash_generated_method = "E7FBE6DA0D5B9B10EFF899381DE4E390")
     
 public void putFloatArray(String key, float[] value) {
@@ -729,6 +756,7 @@ public void putFloatArray(String key, float[] value) {
      * @param key a String, or null
      * @param value a double array object, or null
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.512 -0500", hash_original_method = "BF0DED73B6BC272CA81A76D665AF3892", hash_generated_method = "A2076636F5AB03C501737F8FA41B4580")
     
 public void putDoubleArray(String key, double[] value) {
@@ -743,6 +771,7 @@ public void putDoubleArray(String key, double[] value) {
      * @param key a String, or null
      * @param value a String array object, or null
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.514 -0500", hash_original_method = "3F318C6E0F37B53192FF4A33987FF921", hash_generated_method = "FE79E8BA5AF6257B211C93119EFF9427")
     
 public void putStringArray(String key, String[] value) {
@@ -757,6 +786,7 @@ public void putStringArray(String key, String[] value) {
      * @param key a String, or null
      * @param value a CharSequence array object, or null
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.516 -0500", hash_original_method = "D442CACA5F4C37E249E32A5FC3EA1B00", hash_generated_method = "DDBB425D41D43B34CE4517F62847711C")
     
 public void putCharSequenceArray(String key, CharSequence[] value) {
@@ -771,6 +801,7 @@ public void putCharSequenceArray(String key, CharSequence[] value) {
      * @param key a String, or null
      * @param value a Bundle object, or null
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.518 -0500", hash_original_method = "8FC0D5E8787A84A268AF6F8743FC18A2", hash_generated_method = "6F7D480D452EFF0784927D78F4534B62")
     
 public void putBundle(String key, Bundle value) {
@@ -788,6 +819,7 @@ public void putBundle(String key, Bundle value) {
      * @deprecated
      * @hide
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.520 -0500", hash_original_method = "0DA9D5A0C7EE7D2AFD4BCC53AD3802F3", hash_generated_method = "72956D90BC7B32B0D39A00538E67E3E0")
     
 @Deprecated
@@ -1749,6 +1781,7 @@ public int describeContents() {
      * it to be passed through an IBinder connection.
      * @param parcel The parcel to copy this bundle to.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.628 -0500", hash_original_method = "90A94F467F11AD2B1AEECA4B5BC07A1D", hash_generated_method = "13FC4A3A2DEAA47DAD8328A7A3631F3B")
     
 public void writeToParcel(Parcel parcel, int flags) {

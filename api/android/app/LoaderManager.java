@@ -738,6 +738,7 @@ void callOnLoadFinished(Loader<Object> loader, Object data) {
             return sb.toString();
         }
 
+        @DSSink({DSSinkKind.FILE})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:23.839 -0500", hash_original_method = "130B539E0C9D3012BFA3C99178E2C6F6", hash_generated_method = "118927D2D3B68F4DDA7767AFFFDD5C05")
         
 public void dump(String prefix, FileDescriptor fd, PrintWriter writer, String[] args) {
@@ -768,6 +769,7 @@ public void dump(String prefix, FileDescriptor fd, PrintWriter writer, String[] 
         
     }
 
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:23.886 -0500", hash_original_method = "469C164486863607CE4F221F1C14A350", hash_generated_method = "E9420D75CB8EEC741B9211CF7195943D")
     
 @Override

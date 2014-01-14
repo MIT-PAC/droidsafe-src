@@ -47,6 +47,7 @@ public void reset() {
      * @param val
      *            represents the byte to update the checksum.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.168 -0500", hash_original_method = "CC03AC9F84902D02E7C98FF0D9B3A071", hash_generated_method = "1BB18586428AA9D56B3090422507B482")
     
 public void update(int val) {
@@ -59,6 +60,7 @@ public void update(int val) {
      * @param buf
      *            the buffer holding the data to update the checksum with.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.171 -0500", hash_original_method = "CE6B29801A6FECCB312673EE525F73B5", hash_generated_method = "C7A3A99D53983972F56F1121073E3E00")
     
 public void update(byte[] buf) {
@@ -69,6 +71,7 @@ public void update(byte[] buf) {
      * Update this {@code CRC32} checksum with the contents of {@code buf},
      * starting from {@code offset} and reading {@code byteCount} bytes of data.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.173 -0500", hash_original_method = "FA32CF22527C3BE95E419FDEDA807F82", hash_generated_method = "67B151244B370C307496F0872FD40CDC")
     
 public void update(byte[] buf, int offset, int byteCount) {

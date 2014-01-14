@@ -14,10 +14,6 @@ import java.text.DateFormatSymbols;
 import libcore.icu.ICU;
 import libcore.icu.LocaleData;
 
-
-
-
-
 public abstract class Calendar implements Serializable, Cloneable, Comparable<Calendar> {
 
     /**
@@ -111,7 +107,6 @@ private static void insertValuesInMap(Map<String, Integer> map, String[] values)
         }
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.625 -0500", hash_original_field = "4D8674EA548BD96F53EEDAA50DD1693D", hash_generated_field = "AF2E0A30DAA7888473F4B1DB6F9AB4E7")
-
 
     private static final long serialVersionUID = -1807547505821590642L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.653 -0500", hash_original_field = "96E737BC3A857442BE698F2E08262213", hash_generated_field = "18EBE6A0EA775581ADAF9A3A3B4BDF43")
@@ -248,14 +243,12 @@ private static void insertValuesInMap(Map<String, Integer> map, String[] values)
     public static final int LONG = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.768 -0500", hash_original_field = "77F0167C8F21E8A84D31FA574DA522BF", hash_generated_field = "E98760CF948389324CD259C52EDE02C8")
 
-
     private static final String[] FIELD_NAMES = { "ERA", "YEAR", "MONTH",
             "WEEK_OF_YEAR", "WEEK_OF_MONTH", "DAY_OF_MONTH", "DAY_OF_YEAR",
             "DAY_OF_WEEK", "DAY_OF_WEEK_IN_MONTH", "AM_PM", "HOUR",
             "HOUR_OF_DAY", "MINUTE", "SECOND", "MILLISECOND",
             "ZONE_OFFSET", "DST_OFFSET" };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.908 -0500", hash_original_field = "AD47366764E5EFE3ABD0A29CF4241015", hash_generated_field = "38D65C9058142C88025F5AD8AC8D9090")
-
 
     private static final ObjectStreamField[] serialPersistentFields = {
         new ObjectStreamField("areFieldsSet", boolean.class),
@@ -287,26 +280,20 @@ private static void insertValuesInMap(Map<String, Integer> map, String[] values)
     protected long time;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.639 -0500", hash_original_field = "81133861F580AD70A5F1D94554D53510", hash_generated_field = "8B06B22BB0D98B206D493E4536EE7432")
 
-
     transient int lastTimeFieldSet;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.642 -0500", hash_original_field = "1B46E0681663B26D10B6CA3A39018DC5", hash_generated_field = "FB479690428AB835107C0237892E7931")
-
 
     transient int lastDateFieldSet;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.644 -0500", hash_original_field = "F0C116C55DD7FB6180ECBEE0F0E0E9C6", hash_generated_field = "EAF178494884F790222D5DEEC0D047C3")
 
-
     private boolean lenient;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.646 -0500", hash_original_field = "D591572ED5B5BFDC9D565131C6CF2690", hash_generated_field = "AB58B3610E0723B715410016290F0168")
-
 
     private int firstDayOfWeek;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.649 -0500", hash_original_field = "5741E746E11541D804E4C7F4ECAFBD07", hash_generated_field = "B89C77A3F2A82BA7436489590490B056")
 
-
     private int minimalDaysInFirstWeek;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.651 -0500", hash_original_field = "879C1DD31D1F7B98FA691304642E4912", hash_generated_field = "05D717DFC6EF8897D7D254757AEA2790")
-
 
     private TimeZone zone;
 
@@ -345,7 +332,6 @@ protected Calendar(TimeZone timezone, Locale locale) {
         setFirstDayOfWeek(localeData.firstDayOfWeek.intValue());
         setMinimalDaysInFirstWeek(localeData.minimalDaysInFirstWeek.intValue());
     }
-
 
     /**
      * Adds the specified amount to a {@code Calendar} field.
@@ -850,6 +836,7 @@ public void set(int field, int value) {
      * @param day
      *            the day of the month.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.866 -0500", hash_original_method = "E11C90BCB39036715964798223610892", hash_generated_method = "382574715A132933C4F1A96C29BAB6FE")
     
 public final void set(int year, int month, int day) {
@@ -873,6 +860,7 @@ public final void set(int year, int month, int day) {
      * @param minute
      *            the minute.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.869 -0500", hash_original_method = "B4EBEBE6ED320058BB13C1E33AF949E4", hash_generated_method = "396504D08E42B024F7F32C7E28DC7024")
     
 public final void set(int year, int month, int day, int hourOfDay,
@@ -899,6 +887,7 @@ public final void set(int year, int month, int day, int hourOfDay,
      * @param second
      *            the second.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.872 -0500", hash_original_method = "071B019FF423902B33C61C7D7703D8F0", hash_generated_method = "02E66189939C24081396104958954FC7")
     
 public final void set(int year, int month, int day, int hourOfDay,
@@ -950,6 +939,7 @@ public void setMinimalDaysInFirstWeek(int value) {
      * @param date
      *            a {@code Date} object.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.881 -0500", hash_original_method = "8326734B6F30C707435A4BD203126230", hash_generated_method = "89DD3665E4887379FA91D0FAB7FFB3C5")
     
 public final void setTime(Date date) {

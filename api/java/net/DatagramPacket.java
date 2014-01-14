@@ -5,13 +5,8 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public final class DatagramPacket {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.334 -0500", hash_original_field = "B330DF564CD90A5498A9E4F0AB344BB9", hash_generated_field = "B330DF564CD90A5498A9E4F0AB344BB9")
-
 
     byte[] data;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.336 -0500", hash_original_field = "136C4DD872F8065EECD33F6CD4E7556E", hash_generated_field = "136C4DD872F8065EECD33F6CD4E7556E")
@@ -22,17 +17,13 @@ public final class DatagramPacket {
     int capacity;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.340 -0500", hash_original_field = "FDCE7272CFC91A6374FBF7F54D5CC8E4", hash_generated_field = "FDCE7272CFC91A6374FBF7F54D5CC8E4")
 
-
     InetAddress address;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.342 -0500", hash_original_field = "BAF684EECB20D799A434AFCF1B13F01D", hash_generated_field = "BAF684EECB20D799A434AFCF1B13F01D")
-
 
     int port = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.344 -0500", hash_original_field = "B57AAF7BF5F2E3B125D28448999D0D18", hash_generated_field = "B57AAF7BF5F2E3B125D28448999D0D18")
 
-
     int offset = 0;
-
 
     /**
      * Constructs a new {@code DatagramPacket} object to receive data up to
@@ -334,6 +325,7 @@ public synchronized SocketAddress getSocketAddress() {
      * @param sockAddr
      *            the SocketAddress of the target host.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.399 -0500", hash_original_method = "3EDF0F039E2E002F80626A052A7B5C38", hash_generated_method = "B2E1FDF6EF31C2E23A516CDDA1476D64")
     
 public synchronized void setSocketAddress(SocketAddress sockAddr) {
@@ -348,7 +340,6 @@ public synchronized void setSocketAddress(SocketAddress sockAddr) {
         port = inetAddr.getPort();
         address = inetAddr.getAddress();
     }
-
     
 }
 

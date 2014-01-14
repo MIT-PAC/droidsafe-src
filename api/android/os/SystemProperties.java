@@ -124,6 +124,7 @@ public static boolean getBoolean(String key, boolean def) {
      * @throws IllegalArgumentException if the key exceeds 32 characters
      * @throws IllegalArgumentException if the value exceeds 92 characters
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:26.312 -0500", hash_original_method = "B68AAFB393238F23874EB5D82F3E0580", hash_generated_method = "F2AB2276EAAE5D97F306539BF85F02D3")
     
 public static void set(String key, String val) {

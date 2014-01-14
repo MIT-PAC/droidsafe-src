@@ -502,6 +502,7 @@ public void clearFlags(int flags) {
      * @param flags The new window flags (see WindowManager.LayoutParams).
      * @param mask Which of the window flag bits to modify.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.727 -0500", hash_original_method = "40E42D383A45AE28D15E52653F68CBD5", hash_generated_method = "33AC6D1792EC1888DE667493ABB11B9B")
     
 public void setFlags(int flags, int mask) {
@@ -835,6 +836,7 @@ public abstract void onConfigurationChanged(Configuration newConfig);
      * @param resid The resource identifier of a drawable resource which will be
      *              installed as the new background.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.817 -0500", hash_original_method = "AFC383C5A753BE0283DE80727207DE11", hash_generated_method = "3C1C0B95983C16D6419782DD69A8F724")
     
 public void setBackgroundDrawableResource(int resid)
@@ -1252,6 +1254,7 @@ public abstract int getVolumeControlStream();
      * Set extra options that will influence the UI for this window.
      * @param uiOptions Flags specifying extra options for this window.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.894 -0500", hash_original_method = "5C7A5DC825C127CAEB67314627C1344D", hash_generated_method = "E7803D9EA57EDD53A6619582D74C929D")
     
 public void setUiOptions(int uiOptions) { }
@@ -1262,6 +1265,7 @@ public void setUiOptions(int uiOptions) { }
      * @param uiOptions Flags specifying extra options for this window.
      * @param mask Flags specifying which options should be modified. Others will remain unchanged.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.897 -0500", hash_original_method = "DD14EAF3AEC819DEC25B96FED2D2DF84", hash_generated_method = "F49B7763563715E51446AA4C72042315")
     
 public void setUiOptions(int uiOptions, int mask) { }

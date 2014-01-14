@@ -21,10 +21,6 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
 
-
-
-
-
 class FindActionModeCallback implements ActionMode.Callback, TextWatcher, View.OnLongClickListener, View.OnClickListener {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:03.244 -0500", hash_original_field = "ADD711F109703E2EAF61E2AD917F3FB6", hash_generated_field = "58BF9FCCDFB47B7346A31DF060279244")
 
@@ -54,7 +50,6 @@ class FindActionModeCallback implements ActionMode.Callback, TextWatcher, View.O
 
     private ActionMode mActionMode;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:03.303 -0500", hash_original_field = "90077AFE710D9C661C47363315C10CE3", hash_generated_field = "78FDC6EA268F3080B428BCC4885254FD")
-
 
     private Rect mGlobalVisibleRect = new Rect();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:03.305 -0500", hash_original_field = "9AA4B9AE03BF45798C8FEA9679CC2EE3", hash_generated_field = "B98693B51D24477EB14AD942E0AB2A10")
@@ -90,6 +85,7 @@ void finish() {
      * Place text in the text field so it can be searched for.  Need to press
      * the find next or find previous button to find all of the matches.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:03.268 -0500", hash_original_method = "CA5CD09DA796000F712B45157C41B130", hash_generated_method = "CCD73340064A2FE99A144E130A5D2F5A")
     
 void setText(String text) {
@@ -318,7 +314,6 @@ public int getActionModeGlobalBottom() {
         view.getGlobalVisibleRect(mGlobalVisibleRect, mGlobalVisibleOffset);
         return mGlobalVisibleRect.bottom;
     }
-
     
 }
 

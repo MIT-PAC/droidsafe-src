@@ -9,10 +9,6 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Log;
 
-
-
-
-
 public class ServiceState implements Parcelable {
 
     /**
@@ -118,7 +114,6 @@ private static boolean equalsHandlesNulls (Object a, Object b) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:54.035 -0500", hash_original_field = "F4446E751DD7D5E85FE650192A5E7AE4", hash_generated_field = "90DFE6F4299DB554E753A7D7707C6EC5")
 
-
     static final String LOG_TAG = "PHONE";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:54.039 -0500", hash_original_field = "91145666AB18F7D872AA197E89F2E164", hash_generated_field = "D4DA810B4309B0137A4C6CA6DD383CFC")
 
@@ -218,7 +213,6 @@ public ServiceState[] newArray(int size) {
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:54.127 -0500", hash_original_field = "C14776D1C836D0E963F3F09F9928F141", hash_generated_field = "F60690C16A904EA5E0E01BA5DAB95D57")
 
-
     private int mState = STATE_OUT_OF_SERVICE;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:54.130 -0500", hash_original_field = "443BCEF3EEBE54B39D5E3E92FF87E1E4", hash_generated_field = "02055DCC177C93D9A52A736D58C166FD")
 
@@ -236,7 +230,6 @@ public ServiceState[] newArray(int size) {
 
     private boolean mIsManualNetworkSelection;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:54.145 -0500", hash_original_field = "E215E34359029F23BEE387597286299A", hash_generated_field = "17239629CA9846328F98C386EA8B54F9")
-
 
     private boolean mIsEmergencyOnly;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:54.148 -0500", hash_original_field = "46D422AD1DCC805B97FA6603FE275902", hash_generated_field = "379C3FB6918D9CCD707AC84835B3C555")
@@ -568,12 +561,14 @@ private void setNullState(int state) {
         mIsEmergencyOnly = false;
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:54.257 -0500", hash_original_method = "638BC09D981AD6B06693C47D3D967201", hash_generated_method = "21E4A4D79A1C93CE54CD6D427D0A66D5")
     
 public void setStateOutOfService() {
         setNullState(STATE_OUT_OF_SERVICE);
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:54.260 -0500", hash_original_method = "D9FAF4EA3D294E58217DAB74F17C0351", hash_generated_method = "75B629D0CE1D03D4AE5A4B7656F6E5F5")
     
 public void setStateOff() {
@@ -591,7 +586,6 @@ public void setState(int state) {
 public void setRoaming(boolean roaming) {
         mRoaming = roaming;
     }
-
 
     /**
      * @hide
@@ -721,6 +715,7 @@ public void setRadioTechnology(int state) {
     }
 
     /** @hide */
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:54.306 -0500", hash_original_method = "C1350CF85A5CAF49D330DF5D8BE50D5D", hash_generated_method = "B0FC9535B19CE7C5DAC57DB8CB8A30B7")
     
 public void setCssIndicator(int css) {

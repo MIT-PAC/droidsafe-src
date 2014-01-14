@@ -9,10 +9,6 @@ import java.util.Locale;
 import libcore.icu.ICU;
 import libcore.icu.NativeBreakIterator;
 
-
-
-
-
 public abstract class BreakIterator implements Cloneable {
 
     /**
@@ -198,6 +194,7 @@ public int preceding(int offset) {
      * @param newText
      *            the new text string to be analyzed.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.490 -0500", hash_original_method = "09A01C59FC40671D2FFB70D6D2572999", hash_generated_method = "E7C4BF69463A97CC321E1D893E0F45DF")
     
 public void setText(String newText) {

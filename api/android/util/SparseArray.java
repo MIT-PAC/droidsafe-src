@@ -225,6 +225,7 @@ public void remove(int key) {
 		*/
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setValueAt(int index, E value){
 		mValues[0] = value;
 		// Original method
@@ -284,6 +285,7 @@ public void remove(int key) {
 		//Return nothing
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void append(int key, E value){
 		put(key, value);
 		ArrayUtils.idealIntArraySize(0);

@@ -20,11 +20,6 @@ import android.util.SparseIntArray;
 
 import com.android.internal.R;
 
-
-
-
-
-
 public class GsmAlphabet {
 
     /**
@@ -466,7 +461,6 @@ public static String gsm7BitPackedToString(byte[] pdu, int offset,
         return ret.toString();
     }
 
-
     /**
      * Convert a GSM alphabet string that's stored in 8-bit unpacked
      * format (as it often appears in SIM records) into a String
@@ -496,6 +490,7 @@ public static String
      * Additionally, in some country(ex. Korea), there are non-ASCII or MBCS characters.
      * If a character set is given, characters in data are treat as MBCS.
      */
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:41.491 -0500", hash_original_method = "F4F7246DD691380E13C09E794F3AA7A8", hash_generated_method = "C92D4A1A16E4C726EA5C5C5E2F1389CD")
     
 public static String
@@ -583,7 +578,6 @@ public static byte[]
 
         return ret;
     }
-
 
     /**
      * Write a String into a GSM 8-bit unpacked field of
@@ -982,7 +976,6 @@ static synchronized int[] getEnabledLockingShiftTables() {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:41.428 -0500", hash_original_field = "51AD1D1B7CA2A72E6B430B8A496104BA", hash_generated_field = "EFF0BA8EAA7A2E5FCD3601D1F8EC46DA")
 
     private static final String TAG = "GSM";
-
     
     private static class LanguagePairCount {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:41.542 -0500", hash_original_field = "751385C2D4084786D52A9F254B89775D", hash_generated_field = "751385C2D4084786D52A9F254B89775D")
@@ -1019,11 +1012,9 @@ LanguagePairCount(int code) {
                 septetCounts[2] = -1;   // Portuguese + Spanish
             }
         }
-
         
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:41.434 -0500", hash_original_field = "B9B35F710D11B9745A68443E3729FAC5", hash_generated_field = "23BAEB52AEC98C55A18510FE2A207A99")
-
 
     /**
      * This escapes extended characters, and when present indicates that the

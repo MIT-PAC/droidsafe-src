@@ -28,10 +28,6 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.MathUtils;
 
-
-
-
-
 public class NetworkStatsHistory implements Parcelable {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:59.528 -0500", hash_original_method = "9D3FB9EB48DBC5BD1109352D63C4227B", hash_generated_method = "AEA336FF9624B152F85480E0DA267088")
@@ -68,7 +64,6 @@ private static void addLong(long[] array, int i, long value) {
     private static final int VERSION_ADD_ACTIVE = 3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:59.403 -0500", hash_original_field = "E012E67C2FC9D7CFACF8A95744C49098", hash_generated_field = "B30C161561419447A145BC3806950DF6")
 
-
     public static final int FIELD_ACTIVE_TIME = 0x01;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:59.406 -0500", hash_original_field = "94B8FCF6096BA87915BE3F1E0B6B6901", hash_generated_field = "B83AA8C9CBADCF8323FE156C6521F4F8")
 
@@ -87,7 +82,6 @@ private static void addLong(long[] array, int i, long value) {
     public static final int FIELD_OPERATIONS = 0x20;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:59.417 -0500", hash_original_field = "FBA9C13DCF7D32564A3FB752FC162B27", hash_generated_field = "CD0D0EE4410996E4C6C61BD9919399D7")
 
-
     public static final int FIELD_ALL = 0xFFFFFFFF;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.939 -0400", hash_original_field = "048BF4BBB96644622132F9F51E1DB96F", hash_generated_field = "D81F6106977C71918B1EF6EAB4131577")
 
@@ -105,7 +99,6 @@ public NetworkStatsHistory[] newArray(int size) {
         }
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:59.419 -0500", hash_original_field = "530E2C7BC09F16E8D3F66FBAF94998AB", hash_generated_field = "2DC5FC41152B76B2AF9AC6BB55A20FB5")
-
 
     private long bucketDuration;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:59.421 -0500", hash_original_field = "DE608DB5B2D21322C45919EB3B134CBB", hash_generated_field = "5619EFB8F87F05852AF87EFEA39E4229")
@@ -210,6 +203,7 @@ public NetworkStatsHistory(DataInputStream in) throws IOException {
     }
 
     /** {@inheritDoc} */
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:59.473 -0500", hash_original_method = "7FCED8E87AE3E02DFD52BA28011A12D7", hash_generated_method = "95BEE8CA5EABE247F4D27569B5F10808")
     
 public void writeToParcel(Parcel out, int flags) {
@@ -223,6 +217,7 @@ public void writeToParcel(Parcel out, int flags) {
         writeLongArray(out, operations, bucketCount);
     }
 
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:59.479 -0500", hash_original_method = "F25B937341175CC0273E2E92554C8F17", hash_generated_method = "4830B9EF3147F362C79C4724D028A819")
     
 public void writeToStream(DataOutputStream out) throws IOException {
@@ -337,14 +332,12 @@ public Entry getValues(int i, Entry recycle) {
         recordData(start, end, new NetworkStats.Entry(
                 IFACE_ALL, UID_ALL, SET_DEFAULT, TAG_NONE, rxBytes, 0L, txBytes, 0L, 0L));
     }
-
     
     public static class Entry {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:59.439 -0500", hash_original_field = "33C1007F023A4F6791A549B7B280BC05", hash_generated_field = "83092BBB72C91C04DD841B95A4680A5D")
 
         public static final long UNKNOWN = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:59.441 -0500", hash_original_field = "530E2C7BC09F16E8D3F66FBAF94998AB", hash_generated_field = "7C1BAD4742A4B22366B6D0FF5D8B7450")
-
 
         public long bucketDuration;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:59.444 -0500", hash_original_field = "97C28F6C4399C625D057E5EF69B6AB41", hash_generated_field = "1F3D020C44602964FFF2B3A5FE620FA4")
@@ -375,8 +368,6 @@ public Entry getValues(int i, Entry recycle) {
             //Synthesized constructor
         }
     }
-
-
     
     public static class DataStreamUtils {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:59.552 -0500", hash_original_method = "8C117ACB817B8757CE01A7CFCFC529A6", hash_generated_method = "7784A9CE40E05EDB6515986A2F63040F")
@@ -412,6 +403,7 @@ public static long readVarLong(DataInputStream in) throws IOException {
         /**
          * Write variable-length {@link Long} using protobuf-style approach.
          */
+        @DSSink({DSSinkKind.NETWORK})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:59.558 -0500", hash_original_method = "D431E6C77070347A300599FD921BF72A", hash_generated_method = "810D0574BDF2521C29AD9FCAC804DB84")
         
 public static void writeVarLong(DataOutputStream out, long value) throws IOException {
@@ -438,6 +430,7 @@ public static long[] readVarLongArray(DataInputStream in) throws IOException {
             return values;
         }
 
+        @DSSink({DSSinkKind.NETWORK})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:59.563 -0500", hash_original_method = "F69E44CFFE25D3AAA6FC01B2A5398C20", hash_generated_method = "719A0D5F3BFC15F28AA7CD3F36E0942A")
         
 public static void writeVarLongArray(DataOutputStream out, long[] values, int size)
@@ -460,11 +453,8 @@ public static void writeVarLongArray(DataOutputStream out, long[] values, int si
         {
             //Synthesized constructor
         }
-
         
     }
-
-
     
     public static class ParcelUtils {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:59.568 -0500", hash_original_method = "E8E8FFBE49221B18A2D2D8EEA4DEF645", hash_generated_method = "B375935F19AF35E91FDBEE687E6629C0")
@@ -479,6 +469,7 @@ public static long[] readLongArray(Parcel in) {
             return values;
         }
 
+        @DSSink({DSSinkKind.NETWORK})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:59.572 -0500", hash_original_method = "B0F535676A3746562290C16E304FB2DC", hash_generated_method = "5A0BC5C7CB64443FD2F4DEB78C0C29A7")
         
 public static void writeLongArray(Parcel out, long[] values, int size) {
@@ -500,7 +491,6 @@ public static void writeLongArray(Parcel out, long[] values, int size) {
         {
             //Synthesized constructor
         }
-
         
     }
 

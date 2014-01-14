@@ -381,7 +381,8 @@ return _result;
      *         {@link TextToSpeech#LANG_MISSING_DATA}
      *         {@link TextToSpeech#LANG_NOT_SUPPORTED}.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:54.910 -0500", hash_original_method = "B689DC29DF9C0768C6D0F180732D8140", hash_generated_method = "60297672CD57FDA6045D5B2232C93531")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:54.910 -0500", hash_original_method = "B689DC29DF9C0768C6D0F180732D8140", hash_generated_method = "60297672CD57FDA6045D5B2232C93531")
             
 public int loadLanguage(java.lang.String lang, java.lang.String country, java.lang.String variant) throws android.os.RemoteException
 {
@@ -466,7 +467,8 @@ public android.os.IBinder asBinder()
 {
 return this;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:54.872 -0500", hash_original_method = "01C1950B898344CC31DFBAEB904BB96C", hash_generated_method = "9DC5C74CF85847C17075331480A1EE9A")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:54.872 -0500", hash_original_method = "01C1950B898344CC31DFBAEB904BB96C", hash_generated_method = "9DC5C74CF85847C17075331480A1EE9A")
         
 @Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
 {

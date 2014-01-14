@@ -8,12 +8,7 @@ import android.net.Uri;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public class ContentProviderResult implements Parcelable {
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.102 -0400", hash_original_field = "F018B6EF0D315D56317D0DF9DCDA6979", hash_generated_field = "CFE4FC623FC720B7BBEAC41F3A8161D9")
 
@@ -66,6 +61,7 @@ public ContentProviderResult(Parcel source) {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.021 -0500", hash_original_method = "9CD6B2E6D05DCE725086FF1495B545F8", hash_generated_method = "CE8FF229D3F429077C3F103CC7EC30FE")
     
 public void writeToParcel(Parcel dest, int flags) {

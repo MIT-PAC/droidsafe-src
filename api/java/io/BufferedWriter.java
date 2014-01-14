@@ -8,21 +8,14 @@ import java.util.Arrays;
 
 import libcore.util.SneakyThrow;
 
-
-
-
-
 public class BufferedWriter extends Writer {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.393 -0500", hash_original_field = "EBCE22DD0E30FF0E4040ABB2E7F29C97", hash_generated_field = "0251D9C19BD1379B95D6A9A5D4A8C80D")
-
 
     private Writer out;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.396 -0500", hash_original_field = "40514AFF00B14ABD40D54C723F22A0B4", hash_generated_field = "29466223C47F8B8BB1DFDB9869023C70")
 
-
     private char[] buf;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.398 -0500", hash_original_field = "5780BC7BCF265A6425A5A90F1AD9B24E", hash_generated_field = "74B29150B9CA7F1725D53FF286BFBC4B")
-
 
     private int pos;
 
@@ -178,6 +171,7 @@ public void newLine() throws IOException {
      * @throws IOException
      *             if this writer is closed or another I/O error occurs.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.424 -0500", hash_original_method = "2ACD1A4D73C211D3299604BDD7AD25D9", hash_generated_method = "210CE2FA3BEB7A9654223F17CE4CC4B5")
     
 @Override
@@ -262,6 +256,7 @@ public void newLine() throws IOException {
      *             if {@code offset < 0} or {@code offset + count} is greater
      *             than the length of {@code str}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.432 -0500", hash_original_method = "AE740E7607559E2B849C6855BC31C773", hash_generated_method = "CC19827EBE9A9C4E7EA3C6B136BC89B1")
     
 @Override
@@ -306,7 +301,6 @@ public void newLine() throws IOException {
             }
         }
     }
-
     
 }
 

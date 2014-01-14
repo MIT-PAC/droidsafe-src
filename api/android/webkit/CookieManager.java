@@ -63,6 +63,7 @@ public static boolean allowFileSchemeCookies() {
      * Note that calls to this method will have no effect if made after a WebView or CookieManager
      * instance has been created.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.634 -0500", hash_original_method = "DDDF3B365E373BA27DDF165EB75D805C", hash_generated_method = "919ED282712AA5CB733CFC020940955F")
     
 public static void setAcceptFileSchemeCookies(boolean accept) {
@@ -376,6 +377,7 @@ protected Object clone() throws CloneNotSupportedException {
      * Control whether cookie is enabled or disabled
      * @param accept TRUE if accept cookie
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.572 -0500", hash_original_method = "0044CC48946D988BAC3F9C31DC5ECF6E", hash_generated_method = "B7376D77B769A65F1CC07D0018DDB18B")
     
 public synchronized void setAcceptCookie(boolean accept) {
@@ -408,6 +410,7 @@ public synchronized boolean acceptCookie() {
      * @param url The url which cookie is set for
      * @param value The value for set-cookie: in http response header
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:16.577 -0500", hash_original_method = "3C733C3F28B1C91BBFDBB065F4DCBFE1", hash_generated_method = "FE8729DC115F9EBD9D55754063D2EA3A")
     
 public void setCookie(String url, String value) {

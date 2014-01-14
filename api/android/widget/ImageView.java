@@ -26,10 +26,6 @@ import android.view.View;
 import android.view.ViewDebug;
 import android.view.accessibility.AccessibilityEvent;
 
-
-
-
-
 public class ImageView extends View {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.931 -0500", hash_original_method = "794DDCD2F1CC379DC73569DF9A81912A", hash_generated_method = "54FF3F645443323781BB5CB61724FCA8")
@@ -39,7 +35,6 @@ private static Matrix.ScaleToFit scaleTypeToScaleToFit(ScaleType st)  {
         return sS2FArray[st.nativeInt - 1];
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.849 -0500", hash_original_field = "1BEEEE80B9B1ED7C64A99F1694709124", hash_generated_field = "49F3AE1F9A33DAD969F75FE221C01603")
-
 
     private static final ScaleType[] sScaleTypeArray = {
         ScaleType.MATRIX,
@@ -52,7 +47,6 @@ private static Matrix.ScaleToFit scaleTypeToScaleToFit(ScaleType st)  {
         ScaleType.CENTER_INSIDE
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.929 -0500", hash_original_field = "7493F22E5B069F589FD71E7C1B52CAC6", hash_generated_field = "6A6FB41DF0BD10A3E546839DDC4FEEB8")
-
 
     private static final Matrix.ScaleToFit[] sS2FArray = {
         Matrix.ScaleToFit.FILL,
@@ -98,7 +92,6 @@ private static Matrix.ScaleToFit scaleTypeToScaleToFit(ScaleType st)  {
     private boolean mColorMod = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.823 -0500", hash_original_field = "8AC7F8A91CAABDD8C266F61B46BEBED9", hash_generated_field = "4203E503DD280EB595B89035662691AC")
 
-
     private Drawable mDrawable = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.825 -0500", hash_original_field = "D2B723E6656C8CD2970F2823B4398553", hash_generated_field = "55E5EFD87E77F38783CE10C9BF766B2D")
 
@@ -126,10 +119,8 @@ private static Matrix.ScaleToFit scaleTypeToScaleToFit(ScaleType st)  {
     private RectF mTempDst = new RectF();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.842 -0500", hash_original_field = "B15F5C9CCEFAAC7046F407CFC0D19760", hash_generated_field = "2A167B0395D5D689B5161FD76D7714AC")
 
-
     private boolean mCropToPadding;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.844 -0500", hash_original_field = "AA759664711376E49D5BE27103EA5136", hash_generated_field = "FEB7CA79CE658BB3A037CDF3395A66FC")
-
 
     private int mBaseline = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.847 -0500", hash_original_field = "B945E19F480AEA937B2B6E93510EDBC9", hash_generated_field = "43E60ED5A18EF5C89E67168564FB92E1")
@@ -416,6 +407,7 @@ public Drawable getDrawable() {
      * 
      * @param drawable The drawable to set
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.891 -0500", hash_original_method = "5426F5FAF3C8635D29ADE0169269A6F9", hash_generated_method = "37AAC6991023BB22E48327E3EA2C66CF")
     
 public void setImageDrawable(Drawable drawable) {
@@ -440,6 +432,7 @@ public void setImageDrawable(Drawable drawable) {
      * 
      * @param bm The bitmap to set
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.893 -0500", hash_original_method = "5EFFAF8EE29E35792B081E6E83A7DFE3", hash_generated_method = "02829D3E86CB5FA2EC39813FBB35490C")
     
 @android.view.RemotableViewMethod
@@ -460,6 +453,7 @@ public void setImageState(int[] state, boolean merge) {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.897 -0500", hash_original_method = "44CE6C01D324B2DC91AFD69B5F1BB742", hash_generated_method = "598BD5D57A4E32C3151CA42FAA846E12")
     
 @Override
@@ -503,7 +497,7 @@ public void setScaleType(ScaleType scaleType) {
         if (mScaleType != scaleType) {
             mScaleType = scaleType;
 
-            setWillNotCacheDrawing(mScaleType == ScaleType.CENTER);            
+            setWillNotCacheDrawing(mScaleType == ScaleType.CENTER);
 
             requestLayout();
             invalidate();
@@ -535,6 +529,7 @@ public Matrix getImageMatrix() {
         return mMatrix;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.916 -0500", hash_original_method = "A32A82AEE544A388BA62C8178AC7E88C", hash_generated_method = "5C00E4DE6909583021DDD7B5864A64A4")
     
 public void setImageMatrix(Matrix matrix) {
@@ -663,7 +658,7 @@ private void resizeFromDrawable() {
                 requestLayout();
             }
         }
-    }    
+    }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.935 -0500", hash_original_method = "5D5C8E0C5B3B131983F43D2E85F23CCE", hash_generated_method = "8319D3DB8BBFBDB5D1DFCB3D599269D0")
     
@@ -801,6 +796,7 @@ private int resolveAdjustedSize(int desiredSize, int maxSize,
         return result;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.941 -0500", hash_original_method = "7ED99727E4B1435AFDB83292B92819BD", hash_generated_method = "876449C83FF72421E42296BD5B0C29C3")
     
 @Override
@@ -1036,6 +1032,7 @@ public final void setColorFilter(int color, PorterDuff.Mode mode) {
      * @param color Color tint to apply.
      * @attr ref android.R.styleable#ImageView_tint
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.964 -0500", hash_original_method = "50A13570451A3C69931555EF0FE8C15D", hash_generated_method = "49C84EA77644D9EE4E13B1955DA23D44")
     
 @RemotableViewMethod
@@ -1065,6 +1062,7 @@ public void setColorFilter(ColorFilter cf) {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.970 -0500", hash_original_method = "F29539FC5DE82D33A1732D8CBDF1B3F0", hash_generated_method = "FA4FC55525E8C03A0249EAF7F7D3F5DA")
     
 @RemotableViewMethod
@@ -1091,6 +1089,7 @@ private void applyColorMod() {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.975 -0500", hash_original_method = "C6B07741C64FD260DDE5C02AC0455E05", hash_generated_method = "AFDD61839AA6E68F5AC2CEE81161A784")
     
 @RemotableViewMethod
@@ -1101,7 +1100,6 @@ private void applyColorMod() {
             mDrawable.setVisible(visibility == VISIBLE, false);
         }
     }
-
     
     public enum ScaleType {
         MATRIX      (0),

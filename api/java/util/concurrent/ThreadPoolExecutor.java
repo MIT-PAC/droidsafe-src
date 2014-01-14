@@ -14,11 +14,6 @@ import java.util.concurrent.locks.AbstractQueuedSynchronizer;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
-
-
-
-
-
 public class ThreadPoolExecutor extends AbstractExecutorService {
 
     // Packing and unpacking ctl
@@ -85,7 +80,6 @@ private static boolean isRunning(int c) {
         new RuntimePermission("modifyThread");
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.842 -0500", hash_original_field = "82401C7F6200660BA43CA3DBEF610143", hash_generated_field = "5E955A6108BE148E09061102B5987F21")
 
-
     private static final boolean ONLY_ONE = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.713 -0500", hash_original_field = "47A0112F27709D9F9A3E6781A2A69466", hash_generated_field = "1E5D76E2038757171D1F1EFB86BB7B2D")
 
@@ -109,7 +103,6 @@ private static boolean isRunning(int c) {
 
     private long completedTaskCount;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.771 -0500", hash_original_field = "234E41C0185E0FF5F9C803B6B6AE98E4", hash_generated_field = "1F1AFD5975EE552B0F00CAFC9A7F03AF")
-
 
     /**
      * Factory for new threads. All threads are created using this
@@ -1260,6 +1253,7 @@ public int getMaximumPoolSize() {
      *         if {@code time} is zero and {@code allowsCoreThreadTimeOut}
      * @see #getKeepAliveTime
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.930 -0500", hash_original_method = "863FC09A28296060918F86FB184DF489", hash_generated_method = "7FEF1FA184A8041A7BA1683A88D427DF")
     
 public void setKeepAliveTime(long time, TimeUnit unit) {
@@ -1328,7 +1322,6 @@ public boolean remove(Runnable task) {
         tryTerminate(); // In case SHUTDOWN and now empty
         return removed;
     }
-
     
     private final class Worker extends AbstractQueuedSynchronizer implements Runnable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.793 -0500", hash_original_field = "28CFFFBF9ED4131A00FB4CB2F87B96BE", hash_generated_field = "F8F6CAECCAD1418C4C9E71235F2C474E")
@@ -1404,8 +1397,6 @@ public void unlock()      { release(1); }
         
 public boolean isLocked() { return isHeldExclusively(); }
     }
-
-
     
     public static class CallerRunsPolicy implements RejectedExecutionHandler {
         /**
@@ -1429,11 +1420,8 @@ public void rejectedExecution(Runnable r, ThreadPoolExecutor e) {
                 r.run();
             }
         }
-
         
     }
-
-
     
     public static class AbortPolicy implements RejectedExecutionHandler {
         /**
@@ -1457,11 +1445,8 @@ public void rejectedExecution(Runnable r, ThreadPoolExecutor e) {
                                                  " rejected from " +
                                                  e.toString());
         }
-
         
     }
-
-
     
     public static class DiscardPolicy implements RejectedExecutionHandler {
         /**
@@ -1481,11 +1466,8 @@ public DiscardPolicy() { }
         
 public void rejectedExecution(Runnable r, ThreadPoolExecutor e) {
         }
-
         
     }
-
-
     
     public static class DiscardOldestPolicy implements RejectedExecutionHandler {
         /**
@@ -1512,7 +1494,6 @@ public void rejectedExecution(Runnable r, ThreadPoolExecutor e) {
                 e.execute(r);
             }
         }
-
         
     }
 

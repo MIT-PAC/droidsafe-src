@@ -19,10 +19,6 @@ import android.os.Messenger;
 import android.os.RemoteException;
 import android.util.Slog;
 
-
-
-
-
 public class AsyncChannel {
 
     /**
@@ -42,7 +38,6 @@ private static void log(String s) {
 
     private static final boolean DBG = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.432 -0500", hash_original_field = "2047023046CD71CF4AAF6B2B3DA0FA39", hash_generated_field = "080FE22C2EA5E5AA1B11A1E7CA05F0C9")
-
 
     private static final int BASE = Protocol.BASE_SYSTEM_ASYNC_CHANNEL;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.434 -0500", hash_original_field = "3480C29848F7CC2D4F1A632387FA28BE", hash_generated_field = "5922F98D688E75A7DA6D8670F04E1B69")
@@ -373,6 +368,7 @@ public void disconnect() {
      *
      * @param msg
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.513 -0500", hash_original_method = "9DAC7AFA4C14A1022E9DEC304018391F", hash_generated_method = "B2E7772166FCACAF852F55F44CB46D51")
     
 public void sendMessage(Message msg) {
@@ -389,6 +385,7 @@ public void sendMessage(Message msg) {
      *
      * @param what
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.516 -0500", hash_original_method = "C8C31043DDFE26EC3BE146F1B2B418E3", hash_generated_method = "4278121A770EE39DDEB6E37D007DBBC8")
     
 public void sendMessage(int what) {
@@ -403,6 +400,7 @@ public void sendMessage(int what) {
      * @param what
      * @param arg1
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.518 -0500", hash_original_method = "6C3F9593FC3095346100149D0CBBAD3F", hash_generated_method = "74BFDE300F5DD4E078EA04A4A8181904")
     
 public void sendMessage(int what, int arg1) {
@@ -419,6 +417,7 @@ public void sendMessage(int what, int arg1) {
      * @param arg1
      * @param arg2
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.521 -0500", hash_original_method = "23E4A4D5EBFE681605B0582F17F8E799", hash_generated_method = "2407FCFDBD809792EEC39AD82D87DDCA")
     
 public void sendMessage(int what, int arg1, int arg2) {
@@ -437,6 +436,7 @@ public void sendMessage(int what, int arg1, int arg2) {
      * @param arg2
      * @param obj
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.524 -0500", hash_original_method = "066946089A5EEE9700468FE67EE373C2", hash_generated_method = "39D30A18E3CBA1A0CA0CA065CE6FFE58")
     
 public void sendMessage(int what, int arg1, int arg2, Object obj) {
@@ -454,6 +454,7 @@ public void sendMessage(int what, int arg1, int arg2, Object obj) {
      * @param what
      * @param obj
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.526 -0500", hash_original_method = "D262961B9C2C88432C23CE1E616C0D35", hash_generated_method = "E58A9FC8C58B34F13DDC5C274B23CB07")
     
 public void sendMessage(int what, Object obj) {
@@ -494,7 +495,6 @@ public void replyToMessage(Message srcMsg, int what) {
         msg.what = what;
         replyToMessage(srcMsg, msg);
     }
-
     
     private static class SyncMessenger {
 
@@ -563,7 +563,6 @@ private static Message sendMessageSynchronously(Messenger dstMessenger, Message 
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.567 -0500", hash_original_field = "8B6DF3488BAD8021770FD91E0323D045", hash_generated_field = "EF6FF2C2BD8A30E297033DA686E82F32")
 
         private Messenger mMessenger;
-
         
         private class SyncHandler extends Handler {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.572 -0500", hash_original_field = "A30922BDA37A1ABC6EAFB02E5CFDF21E", hash_generated_field = "F4ED03908BB0903225C1F23BCCA22B59")
@@ -591,7 +590,6 @@ private SyncHandler(Looper looper) {
                     mLockObject.notify();
                 }
             }
-
             
         }
 
@@ -612,8 +610,6 @@ private void recycle() {
             }
         }
     }
-
-
     
     class AsyncChannelConnection implements ServiceConnection {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.600 -0500", hash_original_method = "5CA2E7F994E5D5CA10120B6A293C36BC", hash_generated_method = "5CA2E7F994E5D5CA10120B6A293C36BC")
@@ -635,7 +631,6 @@ AsyncChannelConnection() {
         public void onServiceDisconnected(ComponentName className) {
             replyDisconnected(STATUS_SUCCESSFUL);
         }
-
         
     }
 
@@ -715,6 +710,7 @@ public void replyToMessage(Message srcMsg, int what, Object obj) {
      * @param msg to send
      * @return reply message or null if an error.
      */
+    @DSSink({DSSinkKind.SYNCHRONIZATION_DATA})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.541 -0500", hash_original_method = "44E20F477AE4DBE39F2143CAA1307C1F", hash_generated_method = "36868A8632F5BB2EF68675431B9B2D63")
     
 public Message sendMessageSynchronously(Message msg) {
@@ -728,6 +724,7 @@ public Message sendMessageSynchronously(Message msg) {
      * @param what
      * @return reply message or null if an error.
      */
+    @DSSink({DSSinkKind.SYNCHRONIZATION_DATA})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.544 -0500", hash_original_method = "42BD69B2114459AD691B3AEBDAE73546", hash_generated_method = "C285A4D23EAB85D82915D70E1F66F84C")
     
 public Message sendMessageSynchronously(int what) {
@@ -744,6 +741,7 @@ public Message sendMessageSynchronously(int what) {
      * @param arg1
      * @return reply message or null if an error.
      */
+    @DSSink({DSSinkKind.SYNCHRONIZATION_DATA})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.546 -0500", hash_original_method = "69DA3E1B323882B9D4B744C6E35751A3", hash_generated_method = "60004DC4003AFFE42822995754840E35")
     
 public Message sendMessageSynchronously(int what, int arg1) {
@@ -762,6 +760,7 @@ public Message sendMessageSynchronously(int what, int arg1) {
      * @param arg2
      * @return reply message or null if an error.
      */
+    @DSSink({DSSinkKind.SYNCHRONIZATION_DATA})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.548 -0500", hash_original_method = "AFDADB0B0E37C71FB8D4BE31CA39F990", hash_generated_method = "B6827FF2C6A650BBE4692173D7372E8C")
     
 public Message sendMessageSynchronously(int what, int arg1, int arg2) {
@@ -782,6 +781,7 @@ public Message sendMessageSynchronously(int what, int arg1, int arg2) {
      * @param obj
      * @return reply message or null if an error.
      */
+    @DSSink({DSSinkKind.SYNCHRONIZATION_DATA})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.550 -0500", hash_original_method = "EEAA69B320108852E46A6304535CC9F5", hash_generated_method = "D642B9F06D082255CC2F6570E4A84B40")
     
 public Message sendMessageSynchronously(int what, int arg1, int arg2, Object obj) {
@@ -801,6 +801,7 @@ public Message sendMessageSynchronously(int what, int arg1, int arg2, Object obj
      * @param obj
      * @return reply message or null if an error.
      */
+    @DSSink({DSSinkKind.SYNCHRONIZATION_DATA})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.552 -0500", hash_original_method = "35A5E39A8A1820326BDEA32FA9EDD100", hash_generated_method = "CE016FA9F8D335C8879BF83223FA7CD6")
     
 public Message sendMessageSynchronously(int what, Object obj) {

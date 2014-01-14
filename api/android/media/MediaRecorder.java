@@ -225,6 +225,7 @@ public void setPreviewDisplay(Surface sv) {
      * @param profile the CamcorderProfile to use
      * @see android.media.CamcorderProfile
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.701 -0500", hash_original_method = "C41941EDDC1BA172E48D383432866025", hash_generated_method = "DBA2E76270F6FBE67F68B62F5122F887")
     
 public void setProfile(CamcorderProfile profile) {
@@ -258,6 +259,7 @@ public void setProfile(CamcorderProfile profile) {
      * given rate due to camera/encoder limitations. However it tries to be as close as
      * possible.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.704 -0500", hash_original_method = "01590CA235372AAAE94DCADBCD3DAA8F", hash_generated_method = "E2053F72246244DC29705FCAA9160588")
     
 public void setCaptureRate(double fps) {
@@ -282,6 +284,7 @@ public void setCaptureRate(double fps) {
      * @throws IllegalArgumentException if the angle is not supported.
      *
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.706 -0500", hash_original_method = "FFEAE3173573A6FB2AF430882DE311CC", hash_generated_method = "40D2B9D8F8DB8B88EF43ADA706ED8C3F")
     
 public void setOrientationHint(int degrees) {
@@ -310,6 +313,7 @@ public void setOrientationHint(int degrees) {
      * longitude is out of range.
      *
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.709 -0500", hash_original_method = "95876148111FCD378C0A7171639D46C7", hash_generated_method = "1B9BB420437BA066111BA9FE9F4C456D")
     
 public void setLocation(float latitude, float longitude) {
@@ -478,6 +482,7 @@ public void setLocation(float latitude, float longitude) {
      *
      * @param samplingRate the sampling rate for audio in samples per second.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.739 -0500", hash_original_method = "A30D5A78BCFDD0EC33430FA69AAB0135", hash_generated_method = "F195D5B399071C2C18E786C6B6A8F069")
     
 public void setAudioSamplingRate(int samplingRate) {
@@ -495,6 +500,7 @@ public void setAudioSamplingRate(int samplingRate) {
      * @param numChannels the number of audio channels. Usually it is either 1 (mono) or 2
      * (stereo).
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.741 -0500", hash_original_method = "6F6BACC54031B00DCF8168A950EA33D9", hash_generated_method = "FB9AD655B137DC8463C1B26B0138AEB5")
     
 public void setAudioChannels(int numChannels) {
@@ -513,6 +519,7 @@ public void setAudioChannels(int numChannels) {
      *
      * @param bitRate the audio encoding bit rate in bits per second.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.743 -0500", hash_original_method = "3786AB4A2177EE063AA4F526AF23E799", hash_generated_method = "C74D09A9246C5353CAB89C925DC2B28B")
     
 public void setAudioEncodingBitRate(int bitRate) {
@@ -531,6 +538,7 @@ public void setAudioEncodingBitRate(int bitRate) {
      *
      * @param bitRate the video encoding bit rate in bits per second.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.746 -0500", hash_original_method = "1B43BF8F9E62EF0E8125F105BE9509D7", hash_generated_method = "2E4B236D77DB8201A6989B7DB2AF8A73")
     
 public void setVideoEncodingBitRate(int bitRate) {
@@ -545,6 +553,7 @@ public void setVideoEncodingBitRate(int bitRate) {
      * @deprecated Time lapse mode video recording using camera still image capture
      * is not desirable, and will not be supported.
      */
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.749 -0500", hash_original_method = "A0B41C1DE963DD2616BE7FC07860DC3A", hash_generated_method = "11EFEF95E368DAB504150D8F68D13C90")
     
 public void setAuxiliaryOutputFile(FileDescriptor fd)
@@ -557,6 +566,7 @@ public void setAuxiliaryOutputFile(FileDescriptor fd)
      * @deprecated Time lapse mode video recording using camera still image capture
      * is not desirable, and will not be supported.
      */
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.751 -0500", hash_original_method = "8F81BCAE7FDFB44AAC23771364E7255A", hash_generated_method = "EB63C4A65BE0D6BB1C1D0136FA2F9670")
     
 public void setAuxiliaryOutputFile(String path)
@@ -796,6 +806,7 @@ public EventHandler(MediaRecorder mr, Looper looper) {
      * @throws IllegalStateException if it is called before
      * setOutputFormat() or after prepare()
      */
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.753 -0500", hash_original_method = "FA1E1C8AC397C2513A8C4BBA9653310E", hash_generated_method = "20129432203CB4522BC7B5624FBDB421")
     
 public void setOutputFile(FileDescriptor fd) throws IllegalStateException

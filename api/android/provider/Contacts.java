@@ -66,6 +66,7 @@ public class Contacts {
         /**
          * @deprecated see {@link android.provider.ContactsContract}
          */
+        @DSSink({DSSinkKind.CONTACT_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:59.532 -0500", hash_original_method = "99C82D4214524155DAD3BF65C95C7ABA", hash_generated_method = "3105C1F67670AF6E8D1EF739E653D9F7")
         
 @Deprecated
@@ -270,6 +271,7 @@ private Settings() {}
          * @param data the byte[] that represents the photo
          * @deprecated see {@link android.provider.ContactsContract}
          */
+        @DSSink({DSSinkKind.CONTACT_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:59.606 -0500", hash_original_method = "E1EC7DAC113BEA053C3C92256F092BD9", hash_generated_method = "F5021A5E353FD1015A287A10966DEC2B")
         
 @Deprecated
@@ -865,6 +867,7 @@ private GroupMembership() {}
          * @param longitude the longitude for the address
          * @deprecated see {@link android.provider.ContactsContract}
          */
+        @DSSink({DSSinkKind.CONTACT_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:59.816 -0500", hash_original_method = "64D6AFA8C969AE169E36B8E60F49300F", hash_generated_method = "E8827757AFCAECC6C86DA304122A27FD")
         
 @Deprecated

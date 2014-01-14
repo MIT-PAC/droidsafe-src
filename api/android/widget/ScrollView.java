@@ -28,17 +28,11 @@ import android.view.animation.AnimationUtils;
 
 import com.android.internal.R;
 
-
-
-
-
-
 public class ScrollView extends FrameLayout {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:01.443 -0500", hash_original_field = "95ED7F4260F6B91A51F75452B47C3723", hash_generated_field = "0DB9E46E1BC530D48AB4117911138FC2")
 
     static final int ANIMATED_SCROLL_GAP = 250;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:01.446 -0500", hash_original_field = "EE6BC8505BE3AB86FCE986149FCEF1E9", hash_generated_field = "58258D94D76BAF55ECF7DADE8930E574")
-
 
     static final float MAX_SCROLL_FACTOR = 0.5f;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:01.494 -0500", hash_original_field = "394D213079DFA0C7024EC13F5673BC94", hash_generated_field = "E2DAEB44FC73F85759FCDB42BA10BD3A")
@@ -46,10 +40,8 @@ public class ScrollView extends FrameLayout {
     private static final int INVALID_POINTER = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:01.448 -0500", hash_original_field = "D9542227DCB2FC07C7FAE482DB504F32", hash_generated_field = "507FF60BF6AED501221786F4F9B1C4CE")
 
-
     private long mLastScroll;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:01.451 -0500", hash_original_field = "1732EB32F2D77CCA26590AEEA670A175", hash_generated_field = "A498F2A4744F31D22F9C4ABEBB254F2F")
-
 
     private final Rect mTempRect = new Rect();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:01.453 -0500", hash_original_field = "63F6CA74EEC786DAEE7A49BF47815C33", hash_generated_field = "7106C69F4E49AB9D7F59F38965DF6036")
@@ -85,7 +77,6 @@ public class ScrollView extends FrameLayout {
     private boolean mSmoothScrollingEnabled = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:01.477 -0500", hash_original_field = "D11C33EFD56B37B918E01A200C446C59", hash_generated_field = "3B323323DD6A6BF972666D993592C670")
 
-
     private int mTouchSlop;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:01.479 -0500", hash_original_field = "0DAB51CD5AD14EAFA0DBAE048171A484", hash_generated_field = "7DBE1A18599B8760DC9B67AAFE3499E3")
 
@@ -94,7 +85,6 @@ public class ScrollView extends FrameLayout {
 
     private int mMaximumVelocity;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:01.483 -0500", hash_original_field = "3140A319F32CA873045621864B655537", hash_generated_field = "7B0107E1CAE9FFC281D766335539D7C4")
-
 
     private int mOverscrollDistance;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:01.485 -0500", hash_original_field = "F239C82AEB45C28104273F86A78E6F04", hash_generated_field = "06022A8A798B4C892D35D0FFB16D2FDF")
@@ -186,7 +176,6 @@ public ScrollView(Context context, AttributeSet attrs, int defStyle) {
 public int getMaxScrollAmount() {
         return (int) (MAX_SCROLL_FACTOR * (mBottom - mTop));
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:01.514 -0500", hash_original_method = "02BBAF53D85E267FB240E2D4309C877F", hash_generated_method = "A421A744020FEE9AE61BC6A77CA31282")
     
@@ -454,7 +443,6 @@ private void recycleVelocityTracker() {
         }
         super.requestDisallowInterceptTouchEvent(disallowIntercept);
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:01.558 -0500", hash_original_method = "A618CDF234D118EA8A225B0CD965AEA3", hash_generated_method = "9D234685BE993702B58F556422EA1590")
     
@@ -1410,7 +1398,6 @@ protected int computeScrollDeltaToGetChildRectOnScreen(Rect rect) {
         super.requestChildFocus(child, focused);
     }
 
-
     /**
      * When looking for focus in children of a scroll view, need to be a little
      * more careful not to give focus to something that is scrolled off screen.
@@ -1600,6 +1587,7 @@ private void endDrag() {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:01.656 -0500", hash_original_method = "3BD104A12D7CF3E01CAF1DA422C489F3", hash_generated_method = "D4408673955EDD70B8EB81E03039D730")
     
 @Override
@@ -1617,6 +1605,7 @@ private void endDrag() {
         super.setOverScrollMode(mode);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:01.659 -0500", hash_original_method = "50FAD524FA6B782881C70ABEF15C4DDF", hash_generated_method = "7D0ACC1B57C66D1DE7B0C8A395103AD8")
     
 @Override

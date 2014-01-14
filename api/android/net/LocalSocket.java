@@ -10,14 +10,8 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.SocketOptions;
 
-
-
-
-
-
 public class LocalSocket {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.174 -0500", hash_original_field = "C64187E1E8E3968144AF18D9B41A1645", hash_generated_field = "9FC425CCAE80D9162FEB6CEC3E95B3C0")
-
 
     private LocalSocketImpl impl;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.177 -0500", hash_original_field = "E6D504C945AB3F2AFF7B311813DA0B9F", hash_generated_field = "40B4D44783DDD878FE14964CDFAD9280")
@@ -206,6 +200,7 @@ public void shutdownOutput() throws IOException {
         impl.shutdownOutput();
     }
     
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.213 -0500", hash_original_method = "BF44A21BC401EF66CAA8945E3668C8DF", hash_generated_method = "18A71FAC606DBE0F3A474D08FDFA87D6")
     
 public void setReceiveBufferSize(int size) throws IOException {
@@ -218,6 +213,7 @@ public int getReceiveBufferSize() throws IOException {
         return ((Integer) impl.getOption(SocketOptions.SO_RCVBUF)).intValue();
     }
 
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.217 -0500", hash_original_method = "4BF0B1F38FAF8905C2B3E64A190023C5", hash_generated_method = "F273B34F49DF4F5C1F3103C7278215AD")
     
 public void setSoTimeout(int n) throws IOException {
@@ -230,6 +226,7 @@ public int getSoTimeout() throws IOException {
         return ((Integer) impl.getOption(SocketOptions.SO_TIMEOUT)).intValue();
     }
 
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.221 -0500", hash_original_method = "93F75C1311E324895F90364DB9A8A768", hash_generated_method = "9F34F14204F89F22F15013FCABE45C50")
     
 public void setSendBufferSize(int n) throws IOException {
@@ -300,6 +297,7 @@ public void connect(LocalSocketAddress endpoint, int timeout)
      *
      * @param fds non-null; file descriptors to send.
      */
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.240 -0500", hash_original_method = "27C53C8DB31C3FA2B713C3C2CC55D90F", hash_generated_method = "30A303B268E40703E12176C1F74DEC1C")
     
 public void setFileDescriptorsForSend(FileDescriptor[] fds) {
@@ -345,7 +343,6 @@ public Credentials getPeerCredentials() throws IOException {
 public FileDescriptor getFileDescriptor() {
         return impl.getFileDescriptor();
     }
-
     
 }
 

@@ -16,10 +16,6 @@ import java.util.Hashtable;
 import android.net.Uri;
 import android.os.Environment;
 
-
-
-
-
 public class MiniThumbFile {
 
     /**
@@ -196,6 +192,7 @@ public synchronized long getMagic(long id) {
         return 0;
     }
 
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:26.656 -0500", hash_original_method = "5902848FBDD417107FA8B8FF465E242F", hash_generated_method = "1A502B4458D5771C05867BD5F635DFF1")
     
 public synchronized void saveMiniThumbToFile(byte[] data, long id, long magic)
@@ -238,7 +235,6 @@ public synchronized void saveMiniThumbToFile(byte[] data, long id, long magic)
             }
         }
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.497 -0400", hash_original_method = "782DC08BC67342494C7FCB80E02F8475", hash_generated_method = "7C8D42E961B65A1320F67311EEB7BE11")
     public synchronized byte [] getMiniThumbFromFile(long id, byte [] data) {

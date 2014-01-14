@@ -370,6 +370,7 @@ public void stopProfiling() {
      * @param inTouch Set to true to be in touch mode, false to be in
      * focus mode.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:44.074 -0500", hash_original_method = "EEC5F78C5E75C7158C64611E1694E1A0", hash_generated_method = "29441361A373C07D4DBF7405867532BB")
     
 public void setInTouchMode(boolean inTouch) {
@@ -446,6 +447,7 @@ public void runOnMainSync(Runnable runner) {
      * 
      * @see Context#startActivity
      */
+    @DSSink({DSSinkKind.SYNCHRONIZATION_DATA})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:44.084 -0500", hash_original_method = "834B647755C86ED587A771C499B38AF8", hash_generated_method = "15B067D8E4EB48AB10815059D86B5E66")
     
 public Activity startActivitySync(Intent intent) {
@@ -756,6 +758,7 @@ public boolean invokeContextMenuAction(Activity targetActivity, int id, int flag
      * 
      * @param text The text to be sent. 
      */
+    @DSSink({DSSinkKind.SYNCHRONIZATION_DATA})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:44.182 -0500", hash_original_method = "029397BC692B989F9FCA48D48FDB9479", hash_generated_method = "D01052788D1D7136B5EB7BB540B7EA01")
     
 public void sendStringSync(String text) {
@@ -798,6 +801,7 @@ public void sendKeySync(KeyEvent event) {
      * 
      * @param key The integer keycode for the event.
      */
+    @DSSink({DSSinkKind.SYNCHRONIZATION_DATA})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:44.187 -0500", hash_original_method = "EAB0936DFBB6258C56105993043121F1", hash_generated_method = "9C2BED586BE6C8197B38E42163E685FD")
     
 public void sendKeyDownUpSync(int key) {        
@@ -813,6 +817,7 @@ public void sendKeyDownUpSync(int key) {
      * 
      * @param keyCode The key code of the character to send.
      */
+    @DSSink({DSSinkKind.SYNCHRONIZATION_DATA})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:44.189 -0500", hash_original_method = "481470F7D6C4847394865E9F06AE8ED8", hash_generated_method = "D9872B287C6362313EDE1BBF6B3D5BD2")
     
 public void sendCharacterSync(int keyCode) {
@@ -961,6 +966,7 @@ public Activity newActivity(ClassLoader cl, String className,
      * @param icicle The previously frozen state (or null) to pass through to
      *               onCreate().
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:44.207 -0500", hash_original_method = "5B22BAF104CC01C4555866A70EB5D211", hash_generated_method = "2ED36F90DC21FCD558045E853E94DAF2")
     
 public void callActivityOnCreate(Activity activity, Bundle icicle) {
@@ -1030,6 +1036,7 @@ public void callActivityOnDestroy(Activity activity) {
      * @param activity The activity being restored.
      * @param savedInstanceState The previously saved state being restored.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:44.212 -0500", hash_original_method = "E084363C345B4BF61D861FC0D5D07D15", hash_generated_method = "B4FB84BC846C006AD4E1972742F988A2")
     
 public void callActivityOnRestoreInstanceState(Activity activity, Bundle savedInstanceState) {
@@ -1129,6 +1136,7 @@ public void callActivityOnStop(Activity activity) {
      * @param activity The activity being saved.
      * @param outState The bundle to pass to the call.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:44.227 -0500", hash_original_method = "E8ECFB0E3E7F6A98F4E3FE19FF7167B5", hash_generated_method = "AED061B9009FBECDDBCBDF33F2A7EC03")
     
 public void callActivityOnSaveInstanceState(Activity activity, Bundle outState) {

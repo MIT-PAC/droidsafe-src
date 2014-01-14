@@ -11,11 +11,6 @@ import java.security.cert.CertificateFactory;
 import java.security.cert.X509Certificate;
 import java.util.ArrayList;
 
-
-
-
-
-
 public class CertificateMessage extends Message {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:12.563 -0500", hash_original_field = "9B4CC3CF13ACA419D4B9B38AD77D3648", hash_generated_field = "9B4CC3CF13ACA419D4B9B38AD77D3648")
 
@@ -110,6 +105,7 @@ public CertificateMessage(X509Certificate[] certs) {
      *
      * @param out
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:12.574 -0500", hash_original_method = "345309F322E0CB3C0BD3B9A37C988F09", hash_generated_method = "C3E285EC69CC0008B4692DA77698D14C")
     
 @Override
@@ -156,7 +152,6 @@ public String getAuthType() {
     public int getType() {
         return Handshake.CERTIFICATE;
     }
-
     
 }
 

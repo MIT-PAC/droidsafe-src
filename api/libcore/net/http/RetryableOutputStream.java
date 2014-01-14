@@ -9,9 +9,6 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.util.Arrays;
 
-
-
-
 final class RetryableOutputStream extends AbstractHttpOutputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.085 -0500", hash_original_field = "136FDC88CA742E83C109AD31983DA2BF", hash_generated_field = "D8A77E2E2DC8CA16CE4A344FA1118F72")
 
@@ -47,6 +44,7 @@ public RetryableOutputStream() {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.098 -0500", hash_original_method = "E1F3BEFD89D2B57927FA9AF72B0F2441", hash_generated_method = "1CB3ED1636ECEADDD866DBB78357D3E2")
     
 @Override public synchronized void write(byte[] buffer, int offset, int count)
@@ -66,12 +64,12 @@ public synchronized int contentLength() throws IOException {
         return content.size();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.103 -0500", hash_original_method = "13EC0747B327446249F03815D15BF368", hash_generated_method = "E60703C4EBDB22BBCBC5BC9258CE5D1D")
     
 public void writeToSocket(OutputStream socketOut) throws IOException  {
         content.writeTo(socketOut);
     }
-
     
 }
 

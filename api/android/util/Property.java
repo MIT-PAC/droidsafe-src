@@ -27,6 +27,7 @@ public abstract class Property<T, V> {
         return getTaintBoolean();
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void set(T object, V value) {
     }
 

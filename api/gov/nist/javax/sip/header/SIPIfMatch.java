@@ -9,11 +9,6 @@ import java.text.ParseException;
 import javax.sip.header.ExtensionHeader;
 import javax.sip.header.SIPIfMatchHeader;
 
-
-
-
-
-
 public class SIPIfMatch extends SIPHeader implements SIPIfMatchHeader, ExtensionHeader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:54.115 -0500", hash_original_field = "01C58A657CD7064840F94919FF9DC30E", hash_generated_field = "F99AB9EB7E164B071039EF12AA230274")
 
@@ -75,11 +70,11 @@ public void setETag(String etag) throws ParseException {
      * For v 1.1 backwards compatibility.
      * @see javax.sip.header.ExtensionHeader#setValue(java.lang.String)
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:54.199 -0500", hash_original_method = "7CA3A2804F10C6CA29833F9AB88CD018", hash_generated_method = "D4C128CCE03C008F8438DF743A00115A")
     
 public void setValue(String value) throws ParseException {
         this.setETag(value);
-
 
     }
 }

@@ -85,7 +85,8 @@ _data.recycle();
      *     user-meaningful name such as "Browser" rather than a package name such as
      *     "com.android.browser", though this is not guaranteed.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:47.756 -0500", hash_original_method = "F1831C1B069CC3452C1FD1444B4AD156", hash_generated_method = "68D908ABE319BD54983B406078E52AB9")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:47.756 -0500", hash_original_method = "F1831C1B069CC3452C1FD1444B4AD156", hash_generated_method = "68D908ABE319BD54983B406078E52AB9")
             
 public void onBackupPackage(java.lang.String name) throws android.os.RemoteException
 {
@@ -138,7 +139,8 @@ _data.recycle();
      *     user-meaningful name such as "Browser" rather than a package name such as
      *     "com.android.browser", though this is not guaranteed.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:47.763 -0500", hash_original_method = "BF9A8828D2C16C90EB4711EFB913DD94", hash_generated_method = "168EDBCE5F55CA8B63A1A27301E7CE20")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:47.763 -0500", hash_original_method = "BF9A8828D2C16C90EB4711EFB913DD94", hash_generated_method = "168EDBCE5F55CA8B63A1A27301E7CE20")
             
 public void onRestorePackage(java.lang.String name) throws android.os.RemoteException
 {

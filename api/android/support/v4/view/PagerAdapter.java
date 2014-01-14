@@ -10,13 +10,8 @@ import android.os.Parcelable;
 import android.view.View;
 import android.view.ViewGroup;
 
-
-
-
-
 public abstract class PagerAdapter {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:18.993 -0500", hash_original_field = "1EA0BEAFF9F7078ED69A70F9ED831835", hash_generated_field = "1095B2C860AD558A4F53332EBAEFA10E")
-
 
     public static final int POSITION_UNCHANGED = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:18.997 -0500", hash_original_field = "34756FE893A708186B4DB42146240D49", hash_generated_field = "A46559075D518D4933C3AFA6B991A88C")
@@ -44,6 +39,7 @@ public abstract int getCount();
      * @param container The containing View which is displaying this adapter's
      * page views.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:19.001 -0500", hash_original_method = "DCAE5C6F617B7B7CD0D6B0A4179A4B48", hash_generated_method = "B8BC9AC1396C809BA11C5CCA8C517F60")
     
 public void startUpdate(ViewGroup container) {
@@ -92,6 +88,7 @@ public void destroyItem(ViewGroup container, int position, Object object) {
      * @param object The same object that was returned by
      * {@link #instantiateItem(View, int)}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:19.008 -0500", hash_original_method = "C728F6B9404F59904D353F9FF4128613", hash_generated_method = "0A9C3454FFC508F4A61064B56139A4CD")
     
 public void setPrimaryItem(ViewGroup container, int position, Object object) {
@@ -172,6 +169,7 @@ public void destroyItem(View container, int position, Object object) {
      *
      * @deprecated Use {@link #setPrimaryItem(ViewGroup, int, Object)}
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:19.019 -0500", hash_original_method = "BBAFE0B2C7FC305268C2EE6C04F35275", hash_generated_method = "FE60A5E3D3F273237677B3C0FB3A8DB5")
     
 public void setPrimaryItem(View container, int position, Object object) {

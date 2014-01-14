@@ -8,12 +8,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-
-
-
 public class JSONArray {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.118 -0500", hash_original_field = "A3E8C7EC069A9E0F015BF0FA6AB144B4", hash_generated_field = "76A4FC356F020E02D923B1E56C39C10C")
-
 
     private  List<Object> values;
 
@@ -163,6 +159,7 @@ public JSONArray put(Object value) {
      *
      * @return this array.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.144 -0500", hash_original_method = "A8D9FD0A2FF792A00A29218BCE37DF7B", hash_generated_method = "3FCD33BB0802F5EBFF717FF4F02EDA89")
     
 public JSONArray put(int index, boolean value) throws JSONException {
@@ -178,6 +175,7 @@ public JSONArray put(int index, boolean value) throws JSONException {
      *     {@link Double#isInfinite() infinities}.
      * @return this array.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.146 -0500", hash_original_method = "EB27801A89D2451AEBF6D71C639BF890", hash_generated_method = "0D580EDBEF0BBFF5D77F8DB8DEA5850C")
     
 public JSONArray put(int index, double value) throws JSONException {
@@ -191,6 +189,7 @@ public JSONArray put(int index, double value) throws JSONException {
      *
      * @return this array.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.148 -0500", hash_original_method = "95364EFCBA8D50C1E1F228177A921191", hash_generated_method = "D01A68C4E36600A075B12B2BECD6C64A")
     
 public JSONArray put(int index, int value) throws JSONException {
@@ -204,6 +203,7 @@ public JSONArray put(int index, int value) throws JSONException {
      *
      * @return this array.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.151 -0500", hash_original_method = "3F2291B7B045A442A1A296D04FF74C3B", hash_generated_method = "331C4CA90A1EF52AEBC951490AF5DF55")
     
 public JSONArray put(int index, long value) throws JSONException {
@@ -544,6 +544,7 @@ public JSONObject optJSONObject(int index) {
      * strings will be coerced to strings. This method returns null if either
      * array is empty.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.207 -0500", hash_original_method = "CEEBF6D79C62E432FE9EF262922223A6", hash_generated_method = "03989B8AB15D382B730F1AA7C698EEA1")
     
 public JSONObject toJSONObject(JSONArray names) throws JSONException {
@@ -609,6 +610,7 @@ public String join(String separator) throws JSONException {
      * @param indentSpaces the number of spaces to indent for each level of
      *     nesting.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.213 -0500", hash_original_method = "161CBAA0F7E505CC65BF62A9F4C8490E", hash_generated_method = "89736320EFA9E85B06F0454670E154AA")
     
 public String toString(int indentSpaces) throws JSONException {
@@ -639,7 +641,6 @@ void writeTo(JSONStringer stringer) throws JSONException {
         // diverge from the original, which doesn't implement hashCode
         return values.hashCode();
     }
-
     
 }
 

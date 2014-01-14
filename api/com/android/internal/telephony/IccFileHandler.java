@@ -10,10 +10,6 @@ import android.os.AsyncResult;
 import android.os.Handler;
 import android.os.Message;
 
-
-
-
-
 public abstract class IccFileHandler extends Handler implements IccConstants {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.901 -0500", hash_original_field = "C18EE6706A9CB8F70E229538207C2600", hash_generated_field = "3CC60D7DB30C18A0452D9C9FBB518575")
 
@@ -67,11 +63,9 @@ public abstract class IccFileHandler extends Handler implements IccConstants {
 
     // Refer TS 51.011 Section 9.2.1
     static protected final int RESPONSE_DATA_RFU_1 = 0;
-
     
     static class LoadLinearFixedContext {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:47.006 -0500", hash_original_field = "48F4A49B3891A623660D9D89A749D7FD", hash_generated_field = "48F4A49B3891A623660D9D89A749D7FD")
-
 
         int efid;
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.113 -0400", hash_original_field = "CA295049F4D4B86A33AD27D536F404C9", hash_generated_field = "448A06525EF8C132E28A8573FF9B2600")
@@ -88,10 +82,8 @@ public abstract class IccFileHandler extends Handler implements IccConstants {
         boolean loadAll;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:47.012 -0500", hash_original_field = "20B78D0A5BE6006623DEB5273A81CD7C", hash_generated_field = "20B78D0A5BE6006623DEB5273A81CD7C")
 
-
         Message onLoaded;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:47.015 -0500", hash_original_field = "0881DA448D3638C35BB652108D0CFFA3", hash_generated_field = "0881DA448D3638C35BB652108D0CFFA3")
-
 
         ArrayList<byte[]> results;
 
@@ -112,7 +104,6 @@ LoadLinearFixedContext(int efid, Message onLoaded) {
             this.loadAll = true;
             this.onLoaded = onLoaded;
         }
-
         
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.946 -0500", hash_original_field = "5EEFA1A4E949E7A24F1ADAEC4569BF53", hash_generated_field = "B4E1945F68B64B65F65ABDC4D0578A48")
@@ -120,13 +111,11 @@ LoadLinearFixedContext(int efid, Message onLoaded) {
     static protected final int RESPONSE_DATA_RFU_2 = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.948 -0500", hash_original_field = "E41539C17DE964812150F25E7D64EC32", hash_generated_field = "8FF5EBA412756AC6E802E2BAC0FBDAED")
 
-
     static protected final int RESPONSE_DATA_FILE_SIZE_1 = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.951 -0500", hash_original_field = "688F29657079B7BD6AEE8211DD5E283D", hash_generated_field = "DDB49D3A31C04577F0DB449EF1DD0448")
 
     static protected final int RESPONSE_DATA_FILE_SIZE_2 = 3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.953 -0500", hash_original_field = "314700CBFE3E084E4DD66E074EE50EB7", hash_generated_field = "7E722ABC4E41AE1CC40344A1978E9C0B")
-
 
     static protected final int RESPONSE_DATA_FILE_ID_1 = 4;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.957 -0500", hash_original_field = "DD4C10B951B7EE9A9C4BAAB3DEA0CD04", hash_generated_field = "0AA73A2D770760EB67EB3D4FD789E7A4")
@@ -160,7 +149,6 @@ LoadLinearFixedContext(int efid, Message onLoaded) {
 
     static protected final int RESPONSE_DATA_RECORD_LENGTH = 14;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.983 -0500", hash_original_field = "7C8A5C01E5D0B68FBE6AD2399528439C", hash_generated_field = "E9A111AA7C3405793F606C7049665085")
-
 
     /** Finished retrieving size of transparent EF; start loading. */
     static protected final int EVENT_GET_BINARY_SIZE_DONE = 4;
@@ -334,6 +322,7 @@ public void loadEFImgTransparent(int fileid, int highOffset, int lowOffset,
      * @param onComplete onComplete.obj will be an AsyncResult
      *                   onComplete.obj.userObj will be a IccIoResult on success
      */
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:47.044 -0500", hash_original_method = "FA70C1BBB046CBB00612B81948F784B1", hash_generated_method = "CE84EB325E5A57446D83DA5863F644B8")
     
 public void updateEFLinearFixed(int fileid, int recordNum, byte[] data,
@@ -356,9 +345,7 @@ public void updateEFTransparent(int fileid, byte[] data, Message onComplete) {
                         IccUtils.bytesToHexString(data), null, onComplete);
     }
 
-
     //***** Abstract Methods
-
 
     //***** Private Methods
 
@@ -376,6 +363,7 @@ private void sendResult(Message response, Object result, Throwable ex) {
 
     //***** Overridden from Handler
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:47.056 -0500", hash_original_method = "7545CD0BE0B692221088F308787036AD", hash_generated_method = "68022EB240E6BA96F678CCE680BC607D")
     
 public void handleMessage(Message msg) {

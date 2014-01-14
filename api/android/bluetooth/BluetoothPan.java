@@ -15,10 +15,6 @@ import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.util.Log;
 
-
-
-
-
 public final class BluetoothPan implements BluetoothProfile {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:35.347 -0500", hash_original_method = "0EBF7673E44AF610ADC3AB53A65BD597", hash_generated_method = "12E4FDCE2D2661CC6DF9F077D2C0BB73")
@@ -62,7 +58,6 @@ private static void log(String msg) {
 
     public static final int PAN_OPERATION_SUCCESS = 1004;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:35.315 -0500", hash_original_field = "AD4810E1EAEE0B4F351A0550C3A3183B", hash_generated_field = "6FCEA0ED39BC377BA765F514A42DFCE9")
-
 
     private ServiceListener mServiceListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:35.317 -0500", hash_original_field = "367F0BC6BC216C571A7E906A286477DF", hash_generated_field = "6EAF57CC559AB78B0231BFFF469261B9")
@@ -239,6 +234,7 @@ public int getConnectionState(BluetoothDevice device) {
         return BluetoothProfile.STATE_DISCONNECTED;
     }
 
+    @DSSink({DSSinkKind.BLUETOOTH})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:35.339 -0500", hash_original_method = "F68C05AEB8B22BEDBECA5E0A17E27611", hash_generated_method = "16F793CDF051BD920F3A78FBE30EC9A6")
     
 public void setBluetoothTethering(boolean value) {

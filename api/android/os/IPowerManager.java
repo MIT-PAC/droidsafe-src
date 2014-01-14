@@ -90,7 +90,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:35.697 -0500", hash_original_method = "2697FC21298609AA68259968ECB0FA18", hash_generated_method = "FFD65838395BD795F47CCD5760F206B1")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:35.697 -0500", hash_original_method = "2697FC21298609AA68259968ECB0FA18", hash_generated_method = "FFD65838395BD795F47CCD5760F206B1")
             
 public void updateWakeLockWorkSource(android.os.IBinder lock, android.os.WorkSource ws) throws android.os.RemoteException
 {
@@ -151,7 +152,8 @@ _data.recycle();
 }
 // WARNING: changes in releaseWakeLock() signature must be reflected in IPowerManager.cpp/h
 
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:35.705 -0500", hash_original_method = "430926DC207045F64753E85DD81FDCC2", hash_generated_method = "7EC34EA23CE15968A7E44AE49C543454")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:35.705 -0500", hash_original_method = "430926DC207045F64753E85DD81FDCC2", hash_generated_method = "7EC34EA23CE15968A7E44AE49C543454")
             
 public void releaseWakeLock(android.os.IBinder lock, int flags) throws android.os.RemoteException
 {
@@ -262,7 +264,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:35.721 -0500", hash_original_method = "11D3B4096A793234D099D31D68C96461", hash_generated_method = "EADE558A2B052148AB289F610A804134")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:35.721 -0500", hash_original_method = "11D3B4096A793234D099D31D68C96461", hash_generated_method = "EADE558A2B052148AB289F610A804134")
             
 public void setStayOnSetting(int val) throws android.os.RemoteException
 {
@@ -349,7 +352,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:35.733 -0500", hash_original_method = "035146ECEFAD1D48140EC9098F25754C", hash_generated_method = "6898D1D941818B124D89707285C3A0D2")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:35.733 -0500", hash_original_method = "035146ECEFAD1D48140EC9098F25754C", hash_generated_method = "6898D1D941818B124D89707285C3A0D2")
             
 public void crash(java.lang.String message) throws android.os.RemoteException
 {
@@ -385,7 +389,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:35.740 -0500", hash_original_method = "D5C2B4A45F56782BDD1B1F1560319665", hash_generated_method = "4A11309A76B6A9830A5BF6E705322CF3")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:35.740 -0500", hash_original_method = "D5C2B4A45F56782BDD1B1F1560319665", hash_generated_method = "4A11309A76B6A9830A5BF6E705322CF3")
             
 public void setAttentionLight(boolean on, int color) throws android.os.RemoteException
 {
@@ -462,7 +467,8 @@ public android.os.IBinder asBinder()
 {
 return this;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:35.679 -0500", hash_original_method = "3AD486EE648D270801B5D455FCFB6861", hash_generated_method = "BD135F5A8EEDF503B62B4576BEDBBC7C")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:35.679 -0500", hash_original_method = "3AD486EE648D270801B5D455FCFB6861", hash_generated_method = "BD135F5A8EEDF503B62B4576BEDBBC7C")
         
 @Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
 {
@@ -674,12 +680,10 @@ return super.onTransact(code, data, reply, flags);
 }
 }
 
-
 public void acquireWakeLock(int flags, android.os.IBinder lock, java.lang.String tag, android.os.WorkSource ws) throws android.os.RemoteException;
 public void updateWakeLockWorkSource(android.os.IBinder lock, android.os.WorkSource ws) throws android.os.RemoteException;
 public void goToSleep(long time) throws android.os.RemoteException;
 public void goToSleepWithReason(long time, int reason) throws android.os.RemoteException;
-
 
 public void releaseWakeLock(android.os.IBinder lock, int flags) throws android.os.RemoteException;
 public void userActivity(long when, boolean noChangeLights) throws android.os.RemoteException;
@@ -693,7 +697,6 @@ public void preventScreenOn(boolean prevent) throws android.os.RemoteException;
 public boolean isScreenOn() throws android.os.RemoteException;
 public void reboot(java.lang.String reason) throws android.os.RemoteException;
 public void crash(java.lang.String message) throws android.os.RemoteException;
-
 
 public void setBacklightBrightness(int brightness) throws android.os.RemoteException;
 public void setAttentionLight(boolean on, int color) throws android.os.RemoteException;

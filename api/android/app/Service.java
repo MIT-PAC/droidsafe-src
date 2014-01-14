@@ -322,6 +322,7 @@ public final boolean stopSelfResult(int startId) {
      * 
      * @hide
      */
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:43.448 -0500", hash_original_method = "3B13E95A68EC397B0EFBCB7AA4B170BC", hash_generated_method = "FA750168AC8DBEF3DC22D855ED02CD9A")
     
 @Deprecated
@@ -395,6 +396,7 @@ public final void stopForeground(boolean removeNotification) {
      * closed for you after you return.
      * @param args additional arguments to the dump request.
      */
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:43.455 -0500", hash_original_method = "708CD3B4DCC4F45281F620E4C375E85F", hash_generated_method = "031B7EE125168FCDC45ABAEF9B7728B9")
     
 protected void dump(FileDescriptor fd, PrintWriter writer, String[] args) {

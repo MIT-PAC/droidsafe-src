@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.text.ParseException;
 
-
-
-
-
-
 public class Protocol extends SIPObject {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:55.849 -0500", hash_original_field = "0DE260D6A36CCF8999125C978C33AD00", hash_generated_field = "51FBF3C81D0285A3EC2B590DCDB910C8")
 
@@ -88,6 +83,7 @@ public String getProtocol() {
         return protocolName + '/' + protocolVersion;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:55.880 -0500", hash_original_method = "095B78DD27D74EBF49777967A681F20E", hash_generated_method = "294E38CF2D32567761D38FD960FE5B84")
     
 public void setProtocol( String name_and_version ) throws ParseException {

@@ -302,6 +302,7 @@ public Object getValue() {
             return mValue;
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.039 -0500", hash_original_method = "C5497A399E3F74A58085B920F39E31DE", hash_generated_method = "7D6918691B5CEA30D90D66FE632B55E6")
         
 public void setValue(Object value) {
@@ -355,6 +356,7 @@ public Object getValue() {
             return mValue;
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.058 -0500", hash_original_method = "7C5BB3EB4CAFBCF934453BA7EC3D20EB", hash_generated_method = "CC841C193FE3627422758784B6643796")
         
 public void setValue(Object value) {

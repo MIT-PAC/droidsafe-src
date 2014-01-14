@@ -24,10 +24,6 @@ import android.provider.Settings.SettingNotFoundException;
 import android.text.TextUtils;
 import android.util.Pair;
 
-
-
-
-
 public class DownloadManager {
 
     /**
@@ -153,7 +149,6 @@ static String[] getWhereArgsForIds(long[] ids) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:27.094 -0500", hash_original_field = "FDC0D3C4E44FF07FAC2FA5F2FA6E04C8", hash_generated_field = "DDF3A08F677DC31638E00F51A652178C")
 
     public final static int STATUS_RUNNING = 1 << 1;
-
     
     public static class Request {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:27.154 -0500", hash_original_field = "34AAE32633C2FC529AAA5F28B4CC5D3D", hash_generated_field = "2A08EDDDB593C12F8423C559DB638960")
@@ -186,7 +181,6 @@ static String[] getWhereArgsForIds(long[] ids) {
 
         public static final int VISIBILITY_VISIBLE_NOTIFY_ONLY_COMPLETION = 3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:27.160 -0500", hash_original_field = "49226456B4CE4E55A779249DE3DC63D4", hash_generated_field = "04FA8EB5D9FB8AC4AAE6453BCF1BBF82")
-
 
         private Uri mUri;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:27.162 -0500", hash_original_field = "6C658875A9D361B2F63B3CA23BA7E0E7", hash_generated_field = "83BAA5C2BC0662F1D32FE83EA4951897")
@@ -506,6 +500,7 @@ public Request setVisibleInDownloadsUi(boolean isVisible) {
         /**
          * @return ContentValues to be passed to DownloadProvider.insert()
          */
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:27.243 -0500", hash_original_method = "A794ABF9FD18E330B670B5AD24CF2800", hash_generated_method = "42CAA0C4E10C8216BBA189F252261D49")
         
 ContentValues toContentValues(String packageName) {
@@ -563,8 +558,6 @@ private void putIfNonNull(ContentValues contentValues, String key, Object value)
             }
         }
     }
-
-
     
     public static class Query {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:27.255 -0500", hash_original_field = "6EBAC7E6F58EC7F4CA632A08808D4745", hash_generated_field = "33AF9DE750C57D52372B21F0E7746D47")
@@ -574,7 +567,6 @@ private void putIfNonNull(ContentValues contentValues, String key, Object value)
 
         public static final int ORDER_DESCENDING = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:27.260 -0500", hash_original_field = "E92E843A274AA67C68B06CB672417BD6", hash_generated_field = "5F8E81DCB2F7B395E24A391C0FACBDE6")
-
 
         private long[] mIds = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:27.262 -0500", hash_original_field = "1DFA2135BEE4B07438926787FA0F3FD0", hash_generated_field = "F78B9285416B8C880978036645800403")
@@ -738,8 +730,6 @@ private String statusClause(String operator, int value) {
             return Downloads.Impl.COLUMN_STATUS + operator + "'" + value + "'";
         }
     }
-
-
     
     private static class CursorTranslator extends CursorWrapper {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:27.342 -0500", hash_original_field = "BAA66B2FF4013EF5EF0725340E08B737", hash_generated_field = "352FDC66A51EED366C84411537612673")
@@ -900,7 +890,6 @@ private int translateStatus(int status) {
                     return STATUS_FAILED;
             }
         }
-
         
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:27.097 -0500", hash_original_field = "696ACAA095AB9B422196CF224B0C3BC6", hash_generated_field = "B6CF42D4BE6CC4E35C56FF7AFD758358")
@@ -1003,7 +992,6 @@ private int translateStatus(int status) {
             "non-dwnldmngr-download-dont-retry2download";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:27.292 -0500", hash_original_field = "D9EFC53032006A099035E3EBF749F453", hash_generated_field = "2ABF989C5B8F051BCBEE638ED1EA2586")
 
-
     private ContentResolver mResolver;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:27.294 -0500", hash_original_field = "7A5990DF4A54BF373C395B6501E20B02", hash_generated_field = "6F81845A3A2771C3EC987E5A01DBA4C6")
 
@@ -1027,6 +1015,7 @@ public DownloadManager(ContentResolver resolver, String packageName) {
      * /my_downloads URIs, for clients that have permission to do so.
      * @hide
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:27.301 -0500", hash_original_method = "93AAF1C0A18C9EFC24526B178CE628E3", hash_generated_method = "B6D9A7874E112639A963C2842C6A60FF")
     
 public void setAccessAllDownloads(boolean accessAllDownloads) {
@@ -1118,6 +1107,7 @@ public Cursor query(Query query) {
      * @return a read-only {@link ParcelFileDescriptor}
      * @throws FileNotFoundException if the destination file does not already exist
      */
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:27.312 -0500", hash_original_method = "41561235219E48E784E85B3D8CB5CB93", hash_generated_method = "84C045836AE6DFB7D5B0A78EC05DE96A")
     
 public ParcelFileDescriptor openDownloadedFile(long id) throws FileNotFoundException {
@@ -1219,6 +1209,7 @@ public String getMimeTypeForDownloadedFile(long id) {
      * @param ids the IDs of the downloads
      * @hide
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:27.319 -0500", hash_original_method = "ABDC33D84A29539A96C484C81BD10405", hash_generated_method = "865818060927F98B30D45F5724B92304")
     
 public void restartDownload(long... ids) {
@@ -1265,6 +1256,7 @@ public void restartDownload(long... ids) {
      * @return  an ID for the download entry added to the downloads app, unique across the system
      * This ID is used to make future calls related to this download.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:27.327 -0500", hash_original_method = "58F6793B30C14E2CFD3653910A805BA2", hash_generated_method = "D6CA73B06B0115738CCFC5715639C99F")
     
 public long addCompletedDownload(String title, String description,

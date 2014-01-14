@@ -9,12 +9,7 @@ import java.io.PrintWriter;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public class StatusBarIconList implements Parcelable {
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:11.216 -0400", hash_original_field = "BF60B0A5C3E61C77F35261BE495B6655", hash_generated_field = "05AD09550D387B8CDEADEA4178378B19")
 
@@ -70,6 +65,7 @@ public void readFromParcel(Parcel in) {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:55.342 -0500", hash_original_method = "65DAF69F4AC762C1C1797457361FBB3F", hash_generated_method = "01C81874D4F50459888BB3EFC45F1F84")
     
 public void writeToParcel(Parcel out, int flags) {
@@ -126,6 +122,7 @@ public int size() {
         return mSlots.length;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:55.361 -0500", hash_original_method = "F5C28F866C5BC55B13E5B475658140A5", hash_generated_method = "97A2FE35DE66E9EA4C096B83F572B6F8")
     
 public void setIcon(int index, StatusBarIcon icon) {

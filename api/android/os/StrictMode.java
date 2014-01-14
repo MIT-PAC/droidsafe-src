@@ -497,6 +497,7 @@ public static void onWebViewMethodCalledOnWrongThread(Throwable originStack) {
     /**
      * @hide
      */
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.256 -0500", hash_original_method = "3BA160C791F73BC1B2756430F54D7253", hash_generated_method = "84C7935E4E3FABBD05E1556FC7CE4E7E")
     
 public static void onVmPolicyViolation(String message, Throwable originStack) {
@@ -742,6 +743,7 @@ public static Object trackActivity(Object instance) {
     /**
      * @hide
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.333 -0500", hash_original_method = "4C40B4FD0BD10B4EE6F7D0BFF962D7AA", hash_generated_method = "0D457BD9440D94DCA0BF865CD4A7ADDC")
     
 public static void incrementExpectedActivityCount(Class klass) {
@@ -1843,6 +1845,7 @@ public ViolationInfo(Parcel in, boolean unsetGatheringBit) {
         /**
          * Save a ViolationInfo instance to a parcel.
          */
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.376 -0500", hash_original_method = "4C68F89668EEC8ACA3036C864AE1DCBA", hash_generated_method = "CCEFBCB218FB24E74153F4AC5CC8BEB6")
         
 public void writeToParcel(Parcel dest, int flags) {
@@ -1860,6 +1863,7 @@ public void writeToParcel(Parcel dest, int flags) {
         /**
          * Dump a ViolationInfo instance to a Printer.
          */
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.379 -0500", hash_original_method = "FB1CB9CE36DAC72C8A293B50C548452A", hash_generated_method = "22BB318C5D3CC33996B2FEA75757D0E6")
         
 public void dump(Printer pw, String prefix) {

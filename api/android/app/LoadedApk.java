@@ -589,6 +589,7 @@ public IIntentReceiver getReceiverDispatcher(BroadcastReceiver r,
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.774 -0500", hash_original_method = "56318BD0308680C3BFA3A8E4B0CE4CF3", hash_generated_method = "0EE4789D0AC3A8E5A849759422D00C6F")
     
 public IIntentReceiver forgetReceiverDispatcher(Context context,
@@ -665,6 +666,7 @@ public final IServiceConnection getServiceDispatcher(ServiceConnection c,
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.855 -0500", hash_original_method = "6B7C147E189191AFA124ECB6DFD3C546", hash_generated_method = "016E4F7006C87B536F1D18D98EF600E1")
     
 public final IServiceConnection forgetServiceDispatcher(Context context,
@@ -772,6 +774,7 @@ private void warn(String methodName) {
             return getParent().loadClass(className);
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.738 -0500", hash_original_method = "01BE45A57A3128BFD9BA3AF8CD4C6252", hash_generated_method = "BF415C3CF9ECFB7B137B6897F9134DD0")
         
 @Override public void setClassAssertionStatus(String cname, boolean enable) {
@@ -779,6 +782,7 @@ private void warn(String methodName) {
             getParent().setClassAssertionStatus(cname, enable);
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.741 -0500", hash_original_method = "249CA030F95BF8C81AAAFF1521D1BE6E", hash_generated_method = "F79FC83ADB0E60FAC5CB5CC924399EF7")
         
 @Override public void setPackageAssertionStatus(String pname, boolean enable) {
@@ -786,6 +790,7 @@ private void warn(String methodName) {
             getParent().setPackageAssertionStatus(pname, enable);
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.743 -0500", hash_original_method = "AC5504AD86A01EA0D58ADDE41ADE6649", hash_generated_method = "E667FA2AC5E0EE291EEE09CD7C14D092")
         
 @Override public void setDefaultAssertionStatus(boolean enable) {
@@ -1185,6 +1190,7 @@ public void death(ComponentName name, IBinder service) {
             }
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.927 -0500", hash_original_method = "4206BCB9948653D91B6930DF31631CB7", hash_generated_method = "B5193B19AB349ACAC84E4791E4C4FC98")
         
 public void doConnected(ComponentName name, IBinder service) {

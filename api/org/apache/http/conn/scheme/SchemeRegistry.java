@@ -11,14 +11,10 @@ import java.util.Map;
 
 import org.apache.http.HttpHost;
 
-
-
-
 public final class SchemeRegistry {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.022 -0500", hash_original_field = "937907C9E4279052DD4EE9715869156A", hash_generated_field = "F36240EAE5CF2A96AAAB44994667903B")
 
     private  Map<String,Scheme> registeredSchemes;
-
 
     /**
      * Creates a new, empty scheme registry.
@@ -29,7 +25,6 @@ public SchemeRegistry() {
         super();
         registeredSchemes = new LinkedHashMap<String,Scheme>();
     }
-
 
     /**
      * Obtains a scheme by name.
@@ -52,7 +47,6 @@ public synchronized final Scheme getScheme(String name) {
         return found;
     }
 
-
     /**
      * Obtains the scheme for a host.
      * Convenience method for <code>getScheme(host.getSchemeName())</pre>
@@ -72,7 +66,6 @@ public synchronized final Scheme getScheme(HttpHost host) {
         }
         return getScheme(host.getSchemeName());
     }
-
 
     /**
      * Obtains a scheme by name, if registered.
@@ -94,7 +87,6 @@ public synchronized final Scheme get(String name) {
         return found;
     }
 
-
     /**
      * Registers a scheme.
      * The scheme can later be retrieved by its name
@@ -105,6 +97,7 @@ public synchronized final Scheme get(String name) {
      * @return  the scheme previously registered with that name, or
      *          <code>null</code> if none was registered
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.038 -0500", hash_original_method = "BF6DF8E3D28698AF7FF4E9FD5B4A484C", hash_generated_method = "254C69213B5D4D2353215375DE7E6B2C")
     
 public synchronized final Scheme register(Scheme sch) {
@@ -114,7 +107,6 @@ public synchronized final Scheme register(Scheme sch) {
         Scheme old = registeredSchemes.put(sch.getName(), sch);
         return old;
     }
-
 
     /**
      * Unregisters a scheme.
@@ -135,7 +127,6 @@ public synchronized final Scheme unregister(String name) {
         Scheme gone = registeredSchemes.remove(name);
         return gone;
     }
-
 
     /**
      * Obtains the names of the registered schemes in their default order.
@@ -163,7 +154,6 @@ public synchronized void setItems(final Map<String, Scheme> map) {
         registeredSchemes.clear();
         registeredSchemes.putAll(map);
     }
-
     
 }
 

@@ -87,7 +87,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.125 -0500", hash_original_method = "8DC676DACA9CE9596C9AE86151BCE018", hash_generated_method = "06826CF6ADA40BBE7E68F6DE21051FD8")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.125 -0500", hash_original_method = "8DC676DACA9CE9596C9AE86151BCE018", hash_generated_method = "06826CF6ADA40BBE7E68F6DE21051FD8")
             
 public void unregisterContentObserver(android.database.IContentObserver observer) throws android.os.RemoteException
 {
@@ -130,7 +131,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.130 -0500", hash_original_method = "6430296507E764D77D2E563CFF698B5C", hash_generated_method = "9156B2939405BC05B837EA1D8877A357")
+@DSSink({DSSinkKind.SYNCHRONIZATION_DATA})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.130 -0500", hash_original_method = "6430296507E764D77D2E563CFF698B5C", hash_generated_method = "9156B2939405BC05B837EA1D8877A357")
             
 public void requestSync(android.accounts.Account account, java.lang.String authority, android.os.Bundle extras) throws android.os.RemoteException
 {
@@ -161,7 +163,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.133 -0500", hash_original_method = "72E9AB86DA161E1C51BCD9EB57CA0025", hash_generated_method = "2A5ED4C4F9DB760B550ECEA6363B2C5D")
+@DSSink({DSSinkKind.SYNCHRONIZATION_DATA})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.133 -0500", hash_original_method = "72E9AB86DA161E1C51BCD9EB57CA0025", hash_generated_method = "2A5ED4C4F9DB760B550ECEA6363B2C5D")
             
 public void cancelSync(android.accounts.Account account, java.lang.String authority) throws android.os.RemoteException
 {
@@ -223,7 +226,8 @@ return _result;
      * @param providerName the provider whose behavior is being controlled
      * @param sync true if the provider should be synced when tickles are received for it
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.139 -0500", hash_original_method = "40EB513C6C3E4C7153CB9920D108E680", hash_generated_method = "B56B959E29BABCC158BA393FD16C717C")
+@DSSink({DSSinkKind.SYNCHRONIZATION_DATA})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.139 -0500", hash_original_method = "40EB513C6C3E4C7153CB9920D108E680", hash_generated_method = "B56B959E29BABCC158BA393FD16C717C")
             
 public void setSyncAutomatically(android.accounts.Account account, java.lang.String providerName, boolean sync) throws android.os.RemoteException
 {
@@ -288,7 +292,8 @@ return _result;
      * @param pollFrequency the period that a sync should be performed, in seconds. If this is
      * zero or less then no periodic syncs will be performed.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.145 -0500", hash_original_method = "E9A18E1F0577FCBFAE0692012B484C3D", hash_generated_method = "C3C6E065B0B238D85D7EE1C2FCC2C3B6")
+@DSSink({DSSinkKind.SYNCHRONIZATION_DATA})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.145 -0500", hash_original_method = "E9A18E1F0577FCBFAE0692012B484C3D", hash_generated_method = "C3C6E065B0B238D85D7EE1C2FCC2C3B6")
             
 public void addPeriodicSync(android.accounts.Account account, java.lang.String providerName, android.os.Bundle extras, long pollFrequency) throws android.os.RemoteException
 {
@@ -327,7 +332,8 @@ _data.recycle();
      * @param pollFrequency the period that a sync should be performed, in seconds. If this is
      * zero or less then no periodic syncs will be performed.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.148 -0500", hash_original_method = "13C1F487E436DF26C4257523404A7638", hash_generated_method = "A4C91A8FC7D1B3AB43FE8649838210CD")
+@DSSink({DSSinkKind.SYNCHRONIZATION_DATA})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.148 -0500", hash_original_method = "13C1F487E436DF26C4257523404A7638", hash_generated_method = "A4C91A8FC7D1B3AB43FE8649838210CD")
             
 public void removePeriodicSync(android.accounts.Account account, java.lang.String providerName, android.os.Bundle extras) throws android.os.RemoteException
 {
@@ -393,7 +399,8 @@ return _result;
      * Set whether this account/provider is syncable.
      * @param syncable, >0 denotes syncable, 0 means not syncable, <0 means unknown
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.153 -0500", hash_original_method = "E4AA6A917F485664D036CCBAC48A3FD2", hash_generated_method = "11DEA7DCFC5176DB8B8E1337CBDE8B96")
+@DSSink({DSSinkKind.SYNCHRONIZATION_DATA})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.153 -0500", hash_original_method = "E4AA6A917F485664D036CCBAC48A3FD2", hash_generated_method = "11DEA7DCFC5176DB8B8E1337CBDE8B96")
             
 public void setIsSyncable(android.accounts.Account account, java.lang.String providerName, int syncable) throws android.os.RemoteException
 {
@@ -418,7 +425,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.156 -0500", hash_original_method = "2C327CA33D135EC03E87F915E44307FB", hash_generated_method = "37A335B25AFECC947D77C66E1D09E7F1")
+@DSSink({DSSinkKind.SYNCHRONIZATION_DATA})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.156 -0500", hash_original_method = "2C327CA33D135EC03E87F915E44307FB", hash_generated_method = "37A335B25AFECC947D77C66E1D09E7F1")
             
 public void setMasterSyncAutomatically(boolean flag) throws android.os.RemoteException
 {
@@ -458,7 +466,8 @@ return _result;
      * Returns true if there is currently a sync operation for the given
      * account or authority in the pending list, or actively being processed.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.161 -0500", hash_original_method = "3F2909A0567738465BBE3C87AE567009", hash_generated_method = "2A28780E0F9DA863704BE4DA425D6377")
+@DSSink({DSSinkKind.SYNCHRONIZATION_DATA})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.161 -0500", hash_original_method = "3F2909A0567738465BBE3C87AE567009", hash_generated_method = "2A28780E0F9DA863704BE4DA425D6377")
             
 public boolean isSyncActive(android.accounts.Account account, java.lang.String authority) throws android.os.RemoteException
 {
@@ -568,7 +577,8 @@ return _result;
 /**
      * Return true if the pending status is true of any matching authorities.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.173 -0500", hash_original_method = "1BBCB05C24161C7D0B4312E4968244D3", hash_generated_method = "6F29C1C365EBDD510DAF613E5A7131D5")
+@DSSink({DSSinkKind.SYNCHRONIZATION_DATA})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.173 -0500", hash_original_method = "1BBCB05C24161C7D0B4312E4968244D3", hash_generated_method = "6F29C1C365EBDD510DAF613E5A7131D5")
             
 public boolean isSyncPending(android.accounts.Account account, java.lang.String authority) throws android.os.RemoteException
 {
@@ -595,7 +605,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.175 -0500", hash_original_method = "A263BCF2D258B542ED2FE1A0A4167606", hash_generated_method = "5E4DDFCFA4E77F92F308C5DFAA85CCAE")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.175 -0500", hash_original_method = "A263BCF2D258B542ED2FE1A0A4167606", hash_generated_method = "5E4DDFCFA4E77F92F308C5DFAA85CCAE")
             
 public void addStatusChangeListener(int mask, android.content.ISyncStatusObserver callback) throws android.os.RemoteException
 {
@@ -613,7 +624,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.178 -0500", hash_original_method = "13147157B90DF206295129A0D8922AD4", hash_generated_method = "EE589709989AB1AEC256831CB4B8594E")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.178 -0500", hash_original_method = "13147157B90DF206295129A0D8922AD4", hash_generated_method = "EE589709989AB1AEC256831CB4B8594E")
             
 public void removeStatusChangeListener(android.content.ISyncStatusObserver callback) throws android.os.RemoteException
 {
@@ -698,7 +710,8 @@ public android.os.IBinder asBinder()
 {
 return this;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.108 -0500", hash_original_method = "AF8242BA2D3F5AE27AC96AA7DD24E2F8", hash_generated_method = "99504247053E454E46E70514FDE62F32")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.108 -0500", hash_original_method = "AF8242BA2D3F5AE27AC96AA7DD24E2F8", hash_generated_method = "99504247053E454E46E70514FDE62F32")
         
 @Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
 {

@@ -15,11 +15,6 @@ import javax.net.ssl.SSLException;
 import javax.net.ssl.SSLHandshakeException;
 import javax.net.ssl.SSLSession;
 
-
-
-
-
-
 public class SSLEngineImpl extends SSLEngine {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:12.820 -0500", hash_original_field = "8A6DEFF4AA86C1DEEEAEB5CE0D8D1777", hash_generated_field = "E654CE2FA30E1E8D898FBE3969CE5BA6")
 
@@ -235,6 +230,7 @@ protected SSLEngineImpl(String host, int port, SSLParametersImpl sslParameters) 
      * @see javax.net.ssl.SSLEngine#setEnabledCipherSuites(String[]) method
      * documentation for more information
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:12.886 -0500", hash_original_method = "7C4ABDE66C2DD67AB299013913F9BF06", hash_generated_method = "C5557FA44AA989E23B0178177369FD5D")
     
 @Override
@@ -271,6 +267,7 @@ protected SSLEngineImpl(String host, int port, SSLParametersImpl sslParameters) 
      * @see javax.net.ssl.SSLEngine#setEnabledProtocols(String[]) method
      * documentation for more information
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:12.893 -0500", hash_original_method = "1CAC4BB68A222585D834DF0E7DBBD0B9", hash_generated_method = "5199FC3D60A4E4583B057C0623C822F9")
     
 @Override
@@ -283,6 +280,7 @@ protected SSLEngineImpl(String host, int port, SSLParametersImpl sslParameters) 
      * @see javax.net.ssl.SSLEngine#setUseClientMode(boolean) method
      * documentation for more information
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:12.896 -0500", hash_original_method = "8643AE5368ED569DA5125D94D54A9561", hash_generated_method = "E5CA1858D886978CABFE92E9C5C19A2E")
     
 @Override
@@ -312,6 +310,7 @@ protected SSLEngineImpl(String host, int port, SSLParametersImpl sslParameters) 
      * @see javax.net.ssl.SSLEngine#setNeedClientAuth(boolean) method
      * documentation for more information
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:12.901 -0500", hash_original_method = "87B99BB5E16802D75B8230FD21E2413F", hash_generated_method = "C446CA4D04BF46EBA63D06A750C2C8C1")
     
 @Override
@@ -336,6 +335,7 @@ protected SSLEngineImpl(String host, int port, SSLParametersImpl sslParameters) 
      * @see javax.net.ssl.SSLEngine#setWantClientAuth(boolean) method
      * documentation for more information
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:12.906 -0500", hash_original_method = "C4BE9213AE4AE3AE8B3FD470CA7DBEA1", hash_generated_method = "21E8FF7B7CE0E4FB146B4F3F0EE91E86")
     
 @Override
@@ -360,6 +360,7 @@ protected SSLEngineImpl(String host, int port, SSLParametersImpl sslParameters) 
      * @see javax.net.ssl.SSLEngine#setEnableSessionCreation(boolean) method
      * documentation for more information
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:12.910 -0500", hash_original_method = "CCC6382646A49B02E626A26467D69493", hash_generated_method = "3DEA9628617E70F67E1471694350041C")
     
 @Override
@@ -622,6 +623,7 @@ protected SSLEngineImpl(String host, int port, SSLParametersImpl sslParameters) 
      * @see javax.net.ssl.SSLEngine#wrap(ByteBuffer[],int,int,ByteBuffer) method
      * documentation for more information
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:12.934 -0500", hash_original_method = "4D503F6FEFF5A6DB6E7618C8A28327D4", hash_generated_method = "8635C59B06DF3DC5F17BCC78285185DA")
     
 @Override
@@ -802,7 +804,6 @@ private void shutdown() {
         }
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:12.938 -0500", hash_original_method = "C6B39897E63E44773E5CEE8467983722", hash_generated_method = "955DDEB712D90E4C507BF5F09B619D3A")
     
 private SSLEngineResult.Status getEngineStatus() {
@@ -810,7 +811,6 @@ private SSLEngineResult.Status getEngineStatus() {
             ? SSLEngineResult.Status.CLOSED
             : SSLEngineResult.Status.OK;
     }
-
     
 }
 

@@ -137,7 +137,8 @@ finally {
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:49.402 -0500", hash_original_method = "CD7BF7EAC2CFA8B6528A649B2EFE66EA", hash_generated_method = "A1BA07BBA3C541DF986904B5699D0EE0")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:49.402 -0500", hash_original_method = "CD7BF7EAC2CFA8B6528A649B2EFE66EA", hash_generated_method = "A1BA07BBA3C541DF986904B5699D0EE0")
             
 public void finishSpellCheckerService(com.android.internal.textservice.ISpellCheckerSessionListener listener) throws android.os.RemoteException
 {
@@ -151,7 +152,8 @@ finally {
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:49.405 -0500", hash_original_method = "EA6EF2DA921343BAE948E9A7113ACCC6", hash_generated_method = "8581F04164A02FDAA71F7321CA79E350")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:49.405 -0500", hash_original_method = "EA6EF2DA921343BAE948E9A7113ACCC6", hash_generated_method = "8581F04164A02FDAA71F7321CA79E350")
             
 public void setCurrentSpellChecker(java.lang.String locale, java.lang.String sciId) throws android.os.RemoteException
 {
@@ -166,7 +168,8 @@ finally {
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:49.407 -0500", hash_original_method = "C42B098AB5A1704018DF773B6E9E82C2", hash_generated_method = "4B4692FFD3387248D8B5D13864CA4BE1")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:49.407 -0500", hash_original_method = "C42B098AB5A1704018DF773B6E9E82C2", hash_generated_method = "4B4692FFD3387248D8B5D13864CA4BE1")
             
 public void setCurrentSpellCheckerSubtype(java.lang.String locale, int hashCode) throws android.os.RemoteException
 {
@@ -181,7 +184,8 @@ finally {
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:49.410 -0500", hash_original_method = "CCEA883A3E8D3FCE2564D4FA50F9D044", hash_generated_method = "96E3563B63AFCB506461BB190FE45DDD")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:49.410 -0500", hash_original_method = "CCEA883A3E8D3FCE2564D4FA50F9D044", hash_generated_method = "96E3563B63AFCB506461BB190FE45DDD")
             
 public void setSpellCheckerEnabled(boolean enabled) throws android.os.RemoteException
 {
@@ -265,7 +269,8 @@ public android.os.IBinder asBinder()
 {
 return this;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:49.380 -0500", hash_original_method = "F809859DF57095AEB868C942DA4A6EB7", hash_generated_method = "9C3B666B98DCA3E6DCD932B55661EBB5")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:49.380 -0500", hash_original_method = "F809859DF57095AEB868C942DA4A6EB7", hash_generated_method = "9C3B666B98DCA3E6DCD932B55661EBB5")
         
 @Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
 {

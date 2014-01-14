@@ -170,6 +170,7 @@ public ZoomButtonsController(View ownerView) {
      *
      * @param enabled Whether to enable the zoom in control.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:26.823 -0500", hash_original_method = "3742E544F3AFD5F94AD689FCD74B6DD5", hash_generated_method = "C310AF3AC3298A18E1908AF4FE069C24")
     
 public void setZoomInEnabled(boolean enabled) {
@@ -181,6 +182,7 @@ public void setZoomInEnabled(boolean enabled) {
      *
      * @param enabled Whether to enable the zoom out control.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:26.825 -0500", hash_original_method = "1CF0D208E223466BFE0254465182BFD8", hash_generated_method = "8C424E3E9379072103AC380843E123F5")
     
 public void setZoomOutEnabled(boolean enabled) {
@@ -192,6 +194,7 @@ public void setZoomOutEnabled(boolean enabled) {
      *
      * @param speed The delay in milliseconds between zoom callbacks.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:26.828 -0500", hash_original_method = "18B39697A9CAB4F925A2FDB6BE61BBD8", hash_generated_method = "49BD1E930E9E075A4870520DC620F185")
     
 public void setZoomSpeed(long speed) {
@@ -258,6 +261,7 @@ public void setOnZoomListener(OnZoomListener listener) {
      *
      * @param focusable Whether the zoom controls should be focusable.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:26.841 -0500", hash_original_method = "E1DA778FA5C81D94D4F0CBAFCCB18381", hash_generated_method = "61EB6D295900F029494C28C2B03A3CF0")
     
 public void setFocusable(boolean focusable) {

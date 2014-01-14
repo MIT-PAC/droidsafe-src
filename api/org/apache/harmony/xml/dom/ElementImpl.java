@@ -17,14 +17,8 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.w3c.dom.TypeInfo;
 
-
-
-
-
-
 public class ElementImpl extends InnerNodeImpl implements Element {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:22.614 -0500", hash_original_field = "6DED3D0909D027805E22F95BA58508AE", hash_generated_field = "6DED3D0909D027805E22F95BA58508AE")
-
 
     boolean namespaceAware;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:22.616 -0500", hash_original_field = "5B184DBF8D93287A0F0C8BC78758CAB7", hash_generated_field = "5B184DBF8D93287A0F0C8BC78758CAB7")
@@ -37,7 +31,6 @@ public class ElementImpl extends InnerNodeImpl implements Element {
 
     String localName;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:22.623 -0500", hash_original_field = "6408F542D6B012397242437C2E1CE163", hash_generated_field = "370A7E27C76BC902168F8323D6CEB238")
-
 
     private List<AttrImpl> attributes = new ArrayList<AttrImpl>();
 
@@ -286,6 +279,7 @@ public Attr removeAttributeNode(Attr oldAttr) throws DOMException {
         return oldAttrImpl;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:22.681 -0500", hash_original_method = "6DCEAAD8535FDF367A6D4293F8DE36CE", hash_generated_method = "5B276010C8E325BCDCF40DB6AA150F89")
     
 public void setAttribute(String name, String value) throws DOMException {
@@ -299,6 +293,7 @@ public void setAttribute(String name, String value) throws DOMException {
         attr.setValue(value);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:22.683 -0500", hash_original_method = "F2270012ECC9DDE7A199A2B08906CDAC", hash_generated_method = "3620E44C66FED951B063BCCAF29B3F66")
     
 public void setAttributeNS(String namespaceURI, String qualifiedName,
@@ -367,6 +362,7 @@ public Attr setAttributeNodeNS(Attr newAttr) throws DOMException {
         return oldAttrImpl;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:22.691 -0500", hash_original_method = "3E19055116AC2D87625766EB1DC83913", hash_generated_method = "E839C95B45355A666035B4D9E3A8B013")
     
 @Override
@@ -381,6 +377,7 @@ public TypeInfo getSchemaTypeInfo() {
         return NULL_TYPE_INFO;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:22.722 -0500", hash_original_method = "E2D0D43F42925D6B235314ECDF3F88D2", hash_generated_method = "D987540CB46EE76FE5B329E7D2A301EC")
     
 public void setIdAttribute(String name, boolean isId) throws DOMException {
@@ -392,6 +389,7 @@ public void setIdAttribute(String name, boolean isId) throws DOMException {
         attr.isId = isId;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:22.724 -0500", hash_original_method = "EB4B24B3B95C74A915F87535C0F28019", hash_generated_method = "5A31E3F6B187E70D74CB0E5CC5BC02F4")
     
 public void setIdAttributeNS(String namespaceURI, String localName,
@@ -409,7 +407,6 @@ public void setIdAttributeNS(String namespaceURI, String localName,
 public void setIdAttributeNode(Attr idAttr, boolean isId) throws DOMException {
         ((AttrImpl) idAttr).isId = isId;
     }
-
     
     public class ElementAttrNamedNodeMapImpl implements NamedNodeMap {
         
@@ -499,11 +496,8 @@ public Node setNamedItemNS(Node arg) throws DOMException {
 
             return ElementImpl.this.setAttributeNodeNS((Attr)arg);
         }
-
         
     }
-
-
     
 }
 

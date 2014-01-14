@@ -409,6 +409,7 @@ JarFileInputStream(InputStream is, ZipEntry ze,
             }
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.813 -0500", hash_original_method = "A2A36F60816A3448608DD8EC3FE6DD7B", hash_generated_method = "CEE01730D9D3AF09D011FF066CC57F74")
         
 @Override

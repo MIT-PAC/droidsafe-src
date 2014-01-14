@@ -192,6 +192,7 @@ public void rejectCall() throws CallStateException {
         }
     }
 
+    @DSSink({DSSinkKind.VOIP})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:25.293 -0500", hash_original_method = "01C657A55270F6B259EE4CA2295CF206", hash_generated_method = "FA32FA1AE5696C5FE1894B7E6482448D")
     
 public Connection dial(String dialString) throws CallStateException {
@@ -295,6 +296,7 @@ public void clearDisconnected() {
         }
     }
 
+    @DSSink({DSSinkKind.PHONE_CONNECTION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:25.316 -0500", hash_original_method = "D682F8DE86633D8037AE8DB7A99E0997", hash_generated_method = "71E579D230ECBDFF5EA1BDA265FE754F")
     
 public void sendDtmf(char c) {
@@ -308,6 +310,7 @@ public void sendDtmf(char c) {
         }
     }
 
+    @DSSink({DSSinkKind.PHONE_CONNECTION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:25.318 -0500", hash_original_method = "C805BAC519448AC91DEA3466C2A972EF", hash_generated_method = "3E8F3639ECB30CC2093F655E611D9E91")
     
 public void startDtmf(char c) {
@@ -325,6 +328,7 @@ public void stopDtmf() {
         // no op
     }
 
+    @DSSink({DSSinkKind.PHONE_CONNECTION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:25.322 -0500", hash_original_method = "9189F1384120EC6E17589215617F3507", hash_generated_method = "770AB5477E5F0392E2ED8097C9DDC91B")
     
 public void sendBurstDtmf(String dtmfString) {
@@ -339,6 +343,7 @@ public void getOutgoingCallerIdDisplay(Message onComplete) {
         onComplete.sendToTarget();
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:25.327 -0500", hash_original_method = "56612EF91DCB9A3808F62E57BF0F81E1", hash_generated_method = "7AFD122FA2BC9CD6164587737EE63933")
     
 public void setOutgoingCallerIdDisplay(int commandInterfaceCLIRMode,
@@ -356,6 +361,7 @@ public void getCallWaiting(Message onComplete) {
         onComplete.sendToTarget();
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:25.332 -0500", hash_original_method = "80F9B6F2C3F4CA6200C97C4377273E17", hash_generated_method = "4631119FE18EC577B1297D9E9EBAC877")
     
 public void setCallWaiting(boolean enable, Message onComplete) {
@@ -363,6 +369,7 @@ public void setCallWaiting(boolean enable, Message onComplete) {
         Log.e(LOG_TAG, "call waiting not supported");
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:25.334 -0500", hash_original_method = "6F81D9304F797B487FC34D43FAF41E44", hash_generated_method = "38DE648A23798D93856C2EC37C37C1D0")
     
 @Override
@@ -377,6 +384,7 @@ public void setCallWaiting(boolean enable, Message onComplete) {
         }
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:25.336 -0500", hash_original_method = "79AC444E8066EFF34D5F76D19E8CCACC", hash_generated_method = "E234D4A8EADDF41EC687CC06045722EC")
     
 public void setMute(boolean muted) {
@@ -577,6 +585,7 @@ void unhold() throws CallStateException {
             setAudioGroupMode();
         }
 
+        @DSSink({DSSinkKind.SYSTEM_SETTINGS})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:25.391 -0500", hash_original_method = "7DDE83D6F9C645A60E86EBEFB92BE589", hash_generated_method = "7DDE83D6F9C645A60E86EBEFB92BE589")
         
 void setMute(boolean muted) {
@@ -927,6 +936,7 @@ void unhold(AudioGroup audioGroup) throws CallStateException {
             }
         }
 
+        @DSSink({DSSinkKind.SYSTEM_SETTINGS})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:25.483 -0500", hash_original_method = "91B9A79444A0C09E86ABE6F5C7C89706", hash_generated_method = "91B9A79444A0C09E86ABE6F5C7C89706")
         
 void setMute(boolean muted) {

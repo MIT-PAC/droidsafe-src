@@ -17,11 +17,6 @@ import java.util.logging.Logger;
 import com.android.i18n.phonenumbers.PhoneNumberUtil;
 import com.android.i18n.phonenumbers.Phonenumber.PhoneNumber;
 
-
-
-
-
-
 public class AreaCodeMap implements Externalizable {
 
   /**
@@ -48,7 +43,6 @@ private static int getSizeOfAreaCodeMapStorage(AreaCodeMapStorageStrategy mapSto
 
   private final PhoneNumberUtil phoneUtil = PhoneNumberUtil.getInstance();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.567 -0500", hash_original_field = "42C7CEEFF27F1DF7294680FC44588504", hash_generated_field = "ED1850D47B6862466E3813601569EB4C")
-
 
   private AreaCodeMapStorageStrategy areaCodeMapStorage;
 
@@ -137,7 +131,8 @@ public void readExternal(ObjectInput objectInput) throws IOException {
   /**
    * Supports Java Serialization.
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.587 -0500", hash_original_method = "E6F2985648B73053281BC07D9BFD7460", hash_generated_method = "AE67E77026FB90BEAB4F6A3069598601")
+  @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.587 -0500", hash_original_method = "E6F2985648B73053281BC07D9BFD7460", hash_generated_method = "AE67E77026FB90BEAB4F6A3069598601")
     
 public void writeExternal(ObjectOutput objectOutput) throws IOException {
     objectOutput.writeBoolean(areaCodeMapStorage.isFlyweight());

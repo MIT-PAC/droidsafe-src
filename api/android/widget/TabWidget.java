@@ -18,10 +18,6 @@ import android.view.View.OnFocusChangeListener;
 import android.view.ViewGroup;
 import android.view.accessibility.AccessibilityEvent;
 
-
-
-
-
 public class TabWidget extends LinearLayout implements OnFocusChangeListener {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.779 -0500", hash_original_field = "1DE038090B333F8057F27224589C1348", hash_generated_field = "817C5151F42461877F9DF1BDC22232EE")
 
@@ -31,20 +27,17 @@ public class TabWidget extends LinearLayout implements OnFocusChangeListener {
     private int mSelectedTab = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.783 -0500", hash_original_field = "618AAAC4898CD87C5C84F0DC492486D1", hash_generated_field = "6FA03D36B57D33A357D77C40AACCF8AD")
 
-
     private Drawable mLeftStrip;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.785 -0500", hash_original_field = "EDD204461E77D6F2F90FD7B4CC3B86B1", hash_generated_field = "5FBA50C5F8C8013E29152B4F0AB76375")
 
     private Drawable mRightStrip;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.787 -0500", hash_original_field = "DD0BD3E1E4D9018332D08DAF365FE055", hash_generated_field = "A9EA19E630FD2239CD23BC8D6D6761B9")
 
-
     private boolean mDrawBottomStrips = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.789 -0500", hash_original_field = "82444D27E77396C5CB9A9C2F5B72A999", hash_generated_field = "CFD4F88030B09A358C5455C797984434")
 
     private boolean mStripMoved;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.792 -0500", hash_original_field = "811AC12DD4794990F0DFD3FA5A6E3596", hash_generated_field = "FD1FEF375C4015D208B59BBFA039409F")
-
 
     private final Rect mBounds = new Rect();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.794 -0500", hash_original_field = "B0AC9BE7BEF6A11D59FBF8BF7809A886", hash_generated_field = "732D997FD39411FF1FDEB12CCE765B40")
@@ -239,6 +232,7 @@ public int getTabCount() {
      * Sets the drawable to use as a divider between the tab indicators.
      * @param drawable the divider drawable
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.824 -0500", hash_original_method = "BE73B200AC63DD0552B4403EEF7DD937", hash_generated_method = "1763E49A5BF6B71427810D0DD5B3C79F")
     
 @Override
@@ -251,6 +245,7 @@ public int getTabCount() {
      * @param resId the resource identifier of the drawable to use as a
      * divider.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.826 -0500", hash_original_method = "3D37FAA6007791B5D3F4A4A58BCFDCCD", hash_generated_method = "42948D2C85A8C2DA9B780B071515A7FD")
     
 public void setDividerDrawable(int resId) {
@@ -276,6 +271,7 @@ public void setLeftStripDrawable(Drawable drawable) {
      * @param resId the resource identifier of the drawable to use as the
      * left strip drawable
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.830 -0500", hash_original_method = "172131F6C0343EAF2930103340C29368", hash_generated_method = "B18485E1984D1B0337B1AE750910637A")
     
 public void setLeftStripDrawable(int resId) {
@@ -301,6 +297,7 @@ public void setRightStripDrawable(Drawable drawable) {
      * @param resId the resource identifier of the drawable to use as the
      * right strip drawable
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.834 -0500", hash_original_method = "74C61065E01D6A0285B64085050AA388", hash_generated_method = "52FEA7BBEAFFA7B7B2C90A3A0FDE74F5")
     
 public void setRightStripDrawable(int resId) {
@@ -480,6 +477,7 @@ public void focusCurrentTab(int index) {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.856 -0500", hash_original_method = "B57ADC02C2264C78238655AF009610DC", hash_generated_method = "FCD2BCD429D675C6EFB2C291F381F8F8")
     
 @Override
@@ -525,6 +523,7 @@ public void focusCurrentTab(int index) {
         mSelectedTab = -1;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.863 -0500", hash_original_method = "8812800BD81149FA7672691DBEB9912B", hash_generated_method = "D96F5DE0EB20A18636AFCA009F2DB29B")
     
 @Override
@@ -572,11 +571,9 @@ public void onFocusChange(View v, boolean hasFocus) {
             }
         }
     }
-
     
     private class TabClickListener implements OnClickListener {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.870 -0500", hash_original_field = "7E0206C5388F7BDA55A378F003C5C30C", hash_generated_field = "CC51272D049B7B1F88C1AB320207675A")
-
 
         private  int mTabIndex;
 
@@ -591,11 +588,8 @@ private TabClickListener(int tabIndex) {
 public void onClick(View v) {
             mSelectionChangedListener.onTabSelectionChanged(mTabIndex, true);
         }
-
         
     }
-
-
     
     static interface OnTabSelectionChanged {
         

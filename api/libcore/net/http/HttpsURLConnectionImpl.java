@@ -25,11 +25,6 @@ import javax.net.ssl.SSLHandshakeException;
 import javax.net.ssl.SSLPeerUnverifiedException;
 import javax.net.ssl.SSLSocket;
 
-
-
-
-
-
 final class HttpsURLConnectionImpl extends HttpsURLConnection {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:36.517 -0500", hash_original_field = "FF29CF3606AC4412B339E90870C81D88", hash_generated_field = "78DC7187ACD4D2AF4A458EEC4F87313D")
 
@@ -160,6 +155,7 @@ HttpEngine getHttpEngine() {
         return delegate.getResponseMessage();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:36.555 -0500", hash_original_method = "2C6B382BE152760ADFD195450C987C4D", hash_generated_method = "1C8E0CE2806EAFA8671686A0CF087378")
     
 @Override
@@ -181,6 +177,7 @@ HttpEngine getHttpEngine() {
         return delegate.getInstanceFollowRedirects();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:36.562 -0500", hash_original_method = "1CE78FDDD0E27462FCE8A63F52D5A42C", hash_generated_method = "58353FEFB488BB9DA9F2D124C4361924")
     
 @Override
@@ -386,6 +383,7 @@ HttpEngine getHttpEngine() {
         return delegate.getUseCaches();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:36.632 -0500", hash_original_method = "E67509C1EAE75E8F0E616AF503875962", hash_generated_method = "97096E4DDA9F8460F2294F9611A08850")
     
 @Override
@@ -393,6 +391,7 @@ HttpEngine getHttpEngine() {
         delegate.setAllowUserInteraction(newValue);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:36.635 -0500", hash_original_method = "155D8D948EB2756D2E02BD36D7B9A981", hash_generated_method = "ACD156A0C5436F9B423DB5EC4972EE54")
     
 @Override
@@ -400,6 +399,7 @@ HttpEngine getHttpEngine() {
         delegate.setDefaultUseCaches(newValue);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:36.637 -0500", hash_original_method = "DBFBE38519C2ED2CAD57B85CDCF157A7", hash_generated_method = "AB87BFF1E5BFAF22713BCBA9B12F5B88")
     
 @Override
@@ -407,6 +407,7 @@ HttpEngine getHttpEngine() {
         delegate.setDoInput(newValue);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:36.640 -0500", hash_original_method = "4C7DD3E9EB706BD0B590423DABADE520", hash_generated_method = "4EAF2E07A664EEE323C2E95C02C2991C")
     
 @Override
@@ -414,6 +415,7 @@ HttpEngine getHttpEngine() {
         delegate.setDoOutput(newValue);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:36.642 -0500", hash_original_method = "0CABFED9F9019D2C3BA169C5A2DB9982", hash_generated_method = "A8D0CA47065A75BB2C1390DF683E1F63")
     
 @Override
@@ -421,6 +423,7 @@ HttpEngine getHttpEngine() {
         delegate.setIfModifiedSince(newValue);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:36.644 -0500", hash_original_method = "06E81C177B17FA690704B9F52C2E2188", hash_generated_method = "7FBB952A275C52A301F21B145BE9CAFC")
     
 @Override
@@ -428,6 +431,7 @@ HttpEngine getHttpEngine() {
         delegate.setRequestProperty(field, newValue);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:36.647 -0500", hash_original_method = "9DD3A94ED9DC7E27933AACD0BEB1B2CF", hash_generated_method = "6B9262F5B068BA91CB3BD7EC8D1A3C13")
     
 @Override
@@ -435,6 +439,7 @@ HttpEngine getHttpEngine() {
         delegate.setUseCaches(newValue);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:36.649 -0500", hash_original_method = "EF4CCDEC725CA0081AEF3F1DD3AA2FF3", hash_generated_method = "56CB950FC3643D30D2BE16BCF1F7DF3D")
     
 @Override
@@ -449,6 +454,7 @@ HttpEngine getHttpEngine() {
         return delegate.getConnectTimeout();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:36.655 -0500", hash_original_method = "602DF27834E77E85211B3744966AE6ED", hash_generated_method = "2827585D0D84DAB384140211F070E2C1")
     
 @Override
@@ -470,6 +476,7 @@ HttpEngine getHttpEngine() {
         return delegate.toString();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:36.661 -0500", hash_original_method = "F9300CAD817EA355A1DED8FDB2C663E0", hash_generated_method = "6EAA4C2E8FD59D75A341DBD05796C5AF")
     
 @Override
@@ -477,13 +484,13 @@ HttpEngine getHttpEngine() {
         delegate.setFixedLengthStreamingMode(contentLength);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:36.664 -0500", hash_original_method = "F190D6D21DD2676D30EC542F0B391145", hash_generated_method = "C68954564ED2B525D25A84373DF47710")
     
 @Override
     public void setChunkedStreamingMode(int chunkLength) {
         delegate.setChunkedStreamingMode(chunkLength);
     }
-
     
     private final class HttpUrlConnectionDelegate extends HttpURLConnectionImpl {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:36.668 -0500", hash_original_method = "3AF8C0CBB6814014DDC85DEC3B91D01C", hash_generated_method = "BD5BA6AA626884E6712A973B05E70371")
@@ -519,18 +526,14 @@ public SSLSocket getSSLSocket() {
             HttpsEngine engine = (HttpsEngine) httpEngine;
             return engine != null ? engine.sslSocket : null;
         }
-
         
     }
-
-
     
     private static class HttpsEngine extends HttpEngine {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:36.683 -0500", hash_original_field = "AEF574D1FDB94AB7E47AFE01544C161B", hash_generated_field = "CE8322B162FF12735FB871E7AA8B8BA9")
 
         private SSLSocket sslSocket;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:36.685 -0500", hash_original_field = "329F91C58FD45CA74DF8B91D3C90A286", hash_generated_field = "02DC0A0E916639252FA2CD832BAB1719")
-
 
         private  HttpsURLConnectionImpl enclosing;
 
@@ -660,11 +663,8 @@ private void makeTunnel(HttpURLConnectionImpl policy, HttpConnection connection,
 @Override protected HttpURLConnection getHttpConnectionToCache() {
             return enclosing;
         }
-
         
     }
-
-
     
     private static class ProxyConnectEngine extends HttpEngine {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:36.711 -0500", hash_original_method = "253DCEEC4E85075EF2717AE1BE2B3A60", hash_generated_method = "C762954F287B5BB2D4F6B89DCAF5C932")
@@ -719,11 +719,8 @@ public ProxyConnectEngine(HttpURLConnectionImpl policy, RawHeaders requestHeader
 @Override protected boolean requiresTunnel() {
             return true;
         }
-
         
     }
-
-
     
 }
 

@@ -7,10 +7,6 @@ import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public final class ComponentName implements Parcelable, Cloneable, Comparable<ComponentName> {
     
     /**
@@ -53,6 +49,7 @@ public static ComponentName unflattenFromString(String str) {
      * 
      * @see #readFromParcel(Parcel)
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:07.603 -0500", hash_original_method = "9548AC220202FFEF37F66BD7413BDD60", hash_generated_method = "8DD7C14E921C218432A74389513A08DC")
     
 public static void writeToParcel(ComponentName c, Parcel out) {
@@ -80,7 +77,6 @@ public static ComponentName readFromParcel(Parcel in) {
         String pkg = in.readString();
         return pkg != null ? new ComponentName(pkg, in) : null;
     }
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.681 -0400", hash_original_field = "8E5A903B6B4C2E2ACAA815E1E466E4D8", hash_generated_field = "B1DC8C107C69903EE7EB8EF6D1247DBB")
 

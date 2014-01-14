@@ -14,10 +14,6 @@ import android.graphics.SurfaceTexture;
 import android.media.MediaPlayer;
 import android.net.Uri;
 
-
-
-
-
 public class HTML5VideoView implements MediaPlayer.OnPreparedListener {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:59.027 -0500", hash_original_method = "E7A7C1FACF5557FF1118289C74D9F6F1", hash_generated_method = "983388AEFCE2277E2911A4A303FA7073")
@@ -38,10 +34,8 @@ protected static Map<String, String> generateHeaders(String url,
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:58.957 -0500", hash_original_field = "27C2FDB1BB9B57104A1BF97BF4760D17", hash_generated_field = "F28BD250BE49F871DBD48569862C0B31")
 
-
     protected static final String LOGTAG = "HTML5VideoView";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:58.959 -0500", hash_original_field = "7AB772E4CFA16A63CA44E093873284F9", hash_generated_field = "DA39A01DF5AB155F9CB6B9FF9001FE68")
-
 
     protected static final String COOKIE = "Cookie";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:58.962 -0500", hash_original_field = "29F8BB5FC2696F760DC8DD912D0A0CD5", hash_generated_field = "9881974001B645494AB5FC175DFA6D3E")
@@ -80,7 +74,6 @@ protected static Map<String, String> generateHeaders(String url,
     protected int mCurrentState;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:58.978 -0500", hash_original_field = "7F2DF55E3D818C21E39C6278632E199C", hash_generated_field = "A9417E42DC0EBFA2CF2015D2CB329A68")
 
-
     protected HTML5VideoViewProxy mProxy;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:58.980 -0500", hash_original_field = "DDE2675BE8BA6AA015C4C481A797132E", hash_generated_field = "8EC60FEEC043F814DAF6E2A263524B4F")
 
@@ -106,7 +99,6 @@ protected static Map<String, String> generateHeaders(String url,
 
     protected Map<String, String> mHeaders;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:58.998 -0500", hash_original_field = "4DAFF75E9D6BA4CBDD1B91A72F208961", hash_generated_field = "4B797C0AD5CBAEABB54B83FEF8D06E8A")
-
 
     protected boolean mPauseDuringPreparing;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:59.076 -0500", hash_original_field = "A1A1FD872AB58074E8C4CC540F226B71", hash_generated_field = "3C382F7E45E0380C589CD364462525D1")
@@ -232,6 +224,7 @@ public void init(int videoLayerId, int position, boolean autoStart) {
         mPauseDuringPreparing = false;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:59.029 -0500", hash_original_method = "4A72F313DB07B237CDCFE2148C78F1A8", hash_generated_method = "460AF598562878476A547654494F7EA8")
     
 public void setVideoURI(String uri, HTML5VideoViewProxy proxy) {
@@ -241,12 +234,14 @@ public void setVideoURI(String uri, HTML5VideoViewProxy proxy) {
     }
 
     // Listeners setup FUNCTIONS:
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:59.031 -0500", hash_original_method = "7F2C5845AC97F9E01BF6739081098AFA", hash_generated_method = "727BB9D2244E8FE31568C787C1FA3C7C")
     
 public void setOnCompletionListener(HTML5VideoViewProxy proxy) {
         mPlayer.setOnCompletionListener(proxy);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:59.034 -0500", hash_original_method = "B3DA09063B346725FC2FACD292CDBF3D", hash_generated_method = "5EA88AF68AB4E57576C6BCBFF8CB952D")
     
 public void setOnErrorListener(HTML5VideoViewProxy proxy) {
@@ -260,6 +255,7 @@ public void setOnPreparedListener(HTML5VideoViewProxy proxy) {
         mPlayer.setOnPreparedListener(this);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:59.039 -0500", hash_original_method = "9B3DE5A2AE36BDD54043208A8ECFD89C", hash_generated_method = "D2E9652D6F72F48637DE178162DC35F0")
     
 public void setOnInfoListener(HTML5VideoViewProxy proxy) {
@@ -293,14 +289,12 @@ public void prepareDataAndDisplayMode(HTML5VideoViewProxy proxy) {
         mCurrentState = STATE_NOTPREPARED;
     }
 
-
     // Common code
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:59.044 -0500", hash_original_method = "4F2E24A50F82208E59877C3E2625C348", hash_generated_method = "59CEAAB3DF0B6642DCB3E5A015706848")
     
 public int getVideoLayerId() {
         return mVideoLayerId;
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:59.046 -0500", hash_original_method = "90E098B5ED1DEFDE8C60551334D6CBD4", hash_generated_method = "E94138417590464CF75C0CE756A08C7B")
     
@@ -351,7 +345,6 @@ public void enterFullScreenVideoState(int layerId,
 public boolean isFullScreenMode() {
         return false;
     }
-
     
     private static final class TimeupdateTask extends TimerTask {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:59.049 -0500", hash_original_field = "7F2DF55E3D818C21E39C6278632E199C", hash_generated_field = "701E8A5CEFF22C717E0E1190038ED0C2")
@@ -370,7 +363,6 @@ public TimeupdateTask(HTML5VideoViewProxy proxy) {
         public void run() {
             mProxy.onTimeupdate();
         }
-
         
     }
 
@@ -414,7 +406,6 @@ public void setPlayerBuffering(boolean playerBuffering) {
         mPlayerBuffering = playerBuffering;
         switchProgressView(playerBuffering);
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:59.083 -0500", hash_original_method = "D1649F9781058EFE73B80767CB5DBB7F", hash_generated_method = "14E1292FE683BC52C08C4EDC53BBD809")
     

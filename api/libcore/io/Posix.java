@@ -583,6 +583,7 @@ public int recvfrom(FileDescriptor fd, byte[] bytes, int byteOffset, int byteCou
     	return getTaintLong();
     }
 
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:21.234 -0500", hash_original_method = "CE9DE10B0135BB1F72B6E5CF17271781", hash_generated_method = "CAF8183DFBEE5667FB8F5C40E33923DF")
     
 public int sendto(FileDescriptor fd, ByteBuffer buffer, int flags, InetAddress inetAddress, int port) throws ErrnoException {
@@ -592,6 +593,7 @@ public int sendto(FileDescriptor fd, ByteBuffer buffer, int flags, InetAddress i
             return sendtoBytes(fd, NioUtils.unsafeArray(buffer), NioUtils.unsafeArrayOffset(buffer) + buffer.position(), buffer.remaining(), flags, inetAddress, port);
         }
     }
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:21.236 -0500", hash_original_method = "23CCF7407B7F91C60BE72C6923799443", hash_generated_method = "3A969A36CDD0413839EA04D49316C1AA")
     
 public int sendto(FileDescriptor fd, byte[] bytes, int byteOffset, int byteCount, int flags, InetAddress inetAddress, int port) throws ErrnoException {
@@ -782,6 +784,7 @@ public int sendto(FileDescriptor fd, byte[] bytes, int byteOffset, int byteCount
     	return getTaintInt();
     }
 
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:21.319 -0500", hash_original_method = "FF46C2F8D2234796363F6B9031191E3B", hash_generated_method = "CF195152A8B37B982078AE601F3C84F5")
     
 public int write(FileDescriptor fd, ByteBuffer buffer) throws ErrnoException {
@@ -791,6 +794,7 @@ public int write(FileDescriptor fd, ByteBuffer buffer) throws ErrnoException {
             return writeBytes(fd, NioUtils.unsafeArray(buffer), NioUtils.unsafeArrayOffset(buffer) + buffer.position(), buffer.remaining());
         }
     }
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:21.322 -0500", hash_original_method = "077A8F097DECE8A2C8BBB2583BE2D8BE", hash_generated_method = "51DF263082592B477D78285AEB31FEA0")
     
 public int write(FileDescriptor fd, byte[] bytes, int byteOffset, int byteCount) throws ErrnoException {

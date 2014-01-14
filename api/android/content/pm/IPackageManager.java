@@ -415,7 +415,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:46.997 -0500", hash_original_method = "22D8F598C36D5FE5111EAB14655B4427", hash_generated_method = "9138DF14242181439C7CE2666ACD374C")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:46.997 -0500", hash_original_method = "22D8F598C36D5FE5111EAB14655B4427", hash_generated_method = "9138DF14242181439C7CE2666ACD374C")
             
 public int checkPermission(java.lang.String permName, java.lang.String pkgName) throws android.os.RemoteException
 {
@@ -436,7 +437,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:47.001 -0500", hash_original_method = "699BFFCCBB9F06DC9DB411033B1D731D", hash_generated_method = "B93A008F51C60927006CA8604AAC7156")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:47.001 -0500", hash_original_method = "699BFFCCBB9F06DC9DB411033B1D731D", hash_generated_method = "B93A008F51C60927006CA8604AAC7156")
             
 public int checkUidPermission(java.lang.String permName, int uid) throws android.os.RemoteException
 {
@@ -483,7 +485,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:47.006 -0500", hash_original_method = "CB5F747025027D2E5251365099A5BC49", hash_generated_method = "8AE5EDDCFC66B4C495F8B7F753709C4D")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:47.006 -0500", hash_original_method = "CB5F747025027D2E5251365099A5BC49", hash_generated_method = "8AE5EDDCFC66B4C495F8B7F753709C4D")
             
 public void removePermission(java.lang.String name) throws android.os.RemoteException
 {
@@ -500,7 +503,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:47.009 -0500", hash_original_method = "7E39ECAD55BE3263D31FEFAFF281E16A", hash_generated_method = "B3327B74CA88D4FA61EAFC8E3A4BAE5C")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:47.009 -0500", hash_original_method = "7E39ECAD55BE3263D31FEFAFF281E16A", hash_generated_method = "B3327B74CA88D4FA61EAFC8E3A4BAE5C")
             
 public boolean isProtectedBroadcast(java.lang.String actionName) throws android.os.RemoteException
 {
@@ -520,7 +524,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:47.012 -0500", hash_original_method = "B9D98AF50C5ECF4C984B7AB9A1A72293", hash_generated_method = "6D4BA8CC7E98B1BC123C2F93C29E569E")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:47.012 -0500", hash_original_method = "B9D98AF50C5ECF4C984B7AB9A1A72293", hash_generated_method = "6D4BA8CC7E98B1BC123C2F93C29E569E")
             
 public int checkSignatures(java.lang.String pkg1, java.lang.String pkg2) throws android.os.RemoteException
 {
@@ -541,7 +546,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:47.014 -0500", hash_original_method = "8B921ADB812F83DA38D44E4F3BE81409", hash_generated_method = "E4C591308849C0DE6B9D4706D22B85E6")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:47.014 -0500", hash_original_method = "8B921ADB812F83DA38D44E4F3BE81409", hash_generated_method = "E4C591308849C0DE6B9D4706D22B85E6")
             
 public int checkUidSignatures(int uid1, int uid2) throws android.os.RemoteException
 {
@@ -1038,7 +1044,8 @@ return _result;
      * @param installerPackageName Optional package name of the application that is performing the
      * installation. This identifies which market the package came from.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:47.066 -0500", hash_original_method = "3791919BA141E5BF47122F6508CE71F4", hash_generated_method = "2F883C7842BEBD832131FAB44D3AB0D7")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:47.066 -0500", hash_original_method = "3791919BA141E5BF47122F6508CE71F4", hash_generated_method = "2F883C7842BEBD832131FAB44D3AB0D7")
             
 public void installPackage(android.net.Uri packageURI, android.content.pm.IPackageInstallObserver observer, int flags, java.lang.String installerPackageName) throws android.os.RemoteException
 {
@@ -1064,7 +1071,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:47.069 -0500", hash_original_method = "B024BC53B7D6F08164E226649DDDE6A8", hash_generated_method = "D85F3CE63208A1A83AFCA562781560A1")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:47.069 -0500", hash_original_method = "B024BC53B7D6F08164E226649DDDE6A8", hash_generated_method = "D85F3CE63208A1A83AFCA562781560A1")
             
 public void finishPackageInstall(int token) throws android.os.RemoteException
 {
@@ -1081,7 +1089,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:47.076 -0500", hash_original_method = "DF272E657296DABF9C6466BCC6FAFE99", hash_generated_method = "D6D5971C75B082A64A1F885973CD9DEA")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:47.076 -0500", hash_original_method = "DF272E657296DABF9C6466BCC6FAFE99", hash_generated_method = "D6D5971C75B082A64A1F885973CD9DEA")
             
 public void setInstallerPackageName(java.lang.String targetPackage, java.lang.String installerPackageName) throws android.os.RemoteException
 {
@@ -1106,7 +1115,8 @@ _data.recycle();
      * @param observer a callback to use to notify when the package deletion in finished.
      * @param flags - possible values: {@link #DONT_DELETE_DATA}
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:47.079 -0500", hash_original_method = "179E63AB494F6DD878955E6D6480CBBF", hash_generated_method = "8FA1F94686AC098826FC979839430C38")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:47.079 -0500", hash_original_method = "179E63AB494F6DD878955E6D6480CBBF", hash_generated_method = "8FA1F94686AC098826FC979839430C38")
             
 public void deletePackage(java.lang.String packageName, android.content.pm.IPackageDeleteObserver observer, int flags) throws android.os.RemoteException
 {
@@ -1145,7 +1155,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:47.084 -0500", hash_original_method = "58C5B8A3C81B1560A49DD325FC039BC4", hash_generated_method = "47C052EBA86995F34E2CD60823784893")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:47.084 -0500", hash_original_method = "58C5B8A3C81B1560A49DD325FC039BC4", hash_generated_method = "47C052EBA86995F34E2CD60823784893")
             
 public void addPackageToPreferred(java.lang.String packageName) throws android.os.RemoteException
 {
@@ -1162,7 +1173,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:47.087 -0500", hash_original_method = "185D036307E1EF7B6A484D26E08A50EA", hash_generated_method = "72BD6F3146F89C7A5E4AB9B393D83F25")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:47.087 -0500", hash_original_method = "185D036307E1EF7B6A484D26E08A50EA", hash_generated_method = "72BD6F3146F89C7A5E4AB9B393D83F25")
             
 public void removePackageFromPreferred(java.lang.String packageName) throws android.os.RemoteException
 {
@@ -1231,7 +1243,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:47.095 -0500", hash_original_method = "73C7AE992CAD30A79CF44D849B6780DE", hash_generated_method = "156CA7F2CD02CE0271660BBAF12B885E")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:47.095 -0500", hash_original_method = "73C7AE992CAD30A79CF44D849B6780DE", hash_generated_method = "156CA7F2CD02CE0271660BBAF12B885E")
             
 public void replacePreferredActivity(android.content.IntentFilter filter, int match, android.content.ComponentName[] set, android.content.ComponentName activity) throws android.os.RemoteException
 {
@@ -1263,7 +1276,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:47.098 -0500", hash_original_method = "1F23EB00448BD7E4C49DFC507B4C6380", hash_generated_method = "FE9EDA64082A94A00E84AC6523D90453")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:47.098 -0500", hash_original_method = "1F23EB00448BD7E4C49DFC507B4C6380", hash_generated_method = "FE9EDA64082A94A00E84AC6523D90453")
             
 public void clearPackagePreferredActivities(java.lang.String packageName) throws android.os.RemoteException
 {
@@ -1446,7 +1460,8 @@ _data.recycle();
      * @param observer call back used to notify when
      * the operation is completed
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:47.117 -0500", hash_original_method = "2538AD6289648D00C03567EED9B122B6", hash_generated_method = "54E0509AB8BF649D6C0D2BCB20AB7F84")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:47.117 -0500", hash_original_method = "2538AD6289648D00C03567EED9B122B6", hash_generated_method = "54E0509AB8BF649D6C0D2BCB20AB7F84")
             
 public void freeStorageAndNotify(long freeStorageSize, android.content.pm.IPackageDataObserver observer) throws android.os.RemoteException
 {
@@ -1485,7 +1500,8 @@ _data.recycle();
      * notify when the operation is completed.May be null
      * to indicate that no call back is desired.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:47.121 -0500", hash_original_method = "86B357A7E242A364B856CDEBC6B8EB52", hash_generated_method = "A16BBBEED6F06ADD083E241C8D641B27")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:47.121 -0500", hash_original_method = "86B357A7E242A364B856CDEBC6B8EB52", hash_generated_method = "A16BBBEED6F06ADD083E241C8D641B27")
             
 public void freeStorage(long freeStorageSize, android.content.IntentSender pi) throws android.os.RemoteException
 {
@@ -1515,7 +1531,8 @@ _data.recycle();
      * files need to be deleted
      * @param observer a callback used to notify when the deletion is finished.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:47.123 -0500", hash_original_method = "5F6BC2B946ABEC71B6A1E6E6D4DDDCCD", hash_generated_method = "E6550E6814A9D22A6F8BA5EABC18B5B3")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:47.123 -0500", hash_original_method = "5F6BC2B946ABEC71B6A1E6E6D4DDDCCD", hash_generated_method = "E6550E6814A9D22A6F8BA5EABC18B5B3")
             
 public void deleteApplicationCacheFiles(java.lang.String packageName, android.content.pm.IPackageDataObserver observer) throws android.os.RemoteException
 {
@@ -1628,7 +1645,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:47.137 -0500", hash_original_method = "6F22D0C0307D8B9CD5F8C0D8C4E3243C", hash_generated_method = "BC27C6553E5ADC9EBC04DE51AA135CAA")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:47.137 -0500", hash_original_method = "6F22D0C0307D8B9CD5F8C0D8C4E3243C", hash_generated_method = "BC27C6553E5ADC9EBC04DE51AA135CAA")
             
 public boolean hasSystemFeature(java.lang.String name) throws android.os.RemoteException
 {
@@ -1743,7 +1761,8 @@ _data.recycle();
      * package, if it already hasn't done mode.  Only does this if running
      * in the special development "no pre-dexopt" mode.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:47.153 -0500", hash_original_method = "986393659E4FB549F9A85A407FB95645", hash_generated_method = "270E415B63094C6D1E91E97CF9B60528")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:47.153 -0500", hash_original_method = "986393659E4FB549F9A85A407FB95645", hash_generated_method = "270E415B63094C6D1E91E97CF9B60528")
             
 public boolean performDexOpt(java.lang.String packageName) throws android.os.RemoteException
 {
@@ -1807,7 +1826,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:47.161 -0500", hash_original_method = "2B886162EBDAC490C449780FD8FAEE54", hash_generated_method = "D8F64AF12C2DC6FD044BDBEFC0D6CB85")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:47.161 -0500", hash_original_method = "2B886162EBDAC490C449780FD8FAEE54", hash_generated_method = "D8F64AF12C2DC6FD044BDBEFC0D6CB85")
             
 public void movePackage(java.lang.String packageName, android.content.pm.IPackageMoveObserver observer, int flags) throws android.os.RemoteException
 {
@@ -1852,7 +1872,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:47.167 -0500", hash_original_method = "24E258A2289FF38F55D2F72ABABB2118", hash_generated_method = "10601A9FF44B3C8B3B67F67F31FD7C0E")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:47.167 -0500", hash_original_method = "24E258A2289FF38F55D2F72ABABB2118", hash_generated_method = "10601A9FF44B3C8B3B67F67F31FD7C0E")
             
 public boolean setInstallLocation(int loc) throws android.os.RemoteException
 {
@@ -1977,7 +1998,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:47.181 -0500", hash_original_method = "9F4C08E7817C97D4BB8FC64DC3989C71", hash_generated_method = "42689150924A846EB1DA3BCB132248D2")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:47.181 -0500", hash_original_method = "9F4C08E7817C97D4BB8FC64DC3989C71", hash_generated_method = "42689150924A846EB1DA3BCB132248D2")
             
 public void verifyPendingInstall(int id, int verificationCode) throws android.os.RemoteException
 {
@@ -2286,7 +2308,8 @@ public android.os.IBinder asBinder()
 {
 return this;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:46.943 -0500", hash_original_method = "982ED5337DCDF0DAF3049B946D0D0963", hash_generated_method = "267F249CE419A1157A43E6EB238910C3")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:46.943 -0500", hash_original_method = "982ED5337DCDF0DAF3049B946D0D0963", hash_generated_method = "267F249CE419A1157A43E6EB238910C3")
         
 @Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
 {

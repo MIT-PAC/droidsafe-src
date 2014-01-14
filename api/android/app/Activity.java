@@ -387,7 +387,8 @@ public Window getWindow() {
 		*/
 	}
     
-	protected void onCreate(Bundle savedInstanceState){
+	@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    protected void onCreate(Bundle savedInstanceState){
 		mAllLoaderManagers = mLastNonConfigurationInstances.loaders;
 		Parcelable p = savedInstanceState.getParcelable(FRAGMENTS_TAG);
 		mFragments.restoreAllState(p, mLastNonConfigurationInstances.fragments);
@@ -427,6 +428,7 @@ final void performRestoreInstanceState(Bundle savedInstanceState) {
         restoreManagedDialogs(savedInstanceState);
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     protected void onRestoreInstanceState(Bundle savedInstanceState){
 		Bundle windowState = savedInstanceState.getBundle(WINDOW_HIERARCHY_TAG); //DSFIXME:  Model method in bundle
 		mWindow.restoreHierarchyState(windowState);
@@ -974,6 +976,7 @@ public void onAttachFragment(Fragment fragment) {
      * this is a no-op.
      * @hide
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.726 -0500", hash_original_method = "14D9F664592BF6CD2790F336C855BE58", hash_generated_method = "D3F3B9EEC979AA633E423ED004E2194B")
     
 @Deprecated
@@ -1032,6 +1035,7 @@ public ActionBar getActionBar() {
      * @see #setContentView(android.view.View)
      * @see #setContentView(android.view.View, android.view.ViewGroup.LayoutParams)
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.747 -0500", hash_original_method = "FC4CFA409E0DBC3CD2C86D908686341E", hash_generated_method = "8A18F956B194A0C371BE43C50E45248B")
     
 public void setContentView(int layoutResID) {
@@ -1054,6 +1058,7 @@ public void setContentView(int layoutResID) {
      * @see #setContentView(int)
      * @see #setContentView(android.view.View, android.view.ViewGroup.LayoutParams)
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.752 -0500", hash_original_method = "6143DA20A0E63D3DD26D6D6CC3A0350F", hash_generated_method = "68042BCA2A6984D357903A5C198D5CDB")
     
 public void setContentView(View view) {
@@ -1097,6 +1102,7 @@ public void addContentView(View view, ViewGroup.LayoutParams params) {
      * Sets whether this activity is finished when touched outside its window's
      * bounds.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.768 -0500", hash_original_method = "729048B37138D48F6A74BC6AFCECACEE", hash_generated_method = "A41EB2401D4EFCDB568228C47AA5D8B9")
     
 public void setFinishOnTouchOutside(boolean finish) {
@@ -1147,6 +1153,7 @@ public void setFinishOnTouchOutside(boolean finish) {
         onGenericMotionEvent(motionEv);
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public boolean onKeyDown(int keyCode, KeyEvent event){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -1780,6 +1787,7 @@ public void unregisterForContextMenu(View view) {
      * 
      * @param view The view to show the context menu for.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.006 -0500", hash_original_method = "D1451DBD5DFD14FAE397660897192E3C", hash_generated_method = "320EBE9DAC491AFFCE2D5802170E7386")
     
 public void openContextMenu(View view) {
@@ -1929,6 +1937,7 @@ public void closeContextMenu() {
         showDialog(id, null);
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @Deprecated public final boolean showDialog(int id, Bundle args){
 		mManagedDialogs = new SparseArray<ManagedDialog>();
 		ManagedDialog md = mManagedDialogs.get(id);
@@ -2023,6 +2032,7 @@ public void closeContextMenu() {
 		*/
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void startSearch(String initialQuery, boolean selectInitialQuery, 
             Bundle appSearchData, boolean globalSearch){
     	addTaint(initialQuery.getTaint());
@@ -2094,6 +2104,7 @@ public final boolean requestWindowFeature(int featureId) {
      * Convenience for calling
      * {@link android.view.Window#setFeatureDrawableResource}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.097 -0500", hash_original_method = "E7AFD534CB1DF8060614ED36111B2407", hash_generated_method = "77462D4BD7A21F99BAD57C59CACE9BF5")
     
 public final void setFeatureDrawableResource(int featureId, int resId) {
@@ -2114,6 +2125,7 @@ public final void setFeatureDrawableUri(int featureId, Uri uri) {
      * Convenience for calling
      * {@link android.view.Window#setFeatureDrawable(int, Drawable)}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.108 -0500", hash_original_method = "D3FA0A5870730A6F3C959B16FC004BCD", hash_generated_method = "845589EF459B40468B119030F6839003")
     
 public final void setFeatureDrawable(int featureId, Drawable drawable) {
@@ -2124,6 +2136,7 @@ public final void setFeatureDrawable(int featureId, Drawable drawable) {
      * Convenience for calling
      * {@link android.view.Window#setFeatureDrawableAlpha}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.113 -0500", hash_original_method = "4D2A81FF8C2C83F47460DEB3120C04CB", hash_generated_method = "42B6BECB117F777AFB6F11B60A38D749")
     
 public final void setFeatureDrawableAlpha(int featureId, int alpha) {
@@ -2183,7 +2196,8 @@ public LayoutInflater getLayoutInflater() {
 		//Return nothing
 	}
     
-	public void startActivityForResult(Intent intent, int requestCode){
+	@DSSink({DSSinkKind.START_ACTIVITY})
+    public void startActivityForResult(Intent intent, int requestCode){
 		/*
         The modeling required here will create the call to onActivityResult that 
         could be called as an effect of this call.  onActivityResult will have
@@ -2219,6 +2233,7 @@ public LayoutInflater getLayoutInflater() {
 		//Return nothing
 	}
     
+    @DSSink({DSSinkKind.START_ACTIVITY})
     public void startIntentSenderForResult(IntentSender intent, int requestCode,
             Intent fillInIntent, int flagsMask, int flagsValues, int extraFlags){
 		startIntentSenderForResultInner(intent, requestCode, fillInIntent,
@@ -2247,6 +2262,7 @@ public LayoutInflater getLayoutInflater() {
 		//Return nothing
 	}
     
+    @DSSink({DSSinkKind.START_ACTIVITY})
     @Override public void startActivity(Intent intent){
 		onActivityResult(-1, -1, intent);
 		// Original method
@@ -2276,6 +2292,7 @@ public LayoutInflater getLayoutInflater() {
      *
      * @see #startActivityForResult
      */
+    @DSSink({DSSinkKind.START_ACTIVITY})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.156 -0500", hash_original_method = "E2A55AFC4750254BD88786F18353EE8B", hash_generated_method = "0DAB0CC521B4AF9EA1AD5FA3E319D475")
     
 @Override
@@ -2284,6 +2301,7 @@ public LayoutInflater getLayoutInflater() {
                 mToken, this, intents);
     }
     
+    @DSSink({DSSinkKind.START_ACTIVITY})
     public void startIntentSender(IntentSender intent,
             Intent fillInIntent, int flagsMask, int flagsValues, int extraFlags){
 		startIntentSenderForResult(intent, -1, fillInIntent, flagsMask,
@@ -2298,12 +2316,14 @@ public LayoutInflater getLayoutInflater() {
 		//Return nothing
 	}
     
+    @DSSink({DSSinkKind.START_ACTIVITY})
     public boolean startActivityIfNeeded(Intent intent, int requestCode){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		return false;
 	}
     
+    @DSSink({DSSinkKind.START_ACTIVITY})
     public boolean startNextMatchingActivity(Intent intent){
 		try {
             intent.setAllowFds(false);
@@ -2330,6 +2350,7 @@ public LayoutInflater getLayoutInflater() {
 		return false;
 	}
     
+    @DSSink({DSSinkKind.START_ACTIVITY})
     public void startActivityFromChild(Activity child, Intent intent, 
             int requestCode){
 		Instrumentation.ActivityResult ar =
@@ -2356,6 +2377,7 @@ public LayoutInflater getLayoutInflater() {
 		//Return nothing
 	}
     
+    @DSSink({DSSinkKind.START_ACTIVITY})
     public void startActivityFromFragment(Fragment fragment, Intent intent, 
             int requestCode){
 	    /*
@@ -2384,6 +2406,7 @@ public LayoutInflater getLayoutInflater() {
 		//Return nothing
 	}
     
+    @DSSink({DSSinkKind.START_ACTIVITY})
     public void startIntentSenderFromChild(Activity child, IntentSender intent,
             int requestCode, Intent fillInIntent, int flagsMask, int flagsValues,
             int extraFlags){
@@ -2725,6 +2748,7 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		*/
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setRequestedOrientation(int requestedOrientation){
 		try {
             ActivityManagerNative.getDefault().setRequestedOrientation(
@@ -2952,6 +2976,7 @@ public SharedPreferences getPreferences(int mode) {
      * is an embedded activity, the parent can do whatever it wants
      * with it.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.328 -0500", hash_original_method = "A39F8277E51A7F6BD4A471D6255FEBC5", hash_generated_method = "7A9BBE5713B6FFC0915F0D939CBD832F")
     
 public void setTitle(int titleId) {
@@ -3013,6 +3038,7 @@ public final CharSequence getTitle() {
 protected void onChildTitleChanged(Activity childActivity, CharSequence title) {
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public final void setProgressBarVisibility(boolean visible){
 		getWindow().setFeatureInt(Window.FEATURE_PROGRESS, Window.PROGRESS_VISIBILITY_ON);
 		// Original method
@@ -3025,6 +3051,7 @@ protected void onChildTitleChanged(Activity childActivity, CharSequence title) {
 		//Return nothing
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public final void setProgressBarIndeterminateVisibility(boolean visible){
 		getWindow().setFeatureInt(Window.FEATURE_INDETERMINATE_PROGRESS, Window.PROGRESS_VISIBILITY_ON);
 		// Original method
@@ -3037,6 +3064,7 @@ protected void onChildTitleChanged(Activity childActivity, CharSequence title) {
 		//Return nothing
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public final void setProgressBarIndeterminate(boolean indeterminate){
 		getWindow().setFeatureInt(Window.FEATURE_PROGRESS, Window.PROGRESS_INDETERMINATE_ON);
 		// Original method
@@ -3049,6 +3077,7 @@ protected void onChildTitleChanged(Activity childActivity, CharSequence title) {
 		//Return nothing
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public final void setProgress(int progress){
 		getWindow().setFeatureInt(Window.FEATURE_PROGRESS, Window.PROGRESS_START);
 		// Original method
@@ -3060,6 +3089,7 @@ protected void onChildTitleChanged(Activity childActivity, CharSequence title) {
 		//Return nothing
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public final void setSecondaryProgress(int secondaryProgress){
 		getWindow().setFeatureInt(Window.FEATURE_PROGRESS, Window.PROGRESS_SECONDARY_START);
 		// Original method
@@ -3072,6 +3102,7 @@ protected void onChildTitleChanged(Activity childActivity, CharSequence title) {
 		//Return nothing
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public final void setVolumeControlStream(int streamType){
 		getWindow().setVolumeControlStream(0);
 		// Original method
@@ -3129,6 +3160,7 @@ public final int getVolumeControlStream() {
 		return new View(context);
 	}
     
+    @DSSink({DSSinkKind.FILE})
     public void dump(String prefix, FileDescriptor fd, PrintWriter writer, String[] args){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -3171,6 +3203,7 @@ public boolean isImmersive() {
      * @see android.content.pm.ActivityInfo#FLAG_IMMERSIVE
      * @hide
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.419 -0500", hash_original_method = "9D8EB8E29C9BCD315046F1934B1FF39B", hash_generated_method = "AC115FCF99656DD6FC8752FD11A99796")
     
 public void setImmersive(boolean i) {

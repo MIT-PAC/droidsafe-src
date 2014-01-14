@@ -17,17 +17,11 @@ import android.view.ViewGroup;
 
 import com.android.internal.R;
 
-
-
-
-
-
 public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:31.316 -0500", hash_original_field = "F3411DF47899C6681AB924958C72D742", hash_generated_field = "F3411DF47899C6681AB924958C72D742")
 
     SpinnerAdapter mAdapter;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:31.318 -0500", hash_original_field = "D04E3D07D063C4D19518074C3829A73C", hash_generated_field = "D04E3D07D063C4D19518074C3829A73C")
-
 
     int mHeightMeasureSpec;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:31.320 -0500", hash_original_field = "955DE0D4DCC8871A233CEA8D2F0A0C8A", hash_generated_field = "955DE0D4DCC8871A233CEA8D2F0A0C8A")
@@ -37,7 +31,6 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
 
     boolean mBlockLayoutRequests;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:31.323 -0500", hash_original_field = "753C8FC0C4D631C54FF77F2B10210084", hash_generated_field = "753C8FC0C4D631C54FF77F2B10210084")
-
 
     int mSelectionLeftPadding = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:31.326 -0500", hash_original_field = "50BDF542563848097B98D0F9CA864924", hash_generated_field = "50BDF542563848097B98D0F9CA864924")
@@ -53,7 +46,6 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
 
     final Rect mSpinnerPadding = new Rect();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:31.334 -0500", hash_original_field = "707525CCDB9513E977E0C2123AF49590", hash_generated_field = "9569056224CF4BB7FAE062DA5103E35A")
-
 
     final RecycleBin mRecycler = new RecycleBin();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:31.336 -0500", hash_original_field = "CA23E511E6F9771CC47A35D664CF38CE", hash_generated_field = "F16E8B0F167DE3008550015271235F93")
@@ -293,6 +285,7 @@ void recycleAllViews() {
     /**
      * Jump directly to a specific item in the adapter data.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:31.367 -0500", hash_original_method = "D2708A7FDB907C7B6958E15DD672DA8E", hash_generated_method = "C3A5D610F87F4D3CECAE59DEBB9EE18C")
     
 public void setSelection(int position, boolean animate) {
@@ -302,6 +295,7 @@ public void setSelection(int position, boolean animate) {
         setSelectionInt(position, shouldAnimate);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:31.369 -0500", hash_original_method = "7E33360CBDBF59A4E473BBC01C4A9D09", hash_generated_method = "5A7C3B76C3326CF67657E51BD1F90B58")
     
 @Override
@@ -310,7 +304,6 @@ public void setSelection(int position, boolean animate) {
         requestLayout();
         invalidate();
     }
-    
 
     /**
      * Makes the item at the supplied position selected.
@@ -319,6 +312,7 @@ public void setSelection(int position, boolean animate) {
      * @param animate Should the transition be animated
      * 
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:31.372 -0500", hash_original_method = "63246E2C9E0D90A96046BA94228CF775", hash_generated_method = "63246E2C9E0D90A96046BA94228CF775")
     
 void setSelectionInt(int position, boolean animate) {
@@ -437,10 +431,8 @@ public int pointToPosition(int x, int y) {
             requestLayout();
         }
     }
-
     
     static class SavedState extends BaseSavedState {
-
         
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:57.869 -0400", hash_original_field = "7DF6FB2587CB67E9544A859A8F6E8FF3", hash_generated_field = "263FCDD65C2156B1D1E1B4D9AE8D7FFA")
 
@@ -485,6 +477,7 @@ private SavedState(Parcel in) {
             position = in.readInt();
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:31.397 -0500", hash_original_method = "0007C2F01F0ACF691918256360E82965", hash_generated_method = "C9F57015B00A965BDAEC37BE602A9B2C")
         
 @Override
@@ -514,8 +507,6 @@ private SavedState(Parcel in) {
             }
         
     }
-
-
     
     class RecycleBin {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:31.418 -0500", hash_original_field = "EEBE882C7B23621B1CEAAEFC3C766AE2", hash_generated_field = "344735C1BC7661738F3886E8FB539FBF")
@@ -528,6 +519,7 @@ private SavedState(Parcel in) {
             //Synthesized constructor
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:31.421 -0500", hash_original_method = "12E9E54F63615166D97804FCD5F19EB6", hash_generated_method = "592737E4726413560A9B7CE9C2327AB3")
         
 public void put(int position, View v) {
@@ -561,11 +553,8 @@ void clear() {
             }
             scrapHeap.clear();
         }
-
         
     }
-
-
     
 }
 

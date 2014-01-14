@@ -482,6 +482,7 @@ private int removeOrRetain(Collection<?> collection, boolean retain, int from, i
         return 0;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:18.020 -0500", hash_original_method = "DD4407442CC828B95DFD10F580DA2DDA", hash_generated_method = "B675E951E2B618950D3AB8DB9CB4F22C")
     
 public synchronized E set(int index, E e) {
@@ -689,6 +690,7 @@ public CowSubList(Object[] expectedElements, int from, int to) {
             }
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:18.085 -0500", hash_original_method = "E52798445FC11575DB685349896EB8F6", hash_generated_method = "AC3D2814FB6C7232080B438F73BAB72F")
         
 @Override public E set(int index, E object) {
@@ -871,6 +873,7 @@ public void remove() {
             throw new UnsupportedOperationException();
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:18.156 -0500", hash_original_method = "1001E1C2B2FD09C7DE97126421AC0A91", hash_generated_method = "0DB69E3C790FE7C9C5203D0164F78DAC")
         
 public void set(E object) {

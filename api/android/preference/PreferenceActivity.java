@@ -568,6 +568,7 @@ public void loadHeadersFromResource(int resid, List<Header> target) {
     /**
      * Set a footer that should be shown at the bottom of the header list.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.604 -0500", hash_original_method = "0C226BA6EB709C0B8BDD6989275021F7", hash_generated_method = "9B928AE24A2BDA9F14C8520E1111062C")
     
 public void setListFooter(View view) {
@@ -724,6 +725,7 @@ public void onHeaderClick(Header header, int position) {
      * @return Returns an Intent that can be launched to display the given
      * fragment.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.627 -0500", hash_original_method = "B5DA23DDC47E44587D99F550083B256B", hash_generated_method = "D694B38CE711606CC8563D5769288619")
     
 public Intent onBuildStartFragmentIntent(String fragmentName, Bundle args,
@@ -742,6 +744,7 @@ public Intent onBuildStartFragmentIntent(String fragmentName, Bundle args,
      * Like {@link #startWithFragment(String, Bundle, Fragment, int, int, int)}
      * but uses a 0 titleRes.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.629 -0500", hash_original_method = "7A5ABD7084FE456D2AC9E7363F23F617", hash_generated_method = "F44F953B843CDA61CFFB0C970B2E4A7C")
     
 public void startWithFragment(String fragmentName, Bundle args,
@@ -766,6 +769,7 @@ public void startWithFragment(String fragmentName, Bundle args,
      * @param shortTitleRes Resource ID of string to display for the short title of
      * this set of preferences.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.631 -0500", hash_original_method = "A8702F14B58AAD20058746FC81F4589D", hash_generated_method = "FA9F84C4830C5AB60D417F152BB76B01")
     
 public void startWithFragment(String fragmentName, Bundle args,
@@ -1154,6 +1158,7 @@ public CharSequence getBreadCrumbShortTitle(Resources res) {
             return 0;
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.548 -0500", hash_original_method = "BB0DBC9520A7E98C1F6BA8AD4772118F", hash_generated_method = "3FCE770CA3A52A269B81414300D49F64")
         
 @Override
@@ -1241,6 +1246,7 @@ public void startPreferenceFragment(Fragment fragment, boolean push) {
      * @param resultRequestCode If resultTo is non-null, this is the caller's
      * request code to be received with the resut.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.655 -0500", hash_original_method = "E25F9CE570E0BFA743AE6FCAFFB6168D", hash_generated_method = "B45569DC11A75BEC758B271655EA9D3C")
     
 public void startPreferencePanel(String fragmentClass, Bundle args, int titleRes,
@@ -1292,6 +1298,7 @@ public void finishPreferencePanel(Fragment caller, int resultCode, Intent result
         }
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.660 -0500", hash_original_method = "88B12B83AF6C82165835FAA52B723B1A", hash_generated_method = "CE6C747186D68711084C57C35A99D10B")
     
 @Override
@@ -1361,6 +1368,7 @@ private void requirePreferenceManager() {
      * @deprecated This function is not relevant for a modern fragment-based
      * PreferenceActivity.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.671 -0500", hash_original_method = "20BEF3079E316F6730A81E488DFA70F2", hash_generated_method = "CB73D3B03400881BC7A95FC5A764F2C8")
     
 @Deprecated

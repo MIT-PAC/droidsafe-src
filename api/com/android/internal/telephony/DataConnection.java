@@ -22,11 +22,6 @@ import com.android.internal.util.Protocol;
 import com.android.internal.util.State;
 import com.android.internal.util.StateMachine;
 
-
-
-
-
-
 public abstract class DataConnection extends StateMachine {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:48.285 -0500", hash_original_field = "95D5733A0C83DB3D047D109C028C9F02", hash_generated_field = "5F5E7D64B04175B8FA820B2440F700FC")
 
@@ -35,7 +30,6 @@ public abstract class DataConnection extends StateMachine {
 
     protected static final boolean VDBG = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:48.290 -0500", hash_original_field = "B31269F5D1D0B71BAECFA09CAE8A253A", hash_generated_field = "4B6AAD30DE4CA5A855B0088556B9ED5D")
-
 
     protected static Object mCountLock = new Object();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:48.292 -0500", hash_original_field = "228E80965D19F3262507FB2E30484C98", hash_generated_field = "4928C87B5EACFDF4C672365969709FF8")
@@ -72,7 +66,6 @@ public abstract class DataConnection extends StateMachine {
 
     protected AsyncChannel mAc;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:48.297 -0500", hash_original_field = "CF1215A849C0BBCB6FD9A483E2098811", hash_generated_field = "C4FE21B00EEE6A458E193D584E7E2C76")
-
 
     private List<ApnContext> mApnList = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:48.298 -0500", hash_original_field = "43EA75A8E40D96F1FE9644BAABB59B27", hash_generated_field = "43EA75A8E40D96F1FE9644BAABB59B27")
@@ -119,7 +112,6 @@ public abstract class DataConnection extends StateMachine {
     Object userData;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:48.439 -0500", hash_original_field = "9F66E723E60E4F10157FDA7C23C67293", hash_generated_field = "3325985E0136EBA5816EE6CBB3154574")
 
-
     /*
      * The id is owned by DataConnectionTracker.
      */
@@ -146,7 +138,6 @@ public abstract class DataConnection extends StateMachine {
 
     private DcDisconnectionErrorCreatingConnection mDisconnectingErrorCreatingConnection =
                 new DcDisconnectionErrorCreatingConnection();
-
 
    //***** Constructor
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:48.426 -0500", hash_original_method = "C1A86AB25296EBC0B07A31287A18BD02", hash_generated_method = "6664E04967608CC62C345936490F6D0C")
@@ -319,11 +310,9 @@ public int getRetryTimer() {
 public void increaseRetryCount() {
         mRetryMgr.increaseRetryCount();
     }
-
     
     protected static class ConnectionParams {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:48.304 -0500", hash_original_field = "0870A130AAC33D99955FFBF59B769627", hash_generated_field = "FE8BF0CD5CB8CBF698330270CCCC9D95")
-
 
         public int tag;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:48.307 -0500", hash_original_field = "C701720B28D007119EDCB720F27B25FC", hash_generated_field = "38CFCC1E5D60F78E53168DDFD409D179")
@@ -338,11 +327,8 @@ public ConnectionParams(ApnSetting apn, Message onCompletedMsg) {
             this.apn = apn;
             this.onCompletedMsg = onCompletedMsg;
         }
-
         
     }
-
-
     
     protected static class DisconnectParams {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:48.317 -0500", hash_original_field = "0870A130AAC33D99955FFBF59B769627", hash_generated_field = "FE8BF0CD5CB8CBF698330270CCCC9D95")
@@ -360,11 +346,8 @@ public DisconnectParams(String reason, Message onCompletedMsg) {
             this.reason = reason;
             this.onCompletedMsg = onCompletedMsg;
         }
-
         
     }
-
-
     
     public enum FailCause {
         NONE(0),
@@ -394,7 +377,6 @@ public DisconnectParams(String reason, Message onCompletedMsg) {
         RADIO_NOT_AVAILABLE(0x10001),
         UNACCEPTABLE_NETWORK_PARAMETER(0x10002);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:48.327 -0500", hash_original_field = "515EB2FB135FC88F0BEB6A706140CD45", hash_generated_field = "8D738EFAB3CB336B57C8A3079211331F")
-
 
         private  int mErrorCode;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:48.330 -0500", hash_original_field = "03497A5221DDE33787A3979B57024752", hash_generated_field = "7046F801D49CDE8A4FCCEAE917E74D01")
@@ -452,7 +434,6 @@ public static FailCause fromInt(int errorCode) {
             return fc;
         }
     }
-
     
     public static class CallSetupException extends Exception {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:48.349 -0500", hash_original_field = "9F76C170D5B7C8C5B8890E015A9F6F8C", hash_generated_field = "032A6243CE5F8297EF5A6124BAD634D5")
@@ -470,11 +451,8 @@ CallSetupException (int retryOverride) {
 public int getRetryOverride() {
             return mRetryOverride;
         }
-
         
     }
-
-
     
     public static class UpdateLinkPropertyResult {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:48.479 -0500", hash_original_field = "4D055126C293025265F46D327224A74A", hash_generated_field = "C2A2765E7F96035E410CAF8D3027DAAC")
@@ -492,11 +470,8 @@ public UpdateLinkPropertyResult(LinkProperties curLp) {
             oldLp = curLp;
             newLp = curLp;
         }
-
         
     }
-
-
     
     private class DcDefaultState extends State {
         
@@ -517,6 +492,7 @@ public UpdateLinkPropertyResult(LinkProperties curLp) {
         public void exit() {
             phone.mCM.unregisterForRilConnected(getHandler());
         }
+        @DSSink({DSSinkKind.SYSTEM_SETTINGS})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:48.503 -0500", hash_original_method = "38E04FBDF2EDCBA5E9341920E990239B", hash_generated_method = "024C34D48D405A20D921BB347C441EC0")
         
 @Override
@@ -678,11 +654,8 @@ public UpdateLinkPropertyResult(LinkProperties curLp) {
 
             return HANDLED;
         }
-
         
     }
-
-
     
     private class DcInactiveState extends State {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:48.514 -0500", hash_original_field = "9331D1B74412EEA32E7D978E870794E4", hash_generated_field = "88BEDA692751646D94B15E7361FCC4BA")
@@ -752,6 +725,7 @@ public void setEnterNotificationParams(DisconnectParams dp) {
             mDisconnectParams = null;
         }
 
+        @DSSink({DSSinkKind.SYSTEM_SETTINGS})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:48.533 -0500", hash_original_method = "F7BD47A9DC4B0FE6830EC189D0B30877", hash_generated_method = "7104AADBEBBFA08DC060F2BE7B466FC1")
         
 @Override
@@ -796,11 +770,8 @@ public void setEnterNotificationParams(DisconnectParams dp) {
             }
             return retVal;
         }
-
         
     }
-
-
     
     private class DcActivatingState extends State {
         
@@ -809,6 +780,7 @@ public void setEnterNotificationParams(DisconnectParams dp) {
         {
             //Synthesized constructor
         }
+        @DSSink({DSSinkKind.SYSTEM_SETTINGS})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:48.542 -0500", hash_original_method = "FDE326A498C74E1E809F141FF2FEACCA", hash_generated_method = "CCE75B88E351D297485030F1DE4820E4")
         
 @Override
@@ -906,11 +878,8 @@ public void setEnterNotificationParams(DisconnectParams dp) {
             }
             return retVal;
         }
-
         
     }
-
-
     
     private class DcActiveState extends State {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:48.550 -0500", hash_original_field = "9331D1B74412EEA32E7D978E870794E4", hash_generated_field = "88BEDA692751646D94B15E7361FCC4BA")
@@ -959,6 +928,7 @@ public void setEnterNotificationParams(ConnectionParams cp, FailCause cause) {
             mFailCause = null;
         }
 
+        @DSSink({DSSinkKind.SYSTEM_SETTINGS})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:48.564 -0500", hash_original_method = "E272CADF23159A9F3D514AE20DA7ACA2", hash_generated_method = "45DE66645C6A9E15E4697E27BA2B200B")
         
 @Override
@@ -1001,11 +971,8 @@ public void setEnterNotificationParams(ConnectionParams cp, FailCause cause) {
             }
             return retVal;
         }
-
         
     }
-
-
     
     private class DcDisconnectingState extends State {
         
@@ -1014,6 +981,7 @@ public void setEnterNotificationParams(ConnectionParams cp, FailCause cause) {
         {
             //Synthesized constructor
         }
+        @DSSink({DSSinkKind.SYSTEM_SETTINGS})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:48.573 -0500", hash_original_method = "DD3249EFBD400B69680BE43C46063370", hash_generated_method = "CA76C19EE6D4A5F25104AD5C7D5CBC7D")
         
 @Override
@@ -1054,11 +1022,8 @@ public void setEnterNotificationParams(ConnectionParams cp, FailCause cause) {
             }
             return retVal;
         }
-
         
     }
-
-
     
     private class DcDisconnectionErrorCreatingConnection extends State {
         
@@ -1067,6 +1032,7 @@ public void setEnterNotificationParams(ConnectionParams cp, FailCause cause) {
         {
             //Synthesized constructor
         }
+        @DSSink({DSSinkKind.SYSTEM_SETTINGS})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:48.581 -0500", hash_original_method = "E9D4515D62B87825C79C67876E4313E2", hash_generated_method = "527B9BB21F5B68B1236CBF0C7A1B3A22")
         
 @Override
@@ -1107,7 +1073,6 @@ public void setEnterNotificationParams(ConnectionParams cp, FailCause cause) {
             }
             return retVal;
         }
-
         
     }
 

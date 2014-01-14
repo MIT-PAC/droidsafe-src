@@ -18,10 +18,6 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
 
-
-
-
-
 public class ClipData implements Parcelable {
 
     /**
@@ -144,14 +140,11 @@ public ClipData[] newArray(int size) {
         };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.624 -0500", hash_original_field = "BD054FDEC655C28C2D1BA2544910FE2F", hash_generated_field = "BD054FDEC655C28C2D1BA2544910FE2F")
 
-
      ClipDescription mClipDescription;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.627 -0500", hash_original_field = "EC076BF50357690C1FC8AB2DC0D41329", hash_generated_field = "EC076BF50357690C1FC8AB2DC0D41329")
-
     
      Bitmap mIcon;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.629 -0500", hash_original_field = "C06D30D4FE5B15243361075EF8FC091A", hash_generated_field = "642CB554EA43ABB4F05AD892541D7330")
-
 
     final ArrayList<Item> mItems = new ArrayList<Item>();
 
@@ -236,7 +229,6 @@ public void addItem(Item item) {
 public Bitmap getIcon() {
         return mIcon;
     }
-
     
     public static class Item {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.631 -0500", hash_original_field = "A59BBC07E5E46996D793B2F37E80BD24", hash_generated_field = "A59BBC07E5E46996D793B2F37E80BD24")
@@ -406,7 +398,6 @@ public CharSequence coerceToText(Context context) {
             // Shouldn't get here, but just in case...
             return "";
         }
-
         
     }
 
@@ -436,6 +427,7 @@ public Item getItemAt(int index) {
         return 0;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.690 -0500", hash_original_method = "0C9FB932279AD72A7EC79D2538384FC0", hash_generated_method = "3BDF0ABBB8CE40B99C35CF9571816F8F")
     
 @Override

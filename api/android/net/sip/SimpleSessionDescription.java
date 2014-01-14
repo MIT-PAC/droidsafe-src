@@ -7,11 +7,6 @@ import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-
-
-
-
-
 public class SimpleSessionDescription {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:25.938 -0500", hash_original_field = "4440D95739751EDD25D246C30AC15CB0", hash_generated_field = "7FC97BC1C457A3C7034DB3B8BF10C7C3")
 
@@ -128,6 +123,7 @@ public String getAddress() {
      * Sets the connection address. The field will be removed if the address
      * is {@code null}.
      */
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:25.958 -0500", hash_original_method = "9CF6A3FFF46CFF8C635A973470CB60F8", hash_generated_method = "74E5A0ADBEF08527D130C2087D1D39B3")
     
 public void setAddress(String address) {
@@ -156,6 +152,7 @@ public String getEncryptionKey() {
      * Sets the encryption method and the encryption key. The field will be
      * removed if the method is {@code null}.
      */
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:25.965 -0500", hash_original_method = "A82F97B5F7341431789E84B509C9D803", hash_generated_method = "25615D392B46A6486F8E55A7D36EECD3")
     
 public void setEncryption(String method, String key) {
@@ -185,6 +182,7 @@ public int getBandwidth(String type) {
      * Sets the bandwith limit for the given type. The field will be removed if
      * the value is negative.
      */
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:25.972 -0500", hash_original_method = "8E0EC67E7D91F3DDCC83F18482476DA9", hash_generated_method = "24533E4C28D472361CC997316A9ABDB4")
     
 public void setBandwidth(String type, int value) {
@@ -215,12 +213,12 @@ public String getAttribute(String name) {
      * the value is {@code null}. To set a binary attribute, use an empty
      * string as the value.
      */
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:25.978 -0500", hash_original_method = "A5005CAFDCC1F5EB8A695D7ADEDCA043", hash_generated_method = "1953AC249CD749988AD3AFECBF386CA1")
     
 public void setAttribute(String name, String value) {
         mFields.setAttribute(name, value);
     }
-
     
     public static class Media extends Fields {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:25.980 -0500", hash_original_field = "1672B69A08B1383BA3D3C191D3C06566", hash_generated_field = "DA7F98239A4F122D17620AC61DF29F55")
@@ -308,6 +306,7 @@ public String getFmtp(String format) {
          * Sets a format and its {@code fmtp} attribute. If the attribute is
          * {@code null}, the corresponding field will be removed.
          */
+        @DSSink({DSSinkKind.NETWORK})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:26.008 -0500", hash_original_method = "C64230710F5A14357C2D213EB5CAD075", hash_generated_method = "6CAEE65EBEBE59F4BDF119EEAD2724CB")
         
 public void setFormat(String format, String fmtp) {
@@ -371,6 +370,7 @@ public String getFmtp(int type) {
          * corresponding field will be removed. See
          * {@link SimpleSessionDescription} for an example of its usage.
          */
+        @DSSink({DSSinkKind.NETWORK})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:26.020 -0500", hash_original_method = "F9FA54C35728FF67E338ECA5310C56AD", hash_generated_method = "550E78B89EA2CB8E165AFC0C0D308401")
         
 public void setRtpPayload(int type, String rtpmap, String fmtp) {
@@ -405,11 +405,8 @@ private void write(StringBuilder buffer) {
             buffer.append("\r\n");
             super.write(buffer);
         }
-
         
     }
-
-
     
     private static class Fields {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:26.030 -0500", hash_original_field = "ADD241968D5EB723468DE66E1ADFBAA8", hash_generated_field = "FE61FA4626921CBB643E7F37A28C123F")
@@ -447,6 +444,7 @@ public String getAddress() {
          * Sets the connection address. The field will be removed if the address
          * is {@code null}.
          */
+        @DSSink({DSSinkKind.NETWORK})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:26.041 -0500", hash_original_method = "D0AF733436A7D8101A9CE592CCF78EC4", hash_generated_method = "DFA609F667A9EC9785113020DC447CFD")
         
 public void setAddress(String address) {
@@ -489,6 +487,7 @@ public String getEncryptionKey() {
          * Sets the encryption method and the encryption key. The field will be
          * removed if the method is {@code null}.
          */
+        @DSSink({DSSinkKind.NETWORK})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:26.048 -0500", hash_original_method = "D6BD475F892E56E5EB541552A030D2BC", hash_generated_method = "855310653C3B1B4E6FB87D2C83A759F0")
         
 public void setEncryption(String method, String key) {
@@ -526,6 +525,7 @@ public int getBandwidth(String type) {
          * Sets the bandwith limit for the given type. The field will be removed
          * if the value is negative.
          */
+        @DSSink({DSSinkKind.NETWORK})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:26.055 -0500", hash_original_method = "599740758F5BEDB2EA85017AA799A405", hash_generated_method = "B1FB588F54965EE9EDEC84AD4CEA1F0E")
         
 public void setBandwidth(String type, int value) {
@@ -556,6 +556,7 @@ public String getAttribute(String name) {
          * the value is {@code null}. To set a binary attribute, use an empty
          * string as the value.
          */
+        @DSSink({DSSinkKind.NETWORK})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:26.062 -0500", hash_original_method = "5FC68CD08D9765AB5882516E9433018C", hash_generated_method = "5C2D003AE097463375E355C4C12FE583")
         
 public void setAttribute(String name, String value) {
@@ -673,11 +674,8 @@ private String get(String key, char delimiter) {
             int length = key.length();
             return (line.length() == length) ? "" : line.substring(length + 1);
         }
-
         
     }
-
-
     
 }
 

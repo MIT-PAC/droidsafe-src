@@ -23,11 +23,6 @@ import android.util.Printer;
 
 import com.android.internal.util.XmlUtils;
 
-
-
-
-
-
 public class IntentFilter implements Parcelable {
 
     // These functions are the start of more optimized code for managing
@@ -214,7 +209,6 @@ public IntentFilter[] newArray(int size) {
         }
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.732 -0500", hash_original_field = "1D8CA7654CC48BAF402334392A1619BF", hash_generated_field = "032B46B6D9E42E1E80E269F8E583852A")
-
 
     private int mPriority;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.734 -0500", hash_original_field = "1C01DCF3CAD6F1F8B4C99696F3E8A2C8", hash_generated_field = "B7B787904E751334D4C6C5E9190CBECB")
@@ -598,7 +592,6 @@ public final String getDataScheme(int index) {
 public final boolean hasDataScheme(String scheme) {
         return mDataSchemes != null && mDataSchemes.contains(scheme);
     }
-
     
     public static class MalformedMimeTypeException extends AndroidException {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.759 -0500", hash_original_method = "8500983E91FE33F50F26D266A654E6C8", hash_generated_method = "3EC5ABD340A3F165372D697F56D65E01")
@@ -611,11 +604,8 @@ public MalformedMimeTypeException() {
 public MalformedMimeTypeException(String name) {
             super(name);
         }
-
         
     }
-
-
     
     public final static class AuthorityEntry {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.822 -0500", hash_original_field = "32DD8703A5318DFB0F5E91580364D0C6", hash_generated_field = "0C08F8EAA89B66A92AA182AAF7101D01")
@@ -706,7 +696,6 @@ public int match(Uri data) {
             }
             return MATCH_CATEGORY_HOST;
         }
-
         
     }
 
@@ -1401,6 +1390,7 @@ public final int describeContents() {
         return 0;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.919 -0500", hash_original_method = "2C734948869786E017228B90D172BE24", hash_generated_method = "4F147E1D1C84E2F200DCFB5C2C125F60")
     
 public final void writeToParcel(Parcel dest, int flags) {

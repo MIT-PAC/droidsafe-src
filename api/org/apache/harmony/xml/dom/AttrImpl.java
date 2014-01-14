@@ -10,11 +10,6 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.TypeInfo;
 
-
-
-
-
-
 public final class AttrImpl extends NodeImpl implements Attr {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:21.286 -0500", hash_original_field = "76E0E26209E3FD48A5AAFEA346976ED4", hash_generated_field = "76E0E26209E3FD48A5AAFEA346976ED4")
 
@@ -23,7 +18,6 @@ public final class AttrImpl extends NodeImpl implements Attr {
 
     boolean isId;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:21.291 -0500", hash_original_field = "6DED3D0909D027805E22F95BA58508AE", hash_generated_field = "6DED3D0909D027805E22F95BA58508AE")
-
 
     boolean namespaceAware;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:21.293 -0500", hash_original_field = "5B184DBF8D93287A0F0C8BC78758CAB7", hash_generated_field = "5B184DBF8D93287A0F0C8BC78758CAB7")
@@ -36,7 +30,6 @@ public final class AttrImpl extends NodeImpl implements Attr {
 
     String localName;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:21.299 -0500", hash_original_field = "DE8E8B4A0967E7C25E50EB8FFACE2AD6", hash_generated_field = "5ACD84A65DA4E81BC72CF65FE413D36D")
-
 
     private String value = "";
 
@@ -121,6 +114,7 @@ public String getValue() {
         return value;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:21.329 -0500", hash_original_method = "3E19055116AC2D87625766EB1DC83913", hash_generated_method = "E839C95B45355A666035B4D9E3A8B013")
     
 @Override
@@ -146,7 +140,6 @@ public TypeInfo getSchemaTypeInfo() {
 public boolean isId() {
         return isId;
     }
-
     
 }
 

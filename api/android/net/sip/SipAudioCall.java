@@ -847,6 +847,7 @@ public boolean isMuted() {
      *
      * @param speakerMode set true to enable speaker mode; false to disable
      */
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.928 -0500", hash_original_method = "8238959D9236D29164DC3B2B6875AEBE", hash_generated_method = "FFDC17446A86A64C24D10EABB9704266")
     
 public void setSpeakerMode(boolean speakerMode) {
@@ -873,6 +874,7 @@ private boolean isSpeakerOn() {
      * @param code the DTMF code to send. Value 0 to 15 (inclusive) are valid
      *        inputs.
      */
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.933 -0500", hash_original_method = "5FC4A2324FC6DD99D16BF2BD98355D7B", hash_generated_method = "F6F0B09859D5F33E88782A14F5B94A7F")
     
 public void sendDtmf(int code) {
@@ -889,6 +891,7 @@ public void sendDtmf(int code) {
      *        inputs.
      * @param result the result message to send when done
      */
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.935 -0500", hash_original_method = "7A09CE165EA90677044F14874DA9275F", hash_generated_method = "90769E5544110EF09B509FA6D9318E52")
     
 public void sendDtmf(int code, Message result) {

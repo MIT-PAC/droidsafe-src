@@ -27,10 +27,6 @@ import android.graphics.SweepGradient;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 
-
-
-
-
 public class GradientDrawable extends Drawable {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:16.671 -0500", hash_original_method = "2A7FC3BC597ED3507106B83B5AF4DE4F", hash_generated_method = "F578B0CF8A2A8525C61A3D3133D5BF57")
@@ -67,10 +63,8 @@ private static float getFloatOrFraction(TypedArray a, int index, float defaultVa
     public static final int SWEEP_GRADIENT  = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:16.568 -0500", hash_original_field = "16EC54AB2DBF543816DE6E0CAC65429B", hash_generated_field = "F8FC523C37AC4F355E3A52C1D395B9CA")
 
-
     private GradientState mGradientState;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:16.570 -0500", hash_original_field = "C0FE052D74ED3D0BFF372BD75249E782", hash_generated_field = "20B811D11F80D9B524F2E016940568D0")
-
     
     private final Paint mFillPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:16.572 -0500", hash_original_field = "A053A94BBF9972B52A80E2FC510022E8", hash_generated_field = "017017AA9AF1862D01EDDEC3A7AB7775")
@@ -90,13 +84,11 @@ private static float getFloatOrFraction(TypedArray a, int index, float defaultVa
     private boolean mDither;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:16.583 -0500", hash_original_field = "9F8A427DBED06081C76DCB512FA4C1C6", hash_generated_field = "1C9B38C7F9B71799B7B8F281B135448B")
 
-
     private final Path mPath = new Path();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:16.585 -0500", hash_original_field = "499D59727FC656C05DFD3E86493F2A86", hash_generated_field = "E70F5B350707014CDC8DCA8B7C0C28DD")
 
     private final RectF mRect = new RectF();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:16.587 -0500", hash_original_field = "DF81DF3E7FE84B1D663D7E8ECAF0C794", hash_generated_field = "A6ACFEE6A39EC6759FF9E6489D52AFB1")
-
     
     private Paint mLayerPaint;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:16.589 -0500", hash_original_field = "F7DB3ABD3DAEEC465C84BDC747581B7E", hash_generated_field = "82A739DA370CC4D4C339BB7C440434C4")
@@ -153,6 +145,7 @@ private GradientDrawable(GradientState state) {
      * contains 2 values, [X_radius, Y_radius]. The corners are ordered
      * top-left, top-right, bottom-right, bottom-left
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:16.607 -0500", hash_original_method = "71F948CC6AEC5EB6067752059DA33574", hash_generated_method = "55593BB00DDCCE34D3B140D4863D4755")
     
 public void setCornerRadii(float[] radii) {
@@ -165,6 +158,7 @@ public void setCornerRadii(float[] radii) {
      * Specify radius for the corners of the gradient. If this is > 0, then the
      * drawable is drawn in a round-rectangle, rather than a rectangle.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:16.609 -0500", hash_original_method = "AFB7C3E5AE7C3BBB28B141F7A3B472BE", hash_generated_method = "C25BA52FCE3048809120D9F850C4E143")
     
 public void setCornerRadius(float radius) {
@@ -177,12 +171,14 @@ public void setCornerRadius(float radius) {
      * Set the stroke width and color for the drawable. If width is zero,
      * then no stroke is drawn.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:16.611 -0500", hash_original_method = "6A0F62EB2F02BD455327DA9DA2DD0568", hash_generated_method = "5B8999B9C7DC5E8D9861803D23B6C2B3")
     
 public void setStroke(int width, int color) {
         setStroke(width, color, 0, 0);
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:16.613 -0500", hash_original_method = "F36B912577B048DA0236870F939930FC", hash_generated_method = "B9C0A6ACDEDAEEDBE1BC50425DB3D62A")
     
 public void setStroke(int width, int color, float dashWidth, float dashGap) {
@@ -203,6 +199,7 @@ public void setStroke(int width, int color, float dashWidth, float dashGap) {
         invalidateSelf();
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:16.615 -0500", hash_original_method = "DBF55AE12AFE7021A6EFA67946A43E31", hash_generated_method = "BE1E4407B9A91F34977DE90BA22DDC6A")
     
 public void setSize(int width, int height) {
@@ -211,6 +208,7 @@ public void setSize(int width, int height) {
         invalidateSelf();
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:16.618 -0500", hash_original_method = "70A303A49D3D529F927A8B25154245C2", hash_generated_method = "35656DC0149E7E7B0984EC11AF0ED466")
     
 public void setShape(int shape) {
@@ -220,6 +218,7 @@ public void setShape(int shape) {
         invalidateSelf();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:16.621 -0500", hash_original_method = "18DB26B14B71A02370E6DE427E61924A", hash_generated_method = "5567028F009957DA9198E3B556F3A189")
     
 public void setGradientType(int gradient) {
@@ -228,6 +227,7 @@ public void setGradientType(int gradient) {
         invalidateSelf();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:16.623 -0500", hash_original_method = "45A2D9788BC882B134EC764255BF8E5D", hash_generated_method = "8EFFCDF995AD8D9670AA5B4B3F6516CB")
     
 public void setGradientCenter(float x, float y) {
@@ -236,6 +236,7 @@ public void setGradientCenter(float x, float y) {
         invalidateSelf();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:16.625 -0500", hash_original_method = "C7CA2F8177799FD0AFA978CBCB22DF14", hash_generated_method = "67B255173F4AC5FB61C41C032D36DA90")
     
 public void setGradientRadius(float gradientRadius) {
@@ -244,6 +245,7 @@ public void setGradientRadius(float gradientRadius) {
         invalidateSelf();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:16.627 -0500", hash_original_method = "76C6B5A7FB76D454B2D8C7EAA5B46C4F", hash_generated_method = "F2D37CC4AF0EA69E0A2E2166CB496BAA")
     
 public void setUseLevel(boolean useLevel) {
@@ -444,6 +446,7 @@ private Path buildRing(GradientState st) {
         return ringPath;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:16.640 -0500", hash_original_method = "A6E3DC666A9DC913CF167BAEE3BA3755", hash_generated_method = "20C1E70B42A2F5B1828F48BF2FA64845")
     
 public void setColor(int argb) {
@@ -518,7 +521,6 @@ public void setColor(int argb) {
         invalidateSelf();
         return true;
     }
-
     
     public enum Orientation {
         TOP_BOTTOM,
@@ -530,7 +532,6 @@ public void setColor(int argb) {
         LEFT_RIGHT,
         TL_BR,
     }
-
     
     final static class GradientState extends ConstantState {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:16.683 -0500", hash_original_field = "9BFAF00848476277D36D9BA586984BA7", hash_generated_field = "0AA9CE94E21E2967183254C710B3C74D")
@@ -617,7 +618,6 @@ public void setColor(int argb) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:16.743 -0500", hash_original_field = "D64F88A19F963A802A2C33B0BACA802F", hash_generated_field = "61E410A7B6997232E247B7717F217062")
 
         private boolean mUseLevelForShape;
-        
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:16.746 -0500", hash_original_method = "9C4B8156D5998AA4F070091BFAC51297", hash_generated_method = "9C4B8156D5998AA4F070091BFAC51297")
         
@@ -766,7 +766,6 @@ public void setSize(int width, int height) {
 public void setGradientRadius(float gradientRadius) {
             mGradientRadius = gradientRadius;
         }
-
         
     }
 

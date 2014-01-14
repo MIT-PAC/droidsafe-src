@@ -14,13 +14,7 @@ import org.apache.harmony.security.asn1.ASN1Type;
 import org.apache.harmony.security.asn1.BerInputStream;
 import org.apache.harmony.security.asn1.ObjectIdentifier;
 
-
-
-
-
-
 public final class ExtendedKeyUsage extends ExtensionValue {
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.100 -0400", hash_original_field = "1C1534A2AA96342A497C51FF8E5360A5", hash_generated_field = "BF598BD805210074FAC5B7D06116F7DE")
 
@@ -67,6 +61,7 @@ public List<String> getExtendedKeyUsage() throws IOException {
         return encoding;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:59.272 -0500", hash_original_method = "4F87579E7E9CA4B1B17B20CD410B3E10", hash_generated_method = "76915DB22A600812D57900C98F3F664F")
     
 @Override public void dumpValue(StringBuilder sb, String prefix) {

@@ -22,11 +22,6 @@ import java.util.concurrent.TimeUnit;
 import javax.net.ssl.HandshakeCompletedListener;
 import javax.net.ssl.SSLSocket;
 
-
-
-
-
-
 class IOHandler {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:16.051 -0500", hash_original_method = "4B1CA4C3CA931CD3E3AFB484B6B8381F", hash_generated_method = "88A9B49895794BEEF7CE060C07F9E314")
@@ -37,17 +32,14 @@ protected static String makeKey(InetAddress addr, int port) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:16.042 -0500", hash_original_field = "68703AB10816D405D1396AB032A64065", hash_generated_field = "2A19A36B452D88CDD5B3F26D17F7563A")
 
-
     private static String TCP = "tcp";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:16.045 -0500", hash_original_field = "5B35D8051830BFBA2689666E17D62408", hash_generated_field = "1AD174C59CE89A66B72D18168F821A73")
 
     private static String TLS = "tls";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:16.036 -0500", hash_original_field = "9D08B66A2720241C8C7031CEECD4BB7E", hash_generated_field = "7C78FF5476489511BDB7D6F9C761D492")
 
-
     private Semaphore ioSemaphore = new Semaphore(1);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:16.039 -0500", hash_original_field = "03821C4D777C0A4AB8577E0C5F2371D6", hash_generated_field = "B028268F85C87F49A0E45B93954BF938")
-
 
     private SipStackImpl sipStack;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:16.048 -0500", hash_original_field = "016E5301717F28BDAE1198DDAD121AC8", hash_generated_field = "109FC548DB903A00E753C207C6D25B9B")
@@ -146,6 +138,7 @@ public SocketAddress obtainLocalAddress(InetAddress dst, int dstPort,
      * @throws IOException -- if there is an IO exception sending message.
      */
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:16.074 -0500", hash_original_method = "4FFA41D6F7F1FFB50CF7951492094FCE", hash_generated_method = "CE65233D6945B45F5217A055FCCED981")
     
 public Socket sendBytes(InetAddress senderAddress, InetAddress receiverAddress,

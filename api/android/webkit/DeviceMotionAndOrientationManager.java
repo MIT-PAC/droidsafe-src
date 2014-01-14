@@ -48,6 +48,7 @@ public void useMock() {
     /**
      * Set the position for the mock DeviceOrientation service for this WebViewCore.
      */
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.649 -0500", hash_original_method = "4286A0C5B7CC1E24AD50574E75188454", hash_generated_method = "7EB9E4EACD08F2A677CC0865562E8ED1")
     
 public void setMockOrientation(boolean canProvideAlpha, double alpha, boolean canProvideBeta,

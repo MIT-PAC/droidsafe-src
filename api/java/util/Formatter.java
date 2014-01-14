@@ -1507,6 +1507,7 @@ private void transformG(StringBuilder result) {
 public CachedDecimalFormat() {
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:44.860 -0500", hash_original_method = "784B3214258603820EA00D340F6FA563", hash_generated_method = "1CEA59D578CB0BC70F6D326AE69028BA")
         
 public NativeDecimalFormat update(LocaleData localeData, String pattern) {
@@ -1652,6 +1653,7 @@ String getStrFlags() {
          * Sets qualified char as one of the flags. If the char is qualified,
          * sets it as a flag and returns true. Or else returns false.
          */
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:45.006 -0500", hash_original_method = "E6ACD7E32E6ABC5AE16C357DB8116DB3", hash_generated_method = "396D2A5658270F2187B86860C13278C8")
         
 boolean setFlag(int ch) {

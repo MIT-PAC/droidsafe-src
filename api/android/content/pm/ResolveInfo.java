@@ -14,13 +14,7 @@ import android.os.Parcelable;
 import android.text.TextUtils;
 import android.util.Printer;
 
-
-
-
-
 public class ResolveInfo implements Parcelable {
-
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.678 -0400", hash_original_field = "C8E3508AADB06B7F78F470F3288D5470", hash_generated_field = "699B00262ABFFA011EC34065A2FBCAFD")
 
@@ -201,6 +195,7 @@ public final int getIconResource() {
         return 0;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.604 -0500", hash_original_method = "64245509A5FC137877FB50AC88C4351E", hash_generated_method = "0F66FE95F8591EFB1AC1F94F7B759082")
     
 public void dump(Printer pw, String prefix) {
@@ -245,11 +240,9 @@ public String toString() {
 public int describeContents() {
         return 0;
     }
-
     
     public static class DisplayNameComparator implements Comparator<ResolveInfo> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.632 -0500", hash_original_field = "EE5E44F3B728B272AD02D50E8F128A4E", hash_generated_field = "0F522A2F9FEC0AE6C7C0EFB2E65868E6")
-
 
         private final Collator   sCollator = Collator.getInstance();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.635 -0500", hash_original_field = "D7E1102720CC9E76648EB86B25CA5216", hash_generated_field = "B9590FAB3CF140F08C9CD4E0309ED58A")
@@ -271,10 +264,10 @@ public final int compare(ResolveInfo a, ResolveInfo b) {
             
             return sCollator.compare(sa.toString(), sb.toString());
         }
-
         
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.613 -0500", hash_original_method = "C265C7C58C207232A576E6DBECFC3E71", hash_generated_method = "D7C990A0F582AB30875ADB820A7D0F47")
     
 public void writeToParcel(Parcel dest, int parcelableFlags) {

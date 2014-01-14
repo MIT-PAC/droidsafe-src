@@ -16,6 +16,7 @@ public class DdmServer {
      *
      * Throws an exception if the type already has a handler registered.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:25.276 -0500", hash_original_method = "5FE21C0D4C27ADA98D267B634214C4D7", hash_generated_method = "E65D98A0F413DD17CCBE36D5733E81B4")
     
 public static void registerHandler(int type, ChunkHandler handler) {

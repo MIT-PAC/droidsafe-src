@@ -73,6 +73,7 @@ public void setTransformationType(int transformationType) {
      *
      * @param t The transformation to clone.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:56.922 -0500", hash_original_method = "6A74ACE3E87C2A5E84C908FCAD2903E1", hash_generated_method = "FB97CDADAEF57BCB0A2A4BF697D806B5")
     
 public void set(Transformation t) {

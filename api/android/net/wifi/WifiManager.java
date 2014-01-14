@@ -370,6 +370,7 @@ public boolean isHeld() {
             }
         }
 
+        @DSSink({DSSinkKind.NETWORK})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:05.439 -0500", hash_original_method = "7C62BA62C0C3A7C1DC2FB1EDC51DE805", hash_generated_method = "7211CCA761244AE87149532644361626")
         
 public void setWorkSource(WorkSource ws) {
@@ -792,6 +793,7 @@ public boolean removeNetwork(int netId) {
      * for this parameter.
      * @return {@code true} if the operation succeeded
      */
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:05.306 -0500", hash_original_method = "A063D2F3A1A45A8B2BB20D41F98AEB1B", hash_generated_method = "5589CB694139C3927BD03E556015C3E5")
     
 public boolean enableNetwork(int netId, boolean disableOthers) {
@@ -991,6 +993,7 @@ public boolean saveConfiguration() {
      *
      * @hide
      */
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:05.332 -0500", hash_original_method = "9549A9F9433914F9E55F5CC34183554C", hash_generated_method = "48DE8E76CF7664D9D8EDCCD82D598160")
     
 public void setCountryCode(String country, boolean persist) {
@@ -1008,6 +1011,7 @@ public void setCountryCode(String country, boolean persist) {
      * @param persist {@code true} if this needs to be remembered
      * @hide
      */
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:05.334 -0500", hash_original_method = "4B6C5827C7D51FB40ECD8DD67D760E19", hash_generated_method = "135AE46AE78A33A8B1EA8E2116600E0C")
     
 public void setFrequencyBand(int band, boolean persist) {
@@ -1071,6 +1075,7 @@ public DhcpInfo getDhcpInfo() {
      * @return {@code true} if the operation succeeds (or if the existing state
      *         is the same as the requested state).
      */
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:05.343 -0500", hash_original_method = "B9430AD639DDE3004B577A4BF40EB18B", hash_generated_method = "6C2F829AF169DACAFAEEDD10ED44992C")
     
 public boolean setWifiEnabled(boolean enabled) {
@@ -1121,6 +1126,7 @@ public boolean isWifiEnabled() {
      *
      * @hide Dont open up yet
      */
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:05.354 -0500", hash_original_method = "2BFE81971E8D979C3ECBD7F543427F67", hash_generated_method = "83130F171399B11404AC6D0DF2E60C00")
     
 public boolean setWifiApEnabled(WifiConfiguration wifiConfig, boolean enabled) {
@@ -1186,6 +1192,7 @@ public WifiConfiguration getWifiApConfiguration() {
      *
      * @hide Dont open yet
      */
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:05.363 -0500", hash_original_method = "32645F13A37CD40BEF3F9464116D1367", hash_generated_method = "63A13804EC2784E5DEC50D7C508747FA")
     
 public boolean setWifiApConfiguration(WifiConfiguration wifiConfig) {

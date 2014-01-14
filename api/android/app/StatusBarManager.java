@@ -144,6 +144,7 @@ public void collapse() {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:28.165 -0500", hash_original_method = "8A330421DEC3E061C169D87595A7D18D", hash_generated_method = "7D07FBDB98B51F61C0AA6807EBCB495A")
     
 public void setIcon(String slot, int iconId, int iconLevel, String contentDescription) {
@@ -173,6 +174,7 @@ public void removeIcon(String slot) {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:28.170 -0500", hash_original_method = "59E45760864584BE81198BD1AADB01C2", hash_generated_method = "4CBA87B69B2EC49F2E6F870C831644ED")
     
 public void setIconVisibility(String slot, boolean visible) {

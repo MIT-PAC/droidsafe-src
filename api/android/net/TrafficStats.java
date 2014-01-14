@@ -31,6 +31,7 @@ public class TrafficStats {
      * used internally by system services like {@link DownloadManager} when
      * performing traffic on behalf of an application.
      */
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:23.258 -0500", hash_original_method = "8A6683AC46C482376EDB137406895EA4", hash_generated_method = "82DCC980DC0931619D28A669069BC53B")
     
 public static void setThreadStatsTag(int tag) {
@@ -67,6 +68,7 @@ public static void clearThreadStatsTag() {
      *
      * {@hide}
      */
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:23.266 -0500", hash_original_method = "2465ECE023EA6F6315B38940B5A27E11", hash_generated_method = "FB4612769C2D600C361EC2D31F9241CD")
     
 public static void setThreadStatsUid(int uid) {

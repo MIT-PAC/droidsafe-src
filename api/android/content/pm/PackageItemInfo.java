@@ -14,10 +14,6 @@ import android.os.Parcel;
 import android.text.TextUtils;
 import android.util.Printer;
 
-
-
-
-
 public class PackageItemInfo {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:49.304 -0500", hash_original_field = "BF45F7481B8091DE3CBF80E94F7F940B", hash_generated_field = "D29EB809CD7E712070B86A449A5F2E82")
 
@@ -208,6 +204,7 @@ public XmlResourceParser loadXmlMetaData(PackageManager pm, String name) {
         return null;
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:49.337 -0500", hash_original_method = "6B8B2642A2B8BBF6D444F1A91AC9FDCB", hash_generated_method = "BF2CAC1FBFC42CCC0CE813D4DA6DE59E")
     
 protected void dumpFront(Printer pw, String prefix) {
@@ -228,6 +225,7 @@ protected void dumpBack(Printer pw, String prefix) {
         // no back here
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:49.342 -0500", hash_original_method = "EBFCAD6F5CD0994BD82522BC30DB76DD", hash_generated_method = "F240B07B8F98FF37957218BD5D9B3BD1")
     
 public void writeToParcel(Parcel dest, int parcelableFlags) {
@@ -253,11 +251,9 @@ public void writeToParcel(Parcel dest, int parcelableFlags) {
 protected ApplicationInfo getApplicationInfo() {
         return null;
     }
-
     
     public static class DisplayNameComparator implements Comparator<PackageItemInfo> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:49.355 -0500", hash_original_field = "EE5E44F3B728B272AD02D50E8F128A4E", hash_generated_field = "0F522A2F9FEC0AE6C7C0EFB2E65868E6")
-
 
         private final Collator   sCollator = Collator.getInstance();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:49.358 -0500", hash_original_field = "D7E1102720CC9E76648EB86B25CA5216", hash_generated_field = "B9590FAB3CF140F08C9CD4E0309ED58A")
@@ -278,11 +274,8 @@ public final int compare(PackageItemInfo aa, PackageItemInfo ab) {
             if (sb == null) sb = ab.name;
             return sCollator.compare(sa.toString(), sb.toString());
         }
-
         
     }
-
-
     
 }
 

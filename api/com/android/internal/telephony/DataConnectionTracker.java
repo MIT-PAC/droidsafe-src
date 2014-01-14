@@ -759,6 +759,7 @@ public String getActiveApnString(String apnType) {
     /**
      * Modify {@link Settings.Secure#DATA_ROAMING} value.
      */
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:43.843 -0500", hash_original_method = "B18C74BBD4D71B87D6CD20822DAEB60C", hash_generated_method = "909C89967B5674477BE95216DC03A2D4")
     
 public void setDataOnRoamingEnabled(boolean enabled) {
@@ -1095,6 +1096,7 @@ protected LinkCapabilities getLinkCapabilities(String apnType) {
     }
 
     // tell all active apns of the current condition
+    @DSSink({DSSinkKind.PHONE_STATE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:43.932 -0500", hash_original_method = "EA8A5478D5AABF3FA098569BF99381B3", hash_generated_method = "17DAD7B11EAF3934C5AF8231D55EF480")
     
 protected void notifyDataConnection(String reason) {
@@ -1135,6 +1137,7 @@ private void notifyApnIdDisconnected(String reason, int apnId) {
     }
 
     // disabled apn's still need avail/unavail notificiations - send them out
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:43.941 -0500", hash_original_method = "AD67DC7D8E779758CC2EF151B8EB9A25", hash_generated_method = "8E8449F656E32CF7B18CEDF297BD2FD1")
     
 protected void notifyOffApnsOfAvailability(String reason) {
@@ -1342,6 +1345,7 @@ protected void onResetDone(AsyncResult ar) {
      *            {@code false}) data
      * @return {@code true} if the operation succeeded
      */
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:43.965 -0500", hash_original_method = "DE9C8D1FA305A86440711210D5CC0DFB", hash_generated_method = "3CED643382D55E933A448CE5F114064C")
     
 public boolean setInternalDataEnabled(boolean enable) {

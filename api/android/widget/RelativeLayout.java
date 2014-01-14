@@ -214,6 +214,7 @@ private void initFromAttributes(Context context, AttributeSet attrs) {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:46.837 -0500", hash_original_method = "076C59065FCBD07F7CAA4FFA6D12CC3A", hash_generated_method = "DD9C3C2378492508B428C0D28CCABAA5")
     
 @android.view.RemotableViewMethod
@@ -225,6 +226,7 @@ private void initFromAttributes(Context context, AttributeSet attrs) {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:46.840 -0500", hash_original_method = "EE245B70888F9F1582A126D948173E64", hash_generated_method = "0591F7E10EF7E02B9451B299C8FAC684")
     
 @android.view.RemotableViewMethod
@@ -613,6 +615,7 @@ void clear() {
          *
          * @param view The view to be added as a node to the graph.
          */
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:46.956 -0500", hash_original_method = "2AE2D90F3BED583D61A7D72DDE9D78E7", hash_generated_method = "2AE2D90F3BED583D61A7D72DDE9D78E7")
         
 void add(View view) {

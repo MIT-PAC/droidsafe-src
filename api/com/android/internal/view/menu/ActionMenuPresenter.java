@@ -23,17 +23,11 @@ import android.widget.ImageButton;
 
 import com.android.internal.view.menu.ActionMenuView.ActionMenuChildView;
 
-
-
-
-
-
 public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProvider.SubUiVisibilityListener {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:35.127 -0500", hash_original_field = "386D9EF4C6B912223014D74F821BB6A4", hash_generated_field = "365B884CA8B9956B388F21B4CE2AED12")
 
     private static final String TAG = "ActionMenuPresenter";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:35.129 -0500", hash_original_field = "8A3C259DCC249CAE53CCDEB6CE2BEACF", hash_generated_field = "62B115CA56547ACC4395C5191DCAFA48")
-
 
     private View mOverflowButton;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:35.132 -0500", hash_original_field = "E5A9CB2F2F54CC6E136BCFE6856F2EC9", hash_generated_field = "3619C222EA285420CD3DE70ECE0D1D48")
@@ -65,17 +59,14 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
     private boolean mExpandedActionViewsExclusive;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:35.152 -0500", hash_original_field = "D89719B11B3D07DF5BEDF9A3B5892A7C", hash_generated_field = "303D27EFA1C100E376A8416C573EAB8F")
 
-
     private int mMinCellSize;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:35.154 -0500", hash_original_field = "6F2E37C26263D6D74CD7167367E39094", hash_generated_field = "AB745D0096A474765505150A34296B41")
 
     private final SparseBooleanArray mActionButtonGroups = new SparseBooleanArray();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:35.156 -0500", hash_original_field = "96C7ECC79D38C33876B0A3F399663721", hash_generated_field = "62CE63FA1996B79D9E9EE4493D96FB92")
 
-
     private View mScrapActionButtonView;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:35.158 -0500", hash_original_field = "3E86BCA5DFAB0798DFA9FD07D00D676F", hash_generated_field = "73011FFFEE53F9056EE81430FCFEDF05")
-
 
     private OverflowPopup mOverflowPopup;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:35.160 -0500", hash_original_field = "DBBC5F31D31932D489B4061F327751B8", hash_generated_field = "BAF3D98693011134EB1620D1BA22CC15")
@@ -83,10 +74,8 @@ public class ActionMenuPresenter extends BaseMenuPresenter implements ActionProv
     private ActionButtonSubmenu mActionButtonPopup;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:35.163 -0500", hash_original_field = "EC20812F1207265230D4DB87C3970C6E", hash_generated_field = "33AD605615015FDD75E5D9A4D89E75A5")
 
-
     private OpenOverflowRunnable mPostedOpenRunnable;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:35.165 -0500", hash_original_field = "EAA5F1B1764DB3A287DDA9679D0A36F8", hash_generated_field = "FEC720003D50479950C7720E8FE0EC06")
-
 
     final PopupPresenterCallback mPopupPresenterCallback = new PopupPresenterCallback();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:35.167 -0500", hash_original_field = "0BCBB7C2003D06DDB90F4DA92F90C05F", hash_generated_field = "0BCBB7C2003D06DDB90F4DA92F90C05F")
@@ -229,6 +218,7 @@ public void setExpandedActionViewsExclusive(boolean isExclusive) {
         return item.isActionButton();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:35.198 -0500", hash_original_method = "675BFE60E67D99082131CDB4BA0667CE", hash_generated_method = "F989DFE031E1CCB81138A8427788CAE1")
     
 @Override
@@ -579,10 +569,8 @@ public boolean flagActionItems() {
             }
         }
     }
-
     
     private static class SavedState implements Parcelable {
-
         
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:28.002 -0400", hash_original_field = "7DF6FB2587CB67E9544A859A8F6E8FF3", hash_generated_field = "263FCDD65C2156B1D1E1B4D9AE8D7FFA")
 
@@ -639,8 +627,6 @@ SavedState(Parcel in) {
             }
         
     }
-
-
     
     private class OverflowMenuButton extends ImageButton implements ActionMenuChildView {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:35.260 -0500", hash_original_method = "1337D4EFD3D7C8CDCFFFFAE2F6FA113A", hash_generated_method = "7DC0260A6D76294CFEBDFC4B1AC9FB0A")
@@ -678,11 +664,8 @@ public boolean needsDividerBefore() {
 public boolean needsDividerAfter() {
             return false;
         }
-
         
     }
-
-
     
     private class OverflowPopup extends MenuPopupHelper {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:35.271 -0500", hash_original_method = "FA0F7CD1552EAFA7C13929825A8B2112", hash_generated_method = "159F59B5A34857AB2D87D358B73DF257")
@@ -701,11 +684,8 @@ public OverflowPopup(Context context, MenuBuilder menu, View anchorView,
             mMenu.close();
             mOverflowPopup = null;
         }
-
         
     }
-
-
     
     private class ActionButtonSubmenu extends MenuPopupHelper {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:35.279 -0500", hash_original_field = "F72B98E23896D66B33476F874979B6CA", hash_generated_field = "CCE2E7E9B41EB859D026207A515694B8")
@@ -746,11 +726,8 @@ public ActionButtonSubmenu(Context context, SubMenuBuilder subMenu) {
             mActionButtonPopup = null;
             mOpenSubMenuId = 0;
         }
-
         
     }
-
-
     
     private class PopupPresenterCallback implements MenuPresenter.Callback {
         
@@ -778,11 +755,8 @@ public ActionButtonSubmenu(Context context, SubMenuBuilder subMenu) {
                 ((SubMenuBuilder) menu).getRootMenu().close(false);
             }
         }
-
         
     }
-
-
     
     private class OpenOverflowRunnable implements Runnable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:35.296 -0500", hash_original_field = "15DB0E22071AD2DFB4134423692CDBA2", hash_generated_field = "A7832614732810CD7F68AEA244EAE6B6")
@@ -805,7 +779,6 @@ public void run() {
             }
             mPostedOpenRunnable = null;
         }
-
         
     }
 

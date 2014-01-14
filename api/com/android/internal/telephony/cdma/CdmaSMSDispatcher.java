@@ -33,11 +33,6 @@ import com.android.internal.telephony.WspTypeDecoder;
 import com.android.internal.telephony.cdma.sms.SmsEnvelope;
 import com.android.internal.telephony.cdma.sms.UserData;
 
-
-
-
-
-
 final class CdmaSMSDispatcher extends SMSDispatcher {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:56.341 -0500", hash_original_method = "1910D6A77440317C1CCBAEDFB419E5C5", hash_generated_method = "D07CC08874D7F5CA9E49CF869CE487D5")
@@ -102,13 +97,11 @@ private static boolean checkDuplicatePortOmadmWappush(byte[] origPdu, int index)
     private static final String TAG = "CDMA";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:56.293 -0500", hash_original_field = "47C852A77D625BE73455A026DF48D288", hash_generated_field = "32AEC3A3AE4EA72117A81D9C026D630A")
 
-
     private byte[] mLastDispatchedSmsFingerprint;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:56.297 -0500", hash_original_field = "B76F814FCCFEE314B57473F94B0F19E8", hash_generated_field = "238150EEC26DEB25A5C3E3E164D32D3E")
 
     private byte[] mLastAcknowledgedSmsFingerprint;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:56.300 -0500", hash_original_field = "AC0951C6CF85D304C5A20BD51A762880", hash_generated_field = "4B29A4BC6301E562FA9789ADCA210E6D")
-
 
     private final boolean mCheckForDuplicatePortsInOmadmWapPush = Resources.getSystem().getBoolean(
             com.android.internal.R.bool.config_duplicate_port_omadm_wappush);
@@ -156,6 +149,7 @@ private void handleCdmaStatusReport(SmsMessage sms) {
     }
 
     /** {@inheritDoc} */
+    @DSSink({DSSinkKind.SMS_MMS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:56.316 -0500", hash_original_method = "AEF7CF36D035C3FD2F985EB9DE02C895", hash_generated_method = "6FD2399E76215B7C25EBD82B78BA70A3")
     
 @Override
@@ -305,6 +299,7 @@ protected int processCdmaWapPdu(byte[] pdu, int referenceNumber, String address)
     }
 
     /** {@inheritDoc} */
+    @DSSink({DSSinkKind.SMS_MMS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:56.322 -0500", hash_original_method = "1C79B20542F5EA033BD01F30A8B0455D", hash_generated_method = "088FC0FA4AA78EE8BBFD4A9B4B8BFF34")
     
 @Override
@@ -316,6 +311,7 @@ protected int processCdmaWapPdu(byte[] pdu, int referenceNumber, String address)
     }
 
     /** {@inheritDoc} */
+    @DSSink({DSSinkKind.SMS_MMS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:56.324 -0500", hash_original_method = "5D58764547BE2148EE8A5F6EEE636061", hash_generated_method = "78403D8F2B658532FF115D9B485FE73D")
     
 @Override
@@ -336,6 +332,7 @@ protected int processCdmaWapPdu(byte[] pdu, int referenceNumber, String address)
     }
 
     /** {@inheritDoc} */
+    @DSSink({DSSinkKind.SMS_MMS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:56.329 -0500", hash_original_method = "77E27619E0BAA0675283D74233CDEF70", hash_generated_method = "454259F045ED6B58DA1B3A4660B15C3E")
     
 @Override

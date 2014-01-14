@@ -260,6 +260,7 @@ public boolean getFeature (String name)
      *            can't be assigned that value.
      * @see org.xml.sax.XMLReader#setProperty
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.287 -0500", hash_original_method = "EE8A541C22360A747253892239DA9935", hash_generated_method = "1734503BC1D2DC5B0A93E8F9C40C564C")
     
 public void setProperty (String name, Object value)
@@ -509,6 +510,7 @@ public void endDocument ()
      * @exception SAXException The client may raise a
      *            processing exception.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.323 -0500", hash_original_method = "41EBA2EAF373C2E18FF1DC39DB5B0A24", hash_generated_method = "4BC37B5677B6027DE42CCB7478AA9851")
     
 public void startElement (String qName, AttributeList qAtts) throws SAXException {

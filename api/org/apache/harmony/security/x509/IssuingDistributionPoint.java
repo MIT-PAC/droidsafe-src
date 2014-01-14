@@ -13,11 +13,6 @@ import org.apache.harmony.security.asn1.ASN1Sequence;
 import org.apache.harmony.security.asn1.ASN1Type;
 import org.apache.harmony.security.asn1.BerInputStream;
 
-
-
-
-
-
 public final class IssuingDistributionPoint extends ExtensionValue {
 
     /**
@@ -32,7 +27,6 @@ public static IssuingDistributionPoint decode(byte[] encoding)
         idp.encoding = encoding;
         return idp;
     }
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.458 -0400", hash_original_field = "DFF85DC774D5EF73A048B0D504801D92", hash_generated_field = "5BA18BFCED65E5DF9764BC88362AA883")
 
@@ -166,6 +160,7 @@ public void setOnlyContainsAttributeCerts(
         return encoding;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:02.390 -0500", hash_original_method = "CFA4D64F052CACDD48400E19E895ABEB", hash_generated_method = "19E139B2248082A1E760369FB681E48E")
     
 @Override public void dumpValue(StringBuilder sb, String prefix) {

@@ -66,7 +66,8 @@ public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:28.362 -0500", hash_original_method = "3C1A66F9E97D59890BE73A7DAD000DDB", hash_generated_method = "74A1534354C80DC8EF3C5996C1C54629")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:28.362 -0500", hash_original_method = "3C1A66F9E97D59890BE73A7DAD000DDB", hash_generated_method = "74A1534354C80DC8EF3C5996C1C54629")
             
 public void newThumbnail(int id, android.graphics.Bitmap thumbnail, java.lang.CharSequence description) throws android.os.RemoteException
 {

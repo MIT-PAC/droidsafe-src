@@ -89,6 +89,7 @@ public RawHeaders(RawHeaders copyFrom) {
      * Sets the response status line (like "HTTP/1.0 200 OK") or request line
      * (like "GET / HTTP/1.1").
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:32.301 -0500", hash_original_method = "A034EBBE3F64C8F074A3B6C276AAF223", hash_generated_method = "239C992354690A143B33A6E7F66A1BCC")
     
 public void setStatusLine(String statusLine) {
@@ -210,6 +211,7 @@ public void addAll(String fieldName, List<String> headerFields) {
      * Set a field with the specified value. If the field is not found, it is
      * added. If the field is found, the existing values are replaced.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:32.323 -0500", hash_original_method = "A964C2ABDA70C3696494D217AFF90E69", hash_generated_method = "A2225165535D6A2ABCF867FA2CC2086E")
     
 public void set(String fieldName, String value) {

@@ -15,11 +15,6 @@ import android.view.ViewGroup;
 
 import com.android.internal.R;
 
-
-
-
-
-
 public class TableLayout extends LinearLayout {
 
     /**
@@ -73,17 +68,14 @@ private static SparseBooleanArray parseColumns(String sequence) {
     private SparseBooleanArray mCollapsedColumns;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:36.430 -0500", hash_original_field = "6AFCC6CA54BB3E076E4B79A329B6E876", hash_generated_field = "8EDC18A923C7B9030A0D0EA6C921EA5B")
 
-
     private boolean mShrinkAllColumns;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:36.432 -0500", hash_original_field = "6F731FA4CA7F757492BE86BFC5178D55", hash_generated_field = "2727CBE2D69E3A21A8D531AB6996F6A8")
 
     private boolean mStretchAllColumns;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:36.434 -0500", hash_original_field = "85E6ABD677B9EECC88649F2C8A1D4547", hash_generated_field = "CB216867A328EE0A793FB91163122291")
 
-
     private TableLayout.PassThroughHierarchyChangeListener mPassThroughListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:36.436 -0500", hash_original_field = "C9E05499054E8056F0A4805D1295DEC9", hash_generated_field = "11DCD11B6A2634BB183BD4F1FB332620")
-
 
     private boolean mInitialized;
 
@@ -266,6 +258,7 @@ public void setStretchAllColumns(boolean stretchAllColumns) {
      *
      * @attr ref android.R.styleable#TableLayout_collapseColumns
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:36.467 -0500", hash_original_method = "829331550E99E48511938200E10E0516", hash_generated_method = "2F3AB9C077E0992471E56D80AB0CEECB")
     
 public void setColumnCollapsed(int columnIndex, boolean isCollapsed) {
@@ -307,6 +300,7 @@ public boolean isColumnCollapsed(int columnIndex) {
      *
      * @attr ref android.R.styleable#TableLayout_stretchColumns
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:36.472 -0500", hash_original_method = "62253048F5CA87D307E8714AA1DE21F0", hash_generated_method = "808CA8CC5F13F77F48F338B623EFC98D")
     
 public void setColumnStretchable(int columnIndex, boolean isStretchable) {
@@ -338,6 +332,7 @@ public boolean isColumnStretchable(int columnIndex) {
      *
      * @attr ref android.R.styleable#TableLayout_shrinkColumns
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:36.476 -0500", hash_original_method = "3624AF127452F84D2332BE1546302CDA", hash_generated_method = "3204F1072D4D8DF5E9EFC18E8D7EFD71")
     
 public void setColumnShrinkable(int columnIndex, boolean isShrinkable) {
@@ -688,7 +683,6 @@ private void mutateColumnsWidth(SparseBooleanArray columns,
     protected LinearLayout.LayoutParams generateLayoutParams(ViewGroup.LayoutParams p) {
         return new LayoutParams(p);
     }
-
     
     public static class LayoutParams extends LinearLayout.LayoutParams {
         /**
@@ -758,6 +752,7 @@ public LayoutParams(MarginLayoutParams source) {
          * @param widthAttr the width attribute to fetch
          * @param heightAttr the height attribute to fetch
          */
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:36.538 -0500", hash_original_method = "83FF363F248E79C3B410C30F940F0D3F", hash_generated_method = "2FB701AF10D902AA5F802689F834EA01")
         
 @Override
@@ -770,11 +765,8 @@ public LayoutParams(MarginLayoutParams source) {
                 this.height = WRAP_CONTENT;
             }
         }
-
         
     }
-
-
     
     private class PassThroughHierarchyChangeListener implements OnHierarchyChangeListener {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:36.543 -0500", hash_original_field = "F8AA800937407072EB5CC33824E49D48", hash_generated_field = "2D0D33391D6527FD2B9F8D3EC852AD2F")
@@ -810,11 +802,8 @@ public void onChildViewRemoved(View parent, View child) {
                 mOnHierarchyChangeListener.onChildViewRemoved(parent, child);
             }
         }
-
         
     }
-
-
     
 }
 

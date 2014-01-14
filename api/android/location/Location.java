@@ -12,10 +12,6 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Printer;
 
-
-
-
-
 public class Location implements Parcelable {
 
     /**
@@ -313,7 +309,6 @@ public Location[] newArray(int size) {
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:01.286 -0500", hash_original_field = "91E507DC461800B2755826CF50C3CFFF", hash_generated_field = "644895AD43D171E05003EF08DEE63C8C")
 
-
     private String mProvider;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:01.289 -0500", hash_original_field = "97E03B9680CF23049C36A6B3EB2AC160", hash_generated_field = "39CDFD59B94279CE728BDCF20E03E08D")
 
@@ -398,6 +393,7 @@ public Location(Location l) {
         set(l);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:01.331 -0500", hash_original_method = "E894B78E8DAE7217EB8A906829737D1E", hash_generated_method = "73178F331843DA94658E917347F3A67D")
     
 public void dump(Printer pw, String prefix) {
@@ -413,6 +409,7 @@ public void dump(Printer pw, String prefix) {
     /**
      * Sets the contents of the location to the values from the given location.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:01.338 -0500", hash_original_method = "8A60F1EB9D48909B7AC1F2F058E6CA7B", hash_generated_method = "0D11847C4FAC634F0F15F0182D518FC1")
     
 public void set(Location l) {
@@ -783,6 +780,7 @@ public Bundle getExtras() {
      * Sets the extra information associated with this fix to the
      * given Bundle.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:01.441 -0500", hash_original_method = "0A734FEAEEC80691783BCF1D3384CC6B", hash_generated_method = "7B33C94C8485B596F89F9E6A5A10A83A")
     
 public void setExtras(Bundle extras) {

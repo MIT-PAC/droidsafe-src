@@ -25,13 +25,8 @@ import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
 
-
-
-
-
 public class BitmapDrawable extends Drawable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.002 -0500", hash_original_field = "7CF99753786D75C47609AC471C80045B", hash_generated_field = "88A3BEB3155DA79AE994754DCF9B8910")
-
 
     private static final int DEFAULT_PAINT_FLAGS =
             Paint.FILTER_BITMAP_FLAG | Paint.DITHER_FLAG;
@@ -46,10 +41,8 @@ public class BitmapDrawable extends Drawable {
     private int mTargetDensity;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.011 -0500", hash_original_field = "0A025D603E5F1E14FDA0CBD26CE0F38F", hash_generated_field = "1E3D8C2BEBFECFBF47423C145BB19A3C")
 
-
     private final Rect mDstRect = new Rect();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.013 -0500", hash_original_field = "8FC0E2BDB952C12BF9DFB1F1A8CC0274", hash_generated_field = "5A87E51B39C79BA29E312E77B8B43A92")
-
 
     private boolean mApplyGravity;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.015 -0500", hash_original_field = "B15C308E96D0EEBD27CFE369FA349C15", hash_generated_field = "5CA5A1EF3CAA45117BCACBC34EF05952")
@@ -228,6 +221,7 @@ private void setBitmap(Bitmap bitmap) {
      * @see android.graphics.Bitmap#setDensity(int)
      * @see android.graphics.Bitmap#getDensity()
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.052 -0500", hash_original_method = "82585E992AABF5984A06ED90552A1C77", hash_generated_method = "61CFDB38788DB3DF61DD296AC5E20393")
     
 public void setTargetDensity(Canvas canvas) {
@@ -242,6 +236,7 @@ public void setTargetDensity(Canvas canvas) {
      * @see android.graphics.Bitmap#setDensity(int)
      * @see android.graphics.Bitmap#getDensity()
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.054 -0500", hash_original_method = "4AE49AE83EF2F62C9A584A758B5178F3", hash_generated_method = "5DB2A771EE175C3701864DA1F5B543BF")
     
 public void setTargetDensity(DisplayMetrics metrics) {
@@ -298,6 +293,7 @@ public void setGravity(int gravity) {
      * 
      * @param aa True if the bitmap should be anti-aliased, false otherwise.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.063 -0500", hash_original_method = "A6A7F02FCC6854A1D6F789226FBA84D5", hash_generated_method = "1CC278EEB209DDD7554CBF036FFF47D3")
     
 public void setAntiAlias(boolean aa) {
@@ -305,6 +301,7 @@ public void setAntiAlias(boolean aa) {
         invalidateSelf();
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.066 -0500", hash_original_method = "79F41E9E1F5486CC4586236A9EB22FE0", hash_generated_method = "323E6A41A493DA85844E9CE29CA92993")
     
 @Override
@@ -313,6 +310,7 @@ public void setAntiAlias(boolean aa) {
         invalidateSelf();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.068 -0500", hash_original_method = "FC203784F21362ACF19CD453633052FE", hash_generated_method = "806D4B5BA618F1FCAB8C981B9E7424E0")
     
 @Override
@@ -459,6 +457,7 @@ public void setTileModeXY(Shader.TileMode xmode, Shader.TileMode ymode) {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.090 -0500", hash_original_method = "49CE66D09454E056E2AD494EF2DD30A3", hash_generated_method = "83D57727976F7DCF22DCE37B73CF654A")
     
 @Override
@@ -470,6 +469,7 @@ public void setTileModeXY(Shader.TileMode xmode, Shader.TileMode ymode) {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.092 -0500", hash_original_method = "F79C881D02962F781494A97AA0D9D98A", hash_generated_method = "F25AF7EAB97D9AB76CF1F5AD34B99A1A")
     
 @Override
@@ -569,7 +569,6 @@ public void setTileModeXY(Shader.TileMode xmode, Shader.TileMode ymode) {
         return (bm == null || bm.hasAlpha() || mBitmapState.mPaint.getAlpha() < 255) ?
                 PixelFormat.TRANSLUCENT : PixelFormat.OPAQUE;
     }
-
     
     final static class BitmapState extends ConstantState {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.110 -0500", hash_original_field = "46C0A7FFF0FFB93D952536F8E8BA5C29", hash_generated_field = "46C0A7FFF0FFB93D952536F8E8BA5C29")
@@ -636,7 +635,6 @@ BitmapState(BitmapState bitmapState) {
         public int getChangingConfigurations() {
             return mChangingConfigurations;
         }
-
         
     }
 

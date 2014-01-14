@@ -13,11 +13,6 @@ import java.util.Set;
 
 import org.apache.harmony.security.fortress.Engine;
 
-
-
-
-
-
 public abstract class Signature extends SignatureSpi {
 
     /**
@@ -526,11 +521,9 @@ private String stateToString(int state) {
             return "";
         }
     }
-
     
     private static class SignatureImpl extends Signature {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:54.586 -0500", hash_original_field = "0B9B4E0CF62C2D7B28F9A6A164E87098", hash_generated_field = "B117D5F80D09F234127E3A3393EBC255")
-
 
         private SignatureSpi spiImpl;
 
@@ -624,7 +617,6 @@ public SignatureImpl(SignatureSpi signatureSpi, Provider provider,
             }
             throw new CloneNotSupportedException();
         }
-
         
     }
 
@@ -640,6 +632,7 @@ public SignatureImpl(SignatureSpi signatureSpi, Provider provider,
      *             be changed.
      * @deprecated Use {@link #setParameter(AlgorithmParameterSpec)}
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:54.569 -0500", hash_original_method = "D52E00AF44B32CEF42E7B7F3CD02413C", hash_generated_method = "0B3D5C6F93B131A73FF182C690F84E67")
     
 @Deprecated

@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.ArrayList;
 
-
-
-
-
-
 public class PerformanceCollector {
 
     /*
@@ -133,28 +128,20 @@ private static Bundle getBinderCounts() {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.703 -0500", hash_original_field = "9D1E1056006EB8E7E3FC90059EAE4224", hash_generated_field = "6CE2FD1E3E12963FEB9E78BA78A8A67B")
 
     public static final String METRIC_KEY_NATIVE_SHARED_DIRTY = "native_shared_dirty";
-
     
     public interface PerformanceResultsWriter {
-
         
         public void writeBeginSnapshot(String label);
-
         
         public void writeEndSnapshot(Bundle results);
-
         
         public void writeStartTiming(String label);
-
         
         public void writeStopTiming(Bundle results);
-
         
         public void writeMeasurement(String label, long value);
-
         
         public void writeMeasurement(String label, float value);
-
         
         public void writeMeasurement(String label, String value);
     }
@@ -183,7 +170,6 @@ private static Bundle getBinderCounts() {
 
     public static final String METRIC_KEY_OTHER_SHARED_DIRTY = "other_shared_dirty";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.725 -0500", hash_original_field = "E336978E128E2D4BAC13ECE6FC28940B", hash_generated_field = "2E6B5EF6C826CFAA09973D53DE7A3FDC")
-
 
     private PerformanceResultsWriter mPerfWriter;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.727 -0500", hash_original_field = "8F74EC1B4041FB5D1438D41143191AED", hash_generated_field = "C52DFF4EAE973D9A0B515C624EA1B572")
@@ -228,6 +214,7 @@ public void setPerformanceResultsWriter(PerformanceResultsWriter writer) {
      * @param label description of code block between beginSnapshot and
      *              endSnapshot, used to label output
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.747 -0500", hash_original_method = "29FF8CD15679E582F927741D3542D4F3", hash_generated_method = "5A15DF946630486D0C3259F1C44DC8DB")
     
 public void beginSnapshot(String label) {
@@ -289,6 +276,7 @@ public Bundle endSnapshot() {
      * @param label description of code block between startTiming and
      *        stopTiming, used to label output
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.751 -0500", hash_original_method = "15BE0BB59194B3FBDF2799231E5E71EE", hash_generated_method = "5839B4006D3C723B0CEB76C499D605D6")
     
 public void startTiming(String label) {
@@ -316,6 +304,7 @@ public void startTiming(String label) {
      *         <li>{@link #METRIC_KEY_EXECUTION_TIME execution_time}
      *         </ul>
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.753 -0500", hash_original_method = "9C0B776255C5FFA271DF9EC0789087D7", hash_generated_method = "6B1DFB93517298A1067B4D93DDD34BA3")
     
 public Bundle addIteration(String label) {
@@ -342,6 +331,7 @@ public Bundle addIteration(String label) {
      *         between calls to startTiming and stopTiming. List of iterations
      *         is keyed by {@link #METRIC_KEY_ITERATIONS iterations}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.756 -0500", hash_original_method = "CE19881A0670EADF6F440246450D4521", hash_generated_method = "11594D898B6C795D158A0E9BE6FE6F45")
     
 public Bundle stopTiming(String label) {
@@ -357,6 +347,7 @@ public Bundle stopTiming(String label) {
      * @param label short description of the metric that was measured
      * @param value long value of the measurement
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.758 -0500", hash_original_method = "F7662CC60D6C37C7D8E6A983FE816D6B", hash_generated_method = "FEC72B60E4F52C0543148543EACE8CCF")
     
 public void addMeasurement(String label, long value) {
@@ -370,6 +361,7 @@ public void addMeasurement(String label, long value) {
      * @param label short description of the metric that was measured
      * @param value float value of the measurement
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.761 -0500", hash_original_method = "D91873E003245DBC7EFC93D07019AB08", hash_generated_method = "5487CCC2C0E74BF9C4422144B86A42C8")
     
 public void addMeasurement(String label, float value) {
@@ -383,6 +375,7 @@ public void addMeasurement(String label, float value) {
      * @param label short description of the metric that was measured
      * @param value string summary of the measurement
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.763 -0500", hash_original_method = "8B4722495479149E3D93BD2C6D69D7B4", hash_generated_method = "52DF5D26232D14D615CC8B587C87317E")
     
 public void addMeasurement(String label, String value) {

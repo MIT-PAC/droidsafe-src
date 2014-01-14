@@ -20,14 +20,7 @@ import org.apache.harmony.security.asn1.ASN1Type;
 import org.apache.harmony.security.asn1.BerInputStream;
 import org.apache.harmony.security.x501.Name;
 
-
-
-
-
-
 public final class TBSCertList {
-
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.902 -0400", hash_original_field = "B99D8A08CC5C7677C59256AABCDC0E22", hash_generated_field = "49D719EDF57E2338F15D6AF8FC0620BA")
 
@@ -227,10 +220,8 @@ public byte[] getEncoded() {
                 + Arrays.hashCode(issuer.getEncoded())) * 37
                 + (int)thisUpdate.getTime() / 1000;
     }
-
     
     public static class RevokedCertificate {
-
         
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.901 -0400", hash_original_field = "0EB062719792FA91CCD2C8AAE392BE5A", hash_generated_field = "82E33EB05B176947C86ABB8EA99FD282")
 
@@ -271,7 +262,6 @@ public byte[] getEncoded() {
 
         private  Extensions crlEntryExtensions;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:00.682 -0500", hash_original_field = "7C212B2DE2D213C16F5E7E302DB7A9AD", hash_generated_field = "99CCA543CBC7A8739D82292112850772")
-
 
         private boolean issuerRetrieved;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:00.684 -0500", hash_original_field = "99BE4463DA67376AA94F7D97DDB8D7FF", hash_generated_field = "30FEA84FB35EF28DB029D29044BA91EC")
@@ -361,6 +351,7 @@ public int hashCode() {
                     + (crlEntryExtensions == null ? 0 : crlEntryExtensions.hashCode());
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:00.708 -0500", hash_original_method = "8F642BB50419022F85F1FC1824E6E317", hash_generated_method = "F3195D59C0687FF6BB3C4DA0D0973407")
         
 public void dumpValue(StringBuilder sb, String prefix) {
@@ -374,6 +365,7 @@ public void dumpValue(StringBuilder sb, String prefix) {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:00.750 -0500", hash_original_method = "8372CF0910098C0215CEE031DBAAD799", hash_generated_method = "C425C90333443B6081176932CF3A0F4D")
     
 public void dumpValue(StringBuilder sb) {

@@ -22,10 +22,6 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.RemoteException;
 
-
-
-
-
 public final class Tag implements Parcelable {
 
     /**
@@ -67,7 +63,6 @@ static void writeBytesWithNull(Parcel out, byte[] b) {
         out.writeInt(b.length);
         out.writeByteArray(b);
     }
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:23.380 -0400", hash_original_field = "B7CF6CEBA53F7894015357BCDA86AD40", hash_generated_field = "5753E43B3B6E37C6E072C87A5DFEC09F")
 
@@ -277,7 +272,6 @@ public Tag rediscover() throws IOException {
         }
     }
 
-
     /** @hide */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.171 -0500", hash_original_method = "066FD8962F433FECE6D4FD3B60FADEA0", hash_generated_method = "3F71DBE8B0805DF1BA0EDFDF39CFED70")
     
@@ -340,6 +334,7 @@ public INfcTag getTagService() {
         return 0;
     }
 
+    @DSSink({DSSinkKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.188 -0500", hash_original_method = "B1506093B1A3D95B1E6C500EDA575BD4", hash_generated_method = "F36653C94F01518C72563792A096D133")
     
 @Override

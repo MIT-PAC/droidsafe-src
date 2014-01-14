@@ -14,10 +14,6 @@ import android.content.res.TypedArray;
 import android.os.SystemClock;
 import android.util.AttributeSet;
 
-
-
-
-
 public class AnimationDrawable extends DrawableContainer implements Runnable, Animatable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.510 -0500", hash_original_field = "390BAAE1EB086EA47AF09FAEF9375540", hash_generated_field = "8C9FC3EF51CD1D7374A26DD8B125CA14")
 
@@ -46,6 +42,7 @@ private AnimationDrawable(AnimationState state, Resources res) {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.519 -0500", hash_original_method = "F207A8C7EE9B62CDAD2CDEF6C9E1E05A", hash_generated_method = "8C07124F4B80241F4930CA719BD65812")
     
 @Override
@@ -164,6 +161,7 @@ public boolean isOneShot() {
      * 
      * @param oneShot Pass true if the animation should only play once
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.541 -0500", hash_original_method = "E8F5482B51D48B1DAA2F24BE9877736B", hash_generated_method = "E0EBA634D159BA1B4DB52D6C94AA449F")
     
 public void setOneShot(boolean oneShot) {
@@ -293,7 +291,6 @@ private void setFrame(int frame, boolean unschedule, boolean animate) {
         }
         return this;
     }
-
     
     private final static class AnimationState extends DrawableContainerState {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.556 -0500", hash_original_field = "20D1C0D4800764C0753F9956F9F072EE", hash_generated_field = "8BD7F9CC97F6F0855D8F3C7E2109665D")
@@ -350,11 +347,8 @@ public void addFrame(Drawable dr, int dur) {
             System.arraycopy(mDurations, 0, newDurations, 0, oldSize);
             mDurations = newDurations;
         }
-
         
     }
-
-
     
 }
 

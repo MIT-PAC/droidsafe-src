@@ -209,6 +209,7 @@ public static void setDefaultAllowUserInteraction(boolean allows) {
      *
      * @deprecated Use {@link URLConnection#setRequestProperty(String, String)}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.172 -0500", hash_original_method = "C6165B081FA515B9B3060BC6E3911C85", hash_generated_method = "AD553A46666C9EA196877FE8233D039E")
     
 @Deprecated
@@ -886,6 +887,7 @@ public void setAllowUserInteraction(boolean newValue) {
      *            the default value of the flag to be used for new connections.
      * @see #useCaches
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.174 -0500", hash_original_method = "850171EE0F333E1246D13E7B06ED7B4A", hash_generated_method = "B3B107E055283354A0EB84E1277B4C31")
     
 public void setDefaultUseCaches(boolean newValue) {
@@ -961,6 +963,7 @@ public void setIfModifiedSince(long newValue) {
      * @throws NullPointerException
      *             if the parameter {@code field} is {@code null}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.187 -0500", hash_original_method = "EB8A856B35FAF51399B9B389D895E434", hash_generated_method = "897791F44B5080C11972AA64B89EBE20")
     
 public void setRequestProperty(String field, String newValue) {

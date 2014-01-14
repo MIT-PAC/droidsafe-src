@@ -392,6 +392,7 @@ public void initIndeterminateProgress() {
         addView(mIndeterminateProgressView);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:43.483 -0500", hash_original_method = "268F2B84CAE6E37FD4EC6111E5C155B1", hash_generated_method = "CBE3FD0931C814ED6FF7F1AFC55387AE")
     
 @Override
@@ -630,6 +631,7 @@ public void setSubtitle(CharSequence subtitle) {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:43.523 -0500", hash_original_method = "BA9334347A50C815DACE5C734F6D1CA6", hash_generated_method = "6EA9422385DBC3050585D775BA629E07")
     
 public void setHomeButtonEnabled(boolean enable) {
@@ -726,6 +728,7 @@ public void setIcon(Drawable icon) {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:43.532 -0500", hash_original_method = "7424D4DE12B074743D84FF4154B309BA", hash_generated_method = "35C4B17B207D3493F49F75BF5BD06EC1")
     
 public void setIcon(int resId) {
@@ -741,6 +744,7 @@ public void setLogo(Drawable logo) {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:43.537 -0500", hash_original_method = "8F48D1A1BD2CE39E1CCC3DD41DD8DBB5", hash_generated_method = "325D8DDD6B8334C0917A9A92F452998E")
     
 public void setLogo(int resId) {
@@ -808,6 +812,7 @@ public SpinnerAdapter getDropdownAdapter() {
         return mSpinnerAdapter;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:43.547 -0500", hash_original_method = "AD9310333D391F8A81F374E0D04AD8BB", hash_generated_method = "622B0A30BA3CF73798E669E09E27D592")
     
 public void setDropdownSelectedPosition(int position) {
@@ -1300,6 +1305,7 @@ private SavedState(Parcel in) {
             isOverflowOpen = in.readInt() != 0;
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:43.608 -0500", hash_original_method = "515851E7BACA5483746DDD359AD42324", hash_generated_method = "5187780AA67DF6AE317AFBE536A67AD7")
         
 @Override
@@ -1333,12 +1339,14 @@ public HomeView(Context context, AttributeSet attrs) {
             super(context, attrs);
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:43.633 -0500", hash_original_method = "9F32A31FB673DE4EC8BCDCE1EEBEDDFA", hash_generated_method = "C585B0359FC89CFC54CE304FAA65F640")
         
 public void setUp(boolean isUp) {
             mUpView.setVisibility(isUp ? VISIBLE : GONE);
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:43.636 -0500", hash_original_method = "F0A9CABDEAA57DB9E5ACC2CB832FAA3E", hash_generated_method = "5452CA065A738DC2BF4BEA31A0A3B24C")
         
 public void setIcon(Drawable icon) {

@@ -177,7 +177,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:37.537 -0500", hash_original_method = "5F60C5D3E1D6DB9F3BBDADFC34A5203D", hash_generated_method = "C4C1058D0D2B768E48BC3D30871BACCE")
+@DSSink({DSSinkKind.BLUETOOTH})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:37.537 -0500", hash_original_method = "5F60C5D3E1D6DB9F3BBDADFC34A5203D", hash_generated_method = "C4C1058D0D2B768E48BC3D30871BACCE")
             
 public boolean setName(java.lang.String name) throws android.os.RemoteException
 {
@@ -235,7 +236,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:37.546 -0500", hash_original_method = "3AF4D809408DDF569F94C16D239D69B2", hash_generated_method = "2944DDC99F94B54093FCDD2A084FBF8C")
+@DSSink({DSSinkKind.BLUETOOTH})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:37.546 -0500", hash_original_method = "3AF4D809408DDF569F94C16D239D69B2", hash_generated_method = "2944DDC99F94B54093FCDD2A084FBF8C")
             
 public boolean setScanMode(int mode, int duration) throws android.os.RemoteException
 {
@@ -275,7 +277,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:37.551 -0500", hash_original_method = "602003EEDCB0463F9E8AB0F0BA8D1DBE", hash_generated_method = "39821C8AB624B956ABEF5FF2047011BA")
+@DSSink({DSSinkKind.BLUETOOTH})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:37.551 -0500", hash_original_method = "602003EEDCB0463F9E8AB0F0BA8D1DBE", hash_generated_method = "39821C8AB624B956ABEF5FF2047011BA")
             
 public boolean setDiscoverableTimeout(int timeout) throws android.os.RemoteException
 {
@@ -1613,7 +1616,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:37.712 -0500", hash_original_method = "FBF8996C99312133B44A7E0F55A9D306", hash_generated_method = "6D5392BFF15A6813C2100CDC720735D5")
+@DSSink({DSSinkKind.BLUETOOTH})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:37.712 -0500", hash_original_method = "FBF8996C99312133B44A7E0F55A9D306", hash_generated_method = "6D5392BFF15A6813C2100CDC720735D5")
             
 public void sendConnectionStateChange(android.bluetooth.BluetoothDevice device, int profile, int state, int prevState) throws android.os.RemoteException
 {
@@ -1857,7 +1861,8 @@ public android.os.IBinder asBinder()
 {
 return this;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:37.507 -0500", hash_original_method = "DBBC3947D4B873274E47917EB4489E0B", hash_generated_method = "7D0EA8539B1C24E86B8AC1D268E96B9B")
+@DSSink({DSSinkKind.BLUETOOTH})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:37.507 -0500", hash_original_method = "DBBC3947D4B873274E47917EB4489E0B", hash_generated_method = "7D0EA8539B1C24E86B8AC1D268E96B9B")
         
 @Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
 {
@@ -2779,7 +2784,6 @@ public boolean connectHeadset(java.lang.String address) throws android.os.Remote
 public boolean disconnectHeadset(java.lang.String address) throws android.os.RemoteException;
 public boolean notifyIncomingConnection(java.lang.String address, boolean rejected) throws android.os.RemoteException;
 
-
 public boolean connectInputDevice(android.bluetooth.BluetoothDevice device) throws android.os.RemoteException;
 public boolean disconnectInputDevice(android.bluetooth.BluetoothDevice device) throws android.os.RemoteException;
 public java.util.List<android.bluetooth.BluetoothDevice> getConnectedInputDevices() throws android.os.RemoteException;
@@ -2794,7 +2798,6 @@ public java.util.List<android.bluetooth.BluetoothDevice> getConnectedPanDevices(
 public java.util.List<android.bluetooth.BluetoothDevice> getPanDevicesMatchingConnectionStates(int[] states) throws android.os.RemoteException;
 public boolean connectPanDevice(android.bluetooth.BluetoothDevice device) throws android.os.RemoteException;
 public boolean disconnectPanDevice(android.bluetooth.BluetoothDevice device) throws android.os.RemoteException;
-
 
 public boolean registerAppConfiguration(android.bluetooth.BluetoothHealthAppConfiguration config, android.bluetooth.IBluetoothHealthCallback callback) throws android.os.RemoteException;
 public boolean unregisterAppConfiguration(android.bluetooth.BluetoothHealthAppConfiguration config) throws android.os.RemoteException;

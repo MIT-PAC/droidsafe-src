@@ -112,6 +112,7 @@ public static int complexToDimensionPixelSize(int data,
         return -1;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:21.683 -0500", hash_original_method = "04AD62EFCF8834E104D76228065ADCEE", hash_generated_method = "9978C9AAC915E867A2A6C034AC911C4B")
     
 public static float complexToDimensionNoisy(int data, DisplayMetrics metrics)
@@ -467,6 +468,7 @@ public final CharSequence coerceToString()
         return coerceToString(t, data);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:21.705 -0500", hash_original_method = "AE1CAB20A8487EE7B21133A09B8F6C44", hash_generated_method = "A7E9CBDC4F50C1D09D48207184B5E47B")
     
 public void setTo(TypedValue other)

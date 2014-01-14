@@ -10,10 +10,6 @@ import android.view.inputmethod.ExtractedText;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
-
-
-
-
 public class ExtractEditText extends EditText {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:40.828 -0500", hash_original_field = "CC8D5384A00A73871026D93AAF45F70B", hash_generated_field = "451A1E4BDED6910D4643671429CF353C")
 
@@ -72,6 +68,7 @@ public void finishInternalChanges() {
      * Implement just to keep track of when we are setting text from the
      * client (vs. seeing changes in ourself from the user).
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:40.846 -0500", hash_original_method = "6BAFF88F25F6637786E87F71A6E886F7", hash_generated_method = "600D30AF1155663CD7FE89E39D22C169")
     
 @Override public void setExtractedText(ExtractedText text) {
@@ -211,6 +208,7 @@ public boolean hasVerticalScrollBar() {
      * {@inheritDoc}
      * @hide
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:40.875 -0500", hash_original_method = "68A0F27720FB577E88EB01CE64B3B91C", hash_generated_method = "553227923AFD0389533061117084A48E")
     
 @Override
@@ -224,6 +222,7 @@ public boolean hasVerticalScrollBar() {
      * {@inheritDoc}
      * @hide
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:40.878 -0500", hash_original_method = "4F35DEE60ED94EEB6924945BBEBAAE46", hash_generated_method = "371C58E66CEAB0D30661D74FCDC91886")
     
 @Override
@@ -232,7 +231,6 @@ public boolean hasVerticalScrollBar() {
         // This will change the source TextView instead, which will update the ExtractTextView.
         mIME.onExtractedSelectionChanged(start, end);
     }
-
     
 }
 

@@ -103,7 +103,8 @@ return _result;
      * @param observer If non-null, this binder points to an object that will receive
      *   progress callbacks during the restore operation.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:47.126 -0500", hash_original_method = "EBEAD6A2F5AC5E0806619F0CA3E2BC96", hash_generated_method = "30455DB1341A1E00B4FF52B8BF56A726")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:47.126 -0500", hash_original_method = "EBEAD6A2F5AC5E0806619F0CA3E2BC96", hash_generated_method = "30455DB1341A1E00B4FF52B8BF56A726")
             
 public int restoreAll(long token, android.app.backup.IRestoreObserver observer) throws android.os.RemoteException
 {
@@ -141,7 +142,8 @@ return _result;
      *   the contents of the actual back-end dataset named by {@code token}, only
      *   applications mentioned in this list will have their data restored.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:47.129 -0500", hash_original_method = "4C7B634D0B09C866EA862065BD3859A6", hash_generated_method = "A27588910B113F7F96A3BCFE48836FF2")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:47.129 -0500", hash_original_method = "4C7B634D0B09C866EA862065BD3859A6", hash_generated_method = "A27588910B113F7F96A3BCFE48836FF2")
             
 public int restoreSome(long token, android.app.backup.IRestoreObserver observer, java.lang.String[] packages) throws android.os.RemoteException
 {
@@ -178,7 +180,8 @@ return _result;
      * @param observer If non-null, this binder points to an object that will receive
      *   progress callbacks during the restore operation.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:47.133 -0500", hash_original_method = "763A71E341385A63AF9B7B27DB41DD5C", hash_generated_method = "CB7ED56C27388CC9DB042613444B4189")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:47.133 -0500", hash_original_method = "763A71E341385A63AF9B7B27DB41DD5C", hash_generated_method = "CB7ED56C27388CC9DB042613444B4189")
             
 public int restorePackage(java.lang.String packageName, android.app.backup.IRestoreObserver observer) throws android.os.RemoteException
 {
@@ -242,7 +245,8 @@ public android.os.IBinder asBinder()
 {
 return this;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:47.110 -0500", hash_original_method = "423E84187EDABE1190F1418C2BAF5B86", hash_generated_method = "2E215F2E1E1E5694C2AB343B0C1F78D2")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:47.110 -0500", hash_original_method = "423E84187EDABE1190F1418C2BAF5B86", hash_generated_method = "2E215F2E1E1E5694C2AB343B0C1F78D2")
         
 @Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
 {

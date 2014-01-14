@@ -20,11 +20,6 @@ import android.widget.RemoteViews;
 
 import com.android.internal.appwidget.IAppWidgetService;
 
-
-
-
-
-
 public class AppWidgetManager {
 
     /**
@@ -93,7 +88,6 @@ public static AppWidgetManager getInstance(Context context) {
     public static final String META_DATA_APPWIDGET_PROVIDER = "android.appwidget.provider";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:55.824 -0500", hash_original_field = "EBC000C84EFA17F58F5DA2CEB61814F2", hash_generated_field = "5D686610412372E030953571637E228C")
 
-
     static WeakHashMap<Context, WeakReference<AppWidgetManager>> sManagerCache =
         new WeakHashMap<Context, WeakReference<AppWidgetManager>>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:55.827 -0500", hash_original_field = "7BEAA5F14979DBA9A1EB5C251A94638F", hash_generated_field = "94920F0617D8341AD26C68E1EE00A15C")
@@ -101,10 +95,8 @@ public static AppWidgetManager getInstance(Context context) {
     static IAppWidgetService sService;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:55.830 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "B997E37019471EC8FC5B98148C7A8AD7")
 
-
     Context mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:55.833 -0500", hash_original_field = "04C1AD4CD176D3E2FCA1F38653BFD089", hash_generated_field = "D677A4323A370A58C33D323A072CFE1B")
-
 
     private DisplayMetrics mDisplayMetrics;
 
@@ -130,6 +122,7 @@ private AppWidgetManager(Context context) {
      * @param appWidgetIds     The AppWidget instances for which to set the RemoteViews.
      * @param views         The RemoteViews object to show.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:55.842 -0500", hash_original_method = "C145E9C7D3CA673896555FC1E9B6614C", hash_generated_method = "CF3C48A2B5433CB1B9F054F36DD33C3C")
     
 public void updateAppWidget(int[] appWidgetIds, RemoteViews views) {
@@ -156,6 +149,7 @@ public void updateAppWidget(int[] appWidgetIds, RemoteViews views) {
      * @param appWidgetId      The AppWidget instance for which to set the RemoteViews.
      * @param views         The RemoteViews object to show.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:55.845 -0500", hash_original_method = "779A0F382601F89CF93810A3753ED0EE", hash_generated_method = "D5BA8051AFB8D90F24D576EC7BAF20E1")
     
 public void updateAppWidget(int appWidgetId, RemoteViews views) {
@@ -232,6 +226,7 @@ public void partiallyUpdateAppWidget(int appWidgetId, RemoteViews views) {
      *                      for your AppWidget.
      * @param views         The RemoteViews object to show.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:55.855 -0500", hash_original_method = "E171ADDB89C92A829FC0A5D980C9CF1B", hash_generated_method = "853134522A21D08D57F15F190C06DF1F")
     
 public void updateAppWidget(ComponentName provider, RemoteViews views) {
@@ -250,6 +245,7 @@ public void updateAppWidget(ComponentName provider, RemoteViews views) {
      * @param appWidgetIds  The AppWidget instances for which to notify of view data changes.
      * @param viewId        The collection view id.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:55.857 -0500", hash_original_method = "7C2BF1F364031ACAC78067E68F83C77E", hash_generated_method = "DBC8946E26182285CBFCD652E9A61948")
     
 public void notifyAppWidgetViewDataChanged(int[] appWidgetIds, int viewId) {
@@ -268,6 +264,7 @@ public void notifyAppWidgetViewDataChanged(int[] appWidgetIds, int viewId) {
      * @param appWidgetId  The AppWidget instance for which to notify of view data changes.
      * @param viewId        The collection view id.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:55.860 -0500", hash_original_method = "C96E973D3DD249985D67DC789B41FB05", hash_generated_method = "49FA704FE1EBD1FB743F960B79C013B7")
     
 public void notifyAppWidgetViewDataChanged(int appWidgetId, int viewId) {
@@ -339,6 +336,7 @@ public AppWidgetProviderInfo getAppWidgetInfo(int appWidgetId) {
      * @param provider      The {@link android.content.BroadcastReceiver} that will be the AppWidget
      *                      provider for this AppWidget.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:55.870 -0500", hash_original_method = "1B2C655DAB3EC9AC1A1945226B92611F", hash_generated_method = "7A82EE1E230AFFAA2F73B70B12376610")
     
 public void bindAppWidgetId(int appWidgetId, ComponentName provider) {

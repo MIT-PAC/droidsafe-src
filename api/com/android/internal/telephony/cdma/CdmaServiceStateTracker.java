@@ -917,6 +917,7 @@ protected void
         }
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:53.561 -0500", hash_original_method = "E69BA838DECF1BB5E62D048E955B2CB0", hash_generated_method = "D0E1FD49E7000B511C47ACF7A9BBA81E")
     
 protected void fixTimeZone(String isoCountryCode) {

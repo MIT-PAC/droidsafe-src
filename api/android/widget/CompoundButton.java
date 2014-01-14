@@ -18,14 +18,8 @@ import android.view.accessibility.AccessibilityNodeInfo;
 
 import com.android.internal.R;
 
-
-
-
-
-
 public abstract class CompoundButton extends Button implements Checkable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:39.491 -0500", hash_original_field = "73791D998AED7A27216E6912B00269F9", hash_generated_field = "648B080756031EA789B9ECD9F36CC170")
-
 
     private static final int[] CHECKED_STATE_SET = {
         R.attr.state_checked
@@ -308,11 +302,9 @@ public void setButtonDrawable(Drawable d) {
         ss.checked = isChecked();
         return ss;
     }
-
     
     static class SavedState extends BaseSavedState {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:39.558 -0500", hash_original_field = "AD99978CDC5E698C2A4DD1DC3100EFC5", hash_generated_field = "263FCDD65C2156B1D1E1B4D9AE8D7FFA")
-
 
         public static final Parcelable.Creator<SavedState> CREATOR
                 = new Parcelable.Creator<SavedState>() {
@@ -347,6 +339,7 @@ private SavedState(Parcel in) {
             checked = (Boolean)in.readValue(null);
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:39.548 -0500", hash_original_method = "42336FB9BEBA29D5024EB2A7DFCC6545", hash_generated_method = "32FB3B94878A334A33C984AE7E9B31D2")
         
 @Override
@@ -374,8 +367,6 @@ private SavedState(Parcel in) {
             }
         
     }
-
-
     
     public static interface OnCheckedChangeListener {
         

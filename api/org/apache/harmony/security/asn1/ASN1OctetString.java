@@ -7,11 +7,6 @@ import droidsafe.annotations.*;
 import java.io.IOException;
 import java.util.Arrays;
 
-
-
-
-
-
 public class ASN1OctetString extends ASN1StringType {
 
     /**
@@ -71,6 +66,7 @@ public ASN1OctetString() {
         out.encodeOctetString();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.976 -0500", hash_original_method = "9FE1E04620BBFE07A0C8F71EADD10582", hash_generated_method = "180CA1AEB1CE9F7B268BC78AC57F4A6B")
     
 @Override public void setEncodingContent(BerOutputStream out) {

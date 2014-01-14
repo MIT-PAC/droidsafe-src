@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.nio.CharBuffer;
 
-
-
-
-
-
 public abstract class Reader implements Readable, Closeable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.826 -0500", hash_original_field = "5E7C45D6B25B1E31F92C48548080E9E3", hash_generated_field = "AB852390F41C8C6739EA01C427D6BB51")
 
@@ -248,6 +243,7 @@ public long skip(long charCount) throws IOException {
      * @throws ReadOnlyBufferException
      *             if {@code target} is read-only.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.856 -0500", hash_original_method = "3EEA08DE1417537F34B729CF4FE40629", hash_generated_method = "C5940F6106B7BDD695AB535DD92FD3DC")
     
 public int read(CharBuffer target) throws IOException {
@@ -259,7 +255,6 @@ public int read(CharBuffer target) throws IOException {
         }
         return length;
     }
-
     
 }
 

@@ -6,10 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 
-
-
-
-
 public class ServerHelloDone extends Message {
 
     /**
@@ -40,6 +36,7 @@ public ServerHelloDone(HandshakeIODataStream in, int length)
      * Sends message
      * @param out
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.151 -0500", hash_original_method = "52BF089D22903982B0C882C52DE70EC3", hash_generated_method = "3B749C8EC23DB82A54E30BDF71BEA1E8")
     
 @Override
@@ -67,7 +64,6 @@ public ServerHelloDone(HandshakeIODataStream in, int length)
     public int getType() {
         return Handshake.SERVER_HELLO_DONE;
     }
-
     
 }
 

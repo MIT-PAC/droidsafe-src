@@ -82,7 +82,8 @@ finally {
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:59.142 -0500", hash_original_method = "8ABF7665F996AEE9830EC53016995066", hash_generated_method = "0CA4BA9698A2DE044E534A5E10807B22")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:59.142 -0500", hash_original_method = "8ABF7665F996AEE9830EC53016995066", hash_generated_method = "0CA4BA9698A2DE044E534A5E10807B22")
             
 public void onStatusChanged(java.lang.String provider, int status, android.os.Bundle extras) throws android.os.RemoteException
 {
@@ -104,7 +105,8 @@ finally {
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:59.145 -0500", hash_original_method = "164C9F7DD588A8D62FDA5ED5CA4F1BAA", hash_generated_method = "A0CBC64732146FC320D6110AF0261B6D")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:59.145 -0500", hash_original_method = "164C9F7DD588A8D62FDA5ED5CA4F1BAA", hash_generated_method = "A0CBC64732146FC320D6110AF0261B6D")
             
 public void onProviderEnabled(java.lang.String provider) throws android.os.RemoteException
 {
@@ -118,7 +120,8 @@ finally {
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:59.147 -0500", hash_original_method = "7C1F92D96FDE9D06EA68581DC85F0402", hash_generated_method = "4EFFD7781A257E0C6AD5D8AFDED0B35C")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:59.147 -0500", hash_original_method = "7C1F92D96FDE9D06EA68581DC85F0402", hash_generated_method = "4EFFD7781A257E0C6AD5D8AFDED0B35C")
             
 public void onProviderDisabled(java.lang.String provider) throws android.os.RemoteException
 {

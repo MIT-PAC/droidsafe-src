@@ -10,10 +10,6 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
 
-
-
-
-
 public class ClipDescription implements Parcelable {
 
     /**
@@ -70,7 +66,6 @@ public ClipDescription[] newArray(int size) {
             }
         };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:39.180 -0500", hash_original_field = "3688992A2E5C86A7BA94DE38FB1043D1", hash_generated_field = "3688992A2E5C86A7BA94DE38FB1043D1")
-
 
      CharSequence mLabel;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:39.182 -0500", hash_original_field = "97CE940966C9ECB62D16CE8136A149A4", hash_generated_field = "97CE940966C9ECB62D16CE8136A149A4")
@@ -207,6 +202,7 @@ public void validate() {
         return 0;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:39.208 -0500", hash_original_method = "B91E92C4C4B5B9EF26722F0E8D4A5B80", hash_generated_method = "25810F0526BB75DA5FFC2F84BC3E4C45")
     
 @Override

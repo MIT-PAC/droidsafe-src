@@ -13,13 +13,8 @@ import android.text.ParcelableSpan;
 import android.text.TextUtils;
 import android.view.View;
 
-
-
-
-
 public class URLSpan extends ClickableSpan implements ParcelableSpan {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.324 -0500", hash_original_field = "08871E39128BE26E8E2A4AE5070B5D92", hash_generated_field = "92D0AFAEA52DADCF8157B0CE1915F0CF")
-
 
     private  String mURL;
 
@@ -59,6 +54,7 @@ public String getURL() {
         return mURL;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.342 -0500", hash_original_method = "04E55325C1106D52B4E11E13B7EEFAD9", hash_generated_method = "F6AAE900FBE3FE8ECAA6E9BE2C1CF933")
     
 @Override
@@ -69,7 +65,6 @@ public String getURL() {
         intent.putExtra(Browser.EXTRA_APPLICATION_ID, context.getPackageName());
         context.startActivity(intent);
     }
-
     
 }
 

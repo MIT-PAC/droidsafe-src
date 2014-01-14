@@ -17,13 +17,9 @@ import com.android.internal.telephony.EncodeException;
 import com.android.internal.telephony.GsmAlphabet;
 import com.android.internal.telephony.cat.AppInterface.CommandType;
 
-
-
-
-
-
 abstract class ResponseData {
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:05.968 -0500", hash_original_method = "0B6CCB67FFDA5A49673B369424217ADB", hash_generated_method = "10E67E0C3714C85C626F98C3076D7381")
     
 public static void writeLength(ByteArrayOutputStream buf, int length) {
@@ -48,7 +44,6 @@ public static void writeLength(ByteArrayOutputStream buf, int length) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:05.966 -0500", hash_original_method = "6FB3ECF3A8313AEBC30BD8DDB91C09D0", hash_generated_method = "096DB2CD17C028C2B6A86B512C1A899B")
     
 public abstract void format(ByteArrayOutputStream buf);
-
     
 }
 
@@ -74,7 +69,6 @@ public SelectItemResponseData(int id) {
         buf.write(1); // length
         buf.write(id); // identifier of item chosen
     }
-
     
 }
 
@@ -122,6 +116,7 @@ public GetInkeyInputResponseData(boolean yesNoResponse) {
         this.mYesNoResponse = yesNoResponse;
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:06.004 -0500", hash_original_method = "E3DE4DD341771272E5ED5B0598896B15", hash_generated_method = "CB11B03EEC533EFF3CFA7A28C5614904")
     
 @Override
@@ -222,7 +217,6 @@ public LanguageResponseData(String lang) {
             buf.write(b);
         }
     }
-
     
 }
 
@@ -318,7 +312,6 @@ private byte getTZOffSetByte(long offSetVal) {
          // For negative offsets, put '1' in the msb
          return isNegative ?  (bcdVal |= 0x08) : bcdVal;
     }
-
     
 }
 

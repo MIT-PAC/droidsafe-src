@@ -72,7 +72,8 @@ return DESCRIPTOR;
      *   the current device.  If no applicable datasets exist, {@code result} will be
      *   {@code null}.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.367 -0500", hash_original_method = "0622CA1E51B91425EAF6FF59B15C1C1B", hash_generated_method = "07E5DCC78C98B9C86A9FCA5DB5242C8E")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.367 -0500", hash_original_method = "0622CA1E51B91425EAF6FF59B15C1C1B", hash_generated_method = "07E5DCC78C98B9C86A9FCA5DB5242C8E")
             
 public void restoreSetsAvailable(android.app.backup.RestoreSet[] result) throws android.os.RemoteException
 {
@@ -92,7 +93,8 @@ _data.recycle();
      * @param numPackages The total number of packages being processed in
      *   this restore operation.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.370 -0500", hash_original_method = "AD83777E217714B6FF6910D47F9B7839", hash_generated_method = "35BB13DBA26B90C1B9843687CBABAD97")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.370 -0500", hash_original_method = "AD83777E217714B6FF6910D47F9B7839", hash_generated_method = "35BB13DBA26B90C1B9843687CBABAD97")
             
 public void restoreStarting(int numPackages) throws android.os.RemoteException
 {
@@ -115,7 +117,8 @@ _data.recycle();
      *   to the restoreStarting() callback, of the package now being restored.
      * @param currentPackage The name of the package now being restored.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.372 -0500", hash_original_method = "4D1B698F9DDC9B92F2E46B95B365AB82", hash_generated_method = "CF8F7B25257DBCCF95FC810D1DC76B89")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.372 -0500", hash_original_method = "4D1B698F9DDC9B92F2E46B95B365AB82", hash_generated_method = "CF8F7B25257DBCCF95FC810D1DC76B89")
             
 public void onUpdate(int nowBeingRestored, java.lang.String curentPackage) throws android.os.RemoteException
 {
@@ -136,7 +139,8 @@ _data.recycle();
      * @param error Zero on success; a nonzero error code if the restore operation
      *   as a whole failed.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.376 -0500", hash_original_method = "9BC1D282CC171018446D034E9A1E58BA", hash_generated_method = "724391F076095EA8FCE8A0D23943356A")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.376 -0500", hash_original_method = "9BC1D282CC171018446D034E9A1E58BA", hash_generated_method = "724391F076095EA8FCE8A0D23943356A")
             
 public void restoreFinished(int error) throws android.os.RemoteException
 {
@@ -167,7 +171,8 @@ public android.os.IBinder asBinder()
 {
 return this;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.354 -0500", hash_original_method = "BD05F25EAE2EF1ED9BB0F2504403FE37", hash_generated_method = "610DA5A0B6F6A42E30978CD0FCC5F047")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.354 -0500", hash_original_method = "BD05F25EAE2EF1ED9BB0F2504403FE37", hash_generated_method = "610DA5A0B6F6A42E30978CD0FCC5F047")
         
 @Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
 {

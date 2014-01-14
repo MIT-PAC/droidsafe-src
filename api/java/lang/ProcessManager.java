@@ -264,6 +264,7 @@ public int waitFor() throws InterruptedException {
             }
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:17.593 -0500", hash_original_method = "B7D46CBA2679C4E3B0149113D5DCFB48", hash_generated_method = "B7D46CBA2679C4E3B0149113D5DCFB48")
         
 void setExitValue(int exitValue) {
@@ -380,6 +381,7 @@ private ProcessOutputStream(FileDescriptor fd) {
     /**
      * Executes a process and returns an object representing it.
      */
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:17.556 -0500", hash_original_method = "3D8923075A9F95B30754D64C899AFA66", hash_generated_method = "BB59D398D3F667713061D80B34E12A3C")
     
 public Process exec(String[] taintedCommand, String[] taintedEnvironment, File workingDirectory,

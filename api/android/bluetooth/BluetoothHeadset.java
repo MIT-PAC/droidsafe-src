@@ -17,8 +17,6 @@ import android.os.IBinder;
 import android.os.RemoteException;
 import android.util.Log;
 
-
-
 public final class BluetoothHeadset implements BluetoothProfile {
 
     /**
@@ -102,8 +100,6 @@ private static void log(String msg) {
     public static final int STATE_AUDIO_CONNECTED = 12;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.878 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
 
-
-
     private Context mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.880 -0500", hash_original_field = "AD4810E1EAEE0B4F351A0550C3A3183B", hash_generated_field = "6FCEA0ED39BC377BA765F514A42DFCE9")
 
@@ -136,7 +132,6 @@ public void onServiceDisconnected(ComponentName className) {
                 mServiceListener.onServiceDisconnected(BluetoothProfile.HEADSET);
             }
         }
-
         
 };
 
@@ -326,6 +321,7 @@ public int getConnectionState(BluetoothDevice device) {
      * @return true if priority is set, false on error
      * @hide
      */
+    @DSSink({DSSinkKind.BLUETOOTH})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.904 -0500", hash_original_method = "F982CE0C4DEC9189A14DF4553C949192", hash_generated_method = "01A34DB00D2DAC328E5A50D56D464ADF")
     
 public boolean setPriority(BluetoothDevice device, int priority) {
@@ -398,6 +394,7 @@ public int getPriority(BluetoothDevice device) {
      *               connected headset doesn't support voice recognition
      *               or on error, true otherwise
      */
+    @DSSink({DSSinkKind.BLUETOOTH})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.908 -0500", hash_original_method = "27AD2A5F99F8BC607BCDEC817A66E20B", hash_generated_method = "AE7ECBDF0D6700335BAF64C90824AE25")
     
 public boolean startVoiceRecognition(BluetoothDevice device) {
@@ -672,6 +669,7 @@ public int getAudioState(BluetoothDevice device) {
      * @return true if successful, false if there was some error.
      * @hide
      */
+    @DSSink({DSSinkKind.BLUETOOTH})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:34.940 -0500", hash_original_method = "D15419F6AD1B4E28C80D3421F9F86FA4", hash_generated_method = "B6AAA10A8046DEAF7A51157791491AE3")
     
 public boolean startScoUsingVirtualVoiceCall(BluetoothDevice device) {

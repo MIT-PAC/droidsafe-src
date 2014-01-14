@@ -28,11 +28,6 @@ import org.xml.sax.XMLReader;
 import org.xml.sax.ext.LexicalHandler;
 import org.xml.sax.helpers.DefaultHandler;
 
-
-
-
-
-
 public class Parser extends DefaultHandler implements ScanHandler, XMLReader, LexicalHandler {
 
 	// Private clone of Boolean.valueOf that is guaranteed to return
@@ -101,7 +96,6 @@ private static String[] split(String val) throws IllegalArgumentException {
 		}
         }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:46.255 -0500", hash_original_field = "9211B479AEDD558B364C67B71B9A375D", hash_generated_field = "8C65D693E4988ED7894951639899EFA7")
-
 
 	private static boolean DEFAULT_NAMESPACES = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:46.258 -0500", hash_original_field = "043D54F98AE5B993BC434E85D0697789", hash_generated_field = "95CB3BC4361BA9B6FF9E9F70A90DAD03")
@@ -197,7 +191,6 @@ private static String[] split(String val) throws IllegalArgumentException {
 		"http://xml.org/sax/features/string-interning";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:46.318 -0500", hash_original_field = "1F8E35D5961830FEACA37E76CCDE5E7A", hash_generated_field = "FAAA57EA66A4B1C99F05BEE9CC5BC5C0")
 
-
 	public final static String useAttributes2Feature =
 		"http://xml.org/sax/features/use-attributes2";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:46.320 -0500", hash_original_field = "5B6F7CCB2CAA297365019B36FED78096", hash_generated_field = "73D5341F2654195F0D7797F0A3BD736C")
@@ -274,14 +267,12 @@ private static String[] split(String val) throws IllegalArgumentException {
 		"http://www.ccil.org/~cowan/tagsoup/properties/auto-detector";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:46.459 -0500", hash_original_field = "6A5006467E0BAFBA5A031138163DDC22", hash_generated_field = "F9A296D96DE887875437F32B036C0ACB")
 
-
 	private static char[] etagchars = {'<', '/', '>'};
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:46.494 -0500", hash_original_field = "851E1051E6D40941E485416A968F1220", hash_generated_field = "E6F625E3403F0099E2C98CB06235CCBA")
 
 	private static String legal =
 		"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-'()+,./:=?;!*#@$_%";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:46.238 -0500", hash_original_field = "F86BCC24AB2B3CB2335E91E2E05B1356", hash_generated_field = "4F44CE27A3793F7751E9A2BE62EDA28B")
-
 
 	private ContentHandler theContentHandler = this;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:46.240 -0500", hash_original_field = "23045B7A8985E3CE20DC0CE44BFC55C2", hash_generated_field = "157ADCC7E3B0E4B62A86EF5B1464D34C")
@@ -306,7 +297,6 @@ private static String[] split(String val) throws IllegalArgumentException {
 
 	private AutoDetector theAutoDetector;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:46.276 -0500", hash_original_field = "DBCD2AABAE5E8CBC837971C2BC5BB3D3", hash_generated_field = "22AE333EFBA532959473DE818E24D5BF")
-
 
 	private boolean namespaces = DEFAULT_NAMESPACES;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:46.278 -0500", hash_original_field = "73469DEDA91FD5B590B9B02013DD3F06", hash_generated_field = "41E62687D64F8450440F589FD8B2C7D2")
@@ -334,7 +324,6 @@ private static String[] split(String val) throws IllegalArgumentException {
 
 	private boolean CDATAElements = DEFAULT_CDATA_ELEMENTS;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:46.414 -0500", hash_original_field = "D81F97CC16E3F14DD4ACBEF8EF4CBAC7", hash_generated_field = "21E32FFA161A85FC32FF7F6350176F21")
-
 
 	// ScanHandler implementation
 
@@ -382,7 +371,6 @@ private static String[] split(String val) throws IllegalArgumentException {
         //Synthesized constructor
     }
 
-
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:46.371 -0500", hash_original_method = "FDD541AC7ACF46AD908991FDB1EF4671", hash_generated_method = "2DCE1667D7452BCBE091253447287411")
 	
 public boolean getFeature (String name)
@@ -394,7 +382,8 @@ public boolean getFeature (String name)
 		return b.booleanValue();
 		}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:46.373 -0500", hash_original_method = "DD81CF03E95A92E28D68E44755507EB5", hash_generated_method = "5679219DE607BBEE435014600ED00451")
+	@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:46.373 -0500", hash_original_method = "DD81CF03E95A92E28D68E44755507EB5", hash_generated_method = "5679219DE607BBEE435014600ED00451")
 	
 public void setFeature (String name, boolean value)
 	throws SAXNotRecognizedException, SAXNotSupportedException {
@@ -437,7 +426,8 @@ public Object getProperty (String name)
 			}
 		}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:46.379 -0500", hash_original_method = "A91E5B1E97A27DD267128DBDD8DC4544", hash_generated_method = "A8DA2CF6E54D4DEC9C1D5DDCD2B0BC17")
+	@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:46.379 -0500", hash_original_method = "A91E5B1E97A27DD267128DBDD8DC4544", hash_generated_method = "A8DA2CF6E54D4DEC9C1D5DDCD2B0BC17")
 	
 public void setProperty (String name, Object value)
 	throws SAXNotRecognizedException, SAXNotSupportedException {
@@ -1012,7 +1002,6 @@ private String cleanPublicid(String src) {
 //		System.err.println("%% Publicid [" + dst.toString().trim() + "]");
 		return dst.toString().trim();	// trim any final junk whitespace
 		}
-
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:46.500 -0500", hash_original_method = "7EEA5677E99A2C9EF1241E44C92259AC", hash_generated_method = "A09418BCE283FD5D304C01E24EEC0A07")
 	

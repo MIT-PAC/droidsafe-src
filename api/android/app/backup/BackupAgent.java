@@ -24,10 +24,6 @@ import android.os.ParcelFileDescriptor;
 import android.os.RemoteException;
 import android.util.Log;
 
-
-
-
-
 public abstract class BackupAgent extends ContextWrapper {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.366 -0500", hash_original_field = "17EC5248C38043386AF5B4C9AEFBAA14", hash_generated_field = "CC20CEBA20D1053D2133B7442D01B53F")
 
@@ -48,7 +44,6 @@ public abstract class BackupAgent extends ContextWrapper {
 
     public static final int TYPE_SYMLINK = 3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.412 -0500", hash_original_field = "535CEF62923245CC8675751DE8FB8649", hash_generated_field = "7FA1510B7C47FB23A1BC45219C359763")
-
 
     private final IBinder mBinder = new BackupServiceBinder().asBinder();
 
@@ -198,10 +193,8 @@ public void onFullBackup(FullBackupDataOutput data) throws IOException {
         filterSet.remove(sharedPrefsDir);
         fullBackupFileTree(packageName, FullBackup.SHAREDPREFS_TREE_TOKEN, sharedPrefsDir, filterSet, data);
     }
-
     
     private class BackupServiceBinder extends IBackupAgent.Stub {
-
         
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:57.107 -0400", hash_original_field = "4ADF9F269EDB752D9DAF2619A642F40E", hash_generated_field = "435867AAB7879E1905C087AA981414A1")
 
@@ -488,6 +481,7 @@ protected final void fullBackupFileTree(String packageName, String domain, Strin
      *     be assigned to the file after its data is written.
      * @throws IOException
      */
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.404 -0500", hash_original_method = "20621F323ECDCB060A13554E50206415", hash_generated_method = "A0FDC0D9DC2D0608C7F9287E646578E2")
     
 public void onRestoreFile(ParcelFileDescriptor data, long size,

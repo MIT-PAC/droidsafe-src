@@ -611,6 +611,7 @@ protected Package[] getPackages() {
      * @throws IllegalArgumentException
      *             if a package with the specified name already exists.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.770 -0500", hash_original_method = "A43EE12FE4CCED7FFCD5E4E6E6B7450E", hash_generated_method = "EC0E3C57D46AF44E45ECEB327432AEDD")
     
 protected Package definePackage(String name, String specTitle, String specVersion,
@@ -657,6 +658,7 @@ protected final void setSigners(Class<?> c, Object[] signers) {
      * @param enable
      *            the new assertion status.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.775 -0500", hash_original_method = "0651223F404879984496AF2BE37D7C48", hash_generated_method = "74A7819064E88BE4C1934049AC33D3A4")
     
 public void setClassAssertionStatus(String cname, boolean enable) {
@@ -674,6 +676,7 @@ public void setClassAssertionStatus(String cname, boolean enable) {
      * @param enable
      *            the new assertion status.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.778 -0500", hash_original_method = "2F6CF0A6D7DAAB50984CC8577E0B6ED7", hash_generated_method = "2BC9E3872D1A31CB96DD87C27C6F9962")
     
 public void setPackageAssertionStatus(String pname, boolean enable) {
@@ -689,6 +692,7 @@ public void setPackageAssertionStatus(String pname, boolean enable) {
      * @param enable
      *            the new assertion status.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.780 -0500", hash_original_method = "F3C67BF009E262C5EF85B89EAEA54A8D", hash_generated_method = "30476EC8592EB59AE1131664F53EC04D")
     
 public void setDefaultAssertionStatus(boolean enable) {

@@ -88,7 +88,8 @@ finally {
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.892 -0500", hash_original_method = "CEBB8088DAB7501A5B474AD26F003D57", hash_generated_method = "CE764FB7FA8084D700FA02E0B411DA4E")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.892 -0500", hash_original_method = "CEBB8088DAB7501A5B474AD26F003D57", hash_generated_method = "CE764FB7FA8084D700FA02E0B411DA4E")
             
 public void onFirstFix(int ttff) throws android.os.RemoteException
 {
@@ -102,7 +103,8 @@ finally {
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.895 -0500", hash_original_method = "7FD0669BA825FA9EC2CDF88A49E195BF", hash_generated_method = "8463877D6F9CFCEBE59FE420ECF35B66")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.895 -0500", hash_original_method = "7FD0669BA825FA9EC2CDF88A49E195BF", hash_generated_method = "8463877D6F9CFCEBE59FE420ECF35B66")
             
 public void onSvStatusChanged(int svCount, int[] prns, float[] snrs, float[] elevations, float[] azimuths, int ephemerisMask, int almanacMask, int usedInFixMask) throws android.os.RemoteException
 {
@@ -123,7 +125,8 @@ finally {
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.897 -0500", hash_original_method = "462FCFFEE61C7A5D7214F5AF7E23DD70", hash_generated_method = "022B53A98D673E0422DAB219FAD27730")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.897 -0500", hash_original_method = "462FCFFEE61C7A5D7214F5AF7E23DD70", hash_generated_method = "022B53A98D673E0422DAB219FAD27730")
             
 public void onNmeaReceived(long timestamp, java.lang.String nmea) throws android.os.RemoteException
 {

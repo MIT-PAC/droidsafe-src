@@ -66,7 +66,8 @@ public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:32.625 -0500", hash_original_method = "F977413C74A94F6A0339EC8ADB46ADAB", hash_generated_method = "1D8AC33EB6B975064DCC25DE1EF51CA2")
+@DSSink({DSSinkKind.BLUETOOTH})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:32.625 -0500", hash_original_method = "F977413C74A94F6A0339EC8ADB46ADAB", hash_generated_method = "1D8AC33EB6B975064DCC25DE1EF51CA2")
             
 public void onHealthAppConfigurationStatusChange(android.bluetooth.BluetoothHealthAppConfiguration config, int status) throws android.os.RemoteException
 {
@@ -90,7 +91,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:32.628 -0500", hash_original_method = "01046949F354348939608685292C2391", hash_generated_method = "A2158528987D513CA0421EE93BA8915D")
+@DSSink({DSSinkKind.BLUETOOTH})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:32.628 -0500", hash_original_method = "01046949F354348939608685292C2391", hash_generated_method = "A2158528987D513CA0421EE93BA8915D")
             
 public void onHealthChannelStateChange(android.bluetooth.BluetoothHealthAppConfiguration config, android.bluetooth.BluetoothDevice device, int prevState, int newState, android.os.ParcelFileDescriptor fd, int id) throws android.os.RemoteException
 {

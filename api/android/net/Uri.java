@@ -959,6 +959,7 @@ public int describeContents() {
             return 0;
         }
 
+        @DSSink({DSSinkKind.NETWORK})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.102 -0500", hash_original_method = "8F996E53ADCFC30BFF794C5CEED4DA61", hash_generated_method = "AD03F242E88A5E578C66EA90BAA91E0A")
         
 public void writeToParcel(Parcel parcel, int flags) {
@@ -1376,6 +1377,7 @@ public int describeContents() {
             return 0;
         }
 
+        @DSSink({DSSinkKind.NETWORK})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.237 -0500", hash_original_method = "601AB6BE7C1B16F2DB83E078DF9B61DC", hash_generated_method = "C4975111E918C24052F4398AF779DB0F")
         
 public void writeToParcel(Parcel parcel, int flags) {

@@ -21,11 +21,6 @@ import org.apache.harmony.security.asn1.BerInputStream;
 import org.apache.harmony.security.asn1.BerOutputStream;
 import org.apache.harmony.security.utils.ObjectIdentifier;
 
-
-
-
-
-
 public final class AttributeTypeAndValue {
 
     /**
@@ -120,7 +115,6 @@ private static int hashIntArray(int[] oid) {
     private static final ObjectIdentifier DNQ
             = new ObjectIdentifier(new int[] { 2, 5, 4, 46 }, "DNQ", RFC2459_NAMES);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:54.249 -0500", hash_original_field = "328C2184289264351D05B861768AE32B", hash_generated_field = "188B912ADB054B566A701AFA00C51543")
-
 
     private static final ObjectIdentifier DNQUALIFIER
             = new ObjectIdentifier(new int[] { 2, 5, 4, 46 }, "DNQUALIFIER", RFC2459_NAMES);
@@ -241,6 +235,7 @@ public void encodeASN(BerOutputStream out) {
             }
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:54.361 -0500", hash_original_method = "23586BD12951670B298A785C71BB9FF4", hash_generated_method = "ACBCC99F666986B6AF7AB3F9537C495D")
         
 public void setEncodingContent(BerOutputStream out) {

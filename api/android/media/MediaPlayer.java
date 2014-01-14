@@ -423,6 +423,7 @@ public void setDisplay(SurfaceHolder sh) {
      * @param surface The {@link Surface} to be used for the video portion of
      * the media.
      */
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.635 -0500", hash_original_method = "E1CEE3A46E058530408C5094E8A255A4", hash_generated_method = "CE38D253EE5685E066E66777FBFC0052")
     
 public void setSurface(Surface surface) {
@@ -502,6 +503,7 @@ public void setDataSource(Context context, Uri uri, Map<String, String> headers)
      * @param path the path of the file, or the http/rtsp URL of the stream you want to play
      * @throws IllegalStateException if it is called in an invalid state
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.652 -0500", hash_original_method = "70B5385C7A556D37595F97E42F2F2DFE", hash_generated_method = "6626A2BDF4397DFEA415ACCA7CB59089")
     
     public void setDataSource(String path)
@@ -518,6 +520,7 @@ public void setDataSource(Context context, Uri uri, Map<String, String> headers)
      * @throws IllegalStateException if it is called in an invalid state
      * @hide pending API council
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.655 -0500", hash_original_method = "21A95B4BC3854510C509CF1B7B37D46D", hash_generated_method = "77957DCFCCF9D67F2710FFEB1E1A6307")
     
 public void setDataSource(String path, Map<String, String> headers)
@@ -558,6 +561,7 @@ public void setDataSource(String path, Map<String, String> headers)
      * @param fd the FileDescriptor for the file you want to play
      * @throws IllegalStateException if it is called in an invalid state
      */
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.662 -0500", hash_original_method = "67ED0EB071685F0AFDAFB2EFB1BC8776", hash_generated_method = "E3CC19B9EAB5FBB628ECA65729102A6F")
     
 public void setDataSource(FileDescriptor fd)
@@ -693,6 +697,7 @@ public void pause() throws IllegalStateException {
      * @param mode    the power/wake mode to set
      * @see android.os.PowerManager
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.694 -0500", hash_original_method = "2C98FD0B2087D81FFC1D38F1403791EF", hash_generated_method = "F56733D416E412CF850F20FF00920AD5")
     
 public void setWakeMode(Context context, int mode) {
@@ -1279,6 +1284,7 @@ public EventHandler(MediaPlayer mp, Looper looper) {
      * @return true if the parameter is set successfully, false otherwise
      * {@hide}
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.785 -0500", hash_original_method = "007895DA6F9E8604D81FFE810C3D87FB", hash_generated_method = "1E40FE01B4028E74216A34A4D71B06A4")
     
 public boolean setParameter(int key, String value) {
@@ -1300,6 +1306,7 @@ public boolean setParameter(int key, String value) {
      * @return true if the parameter is set successfully, false otherwise
      * {@hide}
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.788 -0500", hash_original_method = "42E72BE22D4EC0A8F92EA2FFF9A1B8CD", hash_generated_method = "53FA53BACD5928D4D57808F15F48B7F4")
     
 public boolean setParameter(int key, int value) {

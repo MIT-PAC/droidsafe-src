@@ -251,6 +251,7 @@ public static void startMethodTracing() {
      * If the files already exist, they will be truncated.
      * If the trace file given does not end in ".trace", it will be appended for you.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.833 -0500", hash_original_method = "B71BD92AFF6466453E6F6F7742CF8DFD", hash_generated_method = "3817F949DCB7859EEA925CCB63F94A9F")
     
 public static void startMethodTracing(String traceName) {
@@ -270,6 +271,7 @@ public static void startMethodTracing(String traceName) {
      *
      * @param bufferSize    The maximum amount of trace data we gather. If not given, it defaults to 8MB.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.835 -0500", hash_original_method = "B8949788B045FC637274E75B2BE33ECF", hash_generated_method = "E7B9E22D954505D5421576A4B6FD57A1")
     
 public static void startMethodTracing(String traceName, int bufferSize) {
@@ -299,6 +301,7 @@ public static void startMethodTracing(String traceName, int bufferSize) {
      * If the trace file given does not end in ".trace", it will be appended for you.
      * @param bufferSize    The maximum amount of trace data we gather. If not given, it defaults to 8MB.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.837 -0500", hash_original_method = "FC57B22C958BBBD2D110325861CED7E8", hash_generated_method = "84255BA3B22A8BBBBEA469B405075805")
     
 public static void startMethodTracing(String traceName, int bufferSize,
@@ -322,6 +325,7 @@ public static void startMethodTracing(String traceName, int bufferSize,
      * this and find it would be useful.
      * @hide
      */
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.840 -0500", hash_original_method = "61BEE4455C71AA1B4B8E096BE0A9F80E", hash_generated_method = "A6AF3E598974F11A35885B279CDA83E0")
     
 public static void startMethodTracing(String traceName, FileDescriptor fd,
@@ -784,6 +788,7 @@ public static void dumpHprofData(String fileName) throws IOException {
      *
      * @hide
      */
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.971 -0500", hash_original_method = "E71A30A98691493542EA069FF7EF94B8", hash_generated_method = "54CCFDCF5F5F54D5B42CE9010DDF8BB2")
     
 public static void dumpHprofData(String fileName, FileDescriptor fd)
@@ -958,6 +963,7 @@ private static void modifyFieldIfSet(final Field field, final TypedProperties pr
      *
      * @hide
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:43.035 -0500", hash_original_method = "F1F2F8FAD252031217CA0AAF2E24EE7D", hash_generated_method = "D95E678D58D2C8AD01DE9FD559DEE2D3")
     
 public static void setFieldsOn(Class<?> cl) {
@@ -1059,6 +1065,7 @@ public static void setFieldsOn(Class<?> cl, boolean partial) {
      * @return true if the service was dumped successfully, false if
      *     the service could not be found or had an error while dumping
      */
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:43.043 -0500", hash_original_method = "B5D69574A1B80BC6A0DAF5C729E713CA", hash_generated_method = "25E6FF9A7AE135B20437E952A4A56138")
     
 public static boolean dumpService(String name, FileDescriptor fd, String[] args) {

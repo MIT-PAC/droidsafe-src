@@ -241,6 +241,7 @@ public int getDropDownWidth() {
      * 
      * @attr ref android.R.styleable#AutoCompleteTextView_dropDownWidth
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.047 -0500", hash_original_method = "B270189DDD36B930B898EDE5BD590C69", hash_generated_method = "E55EDD4E31E177747521386D45E056CD")
     
 public void setDropDownWidth(int width) {
@@ -273,6 +274,7 @@ public int getDropDownHeight() {
      *
      * @attr ref android.R.styleable#AutoCompleteTextView_dropDownHeight
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.051 -0500", hash_original_method = "7CEF092BABE0725B932F9B439F9A3AFD", hash_generated_method = "856B2F95F412E5E4A940FCE97E3D1A9C")
     
 public void setDropDownHeight(int height) {
@@ -328,6 +330,7 @@ public Drawable getDropDownBackground() {
      * 
      * @attr ref android.R.styleable#PopupWindow_popupBackground
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.060 -0500", hash_original_method = "B18D529A578176AD889BDFBA197D2FE9", hash_generated_method = "72828885475402233A1065AA4238F0B0")
     
 public void setDropDownBackgroundDrawable(Drawable d) {
@@ -341,6 +344,7 @@ public void setDropDownBackgroundDrawable(Drawable d) {
      * 
      * @attr ref android.R.styleable#PopupWindow_popupBackground
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.062 -0500", hash_original_method = "58B212667945303F92E76684E6DBBAC3", hash_generated_method = "5C1C1861F58F15C596D520ED54C07A96")
     
 public void setDropDownBackgroundResource(int id) {
@@ -352,6 +356,7 @@ public void setDropDownBackgroundResource(int id) {
      * 
      * @param offset the vertical offset
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.064 -0500", hash_original_method = "AFE41A06E9A754A352572FB9B075CCA0", hash_generated_method = "F998023443B69F9CACF43A7FE224C147")
     
 public void setDropDownVerticalOffset(int offset) {
@@ -374,6 +379,7 @@ public int getDropDownVerticalOffset() {
      * 
      * @param offset the horizontal offset
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.069 -0500", hash_original_method = "6A22527360686DE12C48E20144984DC3", hash_generated_method = "7D53B2885E28A76B6CAEC543641AFBEC")
     
 public void setDropDownHorizontalOffset(int offset) {
@@ -403,6 +409,7 @@ public int getDropDownHorizontalOffset() {
      *
      * @hide Pending API council approval
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.073 -0500", hash_original_method = "AB6AF7AB4438F2936FAB5E115855ABD1", hash_generated_method = "2C41EAEA804D3D5F5683493CD2859ABC")
     
 public void setDropDownAnimationStyle(int animationStyle) {
@@ -447,6 +454,7 @@ public boolean isDropDownAlwaysVisible() {
      *
      * @hide Pending API council approval
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.079 -0500", hash_original_method = "9D048710298E272B53CC3CA9B767E12A", hash_generated_method = "1BA9B13157BB69F6E30D4DF2BAB035EC")
     
 public void setDropDownAlwaysVisible(boolean dropDownAlwaysVisible) {
@@ -829,6 +837,7 @@ public void clearListSelection() {
      * 
      * @param position The position to move the selector to.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.138 -0500", hash_original_method = "133DE5DB01039801737429C3DDB0411B", hash_generated_method = "511115DE2EE242D3198E20B99BBA03EF")
     
 public void setListSelection(int position) {
@@ -879,6 +888,7 @@ public void performCompletion() {
         performCompletion(null, -1, -1);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.147 -0500", hash_original_method = "4C402F357E20A5DEEC78C01A554F2E74", hash_generated_method = "AAEE5FBA5E30CB675A68D36EB2E22393")
     
 @Override
@@ -1152,6 +1162,7 @@ public void showDropDown() {
      * 
      * @hide used only by SearchDialog
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.189 -0500", hash_original_method = "3BAD4610337E0EF5F8BF22A9BBBB2B17", hash_generated_method = "AD6E1537BA196DC650F4C225B5A8FB83")
     
 public void setForceIgnoreOutsideTouch(boolean forceIgnoreOutsideTouch) {

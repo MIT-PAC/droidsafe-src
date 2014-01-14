@@ -600,6 +600,7 @@ synchronized void removeSQLiteClosable(SQLiteClosable closable) {
      * The default is true.
      * @param lockingEnabled set to true to enable locks, false otherwise
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.050 -0500", hash_original_method = "CD58BEDD0347A27F6CFE4EB9BEFDF2F6", hash_generated_method = "1E11F61ACE379337CDEFBC1875F90EBD")
     
 public void setLockingEnabled(boolean lockingEnabled) {
@@ -1420,6 +1421,7 @@ public int getVersion() {
      *
      * @param version the new database version
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.192 -0500", hash_original_method = "4E3C0E9170C91236F101F38522569C45", hash_generated_method = "1F86CD58F49B5E87CD5D4492232C16C1")
     
 public void setVersion(int version) {
@@ -1445,6 +1447,7 @@ public long getMaximumSize() {
      * @param numBytes the maximum database size, in bytes
      * @return the new maximum database size
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.197 -0500", hash_original_method = "B09E5ED21834BC66E218E9635E49257B", hash_generated_method = "23EC9BEBD9E1A15E84DBB22515227D7D")
     
 public long setMaximumSize(long numBytes) {
@@ -1477,6 +1480,7 @@ public long getPageSize() {
      *
      * @param numBytes the database page size, in bytes
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.202 -0500", hash_original_method = "CE3FCE5D2F41E0E2EF73A0D49E90DE3F", hash_generated_method = "97991E74AEA1E91126AA981BE2B86738")
     
 public void setPageSize(long numBytes) {
@@ -1950,6 +1954,7 @@ public int delete(String table, String whereClause, String[] whereArgs) {
      *            Passing null will update all rows.
      * @return the number of rows affected
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.245 -0500", hash_original_method = "1314F51B10A849824DA60B76F1896857", hash_generated_method = "46D3DA0A1268F6E19F89D81DC65B48FD")
     
 public int update(String table, ContentValues values, String whereClause, String[] whereArgs) {

@@ -367,18 +367,21 @@ public String[] newArray(int size) {
 		return getTaintInt();
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public final void setDataSize(int size){
 		//Formerly a native function
 		//Return nothing
 		addTaint(size);
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public final void setDataPosition(int pos){
 		//Formerly a native function
 		//Return nothing
 		addTaint(pos);
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public final void setDataCapacity(int size){
 		//Formerly a native function
 		//Return nothing
@@ -430,6 +433,7 @@ public String[] newArray(int size) {
 		addTaint(interfaceName.getTaint());
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public final void writeByteArray(byte[] b){
 		mValueByteArray = b;
 		// Original method
@@ -527,6 +531,7 @@ public String[] newArray(int size) {
 		//Return nothing
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public final void writeByte(byte val){
 		addTaint(val);
 		// Original method
@@ -605,6 +610,7 @@ public String[] newArray(int size) {
 		//Return nothing
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public final void writeArray(Object[] val){
 		mValueObjectArray = val;
 		// Original method
@@ -626,6 +632,7 @@ public String[] newArray(int size) {
 		//Return nothing
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public final void writeSparseArray(SparseArray<Object> val){
 		mValueSparseArray = val;
 		// Original method
@@ -648,6 +655,7 @@ public String[] newArray(int size) {
 		//Return nothing
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public final void writeSparseBooleanArray(SparseBooleanArray val){
 		mValueSparseBooleanArray = val;
 		// Original method
@@ -726,6 +734,7 @@ public String[] newArray(int size) {
 		//Return nothing
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public final void writeCharArray(char[] val){
 		mValueCharArray = val;
 		// Original method
@@ -782,6 +791,7 @@ public String[] newArray(int size) {
 		//Return nothing
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public final void writeIntArray(int[] val){
 		mValueIntArray = val;
 		// Original method
@@ -838,6 +848,7 @@ public String[] newArray(int size) {
 		//Return nothing
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public final void writeLongArray(long[] val){
 		mValueLongArray = val;
 		// Original method
@@ -894,6 +905,7 @@ public String[] newArray(int size) {
 		//Return nothing
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public final void writeFloatArray(float[] val){
 		mValueFloatArray = val;
 		// Original method
@@ -950,6 +962,7 @@ public String[] newArray(int size) {
 		//Return nothing
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public final void writeDoubleArray(double[] val){
 		mValueDoubleArray = val;
 		// Original method
@@ -1006,6 +1019,7 @@ public String[] newArray(int size) {
 		//Return nothing
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public final void writeStringArray(String[] val){
 		mValueStringArray = val;
 		// Original method
@@ -1062,6 +1076,7 @@ public String[] newArray(int size) {
 		//Return nothing
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public final void writeBinderArray(IBinder[] val){
 		mValueIBinderArray = val;
 		// Original method
@@ -1081,6 +1096,7 @@ public String[] newArray(int size) {
 		//Return nothing
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public final void writeCharSequenceArray(CharSequence[] val){
 		mValueCharSequenceArray = val;
 		// Original method
@@ -1232,6 +1248,7 @@ public String[] newArray(int size) {
 		//Return nothing
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public final void writeValue(Object v){
 		mValueObject = v;
 		// Original method
@@ -1283,6 +1300,7 @@ public String[] newArray(int size) {
 		//Return nothing
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public final void writeException(Exception e){
 		mValueException = e;
 		// Original method

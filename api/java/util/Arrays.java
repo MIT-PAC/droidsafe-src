@@ -2986,6 +2986,7 @@ E varE9389EE2200B2620B656A8101CB528EA_471271096 =                 a[location];
             return -1;
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:39.934 -0500", hash_original_method = "34158A3678F4541935DDD01AA8496683", hash_generated_method = "041DFDF040EDA958588DB53691C01A94")
         
 @Override

@@ -181,7 +181,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:29.201 -0500", hash_original_method = "C1A1631DACE23D93B0E5A8788BE0B1E6", hash_generated_method = "5E3C92A879F021E3D08BD1312A8C2F2B")
+@DSSink({DSSinkKind.BLUETOOTH})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:29.201 -0500", hash_original_method = "C1A1631DACE23D93B0E5A8788BE0B1E6", hash_generated_method = "5E3C92A879F021E3D08BD1312A8C2F2B")
             
 public boolean setPriority(android.bluetooth.BluetoothDevice device, int priority) throws android.os.RemoteException
 {
@@ -437,7 +438,8 @@ public android.os.IBinder asBinder()
 {
 return this;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:29.173 -0500", hash_original_method = "9E9685B5D618C4CC996795BCF06ADEFD", hash_generated_method = "4222B8F2B93FBDB45BA8FB9C45BE0880")
+@DSSink({DSSinkKind.BLUETOOTH})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:29.173 -0500", hash_original_method = "9E9685B5D618C4CC996795BCF06ADEFD", hash_generated_method = "4222B8F2B93FBDB45BA8FB9C45BE0880")
         
 @Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
 {
@@ -640,7 +642,6 @@ return super.onTransact(code, data, reply, flags);
 }
 }
 
-
 public boolean connect(android.bluetooth.BluetoothDevice device) throws android.os.RemoteException;
 public boolean disconnect(android.bluetooth.BluetoothDevice device) throws android.os.RemoteException;
 public java.util.List<android.bluetooth.BluetoothDevice> getConnectedDevices() throws android.os.RemoteException;
@@ -649,7 +650,6 @@ public int getConnectionState(android.bluetooth.BluetoothDevice device) throws a
 public boolean setPriority(android.bluetooth.BluetoothDevice device, int priority) throws android.os.RemoteException;
 public int getPriority(android.bluetooth.BluetoothDevice device) throws android.os.RemoteException;
 public boolean isA2dpPlaying(android.bluetooth.BluetoothDevice device) throws android.os.RemoteException;
-
 
 public boolean suspendSink(android.bluetooth.BluetoothDevice device) throws android.os.RemoteException;
 public boolean resumeSink(android.bluetooth.BluetoothDevice device) throws android.os.RemoteException;

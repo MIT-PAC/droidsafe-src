@@ -6,10 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import sun.misc.Unsafe;
 
-
-
-
-
 public class AtomicBoolean implements java.io.Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.071 -0500", hash_original_field = "FA01BDB879BB99A8D2FB4230076CD508", hash_generated_field = "0560675D9B140F497F7B6539FEA0318E")
 
@@ -21,7 +17,6 @@ public class AtomicBoolean implements java.io.Serializable {
 
     private static  long valueOffset;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.078 -0500", hash_original_field = "2A5EA2B60261C751D318C2CB32BF7CEC", hash_generated_field = "AACF1191CE0421BEFC63226B2561E15D")
-
 
     private volatile int value;
 
@@ -97,6 +92,7 @@ public boolean weakCompareAndSet(boolean expect, boolean update) {
      *
      * @param newValue the new value
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.099 -0500", hash_original_method = "FD0CF162327E2AB30C8884FB52F6FB5F", hash_generated_method = "B7867BD27F3347CA40707405C7C5B66A")
     
 public final void set(boolean newValue) {

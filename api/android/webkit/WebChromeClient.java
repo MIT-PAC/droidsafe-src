@@ -9,9 +9,6 @@ import android.net.Uri;
 import android.os.Message;
 import android.view.View;
 
-
-
-
 public class WebChromeClient {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.356 -0400", hash_original_method = "99482C8BD0C5E621D29A3393913944E6", hash_generated_method = "99482C8BD0C5E621D29A3393913944E6")
@@ -393,10 +390,10 @@ public void setInstallableWebApp() { }
      *      now autofill using that new profile.
      * @hide
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:57.858 -0500", hash_original_method = "681C2C146739845C582C6BB934543E3C", hash_generated_method = "8030A326DDD2D807CCC2A93B47490A89")
     
 public void setupAutoFill(Message msg) { }
-
     
     public interface CustomViewCallback {
         

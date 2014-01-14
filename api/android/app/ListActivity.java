@@ -164,6 +164,7 @@ public void setListAdapter(ListAdapter adapter) {
      *
      * @param position
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:40.811 -0500", hash_original_method = "567D9F46FDBA003818BBBCD086387BF6", hash_generated_method = "1BC22E0D725F73FF205318ECE82C4843")
     
 public void setSelection(int position) {

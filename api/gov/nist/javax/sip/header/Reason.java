@@ -8,11 +8,6 @@ import gov.nist.javax.sip.Utils;
 
 import java.text.ParseException;
 
-
-
-
-
-
 public class Reason extends ParametersHeader implements javax.sip.header.ReasonHeader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:52.030 -0500", hash_original_field = "3E66E5ED0D00DCDE0CD65D891C65BC72", hash_generated_field = "7D21FB644FECBA65363EF6F0D18662A5")
 
@@ -24,7 +19,6 @@ public class Reason extends ParametersHeader implements javax.sip.header.ReasonH
 
     public final String CAUSE = ParameterNames.CAUSE;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:52.048 -0500", hash_original_field = "DE3F28962485CE99CA97D0A480B93596", hash_generated_field = "8ECC40219F1A47A496A00A4256414BFE")
-
 
     protected String protocol;
 
@@ -51,6 +45,7 @@ public int getCause() {
      *
      *@param cause - cause to set.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:52.058 -0500", hash_original_method = "3B7AE3E82D120F32D14143BCEAA3D0F3", hash_generated_method = "A14B040FD00ADC7282BB2527B0B399D9")
     
 public void setCause(int cause) throws javax.sip.InvalidArgumentException {
@@ -82,6 +77,7 @@ public String getProtocol() {
      *
      *@param text -- string text to set.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:52.073 -0500", hash_original_method = "A59A90A2875E29D5E7D7A7D1C378A11A", hash_generated_method = "E5EA8F6160270FCECA149101B1BB3108")
     
 public void setText(String text) throws ParseException {

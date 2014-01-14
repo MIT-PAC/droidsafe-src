@@ -7,10 +7,6 @@ import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public class Criteria implements Parcelable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.251 -0500", hash_original_field = "63CBE5A41264DBB1C341FCA49432714F", hash_generated_field = "26610DC2B1083D7D7A6C941CAD5368F1")
 
@@ -66,7 +62,6 @@ public Criteria[] newArray(int size) {
         }
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.274 -0500", hash_original_field = "E2741479255CBADB4ACA5A82DB917D12", hash_generated_field = "1A506D6FCBAE89E5ED8986984C204EDF")
-
 
     private int mHorizontalAccuracy    = NO_REQUIREMENT;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.276 -0500", hash_original_field = "D302B9EC3FF6A3B0F1FD7C3A3214A831", hash_generated_field = "9C948891D51E1ECED7D5B42EA88A1980")
@@ -241,6 +236,7 @@ public int getBearingAccuracy() {
      *
      * @throws IllegalArgumentException if accuracy is not one of the supported constants
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.316 -0500", hash_original_method = "F2B3644622DFC41E9C3EF3B6293185D6", hash_generated_method = "1A102D596F6E2D9DAE1D224E05ADE788")
     
 public void setAccuracy(int accuracy) {

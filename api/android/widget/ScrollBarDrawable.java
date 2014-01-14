@@ -10,10 +10,6 @@ import android.graphics.PixelFormat;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 
-
-
-
-
 public class ScrollBarDrawable extends Drawable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.987 -0500", hash_original_field = "F250FDEF6F931394B7B0D1A7051F1F13", hash_generated_field = "E04A3D9DD9EF3A7F912E815C6BFCA25E")
 
@@ -255,6 +251,7 @@ public int getSize(boolean vertical) {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.049 -0500", hash_original_method = "B18AEA250E30640B8B376B842AF0FDF6", hash_generated_method = "9C481F467A2EF23FB08CBADDD2BBFB85")
     
 @Override
@@ -269,6 +266,7 @@ public int getSize(boolean vertical) {
         mHorizontalThumb.setAlpha(alpha);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:33.053 -0500", hash_original_method = "CBF97912C9C8F01704D565D3AA800300", hash_generated_method = "45BC8FD7D0A6109AB30554FD8DB0B0B3")
     
 @Override
@@ -297,7 +295,6 @@ public int getSize(boolean vertical) {
         return "ScrollBarDrawable: range=" + mRange + " offset=" + mOffset +
                " extent=" + mExtent + (mVertical ? " V" : " H");
     }
-
     
 }
 

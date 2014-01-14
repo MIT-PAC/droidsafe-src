@@ -8,9 +8,6 @@ import java.nio.channels.FileChannel.MapMode;
 
 import libcore.io.SizeOf;
 
-
-
-
 final class MappedByteBufferAdapter extends MappedByteBuffer {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:53.941 -0500", hash_original_method = "47B29CB1ACCF161EBA65518E27011CFA", hash_generated_method = "08692C527830894E4F49717D9EB3713E")
     
@@ -267,6 +264,7 @@ public MappedByteBufferAdapter(MemoryBlock block, int capacity, int offset, MapM
         wrapped.order(byteOrder);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:54.020 -0500", hash_original_method = "85F2FC4404251BEDB97DBE6FD4061990", hash_generated_method = "FDCA26633FC0D75ABF17D3E952255096")
     
 @Override
@@ -277,6 +275,7 @@ public MappedByteBufferAdapter(MemoryBlock block, int capacity, int offset, MapM
         return this;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:54.022 -0500", hash_original_method = "3CD6CCD46828403CA377B176C2D2822D", hash_generated_method = "37BD0EA019B0467636F7BF3B40E3D7A8")
     
 @Override
@@ -287,6 +286,7 @@ public MappedByteBufferAdapter(MemoryBlock block, int capacity, int offset, MapM
         return this;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:54.025 -0500", hash_original_method = "8C109C00973445D340589478ED9444F1", hash_generated_method = "B49A54D95C69D45D456D77C4100B0142")
     
 @Override
@@ -296,6 +296,7 @@ public MappedByteBufferAdapter(MemoryBlock block, int capacity, int offset, MapM
         return this;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:54.028 -0500", hash_original_method = "E9D4840E562C9BED28BC7A127E1FECE3", hash_generated_method = "F8E1458BEDE21FD4BEED668A13715519")
     
 @Override
@@ -306,6 +307,7 @@ public MappedByteBufferAdapter(MemoryBlock block, int capacity, int offset, MapM
         return this;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:54.031 -0500", hash_original_method = "0D39EC76965D52C2961B502A18570E70", hash_generated_method = "CDFC05F652B4799E47F70331600F0501")
     
 @Override
@@ -315,6 +317,7 @@ public MappedByteBufferAdapter(MemoryBlock block, int capacity, int offset, MapM
         return this;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:54.033 -0500", hash_original_method = "3C979C12202FD0F21D9261ACBDF563BC", hash_generated_method = "48849F95F168F6C00631655462A8482C")
     
 @Override
@@ -325,6 +328,7 @@ public MappedByteBufferAdapter(MemoryBlock block, int capacity, int offset, MapM
         return this;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:54.036 -0500", hash_original_method = "E9C430B980A496D01100E970AC4FA364", hash_generated_method = "AECC5BEC0BB418D6F224C9ADEE4146E9")
     
 @Override
@@ -334,6 +338,7 @@ public MappedByteBufferAdapter(MemoryBlock block, int capacity, int offset, MapM
         return this;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:54.038 -0500", hash_original_method = "18B49E50A3711B71082812403EE33F26", hash_generated_method = "0448D2119A94973C7097864BD61E6023")
     
 @Override
@@ -344,6 +349,7 @@ public MappedByteBufferAdapter(MemoryBlock block, int capacity, int offset, MapM
         return this;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:54.041 -0500", hash_original_method = "CF3942EC3FCFAED188350B48958C21EB", hash_generated_method = "AC922FF56B3B639ADC712C50BE222ED8")
     
 @Override
@@ -353,6 +359,7 @@ public MappedByteBufferAdapter(MemoryBlock block, int capacity, int offset, MapM
         return this;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:54.046 -0500", hash_original_method = "488E6CF540077CB262C06D0E20AEF594", hash_generated_method = "ABFE6E753E5C419B17E0DC6DA2971938")
     
 @Override
@@ -362,6 +369,7 @@ public MappedByteBufferAdapter(MemoryBlock block, int capacity, int offset, MapM
         return this;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:54.049 -0500", hash_original_method = "B61E2BCE20718AB5D9F89E85EFF0C1EE", hash_generated_method = "F8725B4B3E62D24B8D4AF65121BFDE49")
     
 @Override
@@ -372,6 +380,7 @@ public MappedByteBufferAdapter(MemoryBlock block, int capacity, int offset, MapM
         return this;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:54.081 -0500", hash_original_method = "71459AF6B6AC0C4B26EB70F2F396DC3A", hash_generated_method = "30EC73F60EFFE96266F62AA92EE0ED5A")
     
 @Override
@@ -381,6 +390,7 @@ public MappedByteBufferAdapter(MemoryBlock block, int capacity, int offset, MapM
         return this;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:54.085 -0500", hash_original_method = "1118E0528407DB1AA30DD23367DFDBDC", hash_generated_method = "EAD479C56521DC09E255AFAD8763DECD")
     
 @Override
@@ -391,6 +401,7 @@ public MappedByteBufferAdapter(MemoryBlock block, int capacity, int offset, MapM
         return this;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:54.089 -0500", hash_original_method = "5B51CDEBF6AB573576FFED982377810B", hash_generated_method = "EAF98165E3F7C110C3DB9ED056DEA90C")
     
 @Override
@@ -400,6 +411,7 @@ public MappedByteBufferAdapter(MemoryBlock block, int capacity, int offset, MapM
         return this;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:54.095 -0500", hash_original_method = "EB14AF156A87035F01282D29F445B16B", hash_generated_method = "38F207756377A3F12037AD0563C266A1")
     
 @Override
@@ -446,7 +458,6 @@ public MappedByteBufferAdapter(MemoryBlock block, int capacity, int offset, MapM
 public final void free() {
         wrapped.free();
     }
-
     
 }
 

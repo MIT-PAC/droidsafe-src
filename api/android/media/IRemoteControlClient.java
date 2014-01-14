@@ -74,7 +74,8 @@ return DESCRIPTOR;
      * FIXME: is infoFlags required? since the RCC pushes info, this might always be called
      *        with RC_INFO_ALL
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:30.842 -0500", hash_original_method = "D08CEA61B374EE099B71DDD08D23E823", hash_generated_method = "89D97FDB855EE060613CCD1550E2E715")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:30.842 -0500", hash_original_method = "D08CEA61B374EE099B71DDD08D23E823", hash_generated_method = "89D97FDB855EE060613CCD1550E2E715")
             
 public void onInformationRequested(int generationId, int infoFlags, int artWidth, int artHeight) throws android.os.RemoteException
 {
@@ -94,7 +95,8 @@ _data.recycle();
 /**
      * Sets the generation counter of the current client that is displayed on the remote control.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:30.846 -0500", hash_original_method = "E380BD6721F18245DB360491CAFF2EB5", hash_generated_method = "8F45C01F42F369DD296A6CF061EAA556")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:30.846 -0500", hash_original_method = "E380BD6721F18245DB360491CAFF2EB5", hash_generated_method = "8F45C01F42F369DD296A6CF061EAA556")
             
 public void setCurrentClientGenerationId(int clientGeneration) throws android.os.RemoteException
 {
@@ -108,7 +110,8 @@ finally {
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:30.849 -0500", hash_original_method = "5D3C037923CE9EBA428C845631292DEA", hash_generated_method = "81B8CE7D2480E4FB8926D44975D7C94D")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:30.849 -0500", hash_original_method = "5D3C037923CE9EBA428C845631292DEA", hash_generated_method = "81B8CE7D2480E4FB8926D44975D7C94D")
             
 public void plugRemoteControlDisplay(android.media.IRemoteControlDisplay rcd) throws android.os.RemoteException
 {
@@ -122,7 +125,8 @@ finally {
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:30.852 -0500", hash_original_method = "509AE12CE044F0EBA7A20BCE6E6BBE19", hash_generated_method = "8BE0F8C9FFF8CAE1475A8F287E8E95FA")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:30.852 -0500", hash_original_method = "509AE12CE044F0EBA7A20BCE6E6BBE19", hash_generated_method = "8BE0F8C9FFF8CAE1475A8F287E8E95FA")
             
 public void unplugRemoteControlDisplay(android.media.IRemoteControlDisplay rcd) throws android.os.RemoteException
 {

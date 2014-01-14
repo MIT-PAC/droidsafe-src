@@ -10,10 +10,6 @@ import android.net.LinkProperties;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public class WifiConfiguration implements Parcelable {
 
     /**
@@ -189,7 +185,6 @@ public WifiConfiguration[] newArray(int size) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:03.973 -0500", hash_original_field = "062AD4BDB58232031300B63CFBC86221", hash_generated_field = "5020200E94DE8EF17AE8B5090464742A")
 
     public BitSet allowedKeyManagement;
-
     
     public class EnterpriseField {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:03.802 -0500", hash_original_field = "758552C9D5610981921ED28774EB2F82", hash_generated_field = "CE71BBB6A16F0409D8B629E0561562FE")
@@ -223,11 +218,8 @@ public String varName() {
 public String value() {
             return value;
         }
-
         
     }
-
-
     
     public static class KeyMgmt {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:03.840 -0500", hash_original_field = "7C4B952C35E23AE77935AAAD9F8920DF", hash_generated_field = "39BEE14A82B6AA5C26F3A7D333C62B69")
@@ -247,10 +239,8 @@ public String value() {
         public static final int WPA2_PSK = 4;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:03.854 -0500", hash_original_field = "C6D86D25C849C3ACF64EFC591A28CDAC", hash_generated_field = "FB67A25C3E29CB04CC946DD6AF64AC5D")
 
-
         public static final String varName = "key_mgmt";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:03.856 -0500", hash_original_field = "6B75DFFA29DEAFF0A7EF0C673F212608", hash_generated_field = "969ABCB73500B46A06CBD99C05DDB550")
-
 
         public static final String[] strings = { "NONE", "WPA_PSK", "WPA_EAP", "IEEE8021X",
                 "WPA2_PSK" };
@@ -258,8 +248,6 @@ public String value() {
         
 private KeyMgmt() { }
     }
-
-
     
     public static class Protocol {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:03.863 -0500", hash_original_field = "0B9F982AD72AC0F0D4386F5FAF5E4FBD", hash_generated_field = "C4FCC760800C3B8A80D20A1F91464A1D")
@@ -270,18 +258,14 @@ private KeyMgmt() { }
         public static final int RSN = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:03.868 -0500", hash_original_field = "CD691DEEEF9E78D83116C6E5D97756D2", hash_generated_field = "712594087B08829168C0C91650D695A8")
 
-
         public static final String varName = "proto";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:03.870 -0500", hash_original_field = "CFCA90357A9B9BC86CF9ABDA1CF67F3F", hash_generated_field = "DB80E946188BE2FD72D1ACBC2C2FADF4")
-
 
         public static final String[] strings = { "WPA", "RSN" };
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:03.861 -0500", hash_original_method = "FEC0085CF7FD0AE9B8536A4264422A72", hash_generated_method = "A26F7A49CBC7A5B120EBA5A69FA43E7F")
         
 private Protocol() { }
     }
-
-
     
     public static class AuthAlgorithm {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:03.878 -0500", hash_original_field = "050305D36072878F0238F8BF54B855BF", hash_generated_field = "74FD01C2F32F716051AE3C3EE63F3028")
@@ -295,18 +279,14 @@ private Protocol() { }
         public static final int LEAP = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:03.885 -0500", hash_original_field = "50CB58294AC79F65154F89D0400ED972", hash_generated_field = "DAAF184B6741B2F8DC099AC0722E9276")
 
-
         public static final String varName = "auth_alg";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:03.888 -0500", hash_original_field = "40A3D21B53864E048C8E8AC5C7E57AC6", hash_generated_field = "C2B57707331863ED3E749A8C13017BF0")
-
 
         public static final String[] strings = { "OPEN", "SHARED", "LEAP" };
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:03.875 -0500", hash_original_method = "02B498F2C9B084569031A4C2852FE733", hash_generated_method = "876D277586CD4C13203D4D414FD1CC7F")
         
 private AuthAlgorithm() { }
     }
-
-
     
     public static class PairwiseCipher {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:03.895 -0500", hash_original_field = "7C4B952C35E23AE77935AAAD9F8920DF", hash_generated_field = "39BEE14A82B6AA5C26F3A7D333C62B69")
@@ -320,18 +300,14 @@ private AuthAlgorithm() { }
         public static final int CCMP = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:03.903 -0500", hash_original_field = "081993AF3DECF65A411D84E634EE9BAE", hash_generated_field = "EA61BD8522E2039FE52481DAAEE07F74")
 
-
         public static final String varName = "pairwise";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:03.906 -0500", hash_original_field = "1A05D73B36F520C4DE3E08CC24F24882", hash_generated_field = "A91EB39D642BD98C7B47552D558E16D2")
-
 
         public static final String[] strings = { "NONE", "TKIP", "CCMP" };
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:03.892 -0500", hash_original_method = "D49801CF041AD620DA06D49E02E3EE50", hash_generated_method = "EAB7F0333857C61D17E9F428DB839DFE")
         
 private PairwiseCipher() { }
     }
-
-
     
     public static class GroupCipher {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:03.912 -0500", hash_original_field = "7D12547DEB9D5517D1B22CAE7DF4C772", hash_generated_field = "9862762FAE4FFC1E46BE57F66CD7FCC9")
@@ -348,18 +324,14 @@ private PairwiseCipher() { }
         public static final int CCMP = 3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:03.922 -0500", hash_original_field = "0ACA6BAD74C7E625A761D299DA1D8885", hash_generated_field = "7B39334B920E5EA14F51FD7555B37897")
 
-
         public static final String varName = "group";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:03.924 -0500", hash_original_field = "24F2B38506E2B750E97AAA65A6BA87BE", hash_generated_field = "76C93678C789D0070307271216BEB38A")
-
 
         public static final String[] strings = { "WEP40", "WEP104", "TKIP", "CCMP" };
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:03.910 -0500", hash_original_method = "A10BFAF56809802940D7EFFA4240EAB0", hash_generated_method = "F2994989ED9382CEE2817849B24F6D1F")
         
 private GroupCipher() { }
     }
-
-
     
     public static class Status {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:03.932 -0500", hash_original_field = "C0A841932F5E91F1735F1509EF2F6AB7", hash_generated_field = "9F21697F3CC99987017D14F9FA37CF9B")
@@ -373,21 +345,17 @@ private GroupCipher() { }
         public static final int ENABLED = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:03.940 -0500", hash_original_field = "3705B64F2ED8E5526F2261F27FFD37AF", hash_generated_field = "2E406B892260D5B86778765F2C6E9A2C")
 
-
         public static final String[] strings = { "current", "disabled", "enabled" };
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:03.929 -0500", hash_original_method = "FE406DC4CFD00C0AE0BFBAA724FB9F50", hash_generated_method = "89692357FB3E1429AE9E6AB10C62C23A")
         
 private Status() { }
     }
-
-
     
     public enum IpAssignment {
         STATIC,
         DHCP,
         UNASSIGNED
     }
-
     
     public enum ProxySettings {
         NONE,
@@ -591,6 +559,7 @@ public int describeContents() {
     }
 
     /** Implement the Parcelable interface {@hide} */
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:04.015 -0500", hash_original_method = "AEDB33EEF5EAFBB380DF78B8CF162994", hash_generated_method = "D5271A13E52789404A1AE58845C0857A")
     
 public void writeToParcel(Parcel dest, int flags) {

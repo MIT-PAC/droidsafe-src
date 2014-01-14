@@ -381,6 +381,7 @@ public ViewGroup(Context context) {
 		return 0;
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setDescendantFocusability(int focusability){
 		// Original method
 		/*
@@ -1153,6 +1154,7 @@ public boolean onInterceptHoverEvent(MotionEvent event) {
 		return false;
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @Override public boolean dispatchTouchEvent(MotionEvent ev){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -1298,6 +1300,7 @@ public boolean onInterceptHoverEvent(MotionEvent event) {
 		return false;
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setMotionEventSplittingEnabled(boolean split){
 		// Original method
 		/*
@@ -1605,6 +1608,7 @@ public boolean onInterceptTouchEvent(MotionEvent ev) {
 		//Return nothing
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     protected void setChildrenDrawingCacheEnabled(boolean enabled){
 		// Original method
 		/*
@@ -1690,6 +1694,7 @@ public boolean onInterceptTouchEvent(MotionEvent ev) {
 		return null;
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @Override protected void dispatchDraw(Canvas canvas){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -1778,6 +1783,7 @@ public boolean onInterceptTouchEvent(MotionEvent ev) {
 		//Return nothing
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setClipChildren(boolean clipChildren){
 		// Original method
 		/*
@@ -1788,6 +1794,7 @@ public boolean onInterceptTouchEvent(MotionEvent ev) {
 		//Return nothing
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setClipToPadding(boolean clipToPadding){
 		// Original method
 		/*
@@ -1840,6 +1847,7 @@ public boolean onInterceptTouchEvent(MotionEvent ev) {
 		//Return nothing
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     protected void setStaticTransformationsEnabled(boolean enabled){
 		// Original method
 		/*
@@ -2569,6 +2577,7 @@ public LayoutAnimationController getLayoutAnimation() {
 		return false;
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setAnimationCacheEnabled(boolean enabled){
 		// Original method
 		/*
@@ -2589,6 +2598,7 @@ public LayoutAnimationController getLayoutAnimation() {
 		return false;
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setAlwaysDrawnWithCacheEnabled(boolean always){
 		// Original method
 		/*
@@ -2609,6 +2619,7 @@ public LayoutAnimationController getLayoutAnimation() {
 		return false;
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     protected void setChildrenDrawnWithCacheEnabled(boolean enabled){
 		// Original method
 		/*
@@ -2629,6 +2640,7 @@ public LayoutAnimationController getLayoutAnimation() {
 		return false;
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     protected void setChildrenDrawingOrderEnabled(boolean enabled){
 		// Original method
 		/*
@@ -2748,6 +2760,7 @@ public LayoutParams(LayoutParams source) {
 LayoutParams() {
         }
         
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         protected void setBaseAttributes(TypedArray a, int widthAttr, int heightAttr){
 			// Original method
 			/*
@@ -3105,6 +3118,7 @@ private HoverTarget() {
 		*/
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setPersistentDrawingCache(int drawingCacheToKeep){
 		// Original method
 		/*
@@ -3477,6 +3491,7 @@ private HoverTarget() {
 		return null;
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setAddStatesFromChildren(boolean addsStates){
 		// Original method
 		/*

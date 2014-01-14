@@ -23,14 +23,8 @@ import org.apache.http.io.SessionInputBuffer;
 import org.apache.http.io.SessionOutputBuffer;
 import org.apache.http.params.HttpParams;
 
-
-
-
-
-
 public class DefaultClientConnection extends SocketHttpClientConnection implements OperatedClientConnection {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:31.947 -0500", hash_original_field = "0DA7E40E862C937570CA6B0D96D2555A", hash_generated_field = "3FCE5BFF671FE7B3BB3E2D744C5E5D2C")
-
 
     private final Log log = LogFactory.getLog(getClass());
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:31.949 -0500", hash_original_field = "829678FA634ACEE921693B24B6E2260B", hash_generated_field = "4E5EA705088864E33B87793C6FE07C16")
@@ -58,14 +52,12 @@ public DefaultClientConnection() {
         super();
     }
 
-
     // non-javadoc, see interface OperatedClientConnection
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:31.965 -0500", hash_original_method = "00F8E4422BF57DE6758D681F4A99BDB6", hash_generated_method = "3CF09B50D9FFB38E80EC0DF2754F3C7C")
     
 public final HttpHost getTargetHost() {
         return this.targetHost;
     }
-
 
     // non-javadoc, see interface OperatedClientConnection
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:31.967 -0500", hash_original_method = "4971CDDD7E23679E1EB91619B0566CC2", hash_generated_method = "F0F41AD121783742A0435B44AE89C557")
@@ -74,14 +66,12 @@ public final boolean isSecure() {
         return this.connSecure;
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:31.970 -0500", hash_original_method = "B12AAA9EA995C0C9BE2466476E8BAC96", hash_generated_method = "3D8353C63A7C48193173CB46F79167E0")
     
 @Override
     public final Socket getSocket() {
         return this.socket;
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:31.972 -0500", hash_original_method = "DA5079B0FADB5957D7F2D5BE061C8D7D", hash_generated_method = "BB4F63F64DCF4298277358E8BB49A459")
     
@@ -97,8 +87,8 @@ public void opening(Socket sock, HttpHost target) throws IOException {
             throw new IOException("Connection already shutdown");
         }
     }
-
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:31.976 -0500", hash_original_method = "238B4BA0F77ED507B3FA0211642C8510", hash_generated_method = "D49258516D8D5A023BDA1019F05A3A0B")
     
 public void openCompleted(boolean secure, HttpParams params) throws IOException {
@@ -137,7 +127,6 @@ public void openCompleted(boolean secure, HttpParams params) throws IOException 
             sock.close();
 
     } // shutdown
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:31.980 -0500", hash_original_method = "4ADF205732DDD49A8E02AC6258F60F5A", hash_generated_method = "3E57170AE597C32891CBD42CB0BCB8EE")
     
@@ -146,7 +135,6 @@ public void openCompleted(boolean secure, HttpParams params) throws IOException 
         log.debug("Connection closed");
         super.close();
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:31.983 -0500", hash_original_method = "8F7D1845D5CBAF2D176D233AC7877F21", hash_generated_method = "BDC1BA0C1EDA0F9139D2824012EE206A")
     
@@ -164,7 +152,6 @@ public void openCompleted(boolean secure, HttpParams params) throws IOException 
         }
         return inbuffer;
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:31.985 -0500", hash_original_method = "17D3D45553913AFCC8694294B924BCA4", hash_generated_method = "B58E1E68FC97D65E887D3E0DA016633D")
     
@@ -182,7 +169,6 @@ public void openCompleted(boolean secure, HttpParams params) throws IOException 
         }
         return outbuffer;
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:31.988 -0500", hash_original_method = "8A983123757D80237B42B0E1C96CF087", hash_generated_method = "29927BB685F786B1B3851BA4DDB492DE")
     
@@ -196,8 +182,8 @@ public void openCompleted(boolean secure, HttpParams params) throws IOException 
             (buffer, null, responseFactory, params);
     }
 
-
     // non-javadoc, see interface OperatedClientConnection
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:31.990 -0500", hash_original_method = "9118767905DEE596C55572AB6CA12E81", hash_generated_method = "48D943099F3E8633756AD572356F9710")
     
 public void update(Socket sock, HttpHost target,
@@ -223,7 +209,6 @@ public void update(Socket sock, HttpHost target,
 
     } // update
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:31.993 -0500", hash_original_method = "74E39E85D143527EEDE4A43C784BFAA2", hash_generated_method = "E1C1F7E16FBB1101038B21AACFB34ED3")
     
 @Override
@@ -239,7 +224,6 @@ public void update(Socket sock, HttpHost target,
         return response;
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:31.995 -0500", hash_original_method = "8184260E56E5B05281BA00158DD30362", hash_generated_method = "145295A688F01148C93EE8D6A8077DD9")
     
 @Override
@@ -253,7 +237,6 @@ public void update(Socket sock, HttpHost target,
             }
         }
     }
-
     
 }
 

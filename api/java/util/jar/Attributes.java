@@ -10,11 +10,6 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 
-
-
-
-
-
 public class Attributes implements Cloneable, Map<Object, Object> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.676 -0500", hash_original_field = "A0D4F83500C2448673D52CB83636BB63", hash_generated_field = "469DC0A3DDAB50D1A339FF08EE199F5C")
 
@@ -152,6 +147,7 @@ public Set<Object> keySet() {
      *                when key is not an {@code Attributes.Name} or value is not
      *                a {@code String}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.777 -0500", hash_original_method = "3E157C761E601D752826F2BACE4084FB", hash_generated_method = "18233502FC7D0004AD99DF81EB4C3139")
     
 @SuppressWarnings("cast")
@@ -305,12 +301,12 @@ public String getValue(String name) {
      *            the value to store in this {@code Attributes}.
      * @return the value being stored.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.802 -0500", hash_original_method = "6F8FF0BC58E7762A3A8A85D431B8F527", hash_generated_method = "97406294BEE951C411D979746F739EC5")
     
 public String putValue(String name, String val) {
         return (String) map.put(new Attributes.Name(name), val);
     }
-
     
     public static class Name {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.683 -0500", hash_original_field = "BD859A1F4C534327985662FDA0E372D9", hash_generated_field = "0B9661DEBA6285ADE4666B79ED38B94B")
@@ -366,7 +362,6 @@ public String putValue(String name, String val) {
         public static final Name IMPLEMENTATION_URL = new Name("Implementation-URL");
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.730 -0500", hash_original_field = "2C150A477129783670E6A315424F8AFC", hash_generated_field = "8391009D03BD383CE126AB69E7C8D390")
 
-
         static final Name NAME = new Name("Name");
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.680 -0500", hash_original_field = "BF45F7481B8091DE3CBF80E94F7F940B", hash_generated_field = "531F96E2AEBFB44CD229EC4CB1F012B0")
 
@@ -416,8 +411,6 @@ String getName() {
             return name;
         }
     }
-
-
     
 }
 

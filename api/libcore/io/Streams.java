@@ -14,11 +14,6 @@ import java.io.StringWriter;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
-
-
-
-
-
 public final class Streams {
 
     /**
@@ -101,6 +96,7 @@ public static byte[] readFully(InputStream in) throws IOException {
     /**
      * Returns a byte[] containing the remainder of 'in'.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:20.772 -0500", hash_original_method = "778ABE3A69AA8FF60B65094F75FB879B", hash_generated_method = "D1720953CA111AD0C30DE369B4C6B058")
     
 public static byte[] readFullyNoClose(InputStream in) throws IOException {
@@ -116,6 +112,7 @@ public static byte[] readFullyNoClose(InputStream in) throws IOException {
     /**
      * Returns the remainder of 'reader' as a string, closing it when done.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:20.774 -0500", hash_original_method = "4E5704FEDE8F5CB4F4DD07601A88E91F", hash_generated_method = "03CA403F85885102137BFBAC5377436F")
     
 public static String readFully(Reader reader) throws IOException {
@@ -183,6 +180,7 @@ public static long skipByReading(InputStream in, long byteCount) throws IOExcept
      * Copies all of the bytes from {@code in} to {@code out}. Neither stream is closed.
      * Returns the total number of bytes transferred.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:20.783 -0500", hash_original_method = "84261C86365A1E69BA24A6D8C01BF1E2", hash_generated_method = "977B6E2AF6C8CAAF351E987CAF8FE4D7")
     
 public static int copy(InputStream in, OutputStream out) throws IOException {

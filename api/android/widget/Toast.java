@@ -21,6 +21,7 @@ import android.view.accessibility.AccessibilityManager;
 
 public class Toast {
     
+    @DSSink({DSSinkKind.SCREEN})
     public static Toast makeText(Context context, CharSequence text, int duration) {
         Toast result = new Toast(context);
         result.addTaint(text.getTaint());
@@ -48,6 +49,7 @@ public class Toast {
      *
      * @throws Resources.NotFoundException if the resource can't be found.
      */
+    @DSSink({DSSinkKind.SCREEN})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:44.698 -0500", hash_original_method = "DED4BD06169F84224562F0B1604E2BF3", hash_generated_method = "130DA15736FD2AED20E191F76300EB40")
     
 public static Toast makeText(Context context, int resId, int duration)
@@ -361,6 +363,7 @@ public void handleHide() {
     	return getTaintInt();
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setText(int resId) {
         addTaint(resId);
     }

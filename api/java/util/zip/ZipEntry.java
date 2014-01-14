@@ -16,10 +16,6 @@ import libcore.io.BufferIterator;
 import libcore.io.HeapBufferIterator;
 import libcore.io.Streams;
 
-
-
-
-
 public class ZipEntry implements ZipConstants, Cloneable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.303 -0500", hash_original_field = "76C48874DF3F847D8799A9755C24ED8B", hash_generated_field = "F94D24D83064DA464F1E7F5CBAFCBAC0")
 
@@ -53,10 +49,8 @@ public class ZipEntry implements ZipConstants, Cloneable {
     int modDate = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.297 -0500", hash_original_field = "4DB50909B6C3CA3BD728DB05D0FA3D9B", hash_generated_field = "4DB50909B6C3CA3BD728DB05D0FA3D9B")
 
-
     byte[] extra;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.299 -0500", hash_original_field = "5ED088AEC2A67EA91C7AE0A2164EEA41", hash_generated_field = "5ED088AEC2A67EA91C7AE0A2164EEA41")
-
 
     int nameLength = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.301 -0500", hash_original_field = "675B1E366E23748C61289B20C0ED87D0", hash_generated_field = "675B1E366E23748C61289B20C0ED87D0")
@@ -383,6 +377,7 @@ public void setSize(long value) {
      *            the modification time as the number of milliseconds since Jan.
      *            1, 1970.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.351 -0500", hash_original_method = "ADBF978AE56F7313634C406FFD3BF538", hash_generated_method = "827755DBC6CCDCE7DA5662AAEBB810D7")
     
 public void setTime(long value) {

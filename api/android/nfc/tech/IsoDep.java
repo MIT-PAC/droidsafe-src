@@ -12,10 +12,6 @@ import android.nfc.Tag;
 import android.os.Bundle;
 import android.os.RemoteException;
 
-
-
-
-
 public final class IsoDep extends BasicTagTechnology {
 
     /**
@@ -48,7 +44,6 @@ public static IsoDep get(Tag tag) {
     public static final String EXTRA_HIST_BYTES = "histbytes";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.061 -0500", hash_original_field = "024891029CB9A1D2D5A40AF6023BA549", hash_generated_field = "C1B33D9EC979F28624EE472E9265053E")
 
-
     private byte[] mHiLayerResponse = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.064 -0500", hash_original_field = "B228B60700B7320A8C1C9D098DEAFA2D", hash_generated_field = "7255E07206283D65FDE42F0CB345FA56")
 
@@ -79,6 +74,7 @@ public IsoDep(Tag tag)
      *
      * @param timeout timeout value in milliseconds
      */
+    @DSSink({DSSinkKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.071 -0500", hash_original_method = "C12C31601200CC9185BEA621DAA9D522", hash_generated_method = "D55492101B40F463521FE464EFC6D320")
     
 public void setTimeout(int timeout) {

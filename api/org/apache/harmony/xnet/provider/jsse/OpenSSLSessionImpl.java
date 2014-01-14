@@ -19,14 +19,8 @@ import javax.net.ssl.SSLSessionBindingListener;
 import javax.net.ssl.SSLSessionContext;
 import javax.security.cert.CertificateException;
 
-
-
-
-
-
 public class OpenSSLSessionImpl implements SSLSession {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.097 -0500", hash_original_field = "A41A922D630409E60FE006B46592FFB7", hash_generated_field = "269D1908AAA6996EA79A385B96B8D46B")
-
 
     private long creationTime = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.099 -0500", hash_original_field = "CA76B0FD881476C838923B95EAFEFA21", hash_generated_field = "CA76B0FD881476C838923B95EAFEFA21")
@@ -39,7 +33,6 @@ public class OpenSSLSessionImpl implements SSLSession {
 
      X509Certificate[] peerCertificates;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.106 -0500", hash_original_field = "FFFCC50D3A278EF95DEB022E99DE2B21", hash_generated_field = "5738630542C71F34716CA340A1982FCB")
-
 
     private boolean isValid = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.109 -0500", hash_original_field = "5572873E708318B5BCB1211CAFB42224", hash_generated_field = "9D0FE98D3FB5DD14BD6D5D1B013768C8")
@@ -496,6 +489,7 @@ public String[] getValueNames() {
      * @throws <code>IllegalArgumentException</code> if one or both
      *             argument(s) is null.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:08.190 -0500", hash_original_method = "306FE04DD14403034511108312788846", hash_generated_method = "3D28D4DAA15DA59E1E198C43B216F883")
     
 public void putValue(String name, Object value) {
@@ -550,7 +544,6 @@ public void removeValue(String name) {
             super.finalize();
         }
     }
-
     
 }
 

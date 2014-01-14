@@ -432,6 +432,7 @@ public float getWeightSum() {
      *        to 0.0f if the weight sum should be computed from the children's
      *        layout_weight
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:04.925 -0500", hash_original_method = "47922B5280E89B2CF9B73D66705F0A8D", hash_generated_method = "5B4CD5F9CDB4653DC8C1F81264D59EB3")
     
 @android.view.RemotableViewMethod
@@ -1700,6 +1701,7 @@ public int getOrientation() {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:04.986 -0500", hash_original_method = "076C59065FCBD07F7CAA4FFA6D12CC3A", hash_generated_method = "DD9C3C2378492508B428C0D28CCABAA5")
     
 @android.view.RemotableViewMethod
@@ -1711,6 +1713,7 @@ public int getOrientation() {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:04.988 -0500", hash_original_method = "EE245B70888F9F1582A126D948173E64", hash_generated_method = "0591F7E10EF7E02B9451B299C8FAC684")
     
 @android.view.RemotableViewMethod

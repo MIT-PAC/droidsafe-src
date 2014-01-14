@@ -14,24 +14,17 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 
-
-
-
-
 public abstract class PreferenceGroup extends Preference implements GenericInflater.Parent<Preference> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:25.963 -0500", hash_original_field = "AA94F4A4BB2311E5FFF451A9F8B32E0B", hash_generated_field = "18F192958EC897931FD8B3DA5BF85A77")
 
     private List<Preference> mPreferenceList;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:25.965 -0500", hash_original_field = "EF6436D4AA102956E4336C640C78C9D8", hash_generated_field = "C2971599AC8149900D387CCAE8E63B08")
 
-
     private boolean mOrderingAsAdded = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:25.967 -0500", hash_original_field = "409474000390D5B61F8A6A16539E8BC0", hash_generated_field = "89C3262ADB33D2CAACE003244FE80C06")
 
-
     private int mCurrentPreferenceOrder = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:25.969 -0500", hash_original_field = "8EFBD00F7D5F5CC77C63FE080498A166", hash_generated_field = "5A686733D92531666006F9E403A759CD")
-
 
     private boolean mAttachedToActivity = false;
     
@@ -300,6 +293,7 @@ protected boolean isOnSameScreenAsChildren() {
         mAttachedToActivity = false;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.010 -0500", hash_original_method = "10614F6B57E80AB6C964E551AE06AF94", hash_generated_method = "C311D30DF36A23FA5C6362FA5BAC7096")
     
 @Override
@@ -346,7 +340,6 @@ void sortPreferences() {
             getPreference(i).dispatchRestoreInstanceState(container);
         }
     }
-
     
 }
 

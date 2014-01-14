@@ -13,10 +13,6 @@ import java.util.Set;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public final class ContentValues implements Parcelable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.386 -0500", hash_original_field = "0343975A9178EED731F3644B77817EE1", hash_generated_field = "AB3063BFEEBD1A5014F8E7157F8C6CDE")
 
@@ -113,6 +109,7 @@ private ContentValues(HashMap<String, Object> values) {
      * @param key the name of the value to put
      * @param value the data for the value to put
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.405 -0500", hash_original_method = "65B11A528910ED48D0A8C0B3A81DCA11", hash_generated_method = "B5C901E1F01EEDB880F526FCDBB68387")
     
 public void put(String key, String value) {
@@ -124,6 +121,7 @@ public void put(String key, String value) {
      *
      * @param other the ContentValues from which to copy
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.407 -0500", hash_original_method = "0A271D2A4C7890E9466C28EF447DC416", hash_generated_method = "E1A375CD5D20AF529A55BF1855FAA640")
     
 public void putAll(ContentValues other) {
@@ -136,6 +134,7 @@ public void putAll(ContentValues other) {
      * @param key the name of the value to put
      * @param value the data for the value to put
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.409 -0500", hash_original_method = "46309CD6AABC048E549ED8D367B97222", hash_generated_method = "3AC3EEB729C4601EC06C6443D14BA600")
     
 public void put(String key, Byte value) {
@@ -148,6 +147,7 @@ public void put(String key, Byte value) {
      * @param key the name of the value to put
      * @param value the data for the value to put
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.411 -0500", hash_original_method = "19B45CF10C6274AA18ED4281EBB4A7D5", hash_generated_method = "7097D4FC5474B218D98D39DBDCF261FE")
     
 public void put(String key, Short value) {
@@ -160,6 +160,7 @@ public void put(String key, Short value) {
      * @param key the name of the value to put
      * @param value the data for the value to put
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.413 -0500", hash_original_method = "519D763DA29CBC7E3659F73066396076", hash_generated_method = "8B8E1E074EA3F65B4B1F9E5DDE6B2927")
     
 public void put(String key, Integer value) {
@@ -172,6 +173,7 @@ public void put(String key, Integer value) {
      * @param key the name of the value to put
      * @param value the data for the value to put
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.416 -0500", hash_original_method = "68C6754D41E6DE24B60EFC88A41FDF20", hash_generated_method = "6D544EC8491E760D52C3029F0A93F4D4")
     
 public void put(String key, Long value) {
@@ -184,6 +186,7 @@ public void put(String key, Long value) {
      * @param key the name of the value to put
      * @param value the data for the value to put
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.418 -0500", hash_original_method = "66DA1C106B1B7F2AFB03D110B785A501", hash_generated_method = "2C261E0300BC82829635A8C7705EBEBA")
     
 public void put(String key, Float value) {
@@ -196,6 +199,7 @@ public void put(String key, Float value) {
      * @param key the name of the value to put
      * @param value the data for the value to put
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.420 -0500", hash_original_method = "1050A4E9D6DF2BBB4B07F9E50B35502F", hash_generated_method = "114BF55AC26E62B9CA474044AEB4178D")
     
 public void put(String key, Double value) {
@@ -208,6 +212,7 @@ public void put(String key, Double value) {
      * @param key the name of the value to put
      * @param value the data for the value to put
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.422 -0500", hash_original_method = "C35988B4D54806692C616FB01B8C7793", hash_generated_method = "85E7BF1BC6441FD82F6063C8524910C6")
     
 public void put(String key, Boolean value) {
@@ -220,6 +225,7 @@ public void put(String key, Boolean value) {
      * @param key the name of the value to put
      * @param value the data for the value to put
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.424 -0500", hash_original_method = "79D16814F7AC00D5B324C095EC421557", hash_generated_method = "E5447840A038CF6FF4B838DA64F9014B")
     
 public void put(String key, byte[] value) {
@@ -231,6 +237,7 @@ public void put(String key, byte[] value) {
      *
      * @param key the name of the value to make null
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.425 -0500", hash_original_method = "8F0D800F5C28B5CCC219C4767FE49E89", hash_generated_method = "6ECD2A3AC7C93E2D73067B2282916525")
     
 public void putNull(String key) {
@@ -549,6 +556,7 @@ public int describeContents() {
      * Unsupported, here until we get proper bulk insert APIs.
      * {@hide}
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.478 -0500", hash_original_method = "F9E2AE250F36F443A2E1239B6C3C3E6F", hash_generated_method = "C94896E04D024940261C2C2CF36C6B93")
     
 @Deprecated

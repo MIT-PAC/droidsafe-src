@@ -230,6 +230,7 @@ public int describeContents() {
             return mFileDescriptor != null ? Parcelable.CONTENTS_FILE_DESCRIPTOR : 0;
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.413 -0500", hash_original_method = "651672D7808B55AEFC112D3455309C97", hash_generated_method = "E49A12FEBDA90A9B384C764C321BA52B")
         
 public void writeToParcel(Parcel out, int flags) {
@@ -315,6 +316,7 @@ public void addData(String tag, byte[] data, int flags) {
      * @param flags describing the data
      * @throws IOException if the file can't be opened
      */
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.429 -0500", hash_original_method = "BF97B72EB64F4DB129C9C48237659777", hash_generated_method = "FA73C886BED1C418635F13184FE537E3")
     
 public void addFile(String tag, File file, int flags) throws IOException {

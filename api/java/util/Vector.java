@@ -379,6 +379,7 @@ private static ArrayIndexOutOfBoundsException arrayIndexOutOfBoundsException(int
         return super.retainAll(collection);
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.004 -0400", hash_original_method = "BE9BD0132B3B62E633B4EDB307CB7290", hash_generated_method = "EB4FEAFEFF2F9B8F2670ED49875A91C2")
     public synchronized void setElementAt(E object, int location) {
         super.setElementAt(location, object);

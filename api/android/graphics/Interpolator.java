@@ -101,6 +101,7 @@ public final int getValueCount() {
      *        SystemClock.uptimeMillis() clock
      * @param values Array of values associated with theis key frame
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:10.798 -0500", hash_original_method = "8B845648DDEC7EC4E813052052B8A4ED", hash_generated_method = "43FF38EF0AB89DB8347AED2F078AC8FA")
     
 public void setKeyFrame(int index, int msec, float[] values) {
@@ -117,6 +118,7 @@ public void setKeyFrame(int index, int msec, float[] values) {
      * @param values Array of values associated with theis key frame
      * @param blend (may be null) Optional array of 4 blend values
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:10.800 -0500", hash_original_method = "0A4BD1EDAE26740EE7CE301C3AD23A04", hash_generated_method = "0C62FAFCF086862A06AAF6823A5B7E21")
     
 public void setKeyFrame(int index, int msec, float[] values, float[] blend) {
@@ -137,6 +139,7 @@ public void setKeyFrame(int index, int msec, float[] values, float[] blend) {
      * whether the interpolator should mirror its repeats. The default settings
      * are repeatCount = 1, and mirror = false.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:10.802 -0500", hash_original_method = "951FAF18C8FD28DC8D0B362372C0DCF6", hash_generated_method = "AE0C836A346A863BC38BB857F2DB94DD")
     
 public void setRepeatMirror(float repeatCount, boolean mirror) {

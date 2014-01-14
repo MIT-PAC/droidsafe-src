@@ -28,10 +28,6 @@ import android.util.AttributeSet;
 import android.util.Printer;
 import android.util.Xml;
 
-
-
-
-
 public final class WallpaperInfo implements Parcelable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.102 -0500", hash_original_field = "889243BDB94A4B7A4467D941107193F3", hash_generated_field = "01792FAFBA46EE705FA5945B423BCDDA")
 
@@ -282,6 +278,7 @@ public String getSettingsActivity() {
         return mSettingsActivityName;
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.144 -0500", hash_original_method = "01A70486818EE80E3925B6A989FED93F", hash_generated_method = "DA5A264806DBF48B291050B433A1CA8F")
     
 public void dump(Printer pw, String prefix) {
@@ -305,6 +302,7 @@ public void dump(Printer pw, String prefix) {
      * @param dest The {@link Parcel} to be written.
      * @param flags The flags used for parceling.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.148 -0500", hash_original_method = "E04AD845315D2630A943DB9D13064432", hash_generated_method = "5A4AC2D12B91C63CA8219D3BA2396E98")
     
 public void writeToParcel(Parcel dest, int flags) {

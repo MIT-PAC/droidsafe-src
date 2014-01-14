@@ -8,16 +8,11 @@ import java.io.IOException;
 
 import android.os.ParcelFileDescriptor;
 
-
-
-
-
 public class BackupAgentHelper extends BackupAgent {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.123 -0500", hash_original_field = "79738B260E9056D178D21C2CED187600", hash_generated_field = "20CA2E7D14616BCC61CA084E80B8022D")
 
     static final String TAG = "BackupAgentHelper";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.125 -0500", hash_original_field = "60A0C9A2E37C523B1D67C9306AA95150", hash_generated_field = "60A0C9A2E37C523B1D67C9306AA95150")
-
 
     BackupHelperDispatcher mDispatcher = new BackupHelperDispatcher();
     
@@ -30,6 +25,7 @@ public class BackupAgentHelper extends BackupAgent {
     /**
      * Run the backup process on each of the configured handlers.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.127 -0500", hash_original_method = "9A231220123F2F65AC76F55439204202", hash_generated_method = "4B27DE55ED62E3465E0AE69468C5694B")
     
 @Override
@@ -41,6 +37,7 @@ public class BackupAgentHelper extends BackupAgent {
     /**
      * Run the restore process on each of the configured handlers.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.130 -0500", hash_original_method = "73F73FE661E634DA2EF3458F6B4B1263", hash_generated_method = "3057EF61A5E1D3097A01AB9DA476A12D")
     
 @Override

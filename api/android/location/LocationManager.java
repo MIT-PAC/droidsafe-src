@@ -1013,6 +1013,7 @@ public void removeTestProvider(String provider) {
      * Settings.Secure.ALLOW_MOCK_LOCATION}} system setting is not enabled
      * @throws IllegalArgumentException if no provider with the given name exists
      */
+    @DSSink({DSSinkKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.118 -0500", hash_original_method = "68207A112A1E7BBE4826B19769FC12DA", hash_generated_method = "8B9988E8B7E36011874EE986E1CAF008")
     
 public void setTestProviderLocation(String provider, Location loc) {
@@ -1074,6 +1075,7 @@ public void onLocationChanged(Location location) {
             mListenerHandler.sendMessage(msg);
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.039 -0500", hash_original_method = "BF8F7C90ADE4983F5319C798EB4A7E9F", hash_generated_method = "614CF865311C07C4A42AF3688A761A20")
         
 public void onStatusChanged(String provider, int status, Bundle extras) {
@@ -1304,6 +1306,7 @@ public void clearTestProviderLocation(String provider) {
      * Settings.Secure.ALLOW_MOCK_LOCATION}} system setting is not enabled
      * @throws IllegalArgumentException if no provider with the given name exists
      */
+    @DSSink({DSSinkKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.122 -0500", hash_original_method = "48C675867948B21786DBAE4C1AE4920C", hash_generated_method = "F5D18F237734E111A8E172A140A4EE91")
     
 public void setTestProviderEnabled(String provider, boolean enabled) {
@@ -1349,6 +1352,7 @@ public void clearTestProviderEnabled(String provider) {
      * Settings.Secure.ALLOW_MOCK_LOCATION}} system setting is not enabled
      * @throws IllegalArgumentException if no provider with the given name exists
      */
+    @DSSink({DSSinkKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.127 -0500", hash_original_method = "03886DE73D19ECB6C62373F8D9D58CA9", hash_generated_method = "A00A94A7CECAB50C33C43BB2D669A834")
     
 public void setTestProviderStatus(String provider, int status, Bundle extras, long updateTime) {
@@ -1511,6 +1515,7 @@ public GpsStatus getGpsStatus(GpsStatus status) {
      *
      * @return true if the command succeeds.
      */
+    @DSSink({DSSinkKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.195 -0500", hash_original_method = "A7B31AF326321489C7AFBE2F446F3E30", hash_generated_method = "B7C00E37E606958AED57A98D7B947491")
     
 public boolean sendExtraCommand(String provider, String command, Bundle extras) {
@@ -1528,6 +1533,7 @@ public boolean sendExtraCommand(String provider, String command, Bundle extras) 
      *
      * {@hide}
      */
+    @DSSink({DSSinkKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.197 -0500", hash_original_method = "486A02DD90A0BB213EFD64094D84B261", hash_generated_method = "40A3234209117E05B4CC7A1B82C3BC36")
     
 public boolean sendNiResponse(int notifId, int userResponse) {

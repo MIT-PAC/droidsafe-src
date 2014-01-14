@@ -9,16 +9,10 @@ import java.io.IOException;
 import java.io.ObjectInput;
 import java.io.ObjectOutput;
 
-
-
-
-
-
 public final class Phonemetadata {
   @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:00.990 -0500", hash_original_method = "AA2168146A79C42118444B1AF1D13430", hash_generated_method = "26CABAE6A5BDA9723B655D1D4AA748A5")
     
 private Phonemetadata() {}
-
     
     public static class NumberFormat implements Externalizable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.004 -0500", hash_original_method = "40C91A2B40702DA09592EFF9D16C1F5D", hash_generated_method = "9482C4B711FD5BDB71268D84C7181C9E")
@@ -185,7 +179,6 @@ public void writeExternal(ObjectOutput objectOutput) throws IOException {
         objectOutput.writeUTF(domesticCarrierCodeFormattingRule_);
       }
     }
-
         
         public static final class Builder extends NumberFormat {
             
@@ -199,7 +192,6 @@ public void writeExternal(ObjectOutput objectOutput) throws IOException {
 public NumberFormat build() {
         return this;
       }
-
             
         }
 
@@ -220,8 +212,6 @@ public void readExternal(ObjectInput objectInput) throws IOException {
       }
     }
     }
-
-
     
     public static class PhoneNumberDesc implements Externalizable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.091 -0500", hash_original_method = "40C91A2B40702DA09592EFF9D16C1F5D", hash_generated_method = "9482C4B711FD5BDB71268D84C7181C9E")
@@ -334,7 +324,6 @@ public void writeExternal(ObjectOutput objectOutput) throws IOException {
         objectOutput.writeUTF(exampleNumber_);
       }
     }
-
         
         public static final class Builder extends PhoneNumberDesc {
             
@@ -348,7 +337,6 @@ public void writeExternal(ObjectOutput objectOutput) throws IOException {
 public PhoneNumberDesc build() {
         return this;
       }
-
             
         }
 
@@ -368,8 +356,6 @@ public void readExternal(ObjectInput objectInput) throws IOException {
       }
     }
     }
-
-
     
     public static class PhoneMetadata implements Externalizable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.152 -0500", hash_original_method = "40C91A2B40702DA09592EFF9D16C1F5D", hash_generated_method = "9482C4B711FD5BDB71268D84C7181C9E")
@@ -917,7 +903,8 @@ public PhoneMetadata setLeadingZeroPossible(boolean value) {
       return this;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.453 -0500", hash_original_method = "82C82662DE792F1D24D935E7D9A568AC", hash_generated_method = "16C03757178D7F85C1AE533A256354C4")
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.453 -0500", hash_original_method = "82C82662DE792F1D24D935E7D9A568AC", hash_generated_method = "16C03757178D7F85C1AE533A256354C4")
         
 public void writeExternal(ObjectOutput objectOutput) throws IOException {
       objectOutput.writeBoolean(hasGeneralDesc);
@@ -1017,7 +1004,6 @@ public void writeExternal(ObjectOutput objectOutput) throws IOException {
 
       objectOutput.writeBoolean(leadingZeroPossible_);
     }
-
         
         public static final class Builder extends PhoneMetadata {
             
@@ -1031,7 +1017,6 @@ public void writeExternal(ObjectOutput objectOutput) throws IOException {
 public PhoneMetadata build() {
         return this;
       }
-
             
         }
 
@@ -1160,8 +1145,6 @@ public void readExternal(ObjectInput objectInput) throws IOException {
       setLeadingZeroPossible(objectInput.readBoolean());
     }
     }
-
-
     
     public static class PhoneMetadataCollection implements Externalizable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.479 -0500", hash_original_method = "40C91A2B40702DA09592EFF9D16C1F5D", hash_generated_method = "9482C4B711FD5BDB71268D84C7181C9E")
@@ -1198,7 +1181,8 @@ public PhoneMetadataCollection addMetadata(PhoneMetadata value) {
       return this;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.491 -0500", hash_original_method = "BDFB00F39A05DC0D50872248169D293E", hash_generated_method = "02A84DA131F38BB4F5CF16B6992C642D")
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.491 -0500", hash_original_method = "BDFB00F39A05DC0D50872248169D293E", hash_generated_method = "02A84DA131F38BB4F5CF16B6992C642D")
         
 public void writeExternal(ObjectOutput objectOutput) throws IOException {
       int size = getMetadataCount();
@@ -1218,7 +1202,6 @@ public void readExternal(ObjectInput objectInput) throws IOException {
         metadata_.add(metadata);
       }
     }
-
         
         public static final class Builder extends PhoneMetadataCollection {
             
@@ -1232,7 +1215,6 @@ public void readExternal(ObjectInput objectInput) throws IOException {
 public PhoneMetadataCollection build() {
         return this;
       }
-
             
         }
 
@@ -1243,8 +1225,6 @@ public PhoneMetadataCollection clear() {
       return this;
     }
     }
-
-
     
 }
 

@@ -14,10 +14,6 @@ import android.nfc.Tag;
 import android.nfc.TagLostException;
 import android.os.RemoteException;
 
-
-
-
-
 public final class MifareClassic extends BasicTagTechnology {
 
     /**
@@ -116,13 +112,11 @@ private static void validateValueOperand(int value) {
     public static final int BLOCK_SIZE = 16;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.489 -0500", hash_original_field = "52FA28BBF5C30D3FFD109260D6B78CCB", hash_generated_field = "BC260A9D029BA6EDF18C45D0AF8942E9")
 
-
     private static final int MAX_BLOCK_COUNT = 256;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.491 -0500", hash_original_field = "18D1231F189EEF295B834E3AC6952D5E", hash_generated_field = "D29CA245349D4EF940C9F42785B91E3A")
 
     private static final int MAX_SECTOR_COUNT = 40;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.493 -0500", hash_original_field = "A8195C44C78CB64F7BEB74D57C77637D", hash_generated_field = "A5FF4684C8ADE9FC7594EE2E1226C64D")
-
 
     private boolean mIsEmulated;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.496 -0500", hash_original_field = "B93BF1EFA6B57CC598632E54B97CD147", hash_generated_field = "E6B4AC7A48E0E54E09A504C828AF50C5")
@@ -486,6 +480,7 @@ public void writeBlock(int blockIndex, byte[] data) throws IOException {
      * @throws TagLostException if the tag leaves the field
      * @throws IOException if there is an I/O failure, or the operation is canceled
      */
+    @DSSink({DSSinkKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.537 -0500", hash_original_method = "B8563CE393F659B55E0B9D3772EFE7A6", hash_generated_method = "5AF5E8C91CAD8B0F8CC6116D65C3A94A")
     
 public void increment(int blockIndex, int value) throws IOException {
@@ -516,6 +511,7 @@ public void increment(int blockIndex, int value) throws IOException {
      * @throws TagLostException if the tag leaves the field
      * @throws IOException if there is an I/O failure, or the operation is canceled
      */
+    @DSSink({DSSinkKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.539 -0500", hash_original_method = "FAA38C9F5E4C186E0FA530C9A1909DAD", hash_generated_method = "A92A75E89900C5ABB49245ACA28AF5B3")
     
 public void decrement(int blockIndex, int value) throws IOException {
@@ -628,6 +624,7 @@ public int getMaxTransceiveLength() {
      *
      * @param timeout timeout value in milliseconds
      */
+    @DSSink({DSSinkKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.551 -0500", hash_original_method = "F9EC6D04AED06B3DFE22DC9A2A8AC0C3", hash_generated_method = "9E5730519065B43D0F999CFF9537BF7D")
     
 public void setTimeout(int timeout) {

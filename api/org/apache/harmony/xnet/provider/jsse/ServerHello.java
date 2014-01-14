@@ -9,10 +9,6 @@ import java.security.SecureRandom;
 
 import libcore.io.Streams;
 
-
-
-
-
 public class ServerHello extends Message {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:13.223 -0500", hash_original_field = "459F4848AA92E1CD0637FF4F2809E745", hash_generated_field = "459F4848AA92E1CD0637FF4F2809E745")
 
@@ -86,6 +82,7 @@ public ServerHello(HandshakeIODataStream in, int length) throws IOException {
      * Sends message
      * @param out
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:13.240 -0500", hash_original_method = "58B711F614C57C81491E703600BC8F27", hash_generated_method = "B00A61178886376BB0ED507E42165532")
     
 @Override
@@ -119,7 +116,6 @@ public byte[] getRandom() {
     public int getType() {
         return Handshake.SERVER_HELLO;
     }
-
     
 }
 

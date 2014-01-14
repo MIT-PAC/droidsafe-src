@@ -58,6 +58,7 @@ public Object get(String hostname) {
      * Associates the given 'addresses' with 'hostname'. The association will expire after a
      * certain length of time.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:13.906 -0500", hash_original_method = "BAB205076FF7DD8DB52E2A3E48EC287C", hash_generated_method = "FFE39D199E88D962B97D134A047A6004")
     
 public void put(String hostname, InetAddress[] addresses) {
@@ -111,6 +112,7 @@ public void put(String hostname, Object value, boolean isPositive) {
      * Records that 'hostname' is known not to have any associated addresses. (I.e. insert a
      * negative cache entry.)
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:13.914 -0500", hash_original_method = "9E6C3A8E77106C45FBFB86AD320286A9", hash_generated_method = "090A502C5C4A40551CC36324ED090E43")
     
 public void putUnknownHost(String hostname, String detailMessage) {

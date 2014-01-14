@@ -12,9 +12,6 @@ import android.text.method.ArrowKeyMovementMethod;
 import android.text.method.MovementMethod;
 import android.util.AttributeSet;
 
-
-
-
 public class EditText extends TextView {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:46.035 -0500", hash_original_method = "3D8BBCF9E8BFADB5EA8354D28833D1D0", hash_generated_method = "C75AE58EE7E177481EFAC327F009D2AF")
     
@@ -65,6 +62,7 @@ public EditText(Context context, AttributeSet attrs, int defStyle) {
     /**
      * Convenience for {@link Selection#setSelection(Spannable, int, int)}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:46.051 -0500", hash_original_method = "F43056F38C29E5CA5FEFE1CD9DA04514", hash_generated_method = "9C182A29414CB267A68687703D8459E4")
     
 public void setSelection(int start, int stop) {
@@ -74,6 +72,7 @@ public void setSelection(int start, int stop) {
     /**
      * Convenience for {@link Selection#setSelection(Spannable, int)}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:46.053 -0500", hash_original_method = "A198D78C33BD7BD56EF74E8B7D53E824", hash_generated_method = "3A18037E551DA3E220EF61A1C619D38D")
     
 public void setSelection(int index) {
@@ -108,7 +107,6 @@ public void extendSelection(int index) {
         }
         super.setEllipsize(ellipsis);
     }
-
     
 }
 

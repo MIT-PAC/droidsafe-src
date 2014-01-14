@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public final class Messenger implements Parcelable {
 
     /**
@@ -19,6 +15,7 @@ public final class Messenger implements Parcelable {
      * @param messenger The Messenger to write, or null.
      * @param out Where to write the Messenger.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.426 -0500", hash_original_method = "7C769D0B94813ACF4E3098A48F898F66", hash_generated_method = "4E5092E07E492479F3E51A72D368FAE5")
     
 public static void writeMessengerOrNullToParcel(Messenger messenger,
@@ -43,7 +40,6 @@ public static Messenger readMessengerOrNullFromParcel(Parcel in) {
         IBinder b = in.readStrongBinder();
         return b != null ? new Messenger(b) : null;
     }
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:26.668 -0400", hash_original_field = "3A3E522D95E5D82B4A0F95B0B050AA96", hash_generated_field = "55308DA772781DF1B60352726A54D36C")
 
@@ -101,6 +97,7 @@ public Messenger(IBinder target) {
      * @throws RemoteException Throws DeadObjectException if the target
      * Handler no longer exists.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.405 -0500", hash_original_method = "87BB77B45562A993DA127AF8A28A35EF", hash_generated_method = "14BEC707A4A52F5122FCA56614674178")
     
 public void send(Message message) throws RemoteException {

@@ -97,7 +97,8 @@ return _result;
      * @return success or not
      *
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.131 -0500", hash_original_method = "9607C1486E70D6EE8AFE18BCBCE13E3A", hash_generated_method = "EE144715505B5CCD74D579DD24F8EA7F")
+@DSSink({DSSinkKind.SMS_MMS})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.131 -0500", hash_original_method = "9607C1486E70D6EE8AFE18BCBCE13E3A", hash_generated_method = "EE144715505B5CCD74D579DD24F8EA7F")
             
 public boolean updateMessageOnIccEf(int messageIndex, int newStatus, byte[] pdu) throws android.os.RemoteException
 {
@@ -128,7 +129,8 @@ return _result;
      * @return success or not
      *
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.134 -0500", hash_original_method = "2D37596EC8B046E600C89AAC3A2B4312", hash_generated_method = "BC5C467C951DE778B92AB78AE0B43EE8")
+@DSSink({DSSinkKind.SMS_MMS})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.134 -0500", hash_original_method = "2D37596EC8B046E600C89AAC3A2B4312", hash_generated_method = "BC5C467C951DE778B92AB78AE0B43EE8")
             
 public boolean copyMessageToIccEf(int status, byte[] pdu, byte[] smsc) throws android.os.RemoteException
 {
@@ -173,7 +175,8 @@ return _result;
      *  broadcast when the message is delivered to the recipient.  The
      *  raw pdu of the status report is in the extended data ("pdu").
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.137 -0500", hash_original_method = "15D626DBBF907F47EB9A900B95604DC3", hash_generated_method = "D7AA83970941B0E4958CC6A57442E62A")
+@DSSink({DSSinkKind.SMS_MMS})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.137 -0500", hash_original_method = "15D626DBBF907F47EB9A900B95604DC3", hash_generated_method = "D7AA83970941B0E4958CC6A57442E62A")
             
 public void sendData(java.lang.String destAddr, java.lang.String scAddr, int destPort, byte[] data, android.app.PendingIntent sentIntent, android.app.PendingIntent deliveryIntent) throws android.os.RemoteException
 {
@@ -230,7 +233,8 @@ _data.recycle();
      *  broadcast when the message is delivered to the recipient.  The
      *  raw pdu of the status report is in the extended data ("pdu").
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.140 -0500", hash_original_method = "C7F1653F2148AC49E040842DC2276758", hash_generated_method = "40F1C4AEC3B498EB96E93F473CBC2554")
+@DSSink({DSSinkKind.SMS_MMS})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.140 -0500", hash_original_method = "C7F1653F2148AC49E040842DC2276758", hash_generated_method = "40F1C4AEC3B498EB96E93F473CBC2554")
             
 public void sendText(java.lang.String destAddr, java.lang.String scAddr, java.lang.String text, android.app.PendingIntent sentIntent, android.app.PendingIntent deliveryIntent) throws android.os.RemoteException
 {
@@ -317,7 +321,8 @@ _data.recycle();
      *
      * @see #disableCellBroadcast(int)
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.146 -0500", hash_original_method = "2979FDDD6D9AD2D58A8B226CB8D78F5A", hash_generated_method = "0332F3D02FF39B24CADDB8F5D2988FE7")
+@DSSink({DSSinkKind.SMS_MMS})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.146 -0500", hash_original_method = "2979FDDD6D9AD2D58A8B226CB8D78F5A", hash_generated_method = "0332F3D02FF39B24CADDB8F5D2988FE7")
             
 public boolean enableCellBroadcast(int messageIdentifier) throws android.os.RemoteException
 {
@@ -348,7 +353,8 @@ return _result;
      *
      * @see #enableCellBroadcast(int)
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.148 -0500", hash_original_method = "5100083DC5C537DAE194E8B6F221D974", hash_generated_method = "FED4108FA3557FF78DF3BB7E76628A71")
+@DSSink({DSSinkKind.SMS_MMS})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.148 -0500", hash_original_method = "5100083DC5C537DAE194E8B6F221D974", hash_generated_method = "FED4108FA3557FF78DF3BB7E76628A71")
             
 public boolean disableCellBroadcast(int messageIdentifier) throws android.os.RemoteException
 {
@@ -380,7 +386,8 @@ return _result;
      *
      * @see #disableCellBroadcastRange(int, int)
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.151 -0500", hash_original_method = "62C8A386C19BB5493BE042F8A9D60702", hash_generated_method = "2BD7969F295D3D2EFCE1942266AA06DC")
+@DSSink({DSSinkKind.SMS_MMS})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.151 -0500", hash_original_method = "62C8A386C19BB5493BE042F8A9D60702", hash_generated_method = "2BD7969F295D3D2EFCE1942266AA06DC")
             
 public boolean enableCellBroadcastRange(int startMessageId, int endMessageId) throws android.os.RemoteException
 {
@@ -413,7 +420,8 @@ return _result;
      *
      * @see #enableCellBroadcastRange(int, int)
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.153 -0500", hash_original_method = "F53BE916C4234C2EC54BE7CD135C70CD", hash_generated_method = "747E964953C620DBDDD0B730775D6317")
+@DSSink({DSSinkKind.SMS_MMS})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.153 -0500", hash_original_method = "F53BE916C4234C2EC54BE7CD135C70CD", hash_generated_method = "747E964953C620DBDDD0B730775D6317")
             
 public boolean disableCellBroadcastRange(int startMessageId, int endMessageId) throws android.os.RemoteException
 {
@@ -469,7 +477,8 @@ public android.os.IBinder asBinder()
 {
 return this;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.114 -0500", hash_original_method = "55AAE5B4A4662F93314476244DB6682B", hash_generated_method = "33A5B08014F6891C62CF3CE7ABF472E0")
+@DSSink({DSSinkKind.SMS_MMS})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.114 -0500", hash_original_method = "55AAE5B4A4662F93314476244DB6682B", hash_generated_method = "33A5B08014F6891C62CF3CE7ABF472E0")
         
 @Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
 {

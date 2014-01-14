@@ -37,6 +37,7 @@ public final class System {
      *            the user defined input stream to set as the standard input
      *            stream.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.609 -0500", hash_original_method = "D16452B6B75185BAA61EA9EFA159A8E9", hash_generated_method = "804D735CAAFC7C325DE9B365A0326D69")
     
 public static void setIn(InputStream newIn) {
@@ -50,6 +51,7 @@ public static void setIn(InputStream newIn) {
      *            the user defined output stream to set as the standard output
      *            stream.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.611 -0500", hash_original_method = "FE0A5054D91BF71787912D03E790C89C", hash_generated_method = "D27468EB0FD43038B70B5EFA0F5EB7C1")
     
 public static void setOut(PrintStream newOut) {
@@ -64,6 +66,7 @@ public static void setOut(PrintStream newOut) {
      *            the user defined output stream to set as the standard error
      *            output stream.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.614 -0500", hash_original_method = "FCF04532D043A59A407255C009845127", hash_generated_method = "EEA56B6E0025CF2A168F8DB5D7DCC840")
     
 public static void setErr(PrintStream newErr) {
@@ -367,6 +370,7 @@ public static String getProperty(String prop, String defaultValue) {
      * @return the old value of the property or {@code null} if the property
      *         didn't exist.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.669 -0500", hash_original_method = "68A3BD921E5BE0343D8AB590A3A0C1ED", hash_generated_method = "8A6ABB9FC5C9F153DD0093091F1EAAA5")
     
 public static String setProperty(String prop, String value) {

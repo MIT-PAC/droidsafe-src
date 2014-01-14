@@ -145,6 +145,7 @@ public void dispose() {
      * @return success or not
      *
      */
+    @DSSink({DSSinkKind.SMS_MMS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:28.772 -0500", hash_original_method = "F53F9B39BB318705FAF6F47512F2ECB5", hash_generated_method = "49E70B7A760FCEC75D209A01D89AE40A")
     
 public boolean
@@ -185,6 +186,7 @@ public boolean
      * @return success or not
      *
      */
+    @DSSink({DSSinkKind.SMS_MMS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:28.775 -0500", hash_original_method = "5C5D2075C67DB185E1C8FAD979C1C6EE", hash_generated_method = "82AFFDC08ABE282C4377A87122DA1464")
     
 public boolean copyMessageToIccEf(int status, byte[] pdu, byte[] smsc) {
@@ -291,6 +293,7 @@ public List<SmsRawData> getAllMessagesFromIccEf() {
         return mSms;
     }
 
+    @DSSink({DSSinkKind.SMS_MMS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:28.780 -0500", hash_original_method = "9E9858677901A40DCFB3014D7783E7CF", hash_generated_method = "3A8293AFC2012B894D8B7146FC189DC2")
     
 public boolean enableCellBroadcast(int messageIdentifier) {
@@ -303,6 +306,7 @@ public boolean disableCellBroadcast(int messageIdentifier) {
         return disableCellBroadcastRange(messageIdentifier, messageIdentifier);
     }
 
+    @DSSink({DSSinkKind.SMS_MMS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:28.786 -0500", hash_original_method = "8E661A700D601CF050E065CDC056070F", hash_generated_method = "7F0EBB7A5F2A2A049FCA58EAD8F1BD48")
     
 public boolean enableCellBroadcastRange(int startMessageId, int endMessageId) {

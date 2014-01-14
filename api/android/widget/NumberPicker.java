@@ -38,11 +38,6 @@ import android.view.inputmethod.InputMethodManager;
 
 import com.android.internal.R;
 
-
-
-
-
-
 public class NumberPicker extends LinearLayout {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:34.928 -0500", hash_original_field = "C99F9313F0CFB71F24AA867E6BD38BE4", hash_generated_field = "1DD6DB2DBAAEAD209FC944EF9017AB32")
 
@@ -112,10 +107,8 @@ public class NumberPicker extends LinearLayout {
         final StringBuilder mBuilder = new StringBuilder();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:34.977 -0500", hash_original_field = "3494047018E224F0F75D04075CB9A448", hash_generated_field = "395AFDC9AC7C0E0287626B6E7F5FF0D6")
 
-
         final java.util.Formatter mFmt = new java.util.Formatter(mBuilder, java.util.Locale.US);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:34.979 -0500", hash_original_field = "4B395FF7B30F2D92E6BE8B1A0CE35518", hash_generated_field = "301E27E37994F137A8ACC75A8DFB4033")
-
 
         final Object[] mArgs = new Object[1];
 
@@ -726,6 +719,7 @@ public NumberPicker(Context context, AttributeSet attrs, int defStyle) {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.154 -0500", hash_original_method = "B6D6495EF8D39EBA8CC69BAAD1076261", hash_generated_method = "779A92564B3688AA0B13025B127F20C5")
     
 @Override
@@ -853,6 +847,7 @@ public void setFormatter(Formatter formatter) {
      * @see #setMinValue(int)
      * @see #setMaxValue(int)
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.168 -0500", hash_original_method = "27A138A3602AD1BB9BCFA8883739C2F3", hash_generated_method = "893E9699FA71383E5011E5628D2A71A2")
     
 public void setValue(int value) {
@@ -1432,7 +1427,6 @@ private void initializeFadingEdges() {
         setVerticalFadingEdgeEnabled(true);
         setFadingEdgeLength((mBottom - mTop - mTextSize) / 2);
     }
-
     
     class InputTextFilter extends NumberKeyListener {
         
@@ -1504,18 +1498,14 @@ public int getInputType() {
                 return "";
             }
         }
-
         
     }
-
-
     
     class SetSelectionCommand implements Runnable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.298 -0500", hash_original_field = "690988B4898F88F06C3BC5A9EDD0C189", hash_generated_field = "F02C1BE48395D503EBA5C8443CFA9BF4")
 
         private int mSelectionStart;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.301 -0500", hash_original_field = "8317BA26C0ECC48C376AB95A0520113E", hash_generated_field = "C8C5CBC35C679AC5A64E276363F892A9")
-
 
         private int mSelectionEnd;
         
@@ -1530,11 +1520,8 @@ public int getInputType() {
 public void run() {
             mInputText.setSelection(mSelectionStart, mSelectionEnd);
         }
-
         
     }
-
-
     
     class AdjustScrollerCommand implements Runnable {
         
@@ -1560,11 +1547,8 @@ public void run() {
             mAdjustScroller.startScroll(0, 0, 0, deltaY, SELECTOR_ADJUSTMENT_DURATION_MILLIS);
             invalidate();
         }
-
         
     }
-
-
     
     class ChangeCurrentByOneFromLongPressCommand implements Runnable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.311 -0500", hash_original_field = "FE89541634657061438129675F17A777", hash_generated_field = "729B17CE9B5C6450F7852DCD6B7829FA")
@@ -1589,35 +1573,26 @@ public void run() {
             changeCurrentByOne(mIncrement);
             postDelayed(this, mLongPressUpdateInterval);
         }
-
         
     }
-
-
     
     public interface OnValueChangeListener {
-
         
         void onValueChange(NumberPicker picker, int oldVal, int newVal);
     }
     
     public interface OnScrollListener {
-
         
         public static int SCROLL_STATE_IDLE = 0;
-
         
         public static int SCROLL_STATE_TOUCH_SCROLL = 1;
-
         
         public static int SCROLL_STATE_FLING = 2;
-
         
         public void onScrollStateChange(NumberPicker view, int scrollState);
     }
     
     public interface Formatter {
-
         
         public String format(int value);
     }

@@ -8,10 +8,6 @@ import android.graphics.drawable.Drawable;
 import android.os.Parcel;
 import android.util.Printer;
 
-
-
-
-
 public class ComponentInfo extends PackageItemInfo {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:49.113 -0500", hash_original_field = "E1F5069A4C4BF89A2D890A883EC45793", hash_generated_field = "89C41A1178051ADE4F3D6AE74553DD49")
 
@@ -104,6 +100,7 @@ public final int getIconResource() {
         return icon != 0 ? icon : applicationInfo.icon;
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:49.135 -0500", hash_original_method = "C34E4D575D4D3E32714E222B7945E44B", hash_generated_method = "88A32FF114FCE8B9658C1A8CC4560277")
     
 protected void dumpFront(Printer pw, String prefix) {
@@ -115,6 +112,7 @@ protected void dumpFront(Printer pw, String prefix) {
         }
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:49.138 -0500", hash_original_method = "A2A63684817A6733D86C3069C8C4DE2F", hash_generated_method = "45BCCB196CEAE146E63FEFAA9F2BE603")
     
 protected void dumpBack(Printer pw, String prefix) {
@@ -127,6 +125,7 @@ protected void dumpBack(Printer pw, String prefix) {
         super.dumpBack(pw, prefix);
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:49.140 -0500", hash_original_method = "7785077CB57413EF53E49F7AC7F9E06F", hash_generated_method = "AE78DC4E309D2167A029CE47E2B1549B")
     
 public void writeToParcel(Parcel dest, int parcelableFlags) {
@@ -165,7 +164,6 @@ public void writeToParcel(Parcel dest, int parcelableFlags) {
 @Override protected ApplicationInfo getApplicationInfo() {
         return applicationInfo;
     }
-
     
 }
 

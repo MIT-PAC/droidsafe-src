@@ -12,10 +12,6 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
 
-
-
-
-
 public class LayoutAnimationController {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:57.343 -0500", hash_original_field = "4740D71BCBDAA516D05BBE2DB1309CEA", hash_generated_field = "E859EC909F26DCFC9E7628E48052485C")
 
@@ -37,18 +33,16 @@ public class LayoutAnimationController {
     protected Interpolator mInterpolator;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:57.356 -0500", hash_original_field = "D3CD8642B181146C60D2B5CCBA523761", hash_generated_field = "40E31E41BFDF10FA2549A57D1E0B2464")
 
-
     private float mDelay;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:57.359 -0500", hash_original_field = "F4BD2555E505B5F74392044EEB4F14A1", hash_generated_field = "5491D551C576BD6880788C5897A5BA8A")
 
     private int mOrder;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:57.361 -0500", hash_original_field = "CFDA69B4AD03D72FC4B0627E39231164", hash_generated_field = "8BF5222528387AE04CED3C727F9F8865")
 
-
     private long mDuration;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:57.363 -0500", hash_original_field = "36B33795FFC885ECAAC56D572445CC57", hash_generated_field = "6858B6909E393C6400B9A7BBD2C111B0")
 
-    private long mMaxDelay;    
+    private long mMaxDelay;
 
     /**
      * Creates a new layout animation controller from external resources.
@@ -148,6 +142,7 @@ public void setOrder(int order) {
      *
      * @attr ref android.R.styleable#LayoutAnimation_animation
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:57.378 -0500", hash_original_method = "DA137DCBF1E5E58EF4425067063E3D6F", hash_generated_method = "4A84A8545ABE4A363E49BE899AA83A33")
     
 public void setAnimation(Context context, int resourceID) {
@@ -199,6 +194,7 @@ public Animation getAnimation() {
      *
      * @attr ref android.R.styleable#LayoutAnimation_interpolator
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:57.385 -0500", hash_original_method = "66DF0F8C4443D43AC8C0B59FD3C0EE80", hash_generated_method = "20725F66758EF06D9305E35974BCA41F")
     
 public void setInterpolator(Context context, int resourceID) {
@@ -319,7 +315,6 @@ public final Animation getAnimationForView(View view) {
             return null;
         }
     }
-
     
     public static class AnimationParameters {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:57.412 -0500", hash_original_field = "B83BF7ED7F5719DA923E1BC0AC69952B", hash_generated_field = "21B1DF5337CCD3E0731435FB1361ED67")
@@ -334,7 +329,6 @@ public final Animation getAnimationForView(View view) {
         {
             //Synthesized constructor
         }
-
 
     }
 

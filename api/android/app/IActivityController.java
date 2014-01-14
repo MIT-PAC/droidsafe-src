@@ -66,7 +66,8 @@ return DESCRIPTOR;
      * The system is trying to start an activity.  Return true to allow
      * it to be started as normal, or false to cancel/reject this activity.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:32.160 -0500", hash_original_method = "F5F84FFEB114317F4A83F0AE47F3889E", hash_generated_method = "CDAF40B06E7FE0242180007D2ADC909F")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:32.160 -0500", hash_original_method = "F5F84FFEB114317F4A83F0AE47F3889E", hash_generated_method = "CDAF40B06E7FE0242180007D2ADC909F")
             
 public boolean activityStarting(android.content.Intent intent, java.lang.String pkg) throws android.os.RemoteException
 {
@@ -97,7 +98,8 @@ return _result;
      * The system is trying to return to an activity.  Return true to allow
      * it to be resumed as normal, or false to cancel/reject this activity.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:32.163 -0500", hash_original_method = "412D6D0CAE338ACFBAD174118AB01D1C", hash_generated_method = "81564434BFFFD31A12F26CA78ECE8153")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:32.163 -0500", hash_original_method = "412D6D0CAE338ACFBAD174118AB01D1C", hash_generated_method = "81564434BFFFD31A12F26CA78ECE8153")
             
 public boolean activityResuming(java.lang.String pkg) throws android.os.RemoteException
 {
@@ -122,7 +124,8 @@ return _result;
      * normal error recovery (app crash dialog) to occur, false to kill
      * it immediately.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:32.166 -0500", hash_original_method = "14F34B4CD5B4E7E7712020CF919206D1", hash_generated_method = "6A26445AECDAFC2350C69DE1E02DC4E9")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:32.166 -0500", hash_original_method = "14F34B4CD5B4E7E7712020CF919206D1", hash_generated_method = "6A26445AECDAFC2350C69DE1E02DC4E9")
             
 public boolean appCrashed(java.lang.String processName, int pid, java.lang.String shortMsg, java.lang.String longMsg, long timeMillis, java.lang.String stackTrace) throws android.os.RemoteException
 {
@@ -150,7 +153,8 @@ return _result;
 /**
      * Early call as soon as an ANR is detected.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:32.169 -0500", hash_original_method = "BE2AC70FA2718E540DBE8AB2D9B0D845", hash_generated_method = "69BF69F2A9987B2BB41554FE650D9818")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:32.169 -0500", hash_original_method = "BE2AC70FA2718E540DBE8AB2D9B0D845", hash_generated_method = "69BF69F2A9987B2BB41554FE650D9818")
             
 public int appEarlyNotResponding(java.lang.String processName, int pid, java.lang.String annotation) throws android.os.RemoteException
 {
@@ -177,7 +181,8 @@ return _result;
      * not responding" dialog, 1 to continue waiting, or -1 to kill it
      * immediately.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:32.172 -0500", hash_original_method = "633CD0A854B114BE3FF5BDCA46B67598", hash_generated_method = "A392E3482164CB683CC473A826BA8290")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:32.172 -0500", hash_original_method = "633CD0A854B114BE3FF5BDCA46B67598", hash_generated_method = "A392E3482164CB683CC473A826BA8290")
             
 public int appNotResponding(java.lang.String processName, int pid, java.lang.String processStats) throws android.os.RemoteException
 {

@@ -370,6 +370,7 @@ public void reset() {
      * get() on all of the src fields, and calling the corresponding set()
      * methods on this.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.575 -0500", hash_original_method = "98AAB6FDA11AA2B9ABF20CA846521C6A", hash_generated_method = "04B32EB32FABCC179A3522FDD421F790")
     
 public void set(Paint src) {
@@ -438,6 +439,7 @@ public int getBidiFlags() {
      * Set the bidi flags on the paint.
      * @hide
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.585 -0500", hash_original_method = "47898531701F33FAC5767BA6A377013D", hash_generated_method = "1E537FFFF4B07FD4DA695E233F8D2BF7")
     
 public void setBidiFlags(int flags) {
@@ -740,6 +742,7 @@ public void setStyle(Style style) {
      * @param g The new green component (0..255) of the paint's color.
      * @param b The new blue component (0..255) of the paint's color.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.666 -0500", hash_original_method = "61ED3E8FA79427F4AF66F905BEAE9870", hash_generated_method = "261B1F3BA320330F3FD63DDED79EF8EF")
     
 public void setARGB(int a, int r, int g, int b) {

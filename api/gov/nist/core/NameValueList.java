@@ -12,23 +12,14 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
-
-
-
-
-
 public class NameValueList implements Serializable, Cloneable, Map<String,NameValue> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:49.290 -0500", hash_original_field = "E662DB54D850675116FF74C4EFDD6010", hash_generated_field = "6139D38F46B665D29EA8807167945764")
-
-
 
     private static final long serialVersionUID = -6998271876574260243L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:49.292 -0500", hash_original_field = "33A3F581E0310E8499E4FC923B469370", hash_generated_field = "EB935C097CDD69EAB431C97FAA415189")
 
-
     private Map<String,NameValue> hmap;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:49.294 -0500", hash_original_field = "9B5B4672FF037607BB8CCE0F5B6469A8", hash_generated_field = "A55DB8D30D61AD070DC11E077713D1B8")
-
 
     private String separator;
 
@@ -104,6 +95,7 @@ public String toString() {
      * Set a namevalue object in this list.
      */
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:49.312 -0500", hash_original_method = "541832A041A683842702BE4F440BB6F9", hash_generated_method = "E018624C230C9C31C3C518EC3B046CE5")
     
 public void set(NameValue nv) {
@@ -113,6 +105,7 @@ public void set(NameValue nv) {
     /**
      * Set a namevalue object in this list.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:49.316 -0500", hash_original_method = "728B9B3DC246366575180118914F1A29", hash_generated_method = "31E831B42D3270F4C7FA1F12417970BF")
     
 public void set(String name, Object value) {
@@ -345,6 +338,7 @@ public Set<String> keySet() {
      * (non-Javadoc)
      * @see java.util.Map#put(java.lang.Object, java.lang.Object)
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:49.360 -0500", hash_original_method = "35750F73219F56C1FC4F989AFDC72835", hash_generated_method = "347D6641225127CA586CA01208C62349")
     
 public NameValue put(String name, NameValue nameValue) {

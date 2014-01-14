@@ -257,6 +257,7 @@ SearchManager(Context context, Handler handler)  {
      * @see android.app.Activity#onSearchRequested
      * @see #stopSearch
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:58.539 -0500", hash_original_method = "A99B2740D078AE52E51C31205C7D1808", hash_generated_method = "A7C16716E4CF8DFC1749C19EB9862C5A")
     
 public void startSearch(String initialQuery,
@@ -274,6 +275,7 @@ public void startSearch(String initialQuery,
      *
      * @hide
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:58.542 -0500", hash_original_method = "DA3F20917B57D7E33A815871BCDB23BC", hash_generated_method = "D25455AD659058EDE70278DEE5598F12")
     
 public void startSearch(String initialQuery,
@@ -305,7 +307,8 @@ private void ensureSearchDialog() {
     /**
      * Starts the global search activity.
      */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:58.547 -0500", hash_original_method = "665629AEED9E4B619C9A8F98A6E670F8", hash_generated_method = "9667A5DFF6E153D9414F2665C36C0D94")
+    /* package */ @DSSink({DSSinkKind.LOG})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:58.547 -0500", hash_original_method = "665629AEED9E4B619C9A8F98A6E670F8", hash_generated_method = "9667A5DFF6E153D9414F2665C36C0D94")
     
 void startGlobalSearch(String initialQuery, boolean selectInitialQuery,
             Bundle appSearchData, Rect sourceBounds) {
@@ -409,6 +412,7 @@ public ComponentName getWebSearchActivity() {
      *
      * @see #startSearch
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:58.557 -0500", hash_original_method = "DFA0F52B0EB2C924C24B76A319C2D2A5", hash_generated_method = "D2399AC977803B2C6953C30222A5BBBE")
     
 public void triggerSearch(String query,

@@ -6,13 +6,8 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.util.Log;
 
-
-
-
-
 class AndroidPrintStream extends LoggingPrintStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:52.421 -0500", hash_original_field = "4AD9F2E37B35E313CD211FBAFDADA238", hash_generated_field = "8E016BF5ECF2BB6A2B257594975987F0")
-
 
     private  int priority;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:52.424 -0500", hash_original_field = "FFCA994A2F44B678330E924D8C87385D", hash_generated_field = "21B5B848D650825609ACDCB16F135AD3")
@@ -36,12 +31,12 @@ public AndroidPrintStream(int priority, String tag) {
         this.tag = tag;
     }
 
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:52.429 -0500", hash_original_method = "0F469F25708F7CED7810AA1C6F552E30", hash_generated_method = "093B57ECFD6CD656AF0FC491F2F55077")
     
 protected void log(String line) {
         Log.println(priority, tag, line);
     }
-
     
 }
 

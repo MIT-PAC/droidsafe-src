@@ -15,10 +15,6 @@ import libcore.icu.ICU;
 import libcore.icu.LocaleData;
 import libcore.icu.TimeZones;
 
-
-
-
-
 public class DateFormatSymbols implements Serializable, Cloneable {
 
     /**
@@ -86,10 +82,8 @@ private static String[][] clone2dStringArray(String[][] array) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:10.791 -0500", hash_original_field = "000410F3E4110E922FAF352732C42607", hash_generated_field = "3A9F42BB82D57C84015671E87240C88B")
 
-
     private static final long serialVersionUID = -5987973545549424702L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:10.793 -0500", hash_original_field = "638D89148E50EBCC60E4E8C7FF9DC90C", hash_generated_field = "B3AAF3207AD6EC4015B2989CC1E896AA")
-
 
     private String localPatternChars;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.009 -0400", hash_original_field = "EE109C8604E524BC6D9E0C2587FEE2D8", hash_generated_field = "E9E36152E2B2CCE2D2DF7029FCA0E0AA")
@@ -420,6 +414,7 @@ public String[][] getZoneStrings() {
      * @param data
      *            the array of strings for AM and PM.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:10.871 -0500", hash_original_method = "C567EF18556F46918292A2FE23B946BD", hash_generated_method = "D59F05F711749B873850B7A455C787AC")
     
 public void setAmPmStrings(String[] data) {
@@ -434,6 +429,7 @@ public void setAmPmStrings(String[] data) {
      * @param data
      *            the array of strings for BC and AD.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:10.873 -0500", hash_original_method = "144479B04BA5F93BAF1BE491BC6DCE8F", hash_generated_method = "B1E6F0C5C41407BB499052643894FD2B")
     
 public void setEras(String[] data) {
@@ -466,6 +462,7 @@ public void setLocalPatternChars(String data) {
      * @param data
      *            the array of strings.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:10.878 -0500", hash_original_method = "FF561E75C563B528E8ADE2D7DEADB24B", hash_generated_method = "C8F11F8A2C34DB8F290459879A4CB458")
     
 public void setMonths(String[] data) {
@@ -480,6 +477,7 @@ public void setMonths(String[] data) {
      * @param data
      *            the array of strings.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:10.881 -0500", hash_original_method = "6978BA653DCBEF5E7386E930F96F0A7F", hash_generated_method = "1D932DD50180AA9DC1DF095941DEC658")
     
 public void setShortMonths(String[] data) {
@@ -494,6 +492,7 @@ public void setShortMonths(String[] data) {
      * @param data
      *            the array of strings.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:10.883 -0500", hash_original_method = "D0F3596C1C1C0E88C3194208B883F56E", hash_generated_method = "62231263430DF127971CD07AB28E99E5")
     
 public void setShortWeekdays(String[] data) {
@@ -508,6 +507,7 @@ public void setShortWeekdays(String[] data) {
      * @param data
      *            the array of strings.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:10.885 -0500", hash_original_method = "8E95286ADE938FE6BC77C4018461282B", hash_generated_method = "BAD8A77AFDB6717590D8AEDAA67EE54F")
     
 public void setWeekdays(String[] data) {
@@ -520,6 +520,7 @@ public void setWeekdays(String[] data) {
      * @throws IllegalArgumentException if any row has fewer than 5 elements.
      * @throws NullPointerException if {@code zoneStrings == null}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:10.887 -0500", hash_original_method = "97B75279909DC0B04FB710B3778B8E55", hash_generated_method = "C214CE0282615E8EE7C6D7BF302A4AD7")
     
 public void setZoneStrings(String[][] zoneStrings) {

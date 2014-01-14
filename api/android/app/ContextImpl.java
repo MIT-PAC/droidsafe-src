@@ -101,6 +101,7 @@ ReceiverRestrictedContext(Context base) {
         return registerReceiver(receiver, filter, null, null);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.005 -0500", hash_original_method = "7DBE869AA37665F34E0D6939DBC75DAB", hash_generated_method = "BE9909161683E82474FD582E36B38112")
     
 @Override
@@ -114,6 +115,7 @@ ReceiverRestrictedContext(Context base) {
         //        scheduler);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.008 -0500", hash_original_method = "E81E60407BE1AC3446285185653F6DEC", hash_generated_method = "70CCA2B262847282DDB92A6E7AC7ABF3")
     
 @Override
@@ -163,6 +165,7 @@ static ContextImpl createSystemContext(ActivityThread mainThread) {
         return context;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.432 -0500", hash_original_method = "C8AF3048756974EA22546B41BE2F7C6F", hash_generated_method = "1DC327CB6766B683BFBFB743C0F8C248")
     
 static void setFilePermissionsFromMode(String name, int mode,
@@ -384,11 +387,13 @@ private File getPreferencesDir() {
         }
     }
     
+    @DSSink({DSSinkKind.FILE})
     @Override
     public FileInputStream openFileInput(String name) throws FileNotFoundException {
         throw new UnsupportedOperationException();
     }
     
+    @DSSink({DSSinkKind.FILE})
     @Override
     public FileOutputStream openFileOutput(String name, int mode) throws FileNotFoundException {
         throw new UnsupportedOperationException();
@@ -504,11 +509,13 @@ private File getDatabasesDir() {
         throw new UnsupportedOperationException();
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public void setWallpaper(Bitmap bitmap) throws IOException {
         throw new UnsupportedOperationException();
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public void setWallpaper(InputStream data) throws IOException {
         throw new UnsupportedOperationException();
@@ -519,16 +526,19 @@ private File getDatabasesDir() {
         throw new UnsupportedOperationException();
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public void startActivity(Intent intent) {
         throw new UnsupportedOperationException();
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public void startActivities(Intent[] intents) {
         throw new UnsupportedOperationException();
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public void startIntentSender(IntentSender intent,
             Intent fillInIntent, int flagsMask, int flagsValues, int extraFlags)
@@ -536,22 +546,26 @@ private File getDatabasesDir() {
         throw new UnsupportedOperationException();
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public void sendBroadcast(Intent intent) {
         throw new UnsupportedOperationException();
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public void sendBroadcast(Intent intent, String receiverPermission) {
         throw new UnsupportedOperationException();
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public void sendOrderedBroadcast(Intent intent,
             String receiverPermission) {
         throw new UnsupportedOperationException();
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public void sendOrderedBroadcast(Intent intent, String receiverPermission,
             BroadcastReceiver resultReceiver, Handler scheduler, int initialCode, String initialData,
@@ -559,11 +573,13 @@ private File getDatabasesDir() {
         throw new UnsupportedOperationException();
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public void sendStickyBroadcast(Intent intent) {
         throw new UnsupportedOperationException();
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public void sendStickyOrderedBroadcast(Intent intent,
             BroadcastReceiver resultReceiver, Handler scheduler, int initialCode, String initialData,
@@ -633,6 +649,7 @@ private Intent registerReceiverInternal(BroadcastReceiver receiver,
         throw new UnsupportedOperationException();
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public ComponentName startService(Intent service) {
         throw new UnsupportedOperationException();
@@ -643,6 +660,7 @@ private Intent registerReceiverInternal(BroadcastReceiver receiver,
         throw new UnsupportedOperationException();
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public boolean bindService(Intent service, ServiceConnection conn, int flags) {
         throw new UnsupportedOperationException();
@@ -653,6 +671,7 @@ private Intent registerReceiverInternal(BroadcastReceiver receiver,
         throw new UnsupportedOperationException();
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public boolean startInstrumentation(ComponentName className,
             String profileFile, Bundle arguments) {

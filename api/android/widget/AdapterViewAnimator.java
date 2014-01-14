@@ -21,10 +21,6 @@ import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.ViewGroup;
 
-
-
-
-
 public abstract class AdapterViewAnimator extends AdapterView<Adapter> implements RemoteViewsAdapter.RemoteAdapterConnectionCallback, Advanceable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:20.376 -0500", hash_original_field = "15AE70B28988206776965B45142D9A41", hash_generated_field = "3A652617CCF7727670B8485C49C1574A")
 
@@ -39,7 +35,6 @@ public abstract class AdapterViewAnimator extends AdapterView<Adapter> implement
 
     static final int TOUCH_MODE_HANDLED = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:20.429 -0500", hash_original_field = "7C4B93ADEC90FA6A96C10557965974CC", hash_generated_field = "F6CDC47961A92F3B929B6B11861E0C14")
-
 
     private static final int DEFAULT_ANIMATION_DURATION = 200;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:20.378 -0500", hash_original_field = "A4199CA8B30F98AAF67F6FDF10E09266", hash_generated_field = "A4199CA8B30F98AAF67F6FDF10E09266")
@@ -106,7 +101,6 @@ public abstract class AdapterViewAnimator extends AdapterView<Adapter> implement
 
     private int mTouchMode = TOUCH_MODE_NONE;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:20.427 -0500", hash_original_field = "F3CF806FFB4C33156882341FD42C8EAB", hash_generated_field = "C7859F448E179D513123D1E080D96FF5")
-
 
     private Runnable mPendingCheckForTap;
 
@@ -236,6 +230,7 @@ ObjectAnimator getDefaultOutAnimation() {
      *
      * @param whichChild the index of the child view to display
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:20.463 -0500", hash_original_method = "C45281778BDF4A98514907509DE78D33", hash_generated_method = "BA235B9C8575E242029D74BBE31EB9D2")
     
 @android.view.RemotableViewMethod
@@ -856,6 +851,7 @@ public void setOutAnimation(ObjectAnimator outAnimation) {
      * @see #getInAnimation()
      * @see #setInAnimation(android.animation.ObjectAnimator)
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:20.636 -0500", hash_original_method = "8F8897D1BAA8E5AE19C8237937D2CA37", hash_generated_method = "BDD340679F1D4A4EC54A5813B810A008")
     
 public void setInAnimation(Context context, int resourceID) {
@@ -871,6 +867,7 @@ public void setInAnimation(Context context, int resourceID) {
      * @see #getOutAnimation()
      * @see #setOutAnimation(android.animation.ObjectAnimator)
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:20.649 -0500", hash_original_method = "DAE8806685F393E416F20FAE75D3F12A", hash_generated_method = "7C6FD2BCABEF09E7ECDB2DFEA02F15BD")
     
 public void setOutAnimation(Context context, int resourceID) {
@@ -932,6 +929,7 @@ public void setAnimateFirstView(boolean animate) {
      * @param intent the intent used to identify the RemoteViewsService for the adapter to
      *        connect to.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:20.668 -0500", hash_original_method = "27E899D618A9F50FEEEF08AE1A9356B2", hash_generated_method = "42C2AB37F27F8D286FA64AFAC3F089AE")
     
 @android.view.RemotableViewMethod
@@ -951,6 +949,7 @@ public void setAnimateFirstView(boolean animate) {
         mRemoteViewsAdapter = new RemoteViewsAdapter(getContext(), intent, this);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:20.671 -0500", hash_original_method = "DA18836BD93C624B14E0649B9FD256B6", hash_generated_method = "04ADD3F82734D63EA2100D8EBB7DAC2D")
     
 @Override
@@ -964,7 +963,6 @@ public void setAnimateFirstView(boolean animate) {
     public View getSelectedView() {
         return getViewAtRelativeIndex(mActiveOffset);
     }
-
     
     class ViewAndMetaData {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:20.443 -0500", hash_original_field = "203A52904F64FA8CF6CE15F1E8FE3025", hash_generated_field = "203A52904F64FA8CF6CE15F1E8FE3025")
@@ -988,11 +986,8 @@ ViewAndMetaData(View view, int relativeIndex, int adapterPosition, long itemId) 
             this.adapterPosition = adapterPosition;
             this.itemId = itemId;
         }
-
         
     }
-
-
     
     final class CheckForTap implements Runnable {
         
@@ -1009,14 +1004,10 @@ public void run() {
                 showTapFeedback(v);
             }
         }
-
         
     }
-
-
     
     static class SavedState extends BaseSavedState {
-
         
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.536 -0400", hash_original_field = "7DF6FB2587CB67E9544A859A8F6E8FF3", hash_generated_field = "263FCDD65C2156B1D1E1B4D9AE8D7FFA")
 
@@ -1058,6 +1049,7 @@ private SavedState(Parcel in) {
             this.whichChild = in.readInt();
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:20.586 -0500", hash_original_method = "DA40422C10B10105F9CB19E8091B3EEC", hash_generated_method = "BCFB9E62A4D01FE68F1307AE2618AC5F")
         
 @Override

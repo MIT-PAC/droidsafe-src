@@ -7,11 +7,6 @@ import droidsafe.annotations.*;
 import java.util.HashMap;
 import java.util.Map;
 
-
-
-
-
-
 public class AudioGroup {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.247 -0500", hash_original_field = "4465920A7E69674D8A76280FFFBFC021", hash_generated_field = "C466F26B6C54C57012B25D93B43C8CA1")
 
@@ -27,17 +22,14 @@ public class AudioGroup {
     public static final int MODE_ECHO_SUPPRESSION = 3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.257 -0500", hash_original_field = "8C2592C4A43E1D96B87363ABBF4CE4FE", hash_generated_field = "040E41B70671A8BCEAA18EF1D13E7413")
 
-
     private static final int MODE_LAST = 3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.259 -0500", hash_original_field = "FCB49B9BB76565C2E267D5FB87459819", hash_generated_field = "FA164271CF2AFF347DB26D34D85762CF")
-
 
     private  Map<AudioStream, Integer> mStreams;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.261 -0500", hash_original_field = "4233B9BD189FE4002921E820D5754108", hash_generated_field = "4C7DBC83368DD32BF5C59F718910AF60")
 
     private int mMode = MODE_ON_HOLD;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.263 -0500", hash_original_field = "D883352313723F88BD080533FB82D9CF", hash_generated_field = "9DD3DA3B4DB5A1786C464E9BB7FF265B")
-
 
     private int mNative;
 
@@ -97,7 +89,6 @@ public void setMode(int mode) {
     	addTaint(mode);
     }
 
-
     // Package-private method used by AudioStream.join().
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.279 -0500", hash_original_method = "91004DD6DF12C73407D3712D3F37E9FF", hash_generated_method = "F14A8129148CE1D154B64A4C9175583B")
     
@@ -130,7 +121,6 @@ synchronized void add(AudioStream stream, AudioCodec codec, int dtmfType) {
     	addTaint(dtmfType);
     }
 
-
     // Package-private method used by AudioStream.join().
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.285 -0500", hash_original_method = "E79257D576B41A04A93E4BDE1747C69F", hash_generated_method = "E251AC8033A40DE9CD84D9EB4AE47227")
     
@@ -148,13 +138,13 @@ synchronized void remove(AudioStream stream) {
     	addTaint(socket);
     }
 
-
     /**
      * Sends a DTMF digit to every {@link AudioStream} in this group. Currently
      * only event {@code 0} to {@code 15} are supported.
      *
      * @throws IllegalArgumentException if the event is invalid.
      */
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.291 -0500", hash_original_method = "9822465C491E40F2280BD966A816AB8D", hash_generated_method = "B9E21FC581C3B5493DA87868773384EC")
     
 public void sendDtmf(int event) {
@@ -172,7 +162,6 @@ public void sendDtmf(int event) {
     	//Formerly a native method
     	addTaint(event);
     }
-
 
     /**
      * Removes every {@link AudioStream} in this group.

@@ -5,13 +5,8 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class SSLParameters {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:01.150 -0500", hash_original_field = "5634EAE1575A171F6E1026AFC44C93D6", hash_generated_field = "411F1A5A89267DD4FA4546E0300DEE75")
-
 
     private String[] cipherSuites;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:01.153 -0500", hash_original_field = "7D0D65262FBB39DD68DC575C10184699", hash_generated_field = "DC671C4B6787E3B95959CD8B3344C9E7")
@@ -81,6 +76,7 @@ public String[] getCipherSuites() {
     /**
      * Sets the cipher suites to a copy of the input, or null
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:01.169 -0500", hash_original_method = "9E670D049040F6D0CEE95ADCC5A2BB8E", hash_generated_method = "053B0128F67433F0A151D5CA41C4CC53")
     
 public void setCipherSuites(String[] cipherSuites) {
@@ -105,6 +101,7 @@ public String[] getProtocols() {
     /**
      * Sets the protocols to a copy of the input, or null
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:01.174 -0500", hash_original_method = "EF8F568BAE6FA22D6783DD8D622D3566", hash_generated_method = "0CD6642FB9F05A58166EFC7478C6075B")
     
 public void setProtocols(String[] protocols) {
@@ -156,7 +153,6 @@ public void setWantClientAuth (boolean wantClientAuth) {
         this.wantClientAuth = wantClientAuth;
         this.needClientAuth = false;
     }
-
     
 }
 

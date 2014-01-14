@@ -358,6 +358,7 @@ public void setContentType(String contentType) {
         this.contentType = contentType;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:34.241 -0500", hash_original_method = "64EEBAAA82D27C1188C64EDA1E7A0A05", hash_generated_method = "D1D108407DC0499C6FE970583D628966")
     
 public void setIfModifiedSince(Date date) {

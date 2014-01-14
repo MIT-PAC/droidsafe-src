@@ -60,7 +60,8 @@ public abstract class Schema {
 	@param flags Flags for the element
 	**/
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.586 -0500", hash_original_method = "9699024F392D458CCB5B62F4AD905856", hash_generated_method = "4AFD451E2BF26CC0F159647EEFC1B89B")
+	@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.586 -0500", hash_original_method = "9699024F392D458CCB5B62F4AD905856", hash_generated_method = "4AFD451E2BF26CC0F159647EEFC1B89B")
     
 public void elementType(String name, int model, int memberOf, int flags) {
 		ElementType e = new ElementType(name, model, memberOf, flags, this);
@@ -125,7 +126,8 @@ public void parent(String name, String parentName) {
 	@param value Value of the entity
 	**/
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.595 -0500", hash_original_method = "9D058B55598451C1F46B788161F3861A", hash_generated_method = "06F67D4C24568F09661364790AC2A7A2")
+	@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.595 -0500", hash_original_method = "9D058B55598451C1F46B788161F3861A", hash_generated_method = "06F67D4C24568F09661364790AC2A7A2")
     
 public void entity(String name, int value) {
 		theEntities.put(name, new Integer(value));

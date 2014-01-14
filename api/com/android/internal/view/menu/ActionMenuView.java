@@ -14,10 +14,6 @@ import android.view.ViewGroup;
 import android.view.accessibility.AccessibilityEvent;
 import android.widget.LinearLayout;
 
-
-
-
-
 public class ActionMenuView extends LinearLayout implements MenuBuilder.ItemInvoker, MenuView {
 
     /**
@@ -70,7 +66,6 @@ static int measureChildForCells(View child, int cellSize, int cellsRemaining,
 
     private static final String TAG = "ActionMenuView";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:37.752 -0500", hash_original_field = "CBB9A87CCC818C67802089C94E9F7462", hash_generated_field = "C82EA13B7AFB56A9509B0706C650CC26")
-
     
     static final int MIN_CELL_SIZE = 56;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:37.754 -0500", hash_original_field = "B69ED2BFE64FDEE415EEACA8AA14E856", hash_generated_field = "7918CEA6EF4CC9E7E97331DC428C97AE")
@@ -78,10 +73,8 @@ static int measureChildForCells(View child, int cellSize, int cellsRemaining,
     static final int GENERATED_ITEM_PADDING = 4;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:37.756 -0500", hash_original_field = "E0FA7D9C40725579D8730D3DABE74643", hash_generated_field = "D444FB62DCB4C4F94C883BDD2D0F7012")
 
-
     private MenuBuilder mMenu;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:37.758 -0500", hash_original_field = "E5A9CB2F2F54CC6E136BCFE6856F2EC9", hash_generated_field = "3619C222EA285420CD3DE70ECE0D1D48")
-
 
     private boolean mReserveOverflow;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:37.761 -0500", hash_original_field = "56BE51BB984E57DB0E28F12A92854E0A", hash_generated_field = "BC36FBD9CCAFE590BF9A0B51503C858E")
@@ -532,6 +525,7 @@ public LayoutParams generateOverflowButtonLayoutParams() {
         return result;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:37.822 -0500", hash_original_method = "52251A4D38FF83C9B55C46C571A25CAE", hash_generated_method = "E4D0C6B553755CCD3E1324292EB5E10F")
     
 public boolean invokeItem(MenuItemImpl item) {
@@ -543,7 +537,6 @@ public boolean invokeItem(MenuItemImpl item) {
 public int getWindowAnimations() {
         return 0;
     }
-
     
     public static class LayoutParams extends LinearLayout.LayoutParams {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:37.837 -0500", hash_original_field = "C0B8632FE61D69DA3E730B1072943D77", hash_generated_field = "06AA5094630821EA9900D65F21750F66")
@@ -567,7 +560,6 @@ public int getWindowAnimations() {
         @ViewDebug.ExportedProperty(category = "layout")
         public boolean preventEdgeOffset;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:37.848 -0500", hash_original_field = "AE9CFB22956097C5084AEEC042601338", hash_generated_field = "A93A7FF052663F567D43ED21528A4163")
-
 
         public boolean expanded;
 
@@ -597,11 +589,8 @@ public LayoutParams(int width, int height, boolean isOverflowButton) {
             super(width, height);
             this.isOverflowButton = isOverflowButton;
         }
-
         
     }
-
-
     
     public interface ActionMenuChildView {
         public boolean needsDividerBefore();

@@ -1733,6 +1733,7 @@ public void setInput(Reader reader) throws XmlPullParserException {
         documentEntities = null;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:09.181 -0500", hash_original_method = "EE8E194EE4DCB71C2C4B627C026D6CE3", hash_generated_method = "A3A1925DFD4A268A0E852F1DBF58501D")
     
 public void setInput(InputStream is, String charset) throws XmlPullParserException {
@@ -1918,6 +1919,7 @@ ContentSource(ContentSource next, char[] buffer, int position, int limit) {
         
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:09.191 -0500", hash_original_method = "139FEB1FB1AC644E29BB2080E735DCAB", hash_generated_method = "2C00835AFAC73D063F4EA288159CB6BA")
     
 public void defineEntityReplacementText(String entity, String value)
@@ -2354,6 +2356,7 @@ public void setFeature(String feature, boolean value) throws XmlPullParserExcept
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:09.272 -0500", hash_original_method = "BB78C28304FA5EA99DAD361D5123F3A6", hash_generated_method = "EDDB40FDA61D6E06E84F7B6D343EDE8A")
     
 public void setProperty(String property, Object value) throws XmlPullParserException {

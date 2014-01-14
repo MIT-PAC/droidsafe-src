@@ -7,11 +7,6 @@ import droidsafe.annotations.*;
 import java.io.IOException;
 import java.util.Enumeration;
 
-
-
-
-
-
 public class MulticastSocket extends DatagramSocket {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.585 -0500", hash_original_field = "8405AE2A3D1666EB56E8105B1F31EECE", hash_generated_field = "FA21EF96F67F8787C26D586D454C48A6")
 
@@ -250,6 +245,7 @@ private void checkJoinOrLeave(InetAddress groupAddr) throws IOException {
      * @throws IOException if an error occurs.
      * @deprecated use {@link #setTimeToLive}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.623 -0500", hash_original_method = "B2C00FA361C879157E99EDF94577EB31", hash_generated_method = "D399416A40635AF894745C2EFC98E153")
     
 @Deprecated
@@ -276,6 +272,7 @@ private void checkJoinOrLeave(InetAddress groupAddr) throws IOException {
      *
      * @throws SocketException if an error occurs.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.626 -0500", hash_original_method = "89C8198F5D22E8812FC96CB1AE49CBE2", hash_generated_method = "8F329DF56ADDDD979EBB0C14E191B1FB")
     
 public void setInterface(InetAddress address) throws SocketException {
@@ -298,6 +295,7 @@ public void setInterface(InetAddress address) throws SocketException {
      *
      * @throws SocketException if an error occurs.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.629 -0500", hash_original_method = "103D9F8CED47CA1D8B78CD3F071983B8", hash_generated_method = "61C4B4BB58AEB688F76D3698EEA04576")
     
 public void setNetworkInterface(NetworkInterface networkInterface) throws SocketException {
@@ -316,6 +314,7 @@ public void setNetworkInterface(NetworkInterface networkInterface) throws Socket
      *
      * @throws IOException if an error occurs.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.632 -0500", hash_original_method = "87E1DCD7CA258C3733B679C47E824196", hash_generated_method = "F93790A0722C5493E51C191EEC988AE0")
     
 public void setTimeToLive(int ttl) throws IOException {
@@ -333,6 +332,7 @@ public void setTimeToLive(int ttl) throws IOException {
      * @throws IOException if an error occurs.
      * @deprecated Replaced by {@link #setTimeToLive}
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.634 -0500", hash_original_method = "5513CDD24FF579269A679F40508B01F6", hash_generated_method = "153EA4F07F6DA6A6A096D6E089E52F7C")
     
 @Deprecated
@@ -378,13 +378,13 @@ public boolean getLoopbackMode() throws SocketException {
      *
      * @throws SocketException if an error occurs.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.641 -0500", hash_original_method = "3AC1197302083655B98FC683162962C9", hash_generated_method = "07FDB573A41CFAD5F4F15DFD6B8A0330")
     
 public void setLoopbackMode(boolean disable) throws SocketException {
         checkOpen();
         impl.setOption(SocketOptions.IP_MULTICAST_LOOP, Boolean.valueOf(!disable));
     }
-
     
 }
 

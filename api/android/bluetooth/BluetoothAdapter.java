@@ -27,8 +27,6 @@ import android.os.ServiceManager;
 import android.util.Log;
 import android.util.Pair;
 
-
-
 public final class BluetoothAdapter {
 
     /**
@@ -224,20 +222,16 @@ public static boolean checkBluetoothAddress(String address) {
     public static final String BLUETOOTH_SERVICE = "bluetooth";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:35.726 -0500", hash_original_field = "DA4EF7DDA5FEBC2397ABAEFEF1473AA8", hash_generated_field = "4E1CB78F3E71AAE2C4C5EEAF9B65762C")
 
-
     private static final int ADDRESS_LENGTH = 17;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:35.728 -0500", hash_original_field = "2CFB7D085BB9AA78E2DC60D69D574C57", hash_generated_field = "774AD1565F074633E7FB49926516258A")
 
     private static BluetoothAdapter sAdapter;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:35.730 -0500", hash_original_field = "E6C68E4A2725AB507547EA6B7D87DBDC", hash_generated_field = "40876FBB70C48F89ADB2F95E8DF8AB42")
 
-
     private  IBluetooth mService;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:35.732 -0500", hash_original_field = "5E2493EBFED94E57584631305B612A35", hash_generated_field = "4E8B81D96B452AEF852F97E41FBCDFCC")
 
-
     private Handler mServiceRecordHandler;
-
     
     private static class RfcommChannelPicker {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:35.788 -0500", hash_original_field = "613461EFCF7CF9698C97F2645CDC813F", hash_generated_field = "85605CCAEEE7035FF329E0599B7B7F2A")
@@ -256,10 +250,8 @@ public static boolean checkBluetoothAddress(String address) {
         private static Random sRandom;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:35.795 -0500", hash_original_field = "AC71322F2F096CDDBCFE03BB1EDC8510", hash_generated_field = "1480456E24B96E56BF1C53CE053D6C57")
 
-
         private  LinkedList<Integer> mChannels;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:35.797 -0500", hash_original_field = "AFE074E0052115B31F5D8A3FD1E72383", hash_generated_field = "318090B38C1325AB0A6BDE7565479F55")
-
 
         private  UUID mUuid;
 
@@ -292,8 +284,6 @@ public int nextChannel() {
             return mChannels.remove(sRandom.nextInt(mChannels.size()));
         }
     }
-
-
     
     public class StateChangeCallbackWrapper extends IBluetoothStateChangeCallback.Stub {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:35.845 -0500", hash_original_field = "98DB69D7F94A15337DEA3D2D22420182", hash_generated_field = "A57455FF422F35D91E260F65043C7D89")
@@ -313,11 +303,8 @@ StateChangeCallbackWrapper(BluetoothStateChangeCallback
         public void onBluetoothStateChange(boolean on) {
             mCallback.onBluetoothStateChange(on);
         }
-
         
     }
-
-
     
     public interface BluetoothStateChangeCallback {
         public void onBluetoothStateChange(boolean on);
@@ -590,6 +577,7 @@ public int getScanMode() {
      * @return     true if the scan mode was set, false otherwise
      * @hide
      */
+    @DSSink({DSSinkKind.BLUETOOTH})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:35.763 -0500", hash_original_method = "EAE2AE792A5A03E2A7F346C251F56DAF", hash_generated_method = "B1DB08C03AB68172F4AAB21799A98B9B")
     
 public boolean setScanMode(int mode, int duration) {
@@ -601,6 +589,7 @@ public boolean setScanMode(int mode, int duration) {
     }
 
     /** @hide */
+    @DSSink({DSSinkKind.BLUETOOTH})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:35.766 -0500", hash_original_method = "5FA36C89B86406F549228E4F23C31FB5", hash_generated_method = "CB34F3E05DFFE57777A4686C6F21D51C")
     
 public boolean setScanMode(int mode) {
@@ -620,6 +609,7 @@ public int getDiscoverableTimeout() {
     }
 
     /** @hide */
+    @DSSink({DSSinkKind.BLUETOOTH})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:35.770 -0500", hash_original_method = "040DE868F00C15E58DE726DEE9429CA3", hash_generated_method = "9DA3EF71F67CBAB9135D65344F449CD2")
     
 public void setDiscoverableTimeout(int timeout) {
@@ -993,7 +983,6 @@ private BluetoothServerSocket createNewRfcommSocketAndRecord(String name, UUID u
         socket.setCloseHandler(mServiceRecordHandler, handle);
         return socket;
     }
-
 
     /**
      * Construct an unencrypted, unauthenticated, RFCOMM server socket.

@@ -31,6 +31,7 @@ public class ParcelFileDescriptor implements Parcelable {
      * @throws FileNotFoundException Throws FileNotFoundException if the given
      * file does not exist or can not be opened with the requested mode.
      */
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:29.028 -0500", hash_original_method = "6C139DF2C99367764164B889BB05F5C6", hash_generated_method = "A4FC67A1E0EC81E84D832D0DE58F7F12")
     
 public static ParcelFileDescriptor open(File file, int mode)
@@ -172,6 +173,7 @@ public static ParcelFileDescriptor[] createPipe() throws IOException {
      * @return A ParcelFileDescriptor.
      * @throws IOException if there is an error while creating the shared memory area.
      */
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:29.059 -0500", hash_original_method = "5DAB2FA0A665F799CCD0D6860DBF4933", hash_generated_method = "502151D93914B556FDAA4F01C688FADC")
     
 @Deprecated

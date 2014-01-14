@@ -18,34 +18,23 @@ import java.util.Collection;
 import java.util.Hashtable;
 import java.util.Iterator;
 
-
-
-
-
-
 public class TCPMessageProcessor extends MessageProcessor {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:27.874 -0500", hash_original_field = "3E7D136CB50987E965906415399DB0D1", hash_generated_field = "D720E7EA87A425C9C359604A7CD3BB49")
-
 
     protected int nConnections;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:27.877 -0500", hash_original_field = "5EBE085FDB38216257993802E75ABBBF", hash_generated_field = "CE50F8CB2D618D5E2ED1602B4F1188A5")
 
-
     private boolean isRunning;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:27.879 -0500", hash_original_field = "80DB71A53B0781054FD4E3FEDE7D2953", hash_generated_field = "ABA66BF5920EEDB54F4A360C721737A3")
-
 
     private Hashtable tcpMessageChannels;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:27.881 -0500", hash_original_field = "B78EFB6ADF0D0F60798CFF8DE9761D94", hash_generated_field = "3CA1EEC3C31C7352901A5A9695447AE6")
 
-
     private ArrayList<TCPMessageChannel> incomingTcpMessageChannels;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:27.884 -0500", hash_original_field = "F87D5147B4D201968440828D580BDC80", hash_generated_field = "FB56C66DB0DF522F5632D1532BCC403B")
 
-
     private ServerSocket sock;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:27.886 -0500", hash_original_field = "43A0963BA6DFAE0550944671844C16DD", hash_generated_field = "8B62D61316200E61EA0A60A5551D82D6")
-
 
     protected int useCount;
 
@@ -205,6 +194,7 @@ protected synchronized void remove(TCPMessageChannel tcpMessageChannel) {
         incomingTcpMessageChannels.remove(tcpMessageChannel);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:27.911 -0500", hash_original_method = "357F90D56DF658376E8E30660A48F527", hash_generated_method = "49C43853E7AA59BB4833394590865264")
     
 public synchronized MessageChannel createMessageChannel(HostPort targetHostPort)
@@ -225,6 +215,7 @@ public synchronized MessageChannel createMessageChannel(HostPort targetHostPort)
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:27.914 -0500", hash_original_method = "A1867B08C1B2C4003FD16CE7D97D4BE3", hash_generated_method = "294E9958873093E2C8DCBC888D67E184")
     
 protected synchronized void cacheMessageChannel(TCPMessageChannel messageChannel) {
@@ -241,6 +232,7 @@ protected synchronized void cacheMessageChannel(TCPMessageChannel messageChannel
 
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:27.917 -0500", hash_original_method = "C7BFFB891EADFA809295B1E355E1D388", hash_generated_method = "89CB28300D5ACD61145C88B90F3B6E10")
     
 public synchronized MessageChannel createMessageChannel(InetAddress host, int port)
@@ -296,7 +288,6 @@ public int getDefaultTargetPort() {
 public boolean isSecure() {
         return false;
     }
-
     
 }
 

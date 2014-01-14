@@ -84,7 +84,8 @@ public static ASN1Oid getInstanceForString() {
             
         }
         
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.596 -0400", hash_original_method = "CDC9ED6FAB1ED0D19929BE7F36D72557", hash_generated_method = "1BFE9E939832A0646316571B458221A0")
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.596 -0400", hash_original_method = "CDC9ED6FAB1ED0D19929BE7F36D72557", hash_generated_method = "1BFE9E939832A0646316571B458221A0")
         @Override
         public void setEncodingContent(BerOutputStream out) {
             out.content = ObjectIdentifier.toIntArray((String) out.content);
@@ -158,6 +159,7 @@ public void encodeContent(BerOutputStream out) {
         out.encodeOID();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.215 -0500", hash_original_method = "EFEF2EC121CF26DF89AF9E72AC4EE02E", hash_generated_method = "BFE853E80F39183052429A83100ADDCB")
     
 public void setEncodingContent(BerOutputStream out) {

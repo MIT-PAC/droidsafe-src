@@ -1361,6 +1361,7 @@ public void remove(String key) {
          * @param key   the key name for the parameter
          * @param value the String value of the parameter
          */
+        @DSSink({DSSinkKind.LOG})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.680 -0500", hash_original_method = "9906E3CA2524241D923FE8CC5604496C", hash_generated_method = "DA159FF0D51109E26C5D52C200A68F33")
         
 public void set(String key, String value) {
@@ -1382,6 +1383,7 @@ public void set(String key, String value) {
          * @param key   the key name for the parameter
          * @param value the int value of the parameter
          */
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.682 -0500", hash_original_method = "DBCF0186D288029EB50A796A20F8A1EF", hash_generated_method = "364A017ADED4A0C02371C2CE3587A597")
         
 public void set(String key, int value) {
@@ -1462,6 +1464,7 @@ public int getInt(String key) {
          * @see #setPictureSize(int, int)
          * @see #setJpegThumbnailSize(int, int)
          */
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.695 -0500", hash_original_method = "6987138C4F07A5DAB158AF960652B331", hash_generated_method = "1DBF0D0FEE6E5153176543EA49CE334B")
         
 public void setPreviewSize(int width, int height) {
@@ -1551,6 +1554,7 @@ public Size getPreferredPreviewSizeForVideo() {
          * @param height the height of the thumbnail, in pixels
          * @see #setPreviewSize(int,int)
          */
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.707 -0500", hash_original_method = "2AB80AB00FA241259D83FB9D6F5E9551", hash_generated_method = "DBA465C2EDEF61C1AEE61311D2EF43DC")
         
 public void setJpegThumbnailSize(int width, int height) {
@@ -1591,6 +1595,7 @@ public List<Size> getSupportedJpegThumbnailSizes() {
          * @param quality the JPEG quality of the EXIF thumbnail. The range is 1
          *                to 100, with 100 being the best.
          */
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.715 -0500", hash_original_method = "D45FD8A4693A979494C68F5349AB982C", hash_generated_method = "5AF9D9F31E73CE832CF23EC6E5A821B6")
         
 public void setJpegThumbnailQuality(int quality) {
@@ -1614,6 +1619,7 @@ public int getJpegThumbnailQuality() {
          * @param quality the JPEG quality of captured picture. The range is 1
          *                to 100, with 100 being the best.
          */
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.720 -0500", hash_original_method = "93253D80DE36A3D3B74304A7DEF0F5F5", hash_generated_method = "A4701A4595A94E984B10B2AE8F2C0409")
         
 public void setJpegQuality(int quality) {
@@ -1638,6 +1644,7 @@ public int getJpegQuality() {
          * @param fps the frame rate (frames per second)
          * @deprecated replaced by {@link #setPreviewFpsRange(int,int)}
          */
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.725 -0500", hash_original_method = "B0B2C8D52537728343380388CD5075DA", hash_generated_method = "AC08DE7400B8697D3BD9594CE38CC405")
         
 @Deprecated
@@ -1687,6 +1694,7 @@ public int getJpegQuality() {
          * @see #setPreviewCallbackWithBuffer(Camera.PreviewCallback)
          * @see #getSupportedPreviewFpsRange()
          */
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.733 -0500", hash_original_method = "6968DA252510074FDC520CD1B2513339", hash_generated_method = "9C70C9496F6BB96D13D47D0BCC4A3B68")
         
 public void setPreviewFpsRange(int min, int max) {
@@ -1749,6 +1757,7 @@ public List<int[]> getSupportedPreviewFpsRange() {
          *                      <var>ImageFormat.JPEG</var>)
          * @see android.graphics.ImageFormat
          */
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.742 -0500", hash_original_method = "266AF7A67C96051E3828B919A653DC3F", hash_generated_method = "2C4CBB4ADA21779FCCA790EA9F19C8D3")
         
 public void setPreviewFormat(int pixel_format) {
@@ -1807,6 +1816,7 @@ public List<Integer> getSupportedPreviewFormats() {
          * @see #setPreviewSize(int,int)
          *
          */
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.750 -0500", hash_original_method = "57116AEDE3770C6B0E8CE3250234439E", hash_generated_method = "9BF5DF2760F01B3B959CA6E9400D4A7A")
         
 public void setPictureSize(int width, int height) {
@@ -1849,6 +1859,7 @@ public List<Size> getSupportedPictureSizes() {
          *                      <var>ImageFormat.JPEG</var>)
          * @see android.graphics.ImageFormat
          */
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.758 -0500", hash_original_method = "51599A9895DB2449268569860164A951", hash_generated_method = "50B3C0A0C84BFAEFC01A6506ABD334E6")
         
 public void setPictureFormat(int pixel_format) {
@@ -1988,6 +1999,7 @@ private int pixelFormatForCameraFormat(String format) {
          * @see android.view.OrientationEventListener
          * @see #getCameraInfo(int, CameraInfo)
          */
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.771 -0500", hash_original_method = "7F1F8FE07039060100EB7EAEC293220B", hash_generated_method = "F3875D2F4F1C5F577C65AB5F82BC30E8")
         
 public void setRotation(int rotation) {
@@ -2006,6 +2018,7 @@ public void setRotation(int rotation) {
          *
          * @param latitude GPS latitude coordinate.
          */
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.774 -0500", hash_original_method = "BEFE742BAEEA8C90DDA5ADB3E09F2E6F", hash_generated_method = "B4A2DBD30E863CEAD97D7F68268A00DA")
         
 public void setGpsLatitude(double latitude) {
@@ -2018,6 +2031,7 @@ public void setGpsLatitude(double latitude) {
          *
          * @param longitude GPS longitude coordinate.
          */
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.778 -0500", hash_original_method = "15D67DC442B59D8C20F49D295A03B9C3", hash_generated_method = "3A1A7257F4BECF4A9D22F92517AAEDDF")
         
 public void setGpsLongitude(double longitude) {
@@ -2029,6 +2043,7 @@ public void setGpsLongitude(double longitude) {
          *
          * @param altitude GPS altitude in meters.
          */
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.780 -0500", hash_original_method = "D37B20DFD4F471A556A1A3948D012F6F", hash_generated_method = "4190722456224BB6A9DE82AD946A3F32")
         
 public void setGpsAltitude(double altitude) {
@@ -2041,6 +2056,7 @@ public void setGpsAltitude(double altitude) {
          * @param timestamp GPS timestamp (UTC in seconds since January 1,
          *                  1970).
          */
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.783 -0500", hash_original_method = "E7E121605EA7F31AA54C4E2FEA0A633A", hash_generated_method = "4FD7F924D21E8330AA976AC57A6DD10F")
         
 public void setGpsTimestamp(long timestamp) {
@@ -2053,6 +2069,7 @@ public void setGpsTimestamp(long timestamp) {
          *
          * @param processing_method The processing method to get this location.
          */
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.786 -0500", hash_original_method = "EB21E6C6306284106B5612462912EE4A", hash_generated_method = "07CEC522E3A5B37FDAC9AA98F0765619")
         
 public void setGpsProcessingMethod(String processing_method) {
@@ -2103,6 +2120,7 @@ public String getWhiteBalance() {
          * @see #getWhiteBalance()
          * @see #setAutoWhiteBalanceLock(boolean)
          */
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.794 -0500", hash_original_method = "F368B7E42EFB4E89424B346F78A99160", hash_generated_method = "E76701CDA212D195315DD91CD02A95CA")
         
 public void setWhiteBalance(String value) {
@@ -2153,6 +2171,7 @@ public String getColorEffect() {
          * @param value new color effect.
          * @see #getColorEffect()
          */
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.802 -0500", hash_original_method = "0DAF9E55870C866B1D9028B63F9B1051", hash_generated_method = "08EAA4356B2FBD8419F87D628512BD41")
         
 public void setColorEffect(String value) {
@@ -2195,6 +2214,7 @@ public String getAntibanding() {
          * @param antibanding new antibanding value.
          * @see #getAntibanding()
          */
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.810 -0500", hash_original_method = "985E6B38FF8AC0EB85AFEB9A2D7D5D97", hash_generated_method = "FB0A9B406095BE2FEE07D90F8E9A1F9C")
         
 public void setAntibanding(String antibanding) {
@@ -2254,6 +2274,7 @@ public String getSceneMode() {
          * @param value scene mode.
          * @see #getSceneMode()
          */
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.817 -0500", hash_original_method = "F340D9AF77CABF3FCAC1513FFFE1B10A", hash_generated_method = "9BA5915BA5E81E16DD36AD91AAE89DF0")
         
 public void setSceneMode(String value) {
@@ -2297,6 +2318,7 @@ public String getFlashMode() {
          * @param value flash mode.
          * @see #getFlashMode()
          */
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.825 -0500", hash_original_method = "C9F8B5AECF6107B196C9E01FA7C3624E", hash_generated_method = "5B25B77173D426BAB2F628CE784BFCBA")
         
 public void setFlashMode(String value) {
@@ -2343,6 +2365,7 @@ public String getFocusMode() {
          * @param value focus mode.
          * @see #getFocusMode()
          */
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.833 -0500", hash_original_method = "7416CBC128B7B3D1CBE2DFA875979AFE", hash_generated_method = "87FECA6DF3FC52B36F1AD507E4EC5FFA")
         
 public void setFocusMode(String value) {
@@ -2423,6 +2446,7 @@ public int getExposureCompensation() {
          *        getMinExposureCompensation and getMaxExposureCompensation to
          *        know if exposure compensation is supported.
          */
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.848 -0500", hash_original_method = "111B767E933C2CD9576CD967C7CB52EF", hash_generated_method = "2EB79FABFD9C0A01B5FDD9366985D416")
         
 public void setExposureCompensation(int value) {
@@ -2502,6 +2526,7 @@ public float getExposureCompensationStep() {
          *
          * @see #getAutoExposureLock()
          */
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.859 -0500", hash_original_method = "FB8CC317CA960BD5E74A2557DE2CFB32", hash_generated_method = "4C9479D41F73B7EAA149F39EF538D889")
         
 public void setAutoExposureLock(boolean toggle) {
@@ -2578,6 +2603,7 @@ public boolean isAutoExposureLockSupported() {
          * @see #getAutoWhiteBalanceLock()
          * @see #setWhiteBalance(String)
          */
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.867 -0500", hash_original_method = "9FBB2F0BD63C7724B00563EB3EE35866", hash_generated_method = "B39630F479CD9B270B533C376699DBE3")
         
 public void setAutoWhiteBalanceLock(boolean toggle) {
@@ -2644,6 +2670,7 @@ public int getZoom() {
          *
          * @param value zoom value. The valid range is 0 to {@link #getMaxZoom}.
          */
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.878 -0500", hash_original_method = "4C7A1B4E8D019C0A8169E6EC8AF83500", hash_generated_method = "809429A3F9B65A95969FFFF807B2F0E6")
         
 public void setZoom(int value) {
@@ -2926,6 +2953,7 @@ public int getMaxNumDetectedFaces() {
          * @param hint true if the apps intend to record videos using
          *             {@link android.media.MediaRecorder}.
          */
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.914 -0500", hash_original_method = "77706BF984161454A07D20CFA20843D2", hash_generated_method = "AC1CA2DC1F6BEF7C047960161D7D51F1")
         
 public void setRecordingHint(boolean hint) {
@@ -2982,6 +3010,7 @@ public boolean isVideoSnapshotSupported() {
          * @see #isVideoStabilizationSupported()
          * @see #getVideoStabilization()
          */
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.919 -0500", hash_original_method = "9F60C08F2ED5DD6FF6AE5E03CD68E34B", hash_generated_method = "047EF69BB2F5615B6406A11E040D9922")
         
 public void setVideoStabilization(boolean toggle) {

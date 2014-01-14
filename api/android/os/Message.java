@@ -432,6 +432,7 @@ public void sendToTarget() {
 		return getTaintInt();
 	}
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void writeToParcel(Parcel dest, int flags){
 		// Original method
         if (DroidSafeAndroidRuntime.control) {

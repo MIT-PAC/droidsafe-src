@@ -296,6 +296,7 @@ public void unscheduleDrawable(Drawable who, Runnable what) {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:19.173 -0500", hash_original_method = "29A0A86F8B666C86609CA80FF461C32C", hash_generated_method = "F1CE08502485BF393003F5059D093A39")
     
 @Override

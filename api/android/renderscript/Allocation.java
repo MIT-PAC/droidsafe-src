@@ -455,9 +455,6 @@ static public Allocation createFromString(RenderScript rs,
     public static final int USAGE_GRAPHICS_RENDER_TARGET = 0x0010;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.157 -0500", hash_original_field = "CB4D2A9A30166F32913FF91112AF5F85", hash_generated_field = "7A3E66DD2D5D765451AE7D825CAB2F16")
 
-
-
-
     // creation
 
     static BitmapFactory.Options mBitmapOptions = new BitmapFactory.Options();
@@ -474,7 +471,6 @@ static public Allocation createFromString(RenderScript rs,
 
     Allocation mAdaptedAllocation;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.000 -0500", hash_original_field = "1FF9B76BD894BB7012F7F3B358570205", hash_generated_field = "1FF9B76BD894BB7012F7F3B358570205")
-
 
     boolean mConstrainedLOD;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.002 -0500", hash_original_field = "348B2424577ECDC38E311FD999D29B92", hash_generated_field = "348B2424577ECDC38E311FD999D29B92")
@@ -499,7 +495,6 @@ static public Allocation createFromString(RenderScript rs,
 
     Type.CubemapFace mSelectedFace = Type.CubemapFace.POSITIVE_X;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.016 -0500", hash_original_field = "C9FB47D56F7EDB1EE840BDC3AE79BB40", hash_generated_field = "C9FB47D56F7EDB1EE840BDC3AE79BB40")
-
 
     int mCurrentDimX;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.019 -0500", hash_original_field = "A99E76F576811A9EDE6769AE3935BB39", hash_generated_field = "A99E76F576811A9EDE6769AE3935BB39")
@@ -529,7 +524,6 @@ Allocation(int id, RenderScript rs, Type t, int usage) {
             updateCacheInfo(t);
         }
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.043 -0500", hash_original_method = "311D2B5BD14C46D52A18F5FB7D46A7CD", hash_generated_method = "EF4A9BBCFACDD949B961C655FAE4A879")
     
@@ -855,6 +849,7 @@ public void copyFrom(Bitmap b) {
      * @param xoff
      * @param fp
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.097 -0500", hash_original_method = "E70E78EB3719016B4E6FB42A9EB5810C", hash_generated_method = "97A710717708BEEC3171324422D5E37A")
     
 public void setFromFieldPacker(int xoff, FieldPacker fp) {
@@ -877,6 +872,7 @@ public void setFromFieldPacker(int xoff, FieldPacker fp) {
      * @param component_number
      * @param fp
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.099 -0500", hash_original_method = "507EA1A1B860EC041E68F02818C67D1F", hash_generated_method = "4D8E80D26F52714FC62A8065959577CD")
     
 public void setFromFieldPacker(int xoff, int component_number, FieldPacker fp) {
@@ -1187,14 +1183,12 @@ public void copy2DRangeFrom(int xoff, int yoff, Bitmap data) {
         validate2DRange(xoff, yoff, data.getWidth(), data.getHeight());
         mRS.nAllocationData2D(getIDSafe(), xoff, yoff, mSelectedLOD, mSelectedFace.mID, data);
     }
-
     
     public enum MipmapControl {
         MIPMAP_NONE(0),
         MIPMAP_FULL(1),
         MIPMAP_ON_SYNC_TO_TEXTURE(2);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.038 -0500", hash_original_field = "0B53E374282B34FB268F3024A1E73BA5", hash_generated_field = "0B53E374282B34FB268F3024A1E73BA5")
-
 
         int mID;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.040 -0500", hash_original_method = "799E9DBA54D46449D97C57D053873549", hash_generated_method = "799E9DBA54D46449D97C57D053873549")
@@ -1203,7 +1197,6 @@ MipmapControl(int id) {
             mID = id;
         }
     }
-
 
     /**
      * Copy from the Allocation into a Bitmap.  The bitmap must

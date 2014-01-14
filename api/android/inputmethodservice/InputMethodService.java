@@ -695,6 +695,7 @@ public boolean onEvaluateFullscreenMode() {
      * of both the extracted text and candidate view; the latter since it is
      * not useful if there is no text to see.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.615 -0500", hash_original_method = "D4950711A20DE11BC2C7EA5EC93FE5E0", hash_generated_method = "1DC4FCD3BF396E9625C846BD58EDCAA4")
     
 public void setExtractViewShown(boolean shown) {
@@ -848,6 +849,7 @@ public boolean onEvaluateInputViewShown() {
      * Controls the visibility of the candidates display area.  By default
      * it is hidden.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.633 -0500", hash_original_method = "3ADC6F28D6F2E8A9F55D9BD9F82BC8D2", hash_generated_method = "DA1466E8A78C34D96D22AC6F8D4A0297")
     
 public void setCandidatesViewShown(boolean shown) {
@@ -949,6 +951,7 @@ public void setExtractView(View view) {
      * implement {@link #onCreateCandidatesView()} and create your view when
      * first needed by the input method.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.650 -0500", hash_original_method = "8648EAF39F078D77783E311D9636B394", hash_generated_method = "E9A500E1CB4F88393500486BBFA81A7D")
     
 public void setCandidatesView(View view) {
@@ -1741,6 +1744,7 @@ boolean doMovementKey(int keyCode, KeyEvent event, int count) {
      * @param keyEventCode The raw key code to send, as defined by
      * {@link KeyEvent}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.748 -0500", hash_original_method = "79E896FD8459E186D0AA684976DF9590", hash_generated_method = "F7A3255D314ED060A32B9670A74A2B7B")
     
 public void sendDownUpKeyEvents(int keyEventCode) {
@@ -1771,6 +1775,7 @@ public void sendDownUpKeyEvents(int keyEventCode) {
      * does not want an action from the enter key.  If true, the action was
      * sent (or there was no input connection at all).
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.751 -0500", hash_original_method = "84DA6B1414DFECBCA6744FD6285B6A00", hash_generated_method = "5C9FEB501E23E15FCAEE85E25C8A3C18")
     
 public boolean sendDefaultEditorAction(boolean fromEnterKey) {
@@ -1803,6 +1808,7 @@ public boolean sendDefaultEditorAction(boolean fromEnterKey) {
      * 
      * @param charCode The UTF-16 character code to send.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.754 -0500", hash_original_method = "CB96ACC643B76CE6B3516B92D9424351", hash_generated_method = "13B473258FD22DF6BB73073EF1198CD8")
     
 public void sendKeyChar(char charCode) {
@@ -2193,6 +2199,7 @@ public void onExtractedCursorMovement(int dx, int dy) {
      * to be processed in underlying "real" editor.  Re-implement this to
      * provide whatever behavior you want.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.770 -0500", hash_original_method = "FA4A3D7B1537F03835F5D4F28B4BC905", hash_generated_method = "3FC295F2B8792DFF6375DB94ED7036A1")
     
 public boolean onExtractTextContextMenuItem(int id) {
@@ -2394,6 +2401,7 @@ protected void onCurrentInputMethodSubtypeChanged(InputMethodSubtype newSubtype)
      * Performs a dump of the InputMethodService's internal state.  Override
      * to add your own information to the dump.
      */
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.790 -0500", hash_original_method = "ABDAB14391C840F473C7CB9BB20D3C33", hash_generated_method = "52519F24079292405CF21B07A95F0496")
     
 @Override protected void dump(FileDescriptor fd, PrintWriter fout, String[] args) {

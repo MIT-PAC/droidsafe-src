@@ -16,16 +16,10 @@ import android.text.TextUtils;
 import com.android.internal.telephony.CallerInfo;
 import com.android.internal.telephony.Connection;
 
-
-
-
-
-
 public class CallLog {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:55.790 -0500", hash_original_field = "7D8B302CF1ACA6A4BAD6C21A54A8ACB5", hash_generated_field = "987F87B7D47FA52A14E198986D714BCB")
 
     public static final String AUTHORITY = "call_log";
-
 
     public static class Calls implements BaseColumns {
 
@@ -44,6 +38,7 @@ public class CallLog {
          *
          * {@hide}
          */
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:55.868 -0500", hash_original_method = "74620372DF35852D8DF70C07592BB0DB", hash_generated_method = "C57146249214A5E939B067E9007562C8")
         
 public static Uri addCall(CallerInfo ci, Context context, String number,

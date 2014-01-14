@@ -10,14 +10,8 @@ import java.text.ParseException;
 
 import javax.sip.header.ExtensionHeader;
 
-
-
-
-
-
 public class PAssertedService extends SIPHeader implements PAssertedServiceHeader, SIPHeaderNamesIms, ExtensionHeader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:57.415 -0500", hash_original_field = "DFC659C097418CBB8C1EC0C3D50D53A5", hash_generated_field = "8B30B176BF34BEC26AF3F3FDA86A1827")
-
 
     private String subServiceIds;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:57.418 -0500", hash_original_field = "F3C636661E9DFC4BE76EFDD1192193F4", hash_generated_field = "7976ED8892ABC041E4713F4D251EC3B6")
@@ -61,6 +55,7 @@ public PAssertedService()
         return retval.toString();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:57.433 -0500", hash_original_method = "4B92A49D74A1215E0C3EC12D290AF61B", hash_generated_method = "014FE50D8A9A4F50DCF1C9E31F934432")
     
 public void setValue(String value) throws ParseException {
@@ -109,14 +104,12 @@ public boolean equals(Object other)
 
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:57.453 -0500", hash_original_method = "3CDC6738E06A7AFD0A34818FC063034A", hash_generated_method = "EC849A5DD26DA0B0853E15F6B153DE3D")
     
 public Object clone() {
         PAssertedService retval = (PAssertedService) super.clone();
         return retval;
     }
-
     
 }
 

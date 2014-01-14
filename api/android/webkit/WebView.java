@@ -1573,6 +1573,7 @@ private boolean isScrollableForAccessibility() {
                 || contentToViewY(getContentHeight()) > getHeight() - mPaddingTop - mPaddingBottom);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.446 -0500", hash_original_method = "54B3F9F93CD715ABE05B0EE7E2D97801", hash_generated_method = "A9A3F5834D6532D7E3329353C7A555B3")
     
 @Override
@@ -1658,6 +1659,7 @@ boolean onSavePassword(String schemePlusHost, String username,
        return rVal;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.468 -0500", hash_original_method = "B1C529B2D720558A64029A0709B532B0", hash_generated_method = "0A0ED11EBC73AD94DD08C440385BAC74")
     
 @Override
@@ -1675,6 +1677,7 @@ boolean onSavePassword(String schemePlusHost, String username,
      * Specify whether the horizontal scrollbar has overlay style.
      * @param overlay TRUE if horizontal scrollbar should have overlay style.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.470 -0500", hash_original_method = "9DB949F09AC5FC0CFB5C5FAD8F7F9B82", hash_generated_method = "21703057F2A35A4D675BF414B5EA11EC")
     
 public void setHorizontalScrollbarOverlay(boolean overlay) {
@@ -1686,6 +1689,7 @@ public void setHorizontalScrollbarOverlay(boolean overlay) {
      * Specify whether the vertical scrollbar has overlay style.
      * @param overlay TRUE if vertical scrollbar should have overlay style.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.473 -0500", hash_original_method = "19F76FAFECC3C2E007D4C97071DFD1B7", hash_generated_method = "33BE12E87D717C855E56F47214AAD605")
     
 public void setVerticalScrollbarOverlay(boolean overlay) {
@@ -1810,6 +1814,7 @@ public SslCertificate getCertificate() {
     /**
      * Sets the SSL certificate for the main top-level page.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.498 -0500", hash_original_method = "9F5F4C3FB4149381051B5B6E8EFEC316", hash_generated_method = "022380724AE1DF7EC69704110ED4A6D0")
     
 public void setCertificate(SslCertificate certificate) {
@@ -1832,6 +1837,7 @@ public void setCertificate(SslCertificate certificate) {
      * @param username The username for the given host.
      * @param password The password for the given host.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.501 -0500", hash_original_method = "B1F295415F58B1AD64D910B9D074F1EA", hash_generated_method = "DCE70F7D8B048425164C9BFABA4B339A")
     
 public void savePassword(String host, String username, String password) {
@@ -1848,6 +1854,7 @@ public void savePassword(String host, String username, String password) {
      *                 password can't be saved.
      * @param password The password
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.503 -0500", hash_original_method = "BDA26C26689AA9615ED03418D91ABD81", hash_generated_method = "5B3154C7A2F4E54356EE4258F81BBF6F")
     
 public void setHttpAuthUsernamePassword(String host, String realm,
@@ -1981,6 +1988,7 @@ public void setJsFlags(String flags) {
      * generates the online/offline event as specified in HTML5, sec. 5.7.7
      * @param networkUp boolean indicating if network is available
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.527 -0500", hash_original_method = "D24B46DD870FF327FD5851F64F7AA698", hash_generated_method = "C4FB567BD9DB029C43008B7C7E3A025F")
     
 public void setNetworkAvailable(boolean networkUp) {
@@ -2144,6 +2152,7 @@ private void restoreHistoryPictureFields(Picture p, Bundle b) {
      * @return True if the picture was successfully restored.
      * @deprecated This method is now obsolete.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.552 -0500", hash_original_method = "7C45A69236EC18D01E70EB4417CC5ECC", hash_generated_method = "0EF4CA64CA7B36D278D473D83D2E8541")
     
 @Deprecated
@@ -2475,6 +2484,7 @@ public void loadDataWithBaseURL(String baseUrl, String data,
      *
      * @param filename The filename where the archive should be placed.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.583 -0500", hash_original_method = "701452CD8FBCF1E85233BEC49B4E7329", hash_generated_method = "224FBE9D1D33F8B534D7E01F2035F554")
     
 public void saveWebArchive(String filename) {
@@ -2494,6 +2504,7 @@ public void saveWebArchive(String filename) {
      *                 under which the file was saved, or null if saving the
      *                 file failed.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.599 -0500", hash_original_method = "7D135A62D01ADC63E34527E77FB3A29E", hash_generated_method = "FBFD33E9478DDA726A4B14BBDD4B02E5")
     
 public void saveWebArchive(String basename, boolean autoname, ValueCallback<String> callback) {
@@ -2820,6 +2831,7 @@ float getReadingLevelScale() {
      *
      * @param scaleInPercent The initial scale in percent.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.653 -0500", hash_original_method = "71F885EF6D599D2C56A5D45C189C25F2", hash_generated_method = "C8FF0437D49A072D9ADA314256540104")
     
 public void setInitialScale(int scaleInPercent) {
@@ -4331,6 +4343,7 @@ private void contentSizeChanged(boolean updateLayout) {
      * requests. This will replace the current handler.
      * @param client An implementation of WebViewClient.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.908 -0500", hash_original_method = "769F6743ED2D17827D8530B0462AC06C", hash_generated_method = "62BFFE4108BE3AC6FAE4A3DFA32B6093")
     
 public void setWebViewClient(WebViewClient client) {
@@ -4369,6 +4382,7 @@ public void setDownloadListener(DownloadListener listener) {
      * This will replace the current handler.
      * @param client An implementation of WebChromeClient.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.914 -0500", hash_original_method = "2B899D0DAE9F57DC761251705A20EE74", hash_generated_method = "4EEA2E22B4A1041289EAF3F896446D14")
     
 public void setWebChromeClient(WebChromeClient client) {
@@ -6237,6 +6251,7 @@ void setGLRectViewport() {
     /**
      * @hide
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:52.160 -0500", hash_original_method = "DC0F97319FBB396763626C12AC61DD09", hash_generated_method = "69A59C5C4A0568EC5BAE8C1504F6B848")
     
 @Override
@@ -7271,6 +7286,7 @@ private void cancelTouch() {
         return super.onGenericMotionEvent(event);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:52.319 -0500", hash_original_method = "38B49C08CE5650B743168C2E2BE5CA65", hash_generated_method = "12B92825F9AB7F7D77767E0280BB77E2")
     
 public void setMapTrackballToArrowKeys(boolean setMap) {
@@ -10341,6 +10357,7 @@ private boolean accessibilityScriptInjected() {
      * zero to make the view transparent.
      * @param color   the ARGB color described by Color.java
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:52.664 -0500", hash_original_method = "7544C03241648A3354186187AA9F4EF5", hash_generated_method = "C525087A89B637AE8141ADDBFDBC0EDC")
     
 @Override

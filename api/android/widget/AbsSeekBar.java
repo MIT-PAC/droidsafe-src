@@ -14,13 +14,8 @@ import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.ViewConfiguration;
 
-
-
-
-
 public abstract class AbsSeekBar extends ProgressBar {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.397 -0500", hash_original_field = "F40A65A0161E245EB9410D7A796FE9B3", hash_generated_field = "0FC0F1E74EFFD499D7E9EC90666C1A5B")
-
     
     private static final int NO_ALPHA = 0xFF;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.387 -0500", hash_original_field = "FD62B894F97CF0695B853F1F96D29A26", hash_generated_field = "A9FD89A9EA0824250F9B9C034928CB8F")
@@ -42,7 +37,6 @@ public abstract class AbsSeekBar extends ProgressBar {
 
     private float mDisabledAlpha;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.401 -0500", hash_original_field = "BDDA105C43BD9D84A4C5E84D10C957AD", hash_generated_field = "A6018E4F8C21D3EE961380A6D74CC7E0")
-
     
     private int mScaledTouchSlop;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.404 -0500", hash_original_field = "736B8C13D43D5513EA82C61CE573A2F9", hash_generated_field = "A48801BD53279BF93DEF5A0855023B3F")
@@ -184,6 +178,7 @@ public int getKeyProgressIncrement() {
         return mKeyProgressIncrement;
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.428 -0500", hash_original_method = "B86F9FD250EB4E355A6234A6154554E5", hash_generated_method = "CA2AA6C75D79CE639A6D579C54BBA41C")
     
 @Override
@@ -245,7 +240,6 @@ public int getKeyProgressIncrement() {
             invalidate();
         }
     }
-    
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.439 -0500", hash_original_method = "A1D4A37B8CF40CBB929E8D311A74C166", hash_generated_method = "12D73892C6F9EC6E45F16411E16C2432")
     

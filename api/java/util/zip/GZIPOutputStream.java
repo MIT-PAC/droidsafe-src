@@ -7,8 +7,6 @@ import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.OutputStream;
 
-
-
 public class GZIPOutputStream extends DeflaterOutputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.922 -0500", hash_original_field = "8797544496C08ADE2D4F77E9A38D0FB1", hash_generated_field = "C9B4058E3717760CA96883C40FEF405D")
 
@@ -73,6 +71,7 @@ public GZIPOutputStream(OutputStream os, int size) throws IOException {
      * Write up to nbytes of data from the given buffer, starting at offset off,
      * to the underlying stream in GZIP format.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.933 -0500", hash_original_method = "3845FBBF6C0965A8BD527CE35C72F9CE", hash_generated_method = "FBEDB0427C9F5135E9A7874A797C5A41")
     
 @Override
@@ -100,7 +99,6 @@ private int writeShort(int i) throws IOException {
         out.write((i >> 8) & 0xFF);
         return i;
     }
-
     
 }
 
