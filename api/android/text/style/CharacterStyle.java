@@ -6,10 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.text.TextPaint;
 
-
-
-
-
 public abstract class CharacterStyle {
 
     /**
@@ -29,7 +25,6 @@ public static CharacterStyle wrap(CharacterStyle cs) {
         }
     }
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.946 -0400", hash_original_method = "41D29785B7D143A249368B9153DB6D45", hash_generated_method = "41D29785B7D143A249368B9153DB6D45")
     public CharacterStyle ()
     {
@@ -49,7 +44,6 @@ public abstract void updateDrawState(TextPaint tp);
 public CharacterStyle getUnderlying() {
         return this;
     }
-
     
     private static class Passthrough extends CharacterStyle {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.031 -0500", hash_original_field = "2D4714C83DB3A38025A4471E85EE4610", hash_generated_field = "2988350718410D955D2EDCC422F9259B")
@@ -85,11 +79,8 @@ public Passthrough(CharacterStyle cs) {
         public CharacterStyle getUnderlying() {
             return mStyle.getUnderlying();
         }
-
         
     }
-
-
     
 }
 

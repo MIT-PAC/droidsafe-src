@@ -15,13 +15,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 
-
-
-
-
 class PreferenceGroupAdapter extends BaseAdapter implements OnPreferenceChangeInternalListener {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.931 -0500", hash_original_field = "3448C5E5D4B7A54DCB54B36785EADCD0", hash_generated_field = "3CD558471AD811C3362637174225D8B1")
-
     
     private static final String TAG = "PreferenceGroupAdapter";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.933 -0500", hash_original_field = "471107931B8ED684E83D803565E4E6F7", hash_generated_field = "9E796A8BD15586231740457EF37FD47D")
@@ -35,17 +30,14 @@ class PreferenceGroupAdapter extends BaseAdapter implements OnPreferenceChangeIn
     private ArrayList<PreferenceLayout> mPreferenceLayouts;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.939 -0500", hash_original_field = "0CC617CF06086A93ADE6667A33A3B2EC", hash_generated_field = "21E20E055E82593BC0F10B12A6DDF8CB")
 
-
     private PreferenceLayout mTempPreferenceLayout = new PreferenceLayout();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.941 -0500", hash_original_field = "18043BDDF466670A54CD9DA3AB56FDA3", hash_generated_field = "68E5BAC937AEA9D08E6032C8918801F2")
 
     private boolean mHasReturnedViewTypeCount = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.943 -0500", hash_original_field = "16463B205723CE1AF405A997E8F91C23", hash_generated_field = "8BB536959B4C4BC77100BFD82203560A")
-
     
     private volatile boolean mIsSyncing = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.945 -0500", hash_original_field = "AD9C3D1E48D73BF1547D53C4C62401B2", hash_generated_field = "2E60E17486AAEB1A4E1F1878A0354061")
-
     
     private Handler mHandler = new Handler();
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.482 -0400", hash_original_field = "A759A4E7184E3E83FC4B81BC91EB49E4", hash_generated_field = "6F8F5735F15B9F1306F9CF88A1481F4F")
@@ -55,9 +47,7 @@ class PreferenceGroupAdapter extends BaseAdapter implements OnPreferenceChangeIn
         public void run() {
             syncMyPreferences();
             
-            
         }
-
         
 };
 
@@ -250,7 +240,6 @@ public void onPreferenceHierarchyChange(Preference preference) {
             return viewType;
         }
     }
-
     
     private static class PreferenceLayout implements Comparable<PreferenceLayout> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.953 -0500", hash_original_field = "2142279FAAC2FF3448D7D11FB02AB89E", hash_generated_field = "D57D54CAC1273148C7462B42AF5839E3")
@@ -263,7 +252,6 @@ public void onPreferenceHierarchyChange(Preference preference) {
 
         private String name;
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.636 -0400", hash_original_method = "12E8ADB8C3EE61AC77B7A82A93B07078", hash_generated_method = "12E8ADB8C3EE61AC77B7A82A93B07078")
         public PreferenceLayout ()
         {
@@ -288,7 +276,6 @@ public int compareTo(PreferenceLayout other) {
                 return compareNames;
             }
         }
-
         
     }
 

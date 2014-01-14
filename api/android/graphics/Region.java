@@ -7,104 +7,72 @@ import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public class Region implements Parcelable {
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean nativeEquals(int native_r1, int native_r2) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativeConstructor() {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeDestructor(int native_region) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean nativeSetRegion(int native_dst,
                                                   int native_src) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean nativeSetRect(int native_dst, int left,
                                                 int top, int right, int bottom) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean nativeSetPath(int native_dst, int native_path,
                                                 int native_clip) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean nativeGetBounds(int native_region, Rect rect) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean nativeGetBoundaryPath(int native_region,
                                                         int native_path) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean nativeOp(int native_dst, int left, int top,
                                            int right, int bottom, int op) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean nativeOp(int native_dst, Rect rect,
                                            int native_region, int op) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean nativeOp(int native_dst, int native_region1,
                                            int native_region2, int op) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativeCreateFromParcel(Parcel p) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean nativeWriteToParcel(int native_region,
                                                       Parcel p) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static String nativeToString(int native_region) {
         	return ""; 
         }
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.106 -0400", hash_original_field = "50CCBBF498983066FB87505BC8EF122F", hash_generated_field = "200FB204FCAF60B88F8DADAA8213325E")
 
@@ -239,7 +207,6 @@ public boolean setPath(Path path, Region clip) {
     	//Formerly a native method
     	return getTaintBoolean();
     }
-
     
     /**
      * Return true if the region contains a single rectangle
@@ -250,7 +217,6 @@ public boolean setPath(Path path, Region clip) {
     	//Formerly a native method
     	return getTaintBoolean();
     }
-
     
     /**
      * Return true if the region contains more than one rectangle
@@ -261,7 +227,6 @@ public boolean setPath(Path path, Region clip) {
     	//Formerly a native method
     	return getTaintBoolean();
     }
-
 
     /**
      * Return a new Rect set to the bounds of the region. If the region is
@@ -322,7 +287,6 @@ public boolean getBoundaryPath(Path path) {
     	return getTaintBoolean();
     }
 
-
     /**
      * Return true if the region is a single rectangle (not complex) and it
      * contains the specified rectangle. Returning false is not a guarantee
@@ -353,7 +317,6 @@ public boolean quickContains(Rect r) {
     	return getTaintBoolean();
     }
 
-
     /**
      * Return true if the region is empty, or if the specified rectangle does
      * not intersect the region. Returning false is not a guarantee that they
@@ -381,7 +344,6 @@ public boolean quickReject(Rect r) {
     	return getTaintBoolean();
     }
 
-
     /**
      * Return true if the region is empty, or if the specified region does not
      * intersect the region. Returning false is not a guarantee that they
@@ -394,7 +356,6 @@ public boolean quickReject(Rect r) {
     	addTaint(rgn.getTaint());
     	return getTaintBoolean();
     }
-
 
     /**
      * Translate the region by [dx, dy]. If the region is empty, do nothing.
@@ -417,7 +378,6 @@ public void translate(int dx, int dy) {
     	addTaint(dy);
     	addTaint(dst.getTaint());
     }
-
 
     /**
      * Scale the region by the given scale amount. This re-constructs new region by
@@ -446,7 +406,6 @@ public void scale(float scale) {
     	addTaint(scale);
     	addTaint(dst.getTaint());
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.266 -0500", hash_original_method = "50F2C1285B4A35F7EE8C85CE7082EAF5", hash_generated_method = "CF4A9E8BED30B016B573CDE6F9A1F331")
     
@@ -553,7 +512,6 @@ protected void finalize() throws Throwable {
             super.finalize();
         }
     }
-
     
     public enum Op {
         DIFFERENCE(0),

@@ -10,20 +10,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.accessibility.AccessibilityEvent;
 
-
-
-
-
 public class AccessibilityDelegateCompat {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:22.622 -0500", hash_original_field = "13943D57EDEED9A173F5F68E5210D679", hash_generated_field = "69637AEE9A0A7BCD1114720A430081E5")
-
 
     private static  AccessibilityDelegateImpl IMPL;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:22.624 -0500", hash_original_field = "40AEF38903E1CAF710B76F2110800697", hash_generated_field = "2FAA9D9F17162833D2EDFD9409B491F8")
 
     private static  Object DEFAULT_DELEGATE;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:22.627 -0500", hash_original_field = "FB4910AEBDA35C6A7EDDEEAAF16AFC5E", hash_generated_field = "FB4910AEBDA35C6A7EDDEEAAF16AFC5E")
-
 
      Object mBridge;
 
@@ -155,11 +149,9 @@ public void onPopulateAccessibilityEvent(View host, AccessibilityEvent event) {
 public void onInitializeAccessibilityEvent(View host, AccessibilityEvent event) {
         IMPL.onInitializeAccessibilityEvent(DEFAULT_DELEGATE, host, event);
     }
-
     
     static class AccessibilityDelegateStubImpl implements AccessibilityDelegateImpl {
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.190 -0400", hash_original_method = "DD5FA6B7DB30F302274C6D21593F2A63", hash_generated_method = "DD5FA6B7DB30F302274C6D21593F2A63")
         public AccessibilityDelegateStubImpl ()
         {
@@ -224,15 +216,11 @@ public void sendAccessibilityEventUnchecked(Object delegate, View host,
                 AccessibilityEvent event) {
 
         }
-
         
     }
-
-
     
     static class AccessibilityDelegateIcsImpl extends AccessibilityDelegateStubImpl {
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.196 -0400", hash_original_method = "001B0205D9FC59E8AC4A7BF341AF74E0", hash_generated_method = "001B0205D9FC59E8AC4A7BF341AF74E0")
         public AccessibilityDelegateIcsImpl ()
         {
@@ -348,11 +336,8 @@ public void sendAccessibilityEventUnchecked(Object delegate, View host,
                 AccessibilityEvent event) {
             AccessibilityDelegateCompatIcs.sendAccessibilityEventUnchecked(delegate, host, event);
         }
-
         
     }
-
-
     
     static interface AccessibilityDelegateImpl {
         public Object newAccessiblityDelegateDefaultImpl();

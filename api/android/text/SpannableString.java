@@ -5,9 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
 public class SpannableString extends SpannableStringInternal implements CharSequence, GetChars, Spannable {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:14.067 -0500", hash_original_method = "90012DFD660EB52D22F0B732AA7864A9", hash_generated_method = "E865D88B944D0050BC86EF2B1CE2F561")
@@ -48,26 +45,22 @@ public void removeSpan(Object what) {
 public final CharSequence subSequence(int start, int end) {
         return new SpannableString(this, start, end);
     }
-
-    @DSModeled(DSC.SAFE)
+    
     public int getSpanEnd(Object what) {
     	addTaint(what.getTaint());
     	return super.getSpanEnd(what);
     }
     
-    @DSModeled(DSC.SAFE)
     public int getSpanFlags(Object what) {
     	addTaint(what.getTaint());
     	return super.getSpanFlags(what);
     }
     
-    @DSModeled(DSC.SAFE)
     public int getSpanStart(Object what) {
     	addTaint(what.getTaint());
     	return super.getSpanStart(what);
     }
     
-    @DSModeled(DSC.SAFE)
     public int nextSpanTransition(int start, int limit, Class kind) {
     	addTaint(start);
     	addTaint(limit);
@@ -75,7 +68,6 @@ public final CharSequence subSequence(int start, int end) {
     	return super.nextSpanTransition(start, limit, kind);
     }
     
-    @DSModeled(DSC.SAFE)
     public <T> T[] getSpans(int queryStart, int queryEnd, Class<T> kind) {
     	addTaint(queryStart);
     	addTaint(queryEnd);

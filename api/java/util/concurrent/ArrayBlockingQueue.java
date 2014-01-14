@@ -11,15 +11,8 @@ import java.util.NoSuchElementException;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
-
-
-
-
-
 public class ArrayBlockingQueue<E> extends AbstractQueue<E> implements BlockingQueue<E>, java.io.Serializable {
-
     
-    @DSModeled(DSC.SAFE)
     @SuppressWarnings("unchecked")
     static <E> E cast(Object item) {
         return (E) item;
@@ -52,7 +45,6 @@ private static void checkNotNull(Object v) {
 
     int count;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:18.776 -0500", hash_original_field = "684903DA26FF3CD98DD43FF6C66C5020", hash_generated_field = "FDF5D711B301AAD6E43D42E6280BCF83")
-
 
     /** Main lock guarding all access */
      ReentrantLock lock;
@@ -514,9 +506,7 @@ public Object[] toArray() {
             lock.unlock();
         }
     }
-
-    
-        @DSModeled(DSC.SAFE)
+        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.290 -0400", hash_original_method = "95E1CD553E699913E584434D85EF3537", hash_generated_method = "5C2B2E0C8958A722ACF17A9AFE742A50")
     @SuppressWarnings("unchecked")
     public <T> T[] toArray(T[] a) {
@@ -682,7 +672,6 @@ public int drainTo(Collection<? super E> c, int maxElements) {
             lock.unlock();
         }
     }
-
     
     private class Itr implements Iterator<E> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:18.861 -0500", hash_original_field = "3807DA1D584295977EB0367721D9BE66", hash_generated_field = "08CB7792A99A5A14518905B73B1C610C")
@@ -769,7 +758,6 @@ public void remove() {
                 lock.unlock();
             }
         }
-
         
     }
 

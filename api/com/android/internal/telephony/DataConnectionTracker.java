@@ -41,11 +41,6 @@ import com.android.internal.telephony.DataConnection.FailCause;
 import com.android.internal.util.AsyncChannel;
 import com.android.internal.util.Protocol;
 
-
-
-
-
-
 public abstract class DataConnectionTracker extends Handler {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:43.480 -0500", hash_original_field = "95D5733A0C83DB3D047D109C028C9F02", hash_generated_field = "5F5E7D64B04175B8FA820B2440F700FC")
 
@@ -54,7 +49,6 @@ public abstract class DataConnectionTracker extends Handler {
 
     protected static final boolean VDBG = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:43.489 -0500", hash_original_field = "29F7FBC6F2FCA909B09244B49044FD18", hash_generated_field = "33A74D16876315708A9BD8BD04E30FC7")
-
 
     public static String ACTION_DATA_CONNECTION_TRACKER_MESSENGER =
         "com.android.internal.telephony";
@@ -165,7 +159,6 @@ public abstract class DataConnectionTracker extends Handler {
     public static final int CMD_SET_POLICY_DATA_ENABLE = BASE + 32;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:43.582 -0500", hash_original_field = "8482E3B95A5B0CB1701308573ADDEA05", hash_generated_field = "07F46E413C8B3F3559740A56D5842AD9")
 
-
     protected static final int APN_INVALID_ID = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:43.584 -0500", hash_original_field = "F1FC7C56411BD39919A4E4E6BAFA5FAB", hash_generated_field = "0E77FDDEFB918A35BF053E79F738F079")
 
@@ -196,13 +189,11 @@ public abstract class DataConnectionTracker extends Handler {
     protected static final int APN_NUM_TYPES = 8;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:43.607 -0500", hash_original_field = "6F7E0F80EF74FD3232989FC9E75E1B32", hash_generated_field = "6F8C6ECFCCFDEEF8A111FB82FE45C371")
 
-
     public static final int DISABLED = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:43.610 -0500", hash_original_field = "7AC26F0BB6690D4CA2BE4FF85238F324", hash_generated_field = "BBC106514DA50C961AB6371075708621")
 
     public static final int ENABLED = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:43.613 -0500", hash_original_field = "70A43666909770466184618CED5B6CA3", hash_generated_field = "26D79596132C0495F601BE108CF49667")
-
 
     public static final String APN_TYPE_KEY = "apnType";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:43.616 -0500", hash_original_field = "56484626D21EC6D023DAF997BD2ED4CD", hash_generated_field = "A249C37DD807D068C9799A3714E5C4B5")
@@ -283,10 +274,8 @@ public abstract class DataConnectionTracker extends Handler {
     protected static final String FAIL_DATA_SETUP_FAIL_CAUSE = "fail_data_setup_fail_cause";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:43.689 -0500", hash_original_field = "25CF4A283DCD2C315B62D9D5E96D80A2", hash_generated_field = "1A4684138A98FC97EFDBFAB38A208838")
 
-
     protected static final String DEFALUT_DATA_ON_BOOT_PROP = "net.def_data_on_boot";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:43.618 -0500", hash_original_field = "5963D6DF572A3990DB76F0E016083E84", hash_generated_field = "35FA5A91B80F269D1DB9B36DE1EC65CA")
-
 
     protected Object mDataEnabledLock = new Object();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:43.620 -0500", hash_original_field = "B4753475C7A908A5C2698825CCCB21D4", hash_generated_field = "A91650204E4017AE2AE6A13FB8D2A9FB")
@@ -300,10 +289,8 @@ public abstract class DataConnectionTracker extends Handler {
     protected boolean mUserDataEnabled = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:43.628 -0500", hash_original_field = "D92494BCB77A2CDC157953A0F604B988", hash_generated_field = "F49B5B07667CCB529520831482D9BAB1")
 
-
     private boolean[] dataEnabled = new boolean[APN_NUM_TYPES];
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:43.630 -0500", hash_original_field = "DAE2C829A0358BE6B2277E2CDD4A9EF3", hash_generated_field = "8420FF89B70ED10465A38AC8B70D9095")
-
 
     private int enabledCount = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:43.632 -0500", hash_original_field = "9A8DD0A7DCE9B8EFB5C4F910DDC9A006", hash_generated_field = "4C2B2DCF407C9F63C855A59D9F29A37A")
@@ -329,8 +316,6 @@ public abstract class DataConnectionTracker extends Handler {
     protected Handler mDataConnectionTracker = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:43.703 -0500", hash_original_field = "A497A89C1F9913407DAB4F8AA8A5693D", hash_generated_field = "C066AA046467E6BBB3EA5DDB129B3DB8")
 
-
-
     protected long mTxPkts;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:43.705 -0500", hash_original_field = "58616AB4D584FE4E91ECB80FE36E1390", hash_generated_field = "F031B0AD358C38347F225F90F75B03E4")
 
@@ -342,7 +327,6 @@ public abstract class DataConnectionTracker extends Handler {
 
     protected boolean mNetStatPollEnabled = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:43.713 -0500", hash_original_field = "6B56573E62EC2E29CC84A12408F3C1E3", hash_generated_field = "B4F64D56417D37A4C51A5C74706E778F")
-
 
     protected TxRxSum mDataStallTxRxSum = new TxRxSum(0, 0);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:43.716 -0500", hash_original_field = "F36378879EA961AAA3247A55F66F7878", hash_generated_field = "922642510706D7E1F40906A8E67562E6")
@@ -395,7 +379,6 @@ public abstract class DataConnectionTracker extends Handler {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:43.752 -0500", hash_original_field = "620B27B5F01A8DDC56E70E8E7220D2AD", hash_generated_field = "910D7E883F89F3141D476B143EF29779")
 
     protected ApnSetting mActiveApn;
-
     
     public enum State {
         IDLE,
@@ -406,7 +389,6 @@ public abstract class DataConnectionTracker extends Handler {
         DISCONNECTING,
         FAILED
     }
-
     
     public enum Activity {
         NONE,
@@ -415,7 +397,6 @@ public abstract class DataConnectionTracker extends Handler {
         DATAINANDOUT,
         DORMANT
     }
-
     
     private class DataRoamingSettingObserver extends ContentObserver {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:43.776 -0500", hash_original_method = "BA61ACB3318576C64C09DAC113E0795F", hash_generated_method = "7D3CE92A8D35A5442F42570A361253C9")
@@ -446,11 +427,8 @@ public void unregister(Context context) {
             // already running on mPhone handler thread
             handleDataOnRoamingChange();
         }
-
         
     }
-
-
     
     public class TxRxSum {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:43.789 -0500", hash_original_field = "C3C93998FC50AF936715836E1BB49D42", hash_generated_field = "31EBFEDBE9880286CAB65EBD7356F689")
@@ -525,7 +503,6 @@ public void updateTxRxSum() {
             if (txUpdated) this.txPkts = txSum;
             if (rxUpdated) this.rxPkts = rxSum;
         }
-
         
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:43.754 -0500", hash_original_field = "AB7FAD359F47B9107F8FDDF019964E3C", hash_generated_field = "D877191FC5F094158A904672156AA8C5")
@@ -542,8 +519,8 @@ public void updateTxRxSum() {
     protected boolean mIsDisposed = false;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.972 -0400", hash_original_field = "3DC9FC0A8AC52E83B9299E90E867B385", hash_generated_field = "50B61350598B45B5FA16B7596B8B9FD4")
 
-    protected BroadcastReceiver mIntentReceiver = new BroadcastReceiver() {        
-        @DSModeled(DSC.BAN)
+    protected BroadcastReceiver mIntentReceiver = new BroadcastReceiver() {
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:20.972 -0400", hash_original_method = "1961A46761D2A74B4BBC61E9BCC43068", hash_generated_method = "0252BFECBC373E4A0BFABE33F7D5DC8C")
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -611,13 +588,10 @@ public void updateTxRxSum() {
             addTaint(context.getTaint());
             addTaint(intent.getTaint());
             
-            
         }
-
         
 };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:43.772 -0500", hash_original_field = "FD89FF4870F32C249FEC9C1DBC690F01", hash_generated_field = "6D8A2CC8A7E85CEA15EFEA2E663FA6FC")
-
 
     private  DataRoamingSettingObserver mDataRoamingSettingObserver;
 

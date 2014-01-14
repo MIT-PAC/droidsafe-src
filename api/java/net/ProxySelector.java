@@ -7,11 +7,6 @@ import droidsafe.annotations.*;
 import java.io.IOException;
 import java.util.List;
 
-
-
-
-
-
 public abstract class ProxySelector {
 
     /**
@@ -34,10 +29,8 @@ public static void setDefault(ProxySelector selector) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:16.079 -0500", hash_original_field = "677B9A7B45DE601136DFE19E6C8C0EA7", hash_generated_field = "866168BC4273598BE9EC3863505911FF")
 
-
     private static ProxySelector defaultSelector = new ProxySelectorImpl();
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.322 -0400", hash_original_method = "58B949A565A2A9912CEB4CE07BFCA43A", hash_generated_method = "58B949A565A2A9912CEB4CE07BFCA43A")
     public ProxySelector ()
     {

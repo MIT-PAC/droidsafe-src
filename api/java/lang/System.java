@@ -26,9 +26,6 @@ import libcore.io.StructUtsname;
 import dalvik.system.VMRuntime;
 import dalvik.system.VMStack;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public final class System {
@@ -72,21 +69,15 @@ public static void setOut(PrintStream newOut) {
 public static void setErr(PrintStream newErr) {
         setFieldImpl("err", "Ljava/io/PrintStream;", newErr);
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static void arraycopy(Object src, int srcPos, Object dst, int dstPos, int length) {
 	}
-
     
-    @DSModeled(DSC.SPEC)
     public static long currentTimeMillis() {
 		long var0F5264038205EDFB1AC05FBB0E8C5E94_1308733048 = DSUtils.UNKNOWN_LONG;
 		return var0F5264038205EDFB1AC05FBB0E8C5E94_1308733048;
 	}
-
     
-    @DSModeled(DSC.SPEC)
     public static long nanoTime() {
 		long var0F5264038205EDFB1AC05FBB0E8C5E94_1522069111 = DSUtils.UNKNOWN_LONG;
 		return var0F5264038205EDFB1AC05FBB0E8C5E94_1522069111;
@@ -142,9 +133,7 @@ private static String getenv(String name, String defaultValue) {
         String value = Libcore.os.getenv(name);
         return (value != null) ? value : defaultValue;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static String getEnvByName(String name) {
 		return new String();
 	}
@@ -269,9 +258,7 @@ private static void initSystemProperties() {
 
         systemProperties = p;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static String[] specialProperties() {
 		return new String[0];
 	}
@@ -435,9 +422,7 @@ public static Console console() {
 public static SecurityManager getSecurityManager() {
         return null;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static int identityHashCode(Object anObject) {
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_396439638 = DSUtils.UNKNOWN_INT;
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_396439638;
@@ -541,9 +526,7 @@ public static void logW(String message) {
 public static void logW(String message, Throwable th) {
         log('W', message, th);
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void log(char type, String message, Throwable th) {
 	}
 
@@ -602,23 +585,18 @@ public static void setSecurityManager(SecurityManager sm) {
             throw new SecurityException();
         }
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static String mapLibraryName(String userLibName) {
 		String ret = new String();
 		ret.addTaint(userLibName.taint);
 		return ret;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     private static void setFieldImpl(String fieldName, String signature, Object stream) {
 	}
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.596 -0500", hash_original_field = "0A829BC26C36EAF422E245C1EC11D5B0", hash_generated_field = "B443C5C680D4DA0BD118CB991BCB8B38")
 
     public static  InputStream in;
-
     
     static class SystemEnvironment extends AbstractMap<String, String> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.729 -0500", hash_original_field = "B2320E74448A8A8D4C529584B2F6C72E", hash_generated_field = "AEDE8D1FD6B9D7350079530BA211AB11")
@@ -663,7 +641,6 @@ private String toNonNullString(Object o) {
             }
             return (String) o;
         }
-
         
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.599 -0500", hash_original_field = "3012FF5B828647FA4929921E808B58B8", hash_generated_field = "6D64AE7213A180429B33C84A1527B8AC")
@@ -673,7 +650,6 @@ private String toNonNullString(Object o) {
 
     public static  PrintStream err;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.604 -0500", hash_original_field = "D327D4A790DD1B7EE14E3F55E6B49404", hash_generated_field = "4F120FCF427E27BF79D0B83F7A2E925B")
-
 
     private static  String lineSeparator;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.606 -0500", hash_original_field = "2692616CA0AD8BEC04ACC8D4CDF6E6AF", hash_generated_field = "1BAE2C7F16338C14042F582AEB6D8AC2")

@@ -7,29 +7,20 @@ import droidsafe.annotations.*;
 import java.io.FileDescriptor;
 import java.io.IOException;
 
-
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public class BackupDataInput {
-
     
-    @DSModeled(DSC.SAFE)
     private static int ctor(FileDescriptor fd) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void dtor(int mBackupReader) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.887 -0500", hash_original_field = "EDA18C2AC17158AC38AD184085CE67B9", hash_generated_field = "EDA18C2AC17158AC38AD184085CE67B9")
 
     int mBackupReader;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.889 -0500", hash_original_field = "9AD750C29E704355D9FBFD7F116111B5", hash_generated_field = "09487E77E28DE2A84CA8495B9D491E4C")
-
 
     private EntityHeader mHeader = new EntityHeader();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.892 -0500", hash_original_field = "CD7987B8E176B0A798F349F334CBA4F7", hash_generated_field = "DDC1B46C787D236D68304697B8C07639")
@@ -193,8 +184,6 @@ public void skipEntityData() throws IOException {
     	addTaint(mBackupReader);
     	return getTaintInt();
     }
-
-
     
     private static class EntityHeader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.895 -0500", hash_original_field = "FFE7EE17DFA37A68070A0F0495753B29", hash_generated_field = "FFE7EE17DFA37A68070A0F0495753B29")
@@ -204,17 +193,13 @@ public void skipEntityData() throws IOException {
 
         int dataSize;
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.173 -0400", hash_original_method = "0CA45CB3FD81751EFF77E1E1D96ACA74", hash_generated_method = "0CA45CB3FD81751EFF77E1E1D96ACA74")
         public EntityHeader ()
         {
             //Synthesized constructor
         }
 
-
     }
-
-
     
 }
 

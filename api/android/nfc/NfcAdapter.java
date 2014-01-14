@@ -23,10 +23,6 @@ import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.util.Log;
 
-
-
-
-
 public final class NfcAdapter {
 
     /**
@@ -50,9 +46,7 @@ private static boolean hasNfcFeature() {
             return false;
         }
     }
-
     
-    @DSModeled(DSC.SPEC)
     public static synchronized NfcAdapter getNfcAdapter(Context context) {
         if (DroidSafeAndroidRuntime.control) {
            UnsupportedOperationException exc = new UnsupportedOperationException();
@@ -194,7 +188,6 @@ public static NfcAdapter getDefaultAdapter(Context context) {
     static HashMap<Context, NfcAdapter> sNfcAdapters = new HashMap();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.640 -0500", hash_original_field = "98BCE2FA4CD149969F933211DFD678A2", hash_generated_field = "1DAC697DF93D7551113C7B2C5A1CB051")
 
-
     /**
      * NfcAdapter used with a null context. This ctor was deprecated but we have
      * to support it for backwards compatibility. New methods that require context
@@ -202,7 +195,6 @@ public static NfcAdapter getDefaultAdapter(Context context) {
      */
     static NfcAdapter sNullContextNfcAdapter;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.642 -0500", hash_original_field = "35B3C2E1A1D38F975F8DF16795973C35", hash_generated_field = "35B3C2E1A1D38F975F8DF16795973C35")
-
 
      NfcActivityManager mNfcActivityManager;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.645 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "B997E37019471EC8FC5B98148C7A8AD7")
@@ -218,9 +210,7 @@ public static NfcAdapter getDefaultAdapter(Context context) {
             disableForegroundDispatchInternal(activity, true);
             addTaint(activity.getTaint());
             
-            
         }
-
         
 };
 
@@ -261,7 +251,6 @@ public INfcTag getTagService() {
         isEnabled();  // NOP call to recover sTagService if it is stale
         return sTagService;
     }
-
     
     static final class LegacyCallbackWrapper implements CreateNdefMessageCallback, OnNdefPushCompleteCallback {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.714 -0500", hash_original_field = "C7B0DB97242B1A2CD9ADF6D51253FEC6", hash_generated_field = "C7B0DB97242B1A2CD9ADF6D51253FEC6")
@@ -284,11 +273,8 @@ LegacyCallbackWrapper(NdefPushCallback legacyCallback) {
         public NdefMessage createNdefMessage(NfcEvent event) {
             return mLegacyCallback.createMessage();
         }
-
         
     }
-
-
     
     public interface OnNdefPushCompleteCallback {
         

@@ -24,22 +24,15 @@ import android.os.Message;
 import android.view.Surface;
 import android.view.SurfaceHolder;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public class Camera {
-
     
-    @DSModeled(DSC.SAFE)
     public static int getNumberOfCameras() {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_962180813 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_962180813;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static void getCameraInfo(int cameraId, CameraInfo cameraInfo) {
     }
 
@@ -165,7 +158,6 @@ private static void postEventFromNative(Object camera_ref,
     private static final int CAMERA_FACE_DETECTION_SW = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.209 -0500", hash_original_field = "69C8D21B6C34F6900BF85F80D3EF43F5", hash_generated_field = "83FCA880D50D00A4444F4E4B8534B09E")
 
-
     /**
      * Unspecified camera error.
      * @see Camera.ErrorCallback
@@ -175,7 +167,6 @@ private static void postEventFromNative(Object camera_ref,
 
     public static final int CAMERA_ERROR_SERVER_DIED = 100;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:54.864 -0500", hash_original_field = "A4A4998D7B0D1DA56BE7F415CF4F3BBD", hash_generated_field = "0A3F8EE607897645EB2EE30B6939205B")
-
 
     private int mNativeContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:54.866 -0500", hash_original_field = "48DBEFEB1D57D7425F34775E3B0822FD", hash_generated_field = "04D6DC37F0EF901EF71A528809491D49")
@@ -260,8 +251,6 @@ protected void finalize() {
     	//Formerly a native method
     }
 
-
-
     /**
      * Disconnects and releases the Camera object resources.
      *
@@ -296,7 +285,6 @@ public final void release() {
     	//Formerly a native method
     }
 
-
     /**
      * Re-locks the camera to prevent other processes from accessing it.
      * Camera objects are locked by default unless {@link #unlock()} is
@@ -317,7 +305,6 @@ public final void release() {
     public final void lock(){
     	//Formerly a native method
     }
-
 
     /**
      * Reconnects to the camera service after another process used it.
@@ -341,7 +328,6 @@ public final void release() {
     public final void reconnect() throws IOException{
     	//Formerly a native method
     }
-
 
     /**
      * Sets the {@link Surface} to be used for live preview.
@@ -386,7 +372,6 @@ public final void setPreviewDisplay(SurfaceHolder holder) throws IOException {
     	addTaint(surface.getTaint());
     }
 
-
     /**
      * Sets the {@link SurfaceTexture} to be used for live preview.
      * Either a surface or surface texture is necessary for preview, and
@@ -421,7 +406,6 @@ public final void setPreviewDisplay(SurfaceHolder holder) throws IOException {
     	addTaint(surfaceTexture.getTaint());
     }
 
-
     /**
      * Starts capturing and drawing preview frames to the screen.
      * Preview will not actually start until a surface is supplied
@@ -439,7 +423,6 @@ public final void setPreviewDisplay(SurfaceHolder holder) throws IOException {
     public final void startPreview(){
     	//Formerly a native method
     }
-
 
     /**
      * Stops capturing and drawing preview frames to the surface, and
@@ -464,7 +447,6 @@ public final void stopPreview() {
     	//Formerly a native method
     }
 
-
     /**
      * Return current preview state.
      *
@@ -477,7 +459,6 @@ public final void stopPreview() {
     	//Formerly a native method
     	return getTaintBoolean();
     }
-
 
     /**
      * Installs a callback to be invoked for every preview frame in addition
@@ -524,7 +505,6 @@ public final void setOneShotPreviewCallback(PreviewCallback cb) {
     	addTaint(installed);
     	addTaint(manualBuffer);
     }
-
 
     /**
      * Installs a callback to be invoked for every preview frame, using buffers
@@ -658,7 +638,6 @@ private final void addCallbackBuffer(byte[] callbackBuffer, int msgType)
     	addTaint(msgType);
     }
 
-
     /**
      * Starts camera auto-focus and registers a callback function to run when
      * the camera is focused.  This method is only valid when preview is active
@@ -708,8 +687,6 @@ public final void autoFocus(AutoFocusCallback cb)
     private final void native_autoFocus(){
     	//Formerly a native method
     }
-
-
     
     public static class CameraInfo {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:54.933 -0500", hash_original_field = "7A4C5E454B574102D35D1E7A744EAD49", hash_generated_field = "858969BC557B8C41F748B73BC5BF335A")
@@ -731,8 +708,6 @@ public final void autoFocus(AutoFocusCallback cb)
             //Synthesized constructor
         }
     }
-
-
     
     private class EventHandler extends Handler {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.069 -0500", hash_original_field = "14235C9A65820E9F0369D65E8689BCC5", hash_generated_field = "342D730EDD2CEF78B671539580251722")
@@ -823,11 +798,8 @@ public EventHandler(Camera c, Looper looper) {
                 return;
             }
         }
-
         
     }
-
-
     
     public static class Face {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.189 -0500", hash_original_field = "49FA87EDE6ACB8E667EAE50801575AA3", hash_generated_field = "6F2D83EE0E930D3F0DDD170A74A8B967")
@@ -855,11 +827,8 @@ public EventHandler(Camera c, Looper looper) {
         
 public Face() {
         }
-
         
     }
-
-
     
     public class Size {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.245 -0500", hash_original_field = "1589F848FE4FF192F7CCE1B9F9E85747", hash_generated_field = "6FAF64E7577371F06EC12EBE94C8466B")
@@ -903,11 +872,8 @@ public Size(int w, int h) {
         public int hashCode() {
             return width * 32713 + height;
         }
-
         
     }
-
-
     
     public static class Area {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.260 -0500", hash_original_field = "49FA87EDE6ACB8E667EAE50801575AA3", hash_generated_field = "6F2D83EE0E930D3F0DDD170A74A8B967")
@@ -950,11 +916,8 @@ public Area(Rect rect, int weight) {
             }
             return weight == a.weight;
         }
-
         
     }
-
-
     
     public class Parameters {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.268 -0500", hash_original_field = "5125477CF20E669DEC4335EC05F678CE", hash_generated_field = "D491AB03C9D5CDF50C31726C71EFC373")
@@ -1118,7 +1081,6 @@ public Area(Rect rect, int weight) {
 
         private static final String SUPPORTED_VALUES_SUFFIX = "-values";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.465 -0500", hash_original_field = "9241CAFDFDD3A2DB1D652A142755F2E6", hash_generated_field = "4C28D6B128C36B4FC74A84DF6340DC46")
-
 
         private static final String TRUE = "true";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.468 -0500", hash_original_field = "8D8F1E6261DF9835D31AEB47FD3CE677", hash_generated_field = "C1316565886B4D13708E85372F0C7E25")
@@ -1315,7 +1277,6 @@ public Area(Rect rect, int weight) {
 
         private static final String PIXEL_FORMAT_BAYER_RGGB = "bayer-rggb";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:55.663 -0500", hash_original_field = "3C050D8270DD8F7F3264D019CFA52FEC", hash_generated_field = "739CA7FE9531E7B12F38763AC7E52A02")
-
 
         private HashMap<String, String> mMap;
 
@@ -2211,7 +2172,6 @@ public List<String> getSupportedColorEffects() {
             String str = get(KEY_EFFECT + SUPPORTED_VALUES_SUFFIX);
             return split(str);
         }
-
 
         /**
          * Gets the current antibanding setting.
@@ -3248,8 +3208,6 @@ private boolean same(String s1, String s2) {
             return false;
         }
     }
-
-
     
     public interface PreviewCallback
     {
@@ -3313,7 +3271,6 @@ public final void cancelAutoFocus()
     	//Formerly a native method
     }
 
-
     /**
      * Equivalent to takePicture(shutter, raw, null, jpeg).
      *
@@ -3331,7 +3288,6 @@ public final void takePicture(ShutterCallback shutter, PictureCallback raw,
     	//Formerly a native method
     	addTaint(msgType);
     }
-
 
     /**
      * Triggers an asynchronous image capture. The camera service will initiate
@@ -3416,7 +3372,6 @@ public final void takePicture(ShutterCallback shutter, PictureCallback raw,
     	addTaint(value);
     }
 
-
     /**
      * Stops the smooth zoom. Applications should wait for the {@link
      * OnZoomChangeListener} to know when the zoom is actually stopped. This
@@ -3430,7 +3385,6 @@ public final void takePicture(ShutterCallback shutter, PictureCallback raw,
     public final void stopSmoothZoom(){
     	//Formerly a native method
     }
-
 
     /**
      * Set the clockwise rotation of preview display in degrees. This affects
@@ -3487,7 +3441,6 @@ public final void takePicture(ShutterCallback shutter, PictureCallback raw,
     	//Formerly a native method
     	addTaint(degrees);
     }
-
 
     /**
      * Registers a listener to be notified when the zoom value is updated by the
@@ -3584,7 +3537,6 @@ public final void stopFaceDetection() {
     	//Formerly a native method
     }
 
-
     /**
      * Registers a callback to be invoked when an error occurs.
      * @param cb The callback to run
@@ -3602,10 +3554,7 @@ public final void setErrorCallback(ErrorCallback cb)
     	//Formerly a native method
     	addTaint(params.getTaint());
     }
-
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:21.245 -0400", hash_original_method = "3CEFEC9BC04BFA67886C8721C375B2BF", hash_generated_method = "7CDFCD53AAB21A45E6D03778B4CC52A9")
     private final String native_getParameters() {
     	String s = new String();

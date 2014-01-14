@@ -16,13 +16,8 @@ import android.view.View.OnKeyListener;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
-
-
-
-
 public abstract class PreferenceFragment extends Fragment implements PreferenceManager.OnPreferenceTreeClickListener {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.165 -0500", hash_original_field = "BEEF7930BB1ACE40137B7B396FD6EC32", hash_generated_field = "21CC2FFDC9ED4475ACF01DBC06B2A292")
-
 
     private static final String PREFERENCES_TAG = "android:preferences";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.176 -0500", hash_original_field = "EF58221526EB4F2D6AEC0B63C641BA7F", hash_generated_field = "0136D59B093194DD543B8062A7975D9E")
@@ -30,10 +25,8 @@ public abstract class PreferenceFragment extends Fragment implements PreferenceM
     private static final int FIRST_REQUEST_CODE = 100;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.178 -0500", hash_original_field = "527115F2BBB9AFA090DB4A1C2F4D370C", hash_generated_field = "7A68CD10BF8C3B855976E8E8F733E671")
 
-
     private static final int MSG_BIND_PREFERENCES = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.167 -0500", hash_original_field = "F44A9B2F698C7B96C36DE45B8F61794D", hash_generated_field = "13262EB3751B753EEB3302EF75D8B1E5")
-
 
     private PreferenceManager mPreferenceManager;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.169 -0500", hash_original_field = "A5B73AC2B922200A8C47FEAA8C3EB07A", hash_generated_field = "C806ABBC7D990ED0AF24BE5023FCB167")
@@ -47,8 +40,8 @@ public abstract class PreferenceFragment extends Fragment implements PreferenceM
     private boolean mInitDone;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.410 -0400", hash_original_field = "211BE5272290A461215EA56DECAF46CC", hash_generated_field = "5A5038954D547A401391AFBD1368E284")
 
-    private Handler mHandler = new Handler() {        
-        @DSModeled(DSC.SAFE)
+    private Handler mHandler = new Handler() {
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.410 -0400", hash_original_method = "6660B1C576139733BCAB4BF0F3860110", hash_generated_method = "B07FCFBE4D4B06D86DB2594E0181910C")
         @Override
         public void handleMessage(Message msg) {
@@ -57,26 +50,18 @@ public abstract class PreferenceFragment extends Fragment implements PreferenceM
             
             addTaint(msg.getTaint());
             
-            
-                
-                    
-                    
-            
         }
-
         
 };
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.410 -0400", hash_original_field = "F487762B42FCD79D908F11802425F9AE", hash_generated_field = "CD0106315823911D53F9614252FF5C4E")
 
-    final private Runnable mRequestFocus = new Runnable() {        
-        @DSModeled(DSC.SAFE)
+    final private Runnable mRequestFocus = new Runnable() {
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.410 -0400", hash_original_method = "4F290F2508C3F0B44E09591C5B0749BC", hash_generated_method = "203642A5324F5F18B21A0D020E65FD5C")
         public void run() {
             mList.focusableViewAvailable(mList);
             
-            
         }
-
         
 };
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:44.411 -0400", hash_original_field = "DA9BF4E41535FF3170B4CEBFA3A21543", hash_generated_field = "E6F0CF32783CB12F7272D76F8F71ABD1")
@@ -98,15 +83,7 @@ public abstract class PreferenceFragment extends Fragment implements PreferenceM
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_493062161 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_493062161;
             
-            
-            
-                
-                
-                        
-            
-            
         }
-
         
 };
     
@@ -326,7 +303,6 @@ private void postBindPreferences() {
         if (mHandler.hasMessages(MSG_BIND_PREFERENCES)) return;
         mHandler.obtainMessage(MSG_BIND_PREFERENCES).sendToTarget();
     }
-
     
     public interface OnPreferenceStartFragmentCallback {
         

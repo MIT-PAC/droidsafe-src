@@ -5,16 +5,11 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public abstract class Singleton<T> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:21.140 -0500", hash_original_field = "3D00B588D04AEAB45027249A92A58FD8", hash_generated_field = "782E9E6E7CD7863D539D69517CB053E4")
 
     private T mInstance;
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.072 -0400", hash_original_method = "02AC1105777FFE0AFBB34EFAC306ABC3", hash_generated_method = "02AC1105777FFE0AFBB34EFAC306ABC3")
     public Singleton ()
     {
@@ -35,7 +30,6 @@ public final T get() {
             return mInstance;
         }
     }
-
     
 }
 

@@ -7,9 +7,6 @@ import droidsafe.annotations.*;
 import android.content.Context;
 import android.net.NetworkUtils;
 
-
-
-
 public final class Formatter {
 
     /**
@@ -106,13 +103,11 @@ private static String formatFileSize(Context context, long number, boolean short
         return NetworkUtils.intToInetAddress(ipv4Address).getHostAddress();
     }
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:38.728 -0400", hash_original_method = "161EB95286E2D4F6FBD55DBF919180AE", hash_generated_method = "161EB95286E2D4F6FBD55DBF919180AE")
     public Formatter ()
     {
         //Synthesized constructor
     }
-
     
 }
 

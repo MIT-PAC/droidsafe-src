@@ -26,9 +26,6 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 class HTML5VideoViewProxy extends Handler implements MediaPlayer.OnPreparedListener, MediaPlayer.OnCompletionListener, MediaPlayer.OnErrorListener, MediaPlayer.OnInfoListener, SurfaceTexture.OnFrameAvailableListener {
@@ -44,9 +41,7 @@ class HTML5VideoViewProxy extends Handler implements MediaPlayer.OnPreparedListe
 public static HTML5VideoViewProxy getInstance(WebViewCore webViewCore, int nativePtr) {
         return new HTML5VideoViewProxy(webViewCore.getWebView(), nativePtr);
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean nativeSendSurfaceTexture(SurfaceTexture texture,
             int baseLayer, int videoLayerId, int textureName,
             int playerState) {
@@ -269,9 +264,7 @@ public void onTimeupdate() {
             }
         }
     }
-
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.389 -0400", hash_original_method = "1A016E6492F3E166AEDA862A5517C526", hash_generated_method = "33018A9ACDFEDC13B4E98D7147E35B5E")
     private void createWebCoreHandler() {
         mWebCoreHandler = new Handler() {
@@ -372,7 +365,6 @@ public void seek(int time) {
         message.obj = new Integer(time);
         sendMessage(message);
     }
-
     
     private static final class VideoPlayer {
 
@@ -563,22 +555,18 @@ public static void end() {
         private static HTML5VideoView mHTML5VideoView;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:58.247 -0500", hash_original_field = "10716476251DD9CC249B86E6E7FD5AFC", hash_generated_field = "03E3F53D98F1C739148B69AE13616028")
 
-
         private static boolean isVideoSelfEnded = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:58.250 -0500", hash_original_field = "763799EB76D7DBFE0E78A50783744C41", hash_generated_field = "AA2AF51E33F0D08BE6D10B0A95002DAF")
 
         // identify the exact layer on the UI thread to use the SurfaceTexture.
         private static int mBaseLayer = 0;
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:52.102 -0400", hash_original_method = "9A68A6C42721A074DDF281539068301A", hash_generated_method = "9A68A6C42721A074DDF281539068301A")
         public VideoPlayer ()
         {
             //Synthesized constructor
         }
     }
-
-
     
     private static final class PosterDownloader implements EventHandler {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:58.309 -0500", hash_original_field = "2CFB054BACCE225829CD65D3DF87BAA7", hash_generated_field = "381C5A0A88CF182455E810191A19243F")
@@ -877,7 +865,6 @@ WebView getWebView() {
     	//Formerly a native method
     	addTaint(nativePointer);
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:58.433 -0500", hash_original_method = "F17ABD2D26205A567E8F07C068E86E0A", hash_generated_method = "A7D057398DA5B688839E23F713AF38FD")
     

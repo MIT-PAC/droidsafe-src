@@ -8,13 +8,8 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.os.Build;
 
-
-
-
-
 public class EdgeEffectCompat {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:25.875 -0500", hash_original_field = "6A866271DD9DB39957FFF0E71ABE47DD", hash_generated_field = "C39368587D934C727CBBE97C813A7339")
-
 
     private static  EdgeEffectImpl IMPL;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:25.872 -0500", hash_original_field = "F098455E78527867B0243F5F899E173E", hash_generated_field = "8B86712DCA30565AC003C93F8A9D023C")
@@ -117,11 +112,9 @@ public boolean onRelease() {
 public boolean onAbsorb(int velocity) {
         return IMPL.onAbsorb(mEdgeEffect, velocity);
     }
-
     
     static class BaseEdgeEffectImpl implements EdgeEffectImpl {
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.020 -0400", hash_original_method = "E93AF950D68741CBF25DC67984C27D7B", hash_generated_method = "E93AF950D68741CBF25DC67984C27D7B")
         public BaseEdgeEffectImpl ()
         {
@@ -172,15 +165,11 @@ public boolean onAbsorb(Object edgeEffect, int velocity) {
 public boolean draw(Object edgeEffect, Canvas canvas) {
             return false;
         }
-
         
     }
-
-
     
     static class EdgeEffectIcsImpl implements EdgeEffectImpl {
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.021 -0400", hash_original_method = "722DC077141274393C35BB912CA199C0", hash_generated_method = "722DC077141274393C35BB912CA199C0")
         public EdgeEffectIcsImpl ()
         {
@@ -233,11 +222,8 @@ public boolean onAbsorb(Object edgeEffect, int velocity) {
 public boolean draw(Object edgeEffect, Canvas canvas) {
             return EdgeEffectCompatIcs.draw(edgeEffect, canvas);
         }
-
         
     }
-
-
     
     interface EdgeEffectImpl {
         public Object newEdgeEffect(Context context);

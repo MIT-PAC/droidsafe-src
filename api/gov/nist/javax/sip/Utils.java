@@ -10,13 +10,7 @@ import gov.nist.javax.sip.message.SIPResponse;
 import java.security.MessageDigest;
 import java.util.HashSet;
 
-
-
-
-
-
 public class Utils implements UtilsExt {
-
    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:49.449 -0500", hash_original_method = "374DAC9ECD069BD80F1EF985F978C693", hash_generated_method = "D07E1DA751C02C51B488E18E42FF7C46")
     
@@ -103,26 +97,20 @@ public static void main(String[] args) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:49.376 -0500", hash_original_field = "03C720A7278CD9E26C7C8FA651CBEBD9", hash_generated_field = "75DF3FBD64D6EA0108E137FADE714C1F")
 
-
     private static MessageDigest digester;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:49.388 -0500", hash_original_field = "C79F987FE2CD4684369481EB8585180A", hash_generated_field = "7E238EAE548E2EE44C039EC6AC75AC3D")
-
    
     private static java.util.Random rand;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:49.395 -0500", hash_original_field = "99661A4B2A071330FB28852FE8E4D92A", hash_generated_field = "AE51E4CF92FF648669819D7B0481713C")
-
    
     private static long counter = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:49.403 -0500", hash_original_field = "240BC6F69F6A2B8E94596F09922B7D47", hash_generated_field = "6CF948D0E8697F6CBD93101CC8EE4EA8")
 
-
     private static int callIDCounter;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:49.411 -0500", hash_original_field = "2054B836E70C3B2D56EA815469FD928A", hash_generated_field = "512F210EC728FA3837ABDE0579788961")
 
-
     private static String signature ;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:49.429 -0500", hash_original_field = "9932D9F02B56D2BDE79047F67B56517B", hash_generated_field = "B26221B75DD3069F1E7CEE68F1C1307C")
-
     
     private static Utils instance = new Utils();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:49.440 -0500", hash_original_field = "8D139981331595450D79D39F36281B87", hash_generated_field = "D08ABC333720B6C25B9902ED84803CDE")
@@ -130,7 +118,6 @@ public static void main(String[] args) {
     private static final char[] toHex = { '0', '1', '2', '3', '4', '5', '6',
             '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f' };
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:31.887 -0400", hash_original_method = "4A92704CBFAAEA8B3C41F62FC777198C", hash_generated_method = "4A92704CBFAAEA8B3C41F62FC777198C")
     public Utils ()
     {
@@ -184,13 +171,11 @@ public synchronized String generateTag() {
 public synchronized String generateBranchId() {
         //
 
-
             long num = rand.nextLong() + Utils.counter++  + System.currentTimeMillis();
 
             byte bid[] = digester.digest(Long.toString(num).getBytes());
             // prepend with a magic cookie to indicate we are bis09 compatible.
             return SIPConstants.BRANCH_MAGIC_COOKIE + Utils.toHexString(bid) + this.signature;
-
 
     }
     

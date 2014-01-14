@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public final class VMRuntime {
 
     /**
@@ -33,31 +29,23 @@ public static VMRuntime getRuntime() {
     
 private VMRuntime() {
     }
-
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.800 -0400", hash_original_method = "2960BD7EBD269C359C23EB7E2C183AE6", hash_generated_method = "2D5C10CC3D28CEC7E78CF04874E61B1D")
     public String[] properties() {
     	String[] props = new String[0];
     	return props;
     }
-
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.800 -0400", hash_original_method = "ACD1BDE0C9D7AA5A704C76C5A226A571", hash_generated_method = "3F7EFD902B37074211328DCB58E5B9CE")
     public String bootClassPath() {
     	return new String();
     }
-
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.801 -0400", hash_original_method = "F880EBCB28C92D3EB2F8227CAD3AB51E", hash_generated_method = "A63F2018F96FFCB76D226498854F0584")
     public String classPath() {
     	return new String();
     }
-
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.801 -0400", hash_original_method = "91B638A4E83CB522FD5F0DBC3B106E1F", hash_generated_method = "0FC91AF110114BAEF0A2D2BE50FBA59C")
     public String vmVersion() {
     	return new String();
@@ -77,7 +65,6 @@ private VMRuntime() {
     	//Formerly a native method
     	return getTaintFloat();
     }
-
 
     /**
      * Sets the current ideal heap utilization, represented as a number
@@ -123,7 +110,6 @@ public float setTargetHeapUtilization(float newTarget) {
     	//Formerly a native method
     	addTaint(targetSdkVersion);
     }
-
 
     /**
      * This method exists for binary compatibility.  It was part of a
@@ -180,7 +166,6 @@ public float setTargetHeapUtilization(float newTarget) {
     	addTaint(newTarget);
     }
 
-
     /**
      * This method exists for binary compatibility.  It was part of
      * the external allocation API which was removed in Honeycomb.
@@ -222,7 +207,6 @@ public float setTargetHeapUtilization(float newTarget) {
     	//Formerly a native method
     }
 
-
     /**
      * Tells the VM to disable the JIT compiler. If the VM does not have a JIT
      * implementation, calling this method should have no effect.
@@ -232,10 +216,7 @@ public float setTargetHeapUtilization(float newTarget) {
     public void disableJitCompilation(){
     	//Formerly a native method
     }
-
-
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.814 -0400", hash_original_method = "8EBD5DB8B6D587374B3055052FBB49F5", hash_generated_method = "320B737E55AF8DBCC23875D982D400A7")
     public Object newNonMovableArray(Class<?> componentType, int length) {
     	taint.addTaint(length);
@@ -255,7 +236,6 @@ public float setTargetHeapUtilization(float newTarget) {
     	return getTaintLong();
     }
 
-
     /**
      * Removes any growth limits, allowing the application to allocate
      * up to the maximum heap size.
@@ -265,7 +245,6 @@ public float setTargetHeapUtilization(float newTarget) {
     public void clearGrowthLimit(){
     	//Formerly a native method
     }
-
 
     /**
      * Returns true if either a Java debugger or native debugger is active.

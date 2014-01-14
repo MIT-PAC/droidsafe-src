@@ -13,13 +13,8 @@ import android.text.SpannedString;
 import android.text.TextUtils;
 import android.view.View;
 
-
-
-
-
 public abstract class ReplacementTransformationMethod implements TransformationMethod {
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.683 -0400", hash_original_method = "1B7B28F98DAC94187572CC248AC52BB7", hash_generated_method = "1B7B28F98DAC94187572CC248AC52BB7")
     public ReplacementTransformationMethod ()
     {
@@ -104,7 +99,6 @@ public void onFocusChanged(View view, CharSequence sourceText,
                                Rect previouslyFocusedRect) {
         // This callback isn't used.
     }
-
     
     private static class ReplacementCharSequence implements CharSequence, GetChars {
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.688 -0400", hash_original_field = "8526EC2FF812D96CA9274ACA8998FC20", hash_generated_field = "FC1254D314CD4AAE23C5354189DEA616")
@@ -114,7 +108,6 @@ public void onFocusChanged(View view, CharSequence sourceText,
 
         private char[] mReplacement;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:59.434 -0500", hash_original_field = "EBB181D64752DA6F9BB9A9E1DB00BBD4", hash_generated_field = "1DB65A9625E780B230F7C604C99C0F5D")
-
 
         private CharSequence mSource;
 
@@ -183,15 +176,11 @@ public void getChars(int start, int end, char[] dest, int off) {
                 }
             }
         }
-
         
     }
-
-
     
     private static class SpannedReplacementCharSequence extends ReplacementCharSequence implements Spanned {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:59.460 -0500", hash_original_field = "4D9A388EBF42337B3D4B4C24F8CD74B1", hash_generated_field = "69C78554F8ABB9B2C492FD314F3ED2EE")
-
 
         private Spanned mSpanned;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:59.441 -0500", hash_original_method = "CAA9811C5358881331EB71A9EC7C0C0E", hash_generated_method = "D4CDDCC49CB612AF5A93F8DE5DB7F5B8")
@@ -207,9 +196,7 @@ public SpannedReplacementCharSequence(Spanned source, char[] original,
 public CharSequence subSequence(int start, int end) {
             return new SpannedString(this).subSequence(start, end);
         }
-
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.694 -0400", hash_original_method = "E8AB479016A2E00AFF48AA43F345FA2A", hash_generated_method = "758D85525E0EBDD586EED24B4A89DE1C")
         public <T> T[] getSpans(int start, int end, Class<T> type) {
             addTaint(type.getTaint());
@@ -245,11 +232,8 @@ public int getSpanFlags(Object tag) {
 public int nextSpanTransition(int start, int end, Class type) {
             return mSpanned.nextSpanTransition(start, end, type);
         }
-
         
     }
-
-
     
 }
 

@@ -9,53 +9,34 @@ import android.util.Poolable;
 import android.util.PoolableManager;
 import android.util.Pools;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public final class VelocityTracker implements Poolable<VelocityTracker> {
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativeInitialize() {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeDispose(int ptr) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeClear(int ptr) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeAddMovement(int ptr, MotionEvent event) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeComputeCurrentVelocity(int ptr, int units, float maxVelocity) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static float nativeGetXVelocity(int ptr, int id) {
         return DSUtils.UNKNOWN_FLOAT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static float nativeGetYVelocity(int ptr, int id) {
         return DSUtils.UNKNOWN_FLOAT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean nativeGetEstimator(int ptr, int id,
             int degree, int horizonMillis, Estimator outEstimator) {
         return DSUtils.UNKNOWN_BOOLEAN;
@@ -74,8 +55,6 @@ public final class VelocityTracker implements Poolable<VelocityTracker> {
 static public VelocityTracker obtain() {
         return sPool.acquire();
     }
-
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.287 -0400", hash_original_field = "7D322AC6B02AE1303D1EE66F45C4A4CD", hash_generated_field = "B8A4DDDA4C487415D4255708CB5FC0DF")
 
@@ -100,10 +79,8 @@ public void onReleased(VelocityTracker element) {
             }, 2));
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:14.287 -0500", hash_original_field = "A95286ACA8C408D15B5D383D6EEFACF5", hash_generated_field = "FF8FF6E56B8D783C306CE7F0923B38D1")
 
-
     private static final int ACTIVE_POINTER_ID = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:14.289 -0500", hash_original_field = "42C21A18FB5976D4C67962413781C35D", hash_generated_field = "E9A8054C2C57C0CE861FDCA982433D1A")
-
 
     private int mPtr;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:14.292 -0500", hash_original_field = "0A4BF458203BDE753039342AAF95A5A1", hash_generated_field = "5B4B8EC4C61CE05CF5BB2F5E71D6C6C3")
@@ -273,7 +250,6 @@ public float getYVelocity() {
 public float getXVelocity(int id) {
         return nativeGetXVelocity(mPtr, id);
     }
-
     
     public static final class Estimator {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:14.377 -0500", hash_original_field = "1727E1F87535EEC2DDCF786FF13901B9", hash_generated_field = "6B300D0F1610BC31482D34A0922264D0")

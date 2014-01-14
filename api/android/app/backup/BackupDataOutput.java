@@ -7,39 +7,25 @@ import droidsafe.annotations.*;
 import java.io.FileDescriptor;
 import java.io.IOException;
 
-
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public class BackupDataOutput {
-
     
-    @DSModeled(DSC.SAFE)
     private static int ctor(FileDescriptor fd) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void dtor(int mBackupWriter) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int writeEntityHeader_native(int mBackupWriter, String key, int dataSize) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int writeEntityData_native(int mBackupWriter, byte[] data, int size) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void setKeyPrefix_native(int mBackupWriter, String keyPrefix) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:47.323 -0500", hash_original_field = "B54359389579FCBEAD7641AAB8EECDC6", hash_generated_field = "B54359389579FCBEAD7641AAB8EECDC6")
@@ -112,7 +98,6 @@ protected void finalize() throws Throwable {
             super.finalize();
         }
     }
-
     
 }
 

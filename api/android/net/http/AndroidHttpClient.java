@@ -53,10 +53,6 @@ import android.util.Log;
 
 import com.android.internal.http.HttpDateTime;
 
-
-
-
-
 import droidsafe.runtime.DroidSafeAndroidRuntime;
 
 public final class AndroidHttpClient implements HttpClient {
@@ -304,10 +300,8 @@ public static long parseDate(String dateString) {
     private static final int SOCKET_OPERATION_TIMEOUT = 60 * 1000;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:12.241 -0500", hash_original_field = "9E882CC25FF177A28DE199808E3CB091", hash_generated_field = "97E15BF1145A52C243BF2650CF904E71")
 
-
     private static final String TAG = "AndroidHttpClient";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:12.243 -0500", hash_original_field = "D1CC47B238067AE15E4F6117D18F07C7", hash_generated_field = "54659355031202ED56EB5471E883C486")
-
 
     private static String[] textContentTypes = new String[] {
             "text/",
@@ -328,19 +322,13 @@ public static long parseDate(String dateString) {
             addTaint(request.getTaint());
             addTaint(context.getTaint());
             
-            
-                
-            
         }
-
         
 };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:12.256 -0500", hash_original_field = "35F25CF219FD88ECBF4946CA26E98F46", hash_generated_field = "6440DD854F4D596C0D709D30B47087FC")
 
-
     private  HttpClient delegate;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:12.258 -0500", hash_original_field = "77B262ABD2AFAC93252C1D694917184D", hash_generated_field = "D90B3D3803AFC0B006090E75019AA334")
-
 
     private RuntimeException mLeakedException = new IllegalStateException(
             "AndroidHttpClient created and never closed");
@@ -443,7 +431,6 @@ public HttpResponse execute(HttpHost target, HttpRequest request,
             HttpContext context) throws IOException {
         return delegate.execute(target, request, context);
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.733 -0400", hash_original_method = "EB0DDC231013D5372DD8D788C79B1E98", hash_generated_method = "35FA738DC6A9C629A1A7CD04AD9F6044")
     public <T> T execute(HttpUriRequest request, 
@@ -456,11 +443,9 @@ T var36E49463A8C0D597D04C307A302D4311_1262386378 =         delegate.execute(requ
         // ---------- Original Method ----------
         //return delegate.execute(request, responseHandler);
     }
-
     
     private static class LoggingConfiguration {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:12.310 -0500", hash_original_field = "FFCA994A2F44B678330E924D8C87385D", hash_generated_field = "21B5B848D650825609ACDCB16F135AD3")
-
 
         private  String tag;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:12.312 -0500", hash_original_field = "6C23DC7E65CEAB9FBA953CF49B6B6875", hash_generated_field = "57A7D6A8967F8756CE39676B1CDDECE5")
@@ -491,11 +476,8 @@ private boolean isLoggable() {
 private void println(String message) {
             Log.println(level, tag, message);
         }
-
         
     }
-
-
     
     private class CurlLogger implements HttpRequestInterceptor {
         
@@ -517,10 +499,8 @@ public void process(HttpRequest request, HttpContext context)
                 configuration.println(toCurl((HttpUriRequest) request, false));
             }
         }
-
         
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.733 -0400", hash_original_method = "F3FC7BD600F2641741DDE041CB58993B", hash_generated_method = "59D72BC6B3BB46B510ED259297F8A5D7")
     public <T> T execute(HttpUriRequest request,
@@ -534,9 +514,7 @@ T var4C992D413ECABA26DC3DF2FE56905C2B_848318443 =         delegate.execute(reque
         // ---------- Original Method ----------
         //return delegate.execute(request, responseHandler, context);
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.734 -0400", hash_original_method = "7CB9DE1B48678C64D58684D5D8F5CD5D", hash_generated_method = "D730D86ADEE270C3F9CECE7E250B5772")
     public <T> T execute(HttpHost target, HttpRequest request,
             ResponseHandler<? extends T> responseHandler) throws IOException,
@@ -550,7 +528,6 @@ T var1B6735C657E1CD3BC52AB580BBCBDB6A_240690404 =         delegate.execute(targe
         // ---------- Original Method ----------
         //return delegate.execute(target, request, responseHandler);
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.734 -0400", hash_original_method = "A182144DA9C7044CF91703E3B51621BD", hash_generated_method = "71D5DE14C34C768A69E29BF40AE31B8C")
     public <T> T execute(HttpHost target, HttpRequest request,

@@ -16,10 +16,6 @@ import java.util.concurrent.TimeUnit;
 
 import libcore.util.Objects;
 
-
-
-
-
 public final class ResponseHeaders {
 
     /**
@@ -45,7 +41,6 @@ private static boolean isEndToEnd(String fieldName) {
 
     private static final String RECEIVED_MILLIS = "X-Android-Received-Millis";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:35.630 -0500", hash_original_field = "1154143EF3A042E6515BD6D5B42C64B6", hash_generated_field = "DDFAECCF21F90F28142F5C866534A5C3")
-
 
     private  URI uri;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:35.633 -0500", hash_original_field = "721E352764832BEC7D2888A7B819E7BB", hash_generated_field = "534F1B0AE2D401678B9C67DE48E937E4")
@@ -95,7 +90,6 @@ private static boolean isEndToEnd(String fieldName) {
     private Set<String> varyFields = Collections.emptySet();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:35.671 -0500", hash_original_field = "CEA29DCF66C639EAD8E96ECC619BF901", hash_generated_field = "62E683CB8A19320AEC224EE11BCD9187")
 
-
     private String contentEncoding;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:35.673 -0500", hash_original_field = "3AD1B7A7AEDBE1A2DB22642DAB10A01F", hash_generated_field = "53F1E445144D7EEFF13D2F87736EF02D")
 
@@ -112,8 +106,7 @@ private static boolean isEndToEnd(String fieldName) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:35.682 -0500", hash_original_field = "558CE8CEC48FA28D923BA4C5B17A7889", hash_generated_field = "9D861AD424B4AE7E491841BD219A8EC5")
 
     private String wwwAuthenticate;
-    
-        @DSModeled(DSC.SPEC)
+        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.075 -0400", hash_original_method = "DB24454BC912323B5FCB6CCA35CD9240", hash_generated_method = "B1262A28C863954B742AD0D089384546")
     public  ResponseHeaders(URI uri, RawHeaders headers) {
         this.uri = uri;

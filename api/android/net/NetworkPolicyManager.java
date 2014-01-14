@@ -19,11 +19,6 @@ import android.text.format.Time;
 
 import com.google.android.collect.Sets;
 
-
-
-
-
-
 public class NetworkPolicyManager {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:20.930 -0500", hash_original_method = "77147AB7B145CCCACC82E7FF3DD90629", hash_generated_method = "44F2D97812042A9A8E4208CD21B7BEEA")
@@ -190,13 +185,11 @@ public static void dumpRules(PrintWriter fout, int rules) {
     public static final int RULE_REJECT_METERED = 0x1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:20.921 -0500", hash_original_field = "5776EC97A2E83F4CD8DD81625B380713", hash_generated_field = "F1EAF378337BFA0CCC51503439EDE9BF")
 
-
     private static final boolean ALLOW_PLATFORM_APP_POLICY = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:20.924 -0500", hash_original_field = "97DF16BECF25B69E02C72123DAFA1CF4", hash_generated_field = "7320E001215B3C746B3AE684FAAEC5AC")
 
     public static final String EXTRA_NETWORK_TEMPLATE = "android.net.NETWORK_TEMPLATE";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:20.926 -0500", hash_original_field = "90B1346F33E413533394FD996E7514F3", hash_generated_field = "99D41184207358A72CF865D27CF56B99")
-
 
     private INetworkPolicyManager mService;
 
@@ -208,8 +201,7 @@ public NetworkPolicyManager(INetworkPolicyManager service) {
         }
         mService = service;
     }
-
-    @DSModeled(DSC.BAN)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.493 -0400", hash_original_method = "BE20EED3085F3645396D71EF01AFD2C0", hash_generated_method = "D38E2F3C6BBCF7701EB83058FEF1E0DC")
     public  NetworkPolicyManager() {
     }

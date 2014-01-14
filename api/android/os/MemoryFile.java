@@ -10,56 +10,36 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public class MemoryFile {
-
     
-    @DSModeled(DSC.SAFE)
     private static FileDescriptor native_open(String name, int length) throws IOException {
 		return new FileDescriptor();
 	}
-
     
-    @DSModeled(DSC.SAFE)
     private static int native_mmap(FileDescriptor fd, int length, int mode) throws IOException {
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_437101719 = DSUtils.UNKNOWN_INT;
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_437101719;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_munmap(int addr, int length) throws IOException {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_close(FileDescriptor fd) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     private static int native_read(FileDescriptor fd, int address, byte[] buffer, int srcOffset, int destOffset, int count, boolean isUnpinned) throws IOException {
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1563409879 = DSUtils.UNKNOWN_INT;
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1563409879;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_write(FileDescriptor fd, int address, byte[] buffer, int srcOffset, int destOffset, int count, boolean isUnpinned) throws IOException {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_pin(FileDescriptor fd, boolean pin) throws IOException {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     private static int native_get_size(FileDescriptor fd) throws IOException {
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_962429955 = DSUtils.UNKNOWN_INT;
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_962429955;
@@ -88,7 +68,6 @@ public static int getSize(FileDescriptor fd) throws IOException {
 
     private static final int PROT_WRITE = 0x2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:41.814 -0500", hash_original_field = "1A1D246ADE6C04B67CBF287075FF1425", hash_generated_field = "472902F3844A9738091A7090C080AB6E")
-
 
     private FileDescriptor mFD;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:41.816 -0500", hash_original_field = "C6748DE6B660DCB404EDCE764B192848", hash_generated_field = "1BE2BFB4A5E404FE17164B090FF85336")
@@ -242,11 +221,9 @@ public InputStream getInputStream() {
 public OutputStream getOutputStream() {
         return new MemoryOutputStream();
     }
-
     
     private class MemoryInputStream extends InputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:41.858 -0500", hash_original_field = "2E1768DDCD2720CE082D48DB6B9D009D", hash_generated_field = "1CE465393F7752DBE05602CD816C716E")
-
 
         private int mMark = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:41.860 -0500", hash_original_field = "9903C734D96A80C6871FB08938C010EE", hash_generated_field = "435D9FD8F79260F74ED3D88EC0019701")
@@ -337,15 +314,11 @@ public OutputStream getOutputStream() {
             mOffset += n;
             return n;
         }
-
         
     }
-
-
     
     private class MemoryOutputStream extends OutputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:41.885 -0500", hash_original_field = "9903C734D96A80C6871FB08938C010EE", hash_generated_field = "435D9FD8F79260F74ED3D88EC0019701")
-
 
         private int mOffset = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:41.888 -0500", hash_original_field = "D4905C1A6EF2255354869371A444BCF1", hash_generated_field = "E7241BA1F5B2EEFC9242D732AA7BD5A0")
@@ -376,7 +349,6 @@ public OutputStream getOutputStream() {
             mSingleByte[0] = (byte)oneByte;
             write(mSingleByte, 0, 1);
         }
-
         
     }
 

@@ -7,37 +7,25 @@ import droidsafe.annotations.*;
 import java.io.FileDescriptor;
 import java.io.IOException;
 
-
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public final class VMDebug {
-
     
-    @DSModeled(DSC.SAFE)
     public static long lastDebuggerActivity() {
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1326805405 = DSUtils.UNKNOWN_LONG;
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1326805405;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static boolean isDebuggingEnabled() {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_936903779 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_936903779;
     }
-
     
-    @DSModeled(DSC.BAN)
     public static boolean isDebuggerConnected() {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1362108739 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1362108739;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static String[] getVmFeatureList() {
     	String[] ret = new String[0];
     	return ret;
@@ -113,61 +101,41 @@ public static void startMethodTracing(String traceFileName,
 public static void startMethodTracingDdms(int bufferSize, int flags) {
         startMethodTracingNative(null, null, bufferSize, flags);
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void startMethodTracingNative(String traceFileName,
         FileDescriptor fd, int bufferSize, int flags) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static boolean isMethodTracingActive() {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1236083031 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1236083031;
     }
-
     
-    @DSModeled(DSC.BAN)
     public static void stopMethodTracing() {
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static void startEmulatorTracing() {
     }
-
     
-    @DSModeled(DSC.BAN)
     public static void stopEmulatorTracing() {
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static long threadCpuTimeNanos() {
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1349091814 = DSUtils.UNKNOWN_LONG;
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1349091814;
     }
-
     
-    @DSModeled(DSC.BAN)
     public static void startAllocCounting() {
     }
-
     
-    @DSModeled(DSC.BAN)
     public static void stopAllocCounting() {
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static int getAllocCount(int kind) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1006668567 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1006668567;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static void resetAllocCount(int kinds) {
     }
 
@@ -192,34 +160,22 @@ public static void startMethodTracingDdms(int bufferSize, int flags) {
     public static int setGlobalAllocationLimit(int limit) {
         return -1;
     }
-
     
-    @DSModeled(DSC.BAN)
     public static void startInstructionCounting() {
     }
-
     
-    @DSModeled(DSC.BAN)
     public static void stopInstructionCounting() {
     }
-
     
-    @DSModeled(DSC.BAN)
     public static void getInstructionCount(int[] counts) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static void resetInstructionCount() {
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static void printLoadedClasses(int flags) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static int getLoadedClassCount() {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_368515312 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_368515312;
@@ -242,36 +198,24 @@ public static void dumpHprofData(String fileName) throws IOException {
             throw new NullPointerException();
         dumpHprofData(fileName, null);
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static void dumpHprofDataDdms() {
     }
-
     
-    @DSModeled(DSC.BAN)
     public static void dumpHprofData(String fileName, FileDescriptor fd) throws IOException {
     }
-
     
-    @DSModeled(DSC.BAN)
     public static boolean cacheRegisterMap(String classAndMethodDesc) {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1021648724 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1021648724;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static void dumpReferenceTables() {
     }
-
     
-    @DSModeled(DSC.BAN)
     public static void crash() {
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static void infopoint(int id) {
     }
 
@@ -291,9 +235,7 @@ private static void startGC() {}
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:41.785 -0500", hash_original_method = "3D3C946F00763A2C63D10BF2042F540D", hash_generated_method = "6853C859C696ECCC5EC2C4AAF7CF7134")
     
 private static void startClassPrep() {}
-
     
-    @DSModeled(DSC.SAFE)
     public static long countInstancesOfClass(Class klass, boolean assignable) {
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1477598897 = DSUtils.UNKNOWN_LONG;
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1477598897;
@@ -340,7 +282,6 @@ private static void startClassPrep() {}
     private static final int KIND_EXT_FREED_BYTES       = 1<<15;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:41.597 -0500", hash_original_field = "1E7AED118655CE65026DF9557326DFC9", hash_generated_field = "01DD6A64304611F641DBC73979499342")
 
-
     public static final int KIND_GLOBAL_ALLOCATED_OBJECTS =
         KIND_ALLOCATED_OBJECTS;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:41.601 -0500", hash_original_field = "8ABC638C18E33A6234E58D12518C6F5A", hash_generated_field = "B0538E2EC9C30F44158DF7E8197388A7")
@@ -385,7 +326,6 @@ private static void startClassPrep() {}
         KIND_EXT_FREED_BYTES;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:41.627 -0500", hash_original_field = "D64254E18C3944D426EE94A802C8663D", hash_generated_field = "424759D05E77D84C2A794371AE6B6879")
 
-
     public static final int KIND_THREAD_ALLOCATED_OBJECTS =
         KIND_ALLOCATED_OBJECTS << 16;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:41.630 -0500", hash_original_field = "DD88DAAB259BFB1F8FBC599528BA9A9C", hash_generated_field = "748DF77E77AF56B519099249BCFD5482")
@@ -429,7 +369,6 @@ private static void startClassPrep() {}
     public static final int KIND_THREAD_EXT_FREED_BYTES =
         KIND_EXT_FREED_BYTES << 16;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:41.655 -0500", hash_original_field = "C6BFB6917610FFE932616B456C3B5384", hash_generated_field = "D19857A092C4D22B54BA0D5CF6245D5A")
-
 
     public static final int KIND_ALL_COUNTS = 0xffffffff;
 

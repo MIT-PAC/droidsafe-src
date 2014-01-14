@@ -8,26 +8,20 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
 
-
-
-
-
 public final class CorrectionInfo implements Parcelable {
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.293 -0400", hash_original_field = "0802A0FE3EDE98511D93025B888127A6", hash_generated_field = "545C65D572FA367719FAFB5FF700B68D")
 
     public static final Parcelable.Creator<CorrectionInfo> CREATOR
             = new Parcelable.Creator<CorrectionInfo>() {
-    	@DSModeled(DSC.SAFE)
+    	
         public CorrectionInfo createFromParcel(Parcel source) {
     		addTaint(source.getTaint());
     		CorrectionInfo retVal = new CorrectionInfo(source);
     		retVal.addTaint(taint);
             return retVal;
         }
-
-        @DSModeled(DSC.SAFE)
+        
         public CorrectionInfo[] newArray(int size) {
         	addTaint(size);
             return new CorrectionInfo[size];

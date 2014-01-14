@@ -18,10 +18,6 @@ import android.view.ViewGroup;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
 
-
-
-
-
 public abstract class AdapterView<T extends Adapter> extends ViewGroup {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:12.893 -0500", hash_original_field = "513745049371ED57634399D6D1B582C0", hash_generated_field = "AD689E79534925CB9E4BA4D493671F95")
 
@@ -122,7 +118,6 @@ public abstract class AdapterView<T extends Adapter> extends ViewGroup {
     private boolean mDesiredFocusableInTouchModeState;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:12.958 -0500", hash_original_field = "1A8DDBBE6E4DA967F5DEACBEFA2C0D29", hash_generated_field = "D942A048D23A80D010658FB1C8D03182")
 
-
     private SelectionNotifier mSelectionNotifier;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:12.960 -0500", hash_original_field = "9EF8ED98BBEB87000E69C25673FFDD81", hash_generated_field = "9EF8ED98BBEB87000E69C25673FFDD81")
 
@@ -145,9 +140,7 @@ public AdapterView(Context context, AttributeSet attrs) {
 public AdapterView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
     }
-
-    
-        @DSModeled(DSC.SAFE)
+        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.375 -0400", hash_original_method = "3AA164DD2030E1BF06F3CA1CD9427DA1", hash_generated_method = "A196844E345185ADD2A42B24D8C435A9")
     public void setOnItemClickListener(OnItemClickListener listener) {
         mOnItemClickListener = listener;
@@ -191,7 +184,6 @@ public boolean performItemClick(View view, int position, long id) {
         return false;
     }
 
-
     /**
      * Register a callback to be invoked when an item in this AdapterView has
      * been clicked and held
@@ -216,7 +208,6 @@ public void setOnItemLongClickListener(OnItemLongClickListener listener) {
 public final OnItemLongClickListener getOnItemLongClickListener() {
         return mOnItemLongClickListener;
     }
-
 
     /**
      * Register a callback to be invoked when an item in this AdapterView has
@@ -780,7 +771,6 @@ private boolean isScrollableForAccessibility() {
     protected boolean canAnimate() {
         return super.canAnimate() && mItemCount > 0;
     }
-
     
     public static class AdapterContextMenuInfo implements ContextMenu.ContextMenuInfo {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:12.996 -0500", hash_original_field = "3BB1E86D410535A3C31772C2239AADE8", hash_generated_field = "7EF03B9C3ED3327C63848AE59101E3FF")
@@ -800,15 +790,11 @@ public AdapterContextMenuInfo(View targetView, int position, long id) {
             this.position = position;
             this.id = id;
         }
-
         
     }
-
-
     
     class AdapterDataSetObserver extends DataSetObserver {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:13.076 -0500", hash_original_field = "A5DE26FEE58273B0AEBE44AB1C27F8C4", hash_generated_field = "15D7943AB2107BDB644324BD26EFE009")
-
 
         private Parcelable mInstanceState = null;
         
@@ -869,11 +855,8 @@ public AdapterContextMenuInfo(View targetView, int position, long id) {
 public void clearSavedState() {
             mInstanceState = null;
         }
-
         
     }
-
-
     
     private class SelectionNotifier implements Runnable {
         
@@ -896,14 +879,10 @@ public void run() {
                 fireOnSelected();
             }
         }
-
         
     }
-
-
     
     public interface OnItemClickListener {
-
         
         void onItemClick(AdapterView<?> parent, View view, int position, long id);
     }
@@ -916,7 +895,6 @@ public void run() {
     public interface OnItemSelectedListener {
         
         void onItemSelected(AdapterView<?> parent, View view, int position, long id);
-
         
         void onNothingSelected(AdapterView<?> parent);
     }

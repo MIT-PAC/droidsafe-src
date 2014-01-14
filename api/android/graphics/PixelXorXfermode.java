@@ -5,14 +5,10 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
 import droidsafe.helpers.DSUtils;
 
 public class PixelXorXfermode extends Xfermode {
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativeCreate(int opColor) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1725099153 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1725099153;
@@ -23,7 +19,6 @@ public class PixelXorXfermode extends Xfermode {
 public PixelXorXfermode(int opColor) {
         native_instance = nativeCreate(opColor);
     }
-
     
 }
 

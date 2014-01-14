@@ -21,10 +21,6 @@ import android.util.AttributeSet;
 import android.util.Xml;
 import android.widget.FrameLayout;
 
-
-
-
-
 public abstract class LayoutInflater {
     
     /**
@@ -42,16 +38,13 @@ public static LayoutInflater from(Context context) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.718 -0500", hash_original_field = "ACD23DD77F2F0D797D965DB4AFEF41BC", hash_generated_field = "63DF1F110DEB7B86F6BD18817F9A4731")
 
-
     static final Class<?>[] mConstructorSignature = new Class[] {
             Context.class, AttributeSet.class};
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.720 -0500", hash_original_field = "6C848B71EB280D9174A99E52C6901000", hash_generated_field = "C38DE3F776CAFB12B475430CF0EEAA23")
 
-
     private static final HashMap<String, Constructor<? extends View>> sConstructorMap =
             new HashMap<String, Constructor<? extends View>>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.725 -0500", hash_original_field = "B64C2D7D9E8B48203AC38D4E0C2989BC", hash_generated_field = "36C7BA0C809B7EB42A272F2829D1F77B")
-
 
     private static final String TAG_MERGE = "merge";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.728 -0500", hash_original_field = "96D68432CD8001A5FCF6A115465004AD", hash_generated_field = "E44225DBBDDDD64E37F1DAB51EE83BFC")
@@ -86,10 +79,8 @@ public static LayoutInflater from(Context context) {
     private Filter mFilter;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.715 -0500", hash_original_field = "D62709ECD69C2FFB452C5E25B014B17D", hash_generated_field = "B7AB5DA0883F2685164B5F2691D42F0F")
 
-
     final Object[] mConstructorArgs = new Object[2];
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.723 -0500", hash_original_field = "64255D40992BD3778F35B1834AE29BF0", hash_generated_field = "208DFBA685342B06C1A3F18B71A9291E")
-
     
     private HashMap<String, Boolean> mFilterMap;
     
@@ -127,7 +118,7 @@ protected LayoutInflater(LayoutInflater original, Context newContext) {
         mFilter = original.mFilter;
     }
     // orphaned legacy method
-    @DSModeled(DSC.SAFE)
+    
 	public LayoutInflater() {
 		
 	}
@@ -234,9 +225,7 @@ public void setFactory2(Factory2 factory) {
             mFactory = new FactoryMerger(factory, factory, mFactory, mFactory2);
         }
     }
-
     
-    @DSModeled(DSC.SAFE)
 	public void setPrivateFactory(Factory2 factory) {
     }
 
@@ -306,9 +295,7 @@ public View inflate(int resource, ViewGroup root) {
 public View inflate(XmlPullParser parser, ViewGroup root) {
         return inflate(parser, root, root != null);
     }
-
     
-    @DSModeled(DSC.SAFE)
 	 public View inflate(int resource, ViewGroup root, boolean attachToRoot) {
 		View newView = new View();
 		return newView;	
@@ -529,7 +516,6 @@ public final View createView(String name, String prefix, AttributeSet attrs)
             throw ie;
         }
     }
-
     
     private static class FactoryMerger implements Factory2 {
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:34.821 -0400", hash_original_field = "B388ED792FF72DF72B1BCDB08C954A34", hash_generated_field = "5597E72774649F58EAFC93193B0F56F5")
@@ -571,11 +557,8 @@ public View onCreateView(View parent, String name, Context context, AttributeSet
             return mF22 != null ? mF22.onCreateView(parent, name, context, attrs)
                     : mF2.onCreateView(name, context, attrs);
         }
-
         
     }
-
-
     
     private static class BlinkLayout extends FrameLayout {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.830 -0500", hash_original_field = "843D856C679F610BF2FA6342A2AA5C6E", hash_generated_field = "4A3D47FA8808A8239672ED34E6BFB3B1")
@@ -585,7 +568,6 @@ public View onCreateView(View parent, String name, Context context, AttributeSet
 
         private static final int BLINK_DELAY = 500;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.836 -0500", hash_original_field = "D1B4BEA30F9091920BA4960DD995B0CA", hash_generated_field = "9F94E2291878F4B79ED3B6B67A1ED0C7")
-
 
         private boolean mBlink;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.838 -0500", hash_original_field = "D7C58D31A3AD81D1F95EB309B4AFAC63", hash_generated_field = "57E34B9F322B663DA6033C74FD1E64C4")
@@ -655,8 +637,6 @@ private void makeBlink() {
             }
         }
     }
-
-
     
     public interface Filter {
         

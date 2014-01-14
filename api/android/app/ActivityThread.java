@@ -87,17 +87,12 @@ import com.android.internal.os.SamplingProfilerIntegration;
 
 import dalvik.system.CloseGuard;
 
-
-
-
-
 final class SuperNotCalledException extends AndroidRuntimeException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.220 -0500", hash_original_method = "5E7B9B2805F37099E5240CEF94D75E86", hash_generated_method = "1F29AF520F96DCB843FE454A7E9FE89B")
     
 public SuperNotCalledException(String msg) {
         super(msg);
     }
-
     
 }
 
@@ -107,7 +102,6 @@ final class RemoteServiceException extends AndroidRuntimeException {
 public RemoteServiceException(String msg) {
         super(msg);
     }
-
     
 }
 
@@ -258,10 +252,8 @@ public static void main(String[] args) {
     private static final int LOG_ON_RESUME_CALLED = 30022;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.261 -0500", hash_original_field = "7799910C62F22F96C1AC44438B0BF40B", hash_generated_field = "C6FF716724281192967733BEA8F63EE5")
 
-
     static ContextImpl mSystemContext = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.263 -0500", hash_original_field = "39F897E7C0D722D99D5FAAEEC367DC33", hash_generated_field = "89DED1E64F20B301AC92B7782A3B4974")
-
 
     static IPackageManager sPackageManager;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.298 -0500", hash_original_field = "7909FF35FAEDBD41BAEFDEEACDA24D35", hash_generated_field = "5C8AC51EFF922C63EFC9F15B72A07218")
@@ -269,14 +261,11 @@ public static void main(String[] args) {
     static final ThreadLocal<ActivityThread> sThreadLocal = new ThreadLocal<ActivityThread>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.337 -0500", hash_original_field = "B5F712DF6A1DB744AC0CA5AF128CC6B7", hash_generated_field = "FBC75DA053AA4DB0E9FC91A30C88AF67")
 
-
     static Handler sMainThreadHandler;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:38.007 -0500", hash_original_field = "4757F4742004C0AAB0DCF841A0441800", hash_generated_field = "2F4C1A0F908C99E4E3AF95D1DBBBE434")
 
-
     private static final ThreadLocal<Intent> sCurrentBroadcastIntent = new ThreadLocal<Intent>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.265 -0500", hash_original_field = "4BE2592600E22B88F19E5AEDA9C6D0D0", hash_generated_field = "2C05F6440224B9B7B649AAB8E25E7F6C")
-
 
     final ApplicationThread mAppThread = new ApplicationThread();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.268 -0500", hash_original_field = "AF37A7D9D38B32899A98EE8F575828DF", hash_generated_field = "9DB6C1654FE8632B559AD8938C2BB6D6")
@@ -390,11 +379,9 @@ public static void main(String[] args) {
         = new HashMap<IBinder, ProviderClientRecord>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.332 -0500", hash_original_field = "21DB313BBB4D9FE4E9279F224291BC66", hash_generated_field = "7290AC21C9E09A440EA99C73747C36E5")
 
-
     final HashMap<Activity, ArrayList<OnActivityPausedListener>> mOnPauseListeners
         = new HashMap<Activity, ArrayList<OnActivityPausedListener>>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.334 -0500", hash_original_field = "9A2BB5A7170EE3CC26087AD938361046", hash_generated_field = "0DC5B4AA3D0A311BCB82DC76A964596E")
-
 
     final GcIdler mGcIdler = new GcIdler();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.335 -0500", hash_original_field = "42912703516C643929BE4407C1512E06", hash_generated_field = "42912703516C643929BE4407C1512E06")
@@ -402,14 +389,11 @@ public static void main(String[] args) {
     boolean mGcIdlerScheduled = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.340 -0500", hash_original_field = "5193B2043B5018140A114729BFBC1AB5", hash_generated_field = "5193B2043B5018140A114729BFBC1AB5")
 
-
     Bundle mCoreSettings = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.911 -0500", hash_original_field = "C0B026A64FCB5CE4BBEAECE65EDAB00E", hash_generated_field = "218DF766A932DC18C65DC16EEE9A759F")
 
-
     private Configuration mMainThreadConfig = new Configuration();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:38.049 -0500", hash_original_field = "89D545404DE284326B58312949C90BC9", hash_generated_field = "4A61C1EAE378A13AF88688B33DC5A9C1")
-
 
     private int mThumbnailWidth = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:38.051 -0500", hash_original_field = "B5422D7CF870E707C3ADDC5B87F8536A", hash_generated_field = "B5D585F47D7019D989CAAE6F1896D3A6")
@@ -433,7 +417,6 @@ ActivityThread() {
     	//Formerly a native method
     	addTaint(fd.getTaint());
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.906 -0500", hash_original_method = "E45CB384263D7EF5FBA0A98360B08B32", hash_generated_method = "3F774A9FE0F0903602F168B8AD61E6E1")
     
@@ -2740,7 +2723,6 @@ final void handleActivityConfigurationChanged(IBinder token) {
         
         performConfigurationChanged(r.activity, mCompatConfiguration);
     }
-
     
     static final class ActivityClientRecord {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.342 -0500", hash_original_field = "AEFA330A775EF7A6CCCEA63565B352D0", hash_generated_field = "AEFA330A775EF7A6CCCEA63565B352D0")
@@ -2790,7 +2772,6 @@ final void handleActivityConfigurationChanged(IBinder token) {
         ActivityClientRecord nextIdle;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.373 -0500", hash_original_field = "0AEB1625B8037FA1222953DB04FF40F7", hash_generated_field = "0AEB1625B8037FA1222953DB04FF40F7")
 
-
         String profileFile;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.375 -0500", hash_original_field = "6D0D0FC1FD6F72A79E2D27F4C2A0837E", hash_generated_field = "6D0D0FC1FD6F72A79E2D27F4C2A0837E")
 
@@ -2799,7 +2780,6 @@ final void handleActivityConfigurationChanged(IBinder token) {
 
         boolean autoStopProfiler;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.380 -0500", hash_original_field = "9CFCA1B7F8752ABB79A9EED9367C413A", hash_generated_field = "9CFCA1B7F8752ABB79A9EED9367C413A")
-
 
         ActivityInfo activityInfo;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.381 -0500", hash_original_field = "2B67D7EEC5FDB496E2BE58A0747899F8", hash_generated_field = "2B67D7EEC5FDB496E2BE58A0747899F8")
@@ -2810,13 +2790,11 @@ final void handleActivityConfigurationChanged(IBinder token) {
         LoadedApk packageInfo;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.386 -0500", hash_original_field = "A77E9DD92A64C5F780B6000CA80182A2", hash_generated_field = "A77E9DD92A64C5F780B6000CA80182A2")
 
-
         List<ResultInfo> pendingResults;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.388 -0500", hash_original_field = "4BC30CA1B8786644C876DAF48F78533F", hash_generated_field = "4BC30CA1B8786644C876DAF48F78533F")
 
         List<Intent> pendingIntents;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.390 -0500", hash_original_field = "5CE883BF4DAD47FBDAF4D2C3F7074402", hash_generated_field = "5CE883BF4DAD47FBDAF4D2C3F7074402")
-
 
         boolean startsNotResumed;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.392 -0500", hash_original_field = "8A03F39D432E8E43D36A30D2C65BF04B", hash_generated_field = "8A03F39D432E8E43D36A30D2C65BF04B")
@@ -2829,7 +2807,6 @@ final void handleActivityConfigurationChanged(IBinder token) {
 
         boolean onlyLocalRequest;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.398 -0500", hash_original_field = "C7546AC98481F963F1798A1F44EE5004", hash_generated_field = "C7546AC98481F963F1798A1F44EE5004")
-
 
         View mPendingRemoveWindow;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.400 -0500", hash_original_field = "651EDB05D2F89D6E111AFDE79ADF6A66", hash_generated_field = "651EDB05D2F89D6E111AFDE79ADF6A66")
@@ -2867,11 +2844,8 @@ public String toString() {
                         ? "no component name" : componentName.toShortString())
                 + "}";
         }
-
         
     }
-
-
     
     final class ProviderClientRecord implements IBinder.DeathRecipient {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.412 -0500", hash_original_field = "ED29A5CAC2A4A14894CD28BA3B1CE29C", hash_generated_field = "ED29A5CAC2A4A14894CD28BA3B1CE29C")
@@ -2898,11 +2872,8 @@ ProviderClientRecord(String name, IContentProvider provider,
 public void binderDied() {
             removeDeadProvider(mName, mProvider);
         }
-
         
     }
-
-
     
     static final class NewIntentData {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.425 -0500", hash_original_field = "DCC84A2BE9F90A98827B285408558812", hash_generated_field = "DCC84A2BE9F90A98827B285408558812")
@@ -2922,15 +2893,11 @@ public void binderDied() {
 public String toString() {
             return "NewIntentData{intents=" + intents + " token=" + token + "}";
         }
-
         
     }
-
-
     
     static final class ReceiverData extends BroadcastReceiver.PendingResult {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.437 -0500", hash_original_field = "170FCA7A98A65D8003A3D20D5B3C245D", hash_generated_field = "170FCA7A98A65D8003A3D20D5B3C245D")
-
 
         Intent intent;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.439 -0500", hash_original_field = "D6562EB0A3FC9B94476A16D5F303F058", hash_generated_field = "D6562EB0A3FC9B94476A16D5F303F058")
@@ -2954,11 +2921,8 @@ public String toString() {
                     + " resultData=" + getResultData() + " resultExtras="
                     + getResultExtras(false) + "}";
         }
-
         
     }
-
-
     
     static final class CreateBackupAgentData {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.448 -0500", hash_original_field = "BB93ED015037E8AFDF3FDE7CABC1B568", hash_generated_field = "BB93ED015037E8AFDF3FDE7CABC1B568")
@@ -2983,11 +2947,8 @@ public String toString() {
                     + " backupAgent=" + appInfo.backupAgentName
                     + " mode=" + backupMode + "}";
         }
-
         
     }
-
-
     
     static final class CreateServiceData {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.458 -0500", hash_original_field = "AEFA330A775EF7A6CCCEA63565B352D0", hash_generated_field = "AEFA330A775EF7A6CCCEA63565B352D0")
@@ -3015,11 +2976,8 @@ public String toString() {
             + info.name + " packageName=" + info.packageName
             + " intent=" + intent + "}";
         }
-
         
     }
-
-
     
     static final class BindServiceData {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.471 -0500", hash_original_field = "AEFA330A775EF7A6CCCEA63565B352D0", hash_generated_field = "AEFA330A775EF7A6CCCEA63565B352D0")
@@ -3042,11 +3000,8 @@ public String toString() {
 public String toString() {
             return "BindServiceData{token=" + token + " intent=" + intent + "}";
         }
-
         
     }
-
-
     
     static final class ServiceArgsData {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.482 -0500", hash_original_field = "AEFA330A775EF7A6CCCEA63565B352D0", hash_generated_field = "AEFA330A775EF7A6CCCEA63565B352D0")
@@ -3076,11 +3031,8 @@ public String toString() {
             return "ServiceArgsData{token=" + token + " startId=" + startId
             + " args=" + args + "}";
         }
-
         
     }
-
-
     
     static final class AppBindData {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.497 -0500", hash_original_field = "CFE674900E356A9F4BF51234744250B8", hash_generated_field = "CFE674900E356A9F4BF51234744250B8")
@@ -3140,11 +3092,8 @@ public String toString() {
 public String toString() {
             return "AppBindData{appInfo=" + appInfo + "}";
         }
-
         
     }
-
-
     
     static final class Profiler {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.534 -0500", hash_original_field = "0AEB1625B8037FA1222953DB04FF40F7", hash_generated_field = "0AEB1625B8037FA1222953DB04FF40F7")
@@ -3225,11 +3174,8 @@ public void stopProfiling() {
                 profileFile = null;
             }
         }
-
         
     }
-
-
     
     static final class DumpComponentInfo {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.554 -0500", hash_original_field = "ED4BCC0409574E6EB5292B0FF005E3EB", hash_generated_field = "ED4BCC0409574E6EB5292B0FF005E3EB")
@@ -3251,10 +3197,7 @@ public void stopProfiling() {
             //Synthesized constructor
         }
 
-
     }
-
-
     
     static final class ResultData {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.565 -0500", hash_original_field = "AEFA330A775EF7A6CCCEA63565B352D0", hash_generated_field = "AEFA330A775EF7A6CCCEA63565B352D0")
@@ -3274,11 +3217,8 @@ public void stopProfiling() {
 public String toString() {
             return "ResultData{token=" + token + " results" + results + "}";
         }
-
         
     }
-
-
     
     static final class ContextCleanupInfo {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.574 -0500", hash_original_field = "C9CD4205E05705EAD2345480C07726F5", hash_generated_field = "C9CD4205E05705EAD2345480C07726F5")
@@ -3297,10 +3237,7 @@ public String toString() {
             //Synthesized constructor
         }
 
-
     }
-
-
     
     static final class ProfilerControlData {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.583 -0500", hash_original_field = "4936DBCD90EF1129A7D9F03C4DB55EE0", hash_generated_field = "4936DBCD90EF1129A7D9F03C4DB55EE0")
@@ -3316,10 +3253,7 @@ public String toString() {
             //Synthesized constructor
         }
 
-
     }
-
-
     
     static final class DumpHeapData {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.589 -0500", hash_original_field = "4936DBCD90EF1129A7D9F03C4DB55EE0", hash_generated_field = "4936DBCD90EF1129A7D9F03C4DB55EE0")
@@ -3335,10 +3269,7 @@ public String toString() {
             //Synthesized constructor
         }
 
-
     }
-
-
     
     static final class UpdateCompatibilityData {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.596 -0500", hash_original_field = "742D0CCB1EAA4E727F9FCD5430AF1837", hash_generated_field = "742D0CCB1EAA4E727F9FCD5430AF1837")
@@ -3354,13 +3285,9 @@ public String toString() {
             //Synthesized constructor
         }
 
-
     }
-
-
     
     private class ApplicationThread extends ApplicationThreadNative {
-
         
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:36:51.870 -0400", hash_original_field = "DB018D420C41A3AA31DB7A5C0D61BF49", hash_generated_field = "96FE4DE896DA8140237FE2F2A32AB60D")
 
@@ -4033,8 +3960,6 @@ public void scheduleTrimMemory(int level) {
             queueOrSendMessage(H.TRIM_MEMORY, null, level);
         }
     }
-
-
     
     private class H extends Handler {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.749 -0500", hash_original_field = "AF264778B48C978F11E0767D955E26A0", hash_generated_field = "79EE3E0E74CCDF8DA485137663462447")
@@ -4390,8 +4315,6 @@ private void maybeSnapshot() {
             }
         }
     }
-
-
     
     private class Idler implements MessageQueue.IdleHandler {
         
@@ -4437,11 +4360,8 @@ public final boolean queueIdle() {
             ensureJitEnabled();
             return false;
         }
-
         
     }
-
-
     
     final class GcIdler implements MessageQueue.IdleHandler {
         
@@ -4456,11 +4376,8 @@ public final boolean queueIdle() {
             doGcIfNeeded();
             return false;
         }
-
         
     }
-
-
     
     private static class ResourcesKey {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:37.881 -0500", hash_original_field = "9CBFFC74B2E8DB2A6DFAD2C0D7303627", hash_generated_field = "16A785049F12D1DFDF4F72387E1D9EFB")
@@ -4498,11 +4415,8 @@ ResourcesKey(String resDir, float scale) {
             ResourcesKey peer = (ResourcesKey) obj;
             return mResDir.equals(peer.mResDir) && mScale == peer.mScale;
         }
-
         
     }
-
-
     
     private static class StopInfo {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:38.073 -0500", hash_original_field = "671EE8F19CE89CCA3E5285825682D0E2", hash_generated_field = "671EE8F19CE89CCA3E5285825682D0E2")
@@ -4512,17 +4426,13 @@ ResourcesKey(String resDir, float scale) {
 
         CharSequence description;
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:50.837 -0400", hash_original_method = "59EF1C21B91F2644F32BF61E1E80BB9E", hash_generated_method = "59EF1C21B91F2644F32BF61E1E80BB9E")
         public StopInfo ()
         {
             //Synthesized constructor
         }
 
-
     }
-
-
     
     private static final class ProviderRefCount {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:38.080 -0500", hash_original_field = "B83BF7ED7F5719DA923E1BC0AC69952B", hash_generated_field = "21B1DF5337CCD3E0731435FB1361ED67")
@@ -4534,7 +4444,6 @@ ResourcesKey(String resDir, float scale) {
 ProviderRefCount(int pCount) {
             count = pCount;
         }
-
         
     }
 
@@ -4683,7 +4592,7 @@ private void setupGraphicsSupport(LoadedApk info) {
         } catch (RemoteException e) {
             // Ignore
         }
-    }    
+    }
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:38.172 -0500", hash_original_method = "7EBE3C125D399FC9ADE021947462EA9C", hash_generated_method = "E5818DE033E74CF986E0DC590833683F")
     
@@ -4746,7 +4655,7 @@ private void handleBindApplication(AppBindData data) {
 
         data.info = getPackageInfoNoCheck(data.appInfo, data.compatInfo);
 
-        setupGraphicsSupport(data.info);        
+        setupGraphicsSupport(data.info);
         
         /**
          * For system applications on userdebug/eng builds, log stack
@@ -5283,9 +5192,7 @@ private IContentProvider installProvider(Context context,
         }
         return provider;
     }
-
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:50.588 -0400", hash_original_method = "C124A05EAD0D975305C2EDD26DCF96DC", hash_generated_method = "52F86B6401BDB1F676A0BBBE819353B6")
     private void attach(boolean system) {
         sThreadLocal.set(this);

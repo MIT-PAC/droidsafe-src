@@ -18,14 +18,8 @@ import org.xml.sax.SAXNotSupportedException;
 import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.XMLReaderAdapter;
 
-
-
-
-
-
 final class SAXParserImpl extends SAXParser {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:23.926 -0500", hash_original_field = "6AF9CA75BF6E407C2238C9D0D923A66C", hash_generated_field = "5A288FC03A9EC3CBF67B84D7411659BA")
-
 
     private Map<String, Boolean> initialFeatures;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:23.928 -0500", hash_original_field = "8E6314392E70940A1B07E44449D11769", hash_generated_field = "2331E55663EE08977E2E12264071B561")
@@ -96,9 +90,7 @@ private void resetInternal()
     public XMLReader getXMLReader() {
         return reader;
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.814 -0400", hash_original_method = "4C988836598C02053146886655E4EB88", hash_generated_method = "5614AF223E7F379B9355021058B06156")
     @Override
     public boolean isNamespaceAware() {
@@ -136,7 +128,6 @@ private void resetInternal()
             throws SAXNotRecognizedException, SAXNotSupportedException {
         reader.setProperty(name, value);
     }
-
     
 }
 

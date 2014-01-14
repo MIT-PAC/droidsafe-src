@@ -10,11 +10,8 @@ import android.content.res.Configuration;
 import android.os.RemoteException;
 import android.os.ServiceManager;
 
-
-
 public class UiModeManager {
     
-    @DSModeled(DSC.BAN)
     public static UiModeManager createInstance() {
         return new UiModeManager();
     }
@@ -50,10 +47,8 @@ public class UiModeManager {
     public static final int DISABLE_CAR_MODE_GO_HOME = 0x0001;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:14.312 -0500", hash_original_field = "375F4CDB96C235DF550526331454121A", hash_generated_field = "AC5296BC9334BAEB9DDA5E503BF7ECAF")
 
-
     private IUiModeManager mService;
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.317 -0400", hash_original_method = "885E2DF97B9D4497B2AC3BA2EAEC628B", hash_generated_method = "056F639D47467015E4958DFADC7377FD")
       UiModeManager() {
         /*

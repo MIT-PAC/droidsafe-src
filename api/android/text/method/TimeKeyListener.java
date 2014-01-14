@@ -6,10 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.text.InputType;
 
-
-
-
-
 public class TimeKeyListener extends NumberKeyListener {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:02.708 -0500", hash_original_method = "E3D1D19A4F0AD3BF112656171BB40F7B", hash_generated_method = "775E9E8EEAE8BFB1441E2E40A07E5EA3")
@@ -29,10 +25,8 @@ public static TimeKeyListener getInstance() {
         };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:02.716 -0500", hash_original_field = "8DF1A60B58A81137500B1CD8DA13D29C", hash_generated_field = "33355AAAF3221ACB9E3222BB6726B57D")
 
-
     private static TimeKeyListener sInstance;
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.781 -0400", hash_original_method = "B9206F846F22DC573861D1007C9C3102", hash_generated_method = "B9206F846F22DC573861D1007C9C3102")
     public TimeKeyListener ()
     {

@@ -5,14 +5,10 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
 import droidsafe.helpers.DSUtils;
 
 public class AvoidXfermode extends Xfermode {
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativeCreate(int opColor, int tolerance,
                                            int nativeMode) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_613288083 = DSUtils.UNKNOWN_INT;
@@ -42,7 +38,6 @@ public AvoidXfermode(int opColor, int tolerance, Mode mode) {
         }
         native_instance = nativeCreate(opColor, tolerance, mode.nativeInt);
     }
-
     
     public enum Mode {
         AVOID   (0),    
@@ -57,7 +52,6 @@ Mode(int nativeInt) {
 
          int nativeInt;
     }
-
     
 }
 

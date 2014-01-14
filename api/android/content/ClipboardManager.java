@@ -12,8 +12,6 @@ import android.os.Message;
 import android.os.RemoteException;
 import android.os.ServiceManager;
 
-
-
 public class ClipboardManager extends android.text.ClipboardManager {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:38.353 -0500", hash_original_method = "B823D91CB0BDECA7B94A432D3169CF0F", hash_generated_method = "E46EEAD91E5B0F8A4FFB94615D67E32E")
@@ -36,14 +34,11 @@ static private IClipboard getService() {
     private static IClipboard sService;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:38.344 -0500", hash_original_field = "1C8819E0457C61ABDAA5E1E45DE2C427", hash_generated_field = "3C04989ED0EDFEE643DF5780498583F4")
 
-
     static final int MSG_REPORT_PRIMARY_CLIP_CHANGED = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:38.333 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
 
-
     private  Context mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:38.336 -0500", hash_original_field = "69431F5030A8CFD222EF228DFCC7DF2C", hash_generated_field = "E56DE56B7E953844281AFE87E0843DAB")
-
 
     private final ArrayList<OnPrimaryClipChangedListener> mPrimaryClipChangedListeners
              = new ArrayList<OnPrimaryClipChangedListener>();
@@ -54,9 +49,7 @@ static private IClipboard getService() {
         public void dispatchPrimaryClipChanged() {
             mHandler.sendEmptyMessage(MSG_REPORT_PRIMARY_CLIP_CHANGED);
             
-            
         }
-
         
 };
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.141 -0400", hash_original_field = "A7B290A804ED4D1BFB9EEF0AABB57AC2", hash_generated_field = "F325ACE86B0A208FFE07C888493706E5")
@@ -70,17 +63,12 @@ static private IClipboard getService() {
             
             addTaint(msg.getTaint());
             
-            
-                
-                    
-            
         }
-
         
 };
 
     //for getSystemService
-    @DSModeled(DSC.BAN)
+    
     public  ClipboardManager(Context context) {
         addTaint(context.getTaint());
         mContext = context;
@@ -193,7 +181,6 @@ public CharSequence getText() {
         }
         return null;
     }
-
     
     public interface OnPrimaryClipChangedListener {
         void onPrimaryClipChanged();

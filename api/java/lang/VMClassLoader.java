@@ -9,9 +9,6 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 class VMClassLoader {
@@ -64,26 +61,20 @@ static List<URL> getResources(String name) {
         }
         return list;
     }
-
     
-    @DSModeled(DSC.SAFE)
     static Class loadClass(String name, boolean resolve) throws ClassNotFoundException {
     	Class ret = (Class)new Object();
     	ret.addTaint(name.taint);
     	ret.addTaint(resolve);
     	return ret;
     }
-
     
-    @DSModeled(DSC.SAFE)
     static Class getPrimitiveClass(char type) {
     	Class ret = (Class)new Object();
     	ret.addTaint(type);
     	return ret;
     }
-
     
-    @DSModeled(DSC.SAFE)
     static Class defineClass(ClassLoader cl, String name, byte[] data, int offset, int len) throws ClassFormatError {
     	Class ret = (Class)new Object();
     	ret.addTaint(cl.taint);
@@ -92,9 +83,7 @@ static List<URL> getResources(String name) {
     	ret.addTaint(len);
     	return ret;
     }
-
     
-    @DSModeled(DSC.BAN)
     static Class defineClass(ClassLoader cl, byte[] data, int offset, int len) throws ClassFormatError {
     	Class ret = (Class)new Object();
     	ret.addTaint(cl.taint);
@@ -103,25 +92,19 @@ static List<URL> getResources(String name) {
     	ret.addTaint(len);
     	return ret;
     }
-
     
-    @DSModeled(DSC.BAN)
     static Class findLoadedClass(ClassLoader cl, String name) {
     	Class ret = (Class)new Object();
     	ret.addTaint(name.taint);
     	ret.addTaint(cl.taint);
     	return ret;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int getBootClassPathSize() {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1375923467 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1375923467;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static String getBootClassPathResource(String name, int index) {
     	String ret = new String();
     	ret.addTaint(name.taint);
@@ -134,7 +117,6 @@ static List<URL> getResources(String name) {
     {
         //Synthesized constructor
     }
-
     
 }
 

@@ -7,45 +7,31 @@ import droidsafe.annotations.*;
 import java.lang.ref.ReferenceQueue;
 import java.lang.ref.WeakReference;
 
-
-
-
-
-
 public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
-
     
-    @DSModeled(DSC.SAFE)
     @SuppressWarnings("unchecked")
     private static <K, V> Entry<K, V>[] newEntryArray(int size) {
         return new Entry[size];
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.504 -0500", hash_original_field = "5F72F58EEBF24F573F6939A12F43F1DD", hash_generated_field = "7DB5CF06E1B6356201026C14CAD31DE8")
 
-
     private static final int DEFAULT_SIZE = 16;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.507 -0500", hash_original_field = "DD92337EC0A949FCB6367CB914D87989", hash_generated_field = "DA4F581341DFFC093DAB2ED377CF1682")
-
 
     private  ReferenceQueue<K> referenceQueue;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.509 -0500", hash_original_field = "BF84735BCD9327FC2D1CC927ED35945D", hash_generated_field = "BF84735BCD9327FC2D1CC927ED35945D")
 
-
     int elementCount;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.512 -0500", hash_original_field = "36C14C81A5F4E64B5630EF2ADDAD7469", hash_generated_field = "36C14C81A5F4E64B5630EF2ADDAD7469")
-
 
     Entry<K, V>[] elementData;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.515 -0500", hash_original_field = "09A32BD26ECAFE02311923153FC6AF4D", hash_generated_field = "9875194AD635CA8D9949128549486276")
 
-
     private  int loadFactor;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.517 -0500", hash_original_field = "B212DD967AF5750AEF1DDA2E6D14352F", hash_generated_field = "831F8FC1A32CF07BE696149BB6AEA9AA")
 
-
     private int threshold;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.520 -0500", hash_original_field = "52F3DED7388D6DA42BC9C902075440B5", hash_generated_field = "7980638400FDA73EFCEF2F9901C03D43")
-
 
     volatile int modCount;
 
@@ -161,9 +147,7 @@ private void computeMaxSize() {
     public boolean containsKey(Object key) {
         return getEntry(key) != null;
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.246 -0400", hash_original_method = "115108C1B40A91216FE420487FA7990C", hash_generated_method = "54486BB87EC100E6525877EA5676ED14")
     @Override
     public Set<Map.Entry<K, V>> entrySet() {
@@ -211,7 +195,7 @@ Set<Map.Entry<K, V>> var952772A53018FA152689B94755082E8D_915180893 =         new
                 }
                 return false;
             }
-        @DSModeled(DSC.SAFE)
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.246 -0400", hash_original_method = "6126AC883C019C19A724D0EDFC9A192D", hash_generated_method = "C5540A31518834C464989BAA9FF0BE80")
         @Override
         public Iterator<Map.Entry<K, V>> iterator() {
@@ -491,7 +475,6 @@ private void rehash() {
         poll();
         return elementCount;
     }
-
     
     private static final class Entry<K, V> extends WeakReference<K> implements Map.Entry<K, V> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.525 -0500", hash_original_field = "5ED776CD81502BA181156D7F28EBC9C8", hash_generated_field = "5ED776CD81502BA181156D7F28EBC9C8")
@@ -499,14 +482,11 @@ private void rehash() {
         int hash;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.527 -0500", hash_original_field = "608BD3C529DBD92C1EC1FA5648B44B23", hash_generated_field = "608BD3C529DBD92C1EC1FA5648B44B23")
 
-
         boolean isNull;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.530 -0500", hash_original_field = "A7E8A049E4C72FD5713D3AFD6CBF7C08", hash_generated_field = "A7E8A049E4C72FD5713D3AFD6CBF7C08")
 
-
         V value;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.533 -0500", hash_original_field = "5EEEE64CD04E8528349A03DB7ACC9002", hash_generated_field = "5EEEE64CD04E8528349A03DB7ACC9002")
-
 
         Entry<K, V> next;
 
@@ -567,15 +547,12 @@ public V setValue(V object) {
         public String toString() {
             return super.get() + "=" + value;
         }
-
         
         interface Type<R, K, V> {
             R get(Map.Entry<K, V> entry);
         }
         
     }
-
-
     
     class HashIterator<R> implements Iterator<R> {
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.122 -0400", hash_original_field = "64F8FBF9ECD410CCCCA37B900774D128", hash_generated_field = "6E2A691F6D792F742C26DA32023216AB")
@@ -592,10 +569,8 @@ public V setValue(V object) {
         private Entry<K, V> nextEntry;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.565 -0500", hash_original_field = "986FD776AF6F39F011FE4F157CCA073D", hash_generated_field = "989887495A4D0A589ACCCD9CE9664248")
 
-
         private K nextKey;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.567 -0500", hash_original_field = "01CE55F7E5B83A126B2D2C311EAC0383", hash_generated_field = "01CE55F7E5B83A126B2D2C311EAC0383")
-
 
          Entry.Type<R, K, V> type;
 
@@ -665,7 +640,6 @@ public void remove() {
                 throw new ConcurrentModificationException();
             }
         }
-
         
     }
 

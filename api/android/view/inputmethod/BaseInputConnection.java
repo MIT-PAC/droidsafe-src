@@ -24,19 +24,13 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewRootImpl;
 
-
-
-
-
 class ComposingText implements NoCopySpan {
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.232 -0400", hash_original_method = "299AC39680AC1BE3A17612B5D7B1D330", hash_generated_method = "299AC39680AC1BE3A17612B5D7B1D330")
     public ComposingText ()
     {
         //Synthesized constructor
     }
-
 
 }
 
@@ -121,11 +115,9 @@ public static int getComposingSpanEnd(Spannable text) {
 
      boolean mDummyMode;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.416 -0500", hash_original_field = "262A329882BEE88213C74B3FDC4E1748", hash_generated_field = "252704B80FDD4D9B6E86ECF1CBD2B09A")
-
     
     private Object[] mDefaultComposingSpans;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.418 -0500", hash_original_field = "BC747A06F00EC3CB73FDE2D30B84DC2D", hash_generated_field = "BC747A06F00EC3CB73FDE2D30B84DC2D")
-
     
     Editable mEditable;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.420 -0500", hash_original_field = "5553093AC34FB198BC290668CD3A4BD4", hash_generated_field = "5553093AC34FB198BC290668CD3A4BD4")
@@ -428,7 +420,6 @@ public CharSequence getTextAfterCursor(int length, int flags) {
         if (b + length > content.length()) {
             length = content.length() - b;
         }
-
 
         if ((flags&GET_TEXT_WITH_STYLES) != 0) {
             return content.subSequence(b, b + length);

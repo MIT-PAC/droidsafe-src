@@ -17,13 +17,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
 
-
-
-
-
 public class InstrumentationTestCase extends TestCase {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.649 -0500", hash_original_field = "5CBE0F2EE224A7AD181F35AE16EC5D56", hash_generated_field = "B2267B39A1EB39D35FC793A28FB486AB")
-
 
     private Instrumentation mInstrumentation;
     
@@ -70,9 +65,7 @@ public void injectInstrumentation(Instrumentation instrumentation) {
 public Instrumentation getInstrumentation() {
         return mInstrumentation;
     }
-
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.607 -0400", hash_original_method = "764789E220BD6FE52FAEF894EB0B5A08", hash_generated_method = "710852519DD88120CD28D5D10E1FD0EE")
     public final <T extends Activity> T launchActivity(
             String pkg,
@@ -96,9 +89,7 @@ T varE7F6C12080F9D8EF62DC3FF8BA750C63_1561275626 =         launchActivityWithInt
         //}
         //return launchActivityWithIntent(pkg, activityCls, intent);
     }
-
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.608 -0400", hash_original_method = "D43C82D18E60F413349E4558A24D84A0", hash_generated_method = "5C16BDB114961A64AC91C4910467BFFD")
     @SuppressWarnings("unchecked")
     public final <T extends Activity> T launchActivityWithIntent(
@@ -378,7 +369,6 @@ public void sendRepeatedKeys(int... keys) {
         Runtime.getRuntime().gc();
         super.tearDown();
     }
-
     
 }
 

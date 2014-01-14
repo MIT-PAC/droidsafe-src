@@ -9,9 +9,6 @@ import java.util.TimeZone;
 
 import android.content.res.Resources;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public class Time {
@@ -40,9 +37,7 @@ public static int compare(Time a, Time b) {
 
         return nativeCompare(a, b);
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativeCompare(Time a, Time b) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_450183953 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_450183953;
@@ -144,7 +139,6 @@ public static int getJulianMondayFromWeeksSinceEpoch(int week) {
     private static final String Y_M_D = "%Y-%m-%d";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.627 -0500", hash_original_field = "CA779BEC9970A623BDF311FCF64D40A7", hash_generated_field = "448FF7C314ECEAD51910DBE6ACEDCDB5")
 
-
     public static final String TIMEZONE_UTC = "UTC";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.630 -0500", hash_original_field = "6D770E847D0056A79F87678CF7610409", hash_generated_field = "979BA9E17F757813AD1F7415B808BB0C")
 
@@ -180,7 +174,6 @@ public static int getJulianMondayFromWeeksSinceEpoch(int week) {
 
     public static final int WEEK_NUM = 9;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.690 -0500", hash_original_field = "8E4DE116B88A16555727E91FF6A1712C", hash_generated_field = "36AE026E6127E76EA1E3630F36493111")
-
 
     public static final int SUNDAY = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.693 -0500", hash_original_field = "9A33D4C4CC018E922638687FF5A8DC99", hash_generated_field = "DBFAE43E90D9723C40B3BB19C4831A6F")
@@ -238,7 +231,6 @@ public static int getJulianMondayFromWeeksSinceEpoch(int week) {
 
     private static String sDateCommand = "%a %b %e %H:%M:%S %Z %Y";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.759 -0500", hash_original_field = "9626A128BD0ED0153979370F22647A9E", hash_generated_field = "C556B2A442B943AEC4D04E626AB106F8")
-
 
     private static final int[] DAYS_PER_MONTH = { 31, 28, 31, 30, 31, 30, 31,
             31, 30, 31, 30, 31 };
@@ -348,7 +340,6 @@ public Time(Time other) {
     	return getTaintLong();
     }
 
-
     /**
      * Convert this time object so the time represented remains the same, but is
      * instead located in a different timezone. This method automatically calls
@@ -360,7 +351,6 @@ public Time(Time other) {
     	//Formerly a native method
     	addTaint(timezone.getTaint());
     }
-
 
     /**
      * Return the maximum possible value for the given field given the value of
@@ -519,9 +509,7 @@ public String format(String format) {
             return format1(format);
         }
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:50.831 -0400", hash_original_method = "751765C8BBD19CCE2EF370E3AB9D4D19", hash_generated_method = "CC9E7C3FAB0B3C60FBFB40FF6979F754")
     private String format1(String format) {
     	String s = new String();
@@ -529,9 +517,7 @@ public String format(String format) {
     	s.addTaint(format.getTaint());
     	return s;
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:50.831 -0400", hash_original_method = "D4E4943029EE450E10D723A13B21ADBA", hash_generated_method = "93A7BDD7A073B21936AAAC2D97F258FB")
     @Override
     public String toString() {
@@ -597,7 +583,6 @@ public boolean parse(String s) {
     	return getTaintBoolean();
     }
 
-
     /**
      * Parse a time in RFC 3339 format.  This method also parses simple dates
      * (that is, strings that contain no time or time offset).  For example,
@@ -647,7 +632,6 @@ public boolean parse3339(String s) {
     	return getTaintBoolean();
     }
 
-
     /**
      * Sets the time of the given Time object to the current time.
      */
@@ -656,7 +640,6 @@ public boolean parse3339(String s) {
     public void setToNow(){
     	//Formerly a native method
     }
-
 
     /**
      * Converts this time to milliseconds. Suitable for interacting with the
@@ -714,7 +697,6 @@ public boolean parse3339(String s) {
     	return getTaintLong();
     }
 
-
     /**
      * Sets the fields in this Time object given the UTC milliseconds.  After
      * this method returns, all the fields are normalized.
@@ -728,10 +710,7 @@ public boolean parse3339(String s) {
     	//Formerly a native method
     	addTaint(millis);
     }
-
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:50.834 -0400", hash_original_method = "41A869EF339B8E1FD69184435BC2AFF4", hash_generated_method = "80016ED483EF4736E85C065EFF5B1D3A")
     public String format2445() {
     	String s = new String();
@@ -816,7 +795,6 @@ public void set(int monthDay, int month, int year) {
 public boolean before(Time that) {
         return Time.compare(this, that) < 0;
     }
-
 
     /**
      * Returns true if the time represented by this Time object occurs after

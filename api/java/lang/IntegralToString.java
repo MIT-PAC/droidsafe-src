@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public final class IntegralToString {
 
     /**
@@ -478,12 +474,11 @@ public static String longToOctalString(long v) {
 private static String stringOf(char... args) {
         return new String(0, args.length, args);
     }
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.236 -0400", hash_original_field = "AB280E60F0CF35D4F468078DFDA43178", hash_generated_field = "425773BE567620BA8858A8C9A806C3AB")
 
-    private static final ThreadLocal<char[]> BUFFER = new ThreadLocal<char[]>() {        
-        @DSModeled(DSC.BAN)
+    private static final ThreadLocal<char[]> BUFFER = new ThreadLocal<char[]>() {
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.236 -0400", hash_original_method = "2EBCA8DA39A849AFE3E3749C7F49BA79", hash_generated_method = "DD3C6EC86D330D1AF7830345AF558804")
         @Override
         protected char[] initialValue() {
@@ -491,9 +486,7 @@ private static String stringOf(char... args) {
             char[] var50607924ABD4C17119BAF3A1CE41C0EC_66101806 = {getTaintChar()};
             return var50607924ABD4C17119BAF3A1CE41C0EC_66101806;
             
-            
         }
-
         
 };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.151 -0500", hash_original_field = "37DFB5C87B09E2D3A46A9A888D8120E2", hash_generated_field = "3F7A7621FDECF4B1F00F7F02BB032983")
@@ -544,7 +537,6 @@ private static String stringOf(char... args) {
         'u', 'v', 'w', 'x', 'y', 'z'
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.168 -0500", hash_original_field = "0BAC015C4EE9B0B2ADAFBCE97C96378D", hash_generated_field = "C31924D8CB8753379AD2B96C86ABBAE8")
-
 
     private static final char[] UPPER_CASE_DIGITS = {
         '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',

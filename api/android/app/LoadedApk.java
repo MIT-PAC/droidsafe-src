@@ -37,18 +37,12 @@ import android.view.CompatibilityInfoHolder;
 
 import com.android.internal.util.ArrayUtils;
 
-
-
-
-
-
 final class IntentReceiverLeaked extends AndroidRuntimeException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.640 -0500", hash_original_method = "2DDF58935C7979F8233E5799714A3344", hash_generated_method = "69F237C15F5180743A61E16A9E689C19")
     
 public IntentReceiverLeaked(String msg) {
         super(msg);
     }
-
     
 }
 
@@ -58,7 +52,6 @@ final class ServiceConnectionLeaked extends AndroidRuntimeException {
 public ServiceConnectionLeaked(String msg) {
         super(msg);
     }
-
     
 }
 
@@ -141,7 +134,6 @@ private static String combineLibs(String[] list1, String[] list2) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.647 -0500", hash_original_field = "B78253FB0F6A8AE9C3434DD384D8A838", hash_generated_field = "421BA2E15FA30D31BA5B63CB3A7B5B13")
 
-
     private  ActivityThread mActivityThread;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.649 -0500", hash_original_field = "53E7F236534820E587C70C7DF0584A56", hash_generated_field = "03043EB7A9D0FD1622717AEEB39E2C26")
 
@@ -190,7 +182,6 @@ private static String combineLibs(String[] list1, String[] list2) {
     private Application mApplication;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.683 -0500", hash_original_field = "0A4432238F976FB7ACD5B70737D9960E", hash_generated_field = "DA02F0E61096FE1235CD218F7663F0B5")
 
-
     private final HashMap<Context, HashMap<BroadcastReceiver, LoadedApk.ReceiverDispatcher>> mReceivers
         = new HashMap<Context, HashMap<BroadcastReceiver, LoadedApk.ReceiverDispatcher>>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.685 -0500", hash_original_field = "2555A38A50AD7E8596EDF6F296664ECA", hash_generated_field = "351CD2B4585AE8D79380314A857D1433")
@@ -206,7 +197,6 @@ private static String combineLibs(String[] list1, String[] list2) {
     private final HashMap<Context, HashMap<ServiceConnection, LoadedApk.ServiceDispatcher>> mUnboundServices
         = new HashMap<Context, HashMap<ServiceConnection, LoadedApk.ServiceDispatcher>>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.693 -0500", hash_original_field = "5AEC4BBC7EEA13395C3D634E331479A9", hash_generated_field = "5AEC4BBC7EEA13395C3D634E331479A9")
-
 
     int mClientCount = 0;
 
@@ -726,15 +716,12 @@ public final IServiceConnection forgetServiceDispatcher(Context context,
             }
         }
     }
-
     
     private static class WarningContextClassLoader extends ClassLoader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.723 -0500", hash_original_field = "420BA71627E89190BAB1B4A156A5B266", hash_generated_field = "18C8FDAD6849519506E4721838FB6A98")
 
-
         private static boolean warned = false;
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.778 -0400", hash_original_method = "97527CB182747C5C8FA8F44BB3951504", hash_generated_method = "97527CB182747C5C8FA8F44BB3951504")
         public WarningContextClassLoader ()
         {
@@ -813,12 +800,9 @@ private void warn(String methodName) {
             getParent().clearAssertionStatus();
         }
     }
-
-
     
     static final class ReceiverDispatcher {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.791 -0500", hash_original_field = "0D585D8E93CD584D754FB90606C97421", hash_generated_field = "0D585D8E93CD584D754FB90606C97421")
-
 
          IIntentReceiver.Stub mIIntentReceiver;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.793 -0500", hash_original_field = "82183838DCCDFF42E01D0AB1ACA812C8", hash_generated_field = "82183838DCCDFF42E01D0AB1ACA812C8")
@@ -931,7 +915,6 @@ public void performReceive(Intent intent, int resultCode,
                 }
             }
         }
-
         
         final static class InnerReceiver extends IIntentReceiver.Stub {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.778 -0500", hash_original_field = "721B40B341053DEDB330105D58454B08", hash_generated_field = "721B40B341053DEDB330105D58454B08")
@@ -978,11 +961,8 @@ public void performReceive(Intent intent, int resultCode,
                     }
                 }
             }
-
             
         }
-
-
         
         final class Args extends BroadcastReceiver.PendingResult implements Runnable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.813 -0500", hash_original_field = "5953D762DB3CEE40DA100DC8C3CCA6C2", hash_generated_field = "BA12ECC45F316CCCFC0A85600BB7100C")
@@ -1054,15 +1034,10 @@ public void run() {
                     finish();
                 }
             }
-
             
         }
-
-
         
     }
-
-
     
     static final class ServiceDispatcher {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.858 -0500", hash_original_field = "09DC230EE2E3FD51D6C702827F48BC00", hash_generated_field = "6D6E935A66D24BF635EDCC1459563037")
@@ -1085,17 +1060,14 @@ public void run() {
         private  int mFlags;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.873 -0500", hash_original_field = "58544628E5BE550D471A74AD3D2D8C34", hash_generated_field = "2749116703DB7B9FDA806F989CF22E90")
 
-
         private RuntimeException mUnbindLocation;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.875 -0500", hash_original_field = "8A82EAE34C3EC2568E1222500C2DD0B8", hash_generated_field = "E7960A883D3F26E3E35C03E35CAA56E5")
-
 
         private boolean mDied;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.877 -0500", hash_original_field = "8A69ACD90223C7C20F66A3AFE6F53D2F", hash_generated_field = "5DE8D58700C695344224A4434DF9E91B")
 
         private boolean mForgotten;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.898 -0500", hash_original_field = "F97A7ACEB6AC09F8A8B14FA27F8455D1", hash_generated_field = "B2C433E68D38D7E4C3190DDDA91A488A")
-
 
         private final HashMap<ComponentName, ServiceDispatcher.ConnectionInfo> mActiveConnections
             = new HashMap<ComponentName, ServiceDispatcher.ConnectionInfo>();
@@ -1272,7 +1244,6 @@ public void doConnected(ComponentName name, IBinder service) {
 public void doDeath(ComponentName name, IBinder service) {
             mConnection.onServiceDisconnected(name);
         }
-
         
         private static class ConnectionInfo {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.881 -0500", hash_original_field = "FC5BAA062604D7264D40DD8AC68154EA", hash_generated_field = "FC5BAA062604D7264D40DD8AC68154EA")
@@ -1282,17 +1253,13 @@ public void doDeath(ComponentName name, IBinder service) {
 
             IBinder.DeathRecipient deathMonitor;
             
-            @DSModeled(DSC.BAN)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.808 -0400", hash_original_method = "1536CD23A1F6D2B518F8B5E1999BC949", hash_generated_method = "1536CD23A1F6D2B518F8B5E1999BC949")
             public ConnectionInfo ()
             {
                 //Synthesized constructor
             }
 
-
         }
-
-
         
         private static class InnerConnection extends IServiceConnection.Stub {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.888 -0500", hash_original_field = "1DB9DDA8F9F99F15ABD03B8E39D3C3BD", hash_generated_field = "1DB9DDA8F9F99F15ABD03B8E39D3C3BD")
@@ -1313,15 +1280,11 @@ public void connected(ComponentName name, IBinder service) throws RemoteExceptio
                     sd.connected(name, service);
                 }
             }
-
             
         }
-
-
         
         private final class RunConnection implements Runnable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.943 -0500", hash_original_field = "A464C2842626F7EA212C2BFED22D6A29", hash_generated_field = "A464C2842626F7EA212C2BFED22D6A29")
-
 
              ComponentName mName;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.945 -0500", hash_original_field = "CC72E7E45ED0871AEF8710E69E6BA621", hash_generated_field = "CC72E7E45ED0871AEF8710E69E6BA621")
@@ -1347,15 +1310,11 @@ public void run() {
                     doDeath(mName, mService);
                 }
             }
-
             
         }
-
-
         
         private final class DeathMonitor implements IBinder.DeathRecipient {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.958 -0500", hash_original_field = "A464C2842626F7EA212C2BFED22D6A29", hash_generated_field = "A464C2842626F7EA212C2BFED22D6A29")
-
 
              ComponentName mName;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.960 -0500", hash_original_field = "CC72E7E45ED0871AEF8710E69E6BA621", hash_generated_field = "CC72E7E45ED0871AEF8710E69E6BA621")
@@ -1373,15 +1332,10 @@ DeathMonitor(ComponentName name, IBinder service) {
 public void binderDied() {
                 death(mName, mService);
             }
-
             
         }
-
-
         
     }
-
-
     
 }
 

@@ -17,13 +17,7 @@ import java.util.ListIterator;
 
 import javax.sip.header.Header;
 
-
-
-
-
-
 public abstract class SIPHeaderList<HDR extends SIPHeader> extends SIPHeader implements java.util.List<HDR>, Header {
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.748 -0500", hash_original_method = "3479D46A175E4E7E02958E37278BD36E", hash_generated_method = "7BD48B92D903DC8EF08046D5E59526DD")
     
@@ -32,16 +26,13 @@ public static void setPrettyEncode(boolean flag) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.568 -0500", hash_original_field = "3E6654B574B7B146FB19CF38092BC78D", hash_generated_field = "F24392C13A6D95700264E5A997197264")
 
-
     private static boolean prettyEncode = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.572 -0500", hash_original_field = "4353EE1013E3359C24F2F7A43652CFED", hash_generated_field = "1610EB574C9A048E3BE2EA98FBE15AF1")
 
     protected List<HDR> hlist;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.574 -0500", hash_original_field = "43B2ABA48E81AE0750B9B4971CAD7379", hash_generated_field = "7DDB65A0A435AAFCBC63AD9D687C490F")
 
-
     private Class<HDR> myClass;
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.580 -0500", hash_original_method = "D7E30AE5F54C678856B1E2B4E08FADF6", hash_generated_method = "1B375F3151E47402C3A2F26A1EB13D02")
     
@@ -138,8 +129,6 @@ public void concatenate(SIPHeaderList<HDR> other, boolean topFlag)
         }
 
     }
-
-
 
     /**
      * Encode a list of sip headers. Headers are returned in cannonical form.
@@ -481,7 +470,6 @@ public boolean match(SIPHeaderList<?> template) {
         }
     }
 
-
     /**
      * make a clone of this header list.
      *
@@ -589,9 +577,6 @@ public boolean containsAll(Collection<?> collection) {
         return this.hlist.containsAll(collection);
     }
 
-
-
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.695 -0500", hash_original_method = "D791B8D331C82850017A4DF87B2D73FE", hash_generated_method = "DD48FCDD38D43309D1E9BD10583894DA")
     
 public void clear() {
@@ -603,7 +588,6 @@ public void clear() {
 public boolean contains(Object header) {
         return this.hlist.contains(header);
     }
-
 
     /**
      * Get the object at the specified location.
@@ -694,7 +678,6 @@ public boolean removeAll(java.util.Collection<?> collection) {
         return this.hlist.removeAll(collection);
     }
 
-
     /**
      * @see List#retainAll(java.util.Collection)
      * @param collection
@@ -740,9 +723,7 @@ public HDR set(int position, HDR sipHeader) {
         return hlist.set(position, sipHeader);
 
     }
-
-    
-        @DSModeled(DSC.SAFE)
+        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.339 -0400", hash_original_method = "B04CD19C0316B320C5B66A678FB2994B", hash_generated_method = "913F231D737BF10A7AB8B832C5BAA111")
     public <T> T[] toArray(T[] array) {
         addTaint(array[0].getTaint());

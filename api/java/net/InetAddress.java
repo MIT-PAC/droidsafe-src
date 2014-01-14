@@ -35,10 +35,6 @@ import libcore.io.Memory;
 import libcore.io.StructAddrinfo;
 import dalvik.system.BlockGuard;
 
-
-
-
-
 public class InetAddress implements Serializable {
 
     /**
@@ -426,13 +422,11 @@ private static byte[] ipv4MappedToIPv4(byte[] mappedAddress) {
     private static final AddressCache addressCache = new AddressCache();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.198 -0500", hash_original_field = "C90A358F9020B90EC2F318C027EBE50C", hash_generated_field = "D810DA6D1E5ECCA9B74B4757EAD39B08")
 
-
     private static final long serialVersionUID = 3286316764910316507L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.208 -0500", hash_original_field = "848C801A8B22D5A47B6F2AACCDFAF7C4", hash_generated_field = "119C92FDA430C8C47E72137BCDA943A4")
 
     public static final InetAddress UNSPECIFIED = new InetAddress(AF_UNSPEC, null, null);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.323 -0500", hash_original_field = "9BC29E296D6746AF176C53F70F3E06D8", hash_generated_field = "550C29BECD712FE70617B34B15180466")
-
 
     private static final ObjectStreamField[] serialPersistentFields = {
         new ObjectStreamField("address", int.class),
@@ -441,14 +435,11 @@ private static byte[] ipv4MappedToIPv4(byte[] mappedAddress) {
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.200 -0500", hash_original_field = "C09CA1CD37DDEDAAB2023089C696B143", hash_generated_field = "630495C0099FA460C912B67A0FCAD3C7")
 
-
     private int family;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.203 -0500", hash_original_field = "90EA25AB4D338372155DC6F7EC59D04E", hash_generated_field = "90EA25AB4D338372155DC6F7EC59D04E")
 
-
     byte[] ipaddress;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.205 -0500", hash_original_field = "1B7A53B08CE768344D84B69A12503624", hash_generated_field = "1B7A53B08CE768344D84B69A12503624")
-
 
     @DSVAModeled
     String hostName;
@@ -736,9 +727,7 @@ public boolean isSiteLocalAddress() {
 public boolean isReachable(int timeout) throws IOException {
         return isReachable(null, 0, timeout);
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.773 -0400", hash_original_method = "A1A0F0207714140D12E9E4AE2187615D", hash_generated_method = "DA703A9943F73B00CF0C811D2AFDC4FE")
     public boolean isReachable(NetworkInterface networkInterface, final int ttl, final int timeout) throws IOException {
         addTaint(timeout);

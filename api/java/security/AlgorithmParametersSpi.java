@@ -8,10 +8,6 @@ import java.io.IOException;
 import java.security.spec.AlgorithmParameterSpec;
 import java.security.spec.InvalidParameterSpecException;
 
-
-
-
-
 public abstract class AlgorithmParametersSpi {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.769 -0400", hash_original_method = "0323D51824F6B2D78575D923F8282326", hash_generated_method = "0323D51824F6B2D78575D923F8282326")
@@ -67,9 +63,7 @@ protected abstract void engineInit(byte[] params) throws IOException;
     
 protected abstract void engineInit(byte[] params, String format)
             throws IOException;
-
     
-    @DSModeled(DSC.SAFE)
     protected abstract <T extends AlgorithmParameterSpec> T engineGetParameterSpec(
             Class<T> paramSpec) throws InvalidParameterSpecException;
 
@@ -111,7 +105,6 @@ protected abstract byte[] engineGetEncoded(String format)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.610 -0500", hash_original_method = "239E82FF12564536AD4240443AF0BE5A", hash_generated_method = "9DBF754E255E71C13F2322E202B70420")
     
 protected abstract String engineToString();
-
     
 }
 

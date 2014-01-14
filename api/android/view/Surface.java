@@ -16,29 +16,17 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Log;
 
-
-
-
-
 public class Surface implements Parcelable {
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeClassInit() {
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static void freezeDisplay(int display) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static void unfreezeDisplay(int display) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static void setOrientation(int display, int orientation, int flags) {
     }
 
@@ -53,26 +41,18 @@ public class Surface implements Parcelable {
 public static void setOrientation(int display, int orientation) {
         setOrientation(display, orientation, 0);
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static Bitmap screenshot(int width, int height) {
     	return BitmapFactory.decodeByteArray(new byte[0], 0, width * height);
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static Bitmap screenshot(int width, int height, int minLayer, int maxLayer) {
     	return BitmapFactory.decodeByteArray(new byte[0], 0, width * height);
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static void openTransaction() {
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static void closeTransaction() {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:28.439 -0500", hash_original_field = "3E83BDCB6CEB6B91DAF9848C410877B8", hash_generated_field = "E865BFAE544CB63FF109B25F41991E5B")
@@ -95,7 +75,6 @@ public static void setOrientation(int display, int orientation) {
     public static final int ROTATION_270     = 3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:28.494 -0500", hash_original_field = "CC8E8B23CFBF46E6BB1ED236604F2279", hash_generated_field = "1B646F34581AE9A38B9D7528F7E82375")
 
-
     /* flags used in constructor (keep in sync with ISurfaceComposer.h) */
 
     /** Surface is created hidden @hide */
@@ -114,7 +93,6 @@ public static void setOrientation(int display, int orientation) {
     public static final int PROTECTED_APP       = 0x00000800;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:28.507 -0500", hash_original_field = "57B29765DE6C9E12B3B6C7A277225B22", hash_generated_field = "4903ED7CA3A87D516237C30FB0326B52")
 
-
     /** Creates a normal surface. This is the default. @hide */
     public static final int FX_SURFACE_NORMAL   = 0x00000000;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:28.511 -0500", hash_original_field = "51E50AE1A4EA51C9ED668E145ADE84E6", hash_generated_field = "B41A8A674D59D1BA27FDF13A7BE1EE34")
@@ -131,7 +109,6 @@ public static void setOrientation(int display, int orientation) {
 
     public static final int FX_SURFACE_MASK     = 0x000F0000;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:28.521 -0500", hash_original_field = "B4D4132B09EA747FE6DF3ACDC302C6E1", hash_generated_field = "D5926B412B163E90AC7C1A09A1576E7A")
-
     
     /** Hide the surface. Equivalent to calling hide(). @hide */
     public static final int SURFACE_HIDDEN    = 0x01;
@@ -194,7 +171,6 @@ public Surface[] newArray(int size) {
     // non compatibility mode.
     private Matrix mCompatibleMatrix;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:28.545 -0500", hash_original_field = "5899EFB334D82C3E1B70A05D99D2EB90", hash_generated_field = "3D60FB93273F748E494C53BEB8064D29")
-
 
     private Exception mCreationStack;
 
@@ -277,7 +253,6 @@ private Surface(Parcel source) throws OutOfResourcesException {
     	return getTaintBoolean();
     }
 
-
     /** Release the local reference to the server-side surface.  
      * Always call release() when you're done with a Surface. This will
      * make the surface invalid.
@@ -287,7 +262,6 @@ private Surface(Parcel source) throws OutOfResourcesException {
     public void release(){
     	//Formerly a native method
     }
-
 
     /** draw into a surface */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:28.465 -0500", hash_original_method = "F02785EB89A3C576418753FA8D7724E3", hash_generated_method = "D05FA6BA1BF2FAD8E887D4C5FE8C9DAF")
@@ -309,7 +283,6 @@ public Canvas lockCanvas(Rect dirty) throws OutOfResourcesException, IllegalArgu
     	addTaint(canvas.getTaint());
     }
 
-
     /** 
      * unlock the surface. the screen won't be updated until
      * post() or postAll() is called
@@ -320,7 +293,6 @@ public Canvas lockCanvas(Rect dirty) throws OutOfResourcesException, IllegalArgu
     	//Formerly a native method
     	addTaint(canvas.getTaint());
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:28.475 -0500", hash_original_method = "FD610F755B3A8168C37DFBCC26EDD5A5", hash_generated_method = "54AB5DF9C4117B8784EF6101A4996B57")
     
@@ -350,7 +322,6 @@ public int describeContents() {
     	addTaint(flags);
     }
 
-
     /**
      * Copy another surface to this one.  This surface now holds a reference
      * to the same data as the original surface, and is -not- the owner.
@@ -367,7 +338,6 @@ public int describeContents() {
     	addTaint(o.getTaint());
     }
 
-
     /**
      * Transfer the native state from 'o' to this surface, releasing it
      * from 'o'.  This is for use in the client side for drawing into a
@@ -382,7 +352,6 @@ public int describeContents() {
     	//Formerly a native method
     	addTaint(o.getTaint());
     }
-
 
     /** @hide */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:28.571 -0500", hash_original_method = "4CE5C8D563EAB7D0D818407349F1750B", hash_generated_method = "CB5C5102ADE60B37D98C7F6F69F9726C")
@@ -404,7 +373,6 @@ void setCompatibilityTranslator(Translator translator) {
             mCompatibleMatrix.setScale(appScale, appScale);
         }
     }
-
     
     public static class OutOfResourcesException extends Exception {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:28.487 -0500", hash_original_method = "61F4EF1E830289140B20E24C64AAB8C1", hash_generated_method = "61E15EE14C5CBDE674C8414A5D82F699")
@@ -416,11 +384,8 @@ public OutOfResourcesException() {
 public OutOfResourcesException(String name) {
             super(name);
         }
-
         
     }
-
-
     
     private class CompatibleCanvas extends Canvas {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:28.573 -0500", hash_original_field = "8524719924A3573CC4E02450270F3A29", hash_generated_field = "379D1DE57EE71D7AC75E059FE9ADC328")
@@ -480,7 +445,6 @@ public OutOfResourcesException(String name) {
             }
             mOrigMatrix.set(m);
         }
-
         
     }
     
@@ -491,10 +455,7 @@ public OutOfResourcesException(String name) {
     public void destroy(){
     	//Formerly a native method
     }
-
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:54.826 -0400", hash_original_method = "187F763AA53C0F8EE9F854FE8C7B0DA2", hash_generated_method = "0FF923E44844D20FE339E44DC3CFAC90")
     private Canvas lockCanvasNative(Rect dirty) {
     	return new Canvas();
@@ -601,7 +562,6 @@ public void setPosition(int x, int y) { setPosition((float)x, (float)y); }
     	addTaint(mask);
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:28.684 -0500", hash_original_method = "1BAE2B05EDDA8E2427743FE96FA46E82", hash_generated_method = "38D56802FE40307751E55D69AFDE7EA9")
     
 @Override
@@ -638,14 +598,12 @@ public void setPosition(int x, int y) { setPosition((float)x, (float)y); }
     	addTaint(flags);
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:28.693 -0500", hash_original_method = "F10A64920BEF86A35D10AFBE49D37C12", hash_generated_method = "4B2B3F5E9DC41B18919C903B236F7CD8")
     
     private void init(Parcel source){
     	//Formerly a native method
     	addTaint(source.getTaint());
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:28.696 -0500", hash_original_method = "EBFCAC1A806E7105045857BE7B671E13", hash_generated_method = "78A2DEAE5432D736544DB5B6C5BD3BC8")
     

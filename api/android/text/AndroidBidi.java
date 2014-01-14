@@ -6,8 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.text.Layout.Directions;
 
-
-
 import droidsafe.helpers.DSUtils;
 
 class AndroidBidi {
@@ -164,9 +162,7 @@ public static Directions directions(int dir, byte[] levels, int lstart,
         }
         return new Directions(ld);
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int runBidi(int dir, char[] chs, byte[] chInfo, int n, boolean haveInfo) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1809432656 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1809432656;
@@ -177,7 +173,6 @@ public static Directions directions(int dir, byte[] levels, int lstart,
     {
         //Synthesized constructor
     }
-
     
 }
 

@@ -33,10 +33,6 @@ import android.widget.RemoteViews;
 import android.widget.RemoteViewsAdapter.RemoteAdapterConnectionCallback;
 import android.widget.TextView;
 
-
-
-
-
 public class AppWidgetHostView extends FrameLayout {
 
     /**
@@ -99,7 +95,6 @@ public static Rect getDefaultPaddingForWidget(Context context, ComponentName com
     static final boolean CROSSFADE = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:55.223 -0500", hash_original_field = "A433FEFB2165ED723E4749A4FD28A8E6", hash_generated_field = "F7AD4C73992CA1A17A3596C10DDFACE4")
 
-
     static final int VIEW_MODE_NOINIT = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:55.227 -0500", hash_original_field = "AAAE873E4D5D3B2BBD6A2F85CBEA76B8", hash_generated_field = "9A2971924F7CDB718A46A8A14A2164BF")
 
@@ -111,7 +106,6 @@ public static Rect getDefaultPaddingForWidget(Context context, ComponentName com
 
     static final int VIEW_MODE_DEFAULT = 3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:55.236 -0500", hash_original_field = "292A865B82BE52F595A5567827D8A4A4", hash_generated_field = "4ED03503C05C610B1278DF7F858B3167")
-
 
     static final int FADE_DURATION = 1000;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:21.916 -0400", hash_original_field = "AB1AD5AD9EFC37F946612C1704046BB6", hash_generated_field = "A5276D8BCCAE3AF74C059FB37DDF3DEF")
@@ -125,20 +119,16 @@ public static Rect getDefaultPaddingForWidget(Context context, ComponentName com
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_681207852 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_681207852;
             
-            
         }
-
         
 };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:55.247 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "B997E37019471EC8FC5B98148C7A8AD7")
-
 
     Context mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:55.250 -0500", hash_original_field = "2398AF174D0AD1B38433EB4F0C3826A9", hash_generated_field = "2398AF174D0AD1B38433EB4F0C3826A9")
 
     Context mRemoteContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:55.253 -0500", hash_original_field = "C187677719C4391D45C59B42615D4AC2", hash_generated_field = "C187677719C4391D45C59B42615D4AC2")
-
 
     int mAppWidgetId;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:55.256 -0500", hash_original_field = "1435437DCA238203A550D7FEA268A3A7", hash_generated_field = "1435437DCA238203A550D7FEA268A3A7")
@@ -254,10 +244,8 @@ private int generateId() {
 
         super.dispatchRestoreInstanceState(jail);
     }
-
     
     private static class ParcelableSparseArray extends SparseArray<Parcelable> implements Parcelable {
-
         
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.705 -0400", hash_original_field = "F5815BC7A5C9A6B88AFFA57767233EFB", hash_generated_field = "B3F10EB5585E69660D628228707CD0EE")
 
@@ -282,7 +270,6 @@ public ParcelableSparseArray[] newArray(int size) {
                     }
                 };
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.704 -0400", hash_original_method = "545E9F4FFC3CA9F22ED723B298F0D3D0", hash_generated_method = "545E9F4FFC3CA9F22ED723B298F0D3D0")
         public ParcelableSparseArray ()
         {

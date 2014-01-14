@@ -5,9 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public final class Matcher implements MatchResult {
@@ -34,72 +31,48 @@ public static String quoteReplacement(String s) {
         }
         return result.toString();
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void closeImpl(int addr) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean findImpl(int addr, String s, int startIndex, int[] offsets) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean findNextImpl(int addr, String s, int[] offsets) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int groupCountImpl(int addr) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean hitEndImpl(int addr) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean lookingAtImpl(int addr, String s, int[] offsets) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean matchesImpl(int addr, String s, int[] offsets) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int openImpl(int patternAddr) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean requireEndImpl(int addr) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void setInputImpl(int addr, String s, int start, int end) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void useAnchoringBoundsImpl(int addr, boolean value) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void useTransparentBoundsImpl(int addr, boolean value) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:01.253 -0500", hash_original_field = "6E570AE90FE80F8D699376520DF9AF12", hash_generated_field = "F8E35FE12BF69D119F3D49E111B1D9A2")
@@ -772,7 +745,6 @@ public boolean hitEnd() {
             super.finalize();
         }
     }
-
     
 }
 

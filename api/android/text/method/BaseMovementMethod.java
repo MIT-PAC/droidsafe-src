@@ -11,12 +11,8 @@ import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.widget.TextView;
 
-
-
-
 public class BaseMovementMethod implements MovementMethod {
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.048 -0400", hash_original_method = "1DE84F8ABE7124ECFD52F353C5E545C4", hash_generated_method = "1DE84F8ABE7124ECFD52F353C5E545C4")
     public BaseMovementMethod ()
     {
@@ -749,7 +745,6 @@ protected boolean scrollLineEnd(TextView widget, Spannable buffer) {
         }
         return false;
     }
-
     
 }
 

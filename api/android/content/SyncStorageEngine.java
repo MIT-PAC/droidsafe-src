@@ -39,11 +39,6 @@ import com.android.internal.os.AtomicFile;
 import com.android.internal.util.ArrayUtils;
 import com.android.internal.util.FastXmlSerializer;
 
-
-
-
-
-
 public class SyncStorageEngine extends Handler {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.514 -0500", hash_original_method = "58FD7F74769293884900EBFE03B846A6", hash_generated_method = "EDCD8FBCAA16348D40B8B9F9F083F588")
@@ -145,10 +140,8 @@ static private Bundle unflattenBundle(byte[] flatData) {
     private static final boolean DEBUG_FILE = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.311 -0500", hash_original_field = "0445B59DD94F41D04F820757FD0B7CFB", hash_generated_field = "38BF0EF4E89A3CF4939612B4A041EE55")
 
-
     private static final long DEFAULT_POLL_FREQUENCY_SECONDS = 60 * 60 * 24;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.313 -0500", hash_original_field = "B18E815C9163DB4A570F9575063544B3", hash_generated_field = "C007E49498DCD7D8957EDD3DF172B6AA")
-
 
     // @VisibleForTesting
     static final long MILLIS_IN_4WEEKS = 1000L * 60 * 60 * 24 * 7 * 4;
@@ -179,10 +172,8 @@ static private Bundle unflattenBundle(byte[] flatData) {
     public static final int SOURCE_PERIODIC = 4;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.335 -0500", hash_original_field = "8A5A60E1D83BF5C034C1BA2FA65938F5", hash_generated_field = "42B3B227F06616C376E0F38E8CD1D857")
 
-
     public static final long NOT_IN_BACKOFF_MODE = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.338 -0500", hash_original_field = "ED8888F2D853B2981403071E61FE4C83", hash_generated_field = "CA0D4D8E029CF4F0FC382E8F90A0D776")
-
 
     public static final Intent SYNC_CONNECTION_SETTING_CHANGED_INTENT =
             new Intent("com.android.sync.SYNC_CONN_STATUS_CHANGED");
@@ -202,10 +193,8 @@ static private Bundle unflattenBundle(byte[] flatData) {
     public static final String MESG_CANCELED = "canceled";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.347 -0500", hash_original_field = "B69E3C0685419F783632213E33AB6D51", hash_generated_field = "1B46D2BF183174FBED706FF3C2DF798D")
 
-
     public static final int MAX_HISTORY = 100;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.349 -0500", hash_original_field = "41F9095680C49F0C28C0E7D718B24B1B", hash_generated_field = "2655E18C83B5F3B5454E37E1D43F3E2C")
-
 
     private static final int MSG_WRITE_STATUS = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.352 -0500", hash_original_field = "B1C9999D7407F25794EB4CCF5DE60589", hash_generated_field = "4EA8DDD188FF4C168E89C66E59773587")
@@ -213,13 +202,11 @@ static private Bundle unflattenBundle(byte[] flatData) {
     private static final long WRITE_STATUS_DELAY = 1000*60*10;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.354 -0500", hash_original_field = "09C31F08512C33F6701CC5A4218A3863", hash_generated_field = "D7E2178F8C402B9173FFA3D315D94038")
 
-
     private static final int MSG_WRITE_STATISTICS = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.357 -0500", hash_original_field = "59D219C64ADB2F924BC4158959C22048", hash_generated_field = "20B3D5C604D6B06F3D714BB832758FDC")
 
     private static final long WRITE_STATISTICS_DELAY = 1000*60*30;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.360 -0500", hash_original_field = "5797BC0660FF9675692D0C1C8D82B0B0", hash_generated_field = "D424F9AD9A99C5564E56756A063DF4E4")
-
 
     private static final boolean SYNC_ENABLED_DEFAULT = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.362 -0500", hash_original_field = "1E39409E862F9C0BB5588863B87FA0B9", hash_generated_field = "BCB1DEDD10667E8F9144B92B5AF4FB3C")
@@ -227,10 +214,8 @@ static private Bundle unflattenBundle(byte[] flatData) {
     private static final int ACCOUNTS_VERSION = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.364 -0500", hash_original_field = "651D1040C1E8E6D0E6223B68216AA795", hash_generated_field = "E829F19290AD6F16651117D8A72DC792")
 
-
     private static HashMap<String, String> sAuthorityRenames;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.491 -0500", hash_original_field = "26D22494CCDF53F584B358E3E8C5A58C", hash_generated_field = "30DA75A8F03960BB79F751A463A3C81A")
-
 
     private static volatile SyncStorageEngine sSyncStorageEngine = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.503 -0500", hash_original_field = "3CB842CFC826327677169E50F171CF05", hash_generated_field = "1AA6B4A5916CCA9E00BCD79C3BA829B9")
@@ -238,17 +223,14 @@ static private Bundle unflattenBundle(byte[] flatData) {
     private static final int PENDING_FINISH_TO_WRITE = 4;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.685 -0500", hash_original_field = "5BEF0F3C407D803FFE34B0A374E19EF3", hash_generated_field = "29DD7B46231A8851E3979ED054714BB2")
 
-
     public static final int STATUS_FILE_END = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.687 -0500", hash_original_field = "E2846C0B08C9948BE57576FD62ACDAE3", hash_generated_field = "3AD83470903C387E8F900C23B2FF2EA8")
 
     public static final int STATUS_FILE_ITEM = 100;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.694 -0500", hash_original_field = "24DA76DB947CEA389781C2E032045D96", hash_generated_field = "197263DC5593D605C8462C10EBA64119")
 
-
     public static final int PENDING_OPERATION_VERSION = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.713 -0500", hash_original_field = "86FF9BB6265922CD394631BF679D5C61", hash_generated_field = "C17775889B02E738EED29EAE10B23BE8")
-
 
     public static final int STATISTICS_FILE_END = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.715 -0500", hash_original_field = "6228E8EC576A8CCC859757C18570D997", hash_generated_field = "0293436725092F127B986477871B7112")
@@ -263,35 +245,28 @@ static private Bundle unflattenBundle(byte[] flatData) {
             new SparseArray<AuthorityInfo>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.464 -0500", hash_original_field = "20FD7D843A90C90E4747485CD2A9D2D6", hash_generated_field = "4B36B4FEA0D3DAD8CB7109B7DAFD4F0B")
 
-
     private final HashMap<Account, AccountInfo> mAccounts =
         new HashMap<Account, AccountInfo>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.466 -0500", hash_original_field = "56D3447B645CA9E486D9F636BC376724", hash_generated_field = "9061F8B36C87BD05CB7B61BC05EEA80D")
-
 
     private final ArrayList<PendingOperation> mPendingOperations =
             new ArrayList<PendingOperation>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.468 -0500", hash_original_field = "C65A16C9595357E7621D1C67987B5111", hash_generated_field = "17DF250BDACB991A8443A6BC974E4CEF")
 
-
     private final ArrayList<SyncInfo> mCurrentSyncs = new ArrayList<SyncInfo>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.471 -0500", hash_original_field = "B68219C0A19E36A5261490447BA79367", hash_generated_field = "BB2BD481DA5E1951BA328BC00E9DDD6F")
-
 
     private final SparseArray<SyncStatusInfo> mSyncStatus =
             new SparseArray<SyncStatusInfo>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.473 -0500", hash_original_field = "C74B3FE2287EA2BD0D88BA1FD16DD5F5", hash_generated_field = "6703D3447B5F81BE530922662FF9E2F7")
 
-
     private final ArrayList<SyncHistoryItem> mSyncHistory =
             new ArrayList<SyncHistoryItem>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.476 -0500", hash_original_field = "14983DF3E6833A27F9CFDD5794238834", hash_generated_field = "A61DFE30C0F235AC0390EF8C97D18E24")
 
-
     private final RemoteCallbackList<ISyncStatusObserver> mChangeListeners
             = new RemoteCallbackList<ISyncStatusObserver>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.478 -0500", hash_original_field = "7917E01A6FAE22986291ABA5BC5E419E", hash_generated_field = "2AE16416F500BFCB1C37E3AB89C8BDC4")
-
 
     private int mNextAuthorityId = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.480 -0500", hash_original_field = "8C65ED2EB530566BC159DB582EBF3D92", hash_generated_field = "02779B60A3F80DE35E35BF0C5E0C43DC")
@@ -307,7 +282,6 @@ static private Bundle unflattenBundle(byte[] flatData) {
 
     private int mYearInDays;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.488 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
-
 
     private  Context mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.493 -0500", hash_original_field = "F4D78D324419E3CB35397814995DA33F", hash_generated_field = "5D75657BE40E89D85D7C2D95C6C03670")
@@ -326,7 +300,6 @@ static private Bundle unflattenBundle(byte[] flatData) {
 
     private int mNumPendingFinished = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.507 -0500", hash_original_field = "B8BE376F03A383F61F17E96300A7F924", hash_generated_field = "F7ED6F40F4F31B59A250911223633F4B")
-
 
     private int mNextHistoryId = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.509 -0500", hash_original_field = "9543951C6817EDD30A63B00CF9A421AC", hash_generated_field = "EBA144569AB4B50BF3932F380E591D51")
@@ -1047,7 +1020,6 @@ public void removeActiveSync(SyncInfo syncInfo) {
 public void reportActiveChange() {
         reportChange(ContentResolver.SYNC_OBSERVER_TYPE_ACTIVE);
     }
-
     
     public static class PendingOperation {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.368 -0500", hash_original_field = "9D630FBF90643CC60961CCF48FECCA0B", hash_generated_field = "9D630FBF90643CC60961CCF48FECCA0B")
@@ -1066,7 +1038,6 @@ public void reportActiveChange() {
 
          boolean expedited;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.379 -0500", hash_original_field = "B11D0145EE299937169261FF5464F8E6", hash_generated_field = "B11D0145EE299937169261FF5464F8E6")
-
 
         int authorityId;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.381 -0500", hash_original_field = "CCB24DDC55B05A8A59BF27C8C026E7C2", hash_generated_field = "CCB24DDC55B05A8A59BF27C8C026E7C2")
@@ -1095,11 +1066,8 @@ PendingOperation(PendingOperation other) {
             this.authorityId = other.authorityId;
             this.expedited = other.expedited;
         }
-
         
     }
-
-
     
     static class AccountInfo {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.391 -0500", hash_original_field = "9D630FBF90643CC60961CCF48FECCA0B", hash_generated_field = "9D630FBF90643CC60961CCF48FECCA0B")
@@ -1115,11 +1083,8 @@ PendingOperation(PendingOperation other) {
 AccountInfo(Account account) {
             this.account = account;
         }
-
         
     }
-
-
     
     public static class AuthorityInfo {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.400 -0500", hash_original_field = "9D630FBF90643CC60961CCF48FECCA0B", hash_generated_field = "9D630FBF90643CC60961CCF48FECCA0B")
@@ -1163,11 +1128,8 @@ AuthorityInfo(Account account, String authority, int ident) {
             periodicSyncs = new ArrayList<Pair<Bundle, Long>>();
             periodicSyncs.add(Pair.create(new Bundle(), DEFAULT_POLL_FREQUENCY_SECONDS));
         }
-
         
     }
-
-
     
     public static class SyncHistoryItem {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.425 -0500", hash_original_field = "B11D0145EE299937169261FF5464F8E6", hash_generated_field = "B11D0145EE299937169261FF5464F8E6")
@@ -1204,10 +1166,7 @@ AuthorityInfo(Account account, String authority, int ident) {
             //Synthesized constructor
         }
 
-
     }
-
-
     
     public static class DayStats {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:43.446 -0500", hash_original_field = "7B9E331B9FA77276F82C941B252DC90D", hash_generated_field = "0E9628A682BEC1AED9AC9EDA1BF2C9CB")
@@ -1231,7 +1190,6 @@ AuthorityInfo(Account account, String authority, int ident) {
 public DayStats(int day) {
             this.day = day;
         }
-
         
     }
 
@@ -1945,9 +1903,7 @@ private void parseExtra(XmlPullParser parser, Pair<Bundle, Long> periodicSync) {
             Log.e(TAG, "error parsing bundle value", e);
         }
     }
-
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:03.120 -0400", hash_original_method = "D0303AA7EB859F30BDBC9813BB120707", hash_generated_method = "456AC6D44877321312D3DB7B70E74378")
     private void writeAccountInfoLocked() {
         if(DEBUG_FILE){ }        FileOutputStream fos = null;

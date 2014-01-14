@@ -6,14 +6,8 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.HashMap;
 
-
-
-
-
-
 public abstract class Schema {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.558 -0500", hash_original_field = "7B9B8D8C65214C1209B9736D13129F13", hash_generated_field = "9FCDE2F85894A1F88D902902F60C43F2")
-
 
 	public static final int M_ANY = 0xFFFFFFFF;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.560 -0500", hash_original_field = "9097721D5F4C408541CA8ACEACBA5D6C", hash_generated_field = "6F158764A73B46F4A4EF45B21BF7FC55")
@@ -27,8 +21,6 @@ public abstract class Schema {
 	public static final int M_ROOT = 1 << 31;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.568 -0500", hash_original_field = "373AB40E918CD93F3D7C0764BA7C902B", hash_generated_field = "BABC86BDE81AF8887C1078673844A155")
 
-
-
 	public static final int F_RESTART = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.571 -0500", hash_original_field = "5791D2EBC58ADAC60C798A72C51DB15E", hash_generated_field = "0FA7AC7F743D988121B9D5FEAB58BEF3")
 
@@ -38,7 +30,6 @@ public abstract class Schema {
 	public static final int F_NOFORCE = 4;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.575 -0500", hash_original_field = "4FF597B40464138A12F1BC703557698C", hash_generated_field = "C61B01F294C72FE231EFE447D1205178")
 
-
 	private HashMap theEntities = 
 		new HashMap();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.577 -0500", hash_original_field = "E6FDB0B1CE111C676317D30A861DB314", hash_generated_field = "2AE92EDACE151B18CC432468ECADC6DB")
@@ -46,7 +37,6 @@ public abstract class Schema {
 	private HashMap theElementTypes = 
 		new HashMap();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.579 -0500", hash_original_field = "D332EB80004BB49BBA7DB7583D6C4F3A", hash_generated_field = "0B2F19732EC7E786F963FECFA20F63AD")
-
 
 	private String theURI = "";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.581 -0500", hash_original_field = "8DA8615272D67B88BD5184E710B07CA7", hash_generated_field = "FC283CC8AA8CD94A57C44DB3DEB67DE7")
@@ -56,7 +46,6 @@ public abstract class Schema {
 
 	private ElementType theRoot = null;
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:43.189 -0400", hash_original_method = "D0D844E899EF8830D95ED807F7DF602A", hash_generated_method = "D0D844E899EF8830D95ED807F7DF602A")
     public Schema ()
     {

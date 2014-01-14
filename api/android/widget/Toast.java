@@ -19,14 +19,8 @@ import android.view.WindowManagerImpl;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityManager;
 
-
-
-
-
 public class Toast {
-
     
-    @DSModeled(DSC.SPEC)
     public static Toast makeText(Context context, CharSequence text, int duration) {
         Toast result = new Toast(context);
         result.addTaint(text.getTaint());
@@ -91,7 +85,6 @@ static private INotificationManager getService() {
     private static INotificationManager sService;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:44.657 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "B997E37019471EC8FC5B98148C7A8AD7")
 
-
      Context mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:44.659 -0500", hash_original_field = "9FD3A39830EF0DBA4B8238391B28165D", hash_generated_field = "9FD3A39830EF0DBA4B8238391B28165D")
 
@@ -103,7 +96,6 @@ static private INotificationManager getService() {
 
     View mNextView;
     
-    @DSModeled(DSC.SAFE)
     public Toast(Context context) {
         mContext = context;
         /*
@@ -112,9 +104,7 @@ static private INotificationManager getService() {
                 com.android.internal.R.dimen.toast_y_offset);
          */
     }
-
     
-    @DSModeled(DSC.SAFE)
     public void show() {
     	/*  DSModel: nothing
         if (mNextView == null) {
@@ -130,9 +120,7 @@ static private INotificationManager getService() {
             // Empty
         }*/
     }
-
     
-    @DSModeled(DSC.SAFE)
     public void cancel() {
         //mTN.hide();
     }
@@ -177,9 +165,7 @@ public void setDuration(int duration) {
 public int getDuration() {
         return mDuration;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public void setMargin(float horizontalMargin, float verticalMargin) {
     	addTaint(horizontalMargin);
     	addTaint(verticalMargin);
@@ -187,28 +173,21 @@ public int getDuration() {
         //mTN.mHorizontalMargin = horizontalMargin;
         //mTN.mVerticalMargin = verticalMargin;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public float getHorizontalMargin() {
         return getTaintFloat();
     }
-
     
-    @DSModeled(DSC.SAFE)
     public float getVerticalMargin() {
     	 return getTaintFloat();
     }
-
     
-    @DSModeled(DSC.SAFE)
     //just spread around 
     public void setGravity(int gravity, int xOffset, int yOffset) {
     	addTaint(gravity);
     	addTaint(xOffset);
     	addTaint(yOffset);
     }
-
     
     private static class TN extends ITransientNotification.Stub {
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:42.956 -0400", hash_original_field = "61DCBB3696F6FA4BE5725088AFF4EB28", hash_generated_field = "6AF3C3B4B49A59D6013EE9E0CE06975A")
@@ -219,7 +198,6 @@ public int getDuration() {
 public void run() {
                 handleShow();
             }
-
             
 };
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:42.956 -0400", hash_original_field = "4A991A7F26DC9B6186AFC4C4EB669FA3", hash_generated_field = "4A646C9F9E760360BE93A3CC889065DC")
@@ -232,18 +210,15 @@ public void run() {
                 // Don't do this in handleHide() because it is also invoked by handleShow()
                 mNextView = null;
             }
-
             
 };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:44.721 -0500", hash_original_field = "BE5239BD4C6005A12F359DFD503635BD", hash_generated_field = "9D5A036E2B4B34FBB053D812B184F194")
-
 
         private final WindowManager.LayoutParams mParams = new WindowManager.LayoutParams();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:44.723 -0500", hash_original_field = "AD9C3D1E48D73BF1547D53C4C62401B2", hash_generated_field = "26DE2B72977ADBD047A9853341F26F79")
 
         final Handler mHandler = new Handler();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:44.725 -0500", hash_original_field = "DD23A9E22F530443036D30182A32A544", hash_generated_field = "DD23A9E22F530443036D30182A32A544")
-    
 
         int mGravity = Gravity.CENTER_HORIZONTAL | Gravity.BOTTOM;
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:42.957 -0400", hash_original_field = "E47D03BC59EE2C8B3B45870BE85294FB", hash_generated_field = "E0802CA55986D756D3E3A834B7025711")
@@ -259,15 +234,12 @@ public void run() {
 
         float mVerticalMargin;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:44.734 -0500", hash_original_field = "6F4F028D1DE9C463F753A80DD0991753", hash_generated_field = "6F4F028D1DE9C463F753A80DD0991753")
-
-
        
         View mView;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:44.736 -0500", hash_original_field = "03D31907A1E7C016AB4113CE084AA49B", hash_generated_field = "03D31907A1E7C016AB4113CE084AA49B")
 
         View mNextView;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:44.739 -0500", hash_original_field = "3C3F603D5D48071B1A37F937EDC3827B", hash_generated_field = "3C3F603D5D48071B1A37F937EDC3827B")
-
         
         WindowManagerImpl mWM;
 
@@ -356,7 +328,7 @@ private void trySendAccessibilityEvent() {
             event.setPackageName(mView.getContext().getPackageName());
             mView.dispatchPopulateAccessibilityEvent(event);
             accessibilityManager.sendAccessibilityEvent(event);
-        }        
+        }
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:44.754 -0500", hash_original_method = "20728D50D3469CDB24AC075F372999DE", hash_generated_method = "8E5237ED1952EF14C2A5A1C766F6DC2E")
         
@@ -374,36 +346,25 @@ public void handleHide() {
                 mView = null;
             }
         }
-
         
     }
-
     
-    @DSModeled(DSC.SAFE)
     public int getGravity() {
         return getTaintInt();
     }
-
     
-    @DSModeled(DSC.SAFE)
     public int getXOffset() {
     	return getTaintInt();
     }
-
     
-    @DSModeled(DSC.SAFE)
     public int getYOffset() {
     	return getTaintInt();
     }
-
     
-    @DSModeled(DSC.SAFE)
     public void setText(int resId) {
         addTaint(resId);
     }
-
     
-    @DSModeled(DSC.SAFE)
     public void setText(CharSequence s) {
     	addTaint(s.toString().getTaint());
     	/*

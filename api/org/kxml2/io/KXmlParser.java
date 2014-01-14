@@ -17,14 +17,8 @@ import libcore.internal.StringPool;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
-
-
-
-
-
 public class KXmlParser implements XmlPullParser, Closeable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:08.889 -0500", hash_original_field = "B6C30B07108E7461E8E5E317076147B9", hash_generated_field = "A55120855D0EB510239B6C4441F51AAE")
-
 
     private static final String PROPERTY_XMLDECL_VERSION
             = "http://xmlpull.org/v1/doc/properties.html#xmldecl-version";
@@ -40,10 +34,8 @@ public class KXmlParser implements XmlPullParser, Closeable {
     private static final String FEATURE_RELAXED = "http://xmlpull.org/v1/doc/features.html#relaxed";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:08.899 -0500", hash_original_field = "7FEC1D9AEB09C65472CDBB8B82B0755C", hash_generated_field = "6DD1487BA02DCE058EBB56C6D00845DA")
 
-
     private static final Map<String, String> DEFAULT_ENTITIES = new HashMap<String, String>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:08.902 -0500", hash_original_field = "A5CE4019640D8291AA5F62C2FDB1F8E2", hash_generated_field = "9E004EC37549D77F0649D4ADE1AD1D11")
-
 
     private static final int ELEMENTDECL = 11;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:08.905 -0500", hash_original_field = "BC748E776E075F47D04688DC16AFABF5", hash_generated_field = "54F59956AE951C536E4F8B77591DDCD1")
@@ -123,7 +115,6 @@ public class KXmlParser implements XmlPullParser, Closeable {
     private static final char[] FIXED = new char[] { 'F', 'I', 'X', 'E', 'D' };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:08.972 -0500", hash_original_field = "84802BA220928BF77B9E4B9ED85BF6B9", hash_generated_field = "1DABD35C32510824D283D1E8D34D1E30")
 
-
     static final private String UNEXPECTED_EOF = "Unexpected EOF";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:08.974 -0500", hash_original_field = "C48886D45C326E67A4F80FC8738CB1B2", hash_generated_field = "1DACE964DB2B3286A1F2AD099EF50C87")
 
@@ -133,7 +124,6 @@ public class KXmlParser implements XmlPullParser, Closeable {
     static final private int XML_DECLARATION = 998;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:09.103 -0500", hash_original_field = "DA9055C371F2212EF584F2D76F3328B2", hash_generated_field = "FDBEB59450D649476077B2C45FE302BE")
 
-
     private static final char[] SINGLE_QUOTE = new char[] { '\'' };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:09.106 -0500", hash_original_field = "78DC207A49937CCFD694D71D085C8DA7", hash_generated_field = "57CA247B64F06AAD2642685314F137D4")
 
@@ -142,7 +132,6 @@ public class KXmlParser implements XmlPullParser, Closeable {
 
     private String location;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:08.982 -0500", hash_original_field = "E7C7F9C42A2A22D94FED803CEAE19197", hash_generated_field = "B9C33225233D273951C807AA4A997C84")
-
 
     private String version;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:08.984 -0500", hash_original_field = "21579C48DFBFBD465BCD4B2881A6F78C", hash_generated_field = "F545B366D95421A9D0545B064DF3FA15")
@@ -180,8 +169,6 @@ public class KXmlParser implements XmlPullParser, Closeable {
     private Map<String, Map<String, String>> defaultAttributes;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:09.011 -0500", hash_original_field = "C1588B2CF4C1B54961548959E16213DF", hash_generated_field = "9E4E1D4E0DD2F9B43B1F6C7CB67C1409")
 
-
-
     private int depth;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:09.013 -0500", hash_original_field = "38990E4CEA8D76D1592FFA02FC2EF7CF", hash_generated_field = "C38C16C38A66AC817AFDEB16F3AB2C79")
 
@@ -193,7 +180,6 @@ public class KXmlParser implements XmlPullParser, Closeable {
 
     private int[] nspCounts = new int[4];
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:09.021 -0500", hash_original_field = "359C2477A0D4C46A46237360E9D6E3E1", hash_generated_field = "506A19594AC0AF91386404965612888E")
-
 
     private Reader reader;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:09.024 -0500", hash_original_field = "C7941A2E59CC2DF1A97D47295C728725", hash_generated_field = "AA03A19AA54A465901EEA798BB232EAE")
@@ -219,7 +205,6 @@ public class KXmlParser implements XmlPullParser, Closeable {
     private int bufferStartColumn;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:09.040 -0500", hash_original_field = "961B4204667A4AE2FF8DD374E6728ADE", hash_generated_field = "E1B24004551291FC3F431CA1B2F6785F")
 
-
     private int type;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:09.042 -0500", hash_original_field = "8B20809ECF6512A9964FA742E2DD1B67", hash_generated_field = "002F5A5E90D73E291F33E6C6294E8D20")
 
@@ -238,7 +223,6 @@ public class KXmlParser implements XmlPullParser, Closeable {
     private String text;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:09.054 -0500", hash_original_field = "C0C8E49643B01DE796B2F6BF4C42F496", hash_generated_field = "DBB8A6C14E3796CA3A469826B313EF12")
 
-
     private boolean degenerated;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:09.056 -0500", hash_original_field = "17984B13C42D8625B58D1105020D20EF", hash_generated_field = "269E5A2AA1CB94A01698B537489DA5D4")
 
@@ -248,14 +232,11 @@ public class KXmlParser implements XmlPullParser, Closeable {
     private String[] attributes = new String[16];
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:09.061 -0500", hash_original_field = "0D30CB179838970E213CB4B387147117", hash_generated_field = "5A2A9A2BD7181810539A763573C1D6FB")
 
-
     private String error;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:09.063 -0500", hash_original_field = "1265BD6A83FE3C6DE6BDF9066F32BFBC", hash_generated_field = "3CE0322C00553A852949CE941813EC46")
 
-
     private boolean unresolved;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:09.066 -0500", hash_original_field = "5064578541FC4C3433253A286EE1A409", hash_generated_field = "E6746676D26EF55819E689A7D8CBC54D")
-
 
     public final StringPool stringPool = new StringPool();
     
@@ -276,9 +257,7 @@ public class KXmlParser implements XmlPullParser, Closeable {
 public void keepNamespaceAttributes() {
         this.keepNamespaceAttributes = true;
     }
-
-    
-        @DSModeled(DSC.BAN)
+        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.005 -0400", hash_original_method = "F08928441827C23946744248151D18D9", hash_generated_method = "873EFD7690BD62772E8E3CF4ECA9E465")
     private boolean adjustNsp() throws XmlPullParserException {
         boolean any = false;
@@ -1908,14 +1887,12 @@ public boolean getFeature(String feature) {
 public String getInputEncoding() {
         return encoding;
     }
-
     
     enum ValueContext {
         ATTRIBUTE,
         TEXT,
         ENTITY_DECLARATION
     }
-
     
     static class ContentSource {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:09.276 -0500", hash_original_field = "7878977A44FFB1631EDA4764249DB51F", hash_generated_field = "7D21AAFF4A726AE51AF8BEE306E3B202")
@@ -1938,7 +1915,6 @@ ContentSource(ContentSource next, char[] buffer, int position, int limit) {
             this.position = position;
             this.limit = limit;
         }
-
         
     }
 
@@ -2031,9 +2007,7 @@ public String getNamespacePrefix(int pos) {
 public String getNamespaceUri(int pos) {
         return nspStack[(pos * 2) + 1];
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.051 -0400", hash_original_method = "40F39B6FC2CBEA065A6E595C0C377D56", hash_generated_method = "593F1915C33C9A8D4B05A7F5E44A72AC")
     public String getNamespace(String prefix) {
         addTaint(prefix.getTaint());

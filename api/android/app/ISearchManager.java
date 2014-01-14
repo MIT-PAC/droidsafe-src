@@ -131,7 +131,7 @@ _data.recycle();
 }
 return _result;
 }
-            @DSModeled(DSC.BAN)
+            
             public android.content.ComponentName getGlobalSearchActivity() throws android.os.RemoteException
             {
                 android.content.ComponentName cn = new android.content.ComponentName("android.app", "SearchManager");

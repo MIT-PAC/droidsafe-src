@@ -5,21 +5,14 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public final class Double extends Number implements Comparable<Double> {
-
     
-    @DSModeled(DSC.SAFE)
     public static long doubleToLongBits(double value) {
         return DSUtils.UNKNOWN_LONG;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static long doubleToRawLongBits(double value) {
         return DSUtils.UNKNOWN_LONG;
     }
@@ -52,9 +45,7 @@ public static boolean isInfinite(double d) {
 public static boolean isNaN(double d) {
         return d != d;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static double longBitsToDouble(long bits) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
@@ -265,7 +256,6 @@ public static String toHexString(double d) {
     static final int EXPONENT_BIAS = 1023;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.572 -0500", hash_original_field = "001714363BB57C7EAACCCB37B3EE5CB0", hash_generated_field = "000E54F3BA29FBD16878C04E2FD284BE")
 
-
     static final int EXPONENT_BITS = 12;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.575 -0500", hash_original_field = "633D3941CFCD2CB07CBC370B19286CA6", hash_generated_field = "B967A752EB7E74E3CC0A175C277EF3D5")
 
@@ -274,7 +264,6 @@ public static String toHexString(double d) {
 
     static final int NON_MANTISSA_BITS = 12;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.580 -0500", hash_original_field = "D05945263B9CC3ABC6A4CAC5B08D5200", hash_generated_field = "9BA6940C2D6091320867626804E0CB6D")
-
 
     static final long SIGN_MASK     = 0x8000000000000000L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.582 -0500", hash_original_field = "26E4C7D338C97FEBD85162696B037ABA", hash_generated_field = "EBAB46050B41988DC2C5DC9FB4EC64CB")
@@ -285,7 +274,6 @@ public static String toHexString(double d) {
     static final long MANTISSA_MASK = 0x000fffffffffffffL;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.587 -0500", hash_original_field = "C5A2B2057A03DEDC57BD654BB16EFF95", hash_generated_field = "2742CA755AF68701043B73DE036C7EDA")
 
-
     private static final long serialVersionUID = -9172774392245257468L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.592 -0500", hash_original_field = "4201E1E7B051C0E2134CCEFEA994B330", hash_generated_field = "D7B4F6E8BA984FBCFAED1ACB27E780C2")
 
@@ -294,7 +282,6 @@ public static String toHexString(double d) {
 
     public static final double MIN_VALUE = 5e-324;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.597 -0500", hash_original_field = "6985004810874D53150DE7FB5CBC9076", hash_generated_field = "5AF44A589AC0950641B2A15FBD377731")
-
 
     /**
      * Constant for the Not-a-Number (NaN) value of the {@code double} type.

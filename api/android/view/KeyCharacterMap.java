@@ -9,70 +9,49 @@ import android.util.AndroidRuntimeException;
 import android.util.SparseArray;
 import android.util.SparseIntArray;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public class KeyCharacterMap {
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativeLoad(String file) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_123601077 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_123601077;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeDispose(int ptr) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static char nativeGetCharacter(int ptr, int keyCode, int metaState) {
                 char varA87DEB01C5F539E6BDA34829C8EF2368_1244637250 = DSUtils.UNKNOWN_CHAR;
         return varA87DEB01C5F539E6BDA34829C8EF2368_1244637250;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean nativeGetFallbackAction(int ptr, int keyCode, int metaState,
             FallbackAction outFallbackAction) {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_185696657 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_185696657;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static char nativeGetNumber(int ptr, int keyCode) {
                 char varA87DEB01C5F539E6BDA34829C8EF2368_1984588844 = DSUtils.UNKNOWN_CHAR;
         return varA87DEB01C5F539E6BDA34829C8EF2368_1984588844;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static char nativeGetMatch(int ptr, int keyCode, char[] chars, int metaState) {
                 char varA87DEB01C5F539E6BDA34829C8EF2368_1376476993 = DSUtils.UNKNOWN_CHAR;
         return varA87DEB01C5F539E6BDA34829C8EF2368_1376476993;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static char nativeGetDisplayLabel(int ptr, int keyCode) {
                 char varA87DEB01C5F539E6BDA34829C8EF2368_1718283332 = DSUtils.UNKNOWN_CHAR;
         return varA87DEB01C5F539E6BDA34829C8EF2368_1718283332;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativeGetKeyboardType(int ptr) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1471314073 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1471314073;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static KeyEvent[] nativeGetEvents(int ptr, int deviceId, char[] chars) {
     	KeyEvent[] k = new KeyEvent[1];
     	return  k;
@@ -199,7 +178,6 @@ public static boolean[] deviceHasKeys(int[] keyCodes) {
     public static final int MODIFIER_BEHAVIOR_CHORDED_OR_TOGGLED = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.741 -0500", hash_original_field = "65E14CBA7CCCF9D8B2FCC49DA88A3227", hash_generated_field = "A41BDDB2AF8DD199AC0801E6FA90000D")
 
-
     private static SparseArray<KeyCharacterMap> sInstances = new SparseArray<KeyCharacterMap>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.846 -0500", hash_original_field = "4AF8DA2BCB82FF845E7161D3C609B79D", hash_generated_field = "11B1384F451F38AFF9AFE2392F709751")
 
@@ -210,7 +188,6 @@ public static boolean[] deviceHasKeys(int[] keyCodes) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.852 -0500", hash_original_field = "A854142F03CFDE8432625F3B51B2CDEB", hash_generated_field = "4F036169C638098B73313599D908CEB4")
 
     private static final int ACUTE = '\u00B4' << 16;
-
     
     public static class KeyData {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.815 -0500", hash_original_field = "0CE8BAF2BE88BD999E28B3599817EA44", hash_generated_field = "B7B5BF1414600355D7BF1611E9967D65")
@@ -232,8 +209,6 @@ public static boolean[] deviceHasKeys(int[] keyCodes) {
             //Synthesized constructor
         }
     }
-
-
     
     public static class UnavailableException extends AndroidRuntimeException {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.877 -0500", hash_original_method = "463842D1BF3FEF123617A569E3B89D0B", hash_generated_method = "C9A1C51EC97A12950DBCAD76008DE8A1")
@@ -241,11 +216,8 @@ public static boolean[] deviceHasKeys(int[] keyCodes) {
 public UnavailableException(String msg) {
             super(msg);
         }
-
         
     }
-
-
     
     public static final class FallbackAction {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.882 -0500", hash_original_field = "AF3F60A45836C339EA3C11B5C54720AC", hash_generated_field = "000F6935635EB02934CE0DE5E09F2D3E")
@@ -260,7 +232,6 @@ public UnavailableException(String msg) {
         {
             //Synthesized constructor
         }
-
 
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.854 -0500", hash_original_field = "3F3BDB109C209513958B4A39E13F9DDC", hash_generated_field = "637F3AC3B0EEC3847F5FCA990AF1E992")
@@ -282,7 +253,6 @@ public UnavailableException(String msg) {
 
     public static final int COMBINING_ACCENT_MASK = 0x7FFFFFFF;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.744 -0500", hash_original_field = "9C5D5B4697BA4F2BAA6617B930737C8B", hash_generated_field = "AE8D59B3F804A7C4665D164A31D2B414")
-
 
     private  int mDeviceId;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.747 -0500", hash_original_field = "42C21A18FB5976D4C67962413781C35D", hash_generated_field = "E9A8054C2C57C0CE861FDCA982433D1A")

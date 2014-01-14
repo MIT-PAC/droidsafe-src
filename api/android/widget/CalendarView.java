@@ -36,11 +36,6 @@ import android.widget.AbsListView.OnScrollListener;
 
 import com.android.internal.R;
 
-
-
-
-
-
 public class CalendarView extends FrameLayout {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.880 -0500", hash_original_field = "5F136E3C34A69A50E2AE284AED194731", hash_generated_field = "8CE15FF28B44090045106C853EF2EE4B")
 
@@ -80,70 +75,53 @@ public class CalendarView extends FrameLayout {
     private static final String DEFAULT_MAX_DATE = "01/01/2100";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.909 -0500", hash_original_field = "7D404E91DF51B0B164B74EEF8EE01547", hash_generated_field = "4C736D69B6814393DDDF5CDEECB06D46")
 
-
     private static final int DEFAULT_SHOWN_WEEK_COUNT = 6;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.911 -0500", hash_original_field = "3E5F362BD4592B949DA8BE02866E2B8D", hash_generated_field = "496326F4CDD77EAC73CDD5295D2BE7A2")
-
 
     private static final int DEFAULT_DATE_TEXT_SIZE = 14;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.914 -0500", hash_original_field = "DBFCCFE2AEBC41E24A5FBB0E4D0E7352", hash_generated_field = "3A418335293EF12B3DA3F4FDB05879C9")
 
-
     private static final int UNSCALED_SELECTED_DATE_VERTICAL_BAR_WIDTH = 6;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.916 -0500", hash_original_field = "CC19208AE76845899CEEF986579809DB", hash_generated_field = "E66AB956C44089E58FD61F5676B647D8")
-
 
     private static final int UNSCALED_WEEK_MIN_VISIBLE_HEIGHT = 12;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.919 -0500", hash_original_field = "647BEC428C05E13CE0A2E0FF8BEC8985", hash_generated_field = "1FBE9A9D01B5A713E1CD35B977F46262")
 
-
     private static final int UNSCALED_LIST_SCROLL_TOP_OFFSET = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.921 -0500", hash_original_field = "27D31B4C9B0F0B410093CDDE914C76E3", hash_generated_field = "98241598EE1C58C44C51B6E4E37BFA7A")
-
 
     private static final int UNSCALED_BOTTOM_BUFFER = 20;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.924 -0500", hash_original_field = "2B6586B166801FCCCA6707777E82440A", hash_generated_field = "2E33FBCAB992F6A4FCF51C7E08C43011")
 
-
     private static final int UNSCALED_WEEK_SEPARATOR_LINE_WIDTH = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.926 -0500", hash_original_field = "B2AA03855A96812C25C970417D5F83B5", hash_generated_field = "F0ACF1E44F55CCE1B401D0863B7C0AC8")
-
 
     private static final int DEFAULT_WEEK_DAY_TEXT_APPEARANCE_RES_ID = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.928 -0500", hash_original_field = "7F368DA5079641767B57AFB4C5C5E6EC", hash_generated_field = "8B23991BED629DDCFDA8E1DD88120AF5")
 
-
     private  int mWeekSeperatorLineWidth;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.931 -0500", hash_original_field = "B5937C1D70C0C1CA339A5169E91A4E68", hash_generated_field = "3897E934AACB2D4B5C6B0C16CCB429A0")
-
 
     private  int mDateTextSize;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.933 -0500", hash_original_field = "7E1F915EE5D517F9A5F697F3B54BF4A9", hash_generated_field = "A59A89A5D83C758D66546FEAE58F54D4")
 
-
     private  Drawable mSelectedDateVerticalBar;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.935 -0500", hash_original_field = "9F0A2C050440FADBEA0D94BF069801E4", hash_generated_field = "2C1B7E5AE5693E0A43249D97A45D63E8")
-
 
     private  int mSelectedDateVerticalBarWidth;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.937 -0500", hash_original_field = "7FF554901F47BA5D94A53115E895738A", hash_generated_field = "74B6E0C11198E97BD97CA4756AB27759")
 
-
     private  int mSelectedWeekBackgroundColor;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.941 -0500", hash_original_field = "D2F0733E9CD59EF7BE50B934F7A5131A", hash_generated_field = "A9584354BACE2D8F069618758B081B06")
-
 
     private  int mFocusedMonthDateColor;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.943 -0500", hash_original_field = "EEF9F5EE66744844988286DFC6F60F54", hash_generated_field = "7D2BE4C5D269E856747B17281912BE9C")
 
-
     private  int mUnfocusedMonthDateColor;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.946 -0500", hash_original_field = "86BF37BC7BCF670871E8DE76450BE493", hash_generated_field = "8DDBF4CBD718C3948A0F42D2C1DB5D99")
 
-
     private  int mWeekSeparatorLineColor;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.949 -0500", hash_original_field = "71DB8044101EA8BD2D4A5F10155B3BE9", hash_generated_field = "6A25546F44B6068A62792DA64248742A")
-
 
     private  int mWeekNumberColor;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:41.951 -0500", hash_original_field = "F47218C170AA21D704104F97067F4CD3", hash_generated_field = "5665B7B8CC3DF642A1DAF00F3DE77EFA")
@@ -448,14 +426,12 @@ public void setMaxDate(long maxDate) {
             goTo(date, false, true, false);
         }
     }
-
     
     private class ScrollStateRunnable implements Runnable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.097 -0500", hash_original_field = "84D89183D5AC0191C04346FAAB7912B5", hash_generated_field = "1F3C2B019CE351B6A3F4C6C3616C5C0E")
 
         private AbsListView mView;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.099 -0500", hash_original_field = "7B41F7FE3ADEB3E998739116B4C5C65E", hash_generated_field = "B54F7897F242D86283E88CF300719E2B")
-
 
         private int mNewState;
         
@@ -504,31 +480,23 @@ public void run() {
             }
             mPreviousScrollState = mNewState;
         }
-
         
     }
-
-
     
     private class WeeksAdapter extends BaseAdapter implements OnTouchListener {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.110 -0500", hash_original_field = "CC90443A38FE9DAA92F3BB4526322226", hash_generated_field = "5BF9B16DA16CA4B8867BE9E962493092")
 
-
         private int mSelectedWeek;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.112 -0500", hash_original_field = "AB20CE05616A647AECFCD053AA0A7A3C", hash_generated_field = "DA7C2146C29AB67A18FA4519D8BF6725")
-
 
         private GestureDetector mGestureDetector;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.114 -0500", hash_original_field = "71D139026965143191C2B81C039091B4", hash_generated_field = "F72CF38F2566D6E733620DFADA8D38C7")
 
-
         private int mFocusedMonth;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.116 -0500", hash_original_field = "0553D2F948679AE9A630CAADF59A790E", hash_generated_field = "95E30C29B97433E1CA9F533BA1A954C1")
 
-
         private final Calendar mSelectedDate = Calendar.getInstance();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.118 -0500", hash_original_field = "0F859F8FABE2D4FD9A195DE85620F709", hash_generated_field = "740B29A5145E76BF427504A23D8A9471")
-
 
         private int mTotalWeekCount;
 
@@ -673,7 +641,6 @@ private void onDateTapped(Calendar day) {
             setSelectedDay(day);
             setMonthDisplayed(day);
         }
-
         
         class CalendarGestureListener extends GestureDetector.SimpleOnGestureListener {
             
@@ -688,27 +655,19 @@ private void onDateTapped(Calendar day) {
             public boolean onSingleTapUp(MotionEvent e) {
                 return true;
             }
-
             
         }
-
-
         
     }
-
-
     
     private class WeekView extends View {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.156 -0500", hash_original_field = "1732EB32F2D77CCA26590AEEA670A175", hash_generated_field = "A498F2A4744F31D22F9C4ABEBB254F2F")
 
-
         private final Rect mTempRect = new Rect();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.158 -0500", hash_original_field = "946375A5AA83EE2844C7EFB7C4794B4B", hash_generated_field = "338ED8DD33B33701CE23F0F875140BFA")
 
-
         private final Paint mDrawPaint = new Paint();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.160 -0500", hash_original_field = "A12D6927DB7AAA725129CCFA06DF3EAA", hash_generated_field = "B72452912A34FBA0455C9A4A9A3B5617")
-
 
         private final Paint mMonthNumDrawPaint = new Paint();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.163 -0500", hash_original_field = "640385D602848CBAF46EE8EDEBE9CD34", hash_generated_field = "78D1BFA8C5AB20E3FA796AF37BFF531E")
@@ -1039,14 +998,10 @@ private void updateSelectionPositions() {
         protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
             setMeasuredDimension(MeasureSpec.getSize(widthMeasureSpec), mHeight);
         }
-
         
     }
-
-
     
     public interface OnDateChangeListener {
-
         
         public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth);
     }
@@ -1298,9 +1253,7 @@ private void setUpHeader(int weekDayTextAppearanceResId) {
         }
         mDayNamesHeader.invalidate();
     }
-
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.900 -0400", hash_original_method = "CFADBCF95F8E177F25E22F1FC2115F77", hash_generated_method = "A7212EABDEC78C4670A7D51B166BE4DD")
     private void setUpListView() {
         mListView.setDivider(null);

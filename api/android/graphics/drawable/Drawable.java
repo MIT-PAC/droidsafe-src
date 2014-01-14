@@ -31,10 +31,6 @@ import android.util.TypedValue;
 import android.util.Xml;
 import android.view.View;
 
-
-
-
-
 public abstract class Drawable {
 
     /**
@@ -222,7 +218,6 @@ public static Drawable createFromXmlInner(Resources r, XmlPullParser parser, Att
         return drawable;
     }
 
-
     /**
      * Create a drawable from file path name.
      */
@@ -257,7 +252,6 @@ private static Drawable drawableFromBitmap(Resources res, Bitmap bm, byte[] np,
     private static final Rect ZERO_BOUNDS_RECT = new Rect();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.888 -0500", hash_original_field = "CFC560F37067E026FD0B768F137AF7B3", hash_generated_field = "5E6D3F09C1210458D0C754595BB30DAC")
 
-
     private int[] mStateSet = StateSet.WILD_CARD;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.890 -0500", hash_original_field = "9308AE6FD010F418842CB5F45F406B14", hash_generated_field = "D66D669C7CB840BE2CC0AE88CB04AECF")
 
@@ -275,7 +269,6 @@ private static Drawable drawableFromBitmap(Resources res, Bitmap bm, byte[] np,
 
     private boolean mVisible = true;
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.573 -0400", hash_original_method = "31C0F11C44C8FA6382C02786623A036E", hash_generated_method = "31C0F11C44C8FA6382C02786623A036E")
     public Drawable ()
     {
@@ -902,11 +895,9 @@ void inflateWithAttributes(Resources r, XmlPullParser parser,
 
         mVisible = attrs.getBoolean(visibleAttr, mVisible);
     }
-
     
     public static abstract class ConstantState {
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.603 -0400", hash_original_method = "1DBA432D049F8FB288727BCBD6197568", hash_generated_method = "1DBA432D049F8FB288727BCBD6197568")
         public ConstantState ()
         {
@@ -940,19 +931,14 @@ public Drawable newDrawable(Resources res) {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.022 -0500", hash_original_method = "45D95E7A5F5F7D451E51E9095BE8F693", hash_generated_method = "8A4BA37C2E536863D0CAC6B3C245CFD2")
         
 public abstract int getChangingConfigurations();
-
         
     }
-
-
     
     public static interface Callback {
         
         public void invalidateDrawable(Drawable who);
-
         
         public void scheduleDrawable(Drawable who, Runnable what, long when);
-
         
         public void unscheduleDrawable(Drawable who, Runnable what);
     }

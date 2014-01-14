@@ -15,10 +15,6 @@ import android.os.Message;
 import android.os.PowerManager;
 import android.provider.Telephony.Sms.Intents;
 
-
-
-
-
 public final class SmsStorageMonitor extends Handler {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:17.467 -0500", hash_original_field = "FB7DBAB3BD99ADAD6D2F0065DB8C554C", hash_generated_field = "ADC819F4640257478A9F0F8C0177ED0F")
 
@@ -34,7 +30,6 @@ public final class SmsStorageMonitor extends Handler {
     private static final int EVENT_RADIO_ON = 3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:17.488 -0500", hash_original_field = "65EAEBF48EC2BD9FC227F227DB04505F", hash_generated_field = "01706AE98C00842290153C530661773F")
 
-
     /**
      * Hold the wake lock for 5 seconds, which should be enough time for
      * any receiver(s) to grab its own wake lock.
@@ -48,10 +43,8 @@ public final class SmsStorageMonitor extends Handler {
     private PowerManager.WakeLock mWakeLock;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:17.481 -0500", hash_original_field = "C9768C965FD48249C77E944269AE4C3E", hash_generated_field = "9F8B4768FAA4CFE15EF5A879C2BD432B")
 
-
     private boolean mReportMemoryStatusPending;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:17.483 -0500", hash_original_field = "6FA166605BB28AA15FBFAB6049BF15B1", hash_generated_field = "6FA166605BB28AA15FBFAB6049BF15B1")
-
 
      CommandsInterface mCm;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:17.485 -0500", hash_original_field = "7DBC7A1AE70A2B85F1947F038E6E88AD", hash_generated_field = "7DBC7A1AE70A2B85F1947F038E6E88AD")
@@ -59,8 +52,8 @@ public final class SmsStorageMonitor extends Handler {
     boolean mStorageAvailable = true;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.003 -0400", hash_original_field = "BC56B8F1C1A0861751BBE78333C8BDF8", hash_generated_field = "7712C2BDAAF354E20E58C1731007D923")
 
-    private final BroadcastReceiver mResultReceiver = new BroadcastReceiver() {        
-        @DSModeled(DSC.SPEC)
+    private final BroadcastReceiver mResultReceiver = new BroadcastReceiver() {
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:25.003 -0400", hash_original_method = "5F38BA022ACD3718858B6FAF49C82F2C", hash_generated_method = "433F6D8B0AF631BD6BC6DCF023E72652")
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -82,15 +75,7 @@ public final class SmsStorageMonitor extends Handler {
             addTaint(context.getTaint());
             addTaint(intent.getTaint());
             
-            
-                
-                
-            
-                
-                
-            
         }
-
         
 };
 

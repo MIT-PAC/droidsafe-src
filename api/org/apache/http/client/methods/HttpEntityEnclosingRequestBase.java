@@ -17,7 +17,6 @@ import org.apache.http.protocol.HTTP;
 
 public abstract class HttpEntityEnclosingRequestBase extends HttpRequestBase implements HttpEntityEnclosingRequest {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:44.269 -0500", hash_original_field = "84BEE3610D6DA557FD534AD24775E93F", hash_generated_field = "1845537B516494D16BEEE561F2E771CF")
-
     
     private HttpEntity entity;
     
@@ -38,9 +37,7 @@ public HttpEntity getEntity() {
 public void setEntity(final HttpEntity entity) {
         this.entity = entity;
     }
-
     
-    @DSModeled(DSC.SAFE)
     @Override
 	public boolean expectContinue() {
 		// TODO Auto-generated method stub

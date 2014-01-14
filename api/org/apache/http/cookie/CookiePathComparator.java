@@ -7,16 +7,11 @@ import droidsafe.annotations.*;
 import java.io.Serializable;
 import java.util.Comparator;
 
-
-
-
 public class CookiePathComparator implements Serializable, Comparator<Cookie> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:31.285 -0500", hash_original_field = "F9CD8031B020F5139FA72E3F6D9EDC41", hash_generated_field = "72EE05E0928858A1E51BAE2345CB995B")
 
-
     private static final long serialVersionUID = 7523645369616405818L;
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.138 -0400", hash_original_method = "29A50A9D1E136547D3D05BF6575A3E25", hash_generated_method = "29A50A9D1E136547D3D05BF6575A3E25")
     public CookiePathComparator ()
     {

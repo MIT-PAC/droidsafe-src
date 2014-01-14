@@ -6,130 +6,86 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Random;
 
-
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public final class Math {
-
     
-    @DSModeled(DSC.SAFE)
     public static double abs(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static float abs(float f) {
         return DSUtils.UNKNOWN_FLOAT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static int abs(int i) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static long abs(long l) {
         return DSUtils.UNKNOWN_LONG;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static double acos(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static double asin(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static double atan(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static double atan2(double y, double x) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static double cbrt(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static double ceil(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static double cos(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static double cosh(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static double exp(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static double expm1(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static double floor(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static double hypot(double x, double y) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static double IEEEremainder(double x, double y) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static double log(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static double log10(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static double log1p(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
@@ -211,9 +167,7 @@ public static float max(float f1, float f2) {
         }
         return 0.0f;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static int max(int i1, int i2) {
         return DSUtils.UNKNOWN_INT;
     }
@@ -311,9 +265,7 @@ public static float min(float f1, float f2) {
         }
         return f2;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static int min(int i1, int i2) {
         return DSUtils.UNKNOWN_INT;
     }
@@ -333,15 +285,11 @@ public static float min(float f1, float f2) {
 public static long min(long l1, long l2) {
         return l1 < l2 ? l1 : l2;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static double pow(double x, double y) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static double rint(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
@@ -471,33 +419,23 @@ public static float signum(float f) {
         }
         return sig;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static double sin(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static double sinh(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static double sqrt(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static double tan(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static double tanh(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
@@ -597,9 +535,7 @@ public static double ulp(double d) {
         d = abs(d);
         return nextafter(d, Double.MAX_VALUE) - d;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static double nextafter(double x, double y) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
@@ -980,7 +916,6 @@ private static long shiftLongBits(long bits, long digits) {
 
     public static final double PI = 3.141592653589793;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.585 -0500", hash_original_field = "DC2327CCB95C5C902D526E5238316B9A", hash_generated_field = "4574226C6A992CD5F43E1273AEA83087")
-
 
     private static Random random;
 

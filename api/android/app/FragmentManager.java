@@ -30,10 +30,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-
-
-
-
 public abstract class FragmentManager {
 
     /**
@@ -51,7 +47,7 @@ public static void enableDebugLogging(boolean enabled) {
     public static final int POP_BACK_STACK_INCLUSIVE = 1<<0;
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:53.606 -0400", hash_original_method = "0D3FEDE97BC3242ED64134E1F014EA11", hash_generated_method = "0D3FEDE97BC3242ED64134E1F014EA11")
-    @DSModeled(DSC.SAFE)
+    
     public FragmentManager ()
     {
         //Synthesized constructor
@@ -290,24 +286,18 @@ public abstract Fragment.SavedState saveFragmentInstanceState(Fragment f);
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.325 -0500", hash_original_method = "9309E77AA4047B9B8316706781ED0A27", hash_generated_method = "3FF3D3380483C9ADF611F5CA2E5A6D00")
     
 public abstract void dump(String prefix, FileDescriptor fd, PrintWriter writer, String[] args);
-
     
     public interface BackStackEntry {
         
         public int getId();
-
         
         public String getName();
-
         
         public int getBreadCrumbTitleRes();
-
         
         public int getBreadCrumbShortTitleRes();
-
         
         public CharSequence getBreadCrumbTitle();
-
         
         public CharSequence getBreadCrumbShortTitle();
     }
@@ -327,7 +317,6 @@ public void invalidateOptionsMenu() { }
 }
 
 final class FragmentManagerState implements Parcelable {
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:53.618 -0400", hash_original_field = "D29AA2723BAE7915447DC2F30F3AAA56", hash_generated_field = "EE9672AF4023C35BB0D72B0356E5DA5C")
 
@@ -444,7 +433,6 @@ public static int transitToStyleIndex(int transit, boolean enter) {
 
     static final String TAG = "FragmentManager";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.363 -0500", hash_original_field = "F787E82ABD38F2EA55518D5879BC4223", hash_generated_field = "3B27731C0E9DDDFC7028C0BFB720297D")
-
     
     static final String TARGET_REQUEST_CODE_STATE_TAG = "android:target_req_state";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.365 -0500", hash_original_field = "93ACE05EC658CB34C742740556D4AAD2", hash_generated_field = "9220E2EDA94C70BA7341F1BFB405D6BF")
@@ -458,7 +446,6 @@ public static int transitToStyleIndex(int transit, boolean enter) {
     static final String USER_VISIBLE_HINT_TAG = "android:user_visible_hint";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.371 -0500", hash_original_field = "11FD18D208B09E922FC03FBF68E7335B", hash_generated_field = "11FD18D208B09E922FC03FBF68E7335B")
 
-
     ArrayList<Runnable> mPendingActions;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.373 -0500", hash_original_field = "3A7F97DF5485B6AB6EA8FB5E99EA1CA3", hash_generated_field = "3A7F97DF5485B6AB6EA8FB5E99EA1CA3")
 
@@ -467,7 +454,6 @@ public static int transitToStyleIndex(int transit, boolean enter) {
 
     boolean mExecutingActions;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.377 -0500", hash_original_field = "A1650882FA43FC001601740ED87DBA1F", hash_generated_field = "A1650882FA43FC001601740ED87DBA1F")
-
     
     ArrayList<Fragment> mActive;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.379 -0500", hash_original_field = "FF37605B8D813171195C0EBF92B2A116", hash_generated_field = "FF37605B8D813171195C0EBF92B2A116")
@@ -490,17 +476,14 @@ public static int transitToStyleIndex(int transit, boolean enter) {
     ArrayList<Integer> mAvailBackStackIndices;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.391 -0500", hash_original_field = "078DA2C7CA0D4289F90F664D0B3EDB3B", hash_generated_field = "078DA2C7CA0D4289F90F664D0B3EDB3B")
 
-
     ArrayList<OnBackStackChangedListener> mBackStackChangeListeners;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.393 -0500", hash_original_field = "9521C64640071A41BA8B18982DEC3BE2", hash_generated_field = "9521C64640071A41BA8B18982DEC3BE2")
-
 
     int mCurState = Fragment.INITIALIZING;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.394 -0500", hash_original_field = "3895D7E6DB5042DA7856DC78E391C7B9", hash_generated_field = "3895D7E6DB5042DA7856DC78E391C7B9")
 
     Activity mActivity;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.396 -0500", hash_original_field = "19DD0E42F9FC244F37062274E8F2012D", hash_generated_field = "19DD0E42F9FC244F37062274E8F2012D")
-
     
     boolean mNeedMenuInvalidate;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.398 -0500", hash_original_field = "E68067DB35DA8BD96BFB5C858DBE74BF", hash_generated_field = "E68067DB35DA8BD96BFB5C858DBE74BF")
@@ -529,13 +512,10 @@ public static int transitToStyleIndex(int transit, boolean enter) {
         public void run() {
             execPendingActions();
             
-            
         }
-
         
 };
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:53.623 -0400", hash_original_method = "57A648A59831AB7BB1637AFC6125C81E", hash_generated_method = "57A648A59831AB7BB1637AFC6125C81E")
     public FragmentManagerImpl ()
     {
@@ -882,10 +862,9 @@ public void performPendingDeferredStart(Fragment f) {
             moveToState(f, mCurState, 0, 0);
         }
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:53.650 -0400", hash_original_method = "EE92853A739004991ACA465267191DB6", hash_generated_method = "58D333F274C152A4FE282A740040F414")
-    @DSModeled(DSC.SAFE)
+    
      void moveToState(Fragment f, int newState, int transit, int transitionStyle) {
         addTaint(transitionStyle);
         addTaint(transit);
@@ -1341,7 +1320,6 @@ public void removeFragment(Fragment fragment, int transition, int transitionStyl
                     transition, transitionStyle);
         }
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:53.656 -0400", hash_original_method = "066049DB7DB3E7A9AEFB54490F59C652", hash_generated_method = "27F2569BA54EB3CB1FC527671FBCE191")
     public void hideFragment(Fragment fragment, int transition, int transitionStyle) {

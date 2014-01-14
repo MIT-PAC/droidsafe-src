@@ -10,9 +10,6 @@ import android.os.Build;
 import android.os.SystemProperties;
 import android.util.Log;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public final class SQLiteDebug {
@@ -47,32 +44,22 @@ public static PagerStats getDatabaseInfo() {
         stats.dbStats = SQLiteDatabase.getDbStats();
         return stats;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static void getPagerStats(PagerStats stats) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static long getHeapSize() {
         return DSUtils.UNKNOWN_LONG;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static long getHeapAllocatedSize() {
         return DSUtils.UNKNOWN_LONG;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static long getHeapFreeSize() {
         return DSUtils.UNKNOWN_LONG;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static void getHeapDirtyPages(int[] pages) {
     }
 
@@ -95,7 +82,6 @@ static synchronized void notifyActiveCursorFinalized() {
 
     public static final boolean DEBUG_SQL_STATEMENTS =
             Log.isLoggable("SQLiteStatements", Log.VERBOSE);
-
     
     public static class PagerStats {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:39.646 -0500", hash_original_field = "46BB95F5F874577C616EA9532A3E50A6", hash_generated_field = "D031842CEE05E89DE639101A3C8A3F02")
@@ -133,10 +119,7 @@ static synchronized void notifyActiveCursorFinalized() {
             //Synthesized constructor
         }
 
-
     }
-
-
     
     public static class DbStats {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:39.668 -0500", hash_original_field = "5BD3C7DBADB99AC4730A24E25D779347", hash_generated_field = "8C827F3F2368083D7F50B00240006370")
@@ -165,7 +148,6 @@ public DbStats(String dbName, long pageCount, long pageSize, int lookaside,
             this.lookaside = lookaside;
             this.cache = hits + "/" + misses + "/" + cachesize;
         }
-
         
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:39.627 -0500", hash_original_field = "96B2A77B19C76228FEAC38F7C37A402D", hash_generated_field = "E4A8B30EADB861CBC923AA2E89967AE8")
@@ -192,7 +174,6 @@ public DbStats(String dbName, long pageCount, long pageSize, int lookaside,
 
     public static final boolean DEBUG_LOG_SLOW_QUERIES = Build.IS_DEBUGGABLE;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:39.706 -0500", hash_original_field = "CE7F1BB356927AAB40AC80E99E15F5AC", hash_generated_field = "9B3AC867859C3F2C7A80205759E2C585")
-
 
     private static int sNumActiveCursorsFinalized = 0;
     

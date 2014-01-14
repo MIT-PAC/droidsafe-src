@@ -8,11 +8,6 @@ import java.io.IOException;
 import java.util.Enumeration;
 import java.util.Vector;
 
-
-
-
-
-
 public abstract class ASN1Sequence extends ASN1Object {
 
     /**
@@ -110,13 +105,11 @@ public static ASN1Sequence getInstance(
     private Vector seq = new Vector();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:29.357 -0500", hash_original_field = "8BD524D6245D998B3BBC44EB9313082E", hash_generated_field = "56A277C77B76B31C1E1045C8C11CA802")
 
-
             private int index;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:29.355 -0500", hash_original_field = "FE6035598DC4A50E38F7DA885A8391F1", hash_generated_field = "D2E8168F8D49E25944D5BC65100B260E")
 
             private final int max = size();
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.775 -0400", hash_original_method = "A2B39ADE0CCBD8FB2D75DB3228C401C7", hash_generated_method = "A2B39ADE0CCBD8FB2D75DB3228C401C7")
     public ASN1Sequence ()
     {
@@ -129,9 +122,7 @@ public Enumeration getObjects()
     {
         return seq.elements();
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.778 -0400", hash_original_method = "43ADC5A8CCFA8153E5DA918392680258", hash_generated_method = "688B3E7DD00954858DC6DB9A210BD8C5")
     public ASN1SequenceParser parser() {
         final ASN1Sequence outer = this;

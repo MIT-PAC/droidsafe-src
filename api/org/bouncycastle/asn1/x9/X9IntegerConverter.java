@@ -9,11 +9,8 @@ import java.math.BigInteger;
 import org.bouncycastle.math.ec.ECCurve;
 import org.bouncycastle.math.ec.ECFieldElement;
 
-
-
 public class X9IntegerConverter {
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:40.406 -0400", hash_original_method = "3E06FD5486BA6E5207C62F9D16D09EAF", hash_generated_method = "3E06FD5486BA6E5207C62F9D16D09EAF")
     public X9IntegerConverter ()
     {
@@ -62,7 +59,6 @@ public byte[] integerToBytes(
     
         return bytes;
     }
-
     
 }
 

@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public final class OsConstants {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:22.588 -0500", hash_original_method = "6FBD45B2EC49C3532B2A383542F004C9", hash_generated_method = "BECA4FADD60375FF883204962270EC05")
@@ -336,9 +332,7 @@ public static String errnoName(int errno) {
         }
         return null;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void initConstants() {
     }
 
@@ -347,7 +341,6 @@ public static String errnoName(int errno) {
     
 private static int placeholder() { return 0; }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:22.620 -0500", hash_original_field = "E7C117905C5ADA6CBC0CC67F7B2495CE", hash_generated_field = "482A5E36885C73AF36D6029A0E1AC644")
-
 
     public static final int AF_INET = placeholder();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:22.623 -0500", hash_original_field = "D14179F81D108B2F0A78107F5FAE8DE7", hash_generated_field = "39BD1786CD1F2CC6E01242300BDAAFBB")

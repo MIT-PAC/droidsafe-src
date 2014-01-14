@@ -5,8 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
 import droidsafe.helpers.DSUtils;
 
 public final class SystemClock {
@@ -44,39 +42,27 @@ public static void sleep(long ms)
             Thread.currentThread().interrupt();
         }
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static boolean setCurrentTimeMillis(long millis) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static long uptimeMillis() {
         return DSUtils.UNKNOWN_LONG;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static long elapsedRealtime() {
         return DSUtils.UNKNOWN_LONG;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static long currentThreadTimeMillis() {
         return DSUtils.UNKNOWN_LONG;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static long currentThreadTimeMicro() {
         return DSUtils.UNKNOWN_LONG;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static long currentTimeMicro() {
         return DSUtils.UNKNOWN_LONG;
     }
@@ -88,7 +74,6 @@ public static void sleep(long ms)
 private SystemClock() {
         // This space intentionally left blank.
     }
-
     
 }
 

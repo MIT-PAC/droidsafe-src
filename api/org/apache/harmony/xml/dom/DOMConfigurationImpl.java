@@ -15,19 +15,12 @@ import org.w3c.dom.DOMStringList;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 
-
-
-
-
-
 public final class DOMConfigurationImpl implements DOMConfiguration {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:21.878 -0500", hash_original_field = "81E77AC834CC33428AACE986453E2606", hash_generated_field = "065E0D5987C6C8DDABEBC55E7E479C3F")
-
 
     private static final Map<String, Parameter> PARAMETERS
             = new TreeMap<String, Parameter>(String.CASE_INSENSITIVE_ORDER);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:21.954 -0500", hash_original_field = "F14375A0C51FA8D5489EB309E8275F75", hash_generated_field = "5ED7B0BC2D04FF583BB30F785E29E32B")
-
 
     private boolean cdataSections = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:21.956 -0500", hash_original_field = "5C0899110D911F86C55495DBF01FA9B5", hash_generated_field = "CDB6C8A59587D4B38723E8D62E318D78")
@@ -233,7 +226,6 @@ private boolean isValid(CharSequence text) {
         }
         return true;
     }
-
     
     static class FixedParameter implements Parameter {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:21.981 -0500", hash_original_field = "95587A84CAA85CC05C4823B1B5D207DB", hash_generated_field = "95587A84CAA85CC05C4823B1B5D207DB")
@@ -262,15 +254,11 @@ public void set(DOMConfigurationImpl config, Object value) {
 public boolean canSet(DOMConfigurationImpl config, Object value) {
             return onlyValue.equals(value);
         }
-
         
     }
-
-
     
     static abstract class BooleanParameter implements Parameter {
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.250 -0400", hash_original_method = "51C6AD17F5451D33F04DE00B4C815245", hash_generated_method = "51C6AD17F5451D33F04DE00B4C815245")
         public BooleanParameter ()
         {
@@ -281,11 +269,8 @@ public boolean canSet(DOMConfigurationImpl config, Object value) {
 public boolean canSet(DOMConfigurationImpl config, Object value) {
             return value instanceof Boolean;
         }
-
         
     }
-
-
     
     interface Parameter {
         Object get(DOMConfigurationImpl config);
@@ -447,7 +432,7 @@ public Object get(DOMConfigurationImpl config) {
 public void set(DOMConfigurationImpl config, Object value) {
                 config.schemaType = (String) value;
             }
-            @DSModeled(DSC.SAFE)
+            
         public boolean canSet(DOMConfigurationImpl config, Object value) {
                 return value == null || value instanceof String;
             }

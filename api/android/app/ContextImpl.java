@@ -82,10 +82,6 @@ import android.view.textservice.TextServicesManager;
 import com.android.internal.os.IDropBoxManagerService;
 import com.android.internal.policy.PolicyManager;
 
-
-
-
-
 import droidsafe.concrete.DroidSafeContentResolver;
 import droidsafe.helpers.DSUtils;
 
@@ -128,7 +124,6 @@ ReceiverRestrictedContext(Context base) {
         //Log.e("IntentReceiver", ex.getMessage(), ex);
         //return mContext.bindService(service, interfaceName, conn, flags);
     }
-
     
 }
 
@@ -195,11 +190,9 @@ static void setFilePermissionsFromMode(String name, int mode,
     private final static boolean DEBUG = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.017 -0500", hash_original_field = "CE42D0F9354A6290AB7AAA746491BCDC", hash_generated_field = "C28D37FE74542C16238F74BB2031E102")
 
-
     private static final HashMap<String, SharedPreferencesImpl> sSharedPrefs =
             new HashMap<String, SharedPreferencesImpl>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.061 -0500", hash_original_field = "4E4A3933C0CBDF5ABDBF6C047A99416B", hash_generated_field = "24FE645B537D86D59BF761DAE24AA3EA")
-
 
     private static final String[] EMPTY_FILE_LIST = {};
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.018 -0500", hash_original_field = "EDE05288DA1A1347727FFDBB84784438", hash_generated_field = "EDE05288DA1A1347727FFDBB84784438")
@@ -238,10 +231,8 @@ static void setFilePermissionsFromMode(String name, int mode,
     private boolean mRestricted;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.045 -0500", hash_original_field = "349D1EAD6A3DD6EDFBBB76E7AC55FC2F", hash_generated_field = "E2A875EF987A77EEC850F20D740B8615")
 
-
     private final Object mSync = new Object();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.047 -0500", hash_original_field = "4B4F5453FAAD1AF3E5BEECD0B2F3E6A8", hash_generated_field = "BD1C0920C019BE593BE14FA4F0428E82")
-
 
     private File mDatabasesDir;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.049 -0500", hash_original_field = "B80688CDDD1C13CD0F220F3A32A77FE5", hash_generated_field = "BEE1171B4DEF7C018E6FF18B5E39497F")
@@ -277,7 +268,6 @@ static void setFilePermissionsFromMode(String name, int mode,
     // orphaned legacy field
     private SensorManager sensorManager;
     
-    @DSModeled(DSC.SPEC)
 	public ContextImpl() {
 		contentResolver = new DroidSafeContentResolver(this);
 		sensorManager = new SensorManager();
@@ -299,51 +289,39 @@ public ContextImpl(ContextImpl context) {
         mContentResolver = context.mContentResolver;
         mOuterContext = this;
     }
-
     
-    @DSModeled(DSC.SAFE)
     @Override
     public AssetManager getAssets() {
         throw new UnsupportedOperationException();
     }
-
     
     @Override
-    @DSModeled(DSC.SAFE)
+    
     public Resources getResources() {
         return Resources.getSystem();
     }
-
     
-    @DSModeled(DSC.BAN)
     @Override
     public PackageManager getPackageManager() {
         throw new UnsupportedOperationException();
     }
-
     
     @Override
-    @DSModeled(DSC.SAFE)
+    
     public ContentResolver getContentResolver() {
         return contentResolver;
     }
-
     
-    @DSModeled(DSC.BAN)
     @Override
     public Looper getMainLooper() {
     	return Looper.getMainLooper();
     }
-
     
-    @DSModeled(DSC.BAN)
     @Override
     public Context getApplicationContext() {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SAFE)
     @Override
     public void setTheme(int resid) {
     }
@@ -354,56 +332,41 @@ public ContextImpl(ContextImpl context) {
     public int getThemeResId() {
         return mThemeResource;
     }
-
     
-    @DSModeled(DSC.SAFE)
     @Override
     public Resources.Theme getTheme() {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.BAN)
     @Override
     public ClassLoader getClassLoader() {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SAFE)
     @Override
     public String getPackageName() {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SAFE)
     @Override
     public ApplicationInfo getApplicationInfo() {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SAFE)
     @Override
     public String getPackageResourcePath() {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SAFE)
     @Override
     public String getPackageCodePath() {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SAFE)
     @Override
     public File getSharedPrefsFile(String name) {
         throw new UnsupportedOperationException();
     }
-
     
     @Override
     public SharedPreferences getSharedPreferences(String name, int mode) {
@@ -420,66 +383,52 @@ private File getPreferencesDir() {
             return mPreferencesDir;
         }
     }
-
     
     @Override
     public FileInputStream openFileInput(String name) throws FileNotFoundException {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SAFE)
     @Override
     public FileOutputStream openFileOutput(String name, int mode) throws FileNotFoundException {
         throw new UnsupportedOperationException();
     }
-
     
     @Override
     public boolean deleteFile(String name) {
         throw new UnsupportedOperationException();
     }
-
     
     @Override
     public File getFilesDir() {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SAFE)
     @Override
     public File getExternalFilesDir(String type) {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SAFE)
     @Override
     public File getObbDir() {
         throw new UnsupportedOperationException();
     }
-
     
     @Override
     public File getCacheDir() {
         throw new UnsupportedOperationException();
     }
-
     
     @Override
     public File getExternalCacheDir() {
         throw new UnsupportedOperationException();
     }
-
     
     @Override
     public File getFileStreamPath(String name) {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SAFE)
     @Override
     public String[] fileList() {
         throw new UnsupportedOperationException( );
@@ -505,27 +454,21 @@ private File getPreferencesDir() {
         setFilePermissionsFromMode(f.getPath(), mode, 0);
         return db;
     }
-
     
     @Override
     public boolean deleteDatabase(String name) {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SAFE)
     @Override
     public File getDatabasePath(String name) {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SAFE)
     @Override
     public String[] databaseList() {
         throw new UnsupportedOperationException();
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.272 -0500", hash_original_method = "5E7F893311C7FFBA04D943EFEC31C4D2", hash_generated_method = "CECB6C2171E104773B017888B934F3B5")
     
@@ -540,129 +483,99 @@ private File getDatabasesDir() {
             return mDatabasesDir;
         }
     }
-
     
-    @DSModeled(DSC.SAFE)
     @Override
     public Drawable getWallpaper() {
         throw new UnsupportedOperationException();
     }
-
     
     @Override
     public Drawable peekWallpaper() {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SAFE)
     @Override
     public int getWallpaperDesiredMinimumWidth() {
         throw new UnsupportedOperationException();
     }
-
     
     @Override
     public int getWallpaperDesiredMinimumHeight() {
         throw new UnsupportedOperationException();
     }
-
     
     @Override
     public void setWallpaper(Bitmap bitmap) throws IOException {
         throw new UnsupportedOperationException();
     }
-
     
     @Override
     public void setWallpaper(InputStream data) throws IOException {
         throw new UnsupportedOperationException();
     }
-
     
     @Override
     public void clearWallpaper() {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SPEC)
     @Override
     public void startActivity(Intent intent) {
         throw new UnsupportedOperationException();
     }
-
     
     @Override
     public void startActivities(Intent[] intents) {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SPEC)
     @Override
     public void startIntentSender(IntentSender intent,
             Intent fillInIntent, int flagsMask, int flagsValues, int extraFlags)
             throws IntentSender.SendIntentException {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SPEC)
     @Override
     public void sendBroadcast(Intent intent) {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SPEC)
     @Override
     public void sendBroadcast(Intent intent, String receiverPermission) {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SPEC)
     @Override
     public void sendOrderedBroadcast(Intent intent,
             String receiverPermission) {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SPEC)
     @Override
     public void sendOrderedBroadcast(Intent intent, String receiverPermission,
             BroadcastReceiver resultReceiver, Handler scheduler, int initialCode, String initialData,
            Bundle initialExtras) {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SPEC)
     @Override
     public void sendStickyBroadcast(Intent intent) {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SPEC)
     @Override
     public void sendStickyOrderedBroadcast(Intent intent,
             BroadcastReceiver resultReceiver, Handler scheduler, int initialCode, String initialData,
            Bundle initialExtras) {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SPEC)
     @Override
     public void removeStickyBroadcast(Intent intent) {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SPEC)
     @Override
     public Intent registerReceiver(BroadcastReceiver receiver, IntentFilter filter) {
     	// Generate Intents based on filter
@@ -672,9 +585,7 @@ private File getDatabasesDir() {
 		}
     	return null; // no 'sticky' intents need to be modeled for coverage
     }
-
     
-    @DSModeled(DSC.SPEC)
     @Override
     public Intent registerReceiver(BroadcastReceiver receiver, IntentFilter filter,
             String broadcastPermission, Handler scheduler) {
@@ -716,40 +627,31 @@ private Intent registerReceiverInternal(BroadcastReceiver receiver,
             return null;
         }
     }
-
     
     @Override
     public void unregisterReceiver(BroadcastReceiver receiver) {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SPEC)
     @Override
     public ComponentName startService(Intent service) {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SPEC)
     @Override
     public boolean stopService(Intent service) {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SPEC)
     @Override
     public boolean bindService(Intent service, ServiceConnection conn, int flags) {
         throw new UnsupportedOperationException();
     }
-
     
     @Override
     public void unbindService(ServiceConnection conn) {
         throw new UnsupportedOperationException();
     }
-
     
     @Override
     public boolean startInstrumentation(ComponentName className,
@@ -757,7 +659,6 @@ private Intent registerReceiverInternal(BroadcastReceiver receiver,
         throw new UnsupportedOperationException();
   }
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:33.108 -0400", hash_original_method = "0B425FF354429B91E3FB5E5F0CCF5247", hash_generated_method = "9DC6D6BDC8B919CA9F34CC2423316AAF")
     private WallpaperManager getWallpaperManager() {
 		return wallPaperManager;
@@ -765,19 +666,16 @@ private Intent registerReceiverInternal(BroadcastReceiver receiver,
         // ---------- Original Method ----------
         //return (WallpaperManager) WALLPAPER_FETCHER.getService(this);
     }
-
     
     @Override
     public int checkPermission(String permission, int pid, int uid) {
         throw new UnsupportedOperationException();
     }
-
     
     @Override
     public int checkCallingPermission(String permission) {
         throw new UnsupportedOperationException();
     }
-
     
     @Override
     public int checkCallingOrSelfPermission(String permission) {
@@ -799,63 +697,48 @@ private void enforce(
                     ".");
         }
     }
-
     
     @Override
     public void enforcePermission(
             String permission, int pid, int uid, String message) {
         throw new UnsupportedOperationException();
     }
-
     
     @Override
     public void enforceCallingPermission(String permission, String message) {
         throw new UnsupportedOperationException();
     }
-
     
     @Override
     public void enforceCallingOrSelfPermission(String permission, String message) {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SPEC)
     @Override
     public void grantUriPermission(String toPackage, Uri uri, int modeFlags) {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SPEC)
     @Override
     public void revokeUriPermission(Uri uri, int modeFlags) {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SPEC)
     @Override
     public int checkUriPermission(Uri uri, int pid, int uid, int modeFlags) {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SPEC)
     @Override
     public int checkCallingUriPermission(Uri uri, int modeFlags) {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SPEC)
     @Override
     public int checkCallingOrSelfUriPermission(Uri uri, int modeFlags) {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SPEC)
     @Override
     public int checkUriPermission(Uri uri, String readPermission,
             String writePermission, int pid, int uid, int modeFlags) {
@@ -895,49 +778,37 @@ private void enforceForUri(
                     ".");
         }
     }
-
     
-    @DSModeled(DSC.SPEC)
     @Override
     public void enforceUriPermission(
             Uri uri, int pid, int uid, int modeFlags, String message) {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SPEC)
     @Override
     public void enforceCallingUriPermission(
             Uri uri, int modeFlags, String message) {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SPEC)
     @Override
     public void enforceCallingOrSelfUriPermission(
             Uri uri, int modeFlags, String message) {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SPEC)
     public void enforceUriPermission(
             Uri uri, String readPermission, String writePermission,
             int pid, int uid, int modeFlags, String message) {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.BAN)
     @Override
     public Context createPackageContext(String packageName, int flags)
             throws PackageManager.NameNotFoundException {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SAFE)
     @Override
     public boolean isRestricted() {
         throw new UnsupportedOperationException();        
@@ -951,7 +822,6 @@ private File getDataDirFile() {
         }
         throw new RuntimeException("Not supported in system context");
     }
-
     
     @Override
     public File getDir(String name, int mode) {
@@ -1021,18 +891,9 @@ final Context getReceiverRestrictedContext() {
         }
         return mReceiverRestrictedContext = new ReceiverRestrictedContext(getOuterContext());
     }
-
-    
-    
-
-    
-
-
-
     
     private static final class ApplicationContentResolver extends ContentResolver {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.449 -0500", hash_original_field = "DAA5CF027F30E341CB6E5B438E9919B8", hash_generated_field = "3BD1B37D989628ECBEBF06B5281DCE58")
-
 
         private  ActivityThread mMainThread;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.440 -0500", hash_original_method = "FC2218F5409D3B615253B9FADC78F4F0", hash_generated_method = "C2EBBD2140065E086EED206CC0344224")
@@ -1062,7 +923,6 @@ public ApplicationContentResolver(Context context, ActivityThread mainThread) {
         public boolean releaseProvider(IContentProvider provider) {
             return mMainThread.releaseProvider(provider);
         }
-
         
     }
 

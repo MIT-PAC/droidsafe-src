@@ -13,10 +13,6 @@ import android.annotation.SdkConstant.SdkConstantType;
 import android.os.Binder;
 import android.os.RemoteException;
 
-
-
-
-
 public class ConnectivityManager {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:19.975 -0500", hash_original_method = "671D0D7730B85BC5935321406BD74923", hash_generated_method = "11074B2D42E47FAF0F3700968E303606")
@@ -188,7 +184,6 @@ public static boolean isNetworkTypeMobile(int networkType) {
     public static final int MAX_NETWORK_TYPE = TYPE_WIFI_P2P;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:19.970 -0500", hash_original_field = "A591864212287B0F4C2623B6941E302B", hash_generated_field = "693728286830CEC17980B2770B246B92")
 
-
     public static final int DEFAULT_NETWORK_PREFERENCE = TYPE_WIFI;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:20.050 -0500", hash_original_field = "8C9AEFD4AA83DE991C5D77C913B19CBF", hash_generated_field = "27C649E4F5C0896362843DA1D4CCC9B3")
 
@@ -225,7 +220,6 @@ public static boolean isNetworkTypeMobile(int networkType) {
     public static final int TETHER_ERROR_IFACE_CFG_ERROR      = 10;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:19.972 -0500", hash_original_field = "D5507596E1C2AEF6056A5DA433C8FD30", hash_generated_field = "91FD67C0243C9CAC51474C01D9540196")
 
-
     private  IConnectivityManager mService;
 
     /**
@@ -237,9 +231,8 @@ public ConnectivityManager(IConnectivityManager service) {
         mService = checkNotNull(service, "missing IConnectivityManager");
     }
     
-    
     //added for Modeling
-    @DSModeled(DSC.BAN)
+    
     public ConnectivityManager(){
         
     }

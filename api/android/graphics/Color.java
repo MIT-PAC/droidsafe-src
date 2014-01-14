@@ -9,9 +9,6 @@ import java.util.Locale;
 
 import android.util.MathUtils;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public class Color {
@@ -71,9 +68,7 @@ public static int blue(int color) {
 public static int rgb(int red, int green, int blue) {
         return (0xFF << 24) | (red << 16) | (green << 8) | blue;
     }
-
     
-    @DSModeled(DSC.SAFE)
 	public static int argb(int alpha, int red, int green, int blue) {
 		return 0;  //Value doesn't really matter
         //return (alpha << 24) | (red << 16) | (green << 8) | blue;
@@ -136,7 +131,6 @@ public static float saturation(int color) {
         int r = (color >> 16) & 0xFF;
         int g = (color >> 8) & 0xFF;
         int b = color & 0xFF;
-
 
         int V = Math.max(b, Math.max(r, g));
         int temp = Math.min(b, Math.min(r, g));
@@ -354,11 +348,9 @@ public static int HSVToColor(int alpha, float hsv[]) {
         }
         return nativeHSVToColor(alpha, hsv);
     }
-
     
     private static void nativeRGBToHSV(int red, int greed, int blue, float hsv[]) {
     }
-
     
     private static int nativeHSVToColor(int alpha, float hsv[]) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2032742947 = DSUtils.UNKNOWN_INT;
@@ -402,10 +394,8 @@ public static int HSVToColor(int alpha, float hsv[]) {
     public static final int TRANSPARENT = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:23.901 -0500", hash_original_field = "211C76855DAC46B1B9C87BD8B441D16C", hash_generated_field = "498D8E53A8FACBB74E1A4ED57C16330E")
 
-
     private static  HashMap<String, Integer> sColorNameMap;
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.684 -0400", hash_original_method = "34DAB7DC9B66BC3931AEC17E77DE7DFA", hash_generated_method = "34DAB7DC9B66BC3931AEC17E77DE7DFA")
     public Color ()
     {

@@ -24,10 +24,6 @@ import junit.framework.Test;
 import junit.framework.TestListener;
 import junit.framework.TestSuite;
 
-
-
-
-
 public abstract class BaseTestRunner implements TestListener {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.273 -0500", hash_original_method = "81AEB59715E8652DC89184A5B1CF88C4", hash_generated_method = "1CBF9551B83624D65B3361368677B4C7")
@@ -199,7 +195,6 @@ static boolean filterLine(String line) {
     public static final String SUITE_METHODNAME= "suite";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.261 -0500", hash_original_field = "933D851BB17BF535C50BB224853E7867", hash_generated_field = "7DB7C036CC486CE65B3BAEB5918F3555")
 
-
     private static Properties fPreferences;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.263 -0500", hash_original_field = "004DEC929123DEE3921C20C3CAF2EBA6", hash_generated_field = "EAA944C707FD59A79AFC020C6041B5A2")
 
@@ -211,7 +206,6 @@ static boolean filterLine(String line) {
 
     boolean fLoading= true;
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.387 -0400", hash_original_method = "7AE9B4E2779E68829E6E78655AC68035", hash_generated_method = "7AE9B4E2779E68829E6E78655AC68035")
     public BaseTestRunner ()
     {

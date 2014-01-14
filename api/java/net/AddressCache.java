@@ -6,10 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import libcore.util.BasicLruCache;
 
-
-
-
-
 class AddressCache {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:13.880 -0500", hash_original_field = "2E4A7E0ADB7AD2DD3408B12728E13C2F", hash_generated_field = "5204922FABD23C1FBC7ABD47FD1AA264")
 
@@ -25,7 +21,6 @@ class AddressCache {
     private final BasicLruCache<String, AddressCacheEntry> cache
             = new BasicLruCache<String, AddressCacheEntry>(MAX_ENTRIES);
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.250 -0400", hash_original_method = "FAF57634870A3B339F1CC57081189EF2", hash_generated_method = "FAF57634870A3B339F1CC57081189EF2")
     public AddressCache ()
     {
@@ -78,7 +73,6 @@ public void put(String hostname, InetAddress[] addresses) {
 public void put(String hostname, String detailMessage) {
         put(hostname, detailMessage, false);
     }
-
     
     static class AddressCacheEntry {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:13.891 -0500", hash_original_field = "01495BEB834F5098BB0B06183674C819", hash_generated_field = "D933278613C352684A53A2027DDBD11D")
@@ -95,7 +89,6 @@ AddressCacheEntry(Object value, long expiryNanos) {
             this.value = value;
             this.expiryNanos = expiryNanos;
         }
-
         
     }
 

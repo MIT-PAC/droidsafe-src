@@ -24,9 +24,6 @@ import android.util.Log;
 import android.view.Surface;
 import android.view.SurfaceHolder;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public class MediaPlayer {
@@ -124,14 +121,10 @@ public static MediaPlayer create(Context context, int resid) {
         }
         return null;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static final void native_init() {
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static int native_pullBatteryData(Parcel reply) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1814873156 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1814873156;
@@ -172,7 +165,6 @@ private static void postEventFromNative(Object mediaplayer_ref,
 
     public static final boolean BYPASS_METADATA_FILTER = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.597 -0500", hash_original_field = "739379B9AAF735D2681CAD67704A9686", hash_generated_field = "8BF0B63CF7DC67F5CB722C0B4A64DFA2")
-
 
     private final static String TAG = "MediaPlayer";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.599 -0500", hash_original_field = "20E745C649C92FB4F897B08A70A91034", hash_generated_field = "19F3745DB30ADAF56D8234C37E7E1A86")
@@ -260,7 +252,6 @@ private static void postEventFromNative(Object mediaplayer_ref,
     public static final int MEDIA_INFO_METADATA_UPDATE = 802;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.601 -0500", hash_original_field = "A4A4998D7B0D1DA56BE7F415CF4F3BBD", hash_generated_field = "0A3F8EE607897645EB2EE30B6939205B")
 
-
     private int mNativeContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.604 -0500", hash_original_field = "5DE561E5C08686952994313D287A7260", hash_generated_field = "E4C872FF50935D400555417B96D7DB8B")
 
@@ -285,34 +276,26 @@ private static void postEventFromNative(Object mediaplayer_ref,
     private boolean mStayAwake;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.886 -0500", hash_original_field = "C7D5F5974B7D55BD6A40A9DEFCD5C541", hash_generated_field = "A2852387273CF168455EF7C99DC77C4A")
 
-
     private OnPreparedListener mOnPreparedListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.893 -0500", hash_original_field = "06A6FF6127C3C38B2E227EA62CA452A2", hash_generated_field = "EC9BCCBF3C86489E298221F5D4476C58")
-
 
     private OnCompletionListener mOnCompletionListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.900 -0500", hash_original_field = "6A14E1C8B44382DB3357EF024F3AE973", hash_generated_field = "0091D0B159C1300DEBA144C3752FC48B")
 
-
     private OnBufferingUpdateListener mOnBufferingUpdateListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.907 -0500", hash_original_field = "AE19EBFFFE42A7CFBB4350CE68358C91", hash_generated_field = "2403596CEA6AA0A7A2E7B136A5284A81")
-
 
     private OnSeekCompleteListener mOnSeekCompleteListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.915 -0500", hash_original_field = "0B03AF7448EFC1D254247AF351562B3C", hash_generated_field = "8E3213E6DC01DA241A4C3F8027EB24E5")
 
-
     private OnVideoSizeChangedListener mOnVideoSizeChangedListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.922 -0500", hash_original_field = "5C497D2165BB1CA9A5FD8691837D33C9", hash_generated_field = "CF913FD08AF8A12FA8042BA315C5F119")
-
 
     private OnTimedTextListener mOnTimedTextListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.936 -0500", hash_original_field = "C38C52334F0DC8BAE5DDF67054F8F272", hash_generated_field = "16CDD39A55F7F6321E357628DB75DCA6")
 
-
     private OnErrorListener mOnErrorListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.961 -0500", hash_original_field = "31E70E6AB1204402EDA8B1303830B586", hash_generated_field = "1D3DA06942FC758771FAEF9EA193F57C")
-
 
     private OnInfoListener mOnInfoListener;
 
@@ -352,7 +335,6 @@ public MediaPlayer() {
     	//Formerly a native method
     	addTaint(surface.getTaint());
     }
-
 
     /**
      * Create a request parcel which can be routed to the native media
@@ -528,7 +510,6 @@ public void setDataSource(Context context, Uri uri, Map<String, String> headers)
     	addTaint(path.getTaint());
     }
 
-
     /**
      * Sets the data source (file-path or http/rtsp URL) to use.
      *
@@ -570,7 +551,6 @@ public void setDataSource(String path, Map<String, String> headers)
     	addTaint(values[0].getTaint());
     }
 
-
     /**
      * Sets the data source (FileDescriptor) to use. It is the caller's responsibility
      * to close the file descriptor. It is safe to do so as soon as this call returns.
@@ -606,7 +586,6 @@ public void setDataSource(FileDescriptor fd)
     	addTaint(length);
     }
 
-
     /**
      * Prepares the player for playback, synchronously.
      *
@@ -621,7 +600,6 @@ public void setDataSource(FileDescriptor fd)
     public void prepare() throws IOException, IllegalStateException{
     	//Formerly a native method
     }
-
 
     /**
      * Prepares the player for playback, asynchronously.
@@ -638,7 +616,6 @@ public void setDataSource(FileDescriptor fd)
     public void prepareAsync() throws IllegalStateException{
     	//Formerly a native method
     }
-
 
     /**
      * Starts or resumes playback. If playback had previously been paused,
@@ -661,7 +638,6 @@ public  void start() throws IllegalStateException {
     	//Formerly a native method
     }
 
-
     /**
      * Stops playback after playback has been stopped or paused.
      *
@@ -681,7 +657,6 @@ public void stop() throws IllegalStateException {
     	//Formerly a native method
     }
 
-
     /**
      * Pauses playback. Call start() to resume.
      *
@@ -700,7 +675,6 @@ public void pause() throws IllegalStateException {
     private void _pause() throws IllegalStateException{
     	//Formerly a native method
     }
-
 
     /**
      * Set the low-level power management behavior for this MediaPlayer.  This
@@ -799,7 +773,6 @@ private void updateSurfaceScreenOn() {
     	return getTaintInt();
     }
 
-
     /**
      * Returns the height of the video.
      *
@@ -816,7 +789,6 @@ private void updateSurfaceScreenOn() {
     	return getTaintInt();
     }
 
-
     /**
      * Checks whether the MediaPlayer is playing.
      *
@@ -828,7 +800,6 @@ private void updateSurfaceScreenOn() {
     	//Formerly a native method
     	return getTaintBoolean();
     }
-
 
     /**
      * Seeks to specified time position.
@@ -844,7 +815,6 @@ private void updateSurfaceScreenOn() {
     	addTaint(msec);
     }
 
-
     /**
      * Gets the current playback position.
      *
@@ -857,7 +827,6 @@ private void updateSurfaceScreenOn() {
     	return getTaintInt();
     }
 
-
     /**
      * Gets the duration of the file.
      *
@@ -869,7 +838,6 @@ private void updateSurfaceScreenOn() {
     	//Formerly a native method
     	return getTaintInt();
     }
-
 
     /**
      * Gets the media metadata.
@@ -998,7 +966,6 @@ public void release() {
     	//Formerly a native method
     }
 
-
     /**
      * Resets the MediaPlayer to its uninitialized state. After calling
      * this method, you will have to initialize it again by setting the
@@ -1019,7 +986,6 @@ public void reset() {
     	//Formerly a native method
     }
 
-
     /**
      * Sets the audio stream type for this MediaPlayer. See {@link AudioManager}
      * for a list of stream types. Must call this method before prepare() or
@@ -1036,7 +1002,6 @@ public void reset() {
     	addTaint(streamtype);
     }
 
-
     /**
      * Sets the player to be looping or non-looping.
      *
@@ -1049,7 +1014,6 @@ public void reset() {
     	addTaint(looping);
     }
 
-
     /**
      * Checks whether the MediaPlayer is looping or non-looping.
      *
@@ -1061,7 +1025,6 @@ public void reset() {
     	//Formerly a native method
     	return getTaintBoolean();
     }
-
 
     /**
      * Sets the volume on this player.
@@ -1082,10 +1045,7 @@ public void reset() {
     	addTaint(leftVolume);
     	addTaint(rightVolume);
     }
-
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.387 -0400", hash_original_method = "E7BF05B3622AAF2F5F3BF2C4557A0B3B", hash_generated_method = "BE7FFC2E098F8066660793B3DA145138")
     public Bitmap getFrameAt(int msec) throws IllegalStateException {
         Bitmap bm = new Bitmap();
@@ -1115,8 +1075,6 @@ public void reset() {
     	//Formerly a native method
     	addTaint(sessionId);
     }
-
-
     
     private class EventHandler extends Handler {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.867 -0500", hash_original_field = "65FD88AA6A32847BBC1610BA37C74F17", hash_generated_field = "8CCD253E1D8FDE10357015F7795C2D1A")
@@ -1209,11 +1167,8 @@ public EventHandler(MediaPlayer mp, Looper looper) {
                 return;
             }
         }
-
         
     }
-
-
     
     public interface OnPreparedListener
     {
@@ -1276,7 +1231,6 @@ public EventHandler(MediaPlayer mp, Looper looper) {
     	return getTaintInt();
     }
 
-
     /**
      * Attaches an auxiliary effect to the player. A typical auxiliary effect is a reverberation
      * effect which can be applied on any sound source that directs a certain amount of its
@@ -1298,7 +1252,6 @@ public EventHandler(MediaPlayer mp, Looper looper) {
     	addTaint(effectId);
     }
 
-
     // There are currently no defined keys usable from Java with get*Parameter.
     // But if any keys are defined, the order must be kept in sync with include/media/mediaplayer.h.
     // private static final int KEY_PARAMETER_... = ...;
@@ -1318,7 +1271,6 @@ public EventHandler(MediaPlayer mp, Looper looper) {
     	addTaint(value.getTaint());
     	return getTaintBoolean();
     }
-
 
     /**
      * Sets the parameter indicated by key.
@@ -1370,7 +1322,6 @@ public boolean setParameter(int key, int value) {
     	addTaint(key);
     	addTaint(reply.getTaint());
     }
-
 
     /**
      * Gets the value of the parameter indicated by key.
@@ -1438,7 +1389,6 @@ public int getIntParameter(int key) {
     	addTaint(level);
     }
 
-
     /**
      * @param request Parcel destinated to the media player. The
      *                Interface token must be set to the IMediaPlayer
@@ -1454,8 +1404,6 @@ public int getIntParameter(int key) {
     	addTaint(reply.getTaint());
     	return getTaintInt();
     }
-
-
 
     /**
      * @param update_only If true fetch only the set of metadata that have
@@ -1481,7 +1429,6 @@ public int getIntParameter(int key) {
     	addTaint(reply.getTaint());
     	return getTaintBoolean();
     }
-
 
     /**
      * @param request Parcel with the 2 serialized lists of allowed
@@ -1510,7 +1457,6 @@ public int getIntParameter(int key) {
     private final void native_finalize(){
     	//Formerly a native method
     }
-
 
     /**
      * @param index The index of the text track to be turned on.

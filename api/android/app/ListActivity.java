@@ -24,7 +24,6 @@ public class ListActivity extends Activity {
     protected ListView mList;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:40.790 -0500", hash_original_field = "AD9C3D1E48D73BF1547D53C4C62401B2", hash_generated_field = "2E60E17486AAEB1A4E1F1878A0354061")
 
-
     private Handler mHandler = new Handler();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:40.792 -0500", hash_original_field = "5D1EC77CB5A18285CC99B754B6D1F724", hash_generated_field = "37FB9735B131E97EBBBF7EF31E956D4C")
 
@@ -37,7 +36,6 @@ public class ListActivity extends Activity {
 public void run() {
             mList.focusableViewAvailable(mList);
         }
-
         
 };
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.760 -0400", hash_original_field = "9B3F30A71979D6623D111E114AFFBE5E", hash_generated_field = "F601E5C2332EFF7D085096154B4D128B")
@@ -49,11 +47,9 @@ public void onItemClick(AdapterView<?> parent, View v, int position, long id)
         {
             onListItemClick((ListView)parent, v, position, id);
         }
-
         
 };
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.761 -0400", hash_original_method = "E9A1B22E98BB93A49E0DD0DF78D68B8E", hash_generated_method = "E9A1B22E98BB93A49E0DD0DF78D68B8E")
     public ListActivity ()
     {
@@ -100,9 +96,7 @@ protected void onListItemClick(ListView l, View v, int position, long id) {
         mHandler.removeCallbacks(mRequestFocus);
         super.onDestroy();
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.771 -0400", hash_original_method = "955E85868B41B55EC53984762AF65544", hash_generated_method = "30388E3EF3BC0BDECE4758D0963DCC90")
     @Override
     public void onContentChanged() {
@@ -212,9 +206,7 @@ public ListView getListView() {
 public ListAdapter getListAdapter() {
         return mAdapter;
     }
-
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.783 -0400", hash_original_method = "8B5C698EA2865F1A0F6EAF61F2AE4FB9", hash_generated_method = "8A39C1E8DD04D52E92C3522329566B10")
     private void ensureList() {
         if(mList != null)        
@@ -231,13 +223,11 @@ public ListAdapter getListAdapter() {
         //}
         //setContentView(com.android.internal.R.layout.list_content_simple);
     }
-
-    @DSModeled(DSC.BAN)
+    
     @Override
     public void droidsafeOnSubActivityHook() {
         onListItemClick(mList, mList.getChildAt(0), getTaintInt(), getTaintInt());
     }
-
     
 }
 

@@ -24,10 +24,6 @@ import android.os.RemoteCallback;
 import android.os.RemoteException;
 import android.os.ServiceManager;
 
-
-
-
-
 public class DevicePolicyManager {
 
     /** @hide */
@@ -106,13 +102,11 @@ public static DevicePolicyManager create(Context context, Handler handler) {
             = "android.app.action.START_ENCRYPTION";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.656 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
 
-
     private  Context mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.658 -0500", hash_original_field = "7C2672154573FCF3BE1B466023E739FB", hash_generated_field = "E263D54C98D833F4BF6DB51617AA3116")
 
     private  IDevicePolicyManager mService;
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.708 -0400", hash_original_method = "50DCCFAFB01D68C84073DED89668D8AE", hash_generated_method = "C38A3CAA5978B5E74759E44B9191AA99")
     private  DevicePolicyManager(Context context, Handler handler) {
         addTaint(handler.getTaint());
@@ -127,7 +121,7 @@ public static DevicePolicyManager create(Context context, Handler handler) {
     }
     
     //Injected by hand modeling
-    @DSModeled(DSC.BAN)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.708 -0400", hash_original_method = "50DCCFAFB01D68C84073DED89668D8AE", hash_generated_method = "C38A3CAA5978B5E74759E44B9191AA99")
     public DevicePolicyManager(Context context) {
         addTaint(context.getTaint());

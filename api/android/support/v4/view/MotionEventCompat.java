@@ -6,10 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.view.MotionEvent;
 
-
-
-
-
 public class MotionEventCompat {
 
     /**
@@ -89,11 +85,9 @@ public static int getPointerCount(MotionEvent event) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:20.103 -0500", hash_original_field = "5FE5861F8F7B4FBDED72C34227E6EC0C", hash_generated_field = "F0C04F9075773F238646F09F10EC5686")
 
     static  MotionEventVersionImpl IMPL;
-
     
     static class BaseMotionEventVersionImpl implements MotionEventVersionImpl {
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.289 -0400", hash_original_method = "1452E4140DDA36A9AA18888B766DC89D", hash_generated_method = "1452E4140DDA36A9AA18888B766DC89D")
         public BaseMotionEventVersionImpl ()
         {
@@ -143,15 +137,11 @@ public static int getPointerCount(MotionEvent event) {
         public int getPointerCount(MotionEvent event) {
             return 1;
         }
-
         
     }
-
-
     
     static class EclairMotionEventVersionImpl implements MotionEventVersionImpl {
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.294 -0400", hash_original_method = "042D39F66E91ADDA4B8AD5816FDB91A1", hash_generated_method = "042D39F66E91ADDA4B8AD5816FDB91A1")
         public EclairMotionEventVersionImpl ()
         {
@@ -187,11 +177,8 @@ public static int getPointerCount(MotionEvent event) {
         public int getPointerCount(MotionEvent event) {
             return MotionEventCompatEclair.getPointerCount(event);
         }
-
         
     }
-
-
     
     interface MotionEventVersionImpl {
         public int findPointerIndex(MotionEvent event, int pointerId);
@@ -201,7 +188,6 @@ public static int getPointerCount(MotionEvent event) {
         public int getPointerCount(MotionEvent event);
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:20.106 -0500", hash_original_field = "FC4C290B75F77C9110197620363F9111", hash_generated_field = "CA4F36A588CFE36A93CA952406390368")
-
 
     /**
      * Synonym for {@link MotionEvent#ACTION_MASK}.

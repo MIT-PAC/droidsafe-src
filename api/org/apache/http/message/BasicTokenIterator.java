@@ -29,7 +29,6 @@ public class BasicTokenIterator implements TokenIterator {
 
     protected int searchPos;
 
-
     /**
      * Creates a new instance of {@link BasicTokenIterator}.
      *
@@ -46,38 +45,29 @@ public BasicTokenIterator(final HeaderIterator headerIterator) {
         this.headerIt = headerIterator;
         this.searchPos = findNext(-1);
     }
-
     
-    @DSModeled(DSC.SAFE)
 	@Override
 	public boolean hasNext() {
 		// TODO Auto-generated method stub
 		return false;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Override
 	public String nextToken() {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	@Override
 	public Object next() {
 		// TODO Auto-generated method stub
 		return new Object();
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Override
 	public void remove() {
 		// TODO Auto-generated method stub
 	}
-
 
     /**
      * Determines the next token.
@@ -123,7 +113,6 @@ protected int findNext(int from)
         return end;
     }
 
-
     /**
      * Creates a new token to be returned.
      * Called from {@link #findNext findNext} after the token is identified.
@@ -149,7 +138,6 @@ protected int findNext(int from)
 protected String createToken(String value, int start, int end) {
         return value.substring(start, end);
     }
-
 
     /**
      * Determines the starting position of the next token.
@@ -201,7 +189,6 @@ protected int findTokenStart(int from) {
         return found ? from : -1;
     }
 
-
     /**
      * Determines the position of the next token separator.
      * Because of multi-header joining rules, the end of a
@@ -249,7 +236,6 @@ protected int findTokenSeparator(int from) {
         return from;
     }
 
-
     /**
      * Determines the ending position of the current token.
      * This method will not leave the current header value,
@@ -278,7 +264,6 @@ protected int findTokenEnd(int from) {
         return end;
     }
 
-
     /**
      * Checks whether a character is a token separator.
      * RFC 2616, section 2.1 defines comma as the separator for
@@ -295,7 +280,6 @@ protected int findTokenEnd(int from) {
 protected boolean isTokenSeparator(char ch) {
         return (ch == ',');
     }
-
 
     /**
      * Checks whether a character is a whitespace character.
@@ -316,7 +300,6 @@ protected boolean isWhitespace(char ch) {
         // many control characters which are not whitespace as per RFC 2616
         return ((ch == '\t') || Character.isSpaceChar(ch));
     }
-
 
     /**
      * Checks whether a character is a valid token character.
@@ -354,7 +337,6 @@ protected boolean isTokenChar(char ch) {
         // out the false positives.
         return true;
     }
-
 
     /**
      * Checks whether a character is an HTTP separator.

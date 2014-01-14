@@ -11,11 +11,6 @@ import android.graphics.Paint;
 
 import com.android.internal.util.ArrayUtils;
 
-
-
-
-
-
 public class SpannableStringBuilder implements CharSequence, GetChars, Spannable, Editable, Appendable, GraphicsOperations {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.777 -0500", hash_original_method = "6E4B705F56C3BE22100FD14C8AB5330A", hash_generated_method = "83DC34C0333E4CBFD30BDA50C8F21BCD")
@@ -35,17 +30,14 @@ private static String region(int start, int end) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.912 -0500", hash_original_field = "8F8BB2875FCC75EB5D66BC4152125391", hash_generated_field = "EDD7FE0B7D12EE9C3486272F367681B2")
 
-
     private static final InputFilter[] NO_FILTERS = new InputFilter[0];
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.937 -0500", hash_original_field = "5576A15AD5E53DFDFD04B2077F7237D2", hash_generated_field = "C7F2D79B9AFA94FAA8193039FD601611")
-
 
     private static final int POINT = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.939 -0500", hash_original_field = "E119A075AD5D169513CC4BE43025C7AF", hash_generated_field = "DAC314A52970829DE920414BCD420813")
 
     private static final int PARAGRAPH = 3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.942 -0500", hash_original_field = "B057EC1C3F0DA3334DDE49EE2654C48F", hash_generated_field = "62F477B3AA465E1D6BB9002CA3207142")
-
 
     private static final int START_MASK = 0xF0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.945 -0500", hash_original_field = "EE13D9C7DA2F142A87803A3BF471C5C0", hash_generated_field = "DB23288AE0F2FDCBE5902F7D83D9C129")
@@ -59,7 +51,6 @@ private static String region(int start, int end) {
     private InputFilter[] mFilters = NO_FILTERS;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.916 -0500", hash_original_field = "FE2DC1C4E7D46875FA268CEDC057D0E8", hash_generated_field = "6CB0C9E6186F94D00B15A6B38EEADB93")
 
-
     private char[] mText;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.919 -0500", hash_original_field = "814FBC343EF399A89CC06DA8039F47C7", hash_generated_field = "40EFB69E13F0CDEFCFD23CECDA09F21F")
 
@@ -68,7 +59,6 @@ private static String region(int start, int end) {
 
     private int mGapLength;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.923 -0500", hash_original_field = "CEB48CD34EDA945F7544A85E8671F5CB", hash_generated_field = "64DC9467A0917D43133A286556BA813F")
-
 
     private Object[] mSpans;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.926 -0500", hash_original_field = "CCB8DB5D1573B043ED78A6330B85E1F0", hash_generated_field = "84CB203FE2C516ED9C3D0BE9F569E2FC")
@@ -171,9 +161,7 @@ public char charAt(int where) {
         else
             return mText[where];
     }
-
     
-    @DSModeled(DSC.SAFE)
     @Override
 	public int length() {
 		// TODO Auto-generated method stub
@@ -286,39 +274,29 @@ public SpannableStringBuilder delete(int start, int end) {
         
         return ret; // == this
     }
-
     
-    @DSModeled(DSC.SAFE)
     @Override
 	public void clear() {
 		// TODO Auto-generated method stub
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Override
 	public void clearSpans() {
 		// TODO Auto-generated method stub
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Override
 	public Editable append(CharSequence text) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Override
 	public Editable append(CharSequence text, int start, int end) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Override
 	public Editable append(char text) {
 		// TODO Auto-generated method stub
@@ -583,9 +561,7 @@ public SpannableStringBuilder replace(final int start, final int end,
 
         return this; 
     }
-
     
-    @DSModeled(DSC.SAFE)
     @Override
 	public void setSpan(Object what, int start, int end, int flags) {
 		// TODO Auto-generated method stub
@@ -686,9 +662,7 @@ private void setSpan(boolean send, Object what, int start, int end, int flags) {
         if (send)
             sendSpanAdded(what, nstart, nend);
     }
-
     
-    @DSModeled(DSC.SAFE)
     @Override
 	public void removeSpan(Object what) {
 		// TODO Auto-generated method stub
@@ -760,9 +734,7 @@ public int getSpanFlags(Object what) {
 
         return 0; 
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.053 -0400", hash_original_method = "5CF7F75C8FAF8266A003E04C7C47A211", hash_generated_method = "F368E210A8A158B84C6EA5269A715CDD")
     @SuppressWarnings("unchecked")
     public <T> T[] getSpans(int queryStart, int queryEnd, Class<T> kind) {
@@ -913,25 +885,20 @@ public int nextSpanTransition(int start, int limit, Class kind) {
 
         return limit;
     }
-
     
-    @DSModeled(DSC.SAFE)
     @Override
 	public CharSequence subSequence(int start, int end) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Override
 	public void getChars(int start, int end, char[] dest, int destoff) {
 		// TODO Auto-generated method stub
 	}
-
     
     @Override
-	@DSModeled(DSC.SAFE)
+	
 	public String toString() {
 		return new String();
 	}
@@ -1038,32 +1005,24 @@ private void checkRange(final String operation, int start, int end) {
                                                 " starts before 0");
         }
     }
-
     
-    @DSModeled(DSC.BAN)
     @Override
 	public void drawText(Canvas c, int start, int end, float x, float y, Paint p) {
 		// TODO Auto-generated method stub
 	}
-
     
-    @DSModeled(DSC.BAN)
     @Override
 	public void drawTextRun(Canvas c, int start, int end, int contextStart,
 			int contextEnd, float x, float y, int flags, Paint p) {
 		// TODO Auto-generated method stub
 	}
-
     
-    @DSModeled(DSC.BAN)
     @Override
 	public float measureText(int start, int end, Paint p) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
-
     
-    @DSModeled(DSC.BAN)
     @Override
 	public int getTextWidths(int start, int end, float[] widths, Paint p) {
 		// TODO Auto-generated method stub
@@ -1131,31 +1090,24 @@ public float getTextRunAdvances(int start, int end, int contextStart, int contex
 
         return ret;
     }
-
     
-    @DSModeled(DSC.SAFE)
     @Override
 	public int getTextRunCursor(int contextStart, int contextEnd, int flags,
 			int offset, int cursorOpt, Paint p) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Override
 	public void setFilters(InputFilter[] filters) {
 		// TODO Auto-generated method stub
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Override
 	public InputFilter[] getFilters() {
 		// TODO Auto-generated method stub
 		return null;
 	}
-    
     
 }
 

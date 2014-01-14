@@ -47,11 +47,6 @@ import com.android.internal.R;
 import com.android.internal.telephony.SmsMessageBase.TextEncodingDetails;
 import com.android.internal.util.HexDump;
 
-
-
-
-
-
 public abstract class SMSDispatcher extends Handler {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:40.588 -0500", hash_original_method = "23BBEF031B4226A8BE31016B2CB24EC1", hash_generated_method = "B8BFDD45A56DFE9CF819B972090B44BF")
@@ -121,7 +116,6 @@ protected static String getAppNameByIntent(PendingIntent intent) {
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:40.512 -0500", hash_original_field = "8236F66E40EB6345D4690DAF2AD25436", hash_generated_field = "5113709E0F0BC2B70A499B75CFE4CF4A")
 
-
     private static final int PDU_COLUMN = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:40.515 -0500", hash_original_field = "15215ED1E0C4728BFE9027E57C8EA423", hash_generated_field = "EF62026972250B4FF58E013E80A34A5B")
 
@@ -146,14 +140,12 @@ protected static String getAppNameByIntent(PendingIntent intent) {
     static final int EVENT_SEND_CONFIRMED_SMS = 5;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:40.533 -0500", hash_original_field = "60570A16C200716197014AC9F13B0DC5", hash_generated_field = "A1A91C8082851A816767137980419225")
 
-
     /** Alert is timeout */
     private static final int EVENT_ALERT_TIMEOUT = 6;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:40.535 -0500", hash_original_field = "CA84CD506BE9A21FEFE244A7E6251335", hash_generated_field = "8744B27A486A99F431F829192EAAF5E3")
 
     static final int EVENT_STOP_SENDING = 7;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:40.553 -0500", hash_original_field = "5AA5E9FA77B7BB3EB63EE6959ED3F81C", hash_generated_field = "DBF527A7CF8C20A9FE25BBDBEEDC197F")
-
 
     protected static final Uri mRawUri = Uri.withAppendedPath(Telephony.Sms.CONTENT_URI, "raw");
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:40.556 -0500", hash_original_field = "C02EB6F9E303D1A39F118A8C597A8656", hash_generated_field = "EE2B17F7040836AE21850E28656E0BCD")
@@ -176,7 +168,6 @@ protected static String getAppNameByIntent(PendingIntent intent) {
     private static final int WAKE_LOCK_TIMEOUT = 5000;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:40.538 -0500", hash_original_field = "3E4A9DF67E5660E9A95DECEFCF15D77A", hash_generated_field = "510AC3BCB553F2FCF25972E2B33B836E")
 
-
     protected  Phone mPhone;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:40.540 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "B3359F86E29A965BC1436888E98C55A8")
 
@@ -192,13 +183,11 @@ protected static String getAppNameByIntent(PendingIntent intent) {
     protected  SmsStorageMonitor mStorageMonitor;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:40.551 -0500", hash_original_field = "843193780716474FE179F957D54D299F", hash_generated_field = "C7C6750503CDF0D5CF55C5995F1C9804")
 
-
     protected  WapPushOverSms mWapPush;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:40.569 -0500", hash_original_field = "2FB58CF1B1E2598239CA2DC2C76C0CFD", hash_generated_field = "981B42A4AA7D7D76FE92CC8FC3EE9217")
 
     private  SmsUsageMonitor mUsageMonitor;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:40.571 -0500", hash_original_field = "EA9C1022BC565DDFC8DA995DFC8BCA16", hash_generated_field = "0B6FB9FECCEC20F6DE6894D17734CFA2")
-
 
     private final ArrayList<SmsTracker> mSTrackers = new ArrayList<SmsTracker>(MO_MSG_QUEUE_LIMIT);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:40.574 -0500", hash_original_field = "87068C2348540A5517D7F6F40E0F6E43", hash_generated_field = "C0FF63B0998195CF037A71BFC5C5B113")
@@ -214,7 +203,6 @@ protected static String getAppNameByIntent(PendingIntent intent) {
 
     protected boolean mSmsSendDisabled;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:40.586 -0500", hash_original_field = "817801699B606C22E8BBBA3AC7F218C6", hash_generated_field = "1409A3903A93A2C1F6F0AE76F3BE60FA")
-
 
     protected int mRemainingMessages = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:40.602 -0500", hash_original_field = "FB040D60396DDD0CAB8C3CAE85A687B6", hash_generated_field = "327DFB59B1106EB4AB4C144B3EDAE795")
@@ -237,22 +225,14 @@ protected static String getAppNameByIntent(PendingIntent intent) {
             } 
             addTaint(dialog.getTaint());
             addTaint(which);
-            
-            
-                    
-                    
-                
-                    
-                    
                 
         }
-
         
 };
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.796 -0400", hash_original_field = "3BD1FD2D59441EC9D67424C813CB8822", hash_generated_field = "6836B0FA743263ABE1B2C701A5021A92")
 
-    private final BroadcastReceiver mResultReceiver = new BroadcastReceiver() {        
-        @DSModeled(DSC.SPEC)
+    private final BroadcastReceiver mResultReceiver = new BroadcastReceiver() {
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:24.796 -0400", hash_original_method = "DB25CB42F24A1F0004F16056EEBCBE73", hash_generated_method = "2EB066921744C6644579A933780E2AC4")
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -264,12 +244,7 @@ protected static String getAppNameByIntent(PendingIntent intent) {
             addTaint(context.getTaint());
             addTaint(intent.getTaint());
             
-            
-            
-                    
-            
         }
-
         
 };
 
@@ -303,7 +278,6 @@ protected SMSDispatcher(PhoneBase phone, SmsStorageMonitor storageMonitor,
                 + " mSmsReceiveDisabled=" + mSmsReceiveDisabled
                 + " mSmsSendDisabled=" + mSmsSendDisabled);
     }
-
     
     protected static final class SmsTracker {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:40.672 -0500", hash_original_field = "7F77A3396ADD1EB3E57320147AD4C04E", hash_generated_field = "F3277AFBEDD51E5773577F9D8F3AB639")
@@ -316,7 +290,6 @@ protected SMSDispatcher(PhoneBase phone, SmsStorageMonitor storageMonitor,
 
         public int mMessageRef;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:40.679 -0500", hash_original_field = "EE53DC249A122328435510590104FB1D", hash_generated_field = "2B1B1BD1C048DD351EF6648400E6B501")
-
 
         public  PendingIntent mSentIntent;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:40.681 -0500", hash_original_field = "495972410CB93E7D627E6B634DA8D88F", hash_generated_field = "78D4FBE39C0EAD7D859F8F231728FA0A")
@@ -343,7 +316,6 @@ protected boolean isMultipart() {
             HashMap map = mData;
             return map.containsKey("parts");
         }
-
         
     }
 
@@ -815,9 +787,7 @@ protected void dispatchPdus(byte[][] pdus) {
         intent.putExtra("format", getFormat());
         dispatch(intent, RECEIVE_SMS_PERMISSION);
     }
-
-    
-        @DSModeled(DSC.SAFE)
+        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:18.975 -0400", hash_original_method = "3F1122361F00F60F28196C29B48EFEBB", hash_generated_method = "977EB63BFA65376303A8877BBDAC496C")
     protected void dispatchPortAddressedPdus(byte[][] pdus, int port) {
         addTaint(port);

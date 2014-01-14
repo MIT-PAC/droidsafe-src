@@ -6,9 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.net.InetAddress;
 
-
-
-
 public final class StructAddrinfo {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:28.092 -0500", hash_original_field = "C5CF875A7E8CDDADF24D227ADCA80C16", hash_generated_field = "F6F5403BFC3EAEF861F1D3595C2A4026")
 
@@ -35,13 +32,11 @@ public final class StructAddrinfo {
     /** Next element in linked list. */
     public StructAddrinfo ai_next;
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.792 -0400", hash_original_method = "71E487CE9D5AA9D0D16EEAF9E114A622", hash_generated_method = "71E487CE9D5AA9D0D16EEAF9E114A622")
     public StructAddrinfo ()
     {
         //Synthesized constructor
     }
-
 
 }
 

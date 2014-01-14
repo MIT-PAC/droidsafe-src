@@ -9,14 +9,11 @@ import android.database.DataSetObserver;
 import android.view.View;
 import android.view.ViewGroup;
 
-
-
 public abstract class BaseAdapter implements ListAdapter, SpinnerAdapter {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:58.475 -0500", hash_original_field = "6D0681B9CC29887CCBA4001347A5783B", hash_generated_field = "1CDD3690953D684D62F0461546A52041")
 
     private final DataSetObservable mDataSetObservable = new DataSetObservable();
-    
-@DSModeled(DSC.SAFE)
+
 	public BaseAdapter() {
 		//Not in the initial implementation, generated for specdump
 	}
@@ -95,7 +92,6 @@ public int getViewTypeCount() {
 public boolean isEmpty() {
         return getCount() == 0;
     }
-
     
 }
 

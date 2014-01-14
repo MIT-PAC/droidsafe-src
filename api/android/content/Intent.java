@@ -34,11 +34,6 @@ import android.util.AttributeSet;
 
 import com.android.internal.util.XmlUtils;
 
-
-
-
-
-
 public class Intent implements Parcelable, Cloneable {
 
     /**
@@ -1143,7 +1138,6 @@ public static Intent parseIntent(Resources resources, XmlPullParser parser, Attr
 
     @SdkConstant(SdkConstantType.INTENT_CATEGORY)
     public static final String CATEGORY_MONKEY = "android.intent.category.MONKEY";
-
     
     public static class ShortcutIconResource implements Parcelable {
 
@@ -1164,7 +1158,6 @@ public static ShortcutIconResource fromContext(Context context, int resourceId) 
             icon.resourceName = context.getResources().getResourceName(resourceId);
             return icon;
         }
-
         
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.475 -0400", hash_original_field = "FBF38D2B8BC640782282E16FFEC5198F", hash_generated_field = "1765F17BB54E8B45766A199ED3197D0C")
 
@@ -1222,8 +1215,6 @@ public void writeToParcel(Parcel dest, int flags) {
             return resourceName;
         }
     }
-
-
     
     public static final class FilterComparison {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.571 -0500", hash_original_field = "1811495D939DB843870F6315E04555CC", hash_generated_field = "5782C825DA3F61D408DF2DCA63E7F54A")
@@ -1268,7 +1259,6 @@ public Intent getIntent() {
         public int hashCode() {
             return mHashCode;
         }
-
         
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.059 -0500", hash_original_field = "3BDD06B2352FDA6E8DB4B328EAD8F6DB", hash_generated_field = "686B8018CC11BDB5C32BAAD279E5365B")
@@ -1623,7 +1613,6 @@ public Intent[] newArray(int size) {
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.262 -0500", hash_original_field = "8C9CE7EB6713765D87B246A6B527F11C", hash_generated_field = "6BA7274A46303AB4A280C73477809BB1")
 
-
     @DSVAModeled
     private String mAction;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:09.264 -0500", hash_original_field = "5D8362EBD99622D5EB2A35214E4F749B", hash_generated_field = "EAE374FAE80C7320375D0E6D6C17A234")
@@ -1669,9 +1658,7 @@ public Intent[] newArray(int size) {
     
 public Intent() {
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.415 -0400", hash_original_method = "3FAB664599EE7924CC36F277EFA522C8", hash_generated_method = "AB0CC1E246524C1E63F16EBEA02DAD1F")
     public  Intent(Intent o) {
         this.mAction = o.mAction;
@@ -1717,9 +1704,7 @@ public Intent() {
             //this.mSelector = new Intent(o.mSelector);
         //}
     }
-
     
-    @DSModeled(DSC.BAN)
 	private Intent(Intent o, boolean all) {
 		/*
 		 * Piggyback on the setters to track the taint.  The desire here
@@ -1745,31 +1730,23 @@ public Intent() {
         }
         */
     }
-
     
-    @DSModeled(DSC.SAFE)
 	public Intent(String action) {
         mAction = action;
     }
-
     
-    @DSModeled(DSC.SAFE)
 	public Intent(String action, Uri uri) {
         mAction = action;
         mData = uri;
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.417 -0400", hash_original_method = "8A8F598E2C7B57A58F1379D7AFC8B81F", hash_generated_method = "CFC95A750DAD5D8F9B4AF9DD7CFFB32A")
     public  Intent(Context packageContext, Class<?> cls) {
         mComponent = new ComponentName(packageContext, cls.getName());
         // ---------- Original Method ----------
         //mComponent = new ComponentName(packageContext, cls);
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.417 -0400", hash_original_method = "780AF3DA4D357977F460A8077F315476", hash_generated_method = "6432A8C7753059113592629EBEB24128")
     public  Intent(String action, Uri uri,
             Context packageContext, Class<?> cls) {
@@ -1839,9 +1816,7 @@ public String getAction() {
 public Uri getData() {
         return mData;
     }
-
     
-    @DSModeled(DSC.SAFE)
 	public String getDataString() {
 		return mData.toString();
         //return mData != null ? mData.toString() : null;
@@ -1897,9 +1872,7 @@ public String getType() {
 public String resolveType(Context context) {
         return resolveType(context.getContentResolver());
     }
-
     
-    @DSModeled(DSC.SAFE)
 	public String resolveType(ContentResolver resolver) {
 		/*
         if (mType != null) {
@@ -1914,9 +1887,7 @@ public String resolveType(Context context) {
         */
 		return getType();  //At the end of the day, it's a string, and we are doing static analysis
     }
-
     
-    @DSModeled(value = DSC.SAFE)
 	public String resolveTypeIfNeeded(ContentResolver resolver) {
 		/*
 		if (mComponent != null) {
@@ -2005,9 +1976,7 @@ public boolean hasExtra(String name) {
 public boolean hasFileDescriptors() {
         return mExtras != null && mExtras.hasFileDescriptors();
     }
-
     
-    @DSModeled(DSC.BAN)
 	public void setAllowFds(boolean allowFds) {
 		// NOTE:  mExtras is a Bundle, perhaps it is best to push the taint down to that level
 		addTaint(allowFds);
@@ -2219,7 +2188,6 @@ public String getStringExtra(String name) {
 public CharSequence getCharSequenceExtra(String name) {
         return mExtras == null ? null : mExtras.getCharSequence(name);
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.428 -0400", hash_original_method = "1C448816D9B902054FE9E8A698247DA2", hash_generated_method = "3E3DEE7B959E87E94EACE1CB55226D17")
     public <T extends Parcelable> T getParcelableExtra(String name) {
@@ -2246,7 +2214,6 @@ T varE60849F90CB2B10CC4141E5BFED9EBB4_1888496787 =         mExtras == null ? nul
 public Parcelable[] getParcelableArrayExtra(String name) {
         return mExtras == null ? null : mExtras.getParcelableArray(name);
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.429 -0400", hash_original_method = "BB02D0F500EDCAC2282F912174ECF594", hash_generated_method = "8496E3B52B9613F422993EC5A62C4915")
     public <T extends Parcelable> ArrayList<T> getParcelableArrayListExtra(String name) {
@@ -2730,18 +2697,14 @@ public ActivityInfo resolveActivityInfo(PackageManager pm, int flags) {
 
         return ai;
     }
-
     
-    @DSModeled(DSC.SAFE)
 	public Intent setAction(String action) {
 		mAction = action;
         //mAction = action != null ? action.intern() : null;
 		addTaint(action.getTaint());
         return this;
     }
-
     
-    @DSModeled(DSC.SAFE)
 	public Intent setData(Uri data) {
         mData = data;
         addTaint(data.getTaint());
@@ -2750,18 +2713,14 @@ public ActivityInfo resolveActivityInfo(PackageManager pm, int flags) {
         */
         return this;
     }
-
     
-    @DSModeled(DSC.SAFE)
 	public Intent setType(String type) {
             mData=null;
             mType = type;
             addTaint(type.getTaint());
             return this;
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.441 -0400", hash_original_method = "43AA0CE5E260B0FA5B26C9FC36ABF327", hash_generated_method = "00584B9FB3605C6799D9DC350D63DE8B")
     public Intent setDataAndType(Uri data, String type) {
         mData = data;
@@ -2776,9 +2735,7 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_1185276063 =         this;
         //mType = type;
         //return this;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public Intent addCategory(String category) {
 		mCategories.addTaint(category.getTaint());
         if (mCategories == null) {
@@ -2805,9 +2762,7 @@ public void removeCategory(String category) {
             }
         }
     }
-
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.442 -0400", hash_original_method = "4143B41199E8262105CB671C15097E99", hash_generated_method = "287277779A434FB86F61699B992DAB08")
     public void setSelector(Intent selector) {
         if(selector == this)        
@@ -3237,9 +3192,7 @@ public Intent putCharSequenceArrayListExtra(String name, ArrayList<CharSequence>
         mExtras.putCharSequenceArrayList(name, value);
         return this;
     }
-
     
-    @DSModeled(DSC.SAFE)
 	public Intent putExtra(String name, Serializable value) {
         mExtras = new Bundle();
         mExtras.putSerializable(name, value);
@@ -3633,9 +3586,7 @@ public void removeExtra(String name) {
             }
         }
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.457 -0400", hash_original_method = "240F6D2BBC198957F28DF199FF71FA51", hash_generated_method = "323448496A1EB64B6B509F0F11F239D5")
     public Intent setFlags(int flags) {
         mFlags = flags;
@@ -3647,16 +3598,12 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_238535034 =         this;
         //mFlags = flags;
         //return this;
     }
-
     
-    @DSModeled(DSC.SAFE)
 	public Intent addFlags(int flags) {
         addTaint(flags);
         return this;
     }
-
     
-    @DSModeled(DSC.SAFE)
 	public Intent setPackage(String packageName) {
         addTaint(packageName.getTaint());
         if (packageName != null && mSelector != null) {
@@ -3669,17 +3616,13 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_238535034 =         this;
         mPackage = packageName;
         return this;
     }
-
     
-    @DSModeled(DSC.SAFE)
 	public Intent setComponent(ComponentName component) {
         mComponent = component;
         addTaint(component.getTaint());
         return this;
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.458 -0400", hash_original_method = "A7E573A4994CE22857A73F3E6FF16052", hash_generated_method = "C98CA911AF4638EF31A76CD5F5B6B418")
     public Intent setClassName(Context packageContext, String className) {
         mComponent = new ComponentName(packageContext, className);
@@ -3692,9 +3635,7 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_238535034 =         this;
         //mComponent = new ComponentName(packageContext, className);
         //return this;
     }
-
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.458 -0400", hash_original_method = "0DAD204BCD083F4BEBCC949C19CA4443", hash_generated_method = "5CEF145A6CCA0AADAE7E7BECBD589C6D")
     public Intent setClassName(String packageName, String className) {
         addTaint(packageName.getTaint());
@@ -3707,9 +3648,7 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_238535034 =         this;
         //mComponent = new ComponentName(packageName, className);
         //return this;
     }
-
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.459 -0400", hash_original_method = "07D0BC1863460C70C46D0D4DB8E842CD", hash_generated_method = "7F6ACB39663195BC97A4BC6A90961AAC")
     public Intent setClass(Context packageContext, Class<?> cls) {
         addTaint(packageContext.getTaint());
@@ -3722,9 +3661,7 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_1106282301 =         this;
         //mComponent = new ComponentName(packageContext, cls);
         //return this;
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.459 -0400", hash_original_method = "2A55D148D28C14A8FD18A3C56EB5208F", hash_generated_method = "3F18A382DDCF87C6C3FA225584DD8F71")
     public void setSourceBounds(Rect r) {
         if(r != null)        
@@ -3743,9 +3680,7 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_1106282301 =         this;
             //mSourceBounds = null;
         //}
     }
-
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.461 -0400", hash_original_method = "E5580C6082A47C0EDDA03A45ABBBF7D7", hash_generated_method = "4B8FA51A496FF6E4B5BA8D2EE3D46DB1")
     public int fillIn(Intent other, int flags) {
         addTaint(flags);
@@ -3830,9 +3765,7 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_1106282301 =         this;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
-
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.462 -0400", hash_original_method = "B6E4053A3570119C1E3D361525D403A8", hash_generated_method = "C8D6E623D6274E5B094908B5C049F5B2")
     public boolean filterEquals(Intent other) {
         addTaint(other.getTaint());
@@ -3841,7 +3774,6 @@ Intent var72A74007B2BE62B849F475C7BDA4658B_1106282301 =         this;
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.463 -0400", hash_original_method = "8096117DA4698C90A65D3667512D1D4C", hash_generated_method = "D506D0D0B53B35A630A8B69FE659274D")
     public int filterHashCode() {
@@ -4123,9 +4055,7 @@ private void toUriInner(StringBuilder uri, String scheme, int flags) {
             }
         }
     }
-
     
-    @DSModeled(DSC.SAFE)
     @Override
 	public int describeContents() {
 		// TODO Auto-generated method stub
@@ -4199,14 +4129,13 @@ public void readFromParcel(Parcel in) {
 
         mExtras = in.readBundle();
     }
-
     
     /**
      * Use this method to translate one intent to another in a way that is
      * dependent on the values resolved by attribute modeling.  This call is modeled 
      * in the attribute modeling pass as well.
      */
-    @DSModeled(DSC.BAN)
+    
     public Intent translateIntent() {
         Intent result = new Intent();
         result.setAction(this.getAction());

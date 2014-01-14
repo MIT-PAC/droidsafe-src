@@ -15,21 +15,15 @@ import android.view.MotionEvent;
 import android.view.inputmethod.InputMethod;
 import android.view.inputmethod.InputMethodSession;
 
-
-
-
-
 public abstract class AbstractInputMethodService extends Service implements KeyEvent.Callback {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:38.400 -0500", hash_original_field = "A587945B3D1BEB37BF61FF14794CE66B", hash_generated_field = "9355B5F89B0311B79EB4664ED09CF53D")
 
     private InputMethod mInputMethod;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:38.418 -0500", hash_original_field = "072D100A7BFFF1A5663A0C0EDC099F15", hash_generated_field = "98A76EB2F504968B591CF0A5D11D8253")
-
     
     final KeyEvent.DispatcherState mDispatcherState
             = new KeyEvent.DispatcherState();
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.078 -0400", hash_original_method = "BC18251CD7580FCA2AE30C6FE0852CCA", hash_generated_method = "BC18251CD7580FCA2AE30C6FE0852CCA")
     public AbstractInputMethodService ()
     {
@@ -89,7 +83,6 @@ public abstract AbstractInputMethodSessionImpl onCreateInputMethodSessionInterfa
 public boolean onTrackballEvent(MotionEvent event) {
         return false;
     }
-
     
     public abstract class AbstractInputMethodImpl implements InputMethod {
         
@@ -130,11 +123,8 @@ public void setSessionEnabled(InputMethodSession session, boolean enabled) {
 public void revokeSession(InputMethodSession session) {
             ((AbstractInputMethodSessionImpl)session).revokeSelf();
         }
-
         
     }
-
-
     
     public abstract class AbstractInputMethodSessionImpl implements InputMethodSession {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:38.432 -0500", hash_original_field = "35AD8B69CCAB99ED75EF706EA5E75D7E", hash_generated_field = "35AD8B69CCAB99ED75EF706EA5E75D7E")
@@ -220,11 +210,8 @@ public void dispatchTrackballEvent(int seq, MotionEvent event, EventCallback cal
                 callback.finishedEvent(seq, handled);
             }
         }
-
         
     }
-
-
     
 }
 

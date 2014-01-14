@@ -13,11 +13,6 @@ import java.io.ObjectOutputStream;
 import java.io.ObjectStreamField;
 import java.io.Serializable;
 
-
-
-
-
-
 public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Cloneable, Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:25.272 -0500", hash_original_field = "9C9C52C3044A64A1683A2865C14D4656", hash_generated_field = "2D66E915A2C4A5FBF28A99892F20B1AF")
 
@@ -37,20 +32,16 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
     private static final int CHARS_PER_ENTRY = 15;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:25.571 -0500", hash_original_field = "5869819C603EB25B9D81226C26F9CB6F", hash_generated_field = "C70DCA64D7F48D81CC1FCEA91128ADE1")
 
-
     private static final long serialVersionUID = 1421746759512286392L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:25.573 -0500", hash_original_field = "CF235C5C020AE737E73C6D9BA948DD23", hash_generated_field = "BED226748EC460106938E3D870C7138F")
-
 
     private static final ObjectStreamField[] serialPersistentFields = {
         new ObjectStreamField("threshold", int.class),
         new ObjectStreamField("loadFactor", float.class),
     };
-    
 
     private HashMap<K,V> backingMap = new HashMap<K,V>();
-    
-        @DSModeled(DSC.SAFE)
+        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.342 -0400", hash_original_method = "9A93999031A29C4DD8DE295A6372F847", hash_generated_method = "6A7170C4C6FFAE127214BE36F7841D7F")
     @SuppressWarnings("unchecked")
     public  Hashtable() {
@@ -58,9 +49,7 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
         //table = (HashtableEntry<K, V>[]) EMPTY_TABLE;
         //threshold = -1;
     }
-
-    
-        @DSModeled(DSC.SAFE)
+        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.344 -0400", hash_original_method = "6003D4D798348C1583CB15DE42C187C6", hash_generated_method = "C0EB67B815B968B704ED802BE6142354")
     public  Hashtable(int capacity) {
         addTaint(capacity);
@@ -86,9 +75,7 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
         //}
         //makeTable(capacity);
     }
-
-    
-        @DSModeled(DSC.SAFE)
+        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.346 -0400", hash_original_method = "5B6B569F078844A0FAD42909C56D1E6D", hash_generated_method = "91BC277383C1006AE68C521E66A2CAB0")
     public  Hashtable(int capacity, float loadFactor) {
         this(capacity);
@@ -105,9 +92,7 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
             //throw new IllegalArgumentException("Load factor: " + loadFactor);
         //}
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.346 -0400", hash_original_method = "6950B91F5E6C68C49CB594AFD1673B84", hash_generated_method = "B59FAFD8CEADB25F80DD1853537DF4FA")
     public  Hashtable(Map<? extends K, ? extends V> map) {
         this(map.size());
@@ -116,8 +101,7 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
         // ---------- Original Method ----------
         //constructorPutAll(map);
     }
-
-        @DSModeled(DSC.SAFE)
+        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.350 -0400", hash_original_method = "F0D9AD485DB15C1D3427CA487C88BFBD", hash_generated_method = "2719F1581F628268F46DEDB5FC36FA11")
     @SuppressWarnings("unchecked")
     @Override
@@ -149,27 +133,21 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
         //result.constructorPutAll(this);
         //return result;
     }
-
-    
-        @DSModeled(DSC.SAFE)
+        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.351 -0400", hash_original_method = "186376BCBF1440029A4A8EF9D3327AB7", hash_generated_method = "E4FDC859CC599DE6CCB373537967445A")
     public synchronized boolean isEmpty() {
         return getTaintBoolean(); 
         // ---------- Original Method ----------
         //return size == 0;
     }
-
-    
-        @DSModeled(DSC.SAFE)
+        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.351 -0400", hash_original_method = "3CA361324F026F8C9B0AA94A864ACDD9", hash_generated_method = "392CC05EF4F1B8CD4F26897A2D6FB092")
     public synchronized int size() {
         return getTaintInt(); 
         // ---------- Original Method ----------
         //return size;
     }
-
-    
-        @DSModeled(DSC.SAFE)
+        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.352 -0400", hash_original_method = "0D498A226869DEB0F3920DC31F67162F", hash_generated_method = "D037CE715676A07C60713D1D613B4CA4")
     public synchronized V get(Object key) {
         V value = backingMap.get(key);
@@ -189,9 +167,7 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
         //}
         //return null;
     }
-
-    
-        @DSModeled(DSC.SAFE)
+        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.353 -0400", hash_original_method = "EDC536266386E3A88DC2FA7B05BC7882", hash_generated_method = "542F9EE3BA8B4E0B991426A62F884E03")
     public synchronized boolean containsKey(Object key) {
         return getTaintBoolean();
@@ -209,9 +185,7 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
         //}
         //return false;
     }
-
-    
-        @DSModeled(DSC.SAFE)
+        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.354 -0400", hash_original_method = "22B2A1F3D878FCC53A2BA6539B84615E", hash_generated_method = "4FDBB57EA40EF4A684F188E4E2C54B96")
     public synchronized boolean containsValue(Object value) {
         return backingMap.containsValue(value);
@@ -230,19 +204,16 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
         //}
         //return false;
     }
-
-    
-        @DSModeled(DSC.SAFE)
+        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.354 -0400", hash_original_method = "E610C30BCCE300EF5870BDD2E1DFFA8F", hash_generated_method = "3A49322AA9ED5E55D08AD0F443327DB0")
     public boolean contains(Object value) {
         return getTaintBoolean();
         // ---------- Original Method ----------
         //return containsValue(value);
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.356 -0400", hash_original_method = "70A37B9812099DB6AA6597919714B995", hash_generated_method = "758D3CDC605A984AF4341EA96D3A0293")
-    @DSModeled(DSC.SAFE)
+    
     public synchronized V put(K key, V value) {
         addTaint(value.getTaint());
         addTaint(key.getTaint());
@@ -279,9 +250,7 @@ public class Hashtable<K, V> extends Dictionary<K, V> implements Map<K, V>, Clon
         //tab[index] = new HashtableEntry<K, V>(key, value, hash, first);
         //return null;
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.358 -0400", hash_original_method = "46C920EF16234ECC2EBDE62DDADD6435", hash_generated_method = "54874BF81DEC6C650960B5D6E3D4D392")
     public synchronized void putAll(Map<? extends K, ? extends V> map) {
         addTaint(map.getTaint());
@@ -305,9 +274,7 @@ protected void rehash() {
          * called from time to time.
          */
     }
-
-    
-        @DSModeled(DSC.SAFE)
+        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.366 -0400", hash_original_method = "B19FA41811C96CC39A17F943778772D8", hash_generated_method = "80B04D515B1317EE61E1AAF9F5382248")
     public synchronized V remove(Object key) {
         addTaint(key.getTaint());
@@ -334,9 +301,7 @@ protected void rehash() {
         //}
         //return null;
     }
-
-    
-        @DSModeled(DSC.SAFE)
+        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.367 -0400", hash_original_method = "1C0D329A7E5E91219CE97B2AC82E739C", hash_generated_method = "45AD9C95CF6097B621C7C9B171BF463C")
     public synchronized void clear() {
         backingMap.clear();
@@ -347,9 +312,7 @@ protected void rehash() {
             //size = 0;
         //}
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.367 -0400", hash_original_method = "476F610DDCFF0EB4D26DB47138B4B0A3", hash_generated_method = "0BF30D06B517FD8D8DA79FFC3A6A2F5C")
     public synchronized Set<K> keySet() {
         Set<K> ks = backingMap.keySet();
@@ -359,9 +322,7 @@ protected void rehash() {
         //Set<K> ks = keySet;
         //return (ks != null) ? ks : (keySet = new KeySet());
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.367 -0400", hash_original_method = "04B12ED0E2A0A54B9C93D860501FCFFB", hash_generated_method = "E59F3976A2B93651AD7EFEBF2CC2964C")
     public synchronized Collection<V> values() {
         Collection<V> values = backingMap.values();
@@ -371,9 +332,7 @@ protected void rehash() {
         //Collection<V> vs = values;
         //return (vs != null) ? vs : (values = new Values());
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.368 -0400", hash_original_method = "54875E203703AD755476CBDF0B4AFC75", hash_generated_method = "CF6379F765767D007D563C4052D00846")
     public synchronized Set<Entry<K, V>> entrySet() {
         Set<Entry<K, V>> es = backingMap.getEntrySet();
@@ -383,9 +342,7 @@ protected void rehash() {
         //Set<Entry<K, V>> es = entrySet;
         //return (es != null) ? es : (entrySet = new EntrySet());
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.368 -0400", hash_original_method = "BD8590C2A6B44E1AD87F42CA1DDBEEC0", hash_generated_method = "8693180988660B3F37CDC637A13CD5A8")
     public synchronized Enumeration<K> keys() {
         Enumeration<K> var72EDC079A47B19D9B47B38BBA00AF901_1738885427 = new KeyEnumeration<K>();
@@ -394,9 +351,7 @@ protected void rehash() {
         // ---------- Original Method ----------
         //return new KeyEnumeration();
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.368 -0400", hash_original_method = "D92B3AB4F78D152BCFDB4F438052384E", hash_generated_method = "3698A0D9DC498C7A503FBCDCEFC73B91")
     public synchronized Enumeration<V> elements() {
 Enumeration<V> var3998A6162E9CBDC16A5D7E7745A926CC_955772035 =         new ValueEnumeration<V>();
@@ -405,7 +360,6 @@ Enumeration<V> var3998A6162E9CBDC16A5D7E7745A926CC_955772035 =         new Value
         // ---------- Original Method ----------
         //return new ValueEnumeration();
     }
-
     
     private static class HashtableEntry<K, V> implements Entry<K, V> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:25.372 -0500", hash_original_field = "F780C5984CF24E477CB9559E91475987", hash_generated_field = "F780C5984CF24E477CB9559E91475987")
@@ -474,12 +428,9 @@ public final V setValue(V value) {
 @Override public final String toString() {
             return key + "=" + value;
         }
-
         
     }
-
-    
-        @DSModeled(DSC.BAN)
+        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.369 -0400", hash_original_method = "CF57466F07C2DB8AF5EFB522D22E3680", hash_generated_method = "871E41CFD4777EF0B724B8C5351615A3")
     private synchronized boolean containsMapping(Object key, Object value) {
         addTaint(value.getTaint());
@@ -498,9 +449,7 @@ public final V setValue(V value) {
         //}
         //return false;
     }
-
-    
-        @DSModeled(DSC.BAN)
+        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.371 -0400", hash_original_method = "A191738781408606E816E9A37080097D", hash_generated_method = "D8F6E8E7E7FD3058625E314BE1505141")
     private synchronized boolean removeMapping(Object key, Object value) {
         addTaint(value.getTaint());
@@ -564,9 +513,7 @@ public final V setValue(V value) {
         }
         return result;
     }
-
-    
-        @DSModeled(DSC.SAFE)
+        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.374 -0400", hash_original_method = "A78197C1027A9ECA0DF472B01066EEE7", hash_generated_method = "B4802C5F5E1EC42704522B104481436F")
     @Override
     public synchronized String toString() {
@@ -593,8 +540,7 @@ public final V setValue(V value) {
         //result.append('}');
         //return result.toString();
     }
-   
-        @DSModeled(DSC.BAN)
+        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.376 -0400", hash_original_method = "19818AA4E6F1DBA67EBB75B368743917", hash_generated_method = "3F395FD92DFBACFB0EEEE0858BA58751")
     private synchronized void writeObject(ObjectOutputStream stream) throws IOException {
         addTaint(stream.getTaint());
@@ -617,9 +563,7 @@ public final V setValue(V value) {
             //stream.writeObject(e.getValue());
         //}
     }
-
-    
-        @DSModeled(DSC.BAN)
+        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.377 -0400", hash_original_method = "2EADB0DA3622DE13512805CD17FDFE7A", hash_generated_method = "399A5670241C83FF7B5FD9415EAD81BB")
     private void readObject(ObjectInputStream stream) throws IOException,
             ClassNotFoundException {
@@ -653,20 +597,19 @@ for(int i = 0;i < size;i++)
 
         Iterator<K> iter;
         
-        @DSModeled(DSC.SAFE)
         public KeyEnumeration() {
             iter = (Iterator<K>) backingMap.keySet.getIterator();
         }
         
         @Override
-        @DSModeled(DSC.SAFE)
+        
         public boolean hasMoreElements() {
             // TODO Auto-generated method stub
             return Hashtable.this.getTaintBoolean();
         }
 
         @Override
-        @DSModeled(DSC.SAFE)
+        
         public K nextElement() {
             // TODO Auto-generated method stub
             K item = iter.next();
@@ -679,20 +622,19 @@ for(int i = 0;i < size;i++)
 
         Iterator<V> iter;
         
-        @DSModeled(DSC.SAFE)
         public ValueEnumeration() {
             iter = (Iterator<V>) backingMap.valuesCollection.getIterator();
         }
         
         @Override
-        @DSModeled(DSC.SAFE)
+        
         public boolean hasMoreElements() {
             // TODO Auto-generated method stub
             return Hashtable.this.getTaintBoolean();
         }
 
         @Override
-        @DSModeled(DSC.SAFE)
+        
         public V nextElement() {
             // TODO Auto-generated method stub
             V item = iter.next();

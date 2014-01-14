@@ -9,11 +9,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
-
-
-
-
-
 public final class RequestHeaders {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:34.134 -0500", hash_original_field = "1154143EF3A042E6515BD6D5B42C64B6", hash_generated_field = "DDFAECCF21F90F28142F5C866534A5C3")
 
@@ -40,7 +35,6 @@ public final class RequestHeaders {
 
     private boolean hasAuthorization;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:34.151 -0500", hash_original_field = "DCA513098DC932271B140492EF640274", hash_generated_field = "C51A9B467DA1E79F88DC6617E76DB248")
-
 
     private int contentLength = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:34.153 -0500", hash_original_field = "3AD1B7A7AEDBE1A2DB22642DAB10A01F", hash_generated_field = "53F1E445144D7EEFF13D2F87736EF02D")
@@ -70,8 +64,7 @@ public final class RequestHeaders {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:34.171 -0500", hash_original_field = "B0D6F285E14A6A3D23A01859BCD3B736", hash_generated_field = "6C4DFB7A35D3B140FF1CF00900EC5F99")
 
     private String proxyAuthorization;
-    
-        @DSModeled(DSC.SPEC)
+        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.880 -0400", hash_original_method = "43C01170F0D6680BF52373FD0CBCB9B1", hash_generated_method = "4674D86252DCD3882B7924CBE3BCC387")
     public  RequestHeaders(URI uri, RawHeaders headers) {
         this.uri = uri;
@@ -407,7 +400,6 @@ public void addCookies(Map<String, List<String>> allCookieHeaders) {
             }
         }
     }
-
     
 }
 

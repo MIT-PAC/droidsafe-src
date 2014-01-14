@@ -20,9 +20,6 @@ import org.apache.harmony.security.fortress.Engine;
 import org.apache.harmony.security.fortress.SecurityAccess;
 import org.apache.harmony.security.fortress.Services;
 
-
-
-
 public final class Security {
 
     // Register default providers
@@ -375,11 +372,9 @@ private static void renumProviders() {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.351 -0500", hash_original_field = "316C260B369C976F6D55B7C36AB88F2C", hash_generated_field = "A93753A56D3EA0009297A4F944A7CCCC")
 
     private static final Properties secprops = new Properties();
-
     
     private static class SecurityDoor implements SecurityAccess {
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.458 -0400", hash_original_method = "65CA8440349C4BCE4680F5FB73F99876", hash_generated_method = "65CA8440349C4BCE4680F5FB73F99876")
         public SecurityDoor ()
         {
@@ -405,7 +400,6 @@ public List<String> getAliases(Provider.Service s) {
 public Provider.Service getService(Provider p, String type) {
             return p.getService(type);
         }
-
         
     }
 

@@ -10,10 +10,6 @@ import java.net.UnknownHostException;
 
 import com.android.internal.os.RuntimeInit;
 
-
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public final class Log {
@@ -117,9 +113,7 @@ public static int w(String tag, String msg) {
 public static int w(String tag, String msg, Throwable tr) {
         return println_native(LOG_ID_MAIN, WARN, tag, msg + '\n' + getStackTraceString(tr));
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static boolean isLoggable(String tag, int level) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
@@ -262,9 +256,7 @@ public static String getStackTraceString(Throwable tr) {
 public static int println(int priority, String tag, String msg) {
         return println_native(LOG_ID_MAIN, priority, tag, msg);
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static int println_native(int bufID,
             int priority, String tag, String msg) {
         return DSUtils.UNKNOWN_INT;
@@ -272,17 +264,13 @@ public static int println(int priority, String tag, String msg) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.057 -0500", hash_original_field = "F56CF3B1687883ED2E2E2F2BEB496CD9", hash_generated_field = "183ECC1630CBD890D38268E5859FD6F6")
 
     public static final int VERBOSE = 2;
-
     
     private static class TerribleFailure extends Exception {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.072 -0500", hash_original_method = "0F8223B52B3C6FF6727F78AC7E36D4B8", hash_generated_method = "0F8223B52B3C6FF6727F78AC7E36D4B8")
         
 TerribleFailure(String msg, Throwable cause) { super(msg, cause); }
-
         
     }
-
-
     
     public interface TerribleFailureHandler {
         void onTerribleFailure(String tag, TerribleFailure what);
@@ -304,8 +292,8 @@ TerribleFailure(String msg, Throwable cause) { super(msg, cause); }
     public static final int ASSERT = 7;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.354 -0400", hash_original_field = "1A1695BDB6E58ED53BC49925AFADC824", hash_generated_field = "EB9AD5727A6FE358590060E6265767B7")
 
-    private static TerribleFailureHandler sWtfHandler = new TerribleFailureHandler() {  
-    	@DSModeled(DSC.BAN)
+    private static TerribleFailureHandler sWtfHandler = new TerribleFailureHandler() {
+    	
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.354 -0400", hash_original_method = "90BA23F8182E406DC4D5C312FC444694", hash_generated_method = "4C8A9452FEB3740EEFD06B4E1BFB8698")
         public void onTerribleFailure(String tag, TerribleFailure what) {
             
@@ -313,9 +301,7 @@ TerribleFailure(String msg, Throwable cause) { super(msg, cause); }
             addTaint(tag.getTaint());
             addTaint(what.getTaint());
             
-            
         }
-
         
 };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.129 -0500", hash_original_field = "83BD1ED71CEFBE3B95929AA2F3198EB2", hash_generated_field = "7E86192626B20953FA1B583614101236")

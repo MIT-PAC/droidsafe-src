@@ -32,12 +32,7 @@ import android.view.View;
 import android.view.View.OnCreateContextMenuListener;
 import android.view.ViewGroup;
 
-
-
-
-
 final class FragmentState implements Parcelable {
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.581 -0400", hash_original_field = "20C24B13B86A2BA0167AA1764B64C330", hash_generated_field = "33682AAE42971F2215D5844A73451D2E")
 
@@ -83,11 +78,9 @@ public FragmentState[] newArray(int size) {
 
      Bundle mArguments;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:14.845 -0500", hash_original_field = "F958FB3998EC484A7599A988303CD216", hash_generated_field = "F958FB3998EC484A7599A988303CD216")
-
     
     Bundle mSavedFragmentState;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:14.847 -0500", hash_original_field = "F83F5A158F2251FA12452672DC97E470", hash_generated_field = "F83F5A158F2251FA12452672DC97E470")
-
     
     Fragment mInstance;
     
@@ -233,7 +226,6 @@ public static Fragment instantiate(Context context, String fname, Bundle args) {
     private static final HashMap<String, Class<?>> sClassMap =
             new HashMap<String, Class<?>>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:14.873 -0500", hash_original_field = "8FE0BC9AD82F0D6D0DE354D67F1A890A", hash_generated_field = "5C75B850D43361B9311F957A4D0AF174")
-
     
     static final int INVALID_STATE = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:14.875 -0500", hash_original_field = "BE1EF333470B1511678F5EE23F102EFC", hash_generated_field = "B9FFABD80C3D80703D84376667A75609")
@@ -255,7 +247,6 @@ public static Fragment instantiate(Context context, String fname, Bundle args) {
 
     static final int RESUMED = 5;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:14.889 -0500", hash_original_field = "0294DD5CAC8ED58250DA531156A3A018", hash_generated_field = "0294DD5CAC8ED58250DA531156A3A018")
-
     
     int mState = INITIALIZING;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:14.891 -0500", hash_original_field = "ECF8328501B577B29900A98481ADA801", hash_generated_field = "F08045B4011996E9A13E0EBACB5D4153")
@@ -373,7 +364,6 @@ public static Fragment instantiate(Context context, String fname, Bundle args) {
 
     boolean mUserVisibleHint = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:14.957 -0500", hash_original_field = "6EE478DF5473556475C8D09C185A01BC", hash_generated_field = "6EE478DF5473556475C8D09C185A01BC")
-
 
     LoaderManagerImpl mLoaderManager;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:14.959 -0500", hash_original_field = "D357ECA56BF47F1751443279339D50DF", hash_generated_field = "D357ECA56BF47F1751443279339D50DF")
@@ -1013,9 +1003,7 @@ public void onCreate(Bundle savedInstanceState) {
     
 public void onViewCreated(View view, Bundle savedInstanceState) {
     }
-
     
-    @DSModeled(DSC.SAFE)
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		//return null;
@@ -1138,9 +1126,7 @@ public void onPause() {
 public void onStop() {
         mCalled = true;
     }
-
     
-    @DSModeled(DSC.SAFE)
     @Override
 	public void onLowMemory() {
 		// TODO Auto-generated method stub
@@ -1311,10 +1297,8 @@ public boolean onOptionsItemSelected(MenuItem item) {
     
 public void onOptionsMenuClosed(Menu menu) {
     }
-
     
     public static class SavedState implements Parcelable {
-
         
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.633 -0400", hash_original_field = "8C0168FE172D1D9B33F36BA223FF422A", hash_generated_field = "2999E0A81FA5064B37A7DD9A52DB7607")
 
@@ -1371,8 +1355,6 @@ SavedState(Parcel in, ClassLoader loader) {
             dest.writeBundle(mState);
         }
     }
-
-
     
     static public class InstantiationException extends AndroidRuntimeException {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:14.989 -0500", hash_original_method = "9A59F9C8F177B5B07F720376B1CE8BCE", hash_generated_method = "E7FAD5438370C220B69593F88B644314")
@@ -1380,12 +1362,9 @@ SavedState(Parcel in, ClassLoader loader) {
 public InstantiationException(String msg, Exception cause) {
             super(msg, cause);
         }
-
         
     }
-
     
-    @DSModeled(DSC.SAFE)
     @Override
 	public void onCreateContextMenu(ContextMenu menu, View v,
 			ContextMenuInfo menuInfo) {

@@ -5,11 +5,8 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
 public class DataSetObservable extends Observable<DataSetObserver> {
-    
-@DSModeled(DSC.SAFE)
+
 	public DataSetObservable() {
 		super();
 		//Does not exist in original model
@@ -45,7 +42,6 @@ public void notifyInvalidated() {
             }
         }
     }
-
     
     // orphaned legacy method
     @Override

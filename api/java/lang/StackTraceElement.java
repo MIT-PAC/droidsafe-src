@@ -6,34 +6,23 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.Serializable;
 
-
-
-
-
-
 public final class StackTraceElement implements Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.863 -0500", hash_original_field = "68BFF6955FDB892FD8456F4D83C847D1", hash_generated_field = "26C66B155644317B8367FDF23AF4DB9B")
-
 
     private static final long serialVersionUID = 6992337162326171013L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.866 -0500", hash_original_field = "3387D12AD9C393627295CAC355C106AA", hash_generated_field = "044B734A1D0D1997F7880A1DDED8AFF6")
 
-
     private static final int NATIVE_LINE_NUMBER = -2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.868 -0500", hash_original_field = "EDEEDC9CF5DB299DE0AADD712B8BE51C", hash_generated_field = "EDEEDC9CF5DB299DE0AADD712B8BE51C")
-
 
     String declaringClass;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.870 -0500", hash_original_field = "1E5D18395D934B5D254686548A645BA9", hash_generated_field = "1E5D18395D934B5D254686548A645BA9")
 
-
     String methodName;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.873 -0500", hash_original_field = "90A7C14E9FDE747EFC2F1C95E470FF1A", hash_generated_field = "90A7C14E9FDE747EFC2F1C95E470FF1A")
 
-
     String fileName;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.875 -0500", hash_original_field = "330B2760AA91CE77EFBAED3976D7655C", hash_generated_field = "330B2760AA91CE77EFBAED3976D7655C")
-
 
     int lineNumber;
 
@@ -65,9 +54,7 @@ public StackTraceElement(String cls, String method, String file, int line) {
         fileName = file;
         lineNumber = line;
     }
-
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.462 -0400", hash_original_method = "DC3E276578F22895683C0979CF7614B3", hash_generated_method = "069C2D8BCA6C8CA3D907F0C7C60A9CFB")
 	public  StackTraceElement() {
         // ---------- Original Method ----------

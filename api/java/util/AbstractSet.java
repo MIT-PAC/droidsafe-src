@@ -5,9 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
 public abstract class AbstractSet<E> extends AbstractCollection<E> implements Set<E> {
 
     /**
@@ -17,9 +14,7 @@ public abstract class AbstractSet<E> extends AbstractCollection<E> implements Se
     
 protected AbstractSet() {
     }
-
-    
-        @DSModeled(DSC.SAFE)
+        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.657 -0400", hash_original_method = "8965F512606A1DFD0C1662786439C503", hash_generated_method = "F562AD9D6FCD2DAE6CC8714D342120D2")
     @Override
     public boolean equals(Object object) {
@@ -46,9 +41,7 @@ protected AbstractSet() {
         }
         return result;
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.659 -0400", hash_original_method = "6793D4CBA252A26447B19640912FAD83", hash_generated_method = "3340A7706F9D036C2E7AF8AB63DB5D19")
     @Override
     public boolean removeAll(Collection<?> collection) {
@@ -59,13 +52,12 @@ protected AbstractSet() {
      * Overiding to help keeping it unique
      */
     @Override
-    @DSModeled(DSC.SAFE)
+    
     public boolean add(E object) {
        if (super.getIndexOf(object) != -1) 
            return super.add(object);
        return getTaintBoolean();
     }
-
     
 }
 

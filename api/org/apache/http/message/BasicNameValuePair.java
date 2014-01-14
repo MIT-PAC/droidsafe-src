@@ -12,34 +12,27 @@ import org.apache.http.util.LangUtils;
 public class BasicNameValuePair implements NameValuePair, Cloneable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:47.549 -0500", hash_original_field = "BF45F7481B8091DE3CBF80E94F7F940B", hash_generated_field = "531F96E2AEBFB44CD229EC4CB1F012B0")
 
-
     private  String name;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:47.551 -0500", hash_original_field = "EE6B270D979EDA88DA18EA680B9EE570", hash_generated_field = "424F4435B9052E77589D30873B9A7D2B")
 
     private  String value;
     
-    @DSModeled(DSC.SAFE)
 	public BasicNameValuePair(final String name, final String value) {
 		addTaint(name.getTaint());
 		addTaint(value.getTaint());
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Override
 	public String getName() {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Override
 	public String getValue() {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
     
     /**
      * Get a string representation of this pair.
@@ -92,7 +85,6 @@ public int hashCode() {
 public Object clone() throws CloneNotSupportedException {
         return super.clone();
     }
-
     
 }
 

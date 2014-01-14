@@ -38,17 +38,11 @@ import android.view.accessibility.AccessibilityEvent;
 import com.android.internal.app.ActionBarImpl;
 import com.android.internal.policy.PolicyManager;
 
-
-
-
-
-
 public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callback, OnCreateContextMenuListener {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:16.991 -0500", hash_original_field = "086DFBC7BC837F5BACC9A967FDC19303", hash_generated_field = "EFC22AB7F88AB7E35035F4D3FC081168")
 
     private static final String TAG = "Dialog";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.030 -0500", hash_original_field = "80638025183CEDD46CF5FDAB60F3AEC2", hash_generated_field = "214E1AE6D64D144B8D5F29D5AF8A5A07")
-
 
     private static final int DISMISS = 0x43;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.033 -0500", hash_original_field = "8169580360B404703429FA3DEEB53EF2", hash_generated_field = "5FAD2102A44A31CE5E01758518DF50F5")
@@ -59,7 +53,6 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     private static final int SHOW = 0x45;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.093 -0500", hash_original_field = "30633E1CCD3D5789E9E5D2CE7F996EE0", hash_generated_field = "A896FC35ACED801674ADC56E7BBC39CB")
 
-
     private static final String DIALOG_SHOWING_TAG = "android:dialogShowing";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.096 -0500", hash_original_field = "BB82A6D34648882F9995CF3123B9C136", hash_generated_field = "7504B7324AA77CD343365D491A1E51D5")
 
@@ -68,7 +61,6 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
 
     private Activity mOwnerActivity;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:16.995 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "B997E37019471EC8FC5B98148C7A8AD7")
-
     
      Context mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:16.997 -0500", hash_original_field = "83A062836C11DD52DC32F4325712F233", hash_generated_field = "83A062836C11DD52DC32F4325712F233")
@@ -88,7 +80,6 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     protected boolean mCancelable = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.008 -0500", hash_original_field = "A42DE90960EF4709AEA396BA4E6C4C4D", hash_generated_field = "B13EDAE25BF4DFF139CD5FAE4D2A0A25")
 
-
     private String mCancelAndDismissTaken;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.010 -0500", hash_original_field = "A7C0594296F9C7AF2F2199F05E3670D8", hash_generated_field = "76C74178C09C090FAEDAAD0E8B0CF7A0")
 
@@ -101,10 +92,8 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     private Message mShowMessage;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.016 -0500", hash_original_field = "015168FBB2FF4C181AE52DE804ABA4A4", hash_generated_field = "E9EAFA3F5F183CD7232E888DAC035728")
 
-
     private OnKeyListener mOnKeyListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.019 -0500", hash_original_field = "A8D9F85A3B5CDEF086D3B2DF626FB110", hash_generated_field = "AE31AA5AE388883F7650182C0E3C7933")
-
 
     private boolean mCreated = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.021 -0500", hash_original_field = "7ABFB7C6D38D9AB108E3B918C41F97E6", hash_generated_field = "524E990B3B93C6331366CC3FFD800C87")
@@ -115,30 +104,25 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     private boolean mCanceled = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.025 -0500", hash_original_field = "348A8677E1E3F1084FC4FBEC2A3E1F5D", hash_generated_field = "A94051227A36AE91A6CE3B31BF1DD3E6")
 
-
     private  Thread mUiThread;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.028 -0500", hash_original_field = "AD9C3D1E48D73BF1547D53C4C62401B2", hash_generated_field = "2C33E5889A8CDA732A297DBE7101DB89")
 
     private final Handler mHandler = new Handler();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.037 -0500", hash_original_field = "BF0D726FB6FA34DA0D2571FA4203078C", hash_generated_field = "BE6770D46FDA6621A2256CC938B90138")
 
-
     private Handler mListenersHandler;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.039 -0500", hash_original_field = "B7BD8B12490FD42C33E24469AF6B48C1", hash_generated_field = "941205D807AC4DF9704A65BDAF4756EC")
-
 
     private ActionMode mActionMode;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.380 -0400", hash_original_field = "90764B7AE877EFFD33D3124ADF85860E", hash_generated_field = "8FA22581A256DB33942DF76F392B65DC")
 
-    private final Runnable mDismissAction = new Runnable() {        
-        @DSModeled(DSC.SAFE)
+    private final Runnable mDismissAction = new Runnable() {
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.380 -0400", hash_original_method = "BEE19A9C5B7D04B78955A3FD8170F1CA", hash_generated_method = "4B98EED19700DEC05BCE304A452DAE0F")
         public void run() {
             dismissDialog();
             
-            
         }
-
         
 };
 
@@ -1174,7 +1158,6 @@ private ComponentName getAssociatedActivity() {
         return activity == null ? null : activity.getComponentName();
     }
 
-
     /**
      * Request that key events come to this dialog. Use this if your
      * dialog has no views with focus, but the dialog still wants
@@ -1348,7 +1331,6 @@ public void setOnDismissListener(final OnDismissListener listener) {
             mDismissMessage = null;
         }
     }
-
     
     private static final class ListenersHandler extends Handler {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.264 -0500", hash_original_field = "DC7483C81552C4D76DF4759BE53BA423", hash_generated_field = "436872B12AE04B06D18A845CB0719BC2")
@@ -1377,7 +1359,6 @@ public ListenersHandler(Dialog dialog) {
                     break;
             }
         }
-
         
     }
 

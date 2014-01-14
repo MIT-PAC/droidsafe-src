@@ -10,10 +10,6 @@ import java.util.Comparator;
 
 import android.graphics.Rect;
 
-
-
-
-
 public class FocusFinder {
 
     /**
@@ -110,8 +106,6 @@ static int minorAxisDistance(int direction, Rect source, Rect dest) {
         throw new IllegalArgumentException("direction must be one of "
                 + "{FOCUS_UP, FOCUS_DOWN, FOCUS_LEFT, FOCUS_RIGHT}.");
     }
-
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.091 -0400", hash_original_field = "7690E1068C76C497BCB909EC68C2FD34", hash_generated_field = "8109D1296FDD65456C25811CCC70C8C4")
 
@@ -123,13 +117,10 @@ static int minorAxisDistance(int direction, Rect source, Rect dest) {
             varB4EAC82CA7396A68D541C85D26508E83_2045323693.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_2045323693;
             
-            
         }
-
         
 };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.079 -0500", hash_original_field = "AA91269DE4CB12CC630B33741200666D", hash_generated_field = "AA91269DE4CB12CC630B33741200666D")
-
 
     Rect mFocusedRect = new Rect();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.081 -0500", hash_original_field = "A979E31795050A5EFD05BD971CC12AFB", hash_generated_field = "A979E31795050A5EFD05BD971CC12AFB")
@@ -370,7 +361,7 @@ boolean beamBeats(int direction, Rect source, Rect rect1, Rect rect2) {
         // for horizontal directions, being exclusively in beam always wins
         if ((direction == View.FOCUS_LEFT || direction == View.FOCUS_RIGHT)) {
             return true;
-        }        
+        }
 
         // for vertical directions, beams only beat up to a point:
         // now, as long as rect2 isn't completely closer, rect1 wins
@@ -420,7 +411,6 @@ boolean isCandidate(Rect srcRect, Rect destRect, int direction) {
         throw new IllegalArgumentException("direction must be one of "
                 + "{FOCUS_UP, FOCUS_DOWN, FOCUS_LEFT, FOCUS_RIGHT}.");
     }
-
 
     /**
      * Do the "beams" w.r.t the given direcition's axis of rect1 and rect2 overlap?
@@ -545,7 +535,6 @@ public View findNearestTouchable(ViewGroup root, int x, int y, int direction, in
         }
         return closest;
     }
-
     
     private static final class SequentialFocusComparator implements Comparator<View> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.136 -0500", hash_original_field = "3B9A53D9A8D875334A2863D2219637ED", hash_generated_field = "9FC57DB4EBB3F9FD7BA1F2105DC0E4CE")
@@ -558,7 +547,6 @@ public View findNearestTouchable(ViewGroup root, int x, int y, int direction, in
 
         private ViewGroup mRoot;
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.985 -0400", hash_original_method = "0E280D788A863FD723521B8D9E30F8E5", hash_generated_method = "0E280D788A863FD723521B8D9E30F8E5")
         public SequentialFocusComparator ()
         {
@@ -617,10 +605,8 @@ private void getRect(View view, Rect rect) {
             view.getDrawingRect(rect);
             mRoot.offsetDescendantRectToMyCoords(view, rect);
         }
-
         
     }
-
 
     /**
      * Is destRect a candidate for the next touch given the direction?

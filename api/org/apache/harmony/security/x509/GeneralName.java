@@ -28,11 +28,6 @@ import org.apache.harmony.security.asn1.ObjectIdentifier;
 import org.apache.harmony.security.utils.Array;
 import org.apache.harmony.security.x501.Name;
 
-
-
-
-
-
 public final class GeneralName {
 
     /**
@@ -487,9 +482,7 @@ public int hashCode() {
             return super.hashCode();
         }
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.330 -0400", hash_original_method = "3054283C8DAE746EB9FE98BB22A2F7C2", hash_generated_method = "852FE137F6F8AECE97D724D129D4876D")
     public boolean isAcceptable(GeneralName gname) {
         addTaint(gname.getTaint());

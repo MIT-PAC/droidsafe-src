@@ -33,10 +33,6 @@ import android.os.StrictMode;
 import android.text.TextUtils;
 import android.util.Singleton;
 
-
-
-
-
 public abstract class ActivityManagerNative extends Binder implements IActivityManager {
     /**
      * Cast a Binder object into an activity manager interface, generating
@@ -106,8 +102,8 @@ static public void noteWakeupAlarm(PendingIntent ps) {
     static boolean sSystemReady = false;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.715 -0400", hash_original_field = "1DDB5338697F4F4D1F4EBEBCBCA04F09", hash_generated_field = "C4820EDCAE5178FFFBC23811D56B7F74")
 
-    private static final Singleton<IActivityManager> gDefault = new Singleton<IActivityManager>() {  
-    	@DSModeled(DSC.BAN)
+    private static final Singleton<IActivityManager> gDefault = new Singleton<IActivityManager>() {
+    	
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.715 -0400", hash_original_method = "DB2B8F5A0363FA0CE3E5AA87CCE94A22", hash_generated_method = "C2B8BA082758343987D3AD39EBC6D0DC")
         protected IActivityManager create() {
             IActivityManager varB4EAC82CA7396A68D541C85D26508E83_1441821956 = null; 
@@ -117,17 +113,7 @@ static public void noteWakeupAlarm(PendingIntent ps) {
             varB4EAC82CA7396A68D541C85D26508E83_1441821956.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1441821956;
             
-            
-            
-                
-            
-            
-            
-                
-            
-            
         }
-
         
 };
 
@@ -770,7 +756,6 @@ public boolean onTransact(int code, Parcel data, Parcel reply, int flags)
             reply.writeInt(res ? 1 : 0);
             return true;
         }
-
 
         case FINISH_INSTRUMENTATION_TRANSACTION: {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1610,7 +1595,6 @@ public IBinder asBinder() {
 
 class ActivityManagerProxy implements IActivityManager {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.466 -0500", hash_original_field = "5AE257E0853836D9B54E1EF6497B909F", hash_generated_field = "5E1E2B7D69F0EB092684BFF6D1335CA5")
-
 
     private IBinder mRemote;
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.133 -0500", hash_original_method = "3287CA7C2EB4AADDF2EFFF2704D2BE9E", hash_generated_method = "2AFCACC011B87F16CE3E5DBD44A8D328")
@@ -3834,7 +3818,6 @@ public void dismissKeyguardOnNextActivity() throws RemoteException {
         data.recycle();
         reply.recycle();
     }
-
     
 }
 

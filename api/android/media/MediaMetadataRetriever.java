@@ -16,19 +16,13 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public class MediaMetadataRetriever {
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_init() {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.073 -0500", hash_original_field = "9EC9B27412543E88C0704005395F4E28", hash_generated_field = "587845B93BAC11B9CC8CAD446009C60D")
-
  
     private static final int EMBEDDED_PICTURE_TYPE_ANY = 0xFFFF;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.139 -0500", hash_original_field = "ADF4AC4FAAFB3BDC8E7DD061F865C60E", hash_generated_field = "ED9343FD844D40BF245CA3FD3775CD51")
@@ -99,7 +93,6 @@ public class MediaMetadataRetriever {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.185 -0500", hash_original_field = "B3C58DD95BC581ED71D50EFA7CDE4D4A", hash_generated_field = "3B38229DC5B7493B54B38AF9BC5B1D9A")
 
     public static final int METADATA_KEY_ALBUMARTIST     = 13;
-
     
     static {
         System.loadLibrary("media_jni");
@@ -161,7 +154,6 @@ public MediaMetadataRetriever() {
     	addTaint(path.getTaint());
     }
 
-
     /**
      * Sets the data source (URI) to use. Call this
      * method before the rest of the methods in this class. This method may be
@@ -197,7 +189,6 @@ public void setDataSource(String uri,  Map<String, String> headers)
     	addTaint(values[0].getTaint());
     }
 
-
     /**
      * Sets the data source (FileDescriptor) to use.  It is the caller's
      * responsibility to close the file descriptor. It is safe to do so as soon
@@ -220,7 +211,6 @@ public void setDataSource(String uri,  Map<String, String> headers)
     	addTaint(offset);
     	addTaint(length);
     }
-
     
     /**
      * Sets the data source (FileDescriptor) to use. It is the caller's
@@ -298,9 +288,7 @@ public void setDataSource(Context context, Uri uri)
         }
         setDataSource(uri.toString());
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.169 -0400", hash_original_method = "8FC26B688DF40812E766667E74AA42B9", hash_generated_method = "FE2CB58CC88315CB1A432EFEAAD82A77")
     public String extractMetadata(int keyCode) {
     	String s = new String();
@@ -393,9 +381,7 @@ public Bitmap getFrameAtTime(long timeUs) {
 public Bitmap getFrameAtTime() {
         return getFrameAtTime(-1, OPTION_CLOSEST_SYNC);
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.171 -0400", hash_original_method = "0267DF76D9FDF0A85486B93D0A2D882E", hash_generated_method = "EAEEF9DF0C3B11B82EFDFB7406623787")
     private Bitmap _getFrameAtTime(long timeUs, int option) {
     	Bitmap bmp = BitmapFactory.decodeByteArray(new byte[] {1}, DSUtils.UNKNOWN_INT, DSUtils.UNKNOWN_INT);
@@ -403,7 +389,6 @@ public Bitmap getFrameAtTime() {
     	bmp.addTaint(option);
     	return bmp;
     }
-
     
     /**
      * Call this method after setDataSource(). This method finds the optional
@@ -426,7 +411,6 @@ public byte[] getEmbeddedPicture() {
     	return new byte[]{getTaintByte(),};
     }
 
-
     /**
      * Call it when one is done with the object. This method releases the memory
      * allocated internally.
@@ -443,13 +427,11 @@ public byte[] getEmbeddedPicture() {
     	//Formerly a native method
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.134 -0500", hash_original_method = "B81676966F6941B90240D7A24C9E2FD3", hash_generated_method = "F4F0ABEE314221212592CD2BBD7D2805")
     
     private final void native_finalize(){
     	//Formerly a native method
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.137 -0500", hash_original_method = "24D5F4C50C2ABC5729410C2F2E889F36", hash_generated_method = "932E17C175F633B7C6ED1D87A1181F69")
     

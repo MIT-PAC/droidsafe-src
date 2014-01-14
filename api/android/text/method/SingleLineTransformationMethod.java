@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class SingleLineTransformationMethod extends ReplacementTransformationMethod {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:00.567 -0500", hash_original_method = "4853BBC3FBC3CF589EEA47536237EC37", hash_generated_method = "B201543D46DD84421BE8C9D74F2BA21C")
@@ -28,10 +24,8 @@ public static SingleLineTransformationMethod getInstance() {
     private static char[] REPLACEMENT = new char[] { ' ', '\uFEFF' };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:00.570 -0500", hash_original_field = "B505C6A37A8E927FABE37FB2E6BE5E2B", hash_generated_field = "6480497BDC465266B7D9E18C73F9BE9F")
 
-
     private static SingleLineTransformationMethod sInstance;
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.728 -0400", hash_original_method = "D4568A7EAB6F00728EAF3C3E423FA0FE", hash_generated_method = "D4568A7EAB6F00728EAF3C3E423FA0FE")
     public SingleLineTransformationMethod ()
     {

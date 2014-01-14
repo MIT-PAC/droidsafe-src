@@ -12,10 +12,6 @@ import java.util.TimeZone;
 
 import libcore.util.BasicLruCache;
 
-
-
-
-
 public final class TimeZones {
 
     /**
@@ -59,16 +55,12 @@ public static String[][] getZoneStrings(Locale locale) {
 public static String[] forLocale(Locale locale) {
         return forCountryCode(locale.getCountry());
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static String[] forCountryCode(String countryCode) {
     	String [] ret = {new String()};
     	return ret;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static String[][] getZoneStringsImpl(String locale, String[] timeZoneIds) {
     	String [][] ret = {{new String()}};
     	return ret;
@@ -76,7 +68,6 @@ public static String[] forLocale(Locale locale) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:08.965 -0500", hash_original_field = "E0F8A71B13086197AEBF93B8EACC6C14", hash_generated_field = "19D5663E9EA33416D4EF36ECC0AAEC15")
 
     private static final String[] availableTimeZones = TimeZone.getAvailableIDs();
-
     
     public static class ZoneStringsCache extends BasicLruCache<Locale, String[][]> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:08.986 -0500", hash_original_field = "DD96F2687F690592597F29FD443B8EAF", hash_generated_field = "97D44B3A373BF0B0AA4AFE0CA5B27D71")
@@ -127,7 +118,6 @@ private synchronized void internStrings(String[][] result) {
                 }
             }
         }
-
         
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:08.968 -0500", hash_original_field = "7E5F2978A9F76A969CD637C3D8BB2DA4", hash_generated_field = "8F371653837F1507B414281936EB3848")
@@ -150,13 +140,12 @@ private synchronized void internStrings(String[][] result) {
     public static final int NAME_COUNT = 5;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:08.983 -0500", hash_original_field = "3B52FB6330C02F742B208C1D56F39870", hash_generated_field = "829D32F7C8B866FE3E358BF89DC3666E")
 
-
     private static final ZoneStringsCache cachedZoneStrings = new ZoneStringsCache();
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.765 -0400", hash_original_field = "F3D1D931D6D8ABAB0784456286AA6490", hash_generated_field = "20A59513D44FA082881D368B3B779D6D")
 
-    private static final Comparator<String[]> ZONE_STRINGS_COMPARATOR = new Comparator<String[]>() {        
-        @DSModeled(DSC.SAFE)
+    private static final Comparator<String[]> ZONE_STRINGS_COMPARATOR = new Comparator<String[]>() {
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:27.765 -0400", hash_original_method = "78D6A50B25B700B049CBB3B10CFB6A69", hash_generated_method = "BB7DD2368C24C50BAD92DE238733B79C")
         public int compare(String[] lhs, String[] rhs) {
             int var42A7CE75D9634A77D0F9C98CADB948CE_1083735524 = (lhs[OLSON_NAME].compareTo(rhs[OLSON_NAME]));
@@ -165,9 +154,7 @@ private synchronized void internStrings(String[][] result) {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_36081911 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_36081911;
             
-            
         }
-
         
 };
     static {

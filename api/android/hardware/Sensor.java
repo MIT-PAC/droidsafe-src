@@ -5,8 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
 public class Sensor {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:57.780 -0500", hash_original_field = "59C273EE9EF12822F89229E5B959B4AF", hash_generated_field = "B6DA5A1745BAAD9EA2E434AF197F49AC")
 
@@ -83,99 +81,74 @@ public class Sensor {
 
     private int     mLegacyType;
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:57.844 -0500", hash_original_method = "80AB5568838CD06B7C5D0D01375BC87D", hash_generated_method = "80AB5568838CD06B7C5D0D01375BC87D")
     
 Sensor() {
     }
     // orphaned legacy method
-    @DSModeled(DSC.BAN)
+    
     public Sensor(int type) {
     	addTaint(type);
     }
-
     
-    @DSModeled(DSC.SAFE)
     public String getName() {
         String str = new String();
         str.addTaint(getTaint());
         return str;
         //return mName;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public String getVendor() {
         String str = new String();
         str.addTaint(getTaint());
         return str;
         //return mVendor;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public int getType() {
     	return getTaintInt();
         //return mType;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public int getVersion() {
     	return getTaintInt();
         //return mVersion;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public float getMaximumRange() {
     	return getTaintFloat();
         //return mMaxRange;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public float getResolution() {
     	return getTaintInt();
         //return mResolution;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public float getPower() {
     	return getTaintFloat();
         //return mPower;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public int getMinDelay() {
     	return getTaintInt();
         //return mMinDelay;
     }
-
     
-    @DSModeled(DSC.SAFE)
     int getHandle() {
     	return getTaintInt();
         //return mHandle;
     }
-
     
-    @DSModeled(DSC.SAFE)
     void setRange(float max, float res) {
     	addTaint(max);
     	addTaint(res);
     }
-
     
-    @DSModeled(DSC.SAFE)
     void setLegacyType(int legacyType) {
     	addTaint(legacyType);
     }
-
     
-    @DSModeled(DSC.SAFE)
     int getLegacyType() {
     	return getTaintInt();
         //return mLegacyType;

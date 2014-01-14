@@ -8,9 +8,6 @@ import java.nio.charset.Charset;
 import org.apache.http.HeaderElement;
 import org.apache.http.HttpEntity;
 
-
-
-
 public final class ContentType implements Serializable {
 	
 	private static final long serialVersionUID = -7768694718232371896L;
@@ -43,7 +40,6 @@ public final class ContentType implements Serializable {
 	private final String mimeType;
 	private final Charset charset;
 	
-	@DSModeled(DSC.SAFE)
 	ContentType(final String mimeType, final Charset charset){
 		this.mimeType = mimeType;
 		this.charset = charset;
@@ -71,7 +67,6 @@ public final class ContentType implements Serializable {
 		return null;
 	}
 	
-	@DSModeled(DSC.SAFE)
 	@Override public String toString(){
 		
 		// Original method
@@ -106,7 +101,6 @@ public final class ContentType implements Serializable {
 		return false;
 	}
 	
-	@DSModeled(DSC.SAFE)
 	public static ContentType create(final String mimeType, final Charset charset){
 		
 		// Original method
@@ -128,7 +122,6 @@ public final class ContentType implements Serializable {
         return new ContentType(mimeType, charset);
 	}
 	
-	@DSModeled(DSC.SAFE)
 	public static ContentType create(final String mimeType){
 		
 		// Original method
@@ -140,7 +133,6 @@ public final class ContentType implements Serializable {
         return new ContentType(mimeType, null);
 	}
 	
-	@DSModeled(DSC.SAFE)
 	public static ContentType create(
             final String mimeType, final String charset){
 		

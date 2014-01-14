@@ -11,13 +11,8 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
 
-
-
-
-
 public final class AccessibilityEvent extends AccessibilityRecord implements Parcelable {
-
-    @DSModeled(DSC.BAN)
+    
     public static AccessibilityEvent droidsafeGetEvent() {
         return new AccessibilityEvent(); 
     }
@@ -183,7 +178,6 @@ public static String eventTypeToString(int eventType) {
     public static final int TYPES_ALL_MASK = 0xFFFFFFFF;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.409 -0500", hash_original_field = "3257F81BBFE679E3360141AA5EA9D518", hash_generated_field = "FB8E412EAB46029C42E8E38ED918C6D9")
 
-
     private static final int MAX_POOL_SIZE = 10;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.412 -0500", hash_original_field = "80BD8A730C8BC829BD11E3A3CFC39CA3", hash_generated_field = "515CCCD8D6622177DD93BECF774D048D")
 
@@ -220,7 +214,6 @@ public AccessibilityEvent[] newArray(int size) {
     private boolean mIsInPool;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.424 -0500", hash_original_field = "60513C71507B6FB4E4F9D7F335ECB484", hash_generated_field = "8DFF2F7D6614CCA19DAAC549D23778BF")
 
-
     private int mEventType;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.426 -0500", hash_original_field = "70581C252521204037775F3EA9D8E9F2", hash_generated_field = "6A9DFBEC5628781E76307C090C363D49")
 
@@ -229,7 +222,6 @@ public AccessibilityEvent[] newArray(int size) {
 
     private long mEventTime;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.431 -0500", hash_original_field = "13483AE0B0468BA4337EA080FAA63C94", hash_generated_field = "22A74F87FC449BC3B93E8BB2B11BA02D")
-
 
     private final ArrayList<AccessibilityRecord> mRecords = new ArrayList<AccessibilityRecord>();
 

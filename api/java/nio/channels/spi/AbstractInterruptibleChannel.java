@@ -10,24 +10,17 @@ import java.nio.channels.Channel;
 import java.nio.channels.ClosedByInterruptException;
 import java.nio.channels.InterruptibleChannel;
 
-
-
-
-
-
 public abstract class AbstractInterruptibleChannel implements Channel, InterruptibleChannel {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.843 -0500", hash_original_field = "3AA5C7F0C9D40E3C1B48B8404423A098", hash_generated_field = "ACA7C061F36840D4F0EB869DD1E1AB7C")
-
 
     private volatile boolean closed = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.845 -0500", hash_original_field = "0D4EE7030B7F215071386480E00E3511", hash_generated_field = "40A458BD5C00C50CD6C70C9B2D7F702B")
 
-
     volatile boolean interrupted = false;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.733 -0400", hash_original_field = "EABFBB4303F4F38DE6361EA110D0C225", hash_generated_field = "3241E21A4D9EDA17FAE674120F4A600D")
 
-    private final Runnable interruptAndCloseRunnable = new Runnable() {        
-        @DSModeled(DSC.SAFE)
+    private final Runnable interruptAndCloseRunnable = new Runnable() {
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.733 -0400", hash_original_method = "AE7E9C29A12236996DA74E23561B6760", hash_generated_method = "A82EC148D3A353CBA856B48EDD1EC897")
         @Override
         public void run() {
@@ -39,13 +32,7 @@ public abstract class AbstractInterruptibleChannel implements Channel, Interrupt
             catch (IOException ignored)
             { }
             
-            
-                
-                
-            
-            
         }
-
         
 };
 
@@ -144,7 +131,6 @@ protected final void end(boolean success) throws AsynchronousCloseException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.867 -0500", hash_original_method = "9762B902A56F50AF9CDE8E96A06F4D65", hash_generated_method = "F2284707C3F560D4B31581090601831F")
     
 protected abstract void implCloseChannel() throws IOException;
-
     
 }
 

@@ -19,11 +19,6 @@ import android.os.WorkSource;
 
 import com.android.internal.util.AsyncChannel;
 
-
-
-
-
-
 public class WifiManager {
 
     /**
@@ -242,11 +237,9 @@ public static int compareSignalLevel(int rssiA, int rssiB) {
     private static final int MAX_ACTIVE_LOCKS = 50;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:05.375 -0500", hash_original_field = "D2E7AA4C1DE07278F9743993333163B0", hash_generated_field = "AC2600E803D42BB76239F5A2CD70602F")
 
-
     /* Commands to WifiService */
     /** @hide */
     public static final int CMD_CONNECT_NETWORK             = 1;
-
     
     public class WifiLock {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:05.410 -0500", hash_original_field = "05B32B05746742D3A5261C827E7D8852", hash_generated_field = "0950070738D23525D6B35F116326FC98")
@@ -438,11 +431,8 @@ public String toString() {
                 }
             }
         }
-
         
     }
-
-
     
     public class MulticastLock {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:05.456 -0500", hash_original_field = "05B32B05746742D3A5261C827E7D8852", hash_generated_field = "0950070738D23525D6B35F116326FC98")
@@ -616,7 +606,6 @@ public String toString() {
             setReferenceCounted(false);
             release();
         }
-
         
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:05.377 -0500", hash_original_field = "0D4DF752316BB23DC15632EF9D8F5A87", hash_generated_field = "46529F28CB12A06C7F56C09018C641A0")
@@ -643,7 +632,6 @@ public String toString() {
 
     public static final int CMD_TRAFFIC_STATS_POLL          = 22;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:05.282 -0500", hash_original_field = "DB1464CA9C87828D9D93BD784121DA8C", hash_generated_field = "DB1464CA9C87828D9D93BD784121DA8C")
-
 
     IWifiManager mService;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:05.284 -0500", hash_original_field = "A163099B522120C606A3CA562F90E927", hash_generated_field = "A163099B522120C606A3CA562F90E927")
@@ -673,7 +661,6 @@ public WifiManager(IWifiManager service, Handler handler) {
         mHandler = handler;
     }
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.418 -0400", hash_original_method = "45AC664258FD08C08C588B627CDDFFBC", hash_generated_method = "B4F1E9EA15C43234D8FE3A9CE9AF5CBA")
     public  WifiManager() {
         // ---------- Original Method ----------
@@ -1078,7 +1065,6 @@ public DhcpInfo getDhcpInfo() {
         }
     }
 
-
     /**
      * Enable or disable Wi-Fi.
      * @param enabled {@code true} to enable, {@code false} to disable.
@@ -1477,7 +1463,6 @@ public WifiLock createWifiLock(int lockType, String tag) {
 public WifiLock createWifiLock(String tag) {
         return new WifiLock(WIFI_MODE_FULL, tag);
     }
-
 
     /**
      * Create a new MulticastLock

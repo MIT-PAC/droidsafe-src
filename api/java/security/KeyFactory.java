@@ -9,11 +9,6 @@ import java.security.spec.KeySpec;
 
 import org.apache.harmony.security.fortress.Engine;
 
-
-
-
-
-
 public class KeyFactory {
 
     /**
@@ -189,9 +184,7 @@ public final PrivateKey generatePrivate(KeySpec keySpec)
                                 throws InvalidKeySpecException {
         return spiImpl.engineGeneratePrivate(keySpec);
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.898 -0400", hash_original_method = "7B77F80B2A4A2C9E7EABE7EB820F4781", hash_generated_method = "2C9D88F6A5AEBE43B5C8DFAB3749E023")
     public final <T extends KeySpec> T getKeySpec(Key key,
                                     Class<T> keySpec) throws InvalidKeySpecException {

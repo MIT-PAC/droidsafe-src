@@ -18,10 +18,6 @@ import java.util.List;
 import libcore.util.EmptyArray;
 import dalvik.system.VMStack;
 
-
-
-
-
 public class ObjectInputStream extends InputStream implements ObjectInput, ObjectStreamConstants {
 
     /*
@@ -97,10 +93,8 @@ private static void checkedSetSuperClassDesc(ObjectStreamClass desc,
     private static final Object UNSHARED_OBJ = new Object();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.280 -0500", hash_original_field = "FE8976417DE122742F6154062700C66D", hash_generated_field = "CF28BF30867E0E1F6DF3B872782F2ED3")
 
-
     private static final HashMap<String, Class<?>> PRIMITIVE_CLASSES = new HashMap<String, Class<?>>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.485 -0500", hash_original_field = "F6BDD796BE242EFC698CF31581CE3475", hash_generated_field = "0BEDBBB2B96D03A03BECE92D911B88AD")
-
 
     private static final ClassLoader bootstrapLoader = Object.class.getClassLoader();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.487 -0500", hash_original_field = "EDE7D16B6228C961BDDBC273761A5AA8", hash_generated_field = "F543C6A7F69C1743531D486F7F24DDAE")
@@ -110,7 +104,6 @@ private static void checkedSetSuperClassDesc(ObjectStreamClass desc,
 
     private InputStream emptyStream = new ByteArrayInputStream(EmptyArray.BYTE);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.236 -0500", hash_original_field = "E167A7F62CFB444503F5A4090BE02FFF", hash_generated_field = "21053CAF26FBF453351AB50E87AD2F52")
-
 
     // If the receiver has already read & not consumed a TC code
     private boolean hasPushbackTC;
@@ -162,7 +155,6 @@ private static void checkedSetSuperClassDesc(ObjectStreamClass desc,
 
     private int descriptorHandle = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.416 -0500", hash_original_field = "5E938BD559A969212B32A397E001B937", hash_generated_field = "FAF1B21A627FAB868C99C514185244A6")
-
 
     private HashMap<Class<?>, List<Class<?>>> cachedSuperclasses = new HashMap<Class<?>, List<Class<?>>>();
 
@@ -1407,9 +1399,7 @@ private Object readNewArray(boolean unshared) throws OptionalDataException,
         }
         return result;
     }
-
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:41.500 -0400", hash_original_method = "5D3FFF38041945ED84D75A0CC474793D", hash_generated_method = "B0166E10435415AFDFFF1FF2042C9E72")
     private Class<?> readNewClass(boolean unshared) throws ClassNotFoundException, IOException {
         addTaint(unshared);
@@ -2193,14 +2183,12 @@ private void resetState() {
         pushbackTC = 0;
         // nestedLevels = 0;
     }
-
     
     static class InputValidationDesc {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.284 -0500", hash_original_field = "59BAC1D70D65173C0176BF76148E5AB7", hash_generated_field = "59BAC1D70D65173C0176BF76148E5AB7")
 
         ObjectInputValidation validator;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.286 -0500", hash_original_field = "4AD9F2E37B35E313CD211FBAFDADA238", hash_generated_field = "4AD9F2E37B35E313CD211FBAFDADA238")
-
 
         int priority;
         
@@ -2210,10 +2198,7 @@ private void resetState() {
             //Synthesized constructor
         }
 
-
     }
-
-
     
     public abstract static class GetField {
         
@@ -2447,7 +2432,6 @@ public abstract double get(String name, double defaultValue)
         
 public abstract Object get(String name, Object defaultValue)
                 throws IOException, IllegalArgumentException;
-
         
     }
 

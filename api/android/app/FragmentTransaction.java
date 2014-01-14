@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public abstract class FragmentTransaction {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:34.786 -0500", hash_original_field = "8A2784D472F1E9570825A12575F2B43C", hash_generated_field = "C9662C300B2D516C85FAB581ACAF2A52")
 
@@ -32,7 +28,6 @@ public abstract class FragmentTransaction {
 
     public static final int TRANSIT_FRAGMENT_FADE = 3 | TRANSIT_ENTER_MASK;
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:53.715 -0400", hash_original_method = "B5A603083BF658FD0649843C639EBB28", hash_generated_method = "B5A603083BF658FD0649843C639EBB28")
     public FragmentTransaction ()
     {

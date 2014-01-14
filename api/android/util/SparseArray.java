@@ -7,13 +7,8 @@ import android.util.Log;
 import droidsafe.annotations.*;
 import com.android.internal.util.ArrayUtils;
 
-
-
-
 public class SparseArray<E> implements Cloneable {
-
     
-    @DSModeled(DSC.BAN)
     private static int binarySearch(int[] a, int start, int len, int key){
 		// Original method
 		/*
@@ -44,7 +39,6 @@ public class SparseArray<E> implements Cloneable {
     private boolean mGarbage = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.739 -0500", hash_original_field = "904D0E6EB4847EA02E1703FDE76AE0FF", hash_generated_field = "61AC896AB2732D0B3CF0262159DAE2AD")
 
-
     private int[] mKeys;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.742 -0500", hash_original_field = "D3F28F3EBFA7D0D8D614CF293C7CCCA8", hash_generated_field = "8F96A7DD3A8AA044003D4A42FBE80825")
 
@@ -61,9 +55,7 @@ public class SparseArray<E> implements Cloneable {
 public SparseArray() {
         this(10);
     }
-
     
-    @DSModeled(DSC.SAFE)
 	public SparseArray(int initialCapacity){
 		ArrayUtils.idealIntArraySize(initialCapacity);
 		mKeys = new int[0];
@@ -75,9 +67,7 @@ public SparseArray() {
 		mSize = 0;
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	@Override @SuppressWarnings("unchecked") public SparseArray<E> clone(){
 		SparseArray<E> clone = new SparseArray<E>(0);
 		clone.addTaint(this.getTaint());
@@ -106,9 +96,7 @@ public SparseArray() {
 public E get(int key) {
         return get(key, null);
     }
-
     
-    @DSModeled(DSC.SAFE)
     @SuppressWarnings("unchecked") public E get(int key, E valueIfKeyNotFound){
 		return (E) mValues[0];
 		// Original method
@@ -123,9 +111,7 @@ public E get(int key) {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public void delete(int key){
 		mValues[0] = DELETED;
 		// Original method
@@ -151,9 +137,7 @@ public E get(int key) {
 public void remove(int key) {
         delete(key);
     }
-
     
-    @DSModeled(DSC.SAFE)
     public void removeAt(int index){
 		mValues[index] = DELETED;
 		// Original method
@@ -167,9 +151,7 @@ public void remove(int key) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.BAN)
     private void gc(){
 		// Original method
 		/*
@@ -195,9 +177,7 @@ public void remove(int key) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public void put(int key, E value){
 		mValues[0] = value;
 		// How do we check if a type has field  
@@ -205,9 +185,7 @@ public void remove(int key) {
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public int size(){
 		return getTaintInt();
 		// Original method
@@ -220,9 +198,7 @@ public void remove(int key) {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public int keyAt(int index){
 		return getTaintInt();
 		// Original method
@@ -235,9 +211,7 @@ public void remove(int key) {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @SuppressWarnings("unchecked") public E valueAt(int index){
 		return (E) mValues[0];
 		// Original method
@@ -250,9 +224,7 @@ public void remove(int key) {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public void setValueAt(int index, E value){
 		mValues[0] = value;
 		// Original method
@@ -266,9 +238,7 @@ public void remove(int key) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public int indexOfKey(int key){
 		return getTaintInt();
 		// Original method
@@ -281,9 +251,7 @@ public void remove(int key) {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public int indexOfValue(E value){
 		return getTaintInt();
 		// Original method
@@ -299,9 +267,7 @@ public void remove(int key) {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public void clear(){
 		// Original method
 		/*
@@ -317,9 +283,7 @@ public void remove(int key) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public void append(int key, E value){
 		put(key, value);
 		ArrayUtils.idealIntArraySize(0);

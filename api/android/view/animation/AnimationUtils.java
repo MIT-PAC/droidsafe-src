@@ -16,12 +16,7 @@ import android.os.SystemClock;
 import android.util.AttributeSet;
 import android.util.Xml;
 
-
-
-
-
 public class AnimationUtils {
-
 
     /**
      * Returns the current animation time in milliseconds. This time should be used when invoking
@@ -231,7 +226,6 @@ public static Animation makeOutAnimation(Context c, boolean toRight) {
         a.setStartTime(currentAnimationTimeMillis());
         return a;
     }
-
     
     /**
      * Make an animation for objects becoming visible. Uses a slide up and fade
@@ -302,7 +296,6 @@ private static Interpolator createInterpolatorFromXml(Context c, XmlPullParser p
             AttributeSet attrs = Xml.asAttributeSet(parser);
             
             String  name = parser.getName();
-    
             
             if (name.equals("linearInterpolator")) {
                 interpolator = new LinearInterpolator(c, attrs);
@@ -339,7 +332,7 @@ private static Interpolator createInterpolatorFromXml(Context c, XmlPullParser p
     private static final int SEQUENTIALLY = 1;
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.854 -0400", hash_original_method = "356F4D62C52EA54268D4026A2BB604AB", hash_generated_method = "356F4D62C52EA54268D4026A2BB604AB")
-    @DSModeled(DSC.SAFE)
+    
     public AnimationUtils ()
     {
         //Synthesized constructor

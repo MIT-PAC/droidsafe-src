@@ -16,14 +16,8 @@ import android.os.IBinder;
 import android.os.SystemProperties;
 import android.view.accessibility.AccessibilityEvent;
 
-
-
-
-
 public abstract class Window {
-
     
-    @DSModeled(DSC.BAN)
     static CompatibilityInfoHolder getCompatInfo(Context context) {
     	CompatibilityInfoHolder retVal;
         Application app = (Application)context.getApplicationContext();
@@ -98,10 +92,8 @@ public abstract class Window {
     public static final int ID_ANDROID_CONTENT = com.android.internal.R.id.content;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.581 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
 
-
     private  Context mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.583 -0500", hash_original_field = "62D55BD845189080E97B5CD6967737ED", hash_generated_field = "FE42DB9D5DCA1AF8D89775C484584DA0")
-
     
     private TypedArray mWindowStyle;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.586 -0500", hash_original_field = "1A99E72B6409E38FBCC780D1BAB4898D", hash_generated_field = "B05DD02C49016AA70EF55EB624CC40D3")
@@ -139,13 +131,11 @@ public abstract class Window {
     private int mForcedWindowFlags = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.613 -0500", hash_original_field = "2CA8A535EE115D924568340E7B63F534", hash_generated_field = "8DD2F8572C71CE50B81F1050762E8D15")
 
-
     private int mFeatures = DEFAULT_FEATURES;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.616 -0500", hash_original_field = "3BD5D0DC9811AA66D3A5E1CD5B164BB7", hash_generated_field = "8F439E32EE732AE863B494C6265A86B0")
 
     private int mLocalFeatures = DEFAULT_FEATURES;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.618 -0500", hash_original_field = "D027A5D997BA49DFC4DE2A50E4E7E316", hash_generated_field = "68BCF9C876C3A5A4265478D3D60D9E88")
-
 
     private boolean mHaveWindowFormat = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.620 -0500", hash_original_field = "4CC9C7E412BDF87F6FEB2F19B0B11593", hash_generated_field = "08A6E705463382C516C1DE51AD82637F")
@@ -156,10 +146,8 @@ public abstract class Window {
     private int mDefaultWindowFormat = PixelFormat.OPAQUE;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.625 -0500", hash_original_field = "2A6C51158B59E4799002B25D5C92C03A", hash_generated_field = "0B8978AD19103B60226718E5263B1651")
 
-
     private boolean mHasSoftInputMode = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.627 -0500", hash_original_field = "708F9D94DA99CD83DBB18AAAFBA8C49F", hash_generated_field = "1C64CB399BFF718CD14799195853AA6E")
-
     
     private boolean mDestroyed;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.630 -0500", hash_original_field = "D292E6945091564B50F91497CC02D2E3", hash_generated_field = "7F9A9896CA9A2F1A549BC7CFD23C8D28")
@@ -956,14 +944,12 @@ public abstract void takeKeyEvents(boolean get);
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.842 -0500", hash_original_method = "D1451E151613AE9B75118E481B4EEA60", hash_generated_method = "D5F884291B7F1B1C530292AA966CA735")
     
 public abstract boolean superDispatchKeyEvent(KeyEvent event);
-
     
     private class LocalWindowManager extends WindowManagerImpl.CompatModeWrapper {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.675 -0500", hash_original_field = "A52D19DE7788F57CC5C01823E2C1F35F", hash_generated_field = "BA2C677D1D301CB311A67BA2544B79AA")
 
         private static final String PROPERTY_HARDWARE_UI = "persist.sys.ui.hw";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.677 -0500", hash_original_field = "68B6EC09532005E80B3FF968D0432D9B", hash_generated_field = "C592280128F52BDDBAD2DA621E45F814")
-
 
         private  boolean mHardwareAccelerated;
 
@@ -1033,70 +1019,48 @@ public final void addView(View view, ViewGroup.LayoutParams params) {
             super.addView(view, params);
         }
     }
-
-
     
     public interface Callback {
         
         public boolean dispatchKeyEvent(KeyEvent event);
-
         
         public boolean dispatchKeyShortcutEvent(KeyEvent event);
-
         
         public boolean dispatchTouchEvent(MotionEvent event);
         
-        
         public boolean dispatchTrackballEvent(MotionEvent event);
-
         
         public boolean dispatchGenericMotionEvent(MotionEvent event);
-
         
         public boolean dispatchPopulateAccessibilityEvent(AccessibilityEvent event);
-
         
         public View onCreatePanelView(int featureId);
-
         
         public boolean onCreatePanelMenu(int featureId, Menu menu);
-
         
         public boolean onPreparePanel(int featureId, View view, Menu menu);
-
         
         public boolean onMenuOpened(int featureId, Menu menu);
         
-        
         public boolean onMenuItemSelected(int featureId, MenuItem item);
-
         
         public void onWindowAttributesChanged(WindowManager.LayoutParams attrs);
-
         
         public void onContentChanged();
-
         
         public void onWindowFocusChanged(boolean hasFocus);
-
         
         public void onAttachedToWindow();
         
-        
         public void onDetachedFromWindow();
-        
         
         public void onPanelClosed(int featureId, Menu menu);
         
-        
         public boolean onSearchRequested();
-
         
         public ActionMode onWindowStartingActionMode(ActionMode.Callback callback);
-
         
         public void onActionModeStarted(ActionMode mode);
-
         
         public void onActionModeFinished(ActionMode mode);
     }

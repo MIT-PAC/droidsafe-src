@@ -14,78 +14,51 @@ import android.util.Log;
 import android.util.SparseIntArray;
 import dalvik.system.CloseGuard;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public class CursorWindow extends SQLiteClosable implements Parcelable {
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativeCreate(String name, int cursorWindowSize) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativeCreateFromParcel(Parcel parcel) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeDispose(int windowPtr) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeWriteToParcel(int windowPtr, Parcel parcel) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeClear(int windowPtr) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativeGetNumRows(int windowPtr) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean nativeSetNumColumns(int windowPtr, int columnNum) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean nativeAllocRow(int windowPtr) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeFreeLastRow(int windowPtr) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativeGetType(int windowPtr, int row, int column) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static byte[] nativeGetBlob(int windowPtr, int row, int column) {
         byte[] ret = {DSUtils.UNKNOWN_BYTE};
         return ret;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static String nativeGetString(int windowPtr, int row, int column) {
         	String ret = new String();
         	ret.addTaint(windowPtr);
@@ -93,57 +66,39 @@ public class CursorWindow extends SQLiteClosable implements Parcelable {
         	ret.addTaint(column);
         	return ret;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static long nativeGetLong(int windowPtr, int row, int column) {
         return DSUtils.UNKNOWN_LONG;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static double nativeGetDouble(int windowPtr, int row, int column) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeCopyStringToBuffer(int windowPtr, int row, int column,
             CharArrayBuffer buffer) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean nativePutBlob(int windowPtr, byte[] value, int row, int column) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean nativePutString(int windowPtr, String value, int row, int column) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean nativePutLong(int windowPtr, long value, int row, int column) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean nativePutDouble(int windowPtr, double value, int row, int column) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean nativePutNull(int windowPtr, int row, int column) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static String nativeGetName(int windowPtr) {
         	String ret =  new String();
         	ret.addTaint(windowPtr);
@@ -181,20 +136,17 @@ public CursorWindow[] newArray(int size) {
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.249 -0500", hash_original_field = "68CAF1AEF11BFE5DB8C3B09DCA26B261", hash_generated_field = "E194A8535700746837F74D9B692D7DA6")
 
-
     private static final SparseIntArray sWindowToPidMap = new SparseIntArray();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.045 -0500", hash_original_field = "893E6C712A17C3652D97D287CE28196E", hash_generated_field = "38FB3A768EF6B5DA39D97BE6BF469283")
 
     public int mWindowPtr;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.047 -0500", hash_original_field = "69DB1DFF5A463D0BEC5675381B562FE3", hash_generated_field = "D37936E7DE7BA2848F09C9211D0F059F")
 
-
     private int mStartPos;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.050 -0500", hash_original_field = "ED29A5CAC2A4A14894CD28BA3B1CE29C", hash_generated_field = "886C24C67739C97CF77B8DD239E412F9")
 
     private  String mName;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:36.052 -0500", hash_original_field = "6ADAA7D7C1C7D2FB7CE0E7D55A51778B", hash_generated_field = "91705AACD6DDE42AEA628776AF2A3DC6")
-
 
     private final CloseGuard mCloseGuard = CloseGuard.get();
 

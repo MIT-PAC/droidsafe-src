@@ -9,11 +9,6 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
-
-
-
-
-
 public class ArrayDeque<E> extends AbstractCollection<E> implements Deque<E>, Cloneable, Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:43.399 -0500", hash_original_field = "F06A04FC92EF3A2281A9A5BE149F46FD", hash_generated_field = "9C3B8B7AFE1FAFCE87E9784F2B7C8D5F")
 
@@ -119,9 +114,7 @@ private void doubleCapacity() {
         head = 0;
         tail = n;
     }
-
-    
-        @DSModeled(DSC.BAN)
+        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.729 -0400", hash_original_method = "5E8669E32F5C4FDF3D4D82BA2C3949A2", hash_generated_method = "A27DAFB69608B631E191921E359A6DED")
     private <T> T[] copyElements(T[] a) {
         addTaint(a[0].getTaint());
@@ -676,9 +669,7 @@ public void clear() {
 public Object[] toArray() {
         return copyElements(new Object[size()]);
     }
-
-    
-        @DSModeled(DSC.SAFE)
+        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.744 -0400", hash_original_method = "38034B8DDDAB71FC35937F12D964AD07", hash_generated_method = "06E5913149E402B6AB4BF8BCBD73C8FC")
     public <T> T[] toArray(T[] a) {
         addTaint(a[0].getTaint());
@@ -722,7 +713,6 @@ public ArrayDeque<E> clone() {
             throw new AssertionError();
         }
     }
-
     
     private class DeqIterator implements Iterator<E> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:43.488 -0500", hash_original_field = "C2F8ABCBCF42E4DD9BE7A8903244BCB5", hash_generated_field = "44DF51687F75FF9B360C641B654097EA")
@@ -773,11 +763,8 @@ public void remove() {
             }
             lastRet = -1;
         }
-
         
     }
-
-
     
     private class DescendingIterator implements Iterator<E> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:43.507 -0500", hash_original_field = "F1C9B03A213CA00D0DD27DF17F2962FE", hash_generated_field = "9C757AFC9A7098F996E37879537F5728")
@@ -826,7 +813,6 @@ public void remove() {
             }
             lastRet = -1;
         }
-
         
     }
 

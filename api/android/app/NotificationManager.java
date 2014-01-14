@@ -11,8 +11,6 @@ import android.os.IBinder;
 import android.os.RemoteException;
 import android.os.ServiceManager;
 
-
-
 public class NotificationManager {
 
     /** @hide */
@@ -35,10 +33,8 @@ static public INotificationManager getService()
     private static boolean localLOGV = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.187 -0500", hash_original_field = "2143D8EEECB82E176C0D26D54E4D19A4", hash_generated_field = "F81A4B790E53712C35BD5EDD5A7B2761")
 
-
     private static INotificationManager sService;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.205 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
-
 
     private Context mContext;
 
@@ -49,8 +45,6 @@ NotificationManager(Context context, Handler handler)
         mContext = context;
     }
     
-    
-    @DSModeled(DSC.BAN)
     public NotificationManager(Context context) {
         addTaint(context.getTaint());
         mContext = context;

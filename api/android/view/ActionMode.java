@@ -5,13 +5,8 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public abstract class ActionMode {
     
-    @DSModeled(DSC.BAN)
     public static ActionMode droidsafeObtainObject() {
         return new SimpleActionMode();
     }
@@ -179,18 +174,14 @@ public abstract View getCustomView();
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:04.176 -0500", hash_original_method = "232216C9B01BF51DC3B19AC833B1F44A", hash_generated_method = "E76EC25552FE301AA15012E8BEC12C50")
     
 public abstract MenuInflater getMenuInflater();
-
     
     public interface Callback {
         
         public boolean onCreateActionMode(ActionMode mode, Menu menu);
-
         
         public boolean onPrepareActionMode(ActionMode mode, Menu menu);
-
         
         public boolean onActionItemClicked(ActionMode mode, MenuItem item);
-
         
         public void onDestroyActionMode(ActionMode mode);
     }
@@ -210,77 +201,76 @@ public boolean isUiFocusable() {
     }
     
     private static class SimpleActionMode extends ActionMode {
-
-        @DSModeled(DSC.BAN)
+        
         private SimpleActionMode() {
             
         }
 
         @Override
-        @DSModeled(DSC.SAFE)
+        
         public void setTitle(CharSequence title) {
             // TODO Auto-generated method stub
             
         }
 
         @Override
-        @DSModeled(DSC.SAFE)
+        
         public void setTitle(int resId) {
             // TODO Auto-generated method stub
             
         }
 
         @Override
-        @DSModeled(DSC.SAFE)
+        
         public void setSubtitle(CharSequence subtitle) {
             // TODO Auto-generated method stub
             
         }
 
         @Override
-        @DSModeled(DSC.SAFE)
+        
         public void setSubtitle(int resId) {
             // TODO Auto-generated method stub
             
         }
 
         @Override
-        @DSModeled(DSC.SAFE)
+        
         public void setCustomView(View view) {
             // TODO Auto-generated method stub
             
         }
 
         @Override
-        @DSModeled(DSC.SAFE)
+        
         public void invalidate() {
             // TODO Auto-generated method stub
             
         }
 
         @Override
-        @DSModeled(DSC.SAFE)
+        
         public void finish() {
             // TODO Auto-generated method stub
             
         }
 
         @Override
-        @DSModeled(DSC.SAFE)
+        
         public Menu getMenu() {
             // TODO Auto-generated method stub
             return null; 
         }
 
         @Override
-        @DSModeled(DSC.SAFE)
+        
         public CharSequence getTitle() {
             // TODO Auto-generated method stub
             return null;
         }
 
         @Override
-        @DSModeled(DSC.SAFE)
+        
         public CharSequence getSubtitle() {
             // TODO Auto-generated method stub
             String str = new String(); 
@@ -289,7 +279,7 @@ public boolean isUiFocusable() {
         }
 
         @Override
-        @DSModeled(DSC.SAFE)
+        
         public View getCustomView() {
             // TODO Auto-generated method stub
             View v = new View();
@@ -298,7 +288,7 @@ public boolean isUiFocusable() {
         }
 
         @Override
-        @DSModeled(DSC.SAFE)
+        
         public MenuInflater getMenuInflater() {
             // TODO Auto-generated method stub
             View v = new View();

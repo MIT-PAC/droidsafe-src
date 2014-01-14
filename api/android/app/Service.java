@@ -18,10 +18,6 @@ import android.os.Build;
 import android.os.IBinder;
 import android.os.RemoteException;
 
-
-
-
-
 public abstract class Service extends ContextWrapper implements ComponentCallbacks2 {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:43.391 -0500", hash_original_field = "ECCA61699D3D51FA9DA8707329318842", hash_generated_field = "BCD56721F1394C062DFD537E559B3715")
 
@@ -435,15 +431,14 @@ final String getClassName() {
     /**
      * callback hook for subservices
      */
-    @DSModeled(DSC.BAN)
+    
     public void droidsafeOnSubServiceHook() {
         
     }
-    @DSModeled(DSC.BAN)
+    
         public void setApplication(Application app) { 
                 this.mApplication = app;
         }
-
 
 }
 

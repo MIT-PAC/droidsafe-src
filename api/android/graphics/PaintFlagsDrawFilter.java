@@ -5,14 +5,10 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
 import droidsafe.helpers.DSUtils;
 
 public class PaintFlagsDrawFilter extends DrawFilter {
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativeConstructor(int clearBits, int setBits) {
         return DSUtils.UNKNOWN_INT;
     }
@@ -32,7 +28,6 @@ public PaintFlagsDrawFilter(int clearBits, int setBits) {
         // are effectively a no-op
         mNativeInt = nativeConstructor(clearBits, setBits);
     }
-
     
 }
 

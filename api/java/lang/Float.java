@@ -5,27 +5,18 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public final class Float extends Number implements Comparable<Float> {
-
     
-    @DSModeled(DSC.SAFE)
     public static int floatToIntBits(float value) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static int floatToRawIntBits(float value) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static float intBitsToFloat(int bits) {
         return DSUtils.UNKNOWN_FLOAT;
     }
@@ -269,7 +260,6 @@ public static String toHexString(float f) {
     static final int EXPONENT_BIAS = 127;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:32.200 -0500", hash_original_field = "9C9ADE8D52CD0B7FC8528B4F8D9CB261", hash_generated_field = "AAB44785F4FC3A37C42CA63B6A8EBE86")
 
-
     static final int EXPONENT_BITS = 9;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:32.202 -0500", hash_original_field = "A12356A8AA5F8FA4D03DECCC97E6061F", hash_generated_field = "F67817DD7050153A96F45168E72D8F28")
 
@@ -279,7 +269,6 @@ public static String toHexString(float f) {
     static final int NON_MANTISSA_BITS = 9;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:32.207 -0500", hash_original_field = "16837E81C0CF60EDEAF65F3912719CFA", hash_generated_field = "7094B89EE6D925DFA81EF867594CF0A9")
 
-
     static final int SIGN_MASK     = 0x80000000;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:32.209 -0500", hash_original_field = "3086487D2ED25E30450466E77AC5232F", hash_generated_field = "D091E878ED0F3CCC802CE44713C89F6E")
 
@@ -288,7 +277,6 @@ public static String toHexString(float f) {
 
     static final int MANTISSA_MASK = 0x007fffff;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:32.215 -0500", hash_original_field = "E786B752FBB96B26566832DAA0B711C5", hash_generated_field = "1967804242F606EDCF5ADE6EBC54C263")
-
 
     private static final long serialVersionUID = -2671257302660747028L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:32.220 -0500", hash_original_field = "C683BBFDDFFB87EA94B20502D7B915D5", hash_generated_field = "64A78D592CBFAAAD64B3A3BFB1932908")

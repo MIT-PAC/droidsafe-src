@@ -7,9 +7,6 @@ import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public class UsbDevice implements Parcelable {
@@ -25,20 +22,15 @@ public static int getDeviceId(String name) {
 public static String getDeviceName(int id) {
         return native_get_device_name(id);
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int native_get_device_id(String name) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static String native_get_device_name(int id) {
         	return DSUtils.UNKNOWN_STRING;
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:49.326 -0500", hash_original_field = "4E5F892C05B53768683DDD3E619455EF", hash_generated_field = "DAD861C32930D3C3DB9711543F4CBDEA")
-
 
     private static final String TAG = "UsbDevice";
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.923 -0400", hash_original_field = "623DE101C192EB47E22D3D874CA85384", hash_generated_field = "A89610AE47A5F75950EAB1C2A2C5993E")
@@ -65,7 +57,6 @@ public UsbDevice[] newArray(int size) {
         }
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:49.329 -0500", hash_original_field = "ED29A5CAC2A4A14894CD28BA3B1CE29C", hash_generated_field = "886C24C67739C97CF77B8DD239E412F9")
-
 
     private  String mName;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:49.331 -0500", hash_original_field = "D7E1DC8FE0C3BD6E57749648942B2A85", hash_generated_field = "5A1C737B3F08366BB701627450ACF389")

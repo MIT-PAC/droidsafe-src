@@ -11,13 +11,9 @@ import java.lang.reflect.Method;
 import libcore.util.BasicLruCache;
 import libcore.util.EmptyArray;
 
-
-
-
 import droidsafe.runtime.DroidSafeAndroidRuntime;
 
 public abstract class Enum<E extends Enum<E>> implements Serializable, Comparable<E> {
-
     
     public static <T extends Enum<T>> T valueOf(Class<T> enumType, String name) {
         if (enumType == null || name == null) {
@@ -33,21 +29,18 @@ public abstract class Enum<E extends Enum<E>> implements Serializable, Comparabl
         }
         throw new IllegalArgumentException(name + " is not a constant in " + enumType.getName());
     }
-
     
-    @DSModeled(DSC.SAFE)
     @SuppressWarnings("unchecked")
     public static <T extends Enum<T>> T[] getSharedConstants(Class<T> enumType) {
         return (T[]) sharedConstantsCache.get(enumType);
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.908 -0500", hash_original_field = "36ABA869F03F9A9F22D0E91086D2EDD0", hash_generated_field = "F6C6D1A2DF29E3B35FCE4B7C508D18C8")
 
-
     private static final long serialVersionUID = -4300926546619394005L;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.973 -0400", hash_original_field = "9E1AB9651106D78F89D200A6B8A75C99", hash_generated_field = "B4F6D6026899BCE9E7B0DB1ABDB36603")
 
-    private static final BasicLruCache<Class<? extends Enum>, Object[]> sharedConstantsCache = new BasicLruCache<Class<? extends Enum>, Object[]>(64) {        
-        @DSModeled(DSC.BAN)
+    private static final BasicLruCache<Class<? extends Enum>, Object[]> sharedConstantsCache = new BasicLruCache<Class<? extends Enum>, Object[]>(64) {
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.973 -0400", hash_original_method = "4DA067D184DCA03E4A8499CE8148F1DB", hash_generated_method = "7F031794B7075609744F8874AE3F398D")
         @Override
         protected Object[] create(Class<? extends Enum> enumType) {
@@ -70,25 +63,13 @@ public abstract class Enum<E extends Enum<E>> implements Serializable, Comparabl
             varB4EAC82CA7396A68D541C85D26508E83_1848793963.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1848793963;
             
-            
-                    
-            
-                
-            
-                
-            
-                
-            
         }
-
         
 };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.917 -0500", hash_original_field = "BF45F7481B8091DE3CBF80E94F7F940B", hash_generated_field = "531F96E2AEBFB44CD229EC4CB1F012B0")
 
-
     private  String name;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.919 -0500", hash_original_field = "9B9D896414A0E67CE9221B96A63BE0CD", hash_generated_field = "9B9D896414A0E67CE9221B96A63BE0CD")
-
 
      int ordinal;
 

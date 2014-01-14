@@ -7,15 +7,8 @@ import droidsafe.annotations.*;
 import java.io.Serializable;
 import java.lang.reflect.Array;
 
-
-
-
-
-
 public class Arrays {
-
-    
-        @DSModeled(DSC.SAFE)
+        
     public static <T> List<T> asList(T... array) {
         return new ArrayList<T>(array);
     }
@@ -426,15 +419,11 @@ public static int binarySearch(Object[] array, int startIndex, int endIndex, Obj
         }
         return ~lo;  // value not present
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static <T> int binarySearch(T[] array, T value, Comparator<? super T> comparator) {
         return binarySearch(array, 0, array.length, value, comparator);
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static <T> int binarySearch(T[] array, int startIndex, int endIndex, T value,
             Comparator<? super T> comparator) {
         if (comparator == null) {
@@ -1977,15 +1966,11 @@ public static void sort(Object[] array) {
 public static void sort(Object[] array, int start, int end) {
         ComparableTimSort.sort(array, start, end);
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static <T> void sort(T[] array, int start, int end, Comparator<? super T> comparator) {
         TimSort.sort(array, start, end, comparator);
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static <T> void sort(T[] array, Comparator<? super T> comparator) {
         TimSort.sort(array, comparator);
     }
@@ -2588,9 +2573,7 @@ public static short[] copyOf(short[] original, int newLength) {
         }
         return copyOfRange(original, 0, newLength);
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static <T> T[] copyOf(T[] original, int newLength) {
         if (original == null) {
             throw new NullPointerException();
@@ -2600,9 +2583,7 @@ public static short[] copyOf(short[] original, int newLength) {
         }
         return copyOfRange(original, 0, newLength);
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static <T, U> T[] copyOf(U[] original, int newLength, Class<? extends T[]> newType) {
         if (newLength < 0) {
             throw new NegativeArraySizeException();
@@ -2865,9 +2846,7 @@ public static short[] copyOfRange(short[] original, int start, int end) {
         System.arraycopy(original, start, result, 0, copyLength);
         return result;
     }
-
     
-    @DSModeled(DSC.SAFE)
     @SuppressWarnings("unchecked")
     public static <T> T[] copyOfRange(T[] original, int start, int end) {
         int originalLength = original.length;
@@ -2883,9 +2862,7 @@ public static short[] copyOfRange(short[] original, int start, int end) {
         System.arraycopy(original, start, result, 0, copyLength);
         return result;
     }
-
     
-    @DSModeled(DSC.SAFE)
     @SuppressWarnings("unchecked")
     public static <T, U> T[] copyOfRange(U[] original, int start, int end, Class<? extends T[]> newType) {
         if (start > end) {
@@ -2907,15 +2884,12 @@ public static short[] copyOfRange(short[] original, int start, int end) {
 private Arrays() {
         /* empty */
     }
-
     
     private static class ArrayList<E> extends AbstractList<E> implements List<E>, Serializable, RandomAccess {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:39.914 -0500", hash_original_field = "88450D1E537FF5060CA945C92FA2CB31", hash_generated_field = "534D9DD3A0BE09C3AE46777ECEF6E48A")
 
-
         private static final long serialVersionUID = -2764017481108945198L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:39.917 -0500", hash_original_field = "9B72AFAEA0DBD2010A596B38D379CD5B", hash_generated_field = "59D3CDBB1380FC0BC14279DCD13B4432")
-
 
         private  E[] a;
 
@@ -2947,9 +2921,7 @@ ArrayList(E[] storage) {
             }
             return false;
         }
-
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.518 -0400", hash_original_method = "2292A4CE789907EDD632B4A1EB11E4D2", hash_generated_method = "B2FEE0C150F1B0531794BB26ED0C3A5A")
         @Override
         public E get(int location) {
@@ -3036,9 +3008,7 @@ E varE9389EE2200B2620B656A8101CB528EA_471271096 =                 a[location];
         public Object[] toArray() {
             return a.clone();
         }
-
-        
-                @DSModeled(DSC.SAFE)
+                
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:59.001 -0400", hash_original_method = "7C6C61B0D92D6FAC6E5A876622A28815", hash_generated_method = "F8735DB7EA6ECCE9326BD99AA6BFFDD0")
         @Override
         @SuppressWarnings({"unchecked", "SuspiciousSystemArraycopy"})
@@ -3071,8 +3041,6 @@ T[] var5DC9C33EDB9F81CF1216538024B770BE_763551582 =             contents;
             //return contents;
         }
     }
-
-
     
 }
 

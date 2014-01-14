@@ -5,16 +5,11 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public abstract class AbstractWindowedCursor extends AbstractCursor {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.409 -0500", hash_original_field = "93AE6FA4C4A8276F74A13C6549F253EE", hash_generated_field = "12D5C423EDB86BC0F7511811E7121A5B")
 
     protected CursorWindow mWindow;
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.426 -0400", hash_original_method = "45FA808929D52C3FF25B9987C9B4DFA0", hash_generated_method = "45FA808929D52C3FF25B9987C9B4DFA0")
     public AbstractWindowedCursor ()
     {
@@ -231,7 +226,6 @@ protected void clearOrCreateWindow(String name) {
         super.onDeactivateOrClose();
         closeWindow();
     }
-
     
 }
 

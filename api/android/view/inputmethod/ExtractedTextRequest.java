@@ -7,18 +7,13 @@ import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public class ExtractedTextRequest implements Parcelable {
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.520 -0400", hash_original_field = "53A29FDF1558849BDD50F7BFE3E6AF78", hash_generated_field = "85087F40266A407B120D89FE91BD8F5F")
 
     public static final Parcelable.Creator<ExtractedTextRequest> CREATOR
             = new Parcelable.Creator<ExtractedTextRequest>() {
-    	@DSModeled(DSC.SAFE)
+    	
         public ExtractedTextRequest createFromParcel(Parcel source) {
     		addTaint(source.getTaint());
             ExtractedTextRequest res = new ExtractedTextRequest();
@@ -29,8 +24,7 @@ public class ExtractedTextRequest implements Parcelable {
             res.addTaint(taint);
             return res;
         }
-
-        @DSModeled(DSC.SAFE)
+        
         public ExtractedTextRequest[] newArray(int size) {
         	addTaint(size);
             return new ExtractedTextRequest[size];
@@ -49,7 +43,6 @@ public class ExtractedTextRequest implements Parcelable {
 
     public int hintMaxChars;
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.520 -0400", hash_original_method = "8B43E5E3CB5CAEC30CB660AE9DA9D566", hash_generated_method = "8B43E5E3CB5CAEC30CB660AE9DA9D566")
     public ExtractedTextRequest ()
     {

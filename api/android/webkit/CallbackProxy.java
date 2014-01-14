@@ -33,11 +33,6 @@ import android.widget.TextView;
 
 import com.android.internal.R;
 
-
-
-
-
-
 class CallbackProxy extends Handler {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:14.146 -0500", hash_original_field = "DD7504E4F438D772A13F5C792C582E02", hash_generated_field = "B8BCB03548AB3F60BD02883254FAF794")
 
@@ -946,7 +941,6 @@ public boolean uiOverrideKeyEvent(KeyEvent event) {
 public int getProgress() {
         return mLatestProgress;
     }
-
     
     private static class ResultTransport<E> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:14.280 -0500", hash_original_field = "C13B321A38074A0309A54D3D8023D02F", hash_generated_field = "8FF1976BF201D1F418EC84B9D35E5FAC")
@@ -970,11 +964,8 @@ public synchronized void setResult(E result) {
 public synchronized E getResult() {
             return mResult;
         }
-
         
     }
-
-
     
     private static class UploadFileMessageData {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:14.467 -0500", hash_original_field = "730E2803C3CB04DAD243EDB36218CA00", hash_generated_field = "141E146BCCC9E44E04F619B70ED78B17")
@@ -1002,11 +993,8 @@ public UploadFile getUploadFile() {
 public String getAcceptType() {
             return mAcceptType;
         }
-
         
     }
-
-
     
     private class UploadFile implements ValueCallback<Uri> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:14.481 -0500", hash_original_field = "5313D513DFCA6ABC354AE3BE1634D7D1", hash_generated_field = "D24B10CB4DFA145F1AD29B267930EA48")
@@ -1031,7 +1019,6 @@ public void onReceiveValue(Uri value) {
 public Uri getResult() {
             return mValue;
         }
-
         
     }
 
@@ -1043,9 +1030,7 @@ public Uri getResult() {
 void switchOutDrawHistory() {
         sendMessage(obtainMessage(SWITCH_OUT_HISTORY));
     }
-
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.836 -0400", hash_original_method = "2F62F4E531DE0AF4C82D66205801E78A", hash_generated_method = "239292A03E2A1C8071CF2D7C707703DE")
     private String getJsDialogTitle(String url) {
         addTaint(url.getTaint());
@@ -1383,7 +1368,6 @@ public boolean onDownloadStart(String url, String userAgent,
         sendMessage(msg);
         return true;
     }
-
 
     //--------------------------------------------------------------------------
     // WebView specific functions that do not interact with a client. These

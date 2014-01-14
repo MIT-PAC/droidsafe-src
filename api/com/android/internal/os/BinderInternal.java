@@ -12,14 +12,8 @@ import android.os.IBinder;
 import android.os.SystemClock;
 import android.util.EventLog;
 
-
-
-
-
 public class BinderInternal {
-
-
-    @DSModeled(DSC.SAFE)
+    
     public static final void joinThreadPool() {
     }
     
@@ -38,20 +32,14 @@ public class BinderInternal {
 public static long getLastGcTime() {
         return mLastGcTime;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static final IBinder getContextObject() {
     	return new Binder();
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static final void disableBackgroundScheduling(boolean disable) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     static final void handleGc() {
     }
     
@@ -71,11 +59,9 @@ static void forceBinderGc() {
 
     static WeakReference<GcWatcher> mGcWatcher
             = new WeakReference<GcWatcher>(new GcWatcher());
-
     
     static final class GcWatcher {
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.469 -0400", hash_original_method = "23BF1C701EF3B7F131F4805BD4892CC0", hash_generated_method = "23BF1C701EF3B7F131F4805BD4892CC0")
         public GcWatcher ()
         {
@@ -89,7 +75,6 @@ static void forceBinderGc() {
             mLastGcTime = SystemClock.uptimeMillis();
             mGcWatcher = new WeakReference<GcWatcher>(new GcWatcher());
         }
-
         
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:51.457 -0500", hash_original_field = "8CAF103EDA9DB77FDE721BD1922741E3", hash_generated_field = "D78279B3A9A95C1743A81AEED357F5B0")

@@ -7,10 +7,7 @@ import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
 public class Point implements Parcelable {
-
     
     public static final Parcelable.Creator<Point> CREATOR = new Parcelable.Creator<Point>() {
         /**
@@ -43,16 +40,12 @@ public Point[] newArray(int size) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:26.597 -0500", hash_original_method = "D4552E1315F6D591F9A42261DB9D057B", hash_generated_method = "8FFCC2F5EFA8C2EC3A4BF6EFD301796D")
     
 public Point() {}
-
     
-    @DSModeled(DSC.SAFE)
     public Point(int x, int y){
         addTaint(x);
         addTaint(y);
     }
-
     
-    @DSModeled(DSC.SAFE)
     public Point(Point src){
         addTaint(src.getTaint());
         /*
@@ -60,9 +53,7 @@ public Point() {}
         this.y = src.y;
         */
     }
-
     
-    @DSModeled(DSC.SAFE)
     public void set(int x, int y){
         addTaint(x);
         addTaint(y);
@@ -74,9 +65,7 @@ public Point() {}
     }
         */
     }
-
     
-    @DSModeled(DSC.SAFE)
     public final void negate(){
         addTaint(x);
         addTaint(y);
@@ -91,9 +80,7 @@ public final void offset(int dx, int dy) {
         x += dx;
         y += dy;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public final boolean equals(int x, int y){
         return getTaintBoolean();
         // Original method
@@ -103,9 +90,7 @@ public final void offset(int dx, int dy) {
     }
         */
     }
-
     
-    @DSModeled(DSC.SAFE)
     @Override public boolean equals(Object o){
         //DSFIXME:  CODE0004: Local variable requires review, uncomment if needed
         //Point p = (Point) o;
@@ -121,9 +106,7 @@ public final void offset(int dx, int dy) {
     }
         */
     }
-
     
-    @DSModeled(DSC.SAFE)
     @Override public int hashCode(){
         return getTaintInt();
         // Original method
@@ -133,9 +116,7 @@ public final void offset(int dx, int dy) {
     }
         */
     }
-
     
-    @DSModeled(DSC.SAFE)
     @Override public String toString(){
         String str = new String();
         str.addTaint(getTaint());
@@ -147,9 +128,7 @@ public final void offset(int dx, int dy) {
     }
         */
     }
-
     
-    @DSModeled(DSC.SAFE)
     @Override public int describeContents(){
         return getTaintInt();
         // Original method
@@ -172,9 +151,7 @@ public final void offset(int dx, int dy) {
         out.writeInt(x);
         out.writeInt(y);
     }
-
     
-    @DSModeled(DSC.SAFE)
     public void readFromParcel(Parcel in){
         // Original method
         /*

@@ -11,13 +11,8 @@ import java.lang.reflect.Method;
 
 import junit.framework.TestCase;
 
-
-
-
-
 public class TestMethod {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.588 -0500", hash_original_field = "64A32E8E7BFE62A68BE11F0567DCBBFF", hash_generated_field = "4B9B267011D653678A1583AF1D29B06C")
-
 
     private  String enclosingClassname;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.590 -0500", hash_original_field = "20AE5A9557A4226659C5A08DE3DA1797", hash_generated_field = "5A6576C23C399B00DCB8F0CE832CF8AB")
@@ -58,9 +53,7 @@ public String getName() {
 public String getEnclosingClassname() {
         return enclosingClassname;
     }
-
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.223 -0400", hash_original_method = "0CE278D185BC58FF80C97732E6956457", hash_generated_method = "037E28148623D937FDE0A23772D5557F")
     public <T extends Annotation> T getAnnotation(Class<T> annotationClass) {
         addTaint(annotationClass.getTaint());
@@ -180,7 +173,6 @@ private boolean noargsConstructor(Class[] params) {
     public String toString() {
         return enclosingClassname + "." + testMethodName;
     }
-
     
 }
 

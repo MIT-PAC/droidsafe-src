@@ -14,13 +14,8 @@ import android.util.SparseArray;
 import android.util.SparseIntArray;
 import android.view.KeyCharacterMap.KeyData;
 
-
-
-
-
 public class KeyEvent extends InputEvent implements Parcelable {
     
-    @DSModeled(DSC.BAN)
     public static KeyEvent droidsafeObtainEvent() {
         Random rand = new Random();
         KeyEvent ev = new KeyEvent(rand.nextInt(), rand.nextInt(), rand.nextInt(),
@@ -281,7 +276,6 @@ private static KeyEvent obtain() {
         return ev;
     }
     
-    @DSModeled(DSC.BAN)
     public static KeyEvent droidsafeGetEvent() {
         return new KeyEvent();
     }
@@ -996,7 +990,6 @@ public static KeyEvent createFromParcelBody(Parcel in) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:22.563 -0500", hash_original_field = "ABF4EC7B83F3D24E406BDCA59085D8A7", hash_generated_field = "C915146C0867D19CACED2D4EADFEF8A0")
 
     public static final int KEYCODE_SLASH           = 76;
-
     
     public static class DispatcherState {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.312 -0500", hash_original_field = "09E1F61D6927630107A1B08B0819BA0E", hash_generated_field = "09E1F61D6927630107A1B08B0819BA0E")
@@ -1108,22 +1101,16 @@ public void handleUpEvent(KeyEvent event) {
                 mDownTarget = null;
             }
         }
-
         
     }
-
-
     
     public interface Callback {
         
         boolean onKeyDown(int keyCode, KeyEvent event);
-
         
         boolean onKeyLongPress(int keyCode, KeyEvent event);
-
         
         boolean onKeyUp(int keyCode, KeyEvent event);
-
         
         boolean onKeyMultiple(int keyCode, int count, KeyEvent event);
     }
@@ -1537,7 +1524,6 @@ public void handleUpEvent(KeyEvent event) {
     public static final int KEYCODE_CALCULATOR      = 210;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:22.911 -0500", hash_original_field = "21A478F95F691051EB15FCFF1D2A65CC", hash_generated_field = "F6A5DDFA8DC9C9559DA427D14D84C374")
 
-
     private static final int LAST_KEYCODE           = KEYCODE_CALCULATOR;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:22.914 -0500", hash_original_field = "FB7824F14F73D8E48637BF91D1ED5916", hash_generated_field = "8FB8DEEC7F201D8A94FE7147ACCBC029")
 
@@ -1727,14 +1713,12 @@ public void handleUpEvent(KeyEvent event) {
 
     public static final int FLAG_TAINTED = 0x80000000;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.051 -0500", hash_original_field = "81DD852ECBE07BA98A61C8F3D0C85F01", hash_generated_field = "F09208C088E716A2CD36A97B937BB5EA")
-
     
     static final boolean DEBUG = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.054 -0500", hash_original_field = "D6BC418CAB7808E9368D3E1A4A00B8B3", hash_generated_field = "0966EC22C56233A6511F81074732B996")
 
     static final String TAG = "KeyEvent";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.056 -0500", hash_original_field = "F593DBD4ACC5DC484D76C0656C0FB27F", hash_generated_field = "632CD138CDBCADE9A63F9B23105E1648")
-
 
     private static final int MAX_RECYCLED = 10;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.060 -0500", hash_original_field = "383C33CA63B8C16F39C24669AA7A3D08", hash_generated_field = "4D2E3DEDF37103D77BF3BB46692742C8")
@@ -1775,7 +1759,7 @@ public void handleUpEvent(KeyEvent event) {
 
     public static final Parcelable.Creator<KeyEvent> CREATOR
             = new Parcelable.Creator<KeyEvent>() {
-    	@DSModeled(DSC.SAFE)
+    	
         public KeyEvent createFromParcel(Parcel in) {
     		addTaint(in.getTaint());
             in.readInt(); 
@@ -1792,13 +1776,11 @@ public KeyEvent[] newArray(int size) {
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.067 -0500", hash_original_field = "7281A38783B56E66F896B056FE68BC9E", hash_generated_field = "A21260B04ED5B32DBDB0093B175D9F6A")
 
-
     private KeyEvent mNext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.069 -0500", hash_original_field = "54377D1FA2AD41427FB83B9E454546B7", hash_generated_field = "2C8375875524783DEB30CD6C7E943390")
 
     private boolean mRecycled;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.071 -0500", hash_original_field = "9C5D5B4697BA4F2BAA6617B930737C8B", hash_generated_field = "AE8D59B3F804A7C4665D164A31D2B414")
-
 
     private int mDeviceId;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.074 -0500", hash_original_field = "11DA1CE39E46044FC7D0DA0865E06F43", hash_generated_field = "D564CAA4C2DB0DC0AAAD32F1767ED66A")
@@ -1832,7 +1814,6 @@ public KeyEvent[] newArray(int size) {
 
     private String mCharacters;
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.320 -0400", hash_original_method = "E1777BC70B96D5008D693732650D9927", hash_generated_method = "560F8A7FDE8C5C12025FD3A840761BDA")
     public  KeyEvent() {
         // ---------- Original Method ----------

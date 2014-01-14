@@ -5,19 +5,11 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class Shader {
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeDestructor(int native_shader, int native_skiaShader) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeSetLocalMatrix(int native_shader,
             int native_skiaShader, int matrix_instance) {
     }
@@ -29,10 +21,8 @@ public class Shader {
     public int native_shader;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.380 -0500", hash_original_field = "B098408BDC1C8F16240AC762D8C2DD9B", hash_generated_field = "D6800221AFA66D0081A0E98544EF5A6A")
 
-
     private Matrix mLocalMatrix;
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.118 -0400", hash_original_method = "2C9D5C9CBFF528B332FC0D9B3274B66B", hash_generated_method = "2C9D5C9CBFF528B332FC0D9B3274B66B")
     public Shader ()
     {
@@ -76,7 +66,6 @@ protected void finalize() throws Throwable {
             nativeDestructor(native_instance, native_shader);
         }
     }
-
     
     public enum TileMode {
         CLAMP   (0),
@@ -92,7 +81,6 @@ TileMode(int nativeInt) {
 
          int nativeInt;
     }
-
     
 }
 

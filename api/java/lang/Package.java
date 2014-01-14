@@ -10,10 +10,6 @@ import java.net.URL;
 
 import dalvik.system.VMStack;
 
-
-
-
-
 public class Package implements AnnotatedElement {
 
     /**
@@ -55,7 +51,6 @@ public static Package[] getPackages() {
     private static final Annotation[] NO_ANNOTATIONS = new Annotation[0];
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.116 -0500", hash_original_field = "BF45F7481B8091DE3CBF80E94F7F940B", hash_generated_field = "531F96E2AEBFB44CD229EC4CB1F012B0")
 
-
     private  String name;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.119 -0500", hash_original_field = "9329AD5B2A0CEB786C4A9564E64F4187", hash_generated_field = "AE81573D9500136C0B4AD5C6FB30BF01")
 
@@ -92,9 +87,7 @@ Package(String name, String specTitle, String specVersion, String specVendor,
         this.implVendor = implVendor;
         this.sealBase = sealBase;
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.415 -0400", hash_original_method = "1D0B4DB439BD39BE82415F0E494CFB63", hash_generated_method = "686D6C770160E2E9635418430D737165")
     @SuppressWarnings("unchecked")
     public <A extends Annotation> A getAnnotation(Class<A> annotationType) {

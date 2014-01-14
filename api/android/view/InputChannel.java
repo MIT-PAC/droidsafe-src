@@ -8,14 +8,8 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Slog;
 
-
-
-
-
 public final class InputChannel implements Parcelable {
-
     
-    @DSModeled(DSC.SAFE)
     private static InputChannel[] nativeOpenInputChannelPair(String name) {
     	InputChannel i = new InputChannel();
     	i.addTaint(name.getTaint());
@@ -45,7 +39,6 @@ public static InputChannel[] openInputChannelPair(String name) {
 
     private static final String TAG = "InputChannel";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:04.343 -0500", hash_original_field = "81DD852ECBE07BA98A61C8F3D0C85F01", hash_generated_field = "58EDF43BA541A4D47EECFEC3901C7AED")
-
     
     private static final boolean DEBUG = false;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.974 -0400", hash_original_field = "7C7ADF72FF6C232CC276E7538511A5AA", hash_generated_field = "1E8E5BA243BA0BDF86F284A9E05D652B")
@@ -67,7 +60,6 @@ public InputChannel[] newArray(int size) {
         }
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:04.353 -0500", hash_original_field = "42C21A18FB5976D4C67962413781C35D", hash_generated_field = "F6CBBCA427D08C52E84BEBFADDF6C4B3")
-
     
     @SuppressWarnings("unused")
     private int mPtr;
@@ -109,10 +101,7 @@ public InputChannel() {
     	//Formerly a native method
     	addTaint(parcel.getTaint());
     }
-
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:53.950 -0400", hash_original_method = "CA39384861C04125EB204839D7970E78", hash_generated_method = "55C683646032EAF5E4A7B598D440C2F0")
     private String nativeGetName() {
     	String s = new String();

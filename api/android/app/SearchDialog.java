@@ -38,10 +38,6 @@ import android.widget.LinearLayout;
 import android.widget.SearchView;
 import android.widget.TextView;
 
-
-
-
-
 public class SearchDialog extends Dialog {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:20.709 -0500", hash_original_method = "56A848B4C6D8FA4A2680FE0AB0EEBE05", hash_generated_method = "4DCAA74AAF032E5CA9A8B8B2BE8B8E72")
@@ -67,7 +63,6 @@ static boolean isLandscapeMode(Context context) {
     private static final String LOG_TAG = "SearchDialog";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:20.626 -0500", hash_original_field = "AA15E2171E6B8E02519B80CD96C95ADA", hash_generated_field = "32263DEC0FC7AEC057254F1EE9768AC4")
 
-
     private static final String INSTANCE_KEY_COMPONENT = "comp";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:20.631 -0500", hash_original_field = "C3F3ABE2A252746724A84BA8C4092AB9", hash_generated_field = "1FBAB201C0ABBCB1FC1817DA78FCEDB5")
 
@@ -80,7 +75,6 @@ static boolean isLandscapeMode(Context context) {
     // a microphone button since one already exists in the search dialog.
     private static final String IME_OPTION_NO_MICROPHONE = "nm";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:20.644 -0500", hash_original_field = "B06E2FDE831865FCE5B95733E1B81D43", hash_generated_field = "4DA3BCE289680CAD95CE7D774B9BCB53")
-
 
     private static final int SEARCH_PLATE_LEFT_PADDING_NON_GLOBAL = 7;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:20.647 -0500", hash_original_field = "CF7A163C9C546A0CDC5A7AB00BB1810C", hash_generated_field = "1106A4E8A92B8ECB3AB388E40AAD60FA")
@@ -132,8 +126,8 @@ static boolean isLandscapeMode(Context context) {
     private int mSearchAutoCompleteImeOptions;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.068 -0400", hash_original_field = "4C8632D0626D11A25D8014E79CAA4E06", hash_generated_field = "078A814FD4991378BDB28FB48F12B0ED")
 
-    private BroadcastReceiver mConfChangeListener = new BroadcastReceiver() {        
-        @DSModeled(DSC.BAN)
+    private BroadcastReceiver mConfChangeListener = new BroadcastReceiver() {
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.068 -0400", hash_original_method = "61FB59FECA93F3EDF27E6A33F699149F", hash_generated_method = "98EAE8A6AA366027995AA3D63178677D")
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -147,11 +141,7 @@ static boolean isLandscapeMode(Context context) {
             addTaint(context.getTaint());
             addTaint(intent.getTaint());
             
-            
-                
-            
         }
-
         
 };
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.068 -0400", hash_original_field = "C8DA34EAFE5A804F3DA0F26C8C4E68D6", hash_generated_field = "3245111817DC9835A07A0A31DE4B0A90")
@@ -164,9 +154,7 @@ static boolean isLandscapeMode(Context context) {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_789855726 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_789855726;
             
-            
         }
-
         
 };
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.070 -0400", hash_original_field = "30CF5A2AB690CA0DA5E52E2B1D748F3D", hash_generated_field = "E29563EDD9A2E78DCF7B8077DDF9205E")
@@ -180,10 +168,7 @@ static boolean isLandscapeMode(Context context) {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_761659196 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_761659196;
             
-            
-            
         }
-
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.070 -0400", hash_original_method = "B6F5742F5D55A0164A53BADD48E4641B", hash_generated_method = "353766EFCC8F0AD377965FF3483914CC")
         public boolean onQueryTextChange(String newText) {
@@ -192,9 +177,7 @@ static boolean isLandscapeMode(Context context) {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_80975844 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_80975844;
             
-            
         }
-
         
 };
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.072 -0400", hash_original_field = "664EEA0FE979F3BA2B7F5E6EE6FFA2E6", hash_generated_field = "28233D501C7D0E0FB0BF53D4AE9FE3B8")
@@ -207,9 +190,7 @@ static boolean isLandscapeMode(Context context) {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2095629159 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2095629159;
             
-            
         }
-
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:20.072 -0400", hash_original_method = "59D851DE147AEDB85EE9900538C05E02", hash_generated_method = "7452D6031F67D102D819D3EB143E8409")
         public boolean onSuggestionClick(int position) {
@@ -219,10 +200,7 @@ static boolean isLandscapeMode(Context context) {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_425980155 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_425980155;
             
-            
-            
         }
-
         
 };
 
@@ -686,11 +664,9 @@ protected void launchQuerySearch(int actionKey, String actionMsg) {
         Intent intent = createIntent(action, null, null, query, actionKey, actionMsg);
         launchIntent(intent);
     }
-
     
     public static class SearchBar extends LinearLayout {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:20.819 -0500", hash_original_field = "B93D728F11520F5ED9A8F4EC523DF611", hash_generated_field = "247F9D3B324680CEDDC332FCA6608926")
-
 
         private SearchDialog mSearchDialog;
 
@@ -721,7 +697,6 @@ public void setSearchDialog(SearchDialog searchDialog) {
         public ActionMode startActionModeForChild(View child, ActionMode.Callback callback) {
             return null;
         }
-
         
     }
 

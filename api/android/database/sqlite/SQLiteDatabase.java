@@ -38,16 +38,11 @@ import android.util.LruCache;
 import android.util.Pair;
 import dalvik.system.BlockGuard;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 import droidsafe.runtime.DroidSafeAndroidRuntime;
 
 public class SQLiteDatabase extends SQLiteClosable {
-
     
-    @DSModeled(DSC.SAFE)
     static public int releaseMemory() {
         return DSUtils.UNKNOWN_INT;
     }
@@ -341,7 +336,6 @@ static ArrayList<DbStats> getDbStats() {
     public static final int OPEN_READWRITE = 0x00000000;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:40.919 -0500", hash_original_field = "55B679F5ECB0D2A083EEBD37E64CB9A3", hash_generated_field = "75EEEADC871103D7830A534A5FACE796")
 
-
     /**
      * Flag for {@link #openDatabase} to open the database for reading only.
      * This is the only reliable way to open a database if the disk may be full.
@@ -349,10 +343,8 @@ static ArrayList<DbStats> getDbStats() {
     public static final int OPEN_READONLY = 0x00000001;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:40.921 -0500", hash_original_field = "00DCBB85B99CC171B018CB945E812C6A", hash_generated_field = "5187312D154815C7B5E63606C7E8136A")
 
-
     private static final int OPEN_READ_MASK = 0x00000001;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:40.924 -0500", hash_original_field = "95BDAB4DF408D93129E82F2EEC8E7E6D", hash_generated_field = "E33E7E96994BCE5516EBFCA9D3B1A5DF")
-
 
     /**
      * Flag for {@link #openDatabase} to open the database without support for localized collators.
@@ -363,7 +355,6 @@ static ArrayList<DbStats> getDbStats() {
      */
     public static final int NO_LOCALIZED_COLLATORS = 0x00000010;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:40.927 -0500", hash_original_field = "E75EEA6940B8B09047C2FCCC7D9CAD57", hash_generated_field = "D42DBE66645440568FCBF1D69EEB23FB")
-
 
     /**
      * Flag for {@link #openDatabase} to create the database file if it does not already exist.
@@ -383,7 +374,6 @@ static ArrayList<DbStats> getDbStats() {
 
     private static final int LOCK_ACQUIRED_WARNING_TIME_IN_MS_ALWAYS_PRINT = 2000;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:40.957 -0500", hash_original_field = "DEA622746E1885322628E03F1AB30D90", hash_generated_field = "79E0F0AE9DE5E092336F50A45B4F8E1C")
-
 
     private static final int SLEEP_AFTER_YIELD_QUANTUM = 1000;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:40.959 -0500", hash_original_field = "2311837FF4B5C5BC4F80F3C8471AF0CD", hash_generated_field = "7B563E7D4C8E3D4A4FE8D0B6A60C2D47")
@@ -425,7 +415,6 @@ static ArrayList<DbStats> getDbStats() {
     public static final int MAX_SQL_CACHE_SIZE = 100;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.031 -0500", hash_original_field = "F3906B41B56AD36295813E8DFCBC7EC9", hash_generated_field = "076429DC648CA31B53EA5479063A01DC")
 
-
     private static final String MEMORY_DB_PATH = ":memory:";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.037 -0500", hash_original_field = "E47E46817091B1502466FCBC77893180", hash_generated_field = "6C1DD837716F02A5B85D056ED49553B5")
 
@@ -433,10 +422,8 @@ static ArrayList<DbStats> getDbStats() {
             new ArrayList<WeakReference<SQLiteDatabase>>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.061 -0500", hash_original_field = "AD46826DDDF5F12579BDBC5F911CEA2A", hash_generated_field = "87A9BD3D7700EA6364DB461A232CAEB6")
 
-
     private static final long LOCK_WAIT_PERIOD = 30L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:40.929 -0500", hash_original_field = "DF1A619F0F2680C3049F44256871A763", hash_generated_field = "E6F3C271A629BAC41CCEDAC12FDB1F26")
-
 
     /**
      * Indicates whether the most-recently started transaction has been marked as successful.
@@ -456,13 +443,11 @@ static ArrayList<DbStats> getDbStats() {
     private final DatabaseReentrantLock mLock = new DatabaseReentrantLock(true);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:40.941 -0500", hash_original_field = "957848C8AE718E636FD1494C840F908F", hash_generated_field = "D440BCD52A102185E811EA93A644CB1C")
 
-
     private long mLockAcquiredWallTime = 0L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:40.944 -0500", hash_original_field = "E227F7F685B0CB810D0791096ACBEC13", hash_generated_field = "F25F6124FA463B622FD2DD5ABA3051C7")
 
     private long mLockAcquiredThreadTime = 0L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:40.961 -0500", hash_original_field = "7EDBAB32C5F4C15F9585DE4F0DA6AAAF", hash_generated_field = "5D29D9D368D28B86CEE0F5B707514CDA")
-
 
     private long mLastLockMessageTime = 0L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:40.974 -0500", hash_original_field = "AAF1AFBF965F32CB2933765EF7007549", hash_generated_field = "E26D41E197237C24B0E74C0394AEDF83")
@@ -486,14 +471,12 @@ static ArrayList<DbStats> getDbStats() {
     private String mPathForLogs = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:40.999 -0500", hash_original_field = "4E5A87EA4636A8ACF68875B877F3A7B8", hash_generated_field = "1184DBF1E724C83F346E312B99E29A9C")
 
-
     /** The flags passed to open/create */
     private  int mFlags;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.002 -0500", hash_original_field = "CB2C39E26381B388838E75D78A20E5A3", hash_generated_field = "3B314DD3362D9759017A383358149E45")
 
     private  CursorFactory mFactory;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.004 -0500", hash_original_field = "2B318BE88D0BB5A9C78D181DE71F9269", hash_generated_field = "7586811E7431EEE33AF976CF89950239")
-
 
     private  WeakHashMap<SQLiteClosable, Object> mPrograms;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.009 -0500", hash_original_field = "B48D56E1B9230A6B5EE20E58A265331B", hash_generated_field = "9F46D35ABB6FCAE6EF9EC78CE5F97893")
@@ -532,7 +515,6 @@ static ArrayList<DbStats> getDbStats() {
     private final ArrayList<Integer> mCustomFunctions =
             new ArrayList<Integer>();
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.536 -0400", hash_original_method = "ED994C20AB51232E6F0B83AA0494CFAA", hash_generated_method = "379F4686F5BBA9E0C91C6A2E8EA0C809")
     private  SQLiteDatabase(String path, CursorFactory factory, int flags,
             DatabaseErrorHandler errorHandler, short connectionNum) {
@@ -650,9 +632,7 @@ void lock(String sql) {
 void lock() {
         lock(null, false);
     }
-
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.544 -0400", hash_original_method = "550218B4AE04D143508369398336F95D", hash_generated_method = "E2070B94C1CF03D4ABE3B501D68A397F")
     private void lock(String sql, boolean forced) {
         addTaint(forced);
@@ -721,9 +701,7 @@ private void lockForced() {
 private void lockForced(String sql) {
         lock(sql, true);
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.547 -0400", hash_original_method = "CB05AAFAB101AFFDD598174816C61BF7", hash_generated_method = "454B48A9532576C534C73BFE34BC80FF")
      void unlock() {
         /*
@@ -906,9 +884,7 @@ public void beginTransactionWithListenerNonExclusive(
             SQLiteTransactionListener transactionListener) {
         beginTransaction(transactionListener, false);
     }
-
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.556 -0400", hash_original_method = "65C15EF02A1263C4153105EBF58851D9", hash_generated_method = "5AE1A42D6C38D809C10759CABD7323C5")
     private void beginTransaction(SQLiteTransactionListener transactionListener,
             boolean exclusive) {
@@ -1376,7 +1352,6 @@ void closeDatabase() throws SQLiteException {
     	//Formerly a native method
     }
 
-
     /**
      * Registers a CustomFunction callback as a function that can be called from
      * sqlite3 database triggers.
@@ -1428,7 +1403,6 @@ private void releaseCustomFunctions() {
     	//Formerly a native method
     	addTaint(function);
     }
-
 
     /**
      * Gets the database version.
@@ -1981,9 +1955,7 @@ public int delete(String table, String whereClause, String[] whereArgs) {
 public int update(String table, ContentValues values, String whereClause, String[] whereArgs) {
         return updateWithOnConflict(table, values, whereClause, whereArgs, CONFLICT_NONE);
     }
-
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.615 -0400", hash_original_method = "42C896B54A7E0C71455DEE45B9C2EA0D", hash_generated_method = "05916159E86884CA282FAFB3BC886F41")
     public int updateWithOnConflict(String table, ContentValues values,
             String whereClause, String[] whereArgs, int conflictAlgorithm) {
@@ -2124,9 +2096,7 @@ public void execSQL(String sql, Object[] bindArgs) throws SQLException {
         }
         executeSql(sql, bindArgs);
     }
-
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.620 -0400", hash_original_method = "9265893CFBC7535112C5207F5F702C1B", hash_generated_method = "FEFC15DD41C5156C7B0EB0359642A6A0")
     private int executeSql(String sql, Object[] bindArgs) throws SQLException {
         addTaint(bindArgs[0].getTaint());
@@ -2267,7 +2237,6 @@ private void logTimeStat(String sql, long beginMillis, String prefix) {
             blockingPackage,
             samplePercent);
     }
-
     
     private static class DatabaseReentrantLock extends ReentrantLock {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.068 -0500", hash_original_method = "FF2E769A330F113FDEF775F7B9F0F4EF", hash_generated_method = "FF2E769A330F113FDEF775F7B9F0F4EF")
@@ -2287,11 +2256,8 @@ public String getOwnerDescription() {
             Thread t = getOwner();
             return (t== null) ? "none" : String.valueOf(t.getId());
         }
-
         
     }
-
-
     
     public interface CursorFactory {
         
@@ -2427,9 +2393,7 @@ synchronized void deallocCachedSqlStatements() {
 synchronized SQLiteCompiledSql getCompiledStatementForSql(String sql) {
         return mCompiledQueries.get(sql);
     }
-
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.631 -0400", hash_original_method = "986DCF2E02788969CC84FF6D84C81E71", hash_generated_method = "B75FCCB59A1A0AAED9582EF0AA2568EB")
     public void setMaxSqlCacheSize(int cacheSize) {
         synchronized
@@ -2854,9 +2818,7 @@ public boolean isDatabaseIntegrityOk() {
         }
         return true;
     }
-
-    
-        @DSModeled(DSC.BAN)
+        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.654 -0400", hash_original_method = "8D335FE0EDA9A8017E889380A7A722CF", hash_generated_method = "7DC2BD660B2CDC6483080370E51D7A42")
     private void dbopen(String path, int flags) {
             addTaint(path.getTaint());
@@ -2879,7 +2841,6 @@ public boolean isDatabaseIntegrityOk() {
     	addTaint(connectionNum);
     }
 
-
     /**
      * Native call to setup profiling of all SQL statements.
      * currently, sqlite's profiling = printing of execution-time
@@ -2899,7 +2860,6 @@ public boolean isDatabaseIntegrityOk() {
     	addTaint(connectionNum);
     }
 
-
     /**
      * Native call to set the locale.  {@link #lock} must be held when calling
      * this method.
@@ -2913,7 +2873,6 @@ public boolean isDatabaseIntegrityOk() {
     	addTaint(flags);
     }
 
-
     /**
      * return the SQLITE_DBSTATUS_LOOKASIDE_USED documented here
      * http://www.sqlite.org/c3ref/c_dbstatus_lookaside_used.html
@@ -2926,7 +2885,6 @@ public boolean isDatabaseIntegrityOk() {
     	return getTaintInt();
     }
 
-
     /**
      * finalizes the given statement id.
      *
@@ -2938,7 +2896,6 @@ public boolean isDatabaseIntegrityOk() {
     	//Formerly a native method
     	addTaint(statementId);
     }
-
 
     /**
      * set sqlite soft heap limit

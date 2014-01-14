@@ -14,9 +14,6 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.DisplayMetrics;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public final class Bitmap implements Parcelable {
@@ -263,9 +260,7 @@ public static Bitmap createBitmap(Bitmap source, int x, int y, int width, int he
 public static Bitmap createBitmap(int width, int height, Config config) {
         return createBitmap(width, height, config, true);
     }
-
     
-    @DSModeled(DSC.BAN)
 	private static Bitmap createBitmap(int width, int height, Config config, boolean hasAlpha) {
         Bitmap bm = new Bitmap();
         bm.setHeight(height);
@@ -363,9 +358,7 @@ static public int scaleFromDensity(int size, int sdensity, int tdensity) {
         // Scale by tdensity / sdensity, rounding up.
         return ((size * tdensity) + (sdensity >> 1)) / sdensity;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static Bitmap nativeCreate(int[] colors, int offset,
                                               int stride, int width, int height,
                                             int nativeConfig, boolean mutable) {
@@ -379,7 +372,6 @@ static public int scaleFromDensity(int size, int sdensity, int tdensity) {
     	b.addTaint(mutable);
     	return b;
     }
-
     
     /*
     private static Bitmap nativeCopy(int srcBitmap, int nativeConfig,
@@ -387,121 +379,85 @@ static public int scaleFromDensity(int size, int sdensity, int tdensity) {
                 //DSFIXME:  Can't synthesize return for advanced types
     }
     */
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeDestructor(int nativeBitmap) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeRecycle(int nativeBitmap) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean nativeCompress(int nativeBitmap, int format,
                                             int quality, OutputStream stream,
                                             byte[] tempStorage) {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_116630351 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_116630351;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeErase(int nativeBitmap, int color) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativeWidth(int nativeBitmap) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_746939276 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_746939276;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativeHeight(int nativeBitmap) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_907482253 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_907482253;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativeRowBytes(int nativeBitmap) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_115927299 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_115927299;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativeConfig(int nativeBitmap) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_220830768 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_220830768;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean nativeHasAlpha(int nativeBitmap) {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_910603484 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_910603484;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativeGetPixel(int nativeBitmap, int x, int y) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1133622273 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1133622273;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeGetPixels(int nativeBitmap, int[] pixels,
                                                int offset, int stride, int x,
                                                int y, int width, int height) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeSetPixel(int nativeBitmap, int x, int y,
                                               int color) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeSetPixels(int nativeBitmap, int[] colors,
                                                int offset, int stride, int x,
                                                int y, int width, int height) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeCopyPixelsToBuffer(int nativeBitmap,
                                                         Buffer dst) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeCopyPixelsFromBuffer(int nb, Buffer src) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativeGenerationId(int nativeBitmap) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1796645940 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1796645940;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static Bitmap nativeCreateFromParcel(Parcel p) {
     	Bitmap b = new Bitmap();
     	b.addTaint(p.getTaint());
     	return b;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean nativeWriteToParcel(int nativeBitmap,
                                                       boolean isMutable,
                                                       int density,
@@ -509,7 +465,6 @@ static public int scaleFromDensity(int size, int sdensity, int tdensity) {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2146699439 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2146699439;
     }
-
     
     /*
     private static Bitmap nativeExtractAlpha(int nativeBitmap,
@@ -518,19 +473,13 @@ static public int scaleFromDensity(int size, int sdensity, int tdensity) {
                 //DSFIXME:  Can't synthesize return for advanced types
     }
     */
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativePrepareToDraw(int nativeBitmap) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeSetHasAlpha(int nBitmap, boolean hasAlpha) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean nativeSameAs(int nb0, int nb1) {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_227929198 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_227929198;
@@ -540,10 +489,8 @@ static public int scaleFromDensity(int size, int sdensity, int tdensity) {
     public static final int DENSITY_NONE = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:22.718 -0500", hash_original_field = "CFCD56283073E32E1C9092301DCE796A", hash_generated_field = "1395EEF7EE47C17BCE3B8566023F33E1")
 
-
     private static volatile Matrix sScaleMatrix;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:22.720 -0500", hash_original_field = "08E7DDEBC5FDC03CF80B65E4314BFBE0", hash_generated_field = "9A5692A5868FC9DC94E238F1418014E4")
-
 
     private static volatile int sDefaultDensity = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:22.814 -0500", hash_original_field = "7B29D9E558DDC2DCAE77682B3E8DE6BE", hash_generated_field = "835CBF2BDF2BE37014A11526CBB54378")
@@ -582,11 +529,9 @@ public Bitmap[] newArray(int size) {
     public byte[] mBuffer;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:22.703 -0500", hash_original_field = "985F825340A09E3D006E002226BC17BE", hash_generated_field = "CC1DE3CC2B60AFAC583C7184467064B8")
 
-
     @SuppressWarnings({"FieldCanBeLocal", "UnusedDeclaration"}) // Keep to finalize native resources
     private  BitmapFinalizer mFinalizer;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:22.705 -0500", hash_original_field = "EB33F13BCFFE36BF9E70CC6E979039BC", hash_generated_field = "9C32056DAC69AD0374E74408422BBEB9")
-
 
     private  boolean mIsMutable;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:22.707 -0500", hash_original_field = "98BBAF5C54FE60C06B4D57BFEDAFFC26", hash_generated_field = "436C2ED570DD3AA7577644DBEE1CE62A")
@@ -634,21 +579,17 @@ Bitmap(int nativeBitmap, byte[] buffer, boolean isMutable, byte[] ninePatchChunk
     }
     
     // orphaned legacy method
-    @DSModeled(DSC.SAFE)
+    
 	public Bitmap() {
 		super();
 		//Doesn't exist in the real class but was showing up in specdump
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public int getDensity() {
 		return getTaintInt();
         //return mDensity;
     }
-
     
-    @DSModeled(DSC.SAFE)
 	public void setDensity(int density) {
 		addTaint(density);
         //mDensity = density;
@@ -795,9 +736,7 @@ public void copyPixelsFromBuffer(Buffer src) {
 
         nativeCopyPixelsFromBuffer(mNativeBitmap, src);
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.794 -0400", hash_original_method = "5A36626FB0A5325F859AD016AE482420", hash_generated_method = "2279C6000E444E69DC03419CB555ABDA")
     public Bitmap copy(Config config, boolean isMutable) {
         addTaint(isMutable);
@@ -872,16 +811,12 @@ public boolean compress(CompressFormat format, int quality, OutputStream stream)
 public final boolean isMutable() {
         return mIsMutable;
     }
-
     
-    @DSModeled(DSC.SAFE)
 	public int getWidth() {
 		//Synthetic method in order to track width taints, which are managed in native code
 		return getTaintInt();
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public int getHeight() {
 		//Synthetic method in order to track height taints, which are managed in native code
 		return getTaintInt();
@@ -986,16 +921,12 @@ public final int getByteCount() {
 public final Config getConfig() {
         return Config.nativeToConfig(nativeConfig(mNativeBitmap));
     }
-
     
-    @DSModeled(DSC.SAFE)
 	public boolean hasAlpha() {
 		//Previous called into native code.  Since we are tracking the taint in, we can track it out
 		return getTaintBoolean();
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	private void setHasAlpha(boolean hasAlpha) {
 		//Synthetic method in order to track hasAlpha taints, which are managed in native code
 		addTaint(hasAlpha);
@@ -1196,7 +1127,6 @@ public void setPixels(int[] pixels, int offset, int stride,
 public int describeContents() {
         return 0;
     }
-
     
     public enum Config {
         ALPHA_8     (2),
@@ -1206,10 +1136,8 @@ public int describeContents() {
         ARGB_8888   (6);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:22.750 -0500", hash_original_field = "6B116C6445FBD920A2653C64D32C9FB3", hash_generated_field = "6B116C6445FBD920A2653C64D32C9FB3")
 
-
          int nativeInt;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:22.753 -0500", hash_original_field = "D1B0E472E1FF5685DB8DC28558255931", hash_generated_field = "C72E7E4509404725E3E746F035EBB075")
-
 
         @SuppressWarnings({"deprecation"})
         private static Config sConfigs[] = {
@@ -1228,7 +1156,6 @@ static Config nativeToConfig(int ni) {
             return sConfigs[ni];
         }
     }
-
     
     public enum CompressFormat {
         JPEG    (0),
@@ -1244,7 +1171,6 @@ CompressFormat(int nativeInt) {
 
          int nativeInt;
     }
-
     
     private static class BitmapFinalizer {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:22.891 -0500", hash_original_field = "D5AB511585FB0D17B787E16D99235382", hash_generated_field = "94EBE634EB926388C6FE9311F8ADAABA")
@@ -1269,7 +1195,6 @@ BitmapFinalizer(int nativeBitmap) {
                 nativeDestructor(mNativeBitmap);
             }
         }
-
         
     }
 
@@ -1299,9 +1224,7 @@ public void writeToParcel(Parcel p, int flags) {
 public Bitmap extractAlpha() {
         return extractAlpha(null, null);
     }
-
     
-    @DSModeled(DSC.SAFE)
     public Bitmap extractAlpha(Paint paint, int[] offsetXY) {
         Bitmap bm = new Bitmap();
         bm.taint.addTaint(offsetXY[0]);
@@ -1353,14 +1276,14 @@ final int ni() {
         return mNativeBitmap;
     }
     // orphaned legacy method
-    @DSModeled(DSC.SAFE)
+    
 	private void setHeight(int height) {
 		//Synthetic method in order to track height taints, which are managed in native code
 		addTaint(height);
 	}
     
     // orphaned legacy method
-    @DSModeled(DSC.SAFE)
+    
 	private void setWidth(int width) {
 		//Synthetic method in order to track width taints, which are managed in native code
 		addTaint(width);

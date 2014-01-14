@@ -26,11 +26,6 @@ import com.android.internal.telephony.IntRangeManager;
 import com.android.internal.telephony.SMSDispatcher;
 import com.android.internal.telephony.SmsRawData;
 
-
-
-
-
-
 public class SimSmsInterfaceManager extends IccSmsInterfaceManager {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:28.723 -0500", hash_original_field = "28DECCA9F494133CD6F61BCA99A50ECA", hash_generated_field = "B8386CD6D900777C9D6A0A5CA1D0B217")
 
@@ -39,7 +34,6 @@ public class SimSmsInterfaceManager extends IccSmsInterfaceManager {
 
     static final boolean DBG = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:28.740 -0500", hash_original_field = "CB2C30527400449D368083C9A417745F", hash_generated_field = "77BC6FD0DC199252047A7F7B64B6060D")
-
 
     private static final int EVENT_LOAD_DONE = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:28.743 -0500", hash_original_field = "5409277739A12236F0DB56D6F1D6490F", hash_generated_field = "15C9033C6CF121B938E3ED8FAF5BE197")
@@ -59,7 +53,6 @@ public class SimSmsInterfaceManager extends IccSmsInterfaceManager {
     private static final int SMS_CB_CODE_SCHEME_MAX = 255;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:28.728 -0500", hash_original_field = "83DB9DCBBD2D99A708D9A1934D5CD5AB", hash_generated_field = "E59081251AD157907AA4CE8B3D8E654E")
 
-
     private final Object mLock = new Object();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:28.731 -0500", hash_original_field = "8DB7F83EC06955504CF74A8D7DB183AB", hash_generated_field = "E5C2960DEEDF8FDAD07F7DFD4E59E129")
 
@@ -73,13 +66,12 @@ public class SimSmsInterfaceManager extends IccSmsInterfaceManager {
             new HashMap<Integer, HashSet<String>>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:28.738 -0500", hash_original_field = "FDCC8B3271B79525F924E5ED78559DFF", hash_generated_field = "BDB100102358F9C5E6439629D9C77938")
 
-
     private CellBroadcastRangeManager mCellBroadcastRangeManager =
             new CellBroadcastRangeManager();
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.437 -0400", hash_original_field = "6D394D9EA6E1664AF7305BEAB74AC6B5", hash_generated_field = "2581284BDC9FE06CEA002CD189D3CA4F")
 
-    Handler mHandler = new Handler() {        
-        @DSModeled(DSC.SAFE)
+    Handler mHandler = new Handler() {
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:31.437 -0400", hash_original_method = "2B211BBD733007234A9B9085CE23F724", hash_generated_method = "791EB521B43B73C3BF37FF78C68699C9")
         @Override
         public void handleMessage(Message msg) {
@@ -87,15 +79,12 @@ public class SimSmsInterfaceManager extends IccSmsInterfaceManager {
             
             ar = (AsyncResult) msg.obj;
             
-            
             {
                 mSuccess = (ar.exception == null);
                 mLock.notifyAll();
-            } 
-            
+            }
             
             ar = (AsyncResult)msg.obj;
-            
             
             {
                 {
@@ -106,22 +95,18 @@ public class SimSmsInterfaceManager extends IccSmsInterfaceManager {
                     mSms.clear();
                 } 
                 mLock.notifyAll();
-            } 
-            
+            }
             
             ar = (AsyncResult) msg.obj;
-            
             
             {
                 mSuccess = (ar.exception == null);
                 mLock.notifyAll();
-            } 
+            }
             
             addTaint(msg.getTaint());
             
-            
         }
-
         
 };
 
@@ -222,7 +207,6 @@ public boolean copyMessageToIccEf(int status, byte[] pdu, byte[] smsc) {
         }
         return mSuccess;
     }
-
     
     class CellBroadcastRangeManager extends IntRangeManager {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:28.791 -0500", hash_original_field = "E386E86B596DF6D51C015D0FEBAFBF70", hash_generated_field = "DF520AF3FDD23D6477ECBF735C000104")
@@ -276,7 +260,6 @@ protected boolean finishUpdate() {
                 return setCellBroadcastConfig(configs);
             }
         }
-
         
     }
 

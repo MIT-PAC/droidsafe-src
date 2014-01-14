@@ -34,11 +34,6 @@ import com.android.internal.app.IUsageStats;
 import com.android.internal.os.PkgUsageStats;
 import com.android.internal.util.MemInfoReader;
 
-
-
-
-
-
 public class ActivityManager {
     
     /** @hide */
@@ -174,13 +169,11 @@ public static boolean isRunningInTestHarness() {
     public static final int MOVE_TASK_NO_USER_ACTION = 0x00000002;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.492 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
 
-
     private  Context mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.494 -0500", hash_original_field = "A163099B522120C606A3CA562F90E927", hash_generated_field = "03E47BA0CE42772601F0A13D178B12B5")
 
     private  Handler mHandler;
-    
-        @DSModeled(DSC.SPEC)
+        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:36.844 -0400", hash_original_method = "5B4171109A2201F1FE14E6225146AB80", hash_generated_method = "8ADD7487E2C46628C6CC7A69BA117746")
       ActivityManager(Context context, Handler handler) {
         mContext = context;
@@ -191,10 +184,9 @@ public static boolean isRunningInTestHarness() {
         //mContext = context;
         //mHandler = handler;
     }
-
         
     // used by modeling to provide shortcut to ActivityManager from getSystemService
-    @DSModeled(DSC.BAN)
+    
     public ActivityManager(Context context) {
         mContext = context;
         mHandler = new Handler();
@@ -540,10 +532,8 @@ public boolean clearApplicationUserData(String packageName, IPackageDataObserver
             return false;
         }
     }
-
     
     public static class RecentTaskInfo implements Parcelable {
-
         
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:36.904 -0400", hash_original_field = "DA99927A07743B1B8E96157497F59A82", hash_generated_field = "144243CA012A4B8ABF03F2F1B5702AF7")
 
@@ -633,11 +623,8 @@ public void readFromParcel(Parcel source) {
             }
         
     }
-
-
     
     public static class RunningTaskInfo implements Parcelable {
-
         
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:36.919 -0400", hash_original_field = "B9911C96575F25BA7EB7A3422AE8B6F1", hash_generated_field = "8DCFCF5E1FAAD8B612615CB5CB186FEC")
 
@@ -736,12 +723,9 @@ public void readFromParcel(Parcel source) {
             }
         
     }
-
-
     
     public static class TaskThumbnails implements Parcelable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.659 -0500", hash_original_field = "0D0E90E785E7E36440F0FAEB5BF0DF21", hash_generated_field = "A7CA2C3264BCA3B8EB9304642C9D25D2")
-
 
         public static final Creator<TaskThumbnails> CREATOR = new Creator<TaskThumbnails>() {
             public TaskThumbnails createFromParcel(Parcel source) {
@@ -755,7 +739,6 @@ public void readFromParcel(Parcel source) {
 
         public Bitmap mainThumbnail;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.636 -0500", hash_original_field = "6406357CFD8F220660894067E9EF968A", hash_generated_field = "B493724A74ED3FB14A03B4D585258CEB")
-
 
         public int numSubThumbbails;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.638 -0500", hash_original_field = "60ED97CAB35B3472FCB1C66D0D76D2C6", hash_generated_field = "F26B03B078059BC2048093DDC93DD417")
@@ -824,8 +807,6 @@ public void readFromParcel(Parcel source) {
             }
         
     }
-
-
     
     public static class RunningServiceInfo implements Parcelable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.700 -0500", hash_original_field = "96CCA988EF3323D868CD174581F3C681", hash_generated_field = "C5EE28BB616EBCBE67B4A8F8CA4F4F8C")
@@ -962,11 +943,8 @@ public void readFromParcel(Parcel source) {
             }
         
     }
-
-
     
     public static class MemoryInfo implements Parcelable {
-
         
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:36.965 -0400", hash_original_field = "7B937244499DDD6DE8E8DD078A54CA42", hash_generated_field = "8D5A5BE61EBADDE649E9CD81EA9451BA")
 
@@ -1056,8 +1034,6 @@ public void readFromParcel(Parcel source) {
             }
         
     }
-
-
     
     public static class ProcessErrorStateInfo implements Parcelable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.790 -0500", hash_original_field = "3619BBC96356F263661221785A00D6E9", hash_generated_field = "B8303B3F0D63DDF614BF107FEB77E81A")
@@ -1070,7 +1046,6 @@ public void readFromParcel(Parcel source) {
 
         public static final int NOT_RESPONDING = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.833 -0500", hash_original_field = "91AB574E33C21EA70276AD1217009353", hash_generated_field = "B4E73E729A49A48B48C5C4D400C68AB6")
-
         
         public static final Creator<ProcessErrorStateInfo> CREATOR = 
                 new Creator<ProcessErrorStateInfo>() {
@@ -1162,8 +1137,6 @@ public void readFromParcel(Parcel source) {
             }
         
     }
-
-
     
     public static class RunningAppProcessInfo implements Parcelable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.852 -0500", hash_original_field = "9BE6615EBB56D9C8259444171E5CDE46", hash_generated_field = "1647EC87F14B5F86D8632AD2EF6C5824")
@@ -1203,7 +1176,6 @@ public void readFromParcel(Parcel source) {
 
         public static final int REASON_SERVICE_IN_USE = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.918 -0500", hash_original_field = "7E2C8075040E69EE35A8468DD047D60C", hash_generated_field = "A62C347FADB0FAEE0097CA208AB4C94F")
-
 
         public static final Creator<RunningAppProcessInfo> CREATOR = 
             new Creator<RunningAppProcessInfo>() {

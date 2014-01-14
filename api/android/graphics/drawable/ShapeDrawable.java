@@ -21,10 +21,6 @@ import android.graphics.Shader;
 import android.graphics.drawable.shapes.Shape;
 import android.util.AttributeSet;
 
-
-
-
-
 public class ShapeDrawable extends Drawable {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.663 -0500", hash_original_method = "E383078E6D302FDDE500ADE293E90381", hash_generated_method = "5A904229B3812503535488EEFBA822E7")
@@ -418,7 +414,6 @@ private void updateShape() {
         }
         return this;
     }
-
     
     final static class ShapeState extends ConstantState {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.699 -0500", hash_original_field = "9BFAF00848476277D36D9BA586984BA7", hash_generated_field = "9BFAF00848476277D36D9BA586984BA7")
@@ -482,15 +477,11 @@ ShapeState(ShapeState orig) {
         public int getChangingConfigurations() {
             return mChangingConfigurations;
         }
-
         
     }
-
-
     
     public static abstract class ShaderFactory {
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.650 -0400", hash_original_method = "3BAAD89D982163CC2C371B74D92AB9C1", hash_generated_method = "3BAAD89D982163CC2C371B74D92AB9C1")
         public ShaderFactory ()
         {
@@ -509,11 +500,8 @@ ShapeState(ShapeState orig) {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.728 -0500", hash_original_method = "92C4F993B99331086798131F62C354D9", hash_generated_method = "D4216D414103AB0911F28C0ECC4A5161")
         
 public abstract Shader resize(int width, int height);
-
         
     }
-
-
     
 }
 

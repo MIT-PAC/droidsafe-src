@@ -5,40 +5,27 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public class NinePatch {
-
     
-    @DSModeled(DSC.SAFE)
     public static boolean isNinePatchChunk(byte[] chunk) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void validateNinePatchChunk(int bitmap, byte[] chunk) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeDraw(int canvas_instance, RectF loc, int bitmap_instance,
                                           byte[] c, int paint_instance_or_null,
                                           int destDensity, int srcDensity) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeDraw(int canvas_instance, Rect loc, int bitmap_instance,
                                           byte[] c, int paint_instance_or_null,
                                           int destDensity, int srcDensity) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativeGetTransparentRegion(
             int bitmap, byte[] chunk, Rect location) {
         return DSUtils.UNKNOWN_INT;
@@ -190,7 +177,6 @@ public final Region getTransparentRegion(Rect location) {
         int r = nativeGetTransparentRegion(mBitmap.ni(), mChunk, location);
         return r != 0 ? new Region(r) : null;
     }
-
     
 }
 

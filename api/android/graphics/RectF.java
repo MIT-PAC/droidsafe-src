@@ -12,11 +12,6 @@ import android.util.FloatMath;
 
 import com.android.internal.util.FastMath;
 
-
-
-
-
-
 public class RectF implements Parcelable {
     
     /**
@@ -35,7 +30,6 @@ public static boolean intersects(RectF a, RectF b) {
         return a.left < b.right && b.left < a.right
                 && a.top < b.bottom && b.top < a.bottom;
     }
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.336 -0400", hash_original_field = "5E7201C60E05C026DD3550B3101B80A5", hash_generated_field = "C46FA4AE8D434E2146AE8F7264B82507")
 
@@ -79,9 +73,7 @@ public RectF[] newArray(int size) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.864 -0500", hash_original_method = "D61F570F41294C50B794115B72F287CF", hash_generated_method = "0C35021DCF1E2EEAC4ACC137BA6B97DB")
     
 public RectF() {}
-
     
-    @DSModeled(DSC.SAFE)
     public RectF(float left, float top, float right, float bottom) {    
     	this();
     	addTaint(left);
@@ -89,16 +81,12 @@ public RectF() {}
     	addTaint(right);
     	addTaint(bottom);
     }
-
     
-    @DSModeled(DSC.SAFE)
     public RectF(RectF r) { 
     	this();
     	addTaint(r.getTaint());
     }
-
     
-    @DSModeled(DSC.SAFE)
     public RectF(Rect r) {
     	this();
     	addTaint(r.left);
@@ -106,90 +94,64 @@ public RectF() {}
     	addTaint(r.top);
     	addTaint(r.bottom);
     }
-
     
-    @DSModeled(DSC.SAFE)
     public String toString() {
     	String str = new String();
     	return str;        
     }
-
     
-    @DSModeled(DSC.SAFE)
     public String toShortString() {    	
     	String str = new String("");
         return str;
     }
-
     
-    @DSModeled(DSC.BAN)
     public String toShortString(StringBuilder sb) {    	
     	sb.append(1);
     	return sb.toString();
     }
-
     
-    @DSModeled(DSC.BAN)
     public void printShortString(PrintWriter pw) {
     	char c = 0;
     	pw.append(c);
     }
-
     
-    @DSModeled(DSC.SAFE)
     public final boolean isEmpty() {
         return false;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public final float width() {
     	return getTaintInt();
         //return 0;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public final float height() {
     	return getTaintInt();
         //return 0;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public final float centerX() {
         return 0;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public final float centerY() {
         return 0;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public void setEmpty() {
     	//addTaint(0.getTaint());	//No need to track , just an initializer type function setting things to 0   
     }
-
     
-    @DSModeled(DSC.SAFE)
     public void set(float left, float top, float right, float bottom) {
     	addTaint(left);
     	addTaint(top);
     	addTaint(right);
     	addTaint(bottom);  
     }
-
     
-    @DSModeled(DSC.SAFE)
     public void set(RectF src) {
     	addTaint(src.getTaint());
     }
-
     
-    @DSModeled(DSC.SAFE)
     public void set(Rect src) {
     	addTaint(src.left);
     	addTaint(src.top);
@@ -559,13 +521,13 @@ public void readFromParcel(Parcel in) {
         bottom = in.readFloat();
     }
     // orphaned legacy method
-    @DSModeled(DSC.SAFE)
+    
 	public final float top() {
 		return getTaintFloat();
 	}
     
     // orphaned legacy method
-    @DSModeled(DSC.SAFE)
+    
 	public final float left() {
 		return getTaintFloat();
 	}

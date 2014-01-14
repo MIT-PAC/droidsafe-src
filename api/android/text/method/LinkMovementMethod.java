@@ -14,10 +14,6 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
 
-
-
-
-
 public class LinkMovementMethod extends ScrollingMovementMethod {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:00.253 -0500", hash_original_method = "E6667732641B60A61EDAFC105088D919", hash_generated_method = "3FAE972164C2BC90980C47B735216463")
@@ -39,13 +35,11 @@ public static MovementMethod getInstance() {
     private static final int DOWN = 3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:00.256 -0500", hash_original_field = "525E86D7D2033AF00777147B256D873C", hash_generated_field = "5C8690E8B8CE0CD00F319A05C58A587E")
 
-
     private static LinkMovementMethod sInstance;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:00.260 -0500", hash_original_field = "A2365DCE78D3F7CF917687D2EA1870FE", hash_generated_field = "54773BA033D24C029BBEB44F5F051E52")
 
     private static Object FROM_BELOW = new NoCopySpan.Concrete();
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.298 -0400", hash_original_method = "B3A5612136836A9B554B3E87D4EB3C2A", hash_generated_method = "B3A5612136836A9B554B3E87D4EB3C2A")
     public LinkMovementMethod ()
     {

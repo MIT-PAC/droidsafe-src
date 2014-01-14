@@ -7,12 +7,8 @@ import android.util.Log;
 import droidsafe.annotations.*;
 import android.util.Printer;
 
-
-
 public class Looper {
-
     
-    @DSModeled(DSC.SAFE)
     public static void prepare() {
     	/*
         if (sThreadLocal.get() != null) {
@@ -21,7 +17,6 @@ public class Looper {
         sThreadLocal.set(new Looper());
         */
     }
-
     
     public static void prepareMainLooper() {
         prepare();
@@ -42,9 +37,7 @@ private synchronized static void setMainLooper(Looper looper) {
 public synchronized static Looper getMainLooper() {
         return mMainLooper;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static void loop() {
         Looper me = myLooper();
         if (me == null) {
@@ -58,9 +51,7 @@ public synchronized static Looper getMainLooper() {
         long newIdent = Binder.clearCallingIdentity();
             msg.recycle();
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static Looper myLooper() {
         return mLocalLooper;
     }
@@ -88,7 +79,6 @@ public static MessageQueue myQueue() {
     private static Looper mLocalLooper = new Looper();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:29.948 -0500", hash_original_field = "331CAFDD37154BFFB4C27FB1EC4DE2ED", hash_generated_field = "331CAFDD37154BFFB4C27FB1EC4DE2ED")
 
-
      MessageQueue mQueue;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:29.950 -0500", hash_original_field = "8CE20653889294789C714060A391C40F", hash_generated_field = "8CE20653889294789C714060A391C40F")
 
@@ -97,7 +87,6 @@ public static MessageQueue myQueue() {
 
     volatile boolean mRun;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:29.954 -0500", hash_original_field = "2EC3375BAD17E0646ECDA14E2CF7DFDD", hash_generated_field = "0DDB3AFD1E93687434C7D033CB3772C9")
-
 
     private Printer mLogging = null;
 
@@ -123,9 +112,7 @@ private Looper() {
 public void setMessageLogging(Printer printer) {
         mLogging = printer;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public void quit(){
         //DSFIXME:  CODE0004: Local variable requires review, uncomment if needed
         //Message msg = Message.obtain();
@@ -138,7 +125,6 @@ public void setMessageLogging(Printer printer) {
     }
         */
     }
-
     
     public static interface Profiler {
         void profile(Message message, long wallStart, long wallTime,
@@ -160,11 +146,9 @@ public Thread getThread() {
 public MessageQueue getQueue() {
         return mQueue;
     }
-
     
     public void dump(Printer pw, String prefix){
     }
-
     
     public String toString(){
         String str = new String();

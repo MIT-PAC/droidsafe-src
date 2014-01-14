@@ -11,9 +11,6 @@ import android.util.Log;
 import android.util.Slog;
 import dalvik.system.SocketTagger;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public final class NetworkManagementSocketTagger extends SocketTagger {
@@ -70,27 +67,19 @@ public static int kernelToTag(String string) {
         // TODO: migrate to direct integer instead of odd shifting
         return (int) (Long.decode(string) >> 32);
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int native_tagSocketFd(FileDescriptor fd, int tag, int uid) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int native_untagSocketFd(FileDescriptor fd) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int native_setCounterSet(int uid, int counterSetNum) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int native_deleteTagData(int tag, int uid) {
         return DSUtils.UNKNOWN_INT;
     }
@@ -115,9 +104,7 @@ public static int kernelToTag(String string) {
             varB4EAC82CA7396A68D541C85D26508E83_1634980402.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1634980402;
             
-            
         }
-
         
 };
     
@@ -126,7 +113,6 @@ public static int kernelToTag(String string) {
     {
         //Synthesized constructor
     }
-
     
     public static class SocketTags {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:07.131 -0500", hash_original_field = "428DFC4B7464E02F8075B1184461884F", hash_generated_field = "50A065B7832C2F855A22AFE5278B6084")
@@ -141,7 +127,6 @@ public static int kernelToTag(String string) {
         {
             //Synthesized constructor
         }
-
 
     }
 

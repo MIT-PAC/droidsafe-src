@@ -31,7 +31,6 @@ import android.os.Handler;
 import android.os.Looper;
 import android.util.AttributeSet;
 
-
 import android.accounts.AccountManager;
 import android.accounts.IAccountManager;
 import android.app.ActivityManager;
@@ -85,8 +84,6 @@ import android.view.WindowManagerImpl;
 import android.view.accessibility.AccessibilityManager;
 import android.view.inputmethod.InputMethodManager;
 import android.view.textservice.TextServicesManager;
-
-
 
 public abstract class Context {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.822 -0500", hash_original_field = "B80BB7E1AAC59D39E6DD058233EE4B25", hash_generated_field = "E0534FAE410858BE0239A90CB81A3C3C")
@@ -258,8 +255,7 @@ public abstract class Context {
     
 	// Hook to match with value analsysis
 	public Set<IntentFilter> __ds__intentFilters = new HashSet<IntentFilter>();
-    
-@DSModeled(value = DSC.SAFE)
+
 	public Context() {
 		//Do Nothing
 	}
@@ -347,9 +343,7 @@ public void registerComponentCallbacks(ComponentCallbacks callback) {
 public void unregisterComponentCallbacks(ComponentCallbacks callback) {
         getApplicationContext().unregisterComponentCallbacks(callback);
     }
-
     
-    @DSModeled(DSC.SAFE)
     public final CharSequence getText(int resId) {
         String str = new String();
         str.addTaint(resId);
@@ -1254,7 +1248,6 @@ public abstract void sendStickyOrderedBroadcast(Intent intent,
             Handler scheduler, int initialCode, String initialData,
             Bundle initialExtras);
 
-
     /**
      * Remove the data previously sent with {@link #sendStickyBroadcast},
      * so that it is as if the sticky broadcast had never happened.
@@ -1548,9 +1541,7 @@ public abstract void unbindService(ServiceConnection conn);
     
 public abstract boolean startInstrumentation(ComponentName className,
             String profileFile, Bundle arguments);
-
     
-    @DSModeled(DSC.SPEC)
     public Object getSystemService(String name) {
         switch (name) {
            
@@ -1742,7 +1733,6 @@ public abstract boolean startInstrumentation(ComponentName className,
                 manager.addTaint(getTaint());
                 return manager;
             }
-
             
             default: {
             }
@@ -2173,11 +2163,10 @@ public boolean isRestricted() {
     }
 	
 	// We pull out IntentFilters out of xml and register them with the appropriate subclasses of Context here
-	@DSModeled
+	
 	public void __ds__registerIntentFilter(IntentFilter intentFilter) {
 	this.__ds__intentFilters.add(intentFilter);
 	}
-    
     
 }
 

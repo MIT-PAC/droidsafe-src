@@ -8,11 +8,6 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 
-
-
-
-
-
 public class DdmServer {
 
     /**
@@ -75,9 +70,7 @@ public static void registrationComplete() {
 public static void sendChunk(Chunk chunk) {
         nativeSendChunk(chunk.type, chunk.data, chunk.offset, chunk.length);
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeSendChunk(int type, byte[] data,
         int offset, int length) {
     }
@@ -158,15 +151,12 @@ private static Chunk dispatch(int type, byte[] data, int offset, int length)
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:25.259 -0500", hash_original_field = "40220C5D99DC4A6E0BACC53D2F1E1AB5", hash_generated_field = "5FAF1EABF3BF0FF4FAAA74FCD0900241")
 
-
     public static final int CLIENT_PROTOCOL_VERSION = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:25.261 -0500", hash_original_field = "9F28FC2067283173910F01A08E5DC5C5", hash_generated_field = "0231B9C20A9E58F35AC886FF452B592A")
-
 
     private static HashMap<Integer,ChunkHandler> mHandlerMap =
         new HashMap<Integer,ChunkHandler>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:25.264 -0500", hash_original_field = "5D0F047B71C83FA29386D4B84FA544A5", hash_generated_field = "1C3D5BB045FFA99F2E9AAC7EB29859DC")
-
 
     private static final int CONNECTED = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:25.266 -0500", hash_original_field = "703092D71BD019F11F5C57D647FF478A", hash_generated_field = "527138459F3479DCAFBE83E5908CEC25")
@@ -174,12 +164,10 @@ private static Chunk dispatch(int type, byte[] data, int offset, int length)
     private static final int DISCONNECTED = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:25.269 -0500", hash_original_field = "15FBA5DEC4C83825460D5B43FD731DB0", hash_generated_field = "86C698E9C872D3EDDE75CC0544089DAE")
 
-
     private static volatile boolean mRegistrationComplete = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:25.271 -0500", hash_original_field = "FCE7BF3F1BF572ADA9E77D7C32E4AEB7", hash_generated_field = "FE0904AAA0780F2521F9B3FD6D86F581")
 
     private static boolean mRegistrationTimedOut = false;
-
 
     /**
      * Don't instantiate; all members and methods are static.

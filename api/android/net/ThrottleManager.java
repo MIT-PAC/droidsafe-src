@@ -6,12 +6,10 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.os.RemoteException;
 
-
-
 public class ThrottleManager {
 
     //Added by manual modeling
-    @DSModeled(DSC.BAN)
+    
     public static ThrottleManager createInstance() {
         return new ThrottleManager();
     }
@@ -83,8 +81,6 @@ public class ThrottleManager {
     public static final int PERIOD_SECOND = 11;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:17.248 -0500", hash_original_field = "144DFAD723DAE5AAE3DBC8C584C31AD6", hash_generated_field = "6BB94C28B991564A2654192146B5BDD6")
 
-
-
     private IThrottleManager mService;
 
     /**
@@ -108,8 +104,6 @@ public ThrottleManager(IThrottleManager service) {
         }
         mService = service;
     }
-
-    
 
     /**
      * returns a long of the ms from the epoch to the time the current cycle ends for the

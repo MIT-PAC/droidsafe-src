@@ -12,10 +12,6 @@ import android.graphics.Rect;
 import android.os.Build;
 import android.view.View;
 
-
-
-
-
 public class AccessibilityNodeInfoCompat {
 
     /**
@@ -56,10 +52,8 @@ public static AccessibilityNodeInfoCompat obtain(AccessibilityNodeInfoCompat inf
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:21.627 -0500", hash_original_field = "B1D8AB103F046CFEA3FC9CDC8BCBC3C0", hash_generated_field = "97BD12C859C1DA2B5849DD1AFA547C72")
 
-
     private static  AccessibilityNodeInfoImpl IMPL;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:21.632 -0500", hash_original_field = "617EB5A49831D4E42CC1FEF3965E4033", hash_generated_field = "F78F9523CB351E82CADC0E3370F65663")
-
 
     /**
      * Action that focuses the node.
@@ -75,7 +69,6 @@ public static AccessibilityNodeInfoCompat obtain(AccessibilityNodeInfoCompat inf
 
     public static final int ACTION_CLEAR_SELECTION = 0x00000008;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:21.630 -0500", hash_original_field = "6DDA95A03CB574AE472C66BB1085F01C", hash_generated_field = "EA545B797CAE6A5B712CE13E995894C9")
-
 
     private  Object mInfo;
 
@@ -696,11 +689,9 @@ public CharSequence getText() {
 public void setText(CharSequence text) {
         IMPL.setText(mInfo, text);
     }
-
     
     static class AccessibilityNodeInfoStubImpl implements AccessibilityNodeInfoImpl {
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.913 -0400", hash_original_method = "D9A4AFBF5AD5A775B6C1281730E5BA11", hash_generated_method = "D9A4AFBF5AD5A775B6C1281730E5BA11")
         public AccessibilityNodeInfoStubImpl ()
         {
@@ -987,15 +978,11 @@ public void setText(Object info, CharSequence text) {
 public void recycle(Object info) {
 
         }
-
         
     }
-
-
     
     static class AccessibilityNodeInfoIcsImpl extends AccessibilityNodeInfoStubImpl {
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.920 -0400", hash_original_method = "21FE378E79CF4BF2260F84D20D666AC8", hash_generated_method = "21FE378E79CF4BF2260F84D20D666AC8")
         public AccessibilityNodeInfoIcsImpl ()
         {
@@ -1329,11 +1316,8 @@ public void recycle(Object info) {
         public void recycle(Object info) {
             AccessibilityNodeInfoCompatIcs.recycle(info);
         }
-
         
     }
-
-
     
     static interface AccessibilityNodeInfoImpl {
         public Object obtain();

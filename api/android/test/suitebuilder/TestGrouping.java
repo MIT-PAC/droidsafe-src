@@ -25,32 +25,22 @@ import android.test.PackageInfoSources;
 
 import com.android.internal.util.Predicate;
 
-
-
-
-
-
 public class TestGrouping {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.296 -0500", hash_original_field = "4BB1C3CE23F79A39D22915266FFB15BD", hash_generated_field = "CE2E1060B46BDBE7E16BF5287A109FDB")
 
-
     private static final String LOG_TAG = "TestGrouping";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.300 -0500", hash_original_field = "4FA53D39E3C5EFDC072331C06A976AE4", hash_generated_field = "6393FB509BD7B738CA4EC7858735B178")
-
 
     public static final Comparator<Class<? extends TestCase>> SORT_BY_SIMPLE_NAME
             = new SortBySimpleName();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.302 -0500", hash_original_field = "0A6475311D0159CC81A7AF1883FA7A87", hash_generated_field = "88E0DDC4F117766575D8ADA532BFD923")
 
-
     public static final Comparator<Class<? extends TestCase>> SORT_BY_FULLY_QUALIFIED_NAME
             = new SortByFullyQualifiedName();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.298 -0500", hash_original_field = "92A1F72A3CA9AFF319E6A33DD1FCF056", hash_generated_field = "92A1F72A3CA9AFF319E6A33DD1FCF056")
 
-
     SortedSet<Class<? extends TestCase>> testCaseClasses;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.304 -0500", hash_original_field = "B4AE6C1BAB00DCF5B38176C50EDD4DC1", hash_generated_field = "46A35DF78B071F820EB500E754651053")
-
 
     protected String firstIncludedPackage = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.306 -0500", hash_original_field = "DB93E4DB6045160743AC769A344DA267", hash_generated_field = "F6BCA95A9F68D069180083A80576157E")
@@ -173,11 +163,9 @@ private List<Class<? extends TestCase>> testCaseClassesInPackage(String packageN
 
         return selectTestClasses(packageInfo.getTopLevelClassesRecursive());
     }
-
     
     private static class SortBySimpleName implements Comparator<Class<? extends TestCase>>, Serializable {
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.182 -0400", hash_original_method = "DF47E6BDF91D187CFB898DEC7629CE17", hash_generated_method = "DF47E6BDF91D187CFB898DEC7629CE17")
         public SortBySimpleName ()
         {
@@ -194,15 +182,11 @@ public int compare(Class<? extends TestCase> class1,
             }
             return class1.getName().compareTo(class2.getName());
         }
-
         
     }
-
-
     
     private static class SortByFullyQualifiedName implements Comparator<Class<? extends TestCase>>, Serializable {
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.183 -0400", hash_original_method = "E467FE44B8FD2B3FC2F2C02A44638E77", hash_generated_method = "E467FE44B8FD2B3FC2F2C02A44638E77")
         public SortByFullyQualifiedName ()
         {
@@ -215,15 +199,11 @@ public int compare(Class<? extends TestCase> class1,
                 Class<? extends TestCase> class2) {
             return class1.getName().compareTo(class2.getName());
         }
-
         
     }
-
-
     
     private static class TestCasePredicate implements Predicate<Class<?>> {
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.183 -0400", hash_original_method = "C51D9C1D123C5970141C72E69FC5E23D", hash_generated_method = "C51D9C1D123C5970141C72E69FC5E23D")
         public TestCasePredicate ()
         {
@@ -264,15 +244,11 @@ public boolean apply(Class aClass) {
                     aClass.getName()));
             return false;
         }
-
         
     }
-
-
     
     private static class TestMethodPredicate implements Predicate<Method> {
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.185 -0400", hash_original_method = "5644BC516EF6C647F77F88686C681987", hash_generated_method = "5644BC516EF6C647F77F88686C681987")
         public TestMethodPredicate ()
         {
@@ -286,7 +262,6 @@ public boolean apply(Method method) {
                     (method.getName().startsWith("test")) &&
                     (method.getReturnType().getSimpleName().equals("void")));
         }
-
         
     }
 
@@ -301,7 +276,6 @@ public boolean apply(Method method) {
         }
         return testClasses;
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.181 -0400", hash_original_method = "181E7204E4D12ACAE7FBA59CCDA56AD6", hash_generated_method = "27FB858E3F19FA6819CE6447A72E454B")
     private <T> List<T> select(Collection<T> items, Predicate<T> predicate) {

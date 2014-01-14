@@ -12,10 +12,6 @@ import android.view.KeyCharacterMap;
 import android.view.KeyEvent;
 import android.view.View;
 
-
-
-
-
 public abstract class MetaKeyKeyListener {
 
     /**
@@ -429,7 +425,6 @@ private static long release(long state, int what, long mask,
 
     private static final long META_SYM_USED = 1L << 34;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:58.457 -0500", hash_original_field = "2B883E72B74504F3D6F1C06B5FF15D13", hash_generated_field = "51CD84D505E6D4831202FD0007A27D43")
-
     
     private static final long META_CAP_PRESSED = 1L << 40;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:58.461 -0500", hash_original_field = "C561B766AF8D73247D7C4381F7979903", hash_generated_field = "B17461FACE3B2089532657AE6E58FCC5")
@@ -439,7 +434,6 @@ private static long release(long state, int what, long mask,
 
     private static final long META_SYM_PRESSED = 1L << 42;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:58.466 -0500", hash_original_field = "651DC2D25ED152D71C95BA2FEDA12763", hash_generated_field = "65E05A712966D9C21718EAAECA8D41F7")
-
     
     private static final long META_CAP_RELEASED = 1L << 48;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:58.469 -0500", hash_original_field = "98CAB7565BF969AF61DD2C32618B0A2D", hash_generated_field = "93CFE14245B5D84462927164A9DC73E4")
@@ -449,7 +443,6 @@ private static long release(long state, int what, long mask,
 
     private static final long META_SYM_RELEASED = 1L << 50;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:58.477 -0500", hash_original_field = "E189C0EF04B58E622E668AAF67609874", hash_generated_field = "4C64A1C928F979D257FB830FA9A9CA3C")
-
 
     private static final long META_SHIFT_MASK = META_SHIFT_ON
             | META_CAP_LOCKED | META_CAP_USED
@@ -465,7 +458,6 @@ private static long release(long state, int what, long mask,
             | META_SYM_LOCKED | META_SYM_USED
             | META_SYM_PRESSED | META_SYM_RELEASED;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:58.486 -0500", hash_original_field = "B13EF79B0E2F648B78F1E81294ED31A2", hash_generated_field = "32785D8650D9452EBAC9F402F8F67AC3")
-
     
     private static final Object CAP = new NoCopySpan.Concrete();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:58.489 -0500", hash_original_field = "ECE87B15F6F8613AE2AC168D37419CC3", hash_generated_field = "B88F90E026963AEBF638FEDCBEAB9636")
@@ -494,7 +486,6 @@ private static long release(long state, int what, long mask,
     private static final int LOCKED = 
         Spannable.SPAN_MARK_MARK | (4 << Spannable.SPAN_USER_SHIFT);
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.374 -0400", hash_original_method = "50168EE5CC1513DB2EA8BA89DC077CDF", hash_generated_method = "50168EE5CC1513DB2EA8BA89DC077CDF")
     public MetaKeyKeyListener ()
     {

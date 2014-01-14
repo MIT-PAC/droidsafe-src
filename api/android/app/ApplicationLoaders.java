@@ -9,10 +9,6 @@ import java.util.Map;
 
 import dalvik.system.PathClassLoader;
 
-
-
-
-
 class ApplicationLoaders {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:58.968 -0500", hash_original_method = "76DB5D07DDEAAF71FF7BD101A2CCF328", hash_generated_method = "164C60B2F6F9D106EE1CEAF9EA0DCC60")
     
@@ -22,15 +18,12 @@ public static ApplicationLoaders getDefault()
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:58.975 -0500", hash_original_field = "EAC090BECD5412DDCDEA99C0EA394D14", hash_generated_field = "FDBBA88BBDA6D0EE426E19208B3BA381")
 
-
     private static final ApplicationLoaders gApplicationLoaders
         = new ApplicationLoaders();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:58.973 -0500", hash_original_field = "64F1E474B03EB6AA58F12CB4E98D2462", hash_generated_field = "8341D47F664C030006757000CF63480B")
 
-
     private final Map<String, ClassLoader> mLoaders = new HashMap<String, ClassLoader>();
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:51.316 -0400", hash_original_method = "B28ECCCB6DE1A645261BEF05FE1982E7", hash_generated_method = "B28ECCCB6DE1A645261BEF05FE1982E7")
     public ApplicationLoaders ()
     {

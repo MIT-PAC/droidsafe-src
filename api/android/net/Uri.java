@@ -22,15 +22,10 @@ import java.util.Set;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public class Uri implements Parcelable, Comparable<Uri> {
-
     
-    @DSModeled(DSC.SAFE)
         public static Uri parse(String uriString) {
             return new Uri(uriString);
         }
@@ -363,7 +358,6 @@ public static Uri withAppendedPath(Uri baseUri, String pathSegment) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:07.888 -0500", hash_original_field = "3844FFA99A999BB4EDDD7DE578438A79", hash_generated_field = "CFC1AACEA60AD0E5F3AD35D47126879D")
 
-
     /** Log tag. */
     private static final String LOG = Uri.class.getSimpleName();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:07.891 -0500", hash_original_field = "9170C7A7E0C34F20BDE926A4BDB090D3", hash_generated_field = "B954F9C12AC0662BCBDFC1BE53358724")
@@ -417,7 +411,6 @@ public Uri[] newArray(int size) {
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.394 -0500", hash_original_field = "4F2326E262E6A6BF466951D799AF1031", hash_generated_field = "C46B2CD1575F3EFF815653AFF0EA6C73")
 
-
     private static final char[] HEX_DIGITS = "0123456789ABCDEF".toCharArray();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.404 -0500", hash_original_field = "6E3065D20156420EF488BFA36FB1FCC6", hash_generated_field = "EA76FA4E6E39D084A2B31303C1E9D60D")
 
@@ -434,121 +427,87 @@ public Uri[] newArray(int size) {
     
 private Uri() {}
     // orphaned legacy method
-    @DSModeled(DSC.SAFE)
+    
 	public Uri(String uri) {
 		this();
 		uriString = uri;
 	}
-
-    @DSModeled(DSC.SAFE)
+    
 	public boolean isHierarchical() {
 		return getTaintBoolean();
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public boolean isOpaque() {
         return getTaintBoolean();
     }
-
     
-    @DSModeled(DSC.SAFE)
 	public boolean isRelative() {
 		// TODO Auto-generated method stub
 		return getTaintBoolean();
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public boolean isAbsolute() {
         return getTaintBoolean();
     }
-
     
-    @DSModeled(DSC.SAFE)
 	public String getScheme() {
 		// TODO Auto-generated method stub
 		return uriString;
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public String getSchemeSpecificPart() {
 		return uriString;
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public String getEncodedSchemeSpecificPart() {
 		return uriString;
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public String getAuthority() {
 		return uriString;
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public String getEncodedAuthority() {
 		// TODO Auto-generated method stub
 		return uriString;
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public String getUserInfo() {
 		// TODO Auto-generated method stub
 		return DSUtils.UNKNOWN_STRING;
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public String getEncodedUserInfo() {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public String getHost() {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public int getPort() {
 		return getTaintInt();
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public String getPath() {
 		return uriString;
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public String getEncodedPath() {
 		return uriString;
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public String getQuery() {
 		// TODO Auto-generated method stub
 		return uriString;
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public String getEncodedQuery() {
 		// TODO Auto-generated method stub
 		return uriString;
 	}
-
     
     private static class StringUri extends AbstractHierarchicalUri {
 
@@ -659,26 +618,20 @@ static String parsePath(String uriString, int ssi) {
         private volatile int cachedFsi = NOT_CALCULATED;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.003 -0500", hash_original_field = "030FC5261A8EB10381C37C096712C0E9", hash_generated_field = "0E9D0B05543D9BBCEB78240FF4AE88F4")
 
-
         private volatile String scheme = NOT_CACHED;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.010 -0500", hash_original_field = "BBAE3713DECE7C8525260DE5E70C46A6", hash_generated_field = "7012AD665E5A3250E37E3BF51B044446")
-
 
         private Part ssp;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.021 -0500", hash_original_field = "9E21E7090446CDE5086844B195D6CB36", hash_generated_field = "204632F970E6983D2007A7D2C7B93357")
 
-
         private Part authority;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.030 -0500", hash_original_field = "AD52E446D12B30C7A18B4724BD0AE7E6", hash_generated_field = "EEFCA663E12A09EA3C7131B68BE78289")
-
 
         private PathPart path;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.045 -0500", hash_original_field = "3E1F2A3AC6880420E2E1AD742E2B9ADF", hash_generated_field = "D9C517AF157475966407B5CDC5940032")
 
-
         private Part query;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.056 -0500", hash_original_field = "02C0AB2936C6D04A6600CAEE292968AD", hash_generated_field = "8AF52B12247A3EBE638DDC3C88EEE123")
-
 
         private Part fragment;
 
@@ -964,8 +917,6 @@ public Builder buildUpon() {
             }
         }
     }
-
-
     
     private static class OpaqueUri extends Uri {
 
@@ -983,7 +934,6 @@ static Uri readFrom(Parcel parcel) {
         static final int TYPE_ID = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.088 -0500", hash_original_field = "AF5A968572CEFDCD6FE22E7345201E0B", hash_generated_field = "CBE7A470226A0B2957A605279AD0FD59")
 
-
         private  String scheme;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.091 -0500", hash_original_field = "BBAE3713DECE7C8525260DE5E70C46A6", hash_generated_field = "7012AD665E5A3250E37E3BF51B044446")
 
@@ -992,7 +942,6 @@ static Uri readFrom(Parcel parcel) {
 
         private  Part fragment;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.146 -0500", hash_original_field = "F33F15A6FD47288E315F6C17BEBC95C3", hash_generated_field = "FCCD4A0FFBA55911A49FB2AEB7548D00")
-
 
         private volatile String cachedString = NOT_CACHED;
 
@@ -1163,16 +1112,12 @@ public Builder buildUpon() {
                     .fragment(this.fragment);
         }
     }
-
-
     
     static class PathSegments extends AbstractList<String> implements RandomAccess {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.157 -0500", hash_original_field = "59330FF4187274F876811687E6879EEE", hash_generated_field = "E6083199966205833D7B5012129D384D")
 
-
         static final PathSegments EMPTY = new PathSegments(null, 0);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.159 -0500", hash_original_field = "D8C8A9DBE80A96D9E735DAA1D195D137", hash_generated_field = "D8C8A9DBE80A96D9E735DAA1D195D137")
-
 
          String[] segments;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.162 -0500", hash_original_field = "673BDAEBF4FBC900963E210E042549D6", hash_generated_field = "673BDAEBF4FBC900963E210E042549D6")
@@ -1202,12 +1147,9 @@ public int size() {
             return this.size;
         }
     }
-
-
     
     static class PathSegmentsBuilder {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.172 -0500", hash_original_field = "D8C8A9DBE80A96D9E735DAA1D195D137", hash_generated_field = "D8C8A9DBE80A96D9E735DAA1D195D137")
-
 
         String[] segments;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.175 -0500", hash_original_field = "689FC3CB9A887B5817C15E9CFDD066DB", hash_generated_field = "689FC3CB9A887B5817C15E9CFDD066DB")
@@ -1215,7 +1157,7 @@ public int size() {
         int size = 0;
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.068 -0400", hash_original_method = "CD5B4727D6775EBFE00461F5F237812D", hash_generated_method = "CD5B4727D6775EBFE00461F5F237812D")
-        @DSModeled(DSC.SAFE)
+        
         public PathSegmentsBuilder ()
         {
             //Synthesized constructor
@@ -1249,28 +1191,22 @@ PathSegments build() {
                 segments = null;
             }
         }
-
         
     }
-
-
     
     private abstract static class AbstractHierarchicalUri extends Uri {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.186 -0500", hash_original_field = "E7ECD9A0FC9E62BEC865842D9572366E", hash_generated_field = "87B54E118334D4593A462325E6A65F84")
 
-
         private Part userInfo;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.198 -0500", hash_original_field = "19AC129A72D528D26CDAD281A292D279", hash_generated_field = "539F6E6D25356608852D958A8481FDA5")
-
 
         private volatile String host = NOT_CACHED;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.206 -0500", hash_original_field = "8CE6EA1656D08DDFBE4E07A115079F77", hash_generated_field = "3DEE2B327E62FC31F0BA9783EFE62CA9")
 
-
         private volatile int port = NOT_CALCULATED;
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.071 -0400", hash_original_method = "469DE423ED30903E9EDD58224AA80D56", hash_generated_method = "469DE423ED30903E9EDD58224AA80D56")
-        @DSModeled(DSC.BAN)
+        
         public AbstractHierarchicalUri ()
         {
             //Synthesized constructor
@@ -1382,11 +1318,8 @@ private int parsePort() {
                 return -1;
             }
         }
-
         
     }
-
-
     
     private static class HierarchicalUri extends AbstractHierarchicalUri {
 
@@ -1406,7 +1339,6 @@ static Uri readFrom(Parcel parcel) {
         static final int TYPE_ID = 3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.218 -0500", hash_original_field = "AF5A968572CEFDCD6FE22E7345201E0B", hash_generated_field = "CBE7A470226A0B2957A605279AD0FD59")
 
-
         private  String scheme;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.220 -0500", hash_original_field = "9E21E7090446CDE5086844B195D6CB36", hash_generated_field = "204632F970E6983D2007A7D2C7B93357")
 
@@ -1422,10 +1354,8 @@ static Uri readFrom(Parcel parcel) {
         private  Part fragment;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.246 -0500", hash_original_field = "BBAE3713DECE7C8525260DE5E70C46A6", hash_generated_field = "7012AD665E5A3250E37E3BF51B044446")
 
-
         private Part ssp;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.285 -0500", hash_original_field = "F774E53212EDF2C0CFC94017CE1A4E2A", hash_generated_field = "9968E15A97464199002C3D2A70E60BF1")
-
 
         private volatile String uriString = NOT_CACHED;
 
@@ -1504,9 +1434,7 @@ private String makeSchemeSpecificPart() {
             appendSspTo(builder);
             return builder.toString();
         }
-
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.093 -0400", hash_original_method = "55EA79AD41E607B8DD0B042A78040234", hash_generated_method = "6482B19B506A7357F59DD4CC14EB48C5")
         private void appendSspTo(StringBuilder builder) {
             addTaint(builder.getTaint());
@@ -1631,12 +1559,9 @@ public Builder buildUpon() {
                     .fragment(fragment);
         }
     }
-
-
     
     public static final class Builder {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.298 -0500", hash_original_field = "AF5A968572CEFDCD6FE22E7345201E0B", hash_generated_field = "CBE7A470226A0B2957A605279AD0FD59")
-
 
         private String scheme;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.300 -0500", hash_original_field = "B38EBC2627A503BF98004E270055A1D9", hash_generated_field = "F30F644E178A706F0279AC78D6913562")
@@ -1927,15 +1852,11 @@ private boolean hasSchemeOrAuthority() {
         public String toString() {
             return build().toString();
         }
-
         
     }
-
-
     
     static abstract class AbstractPart {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.421 -0500", hash_original_field = "4F672F59E73887C4AB6D2CB85FA87583", hash_generated_field = "08274B7EEBA921030ECC3D76D1E6ECCB")
-
 
         volatile String encoded;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.423 -0500", hash_original_field = "6D4540C10A5D9188A1CCDEA2E902B48E", hash_generated_field = "B682B941676F7CF6A565D2078C9BC0A9")
@@ -1984,7 +1905,6 @@ final void writeTo(Parcel parcel) {
                 throw new IllegalArgumentException("Neither encoded nor decoded");
             }
         }
-
         
         static class Representation {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.412 -0500", hash_original_field = "D91CFF54E7669AFC23076F5A26D733F3", hash_generated_field = "FF4F4E4C6DA0CB1E3DB9C13C6C3A4A5B")
@@ -2003,12 +1923,8 @@ final void writeTo(Parcel parcel) {
                 //Synthesized constructor
             }
         }
-
-
         
     }
-
-
     
     static class Part extends AbstractPart {
 
@@ -2100,7 +2016,6 @@ static Part from(String encoded, String decoded) {
 private Part(String encoded, String decoded) {
             super(encoded, decoded);
         }
-
         
         private static class EmptyPart extends Part {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.461 -0500", hash_original_method = "D79C0256E86C850253FAE782AD9920ED", hash_generated_method = "FDFA040038EB5D1B5BB965FE7838E7F1")
@@ -2115,7 +2030,6 @@ public EmptyPart(String value) {
             boolean isEmpty() {
                 return true;
             }
-
             
         }
 
@@ -2133,13 +2047,9 @@ String getEncoded() {
             return hasEncoded ? encoded : (encoded = encode(decoded));
         }
     }
-
-
     
     static class PathPart extends AbstractPart {
-
         
-        @DSModeled(DSC.SAFE)
         static PathPart appendEncodedSegment(PathPart oldPart,
                 String newSegment) {
             if (oldPart == null) {
@@ -2163,9 +2073,7 @@ String getEncoded() {
             retVal.addTaint(newSegment.getTaint());
             return retVal;
         }
-
         
-        @DSModeled(DSC.SAFE)
         static PathPart appendDecodedSegment(PathPart oldPart, String decoded) {
             String encoded = encode(decoded);
             PathPart retVal = appendEncodedSegment(oldPart, encoded);
@@ -2189,9 +2097,7 @@ static PathPart readFrom(Parcel parcel) {
                     throw new IllegalArgumentException("Bad representation: " + representation);
             }
         }
-
         
-        @DSModeled(DSC.SAFE)
         static PathPart fromEncoded(String encoded) {
         	PathPart retVal = from(encoded, NOT_CACHED);
         	retVal.addTaint(encoded.getTaint());
@@ -2228,9 +2134,7 @@ static PathPart from(String encoded, String decoded) {
 
             return new PathPart(encoded, decoded);
         }
-
         
-        @DSModeled(DSC.SAFE)
         static PathPart makeAbsolute(PathPart oldPart) {
             @SuppressWarnings("StringEquality")
             boolean encodedCached = oldPart.encoded != NOT_CACHED;
@@ -2317,36 +2221,26 @@ PathSegments getPathSegments() {
             return pathSegments = segmentBuilder.build();
         }
     }
-
     
-    @DSModeled(DSC.SAFE)
 	public String getFragment() {
 		return uriString;
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public String getEncodedFragment() {
 		return uriString;
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public List<String> getPathSegments() {
 		// TODO Auto-generated method stub
 		LinkedList<String> list = new LinkedList<String>();
 		list.add(uriString);
 		return list;
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public String getLastPathSegment() {
 		return uriString;
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public boolean equals(Object o) {
 		return true;
 	}
@@ -2360,9 +2254,7 @@ PathSegments getPathSegments() {
 public int hashCode() {
         return toString().hashCode();
     }
-
     
-    @DSModeled(DSC.SAFE)
 	public String toString() {
                 String str = new String();
                 str.addTaint(this.getTaint());
@@ -2412,9 +2304,7 @@ public String toSafeString() {
         }
         return builder.toString();
     }
-
     
-    @DSModeled(DSC.SPEC)
 	public Builder buildUpon() {
 		return new Builder();
 	}
@@ -2598,19 +2488,19 @@ public boolean getBooleanQueryParameter(String key, boolean defaultValue) {
     }
     
     // orphaned legacy method
-    @DSModeled(DSC.SPEC)
+    
 	public int describeContents() {
 		return getTaintInt();
 	}
     
     // orphaned legacy method
-    @DSModeled(DSC.SPEC)
+    
 	public void writeToParcel(Parcel dest, int flags) {
 		dest.addTaint(getTaint());
 	}
     
     // orphaned legacy method
-    @DSModeled(DSC.SPEC)
+    
 	public int compareTo(Uri arg0) {
 		// TODO Auto-generated method stub
 		return getTaintInt();

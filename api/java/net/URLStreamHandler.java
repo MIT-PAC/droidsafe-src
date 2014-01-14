@@ -9,9 +9,6 @@ import java.io.IOException;
 import libcore.net.url.UrlUtils;
 import libcore.util.Objects;
 
-
-
-
 public abstract class URLStreamHandler {
 
     /**
@@ -30,7 +27,6 @@ private static String relativePath(String base, String path) {
         }
     }
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.144 -0400", hash_original_method = "2DD01D30EAA2A038CBAA0D570E27B35E", hash_generated_method = "2DD01D30EAA2A038CBAA0D570E27B35E")
     public URLStreamHandler ()
     {
@@ -74,9 +70,7 @@ protected abstract URLConnection openConnection(URL u) throws IOException;
 protected URLConnection openConnection(URL u, Proxy proxy) throws IOException {
         throw new UnsupportedOperationException();
     }
-
-    
-        @DSModeled(DSC.SPEC)
+        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.150 -0400", hash_original_method = "5B20F12B631910788308FABDC13B25A0", hash_generated_method = "336F439C1F833B32DEC8FA12E2EFD44D")
     protected void parseURL(URL url, String spec, int start, int end) {
         addTaint(end);
@@ -257,9 +251,7 @@ protected void setURL(URL u, String protocol, String host, int port,
 protected String toExternalForm(URL url) {
         return toExternalForm(url, false);
     }
-
-    
-        @DSModeled(DSC.SPEC)
+        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.153 -0400", hash_original_method = "629852CED0E76D3D83A14B3CB57F0652", hash_generated_method = "EB3AD88B67334820582162A57C895ACB")
      String toExternalForm(URL url, boolean escapeIllegalCharacters) {
         addTaint(escapeIllegalCharacters);
@@ -384,7 +376,6 @@ protected boolean sameFile(URL a, URL b) {
                 && a.getEffectivePort() == b.getEffectivePort()
                 && Objects.equal(a.getFile(), b.getFile());
     }
-
     
 }
 

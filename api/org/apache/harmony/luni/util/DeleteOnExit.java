@@ -8,9 +8,6 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
 
-
-
-
 public class DeleteOnExit extends Thread {
 
     /**
@@ -33,7 +30,6 @@ public static synchronized DeleteOnExit getInstance() {
 
     private ArrayList<String> files = new ArrayList<String>();
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.039 -0400", hash_original_method = "80FBB7FC28966FEC5371F3D04A9D4E08", hash_generated_method = "80FBB7FC28966FEC5371F3D04A9D4E08")
     public DeleteOnExit ()
     {

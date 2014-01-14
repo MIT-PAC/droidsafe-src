@@ -9,10 +9,6 @@ import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.res.Resources;
 
-
-
-
-
 public class ContextThemeWrapper extends ContextWrapper {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:59.279 -0500", hash_original_field = "45A1FAFEC6ED7EF70B481175C79188A0", hash_generated_field = "D02AE2F3F4DE111CB9F997E29A53A060")
 
@@ -27,13 +23,10 @@ public class ContextThemeWrapper extends ContextWrapper {
 
     private LayoutInflater mInflater;
     
-    @DSModeled(DSC.SPEC)
     public ContextThemeWrapper() {
         super(new ContextImpl());
     }
-
     
-    @DSModeled(DSC.SPEC)
     public ContextThemeWrapper(Context base, int themeres) {
         super(base);
         addTaint(themeres);
@@ -49,28 +42,21 @@ public class ContextThemeWrapper extends ContextWrapper {
         super.attachBaseContext(newBase);
         mBase = newBase;
     }
-
     
-    @DSModeled(DSC.SPEC)
     @Override public void setTheme(int resid) {
     }
-
     
-    @DSModeled(DSC.BAN)
     @Override
     public int getThemeResId() {
         return -1;
     }
-
     
-    @DSModeled(DSC.SPEC)
     @Override public Resources.Theme getTheme() {
         return null;
     }
-
     
-    @Override 
-    @DSModeled(DSC.SAFE)
+    @Override
+    
     public Object getSystemService(String name) {
         return super.getSystemService(name);
     }

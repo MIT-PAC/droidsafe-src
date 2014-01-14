@@ -14,144 +14,97 @@ import android.util.TypedValue;
 
 import com.android.internal.util.XmlUtils;
 
-
-
-
-
 import droidsafe.helpers.DSUtils;
 
 final class XmlBlock {
-
     
-    @DSModeled(DSC.SAFE)
     private static final int nativeCreate(byte[] data,
                                                  int offset,
                                                  int size) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static final int nativeGetStringBlock(int obj) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static final int nativeCreateParseState(int obj) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     static final int nativeNext(int state) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static final int nativeGetNamespace(int state) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     static final int nativeGetName(int state) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static final int nativeGetText(int state) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static final int nativeGetLineNumber(int state) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static final int nativeGetAttributeCount(int state) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static final int nativeGetAttributeNamespace(int state, int idx) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static final int nativeGetAttributeName(int state, int idx) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static final int nativeGetAttributeResource(int state, int idx) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static final int nativeGetAttributeDataType(int state, int idx) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static final int nativeGetAttributeData(int state, int idx) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static final int nativeGetAttributeStringValue(int state, int idx) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static final int nativeGetIdAttribute(int state) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static final int nativeGetClassAttribute(int state) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static final int nativeGetStyleAttribute(int state) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static final int nativeGetAttributeIndex(int state, String namespace, String name) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static final void nativeDestroyParseState(int state) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static final void nativeDestroy(int obj) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:01.916 -0500", hash_original_field = "81DD852ECBE07BA98A61C8F3D0C85F01", hash_generated_field = "58EDF43BA541A4D47EECFEC3901C7AED")
 
     private static final boolean DEBUG=false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.095 -0500", hash_original_field = "4C5448F642D7E098FE1B989A50398568", hash_generated_field = "49B4A4B4F77DF85AA82FF83B2F894508")
-
 
     private  AssetManager mAssets;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.097 -0500", hash_original_field = "D883352313723F88BD080533FB82D9CF", hash_generated_field = "9DD3DA3B4DB5A1786C464E9BB7FF265B")
@@ -229,7 +182,6 @@ public XmlResourceParser newParser() {
             return null;
         }
     }
-
     
     final class Parser implements XmlResourceParser {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.070 -0500", hash_original_field = "6CCE16E02108F8B5004F82A927CFF083", hash_generated_field = "6CCE16E02108F8B5004F82A927CFF083")
@@ -747,7 +699,6 @@ protected void finalize() throws Throwable {
 final CharSequence getPooledString(int id) {
             return mStrings.get(id);
         }
-
         
     }
 

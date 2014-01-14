@@ -32,11 +32,6 @@ import android.text.TextUtils;
 
 import com.google.android.collect.Maps;
 
-
-
-
-
-
 public class AccountManager {
 
     /**
@@ -144,7 +139,6 @@ static public Intent newChooseAccountIntent(Account selectedAccount,
     private static final String TAG = "AccountManager";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:47.881 -0500", hash_original_field = "D0D59A7AFBDB1F965C9519675B93E3CF", hash_generated_field = "839EE2AD959F91D7F8A30C4DF896A0A9")
 
-
     public static final int ERROR_CODE_REMOTE_EXCEPTION = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:47.883 -0500", hash_original_field = "AA737B716F124CE97EA182DE75F3738F", hash_generated_field = "28836EE16DABE4CC8F98413027A9030B")
 
@@ -181,10 +175,8 @@ static public Intent newChooseAccountIntent(Account selectedAccount,
     public static final String KEY_PASSWORD = "password";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:47.912 -0500", hash_original_field = "118D55C478CC5432ABEB40A1DAB155D5", hash_generated_field = "48376F363D9C8E28672349E76C9AB9D6")
 
-
     public static final String KEY_ACCOUNTS = "accounts";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:47.915 -0500", hash_original_field = "B2A4953447EB6A8BE6F40E723830CAA9", hash_generated_field = "B6500903448CA38B1C135E7FAACA8E59")
-
 
     public static final String KEY_ACCOUNT_AUTHENTICATOR_RESPONSE = "accountAuthenticatorResponse";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:47.918 -0500", hash_original_field = "82E3FFC4F1A3C550AD57D2E4CEFE16A7", hash_generated_field = "6787B86CE20B7D25DB80F65A6DF78575")
@@ -225,7 +217,6 @@ static public Intent newChooseAccountIntent(Account selectedAccount,
     public static final String KEY_NOTIFY_ON_FAILURE = "notifyOnAuthFailure";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:47.949 -0500", hash_original_field = "8544C1E28E24976FB062BD804ABC83D7", hash_generated_field = "7CF12A75D3DE0CB88FEDEEC45F4C6998")
 
-
     public static final String ACTION_AUTHENTICATOR_INTENT =
             "android.accounts.AccountAuthenticator";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:47.951 -0500", hash_original_field = "C01C2A817D5D6732C027E2696F342880", hash_generated_field = "38C40DD9584F5E25D4E08184425EF38E")
@@ -241,7 +232,6 @@ static public Intent newChooseAccountIntent(Account selectedAccount,
         "android.accounts.LOGIN_ACCOUNTS_CHANGED";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:47.956 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
 
-
     private  Context mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:47.958 -0500", hash_original_field = "41CD1B8397AB313E493085F486A2475D", hash_generated_field = "5EECF8903744EA4C4535FC399DE7EDD3")
 
@@ -250,7 +240,6 @@ static public Intent newChooseAccountIntent(Account selectedAccount,
 
     private  Handler mMainHandler;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.259 -0500", hash_original_field = "A97C603C6192DBB01430A77ACF905E46", hash_generated_field = "E06E5EFE2F853C682425BCF2C68C9174")
-
 
     private final HashMap<OnAccountsUpdateListener, Handler> mAccountsUpdatedListeners =
             Maps.newHashMap();
@@ -272,7 +261,6 @@ static public Intent newChooseAccountIntent(Account selectedAccount,
         }
     };
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:12.810 -0400", hash_original_method = "399D8365074F8431C3C32ED7720975E8", hash_generated_method = "699A204D5899DBCF695891C3392F1F59")
     public  AccountManager(Context context, IAccountManager service) {
         mContext = context;
@@ -285,9 +273,7 @@ static public Intent newChooseAccountIntent(Account selectedAccount,
         //mService = service;
         //mMainHandler = new Handler(mContext.getMainLooper());
     }
-
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:12.814 -0400", hash_original_method = "25BBC3E1043ACDD515139061A9597BA7", hash_generated_method = "34C7F2EB81FAF854CED2B6C04922B77F")
     public  AccountManager(Context context, IAccountManager service, Handler handler) {
         mContext = context;
@@ -301,7 +287,6 @@ static public Intent newChooseAccountIntent(Account selectedAccount,
         //mService = service;
         //mMainHandler = handler;
     }
-
     
     private abstract class AmsTask extends FutureTask<Bundle> implements AccountManagerFuture<Bundle> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.101 -0500", hash_original_field = "BCCFC11938EEC7DE34A0DE82C0A04729", hash_generated_field = "BCCFC11938EEC7DE34A0DE82C0A04729")
@@ -419,7 +404,6 @@ protected void done() {
                 postToHandler(mHandler, mCallback, this);
             }
         }
-
         
         private class Response extends IAccountManagerResponse.Stub {
             
@@ -458,15 +442,10 @@ public void onError(int code, String message) {
                 }
                 setException(convertErrorToException(code, message));
             }
-
             
         }
-
-
         
     }
-
-
     
     private abstract class BaseFutureTask<T> extends FutureTask<T> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.148 -0500", hash_original_field = "BCCFC11938EEC7DE34A0DE82C0A04729", hash_generated_field = "A54F64CAD983BA5040DC733186B2FF3B")
@@ -512,7 +491,6 @@ protected void startTask() {
                 setException(e);
             }
         }
-
         
         protected class Response extends IAccountManagerResponse.Stub {
             
@@ -538,7 +516,6 @@ public void onResult(Bundle bundle) {
                 }
                 onError(ERROR_CODE_INVALID_RESPONSE, "no result in response");
             }
-
             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:13.180 -0400", hash_original_method = "DD61FDBEB518045420249589A7AE75D2", hash_generated_method = "32D16F6FE7CC45BC71A427F58177EA53")
             public void onError(int code, String message) {
@@ -558,15 +535,10 @@ public void onResult(Bundle bundle) {
                 //}
                 //setException(convertErrorToException(code, message));
             }
-
             
         }
-
-
         
     }
-
-
     
     private abstract class Future2Task<T> extends BaseFutureTask<T> implements AccountManagerFuture<T> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.180 -0500", hash_original_field = "719E4FBEE0E6D8BC8E61E553D79747F3", hash_generated_field = "719E4FBEE0E6D8BC8E61E553D79747F3")
@@ -651,11 +623,8 @@ public T getResult(long timeout, TimeUnit unit)
                 throws OperationCanceledException, IOException, AuthenticatorException {
             return internalGetResult(timeout, unit);
         }
-
         
     }
-
-
     
     private class GetAuthTokenByTypeAndFeaturesTask extends AmsTask implements AccountManagerCallback<Bundle> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:48.209 -0500", hash_original_field = "787F270AB101B859863E4A8AC2ACCBAB", hash_generated_field = "DA7FCA7FD25B2715DDA5B1151A329B57")
@@ -817,12 +786,11 @@ public void run(AccountManagerFuture<Bundle> future) {
                 setException(e);
             }
         }
-
         
     }
     
     //DS: we added method to allow creation of account manager from getSystemService()
-    @DSModeled(DSC.BAN)
+    
     public AccountManager() {
         
     }

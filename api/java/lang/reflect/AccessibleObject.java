@@ -9,11 +9,6 @@ import java.util.Hashtable;
 
 import org.apache.harmony.kernel.vm.StringUtils;
 
-
-
-
-
-
 public class AccessibleObject implements AnnotatedElement {
 
     /**
@@ -55,9 +50,7 @@ static String getClassSignatureAttribute(Class clazz) {
 
         return StringUtils.combineStrings(annotation);
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static Object[] getClassSignatureAnnotation(Class clazz) {
 		Object[] ret = new Object[0];
 		ret[0].addTaint(clazz.taint);
@@ -125,9 +118,7 @@ public Annotation[] getAnnotations() {
         // for all but Class, getAnnotations == getDeclaredAnnotations
         return getDeclaredAnnotations();
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.854 -0400", hash_original_method = "E854D6B6A4F110252592FEF88B9AB0AA", hash_generated_method = "3568A964D8BA23EB6D5CB01D72AE6A5D")
     public <T extends Annotation> T getAnnotation(Class<T> annotationType) {
         addTaint(annotationType.getTaint());

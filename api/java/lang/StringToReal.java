@@ -5,21 +5,14 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 final class StringToReal {
-
-
-    @DSModeled(DSC.SAFE)
+    
     private static double parseDblImpl(String s, int e) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static float parseFltImpl(String s, int e) {
         return DSUtils.UNKNOWN_FLOAT;
     }
@@ -292,7 +285,6 @@ public static float parseFloat(String s) {
     {
         //Synthesized constructor
     }
-
     
     private static final class StringExponentPair {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.932 -0500", hash_original_field = "6F3CB884E38CB76988A52AA9FBE92CE9", hash_generated_field = "6F3CB884E38CB76988A52AA9FBE92CE9")
@@ -311,7 +303,6 @@ public static float parseFloat(String s) {
 
         boolean zero;
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.330 -0400", hash_original_method = "08340FE99073C3A1F05DC2CE36487C0E", hash_generated_method = "08340FE99073C3A1F05DC2CE36487C0E")
         public StringExponentPair ()
         {
@@ -326,11 +317,8 @@ public float specialValue() {
             }
             return negative ? -0.0f : 0.0f;
         }
-
         
     }
-
-
     
 }
 

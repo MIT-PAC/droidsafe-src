@@ -32,22 +32,14 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
 
-
-
-
-
-
 public class Properties extends Hashtable<Object, Object> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.643 -0500", hash_original_field = "BA688B944BBA15F59D0A59A7FE9F7ACD", hash_generated_field = "B9B3DC636549D3041EBFB366A6464B2E")
-
 
     private static final long serialVersionUID = 4112578634029874840L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.647 -0500", hash_original_field = "394FA6EC18447760AEBCB3606F9106F9", hash_generated_field = "6EB68577AA63C8CE23A5572AC9077D85")
 
-
     private static final String PROP_DTD_NAME = "http://java.sun.com/dtd/properties.dtd";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.650 -0500", hash_original_field = "3B34675D0BD1B6C926F86DE4D2BA9D9C", hash_generated_field = "12D66A953921A104006A54797CCD01D0")
-
 
     private static final String PROP_DTD = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
             + "    <!ELEMENT properties (comment?, entry*) >"
@@ -74,7 +66,6 @@ public class Properties extends Hashtable<Object, Object> {
 
     private static final int IGNORE = 5;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.645 -0500", hash_original_field = "CEC094AA6BF918752009818D630EB1FD", hash_generated_field = "FD91B16F92409AD1E464978ACF6CCD28")
-
 
     private transient DocumentBuilder builder = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.652 -0500", hash_original_field = "ED6F441B204B59837D765FE7BF823FA6", hash_generated_field = "FFB6C63B9AE394F9A7BA81EBAD128C5B")
@@ -476,9 +467,7 @@ public Set<String> stringPropertyNames() {
         selectProperties(stringProperties, true);
         return Collections.unmodifiableSet(stringProperties.keySet());
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.432 -0400", hash_original_method = "A87BE62C7A489C0C3750546357B411C0", hash_generated_method = "0A8899B8A69A32A18E613C9F0DB4012D")
     private <K> void selectProperties(Hashtable<K, Object> selectProperties, final boolean isStringOnly) {
         addTaint(isStringOnly);
@@ -604,9 +593,7 @@ public synchronized void store(Writer writer, String comment) throws IOException
         }
         writer.flush();
     }
-
-    
-        @DSModeled(DSC.SAFE)
+        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.436 -0400", hash_original_method = "2CD21803BBD0B22DE3395585690DDBAE", hash_generated_method = "B1418958B0758A3E1EA0E924AE7F14B1")
     public synchronized void loadFromXML(InputStream in) throws IOException,
             InvalidPropertiesFormatException {

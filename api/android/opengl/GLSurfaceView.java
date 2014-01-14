@@ -24,10 +24,6 @@ import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
-
-
-
-
 public class GLSurfaceView extends SurfaceView implements SurfaceHolder.Callback {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.444 -0500", hash_original_field = "B2B0A61E120CF69A740A0EBBEFCB0DCC", hash_generated_field = "4034EC823D59F85BB049B0361EB812F4")
 
@@ -70,13 +66,11 @@ public class GLSurfaceView extends SurfaceView implements SurfaceHolder.Callback
     public final static int DEBUG_LOG_GL_CALLS = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.833 -0500", hash_original_field = "87E37158AC15E4B0BB0B2135E699EE13", hash_generated_field = "2A611276FE9639F8735EA60D1E43AEA3")
 
-
     private static final GLThreadManager sGLThreadManager = new GLThreadManager();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.836 -0500", hash_original_field = "B8B7EF20A31F9D80C8061C2901F9F992", hash_generated_field = "E80A115172E1CADCEDB95343305F31F8")
 
     private boolean mSizeChanged = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.838 -0500", hash_original_field = "19D0003F4E4380ADE49769B81A6E13CA", hash_generated_field = "2E75A75105E7522B16840413392C2719")
-
 
     private GLThread mGLThread;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.841 -0500", hash_original_field = "720EF707169F06701CBF89E969BC03B3", hash_generated_field = "655D7742BDF0154D755D8012DFB26E60")
@@ -337,7 +331,6 @@ public void setEGLConfigChooser(EGLConfigChooser configChooser) {
 public void setEGLConfigChooser(boolean needDepth) {
         setEGLConfigChooser(new SimpleEGLConfigChooser(needDepth));
     }
-
     
     private class DefaultContextFactory implements EGLContextFactory {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.551 -0500", hash_original_field = "05ED6095C69105CABAB5DA8E1FBF3493", hash_generated_field = "A15829C68F3F8F197FCD7108E0FB196F")
@@ -373,15 +366,11 @@ public void destroyContext(EGL10 egl, EGLDisplay display,
                         + EGLLogWrapper.getErrorString(egl.eglGetError()));
             }
         }
-
         
     }
-
-
     
     private static class DefaultWindowSurfaceFactory implements EGLWindowSurfaceFactory {
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.267 -0400", hash_original_method = "6C49886831D2941418C9D5571DBB218F", hash_generated_method = "6C49886831D2941418C9D5571DBB218F")
         public DefaultWindowSurfaceFactory ()
         {
@@ -413,15 +402,11 @@ public void destroySurface(EGL10 egl, EGLDisplay display,
                 EGLSurface surface) {
             egl.eglDestroySurface(display, surface);
         }
-
         
     }
-
-
     
     private abstract class BaseConfigChooser implements EGLConfigChooser {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.583 -0500", hash_original_field = "EB34F51E7132820858554B010CC454CD", hash_generated_field = "0A6C46FF0E4A8D427534A13E3913B826")
-
 
         protected int[] mConfigSpec;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.575 -0500", hash_original_method = "A0DBF051E13A9D28CAE6FB3EFED45483", hash_generated_method = "A5E974EEC38C0E7B12397A24785B6534")
@@ -480,15 +465,11 @@ private int[] filterConfigSpec(int[] configSpec) {
             newConfigSpec[len+1] = EGL10.EGL_NONE;
             return newConfigSpec;
         }
-
         
     }
-
-
     
     private class ComponentSizeChooser extends BaseConfigChooser {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.600 -0500", hash_original_field = "3CB28337EDF97BC7A43DE559FAEFBE0E", hash_generated_field = "3B2CE6613BAAB11EC6605CC6BD87C453")
-
 
         private int[] mValue;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.602 -0500", hash_original_field = "2E964ADEC9C377671C9C69464FED0F0B", hash_generated_field = "DFB29A4DE6CC3A6F59EEA72256CA1B07")
@@ -568,11 +549,8 @@ private int findConfigAttrib(EGL10 egl, EGLDisplay display,
             }
             return defaultValue;
         }
-
         
     }
-
-
     
     private class SimpleEGLConfigChooser extends ComponentSizeChooser {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.620 -0500", hash_original_method = "5A2D4186FEBB3CAA35FAB0BA469AA3FD", hash_generated_method = "AE238B0832C01983744DC20A0CAD79BF")
@@ -580,15 +558,11 @@ private int findConfigAttrib(EGL10 egl, EGLDisplay display,
 public SimpleEGLConfigChooser(boolean withDepthBuffer) {
             super(5, 6, 5, 0, withDepthBuffer ? 16 : 0, 0);
         }
-
         
     }
-
-
     
     private class EglHelper {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.650 -0500", hash_original_field = "3F30F83F3D104993379AD92B39AFB83D", hash_generated_field = "3F30F83F3D104993379AD92B39AFB83D")
-
 
         EGL10 mEgl;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.652 -0500", hash_original_field = "7AE477A3032DB5EA7015A0F83A2F2E86", hash_generated_field = "7AE477A3032DB5EA7015A0F83A2F2E86")
@@ -825,11 +799,8 @@ private void throwEglException(String function, int error) {
             }
             throw new RuntimeException(message);
         }
-
         
     }
-
-
     
     class GLThread extends Thread {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.719 -0500", hash_original_field = "B999E08569F60578F2C6EEC297448896", hash_generated_field = "FBAEA3980C3C0B3ACDB6B73A2BC269A5")
@@ -879,7 +850,6 @@ private void throwEglException(String function, int error) {
 
         private ArrayList<Runnable> mEventQueue = new ArrayList<Runnable>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.756 -0500", hash_original_field = "720EF707169F06701CBF89E969BC03B3", hash_generated_field = "655D7742BDF0154D755D8012DFB26E60")
-
 
         private Renderer mRenderer;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.758 -0500", hash_original_field = "F4A98CA9FF1C1FFD4423D035B7A414C6", hash_generated_field = "643AE0FAB78B60A315CA9AB4E93467B6")
@@ -1375,15 +1345,11 @@ public void queueEvent(Runnable r) {
                 sGLThreadManager.notifyAll();
             }
         }
-
         
     }
-
-
     
     static class LogWriter extends Writer {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.778 -0500", hash_original_field = "128476B88E78A1761DD1201459C9F3EF", hash_generated_field = "93EF782A08ECBADA45732AEB26C05023")
-
 
         private StringBuilder mBuilder = new StringBuilder();
         
@@ -1427,11 +1393,8 @@ private void flushBuilder() {
                 mBuilder.delete(0, mBuilder.length());
             }
         }
-
         
     }
-
-
     
     private static class GLThreadManager {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.786 -0500", hash_original_field = "4814D7F8160EC08AEDB25F1C634E1282", hash_generated_field = "9D735A32CC6365416B5A8B54E94812D1")
@@ -1448,7 +1411,6 @@ private void flushBuilder() {
 
         private static final String kADRENO = "Adreno";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.808 -0500", hash_original_field = "F1062F8A09DE0C18156FD20E3B44CAEE", hash_generated_field = "F73A6B8127F542A081B6A62FA30A43F7")
-
 
         private boolean mGLESVersionCheckComplete;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.810 -0500", hash_original_field = "FECFCAB227B687BE4CCD868AA303C14E", hash_generated_field = "B4C54A4CB01F0BC9B76DECECD129FF44")
@@ -1467,7 +1429,6 @@ private void flushBuilder() {
 
         private GLThread mEglOwner;
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.312 -0400", hash_original_method = "5D6BCD582D13070585FC5F161A43B68D", hash_generated_method = "5D6BCD582D13070585FC5F161A43B68D")
         public GLThreadManager ()
         {
@@ -1584,8 +1545,6 @@ private void checkGLESVersion() {
             }
         }
     }
-
-
     
     public interface GLWrapper {
         
@@ -1595,10 +1554,8 @@ private void checkGLESVersion() {
     public interface Renderer {
         
         void onSurfaceCreated(GL10 gl, EGLConfig config);
-
         
         void onSurfaceChanged(GL10 gl, int width, int height);
-
         
         void onDrawFrame(GL10 gl);
     }
@@ -1834,7 +1791,6 @@ public void queueEvent(Runnable r) {
         mDetached = true;
         super.onDetachedFromWindow();
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.783 -0500", hash_original_method = "D0DDFF21B511089DC22A6A0EC54D9B69", hash_generated_method = "B1E3905F5083642D143059CB46FC0A14")
     

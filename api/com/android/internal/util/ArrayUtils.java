@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.lang.reflect.Array;
 
-
-
-
-
-
 public class ArrayUtils {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:48.287 -0500", hash_original_method = "78F4782A9945BD922AE4F703F6706A7E", hash_generated_method = "476E3135F747B27C638A7747394DD781")
@@ -89,9 +84,7 @@ public static boolean equals(byte[] array1, byte[] array2, int length) {
         }
         return true;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static <T> T[] emptyArray(Class<T> kind) {
         if (kind == Object.class) {
             return (T[]) EMPTY;
@@ -104,9 +97,7 @@ public static boolean equals(byte[] array1, byte[] array2, int length) {
         }
         return (T[]) cache;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static <T> boolean contains(T[] array, T value) {
         for (T element : array) {
             if (element == null) {

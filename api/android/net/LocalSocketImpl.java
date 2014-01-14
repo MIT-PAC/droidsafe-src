@@ -10,11 +10,6 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.SocketOptions;
 
-
-
-
-
-
 class LocalSocketImpl {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.261 -0500", hash_original_field = "2E69C796FF6BAD53C79A467DE3BC8E3D", hash_generated_field = "355E2A769FEE7E54D6F0256760F338B6")
 
@@ -136,10 +131,7 @@ LocalSocketImpl(FileDescriptor fd) throws IOException
     	addTaint(name.getTaint());
     	addTaint(namespace);
     }
-
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.248 -0400", hash_original_method = "91E7A83B201CCE6F03E99B6B97993D3C", hash_generated_method = "BF4DB921189260FDA30B994461CFCF87")
     private FileDescriptor create_native(boolean stream) throws IOException {
         FileDescriptor fd = new FileDescriptor();
@@ -162,10 +154,7 @@ LocalSocketImpl(FileDescriptor fd) throws IOException
     	addTaint(fd.getTaint());
     	addTaint(shutdownInput);
     }
-
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.248 -0400", hash_original_method = "0137F99D53D5E10D02D5A211BB31B969", hash_generated_method = "5F1B13E48615D9E4FD0789735B8F4C85")
     private Credentials getPeerCredentials_native(
             FileDescriptor fd) throws IOException {
@@ -193,10 +182,7 @@ LocalSocketImpl(FileDescriptor fd) throws IOException
     	addTaint(b);
     	addTaint(value);
     }
-
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.249 -0400", hash_original_method = "AD93B21D07861EA052C26EC40030E4DA", hash_generated_method = "0BA24B5688D235E53CBDA81423459803")
     private FileDescriptor accept(FileDescriptor fd, LocalSocketImpl s) throws IOException {
         FileDescriptor fd2 = new FileDescriptor();
@@ -539,7 +525,6 @@ public LocalSocketAddress getSockAddress() throws IOException
     protected void finalize() throws IOException {
         close();
     }
-
     
     class SocketInputStream extends InputStream {
         
@@ -605,11 +590,8 @@ public LocalSocketAddress getSockAddress() throws IOException
                 return ret;
             }
         }
-
         
     }
-
-
     
     class SocketOutputStream extends OutputStream {
         
@@ -661,11 +643,8 @@ public LocalSocketAddress getSockAddress() throws IOException
                 write_native(b, myFd);
             }
         }
-
         
     }
-
-
     
 }
 

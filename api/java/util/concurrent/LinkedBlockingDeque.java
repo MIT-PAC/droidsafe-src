@@ -15,7 +15,6 @@ import java.util.concurrent.locks.ReentrantLock;
 public class LinkedBlockingDeque<E> extends AbstractQueue<E> implements BlockingDeque<E>, java.io.Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:17.005 -0500", hash_original_field = "2F267CA136EFF023C15D428EECFA7FDB", hash_generated_field = "B688976E864DC479F82CA018B4928BF6")
 
-
     /*
      * We have "diamond" multiple interface/abstract class inheritance
      * here, and that introduces ambiguities. Often we want the
@@ -96,7 +95,6 @@ public LinkedBlockingDeque(Collection<? extends E> c) {
             lock.unlock();
         }
     }
-
 
     // Basic linking and unlinking operations, called only while holding lock
 
@@ -882,9 +880,7 @@ public boolean contains(Object o) {
             lock.unlock();
         }
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.949 -0400", hash_original_method = "ED2A1A13D07CD52AFD81A3297D99D370", hash_generated_method = "8A8E855B9D909F40908C749AED694946")
     @SuppressWarnings("unchecked")
     public <T> T[] toArray(T[] a) {
@@ -1041,7 +1037,6 @@ private void writeObject(java.io.ObjectOutputStream s)
             lock.unlock();
         }
     }
-
     
     static final class Node<E> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:17.008 -0500", hash_original_field = "25C1B4BE35B7528A52E74D8E56CE9F0B", hash_generated_field = "25C1B4BE35B7528A52E74D8E56CE9F0B")
@@ -1059,11 +1054,8 @@ private void writeObject(java.io.ObjectOutputStream s)
 Node(E x) {
             item = x;
         }
-
         
     }
-
-
     
     private abstract class AbstractItr implements Iterator<E> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:17.175 -0500", hash_original_field = "A089DAAEF049057EDB97CA1342EE38E4", hash_generated_field = "A089DAAEF049057EDB97CA1342EE38E4")
@@ -1169,11 +1161,8 @@ public void remove() {
                 lock.unlock();
             }
         }
-
         
     }
-
-
     
     private class Itr extends AbstractItr {
         
@@ -1188,11 +1177,8 @@ Node<E> firstNode() { return first; }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:17.209 -0500", hash_original_method = "7337A72D0DFE873C08C820C315C83AB4", hash_generated_method = "7337A72D0DFE873C08C820C315C83AB4")
         
 Node<E> nextNode(Node<E> n) { return n.next; }
-
         
     }
-
-
     
     private class DescendingItr extends AbstractItr {
         
@@ -1207,7 +1193,6 @@ Node<E> firstNode() { return last; }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:17.216 -0500", hash_original_method = "A98E9809BC87B643D4F952FCC7CB50C4", hash_generated_method = "A98E9809BC87B643D4F952FCC7CB50C4")
         
 Node<E> nextNode(Node<E> n) { return n.prev; }
-
         
     }
 

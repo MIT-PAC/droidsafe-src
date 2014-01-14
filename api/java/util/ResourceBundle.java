@@ -16,10 +16,6 @@ import java.net.URLConnection;
 import libcore.io.IoUtils;
 import dalvik.system.VMStack;
 
-
-
-
-
 public abstract class ResourceBundle {
 
     /**
@@ -444,27 +440,21 @@ public static void clearCache(ClassLoader loader) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.198 -0500", hash_original_field = "C9CEBD97C3684601F939E7E86D7AAC9B", hash_generated_field = "E5AACE7C1FB793E41B40495A16336A99")
 
-
     private static final String UNDER_SCORE = "_";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.201 -0500", hash_original_field = "7CB8BFC01FCDF4A2C23FAAA68C344752", hash_generated_field = "D14895E2C9628BA7CEA3A352030E9445")
-
 
     private static final String EMPTY_STRING = "";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.218 -0500", hash_original_field = "FDE3F83FA1D2022D3368776B51BD87A5", hash_generated_field = "85F7743A8A2325A7A53FE506DF5E477C")
 
-
     private static final ResourceBundle MISSING = new MissingBundle();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.221 -0500", hash_original_field = "796BE2CE809C6D959960C901C44AC113", hash_generated_field = "88C3120A32FE602FF897F593D3471105")
-
 
     private static final ResourceBundle MISSINGBASE = new MissingBundle();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.223 -0500", hash_original_field = "3FE9C7537A76FBCBCEAED827D4ABE4D0", hash_generated_field = "02B8BB57FAC4063B50B258C20ED67E99")
 
-
     private static final WeakHashMap<Object, Hashtable<String, ResourceBundle>> cache
             = new WeakHashMap<Object, Hashtable<String, ResourceBundle>>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.225 -0500", hash_original_field = "907C2FA1D30F9868404E47C387BA8223", hash_generated_field = "FB53443D57FD33E6486E78E1759D3531")
-
 
     private static Locale cacheLocale = Locale.getDefault();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.203 -0500", hash_original_field = "724F485301376691F953BF28D348E90C", hash_generated_field = "EB43973F1559584562CFC00E839EB2BD")
@@ -472,10 +462,8 @@ public static void clearCache(ClassLoader loader) {
     protected ResourceBundle parent;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.205 -0500", hash_original_field = "A25411C3C357716626A9185E220A5EAA", hash_generated_field = "3C599F5969C756C105E47474D7BCB663")
 
-
     private Locale locale;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.208 -0500", hash_original_field = "FFC4AC36E31DCDDF95308B0D32D3E6C2", hash_generated_field = "7B08633B611AECF1A2DAD9D2043C79EB")
-
 
     private long lastLoadTime = 0;
 
@@ -572,11 +560,9 @@ public final String getString(String key) {
 public final String[] getStringArray(String key) {
         return (String[]) getObject(key);
     }
-
     
     static class MissingBundle extends ResourceBundle {
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.660 -0400", hash_original_method = "5BE09748C47EC015C065AB0FE98F6425", hash_generated_method = "5BE09748C47EC015C065AB0FE98F6425")
         public MissingBundle ()
         {
@@ -595,25 +581,19 @@ public final String[] getStringArray(String key) {
         public Object handleGetObject(String name) {
             return null;
         }
-
         
     }
-
-
     
     private static class NoFallbackControl extends Control {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.298 -0500", hash_original_field = "A019761C028BB0E455B549F0CF31BBE1", hash_generated_field = "311001FFE9CF90DDC4781726BDC7CC2A")
-
 
         static final Control NOFALLBACK_FORMAT_PROPERTIES_CONTROL = new NoFallbackControl(
                 JAVAPROPERTIES);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.301 -0500", hash_original_field = "D0EFB0076CE33D51D0BC7800CEAFD110", hash_generated_field = "477E16589760E3D71EC82A0A4D59108B")
 
-
         static final Control NOFALLBACK_FORMAT_CLASS_CONTROL = new NoFallbackControl(
                 JAVACLASS);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.303 -0500", hash_original_field = "38C1762A76C5DFADE5C4CEBF242ACC17", hash_generated_field = "58917EB628BB81A37E51203F85E79CF8")
-
 
         static final Control NOFALLBACK_FORMAT_DEFAULT_CONTROL = new NoFallbackControl(
                 listDefault);
@@ -642,8 +622,6 @@ public NoFallbackControl(List<String> list) {
             return null;
         }
     }
-
-
     
     private static class SimpleControl extends Control {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.316 -0500", hash_original_method = "3FE57273BBED2EFD79C4104DD304532B", hash_generated_method = "2C01667F5B497F0D003C747A55D9D317")
@@ -653,11 +631,8 @@ public SimpleControl(String format) {
             listClass.add(format);
             super.format = Collections.unmodifiableList(listClass);
         }
-
         
     }
-
-
     
     public static class Control {
 
@@ -714,18 +689,14 @@ public static Control getNoFallbackControl(List<String> formats) {
         static List<String> listDefault = new ArrayList<String>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.324 -0500", hash_original_field = "3032ACC4394BB5FF32C7A7F3BDA866E1", hash_generated_field = "73FAB74F5A6B4799EFDB4572A408B125")
 
-
         static List<String> listClass = new ArrayList<String>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.326 -0500", hash_original_field = "1AB62562A7AB0A9458EEBB00EF992EE0", hash_generated_field = "2563531F9CF47ED6FC1FDD970ECD4F16")
-
 
         static List<String> listProperties = new ArrayList<String>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.328 -0500", hash_original_field = "E002394AB403B260EEBA8CFC5E141E49", hash_generated_field = "F1888E6AB92B35D00E8781C6258E3EE0")
 
-
         static String JAVACLASS = "java.class";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.331 -0500", hash_original_field = "C8B6D5A255E3AAA230A80C911A28014E", hash_generated_field = "07BB0B876307E7CB6E2F167DC153078B")
-
 
         static String JAVAPROPERTIES = "java.properties";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.334 -0500", hash_original_field = "131B2FD3355EE3999E6D06EA6C3B3BF7", hash_generated_field = "F1424B45B48922D540F30BB96F5544C9")
@@ -748,20 +719,16 @@ public static Control getNoFallbackControl(List<String> formats) {
         public static final long TTL_NO_EXPIRATION_CONTROL = -2L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.348 -0500", hash_original_field = "F673F0BB7385FAB82AFC5390E93555BD", hash_generated_field = "E479AC9CE55FC38AA66AEB9C06A435BA")
 
-
         private static final Control FORMAT_PROPERTIES_CONTROL = new SimpleControl(
                 JAVAPROPERTIES);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.351 -0500", hash_original_field = "11B525BB1B4D9C3C0CDCF5A983069043", hash_generated_field = "72CD7F4B7C3573EE5BEF1523C244BC01")
-
 
         private static final Control FORMAT_CLASS_CONTROL = new SimpleControl(
                 JAVACLASS);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.353 -0500", hash_original_field = "DD4FFE0EFFF45D0D694A488DF9EF04C2", hash_generated_field = "06188B6C636AFB65149581CD9F1C0A50")
 
-
         private static final Control FORMAT_DEFAULT_CONTROL = new Control();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.355 -0500", hash_original_field = "5C4A176E73E3AD8A44C29D1E04A3B849", hash_generated_field = "5C4A176E73E3AD8A44C29D1E04A3B849")
-
 
         List<String> format;
 

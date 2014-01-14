@@ -16,9 +16,7 @@ import android.view.Surface;
 import android.os.Process;
 import android.graphics.SurfaceTexture;
 public class RenderScript {
-
-    
-        @DSModeled(DSC.SAFE)
+        
     static void _nInit() {
     }
 
@@ -66,11 +64,8 @@ public static RenderScript create(Context ctx) {
     static boolean sInitialized;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:04.991 -0500", hash_original_field = "84B225E4BC68B4F650B6DB7632FCB17C", hash_generated_field = "DE9CF0F0F7A6C85EF08872E26EEA1599")
 
-
     private Context mApplicationContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:05.524 -0500", hash_original_field = "97FCF96DBFF8B429633D3BD31F12497F", hash_generated_field = "97FCF96DBFF8B429633D3BD31F12497F")
-
-
 
     int     mDev;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:05.526 -0500", hash_original_field = "19C61BA4139FB95CA67E235BE0DACFF3", hash_generated_field = "19C61BA4139FB95CA67E235BE0DACFF3")
@@ -81,7 +76,6 @@ public static RenderScript create(Context ctx) {
     @SuppressWarnings({"FieldCanBeLocal"})
     MessageThread mMessageThread;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:05.530 -0500", hash_original_field = "1A4C60ED310F59A326B64022242C4837", hash_generated_field = "1A4C60ED310F59A326B64022242C4837")
-
 
     Element mElement_U8;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:05.532 -0500", hash_original_field = "A115100196267E2ED63739A879D23201", hash_generated_field = "A115100196267E2ED63739A879D23201")
@@ -116,7 +110,6 @@ public static RenderScript create(Context ctx) {
     Element mElement_BOOLEAN;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:05.551 -0500", hash_original_field = "4A6F1FCC3DDC191E0E48AD365A4759B5", hash_generated_field = "4A6F1FCC3DDC191E0E48AD365A4759B5")
 
-
     Element mElement_ELEMENT;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:05.553 -0500", hash_original_field = "2EFBCAB65FE5BE2A90E2AE365AF5F9FA", hash_generated_field = "2EFBCAB65FE5BE2A90E2AE365AF5F9FA")
 
@@ -147,7 +140,6 @@ public static RenderScript create(Context ctx) {
     Element mElement_PROGRAM_STORE;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:05.572 -0500", hash_original_field = "583ED1725F29FCC08C5EE0A5DEBA905D", hash_generated_field = "583ED1725F29FCC08C5EE0A5DEBA905D")
 
-
     Element mElement_A_8;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:05.574 -0500", hash_original_field = "9B422CEE267AECD8C66DD08959B9C381", hash_generated_field = "9B422CEE267AECD8C66DD08959B9C381")
 
@@ -166,7 +158,6 @@ public static RenderScript create(Context ctx) {
     Element mElement_RGBA_8888;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:05.583 -0500", hash_original_field = "A26873EF625936EBEC474EA98B6EEF39", hash_generated_field = "A26873EF625936EBEC474EA98B6EEF39")
 
-
     Element mElement_FLOAT_2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:05.586 -0500", hash_original_field = "FAB9909D949F377BC188359F721E520B", hash_generated_field = "FAB9909D949F377BC188359F721E520B")
 
@@ -175,7 +166,6 @@ public static RenderScript create(Context ctx) {
 
     Element mElement_FLOAT_4;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:05.589 -0500", hash_original_field = "4314D1BE060B522FBE7C8840CCE67A5E", hash_generated_field = "4314D1BE060B522FBE7C8840CCE67A5E")
-
 
     Element mElement_DOUBLE_2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:05.591 -0500", hash_original_field = "ED2783252668396374139138DDDB1E4E", hash_generated_field = "ED2783252668396374139138DDDB1E4E")
@@ -186,7 +176,6 @@ public static RenderScript create(Context ctx) {
     Element mElement_DOUBLE_4;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:05.595 -0500", hash_original_field = "42125330C40EE1E1970FF1D6DCD549F3", hash_generated_field = "42125330C40EE1E1970FF1D6DCD549F3")
 
-
     Element mElement_UCHAR_2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:05.597 -0500", hash_original_field = "41AFF93379CB91FFCC25823BDC157458", hash_generated_field = "41AFF93379CB91FFCC25823BDC157458")
 
@@ -195,7 +184,6 @@ public static RenderScript create(Context ctx) {
 
     Element mElement_UCHAR_4;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:05.602 -0500", hash_original_field = "008D8C3DBF67E53688415D5742E26110", hash_generated_field = "008D8C3DBF67E53688415D5742E26110")
-
 
     Element mElement_CHAR_2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:05.604 -0500", hash_original_field = "7CF23E5A463E5C432FB997247B9CB6DA", hash_generated_field = "7CF23E5A463E5C432FB997247B9CB6DA")
@@ -206,7 +194,6 @@ public static RenderScript create(Context ctx) {
     Element mElement_CHAR_4;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:05.608 -0500", hash_original_field = "B24A765F13FF74DB88B856F97EBD7002", hash_generated_field = "B24A765F13FF74DB88B856F97EBD7002")
 
-
     Element mElement_USHORT_2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:05.610 -0500", hash_original_field = "E9199C46669A4076C44AB964830CB78F", hash_generated_field = "E9199C46669A4076C44AB964830CB78F")
 
@@ -215,7 +202,6 @@ public static RenderScript create(Context ctx) {
 
     Element mElement_USHORT_4;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:05.614 -0500", hash_original_field = "A61CA347123FBA9C5A18C41944A576B9", hash_generated_field = "A61CA347123FBA9C5A18C41944A576B9")
-
 
     Element mElement_SHORT_2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:05.615 -0500", hash_original_field = "778CCB99542DA47A75CDDC434CD3DE3C", hash_generated_field = "778CCB99542DA47A75CDDC434CD3DE3C")
@@ -226,7 +212,6 @@ public static RenderScript create(Context ctx) {
     Element mElement_SHORT_4;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:05.619 -0500", hash_original_field = "D092CF7584BFB9A3ED918F84EB8982D6", hash_generated_field = "D092CF7584BFB9A3ED918F84EB8982D6")
 
-
     Element mElement_UINT_2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:05.621 -0500", hash_original_field = "952C8EAFBD3B3BEF43DCB09EC0D33116", hash_generated_field = "952C8EAFBD3B3BEF43DCB09EC0D33116")
 
@@ -235,7 +220,6 @@ public static RenderScript create(Context ctx) {
 
     Element mElement_UINT_4;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:05.625 -0500", hash_original_field = "488D8A8C409807BEB5482E2A220560BF", hash_generated_field = "488D8A8C409807BEB5482E2A220560BF")
-
 
     Element mElement_INT_2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:05.627 -0500", hash_original_field = "FDC4C914E75BE5D0F5B418AF1F337161", hash_generated_field = "FDC4C914E75BE5D0F5B418AF1F337161")
@@ -246,7 +230,6 @@ public static RenderScript create(Context ctx) {
     Element mElement_INT_4;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:05.631 -0500", hash_original_field = "BE546EE33636C876F5F08AA37EC93392", hash_generated_field = "BE546EE33636C876F5F08AA37EC93392")
 
-
     Element mElement_ULONG_2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:05.633 -0500", hash_original_field = "1426A1BE2C52948E38BB04ED85667A6D", hash_generated_field = "1426A1BE2C52948E38BB04ED85667A6D")
 
@@ -255,7 +238,6 @@ public static RenderScript create(Context ctx) {
 
     Element mElement_ULONG_4;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:05.637 -0500", hash_original_field = "DD16F669DE47E721697407D09BA734B4", hash_generated_field = "DD16F669DE47E721697407D09BA734B4")
-
 
     Element mElement_LONG_2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:05.639 -0500", hash_original_field = "02CBDB23048DD75EF16E592628D58E66", hash_generated_field = "02CBDB23048DD75EF16E592628D58E66")
@@ -266,7 +248,6 @@ public static RenderScript create(Context ctx) {
     Element mElement_LONG_4;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:05.642 -0500", hash_original_field = "90467332F0960CFA80067B1FF2293940", hash_generated_field = "90467332F0960CFA80067B1FF2293940")
 
-
     Element mElement_MATRIX_4X4;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:05.644 -0500", hash_original_field = "37DC3D9F46428D68056BE5D0E1D2D69F", hash_generated_field = "37DC3D9F46428D68056BE5D0E1D2D69F")
 
@@ -275,7 +256,6 @@ public static RenderScript create(Context ctx) {
 
     Element mElement_MATRIX_2X2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:05.649 -0500", hash_original_field = "FD7952939A930C2EAD82F191678A9A3D", hash_generated_field = "FD7952939A930C2EAD82F191678A9A3D")
-
 
     Sampler mSampler_CLAMP_NEAREST;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:05.651 -0500", hash_original_field = "37CE813925492EE7B0CDDBDA16ADC1DE", hash_generated_field = "37CE813925492EE7B0CDDBDA16ADC1DE")
@@ -295,7 +275,6 @@ public static RenderScript create(Context ctx) {
     Sampler mSampler_WRAP_LINEAR_MIP_LINEAR;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:05.661 -0500", hash_original_field = "53A75F27A0885A24DE1E28A78D67D7E6", hash_generated_field = "53A75F27A0885A24DE1E28A78D67D7E6")
 
-
     ProgramStore mProgramStore_BLEND_NONE_DEPTH_TEST;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:05.663 -0500", hash_original_field = "8737AA793A56C1AE9073BD927DACE35E", hash_generated_field = "8737AA793A56C1AE9073BD927DACE35E")
 
@@ -307,7 +286,6 @@ public static RenderScript create(Context ctx) {
 
     ProgramStore mProgramStore_BLEND_ALPHA_DEPTH_NO_DEPTH;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:05.669 -0500", hash_original_field = "E95BF77B0A9C09370D6FE36647ECAE0A", hash_generated_field = "E95BF77B0A9C09370D6FE36647ECAE0A")
-
 
     ProgramRaster mProgramRaster_CULL_BACK;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:05.671 -0500", hash_original_field = "0783E32B56B030665E55149BA001BA9E", hash_generated_field = "0783E32B56B030665E55149BA001BA9E")
@@ -361,10 +339,7 @@ RenderScript(Context ctx) {
     	addTaint(data[0]);
     	return getTaintInt();
     }
-
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:56.333 -0400", hash_original_method = "A170821D17F63D9EDF5AAFFF93CB7028", hash_generated_method = "1C435B28B274730163B2755B3AC76CDA")
      String nContextGetErrorMessage(int con) {
     	taint.addTaint(con);
@@ -394,8 +369,6 @@ RenderScript(Context ctx) {
     	//Formerly a native method
     	addTaint(con);
     }
-
-
 
     // Methods below are wrapped to protect the non-threadsafe
     // lockless fifo.
@@ -668,9 +641,7 @@ synchronized void nAssignName(int obj, byte[] name) {
         validate();
         rsnAssignName(mContext, obj, name);
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:06:56.519 -0400", hash_original_method = "6CFEA087E7A290E3C39BE13FE6867185", hash_generated_method = "E4F6A8A0464E8FFDD20E28A294151A61")
      String rsnGetName(int con, int obj) {
     	addTaint(con);
@@ -912,7 +883,6 @@ synchronized void nAllocationCopyToBitmap(int alloc, Bitmap bmp) {
         rsnAllocationCopyToBitmap(mContext, alloc, bmp);
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:05.205 -0500", hash_original_method = "3121E732BD190EDE1807049E3BD6D7DA", hash_generated_method = "8AACE35A9B6261CF189726904DFD4F6D")
     
     void rsnAllocationSyncAll(int con, int alloc, int src){
@@ -957,7 +927,6 @@ synchronized void nAllocationCopyFromBitmap(int alloc, Bitmap bmp) {
         validate();
         rsnAllocationCopyFromBitmap(mContext, alloc, bmp);
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:05.224 -0500", hash_original_method = "1C01F509C8F49D01D10DE0EA5CB1F527", hash_generated_method = "1170DD0CB3456D6CC1413B70C5C3A20E")
     
@@ -1461,7 +1430,6 @@ synchronized int nFontCreateFromAsset(AssetManager mgr, String path, float size,
         return rsnFontCreateFromAsset(mContext, mgr, path, size, dpi);
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:05.379 -0500", hash_original_method = "18F6766928BD2496841B330F96A93DA7", hash_generated_method = "483A525E3744F22BA77B07D553F5C6C8")
     
     void rsnScriptBindAllocation(int con, int script, int alloc, int slot){
@@ -1935,7 +1903,6 @@ void validate() {
         }
     }
 
-
     /**
      * Change the priority of the worker threads for this context.
      *
@@ -1970,7 +1937,6 @@ public void contextDump() {
         validate();
         nContextDump(0);
     }
-
     
     public static class RSMessageHandler implements Runnable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:05.676 -0500", hash_original_field = "8C2374D33A80477A0B3E51CE7EB85544", hash_generated_field = "E9ECB1965245BA1A0ABDDD292D63F295")
@@ -1992,11 +1958,8 @@ public void contextDump() {
         
 public void run() {
         }
-
         
     }
-
-
     
     public static class RSErrorHandler implements Runnable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:05.692 -0500", hash_original_field = "2134AAACFB6EDFBE79ABBE45636CB43E", hash_generated_field = "352199EA493EBD40F2F3992629E09A61")
@@ -2015,17 +1978,13 @@ public void run() {
         
 public void run() {
         }
-
         
     }
-
-
     
     public enum Priority {
         LOW (Process.THREAD_PRIORITY_BACKGROUND + (5 * Process.THREAD_PRIORITY_LESS_FAVORABLE)),
         NORMAL (Process.THREAD_PRIORITY_DISPLAY);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:05.707 -0500", hash_original_field = "0B53E374282B34FB268F3024A1E73BA5", hash_generated_field = "0B53E374282B34FB268F3024A1E73BA5")
-
 
         int mID;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:05.710 -0500", hash_original_method = "B283EA7C2224661A52011ECB2DAEDC6F", hash_generated_method = "B283EA7C2224661A52011ECB2DAEDC6F")
@@ -2034,11 +1993,9 @@ Priority(int id) {
             mID = id;
         }
     }
-
     
     static class MessageThread extends Thread {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:05.725 -0500", hash_original_field = "4AF33BC5E4FFE08204A33E6CE99577F4", hash_generated_field = "1ACD99CA7A0BCEB9AFEC2A87202D8B1A")
-
 
         static final int RS_MESSAGE_TO_CLIENT_NONE = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:05.728 -0500", hash_original_field = "9B60CB222C52BB773526F4B350AFC9EF", hash_generated_field = "37474FF1E9C5BA58EC19743C84A4A20C")
@@ -2054,7 +2011,6 @@ Priority(int id) {
 
         static final int RS_MESSAGE_TO_CLIENT_USER = 4;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:05.737 -0500", hash_original_field = "424C65E096E3CCE0015AAEA0D9932DCD", hash_generated_field = "32A9791D3BD5FFB06DEFC9345E1D363B")
-
 
         static final int RS_ERROR_FATAL_UNKNOWN = 0x1000;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:05.719 -0500", hash_original_field = "AD6E2452AD39DF3B497ED4B7E83C4E0C", hash_generated_field = "AD6E2452AD39DF3B497ED4B7E83C4E0C")

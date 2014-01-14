@@ -9,13 +9,8 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.Message;
 
-
-
-
-
 public class GestureDetector {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:03.717 -0500", hash_original_field = "3292E3C407AFFD1ECB63974A48EF6F26", hash_generated_field = "A0C74D07DE33813B70581123FF749A35")
-
 
     private static final int LONGPRESS_TIMEOUT = ViewConfiguration.getLongPressTimeout();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:03.719 -0500", hash_original_field = "1890900927A925C86536426FAA153831", hash_generated_field = "B2C557FED0C410FD936C94D9C495E66C")
@@ -38,7 +33,6 @@ public class GestureDetector {
     private int mBiggerTouchSlopSquare = 20 * 20;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:03.708 -0500", hash_original_field = "22908E064AB773A0D025345BB08C461C", hash_generated_field = "5E5708EA89972028E86242DA050969CA")
 
-
     private int mTouchSlopSquare;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:03.710 -0500", hash_original_field = "D8CB968A9E00512DAFB6AA042D9A5D66", hash_generated_field = "6A78E5989D06DA4C68BA85646B379C51")
 
@@ -51,7 +45,6 @@ public class GestureDetector {
     private int mMaximumFlingVelocity;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:03.732 -0500", hash_original_field = "A163099B522120C606A3CA562F90E927", hash_generated_field = "03E47BA0CE42772601F0A13D178B12B5")
 
-
     private  Handler mHandler;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:03.735 -0500", hash_original_field = "1284A2585E50432ED50A1B728A817AEC", hash_generated_field = "0F48D0A94630E1FBE9C08A845F9730F2")
 
@@ -60,7 +53,6 @@ public class GestureDetector {
 
     private OnDoubleTapListener mDoubleTapListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:03.739 -0500", hash_original_field = "FDFC64EF754B3F40601812552039B1D3", hash_generated_field = "09EA51D062ED44D2275BC8E7A65061C0")
-
 
     private boolean mStillDown;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:03.742 -0500", hash_original_field = "C647D9FF01927E4F18C3E915DCABE3F0", hash_generated_field = "8FA7640B36D34A443E3A43478682F7F9")
@@ -74,7 +66,6 @@ public class GestureDetector {
     private boolean mAlwaysInBiggerTapRegion;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:03.748 -0500", hash_original_field = "7A306BD5FEBB31D162FCC9CE4F00D50B", hash_generated_field = "CAFEE339D8B144D23812ECC71639FEB7")
 
-
     private MotionEvent mCurrentDownEvent;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:03.750 -0500", hash_original_field = "11D60B150A81CDB1C3B9E0F59396F002", hash_generated_field = "2C9915BC9FEEE919EC1B54BA44C7E08E")
 
@@ -84,13 +75,11 @@ public class GestureDetector {
     private boolean mIsDoubleTapping;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:03.754 -0500", hash_original_field = "3611C70C88BA02D959402D97DECB16F3", hash_generated_field = "2D88D85D441545A6227529A03C0B4E71")
 
-
     private float mLastMotionY;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:03.757 -0500", hash_original_field = "AF635AE840C182EEA99A9AE862C0C835", hash_generated_field = "90F53F7625CC0EEE4DC6EBCFF5E518A6")
 
     private float mLastMotionX;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:03.759 -0500", hash_original_field = "D68DA72D16EA5A899A89E6EEBF535A9F", hash_generated_field = "A200AEA4E8786AAB09346E7991B4CE6C")
-
 
     private boolean mIsLongpressEnabled;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:03.761 -0500", hash_original_field = "EF7E9E5596D312046F679D7BC19B9999", hash_generated_field = "2B51C50DE25129E94BCC4EA38A0389E2")
@@ -182,9 +171,7 @@ public GestureDetector(Context context, OnGestureListener listener, Handler hand
         this(context, listener, handler, context != null &&
                 context.getApplicationInfo().targetSdkVersion >= Build.VERSION_CODES.FROYO);
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.340 -0400", hash_original_method = "3A200FED7280634DDE54E1C354EDC878", hash_generated_method = "2ACD6CA9F5DEC57A33DA67091312F2BF")
     public  GestureDetector(Context context, OnGestureListener listener, Handler handler,
             boolean ignoreMultitouch) {
@@ -215,8 +202,6 @@ public GestureDetector(Context context, OnGestureListener listener, Handler hand
             setOnDoubleTapListener((OnDoubleTapListener) listener);
         } //End block
         init(context, ignoreMultitouch);
-        
-        
 
         // ---------- Original Method ----------
         //if (handler != null) {
@@ -259,9 +244,7 @@ private void init(Context context, boolean ignoreMultitouch) {
         mTouchSlopSquare = touchSlop * touchSlop;
         mDoubleTapSlopSquare = doubleTapSlop * doubleTapSlop;
     }
-
-    
-        @DSModeled(DSC.SAFE)
+        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.342 -0400", hash_original_method = "571B39F87736E3994F3A317209D7E1C6", hash_generated_method = "8874C66605DB2FF6FE5F0E858C5BB080")
     public void setOnDoubleTapListener(OnDoubleTapListener onDoubleTapListener) {
         mDoubleTapListener = onDoubleTapListener;
@@ -272,7 +255,6 @@ private void init(Context context, boolean ignoreMultitouch) {
         // ---------- Original Method ----------
         //mDoubleTapListener = onDoubleTapListener;
     }
-
     
     public static class SimpleOnGestureListener implements OnGestureListener, OnDoubleTapListener {
         
@@ -334,11 +316,8 @@ public boolean onDoubleTapEvent(MotionEvent e) {
 public boolean onSingleTapConfirmed(MotionEvent e) {
             return false;
         }
-
         
     }
-
-
     
     private class GestureHandler extends Handler {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:03.769 -0500", hash_original_method = "9D2431BB2A48CA4B74BDD0A31919D26A", hash_generated_method = "9D2431BB2A48CA4B74BDD0A31919D26A")
@@ -377,29 +356,20 @@ GestureHandler(Handler handler) {
                 throw new RuntimeException("Unknown message " + msg); //never
             }
         }
-
         
     }
-
-
     
     public interface OnGestureListener {
-
         
         boolean onDown(MotionEvent e);
-
         
         void onShowPress(MotionEvent e);
-
         
         boolean onSingleTapUp(MotionEvent e);
-
         
         boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY);
-
         
         void onLongPress(MotionEvent e);
-
         
         boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY);
     }
@@ -407,10 +377,8 @@ GestureHandler(Handler handler) {
     public interface OnDoubleTapListener {
         
         boolean onSingleTapConfirmed(MotionEvent e);
- 
         
         boolean onDoubleTap(MotionEvent e);
-
         
         boolean onDoubleTapEvent(MotionEvent e);
     }

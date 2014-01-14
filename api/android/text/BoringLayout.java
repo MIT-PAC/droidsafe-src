@@ -10,10 +10,6 @@ import android.graphics.Path;
 import android.text.style.ParagraphStyle;
 import android.util.FloatMath;
 
-
-
-
-
 public class BoringLayout extends Layout implements TextUtils.EllipsizeCallback {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:10.448 -0500", hash_original_method = "45302125C5623367D121D61EE264BB3D", hash_generated_method = "B6F6733ADD16B96B785BE8B828E1CB18")
     
@@ -142,15 +138,12 @@ public static Metrics isBoring(CharSequence text, TextPaint paint,
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:10.527 -0500", hash_original_field = "C43C06106F60684BB16151D66140BBB2", hash_generated_field = "C2F2F45019948F5515A5534F9B80EBF4")
 
-
     private static final char FIRST_RIGHT_TO_LEFT = '\u0590';
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:10.544 -0500", hash_original_field = "7DC8DE07DCC9FC2DB1DAF906950EA1CC", hash_generated_field = "AEB4C46A4C665812604A1CC18568D7E1")
-
 
     private static final TextPaint sTemp =
                                 new TextPaint();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:10.530 -0500", hash_original_field = "43602C9DA546BE47B69DC72EAB1E2E24", hash_generated_field = "1B339E7F22FA229115A323159C174907")
-
 
     private String mDirect;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:10.532 -0500", hash_original_field = "0344A2D91EF1BCE652EE63EFC12EEAC9", hash_generated_field = "75BCEEBE83B26919B33E8EA8B289919E")
@@ -225,7 +218,6 @@ public BoringLayout(CharSequence source,
                                            ellipsize, true, this),
                         paint, outerwidth, align, spacingmult,
                         spacingadd);
-
 
             mEllipsizedWidth = ellipsizedWidth;
             trust = false;
@@ -458,14 +450,12 @@ void init(CharSequence source,
     public int getEllipsizedWidth() {
         return mEllipsizedWidth;
     }
-
     
     public static class Metrics extends Paint.FontMetricsInt {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:10.547 -0500", hash_original_field = "1589F848FE4FF192F7CCE1B9F9E85747", hash_generated_field = "6FAF64E7577371F06EC12EBE94C8466B")
 
         public int width;
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.475 -0400", hash_original_method = "5093089FD85953828BC1A867B844524A", hash_generated_method = "5093089FD85953828BC1A867B844524A")
         public Metrics ()
         {
@@ -477,7 +467,6 @@ void init(CharSequence source,
 @Override public String toString() {
             return super.toString() + " width=" + width;
         }
-
         
     }
 

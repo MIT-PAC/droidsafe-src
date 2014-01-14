@@ -18,11 +18,6 @@ import android.util.Log;
 
 import com.android.internal.location.DummyLocationProvider;
 
-
-
-
-
-
 public class LocationManager {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:57.834 -0500", hash_original_field = "DF26FEF8A383C1946787FF952CFEED9D", hash_generated_field = "28DF91E101BF22ECD70A2547DFBB55A7")
 
@@ -82,13 +77,11 @@ public class LocationManager {
     private HashMap<LocationListener,ListenerTransport> mListeners =
         new HashMap<LocationListener,ListenerTransport>();
     
-    @DSModeled(DSC.BAN)
 	public LocationManager(ILocationManager service) {
         mService = service;
         addTaint(service.getTaint());
     }
-
-    @DSModeled(DSC.BAN)
+    
     public LocationManager() {
     }
 
@@ -415,9 +408,7 @@ public void requestLocationUpdates(long minTime, float minDistance,
         }
         _requestLocationUpdates(null, criteria, minTime, minDistance, false, listener, looper);
     }
-
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:36.987 -0400", hash_original_method = "7527D3AF7E08617A40988967AFB4FC4D", hash_generated_method = "324B2DB34138E35B89555069BC343BA8")
     private void _requestLocationUpdates(String provider, Criteria criteria, long minTime,
             float minDistance, boolean singleShot, LocationListener listener, Looper looper) {
@@ -919,10 +910,9 @@ public boolean isProviderEnabled(String provider) {
             return false;
         }
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:36.993 -0400", hash_original_method = "C11453A15D8C96574C829BE27A4B0DFD", hash_generated_method = "7B70CBDE081B95E75A69268514229255")
-    @DSModeled(DSC.SAFE)
+    
     public Location getLastKnownLocation(String provider) {
         addTaint(provider.getTaint());
         if(provider == null)        
@@ -1032,7 +1022,6 @@ public void setTestProviderLocation(String provider, Location loc) {
             Log.e(TAG, "setTestProviderLocation: RemoteException", ex);
         }
     }
-
     
     private class ListenerTransport extends ILocationListener.Stub {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.010 -0500", hash_original_field = "B9954826DAE6059EFB21B76D230B305A", hash_generated_field = "A0CA98E69FE18B704F4EDD23AF7F79E8")
@@ -1048,7 +1037,6 @@ public void setTestProviderLocation(String provider, Location loc) {
 
         private static final int TYPE_PROVIDER_DISABLED = 4;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.021 -0500", hash_original_field = "91E7866574DA78512A2B735B0BDCAD22", hash_generated_field = "88C676C20BB164A41FD7C10E7FA78223")
-
 
         private LocationListener mListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.024 -0500", hash_original_field = "D0A3D82F2B280A159C01C94C498A5E27", hash_generated_field = "4100173B517AAB1135352B9F9C7AE096")
@@ -1148,15 +1136,12 @@ private void _handleMessage(Message msg) {
             }
         }
     }
-
-
     
     private class GpsStatusListenerTransport extends IGpsStatusListener.Stub {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.138 -0500", hash_original_field = "A3B1A044CA6CCFE73DBB96810430D552", hash_generated_field = "6899010D64F70B3018C0CDC68B38D232")
 
         private static final int NMEA_RECEIVED = 1000;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.132 -0500", hash_original_field = "6D144131A306DBBEB8202BC5B53FDEFD", hash_generated_field = "3564D5BECCC467DBB563E9174E6839FA")
-
 
         private  GpsStatus.Listener mListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.135 -0500", hash_original_field = "FA43A6D3AD762D701A9F1A786F3C517D", hash_generated_field = "C56AA1FA4293F00EF5AC3280F7CE1BCE")
@@ -1188,7 +1173,6 @@ private void _handleMessage(Message msg) {
                     }
                 }
             }
-
             
 };
 
@@ -1254,7 +1238,6 @@ public void onSvStatusChanged(int svCount, int[] prns, float[] snrs,
                 mGpsHandler.sendMessage(msg);
             }
         }
-
         
         private class Nmea {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.141 -0500", hash_original_field = "1D358F2CB412AAF1346451355CB8F3E3", hash_generated_field = "1D358F2CB412AAF1346451355CB8F3E3")
@@ -1270,7 +1253,6 @@ Nmea(long timestamp, String nmea) {
                 mTimestamp = timestamp;
                 mNmea = nmea;
             }
-
             
         }
 

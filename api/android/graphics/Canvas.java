@@ -11,9 +11,6 @@ import android.text.SpannableString;
 import android.text.SpannedString;
 import android.text.TextUtils;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public class Canvas {
@@ -37,71 +34,51 @@ protected static void checkRange(int length, int offset, int count) {
             throw new ArrayIndexOutOfBoundsException();
         }
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static void freeCaches() {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int initRaster(int nativeBitmapOrZero) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_378610903 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_378610903;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_setBitmap(int nativeCanvas, int bitmap) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int native_saveLayer(int nativeCanvas, RectF bounds,
                                                int paint, int layerFlags) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_467194653 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_467194653;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int native_saveLayer(int nativeCanvas, float l,
                                                float t, float r, float b,
                                                int paint, int layerFlags) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_430058921 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_430058921;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int native_saveLayerAlpha(int nativeCanvas,
                                                     RectF bounds, int alpha,
                                                     int layerFlags) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1730328887 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1730328887;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int native_saveLayerAlpha(int nativeCanvas, float l,
                                                     float t, float r, float b,
                                                     int alpha, int layerFlags) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1192671444 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1192671444;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_concat(int nCanvas, int nMatrix) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_setMatrix(int nCanvas, int nMatrix) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean native_clipRect(int nCanvas,
                                                   float left, float top,
                                                   float right, float bottom,
@@ -109,64 +86,48 @@ protected static void checkRange(int length, int offset, int count) {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1065743384 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1065743384;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean native_clipPath(int nativeCanvas,
                                                   int nativePath,
                                                   int regionOp) {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2071424835 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2071424835;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean native_clipRegion(int nativeCanvas,
                                                     int nativeRegion,
                                                     int regionOp) {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1786500323 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1786500323;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeSetDrawFilter(int nativeCanvas,
                                                    int nativeFilter) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean native_getClipBounds(int nativeCanvas,
                                                        Rect bounds) {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1373360843 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1373360843;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_getCTM(int canvas, int matrix) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean native_quickReject(int nativeCanvas,
                                                      RectF rect,
                                                      int native_edgeType) {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_522063304 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_522063304;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean native_quickReject(int nativeCanvas,
                                                      int path,
                                                      int native_edgeType) {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_643825593 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_643825593;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean native_quickReject(int nativeCanvas,
                                                      float left, float top,
                                                      float right, float bottom,
@@ -174,173 +135,123 @@ protected static void checkRange(int length, int offset, int count) {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1380645477 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1380645477;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_drawRGB(int nativeCanvas, int r, int g,
                                               int b) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_drawARGB(int nativeCanvas, int a, int r,
                                                int g, int b) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_drawColor(int nativeCanvas, int color) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_drawColor(int nativeCanvas, int color,
                                                 int mode) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_drawPaint(int nativeCanvas, int paint) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_drawLine(int nativeCanvas, float startX,
                                                float startY, float stopX,
                                                float stopY, int paint) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_drawRect(int nativeCanvas, RectF rect,
                                                int paint) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_drawRect(int nativeCanvas, float left,
                                                float top, float right,
                                                float bottom, int paint) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_drawOval(int nativeCanvas, RectF oval,
                                                int paint) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_drawCircle(int nativeCanvas, float cx,
                                                  float cy, float radius,
                                                  int paint) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_drawArc(int nativeCanvas, RectF oval,
                                               float startAngle, float sweep,
                                               boolean useCenter, int paint) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_drawRoundRect(int nativeCanvas,
                                                     RectF rect, float rx,
                                                     float ry, int paint) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_drawPath(int nativeCanvas, int path,
                                                int paint) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_drawBitmap(int nativeCanvas, int bitmap,
                                                  Rect src, Rect dst,
                                                  int nativePaintOrZero,
                                                  int screenDensity,
                                                  int bitmapDensity) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_drawBitmap(int nativeCanvas, int[] colors,
                                                 int offset, int stride, float x,
                                                  float y, int width, int height,
                                                  boolean hasAlpha,
                                                  int nativePaintOrZero) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeDrawBitmapMatrix(int nCanvas, int nBitmap,
                                                       int nMatrix, int nPaint) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeDrawBitmapMesh(int nCanvas, int nBitmap,
                                                     int meshWidth, int meshHeight,
                                                     float[] verts, int vertOffset,
                                                     int[] colors, int colorOffset, int nPaint) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeDrawVertices(int nCanvas, int mode, int n,
                    float[] verts, int vertOffset, float[] texs, int texOffset,
                    int[] colors, int colorOffset, short[] indices,
                    int indexOffset, int indexCount, int nPaint) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_drawText(int nativeCanvas, char[] text,
                                                int index, int count, float x,
                                                float y, int flags, int paint) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_drawText(int nativeCanvas, String text,
                                                int start, int end, float x,
                                                float y, int flags, int paint) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_drawTextRun(int nativeCanvas, String text,
             int start, int end, int contextStart, int contextEnd,
             float x, float y, int flags, int paint) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_drawTextRun(int nativeCanvas, char[] text,
             int start, int count, int contextStart, int contextCount,
             float x, float y, int flags, int paint) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_drawPosText(int nativeCanvas,
                                                   char[] text, int index,
                                                   int count, float[] pos,
                                                   int paint) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_drawPosText(int nativeCanvas,
                                                   String text, float[] pos,
                                                   int paint) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_drawTextOnPath(int nativeCanvas,
                                                      char[] text, int index,
                                                      int count, int path,
@@ -348,24 +259,18 @@ protected static void checkRange(int length, int offset, int count) {
                                                      float vOffset, int bidiFlags,
                                                      int paint) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_drawTextOnPath(int nativeCanvas,
                                                      String text, int path,
                                                      float hOffset, 
                                                      float vOffset, 
                                                      int flags, int paint) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_drawPicture(int nativeCanvas,
                                                   int nativePicture) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void finalizer(int nativeCanvas) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.046 -0500", hash_original_field = "DE0993C64A5DCE6B04BA860BC13954B0", hash_generated_field = "560BA2CA377351903A6838650E1B66A9")
@@ -379,7 +284,6 @@ protected static void checkRange(int length, int offset, int count) {
     // (see SkCanvas.cpp, SkDraw.cpp)
     private static final int MAXMIMUM_BITMAP_SIZE = 32766;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.103 -0500", hash_original_field = "E60E36172E05957F55F145C2156155BA", hash_generated_field = "6C8DE3849C8C2C8F11FED5E72A54856F")
-
 
     /** restore the current matrix when restore() is called */
     public static final int MATRIX_SAVE_FLAG = 0x01;
@@ -405,7 +309,6 @@ protected static void checkRange(int length, int offset, int count) {
 
     private Bitmap  mBitmap;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.036 -0500", hash_original_field = "1809E3F3B0952C4944386BCDAFF81AC8", hash_generated_field = "04F9CD5B166F725F4476D4C3990647B3")
-
     
     // optional field set by the caller
     private DrawFilter mDrawFilter;
@@ -424,7 +327,6 @@ protected static void checkRange(int length, int offset, int count) {
     @SuppressWarnings({"UnusedDeclaration"})
     private  CanvasFinalizer mFinalizer;
     
-    @DSModeled(DSC.SAFE)
 	public Canvas() {
 		//Do Nothing
 	}
@@ -491,9 +393,7 @@ Canvas(int nativeCanvas) {
 public boolean isHardwareAccelerated() {
         return false;
     }
-
     
-    @DSModeled(DSC.SAFE)
 	public void setBitmap(Bitmap bitmap) {
 		addTaint(bitmap.getTaint());
 		addTaint(bitmap.getDensity()); //getDensity will return a tainted value
@@ -542,7 +442,6 @@ public void setViewport(int width, int height) {
     	return getTaintBoolean();
     }
 
-
     /**
      * Returns the width of the current drawing layer
      *
@@ -555,7 +454,6 @@ public void setViewport(int width, int height) {
     	return getTaintInt();
     }
 
-
     /**
      * Returns the height of the current drawing layer
      *
@@ -567,17 +465,12 @@ public void setViewport(int width, int height) {
     	//Formerly a native method
     	return getTaintInt();
     }
-
-
     
-    @DSModeled(DSC.SAFE)
 	public int getDensity() {
 		return getTaintInt();
 		//return mDensity;
     }
-
     
-    @DSModeled(DSC.SAFE)
 	public void setDensity(int density) {
 		addTaint(density);  //Density is saved both here and in the bitmap
 		mBitmap.setDensity(density);  //setDensity will track the taint in the Bitmap object
@@ -620,7 +513,7 @@ public int getMaximumBitmapWidth() {
     
 public int getMaximumBitmapHeight() {
         return MAXMIMUM_BITMAP_SIZE;
-    } 
+    }
     
     /**
      * Saves the current matrix and clip onto a private stack. Subsequent
@@ -637,7 +530,6 @@ public int getMaximumBitmapHeight() {
     	//Formerly a native method
     	return getTaintInt();
     }
-
     
     /**
      * Based on saveFlags, can save the current matrix and clip onto a private
@@ -657,7 +549,6 @@ public int getMaximumBitmapHeight() {
     	addTaint(saveFlags);
     	return getTaintInt();
     }
-
 
     /**
      * This behaves the same as save(), but in addition it allocates an
@@ -728,9 +619,7 @@ public int saveLayerAlpha(float left, float top, float right, float bottom,
         return native_saveLayerAlpha(mNativeCanvas, left, top, right, bottom,
                                      alpha, saveFlags);
     }
-
     
-    @DSModeled(DSC.SAFE)
     public void restore() {
 	}
 
@@ -744,7 +633,6 @@ public int saveLayerAlpha(float left, float top, float right, float bottom,
     	//Formerly a native method
     	return getTaintInt();
     }
-
 
     /**
      * Efficient way to pop any calls to save() that happened after the save
@@ -765,17 +653,12 @@ public int saveLayerAlpha(float left, float top, float right, float bottom,
     	//Formerly a native method
     	addTaint(saveCount);
     }
-
-
     
-    @DSModeled(DSC.SAFE)
 	public void translate(float dx, float dy) {
 		addTaint(dx);
 		addTaint(dy);
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public void scale(float sx, float sy) {
 		addTaint(sx);
 		addTaint(sy);
@@ -796,9 +679,7 @@ public final void scale(float sx, float sy, float px, float py) {
         scale(sx, sy);
         translate(-px, -py);
     }
-
     
-    @DSModeled(DSC.SAFE)
 	public void rotate(float degrees) {
 		addTaint(degrees);
 	}
@@ -831,10 +712,7 @@ public final void rotate(float degrees, float px, float py) {
     	addTaint(sx);
     	addTaint(sy);
     }
-
-
     
-    @DSModeled(DSC.SAFE)
 	public void concat(Matrix matrix) {
 		addTaint(matrix.native_instance);
     }
@@ -920,7 +798,6 @@ public boolean clipRect(Rect rect, Region.Op op) {
     	addTaint(rect.getTaint());
     	return getTaintBoolean();
     }
-
     
     /**
      * Intersect the current clip with the specified rectangle, which is
@@ -936,7 +813,6 @@ public boolean clipRect(Rect rect, Region.Op op) {
     	addTaint(rect.getTaint());
     	return getTaintBoolean();
     }
-
     
     /**
      * Modify the current clip with the specified rectangle, which is
@@ -985,7 +861,6 @@ public boolean clipRect(float left, float top, float right, float bottom,
     	addTaint(bottom);
     	return getTaintBoolean();
     }
-
     
     /**
      * Intersect the current clip with the specified rectangle, which is
@@ -1011,7 +886,6 @@ public boolean clipRect(float left, float top, float right, float bottom,
     	addTaint(bottom);
     	return getTaintBoolean();
     }
-
     
     /**
         * Modify the current clip with the specified path.
@@ -1275,7 +1149,6 @@ public void drawPaint(Paint paint) {
     	addTaint(paint.getTaint());
     }
 
-
     /**
      * Helper for drawPoints() that assumes you want to draw the entire array
      */
@@ -1296,10 +1169,7 @@ public void drawPoints(float[] pts, Paint paint) {
     	addTaint(y);
     	addTaint(paint.getTaint());
     }
-
-
     
-    @DSModeled(DSC.SAFE)
 	public void drawLine(float startX, float startY, float stopX, float stopY,
             Paint paint) {
 		/*
@@ -1345,7 +1215,6 @@ public void drawPoints(float[] pts, Paint paint) {
     	addTaint(paint.getTaint());
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.251 -0500", hash_original_method = "C2DF9F5B70F03E16002905BD3365AB2E", hash_generated_method = "6BB9AF47E7A96C3EDD32940E0EDDF45D")
     
 public void drawLines(float[] pts, Paint paint) {
@@ -1377,7 +1246,6 @@ public void drawRect(RectF rect, Paint paint) {
 public void drawRect(Rect r, Paint paint) {
         drawRect(r.left, r.top, r.right, r.bottom, paint);
     }
-    
 
     /**
      * Draw the specified Rect using the specified paint. The rectangle will
@@ -1396,9 +1264,7 @@ public void drawRect(float left, float top, float right, float bottom,
         native_drawRect(mNativeCanvas, left, top, right, bottom,
                         paint.mNativePaint);
     }
-
     
-    @DSModeled(DSC.SAFE)
     public void drawOval(RectF oval, Paint paint) {
 		addTaint(oval.getTaint());
 		addTaint(paint.getTaint());
@@ -1479,9 +1345,7 @@ public void drawRoundRect(RectF rect, float rx, float ry, Paint paint) {
         native_drawRoundRect(mNativeCanvas, rect, rx, ry,
                              paint.mNativePaint);
     }
-
     
-    @DSModeled(DSC.SAFE)
     public void drawPath(Path path, Paint paint) {
 		addTaint(path.getTaint());
 		addTaint(paint.getTaint());
@@ -1506,9 +1370,7 @@ public void drawRoundRect(RectF rect, float rx, float ry, Paint paint) {
     
 public void drawPatch(Bitmap bitmap, byte[] chunks, RectF dst, Paint paint) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     public void drawBitmap(Bitmap bitmap, float left, float top, Paint paint) {
 		addTaint(bitmap.getTaint());
 		addTaint(left);
@@ -1521,9 +1383,7 @@ public void drawPatch(Bitmap bitmap, byte[] chunks, RectF dst, Paint paint) {
                 bitmap.mDensity);
         */
     }
-
     
-    @DSModeled(DSC.SAFE)
 	public void drawBitmap(Bitmap bitmap, Rect src, RectF dst, Paint paint) {
 		addTaint(bitmap.getTaint());
 		addTaint(src.getTaint());
@@ -1930,7 +1790,6 @@ public void drawTextRun(CharSequence text, int start, int end,
             TemporaryBuffer.recycle(buf);
         }
     }
-
     
     private static class CanvasFinalizer {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.055 -0500", hash_original_field = "9AEAAB458F04AA015A1FEC7988D58EFD", hash_generated_field = "2D4BC4BEF691AE213514DA2EF6E7568C")
@@ -1955,11 +1814,8 @@ public CanvasFinalizer(int nativeCanvas) {
                 super.finalize();
             }
         }
-
         
     }
-
-
     
     public enum EdgeType {
         BW(0),  
@@ -1974,7 +1830,6 @@ EdgeType(int nativeInt) {
 
         public  int nativeInt;
     }
-
     
     public enum VertexMode {
         TRIANGLES(0),
@@ -2159,7 +2014,6 @@ public void drawPicture(Picture picture, Rect dst) {
     	addTaint(screenDensity);
     	addTaint(bitmapDensity);
     }
-
     
 }
 

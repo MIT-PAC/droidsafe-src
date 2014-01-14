@@ -14,10 +14,6 @@ import java.util.List;
 
 import libcore.util.EmptyArray;
 
-
-
-
-
 public class Throwable implements java.io.Serializable {
 
     /**
@@ -45,15 +41,11 @@ private static int countDuplicates(StackTraceElement[] currentStack,
         }
         return duplicates;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static Object nativeFillInStackTrace() {
     	return new Object();
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static StackTraceElement[] nativeGetStackTrace(Object stackState) {
     	StackTraceElement[] ret = new StackTraceElement[0];
     	ret[0].addTaint(stackState.taint);

@@ -6,46 +6,30 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.os.SystemClock;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public class Interpolator {
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativeConstructor(int valueCount, int frameCount) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeDestructor(int native_instance) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeReset(int native_instance, int valueCount, int frameCount) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeSetKeyFrame(int native_instance, int index, int msec, float[] values, float[] blend) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeSetRepeatMirror(int native_instance, float repeatCount, boolean mirror) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativeTimeToValues(int native_instance, int msec, float[] values) {
         return DSUtils.UNKNOWN_INT;
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:10.812 -0500", hash_original_field = "7C821A44BA6C69802A2F40CFF359D196", hash_generated_field = "68C3E9DC71F308640D17475B37A6DDEF")
-
     
     private int mValueCount;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:10.814 -0500", hash_original_field = "2B862720623879764FB3C1B9EA11B335", hash_generated_field = "539D32ACC3FFB5021AAD2744A6F8CCC3")
@@ -201,14 +185,12 @@ public Result timeToValues(int msec, float[] values) {
     protected void finalize() throws Throwable {
         nativeDestructor(native_instance);
     }
-
     
     public enum Result {
         NORMAL,
         FREEZE_START,
         FREEZE_END
     }
-
     
 }
 

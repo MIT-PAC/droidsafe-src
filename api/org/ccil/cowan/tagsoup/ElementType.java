@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class ElementType {
 
 	/**
@@ -40,7 +36,6 @@ public static String normalize(String value) {
 		return b.toString();
 		}
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.032 -0500", hash_original_field = "C9BF456096FD1EDE64799D87FE904F59", hash_generated_field = "8ED9B31DDDAAEF65D7BC0612CAD3C8F5")
-
 
 	private String theName;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.034 -0500", hash_original_field = "0D015F2E6E1B3535A1A820BF1CC408A7", hash_generated_field = "19C10BCA5601E77C9A4AD4EB7613A6D2")
@@ -95,9 +90,7 @@ public ElementType(String name, int model, int memberOf, int flags, Schema schem
 		theNamespace = namespace(name, false);
 		theLocalName = localName(name);
 		}
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:42.761 -0400", hash_original_method = "4A889710B67B4CF3F628D3945249B60A", hash_generated_method = "8036DA52FB4BA64617C0DA44519E5FF0")
     public String namespace(String name, boolean attribute) {
         addTaint(attribute);
@@ -239,7 +232,6 @@ public ElementType parent() {return theParent;}
     
 public Schema schema() {return theSchema;}
 
-
 	/**
 	Returns true if this element type can contain another element type.
 	That is, if any of the models in this element's model vector
@@ -253,7 +245,6 @@ public Schema schema() {return theSchema;}
 public boolean canContain(ElementType other) {
 		return (theModel & other.theMemberOf) != 0;
 		}
-
 
 	/**
 	Sets an attribute and its value into an AttributesImpl object.
@@ -335,7 +326,6 @@ public void setFlags(int flags) { theFlags = flags; }
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.096 -0500", hash_original_method = "DBB2D29F8F1C5757D222A7D837762BD5", hash_generated_method = "FF7F2BFA65D275731047E832D0945722")
     
 public void setParent(ElementType parent) { theParent = parent; }
-
     
 }
 

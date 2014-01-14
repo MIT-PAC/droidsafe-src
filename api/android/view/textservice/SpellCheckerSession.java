@@ -20,11 +20,6 @@ import com.android.internal.textservice.ISpellCheckerSessionListener;
 import com.android.internal.textservice.ITextServicesManager;
 import com.android.internal.textservice.ITextServicesSessionListener;
 
-
-
-
-
-
 public class SpellCheckerSession {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:47.624 -0500", hash_original_field = "B854932C3FAA74BA50573D25BC233557", hash_generated_field = "4A5080C7337BFD6CD37522D5F3819A2D")
 
@@ -37,11 +32,8 @@ public class SpellCheckerSession {
     public static final String SERVICE_META_DATA = "android.view.textservice.scs";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:47.632 -0500", hash_original_field = "C87712169D13F0899ECA905C6290F0FD", hash_generated_field = "9025B4E9C2670D7F8726B2FD382C594F")
 
-
-
     private static final int MSG_ON_GET_SUGGESTION_MULTIPLE = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:47.634 -0500", hash_original_field = "5EC361295D4DE6E08C73E803C0C8071F", hash_generated_field = "215C075D2F430DB54F33624A6C82B697")
-
 
     private  InternalListener mInternalListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:47.636 -0500", hash_original_field = "9F0D574F42B1A66ED917A76D81B45C2B", hash_generated_field = "8A90A5ED4421EBC06ED5ABE0A5E545CF")
@@ -55,15 +47,14 @@ public class SpellCheckerSession {
     private  SpellCheckerSessionListenerImpl mSpellCheckerSessionListenerImpl;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:47.643 -0500", hash_original_field = "03EC8BA9EB3BC10900413E5A37BB226E", hash_generated_field = "F9475A87EA4B82BC2225BE133534833A")
 
-
     private boolean mIsUsed;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:47.646 -0500", hash_original_field = "AB59BA8F975581732C2E1BE9C85F7479", hash_generated_field = "35B5C20FF96DA114561FBB67E788A05C")
 
     private SpellCheckerSessionListener mSpellCheckerSessionListener;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.370 -0400", hash_original_field = "F31C044CAEC6C694941601486644A901", hash_generated_field = "717D500B8155D92BDA4533EDDFF8F419")
 
-    private final Handler mHandler = new Handler() {        
-        @DSModeled(DSC.SAFE)
+    private final Handler mHandler = new Handler() {
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.370 -0400", hash_original_method = "D344BABB0D35462B4470990692E141D9", hash_generated_method = "68AF14A458510A80CC95B3C4EF0AAC31")
         @Override
         public void handleMessage(Message msg) {
@@ -72,13 +63,7 @@ public class SpellCheckerSession {
             
             addTaint(msg.getTaint());
             
-            
-                
-                    
-                    
-            
         }
-
         
 };
 
@@ -174,7 +159,6 @@ public void getSuggestions(
         mSpellCheckerSessionListenerImpl.getSuggestionsMultiple(
                 textInfos, suggestionsLimit, sequentialWords);
     }
-
     
     private static class SpellCheckerSessionListenerImpl extends ISpellCheckerSessionListener.Stub {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:47.675 -0500", hash_original_field = "AFA38DCC0A886D6BCF188E88DFC449A7", hash_generated_field = "BE9BEF2E614EC9685F259E9E598AC103")
@@ -194,7 +178,6 @@ public void getSuggestions(
 
         private Handler mHandler;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:47.687 -0500", hash_original_field = "52FE620C9038F34E9FF4A05B2EF3C4AA", hash_generated_field = "026997BD1DDC69199AFE6E4BEDBC44D9")
-
 
         private boolean mOpened;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:47.689 -0500", hash_original_field = "898B4AAF824B85CC3D632A615E2DF227", hash_generated_field = "E82EEC699A95F9ABD3944094C573C41F")
@@ -330,7 +313,6 @@ public void close() {
             }
             processOrEnqueueTask(new SpellCheckerParams(TASK_CLOSE, null, 0, false));
         }
-
         
         private static class SpellCheckerParams {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:47.701 -0500", hash_original_field = "AD192258EC939820B26091D9420D7F0C", hash_generated_field = "F09CAB29E7BAE43BF7E77A878670CC58")
@@ -357,7 +339,6 @@ public SpellCheckerParams(int what, TextInfo[] textInfos, int suggestionsLimit,
                 mSuggestionsLimit = suggestionsLimit;
                 mSequentialWords = sequentialWords;
             }
-
             
         }
 
@@ -410,8 +391,6 @@ private void processOrEnqueueTask(SpellCheckerParams scp) {
             }
         }
     }
-
-
     
     private static class InternalListener extends ITextServicesSessionListener.Stub {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:47.753 -0500", hash_original_field = "44A013E22F3C86FE53736C73370D7032", hash_generated_field = "4AF693C96983678B5C0CB0A41FA9F14D")
@@ -433,11 +412,8 @@ public InternalListener(SpellCheckerSessionListenerImpl spellCheckerSessionListe
             }
             mParentSpellCheckerSessionListenerImpl.onServiceConnected(session);
         }
-
         
     }
-
-
     
     public interface SpellCheckerSessionListener {
         

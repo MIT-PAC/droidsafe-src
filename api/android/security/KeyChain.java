@@ -33,10 +33,6 @@ import android.os.IBinder;
 import android.os.Looper;
 import android.os.RemoteException;
 
-
-
-
-
 public final class KeyChain {
 
     /**
@@ -248,9 +244,7 @@ private static X509Certificate toCertificate(byte[] bytes) {
             throw new AssertionError(e);
         }
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static KeyChainConnection bind(Context context) throws InterruptedException {
         if (context == null) {
             throw new NullPointerException("context == null");
@@ -297,9 +291,7 @@ private static void ensureNotOnMainThread(Context context) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:56.611 -0500", hash_original_field = "5ECC530E410AC78FFBA3C9F8F2A0C707", hash_generated_field = "DB4CC18D22127F06448B97E6BAD252CD")
 
-
     private static final String TAG = "KeyChain";
-
     
     private static class AliasResponse extends IKeyChainAliasCallback.Stub {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:56.657 -0500", hash_original_field = "9CC5013B5B2A8FBBD02E50EB12848B32", hash_generated_field = "3B8D8D094E0DD386140E6419313FE34D")
@@ -315,11 +307,8 @@ private AliasResponse(KeyChainAliasCallback keyChainAliasResponse) {
 @Override public void alias(String alias) {
             keyChainAliasResponse.alias(alias);
         }
-
         
     }
-
-
     
     public final static class KeyChainConnection implements Closeable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:56.682 -0500", hash_original_field = "571FE4403DDA9BF54693EBF4F0D6639D", hash_generated_field = "FFC623C2EA984831A33BAADC181E897E")
@@ -350,7 +339,6 @@ private KeyChainConnection(Context context,
 public IKeyChainService getService() {
             return service;
         }
-
         
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:56.614 -0500", hash_original_field = "99DAEC3D78ED5C74CEB7FF0ADC0BD30F", hash_generated_field = "2855009EDDCADE85D95C102D96763D94")

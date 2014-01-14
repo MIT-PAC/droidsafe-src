@@ -6,10 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.File;
 
-
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public class Zygote {
@@ -61,9 +57,7 @@ public static int fork() {
         postFork();
         return pid;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static int nativeFork() {
         return DSUtils.UNKNOWN_INT;
     }
@@ -97,9 +91,7 @@ public static int forkAndSpecialize(int uid, int gid, int[] gids,
         postFork();
         return pid;
     }
-
     
-    @DSModeled(DSC.BAN)
     public static int nativeForkAndSpecialize(int uid, int gid,
             int[] gids, int debugFlags, int[][] rlimits) {
         return DSUtils.UNKNOWN_INT;
@@ -166,9 +158,7 @@ public static int forkSystemServer(int uid, int gid, int[] gids,
         int debugFlags = enableDebugger ? DEBUG_ENABLE_DEBUGGER : 0;
         return forkAndSpecialize(uid, gid, gids, debugFlags, rlimits);
     }
-
     
-    @DSModeled(DSC.BAN)
     public static int nativeForkSystemServer(int uid, int gid,
             int[] gids, int debugFlags, int[][] rlimits,
             long permittedCapabilities, long effectiveCapabilities) {
@@ -203,9 +193,7 @@ public static void appendQuotedShellArgs(StringBuilder command, String[] args) {
             command.append(" '").append(arg.replace("'", "'\\''")).append("'");
         }
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeExecShell(String command) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:39.256 -0500", hash_original_field = "A21A7AB1279FC9EE4ADB7753815CF78F", hash_generated_field = "3C082D15F14125569237697FB7CFFEB4")

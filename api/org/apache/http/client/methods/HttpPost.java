@@ -11,7 +11,6 @@ import java.net.URI;
 public class HttpPost extends HttpEntityEnclosingRequestBase {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:44.325 -0500", hash_original_field = "C6D1332D7E2FBBF1CFD284F30D60129A", hash_generated_field = "93D97E8CFD3DD4E05FB1997B1AF38224")
 
-
     public final static String METHOD_NAME = "POST";
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:44.328 -0500", hash_original_method = "034A352FF9B05AAB848E440712ABE34B", hash_generated_method = "8731034ED4B7D7C5F2C0F73BBAB5A4A9")
@@ -26,9 +25,7 @@ public HttpPost(final URI uri) {
         super();
         setURI(uri);
     }
-
     
-    @DSModeled(DSC.SPEC)
 	public HttpPost(final String uri) {
         super();
         try {

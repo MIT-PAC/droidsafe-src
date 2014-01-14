@@ -7,28 +7,17 @@ import droidsafe.annotations.*;
 import java.io.FileInputStream;
 import java.io.InputStream;
 
-
-
-
-
-
 public class Movie {
-
     
-    @DSModeled(DSC.SAFE)
     public static Movie decodeStream(InputStream is) {
     	return new Movie(0);
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static Movie decodeByteArray(byte[] data, int offset,
                                                int length) {
     	return new Movie(0);
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeDestructor(int nativeMovie) {
     }
 
@@ -102,7 +91,6 @@ private Movie(int nativeMovie) {
     	return getTaintInt();
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:22.363 -0500", hash_original_method = "8413562E7FCFCF0CDE16790D77663C90", hash_generated_method = "163A2BE4D6CF08368E7D4C04CD05CF70")
     
     public boolean setTime(int relativeMilliseconds){
@@ -110,7 +98,6 @@ private Movie(int nativeMovie) {
     	addTaint(relativeMilliseconds);
     	return getTaintBoolean();
     }
-    
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:22.366 -0500", hash_original_method = "AB91E3BC6684B90AB29C38A2A4978664", hash_generated_method = "A9F06C005557C3E4313781A09EFCCECB")
     
@@ -121,7 +108,6 @@ private Movie(int nativeMovie) {
     	addTaint(y);
     	addTaint(paint.getTaint());
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:22.368 -0500", hash_original_method = "27AF6C33DD27E3F7A12E5155D66D2F71", hash_generated_method = "73ACCB1208EF0E906A08BDC98601C593")
     
@@ -139,7 +125,6 @@ public void draw(Canvas canvas, float x, float y) {
             super.finalize();
         }
     }
-
     
 }
 

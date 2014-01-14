@@ -6,12 +6,8 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.DroidSafeAndroidRuntime;
 
-
-
 public final class Message implements Parcelable {
-
     
-    @DSModeled(DSC.SAFE)
     public static Message obtain(){
 		// Original method
 		/*
@@ -143,9 +139,7 @@ public static Message obtain(Handler h, int what, int arg1, int arg2) {
 
         return m;
     }
-
     
-    @DSModeled(DSC.SAFE)
 	public static Message obtain(Handler h, int what, 
             int arg1, int arg2, Object obj){
 		// Original method
@@ -168,7 +162,6 @@ public static Message obtain(Handler h, int what, int arg1, int arg2) {
     /*package*/ static final int FLAGS_TO_CLEAR_ON_COPY_FROM = FLAGS_RESERVED | FLAG_IN_USE;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:32.305 -0500", hash_original_field = "FF70C662CB92BB1987F6CF4637424D6E", hash_generated_field = "D5B99AC4B86CE940DBBD3CF3FA1D542C")
 
-
     private static final Object sPoolSync = new Object();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:32.307 -0500", hash_original_field = "C3B98DB7170BE56DC73323FF4F23BC29", hash_generated_field = "3C48422D8BFA116BB318D4BB60A34BBD")
 
@@ -177,7 +170,6 @@ public static Message obtain(Handler h, int what, int arg1, int arg2) {
 
     private static int sPoolSize = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:32.312 -0500", hash_original_field = "3257F81BBFE679E3360141AA5EA9D518", hash_generated_field = "FB8E412EAB46029C42E8E38ED918C6D9")
-
 
     private static final int MAX_POOL_SIZE = 10;
     public static final Parcelable.Creator<Message> CREATOR
@@ -231,9 +223,7 @@ public Message[] newArray(int size) {
     
 public Message() {
     }
-
     
-    @DSModeled(DSC.SAFE)
     public void recycle(){
 		// Original method
 		/*
@@ -315,9 +305,7 @@ public Handler getTarget() {
 public Runnable getCallback() {
         return callback;
     }
-
     
-    @DSModeled(DSC.SAFE)
 	public Bundle getData(){
         return data = new Bundle();
 	}
@@ -356,9 +344,7 @@ public void setData(Bundle data) {
 public void sendToTarget() {
         target.sendMessage(this);
     }
-
     
-    @DSModeled(DSC.SAFE)
     void clearForRecycle(){
 		// Original method
 		/*
@@ -377,9 +363,7 @@ public void sendToTarget() {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     boolean isInUse(){
 		// Original method
 		/*
@@ -389,9 +373,7 @@ public void sendToTarget() {
 		*/
 		return getTaintBoolean();
 	}
-
     
-    @DSModeled(DSC.SAFE)
     void markInUse(){
 		// Original method
 		/*
@@ -401,9 +383,7 @@ public void sendToTarget() {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public String toString(){
 		// Original method
 		/*
@@ -413,9 +393,7 @@ public void sendToTarget() {
 		*/
 		return "";
 	}
-
     
-    @DSModeled(DSC.SAFE)
     String toString(long now){
 		// Original method
 		/*
@@ -443,9 +421,7 @@ public void sendToTarget() {
 		*/
 		return "";
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public int describeContents(){
 		// Original method
 		/*
@@ -455,9 +431,7 @@ public void sendToTarget() {
 		*/
 		return getTaintInt();
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public void writeToParcel(Parcel dest, int flags){
 		// Original method
         if (DroidSafeAndroidRuntime.control) {
@@ -485,9 +459,7 @@ public void sendToTarget() {
         dest.writeBundle(data);
         Messenger.writeMessengerOrNullToParcel(replyTo, dest);
 	}
-
     
-    @DSModeled(DSC.BAN)
     private final void readFromParcel(Parcel source){
         addTaint(source.getTaint());
 		// Original method

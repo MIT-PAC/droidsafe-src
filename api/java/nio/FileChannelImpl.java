@@ -40,10 +40,6 @@ import libcore.io.Libcore;
 import libcore.io.StructFlock;
 import libcore.util.MutableLong;
 
-
-
-
-
 final class FileChannelImpl extends FileChannel {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.512 -0500", hash_original_method = "C892B9EA3C98B5FB0FB2A090E1347610", hash_generated_method = "B32E4875AF7CFD2CDEA1E1EF5BB166E1")
@@ -70,13 +66,11 @@ static int calculateTotalRemaining(ByteBuffer[] buffers, int offset, int length,
         }
         return count;
     }
-
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.298 -0400", hash_original_field = "214EF2C30F414C8FDB98024F4777CF3E", hash_generated_field = "B942C76CBADD07E46C36C598F3CE8A93")
 
-    private static final Comparator<FileLock> LOCK_COMPARATOR = new Comparator<FileLock>() {        
-        @DSModeled(DSC.SAFE)
+    private static final Comparator<FileLock> LOCK_COMPARATOR = new Comparator<FileLock>() {
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:55.298 -0400", hash_original_method = "BAD31C1963B2F965BA94839291F4C17C", hash_generated_method = "09544778190497FCE22242F527472A85")
         public int compare(FileLock lock1, FileLock lock2) {
             long position1 = lock1.position();
@@ -86,15 +80,10 @@ static int calculateTotalRemaining(ByteBuffer[] buffers, int offset, int length,
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1230991941 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1230991941;
             
-            
-            
-            
         }
-
         
 };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.485 -0500", hash_original_field = "441430C2BFB387D21BEB92146729BB52", hash_generated_field = "6DF85966286B5A79BC125BD24D7FC97F")
-
 
     private  Object stream;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.487 -0500", hash_original_field = "DC35B29CA7114A0CAB311A30B93CBE5F", hash_generated_field = "B11DAE17AB1D35227E8CB61CED7BC01D")
@@ -606,7 +595,6 @@ private synchronized void addLock(FileLock lock) throws OverlappingFileLockExcep
         }
         locks.add(lock);
     }
-
     
     private static final class FileLockImpl extends FileLock {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.516 -0500", hash_original_field = "BCA505FA920127776E1B249264DA69AA", hash_generated_field = "4E02554B0BEBB8127D76AE5D5E6B5FAD")
@@ -636,7 +624,6 @@ public void release() throws IOException {
                 isReleased = true;
             }
         }
-
         
     }
 

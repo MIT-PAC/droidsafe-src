@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public abstract class Keyframe implements Cloneable {
 
     /**
@@ -132,7 +128,7 @@ public static Keyframe ofObject(float fraction) {
     boolean mHasValue = false;
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.760 -0400", hash_original_method = "59B475F2675EC1DB9A85E43A7051AABA", hash_generated_method = "59B475F2675EC1DB9A85E43A7051AABA")
-    @DSModeled(DSC.SAFE)
+    
     public Keyframe ()
     {
         //Synthesized constructor
@@ -234,7 +230,6 @@ public Class getType() {
     
 @Override
     public abstract Keyframe clone();
-
     
     static class ObjectKeyframe extends Keyframe {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.014 -0500", hash_original_field = "10C88B3F201F56410DE7B0BF9A3CF880", hash_generated_field = "10C88B3F201F56410DE7B0BF9A3CF880")
@@ -271,11 +266,8 @@ public void setValue(Object value) {
             kfClone.setInterpolator(getInterpolator());
             return kfClone;
         }
-
         
     }
-
-
     
     static class IntKeyframe extends Keyframe {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.028 -0500", hash_original_field = "177FAFFA7A38FCF6D55DEE4AFF0E6CEC", hash_generated_field = "177FAFFA7A38FCF6D55DEE4AFF0E6CEC")
@@ -327,11 +319,8 @@ public void setValue(Object value) {
             kfClone.setInterpolator(getInterpolator());
             return kfClone;
         }
-
         
     }
-
-
     
     static class FloatKeyframe extends Keyframe {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.046 -0500", hash_original_field = "61B2557CF01F8FBFCA3655F32AFF6E67", hash_generated_field = "61B2557CF01F8FBFCA3655F32AFF6E67")
@@ -383,11 +372,8 @@ public void setValue(Object value) {
             kfClone.setInterpolator(getInterpolator());
             return kfClone;
         }
-
         
     }
-
-
     
 }
 

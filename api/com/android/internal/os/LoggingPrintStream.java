@@ -16,14 +16,8 @@ import java.nio.charset.CodingErrorAction;
 import java.util.Formatter;
 import java.util.Locale;
 
-
-
-
-
-
 abstract class LoggingPrintStream extends PrintStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:52.889 -0500", hash_original_field = "93C0B127A393B45C7A17DFD8C2E2FAB1", hash_generated_field = "F25016152F6B827256AC69E5E852FFFB")
-
 
     private final StringBuilder builder = new StringBuilder();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:52.891 -0500", hash_original_field = "4062F5EEF61D4C15D41C846AC81C3BF7", hash_generated_field = "12A99FAB87A4DFA0636B74A246FED9BE")
@@ -37,10 +31,8 @@ abstract class LoggingPrintStream extends PrintStream {
     private CharsetDecoder decoder;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:52.934 -0500", hash_original_field = "E2783AE3DE7012EB53F254219F7F1CE2", hash_generated_field = "188D772938696150A06C76EB179BFA12")
 
-
     private final Formatter formatter = new Formatter(builder, null);
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.035 -0400", hash_original_method = "9EC321B6DFE561BEEE5F374ADAFA7A30", hash_generated_method = "0CF066A83124D2B7F58571604E6E54B0")
     protected  LoggingPrintStream() {
         super(new OutputStream() {
@@ -397,7 +389,6 @@ public void write(int oneByte) {
         flush(false);
         return this;
     }
-
     
 }
 

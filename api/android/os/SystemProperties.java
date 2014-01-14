@@ -5,48 +5,33 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public class SystemProperties {
-
-
-    @DSModeled(DSC.SAFE)
+    
     private static String native_get(String key) {
 		return new String();
 	}
-
     
-    @DSModeled(DSC.SAFE)
     private static String native_get(String key, String def) {
 		return new String();
 	}
-
     
-    @DSModeled(DSC.SAFE)
     private static int native_get_int(String key, int def) {
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_724743265 = DSUtils.UNKNOWN_INT;
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_724743265;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     private static long native_get_long(String key, long def) {
 		long var0F5264038205EDFB1AC05FBB0E8C5E94_1121680238 = DSUtils.UNKNOWN_LONG;
 		return var0F5264038205EDFB1AC05FBB0E8C5E94_1121680238;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean native_get_boolean(String key, boolean def) {
 		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_242286951 = DSUtils.UNKNOWN_BOOLEAN;
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_242286951;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_set(String key, String def) {
 	}
 

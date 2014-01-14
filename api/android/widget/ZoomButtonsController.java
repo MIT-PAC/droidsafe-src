@@ -26,22 +26,15 @@ import android.view.ViewRootImpl;
 import android.view.WindowManager;
 import android.view.WindowManager.LayoutParams;
 
-
-
-
-
 public class ZoomButtonsController implements View.OnTouchListener {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:26.753 -0500", hash_original_field = "088CEC03F96A186C9069CEBD593BFDAE", hash_generated_field = "87F8ED6A4B66277018F995319915D6F8")
-
 
     private static final String TAG = "ZoomButtonsController";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:26.755 -0500", hash_original_field = "FF3835BE3D163537015161673097AB27", hash_generated_field = "19FF76A0C8B907CD835165D9C0A3D60D")
 
-
     private static final int ZOOM_CONTROLS_TIMEOUT =
             (int) ViewConfiguration.getZoomControlsTimeout();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:26.757 -0500", hash_original_field = "246A69F95DD6398F549FCFA1CC6E0D81", hash_generated_field = "EB3746A9386522BF21631ADC5B5B668F")
-
 
     private static final int ZOOM_CONTROLS_TOUCH_PADDING = 20;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:26.807 -0500", hash_original_field = "2C52CA783EAD9EC1EA9D3D67B3B8575E", hash_generated_field = "29D97A85E5F3DFC1C5D054BECA9FCF49")
@@ -57,7 +50,6 @@ public class ZoomButtonsController implements View.OnTouchListener {
 
     private int mTouchPaddingScaledSq;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:26.761 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
-
 
     private  Context mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:26.763 -0500", hash_original_field = "83A062836C11DD52DC32F4325712F233", hash_generated_field = "3C750A4AE06B71AF3A05B7797C7182A4")
@@ -83,7 +75,6 @@ public class ZoomButtonsController implements View.OnTouchListener {
     private final int[] mContainerRawLocation = new int[2];
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:26.779 -0500", hash_original_field = "BD6422D8D3D68472890BF6BE2F946030", hash_generated_field = "EA1868BE7D996683F2989202D2AC4DDD")
 
-
     private ZoomControls mControls;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:26.781 -0500", hash_original_field = "892FB1636B3A1011EB3003C5C76B1100", hash_generated_field = "4214AAFC096B21883792ABCE78232C36")
 
@@ -99,13 +90,11 @@ public class ZoomButtonsController implements View.OnTouchListener {
     private boolean mIsVisible;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:26.790 -0500", hash_original_field = "1732EB32F2D77CCA26590AEEA670A175", hash_generated_field = "A498F2A4744F31D22F9C4ABEBB254F2F")
 
-
     private final Rect mTempRect = new Rect();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:26.792 -0500", hash_original_field = "EC57765186F8CE1B0FE7E00067E34101", hash_generated_field = "37699E1557DE199CB1E3D694670D31BB")
 
     private final int[] mTempIntArray = new int[2];
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:26.795 -0500", hash_original_field = "A4F4373AE8BF6262F07EAE3E5C5E7C9F", hash_generated_field = "69BC292DD0AFDA8A4F57DC4BCBE69348")
-
 
     private OnZoomListener mCallback;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:26.797 -0500", hash_original_field = "532B9FB72EF88B924FD76ACB5F32FB89", hash_generated_field = "1ED441E7D4D48C31070345ADC5874E3A")
@@ -113,13 +102,12 @@ public class ZoomButtonsController implements View.OnTouchListener {
     private Runnable mPostedVisibleInitializer;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:26.799 -0500", hash_original_field = "77631D28C931EDEC89D2F849FC747650", hash_generated_field = "314D614F45BCFBC7FD4D2764A847AE51")
 
-
     private final IntentFilter mConfigurationChangedFilter =
             new IntentFilter(Intent.ACTION_CONFIGURATION_CHANGED);
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.332 -0400", hash_original_field = "F7238A3294ACE5864BA2567DBF187A8E", hash_generated_field = "E4D2EB0B4308FE203FF175FADAC6AA6E")
 
-    private final BroadcastReceiver mConfigurationChangedReceiver = new BroadcastReceiver() {        
-        @DSModeled(DSC.SPEC)
+    private final BroadcastReceiver mConfigurationChangedReceiver = new BroadcastReceiver() {
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.332 -0400", hash_original_method = "CBA4474B6B69D8EAAD5A5C11EB839616", hash_generated_method = "F83C34B85F2FCA1335A3AC869BD1F32D")
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -129,55 +117,31 @@ public class ZoomButtonsController implements View.OnTouchListener {
             addTaint(context.getTaint());
             addTaint(intent.getTaint());
             
-            
-            
-            
         }
-
         
 };
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.332 -0400", hash_original_field = "E7709E2A554C5D6ACC0DCFB2BB1FB7B7", hash_generated_field = "F70694DA0401A421E844EF7D59C877AC")
 
-    private final Handler mHandler = new Handler() {        
-        @DSModeled(DSC.SAFE)
+    private final Handler mHandler = new Handler() {
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.332 -0400", hash_original_method = "08D68F0747526F6C2171A582DECDF849", hash_generated_method = "CFC43127320AFEBB55812F13C5DF794D")
         @Override
         public void handleMessage(Message msg) {
             
             onPostConfigurationChanged();
             
-            
             setVisible(false);
-            
             
             {
                 boolean var2D6B4C7133C3E09470E253CD882AC4AE_619523215 = (mOwnerView.getWindowToken() == null);
                 {
                     setVisible(true);
                 } 
-            } 
+            }
             
             addTaint(msg.getTaint());
             
-            
-                
-                    
-                    
-                
-                    
-                    
-                
-                    
-                        
-                                
-                                
-                    
-                        
-                    
-                    
-            
         }
-
         
 };
 
@@ -529,7 +493,6 @@ private boolean onContainerKey(KeyEvent event) {
             return true;
         }
     }
-
     
     private class Container extends FrameLayout {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:26.886 -0500", hash_original_method = "F501EF92597324297985E451C1487263", hash_generated_method = "3320562F774FDE06D2AD489A63E04674")
@@ -550,17 +513,12 @@ public Container(Context context) {
         public boolean dispatchKeyEvent(KeyEvent event) {
             return onContainerKey(event) ? true : super.dispatchKeyEvent(event);
         }
-
         
     }
-
-
     
     public interface OnZoomListener {
-
         
         void onVisibilityChanged(boolean visible);
-
         
         void onZoom(boolean zoomIn);
     }

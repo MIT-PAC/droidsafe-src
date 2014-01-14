@@ -8,8 +8,6 @@ import droidsafe.annotations.*;
 import android.graphics.drawable.Drawable;
 import android.util.TypedValue;
 
-
-
 public class TypedArray {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:01.140 -0500", hash_original_field = "8C221FB485568FEFC5ABDDF092AD743A", hash_generated_field = "8872E9F5EB468B447DB47434F2C2FEC9")
 
@@ -39,9 +37,7 @@ public class TypedArray {
 		mLength = len;
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public int length(){
 		return getTaintInt();
 		// Original method
@@ -51,9 +47,7 @@ public class TypedArray {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public int getIndexCount(){
 		// Original method
 		/*
@@ -63,9 +57,7 @@ public class TypedArray {
 		*/
 		return getTaintInt();
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public int getIndex(int at){
 		// Original method
 		/*
@@ -84,9 +76,7 @@ public class TypedArray {
 public Resources getResources() {
         return mResources;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public CharSequence getText(int index){
         String str = new String();
         str.addTaint(getTaint());
@@ -113,9 +103,7 @@ public Resources getResources() {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public String getString(int index){
         String str = new String();
         str.addTaint(getTaint());
@@ -143,9 +131,7 @@ public Resources getResources() {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public String getNonResourceString(int index){
         String str = new String();
         str.addTaint(getTaint());
@@ -167,9 +153,7 @@ public Resources getResources() {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.BAN)
     public String getNonConfigurationString(int index, int allowedChangingConfigs){
         String str = new String();
         str.addTaint(getTaint());
@@ -177,7 +161,6 @@ public Resources getResources() {
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 	}
-
     
     public boolean getBoolean(int index, boolean defValue){
 		return getTaintBoolean();
@@ -205,9 +188,7 @@ public Resources getResources() {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public int getInt(int index, int defValue){
 		return getTaintInt();
 		// Original method
@@ -234,23 +215,18 @@ public Resources getResources() {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public float getFloat(int index, float defValue){
 		return getTaintFloat();
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public int getColor(int index, int defValue){
 		return getTaintInt();
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 	}
-
     
     public ColorStateList getColorStateList(int index){
 		return mResources.loadColorStateList(mValue, mValue.resourceId);
@@ -265,9 +241,7 @@ public Resources getResources() {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public int getInteger(int index, int defValue){
 		return getTaintInt();
 		// Original method
@@ -287,9 +261,7 @@ public Resources getResources() {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public float getDimension(int index, float defValue){
 		return getTaintFloat();
 		// Original method
@@ -309,9 +281,7 @@ public Resources getResources() {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public int getDimensionPixelOffset(int index, int defValue){
 		return getTaintInt();
 		// Original method
@@ -331,9 +301,7 @@ public Resources getResources() {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public int getDimensionPixelSize(int index, int defValue){
 		return getTaintInt();
 		// Original method
@@ -353,9 +321,7 @@ public Resources getResources() {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public int getLayoutDimension(int index, String name){
 		return getTaintInt();
 		// Original method
@@ -376,9 +342,7 @@ public Resources getResources() {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public int getLayoutDimension(int index, int defValue){
 		return getTaintInt();
 		// Original method
@@ -398,9 +362,7 @@ public Resources getResources() {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public float getFraction(int index, int base, int pbase, float defValue){
 		return getTaintFloat();
 		// Original method
@@ -420,9 +382,7 @@ public Resources getResources() {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public int getResourceId(int index, int defValue){
 		return getTaintInt();
 		// Original method
@@ -440,9 +400,7 @@ public Resources getResources() {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public Drawable getDrawable(int index){
 		return mResources.loadDrawable(mValue, mValue.resourceId);
 		// Original method
@@ -465,9 +423,7 @@ public Resources getResources() {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public CharSequence[] getTextArray(int index){
 		return mResources.getTextArray(mValue.resourceId);
 		// Original method
@@ -505,9 +461,7 @@ public Resources getResources() {
 public boolean getValue(int index, TypedValue outValue) {
         return getValueAt(index*AssetManager.STYLE_NUM_ENTRIES, outValue);
     }
-
     
-    @DSModeled(DSC.SAFE)
     public boolean hasValue(int index){
 		return getTaintBoolean();
 		// Original method
@@ -520,9 +474,7 @@ public boolean getValue(int index, TypedValue outValue) {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public TypedValue peekValue(int index){
 		return mValue;
 		// Original method
@@ -536,9 +488,7 @@ public boolean getValue(int index, TypedValue outValue) {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public String getPositionDescription(){
         String str = new String();
         str.addTaint(getTaint());
@@ -550,9 +500,7 @@ public boolean getValue(int index, TypedValue outValue) {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public void recycle(){
 		mResources.mCachedStyledAttributes = this;
 		// Original method
@@ -569,9 +517,7 @@ public boolean getValue(int index, TypedValue outValue) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.BAN)
     private boolean getValueAt(int index, TypedValue outValue){
 		outValue.type = 0;
         outValue.data = getTaintInt();
@@ -600,9 +546,7 @@ public boolean getValue(int index, TypedValue outValue) {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.BAN)
     private CharSequence loadStringValueAt(int index){
         String str = new String();
         str.addTaint(getTaint());
@@ -624,9 +568,7 @@ public boolean getValue(int index, TypedValue outValue) {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public String toString(){
         String str = new String();
         str.addTaint(getTaint());
@@ -638,7 +580,6 @@ public boolean getValue(int index, TypedValue outValue) {
     }
 		*/
 	}
-
     
 }
 

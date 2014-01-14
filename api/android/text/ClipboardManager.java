@@ -5,12 +5,8 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
 public abstract class ClipboardManager {
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.480 -0400", hash_original_method = "47A2DF210DD8BA7527F7EBA65DD74954", hash_generated_method = "47A2DF210DD8BA7527F7EBA65DD74954")
     public ClipboardManager ()
     {
@@ -38,7 +34,6 @@ public abstract void setText(CharSequence text);
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:04.652 -0500", hash_original_method = "FEE95F46D40A81ECD11480FFA4D48D25", hash_generated_method = "62298B6995888C651FA05A1C1F62E311")
     
 public abstract boolean hasText();
-
     
 }
 

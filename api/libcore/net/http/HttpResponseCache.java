@@ -43,10 +43,6 @@ import libcore.io.DiskLruCache;
 import libcore.io.IoUtils;
 import libcore.io.Streams;
 
-
-
-
-
 public final class HttpResponseCache extends ResponseCache {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:31.353 -0500", hash_original_field = "9F0359D8E3DE91D67F47C405F85D1EB0", hash_generated_field = "9B09D8AD9E5D9CB9C068F9CC40FB0395")
 
@@ -61,7 +57,6 @@ public final class HttpResponseCache extends ResponseCache {
 
     private static final int ENTRY_COUNT = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:31.364 -0500", hash_original_field = "49D67DE5BA2EAC224ECEF2E34936724A", hash_generated_field = "8D7B3AC911505868AEA4010DF26181F8")
-
 
     private  DiskLruCache cache;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:31.367 -0500", hash_original_field = "C96DD4DFC6FCD5D3BE844C1B2EF8E179", hash_generated_field = "9451CF6EB93EE29D841188FD01582E44")
@@ -250,7 +245,6 @@ synchronized void trackResponse(ResponseSource source) {
             break;
         }
     }
-
     
     private final class CacheRequestImpl extends CacheRequest {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:31.425 -0500", hash_original_field = "217E4FF58E41077ED09A02E8DA387876", hash_generated_field = "473D8A10E05573BC7984E247163C640F")
@@ -308,11 +302,8 @@ public CacheRequestImpl(final DiskLruCache.Editor editor) throws IOException {
 @Override public OutputStream getBody() throws IOException {
             return body;
         }
-
         
     }
-
-
     
     private static final class Entry {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:31.449 -0500", hash_original_field = "EDEBE52DCF191A03299D02F6C51FE39B", hash_generated_field = "26AD8F31DE2ECD559067F2936328A369")
@@ -474,9 +465,7 @@ public void writeTo(DiskLruCache.Editor editor) throws IOException {
             }
             writer.close();
         }
-
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.410 -0400", hash_original_method = "03191EC96D9A5CD24E720BDBCBE04A2D", hash_generated_method = "783E1F184BA0D6307BCB01A56B82F777")
         private boolean isHttps() {
             boolean var84590F99892941EEBA41F98A1FDD816B_1813402239 = (uri.startsWith("https://"));
@@ -547,7 +536,6 @@ public boolean matches(URI uri, String requestMethod,
                     && new ResponseHeaders(uri, responseHeaders)
                             .varyMatches(varyHeaders.toMultimap(), requestHeaders);
         }
-
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.414 -0400", hash_original_method = "89EB7BC0F9D5CDAB04210B055A77E99D", hash_generated_method = "8247E092C8F51A634726D31341AA8AE2")
         public CacheResponse newCacheResponse(final InputStream in) {
@@ -577,9 +565,7 @@ CacheResponse var290A606B2E179EF78FC04FCFE9A15A2D_753268352 =             new Ca
                 //}
             //};
         }
-
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.417 -0400", hash_original_method = "C9B15DB0F46F05D49B15F04525C28EC8", hash_generated_method = "FBCA15F19E431977CCDD32E59F049B8F")
         public SecureCacheResponse newSecureCacheResponse(final InputStream in) {
             addTaint(in.getTaint());
@@ -593,7 +579,7 @@ Map<String, List<String>> var0919DB83F382E960ABF31AD5831D30F0_1346796912 =      
                 // ---------- Original Method ----------
                 //return responseHeaders.toMultimap();
             }
-            @DSModeled(DSC.SAFE)
+            
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.416 -0400", hash_original_method = "6B131586E425295B4C3DC3AE43124EB2", hash_generated_method = "E0EC3166B0280ABC71C86E6E3C87F45B")
             @Override
             public InputStream getBody() {
@@ -652,7 +638,6 @@ InputStream var091D3B9C0C9CE73F019D8ED2F738F1B8_1152990868 =                 in;
             // ---------- Original Method ----------
             // Original Method Too Long, Refer to Original Implementation
         }
-
         
     }
 

@@ -25,17 +25,11 @@ import com.android.internal.telephony.gsm.GsmSMSDispatcher;
 import com.android.internal.telephony.gsm.SimCard;
 import com.android.internal.telephony.ims.IsimRecords;
 
-
-
-
-
-
 public class CDMALTEPhone extends CDMAPhone {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:52.624 -0500", hash_original_field = "DB10E3AE28CC9996A816C3CCD7216A83", hash_generated_field = "37C2AB96DD7CCDC96FF809DAC1A6D712")
 
     static final String LOG_TAG = "CDMA";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:52.627 -0500", hash_original_field = "95D5733A0C83DB3D047D109C028C9F02", hash_generated_field = "B7707D757F0604821CCAF673B2122320")
-
 
     private static final boolean DBG = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:52.629 -0500", hash_original_field = "27F27AE32D7151DB014BA8DF2F1FF61C", hash_generated_field = "27F27AE32D7151DB014BA8DF2F1FF61C")
@@ -266,7 +260,6 @@ private void handleSetSelectNetwork(AsyncResult ar) {
     public void getAvailableNetworks(Message response) {
         mCM.getAvailableNetworks(response);
     }
-
     
     private static class NetworkSelectMessage {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:52.632 -0500", hash_original_field = "917CC93E170BCDBC06457BE4F50622BF", hash_generated_field = "81254C6170A9E52E0AD3BB76A481765A")
@@ -279,13 +272,11 @@ private void handleSetSelectNetwork(AsyncResult ar) {
 
         public String operatorAlphaLong;
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:21.873 -0400", hash_original_method = "3039E12EC83A8AA31D55051619D54055", hash_generated_method = "3039E12EC83A8AA31D55051619D54055")
         public NetworkSelectMessage ()
         {
             //Synthesized constructor
         }
-
 
     }
 

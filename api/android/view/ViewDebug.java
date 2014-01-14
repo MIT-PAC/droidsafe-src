@@ -50,10 +50,6 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.Printer;
 
-
-
-
-
 public class ViewDebug {
 
     /**
@@ -98,7 +94,7 @@ public static void startLooperProfiling(String path, FileDescriptor fileDescript
             sLooperProfilerStorage.set(profiler);
             Looper.myLooper().setMessageLogging(profiler);
         }
-    }    
+    }
 
     /**
      * Stops profiling the looper associated with the current thread.
@@ -508,9 +504,7 @@ private static void profileViewAndChildren(final View view, BufferedWriter out)
             throws IOException {
         profileViewAndChildren(view, out, true);
     }
-
     
-    @DSModeled(DSC.BAN)
     private static void profileViewAndChildren(final View view, BufferedWriter out, boolean root) throws IOException {
         long durationMeasure =
                 (root || (view.mPrivateFlags & View.MEASURED_DIMENSION_SET) != 0) ? profileViewOperation(
@@ -561,7 +555,7 @@ public Void[] pre() {
 public void run(Void... data) {
                                 view.layout(view.mLeft, view.mTop, view.mRight, view.mBottom);
                             }
-                            @DSModeled(DSC.SAFE)
+                            
         public void post(Void... data) {
                             }
                         }) : 0;
@@ -617,9 +611,7 @@ public void post(Object... data) {
             }
         }
     }
-
     
-    @DSModeled(DSC.BAN)
     private static <T> long profileViewOperation(View view, final ViewOperation<T> operation) {
         final CountDownLatch latch = new CountDownLatch(1);
         final long[] duration = new long[1];
@@ -1450,7 +1442,6 @@ public static void dumpCapturedView(String tag, Object view) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:08.503 -0500", hash_original_field = "E0F8EECB7803DD9B254D198BAE9FE948", hash_generated_field = "86781DCF86035685DDB38D2649CD3D04")
 
     public static final String CONSISTENCY_LOG_TAG = "ViewConsistency";
-
     
     public enum HierarchyTraceType {
         INVALIDATE,
@@ -1462,7 +1453,6 @@ public static void dumpCapturedView(String tag, Object view) {
         DRAW,
         BUILD_CACHE
     }
-
     
     public enum RecyclerTraceType {
         NEW_VIEW,
@@ -1472,7 +1462,6 @@ public static void dumpCapturedView(String tag, Object view) {
         MOVE_TO_SCRAP_HEAP,
         MOVE_FROM_ACTIVE_TO_SCRAP_HEAP
     }
-
     
     private static class RecyclerTrace {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:08.583 -0500", hash_original_field = "4B0F9FA9FEA20A2DC0BDB6BF9AE10F0A", hash_generated_field = "ED83C2F54CE383C7D62E29BD1035B9D3")
@@ -1488,17 +1477,13 @@ public static void dumpCapturedView(String tag, Object view) {
 
         public int indexOnScreen;
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:46.273 -0400", hash_original_method = "ED320AF13EB079D56E1BB2CD418F0F12", hash_generated_method = "ED320AF13EB079D56E1BB2CD418F0F12")
         public RecyclerTrace ()
         {
             //Synthesized constructor
         }
 
-
     }
-
-
     
     private static class LooperProfiler implements Looper.Profiler, Printer {
         
@@ -1615,7 +1600,6 @@ private static void startSection(String name, DataOutputStream out) throws IOExc
         private static final String LOG_TAG = "LooperProfiler";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:08.620 -0500", hash_original_field = "7F34A9105007E9D8F5B158EB905C7928", hash_generated_field = "871E2F94CCC725B7827319EDDC137722")
 
-
         private static final int TRACE_VERSION_NUMBER = 3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:08.623 -0500", hash_original_field = "961FB5BA3D2D3C556EAE74C36D7F7D0B", hash_generated_field = "A1F6BAEF2E989EE3FA0925E45A3CFD13")
 
@@ -1631,17 +1615,14 @@ private static void startSection(String name, DataOutputStream out) throws IOExc
         private static final short HEADER_RECORD_SIZE = (short) 14;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:08.633 -0500", hash_original_field = "A1B1BA0FFBBD3E622916C83AF99DD880", hash_generated_field = "907124E57E6B072BDF3C9759E9F1A9DD")
 
-
         private  long mTraceWallStart;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:08.636 -0500", hash_original_field = "DD6CF0B4DED058FC0C10C17DA0C798D0", hash_generated_field = "9A8A7790571BC817117ED4A4028799A7")
 
         private  long mTraceThreadStart;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:08.638 -0500", hash_original_field = "0EBBF3DB14DE2D367789C49DCF36DE5A", hash_generated_field = "D18A086A815A6770FBDC3F49B10DB707")
-
         
         private final ArrayList<Entry> mTraces = new ArrayList<Entry>(512);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:08.641 -0500", hash_original_field = "A12626BB825790082957D44B5022B42F", hash_generated_field = "DE94B5ABFDFE10D1547A66120C45E13B")
-
 
         private final HashMap<String, Integer> mTraceNames = new HashMap<String, Integer>(32);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:08.643 -0500", hash_original_field = "006441F191C20752C0B905F5AF3E94DB", hash_generated_field = "DA1910C6BCE975350BE95871C9917550")
@@ -1649,12 +1630,10 @@ private static void startSection(String name, DataOutputStream out) throws IOExc
         private int mTraceId = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:08.646 -0500", hash_original_field = "1D4D0FAE668EECF10ED75DDC284FFC16", hash_generated_field = "6FACC3B41470C8330B5F0BB43FA7FD9F")
 
-
         private  String mPath;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:08.648 -0500", hash_original_field = "E57966AB286B8F6F75FB7E135DD8912B", hash_generated_field = "2EB80060CD9954C0E91A29E7A228F077")
 
         private ParcelFileDescriptor mFileDescriptor;
-
         
         static class Entry {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:08.689 -0500", hash_original_field = "C68363F70ADCAFF99F59BB383A8DC09F", hash_generated_field = "C68363F70ADCAFF99F59BB383A8DC09F")
@@ -1678,7 +1657,6 @@ private static void startSection(String name, DataOutputStream out) throws IOExc
             {
                 //Synthesized constructor
             }
-
 
         }
 
@@ -1771,28 +1749,20 @@ private void saveTraces() {
             }
         }
     }
-
-
     
     @Target({ ElementType.FIELD, ElementType.METHOD }) @Retention(RetentionPolicy.RUNTIME) public @interface ExportedProperty {
         
         boolean resolveId() default false;
-
         
         IntToString[] mapping() default { };
-
         
         IntToString[] indexMapping() default { };
-
         
         FlagToString[] flagMapping() default { };
-
         
         boolean deepExport() default false;
-
         
         String prefix() default "";
-
         
         String category() default "";
     }
@@ -1800,7 +1770,6 @@ private void saveTraces() {
     @Target({ ElementType.TYPE }) @Retention(RetentionPolicy.RUNTIME) public @interface IntToString {
         
         int from();
-
         
         String to();
     }
@@ -1808,13 +1777,10 @@ private void saveTraces() {
     @Target({ ElementType.TYPE }) @Retention(RetentionPolicy.RUNTIME) public @interface FlagToString {
         
         int mask();
-
         
         int equals();
-
         
         String name();
-
         
         boolean outputIf() default true;
     }
@@ -1859,7 +1825,6 @@ private void saveTraces() {
     public static boolean consistencyCheckEnabled = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:08.539 -0500", hash_original_field = "B78D7B92E0FFF1F493BFAB8DD20239AA", hash_generated_field = "FCDC3479819F1A0FA21DD7CF7F282FA5")
 
-
     private static HashMap<Class<?>, Method[]> mCapturedViewMethodsForClasses = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:08.542 -0500", hash_original_field = "214827A00EFCD02B5C6496D3C38EC27E", hash_generated_field = "38EEBA983D87300AC01AE0B6BEB32865")
 
@@ -1868,7 +1833,6 @@ private void saveTraces() {
 
     private static final int CAPTURE_TIMEOUT = 4000;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:08.547 -0500", hash_original_field = "6BE18B186AD3C45391818965ADA3F639", hash_generated_field = "657ACDB64251CC9C5F5560318566FA83")
-
 
     private static final String REMOTE_COMMAND_CAPTURE = "CAPTURE";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:08.549 -0500", hash_original_field = "EEB633F6AC583AB46EDFE7FE0183B06F", hash_generated_field = "E4ABFC964C0C91DA46FEC266E2489143")
@@ -1891,7 +1855,6 @@ private void saveTraces() {
     private static final String REMOTE_COMMAND_OUTPUT_DISPLAYLIST = "OUTPUT_DISPLAYLIST";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:08.564 -0500", hash_original_field = "90244F6B265B81D9B87ECC0E60F60010", hash_generated_field = "381B34CC38C521D55D8B29707BF77CF1")
 
-
     private static HashMap<Class<?>, Field[]> sFieldsForClasses;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:08.567 -0500", hash_original_field = "E06DC899D5EC6C09A8B33392387AF1FE", hash_generated_field = "FDF3063B8421F5EF4C9F31EF9C7D1386")
 
@@ -1901,7 +1864,6 @@ private void saveTraces() {
     private static HashMap<AccessibleObject, ExportedProperty> sAnnotations;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:08.573 -0500", hash_original_field = "09F8E575983F8CB8B08B3B2F489D6E79", hash_generated_field = "3DAFD8507B12D2E4DBAAF387421DFD6D")
 
-
     private static BufferedWriter sHierarchyTraces;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:08.576 -0500", hash_original_field = "2AC307A03BE397A4FB457E3BDFB5C463", hash_generated_field = "0947A593046A3A68DF32E94CC1CCF03B")
 
@@ -1910,7 +1872,6 @@ private void saveTraces() {
 
     private static String sHierarchyTracePrefix;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:08.594 -0500", hash_original_field = "E4505399391D75884332FEC226A91972", hash_generated_field = "87511F78472767C36F509F6D81A67344")
-
 
     private static View sRecyclerOwnerView;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:08.596 -0500", hash_original_field = "9CE9AA4855CAE8D30C7BA11711151D60", hash_generated_field = "C046D203CE4AB5C299FBF2864E9A2CB9")
@@ -1923,7 +1884,6 @@ private void saveTraces() {
 
     private static String sRecyclerTracePrefix;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:08.605 -0500", hash_original_field = "419B0C15698E313BD38E6CF5F93C4F0B", hash_generated_field = "92F7912ACE2DEBF639BEDECEBAF815D3")
-
 
     private static final ThreadLocal<LooperProfiler> sLooperProfilerStorage =
             new ThreadLocal<LooperProfiler>();

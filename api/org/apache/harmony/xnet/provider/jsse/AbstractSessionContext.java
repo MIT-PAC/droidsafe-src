@@ -23,11 +23,6 @@ import javax.net.ssl.SSLSessionContext;
 
 import org.apache.harmony.security.provider.cert.X509CertImpl;
 
-
-
-
-
-
 abstract class AbstractSessionContext implements SSLSessionContext {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:11.739 -0500", hash_original_method = "3A6F397C175F2D6C1475AA31D913F50C", hash_generated_method = "C4AF5DE8488C50BF001E56A5628D4AAD")
@@ -40,19 +35,17 @@ static void log(Throwable t) {
     static final int OPEN_SSL = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:11.684 -0500", hash_original_field = "3B2E03B648ADD645927E4F8A923F302D", hash_generated_field = "7A30EE95E508037D9FEE1354CEFAC193")
 
-
     volatile int maximumSize;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:11.686 -0500", hash_original_field = "884A23FAAA5E3251B7E5FE4A3FE97CA1", hash_generated_field = "66A9610107B22FE560E0442C7F3278C6")
 
     volatile int timeout;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:11.688 -0500", hash_original_field = "252155234ECFEA9B5523A07896E7063B", hash_generated_field = "ECA4AAD8222BFFC05678F5BBEB12C033")
 
-
     final int sslCtxNativePointer = NativeCrypto.SSL_CTX_new();
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.584 -0400", hash_original_field = "BA23DE027615123BDB3690D617C0A3EB", hash_generated_field = "5BF57BED3AD0AD3FD0B289A8ACE951DB")
 
-    private final Map<ByteArray, SSLSession> sessions = new LinkedHashMap<ByteArray, SSLSession>() {        
-        @DSModeled(DSC.SAFE)
+    private final Map<ByteArray, SSLSession> sessions = new LinkedHashMap<ByteArray, SSLSession>() {
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.584 -0400", hash_original_method = "50C1CC90C9158408C79488CFE262DC7E", hash_generated_method = "BAE616B55944ED5CF16B043FC04F885E")
         @Override
         protected boolean removeEldestEntry(
@@ -62,9 +55,7 @@ static void log(Throwable t) {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_116793199 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_116793199;
             
-            
         }
-
         
 };
 

@@ -5,981 +5,602 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public class GLES20 {
-
-
-    @DSModeled(DSC.SAFE)
+    
     private static void _nativeClassInit() {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glActiveTexture(int texture) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glAttachShader(int program, int shader) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glBindAttribLocation(int program, int index, String name) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glBindBuffer(int target, int buffer) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glBindFramebuffer(int target, int framebuffer) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glBindRenderbuffer(int target, int renderbuffer) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glBindTexture(int target, int texture) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glBlendColor(float red, float green, float blue, float alpha) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glBlendEquation(int mode) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glBlendEquationSeparate(int modeRGB, int modeAlpha) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glBlendFunc(int sfactor, int dfactor) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glBlendFuncSeparate(int srcRGB, int dstRGB, int srcAlpha, int dstAlpha) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glBufferData(int target, int size, java.nio.Buffer data, int usage) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glBufferSubData(int target, int offset, int size, java.nio.Buffer data) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static int glCheckFramebufferStatus(int target) {
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2143838249 = DSUtils.UNKNOWN_INT;
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2143838249;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glClear(int mask) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glClearColor(float red, float green, float blue, float alpha) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glClearDepthf(float depth) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glClearStencil(int s) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glColorMask(boolean red, boolean green, boolean blue, boolean alpha) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glCompileShader(int shader) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glCompressedTexImage2D(int target, int level, int internalformat, int width, int height, int border, int imageSize, java.nio.Buffer data) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glCompressedTexSubImage2D(int target, int level, int xoffset, int yoffset, int width, int height, int format, int imageSize, java.nio.Buffer data) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glCopyTexImage2D(int target, int level, int internalformat, int x, int y, int width, int height, int border) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glCopyTexSubImage2D(int target, int level, int xoffset, int yoffset, int x, int y, int width, int height) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static int glCreateProgram() {
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_519833282 = DSUtils.UNKNOWN_INT;
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_519833282;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static int glCreateShader(int type) {
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1748292391 = DSUtils.UNKNOWN_INT;
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1748292391;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glCullFace(int mode) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glDeleteBuffers(int n, int[] buffers, int offset) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glDeleteBuffers(int n, java.nio.IntBuffer buffers) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glDeleteFramebuffers(int n, int[] framebuffers, int offset) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glDeleteFramebuffers(int n, java.nio.IntBuffer framebuffers) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glDeleteProgram(int program) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glDeleteRenderbuffers(int n, int[] renderbuffers, int offset) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glDeleteRenderbuffers(int n, java.nio.IntBuffer renderbuffers) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glDeleteShader(int shader) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glDeleteTextures(int n, int[] textures, int offset) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glDeleteTextures(int n, java.nio.IntBuffer textures) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glDepthFunc(int func) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glDepthMask(boolean flag) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glDepthRangef(float zNear, float zFar) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glDetachShader(int program, int shader) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glDisable(int cap) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glDisableVertexAttribArray(int index) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glDrawArrays(int mode, int first, int count) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glDrawElements(int mode, int count, int type, int offset) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glDrawElements(int mode, int count, int type, java.nio.Buffer indices) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glEnable(int cap) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glEnableVertexAttribArray(int index) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glFinish() {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glFlush() {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glFramebufferRenderbuffer(int target, int attachment, int renderbuffertarget, int renderbuffer) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glFramebufferTexture2D(int target, int attachment, int textarget, int texture, int level) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glFrontFace(int mode) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glGenBuffers(int n, int[] buffers, int offset) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glGenBuffers(int n, java.nio.IntBuffer buffers) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glGenerateMipmap(int target) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glGenFramebuffers(int n, int[] framebuffers, int offset) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glGenFramebuffers(int n, java.nio.IntBuffer framebuffers) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glGenRenderbuffers(int n, int[] renderbuffers, int offset) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glGenRenderbuffers(int n, java.nio.IntBuffer renderbuffers) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glGenTextures(int n, int[] textures, int offset) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glGenTextures(int n, java.nio.IntBuffer textures) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glGetActiveAttrib(int program, int index, int bufsize, int[] length, int lengthOffset, int[] size, int sizeOffset, int[] type, int typeOffset, byte[] name,
 			int nameOffset) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glGetActiveAttrib(int program, int index, int bufsize, java.nio.IntBuffer length, java.nio.IntBuffer size, java.nio.IntBuffer type, byte name) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glGetActiveUniform(int program, int index, int bufsize, int[] length, int lengthOffset, int[] size, int sizeOffset, int[] type, int typeOffset, byte[] name,
 			int nameOffset) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glGetActiveUniform(int program, int index, int bufsize, java.nio.IntBuffer length, java.nio.IntBuffer size, java.nio.IntBuffer type, byte name) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glGetAttachedShaders(int program, int maxcount, int[] count, int countOffset, int[] shaders, int shadersOffset) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glGetAttachedShaders(int program, int maxcount, java.nio.IntBuffer count, java.nio.IntBuffer shaders) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static int glGetAttribLocation(int program, String name) {
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1250723517 = DSUtils.UNKNOWN_INT;
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1250723517;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glGetBooleanv(int pname, boolean[] params, int offset) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glGetBooleanv(int pname, java.nio.IntBuffer params) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glGetBufferParameteriv(int target, int pname, int[] params, int offset) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glGetBufferParameteriv(int target, int pname, java.nio.IntBuffer params) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static int glGetError() {
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_117972472 = DSUtils.UNKNOWN_INT;
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_117972472;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glGetFloatv(int pname, float[] params, int offset) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glGetFloatv(int pname, java.nio.FloatBuffer params) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glGetFramebufferAttachmentParameteriv(int target, int attachment, int pname, int[] params, int offset) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glGetFramebufferAttachmentParameteriv(int target, int attachment, int pname, java.nio.IntBuffer params) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glGetIntegerv(int pname, int[] params, int offset) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glGetIntegerv(int pname, java.nio.IntBuffer params) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glGetProgramiv(int program, int pname, int[] params, int offset) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glGetProgramiv(int program, int pname, java.nio.IntBuffer params) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static String glGetProgramInfoLog(int program) {
 		return new String();
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glGetRenderbufferParameteriv(int target, int pname, int[] params, int offset) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glGetRenderbufferParameteriv(int target, int pname, java.nio.IntBuffer params) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glGetShaderiv(int shader, int pname, int[] params, int offset) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glGetShaderiv(int shader, int pname, java.nio.IntBuffer params) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static String glGetShaderInfoLog(int shader) {
 		return new String();
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glGetShaderPrecisionFormat(int shadertype, int precisiontype, int[] range, int rangeOffset, int[] precision, int precisionOffset) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glGetShaderPrecisionFormat(int shadertype, int precisiontype, java.nio.IntBuffer range, java.nio.IntBuffer precision) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glGetShaderSource(int shader, int bufsize, int[] length, int lengthOffset, byte[] source, int sourceOffset) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glGetShaderSource(int shader, int bufsize, java.nio.IntBuffer length, byte source) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static String glGetString(int name) {
 		return new String();
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glGetTexParameterfv(int target, int pname, float[] params, int offset) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glGetTexParameterfv(int target, int pname, java.nio.FloatBuffer params) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glGetTexParameteriv(int target, int pname, int[] params, int offset) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glGetTexParameteriv(int target, int pname, java.nio.IntBuffer params) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glGetUniformfv(int program, int location, float[] params, int offset) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glGetUniformfv(int program, int location, java.nio.FloatBuffer params) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glGetUniformiv(int program, int location, int[] params, int offset) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glGetUniformiv(int program, int location, java.nio.IntBuffer params) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static int glGetUniformLocation(int program, String name) {
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_214476555 = DSUtils.UNKNOWN_INT;
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_214476555;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glGetVertexAttribfv(int index, int pname, float[] params, int offset) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glGetVertexAttribfv(int index, int pname, java.nio.FloatBuffer params) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glGetVertexAttribiv(int index, int pname, int[] params, int offset) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glGetVertexAttribiv(int index, int pname, java.nio.IntBuffer params) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glHint(int target, int mode) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static boolean glIsBuffer(int buffer) {
 		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_153268133 = DSUtils.UNKNOWN_BOOLEAN;
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_153268133;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static boolean glIsEnabled(int cap) {
 		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1843616081 = DSUtils.UNKNOWN_BOOLEAN;
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_1843616081;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static boolean glIsFramebuffer(int framebuffer) {
 		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_110434919 = DSUtils.UNKNOWN_BOOLEAN;
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_110434919;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static boolean glIsProgram(int program) {
 		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1073646847 = DSUtils.UNKNOWN_BOOLEAN;
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_1073646847;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static boolean glIsRenderbuffer(int renderbuffer) {
 		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_736306196 = DSUtils.UNKNOWN_BOOLEAN;
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_736306196;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static boolean glIsShader(int shader) {
 		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_504045245 = DSUtils.UNKNOWN_BOOLEAN;
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_504045245;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static boolean glIsTexture(int texture) {
 		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1683324650 = DSUtils.UNKNOWN_BOOLEAN;
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_1683324650;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glLineWidth(float width) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glLinkProgram(int program) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glPixelStorei(int pname, int param) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glPolygonOffset(float factor, float units) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glReadPixels(int x, int y, int width, int height, int format, int type, java.nio.Buffer pixels) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glReleaseShaderCompiler() {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glRenderbufferStorage(int target, int internalformat, int width, int height) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glSampleCoverage(float value, boolean invert) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glScissor(int x, int y, int width, int height) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glShaderBinary(int n, int[] shaders, int offset, int binaryformat, java.nio.Buffer binary, int length) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glShaderBinary(int n, java.nio.IntBuffer shaders, int binaryformat, java.nio.Buffer binary, int length) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glShaderSource(int shader, String string) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glStencilFunc(int func, int ref, int mask) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glStencilFuncSeparate(int face, int func, int ref, int mask) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glStencilMask(int mask) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glStencilMaskSeparate(int face, int mask) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glStencilOp(int fail, int zfail, int zpass) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glStencilOpSeparate(int face, int fail, int zfail, int zpass) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glTexImage2D(int target, int level, int internalformat, int width, int height, int border, int format, int type, java.nio.Buffer pixels) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glTexParameterf(int target, int pname, float param) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glTexParameterfv(int target, int pname, float[] params, int offset) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glTexParameterfv(int target, int pname, java.nio.FloatBuffer params) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glTexParameteri(int target, int pname, int param) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glTexParameteriv(int target, int pname, int[] params, int offset) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glTexParameteriv(int target, int pname, java.nio.IntBuffer params) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glTexSubImage2D(int target, int level, int xoffset, int yoffset, int width, int height, int format, int type, java.nio.Buffer pixels) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glUniform1f(int location, float x) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glUniform1fv(int location, int count, float[] v, int offset) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glUniform1fv(int location, int count, java.nio.FloatBuffer v) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glUniform1i(int location, int x) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glUniform1iv(int location, int count, int[] v, int offset) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glUniform1iv(int location, int count, java.nio.IntBuffer v) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glUniform2f(int location, float x, float y) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glUniform2fv(int location, int count, float[] v, int offset) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glUniform2fv(int location, int count, java.nio.FloatBuffer v) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glUniform2i(int location, int x, int y) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glUniform2iv(int location, int count, int[] v, int offset) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glUniform2iv(int location, int count, java.nio.IntBuffer v) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glUniform3f(int location, float x, float y, float z) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glUniform3fv(int location, int count, float[] v, int offset) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glUniform3fv(int location, int count, java.nio.FloatBuffer v) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glUniform3i(int location, int x, int y, int z) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glUniform3iv(int location, int count, int[] v, int offset) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glUniform3iv(int location, int count, java.nio.IntBuffer v) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glUniform4f(int location, float x, float y, float z, float w) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glUniform4fv(int location, int count, float[] v, int offset) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glUniform4fv(int location, int count, java.nio.FloatBuffer v) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glUniform4i(int location, int x, int y, int z, int w) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glUniform4iv(int location, int count, int[] v, int offset) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glUniform4iv(int location, int count, java.nio.IntBuffer v) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glUniformMatrix2fv(int location, int count, boolean transpose, float[] value, int offset) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glUniformMatrix2fv(int location, int count, boolean transpose, java.nio.FloatBuffer value) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glUniformMatrix3fv(int location, int count, boolean transpose, float[] value, int offset) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glUniformMatrix3fv(int location, int count, boolean transpose, java.nio.FloatBuffer value) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glUniformMatrix4fv(int location, int count, boolean transpose, float[] value, int offset) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glUniformMatrix4fv(int location, int count, boolean transpose, java.nio.FloatBuffer value) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glUseProgram(int program) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glValidateProgram(int program) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glVertexAttrib1f(int indx, float x) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glVertexAttrib1fv(int indx, float[] values, int offset) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glVertexAttrib1fv(int indx, java.nio.FloatBuffer values) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glVertexAttrib2f(int indx, float x, float y) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glVertexAttrib2fv(int indx, float[] values, int offset) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glVertexAttrib2fv(int indx, java.nio.FloatBuffer values) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glVertexAttrib3f(int indx, float x, float y, float z) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glVertexAttrib3fv(int indx, float[] values, int offset) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glVertexAttrib3fv(int indx, java.nio.FloatBuffer values) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glVertexAttrib4f(int indx, float x, float y, float z, float w) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glVertexAttrib4fv(int indx, float[] values, int offset) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glVertexAttrib4fv(int indx, java.nio.FloatBuffer values) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static void glVertexAttribPointer(int indx, int size, int type, boolean normalized, int stride, int offset) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     private static void glVertexAttribPointerBounds(int indx, int size, int type, boolean normalized, int stride, java.nio.Buffer ptr, int remaining) {
 	}
 
@@ -1003,9 +624,7 @@ public static void glVertexAttribPointer(
             ptr.remaining()
         );
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static void glViewport(int x, int y, int width, int height) {
 	}
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:11.128 -0500", hash_original_field = "4108D2E908495B9D3DBDA59F2E00A327", hash_generated_field = "43604D5B9BADECF82E5DC08A6A6E973D")

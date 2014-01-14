@@ -5,8 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
 import droidsafe.helpers.DSTaintObject;
 
 public class Object {
@@ -20,9 +18,7 @@ public class Object {
     
 public Object() {
     }
-
-    
-        @DSModeled(DSC.SAFE)
+        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.382 -0400", hash_original_method = "6E1D6DBADCF2AAA505FF9A52A4C04C6C", hash_generated_method = "7BD08C4B7BD9668043F5624AF55451A4")
     protected Object clone() throws CloneNotSupportedException {
         if(!(this instanceof Cloneable))        
@@ -41,10 +37,9 @@ public Object() {
         //}
         //return internalClone((Cloneable) this);
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 13:18:45.633 -0400", hash_original_method = "DC17854DB4C4786A4B8C4AFD2060B404", hash_generated_method = "A43E05FEA5D61737BBCA795F23B88103")
-    @DSModeled(DSC.SAFE)
+    
     private Object internalClone(Cloneable o) {
     	 //Object retVal = new Object();
     	//retVal.addTaint(getTaint());
@@ -116,10 +111,9 @@ public boolean equals(Object o) {
 @FindBugsSuppressWarnings("FI_EMPTY")
     protected void finalize() throws Throwable {
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 13:18:45.696 -0400", hash_original_method = "45F37CFDFF4C9798D584EC7971F96E39", hash_generated_method = "626427EC1E11FF0AD97BEE85D9A44D76")
-    @DSModeled(DSC.SAFE)
+    
     public final native Class<?> getClass();
 
     /**
@@ -144,7 +138,6 @@ public boolean equals(Object o) {
     	//Formerly a native method
     	return getTaintInt();
     }
-
 
     /**
      * Causes a thread which is waiting on this object's monitor (by means of
@@ -178,7 +171,6 @@ public boolean equals(Object o) {
     	//Formerly a native method
     }
 
-
     /**
      * Causes all threads which are waiting on this object's monitor (by means
      * of calling one of the {@code wait()} methods) to be woken up. The threads
@@ -211,7 +203,6 @@ public boolean equals(Object o) {
     public final void notifyAll(){
     	//Formerly a native method
     }
-
 
     /**
      * Returns a string containing a concise, human-readable description of this
@@ -349,86 +340,84 @@ public final void wait(long millis) throws InterruptedException {
     	addTaint(millis);
     	addTaint(nanos);
     }
-
-
     
     // orphaned legacy method
-    @DSModeled(DSC.BAN)
+    
     public DSTaintObject getTaint() {
         
         return taint;
     }
     
     // orphaned legacy method
-    @DSModeled(DSC.BAN)
+    
     public int getTaintInt() {
         
         return 0;
     }
     
     // orphaned legacy method
-    @DSModeled(DSC.BAN)
+    
     public void addTaint(DSTaintObject taint) {
         
     }
     
     // orphaned legacy method
-    @DSModeled(DSC.BAN)
+    
     public short getTaintShort() {
         
         return 0;
     }
     
     // orphaned legacy method
-    @DSModeled(DSC.BAN)
+    
     public byte getTaintByte() {
         
         return 0;
     }
     
     // orphaned legacy method
-    @DSModeled(DSC.BAN)
+    
     public void addTaint(boolean taint) {
       
     }
     
     // orphaned legacy method
-    @DSModeled(DSC.BAN)
+    
     public boolean getTaintBoolean() {
         
         return true;
     }
     
     // orphaned legacy method
-    @DSModeled(DSC.BAN)
+    
     public char getTaintChar() {
         
         return 0;
     }
     
     // orphaned legacy method
-    @DSModeled(DSC.BAN)
+    
     public float getTaintFloat() {
         
         return 0;
     }
     
     // orphaned legacy method
-    @DSModeled(DSC.BAN)
+    
     public double getTaintDouble() {
         
         return 0;
     }
     
     // orphaned legacy method
-    @DSModeled(DSC.BAN)
+    
     public long getTaintLong() {
         
         return 0;
     }
     
     // orphaned legacy method
-    @DSModeled(DSC.BAN)
+    
     public void addTaint(double taint) {
         
     }

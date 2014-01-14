@@ -12,16 +12,11 @@ import android.os.ParcelFileDescriptor;
 import android.os.SystemClock;
 import dalvik.system.BlockGuard;
 
-
-
-
-
 public class SQLiteStatement extends SQLiteProgram {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.342 -0500", hash_original_field = "5D559E29F3B7D0D51AE5C73FE3F2D3F0", hash_generated_field = "B25F6A4CB29F6325E49F04F66EE5886C")
 
     private static final String TAG = "SQLiteStatement";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.345 -0500", hash_original_field = "E63805B0E924F8ED616216BEB6CB6005", hash_generated_field = "DF1BFFA8AE77C9EB2467DB4A53480D19")
-
 
     private static final boolean READ = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.348 -0500", hash_original_field = "FBD12BAEA28977523A9EA4EA7C38D0D0", hash_generated_field = "4E20ADB74C14AC29719A4662B74CC6FA")
@@ -34,7 +29,6 @@ public class SQLiteStatement extends SQLiteProgram {
 
     private static final int LOCK_ACQUIRED = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.350 -0500", hash_original_field = "F226644BA47AF122E4485EA17FD2B3BB", hash_generated_field = "2F51843A821BD5FB98E893CC1830882F")
-
 
     private SQLiteDatabase mOrigDb;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.352 -0500", hash_original_field = "7BB479D2050B776CF48FB8B4E674911B", hash_generated_field = "19B55F2750B971E6310D64ADB9B2D0CF")
@@ -322,18 +316,13 @@ private void releaseAndUnlock() {
     	//Formerly a native method
     	return getTaintLong();
     }
-
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.900 -0400", hash_original_method = "07DFC0F07DCBF43769548BE4FBA916EE", hash_generated_method = "28030A1C7DC39244AA70D827443E96B9")
     private final String native_1x1_string() {
     	String foo = new String();
     	return foo;
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:30.900 -0400", hash_original_method = "D5A94C086543C65F36827FC2C8B73314", hash_generated_method = "2FF5ECD0A356350F1F45EEEF9C01561B")
     private final ParcelFileDescriptor native_1x1_blob_ashmem() throws IOException {
     	return new ParcelFileDescriptor();

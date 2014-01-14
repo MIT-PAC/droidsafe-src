@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.text.BreakIterator;
 
-
-
-
-
-
 public class Selection {
 
     /*
@@ -481,37 +476,27 @@ private static int chooseHorizontal(Layout layout, int direction,
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:12.483 -0500", hash_original_field = "5F0304F279BDCB14306EA284635B7405", hash_generated_field = "04FE8A24144505FFA1AFEFD56C38D3B7")
 
-
     public static final Object SELECTION_START = new START();
-
     
     private static final class START implements NoCopySpan {
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.156 -0400", hash_original_method = "BDCC342EB9C4EC0E36898772F96B3376", hash_generated_method = "BDCC342EB9C4EC0E36898772F96B3376")
         public START ()
         {
             //Synthesized constructor
         }
 
-
     }
-
-
     
     private static final class END implements NoCopySpan {
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.157 -0400", hash_original_method = "6839406E8175B705075FBD95CC87C416", hash_generated_method = "6839406E8175B705075FBD95CC87C416")
         public END ()
         {
             //Synthesized constructor
         }
 
-
     }
-
-
     
     public static interface PositionIterator {
         public static final int DONE = BreakIterator.DONE;

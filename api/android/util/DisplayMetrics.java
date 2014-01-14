@@ -5,12 +5,8 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
 public class DisplayMetrics {
-
     
-    @DSModeled(DSC.BAN)
     private static int getDeviceDensity() {
         return 0;
     }
@@ -79,21 +75,16 @@ public class DisplayMetrics {
     
 public DisplayMetrics() {
     }
-
     
-    @DSModeled(DSC.SAFE)
     public void setTo(DisplayMetrics o) {
         addTaint(o.getTaint());
     }
-
     
-    @DSModeled(DSC.SAFE)
     public void setToDefaults() {
     }
-
     
     @Override
-	@DSModeled(DSC.SAFE)
+	
     public String toString() {
         String str = new String();
         str.addTaint(getTaint());

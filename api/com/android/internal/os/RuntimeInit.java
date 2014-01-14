@@ -26,9 +26,6 @@ import com.android.server.NetworkManagementSocketTagger;
 
 import dalvik.system.VMRuntime;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public class RuntimeInit {
@@ -195,9 +192,7 @@ public static final void main(String[] argv) {
 
         if (DEBUG) Slog.d(TAG, "Leaving RuntimeInit!");
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static final void finishInit() {
     }
 
@@ -281,25 +276,17 @@ public static void redirectLogStreams() {
         System.err.close();
         System.setErr(new AndroidPrintStream(Log.WARN, "System.err"));
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static final void zygoteInitNative() {
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static final int isComputerOn() {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static final void turnComputerOn() {
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static int getQwertyKeyboard() {
         return DSUtils.UNKNOWN_INT;
     }
@@ -344,11 +331,9 @@ public static final IBinder getApplicationObject() {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:51.200 -0500", hash_original_field = "C73D9F25E5F6CAFECCE98CB85C10D990", hash_generated_field = "527BFEF4E332EB2DD2EA4CFDB3D09D89")
 
     private final static String TAG = "AndroidRuntime";
-
     
     private static class UncaughtHandler implements Thread.UncaughtExceptionHandler {
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.655 -0400", hash_original_method = "DEBC568C3CCF1424A96EDBFCCD0328BF", hash_generated_method = "DEBC568C3CCF1424A96EDBFCCD0328BF")
         public UncaughtHandler ()
         {
@@ -383,11 +368,8 @@ public void uncaughtException(Thread t, Throwable e) {
                 System.exit(10);
             }
         }
-
         
     }
-
-
     
     static class Arguments {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:51.270 -0500", hash_original_field = "54F1E4F701E6BC5080DD319C8D10B220", hash_generated_field = "54F1E4F701E6BC5080DD319C8D10B220")
@@ -435,7 +417,6 @@ private void parseArgs(String args[])
             startArgs = new String[args.length - curArg];
             System.arraycopy(args, curArg, startArgs, 0, startArgs.length);
         }
-
         
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:51.203 -0500", hash_original_field = "81DD852ECBE07BA98A61C8F3D0C85F01", hash_generated_field = "7841AA055B417A7E8C3D727A4ADDD91D")
@@ -446,10 +427,8 @@ private void parseArgs(String args[])
     private static boolean initialized;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:51.207 -0500", hash_original_field = "FFD16133019F2BA1473D1931EA0B77AF", hash_generated_field = "254F062FB27979B6C2E631565CC9502B")
 
-
     private static IBinder mApplicationObject;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:51.210 -0500", hash_original_field = "01558103F728473DCF5D7E6B0402B753", hash_generated_field = "7061173743FAA271B75796C94B51B8DD")
-
 
     private static volatile boolean mCrashing = false;
     

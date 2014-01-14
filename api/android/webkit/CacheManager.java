@@ -24,11 +24,6 @@ import android.util.Log;
 import com.android.org.bouncycastle.crypto.Digest;
 import com.android.org.bouncycastle.crypto.digests.SHA1Digest;
 
-
-
-
-
-
 public final class CacheManager {
 
     /**
@@ -858,9 +853,7 @@ private static CacheResult parseHeaders(int statusCode, Headers headers,
 
         return ret;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static CacheResult nativeGetCacheResult(String url) {
     	CacheResult ret = new CacheResult();
     	ret.taint.addTaint(url.taint);
@@ -868,9 +861,7 @@ private static CacheResult parseHeaders(int statusCode, Headers headers,
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.898 -0500", hash_original_field = "81C4610321BCE12B5287EA324FFC2568", hash_generated_field = "389C12A8617D8BCC08630F7BA010C0E2")
 
-
     private static final String LOGTAG = "cache";
-
     
     public static class CacheResult {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.937 -0500", hash_original_field = "6C670D782CFBD30F05F5773A857F5BD7", hash_generated_field = "6C670D782CFBD30F05F5773A857F5BD7")
@@ -1025,18 +1016,15 @@ public void setEncoding(String encoding) {
 public void setContentLength(long contentLength) {
             this.contentLength = contentLength;
         }
-
         
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.901 -0500", hash_original_field = "61FA04D7E8ADF1B0CC1869A6A1603B58", hash_generated_field = "05C239D2ED2147F03B62552EFE9672C2")
-
 
     static final String HEADER_KEY_IFMODIFIEDSINCE = "if-modified-since";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.903 -0500", hash_original_field = "0DC5995A1034243BCF9D61DB5154E627", hash_generated_field = "74E44E569BB9F45FBC857E67B78E6030")
 
     static final String HEADER_KEY_IFNONEMATCH = "if-none-match";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.905 -0500", hash_original_field = "E171209401D4ECEC0C7E62839C040319", hash_generated_field = "939B143BA252760FE6A2040085DA20D1")
-
 
     private static final String NO_STORE = "no-store";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.908 -0500", hash_original_field = "426483A1C20B927FA6B0FF7AB5830782", hash_generated_field = "AE15FEBAB58E4F297E6B247B85A02B60")
@@ -1050,7 +1038,6 @@ public void setContentLength(long contentLength) {
     private static final String MANIFEST_MIME = "text/cache-manifest";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.914 -0500", hash_original_field = "1B11CC923E16BC5CF98BDDE4FEC59652", hash_generated_field = "D647BC6BC6F91B30C579B54074B4681D")
 
-
     private static long CACHE_THRESHOLD = 6 * 1024 * 1024;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.916 -0500", hash_original_field = "220EB643096147A378626A5C3B55BFC6", hash_generated_field = "C7BC04A2C8C224B4992692522B1C9534")
 
@@ -1059,7 +1046,6 @@ public void setContentLength(long contentLength) {
 
     static long CACHE_MAX_SIZE = (CACHE_THRESHOLD - CACHE_TRIM_AMOUNT) / 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.921 -0500", hash_original_field = "5C14BBA06D128BE82D86D31F8DDD2320", hash_generated_field = "065C749395F8EEFD3FA335C42BB42982")
-
 
     private static boolean mDisabled;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.923 -0500", hash_original_field = "10901FC32DF7F71F9F354DE920A6F5B1", hash_generated_field = "612C983B5C95EDDDA5D6667269D6C1BD")
@@ -1075,7 +1061,6 @@ public void setContentLength(long contentLength) {
 
     private static final int TRIM_CACHE_INTERVAL = 5;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.930 -0500", hash_original_field = "D432C32D33F8FDFC876BCEEC94F4E8D4", hash_generated_field = "112D7378ACAC09B383FA76ADC4A7A80A")
-
 
     private static WebViewDatabase mDataBase;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.932 -0500", hash_original_field = "A463709AFBD745F5F6949AAF0F7C62A9", hash_generated_field = "E5AA5969C86636B06EBA401AAD2DB4DE")

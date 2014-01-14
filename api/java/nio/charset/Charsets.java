@@ -5,29 +5,20 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public class Charsets {
-
     
-    @DSModeled(DSC.SAFE)
     public static byte[] toAsciiBytes(char[] chars, int offset, int length) {
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_709532227 = {DSUtils.UNKNOWN_BYTE};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_709532227;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static byte[] toIsoLatin1Bytes(char[] chars, int offset, int length) {
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1419875334 = {DSUtils.UNKNOWN_BYTE};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1419875334;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static byte[] toUtf8Bytes(char[] chars, int offset, int length) {
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_938529096 = {DSUtils.UNKNOWN_BYTE};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_938529096;
@@ -50,14 +41,10 @@ public static byte[] toBigEndianUtf16Bytes(char[] chars, int offset, int length)
         }
         return result;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static void asciiBytesToChars(byte[] bytes, int offset, int length, char[] chars) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static void isoLatin1BytesToChars(byte[] bytes, int offset, int length, char[] chars) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.992 -0500", hash_original_field = "A22CC05BE6CEEE92799923C2424B3CA8", hash_generated_field = "8EC60A36A46A03E488D22699D2DAA981")

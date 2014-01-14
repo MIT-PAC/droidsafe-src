@@ -30,10 +30,6 @@ import android.text.TextUtils;
 import android.util.AndroidException;
 import android.util.Log;
 
-
-
-
-
 public final class Settings {
 
     /**
@@ -52,7 +48,6 @@ public static String getGTalkDeviceId(long androidId) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:51.344 -0500", hash_original_field = "F52D50AC5FBA7EB56A3CAD2DA302FB0E", hash_generated_field = "9210D76982E0CCE119094FF576748A06")
 
-
     /**
      * Activity Action: Show system settings.
      * <p>
@@ -62,7 +57,6 @@ public static String getGTalkDeviceId(long androidId) {
      */
     @SdkConstant(SdkConstantType.ACTIVITY_INTENT_ACTION)
     public static final String ACTION_SETTINGS = "android.settings.SETTINGS";
-
     
     public static class SettingNotFoundException extends AndroidException {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:51.457 -0500", hash_original_method = "9D3DA3FD01BD65E9C8D44BD33E232128", hash_generated_method = "9CAD6371E48DA955B5974C157A71A1B7")
@@ -70,11 +64,8 @@ public static String getGTalkDeviceId(long androidId) {
 public SettingNotFoundException(String msg) {
             super(msg);
         }
-
         
     }
-
-
     
     public static class NameValueTable implements BaseColumns {
 
@@ -113,12 +104,9 @@ public static Uri getUriFor(Uri uri, String name) {
             //Synthesized constructor
         }
     }
-
-
     
     private static class NameValueCache {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:51.479 -0500", hash_original_field = "3116B3BCEB63B81CD9E17B13B775EDFC", hash_generated_field = "23E47445004801DA0364F31D1E83BC51")
-
 
         private static final String[] SELECT_VALUE =
             new String[] { Settings.NameValueTable.VALUE };
@@ -230,8 +218,6 @@ public String getString(ContentResolver cr, String name) {
             }
         }
     }
-
-
     
     public static final class System extends NameValueTable {
 
@@ -585,7 +571,6 @@ public static void setShowGTalkServiceStatus(ContentResolver cr, boolean flag) {
         private static NameValueCache sNameValueCache = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:51.508 -0500", hash_original_field = "1AF9FB4FAE0D891C841A6BD0FF19066F", hash_generated_field = "A0CAC6ABE4414AB6B5026A67B764DC5F")
 
-
         private static  HashSet<String> MOVED_TO_SECURE;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:51.557 -0500", hash_original_field = "04DAC5FD1BD0B97C5BB8885AD5DB5AEE", hash_generated_field = "73522F6CDB248227CBD6A2EE71CA3762")
 
@@ -853,7 +838,6 @@ public static void setShowGTalkServiceStatus(ContentResolver cr, boolean flag) {
         public static final String TEXT_SHOW_PASSWORD = "show_password";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:51.742 -0500", hash_original_field = "D659AF15FF3BA97B7319BAFC135E06A9", hash_generated_field = "334EEAA225578A6C1A6482FC1D36E631")
 
-
         public static final String SHOW_GTALK_SERVICE_STATUS =
                 "SHOW_GTALK_SERVICE_STATUS";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:51.745 -0500", hash_original_field = "B072BED0579E0C52B20C28651E0B1E16", hash_generated_field = "275DAC983B63898C2E3B05CE4B27AEEC")
@@ -1042,7 +1026,6 @@ public static void setShowGTalkServiceStatus(ContentResolver cr, boolean flag) {
         };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:51.854 -0500", hash_original_field = "1B0AE811C9E38D83E312E0942328683D", hash_generated_field = "6CC623763E98C14C6A6666840BD94A2E")
 
-
         /**
          * @deprecated Use {@link android.provider.Settings.Secure#ADB_ENABLED}
          * instead
@@ -1189,14 +1172,12 @@ public static void setShowGTalkServiceStatus(ContentResolver cr, boolean flag) {
             Secure.WIFI_WATCHDOG_PING_TIMEOUT_MS;
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.692 -0400", hash_original_method = "FCC05FCD4F95F74464895D80CA2398E6", hash_generated_method = "FCC05FCD4F95F74464895D80CA2398E6")
-        @DSModeled(DSC.SPEC)
+        
         public System ()
         {
             //Synthesized constructor
         }
     }
-
-
     
     public static final class Secure extends NameValueTable {
 
@@ -2354,8 +2335,6 @@ public static final void setLocationProviderEnabled(ContentResolver cr,
             //Synthesized constructor
         }
     }
-
-
     
     public static final class Bookmarks implements BaseColumns {
 
@@ -2522,7 +2501,6 @@ public static CharSequence getTitle(Context context, Cursor cursor) {
 
         public static final String ORDERING = "ordering";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:52.643 -0500", hash_original_field = "2DF512845F96B6882194068B5BFCEE6A", hash_generated_field = "8180CFF9E48F414363A8B1B2ED6E8B23")
-
 
         private static final String[] sIntentProjection = { INTENT };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:52.645 -0500", hash_original_field = "F95170514B6E835A883C9423A27D958C", hash_generated_field = "BD85472E85B987B3E065F1D4D68B7324")
@@ -2714,7 +2692,6 @@ public static CharSequence getTitle(Context context, Cursor cursor) {
         "android.settings.NFCSHARING_SETTINGS";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:51.436 -0500", hash_original_field = "F696B18A02C183C9FC46813A261DC967", hash_generated_field = "3DC3DBF8E51BA34EB356BB488CD0D230")
 
-
     /**
      * @hide - Private call() method on SettingsProvider to read from 'system' table.
      */
@@ -2728,18 +2705,14 @@ public static CharSequence getTitle(Context context, Cursor cursor) {
             "authorities";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:51.443 -0500", hash_original_field = "CE91525B6D6031FFAD7F8369ECB0C6E4", hash_generated_field = "BE07686D6DDCE88474EBF79A4C1DA4BA")
 
-
     public static final String EXTRA_INPUT_METHOD_ID = "input_method_id";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:51.446 -0500", hash_original_field = "79656B7EF44E2649028B6EF7BB68802A", hash_generated_field = "60DD209E3682CBC18875FE018DF89859")
-
 
     private static final String JID_RESOURCE_PREFIX = "android";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:51.449 -0500", hash_original_field = "07E8BE0AFEC9C3FBAAC1E4277ADABE48", hash_generated_field = "CD4CCC4B63A1B6D8CDBF90B4044135B5")
 
-
     public static final String AUTHORITY = "settings";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:51.451 -0500", hash_original_field = "5FBC5D4AEF7186429BB6B1EB6981FFF2", hash_generated_field = "DED9CEFD20FC00D326CC6FBA5A0A509B")
-
 
     private static final String TAG = "Settings";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:51.453 -0500", hash_original_field = "A2815BD26E87A627B478F0A2FA303B22", hash_generated_field = "D2585F3BB04C12E7EFFE278BED4DADF8")

@@ -16,8 +16,6 @@ import android.view.textservice.SpellCheckerSession.SpellCheckerSessionListener;
 
 import com.android.internal.textservice.ITextServicesManager;
 
-
-
 public final class TextServicesManager {
 
     /**
@@ -43,13 +41,11 @@ public static TextServicesManager getInstance() {
     private static final boolean DBG = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.504 -0500", hash_original_field = "A82911E658B2C72E4F8802885050882D", hash_generated_field = "C8FA124301EED2431C4D22EB09223E94")
 
-
     private static TextServicesManager sInstance;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.506 -0500", hash_original_field = "95CDD9B4B410618635F97CABFD44149C", hash_generated_field = "BCB4F2C99AD5684E437C6C7FDD215756")
 
     private static ITextServicesManager sService;
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.056 -0400", hash_original_method = "378570C283DD42AD8C379B99FE38C5D3", hash_generated_method = "6D8E7E5AC37BE0D0EB3E290F31648406")
     private  TextServicesManager() {
         /*

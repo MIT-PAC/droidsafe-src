@@ -16,7 +16,6 @@ import java.util.zip.ZipFile;
 
 import libcore.io.Streams;
 
-
 public class JarFile extends ZipFile {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.862 -0500", hash_original_method = "56C76838D318C13C94DEE83CC11CDED9", hash_generated_method = "01AD61DC1B9389BE2B87C74510A04B5F")
@@ -38,10 +37,8 @@ private static boolean endsWithIgnoreCase(String s, String suffix) {
     private ZipEntry manifestEntry;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.791 -0500", hash_original_field = "15838C298A89AE0514754B108BF02A73", hash_generated_field = "15838C298A89AE0514754B108BF02A73")
 
-
     JarVerifier verifier;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.793 -0500", hash_original_field = "3AA5C7F0C9D40E3C1B48B8404423A098", hash_generated_field = "AA98B16E301073717D23E903C6D6286D")
-
 
     private boolean closed = false;
 
@@ -137,9 +134,7 @@ public JarFile(String filename, boolean verify) throws IOException {
         }
         readMetaEntries();
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.894 -0400", hash_original_method = "DDF115034FADFE53A1FD9BC36D36CE25", hash_generated_method = "28390275337A046A4F073DB9C9A54D85")
     @Override
     public Enumeration<JarEntry> entries() {
@@ -148,7 +143,6 @@ public JarFile(String filename, boolean verify) throws IOException {
 
             Enumeration<? extends ZipEntry> ze;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.841 -0500", hash_original_field = "9E17897CFE5F4CA6FBFFFAEE1DB51A62", hash_generated_field = "9E17897CFE5F4CA6FBFFFAEE1DB51A62")
-
 
             JarFile jf;
 
@@ -363,7 +357,6 @@ private void readMetaEntries() throws IOException {
         je.parentJar = this;
         return je;
     }
-
     
     static final class JarFileInputStream extends FilterInputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.797 -0500", hash_original_field = "D14481EA9CDAD366F91417FC5AF5E134", hash_generated_field = "96817EEF83FA1C93DC2A9F8452312BE5")
@@ -371,14 +364,11 @@ private void readMetaEntries() throws IOException {
         private long count;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.800 -0500", hash_original_field = "1FE06773CFC3C2D11351177FC9821537", hash_generated_field = "97423CF71E793626D5B9FCF841E2156D")
 
-
         private ZipEntry zipEntry;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.802 -0500", hash_original_field = "3A436B99DEB6660BA60F1E68727D1F8A", hash_generated_field = "D893B68F418C2812B051677DEAD7BC47")
 
-
         private JarVerifier.VerifierEntry entry;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.804 -0500", hash_original_field = "B3F4B9FB7F6E266775B1E500C6C15A46", hash_generated_field = "9C759896300CD7D902BE34CCDA83590B")
-
 
         private boolean done = false;
 
@@ -466,7 +456,6 @@ JarFileInputStream(InputStream is, ZipEntry ze,
         public long skip(long byteCount) throws IOException {
             return Streams.skipByReading(this, byteCount);
         }
-
         
     }
 

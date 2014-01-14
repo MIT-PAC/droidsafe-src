@@ -9,11 +9,6 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.Set;
 
-
-
-
-
-
 public class CopyOnWriteArraySet<E> extends AbstractSet<E> implements java.io.Serializable {
 
     /**
@@ -28,7 +23,6 @@ private static boolean eq(Object o1, Object o2) {
 
     private static final long serialVersionUID = 5457747651344034263L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.630 -0500", hash_original_field = "273D71B1B710C303797F8830CD9E9627", hash_generated_field = "CEE47592CD991F798055CF00F61D5D32")
-
 
     private  CopyOnWriteArrayList<E> al;
 
@@ -113,9 +107,7 @@ public boolean contains(Object o) {
 public Object[] toArray() {
         return al.toArray();
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.885 -0400", hash_original_method = "611ED93917CDC5DE1AF7714E59426D61", hash_generated_method = "A97A508A6AB1C24B6FB5FCF21A879F6C")
     public <T> T[] toArray(T[] a) {
         addTaint(a[0].getTaint());

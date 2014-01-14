@@ -16,9 +16,6 @@ import com.android.server.NetworkManagementSocketTagger;
 
 import dalvik.system.SocketTagger;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public class TrafficStats {
@@ -186,147 +183,99 @@ public static void incrementOperationCount(int tag, int operationCount) {
             throw new RuntimeException(e);
         }
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static long getMobileTxPackets() {
         return DSUtils.UNKNOWN_LONG;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static long getMobileRxPackets() {
         return DSUtils.UNKNOWN_LONG;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static long getMobileTxBytes() {
         return DSUtils.UNKNOWN_LONG;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static long getMobileRxBytes() {
         return DSUtils.UNKNOWN_LONG;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static long getTxPackets(String iface) {
         return DSUtils.UNKNOWN_LONG;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static long getRxPackets(String iface) {
         return DSUtils.UNKNOWN_LONG;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static long getTxBytes(String iface) {
         return DSUtils.UNKNOWN_LONG;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static long getRxBytes(String iface) {
         return DSUtils.UNKNOWN_LONG;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static long getTotalTxPackets() {
         return DSUtils.UNKNOWN_LONG;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static long getTotalRxPackets() {
         return DSUtils.UNKNOWN_LONG;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static long getTotalTxBytes() {
         return DSUtils.UNKNOWN_LONG;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static long getTotalRxBytes() {
         return DSUtils.UNKNOWN_LONG;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static long getUidTxBytes(int uid) {
         return DSUtils.UNKNOWN_LONG;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static long getUidRxBytes(int uid) {
         return DSUtils.UNKNOWN_LONG;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static long getUidTxPackets(int uid) {
         return DSUtils.UNKNOWN_LONG;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static long getUidRxPackets(int uid) {
         return DSUtils.UNKNOWN_LONG;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static long getUidTcpTxBytes(int uid) {
         return DSUtils.UNKNOWN_LONG;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static long getUidTcpRxBytes(int uid) {
         return DSUtils.UNKNOWN_LONG;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static long getUidUdpTxBytes(int uid) {
         return DSUtils.UNKNOWN_LONG;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static long getUidUdpRxBytes(int uid) {
         return DSUtils.UNKNOWN_LONG;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static long getUidTcpTxSegments(int uid) {
         return DSUtils.UNKNOWN_LONG;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static long getUidTcpRxSegments(int uid) {
         return DSUtils.UNKNOWN_LONG;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static long getUidUdpTxPackets(int uid) {
         return DSUtils.UNKNOWN_LONG;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static long getUidUdpRxPackets(int uid) {
         return DSUtils.UNKNOWN_LONG;
     }
@@ -369,7 +318,6 @@ private static NetworkStats getDataLayerSnapshotForUid(Context context) {
 
     private static NetworkStats sActiveProfilingStart;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:23.256 -0500", hash_original_field = "F20A45A0061992FE154D37C68124F98C", hash_generated_field = "A1F5981D31D6D64C0FB7AA0C9780DCFC")
-
 
     private static Object sProfilingLock = new Object();
     

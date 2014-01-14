@@ -6,15 +6,10 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import sun.misc.Unsafe;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public class AtomicLong extends Number implements java.io.Serializable {
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean VMSupportsCS8() {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
@@ -31,7 +26,6 @@ public class AtomicLong extends Number implements java.io.Serializable {
 
     static final boolean VM_SUPPORTS_LONG_CAS = VMSupportsCS8();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.518 -0500", hash_original_field = "DDD221DA9F0E75EE691CFACED8C3397A", hash_generated_field = "272863A964896393C50056118F48F189")
-
 
     private volatile long value;
 
@@ -244,7 +238,6 @@ public final long addAndGet(long delta) {
 public String toString() {
         return Long.toString(get());
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.558 -0500", hash_original_method = "84EB409D8DAC6A9532DB1B14F662CA95", hash_generated_method = "EE23D09943DC9A4EFC33B9CF333E20F2")
     

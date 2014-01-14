@@ -7,10 +7,6 @@ import droidsafe.annotations.*;
 import java.security.spec.InvalidKeySpecException;
 import java.security.spec.KeySpec;
 
-
-
-
-
 public abstract class KeyFactorySpi {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.907 -0400", hash_original_method = "54B4D82F193E9DD361521453DB006D9F", hash_generated_method = "54B4D82F193E9DD361521453DB006D9F")
@@ -48,9 +44,7 @@ protected abstract PublicKey engineGeneratePublic(KeySpec keySpec)
     
 protected abstract PrivateKey engineGeneratePrivate(KeySpec keySpec)
                                     throws InvalidKeySpecException;
-
     
-    @DSModeled(DSC.SAFE)
     protected abstract <T extends KeySpec> T engineGetKeySpec(Key key, Class<T> keySpec)
                                     throws InvalidKeySpecException;
     //FIXME 1.5 signature: protected abstract <T extends KeySpec> T engineGetKeySpec(Key key, Class<T> keySpec) throws InvalidKeySpecException
@@ -68,7 +62,6 @@ protected abstract PrivateKey engineGeneratePrivate(KeySpec keySpec)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.185 -0500", hash_original_method = "739471E10F30D482CB26890FE5494425", hash_generated_method = "46A9471F10A33BCB686EEB889CF4F386")
     
 protected abstract Key engineTranslateKey(Key key) throws InvalidKeyException;
-
     
 }
 

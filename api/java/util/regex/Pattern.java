@@ -8,10 +8,6 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.Serializable;
 
-
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public final class Pattern implements Serializable {
@@ -81,19 +77,14 @@ public static String quote(String string) {
         }
         return sb.append(string.substring(apos)).append("\\E").toString();
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void closeImpl(int addr) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int compileImpl(String regex, int flags) {
         return DSUtils.UNKNOWN_INT;
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:01.833 -0500", hash_original_field = "28B78F8205583CDA257F5D62102A6F9A", hash_generated_field = "89AAD938CC344AC32E4A8CD5D4DF86F6")
-
 
     private static final long serialVersionUID = 5073258162644648461L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:01.836 -0500", hash_original_field = "4CAF10EDA129FF0E1AD4D046D1BC9195", hash_generated_field = "F6F493319E476C50F27832143F659D81")
@@ -122,13 +113,11 @@ public static String quote(String string) {
     public static final int CANON_EQ = 0x80;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:01.858 -0500", hash_original_field = "57C08BF52FBB9452CE610A98F88E4F24", hash_generated_field = "8AE769BFE2CAD1B10C494CCD4D4D489A")
 
-
     private  String pattern;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:01.860 -0500", hash_original_field = "E0CDE1A38A40425C446F52269E5723DC", hash_generated_field = "C01DA7975DA485EEDBF522635D053B3B")
 
     private  int flags;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:01.863 -0500", hash_original_field = "0EFD4B56D5F68F850B84173C34758709", hash_generated_field = "837A3237EDA74EDFA4F880469076F652")
-
 
     transient int address;
 

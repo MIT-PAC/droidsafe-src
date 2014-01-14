@@ -22,11 +22,6 @@ import android.text.style.TabStopSpan;
 
 import com.android.internal.util.ArrayUtils;
 
-
-
-
-
-
 public abstract class Layout {
 
     /**
@@ -162,9 +157,7 @@ static float nextTab(CharSequence text, int start, int end,
 
         return ((int) ((h + TAB_INCREMENT) / TAB_INCREMENT)) * TAB_INCREMENT;
     }
-
     
-    @DSModeled(DSC.BAN)
     static <T> T[] getParagraphSpans(Spanned text, int start, int end, Class<T> type) {
     	T[] retVal;
         if (start == end && start > 0) {
@@ -195,7 +188,6 @@ static float nextTab(CharSequence text, int start, int end,
     private static final Rect sTempRect = new Rect();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.562 -0500", hash_original_field = "274988CFFC045452B8896268E0741F10", hash_generated_field = "52D12843713C54C6D6FE037A484C039E")
 
-
     public static final int DIR_LEFT_TO_RIGHT = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.566 -0500", hash_original_field = "61933AD26617D6849CFAE952C72D8914", hash_generated_field = "E624F93AD27646BB22CB05444CE41FB7")
 
@@ -218,7 +210,6 @@ static float nextTab(CharSequence text, int start, int end,
  static final int RUN_RTL_FLAG = 1 << RUN_LEVEL_SHIFT;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.590 -0500", hash_original_field = "523B437B66E94D47C6D3407D5611D3C9", hash_generated_field = "D5E340FF9F0E2C74F920DF02A6624213")
 
-
     private static final int TAB_INCREMENT = 20;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.592 -0500", hash_original_field = "8699269872F199A33E89295A39FFEB1B", hash_generated_field = "C8BA6950A23558C64F9FDDA3186A39D3")
  static final Directions DIRS_ALL_LEFT_TO_RIGHT =
@@ -227,7 +218,6 @@ static float nextTab(CharSequence text, int start, int end,
  static final Directions DIRS_ALL_RIGHT_TO_LEFT =
         new Directions(new int[] { 0, RUN_LENGTH_MASK | RUN_RTL_FLAG });
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.538 -0500", hash_original_field = "A59BBC07E5E46996D793B2F37E80BD24", hash_generated_field = "E579ED9F2DADADEB46C981CAFDEE5BA5")
-
 
     private CharSequence mText;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.540 -0500", hash_original_field = "956DBF43153BA67BCB0E9C5A7787D348", hash_generated_field = "B5BC396C7010734D6B4B6ED34A2846AE")
@@ -849,7 +839,6 @@ public abstract int getTopPadding();
     
 public abstract int getBottomPadding();
 
-
     /**
      * Returns true if the character at offset and the preceding character
      * are at different run levels (and thus there's a split caret).
@@ -1351,7 +1340,6 @@ private int getLineVisibleEnd(int line, int start, int end) {
 
         return end;
     }
-
     
     static class TabStops {
 
@@ -1423,11 +1411,8 @@ float nextTab(float h) {
             }
             return nextDefaultStop(h, mIncrement);
         }
-
         
     }
-
-
     
     public static class Directions {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.462 -0500", hash_original_field = "75E76BC0D205B7AB08D04B9BD6A8D5F6", hash_generated_field = "34A5B6DB41500E828BF17A544F4CA0A5")
@@ -1448,11 +1433,8 @@ float nextTab(float h) {
 Directions(int[] dirs) {
             mDirections = dirs;
         }
-
         
     }
-
-
     
     static class Ellipsizer implements CharSequence, GetChars {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.486 -0500", hash_original_field = "A59BBC07E5E46996D793B2F37E80BD24", hash_generated_field = "A59BBC07E5E46996D793B2F37E80BD24")
@@ -1516,11 +1498,8 @@ public CharSequence subSequence(int start, int end) {
             getChars(0, length(), s, 0);
             return new String(s);
         }
-
         
     }
-
-
     
     static class SpannedEllipsizer extends Ellipsizer implements Spanned {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.515 -0500", hash_original_field = "4D9A388EBF42337B3D4B4C24F8CD74B1", hash_generated_field = "69C78554F8ABB9B2C492FD314F3ED2EE")
@@ -1533,9 +1512,7 @@ public SpannedEllipsizer(CharSequence display) {
             super(display);
             mSpanned = (Spanned) display;
         }
-
-        
-                @DSModeled(DSC.BAN)
+                
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.968 -0400", hash_original_method = "E8AB479016A2E00AFF48AA43F345FA2A", hash_generated_method = "1366812328FC382F5B8FE3423F551FD8")
         public <T> T[] getSpans(int start, int end, Class<T> type) {
             addTaint(type.getTaint());
@@ -1583,11 +1560,8 @@ public int nextSpanTransition(int start, int limit, Class type) {
             TextUtils.copySpansFrom(mSpanned, start, end, Object.class, ss, 0);
             return ss;
         }
-
         
     }
-
-
     
     public enum Alignment {
         ALIGN_NORMAL,

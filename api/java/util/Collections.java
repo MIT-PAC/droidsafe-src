@@ -11,13 +11,7 @@ import java.io.ObjectStreamException;
 import java.io.Serializable;
 import java.lang.reflect.Array;
 
-
-
-
-
-
 public class Collections {
-
     
     @SuppressWarnings("unchecked")
     public static <T> int binarySearch(List<? extends Comparable<? super T>> list, T object) {
@@ -53,7 +47,6 @@ public class Collections {
         }
         return -mid - (result < 0 ? 1 : 2);
     }
-
     
     @SuppressWarnings("unchecked")
     public static <T> int binarySearch(List<? extends T> list, T object,
@@ -88,7 +81,6 @@ public class Collections {
         }
         return -mid - (result < 0 ? 1 : 2);
     }
-
     
     public static <T> void copy(List<? super T> destination, List<? extends T> source) {
         if (destination.size() < source.size()) {
@@ -107,9 +99,7 @@ public class Collections {
             destIt.set(srcIt.next());
         }
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static <T> Enumeration<T> enumeration(Collection<T> collection) {
         final Collection<T> c = collection;
         return new Enumeration<T>() {
@@ -130,9 +120,7 @@ public class Collections {
             }
         };
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static <T> void fill(List<? super T> list, T object) {
         ListIterator<? super T> it = list.listIterator();
         while (it.hasNext()) {
@@ -140,9 +128,7 @@ public class Collections {
             it.set(object);
         }
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static <T extends Object & Comparable<? super T>> T max(
             Collection<? extends T> collection) {
         Iterator<? extends T> it = collection.iterator();
@@ -155,9 +141,7 @@ public class Collections {
         }
         return max;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static <T> T max(Collection<? extends T> collection,
             Comparator<? super T> comparator) {
         if (comparator == null) {
@@ -175,9 +159,7 @@ public class Collections {
         }
         return max;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static <T extends Object & Comparable<? super T>> T min(
             Collection<? extends T> collection) {
         Iterator<? extends T> it = collection.iterator();
@@ -190,9 +172,7 @@ public class Collections {
         }
         return min;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static <T> T min(Collection<? extends T> collection,
             Comparator<? super T> comparator) {
         if (comparator == null) {
@@ -210,9 +190,7 @@ public class Collections {
         }
         return min;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static <T> List<T> nCopies(final int length, T object) {
         return new CopiesList<T>(length, object);
     }
@@ -241,16 +219,12 @@ public class Collections {
             back.set(frontNext);
         }
     }
-
     
-    @DSModeled(DSC.SAFE)
     @SuppressWarnings("unchecked")
     public static <T> Comparator<T> reverseOrder() {
         return (Comparator) ReverseComparator.INSTANCE;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static <T> Comparator<T> reverseOrder(Comparator<T> c) {
         if (c == null) {
             return reverseOrder();
@@ -315,27 +289,19 @@ public static void shuffle(List<?> list, Random random) {
             }
         }
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static <E> Set<E> singleton(E object) {
         return new SingletonSet<E>(object);
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static <E> List<E> singletonList(E object) {
         return new SingletonList<E>(object);
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static <K, V> Map<K, V> singletonMap(K key, V value) {
         return new SingletonMap<K, V>(key, value);
     }
-
     
-    @DSModeled(DSC.SAFE)
     @SuppressWarnings("unchecked")
     public static <T extends Comparable<? super T>> void sort(List<T> list) {
         Object[] array = list.toArray();
@@ -347,9 +313,7 @@ public static void shuffle(List<?> list, Random random) {
             it.set((T) array[i++]);
         }
     }
-
     
-    @DSModeled(DSC.SAFE)
     @SuppressWarnings("unchecked")
     public static <T> void sort(List<T> list, Comparator<? super T> comparator) {
         T[] array = list.toArray((T[]) new Object[list.size()]);
@@ -395,9 +359,7 @@ public static void shuffle(List<?> list, Random random) {
         List<Object> rawList = (List<Object>) list;
         rawList.set(index2, rawList.set(index1, rawList.get(index2)));
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static <T> boolean replaceAll(List<T> list, T obj, T obj2) {
         int index;
         boolean found = false;
@@ -602,9 +564,7 @@ public static int lastIndexOfSubList(List<?> list, List<?> sublist) {
         }
         return -1;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static <T> ArrayList<T> list(Enumeration<T> enumeration) {
         ArrayList<T> list = new ArrayList<T>();
         while (enumeration.hasMoreElements()) {
@@ -612,9 +572,7 @@ public static int lastIndexOfSubList(List<?> list, List<?> sublist) {
         }
         return list;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static <T> Collection<T> synchronizedCollection(
             Collection<T> collection) {
         if (collection == null) {
@@ -622,9 +580,7 @@ public static int lastIndexOfSubList(List<?> list, List<?> sublist) {
         }
         return new SynchronizedCollection<T>(collection);
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static <T> List<T> synchronizedList(List<T> list) {
         if (list == null) {
             throw new NullPointerException();
@@ -634,27 +590,21 @@ public static int lastIndexOfSubList(List<?> list, List<?> sublist) {
         }
         return new SynchronizedList<T>(list);
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static <K, V> Map<K, V> synchronizedMap(Map<K, V> map) {
         if (map == null) {
             throw new NullPointerException();
         }
         return new SynchronizedMap<K, V>(map);
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static <E> Set<E> synchronizedSet(Set<E> set) {
         if (set == null) {
             throw new NullPointerException();
         }
         return new SynchronizedSet<E>(set);
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static <K, V> SortedMap<K, V> synchronizedSortedMap(
             SortedMap<K, V> map) {
         if (map == null) {
@@ -662,18 +612,14 @@ public static int lastIndexOfSubList(List<?> list, List<?> sublist) {
         }
         return new SynchronizedSortedMap<K, V>(map);
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static <E> SortedSet<E> synchronizedSortedSet(SortedSet<E> set) {
         if (set == null) {
             throw new NullPointerException();
         }
         return new SynchronizedSortedSet<E>(set);
     }
-
     
-    @DSModeled(DSC.SAFE)
     @SuppressWarnings("unchecked")
     public static <E> Collection<E> unmodifiableCollection(
             Collection<? extends E> collection) {
@@ -682,9 +628,7 @@ public static int lastIndexOfSubList(List<?> list, List<?> sublist) {
         }
         return new UnmodifiableCollection<E>((Collection<E>) collection);
     }
-
     
-    @DSModeled(DSC.SAFE)
     @SuppressWarnings("unchecked")
     public static <E> List<E> unmodifiableList(List<? extends E> list) {
         if (list == null) {
@@ -695,9 +639,7 @@ public static int lastIndexOfSubList(List<?> list, List<?> sublist) {
         }
         return new UnmodifiableList<E>((List<E>) list);
     }
-
     
-    @DSModeled(DSC.SAFE)
     @SuppressWarnings("unchecked")
     public static <K, V> Map<K, V> unmodifiableMap(
             Map<? extends K, ? extends V> map) {
@@ -706,9 +648,7 @@ public static int lastIndexOfSubList(List<?> list, List<?> sublist) {
         }
         return new UnmodifiableMap<K, V>((Map<K, V>) map);
     }
-
     
-    @DSModeled(DSC.SAFE)
     @SuppressWarnings("unchecked")
     public static <E> Set<E> unmodifiableSet(Set<? extends E> set) {
         if (set == null) {
@@ -716,9 +656,7 @@ public static int lastIndexOfSubList(List<?> list, List<?> sublist) {
         }
         return new UnmodifiableSet<E>((Set<E>) set);
     }
-
     
-    @DSModeled(DSC.SAFE)
     @SuppressWarnings("unchecked")
     public static <K, V> SortedMap<K, V> unmodifiableSortedMap(
             SortedMap<K, ? extends V> map) {
@@ -727,9 +665,7 @@ public static int lastIndexOfSubList(List<?> list, List<?> sublist) {
         }
         return new UnmodifiableSortedMap<K, V>((SortedMap<K, V>) map);
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static <E> SortedSet<E> unmodifiableSortedSet(SortedSet<E> set) {
         if (set == null) {
             throw new NullPointerException();
@@ -770,60 +706,45 @@ public static int frequency(Collection<?> c, Object o) {
         }
         return result;
     }
-
     
-    @DSModeled(DSC.SAFE)
     @SuppressWarnings("unchecked")
     public static final <T> List<T> emptyList() {
         return EMPTY_LIST;
     }
-
     
-    @DSModeled(DSC.SAFE)
     @SuppressWarnings("unchecked")
     public static final <T> Set<T> emptySet() {
         return EMPTY_SET;
     }
-
     
-    @DSModeled(DSC.SAFE)
     @SuppressWarnings("unchecked")
     public static final <K, V> Map<K, V> emptyMap() {
         return EMPTY_MAP;
     }
-
     
-    @DSModeled(DSC.BAN)
     @SuppressWarnings("unchecked")
     public static <T> Enumeration<T> emptyEnumeration() {
         return (Enumeration<T>) EMPTY_ENUMERATION;
     }
-
     
-    @DSModeled(DSC.BAN)
     @SuppressWarnings("unchecked")
     public static <T> Iterator<T> emptyIterator() {
         return (Iterator<T>) EMPTY_ITERATOR;
     }
-
     
-    @DSModeled(DSC.BAN)
     public static <T> ListIterator<T> emptyListIterator() {
         return Collections.<T>emptyList().listIterator();
     }
-
     
     public static <E> Collection<E> checkedCollection(Collection<E> c,
             Class<E> type) {
         return new CheckedCollection<E>(c, type);
     }
-
     
     public static <K, V> Map<K, V> checkedMap(Map<K, V> m, Class<K> keyType,
             Class<V> valueType) {
         return new CheckedMap<K, V>(m, keyType, valueType);
     }
-
     
     public static <E> List<E> checkedList(List<E> list, Class<E> type) {
         if (list instanceof RandomAccess) {
@@ -831,24 +752,20 @@ public static int frequency(Collection<?> c, Object o) {
         }
         return new CheckedList<E>(list, type);
     }
-
     
     public static <E> Set<E> checkedSet(Set<E> s, Class<E> type) {
         return new CheckedSet<E>(s, type);
     }
-
     
     public static <K, V> SortedMap<K, V> checkedSortedMap(SortedMap<K, V> m,
             Class<K> keyType, Class<V> valueType) {
         return new CheckedSortedMap<K, V>(m, keyType, valueType);
     }
-
     
     public static <E> SortedSet<E> checkedSortedSet(SortedSet<E> s,
             Class<E> type) {
         return new CheckedSortedSet<E>(s, type);
     }
-
     
     public static <T> boolean addAll(Collection<? super T> c, T... a) {
         boolean modified = false;
@@ -887,9 +804,7 @@ public static boolean disjoint(Collection<?> c1, Collection<?> c2) {
         }
         return true;
     }
-
     
-    @DSModeled(DSC.SAFE)
     static <E> E checkType(E obj, Class<? extends E> type) {
         if (obj != null && !type.isInstance(obj)) {
             throw new ClassCastException("Attempt to insert element of type " + obj.getClass() +
@@ -897,60 +812,45 @@ public static boolean disjoint(Collection<?> c1, Collection<?> c2) {
         }
         return obj;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static <E> Set<E> newSetFromMap(Map<E, Boolean> map) {
         if (map.isEmpty()) {
             return new SetFromMap<E>(map);
         }
         throw new IllegalArgumentException();
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static <T> Queue<T> asLifoQueue(Deque<T> deque) {
         return new AsLIFOQueue<T>(deque);
     }
-
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.458 -0400", hash_original_field = "A240022D45397AD0FD0431DDDFAF666B", hash_generated_field = "D0EAF21E918FB32348AF27B109DA8409")
 
-    private static final Iterator<?> EMPTY_ITERATOR = new Iterator<Object>() {        
-        @DSModeled(DSC.SAFE)
+    private static final Iterator<?> EMPTY_ITERATOR = new Iterator<Object>() {
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.457 -0400", hash_original_method = "28E75D14A5D2234D3702D9638A8D3094", hash_generated_method = "B2F402CD4B1F330E1194A5FAF66FE3C9")
         @Override
         public boolean hasNext() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_799695461 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_799695461;
             
-            
         }
-
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.458 -0400", hash_original_method = "243C3D15209D9BF28572CB29FC9F3DF7", hash_generated_method = "3613EA17897DB540D203CDF04CC84004")
         @Override
         public Object next() {
         	throw new NoSuchElementException();
             
-            
         }
-
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.458 -0400", hash_original_method = "45CE80048748F3BC523226127E4746F5", hash_generated_method = "FC031BE6A6E094CAC267938D912798A0")
         @Override
         public void remove() {
         	throw new IllegalStateException();
             
-            
         }
-
         
 };
-
     
     private static final class CopiesList<E> extends AbstractList<E> implements Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:49.789 -0500", hash_original_field = "00716E08DB57F7568974F7A71EC1F099", hash_generated_field = "2ACBEBBA06800CFC571100A6231B0F40")
@@ -994,8 +894,6 @@ CopiesList(int length, E object) {
             throw new IndexOutOfBoundsException();
         }
     }
-
-
     
     private static final class EmptyList extends AbstractList implements RandomAccess, Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:49.811 -0500", hash_original_field = "AC4AD8926B907F321F7B202F0D093F9A", hash_generated_field = "F94EA5528856E40DE43B84AB4D470D7D")
@@ -1003,7 +901,7 @@ CopiesList(int length, E object) {
         private static final long serialVersionUID = 8842843931221139166L;
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.635 -0400", hash_original_method = "BF3F11B0BCAE2AE80C7C74CBEB88EB5B", hash_generated_method = "BF3F11B0BCAE2AE80C7C74CBEB88EB5B")
-        @DSModeled(DSC.BAN)
+        
         public EmptyList ()
         {
             //Synthesized constructor
@@ -1033,8 +931,6 @@ private Object readResolve() {
             return Collections.EMPTY_LIST;
         }
     }
-
-
     
     private static final class EmptySet extends AbstractSet implements Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:49.828 -0500", hash_original_field = "9E6792283594617B8BF2FB28A2B989D6", hash_generated_field = "A81D1AE03C05E931255584261EF756E0")
@@ -1042,7 +938,7 @@ private Object readResolve() {
         private static final long serialVersionUID = 1582296315990362920L;
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.636 -0400", hash_original_method = "3A37381B9598D46CF46D5D53F85DF5B1", hash_generated_method = "3A37381B9598D46CF46D5D53F85DF5B1")
-        @DSModeled(DSC.BAN)
+        
         public EmptySet ()
         {
             //Synthesized constructor
@@ -1072,8 +968,6 @@ private Object readResolve() {
             return Collections.EMPTY_SET;
         }
     }
-
-
     
     private static final class EmptyMap extends AbstractMap implements Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:49.844 -0500", hash_original_field = "90C4463D906D4A60D8013846BB8339DA", hash_generated_field = "847A5C63C9A66D8A1818A774A2AADB69")
@@ -1081,7 +975,7 @@ private Object readResolve() {
         private static final long serialVersionUID = 6428348081105594320L;
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.638 -0400", hash_original_method = "0E8F36F90F9C751DA5A12903A16705DF", hash_generated_method = "0E8F36F90F9C751DA5A12903A16705DF")
-        @DSModeled(DSC.BAN)
+        
         public EmptyMap ()
         {
             //Synthesized constructor
@@ -1129,8 +1023,6 @@ private Object readResolve() {
             return Collections.EMPTY_MAP;
         }
     }
-
-
     
     private static final class ReverseComparator<T> implements Comparator<T>, Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:49.877 -0500", hash_original_field = "C70720CC76542480CA92A23FC8C9BDF8", hash_generated_field = "28B0E21DBABF675E471021CA76588F6A")
@@ -1138,10 +1030,8 @@ private Object readResolve() {
         private static final ReverseComparator<Object> INSTANCE = new ReverseComparator<Object>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:49.880 -0500", hash_original_field = "432AF62647CB9AAAB1998CD06CE495C0", hash_generated_field = "410EA5184B11CE9687E932D7F263B83C")
 
-
         private static final long serialVersionUID = 7207038068494060240L;
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.641 -0400", hash_original_method = "FFB2FB11DBE006893CA9746ECCE68517", hash_generated_method = "FFB2FB11DBE006893CA9746ECCE68517")
         public ReverseComparator ()
         {
@@ -1162,8 +1052,6 @@ private Object readResolve() throws ObjectStreamException {
             return INSTANCE;
         }
     }
-
-
     
     private static final class ReverseComparator2<T> implements Comparator<T>, Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:49.891 -0500", hash_original_field = "3CD6395334A23B33BB5DA8C6E9C05985", hash_generated_field = "3328170146630256C37315D4155F67EF")
@@ -1198,8 +1086,6 @@ ReverseComparator2(Comparator<T> comparator) {
             return ~cmp.hashCode();
         }
     }
-
-
     
     private static final class SingletonSet<E> extends AbstractSet<E> implements Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:49.909 -0500", hash_original_field = "19F42BB89BFDE994B0F8BAE72C601126", hash_generated_field = "35AF14D3D33C59E58AFC233BD942F616")
@@ -1226,9 +1112,7 @@ SingletonSet(E object) {
 @Override public int size() {
             return 1;
         }
-
-        
-                @DSModeled(DSC.SAFE)
+                
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.644 -0400", hash_original_method = "135AC18A6A8AD4548E2E750F2D4C7699", hash_generated_method = "39DA48894BA329BD18C0E92D954E9E9F")
         @Override
         public Iterator<E> iterator() {
@@ -1280,15 +1164,12 @@ Iterator<E> varEF1BE467ABB7AA4C87CBCE9613BD5C24_1939968739 =             new Ite
             //};
         }
     }
-
-
     
     private static final class SingletonList<E> extends AbstractList<E> implements Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:49.942 -0500", hash_original_field = "A503B0C4CB45255ACA10940B2EDF16EF", hash_generated_field = "CBFA444A21D6CBFF01F29F9591A887AB")
 
         private static final long serialVersionUID = 3093736618740652951L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:49.944 -0500", hash_original_field = "AADC7BC67B0FB6048E4A856A581BAEE9", hash_generated_field = "AADC7BC67B0FB6048E4A856A581BAEE9")
-
 
          E element;
 
@@ -1319,15 +1200,12 @@ SingletonList(E object) {
             return 1;
         }
     }
-
-
     
     private static final class SingletonMap<K, V> extends AbstractMap<K, V> implements Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:49.961 -0500", hash_original_field = "EE499F8A7DDE5E756436D546DA7848C2", hash_generated_field = "0B15CF1CC7A3921AD66781626704DE4C")
 
         private static final long serialVersionUID = -6979724477215052911L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:49.963 -0500", hash_original_field = "052F80594ED04BACBC2E98744BD4CC2D", hash_generated_field = "052F80594ED04BACBC2E98744BD4CC2D")
-
 
          K k;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:49.966 -0500", hash_original_field = "3A278B3CDA0FEEA24CB626A0B3136D0B", hash_generated_field = "3A278B3CDA0FEEA24CB626A0B3136D0B")
@@ -1367,7 +1245,6 @@ SingletonMap(K key, V value) {
 @Override public int size() {
                     return 1;
                 }
-
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:02.505 -0400", hash_original_method = "AB4A6E093F1AE40B73184C21F1D08E5E", hash_generated_method = "48A2E5782E0DCD494BF96200E66A035B")
         @Override
@@ -1383,7 +1260,7 @@ Set<Map.Entry<K, V>> varC1C98ED33EBE8D5F809497AE1618869F_181985594 =            
                     }
                     return false;
                 }
-            @DSModeled(DSC.SAFE)
+            
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:02.499 -0400", hash_original_method = "798A0AE2F2A6352396904AB5C9ED97D5", hash_generated_method = "5EF0C210C2FD458D465D7A190312FDF5")
             @Override
             public int size() {
@@ -1440,8 +1317,6 @@ Iterator<Map.Entry<K, V>> var72555FFA480563A744615CB3042A10C3_693483736 =       
             // Original Method Too Long, Refer to Original Implementation
         }
     }
-
-
     
     static class SynchronizedCollection<E> implements Collection<E>, Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.017 -0500", hash_original_field = "87EA351D1C67DD99108CD76ACAEA5723", hash_generated_field = "0D9A3687FC51DFBFFFEA57286BC842CD")
@@ -1571,9 +1446,7 @@ SynchronizedCollection(Collection<E> collection, Object mutex) {
                 return c.toString();
             }
         }
-
-        
-                @DSModeled(DSC.SAFE)
+                
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.705 -0400", hash_original_method = "567EED27866E99DFC1B7F8B43B648D82", hash_generated_method = "5CC036A91B9EFDC6513490DF2199D4B6")
         @Override
         public <T> T[] toArray(T[] array) {
@@ -1598,8 +1471,6 @@ private void writeObject(ObjectOutputStream stream) throws IOException {
             }
         }
     }
-
-
     
     static class SynchronizedRandomAccessList<E> extends SynchronizedList<E> implements RandomAccess {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.076 -0500", hash_original_field = "5441B2940B2E2A85EA57DBBDDA2F3C05", hash_generated_field = "F305BE0154CFFE9E0253007EE134CBB9")
@@ -1643,8 +1514,6 @@ private Object writeReplace() {
             return new SynchronizedList<E>(list);
         }
     }
-
-
     
     static class SynchronizedList<E> extends SynchronizedCollection<E> implements List<E> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.092 -0500", hash_original_field = "EFEC40F0FBEB7C74C2A60BBE2FE9E011", hash_generated_field = "5528D904FB3223ACA4EBA912A58AE2BF")
@@ -1831,8 +1700,6 @@ private Object readResolve() {
             return this;
         }
     }
-
-
     
     static class SynchronizedMap<K, V> implements Map<K, V>, Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.146 -0500", hash_original_field = "45306B1E7073464302AF89EDF119CFD8", hash_generated_field = "1DE57645F72579A567941D71223F2BB4")
@@ -1840,10 +1707,8 @@ private Object readResolve() {
         private static final long serialVersionUID = 1978198479659022715L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.148 -0500", hash_original_field = "B770F05C5A3A992B6F65D731F667A79E", hash_generated_field = "1785B4570966C73126874A8D942D2395")
 
-
         private  Map<K, V> m;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.151 -0500", hash_original_field = "5C5F8780FECE5E612AF5A86D3A8B3194", hash_generated_field = "5C5F8780FECE5E612AF5A86D3A8B3194")
-
 
          Object mutex;
 
@@ -1989,8 +1854,6 @@ private void writeObject(ObjectOutputStream stream) throws IOException {
             }
         }
     }
-
-
     
     static class SynchronizedSet<E> extends SynchronizedCollection<E> implements Set<E> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.205 -0500", hash_original_field = "AA1AF52A852FAB805B2BAC94B18AA677", hash_generated_field = "A77C43308F38D2FC67E81B4E46E8827E")
@@ -2033,15 +1896,12 @@ private void writeObject(ObjectOutputStream stream) throws IOException {
             }
         }
     }
-
-
     
     static class SynchronizedSortedMap<K, V> extends SynchronizedMap<K, V> implements SortedMap<K, V> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.224 -0500", hash_original_field = "871D6E87FBCF84363FAE899418C5F3F1", hash_generated_field = "ECA677D018A422E9BB2369A5AF38055A")
 
         private static final long serialVersionUID = -8798146769416483793L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.227 -0500", hash_original_field = "41E5EF207399B1082121011C1EB446FF", hash_generated_field = "F813233D7B24D3620137345516D05A23")
-
 
         private  SortedMap<K, V> sm;
 
@@ -2118,15 +1978,12 @@ private void writeObject(ObjectOutputStream stream) throws IOException {
             }
         }
     }
-
-
     
     static class SynchronizedSortedSet<E> extends SynchronizedSet<E> implements SortedSet<E> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.257 -0500", hash_original_field = "B87D4B68AB046CE9FFF8EA7965872C85", hash_generated_field = "44E22A9B5E1BF0CBC26900B92B680526")
 
         private static final long serialVersionUID = 8695801310862127406L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.260 -0500", hash_original_field = "3926F730B29F3CD5942BECEF18215BC4", hash_generated_field = "5220A6F2AA4CB98BB6C290F0BB717E86")
-
 
         private  SortedSet<E> ss;
 
@@ -2201,15 +2058,12 @@ private void writeObject(ObjectOutputStream stream) throws IOException {
             }
         }
     }
-
-
     
     private static class UnmodifiableCollection<E> implements Collection<E>, Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.291 -0500", hash_original_field = "6C43110CC04324E6471EE00EA685548F", hash_generated_field = "ED589FB504EC70A2532C4CA52BA9C8D0")
 
         private static final long serialVersionUID = 1820017752578914078L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.293 -0500", hash_original_field = "A3C80A7E02E49F20400373DFBAF9696A", hash_generated_field = "A3C80A7E02E49F20400373DFBAF9696A")
-
 
          Collection<E> c;
 
@@ -2254,9 +2108,7 @@ UnmodifiableCollection(Collection<E> collection) {
 @Override public boolean isEmpty() {
             return c.isEmpty();
         }
-
-        
-                @DSModeled(DSC.SAFE)
+                
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.732 -0400", hash_original_method = "57C2B30126E9906DFFF70EEB2D2CD18D", hash_generated_method = "B262D68F3934C177FEAA4645EDB16A1F")
         @Override
         public Iterator<E> iterator() {
@@ -2329,9 +2181,7 @@ Iterator<E> var17584F965577555F1B3BEAB9FFD781E4_1722746458 =             new Ite
 @Override public Object[] toArray() {
             return c.toArray();
         }
-
-        
-                @DSModeled(DSC.SAFE)
+                
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.735 -0400", hash_original_method = "D5913A45F2385B9A173BEEED47EA354F", hash_generated_method = "F6F2B517349AE26404C3A18C39898EBB")
         @Override
         public <T> T[] toArray(T[] array) {
@@ -2349,8 +2199,6 @@ T[] varA824E05E0FA0C1B35EB9A8324FF1796D_1507973265 =             c.toArray(array
             return c.toString();
         }
     }
-
-
     
     private static class UnmodifiableRandomAccessList<E> extends UnmodifiableList<E> implements RandomAccess {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.353 -0500", hash_original_field = "C6B578144501016B37C405E9466D0C80", hash_generated_field = "871EA319ACA4D6DBFD800453B4F24DBA")
@@ -2386,15 +2234,12 @@ private Object writeReplace() {
             return new UnmodifiableList<E>(list);
         }
     }
-
-
     
     private static class UnmodifiableList<E> extends UnmodifiableCollection<E> implements List<E> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.366 -0500", hash_original_field = "3D1217B3C30A46B09F9A2401FC2D077C", hash_generated_field = "F0F0F0942F5CE1242FD2AB85FF483C32")
 
         private static final long serialVersionUID = -283967356065247728L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.369 -0500", hash_original_field = "1ECA8D0C53ED31C6D874046BB18C0645", hash_generated_field = "1ECA8D0C53ED31C6D874046BB18C0645")
-
 
          List<E> list;
 
@@ -2452,9 +2297,7 @@ UnmodifiableList(List<E> l) {
 @Override public ListIterator<E> listIterator() {
             return listIterator(0);
         }
-
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.751 -0400", hash_original_method = "1D0E6831E50FA8995D23240A6E091C82", hash_generated_method = "685CD7A900A8299B727471C10D97D42A")
         @Override
         public ListIterator<E> listIterator(final int location) {
@@ -2566,15 +2409,12 @@ private Object readResolve() {
             return this;
         }
     }
-
-
     
     private static class UnmodifiableMap<K, V> implements Map<K, V>, Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.445 -0500", hash_original_field = "52857F37551780E390A700AB117559F7", hash_generated_field = "FFB33DF33FB47F4C6369B7156E5B3319")
 
         private static final long serialVersionUID = -1034234728574286014L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.448 -0500", hash_original_field = "B770F05C5A3A992B6F65D731F667A79E", hash_generated_field = "1785B4570966C73126874A8D942D2395")
-
 
         private  Map<K, V> m;
 
@@ -2667,7 +2507,6 @@ UnmodifiableMap(Map<K, V> map) {
 @Override public Collection<V> values() {
             return new UnmodifiableCollection<V>(m.values());
         }
-
         
         private static class UnmodifiableEntrySet<K, V> extends UnmodifiableSet<Map.Entry<K, V>> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.452 -0500", hash_original_field = "BEBACDBC0A0DF7B00CF983B3E8EBF15F", hash_generated_field = "12B2F4473571AB0F630FC68FA4B581F0")
@@ -2679,9 +2518,7 @@ UnmodifiableMap(Map<K, V> map) {
 UnmodifiableEntrySet(Set<Map.Entry<K, V>> set) {
                 super(set);
             }
-
             
-            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.755 -0400", hash_original_method = "53A7F61EDA7A64FBCB28AE61A8906002", hash_generated_method = "67993FFD84C85C04B894A8095882D351")
             @Override
             public Iterator<Map.Entry<K, V>> iterator() {
@@ -2736,7 +2573,6 @@ Iterator<Map.Entry<K, V>> var95D309287220EAC9AA0261E09FAD4D41_1872266644 =      
                 }
                 return result;
             }
-
             
             private static class UnmodifiableMapEntry<K, V> implements Map.Entry<K, V> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.455 -0500", hash_original_field = "24589B068FBC99F8ED52DE988ED39319", hash_generated_field = "24589B068FBC99F8ED52DE988ED39319")
@@ -2784,12 +2620,9 @@ UnmodifiableMapEntry(Map.Entry<K, V> entry) {
 @Override public String toString() {
                     return mapEntry.toString();
                 }
-
                 
             }
-
-            
-                        @DSModeled(DSC.SAFE)
+                        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.760 -0400", hash_original_method = "CB9686BEA448DC0D7D0077DDEB1917CB", hash_generated_method = "53ACFCB9D3998B322DC42B35FDCE552C")
             @SuppressWarnings("unchecked")
             @Override
@@ -2838,8 +2671,6 @@ T[] var5DC9C33EDB9F81CF1216538024B770BE_1421244130 =                 contents;
             return m.toString();
         }
     }
-
-
     
     private static class UnmodifiableSet<E> extends UnmodifiableCollection<E> implements Set<E> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.569 -0500", hash_original_field = "9520A6C57E7547F55E09D2FD317B435F", hash_generated_field = "E7C72ADB8696D042D902371BEB24646C")
@@ -2864,15 +2695,12 @@ UnmodifiableSet(Set<E> set) {
             return c.hashCode();
         }
     }
-
-
     
     private static class UnmodifiableSortedMap<K, V> extends UnmodifiableMap<K, V> implements SortedMap<K, V> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.583 -0500", hash_original_field = "A81AFFF7BEB365ACAB42D685468AC372", hash_generated_field = "74C1A54CA827DD7351FCAD121C86B500")
 
         private static final long serialVersionUID = -8806743815996713206L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.585 -0500", hash_original_field = "41E5EF207399B1082121011C1EB446FF", hash_generated_field = "F813233D7B24D3620137345516D05A23")
-
 
         private  SortedMap<K, V> sm;
 
@@ -2919,15 +2747,12 @@ UnmodifiableSortedMap(SortedMap<K, V> map) {
             return new UnmodifiableSortedMap<K, V>(sm.tailMap(after));
         }
     }
-
-
     
     private static class UnmodifiableSortedSet<E> extends UnmodifiableSet<E> implements SortedSet<E> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.610 -0500", hash_original_field = "7B1EEFDDEA1148AAB7542E75E17DDA29", hash_generated_field = "492EEA3FB02A9A00EAE2EF3419CB36AB")
 
         private static final long serialVersionUID = -4929149591599911165L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.612 -0500", hash_original_field = "3926F730B29F3CD5942BECEF18215BC4", hash_generated_field = "5220A6F2AA4CB98BB6C290F0BB717E86")
-
 
         private  SortedSet<E> ss;
 
@@ -2974,8 +2799,6 @@ UnmodifiableSortedSet(SortedSet<E> set) {
             return new UnmodifiableSortedSet<E>(ss.tailSet(after));
         }
     }
-
-
     
     private static class SetFromMap<E> extends AbstractSet<E> implements Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.787 -0500", hash_original_field = "FBDB631736364FEA838AD2CA47185564", hash_generated_field = "D22893062D677334CA792903B3E2A0BD")
@@ -2985,7 +2808,6 @@ UnmodifiableSortedSet(SortedSet<E> set) {
 
         private Map<E, Boolean> m;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.792 -0500", hash_original_field = "7527A39242482683EF2414335C5A6355", hash_generated_field = "75D49D8B030B2438C97CCFE06F0E4EF6")
-
 
         private transient Set<E> backingSet;
 
@@ -3061,9 +2883,7 @@ SetFromMap(final Map<E, Boolean> map) {
 @Override public Object[] toArray() {
             return backingSet.toArray();
         }
-
-        
-                @DSModeled(DSC.SAFE)
+                
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.772 -0400", hash_original_method = "5B684176C593DE73F99AF08724DF65D4", hash_generated_method = "575476B84A4F565C006DCA5CC76F268A")
         @Override
         public <T> T[] toArray(T[] contents) {
@@ -3096,8 +2916,6 @@ T[] var3546C28EE3387A2856CC723595918E17_779556003 =             backingSet.toArr
             backingSet = m.keySet();
         }
     }
-
-
     
     private static class AsLIFOQueue<E> extends AbstractQueue<E> implements Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.841 -0500", hash_original_field = "EDA383040B740921D09D3B9F7CF5F5EA", hash_generated_field = "4687D2B0166F4A9C03E2417C41443082")
@@ -3209,9 +3027,7 @@ AsLIFOQueue(final Deque<E> deque) {
 @Override public Object[] toArray() {
             return q.toArray();
         }
-
-        
-                @DSModeled(DSC.SAFE)
+                
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.783 -0400", hash_original_method = "3C7918E789D95B2A97E0F45A2E8277E0", hash_generated_method = "A678998339B80EC4D9EC01B5E34F53F0")
         @Override
         public <T> T[] toArray(T[] contents) {
@@ -3229,20 +3045,15 @@ T[] varB826DAACB71C6F73C56D75F228BB03F8_1296691217 =             q.toArray(conte
             return q.toString();
         }
     }
-
-
     
     private static class CheckedCollection<E> implements Collection<E>, Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.901 -0500", hash_original_field = "8AE56985A2FE4DD4E838EA62084318BB", hash_generated_field = "0D42B7BF026634D153E28C472B065A0D")
 
-
         private static final long serialVersionUID = 1578914078182001775L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.904 -0500", hash_original_field = "A3C80A7E02E49F20400373DFBAF9696A", hash_generated_field = "A3C80A7E02E49F20400373DFBAF9696A")
 
-
         Collection<E> c;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.906 -0500", hash_original_field = "D40602D541C2081B4D03EEADC8718DAD", hash_generated_field = "D40602D541C2081B4D03EEADC8718DAD")
-
 
         Class<E> type;
 
@@ -3289,9 +3100,7 @@ public CheckedCollection(Collection<E> c, Class<E> type) {
 @Override public Object[] toArray() {
             return c.toArray();
         }
-
-        
-                @DSModeled(DSC.SAFE)
+                
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.788 -0400", hash_original_method = "9B8166862C116AE305DE64E80811892F", hash_generated_method = "52580AF03297B83D0E9C964EB937E251")
         @Override
         public <T> T[] toArray(T[] arr) {
@@ -3356,16 +3165,12 @@ T[] varC7FA0C6E1955DD91DCB427C3A91A0EA7_810280548 =             c.toArray(arr);
             return c.toString();
         }
     }
-
-
     
     private static class CheckedListIterator<E> implements ListIterator<E> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.952 -0500", hash_original_field = "672490E4668428437540D3382C6E62AF", hash_generated_field = "A3E111A0B732842F8B9E259D3903708E")
 
-
         private ListIterator<E> i;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.955 -0500", hash_original_field = "D40602D541C2081B4D03EEADC8718DAD", hash_generated_field = "44DD73C068DAE541C380477699D61FAF")
-
 
         private Class<E> type;
 
@@ -3436,19 +3241,14 @@ public CheckedListIterator(ListIterator<E> i, Class<E> type) {
 @Override public void add(E obj) {
             i.add(checkType(obj, type));
         }
-
         
     }
-
-
     
     private static class CheckedList<E> extends CheckedCollection<E> implements List<E> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.988 -0500", hash_original_field = "313AB5A2444D643D3A7E273BC101E993", hash_generated_field = "872FF792DF349B762724C98686FE9FD7")
 
-
         private static final long serialVersionUID = 65247728283967356L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.990 -0500", hash_original_field = "BA44D98E464F3917B2E777BB565BC0D3", hash_generated_field = "BA44D98E464F3917B2E777BB565BC0D3")
-
 
         List<E> l;
 
@@ -3536,12 +3336,9 @@ public CheckedList(List<E> l, Class<E> type) {
             return l.hashCode();
         }
     }
-
-
     
     private static class CheckedRandomAccessList<E> extends CheckedList<E> implements RandomAccess {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:51.032 -0500", hash_original_field = "9930E78DEF386A88163DD68F9F319CF6", hash_generated_field = "AE05DA4DC0253A1B88798E9C56DCC885")
-
 
         private static final long serialVersionUID = 1638200125423088369L;
 
@@ -3551,12 +3348,9 @@ public CheckedRandomAccessList(List<E> l, Class<E> type) {
             super(l, type);
         }
     }
-
-
     
     private static class CheckedSet<E> extends CheckedCollection<E> implements Set<E> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:51.040 -0500", hash_original_field = "8703A4A980C996D962366DD8FD48BC61", hash_generated_field = "E1E04526085CC70B98A324ECDFB31198")
-
 
         private static final long serialVersionUID = 4694047833775013803L;
 
@@ -3578,16 +3372,12 @@ public CheckedSet(Set<E> s, Class<E> type) {
             return c.hashCode();
         }
     }
-
-
     
     private static class CheckedMap<K, V> implements Map<K, V>, Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:51.054 -0500", hash_original_field = "863D41F428ECFBC5F882B95259992FE2", hash_generated_field = "9F44A98BA336AC9320984E43122649C3")
 
-
         private static final long serialVersionUID = 5742860141034234728L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:51.056 -0500", hash_original_field = "B770F05C5A3A992B6F65D731F667A79E", hash_generated_field = "B770F05C5A3A992B6F65D731F667A79E")
-
 
         Map<K, V> m;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:51.059 -0500", hash_original_field = "F010784A251FB129AC47F47773283FBF", hash_generated_field = "F010784A251FB129AC47F47773283FBF")
@@ -3707,7 +3497,6 @@ private CheckedMap(Map<K, V> m, Class<K> keyType, Class<V> valueType) {
 @Override public int hashCode() {
             return m.hashCode();
         }
-
         
         private static class CheckedEntry<K, V> implements Map.Entry<K, V> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:51.109 -0500", hash_original_field = "FD10A3858A638ACB828326F81BE2C88B", hash_generated_field = "FD10A3858A638ACB828326F81BE2C88B")
@@ -3756,11 +3545,8 @@ public CheckedEntry(Map.Entry<K, V> e, Class<V> valueType) {
 @Override public int hashCode() {
                 return e.hashCode();
             }
-
             
         }
-
-
         
         private static class CheckedEntrySet<K, V> implements Set<Map.Entry<K, V>> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:51.134 -0500", hash_original_field = "00162E30A8FD9ACC3B5664D702737B9D", hash_generated_field = "00162E30A8FD9ACC3B5664D702737B9D")
@@ -3794,9 +3580,7 @@ public CheckedEntrySet(Set<Map.Entry<K, V>> s, Class<V> valueType) {
                 }
                 return array;
             }
-
-            
-                        @DSModeled(DSC.SAFE)
+                        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:06.809 -0400", hash_original_method = "C1CA1F6CAFA571422DF3592838D87C35", hash_generated_method = "38B8F3E790B72CD3320F33B7173F6282")
             @SuppressWarnings("unchecked")
             @Override
@@ -3907,7 +3691,6 @@ T[] var1270D5B74B756F17D644A15D775499D9_2051754257 =                 array;
 @Override public boolean equals(Object object) {
                 return s.equals(object);
             }
-
             
             private static class CheckedEntryIterator<K, V> implements Iterator<Map.Entry<K, V>> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:51.187 -0500", hash_original_field = "0B0E1D6BACD1F756FB2A478A3878B968", hash_generated_field = "0B0E1D6BACD1F756FB2A478A3878B968")
@@ -3942,11 +3725,8 @@ public CheckedEntryIterator(Iterator<Map.Entry<K, V>> i,
 @Override public Map.Entry<K, V> next() {
                     return new CheckedEntry<K, V>(i.next(), valueType);
                 }
-
                 
             }
-
-
             
         }
 
@@ -3956,8 +3736,6 @@ public CheckedEntryIterator(Iterator<Map.Entry<K, V>> i,
             return m.toString();
         }
     }
-
-
     
     private static class CheckedSortedSet<E> extends CheckedSet<E> implements SortedSet<E> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:51.213 -0500", hash_original_field = "D080F7333B1CEFF6B181130B80D12E2B", hash_generated_field = "EFEBE119B7009CBFA7ED7A5DC59F8042")
@@ -4011,8 +3789,6 @@ public CheckedSortedSet(SortedSet<E> s, Class<E> type) {
             return ss.last();
         }
     }
-
-
     
     private static class CheckedSortedMap<K, V> extends CheckedMap<K, V> implements SortedMap<K, V> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:51.242 -0500", hash_original_field = "13814B80F8B9799968E3142D7456834C", hash_generated_field = "48CAB95B26D6FD20C5A6CF4DE2F667C3")
@@ -4067,27 +3843,22 @@ CheckedSortedMap(SortedMap<K, V> m, Class<K> keyType, Class<V> valueType) {
     }
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.459 -0400", hash_original_field = "BF19162ABA3425F946F5D9B6685AC2EC", hash_generated_field = "66C8EDF172F44B1C185312659E6B7E7F")
 
-    private static final Enumeration<?> EMPTY_ENUMERATION = new Enumeration<Object>() {        
-        @DSModeled(DSC.SAFE)
+    private static final Enumeration<?> EMPTY_ENUMERATION = new Enumeration<Object>() {
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.458 -0400", hash_original_method = "50CD0E92886EDA5BEE0164B092B351EC", hash_generated_method = "5846EE9EB8DDDDC0896316CB4D84FA05")
         @Override
         public boolean hasMoreElements() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_923760985 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_923760985;
             
-            
         }
-
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:07.459 -0400", hash_original_method = "82381D9C34AF9F2E88B673FB4A4E6DDE", hash_generated_method = "C451DB608AE3B7FAE82365C2FA63C59D")
         @Override
         public Object nextElement() {
         	throw new NoSuchElementException();
             
-            
         }
-
         
 };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:49.868 -0500", hash_original_field = "434E68EAB96E5E748F17F10B3723066B", hash_generated_field = "1967470EF0F42FDB7D6E965615F956D6")

@@ -13,13 +13,9 @@ import org.apache.http.ParseException;
 import org.apache.http.protocol.HTTP;
 import org.apache.http.util.CharArrayBuffer;
 
-
-
-
-public class BasicHeaderValueParser implements HeaderValueParser {  
+public class BasicHeaderValueParser implements HeaderValueParser {
     
     // public default constructor
-
 
     /**
      * Parses elements with the given parser.
@@ -50,7 +46,6 @@ public final static
         return parser.parseElements(buffer, cursor);
     }
 
-
     /**
      * Parses an element with the given parser.
      *
@@ -79,7 +74,6 @@ public final static
         ParserCursor cursor = new ParserCursor(0, value.length());
         return parser.parseHeaderElement(buffer, cursor);
     }
-
 
     /**
      * Parses parameters with the given parser.
@@ -157,7 +151,6 @@ private static boolean isOneOf(final char ch, final char[] chs) {
         BasicHeaderValueParser DEFAULT = new BasicHeaderValueParser();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:47.363 -0500", hash_original_field = "AD17628587A42C99D7C5E8647BB417E7", hash_generated_field = "D4A4655610E5AD33BAD13A5088D74510")
 
-
     private final static char PARAM_DELIMITER                = ';';
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:47.365 -0500", hash_original_field = "00CC834AB95DBBAA3C6197CB6D21E09D", hash_generated_field = "9F3335048E6514264D4F2903B65E5B12")
 
@@ -169,13 +162,11 @@ private static boolean isOneOf(final char ch, final char[] chs) {
                                                                 ELEM_DELIMITER
                                                                 };
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.831 -0400", hash_original_method = "E5D5EDFEB9DFD5F75BF9F31254D7292C", hash_generated_method = "E5D5EDFEB9DFD5F75BF9F31254D7292C")
     public BasicHeaderValueParser ()
     {
         //Synthesized constructor
     }
-
 
     // non-javadoc, see interface HeaderValueParser
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:47.373 -0500", hash_original_method = "5016300DF78E74A02C94B3D9AD513F2B", hash_generated_method = "DDEC0A5D635225F759FB3EDC18624748")
@@ -201,7 +192,6 @@ public HeaderElement[] parseElements(final CharArrayBuffer buffer,
             elements.toArray(new HeaderElement[elements.size()]);
     }
 
-
     // non-javadoc, see interface HeaderValueParser
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:47.379 -0500", hash_original_method = "9DB78E4EDC9AB24886813ADD5ECD3AEC", hash_generated_method = "E2B30DD172331B018DDEDD6B8DA86828")
     
@@ -226,7 +216,6 @@ public HeaderElement parseHeaderElement(final CharArrayBuffer buffer,
         return createHeaderElement(nvp.getName(), nvp.getValue(), params);
     }
 
-
     /**
      * Creates a header element.
      * Called from {@link #parseHeaderElement}.
@@ -241,8 +230,6 @@ protected HeaderElement createHeaderElement(
             final NameValuePair[] params) {
         return new BasicHeaderElement(name, value, params);
     }
-
-
 
     // non-javadoc, see interface HeaderValueParser
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:47.388 -0500", hash_original_method = "AD12DE8E127E3F34D456FD84EFD432E9", hash_generated_method = "9FBF95A0EA203A135F1E3284D60E467B")
@@ -286,7 +273,6 @@ public NameValuePair[] parseParameters(final CharArrayBuffer buffer,
         return (NameValuePair[])
             params.toArray(new NameValuePair[params.size()]);
     }
-
 
     // non-javadoc, see interface HeaderValueParser
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:47.394 -0500", hash_original_method = "CDDF563B77C55AAFFCDB4B7B75BDCA50", hash_generated_method = "9270E18A54D61050C3549785E3137523")

@@ -73,8 +73,6 @@ import android.view.accessibility.AccessibilityManager;
 import android.view.inputmethod.InputMethodManager;
 import android.view.textservice.TextServicesManager;
 
-
-
 public class ContextWrapper extends Context {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.092 -0500", hash_original_field = "45A1FAFEC6ED7EF70B481175C79188A0", hash_generated_field = "45A1FAFEC6ED7EF70B481175C79188A0")
 
@@ -85,9 +83,7 @@ public class ContextWrapper extends Context {
 public ContextWrapper(Context base) {
         mBase = base;
     }
-
     
-    @DSModeled(DSC.SAFE)
     protected void attachBaseContext(Context base) {
         mBase = base;
     }
@@ -463,9 +459,7 @@ public Context getBaseContext() {
     public void removeStickyBroadcast(Intent intent) {
         mBase.removeStickyBroadcast(intent);
     }
-
     
-    @DSModeled(DSC.SPEC)
     @Override
     public Intent registerReceiver(BroadcastReceiver receiver, IntentFilter filter) {
     	receiver.onReceive(this, new Intent());
@@ -663,7 +657,6 @@ public Context getBaseContext() {
     public boolean isRestricted() {
         return mBase.isRestricted();
     }
-
     
 }
 

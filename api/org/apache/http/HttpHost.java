@@ -9,11 +9,6 @@ import java.util.Locale;
 import org.apache.http.util.CharArrayBuffer;
 import org.apache.http.util.LangUtils;
 
-
-
-
-
-
 public final class HttpHost implements Cloneable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.891 -0500", hash_original_field = "9BF4E3E79F15BE75A8F5E6E2CD7571EC", hash_generated_field = "BC4AB09F492BB8FF3AF2DDEA94F3ED6C")
 
@@ -30,7 +25,6 @@ public final class HttpHost implements Cloneable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.902 -0500", hash_original_field = "55C363940FB6D931F5BB0704D4C8E745", hash_generated_field = "B9EB89391FD6A47F6CAEEA8A1467B77A")
 
     protected  String schemeName;
-
 
     /**
      * Creates a new {@link HttpHost HttpHost}, specifying all values.
@@ -127,9 +121,7 @@ public int getPort() {
 public String getSchemeName() {
         return this.schemeName;
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.141 -0400", hash_original_method = "FE8B35DF3D2B1A5F77A96BBF48284914", hash_generated_method = "80451F027FD1B2D488F4621B1F988A16")
     public String toURI() {
         CharArrayBuffer buffer = new CharArrayBuffer(32);
@@ -156,7 +148,6 @@ String varD03843288D33B9E1D3062E25339ECF6D_30388163 =         buffer.toString();
         //return buffer.toString();
     }
 
-
     /**
      * Obtains the host string, without scheme prefix.
      *
@@ -174,13 +165,11 @@ public String toHostString() {
         return buffer.toString();
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.927 -0500", hash_original_method = "C17018EEDA4C922BB5D288F6A26A7D04", hash_generated_method = "BBFC3CB8ED9DDB21B444E0C38EA803A2")
     
 public String toString() {
         return toURI();
-    }    
-    
+    }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.929 -0500", hash_original_method = "C7D67D79CD52B2E28D96292DEF9F8BD7", hash_generated_method = "736BF8AEC171F9FBC2FB4CEFF68CDCDD")
     

@@ -49,11 +49,6 @@ import com.android.internal.view.menu.MenuPresenter;
 import com.android.internal.view.menu.MenuView;
 import com.android.internal.view.menu.SubMenuBuilder;
 
-
-
-
-
-
 public class ActionBarView extends AbsActionBarView {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:43.347 -0500", hash_original_field = "13E1B41D73BCA415DCDEC906E8D8082E", hash_generated_field = "CDFB47463B78F3368DF983B3BF1B285F")
 
@@ -71,10 +66,8 @@ public class ActionBarView extends AbsActionBarView {
             ActionBar.DISPLAY_SHOW_TITLE;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:43.356 -0500", hash_original_field = "C5C90C1ACEFF6F72E0613A9C2710627A", hash_generated_field = "3E11FBBE13E46A77B28D3C5EFE3B5DF0")
 
-
     private static final int DEFAULT_CUSTOM_GRAVITY = Gravity.LEFT | Gravity.CENTER_VERTICAL;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:43.359 -0500", hash_original_field = "798106CD7526C2079840C962AA54DB2F", hash_generated_field = "D7021ACCA51C37141CA5A3F0F0CB8D58")
-
     
     private int mNavigationMode;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:43.361 -0500", hash_original_field = "BDA13E1B19CA8C479B2D635CE6A6D5BF", hash_generated_field = "B097184BD65EEF760AB4457269F41FCE")
@@ -94,7 +87,6 @@ public class ActionBarView extends AbsActionBarView {
     private Drawable mLogo;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:43.374 -0500", hash_original_field = "5C0068FACE6B1BBC7F305A960008426B", hash_generated_field = "D44BE31A0DA12240E9EFFCC7D25F51CC")
 
-
     private HomeView mHomeLayout;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:43.376 -0500", hash_original_field = "3959B8ED69EA5F3A81713941FFA2025F", hash_generated_field = "E38B6AFC0FF7040E207A508974C7E25A")
 
@@ -112,7 +104,6 @@ public class ActionBarView extends AbsActionBarView {
 
     private View mTitleUpView;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:43.387 -0500", hash_original_field = "BEBDEDFD11469EABE9181A28E312C20A", hash_generated_field = "11476E269EBDAE78EE3F499A710729B2")
-
 
     private Spinner mSpinner;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:43.389 -0500", hash_original_field = "1363E7D01AE8F3E0EBA1B30929D3DD44", hash_generated_field = "3E145BA83F7246824E728DD8C128F1DB")
@@ -132,13 +123,11 @@ public class ActionBarView extends AbsActionBarView {
     private ProgressBar mIndeterminateProgressView;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:43.401 -0500", hash_original_field = "5CF83B212FF8552ABAA020AC5D602B28", hash_generated_field = "A3B6EB195053EBD51627D7173A9AE65D")
 
-
     private int mProgressBarPadding;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:43.403 -0500", hash_original_field = "362CD4C51D06AEE140CC6E752ECE8458", hash_generated_field = "F1455EFA6BE686E648B8E824CB9E4B81")
 
     private int mItemPadding;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:43.405 -0500", hash_original_field = "91BBE04D928B78D71ACCA8B7A1A78C5D", hash_generated_field = "CFEDF1432A06310A2FB06B788CC20410")
-
     
     private int mTitleStyleRes;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:43.407 -0500", hash_original_field = "1B837B3FAA0F380D6AF3C59E69CB3BE4", hash_generated_field = "9FA8532B8CB2D1269C79565E301C661F")
@@ -152,7 +141,6 @@ public class ActionBarView extends AbsActionBarView {
     private int mIndeterminateProgressStyle;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:43.414 -0500", hash_original_field = "BC597FAE0E0B5099AFFB47470C0E19A8", hash_generated_field = "0BAF72C7FF2EC45DE525F98CE324593F")
 
-
     private boolean mUserTitle;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:43.416 -0500", hash_original_field = "448386E71B11CD06DD441057CF23BBC3", hash_generated_field = "968C4A904AD7ABC6144B6FCA2B427A80")
 
@@ -165,18 +153,14 @@ public class ActionBarView extends AbsActionBarView {
     private boolean mIsCollapsed;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:43.423 -0500", hash_original_field = "917FEAD1389D218E4B81B249AD63541D", hash_generated_field = "4278A1A241D9B74448B2E547C0296095")
 
-
     private MenuBuilder mOptionsMenu;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:43.425 -0500", hash_original_field = "A5A9EDF61C66A197D158B006E66DA25C", hash_generated_field = "E4495F4DA753977DA3DA6F75D457D470")
-
     
     private ActionBarContextView mContextView;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:43.427 -0500", hash_original_field = "D7F65785B7F41E20AE226E6BAF701A6E", hash_generated_field = "8C99101FC0313C08F73DD333D1CB1634")
 
-
     private ActionMenuItem mLogoNavItem;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:43.430 -0500", hash_original_field = "C6728ABFE96FBC761211FBFCF9FAA627", hash_generated_field = "3A2C8F67A3FD8ED91EC78875AB208830")
-
 
     private SpinnerAdapter mSpinnerAdapter;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:43.432 -0500", hash_original_field = "3AA3B40983CB34C0A7CA244F15002B79", hash_generated_field = "7A41771A4BE9BD1204FF01614115DD99")
@@ -184,10 +168,8 @@ public class ActionBarView extends AbsActionBarView {
     private OnNavigationListener mCallback;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:43.434 -0500", hash_original_field = "E682310941753B94BE1FECAC9286C6E9", hash_generated_field = "4C6A10C066298B16934A9F20792BEABB")
 
-
     private Runnable mTabSelector;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:43.437 -0500", hash_original_field = "3A18A0899B7747CAC81D3533E30CC657", hash_generated_field = "87262EFC15C41A276BFA5FD764A20EF4")
-
 
     private ExpandedActionViewMenuPresenter mExpandedMenuPresenter;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:43.439 -0500", hash_original_field = "5B0D453753A571590EA0325BAB8050A5", hash_generated_field = "5B0D453753A571590EA0325BAB8050A5")
@@ -195,12 +177,11 @@ public class ActionBarView extends AbsActionBarView {
     View mExpandedActionView;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:43.441 -0500", hash_original_field = "27B4F279DA726B6E62F72C86D786B686", hash_generated_field = "27B4F279DA726B6E62F72C86D786B686")
 
-
     Window.Callback mWindowCallback;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.063 -0400", hash_original_field = "6570369C5D002BA40F3205CA42EDA077", hash_generated_field = "44876E5A80146202CAC9FD16865181DF")
 
-    private final AdapterView.OnItemSelectedListener mNavItemSelectedListener = new AdapterView.OnItemSelectedListener() {        
-        @DSModeled(DSC.BAN)
+    private final AdapterView.OnItemSelectedListener mNavItemSelectedListener = new AdapterView.OnItemSelectedListener() {
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.063 -0400", hash_original_method = "1DD2DCAB9C51672A3484006095504705", hash_generated_method = "546EE63100CD77A2ECCDAFF19BF96005")
         public void onItemSelected(AdapterView parent, View view, int position, long id) {
             
@@ -212,26 +193,20 @@ public class ActionBarView extends AbsActionBarView {
             addTaint(position);
             addTaint(id);
             
-            
-                
-            
         }
-
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.063 -0400", hash_original_method = "B71B11696BC75696BC2C4386B1729546", hash_generated_method = "CCFF701FC5F6240EA1EEF39B88699599")
         public void onNothingSelected(AdapterView parent) {
             
             addTaint(parent.getTaint());
             
         }
-
         
 };
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.064 -0400", hash_original_field = "130B48D14DC4F38293644D9F1154245C", hash_generated_field = "0D17A254F68203FB51BBDB9F44323A0B")
 
-    private final OnClickListener mExpandedActionViewUpListener = new OnClickListener() {        
-        @DSModeled(DSC.BAN)
+    private final OnClickListener mExpandedActionViewUpListener = new OnClickListener() {
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.064 -0400", hash_original_method = "71D7F82DC843779588A8591EEB5DDE73", hash_generated_method = "A5749FE279B69BB32FF6085A90DA41DC")
         @Override
         public void onClick(View v) {
@@ -242,31 +217,23 @@ public class ActionBarView extends AbsActionBarView {
             } 
             addTaint(v.getTaint());
             
-            
-            
-                
-            
         }
-
         
 };
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.064 -0400", hash_original_field = "4C4D79526CBF782D76A61735F6EF945A", hash_generated_field = "EA0963BA46506750424A660F31C059CE")
 
-    private final OnClickListener mUpClickListener = new OnClickListener() {        
-        @DSModeled(DSC.BAN)
+    private final OnClickListener mUpClickListener = new OnClickListener() {
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.064 -0400", hash_original_method = "19F57545305850BD0BBBD46104CC0B01", hash_generated_method = "7301E7CA22EE1FF39CCAA39323935474")
         public void onClick(View v) {
             
             mWindowCallback.onMenuItemSelected(Window.FEATURE_OPTIONS_PANEL, mLogoNavItem);
             addTaint(v.getTaint());
             
-            
         }
-
         
 };
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.042 -0400", hash_original_method = "29E0288B7F0720C76BE42483EEC0C7FB", hash_generated_method = "0898DC393C560D3D16DF123CFB75AA46")
     public  ActionBarView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -1298,11 +1265,9 @@ public boolean isCollapsed() {
                     mProgressBarPadding + mProgressView.getMeasuredWidth(), halfProgressHeight);
         }
     }
-
     
     static class SavedState extends BaseSavedState {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:43.617 -0500", hash_original_field = "AD99978CDC5E698C2A4DD1DC3100EFC5", hash_generated_field = "263FCDD65C2156B1D1E1B4D9AE8D7FFA")
-
 
         public static final Parcelable.Creator<SavedState> CREATOR =
                 new Parcelable.Creator<SavedState>() {
@@ -1344,8 +1309,6 @@ private SavedState(Parcel in) {
             out.writeInt(isOverflowOpen ? 1 : 0);
         }
     }
-
-
     
     private static class HomeView extends FrameLayout {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:43.621 -0500", hash_original_field = "65F95FE0CD7209FDABEB24B3AAAED5D5", hash_generated_field = "71A4D5441609517C4A8996E66BF5980D")
@@ -1493,11 +1456,8 @@ public int getLeftOffset() {
             final int iconTop = Math.max(iconLp.topMargin, vCenter - iconHeight / 2);
             mIconView.layout(iconLeft, iconTop, iconLeft + iconWidth, iconTop + iconHeight);
         }
-
         
     }
-
-
     
     private class ExpandedActionViewMenuPresenter implements MenuPresenter {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:43.662 -0500", hash_original_field = "E0FA7D9C40725579D8730D3DABE74643", hash_generated_field = "E0FA7D9C40725579D8730D3DABE74643")
@@ -1670,7 +1630,6 @@ public int getLeftOffset() {
 @Override
         public void onRestoreInstanceState(Parcelable state) {
         }
-
         
     }
 

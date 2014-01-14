@@ -10,12 +10,8 @@ import java.util.regex.Pattern;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
 public final class Rect implements Parcelable {
-
     
-    @DSModeled(DSC.SAFE)
     public static Rect unflattenFromString(String str){
 		// Original method
 		/*
@@ -32,9 +28,7 @@ public final class Rect implements Parcelable {
 		*/
 		return null;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static boolean intersects(Rect a, Rect b){
 		// Original method
 		/*
@@ -46,7 +40,6 @@ public final class Rect implements Parcelable {
 		return false;
 	}
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:24.574 -0500", hash_original_field = "C827880A18B6ACBC60E1778FF671B928", hash_generated_field = "22CBDD4FA5AC4D71EB10C39DCFB71CD2")
-
 
     private static final Pattern FLATTENED_PATTERN = Pattern.compile(
             "(-?\\d+) (-?\\d+) (-?\\d+) (-?\\d+)");
@@ -90,9 +83,7 @@ public Rect[] newArray(int size) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:24.576 -0500", hash_original_method = "2824AA033EB3CD5BF749E2296CB51BE8", hash_generated_method = "C673E9B57A7025273AA936A51CDE4468")
     
 public Rect() {}
-
     
-    @DSModeled(DSC.SAFE)
 	public Rect(int left, int top, int right, int bottom){
 		addTaint(left);
 		addTaint(top);
@@ -105,9 +96,7 @@ public Rect() {}
 		this.bottom = bottom;
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public Rect(Rect r){
 		addTaint(r.getTaint());
 		/*
@@ -117,9 +106,7 @@ public Rect() {}
 		bottom = r.bottom;
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Override public boolean equals(Object obj){
 		// Original method
 		/*
@@ -134,9 +121,7 @@ public Rect() {}
 		*/
 		return false;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Override public String toString(){
 		// Original method
 		/*
@@ -150,9 +135,7 @@ public Rect() {}
 		*/
 		return "";
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public String toShortString(){
 		// Original method
 		/*
@@ -162,9 +145,7 @@ public Rect() {}
 		*/
 		return "";
 	}
-
     
-    @DSModeled(DSC.BAN)
     public String toShortString(StringBuilder sb){
 		// Original method
 		/*
@@ -178,9 +159,7 @@ public Rect() {}
 		*/
 		return "";
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public String flattenToString(){
 		// Original method
 		/*
@@ -198,9 +177,7 @@ public Rect() {}
 		*/
 		return "";
 	}
-
     
-    @DSModeled(DSC.BAN)
     public void printShortString(PrintWriter pw){
 		// Original method
 		/*
@@ -212,9 +189,7 @@ public Rect() {}
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public final boolean isEmpty(){
 		// Original method
 		/*
@@ -224,9 +199,7 @@ public Rect() {}
 		*/
 		return false;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public final int width(){
 		// Original method
 		/*
@@ -236,9 +209,7 @@ public Rect() {}
 		*/
 		return 0;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public final int height(){
 		// Original method
 		/*
@@ -248,9 +219,7 @@ public Rect() {}
 		*/
 		return 0;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public final int centerX(){
 		// Original method
 		/*
@@ -260,9 +229,7 @@ public Rect() {}
 		*/
 		return 0;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public final int centerY(){
 		// Original method
 		/*
@@ -272,9 +239,7 @@ public Rect() {}
 		*/
 		return 0;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public final float exactCenterX(){
 		// Original method
 		/*
@@ -284,9 +249,7 @@ public Rect() {}
 		*/
 		return 0;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public final float exactCenterY(){
 		// Original method
 		/*
@@ -296,9 +259,7 @@ public Rect() {}
 		*/
 		return 0;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public void setEmpty(){
 		// Original method
 		/*
@@ -308,9 +269,7 @@ public Rect() {}
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public void set(int left, int top, int right, int bottom){
 		// Original method
 		/*
@@ -323,9 +282,7 @@ public Rect() {}
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public void set(Rect src){
 		// Original method
 		/*
@@ -338,9 +295,7 @@ public Rect() {}
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public void offset(int dx, int dy){
 		// Original method
 		/*
@@ -353,9 +308,7 @@ public Rect() {}
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public void offsetTo(int newLeft, int newTop){
 		addTaint(newLeft);
 		left = newLeft;  //Preserved
@@ -372,9 +325,7 @@ public Rect() {}
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public void inset(int dx, int dy){
 		// Original method
 		/*
@@ -387,9 +338,7 @@ public Rect() {}
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public boolean contains(int x, int y){
 		// Original method
 		/*
@@ -400,9 +349,7 @@ public Rect() {}
 		*/
 		return false;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public boolean contains(int left, int top, int right, int bottom){
 		// Original method
 		/*
@@ -414,9 +361,7 @@ public Rect() {}
 		*/
 		return false;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public boolean contains(Rect r){
 		// Original method
 		/*
@@ -428,9 +373,7 @@ public Rect() {}
 		*/
 		return false;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public boolean intersect(int left, int top, int right, int bottom){
 		// Original method
 		/*
@@ -456,9 +399,7 @@ public Rect() {}
 		*/
 		return false;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public boolean intersect(Rect r){
 		// Original method
 		/*
@@ -468,9 +409,7 @@ public Rect() {}
 		*/
 		return false;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public boolean setIntersect(Rect a, Rect b){
 		// Original method
 		/*
@@ -488,9 +427,7 @@ public Rect() {}
 		*/
 		return false;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public boolean intersects(int left, int top, int right, int bottom){
 		// Original method
 		/*
@@ -501,9 +438,7 @@ public Rect() {}
 		*/
 		return false;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public void union(int left, int top, int right, int bottom){
 		// Original method
 		/*
@@ -529,9 +464,7 @@ public Rect() {}
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public void union(Rect r){
 		// Original method
 		/*
@@ -541,9 +474,7 @@ public Rect() {}
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public void union(int x, int y){
 		// Original method
 		/*
@@ -562,9 +493,7 @@ public Rect() {}
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public void sort(){
 		// Original method
 		/*
@@ -592,9 +521,7 @@ public Rect() {}
 public int describeContents() {
         return 0;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public void writeToParcel(Parcel out, int flags){
 		// Original method
 		/*
@@ -607,9 +534,7 @@ public int describeContents() {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public void readFromParcel(Parcel in){
 		// Original method
 		/*
@@ -622,9 +547,7 @@ public int describeContents() {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.BAN)
     public void scale(float scale){
 		// Original method
 		/*

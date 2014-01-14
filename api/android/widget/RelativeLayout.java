@@ -31,21 +31,14 @@ import android.view.accessibility.AccessibilityEvent;
 
 import com.android.internal.R;
 
-
-
-
-
-
 public class RelativeLayout extends ViewGroup {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:46.748 -0500", hash_original_field = "169005C941FC7F7E100BA41616FA682F", hash_generated_field = "57E1FE47E9272F2D3908282BD0F70602")
 
     private static final String LOG_TAG = "RelativeLayout";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:46.750 -0500", hash_original_field = "643C3FD67311BF2F34753A1AC581691D", hash_generated_field = "2C82381CD2A9F5B5C76AFEACEC85DDDB")
 
-
     private static final boolean DEBUG_GRAPH = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:46.752 -0500", hash_original_field = "0AD2CCC562A090EBE1618CB32DADD040", hash_generated_field = "B2899320334F57908731E112E94F1CDE")
-
 
     public static final int TRUE = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:46.755 -0500", hash_original_field = "5FD95E0A5EA54AA7A833FA46549BDCB7", hash_generated_field = "096208EA2AF3CC7E7141BFD38797A0EC")
@@ -98,17 +91,14 @@ public class RelativeLayout extends ViewGroup {
     public static final int CENTER_VERTICAL          = 15;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:46.794 -0500", hash_original_field = "0488C977BE3DA7023B9960129C34263B", hash_generated_field = "4C06C39E645DF1A64F0D7148873000D8")
 
-
     private static final int VERB_COUNT              = 16;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:46.796 -0500", hash_original_field = "EC6C21865E2D148FB90AA744AB6F80AC", hash_generated_field = "C96F9BEAD28A0E01882C41D253AFA846")
-
 
     private View mBaselineView = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:46.798 -0500", hash_original_field = "45C693CBCAE113606E119E6BE2888D3A", hash_generated_field = "6D2C0346DC0DDE3AEF5B4E55639F7BAB")
 
     private boolean mHasBaselineAlignedChild;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:46.800 -0500", hash_original_field = "25D2AE967F212D40A7861414150A2389", hash_generated_field = "0B3CD20786EC1640C99D342CF17DE4BB")
-
 
     private int mGravity = Gravity.LEFT | Gravity.TOP;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:46.802 -0500", hash_original_field = "5F531E2EED9BE73D1FE09735D9D75C84", hash_generated_field = "24DC767A3ADC7BC83961E5A62989B517")
@@ -122,10 +112,8 @@ public class RelativeLayout extends ViewGroup {
     private int mIgnoreGravity;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:46.809 -0500", hash_original_field = "BEBFA666A1757C3B869D6609F51BAB86", hash_generated_field = "681342FA517F01301240A0DCB6966955")
 
-
     private SortedSet<View> mTopToBottomLeftToRightSet = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:46.811 -0500", hash_original_field = "1E02C6BDDCCCC6F8154EE639FC772BCC", hash_generated_field = "0C8E33895AC589A2FF55DFCBCE389221")
-
     
     private boolean mDirtyHierarchy;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:46.813 -0500", hash_original_field = "1780A37D6E496F9B10B65159037B852D", hash_generated_field = "224DF440DDF6B166B3D2E241F0F3F984")
@@ -300,7 +288,6 @@ private void sortChildren() {
             }
         }        
     }
-
     
     private class TopToBottomLeftToRightComparator implements Comparator<View> {
         
@@ -334,11 +321,8 @@ public int compare(View first, View second) {
             }
             return 0;
         }
-
         
     }
-
-
     
     public static class LayoutParams extends ViewGroup.MarginLayoutParams {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:46.913 -0500", hash_original_field = "7CF62E1092EE225F39556F2BE1B1396D", hash_generated_field = "138597A9D627AA60011D0A51DCF0C547")
@@ -536,11 +520,8 @@ public void addRule(int verb, int anchor) {
 public int[] getRules() {
             return mRules;
         }
-
         
     }
-
-
     
     private static class DependencyGraph {
 
@@ -603,7 +584,6 @@ private static void printdependents(Resources resources, Node node, StringBuilde
 
         private LinkedList<Node> mRoots = new LinkedList<Node>();
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.554 -0400", hash_original_method = "970FB9BC48F419CD4D1512AB366BD03A", hash_generated_method = "970FB9BC48F419CD4D1512AB366BD03A")
         public DependencyGraph ()
         {
@@ -763,7 +743,6 @@ void log(Resources resources, int... rules) {
                 printNode(resources, node);
             }
         }
-
         
         static class Node implements Poolable<Node> {
 
@@ -811,7 +790,6 @@ public void onReleased(Node element) {
 
             final SparseArray<Node> dependencies = new SparseArray<Node>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:47.000 -0500", hash_original_field = "8B01B5FFB32F0F6A4DE0D73A6D01885C", hash_generated_field = "0A1E5AFC0BA7AE75B487CB8ED7E2A9F4")
-
 
             private Node mNext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:47.002 -0500", hash_original_field = "016073DCFA93DD0305C42C8759ED2078", hash_generated_field = "BD952C5DD2D86B34B4D5F4AFE196E837")
@@ -871,8 +849,6 @@ void release() {
                         }
             
         }
-
-
         
     }
 

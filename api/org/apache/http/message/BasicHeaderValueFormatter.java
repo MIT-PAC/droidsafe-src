@@ -8,18 +8,9 @@ import org.apache.http.HeaderElement;
 import org.apache.http.NameValuePair;
 import org.apache.http.util.CharArrayBuffer;
 
-
-
-
-
-
 public class BasicHeaderValueFormatter implements HeaderValueFormatter {
 
-
-
     // public default constructor
-
-
 
     /**
      * Formats an array of header elements.
@@ -43,8 +34,6 @@ public final static
         return formatter.formatElements(null, elems, quote).toString();
     }
 
-
-
     /**
      * Formats a header element.
      *
@@ -67,9 +56,6 @@ public final static
         return formatter.formatHeaderElement(null, elem, quote).toString();
     }
 
-
-
-
     /**
      * Formats a set of parameters.
      *
@@ -91,7 +77,6 @@ public final static
             formatter = BasicHeaderValueFormatter.DEFAULT;
         return formatter.formatParameters(null, nvps, quote).toString();
     }
-
 
     /**
      * Formats a name-value pair.
@@ -125,13 +110,11 @@ public final static
 
     public final static String UNSAFE_CHARS = "\"\\";
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.788 -0400", hash_original_method = "88ED703AD5842214D5052F930ED18AF6", hash_generated_method = "88ED703AD5842214D5052F930ED18AF6")
     public BasicHeaderValueFormatter ()
     {
         //Synthesized constructor
     }
-
 
     // non-javadoc, see interface HeaderValueFormatter
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:47.721 -0500", hash_original_method = "3B962169F247D53704261A5A24F1A431", hash_generated_method = "FF56C14BEA3A406FF1D1725DBCEC42B1")
@@ -161,7 +144,6 @@ public CharArrayBuffer formatElements(CharArrayBuffer buffer,
         return buffer;
     }
 
-
     /**
      * Estimates the length of formatted header elements.
      *
@@ -182,7 +164,6 @@ protected int estimateElementsLen(final HeaderElement[] elems) {
 
         return result;
     }
-
 
     // non-javadoc, see interface HeaderValueFormatter
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:47.730 -0500", hash_original_method = "355882C41BE16D37B0209DA6D54CCB3E", hash_generated_method = "BDE2B8858C74FCCBA82D0DDF0DB2B876")
@@ -220,7 +201,6 @@ public CharArrayBuffer formatHeaderElement(CharArrayBuffer buffer,
         return buffer;
     }
 
-
     /**
      * Estimates the length of a formatted header element.
      *
@@ -252,7 +232,6 @@ protected int estimateHeaderElementLen(final HeaderElement elem) {
         return result;
     }
 
-
     // non-javadoc, see interface HeaderValueFormatter
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:47.738 -0500", hash_original_method = "7ECB2224BD638F620F916826D26E8E08", hash_generated_method = "D383404BFA9AEFD6B48DE7A3F1885CC4")
     
@@ -281,7 +260,6 @@ public CharArrayBuffer formatParameters(CharArrayBuffer buffer,
         return buffer;
     }
 
-
     /**
      * Estimates the length of formatted parameters.
      *
@@ -302,7 +280,6 @@ protected int estimateParametersLen(final NameValuePair[] nvps) {
 
         return result;
     }
-
 
     // non-javadoc, see interface HeaderValueFormatter
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:47.746 -0500", hash_original_method = "0780CB3EF81283DFA07B40BE9042FB6E", hash_generated_method = "1CDF4A0DB2B219C3E4DD34DBDF1AD6EE")
@@ -332,7 +309,6 @@ public CharArrayBuffer formatNameValuePair(CharArrayBuffer buffer,
         return buffer;
     }
 
-
     /**
      * Estimates the length of a formatted name-value pair.
      *
@@ -354,7 +330,6 @@ protected int estimateNameValuePairLen(final NameValuePair nvp) {
         }
         return result;
     }
-
 
     /**
      * Actually formats the value of a name-value pair.
@@ -393,7 +368,6 @@ protected void doFormatValue(final CharArrayBuffer buffer,
         }
     }
 
-
     /**
      * Checks whether a character is a {@link #SEPARATORS separator}.
      *
@@ -407,7 +381,6 @@ protected void doFormatValue(final CharArrayBuffer buffer,
 protected boolean isSeparator(char ch) {
         return SEPARATORS.indexOf(ch) >= 0;
     }
-
 
     /**
      * Checks whether a character is {@link #UNSAFE_CHARS unsafe}.

@@ -9,11 +9,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-
-
-
-
-
 public abstract class SocketImpl implements SocketOptions {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.273 -0500", hash_original_field = "FDCE7272CFC91A6374FBF7F54D5CC8E4", hash_generated_field = "3EF85E4B8326DFDFB5F1248DB5848FBE")
 
@@ -32,7 +27,6 @@ public abstract class SocketImpl implements SocketOptions {
     @DSVAModeled
     protected int localport;
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.521 -0400", hash_original_method = "64E339C1199B48FCA9D5B6162E68A4EE", hash_generated_method = "64E339C1199B48FCA9D5B6162E68A4EE")
     public SocketImpl ()
     {
@@ -324,7 +318,6 @@ protected abstract void sendUrgentData(int value) throws IOException;
     
 protected void setPerformancePreferences(int connectionTime, int latency, int bandwidth) {
     }
-
     
 }
 

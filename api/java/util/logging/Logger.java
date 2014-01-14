@@ -15,10 +15,6 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import dalvik.system.DalvikLogHandler;
 import dalvik.system.DalvikLogging;
 
-
-
-
-
 public class Logger {
 
     /**
@@ -147,12 +143,11 @@ public static Logger getLogger(String name, String resourceBundleName) {
 public static Logger getGlobal() {
         return global;
     }
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.541 -0400", hash_original_field = "C11C2AFA3BE2E8C2EACE37E50E80D018", hash_generated_field = "4D6D3020B80CE3D35D2F8F928539DCF2")
 
-    private static final DalvikLogHandler GENERAL_LOG_HANDLER = new DalvikLogHandler() {        
-        @DSModeled(DSC.SAFE)
+    private static final DalvikLogHandler GENERAL_LOG_HANDLER = new DalvikLogHandler() {
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:16.541 -0400", hash_original_method = "EC3A1A4621BA8EF22A571BDE68197799", hash_generated_method = "6101897D1D7337D250B83AA802BFD691")
         public void publish(Logger source, String tag, Level level, String message) {
             LogRecord record = new LogRecord(level, message);
@@ -164,12 +159,7 @@ public static Logger getGlobal() {
             addTaint(level.getTaint());
             addTaint(message.getTaint());
             
-            
-            
-            
-            
         }
-
         
 };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:35.260 -0500", hash_original_field = "355EDAA79615583BDDA05DCEA7C37082", hash_generated_field = "EFFEA762C1908ADB01D1927B32F091A6")

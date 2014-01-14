@@ -6,16 +6,11 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.content.res.CompatibilityInfo;
 
-
-
-
-
 public class CompatibilityInfoHolder {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:53.839 -0500", hash_original_field = "E5B566789C44F2CF56BA88B943058EF6", hash_generated_field = "5A8F1066A37F831BD10CAF4B8FC9C285")
 
     private volatile CompatibilityInfo mCompatInfo = CompatibilityInfo.DEFAULT_COMPATIBILITY_INFO;
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.445 -0400", hash_original_method = "97B7CCDD2675E63E6068438C6851DDC9", hash_generated_method = "97B7CCDD2675E63E6068438C6851DDC9")
     public CompatibilityInfoHolder ()
     {
@@ -48,7 +43,6 @@ public CompatibilityInfo getIfNeeded() {
         }
         return ci;
     }
-
     
 }
 

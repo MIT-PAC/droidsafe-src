@@ -10,25 +10,16 @@ import java.util.Map;
 
 import android.graphics.Bitmap;
 
-
-
-
-
 public final class EmojiFactory {
-
     
-    @DSModeled(DSC.SAFE)
     public static EmojiFactory newInstance(String class_name) {
 		return new EmojiFactory(0, class_name);
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public static EmojiFactory newAvailableInstance() {
 		return new EmojiFactory(0, "");
 	}
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:25.892 -0500", hash_original_field = "34B6C988AEF9552720828C1EB6994ECC", hash_generated_field = "6AC97E1F58C9735B2329D1C9A5ED4485")
-
     
     private int sCacheSize = 100;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:25.901 -0500", hash_original_field = "3809FB8DE19FF3CFBF1994106A2F0DFF", hash_generated_field = "784016E98C992E67132EEDB525B62E7A")
@@ -270,10 +261,7 @@ public int getMaximumAndroidPua() {
     	//Formerly a native method
     	addTaint(factory);
     }
-
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:31.143 -0400", hash_original_method = "3AA105C3169886A719F2BF7A3237E4A3", hash_generated_method = "1FEDBE13E2C3435ECCCBB1756DB5C9E3")
 	private Bitmap nativeGetBitmapFromAndroidPua(int nativeEmojiFactory, int AndroidPua) {
 		Bitmap bm = new Bitmap();
@@ -351,8 +339,6 @@ public int getMaximumAndroidPua() {
     	addTaint(nativeEmojiFactory);
     	return getTaintInt();
     }
-
-
     
     private class CustomLinkedHashMap<K, V> extends LinkedHashMap<K, V> {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:25.895 -0500", hash_original_method = "EFD1513E9BFBC9B14636F3CC7AC41B6C", hash_generated_method = "9C26E7D98A173E7409299B5546E8D52F")
@@ -374,11 +360,8 @@ public CustomLinkedHashMap() {
         protected boolean removeEldestEntry(Map.Entry<K, V> eldest) {
             return size() > sCacheSize;
         }
-
         
     }
-
-
     
 }
 

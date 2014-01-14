@@ -41,11 +41,6 @@ import com.android.internal.view.IInputMethodManager;
 import com.android.internal.view.IInputMethodSession;
 import com.android.internal.view.InputBindResult;
 
-
-
-
-
-
 public final class InputMethodManager {
 
     /**
@@ -58,9 +53,7 @@ public final class InputMethodManager {
 static public InputMethodManager getInstance(Context context) {
         return getInstance(context.getMainLooper());
     }
-
     
-    @DSModeled(DSC.SAFE)
     static public InputMethodManager getInstance(Looper mainLooper) {
         synchronized (mInstanceSync) {
             if (mInstance != null) {
@@ -96,13 +89,11 @@ static public InputMethodManager peekInstance() {
     static final String TAG = "InputMethodManager";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.510 -0500", hash_original_field = "541AC6A543E5DDE4BA13B62C18B210B7", hash_generated_field = "8E1374FF2568A6E7DF58ACEEF1A2A836")
 
-
     static final Object mInstanceSync = new Object();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.513 -0500", hash_original_field = "1E8EE6D6CBCC39100FFEE331D06EF48B", hash_generated_field = "70278290516934488710CF458A67B14F")
 
     static InputMethodManager mInstance;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.577 -0500", hash_original_field = "58BEFE975A77EC3D2B230FE124E2FF63", hash_generated_field = "29E3688958B2990B4C392F7BA34B78FE")
-
     
     static final int MSG_DUMP = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.580 -0500", hash_original_field = "C2A7BBFEA502DBFB8E9B84CBDD9C0296", hash_generated_field = "00F2010EA24613AFCCBC353F90339FF1")
@@ -139,7 +130,6 @@ static public InputMethodManager peekInstance() {
 
     public static final int HIDE_NOT_ALWAYS = 0x0002;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.515 -0500", hash_original_field = "AF4D994570007AEC23008412E21170BC", hash_generated_field = "AF4D994570007AEC23008412E21170BC")
-
     
      IInputMethodManager mService;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.517 -0500", hash_original_field = "22AA67C96F8F7AD7DFD89E53DF216F9A", hash_generated_field = "22AA67C96F8F7AD7DFD89E53DF216F9A")
@@ -162,7 +152,6 @@ static public InputMethodManager peekInstance() {
 
     boolean mFullscreenMode;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.539 -0500", hash_original_field = "8610B5C69CA08D5F83A8EDAD499B41DF", hash_generated_field = "BD9E4743D5524AAE2A9CA10C0E8D34F5")
-
     
     /**
      * This is the root view of the overall window that currently has input
@@ -209,7 +198,6 @@ static public InputMethodManager peekInstance() {
 
     int mCursorCandEnd;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.571 -0500", hash_original_field = "C983A711DB3B897D81814DB669E54903", hash_generated_field = "9762E6807C32AD2031CDDB1E17D9601F")
-
     
     /**
      * Sequence number of this binding, as returned by the server.
@@ -223,8 +211,8 @@ static public InputMethodManager peekInstance() {
     IInputMethodSession mCurMethod;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.211 -0400", hash_original_field = "BCB122DBAEAD09474F3177A327270EA8", hash_generated_field = "7F61D375E432AF7DEA6AA6FB636235DA")
 
-    final IInputMethodClient.Stub mClient = new IInputMethodClient.Stub() {        
-        @DSModeled(DSC.SAFE)
+    final IInputMethodClient.Stub mClient = new IInputMethodClient.Stub() {
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.210 -0400", hash_original_method = "F6EA3706319B79FC567D288B23EBD7C8", hash_generated_method = "C657B985C982F7F1989F7F8E33AA9AB9")
         @Override
         protected void dump(FileDescriptor fd, PrintWriter fout, String[] args) {
@@ -252,70 +240,42 @@ static public InputMethodManager peekInstance() {
             addTaint(fout.getTaint());
             addTaint(args[0].getTaint());
             
-            
-            
-            
-            
-            
-            
-            
-            
-                
-                    
-                
-            
-                
-            
         }
-
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.210 -0400", hash_original_method = "45BD5FF75807911B1CFCFBB58E96318E", hash_generated_method = "E89AC6B358CC1D0E0E8D60BFEB3BF192")
         public void setUsingInputMethod(boolean state) {
             addTaint(state);
             
         }
-
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.210 -0400", hash_original_method = "574FEF71BCEC075DFBB030A0D3C30C22", hash_generated_method = "2CC8A14340DD97B215BB7F37776C22E7")
         public void onBindMethod(InputBindResult res) {
             
             mH.sendMessage(mH.obtainMessage(MSG_BIND, res));
             addTaint(res.getTaint());
             
-            
         }
-
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.211 -0400", hash_original_method = "588CEEFF7FA7882256433E31043E7659", hash_generated_method = "93B331FAA4D44012CC809EFD07D72DC5")
         public void onUnbindMethod(int sequence) {
             
             mH.sendMessage(mH.obtainMessage(MSG_UNBIND, sequence, 0));
             addTaint(sequence);
             
-            
         }
-
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.211 -0400", hash_original_method = "348B3468B5EF750F568EE6741021F563", hash_generated_method = "F00801DE5796A4FB5DF1A8F8529ED1F9")
         public void setActive(boolean active) {
             mH.sendMessage(mH.obtainMessage(MSG_SET_ACTIVE, active ? 1 : 0, 0));
             addTaint(active);
             
-            
         }
-
         
 };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.628 -0500", hash_original_field = "857160D6CD8A26C79A4C0E2FBFA77DF6", hash_generated_field = "23E79A65143FCC7F6AFAF0A8EA3DFB92")
     
-    
     final InputConnection mDummyInputConnection = new BaseInputConnection(this, false);
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.711 -0400", hash_original_method = "508ED56B5BF5DABABCAF5D12E61B17FA", hash_generated_method = "8F8CB7DD0282198FF166028847E17584")
       InputMethodManager(IInputMethodManager service, Looper looper) {
         mService = service;
@@ -341,7 +301,7 @@ static public InputMethodManager peekInstance() {
     }
     
     //Hand modeling
-    @DSModeled(DSC.BAN)
+    
     public InputMethodManager() {
      
     }
@@ -730,7 +690,6 @@ public boolean hideSoftInputFromWindow(IBinder windowToken, int flags,
             return false;
         }
     }
-    
 
     /**
      * This method toggles the input method window display.
@@ -1188,7 +1147,6 @@ public void updateCursor(View view, int left, int top, int right, int bottom) {
             }
         }
     }
-
     
     class H extends Handler {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.588 -0500", hash_original_method = "6EF38EF9E91987FCDB2CC1FED5C76A24", hash_generated_method = "6EF38EF9E91987FCDB2CC1FED5C76A24")
@@ -1279,11 +1237,8 @@ H(Looper looper) {
                 }
             }
         }
-
         
     }
-
-
     
     private static class ControlledInputConnectionWrapper extends IInputConnectionWrapper {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.599 -0500", hash_original_field = "BBC16146D0A901FDED4BB966420384DF", hash_generated_field = "9798BD50577982452DA631DD5C538942")
@@ -1304,7 +1259,6 @@ public ControlledInputConnectionWrapper(final Looper mainLooper, final InputConn
         public boolean isActive() {
             return mParentInputMethodManager.mActive;
         }
-
         
     }
 

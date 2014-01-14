@@ -13,11 +13,6 @@ import java.util.zip.GZIPInputStream;
 
 import com.android.internal.os.IDropBoxManagerService;
 
-
-
-
-
-
 public class DropBoxManager {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.339 -0500", hash_original_field = "D9B79A0164BB0C0D43E8BE0E50A07175", hash_generated_field = "7F88B1F6C3AA23682B73D2063D96AD46")
 
@@ -44,10 +39,8 @@ public class DropBoxManager {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.358 -0500", hash_original_field = "D910661ED5A65576B5BFD7269C64298B", hash_generated_field = "BF72FAE2E20FCDE1DA6F95CAA1981EAC")
 
     public static final String EXTRA_TIME = "time";
-
     
     public static class Entry implements Parcelable, Closeable {
-
         
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:26.039 -0400", hash_original_field = "A8DC184895BB5B5BEE6BB5E9D72AA17F", hash_generated_field = "329A53A95C2F0B54BB6DBA5A539F5907")
 
@@ -75,7 +68,6 @@ public Entry createFromParcel(Parcel in) {
 
         private  long mTimeMillis;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.366 -0500", hash_original_field = "5D97F7C0534662C5183D05D4FFD1A145", hash_generated_field = "04254C7D5555806109D3DE22B9918A82")
-
 
         private  byte[] mData;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.369 -0500", hash_original_field = "E57966AB286B8F6F75FB7E135DD8912B", hash_generated_field = "2EB80060CD9954C0E91A29E7A228F077")
@@ -271,7 +263,6 @@ public void writeToParcel(Parcel out, int flags) {
 
     private  IDropBoxManagerService mService;
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:26.032 -0400", hash_original_method = "04B0A4DBB2EAE135AA112A8CAA9647B1", hash_generated_method = "56807A840D421C3846696C198899DDB8")
     public  DropBoxManager(IDropBoxManagerService service) {
         mService = service;
@@ -279,9 +270,7 @@ public void writeToParcel(Parcel out, int flags) {
         // ---------- Original Method ----------
         //mService = service;
     }
-
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:26.033 -0400", hash_original_method = "E688A3A6CCC118BEDB51FAABD6872F4D", hash_generated_method = "1D2825C63C164429C45D67692FE8B561")
     public DropBoxManager() {
         mService = null;

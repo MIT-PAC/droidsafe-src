@@ -17,10 +17,6 @@ import java.util.Map;
 
 import dalvik.system.PathClassLoader;
 
-
-
-
-
 public abstract class ClassLoader {
 
     /**
@@ -710,32 +706,26 @@ public void setDefaultAssertionStatus(boolean enable) {
     
 public void clearAssertionStatus() {
     }
-
     
     static private class SystemClassLoader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.689 -0500", hash_original_field = "4CBD9E687D788156518F29C886369AF0", hash_generated_field = "9F05049E5285C9256C3F77BCE2FFFB9C")
 
         public static ClassLoader loader = ClassLoader.createSystemClassLoader();
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.700 -0400", hash_original_method = "5CAD2AFC0F0FA3887E4002E77FFD0C7D", hash_generated_method = "5CAD2AFC0F0FA3887E4002E77FFD0C7D")
         public SystemClassLoader ()
         {
             //Synthesized constructor
         }
     }
-
-
     
 }
 
 class TwoEnumerationsInOne implements Enumeration<URL> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.785 -0500", hash_original_field = "FA07505D9B1F2FD435160CC237092029", hash_generated_field = "8251EE6159DCC0C25ACB4653E04140B7")
 
-
     private Enumeration<URL> first;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.787 -0500", hash_original_field = "562B9360D046C04E9AFC73B4DDFCBBB4", hash_generated_field = "48331890F3BE0E00347927CE21AF464F")
-
 
     private Enumeration<URL> second;
 
@@ -761,7 +751,6 @@ public URL nextElement() {
             return second.nextElement();
         }
     }
-
     
 }
 
@@ -778,7 +767,6 @@ class BootClassLoader extends ClassLoader {
         return instance;
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.798 -0500", hash_original_field = "26F6885D53C00824E398268396DBAB03", hash_generated_field = "1B790D50CC69E7023CCCAB838EB40A4E")
-
 
     private static BootClassLoader instance;
 

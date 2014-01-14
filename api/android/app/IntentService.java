@@ -11,10 +11,6 @@ import android.os.IBinder;
 import android.os.Looper;
 import android.os.Message;
 
-
-
-
-
 public abstract class IntentService extends Service {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.818 -0500", hash_original_field = "EB66E49061F21B01C586336F5B80897E", hash_generated_field = "33385112DDE0E3E321411FB3B24485E8")
 
@@ -137,7 +133,6 @@ public void setIntentRedelivery(boolean enabled) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.849 -0500", hash_original_method = "3873E8578EC35B4631BF55BE7B040145", hash_generated_method = "76B2D51F2AC1BE5101F9DFE35DD2D67A")
     
 protected abstract void onHandleIntent(Intent intent);
-
     
     private final class ServiceHandler extends Handler {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.828 -0500", hash_original_method = "66EEB465EED068540EC8804EEAB41C77", hash_generated_method = "3FC585DC347F6956BFDECFB1F53984B6")
@@ -153,11 +148,9 @@ public ServiceHandler(Looper looper) {
             onHandleIntent((Intent)msg.obj);
             stopSelf(msg.arg1);
         }
-
         
     }
-
-    @DSModeled(DSC.BAN)
+    
     public void __ds__onHandleIntent(Intent intent) {
     	onHandleIntent(intent);
     }

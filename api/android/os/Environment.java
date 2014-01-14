@@ -10,10 +10,6 @@ import android.os.storage.IMountService;
 import android.os.storage.StorageVolume;
 import android.util.Log;
 
-
-
-
-
 public class Environment {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:43.740 -0500", hash_original_method = "49D276246FC7889A9B561CCBB290F80E", hash_generated_method = "75573CFB29C81F706693B5B5C0544A51")
@@ -143,9 +139,7 @@ public static File getDataDirectory() {
 public static File getExternalStorageDirectory() {
         return EXTERNAL_STORAGE_DIRECTORY;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static File getExternalStoragePublicDirectory(String type) {
         return new File("mnt/sdcard");
     }
@@ -285,19 +279,15 @@ static File getDirectory(String variableName, String defaultPath) {
     private static final String TAG = "Environment";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:43.731 -0500", hash_original_field = "85AB27342DCABB6BA155402D18B2289D", hash_generated_field = "FE08AA822266DAF98C9F2274AD45AF9E")
 
-
     private static final File ROOT_DIRECTORY
             = getDirectory("ANDROID_ROOT", "/system");
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:43.733 -0500", hash_original_field = "F8F01D8EA17D83A2B038EE9E2DF5D3DE", hash_generated_field = "EE3FE0CAF4E93AB133014AF996B70CCE")
 
-
     private static final String SYSTEM_PROPERTY_EFS_ENABLED = "persist.security.efs.enabled";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:43.735 -0500", hash_original_field = "83DB9DCBBD2D99A708D9A1934D5CD5AB", hash_generated_field = "CA3747CC2EC4B1C7DB6ABC7879C88A34")
 
-
     private static final Object mLock = new Object();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:43.737 -0500", hash_original_field = "07CD2CFF9309E5BF864753B6E6F8D7BD", hash_generated_field = "BE2642BFD28BEEB7B21B6346504CF160")
-
 
     private volatile static StorageVolume mPrimaryVolume = null;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:43.943 -0400", hash_original_field = "ABD2DC3A68E7E273F00286BB6E564846", hash_generated_field = "4859F8047AF82464AD430C6BD0B6CE29")

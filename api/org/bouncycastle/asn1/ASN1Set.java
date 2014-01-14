@@ -9,11 +9,6 @@ import java.io.IOException;
 import java.util.Enumeration;
 import java.util.Vector;
 
-
-
-
-
-
 abstract public class ASN1Set extends ASN1Object {
 
     /**
@@ -114,7 +109,6 @@ public static ASN1Set getInstance(
     protected Vector set = new Vector();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:12.530 -0500", hash_original_field = "8BD524D6245D998B3BBC44EB9313082E", hash_generated_field = "56A277C77B76B31C1E1045C8C11CA802")
 
-
             private int index;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:12.527 -0500", hash_original_field = "FE6035598DC4A50E38F7DA885A8391F1", hash_generated_field = "D2E8168F8D49E25944D5BC65100B260E")
 
@@ -172,9 +166,7 @@ public ASN1Encodable[] toArray()
 
         return values;
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.820 -0400", hash_original_method = "3480E58BA04F290D4393ED7D48EF6B9C", hash_generated_method = "2F5149AE3B97380B1162AFD136050A12")
     public ASN1SetParser parser() {
         final ASN1Set outer = this;

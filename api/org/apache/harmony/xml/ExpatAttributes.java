@@ -6,16 +6,10 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import org.xml.sax.Attributes;
 
-
-
-
-
 import droidsafe.helpers.DSUtils;
 
 abstract class ExpatAttributes implements Attributes {
-
     
-    @DSModeled(DSC.SAFE)
     private static String getURI(int pointer, int attributePointer, int index) {
     	String ret = new String();
     	ret.addTaint(pointer);
@@ -23,9 +17,7 @@ abstract class ExpatAttributes implements Attributes {
     	ret.addTaint(index);
     	return ret;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static String getLocalName(int pointer, int attributePointer, int index) {
     	String ret = new String();
     	ret.addTaint(pointer);
@@ -33,9 +25,7 @@ abstract class ExpatAttributes implements Attributes {
     	ret.addTaint(index);
     	return ret;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static String getQName(int pointer, int attributePointer, int index) {
     	String ret = new String();
     	ret.addTaint(pointer);
@@ -43,32 +33,24 @@ abstract class ExpatAttributes implements Attributes {
     	ret.addTaint(index);
     	return ret;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static String getValueByIndex(int attributePointer, int index) {
     	String ret = new String();
     	ret.addTaint(attributePointer);
     	ret.addTaint(index);
     	return ret;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int getIndex(int attributePointer, String uri, String localName) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2003081945 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2003081945;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int getIndexForQName(int attributePointer, String qName) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_824428906 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_824428906;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static String getValue(int attributePointer, String uri, String localName) {
     	String ret = new String();
     	ret.addTaint(attributePointer);
@@ -76,9 +58,7 @@ abstract class ExpatAttributes implements Attributes {
     	ret.addTaint(localName.taint);
     	return ret;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static String getValueForQName(int attributePointer, String qName) {
     	String ret = new String();
     	ret.addTaint(attributePointer);
@@ -89,7 +69,6 @@ abstract class ExpatAttributes implements Attributes {
 
     private static final String CDATA = "CDATA";
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.997 -0400", hash_original_method = "D4DF1C9BC2FF91CA250847447EABC788", hash_generated_method = "D4DF1C9BC2FF91CA250847447EABC788")
     public ExpatAttributes ()
     {

@@ -21,10 +21,6 @@ import java.util.RandomAccess;
 import libcore.util.EmptyArray;
 import libcore.util.Objects;
 
-
-
-
-
 public class CopyOnWriteArrayList<E> implements List<E>, RandomAccess, Cloneable, Serializable {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:17.950 -0500", hash_original_method = "C42EED85EE25206F94CCF01E5CEAD68C", hash_generated_method = "6B24A90E95A1434E966751946DCEB460")
@@ -76,7 +72,6 @@ static int indexOf(Object o, Object[] data, int from, int to) {
         return -1;
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:17.923 -0500", hash_original_field = "45AA2F406EECE326B8FC46BAC40C64B4", hash_generated_field = "392EFB541281482E947C8FEFEB5A2F62")
-
 
     private static final long serialVersionUID = 8673264195747942595L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:17.926 -0500", hash_original_field = "66D8E00DB6C4DE41F495FA4BFC73A047", hash_generated_field = "9773C6104DBFF8AC92488F3C4AD39164")
@@ -257,9 +252,7 @@ public List<E> subList(int from, int to) {
 public Object[] toArray() {
         return elements.clone();
     }
-
-    
-        @DSModeled(DSC.SAFE)
+        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.850 -0400", hash_original_method = "C1E48E79962F836E76F520B2DEE3FDB8", hash_generated_method = "2906A4D4D1D1A23323A06045B06FBF69")
     @SuppressWarnings({"unchecked","SuspiciousSystemArraycopy"})
     public <T> T[] toArray(T[] contents) {
@@ -526,7 +519,6 @@ private void writeObject(ObjectOutputStream out) throws IOException {
             out.writeObject(o);
         }
     }
-
     
     class CowSubList extends AbstractList<E> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:18.032 -0500", hash_original_field = "5C9767232AD9DD28D27839A4405D545E", hash_generated_field = "8800B1EC4033F6ED9C1D3C210D1DF359")
@@ -743,11 +735,8 @@ public CowSubList(Object[] expectedElements, int from, int to) {
                 return removed != 0;
             }
         }
-
         
     }
-
-
     
     static class Slice {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:18.101 -0500", hash_original_field = "D17B5E4901DA076A46C305F8F53600EB", hash_generated_field = "578E1B95CBBB0F53A72648DE31016F3A")
@@ -798,11 +787,8 @@ void checkConcurrentModification(Object[] snapshot) {
                 throw new ConcurrentModificationException();
             }
         }
-
         
     }
-
-
     
     static class CowIterator<E> implements ListIterator<E> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:18.120 -0500", hash_original_field = "674A3857E57B137834DC0350BE12C2A4", hash_generated_field = "FEC1DD40EAC9BB9175BC6E1CF39F3785")
@@ -890,7 +876,6 @@ public void remove() {
 public void set(E object) {
             throw new UnsupportedOperationException();
         }
-
         
     }
 

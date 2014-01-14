@@ -26,11 +26,6 @@ import android.view.ViewParent;
 import com.android.internal.util.Predicate;
 import com.google.android.collect.Lists;
 
-
-
-
-
-
 public class ListView extends AbsListView {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.127 -0500", hash_original_field = "3443E4194A67070571A62B265508BBAC", hash_generated_field = "AA54EBB1B05B810D7997E2317D48B2F5")
 
@@ -43,13 +38,11 @@ public class ListView extends AbsListView {
     private static final int MIN_SCROLL_PREVIEW_PIXELS = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.144 -0500", hash_original_field = "FA953311C6E4177A6EEEF7C20D7073E0", hash_generated_field = "4BC24FD3C886BCFFDF832386DEC27D09")
 
-
     private ArrayList<FixedViewInfo> mHeaderViewInfos = Lists.newArrayList();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.146 -0500", hash_original_field = "AF5E758AF770E2C699722BF3713D9AA4", hash_generated_field = "FD730016C2B4D9973A08935CB5CEEF24")
 
     private ArrayList<FixedViewInfo> mFooterViewInfos = Lists.newArrayList();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.147 -0500", hash_original_field = "3837E71D24376BABDBC6EE7CD182AABB", hash_generated_field = "3837E71D24376BABDBC6EE7CD182AABB")
-
 
     Drawable mDivider;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.149 -0500", hash_original_field = "E9BA9D611B13DC4B2EC5075D3CBC28DA", hash_generated_field = "E9BA9D611B13DC4B2EC5075D3CBC28DA")
@@ -57,13 +50,11 @@ public class ListView extends AbsListView {
     int mDividerHeight;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.151 -0500", hash_original_field = "61CEC74004B40DBE67743F5C54E8DAE8", hash_generated_field = "61CEC74004B40DBE67743F5C54E8DAE8")
 
-
     Drawable mOverScrollHeader;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.153 -0500", hash_original_field = "FAAE7751E5086898A7D9334FDB1CBF58", hash_generated_field = "FAAE7751E5086898A7D9334FDB1CBF58")
 
     Drawable mOverScrollFooter;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.156 -0500", hash_original_field = "14036FB46376BFA7990434F6A215FE94", hash_generated_field = "D67B6F8B88187DB827FEE4CD95C0CD84")
-
 
     private boolean mIsCacheColorOpaque;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.158 -0500", hash_original_field = "74F5F0AFF7D0CF5C5F7BE3C1FE313C26", hash_generated_field = "F64CA3AD07E4A441F83FB08509D5EA54")
@@ -71,17 +62,14 @@ public class ListView extends AbsListView {
     private boolean mDividerIsOpaque;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.160 -0500", hash_original_field = "CB54C0F411509A897FD90A8A456020AA", hash_generated_field = "E4D279F003B799932AE6A47EC9C65A6F")
 
-
     private boolean mHeaderDividersEnabled;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.162 -0500", hash_original_field = "54C1DDC428BB19C22C72A9F1869CAE34", hash_generated_field = "D61311FF24E9C122770C1CC46CD91809")
 
     private boolean mFooterDividersEnabled;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.164 -0500", hash_original_field = "E14E4D3D1F6712B452F187DA751BE80B", hash_generated_field = "1E6DAAB899E2A1039D680325576FF2F4")
 
-
     private boolean mAreAllItemsSelectable = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.167 -0500", hash_original_field = "9E81E0C2E54D4B0A451403FCCC4A885C", hash_generated_field = "B872CC30C5370C029EE2A26D5DBEB2D2")
-
 
     private boolean mItemsCanFocus = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.169 -0500", hash_original_field = "1732EB32F2D77CCA26590AEEA670A175", hash_generated_field = "A498F2A4744F31D22F9C4ABEBB254F2F")
@@ -98,20 +86,15 @@ public class ListView extends AbsListView {
 
     private FocusSelector mFocusSelector;
     
-    @DSModeled(DSC.SAFE)
 	public ListView(Context context) {
 		super(context);
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public ListView(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		// TODO Auto-generated constructor stub
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public ListView(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
 		// TODO Auto-generated constructor stub
@@ -353,9 +336,7 @@ public boolean removeFooterView(View v) {
         }
         return false;
     }
-
     
-    @DSModeled(DSC.SAFE)
     @Override
 	public ListAdapter getAdapter() {
 		// TODO Auto-generated method stub
@@ -373,10 +354,9 @@ public boolean removeFooterView(View v) {
     public void setRemoteViewsAdapter(Intent intent) {
         super.setRemoteViewsAdapter(intent);
     }
-
     
     @Override
-	@DSModeled(DSC.SAFE)
+	
 	public void setAdapter(ListAdapter adapter) {
       // Remember the list adapter so we can access it when registered
       mAdapter = adapter;
@@ -437,9 +417,7 @@ public boolean removeFooterView(View v) {
         requestLayout();
         */
 
-
 	}
-
 
     /**
      * The list is empty. Clear everything out.
@@ -499,7 +477,6 @@ private boolean showingBottomFadingEdge() {
         return (lastVisiblePosition < mItemCount - 1)
                          || (bottomOfBottomChild < listBottom);
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.232 -0500", hash_original_method = "0248A9BC20DE00C469CC3A8962885EF5", hash_generated_method = "1F58D1468C3A1BB5124FB8EC2CC05F8E")
     
@@ -581,9 +558,7 @@ private boolean showingBottomFadingEdge() {
         }
         return scroll;
     }
-
     
-    @DSModeled(DSC.SAFE)
     @Override
 	void fillGap(boolean down) {
 		// TODO Auto-generated method stub
@@ -680,7 +655,6 @@ private View fillFromTop(int nextTop) {
         return fillDown(mFirstPosition, nextTop);
     }
 
-
     /**
      * Put mSelectedPosition in the middle of the screen and then build up and
      * down from there. This method forces mSelectedPosition to the center.
@@ -740,7 +714,6 @@ private void fillAboveAndBelow(View sel, int position) {
         }
     }
 
-
     /**
      * Fills the grid based on positioning the new selection at a specific
      * location. The selection may be moved so that it does not intersect the
@@ -765,7 +738,6 @@ private View fillFromSelection(int selectedTop, int childrenTop, int childrenBot
                 selectedPosition);
 
         sel = makeAndAddView(selectedPosition, selectedTop, true, mListPadding.left, true);
-
 
         // Some of the newly selected item extends below the bottom of the list
         if (sel.getBottom() > bottomSelectionPixel) {
@@ -1037,9 +1009,7 @@ private View moveSelection(View oldSel, View newSel, int delta, int childrenTop,
 
         return sel;
     }
-
     
-    @DSModeled(DSC.SAFE)
 	@Override
 	protected void onSizeChanged(int w, int h, int oldw, int oldh) {
 		super.onSizeChanged(w, h, oldw, oldh);
@@ -1224,9 +1194,7 @@ final int measureHeightOfChildren(int widthMeasureSpec, int startPosition, int e
         // completely fit, so return the returnedHeight
         return returnedHeight;
     }
-
     
-    @DSModeled(DSC.SAFE)
     @Override
 	int findMotionRow(int y) {
 		// TODO Auto-generated method stub
@@ -1461,7 +1429,6 @@ private void correctTooLow(int childCount) {
                 newSel = getChildAt(index + delta);
             }
 
-
             boolean dataChanged = mDataChanged;
             if (dataChanged) {
                 handleDataChanged();
@@ -1693,7 +1660,6 @@ private View makeAndAddView(int position, int y, boolean flow, int childrenLeft,
             boolean selected) {
         View child;
 
-
         if (!mDataChanged) {
             // Try to use an existing view for this position
             child = mRecycler.getActiveView(position);
@@ -1827,9 +1793,7 @@ private void setupChild(View child, int position, int y, boolean flowDown, int c
     protected boolean canAnimate() {
         return super.canAnimate() && mItemCount > 0;
     }
-
     
-    @DSModeled(DSC.SAFE)
     @Override
 	public void setSelection(int position) {
 		// TODO Auto-generated method stub
@@ -1872,9 +1836,7 @@ public void setSelectionFromTop(int position, int y) {
             requestLayout();
         }
     }
-
     
-    @DSModeled(DSC.SAFE)
     @Override
 	void setSelectionInt(int position) {
 		// TODO Auto-generated method stub
@@ -2822,7 +2784,6 @@ private int distanceToView(View descendant) {
         return distance;
     }
 
-
     /**
      * Scroll the children by amount, adding a view at the end and removing
      * views that fall off as necessary.
@@ -3399,7 +3360,6 @@ public Drawable getOverscrollFooter() {
         }
     }
 
-
     /*
      * (non-Javadoc)
      *
@@ -3519,7 +3479,6 @@ View findViewWithTagInHeadersOrFooters(ArrayList<FixedViewInfo> where, Object ta
         }
         return null;
     }
-
     
     public class FixedViewInfo {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.135 -0500", hash_original_field = "203A52904F64FA8CF6CE15F1E8FE3025", hash_generated_field = "F4E21118122450D7DE8C5B004AEA690D")
@@ -3538,10 +3497,7 @@ View findViewWithTagInHeadersOrFooters(ArrayList<FixedViewInfo> where, Object ta
             //Synthesized constructor
         }
 
-
     }
-
-
     
     private class FocusSelector implements Runnable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.267 -0500", hash_original_field = "4EE731A4D843C99A130C2ED24E5FDDEA", hash_generated_field = "D614AE7D1AAE0276EA05A974DCBF0210")
@@ -3570,11 +3526,8 @@ public FocusSelector setup(int position, int top) {
 public void run() {
             setSelectionFromTop(mPosition, mPositionTop);
         }
-
         
     }
-
-
     
     static private class ArrowScrollFocusResult {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.382 -0500", hash_original_field = "8CB1722C7F01C739E69816804A7000C1", hash_generated_field = "51E21A7A6543942D242B4E74F7651C70")
@@ -3584,7 +3537,6 @@ public void run() {
 
         private int mAmountToScroll;
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:42.901 -0400", hash_original_method = "F12FA46FC2E286992F273AF0197118D3", hash_generated_method = "F12FA46FC2E286992F273AF0197118D3")
         public ArrowScrollFocusResult ()
         {
@@ -3612,7 +3564,6 @@ public int getSelectedPosition() {
 public int getAmountToScroll() {
             return mAmountToScroll;
         }
-
         
     }
 

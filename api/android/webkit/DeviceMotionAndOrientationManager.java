@@ -5,33 +5,21 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public final class DeviceMotionAndOrientationManager {
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeUseMock(WebViewCore webViewCore) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeSetMockOrientation(WebViewCore webViewCore,
             boolean canProvideAlpha, double alpha, boolean canProvideBeta, double beta,
             boolean canProvideGamma, double gamma) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeOnMotionChange(WebViewCore webViewCore,
             boolean canProvideX, double x, boolean canProvideY, double y,
             boolean canProvideZ, double z, double interval) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeOnOrientationChange(WebViewCore webViewCore,
             boolean canProvideAlpha, double alpha, boolean canProvideBeta, double beta,
             boolean canProvideGamma, double gamma) {
@@ -87,7 +75,6 @@ public void onOrientationChange(Double alpha, Double beta, Double gamma) {
                 beta != null, beta != null ? beta.doubleValue() : 0.0,
                 gamma != null, gamma != null ? gamma.doubleValue() : 0.0);
     }
-
     
 }
 

@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public final class CloseGuard {
 
     /**
@@ -68,17 +64,14 @@ public static Reporter getReporter() {
     private static volatile Reporter REPORTER = new DefaultReporter();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:38.923 -0500", hash_original_field = "D9BBD2AF83C2C4CB7F78F512A96041CB", hash_generated_field = "F1E524DCBDC62F863E8D6EE01D213C25")
 
-
     private Throwable allocationSite;
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:38.918 -0500", hash_original_method = "7E89EAFA67D8405D89044A4D05C8D63F", hash_generated_method = "B3D29D5542BF9E328A13CFD209136F2F")
     
 private CloseGuard() {}
-
     
     private static final class DefaultReporter implements Reporter {
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.702 -0400", hash_original_method = "5AA262E6EA3904FB58CC8171943AAF5F", hash_generated_method = "5AA262E6EA3904FB58CC8171943AAF5F")
         public DefaultReporter ()
         {
@@ -89,11 +82,8 @@ private CloseGuard() {}
 public void report (String message, Throwable allocationSite) {
             System.logW(message, allocationSite);
         }
-
         
     }
-
-
     
     public static interface Reporter {
         public void report (String message, Throwable allocationSite);

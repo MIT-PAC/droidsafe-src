@@ -20,10 +20,6 @@ import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.util.SparseArray;
 
-
-
-
-
 public class StorageManager {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.011 -0500", hash_original_field = "4FFA6AABE302BD622ED70CB179957D24", hash_generated_field = "666FAAC497550CA891D002F26E180573")
 
@@ -73,7 +69,7 @@ public StorageManager(Looper tgtLooper) throws RemoteException {
     }
     
     //Added by manual modeling
-    @DSModeled(DSC.BAN)
+    
     public  StorageManager() {
         /*
         if (DroidSafeAndroidRuntime.control) {
@@ -98,7 +94,6 @@ public StorageManager(Looper tgtLooper) throws RemoteException {
 private int getNextNonce() {
         return mNextNonce.getAndIncrement();
     }
-
 
     /**
      * Registers a {@link android.os.storage.StorageEventListener StorageEventListener}.
@@ -377,7 +372,6 @@ public StorageVolume[] getVolumeList() {
             return null;
         }
     }
-
     
     private class MountServiceBinderListener extends IMountServiceListener.Stub {
         
@@ -403,11 +397,8 @@ public void onStorageStateChanged(String path, String oldState, String newState)
                 mListeners.get(i).sendStorageStateChanged(path, oldState, newState);
             }
         }
-
         
     }
-
-
     
     private class ObbActionListener extends IObbActionListener.Stub {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.034 -0500", hash_original_field = "23C5790839FDFB2DAD01EEE256FA3566", hash_generated_field = "B401ACBFDEFD68175AFBDCAE004213C6")
@@ -449,11 +440,8 @@ public int addListener(OnObbStateChangeListener listener) {
 
             return delegate.nonce;
         }
-
         
     }
-
-
     
     private class ObbListenerDelegate {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.047 -0500", hash_original_field = "89BE479661C8257EB0C4B86BAF60CD99", hash_generated_field = "9765B2BB1BD930598C2982AB60432360")
@@ -463,7 +451,6 @@ public int addListener(OnObbStateChangeListener listener) {
 
         private  Handler mHandler;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.052 -0500", hash_original_field = "5C0AC92679469CD4F266AD5EA3C62C10", hash_generated_field = "025203DA6E702827C569DA1096B5E235")
-
 
         private  int nonce;
 
@@ -507,18 +494,14 @@ void sendObbStateChanged(String path, int state) {
             ObbStateChangedStorageEvent e = new ObbStateChangedStorageEvent(path, state);
             mHandler.sendMessage(e.getMessage());
         }
-
         
     }
-
-
     
     private class ObbStateChangedStorageEvent extends StorageEvent {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.068 -0500", hash_original_field = "4936DBCD90EF1129A7D9F03C4DB55EE0", hash_generated_field = "58104DC4D068DCE57A6D46AB8F30ECAD")
 
         public  String path;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.071 -0500", hash_original_field = "962E680994F097CBCF73193974918C63", hash_generated_field = "47895903500EF3C437D3B693442F9718")
-
 
         public  int state;
 
@@ -529,11 +512,8 @@ public ObbStateChangedStorageEvent(String path, int state) {
             this.path = path;
             this.state = state;
         }
-
         
     }
-
-
     
     private class StorageEvent {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.077 -0500", hash_original_field = "1D0CB625E04594AF40C5EFDB4C571DCB", hash_generated_field = "F25F6D444BE5A1CFBE4DF466A9A1F864")
@@ -546,7 +526,6 @@ public ObbStateChangedStorageEvent(String path, int state) {
 
         static final int EVENT_OBB_STATE_CHANGED = 3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.085 -0500", hash_original_field = "2D41D548AF5E6C9BAD3BF2AC7B0EDE61", hash_generated_field = "C86344D57FB924DFB1BCA88A74120A66")
-
 
         private Message mMessage;
 
@@ -564,8 +543,6 @@ public Message getMessage() {
             return mMessage;
         }
     }
-
-
     
     private class UmsConnectionChangedStorageEvent extends StorageEvent {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.094 -0500", hash_original_field = "661415AE147552A97B5A8383FA088351", hash_generated_field = "5C92C83D4651FA2CBBBE9F57619106E0")
@@ -578,11 +555,8 @@ public UmsConnectionChangedStorageEvent(boolean a) {
             super(EVENT_UMS_CONNECTION_CHANGED);
             available = a;
         }
-
         
     }
-
-
     
     private class StorageStateChangedStorageEvent extends StorageEvent {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.101 -0500", hash_original_field = "4936DBCD90EF1129A7D9F03C4DB55EE0", hash_generated_field = "58104DC4D068DCE57A6D46AB8F30ECAD")
@@ -603,11 +577,8 @@ public StorageStateChangedStorageEvent(String p, String oldS, String newS) {
             oldState = oldS;
             newState = newS;
         }
-
         
     }
-
-
     
     private class ListenerDelegate {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.113 -0500", hash_original_field = "7A1C33253FE6C5A1C1F7242C2999F45E", hash_generated_field = "7A1C33253FE6C5A1C1F7242C2999F45E")
@@ -658,7 +629,6 @@ void sendStorageStateChanged(String path, String oldState, String newState) {
             StorageStateChangedStorageEvent e = new StorageStateChangedStorageEvent(path, oldState, newState);
             mHandler.sendMessage(e.getMessage());
         }
-
         
     }
 

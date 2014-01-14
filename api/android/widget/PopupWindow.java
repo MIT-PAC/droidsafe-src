@@ -28,11 +28,6 @@ import android.view.WindowManager;
 
 import com.android.internal.R;
 
-
-
-
-
-
 public class PopupWindow {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.844 -0500", hash_original_field = "701591F0360276A28E327627FEB76715", hash_generated_field = "EC879018D8E62A80ED7D5976B9A1B7A2")
 
@@ -44,27 +39,23 @@ public class PopupWindow {
 
     public static final int INPUT_METHOD_NOT_NEEDED = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.933 -0500", hash_original_field = "9FE260B460E2BB7B31A6488C7DE8A4D7", hash_generated_field = "55669BF630688FDF9A58292DE30C4824")
-
     
     private static final int[] ABOVE_ANCHOR_STATE_SET = new int[] {
         com.android.internal.R.attr.state_above_anchor
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.852 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
-
     
     private Context mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.854 -0500", hash_original_field = "83A062836C11DD52DC32F4325712F233", hash_generated_field = "3C750A4AE06B71AF3A05B7797C7182A4")
 
     private WindowManager mWindowManager;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.856 -0500", hash_original_field = "731D4FF487F586CBA45F6AF9BC0AC916", hash_generated_field = "182408C3124602AF2E2446547BFC5990")
-
     
     private boolean mIsShowing;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.858 -0500", hash_original_field = "85CF3D7C1422B3521D1680A0F9D316B2", hash_generated_field = "9700652AF3F2C5A2E0A0AFE403A12B64")
 
     private boolean mIsDropdown;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.860 -0500", hash_original_field = "A280952DD6B837BA6E44884878875510", hash_generated_field = "9EE0242EB014EEED0CD7F44EEE7EA48F")
-
 
     private View mContentView;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.862 -0500", hash_original_field = "D74AA1A40F9547715935515E6E4885E3", hash_generated_field = "677D1CB7D78258D08289E18B4B225566")
@@ -108,10 +99,8 @@ public class PopupWindow {
     private boolean mNotTouchModal;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.890 -0500", hash_original_field = "DAD3E254CE9B6EB14C5F5887DE6B1D9F", hash_generated_field = "72A5C0221AA7C77012D45B0D5814CA05")
 
-
     private OnTouchListener mTouchInterceptor;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.892 -0500", hash_original_field = "49C607A261C36ED620A93DA50B91053D", hash_generated_field = "E1584971BBD05AECB0B7B9F417D8A13C")
-
     
     private int mWidthMode;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.894 -0500", hash_original_field = "AF6410B200BC05DCA2CF0BE65165448A", hash_generated_field = "380984B6D3BA888BD05804A5D24041AE")
@@ -131,13 +120,11 @@ public class PopupWindow {
     private int mLastHeight;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.904 -0500", hash_original_field = "D23E8AE5915E7E5B876DFDF4DB92A7B0", hash_generated_field = "3FD6DB919B847EDFE0B5956AF8A9BD61")
 
-
     private int mPopupWidth;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.906 -0500", hash_original_field = "37FC35FE9758B11A847C155825325C05", hash_generated_field = "81FC9D55F4BDFA3779C66DE9184556C7")
 
     private int mPopupHeight;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.908 -0500", hash_original_field = "9C1449E8E0E043F6FA25FE8E63FF414E", hash_generated_field = "904FF38CA36EA4CCC3C2CCEC4DCDD3BD")
-
 
     private int[] mDrawingLocation = new int[2];
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.911 -0500", hash_original_field = "0BC4AEC5360AE77A35764FA8927D9DD6", hash_generated_field = "E837BED31FD3509BD57D12D959724198")
@@ -147,7 +134,6 @@ public class PopupWindow {
 
     private Rect mTempRect = new Rect();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.915 -0500", hash_original_field = "1414D97CE5ED674A74A05A07F83AE3BF", hash_generated_field = "0925F2C91F8CBA797C183309FA7634C5")
-
     
     private Drawable mBackground;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.917 -0500", hash_original_field = "4269741F761E423EA211C462AD050A9B", hash_generated_field = "E17C64A85543ECD9874F1E70F5E7D722")
@@ -158,13 +144,11 @@ public class PopupWindow {
     private Drawable mBelowAnchorBackgroundDrawable;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.921 -0500", hash_original_field = "F4B2ADC1C848EABB9ED10150CF9EAF1D", hash_generated_field = "0D6DFCDD3C93CA68BA06073646439B09")
 
-
     private boolean mAboveAnchor;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.923 -0500", hash_original_field = "4AF3A3DBE227F284DF0C57CC290F4807", hash_generated_field = "9BD03BD39A060D11ED1286EBFF9AC4DB")
 
     private int mWindowLayoutType = WindowManager.LayoutParams.TYPE_APPLICATION_PANEL;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.926 -0500", hash_original_field = "C468C3A0691741B1E7D18572879CE879", hash_generated_field = "91E70DA930AA00EAD499671BBD6F37EB")
-
     
     private OnDismissListener mOnDismissListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.928 -0500", hash_original_field = "CC3ADF22EDFB5591EF2B18B9A6E29780", hash_generated_field = "2356D264A59ECD4DA5DAEA961FD9C071")
@@ -172,16 +156,14 @@ public class PopupWindow {
     private boolean mIgnoreCheekPress = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.931 -0500", hash_original_field = "4FD3C82C55184B42F7F8171EA4DB9804", hash_generated_field = "2D667A20717B87BB0939831DD6C37380")
 
-
     private int mAnimationStyle = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.935 -0500", hash_original_field = "05E211AF06F4F4DDD0130728FFB6A304", hash_generated_field = "841D2F2B9FEBE43FD9F75F29253325CB")
-
 
     private WeakReference<View> mAnchor;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.470 -0400", hash_original_field = "8AA9181EAEA04588ABD6B3AB55C1B57C", hash_generated_field = "2B651957906EF3EE2A8FF3D73794B10C")
 
-    private OnScrollChangedListener mOnScrollChangedListener = new OnScrollChangedListener() {        
-        @DSModeled(DSC.SAFE)
+    private OnScrollChangedListener mOnScrollChangedListener = new OnScrollChangedListener() {
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.470 -0400", hash_original_method = "8F0CC5ACEB252AEA9146DA3982ED4810", hash_generated_method = "7EF06A3B1EE135961B1267F768F6EA1D")
         public void onScrollChanged() {
             
@@ -193,17 +175,9 @@ public class PopupWindow {
                             mPopupView.getLayoutParams();
                 updateAboveAnchor(findDropDownPosition(anchor, p, mAnchorXoff, mAnchorYoff));
                 update(p.x, p.y, -1, -1, true);
-            } 
-            
-            
-            
-                    
-                            
-                    
-                    
+            }
                 
         }
-
         
 };
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.948 -0400", hash_original_field = "F170BC3F21E6816CF0857FF17CC3E8A8", hash_generated_field = "3E89D2F69E75793719092294948AC6C2")
@@ -443,7 +417,6 @@ public int getAnimationStyle() {
 public void setIgnoreCheekPress() {
         mIgnoreCheekPress = true;
     }
-    
 
     /**
      * <p>Change the animation style resource for this popup.</p>
@@ -1627,7 +1600,6 @@ public void update(int x, int y, int width, int height, boolean force) {
 public void update(View anchor, int width, int height) {
         update(anchor, false, 0, 0, true, width, height);
     }
-
     
     private class PopupViewContainer extends FrameLayout {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:08.114 -0500", hash_original_field = "49D2493E4F7F43F338146BEAC3857EBA", hash_generated_field = "0B566BDBB758C900741C0BD882C918B7")
@@ -1724,8 +1696,6 @@ public PopupViewContainer(Context context) {
             }
         }
     }
-
-
     
     public interface OnDismissListener {
         

@@ -22,9 +22,7 @@ public abstract class AbstractHttpEntity implements HttpEntity {
 
     protected boolean chunked;
     
-    @DSModeled(DSC.SAFE)
 	protected AbstractHttpEntity() {}
-
 
     /**
      * Obtains the Content-Type header.
@@ -38,7 +36,6 @@ public abstract class AbstractHttpEntity implements HttpEntity {
 public Header getContentType() {
         return this.contentType;
     }
-
     
     /**
      * Obtains the Content-Encoding header.
@@ -65,7 +62,6 @@ public Header getContentEncoding() {
 public boolean isChunked() {
         return this.chunked;
     }
-
     
     /**
      * Specifies the Content-Type header.
@@ -98,7 +94,6 @@ public void setContentType(final String ctString) {
         }
         setContentType(h);
     }
-    
 
     /**
      * Specifies the Content-Encoding header.
@@ -132,7 +127,6 @@ public void setContentEncoding(final String ceString) {
         setContentEncoding(h);
     }
 
-
     /**
      * Specifies the 'chunked' flag.
      * The default implementation sets the value of the
@@ -145,7 +139,6 @@ public void setContentEncoding(final String ceString) {
 public void setChunked(boolean b) {
         this.chunked = b;
     }
-
 
     /**
      * Does not consume anything.
@@ -169,7 +162,6 @@ public void consumeContent()
                 ("streaming entity does not implement consumeContent()");
         }
     }
-
     
 }
 

@@ -6,22 +6,14 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Arrays;
 
-
-
-
-
-
 public class CRC32 implements Checksum {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.159 -0500", hash_original_field = "5E188210823E517BAA91872EABCAF7CD", hash_generated_field = "103DD39C404FCCE4417B434D3EE0291E")
-
 
     private long crc = 0L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.161 -0500", hash_original_field = "2CA876BB74D9B634ED48B07BACA76027", hash_generated_field = "2CA876BB74D9B634ED48B07BACA76027")
 
-
     long tbytes = 0L;
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.485 -0400", hash_original_method = "D55E28551E901525721E2A005775E885", hash_generated_method = "D55E28551E901525721E2A005775E885")
     public CRC32 ()
     {
@@ -96,7 +88,6 @@ public void update(byte[] buf, int offset, int byteCount) {
     	return getTaintLong();
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.181 -0500", hash_original_method = "90348FBF3DF8B04612B506AE017DBA82", hash_generated_method = "B0C80CE3385CE04CE8B102059C4983AE")
     
     private long updateByteImpl(byte val, long crc1){
@@ -105,8 +96,6 @@ public void update(byte[] buf, int offset, int byteCount) {
     	addTaint(crc1);
     	return getTaintLong();
     }
-
-
     
 }
 

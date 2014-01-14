@@ -14,11 +14,6 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
-
-
-
-
-
 public abstract class URLConnection {
 
     /**
@@ -236,14 +231,11 @@ public static void setFileNameMap(FileNameMap map) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.037 -0500", hash_original_field = "8D5D028678AAF3CC459528BDAE282DFA", hash_generated_field = "1A52F999A308188068C76D38BA5615EF")
 
-
     private static boolean defaultAllowUserInteraction;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.039 -0500", hash_original_field = "A5D58564F4CE88AFAC6558119A5489F5", hash_generated_field = "0745D91F58FAC663266DAFADF4C39A8B")
 
-
     private static boolean defaultUseCaches = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.060 -0500", hash_original_field = "080E869D8114D1C74C230DBF66231C2C", hash_generated_field = "D42218022B7E3DD64D7C74B810FC8B3D")
-
 
     private static ContentHandlerFactory contentHandlerFactory;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.067 -0500", hash_original_field = "4FFC960D76E3B61CDC64E3621EBE8A6C", hash_generated_field = "B35CCA371471EC5184868CE09D94475C")
@@ -257,14 +249,11 @@ public static void setFileNameMap(FileNameMap map) {
     protected URL url;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.034 -0500", hash_original_field = "EC00198C8901F4A46F11243ED4F82C3C", hash_generated_field = "F7D06CB833C0C0295691396E4B1D1656")
 
-
     private String contentType;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.041 -0500", hash_original_field = "AA6C99420A3EDFB143DFB7EA7C0B7623", hash_generated_field = "AA6C99420A3EDFB143DFB7EA7C0B7623")
 
-
     ContentHandler defaultHandler = new DefaultContentHandler();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.044 -0500", hash_original_field = "C57F295716CFF89C00CC3061FA79AC83", hash_generated_field = "80AE10D08247476B02E38D0EE6A074A6")
-
 
     private long lastModified = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.047 -0500", hash_original_field = "AE6AA07017077DCFAE4963BA0D1DA99B", hash_generated_field = "CCFF3B6B851FE8AAC8BF953CAC3C257F")
@@ -287,10 +276,8 @@ public static void setFileNameMap(FileNameMap map) {
     protected boolean allowUserInteraction = defaultAllowUserInteraction;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.063 -0500", hash_original_field = "BEB2F5AEFF407193A05CB107B9A4F798", hash_generated_field = "2D29EC4E724B4A9910DF5E47FBCFBD74")
 
-
     private int readTimeout = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.065 -0500", hash_original_field = "C4F50E01A2C9DBD63D4DB85F092A1128", hash_generated_field = "7C5462E35603097818B70A73FEBCE187")
-
 
     private int connectTimeout = 0;
 
@@ -1001,11 +988,9 @@ public void setUseCaches(boolean newValue) {
         checkNotConnected();
         this.useCaches = newValue;
     }
-
     
     static class DefaultContentHandler extends java.net.ContentHandler {
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:52.078 -0400", hash_original_method = "D9C7FF4AC457B32D0DB70E56925850DE", hash_generated_method = "D9C7FF4AC457B32D0DB70E56925850DE")
         public DefaultContentHandler ()
         {
@@ -1017,7 +1002,6 @@ public void setUseCaches(boolean newValue) {
         public Object getContent(URLConnection u) throws IOException {
             return u.getInputStream();
         }
-
         
     }
 

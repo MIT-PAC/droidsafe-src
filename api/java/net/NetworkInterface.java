@@ -30,10 +30,6 @@ import libcore.io.ErrnoException;
 import libcore.io.IoUtils;
 import libcore.io.Libcore;
 
-
-
-
-
 public final class NetworkInterface extends Object {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:05.629 -0500", hash_original_method = "B221CC75BF34BFBFBAF89FBF07707022", hash_generated_method = "39A35D04694321A6A7B0D56952040B32")
@@ -280,10 +276,8 @@ public static Enumeration<NetworkInterface> getNetworkInterfaces() throws Socket
     private  List<InetAddress> addresses;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:05.621 -0500", hash_original_field = "F97426977E2DBE85F0038A7093E54A75", hash_generated_field = "E12F20A3F0C19D49814391AB55DB6473")
 
-
     private final List<NetworkInterface> children = new LinkedList<NetworkInterface>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:05.623 -0500", hash_original_field = "1D5ED4A9B03164F6AE1F7A40A4975221", hash_generated_field = "9E46A9600719B02A7A32211C8211AD2B")
-
 
     private NetworkInterface parent = null;
 
@@ -489,9 +483,7 @@ private boolean hasFlag(int mask) throws SocketException {
         int flags = readIntFile("/sys/class/net/" + name + "/flags");
         return (flags & mask) != 0;
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.939 -0400", hash_original_method = "38A6C5A0C86B6ED6858EFB47D652704B", hash_generated_method = "03D3756D0CCE283A6BBA95B14F88554B")
     public byte[] getHardwareAddress() throws SocketException {
         try 
@@ -569,7 +561,6 @@ public int getMTU() throws SocketException {
 public boolean isVirtual() {
         return parent != null;
     }
-
     
 }
 

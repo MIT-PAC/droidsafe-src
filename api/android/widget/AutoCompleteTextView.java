@@ -26,11 +26,6 @@ import android.view.inputmethod.InputMethodManager;
 
 import com.android.internal.R;
 
-
-
-
-
-
 public class AutoCompleteTextView extends EditText implements Filter.FilterListener {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:58.984 -0500", hash_original_field = "81DD852ECBE07BA98A61C8F3D0C85F01", hash_generated_field = "F09208C088E716A2CD36A97B937BB5EA")
 
@@ -40,10 +35,8 @@ public class AutoCompleteTextView extends EditText implements Filter.FilterListe
     static final String TAG = "AutoCompleteTextView";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:58.988 -0500", hash_original_field = "278B86F4E21489565DB89494073B789E", hash_generated_field = "50DC5A53A7642176DA288042E8938B92")
 
-
     static final int EXPAND_MAX = 3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:58.990 -0500", hash_original_field = "D9985579330390AE8290FE29DE0EF688", hash_generated_field = "1FDB4027FDC409C38C96D7C7129240A3")
-
 
     private CharSequence mHintText;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:58.992 -0500", hash_original_field = "CA453DA8168AD73BA8AAAB4C1D94E39C", hash_generated_field = "3A9494D52ECD891CDD06D9FB033B0410")
@@ -54,7 +47,6 @@ public class AutoCompleteTextView extends EditText implements Filter.FilterListe
     private int mHintResource;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:58.996 -0500", hash_original_field = "CBDD62EF585589E92C0E00AE9F4F22E2", hash_generated_field = "90F29768206AB431EA361CD94838716F")
 
-
     private ListAdapter mAdapter;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:58.998 -0500", hash_original_field = "E9FBEB72F5336AFA25831B1B3CB2A4B4", hash_generated_field = "A13F7A33CB1B9B8C8BC52C7A25894515")
 
@@ -64,13 +56,11 @@ public class AutoCompleteTextView extends EditText implements Filter.FilterListe
     private int mThreshold;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.004 -0500", hash_original_field = "4DA234AE6542EB8CE34753F7DEA560C5", hash_generated_field = "8997F2E1258B500A89588C7ED08EDAF2")
 
-
     private ListPopupWindow mPopup;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.006 -0500", hash_original_field = "2D95AAF1E2AEB6DBA83C660BDDE73F76", hash_generated_field = "AA79DCF4F4AF02E5E4FD88F114FC4A45")
 
     private int mDropDownAnchorId;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.008 -0500", hash_original_field = "C3BCFE8177AEF338D4004A6DD4D2D8EF", hash_generated_field = "91F251C39E992AB6E9A1F97E1DB2D65A")
-
 
     private AdapterView.OnItemClickListener mItemClickListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.010 -0500", hash_original_field = "95D49B221C26B1A3334D3BD6A6E6E61A", hash_generated_field = "B20A14E839638431419A27C6FA2EB183")
@@ -78,17 +68,14 @@ public class AutoCompleteTextView extends EditText implements Filter.FilterListe
     private AdapterView.OnItemSelectedListener mItemSelectedListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.012 -0500", hash_original_field = "F3626448EBBBD7C8DF8388361FA4C097", hash_generated_field = "F2A9684F0F8098ECC6D91A395F94C973")
 
-
     private boolean mDropDownDismissedOnCompletion = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.014 -0500", hash_original_field = "42F0BE50EE4EAA127551894E1C861A8F", hash_generated_field = "202A96DE332795BB4B1FEBF0146D898F")
-
 
     private int mLastKeyCode = KeyEvent.KEYCODE_UNKNOWN;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.016 -0500", hash_original_field = "8EC18D8C56BE58C3AEB1159EBA595EC9", hash_generated_field = "DF21E3DF0E1F480F88152014C172C190")
 
     private boolean mOpenBefore;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.018 -0500", hash_original_field = "0E68BF28727A92D3ED40E3FAF1710C9D", hash_generated_field = "174452E4EA6CBBEFAC61139138443140")
-
 
     private Validator mValidator = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.020 -0500", hash_original_field = "6D60824235355A8B322627882F3A5E35", hash_generated_field = "F75A9D78378413BAF88541599A31BF41")
@@ -99,7 +86,6 @@ public class AutoCompleteTextView extends EditText implements Filter.FilterListe
     // Set to false when the list is hidden to prevent asynchronous updates to popup the list again.
     private boolean mPopupCanBeUpdated = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.024 -0500", hash_original_field = "7D303B16C326C90EA8482AA23C590B95", hash_generated_field = "EBF3BC0102B69BA2B0B114608A6AF073")
-
 
     private PassThroughClickListener mPassThroughClickListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.027 -0500", hash_original_field = "CE1C8FF88DD224C2604D8448F5044A3A", hash_generated_field = "0623EBBCEF1FE0FD7F127A32EDBCAFCC")
@@ -618,9 +604,7 @@ public AdapterView.OnItemSelectedListener getOnItemSelectedListener() {
 public ListAdapter getAdapter() {
         return mAdapter;
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.696 -0400", hash_original_method = "18CB1EEAAEFB5BC2DC3ECE426EBE9928", hash_generated_method = "F0E69E1084FD7B774906C79EDAFD6B58")
     public <T extends ListAdapter & Filterable> void setAdapter(T adapter) {
         if(mObserver == null)        
@@ -1218,7 +1202,6 @@ private void buildImeCompletions() {
 public void setValidator(Validator validator) {
         mValidator = validator;
     }
-
     
     private class MyWatcher implements TextWatcher {
         
@@ -1241,11 +1224,8 @@ public void beforeTextChanged(CharSequence s, int start, int count, int after) {
         
 public void onTextChanged(CharSequence s, int start, int before, int count) {
         }
-
         
     }
-
-
     
     private class DropDownItemClickListener implements AdapterView.OnItemClickListener {
         
@@ -1259,15 +1239,11 @@ public void onTextChanged(CharSequence s, int start, int before, int count) {
 public void onItemClick(AdapterView parent, View v, int position, long id) {
             performCompletion(v, position, id);
         }
-
         
     }
-
-
     
     private class PassThroughClickListener implements OnClickListener {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.211 -0500", hash_original_field = "4B266FAAAFEF787B089CC94471039413", hash_generated_field = "7D6A8796716A6CBC9C60BD4061851E68")
-
 
         private View.OnClickListener mWrapped;
         
@@ -1285,11 +1261,8 @@ public void onClick(View v) {
 
             if (mWrapped != null) mWrapped.onClick(v);
         }
-
         
     }
-
-
     
     private class PopupDataSetObserver extends DataSetObserver {
         
@@ -1319,16 +1292,12 @@ public void onClick(View v) {
                 });
             }
         }
-
         
     }
-
-
     
     public interface Validator {
         
         boolean isValid(CharSequence text);
-
         
         CharSequence fixText(CharSequence invalidText);
     }

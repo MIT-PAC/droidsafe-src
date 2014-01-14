@@ -13,15 +13,10 @@ import android.os.ServiceManager;
 import android.os.SystemClock;
 import android.util.DisplayMetrics;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public class Display {
-
     
-    @DSModeled(DSC.SAFE)
     static int getDisplayCount() {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2086194105 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2086194105;
@@ -38,9 +33,7 @@ static IWindowManager getWindowManager() {
             return sWindowManager;
         }
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeClassInit() {
     }
 
@@ -64,7 +57,6 @@ public static Display createCompatibleDisplay(int displayId, CompatibilityInfoHo
     public static final int DEFAULT_DISPLAY = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:15.339 -0500", hash_original_field = "5DD5AFB956F82E56442C6720CD888418", hash_generated_field = "3688F7B3534C6CD8F91C89CB5E40FE68")
 
-
     private static final Object sStaticInit = new Object();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:15.342 -0500", hash_original_field = "FF0D215A6350FF708FCE993AD427F9D1", hash_generated_field = "815F7815DE01033DD7A51FFFBC42763D")
 
@@ -73,7 +65,6 @@ public static Display createCompatibleDisplay(int displayId, CompatibilityInfoHo
 
     private static IWindowManager sWindowManager;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:15.317 -0500", hash_original_field = "5EAC126C193FC41ACB184C1D10F2C250", hash_generated_field = "01AEB6BE7A1CFB44C6B781D7301EC317")
-
 
     private  CompatibilityInfoHolder mCompatibilityInfo;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:15.319 -0500", hash_original_field = "32484B09E23EA969F843AD1B3AF0B883", hash_generated_field = "C3D33931672C9997D02DE67B6B8FC170")
@@ -92,7 +83,6 @@ public static Display createCompatibleDisplay(int displayId, CompatibilityInfoHo
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:15.329 -0500", hash_original_field = "BC1908C6E1D0054138584C2D01126D3C", hash_generated_field = "BC1908C6E1D0054138584C2D01126D3C")
  float   mDpiY;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:15.332 -0500", hash_original_field = "C2BAC675E69529ADCFDBC8F23A87249F", hash_generated_field = "538425559D2BF0F635F9288868FC8D78")
-
     
     private final Point mTmpPoint = new Point();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:15.334 -0500", hash_original_field = "1D8990DD0AE47C2EF8F82812E1AB1108", hash_generated_field = "3C9E4AC56655D3050A4B4F36D2BBE1DC")
@@ -315,7 +305,6 @@ public int getRawWidth() {
     	return getTaintInt();
     }
 
-
     /**
      * Gets the raw height of the display, in pixels.
      * <p>
@@ -337,7 +326,6 @@ public int getRawHeight() {
     	//Formerly a native method
     	return getTaintInt();
     }
-
     
     /**
      * Returns the rotation of the screen from its "natural" orientation.
@@ -373,7 +361,6 @@ public int getRotation() {
     	//Formerly a native method
     	return getTaintInt();
     }
-
 
     /**
      * Return the native pixel format of the display.  The returned value

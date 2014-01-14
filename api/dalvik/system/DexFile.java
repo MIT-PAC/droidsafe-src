@@ -9,10 +9,6 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Enumeration;
 
-
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public final class DexFile {
@@ -55,9 +51,7 @@ static public DexFile loadDex(String sourcePathName, String outputPathName,
          */
         return new DexFile(sourcePathName, outputPathName, flags);
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static Class defineClass(String name, ClassLoader loader, int cookie) {
     	Class clazz = new Class();
     	clazz.addTaint(name.taint);
@@ -65,37 +59,27 @@ static public DexFile loadDex(String sourcePathName, String outputPathName,
     	clazz.addTaint(cookie);
     	return clazz;
     }
-
     
-    @DSModeled(DSC.BAN)
     private static String[] getClassNameList(int cookie) {
     	String[] s = new String[0];
     	s.addTaint(cookie);
     	return s;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int openDexFile(String sourceName, String outputName,
         int flags) throws IOException {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_623029097 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_623029097;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int openDexFile(byte[] fileContents) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1747228384 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1747228384;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void closeDexFile(int cookie) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static boolean isDexOptNeeded(String fileName) throws FileNotFoundException, IOException {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_689770446 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_689770446;
@@ -280,7 +264,6 @@ public Enumeration<String> entries() {
             super.finalize();
         }
     }
-
     
     private class DFEnum implements Enumeration<String> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:39.735 -0500", hash_original_field = "3FE793BBC68255EAC5B3588E7DE2E2C6", hash_generated_field = "B8B828CADFFAE7A5A771AAB7A1527A20")
@@ -308,11 +291,8 @@ public boolean hasMoreElements() {
 public String nextElement() {
             return mNameList[mIndex++];
         }
-
         
     }
-
-
     
 }
 

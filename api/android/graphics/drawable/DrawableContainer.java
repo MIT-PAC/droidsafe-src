@@ -12,10 +12,6 @@ import android.graphics.PixelFormat;
 import android.graphics.Rect;
 import android.os.SystemClock;
 
-
-
-
-
 public class DrawableContainer extends Drawable implements Drawable.Callback {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:19.098 -0500", hash_original_field = "81DD852ECBE07BA98A61C8F3D0C85F01", hash_generated_field = "58EDF43BA541A4D47EECFEC3901C7AED")
 
@@ -40,7 +36,6 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
     private ColorFilter mColorFilter;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:19.114 -0500", hash_original_field = "4D798BF78CCD3B8BF49CA55B59BA5F14", hash_generated_field = "68BE4C2261D94A949F760C32A43779D9")
 
-
     private int mCurIndex = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:19.116 -0500", hash_original_field = "B15C308E96D0EEBD27CFE369FA349C15", hash_generated_field = "5CA5A1EF3CAA45117BCACBC34EF05952")
 
@@ -58,7 +53,6 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
 
     private Drawable mLastDrawable;
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.691 -0400", hash_original_method = "094684F7E86BAEC8B113ECD0EF1A35E3", hash_generated_method = "094684F7E86BAEC8B113ECD0EF1A35E3")
     public DrawableContainer ()
     {
@@ -444,7 +438,6 @@ void animate(boolean schedule) {
     public Drawable getCurrent() {
         return mCurrDrawable;
     }
-
     
     public abstract static class DrawableContainerState extends ConstantState {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:19.200 -0500", hash_original_field = "69A4D31099BD07B55F0FC0556B45F074", hash_generated_field = "69A4D31099BD07B55F0FC0556B45F074")
@@ -452,13 +445,11 @@ void animate(boolean schedule) {
          DrawableContainer mOwner;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:19.202 -0500", hash_original_field = "9BFAF00848476277D36D9BA586984BA7", hash_generated_field = "9BFAF00848476277D36D9BA586984BA7")
 
-
         int         mChangingConfigurations;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:19.204 -0500", hash_original_field = "E8F7332658D4B8911B8427F9E33AC9BD", hash_generated_field = "E8F7332658D4B8911B8427F9E33AC9BD")
 
         int         mChildrenChangingConfigurations;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:19.206 -0500", hash_original_field = "B3C5F926BAE6E9ED929417A165A9782D", hash_generated_field = "B3C5F926BAE6E9ED929417A165A9782D")
-
         
         Drawable[]  mDrawables;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:19.208 -0500", hash_original_field = "77E2F294FC2676328BFD127FCF506329", hash_generated_field = "77E2F294FC2676328BFD127FCF506329")
@@ -466,13 +457,11 @@ void animate(boolean schedule) {
         int         mNumChildren;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:19.210 -0500", hash_original_field = "A174A0353A9684103C90D7CCC8701C2F", hash_generated_field = "A174A0353A9684103C90D7CCC8701C2F")
 
-
         boolean     mVariablePadding = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:19.212 -0500", hash_original_field = "C4240083AE1C6AD18CF7413499D117A4", hash_generated_field = "C4240083AE1C6AD18CF7413499D117A4")
 
         Rect        mConstantPadding = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:19.214 -0500", hash_original_field = "6BFEC2D16A3F7C5C15697878B6EF3BBE", hash_generated_field = "6BFEC2D16A3F7C5C15697878B6EF3BBE")
-
 
         boolean     mConstantSize = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:19.216 -0500", hash_original_field = "430C60111FB869A696B5B5437CADEC6A", hash_generated_field = "430C60111FB869A696B5B5437CADEC6A")
@@ -492,13 +481,11 @@ void animate(boolean schedule) {
         int         mConstantMinimumHeight;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:19.227 -0500", hash_original_field = "0E129F2B3EAED33E8435CEB0AF66A927", hash_generated_field = "0E129F2B3EAED33E8435CEB0AF66A927")
 
-
         boolean     mHaveOpacity = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:19.229 -0500", hash_original_field = "F94EB6B55A1DFE34A922350D13706418", hash_generated_field = "F94EB6B55A1DFE34A922350D13706418")
 
         int         mOpacity;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:19.231 -0500", hash_original_field = "788B667F97461387E15CDD9C2D78DA89", hash_generated_field = "788B667F97461387E15CDD9C2D78DA89")
-
 
         boolean     mHaveStateful = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:19.233 -0500", hash_original_field = "6CBAA9F8E31FD09725242CB8EF367A38", hash_generated_field = "6CBAA9F8E31FD09725242CB8EF367A38")
@@ -506,21 +493,17 @@ void animate(boolean schedule) {
         boolean     mStateful;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:19.235 -0500", hash_original_field = "04605894B57F7B3414AF620BF4AC040E", hash_generated_field = "04605894B57F7B3414AF620BF4AC040E")
 
-
         boolean     mCheckedConstantState;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:19.237 -0500", hash_original_field = "09212A3A30B7E6D48DEECC4F4639CCBC", hash_generated_field = "09212A3A30B7E6D48DEECC4F4639CCBC")
 
         boolean     mCanConstantState;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:19.239 -0500", hash_original_field = "F1842B9E642BB7380414BD0D8EACA9C1", hash_generated_field = "F1842B9E642BB7380414BD0D8EACA9C1")
 
-
         boolean     mPaddingChecked = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:19.241 -0500", hash_original_field = "ADD3447A81FDA5C4E55789938CB01CA9", hash_generated_field = "ADD3447A81FDA5C4E55789938CB01CA9")
-
         
         boolean     mDither = DEFAULT_DITHER;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:19.243 -0500", hash_original_field = "3A008F34A7ED7348F09E0D7AC5FD8046", hash_generated_field = "3A008F34A7ED7348F09E0D7AC5FD8046")
-        
 
         int         mEnterFadeDuration;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:19.245 -0500", hash_original_field = "72291FB3AAE88AF4CCFC28A4C19C4F0A", hash_generated_field = "72291FB3AAE88AF4CCFC28A4C19C4F0A")
@@ -822,7 +805,6 @@ public synchronized boolean canConstantState() {
 
             return mCanConstantState;
         }
-
         
     }
 

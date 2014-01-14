@@ -9,231 +9,165 @@ import android.text.SpannableString;
 import android.text.SpannedString;
 import android.text.TextUtils;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public class Paint {
-
     
-    @DSModeled(DSC.SAFE)
     private static int native_init() {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_411903526 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_411903526;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int native_initWithPaint(int paint) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1822342811 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1822342811;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_reset(int native_object) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_set(int native_dst, int native_src) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int native_getStyle(int native_object) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_695600058 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_695600058;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_setStyle(int native_object, int style) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int native_getStrokeCap(int native_object) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_72348221 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_72348221;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_setStrokeCap(int native_object, int cap) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int native_getStrokeJoin(int native_object) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2100687496 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2100687496;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_setStrokeJoin(int native_object,
                                                     int join) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean native_getFillPath(int native_object,
                                                      int src, int dst) {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1554135697 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1554135697;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int native_setShader(int native_object, int shader) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_304132726 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_304132726;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int native_setColorFilter(int native_object,
                                                     int filter) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_660421621 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_660421621;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int native_setXfermode(int native_object,
                                                  int xfermode) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1010875162 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1010875162;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int native_setPathEffect(int native_object,
                                                    int effect) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2132479319 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2132479319;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int native_setMaskFilter(int native_object,
                                                    int maskfilter) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1946182993 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1946182993;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int native_setTypeface(int native_object,
                                                  int typeface) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_216630856 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_216630856;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int native_setRasterizer(int native_object,
                                                    int rasterizer) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1401536634 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1401536634;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int native_getTextAlign(int native_object) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_101495221 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_101495221;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_setTextAlign(int native_object,
                                                    int align) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static float native_getFontMetrics(int native_paint,
                                                       FontMetrics metrics) {
                 float var546ADE640B6EDFBC8A086EF31347E768_1646011385 = DSUtils.UNKNOWN_FLOAT;
         return var546ADE640B6EDFBC8A086EF31347E768_1646011385;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int native_getTextWidths(int native_object,
                             char[] text, int index, int count, float[] widths) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1172843739 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1172843739;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int native_getTextWidths(int native_object,
                             String text, int start, int end, float[] widths) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1740280915 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1740280915;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int native_getTextGlyphs(int native_object,
             String text, int start, int end, int contextStart, int contextEnd,
             int flags, char[] glyphs) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1960442695 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1960442695;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static float native_getTextRunAdvances(int native_object,
             char[] text, int index, int count, int contextIndex, int contextCount,
             int flags, float[] advances, int advancesIndex, int reserved) {
                 float var546ADE640B6EDFBC8A086EF31347E768_2085706126 = DSUtils.UNKNOWN_FLOAT;
         return var546ADE640B6EDFBC8A086EF31347E768_2085706126;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static float native_getTextRunAdvances(int native_object,
             String text, int start, int end, int contextStart, int contextEnd,
             int flags, float[] advances, int advancesIndex, int reserved) {
                 float var546ADE640B6EDFBC8A086EF31347E768_1890811747 = DSUtils.UNKNOWN_FLOAT;
         return var546ADE640B6EDFBC8A086EF31347E768_1890811747;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_getTextPath(int native_object, int bidiFlags,
                 char[] text, int index, int count, float x, float y, int path) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_getTextPath(int native_object, int bidiFlags,
                 String text, int start, int end, float x, float y, int path) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeGetStringBounds(int nativePaint,
                                 String text, int start, int end, Rect bounds) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeGetCharArrayBounds(int nativePaint,
                                 char[] text, int index, int count, Rect bounds) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void finalizer(int nativePaint) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.462 -0500", hash_original_field = "036DA9FBE137AFFEE83D62704F339225", hash_generated_field = "5C49143BE7FFA5D3F7B1962C98542BDE")
-
     
     static final Style[] sStyleArray = {
         Style.FILL, Style.STROKE, Style.FILL_AND_STROKE
@@ -342,7 +276,6 @@ public class Paint {
     public int mNativePaint;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.429 -0500", hash_original_field = "FDF54A2FE886548299B21698A652A06E", hash_generated_field = "5D6D299C9DDEDCCB11EFFA1C147C3DF6")
 
-
     private ColorFilter mColorFilter;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.431 -0500", hash_original_field = "7AD633188967CFB9AABB54721839A490", hash_generated_field = "30CA93EA0A1FDD848EE36D39E7D9E77B")
 
@@ -363,7 +296,6 @@ public class Paint {
 
     private Xfermode    mXfermode;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.443 -0500", hash_original_field = "44262990EC796BEF4BE2D2CE08E33B53", hash_generated_field = "41C5D1021B750266A4ADC951970465D5")
-
 
     private boolean     mHasCompatScaling;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.445 -0500", hash_original_field = "FC81821365D0E19B8FB314D0C9592ECF", hash_generated_field = "B75D80F84935274D46B49A2A5EE4E0AB")
@@ -391,13 +323,10 @@ public class Paint {
 
     public  int         mBidiFlags = BIDI_DEFAULT_LTR;
     
-    @DSModeled(DSC.SAFE)
     public Paint() {
         //this(0);  No real need to flow down into second constructor which would track taint, since it's a fixed value
     }
-
     
-    @DSModeled(DSC.SAFE)
     public Paint(int flags) {
 		setFlags(flags);
 		/*
@@ -519,15 +448,11 @@ public void setBidiFlags(int flags) {
         }
         mBidiFlags = flags;
     }
-
     
-    @DSModeled(DSC.SAFE)
 	public int getFlags() {  //Originally a native method, converted over
 		return getTaintInt();
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public void setFlags(int flags) {  //Originally a native method, converted over
 		addTaint(flags);
 	}
@@ -543,7 +468,6 @@ public void setBidiFlags(int flags) {
     	return getTaintInt();
     }
 
-
     /**
      * Set the paint's hinting mode.  May be either
      * {@link #HINTING_OFF} or {@link #HINTING_ON}.
@@ -554,7 +478,6 @@ public void setBidiFlags(int flags) {
     	//Formerly a native method
     	addTaint(mode);
     }
-
 
     /**
      * Helper for getFlags(), returning true if ANTI_ALIAS_FLAG bit is set
@@ -569,9 +492,7 @@ public void setBidiFlags(int flags) {
 public final boolean isAntiAlias() {
         return (getFlags() & ANTI_ALIAS_FLAG) != 0;
     }
-
     
-    @DSModeled(DSC.SAFE)
 	public void setAntiAlias(boolean aa) {
 		//Helper for setFlags(), setting or clearing the ANTI_ALIAS_FLAG bit
 		addTaint(aa);
@@ -609,7 +530,6 @@ public final boolean isDither() {
     	//Formerly a native method
     	addTaint(dither);
     }
-
     
     /**
      * Helper for getFlags(), returning true if LINEAR_TEXT_FLAG bit is set
@@ -635,7 +555,6 @@ public final boolean isLinearText() {
     	addTaint(linearText);
     }
 
-
     /**
      * Helper for getFlags(), returning true if SUBPIXEL_TEXT_FLAG bit is set
      *
@@ -659,7 +578,6 @@ public final boolean isSubpixelText() {
     	//Formerly a native method
     	addTaint(subpixelText);
     }
-
     
     /**
      * Helper for getFlags(), returning true if UNDERLINE_TEXT_FLAG bit is set
@@ -685,7 +603,6 @@ public final boolean isUnderlineText() {
     	addTaint(underlineText);
     }
 
-
     /**
      * Helper for getFlags(), returning true if STRIKE_THRU_TEXT_FLAG bit is set
      *
@@ -710,7 +627,6 @@ public final boolean isStrikeThruText() {
     	addTaint(strikeThruText);
     }
 
-
     /**
      * Helper for getFlags(), returning true if FAKE_BOLD_TEXT_FLAG bit is set
      *
@@ -734,7 +650,6 @@ public final boolean isFakeBoldText() {
     	//Formerly a native method
     	addTaint(fakeBoldText);
     }
-
     
     /**
      * Whether or not the bitmap filter is activated.
@@ -749,9 +664,7 @@ public final boolean isFakeBoldText() {
 public final boolean isFilterBitmap() {
         return (getFlags() & FILTER_BITMAP_FLAG) != 0;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public void setFilterBitmap(boolean filter) {
 		//Don't think we need to perform any tainting
 		//filter true to set the FILTER_BITMAP_FLAG bit in the paint's flags, false to clear it.
@@ -782,15 +695,11 @@ public Style getStyle() {
 public void setStyle(Style style) {
         native_setStyle(mNativePaint, style.nativeInt);
     }
-
     
-    @DSModeled(DSC.SAFE)
 	public int getColor() {  //Originally a native method, converted over
 		return getTaintInt();
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public void setColor(int color) { //Originally a native method, converted over
 		addTaint(color);
 	}
@@ -809,7 +718,6 @@ public void setStyle(Style style) {
     	return getTaintInt();
     }
 
-
     /**
      * Helper to setColor(), that only assigns the color's alpha value,
      * leaving its r,g,b values unchanged. Results are undefined if the alpha
@@ -823,7 +731,6 @@ public void setStyle(Style style) {
     	//Formerly a native method
     	addTaint(a);
     }
-
 
     /**
      * Helper to setColor(), that takes a,r,g,b and constructs the color int
@@ -855,7 +762,6 @@ public void setARGB(int a, int r, int g, int b) {
     	return getTaintFloat();
     }
 
-
     /**
      * Set the width for stroking.
      * Pass 0 to stroke in hairline mode.
@@ -871,7 +777,6 @@ public void setARGB(int a, int r, int g, int b) {
     	addTaint(width);
     }
 
-
     /**
      * Return the paint's stroke miter value. Used to control the behavior
      * of miter joins when the joins angle is sharp.
@@ -886,7 +791,6 @@ public void setARGB(int a, int r, int g, int b) {
     	return getTaintFloat();
     }
 
-
     /**
      * Set the paint's stroke miter value. This is used to control the behavior
      * of miter joins when the joins angle is sharp. This value must be >= 0.
@@ -900,7 +804,6 @@ public void setARGB(int a, int r, int g, int b) {
     	//Formerly a native method
     	addTaint(miter);
     }
-
 
     /**
      * Return the paint's Cap, controlling how the start and end of stroked
@@ -1218,7 +1121,6 @@ public void setShadowLayer(float radius, float dx, float dy, int color) {
     	addTaint(color);
     }
 
-
     /**
      * Clear the shadow layer.
      */
@@ -1269,7 +1171,6 @@ public void setTextAlign(Align align) {
     	return getTaintFloat();
     }
 
-
     /**
      * Set the paint's text size. This value must be > 0
      *
@@ -1281,7 +1182,6 @@ public void setTextAlign(Align align) {
     	//Formerly a native method
     	addTaint(textSize);
     }
-
 
     /**
      * Return the paint's horizontal scale factor for text. The default value
@@ -1295,7 +1195,6 @@ public void setTextAlign(Align align) {
     	//Formerly a native method
     	return getTaintFloat();
     }
-
 
     /**
      * Set the paint's horizontal scale factor for text. The default value
@@ -1311,7 +1210,6 @@ public void setTextAlign(Align align) {
     	addTaint(scaleX);
     }
 
-
     /**
      * Return the paint's horizontal skew factor for text. The default value
      * is 0.
@@ -1325,7 +1223,6 @@ public void setTextAlign(Align align) {
     	return getTaintFloat();
     }
 
-
     /**
      * Set the paint's horizontal skew factor for text. The default value
      * is 0. For approximating oblique text, use values around -0.25.
@@ -1338,7 +1235,6 @@ public void setTextAlign(Align align) {
     	//Formerly a native method
     	addTaint(skewX);
     }
-
 
     /**
      * Return the distance above (negative) the baseline (ascent) based on the
@@ -1354,7 +1250,6 @@ public void setTextAlign(Align align) {
     	return getTaintFloat();
     }
 
-
     /**
      * Return the distance below (positive) the baseline (descent) based on the
      * current typeface and text size.
@@ -1368,7 +1263,6 @@ public void setTextAlign(Align align) {
     	//Formerly a native method
     	return getTaintFloat();
     }
-
     
     /**
      * Return the font's recommended interline spacing, given the Paint's
@@ -1386,7 +1280,6 @@ public void setTextAlign(Align align) {
     	addTaint(metrics.getTaint());
     	return getTaintFloat();
     }
-
     
     /**
      * Allocates a new FontMetrics object, and then calls getFontMetrics(fm)
@@ -1418,7 +1311,6 @@ public FontMetrics getFontMetrics() {
     	return getTaintInt();
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.803 -0500", hash_original_method = "B88208EBDD064B8ABC7A4B1B4C890CB3", hash_generated_method = "C1EBC8760EEF5FFFC18B09BFCB7CEEC4")
     
 public FontMetricsInt getFontMetricsInt() {
@@ -1439,9 +1331,7 @@ public FontMetricsInt getFontMetricsInt() {
 public float getFontSpacing() {
         return getFontMetrics(null);
     }
-
     
-    @DSModeled(DSC.SAFE)
 	public float measureText(char[] text, int index, int count) {
 		return 0;  //Is purely a computational function and doesn't appear to change any values/state
 		/*
@@ -1464,7 +1354,6 @@ public float getFontSpacing() {
         return w*mInvCompatScaling;
         */
     }
-
     
     public enum Style {
         FILL            (0),
@@ -1480,7 +1369,6 @@ Style(int nativeInt) {
 
          int nativeInt;
     }
-
     
     public enum Cap {
         BUTT    (0),
@@ -1496,7 +1384,6 @@ private Cap(int nativeInt) {
 
          int nativeInt;
     }
-
     
     public enum Join {
         MITER   (0),
@@ -1512,7 +1399,6 @@ private Join(int nativeInt) {
 
          int nativeInt;
     }
-
     
     public enum Align {
         LEFT    (0),
@@ -1528,7 +1414,6 @@ private Align(int nativeInt) {
 
          int nativeInt;
     }
-
     
     public static class FontMetrics {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.765 -0500", hash_original_field = "5A30F5F1FC23335B87123877DB67623D", hash_generated_field = "F9D622C84E97B0C2CBDBCB618909D322")
@@ -1547,17 +1432,13 @@ private Align(int nativeInt) {
 
         public float   leading;
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.976 -0400", hash_original_method = "9D0F6E676FD14A88D6B94EA1234A3DC2", hash_generated_method = "9D0F6E676FD14A88D6B94EA1234A3DC2")
         public FontMetrics ()
         {
             //Synthesized constructor
         }
 
-
     }
-
-
     
     public static class FontMetricsInt {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.784 -0500", hash_original_field = "9620536E5A5D6E12CC93092A5EBB857E", hash_generated_field = "4FB04C904AA02F82B407995BA570583C")
@@ -1576,7 +1457,6 @@ private Align(int nativeInt) {
 
         public int   leading;
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.977 -0400", hash_original_method = "8179D96EF0A0532FF84A77E27487BF14", hash_generated_method = "8179D96EF0A0532FF84A77E27487BF14")
         public FontMetricsInt ()
         {
@@ -1590,7 +1470,6 @@ private Align(int nativeInt) {
                     " descent=" + descent + " bottom=" + bottom +
                     " leading=" + leading;
         }
-
         
     }
 
@@ -1603,7 +1482,6 @@ private Align(int nativeInt) {
     	addTaint(count);
     	return getTaintFloat();
     }
-
     
     /**
      * Return the width of the text.
@@ -1646,10 +1524,7 @@ public float measureText(String text, int start, int end) {
     	addTaint(end);
     	return getTaintFloat();
     }
-
-
     
-    @DSModeled(DSC.SAFE)
 	public float measureText(String text) {
 		return 0;  //Is purely a computational function and doesn't appear to change any values/state
 		/*
@@ -1675,7 +1550,6 @@ public float measureText(String text, int start, int end) {
     	addTaint(text.getTaint());
     	return getTaintFloat();
     }
-
     
     /**
      * Return the width of the text.
@@ -1770,7 +1644,6 @@ public int breakText(char[] text, int index, int count,
     	addTaint(measuredWidth[0]);
     	return getTaintInt();
     }
-
 
     /**
      * Measure the text, stopping early if the measured width exceeds maxWidth.
@@ -1874,7 +1747,6 @@ public int breakText(String text, boolean measureForwards,
     	addTaint(measuredWidth[0]);
     	return getTaintInt();
     }
-
 
     /**
      * Return the advance widths for the characters in the string.
@@ -2548,9 +2420,7 @@ public void getTextBounds(char[] text, int index, int count, Rect bounds) {
         }
         nativeGetCharArrayBounds(mNativePaint, text, index, count, bounds);
     }
-
     
-    @DSModeled(DSC.SAFE)
 	@Override
     protected void finalize() throws Throwable {
 		super.finalize();

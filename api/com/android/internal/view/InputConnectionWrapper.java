@@ -15,10 +15,6 @@ import android.view.inputmethod.ExtractedText;
 import android.view.inputmethod.ExtractedTextRequest;
 import android.view.inputmethod.InputConnection;
 
-
-
-
-
 public class InputConnectionWrapper implements InputConnection {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:32.190 -0500", hash_original_field = "E9873CB098A2C98AC4D1819D0F91D151", hash_generated_field = "E21C9D56222776C7795AA3D88992FF14")
 
@@ -297,7 +293,6 @@ public boolean reportFullscreenMode(boolean enabled) {
             return false;
         }
     }
-
     
     static class InputContextCallback extends IInputContextCallback.Stub {
         
@@ -360,7 +355,6 @@ private static InputContextCallback getInstance() {
 
         public int mCursorCapsMode;
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.785 -0400", hash_original_method = "C2F7B541292D8E4E042270C21CD2A858", hash_generated_method = "C2F7B541292D8E4E042270C21CD2A858")
         public InputContextCallback ()
         {

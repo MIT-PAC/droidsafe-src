@@ -18,14 +18,8 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
 
-
-
-
-
 public final class InputMethodSubtype implements Parcelable {
     
-    
-    @DSModeled(DSC.BAN)
     public static InputMethodSubtype droidsafeObtainInputMethodSubtype() {
         InputMethodSubtype subtype = new InputMethodSubtype(0, 0, new String(), new String(), 
                                          new String(), false);
@@ -118,7 +112,6 @@ public static List<InputMethodSubtype> sort(Context context, int flags, InputMet
         }
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.935 -0500", hash_original_field = "E696D958865128B29DF1F55D51A08032", hash_generated_field = "F8E8FA3061A103026C8298FB0F2648C7")
-
 
     private  boolean mIsAuxiliary;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.937 -0500", hash_original_field = "7CD331AB2A4CBBC5A487FB7B5A32FCFE", hash_generated_field = "DF7B3D7F7849CD65A841EA756702E121")

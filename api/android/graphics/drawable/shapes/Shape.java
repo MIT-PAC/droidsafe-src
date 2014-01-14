@@ -7,10 +7,6 @@ import droidsafe.annotations.*;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 
-
-
-
-
 public abstract class Shape implements Cloneable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.793 -0500", hash_original_field = "8BEDDF49B8B9212E63E741BD6656B2A4", hash_generated_field = "08D9327CB0A0089C173FB95F7B57B648")
 
@@ -19,7 +15,6 @@ public abstract class Shape implements Cloneable {
 
     private float mHeight;
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.862 -0400", hash_original_method = "DE7169FFA3F4BAA3781895C367880AD0", hash_generated_method = "DE7169FFA3F4BAA3781895C367880AD0")
     public Shape ()
     {
@@ -44,7 +39,6 @@ public final float getHeight() {
         return mHeight;
     }
 
-
     /**
      * Draw this shape into the provided Canvas, with the provided Paint.
      * Before calling this, you must call {@link #resize(float,float)}.
@@ -55,7 +49,6 @@ public final float getHeight() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.801 -0500", hash_original_method = "4FF66B2B9CB8872729DAA8331BAA7F65", hash_generated_method = "186226CA2153FE9A17149A68400BA41E")
     
 public abstract void draw(Canvas canvas, Paint paint);
-    
 
     /**
      * Resizes the dimensions of this shape.
@@ -108,7 +101,6 @@ protected void onResize(float width, float height) {}
     public Shape clone() throws CloneNotSupportedException {
         return (Shape) super.clone();
     }
-
     
 }
 

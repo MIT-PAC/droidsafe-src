@@ -7,10 +7,6 @@ import droidsafe.annotations.*;
 import java.util.LinkedHashSet;
 import java.util.Locale;
 
-
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public final class ICU {
@@ -130,192 +126,142 @@ public static Locale[] getAvailableDecimalFormatSymbolsLocales() {
 public static Locale[] getAvailableNumberFormatLocales() {
         return localesFromStrings(getAvailableNumberFormatLocalesNative());
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static String getIcuVersion() {
     	return new String();
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static String getUnicodeVersion() {
     	return new String();
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static String toLowerCase(String s, String localeName) {
     	String ret = new String(s);
     	ret.addTaint(localeName.getTaint());
     	return ret;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static String toUpperCase(String s, String localeName) {
     	String ret = new String(s);
     	ret.addTaint(localeName.getTaint());
     	return ret;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static String[] getAvailableBreakIteratorLocalesNative() {
     	String[] arr = {new String()};
     	return arr;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static String[] getAvailableCalendarLocalesNative() {
     	String[] arr = {new String()};
     	return arr;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static String[] getAvailableCollatorLocalesNative() {
     	String[] arr = {new String()};
     	return arr;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static String[] getAvailableDateFormatLocalesNative() {
     	String[] arr = {new String()};
     	return arr;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static String[] getAvailableLocalesNative() {
     	String[] arr = {new String()};
     	return arr;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static String[] getAvailableNumberFormatLocalesNative() {
     	String[] arr = {new String()};
     	return arr;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static String[] getAvailableCurrencyCodes() {
     	String[] arr = {new String()};
     	return arr;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static String getCurrencyCode(String countryCode) {
     	String ret = new String();
     	ret.addTaint(countryCode.getTaint());
     	return ret;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static String getCurrencyDisplayName(String locale, String currencyCode) {
     	String ret = new String();
     	ret.addTaint(locale.getTaint());
     	ret.addTaint(currencyCode.getTaint());
     	return ret;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static int getCurrencyFractionDigits(String currencyCode) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1785716854 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1785716854;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static String getCurrencySymbol(String locale, String currencyCode) {
     	String ret = new String();
     	ret.addTaint(locale.getTaint());
     	ret.addTaint(currencyCode.getTaint());
     	return ret;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static String getDisplayCountryNative(String countryCode, String locale) {
     	String ret = new String();
     	ret.addTaint(locale.getTaint());
     	ret.addTaint(countryCode.getTaint());
     	return ret;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static String getDisplayLanguageNative(String languageCode, String locale) {
     	String ret = new String();
     	ret.addTaint(locale.getTaint());
     	ret.addTaint(languageCode.getTaint());
     	return ret;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static String getDisplayVariantNative(String variantCode, String locale) {
     	String ret = new String();
     	ret.addTaint(locale.getTaint());
     	ret.addTaint(variantCode.getTaint());
     	return ret;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static String getISO3CountryNative(String locale) {
     	String ret = new String();
     	ret.addTaint(locale.getTaint());
     	return ret;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static String getISO3LanguageNative(String locale) {
     	String ret = new String();
     	ret.addTaint(locale.getTaint());
     	return ret;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static String addLikelySubtags(String locale) {
     	String ret = new String();
     	ret.addTaint(locale.getTaint());
     	return ret;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static String getScript(String locale) {
     	String ret = new String();
     	ret.addTaint(locale.getTaint());
     	return ret;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static String[] getISOLanguagesNative() {
     	String[] arr = {new String()};
     	return arr;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static String[] getISOCountriesNative() {
     	String[] arr = {new String()};
     	return arr;
     }
-
     
-    @DSModeled(DSC.SAFE)
     static boolean initLocaleDataImpl(String locale, LocaleData result) {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1011393629 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1011393629;
@@ -327,7 +273,6 @@ public static Locale[] getAvailableNumberFormatLocales() {
 
     private static String[] isoCountries;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:09.198 -0500", hash_original_field = "3BE82B955F6797ED2E573E3423ACAACE", hash_generated_field = "5054072110B01E76431E0948BDF07C94")
-
 
     private static Locale[] availableLocalesCache;
     

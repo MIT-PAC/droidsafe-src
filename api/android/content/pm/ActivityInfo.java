@@ -8,12 +8,8 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Printer;
 
-
-
 public class ActivityInfo extends ComponentInfo implements Parcelable {
-
     
-    @DSModeled(DSC.BAN)
     public static int activityInfoConfigToNative(int input){
 		return input;
 		// Original method
@@ -218,7 +214,6 @@ public ActivityInfo[] newArray(int size) {
     
 public ActivityInfo() {
     }
-
     
     public ActivityInfo(ActivityInfo orig){
 		super(orig);
@@ -236,9 +231,7 @@ public ActivityInfo() {
 		uiOptions = orig.uiOptions;
 		*/
 	}
-
     
-    @DSModeled(DSC.BAN)
     private ActivityInfo(Parcel source) {
     	super(source);
         addTaint(source.readInt()); //theme
@@ -255,9 +248,7 @@ public ActivityInfo() {
         addTaint(source.readInt()); //softInputMode
         addTaint(source.readInt()); //uiOptions
     }
-
     
-    @DSModeled(DSC.BAN)
     public int getRealConfigChanged(){
 		// Original method
 		/*
@@ -270,22 +261,17 @@ public ActivityInfo() {
 		*/
 		return 0;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public final int getThemeResource() {
         return getTaintInt();
     }
-
     
     public void dump(Printer pw, String prefix){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public String toString(){
         String str = new String();
         str.addTaint(getTaint());

@@ -13,11 +13,6 @@ import java.util.Collection;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
-
-
-
-
-
 public class Executors {
 
     /**
@@ -234,7 +229,6 @@ public static ScheduledExecutorService newScheduledThreadPool(
         return new ScheduledThreadPoolExecutor(corePoolSize, threadFactory);
     }
 
-
     /**
      * Returns an object that delegates all defined {@link
      * ExecutorService} methods to the given executor, but not any
@@ -330,9 +324,7 @@ public static ThreadFactory defaultThreadFactory() {
 public static ThreadFactory privilegedThreadFactory() {
         return new PrivilegedThreadFactory();
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static <T> Callable<T> callable(Runnable task, T result) {
         if (task == null)
             throw new NullPointerException();
@@ -386,29 +378,23 @@ public static Callable<Object> callable(final PrivilegedExceptionAction<?> actio
         return new Callable<Object>() {
             public Object call() throws Exception { return action.run(); }};
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static <T> Callable<T> privilegedCallable(Callable<T> callable) {
         if (callable == null)
             throw new NullPointerException();
         return new PrivilegedCallable<T>(callable);
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static <T> Callable<T> privilegedCallableUsingCurrentClassLoader(Callable<T> callable) {
         if (callable == null)
             throw new NullPointerException();
         return new PrivilegedCallableUsingCurrentClassLoader<T>(callable);
     }
 
-
     /** Cannot instantiate. */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.947 -0500", hash_original_method = "F4CB3C27487DF72857FE3507DC40AD75", hash_generated_method = "55D2E894E200221966BF60F73B91F1CC")
     
 private Executors() {}
-
     
     static final class RunnableAdapter<T> implements Callable<T> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.797 -0500", hash_original_field = "3B9DB014EA5583311EF52FFA01325C0E", hash_generated_field = "3B9DB014EA5583311EF52FFA01325C0E")
@@ -429,11 +415,8 @@ public T call() {
             task.run();
             return result;
         }
-
         
     }
-
-
     
     static final class PrivilegedCallable<T> implements Callable<T> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.808 -0500", hash_original_field = "780677264D34CF51811BA7D1F20EC905", hash_generated_field = "CFBF2BD2CA84F7FFF876D42173005A51")
@@ -449,9 +432,7 @@ PrivilegedCallable(Callable<T> task) {
             this.task = task;
             this.acc = AccessController.getContext();
         }
-
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.949 -0400", hash_original_method = "9B84B0D9F1F9FF2095D253EA33535221", hash_generated_method = "E14DBC5527319FD92CE738D97A5FE7C1")
         public T call() throws Exception {
             try 
@@ -485,7 +466,6 @@ public T run() throws Exception {
                 //throw e.getException();
             //}
         }
-
         
         // orphaned legacy method
         public T run() throws Exception {
@@ -493,8 +473,6 @@ public T run() throws Exception {
                         }
         
     }
-
-
     
     static final class PrivilegedCallableUsingCurrentClassLoader<T> implements Callable<T> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.826 -0500", hash_original_field = "780677264D34CF51811BA7D1F20EC905", hash_generated_field = "CFBF2BD2CA84F7FFF876D42173005A51")
@@ -525,9 +503,7 @@ PrivilegedCallableUsingCurrentClassLoader(Callable<T> task) {
             this.acc = AccessController.getContext();
             this.ccl = Thread.currentThread().getContextClassLoader();
         }
-
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.953 -0400", hash_original_method = "083E1FD40613168D34C9FEEE9DFC0EBD", hash_generated_method = "A36CDEF7A248443757048A585C2D137C")
         public T call() throws Exception {
             try 
@@ -564,7 +540,6 @@ public T run() throws Exception {
             // ---------- Original Method ----------
             // Original Method Too Long, Refer to Original Implementation
         }
-
         
         // orphaned legacy method
         public T run() throws Exception {
@@ -584,8 +559,6 @@ public T run() throws Exception {
                         }
         
     }
-
-
     
     static class DefaultThreadFactory implements ThreadFactory {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.845 -0500", hash_original_field = "A0056246F2A3A019EB9FCA2BF1F518E1", hash_generated_field = "4D1AD706E0B207CD49EDE0FDF77D35E3")
@@ -625,8 +598,6 @@ public Thread newThread(Runnable r) {
             return t;
         }
     }
-
-
     
     static class PrivilegedThreadFactory extends DefaultThreadFactory {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.864 -0500", hash_original_field = "3C9C860D07F2335269AAFCB6082358FF", hash_generated_field = "5E0BB9B3EC8D99479706D49A606F3BE8")
@@ -669,11 +640,8 @@ public Thread newThread(final Runnable r) {
                 }
             });
         }
-
         
     }
-
-
     
     static class DelegatedExecutorService extends AbstractExecutorService {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.884 -0500", hash_original_field = "08308C1E09B9F16E16C40112958058EB", hash_generated_field = "11B8F83ADD158AE4ADD1E7AA1252842D")
@@ -708,9 +676,7 @@ public boolean awaitTermination(long timeout, TimeUnit unit)
 public Future<?> submit(Runnable task) {
             return e.submit(task);
         }
-
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.437 -0400", hash_original_method = "83E0E20FEE789D6C0B6E1A8BE258D9AC", hash_generated_method = "AA01AE8CA15C63BFFFD6A901646BAC26")
         public <T> Future<T> submit(Callable<T> task) {
             addTaint(task.getTaint());
@@ -720,9 +686,7 @@ Future<T> var3A821B5C48F3C73F2F85580271A54221_1800187115 =             e.submit(
             // ---------- Original Method ----------
             //return e.submit(task);
         }
-
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.437 -0400", hash_original_method = "7C597CCD4131D2329D010B8EED3AD866", hash_generated_method = "0AA752005320E5BA2422D1327FD79FC5")
         public <T> Future<T> submit(Runnable task, T result) {
             addTaint(result.getTaint());
@@ -733,7 +697,6 @@ Future<T> varEAF64FBE2776E66AA7D7A86DC0368144_678840174 =             e.submit(t
             // ---------- Original Method ----------
             //return e.submit(task, result);
         }
-
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.437 -0400", hash_original_method = "F48A0D0A4C3710017B7673C8DB7925EC", hash_generated_method = "763A8BDAED7E7F87F7780CC06FF23828")
         public <T> List<Future<T>> invokeAll(Collection<? extends Callable<T>> tasks) throws InterruptedException {
@@ -744,7 +707,6 @@ List<Future<T>> var501DF73082C68D7843A2F94A5A9D39DE_125190879 =             e.in
             // ---------- Original Method ----------
             //return e.invokeAll(tasks);
         }
-
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.437 -0400", hash_original_method = "5F911CE685489301A15E24D766797016", hash_generated_method = "F4AC9DAD7CAA5186CA2E4402CBC77145")
         public <T> List<Future<T>> invokeAll(Collection<? extends Callable<T>> tasks,
@@ -758,7 +720,6 @@ List<Future<T>> var87E281F68E17B3CFFAEC895C8A8BFC68_708146293 =             e.in
             // ---------- Original Method ----------
             //return e.invokeAll(tasks, timeout, unit);
         }
-
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.437 -0400", hash_original_method = "4C0A5FF3374B9876DAD3CF3A7DB4F9BC", hash_generated_method = "8B5EE102BC34D4E24BA7EFBB0665BD75")
         public <T> T invokeAny(Collection<? extends Callable<T>> tasks) throws InterruptedException, ExecutionException {
@@ -769,7 +730,6 @@ T var7ECF5F9BD3788A61679614FEA5EAB1C2_271945437 =             e.invokeAny(tasks)
             // ---------- Original Method ----------
             //return e.invokeAny(tasks);
         }
-
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.437 -0400", hash_original_method = "D15E2648AE9554DE3EDB2502DC3264EF", hash_generated_method = "C9B006B0B01AB1143ACEE71469CEF48F")
         public <T> T invokeAny(Collection<? extends Callable<T>> tasks,
@@ -783,11 +743,8 @@ T varE9E99FB5B2AB72C024FC741DCEE9DEC0_196926114 =             e.invokeAny(tasks,
             // ---------- Original Method ----------
             //return e.invokeAny(tasks, timeout, unit);
         }
-
         
     }
-
-
     
     static class FinalizableDelegatedExecutorService extends DelegatedExecutorService {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.923 -0500", hash_original_method = "0BC6912A00A2948375A36BA345B953A1", hash_generated_method = "0BC6912A00A2948375A36BA345B953A1")
@@ -800,11 +757,8 @@ FinalizableDelegatedExecutorService(ExecutorService executor) {
 protected void finalize() {
             super.shutdown();
         }
-
         
     }
-
-
     
     static class DelegatedScheduledExecutorService extends DelegatedExecutorService implements ScheduledExecutorService {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.930 -0500", hash_original_field = "B6F2D26F7E5AC760D384D7FDFDC2C7DA", hash_generated_field = "3D78CFB93E5EA21FD7B6DC753DB36818")
@@ -821,9 +775,7 @@ DelegatedScheduledExecutorService(ScheduledExecutorService executor) {
 public ScheduledFuture<?> schedule(Runnable command, long delay,  TimeUnit unit) {
             return e.schedule(command, delay, unit);
         }
-
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.438 -0400", hash_original_method = "21B2A7EFB4EC4FCA85726955706F3411", hash_generated_method = "10925EFC86BE3C187277C3C9203C26A9")
         public <V> ScheduledFuture<V> schedule(Callable<V> callable, long delay, TimeUnit unit) {
             addTaint(unit.getTaint());
@@ -845,11 +797,8 @@ public ScheduledFuture<?> scheduleAtFixedRate(Runnable command, long initialDela
 public ScheduledFuture<?> scheduleWithFixedDelay(Runnable command, long initialDelay,  long delay, TimeUnit unit) {
             return e.scheduleWithFixedDelay(command, initialDelay, delay, unit);
         }
-
         
     }
-
-
     
 }
 

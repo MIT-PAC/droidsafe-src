@@ -11,35 +11,26 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-
-
-
-
-
 public abstract class AbstractSelector extends Selector {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.936 -0500", hash_original_field = "7315FC1FE9FC9EFE3D8AD2B5E3CCD853", hash_generated_field = "1975670F7C5E1A3B0BE1CC3F39D52629")
 
     private final AtomicBoolean isOpen = new AtomicBoolean(true);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.938 -0500", hash_original_field = "6B7D498973D24EE245B343DF130AA1D4", hash_generated_field = "89E44FF0276DC637467C9A53214EFEF3")
 
-
     private SelectorProvider provider = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.940 -0500", hash_original_field = "BC188EB1D901AEB09BEC5642BF386968", hash_generated_field = "C16D69A091591918E37AAE11008C49F6")
-
 
     private final Set<SelectionKey> cancelledKeysSet = new HashSet<SelectionKey>();
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.780 -0400", hash_original_field = "33150D8ED2F1190449307B4DADDC93F3", hash_generated_field = "81FD2F18DE20D067CA30F74C258D7012")
 
-    private final Runnable wakeupRunnable = new Runnable() {        
-        @DSModeled(DSC.SAFE)
+    private final Runnable wakeupRunnable = new Runnable() {
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:56.780 -0400", hash_original_method = "7C4207C049033B8A840024AF7D6007E1", hash_generated_method = "DE46A52DF305552AEC6BF62783C2EE19")
         @Override
         public void run() {
             wakeup();
             
-            
         }
-
         
 };
 
@@ -150,7 +141,6 @@ void cancel(SelectionKey key) {
             cancelledKeysSet.add(key);
         }
     }
-
     
 }
 

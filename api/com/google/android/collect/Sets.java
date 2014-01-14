@@ -9,16 +9,11 @@ import java.util.HashSet;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
-
-
 public class Sets {
-
-
-    @DSModeled(DSC.SAFE)
+    
     public static <K> HashSet<K> newHashSet() {
         return new HashSet<K>();
     }
-
     
     public static <E> HashSet<E> newHashSet(E... elements) {
         int capacity = elements.length * 4 / 3 + 1;
@@ -26,13 +21,10 @@ public class Sets {
         Collections.addAll(set, elements);
         return set;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static <E> SortedSet<E> newSortedSet() {
         return new TreeSet<E>();
     }
-
     
     public static <E> SortedSet<E> newSortedSet(E... elements) {
         SortedSet<E> set = new TreeSet<E>();
@@ -45,7 +37,6 @@ public class Sets {
     {
         //Synthesized constructor
     }
-
     
 }
 

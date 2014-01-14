@@ -14,10 +14,6 @@ import java.util.Map;
 import libcore.util.EmptyArray;
 import dalvik.system.VMStack;
 
-
-
-
-
 public class Thread implements Runnable {
 
     /**
@@ -154,9 +150,7 @@ public static void setDefaultUncaughtExceptionHandler(UncaughtExceptionHandler h
 public static void sleep(long time) throws InterruptedException {
         Thread.sleep(time, 0);
     }
-
     
-    @DSModeled(DSC.SPEC)
     public static void sleep(long millis, int nanos) throws InterruptedException {
         if (DroidSafeAndroidRuntime.control) {
             InterruptedException ex = new InterruptedException();
@@ -1074,7 +1068,6 @@ public synchronized void start() {
     public final void stop() {
         stop(new ThreadDeath());
     }
-
     
     private static class ParkState {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.477 -0500", hash_original_field = "B6FEEFB1323BD524F78EBED48725C001", hash_generated_field = "5F7B3D5520F70EA2E650375F945D4166")
@@ -1087,15 +1080,12 @@ public synchronized void start() {
 
         private static final int PARKED = 3;
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.471 -0400", hash_original_method = "13ABD2C1475A75B421FFE7ADB6CF97D6", hash_generated_method = "13ABD2C1475A75B421FFE7ADB6CF97D6")
         public ParkState ()
         {
             //Synthesized constructor
         }
     }
-
-
     
     public enum State {
         NEW,
@@ -1105,7 +1095,6 @@ public synchronized void start() {
         TIMED_WAITING,
         TERMINATED
     }
-
     
     public static interface UncaughtExceptionHandler {
         

@@ -13,17 +13,11 @@ import org.xml.sax.Locator;
 import org.xml.sax.SAXException;
 import org.xml.sax.ext.LexicalHandler;
 
-
-
-
-
-
 public class PYXWriter implements ScanHandler, ContentHandler, LexicalHandler {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.291 -0500", hash_original_field = "E289977DD763E2EB74F5C17AAAA2FFDD", hash_generated_field = "02CD84A92AAD7C67C826D5A169B700D9")
 
 	private static char[] dummy = new char[1];
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.288 -0500", hash_original_field = "513F69EA21D11E56A05149090A0A48B2", hash_generated_field = "49F3A48A6073C357DEA9F2D054F0CF5A")
-
 
 	private PrintWriter theWriter;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.293 -0500", hash_original_field = "F10689903BED993CD29E6B6C9E0C9EED", hash_generated_field = "1D790F77E1C6AE59D6044130824E23AE")
@@ -68,9 +62,7 @@ public void aval(char[] buff, int offset, int length) throws SAXException {
 		theWriter.println();
 		attrName = null;
 		}
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:43.200 -0400", hash_original_method = "1B347B27BFF7BB03486A9C3953014010", hash_generated_method = "A69F4BB3139A30AE29048B59041500BE")
     public void cmnt(char [] buff, int offset, int length) throws SAXException {
         addTaint(length);

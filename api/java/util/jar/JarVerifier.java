@@ -25,11 +25,6 @@ import libcore.io.Base64;
 
 import org.apache.harmony.security.utils.JarUtils;
 
-
-
-
-
-
 class JarVerifier {
 
     /**
@@ -64,32 +59,25 @@ public static Vector<Certificate> getSignerCertificates(
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.339 -0500", hash_original_field = "88AD73F6C62A39F120982A1969BB094D", hash_generated_field = "9E85BB611D3EE89CADB45020535E6B11")
 
-
     private  String jarName;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.341 -0500", hash_original_field = "78860F2A6A7B3C54CFA9242D05478E45", hash_generated_field = "1E6BF158A9ED964E950A909DB5592C82")
-
 
     private Manifest man;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.344 -0500", hash_original_field = "5063FF266DB0B8DEC600BC2A9CBDDE6C", hash_generated_field = "7597311A3575323E247960656BDFED83")
 
-
     private HashMap<String, byte[]> metaEntries = new HashMap<String, byte[]>(5);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.347 -0500", hash_original_field = "F43783B6B696E02FC14D6A7D650AD5D8", hash_generated_field = "EBE3D14483DFDBD581E4922AC5C6EF8C")
-
 
     private final Hashtable<String, HashMap<String, Attributes>> signatures = new Hashtable<String, HashMap<String, Attributes>>(
             5);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.349 -0500", hash_original_field = "A37D8BF86D510C4A7476BA0DF8506801", hash_generated_field = "F2823AD67EF4110598FC3B6AEAEBB2CE")
 
-
     private final Hashtable<String, Certificate[]> certificates = new Hashtable<String, Certificate[]>(
             5);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.352 -0500", hash_original_field = "C3F2C899B61AB23CACE8C24C191D7DDE", hash_generated_field = "60F30BC5BC981A97975947915771AEC9")
 
-
     private final Hashtable<String, Certificate[]> verifiedEntries = new Hashtable<String, Certificate[]>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.354 -0500", hash_original_field = "6B8C7E29F08A08768A13067ED2CA8C6A", hash_generated_field = "6B8C7E29F08A08768A13067ED2CA8C6A")
-
 
     int mainAttributesEnd;
 
@@ -425,23 +413,18 @@ Certificate[] getCertificates(String name) {
 void removeMetaEntries() {
         metaEntries = null;
     }
-
     
     class VerifierEntry extends OutputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.357 -0500", hash_original_field = "BF45F7481B8091DE3CBF80E94F7F940B", hash_generated_field = "531F96E2AEBFB44CD229EC4CB1F012B0")
 
-
         private String name;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.359 -0500", hash_original_field = "6490B74EBA547C3BEF2402BDE5E0FF43", hash_generated_field = "145A8FD0EC1911E7DDCA25F923899831")
-
 
         private MessageDigest digest;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.361 -0500", hash_original_field = "6195FCC77BFDBC9D95F3A31F9C19748F", hash_generated_field = "670F24B05EDED2247F0B4CD66AB4EE15")
 
-
         private byte[] hash;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.363 -0500", hash_original_field = "DACE6ADA4B412D57FB31B18C159744DA", hash_generated_field = "6029E7C21A5106D4483252478B646415")
-
 
         private Certificate[] certificates;
 
@@ -474,9 +457,7 @@ VerifierEntry(String name, MessageDigest digest, byte[] hash,
         public void write(byte[] buf, int off, int nbytes) {
             digest.update(buf, off, nbytes);
         }
-
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.210 -0400", hash_original_method = "E514DAB8C6AF0A1EE37FB72F5B8B9108", hash_generated_method = "5C4BD9472CDE665A3B734979B8A321D7")
          void verify() {
             byte[] d = digest.digest();
@@ -494,11 +475,8 @@ VerifierEntry(String name, MessageDigest digest, byte[] hash,
             //}
             //verifiedEntries.put(name, certificates);
         }
-
         
     }
-
-
     
 }
 

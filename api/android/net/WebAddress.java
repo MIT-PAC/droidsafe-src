@@ -10,14 +10,8 @@ import static android.util.Patterns.GOOD_IRI_CHAR;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-
-
-
-
-
 public class WebAddress {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:06.463 -0500", hash_original_field = "AEE90CC90EAE0E125CF546188F0DE6CA", hash_generated_field = "F2DACDBF83E78AD7FAE92AE4D475B900")
-
 
     static final int MATCH_GROUP_SCHEME = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:06.465 -0500", hash_original_field = "A8A77CBE3A2D8B8D743BA0D706D58B63", hash_generated_field = "B6049B8DB87D90B70E15EC31A3A0FC25")
@@ -34,7 +28,6 @@ public class WebAddress {
     static final int MATCH_GROUP_PATH = 5;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:06.474 -0500", hash_original_field = "30FF9F789862242DAD47769FDB50086C", hash_generated_field = "FBA32F17CDD294929710F529A7225650")
 
-
     static Pattern sAddressPattern = Pattern.compile(
             /* scheme    */ "(?:(http|https|file)\\:\\/\\/)?" +
             /* authority */ "(?:([-A-Za-z0-9$_.+!*'(),;?&=]+(?:\\:[-A-Za-z0-9$_.+!*'(),;?&=]+)?)@)?" +
@@ -43,7 +36,6 @@ public class WebAddress {
             /* path      */ "(\\/?[^#]*)?" +
             /* anchor    */ ".*", Pattern.CASE_INSENSITIVE);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:06.447 -0500", hash_original_field = "FF84573DD774BD103492BEC5B95FE660", hash_generated_field = "CE8AB436FE82236B0FB9A3B1339DC56F")
-
 
     private String mScheme;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:06.449 -0500", hash_original_field = "608081BE7A68D9B383C7D78BD9FDC0E8", hash_generated_field = "C8F07C3E0F6788C43A05E20D5536D66C")
@@ -121,9 +113,7 @@ public WebAddress(String address) throws ParseException {
         }
         if (mScheme.equals("")) mScheme = "http";
     }
-
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.678 -0400", hash_original_method = "1D4EF43F2688F01255D5CEBFE17AB398", hash_generated_method = "0FF9D7E37A3F9F648312ADE43AF69DA6")
     @Override
     public String toString() {

@@ -8,10 +8,6 @@ import java.text.CharacterIterator;
 import java.text.StringCharacterIterator;
 import java.util.Locale;
 
-
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public final class NativeBreakIterator implements Cloneable {
@@ -39,91 +35,61 @@ public static NativeBreakIterator getSentenceInstance(Locale where) {
 public static NativeBreakIterator getWordInstance(Locale where) {
         return new NativeBreakIterator(getWordInstanceImpl(where.toString()), BI_WORD_INSTANCE);
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int getCharacterInstanceImpl(String locale) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int getWordInstanceImpl(String locale) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int getLineInstanceImpl(String locale) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int getSentenceInstanceImpl(String locale) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void closeBreakIteratorImpl(int address) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void setTextImpl(int address, String text) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int cloneImpl(int address) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int precedingImpl(int address, int offset) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean isBoundaryImpl(int address, int offset) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nextImpl(int address, int n) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int previousImpl(int address) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int currentImpl(int address) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int firstImpl(int address) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int followingImpl(int address, int offset) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int lastImpl(int address) {
         return DSUtils.UNKNOWN_INT;
     }
@@ -140,7 +106,6 @@ public static NativeBreakIterator getWordInstance(Locale where) {
 
     private static final int BI_SENT_INSTANCE = 4;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:04.746 -0500", hash_original_field = "0EFD4B56D5F68F850B84173C34758709", hash_generated_field = "849BAB492558B51E7BC4F1C331A435E4")
-
 
     private  int address;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:04.748 -0500", hash_original_field = "961B4204667A4AE2FF8DD374E6728ADE", hash_generated_field = "E1B24004551291FC3F431CA1B2F6785F")

@@ -7,11 +7,6 @@ import droidsafe.annotations.*;
 import java.util.Collection;
 import java.util.concurrent.TimeUnit;
 
-
-
-
-
-
 public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:19.781 -0500", hash_original_field = "5125F3CA0DED7D5C54780956A89AA642", hash_generated_field = "97706C97453A3073601BD3C0219ECA94")
 
@@ -332,7 +327,6 @@ protected Collection<Thread> getWaitingThreads(Condition condition) {
             throw new IllegalArgumentException("not owner");
         return sync.getWaitingThreads((AbstractQueuedSynchronizer.ConditionObject)condition);
     }
-
     
     abstract static class Sync extends AbstractQueuedSynchronizer {
 
@@ -348,7 +342,6 @@ static int exclusiveCount(int c) { return c & EXCLUSIVE_MASK; }
 
         private static final long serialVersionUID = 6317671515068378041L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:19.805 -0500", hash_original_field = "514ED55D75AE61BDC86BAC43C31A8A6F", hash_generated_field = "1BECA78E8EF9C81EDFA90AF6033A5F51")
-
 
         static final int SHARED_SHIFT   = 16;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:19.808 -0500", hash_original_field = "6E6B641264DAB0F7A92817D961797A22", hash_generated_field = "C8AB687482F52B5D1545D9BC8249F0D6")
@@ -693,7 +686,6 @@ final Thread getOwner() {
 final int getReadLockCount() {
             return sharedCount(getState());
         }
-
         
         static final class HoldCounter {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:19.821 -0500", hash_original_field = "B524E41AA0CF6AD39267F32C8C687778", hash_generated_field = "B524E41AA0CF6AD39267F32C8C687778")
@@ -709,14 +701,10 @@ final int getReadLockCount() {
                 //Synthesized constructor
             }
 
-
         }
-
-
         
         static final class ThreadLocalHoldCounter extends ThreadLocal<HoldCounter> {
             
-            @DSModeled(DSC.BAN)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.604 -0400", hash_original_method = "2811BFD99460ECBD8E7948B925FFB736", hash_generated_method = "2811BFD99460ECBD8E7948B925FFB736")
             public ThreadLocalHoldCounter ()
             {
@@ -727,7 +715,6 @@ final int getReadLockCount() {
 public HoldCounter initialValue() {
                 return new HoldCounter();
             }
-
             
         }
 
@@ -779,15 +766,12 @@ private void readObject(java.io.ObjectInputStream s)
         
 final int getCount() { return getState(); }
     }
-
-
     
     static final class NonfairSync extends Sync {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:19.906 -0500", hash_original_field = "AFC6039745D03A04E531905884C8B23E", hash_generated_field = "F3A4EB2F8018DB6E004273D21E41E16C")
 
         private static final long serialVersionUID = -8159625535654395037L;
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.605 -0400", hash_original_method = "92700F1FF079627760B83F1F338B8E6E", hash_generated_method = "92700F1FF079627760B83F1F338B8E6E")
         public NonfairSync ()
         {
@@ -811,15 +795,12 @@ final boolean readerShouldBlock() {
             return apparentlyFirstQueuedIsExclusive();
         }
     }
-
-
     
     static final class FairSync extends Sync {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:19.917 -0500", hash_original_field = "C6D8E4EA97857146A2123FB8B84335BB", hash_generated_field = "076791917E0837F6FCF483EA9968303D")
 
         private static final long serialVersionUID = -2274990926593161451L;
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.606 -0400", hash_original_method = "76BFFA90730B34917875BAE48AE8B396", hash_generated_method = "76BFFA90730B34917875BAE48AE8B396")
         public FairSync ()
         {
@@ -836,8 +817,6 @@ final boolean readerShouldBlock() {
             return hasQueuedPredecessors();
         }
     }
-
-
     
     public static class ReadLock implements Lock, java.io.Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:19.927 -0500", hash_original_field = "69EEF10B0BBA63D3F12F2D7C00D388EC", hash_generated_field = "86BBAC3B6DE594ADDDD3BFD814E519BB")
@@ -1062,8 +1041,6 @@ public String toString() {
                 "[Read locks = " + r + "]";
         }
     }
-
-
     
     public static class WriteLock implements Lock, java.io.Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:19.957 -0500", hash_original_field = "3D8CBE12F4BBAC86739C1B5BE42FCFCB", hash_generated_field = "91D8216ACB8E5ABFDC6C81788A99A4AB")

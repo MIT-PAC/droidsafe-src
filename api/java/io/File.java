@@ -40,10 +40,6 @@ import libcore.io.StructStatFs;
 
 import org.apache.harmony.luni.util.DeleteOnExit;
 
-
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public class File implements Serializable, Comparable<File> {
@@ -124,28 +120,20 @@ private static void checkURI(URI uri) {
 public static File[] listRoots() {
         return new File[] { new File("/") };
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static String realpath(String path) {
 		return new String();
 	}
-
     
-    @DSModeled(DSC.SAFE)
     private static String readlink(String path) {
 		return new String();
 	}
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean setLastModifiedImpl(String path, long time) {
 		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_916883677 = DSUtils.UNKNOWN_BOOLEAN;
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_916883677;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     private static String[] listImpl(String path) {
 		return new String[]{"*.*" + path};
 	}
@@ -217,7 +205,6 @@ public static File createTempFile(String prefix, String suffix, File directory)
         return result;
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.414 -0500", hash_original_field = "A717B0E8BB8BB9C8749F8488C4A39112", hash_generated_field = "573261A4844452FF520B7BA941A9349A")
-
 
     private static final long serialVersionUID = 301077366599181567L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.417 -0500", hash_original_field = "71ABA57E9B6FC148FE35EF640D431287", hash_generated_field = "E9BF35C3AF9EB264C60B98A12F779A5F")
@@ -449,9 +436,7 @@ public void deleteOnExit() {
 public boolean exists() {
         return doAccess(F_OK);
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.822 -0400", hash_original_method = "8F2B41FC4DF09EBF8497AC74B170E125", hash_generated_method = "C12A6EDB79539AA71068DD1E144D2E98")
     public String getAbsolutePath() {
         if(isAbsolute())        
@@ -1131,9 +1116,7 @@ public boolean renameTo(File newPath) {
     public String toString() {
         return path;
     }
-
-    
-        @DSModeled(DSC.SPEC)
+        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.857 -0400", hash_original_method = "700C756497BE64476D6C692FA75956E5", hash_generated_method = "83B703FD7718250D40AE9A9467D048ED")
     public URI toURI() {
         String name = getAbsoluteName();
@@ -1175,9 +1158,7 @@ URI var540C13E9E156B687226421B24F2DF178_816445735 =             null;
             //return null;
         //}
     }
-
-    
-        @DSModeled(DSC.SPEC)
+        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.858 -0400", hash_original_method = "A697C8A8DDF3EFD4E15B0A56A47ADC60", hash_generated_method = "54213675288BBAEBAE1CCF508D505953")
     @Deprecated
     public URL toURL() throws java.net.MalformedURLException {

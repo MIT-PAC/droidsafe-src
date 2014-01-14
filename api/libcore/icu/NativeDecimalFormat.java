@@ -17,10 +17,6 @@ import java.text.ParsePosition;
 import java.util.Currency;
 import java.util.NoSuchElementException;
 
-
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public final class NativeDecimalFormat {
@@ -36,62 +32,44 @@ private static void applyPattern(int addr, boolean localized, String pattern) {
             throw new IllegalArgumentException("syntax error: " + re.getMessage() + ": " + pattern);
         }
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void applyPatternImpl(int addr, boolean localized, String pattern) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int cloneImpl(int addr) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2036702316 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2036702316;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void close(int addr) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static char[] formatLong(int addr, long value, FieldPositionIterator iter) {
                 char[] var50607924ABD4C17119BAF3A1CE41C0EC_478728693 = {DSUtils.UNKNOWN_CHAR};
         return var50607924ABD4C17119BAF3A1CE41C0EC_478728693;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static char[] formatDouble(int addr, double value, FieldPositionIterator iter) {
                 char[] var50607924ABD4C17119BAF3A1CE41C0EC_1264013246 = {DSUtils.UNKNOWN_CHAR};
         return var50607924ABD4C17119BAF3A1CE41C0EC_1264013246;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static char[] formatDigitList(int addr, String value, FieldPositionIterator iter) {
                 char[] var50607924ABD4C17119BAF3A1CE41C0EC_1973734016 = {DSUtils.UNKNOWN_CHAR};
         return var50607924ABD4C17119BAF3A1CE41C0EC_1973734016;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int getAttribute(int addr, int symbol) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1917559035 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1917559035;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static String getTextAttribute(int addr, int symbol) {
     	String s = new String();
     	s.addTaint(symbol);
     	return s;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int open(String pattern, String currencySymbol,
             char decimalSeparator, char digit, String exponentSeparator, char groupingSeparator,
             String infinity, String internationalCurrencySymbol, char minusSign,
@@ -100,9 +78,7 @@ private static void applyPattern(int addr, boolean localized, String pattern) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1659367098 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1659367098;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static Number parse(int addr, String string, ParsePosition position, boolean parseBigDecimal) {
     	Number ret;
     	if (parseBigDecimal) {
@@ -120,38 +96,26 @@ private static void applyPattern(int addr, boolean localized, String pattern) {
     	}
     	return ret;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void setDecimalFormatSymbols(int addr, String currencySymbol,
             char decimalSeparator, char digit, String exponentSeparator, char groupingSeparator,
             String infinity, String internationalCurrencySymbol, char minusSign,
             char monetaryDecimalSeparator, String nan, char patternSeparator, char percent,
             char perMill, char zeroDigit) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void setSymbol(int addr, int symbol, String str) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void setAttribute(int addr, int symbol, int i) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void setRoundingMode(int addr, int roundingMode, double roundingIncrement) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void setTextAttribute(int addr, int symbol, String str) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static String toPatternImpl(int addr, boolean localized) {
     	String s = new String();
     	s.addTaint(localized);
@@ -318,7 +282,6 @@ private static void applyPattern(int addr, boolean localized, String pattern) {
     private boolean posSuffNull;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:07.029 -0500", hash_original_field = "99ACF7EB6D845EB724490D8054444ABA", hash_generated_field = "622CB2D56C22AE9A04568955FFFF4B33")
 
-
     private transient boolean parseBigDecimal;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:07.031 -0500", hash_original_field = "E0D58B61CF4284776E7655FB1B0BA417", hash_generated_field = "C24355A01F90DF3021CC166940F4BB14")
 
@@ -365,7 +328,6 @@ private NativeDecimalFormat(NativeDecimalFormat other) {
         this.posPrefNull = other.posPrefNull;
         this.posSuffNull = other.posSuffNull;
     }
-
     
     private static class FieldPositionIterator {
 
@@ -422,7 +384,6 @@ private static void setFieldPosition(FieldPositionIterator fpi, FieldPosition fp
             }
         }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:07.189 -0500", hash_original_field = "0663C0A318A54D2F7BD30BD3419B9957", hash_generated_field = "0F6C76C1706BCC332B6920605F5320B1")
-
 
         private static Format.Field fields[] = {
             // The old java field values were 0 for integer and 1 for fraction.

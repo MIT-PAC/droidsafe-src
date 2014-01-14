@@ -26,15 +26,13 @@ public abstract class AbstractMap<K, V> implements Map<K, V> {
     
 protected AbstractMap() {
     }
-
-        @DSModeled(DSC.BAN)
+        
         public void requestCapacity(int capacity) {
             valuesCollection.requestCapacity(capacity);
             keySet.requestCapacity(capacity);
             addTaint(capacity);
         }
-    
-        @DSModeled(DSC.SAFE)
+        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.576 -0400", hash_original_method = "76EEE079F2D9B88A31C5F2E8E9C7EB92", hash_generated_method = "D04492222E27A17B4DBF52591A0F49E1")
     public void clear() {
         entrySet().clear();
@@ -43,9 +41,7 @@ protected AbstractMap() {
         // ---------- Original Method ----------
         //entrySet().clear();
     }
-
-    
-        @DSModeled(DSC.SAFE)
+        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.576 -0400", hash_original_method = "3D741B03C8862C52B96D9B3B81701BE0", hash_generated_method = "BECB956768FEB16D2592D8DFDCE1254E")
     public boolean containsKey(Object key) {
         return keySet.contains(key);
@@ -66,9 +62,7 @@ protected AbstractMap() {
         //}
         //return false;
     }
-
-    
-        @DSModeled(DSC.SAFE)
+        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.577 -0400", hash_original_method = "D1C1AD8AFDB44AE56F4D2DF37F057E9D", hash_generated_method = "513B516F3194E91B15E22C3E95839BEC")
     public boolean containsValue(Object value) {
         return valuesCollection.contains(value);
@@ -94,14 +88,10 @@ protected AbstractMap() {
     
 public abstract Set<Map.Entry<K, V>> entrySet();
     
-
-    @DSModeled(DSC.BAN)
     protected Set<Map.Entry<K, V>> getEntrySet() {
         return backingEntrySet;
     }
-
-    
-        @DSModeled(DSC.SAFE)
+        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.578 -0400", hash_original_method = "5B9317AAB202C2AFA6ECB99B62EB1150", hash_generated_method = "DBD8B1A42F9CC9FA5EA8264BA255A505")
     @Override
     public boolean equals(Object object) {
@@ -111,9 +101,7 @@ public abstract Set<Map.Entry<K, V>> entrySet();
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.579 -0400", hash_original_method = "80DED5B1493F4175A64A94324F6ABF01", hash_generated_method = "DE4E462DDFAD080821E1F2FDD12CBB2F")
     public V get(Object key) {
         addTaint(key.getTaint());
@@ -141,9 +129,7 @@ public abstract Set<Map.Entry<K, V>> entrySet();
         //}
         //return null;
     }
-
-    
-        @DSModeled(DSC.SAFE)
+        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.579 -0400", hash_original_method = "64FA0B5ACB2A736D0354FE373D9CD3E5", hash_generated_method = "3CE35D33DC7EA27D168D7DB47B163C91")
     @Override
     public int hashCode() {
@@ -157,25 +143,19 @@ public abstract Set<Map.Entry<K, V>> entrySet();
         //}
         //return result;
     }
-
-    
-        @DSModeled(DSC.SAFE)
+        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.580 -0400", hash_original_method = "296240B68F4A866C698190CF33710ED8", hash_generated_method = "19051CBE57A799DDD0D479D317B6168E")
     public boolean isEmpty() {
         return getTaintBoolean();
         // ---------- Original Method ----------
         //return size() == 0;
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.240 -0400", hash_original_method = "F40A232B51CF144805B23E3A97CCF7A5", hash_generated_method = "9A0B801A8CE9D5D944144F6F2D5118B9")
     public Set<K> keySet() {
         return keySet;
     }
     
-    
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.584 -0400", hash_original_method = "1AE25A34BEB4A8F08F41373ADFFCFE34", hash_generated_method = "68BBC7F50DC671ED0F56BA1A5CF63CD0")
     public V put(K key, V value) {
         addTaint(value.getTaint());
@@ -214,8 +194,7 @@ public void putAll(Map<? extends K, ? extends V> map) {
             put(entry.getKey(), entry.getValue());
         }
     }
-
-    @DSModeled(DSC.BAN)
+    
     protected Entry<K,V> removeFirstEntry() {
         Entry<K,V> entry = backingEntrySet.removeFirstElement();
         valuesCollection.removeFirstElement();
@@ -224,29 +203,24 @@ public void putAll(Map<? extends K, ? extends V> map) {
         return entry;
     }
     
-   
-    @DSModeled(DSC.BAN)
     protected Entry<K,V> getFirstEntry() {
         Entry<K,V> entry = backingEntrySet.getFirstElement();
         entry.addTaint(getTaint());
         return entry;
     }
-
-     @DSModeled(DSC.BAN)
+     
     protected V getFirstValue() {
         V value = backingEntrySet.getFirstElement().getValue();
         value.addTaint(getTaint());
         return value;
     }
-     
-    @DSModeled(DSC.BAN)
+    
     protected K getFirstKey() {
         K key = backingEntrySet.getFirstElement().getKey();
         key.addTaint(getTaint());
         return key;
     }
     
-    @DSModeled(DSC.BAN)
     protected Entry<K,V> removeLastEntry() {
         Entry<K,V> entry = backingEntrySet.removeLastElement();
         valuesCollection.removeLastElement();
@@ -254,36 +228,31 @@ public void putAll(Map<? extends K, ? extends V> map) {
         entry.addTaint(getTaint());
         return entry;
     }
-
-    @DSModeled(DSC.BAN)
+    
     protected Entry<K,V> getLastEntry() {
         Entry<K,V> entry = backingEntrySet.getLastElement();
         entry.addTaint(getTaint());
         return entry;
     }
-
-   @DSModeled(DSC.BAN)
+   
     protected V getLastValue() {
         V value = backingEntrySet.getLastElement().getValue();
         value.addTaint(getTaint());
         return value;
     }
-     
-    @DSModeled(DSC.BAN)
+    
     protected K getLastKey() {
         K key = backingEntrySet.getLastElement().getKey();
         key.addTaint(getTaint());
         return key;
     }
     
-    @DSModeled(DSC.BAN)
     protected Entry<K,V> getSomeEntry() {
         Entry<K,V> entry = backingEntrySet.getElementAt(getTaintInt());
         entry.addTaint(getTaint());
         return entry;
     }
-
-        @DSModeled(DSC.SAFE)
+        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.585 -0400", hash_original_method = "DF925EC53E8E5501C52A21B969B7A962", hash_generated_method = "A8C27B378C94E544EE89D7FD0FB575DD")
     public V remove(Object key) {
         addTaint(key.getTaint());
@@ -323,9 +292,7 @@ public void putAll(Map<? extends K, ? extends V> map) {
         //}
         //return null;
     }
-
-    
-        @DSModeled(DSC.SAFE)
+        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.586 -0400", hash_original_method = "68473A1BCB9C7CDFC9C6F1089F605F26", hash_generated_method = "C7A06C4B5755155D9E19DE9DF6D4033E")
     public int size() {
         return getTaintInt();
@@ -372,9 +339,7 @@ public void putAll(Map<? extends K, ? extends V> map) {
         buffer.append('}');
         return buffer.toString();
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.248 -0400", hash_original_method = "BE68DB72EA44A9864EFB8085A73DD13D", hash_generated_method = "FFF60DD0BB73731BB57AABB5E433364A")
     public Collection<V> values() {
         Collection<V> var60B0A8A6E555943126A18D312F8E04FB_154168766 =         valuesCollection;
@@ -383,9 +348,7 @@ public void putAll(Map<? extends K, ? extends V> map) {
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
-
-    
-        @DSModeled(DSC.SAFE)
+        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.589 -0400", hash_original_method = "DEDBEBF1A9DF717B6A61BCEAEE5EB8FF", hash_generated_method = "CF2AA62163C630C7B78B734803415A96")
     @SuppressWarnings("unchecked")
     @Override
@@ -408,14 +371,12 @@ public void putAll(Map<? extends K, ? extends V> map) {
         //result.valuesCollection = null;
         //return result;
     }
-
     
     public static class SimpleImmutableEntry<K, V> implements Map.Entry<K, V>, Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:03.171 -0500", hash_original_field = "92E8B75F0019C79713630FD110ACEA3C", hash_generated_field = "3DFDD92E82A1CB0CEF7DE41ED65507D7")
 
         private static final long serialVersionUID = 7138329143949025153L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:03.174 -0500", hash_original_field = "F780C5984CF24E477CB9559E91475987", hash_generated_field = "EBAE1A8AD28B83F3F907DD83D8B82F01")
-
 
         private  K key;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:03.176 -0500", hash_original_field = "A7E8A049E4C72FD5713D3AFD6CBF7C08", hash_generated_field = "EEA53383AEF96F58506DEE94A549CB01")
@@ -450,9 +411,7 @@ public K getKey() {
 public V getValue() {
             return value;
         }
-
-        
-                @DSModeled(DSC.SAFE)
+                
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.591 -0400", hash_original_method = "3526712C126765AF36CB8D920CBD3B1B", hash_generated_method = "EB9F930298727FE038FD0E2F1F331E96")
         public V setValue(V object) {
             if (DroidSafeAndroidRuntime.control) {
@@ -466,9 +425,7 @@ public V getValue() {
             // ---------- Original Method ----------
             //throw new UnsupportedOperationException();
         }
-
-        
-                @DSModeled(DSC.SAFE)
+                
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.591 -0400", hash_original_method = "5E665954E6171F76B6FD9130152FC1D9", hash_generated_method = "1FF7867B1DC9E467B3C710E28BD73150")
         @Override
         public boolean equals(Object object) {
@@ -512,15 +469,12 @@ public V getValue() {
             return key + "=" + value;
         }
     }
-
-
     
     public static class SimpleEntry<K, V> implements Map.Entry<K, V>, Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:03.203 -0500", hash_original_field = "53846B0837C4D2B0AB1EE1C9C9E5860F", hash_generated_field = "9B9E5FFE746EC28EB67AAB64BC8691E2")
 
         private static final long serialVersionUID = -8499721149061103585L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:03.206 -0500", hash_original_field = "F780C5984CF24E477CB9559E91475987", hash_generated_field = "EBAE1A8AD28B83F3F907DD83D8B82F01")
-
 
         private  K key;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:03.208 -0500", hash_original_field = "A7E8A049E4C72FD5713D3AFD6CBF7C08", hash_generated_field = "EEA53383AEF96F58506DEE94A549CB01")
@@ -543,9 +497,7 @@ public SimpleEntry(Map.Entry<? extends K, ? extends V> copyFrom) {
             key = copyFrom.getKey();
             value = copyFrom.getValue();
         }
-
-        
-                @DSModeled(DSC.SAFE)
+                
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.593 -0400", hash_original_method = "5E645FD309BBB0570D297FB3EAF41FB1", hash_generated_method = "DED2DCB7D9AC2A45C93F999F67F3F5F9")
         public K getKey() {
              key.addTaint(getTaint());
@@ -589,9 +541,7 @@ public V setValue(V object) {
             return (key == null ? 0 : key.hashCode())
                     ^ (value == null ? 0 : value.hashCode());
         }
-
-        
-                @DSModeled(DSC.SAFE)
+                
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.595 -0400", hash_original_method = "D7D954865532EB22F9DFE06F79F78E27", hash_generated_method = "74F4BFB372D889C3491F29BAD76B35C1")
         @Override
         public String toString() {

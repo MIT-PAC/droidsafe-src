@@ -17,10 +17,6 @@ import android.os.Handler;
 import android.os.Message;
 import android.provider.Browser;
 
-
-
-
-
 public final class WebIconDatabase {
 
     /**
@@ -38,36 +34,24 @@ public static WebIconDatabase getInstance() {
         }
         return sIconDatabase;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeOpen(String path) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeClose() {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeRemoveAllIcons() {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static Bitmap nativeIconForPageUrl(String url) {
     	Bitmap bm = BitmapFactory.decodeByteArray(new byte[1], 0, 0);
     	return bm; 
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeRetainIconForPageUrl(String url) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeReleaseIconForPageUrl(String url) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.289 -0500", hash_original_field = "24455ABE358B662CDEC483182BA9B932", hash_generated_field = "1F07299C39AF9E2A5CCA0FEC4BF5CF2A")
@@ -181,7 +165,6 @@ public void retainIconForPageUrl(String url) {
                     Message.obtain(null, EventHandler.RETAIN_ICON, url));
         }
     }
-
     
     private static class EventHandler extends Handler {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.298 -0500", hash_original_field = "050305D36072878F0238F8BF54B855BF", hash_generated_field = "1E570EBE80E5338300BCCB2022DC26E3")
@@ -211,7 +194,6 @@ public void retainIconForPageUrl(String url) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.316 -0500", hash_original_field = "A163099B522120C606A3CA562F90E927", hash_generated_field = "03E47BA0CE42772601F0A13D178B12B5")
 
         private Handler mHandler;
-
         
         private class IconResult {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.321 -0500", hash_original_field = "CA88DB4A75B79130313A74537195706C", hash_generated_field = "9C2E85EC79E8F8349BF2E81BA4AC7991")
@@ -235,14 +217,12 @@ IconResult(String url, Bitmap icon, IconListener l) {
 void dispatch() {
                 mListener.onReceivedIcon(mUrl, mIcon);
             }
-
             
         }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:02.319 -0500", hash_original_field = "F4EAC04A17F2B69CB24C3DC3766FE86B", hash_generated_field = "9B89FFC17BC75E97744A4692FA4B431D")
 
         private Vector<Message> mMessages = new Vector<Message>();
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:53.415 -0400", hash_original_method = "FFA7F4A8F990D2647EE1D5FBAEBEF779", hash_generated_method = "FFA7F4A8F990D2647EE1D5FBAEBEF779")
         public EventHandler ()
         {
@@ -365,8 +345,6 @@ private void requestIconAndSendResult(String url, IconListener listener) {
             }
         }
     }
-
-
     
     public interface IconListener {
         

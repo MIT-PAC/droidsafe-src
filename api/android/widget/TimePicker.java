@@ -24,24 +24,17 @@ import android.widget.NumberPicker.OnValueChangeListener;
 
 import com.android.internal.R;
 
-
-
-
-
-
 public class TimePicker extends FrameLayout {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.017 -0500", hash_original_field = "898BA2CFB8E606FE0E662F55EA307C06", hash_generated_field = "C8A8F0463DBF19CC5664F198B037CB59")
-
 
     private static final boolean DEFAULT_ENABLED_STATE = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.019 -0500", hash_original_field = "A102152C3DBBB0ED26E24AC8687BFA18", hash_generated_field = "65EDE4F9048CF09D46EC35F5340020DF")
 
-
     private static final int HOURS_IN_HALF_DAY = 12;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.166 -0400", hash_original_field = "1CD9D27FDE7FAAADFEB2B802DEB63CB0", hash_generated_field = "B0CF16601ED0546FD3ADD3537BFCA4D8")
 
-    private static final OnTimeChangedListener NO_OP_CHANGE_LISTENER = new OnTimeChangedListener() {        
-        @DSModeled(DSC.SAFE)
+    private static final OnTimeChangedListener NO_OP_CHANGE_LISTENER = new OnTimeChangedListener() {
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.166 -0400", hash_original_method = "B77065AD2AD822CAFFDDD570BBD12E98", hash_generated_method = "DB3F503D27EF949DABDC7544AC6AFEC7")
         public void onTimeChanged(TimePicker view, int hourOfDay, int minute) {
             
@@ -50,7 +43,6 @@ public class TimePicker extends FrameLayout {
             addTaint(minute);
             
         }
-
         
 };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.027 -0500", hash_original_field = "1BD5FED04D35AC29B74011298319A7F8", hash_generated_field = "35FD601AE81D55F188A5E5435A238E5F")
@@ -58,33 +50,26 @@ public class TimePicker extends FrameLayout {
     private boolean mIs24HourView;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.029 -0500", hash_original_field = "1B79D3BE8F5D99F13BC97499CA7CE611", hash_generated_field = "277A014682EEB4651FD9CCF1C4C7A9DA")
 
-
     private boolean mIsAm;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.031 -0500", hash_original_field = "39F9B6C45E1E2C810E76551E44B44C25", hash_generated_field = "F42DCA1FAFC6800847A12B5E4A4BC187")
 
     private  NumberPicker mHourSpinner;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.033 -0500", hash_original_field = "926A3D4497DB08D89A3E5E1D83657D23", hash_generated_field = "66959F7A51392B97FA2D1A99294B74C4")
 
-
     private  NumberPicker mMinuteSpinner;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.035 -0500", hash_original_field = "C1A7489F4948BACEA60D3800EB230D04", hash_generated_field = "4D70AE5EB70BA99339D4FD1599F1FEA3")
-
 
     private  NumberPicker mAmPmSpinner;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.037 -0500", hash_original_field = "AE0A5E28ECBADE4B2E62EAEA9CEE9A3C", hash_generated_field = "57B061730C612FA07DDC7E51258E7DA2")
 
-
     private  EditText mHourSpinnerInput;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.040 -0500", hash_original_field = "0FD19F4AA32A8FAC3C5FDDC7B3BB7F0A", hash_generated_field = "B7278DCBB472B1B2F3539E5E1708DD32")
-
 
     private  EditText mMinuteSpinnerInput;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.042 -0500", hash_original_field = "5DBD6868AFE924E33678CEBAB6611928", hash_generated_field = "FECBCFA86C0EF4E63B91247A25A449D7")
 
-
     private  EditText mAmPmSpinnerInput;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.045 -0500", hash_original_field = "EE9EE4D1F4838E781C34CBBD005DDFFA", hash_generated_field = "F12C6C5933E99F70D882693BF3937072")
-
 
     private  TextView mDivider;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.047 -0500", hash_original_field = "2A4FEAD27CDA4EB68BE6F0CF829EEEB8", hash_generated_field = "97AF47CC74DFA7A454BABC1F1A356BFB")
@@ -95,10 +80,8 @@ public class TimePicker extends FrameLayout {
     private  Button mAmPmButton;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.049 -0500", hash_original_field = "F04BBB05AA6B86332BF9BCA0567979EC", hash_generated_field = "B1B72D4D154F4798F88DEE511FC04CC0")
 
-
     private  String[] mAmPmStrings;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.051 -0500", hash_original_field = "D4A6DCF8382D9EC800648673F5DFADA3", hash_generated_field = "0D83C9894006124680A4C4A755D8D1E4")
-
 
     private boolean mIsEnabled = DEFAULT_ENABLED_STATE;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.053 -0500", hash_original_field = "ED6CDDD1774814F81E4D2D10B62FDB09", hash_generated_field = "24067A0BB0CBA588BA40566793730956")
@@ -106,10 +89,8 @@ public class TimePicker extends FrameLayout {
     private OnTimeChangedListener mOnTimeChangedListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.055 -0500", hash_original_field = "44FA62115EFD78AD1A83722B5DBE2057", hash_generated_field = "BF728D47404D52B2BA92F11A215AFB65")
 
-
     private Calendar mTempCalendar;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.057 -0500", hash_original_field = "0400C5C553DC4CBF37271C21855854A7", hash_generated_field = "88175FFB524B6CC60F82A34D8C4EC643")
-
 
     private Locale mCurrentLocale;
 
@@ -497,11 +478,9 @@ private void updateAmPmControl() {
         }
         sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_SELECTED);
     }
-
     
     private static class SavedState extends BaseSavedState {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.117 -0500", hash_original_field = "D724CFA73A53A978E951AE6569BF2FF0", hash_generated_field = "D3B74B573149A6A2FC399064332A0A51")
-
 
         @SuppressWarnings({"unused", "hiding"})
         public static final Parcelable.Creator<SavedState> CREATOR = new Creator<SavedState>() {
@@ -515,10 +494,8 @@ private void updateAmPmControl() {
         };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.094 -0500", hash_original_field = "B2C1F15E3866C39B2AD64516DDC3A92C", hash_generated_field = "24E9A2D605497A939CE1099C8C82784A")
 
-
         private  int mHour;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.097 -0500", hash_original_field = "93289DEB1B98B1E0E5D8F8C24F2AC3F1", hash_generated_field = "30D2971B3212A2F1CF29388B2CF79F78")
-
 
         private  int mMinute;
 
@@ -559,11 +536,8 @@ public int getMinute() {
             dest.writeInt(mMinute);
         }
     }
-
-
     
     public interface OnTimeChangedListener {
-
         
         void onTimeChanged(TimePicker view, int hourOfDay, int minute);
     }

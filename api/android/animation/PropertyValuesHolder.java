@@ -14,9 +14,6 @@ import android.util.IntProperty;
 import android.util.Log;
 import android.util.Property;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public class PropertyValuesHolder implements Cloneable {
@@ -94,7 +91,6 @@ public static PropertyValuesHolder ofObject(String propertyName, TypeEvaluator e
         pvh.setEvaluator(evaluator);
         return pvh;
     }
-
     
     public static <V> PropertyValuesHolder ofObject(Property property,
             TypeEvaluator<V> evaluator, V... values) {
@@ -197,26 +193,18 @@ static String getMethodName(String prefix, String propertyName) {
         String theRest = propertyName.substring(1);
         return prefix + firstLetter + theRest;
     }
-
     
-    @DSModeled(DSC.SAFE)
     static private int nGetIntMethod(Class targetClass, String methodName) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     static private int nGetFloatMethod(Class targetClass, String methodName) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     static private void nCallIntMethod(Object target, int methodID, int arg) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     static private void nCallFloatMethod(Object target, int methodID, float arg) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:31.671 -0500", hash_original_field = "A112865653801638C79C91F184034634", hash_generated_field = "7E9EFDBC560251144B1ABA6A3E58FAA3")
@@ -447,7 +435,6 @@ private Method getPropertyFunction(Class targetClass, String prefix, Class value
         return returnVal;
     }
 
-
     /**
      * Returns the setter or getter requested. This utility function checks whether the
      * requested method exists in the propertyMapMap cache. If not, it calls another
@@ -671,7 +658,6 @@ void init() {
             mKeyframeSet.setEvaluator(mEvaluator);
         }
     }
-
     
     static class IntPropertyValuesHolder extends PropertyValuesHolder {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:31.776 -0500", hash_original_field = "B515852A0A207BEB3C75216030DE5088", hash_generated_field = "47B44650F9265B2FD77E2A3383B8E152")
@@ -685,7 +671,6 @@ void init() {
 
         private IntProperty mIntProperty;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:31.782 -0500", hash_original_field = "16BE68696FD23E4C9E2C2D0F3A95F693", hash_generated_field = "16BE68696FD23E4C9E2C2D0F3A95F693")
-
 
         IntKeyframeSet mIntKeyframeSet;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:31.784 -0500", hash_original_field = "2C2C363F77070248FB79E89B9069E337", hash_generated_field = "2C2C363F77070248FB79E89B9069E337")
@@ -836,8 +821,6 @@ public IntPropertyValuesHolder(Property property, int... values) {
             }
         }
     }
-
-
     
     static class FloatPropertyValuesHolder extends PropertyValuesHolder {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:31.819 -0500", hash_original_field = "B515852A0A207BEB3C75216030DE5088", hash_generated_field = "47B44650F9265B2FD77E2A3383B8E152")
@@ -851,7 +834,6 @@ public IntPropertyValuesHolder(Property property, int... values) {
 
         private FloatProperty mFloatProperty;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:31.826 -0500", hash_original_field = "23FE3970B948CA0567BB21122CB48811", hash_generated_field = "23FE3970B948CA0567BB21122CB48811")
-
 
         FloatKeyframeSet mFloatKeyframeSet;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:31.828 -0500", hash_original_field = "4734C624F522D63647CA34AA79C8C9AC", hash_generated_field = "4734C624F522D63647CA34AA79C8C9AC")

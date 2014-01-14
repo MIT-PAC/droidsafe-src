@@ -34,9 +34,6 @@ import org.apache.harmony.luni.lang.reflect.Types;
 
 import dalvik.system.VMStack;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public final class Class<T> implements Serializable, AnnotatedElement, GenericDeclaration, Type {
@@ -124,32 +121,24 @@ public static Class<?> forName(String className, boolean initializeBoolean,
         }
         return result;
     }
-
     
-    @DSModeled(DSC.SAFE)
     static Class<?> classForName(String className, boolean initializeBoolean,
             ClassLoader classLoader) throws ClassNotFoundException {
     	Class<?> cl = Object.class;
     	return cl;
     }
-
     
-    @DSModeled(DSC.BAN)
     private static ClassLoader getClassLoader(Class<?> clazz) {
     	return clazz.getClassLoader();
     }
-
     
-    @DSModeled(DSC.BAN)
     private static Class<?>[] getDeclaredClasses(Class<?> clazz, boolean publicOnly) {
     	Class[] ret = new Class[0];
     	ret.addTaint(clazz.taint);
     	ret.addTaint(publicOnly);
     	return ret;
     }
-
     
-    @DSModeled(DSC.BAN)
     private static <T> Constructor<T>[] getDeclaredConstructors(
             Class<T> clazz, boolean publicOnly) {
     	Constructor[] ret = new Constructor[0];
@@ -157,36 +146,28 @@ public static Class<?> forName(String className, boolean initializeBoolean,
     	ret.addTaint(publicOnly);
     	return ret;
     }
-
     
-    @DSModeled(DSC.SAFE)
     static Field[] getDeclaredFields(Class<?> clazz, boolean publicOnly) {
     	Field[] ret = new Field[0];
     	ret.addTaint(clazz.taint);
     	ret.addTaint(publicOnly);
     	return ret;
     }
-
     
-    @DSModeled(DSC.BAN)
     static Field getDeclaredField(Class<?> clazz, String name) {
     	Field ret = new Field();
     	ret.addTaint(clazz.taint);
     	ret.addTaint(name.taint);
     	return ret;
     }
-
     
-    @DSModeled(DSC.SAFE)
     static Method[] getDeclaredMethods(Class<?> clazz, boolean publicOnly) {
     	Method[] ret = new Method[0];
     	ret[0].addTaint(clazz.taint);
     	ret[0].addTaint(publicOnly);
     	return ret;
     }
-
     
-    @DSModeled(DSC.SAFE)
     static Member getDeclaredConstructorOrMethod(Class clazz, String name, Class[] args) {
     	Method ret = new Method();
     	ret.addTaint(clazz.taint);
@@ -194,16 +175,12 @@ public static Class<?> forName(String className, boolean initializeBoolean,
     	ret.addTaint(args[0].taint);
     	return ret;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int getModifiers(Class<?> clazz, boolean ignoreInnerClassesAttrib) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_64442902 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_64442902;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static <T extends Object> T[] arraycopy(T[] result, T[] head, T[] tail) {
         System.arraycopy(head, 0, result, 0, head.length);
         System.arraycopy(tail, 0, result, head.length, tail.length);
@@ -211,14 +188,12 @@ public static Class<?> forName(String className, boolean initializeBoolean,
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.857 -0500", hash_original_field = "5345B2523025935E4E520B1555936347", hash_generated_field = "A2E36971CC30DE91D1AF4E9C02F420A3")
 
-
     private static final long serialVersionUID = 3206093459760846163L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.860 -0500", hash_original_field = "BF45F7481B8091DE3CBF80E94F7F940B", hash_generated_field = "0C932604663D7874D47A840F24BC4843")
 
     @DSVAModeled
     private transient String name;
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.490 -0400", hash_original_method = "290C4C92EA00F4559290C8F8CF6D9B35", hash_generated_method = "E946603C401B0F4C9A405067C69B1976")
 	public  Class() {
         // ---------- Original Method ----------
@@ -238,9 +213,7 @@ private String getSignatureAttribute() {
 
         return StringUtils.combineStrings(annotation);
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.692 -0400", hash_original_method = "D517197DC7BA53960E7471B1FA197117", hash_generated_method = "580560D142C0CD8EEA5AC831F856A095")
     private Object[] getSignatureAnnotation() {
     	Object[] foo = new Object[0];
@@ -262,7 +235,6 @@ private String getSignatureAttribute() {
 public Class<?>[] getClasses() {
         return getFullListOfClasses(true);
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.626 -0400", hash_original_method = "F78DA66084C503A2B491A95B3FBC8112", hash_generated_method = "B7A3F7B3DC488C09635B8FBBAAD7576C")
     @Override
@@ -445,9 +417,7 @@ ClassLoader getClassLoaderImpl() {
         ClassLoader loader = getClassLoader(this);
         return loader == null ? BootClassLoader.getInstance() : loader;
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.699 -0400", hash_original_method = "A6D69727DF0CDE095BD59CFD60FF06ED", hash_generated_method = "CDEED6F065A507A7FECB927A85CD4D66")
     public Class<?> getComponentType() {
     	Class<?> cl = (Class)new Object();
@@ -546,17 +516,13 @@ private Member getPublicConstructorOrMethodRecursive(String name, Class<?>[] par
 public Constructor<?>[] getConstructors() {
         return getDeclaredConstructors(this, true);
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.710 -0400", hash_original_method = "2A0D770C788AFD3292AC02E319E3DDE7", hash_generated_method = "DB9C61E181111C55768DF3409E22B2FA")
     public Annotation[] getDeclaredAnnotations() {
     	Annotation[] ret = new Annotation[0];
     	return ret;
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.710 -0400", hash_original_method = "097083D90BBF2FCC58AC81DB8664E54F", hash_generated_method = "33C06C0DC63918D788913C928E9A0C55")
     private <A extends Annotation> A getDeclaredAnnotation(Class<A> annotationClass) {
     	A ret = (A)new Object();
@@ -574,7 +540,6 @@ public Constructor<?>[] getConstructors() {
     	addTaint(annotationClass.getTaint());
     	return getTaintBoolean();
     }
-
 
     /**
      * Returns an array containing {@code Class} objects for all classes and
@@ -737,33 +702,25 @@ public Method getDeclaredMethod(String name, Class<?>... parameterTypes)
 public Method[] getDeclaredMethods() {
         return getDeclaredMethods(this, false);
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.716 -0400", hash_original_method = "67DCCE022B38EF56E621E9F7C3410002", hash_generated_method = "A08735CEB9F08341039B8C54A1BD5E61")
     public Class<?> getDeclaringClass() {
     	Class  ret = (Class)new Object();
     	return ret;
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.717 -0400", hash_original_method = "B183618DCECD1DBBC6B77A8041AAB5FF", hash_generated_method = "E19B04C40918C59F801E144F365A783E")
     public Class<?> getEnclosingClass() {
     	Class  ret = (Class)new Object();
     	return ret;
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.717 -0400", hash_original_method = "66CD711920ADA841CC04EC44C476AA92", hash_generated_method = "E9EFFA224CF0890C33C432913B5CDC4A")
     public Constructor<?> getEnclosingConstructor() {
     	Constructor  ret = new Constructor();
     	return ret;
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.717 -0400", hash_original_method = "D4C604D782CFEF7F67F7383F824B8549", hash_generated_method = "42F609F6A3577ECAA8EE5F0164C83C69")
     public Method getEnclosingMethod() {
     	Method  ret = new Method();
@@ -915,9 +872,7 @@ public Type getGenericSuperclass() {
         parser.parseForClass(this, getSignatureAttribute());
         return Types.getType(parser.superclassType);
     }
-
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.741 -0400", hash_original_method = "CF68E335012F7245AD886A1F59EC18C3", hash_generated_method = "2692A665379A2F86FF3326F5F5EB1B7B")
     public Class<?>[] getInterfaces() {
     	Class[] ret = new Class[0];
@@ -1027,9 +982,7 @@ public String getName() {
         String result = name;
         return (result == null) ? (name = getNameNative()) : result;
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.755 -0400", hash_original_method = "31D33A7314A957E536E7D171A57CAB24", hash_generated_method = "D2A1F2570A688E342CB66374B5D563FA")
     private String getNameNative() {
     	String ret = new String();
@@ -1069,9 +1022,7 @@ public String getSimpleName() {
 
         return name;
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.757 -0400", hash_original_method = "0DFF052FEDA74158169D3F5C3A6A31A3", hash_generated_method = "E15F8A7CFFBAA6A8E91B4004366ED98B")
     private String getInnerClassName() {
     	String ret = new String();
@@ -1177,9 +1128,7 @@ public Object[] getSigners() {
         // See http://code.google.com/p/android/issues/detail?id=1766.
         return null;
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.762 -0400", hash_original_method = "D842DF476A1BD7D94C0F81A98F8160A2", hash_generated_method = "6D7E91A123530C9789871A175E332FE3")
     public Class<? super T> getSuperclass() {
     	Class ret = (Class)new Object();
@@ -1253,7 +1202,6 @@ public boolean isAnnotation() {
     	return getTaintBoolean();
     }
 
-
     /**
      * Indicates whether the class represented by this {@code Class} is an array
      * class.
@@ -1289,7 +1237,6 @@ public boolean isArray() {
     	return getTaintBoolean();
     }
 
-
     /**
      * Indicates whether the class represented by this {@code Class} is an
      * {@code enum}.
@@ -1322,7 +1269,6 @@ public boolean isEnum() {
     	return getTaintBoolean();
     }
 
-
     /**
      * Indicates whether this {@code Class} represents an interface.
      *
@@ -1335,7 +1281,6 @@ public boolean isEnum() {
     	//Formerly a native method
     	return getTaintBoolean();
     }
-
 
     /**
      * Indicates whether the class represented by this {@code Class} is defined
@@ -1378,7 +1323,6 @@ public boolean isMemberClass() {
     	return getTaintBoolean();
     }
 
-
     /**
      * Indicates whether this {@code Class} represents a synthetic type.
      *
@@ -1413,9 +1357,7 @@ public boolean isSynthetic() {
 public T newInstance() throws InstantiationException, IllegalAccessException {
         return newInstanceImpl();
     }
-
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:49.766 -0400", hash_original_method = "15EE5A43120338A96CD2B5DEA980891C", hash_generated_method = "53D1094C8103497B4EEB5236AC886608")
     private T newInstanceImpl() throws IllegalAccessException, InstantiationException {
     	T ret = (T)new Object();
@@ -1468,10 +1410,7 @@ public Package getPackage() {
     	//Formerly a native method
     	return getTaintBoolean();
     }
-
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.652 -0400", hash_original_method = "500D2CEF070061FBCB8343E3F70AD3A9", hash_generated_method = "910E7DFE96B4605E85B9C0C2ACD0BD70")
     @SuppressWarnings("unchecked")
     public <U> Class<? extends U> asSubclass(Class<U> clazz) {

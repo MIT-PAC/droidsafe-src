@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class Timer {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.157 -0500", hash_original_method = "583B36D89F2230FC842E9DB40CDF730D", hash_generated_method = "F6AED2A8A3D3246BB251352889CBE974")
@@ -17,7 +13,6 @@ private synchronized static long nextId() {
         return timerId++;
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.154 -0500", hash_original_field = "275662F311FA6F70B6AC8B7C0851A93A", hash_generated_field = "AE70AF39EAB820096114FC8C9C2796F7")
-
 
     private static long timerId;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.159 -0500", hash_original_field = "0DFC13B34E003C343B9C8B89D1EEE128", hash_generated_field = "BD810B8E7F0EAA2CFBEB665BD5956193")
@@ -251,7 +246,6 @@ public void scheduleAtFixedRate(TimerTask task, Date when, long period) {
         long delay = when.getTime() - System.currentTimeMillis();
         scheduleImpl(task, delay, period, true);
     }
-
     
     private static final class TimerImpl extends Thread {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.116 -0500", hash_original_field = "FE3EA34D60211B160636288AB9105E56", hash_generated_field = "DD77D1125D3DB6D338BBBF7F15E50974")
@@ -411,7 +405,6 @@ public int purge() {
             tasks.deleteIfCancelled();
             return tasks.deletedCancelledNumber;
         }
-
         
         private static final class TimerHeap {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.073 -0500", hash_original_field = "F8F93760EFC80DEB2BBE0C4A73D7D09C", hash_generated_field = "5DCC43DD97C899F4FF86DBEA0DEC4532")
@@ -419,18 +412,14 @@ public int purge() {
             private int DEFAULT_HEAP_SIZE = 256;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.077 -0500", hash_original_field = "C0BBEC6DD6CE83ECEAC1379936106291", hash_generated_field = "E31F25F3395C26BA2E25CE6943B12BB4")
 
-
             private TimerTask[] timers = new TimerTask[DEFAULT_HEAP_SIZE];
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.080 -0500", hash_original_field = "689FC3CB9A887B5817C15E9CFDD066DB", hash_generated_field = "C5D9FEC4EFB462C8A221F2C08D178643")
-
 
             private int size = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.082 -0500", hash_original_field = "24C516E967A43FAB3DB3AC3E500B20C3", hash_generated_field = "1B4C6ED5AD73B84D34A3A5D4C320C40E")
 
-
             private int deletedCancelledNumber = 0;
             
-            @DSModeled(DSC.BAN)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.867 -0400", hash_original_method = "8C2F50BDBBFD0A7BB81F89CAC3407288", hash_generated_method = "8C2F50BDBBFD0A7BB81F89CAC3407288")
             public TimerHeap ()
             {
@@ -555,15 +544,10 @@ private int getTask(TimerTask task) {
                 }
                 return -1;
             }
-
             
         }
-
-
         
     }
-
-
     
     private static final class FinalizerHelper {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.144 -0500", hash_original_field = "0DFC13B34E003C343B9C8B89D1EEE128", hash_generated_field = "BD810B8E7F0EAA2CFBEB665BD5956193")
@@ -588,7 +572,6 @@ FinalizerHelper(TimerImpl impl) {
                 super.finalize();
             }
         }
-
         
     }
 

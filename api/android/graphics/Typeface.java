@@ -8,9 +8,6 @@ import java.io.File;
 
 import android.content.res.AssetManager;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public class Typeface {
@@ -99,44 +96,30 @@ public static Typeface createFromFile(File path) {
 public static Typeface createFromFile(String path) {
         return new Typeface(nativeCreateFromFile(path));
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativeCreate(String familyName, int style) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativeCreateFromTypeface(int native_instance, int style) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeUnref(int native_instance) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativeGetStyle(int native_instance) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativeCreateFromAsset(AssetManager mgr, String path) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativeCreateFromFile(String path) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static void setGammaForText(float blackGamma, float whiteGamma) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.627 -0500", hash_original_field = "8DF784A9F5E85BEBD0698D4CB91805F5", hash_generated_field = "0B2DA0B843E1AF20E33C18AF2C026319")

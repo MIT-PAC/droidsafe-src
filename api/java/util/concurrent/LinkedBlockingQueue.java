@@ -12,11 +12,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
-
-
-
-
-
 public class LinkedBlockingQueue<E> extends AbstractQueue<E> implements BlockingQueue<E>, java.io.Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:15.277 -0500", hash_original_field = "9F2F56011C1B7916160CB9F1A5796C48", hash_generated_field = "900FED93BFD035CADEBF9B3700EB152D")
 
@@ -194,7 +189,6 @@ void fullyUnlock() {
         putLock.unlock();
     }
 
-
     // this doc comment is overridden to remove the reference to collections
     // greater in size than Integer.MAX_VALUE
     /**
@@ -342,7 +336,6 @@ public boolean offer(E e) {
             signalNotEmpty();
         return c >= 0;
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:15.346 -0500", hash_original_method = "022306A077B45DC674F98467F25F93CD", hash_generated_method = "3E3064FFB44D5FC2152801FE8CB3A063")
     
@@ -537,9 +530,7 @@ public Object[] toArray() {
             fullyUnlock();
         }
     }
-
-    
-        @DSModeled(DSC.SAFE)
+        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.586 -0400", hash_original_method = "3C0973EC18B4AB6267920EDC87F075C5", hash_generated_method = "765D849DB37E2E7E74B6D5F8CD431089")
     @SuppressWarnings("unchecked")
     public <T> T[] toArray(T[] a) {
@@ -733,7 +724,6 @@ private void writeObject(java.io.ObjectOutputStream s)
             fullyUnlock();
         }
     }
-
     
     static class Node<E> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:15.280 -0500", hash_original_field = "25C1B4BE35B7528A52E74D8E56CE9F0B", hash_generated_field = "25C1B4BE35B7528A52E74D8E56CE9F0B")
@@ -746,11 +736,8 @@ private void writeObject(java.io.ObjectOutputStream s)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:15.285 -0500", hash_original_method = "E24CFB813CF8D6D3545154C1747D57F8", hash_generated_method = "E24CFB813CF8D6D3545154C1747D57F8")
         
 Node(E x) { item = x; }
-
         
     }
-
-
     
     private class Itr implements Iterator<E> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:15.384 -0500", hash_original_field = "81977FBAAD4257C3715DB7B659FC448E", hash_generated_field = "96ED1A7AC98C85D7CD0CAC3D4B53A034")
@@ -840,7 +827,6 @@ public void remove() {
                 fullyUnlock();
             }
         }
-
         
     }
 

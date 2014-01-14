@@ -20,10 +20,6 @@ import android.util.TypedValue;
 import android.util.Xml;
 import android.view.animation.AnimationUtils;
 
-
-
-
-
 public class AnimatorInflater {
 
     /**
@@ -311,7 +307,7 @@ private static ValueAnimator loadAnimator(Context context, AttributeSet attrs, V
     private static final int VALUE_TYPE_CUSTOM      = 5;
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:13.942 -0400", hash_original_method = "755519606CB6AC3A2C6456CA27261C19", hash_generated_method = "755519606CB6AC3A2C6456CA27261C19")
-    @DSModeled(DSC.SAFE)
+    
     public AnimatorInflater ()
     {
         //Synthesized constructor

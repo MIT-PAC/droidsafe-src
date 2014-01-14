@@ -13,11 +13,6 @@ import java.io.IOException;
 import java.net.DatagramSocket;
 import java.net.Socket;
 
-
-
-
-
-
 public class ParcelFileDescriptor implements Parcelable {
 
     /**
@@ -87,9 +82,7 @@ public static ParcelFileDescriptor fromFd(int fd) throws IOException {
         FileDescriptor fdesc = getFileDescriptorFromFd(fd);
         return new ParcelFileDescriptor(fdesc);
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static FileDescriptor getFileDescriptorFromFd(int fd) throws IOException {
     	return new FileDescriptor();
     }
@@ -110,9 +103,7 @@ public static ParcelFileDescriptor adoptFd(int fd) {
         FileDescriptor fdesc = getFileDescriptorFromFdNoDup(fd);
         return new ParcelFileDescriptor(fdesc);
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static FileDescriptor getFileDescriptorFromFdNoDup(int fd) {
     	return new FileDescriptor();
     }
@@ -167,9 +158,7 @@ public static ParcelFileDescriptor[] createPipe() throws IOException {
         pfds[1] = new ParcelFileDescriptor(fds[1]);
         return pfds;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void createPipeNative(FileDescriptor[] outFds) throws IOException {
     }
 
@@ -293,7 +282,6 @@ public ParcelFileDescriptor dup() throws IOException {
 public FileDescriptor getFileDescriptor() {
         return mFileDescriptor;
     }
-
     
     public static class AutoCloseInputStream extends FileInputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:29.082 -0500", hash_original_field = "F15BA4F12003086454C67D56791594A9", hash_generated_field = "AE959CCFA06A07F93FA2A8BEED883021")
@@ -317,11 +305,8 @@ public AutoCloseInputStream(ParcelFileDescriptor fd) {
                 super.close();
             }
         }
-
         
     }
-
-
     
     public static class AutoCloseOutputStream extends FileOutputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:29.091 -0500", hash_original_field = "F15BA4F12003086454C67D56791594A9", hash_generated_field = "AE959CCFA06A07F93FA2A8BEED883021")
@@ -345,7 +330,6 @@ public AutoCloseOutputStream(ParcelFileDescriptor fd) {
                 super.close();
             }
         }
-
         
     }
 
@@ -360,7 +344,6 @@ public AutoCloseOutputStream(ParcelFileDescriptor fd) {
     	return getTaintLong();
     }
 
-
     /**
      * This is needed for implementing AssetFileDescriptor.AutoCloseOutputStream,
      * and I really don't think we want it to be public.
@@ -373,7 +356,6 @@ public AutoCloseOutputStream(ParcelFileDescriptor fd) {
     	addTaint(pos);
     	return getTaintLong();
     }
-
 
     /**
      * Return the native fd int for this ParcelFileDescriptor.  The
@@ -395,7 +377,6 @@ public int getFd() {
     	//Formerly a native method
     	return getTaintInt();
     }
-
 
     /**
      * Return the native fd int for this ParcelFileDescriptor and detach it

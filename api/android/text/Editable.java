@@ -1,8 +1,5 @@
 package android.text;
 
-
-
-
 // Droidsafe Imports
 import droidsafe.runtime.*;
 import droidsafe.helpers.*;
@@ -13,40 +10,28 @@ extends CharSequence, GetChars, Spannable, Appendable
 {
     
     public Editable replace(int st, int en, CharSequence source, int start, int end);
-
     
     public Editable replace(int st, int en, CharSequence text);
-
     
     public Editable insert(int where, CharSequence text, int start, int end);
-
     
     public Editable insert(int where, CharSequence text);
-
     
     public Editable delete(int st, int en);
-
     
     public Editable append(CharSequence text);
-
     
     public Editable append(CharSequence text, int start, int end);
-
     
     public Editable append(char text);
-
     
     public void clear();
-
     
     public void clearSpans();
-
     
     public void setFilters(InputFilter[] filters);
-
     
     public InputFilter[] getFilters();
-
     
     public static class Factory {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:12.811 -0500", hash_original_field = "65E9316609C84FFB5CA83C3D42FAE896", hash_generated_field = "B3CC448774E7F8087983631BC24BCBA2")
@@ -62,7 +47,6 @@ public static Editable.Factory getInstance() {
             return sInstance;
         }
         
-        @DSModeled(DSC.SAFE)
         private Factory() {
         	//Synthensized constructor
         }

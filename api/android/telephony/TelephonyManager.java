@@ -21,9 +21,6 @@ import com.android.internal.telephony.Phone;
 import com.android.internal.telephony.PhoneFactory;
 import com.android.internal.telephony.TelephonyProperties;
 
-
-
-
 public class TelephonyManager {
 
     /** @hide
@@ -111,13 +108,11 @@ public static String getNetworkTypeName(int type) {
     private static final String TAG = "TelephonyManager";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:44.746 -0500", hash_original_field = "CEF70F4829B188D89E37229D281B99F4", hash_generated_field = "BB35128711B5DD286691A47454B04C39")
 
-
     private static Context sContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:44.752 -0500", hash_original_field = "6F494F2F02C51FFE18E7119824439D93", hash_generated_field = "582B8A11F267D0FC2F0A8BFE9E1B0E41")
 
     private static ITelephonyRegistry sRegistry;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:44.774 -0500", hash_original_field = "168BF9201624300441BE6F41CBD9ECC0", hash_generated_field = "255012CF538DDDD1C9746B5789864EE9")
-
 
     private static TelephonyManager sInstance = new TelephonyManager();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:44.798 -0500", hash_original_field = "C2148C54676B07A6995FF9653FF27F9F", hash_generated_field = "36AA3BD8CCFDC1F68C412E68D6A42804")
@@ -304,7 +299,6 @@ public static String getNetworkTypeName(int type) {
 
     public static final int DATA_SUSPENDED      = 3;
     
-    @DSModeled(DSC.BAN)
     public TelephonyManager(Context context) {
         if (sContext == null) {
             Context appContext = context.getApplicationContext();
@@ -325,7 +319,6 @@ public static String getNetworkTypeName(int type) {
     
 private TelephonyManager() {
     }
-
 
     //
     //
@@ -1070,7 +1063,6 @@ public int getDataState() {
 private ITelephony getITelephony() {
         return ITelephony.Stub.asInterface(ServiceManager.getService(Context.TELEPHONY_SERVICE));
     }
-
     
     public void listen(PhoneStateListener listener, int events) {/* removed for compilation
         String pkgForDebug = sContext != null ? sContext.getPackageName() : "<unknown>";

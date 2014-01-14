@@ -21,14 +21,8 @@ import org.xml.sax.SAXNotSupportedException;
 import org.xml.sax.XMLReader;
 import org.xml.sax.ext.LexicalHandler;
 
-
-
-
-
-
 public class ExpatReader implements XMLReader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.909 -0500", hash_original_field = "D21F5EBFA260D1454028626166780495", hash_generated_field = "76D9E2DC4A0EBE3D6C94DF14707F99DB")
-
 
     private static final String LEXICAL_HANDLER_PROPERTY
             = "http://xml.org/sax/properties/lexical-handler";
@@ -44,7 +38,6 @@ public class ExpatReader implements XMLReader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.901 -0500", hash_original_field = "0A9AFAA2B0505C00F2ECAD506C3C72F7", hash_generated_field = "0A9AFAA2B0505C00F2ECAD506C3C72F7")
  LexicalHandler lexicalHandler;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.903 -0500", hash_original_field = "54A4A3EB19F42CDA073264FCAA27B260", hash_generated_field = "DA06DC238CFD0DC0251460B8E2E7F05F")
-
 
     private boolean processNamespaces = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.906 -0500", hash_original_field = "A9925B994A6A2A865685842891CFAB8B", hash_generated_field = "571B94DE5D091BD853A513AE92780624")
@@ -351,7 +344,6 @@ private void parse(InputStream in, String encoding, String publicId,
         );
         parser.parseDocument(in);
     }
-
     
     private static class Feature {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.912 -0500", hash_original_field = "7A51B37BA9FC508AEA058815F1BD52DE", hash_generated_field = "7A1D48E3BBF987F17CCDC77F6B0FAC95")
@@ -378,7 +370,6 @@ private void parse(InputStream in, String encoding, String publicId,
         private static final String EXTERNAL_PARAMETER_ENTITIES
                 = BASE_URI + "external-parameter-entities";
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.123 -0400", hash_original_method = "0B4D9136485558B251EF1E44EE499FB7", hash_generated_method = "0B4D9136485558B251EF1E44EE499FB7")
         public Feature ()
         {

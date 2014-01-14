@@ -7,23 +7,15 @@ import droidsafe.annotations.*;
 import java.io.Serializable;
 import java.util.Arrays;
 
-
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public final class Character implements Serializable, Comparable<Character> {
-
     
-    @DSModeled(DSC.SAFE)
     private static int forNameImpl(String blockName) {
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1915900274 = DSUtils.UNKNOWN_INT;
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1915900274;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     private static int ofImpl(int codePoint) {
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_771157942 = DSUtils.UNKNOWN_INT;
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_771157942;
@@ -855,9 +847,7 @@ public static int digit(int codePoint, int radix) {
         }
         return digitImpl(codePoint, radix);
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int digitImpl(int codePoint, int radix) {
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_350347683 = DSUtils.UNKNOWN_INT;
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_350347683;
@@ -921,9 +911,7 @@ public static String getName(int codePoint) {
         }
         return result;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static String getNameImpl(int codePoint) {
 		return new String();
 	}
@@ -987,9 +975,7 @@ public static int getNumericValue(int codePoint) {
         }
         return getNumericValueImpl(codePoint);
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int getNumericValueImpl(int codePoint) {
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_154176117 = DSUtils.UNKNOWN_INT;
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_154176117;
@@ -1025,9 +1011,7 @@ public static int getType(int codePoint) {
         }
         return (type + 1);
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int getTypeImpl(int codePoint) {
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_750496757 = DSUtils.UNKNOWN_INT;
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_750496757;
@@ -1066,9 +1050,7 @@ public static byte getDirectionality(int codePoint) {
         }
         return DIRECTIONALITY[directionality];
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static byte getDirectionalityImpl(int codePoint) {
 		byte var40EA57D3EE3C07BF1C102B466E1C3091_330183665 = DSUtils.UNKNOWN_BYTE;
 		return var40EA57D3EE3C07BF1C102B466E1C3091_330183665;
@@ -1101,9 +1083,7 @@ public static boolean isMirrored(char c) {
 public static boolean isMirrored(int codePoint) {
         return isMirroredImpl(codePoint);
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean isMirroredImpl(int codePoint) {
 		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1579042988 = DSUtils.UNKNOWN_BOOLEAN;
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_1579042988;
@@ -1174,9 +1154,7 @@ public static boolean isDefined(char c) {
 public static boolean isDefined(int codePoint) {
         return isDefinedImpl(codePoint);
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean isDefinedImpl(int codePoint) {
 		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1918835177 = DSUtils.UNKNOWN_BOOLEAN;
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_1918835177;
@@ -1216,9 +1194,7 @@ public static boolean isDigit(int codePoint) {
         }
         return isDigitImpl(codePoint);
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean isDigitImpl(int codePoint) {
 		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_79933192 = DSUtils.UNKNOWN_BOOLEAN;
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_79933192;
@@ -1257,9 +1233,7 @@ public static boolean isIdentifierIgnorable(int codePoint) {
         }
         return isIdentifierIgnorableImpl(codePoint);
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean isIdentifierIgnorableImpl(int codePoint) {
 		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_370417676 = DSUtils.UNKNOWN_BOOLEAN;
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_370417676;
@@ -1438,9 +1412,7 @@ public static boolean isLetter(int codePoint) {
         }
         return isLetterImpl(codePoint);
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean isLetterImpl(int codePoint) {
 		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1317859906 = DSUtils.UNKNOWN_BOOLEAN;
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_1317859906;
@@ -1483,9 +1455,7 @@ public static boolean isLetterOrDigit(int codePoint) {
         }
         return isLetterOrDigitImpl(codePoint);
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean isLetterOrDigitImpl(int codePoint) {
 		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_331892654 = DSUtils.UNKNOWN_BOOLEAN;
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_331892654;
@@ -1525,9 +1495,7 @@ public static boolean isLowerCase(int codePoint) {
         }
         return isLowerCaseImpl(codePoint);
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean isLowerCaseImpl(int codePoint) {
 		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1079247224 = DSUtils.UNKNOWN_BOOLEAN;
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_1079247224;
@@ -1590,9 +1558,7 @@ public static boolean isSpaceChar(int codePoint) {
         }
         return isSpaceCharImpl(codePoint);
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean isSpaceCharImpl(int codePoint) {
 		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_684024122 = DSUtils.UNKNOWN_BOOLEAN;
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_684024122;
@@ -1625,9 +1591,7 @@ public static boolean isTitleCase(char c) {
 public static boolean isTitleCase(int codePoint) {
         return isTitleCaseImpl(codePoint);
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean isTitleCaseImpl(int codePoint) {
 		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1687158249 = DSUtils.UNKNOWN_BOOLEAN;
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_1687158249;
@@ -1662,9 +1626,7 @@ public static boolean isUnicodeIdentifierPart(char c) {
 public static boolean isUnicodeIdentifierPart(int codePoint) {
         return isUnicodeIdentifierPartImpl(codePoint);
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean isUnicodeIdentifierPartImpl(int codePoint) {
 		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1167587608 = DSUtils.UNKNOWN_BOOLEAN;
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_1167587608;
@@ -1699,9 +1661,7 @@ public static boolean isUnicodeIdentifierStart(char c) {
 public static boolean isUnicodeIdentifierStart(int codePoint) {
         return isUnicodeIdentifierStartImpl(codePoint);
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean isUnicodeIdentifierStartImpl(int codePoint) {
 		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_389180321 = DSUtils.UNKNOWN_BOOLEAN;
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_389180321;
@@ -1741,9 +1701,7 @@ public static boolean isUpperCase(int codePoint) {
         }
         return isUpperCaseImpl(codePoint);
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean isUpperCaseImpl(int codePoint) {
 		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1247968420 = DSUtils.UNKNOWN_BOOLEAN;
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_1247968420;
@@ -1792,9 +1750,7 @@ public static boolean isWhitespace(int codePoint) {
         }
         return isWhitespaceImpl(codePoint);
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean isWhitespaceImpl(int codePoint) {
 		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1925136494 = DSUtils.UNKNOWN_BOOLEAN;
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_1925136494;
@@ -1852,9 +1808,7 @@ public static int toLowerCase(int codePoint) {
         }
         return toLowerCaseImpl(codePoint);
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int toLowerCaseImpl(int codePoint) {
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_257147218 = DSUtils.UNKNOWN_INT;
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_257147218;
@@ -1902,9 +1856,7 @@ public static char toTitleCase(char c) {
 public static int toTitleCase(int codePoint) {
         return toTitleCaseImpl(codePoint);
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int toTitleCaseImpl(int codePoint) {
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1465695862 = DSUtils.UNKNOWN_INT;
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1465695862;
@@ -1948,9 +1900,7 @@ public static int toUpperCase(int codePoint) {
         }
         return toUpperCaseImpl(codePoint);
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int toUpperCaseImpl(int codePoint) {
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1328761199 = DSUtils.UNKNOWN_INT;
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1328761199;
@@ -1983,7 +1933,6 @@ public static int toUpperCase(int codePoint) {
      * Unicode category constant Cn.
      */
     public static final byte UNASSIGNED = 0;
-
     
     public static class Subset {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:22.651 -0500", hash_original_field = "BF45F7481B8091DE3CBF80E94F7F940B", hash_generated_field = "BF45F7481B8091DE3CBF80E94F7F940B")
@@ -2045,11 +1994,8 @@ protected Subset(String string) {
         public final String toString() {
             return name;
         }
-
         
     }
-
-
     
     public static final class UnicodeBlock extends Subset {
 
@@ -2835,7 +2781,6 @@ private UnicodeBlock(String blockName, int start, int end) {
     public static final int SIZE = 16;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:22.648 -0500", hash_original_field = "2896E5C0CC76D537CC3B13493B0E8B47", hash_generated_field = "504A101457658254DD8C38E597554F90")
 
-
     private static final byte[] DIRECTIONALITY = new byte[] {
             DIRECTIONALITY_LEFT_TO_RIGHT, DIRECTIONALITY_RIGHT_TO_LEFT,
             DIRECTIONALITY_EUROPEAN_NUMBER,
@@ -2857,7 +2802,6 @@ private UnicodeBlock(String blockName, int start, int end) {
 
     private static final Character[] SMALL_VALUES = new Character[128];
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:22.461 -0500", hash_original_field = "116C54C63A0999E8859ECE8A2FFB8D84", hash_generated_field = "747ED88C4962B4F2D5A7D8AD1452F805")
-
 
     private  char value;
 

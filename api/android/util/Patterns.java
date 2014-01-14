@@ -7,10 +7,7 @@ import droidsafe.annotations.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-
-
-
-public class Patterns { // <digit><digit|sdd>+<digit> 
+public class Patterns { // <digit><digit|sdd>+<digit>
 
     /**
      *  Convenience method to take all of the non-null matching groups in a
@@ -40,9 +37,7 @@ public static final String concatGroups(Matcher matcher) {
 
         return b.toString();
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static final String digitsAndPlusOnly(Matcher matcher) {
         StringBuilder buffer = new StringBuilder();
         String matchingRegion = matcher.group();
@@ -153,14 +148,12 @@ public static final String concatGroups(Matcher matcher) {
             + "|[1-9][0-9]|[0-9]))");
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:22.475 -0500", hash_original_field = "91214CA2F8AA139F95A0432BCBED38BF", hash_generated_field = "EBD43FE5D2F938971F2BC95434FDE076")
 
-
     public static final Pattern DOMAIN_NAME
         = Pattern.compile(
             "(((([" + GOOD_IRI_CHAR + "][" + GOOD_IRI_CHAR + "\\-]*)*[" + GOOD_IRI_CHAR + "]\\.)+"
             + TOP_LEVEL_DOMAIN + ")|"
             + IP_ADDRESS + ")");
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:22.477 -0500", hash_original_field = "D446C1D50F55533D30F6F7687A244D4A", hash_generated_field = "9390AB43ED101394721F1FEDD9113DAA")
-
 
     public static final Pattern EMAIL_ADDRESS
         = Pattern.compile(

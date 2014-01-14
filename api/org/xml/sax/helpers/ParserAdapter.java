@@ -24,17 +24,11 @@ import org.xml.sax.SAXNotSupportedException;
 import org.xml.sax.SAXParseException;
 import org.xml.sax.XMLReader;
 
-
-
-
-
-
 public class ParserAdapter implements XMLReader, DocumentHandler {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.272 -0500", hash_original_field = "7C62AE9A20150A42A26A5AD7B14A845B", hash_generated_field = "1096644F71EDD67B690E4CE87AE1DE5B")
 
     // Implementation of org.xml.sax.XMLReader.
     ////////////////////////////////////////////////////////////////////
-
 
     //
     // Internal constants for the sake of convenience.
@@ -60,17 +54,14 @@ public class ParserAdapter implements XMLReader, DocumentHandler {
     private AttributeListAdapter attAdapter;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.351 -0500", hash_original_field = "4B9C3C20092D8C4E8F2E8C12AA6B8CAD", hash_generated_field = "B2B6F03C3323CC2E5DF880878C6AD064")
 
-
     private boolean parsing = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.353 -0500", hash_original_field = "7F5631DA40AFEA02D23B50F414B774CA", hash_generated_field = "9D06BBFBDDCCC6F79C4828C391273388")
 
     private String nameParts[] = new String[3];
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.355 -0500", hash_original_field = "78998326B0DF34C103DE9D9688C73EBE", hash_generated_field = "C1941098165849B9BB09C918699765BA")
 
-
     private Parser parser = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.357 -0500", hash_original_field = "1E7E98FB612B7958E6D5EE79CDF5B4A2", hash_generated_field = "1C437322B74865B450A5CD9EA125241E")
-
 
     private AttributesImpl atts = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.359 -0500", hash_original_field = "487D36470CC197CE32401A3EEE7C0D76", hash_generated_field = "F2647CFF1692834895465A43B4FBE112")
@@ -84,11 +75,9 @@ public class ParserAdapter implements XMLReader, DocumentHandler {
     private boolean uris = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.366 -0500", hash_original_field = "ACD7A3294F45ACE61F205E17A82EF3B3", hash_generated_field = "1D90ADA9EBB71DCE474548B241946332")
 
-
                 // Handlers
     Locator locator;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.368 -0500", hash_original_field = "85A3C4DFDDC2E8B053733750B1AEDE7A", hash_generated_field = "85A3C4DFDDC2E8B053733750B1AEDE7A")
-
 
     EntityResolver entityResolver = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.371 -0500", hash_original_field = "36C16184E94517BCEA93A1000BB15E7B", hash_generated_field = "36C16184E94517BCEA93A1000BB15E7B")
@@ -100,12 +89,10 @@ public class ParserAdapter implements XMLReader, DocumentHandler {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.375 -0500", hash_original_field = "B6B9BEC6A9AF54860C9708100871418D", hash_generated_field = "B6B9BEC6A9AF54860C9708100871418D")
 
     ErrorHandler errorHandler = null;
-
 
     ////////////////////////////////////////////////////////////////////
     // Constructors.
     ////////////////////////////////////////////////////////////////////
-
 
     /**
      * Construct a new parser adapter.
@@ -152,7 +139,6 @@ public ParserAdapter ()
     }
     }
 
-
     /**
      * Construct a new parser adapter.
      *
@@ -170,7 +156,6 @@ public ParserAdapter (Parser parser)
     {
     setup(parser);
     }
-
 
     /**
      * Internal setup method.
@@ -192,7 +177,6 @@ private void setup (Parser parser)
     nsSupport = new NamespaceSupport();
     attAdapter = new AttributeListAdapter();
     }
-
 
     /**
      * Set a feature flag for the parser.
@@ -233,7 +217,6 @@ public void setFeature (String name, boolean value)
     }
     }
 
-
     /**
      * Check a parser feature flag.
      *
@@ -264,7 +247,6 @@ public boolean getFeature (String name)
     }
     }
 
-
     /**
      * Set a parser property.
      *
@@ -285,7 +267,6 @@ public void setProperty (String name, Object value)
     {
     throw new SAXNotRecognizedException("Property: " + name);
     }
-
 
     /**
      * Get a parser property.
@@ -308,7 +289,6 @@ public Object getProperty (String name)
     throw new SAXNotRecognizedException("Property: " + name);
     }
 
-
     /**
      * Set the entity resolver.
      *
@@ -321,7 +301,6 @@ public void setEntityResolver (EntityResolver resolver)
     {
     entityResolver = resolver;
     }
-
 
     /**
      * Return the current entity resolver.
@@ -336,7 +315,6 @@ public EntityResolver getEntityResolver ()
     return entityResolver;
     }
 
-
     /**
      * Set the DTD handler.
      *
@@ -349,7 +327,6 @@ public void setDTDHandler (DTDHandler handler)
     {
     dtdHandler = handler;
     }
-
 
     /**
      * Return the current DTD handler.
@@ -364,7 +341,6 @@ public DTDHandler getDTDHandler ()
     return dtdHandler;
     }
 
-
     /**
      * Set the content handler.
      *
@@ -377,7 +353,6 @@ public void setContentHandler (ContentHandler handler)
     {
     contentHandler = handler;
     }
-
 
     /**
      * Return the current content handler.
@@ -392,7 +367,6 @@ public ContentHandler getContentHandler ()
     return contentHandler;
     }
 
-
     /**
      * Set the error handler.
      *
@@ -406,7 +380,6 @@ public void setErrorHandler (ErrorHandler handler)
     errorHandler = handler;
     }
 
-
     /**
      * Return the current error handler.
      *
@@ -419,7 +392,6 @@ public ErrorHandler getErrorHandler ()
     {
     return errorHandler;
     }
-
 
     /**
      * Parse an XML document.
@@ -439,7 +411,6 @@ public void parse (String systemId)
     {
     parse(new InputSource(systemId));
     }
-
 
     /**
      * Parse an XML document.
@@ -470,12 +441,9 @@ public void parse (InputSource input)
     parsing = false;
     }
 
-
-
     ////////////////////////////////////////////////////////////////////
     // Implementation of org.xml.sax.DocumentHandler.
     ////////////////////////////////////////////////////////////////////
-
 
     /**
      * Adapter implementation method; do not call.
@@ -493,7 +461,6 @@ public void setDocumentLocator (Locator locator)
         contentHandler.setDocumentLocator(locator);
     }
     }
-
 
     /**
      * Adapter implementation method; do not call.
@@ -513,7 +480,6 @@ public void startDocument ()
     }
     }
 
-
     /**
      * Adapter implementation method; do not call.
      * Adapt a SAX1 end document event.
@@ -531,7 +497,6 @@ public void endDocument ()
         contentHandler.endDocument();
     }
     }
-
 
     /**
      * Adapter implementation method; do not call.
@@ -563,7 +528,6 @@ public void startElement (String qName, AttributeList qAtts) throws SAXException
         }
         return;
     }
-
 
                 // OK, we're doing Namespace processing.
     nsSupport.pushContext();
@@ -666,7 +630,6 @@ public void startElement (String qName, AttributeList qAtts) throws SAXException
     }
     }
 
-
     /**
      * Adapter implementation method; do not call.
      * Adapt a SAX1 end element event.
@@ -703,7 +666,6 @@ public void endElement (String qName)
     nsSupport.popContext();
     }
 
-
     /**
      * Adapter implementation method; do not call.
      * Adapt a SAX1 characters event.
@@ -724,7 +686,6 @@ public void characters (char ch[], int start, int length)
         contentHandler.characters(ch, start, length);
     }
     }
-
 
     /**
      * Adapter implementation method; do not call.
@@ -747,7 +708,6 @@ public void ignorableWhitespace (char ch[], int start, int length)
     }
     }
 
-
     /**
      * Adapter implementation method; do not call.
      * Adapt a SAX1 processing instruction event.
@@ -767,13 +727,10 @@ public void processingInstruction (String target, String data)
         contentHandler.processingInstruction(target, data);
     }
     }
-
-
 
     ////////////////////////////////////////////////////////////////////
     // Internal utility methods.
     ////////////////////////////////////////////////////////////////////
-
 
     /**
      * Initialize the parser before each run.
@@ -802,11 +759,9 @@ private void setupParser ()
     parser.setDocumentHandler(this);
     locator = null;
     }
-
     
     final class AttributeListAdapter implements Attributes {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.410 -0500", hash_original_field = "CC06505CCCFB5DA974CBD3100BF339C4", hash_generated_field = "05A4A4B78CD79FD60575BA538F5EFA68")
-
 
     private AttributeList qAtts;
 
@@ -818,7 +773,6 @@ private void setupParser ()
 AttributeListAdapter ()
     {
     }
-
 
     /**
      * Set the embedded AttributeList.
@@ -835,7 +789,6 @@ void setAttributeList (AttributeList qAtts)
         this.qAtts = qAtts;
     }
 
-
     /**
      * Return the length of the attribute list.
      *
@@ -848,7 +801,6 @@ public int getLength ()
     {
         return qAtts.getLength();
     }
-
 
     /**
      * Return the Namespace URI of the specified attribute.
@@ -864,7 +816,6 @@ public String getURI (int i)
         return "";
     }
 
-
     /**
      * Return the local name of the specified attribute.
      *
@@ -879,7 +830,6 @@ public String getLocalName (int i)
         return "";
     }
 
-
     /**
      * Return the qualified (prefixed) name of the specified attribute.
      *
@@ -892,7 +842,6 @@ public String getQName (int i)
     {
         return qAtts.getName(i).intern();
     }
-
 
     /**
      * Return the type of the specified attribute.
@@ -907,7 +856,6 @@ public String getType (int i)
         return qAtts.getType(i).intern();
     }
 
-
     /**
      * Return the value of the specified attribute.
      *
@@ -920,7 +868,6 @@ public String getValue (int i)
     {
         return qAtts.getValue(i);
     }
-
 
     /**
      * Look up an attribute index by Namespace name.
@@ -936,7 +883,6 @@ public int getIndex (String uri, String localName)
     {
         return -1;
     }
-
 
     /**
      * Look up an attribute index by qualified (prefixed) name.
@@ -958,7 +904,6 @@ public int getIndex (String qName)
         return -1;
     }
 
-
     /**
      * Look up the type of an attribute by Namespace name.
      *
@@ -973,7 +918,6 @@ public String getType (String uri, String localName)
         return null;
     }
 
-
     /**
      * Look up the type of an attribute by qualified (prefixed) name.
      *
@@ -986,7 +930,6 @@ public String getType (String qName)
     {
         return qAtts.getType(qName).intern();
     }
-
 
     /**
      * Look up the value of an attribute by Namespace name.
@@ -1002,7 +945,6 @@ public String getValue (String uri, String localName)
         return null;
     }
 
-
     /**
      * Look up the value of an attribute by qualified (prefixed) name.
      *
@@ -1015,12 +957,9 @@ public String getValue (String qName)
     {
         return qAtts.getValue(qName);
     }
-
         
     }
-
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.544 -0400", hash_original_method = "295B884B2E4E1E5DF2659FCF14AB7437", hash_generated_method = "A63E40ABA0ADB07D109396D7430691CA")
     private String [] processName(String qName, boolean isAttribute,
                    boolean useException) throws SAXException {
@@ -1059,7 +998,6 @@ String [] var6651EAC2994005EE903B8D00ACB7442E_128503195 =         parts;
         //return parts;
     }
 
-
     /**
      * Report a non-fatal error.
      *
@@ -1076,7 +1014,6 @@ void reportError (String message)
         errorHandler.error(makeException(message));
     }
 
-
     /**
      * Construct an exception for the current context.
      *
@@ -1092,7 +1029,6 @@ private SAXParseException makeException (String message)
         return new SAXParseException(message, null, null, -1, -1);
     }
     }
-
 
     /**
      * Throw an exception if we are parsing.

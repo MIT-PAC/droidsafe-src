@@ -18,10 +18,6 @@ import libcore.net.url.FtpHandler;
 import libcore.net.url.JarHandler;
 import libcore.net.url.UrlUtils;
 
-
-
-
-
 public final class URL implements Serializable {
 
     /**
@@ -44,14 +40,12 @@ public static synchronized void setURLStreamHandlerFactory(URLStreamHandlerFacto
     private static final long serialVersionUID = -7627629688361524110L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.741 -0500", hash_original_field = "C1802D278A338655A9B7C39728F4AFD1", hash_generated_field = "7C5EE8C1A882C933CC017CE2A46222A0")
 
-
     private static URLStreamHandlerFactory streamHandlerFactory;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.744 -0500", hash_original_field = "6456377C042EB67ED985FD40E1A4A79C", hash_generated_field = "16539CC8BECB892A33EEA156DBF8E5B0")
 
     private static final Hashtable<String, URLStreamHandler> streamHandlers
             = new Hashtable<String, URLStreamHandler>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.747 -0500", hash_original_field = "DE3F28962485CE99CA97D0A480B93596", hash_generated_field = "512C13BA7A4120A610964F395EA31E91")
-
 
     @DSVAModeled
     private String protocol;
@@ -76,7 +70,6 @@ public static synchronized void setURLStreamHandlerFactory(URLStreamHandlerFacto
     private String ref;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.761 -0500", hash_original_field = "10F5F4BA00300524BD223470F05A568F", hash_generated_field = "BED672F8886D4042083406EE52B803AE")
 
-
     @DSVAModeled
     private transient String userInfo;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.763 -0500", hash_original_field = "4936DBCD90EF1129A7D9F03C4DB55EE0", hash_generated_field = "1E845389D3352EECA0945BADE902EA26")
@@ -88,7 +81,6 @@ public static synchronized void setURLStreamHandlerFactory(URLStreamHandlerFacto
     @DSVAModeled
     private transient String query;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.768 -0500", hash_original_field = "3EC59952C66038F01917A6F0E7AE443B", hash_generated_field = "9DB4BB741418299310AFA5D983E7DA2C")
-
 
     transient URLStreamHandler streamHandler;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.770 -0500", hash_original_field = "5A19588B577A4926772CAE314F19FADE", hash_generated_field = "24254DF41EE7E0D088838123A7BE5D39")
@@ -536,9 +528,7 @@ public URI toURILenient() throws URISyntaxException {
 @Override public String toString() {
         return toExternalForm();
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.975 -0400", hash_original_method = "6763BB94BC9C65378EF7195BF94F5BED", hash_generated_method = "ACF3E5B31DE51D0A38B73B367D8CC436")
     public String toExternalForm() {
         if(streamHandler == null)        

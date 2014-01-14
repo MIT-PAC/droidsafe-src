@@ -18,15 +18,8 @@ import java.security.SignatureException;
 import java.security.cert.CertificateFactory;
 import java.util.Date;
 
-
-
-
-
-
 public abstract class X509Certificate extends Certificate {
-
     
-    @DSModeled(DSC.SAFE)
     public static final X509Certificate getInstance(InputStream inStream) throws CertificateException {
         if (inStream == null) {
             throw new CertificateException("inStream == null");
@@ -201,7 +194,6 @@ public static final X509Certificate getInstance(byte[] certData)
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.825 -0500", hash_original_field = "C7A44D4A43B1906F79B31BCC6A88354D", hash_generated_field = "2112A4F4A023E8F770192D2021400B78")
 
-
     private static Constructor constructor;
 
     /**
@@ -238,7 +230,6 @@ public X509Certificate() {
     
 public abstract void checkValidity()
             throws CertificateExpiredException, CertificateNotYetValidException;
-
 
     /**
      * Checks whether the certificate is valid at the specified date.

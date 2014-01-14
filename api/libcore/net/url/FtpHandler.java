@@ -10,13 +10,8 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.net.URLStreamHandler;
 
-
-
-
-
 public class FtpHandler extends URLStreamHandler {
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.195 -0400", hash_original_method = "D147DA8ADE52659E6B675F3FCB66ABA5", hash_generated_method = "D147DA8ADE52659E6B675F3FCB66ABA5")
     public FtpHandler ()
     {
@@ -70,7 +65,6 @@ public class FtpHandler extends URLStreamHandler {
     protected int getDefaultPort() {
         return 21;
     }
-
     
 }
 

@@ -19,10 +19,6 @@ import libcore.io.Libcore;
 import dalvik.system.VMDebug;
 import dalvik.system.VMStack;
 
-
-
-
-
 public class Runtime {
 
     /**
@@ -35,14 +31,10 @@ public class Runtime {
 public static Runtime getRuntime() {
         return mRuntime;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeExit(int code, boolean isExit) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     private static String nativeLoad(String filename, ClassLoader loader) {
 		String ret = new String();
 		ret.addTaint(filename.taint);
@@ -317,7 +309,6 @@ public void exit(int code) {
     	return getTaintLong();
     }
 
-
     /**
      * Indicates to the VM that it would be a good time to run the
      * garbage collector. Note that this is a hint only. There is no guarantee
@@ -328,7 +319,6 @@ public void exit(int code) {
     public void gc(){
     	//Formerly a native method
     }
-
 
     /**
      * Loads and links the dynamic library that is identified through the
@@ -444,7 +434,6 @@ public void runFinalization() {
     	//Formerly a native method
     	return getTaintLong();
     }
-
 
     /**
      * Switches the output of debug information for instructions on or off.

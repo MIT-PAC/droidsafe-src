@@ -24,13 +24,8 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.KeyEvent;
 
-
-
-
-
 public class SearchManager implements DialogInterface.OnDismissListener, DialogInterface.OnCancelListener {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:58.412 -0500", hash_original_field = "B2601CA7445F6BA19FA7884763D82281", hash_generated_field = "1A61763F9CABC9206BB5AE6E570AB8AE")
-
 
     private static final boolean DBG = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:58.414 -0500", hash_original_field = "EC590F4189897A1A0426B9BED7D50C77", hash_generated_field = "98C0772E1BD537CBFF8890EF0E8B5925")
@@ -110,7 +105,6 @@ public class SearchManager implements DialogInterface.OnDismissListener, DialogI
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:58.472 -0500", hash_original_field = "097B05FF3EDD917E9AF5C967019C2AD9", hash_generated_field = "2508AA2CC6815F08FDE48C6DB316521B")
 
     public final static String SUGGEST_COLUMN_ICON_2 = "suggest_icon_2";
-
     
     public interface OnDismissListener {
         
@@ -191,7 +185,6 @@ public class SearchManager implements DialogInterface.OnDismissListener, DialogI
     private static ISearchManager mService;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:58.524 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
 
-
     private  Context mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:58.526 -0500", hash_original_field = "34442E2B955F925176D13B350E91112C", hash_generated_field = "E59E6E4A97DB236DE3DC575FA608E392")
 
@@ -205,7 +198,6 @@ public class SearchManager implements DialogInterface.OnDismissListener, DialogI
  OnCancelListener mCancelListener = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:58.534 -0500", hash_original_field = "B93D728F11520F5ED9A8F4EC523DF611", hash_generated_field = "247F9D3B324680CEDDC332FCA6608926")
 
-
     private SearchDialog mSearchDialog;
 
     /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:58.537 -0500", hash_original_method = "A1F4172E8F505D7306645B5F1AC929D8", hash_generated_method = "A1F4172E8F505D7306645B5F1AC929D8")
@@ -218,7 +210,7 @@ SearchManager(Context context, Handler handler)  {
     }
     
     // Manually added
-    @DSModeled(DSC.BAN)
+    
     public SearchManager(Context context) {
         mContext = context;
         addTaint(context.getTaint());

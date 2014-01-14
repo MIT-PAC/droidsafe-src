@@ -8,11 +8,6 @@ import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
-
-
-
-
-
 public class DrmRawContent {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:01.292 -0500", hash_original_field = "FAE08528D4AE89FDF2D83D608F2B7B1C", hash_generated_field = "29181C4D953A39C351B8C01664607777")
 
@@ -71,7 +66,6 @@ public class DrmRawContent {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:01.336 -0500", hash_original_field = "796FD106AB1D7F5DCE9144A88FC7E265", hash_generated_field = "ED45BCA90194A65359E902CD54F1901B")
 
     private int rawType;
-
     
     class DrmInputStream extends InputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:01.354 -0500", hash_original_field = "FF1318BD7B381B7887A6EEC627EFEF6C", hash_generated_field = "61C76B683BBEFCB5006250611D355A94")
@@ -221,10 +215,8 @@ public long skip(long n) throws IOException {
 public void close() {
             isClosed = true;
         }
-
         
     }
-
 
     /**
      * Construct a DrmRawContent object.
@@ -378,10 +370,7 @@ public int getContentLength(DrmRights rights) throws DrmException {
     	addTaint(mimeType);
     	return getTaintInt();
     }
-
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.546 -0400", hash_original_method = "F8C7C9754DABA7F76C3A7CE0927D169C", hash_generated_method = "FB49DAE02267FB01D7F8074178E3812C")
     private String nativeGetRightsAddress() {
     	String s = new String();
@@ -406,7 +395,6 @@ public int getContentLength(DrmRights rights) throws DrmException {
     	return getTaintInt();
     }
 
-
     /**
      * native method: get a piece of media content data.
      *
@@ -429,10 +417,7 @@ public int getContentLength(DrmRights rights) throws DrmException {
     	addTaint(mediaOff);
     	return getTaintInt();
     }
-
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.547 -0400", hash_original_method = "9C49D7586D5C53FF58306596D0BFC464", hash_generated_method = "3114617F023481A1F61CCC44387FD7A5")
     private String nativeGetContentType() {
     	String s = new String();
@@ -453,7 +438,6 @@ public int getContentLength(DrmRights rights) throws DrmException {
     	//Formerly a native method
     	return getTaintInt();
     }
-
 
     /**
      * The finalizer of the DRMRawContent. Do some cleanup.

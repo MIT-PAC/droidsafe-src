@@ -34,14 +34,8 @@ import org.apache.http.params.HttpParams;
 import android.content.Context;
 import android.util.Log;
 
-
-
-
-
 public class HttpsConnection extends Connection {
-
     
-    @DSModeled(DSC.SAFE)
     public static void initializeEngine(File sessionDir) {
         try {
             SSLClientSessionCache cache = null;
@@ -428,7 +422,6 @@ class SSLConnectionClosedByUserException extends SSLException {
 public SSLConnectionClosedByUserException(String reason) {
         super(reason);
     }
-
     
 }
 

@@ -26,11 +26,6 @@ import android.widget.SeekBar.OnSeekBarChangeListener;
 
 import com.android.internal.policy.PolicyManager;
 
-
-
-
-
-
 public class MediaController extends FrameLayout {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:56.766 -0500", hash_original_field = "51A7C007DC927AE81263901496BB16EF", hash_generated_field = "D48789DDA30E2CD97FBA0FDD6D61695B")
 
@@ -42,7 +37,6 @@ public class MediaController extends FrameLayout {
 
     private static final int    SHOW_PROGRESS = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:56.740 -0500", hash_original_field = "9F93FA23B60E8D7CE73098ED27CD49FB", hash_generated_field = "C74867B897C11D551703ED8F09673E65")
-
 
     private MediaPlayerControl  mPlayer;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:56.742 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
@@ -119,8 +113,8 @@ public class MediaController extends FrameLayout {
     private ImageButton         mPrevButton;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.958 -0400", hash_original_field = "660FD0A006FEE08090F60B78E5797043", hash_generated_field = "99EED3785EF0C907A603E89C20142DDB")
 
-    private OnLayoutChangeListener mLayoutChangeListener = new OnLayoutChangeListener() {        
-        @DSModeled(DSC.SAFE)
+    private OnLayoutChangeListener mLayoutChangeListener = new OnLayoutChangeListener() {
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.958 -0400", hash_original_method = "B906B3E54DBAAD427317F640A60E799C", hash_generated_method = "02969F67A79B551D4857B063D0CDE2B2")
         public void onLayoutChange(View v, int left, int top, int right,
                 int bottom, int oldLeft, int oldTop, int oldRight,
@@ -140,18 +134,13 @@ public class MediaController extends FrameLayout {
             addTaint(oldRight);
             addTaint(oldBottom);
             
-            
-            
-                
-            
         }
-
         
 };
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.959 -0400", hash_original_field = "73CE077A46042732A8F7D92A2C1AF8E9", hash_generated_field = "D5E2F5EC139F4E66D1268BA7AC51AD66")
 
-    private OnTouchListener mTouchListener = new OnTouchListener() {        
-        @DSModeled(DSC.SAFE)
+    private OnTouchListener mTouchListener = new OnTouchListener() {
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.959 -0400", hash_original_method = "16F82C3AF10F7CC437B6D7BEE6D0DC69", hash_generated_method = "670745B700E2F0AEC3EB680BB5FE1569")
         public boolean onTouch(View v, MotionEvent event) {
             
@@ -168,20 +157,13 @@ public class MediaController extends FrameLayout {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_513393010 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_513393010;
             
-            
-                
-                    
-                
-            
-            
         }
-
         
 };
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.959 -0400", hash_original_field = "52BC51643FEA9D0069B8F60CDBE72485", hash_generated_field = "07C335A7203DDCB0B6B0476786CDB55E")
 
-    private Handler mHandler = new Handler() {        
-        @DSModeled(DSC.SAFE)
+    private Handler mHandler = new Handler() {
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.959 -0400", hash_original_method = "8F0BA1F98715C95935AC2F391AEFF8BC", hash_generated_method = "AAD2F5C855014B3F65805A54CE92C144")
         @Override
         public void handleMessage(Message msg) {
@@ -189,9 +171,7 @@ public class MediaController extends FrameLayout {
             
             hide();
             
-            
             pos = setProgress();
-            
             
             {
                 boolean var35D9B4E6001F9970817DCA22BC2D906C_887351060 = (!mDragging && mShowing && mPlayer.isPlaying());
@@ -199,31 +179,17 @@ public class MediaController extends FrameLayout {
                     msg = obtainMessage(SHOW_PROGRESS);
                     sendMessageDelayed(msg, 1000 - (pos % 1000));
                 } 
-            } 
+            }
             
             addTaint(msg.getTaint());
             
-            
-            
-                
-                    
-                    
-                
-                    
-                    
-                        
-                        
-                    
-                    
-            
         }
-
         
 };
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.960 -0400", hash_original_field = "3C390C0F3EC8C6E76F3F8507AC8E9757", hash_generated_field = "BE0735A4F6CFAEC244ADB1A1B9E79B8E")
 
-    private View.OnClickListener mPauseListener = new View.OnClickListener() {        
-        @DSModeled(DSC.SAFE)
+    private View.OnClickListener mPauseListener = new View.OnClickListener() {
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.960 -0400", hash_original_method = "F90DC617061E164BAEBDBFB1EA5D02BB", hash_generated_method = "811C9C24B7A4723801F0D8BF2718901B")
         public void onClick(View v) {
             
@@ -231,16 +197,13 @@ public class MediaController extends FrameLayout {
             show(sDefaultTimeout);
             addTaint(v.getTaint());
             
-            
-            
         }
-
         
 };
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.962 -0400", hash_original_field = "2008B1EA87DEDE92B83942CF8FDFADEE", hash_generated_field = "3F48026F72D34D65675A07880DC105DA")
 
-    private OnSeekBarChangeListener mSeekListener = new OnSeekBarChangeListener() {        
-        @DSModeled(DSC.SAFE)
+    private OnSeekBarChangeListener mSeekListener = new OnSeekBarChangeListener() {
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.960 -0400", hash_original_method = "6758392684DBD95D44B26F154F80CA94", hash_generated_method = "F7437A498E3BC8B8A4C329E77821999A")
         public void onStartTrackingTouch(SeekBar bar) {
             
@@ -249,13 +212,8 @@ public class MediaController extends FrameLayout {
             mHandler.removeMessages(SHOW_PROGRESS);
             addTaint(bar.getTaint());
             
-            
-            
-            
         }
-
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.961 -0400", hash_original_method = "A0EB029A26053134120EC96D7E9882E8", hash_generated_method = "79AFAB679FF9035633BFBD81A27D25D1")
         public void onProgressChanged(SeekBar bar, int progress, boolean fromuser) {
             
@@ -266,19 +224,9 @@ public class MediaController extends FrameLayout {
             addTaint(bar.getTaint());
             addTaint(progress);
             addTaint(fromuser);
-            
-            
-                
-            
-            
-            
-            
-            
                 
         }
-
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.962 -0400", hash_original_method = "53B60B6767600F274A52648AF75E3493", hash_generated_method = "AC47A2FB017606BEB8453C4173FA9028")
         public void onStopTrackingTouch(SeekBar bar) {
             
@@ -289,19 +237,13 @@ public class MediaController extends FrameLayout {
             mHandler.sendEmptyMessage(SHOW_PROGRESS);
             addTaint(bar.getTaint());
             
-            
-            
-            
-            
-            
         }
-
         
 };
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.962 -0400", hash_original_field = "9A9DC70DF59B8B1F6B8A9A0C085DFDEA", hash_generated_field = "5DBE77CBBAA3F1DC86B3ACDF42D05696")
 
-    private View.OnClickListener mRewListener = new View.OnClickListener() {        
-        @DSModeled(DSC.SAFE)
+    private View.OnClickListener mRewListener = new View.OnClickListener() {
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.962 -0400", hash_original_method = "B5D53DC8A12E02793B3EF0C8511F70D5", hash_generated_method = "0956446804574FD1FF0574BB3CAF295E")
         public void onClick(View v) {
             
@@ -312,19 +254,13 @@ public class MediaController extends FrameLayout {
             show(sDefaultTimeout);
             addTaint(v.getTaint());
             
-            
-            
-            
-            
-            
         }
-
         
 };
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.963 -0400", hash_original_field = "50D091DCCFB4B00402EDDB2863541762", hash_generated_field = "357A31A66BFB23DD2BBC706283F10430")
 
-    private View.OnClickListener mFfwdListener = new View.OnClickListener() {        
-        @DSModeled(DSC.SAFE)
+    private View.OnClickListener mFfwdListener = new View.OnClickListener() {
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:12.963 -0400", hash_original_method = "BF054D35499B7B032734EBAD3598DA2F", hash_generated_method = "43AF20A0E570119EBA30B6224936073D")
         public void onClick(View v) {
             
@@ -335,13 +271,7 @@ public class MediaController extends FrameLayout {
             show(sDefaultTimeout);
             addTaint(v.getTaint());
             
-            
-            
-            
-            
-            
         }
-
         
 };
 
@@ -761,7 +691,6 @@ private void doPauseResume() {
         }
         updatePausePlay();
     }
-
     
     public interface MediaPlayerControl {
         void    start();

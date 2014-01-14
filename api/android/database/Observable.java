@@ -6,15 +6,11 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.ArrayList;
 
-
-
-
 public abstract class Observable<T> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.562 -0500", hash_original_field = "111F340D3667EAAF312D756E4DC51E42", hash_generated_field = "68FF9C8CE88B8AC7C5CD64388A1A318D")
 
     protected final ArrayList<T> mObservers = new ArrayList<T>();
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.062 -0400", hash_original_method = "70464F2D6E4F3B59517C778B3B1A93D5", hash_generated_method = "70464F2D6E4F3B59517C778B3B1A93D5")
     public Observable ()
     {
@@ -74,7 +70,6 @@ public void unregisterAll() {
             mObservers.clear();
         }        
     }
-
     
 }
 

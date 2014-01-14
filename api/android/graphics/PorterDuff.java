@@ -5,18 +5,13 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
 public class PorterDuff {
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.662 -0400", hash_original_method = "2DF832AFFC44E839897834B5EF3E55EC", hash_generated_method = "2DF832AFFC44E839897834B5EF3E55EC")
     public PorterDuff ()
     {
         //Synthesized constructor
     }
-
 
     public enum Mode {
         CLEAR       (0),
@@ -47,7 +42,6 @@ Mode(int nativeInt) {
 
         public  int nativeInt;
     }
-
     
 }
 

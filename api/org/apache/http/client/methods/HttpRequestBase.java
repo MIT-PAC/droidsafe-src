@@ -23,14 +23,11 @@ import org.apache.http.params.HttpProtocolParams;
 public abstract class HttpRequestBase extends AbstractHttpMessage implements HttpUriRequest, AbortableHttpRequest, Cloneable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:44.132 -0500", hash_original_field = "BE55E2806D75A87D6EA3B70A822FC2DC", hash_generated_field = "44B412448D230F2FF1F66097B168F5A5")
 
-
     private Lock abortLock;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:44.135 -0500", hash_original_field = "D257EA6B1465C401242DE11DC61376AA", hash_generated_field = "7C8E769DDEE22768B70313CCC815CA01")
 
-
     private boolean aborted;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:44.137 -0500", hash_original_field = "1154143EF3A042E6515BD6D5B42C64B6", hash_generated_field = "DDFAECCF21F90F28142F5C866534A5C3")
-
     
     @DSVAModeled
     private URI uri;
@@ -41,7 +38,6 @@ public abstract class HttpRequestBase extends AbstractHttpMessage implements Htt
 
     private ConnectionReleaseTrigger releaseTrigger;
     
-    @DSModeled(DSC.SPEC)
 	public HttpRequestBase() { 
 		super();
 	}
@@ -135,7 +131,7 @@ public void abort() {
             localTrigger = releaseTrigger;
         } finally {
             this.abortLock.unlock();
-        }        
+        }
 
         // Trigger the callbacks outside of the lock, to prevent
         // deadlocks in the scenario where the callbacks have
@@ -172,7 +168,6 @@ public boolean isAborted() {
         clone.params = (HttpParams) CloneUtils.clone(this.params);
         return clone;
     }
-
     
 }
 

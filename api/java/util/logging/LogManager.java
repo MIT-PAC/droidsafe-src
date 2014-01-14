@@ -19,10 +19,6 @@ import java.util.StringTokenizer;
 
 import libcore.io.IoUtils;
 
-
-
-
-
 public class LogManager {
 
     /**
@@ -84,8 +80,7 @@ static Object getInstanceByClass(final String className) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.309 -0500", hash_original_field = "83A69C0A6B959D9FD4B02E07F651A62C", hash_generated_field = "3B43FF39F7B726230E736460CF0CFA39")
 
     private PropertyChangeSupport listeners;
-    
-        @DSModeled(DSC.SAFE)
+        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.194 -0400", hash_original_method = "F83269E1889FF9DC50A0440D3CD9234B", hash_generated_method = "25A4D420CCA8D659CCCCE116BE659C0D")
     protected  LogManager() {
         loggers = new Hashtable<String, Logger>();
@@ -396,7 +391,6 @@ synchronized Logger getOrCreate(String name, String resourceBundleName) {
         }
         return result;
     }
-
 
     /**
      * Sets the parent of this logger in the namespace. Callers must first

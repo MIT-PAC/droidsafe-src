@@ -30,13 +30,9 @@ import com.android.internal.util.TypedProperties;
 import dalvik.bytecode.OpcodeInfo;
 import dalvik.system.VMDebug;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public final class Debug {
-
 
     /**
      * Wait until a debugger attaches.  As soon as the debugger attaches,
@@ -686,43 +682,29 @@ public static void resetThreadGcInvocationCount() {
 public static void resetAllCounts() {
         VMDebug.resetAllocCount(VMDebug.KIND_ALL_COUNTS);
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static long getNativeHeapSize() {
         return DSUtils.UNKNOWN_LONG;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static long getNativeHeapAllocatedSize() {
         return DSUtils.UNKNOWN_LONG;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static long getNativeHeapFreeSize() {
         return DSUtils.UNKNOWN_LONG;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static void getMemoryInfo(MemoryInfo memoryInfo) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static void getMemoryInfo(int pid, MemoryInfo memoryInfo) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static long getPss() {
         return DSUtils.UNKNOWN_LONG;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static long getPss(int pid) {
         return DSUtils.UNKNOWN_LONG;
     }
@@ -821,9 +803,7 @@ public static void dumpHprofData(String fileName, FileDescriptor fd)
 public static void dumpHprofDataDdms() {
         VMDebug.dumpHprofDataDdms();
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static void dumpNativeHeap(FileDescriptor fd) {
     }
 
@@ -837,33 +817,23 @@ public static void dumpHprofDataDdms() {
 public static long countInstancesOfClass(Class cls) {
         return VMDebug.countInstancesOfClass(cls, true);
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static int getBinderSentTransactions() {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static int getBinderReceivedTransactions() {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static final int getBinderLocalObjectCount() {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static final int getBinderProxyObjectCount() {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static final int getBinderDeathObjectCount() {
         return DSUtils.UNKNOWN_INT;
     }
@@ -901,7 +871,6 @@ public static final void dumpReferenceTables() {
         VMDebug.dumpReferenceTables();
     }
 
-
     /**
      * Returns true if the type of the field matches the specified class.
      * Handles the case where the class is, e.g., java.lang.Boolean, but
@@ -931,7 +900,6 @@ private static boolean fieldTypeMatches(Field field, Class<?> cl) {
             return false;
         }
     }
-
 
     /**
      * Looks up the property that corresponds to the field, and sets the field's value
@@ -982,7 +950,6 @@ private static void modifyFieldIfSet(final Field field, final TypedProperties pr
             }
         }
     }
-
 
     /**
      * Equivalent to <code>setFieldsOn(cl, false)</code>.
@@ -1112,10 +1079,8 @@ public static boolean dumpService(String name, FileDescriptor fd, String[] args)
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.709 -0500", hash_original_field = "B1C7DEC106DECCED86A48969B6CC4DCD", hash_generated_field = "389377F3F689781EB2D3F49236B9D2AF")
 
     private static final String TAG = "Debug";
-
     
     public static class MemoryInfo implements Parcelable {
-
 
         /* @hide */
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.784 -0500", hash_original_method = "7725E7152BF27C491568D120E3EC44B3", hash_generated_method = "743B72EA0B657CDE2933D000A204229E")
@@ -1179,7 +1144,6 @@ public MemoryInfo[] newArray(int size) {
 
         public int otherSharedDirty;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.766 -0500", hash_original_field = "F9A2B23646745458CFC666A2357AAEA5", hash_generated_field = "A5B0CBFEF61DBB07B6E8C5D2F1ECFDA9")
-
 
         private int[] otherStats = new int[NUM_OTHER_STATS*3];
 
@@ -1288,8 +1252,6 @@ public void readFromParcel(Parcel source) {
             }
         
     }
-
-
     
     public static class InstructionCount {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:43.008 -0500", hash_original_field = "149D550550C2E222FA0A2D463AB29509", hash_generated_field = "7A22C579A39E22551B4E74531C1864CF")
@@ -1297,7 +1259,6 @@ public void readFromParcel(Parcel source) {
         private static final int NUM_INSTR =
             OpcodeInfo.MAXIMUM_PACKED_VALUE + 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:43.010 -0500", hash_original_field = "8BF91F36E45CDC8E16970AC613A2D773", hash_generated_field = "49E4B6FD194C81A543C4A6FC8DB4D611")
-
 
         private int[] mCounts;
 
@@ -1375,8 +1336,6 @@ public int globalMethodInvocations() {
             return count;
         }
     }
-
-
     
     @Target({ ElementType.FIELD }) @Retention(RetentionPolicy.RUNTIME) public @interface DebugProperty {
     }
@@ -1400,11 +1359,9 @@ public int globalMethodInvocations() {
     private static final int MIN_DEBUGGER_IDLE = 1300;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.730 -0500", hash_original_field = "D68D2F56E8C0A411BF8AFA44055885CE", hash_generated_field = "516CA5EC79C400FE6CEF4095D82B3B6E")
 
-
     /* how long to sleep when polling for activity */
     private static final int SPIN_DELAY = 200;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.732 -0500", hash_original_field = "B616B2E024183D9F4212464243987958", hash_generated_field = "8ACBCE355D8F2D7053823CC255609B69")
-
 
     /**
      * Default trace file path and file

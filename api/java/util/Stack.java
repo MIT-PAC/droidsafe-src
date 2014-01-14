@@ -8,7 +8,6 @@ import droidsafe.annotations.*;
 public class Stack<E> extends Vector<E> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:23.932 -0500", hash_original_field = "7B45B91C3E17EC3DBBE0867E23E6214B", hash_generated_field = "B114A5411C4CC65AB8A6E3407B2F7E77")
 
-
     private static final long serialVersionUID = 1224463164541339165L;
 
     /**
@@ -18,18 +17,14 @@ public class Stack<E> extends Vector<E> {
     
 public Stack() {
     }
-
-    
-        @DSModeled(DSC.SAFE)
+        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.605 -0400", hash_original_method = "3F97FF544B92201B8032D3FE94BC3E20", hash_generated_method = "86C35B7C3A64A4D9AC5FCD2E9E672478")
     public boolean empty() {
         return isEmpty();
         // ---------- Original Method ----------
         //return isEmpty();
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.606 -0400", hash_original_method = "FF35E7A3F40F4BCE3A9B7A35AFC11586", hash_generated_method = "EAE9722EE9383D5958156EB7C1DF1FAB")
     @SuppressWarnings("unchecked")
     public synchronized E peek() {
@@ -40,9 +35,7 @@ public Stack() {
         }
         return getLastElement();
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.606 -0400", hash_original_method = "47AB8756F2D7E98B3A47AFF9902921A8", hash_generated_method = "86A6868C7D8AEBB6A709DB23A19CCF42")
     @SuppressWarnings("unchecked")
     public synchronized E pop() {
@@ -69,9 +62,7 @@ public E push(E object) {
         addElement(object);
         return object;
     }
-
-    
-        @DSModeled(DSC.SAFE)
+        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.607 -0400", hash_original_method = "F96799DE4EC4413EE3D35D731594FD43", hash_generated_method = "B0B6D4D19115A554C7607E38136D7394")
     public synchronized int search(Object o) {
         addTaint(o.getTaint());

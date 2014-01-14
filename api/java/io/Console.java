@@ -8,9 +8,6 @@ import java.util.Formatter;
 
 import libcore.io.Libcore;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public final class Console implements Flushable {
@@ -48,9 +45,7 @@ private static int setEcho(boolean on, int previousState) {
             throw new IOError(ex);
         }
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int setEchoImpl(boolean on, int previousState) throws IOException {
         return DSUtils.UNKNOWN_INT;
     }
@@ -59,10 +54,8 @@ private static int setEcho(boolean on, int previousState) {
     private static final Object CONSOLE_LOCK = new Object();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.419 -0500", hash_original_field = "D86A51B3BC21F2A21BE61CB7BEF830EE", hash_generated_field = "5493C82FF0BE1436D143CDAA63D9AEDB")
 
-
     private static final Console console = makeConsole();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.421 -0500", hash_original_field = "58293CE1EAA90810476F557AF923A37B", hash_generated_field = "E1481C92EA038B35574B186892F59636")
-
 
     private  ConsoleReader reader;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.424 -0500", hash_original_field = "47BAA8D50DA4DDACCEB960B9BE04B99A", hash_generated_field = "91C0360688E01789B87DE4B98C351C86")
@@ -177,7 +170,6 @@ public char[] readPassword() {
             }
         }
     }
-
     
     private static class ConsoleReader extends BufferedReader {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.466 -0500", hash_original_method = "3E2241309C439E282539AD753E3DFD21", hash_generated_method = "69CC72363FBE8C1D916398D13FD10521")
@@ -193,11 +185,8 @@ public ConsoleReader(InputStream in) throws IOException {
         public void close() {
             // Console.reader cannot be closed.
         }
-
         
     }
-
-
     
     private static class ConsoleWriter extends PrintWriter {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.473 -0500", hash_original_method = "FA093E69A8E73F56316EC18ECB712B0D", hash_generated_method = "67FBCFEF5ED0B313D9140CDC4784401D")
@@ -214,7 +203,6 @@ public ConsoleWriter(OutputStream out) {
             // Console.writer cannot be closed.
             flush();
         }
-
         
     }
 

@@ -5,20 +5,12 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class Matrix {
-
-
-    @DSModeled(DSC.SAFE)
+    
     public static void multiplyMM(float[] result, int resultOffset,
             float[] lhs, int lhsOffset, float[] rhs, int rhsOffset) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static void multiplyMV(float[] resultVec,
             int resultVecOffset, float[] lhsMat, int lhsMatOffset,
             float[] rhsVec, int rhsVecOffset) {
@@ -233,7 +225,6 @@ public static void orthoM(float[] m, int mOffset,
         m[mOffset + 9] = 0.0f;
         m[mOffset + 11] = 0.0f;
     }
-
 
     /**
      * Define a projection matrix in terms of six clip planes

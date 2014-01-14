@@ -7,21 +7,12 @@ import droidsafe.annotations.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-
-
-
-
-
 public class WebBackForwardList implements Cloneable, Serializable {
-
     
-    @DSModeled(DSC.SAFE)
     static synchronized void restoreIndex(int nativeFrame,
             int index) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeClose(int nativeFrame) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.270 -0500", hash_original_field = "9D5DB06DCD458CB1FB573ED28600B2B5", hash_generated_field = "0311A696B59887F86EF6109DBE0484CC")
@@ -211,7 +202,6 @@ synchronized void setCurrentIndex(int newIndex) {
             mCallbackProxy.onIndexChanged(getItemAtIndex(newIndex), newIndex);
         }
     }
-
     
 }
 

@@ -8,8 +8,6 @@ import java.io.PrintWriter;
 
 import android.graphics.Matrix;
 
-
-
 public class Transformation {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:56.895 -0500", hash_original_field = "9704FF865769EA95AB8B88F86C46851B", hash_generated_field = "251BA68661EA4866D7BD703B646D7AF6")
 
@@ -25,7 +23,6 @@ public class Transformation {
     public static int TYPE_BOTH = TYPE_ALPHA | TYPE_MATRIX;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:56.905 -0500", hash_original_field = "ECC1E936684D992B258D335000C3D72A", hash_generated_field = "22DB0525CC1913C27DD5ABB85563881B")
 
-
     protected Matrix mMatrix;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:56.908 -0500", hash_original_field = "1109060D01B8BF804FF00B533C2F6EC9", hash_generated_field = "57D7CB4B870C728DA589BE845D2CCF9A")
 
@@ -34,13 +31,10 @@ public class Transformation {
 
     protected int mTransformationType;
     
-    @DSModeled(DSC.SAFE)
     public Transformation() {
         mMatrix = new Matrix();
     }
-
     
-    @DSModeled(DSC.SAFE)
     public void clear() {
         mAlpha = 1.0f;
         mTransformationType = TYPE_BOTH;

@@ -30,13 +30,8 @@ import android.view.animation.Transformation;
 
 import com.android.internal.util.Predicate;
 
-
-
-
 public abstract class ViewGroup extends View implements ViewParent, ViewManager {
-
     
-    @DSModeled(DSC.SAFE)
     private static MotionEvent obtainMotionEventNoHistoryOrSelf(MotionEvent event){
 		// Original method
 		/*
@@ -49,9 +44,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 		*/
 		return null;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean canViewReceivePointerEvents(View child){
 		// Original method
 		/*
@@ -62,7 +55,6 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 		*/
 		return false;
 	}
-
     
     public static int getChildMeasureSpec(int spec, int padding, int childDimension){
 		// Original method
@@ -70,7 +62,6 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 		return 0;
 	}
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:01.347 -0500", hash_original_field = "B2601CA7445F6BA19FA7884763D82281", hash_generated_field = "1A61763F9CABC9206BB5AE6E570AB8AE")
-
 
     private static final boolean DBG = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:01.403 -0500", hash_original_field = "13F019B6D0BD7D9D0703E2B237A3B1EA", hash_generated_field = "50FC822A7AE37AF015DC84622125EE55")
@@ -139,7 +130,6 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
     private static final int FLAG_NOTIFY_CHILDREN_ON_DRAWABLE_STATE_CHANGE = 0x10000;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:01.449 -0500", hash_original_field = "CA845754B5F1EFDD47B99105300BEE95", hash_generated_field = "4836095EA9CD6F4C22D5505B63A65920")
 
-
     private static final int FLAG_MASK_FOCUSABILITY = 0x60000;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:01.451 -0500", hash_original_field = "A8FE08566D55C62AA39FE9A7166F48D9", hash_generated_field = "BD96D757F41BA0229D767BD84AB7642D")
 
@@ -169,8 +159,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
     public static final int PERSISTENT_NO_CACHE = 0x0;
     
     private class MyTransitionListener implements LayoutTransition.TransitionListener {
-
-        @DSModeled(DSC.SPEC)
+        
         public MyTransitionListener(ViewGroup viewGroup) {
 
         }
@@ -214,7 +203,6 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 
     private static final int CHILD_TOP_INDEX = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:01.497 -0500", hash_original_field = "E4258241F3A2DA91326F00C23DC003E8", hash_generated_field = "406B673032561F95D3A3CE9567EB9D07")
-
 
     private static final int ARRAY_INITIAL_CAPACITY = 12;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:01.501 -0500", hash_original_field = "599B24EAED31795B97E528F2C6F15622", hash_generated_field = "97400031D7E61FBA03291EAA57490BB7")
@@ -308,7 +296,6 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
     private boolean mLayoutSuppressed = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:01.495 -0500", hash_original_field = "617F5F6F66570FF6D60BEA8FC63B997A", hash_generated_field = "A777A0928665A4F1E7F4EF71A2259E60")
 
-
     private int mChildrenCount;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:01.503 -0500", hash_original_field = "BAE942851666D4C67E0DD8FFE347AE23", hash_generated_field = "4229E0DF467153CF57F65AC95B02B5E6")
 
@@ -330,7 +317,6 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
     @ViewDebug.ExportedProperty(category = "drawing")
     private boolean mDrawLayers = true;
 
-
     private LayoutTransition.TransitionListener mLayoutTransitionListener = new MyTransitionListener(this);
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:01.516 -0500", hash_original_method = "B03ADF87A05C955E785D82B4A9B527B3", hash_generated_method = "2535FABE5BBE40293AF3CA446AE00E22")
@@ -339,9 +325,7 @@ public ViewGroup(Context context) {
         super(context);
         initViewGroup();
     }
-
     
-    @DSModeled(DSC.SAFE)
 	public ViewGroup(Context context, AttributeSet attrs){
 		super(context, attrs);
 		initViewGroup();
@@ -349,9 +333,7 @@ public ViewGroup(Context context) {
 		initFromAttributes(context, attrs);
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public ViewGroup(Context context, AttributeSet attrs, int defStyle){
 		super(context, attrs, defStyle);// Taint tracked in super class, View.
 		initViewGroup();
@@ -359,9 +341,7 @@ public ViewGroup(Context context) {
 		initFromAttributes(context, attrs);
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	private void initViewGroup(){
 		// Original method
 		/*
@@ -384,17 +364,13 @@ public ViewGroup(Context context) {
 		//Return nothing
 	    mChildren = new View[ARRAY_INITIAL_CAPACITY];
 	}
-
     
-    @DSModeled(DSC.SAFE)
     private void initFromAttributes(Context context, AttributeSet attrs){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @ViewDebug.ExportedProperty(category="focus",mapping={@ViewDebug.IntToString(from=FOCUS_BEFORE_DESCENDANTS,to="FOCUS_BEFORE_DESCENDANTS"),@ViewDebug.IntToString(from=FOCUS_AFTER_DESCENDANTS,to="FOCUS_AFTER_DESCENDANTS"),@ViewDebug.IntToString(from=FOCUS_BLOCK_DESCENDANTS,to="FOCUS_BLOCK_DESCENDANTS")}) public int getDescendantFocusability(){
 		// Original method
 		/*
@@ -404,9 +380,7 @@ public ViewGroup(Context context) {
 		*/
 		return 0;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public void setDescendantFocusability(int focusability){
 		// Original method
 		/*
@@ -426,9 +400,7 @@ public ViewGroup(Context context) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Override void handleFocusGainInternal(int direction, Rect previouslyFocusedRect){
 		// Original method
 		/*
@@ -442,9 +414,7 @@ public ViewGroup(Context context) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public void requestChildFocus(View child, View focused){
 		// Original method
 		/*
@@ -469,9 +439,7 @@ public ViewGroup(Context context) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public void focusableViewAvailable(View v){
 		// Original method
 		/*
@@ -485,9 +453,7 @@ public ViewGroup(Context context) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public boolean showContextMenuForChild(View originalView){
 		// Original method
 		/*
@@ -497,9 +463,7 @@ public ViewGroup(Context context) {
 		*/
 		return false;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public ActionMode startActionModeForChild(View originalView, ActionMode.Callback callback){
 		// Original method
 		/*
@@ -509,9 +473,7 @@ public ViewGroup(Context context) {
 		*/
 		return null;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public View focusSearch(View focused, int direction){
 		// Original method
 		/*
@@ -535,9 +497,7 @@ public ViewGroup(Context context) {
 public boolean requestChildRectangleOnScreen(View child, Rect rectangle, boolean immediate) {
         return false;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public boolean requestSendAccessibilityEvent(View child, AccessibilityEvent event){
 		// Original method
 		/*
@@ -555,9 +515,7 @@ public boolean requestChildRectangleOnScreen(View child, Rect rectangle, boolean
 		*/
 		return false;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public boolean onRequestSendAccessibilityEvent(View child, AccessibilityEvent event){
 		// Original method
 		/*
@@ -571,9 +529,7 @@ public boolean requestChildRectangleOnScreen(View child, Rect rectangle, boolean
 		*/
 		return false;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     boolean onRequestSendAccessibilityEventInternal(View child, AccessibilityEvent event){
 		// Original method
 		/*
@@ -583,9 +539,7 @@ public boolean requestChildRectangleOnScreen(View child, Rect rectangle, boolean
 		*/
 		return false;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Override public boolean dispatchUnhandledMove(View focused, int direction){
 		// Original method
 		/*
@@ -596,9 +550,7 @@ public boolean requestChildRectangleOnScreen(View child, Rect rectangle, boolean
 		*/
 		return false;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public void clearChildFocus(View child){
 		// Original method
 		/*
@@ -614,9 +566,7 @@ public boolean requestChildRectangleOnScreen(View child, Rect rectangle, boolean
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Override public void clearFocus(){
 		// Original method
 		/*
@@ -629,9 +579,7 @@ public boolean requestChildRectangleOnScreen(View child, Rect rectangle, boolean
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Override void unFocus(){
 		// Original method
 		/*
@@ -660,9 +608,7 @@ public boolean requestChildRectangleOnScreen(View child, Rect rectangle, boolean
 public View getFocusedChild() {
         return mFocused;
     }
-
     
-    @DSModeled(DSC.SAFE)
     @Override public boolean hasFocus(){
 		// Original method
 		/*
@@ -672,9 +618,7 @@ public View getFocusedChild() {
 		*/
 		return false;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Override public View findFocus(){
 		// Original method
 		/*
@@ -694,9 +638,7 @@ public View getFocusedChild() {
 		*/
 		return null;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Override public boolean hasFocusable(){
 		// Original method
 		/*
@@ -723,9 +665,7 @@ public View getFocusedChild() {
 		*/
 		return false;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Override public void addFocusables(ArrayList<View> views, int direction){
 		// Original method
 		/*
@@ -735,17 +675,13 @@ public View getFocusedChild() {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Override public void addFocusables(ArrayList<View> views, int direction, int focusableMode){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Override public void findViewsWithText(ArrayList<View> outViews, CharSequence text, int flags){
 		// Original method
 		/*
@@ -764,9 +700,7 @@ public View getFocusedChild() {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Override View findViewByAccessibilityIdTraversal(int accessibilityId){
 		// Original method
 		/*
@@ -789,9 +723,7 @@ public View getFocusedChild() {
 		*/
 		return null;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Override public void dispatchWindowFocusChanged(boolean hasFocus){
 		// Original method
 		/*
@@ -806,9 +738,7 @@ public View getFocusedChild() {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Override public void addTouchables(ArrayList<View> views){
 		// Original method
 		/*
@@ -826,9 +756,7 @@ public View getFocusedChild() {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Override public void dispatchDisplayHint(int hint){
 		// Original method
 		/*
@@ -843,17 +771,13 @@ public View getFocusedChild() {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     protected void onChildVisibilityChanged(View child, int visibility){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Override protected void dispatchVisibilityChanged(View changedView, int visibility){
 		// Original method
 		/*
@@ -868,9 +792,7 @@ public View getFocusedChild() {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Override public void dispatchWindowVisibilityChanged(int visibility){
 		// Original method
 		/*
@@ -885,9 +807,7 @@ public View getFocusedChild() {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Override public void dispatchConfigurationChanged(Configuration newConfig){
 		// Original method
 		/*
@@ -902,9 +822,7 @@ public View getFocusedChild() {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public void recomputeViewAttributes(View child){
 		// Original method
 		/*
@@ -917,9 +835,7 @@ public View getFocusedChild() {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Override void dispatchCollectViewAttributes(int visibility){
 		// Original method
 		/*
@@ -935,9 +851,7 @@ public View getFocusedChild() {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public void bringChildToFront(View child){
 		// Original method
 		/*
@@ -952,17 +866,13 @@ public View getFocusedChild() {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Override public boolean dispatchDragEvent(DragEvent event){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		return false;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     View findFrontmostDroppableChildAt(float x, float y, PointF outLocalPoint){
 		// Original method
 		/*
@@ -983,9 +893,7 @@ public View getFocusedChild() {
 		*/
 		return null;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     boolean notifyChildOfDrag(View child){
 		// Original method
 		/*
@@ -1007,9 +915,7 @@ public View getFocusedChild() {
 		*/
 		return false;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Override public void dispatchSystemUiVisibilityChanged(int visible){
 		// Original method
 		/*
@@ -1025,9 +931,7 @@ public View getFocusedChild() {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Override void updateLocalSystemUiVisibility(int localValue, int localChanges){
 		// Original method
 		/*
@@ -1043,9 +947,7 @@ public View getFocusedChild() {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Override public boolean dispatchKeyEventPreIme(KeyEvent event){
 		// Original method
 		/*
@@ -1060,9 +962,7 @@ public View getFocusedChild() {
 		*/
 		return false;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Override public boolean dispatchKeyEvent(KeyEvent event){
 		// Original method
 		/*
@@ -1087,9 +987,7 @@ public View getFocusedChild() {
 		*/
 		return false;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Override public boolean dispatchKeyShortcutEvent(KeyEvent event){
 		// Original method
 		/*
@@ -1104,9 +1002,7 @@ public View getFocusedChild() {
 		*/
 		return false;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Override public boolean dispatchTrackballEvent(MotionEvent event){
 		// Original method
 		/*
@@ -1131,17 +1027,13 @@ public View getFocusedChild() {
 		*/
 		return false;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @SuppressWarnings({"ConstantConditions"}) @Override protected boolean dispatchHoverEvent(MotionEvent event){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		return false;
 	}
-
     
-    @DSModeled(DSC.BAN)
     @Override protected boolean hasHoveredChild(){
 		// Original method
 		/*
@@ -1195,9 +1087,7 @@ public View getFocusedChild() {
 public boolean onInterceptHoverEvent(MotionEvent event) {
         return false;
     }
-
     
-    @DSModeled(DSC.SAFE)
     @Override protected boolean dispatchGenericPointerEvent(MotionEvent event){
 		// Original method
 		/*
@@ -1223,9 +1113,7 @@ public boolean onInterceptHoverEvent(MotionEvent event) {
 		*/
 		return false;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Override protected boolean dispatchGenericFocusedEvent(MotionEvent event){
 		// Original method
 		/*
@@ -1240,9 +1128,7 @@ public boolean onInterceptHoverEvent(MotionEvent event) {
 		*/
 		return false;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     private boolean dispatchTransformedGenericPointerEvent(MotionEvent event, View child){
 		// Original method
 		/*
@@ -1266,17 +1152,13 @@ public boolean onInterceptHoverEvent(MotionEvent event) {
 		*/
 		return false;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Override public boolean dispatchTouchEvent(MotionEvent ev){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		return false;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     private void resetTouchState(){
 		// Original method
 		/*
@@ -1288,9 +1170,7 @@ public boolean onInterceptHoverEvent(MotionEvent event) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.BAN)
     private boolean resetCancelNextUpFlag(View view){
 		// Original method
 		/*
@@ -1304,9 +1184,7 @@ public boolean onInterceptHoverEvent(MotionEvent event) {
 		*/
 		return false;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     private void clearTouchTargets(){
 		// Original method
 		/*
@@ -1324,17 +1202,13 @@ public boolean onInterceptHoverEvent(MotionEvent event) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     private void cancelAndClearTouchTargets(MotionEvent event){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.BAN)
     private TouchTarget getTouchTarget(View child){
 		// Original method
 		/*
@@ -1349,9 +1223,7 @@ public boolean onInterceptHoverEvent(MotionEvent event) {
 		*/
 		return null;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     private TouchTarget addTouchTarget(View child, int pointerIdBits){
 		// Original method
 		/*
@@ -1364,9 +1236,7 @@ public boolean onInterceptHoverEvent(MotionEvent event) {
 		*/
 		return null;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     private void removePointersFromTouchTargets(int pointerIdBits){
 		// Original method
 		/*
@@ -1395,9 +1265,7 @@ public boolean onInterceptHoverEvent(MotionEvent event) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     protected boolean isTransformedTouchPointInView(float x, float y, View child,
             PointF outLocalPoint){
 		// Original method
@@ -1422,18 +1290,14 @@ public boolean onInterceptHoverEvent(MotionEvent event) {
 		*/
 		return false;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     private boolean dispatchTransformedTouchEvent(MotionEvent event, boolean cancel,
             View child, int desiredPointerIdBits){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		return false;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public void setMotionEventSplittingEnabled(boolean split){
 		// Original method
 		/*
@@ -1447,9 +1311,7 @@ public boolean onInterceptHoverEvent(MotionEvent event) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public boolean isMotionEventSplittingEnabled(){
 		// Original method
 		/*
@@ -1459,9 +1321,7 @@ public boolean onInterceptHoverEvent(MotionEvent event) {
 		*/
 		return false;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public void requestDisallowInterceptTouchEvent(boolean disallowIntercept){
 		// Original method
 		/*
@@ -1524,17 +1384,13 @@ public boolean onInterceptHoverEvent(MotionEvent event) {
 public boolean onInterceptTouchEvent(MotionEvent ev) {
         return false;
     }
-
     
-    @DSModeled(DSC.SAFE)
     @Override public boolean requestFocus(int direction, Rect previouslyFocusedRect){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		return false;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @SuppressWarnings({"ConstantConditions"}) protected boolean onRequestFocusInDescendants(int direction,
             Rect previouslyFocusedRect){
 		// Original method
@@ -1567,9 +1423,7 @@ public boolean onInterceptTouchEvent(MotionEvent ev) {
 		*/
 		return false;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Override public void dispatchStartTemporaryDetach(){
 		// Original method
 		/*
@@ -1584,9 +1438,7 @@ public boolean onInterceptTouchEvent(MotionEvent ev) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Override public void dispatchFinishTemporaryDetach(){
 		// Original method
 		/*
@@ -1601,9 +1453,7 @@ public boolean onInterceptTouchEvent(MotionEvent ev) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Override void dispatchAttachedToWindow(AttachInfo info, int visibility){
 		// Original method
 		/*
@@ -1621,9 +1471,7 @@ public boolean onInterceptTouchEvent(MotionEvent ev) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Override boolean dispatchPopulateAccessibilityEventInternal(AccessibilityEvent event){
 		// Original method
 		/*
@@ -1646,9 +1494,7 @@ public boolean onInterceptTouchEvent(MotionEvent ev) {
 		*/
 		return false;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Override void onInitializeAccessibilityNodeInfoInternal(AccessibilityNodeInfo info){
 		// Original method
 		/*
@@ -1665,9 +1511,7 @@ public boolean onInterceptTouchEvent(MotionEvent ev) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Override void dispatchDetachedFromWindow(){
 		// Original method
 		/*
@@ -1689,9 +1533,7 @@ public boolean onInterceptTouchEvent(MotionEvent ev) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Override public void setPadding(int left, int top, int right, int bottom){
 		// Original method
 		/*
@@ -1706,9 +1548,7 @@ public boolean onInterceptTouchEvent(MotionEvent ev) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Override protected void dispatchSaveInstanceState(SparseArray<Parcelable> container){
 		// Original method
 		/*
@@ -1726,9 +1566,7 @@ public boolean onInterceptTouchEvent(MotionEvent ev) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     protected void dispatchFreezeSelfOnly(SparseArray<Parcelable> container){
 		// Original method
 		/*
@@ -1738,9 +1576,7 @@ public boolean onInterceptTouchEvent(MotionEvent ev) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Override protected void dispatchRestoreInstanceState(SparseArray<Parcelable> container){
 		// Original method
 		/*
@@ -1758,9 +1594,7 @@ public boolean onInterceptTouchEvent(MotionEvent ev) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     protected void dispatchThawSelfOnly(SparseArray<Parcelable> container){
 		// Original method
 		/*
@@ -1770,9 +1604,7 @@ public boolean onInterceptTouchEvent(MotionEvent ev) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     protected void setChildrenDrawingCacheEnabled(boolean enabled){
 		// Original method
 		/*
@@ -1788,9 +1620,7 @@ public boolean onInterceptTouchEvent(MotionEvent ev) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Override protected void onAnimationStart(){
 		// Original method
 		/*
@@ -1815,9 +1645,7 @@ public boolean onInterceptTouchEvent(MotionEvent ev) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Override protected void onAnimationEnd(){
 		// Original method
 		/*
@@ -1833,9 +1661,7 @@ public boolean onInterceptTouchEvent(MotionEvent ev) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Override Bitmap createSnapshot(Bitmap.Config quality, int backgroundColor, boolean skipChildren){
 		// Original method
 		/*
@@ -1863,17 +1689,13 @@ public boolean onInterceptTouchEvent(MotionEvent ev) {
 		*/
 		return null;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Override protected void dispatchDraw(Canvas canvas){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     protected int getChildDrawingOrder(int childCount, int i){
 		// Original method
 		/*
@@ -1883,9 +1705,7 @@ public boolean onInterceptTouchEvent(MotionEvent ev) {
 		*/
 		return 0;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     private void notifyAnimationListener(){
 		// Original method
 		/*
@@ -1911,9 +1731,7 @@ public boolean onInterceptTouchEvent(MotionEvent ev) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Override protected void dispatchGetDisplayList(){
 		// Original method
 		/*
@@ -1934,17 +1752,13 @@ public boolean onInterceptTouchEvent(MotionEvent ev) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     protected boolean drawChild(Canvas canvas, View child, long drawingTime){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		return false;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public void setChildrenLayersEnabled(boolean enabled){
 		// Original method
 		/*
@@ -1963,9 +1777,7 @@ public boolean onInterceptTouchEvent(MotionEvent ev) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public void setClipChildren(boolean clipChildren){
 		// Original method
 		/*
@@ -1975,9 +1787,7 @@ public boolean onInterceptTouchEvent(MotionEvent ev) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public void setClipToPadding(boolean clipToPadding){
 		// Original method
 		/*
@@ -1987,9 +1797,7 @@ public boolean onInterceptTouchEvent(MotionEvent ev) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Override public void dispatchSetSelected(boolean selected){
 		// Original method
 		/*
@@ -2003,9 +1811,7 @@ public boolean onInterceptTouchEvent(MotionEvent ev) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Override public void dispatchSetActivated(boolean activated){
 		// Original method
 		/*
@@ -2019,9 +1825,7 @@ public boolean onInterceptTouchEvent(MotionEvent ev) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Override protected void dispatchSetPressed(boolean pressed){
 		// Original method
 		/*
@@ -2035,9 +1839,7 @@ public boolean onInterceptTouchEvent(MotionEvent ev) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     protected void setStaticTransformationsEnabled(boolean enabled){
 		// Original method
 		/*
@@ -2058,9 +1860,7 @@ public boolean onInterceptTouchEvent(MotionEvent ev) {
 protected boolean getChildStaticTransformation(View child, Transformation t) {
         return false;
     }
-
     
-    @DSModeled(DSC.SAFE)
     @Override protected View findViewTraversal(int id){
 		// Original method
 		/*
@@ -2084,9 +1884,7 @@ protected boolean getChildStaticTransformation(View child, Transformation t) {
 		*/
 		return null;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Override protected View findViewWithTagTraversal(Object tag){
 		// Original method
 		/*
@@ -2110,9 +1908,7 @@ protected boolean getChildStaticTransformation(View child, Transformation t) {
 		*/
 		return null;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Override protected View findViewByPredicateTraversal(Predicate<View> predicate, View childToSkip){
 		// Original method
 		/*
@@ -2136,9 +1932,7 @@ protected boolean getChildStaticTransformation(View child, Transformation t) {
 		*/
 		return null;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public void addView(View child){
 		// Original method
 		/*
@@ -2148,9 +1942,7 @@ protected boolean getChildStaticTransformation(View child, Transformation t) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public void addView(View child, int index){
 		// Original method
 		/*
@@ -2167,9 +1959,7 @@ protected boolean getChildStaticTransformation(View child, Transformation t) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public void addView(View child, int width, int height){
 		// Original method
 		/*
@@ -2182,9 +1972,7 @@ protected boolean getChildStaticTransformation(View child, Transformation t) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public void addView(View child, LayoutParams params){
 		// Original method
 		/*
@@ -2194,9 +1982,7 @@ protected boolean getChildStaticTransformation(View child, Transformation t) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public void addView(View child, int index, LayoutParams params){
 		// Original method
 		/*
@@ -2211,9 +1997,7 @@ protected boolean getChildStaticTransformation(View child, Transformation t) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public void updateViewLayout(View view, ViewGroup.LayoutParams params){
 		// Original method
 		/*
@@ -2229,9 +2013,7 @@ protected boolean getChildStaticTransformation(View child, Transformation t) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     protected boolean checkLayoutParams(ViewGroup.LayoutParams p){
 		// Original method
 		/*
@@ -2253,7 +2035,6 @@ protected boolean getChildStaticTransformation(View child, Transformation t) {
 public void setOnHierarchyChangeListener(OnHierarchyChangeListener listener) {
         mOnHierarchyChangeListener = listener;
     }
-
     
     protected void onViewAdded(View child){
 		// Original method
@@ -2266,7 +2047,6 @@ public void setOnHierarchyChangeListener(OnHierarchyChangeListener listener) {
 		*/
 		//Return nothing
 	}
-
     
     protected void onViewRemoved(View child){
 		// Original method
@@ -2279,7 +2059,6 @@ public void setOnHierarchyChangeListener(OnHierarchyChangeListener listener) {
 		*/
 		//Return nothing
 	}
-
     
     protected boolean addViewInLayout(View child, int index, LayoutParams params){
 		// Original method
@@ -2290,7 +2069,6 @@ public void setOnHierarchyChangeListener(OnHierarchyChangeListener listener) {
 		*/
 		return false;
 	}
-
     
     protected boolean addViewInLayout(View child, int index, LayoutParams params,
             boolean preventRequestLayout){
@@ -2305,9 +2083,7 @@ public void setOnHierarchyChangeListener(OnHierarchyChangeListener listener) {
 		*/
 		return false;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     protected void cleanupLayoutState(View child){
 		// Original method
 		/*
@@ -2317,26 +2093,20 @@ public void setOnHierarchyChangeListener(OnHierarchyChangeListener listener) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.BAN)
     private void addViewInner(View child, int index, LayoutParams params,
             boolean preventRequestLayout){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.BAN)
     private void addInArray(View child, int index){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.BAN)
     private void removeFromArray(int index){
 		// Original method
 		/*
@@ -2364,17 +2134,13 @@ public void setOnHierarchyChangeListener(OnHierarchyChangeListener listener) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.BAN)
     private void removeFromArray(int start, int count){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.BAN)
     private void bindLayoutAnimation(View child){
 		// Original method
 		/*
@@ -2385,7 +2151,6 @@ public void setOnHierarchyChangeListener(OnHierarchyChangeListener listener) {
 		*/
 		//Return nothing
 	}
-
     
     protected void attachLayoutAnimationParameters(View child,
             LayoutParams params, int index, int count){
@@ -2404,7 +2169,6 @@ public void setOnHierarchyChangeListener(OnHierarchyChangeListener listener) {
 		*/
 		//Return nothing
 	}
-
     
     public void removeView(View view){
 		// Original method
@@ -2417,7 +2181,6 @@ public void setOnHierarchyChangeListener(OnHierarchyChangeListener listener) {
 		*/
 		//Return nothing
 	}
-
     
     public void removeViewInLayout(View view){
 		// Original method
@@ -2428,7 +2191,6 @@ public void setOnHierarchyChangeListener(OnHierarchyChangeListener listener) {
 		*/
 		//Return nothing
 	}
-
     
     public void removeViewsInLayout(int start, int count){
 		// Original method
@@ -2439,8 +2201,7 @@ public void setOnHierarchyChangeListener(OnHierarchyChangeListener listener) {
 		*/
 		//Return nothing
 	}
-
-    @DSModeled(DSC.SAFE)
+    
     public void removeViewAt(int index){
 		// Original method
 		/*
@@ -2452,7 +2213,6 @@ public void setOnHierarchyChangeListener(OnHierarchyChangeListener listener) {
 		*/
 		//Return nothing
 	}
-
     
     public void removeViews(int start, int count){
 		// Original method
@@ -2465,9 +2225,7 @@ public void setOnHierarchyChangeListener(OnHierarchyChangeListener listener) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.BAN)
     private void removeViewInternal(View view){
 		// Original method
 		/*
@@ -2480,9 +2238,7 @@ public void setOnHierarchyChangeListener(OnHierarchyChangeListener listener) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.BAN)
     private void removeViewInternal(int index, View view){
 		// Original method
 		/*
@@ -2511,7 +2267,6 @@ public void setOnHierarchyChangeListener(OnHierarchyChangeListener listener) {
 		*/
 		//Return nothing
 	}
-
     
     public void setLayoutTransition(LayoutTransition transition){
 		mTransition = transition;  //Preserved
@@ -2544,17 +2299,13 @@ public void setOnHierarchyChangeListener(OnHierarchyChangeListener listener) {
 public LayoutTransition getLayoutTransition() {
         return mTransition;
     }
-
     
-    @DSModeled(DSC.BAN)
     private void removeViewsInternal(int start, int count){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public void removeAllViews(){
 		// Original method
 		/*
@@ -2566,14 +2317,12 @@ public LayoutTransition getLayoutTransition() {
 		*/
 		//Return nothing
 	}
-
     
     public void removeAllViewsInLayout(){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
-
     
     protected void removeDetachedView(View child, boolean animate){
 		// Original method
@@ -2596,7 +2345,6 @@ public LayoutTransition getLayoutTransition() {
 		*/
 		//Return nothing
 	}
-
     
     protected void attachViewToParent(View child, int index, LayoutParams params){
 		// Original method
@@ -2618,7 +2366,6 @@ public LayoutTransition getLayoutTransition() {
 		*/
 		//Return nothing
 	}
-
     
     protected void detachViewFromParent(View child){
 		// Original method
@@ -2629,7 +2376,6 @@ public LayoutTransition getLayoutTransition() {
 		*/
 		//Return nothing
 	}
-
     
     protected void detachViewFromParent(int index){
 		// Original method
@@ -2640,7 +2386,6 @@ public LayoutTransition getLayoutTransition() {
 		*/
 		//Return nothing
 	}
-
     
     protected void detachViewsFromParent(int start, int count){
 		// Original method
@@ -2651,9 +2396,7 @@ public LayoutTransition getLayoutTransition() {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     protected void detachAllViewsFromParent(){
 		// Original method
 		/*
@@ -2672,21 +2415,18 @@ public LayoutTransition getLayoutTransition() {
 		*/
 		//Return nothing
 	}
-
     
     public final void invalidateChild(View child, final Rect dirty){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
-
     
     public ViewParent invalidateChildInParent(final int[] location, final Rect dirty){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		return null;
 	}
-
     
     public final void offsetDescendantRectToMyCoords(View descendant, Rect rect){
 		// Original method
@@ -2697,7 +2437,6 @@ public LayoutTransition getLayoutTransition() {
 		*/
 		//Return nothing
 	}
-
     
     public final void offsetRectIntoDescendantCoords(View descendant, Rect rect){
 		// Original method
@@ -2708,7 +2447,6 @@ public LayoutTransition getLayoutTransition() {
 		*/
 		//Return nothing
 	}
-
     
     void offsetRectBetweenParentAndChild(View descendant, Rect rect,
             boolean offsetFromChildToParent, boolean clipToBounds){
@@ -2716,9 +2454,7 @@ public LayoutTransition getLayoutTransition() {
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public void offsetChildrenTopAndBottom(int offset){
 		// Original method
 		/*
@@ -2734,14 +2470,12 @@ public LayoutTransition getLayoutTransition() {
 		*/
 		//Return nothing
 	}
-
     
     public boolean getChildVisibleRect(View child, Rect r, android.graphics.Point offset){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		return false;
 	}
-
     
     @Override public final void layout(int l, int t, int r, int b){
 		// Original method
@@ -2765,9 +2499,7 @@ public LayoutTransition getLayoutTransition() {
 @Override
     protected abstract void onLayout(boolean changed,
             int l, int t, int r, int b);
-
     
-    @DSModeled(DSC.SAFE)
     protected boolean canAnimate(){
 		// Original method
 		/*
@@ -2777,7 +2509,6 @@ public LayoutTransition getLayoutTransition() {
 		*/
 		return false;
 	}
-
     
     public void startLayoutAnimation(){
 		// Original method
@@ -2791,9 +2522,7 @@ public LayoutTransition getLayoutTransition() {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public void scheduleLayoutAnimation(){
 		// Original method
 		/*
@@ -2803,9 +2532,7 @@ public LayoutTransition getLayoutTransition() {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public void setLayoutAnimation(LayoutAnimationController controller){
 		mLayoutAnimationController = controller;  //Preserved
 		// Original method
@@ -2831,9 +2558,7 @@ public LayoutTransition getLayoutTransition() {
 public LayoutAnimationController getLayoutAnimation() {
         return mLayoutAnimationController;
     }
-
     
-    @DSModeled(DSC.SAFE)
     @ViewDebug.ExportedProperty public boolean isAnimationCacheEnabled(){
 		// Original method
 		/*
@@ -2843,7 +2568,6 @@ public LayoutAnimationController getLayoutAnimation() {
 		*/
 		return false;
 	}
-
     
     public void setAnimationCacheEnabled(boolean enabled){
 		// Original method
@@ -2854,9 +2578,7 @@ public LayoutAnimationController getLayoutAnimation() {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @ViewDebug.ExportedProperty(category="drawing") public boolean isAlwaysDrawnWithCacheEnabled(){
 		// Original method
 		/*
@@ -2866,7 +2588,6 @@ public LayoutAnimationController getLayoutAnimation() {
 		*/
 		return false;
 	}
-
     
     public void setAlwaysDrawnWithCacheEnabled(boolean always){
 		// Original method
@@ -2877,9 +2598,7 @@ public LayoutAnimationController getLayoutAnimation() {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @ViewDebug.ExportedProperty(category="drawing") protected boolean isChildrenDrawnWithCacheEnabled(){
 		// Original method
 		/*
@@ -2889,7 +2608,6 @@ public LayoutAnimationController getLayoutAnimation() {
 		*/
 		return false;
 	}
-
     
     protected void setChildrenDrawnWithCacheEnabled(boolean enabled){
 		// Original method
@@ -2900,9 +2618,7 @@ public LayoutAnimationController getLayoutAnimation() {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @ViewDebug.ExportedProperty(category="drawing") protected boolean isChildrenDrawingOrderEnabled(){
 		// Original method
 		/*
@@ -2912,7 +2628,6 @@ public LayoutAnimationController getLayoutAnimation() {
 		*/
 		return false;
 	}
-
     
     protected void setChildrenDrawingOrderEnabled(boolean enabled){
 		// Original method
@@ -2923,9 +2638,7 @@ public LayoutAnimationController getLayoutAnimation() {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.BAN)
     private void setBooleanFlag(int flag, boolean value){
 		// Original method
 		/*
@@ -2939,10 +2652,8 @@ public LayoutAnimationController getLayoutAnimation() {
 		*/
 		//Return nothing
 	}
-
     
     public static class LayoutParams {
-
         
         protected static String sizeToString(int size){
 			// Original method
@@ -3036,7 +2747,6 @@ public LayoutParams(LayoutParams source) {
         
 LayoutParams() {
         }
-
         
         protected void setBaseAttributes(TypedArray a, int widthAttr, int heightAttr){
 			// Original method
@@ -3065,7 +2775,6 @@ LayoutParams() {
         
 protected void resolveWithDirection(int layoutDirection) {
         }
-
         
         public String debug(String output){
 			// Original method
@@ -3078,8 +2787,6 @@ protected void resolveWithDirection(int layoutDirection) {
 			return "";
 		}
     }
-
-
     
     public static class MarginLayoutParams extends ViewGroup.LayoutParams {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:02.145 -0500", hash_original_field = "2FEDEB5C62ACC6AEDC002A4ADCDCAD40", hash_generated_field = "706B949A33ED230B911B9350FAA5912D")
@@ -3123,7 +2830,6 @@ protected void resolveWithDirection(int layoutDirection) {
 public MarginLayoutParams(int width, int height) {
             super(width, height);
         }
-
         
         public MarginLayoutParams(MarginLayoutParams source){
 			/*
@@ -3146,9 +2852,7 @@ public MarginLayoutParams(int width, int height) {
 public MarginLayoutParams(LayoutParams source) {
             super(source);
         }
-
         
-        @DSModeled(DSC.SAFE)
         public void setMargins(int left, int top, int right, int bottom){
 			addTaint(left);
 			leftMargin = left;  //Preserved
@@ -3169,9 +2873,7 @@ public MarginLayoutParams(LayoutParams source) {
 			*/
 			//Return nothing
 		}
-
         
-        @DSModeled(DSC.SAFE)
         public void setMarginsRelative(int start, int top, int end, int bottom){
 			addTaint(start);
 			startMargin = start;  //Preserved
@@ -3192,9 +2894,7 @@ public MarginLayoutParams(LayoutParams source) {
 			*/
 			//Return nothing
 		}
-
         
-        @DSModeled(DSC.SAFE)
         public int getMarginStart(){
 			return getTaintInt();
 			// Original method
@@ -3204,9 +2904,7 @@ public MarginLayoutParams(LayoutParams source) {
         }
 			*/
 		}
-
         
-        @DSModeled(DSC.SAFE)
         public int getMarginEnd(){
 			return getTaintInt();
 			// Original method
@@ -3216,9 +2914,7 @@ public MarginLayoutParams(LayoutParams source) {
         }
 			*/
 		}
-
         
-        @DSModeled(DSC.SAFE)
         public boolean isMarginRelative(){
 			// Original method
 			/*
@@ -3228,9 +2924,7 @@ public MarginLayoutParams(LayoutParams source) {
 			*/
 			return false;
 		}
-
         
-        @DSModeled(DSC.SAFE)
         @Override protected void resolveWithDirection(int layoutDirection){
 			// Original method
 			/*
@@ -3251,11 +2945,8 @@ public MarginLayoutParams(LayoutParams source) {
 			//Return nothing
 		}
     }
-
-
     
     private static final class TouchTarget {
-
         
         public static TouchTarget obtain(View child, int pointerIdBits){
 			// Original method
@@ -3293,10 +2984,8 @@ public MarginLayoutParams(LayoutParams source) {
         private static int sRecycledCount;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:02.192 -0500", hash_original_field = "90F952884FE34CFC660B925514CBA081", hash_generated_field = "5D0EA96D1B8E6DB25F736A1FB6B6D10D")
 
-
         public static final int ALL_POINTER_IDS = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:02.194 -0500", hash_original_field = "E2B2B04ADE31BBC2961DC9080CB69B13", hash_generated_field = "1CCB8EE97FC7539DEBCCA058A8788B2D")
-
 
         // The touched child view.
         public View child;
@@ -3311,9 +3000,7 @@ public MarginLayoutParams(LayoutParams source) {
         
 private TouchTarget() {
         }
-
         
-        @DSModeled(DSC.SAFE)
         public void recycle(){
 			// Original method
 			/*
@@ -3333,11 +3020,8 @@ private TouchTarget() {
 			//Return nothing
 		}
     }
-
-
     
     private static final class HoverTarget {
-
         
         public static HoverTarget obtain(View child){
 			// Original method
@@ -3383,9 +3067,7 @@ private TouchTarget() {
         
 private HoverTarget() {
         }
-
         
-        @DSModeled(DSC.SAFE)
         public void recycle(){
 			// Original method
 			/*
@@ -3405,19 +3087,14 @@ private HoverTarget() {
 			//Return nothing
 		}
     }
-
-
     
     public interface OnHierarchyChangeListener {
         
         void onChildViewAdded(View parent, View child);
-
         
         void onChildViewRemoved(View parent, View child);
     }
-
     
-    @DSModeled(DSC.SAFE)
     @ViewDebug.ExportedProperty(category="drawing",mapping={@ViewDebug.IntToString(from=PERSISTENT_NO_CACHE,to="NONE"),@ViewDebug.IntToString(from=PERSISTENT_ANIMATION_CACHE,to="ANIMATION"),@ViewDebug.IntToString(from=PERSISTENT_SCROLLING_CACHE,to="SCROLLING"),@ViewDebug.IntToString(from=PERSISTENT_ALL_CACHES,to="ALL")}) public int getPersistentDrawingCache(){
 		return getTaintInt();
 		// Original method
@@ -3427,9 +3104,7 @@ private HoverTarget() {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public void setPersistentDrawingCache(int drawingCacheToKeep){
 		// Original method
 		/*
@@ -3439,7 +3114,6 @@ private HoverTarget() {
 		*/
 		//Return nothing
 	}
-
     
     public LayoutParams generateLayoutParams(AttributeSet attrs){
 		// Original method
@@ -3450,9 +3124,7 @@ private HoverTarget() {
 		*/
 		return null;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     protected LayoutParams generateLayoutParams(ViewGroup.LayoutParams p){
 		// Original method
 		/*
@@ -3462,7 +3134,6 @@ private HoverTarget() {
 		*/
 		return null;
 	}
-
     
     protected LayoutParams generateDefaultLayoutParams(){
 		// Original method
@@ -3473,7 +3144,6 @@ private HoverTarget() {
 		*/
 		return null;
 	}
-
     
     @Override protected boolean dispatchConsistencyCheck(int consistency){
 		// Original method
@@ -3490,14 +3160,12 @@ private HoverTarget() {
 		*/
 		return false;
 	}
-
     
     @Override protected boolean onConsistencyCheck(int consistency){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		return false;
 	}
-
     
     @Override protected void debug(int depth){
 		// Original method
@@ -3529,9 +3197,7 @@ private HoverTarget() {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public int indexOfChild(View child){
 		// Original method
 		/*
@@ -3548,19 +3214,14 @@ private HoverTarget() {
 		*/
 		return 0;
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public int getChildCount(){
 		return getTaintInt();
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public View getChildAt(int index){
 		return mChildren[0];
 	}
-
     
     protected void measureChildren(int widthMeasureSpec, int heightMeasureSpec){
 		// Original method
@@ -3578,7 +3239,6 @@ private HoverTarget() {
 		*/
 		//Return nothing
 	}
-
     
     protected void measureChild(View child, int parentWidthMeasureSpec,
             int parentHeightMeasureSpec){
@@ -3595,7 +3255,6 @@ private HoverTarget() {
 		*/
 		//Return nothing
 	}
-
     
     protected void measureChildWithMargins(View child,
             int parentWidthMeasureSpec, int widthUsed,
@@ -3615,7 +3274,6 @@ private HoverTarget() {
 		*/
 		//Return nothing
 	}
-
     
     public void clearDisappearingChildren(){
 		// Original method
@@ -3628,9 +3286,7 @@ private HoverTarget() {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.BAN)
     private void addDisappearingView(View v){
 		// Original method
 		/*
@@ -3644,15 +3300,12 @@ private HoverTarget() {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.BAN)
     private void finishAnimatingView(final View view, Animation animation){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
-
     
     boolean isViewTransitioning(View view){
 		// Original method
@@ -3663,7 +3316,6 @@ private HoverTarget() {
 		*/
 		return false;
 	}
-
     
     public void startViewTransition(View view){
 		// Original method
@@ -3679,14 +3331,12 @@ private HoverTarget() {
 		*/
 		//Return nothing
 	}
-
     
     public void endViewTransition(View view){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
-
     
     @Override public boolean gatherTransparentRegion(Region region){
 		// Original method
@@ -3713,7 +3363,6 @@ private HoverTarget() {
 		*/
 		return false;
 	}
-
     
     public void requestTransparentRegion(View child){
 		// Original method
@@ -3729,7 +3378,6 @@ private HoverTarget() {
 		*/
 		//Return nothing
 	}
-
     
     @Override protected boolean fitSystemWindows(Rect insets){
 		// Original method
@@ -3751,9 +3399,7 @@ private HoverTarget() {
 		*/
 		return false;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public Animation.AnimationListener getLayoutAnimationListener(){
 		return (Animation.AnimationListener)getTaint();
 		// Original method
@@ -3763,7 +3409,6 @@ private HoverTarget() {
     }
 		*/
 	}
-
     
     @Override protected void drawableStateChanged(){
 		// Original method
@@ -3788,7 +3433,6 @@ private HoverTarget() {
 		*/
 		//Return nothing
 	}
-
     
     @Override public void jumpDrawablesToCurrentState(){
 		// Original method
@@ -3804,7 +3448,6 @@ private HoverTarget() {
 		*/
 		//Return nothing
 	}
-
     
     @Override protected int[] onCreateDrawableState(int extraSpace){
 		// Original method
@@ -3833,7 +3476,6 @@ private HoverTarget() {
 		*/
 		return null;
 	}
-
     
     public void setAddStatesFromChildren(boolean addsStates){
 		// Original method
@@ -3849,9 +3491,7 @@ private HoverTarget() {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public boolean addStatesFromChildren(){
 		// Original method
 		/*
@@ -3861,7 +3501,6 @@ private HoverTarget() {
 		*/
 		return false;
 	}
-
     
     public void childDrawableStateChanged(View child){
 		// Original method
@@ -3890,7 +3529,6 @@ private HoverTarget() {
 public void setLayoutAnimationListener(Animation.AnimationListener animationListener) {
         mAnimationListener = animationListener;
     }
-
     
     public void requestTransitionStart(LayoutTransition transition){
 		// Original method
@@ -3904,7 +3542,6 @@ public void setLayoutAnimationListener(Animation.AnimationListener animationList
 		*/
 		//Return nothing
 	}
-
     
     @Override protected void resetResolvedLayoutDirection(){
 		// Original method
@@ -3922,7 +3559,6 @@ public void setLayoutAnimationListener(Animation.AnimationListener animationList
 		*/
 		//Return nothing
 	}
-
     
     @Override protected void resetResolvedTextDirection(){
 		// Original method
@@ -3940,9 +3576,7 @@ public void setLayoutAnimationListener(Animation.AnimationListener animationList
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public boolean shouldDelayChildPressedState(){
 		// Original method
 		/*

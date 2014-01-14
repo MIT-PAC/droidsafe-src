@@ -6,13 +6,8 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.text.TextPaint;
 
-
-
-
-
 public abstract class MetricAffectingSpan extends CharacterStyle implements UpdateLayout {
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.048 -0400", hash_original_method = "9C185298DCF08F9282BECADE276ABE7A", hash_generated_method = "9C185298DCF08F9282BECADE276ABE7A")
     public MetricAffectingSpan ()
     {
@@ -34,7 +29,6 @@ public abstract void updateMeasureState(TextPaint p);
     public MetricAffectingSpan getUnderlying() {
         return this;
     }
-
     
     static class Passthrough extends MetricAffectingSpan {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:07.565 -0500", hash_original_field = "4991F7907A57E8835E40475FDF76A731", hash_generated_field = "3023077BCF3DF01F7D77DA3B9595077A")
@@ -80,11 +74,8 @@ public Passthrough(MetricAffectingSpan cs) {
         public MetricAffectingSpan getUnderlying() {
             return mStyle.getUnderlying();
         }
-
         
     }
-
-
     
 }
 

@@ -35,13 +35,8 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView.OnItemClickListener;
 
-
-
-
-
 public class RemoteViews implements Parcelable, Filter {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:50.692 -0500", hash_original_field = "6FFEE8307332734755C14FC024A174EA", hash_generated_field = "ACEFF52037C84D6363407415280404F5")
-
     
     private static final String LOG_TAG = "RemoteViews";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:50.695 -0500", hash_original_field = "EF36B82D9AB59A0445BDFC5E58DBC652", hash_generated_field = "826EFFDEC6B49221DB3B3AF9DDB20D89")
@@ -852,7 +847,6 @@ private Context prepareContext(Context context) {
 
         return c;
     }
-
     
     public static class ActionException extends RuntimeException {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:50.712 -0500", hash_original_method = "4338C0B6ED05990B68F77B56C502C8BC", hash_generated_method = "8A6434B176D353F1936A155E629A021C")
@@ -865,15 +859,11 @@ public ActionException(Exception ex) {
 public ActionException(String message) {
             super(message);
         }
-
         
     }
-
-
     
     private abstract static class Action implements Parcelable {
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:03.780 -0400", hash_original_method = "6EEA56B449227AEBD2AEF88874F9C864", hash_generated_method = "6EEA56B449227AEBD2AEF88874F9C864")
         public Action ()
         {
@@ -920,15 +910,11 @@ protected boolean startIntentSafely(Context context, PendingIntent pendingIntent
             }
             return true;
         }
-
         
     }
-
-
     
     private class SetEmptyView extends Action {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:50.735 -0500", hash_original_field = "D59D4247F9ED236621C450A673C8EE48", hash_generated_field = "832C8F64E214207268768E39D7FCB9F3")
-
 
         public final static int TAG = 6;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:50.730 -0500", hash_original_field = "6D439F1D3806F3B8DDD66C155D4A0AD3", hash_generated_field = "6D439F1D3806F3B8DDD66C155D4A0AD3")
@@ -975,16 +961,12 @@ public void writeToParcel(Parcel out, int flags) {
             adapterView.setEmptyView(emptyView);
         }
     }
-
-
     
     private class SetOnClickFillInIntent extends Action {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:50.771 -0500", hash_original_field = "2CA6A73FAAA2D00670E3244D2C6BEA16", hash_generated_field = "257D5F310A82D1AE988E43617C7394F4")
 
-
         public final static int TAG = 9;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:50.767 -0500", hash_original_field = "6D439F1D3806F3B8DDD66C155D4A0AD3", hash_generated_field = "6D439F1D3806F3B8DDD66C155D4A0AD3")
-
 
         int viewId;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:50.768 -0500", hash_original_field = "9D3AB3AC0219EE64EF3FF80AB068BB5E", hash_generated_field = "9D3AB3AC0219EE64EF3FF80AB068BB5E")
@@ -1102,16 +1084,12 @@ public void writeToParcel(Parcel dest, int flags) {
                     }
         
     }
-
-
     
     private class SetPendingIntentTemplate extends Action {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:50.796 -0500", hash_original_field = "DA93FC8165D012ECFA574BB3EFD71D8E", hash_generated_field = "999B6A111CF47CD01BFB86C10E0DFDAF")
 
-
         public final static int TAG = 8;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:50.791 -0500", hash_original_field = "6D439F1D3806F3B8DDD66C155D4A0AD3", hash_generated_field = "6D439F1D3806F3B8DDD66C155D4A0AD3")
-
 
         int viewId;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:50.793 -0500", hash_original_field = "D0EA5F86DAC5B859FF411BE20B81D705", hash_generated_field = "D0EA5F86DAC5B859FF411BE20B81D705")
@@ -1235,16 +1213,12 @@ public void writeToParcel(Parcel dest, int flags) {
                     }
         
     }
-
-
     
     private class SetRemoteViewsAdapterIntent extends Action {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:50.817 -0500", hash_original_field = "9FA61F47E20184FF08B91738AD61CE72", hash_generated_field = "8FE5A8285A40B3CDB587BD72B1510F3F")
 
-
         public final static int TAG = 10;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:50.812 -0500", hash_original_field = "6D439F1D3806F3B8DDD66C155D4A0AD3", hash_generated_field = "6D439F1D3806F3B8DDD66C155D4A0AD3")
-
 
         int viewId;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:50.815 -0500", hash_original_field = "170FCA7A98A65D8003A3D20D5B3C245D", hash_generated_field = "170FCA7A98A65D8003A3D20D5B3C245D")
@@ -1305,16 +1279,12 @@ public void writeToParcel(Parcel dest, int flags) {
             }
         }
     }
-
-
     
     private class SetOnClickPendingIntent extends Action {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:50.841 -0500", hash_original_field = "6FEE6E7354E1D66F860D47EA16E89F13", hash_generated_field = "993712AACA5BFFF68C7775B3C6B7EE8B")
 
-
         public final static int TAG = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:50.837 -0500", hash_original_field = "6D439F1D3806F3B8DDD66C155D4A0AD3", hash_generated_field = "6D439F1D3806F3B8DDD66C155D4A0AD3")
-
         
         int viewId;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:50.839 -0500", hash_original_field = "7026E183996B4AEE13A8653E0B37928C", hash_generated_field = "7026E183996B4AEE13A8653E0B37928C")
@@ -1398,16 +1368,12 @@ public void writeToParcel(Parcel dest, int flags) {
                     }
         
     }
-
-
     
     private class SetDrawableParameters extends Action {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:50.870 -0500", hash_original_field = "23AFD149B2BA99EFAAC01896459B3DF9", hash_generated_field = "22845C1BD5EB1EFAC44EDEF6B7BDA751")
 
-
         public final static int TAG = 3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:50.857 -0500", hash_original_field = "6D439F1D3806F3B8DDD66C155D4A0AD3", hash_generated_field = "6D439F1D3806F3B8DDD66C155D4A0AD3")
-
 
         int viewId;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:50.859 -0500", hash_original_field = "348353981961A3507DF6BC6E23EBAF56", hash_generated_field = "348353981961A3507DF6BC6E23EBAF56")
@@ -1500,12 +1466,9 @@ public void writeToParcel(Parcel dest, int flags) {
             }
         }
     }
-
-
     
     private class ReflectionActionWithoutParams extends Action {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:50.880 -0500", hash_original_field = "C5B69BCC9F5393E5C238B51A93CC6048", hash_generated_field = "03362AF19131C1207E62059104EDE4C5")
-
 
         public final static int TAG = 5;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:50.875 -0500", hash_original_field = "6D439F1D3806F3B8DDD66C155D4A0AD3", hash_generated_field = "6D439F1D3806F3B8DDD66C155D4A0AD3")
@@ -1571,15 +1534,12 @@ public void writeToParcel(Parcel out, int flags) {
             }
         }
     }
-
-
     
     private class ReflectionAction extends Action {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:50.896 -0500", hash_original_field = "CDAB39A11CA44163160BD0C9D448D341", hash_generated_field = "7DD4C1F30BE983580F1014A25C73E0E9")
 
         static final int TAG = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:50.898 -0500", hash_original_field = "7F7D44C438A386CA9622D4D3C9DB8C3F", hash_generated_field = "E11DCA29C7BD696B2526B497FF3EAAEC")
-
 
         static final int BOOLEAN = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:50.900 -0500", hash_original_field = "563BE0C5D63C5121947A501848334D40", hash_generated_field = "A08488B6E820CE04526667A0F65B2358")
@@ -1622,7 +1582,6 @@ public void writeToParcel(Parcel out, int flags) {
 
         static final int INTENT = 14;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:50.931 -0500", hash_original_field = "6D439F1D3806F3B8DDD66C155D4A0AD3", hash_generated_field = "6D439F1D3806F3B8DDD66C155D4A0AD3")
-
 
         int viewId;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:50.933 -0500", hash_original_field = "1E5D18395D934B5D254686548A645BA9", hash_generated_field = "1E5D18395D934B5D254686548A645BA9")
@@ -1876,16 +1835,12 @@ private Class getParameterType() {
             }
         }
     }
-
-
     
     private class ViewGroupAction extends Action {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:50.981 -0500", hash_original_field = "880881F73157436E3CF8EDEBE8AFED23", hash_generated_field = "BFAD764BA58FF98FFB009C9036CFE299")
 
-
         public final static int TAG = 4;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:50.976 -0500", hash_original_field = "6D439F1D3806F3B8DDD66C155D4A0AD3", hash_generated_field = "6D439F1D3806F3B8DDD66C155D4A0AD3")
-
 
         int viewId;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:50.978 -0500", hash_original_field = "94DAE06500F0010791F8161444D05A58", hash_generated_field = "94DAE06500F0010791F8161444D05A58")
@@ -1938,12 +1893,9 @@ public void writeToParcel(Parcel dest, int flags) {
             }
         }
     }
-
-
     
     private class MemoryUsageCounter {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:50.992 -0500", hash_original_field = "B0DA7A32C463859C81C00F4CE0F0F3CC", hash_generated_field = "B0DA7A32C463859C81C00F4CE0F0F3CC")
-
 
         int mBitmapHeapMemoryUsage;
         
@@ -1969,11 +1921,8 @@ public void bitmapIncrement(int numBytes) {
 public int getBitmapHeapMemoryUsage() {
             return mBitmapHeapMemoryUsage;
         }
-
         
     }
-
-
     
     @Target({ ElementType.TYPE }) @Retention(RetentionPolicy.RUNTIME) public @interface RemoteView {
     }

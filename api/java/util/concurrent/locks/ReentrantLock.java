@@ -7,11 +7,6 @@ import droidsafe.annotations.*;
 import java.util.Collection;
 import java.util.concurrent.TimeUnit;
 
-
-
-
-
-
 public class ReentrantLock implements Lock, java.io.Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.067 -0500", hash_original_field = "105DA31A02DCFCBB7E89AF519C897445", hash_generated_field = "190C3E77BD396A2688499FE9C5D2BE14")
 
@@ -430,7 +425,6 @@ public final boolean hasQueuedThreads() {
         return sync.hasQueuedThreads();
     }
 
-
     /**
      * Queries whether the given thread is waiting to acquire this
      * lock. Note that because cancellations may occur at any time, a
@@ -447,7 +441,6 @@ public final boolean hasQueuedThreads() {
 public final boolean hasQueuedThread(Thread thread) {
         return sync.isQueued(thread);
     }
-
 
     /**
      * Returns an estimate of the number of threads waiting to
@@ -558,14 +551,12 @@ protected Collection<Thread> getWaitingThreads(Condition condition) {
             throw new IllegalArgumentException("not owner");
         return sync.getWaitingThreads((AbstractQueuedSynchronizer.ConditionObject)condition);
     }
-
     
     abstract static class Sync extends AbstractQueuedSynchronizer {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.074 -0500", hash_original_field = "6E08CD9A919DEC260028A9B5B46674A3", hash_generated_field = "11262B0B520D47FEDD0C78D205387B55")
 
         private static final long serialVersionUID = -5179523762034025860L;
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.504 -0400", hash_original_method = "88F1B6F2E189B36E0DD98AFBD02FE2C7", hash_generated_method = "88F1B6F2E189B36E0DD98AFBD02FE2C7")
         public Sync ()
         {
@@ -667,15 +658,12 @@ private void readObject(java.io.ObjectInputStream s)
             setState(0); // reset to unlocked state
         }
     }
-
-
     
     static final class NonfairSync extends Sync {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.103 -0500", hash_original_field = "EC11B14AA7C16689A52450D54648088D", hash_generated_field = "58C60847CF2F2D2F1CEF07DFE5BA201D")
 
         private static final long serialVersionUID = 7316153563782823691L;
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.506 -0400", hash_original_method = "92700F1FF079627760B83F1F338B8E6E", hash_generated_method = "92700F1FF079627760B83F1F338B8E6E")
         public NonfairSync ()
         {
@@ -701,8 +689,6 @@ protected final boolean tryAcquire(int acquires) {
             return nonfairTryAcquire(acquires);
         }
     }
-
-
     
     static final class FairSync extends Sync {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.113 -0500", hash_original_field = "5702DB143526F6B91894FF398957D169", hash_generated_field = "CB1921210AFFA16906C257D2951975DC")

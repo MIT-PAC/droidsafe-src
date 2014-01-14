@@ -19,10 +19,6 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.os.RemoteException;
 
-
-
-
-
 public abstract class BroadcastReceiver {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:00.618 -0500", hash_original_field = "B6F0ED1C97BC5319472703C5AFA1B37B", hash_generated_field = "56CC6D10D54B274449EA4D95649A29AE")
 
@@ -408,13 +404,12 @@ void checkSynchronousHint() {
     // Broadcast receiver really belongs to application so, we call register intentfilter from
     // broadcast the receiver of application
     // We pull out IntentFilters out of xml and register them with the appropriate subclasses of Context here
-    @DSModeled(DSC.BAN)
+    
     public void __ds__registerIntentFilter(IntentFilter intentFilter) {
         if (mApplication != null)
             mApplication.__ds__intentFilters.add(intentFilter);
     }
     
-    @DSModeled(DSC.BAN)
     public void setApplication(Application app) { 
         this.mApplication = app;
     }
@@ -430,7 +425,6 @@ void checkSynchronousHint() {
 
         public static final int TYPE_UNREGISTERED = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:00.631 -0500", hash_original_field = "B93BF1EFA6B57CC598632E54B97CD147", hash_generated_field = "B93BF1EFA6B57CC598632E54B97CD147")
-
         
          int mType;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:00.633 -0500", hash_original_field = "CDB2CA9D2DC3E6D40D3791F468236C61", hash_generated_field = "CDB2CA9D2DC3E6D40D3791F468236C61")
@@ -443,7 +437,6 @@ void checkSynchronousHint() {
 
          IBinder mToken;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:00.640 -0500", hash_original_field = "457E6BFD9A88F809DF3F4A88B9B7B893", hash_generated_field = "457E6BFD9A88F809DF3F4A88B9B7B893")
-
         
         int mResultCode;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:00.642 -0500", hash_original_field = "9297DC4168CE0E61BD9D0F02E127B543", hash_generated_field = "9297DC4168CE0E61BD9D0F02E127B543")
@@ -684,8 +677,6 @@ void checkSynchronousHint() {
             Log.e("BroadcastReceiver", e.getMessage(), e);
         }
     }
-
-
     
 }
 

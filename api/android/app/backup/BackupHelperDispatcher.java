@@ -12,33 +12,22 @@ import java.util.TreeMap;
 import android.os.ParcelFileDescriptor;
 import android.util.Log;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public class BackupHelperDispatcher {
-
     
-    @DSModeled(DSC.SAFE)
     private static int readHeader_native(Header h, FileDescriptor fd) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int skipChunk_native(FileDescriptor fd, int bytesToSkip) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int allocateHeader_native(Header h, FileDescriptor fd) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int writeHeader_native(Header h, FileDescriptor fd, int pos) {
         return DSUtils.UNKNOWN_INT;
     }
@@ -46,7 +35,6 @@ public class BackupHelperDispatcher {
 
     private static final String TAG = "BackupHelperDispatcher";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.668 -0500", hash_original_field = "087B9083817AA3054FE76BD13CD55CBF", hash_generated_field = "087B9083817AA3054FE76BD13CD55CBF")
-
 
     TreeMap<String,BackupHelper> mHelpers = new TreeMap<String,BackupHelper>();
     
@@ -124,7 +112,6 @@ private void doOneBackup(ParcelFileDescriptor oldState, BackupDataOutput data,
             throw new IOException("writeHeader_native failed (error " + err + ")");
         }
     }
-
     
     private static class Header {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.663 -0500", hash_original_field = "8D4654446C9DD3E766BE07B4267F3234", hash_generated_field = "8D4654446C9DD3E766BE07B4267F3234")
@@ -134,13 +121,11 @@ private void doOneBackup(ParcelFileDescriptor oldState, BackupDataOutput data,
 
         String keyPrefix;
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.244 -0400", hash_original_method = "7DC9F4B0B6F0B6B866C998FD2825EB34", hash_generated_method = "7DC9F4B0B6F0B6B866C998FD2825EB34")
         public Header ()
         {
             //Synthesized constructor
         }
-
 
     }
 

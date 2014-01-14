@@ -6,10 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.util.Log;
 
-
-
-
-
 public class PowerManager {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:28.589 -0500", hash_original_field = "3B4330FED75BB90B0CE9F985761989D9", hash_generated_field = "C992E04E6F98294D18127FB43220B098")
 
@@ -33,7 +29,6 @@ public class PowerManager {
 
     private static final int WAKE_BIT_PROXIMITY_SCREEN_OFF = 32;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:28.606 -0500", hash_original_field = "74306E3D80B861ADC2651DCA065DB8DA", hash_generated_field = "508DC0C6CE30C8ED2A556800FDE5D29E")
-
     
     private static final int LOCK_MASK = WAKE_BIT_CPU_STRONG
                                         | WAKE_BIT_CPU_WEAK
@@ -52,7 +47,6 @@ public class PowerManager {
 
     @Deprecated
     public static final int SCREEN_BRIGHT_WAKE_LOCK = WAKE_BIT_CPU_WEAK | WAKE_BIT_SCREEN_BRIGHT;
-
     
     public class WakeLock {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:28.633 -0500", hash_original_field = "AB493A44689C365DB0C15627FDC5B5BB", hash_generated_field = "E9017053B54EAB7FB5FC1DB7E6284D86")
@@ -65,13 +59,10 @@ public class PowerManager {
             public void run() {
                 release();
                 
-                
             }
-
             
 };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:28.640 -0500", hash_original_field = "4E5A87EA4636A8ACF68875B877F3A7B8", hash_generated_field = "4E5A87EA4636A8ACF68875B877F3A7B8")
-
 	
         int mFlags;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:28.642 -0500", hash_original_field = "05B32B05746742D3A5261C827E7D8852", hash_generated_field = "05B32B05746742D3A5261C827E7D8852")
@@ -289,14 +280,12 @@ public String toString() {
 
     public static final int ON_AFTER_RELEASE = 0x20000000;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:28.704 -0500", hash_original_field = "5A93C277105259AF4C607FFD616B68DC", hash_generated_field = "5A93C277105259AF4C607FFD616B68DC")
-
     
     IPowerManager mService;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:28.706 -0500", hash_original_field = "A163099B522120C606A3CA562F90E927", hash_generated_field = "A163099B522120C606A3CA562F90E927")
 
     Handler mHandler;
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.325 -0400", hash_original_method = "CC3F52E82947675044A40593774B54F6", hash_generated_method = "FBF57EA37BF41DE0AFD68D9E02F27504")
     public PowerManager() {
         // ---------- Original Method ----------

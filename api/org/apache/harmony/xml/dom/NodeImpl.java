@@ -22,11 +22,6 @@ import org.w3c.dom.ProcessingInstruction;
 import org.w3c.dom.TypeInfo;
 import org.w3c.dom.UserDataHandler;
 
-
-
-
-
-
 public abstract class NodeImpl implements Node {
 
     /**
@@ -186,12 +181,11 @@ private static List<Object> createEqualityKey(Node node) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.146 -0500", hash_original_field = "EB6AC58D4187F31636AB0B55B3807816", hash_generated_field = "F53B7EB5F95F86FB434D25A8A5066C44")
 
-
     private static final NodeList EMPTY_LIST = new NodeListImpl();
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.373 -0400", hash_original_field = "50B55FD6A8E5705F66BF71830D3227D1", hash_generated_field = "9BE656944A6DBF09637C80D55E352920")
 
-    static final TypeInfo NULL_TYPE_INFO = new TypeInfo() {        
-        @DSModeled(DSC.SAFE)
+    static final TypeInfo NULL_TYPE_INFO = new TypeInfo() {
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.372 -0400", hash_original_method = "D6670B1956B399E1F4484C7409D24E32", hash_generated_method = "B4051AD4FF44AD338624469365B280F8")
         public String getTypeName() {
             String varB4EAC82CA7396A68D541C85D26508E83_366710541 = null; 
@@ -199,11 +193,8 @@ private static List<Object> createEqualityKey(Node node) {
             varB4EAC82CA7396A68D541C85D26508E83_366710541.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_366710541;
             
-            
         }
-
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.373 -0400", hash_original_method = "076EDBD720D64B1CD58A3E3161F3A408", hash_generated_method = "83D91F2300DCAB76D6EC29A18904FFB6")
         public String getTypeNamespace() {
             String varB4EAC82CA7396A68D541C85D26508E83_2015477207 = null; 
@@ -211,11 +202,8 @@ private static List<Object> createEqualityKey(Node node) {
             varB4EAC82CA7396A68D541C85D26508E83_2015477207.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_2015477207;
             
-            
         }
-
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:36.373 -0400", hash_original_method = "C5EC47855C2BF530753D3BD268C04AD2", hash_generated_method = "7E85F18F923F01A529081C723FC951EF")
         public boolean isDerivedFrom(
                 String typeNamespaceArg, String typeNameArg, int derivationMethod) {
@@ -225,9 +213,7 @@ private static List<Object> createEqualityKey(Node node) {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_943518646 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_943518646;
             
-            
         }
-
         
 };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.159 -0500", hash_original_field = "3C52D3A90E4759490A57AF776DEAFE65", hash_generated_field = "3C52D3A90E4759490A57AF776DEAFE65")
@@ -412,9 +398,7 @@ public final void setNodeValue(String nodeValue) throws DOMException {
     
 public void setPrefix(String prefix) throws DOMException {
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.664 -0400", hash_original_method = "DD28C7A733028F46F0F8ECAE2D47C2BC", hash_generated_method = "D5F1AA75A751F62DFBA88F7DF6AFE239")
     public final String getBaseURI() {
 switch(getNodeType()){
@@ -627,9 +611,7 @@ private NodeImpl getContainingElement() {
         }
         return null;
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.668 -0400", hash_original_method = "7FA28D24E20CD6244334CF1DE396DB62", hash_generated_method = "60503655F2339FC121D79DD201DAD826")
     public final String lookupPrefix(String namespaceURI) {
         addTaint(namespaceURI.getTaint());
@@ -710,9 +692,7 @@ public final boolean isDefaultNamespace(String namespaceURI) {
                 ? actual == null
                 : namespaceURI.equals(actual);
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.669 -0400", hash_original_method = "4BD06F1D22ADF3EA57842F923303423E", hash_generated_method = "3A8219EC4D8C25D4EF07DEE01CDFB7AB")
     public final String lookupNamespaceURI(String prefix) {
         addTaint(prefix.getTaint());
@@ -833,7 +813,6 @@ private boolean namedNodeMapsEqual(NamedNodeMap a, NamedNodeMap b) {
 public final Object getFeature(String feature, String version) {
         return isSupported(feature, version) ? this : null;
     }
-
     
     static class UserData {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.280 -0500", hash_original_field = "01495BEB834F5098BB0B06183674C819", hash_generated_field = "01495BEB834F5098BB0B06183674C819")
@@ -848,7 +827,6 @@ UserData(Object value, UserDataHandler handler) {
             this.value = value;
             this.handler = handler;
         }
-
         
     }
 

@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 
-
-
-
-
-
 public class ASN1Oid extends ASN1Primitive {
 
     /**
@@ -45,8 +40,8 @@ public static ASN1Oid getInstanceForString() {
     private static final ASN1Oid ASN1 = new ASN1Oid();
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.597 -0400", hash_original_field = "A17235E1E62013241F58D7FEA3397ABE", hash_generated_field = "7C71E1FAB479FEB541AEBE0F6A00EF0D")
 
-    private static final ASN1Oid STRING_OID = new ASN1Oid() {        
-        @DSModeled(DSC.SAFE)
+    private static final ASN1Oid STRING_OID = new ASN1Oid() {
+        
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.596 -0400", hash_original_method = "EDD14D755051A488C2BFB6BEA216DB71", hash_generated_method = "AC1548FB73DFF4CDEBD6C8414C8C66BC")
         @Override
         public Object getDecodedObject(BerInputStream in) throws IOException {
@@ -87,11 +82,8 @@ public static ASN1Oid getInstanceForString() {
             varB4EAC82CA7396A68D541C85D26508E83_1332120319.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1332120319;
             
-            
         }
-
         
-        @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.596 -0400", hash_original_method = "CDC9ED6FAB1ED0D19929BE7F36D72557", hash_generated_method = "1BFE9E939832A0646316571B458221A0")
         @Override
         public void setEncodingContent(BerOutputStream out) {
@@ -99,10 +91,7 @@ public static ASN1Oid getInstanceForString() {
             super.setEncodingContent(out);
             addTaint(out.getTaint());
             
-            
-            
         }
-
         
 };
 

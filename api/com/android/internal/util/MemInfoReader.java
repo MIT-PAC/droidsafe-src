@@ -8,16 +8,11 @@ import java.io.FileInputStream;
 
 import android.os.StrictMode;
 
-
-
-
-
 public class MemInfoReader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.237 -0500", hash_original_field = "D8DB14FD2FF72CF1AA09DD3099C7A5AC", hash_generated_field = "D8DB14FD2FF72CF1AA09DD3099C7A5AC")
 
     byte[] mBuffer = new byte[1024];
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.239 -0500", hash_original_field = "6D00962622134601C809BF42998E8D12", hash_generated_field = "7929D370BBAA2A6043EF739E265C3242")
-
 
     private long mTotalSize;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.242 -0500", hash_original_field = "1AAFE5F5E1A8763ED987466D6531C05E", hash_generated_field = "BCCA6254E80514BD4181C138C6D39F8D")
@@ -27,7 +22,6 @@ public class MemInfoReader {
 
     private long mCachedSize;
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.772 -0400", hash_original_method = "0A3FF658B31652AA0351B8E33261A030", hash_generated_method = "0A3FF658B31652AA0351B8E33261A030")
     public MemInfoReader ()
     {
@@ -126,7 +120,6 @@ public long getFreeSize() {
 public long getCachedSize() {
         return mCachedSize;
     }
-
     
 }
 

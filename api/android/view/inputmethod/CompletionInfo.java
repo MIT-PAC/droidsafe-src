@@ -8,18 +8,13 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
 
-
-
-
-
 public final class CompletionInfo implements Parcelable {
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.274 -0400", hash_original_field = "31621134870CBAE679681892F3003DDF", hash_generated_field = "B610E87A4A96E260678AA4BA5F15A953")
 
     public static final Parcelable.Creator<CompletionInfo> CREATOR
             = new Parcelable.Creator<CompletionInfo>() {
-    	@DSModeled(DSC.SAFE)
+    	
         public CompletionInfo createFromParcel(Parcel source) {
         	addTaint(source.getTaint());
             return new CompletionInfo(source);

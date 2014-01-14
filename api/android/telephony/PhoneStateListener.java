@@ -11,11 +11,6 @@ import android.os.Message;
 
 import com.android.internal.telephony.IPhoneStateListener;
 
-
-
-
-
-
 public class PhoneStateListener {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:48.531 -0500", hash_original_field = "0A5B2BD023693D413E9F75E8C9DF4974", hash_generated_field = "2668A1FA15452EF095AB309D80143EE2")
 
@@ -53,54 +48,41 @@ public class PhoneStateListener {
     public static final int LISTEN_OTASP_CHANGED                            = 0x00000200;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.692 -0400", hash_original_field = "93DBE9FBF8EA760E573744A3CB51F49C", hash_generated_field = "240FC5CF3A1E5844CEA1A4686BC3A90E")
 
-    IPhoneStateListener callback = new IPhoneStateListener.Stub() {        
-        @DSModeled(DSC.SAFE)
+    IPhoneStateListener callback = new IPhoneStateListener.Stub() {
+        
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.687 -0400", hash_original_method = "54E0979B60176178E05220CE78D63618", hash_generated_method = "896ABB9DB951EA538F465FE17351BE4A")
         public void onServiceStateChanged(ServiceState serviceState) {
             
             Message.obtain(mHandler, LISTEN_SERVICE_STATE, 0, 0, serviceState).sendToTarget();
             addTaint(serviceState.getTaint());
             
-            
         }
-
         
-        @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.688 -0400", hash_original_method = "807A7BFCEA1B0191C8F013A742695986", hash_generated_method = "29834ADFED34C96085CF9647637FC6F8")
         public void onSignalStrengthChanged(int asu) {
             
             Message.obtain(mHandler, LISTEN_SIGNAL_STRENGTH, asu, 0, null).sendToTarget();
             addTaint(asu);
             
-            
         }
-
         
-        @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.688 -0400", hash_original_method = "40C12FC55DD6857044A738B96618D76E", hash_generated_method = "2D0FB5DC734B2BC99447979336864A85")
         public void onMessageWaitingIndicatorChanged(boolean mwi) {
             
             Message.obtain(mHandler, LISTEN_MESSAGE_WAITING_INDICATOR, mwi ? 1 : 0, 0, null)
                     .sendToTarget();
             addTaint(mwi);
-            
-            
                     
         }
-
         
-        @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.689 -0400", hash_original_method = "1303F4851FC7C46811AB3FA9BCFA27AC", hash_generated_method = "B417E7A99383BB44A23E06E52F8B01FA")
         public void onCallForwardingIndicatorChanged(boolean cfi) {
             
             Message.obtain(mHandler, LISTEN_CALL_FORWARDING_INDICATOR, cfi ? 1 : 0, 0, null)
                     .sendToTarget();
             addTaint(cfi);
-            
-            
                     
         }
-
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.689 -0400", hash_original_method = "BD352F057E242D69FEFF4C00A841F3C5", hash_generated_method = "2DB70183ECA77F0A5D7F76F2BC8256E0")
         public void onCellLocationChanged(Bundle bundle) {
@@ -109,12 +91,8 @@ public class PhoneStateListener {
             Message.obtain(mHandler, LISTEN_CELL_LOCATION, 0, 0, location).sendToTarget();
             addTaint(bundle.getTaint());
             
-            
-            
         }
-
         
-        @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.689 -0400", hash_original_method = "90D240AD7654D8CDBBE9240E4026EEC0", hash_generated_method = "25AEEEC8B7BE7C28EA289FC604A8FEBC")
         public void onCallStateChanged(int state, String incomingNumber) {
             
@@ -122,11 +100,8 @@ public class PhoneStateListener {
             addTaint(state);
             addTaint(incomingNumber.getTaint());
             
-            
         }
-
         
-        @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.690 -0400", hash_original_method = "8A3A12A8CE80BED5FCCDE994C492901B", hash_generated_method = "7450F5546A11573F436C66EC50152E2E")
         public void onDataConnectionStateChanged(int state, int networkType) {
             
@@ -134,44 +109,32 @@ public class PhoneStateListener {
                     sendToTarget();
             addTaint(state);
             addTaint(networkType);
-            
-            
                     
         }
-
         
-        @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.691 -0400", hash_original_method = "72B647041610C54487B6FB3ED574136B", hash_generated_method = "BB99BAE6935407A4C54BCB9677E95F39")
         public void onDataActivity(int direction) {
             
             Message.obtain(mHandler, LISTEN_DATA_ACTIVITY, direction, 0, null).sendToTarget();
             addTaint(direction);
             
-            
         }
-
         
-        @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.691 -0400", hash_original_method = "58C30AB3401BEDE34047CE21CBA2332D", hash_generated_method = "92D058096ABB283F84DD7FE07FFD567B")
         public void onSignalStrengthsChanged(SignalStrength signalStrength) {
             
             Message.obtain(mHandler, LISTEN_SIGNAL_STRENGTHS, 0, 0, signalStrength).sendToTarget();
             addTaint(signalStrength.getTaint());
             
-            
         }
-
         
-        @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.692 -0400", hash_original_method = "5CE4B3BDFCEEE2F8239B6E7FA479E13E", hash_generated_method = "6DBBD590ED3BF273738C91D64A6C9B53")
         public void onOtaspChanged(int otaspMode) {
             
             Message.obtain(mHandler, LISTEN_OTASP_CHANGED, otaspMode, 0).sendToTarget();
             addTaint(otaspMode);
             
-            
         }
-
         
 };
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:47.693 -0400", hash_original_field = "3403CCDA1EA40BE76B26F17C3A252FEF", hash_generated_field = "232E72B4CB2D72FAB017EC4947B8CAB1")
@@ -182,41 +145,29 @@ public class PhoneStateListener {
             
             PhoneStateListener.this.onServiceStateChanged((ServiceState)msg.obj);
             
-            
             PhoneStateListener.this.onSignalStrengthChanged(msg.arg1);
-            
             
             PhoneStateListener.this.onMessageWaitingIndicatorChanged(msg.arg1 != 0);
             
-            
             PhoneStateListener.this.onCallForwardingIndicatorChanged(msg.arg1 != 0);
-            
             
             PhoneStateListener.this.onCellLocationChanged((CellLocation)msg.obj);
             
-            
             PhoneStateListener.this.onCallStateChanged(msg.arg1, (String)msg.obj);
-            
             
             PhoneStateListener.this.onDataConnectionStateChanged(msg.arg1, msg.arg2);
             
-            
             PhoneStateListener.this.onDataConnectionStateChanged(msg.arg1);
-            
             
             PhoneStateListener.this.onDataActivity(msg.arg1);
             
-            
             PhoneStateListener.this.onSignalStrengthsChanged((SignalStrength)msg.obj);
-            
             
             PhoneStateListener.this.onOtaspChanged(msg.arg1);
             
             addTaint(msg.getTaint());
             
-            
         }
-
         
 };
 
@@ -345,7 +296,6 @@ public void onDataActivity(int direction) {
 public void onSignalStrengthsChanged(SignalStrength signalStrength) {
         // default implementation empty
     }
-
 
     /**
      * The Over The Air Service Provisioning (OTASP) has changed. Requires

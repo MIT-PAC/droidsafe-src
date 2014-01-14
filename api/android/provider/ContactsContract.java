@@ -34,10 +34,6 @@ import android.text.TextUtils;
 import android.util.Pair;
 import android.view.View;
 
-
-
-
-
 public final class ContactsContract {
 
     /**
@@ -184,7 +180,6 @@ private static void split(String content, List<String> tokens, List<Integer> off
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:45.549 -0500", hash_original_field = "ED482E4F3DFF6E773B5F502F3225E108", hash_generated_field = "FED7E6E1693B1A73321724DE94B7C5BF")
 
     public static final String AUTHORITY = "com.android.contacts";
-
     
     public static final class Authorization {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:45.576 -0500", hash_original_field = "1BBDB3BE15C47768797FC1A1E879BDBF", hash_generated_field = "A470159EC5224DD15058611E1D5E86C6")
@@ -203,8 +198,6 @@ private static void split(String content, List<String> tokens, List<Integer> off
             //Synthesized constructor
         }
     }
-
-
     
     public static final class Preferences {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:45.587 -0500", hash_original_field = "4A875F6C9D3971B229353AF7680F6833", hash_generated_field = "354038F38C8A27D1130C805310BD23D7")
@@ -232,8 +225,6 @@ private static void split(String content, List<String> tokens, List<Integer> off
             //Synthesized constructor
         }
     }
-
-
     
     public static final class Directory implements BaseColumns {
 
@@ -336,8 +327,6 @@ public static void notifyDirectoryChange(ContentResolver resolver) {
 private Directory() {
         }
     }
-
-
     
     public static final class SyncState implements SyncStateContract.Columns {
 
@@ -381,7 +370,6 @@ public static ContentProviderOperation newSetOperation(Account account, byte[] d
         }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:45.682 -0500", hash_original_field = "E8C57D74C792F88386CA3DAD09DDB1BA", hash_generated_field = "B8243A9F992B1927826CEDCE0876B770")
 
-
         public static final String CONTENT_DIRECTORY =
                 SyncStateContract.Constants.CONTENT_DIRECTORY;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:45.684 -0500", hash_original_field = "C1EA74B2428365CED3D656387FEA49B7", hash_generated_field = "D7D188013240FCCAF388869D2E2EBFDE")
@@ -395,8 +383,6 @@ public static ContentProviderOperation newSetOperation(Account account, byte[] d
         
 private SyncState() {}
     }
-
-
     
     public static final class ProfileSyncState implements SyncStateContract.Columns {
 
@@ -440,7 +426,6 @@ public static ContentProviderOperation newSetOperation(Account account, byte[] d
         }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:45.702 -0500", hash_original_field = "E8C57D74C792F88386CA3DAD09DDB1BA", hash_generated_field = "B8243A9F992B1927826CEDCE0876B770")
 
-
         public static final String CONTENT_DIRECTORY =
                 SyncStateContract.Constants.CONTENT_DIRECTORY;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:45.705 -0500", hash_original_field = "BA4F0FCD9C107FCAD301F57E9BA4E30E", hash_generated_field = "A12A5FA95C37F6B7E0F5ADA8AB6D997E")
@@ -454,8 +439,6 @@ public static ContentProviderOperation newSetOperation(Account account, byte[] d
         
 private ProfileSyncState() {}
     }
-
-
     
     public final static class ContactCounts {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:45.777 -0500", hash_original_field = "90EF19E00CA4BCDB57B7036D915729BF", hash_generated_field = "7C98B52260D9013556878BD20F22F6D5")
@@ -474,8 +457,6 @@ private ProfileSyncState() {}
             //Synthesized constructor
         }
     }
-
-
     
     public static class Contacts implements BaseColumns, ContactsColumns, ContactOptionsColumns, ContactNameColumns, ContactStatusColumns {
 
@@ -634,7 +615,6 @@ public static InputStream openContactPhotoInputStream(ContentResolver cr, Uri co
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:45.790 -0500", hash_original_field = "26476F6EBEF92A011D86733E19A8EE4D", hash_generated_field = "5370BB56B85850A889ED03A2FA6172D9")
 
         public static final Uri CONTENT_URI = Uri.withAppendedPath(AUTHORITY_URI, "contacts");
-
         
         public static final class Data implements BaseColumns, DataColumns {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:45.992 -0500", hash_original_field = "C8A43A921088C098D7CBCE1B2AFE5A8D", hash_generated_field = "9B918616E0E439AEB554FBB4A1A7DAFD")
@@ -647,8 +627,6 @@ public static InputStream openContactPhotoInputStream(ContentResolver cr, Uri co
         
 private Data() {}
         }
-
-
         
         public static final class Entity implements BaseColumns, ContactsColumns, ContactNameColumns, RawContactsColumns, BaseSyncColumns, SyncColumns, DataColumns, StatusColumns, ContactOptionsColumns, ContactStatusColumns {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:45.848 -0500", hash_original_field = "DA3D19AF30BE6813C8B54E768CBFA3FA", hash_generated_field = "FFD23D74408F7344A82A6777888A9F41")
@@ -668,8 +646,6 @@ private Data() {}
 private Entity() {
             }
         }
-
-
         
         public static final class StreamItems implements StreamItemsColumns {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.010 -0500", hash_original_field = "D318A4E0D800ECC2D52F82E625ABC22A", hash_generated_field = "13CE0BD71DF45E7185B296A116872C44")
@@ -683,8 +659,6 @@ private Entity() {
 private StreamItems() {
         }
         }
-
-
         
         public static final class AggregationSuggestions implements BaseColumns, ContactsColumns, ContactOptionsColumns, ContactStatusColumns {
 
@@ -699,7 +673,6 @@ public static final Builder builder() {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:45.871 -0500", hash_original_field = "4805436DEC852F13579D74FAB7D1D026", hash_generated_field = "6EEA28F01E23AE920EA0888EF515D1EA")
 
             public static final String CONTENT_DIRECTORY = "suggestions";
-
             
             public static final class Builder {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:45.884 -0500", hash_original_field = "12ACBC5C734713F3E386C7F89D418BF2", hash_generated_field = "54B9A457EEF3B70924549BAF472FB470")
@@ -776,7 +749,6 @@ public Uri build() {
 
                     return builder.build();
                 }
-
                 
             }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:45.873 -0500", hash_original_field = "A6B5E374DB080F39BF928CDC60E4C47C", hash_generated_field = "B6AF81729D92C3DC946A8E696FBD665C")
@@ -798,8 +770,6 @@ public Uri build() {
             
 private AggregationSuggestions() {}
         }
-
-
         
         public static final class Photo implements BaseColumns, DataColumnsWithJoins {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:45.917 -0500", hash_original_field = "FE3767F034EDE64D3E36F26FDB2DD64E", hash_generated_field = "AF03CF5B5172F2903B579B1D0EA79FB9")
@@ -854,7 +824,6 @@ private Photo() {}
                 CONTENT_STREQUENT_URI, "filter");
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:45.826 -0500", hash_original_field = "7818F01D66ECE482A42E35C19D2D2816", hash_generated_field = "F8700FD8F66119DCF4D9FA84EFAB6107")
 
-
         public static final Uri CONTENT_GROUP_URI = Uri.withAppendedPath(
                 CONTENT_URI, "group");
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:45.828 -0500", hash_original_field = "4044EFC46C40E06302B8F4E601B3F455", hash_generated_field = "C1454D5C98A71A32CF2C3F72272BFADA")
@@ -873,8 +842,6 @@ private Photo() {}
         
 private Contacts()  {}
     }
-
-
     
     public static final class Profile implements BaseColumns, ContactsColumns, ContactOptionsColumns, ContactNameColumns, ContactStatusColumns {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:45.944 -0500", hash_original_field = "E798EF6EA0A786A3B268A64743C5AF28", hash_generated_field = "576B190C7713DF6E5188A93DF9D0AD71")
@@ -899,8 +866,6 @@ private Contacts()  {}
 private Profile() {
         }
     }
-
-
     
     public static final class RawContacts implements BaseColumns, RawContactsColumns, ContactOptionsColumns, ContactNameColumns, SyncColumns {
 
@@ -944,23 +909,18 @@ public static EntityIterator newEntityIterator(Cursor cursor) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:45.968 -0500", hash_original_field = "692DA203B8BFDCAFAD03981A5F8419A1", hash_generated_field = "7285DD00B1DE1BA2EB1E93374C16DBE6")
 
         public static final Uri CONTENT_URI = Uri.withAppendedPath(AUTHORITY_URI, "raw_contacts");
-
         
         public static final class Data implements BaseColumns, DataColumns {
-
             
             @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.212 -0400", hash_original_field = "244843A89660565990A10147301407C3", hash_generated_field = "9B918616E0E439AEB554FBB4A1A7DAFD")
 
             public static final String CONTENT_DIRECTORY = "data";
             
-            @DSModeled(DSC.BAN)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.212 -0400", hash_original_method = "AE2AC52C1B086D07AB414F4634EAA37E", hash_generated_method = "68BBF991BD74A1EFA8A89E7D9D24A1BD")
             private  Data() {
                 // ---------- Original Method ----------
             }
         }
-
-
         
         public static final class Entity implements BaseColumns, DataColumns {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.000 -0500", hash_original_field = "3D126FD6B95E114E5AD9A93E5B95D488", hash_generated_field = "D55A4C79393D833EAA5D07CD4A1C37E3")
@@ -970,30 +930,23 @@ public static EntityIterator newEntityIterator(Cursor cursor) {
 
             public static final String DATA_ID = "data_id";
             
-            @DSModeled(DSC.BAN)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.212 -0400", hash_original_method = "607EBA13DCD67902F3CEC6239F391768", hash_generated_method = "72BDB032AD922DE54B8D777470530676")
             private  Entity() {
                 // ---------- Original Method ----------
             }
         }
-
-
         
         public static final class StreamItems implements BaseColumns, StreamItemsColumns {
-
             
             @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.212 -0400", hash_original_field = "AB527CF994C1B112B0ECF7E138BA21A0", hash_generated_field = "13CE0BD71DF45E7185B296A116872C44")
 
             public static final String CONTENT_DIRECTORY = "stream_items";
             
-            @DSModeled(DSC.BAN)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.212 -0400", hash_original_method = "50B0D0B78D385E8C0BEE924F86CB84EC", hash_generated_method = "49F523F180DE7D539C580F6D11E59338")
             private  StreamItems() {
                 // ---------- Original Method ----------
             }
         }
-
-
         
         public static final class DisplayPhoto {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.018 -0500", hash_original_field = "3F579817DBBC68DE4671FDFF24DEB52D", hash_generated_field = "C1D586C4476D33FF0691486D25CE47B6")
@@ -1006,8 +959,6 @@ public static EntityIterator newEntityIterator(Cursor cursor) {
         
 private DisplayPhoto() {}
         }
-
-
         
         private static class EntityIteratorImpl extends CursorEntityIterator {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.025 -0500", hash_original_field = "A55C5B045DBFE7DB97B3365FE2019E42", hash_generated_field = "411B691BE1CB3F57E3AB0F44B5F5E61C")
@@ -1135,14 +1086,11 @@ public EntityIteratorImpl(Cursor cursor) {
 private RawContacts() {
         }
     }
-
-
     
     public static final class StreamItems implements BaseColumns, StreamItemsColumns {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.054 -0500", hash_original_field = "D6F9ED0551EC45772045F21A9F2D5793", hash_generated_field = "FC402994047511C4F3F84FFF51EA5C9A")
 
         public static final Uri CONTENT_URI = Uri.withAppendedPath(AUTHORITY_URI, "stream_items");
-
         
         public static final class StreamItemPhotos implements BaseColumns, StreamItemPhotosColumns {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.073 -0500", hash_original_field = "FE3767F034EDE64D3E36F26FDB2DD64E", hash_generated_field = "AF03CF5B5172F2903B579B1D0EA79FB9")
@@ -1180,28 +1128,22 @@ private StreamItemPhotos() {
 
         public static final String MAX_ITEMS = "max_items";
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.214 -0400", hash_original_method = "50B0D0B78D385E8C0BEE924F86CB84EC", hash_generated_method = "49F523F180DE7D539C580F6D11E59338")
         private  StreamItems() {
             // ---------- Original Method ----------
         }
     }
-
-
     
     public static final class StreamItemPhotos implements BaseColumns, StreamItemPhotosColumns {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.098 -0500", hash_original_field = "07F1D95DC631EF3BF763EB897548B86E", hash_generated_field = "92E6F30B0EB548C6F00B8F457E0C981F")
 
         public static final String PHOTO = "photo";
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.214 -0400", hash_original_method = "52BE888A2784297EE4FE3818D09C55BC", hash_generated_method = "802E4A54077CF0761BF1353DB1940447")
         private  StreamItemPhotos() {
             // ---------- Original Method ----------
         }
     }
-
-
     
     public static final class PhotoFiles implements BaseColumns, PhotoFilesColumns {
         /**
@@ -1211,11 +1153,8 @@ private StreamItemPhotos() {
         
 private PhotoFiles() {
         }
-
         
     }
-
-
     
     public final static class Data implements DataColumnsWithJoins {
 
@@ -1258,14 +1197,11 @@ public static Uri getContactLookupUri(ContentResolver resolver, Uri dataUri) {
 
         public static final String CONTENT_TYPE = "vnd.android.cursor.dir/data";
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.215 -0400", hash_original_method = "AE2AC52C1B086D07AB414F4634EAA37E", hash_generated_method = "68BBF991BD74A1EFA8A89E7D9D24A1BD")
         private  Data() {
             // ---------- Original Method ----------
         }
     }
-
-
     
     public final static class RawContactsEntity implements BaseColumns, DataColumns, RawContactsColumns {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.148 -0500", hash_original_field = "92454B944CF64EBCFC7A74EDFF25A43F", hash_generated_field = "2691991C42B4EBAA7AE90EC64057F986")
@@ -1292,8 +1228,6 @@ public static Uri getContactLookupUri(ContentResolver resolver, Uri dataUri) {
         
 private RawContactsEntity() {}
     }
-
-
     
     public static final class PhoneLookup implements BaseColumns, PhoneLookupColumns, ContactsColumns, ContactOptionsColumns {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.170 -0500", hash_original_field = "345FEBB5C3702ED76C075C9A9A7FD3D1", hash_generated_field = "F04B043C3F594CDD163F409C21510A7E")
@@ -1313,8 +1247,6 @@ private RawContactsEntity() {}
         
 private PhoneLookup() {}
     }
-
-
     
     public static class StatusUpdates implements StatusColumns, PresenceColumns {
 
@@ -1377,8 +1309,6 @@ public static final int getPresencePrecedence(int status) {
         
 private StatusUpdates() {}
     }
-
-
     
     public static final class Presence extends StatusUpdates {
         
@@ -1388,10 +1318,7 @@ private StatusUpdates() {}
             //Synthesized constructor
         }
 
-
     }
-
-
     
     public static class SearchSnippetColumns {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.207 -0500", hash_original_field = "87FCA52EA58A2965EB4E1E9BA6CFAFF9", hash_generated_field = "461E02376DD761106C9F50F56F21857C")
@@ -1410,14 +1337,11 @@ private StatusUpdates() {}
             //Synthesized constructor
         }
     }
-
-
     
     public static final class CommonDataKinds {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.221 -0500", hash_original_field = "8E4017038514CE1EF98C90530F007A29", hash_generated_field = "32BD4CF7EC356B02DEA3FD704AF6D66A")
 
         public static final String PACKAGE_COMMON = "common";
-
         
         public static final class StructuredName implements DataColumnsWithJoins {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.233 -0500", hash_original_field = "DA4E57E9D9A0AF91BF3A7D4C7E0F9E7D", hash_generated_field = "59A4296BAB0F9508FBD1495BE3B9C4C3")
@@ -1463,15 +1387,12 @@ private StatusUpdates() {}
             
 private StructuredName() {}
         }
-
-
         
         public static final class Nickname implements DataColumnsWithJoins, CommonColumns {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.272 -0500", hash_original_field = "6A9D7432C32589D3033F90024C646E23", hash_generated_field = "61FA6F235685467AD2389D2A75A45B85")
 
             public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/nickname";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.274 -0500", hash_original_field = "D5462F3507EE113B47294169A6AD1AF4", hash_generated_field = "63A550FC2BA734C6B55F4A6D27D4887D")
-
 
             public static final int TYPE_DEFAULT = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.277 -0500", hash_original_field = "A23BED94E6BEF1E70FDFC1A84ED9655B", hash_generated_field = "5BEB78DDADAC164A4025C3E0801CB3FF")
@@ -1500,8 +1421,6 @@ private StructuredName() {}
             
 private Nickname() {}
         }
-
-
         
         public static final class Phone implements DataColumnsWithJoins, CommonColumns {
 
@@ -1593,7 +1512,6 @@ public static final CharSequence getTypeLabel(Resources res, int type,
                     "filter");
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.309 -0500", hash_original_field = "02CD0ACAC2AE3D840D206F8BB087ED01", hash_generated_field = "A3AF173E9489DC9819BA4BB309F5F1DB")
 
-
             public static final int TYPE_HOME = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.312 -0500", hash_original_field = "CE1F178F70D800B9E35E76343E118C12", hash_generated_field = "59C15403B52E5856C9B5425B13FB5FCF")
 
@@ -1665,8 +1583,6 @@ public static final CharSequence getTypeLabel(Resources res, int type,
             
 private Phone() {}
         }
-
-
         
         public static final class Email implements DataColumnsWithJoins, CommonColumns {
 
@@ -1725,7 +1641,6 @@ public static final CharSequence getTypeLabel(Resources res, int type,
             public static final String ADDRESS = DATA1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.404 -0500", hash_original_field = "02CD0ACAC2AE3D840D206F8BB087ED01", hash_generated_field = "A3AF173E9489DC9819BA4BB309F5F1DB")
 
-
             public static final int TYPE_HOME = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.406 -0500", hash_original_field = "212665B4C3E3041AB3B35C33DC8E54EA", hash_generated_field = "2DD1E25E0D1B8108129E5DFF1326B779")
 
@@ -1746,8 +1661,6 @@ public static final CharSequence getTypeLabel(Resources res, int type,
             
 private Email() {}
         }
-
-
         
         public static final class StructuredPostal implements DataColumnsWithJoins, CommonColumns {
 
@@ -1795,7 +1708,6 @@ public static final CharSequence getTypeLabel(Resources res, int type,
                     "postals");
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.437 -0500", hash_original_field = "02CD0ACAC2AE3D840D206F8BB087ED01", hash_generated_field = "A3AF173E9489DC9819BA4BB309F5F1DB")
 
-
             public static final int TYPE_HOME = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.440 -0500", hash_original_field = "212665B4C3E3041AB3B35C33DC8E54EA", hash_generated_field = "2DD1E25E0D1B8108129E5DFF1326B779")
 
@@ -1835,8 +1747,6 @@ public static final CharSequence getTypeLabel(Resources res, int type,
 private StructuredPostal() {
             }
         }
-
-
         
         public static final class Im implements DataColumnsWithJoins, CommonColumns {
 
@@ -1914,7 +1824,6 @@ public static final CharSequence getProtocolLabel(Resources res, int type,
             public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/im";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.482 -0500", hash_original_field = "02CD0ACAC2AE3D840D206F8BB087ED01", hash_generated_field = "A3AF173E9489DC9819BA4BB309F5F1DB")
 
-
             public static final int TYPE_HOME = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.485 -0500", hash_original_field = "212665B4C3E3041AB3B35C33DC8E54EA", hash_generated_field = "2DD1E25E0D1B8108129E5DFF1326B779")
 
@@ -1926,7 +1835,6 @@ public static final CharSequence getProtocolLabel(Resources res, int type,
 
             public static final String PROTOCOL = DATA5;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.493 -0500", hash_original_field = "C003FFF9E1F4E464EDA6393F7F03E109", hash_generated_field = "FAEDCA70ABBB2BB6E8F02D0CA58AB92D")
-
 
             public static final String CUSTOM_PROTOCOL = DATA6;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.495 -0500", hash_original_field = "A27438910DAB1815507D1C4F2B6734DB", hash_generated_field = "F9A89D2E95B56F6CF27905C9AF3BEF7C")
@@ -1966,8 +1874,6 @@ public static final CharSequence getProtocolLabel(Resources res, int type,
             
 private Im() {}
         }
-
-
         
         public static final class Organization implements DataColumnsWithJoins, CommonColumns {
 
@@ -2006,7 +1912,6 @@ public static final CharSequence getTypeLabel(Resources res, int type,
             public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/organization";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.543 -0500", hash_original_field = "6C42893D204850B4FAF16B5AB19F3BE2", hash_generated_field = "9660B9049AFB5B9EFB571676569F6154")
 
-
             public static final int TYPE_WORK = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.545 -0500", hash_original_field = "8D4B0D0CC4101D2DEE127C6DA2BFFB6B", hash_generated_field = "7CCF7EE2A0268E7232DBAAB3B7AFBF8C")
 
@@ -2042,8 +1947,6 @@ public static final CharSequence getTypeLabel(Resources res, int type,
             
 private Organization() {}
         }
-
-
         
         public static final class Relation implements DataColumnsWithJoins, CommonColumns {
 
@@ -2096,7 +1999,6 @@ public static final CharSequence getTypeLabel(Resources res, int type,
             public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/relation";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.584 -0500", hash_original_field = "4FF162F9964736F6BFA04A534A01F808", hash_generated_field = "6554B25D5A397416DB3C3322C813D334")
 
-
             public static final int TYPE_ASSISTANT = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.587 -0500", hash_original_field = "B85C6EF24CB1F30626DF0DB4A4985430", hash_generated_field = "B61CACD4D50D7C4ED812B6B430BAE236")
 
@@ -2147,8 +2049,6 @@ public static final CharSequence getTypeLabel(Resources res, int type,
             
 private Relation() {}
         }
-
-
         
         public static final class Event implements DataColumnsWithJoins, CommonColumns {
 
@@ -2175,7 +2075,6 @@ public static int getTypeResource(Integer type) {
             public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/contact_event";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.640 -0500", hash_original_field = "3416DF16E57D90D012A590F0C353055E", hash_generated_field = "99D50BA6A478BE143E64916539BE6610")
 
-
             public static final int TYPE_ANNIVERSARY = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.643 -0500", hash_original_field = "8D4B0D0CC4101D2DEE127C6DA2BFFB6B", hash_generated_field = "7CCF7EE2A0268E7232DBAAB3B7AFBF8C")
 
@@ -2193,8 +2092,6 @@ public static int getTypeResource(Integer type) {
             
 private Event() {}
         }
-
-
         
         public static final class Photo implements DataColumnsWithJoins {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.659 -0500", hash_original_field = "E2E61796B88852949791768A4CE0F12D", hash_generated_field = "C34ED4BEFD8F1C45F4DCBAB84FC48D97")
@@ -2207,14 +2104,11 @@ private Event() {}
 
             public static final String PHOTO = DATA15;
             
-            @DSModeled(DSC.BAN)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.227 -0400", hash_original_method = "C03E3395BFF21729CC93322BBC7A82DE", hash_generated_method = "6353485435339DC025174C823A75D00F")
             private  Photo() {
                 // ---------- Original Method ----------
             }
         }
-
-
         
         public static final class Note implements DataColumnsWithJoins {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.673 -0500", hash_original_field = "ECDC40C0974A6D2AD0FA340A65176667", hash_generated_field = "23539A67AEC2F9B933722A9B0A7EDBEA")
@@ -2230,8 +2124,6 @@ private Event() {}
             
 private Note() {}
         }
-
-
         
         public static final class GroupMembership implements DataColumnsWithJoins {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.683 -0500", hash_original_field = "D40670C93BCBD57349E8BD91ABFF5CD5", hash_generated_field = "41F1E4E66419A7D4F47D102CBE7A7906")
@@ -2251,15 +2143,12 @@ private Note() {}
             
 private GroupMembership() {}
         }
-
-
         
         public static final class Website implements DataColumnsWithJoins, CommonColumns {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.697 -0500", hash_original_field = "02A212D8744376AC67B370AF760833E0", hash_generated_field = "507B8C53AF67D95DEBE883A04CF7EF7E")
 
             public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/website";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.700 -0500", hash_original_field = "AF45502ED79464D1C45078EB1BFC2A50", hash_generated_field = "4B468C40319D845407892D3884823FA4")
-
 
             public static final int TYPE_HOMEPAGE = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.702 -0500", hash_original_field = "AAD1CE2B38F23ACCA22325E53C7D8932", hash_generated_field = "58D108F8912D098F80EDD36B2E85E3A7")
@@ -2290,8 +2179,6 @@ private GroupMembership() {}
             
 private Website() {}
         }
-
-
         
         public static final class SipAddress implements DataColumnsWithJoins, CommonColumns {
             // ...and TYPE and LABEL come from the CommonColumns interface.
@@ -2332,7 +2219,6 @@ public static final CharSequence getTypeLabel(Resources res, int type,
             public static final String CONTENT_ITEM_TYPE = "vnd.android.cursor.item/sip_address";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.729 -0500", hash_original_field = "02CD0ACAC2AE3D840D206F8BB087ED01", hash_generated_field = "A3AF173E9489DC9819BA4BB309F5F1DB")
 
-
             public static final int TYPE_HOME = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.732 -0500", hash_original_field = "212665B4C3E3041AB3B35C33DC8E54EA", hash_generated_field = "2DD1E25E0D1B8108129E5DFF1326B779")
 
@@ -2350,8 +2236,6 @@ public static final CharSequence getTypeLabel(Resources res, int type,
             
 private SipAddress() {}
         }
-
-
         
         public static final class Identity implements DataColumnsWithJoins {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.751 -0500", hash_original_field = "871CF53FF8F8F46BBEB97B5F34D1576D", hash_generated_field = "64AD89413B11D3AEAD2077978B7601E3")
@@ -2370,8 +2254,6 @@ private SipAddress() {}
             
 private Identity() {}
         }
-
-
         
         public interface BaseTypes {
             
@@ -2381,10 +2263,8 @@ private Identity() {}
         protected interface CommonColumns extends BaseTypes {
             
             public static final String DATA = DataColumns.DATA1;
-
             
             public static final String TYPE = DataColumns.DATA2;
-
             
             public static final String LABEL = DataColumns.DATA3;
         }
@@ -2395,8 +2275,6 @@ private Identity() {}
         
 private CommonDataKinds() {}
     }
-
-
     
     public static final class Groups implements BaseColumns, GroupsColumns, SyncColumns {
 
@@ -2408,7 +2286,6 @@ public static EntityIterator newEntityIterator(Cursor cursor) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.790 -0500", hash_original_field = "533B2EE8366DCE595B7ABBC6A21F78DB", hash_generated_field = "D4801B6081B952E0603E20F18A0054D9")
 
         public static final Uri CONTENT_URI = Uri.withAppendedPath(AUTHORITY_URI, "groups");
-
         
         private static class EntityIteratorImpl extends CursorEntityIterator {
             
@@ -2448,7 +2325,6 @@ public static EntityIterator newEntityIterator(Cursor cursor) {
                 cursor.moveToNext();
                 return new Entity(values);
             }
-
             
         }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.792 -0500", hash_original_field = "B72BCDB85859E6757835A09469C04E5D", hash_generated_field = "942A584E46BF9673669BA2AFA76C33B4")
@@ -2469,8 +2345,6 @@ public static EntityIterator newEntityIterator(Cursor cursor) {
 private Groups() {
         }
     }
-
-
     
     public static final class AggregationExceptions implements BaseColumns {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.816 -0500", hash_original_field = "3EE9EFDAE2D56BD505A50B73E4A2BA06", hash_generated_field = "F86DA92AB1515A0E704AF3BCD078F82E")
@@ -2509,8 +2383,6 @@ private Groups() {
         
 private AggregationExceptions() {}
     }
-
-
     
     public static final class Settings implements SettingsColumns {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.851 -0500", hash_original_field = "188B5E40BA99617868308108494CFAB2", hash_generated_field = "C7297F3C14DD54EEFD43481001C6C3EF")
@@ -2531,8 +2403,6 @@ private AggregationExceptions() {}
 private Settings() {
         }
     }
-
-
     
     public static final class ProviderStatus {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.863 -0500", hash_original_field = "9811CC893E07CE89A54658657A6A1F7B", hash_generated_field = "A89A4C9F120D91C22EB2526376E866F4")
@@ -2572,8 +2442,6 @@ private Settings() {
 private ProviderStatus() {
         }
     }
-
-
     
     public static final class DataUsageFeedback {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.889 -0500", hash_original_field = "F35EBC923A7D0F7C774D00C0B621E3B3", hash_generated_field = "1F2BD7BA06A038CD74DF13781A946524")
@@ -2599,8 +2467,6 @@ private ProviderStatus() {
             //Synthesized constructor
         }
     }
-
-
     
     public static final class QuickContact {
 
@@ -2718,8 +2584,6 @@ public static void showQuickContact(Context context, Rect target, Uri lookupUri,
             //Synthesized constructor
         }
     }
-
-
     
     public static final class DisplayPhoto {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.935 -0500", hash_original_field = "B035BBB2C30EFA2C51636D5B06A24983", hash_generated_field = "C49D801AE6AE952C5A2E59237BB76750")
@@ -2736,21 +2600,17 @@ public static void showQuickContact(Context context, Rect target, Uri lookupUri,
 
         public static final String THUMBNAIL_MAX_DIM = "thumbnail_max_dim";
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.240 -0400", hash_original_method = "4DA607ACD5E6F502EC932EC179042892", hash_generated_method = "B2E13164C0532FB7A083C12460677DAB")
         private  DisplayPhoto() {
             // ---------- Original Method ----------
         }
     }
-
-
     
     public static final class Intents {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.947 -0500", hash_original_field = "510EE39B1EF724F2DA80D82D04618A9D", hash_generated_field = "A132A17FDFC42C8C719ED06C6147FD6F")
 
         public static final String SEARCH_SUGGESTION_CLICKED =
                 "android.provider.Contacts.SEARCH_SUGGESTION_CLICKED";
-
 
         public static final class UI {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.991 -0500", hash_original_field = "FB49D45F8653A1DC01871DF628525003", hash_generated_field = "593F38A410B0596B4AC7CB11DE2B63D9")
@@ -2803,8 +2663,6 @@ public static void showQuickContact(Context context, Rect target, Uri lookupUri,
                 //Synthesized constructor
             }
         }
-
-
         
         public static final class Insert {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:47.023 -0500", hash_original_field = "76B2ED03531794A7429D4C9907F26406", hash_generated_field = "713533B8E8F55862B5688D351B3D3343")
@@ -2817,7 +2675,6 @@ public static void showQuickContact(Context context, Rect target, Uri lookupUri,
 
             public static final String NAME = "name";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:47.032 -0500", hash_original_field = "122AF4CE827AC10C80F156DA9A7D9E87", hash_generated_field = "479E852A992979C10C1AE390E8A12875")
-
 
             /**
              * The extra field for the contact phonetic name.
@@ -2976,14 +2833,11 @@ public static void showQuickContact(Context context, Rect target, Uri lookupUri,
             //Synthesized constructor
         }
     }
-
-
     
     @Deprecated public interface SyncStateColumns extends SyncStateContract.Columns {
     }
     
     protected interface BaseSyncColumns {
-
         
         public static final String SYNC1 = "sync1";
         
@@ -2997,16 +2851,12 @@ public static void showQuickContact(Context context, Rect target, Uri lookupUri,
     protected interface SyncColumns extends BaseSyncColumns {
         
         public static final String ACCOUNT_NAME = "account_name";
-
         
         public static final String ACCOUNT_TYPE = "account_type";
-
         
         public static final String SOURCE_ID = "sourceid";
-
         
         public static final String VERSION = "version";
-
         
         public static final String DIRTY = "dirty";
     }
@@ -3014,16 +2864,12 @@ public static void showQuickContact(Context context, Rect target, Uri lookupUri,
     protected interface ContactOptionsColumns {
         
         public static final String TIMES_CONTACTED = "times_contacted";
-
         
         public static final String LAST_TIME_CONTACTED = "last_time_contacted";
-
         
         public static final String STARRED = "starred";
-
         
         public static final String CUSTOM_RINGTONE = "custom_ringtone";
-
         
         public static final String SEND_TO_VOICEMAIL = "send_to_voicemail";
     }
@@ -3031,31 +2877,22 @@ public static void showQuickContact(Context context, Rect target, Uri lookupUri,
     protected interface ContactsColumns {
         
         public static final String DISPLAY_NAME = ContactNameColumns.DISPLAY_NAME_PRIMARY;
-
         
         public static final String NAME_RAW_CONTACT_ID = "name_raw_contact_id";
-
         
         public static final String PHOTO_ID = "photo_id";
-
         
         public static final String PHOTO_FILE_ID = "photo_file_id";
-
         
         public static final String PHOTO_URI = "photo_uri";
-
         
         public static final String PHOTO_THUMBNAIL_URI = "photo_thumb_uri";
-
         
         public static final String IN_VISIBLE_GROUP = "in_visible_group";
-
         
         public static final String IS_USER_PROFILE = "is_user_profile";
-
         
         public static final String HAS_PHONE_NUMBER = "has_phone_number";
-
         
         public static final String LOOKUP_KEY = "lookup";
     }
@@ -3063,22 +2900,16 @@ public static void showQuickContact(Context context, Rect target, Uri lookupUri,
     protected interface ContactStatusColumns {
         
         public static final String CONTACT_PRESENCE = "contact_presence";
-
         
         public static final String CONTACT_CHAT_CAPABILITY = "contact_chat_capability";
-
         
         public static final String CONTACT_STATUS = "contact_status";
-
         
         public static final String CONTACT_STATUS_TIMESTAMP = "contact_status_ts";
-
         
         public static final String CONTACT_STATUS_RES_PACKAGE = "contact_status_res_package";
-
         
         public static final String CONTACT_STATUS_LABEL = "contact_status_label";
-
         
         public static final String CONTACT_STATUS_ICON = "contact_status_icon";
     }
@@ -3086,7 +2917,6 @@ public static void showQuickContact(Context context, Rect target, Uri lookupUri,
     public interface FullNameStyle {
         public static final int UNDEFINED = 0;
         public static final int WESTERN = 1;
-
         
         public static final int CJK = 2;
 
@@ -3097,13 +2927,10 @@ public static void showQuickContact(Context context, Rect target, Uri lookupUri,
     
     public interface PhoneticNameStyle {
         public static final int UNDEFINED = 0;
-
         
         public static final int PINYIN = 3;
-
         
         public static final int JAPANESE = 4;
-
         
         public static final int KOREAN = 5;
     }
@@ -3118,25 +2945,18 @@ public static void showQuickContact(Context context, Rect target, Uri lookupUri,
     }
     
     protected interface ContactNameColumns {
-
         
         public static final String DISPLAY_NAME_SOURCE = "display_name_source";
-
         
         public static final String DISPLAY_NAME_PRIMARY = "display_name";
-
         
         public static final String DISPLAY_NAME_ALTERNATIVE = "display_name_alt";
-
         
         public static final String PHONETIC_NAME_STYLE = "phonetic_name_style";
-
         
         public static final String PHONETIC_NAME = "phonetic_name";
-
         
         public static final String SORT_KEY_PRIMARY = "sort_key";
-
         
         public static final String SORT_KEY_ALTERNATIVE = "sort_key_alt";
     }
@@ -3144,25 +2964,18 @@ public static void showQuickContact(Context context, Rect target, Uri lookupUri,
     protected interface RawContactsColumns {
         
         public static final String CONTACT_ID = "contact_id";
-
         
         public static final String DATA_SET = "data_set";
-
         
         public static final String ACCOUNT_TYPE_AND_DATA_SET = "account_type_and_data_set";
-
         
         public static final String AGGREGATION_MODE = "aggregation_mode";
-
         
         public static final String DELETED = "deleted";
-
         
         public static final String NAME_VERIFIED = "name_verified";
-
         
         public static final String RAW_CONTACT_IS_READ_ONLY = "raw_contact_is_read_only";
-
         
         public static final String RAW_CONTACT_IS_USER_PROFILE = "raw_contact_is_user_profile";
     }
@@ -3170,57 +2983,40 @@ public static void showQuickContact(Context context, Rect target, Uri lookupUri,
     protected interface StatusColumns {
         
         public static final String PRESENCE = "mode";
-
         
         @Deprecated
         public static final String PRESENCE_STATUS = PRESENCE;
-
         
         int OFFLINE = 0;
-
         
         int INVISIBLE = 1;
-
         
         int AWAY = 2;
-
         
         int IDLE = 3;
-
         
         int DO_NOT_DISTURB = 4;
-
         
         int AVAILABLE = 5;
-
         
         public static final String STATUS = "status";
-
         
         @Deprecated
         public static final String PRESENCE_CUSTOM_STATUS = STATUS;
-
         
         public static final String STATUS_TIMESTAMP = "status_ts";
-
         
         public static final String STATUS_RES_PACKAGE = "status_res_package";
-
         
         public static final String STATUS_LABEL = "status_label";
-
         
         public static final String STATUS_ICON = "status_icon";
-
         
         public static final String CHAT_CAPABILITY = "chat_capability";
-
         
         public static final int CAPABILITY_HAS_VOICE = 1;
-
         
         public static final int CAPABILITY_HAS_VIDEO = 2;
-
         
         public static final int CAPABILITY_HAS_CAMERA = 4;
     }
@@ -3228,43 +3024,30 @@ public static void showQuickContact(Context context, Rect target, Uri lookupUri,
     protected interface StreamItemsColumns {
         
         public static final String CONTACT_ID = "contact_id";
-
         
         public static final String CONTACT_LOOKUP_KEY = "contact_lookup";
-
         
         public static final String RAW_CONTACT_ID = "raw_contact_id";
-
         
         public static final String RES_PACKAGE = "res_package";
-
         
         public static final String ACCOUNT_TYPE = "account_type";
-
         
         public static final String ACCOUNT_NAME = "account_name";
-
         
         public static final String DATA_SET = "data_set";
-
         
         public static final String RAW_CONTACT_SOURCE_ID = "raw_contact_source_id";
-
         
         public static final String RES_ICON = "icon";
-
         
         public static final String RES_LABEL = "label";
-
         
         public static final String TEXT = "text";
-
         
         public static final String TIMESTAMP = "timestamp";
-
         
         public static final String COMMENTS = "comments";
-
         
         public static final String SYNC1 = "stream_item_sync1";
         
@@ -3278,16 +3061,12 @@ public static void showQuickContact(Context context, Rect target, Uri lookupUri,
     protected interface StreamItemPhotosColumns {
         
         public static final String STREAM_ITEM_ID = "stream_item_id";
-
         
         public static final String SORT_INDEX = "sort_index";
-
         
         public static final String PHOTO_FILE_ID = "photo_file_id";
-
         
         public static final String PHOTO_URI = "photo_uri";
-
         
         public static final String SYNC1 = "stream_item_photo_sync1";
         
@@ -3299,13 +3078,10 @@ public static void showQuickContact(Context context, Rect target, Uri lookupUri,
     }
     
     protected interface PhotoFilesColumns {
-
         
         public static final String HEIGHT = "height";
-
         
         public static final String WIDTH = "width";
-
         
         public static final String FILESIZE = "filesize";
     }
@@ -3313,25 +3089,18 @@ public static void showQuickContact(Context context, Rect target, Uri lookupUri,
     protected interface DataColumns {
         
         public static final String RES_PACKAGE = "res_package";
-
         
         public static final String MIMETYPE = "mimetype";
-
         
         public static final String RAW_CONTACT_ID = "raw_contact_id";
-
         
         public static final String IS_PRIMARY = "is_primary";
-
         
         public static final String IS_SUPER_PRIMARY = "is_super_primary";
-
         
         public static final String IS_READ_ONLY = "is_read_only";
-
         
         public static final String DATA_VERSION = "data_version";
-
         
         public static final String DATA1 = "data1";
         
@@ -3362,7 +3131,6 @@ public static void showQuickContact(Context context, Rect target, Uri lookupUri,
         public static final String DATA14 = "data14";
         
         public static final String DATA15 = "data15";
-
         
         public static final String SYNC1 = "data_sync1";
         
@@ -3381,31 +3149,23 @@ public static void showQuickContact(Context context, Rect target, Uri lookupUri,
     protected interface PhoneLookupColumns {
         
         public static final String NUMBER = "number";
-
         
         public static final String TYPE = "type";
-
         
         public static final String LABEL = "label";
-
         
         public static final String NORMALIZED_NUMBER = "normalized_number";
     }
     
     protected interface PresenceColumns {
-
         
         public static final String DATA_ID = "presence_data_id";
-
         
         public static final String PROTOCOL = "protocol";
-
         
         public static final String CUSTOM_PROTOCOL = "custom_protocol";
-
         
         public static final String IM_HANDLE = "im_handle";
-
         
         public static final String IM_ACCOUNT = "im_account";
     }
@@ -3413,53 +3173,37 @@ public static void showQuickContact(Context context, Rect target, Uri lookupUri,
     protected interface GroupsColumns {
         
         public static final String DATA_SET = "data_set";
-
         
         public static final String ACCOUNT_TYPE_AND_DATA_SET = "account_type_and_data_set";
-
         
         public static final String TITLE = "title";
-
         
         public static final String RES_PACKAGE = "res_package";
-
         
         public static final String TITLE_RES = "title_res";
-
         
         public static final String NOTES = "notes";
-
         
         public static final String SYSTEM_ID = "system_id";
-
         
         public static final String SUMMARY_COUNT = "summ_count";
-
         
         public static final String PARAM_RETURN_GROUP_COUNT_PER_ACCOUNT =
                 "return_group_count_per_account";
-
         
         public static final String SUMMARY_GROUP_COUNT_PER_ACCOUNT = "group_count_per_account";
-
         
         public static final String SUMMARY_WITH_PHONES = "summ_phones";
-
         
         public static final String GROUP_VISIBLE = "group_visible";
-
         
         public static final String DELETED = "deleted";
-
         
         public static final String SHOULD_SYNC = "should_sync";
-
         
         public static final String AUTO_ADD = "auto_add";
-
         
         public static final String FAVORITES = "favorites";
-
         
         public static final String GROUP_IS_READ_ONLY = "group_is_read_only";
     }
@@ -3467,25 +3211,18 @@ public static void showQuickContact(Context context, Rect target, Uri lookupUri,
     protected interface SettingsColumns {
         
         public static final String ACCOUNT_NAME = "account_name";
-
         
         public static final String ACCOUNT_TYPE = "account_type";
-
         
         public static final String DATA_SET = "data_set";
-
         
         public static final String SHOULD_SYNC = "should_sync";
-
         
         public static final String UNGROUPED_VISIBLE = "ungrouped_visible";
-
         
         public static final String ANY_UNSYNCED = "any_unsynced";
-
         
         public static final String UNGROUPED_COUNT = "summ_count";
-
         
         public static final String UNGROUPED_WITH_PHONES = "summ_phones";
     }

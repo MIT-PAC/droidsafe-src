@@ -10,14 +10,10 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.SparseArray;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public final class MotionEvent extends InputEvent implements Parcelable {
     
-    @DSModeled(DSC.BAN)
     public static MotionEvent droidsafeObtainEvent(){
         MotionEvent ev = new MotionEvent();
         return ev;
@@ -37,9 +33,7 @@ private static final void ensureSharedTempPointerCapacity(int desiredCapacity) {
             gSharedTempPointerIndexMap = new int[capacity];
         }
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativeInitialize(int nativePtr,
             int deviceId, int source, int action, int flags, int edgeFlags,
             int metaState, int buttonState,
@@ -48,214 +42,142 @@ private static final void ensureSharedTempPointerCapacity(int desiredCapacity) {
             int pointerCount, PointerProperties[] pointerIds, PointerCoords[] pointerCoords) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativeCopy(int destNativePtr, int sourceNativePtr,
             boolean keepHistory) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeDispose(int nativePtr) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeAddBatch(int nativePtr, long eventTimeNanos,
             PointerCoords[] pointerCoords, int metaState) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativeGetDeviceId(int nativePtr) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativeGetSource(int nativePtr) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativeSetSource(int nativePtr, int source) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativeGetAction(int nativePtr) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeSetAction(int nativePtr, int action) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean nativeIsTouchEvent(int nativePtr) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativeGetFlags(int nativePtr) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeSetFlags(int nativePtr, int flags) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativeGetEdgeFlags(int nativePtr) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeSetEdgeFlags(int nativePtr, int action) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativeGetMetaState(int nativePtr) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativeGetButtonState(int nativePtr) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeOffsetLocation(int nativePtr, float deltaX, float deltaY) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static float nativeGetXOffset(int nativePtr) {
         return DSUtils.UNKNOWN_FLOAT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static float nativeGetYOffset(int nativePtr) {
         return DSUtils.UNKNOWN_FLOAT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static float nativeGetXPrecision(int nativePtr) {
         return DSUtils.UNKNOWN_FLOAT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static float nativeGetYPrecision(int nativePtr) {
         return DSUtils.UNKNOWN_FLOAT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static long nativeGetDownTimeNanos(int nativePtr) {
         return DSUtils.UNKNOWN_LONG;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeSetDownTimeNanos(int nativePtr, long downTime) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativeGetPointerCount(int nativePtr) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativeGetPointerId(int nativePtr, int pointerIndex) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativeGetToolType(int nativePtr, int pointerIndex) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativeFindPointerIndex(int nativePtr, int pointerId) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativeGetHistorySize(int nativePtr) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static long nativeGetEventTimeNanos(int nativePtr, int historyPos) {
         return DSUtils.UNKNOWN_LONG;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static float nativeGetRawAxisValue(int nativePtr,
             int axis, int pointerIndex, int historyPos) {
         return DSUtils.UNKNOWN_FLOAT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static float nativeGetAxisValue(int nativePtr,
             int axis, int pointerIndex, int historyPos) {
         return DSUtils.UNKNOWN_FLOAT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeGetPointerCoords(int nativePtr,
             int pointerIndex, int historyPos, PointerCoords outPointerCoords) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeGetPointerProperties(int nativePtr,
             int pointerIndex, PointerProperties outPointerProperties) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeScale(int nativePtr, float scale) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeTransform(int nativePtr, Matrix matrix) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativeReadFromParcel(int nativePtr, Parcel parcel) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeWriteToParcel(int nativePtr, Parcel parcel) {
     }
 
@@ -997,7 +919,6 @@ public static MotionEvent createFromParcelBody(Parcel in) {
     private static final int HISTORY_CURRENT = -0x80000000;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.568 -0500", hash_original_field = "F593DBD4ACC5DC484D76C0656C0FB27F", hash_generated_field = "632CD138CDBCADE9A63F9B23105E1648")
 
-
     private static final int MAX_RECYCLED = 10;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.571 -0500", hash_original_field = "383C33CA63B8C16F39C24669AA7A3D08", hash_generated_field = "4D2E3DEDF37103D77BF3BB46692742C8")
 
@@ -1012,7 +933,6 @@ public static MotionEvent createFromParcelBody(Parcel in) {
 
     // the caller into single element PointerCoords and pointer id arrays.
     private static final Object gSharedTempLock = new Object();
-
     
     public static final class PointerCoords {
 
@@ -1256,8 +1176,6 @@ public void setAxisValue(int axis, float value) {
             }
         }
     }
-
-
     
     public static final class PointerProperties {
 
@@ -1318,7 +1236,6 @@ public void copyFrom(PointerProperties other) {
             id = other.id;
             toolType = other.toolType;
         }
-
         
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.581 -0500", hash_original_field = "CACAAA123B9FE51639C2E92276DE6F3E", hash_generated_field = "1C70655B0F01405596723D256AD5AE2B")
@@ -1352,7 +1269,6 @@ public MotionEvent[] newArray(int size) {
     private int mNativePtr;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.593 -0500", hash_original_field = "0E987E306896478A35079A952971CC41", hash_generated_field = "4ED1BADBA3F9AC6D1D2BD2B16B6BF967")
 
-
     private MotionEvent mNext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.596 -0500", hash_original_field = "7CE140D407E955711B40F90DD17F57EA", hash_generated_field = "4E4D5EFD76E218484C8A2F86B097FF08")
 
@@ -1360,8 +1276,7 @@ public MotionEvent[] newArray(int size) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.598 -0500", hash_original_field = "54377D1FA2AD41427FB83B9E454546B7", hash_generated_field = "2C8375875524783DEB30CD6C7E943390")
 
     private boolean mRecycled;
-    
-        @DSModeled(DSC.BAN)
+        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.752 -0400", hash_original_method = "B1B69F583261D8BEEC921FF43580AA66", hash_generated_method = "40B8D4E791D456515D6D7EBB1643CE79")
     public  MotionEvent() {
         // ---------- Original Method ----------

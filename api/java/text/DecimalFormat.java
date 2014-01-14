@@ -17,17 +17,11 @@ import java.util.Locale;
 import libcore.icu.LocaleData;
 import libcore.icu.NativeDecimalFormat;
 
-
-
-
-
 public class DecimalFormat extends NumberFormat {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.788 -0500", hash_original_field = "7E9991E76AE7823245F4755D2CD04E34", hash_generated_field = "942EFADCEB0CE1279370395E6155A826")
 
-
     private static final long serialVersionUID = 864413376551465018L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.873 -0500", hash_original_field = "49E5436FA4A84D9C467485AABDE306FD", hash_generated_field = "932CCB84649F025E2FD30B1EDEB9D654")
-
 
     private static final Double NEGATIVE_ZERO_DOUBLE = new Double(-0.0);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.922 -0500", hash_original_field = "B584027FAD5CBF24485B1BF95027D3DC", hash_generated_field = "27E2EF88F203E0B05638B8EC99836A70")
@@ -58,16 +52,14 @@ public class DecimalFormat extends NumberFormat {
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.791 -0500", hash_original_field = "C290400CD00A6BC2E6DE4CB472105427", hash_generated_field = "52EBB9EA358F4A29D5EE09E100128428")
 
-
     private transient DecimalFormatSymbols symbols;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.793 -0500", hash_original_field = "2D2126BF0AB22AEB6CD9FBDCCD0DC70F", hash_generated_field = "311D958CADB5DD8F5620B5C0287903DF")
-
 
     private transient NativeDecimalFormat dform;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.076 -0400", hash_original_field = "56B4B01527B4EB5F82F59EBDEC4AAB14", hash_generated_field = "13F8C455B70342D0BE0D104687A9B188")
 
-    private final Object finalizerGuardian = new Object() {        
-        @DSModeled(DSC.SAFE)
+    private final Object finalizerGuardian = new Object() {
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.076 -0400", hash_original_method = "1A366D9719473F2399B539B354BB787B", hash_generated_method = "ABC3A607675036C5172AEFC1575529C6")
         @Override
         protected void finalize() throws Throwable {
@@ -78,19 +70,12 @@ public class DecimalFormat extends NumberFormat {
             finally 
             {
                 super.finalize();
-            } 
-            
-            
-                
-            
-                
+            }
             
         }
-
         
 };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.801 -0500", hash_original_field = "1D26322835C5517479F83C610EBD2681", hash_generated_field = "F8D485A47161940F89EC9F4328B1DE40")
-
 
     private transient RoundingMode roundingMode = RoundingMode.HALF_EVEN;
 

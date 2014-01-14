@@ -22,10 +22,6 @@ import android.util.Patterns;
 import android.webkit.WebView;
 import android.widget.TextView;
 
-
-
-
-
 public class Linkify {
 
     /**
@@ -338,9 +334,7 @@ private static final void gatherMapLinks(ArrayList<LinkSpec> links, Spannable s)
             links.add(spec);
         }
     }
-
     
-    @DSModeled(DSC.BAN)
     private static final void pruneOverlaps(ArrayList<LinkSpec> links) {
         Comparator<LinkSpec>  c = new Comparator<LinkSpec>() {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.804 -0500", hash_original_method = "8ED3E1F0B1838A02146C142C5B858BAA", hash_generated_method = "7CF7D8B086CE7815023B31658E63FE8B")
@@ -398,7 +392,6 @@ public final boolean equals(Object o) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.728 -0500", hash_original_field = "1539B154C51FEE1E4007A9D0CC57AC8E", hash_generated_field = "368D3C042CD4B22DC7E2E97B265A1597")
 
     public static final int WEB_URLS = 0x01;
-
     
     public interface MatchFilter {
         
@@ -470,7 +463,6 @@ public final String transformUrl(final Matcher match, String url) {
         }
     };
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.467 -0400", hash_original_method = "D1670E1FC2F10CF19A8A5BA1D0122F80", hash_generated_method = "D1670E1FC2F10CF19A8A5BA1D0122F80")
     public Linkify ()
     {
@@ -531,13 +523,11 @@ class LinkSpec {
 
     int end;
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.484 -0400", hash_original_method = "556B7BFA52BBBC98785B42B203495262", hash_generated_method = "556B7BFA52BBBC98785B42B203495262")
     public LinkSpec ()
     {
         //Synthesized constructor
     }
-
 
 }
 

@@ -14,8 +14,6 @@ import android.os.ParcelFileDescriptor;
 import android.os.RemoteException;
 import android.os.SystemProperties;
 
-
-
 public class UsbManager {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:50.845 -0500", hash_original_method = "3527AD09EAC8F1A9B30738F109BFF0EB", hash_generated_method = "059160C4C1510BF56B72A4B251A799DF")
@@ -78,7 +76,6 @@ private static boolean propertyContainsFunction(String property, String function
     public static final String USB_FUNCTION_ACCESSORY = "accessory";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:50.807 -0500", hash_original_field = "825B239AE18DC9730F3190D34270FCC2", hash_generated_field = "5B148AA6DEC965746A1892CA1FEAF53B")
 
-
     public static final String EXTRA_DEVICE = "device";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:50.810 -0500", hash_original_field = "DFA52CB4FB7EAC8C51F5368D1BBF90B4", hash_generated_field = "89F4F27AA905841082E03C1C7E821929")
 
@@ -87,7 +84,6 @@ private static boolean propertyContainsFunction(String property, String function
 
     public static final String EXTRA_PERMISSION_GRANTED = "permission";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:50.815 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
-
 
     private  Context mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:50.818 -0500", hash_original_field = "ACA435D22738EE6933BB846E779503B1", hash_generated_field = "9FD6577446058467C3BAA1A318AD88B5")
@@ -104,7 +100,6 @@ public UsbManager(Context context, IUsbManager service) {
         mService = service;
     }
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.023 -0400", hash_original_method = "68E88C1381A537FEBD5C1D01CC81CFD6", hash_generated_method = "0147BA6BA88EBD3825613E13FAA8DB75")
     public  UsbManager(Context context){
         mContext = context;

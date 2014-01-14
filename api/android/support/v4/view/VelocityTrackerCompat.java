@@ -6,8 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.view.VelocityTracker;
 
-
-
 public class VelocityTrackerCompat {
 
     // -------------------------------------------------------------------
@@ -36,11 +34,9 @@ public static float getYVelocity(VelocityTracker tracker, int pointerId) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:19.700 -0500", hash_original_field = "4C7E81C3A0AF2BE8390A9D71DF9BF54E", hash_generated_field = "0A84FDB029BDF78AE211B91A0B9EF3AB")
 
     static  VelocityTrackerVersionImpl IMPL;
-
     
     static class BaseVelocityTrackerVersionImpl implements VelocityTrackerVersionImpl {
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.333 -0400", hash_original_method = "E207FC5896FAF2D7F355008464495FF2", hash_generated_method = "E207FC5896FAF2D7F355008464495FF2")
         public BaseVelocityTrackerVersionImpl ()
         {
@@ -58,15 +54,11 @@ public static float getYVelocity(VelocityTracker tracker, int pointerId) {
         public float getYVelocity(VelocityTracker tracker, int pointerId) {
             return tracker.getYVelocity();
         }
-
         
     }
-
-
     
     static class HoneycombVelocityTrackerVersionImpl implements VelocityTrackerVersionImpl {
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.334 -0400", hash_original_method = "C45D4DE867C130E838448AE2BF37BBAC", hash_generated_method = "C45D4DE867C130E838448AE2BF37BBAC")
         public HoneycombVelocityTrackerVersionImpl ()
         {
@@ -84,11 +76,8 @@ public static float getYVelocity(VelocityTracker tracker, int pointerId) {
         public float getYVelocity(VelocityTracker tracker, int pointerId) {
             return VelocityTrackerCompatHoneycomb.getYVelocity(tracker, pointerId);
         }
-
         
     }
-
-
     
     interface VelocityTrackerVersionImpl {
         public float getXVelocity(VelocityTracker tracker, int pointerId);

@@ -5,9 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
 public final class Array {
 
     /**
@@ -407,9 +404,7 @@ public static Object newInstance(Class<?> componentType, int... dimensions)
 
         return createMultiArray(componentType, dimensions);
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static Object createMultiArray(Class<?> componentType,
         int[] dimensions) throws NegativeArraySizeException {
     	Object ret = new Object();
@@ -470,9 +465,7 @@ public static Object newInstance(Class<?> componentType, int size)
         }
         throw new AssertionError();
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static Object createObjectArray(Class<?> componentType,
         int length) throws NegativeArraySizeException {
     	Object ret = new Object();
@@ -797,7 +790,6 @@ public static void setShort(Object array, int index, short value)
 private Array(){
         //do nothing
     }
-
     
 }
 

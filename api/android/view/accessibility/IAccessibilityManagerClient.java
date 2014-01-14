@@ -84,7 +84,7 @@ _data.recycle();
 }
 }
 }
-@DSModeled(DSC.SAFE)
+
         @Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
 {
 	addTaint(code);

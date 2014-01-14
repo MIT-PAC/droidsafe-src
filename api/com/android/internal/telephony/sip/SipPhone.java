@@ -30,11 +30,6 @@ import com.android.internal.telephony.Connection;
 import com.android.internal.telephony.Phone;
 import com.android.internal.telephony.PhoneNotifier;
 
-
-
-
-
-
 public class SipPhone extends SipPhoneBase {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:25.514 -0500", hash_original_method = "0DB04D989DB8A0D8D42E47E87513600C", hash_generated_method = "E289371A5283105F701FC3DB40500131")
@@ -72,7 +67,6 @@ private static Call.State getCallStateFrom(SipAudioCall sipAudioCall) {
     private static final int TIMEOUT_HOLD_CALL = 15;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:25.261 -0500", hash_original_field = "7B797512F31164FA4DE203E15564C5F1", hash_generated_field = "39007EC66C104E82818FD4633C4E3BC5")
 
-
     // A call that is ringing or (call) waiting
     private SipCall ringingCall = new SipCall();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:25.263 -0500", hash_original_field = "26316B8D5D3F5EF783BF1C740AA5A7CD", hash_generated_field = "320FA68B59E86E885480BDC328D988A1")
@@ -82,7 +76,6 @@ private static Call.State getCallStateFrom(SipAudioCall sipAudioCall) {
 
     private SipCall backgroundCall = new SipCall();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:25.268 -0500", hash_original_field = "4E20C8C51E3C0F6E0559CD6629AF54B8", hash_generated_field = "E80E46E58FFD30634B7E3BE2973B3395")
-
 
     private SipManager mSipManager;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:25.270 -0500", hash_original_field = "722BF7ED2C06388ADB438E216144A8A4", hash_generated_field = "7EAF540B0EC7BBB66B1BAC42709185BB")
@@ -405,7 +398,6 @@ public boolean getMute() {
 public Call getForegroundCall() {
         return foregroundCall;
     }
-
     
     private class SipCall extends SipCallBase {
         
@@ -716,11 +708,8 @@ private AudioGroup getAudioGroup() {
             if (connections.isEmpty()) return null;
             return ((SipConnection) connections.get(0)).getAudioGroup();
         }
-
         
     }
-
-
     
     private class SipConnection extends SipConnectionBase {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:25.420 -0500", hash_original_field = "401A0DD1C8C53C72FFABFCEEE4434BF7", hash_generated_field = "D7165953848BB574FCA583AB16464D4F")
@@ -743,8 +732,8 @@ private AudioGroup getAudioGroup() {
         private boolean mIncoming = false;
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.299 -0400", hash_original_field = "AC67C5E32EF946C45E856E56B7F86834", hash_generated_field = "244547A11EB2D0F43D69ADE82125A7FA")
 
-        private SipAudioCallAdapter mAdapter = new SipAudioCallAdapter() {            
-            @DSModeled(DSC.BAN)
+        private SipAudioCallAdapter mAdapter = new SipAudioCallAdapter() {
+            
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.295 -0400", hash_original_method = "B8BAADEA0DE266294E2369B45E53A7F4", hash_generated_method = "44D1590CD550569A3F447EA35B336364")
             @Override
             protected void onCallEnded(DisconnectCause cause) {
@@ -774,11 +763,8 @@ private AudioGroup getAudioGroup() {
                 } 
                 addTaint(cause.getTaint());
                 
-                
             }
-
             
-            @DSModeled(DSC.BAN)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.295 -0400", hash_original_method = "52733E1CC76DBF11A64B0250C617E7AC", hash_generated_method = "F34A5EF95CCC3389960527B60C4F7AE9")
             @Override
             public void onCallEstablished(SipAudioCall call) {
@@ -787,12 +773,8 @@ private AudioGroup getAudioGroup() {
                 call.startAudio();
                 addTaint(call.getTaint());
                 
-                
-                
             }
-
             
-            @DSModeled(DSC.BAN)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.296 -0400", hash_original_method = "AC053A33592EEF445C9BE357836B4C16", hash_generated_method = "A5F097A8319E3CB02B505B72B427FB45")
             @Override
             public void onCallHeld(SipAudioCall call) {
@@ -801,12 +783,8 @@ private AudioGroup getAudioGroup() {
                 call.startAudio();
                 addTaint(call.getTaint());
                 
-                
-                
             }
-
             
-            @DSModeled(DSC.BAN)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.298 -0400", hash_original_method = "9E9163C05D7336A6FE9DFAB379443860", hash_generated_method = "819342FBC5A8298A2BD476438672EE18")
             @Override
             public void onChanged(SipAudioCall call) {
@@ -839,11 +817,8 @@ private AudioGroup getAudioGroup() {
                 } 
                 addTaint(call.getTaint());
                 
-                
             }
-
             
-            @DSModeled(DSC.BAN)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:32.299 -0400", hash_original_method = "C52D3E5DC20D7F0420DDF7517152D94F", hash_generated_method = "22119F567079DA28DBBFC4AA0120E473")
             @Override
             protected void onError(DisconnectCause cause) {
@@ -852,10 +827,7 @@ private AudioGroup getAudioGroup() {
                 onCallEnded(cause);
                 addTaint(cause.getTaint());
                 
-                
-                
             }
-
             
 };
 
@@ -1076,11 +1048,8 @@ boolean getMute() {
                 call.onConnectionStateChanged(this);
             }
         }
-
         
     }
-
-
     
     private abstract class SipAudioCallAdapter extends SipAudioCall.Listener {
         
@@ -1151,7 +1120,6 @@ protected abstract void onError(Connection.DisconnectCause cause);
                     onError(Connection.DisconnectCause.ERROR_UNSPECIFIED);
             }
         }
-
         
     }
 

@@ -10,10 +10,6 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
 
-
-
-
-
 public class ScrollingMovementMethod extends BaseMovementMethod implements MovementMethod {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:02.839 -0500", hash_original_method = "B3F3A19A7208089C7C1F22732FD8EEF0", hash_generated_method = "4FDB8BE771FAEF096FBF571BB07474FD")
@@ -26,10 +22,8 @@ public static MovementMethod getInstance() {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:02.843 -0500", hash_original_field = "4FDA3548CD411AA1A414666645C3D509", hash_generated_field = "E3F2C749F87B458DFC8C00803F37AFF0")
 
-
     private static ScrollingMovementMethod sInstance;
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.716 -0400", hash_original_method = "997C1BE7C30077BC0332DB617608ABA5", hash_generated_method = "997C1BE7C30077BC0332DB617608ABA5")
     public ScrollingMovementMethod ()
     {

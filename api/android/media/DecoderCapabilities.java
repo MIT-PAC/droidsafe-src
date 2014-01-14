@@ -7,9 +7,6 @@ import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.List;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public class DecoderCapabilities {
@@ -43,32 +40,22 @@ public static List<AudioDecoder> getAudioDecoders() {
         }
         return decoderList;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static final void native_init() {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static final int native_get_num_video_decoders() {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static final int native_get_video_decoder_type(int index) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static final int native_get_num_audio_decoders() {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static final int native_get_audio_decoder_type(int index) {
         return DSUtils.UNKNOWN_INT;
     }
@@ -76,17 +63,14 @@ public static List<AudioDecoder> getAudioDecoders() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:26.793 -0500", hash_original_method = "599AF8A39C7326727CA1A71C57B2EC2D", hash_generated_method = "BFECFE7E67F6E5F2BF2546A8989CB0DE")
     
 private DecoderCapabilities() {}
-
     
     public enum VideoDecoder {
         VIDEO_DECODER_WMV,
     }
-
     
     public enum AudioDecoder {
         AUDIO_DECODER_WMA,
     }
-
     
     static {
         System.loadLibrary("media_jni");

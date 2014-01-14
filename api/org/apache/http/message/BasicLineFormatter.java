@@ -11,13 +11,7 @@ import org.apache.http.RequestLine;
 import org.apache.http.StatusLine;
 import org.apache.http.util.CharArrayBuffer;
 
-
-
-
-
-
 public class BasicLineFormatter implements LineFormatter {
-
 
     /**
      * Formats a protocol version.
@@ -39,7 +33,6 @@ public final static
         return formatter.appendProtocolVersion(null, version).toString();
     }
 
-
     /**
      * Formats a request line.
      *
@@ -59,8 +52,6 @@ public final static String formatRequestLine(final RequestLine reqline,
         return formatter.formatRequestLine(null, reqline).toString();
     }
 
-
-
     /**
      * Formats a status line.
      *
@@ -79,7 +70,6 @@ public final static String formatStatusLine(final StatusLine statline,
             formatter = BasicLineFormatter.DEFAULT;
         return formatter.formatStatusLine(null, statline).toString();
     }
-
 
     /**
      * Formats a header.
@@ -103,17 +93,13 @@ public final static String formatHeader(final Header header,
 
     public final static BasicLineFormatter DEFAULT = new BasicLineFormatter();
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:36.925 -0400", hash_original_method = "8022E7B2B110A3478739271765EA4718", hash_generated_method = "8022E7B2B110A3478739271765EA4718")
     public BasicLineFormatter ()
     {
         //Synthesized constructor
     }
 
-
-
     // public default constructor
-
 
     /**
      * Obtains a buffer for formatting.
@@ -133,7 +119,6 @@ protected CharArrayBuffer initBuffer(CharArrayBuffer buffer) {
         }
         return buffer;
     }
-
 
     // non-javadoc, see interface LineFormatter
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:50.000 -0500", hash_original_method = "A0F2D5AC053D278723790680878C18C6", hash_generated_method = "920DDB076D9EBC191A61E6C77A344EB8")
@@ -158,11 +143,10 @@ public CharArrayBuffer appendProtocolVersion(final CharArrayBuffer buffer,
         result.append('/'); 
         result.append(Integer.toString(version.getMajor())); 
         result.append('.'); 
-        result.append(Integer.toString(version.getMinor())); 
+        result.append(Integer.toString(version.getMinor()));
 
         return result;
     }
-
 
     /**
      * Guesses the length of a formatted protocol version.
@@ -179,7 +163,6 @@ protected int estimateProtocolVersionLen(final ProtocolVersion version) {
         return version.getProtocol().length() + 4; // room for "HTTP/1.1"
     }
 
-
     // non-javadoc, see interface LineFormatter
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:50.011 -0500", hash_original_method = "19984FDC599EEB66F432BF4C8D33EB13", hash_generated_method = "7B42C4BC482C8BA10FF36B14E50194B8")
     
@@ -195,7 +178,6 @@ public CharArrayBuffer formatRequestLine(CharArrayBuffer buffer,
 
         return result;
     }
-
 
     /**
      * Actually formats a request line.
@@ -224,7 +206,6 @@ protected void doFormatRequestLine(final CharArrayBuffer buffer,
         appendProtocolVersion(buffer, reqline.getProtocolVersion());
     }
 
-
     // non-javadoc, see interface LineFormatter
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:50.018 -0500", hash_original_method = "48A800039F857A6F8C24EAA9095C9D1B", hash_generated_method = "171601DF15FB6EE29D6FA8C6A2CBDFD4")
     
@@ -240,7 +221,6 @@ public CharArrayBuffer formatStatusLine(final CharArrayBuffer buffer,
 
         return result;
     }
-
 
     /**
      * Actually formats a status line.
@@ -272,7 +252,6 @@ protected void doFormatStatusLine(final CharArrayBuffer buffer,
         }
     }
 
-
     // non-javadoc, see interface LineFormatter
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:50.025 -0500", hash_original_method = "D1D568624BAE5D479E93207457DBA769", hash_generated_method = "ABBE22CD73E36042399BAE0445D44DFE")
     
@@ -294,7 +273,6 @@ public CharArrayBuffer formatHeader(CharArrayBuffer buffer,
         return result;
 
     } // formatHeader
-
 
     /**
      * Actually formats a header.

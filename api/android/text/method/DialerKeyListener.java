@@ -9,10 +9,6 @@ import android.text.Spannable;
 import android.view.KeyCharacterMap.KeyData;
 import android.view.KeyEvent;
 
-
-
-
-
 public class DialerKeyListener extends NumberKeyListener {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:00.636 -0500", hash_original_method = "AE7C568B1FC945A3D62D83ECB6AACC3F", hash_generated_method = "0AA2BB67796C4A68DB2BDF94AD1A65E8")
@@ -32,10 +28,8 @@ public static DialerKeyListener getInstance() {
         };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:00.648 -0500", hash_original_field = "CF91476473FDE63475D47E5A7BFC6493", hash_generated_field = "056A87FCF20D35A01976664357B66FF4")
 
-
     private static DialerKeyListener sInstance;
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.200 -0400", hash_original_method = "DB0B81FF92CA7DAE82B6AED220522587", hash_generated_method = "DB0B81FF92CA7DAE82B6AED220522587")
     public DialerKeyListener ()
     {

@@ -13,10 +13,6 @@ import java.io.Serializable;
 
 import libcore.util.Objects;
 
-
-
-
-
 public class HashMap<K, V> extends AbstractMap<K, V> implements Cloneable, Serializable {
 
     /**
@@ -65,17 +61,13 @@ private static int roundUpToPowerOfTwo(int i) {
     static final float DEFAULT_LOAD_FACTOR = .75F;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:30.570 -0500", hash_original_field = "3C5C22C8B3537F79B4DEBD590294808C", hash_generated_field = "895D2EFED015878DCDE59CE17F2ED051")
 
-
     private static final long serialVersionUID = 362498820763181265L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:30.573 -0500", hash_original_field = "EAD386E5C87BDA4672992408FDD8CECE", hash_generated_field = "07BD8E29CA88435F65E9AD35F51067E8")
-
 
     private static final ObjectStreamField[] serialPersistentFields = {
         new ObjectStreamField("loadFactor", float.class)
     };
-
-    
-        @DSModeled(DSC.SAFE)
+        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.963 -0400", hash_original_method = "67F8ADB6599C3AA95FA8DFFD843377DD", hash_generated_method = "7409D258B8D042741B25C0440FA51BF9")
     @SuppressWarnings("unchecked")
     public  HashMap() {
@@ -83,9 +75,7 @@ private static int roundUpToPowerOfTwo(int i) {
         //table = (HashMapEntry<K, V>[]) EMPTY_TABLE;
         //threshold = -1;
     }
-
-    
-        @DSModeled(DSC.SAFE)
+        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.970 -0400", hash_original_method = "DBEA46BF5DB352E6536C06B54FDF6C1E", hash_generated_method = "7FE94A00763E7E488D81DCDBEADA9FA8")
     public  HashMap(int capacity) {
         if(capacity < 0)        
@@ -143,9 +133,7 @@ public HashMap(int capacity, float loadFactor) {
          * improves performance.
          */
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.971 -0400", hash_original_method = "D988B3BE94D6CE1D83E9BB54AA86E55F", hash_generated_method = "D8E5CB87B1CD6B8482A863452313CF44")
     public  HashMap(Map<? extends K, ? extends V> map) {
         addTaint(map.getTaint());
@@ -153,9 +141,7 @@ public HashMap(int capacity, float loadFactor) {
         // ---------- Original Method ----------
         //constructorPutAll(map);
     }
-
-    
-        @DSModeled(DSC.SAFE)
+        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.971 -0400", hash_original_method = "C555E25CE67FE12926CA5480B863847E", hash_generated_method = "4A44D89334A62F71EC7507883AA9B14C")
     @SuppressWarnings("unchecked")
     @Override
@@ -204,15 +190,12 @@ Object varDC838461EE2FA0CA4C9BBB70A15456B0_649335864 =         result;
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:30.373 -0500", hash_original_method = "417EF77086319CE91314CCF850ADA61E", hash_generated_method = "417EF77086319CE91314CCF850ADA61E")
     
 void init() { }
-
-    @DSModeled(DSC.SAFE)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.977 -0400", hash_original_method = "54875E203703AD755476CBDF0B4AFC75", hash_generated_method = "8823E12553CEF9F29146B21A2A664B17")
     public Set<Entry<K, V>> entrySet() {
         return super.getEntrySet();
     }
-
-    
-        @DSModeled(DSC.BAN)
+        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.977 -0400", hash_original_method = "DB078B96D3A026778ABE08AF9188B4AF", hash_generated_method = "B269550FE5C2A2D1F2C81140D8484158")
     private boolean containsMapping(Object key, Object value) {
         addTaint(value.getTaint());
@@ -234,9 +217,7 @@ void init() { }
         //}
         //return false;
     }
-
-    
-        @DSModeled(DSC.BAN)
+        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.978 -0400", hash_original_method = "04BAFB4D83496263E755E7BD0F7C13FF", hash_generated_method = "52C658DC0E2F13C5A057F812129BFFD0")
     private void writeObject(ObjectOutputStream stream) throws IOException {
         addTaint(stream.getTaint());
@@ -260,9 +241,7 @@ for(Entry<K, V> e : entrySet())
             //stream.writeObject(e.getValue());
         //}
     }
-
-    
-        @DSModeled(DSC.BAN)
+        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.979 -0400", hash_original_method = "332DDC73CD162DC81E3D2D410CF74F29", hash_generated_method = "084A0B9A938F9631A78FC483203ED3E4")
     private void readObject(ObjectInputStream stream) throws IOException,
             ClassNotFoundException {

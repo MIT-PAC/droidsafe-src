@@ -23,15 +23,10 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.util.Patterns;
 
-
-
-
-
 public final class Telephony {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:03.499 -0500", hash_original_field = "D931A40C2887EFBBFF2F87E737A651E0", hash_generated_field = "77836E000F3832B9A06FE340F2EDE5DC")
 
     private static final String TAG = "Telephony";
-
     
     public static final class Sms implements BaseColumns, TextBasedSmsColumns {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:03.524 -0500", hash_original_method = "91491FADEEC62466B0F9FF75744CEEB2", hash_generated_method = "4116C537EA1E1C0A55E8CE52971B78AD")
@@ -171,7 +166,6 @@ public static boolean isOutgoingFolder(int messageType) {
 
         public static final Uri CONTENT_URI =
             Uri.parse("content://sms");
-
         
         public static final class Inbox implements BaseColumns, TextBasedSmsColumns {
 
@@ -208,8 +202,6 @@ public static Uri addMessage(ContentResolver resolver,
                 //Synthesized constructor
             }
         }
-
-
         
         public static final class Sent implements BaseColumns, TextBasedSmsColumns {
 
@@ -244,8 +236,6 @@ public static Uri addMessage(ContentResolver resolver,
                 //Synthesized constructor
             }
         }
-
-
         
         public static final class Draft implements BaseColumns, TextBasedSmsColumns {
 
@@ -298,8 +288,6 @@ public static boolean saveMessage(ContentResolver resolver,
                 //Synthesized constructor
             }
         }
-
-
         
         public static final class Outbox implements BaseColumns, TextBasedSmsColumns {
 
@@ -336,8 +324,6 @@ public static Uri addMessage(ContentResolver resolver,
                 //Synthesized constructor
             }
         }
-
-
         
         public static final class Conversations implements BaseColumns, TextBasedSmsColumns {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:03.592 -0500", hash_original_field = "04DAC5FD1BD0B97C5BB8885AD5DB5AEE", hash_generated_field = "16EFBE7184DEEDC0AADC8DE7C8F9E970")
@@ -360,8 +346,6 @@ public static Uri addMessage(ContentResolver resolver,
                 //Synthesized constructor
             }
         }
-
-
         
         public static final class Intents {
 
@@ -455,8 +439,6 @@ private Intents() {
             //Synthesized constructor
         }
     }
-
-
     
     public static final class Threads implements ThreadsColumns {
 
@@ -538,7 +520,6 @@ public static long getOrCreateThreadId(
                 CONTENT_URI, "obsolete");
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:03.713 -0500", hash_original_field = "F5E57FFCEE1C7F760811356F9D0B435E", hash_generated_field = "0EA950CFA852D09F85620C3D83F9B1D2")
 
-
         public static final int COMMON_THREAD    = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:03.715 -0500", hash_original_field = "BB76718EEC267557456B299BBECA868C", hash_generated_field = "E361587D52F3A07F5B27324A4A0F7CFC")
 
@@ -550,8 +531,6 @@ public static long getOrCreateThreadId(
 private Threads() {
         }
     }
-
-
     
     public static final class Mms implements BaseMmsColumns {
 
@@ -638,10 +617,8 @@ public static boolean isPhoneNumber(String number) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:03.728 -0500", hash_original_field = "04DAC5FD1BD0B97C5BB8885AD5DB5AEE", hash_generated_field = "743596F13702A332C2F6A82A0F5E0A20")
 
         public static final Uri CONTENT_URI = Uri.parse("content://mms");
-
         
         public static final class Inbox implements BaseMmsColumns {
-
 
             @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.895 -0400", hash_original_field = "FD3D4A47B4184A3B945239F90C0175E6", hash_generated_field = "F9CAEE6005B47FC2B06B1883EC29741D")
 
@@ -657,11 +634,8 @@ public static boolean isPhoneNumber(String number) {
                 //Synthesized constructor
             }
         }
-
-
         
         public static final class Sent implements BaseMmsColumns {
-
 
             @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.896 -0400", hash_original_field = "DF98B3D332181ACB689001F11EB24FAB", hash_generated_field = "D3824F01E3D7A102678F440DA457F6A8")
 
@@ -677,11 +651,8 @@ public static boolean isPhoneNumber(String number) {
                 //Synthesized constructor
             }
         }
-
-
         
         public static final class Draft implements BaseMmsColumns {
-
 
             @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.896 -0400", hash_original_field = "3FCD34586749C5F3E29E6DBF260C2CAE", hash_generated_field = "53485244D30DB502EB53C7D4D28015BF")
 
@@ -697,11 +668,8 @@ public static boolean isPhoneNumber(String number) {
                 //Synthesized constructor
             }
         }
-
-
         
         public static final class Outbox implements BaseMmsColumns {
-
 
             @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.896 -0400", hash_original_field = "F53553E0A43669B3D7D858B918DCEFB3", hash_generated_field = "F3FBAECD1A011C6A74E382A1F3A3BF03")
 
@@ -717,8 +685,6 @@ public static boolean isPhoneNumber(String number) {
                 //Synthesized constructor
             }
         }
-
-
         
         public static final class Addr implements BaseColumns {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:03.791 -0500", hash_original_field = "7AD05DB3B51D85224F3A0AD07834E1F3", hash_generated_field = "E860CDD6A108651539360F1130ED0B2A")
@@ -743,8 +709,6 @@ public static boolean isPhoneNumber(String number) {
                 //Synthesized constructor
             }
         }
-
-
         
         public static final class Part implements BaseColumns {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:03.807 -0500", hash_original_field = "27DFA19B9F7B0F76FAA8699FBC85CC25", hash_generated_field = "8E870E8CB9A3CF8AA38AD6C4448728E0")
@@ -785,7 +749,6 @@ public static boolean isPhoneNumber(String number) {
             public static final String _DATA = "_data";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:03.839 -0500", hash_original_field = "35E1FC63B0BE370DC076530339F88DF8", hash_generated_field = "7F68E2947E21BC10A9CA9D937E2EFCEB")
 
-
             public static final String TEXT = "text";
             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.896 -0400", hash_original_method = "9A3D51732327B3711C976CCE6283B7F6", hash_generated_method = "9A3D51732327B3711C976CCE6283B7F6")
@@ -794,8 +757,6 @@ public static boolean isPhoneNumber(String number) {
                 //Synthesized constructor
             }
         }
-
-
         
         public static final class Rate {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:03.844 -0500", hash_original_field = "C3D465F525188BA0C162388F0B5EEBA4", hash_generated_field = "C73AB89F9797F2712EA638E4BF187501")
@@ -812,8 +773,6 @@ public static boolean isPhoneNumber(String number) {
                 //Synthesized constructor
             }
         }
-
-
         
         public static final class Intents {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:03.854 -0500", hash_original_field = "2FD3AEFEC9AB81A589D86C39111FFBE2", hash_generated_field = "6F1537B0D20DA96C878B5C71EA17FA48")
@@ -839,7 +798,6 @@ public static boolean isPhoneNumber(String number) {
 
             public static final String DELETED_CONTENTS = "deleted_contents";
             
-            @DSModeled(DSC.BAN)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.897 -0400", hash_original_method = "23EEC61853691C96DADBA42E1C0CC78D", hash_generated_method = "EA72F3CC8155CC6EE36EFFE9F5347D99")
             private  Intents() {
                 // ---------- Original Method ----------
@@ -847,11 +805,9 @@ public static boolean isPhoneNumber(String number) {
         }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:03.731 -0500", hash_original_field = "9944F65AF9B45371F3D9BDD04887349B", hash_generated_field = "055A393B2924B35F63A91789B785D1D3")
 
-
         public static final Uri REPORT_REQUEST_URI = Uri.withAppendedPath(
                                             CONTENT_URI, "report-request");
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:03.733 -0500", hash_original_field = "7ED3A4F5ECF06257652700E15E5CE11D", hash_generated_field = "2B742DCB087975A88B80D98C0B3DB168")
-
 
         public static final Uri REPORT_STATUS_URI = Uri.withAppendedPath(
                                             CONTENT_URI, "report-status");
@@ -873,15 +829,12 @@ public static boolean isPhoneNumber(String number) {
             //Synthesized constructor
         }
     }
-
-
     
     public static final class MmsSms implements BaseColumns {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:03.880 -0500", hash_original_field = "B82FAAC158690FDD879555C162D51A10", hash_generated_field = "8294BF03F1BCCC1A530C57E7DBE14CC8")
 
         public static final String TYPE_DISCRIMINATOR_COLUMN =
                 "transport_type";
-
 
         public static final class PendingMessages implements BaseColumns {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:03.927 -0500", hash_original_field = "B75D6636BBED728623A9905740367708", hash_generated_field = "A45CA31EB044CE870CDE0E8E242D7E4B")
@@ -919,8 +872,6 @@ public static boolean isPhoneNumber(String number) {
                 //Synthesized constructor
             }
         }
-
-
         
         public static final class WordsTable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:03.954 -0500", hash_original_field = "F0D3FDD50AE0B4B355D4DA426C7375CD", hash_generated_field = "3C2D71BF930B87FEECA9710D884C1BB3")
@@ -944,30 +895,24 @@ public static boolean isPhoneNumber(String number) {
         }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:03.883 -0500", hash_original_field = "04DAC5FD1BD0B97C5BB8885AD5DB5AEE", hash_generated_field = "725D49CB9A779935D7438B22EE5EF841")
 
-
         public static final Uri CONTENT_URI = Uri.parse("content://mms-sms/");
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:03.885 -0500", hash_original_field = "DC0C2B3E544D28B0DBCF7107EF95CB37", hash_generated_field = "C59F3E84EBBB0AC1380C88A59475A3A8")
-
 
         public static final Uri CONTENT_CONVERSATIONS_URI = Uri.parse(
                 "content://mms-sms/conversations");
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:03.888 -0500", hash_original_field = "2E4B17E9023F0072EF064876178DCD09", hash_generated_field = "C254F7847DB4E69055614E014ECAD96B")
 
-
         public static final Uri CONTENT_FILTER_BYPHONE_URI = Uri.parse(
                 "content://mms-sms/messages/byphone");
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:03.891 -0500", hash_original_field = "FB251C4D31F4FF8A1EEAA3D76A8F84A7", hash_generated_field = "5A2955C176679B662C0C17C048B26518")
-
 
         public static final Uri CONTENT_UNDELIVERED_URI = Uri.parse(
                 "content://mms-sms/undelivered");
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:03.894 -0500", hash_original_field = "13DF0094AB878A3BF30D030F974B1233", hash_generated_field = "4F59FF53C38C1BDA527B0BED040B8736")
 
-
         public static final Uri CONTENT_DRAFT_URI = Uri.parse(
                 "content://mms-sms/draft");
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:03.896 -0500", hash_original_field = "B062DF05D120B4F380A08235E7BFEC4F", hash_generated_field = "0560816728199652A5CB6C27D362699C")
-
 
         public static final Uri CONTENT_LOCKED_URI = Uri.parse(
                 "content://mms-sms/locked");
@@ -1012,8 +957,6 @@ public static boolean isPhoneNumber(String number) {
             //Synthesized constructor
         }
     }
-
-
     
     public static final class Carriers implements BaseColumns {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:03.970 -0500", hash_original_field = "04DAC5FD1BD0B97C5BB8885AD5DB5AEE", hash_generated_field = "B83F159B5508CA04D478D2F19B7BC0B7")
@@ -1025,66 +968,50 @@ public static boolean isPhoneNumber(String number) {
         public static final String DEFAULT_SORT_ORDER = "name ASC";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:03.974 -0500", hash_original_field = "11F7D90F715D916A63D5FB3D55CA93F4", hash_generated_field = "8F5B94AE17AA8887EB81EF0FD5591FF7")
 
-
         public static final String NAME = "name";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:03.976 -0500", hash_original_field = "9C2B4BA2E4F3F3F9106F4C32B1FE7D66", hash_generated_field = "F300D686F5A12199946063E3A258481F")
-
 
         public static final String APN = "apn";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:03.979 -0500", hash_original_field = "CDC29751501C83289A46E83AC430B92B", hash_generated_field = "4B15713FC5C43FDE94601F76F5DBD23D")
 
-
         public static final String PROXY = "proxy";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:03.982 -0500", hash_original_field = "F93951ACBA3476738EE5602D5DFD815A", hash_generated_field = "99DCABF3DA7F9D1D88CC95B61DFB04A9")
-
 
         public static final String PORT = "port";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:03.984 -0500", hash_original_field = "B72B3B6FEE92149BEA0F7C3A186177BA", hash_generated_field = "C182EEEECAE2F461BF2A41DF367D73EC")
 
-
         public static final String MMSPROXY = "mmsproxy";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:03.987 -0500", hash_original_field = "ED3779D68DD9BAE863F37733F152AF37", hash_generated_field = "8F3193E08FE92B96D7D5643DC6A92A95")
-
 
         public static final String MMSPORT = "mmsport";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:03.989 -0500", hash_original_field = "B03FCAF99FFCA7EEF0AAF1ADAB5517BC", hash_generated_field = "9C32C8BBED42D75F080E14E6DA9B790C")
 
-
         public static final String SERVER = "server";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:03.991 -0500", hash_original_field = "7623BEF341D152A0D4FEB02810549B81", hash_generated_field = "834D644845EB5ED38B265C95BBA49CB4")
-
 
         public static final String USER = "user";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:03.994 -0500", hash_original_field = "C70E4611E6ECE0D53ADE50E36E0EDF03", hash_generated_field = "CBB5222D1140EC3444B2A0FD7AD4FE88")
 
-
         public static final String PASSWORD = "password";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:03.996 -0500", hash_original_field = "C0C90F33D07231A46D20074925A2A973", hash_generated_field = "6EC7E1D83CD69F9BC43F1655B9CBF19F")
-
 
         public static final String MMSC = "mmsc";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:03.999 -0500", hash_original_field = "8351B245FB197F0A968C9BC421304A36", hash_generated_field = "C487DD96CBAD610F74EC365BEA80962D")
 
-
         public static final String MCC = "mcc";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:04.001 -0500", hash_original_field = "34634A2141543B5BAC263632D7364B8C", hash_generated_field = "822D32F51A87BFC1642F46FB088FE20A")
-
 
         public static final String MNC = "mnc";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:04.004 -0500", hash_original_field = "BCF8053865B04CE0723AA5086866BB7E", hash_generated_field = "084A9800CBA32160C0F4D0927F523ACE")
 
-
         public static final String NUMERIC = "numeric";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:04.007 -0500", hash_original_field = "6F4CFA856B2BFF58AF6CC04EF4FC4021", hash_generated_field = "7F6EF22DA072B11AE4CEA166BF6DBADD")
-
 
         public static final String AUTH_TYPE = "authtype";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:04.009 -0500", hash_original_field = "2280480E1208717EAE9778EC9DC63E6D", hash_generated_field = "A5BA88997B8C56325DBFED26CDB34D93")
 
-
         public static final String TYPE = "type";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:04.012 -0500", hash_original_field = "5A982076116FC957D450ABDABD88C314", hash_generated_field = "2B595158C181DC1628EB9A295127ADAA")
-
 
         public static final String INACTIVE_TIMER = "inactivetimer";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:04.014 -0500", hash_original_field = "85E2D4AE3EBDF73C06E5CE29B08EA9A0", hash_generated_field = "38B59F865EC8485B65B816B06D008AB8")
@@ -1101,7 +1028,6 @@ public static boolean isPhoneNumber(String number) {
         public static final String ROAMING_PROTOCOL = "roaming_protocol";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:04.024 -0500", hash_original_field = "4077EABEC784173C7466769398DB7ABB", hash_generated_field = "59BA209EAF04B1C0A5952989A6ACC6C5")
 
-
         public static final String CURRENT = "current";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:04.027 -0500", hash_original_field = "A0F3F1795949E05FE722902BBFA9F5C5", hash_generated_field = "BC1608B5480B870191D648F68C4136A8")
 
@@ -1116,8 +1042,6 @@ public static boolean isPhoneNumber(String number) {
             //Synthesized constructor
         }
     }
-
-
     
     public static final class Intents {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:04.037 -0500", hash_original_field = "788B854B75A3D9FA9717FE62A549F0BB", hash_generated_field = "01669067B5317112DD0057A9B1FE9009")
@@ -1130,7 +1054,6 @@ public static boolean isPhoneNumber(String number) {
                 "android.provider.Telephony.SPN_STRINGS_UPDATED";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:04.042 -0500", hash_original_field = "1046C40C45BEDE0B1F842791D81D33A7", hash_generated_field = "35D93941BBB76FB59A8BAC9F6C8D581B")
 
-
         public static final String EXTRA_SHOW_PLMN  = "showPlmn";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:04.044 -0500", hash_original_field = "AF5F4DB4DCF3B6A6DA186222D3F047C1", hash_generated_field = "26980D0EFE6BDF43AF9F26E0F475BC60")
 
@@ -1142,14 +1065,11 @@ public static boolean isPhoneNumber(String number) {
 
         public static final String EXTRA_SPN        = "spn";
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.901 -0400", hash_original_method = "23EEC61853691C96DADBA42E1C0CC78D", hash_generated_method = "EA72F3CC8155CC6EE36EFFE9F5347D99")
         private  Intents() {
             // ---------- Original Method ----------
         }
     }
-
-
     
     public interface TextBasedSmsColumns {
         
@@ -1161,30 +1081,21 @@ public static boolean isPhoneNumber(String number) {
         public static final int MESSAGE_TYPE_DRAFT  = 3;
         public static final int MESSAGE_TYPE_OUTBOX = 4;
         public static final int MESSAGE_TYPE_FAILED = 5; 
-        public static final int MESSAGE_TYPE_QUEUED = 6; 
-
-
+        public static final int MESSAGE_TYPE_QUEUED = 6;
         
         public static final String THREAD_ID = "thread_id";
-
         
         public static final String ADDRESS = "address";
-
         
         public static final String PERSON_ID = "person";
-
         
         public static final String DATE = "date";
-
         
         public static final String DATE_SENT = "date_sent";
-
         
         public static final String READ = "read";
-
         
         public static final String SEEN = "seen";
-
         
         public static final String STATUS = "status";
 
@@ -1192,31 +1103,22 @@ public static boolean isPhoneNumber(String number) {
         public static final int STATUS_COMPLETE = 0;
         public static final int STATUS_PENDING = 32;
         public static final int STATUS_FAILED = 64;
-
         
         public static final String SUBJECT = "subject";
-
         
         public static final String BODY = "body";
-
         
         public static final String PERSON = "person";
-
         
         public static final String PROTOCOL = "protocol";
-
         
         public static final String REPLY_PATH_PRESENT = "reply_path_present";
-
         
         public static final String SERVICE_CENTER = "service_center";
-
         
         public static final String LOCKED = "locked";
-
         
         public static final String ERROR_CODE = "error_code";
-
         
         public static final String META_DATA = "meta_data";
 }
@@ -1228,226 +1130,152 @@ public static boolean isPhoneNumber(String number) {
         public static final int MESSAGE_BOX_SENT   = 2;
         public static final int MESSAGE_BOX_DRAFTS = 3;
         public static final int MESSAGE_BOX_OUTBOX = 4;
-
         
         public static final String DATE = "date";
-
         
         public static final String DATE_SENT = "date_sent";
-
         
         public static final String MESSAGE_BOX = "msg_box";
-
         
         public static final String READ = "read";
-
         
         public static final String SEEN = "seen";
-
         
         public static final String MESSAGE_ID = "m_id";
-
         
         public static final String SUBJECT = "sub";
-
         
         public static final String SUBJECT_CHARSET = "sub_cs";
-
         
         public static final String CONTENT_TYPE = "ct_t";
-
         
         public static final String CONTENT_LOCATION = "ct_l";
-
         
         public static final String FROM = "from";
-
         
         public static final String TO = "to";
-
         
         public static final String CC = "cc";
-
         
         public static final String BCC = "bcc";
-
         
         public static final String EXPIRY = "exp";
-
         
         public static final String MESSAGE_CLASS = "m_cls";
-
         
         public static final String MESSAGE_TYPE = "m_type";
-
         
         public static final String MMS_VERSION = "v";
-
         
         public static final String MESSAGE_SIZE = "m_size";
-
         
         public static final String PRIORITY = "pri";
-
         
         public static final String READ_REPORT = "rr";
-
         
         public static final String REPORT_ALLOWED = "rpt_a";
-
         
         public static final String RESPONSE_STATUS = "resp_st";
-
         
         public static final String STATUS = "st";
-
         
         public static final String TRANSACTION_ID = "tr_id";
-
         
         public static final String RETRIEVE_STATUS = "retr_st";
-
         
         public static final String RETRIEVE_TEXT = "retr_txt";
-
         
         public static final String RETRIEVE_TEXT_CHARSET = "retr_txt_cs";
-
         
         public static final String READ_STATUS = "read_status";
-
         
         public static final String CONTENT_CLASS = "ct_cls";
-
         
         public static final String DELIVERY_REPORT = "d_rpt";
-
         
         public static final String DELIVERY_TIME_TOKEN = "d_tm_tok";
-
         
         public static final String DELIVERY_TIME = "d_tm";
-
         
         public static final String RESPONSE_TEXT = "resp_txt";
-
         
         public static final String SENDER_VISIBILITY = "s_vis";
-
         
         public static final String REPLY_CHARGING = "r_chg";
-
         
         public static final String REPLY_CHARGING_DEADLINE_TOKEN = "r_chg_dl_tok";
-
         
         public static final String REPLY_CHARGING_DEADLINE = "r_chg_dl";
-
         
         public static final String REPLY_CHARGING_ID = "r_chg_id";
-
         
         public static final String REPLY_CHARGING_SIZE = "r_chg_sz";
-
         
         public static final String PREVIOUSLY_SENT_BY = "p_s_by";
-
         
         public static final String PREVIOUSLY_SENT_DATE = "p_s_d";
-
         
         public static final String STORE = "store";
-
         
         public static final String MM_STATE = "mm_st";
-
         
         public static final String MM_FLAGS_TOKEN = "mm_flg_tok";
-
         
         public static final String MM_FLAGS = "mm_flg";
-
         
         public static final String STORE_STATUS = "store_st";
-
         
         public static final String STORE_STATUS_TEXT = "store_st_txt";
-
         
         public static final String STORED = "stored";
-
         
         public static final String TOTALS = "totals";
-
         
         public static final String MBOX_TOTALS = "mb_t";
-
         
         public static final String MBOX_TOTALS_TOKEN = "mb_t_tok";
-
         
         public static final String QUOTAS = "qt";
-
         
         public static final String MBOX_QUOTAS = "mb_qt";
-
         
         public static final String MBOX_QUOTAS_TOKEN = "mb_qt_tok";
-
         
         public static final String MESSAGE_COUNT = "m_cnt";
-
         
         public static final String START = "start";
-
         
         public static final String DISTRIBUTION_INDICATOR = "d_ind";
-
         
         public static final String ELEMENT_DESCRIPTOR = "e_des";
-
         
         public static final String LIMIT = "limit";
-
         
         public static final String RECOMMENDED_RETRIEVAL_MODE = "r_r_mod";
-
         
         public static final String RECOMMENDED_RETRIEVAL_MODE_TEXT = "r_r_mod_txt";
-
         
         public static final String STATUS_TEXT = "st_txt";
-
         
         public static final String APPLIC_ID = "apl_id";
-
         
         public static final String REPLY_APPLIC_ID = "r_apl_id";
-
         
         public static final String AUX_APPLIC_ID = "aux_apl_id";
-
         
         public static final String DRM_CONTENT = "drm_c";
-
         
         public static final String ADAPTATION_ALLOWED = "adp_a";
-
         
         public static final String REPLACE_ID = "repl_id";
-
         
         public static final String CANCEL_ID = "cl_id";
-
         
         public static final String CANCEL_STATUS = "cl_st";
-
         
         public static final String THREAD_ID = "thread_id";
-
         
         public static final String LOCKED = "locked";
-
         
         public static final String META_DATA = "meta_data";
     }
@@ -1460,15 +1288,12 @@ public static boolean isPhoneNumber(String number) {
     public interface ThreadsColumns extends BaseColumns {
         
         public static final String DATE = "date";
-
         
         public static final String RECIPIENT_IDS = "recipient_ids";
-
         
         public static final String MESSAGE_COUNT = "message_count";
         
         public static final String READ = "read";
-
         
         public static final String SNIPPET = "snippet";
         

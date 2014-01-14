@@ -15,19 +15,12 @@ import java.util.List;
 import libcore.io.Memory;
 import libcore.io.SizeOf;
 
-
-
-
-
 public class ObjectOutputStream extends OutputStream implements ObjectOutput, ObjectStreamConstants {
-
     
-    @DSModeled(DSC.SAFE)
     private static Object getFieldL(Object instance, Class<?> declaringClass, String fieldName, String fieldTypeName) {
     	return new Object();
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.916 -0500", hash_original_field = "6D678B37997C992735BEA0DA965949BA", hash_generated_field = "EDEC464CFF602399479B5323240F3B9A")
-
 
     private static final Class<?>[] WRITE_UNSHARED_PARAM_TYPES = new Class[] { Object.class };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.919 -0500", hash_original_field = "7F7257B6D8C2424391077998CDA8F98C", hash_generated_field = "94B8CE0A3BE191EC240D9518A5C28538")
@@ -1740,7 +1733,6 @@ public void writeShort(int value) throws IOException {
         checkWritePrimitiveTypes();
         primitiveTypes.writeShort(value);
     }
-
     
     public static abstract class PutField {
         
@@ -1880,7 +1872,6 @@ public abstract void put(String name, Object value);
         
 @Deprecated
         public abstract void write(ObjectOutput out) throws IOException;
-
         
     }
 

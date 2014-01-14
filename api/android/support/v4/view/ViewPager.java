@@ -37,10 +37,6 @@ import android.view.accessibility.AccessibilityEvent;
 import android.view.animation.Interpolator;
 import android.widget.Scroller;
 
-
-
-
-
 public class ViewPager extends ViewGroup {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:24.217 -0500", hash_original_field = "2080E0DE2E8F8B2A4AA70DD6ED296F7C", hash_generated_field = "8B95FE444EAF04E1B97E79FAA1346818")
 
@@ -50,10 +46,8 @@ public class ViewPager extends ViewGroup {
     private static final boolean DEBUG = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:24.221 -0500", hash_original_field = "07458AD7D4B0757961B31F370D0673DD", hash_generated_field = "650AADEFCFDF69CDD5A6A3BFC4ED1A3C")
 
-
     private static final boolean USE_CACHE = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:24.224 -0500", hash_original_field = "AB2A28F31760D0A929E502832C06CB98", hash_generated_field = "F1B189E3CF39A86400A3C9B6652580CE")
-
 
     private static final int DEFAULT_OFFSCREEN_PAGES = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:24.226 -0500", hash_original_field = "FD9103375029EF0DC7A8FDCD1D959B5C", hash_generated_field = "17654B746B84D905348C1100B6FE7760")
@@ -64,14 +58,13 @@ public class ViewPager extends ViewGroup {
     private static final int MIN_DISTANCE_FOR_FLING = 25;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:24.232 -0500", hash_original_field = "6DBF438C7FAC0EBB2AFE33EF164ECAF2", hash_generated_field = "5ADDA5389845FF3454B51DCFE6C8CFF0")
 
-
     private static final int[] LAYOUT_ATTRS = new int[] {
         android.R.attr.layout_gravity
     };
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:05.094 -0400", hash_original_field = "4202665155CA1C6B56FDDCABB0AF2DC1", hash_generated_field = "5E6A95D139D1F8AE27D3F1637C286AA4")
 
-    private static final Comparator<ItemInfo> COMPARATOR = new Comparator<ItemInfo>() {        
-        @DSModeled(DSC.SAFE)
+    private static final Comparator<ItemInfo> COMPARATOR = new Comparator<ItemInfo>() {
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:05.094 -0400", hash_original_method = "E78668ADB8BEA86BCE0E7FA19199ECBB", hash_generated_method = "21DE610755713DA1A41859ACA1CC340A")
         @Override
         public int compare(ItemInfo lhs, ItemInfo rhs) {
@@ -80,15 +73,13 @@ public class ViewPager extends ViewGroup {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_276796699 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_276796699;
             
-            
         }
-
         
 };
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:05.096 -0400", hash_original_field = "3DAA3CA73C29E9EEE6C4A07C4D95803A", hash_generated_field = "AAFB3424C4E3B805B840EED16A117C87")
 
-    private static final Interpolator sInterpolator = new Interpolator() {        
-        @DSModeled(DSC.SAFE)
+    private static final Interpolator sInterpolator = new Interpolator() {
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-01 14:03:05.096 -0400", hash_original_method = "11FE6ADED2EE7422CCA03C14DA065BC8", hash_generated_method = "53761C327FF8A4A7EA67EF20258337B8")
         public float getInterpolation(float t) {
             t -= 1.0f;
@@ -96,10 +87,7 @@ public class ViewPager extends ViewGroup {
             float var546ADE640B6EDFBC8A086EF31347E768_354418954 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_354418954;
             
-            
-            
         }
-
         
 };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:24.311 -0500", hash_original_field = "394D213079DFA0C7024EC13F5673BC94", hash_generated_field = "E2DAEB44FC73F85759FCDB42BA10BD3A")
@@ -116,10 +104,8 @@ public class ViewPager extends ViewGroup {
     public static final int SCROLL_STATE_SETTLING = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:24.254 -0500", hash_original_field = "A9DCDAB361B83A1131D64FE935E689DF", hash_generated_field = "4DED95E1F9669C7056C2DE4B99A4DA42")
 
-
     private final ArrayList<ItemInfo> mItems = new ArrayList<ItemInfo>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:24.256 -0500", hash_original_field = "BFA89288982B594812D5DAEB6D7FA98B", hash_generated_field = "2A01FA323E66B8B0477D575256463652")
-
 
     private PagerAdapter mAdapter;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:24.258 -0500", hash_original_field = "CA3E40C4FA6B57CF393B20C7059C5EB9", hash_generated_field = "D9FBC86CB22AF6261A48272E212D5541")
@@ -142,7 +128,6 @@ public class ViewPager extends ViewGroup {
     private PagerObserver mObserver;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:24.271 -0500", hash_original_field = "E158EF87FA9CF7006F4D0DC5CEADECD3", hash_generated_field = "B27BEE6220E87E8571B1CC02AEF71A81")
 
-
     private int mPageMargin;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:24.273 -0500", hash_original_field = "144758355132FFB88125D8B4D610751F", hash_generated_field = "5CB8BE965FCEEA70C5D18EEB2C5B06B9")
 
@@ -155,7 +140,6 @@ public class ViewPager extends ViewGroup {
     private int mBottomPageBounds;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:24.279 -0500", hash_original_field = "B8E06EBD93BD4D7001E3C1BC56C937C7", hash_generated_field = "A9185C0052000A85FA411C5586609D44")
 
-
     private int mChildWidthMeasureSpec;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:24.282 -0500", hash_original_field = "55DDDE296A3D5DA98C8D47B619BC621D", hash_generated_field = "AD5DFC102B7E069BD84ECCA774ECA3DA")
 
@@ -165,10 +149,8 @@ public class ViewPager extends ViewGroup {
     private boolean mInLayout;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:24.286 -0500", hash_original_field = "3BD9FEE95F32C4889FDFAAEB81585604", hash_generated_field = "525C74FB2020779EE8272F7A1D19F1C6")
 
-
     private boolean mScrollingCacheEnabled;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:24.288 -0500", hash_original_field = "067C04D4A7AE7EB12E1EEADE97C7AEDA", hash_generated_field = "3615C17B741EA896B2F5EB737A25E37D")
-
 
     private boolean mPopulatePending;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:24.291 -0500", hash_original_field = "9A4545912FAAF4935BFDF2CFDFD969B5", hash_generated_field = "FD42EA2408DC7BC099DE88D000A67AD2")
@@ -178,7 +160,6 @@ public class ViewPager extends ViewGroup {
 
     private int mOffscreenPageLimit = DEFAULT_OFFSCREEN_PAGES;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:24.295 -0500", hash_original_field = "73B01D10CAB8E5404C455A1ADEF4EF2A", hash_generated_field = "B59FB434376CFD18468CB8F7DF43173C")
-
 
     private boolean mIsBeingDragged;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:24.297 -0500", hash_original_field = "573DD8A411955AA9EB56A5C801B41308", hash_generated_field = "748889273C84B9C9E218E6BFA97C24D2")
@@ -213,20 +194,17 @@ public class ViewPager extends ViewGroup {
     private int mFlingDistance;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:24.321 -0500", hash_original_field = "2B86E06655022B6225B6647D6A25B48E", hash_generated_field = "986D52A8EA3DCB2BCCE9B03ACB17651B")
 
-
     private boolean mFakeDragging;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:24.323 -0500", hash_original_field = "4B0DEB2393CBB47F7A7E99064E38CE03", hash_generated_field = "AE83D0D9EE37D7B14D072F1E5F467A1E")
 
     private long mFakeDragBeginTime;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:24.326 -0500", hash_original_field = "C6B872CB47F26D2A00858234EB48A07A", hash_generated_field = "9E249B56B7CAFDEEC5F0C85DF1584FF5")
 
-
     private EdgeEffectCompat mLeftEdge;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:24.328 -0500", hash_original_field = "C34162DD2300AAA317FA2597249C37A4", hash_generated_field = "1100A29EE0D913080378CCB73190893C")
 
     private EdgeEffectCompat mRightEdge;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:24.330 -0500", hash_original_field = "E8FBC0675E7594A5CB40D0BCA74175A7", hash_generated_field = "D2103C384BE0AB58542D96A0CD23C256")
-
 
     private boolean mFirstLayout = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:24.332 -0500", hash_original_field = "1EE2B1E4B9437065B8EC3242243537D8", hash_generated_field = "0C8F00C2B17489007C5F8140505FF30F")
@@ -237,7 +215,6 @@ public class ViewPager extends ViewGroup {
     private int mDecorChildCount;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:24.337 -0500", hash_original_field = "820FED77D53B87A7AE07F65308286F45", hash_generated_field = "EE99805AC43858C068324B36ED28179F")
 
-
     private OnPageChangeListener mOnPageChangeListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:24.339 -0500", hash_original_field = "5C9611BB22756E6B87889FE4AEFB709E", hash_generated_field = "1F25B0C85CAD75C221F1467E6925256A")
 
@@ -246,7 +223,6 @@ public class ViewPager extends ViewGroup {
 
     private OnAdapterChangeListener mAdapterChangeListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:24.350 -0500", hash_original_field = "2979B1839AFE8AA021C0414D52BC75DC", hash_generated_field = "1E68982A83C4D0C6AC923C110AE0A857")
-
 
     private int mScrollState = SCROLL_STATE_IDLE;
 
@@ -1863,7 +1839,6 @@ protected boolean canScroll(View v, boolean checkV, int dx, int x, int y) {
 
         return checkV && ViewCompat.canScrollHorizontally(v, -dx);
     }
-
     
     static class ItemInfo {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:24.234 -0500", hash_original_field = "4725548B2F852700377486F07DBD49CE", hash_generated_field = "4725548B2F852700377486F07DBD49CE")
@@ -1882,10 +1857,7 @@ protected boolean canScroll(View v, boolean checkV, int dx, int x, int y) {
             //Synthesized constructor
         }
 
-
     }
-
-
     
     public static class SimpleOnPageChangeListener implements OnPageChangeListener {
         
@@ -1914,14 +1886,10 @@ protected boolean canScroll(View v, boolean checkV, int dx, int x, int y) {
         public void onPageScrollStateChanged(int state) {
             // This space for rent
         }
-
         
     }
-
-
     
     public static class SavedState extends BaseSavedState {
-
         
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.829 -0400", hash_original_field = "0C2FD1F1D20C82721A0B333C0E7E33AB", hash_generated_field = "F13036E5254809F6F751A2283CFC452E")
 
@@ -1986,8 +1954,6 @@ SavedState(Parcel in, ClassLoader loader) {
                     + " position=" + position + "}";
         }
     }
-
-
     
     private class PagerObserver extends DataSetObserver {
         
@@ -2008,11 +1974,8 @@ SavedState(Parcel in, ClassLoader loader) {
         public void onInvalidated() {
             dataSetChanged();
         }
-
         
     }
-
-
     
     public static class LayoutParams extends ViewGroup.LayoutParams {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:24.589 -0500", hash_original_field = "E34B784EA64A825067A6B44C3F87E09C", hash_generated_field = "59F277E75B4C152D81D2D818BA4B0D2E")
@@ -2037,20 +2000,14 @@ public LayoutParams(Context context, AttributeSet attrs) {
             gravity = a.getInteger(0, Gravity.NO_GRAVITY);
             a.recycle();
         }
-
         
     }
-
-
     
     public interface OnPageChangeListener {
-
         
         public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels);
-
         
         public void onPageSelected(int position);
-
         
         public void onPageScrollStateChanged(int state);
     }

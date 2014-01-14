@@ -5,7 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
 public interface IWindowManager extends android.os.IInterface
 {
 
@@ -15,7 +14,6 @@ public static abstract class Stub extends android.os.Binder implements android.v
 
 private static final java.lang.String DESCRIPTOR = "android.view.IWindowManager";
 
-@DSModeled(DSC.SPEC)
         public static android.view.IWindowManager asInterface(android.os.IBinder obj)
 {
 	android.view.IWindowManager retVal;
@@ -268,8 +266,6 @@ _data.recycle();
 }
 }
 
-
-@DSModeled(DSC.SAFE)
             public boolean canStatusBarHide() throws android.os.RemoteException
 {
 	android.os.Parcel _data = android.os.Parcel.obtain();
@@ -1366,7 +1362,6 @@ _data.recycle();
 return _result;
 }
 
-@DSModeled(DSC.SAFE)
             public android.view.InputDevice getInputDevice(int deviceId) throws android.os.RemoteException
 {
 	addTaint(deviceId);
@@ -1431,7 +1426,6 @@ _data.recycle();
 }
 }
 
-@DSModeled(DSC.SAFE)
             public void showStrictModeViolation(boolean on) throws android.os.RemoteException
 {
 	addTaint(on);
@@ -1701,7 +1695,6 @@ _data.recycle();
 }
 }
 
-@DSModeled(DSC.SAFE)
             public boolean hasNavigationBar() throws android.os.RemoteException
 {
 	android.os.Parcel _data = android.os.Parcel.obtain();
@@ -2862,15 +2855,11 @@ return super.onTransact(code, data, reply, flags);
 }
 }
 
-
 public boolean startViewServer(int port) throws android.os.RemoteException;
-
 
 public boolean stopViewServer() throws android.os.RemoteException;
 
-
 public boolean isViewServerRunning() throws android.os.RemoteException;
-
 
 public android.view.IWindowSession openSession(com.android.internal.view.IInputMethodClient client, com.android.internal.view.IInputContext inputContext) throws android.os.RemoteException;
 public boolean inputMethodClientHasFocus(com.android.internal.view.IInputMethodClient client) throws android.os.RemoteException;
@@ -2880,18 +2869,12 @@ public int getMaximumSizeDimension() throws android.os.RemoteException;
 public void setForcedDisplaySize(int longDimen, int shortDimen) throws android.os.RemoteException;
 public void clearForcedDisplaySize() throws android.os.RemoteException;
 
-
 public boolean canStatusBarHide() throws android.os.RemoteException;
-
-
-
-
 
 public boolean injectKeyEvent(android.view.KeyEvent ev, boolean sync) throws android.os.RemoteException;
 public boolean injectPointerEvent(android.view.MotionEvent ev, boolean sync) throws android.os.RemoteException;
 public boolean injectTrackballEvent(android.view.MotionEvent ev, boolean sync) throws android.os.RemoteException;
 public boolean injectInputEventNoWait(android.view.InputEvent ev) throws android.os.RemoteException;
-
 
 public void pauseKeyDispatching(android.os.IBinder token) throws android.os.RemoteException;
 public void resumeKeyDispatching(android.os.IBinder token) throws android.os.RemoteException;
@@ -2917,12 +2900,8 @@ public void moveAppToken(int index, android.os.IBinder token) throws android.os.
 public void moveAppTokensToTop(java.util.List<android.os.IBinder> tokens) throws android.os.RemoteException;
 public void moveAppTokensToBottom(java.util.List<android.os.IBinder> tokens) throws android.os.RemoteException;
 
-
-
-
 public android.content.res.Configuration updateOrientationFromAppTokens(android.content.res.Configuration currentConfig, android.os.IBinder freezeThisOneIfNeeded) throws android.os.RemoteException;
 public void setNewConfiguration(android.content.res.Configuration config) throws android.os.RemoteException;
-
 
 public void disableKeyguard(android.os.IBinder token, java.lang.String tag) throws android.os.RemoteException;
 public void reenableKeyguard(android.os.IBinder token) throws android.os.RemoteException;
@@ -2933,12 +2912,10 @@ public boolean inKeyguardRestrictedInputMode() throws android.os.RemoteException
 public void dismissKeyguard() throws android.os.RemoteException;
 public void closeSystemDialogs(java.lang.String reason) throws android.os.RemoteException;
 
-
 public float getAnimationScale(int which) throws android.os.RemoteException;
 public float[] getAnimationScales() throws android.os.RemoteException;
 public void setAnimationScale(int which, float scale) throws android.os.RemoteException;
 public void setAnimationScales(float[] scales) throws android.os.RemoteException;
-
 
 public int getSwitchState(int sw) throws android.os.RemoteException;
 public int getSwitchStateForDevice(int devid, int sw) throws android.os.RemoteException;
@@ -2952,29 +2929,16 @@ public int getTrackballKeycodeState(int sw) throws android.os.RemoteException;
 public int getDPadKeycodeState(int sw) throws android.os.RemoteException;
 public android.view.InputChannel monitorInput(java.lang.String inputChannelName) throws android.os.RemoteException;
 
-
 public boolean hasKeys(int[] keycodes, boolean[] keyExists) throws android.os.RemoteException;
-
 
 public android.view.InputDevice getInputDevice(int deviceId) throws android.os.RemoteException;
 public int[] getInputDeviceIds() throws android.os.RemoteException;
 
-
 public void setInTouchMode(boolean showFocus) throws android.os.RemoteException;
-
-
-
-
-
 
 public void showStrictModeViolation(boolean on) throws android.os.RemoteException;
 
-
-
-
-
 public void setStrictModeVisualIndicatorPreference(java.lang.String enabled) throws android.os.RemoteException;
-
 
 public void updateRotation(boolean alwaysSendConfiguration) throws android.os.RemoteException;
 

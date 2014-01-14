@@ -14,8 +14,6 @@ import android.content.SearchRecentSuggestionsProvider;
 import android.net.Uri;
 import android.text.TextUtils;
 
-
-
 public class SearchRecentSuggestions {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:02.965 -0500", hash_original_field = "DE2A394F7B6C2556435D3DDBACC95E2C", hash_generated_field = "83CF5D93D7647E05E9E9EB88C1379A3E")
 
@@ -60,7 +58,6 @@ public class SearchRecentSuggestions {
     public static final int QUERIES_PROJECTION_DISPLAY2_INDEX = 4;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:02.995 -0500", hash_original_field = "C82910879C292C21BA69457BB73148F8", hash_generated_field = "FF675A23123BD79B2D764781FDE6166C")
 
-
     /*
      * Set a cap on the count of items in the suggestions table, to
      * prevent db and layout operations from dragging to a crawl. Revisit this
@@ -73,7 +70,6 @@ public class SearchRecentSuggestions {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:02.997 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
 
     private  Context mContext;
-
     
     private static class SuggestionColumns implements BaseColumns {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:02.969 -0500", hash_original_field = "1F02AE2A2A3698D98A835DE2FB2A3AD8", hash_generated_field = "4C20FFD88D15FE183A2FD7C689BC4C8E")
@@ -89,7 +85,6 @@ public class SearchRecentSuggestions {
 
         public static final String DATE = "date";
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.510 -0400", hash_original_method = "BB858C1043D81D8CD66DDE6CA07AE15D", hash_generated_method = "BB858C1043D81D8CD66DDE6CA07AE15D")
         public SuggestionColumns ()
         {

@@ -36,8 +36,6 @@ import android.util.EventLog;
 import android.util.Log;
 import dalvik.system.CloseGuard;
 
-
-
 import droidsafe.concrete.DSCursor;
 
 public abstract class ContentResolver {
@@ -543,7 +541,6 @@ public static IContentService getContentService() {
     public static final String SYNC_EXTRAS_MANUAL = "force";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.085 -0500", hash_original_field = "95E12551FD1813A3B4B131256742EF18", hash_generated_field = "C66AD9A9054789246D88C3CEF49E0FE1")
 
-
     public static final String SYNC_EXTRAS_UPLOAD = "upload";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.087 -0500", hash_original_field = "3BDAFF08B8B5D1FD247D54C93DBB602E", hash_generated_field = "085DFE00F23ABC519407289B800B9330")
 
@@ -555,7 +552,6 @@ public static IContentService getContentService() {
 
     public static final String SYNC_EXTRAS_INITIALIZE = "initialize";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.095 -0500", hash_original_field = "23CF7C1D7F7D34A52AE3013FCBEF7C56", hash_generated_field = "2A050A80E7005A896641161E25801F35")
-
 
     public static final String SCHEME_CONTENT = "content";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.097 -0500", hash_original_field = "661B0EEDBA4AA93209BB617B6341969F", hash_generated_field = "7BECC35C4D527BA52EC58C833FB0BB34")
@@ -596,7 +592,6 @@ public static IContentService getContentService() {
     public static final int SYNC_ERROR_INTERNAL = 8;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.125 -0500", hash_original_field = "3E7F77D8E6790DAE61B7FE9FBA555837", hash_generated_field = "EC6D4E9079B435808FB02F42CC269B78")
 
-
     public static final int SYNC_OBSERVER_TYPE_SETTINGS = 1<<0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.127 -0500", hash_original_field = "DFB06C7A2FBD2E5B04F1A08AA7980F13", hash_generated_field = "1F0C3937881F3FCFBF4E76673AB2169B")
 
@@ -619,7 +614,6 @@ public static IContentService getContentService() {
     public static final String CONTENT_SERVICE_NAME = "content";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.328 -0500", hash_original_field = "FF075AB4CC757752C1C7F0A3C1F082AC", hash_generated_field = "EBBA89635D26FA830DBE060ABCA948AD")
 
-
     private static IContentService sContentService;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.332 -0500", hash_original_field = "A6791527B14473DE7C470C42780930DC", hash_generated_field = "2E4D905723B5A2539B6E57BF8A2185DE")
 
@@ -636,7 +630,6 @@ public static IContentService getContentService() {
 public ContentResolver(Context context) {
         mContext = context;
     }
-
     
     public class OpenResourceIdResult {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.175 -0500", hash_original_field = "DEA1ED7828F798697E4EA5B9016D799C", hash_generated_field = "3D94ED8234243D4DE3F50EF6E646D0E3")
@@ -652,10 +645,7 @@ public ContentResolver(Context context) {
             //Synthesized constructor
         }
 
-
     }
-
-
     
     private final class CursorWrapperInner extends CrossProcessCursorWrapper {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.290 -0500", hash_original_field = "AE288B6FA0FFB660720033CA9B71BF21", hash_generated_field = "EACA88E7B01FC8694B38FD93BBF3A6CA")
@@ -665,7 +655,6 @@ public ContentResolver(Context context) {
 
         private  IContentProvider mContentProvider;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.292 -0500", hash_original_field = "6ADAA7D7C1C7D2FB7CE0E7D55A51778B", hash_generated_field = "91705AACD6DDE42AEA628776AF2A3DC6")
-
 
         private final CloseGuard mCloseGuard = CloseGuard.get();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.295 -0500", hash_original_field = "9CE7EF6F7F99E6E2E3761F5545AECF33", hash_generated_field = "FF245C536DEFD57B2DCDAA00E8BC192F")
@@ -713,8 +702,6 @@ CursorWrapperInner(Cursor cursor, IContentProvider icp) {
             }
         }
     }
-
-
     
     private final class ParcelFileDescriptorInner extends ParcelFileDescriptor {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.310 -0500", hash_original_field = "EFBABC770A9D88F847529F4A7BC11412", hash_generated_field = "853BAF17ACDDF73D9A8E686A803B9543")
@@ -848,9 +835,7 @@ public String[] getStreamTypes(Uri url, String mimeTypeFilter) {
             releaseProvider(provider);
         }
     }
-
     
-    @DSModeled(DSC.SAFE)
    /**
     * On this query call, we want the information flow taint to flow from the
     * query call to the underlying cursor.  So just create a cursor and return it.
@@ -1518,14 +1503,13 @@ public final ContentProviderClient acquireContentProviderClient(String name) {
 
         return null;
     }
-
     
     /** 
      * This registers the specified ContentObserver to be called when the URI 
      * changes.  For example, the URI could be content://sms and the onChange()
      * functions will get called whenever an SMS message is received
      */
-    @DSModeled(DSC.SAFE)
+    
     public final void registerContentObserver(Uri uri, boolean notifyForDescendents,
             ContentObserver observer)
     {

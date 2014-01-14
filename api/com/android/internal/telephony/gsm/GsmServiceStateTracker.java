@@ -50,11 +50,6 @@ import com.android.internal.telephony.ServiceStateTracker;
 import com.android.internal.telephony.TelephonyIntents;
 import com.android.internal.telephony.TelephonyProperties;
 
-
-
-
-
-
 final class GsmServiceStateTracker extends ServiceStateTracker {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.770 -0500", hash_original_method = "44F3B84D65DA92E5C60AFFA193D2001B", hash_generated_method = "289EB8DAE8C0C12E22131068C4AD92E8")
@@ -145,14 +140,12 @@ private static void sloge(String s) {
     static final int CS_EMERGENCY_ENABLED = 1006;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.680 -0500", hash_original_field = "4AC213E3C6742CEE226FC0CB90B61092", hash_generated_field = "DE5A1C9C370E4A134E0B624298F21FBF")
 
-
     /** Notification id. */
     static final int PS_NOTIFICATION = 888;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.683 -0500", hash_original_field = "C669C8F2DF4796DE8E7F9F320259B28F", hash_generated_field = "EBBCDE09A71FA16B42C4199ACB2E765C")
 
     static final int CS_NOTIFICATION = 999;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.592 -0500", hash_original_field = "690DC9441FA6BD04E0472B4DF9E035F8", hash_generated_field = "690DC9441FA6BD04E0472B4DF9E035F8")
-
 
     GSMPhone phone;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.595 -0500", hash_original_field = "6501E6CCC6A627167D828A01CEBF7711", hash_generated_field = "6501E6CCC6A627167D828A01CEBF7711")
@@ -165,7 +158,6 @@ private static void sloge(String s) {
 
     int mPreferredNetworkType;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.602 -0500", hash_original_field = "83055EAFAFB668214C2B6EC078B7B3E2", hash_generated_field = "07B777CC7BF8F0F7679AC97DE6B0C153")
-
 
     private int gprsState = ServiceState.STATE_OUT_OF_SERVICE;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.604 -0500", hash_original_field = "C6527E6281F4752368634BFD36ACDDC3", hash_generated_field = "7035A3B0948B79A30C2C00DECE9F4570")
@@ -212,7 +204,6 @@ private static void sloge(String s) {
     private ContentResolver cr;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.635 -0500", hash_original_field = "30A17FCDED9983DC17E4B0241936D019", hash_generated_field = "30A17FCDED9983DC17E4B0241936D019")
 
-
     String mSavedTimeZone;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:30.637 -0500", hash_original_field = "56DFA99AB6C2048EFF6A2B28FFEF5620", hash_generated_field = "56DFA99AB6C2048EFF6A2B28FFEF5620")
 
@@ -246,8 +237,8 @@ private static void sloge(String s) {
     private int curSpnRule = 0;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.697 -0400", hash_original_field = "AB74790817CE8598B3B84738E53E435A", hash_generated_field = "829A6BC80DDB03BAE60150DE88BC0EA8")
 
-    private BroadcastReceiver mIntentReceiver = new BroadcastReceiver() {        
-        @DSModeled(DSC.BAN)
+    private BroadcastReceiver mIntentReceiver = new BroadcastReceiver() {
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.697 -0400", hash_original_method = "7D33A0984FFB123C6674B46896DDEB1E", hash_generated_method = "CF369C8FCB5C79AAA993EA2D6A6CBEC9")
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -261,17 +252,13 @@ private static void sloge(String s) {
             addTaint(context.getTaint());
             addTaint(intent.getTaint());
             
-            
-                
-            
         }
-
         
 };
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.697 -0400", hash_original_field = "DE088C6BF9EC1AFE67E7551680F21C7E", hash_generated_field = "EEAFB5DE9D002A7C986305AE1C501C25")
 
-    private ContentObserver mAutoTimeObserver = new ContentObserver(new Handler()) {        
-        @DSModeled(DSC.BAN)
+    private ContentObserver mAutoTimeObserver = new ContentObserver(new Handler()) {
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.697 -0400", hash_original_method = "227D40A344094AD4B591040BC6F6DC3D", hash_generated_method = "F4315810E745D16A27460B49034466AB")
         @Override
         public void onChange(boolean selfChange) {
@@ -279,16 +266,13 @@ private static void sloge(String s) {
             revertToNitzTime();
             addTaint(selfChange);
             
-            
-            
         }
-
         
 };
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.698 -0400", hash_original_field = "160828814E36CFDE204FECD88170AF0C", hash_generated_field = "B61F354992F7CF3E33A4CCB97A3FF08A")
 
-    private ContentObserver mAutoTimeZoneObserver = new ContentObserver(new Handler()) {        
-        @DSModeled(DSC.BAN)
+    private ContentObserver mAutoTimeZoneObserver = new ContentObserver(new Handler()) {
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:29.698 -0400", hash_original_method = "CFFF91BA86D25926B76415F80D2C8421", hash_generated_method = "E308D52C44EEB3156885DEEED1F0C5D9")
         @Override
         public void onChange(boolean selfChange) {
@@ -296,10 +280,7 @@ private static void sloge(String s) {
             revertToNitzTimeZone();
             addTaint(selfChange);
             
-            
-            
         }
-
         
 };
 
@@ -968,7 +949,6 @@ private void pollStateDone() {
         // this new state has been applied - forget it until we get a new new state
         mNewRadioTechnology = 0;
 
-
         newSS.setStateOutOfService(); // clean slate for next time
 
         if (hasRadioTechnologyChanged) {
@@ -1340,7 +1320,6 @@ private int regCodeToServiceState(int code) {
                 return ServiceState.STATE_OUT_OF_SERVICE;
         }
     }
-
 
     /**
      * code is registration state 0-5 from TS 27.007 7.2

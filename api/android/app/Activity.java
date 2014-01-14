@@ -66,14 +66,8 @@ import com.android.internal.app.ActionBarImpl;
 import com.android.internal.policy.PolicyManager;
 import com.android.internal.view.menu.MenuBuilder;
 
-
-
-
-
 public class Activity extends ContextThemeWrapper implements LayoutInflater.Factory2, Window.Callback, KeyEvent.Callback, OnCreateContextMenuListener, ComponentCallbacks2 {
-
     
-    @DSModeled(DSC.BAN)
     private static String savedDialogKeyFor(int key){
 		// Original method
 		/*
@@ -83,9 +77,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		return "";
 	}
-
     
-    @DSModeled(DSC.BAN)
     private static String savedDialogArgsKeyFor(int key){
 		// Original method
 		/*
@@ -109,7 +101,6 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     public static final int RESULT_FIRST_USER   = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:58.988 -0500", hash_original_field = "7C981B7812486BF80407E00E081725AF", hash_generated_field = "935F741DC4E3364E9A53BE28D1817499")
 
-
     private static final String WINDOW_HIERARCHY_TAG = "android:viewHierarchyState";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.008 -0500", hash_original_field = "13B33411593A705589F2DA04D3DEAA8D", hash_generated_field = "925270CCB66F84A6CC5AD8E1A127DDF5")
 
@@ -127,7 +118,6 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 
     private static final String SAVED_DIALOG_ARGS_KEY_PREFIX = "android:dialog_args_";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.408 -0500", hash_original_field = "8DEF5FAA069262DDDE3E453AF79F9071", hash_generated_field = "98D5104638F2DEE99210C785FE0E500F")
-
     
     protected static final int[] FOCUSED_STATE_SET = {com.android.internal.R.attr.state_focused};
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.774 -0500", hash_original_field = "D3CC4E3A93F1E49612038E01336EDC17", hash_generated_field = "45127B126EE2B3619E2DE44F606F53C3")
@@ -216,11 +206,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.251 -0500", hash_original_field = "103BD895478A6A40124D791931151EE2", hash_generated_field = "103BD895478A6A40124D791931151EE2")
  NonConfigurationInstances mLastNonConfigurationInstances;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.258 -0500", hash_original_field = "C6B08D42C8EA2CB56500460CAF662F4C", hash_generated_field = "C669AC20EF93035981B8D3BE2898892F")
-
     
     private Window mWindow;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.265 -0500", hash_original_field = "83A062836C11DD52DC32F4325712F233", hash_generated_field = "3C750A4AE06B71AF3A05B7797C7182A4")
-
 
     private WindowManager mWindowManager;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.271 -0500", hash_original_field = "E1BBD6179BBAC61DB86866A787E8F58C", hash_generated_field = "E1BBD6179BBAC61DB86866A787E8F58C")
@@ -235,17 +223,14 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
  ActionBarImpl mActionBar = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.301 -0500", hash_original_field = "8C445459F9A68BF8713F87AC9D695E47", hash_generated_field = "ECAB18871B55104BACD4283C12B1074D")
 
-
     private CharSequence mTitle;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.308 -0500", hash_original_field = "2F27E770C08EAF774B32F60AC1A8D570", hash_generated_field = "CF4E9C052F96C3E80581AE8AF634872B")
 
     private int mTitleColor = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.315 -0500", hash_original_field = "770A646DB3FFD5D268F1207A9B6648B8", hash_generated_field = "694874072698409F6608B46B5D5A3DE1")
 
-
     final FragmentManagerImpl mFragments = new FragmentManagerImpl();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.321 -0500", hash_original_field = "207A321ED3571899F1F73399691FB216", hash_generated_field = "207A321ED3571899F1F73399691FB216")
-
     
     SparseArray<LoaderManagerImpl> mAllLoaderManagers;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.326 -0500", hash_original_field = "6EE478DF5473556475C8D09C185A01BC", hash_generated_field = "6EE478DF5473556475C8D09C185A01BC")
@@ -263,10 +248,8 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     Intent mResultData = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.387 -0500", hash_original_field = "C21BE9BD6AAB2237466A80BCA166CA70", hash_generated_field = "AB8AC56D76B8BEA00FC5296846330527")
 
-
     private boolean mTitleReady = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.394 -0500", hash_original_field = "390C7F0981BA84FE37791C6DE18A35AD", hash_generated_field = "B2DD3A4B48EBE858054417FEDBBD4E9F")
-
 
     private int mDefaultKeyMode = DEFAULT_KEYS_DISABLE;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.400 -0500", hash_original_field = "22E5427C84A3B37A77D47D71434C1D16", hash_generated_field = "2B1292D0EBD0751B84B1BAFF83080A8F")
@@ -275,13 +258,11 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     private final Object mInstanceTracker = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.421 -0500", hash_original_field = "348A8677E1E3F1084FC4FBEC2A3E1F5D", hash_generated_field = "A94051227A36AE91A6CE3B31BF1DD3E6")
 
-
     private Thread mUiThread;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.427 -0500", hash_original_field = "AD9C3D1E48D73BF1547D53C4C62401B2", hash_generated_field = "26DE2B72977ADBD047A9853341F26F79")
 
     final Handler mHandler = new Handler();
     
-    @DSModeled(DSC.SAFE)
 	public Activity() {
 		super();
 		mWindow = PolicyManager.makeNewWindow((Context)this);
@@ -316,9 +297,7 @@ public void setIntent(Intent newIntent) {
 public final Application getApplication() {
         return mApplication;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public final boolean isChild(){
 		return getTaintBoolean();
 		// Original method
@@ -356,9 +335,7 @@ public WindowManager getWindowManager() {
 public Window getWindow() {
         return mWindow;
     }
-
     
-    @DSModeled(DSC.SPEC)
     public LoaderManager getLoaderManager(){
 		mLoaderManager = getLoaderManager(-1, mLoadersStarted, true);
 		return mLoaderManager;
@@ -374,9 +351,7 @@ public Window getWindow() {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SPEC)
     LoaderManagerImpl getLoaderManager(int index, boolean started, boolean create){
 		mAllLoaderManagers = new SparseArray<LoaderManagerImpl>();
 		LoaderManagerImpl lm = mAllLoaderManagers.get(index);
@@ -401,9 +376,7 @@ public Window getWindow() {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public View getCurrentFocus(){
 		return mWindow.getCurrentFocus();
 		// Original method
@@ -413,9 +386,7 @@ public Window getWindow() {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	protected void onCreate(Bundle savedInstanceState){
 		mAllLoaderManagers = mLastNonConfigurationInstances.loaders;
 		Parcelable p = savedInstanceState.getParcelable(FRAGMENTS_TAG);
@@ -455,9 +426,7 @@ final void performRestoreInstanceState(Bundle savedInstanceState) {
         onRestoreInstanceState(savedInstanceState);
         restoreManagedDialogs(savedInstanceState);
     }
-
     
-    @DSModeled(DSC.SPEC)
     protected void onRestoreInstanceState(Bundle savedInstanceState){
 		Bundle windowState = savedInstanceState.getBundle(WINDOW_HIERARCHY_TAG); //DSFIXME:  Model method in bundle
 		mWindow.restoreHierarchyState(windowState);
@@ -474,17 +443,13 @@ final void performRestoreInstanceState(Bundle savedInstanceState) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.BAN)
     private void restoreManagedDialogs(Bundle savedInstanceState){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.BAN)
     private Dialog createDialog(Integer dialogId, Bundle state, Bundle args){
 		final Dialog dialog = onCreateDialog(dialogId, args);
 		dialog.dispatchOnCreate(state);
@@ -501,9 +466,7 @@ final void performRestoreInstanceState(Bundle savedInstanceState) {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SPEC)
     protected void onPostCreate(Bundle savedInstanceState){
 		onTitleChanged(getTitle(), getTitleColor());
 		// Original method
@@ -518,9 +481,7 @@ final void performRestoreInstanceState(Bundle savedInstanceState) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SPEC)
     protected void onStart(){
 		mLoaderManager = getLoaderManager(-1, mLoadersStarted, false);
 		mLoaderManager.doStart();
@@ -543,9 +504,7 @@ final void performRestoreInstanceState(Bundle savedInstanceState) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     protected void onRestart(){
 		// Original method
 		/*
@@ -555,9 +514,7 @@ final void performRestoreInstanceState(Bundle savedInstanceState) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	protected void onResume(){
 		getApplication().dispatchActivityResumed(this);
 		// Original method
@@ -569,9 +526,7 @@ final void performRestoreInstanceState(Bundle savedInstanceState) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SPEC)
     protected void onPostResume(){
 		final Window win = getWindow();
 		win.makeActive();
@@ -628,9 +583,7 @@ final void performSaveInstanceState(Bundle outState) {
         onSaveInstanceState(outState);
         saveManagedDialogs(outState);
     }
-
     
-    @DSModeled(DSC.SAFE)
     protected void onSaveInstanceState(Bundle outState){
 		outState.putBundle(WINDOW_HIERARCHY_TAG, mWindow.saveHierarchyState());
         Parcelable p = mFragments.saveAllState();
@@ -649,17 +602,13 @@ final void performSaveInstanceState(Bundle outState) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.BAN)
     private void saveManagedDialogs(Bundle outState){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     protected void onPause(){
 		getApplication().dispatchActivityPaused(this);
 		// Original method
@@ -740,9 +689,7 @@ public boolean onCreateThumbnail(Bitmap outBitmap, Canvas canvas) {
 public CharSequence onCreateDescription() {
         return null;
     }
-
     
-    @DSModeled(DSC.SAFE)
 	protected void onStop(){
 		mActionBar.setShowHideAnimationEnabled(false);
 		getApplication().dispatchActivityStopped(this);
@@ -756,17 +703,13 @@ public CharSequence onCreateDescription() {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	protected void onDestroy(){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public void onConfigurationChanged(Configuration newConfig){
 		mFragments.dispatchConfigurationChanged(newConfig);
 		mWindow.onConfigurationChanged(newConfig);
@@ -786,9 +729,7 @@ public CharSequence onCreateDescription() {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public int getChangingConfigurations(){
 		return getTaintInt();
 		// Original method
@@ -798,9 +739,7 @@ public CharSequence onCreateDescription() {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Deprecated public Object getLastNonConfigurationInstance(){
 		return mLastNonConfigurationInstances.activity;
 		// Original method
@@ -869,9 +808,7 @@ public CharSequence onCreateDescription() {
 public Object onRetainNonConfigurationInstance() {
         return null;
     }
-
     
-    @DSModeled(DSC.SAFE)
     HashMap<String, Object> getLastNonConfigurationChildInstances(){
 		return mLastNonConfigurationInstances.children;
 		// Original method
@@ -895,17 +832,13 @@ public Object onRetainNonConfigurationInstance() {
 HashMap<String,Object> onRetainNonConfigurationChildInstances() {
         return null;
     }
-
     
-    @DSModeled(DSC.SAFE)
     NonConfigurationInstances retainNonConfigurationInstances(){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		return null;
 	}
-
     
-    @DSModeled(DSC.SPEC)
     public void onLowMemory(){
 		mFragments.dispatchLowMemory();
 		// Original method
@@ -917,9 +850,7 @@ HashMap<String,Object> onRetainNonConfigurationChildInstances() {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public void onTrimMemory(int level){
 		mFragments.dispatchTrimMemory(level);
 		// Original method
@@ -941,9 +872,7 @@ HashMap<String,Object> onRetainNonConfigurationChildInstances() {
 public FragmentManager getFragmentManager() {
         return mFragments;
     }
-
     
-    @DSModeled(DSC.SPEC)
     void invalidateFragmentIndex(int index){
 		LoaderManagerImpl lm = mAllLoaderManagers.get(0);
 		lm.doDestroy();
@@ -972,9 +901,7 @@ public FragmentManager getFragmentManager() {
     
 public void onAttachFragment(Fragment fragment) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     @Deprecated public final Cursor managedQuery(Uri uri, String[] projection, String selection,
             String sortOrder){
 		Cursor c = getContentResolver().query(uri, projection, selection, null, sortOrder);
@@ -991,9 +918,7 @@ public void onAttachFragment(Fragment fragment) {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Deprecated public final Cursor managedQuery(Uri uri, String[] projection, String selection,
             String[] selectionArgs, String sortOrder){
 		Cursor c = getContentResolver().query(uri, projection, selection, selectionArgs, sortOrder);
@@ -1010,9 +935,7 @@ public void onAttachFragment(Fragment fragment) {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Deprecated public void startManagingCursor(Cursor c){
 		// Original method
 		/*
@@ -1024,9 +947,7 @@ public void onAttachFragment(Fragment fragment) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Deprecated public void stopManagingCursor(Cursor c){
 		ManagedCursor mc = mManagedCursors.get(0);
 		mManagedCursors.remove(0);
@@ -1082,9 +1003,7 @@ public ActionBar getActionBar() {
         initActionBar();
         return mActionBar;
     }
-
     
-    @DSModeled(DSC.BAN)
 	private void initActionBar(){
 		Window window = getWindow();
 		window.getDecorView();
@@ -1183,9 +1102,7 @@ public void addContentView(View view, ViewGroup.LayoutParams params) {
 public void setFinishOnTouchOutside(boolean finish) {
         mWindow.setCloseOnTouchOutside(finish);
     }
-
     
-    @DSModeled(DSC.SAFE)
     public final void setDefaultKeyMode(int mode){
 		addTaint(mode);
 		mDefaultKeySsb = new SpannableStringBuilder();
@@ -1212,9 +1129,7 @@ public void setFinishOnTouchOutside(boolean finish) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.BAN)
     public void droidsafeOnKeyEvents() {
         int action = getTaintInt();
         int code = getTaintInt();
@@ -1231,8 +1146,7 @@ public void setFinishOnTouchOutside(boolean finish) {
         onTrackballEvent(motionEv);
         onGenericMotionEvent(motionEv);
     }
-
-    @DSModeled(DSC.SAFE)
+    
     public boolean onKeyDown(int keyCode, KeyEvent event){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -1249,9 +1163,7 @@ public void setFinishOnTouchOutside(boolean finish) {
 public boolean onKeyLongPress(int keyCode, KeyEvent event) {
         return false;
     }
-
     
-    @DSModeled(DSC.SPEC)
     public boolean onKeyUp(int keyCode, KeyEvent event){
 		getApplicationInfo();
 		onBackPressed();
@@ -1282,9 +1194,7 @@ public boolean onKeyLongPress(int keyCode, KeyEvent event) {
 public boolean onKeyMultiple(int keyCode, int repeatCount, KeyEvent event) {
         return false;
     }
-
     
-    @DSModeled(DSC.SPEC)
     public void onBackPressed(){
 		mFragments.popBackStackImmediate();
 		finish();
@@ -1314,9 +1224,7 @@ public boolean onKeyMultiple(int keyCode, int repeatCount, KeyEvent event) {
 public boolean onKeyShortcut(int keyCode, KeyEvent event) {
         return false;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public boolean onTouchEvent(MotionEvent event){
 		finish();
 		return mWindow.shouldCloseOnTouch(this, event); //Taint should bubble up
@@ -1406,9 +1314,7 @@ public boolean onGenericMotionEvent(MotionEvent event) {
     
 public void onUserInteraction() {
     }
-
     
-    @DSModeled(DSC.SAFE)
     public void onWindowAttributesChanged(WindowManager.LayoutParams params){
 		mDecor.getParent();
 		getWindowManager().updateViewLayout(mDecor, params);
@@ -1486,9 +1392,7 @@ public void onAttachedToWindow() {
     
 public void onDetachedFromWindow() {
     }
-
     
-    @DSModeled(DSC.SAFE)
     public boolean hasWindowFocus(){
 		Window w = getWindow();
 		View d = w.getDecorView();
@@ -1507,9 +1411,7 @@ public void onDetachedFromWindow() {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public boolean dispatchKeyEvent(KeyEvent event){
 		onUserInteraction();
 		Window win = getWindow();
@@ -1531,9 +1433,7 @@ public void onDetachedFromWindow() {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public boolean dispatchKeyShortcutEvent(KeyEvent event){
 		onUserInteraction();
 		return (getWindow().superDispatchKeyShortcutEvent(event) || onKeyShortcut(event.getKeyCode(), event));
@@ -1548,9 +1448,7 @@ public void onDetachedFromWindow() {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public boolean dispatchTouchEvent(MotionEvent ev){
 		onUserInteraction();
 		return (getWindow().superDispatchTouchEvent(ev) || onTouchEvent(ev));
@@ -1567,9 +1465,7 @@ public void onDetachedFromWindow() {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public boolean dispatchTrackballEvent(MotionEvent ev){
 		onUserInteraction();
 		return (getWindow().superDispatchTrackballEvent(ev) || onTrackballEvent(ev));
@@ -1584,9 +1480,7 @@ public void onDetachedFromWindow() {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public boolean dispatchGenericMotionEvent(MotionEvent ev){
 		onUserInteraction();
 		return (getWindow().superDispatchGenericMotionEvent(ev) || onGenericMotionEvent(ev));
@@ -1601,9 +1495,7 @@ public void onDetachedFromWindow() {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public boolean dispatchPopulateAccessibilityEvent(AccessibilityEvent event){
 		event.setClassName(getClass().getName());
         event.setPackageName(getPackageName());
@@ -1642,9 +1534,7 @@ public void onDetachedFromWindow() {
 public View onCreatePanelView(int featureId) {
         return null;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public boolean onCreatePanelMenu(int featureId, Menu menu){
 		return (onCreateOptionsMenu(menu) || mFragments.dispatchCreateOptionsMenu(menu, getMenuInflater()));
 		// Original method
@@ -1659,9 +1549,7 @@ public View onCreatePanelView(int featureId) {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public boolean onPreparePanel(int featureId, View view, Menu menu){
 		return (onPrepareOptionsMenu(menu) || mFragments.dispatchPrepareOptionsMenu(menu) && menu.hasVisibleItems());
 		// Original method
@@ -1676,9 +1564,7 @@ public View onCreatePanelView(int featureId) {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SPEC)
     public boolean onMenuOpened(int featureId, Menu menu){
 		initActionBar();
 		mActionBar.dispatchMenuVisibilityChanged(true);
@@ -1699,9 +1585,7 @@ public View onCreatePanelView(int featureId) {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public boolean onMenuItemSelected(int featureId, MenuItem item){
 		EventLog.writeEvent(50000, 0, item.getTitleCondensed());
 		return (onOptionsItemSelected(item) || mFragments.dispatchContextItemSelected(item));
@@ -1727,9 +1611,7 @@ public View onCreatePanelView(int featureId) {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public void onPanelClosed(int featureId, Menu menu){
 		mFragments.dispatchOptionsMenuClosed(menu);
 		onOptionsMenuClosed(menu);
@@ -1766,9 +1648,7 @@ public View onCreatePanelView(int featureId) {
 public void invalidateOptionsMenu() {
         mWindow.invalidatePanelMenu(Window.FEATURE_OPTIONS_PANEL);
     }
-
     
-    @DSModeled(DSC.SAFE)
     public boolean onCreateOptionsMenu(Menu menu){
 		return mParent.onCreateOptionsMenu(menu);
 		// Original method
@@ -1781,9 +1661,7 @@ public void invalidateOptionsMenu() {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public boolean onPrepareOptionsMenu(Menu menu){
 		return mParent.onPrepareOptionsMenu(menu);
 		// Original method
@@ -1796,9 +1674,7 @@ public void invalidateOptionsMenu() {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public boolean onOptionsItemSelected(MenuItem item){
 		return mParent.onOptionsItemSelected(item);
 		// Original method
@@ -1811,9 +1687,7 @@ public void invalidateOptionsMenu() {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SPEC)
     public void onOptionsMenuClosed(Menu menu){
 		mParent.onOptionsMenuClosed(menu);
 		// Original method
@@ -1836,9 +1710,7 @@ public void invalidateOptionsMenu() {
 public void openOptionsMenu() {
         mWindow.openPanel(Window.FEATURE_OPTIONS_PANEL, null);
     }
-
     
-    @DSModeled(DSC.SAFE)
     public void closeOptionsMenu(){
 		// Original method
 		/*
@@ -1866,9 +1738,7 @@ public void openOptionsMenu() {
     
 public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     public void registerForContextMenu(View view){
         // model the callbacks.  This code is sure to be missing things
         // There are many other types of views and adapters
@@ -1924,9 +1794,7 @@ public void openContextMenu(View view) {
 public void closeContextMenu() {
         mWindow.closePanel(Window.FEATURE_CONTEXT_MENU);
     }
-
     
-    @DSModeled(DSC.SAFE)
     public boolean onContextItemSelected(MenuItem item){
 		return mParent.onContextItemSelected(item);
 		// Original method
@@ -1939,9 +1807,7 @@ public void closeContextMenu() {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SPEC)
     public void onContextMenuClosed(Menu menu){
 		mParent.onContextMenuClosed(menu);
 		// Original method
@@ -2062,9 +1928,7 @@ public void closeContextMenu() {
     public final void showDialog(int id) {
         showDialog(id, null);
     }
-
     
-    @DSModeled(DSC.SAFE)
     @Deprecated public final boolean showDialog(int id, Bundle args){
 		mManagedDialogs = new SparseArray<ManagedDialog>();
 		ManagedDialog md = mManagedDialogs.get(id);
@@ -2096,9 +1960,7 @@ public void closeContextMenu() {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SPEC)
     @Deprecated public final void dismissDialog(int id){
 		final ManagedDialog md = mManagedDialogs.get(id);
 		md.mDialog.dismiss();
@@ -2118,9 +1980,7 @@ public void closeContextMenu() {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.BAN)
     private IllegalArgumentException missingDialog(int id){
 		return new IllegalArgumentException("");
 		// Original method
@@ -2131,9 +1991,7 @@ public void closeContextMenu() {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Deprecated public final void removeDialog(int id){
 		final ManagedDialog md = mManagedDialogs.get(id);
 		md.mDialog.dismiss();
@@ -2152,9 +2010,7 @@ public void closeContextMenu() {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public boolean onSearchRequested(){
 		startSearch(null, false, null, false); 
         return getTaintBoolean();
@@ -2166,9 +2022,7 @@ public void closeContextMenu() {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public void startSearch(String initialQuery, boolean selectInitialQuery, 
             Bundle appSearchData, boolean globalSearch){
     	addTaint(initialQuery.getTaint());
@@ -2285,9 +2139,7 @@ public final void setFeatureDrawableAlpha(int featureId, int alpha) {
 public LayoutInflater getLayoutInflater() {
         return getWindow().getLayoutInflater();
     }
-
     
-    @DSModeled(DSC.SAFE)
     public MenuInflater getMenuInflater(){
 		initActionBar();
 		mMenuInflater = new MenuInflater(mActionBar.getThemedContext()); //DSFIXME:  Look at underlying method to determine if this can be colapsed.
@@ -2308,9 +2160,7 @@ public LayoutInflater getLayoutInflater() {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SPEC)
     @Override protected void onApplyThemeResource(Resources.Theme theme, int resid,
             boolean first){
 		super.onApplyThemeResource(theme, resid, first);
@@ -2332,9 +2182,7 @@ public LayoutInflater getLayoutInflater() {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SPEC)
 	public void startActivityForResult(Intent intent, int requestCode){
 		/*
         The modeling required here will create the call to onActivityResult that 
@@ -2370,9 +2218,7 @@ public LayoutInflater getLayoutInflater() {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SPEC)
     public void startIntentSenderForResult(IntentSender intent, int requestCode,
             Intent fillInIntent, int flagsMask, int flagsValues, int extraFlags){
 		startIntentSenderForResultInner(intent, requestCode, fillInIntent,
@@ -2393,18 +2239,14 @@ public LayoutInflater getLayoutInflater() {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.BAN)
     private void startIntentSenderForResultInner(IntentSender intent, int requestCode,
             Intent fillInIntent, int flagsMask, int flagsValues, Activity activity){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SPEC)
     @Override public void startActivity(Intent intent){
 		onActivityResult(-1, -1, intent);
 		// Original method
@@ -2441,9 +2283,7 @@ public LayoutInflater getLayoutInflater() {
         mInstrumentation.execStartActivities(this, mMainThread.getApplicationThread(),
                 mToken, this, intents);
     }
-
     
-    @DSModeled(DSC.SPEC)
     public void startIntentSender(IntentSender intent,
             Intent fillInIntent, int flagsMask, int flagsValues, int extraFlags){
 		startIntentSenderForResult(intent, -1, fillInIntent, flagsMask,
@@ -2457,17 +2297,13 @@ public LayoutInflater getLayoutInflater() {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SPEC)
     public boolean startActivityIfNeeded(Intent intent, int requestCode){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		return false;
 	}
-
     
-    @DSModeled(DSC.SPEC)
     public boolean startNextMatchingActivity(Intent intent){
 		try {
             intent.setAllowFds(false);
@@ -2493,9 +2329,7 @@ public LayoutInflater getLayoutInflater() {
 		*/
 		return false;
 	}
-
     
-    @DSModeled(DSC.SPEC)
     public void startActivityFromChild(Activity child, Intent intent, 
             int requestCode){
 		Instrumentation.ActivityResult ar =
@@ -2521,9 +2355,7 @@ public LayoutInflater getLayoutInflater() {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SPEC)
     public void startActivityFromFragment(Fragment fragment, Intent intent, 
             int requestCode){
 	    /*
@@ -2551,9 +2383,7 @@ public LayoutInflater getLayoutInflater() {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SPEC)
     public void startIntentSenderFromChild(Activity child, IntentSender intent,
             int requestCode, Intent fillInIntent, int flagsMask, int flagsValues,
             int extraFlags){
@@ -2587,9 +2417,7 @@ public void overridePendingTransition(int enterAnim, int exitAnim) {
         } catch (RemoteException e) {
         }
     }
-
     
-    @DSModeled(DSC.SAFE)
     public final void setResult(int resultCode){
 		addTaint(resultCode);
 		// Original method
@@ -2603,9 +2431,7 @@ public void overridePendingTransition(int enterAnim, int exitAnim) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public final void setResult(int resultCode, Intent data){
 		addTaint(resultCode);
 		mResultData = data;
@@ -2668,9 +2494,7 @@ public ComponentName getCallingActivity() {
             return null;
         }
     }
-
     
-    @DSModeled(DSC.SAFE)
     public void setVisible(boolean visible){
 		addTaint(visible);
 		makeVisible();
@@ -2689,9 +2513,7 @@ public ComponentName getCallingActivity() {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SPEC)
     void makeVisible(){
 		ViewManager wm = getWindowManager();
         wm.addView(mDecor, getWindow().getAttributes());
@@ -2709,9 +2531,7 @@ public ComponentName getCallingActivity() {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public boolean isFinishing(){
 		return getTaintBoolean();
 		// Original method
@@ -2721,9 +2541,7 @@ public ComponentName getCallingActivity() {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public boolean isChangingConfigurations(){
 		return getTaintBoolean();
 		// Original method
@@ -2733,9 +2551,7 @@ public ComponentName getCallingActivity() {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public void recreate(){
 		mMainThread.requestRelaunchActivity(mToken, null, null, 0, false, null, false);
 		// Original method
@@ -2752,9 +2568,7 @@ public ComponentName getCallingActivity() {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public void finish(){
 		Log.v(TAG, "Finishing self: token=" + mToken);
 		mResultData.setAllowFds(false);
@@ -2807,9 +2621,7 @@ public ComponentName getCallingActivity() {
 public void finishFromChild(Activity child) {
         finish();
     }
-
     
-    @DSModeled(DSC.SPEC)
     public void finishActivity(int requestCode){
 		try {
             ActivityManagerNative.getDefault()
@@ -2879,9 +2691,7 @@ public void finishActivityFromChild(Activity child, int requestCode) {
     
 protected void onActivityResult(int requestCode, int resultCode, Intent data) {
     }
-
     
-    @DSModeled(DSC.SPEC)
     public PendingIntent createPendingResult(int requestCode, Intent data,
             int flags){
 		String packageName = getPackageName();
@@ -2914,9 +2724,7 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public void setRequestedOrientation(int requestedOrientation){
 		try {
             ActivityManagerNative.getDefault().setRequestedOrientation(
@@ -2940,9 +2748,7 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public int getRequestedOrientation(){
 		int retval = 0;
 		try {
@@ -3023,9 +2829,7 @@ public boolean moveTaskToBack(boolean nonRoot) {
         }
         return false;
     }
-
     
-    @DSModeled(DSC.SPEC)
     public String getLocalClassName(){
 		return mComponent.getClassName();
 		// Original method
@@ -3073,9 +2877,7 @@ public ComponentName getComponentName()
 public SharedPreferences getPreferences(int mode) {
         return getSharedPreferences(getLocalClassName(), mode);
     }
-
     
-    @DSModeled(DSC.BAN)
 	private void ensureSearchManager(){
 		mSearchManager = new SearchManager(this, null);
 		// Original method
@@ -3089,9 +2891,7 @@ public SharedPreferences getPreferences(int mode) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	@Override public Object getSystemService(String name){
        
         if (DroidSafeAndroidRuntime.control || getBaseContext()==null) {
@@ -3128,9 +2928,7 @@ public SharedPreferences getPreferences(int mode) {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public void setTitle(CharSequence title){
 		mTitle = title;  //Preserved
 		onTitleChanged(title, mTitleColor);
@@ -3159,9 +2957,7 @@ public SharedPreferences getPreferences(int mode) {
 public void setTitle(int titleId) {
         setTitle(getText(titleId));
     }
-
     
-    @DSModeled(DSC.SAFE)
     public void setTitleColor(int textColor){
 		addTaint(textColor);
 		onTitleChanged(mTitle, textColor);
@@ -3180,9 +2976,7 @@ public void setTitle(int titleId) {
 public final CharSequence getTitle() {
         return mTitle;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public final int getTitleColor(){
 		return getTaintInt();
 		// Original method
@@ -3192,9 +2986,7 @@ public final CharSequence getTitle() {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
     protected void onTitleChanged(CharSequence title, int color){
 		final Window win = getWindow();
 		win.setTitle(title);
@@ -3220,9 +3012,7 @@ public final CharSequence getTitle() {
     
 protected void onChildTitleChanged(Activity childActivity, CharSequence title) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     public final void setProgressBarVisibility(boolean visible){
 		getWindow().setFeatureInt(Window.FEATURE_PROGRESS, Window.PROGRESS_VISIBILITY_ON);
 		// Original method
@@ -3234,9 +3024,7 @@ protected void onChildTitleChanged(Activity childActivity, CharSequence title) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public final void setProgressBarIndeterminateVisibility(boolean visible){
 		getWindow().setFeatureInt(Window.FEATURE_INDETERMINATE_PROGRESS, Window.PROGRESS_VISIBILITY_ON);
 		// Original method
@@ -3248,9 +3036,7 @@ protected void onChildTitleChanged(Activity childActivity, CharSequence title) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public final void setProgressBarIndeterminate(boolean indeterminate){
 		getWindow().setFeatureInt(Window.FEATURE_PROGRESS, Window.PROGRESS_INDETERMINATE_ON);
 		// Original method
@@ -3262,9 +3048,7 @@ protected void onChildTitleChanged(Activity childActivity, CharSequence title) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SPEC)
     public final void setProgress(int progress){
 		getWindow().setFeatureInt(Window.FEATURE_PROGRESS, Window.PROGRESS_START);
 		// Original method
@@ -3275,9 +3059,7 @@ protected void onChildTitleChanged(Activity childActivity, CharSequence title) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public final void setSecondaryProgress(int secondaryProgress){
 		getWindow().setFeatureInt(Window.FEATURE_PROGRESS, Window.PROGRESS_SECONDARY_START);
 		// Original method
@@ -3289,9 +3071,7 @@ protected void onChildTitleChanged(Activity childActivity, CharSequence title) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public final void setVolumeControlStream(int streamType){
 		getWindow().setVolumeControlStream(0);
 		// Original method
@@ -3316,9 +3096,7 @@ protected void onChildTitleChanged(Activity childActivity, CharSequence title) {
 public final int getVolumeControlStream() {
         return getWindow().getVolumeControlStream();
     }
-
     
-    @DSModeled(DSC.SAFE)
 	public final void runOnUiThread(Runnable action){
 		mHandler.post(action);
 		action.run();
@@ -3334,9 +3112,7 @@ public final int getVolumeControlStream() {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public View onCreateView(String name, Context context, AttributeSet attrs){
 		// Original method
 		/*
@@ -3346,17 +3122,13 @@ public final int getVolumeControlStream() {
 		*/
 		return new View(context);
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public View onCreateView(View parent, String name, Context context, AttributeSet attrs){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		return new View(context);
 	}
-
     
-    @DSModeled(DSC.SPEC)
     public void dump(String prefix, FileDescriptor fd, PrintWriter writer, String[] args){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -3422,7 +3194,6 @@ public void setImmersive(boolean i) {
 public ActionMode startActionMode(ActionMode.Callback callback) {
         return mWindow.getDecorView().startActionMode(callback);
     }
-
     
     private static class ManagedDialog {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.048 -0500", hash_original_field = "0C87BCBAF0D95855709E5BEE2BDBA46D", hash_generated_field = "0C87BCBAF0D95855709E5BEE2BDBA46D")
@@ -3432,17 +3203,13 @@ public ActionMode startActionMode(ActionMode.Callback callback) {
 
         Bundle mArgs;
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.926 -0400", hash_original_method = "9DCA77B5D1234925DAEE8DA8399779D6", hash_generated_method = "9DCA77B5D1234925DAEE8DA8399779D6")
         public ManagedDialog ()
         {
             //Synthesized constructor
         }
 
-
     }
-
-
     
     static final class NonConfigurationInstances {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.220 -0500", hash_original_field = "AE7D68ABA75D09946A953E289939C500", hash_generated_field = "AE7D68ABA75D09946A953E289939C500")
@@ -3464,14 +3231,10 @@ public ActionMode startActionMode(ActionMode.Callback callback) {
             //Synthesized constructor
         }
 
-
     }
-
-
     
     private static final class ManagedCursor {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.341 -0500", hash_original_field = "4A85E902ED72E65A9AF8F6ED265E4F89", hash_generated_field = "6E649D5858461199DBD67FE0A0D43789")
-
 
         private  Cursor mCursor;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.350 -0500", hash_original_field = "3516BB00C88A3ED425D4982D5AEEABA2", hash_generated_field = "6C470EAC7065369BBFA5B5575968482A")
@@ -3481,7 +3244,6 @@ public ActionMode startActionMode(ActionMode.Callback callback) {
 
         private boolean mUpdated;
         
-        @DSModeled(DSC.SAFE)
         ManagedCursor(Cursor cursor){
 			mCursor = cursor;
 			/*
@@ -3490,12 +3252,9 @@ public ActionMode startActionMode(ActionMode.Callback callback) {
 			mUpdated = false;
 			*/
 		}
-
         
     }
-
     
-    @DSModeled(DSC.SPEC)
     public ActionMode onWindowStartingActionMode(ActionMode.Callback callback){
 		initActionBar();
 		return mActionBar.startActionMode(callback);
@@ -3550,9 +3309,7 @@ final void attach(Context context, ActivityThread aThread, Instrumentation instr
         attach(context, aThread, instr, token, 0, application, intent, info, title, parent, id,
             lastNonConfigurationInstances, config);
     }
-
     
-    @DSModeled(DSC.SPEC)
 	final void attach(Context context, ActivityThread aThread,
             Instrumentation instr, IBinder token, int ident,
             Application application, Intent intent, ActivityInfo info,
@@ -3585,9 +3342,7 @@ final void attach(Context context, ActivityThread aThread, Instrumentation instr
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SPEC)
     final IBinder getActivityToken(){
 		return mParent.getActivityToken();
 		// Original method
@@ -3597,8 +3352,7 @@ final void attach(Context context, ActivityThread aThread, Instrumentation instr
     }
 		*/
 	}
-
-    @DSModeled(DSC.SAFE)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.919 -0400", hash_original_method = "DAB379B095765C858B51976FA2FCF6E4", hash_generated_method = "B85FC9CA5FD75BC2569BC7FE820DA2C6")
     final void performCreate(Bundle icicle) {
         performCreate(icicle, this);
@@ -3608,9 +3362,7 @@ final void attach(Context context, ActivityThread aThread, Instrumentation instr
                 //com.android.internal.R.styleable.Window_windowNoDisplay, false);
         //mFragments.dispatchActivityCreated();
     }
-
     
-    @DSModeled(DSC.SAFE)
     final void performStart(){
 		mFragments.noteStateNotSaved();
 		mFragments.execPendingActions();
@@ -3643,17 +3395,13 @@ final void attach(Context context, ActivityThread aThread, Instrumentation instr
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     final void performRestart(){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     final void performResume(){
 		performRestart();
 		mFragments.execPendingActions();
@@ -3687,9 +3435,7 @@ final void attach(Context context, ActivityThread aThread, Instrumentation instr
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     final void performPause(){
 		mFragments.dispatchPause();
 		onPause();
@@ -3719,17 +3465,13 @@ final void performUserLeaving() {
         onUserInteraction();
         onUserLeaveHint();
     }
-
     
-    @DSModeled(DSC.SAFE)
     final void performStop(){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     final void performDestroy(){
 		mWindow.destroy();
         mFragments.dispatchDestroy();
@@ -3748,9 +3490,7 @@ final void performUserLeaving() {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.BAN)
     public final boolean isResumed(){
 		return getTaintBoolean();
 		// Original method
@@ -3760,9 +3500,7 @@ final void performUserLeaving() {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SPEC)
     void dispatchActivityResult(String who, int requestCode, 
         int resultCode, Intent data){
 		 Log.v(
@@ -3792,13 +3530,13 @@ final void performUserLeaving() {
 		//Return nothing
 	}
     // orphaned legacy method
-    @DSModeled(DSC.BAN)
+    
 	public void droidsafeOnDestroy() {
 		onDestroy();
 	}
     
     // orphaned legacy method
-    @DSModeled(DSC.BAN) //called by dsruntime to perform the onCreate
+     //called by dsruntime to perform the onCreate
 	public final void performCreate(Bundle icicle, Context context){
         addTaint(icicle.getTaint());
         addTaint(context.getTaint());
@@ -3821,29 +3559,27 @@ final void performUserLeaving() {
 	}
     
     // orphaned legacy method
-    @DSModeled(DSC.BAN)
+    
     public void droidsafeOnResume() {
 		//This method is called by droidsafe itself, and should NEVER be called by an app
     	onResume();
     }
     
     // orphaned legacy method
-    @DSModeled(DSC.BAN)
+    
     public void droidsafeOnStop() {
 		//This method is called by droidsafe itself, and should NEVER be called by an app
     	onStop();
     }
-    @DSModeled(DSC.BAN)
+    
     public void setApplication(Application app) { 
             this.mApplication = app;
     }
     
-    @DSModeled(DSC.BAN)
 	public void droidsafeOnSavedInstanceState(Bundle b) {
     	this.onSaveInstanceState(b);
 	}
-
-    @DSModeled(DSC.BAN)
+    
 	public void droidsafeOnPause() {
     	this.onPause();
 	}
@@ -3851,12 +3587,11 @@ final void performUserLeaving() {
     /**
      * addition hooks to allow subactivity onXYZ to be called from droidsafe runtime
      */
-    @DSModeled(DSC.BAN)
+    
 	public void droidsafeOnSubActivityHook() {
         droidsafeOnOthersHook();
 	}
     
-    @DSModeled(DSC.BAN)
     public void droidsafeOnOthersHook() {
         this.onActionModeFinished(ActionMode.droidsafeObtainObject());
         this.onActionModeStarted(ActionMode.droidsafeObtainObject());
@@ -3888,7 +3623,6 @@ final void performUserLeaving() {
         dispatchTrackballEvent(MotionEvent.droidsafeObtainEvent());
         dispatchPopulateAccessibilityEvent(AccessibilityEvent.droidsafeGetEvent());
     }
-
     
 }
 

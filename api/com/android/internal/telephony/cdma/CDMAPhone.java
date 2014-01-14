@@ -60,11 +60,6 @@ import com.android.internal.telephony.TelephonyProperties;
 import com.android.internal.telephony.UUSInfo;
 import com.android.internal.telephony.cat.CatService;
 
-
-
-
-
-
 public class CDMAPhone extends PhoneBase {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:01.582 -0500", hash_original_method = "0987EB9B752C2AE0A39CB183394EC719", hash_generated_method = "BD516A911B886CE33B25F5EEA604FBDE")
@@ -163,13 +158,11 @@ private static boolean
     private static final int DEFAULT_ECM_EXIT_TIMER_VALUE = 300000;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:01.202 -0500", hash_original_field = "61BD13ED0C0DA038D1A4CAA5E3932C4D", hash_generated_field = "DBE7E6AE93BA06B2FF1DBE92EBF7667B")
 
-
     static final String VM_COUNT_CDMA = "vm_count_key_cdma";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:01.204 -0500", hash_original_field = "B408A12041139C63061816F6DA9A26B8", hash_generated_field = "C50FD41AD9C8ECFDE260B639E8718D3D")
 
     private static final String VM_NUMBER_CDMA = "vm_number_key_cdma";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:01.209 -0500", hash_original_field = "5B7E705CBAEA08F072CADF20CE6F0D8A", hash_generated_field = "7149CAB7A993D6EFECE4128061F9865F")
-
 
     static final int RESTART_ECM_TIMER = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:01.212 -0500", hash_original_field = "21D74447C122A9B757F04D11303DF058", hash_generated_field = "0BF8B228276AC1D84F7C2766F8B74E6C")
@@ -177,10 +170,8 @@ private static boolean
     static final int CANCEL_ECM_TIMER = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:01.264 -0500", hash_original_field = "E124B1A36D5C4AD52F3AE3C0129E2EF4", hash_generated_field = "1B6AA95D9706EED43D662EF600D64CB5")
 
-
     static String PROPERTY_CDMA_HOME_OPERATOR_NUMERIC = "ro.cdma.home.operator.numeric";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:01.549 -0500", hash_original_field = "29C6831FDA9A4D4E4FC6067E5B7837E8", hash_generated_field = "8D504081DB72AA9930792378E569BE2E")
-
 
     private static final String IS683A_FEATURE_CODE = "*228";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:01.552 -0500", hash_original_field = "5B81D9D3C2C78BC9AFC3BBCAE6E9EB2A", hash_generated_field = "6B01468F83B67C83DBE6AEB2D62A09FF")
@@ -193,7 +184,6 @@ private static boolean
 
     private static final int IS683A_SYS_SEL_CODE_OFFSET = 4;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:01.559 -0500", hash_original_field = "30EF32DF76374E29716C1BF9FD0EB4A8", hash_generated_field = "98531D0FD7604827F4C9BCEA781B49A3")
-
 
     private static final int IS683_CONST_800MHZ_A_BAND = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:01.562 -0500", hash_original_field = "323C2BB84CC9AF063AC334E65DC5D067", hash_generated_field = "0C7295C5D8889FCCE0C85B637D40E60C")
@@ -228,7 +218,6 @@ private static boolean
 
     private String mVmNumber = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:01.214 -0500", hash_original_field = "FB56FB2CCEDB5FF40D60B0E1FF012DC7", hash_generated_field = "FDAB9DB3AAF59F09B62BB60232607A11")
-
 
     // Instance Variables
     CdmaCallTracker mCT;
@@ -290,20 +279,17 @@ private static boolean
     private String mCarrierOtaSpNumSchema;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.000 -0400", hash_original_field = "5E0153DE5EDFE60861980DB630071DCD", hash_generated_field = "A9D48B4F37E6DEE9FEDDDBF0EA9949F0")
 
-    private Runnable mExitEcmRunnable = new Runnable() {        
-        @DSModeled(DSC.BAN)
+    private Runnable mExitEcmRunnable = new Runnable() {
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.000 -0400", hash_original_method = "F3DC5BFDA25D02344EBFE8F4AEC767D8", hash_generated_method = "13E58FFF08C64D739C7C2CEA1DFD40E8")
         @Override
         public void run() {
             exitEmergencyCallbackMode();
             
-            
         }
-
         
 };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:01.262 -0500", hash_original_field = "126D29D3ACD6141B3CF1C156D9BC8C27", hash_generated_field = "126D29D3ACD6141B3CF1C156D9BC8C27")
-
 
     Registrant mPostDialHandler;
 

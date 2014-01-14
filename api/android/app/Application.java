@@ -13,10 +13,6 @@ import android.content.ContextWrapper;
 import android.content.res.Configuration;
 import android.os.Bundle;
 
-
-
-
-
 public class Application extends ContextWrapper implements ComponentCallbacks2 {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.735 -0500", hash_original_field = "52837140401BB64310DD4D38EE64CEAC", hash_generated_field = "16B69693C5E15AB94DE4137F3E4501E9")
 
@@ -242,7 +238,6 @@ private Object[] collectActivityLifecycleCallbacks() {
         }
         return callbacks;
     }
-
     
     public interface ActivityLifecycleCallbacks {
         void onActivityCreated(Activity activity, Bundle savedInstanceState);
@@ -255,21 +250,19 @@ private Object[] collectActivityLifecycleCallbacks() {
     }
     
 	// ------------- Droidsafe Hooks -------------
-    @DSModeled(DSC.BAN)
+    
  	public void droidsafeAttach(Context context) {
  		attach(context);
  	}
-    @DSModeled(DSC.BAN)
+    
 	public void droidsafeOnCreate() {
 		onCreate();
 	}
-	
-    @DSModeled(DSC.BAN)
+    
 	public void droidsafeOnTerminate() {
 		onTerminate();
 	}
-	
-    @DSModeled(DSC.BAN)
+    
 	public void droidsafeOnEverythingElse() {
 		onTrimMemory(getTaintInt());
 		onLowMemory();

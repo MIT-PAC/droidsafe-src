@@ -8,21 +8,14 @@ import android.graphics.Bitmap;
 import android.graphics.PointF;
 import android.util.Log;
 
-
-
-
-
 public class FaceDetector {
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeClassInit() {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:35.571 -0500", hash_original_field = "D692DCD499E02653F7D40EBB5CF95A8C", hash_generated_field = "27A01AEA893820336EC60E3CEF29F8C6")
 
     private static boolean sInitialized;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:35.594 -0500", hash_original_field = "6BEC4841C057AD5F45E3C9B973908E26", hash_generated_field = "B2E1347C5E93135AD628FBFEBF992869")
-
 
     private int     mFD;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:35.596 -0500", hash_original_field = "F1ABD4902634CFF60AD5EFFC5DE1A2E9", hash_generated_field = "829CFDAFE2E688EBA8166FB3418BF48F")
@@ -43,7 +36,6 @@ public class FaceDetector {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:35.607 -0500", hash_original_field = "F8C0152588D4596E03F1148BD7CCEDBC", hash_generated_field = "9F8C8AD37010BC34F1F731250F49E732")
     
     private byte    mBWBuffer[];
-
 
     /**
      * Creates a FaceDetector, configured with the size of the images to
@@ -112,7 +104,6 @@ public int findFaces(Bitmap bitmap, Face[] faces)
         return numFaces;
     }
 
-
     /* no user serviceable parts here ... */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:35.568 -0500", hash_original_method = "CCE05B54F33EBA167A725030DCD8853F", hash_generated_method = "A9F122C14E7F1B20D9E36D96CD0C6263")
     
@@ -146,8 +137,6 @@ public int findFaces(Bitmap bitmap, Face[] faces)
     	addTaint(face.getTaint());
     	addTaint(i);
     }
-
-
     
     public class Face {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:35.516 -0500", hash_original_field = "3FF5F046EB09E2977AAEB85477EDBAF9", hash_generated_field = "3EF6D022C788BB790EBDB5B748D95D90")

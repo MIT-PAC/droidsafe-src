@@ -16,9 +16,6 @@ import android.util.Log;
 import dalvik.system.DalvikLogHandler;
 import dalvik.system.DalvikLogging;
 
-
-
-
 import droidsafe.runtime.DroidSafeAndroidRuntime;
 
 public class AndroidHandler extends Handler implements DalvikLogHandler {
@@ -44,12 +41,11 @@ static int getAndroidLevel(Level level) {
             return Log.DEBUG;
         }
     }
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.231 -0400", hash_original_field = "05CB8D5FA80AAAD88471EF57C0EC546F", hash_generated_field = "006C8788F0F47E8A210E001196024E69")
 
-    private static final Formatter THE_FORMATTER = new Formatter() {        
-        @DSModeled(DSC.SAFE)
+    private static final Formatter THE_FORMATTER = new Formatter() {
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.231 -0400", hash_original_method = "5552BF51EFD27F1F4C5C7AE17D37E3F1", hash_generated_method = "F7BE88C6E38E8155E09EE006CC13CD65")
         @Override
         public String format(LogRecord r) {
@@ -81,20 +77,7 @@ static int getAndroidLevel(Level level) {
             varA7E53CE21691AB073D9660D615818899_1775326922.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_1775326922;
             
-            
-            
-                
-                
-                
-                
-                
-                
-                
-            
-                
-            
         }
-
         
 };
 

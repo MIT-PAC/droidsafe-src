@@ -6,18 +6,13 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.ArrayList;
 
-
-
-
-
-
 public abstract class Animator implements Cloneable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.269 -0500", hash_original_field = "3FD42DDC5A574D761F1E8BD3EC073311", hash_generated_field = "3FD42DDC5A574D761F1E8BD3EC073311")
 
     ArrayList<AnimatorListener> mListeners = null;
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:13.808 -0400", hash_original_method = "12606DD4E4D75078EE1609D9ED5651A9", hash_generated_method = "12606DD4E4D75078EE1609D9ED5651A9")
-    @DSModeled(DSC.SAFE)
+    
     public Animator ()
     {
         //Synthesized constructor
@@ -88,7 +83,6 @@ public abstract long getStartDelay();
     
 public abstract void setStartDelay(long startDelay);
 
-
     /**
      * Sets the length of the animation.
      *
@@ -145,10 +139,9 @@ public boolean isStarted() {
         // real value.
         return isRunning();
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:13.833 -0400", hash_original_method = "9023764EFF4F5DD5C344B401D2F44A3C", hash_generated_method = "AF6F7DF4131BFA1F773F940D8B5D8057")
-    @DSModeled(DSC.SAFE)
+    
     public void addListener(AnimatorListener listener) {
         addTaint(listener.getTaint());
         if(mListeners == null)        
@@ -271,18 +264,14 @@ public void setupEndValues() {
     
 public void setTarget(Object target) {
     }
-
     
     public static interface AnimatorListener {
         
         void onAnimationStart(Animator animation);
-
         
         void onAnimationEnd(Animator animation);
-
         
         void onAnimationCancel(Animator animation);
-
         
         void onAnimationRepeat(Animator animation);
     }

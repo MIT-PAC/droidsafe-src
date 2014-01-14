@@ -32,11 +32,6 @@ import android.webkit.CacheManager.CacheResult;
 
 import com.android.internal.R;
 
-
-
-
-
-
 class LoadListener extends Handler implements EventHandler {
 
     // =========================================================================
@@ -82,7 +77,6 @@ static boolean willLoadFromCache(String url, long identifier) {
         return inCache;
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:44.912 -0500", hash_original_field = "CF5103981B618784F76950E4558FDBCC", hash_generated_field = "061362C112C980EB4954480FBAFBE378")
-
 
     private static final String LOGTAG = "webkit";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:44.914 -0500", hash_original_field = "08B330D8984AEA5C2068F02AF7C93279", hash_generated_field = "9CD704C2905354C49BB21D67E3584C22")
@@ -145,7 +139,6 @@ static boolean willLoadFromCache(String url, long identifier) {
     private static final int HTTP_PROXY_AUTH = 407;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:44.958 -0500", hash_original_field = "E95E87D426A369968FA91632300F68CC", hash_generated_field = "4FCBFD819BC0278295B9EC4188A35F2D")
 
-
     private static int sNativeLoaderCount;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.064 -0500", hash_original_field = "695F79085D231E71A09611258D7CB118", hash_generated_field = "96DF5A9DA7B80BE97B79159472842F9A")
 
@@ -160,10 +153,8 @@ static boolean willLoadFromCache(String url, long identifier) {
             Pattern.compile("^((?:[xX]-)?[a-zA-Z\\*]+/[\\w\\+\\*-]+[\\.[\\w\\+-]+]*)$");
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:44.961 -0500", hash_original_field = "E6EE4FF0DEA62AEFAFF3DBB439BA6E92", hash_generated_field = "C2ADEC4B7675869DD34EF84CA5DC8ADA")
 
-
     private final ByteArrayBuilder mDataBuilder = new ByteArrayBuilder();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:44.963 -0500", hash_original_field = "CA88DB4A75B79130313A74537195706C", hash_generated_field = "9C2E85EC79E8F8349BF2E81BA4AC7991")
-
 
     private String   mUrl;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:44.965 -0500", hash_original_field = "DB3D2BD1CF0785D6513DCE03F6FD6846", hash_generated_field = "93793E19832E1B2CEA9B3AE18495201F")
@@ -265,10 +256,8 @@ static boolean willLoadFromCache(String url, long identifier) {
     private  boolean mUserGesture;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.034 -0500", hash_original_field = "9035AF409A03B14F6004C0202B58C473", hash_generated_field = "13C03042313948D47B6F87C772F0131E")
 
-
     private Headers mHeaders;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.036 -0500", hash_original_field = "F6C0B2A92BAD484AE3E9DE7409D6C7A8", hash_generated_field = "50564F75BBDED0F5A11BFE739FB8373A")
-
 
     private  String mUsername;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:45.038 -0500", hash_original_field = "6E680D0312272F1C50F2E99ACBEA882B", hash_generated_field = "44A1332F4D6AD461D600A43252892695")
@@ -1512,7 +1501,6 @@ private void doRedirect() {
                 return;
             }
 
-
             // Cache the redirect response
             if (getErrorID() == OK) {
                 WebViewWorker.CacheSaveData data = new WebViewWorker.CacheSaveData();
@@ -1871,7 +1859,6 @@ void loadSynchronousMessages() {
     	return getTaintInt();
     }
 
-
     /**
      * Add a response header to the native object.
      * @param nativeResponse The native pointer.
@@ -1888,7 +1875,6 @@ void loadSynchronousMessages() {
     	addTaint(val.getTaint());
     }
 
-
     /**
      * Dispatch the response.
      * @param nativeResponse The native pointer.
@@ -1899,7 +1885,6 @@ void loadSynchronousMessages() {
     	//Formerly a native method
     	addTaint(nativeResponse);
     }
-
 
     /**
      * Add data to the loader.
@@ -1914,7 +1899,6 @@ void loadSynchronousMessages() {
     	addTaint(length);
     }
 
-
     /**
      * Tell the loader it has finished.
      */
@@ -1923,10 +1907,7 @@ void loadSynchronousMessages() {
     private void nativeFinished(){
     	//Formerly a native method
     }
-
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.190 -0400", hash_original_method = "33F440D9D1697DCCED15CDDD044058A8", hash_generated_method = "29EA735C0797FDF2B21BDCB4EDCF36A9")
     private String nativeRedirectedToUrl(String baseUrl,
             String redirectTo, int nativeResponse) {

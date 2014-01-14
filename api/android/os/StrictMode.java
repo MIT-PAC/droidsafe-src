@@ -28,10 +28,6 @@ import dalvik.system.BlockGuard;
 import dalvik.system.CloseGuard;
 import dalvik.system.VMDebug;
 
-
-
-
-
 public final class StrictMode {
 
     /**
@@ -323,9 +319,7 @@ private static void executeDeathPenalty(ViolationInfo info) {
         int violationBit = parseViolationFromMessage(info.crashInfo.exceptionMessage);
         throw new StrictModeViolation(info.policy, violationBit, null);
     }
-
     
-    @DSModeled(DSC.BAN)
     private static void dropboxViolationAsync(
             final int violationMaskSubset, final ViolationInfo info) {
         int outstanding = sDropboxCallsInFlight.incrementAndGet();
@@ -819,14 +813,12 @@ public static void decrementExpectedActivityCount(Class klass) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:39.871 -0500", hash_original_field = "09E16BB7B51D673D1BCEFBE815620A11", hash_generated_field = "EFD495BFFD08DBECC91B6FEE7B253D98")
 
     private static final String TAG = "StrictMode";
-
     
     public static final class ThreadPolicy {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:39.954 -0500", hash_original_field = "DADE8E7DB6AA2D277AD26A7D0E8C2E88", hash_generated_field = "9578A9475850D552D61F6D5FCB916824")
 
         public static final ThreadPolicy LAX = new ThreadPolicy(0);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:39.956 -0500", hash_original_field = "DB965A11139AB665B00B4D2E2ABFFB32", hash_generated_field = "DB965A11139AB665B00B4D2E2ABFFB32")
-
 
          int mask;
 
@@ -835,7 +827,6 @@ public static void decrementExpectedActivityCount(Class klass) {
 private ThreadPolicy(int mask) {
             this.mask = mask;
         }
-
         
         public static final class Builder {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:39.964 -0500", hash_original_field = "5D5C3A37F8AF5444E0AC898E62346D28", hash_generated_field = "B8B68F2E3B571F250FDA42AEED6F96EC")
@@ -1048,7 +1039,6 @@ public ThreadPolicy build() {
                 }
                 return new ThreadPolicy(mMask);
             }
-
             
         }
 
@@ -1059,15 +1049,12 @@ public ThreadPolicy build() {
             return "[StrictMode.ThreadPolicy; mask=" + mask + "]";
         }
     }
-
-
     
     public static final class VmPolicy {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.026 -0500", hash_original_field = "7F88ECADC0E1588635922A1A98E8507E", hash_generated_field = "9254DDC9D251934961027FD07388D251")
 
         public static final VmPolicy LAX = new VmPolicy(0, EMPTY_CLASS_LIMIT_MAP);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.028 -0500", hash_original_field = "DB965A11139AB665B00B4D2E2ABFFB32", hash_generated_field = "DB965A11139AB665B00B4D2E2ABFFB32")
-
 
          int mask;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.030 -0500", hash_original_field = "C4A68A411991D38DAC450888E1864E75", hash_generated_field = "C4A68A411991D38DAC450888E1864E75")
@@ -1083,14 +1070,12 @@ private VmPolicy(int mask, HashMap<Class, Integer> classInstanceLimit) {
             this.mask = mask;
             this.classInstanceLimit = classInstanceLimit;
         }
-
         
         public static final class Builder {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.038 -0500", hash_original_field = "71806D576457AC3BE7E0FCD88576215F", hash_generated_field = "F7C8905D5B34EE793946807F2A7E20A1")
 
             private int mMask;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.041 -0500", hash_original_field = "7DFABFD9EB20AC38A9FCD33C78A539D0", hash_generated_field = "7DA905668F7F3F2312998927AB27A0B2")
-
 
             private HashMap<Class, Integer> mClassInstanceLimit;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.043 -0500", hash_original_field = "4518B98219D402F5A88E5F6CED5FEAB8", hash_generated_field = "2D6485C7C663B1648AF525BB6C2310A9")
@@ -1192,9 +1177,7 @@ public Builder detectLeakedSqlLiteObjects() {
 public Builder detectLeakedClosableObjects() {
                 return enable(DETECT_VM_CLOSABLE_LEAKS);
             }
-
             
-            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.755 -0400", hash_original_method = "94F50CCB3C281DFAB53140F44BEA7518", hash_generated_method = "70D58CB86738E652D64572B273F4DEEA")
             public Builder penaltyDeath() {
 Builder var6F115A07D237A33880541F25719D67B0_1559101226 =                 enable(PENALTY_DEATH);
@@ -1203,9 +1186,7 @@ Builder var6F115A07D237A33880541F25719D67B0_1559101226 =                 enable(
                 // ---------- Original Method ----------
                 //return enable(PENALTY_DEATH);
             }
-
             
-            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.755 -0400", hash_original_method = "2F91CFDA044E15B06DFDEA717627020F", hash_generated_method = "500E5F189D822DE77B9BA7533BD281D3")
             public Builder penaltyLog() {
 Builder var7C46BCB224406F4BC478971CF4360D87_1946014504 =                 enable(PENALTY_LOG);
@@ -1214,9 +1195,7 @@ Builder var7C46BCB224406F4BC478971CF4360D87_1946014504 =                 enable(
                 // ---------- Original Method ----------
                 //return enable(PENALTY_LOG);
             }
-
             
-            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.755 -0400", hash_original_method = "79D7F41C29935BA44118AFFA48FCC1BE", hash_generated_method = "534BBD6BF05727FEE3669BE78D059282")
             public Builder penaltyDropBox() {
 Builder varC3126CEB2524227BCB28FCD226FE486C_1272195904 =                 enable(PENALTY_DROPBOX);
@@ -1225,9 +1204,7 @@ Builder varC3126CEB2524227BCB28FCD226FE486C_1272195904 =                 enable(
                 // ---------- Original Method ----------
                 //return enable(PENALTY_DROPBOX);
             }
-
-            
-                        @DSModeled(DSC.BAN)
+                        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.755 -0400", hash_original_method = "450902735A2D953DC54C05378B49DC09", hash_generated_method = "879AA6DE2768B208ED13B14418D603DB")
             private Builder enable(int bit) {
                 mMask |= bit;
@@ -1259,7 +1236,6 @@ public VmPolicy build() {
                 return new VmPolicy(mMask,
                         mClassInstanceLimit != null ? mClassInstanceLimit : EMPTY_CLASS_LIMIT_MAP);
             }
-
             
         }
 
@@ -1270,8 +1246,6 @@ public VmPolicy build() {
             return "[StrictMode.VmPolicy; mask=" + mask + "]";
         }
     }
-
-
     
     public static class StrictModeViolation extends BlockGuard.BlockGuardPolicyException {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.098 -0500", hash_original_method = "E7438DD65D448EA29E2BF1E2E7B9AF17", hash_generated_method = "A29B7365FE9E1FFEDCF43496881938C5")
@@ -1279,11 +1253,8 @@ public VmPolicy build() {
 public StrictModeViolation(int policyState, int policyViolated, String message) {
             super(policyState, policyViolated, message);
         }
-
         
     }
-
-
     
     public static class StrictModeNetworkViolation extends StrictModeViolation {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.103 -0500", hash_original_method = "DBBD717A236AEADDFBDE9EEC846203D0", hash_generated_method = "F5259CA93DE8509355CE9CD1508A4B26")
@@ -1291,11 +1262,8 @@ public StrictModeViolation(int policyState, int policyViolated, String message) 
 public StrictModeNetworkViolation(int policyMask) {
             super(policyMask, DETECT_NETWORK, null);
         }
-
         
     }
-
-
     
     private static class StrictModeDiskReadViolation extends StrictModeViolation {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.107 -0500", hash_original_method = "50FAC78594B32A364EC38A7051A6D828", hash_generated_method = "6F2D3C986A9D378445E2020175A1A22D")
@@ -1303,11 +1271,8 @@ public StrictModeNetworkViolation(int policyMask) {
 public StrictModeDiskReadViolation(int policyMask) {
             super(policyMask, DETECT_DISK_READ, null);
         }
-
         
     }
-
-
     
     private static class StrictModeDiskWriteViolation extends StrictModeViolation {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.111 -0500", hash_original_method = "3E79DB089B8A8B103215C527DD70DC9D", hash_generated_method = "6F51284BE211F14B2EDDBC428625C354")
@@ -1315,11 +1280,8 @@ public StrictModeDiskReadViolation(int policyMask) {
 public StrictModeDiskWriteViolation(int policyMask) {
             super(policyMask, DETECT_DISK_WRITE, null);
         }
-
         
     }
-
-
     
     private static class StrictModeCustomViolation extends StrictModeViolation {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.116 -0500", hash_original_method = "D9775B5587EA33BC7CC7CE8D67F82D3A", hash_generated_method = "FA64B5B18F281D05E8A9EE93A9BC20E4")
@@ -1327,11 +1289,8 @@ public StrictModeDiskWriteViolation(int policyMask) {
 public StrictModeCustomViolation(int policyMask, String name) {
             super(policyMask, DETECT_CUSTOM, name);
         }
-
         
     }
-
-
     
     private static class AndroidBlockGuardPolicy implements BlockGuard.Policy {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.156 -0500", hash_original_field = "483449A757D8EAA5C8F766E048F61B54", hash_generated_field = "A3F55928E2CD42B0872F6832B90FE4B8")
@@ -1444,9 +1403,7 @@ void startHandlingViolationException(BlockGuard.BlockGuardPolicyException e) {
             info.violationUptimeMillis = SystemClock.uptimeMillis();
             handleViolationWithTimingAttempt(info);
         }
-
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.760 -0400", hash_original_method = "E564B46DD31AF359B07F190378DAA828", hash_generated_method = "101CD51A507E6022F7DCD55692F1537B")
          void handleViolationWithTimingAttempt(final ViolationInfo info) {
             addTaint(info.getTaint());
@@ -1622,15 +1579,11 @@ void handleViolation(final ViolationInfo info) {
                 executeDeathPenalty(info);
             }
         }
-
         
     }
-
-
     
     private static class AndroidCloseGuardReporter implements CloseGuard.Reporter {
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.763 -0400", hash_original_method = "E7772DF8591E8A95C00A24C3A7BC9385", hash_generated_method = "E7772DF8591E8A95C00A24C3A7BC9385")
         public AndroidCloseGuardReporter ()
         {
@@ -1641,25 +1594,18 @@ void handleViolation(final ViolationInfo info) {
 public void report (String message, Throwable allocationSite) {
             onVmPolicyViolation(message, allocationSite);
         }
-
         
     }
-
-
     
     private static class LogStackTrace extends Exception {
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.764 -0400", hash_original_method = "9318B319D2DE8ECE742465D2C7D8840B", hash_generated_method = "9318B319D2DE8ECE742465D2C7D8840B")
         public LogStackTrace ()
         {
             //Synthesized constructor
         }
 
-
     }
-
-
     
     public static class Span {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.269 -0500", hash_original_field = "ED29A5CAC2A4A14894CD28BA3B1CE29C", hash_generated_field = "886C24C67739C97CF77B8DD239E412F9")
@@ -1740,11 +1686,8 @@ public void finish() {
                 }
             }
         }
-
         
     }
-
-
     
     private static class ThreadSpanState {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.297 -0500", hash_original_field = "2994BEFE3FAF05AF59EC8B7455DE802C", hash_generated_field = "518A04ADDEBFAA97A1EA0148B6F5FA97")
@@ -1760,17 +1703,13 @@ public void finish() {
 
         public int mFreeListSize;
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.765 -0400", hash_original_method = "897FCF469D672A73C45810344D5B48A8", hash_generated_method = "897FCF469D672A73C45810344D5B48A8")
         public ThreadSpanState ()
         {
             //Synthesized constructor
         }
 
-
     }
-
-
     
     public static class ViolationInfo {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.339 -0500", hash_original_field = "CFC847948D9EC92AF23D33102A32EBB0", hash_generated_field = "CD846E661E8E518C4347C2ACA6146A7E")
@@ -1918,7 +1857,6 @@ public void writeToParcel(Parcel dest, int flags) {
             dest.writeStringArray(tags);
         }
 
-
         /**
          * Dump a ViolationInfo instance to a Printer.
          */
@@ -1950,15 +1888,11 @@ public void dump(Printer pw, String prefix) {
                 }
             }
         }
-
         
     }
-
-
     
     private static class InstanceCountViolation extends Throwable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.392 -0500", hash_original_field = "A02C654AC7E1DA7AAF40F127060FCDF1", hash_generated_field = "5B6CE22DDD6F454B97A831C7050366DC")
-
 
         private static final StackTraceElement[] FAKE_STACK = {
             new StackTraceElement("android.os.StrictMode", "setClassInstanceLimit",
@@ -1984,8 +1918,6 @@ public InstanceCountViolation(Class klass, long instances, int limit) {
             mLimit = limit;
         }
     }
-
-
     
     private static final class InstanceTracker {
 
@@ -2002,7 +1934,6 @@ public static int getInstanceCount(Class<?> klass) {
         private static final HashMap<Class<?>, Integer> sInstanceCounts =
                 new HashMap<Class<?>, Integer>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.402 -0500", hash_original_field = "FD12CB27A6786C0FEBA5BE4C1FB74F1C", hash_generated_field = "C91F484EFB2D5A548FE76D861FC04B66")
-
 
         private  Class<?> mKlass;
 
@@ -2044,7 +1975,6 @@ public InstanceTracker(Object instance) {
     private static final boolean LOG_V = Log.isLoggable(TAG, Log.VERBOSE);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:39.875 -0500", hash_original_field = "9458A38F8A0C6004FBED798C6C1FA5F4", hash_generated_field = "23F752FC1CDA7050B5F1CC7BA955413B")
 
-
     private static final boolean IS_USER_BUILD = "user".equals(Build.TYPE);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:39.878 -0500", hash_original_field = "3C3C2BD02B342D685B1CE8841A554EBE", hash_generated_field = "5633022DA578E314CF52EE3A9C0CF47D")
 
@@ -2070,13 +2000,11 @@ public InstanceTracker(Object instance) {
     private static final int MAX_OFFENSES_PER_LOOP = 10;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:39.895 -0500", hash_original_field = "53C881171108C5423242795C1A71786C", hash_generated_field = "0DC8529A94304CAA555890F83F489EE2")
 
-
     /**
      * @hide
      */
     public static final int DETECT_DISK_WRITE = 0x01;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:39.897 -0500", hash_original_field = "12F256B42DA03943B773FA2321D26107", hash_generated_field = "3B0BC9E776FCEF0C8599FE3E434D6AC6")
-
 
     /**
       * @hide
@@ -2084,13 +2012,11 @@ public InstanceTracker(Object instance) {
     public static final int DETECT_DISK_READ = 0x02;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:39.900 -0500", hash_original_field = "ADB4B3C7525A38377078D1B117E03CE6", hash_generated_field = "2C68E3EDD4C852D76A185E3C9D2D5904")
 
-
     /**
      * @hide
      */
     public static final int DETECT_NETWORK = 0x04;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:39.902 -0500", hash_original_field = "983581883FF985383DDE1B43CAD42065", hash_generated_field = "47203AA0974E3F1ADE577FA7477EA93D")
-
 
     /**
      * For StrictMode.noteSlowCall()
@@ -2100,11 +2026,9 @@ public InstanceTracker(Object instance) {
     public static final int DETECT_CUSTOM = 0x08;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:39.904 -0500", hash_original_field = "D07D692FDBE51E553CB02B1FB59E164C", hash_generated_field = "DEF661BA57DCADA99F22533CDFDF239C")
 
-
     private static final int ALL_THREAD_DETECT_BITS =
             DETECT_DISK_WRITE | DETECT_DISK_READ | DETECT_NETWORK | DETECT_CUSTOM;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:39.907 -0500", hash_original_field = "3B0253E0A540645CCDCA0F998752F0D7", hash_generated_field = "42FCE94AB8F05A6621C7C2A7488B911F")
-
 
     /**
      * Note, a "VM_" bit, not thread.
@@ -2113,14 +2037,12 @@ public InstanceTracker(Object instance) {
     public static final int DETECT_VM_CURSOR_LEAKS = 0x200;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:39.910 -0500", hash_original_field = "12424A4B1A135F244B0827372FFF6509", hash_generated_field = "CF95C5EC7C9D91852EDD65FEC405E876")
 
-
     /**
      * Note, a "VM_" bit, not thread.
      * @hide
      */
     public static final int DETECT_VM_CLOSABLE_LEAKS = 0x400;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:39.912 -0500", hash_original_field = "A95209BDC111FF0344FD6D9B839232F7", hash_generated_field = "01CA71CE407A71196CE88C91BB259835")
-
 
     /**
      * Note, a "VM_" bit, not thread.
@@ -2129,13 +2051,11 @@ public InstanceTracker(Object instance) {
     public static final int DETECT_VM_ACTIVITY_LEAKS = 0x800;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:39.914 -0500", hash_original_field = "978A80E092214D64EB92CE90304E95EF", hash_generated_field = "C79ED654FCB1C51584ABF483FD3D4EEC")
 
-
     /**
      * @hide
      */
     private static final int DETECT_VM_INSTANCE_LEAKS = 0x1000;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:39.917 -0500", hash_original_field = "B5C2B7A6C92B21957696DD3CF43027F3", hash_generated_field = "792A04564079CCBA55772389E5556C8F")
-
 
     private static final int ALL_VM_DETECT_BITS =
             DETECT_VM_CURSOR_LEAKS | DETECT_VM_CLOSABLE_LEAKS |
@@ -2144,7 +2064,6 @@ public InstanceTracker(Object instance) {
 
     public static final int PENALTY_LOG = 0x10;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:39.921 -0500", hash_original_field = "67A2C54ADA6FBBA64CC72C0B9A697A1B", hash_generated_field = "C77B7ABE6C3766A393E2A38820D63557")
-
 
     // Used for both process and thread policy:
 
@@ -2191,8 +2110,8 @@ public InstanceTracker(Object instance) {
     private static final AtomicInteger sDropboxCallsInFlight = new AtomicInteger(0);
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.374 -0400", hash_original_field = "032D1DB3AC7977666A8FEE9196953B73", hash_generated_field = "A9537943E12E1BE66F65A9E047340B84")
 
-    private static final ThreadLocal<ArrayList<ViolationInfo>> gatheredViolations = new ThreadLocal<ArrayList<ViolationInfo>>() {        
-        @DSModeled(DSC.SAFE)
+    private static final ThreadLocal<ArrayList<ViolationInfo>> gatheredViolations = new ThreadLocal<ArrayList<ViolationInfo>>() {
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.374 -0400", hash_original_method = "3F7643CB826EF0CE042B1409C79A26FA", hash_generated_method = "17F9046DABF4760439BFBA0AF9FA6792")
         @Override
         protected ArrayList<ViolationInfo> initialValue() {
@@ -2201,15 +2120,13 @@ public InstanceTracker(Object instance) {
             varB4EAC82CA7396A68D541C85D26508E83_2145674522.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_2145674522;
             
-            
         }
-
         
 };
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.375 -0400", hash_original_field = "715B49E3F5CF23D0F2283607FFE671D2", hash_generated_field = "468766B1185D36E3C34C6CC8132A3BBA")
 
-    private static final ThreadLocal<ArrayList<ViolationInfo>> violationsBeingTimed = new ThreadLocal<ArrayList<ViolationInfo>>() {        
-        @DSModeled(DSC.BAN)
+    private static final ThreadLocal<ArrayList<ViolationInfo>> violationsBeingTimed = new ThreadLocal<ArrayList<ViolationInfo>>() {
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.375 -0400", hash_original_method = "CB5695702D478EAB2FBBE8373134ED39", hash_generated_method = "DD5545FE6BD3BC5EEFC9A9B56ECE011C")
         @Override
         protected ArrayList<ViolationInfo> initialValue() {
@@ -2218,15 +2135,13 @@ public InstanceTracker(Object instance) {
             varB4EAC82CA7396A68D541C85D26508E83_122129988.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_122129988;
             
-            
         }
-
         
 };
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.376 -0400", hash_original_field = "04600256D4F94A088BAF90F3ED687D15", hash_generated_field = "9E72204DB7595403D8ED153039D502F7")
 
-    private static final ThreadLocal<Handler> threadHandler = new ThreadLocal<Handler>() {        
-    	@DSModeled(DSC.SAFE)
+    private static final ThreadLocal<Handler> threadHandler = new ThreadLocal<Handler>() {
+    	
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.376 -0400", hash_original_method = "AFD0CE5945D0E9D14EE2FF5512B9324A", hash_generated_method = "785B4A8F3F59814D3C58DE7CA9CDAA9D")
         @Override
         protected Handler initialValue() {
@@ -2235,13 +2150,10 @@ public InstanceTracker(Object instance) {
             varB4EAC82CA7396A68D541C85D26508E83_1280274125.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1280274125;
             
-            
         }
-
         
 };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.225 -0500", hash_original_field = "BB487055B3905F3874C8ED09AA7AEB8C", hash_generated_field = "9856A17E5723F71B95FE2020E6AD7FC5")
-
 
     private static long sLastInstanceCountCheckMillis = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.227 -0500", hash_original_field = "03FCF333EB26A7253F59FA9B1A2CDB94", hash_generated_field = "620CC23E40F92E04CF705F8C05DDBFB2")
@@ -2250,7 +2162,7 @@ public InstanceTracker(Object instance) {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.377 -0400", hash_original_field = "B164AA3A1AEF10C398FA471F54B9AC10", hash_generated_field = "76025C66C8858E75C2E2EE021C5EC2F6")
 
     private static final MessageQueue.IdleHandler sProcessIdleHandler = new MessageQueue.IdleHandler() {
-    	@DSModeled(DSC.BAN)
+    	
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.377 -0400", hash_original_method = "6956F5FF31712AF268FC89A0909C9E82", hash_generated_method = "884769DEEAC1BC5A58EFB848653AD4FF")
         public boolean queueIdle() {
             long now = SystemClock.uptimeMillis();
@@ -2261,14 +2173,7 @@ public InstanceTracker(Object instance) {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1365236886 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1365236886;
             
-            
-            
-                        
-                        
-                    
-            
         }
-
         
 };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.252 -0500", hash_original_field = "315EBC33CE5C2829712C6671DC6E91E4", hash_generated_field = "EC2C449B6782F01CD0895152402E7785")
@@ -2276,19 +2181,18 @@ public InstanceTracker(Object instance) {
     private static final HashMap<Integer, Long> sLastVmViolationTime = new HashMap<Integer, Long>();
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.377 -0400", hash_original_field = "B86F8D90AB0DCFAFBC62E8F4A57E71BB", hash_generated_field = "A9868B4563548BD63158F22F4F3DE838")
 
-    private static final Span NO_OP_SPAN = new Span() {        
-    	@DSModeled(DSC.BAN)
+    private static final Span NO_OP_SPAN = new Span() {
+    	
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.377 -0400", hash_original_method = "D6FF905BC764A22CD5AFFCB47539B778", hash_generated_method = "3802941F36A062BAA51744D8D659BBA5")
         public void finish() {
             
         }
-
         
 };
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.378 -0400", hash_original_field = "B8165DB8CA25EBB672A04ED87F0CC32F", hash_generated_field = "96C1D1B545A479025D4E8BCB442BB45E")
 
     private static final ThreadLocal<ThreadSpanState> sThisThreadSpanState = new ThreadLocal<ThreadSpanState>() {
-    	@DSModeled(DSC.BAN)
+    	
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.378 -0400", hash_original_method = "3F056F46AA4E010EAE891B386F384542", hash_generated_method = "2A821F208287915B2CA2C4C1BA99BA14")
         @Override
         protected ThreadSpanState initialValue() {
@@ -2297,15 +2201,13 @@ public InstanceTracker(Object instance) {
             varB4EAC82CA7396A68D541C85D26508E83_693431700.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_693431700;
             
-            
         }
-
         
 };
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.379 -0400", hash_original_field = "9012BF47FFA40D3BC924A9D478958B38", hash_generated_field = "8DE7816BA6907AF22598735C221C000A")
 
     private static Singleton<IWindowManager> sWindowManager = new Singleton<IWindowManager>() {
-    	@DSModeled(DSC.BAN)
+    	
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:43.379 -0400", hash_original_method = "5B1F4967C7C17AD573D088D6B70DB243", hash_generated_method = "C5ACD2CDD070A587CDD55EC8C8ED2603")
         protected IWindowManager create() {
             IWindowManager varB4EAC82CA7396A68D541C85D26508E83_2138217971 = null; 
@@ -2313,9 +2215,7 @@ public InstanceTracker(Object instance) {
             varB4EAC82CA7396A68D541C85D26508E83_2138217971.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_2138217971;
             
-            
         }
-
         
 };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.329 -0500", hash_original_field = "576836B99856F28B6DEB312A2069368B", hash_generated_field = "35AF5773760644A2175E84471F6DD6ED")

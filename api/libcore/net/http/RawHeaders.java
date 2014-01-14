@@ -13,11 +13,6 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.TreeMap;
 
-
-
-
-
-
 public final class RawHeaders {
 
     /**
@@ -40,12 +35,11 @@ public static RawHeaders fromMultimap(Map<String, List<String>> map) {
         }
         return result;
     }
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.375 -0400", hash_original_field = "FA7582AED8A9C6860ED135540F90AAFE", hash_generated_field = "F018DC0E2BA01C80BAE5B1A83407ABAC")
 
-    private static final Comparator<String> FIELD_NAME_COMPARATOR = new Comparator<String>() {        
-        @DSModeled(DSC.SAFE)
+    private static final Comparator<String> FIELD_NAME_COMPARATOR = new Comparator<String>() {
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.375 -0400", hash_original_method = "97A4263BD250C85D737E56C91BCF9DB2", hash_generated_method = "87FDB9F6A8C83D84768E8CB65F606488")
         @FindBugsSuppressWarnings("ES_COMPARING_PARAMETER_STRING_WITH_EQ")
         @Override
@@ -58,21 +52,10 @@ public static RawHeaders fromMultimap(Map<String, List<String>> map) {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1091903691 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1091903691;
             
-            
-                
-            
-                
-            
-                
-            
-                
-            
         }
-
         
 };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:32.284 -0500", hash_original_field = "07F428528BFEF71A200897A68EEF9185", hash_generated_field = "E294623D0BEE32E5166A91061EFF3F0C")
-
 
     private final List<String> namesAndValues = new ArrayList<String>(20);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:32.287 -0500", hash_original_field = "A523116C573EF8EFB44D14B8D098B78E", hash_generated_field = "3535C618FCAB072DA70F443EC8961E3F")

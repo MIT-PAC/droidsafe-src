@@ -53,7 +53,6 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import com.android.internal.R;
 
-
 public class InputMethodService extends AbstractInputMethodService {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.364 -0500", hash_original_field = "0625AD3B4C868F38322FC6675151E03D", hash_generated_field = "9CF0118E5FF5051520996A9D15AE838E")
 
@@ -66,20 +65,17 @@ public class InputMethodService extends AbstractInputMethodService {
     public static final int BACK_DISPOSITION_DEFAULT = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.372 -0500", hash_original_field = "43A0A4C1E48BB433E640B2F7163BCFF3", hash_generated_field = "2FD400F87EC4C6F865CBF8FCC35D4004")
 
-
     /**
      * This input method will not consume the back key.
      */
     public static final int BACK_DISPOSITION_WILL_NOT_DISMISS = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.375 -0500", hash_original_field = "C0C30FF30280740136854AC0AAF9EECA", hash_generated_field = "29DE42E13303B8038ADAE4FF7EC30C01")
 
-
     /**
      * This input method will consume the back key.
      */
     public static final int BACK_DISPOSITION_WILL_DISMISS = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.377 -0500", hash_original_field = "F15C0D2B2BF460DC18B2341B61D6D789", hash_generated_field = "721FB603FD5B2D4072E631AFBCE37007")
-
 
     /**
      * @hide
@@ -90,7 +86,6 @@ public class InputMethodService extends AbstractInputMethodService {
 
     public static final int IME_VISIBLE = 0x2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.737 -0500", hash_original_field = "A9F7A372B74E1AAEECF76942AFDCE029", hash_generated_field = "3B517107D2F173893643769189022B46")
-
     
     static final int MOVEMENT_DOWN = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.739 -0500", hash_original_field = "B4D08428A39E17E44F1EDD148C01C108", hash_generated_field = "31973F9CFC4CEDE663F654F0137BD973")
@@ -98,14 +93,11 @@ public class InputMethodService extends AbstractInputMethodService {
     static final int MOVEMENT_UP = -2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.382 -0500", hash_original_field = "01719032B78A2D912F910E37CD479B69", hash_generated_field = "01719032B78A2D912F910E37CD479B69")
 
-
     InputMethodManager mImm;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.384 -0500", hash_original_field = "075FD7AAD50C5AD8803D9E3B208423A2", hash_generated_field = "075FD7AAD50C5AD8803D9E3B208423A2")
-
     
     int mTheme = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.387 -0500", hash_original_field = "B03B4DAE3F576B7166425BEE37B96C5E", hash_generated_field = "B03B4DAE3F576B7166425BEE37B96C5E")
-
     
     LayoutInflater mInflater;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.389 -0500", hash_original_field = "B7C98FA3B531CC028C7A59F94DC2AFFF", hash_generated_field = "B7C98FA3B531CC028C7A59F94DC2AFFF")
@@ -148,11 +140,9 @@ public class InputMethodService extends AbstractInputMethodService {
 
     FrameLayout mInputFrame;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.416 -0500", hash_original_field = "DD6EB7EC256F1225D4C6DC1A42FB765B", hash_generated_field = "DD6EB7EC256F1225D4C6DC1A42FB765B")
-
     
     IBinder mToken;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.418 -0500", hash_original_field = "AFA59EA1150C21AB6E344984735AF2EB", hash_generated_field = "AFA59EA1150C21AB6E344984735AF2EB")
-
     
     InputBinding mInputBinding;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.420 -0500", hash_original_field = "0C4E3C3C223DA7FB43EF5D532A5B3E04", hash_generated_field = "0C4E3C3C223DA7FB43EF5D532A5B3E04")
@@ -174,7 +164,6 @@ public class InputMethodService extends AbstractInputMethodService {
 
     EditorInfo mInputEditorInfo;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.433 -0500", hash_original_field = "293541479A1626BCDA923AA8063FA9A6", hash_generated_field = "293541479A1626BCDA923AA8063FA9A6")
-
     
     int mShowInputFlags;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.435 -0500", hash_original_field = "7599FBE37A9716825A76F29F0FE2FD55", hash_generated_field = "7599FBE37A9716825A76F29F0FE2FD55")
@@ -190,11 +179,9 @@ public class InputMethodService extends AbstractInputMethodService {
 
     CompletionInfo[] mCurCompletions = new CompletionInfo[10];
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.443 -0500", hash_original_field = "0A08F53EED6C8EEC9D7CC85E98FAC447", hash_generated_field = "0A08F53EED6C8EEC9D7CC85E98FAC447")
-
     
     boolean mShowInputForced;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.445 -0500", hash_original_field = "269508F0F9EF09EB866044C649D586B1", hash_generated_field = "269508F0F9EF09EB866044C649D586B1")
-
     
     boolean mFullscreenApplied;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.447 -0500", hash_original_field = "9CA62515CAD4DE9A3596FC712B0811BA", hash_generated_field = "9CA62515CAD4DE9A3596FC712B0811BA")
@@ -222,21 +209,18 @@ public class InputMethodService extends AbstractInputMethodService {
 
     int mExtractedToken;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.464 -0500", hash_original_field = "DD75F3DC122E5FCA3B30C64DE9D6C9CD", hash_generated_field = "DD75F3DC122E5FCA3B30C64DE9D6C9CD")
-
     
     View mInputView;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.466 -0500", hash_original_field = "77B5EB3473D5B10089CC95C2ED94891E", hash_generated_field = "77B5EB3473D5B10089CC95C2ED94891E")
 
     boolean mIsInputViewShown;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.468 -0500", hash_original_field = "98EF9B06A59A7DC308ADD81484067F39", hash_generated_field = "98EF9B06A59A7DC308ADD81484067F39")
-
     
     int mStatusIcon;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.470 -0500", hash_original_field = "FD8B0612F7004ABC6C691A56C2D256FE", hash_generated_field = "FD8B0612F7004ABC6C691A56C2D256FE")
 
     int mBackDisposition;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.472 -0500", hash_original_field = "68F5252D64F8D4159C578F571A77AB54", hash_generated_field = "F25E6A5ACF83E487D08AEE0325304099")
-
 
     final Insets mTmpInsets = new Insets();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.475 -0500", hash_original_field = "18ECE134BF0FC41944D7DF74E92F279C", hash_generated_field = "192CBA0F154C36DD2A24DDE2AD97DD40")
@@ -267,21 +251,7 @@ public class InputMethodService extends AbstractInputMethodService {
             } 
             addTaint(info.getTaint());
             
-            
-                
-                
-                        
-                
-                
-            
-                
-                
-                
-                
-                
-            
         }
-
         
 };
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:34.801 -0400", hash_original_field = "C94A4138F2315FEEC71C08F04887EF50", hash_generated_field = "637074E4948BB4D273503B0842435434")
@@ -302,22 +272,10 @@ public class InputMethodService extends AbstractInputMethodService {
             } 
             addTaint(v.getTaint());
             
-            
-            
-            
-                
-                    
-                
-                        
-                    
-                
-            
         }
-
         
 };
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.498 -0400", hash_original_method = "1525492D8EE98BBF3E2138610F838AAF", hash_generated_method = "1525492D8EE98BBF3E2138610F838AAF")
     public InputMethodService ()
     {
@@ -341,9 +299,7 @@ public class InputMethodService extends AbstractInputMethodService {
         }
         mTheme = theme;
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.501 -0400", hash_original_method = "A4061C51E6B315B625647A4DAEF1D932", hash_generated_method = "DE550ABE012B963890E5EA21805F7878")
     @Override
     public void onCreate() {
@@ -1946,7 +1902,6 @@ public void onExtractedTextClicked() {
             setCandidatesViewShown(false);
         }
     }
-
     
     public class InputMethodImpl extends AbstractInputMethodImpl {
         
@@ -2062,11 +2017,8 @@ public void showSoftInput(int flags, ResultReceiver resultReceiver) {
 public void changeInputMethodSubtype(InputMethodSubtype subtype) {
             onCurrentInputMethodSubtypeChanged(subtype);
         }
-
         
     }
-
-
     
     public class InputMethodSessionImpl extends AbstractInputMethodSessionImpl {
         
@@ -2172,11 +2124,8 @@ public void appPrivateCommand(String action, Bundle data) {
 public void toggleSoftInput(int showFlags, int hideFlags) {
             InputMethodService.this.onToggleSoftInput(showFlags, hideFlags);
         }
-
         
     }
-
-
     
     public static final class Insets {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.547 -0500", hash_original_field = "D02500261CD6088744A8F89F1DC92774", hash_generated_field = "A903B8D9E85FE8268399FAA8EA9A5E31")
@@ -2501,7 +2450,7 @@ protected void onCurrentInputMethodSubtypeChanged(InputMethodSubtype newSubtype)
     }
 
     @Override
-    @DSModeled(DSC.BAN)
+    
     public void droidsafeOnSubServiceHook() {
         super.droidsafeOnSubServiceHook();
         onBindInput();

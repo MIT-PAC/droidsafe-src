@@ -20,17 +20,12 @@ import android.os.IBinder;
 import android.util.AndroidRuntimeException;
 import android.view.inputmethod.InputMethodManager;
 
-
-
-
-
 final class WindowLeaked extends AndroidRuntimeException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:07.116 -0500", hash_original_method = "FBED2002249AD131D5B5A71E6D66FC21", hash_generated_method = "830B11ED5FB821F5D9E7920CDFE106DD")
     
 public WindowLeaked(String msg) {
         super(msg);
     }
-
     
 }
 
@@ -101,13 +96,11 @@ private static void removeItem(Object[] dst, Object[] src, int index) {
     public static final int RELAYOUT_DEFER_SURFACE_DESTROY = 0x2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:07.133 -0500", hash_original_field = "0CFACF22970D191BCB21169100F5D15E", hash_generated_field = "B45631C5AC56ACFEA482DD61E10D666D")
 
-
     public static final int ADD_FLAG_APP_VISIBLE = 0x2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:07.135 -0500", hash_original_field = "8838A5EA7ED708E3F408AA6098D8F6B7", hash_generated_field = "8A0B6E6C40A3B9E8AD1DB662FFBC63B1")
 
     public static final int ADD_FLAG_IN_TOUCH_MODE = RELAYOUT_RES_IN_TOUCH_MODE;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:07.137 -0500", hash_original_field = "F54BEAEA8693DF3096867F943C44D409", hash_generated_field = "896EA10F4EEDBD22866D19F5C37C2883")
-
     
     public static final int ADD_OKAY = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:07.140 -0500", hash_original_field = "C1A541FDB6D2723765EEAFA6363D7E92", hash_generated_field = "6250BE795ED30E4E71D089144220CBD2")
@@ -136,7 +129,6 @@ private static void removeItem(Object[] dst, Object[] src, int index) {
     public static final int ADD_PERMISSION_DENIED = -8;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:07.167 -0500", hash_original_field = "3892ABA92B7F95295E8CFDAE8B79791E", hash_generated_field = "E2243BE928463BEF85C2376ED862E621")
 
-
     private final static Object sLock = new Object();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:07.170 -0500", hash_original_field = "F1B7BA8178E5CA21AB5A1E0258E9192B", hash_generated_field = "10062A1B5CD58B2F6E5CDFDBEAFBAC67")
 
@@ -147,7 +139,6 @@ private static void removeItem(Object[] dst, Object[] src, int index) {
             = new HashMap<CompatibilityInfo, WindowManager>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:07.160 -0500", hash_original_field = "F653BEF3062CF973255D51C73BCC91D9", hash_generated_field = "1FE8B5AC02273EF00EC01B5EE801E265")
 
-
     private View[] mViews;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:07.163 -0500", hash_original_field = "94B18263C4967BF3B4379953F9F41DF0", hash_generated_field = "30F0340706746C5BEBF7EDA66601F6B0")
 
@@ -156,7 +147,6 @@ private static void removeItem(Object[] dst, Object[] src, int index) {
 
     private WindowManager.LayoutParams[] mParams;
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.125 -0400", hash_original_method = "3EABCF2A614A6DEC3CA7FC91E47982AB", hash_generated_method = "3EABCF2A614A6DEC3CA7FC91E47982AB")
     public WindowManagerImpl ()
     {
@@ -168,7 +158,6 @@ private static void removeItem(Object[] dst, Object[] src, int index) {
 public boolean isHardwareAccelerated() {
         return false;
     }
-
     
     static class CompatModeWrapper implements WindowManager {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:07.176 -0500", hash_original_field = "F54741003F12DD1175C61A4A42BE2E67", hash_generated_field = "FEEC7915B51FB12A1344576DA3BE0D25")
@@ -244,7 +233,6 @@ CompatModeWrapper(WindowManager wm, CompatibilityInfoHolder ci) {
         public boolean isHardwareAccelerated() {
             return mWindowManager.isHardwareAccelerated();
         }
-
         
     }
     

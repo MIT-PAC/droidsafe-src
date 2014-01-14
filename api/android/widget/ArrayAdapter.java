@@ -17,10 +17,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-
-
-
-
 public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
 
     /**
@@ -60,7 +56,6 @@ public static ArrayAdapter<CharSequence> createFromResource(Context context,
     private boolean mNotifyOnChange = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.947 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
 
-
     private Context mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.949 -0500", hash_original_field = "E150C83BA2F03D9A5074F8AAC75B848B", hash_generated_field = "A67EA060A25CBEA9882A255490E7A91B")
 
@@ -70,7 +65,6 @@ public static ArrayAdapter<CharSequence> createFromResource(Context context,
 
     private ArrayFilter mFilter;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.955 -0500", hash_original_field = "B03B4DAE3F576B7166425BEE37B96C5E", hash_generated_field = "CBB0EE0A851756643DA52E1D33B6B161")
-
 
     private LayoutInflater mInflater;
 
@@ -158,9 +152,7 @@ public ArrayAdapter(Context context, int textViewResourceId, List<T> objects) {
 public ArrayAdapter(Context context, int resource, int textViewResourceId, List<T> objects) {
         init(context, resource, textViewResourceId, objects);
     }
-
     
-    @DSModeled(DSC.SAFE)
 	public void add(T object) {
         mObjects.add(object);
         notifyDataSetChanged();
@@ -326,17 +318,13 @@ private void init(Context context, int resource, int textViewResourceId, List<T>
 public Context getContext() {
         return mContext;
     }
-
     
-    @DSModeled(DSC.SAFE)
     @Override
 	public int getCount() {
 		return 0;
         //return mObjects.size();
     }
-
     
-    @DSModeled(DSC.SAFE)
     @Override
 	public Object getItem(int position) {
 		return getTaint();
@@ -373,9 +361,7 @@ public long getItemId(int position) {
 public View getView(int position, View convertView, ViewGroup parent) {
         return createViewFromResource(position, convertView, parent, mResource);
     }
-
     
-    @DSModeled(DSC.SAFE)
     private View createViewFromResource(int position, View convertView, ViewGroup parent,
             int resource) {
         View view;
@@ -428,9 +414,7 @@ public void setDropDownViewResource(int resource) {
     public View getDropDownView(int position, View convertView, ViewGroup parent) {
         return createViewFromResource(position, convertView, parent, mDropDownResource);
     }
-
     
-    @DSModeled(DSC.SAFE)
     @Override
 	public Filter getFilter() {
 		return new ArrayFilter();
@@ -441,7 +425,6 @@ public void setDropDownViewResource(int resource) {
         return mFilter;
         */
     }
-
     
     private class ArrayFilter extends Filter {
         
@@ -450,9 +433,7 @@ public void setDropDownViewResource(int resource) {
         {
             //Synthesized constructor
         }
-
-
-        @DSModeled(DSC.SAFE)
+        
         @Override
 		protected FilterResults performFiltering(CharSequence prefix) {
             FilterResults results = new FilterResults();
@@ -516,11 +497,8 @@ public void setDropDownViewResource(int resource) {
                 notifyDataSetInvalidated();
             }
         }
-
         
     }
-
-
     
 }
 

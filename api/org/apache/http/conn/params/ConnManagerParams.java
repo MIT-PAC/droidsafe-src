@@ -7,9 +7,6 @@ import droidsafe.annotations.*;
 import org.apache.http.conn.routing.HttpRoute;
 import org.apache.http.params.HttpParams;
 
-
-
-
 public final class ConnManagerParams implements ConnManagerPNames {
 
     /**
@@ -87,7 +84,6 @@ public static ConnPerRoute getMaxConnectionsPerRoute(final HttpParams params) {
         return connPerRoute;
     }
 
-
     /**
      * Sets the maximum number of connections allowed.
      *
@@ -132,17 +128,15 @@ public static int getMaxTotalConnections(
     public static final int DEFAULT_MAX_TOTAL_CONNECTIONS = 20;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.069 -0400", hash_original_field = "DD59E98DD00850A7DCC1DD983A709C49", hash_generated_field = "31C4DE057B93401DBCAF299288501B61")
 
-    private static final ConnPerRoute DEFAULT_CONN_PER_ROUTE = new ConnPerRoute() {        
-        @DSModeled(DSC.SAFE)
+    private static final ConnPerRoute DEFAULT_CONN_PER_ROUTE = new ConnPerRoute() {
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:39.069 -0400", hash_original_method = "BC1F672F46BDFCECD4BF3D32787E67D5", hash_generated_method = "8A95F28D3AD48F3D120597EE4D0EC8E5")
         public int getMaxForRoute(HttpRoute route) {
             addTaint(route.getTaint());
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1631977428 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1631977428;
             
-            
         }
-
         
 };
     

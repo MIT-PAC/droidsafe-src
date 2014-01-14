@@ -10,13 +10,8 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.net.URLStreamHandler;
 
-
-
-
-
 public final class HttpsHandler extends URLStreamHandler {
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:25.594 -0400", hash_original_method = "C844A911E2153F94DB6E5F7227FA1E87", hash_generated_method = "C844A911E2153F94DB6E5F7227FA1E87")
     public HttpsHandler ()
     {
@@ -43,7 +38,6 @@ public final class HttpsHandler extends URLStreamHandler {
 @Override protected int getDefaultPort() {
         return 443;
     }
-
     
 }
 

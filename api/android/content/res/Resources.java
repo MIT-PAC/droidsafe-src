@@ -21,18 +21,15 @@ import android.util.LongSparseArray;
 import android.util.SparseArray;
 import android.util.TypedValue;
 
-
 import android.R;
 
 public class Resources {
-
-    @DSModeled(DSC.BAN)
+    
     @SuppressWarnings("unchecked")
     private static <T> LongSparseArray<T> emptySparseArray() {
         return (LongSparseArray<T>) EMPTY_ARRAY;
     }
-
-    @DSModeled(DSC.BAN)
+    
     public static int selectDefaultTheme(int curTheme, int targetSdkVersion){
 		// Original method
 		/*
@@ -45,9 +42,7 @@ public class Resources {
 		*/
 		return 0;
 	}
-
     
-    @DSModeled(DSC.BAN)
     public static int selectSystemTheme(int curTheme, int targetSdkVersion,
             int orig, int holo, int deviceDefault){
 		// Original method
@@ -67,17 +62,13 @@ public class Resources {
 		*/
 		return 0;
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public static Resources getSystem(){
 	    if (mSystem == null)
 	        mSystem = new Resources();
 	    return mSystem;
 	}
-
     
-    @DSModeled(DSC.BAN)
 	private static int attrForQuantityCode(int quantityCode){
 		// Original method
 		/*
@@ -94,18 +85,14 @@ public class Resources {
 		*/
 		return 0;
 	}
-
     
-    @DSModeled(DSC.BAN)
 	private static String stringForQuantityCode(int quantityCode){
     	String str = new String();
 		str.addTaint(quantityCode);
 		return str;
 
 	}
-
     
-    @DSModeled(DSC.BAN)
     public static void updateSystemConfiguration(Configuration config, DisplayMetrics metrics,
             CompatibilityInfo compat){
 		// Original method
@@ -118,9 +105,7 @@ public class Resources {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.BAN)
     public static void updateSystemConfiguration(Configuration config, DisplayMetrics metrics){
 		// Original method
 		/*
@@ -150,10 +135,8 @@ public class Resources {
     private static final boolean TRACE_FOR_MISS_PRELOAD = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:06.223 -0500", hash_original_field = "C9CA7C26E8EB9FE4811FE950D2640279", hash_generated_field = "C862CC81028DD3AA6BB9CABD701825FB")
 
-
     private static final int ID_OTHER = 0x01000004;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:06.225 -0500", hash_original_field = "349D1EAD6A3DD6EDFBBB76E7AC55FC2F", hash_generated_field = "F668D47897E28620543685D1E68BB2A5")
-
 
     private static final Object mSync = new Object();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:06.228 -0500", hash_original_field = "2B10381FAC408B00D7EEB9F47F3BA009", hash_generated_field = "B0DD5DC72B0C526323B11A6CF67A9E4F")
@@ -170,7 +153,7 @@ public class Resources {
             = new SparseArray<ColorStateList>();
 
     private static class MyEmptyArray extends LongSparseArray<Object> {
-        @DSModeled(DSC.SAFE)
+        
         public MyEmptyArray(int size) {
             //super(size);
         }
@@ -209,7 +192,6 @@ public class Resources {
     RuntimeException mLastRetrievedAttrs = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:06.257 -0500", hash_original_field = "A4A22804FE49495B5F278DEBA7A03C59", hash_generated_field = "D7E7153558BB8F6EF13392C958C199F3")
 
-
     private int mLastCachedXmlBlockIndex = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:06.259 -0500", hash_original_field = "7A670BEAB8E9FBBA8553AF66CADA72C6", hash_generated_field = "279259CEA3B9EA7BE3315FDEF65F4C2B")
 
@@ -228,7 +210,6 @@ public class Resources {
 
     private NativePluralRules mPluralRule;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:06.272 -0500", hash_original_field = "EC831B49FC8A431DBFEE3F5043766966", hash_generated_field = "D59F4BA3BF864567D7F711BF240A9A65")
-
     
     private CompatibilityInfo mCompatibilityInfo;
 
@@ -248,10 +229,7 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
             Configuration config) {
         this(assets, metrics, config, (CompatibilityInfo) null);
     }
-
     
-    
-    @DSModeled(DSC.BAN)
     public Resources(AssetManager assets, DisplayMetrics metrics,
             Configuration config, CompatibilityInfo compInfo){
 		//addTaint(assets.getTaint());
@@ -266,31 +244,23 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 		assets.ensureStringBlocks();
 		*/
 	}
-
     
-    @DSModeled(DSC.BAN)
 	public Resources() {
 	    mAssets = null;
 	}
-
-
-
 	
-	@DSModeled(DSC.SAFE)
 	public final String getString(int resId) {
 		String str = new String();
         str.addTaint(resId);
         return str;
 	}
 	
-	@DSModeled(DSC.SAFE)
 	public final CharSequence getText(int resId) {
         String str = new String();
         str.addTaint(resId);
         return str;
 	}
-    
-	 @DSModeled(DSC.SAFE)
+	 
 	public CharSequence getQuantityText(int id, int quantity){
 		
 		String str = new String();
@@ -299,8 +269,7 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 		str.addTaint(taint);
 		return str;
 	}
-
-	  @DSModeled(DSC.BAN)
+	  
     private NativePluralRules getPluralRule(){
 		// Original method
 		/*
@@ -316,17 +285,13 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 		return null;
 	}
 	
-	
-	@DSModeled(DSC.SPEC)
 	public String getString(int id, Object... formatArgs){
 		String str = new String();
 		str.addTaint(id);
 		//str.addTaint(formatArgs[0]);
 		return str;
 	}
-
     
-    @DSModeled(DSC.SPEC)
 	public String getQuantityString(int id, int quantity, Object... formatArgs){
     	String str = new String();
 		str.addTaint(id);
@@ -334,9 +299,7 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 		str.addTaint(taint);
 		return str;
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public String getQuantityString(int id, int quantity){
     	String str = new String();
 		str.addTaint(id);
@@ -344,9 +307,7 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 		str.addTaint(taint);
 		return str;
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public CharSequence getText(int id, CharSequence def){
     	String str = new String();
 		str.addTaint(id);
@@ -354,9 +315,7 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 		str.addTaint(taint);
 		return str;
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public CharSequence[] getTextArray(int id){
 		// Original method
 		/*
@@ -371,9 +330,7 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 		*/
 		return null;
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public String[] getStringArray(int id){
 		// Original method
 		/*
@@ -388,9 +345,7 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 		*/
 		return null;
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public int[] getIntArray(int id){
 		// Original method
 		/*
@@ -405,9 +360,7 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 		*/
 		return null;
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public TypedArray obtainTypedArray(int id){
 		// Original method
 		/*
@@ -425,9 +378,7 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 		*/
 		return null;
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public float getDimension(int id){
 		// Original method
 		/*
@@ -446,9 +397,7 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 		*/
 		return 0;
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public int getDimensionPixelOffset(int id){
 		// Original method
 		/*
@@ -468,9 +417,7 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 		*/
 		return 0;
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public int getDimensionPixelSize(int id){
 		// Original method
 		/*
@@ -490,9 +437,7 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 		*/
 		return 0;
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public float getFraction(int id, int base, int pbase){
 		// Original method
 		/*
@@ -511,15 +456,11 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 		*/
 		return 0;
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public Drawable getDrawable(int id){
         return loadDrawable(null, id);
 	}
-
     
-    @DSModeled(DSC.BAN)
 	public Drawable getDrawableForDensity(int id, int density){
 		// Original method
 		/*
@@ -540,9 +481,7 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 		*/
 		return null;
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public Movie getMovie(int id){
 		// Original method
 		/*
@@ -559,9 +498,7 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 		*/
 		return null;
 	}
-
     
-    @DSModeled(DSC.SPEC)
 	public int getColor(int id){
 		// Original method
 		/*
@@ -584,9 +521,7 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 		*/
 		return 0;
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public ColorStateList getColorStateList(int id){
 		// Original method
 		/*
@@ -600,9 +535,7 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 		*/
 		return null;
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public boolean getBoolean(int id){
 		// Original method
 		/*
@@ -622,9 +555,7 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 		*/
 		return false;
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public int getInteger(int id){
 		// Original method
 		/*
@@ -644,9 +575,7 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 		*/
 		return 0;
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public XmlResourceParser getLayout(int id){
 		// Original method
 		/*
@@ -656,9 +585,7 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 		*/
 		return null;
 	}
-
     
-    @DSModeled(DSC.SPEC)
 	public XmlResourceParser getAnimation(int id){
 		// Original method
 		/*
@@ -668,9 +595,7 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 		*/
 		return null;
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public XmlResourceParser getXml(int id){
 		// Original method
 		/*
@@ -680,9 +605,7 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 		*/
 		return null;
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public InputStream openRawResource(int id){
 		// Original method
 		/*
@@ -694,9 +617,7 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 		*/
 		return null;
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public InputStream openRawResource(int id, TypedValue value){
 		// Original method
 		/*
@@ -715,9 +636,7 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 		*/
 		return null;
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public AssetFileDescriptor openRawResourceFd(int id){
 		// Original method
 		/*
@@ -741,9 +660,7 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 		*/
 		return null;
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public void getValue(int id, TypedValue outValue, boolean resolveRefs){
 		// Original method
 		/*
@@ -758,9 +675,7 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.BAN)
 	public void getValueForDensity(int id, int density, TypedValue outValue, boolean resolveRefs){
 		// Original method
 		/*
@@ -774,9 +689,7 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public void getValue(String name, TypedValue outValue, boolean resolveRefs){
 		// Original method
 		/*
@@ -791,7 +704,6 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 		*/
 		//Return nothing
 	}
-
     
     public final Theme newTheme(){
 		// Original method
@@ -802,9 +714,7 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 		*/
 		return null;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public TypedArray obtainAttributes(AttributeSet set, int[] attrs){
 		// Original method
 		/*
@@ -821,9 +731,7 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 		*/
 		return null;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public void updateConfiguration(Configuration config,
             DisplayMetrics metrics){
 		// Original method
@@ -834,18 +742,14 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.BAN)
     public void updateConfiguration(Configuration config,
             DisplayMetrics metrics, CompatibilityInfo compat){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.BAN)
     private void clearDrawableCache(
             LongSparseArray<WeakReference<ConstantState>> cache,
             int configChanges){
@@ -853,9 +757,7 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public DisplayMetrics getDisplayMetrics(){
 		return mMetrics;
 		// Original method
@@ -879,9 +781,7 @@ public Resources(AssetManager assets, DisplayMetrics metrics,
 public Configuration getConfiguration() {
         return mConfiguration;
     }
-
     
-    @DSModeled(DSC.BAN)
     public CompatibilityInfo getCompatibilityInfo(){
 		// Original method
 		/*
@@ -892,9 +792,7 @@ public Configuration getConfiguration() {
 		*/
 		return null;
 	}
-
     
-    @DSModeled(DSC.BAN)
     public void setCompatibilityInfo(CompatibilityInfo ci){
 		//addTaint(ci.getTaint());
 		mCompatibilityInfo = ci;  //Preserved
@@ -907,9 +805,7 @@ public Configuration getConfiguration() {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public int getIdentifier(String name, String defType, String defPackage){
 		// Original method
 		/*
@@ -923,9 +819,7 @@ public Configuration getConfiguration() {
 		*/
 		return 0;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public String getResourceName(int resid){
 		// Original method
 		/*
@@ -938,9 +832,7 @@ public Configuration getConfiguration() {
 		*/
 		return "";
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public String getResourcePackageName(int resid){
 		// Original method
 		/*
@@ -953,8 +845,7 @@ public Configuration getConfiguration() {
 		*/
 		return "";
 	}
-
-    @DSModeled(DSC.SAFE)
+    
     public String getResourceTypeName(int resid){
 		// Original method
 		/*
@@ -967,7 +858,6 @@ public Configuration getConfiguration() {
 		*/
 		return "";
 	}
-
     
     public static class NotFoundException extends RuntimeException {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:06.291 -0500", hash_original_method = "16646BE2B605A836CC81C1207D23548C", hash_generated_method = "6D902CC3B723F053FD21F8F6EC56EB38")
@@ -982,23 +872,18 @@ public NotFoundException(String name) {
         }
         
     }
-
-
     
     public final class Theme {
         private final AssetManager mAssets = null;
         private final int mTheme = 0;
         
-        @DSModeled(DSC.SAFE)
         Theme(){
 			/*
 			mAssets = Resources.this.mAssets;
 			mTheme = mAssets.createTheme();
 			*/
 		}
-
         
-        @DSModeled(DSC.SAFE)
         public void applyStyle(int resid, boolean force){
 			// Original method
 			/*
@@ -1008,9 +893,7 @@ public NotFoundException(String name) {
 			*/
 			//Return nothing
 		}
-
         
-        @DSModeled(DSC.SAFE)
         public void setTo(Theme other){
 			// Original method
 			/*
@@ -1020,9 +903,7 @@ public NotFoundException(String name) {
 			*/
 			//Return nothing
 		}
-
         
-        @DSModeled(DSC.SAFE)
         public TypedArray obtainStyledAttributes(int[] attrs){
 			// Original method
 			/*
@@ -1037,15 +918,12 @@ public NotFoundException(String name) {
 			*/
 			return null;
 		}
-
         
-        @DSModeled(DSC.SAFE)
         public TypedArray obtainStyledAttributes(int resid, int[] attrs){
 			// Original method
 			/* Original Method Too Long, Refer to Original Implementation */
 			return null;
 		}
-
         
         public TypedArray obtainStyledAttributes(AttributeSet set,
                 int[] attrs, int defStyleAttr, int defStyleRes){
@@ -1053,9 +931,7 @@ public NotFoundException(String name) {
 			/* Original Method Too Long, Refer to Original Implementation */
 			return null;
 		}
-
         
-        @DSModeled(DSC.SAFE)
         public boolean resolveAttribute(int resid, TypedValue outValue,
                 boolean resolveRefs){
 			// Original method
@@ -1073,9 +949,7 @@ public NotFoundException(String name) {
 			*/
 			return false;
 		}
-
         
-        @DSModeled(DSC.SAFE)
         public void dump(int priority, String tag, String prefix){
 			// Original method
 			/*
@@ -1085,7 +959,6 @@ public NotFoundException(String name) {
 			*/
 			//Return nothing
 		}
-
         
         protected void finalize(){
 			// Original method
@@ -1097,11 +970,9 @@ public NotFoundException(String name) {
 			*/
 			//Return nothing
 		}
-
         
     }
-
-    @DSModeled(DSC.SAFE)
+    
     public String getResourceEntryName(int resid){
 		// Original method
 		/*
@@ -1114,8 +985,7 @@ public NotFoundException(String name) {
 		*/
 		return "";
 	}
-
-    @DSModeled(DSC.SAFE)
+    
     public void parseBundleExtras(XmlResourceParser parser, Bundle outBundle){
 		// Original method
 		/*
@@ -1139,8 +1009,7 @@ public NotFoundException(String name) {
 		*/
 		//Return nothing
 	}
-
-    @DSModeled(DSC.SAFE)
+    
     public void parseBundleExtra(String tagName, AttributeSet attrs,
             Bundle outBundle){
 		// Original method
@@ -1156,9 +1025,7 @@ public NotFoundException(String name) {
 public final AssetManager getAssets() {
         return mAssets;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public final void flushLayoutCache(){
 		// Original method
 		/*
@@ -1178,9 +1045,7 @@ public final AssetManager getAssets() {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.BAN)
     public final void startPreloading(){
 		// Original method
 		/*
@@ -1196,7 +1061,6 @@ public final AssetManager getAssets() {
 		*/
 		//Return nothing
 	}
-
     
     public final void finishPreloading(){
 		// Original method
@@ -1210,9 +1074,7 @@ public final AssetManager getAssets() {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     Drawable loadDrawable(TypedValue value, int id){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -1220,9 +1082,7 @@ public final AssetManager getAssets() {
         ret.addTaint(getTaint());
         return ret;
 	}
-
     
-    @DSModeled(DSC.BAN)
     private Drawable getCachedDrawable(
             LongSparseArray<WeakReference<ConstantState>> drawableCache,
             long key){
@@ -1246,17 +1106,13 @@ public final AssetManager getAssets() {
 		*/
 		return null;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     ColorStateList loadColorStateList(TypedValue value, int id){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		return null;
 	}
-
     
-    @DSModeled(DSC.BAN)
     private ColorStateList getCachedColorStateList(int key){
 		// Original method
 		/*
@@ -1278,9 +1134,7 @@ public final AssetManager getAssets() {
 		*/
 		return null;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     XmlResourceParser loadXmlResourceParser(int id, String type){
 		// Original method
 		/*
@@ -1300,18 +1154,14 @@ public final AssetManager getAssets() {
 		*/
 		return null;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     XmlResourceParser loadXmlResourceParser(String file, int id,
             int assetCookie, String type){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		return null;
 	}
-
     
-    @DSModeled(DSC.BAN)
     private TypedArray getCachedStyledAttributes(int len){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */

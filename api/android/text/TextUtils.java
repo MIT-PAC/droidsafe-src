@@ -19,23 +19,15 @@ import android.util.Printer;
 import com.android.internal.R;
 import com.android.internal.util.ArrayUtils;
 
-
-
-
-
-
 public class TextUtils {
 	static class MyCreator implements Parcelable.Creator<CharSequence> {
         
-        @DSModeled(DSC.BAN)
         public MyCreator() {}
         
-        @DSModeled(DSC.BAN)
         public CharSequence createFromParcel(Parcel p) {
             return new String();
         }
-     
-        @DSModeled(DSC.BAN)
+        
         public CharSequence[] newArray(int size)
         {
             return new CharSequence[size];
@@ -1352,9 +1344,7 @@ public static boolean delimitedStringContains(
         }
         return false;
     }
-
     
-    @DSModeled(DSC.BAN)
     @SuppressWarnings("unchecked")
     public static <T> T[] removeEmptySpans(T[] spans, Spanned spanned, Class<T> klass) {
     	T[] retVal;
@@ -1392,7 +1382,6 @@ public static boolean delimitedStringContains(
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:05.941 -0500", hash_original_field = "AB939312FE1CD11FB90CA31AC93D8BE7", hash_generated_field = "BA8DFB6D0520256A7126F71E63EB2E8D")
 
     public static final int ALIGNMENT_SPAN = 1;
-
     
     public static class SimpleStringSplitter implements StringSplitter, Iterator<String> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:05.870 -0500", hash_original_field = "0DD8A30A5B66E3389BB7F1641026A732", hash_generated_field = "C0B8B41E10B6EC8767D645F51D421276")
@@ -1429,9 +1418,7 @@ public void setString(String string) {
             mPosition = 0;
             mLength = mString.length();
         }
-
         
-        @DSModeled(DSC.SAFE)
         public Iterator iterator() {
             return this;
         }
@@ -1441,9 +1428,7 @@ public void setString(String string) {
 public boolean hasNext() {
             return mPosition < mLength;
         }
-
         
-        @DSModeled(DSC.SAFE)
         public String next() {
         //public Object next() {
         	/*
@@ -1463,15 +1448,11 @@ public boolean hasNext() {
 public void remove() {
             throw new UnsupportedOperationException();
         }
-
         
     }
-
-
     
     private static class Reverser implements CharSequence, GetChars {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:05.931 -0500", hash_original_field = "EBB181D64752DA6F9BB9A9E1DB00BBD4", hash_generated_field = "1DB65A9625E780B230F7C604C99C0F5D")
-
 
         private CharSequence mSource;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:05.934 -0500", hash_original_field = "83A19D93B82C07A79F54E265C2077EC6", hash_generated_field = "D233E3389CE5D79EE6040D6A855ED4FF")
@@ -1532,11 +1513,8 @@ public void getChars(int start, int end, char[] dest, int destoff) {
                 dest[destoff + len - i - 1] = tmp;
             }
         }
-
         
     }
-
-
     
     public enum TruncateAt {
         START,
@@ -1545,7 +1523,6 @@ public void getChars(int start, int end, char[] dest, int destoff) {
         MARQUEE,
         END_SMALL
     }
-
     
     public interface StringSplitter extends Iterable<String> {
         public void setString(String string);
@@ -1621,7 +1598,6 @@ public void getChars(int start, int end, char[] dest, int destoff) {
     public static Parcelable.Creator<CharSequence> CHAR_SEQUENCE_CREATOR  = new MyCreator();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:06.071 -0500", hash_original_field = "C43C06106F60684BB16151D66140BBB2", hash_generated_field = "C2F2F45019948F5515A5534F9B80EBF4")
 
-
     private static final char FIRST_RIGHT_TO_LEFT = '\u0590';
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:06.106 -0500", hash_original_field = "8EB22B2BE0E3BE6ABB5842AAD1EFFF76", hash_generated_field = "7B66F2E8EDC72D450BE916BD40FCB1B1")
 
@@ -1637,21 +1613,17 @@ public void getChars(int start, int end, char[] dest, int destoff) {
             = InputType.TYPE_TEXT_FLAG_CAP_SENTENCES;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:06.124 -0500", hash_original_field = "3892ABA92B7F95295E8CFDAE8B79791E", hash_generated_field = "E209496F9F2C9103A6260BCF69D3191B")
 
-
     private static Object sLock = new Object();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:06.127 -0500", hash_original_field = "55DA4B3993779389A3DF2C10AD0407DA", hash_generated_field = "D5B55575C53803B48B8DF0B1F8C65A25")
 
     private static char[] sTemp = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:06.130 -0500", hash_original_field = "DDEEF9E63F57AEA5B651583DF53FC3D6", hash_generated_field = "028F00C02112EDD5FB92F4223ED16EEC")
 
-
     private static String[] EMPTY_STRING_ARRAY = new String[]{};
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:06.133 -0500", hash_original_field = "5BCF32C74E7F6DD458104DDE6684ED29", hash_generated_field = "6EF5025B69B9D168A5631B2819D5C1D0")
 
-
     private static final char ZWNBS_CHAR = '\uFEFF';
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:06.136 -0500", hash_original_field = "2B45BAC771D34F88FC297809DB08191C", hash_generated_field = "A9B2DE4DB6FBCCC1E9139098336CF406")
-
 
     private static final String ELLIPSIS_NORMAL = Resources.getSystem().getString(
             R.string.ellipsis);

@@ -23,10 +23,6 @@ import android.view.KeyCharacterMap;
 import android.view.KeyEvent;
 import android.view.View;
 
-
-
-
-
 public class TextKeyListener extends BaseKeyListener implements SpanWatcher {
 
     /**
@@ -132,13 +128,11 @@ public static void clear(Editable e) {
  static final int SHOW_PASSWORD = 8;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:59.725 -0500", hash_original_field = "3B5E34829A96BDB56A96B72761630C9F", hash_generated_field = "BEDDE5D3B36AFDA96122F6739A399D24")
 
-
     private Capitalize mAutoCap;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:59.728 -0500", hash_original_field = "CD7A811405529AA08CC45A606C53B887", hash_generated_field = "C101024EE87082E36D969AEA4683627E")
 
     private boolean mAutoText;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:59.730 -0500", hash_original_field = "EC7552BC5986A5953F14301904A976B7", hash_generated_field = "6926B19407F5E0ECC3F4CEC11E041C87")
-
 
     private int mPrefs;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:59.733 -0500", hash_original_field = "F56764DC21E0A9C79CD729C84D43AF22", hash_generated_field = "1D299557689B8C33CC4C3DF3BE9D5C3D")
@@ -190,12 +184,10 @@ public int getInputType() {
 
         return im.onKeyUp(view, content, keyCode, event);
     }
-
     
     public enum Capitalize {
         NONE, SENTENCES, WORDS, CHARACTERS,
     }
-
     
     private static class NullKeyListener implements KeyListener {
         
@@ -210,10 +202,8 @@ public static NullKeyListener getInstance() {
         }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:59.818 -0500", hash_original_field = "C47CAB46E2BF813B13E28B30F60F7B8E", hash_generated_field = "DDEE448534DDF1827F49C320D91A9424")
 
-
         private static NullKeyListener sInstance;
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.774 -0400", hash_original_method = "F358F3B966187D3EEEEBD171D03A4696", hash_generated_method = "F358F3B966187D3EEEEBD171D03A4696")
         public NullKeyListener ()
         {
@@ -250,8 +240,6 @@ public boolean onKeyOther(View view, Editable content, KeyEvent event) {
 public void clearMetaKeyState(View view, Editable content, int states) {
         }
     }
-
-
     
     private class SettingsObserver extends ContentObserver {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:59.831 -0500", hash_original_method = "3A67C3C9DA9AFE8F3EB6304BC772D062", hash_generated_method = "487B419738ED264BC3F36FB8DB230AC9")
@@ -275,7 +263,6 @@ public SettingsObserver() {
                 mPrefsInited = false;
             }
         }
-
         
     }
 

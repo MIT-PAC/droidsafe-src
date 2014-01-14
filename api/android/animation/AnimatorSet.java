@@ -9,14 +9,8 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 
-
-
-
-
-
 public final class AnimatorSet extends Animator {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.634 -0500", hash_original_field = "A85391E1318E9B34A06626338A98E52F", hash_generated_field = "26355D432757D1DCAD1F3A8161B362B0")
-
 
     /**
      * Tracks animations currently being played, so that we know what to
@@ -36,7 +30,6 @@ public final class AnimatorSet extends Animator {
 
     private boolean mNeedsSort = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.644 -0500", hash_original_field = "58AD0945D207E1633DA082A0109BE7B0", hash_generated_field = "E140240C038E8A4BB9AE350DA570B1A7")
-
 
     private AnimatorSetListener mSetListener = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.646 -0500", hash_original_field = "6D37E5BBEF916EC90B750BBB805CC32B", hash_generated_field = "6D37E5BBEF916EC90B750BBB805CC32B")
@@ -58,12 +51,11 @@ public final class AnimatorSet extends Animator {
     private long mDuration = -1;
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.245 -0400", hash_original_method = "A9DDD8ED58932E64D4F5BE029FA05ABF", hash_generated_method = "A9DDD8ED58932E64D4F5BE029FA05ABF")
-    @DSModeled(DSC.SAFE)
+    
     public AnimatorSet ()
     {
         //Synthesized constructor
     }
-
 
     /**
      * Sets up this AnimatorSet to play all of the supplied animations at the same time.
@@ -422,9 +414,7 @@ public Builder play(Animator anim) {
             node.animation.setupEndValues();
         }
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.352 -0400", hash_original_method = "BC0D581AF5A0D28CE21AB6B82F02A4C9", hash_generated_method = "9F6799C08C8007AC04C3BA424C228110")
     @SuppressWarnings("unchecked")
     @Override
@@ -684,11 +674,9 @@ private void sortNodes() {
             }
         }
     }
-
     
     private static class DependencyListener implements AnimatorListener {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.716 -0500", hash_original_field = "D714D2C5468EB747703A2C0F7E744D58", hash_generated_field = "26BB44EB69421663EACF2A18D0E63EFE")
-
 
         private AnimatorSet mAnimatorSet;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.718 -0500", hash_original_field = "83519156A5C550DBE6FE5C6058996232", hash_generated_field = "298BE469E9769EF16537BF922B91FDA5")
@@ -780,15 +768,11 @@ private void startIfReady(Animator dependencyAnimation) {
                 mAnimatorSet.mPlayingSet.add(mNode.animation);
             }
         }
-
         
     }
-
-
     
     private class AnimatorSetListener implements AnimatorListener {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.740 -0500", hash_original_field = "D714D2C5468EB747703A2C0F7E744D58", hash_generated_field = "26BB44EB69421663EACF2A18D0E63EFE")
-
 
         private AnimatorSet mAnimatorSet;
 
@@ -862,11 +846,8 @@ public void onAnimationRepeat(Animator animation) {
         
 public void onAnimationStart(Animator animation) {
         }
-
         
     }
-
-
     
     private static class Dependency {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.761 -0500", hash_original_field = "727982CBEA696B80A4FAE212C4BDBE6D", hash_generated_field = "D2E63A1F901C713BA822C6F070CEAD0C")
@@ -876,7 +857,6 @@ public void onAnimationStart(Animator animation) {
 
         static final int AFTER = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.766 -0500", hash_original_field = "D4FCE8012659E56145F1753A3BD8D56E", hash_generated_field = "C8A632366A29618A29C7EE12E15819C8")
-
 
         // The node that the other node with this Dependency is dependent upon
         public Node node;
@@ -891,8 +871,6 @@ public Dependency(Node node, int rule) {
             this.rule = rule;
         }
     }
-
-
     
     private static class Node implements Cloneable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.775 -0500", hash_original_field = "94032F0292DB21EF61AC0A36FDD04147", hash_generated_field = "85D1EE31923D44CB9D3110ADDD29D65D")
@@ -962,11 +940,8 @@ public void addDependency(Dependency dependency) {
                throw new AssertionError();
             }
         }
-
         
     }
-
-
     
     public class Builder {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.799 -0500", hash_original_field = "7BF0EF0DFDDEC52446DEF44E6956307E", hash_generated_field = "A3A3172265405E9566BFFCC4660589E1")
@@ -1073,11 +1048,8 @@ public Builder after(long delay) {
             after(anim);
             return this;
         }
-
         
     }
-
-
     
 }
 
