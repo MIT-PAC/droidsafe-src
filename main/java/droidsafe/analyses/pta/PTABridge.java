@@ -23,6 +23,7 @@ import soot.Type;
 import soot.Value;
 import soot.jimple.InstanceInvokeExpr;
 import soot.jimple.InvokeExpr;
+import soot.jimple.toolkits.callgraph.CallGraph;
 import soot.jimple.toolkits.pta.IAllocNode;
 
 /**
@@ -44,7 +45,7 @@ public abstract class PTABridge {
     public static final Set<String> STATS_IGNORE_CLASS_STRINGS = new HashSet<String>(Arrays.asList(
         "java.lang.String", 
         "java.lang.AbstractStringBuilder", 
-        "java.lang.Throwable",
+        //"java.lang.Throwable",
         "java.lang.CharSequence"));
     /** Build above as soot classes with all children before each run */
     public static Set<SootClass> STATS_IGNORE_SOOTCLASSES;
@@ -216,5 +217,6 @@ public abstract class PTABridge {
     /** dump the call graph to a file */
     public abstract void dumpCallGraph(String fileStr);
     
-        
+    /** return the call graph built by the pta */
+    public abstract CallGraph getCallGraph();
 }

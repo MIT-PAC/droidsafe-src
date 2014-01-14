@@ -58,6 +58,7 @@ import soot.jimple.paddle.PointsToSetInternal;
 import soot.jimple.paddle.Results;
 import soot.jimple.paddle.VarNode;
 import soot.jimple.paddle.queue.Rctxt_method;
+import soot.jimple.toolkits.callgraph.CallGraph;
 import soot.jimple.toolkits.pta.IAllocNode;
 import soot.toolkits.scalar.Pair;
 import soot.util.queue.QueueReader;
@@ -108,6 +109,11 @@ public class PaddlePTA extends PTABridge {
         // TODO Auto-generated constructor stub
     }
 
+    public CallGraph getCallGraph() {
+        //what to return at this point? maybe paddle has its own call graph or can translate the soot call graph
+        return null;
+    }
+    
     @Override
     protected void releaseInternal() {
         Scene.v().releaseFastHierarchy();

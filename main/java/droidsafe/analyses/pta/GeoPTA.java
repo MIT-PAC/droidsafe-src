@@ -138,6 +138,9 @@ public class GeoPTA extends PTABridge {
         G.v().MethodPAG_methodToPag = new HashMap<SootMethod, MethodPAG>();
     }
 
+    public CallGraph getCallGraph() {
+        return callGraph;
+    }
 
     /**
      * Runs Soot's geometric PTA and resolve the context.

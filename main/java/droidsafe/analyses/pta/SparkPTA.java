@@ -94,15 +94,7 @@ public class SparkPTA extends PTABridge {
     /** underlying pta */
     private PAG ptsProvider;
 
-    private static FileWriter fw;
-
-    static {
-        try {
-            fw = new FileWriter(Project.v().getOutputDir() + File.separator +"spark-stats.txt");
-        } catch (Exception e) {
-
-        }
-    }
+  
 
     public SparkPTA() {
 
@@ -154,191 +146,13 @@ public class SparkPTA extends PTABridge {
             dumpCallGraph(Project.v().getOutputDir() + File.separator + "callgraph.dot");
         }
 
-        writeStats();
+        new SparkPTAStats().writeStats();
     }
 
-    /**
-     * Work in progress!
-     */
-    public void writeStats() {
-        if (!Config.v().statsRun)
-            return;
-
-        try {
-            fw.write("\n=====================================================\n");
-            fw.write("Obj sens: " + ObjectSensitivityCloner.v().hasRun + "\n");
-
-            ObjectSensitivityCloner osc = ObjectSensitivityCloner.v();
-
-            long PTSets = 0;
-            long PTSetSize = 0;
-            long origReachable = 0;
-
-            //loop through all non-cloned methods, look for clones
-            //gather stats?
-
-            //loop through all non-cloned classes
-            for (SootClass clz : Scene.v().getClasses()) {
-
-                if (shouldIgnoreForStats(clz))
-                    continue;
-
-                //if (ObjectSensitivityCloner.v().isClonedClass(clz))
-                //    continue;
-
-                for (SootMethod method : clz.getMethods()) {
-
-                    /*if (ObjectSensitivityCloner.v().isClonedMethod(method))
-                        continue;*/
-
-                    boolean reachable = false;
-
-                    if (isReachableMethod(method)) {
-                        reachable = true;
-                    }
-
-                    /*
-                    if (!reachable) {
-                        for (SootMethod cloneC : ObjectSensitivityCloner.v().getClonedContextMethods(method)) {
-                            if (isReachableMethod(cloneC)) {
-                                reachable = true;
-                                break;
-                            }
-                        }
-                    }
-                     */
-
-                    if (!reachable)
-                        continue;
-
-                    origReachable++;
-
-                    boolean debug = false;
-                    //method.getSignature().equals("<java.lang.Object: boolean equals(java.lang.Object)>");
-
-                    if (method.isAbstract() || !method.isConcrete() || method.isPhantom())
-                        continue;
-
-                    if (debug) {
-                        Iterator<Edge> edges = callGraph.edgesInto(method);
-                        while (edges.hasNext()) {
-                            System.out.println(edges.next());
-                        }
-                    }
-
-                    for (Local local : method.retrieveActiveBody().getLocals()) {
-                        if (local.getType() instanceof RefType && 
-                                shouldIgnoreForStats(((RefType)local.getType()).getSootClass()))
-                            continue;
-
-                        Set<AllocNode> ans = (Set<AllocNode>)getPTSet(local);
-
-
-                        int size = 0;
-
-                        if (debug) System.out.println(local);
-
-
-                        for (AllocNode an : ans) {
-                            if (an.getType() instanceof RefType &&
-                                    !shouldIgnoreForStats(((RefType)an.getType()).getSootClass())) {
-                                size ++;
-                                if (debug) System.out.println("\t" + an);
-                            }
-                        }
-
-
-                        if (size > 150) {
-                            System.out.printf("%d,  %s %s of %s\n", ans.size(), local, local.getType(), method);
-                        }
-
-
-                        PTSets++;
-                        PTSetSize += size;
-
-                    }
-                    /*
-
-
-                       Set<IAllocNode> allocNodes = new HashSet<IAllocNode>();
-                        if (isReachableMethod(method)) {
-                            allocNodes.addAll(getPTSet(local));
-                        }
-
-                        for (SootMethod cloneC : osc.getClonedContextMethods(method)) {
-                            if (isReachableMethod(cloneC)) 
-                                allocNodes.addAll(getPTSet(osc.getClonedLocal(method, local, cloneC)));
-                        }
-
-                        Set<Value> insensSet = new HashSet<Value>();
-                        for (IAllocNode iac : allocNodes) {
-                            Value newExpr = null;
-                            if (iac.getNewExpr() instanceof Value) {
-                                newExpr = (Value)iac.getNewExpr();
-                            } else if (iac.getNewExpr() instanceof Pair) {
-                                if (((Pair)iac.getNewExpr()).getO1() instanceof Value)
-                                    newExpr = (Value)((Pair)iac.getNewExpr()).getO1();
-                            } else {
-                                logger.info("Unknown new expression type: {} {}", 
-                                    iac.getNewExpr(), iac.getNewExpr().getClass());
-                            }
-
-                            if (osc.isClonedNewExpr(newExpr)) {
-                                insensSet.add(osc.getOrigNewExpr(newExpr));
-                            } else {
-                                insensSet.add(newExpr);
-                            }
-                        }
-
-
-                        PTSets++;
-                        PTSetSize += insensSet.size();
-                    }
-
-                   //InstanceFieldRef
-                  //ArrayRef
-                   StaticFieldRef
-
-
-                    //if here, then reachable or clone reachable
-
-
-                    //loop through code
-
-                    //virtual calls (how to account for cloning?)
-
-                    //total polymorphic calls (how to account for cloning?)
-
-                    //reachable casts
-
-                    //somehow build call graph??
-
-                    //total casts that may fail
-                     */
-                }
-            }
-
-            //raw call graph
-            fw.write("Raw reachable methods: " + reachableMethods.size() + "\n");
-            fw.write("Raw call graph edges: " + callGraph.size() + "\n");
-
-            fw.write("Collapsed Reachable Methods: " + origReachable + "\n");
-
-            //cloning removed call graph
-
-            fw.write("Average points to set size: " + ((double)PTSetSize)/((double)PTSets) + "\n");
-            /*
-            fw.write("virtual call sites: " + virtualCallSites + "\n");
-            fw.write("polymorphic call sites: " + polyCallSites + "\n");
-            fw.write("Casts: " + casts + "\n");
-            fw.write("Casts that may fail: " + castsMayFail + "\n");
-             */
-            fw.flush();
-        } catch (IOException e) {
-
-        }
+    public CallGraph getCallGraph() {
+        return callGraph;
     }
-
+   
     /**
      * Given a new expression (Jimple NewExpr or String) return the corresponding AllocNode.
      */

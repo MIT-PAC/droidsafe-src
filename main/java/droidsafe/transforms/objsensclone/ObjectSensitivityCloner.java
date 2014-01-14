@@ -97,8 +97,6 @@ public class ObjectSensitivityCloner {
     private Set<SootClass> clonedClassesCreated;
 
     private Map<SootMethod,Set<SootMethod>> methodToClonesMap;
-    
-    private Map<Value,Value> newExprMap;
 
     private Set<SootMethod> clonedMethodsAdded;
 
@@ -121,7 +119,6 @@ public class ObjectSensitivityCloner {
         classesThatWereCloned = new HashSet<SootClass>();
         clonedMethodsAdded = new HashSet<SootMethod>();
         methodToClonesMap = new HashMap<SootMethod,Set<SootMethod>>();
-        newExprMap = new HashMap<Value,Value>();
     }
 
     /**
@@ -171,6 +168,10 @@ public class ObjectSensitivityCloner {
         return clonedMethodsAdded.contains(method);
     }
 
+    public Set<SootMethod> getMethodsThatWereCloned() {
+        return methodToClonesMap.keySet();
+    }
+    
     public Set<SootMethod> getClonedContextMethods(SootMethod method) {
         SootClass clz = method.getDeclaringClass();
 
@@ -183,29 +184,6 @@ public class ObjectSensitivityCloner {
             return methodToClonesMap.get(method);
         else 
             return Collections.emptySet();
-    }
-
-    /**
-     * This can be a NewExpr, ClassConstant, or StringConstant
-     * 
-     * @param value
-     * @return
-     */
-    public boolean isClonedNewExpr(Value value) {
-        return newExprMap.containsKey(value); 
-    }
-    
-    /**
-     * This can be a NewExpr, ClassConstant, or StringConstant
-     * 
-     */
-    public Value getOrigNewExpr(Value newExpr) {
-        if (!newExprMap.containsKey(newExpr)) {
-            logger.error("Not a cloned new expr: {}", newExpr);
-            droidsafe.main.Main.exit(1);
-        }
-        
-        return newExprMap.get(newExpr);
     }
     
     /**
@@ -225,10 +203,12 @@ public class ObjectSensitivityCloner {
             fw = new FileWriter(Project.v().getOutputDir() + File.separator + 
                     "obj-sens-cloner-va-stats.csv");
 
+            List<SootClass> workList = aGraph.workList();
+            fw.write("Total classes to consider: " + workList.size() + "\n");
             fw.write("Class,InDegree,OutDegree,TotalClasses,PercentChange\n");
 
             int prevClassCount = Scene.v().getClasses().size();
-            for (SootClass currentClass : aGraph.workList()) {
+            for (SootClass currentClass : workList) {
                 //don't clone strings on first run
                 
                 fw.write("Considering " + currentClass + "\n");
@@ -286,6 +266,7 @@ public class ObjectSensitivityCloner {
                     }
                     
                 }
+                fw.flush();
             }
             
             fw.close();
@@ -332,38 +313,7 @@ public class ObjectSensitivityCloner {
                 methodToClonesMap.put(org, new LinkedHashSet<SootMethod>());
 
             methodToClonesMap.get(org).add(clone);
-                
-            //addToNewExprMap(clone, org);
         }
-    }
-
-    private void addToNewExprMap(SootMethod clone, SootMethod orig) {
-        if (!Config.v().statsRun)
-            return;
-        
-        List<ValueBox> cloneVBs = clone.retrieveActiveBody().getUseAndDefBoxes();
-        List<ValueBox> origVBs = orig.retrieveActiveBody().getUseAndDefBoxes();
-        
-        if (cloneVBs.size() != origVBs.size()) {
-            logger.error("Clone and orig have def / use boxes that do not correspond! {} {}", clone, orig);
-            droidsafe.main.Main.exit(1);
-        }
-
-        for (int i = 0; i < origVBs.size(); i++) {
-            if (origVBs.get(i).getValue() instanceof AnyNewExpr ||
-                    origVBs.get(i).getValue() instanceof StringConstant ||
-                    origVBs.get(i).getValue() instanceof ClassConstant ) {
-
-            }
-
-            if (!(cloneVBs.get(i).getValue().getClass().equals(origVBs.get(i).getValue().getClass()))) {
-                logger.error("Clone and orig have def / use boxes that do not correspond! {} {}", clone, orig);
-                droidsafe.main.Main.exit(1);
-            }
-
-            newExprMap.put(cloneVBs.get(i).getValue(),origVBs.get(i).getValue());
-        }
-
     }
 
     /**
