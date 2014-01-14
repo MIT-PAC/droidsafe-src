@@ -7,33 +7,45 @@ public enum DSCat {
     DATA_STRUCTURE,  
     FRAMEWORK_FINAL,  //cannot override
     SAFE_LIST,
+    GUI,    
+    GRAPHICS,
+    NO_ACTION,
+    DATA_GENERAL,
     SAFE_OTHERS,
+    ANDROID_CALLBACK,
     
     //Ban Categories
     DALVIK,
     PRIVATE_METHOD,
     REFLECTION,
+    CLASS_LOADER,
+    SECURITY_VIOLATION,
     
     //Spec Categories
     ABSTRACT_METHOD,
     ANDROID_APPLICATION,
     ANDROID_INTERNAL,
     ANDROID_INSTRUMENTATION,
+    ANDROID_LOW_LEVEL,
     ANDROID_MANAGER,
+    ANDROID_LOADER,
     AUDIO_CALL,
-    CALLBACK_INVOKE,  //method to trigger callback (user requests)
+    APP_RESOURCE,
+    CALLBACK_INVOKE,
+    
     CONTENT,
     TO_MODEL, //once the method is modeled, it will be safe
 
     DATABASE,  //database changing
     DEFAULT_MODIFIER,  
     DEVICE,    
+    
+    MONITORING,
 
     GPS,
-    GRAPHICS,
-    GUI,    
     INTERNET,
     INTENT_EXCHANGE,
+    INTERGUI_ACTION,
     IO,
     IO_ACTION_METHOD,
     JAVA_SECURITY,
@@ -50,7 +62,8 @@ public enum DSCat {
     SMS,
     SHARING,
     STORAGE,
-    SYSTEM_SETTING,
+    SYSTEM_SETTING,    
+    SYSTEM_SERVICE,
     TELEPHONY,
     URI_EXCHANGE,
     WIFI,
