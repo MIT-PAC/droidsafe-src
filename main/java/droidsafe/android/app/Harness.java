@@ -181,7 +181,7 @@ public class Harness {
 		Scene.v().loadClass(harnessClass.getName(), SootClass.BODIES);
 		harnessClass.setApplicationClass();		
 		
-		SootUtils.writeByteCodeAndJimple(Project.v().getOutputDir() + File.separator + HARNESS_CLASS_NAME, getHarnessClass());
+		SootUtils.writeByteCodeAndJimple(Project.v().getOutputDir(), getHarnessClass());
 	}
 	
 	private SootMethod callAllStaticInitializers() {

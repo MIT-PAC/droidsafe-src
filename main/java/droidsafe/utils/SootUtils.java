@@ -729,21 +729,20 @@ public class SootUtils {
     }
 
     /**
-     * Write the class and jimple file in the output directory. Prefix is the absolute 
-     * file name prefix for the class and jimple files (.class and .jimple will be appended).
+     * Write the class and jimple file for clz. ParentDir is the absolute 
+     * path of parent directory.
      */
     public static void writeByteCodeAndJimple(String parentDir, SootClass clz) {
         
         String methodThatFailed = "";
         
         File packageDirectory = new File(parentDir + File.separator +
-            clz.getPackageName().replaceAll(".", File.separator));
-        
+            clz.getPackageName().replaceAll("\\.", File.separator));
         
         try {
             //make package directory
             packageDirectory.mkdirs();
-            
+                    
             FileOutputStream fos = new FileOutputStream(packageDirectory.toString() + File.separator + 
                 clz.getShortName() + ".class");
             OutputStream streamOut = new JasminOutputStream(fos);
