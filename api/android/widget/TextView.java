@@ -887,7 +887,6 @@ public TextView(Context context,
         int ellipsize = -1;
         boolean singleLine = false;
         int maxlength = -1;
-        CharSequence text = "";
         CharSequence hint = null;
         int shadowcolor = 0;
         float dx = 0;
@@ -1382,7 +1381,6 @@ public TextView(Context context,
             setFilters(NO_FILTERS);
         } //End block
         //setText(text, bufferType);
-        mText = text;
         mBufferType = bufferType;
         if(hint != null)        
             setHint(hint);
