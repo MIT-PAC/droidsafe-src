@@ -65,7 +65,8 @@ public class SparkPTAStats {
 
             long PTSets = 0;
             long PTSetSize = 0;
-            long origReachable = 0;
+            long collapsedReachable = 0;
+           
 
             //loop through all non-cloned methods, look for clones
             //gather stats?
@@ -102,7 +103,7 @@ public class SparkPTAStats {
                     if (!reachable)
                         continue;
 
-                    origReachable++;
+                    collapsedReachable++;
 
                     if (method.isAbstract() || !method.isConcrete() || method.isPhantom())
                         continue;
@@ -175,8 +176,11 @@ public class SparkPTAStats {
             fw.write("Raw reachable methods: " + pta.getAllReachableMethods().size() + "\n");
             fw.write("Raw call graph edges: " + pta.getCallGraph().size() + "\n");
 
-            fw.write("Collapsed Reachable Methods: " + origReachable + "\n");
-
+            fw.write("Collapsed Reachable Methods: " + collapsedReachable + "\n");
+            
+            fw.write("Average method context size: " + 
+                    ((double)pta.getAllReachableMethods().size()) / ((double)collapsedReachable));
+            
             //cloning removed call graph
 
             fw.write("Average points to set size: " + ((double)PTSetSize)/((double)PTSets) + "\n");

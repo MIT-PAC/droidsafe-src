@@ -172,6 +172,10 @@ public class ObjectSensitivityCloner {
         return methodToClonesMap.keySet();
     }
     
+    public Set<SootMethod> getAllClonedMethods(){
+        return clonedMethodsAdded;
+    }
+    
     public Set<SootMethod> getClonedContextMethods(SootMethod method) {
         SootClass clz = method.getDeclaringClass();
 
