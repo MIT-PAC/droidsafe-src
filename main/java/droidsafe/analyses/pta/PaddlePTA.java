@@ -8,6 +8,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -30,6 +31,7 @@ import soot.SootField;
 import soot.SootMethod;
 import soot.Type;
 import soot.Value;
+import soot.ValueBox;
 import soot.jimple.ArrayRef;
 import soot.jimple.DynamicInvokeExpr;
 import soot.jimple.InstanceFieldRef;
@@ -113,7 +115,7 @@ public class PaddlePTA extends PTABridge {
         //what to return at this point? maybe paddle has its own call graph or can translate the soot call graph
         return null;
     }
-    
+
     @Override
     protected void releaseInternal() {
         Scene.v().releaseFastHierarchy();
@@ -146,30 +148,72 @@ public class PaddlePTA extends PTABridge {
 
         System.out.println("Size of reachable methods: " + reachableMethods.size());
         System.out.println("Alloc Nodes: " + newToAllocNodeMap.size());
-        
-        //printStats();
+
+        printStats();
     }
-    
+
     private void printStats() {
+        long PTSets = 0;
+        long PTSetSize = 0;
+
+        for (SootMethod method : getAllReachableMethods()) {
+            if (method.isAbstract() || !method.isConcrete() || method.isPhantom())
+                continue;
+
+            List<ValueBox> origVBs = method.retrieveActiveBody().getUseAndDefBoxes();
+
+            for (ValueBox vb : origVBs) {
+                Value value = vb.getValue();
+
+                //ignore pointer of a specific type
+                if (value.getType() instanceof RefType && 
+                        this.shouldIgnoreForStats(((RefType)value.getType()).getSootClass()))
+                    continue;
+
+                if (value instanceof Local ||
+                        value instanceof StaticFieldRef ||
+                        value instanceof InstanceFieldRef) {
+                    Set<IAllocNode> nodes = (Set<IAllocNode>) getPTSet(value);
+
+                    int ignoreSize = 0;
+                    for (IAllocNode an : nodes) {
+                        //reduce size by one for each allocation of a type we are not tracking...
+                        if (an.getType() instanceof RefType &&
+                                this.shouldIgnoreForStats(((RefType)an.getType()).getSootClass())) {
+                            ignoreSize++;
+                        }
+
+                    }
+                    PTSets++;
+                    PTSetSize += (nodes.size() - ignoreSize);
+                }
+            }
+
+        }
+
+        System.out.println("Average points to set size: " + ((double)PTSetSize)/((double)PTSets) );
+
+
+        /*
         for (SootMethod method : reachableMethodContextMap.keySet()) {
             //loop through instructions
             Local local = null;
-            
+
             //for any reference value perform the pta query
             for (Context ctxt : reachableMethodContextMap.get(method)) {
                 PointsToSetInternal pts = (PointsToSetInternal)ptsProvider.reachingObjects(ctxt, local);
                 //visit internal points to set and grab all allocnodes
-                
+
                 int size = pts.size();
                 pts.forall(new P2SetVisitor() {
                     public void visit(ContextAllocNode n) {
                         //
                     }
                 });
-                
+
             }
         }
-        
+         */
     }
 
     private void setPaddlePointsToAnalysis() {
