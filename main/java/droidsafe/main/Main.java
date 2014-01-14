@@ -1,34 +1,22 @@
 package droidsafe.main;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.LinkedList;
-import java.util.List;
+import au.com.bytecode.opencsv.CSVWriter;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import soot.G;
-import soot.Scene;
-import soot.SootClass;
-import soot.SootMethod;
-import soot.options.Options;
 import droidsafe.analyses.CheckInvokeSpecials;
-import droidsafe.analyses.MethodCallsOnAlloc;
-import droidsafe.analyses.RCFGToSSL;
-import droidsafe.analyses.RequiredModeling;
-import droidsafe.analyses.TestPTA;
-import droidsafe.analyses.infoflow.APIInfoKindMapping;
 import droidsafe.analyses.infoflow.AllocNodeUtils;
+import droidsafe.analyses.infoflow.APIInfoKindMapping;
 import droidsafe.analyses.infoflow.InformationFlowAnalysis;
 import droidsafe.analyses.infoflow.InjectedSourceFlows;
 import droidsafe.analyses.infoflow.InterproceduralControlFlowGraph;
 import droidsafe.analyses.infoflow.MemoryReadAnalysis;
 import droidsafe.analyses.infoflow.ObjectUtils;
-import droidsafe.analyses.pta.PTABridge;
-import droidsafe.analyses.pta.PointsToAnalysisPackage;
+import droidsafe.analyses.MethodCallsOnAlloc;
 import droidsafe.analyses.pta.cg.CallGraphTraversal;
+import droidsafe.analyses.pta.PointsToAnalysisPackage;
+import droidsafe.analyses.pta.PTABridge;
 import droidsafe.analyses.rcfg.RCFG;
+import droidsafe.analyses.RCFGToSSL;
+import droidsafe.analyses.RequiredModeling;
 import droidsafe.analyses.strings.JSAStrings;
 import droidsafe.analyses.strings.JSAUtils;
 import droidsafe.analyses.value.ValueAnalysis;
@@ -36,35 +24,47 @@ import droidsafe.analyses.value.VAStats;
 import droidsafe.android.app.EntryPoints;
 import droidsafe.android.app.Harness;
 import droidsafe.android.app.Project;
-import droidsafe.android.app.TagImplementedSystemMethods;
 import droidsafe.android.app.resources.Resources;
 import droidsafe.android.app.resources.ResourcesSoot;
+import droidsafe.android.app.TagImplementedSystemMethods;
 import droidsafe.android.system.API;
 import droidsafe.android.system.Permissions;
-import droidsafe.speclang.SecuritySpecification;
 import droidsafe.speclang.model.AllocLocationModel;
 import droidsafe.speclang.model.CallLocationModel;
 import droidsafe.speclang.model.SecuritySpecModel;
-import droidsafe.stats.AppMethodsEventContextStats;
+import droidsafe.speclang.SecuritySpecification;
 import droidsafe.stats.PTASetsAvgSize;
+import droidsafe.transforms.ClassGetNameToClassString;
 import droidsafe.transforms.HoistAllocations;
 import droidsafe.transforms.IntegrateXMLLayouts;
 import droidsafe.transforms.JSAResultInjection;
+import droidsafe.transforms.objsensclone.ObjectSensitivityCloner;
 import droidsafe.transforms.RemoveStupidOverrides;
-import droidsafe.transforms.UndoJSAResultInjection;
-import droidsafe.transforms.LocalForStringConstantArguments;
-import droidsafe.transforms.ClassGetNameToClassString;
 import droidsafe.transforms.ResolveStringConstants;
 import droidsafe.transforms.ScalarAppOptimizations;
+import droidsafe.transforms.UndoJSAResultInjection;
 import droidsafe.transforms.VATransformsSuite;
-import droidsafe.transforms.objsensclone.ObjectSensitivityCloner;
 import droidsafe.utils.DroidsafeDefaultProgressMonitor;
 import droidsafe.utils.DroidsafeExecutionStatus;
 import droidsafe.utils.IDroidsafeProgressMonitor;
 import droidsafe.utils.JimpleRelationships;
 import droidsafe.utils.SootUtils;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
 import org.apache.commons.lang3.time.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import soot.G;
+import soot.Scene;
+import soot.SootClass;
+import soot.SootMethod;
 
 /**
  * Main entry class for DroidSafe analysis.
@@ -78,6 +78,8 @@ public class Main {
     private static final PointsToAnalysisPackage POINTS_TO_ANALYSIS_PACKAGE = PointsToAnalysisPackage.SPARK;
     /** logger field */
     private static final Logger logger = LoggerFactory.getLogger(Main.class);
+    /** timing stats container */
+    private static List<String> appStatRowEntries = new ArrayList<String>();
 
     /**
      * Entry point of DroidSafe Tool.
@@ -91,6 +93,22 @@ public class Main {
     }
 
     public static DroidsafeExecutionStatus run(IDroidsafeProgressMonitor monitor) {
+
+        CSVWriter appStatWriter = null; 
+        try {
+            appStatWriter = new CSVWriter(new FileWriter(Project.v().getOutputDir() + File.separator + "app-stats.csv"));
+        } catch(Exception e) {
+            logger.warn("Unable to open app-stats.csv: {}", e);
+            System.exit(1);
+        }
+       
+        // write out headers for columns
+        appStatWriter.writeNext(new String[] {"App Name", "String Analysis", "Class Cloning", "Points-to Analysis", "Value Analysis", "Infoflow Analysis"});
+        // app stat column #1 - app name
+        String[] bits = Config.v().APP_ROOT_DIR.split("/");
+        appStatRowEntries.add(bits[bits.length-1]);
+
+
         monitor.subTask("Initializing Environment");
         G.reset();
         // initial project directories and lib jar files
@@ -175,7 +193,7 @@ public class Main {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
 
-        if (afterTransform(monitor) == DroidsafeExecutionStatus.CANCEL_STATUS)
+        if (afterTransform(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
             return DroidsafeExecutionStatus.CANCEL_STATUS;
 
         driverMsg("Incorporating XML layout information");
@@ -194,7 +212,7 @@ public class Main {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
 
-        if (afterTransform(monitor) == DroidsafeExecutionStatus.CANCEL_STATUS)
+        if (afterTransform(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
             return DroidsafeExecutionStatus.CANCEL_STATUS;
 
         driverMsg ("Hoisting Allocations");
@@ -228,6 +246,8 @@ public class Main {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
         timer1.stop();
+        // app stat column #2 - string analysis runtime
+        appStatRowEntries.add(timer1.toString());
         driverMsg("Finished String Analysis: " + timer1);
 
         if (POINTS_TO_ANALYSIS_PACKAGE != PointsToAnalysisPackage.PADDLE && Config.v().addObjectSensitivity) {
@@ -241,6 +261,8 @@ public class Main {
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
             }
             timer1.stop();
+            // app stat column #3 - cloning
+            appStatRowEntries.add(timer1.toString());
             driverMsg("Finished cloning: " + timer1);
         }
             
@@ -256,7 +278,7 @@ public class Main {
        
         //need this pta run to account for object sens and jsa injection
 
-        if (afterTransform(monitor) == DroidsafeExecutionStatus.CANCEL_STATUS)
+        if (afterTransform(monitor, true) == DroidsafeExecutionStatus.CANCEL_STATUS)
             return DroidsafeExecutionStatus.CANCEL_STATUS;
      
         ValueAnalysis.setup();
@@ -277,6 +299,8 @@ public class Main {
             if (monitor.isCanceled()) {
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
             }
+            // app stat column #5 - va
+            appStatRowEntries.add(vaTimer.toString());
             driverMsg("Finished Value Analysis: " + vaTimer);
 
             vaTimer.reset();
@@ -293,7 +317,7 @@ public class Main {
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
             }
 
-            if (afterTransform(monitor) == DroidsafeExecutionStatus.CANCEL_STATUS)
+            if (afterTransform(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
 
@@ -326,7 +350,7 @@ public class Main {
             if (monitor.isCanceled()) {
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
             }
-            driverMsg("Finished Computing Value Analysis Stats: " + vaStatsTimer);
+            driverMsg("Finished Computing Value Analysis Stats: " + vaStatsTimer.toString());
         }
 
         // print out what modeling is required for this application
@@ -393,6 +417,8 @@ public class Main {
             }
             timer.stop();
             droidsafe.stats.AvgInfoFlowSetSize.run();
+            // app stat column #6 - infoflow
+            appStatRowEntries.add(timer.toString());
             driverMsg("Finished Information Flow Analysis: " + timer);
         }
         monitor.worked(1);
@@ -434,6 +460,14 @@ public class Main {
             RCFGToSSL.run(true);
             logger.error("Not implemented yet!");
         }
+       
+        appStatWriter.writeNext(appStatRowEntries.toArray(new String[] {}));
+        try {
+            appStatWriter.close();
+        } catch(IOException ie) {
+            logger.warn("Unable to close app-stats.log: {}", ie);
+        }
+ 
         monitor.worked(1);
         return DroidsafeExecutionStatus.OK_STATUS;
     }
@@ -480,7 +514,7 @@ public class Main {
     /**
      * Called after one or more transforms to recalculate any underlying analysis.
      */
-    private static DroidsafeExecutionStatus afterTransform(IDroidsafeProgressMonitor monitor) {
+    private static DroidsafeExecutionStatus afterTransform(IDroidsafeProgressMonitor monitor, boolean recordTime) {
         Scene.v().releaseActiveHierarchy();
         driverMsg("Running PTA...");
         monitor.subTask("Running PTA");
@@ -507,6 +541,10 @@ public class Main {
 
         long endTime = System.currentTimeMillis();
         timer.stop();
+        if(recordTime) {
+          // app stat column #4 - PTA
+          appStatRowEntries.add(timer.toString());
+        }
         driverMsg("Finished PTA: " + timer);
 
         return DroidsafeExecutionStatus.OK_STATUS;
