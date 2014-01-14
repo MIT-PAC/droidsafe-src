@@ -82,12 +82,15 @@ public class VAStats {
         // From a VA stats standpoint, only the set sizes of fields of models of these sootclasses matter
         for(RCFGNode rcfgNode : RCFG.v().getNodes()) {
             for(OutputEvent oe : rcfgNode.getOutputEvents()) {
+                //System.out.println("Output Event: " + oe.toString());
                 InvokeExpr ie = oe.getInvokeExpr();
                 SootMethod sm = ie.getMethod();
+                //System.out.println("Soot Method: " + sm.toString());
                 if(ie != null) {
                     if(oe.hasReceiver()) {
                         // process receiver IAllocNodes
                         Set<IAllocNode> receiverPTSet = oe.getReceiverPTSet(oe.getContext(ContextType.EVENT_CONTEXT));
+                        //System.out.println("receiptPTSet: " + receiverPTSet.toString());
                         for(IAllocNode allocNode : receiverPTSet) {
                             v.markAllocNodeAsReachable(allocNode);
                             v.markMethodAsRelevant(allocNode, sm);
@@ -108,7 +111,7 @@ public class VAStats {
         }
 
         // write out headers for columns
-        writer.writeNext(new String[] {"field", "size", "relevant methods"});
+        writer.writeNext(new String[] {"field", "size", "relevant methods", "allocNode"});
 
         for(Map.Entry<Object, VAModel> entry : ValueAnalysis.v().getResults().entrySet()) {
             Object newExpr = entry.getKey();
@@ -116,13 +119,8 @@ public class VAStats {
             Type type = node.getType();
             // we only care about reachable nodes
             if(type instanceof RefType && v.reachableAllocNodes.contains(node)) {
-
-                // get soot class name without the ds clone suffix
-                SootClass sc = ((RefType)type).getSootClass();
-                String scName = ClassCloner.removeClassCloneSuffix(sc.getName());
-
                 RefVAModel refVAModel = (RefVAModel)entry.getValue();
-
+                String scName = refVAModel.getClass().getName().substring(ValueAnalysis.MODEL_PACKAGE_PREFIX.length());
                 if(v.vaResolvedClassNamesAndFields.containsKey(scName)) {
                     // we claim that we don't know the sizes of any field sets if the containing model got invalidated
                     boolean containingModelInvalidated = refVAModel.invalidated();
@@ -148,12 +146,15 @@ public class VAStats {
                                 if(fieldType instanceof RefType && !SootUtils.isStringOrSimilarType(fieldType)){
                                     size = fieldVAModels.size();
                                 } else {
-                                    PrimVAModel primVAModel = (PrimVAModel)fieldVAModels.iterator().next();
-                                    // if the primitive field is invalidated, we can't trust the number of values
-                                    if(!primVAModel.invalidated()) {
-                                        Set<Object> values = primVAModel.getValues();
-                                        // if the set of values could include ANYTHING, leave size as -1
-                                        if(!values.contains("ANYTHING")) size = values.size();
+                                    VAModel vaModel = fieldVAModels.iterator().next();
+                                    if(vaModel instanceof PrimVAModel) {
+                                        PrimVAModel primVAModel = (PrimVAModel)vaModel;
+                                        // if the primitive field is invalidated, we can't trust the number of values
+                                        if(!primVAModel.invalidated()) {
+                                            Set<Object> values = primVAModel.getValues();
+                                            // if the set of values could include ANYTHING, leave size as -1
+                                            if(!values.contains("ANYTHING")) size = values.size();
+                                        }
                                     }
                                 }
                             } else {
@@ -168,7 +169,10 @@ public class VAStats {
                
                         // 3rd column - relevant methods for the node
                         rowEntries.add(v.getRelevantMethods(node));
-         
+                        
+                        // 4th column - allocNode
+                        rowEntries.add(node.toString());
+                        
                         // write out all columns
                         writer.writeNext(rowEntries.toArray(new String[] {}));
                     }
@@ -220,7 +224,7 @@ public class VAStats {
     }
 
     /**
-     * Marks the allocNode and any allocNodes that could be assigned ot its VA-resolved fields as reachable.
+     * Marks the allocNode and any allocNodes that could be assigned to its VA-resolved fields as reachable.
      * These are the allocNodes for which we want to dump specs about
      */ 
     private void markAllocNodeAsReachable(IAllocNode allocNode) {
