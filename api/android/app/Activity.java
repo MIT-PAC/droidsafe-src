@@ -2343,10 +2343,10 @@ public LayoutInflater getLayoutInflater() {
         passed to this method.  Of course, we cannot model the response intent
         perfectly, but grab as many fields as we can.
 		*/
-		//Intent resultIntent;
-		//resultIntent = intent.translateIntent();
+		Intent resultIntent;
+		resultIntent = intent.translateIntent();
 		this.onActivityResult(requestCode, /* just make this up */ -1,
-				intent);
+				resultIntent);
 		// Original method
 		/*
 		{
