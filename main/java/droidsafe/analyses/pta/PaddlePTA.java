@@ -75,8 +75,6 @@ public class PaddlePTA extends PTABridge {
     private static final Logger logger = LoggerFactory.getLogger(PaddlePTA.class);
     /** bimap of new expressions to their alloc node representation */
     private HashBiMap<Object, AllocNode> newToAllocNodeMap;
-    /** all method reachable from the harness main */
-    private Set<SootMethod> reachableMethods;
     /** underlying pta */
     private AbsPointsToAnalysis ptsProvider;
     /** Maps each reachable method to the contexts in which the method is reached. */
@@ -132,21 +130,11 @@ public class PaddlePTA extends PTABridge {
 
         ptsProvider = (AbsPointsToAnalysis)Scene.v().getPointsToAnalysis();
 
+        computeReachableMethodContextMap();
+        
         createNewToAllocMap();
-
-        //fill reachable methods map
-        reachableMethods = new HashSet<SootMethod>();
-
-        QueueReader<MethodOrMethodContext> qr = Scene.v().getReachableMethods().listener();
-
-        while (qr.hasNext()) {
-            MethodOrMethodContext momc = qr.next();
-            if (momc instanceof SootMethod) {
-                reachableMethods.add((SootMethod)momc);
-            }
-        }
-
-        System.out.println("Size of reachable methods: " + reachableMethods.size());
+        
+        System.out.println("Size of reachable methods: " + reachableMethodContextMap.keySet().size());
         System.out.println("Alloc Nodes: " + newToAllocNodeMap.size());
 
         printStats();
@@ -156,7 +144,7 @@ public class PaddlePTA extends PTABridge {
         long PTSets = 0;
         long PTSetSize = 0;
 
-        for (SootMethod method : getAllReachableMethods()) {
+        for (SootMethod method : reachableMethodContextMap.keySet()) {
             if (method.isAbstract() || !method.isConcrete() || method.isPhantom())
                 continue;
 
