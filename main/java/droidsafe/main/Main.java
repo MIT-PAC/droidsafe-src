@@ -93,22 +93,6 @@ public class Main {
     }
 
     public static DroidsafeExecutionStatus run(IDroidsafeProgressMonitor monitor) {
-
-        CSVWriter appStatWriter = null; 
-        try {
-            appStatWriter = new CSVWriter(new FileWriter(Project.v().getOutputDir() + File.separator + "app-stats.csv"));
-        } catch(Exception e) {
-            logger.warn("Unable to open app-stats.csv: {}", e);
-            System.exit(1);
-        }
-       
-        // write out headers for columns
-        appStatWriter.writeNext(new String[] {"App Name", "String Analysis", "Class Cloning", "Points-to Analysis", "Value Analysis", "Infoflow Analysis"});
-        // app stat column #1 - app name
-        String[] bits = Config.v().APP_ROOT_DIR.split("/");
-        appStatRowEntries.add(bits[bits.length-1]);
-
-
         monitor.subTask("Initializing Environment");
         G.reset();
         // initial project directories and lib jar files
@@ -134,7 +118,23 @@ public class Main {
         if (monitor.isCanceled()) {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
-        
+       
+        CSVWriter appStatWriter = null; 
+        try {
+            appStatWriter = new CSVWriter(new FileWriter(Project.v().getOutputDir() + File.separator + "app-stats.csv"));
+        } catch(Exception e) {
+            logger.warn("Unable to open app-stats.csv: {}", e);
+            System.exit(1);
+        }
+       
+        // write out headers for columns
+        appStatWriter.writeNext(new String[] {"App Name", "String Analysis", "Class Cloning", "Points-to Analysis", "Value Analysis", "Infoflow Analysis"});
+        // app stat column #1 - app name
+        String[] bits = Config.v().APP_ROOT_DIR.split("/");
+        appStatRowEntries.add(bits[bits.length-1]);
+
+
+
         driverMsg("Removing identity overrides.");
         monitor.subTask("Removing identity overrides.");
         RemoveStupidOverrides.run();
