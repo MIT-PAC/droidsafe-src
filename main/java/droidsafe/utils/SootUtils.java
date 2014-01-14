@@ -1,5 +1,6 @@
 package droidsafe.utils;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
@@ -731,29 +732,44 @@ public class SootUtils {
      * Write the class and jimple file in the output directory. Prefix is the absolute 
      * file name prefix for the class and jimple files (.class and .jimple will be appended).
      */
-    public static void writeByteCodeAndJimple(String filePrefix, SootClass clz) {
-        String fileName = filePrefix + ".class";
-        String methodThatFailed = "";        
+    public static void writeByteCodeAndJimple(String parentDir, SootClass clz) {
+        
+        String methodThatFailed = "";
+        
+        File packageDirectory = new File(parentDir + File.separator +
+            clz.getPackageName().replaceAll(".", File.separator));
+        
+        
         try {
-            FileOutputStream fos = new FileOutputStream(fileName);
+            //make package directory
+            packageDirectory.mkdirs();
+            
+            FileOutputStream fos = new FileOutputStream(packageDirectory.toString() + File.separator + 
+                clz.getShortName() + ".class");
             OutputStream streamOut = new JasminOutputStream(fos);
             OutputStreamWriter osw = new OutputStreamWriter(streamOut);
             PrintWriter writerOut = new PrintWriter(osw);
-
+            
             for (SootMethod method : clz.getMethods()) {
                 methodThatFailed = method.getName();
                 if (method.isConcrete())
                     method.retrieveActiveBody();
             }
 
+            streamOut.close();
+            osw.close();
+            writerOut.close();
+            fos.close();
+
+            
             /*
                JasminClass jasminClass = new soot.jimple.JasminClass(clz);
                jasminClass.print(writerOut);
                writerOut.flush();
                streamOut.close();
              */
-            fileName = filePrefix + ".jimple";
-            streamOut = new FileOutputStream(fileName);
+                
+            streamOut = new FileOutputStream(packageDirectory.toString() + File.separator + clz.getShortName() + ".jimple");
             writerOut = new PrintWriter(new OutputStreamWriter(streamOut));
             Printer.v().printTo(clz, writerOut);
             writerOut.flush();
