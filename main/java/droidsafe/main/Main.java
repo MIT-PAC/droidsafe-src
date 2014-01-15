@@ -212,7 +212,10 @@ public class Main {
         if (monitor.isCanceled())
             return DroidsafeExecutionStatus.CANCEL_STATUS;
 
-        //don't need a pta run here because jsa does not use our pta!
+        // jsa uses pta results in hotspot calculation
+
+        if (afterTransform(monitor) == DroidsafeExecutionStatus.CANCEL_STATUS)
+            return DroidsafeExecutionStatus.CANCEL_STATUS;
 
         //run jsa after we inject strings from XML values and layout
         driverMsg("Starting String Analysis...");
@@ -439,11 +442,6 @@ public class Main {
      */
     private static DroidsafeExecutionStatus jsaAnalysis(IDroidsafeProgressMonitor monitor) {
         monitor.subTask("String Analysis: Setting Hotspots");
-        JSAUtils.setUpHotspots();
-        if (monitor.isCanceled()) {
-            return DroidsafeExecutionStatus.CANCEL_STATUS;
-        }
-
         JSAUtils.setupSpecHotspots();
         if (monitor.isCanceled()) {
             return DroidsafeExecutionStatus.CANCEL_STATUS;

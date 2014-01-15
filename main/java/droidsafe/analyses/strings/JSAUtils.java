@@ -1,25 +1,29 @@
 package droidsafe.analyses.strings;
 
-import droidsafe.analyses.value.ValueAnalysis;
-import droidsafe.analyses.value.VAModel;
-import droidsafe.android.system.API;
-import droidsafe.utils.SootUtils;
-
-import java.lang.reflect.Method;
-import java.lang.reflect.ParameterizedType;
-import java.lang.reflect.Type;
-
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
-import org.reflections.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import soot.Body;
+import soot.Scene;
+import soot.SootClass;
 import soot.SootMethod;
+import soot.Unit;
 import soot.ValueBox;
-import sun.util.logging.resources.logging;
+import soot.jimple.InvokeExpr;
+import soot.jimple.Stmt;
+import soot.jimple.toolkits.callgraph.CallGraph;
+import soot.jimple.toolkits.callgraph.Edge;
+import dk.brics.string.StringAnalysis;
+import droidsafe.android.system.API;
+import droidsafe.utils.SootUtils;
 
 /**
  * Class containing utility methods for JSA
@@ -27,7 +31,7 @@ import sun.util.logging.resources.logging;
  * @author dpetters
  */
 public class JSAUtils {
-    
+
     /**
      *  The logging output.
      */
@@ -36,8 +40,8 @@ public class JSAUtils {
     /**
      * Set JSA hotspots to be every method signature in attr modeling that has a string as a parameter
      */
+    /*
     public static void setUpHotspots(){
-        /*
         Reflections reflections = new Reflections(ValueAnalysis.MODEL_PACKAGE);
 
         Set<Class<? extends VAModel>> modeledClasses = 
@@ -108,36 +112,107 @@ public class JSAUtils {
                 }
             }
         }
-        */
     }
-    
-    /**
-     * Add hotspots for all of the spec methods.
      */
-    public static void setupSpecHotspots()
-    {
-        for (SootMethod m : API.v().getAllSystemMethods()) {
-            //if (API.v().isInterestingMethod(m)) {
-                try {
-                    String sig = m.getSignature();
-                    int i = 0;
-                    for (soot.Type t : m.getParameterTypes()) {
-                        if (SootUtils.isStringOrSimilarType(t)) {
-                            List<ValueBox> hs = JSAStrings.v().addArgumentHotspots(sig, i);
+
+//    public static void setupSpecHotspots()
+//    {
+//        for (SootMethod m : API.v().getAllSystemMethods()) {
+//            if (m.isDeclared()) {
+//                try {
+//                    String sig = m.getSignature();
+//                    int i = 0;
+//                    for (soot.Type t : m.getParameterTypes()) {
+//                        if (SootUtils.isStringOrSimilarType(t)) {
+//                            List<ValueBox> hs = JSAStrings.v().addArgumentHotspots(sig, i);
+//                        }
+//                        i++;     
+//                    }
+//                } catch (Exception e) {
+//                    logger.error("Exception when adding hotspot for method.", e);
+//                }
+//                // FIXME: Return hotspots are raising an exception.
+//                /*
+//                    if (SootUtils.isStringType(m.getReturnType())) {
+//                        System.out.println(String.format("addReturnHotspots(%s)", sig));
+//                        JSAStrings.v().addReturnHotspot(sig);
+//                    }
+//                 */
+//            }
+//        }
+//    }
+
+    /**
+     * Add hotspots for all of the system methods.
+     */
+    public static void setupSpecHotspots() {
+        Set<SootMethod> systemMethods = getSystemMethodsWithStringArgs();
+        CallGraph cg = Scene.v().getCallGraph();
+        Map<SootMethod, List<InvokeExpr>> methodToInvokeExprsMap = new HashMap<SootMethod, List<InvokeExpr>>();
+        // LWG: Allow application classes to be filtered from soot.Scene
+        Iterator aci = StringAnalysis.getApplicationClasses().iterator(); // Scene.v().getApplicationClasses()
+        while (aci.hasNext()) {
+            SootClass ac = (SootClass) aci.next();
+            Iterator mi = ac.getMethods().iterator();
+            while (mi.hasNext()) {
+                SootMethod sm = (SootMethod) mi.next();
+                if (sm.isConcrete()) {
+                    Body body = sm.retrieveActiveBody();
+                    for (Unit unit : body.getUnits()) {
+                        Stmt stmt = (Stmt) unit;
+                        if (stmt.containsInvokeExpr()) {
+                            Iterator<Edge> edges = cg.edgesOutOf(stmt);
+                            boolean done = false;
+                            while (edges.hasNext() && !done) {
+                                SootMethod tgt = edges.next().getTgt().method();
+                                if (systemMethods.contains(tgt)) {
+                                    InvokeExpr expr = stmt.getInvokeExpr();
+                                    List<InvokeExpr> exprs = methodToInvokeExprsMap.get(tgt);
+                                    if (exprs == null) {
+                                        exprs = new ArrayList<InvokeExpr>();
+                                        methodToInvokeExprsMap.put(tgt, exprs);
+                                    }
+                                    exprs.add(expr);
+                                    done = true;
+                                }
+                            }
                         }
-                        i++;     
                     }
-                 } catch (Exception e) {
-                     logger.error("Exception when adding hotspot for method.");
-                 }
-                // FIXME: Return hotspots are raising an exception.
-                /*
-                if (SootUtils.isStringType(m.getReturnType())) {
-                    System.out.println(String.format("addReturnHotspots(%s)", sig));
-                    JSAStrings.v().addReturnHotspot(sig);
                 }
-                */
-            //}
+            }
         }
+        for (SootMethod method: methodToInvokeExprsMap.keySet()) {
+            String sig = method.getSignature();
+            int i = 0;
+            for (soot.Type t : method.getParameterTypes()) {
+                if (SootUtils.isStringOrSimilarType(t)) {
+                    List<ValueBox> sigSpots = new ArrayList<ValueBox>();
+                    for (InvokeExpr expr: methodToInvokeExprsMap.get(method)) {
+                        ValueBox box = expr.getArgBox(i);
+                        sigSpots.add(box);
+                    }
+                    JSAStrings.v().addArgumentHotspots(sig, i, sigSpots);
+                }
+                i++;
+            }
+        }
+    }
+
+    private static Set<SootMethod> getSystemMethodsWithStringArgs() {
+        Set<SootMethod> result = new HashSet<SootMethod>();
+        for (SootMethod m : API.v().getAllSystemMethods()) {
+            // android generated method which is not declared causes error during signature computation
+            if (m.isDeclared() && hasStringArgs(m))
+                result.add(m);
+        } 
+        return result;
+    }
+
+    private static boolean hasStringArgs(SootMethod method) {
+        for (soot.Type t : method.getParameterTypes()) {
+            if (SootUtils.isStringOrSimilarType(t))
+                return true;
+        }
+        return false;
     }
 }
